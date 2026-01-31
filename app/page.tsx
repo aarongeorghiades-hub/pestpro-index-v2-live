@@ -29,6 +29,7 @@ export default function Home() {
             <Link href="/residential" className="px-4 py-2 border border-white/30 rounded-lg hover:bg-white/10 transition">Residential</Link>
             <Link href="/commercial" className="px-4 py-2 border border-white/30 rounded-lg hover:bg-white/10 transition">Commercial</Link>
             <Link href="/products" className="px-4 py-2 border border-white/30 rounded-lg hover:bg-white/10 transition">Products</Link>
+            <Link href="/professionals" className="px-4 py-2 border border-white/30 rounded-lg hover:bg-white/10 transition">Professionals</Link>
             <Link href="#" className="px-4 py-2 border border-white/30 rounded-lg hover:bg-white/10 transition">About</Link>
             <Link href="#" className="px-4 py-2 border border-white/30 rounded-lg hover:bg-white/10 transition">Contact</Link>
           </nav>
