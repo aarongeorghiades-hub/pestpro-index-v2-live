@@ -1,5 +1,9 @@
 'use client';
 
+// Force dynamic rendering - prevent static generation caching
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import { useState, useEffect } from 'react';
 import { createClient } from '@/utils/supabase';
 import Link from 'next/link';
