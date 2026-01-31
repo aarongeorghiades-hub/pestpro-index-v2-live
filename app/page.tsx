@@ -13,13 +13,14 @@ export default function Home() {
       <header className="bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-0 bg-white rounded-full px-6 py-3" style={{width: '210px', height: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <Link href="/" className="flex items-center gap-0">
             <Image
               src="/logo-header.png"
               alt="PestPro Index"
-              width={180}
-              height={60}
-              className="h-auto"
+              width={200}
+              height={50}
+              className="h-auto w-auto"
+              priority
             />
           </Link>
 
@@ -172,21 +173,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 5: TRUST SECTION */}
-      <section className="text-white py-20 text-center" style={{backgroundColor: '#a8a29e'}}>
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-6">Our Commitment to Neutrality</h2>
-          <p className="text-lg mb-12 max-w-2xl mx-auto">
-            We source providers from BPCA and TrustMark directories. We preserve evidence, not opinions. No endorsements, no guarantees, no hidden agendas.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <div className="bg-gray-500/50 px-6 py-3 rounded-full font-semibold">BPCA Sourced</div>
-            <div className="bg-gray-500/50 px-6 py-3 rounded-full font-semibold">No Booking Fees</div>
-            <div className="bg-gray-500/50 px-6 py-3 rounded-full font-semibold">Direct Contact</div>
-            <div className="bg-gray-500/50 px-6 py-3 rounded-full font-semibold">Transparent Data</div>
-          </div>
-        </div>
-      </section>
+
 
       {/* SECTION 6: FOOTER */}
       <footer className="bg-gray-900 text-gray-300 py-12">
