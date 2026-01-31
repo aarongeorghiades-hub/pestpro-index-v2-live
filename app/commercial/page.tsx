@@ -1,5 +1,9 @@
 'use client';
 
+// Force rebuild 1769860713
+
+'use client';
+
 import { useState, useEffect } from 'react';
 import { createClient } from '@/utils/supabase';
 import Link from 'next/link';
