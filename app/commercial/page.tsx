@@ -132,32 +132,13 @@ export default function CommercialPage() {
   useEffect(() => {
     if (providers.length === 0) return;
 
-    // Check OLD columns that should have data
-    const oldColumns = [
-      'business_offices',
-      'business_retail',
-      'business_restaurants',
-      'business_hotels',
-      'business_schools',
-      'business_healthcare',
-      'business_warehouses',
-      'business_landlords',
-      'service_emergency_24_7',
-      'service_free_survey',
-      'service_guarantee',
-      'service_eco_friendly',
-      'specialist_heat_treatment',
-      'specialist_pest_proofing',
-      'specialist_bird_control'
-    ];
-
-    console.log('=== ALL COLUMN NAMES ===', Object.keys(providers[0]));
-    console.log('=== OLD COLUMN COUNTS ===');
-    oldColumns.forEach(key => {
-      const count = providers.filter(p => p[key] === true).length;
-      console.log(key + ': ' + count);
+    const allKeys = Object.keys(providers[0]);
+    console.log('=== TOTAL COLUMNS RETURNED: ' + allKeys.length + ' ===');
+    console.log('=== ALL COLUMN NAMES ===');
+    allKeys.forEach(key => {
+      console.log(key);
     });
-    console.log('=== END OLD COLUMN COUNTS ===');
+    console.log('=== END COLUMN NAMES ===');
   }, [providers]);
   // END TEMPORARY DEBUG
 
