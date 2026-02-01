@@ -132,35 +132,32 @@ export default function CommercialPage() {
   useEffect(() => {
     if (providers.length === 0) return;
 
-    const filterKeys = [
-      // Sectors
-      'property_management', 'social_housing', 'hospitality', 'healthcare',
-      'education', 'retail', 'food_production', 'warehousing_logistics',
-      'offices', 'leisure_facilities',
-      // Specialist Methods
-      'heat_treatment', 'falconry_bird_control', 'detection_dogs',
-      'high_rise_rope_access', 'fumigation', 'proofing_services',
-      // Contract Options
-      'flexible_contracts', 'no_tie_in_contracts', 'retainer_services',
-      'one_off_services', 'emergency_24_7',
-      // Service Capabilities
-      'multi_site_coverage', 'national_coverage', 'unmarked_vehicles',
-      'non_disruptive_services', 'out_of_hours_services', 'same_day_service',
-      // Credentials
-      'free_surveys', 'free_quotes', 'guarantees_offered',
-      'years_established_25_plus', 'technicians_50_plus',
-      'service_areas_documented', 'insurance_details_published',
-      'eco_friendly_methods', 'humane_non_lethal_methods',
-      'peta_endorsed', 'rspca_recognized'
+    // Check OLD columns that should have data
+    const oldColumns = [
+      'business_offices',
+      'business_retail',
+      'business_restaurants',
+      'business_hotels',
+      'business_schools',
+      'business_healthcare',
+      'business_warehouses',
+      'business_landlords',
+      'service_emergency_24_7',
+      'service_free_survey',
+      'service_guarantee',
+      'service_eco_friendly',
+      'specialist_heat_treatment',
+      'specialist_pest_proofing',
+      'specialist_bird_control'
     ];
 
     console.log('=== ALL COLUMN NAMES ===', Object.keys(providers[0]));
-    console.log('=== FILTER COUNTS (Total providers: ' + providers.length + ') ===');
-    filterKeys.forEach(key => {
+    console.log('=== OLD COLUMN COUNTS ===');
+    oldColumns.forEach(key => {
       const count = providers.filter(p => p[key] === true).length;
       console.log(key + ': ' + count);
     });
-    console.log('=== END FILTER COUNTS ===');
+    console.log('=== END OLD COLUMN COUNTS ===');
   }, [providers]);
   // END TEMPORARY DEBUG
 
