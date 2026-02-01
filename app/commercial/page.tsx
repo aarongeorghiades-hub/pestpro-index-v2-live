@@ -154,6 +154,7 @@ export default function CommercialPage() {
       'peta_endorsed', 'rspca_recognized'
     ];
 
+    console.log('=== ALL COLUMN NAMES ===', Object.keys(providers[0]));
     console.log('=== FILTER COUNTS (Total providers: ' + providers.length + ') ===');
     filterKeys.forEach(key => {
       const count = providers.filter(p => p[key] === true).length;
