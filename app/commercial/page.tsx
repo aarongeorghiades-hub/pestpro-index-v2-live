@@ -128,6 +128,41 @@ export default function CommercialPage() {
     loadProviders();
   }, []);
 
+  // TEMPORARY DEBUG - REMOVE AFTER GETTING COUNTS
+  useEffect(() => {
+    if (providers.length === 0) return;
+
+    const filterKeys = [
+      // Sectors
+      'property_management', 'social_housing', 'hospitality', 'healthcare',
+      'education', 'retail', 'food_production', 'warehousing_logistics',
+      'offices', 'leisure_facilities',
+      // Specialist Methods
+      'heat_treatment', 'falconry_bird_control', 'detection_dogs',
+      'high_rise_rope_access', 'fumigation', 'proofing_services',
+      // Contract Options
+      'flexible_contracts', 'no_tie_in_contracts', 'retainer_services',
+      'one_off_services', 'emergency_24_7',
+      // Service Capabilities
+      'multi_site_coverage', 'national_coverage', 'unmarked_vehicles',
+      'non_disruptive_services', 'out_of_hours_services', 'same_day_service',
+      // Credentials
+      'free_surveys', 'free_quotes', 'guarantees_offered',
+      'years_established_25_plus', 'technicians_50_plus',
+      'service_areas_documented', 'insurance_details_published',
+      'eco_friendly_methods', 'humane_non_lethal_methods',
+      'peta_endorsed', 'rspca_recognized'
+    ];
+
+    console.log('=== FILTER COUNTS (Total providers: ' + providers.length + ') ===');
+    filterKeys.forEach(key => {
+      const count = providers.filter(p => p[key] === true).length;
+      console.log(key + ': ' + count);
+    });
+    console.log('=== END FILTER COUNTS ===');
+  }, [providers]);
+  // END TEMPORARY DEBUG
+
   // Calculate filter counts
   const calculateFilterCounts = (data: Provider[]) => {
     const counts: FilterCounts = {};
