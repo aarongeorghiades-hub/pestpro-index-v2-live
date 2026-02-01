@@ -297,11 +297,11 @@ export default function ResidentialPage() {
 
             {/* RIGHT: PRODUCTS LINK */}
             <div className="text-left">
-              <h2 className="text-4xl font-black text-gray-900 mb-6">
+              <h2 className="text-4xl font-black text-gray-900 mb-0">
                 Need DIY Products?
               </h2>
               {/* 4 Bullets */}
-              <div className="space-y-4 mb-8 flex-grow">
+              <div className="space-y-4 flex-1 flex flex-col justify-center">
                 <div className="flex items-start gap-3">
                   <span className="text-blue-600 text-xl mt-1">✓</span>
                   <p className="text-gray-700">Browse our curated selection of the most popular pest control products available today</p>
