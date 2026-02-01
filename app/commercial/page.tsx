@@ -110,8 +110,9 @@ export default function CommercialPage() {
     const loadProviders = async () => {
       try {
         const { data, error } = await supabase
-          .from('commercial_providers')
-          .select('*');
+          .from('Providers')
+          .select('*')
+          .eq('commercial', true);
 
         if (error) throw error;
 
