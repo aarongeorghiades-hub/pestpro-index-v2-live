@@ -300,11 +300,30 @@ export default function ResidentialPage() {
               <h2 className="text-4xl font-black text-gray-900 mb-6">
                 Need DIY Products?
               </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Browse our curated selection of the most popular pest control products available today, organized by pest type. Includes user ratings and direct Amazon purchase links.
-              </p>
+              {/* 4 Bullets */}
+              <div className="space-y-3 mb-8">
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 text-xl mt-1">✓</span>
+                  <p className="text-gray-700">Browse our curated selection of the most popular pest control products available today</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 text-xl mt-1">✓</span>
+                  <p className="text-gray-700">Stop trawling the internet and just hoping for the best with what you spend your money on</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 text-xl mt-1">✓</span>
+                  <p className="text-gray-700">Pick a product from our curated list organised by pest type</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-600 text-xl mt-1">✓</span>
+                  <p className="text-gray-700">We have curated the most popular products by average review score and number of ratings</p>
+                </div>
+              </div>
 
               {/* Button */}
+              <p className="text-sm text-gray-500 mb-6">
+                Organized by pest type with direct Amazon purchase links.
+              </p>
               <Link 
                 href="/products"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white text-lg font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
