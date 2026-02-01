@@ -301,7 +301,7 @@ export default function ResidentialPage() {
                 Need DIY Products?
               </h2>
               {/* 4 Bullets */}
-              <div className="space-y-3 mb-8">
+              <div className="space-y-4 mb-8 flex-grow">
                 <div className="flex items-start gap-3">
                   <span className="text-blue-600 text-xl mt-1">✓</span>
                   <p className="text-gray-700">Browse our curated selection of the most popular pest control products available today</p>
@@ -321,9 +321,6 @@ export default function ResidentialPage() {
               </div>
 
               {/* Button */}
-              <p className="text-sm text-gray-500 mb-6">
-                Organized by pest type with direct Amazon purchase links.
-              </p>
               <Link 
                 href="/products"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white text-lg font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
