@@ -1,5 +1,4 @@
 'use client';
-export const dynamic = 'force-dynamic';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -117,65 +116,16 @@ export default function ResidentialPage() {
   }, [filters, providers]);
 
   // ============================================================================
-  // FILTER DEFINITIONS
-  // ============================================================================
-
-  const pestFilters = [
-    { label: 'Mice', value: 'pest_mice' },
-    { label: 'Rats', value: 'pest_rats' },
-    { label: 'Rodents (General)', value: 'pest_rodents_general' },
-    { label: 'Bed Bugs', value: 'pest_bed_bugs' },
-    { label: 'Wasps & Hornets', value: 'pest_wasps' },
-    { label: 'Cockroaches', value: 'pest_cockroaches' },
-    { label: 'Ants', value: 'pest_ants' },
-    { label: 'Fleas', value: 'pest_fleas' },
-    { label: 'Moths', value: 'pest_moths' },
-    { label: 'Pigeons', value: 'pest_pigeons' },
-    { label: 'Birds (General)', value: 'pest_birds_general' },
-    { label: 'Squirrels', value: 'pest_squirrels' },
-    { label: 'Flies', value: 'pest_flies' },
-    { label: 'Bees', value: 'pest_bees' },
-    { label: 'Foxes', value: 'pest_foxes' },
-    { label: 'Spiders', value: 'pest_spiders' },
-    { label: 'Seagulls', value: 'pest_seagulls' },
-    { label: 'Silverfish', value: 'pest_silverfish' },
-    { label: 'Beetles', value: 'pest_beetles' },
-    { label: 'Ladybirds', value: 'pest_ladybirds' },
-  ];
-
-  const serviceFilters = [
-    { label: 'Eco-Friendly / Pet-Safe', value: 'service_eco_friendly' },
-    { label: '24/7 Emergency Service', value: 'service_emergency_24_7' },
-    { label: 'Proofing / Prevention', value: 'service_proofing' },
-    { label: 'BPCA Certified', value: 'service_bpca_certified' },
-    { label: 'Treatment Guarantee', value: 'service_guarantee' },
-    { label: 'Free Survey / Quote', value: 'service_free_survey' },
-    { label: 'Weekend Service', value: 'service_weekend' },
-  ];
-
-  const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/residential', label: 'Residential' },
-    { href: '/commercial', label: 'Commercial' },
-    { href: '/professionals', label: 'Professionals' },
-    { href: '/products', label: 'Home Products' },
-    { href: '/commercial-products', label: 'Commercial Products' },
-    { href: '#', label: 'About' },
-    { href: '#', label: 'Contact' },
-  ];
-
-  // ============================================================================
-  // HELPER FUNCTIONS
+  // FILTER HANDLERS
   // ============================================================================
 
   const handleFilterChange = (type: 'pests' | 'services', value: string) => {
-    setFilters(prev => {
-      const currentFilters = prev[type];
-      const newFilters = currentFilters.includes(value)
-        ? currentFilters.filter(f => f !== value)
-        : [...currentFilters, value];
-      return { ...prev, [type]: newFilters };
-    });
+    setFilters(prev => ({
+      ...prev,
+      [type]: prev[type].includes(value)
+        ? prev[type].filter(item => item !== value)
+        : [...prev[type], value]
+    }));
   };
 
   const clearFilters = () => {
@@ -189,6 +139,50 @@ export default function ResidentialPage() {
   // ============================================================================
   // RENDER
   // ============================================================================
+
+  const pestFilters = [
+    { value: 'pest_mice', label: 'Mice' },
+    { value: 'pest_rats', label: 'Rats' },
+    { value: 'pest_rodents_general', label: 'Rodents (General)' },
+    { value: 'pest_bed_bugs', label: 'Bed Bugs' },
+    { value: 'pest_wasps', label: 'Wasps' },
+    { value: 'pest_cockroaches', label: 'Cockroaches' },
+    { value: 'pest_ants', label: 'Ants' },
+    { value: 'pest_fleas', label: 'Fleas' },
+    { value: 'pest_moths', label: 'Moths' },
+    { value: 'pest_pigeons', label: 'Pigeons' },
+    { value: 'pest_birds_general', label: 'Birds (General)' },
+    { value: 'pest_squirrels', label: 'Squirrels' },
+    { value: 'pest_flies', label: 'Flies' },
+    { value: 'pest_bees', label: 'Bees' },
+    { value: 'pest_foxes', label: 'Foxes' },
+    { value: 'pest_spiders', label: 'Spiders' },
+    { value: 'pest_seagulls', label: 'Seagulls' },
+    { value: 'pest_silverfish', label: 'Silverfish' },
+    { value: 'pest_beetles', label: 'Beetles' },
+    { value: 'pest_ladybirds', label: 'Ladybirds' },
+  ];
+
+  const serviceFilters = [
+    { value: 'service_eco_friendly', label: 'Eco-Friendly' },
+    { value: 'service_emergency_24_7', label: 'Emergency 24/7' },
+    { value: 'service_proofing', label: 'Proofing' },
+    { value: 'service_bpca_certified', label: 'BPCA Certified' },
+    { value: 'service_guarantee', label: 'Guarantee' },
+    { value: 'service_free_survey', label: 'Free Survey' },
+    { value: 'service_weekend', label: 'Weekend Service' },
+  ];
+
+  const navItems = [
+    { href: '/', label: 'Home' },
+    { href: '/residential', label: 'Residential' },
+    { href: '/commercial', label: 'Commercial' },
+    { href: '/professionals', label: 'Professionals' },
+    { href: '/products', label: 'Home Products' },
+    { href: '/commercial-products', label: 'Commercial Products' },
+    { href: '#', label: 'About' },
+    { href: '#', label: 'Contact' },
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -238,42 +232,36 @@ export default function ResidentialPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/50 via-[#2563eb]/45 to-[#1e3a8a]/50"></div>
         </div>
-        
-        {/* CENTERED HERO CONTENT */}
-        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-          <h1 className="text-7xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9] text-white drop-shadow-[0_12px_36px_rgba(0,0,0,0.95)]">
+
+        <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4">
+          <h1 className="text-6xl font-black mb-4 max-w-3xl">
             Residential Pest Control
           </h1>
-          <p className="text-3xl md:text-4xl mb-6 font-extralight tracking-[0.15em] text-white drop-shadow-[0_8px_20px_rgba(0,0,0,0.9)]">
+          <p className="text-2xl mb-6 max-w-2xl">
             481 Verified Providers in London
           </p>
-          <p className="text-xl text-white font-semibold max-w-3xl leading-relaxed drop-shadow-[0_6px_16px_rgba(0,0,0,0.85)] opacity-95">
+          <p className="text-lg mb-8 max-w-2xl opacity-90">
             Filter by pest type and service features across our complete directory. 68% of providers have verified Google Reviews. No endorsements, no commissions—just transparent, provider-stated information.
           </p>
         </div>
       </section>
 
-      {/* PDF & PRODUCTS SECTION - SIDE BY SIDE */}
-      <section className="relative bg-gradient-to-br from-gray-50 to-white py-16 border-b-2 border-gray-200">
+      {/* DIY vs PROFESSIONAL SECTION */}
+      <section className="relative bg-gradient-to-br from-blue-50 to-white py-16 border-b-2 border-blue-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Two-Column Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
             {/* LEFT: PDF GUIDE */}
-            <div className="text-center">
-              <h2 className="text-4xl font-black text-gray-900 mb-4">
+            <div className="text-left">
+              <h2 className="text-4xl font-black text-gray-900 mb-6">
                 DIY or Professional? Make the Right Call.
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                You've got a pest problem. The question isn't "can I handle this?" — it's "SHOULD I handle this?"
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed mb-8">
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Our Residential DIY Decision Guide (£1.99) helps you decide by showing:
               </p>
 
               {/* 4 Bullets */}
-              <div className="max-w-2xl mx-auto text-left mb-8 space-y-3">
+              <div className="space-y-3 mb-8">
                 <div className="flex items-start gap-3">
                   <span className="text-blue-600 text-xl mt-1">✓</span>
                   <p className="text-gray-700">When DIY typically works (and saves you money)</p>
@@ -293,33 +281,33 @@ export default function ResidentialPage() {
               </div>
 
               {/* CTA */}
-              <div className="text-center">
-                <p className="text-sm text-gray-500 mb-4">
-                  Make an informed decision before you spend £100+ on the wrong approach.
-                </p>
-                <Link 
-                  href="https://pestproindex.lemonsqueezy.com/checkout/buy/8d8b4f4a-a913-48b3-bf8d-dfcaf6fcb5d6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white text-lg font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
-                >
-                  <span className="text-2xl">📄</span>
-                  <span>Get the Guide - £1.99</span>
-                </Link>
-              </div>
+              <p className="text-sm text-gray-500 mb-6">
+                Make an informed decision before you spend £100+ on the wrong approach.
+              </p>
+              <Link 
+                href="https://pestproindex.lemonsqueezy.com/checkout/buy/8d8b4f4a-a913-48b3-bf8d-dfcaf6fcb5d6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white text-lg font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+              >
+                <span className="text-2xl">📄</span>
+                <span>Get the Guide - £1.99</span>
+              </Link>
             </div>
 
             {/* RIGHT: PRODUCTS LINK */}
-            <div className="text-center flex flex-col justify-center bg-white rounded-2xl shadow-xl p-8 border-2 border-blue-200">
-              <h2 className="text-4xl font-black text-gray-900 mb-4">
+            <div className="text-left">
+              <h2 className="text-4xl font-black text-gray-900 mb-6">
                 Need DIY Products?
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Browse our curated selection of the most popular pest control products available today, organized by pest type. Includes user ratings and direct Amazon purchase links.
               </p>
+
+              {/* Button */}
               <Link 
                 href="/products"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white text-lg font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 mx-auto"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white text-lg font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
               >
                 View Products Page
                 <span>→</span>
@@ -366,126 +354,7 @@ export default function ResidentialPage() {
               .map(provider => (
                 <div 
                   key={provider.canonical_id} 
-                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border-2 border-amber-400"
-                >
-                  
-                  {/* Featured Badge */}
-                  <div className="inline-block px-3 py-1.5 bg-gradient-to-r from-amber-400 to-amber-500 text-amber-900 text-xs font-bold rounded-full mb-3 uppercase tracking-wide">
-                    Featured
-                  </div>
-
-                  {/* Company Name */}
-                  <h3 className="font-black text-base text-gray-900 mb-2 leading-tight line-clamp-2">
-                    {provider.name}
-                  </h3>
-
-                  {/* ADDRESS */}
-                  {provider.address && (
-                    <div className="flex items-start gap-2 mb-3 text-xs text-gray-600">
-                      <span className="text-red-500 mt-0.5">📍</span>
-                      <span className="line-clamp-2">{provider.address}</span>
-                    </div>
-                  )}
-
-                  {/* Rating */}
-                  {provider.google_rating && provider.google_rating > 0 && (
-                    <div className="flex items-center gap-1 mb-4">
-                      <span className="text-yellow-500">⭐</span>
-                      <span className="text-lg font-bold text-gray-900">
-                        {provider.google_rating.toFixed(1)}
-                      </span>
-                      {provider.google_review_count && provider.google_review_count > 0 && (
-                        <span className="text-xs text-gray-600">
-                          ({provider.google_review_count})
-                        </span>
-                      )}
-                    </div>
-                  )}
-
-                  {/* Contact Buttons */}
-                  <div className="space-y-2">
-                    {provider.phone && (
-                      <a 
-                        href={`tel:${provider.phone}`}
-                        className="block text-center px-3 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-sm font-bold rounded-lg transition-all shadow-md"
-                      >
-                        📞 {provider.phone}
-                      </a>
-                    )}
-                    {provider.website && (
-                      <a 
-                        href={provider.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-center px-3 py-2 border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 text-sm font-semibold rounded-lg transition-all"
-                      >
-                        Website
-                      </a>
-                    )}
-                  </div>
-                </div>
-              ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* PROVIDER OF THE MONTH */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-white py-16 border-b-2 border-blue-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          
-          {/* Title */}
-          <div className="mb-8">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">
-              Featured Provider Story
-            </h2>
-            <p className="text-xl text-gray-600 leading-relaxed mb-4">
-              See how London's pest control providers solve real problems.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Each month, we publish a detailed case study: the customer's challenge, the provider's approach, and the outcome. No fluff—just practical insights into what professional pest control actually looks like.
-            </p>
-            <p className="text-base text-gray-600 mt-4">
-              Whether you're dealing with mice, wasps, or commercial infestations, these stories help you understand what "good work" looks like before you spend a penny.
-            </p>
-          </div>
-
-          {/* Coming Soon Badge */}
-          <div className="inline-flex items-center gap-3 px-8 py-4 bg-gray-100 text-gray-600 text-lg font-bold rounded-xl border-2 border-gray-300">
-            <span className="text-2xl">📖</span>
-            <span>First Story Coming Soon</span>
-          </div>
-
-        </div>
-      </section>
-
-      {/* SECTION 2: TOP-RATED PROVIDERS */}
-      <section className="relative bg-gradient-to-br from-white to-gray-50 py-16 border-b-2 border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Section Title */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">
-              Top-Rated Providers
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Providers with 4.5+ star ratings and 30+ verified reviews
-            </p>
-          </div>
-
-          {/* Top 8 High-Rated Cards (4 columns) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {providers
-              .filter(p => 
-                p.google_rating && p.google_rating >= 4.5 && 
-                p.google_review_count && p.google_review_count >= 30 &&
-                !(p.google_rating >= 4.8 && p.google_review_count >= 30)
-              )
-              .slice(0, 8)
-              .map(provider => (
-                <div 
-                  key={provider.canonical_id} 
-                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border-l-4 border-[#1e3a8a]"
+                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border-l-4 border-amber-500"
                 >
                   
                   {/* Trophy */}
