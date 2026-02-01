@@ -300,7 +300,7 @@ export default function ResidentialPage() {
                 Need DIY Products?
               </h2>
               {/* 4 Bullets */}
-              <div className="space-y-4 flex-1 mb-auto">
+              <div className="flex-grow flex flex-col justify-between py-4">
                 <div className="flex items-start gap-3">
                   <span className="text-blue-600 text-xl mt-1">✓</span>
                   <p className="text-gray-700">Browse our curated selection of the most popular pest control products available today</p>
