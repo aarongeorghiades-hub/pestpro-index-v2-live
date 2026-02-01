@@ -348,11 +348,11 @@ export default function CommercialPage() {
             <p className="text-lg text-gray-600">Top-rated commercial pest control providers with verified certifications</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[...providers]
               .filter(p => p.google_review_count > 0)
               .sort((a, b) => (b.google_review_count || 0) - (a.google_review_count || 0))
-              .slice(0, 3)
+              .slice(0, 8)
               .map(provider => (
                 <div key={provider.canonical_id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all border-l-4 border-orange-500 p-6">
                   <span className="inline-block bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">FEATURED</span>
@@ -424,8 +424,25 @@ export default function CommercialPage() {
                       <span className="inline-block bg-purple-100 text-purple-800 text-xs font-bold px-2 py-0.5 rounded-full">BASIS PROMPT</span>
                     )}
                   </div>
+                  {provider.phone && (
+                    <div className="flex items-center gap-2 mb-2">
+                      <Phone size={14} className="text-blue-600" />
+                      <span className="text-sm text-gray-700">{provider.phone}</span>
+                    </div>
+                  )}
+                  {provider.email && (
+                    <div className="flex items-center gap-2 mb-2">
+                      <Mail size={14} className="text-blue-600" />
+                      <span className="text-sm text-gray-700">{provider.email}</span>
+                    </div>
+                  )}
                   {provider.website && (
-                    <Link href={provider.website} target="_blank" rel="noopener noreferrer" className="block text-center px-3 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-xs">
+                    <Link
+                      href={provider.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-center px-3 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-xs mt-3"
+                    >
                       Visit Website →
                     </Link>
                   )}
@@ -465,7 +482,7 @@ export default function CommercialPage() {
                   <p className="text-gray-700">RFP templates and checklists</p>
                 </div>
               </div>
-              <Link href="https://pestproindex.lemonsqueezy.com/checkout/buy/8d8b4f4a-a913-48b3-bf8d-dfcaf6fcb5d6" className="block text-center px-6 py-3 bg-[#1e3a8a] text-white font-bold rounded-lg hover:bg-blue-900 transition-all shadow-md">
+              <Link href="https://pestproindex.lemonsqueezy.com/checkout/buy/3c02f0c2-baa2-4237-b2ff-e5e70d77fd4b" className="block text-center px-6 py-3 bg-[#1e3a8a] text-white font-bold rounded-lg hover:bg-blue-900 transition-all shadow-md">
                 Get the Guide - £14.99
               </Link>
             </div>
@@ -491,7 +508,7 @@ export default function CommercialPage() {
                   <p className="text-gray-700">Audit preparation guide</p>
                 </div>
               </div>
-              <Link href="https://pestproindex.lemonsqueezy.com/checkout/buy/8d8b4f4a-a913-48b3-bf8d-dfcaf6fcb5d6" className="block text-center px-6 py-3 bg-[#1e3a8a] text-white font-bold rounded-lg hover:bg-blue-900 transition-all shadow-md">
+              <Link href="https://pestproindex.lemonsqueezy.com/checkout/buy/1b7d0369-1546-49b3-b8c9-88dd4db7e716" className="block text-center px-6 py-3 bg-[#1e3a8a] text-white font-bold rounded-lg hover:bg-blue-900 transition-all shadow-md">
                 Get the Workbook - £29.99
               </Link>
             </div>
