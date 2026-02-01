@@ -252,7 +252,7 @@ export default function ResidentialPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             
             {/* LEFT: PDF GUIDE */}
-            <div className="text-left">
+            <div className="text-left flex flex-col">
               <h2 className="text-4xl font-black text-gray-900 mb-6">
                 DIY or Professional? Make the Right Call.
               </h2>
@@ -296,12 +296,12 @@ export default function ResidentialPage() {
             </div>
 
             {/* RIGHT: PRODUCTS LINK */}
-            <div className="text-left">
+            <div className="text-left flex flex-col">
               <h2 className="text-4xl font-black text-gray-900 mb-0">
                 Need DIY Products?
               </h2>
               {/* 4 Bullets */}
-              <div className="space-y-4 flex-1 flex flex-col justify-center">
+              <div className="space-y-4 flex-1">
                 <div className="flex items-start gap-3">
                   <span className="text-blue-600 text-xl mt-1">✓</span>
                   <p className="text-gray-700">Browse our curated selection of the most popular pest control products available today</p>
