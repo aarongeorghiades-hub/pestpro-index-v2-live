@@ -249,10 +249,9 @@ export default function ResidentialPage() {
       {/* DIY vs PROFESSIONAL SECTION */}
       <section className="relative bg-gradient-to-br from-blue-50 to-white py-16 border-b-2 border-blue-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             {/* LEFT: PDF GUIDE */}
-            <div className="text-left flex flex-col">
+            <div className="text-left flex flex-col justify-between">
               <h2 className="text-4xl font-black text-gray-900 mb-6">
                 DIY or Professional? Make the Right Call.
               </h2>
@@ -296,7 +295,7 @@ export default function ResidentialPage() {
             </div>
 
             {/* RIGHT: PRODUCTS LINK */}
-            <div className="text-left flex flex-col">
+            <div className="text-left flex flex-col justify-between">
               <h2 className="text-4xl font-black text-gray-900 mb-0">
                 Need DIY Products?
               </h2>
@@ -323,7 +322,7 @@ export default function ResidentialPage() {
               {/* Button */}
               <Link 
                 href="/products"
-                className="mt-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white text-lg font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white text-lg font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
               >
                 View Products Page
                 <span>→</span>
