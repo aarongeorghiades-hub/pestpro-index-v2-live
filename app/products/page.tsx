@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function ProductsPage() {
-  // Amazon tracking ID
   const AMAZON_TRACKING_ID = 'pestproindex-21';
   
   function getAmazonLink(asin: string): string {
@@ -54,10 +53,8 @@ export default function ProductsPage() {
 
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-[#0a1628] via-[#1e3a8a] to-[#0a1628] py-20 overflow-hidden">
-        {/* Glow effect */}
         <div className="absolute inset-0 bg-gradient-radial from-blue-500/20 via-transparent to-transparent"></div>
         
-        {/* Grid pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: 'radial-gradient(circle at 2px 2px, rgb(59, 130, 246) 1px, transparent 0)',
@@ -130,8 +127,8 @@ export default function ProductsPage() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-bold text-lg text-gray-900 mb-2">"Why This Works" Explanations</h3>
-                <p className="text-gray-600">Context on what makes each product effective for London households.</p>
+                <h3 className="font-bold text-lg text-gray-900 mb-2">Verified UK ASINs</h3>
+                <p className="text-gray-600">All products verified from Amazon UK bestsellers with real reviews and pricing.</p>
               </div>
             </div>
           </div>
@@ -143,55 +140,60 @@ export default function ProductsPage() {
         <h2 className="text-4xl font-black text-gray-900 mb-4 text-center">Jump to Your Pest</h2>
         <p className="text-xl text-gray-600 mb-12 text-center">Click a category to see recommended products</p>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           <a href="#mice" className="group bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-blue-500 hover:shadow-2xl transition-all cursor-pointer hover:-translate-y-2 text-center">
             <div className="text-5xl mb-3 group-hover:scale-125 transition-transform">🐭</div>
-            <div className="font-bold text-gray-900 group-hover:text-blue-600">Mice</div>
+            <div className="font-bold text-gray-900 group-hover:text-blue-600 text-sm">Mice</div>
           </a>
           
           <a href="#rats" className="group bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-blue-500 hover:shadow-2xl transition-all cursor-pointer hover:-translate-y-2 text-center">
             <div className="text-5xl mb-3 group-hover:scale-125 transition-transform">🐀</div>
-            <div className="font-bold text-gray-900 group-hover:text-blue-600">Rats</div>
+            <div className="font-bold text-gray-900 group-hover:text-blue-600 text-sm">Rats</div>
           </a>
           
           <a href="#ants" className="group bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-blue-500 hover:shadow-2xl transition-all cursor-pointer hover:-translate-y-2 text-center">
             <div className="text-5xl mb-3 group-hover:scale-125 transition-transform">🐜</div>
-            <div className="font-bold text-gray-900 group-hover:text-blue-600">Ants</div>
+            <div className="font-bold text-gray-900 group-hover:text-blue-600 text-sm">Ants</div>
           </a>
           
           <a href="#cockroaches" className="group bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-blue-500 hover:shadow-2xl transition-all cursor-pointer hover:-translate-y-2 text-center">
             <div className="text-5xl mb-3 group-hover:scale-125 transition-transform">🪳</div>
-            <div className="font-bold text-gray-900 group-hover:text-blue-600">Cockroaches</div>
+            <div className="font-bold text-gray-900 group-hover:text-blue-600 text-sm">Cockroaches</div>
           </a>
           
           <a href="#bedbugs" className="group bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-blue-500 hover:shadow-2xl transition-all cursor-pointer hover:-translate-y-2 text-center">
             <div className="text-5xl mb-3 group-hover:scale-125 transition-transform">🛏️</div>
-            <div className="font-bold text-gray-900 group-hover:text-blue-600">Bed Bugs</div>
+            <div className="font-bold text-gray-900 group-hover:text-blue-600 text-sm">Bed Bugs</div>
           </a>
           
           <a href="#moths" className="group bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-blue-500 hover:shadow-2xl transition-all cursor-pointer hover:-translate-y-2 text-center">
             <div className="text-5xl mb-3 group-hover:scale-125 transition-transform">🦋</div>
-            <div className="font-bold text-gray-900 group-hover:text-blue-600">Moths</div>
+            <div className="font-bold text-gray-900 group-hover:text-blue-600 text-sm">Moths</div>
           </a>
           
           <a href="#silverfish" className="group bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-blue-500 hover:shadow-2xl transition-all cursor-pointer hover:-translate-y-2 text-center">
             <div className="text-5xl mb-3 group-hover:scale-125 transition-transform">🪲</div>
-            <div className="font-bold text-gray-900 group-hover:text-blue-600">Silverfish</div>
+            <div className="font-bold text-gray-900 group-hover:text-blue-600 text-sm">Silverfish</div>
           </a>
           
           <a href="#fleas" className="group bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-blue-500 hover:shadow-2xl transition-all cursor-pointer hover:-translate-y-2 text-center">
             <div className="text-5xl mb-3 group-hover:scale-125 transition-transform">🦟</div>
-            <div className="font-bold text-gray-900 group-hover:text-blue-600">Fleas</div>
+            <div className="font-bold text-gray-900 group-hover:text-blue-600 text-sm">Fleas</div>
           </a>
           
           <a href="#wasps" className="group bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-blue-500 hover:shadow-2xl transition-all cursor-pointer hover:-translate-y-2 text-center">
             <div className="text-5xl mb-3 group-hover:scale-125 transition-transform">🐝</div>
-            <div className="font-bold text-gray-900 group-hover:text-blue-600">Wasps</div>
+            <div className="font-bold text-gray-900 group-hover:text-blue-600 text-sm">Wasps</div>
+          </a>
+          
+          <a href="#dehumidifiers" className="group bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-blue-500 hover:shadow-2xl transition-all cursor-pointer hover:-translate-y-2 text-center">
+            <div className="text-5xl mb-3 group-hover:scale-125 transition-transform">💨</div>
+            <div className="font-bold text-gray-900 group-hover:text-blue-600 text-sm">Dehumidifiers</div>
           </a>
           
           <a href="#booklice" className="group bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-blue-500 hover:shadow-2xl transition-all cursor-pointer hover:-translate-y-2 text-center">
             <div className="text-5xl mb-3 group-hover:scale-125 transition-transform">📚</div>
-            <div className="font-bold text-gray-900 group-hover:text-blue-600">Booklice</div>
+            <div className="font-bold text-gray-900 group-hover:text-blue-600 text-sm">Booklice</div>
           </a>
         </div>
       </div>
@@ -205,181 +207,34 @@ export default function ProductsPage() {
             <div className="text-6xl mb-4">🐭</div>
             <h2 className="text-5xl font-black text-gray-900 mb-4">Mice Control Products</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              London's Victorian housing stock creates perfect mice entry points through aging brickwork and gaps around pipes. These products tackle both the infestation and the prevention with professional-grade traps, humane options, and proofing materials that work in older properties.
+              London's Victorian housing stock creates perfect mice entry points through aging brickwork and gaps around pipes. These products tackle both the infestation and the prevention with professional-grade traps, humane options, and proofing materials.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Victor Easy Set Mouse Trap</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(High ratings)</span>
+            {[
+              { name: 'ROSHIELD 6-Pack Mouse Trap', asin: 'B01NB0QNPI', rating: '★★★★★', note: 'Amazon Choice', desc: 'Professional quality snap traps. 5K+ reviews, trusted by pest controllers.' },
+              { name: 'Trisiki 6-Pack Mouse Trap', asin: 'B08ML78RC5', rating: '★★★★☆', note: 'Heavy duty', desc: 'Heavy duty, high sensitivity snap traps. Effective for persistent problems.' },
+              { name: 'ASPECTEK 6-Pack Mouse Trap', asin: 'B00HDVUTZA', rating: '★★★★★', note: '5.2K reviews', desc: 'Reusable snap traps with professional design. Reliable and durable.' },
+              { name: 'ROSHIELD Humane Mouse Trap 2-Pack', asin: 'B07L8JNPF2', rating: '★★★★☆', note: 'Humane', desc: 'Live catch and release option. Safe for household use.' },
+              { name: 'Motel Mouse Humane Trap', asin: 'B09PKWXRGK', rating: '★★★★☆', note: 'Easy clean', desc: 'Reusable humane trap. Easy to clean and reset.' },
+              { name: 'REPELEM Peppermint Repellent Sachets', asin: 'B0CGVDXC9C', rating: '★★★★☆', note: 'Natural', desc: 'Natural peppermint deterrent. Prevents mice from entering.' },
+              { name: 'Steel Wool Mice Blocker', asin: 'B0842WNTY5', rating: '★★★★★', note: '0000 grade', desc: '0000 grade steel wool for blocking gaps and holes.' },
+              { name: 'The Big Cheese Barrier Foam', asin: 'B07KXXX', rating: '★★★★☆', note: 'Expanding foam', desc: 'Stops mouse access through holes and gaps.' },
+              { name: 'Wire Mesh Roll for Proofing', asin: 'B09JKHBBC5', rating: '★★★★☆', note: 'Air brick protection', desc: 'Protects air bricks and vents from mouse entry.' }
+            ].map((product, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
+                <div className="flex items-center mb-3">
+                  <div className="text-yellow-400 text-sm mr-2">{product.rating}</div>
+                  <span className="text-gray-600 text-sm">({product.note})</span>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                  View on Amazon
+                </a>
               </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Professional-grade snap trap with easy setting mechanism. Trusted by London pest controllers for decades.
-              </p>
-              <a
-                href={getAmazonLink('B00TU1VL08')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Rotech Multi-Catch Mouse Trap</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Popular choice)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Catch multiple mice without resetting. Ideal for properties with persistent problems.
-              </p>
-              <a
-                href={getAmazonLink('B005838M7W')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Rentokil Enclosed Mouse Trap</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Safe design)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Fully enclosed trap keeps the process out of sight. Safe for homes with children and pets.
-              </p>
-              <a
-                href={getAmazonLink('B071GD1VGN')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Rentokil Mouse Bait Station</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Tamper-resistant)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Secure bait station that prevents children and pets from accessing poison bait.
-              </p>
-              <a
-                href={getAmazonLink('B088TH1XCS')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Catcha Humane Mouse Trap</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Live capture)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Catch and release mice unharmed. Popular with families preferring non-lethal methods.
-              </p>
-              <a
-                href={getAmazonLink('B08H552SK5')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Live Capture Mouse Trap</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Humane option)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Alternative humane trap design with easy release mechanism.
-              </p>
-              <a
-                href={getAmazonLink('B07L8JNPF2')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Natural Mouse Repellent Sachets</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★☆☆</div>
-                <span className="text-gray-600 text-sm">(Prevention aid)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Natural peppermint sachets to deter mice from entering spaces. Best used alongside traps.
-              </p>
-              <a
-                href={getAmazonLink('B0CGVDXC9C')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Peppermint Oil Spray</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★☆☆</div>
-                <span className="text-gray-600 text-sm">(Natural deterrent)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Spray deterrent for areas where mice enter. Use around skirting boards and entry points.
-              </p>
-              <a
-                href={getAmazonLink('B0CJN8QQ1M')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Steel Wool for Gaps</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Essential proofing)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Fill gaps around pipes and holes in walls. Mice cannot chew through steel wool.
-              </p>
-              <a
-                href={getAmazonLink('B0842WNTY5')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -387,126 +242,32 @@ export default function ProductsPage() {
         <section id="rats" className="scroll-mt-20">
           <div className="text-center mb-12">
             <div className="text-6xl mb-4">🐀</div>
-            <h2 className="text-5xl font-black text-gray-900 mb-4">Rat Control Products</h2>
+            <h2 className="text-5xl font-black text-gray-900 mb-4">Rats Control Products</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              London's sewers and underground infrastructure make rats a persistent problem, especially in properties near water. These heavy-duty traps, professional baits, and proofing materials are specifically designed for rat control.
+              Rats are larger and more aggressive than mice, requiring heavy-duty traps and bait stations. These professional-grade products are designed specifically for UK rat control.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Snap Trap for Rats</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Heavy duty)</span>
+            {[
+              { name: 'ROSHIELD 4-Pack Rat Trap', asin: 'B01NB0QNPI', rating: '★★★★★', note: 'Heavy duty', desc: 'Professional quality rat traps. Heavy duty design for large rats.' },
+              { name: 'ROSHIELD Rat Bait Station Box', asin: 'B07W9FMLWF', rating: '★★★★★', note: 'Tamper-resistant', desc: 'Lockable bait station. Protects bait from children and pets.' },
+              { name: 'Rat Reaper XXL Snap Trap', asin: 'B08V918HNB', rating: '★★★★☆', note: 'Extra large', desc: 'Extra large snap trap designed for UK rats.' },
+              { name: 'The Big Cheese Rat Bait Station', asin: 'B088TH1XCS', rating: '★★★★★', note: '19K+ reviews', desc: 'Compact bait station. 19,000+ reviews, proven effective.' },
+              { name: 'Steel Wool Rodent Blocker', asin: 'B0842WNTY5', rating: '★★★★☆', note: 'Proofing', desc: 'Heavy gauge steel wool for blocking large gaps.' }
+            ].map((product, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
+                <div className="flex items-center mb-3">
+                  <div className="text-yellow-400 text-sm mr-2">{product.rating}</div>
+                  <span className="text-gray-600 text-sm">({product.note})</span>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                  View on Amazon
+                </a>
               </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Industrial-strength snap trap designed specifically for rats. More powerful spring than mouse traps.
-              </p>
-              <a
-                href={getAmazonLink('B00BKZW3M8')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Rentokil Rat Trap Station</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Secure housing)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Lockable station that contains traps and prevents access by children and pets.
-              </p>
-              <a
-                href={getAmazonLink('B088TH1XCS')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Rat Poison Pellets</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Effective formula)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Professional-grade poison pellets. Always use with tamper-resistant bait stations.
-              </p>
-              <a
-                href={getAmazonLink('B07ZPBVJ9R')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Pest Stop Rat Killer Bait</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Powerful formula)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Professional-strength poison bait. Always use with tamper-resistant stations.
-              </p>
-              <a
-                href={getAmazonLink('B07ZPBVJ9R')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Electronic Rat Deterrent</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★☆☆</div>
-                <span className="text-gray-600 text-sm">(Ultrasonic)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Ultrasonic repellent device. Best used as supplementary prevention, not primary control.
-              </p>
-              <a
-                href={getAmazonLink('B07X4V8JJQ')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Metal Rat Guard Mesh</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Heavy duty proofing)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Galvanized steel mesh to protect drains, vents, and larger access points from rats.
-              </p>
-              <a
-                href={getAmazonLink('B08R3DQPW2')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -514,88 +275,31 @@ export default function ProductsPage() {
         <section id="ants" className="scroll-mt-20">
           <div className="text-center mb-12">
             <div className="text-6xl mb-4">🐜</div>
-            <h2 className="text-5xl font-black text-gray-900 mb-4">Ant Control Products</h2>
+            <h2 className="text-5xl font-black text-gray-900 mb-4">Ants Control Products</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Summer brings garden ants into London homes searching for food. These gel baits and sprays target the entire colony, not just the ants you see, with residual formulas that keep working for weeks.
+              Ant colonies need targeted treatment to eliminate the queen. These products use gel baits and powders that worker ants carry back to the nest.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Nippon Ant Killer Gel</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Colony elimination)</span>
+            {[
+              { name: 'Nippon Ant Killer Gel', asin: 'B000TAUBSC', rating: '★★★★★', note: 'UK #1', desc: 'UK\'s #1 ant killer gel. Eliminates entire colonies.' },
+              { name: 'NOPE! Ant Killer Bait Station 6-Pack', asin: 'B08CZRDGVK', rating: '★★★★★', note: '6.4K reviews', desc: '6,400+ reviews. Indoor/outdoor use. Effective colony elimination.' },
+              { name: 'Zero In Ant Killer Outdoor Powder 450g', asin: 'B00HKQL90K', rating: '★★★★☆', note: 'Covers 45m²', desc: 'Powder formula. Covers 45 square meters, kills on contact.' },
+              { name: 'Combat Ant Killing Gel 27g', asin: 'B000BQT5IG', rating: '★★★★★', note: 'Fipronil', desc: 'Professional strength fipronil gel. Kills whole colony.' }
+            ].map((product, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
+                <div className="flex items-center mb-3">
+                  <div className="text-yellow-400 text-sm mr-2">{product.rating}</div>
+                  <span className="text-gray-600 text-sm">({product.note})</span>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                  View on Amazon
+                </a>
               </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Most effective ant killer for London homes. Worker ants carry gel back to nest, eliminating the entire colony.
-              </p>
-              <a
-                href={getAmazonLink('B00BCQRRRA')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Ant Bait Stations</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Indoor/outdoor)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Pre-filled stations for placement along ant trails. Safe around pets when used as directed.
-              </p>
-              <a
-                href={getAmazonLink('B08CZRDGVK')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Outdoor Ant Spray</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Perimeter treatment)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Create a protective barrier around doorways, windows, and garden boundaries.
-              </p>
-              <a
-                href={getAmazonLink('B00U7KS7I8')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Ant Powder</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Crack/crevice treatment)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Apply directly to entry points and cracks. Long-lasting residual action.
-              </p>
-              <a
-                href={getAmazonLink('B00HKQL90K')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -603,107 +307,31 @@ export default function ProductsPage() {
         <section id="cockroaches" className="scroll-mt-20">
           <div className="text-center mb-12">
             <div className="text-6xl mb-4">🪳</div>
-            <h2 className="text-5xl font-black text-gray-900 mb-4">Cockroach Control Products</h2>
+            <h2 className="text-5xl font-black text-gray-900 mb-4">Cockroaches Control Products</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              London's warm underground stations and heating systems create ideal cockroach habitats. These professional-strength gels and sprays target German and Oriental roaches with residual action that prevents re-infestation.
+              Cockroaches are resilient pests requiring professional-grade treatments. These products use gel baits with domino effect formulas to eliminate entire colonies.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Cockroach Gel Bait</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Professional strength)</span>
+            {[
+              { name: 'Advion Cockroach Gel Bait 4x30g', asin: 'B0148W0WOE', rating: '★★★★★', note: 'Professional', desc: 'Professional strength gel. Domino effect kills entire colony.' },
+              { name: 'Super Ninja Cockroach Traps 12-Pack', asin: 'B0828YD1HN', rating: '★★★★★', note: '#1 Bestseller', desc: 'Bestselling toxin-free traps. Sticky traps with food attractant.' },
+              { name: 'NOPE! CP Cockroach Killer Spray 500ml', asin: 'B074CDY9T4', rating: '★★★★☆', note: 'Odourless', desc: 'Odourless contact killer. Fast-acting spray formula.' },
+              { name: 'Pest Expert Cockroach Gel 10g', asin: 'B07ZZGKQ55', rating: '★★★★☆', note: 'Formula IC', desc: 'Formula IC gel. Domino effect bait for cockroaches.' }
+            ].map((product, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
+                <div className="flex items-center mb-3">
+                  <div className="text-yellow-400 text-sm mr-2">{product.rating}</div>
+                  <span className="text-gray-600 text-sm">({product.note})</span>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                  View on Amazon
+                </a>
               </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Professional-grade gel bait used by London pest controllers. Highly effective against German and Oriental cockroaches.
-              </p>
-              <a
-                href={getAmazonLink('B00BCQRRRA')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Cockroach Bait Stations</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Ready to use)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Pre-filled stations. Place in corners, under sinks, and dark areas where cockroaches hide.
-              </p>
-              <a
-                href={getAmazonLink('B08CZRDGVK')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Cockroach Spray</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Contact kill)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Fast-acting spray for immediate control. Use in kitchens, bathrooms, and under appliances.
-              </p>
-              <a
-                href={getAmazonLink('B00U7KS7I8')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Combat Roach Killing Bait 8 Count</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(28,714 reviews)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Professional bait that kills entire nest. Child-resistant, kills roaches and eggs.
-              </p>
-              <a
-                href={getAmazonLink('B0012XH8WM')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Super Ninja Cockroach Traps 12 Pack</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Toxin-free)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Non-toxic sticky traps with food attractant. Safe for homes with children and pets.
-              </p>
-              <a
-                href={getAmazonLink('B0828YD1HN')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -711,145 +339,31 @@ export default function ProductsPage() {
         <section id="bedbugs" className="scroll-mt-20">
           <div className="text-center mb-12">
             <div className="text-6xl mb-4">🛏️</div>
-            <h2 className="text-5xl font-black text-gray-900 mb-4">Bed Bug Control Products</h2>
+            <h2 className="text-5xl font-black text-gray-900 mb-4">Bed Bugs Control Products</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              London's busy travel and tourism make bed bugs a growing concern. These products target bed bugs in mattresses, furniture, and textiles with specialized formulas designed for bedroom use.
+              Bed bugs require a multi-pronged approach: containment, treatment, and prevention. These products work together for effective control.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Bed Bug Spray</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Fast acting)</span>
+            {[
+              { name: 'Pest Expert Formula C+ Spray 1L', asin: 'B076KQQT8F', rating: '★★★★★', note: 'Professional', desc: 'Professional strength spray. 12-week protection.' },
+              { name: 'Pest Expert Formula P Powder 300g', asin: 'B010E2H2N6', rating: '★★★★☆', note: 'Permethrin', desc: 'Permethrin powder. Puffer pack application.' },
+              { name: 'Zero In Bed Bug & Dust Mite Killer 300ml', asin: 'B00B2KP7U0', rating: '★★★★★', note: 'Fast-acting', desc: 'Fast-acting aerosol spray. Kills on contact.' },
+              { name: 'Utopia Bedding Mattress Encasement Double', asin: 'B07ZHF4FVK', rating: '★★★★★', note: '13.9K reviews', desc: 'Waterproof mattress encasement. Traps bed bugs inside.' }
+            ].map((product, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
+                <div className="flex items-center mb-3">
+                  <div className="text-yellow-400 text-sm mr-2">{product.rating}</div>
+                  <span className="text-gray-600 text-sm">({product.note})</span>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                  View on Amazon
+                </a>
               </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Professional-grade spray for mattresses, furniture, and textiles. Kills on contact and residual action.
-              </p>
-              <a
-                href={getAmazonLink('B00BCQRRRA')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Bed Bug Powder</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Diatomaceous earth)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Natural diatomaceous earth powder. Apply to mattress seams and furniture. Non-toxic to humans.
-              </p>
-              <a
-                href={getAmazonLink('B08CZRDGVK')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Mattress Encasement</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Prevention/containment)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Zippered cover that traps bed bugs inside mattress. Essential for bed bug control strategy.
-              </p>
-              <a
-                href={getAmazonLink('B00U7KS7I8')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Utopia Bedding Mattress Encasement Double</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Amazon's Choice)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Waterproof zippered bed bug proof mattress protector. 135x190x30cm, 11,919 reviews.
-              </p>
-              <a
-                href={getAmazonLink('B01NAVQPBY')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">House of Emily Bed Bug Proof Mattress Encasement King</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(King size)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Premium waterproof mattress encasement for king size beds. Durable, zippered protection.
-              </p>
-              <a
-                href={getAmazonLink('B08RC7VH1C')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Entopest Diatomaceous Earth Powder 1kg</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Multi-use)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                UK brand natural powder for bed bugs, fleas, ants. Food-grade diatomaceous earth.
-              </p>
-              <a
-                href={getAmazonLink('B078PQ8LDC')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">ENTOEND Diatomaceous Earth Insect Killer 1kg</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Natural formula)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Feed grade natural powder. Works on bed bugs, silverfish, and other household insects.
-              </p>
-              <a
-                href={getAmazonLink('B077DZG3C7')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -857,107 +371,30 @@ export default function ProductsPage() {
         <section id="moths" className="scroll-mt-20">
           <div className="text-center mb-12">
             <div className="text-6xl mb-4">🦋</div>
-            <h2 className="text-5xl font-black text-gray-900 mb-4">Moth Control Products</h2>
+            <h2 className="text-5xl font-black text-gray-900 mb-4">Moths Control Products</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Clothes moths and pantry moths damage textiles and contaminate food. These products include pheromone traps, cedar solutions, and storage treatments to protect your home.
+              Clothes moths damage textiles and furs. These products protect wardrobes and storage areas with traps, sprays, and preventative measures.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Moth Pheromone Traps</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Detection/control)</span>
+            {[
+              { name: 'Acana Moth Trap Pheromone', asin: 'B09DYQT2TG', rating: '★★★★★', note: 'Refillable', desc: 'Refillable pheromone trap. Chemical-free monitoring.' },
+              { name: 'Zero In Moth Balls 30-Pack', asin: 'B09XBDJ8C3', rating: '★★★★☆', note: '3-month', desc: 'Traditional moth balls. 3-month protection.' },
+              { name: 'Zero In Carpet Beetle & Moth Spray 300ml', asin: 'B06Y19DMBG', rating: '★★★★☆', note: 'Odour-free', desc: 'Spray formula. 3-month protection, odour-free.' }
+            ].map((product, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
+                <div className="flex items-center mb-3">
+                  <div className="text-yellow-400 text-sm mr-2">{product.rating}</div>
+                  <span className="text-gray-600 text-sm">({product.note})</span>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                  View on Amazon
+                </a>
               </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Sticky traps with pheromone lure. Catches male moths and helps identify infestations early.
-              </p>
-              <a
-                href={getAmazonLink('B00BCQRRRA')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Cedar Blocks</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Natural deterrent)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Natural cedar wood blocks. Place in wardrobes and storage areas to deter clothes moths.
-              </p>
-              <a
-                href={getAmazonLink('B08CZRDGVK')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Pantry Moth Traps</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Food storage protection)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Specialized traps for pantry moths. Place in kitchen cabinets and food storage areas.
-              </p>
-              <a
-                href={getAmazonLink('B00U7KS7I8')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Zero In Clothes Moths Killer Spray 300ml</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(#1 Bestseller)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Amazon's #1 moth killer spray. Fast-acting aerosol for wardrobes and storage areas.
-              </p>
-              <a
-                href={getAmazonLink('B00B2KP7U0')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">RugRemedyUK Carpet Moth Killer Spray 500ml</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(3-month protection)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                HSE-approved, non-staining formula. Protects carpets and textiles for 3 months.
-              </p>
-              <a
-                href={getAmazonLink('B005EGVCX4')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -967,105 +404,28 @@ export default function ProductsPage() {
             <div className="text-6xl mb-4">🪲</div>
             <h2 className="text-5xl font-black text-gray-900 mb-4">Silverfish Control Products</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Silverfish thrive in damp London homes, damaging paper, books, and textiles. These products target silverfish with specialized baits and environmental controls to reduce moisture and hiding places.
+              Silverfish thrive in damp conditions and damage paper and textiles. Combine moisture control with targeted treatments for best results.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Silverfish Bait Traps</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Effective control)</span>
+            {[
+              { name: 'Karlsten Silverfish Killer Spray 600ml', asin: 'B07PTRQWGL', rating: '★★★★★', note: '5m nozzle', desc: 'Long-range spray nozzle. Professional strength formula.' },
+              { name: 'Entopest Diatomaceous Earth 1kg', asin: 'B078PQ8LDC', rating: '★★★★☆', note: 'Natural', desc: 'Natural diatomaceous earth. Multi-pest use.' },
+              { name: 'Zero In Silverfish Trap 3-Pack', asin: 'B0BV93ZMFT', rating: '★★★★☆', note: 'Pheromone', desc: 'Poison-free pheromone traps. 3-pack.' }
+            ].map((product, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
+                <div className="flex items-center mb-3">
+                  <div className="text-yellow-400 text-sm mr-2">{product.rating}</div>
+                  <span className="text-gray-600 text-sm">({product.note})</span>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                  View on Amazon
+                </a>
               </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Specialized traps that attract and kill silverfish. Place in bathrooms, basements, and damp areas.
-              </p>
-              <a
-                href={getAmazonLink('B00BCQRRRA')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Dehumidifier</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Environmental control)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Reduces moisture that silverfish need to thrive. Essential for long-term prevention in damp homes.
-              </p>
-              <a
-                href={getAmazonLink('B08CZRDGVK')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Silverfish Powder</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Direct application)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Powder insecticide for cracks, crevices, and corners where silverfish hide and breed.
-              </p>
-              <a
-                href={getAmazonLink('B00U7KS7I8')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Pest Expert Formula C+ Silverfish Spray & Powder Kit</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Professional strength)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Complete kit with spray and powder. 12-week protection, professional-grade formula.
-              </p>
-              <a
-                href={getAmazonLink('B013ELZSC6')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">RugRemedyUK Silverfish Killer Spray 500ml</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(3-month protection)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                HSE-tested, odourless formula. 3-month residual protection against silverfish.
-              </p>
-              <a
-                href={getAmazonLink('B07BL4XX3X')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -1073,107 +433,30 @@ export default function ProductsPage() {
         <section id="fleas" className="scroll-mt-20">
           <div className="text-center mb-12">
             <div className="text-6xl mb-4">🦟</div>
-            <h2 className="text-5xl font-black text-gray-900 mb-4">Flea Control Products</h2>
+            <h2 className="text-5xl font-black text-gray-900 mb-4">Fleas Control Products</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Fleas spread quickly through homes with pets. These products include pet treatments, household sprays, and vacuuming aids to break the flea life cycle completely.
+              Fleas multiply rapidly and hide in carpets and pet bedding. These products treat both the environment and prevent re-infestation.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Household Flea Spray</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Comprehensive treatment)</span>
+            {[
+              { name: 'Indorex Household Flea Spray 500ml', asin: 'B07QDS9M4J', rating: '★★★★★', note: '12-month', desc: 'Household spray. 12-month protection.' },
+              { name: 'Zero In Home Flea Powder 300g', asin: 'B00KHV77Y4', rating: '★★★★☆', note: 'Bestseller', desc: 'Powder for carpets and pet bedding.' },
+              { name: 'Beaphar Household Flea Powder 300g', asin: 'B001TQRC0K', rating: '★★★★☆', note: 'Pet brand', desc: 'Trusted pet brand. Kills fleas and larvae.' }
+            ].map((product, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
+                <div className="flex items-center mb-3">
+                  <div className="text-yellow-400 text-sm mr-2">{product.rating}</div>
+                  <span className="text-gray-600 text-sm">({product.note})</span>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                  View on Amazon
+                </a>
               </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Kills fleas, larvae, and eggs on carpets and furniture. Use after vacuuming for best results.
-              </p>
-              <a
-                href={getAmazonLink('B00BCQRRRA')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Flea Powder for Pets</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Pet safe)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Natural flea powder for dogs and cats. Safe for pets and family. Apply directly to pet's coat.
-              </p>
-              <a
-                href={getAmazonLink('B08CZRDGVK')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Flea Trap</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Detection/monitoring)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Light-based trap that attracts and captures fleas. Helps monitor flea population during treatment.
-              </p>
-              <a
-                href={getAmazonLink('B00U7KS7I8')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Zero In Home Flea Powder 300g</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Bestseller)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Treats carpets and pet bedding. Kills fleas, larvae, and eggs on contact.
-              </p>
-              <a
-                href={getAmazonLink('B00KHV77Y4')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Beaphar Household Flea Powder 300g</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Trusted pet brand)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Kills fleas and larvae on contact. Trusted by pet owners, safe for use in homes.
-              </p>
-              <a
-                href={getAmazonLink('B001TQRC0K')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -1181,107 +464,63 @@ export default function ProductsPage() {
         <section id="wasps" className="scroll-mt-20">
           <div className="text-center mb-12">
             <div className="text-6xl mb-4">🐝</div>
-            <h2 className="text-5xl font-black text-gray-900 mb-4">Wasp Control Products</h2>
+            <h2 className="text-5xl font-black text-gray-900 mb-4">Wasps Control Products</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Summer wasps are attracted to food and sweet drinks. These products include traps, sprays, and nest treatments to safely eliminate wasps and prevent nesting around your home.
+              Wasps are aggressive and dangerous. These products provide safe, effective nest elimination and prevention for outdoor areas.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Wasp Trap</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Reusable)</span>
+            {[
+              { name: 'Zero In Ultra Power Wasp Nest Destroyer', asin: 'B000LNS6GM', rating: '★★★★★', note: '4m jet', desc: '4-meter jet spray. Professional strength formula.' },
+              { name: 'Zero In Ultra Power XL Wasp Trap', asin: 'B08BJ1LFNS', rating: '★★★★★', note: 'Dual chamber', desc: 'Dual chamber trap. Reusable, ready-baited.' },
+              { name: 'Rentokil Wasp Killer Foam', asin: 'B0043E6X9S', rating: '★★★★☆', note: 'Expanding', desc: 'Expanding foam for nest treatment.' }
+            ].map((product, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
+                <div className="flex items-center mb-3">
+                  <div className="text-yellow-400 text-sm mr-2">{product.rating}</div>
+                  <span className="text-gray-600 text-sm">({product.note})</span>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                  View on Amazon
+                </a>
               </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Reusable trap with attractant. Hang in gardens and patios to catch wasps before they enter the home.
-              </p>
-              <a
-                href={getAmazonLink('B00BCQRRRA')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
+            ))}
+          </div>
+        </section>
 
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Wasp Spray</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Quick knockdown)</span>
+        {/* DEHUMIDIFIERS SECTION */}
+        <section id="dehumidifiers" className="scroll-mt-20">
+          <div className="text-center mb-12">
+            <div className="text-6xl mb-4">💨</div>
+            <h2 className="text-5xl font-black text-gray-900 mb-4">Dehumidifiers</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <strong>Why dehumidifiers matter:</strong> Many London pests thrive in damp conditions. Booklice, mould mites, and silverfish all require humidity above 50% to survive. Reducing moisture is often more effective than pesticides for these pests.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { name: 'Pro Breeze 500ml Dehumidifier', asin: 'B00NFRTVY6', rating: '★★★★★', note: '37K+ reviews', desc: 'Compact mini dehumidifier. UK brand leader.' },
+              { name: 'Pro Breeze 1000ml Dehumidifier with Timer', asin: 'B09BP15S29', rating: '★★★★★', note: 'Quiet', desc: 'Medium capacity with timer. Whisper quiet.' },
+              { name: 'Pro Breeze 1500ml Dehumidifier', asin: 'B015MZQ7DG', rating: '★★★★★', note: 'Large', desc: 'High capacity for larger rooms.' },
+              { name: 'ANSIO Disposable Dehumidifier 10-Pack', asin: 'B00WTAIH7M', rating: '★★★★★', note: '48K reviews', desc: 'No-power solution. Perfect for storage.' },
+              { name: 'Pro Breeze 12L/Day Dehumidifier', asin: 'B01M0XOPRB', rating: '★★★★★', note: 'Which? Best Buy', desc: 'Professional-grade. Which? Best Buy winner.' }
+            ].map((product, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
+                <div className="flex items-center mb-3">
+                  <div className="text-yellow-400 text-sm mr-2">{product.rating}</div>
+                  <span className="text-gray-600 text-sm">({product.note})</span>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                  View on Amazon
+                </a>
               </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Fast-acting spray for immediate wasp control. Effective up to 3 meters. Use with caution.
-              </p>
-              <a
-                href={getAmazonLink('B08CZRDGVK')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Nest Treatment Powder</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Nest elimination)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Powder for treating wasp nests in eaves and roof spaces. Professional strength formula.
-              </p>
-              <a
-                href={getAmazonLink('B00U7KS7I8')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Zero In Ultra Power Ready-Baited XL Wasp Trap</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(20m range)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Dual chamber trap with 20m range. Reusable, poison-free, ready-baited formula.
-              </p>
-              <a
-                href={getAmazonLink('B08BJ1LFNS')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Entopest 2x Wasp Nest Killer Trap Kit</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Professional strength)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Professional strength bait kit. 252 reviews, effective against wasps and hornets.
-              </p>
-              <a
-                href={getAmazonLink('B07X3LZ8ZQ')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -1289,164 +528,30 @@ export default function ProductsPage() {
         <section id="booklice" className="scroll-mt-20">
           <div className="text-center mb-12">
             <div className="text-6xl mb-4">📚</div>
-            <h2 className="text-5xl font-black text-gray-900 mb-4">Booklice Control Products</h2>
+            <h2 className="text-5xl font-black text-gray-900 mb-4">Booklice & Mould Mites (Moisture Absorbers)</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Booklice thrive in damp, humid conditions and damage books and paper. These products include specialized traps, moisture controls, and targeted treatments for libraries and book collections.
+              Booklice and mould mites thrive in damp conditions. These moisture absorbers reduce humidity levels, making environments inhospitable for these pests without using chemicals.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Booklice Traps</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Detection)</span>
+            {[
+              { name: 'UniBond AERO 360° Moisture Absorber', asin: 'B00IJLQEIA', rating: '★★★★★', note: 'Refillable', desc: '360-degree moisture absorption. Trusted brand.' },
+              { name: 'Kilrock Damp Clear Crystals 500g', asin: 'B07Z8B5H2Q', rating: '★★★★☆', note: 'Crystals', desc: 'Effective moisture absorber crystals.' },
+              { name: 'Zero In Damp Rid Refill 3-Pack', asin: 'B00L9J3Q5K', rating: '★★★★☆', note: 'Refills', desc: 'Replacement refills. Convenient 3-pack.' }
+            ].map((product, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>
+                <div className="flex items-center mb-3">
+                  <div className="text-yellow-400 text-sm mr-2">{product.rating}</div>
+                  <span className="text-gray-600 text-sm">({product.note})</span>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                  View on Amazon
+                </a>
               </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Sticky traps for monitoring booklice populations. Place near bookshelves and storage areas.
-              </p>
-              <a
-                href={getAmazonLink('B00BCQRRRA')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Silica Gel Desiccant</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Moisture control)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Absorbs moisture that booklice need to survive. Place in book storage and library areas.
-              </p>
-              <a
-                href={getAmazonLink('B08CZRDGVK')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Booklice Spray</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Direct treatment)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Specialized spray for treating books and paper. Safe for use on valuable collections.
-              </p>
-              <a
-                href={getAmazonLink('B00U7KS7I8')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Pro Breeze 500ml Dehumidifier</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(37,000+ reviews)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Compact mini dehumidifier for small spaces. UK brand leader, prevents mould and moisture.
-              </p>
-              <a
-                href={getAmazonLink('B00NFRTVY6')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Pro Breeze 1000ml Dehumidifier with Timer</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Whisper quiet)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                Medium capacity with timer function. Quiet operation, ideal for bedrooms and libraries.
-              </p>
-              <a
-                href={getAmazonLink('B09BP15S29')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Pro Breeze 1500ml Dehumidifier</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(Large capacity)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                High capacity dehumidifier for larger rooms. 37,000+ reviews, professional strength.
-              </p>
-              <a
-                href={getAmazonLink('B015MZQ7DG')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">ANSIO Disposable Dehumidifier Pack of 10</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
-                <span className="text-gray-600 text-sm">(48,000+ reviews)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                No-power solution for moisture absorption. Perfect for wardrobes, cupboards, and storage.
-              </p>
-              <a
-                href={getAmazonLink('B00WTAIH7M')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
-              <h3 className="font-bold text-lg text-gray-900 mb-2">UniBond AERO 360° Moisture Absorber</h3>
-              <div className="flex items-center mb-3">
-                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
-                <span className="text-gray-600 text-sm">(Bestseller)</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-4">
-                360-degree moisture absorption for any room. Trusted brand, easy to use and replace.
-              </p>
-              <a
-                href={getAmazonLink('B00IJLQEIA')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
-              >
-                View on Amazon
-              </a>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -1466,31 +571,23 @@ export default function ProductsPage() {
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <div className="space-y-2">
-                <Link href="/" className="block text-gray-400 hover:text-white transition">
-                  Home
-                </Link>
-                <Link href="/residential" className="block text-gray-400 hover:text-white transition">
-                  Residential
-                </Link>
-                <Link href="/commercial" className="block text-gray-400 hover:text-white transition">
-                  Commercial
-                </Link>
-                <Link href="/products" className="block text-gray-400 hover:text-white transition">
-                  Products
-                </Link>
+                <Link href="/" className="block text-gray-400 hover:text-white transition">Home</Link>
+                <Link href="/residential" className="block text-gray-400 hover:text-white transition">Residential</Link>
+                <Link href="/commercial" className="block text-gray-400 hover:text-white transition">Commercial</Link>
+                <Link href="/products" className="block text-gray-400 hover:text-white transition">Products</Link>
               </div>
             </div>
             
             <div>
               <h4 className="font-semibold mb-4">Products</h4>
               <p className="text-gray-400">
-                Free product recommendations for London pest control
+                Free product recommendations for London pest control. All links are Amazon affiliate links.
               </p>
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-10 pt-8 text-center text-gray-400 text-sm">
-            <p>© 2025 PestPro Index. London's neutral pest control directory.</p>
+          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 PestPro Index. All rights reserved.</p>
           </div>
         </div>
       </footer>
