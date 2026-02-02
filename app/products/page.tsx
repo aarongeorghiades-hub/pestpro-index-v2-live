@@ -666,6 +666,44 @@ export default function ProductsPage() {
                 View on Amazon
               </a>
             </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Combat Roach Killing Bait 8 Count</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
+                <span className="text-gray-600 text-sm">(28,714 reviews)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                Professional bait that kills entire nest. Child-resistant, kills roaches and eggs.
+              </p>
+              <a
+                href={getAmazonLink('B0012XH8WM')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Super Ninja Cockroach Traps 12 Pack</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
+                <span className="text-gray-600 text-sm">(Toxin-free)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                Non-toxic sticky traps with food attractant. Safe for homes with children and pets.
+              </p>
+              <a
+                href={getAmazonLink('B0828YD1HN')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
           </div>
         </section>
 
@@ -729,6 +767,82 @@ export default function ProductsPage() {
               </p>
               <a
                 href={getAmazonLink('B00U7KS7I8')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Utopia Bedding Mattress Encasement Double</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
+                <span className="text-gray-600 text-sm">(Amazon's Choice)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                Waterproof zippered bed bug proof mattress protector. 135x190x30cm, 11,919 reviews.
+              </p>
+              <a
+                href={getAmazonLink('B01NAVQPBY')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">House of Emily Bed Bug Proof Mattress Encasement King</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
+                <span className="text-gray-600 text-sm">(King size)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                Premium waterproof mattress encasement for king size beds. Durable, zippered protection.
+              </p>
+              <a
+                href={getAmazonLink('B08RC7VH1C')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Entopest Diatomaceous Earth Powder 1kg</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
+                <span className="text-gray-600 text-sm">(Multi-use)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                UK brand natural powder for bed bugs, fleas, ants. Food-grade diatomaceous earth.
+              </p>
+              <a
+                href={getAmazonLink('B078PQ8LDC')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">ENTOEND Diatomaceous Earth Insect Killer 1kg</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
+                <span className="text-gray-600 text-sm">(Natural formula)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                Feed grade natural powder. Works on bed bugs, silverfish, and other household insects.
+              </p>
+              <a
+                href={getAmazonLink('B077DZG3C7')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
@@ -806,6 +920,44 @@ export default function ProductsPage() {
                 View on Amazon
               </a>
             </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Zero In Clothes Moths Killer Spray 300ml</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
+                <span className="text-gray-600 text-sm">(#1 Bestseller)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                Amazon's #1 moth killer spray. Fast-acting aerosol for wardrobes and storage areas.
+              </p>
+              <a
+                href={getAmazonLink('B00B2KP7U0')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">RugRemedyUK Carpet Moth Killer Spray 500ml</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
+                <span className="text-gray-600 text-sm">(3-month protection)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                HSE-approved, non-staining formula. Protects carpets and textiles for 3 months.
+              </p>
+              <a
+                href={getAmazonLink('B005EGVCX4')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
           </div>
         </section>
 
@@ -869,6 +1021,44 @@ export default function ProductsPage() {
               </p>
               <a
                 href={getAmazonLink('B00U7KS7I8')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Pest Expert Formula C+ Silverfish Spray & Powder Kit</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
+                <span className="text-gray-600 text-sm">(Professional strength)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                Complete kit with spray and powder. 12-week protection, professional-grade formula.
+              </p>
+              <a
+                href={getAmazonLink('B013ELZSC6')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">RugRemedyUK Silverfish Killer Spray 500ml</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
+                <span className="text-gray-600 text-sm">(3-month protection)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                HSE-tested, odourless formula. 3-month residual protection against silverfish.
+              </p>
+              <a
+                href={getAmazonLink('B07BL4XX3X')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
@@ -946,6 +1136,44 @@ export default function ProductsPage() {
                 View on Amazon
               </a>
             </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Zero In Home Flea Powder 300g</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
+                <span className="text-gray-600 text-sm">(Bestseller)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                Treats carpets and pet bedding. Kills fleas, larvae, and eggs on contact.
+              </p>
+              <a
+                href={getAmazonLink('B00KHV77Y4')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Beaphar Household Flea Powder 300g</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
+                <span className="text-gray-600 text-sm">(Trusted pet brand)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                Kills fleas and larvae on contact. Trusted by pet owners, safe for use in homes.
+              </p>
+              <a
+                href={getAmazonLink('B001TQRC0K')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
           </div>
         </section>
 
@@ -1016,6 +1244,44 @@ export default function ProductsPage() {
                 View on Amazon
               </a>
             </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Zero In Ultra Power Ready-Baited XL Wasp Trap</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
+                <span className="text-gray-600 text-sm">(20m range)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                Dual chamber trap with 20m range. Reusable, poison-free, ready-baited formula.
+              </p>
+              <a
+                href={getAmazonLink('B08BJ1LFNS')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Entopest 2x Wasp Nest Killer Trap Kit</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
+                <span className="text-gray-600 text-sm">(Professional strength)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                Professional strength bait kit. 252 reviews, effective against wasps and hornets.
+              </p>
+              <a
+                href={getAmazonLink('B07X3LZ8ZQ')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
           </div>
         </section>
 
@@ -1079,6 +1345,101 @@ export default function ProductsPage() {
               </p>
               <a
                 href={getAmazonLink('B00U7KS7I8')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Pro Breeze 500ml Dehumidifier</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
+                <span className="text-gray-600 text-sm">(37,000+ reviews)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                Compact mini dehumidifier for small spaces. UK brand leader, prevents mould and moisture.
+              </p>
+              <a
+                href={getAmazonLink('B00NFRTVY6')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Pro Breeze 1000ml Dehumidifier with Timer</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
+                <span className="text-gray-600 text-sm">(Whisper quiet)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                Medium capacity with timer function. Quiet operation, ideal for bedrooms and libraries.
+              </p>
+              <a
+                href={getAmazonLink('B09BP15S29')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Pro Breeze 1500ml Dehumidifier</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
+                <span className="text-gray-600 text-sm">(Large capacity)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                High capacity dehumidifier for larger rooms. 37,000+ reviews, professional strength.
+              </p>
+              <a
+                href={getAmazonLink('B015MZQ7DG')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">ANSIO Disposable Dehumidifier Pack of 10</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★★</div>
+                <span className="text-gray-600 text-sm">(48,000+ reviews)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                No-power solution for moisture absorption. Perfect for wardrobes, cupboards, and storage.
+              </p>
+              <a
+                href={getAmazonLink('B00WTAIH7M')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
+              >
+                View on Amazon
+              </a>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">UniBond AERO 360° Moisture Absorber</h3>
+              <div className="flex items-center mb-3">
+                <div className="text-yellow-400 text-sm mr-2">★★★★☆</div>
+                <span className="text-gray-600 text-sm">(Bestseller)</span>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">
+                360-degree moisture absorption for any room. Trusted brand, easy to use and replace.
+              </p>
+              <a
+                href={getAmazonLink('B00IJLQEIA')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all"
