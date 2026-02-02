@@ -177,7 +177,7 @@ export default function ResidentialPage() {
     { href: '/', label: 'Home' },
     { href: '/residential', label: 'Residential' },
     { href: '/commercial', label: 'Commercial' },
-    { href: '/professionals', label: 'Professionals' },
+    { href: '/professionals', label: 'For Pest Professionals' },
     { href: '/products', label: 'Home Products' },
     { href: '/commercial-products', label: 'Commercial Products' },
     { href: '#', label: 'About' },

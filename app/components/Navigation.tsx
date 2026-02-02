@@ -11,7 +11,7 @@ export default function Navigation() {
     { href: '/residential', label: 'Residential' },
     { href: '/commercial', label: 'Commercial' },
     { href: '/products', label: 'Products' },
-    { href: '/professionals', label: 'Professionals' },
+    { href: '/professionals', label: 'For Pest Professionals' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
   ];
