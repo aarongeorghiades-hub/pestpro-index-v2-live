@@ -235,9 +235,17 @@ export default function ProfessionalsPage() {
       </nav>
 
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-[#0a1628] via-[#1e3a8a] to-[#0a1628] py-32 overflow-hidden">
-        {/* Animated background */}
-        <div className="absolute inset-0 bg-gradient-radial from-blue-500/30 via-transparent to-transparent animate-pulse"></div>
+      <div className="relative bg-gradient-to-br from-[#0a1628] via-[#1e3a8a] to-[#0a1628] py-32 overflow-hidden" style={{
+        backgroundImage: 'url(/professionals-hero-bg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'right center',
+        backgroundAttachment: 'fixed'
+      }}>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/85 to-[#0a1628]/70"></div>
+        
+        {/* Animated background gradient */}
+        <div className="absolute inset-0 bg-gradient-radial from-blue-500/20 via-transparent to-transparent animate-pulse"></div>
         
         {/* Grid pattern */}
         <div className="absolute inset-0 opacity-5">
@@ -246,10 +254,6 @@ export default function ProfessionalsPage() {
             backgroundSize: '48px 48px'
           }}></div>
         </div>
-
-        {/* Decorative elements */}
-        <div className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-10 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-[0.9] tracking-tight hero-text drop-shadow-lg">
