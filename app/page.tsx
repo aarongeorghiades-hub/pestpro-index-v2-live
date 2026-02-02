@@ -51,7 +51,7 @@ export default function Home() {
           <h1 className="text-9xl font-black tracking-tighter mb-4" style={{fontWeight: 900, letterSpacing: '-0.05em'}}>PestPro Index</h1>
           <p className="text-3xl font-light mb-8 tracking-widest">London's Neutral Pest Control Directory</p>
           <p className="text-xl mb-16 max-w-2xl mx-auto leading-relaxed">
-            Find certified pest control providers with transparent information. No endorsements, just evidence.
+            Find the right pest control for your home or business. Filter by location, pest type, certifications, reviews and other criteria specific to your pest problem. No endorsements, just data.
           </p>
 
           {/* Stats */}
@@ -105,7 +105,7 @@ export default function Home() {
               </div>
               {/* White bottom section */}
               <div className="bg-white p-8 text-center">
-                <p className="text-gray-700 mb-6">Find providers for your business</p>
+                <p className="text-gray-700 mb-6">Find pest control for your business property</p>
                 <Link href="/commercial" className="text-blue-600 font-semibold hover:text-blue-800">
                   Browse 457 providers →
                 </Link>
@@ -124,9 +124,14 @@ export default function Home() {
               {/* White bottom section */}
               <div className="bg-white p-8 text-center">
                 <p className="text-gray-700 mb-6">DIY pest control solutions</p>
-                <Link href="/products" className="text-blue-600 font-semibold hover:text-blue-800">
-                  Shop products →
-                </Link>
+                <div className="space-y-3">
+                  <Link href="/products" className="block text-blue-600 font-semibold hover:text-blue-800">
+                    Shop Home Products →
+                  </Link>
+                  <Link href="/commercial-products" className="block text-blue-600 font-semibold hover:text-blue-800">
+                    Shop Commercial Products →
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -137,7 +142,7 @@ export default function Home() {
       <section className="bg-white py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <p className="text-gray-600 text-lg">A neutral directory designed for transparency, not transactions</p>
+            <p className="text-gray-600 text-lg">We bring available data from the internet on pest control professionals to your fingertips to find pest control on your terms. A neutral directory designed for transparency, not transactions.</p>
           </div>
 
           <div className="grid grid-cols-3 gap-12">
@@ -190,7 +195,7 @@ export default function Home() {
             </div>
             <div>
               <h4 className="text-white font-bold mb-4">Disclaimer</h4>
-              <p className="text-sm">We do not judge outcomes, we preserve evidence. No endorsements or guarantees.</p>
+              <p className="text-sm">We do not judge outcomes, we display available evidence. No endorsements or guarantees.</p>
             </div>
           </div>
           <div className="border-t border-gray-700 pt-8 text-center text-sm">
