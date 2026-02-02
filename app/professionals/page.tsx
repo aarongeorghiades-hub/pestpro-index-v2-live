@@ -241,8 +241,8 @@ export default function ProfessionalsPage() {
         backgroundPosition: 'right center',
         backgroundAttachment: 'fixed'
       }}>
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/85 to-[#0a1628]/70"></div>
+        {/* Dark overlay for text readability - reduced opacity for better image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/65 via-[#0a1628]/60 to-[#0a1628]/50"></div>
         
         {/* Animated background gradient */}
         <div className="absolute inset-0 bg-gradient-radial from-blue-500/20 via-transparent to-transparent animate-pulse"></div>
@@ -546,50 +546,50 @@ export default function ProfessionalsPage() {
       </div>
 
       {/* Why PestPro Index */}
-      <div className="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-24">
+      <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-24">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-5xl font-black text-gray-900 mb-4 text-center">Why PestPro Index</h2>
-          <p className="text-xl text-gray-600 text-center mb-20 max-w-3xl mx-auto">
+          <h2 className="text-5xl font-black text-white mb-4 text-center">Why PestPro Index</h2>
+          <p className="text-xl text-blue-100 text-center mb-20 max-w-3xl mx-auto">
             We're different from other directories
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="card-hover bg-white rounded-xl p-8 shadow-lg border-l-4 border-blue-600 hover:border-blue-700">
+            <div className="card-hover bg-blue-800/50 rounded-xl p-8 shadow-lg border-l-4 border-blue-300 hover:border-blue-200 hover:bg-blue-800/70">
               <div className="flex gap-4 mb-4">
-                <Lock className="w-8 h-8 text-blue-600 flex-shrink-0" />
-                <h3 className="text-xl font-bold text-gray-900">No Lead Fees</h3>
+                <Lock className="w-8 h-8 text-blue-300 flex-shrink-0" />
+                <h3 className="text-xl font-bold text-white">No Lead Fees</h3>
               </div>
-              <p className="text-gray-700">
+              <p className="text-blue-100">
                 Unlike Checkatrade, Bark, or Rated People, we never charge per enquiry. Your listing fee is fixed and predictable.
               </p>
             </div>
 
-            <div className="card-hover bg-white rounded-xl p-8 shadow-lg border-l-4 border-blue-600 hover:border-blue-700">
+            <div className="card-hover bg-blue-800/50 rounded-xl p-8 shadow-lg border-l-4 border-blue-300 hover:border-blue-200 hover:bg-blue-800/70">
               <div className="flex gap-4 mb-4">
-                <TrendingUp className="w-8 h-8 text-blue-600 flex-shrink-0" />
-                <h3 className="text-xl font-bold text-gray-900">Neutral Rankings</h3>
+                <TrendingUp className="w-8 h-8 text-blue-300 flex-shrink-0" />
+                <h3 className="text-xl font-bold text-white">Neutral Rankings</h3>
               </div>
-              <p className="text-gray-700">
+              <p className="text-blue-100">
                 Listings ranked by reviews and data, not who pays most. Your merit determines your visibility.
               </p>
             </div>
 
-            <div className="card-hover bg-white rounded-xl p-8 shadow-lg border-l-4 border-blue-600 hover:border-blue-700">
+            <div className="card-hover bg-blue-800/50 rounded-xl p-8 shadow-lg border-l-4 border-blue-300 hover:border-blue-200 hover:bg-blue-800/70">
               <div className="flex gap-4 mb-4">
-                <Users className="w-8 h-8 text-blue-600 flex-shrink-0" />
-                <h3 className="text-xl font-bold text-gray-900">Transparent</h3>
+                <Users className="w-8 h-8 text-blue-300 flex-shrink-0" />
+                <h3 className="text-xl font-bold text-white">Transparent</h3>
               </div>
-              <p className="text-gray-700">
+              <p className="text-blue-100">
                 Customers see real reviews, real certifications, real coverage. No hidden agendas or paid placements.
               </p>
             </div>
 
-            <div className="card-hover bg-white rounded-xl p-8 shadow-lg border-l-4 border-blue-600 hover:border-blue-700">
+            <div className="card-hover bg-blue-800/50 rounded-xl p-8 shadow-lg border-l-4 border-blue-300 hover:border-blue-200 hover:bg-blue-800/70">
               <div className="flex gap-4 mb-4">
-                <Target className="w-8 h-8 text-blue-600 flex-shrink-0" />
-                <h3 className="text-xl font-bold text-gray-900">London-Focused</h3>
+                <Target className="w-8 h-8 text-blue-300 flex-shrink-0" />
+                <h3 className="text-xl font-bold text-white">London-Focused</h3>
               </div>
-              <p className="text-gray-700">
+              <p className="text-blue-100">
                 Built specifically for Greater London's pest control market. Not a generic national directory.
               </p>
             </div>
@@ -627,7 +627,7 @@ export default function ProfessionalsPage() {
       </div>
 
       {/* Final CTA */}
-      <div className="relative bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 py-24 overflow-hidden">
+      <div className="relative bg-gradient-to-r from-blue-950 via-blue-900 to-blue-950 py-24 overflow-hidden">
         {/* Decorative background */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -638,7 +638,7 @@ export default function ProfessionalsPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-5xl font-black text-white mb-4">Ready to Reach More Customers?</h2>
-          <p className="text-2xl text-blue-100 mb-12">
+          <p className="text-2xl text-blue-200 mb-12">
             Join London's fastest-growing pest control directory
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
