@@ -1,0 +1,504 @@
+'use client';
+export const dynamic = 'force-dynamic';
+
+import Link from 'next/link';
+import Image from 'next/image';
+import { ChevronDown, Eye, BookOpen, Shield, CheckCircle, Users, TrendingUp, Lock } from 'lucide-react';
+import { useState } from 'react';
+
+export default function ProfessionalsPage() {
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+
+  const navItems = [
+    { href: '/', label: 'Home' },
+    { href: '/residential', label: 'Residential' },
+    { href: '/commercial', label: 'Commercial' },
+    { href: '/professionals', label: 'For Professionals' },
+    { href: '/products', label: 'Home Products' },
+    { href: '/commercial-products', label: 'Commercial Products' },
+    { href: '/about', label: 'About' },
+    { href: '/contact', label: 'Contact' },
+  ];
+
+  const faqItems = [
+    {
+      question: 'Is there really no lead fee?',
+      answer: 'Correct. Unlike marketplace directories, we don\'t charge you per enquiry or take commission. Your listing fee is fixed and predictable. You pay once, you get listed, and customers find you.'
+    },
+    {
+      question: 'How do I become a Featured Provider?',
+      answer: 'Enhanced listing subscribers with strong reviews and complete profiles are eligible for Featured Provider status and Provider of the Week selection. Featured providers appear at the top of search results and get priority placement across the directory.'
+    },
+    {
+      question: 'What certifications do you display?',
+      answer: 'We display BPCA membership, RSPH qualifications, CEPA certification, BASIS PROMPT, and local authority approvals. You control which credentials appear on your profile, and we verify each one.'
+    },
+    {
+      question: 'Can I manage multiple locations?',
+      answer: 'Yes. Enhanced listings can display multiple depot locations and service coverage areas across London boroughs. Perfect for multi-site operations.'
+    },
+    {
+      question: 'How do reviews work?',
+      answer: 'We aggregate reviews from Google, Trustpilot, and other verified sources. We never edit or remove authentic reviews. Your rating is built on real customer feedback.'
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <nav className="sticky top-0 z-40 bg-[#0f172a] shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          <Link href="/" className="flex-shrink-0">
+            <Image 
+              src="/logo-header.png" 
+              alt="PestPro Index Logo" 
+              width={180} 
+              height={50}
+              className="h-auto"
+            />
+          </Link>
+
+          <div className="hidden md:flex items-center gap-3">
+            {navItems.map(item => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-br from-[#0a1628] via-[#1e3a8a] to-[#0a1628] py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-radial from-blue-500/20 via-transparent to-transparent"></div>
+        
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, rgb(59, 130, 246) 1px, transparent 0)',
+            backgroundSize: '48px 48px'
+          }}></div>
+        </div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-[0.9] tracking-tight">
+            <div className="text-center">Grow Your</div>
+            <div className="text-center">Pest Control</div>
+            <div className="text-center">Business</div>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-blue-100/95 max-w-3xl mx-auto leading-relaxed font-semibold text-center mb-10">
+            Join <span className="font-bold text-white">483 London providers</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
+          </p>
+
+          <Link 
+            href="/contact"
+            className="inline-block px-10 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-lg rounded-xl hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+          >
+            Claim Your Free Listing
+          </Link>
+        </div>
+      </div>
+
+      {/* Stats Bar */}
+      <div className="bg-white border-b-2 border-gray-100 py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-5xl font-black text-blue-600 mb-2">483</div>
+              <div className="text-gray-600 font-semibold">Providers Listed</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-black text-blue-600 mb-2">68%</div>
+              <div className="text-gray-600 font-semibold">Review Coverage</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-black text-blue-600 mb-2">£0</div>
+              <div className="text-gray-600 font-semibold">Lead Fees</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-black text-blue-600 mb-2">32</div>
+              <div className="text-gray-600 font-semibold">London Boroughs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* What We Offer */}
+      <div className="max-w-7xl mx-auto px-4 py-20">
+        <h2 className="text-5xl font-black text-gray-900 mb-4 text-center">What We Offer</h2>
+        <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+          Everything you need to grow your pest control business and reach more customers
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Card 1: Exposure */}
+          <div className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-10 hover:shadow-2xl transition-all">
+            <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+              <Eye className="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Exposure</h3>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <span>Featured provider listings</span>
+              </li>
+              <li className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <span>"Top Rated" badge eligibility</span>
+              </li>
+              <li className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <span>Provider of the Week spotlight</span>
+              </li>
+              <li className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <span>Priority placement in search results</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Card 2: Continuing Education */}
+          <div className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-10 hover:shadow-2xl transition-all relative md:row-span-2">
+            <div className="absolute top-4 right-4 bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-bold">
+              Coming Soon
+            </div>
+            <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+              <BookOpen className="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Continuing Education</h3>
+            <p className="text-gray-700 mb-6">
+              CPD-accredited courses to support your professional development and certification requirements.
+            </p>
+            <ul className="space-y-3 text-gray-700 mb-8">
+              <li className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <span>BPCA Certified (20 CPD points/year)</span>
+              </li>
+              <li className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <span>RSPH Level 2 Award</span>
+              </li>
+              <li className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <span>City & Guilds qualifications</span>
+              </li>
+            </ul>
+            <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+              <p className="text-sm font-semibold text-blue-900">Launching Q2 2026</p>
+            </div>
+          </div>
+
+          {/* Card 3: Compliance Hub */}
+          <div className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-10 hover:shadow-2xl transition-all relative">
+            <div className="absolute top-4 right-4 bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-bold">
+              Coming Soon
+            </div>
+            <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+              <Shield className="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Compliance Hub</h3>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <span>Digital audit trail</span>
+              </li>
+              <li className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <span>Certification expiry alerts</span>
+              </li>
+              <li className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <span>Insurance document storage</span>
+              </li>
+              <li className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <span>One-click compliance reports</span>
+              </li>
+              <li className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <span>Client portal access</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Pricing Tiers */}
+      <div className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-5xl font-black text-gray-900 mb-4 text-center">Simple Pricing</h2>
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+            Choose the plan that fits your business
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Free Listing */}
+            <div className="bg-white rounded-2xl shadow-lg border-2 border-gray-200 p-10">
+              <h3 className="text-3xl font-bold text-gray-900 mb-2">Free Listing</h3>
+              <div className="mb-8">
+                <span className="text-5xl font-black text-blue-600">£0</span>
+                <span className="text-gray-600 font-semibold">/month</span>
+              </div>
+              <ul className="space-y-4 mb-10">
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Basic company profile</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Service area listing</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Contact information</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Customer reviews display</span>
+                </li>
+              </ul>
+              <Link
+                href="/contact"
+                className="block w-full text-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all"
+              >
+                Claim Free Listing
+              </Link>
+            </div>
+
+            {/* Enhanced Listing */}
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-xl border-2 border-blue-300 p-10 relative">
+              <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-1 rounded-full text-xs font-bold">
+                Most Popular
+              </div>
+              <h3 className="text-3xl font-bold text-gray-900 mb-2">Enhanced Listing</h3>
+              <div className="mb-8">
+                <span className="text-5xl font-black text-blue-600">£29</span>
+                <span className="text-gray-600 font-semibold">/month</span>
+              </div>
+              <ul className="space-y-4 mb-10">
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Everything in Free, plus:</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Priority search placement</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">"Featured Provider" badge</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Provider of the Week eligibility</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Photo gallery (up to 10 images)</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Direct enquiry form</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Performance analytics</span>
+                </li>
+              </ul>
+              <Link
+                href="/contact"
+                className="block w-full text-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all"
+              >
+                Upgrade Now
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* How It Works */}
+      <div className="max-w-7xl mx-auto px-4 py-20">
+        <h2 className="text-5xl font-black text-gray-900 mb-4 text-center">How It Works</h2>
+        <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+          Get listed in three simple steps
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="text-center">
+            <div className="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-3xl font-black mx-auto mb-6">
+              1
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Claim Your Profile</h3>
+            <p className="text-gray-600 text-lg">
+              Find your business and verify ownership in minutes. We'll pull your existing data to get you started.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <div className="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-3xl font-black mx-auto mb-6">
+              2
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Complete Your Listing</h3>
+            <p className="text-gray-600 text-lg">
+              Add services, coverage areas, certifications, and photos. The more complete your profile, the more visible you are.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <div className="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-3xl font-black mx-auto mb-6">
+              3
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Get Found</h3>
+            <p className="text-gray-600 text-lg">
+              Appear in searches and start receiving enquiries. Customers find you based on location, services, and reviews.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Why PestPro Index */}
+      <div className="bg-gradient-to-br from-blue-50 to-blue-100 py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-5xl font-black text-gray-900 mb-4 text-center">Why PestPro Index</h2>
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+            We're different from other directories
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="bg-white rounded-xl p-8 shadow-lg border-l-4 border-blue-600">
+              <div className="flex gap-4 mb-4">
+                <Lock className="w-8 h-8 text-blue-600 flex-shrink-0" />
+                <h3 className="text-xl font-bold text-gray-900">No Lead Fees</h3>
+              </div>
+              <p className="text-gray-700">
+                Unlike Checkatrade, Bark, or Rated People, we never charge per enquiry. Your listing fee is fixed and predictable.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 shadow-lg border-l-4 border-blue-600">
+              <div className="flex gap-4 mb-4">
+                <TrendingUp className="w-8 h-8 text-blue-600 flex-shrink-0" />
+                <h3 className="text-xl font-bold text-gray-900">Neutral Rankings</h3>
+              </div>
+              <p className="text-gray-700">
+                Listings ranked by reviews and data, not who pays most. Your merit determines your visibility.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 shadow-lg border-l-4 border-blue-600">
+              <div className="flex gap-4 mb-4">
+                <Users className="w-8 h-8 text-blue-600 flex-shrink-0" />
+                <h3 className="text-xl font-bold text-gray-900">Transparent</h3>
+              </div>
+              <p className="text-gray-700">
+                Customers see real reviews, real certifications, real coverage. No hidden agendas or paid placements.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 shadow-lg border-l-4 border-blue-600">
+              <div className="flex gap-4 mb-4">
+                <CheckCircle className="w-8 h-8 text-blue-600 flex-shrink-0" />
+                <h3 className="text-xl font-bold text-gray-900">London-Focused</h3>
+              </div>
+              <p className="text-gray-700">
+                Built specifically for Greater London's pest control market. Not a generic national directory.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="max-w-4xl mx-auto px-4 py-20">
+        <h2 className="text-5xl font-black text-gray-900 mb-4 text-center">Frequently Asked Questions</h2>
+        <p className="text-xl text-gray-600 text-center mb-16">
+          Everything you need to know about listing on PestPro Index
+        </p>
+
+        <div className="space-y-4">
+          {faqItems.map((item, idx) => (
+            <div key={idx} className="bg-white rounded-xl shadow-md border-2 border-gray-100 overflow-hidden">
+              <button
+                onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
+                className="w-full px-8 py-6 flex items-center justify-between hover:bg-gray-50 transition-all"
+              >
+                <h3 className="text-lg font-bold text-gray-900 text-left">{item.question}</h3>
+                <ChevronDown 
+                  className={`w-6 h-6 text-blue-600 flex-shrink-0 transition-transform ${expandedFaq === idx ? 'rotate-180' : ''}`}
+                />
+              </button>
+              {expandedFaq === idx && (
+                <div className="px-8 py-6 bg-blue-50 border-t-2 border-gray-100">
+                  <p className="text-gray-700 text-lg leading-relaxed">{item.answer}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Final CTA */}
+      <div className="bg-gradient-to-r from-blue-600 to-blue-800 py-20">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-5xl font-black text-white mb-4">Ready to Reach More Customers?</h2>
+          <p className="text-2xl text-blue-100 mb-10">
+            Join London's fastest-growing pest control directory
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="px-10 py-4 bg-white text-blue-600 font-bold text-lg rounded-xl hover:bg-gray-100 transition-all shadow-lg"
+            >
+              Claim Your Free Listing
+            </Link>
+            <Link
+              href="/contact"
+              className="px-10 py-4 border-2 border-white text-white font-bold text-lg rounded-xl hover:bg-white/10 transition-all"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900 text-white py-16 border-t-2 border-blue-800">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="font-bold text-lg mb-4">PestPro Index</h3>
+              <p className="text-gray-400">
+                London's neutral pest control directory
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <div className="space-y-2">
+                <Link href="/" className="block text-gray-400 hover:text-white transition">Home</Link>
+                <Link href="/residential" className="block text-gray-400 hover:text-white transition">Residential</Link>
+                <Link href="/commercial" className="block text-gray-400 hover:text-white transition">Commercial</Link>
+                <Link href="/professionals" className="block text-gray-400 hover:text-white transition">For Professionals</Link>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">For Professionals</h4>
+              <p className="text-gray-400">
+                Grow your pest control business with PestPro Index. Get listed today.
+              </p>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 PestPro Index. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
