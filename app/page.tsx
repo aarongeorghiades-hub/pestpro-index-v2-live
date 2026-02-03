@@ -83,14 +83,19 @@ export default function Home() {
                 <div className="w-16 h-16 bg-blue-400/40 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <HomeIcon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold">Residential</h3>
+                <h3 className="text-2xl font-bold">Residential Pest Control</h3>
               </div>
               {/* White bottom section */}
               <div className="bg-white p-8 text-center">
-                <p className="text-gray-700 mb-6">Find pest control for your home</p>
-                <Link href="/residential" className="text-blue-600 font-semibold hover:text-blue-800">
-                  Browse 481 providers →
-                </Link>
+                <p className="text-gray-700 mb-6">Find pest professionals and DIY pest products for your home</p>
+                <div className="space-y-3">
+                  <Link href="/residential" className="block text-blue-600 font-semibold hover:text-blue-800">
+                    Browse 481 providers →
+                  </Link>
+                  <Link href="/products" className="block text-blue-600 font-semibold hover:text-blue-800">
+                    Browse home pest products →
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -101,14 +106,22 @@ export default function Home() {
                 <div className="w-16 h-16 bg-blue-400/40 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <Building2 className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold">Commercial</h3>
+                <h3 className="text-2xl font-bold">Commercial Pest Control</h3>
               </div>
               {/* White bottom section */}
               <div className="bg-white p-8 text-center">
-                <p className="text-gray-700 mb-6">Find pest control for your business property</p>
-                <Link href="/commercial" className="text-blue-600 font-semibold hover:text-blue-800">
-                  Browse 457 providers →
-                </Link>
+                <p className="text-gray-700 mb-6">Find pest professionals, DIY pest products, and compliance services for your business</p>
+                <div className="space-y-3">
+                  <Link href="/commercial" className="block text-blue-600 font-semibold hover:text-blue-800">
+                    Browse 457 providers →
+                  </Link>
+                  <Link href="/commercial-products" className="block text-blue-600 font-semibold hover:text-blue-800">
+                    Browse business pest products →
+                  </Link>
+                  <Link href="/commercial#compliance" className="block text-blue-600 font-semibold hover:text-blue-800">
+                    Remain compliant →
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -119,17 +132,17 @@ export default function Home() {
                 <div className="w-16 h-16 bg-blue-400/40 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <Users className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold">Products</h3>
+                <h3 className="text-2xl font-bold">Pest Professionals</h3>
               </div>
               {/* White bottom section */}
               <div className="bg-white p-8 text-center">
-                <p className="text-gray-700 mb-6">DIY pest control solutions</p>
+                <p className="text-gray-700 mb-6">Customer exposure and compliance services for PestPros</p>
                 <div className="space-y-3">
-                  <Link href="/products" className="block text-blue-600 font-semibold hover:text-blue-800">
-                    Shop Home Products →
+                  <Link href="/professionals" className="block text-blue-600 font-semibold hover:text-blue-800">
+                    Explore Services →
                   </Link>
-                  <Link href="/commercial-products" className="block text-blue-600 font-semibold hover:text-blue-800">
-                    Shop Commercial Products →
+                  <Link href="/professionals#compliance" className="block text-blue-600 font-semibold hover:text-blue-800">
+                    Compliance Hub (Coming Soon) →
                   </Link>
                 </div>
               </div>
@@ -142,7 +155,7 @@ export default function Home() {
       <section className="bg-white py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <p className="text-gray-600 text-lg">We bring available data from the internet on pest control professionals to your fingertips to find pest control on your terms. A neutral directory designed for transparency, not transactions.</p>
+            <p className="text-gray-600 text-lg">We bring available data on pest control professionals to your fingertips so you can find pest control on your terms. A neutral directory designed for transparency, not transactions.</p>
           </div>
 
           <div className="grid grid-cols-3 gap-12">
