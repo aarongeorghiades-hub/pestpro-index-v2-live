@@ -335,7 +335,7 @@ export default function CommercialPage() {
             457 Verified Providers in London
           </p>
           <p className="text-xl text-white font-semibold max-w-3xl leading-relaxed drop-shadow-[0_6px_16px_rgba(0,0,0,0.85)] opacity-95">
-            Find certified commercial pest control providers with advanced filtering by certifications, capabilities, and sectors.
+            Find certified commercial pest control providers with advanced filtering by certifications, capabilities, and business sectors.
           </p>
         </div>
       </section>
