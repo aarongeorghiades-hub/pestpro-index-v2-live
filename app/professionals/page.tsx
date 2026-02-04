@@ -266,13 +266,15 @@ export default function ProfessionalsPage() {
             Join <span className="font-bold text-white">483 London providers</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
           </p>
 
-          <Link 
-            href="/contact"
+          <a
+            href="https://forms.gle/f4ZvCrBNXK75kobS8"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block px-10 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-lg rounded-xl hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 animate-fade-in-up"
             style={{ animationDelay: '0.4s' }}
           >
-            Create Your Free Listing
-          </Link>
+            Create Your Free Listing On Our Database
+          </a>
         </div>
       </div>
 
@@ -420,7 +422,7 @@ export default function ProfessionalsPage() {
             Choose the plan that fits your business
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Free Listing */}
             <div className="card-hover bg-white rounded-2xl shadow-lg border-2 border-gray-200 p-10">
               <h3 className="text-3xl font-bold text-gray-900 mb-2">Free Listing</h3>
@@ -431,43 +433,47 @@ export default function ProfessionalsPage() {
               <ul className="space-y-4 mb-10">
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Basic company profile</span>
+                  <span className="text-gray-700">Your company details and service areas</span>
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Service area listing</span>
+                  <span className="text-gray-700">Contact information (phone, email, website)</span>
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Contact information</span>
+                  <span className="text-gray-700">Certifications and accreditations</span>
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Customer reviews display</span>
+                  <span className="text-gray-700">Verified review rating (where available)</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Appear in search results based on your service area and information available online</span>
                 </li>
               </ul>
-              <Link
-                href="/contact"
+              <a
+                href="https://forms.gle/f4ZvCrBNXK75kobS8"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full text-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all"
               >
-                Create Free Listing
-              </Link>
+                Create Your Free Listing
+              </a>
             </div>
 
             {/* Enhanced Listing */}
-            <div className="card-hover bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-xl border-2 border-blue-300 p-10 relative ring-2 ring-blue-400/50">
-              <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-1 rounded-full text-xs font-bold">
-                Most Popular
-              </div>
+            <div className="card-hover bg-white rounded-2xl shadow-lg border-2 border-gray-200 p-10">
               <h3 className="text-3xl font-bold text-gray-900 mb-2">Enhanced Listing</h3>
-              <div className="mb-8">
-                <span className="text-5xl font-black text-blue-600">£29</span>
+              <div className="mb-2">
+                <span className="text-5xl font-black text-blue-600">£15</span>
                 <span className="text-gray-600 font-semibold">/month</span>
               </div>
+              <p className="text-sm text-gray-600 mb-8 font-semibold">Free until 1st April 2026</p>
               <ul className="space-y-4 mb-10">
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Everything in Free, plus:</span>
+                  <span className="text-gray-700">Everything in Free Listing, plus:</span>
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -475,31 +481,64 @@ export default function ProfessionalsPage() {
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">"Featured Provider" badge</span>
+                  <span className="text-gray-700">Company logo display</span>
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Provider of the Week eligibility</span>
+                  <span className="text-gray-700">Detailed service descriptions</span>
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Photo gallery (up to 10 images)</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Direct enquiry form</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Performance analytics</span>
+                  <span className="text-gray-700">Photo gallery (up to 6 images)</span>
                 </li>
               </ul>
-              <Link
-                href="/contact"
-                className="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg"
+              <a
+                href="https://forms.gle/f4ZvCrBNXK75kobS8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all"
               >
-                Upgrade Now
-              </Link>
+                Get Enhanced Listing
+              </a>
+            </div>
+
+            {/* Featured Provider of the Week */}
+            <div className="card-hover bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl shadow-xl border-2 border-amber-300 p-10 relative ring-2 ring-amber-400/50">
+              <div className="absolute top-4 right-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-4 py-1 rounded-full text-xs font-bold">
+                Premium
+              </div>
+              <h3 className="text-3xl font-bold text-gray-900 mb-2">Featured Provider of the Week</h3>
+              <div className="mb-2">
+                <span className="text-5xl font-black text-amber-600">£30</span>
+                <span className="text-gray-600 font-semibold">/week</span>
+              </div>
+              <p className="text-sm text-gray-600 mb-8 font-semibold">Free until 1st April 2026</p>
+              <ul className="space-y-4 mb-10">
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Prominent homepage placement for one week</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Spotlight position above search results</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Enhanced visibility across all pages</span>
+                </li>
+                <li className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Perfect for seasonal promotions or new launches</span>
+                </li>
+              </ul>
+              <a
+                href="https://forms.gle/f4ZvCrBNXK75kobS8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-lg hover:from-amber-600 hover:to-orange-600 transition-all shadow-lg"
+              >
+                Become Featured Provider
+              </a>
             </div>
           </div>
         </div>
@@ -642,12 +681,14 @@ export default function ProfessionalsPage() {
             Join London's fastest-growing pest control directory
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
+            <a
+              href="https://forms.gle/f4ZvCrBNXK75kobS8"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-10 py-4 bg-white text-blue-600 font-bold text-lg rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               Create Your Free Listing
-            </Link>
+            </a>
             <Link
               href="/contact"
               className="px-10 py-4 border-2 border-white text-white font-bold text-lg rounded-xl hover:bg-white/10 transition-all"
