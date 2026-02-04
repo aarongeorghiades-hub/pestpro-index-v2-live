@@ -8,8 +8,6 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Phone, Mail, MapPin, ShieldCheck, Award, CheckCircle2 } from 'lucide-react';
 
-const supabase = createClient();
-
 interface Provider {
   canonical_id: number;
   name: string;
@@ -118,6 +116,7 @@ export default function CommercialPage() {
   useEffect(() => {
     const loadProviders = async () => {
       try {
+        const supabase = createClient();
         const { data, error } = await supabase
           .from('Providers')
           .select('*')
@@ -735,6 +734,60 @@ export default function CommercialPage() {
               <div className="text-5xl font-black text-[#1e3a8a] mb-4">3</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Your Decision</h3>
               <p className="text-gray-600">You decide which provider is right for your business. Filter by your specific needs and contact providers directly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* COMPLIANCE HUB SECTION */}
+      <section className="relative bg-gradient-to-r from-blue-50 to-indigo-50 py-16 border-t-2 border-gray-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <h2 className="text-3xl font-black text-gray-900 mb-2">Compliance Headaches? We've Got You Covered</h2>
+            <p className="text-gray-600 mb-6">Coming soon: Our comprehensive Compliance Hub designed specifically for commercial pest control businesses</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Regulatory Compliance Checklists</h3>
+                  <p className="text-sm text-gray-600">Stay compliant with all UK pest control regulations</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">CPD Training Programs</h3>
+                  <p className="text-sm text-gray-600">Continuous professional development for your team</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Audit & Compliance Packs</h3>
+                  <p className="text-sm text-gray-600">Pre-prepared documentation for commercial audits</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Business Templates</h3>
+                  <p className="text-sm text-gray-600">Ready-to-use compliance and operational templates</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Expert Guidance</h3>
+                  <p className="text-sm text-gray-600">Access to compliance experts and best practices</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <a href="mailto:pestproindex@zohomail.eu" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out">
+                Join Waitlist
+              </a>
             </div>
           </div>
         </div>

@@ -8,8 +8,6 @@ import { createClient } from '@/utils/supabase';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const supabase = createClient();
-
 // Amazon Associates Configuration
 const AMAZON_TRACKING_ID = 'pestproindex-21';
 
@@ -58,6 +56,7 @@ export default function CommercialProductsPage() {
   useEffect(() => {
     const loadProducts = async () => {
       try {
+        const supabase = createClient();
         const { data, error } = await supabase
           .from('amazon_products')
           .select('*')
