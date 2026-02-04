@@ -234,13 +234,13 @@ export default function ResidentialPage() {
         </div>
 
         <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4">
-          <h1 className="text-6xl font-black mb-4 max-w-3xl">
+          <h1 className="text-6xl md:text-7xl font-black mb-4 max-w-3xl drop-shadow-lg" style={{textShadow: '0 4px 6px rgba(0,0,0,0.3)'}}>
             Residential Pest Control
           </h1>
-          <p className="text-2xl mb-6 max-w-2xl">
+          <p className="text-2xl md:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
             481 Verified Providers in London
           </p>
-          <p className="text-lg mb-8 max-w-2xl opacity-90">
+          <p className="text-lg mb-8 max-w-2xl opacity-90 drop-shadow" style={{textShadow: '0 2px 4px rgba(0,0,0,0.2)'}}>
             Filter by pest type and service features across our complete directory. 68% of providers have verified Google Reviews. No endorsements, no commissions—just transparent, provider-stated information.
           </p>
         </div>
@@ -271,7 +271,7 @@ export default function ResidentialPage() {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-blue-600 text-xl mt-1">✓</span>
-                  <p className="text-gray-700">The "stop signals" that tell you it's time to call a professional</p>
+                  <p className="text-gray-700">The "stop signals" for common pest types that tell you it's time to call a professional</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-blue-600 text-xl mt-1">✓</span>
