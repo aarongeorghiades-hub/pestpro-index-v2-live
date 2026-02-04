@@ -32,7 +32,7 @@ export default function ContactPage() {
     {
       icon: Bell,
       title: 'Stay Updated',
-      description: 'Get notified when we launch Compliance Hub and CPD training for pest professionals.',
+      description: 'Get notified when we launch Compliance Hub, CPD training, and our audit/compliance SaaS for commercial users.',
       email: 'mailto:pestproindex@zohomail.eu?subject=Stay%20Updated',
     },
     {
@@ -64,7 +64,7 @@ export default function ContactPage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-6 py-2 rounded-full font-semibold bg-[#1e3a8a] text-white hover:bg-blue-800 transition"
+                className="px-6 py-2 rounded-full font-semibold border-2 border-white/40 text-white hover:border-white hover:bg-white/10 transition"
               >
                 {item.label}
               </Link>
@@ -95,7 +95,7 @@ export default function ContactPage() {
                 <a
                   key={index}
                   href={category.email}
-                  className="group bg-white rounded-xl border-2 border-blue-200 p-8 hover:border-blue-500 hover:shadow-xl transition-all duration-300 cursor-pointer"
+                  className="group bg-white rounded-xl border-2 border-blue-200 p-8 hover:border-blue-500 hover:shadow-xl hover:bg-blue-50 hover:-translate-y-1 transition-all duration-300 cursor-pointer transform"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
