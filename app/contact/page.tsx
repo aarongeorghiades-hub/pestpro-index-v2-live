@@ -136,8 +136,8 @@ export default function ContactPage() {
             <div>
               <h4 className="font-bold mb-4">Find Providers</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/residential" className="hover:text-white transition">Residential</Link></li>
-                <li><Link href="/commercial" className="hover:text-white transition">Commercial</Link></li>
+                <li><Link href="/residential" className="hover:text-white transition">Residential Pest Control</Link></li>
+                <li><Link href="/commercial" className="hover:text-white transition">Commercial Pest Control</Link></li>
               </ul>
             </div>
             <div>
