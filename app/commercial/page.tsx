@@ -46,8 +46,8 @@ export default function CommercialPage() {
     { href: '/professionals', label: 'For Pest Professionals' },
     { href: '/products', label: 'Home Products' },
     { href: '/commercial-products', label: 'Commercial Products' },
-    { href: '#', label: 'About' },
-    { href: '#', label: 'Contact' },
+    { href: '/about', label: 'About' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   // Filter categories
