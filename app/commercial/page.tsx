@@ -124,6 +124,10 @@ export default function CommercialPage() {
 
         if (error) throw error;
 
+        console.log('=== COMMERCIAL PROVIDERS DEBUG ===');
+        console.log('Total providers with commercial=true:', (data || []).length);
+        console.log('=== END DEBUG ===');
+
         setProviders(data || []);
         calculateFilterCounts(data || []);
         applyFilters(data || [], new Set());
@@ -137,19 +141,7 @@ export default function CommercialPage() {
     loadProviders();
   }, []);
 
-  // TEMPORARY DEBUG - REMOVE AFTER GETTING COUNTS
-  useEffect(() => {
-    if (providers.length === 0) return;
 
-    const allKeys = Object.keys(providers[0]);
-    console.log('=== TOTAL COLUMNS RETURNED: ' + allKeys.length + ' ===');
-    console.log('=== ALL COLUMN NAMES ===');
-    allKeys.forEach(key => {
-      console.log(key);
-    });
-    console.log('=== END COLUMN NAMES ===');
-  }, [providers]);
-  // END TEMPORARY DEBUG
 
   // Calculate filter counts
   const calculateFilterCounts = (data: Provider[]) => {
