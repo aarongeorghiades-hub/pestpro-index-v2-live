@@ -62,7 +62,7 @@ export default function Home() {
               <div className="text-sm font-semibold tracking-widest text-blue-100">RESIDENTIAL PROVIDERS</div>
             </div>
             <div className="border-r border-white/30 px-8">
-              <div className="text-6xl font-black mb-2">457</div>
+              <div className="text-6xl font-black mb-2">272</div>
               <div className="text-sm font-semibold tracking-widest text-blue-100">COMMERCIAL PROVIDERS</div>
             </div>
             <div className="pl-8">
@@ -114,7 +114,7 @@ export default function Home() {
                 <p className="text-gray-700 mb-6">Find pest professionals, DIY pest products, and compliance services for your business</p>
                 <div className="space-y-3">
                   <Link href="/commercial" className="block text-blue-600 font-semibold hover:text-blue-800">
-                    Browse 457 providers →
+                    Browse 272 providers →
                   </Link>
                   <Link href="/commercial-products" className="block text-blue-600 font-semibold hover:text-blue-800">
                     Browse business pest products →
