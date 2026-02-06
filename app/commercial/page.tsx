@@ -318,7 +318,7 @@ export default function CommercialPage() {
   };
 
   // Handle search from SearchBar
-  const handleSearch = (results: any) => {
+  const handleSearch = (results: any, searchType?: string) => {
     setSearchResults(results);
   };
 
