@@ -225,7 +225,7 @@ export default function CommercialPage() {
       };
 
       filtered = data.filter((provider) => {
-        return Array.from(filters).some((filterKey) => {
+        return Array.from(filters).every((filterKey) => {
           const columns = filterColumnMap[filterKey] || [filterKey];
           return columns.some((col) => provider[col] === true);
         });
@@ -323,7 +323,7 @@ export default function CommercialPage() {
             Commercial Pest Control
           </h1>
           <p className="text-3xl md:text-4xl mb-6 font-extralight tracking-[0.15em] text-white drop-shadow-[0_8px_20px_rgba(0,0,0,0.9)]">
-            457 Verified Providers in London
+            245 Verified Providers in London
           </p>
           <p className="text-xl text-white font-semibold max-w-3xl leading-relaxed drop-shadow-[0_6px_16px_rgba(0,0,0,0.85)] opacity-95">
             Find certified commercial pest control providers with advanced filtering by certifications, capabilities, and business sectors.
