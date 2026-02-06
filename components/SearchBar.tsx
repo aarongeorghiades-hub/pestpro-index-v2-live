@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { Search, X } from 'lucide-react';
 
 interface Provider {
@@ -109,11 +109,11 @@ function getAdjacentBoroughs(borough: string): string[] {
 export default function SearchBar({ onSearch, allProviders, onClear }: SearchBarProps) {
   const [searchInput, setSearchInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const handleSearch = useCallback(async (input: string) => {
-    setSearchInput(input);
-    
+  const performSearch = useCallback(async (input: string) => {
     if (!input.trim()) {
+      setSearchInput('');
       onClear();
       return;
     }
@@ -164,6 +164,29 @@ export default function SearchBar({ onSearch, allProviders, onClear }: SearchBar
       setIsLoading(false);
     }
   }, [allProviders, onSearch, onClear]);
+
+  const handleSearch = useCallback((input: string) => {
+    setSearchInput(input);
+    
+    // Clear existing debounce timer
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
+
+    // Set new debounce timer (300ms)
+    debounceTimerRef.current = setTimeout(() => {
+      performSearch(input);
+    }, 300);
+  }, [performSearch]);
+
+  // Cleanup debounce timer on unmount
+  useEffect(() => {
+    return () => {
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
+    };
+  }, []);
 
   const handleClear = () => {
     setSearchInput('');
