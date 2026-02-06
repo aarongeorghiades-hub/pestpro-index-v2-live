@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -65,6 +65,7 @@ export default function ResidentialPage() {
   const [filteredProviders, setFilteredProviders] = useState<Provider[]>([]);
   const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState({ pests: [] as string[], services: [] as string[] });
+  const [sortBy, setSortBy] = useState('quality');
   const pathname = usePathname();
 
   // ============================================================================
@@ -94,10 +95,12 @@ export default function ResidentialPage() {
   }, []);
 
   // ============================================================================
-  // FILTER LOGIC
+  // FILTER AND SORT LOGIC
   // ============================================================================
 
-  useEffect(() => {
+  const filteredProvidersMemo = useMemo(() => {
+    if (providers.length === 0) return [];
+    
     let filtered = providers;
 
     if (filters.pests.length > 0) {
@@ -112,8 +115,24 @@ export default function ResidentialPage() {
       );
     }
 
-    setFilteredProviders(filtered);
-  }, [filters, providers]);
+    // Apply sort
+    if (sortBy === 'quality') {
+      filtered.sort((a, b) => {
+        const ratingA = a.google_rating || 0;
+        const ratingB = b.google_rating || 0;
+        if (ratingB !== ratingA) return ratingB - ratingA;
+        return (b.google_review_count || 0) - (a.google_review_count || 0);
+      });
+    } else if (sortBy === 'name') {
+      filtered.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
+    }
+
+    return filtered;
+  }, [providers, filters, sortBy]);
+
+  useEffect(() => {
+    setFilteredProviders(filteredProvidersMemo);
+  }, [filteredProvidersMemo]);
 
   // ============================================================================
   // FILTER HANDLERS
@@ -534,7 +553,15 @@ export default function ResidentialPage() {
                   </button>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <>
+                  <div className="flex justify-between items-center mb-8">
+                    <p className="text-gray-600 font-medium">Showing {filteredProviders.length} providers</p>
+                    <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="px-4 py-2 border-2 border-gray-300 rounded-lg font-medium text-gray-900">
+                      <option value="quality">By Rating</option>
+                      <option value="name">By Name (A-Z)</option>
+                    </select>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {filteredProviders.map(provider => {
                     const isTrophy = provider.google_rating && provider.google_rating >= 4.5 && 
                                     provider.google_review_count && provider.google_review_count >= 30;
@@ -575,6 +602,7 @@ export default function ResidentialPage() {
                     );
                   })}
                 </div>
+                </>
               )}
             </main>
 
