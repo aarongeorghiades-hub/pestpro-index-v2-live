@@ -693,8 +693,8 @@ export default function CommercialPage() {
                   <div className="flex justify-between items-center mb-8">
                     <p className="text-gray-600 font-medium">Showing {filteredProviders.length} providers</p>
                     <select value={sortBy} onChange={(e) => { setSortBy(e.target.value); applyFilters(providers, selectedFilters); }} className="px-4 py-2 border-2 border-gray-300 rounded-lg font-medium text-gray-900">
-                      <option value="quality">Sort by Quality Score</option>
-                      <option value="name">Sort by Name</option>
+                      <option value="quality">By Rating</option>
+                      <option value="name">By Name (A-Z)</option>
                     </select>
                   </div>
 
