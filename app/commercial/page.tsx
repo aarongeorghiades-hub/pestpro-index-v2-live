@@ -141,12 +141,12 @@ export default function CommercialPage() {
     loadProviders();
   }, []);
 
-  // Re-apply filters when sort or providers change
+  // Re-apply filters when sort changes
   useEffect(() => {
     if (providers.length > 0) {
       applyFilters(providers, selectedFilters, sortBy);
     }
-  }, [sortBy, providers.length]);
+  }, [sortBy]);
 
 
 
