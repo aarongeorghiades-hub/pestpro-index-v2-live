@@ -251,10 +251,7 @@ export default function CommercialPage() {
     return <div className="flex gap-0.5">{stars}</div>;
   };
 
-  // Update filteredProviders whenever the memo changes
-  useEffect(() => {
-    setFilteredProviders(filteredProvidersMemo);
-  }, [filteredProvidersMemo]);
+  // Use filteredProvidersMemo directly instead of state
 
   // Apply filters
   // Keep applyFilters for backward compatibility
@@ -733,14 +730,14 @@ export default function CommercialPage() {
 
             {/* MAIN CONTENT */}
             <main className="flex-1">
-              {filteredProviders.length === 0 ? (
+              {filteredProvidersMemo.length === 0 ? (
                 <div className="text-center py-12">
                   <p className="text-gray-600 text-lg">No providers match your filters. Try adjusting your selection.</p>
                 </div>
               ) : (
                 <>
                   <div className="flex justify-between items-center mb-8">
-                    <p className="text-gray-600 font-medium">Showing {filteredProviders.length} providers</p>
+                    <p className="text-gray-600 font-medium">Showing {filteredProvidersMemo.length} providers</p>
                     <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="px-4 py-2 border-2 border-gray-300 rounded-lg font-medium text-gray-900">
                       <option value="quality">By Rating</option>
                       <option value="name">By Name (A-Z)</option>
@@ -748,7 +745,7 @@ export default function CommercialPage() {
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                    {filteredProviders.map(provider => (
+                  {filteredProvidersMemo.map(provider => (
                       <div key={provider.canonical_id} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all border-l-4 border-blue-600 p-6">
                         <h3 className="text-2xl font-black text-gray-900 mb-2">{provider.name}</h3>
 
