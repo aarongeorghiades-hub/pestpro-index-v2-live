@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { createClient } from '@/utils/supabase';
+import SearchBar from '@/components/SearchBar';
 
 // Cache bust: 2025-01-15-v3
 
@@ -66,6 +67,7 @@ export default function ResidentialPage() {
   const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState({ pests: [] as string[], services: [] as string[] });
   const [sortBy, setSortBy] = useState('quality');
+  const [searchResults, setSearchResults] = useState<Provider[] | null>(null);
   const pathname = usePathname();
 
   // ============================================================================
@@ -101,7 +103,8 @@ export default function ResidentialPage() {
   const filteredProvidersMemo = useMemo(() => {
     if (providers.length === 0) return [];
     
-    let filtered = providers;
+    // Start with search results if available, otherwise use all providers
+    let filtered = searchResults !== null ? searchResults : providers;
 
     if (filters.pests.length > 0) {
       filtered = filtered.filter(p => 
@@ -128,7 +131,7 @@ export default function ResidentialPage() {
     }
 
     return filtered;
-  }, [providers, filters, sortBy]);
+  }, [providers, filters, sortBy, searchResults])
 
   useEffect(() => {
     setFilteredProviders(filteredProvidersMemo);
@@ -150,6 +153,22 @@ export default function ResidentialPage() {
   const clearFilters = () => {
     setFilters({ pests: [], services: [] });
   };
+
+  const handleSearch = (results: any[], searchType: 'postcode' | 'borough' | 'provider' | 'all') => {
+    setSearchResults(results as Provider[]);
+  };
+
+  const handleClearSearch = () => {
+    setSearchResults(null);
+  };
+
+  // Add london_borough field to providers for SearchBar compatibility
+  const providersWithBorough = useMemo(() => {
+    return providers.map(p => ({
+      ...p,
+      london_borough: p.address?.split(',').pop()?.trim() || 'London'
+    }));
+  }, [providers]);
 
   const getFilterCount = (filterValue: string) => {
     return providers.filter(p => p[filterValue as keyof Provider] === true).length;
@@ -462,6 +481,15 @@ export default function ResidentialPage() {
             </p>
           </div>
 
+          {/* SEARCH BAR */}
+          <div className="mb-8">
+            <SearchBar 
+              onSearch={handleSearch}
+              allProviders={providersWithBorough as any}
+              onClear={handleClearSearch}
+            />
+          </div>
+
           <div className="flex flex-col lg:flex-row gap-8">
             
             {/* FILTER SIDEBAR */}
@@ -483,7 +511,7 @@ export default function ResidentialPage() {
 
                 {/* Results Count */}
                 <div className="mb-6 p-4 bg-blue-50 rounded-lg">
-                  <p className="text-2xl font-black text-blue-900">{filteredProviders.length}</p>
+                  <p className="text-2xl font-black text-blue-900">{filteredProvidersMemo.length}</p>
                   <p className="text-sm text-blue-700">Providers Found</p>
                 </div>
 
