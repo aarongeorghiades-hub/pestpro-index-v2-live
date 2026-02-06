@@ -1,7 +1,7 @@
 'use client';
 export const dynamic = 'force-dynamic';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { createClient } from '@/utils/supabase';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -141,12 +141,78 @@ export default function CommercialPage() {
     loadProviders();
   }, []);
 
-  // Re-apply filters when sort changes
-  useEffect(() => {
-    if (providers.length > 0) {
-      applyFilters(providers, selectedFilters, sortBy);
+  // Define filter column map
+  const filterColumnMap: Record<string, string[]> = {
+    property_management: ['property_management'],
+    social_housing: ['social_housing'],
+    hospitality: ['hospitality', 'business_restaurants', 'business_hotels'],
+    healthcare: ['healthcare', 'business_healthcare'],
+    education: ['education', 'business_schools'],
+    retail: ['retail', 'business_retail'],
+    food_production: ['food_production'],
+    warehousing_logistics: ['warehousing_logistics', 'business_warehouses'],
+    offices: ['offices', 'business_offices'],
+    leisure_facilities: ['leisure_facilities'],
+    heat_treatment: ['heat_treatment', 'specialist_heat_treatment'],
+    falconry_bird_control: ['falconry_bird_control'],
+    detection_dogs: ['detection_dogs'],
+    high_rise_rope_access: ['high_rise_rope_access'],
+    fumigation: ['fumigation'],
+    proofing_services: ['proofing_services', 'specialist_pest_proofing'],
+    flexible_contracts: ['flexible_contracts'],
+    no_tie_in_contracts: ['no_tie_in_contracts'],
+    retainer_services: ['retainer_services'],
+    one_off_services: ['one_off_services'],
+    emergency_24_7: ['emergency_24_7', 'service_emergency_24_7'],
+    multi_site_coverage: ['multi_site_coverage'],
+    national_coverage: ['national_coverage'],
+    unmarked_vehicles: ['unmarked_vehicles'],
+    non_disruptive_services: ['non_disruptive_services'],
+    out_of_hours_services: ['out_of_hours_services'],
+    same_day_service: ['same_day_service'],
+    free_surveys: ['free_surveys', 'service_free_survey'],
+    free_quotes: ['free_quotes'],
+    guarantees_offered: ['guarantees_offered', 'service_guarantee'],
+    years_established_25_plus: ['years_established_25_plus'],
+    technicians_50_plus: ['technicians_50_plus'],
+    service_areas_documented: ['service_areas_documented'],
+    insurance_details_published: ['insurance_details_published'],
+    eco_friendly_methods: ['eco_friendly_methods', 'service_eco_friendly'],
+    humane_non_lethal_methods: ['humane_non_lethal_methods'],
+    peta_endorsed: ['peta_endorsed'],
+    rspca_recognized: ['rspca_recognized'],
+  };
+
+  // Compute filtered and sorted providers using useMemo
+  const filteredProvidersMemo = useMemo(() => {
+    if (providers.length === 0) return [];
+    
+    let filtered = providers;
+    
+    // Apply filters
+    if (selectedFilters.size > 0) {
+      filtered = providers.filter((provider) => {
+        return Array.from(selectedFilters).every((filterKey) => {
+          const columns = filterColumnMap[filterKey] || [filterKey];
+          return columns.some((col) => provider[col] === true);
+        });
+      });
     }
-  }, [sortBy, providers]);
+    
+    // Apply sort
+    if (sortBy === 'quality') {
+      filtered.sort((a, b) => {
+        const ratingA = a.google_rating || 0;
+        const ratingB = b.google_rating || 0;
+        if (ratingB !== ratingA) return ratingB - ratingA;
+        return (b.google_review_count || 0) - (a.google_review_count || 0);
+      });
+    } else if (sortBy === 'name') {
+      filtered.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
+    }
+    
+    return filtered;
+  }, [providers, selectedFilters, sortBy]);
 
 
 
@@ -185,53 +251,18 @@ export default function CommercialPage() {
     return <div className="flex gap-0.5">{stars}</div>;
   };
 
+  // Update filteredProviders whenever the memo changes
+  useEffect(() => {
+    setFilteredProviders(filteredProvidersMemo);
+  }, [filteredProvidersMemo]);
+
   // Apply filters
+  // Keep applyFilters for backward compatibility
   const applyFilters = (data: Provider[], filters: Set<string>, sortByValue?: string) => {
     const finalSortBy = sortByValue !== undefined ? sortByValue : sortBy;
     let filtered = data;
 
     if (filters.size > 0) {
-      const filterColumnMap: Record<string, string[]> = {
-        property_management: ['property_management'],
-        social_housing: ['social_housing'],
-        hospitality: ['hospitality', 'business_restaurants', 'business_hotels'],
-        healthcare: ['healthcare', 'business_healthcare'],
-        education: ['education', 'business_schools'],
-        retail: ['retail', 'business_retail'],
-        food_production: ['food_production'],
-        warehousing_logistics: ['warehousing_logistics', 'business_warehouses'],
-        offices: ['offices', 'business_offices'],
-        leisure_facilities: ['leisure_facilities'],
-        heat_treatment: ['heat_treatment', 'specialist_heat_treatment'],
-        falconry_bird_control: ['falconry_bird_control'],
-        detection_dogs: ['detection_dogs'],
-        high_rise_rope_access: ['high_rise_rope_access'],
-        fumigation: ['fumigation'],
-        proofing_services: ['proofing_services', 'specialist_pest_proofing'],
-        flexible_contracts: ['flexible_contracts'],
-        no_tie_in_contracts: ['no_tie_in_contracts'],
-        retainer_services: ['retainer_services'],
-        one_off_services: ['one_off_services'],
-        emergency_24_7: ['emergency_24_7', 'service_emergency_24_7'],
-        multi_site_coverage: ['multi_site_coverage'],
-        national_coverage: ['national_coverage'],
-        unmarked_vehicles: ['unmarked_vehicles'],
-        non_disruptive_services: ['non_disruptive_services'],
-        out_of_hours_services: ['out_of_hours_services'],
-        same_day_service: ['same_day_service'],
-        free_surveys: ['free_surveys', 'service_free_survey'],
-        free_quotes: ['free_quotes'],
-        guarantees_offered: ['guarantees_offered', 'service_guarantee'],
-        years_established_25_plus: ['years_established_25_plus'],
-        technicians_50_plus: ['technicians_50_plus'],
-        service_areas_documented: ['service_areas_documented'],
-        insurance_details_published: ['insurance_details_published'],
-        eco_friendly_methods: ['eco_friendly_methods', 'service_eco_friendly'],
-        humane_non_lethal_methods: ['humane_non_lethal_methods'],
-        peta_endorsed: ['peta_endorsed'],
-        rspca_recognized: ['rspca_recognized'],
-      };
-
       filtered = data.filter((provider) => {
         return Array.from(filters).every((filterKey) => {
           const columns = filterColumnMap[filterKey] || [filterKey];
