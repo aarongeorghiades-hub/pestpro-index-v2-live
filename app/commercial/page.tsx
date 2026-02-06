@@ -8,6 +8,14 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Phone, Mail, MapPin, ShieldCheck, Award, CheckCircle2 } from 'lucide-react';
 
+// Helper function to extract postcode from address
+const extractPostcode = (address: string | null): string | null => {
+  if (!address) return null;
+  const postcodeRegex = /[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}/i;
+  const match = address.match(postcodeRegex);
+  return match ? match[0] : null;
+};
+
 interface Provider {
   canonical_id: number;
   name: string;
@@ -766,7 +774,7 @@ export default function CommercialPage() {
                           {provider.address && (
                             <div className="flex items-center gap-2">
                               <MapPin size={16} className="text-blue-600" />
-                              <span className="text-sm text-gray-700">{provider.address}</span>
+                              <span className="text-sm text-gray-700">{extractPostcode(provider.address) || provider.address}</span>
                             </div>
                           )}
                         </div>

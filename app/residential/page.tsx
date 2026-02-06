@@ -10,6 +10,17 @@ import SearchBar from '@/components/SearchBar';
 // Cache bust: 2025-01-15-v3
 
 // ============================================================================
+// HELPER FUNCTIONS
+// ============================================================================
+
+const extractPostcode = (address: string | null): string | null => {
+  if (!address) return null;
+  const postcodeRegex = /[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}/i;
+  const match = address.match(postcodeRegex);
+  return match ? match[0] : null;
+};
+
+// ============================================================================
 // INTERFACES
 // ============================================================================
 
@@ -604,7 +615,7 @@ export default function ResidentialPage() {
                         {provider.address && (
                           <div className="flex items-start gap-1 mb-2 text-xs text-gray-600">
                             <span className="text-red-500">📍</span>
-                            <span className="line-clamp-1">{provider.address}</span>
+                            <span className="line-clamp-1">{extractPostcode(provider.address) || provider.address}</span>
                           </div>
                         )}
                         {provider.google_rating && (
