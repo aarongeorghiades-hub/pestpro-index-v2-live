@@ -664,7 +664,7 @@ export default function CommercialPage() {
                 </div>
 
                 <div className="mb-6 p-4 bg-blue-50 rounded-lg">
-                  <p className="text-2xl font-black text-blue-900">{filteredProviders.length}</p>
+                  <p className="text-2xl font-black text-blue-900">{filteredProvidersMemo.length}</p>
                   <p className="text-sm text-blue-700">Providers Found</p>
                 </div>
 
