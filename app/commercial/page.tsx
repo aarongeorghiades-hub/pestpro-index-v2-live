@@ -446,11 +446,12 @@ export default function CommercialPage() {
       {/* COMPLIANCE HUB SECTION */}
       <section className="relative bg-gradient-to-r from-blue-50 to-indigo-50 py-16 border-t-2 border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-lg p-8">
+          <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg shadow-lg border-l-4 border-blue-600 p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 transform">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-black text-gray-900 mb-2">Compliance Headaches? We've Got You Covered</h2>
               <p className="text-lg text-gray-600 mb-4">Finding the right pest control provider is the easy part. Proving compliance to regulators? That's where businesses struggle.</p>
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">Introducing PestPro Audit and Regulatory Compliance Hub <span className="text-sm text-gray-500">(Coming Soon)</span></h3>
+              <h3 className="text-2xl font-bold text-blue-600 mb-2">Introducing PestPro Audit and Regulatory Compliance Hub</h3>
+              <p className="text-xl font-bold text-gray-600 mb-4">(Coming Soon)</p>
               <p className="text-gray-700 mb-6">Our comprehensive Audit and Regulatory Compliance Hub designed specifically for business owners to help manage their pest control records.</p>
             </div>
             
