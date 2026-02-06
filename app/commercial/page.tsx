@@ -146,7 +146,7 @@ export default function CommercialPage() {
     if (providers.length > 0) {
       applyFilters(providers, selectedFilters, sortBy);
     }
-  }, [sortBy]);
+  }, [sortBy, providers]);
 
 
 
