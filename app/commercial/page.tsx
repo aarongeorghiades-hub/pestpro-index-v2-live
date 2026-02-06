@@ -146,7 +146,7 @@ export default function CommercialPage() {
     if (providers.length > 0) {
       applyFilters(providers, selectedFilters, sortBy);
     }
-  }, [sortBy]);
+  }, [sortBy, providers, selectedFilters]);
 
 
 
@@ -267,13 +267,13 @@ export default function CommercialPage() {
       newFilters.add(filterKey);
     }
     setSelectedFilters(newFilters);
-    applyFilters(providers, newFilters, sortBy);
+    // Note: Don't call applyFilters here - let the useEffect handle it
   };
 
   // Clear all filters
   const clearAllFilters = () => {
     setSelectedFilters(new Set());
-    applyFilters(providers, new Set(), sortBy);
+    // Note: Don't call applyFilters here - let the useEffect handle it
   };
 
   if (loading) {
