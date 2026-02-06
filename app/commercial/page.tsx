@@ -241,9 +241,17 @@ export default function CommercialPage() {
 
     // Sort
     if (sortBy === 'quality') {
-      filtered.sort((a, b) => getQualityScore(b) - getQualityScore(a));
+      // Sort by Google rating (highest first), then by review count
+      filtered.sort((a, b) => {
+        // Handle null/undefined ratings
+        const ratingA = a.google_rating || 0;
+        const ratingB = b.google_rating || 0;
+        if (ratingB !== ratingA) return ratingB - ratingA; // Highest rating first
+        return (b.google_review_count || 0) - (a.google_review_count || 0); // Then by review count
+      });
     } else if (sortBy === 'name') {
-      filtered.sort((a, b) => a.name.localeCompare(b.name));
+      // Sort alphabetically (A-Z) by provider name, case-insensitive
+      filtered.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
     }
 
     setFilteredProviders(filtered);
@@ -699,7 +707,7 @@ export default function CommercialPage() {
                 <>
                   <div className="flex justify-between items-center mb-8">
                     <p className="text-gray-600 font-medium">Showing {filteredProviders.length} providers</p>
-                    <select value={sortBy} onChange={(e) => { setSortBy(e.target.value); applyFilters(providers, selectedFilters); }} className="px-4 py-2 border-2 border-gray-300 rounded-lg font-medium text-gray-900">
+                    <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="px-4 py-2 border-2 border-gray-300 rounded-lg font-medium text-gray-900">
                       <option value="quality">By Rating</option>
                       <option value="name">By Name (A-Z)</option>
                     </select>
@@ -717,17 +725,11 @@ export default function CommercialPage() {
                           </div>
                         )}
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                           {provider.phone && (
                             <div className="flex items-center gap-2">
                               <Phone size={16} className="text-blue-600" />
                               <span className="text-sm text-gray-700">{provider.phone}</span>
-                            </div>
-                          )}
-                          {provider.email && (
-                            <div className="flex items-center gap-2">
-                              <Mail size={16} className="text-blue-600" />
-                              <span className="text-sm text-gray-700">{provider.email}</span>
                             </div>
                           )}
                           {provider.address && (
