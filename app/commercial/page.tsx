@@ -489,69 +489,6 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      {/* COMPLIANCE HUB SECTION */}
-      <section className="relative bg-gradient-to-r from-blue-50 to-indigo-50 py-16 border-t-2 border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg shadow-lg border-l-4 border-blue-600 p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 transform">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-black text-gray-900 mb-2">Compliance Headaches? We've Got You Covered</h2>
-              <p className="text-lg text-gray-600 mb-4">Finding the right pest control provider is the easy part. Proving compliance to regulators? That's where businesses struggle.</p>
-              <h3 className="text-2xl font-bold text-blue-600 mb-2">Introducing PestPro Audit and Regulatory Compliance Hub</h3>
-              <p className="text-xl font-bold text-gray-600 mb-4">(Coming Soon)</p>
-              <p className="text-gray-700 mb-6">Our comprehensive Audit and Regulatory Compliance Hub designed specifically for business owners to help manage their pest control records.</p>
-            </div>
-            
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">Upload once, export forever</h3>
-                  <p className="text-sm text-gray-600">Submit your pest control records to one central portal</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">Regulatory-ready reports in seconds</h3>
-                  <p className="text-sm text-gray-600">Generate audit-compliant documentation with a single click</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">EHO visit tomorrow?</h3>
-                  <p className="text-sm text-gray-600">No panic. Everything inspectors need, instantly available</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">Track contracts, certificates, and treatments</h3>
-                  <p className="text-sm text-gray-600">Never scramble for paperwork again</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">Built for multi-site operations</h3>
-                  <p className="text-sm text-gray-600">Manage compliance across all your locations from one dashboard</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mb-8 rounded">
-              <p className="text-gray-900 font-semibold">Stop drowning in admin. Start focusing on your business.</p>
-            </div>
-
-            <div className="text-center">
-              <a href="mailto:pestproindex@zohomail.eu?subject=Compliance%20Hub%20Waitlist" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out">
-                Join Waitlist
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* PDF GUIDES SECTION */}
       <section className="relative bg-gradient-to-br from-gray-50 to-white py-16 border-b-2 border-gray-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -611,6 +548,69 @@ export default function CommercialPage() {
               <Link href="https://pestproindex.lemonsqueezy.com/checkout/buy/1b7d0369-1546-49b3-b8c9-88dd4db7e716" className="block text-center px-6 py-3 bg-[#1e3a8a] text-white font-bold rounded-lg hover:bg-blue-900 transition-all shadow-md">
                 Get the Workbook - £29.99
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* COMPLIANCE HUB SECTION */}
+      <section className="relative bg-gradient-to-r from-blue-50 to-indigo-50 py-16 border-t-2 border-gray-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-blue-50 to-white rounded-lg shadow-lg border-l-4 border-blue-600 p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 transform">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-black text-gray-900 mb-2">Compliance Headaches? We've Got You Covered</h2>
+              <p className="text-lg text-gray-600 mb-4">Finding the right pest control provider is the easy part. Proving compliance to regulators? That's where businesses struggle.</p>
+              <h3 className="text-2xl font-bold text-blue-600 mb-2">Introducing PestPro Audit and Regulatory Compliance Hub</h3>
+              <p className="text-xl font-bold text-gray-600 mb-4">(Coming Soon)</p>
+              <p className="text-gray-700 mb-6">Our comprehensive Audit and Regulatory Compliance Hub designed specifically for business owners to help manage their pest control records.</p>
+            </div>
+            
+            <div className="space-y-4 mb-8">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Upload once, export forever</h3>
+                  <p className="text-sm text-gray-600">Submit your pest control records to one central portal</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Regulatory-ready reports in seconds</h3>
+                  <p className="text-sm text-gray-600">Generate audit-compliant documentation with a single click</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">EHO visit tomorrow?</h3>
+                  <p className="text-sm text-gray-600">No panic. Everything inspectors need, instantly available</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Track contracts, certificates, and treatments</h3>
+                  <p className="text-sm text-gray-600">Never scramble for paperwork again</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">Built for multi-site operations</h3>
+                  <p className="text-sm text-gray-600">Manage compliance across all your locations from one dashboard</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mb-8 rounded">
+              <p className="text-gray-900 font-semibold">Stop drowning in admin. Start focusing on your business.</p>
+            </div>
+
+            <div className="text-center">
+              <a href="mailto:pestproindex@zohomail.eu?subject=Compliance%20Hub%20Waitlist" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out">
+                Join Waitlist
+              </a>
             </div>
           </div>
         </div>
