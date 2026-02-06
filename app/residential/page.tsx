@@ -542,7 +542,7 @@ export default function ResidentialPage() {
                 <div className="text-center py-12">
                   <p className="text-gray-600">Loading providers...</p>
                 </div>
-              ) : filteredProviders.length === 0 ? (
+              ) : filteredProvidersMemo.length === 0 ? (
                 <div className="text-center py-12">
                   <p className="text-gray-600 text-lg mb-4">No providers match your filters</p>
                   <button
@@ -555,14 +555,14 @@ export default function ResidentialPage() {
               ) : (
                 <>
                   <div className="flex justify-between items-center mb-8">
-                    <p className="text-gray-600 font-medium">Showing {filteredProviders.length} providers</p>
+                    <p className="text-gray-600 font-medium">Showing {filteredProvidersMemo.length} providers</p>
                     <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="px-4 py-2 border-2 border-gray-300 rounded-lg font-medium text-gray-900">
                       <option value="quality">By Rating</option>
                       <option value="name">By Name (A-Z)</option>
                     </select>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredProviders.map(provider => {
+                  {filteredProvidersMemo.map(provider => {
                     const isTrophy = provider.google_rating && provider.google_rating >= 4.5 && 
                                     provider.google_review_count && provider.google_review_count >= 30;
                     const borderClass = isTrophy ? 'border-l-4 border-amber-500' : 'border-l-4 border-[#1e3a8a]';
