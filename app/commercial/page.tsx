@@ -317,6 +317,14 @@ export default function CommercialPage() {
     applyFilters(providers, new Set(), sortBy);
   };
 
+  // Add london_borough field to providers for SearchBar compatibility
+  const providersWithBorough = useMemo(() => {
+    return providers.map(p => ({
+      ...p,
+      london_borough: p.address?.split(',').pop()?.trim() || 'London'
+    }));
+  }, [providers]);
+
   // Handle search from SearchBar
   const handleSearch = (results: any, searchType?: string) => {
     setSearchResults(results);
@@ -647,7 +655,7 @@ export default function CommercialPage() {
 
           {/* SearchBar */}
           <div className="mb-8">
-            <SearchBar onSearch={handleSearch} onClear={handleClearSearch} allProviders={providers} />
+            <SearchBar onSearch={handleSearch} onClear={handleClearSearch} allProviders={providersWithBorough} />
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8">
