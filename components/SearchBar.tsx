@@ -202,7 +202,7 @@ export default function SearchBar({ onSearch, allProviders, onClear }: SearchBar
           value={searchInput}
           onChange={(e) => handleSearch(e.target.value)}
           placeholder="Search by postcode, area, or provider name..."
-          className="w-full pl-10 pr-10 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-600"
+          className="w-full pl-10 pr-10 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 text-black"
         />
         {searchInput && (
           <button
