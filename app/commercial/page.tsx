@@ -141,6 +141,13 @@ export default function CommercialPage() {
     loadProviders();
   }, []);
 
+  // Re-apply filters when sort changes
+  useEffect(() => {
+    if (providers.length > 0) {
+      applyFilters(providers, selectedFilters);
+    }
+  }, [sortBy]);
+
 
 
   // Calculate filter counts
