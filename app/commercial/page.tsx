@@ -141,12 +141,12 @@ export default function CommercialPage() {
     loadProviders();
   }, []);
 
-  // Re-apply filters when sort changes
+  // Re-apply filters when sort or providers change
   useEffect(() => {
     if (providers.length > 0) {
       applyFilters(providers, selectedFilters, sortBy);
     }
-  }, [sortBy, providers, selectedFilters]);
+  }, [sortBy, providers.length]);
 
 
 
@@ -267,13 +267,15 @@ export default function CommercialPage() {
       newFilters.add(filterKey);
     }
     setSelectedFilters(newFilters);
-    // Note: Don't call applyFilters here - let the useEffect handle it
+    // Apply filters immediately with the new filter set
+    applyFilters(providers, newFilters, sortBy);
   };
 
   // Clear all filters
   const clearAllFilters = () => {
     setSelectedFilters(new Set());
-    // Note: Don't call applyFilters here - let the useEffect handle it
+    // Apply filters immediately with empty filter set
+    applyFilters(providers, new Set(), sortBy);
   };
 
   if (loading) {
