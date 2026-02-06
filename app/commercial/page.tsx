@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Phone, Mail, MapPin, ShieldCheck, Award, CheckCircle2 } from 'lucide-react';
+import SearchBar from '@/components/SearchBar';
 
 // Helper function to extract postcode from address
 const extractPostcode = (address: string | null): string | null => {
@@ -42,6 +43,7 @@ export default function CommercialPage() {
   const [filterCounts, setFilterCounts] = useState<FilterCounts>({});
   const [selectedFilters, setSelectedFilters] = useState<Set<string>>(new Set());
   const [sortBy, setSortBy] = useState('quality');
+  const [searchResults, setSearchResults] = useState<Provider[] | null>(null);
   const pathname = usePathname();
 
   // Navigation items
@@ -195,11 +197,12 @@ export default function CommercialPage() {
   const filteredProvidersMemo = useMemo(() => {
     if (providers.length === 0) return [];
     
-    let filtered = providers;
+    // Start with search results if available, otherwise all providers
+    let filtered = searchResults !== null ? searchResults : providers;
     
     // Apply filters
     if (selectedFilters.size > 0) {
-      filtered = providers.filter((provider) => {
+      filtered = filtered.filter((provider) => {
         return Array.from(selectedFilters).every((filterKey) => {
           const columns = filterColumnMap[filterKey] || [filterKey];
           return columns.some((col) => provider[col] === true);
@@ -220,7 +223,7 @@ export default function CommercialPage() {
     }
     
     return filtered;
-  }, [providers, selectedFilters, sortBy]);
+  }, [providers, selectedFilters, sortBy, searchResults]);
 
 
 
@@ -312,6 +315,16 @@ export default function CommercialPage() {
     setSelectedFilters(new Set());
     // Apply filters immediately with empty filter set
     applyFilters(providers, new Set(), sortBy);
+  };
+
+  // Handle search from SearchBar
+  const handleSearch = (results: any) => {
+    setSearchResults(results);
+  };
+
+  // Handle clear search
+  const handleClearSearch = () => {
+    setSearchResults(null);
   };
 
   if (loading) {
@@ -630,6 +643,11 @@ export default function CommercialPage() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-gray-900 mb-4">Full List of Commercial Providers</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">All {providers.length} commercial providers with advanced filtering</p>
+          </div>
+
+          {/* SearchBar */}
+          <div className="mb-8">
+            <SearchBar onSearch={handleSearch} onClear={handleClearSearch} allProviders={providers} />
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8">
