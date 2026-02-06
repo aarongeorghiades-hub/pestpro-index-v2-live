@@ -146,7 +146,7 @@ export default function CommercialPage() {
     if (providers.length > 0) {
       applyFilters(providers, selectedFilters, sortBy);
     }
-  }, [sortBy, providers, selectedFilters]);
+  }, [sortBy]);
 
 
 
@@ -186,7 +186,8 @@ export default function CommercialPage() {
   };
 
   // Apply filters
-  const applyFilters = (data: Provider[], filters: Set<string>, sortByValue: string = sortBy) => {
+  const applyFilters = (data: Provider[], filters: Set<string>, sortByValue?: string) => {
+    const finalSortBy = sortByValue !== undefined ? sortByValue : sortBy;
     let filtered = data;
 
     if (filters.size > 0) {
@@ -240,7 +241,7 @@ export default function CommercialPage() {
     }
 
     // Sort
-    if (sortByValue === 'quality') {
+    if (finalSortBy === 'quality') {
       // Sort by Google rating (highest first), then by review count
       filtered.sort((a, b) => {
         // Handle null/undefined ratings
@@ -249,7 +250,7 @@ export default function CommercialPage() {
         if (ratingB !== ratingA) return ratingB - ratingA; // Highest rating first
         return (b.google_review_count || 0) - (a.google_review_count || 0); // Then by review count
       });
-    } else if (sortByValue === 'name') {
+    } else if (finalSortBy === 'name') {
       // Sort alphabetically (A-Z) by provider name, case-insensitive
       filtered.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
     }
