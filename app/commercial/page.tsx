@@ -130,7 +130,7 @@ export default function CommercialPage() {
 
         setProviders(data || []);
         calculateFilterCounts(data || []);
-        applyFilters(data || [], new Set());
+        applyFilters(data || [], new Set(), 'quality');
       } catch (error) {
         console.error('Error loading providers:', error);
       } finally {
@@ -144,9 +144,9 @@ export default function CommercialPage() {
   // Re-apply filters when sort changes
   useEffect(() => {
     if (providers.length > 0) {
-      applyFilters(providers, selectedFilters);
+      applyFilters(providers, selectedFilters, sortBy);
     }
-  }, [sortBy]);
+  }, [sortBy, providers, selectedFilters]);
 
 
 
@@ -186,7 +186,7 @@ export default function CommercialPage() {
   };
 
   // Apply filters
-  const applyFilters = (data: Provider[], filters: Set<string>) => {
+  const applyFilters = (data: Provider[], filters: Set<string>, sortByValue: string = sortBy) => {
     let filtered = data;
 
     if (filters.size > 0) {
@@ -240,7 +240,7 @@ export default function CommercialPage() {
     }
 
     // Sort
-    if (sortBy === 'quality') {
+    if (sortByValue === 'quality') {
       // Sort by Google rating (highest first), then by review count
       filtered.sort((a, b) => {
         // Handle null/undefined ratings
@@ -249,7 +249,7 @@ export default function CommercialPage() {
         if (ratingB !== ratingA) return ratingB - ratingA; // Highest rating first
         return (b.google_review_count || 0) - (a.google_review_count || 0); // Then by review count
       });
-    } else if (sortBy === 'name') {
+    } else if (sortByValue === 'name') {
       // Sort alphabetically (A-Z) by provider name, case-insensitive
       filtered.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
     }
@@ -266,13 +266,13 @@ export default function CommercialPage() {
       newFilters.add(filterKey);
     }
     setSelectedFilters(newFilters);
-    applyFilters(providers, newFilters);
+    applyFilters(providers, newFilters, sortBy);
   };
 
   // Clear all filters
   const clearAllFilters = () => {
     setSelectedFilters(new Set());
-    applyFilters(providers, new Set());
+    applyFilters(providers, new Set(), sortBy);
   };
 
   if (loading) {
