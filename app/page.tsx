@@ -190,57 +190,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 5: ABOUT PESTPRO INDEX */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-20 border-t-2 border-blue-200">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-5xl font-black text-gray-900 mb-4">About PestPro Index</h2>
-              <p className="text-xl text-gray-600">London's transparent, neutral pest control directory</p>
-            </div>
+      {/* SECTION 5: ABOUT PESTPRO INDEX - NEW POSITION BELOW HERO */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
+              Built Out of Frustration.<br />Designed for Clarity.
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              We believe finding pest control should be straightforward — and so should running a pest control business.
+            </p>
+          </div>
 
-            <div className="bg-white rounded-2xl shadow-lg p-12 mb-8">
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                PestPro Index is a free, neutral directory of pest control professionals and products in London. We believe finding the right pest control should be straightforward, transparent, and based on data—not endorsements or commissions.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-8 mb-8">
-                <div>
-                  <h3 className="text-xl font-bold text-blue-900 mb-3 flex items-center gap-2">
-                    <span className="text-2xl">✓</span> Comprehensive Directory
-                  </h3>
-                  <p className="text-gray-600">407 residential and 221 commercial pest control providers, all verified and searchable by location, pest type, certifications, and reviews.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-blue-900 mb-3 flex items-center gap-2">
-                    <span className="text-2xl">✓</span> No Bias, No Commissions
-                  </h3>
-                  <p className="text-gray-600">We don't take commissions, endorsements, or payments from providers. Every listing is provider-stated information only.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-blue-900 mb-3 flex items-center gap-2">
-                    <span className="text-2xl">✓</span> Advanced Filtering
-                  </h3>
-                  <p className="text-gray-600">Search by postcode, borough, pest type, certifications (BPCA, NPTA, etc.), service features, and more.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-blue-900 mb-3 flex items-center gap-2">
-                    <span className="text-2xl">✓</span> Free Resources
-                  </h3>
-                  <p className="text-gray-600">Access compliance guides, industry publications, DIY decision guides, and curated product recommendations.</p>
-                </div>
-              </div>
+          <div className="space-y-8 text-lg text-gray-700 leading-relaxed mb-12">
+            <p>
+              We've all been there. You've got a problem — whether it's mice in the kitchen or a wasp nest in the eaves — and you need help. So you turn to one of those aggregation sites.
+            </p>
+            
+            <p>
+              What follows is an avalanche. Calls from numbers you don't recognise. Providers you've never heard of pitching hard. And through it all, one nagging question: <em>is this actually the right provider for my problem, or just the one who paid to be first in the queue?</em>
+            </p>
+            
+            <p>
+              That uncertainty didn't sit right with us. So we built something different.
+            </p>
+            
+            <p className="text-xl font-semibold text-gray-900 bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
+              PestPro Index is a neutral directory. No lead fees. No commissions. No pay-per-enquiry. Every provider gets listed — enhanced listings get extra visibility, but the data speaks for itself. Reviews, certifications, service areas, specialisms — organised so you can make your own informed decision.
+            </p>
+          </div>
 
-              <p className="text-gray-600 mb-8 italic">
-                Whether you're dealing with a residential pest problem or managing commercial pest control for a business, PestPro Index helps you find the right solution—on your terms.
-              </p>
-
-              <div className="text-center">
-                <Link href="/about" className="inline-block px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition">
-                  Learn More About Us →
-                </Link>
-              </div>
-            </div>
+          <div className="text-center">
+            <Link href="/about" className="inline-block px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition">
+              Learn More About Us →
+            </Link>
           </div>
         </div>
       </section>
