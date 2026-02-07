@@ -152,8 +152,9 @@ export default function CommercialPage() {
         ].join(', ');
         
         const { data, error } = await supabase
-          .from('commercial_providers')
-          .select('*');
+          .from('Providers')
+          .select(neededColumns)
+          .eq('commercial', true);
 
         if (error) throw error;
 
@@ -248,32 +249,9 @@ export default function CommercialPage() {
     return filtered;
   }, [providers, selectedFilters, sortBy, searchResults]);
 
-  // Sync filteredProvidersMemo to filteredProviders state
-  useEffect(() => {
-    setFilteredProviders(filteredProvidersMemo);
-  }, [filteredProvidersMemo]);
 
-  // Calculate filter counts based on current providers
-  useEffect(() => {
-    const counts: FilterCounts = {};
-    Object.values(filterCategories).forEach((category) => {
-      category.forEach((filter) => {
-        counts[filter.key] = providers.filter((p) => p[filter.key] === true).length;
-      });
-    });
-    setFilterCounts(counts);
-  }, [providers]);
 
-  // Calculate filter counts
-  const calculateFilterCounts = (data: Provider[]) => {
-    const counts: FilterCounts = {};
-    Object.values(filterCategories).forEach((category) => {
-      category.forEach((filter) => {
-        counts[filter.key] = data.filter((p) => p[filter.key] === true).length;
-      });
-    });
-    setFilterCounts(counts);
-  };
+
 
   // Calculate quality score
   const getQualityScore = (provider: Provider): number => {
@@ -299,10 +277,21 @@ export default function CommercialPage() {
     return <div className="flex gap-0.5">{stars}</div>;
   };
 
-  // Handle sort change
-  const handleSortChange = (newSort: string) => {
-    setSortBy(newSort);
-  };
+  // Sync filteredProvidersMemo to filteredProviders state
+  useEffect(() => {
+    setFilteredProviders(filteredProvidersMemo);
+  }, [filteredProvidersMemo]);
+
+  // Calculate filter counts based on current providers
+  useEffect(() => {
+    const counts: FilterCounts = {};
+    Object.values(filterCategories).forEach((category) => {
+      category.forEach((filter) => {
+        counts[filter.key] = providers.filter((p) => p[filter.key] === true).length;
+      });
+    });
+    setFilterCounts(counts);
+  }, [providers]);
 
   // Handle filter change
   const handleFilterChange = (filterKey: string) => {
@@ -328,6 +317,11 @@ export default function CommercialPage() {
   // Handle clear search
   const handleClearSearch = () => {
     setSearchResults(null);
+  };
+
+  // Handle sort change
+  const handleSortChange = (newSort: string) => {
+    setSortBy(newSort);
   };
 
   if (loading) {
