@@ -18,9 +18,11 @@ const extractPostcode = (address: string | null): string | null => {
 };
 
 interface Provider {
-  provider_id: number;
-  provider_name: string;
+  canonical_id: number;
+  name: string;
   website: string | null;
+  google_rating: number;
+  google_review_count: number;
   phone: string | null;
   email: string | null;
   address: string | null;
@@ -130,7 +132,7 @@ export default function CommercialPage() {
         
         // Optimize query: select only needed columns instead of *
         const neededColumns = [
-          'provider_id', 'provider_name', 'website',
+          'canonical_id', 'name', 'website', 'google_rating', 'google_review_count',
           'phone', 'email', 'address', 'postcode',
           'bpca_member', 'npta_member', 'rsph_level_2', 'safe_contractor', 'chas_accredited',
           'basis_prompt', 'cepa_certified', 'iso_9001', 'iso_14001', 'iso_45001',
@@ -150,8 +152,9 @@ export default function CommercialPage() {
         ].join(', ');
         
         const { data, error } = await supabase
-          .from('commercial_providers')
-          .select(neededColumns);
+          .from('Providers')
+          .select(neededColumns)
+          .eq('commercial', true);
 
         if (error) throw error;
 
@@ -232,9 +235,15 @@ export default function CommercialPage() {
     }
     
     // Apply sort
-    if (sortBy === 'quality' || sortBy === 'name') {
-      // For commercial providers, sort by name (no rating data available)
-      filtered.sort((a, b) => a.provider_name.localeCompare(b.provider_name, undefined, { sensitivity: 'base' }));
+    if (sortBy === 'quality') {
+      filtered.sort((a, b) => {
+        const ratingA = a.google_rating || 0;
+        const ratingB = b.google_rating || 0;
+        if (ratingB !== ratingA) return ratingB - ratingA;
+        return (b.google_review_count || 0) - (a.google_review_count || 0);
+      });
+    } else if (sortBy === 'name') {
+      filtered.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
     }
     
     return filtered;
@@ -402,8 +411,13 @@ export default function CommercialPage() {
               .map(provider => (
                 <div key={provider.canonical_id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all border-l-4 border-orange-500 p-6">
                   <span className="inline-block bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">FEATURED</span>
-                  <h3 className="text-xl font-black text-gray-900 mb-3">{provider.provider_name}</h3>
-
+                  <h3 className="text-xl font-black text-gray-900 mb-3">{provider.name}</h3>
+                  {provider.google_review_count > 0 && (
+                    <div className="flex items-center gap-2 mb-2">
+                      {renderStars(provider.google_rating)}
+                      <span className="text-sm font-semibold text-gray-600">{provider.google_rating?.toFixed(1)} ({provider.google_review_count} reviews)</span>
+                    </div>
+                  )}
                   {(provider.postcode || provider.address) && (
                     <div className="flex items-center gap-2 mb-2">
                       <MapPin size={14} className="text-blue-600" />
@@ -471,8 +485,9 @@ export default function CommercialPage() {
               .map(provider => (
                 <div key={provider.canonical_id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all border-l-4 border-yellow-500 p-6">
                   <span className="inline-block bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">TOP RATED</span>
-                  <h3 className="text-lg font-black text-gray-900 mb-3">{provider.provider_name}</h3>
-
+                  <h3 className="text-lg font-black text-gray-900 mb-3">{provider.name}</h3>
+                  <div className="flex items-center gap-2 mb-2">{renderStars(provider.google_rating)}</div>
+                  <span className="text-sm text-gray-600 mb-3 block">{provider.google_rating?.toFixed(1)} ({provider.google_review_count} reviews)</span>
                   {(provider.postcode || provider.address) && (
                     <div className="flex items-center gap-2 mb-2">
                       <MapPin size={14} className="text-blue-600" />
@@ -697,16 +712,7 @@ export default function CommercialPage() {
 
           {/* SearchBar */}
           <div className="mb-8">
-            <SearchBar 
-              onSearch={handleSearch} 
-              onClear={handleClearSearch} 
-              allProviders={providers.map(p => ({
-                canonical_id: p.provider_id,
-                name: p.provider_name,
-                london_borough: p.london_borough,
-                ...p
-              }))} 
-            />
+            <SearchBar onSearch={handleSearch} onClear={handleClearSearch} allProviders={providers} />
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8">
@@ -832,9 +838,14 @@ export default function CommercialPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                   {filteredProvidersMemo.map(provider => (
                       <div key={provider.canonical_id} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all border-l-4 border-blue-600 p-6">
-                        <h3 className="text-2xl font-black text-gray-900 mb-2">{provider.provider_name}</h3>
+                        <h3 className="text-2xl font-black text-gray-900 mb-2">{provider.name}</h3>
 
-
+                        {provider.google_review_count > 0 && (
+                          <div className="flex items-center gap-3 mb-3">
+                            {renderStars(provider.google_rating)}
+                            <span className="text-sm font-semibold text-gray-600">{provider.google_rating?.toFixed(1)} ({provider.google_review_count} {provider.google_review_count === 1 ? 'review' : 'reviews'})</span>
+                          </div>
+                        )}
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                           {provider.phone && (
