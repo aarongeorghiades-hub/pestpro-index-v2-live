@@ -162,9 +162,9 @@ export default function CommercialPage() {
         console.log('Total providers with commercial=true:', (data || []).length);
         console.log('=== END DEBUG ===');
 
-        setProviders(data || []);
-        calculateFilterCounts(data || []);
-        applyFilters(data || [], new Set(), 'quality');
+        setProviders((data as unknown as Provider[]) || []);
+        calculateFilterCounts((data as unknown as Provider[]) || []);
+        applyFilters((data as unknown as Provider[]) || [], new Set(), 'quality');
       } catch (error) {
         console.error('Error loading providers:', error);
         // Show error state instead of infinite loading
