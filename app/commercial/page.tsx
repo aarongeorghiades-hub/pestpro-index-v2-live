@@ -163,8 +163,6 @@ export default function CommercialPage() {
         console.log('=== END DEBUG ===');
 
         setProviders((data as unknown as Provider[]) || []);
-        calculateFilterCounts((data as unknown as Provider[]) || []);
-        applyFilters((data as unknown as Provider[]) || [], new Set(), 'quality');
       } catch (error) {
         console.error('Error loading providers:', error);
         // Show error state instead of infinite loading
@@ -251,7 +249,11 @@ export default function CommercialPage() {
     return filtered;
   }, [providers, selectedFilters, sortBy, searchResults]);
 
-
+  // Sync filteredProvidersMemo to state and calculate filter counts
+  useEffect(() => {
+    setFilteredProviders(filteredProvidersMemo);
+    calculateFilterCounts(providers);
+  }, [filteredProvidersMemo, providers]);
 
   // Calculate filter counts
   const calculateFilterCounts = (data: Provider[]) => {
