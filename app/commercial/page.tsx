@@ -41,6 +41,7 @@ export default function CommercialPage() {
   const [providers, setProviders] = useState<Provider[]>([]);
   const [filteredProviders, setFilteredProviders] = useState<Provider[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [filterCounts, setFilterCounts] = useState<FilterCounts>({});
   const [selectedFilters, setSelectedFilters] = useState<Set<string>>(new Set());
   const [sortBy, setSortBy] = useState('quality');
@@ -128,9 +129,31 @@ export default function CommercialPage() {
     const loadProviders = async () => {
       try {
         const supabase = createClient();
+        
+        // Optimize query: select only needed columns instead of *
+        const neededColumns = [
+          'canonical_id', 'name', 'website', 'google_rating', 'google_review_count',
+          'phone', 'email', 'address', 'postcode',
+          'bpca_member', 'npta_member', 'rsph_level_2', 'safe_contractor', 'chas_accredited',
+          'basis_prompt', 'cepa_certified', 'iso_9001', 'iso_14001', 'iso_45001',
+          'constructionline', 'trustmark',
+          'heat_treatment', 'falconry_bird_control', 'detection_dogs', 'high_rise_rope_access',
+          'fumigation', 'proofing_services',
+          'flexible_contracts', 'no_tie_in_contracts', 'retainer_services', 'one_off_services',
+          'emergency_24_7',
+          'property_management', 'social_housing', 'hospitality', 'healthcare', 'education',
+          'retail', 'food_production', 'warehousing_logistics',
+          'multi_site_coverage', 'national_coverage', 'unmarked_vehicles', 'non_disruptive_services',
+          'out_of_hours_services', 'same_day_service',
+          'free_surveys', 'free_quotes', 'guarantees_offered', 'years_established_25_plus',
+          'technicians_50_plus', 'service_areas_documented', 'insurance_details_published',
+          'eco_friendly_methods', 'humane_non_lethal_methods', 'peta_endorsed', 'rspca_recognized',
+          'london_borough'
+        ].join(', ');
+        
         const { data, error } = await supabase
           .from('Providers')
-          .select('*')
+          .select(neededColumns)
           .eq('commercial', true);
 
         if (error) throw error;
@@ -144,6 +167,8 @@ export default function CommercialPage() {
         applyFilters(data || [], new Set(), 'quality');
       } catch (error) {
         console.error('Error loading providers:', error);
+        // Show error state instead of infinite loading
+        setProviders([]);
       } finally {
         setLoading(false);
       }
