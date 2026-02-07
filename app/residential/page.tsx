@@ -434,7 +434,7 @@ export default function ResidentialPage() {
                   {(provider.postcode || provider.address) && (
                     <div className="flex items-start gap-1 mb-3 text-xs text-gray-600">
                       <span className="text-red-500 mt-0.5">📍</span>
-                      <span className="line-clamp-1">{provider.postcode ? `${provider.address || ''}, ${provider.postcode}`.trim() : provider.address}</span>
+                      <span className="line-clamp-1">{provider.postcode || provider.address}</span>
                     </div>
                   )}
 
