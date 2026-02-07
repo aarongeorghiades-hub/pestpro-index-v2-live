@@ -300,6 +300,7 @@ export default function AboutPage() {
               <ul className="space-y-2 text-gray-400">
                 <li><Link href="/about" className="hover:text-white transition">About</Link></li>
                 <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
+                <li><Link href="/resources" className="hover:text-white transition">Resources</Link></li>
               </ul>
             </div>
           </div>

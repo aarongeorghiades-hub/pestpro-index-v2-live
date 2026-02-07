@@ -303,9 +303,14 @@ export default function CommercialProductsPage() {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-12">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="mb-4">&copy; 2026 PestPro Index. All rights reserved.</p>
-          <p className="text-sm">Amazon Associates: We earn commissions from qualifying purchases through Amazon Associates links</p>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="mb-8 text-center">
+            <Link href="/resources" className="inline-block text-gray-400 hover:text-white transition font-semibold">Resources</Link>
+          </div>
+          <div className="text-center">
+            <p className="mb-4">&copy; 2026 PestPro Index. All rights reserved.</p>
+            <p className="text-sm">Amazon Associates: We earn commissions from qualifying purchases through Amazon Associates links</p>
+          </div>
         </div>
       </footer>
     </div>

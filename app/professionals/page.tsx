@@ -717,6 +717,7 @@ export default function ProfessionalsPage() {
                 <Link href="/residential" className="block text-gray-400 hover:text-white transition">Residential</Link>
                 <Link href="/commercial" className="block text-gray-400 hover:text-white transition">Commercial</Link>
                 <Link href="/professionals" className="block text-gray-400 hover:text-white transition">For Pest Professionals</Link>
+                <Link href="/resources" className="block text-gray-400 hover:text-white transition">Resources</Link>
               </div>
             </div>
             
