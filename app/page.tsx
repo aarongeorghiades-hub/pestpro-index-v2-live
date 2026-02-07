@@ -58,11 +58,11 @@ export default function Home() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mb-8">
             <div className="border-r border-white/30 pr-8">
-              <div className="text-6xl font-black mb-2">481</div>
+              <div className="text-6xl font-black mb-2">407</div>
               <div className="text-sm font-semibold tracking-widest text-blue-100">RESIDENTIAL PROVIDERS</div>
             </div>
             <div className="border-r border-white/30 px-8">
-              <div className="text-6xl font-black mb-2">245</div>
+              <div className="text-6xl font-black mb-2">221</div>
               <div className="text-sm font-semibold tracking-widest text-blue-100">COMMERCIAL PROVIDERS</div>
             </div>
             <div className="pl-8">
@@ -91,7 +91,7 @@ export default function Home() {
                 <p className="text-gray-700 mb-6">Find pest professionals and DIY pest products for your home</p>
                 <div className="space-y-3">
                   <Link href="/residential" className="block text-blue-600 font-semibold hover:text-blue-800">
-                    Browse 481 providers →
+                    Browse 407 providers →
                   </Link>
                   <Link href="/products" className="block text-blue-600 font-semibold hover:text-blue-800">
                     Browse home pest products →
@@ -114,7 +114,7 @@ export default function Home() {
                 <p className="text-gray-700 mb-6">Find pest professionals, DIY pest products, and compliance services for your business</p>
                 <div className="space-y-3">
                   <Link href="/commercial" className="block text-blue-600 font-semibold hover:text-blue-800">
-                    Browse 245 providers →
+                    Browse 221 providers →
                   </Link>
                   <Link href="/commercial-products" className="block text-blue-600 font-semibold hover:text-blue-800">
                     Browse business pest products →
@@ -209,7 +209,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-blue-900 mb-3 flex items-center gap-2">
                     <span className="text-2xl">✓</span> Comprehensive Directory
                   </h3>
-                  <p className="text-gray-600">481 residential and 245 commercial pest control providers, all verified and searchable by location, pest type, certifications, and reviews.</p>
+                  <p className="text-gray-600">407 residential and 221 commercial pest control providers, all verified and searchable by location, pest type, certifications, and reviews.</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-blue-900 mb-3 flex items-center gap-2">
