@@ -152,45 +152,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 4: HOW IT WORKS */}
-      <section className="bg-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <p className="text-gray-600 text-lg">We bring available data on pest control professionals to your fingertips so you can find pest control on your terms. A neutral directory designed for transparency, not transactions.</p>
-          </div>
-
-          <div className="grid grid-cols-3 gap-12">
-            {/* Search & Filter */}
-            <div className="text-center">
-              <div className="w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg" style={{background: 'linear-gradient(to bottom right, #2563eb, #1e40af)'}}>
-                <Search className="w-12 h-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-[#1e3a8a] mb-3">Search & Filter</h3>
-              <p className="text-gray-600">Filter by pest type, service features, and certifications to find the right match</p>
-            </div>
-
-            {/* Provider-Stated Info */}
-            <div className="text-center">
-              <div className="w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg" style={{background: 'linear-gradient(to bottom right, #2563eb, #1e40af)'}}>
-                <Shield className="w-12 h-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-[#1e3a8a] mb-3">Provider-Stated Info</h3>
-              <p className="text-gray-600">All information comes directly from providers - we don't judge outcomes</p>
-            </div>
-
-            {/* Make Informed Decisions */}
-            <div className="text-center">
-              <div className="w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg" style={{background: 'linear-gradient(to bottom right, #2563eb, #1e40af)'}}>
-                <TrendingUp className="w-12 h-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-[#1e3a8a] mb-3">Make Informed Decisions</h3>
-              <p className="text-gray-600">Contact providers directly - no booking fees, no commissions, no bias</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 5: ABOUT PESTPRO INDEX - NEW POSITION BELOW HERO */}
+      {/* SECTION 4: ABOUT PESTPRO INDEX - MOVED BELOW THREE CATEGORY CARDS */}
       <section className="bg-white py-20">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-12">
@@ -224,6 +186,44 @@ export default function Home() {
             <Link href="/about" className="inline-block px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition">
               Learn More About Us →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5: HOW IT WORKS */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <p className="text-gray-600 text-lg">We bring available data on pest control professionals to your fingertips so you can find pest control on your terms. A neutral directory designed for transparency, not transactions.</p>
+          </div>
+
+          <div className="grid grid-cols-3 gap-12">
+            {/* Search & Filter */}
+            <div className="text-center">
+              <div className="w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg" style={{background: 'linear-gradient(to bottom right, #2563eb, #1e40af)'}}>
+                <Search className="w-12 h-12 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e3a8a] mb-3">Search & Filter</h3>
+              <p className="text-gray-600">Filter by pest type, service features, and certifications to find the right match</p>
+            </div>
+
+            {/* Provider-Stated Info */}
+            <div className="text-center">
+              <div className="w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg" style={{background: 'linear-gradient(to bottom right, #2563eb, #1e40af)'}}>
+                <Shield className="w-12 h-12 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e3a8a] mb-3">Provider-Stated Info</h3>
+              <p className="text-gray-600">All information comes directly from providers - we don't judge outcomes</p>
+            </div>
+
+            {/* Make Informed Decisions */}
+            <div className="text-center">
+              <div className="w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg" style={{background: 'linear-gradient(to bottom right, #2563eb, #1e40af)'}}>
+                <TrendingUp className="w-12 h-12 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e3a8a] mb-3">Make Informed Decisions</h3>
+              <p className="text-gray-600">Contact providers directly - no booking fees, no commissions, no bias</p>
+            </div>
           </div>
         </div>
       </section>
