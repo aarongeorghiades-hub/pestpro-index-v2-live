@@ -163,6 +163,8 @@ export default function CommercialPage() {
         console.log('=== END DEBUG ===');
 
         setProviders((data as unknown as Provider[]) || []);
+        calculateFilterCounts((data as unknown as Provider[]) || []);
+        applyFilters((data as unknown as Provider[]) || [], new Set(), 'quality');
       } catch (error) {
         console.error('Error loading providers:', error);
         // Show error state instead of infinite loading
@@ -174,13 +176,6 @@ export default function CommercialPage() {
 
     loadProviders();
   }, []);
-
-  // Calculate filter counts when providers change
-  useEffect(() => {
-    if (providers.length > 0) {
-      calculateFilterCounts(providers);
-    }
-  }, [providers]);
 
   // Define filter column map
   const filterColumnMap: Record<string, string[]> = {
