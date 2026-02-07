@@ -153,30 +153,10 @@ export default function CommercialPage() {
       try {
         const supabase = createClient();
         
-        // Optimize query: select only needed columns instead of *
-        const neededColumns = [
-          'provider_id', 'provider_name', 'website',
-          'phone', 'email', 'address', 'postcode',
-          'bpca_member', 'npta_member', 'rsph_level_2', 'safe_contractor', 'chas_accredited',
-          'basis_prompt', 'cepa_certified', 'iso_9001', 'iso_14001', 'iso_45001',
-          'constructionline', 'trustmark',
-          'heat_treatment', 'falconry_bird_control', 'detection_dogs', 'high_rise_rope_access',
-          'fumigation', 'proofing_services',
-          'flexible_contracts', 'no_tie_in_contracts', 'retainer_services', 'one_off_services',
-          'emergency_24_7',
-          'property_management', 'social_housing', 'hospitality', 'healthcare', 'education',
-          'retail', 'food_production', 'warehousing_logistics',
-          'multi_site_coverage', 'national_coverage', 'unmarked_vehicles', 'non_disruptive_services',
-          'out_of_hours_services', 'same_day_service',
-          'free_surveys', 'free_quotes', 'guarantees_offered', 'years_established_25_plus',
-          'technicians_50_plus', 'service_areas_documented', 'insurance_details_published',
-          'eco_friendly_methods', 'humane_non_lethal_methods', 'peta_endorsed', 'rspca_recognized',
-          'london_borough'
-        ].join(', ');
-        
+        // Use .select('*') like the residential page - simpler and more reliable
         const { data, error } = await supabase
           .from('commercial_providers')
-          .select(neededColumns);
+          .select('*');
 
         if (error) throw error;
 
