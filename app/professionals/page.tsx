@@ -700,38 +700,43 @@ export default function ProfessionalsPage() {
       </div>
 
       {/* INDUSTRY PUBLICATIONS QUICK LINKS */}
-      <section className="relative bg-gray-50 py-12 border-t border-gray-200">
+      <section className="relative bg-gradient-to-br from-blue-50 to-white py-16 border-t border-gray-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h3 className="text-2xl font-black text-gray-900 mb-2">Industry Publications</h3>
-            <p className="text-gray-600">Stay informed with the leading pest control trade publications.</p>
-          </div>
+          <div className="bg-white rounded-xl p-8 shadow-sm border border-blue-100">
+            <div className="mb-10">
+              <div className="relative inline-block">
+                <h3 className="text-3xl font-black text-gray-900 mb-2">📰 Industry Publications</h3>
+                <div className="h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full w-16 mt-2"></div>
+              </div>
+              <p className="text-gray-700 mt-4">Stay informed with the leading pest control trade publications.</p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
-            <a href="https://bpca.org.uk/ppc-magazine" target="_blank" rel="noopener noreferrer" className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-md transition-all">
-              <h4 className="font-bold text-gray-900 mb-1 text-sm">Professional Pest Controller</h4>
-              <p className="text-xs text-gray-600">Official BPCA magazine, free quarterly</p>
-            </a>
-            <a href="https://pestmagazine.co.uk/" target="_blank" rel="noopener noreferrer" className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-md transition-all">
-              <h4 className="font-bold text-gray-900 mb-1 text-sm">Pest Magazine</h4>
-              <p className="text-xs text-gray-600">Independent trade publication, supports CPD</p>
-            </a>
-            <a href="https://www.pestcontrolnews.com/" target="_blank" rel="noopener noreferrer" className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-md transition-all">
-              <h4 className="font-bold text-gray-900 mb-1 text-sm">Pest Control News</h4>
-              <p className="text-xs text-gray-600">Free trade magazine, regulatory focus</p>
-            </a>
-            <a href="https://www.pctonline.com/" target="_blank" rel="noopener noreferrer" className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-md transition-all">
-              <h4 className="font-bold text-gray-900 mb-1 text-sm">Pest Control Technology</h4>
-              <p className="text-xs text-gray-600">US monthly, industry trends and technology</p>
-            </a>
-            <a href="https://www.amazon.co.uk/dp/B09TZK7FYS?tag=pestproindex-21" target="_blank" rel="noopener noreferrer" className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-md transition-all">
-              <h4 className="font-bold text-gray-900 mb-1 text-sm">The Bed Bug Handbook</h4>
-              <p className="text-xs text-gray-600">The complete reference book, available on Amazon</p>
-            </a>
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 mb-8">
+              <a href="https://bpca.org.uk/ppc-magazine" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">Professional Pest Controller</h4>
+                <p className="text-xs text-gray-600">Official BPCA magazine, free quarterly</p>
+              </a>
+              <a href="https://pestmagazine.co.uk/" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">Pest Magazine</h4>
+                <p className="text-xs text-gray-600">Independent trade publication, supports CPD</p>
+              </a>
+              <a href="https://www.pestcontrolnews.com/" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">Pest Control News</h4>
+                <p className="text-xs text-gray-600">Free trade magazine, regulatory focus</p>
+              </a>
+              <a href="https://www.pctonline.com/" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">Pest Control Technology</h4>
+                <p className="text-xs text-gray-600">US monthly, industry trends and technology</p>
+              </a>
+              <a href="https://www.amazon.co.uk/dp/B09TZK7FYS?tag=pestproindex-21" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">The Bed Bug Handbook</h4>
+                <p className="text-xs text-gray-600">The complete reference book, available on Amazon</p>
+              </a>
+            </div>
 
-          <div className="text-center">
-            <Link href="/resources" className="text-blue-600 hover:text-blue-800 font-semibold text-sm">See all resources →</Link>
+            <div className="text-center pt-4 border-t border-gray-100">
+              <Link href="/resources" className="inline-block px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200">See all resources →</Link>
+            </div>
           </div>
         </div>
       </section>

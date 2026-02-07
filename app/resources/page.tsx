@@ -144,6 +144,8 @@ export default function ResourcesPage() {
     }
   ];
 
+  const sectionBackgrounds = ['bg-white', 'bg-blue-50', 'bg-white', 'bg-blue-50'];
+
   return (
     <div className="min-h-screen bg-white">
       {/* NAVIGATION */}
@@ -161,7 +163,6 @@ export default function ResourcesPage() {
 
           <div className="hidden md:flex items-center gap-3">
             <Link href="/" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">Home</Link>
-            <Link href="/residential" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">Residential</Link>
             <Link href="/commercial" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">Commercial</Link>
             <Link href="/professionals" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">For Pest Professionals</Link>
             <Link href="/products" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">Home Products</Link>
@@ -185,60 +186,66 @@ export default function ResourcesPage() {
       </section>
 
       {/* RESOURCES SECTIONS */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          {sections.map((section, sectionIdx) => (
-            <div key={sectionIdx} className="mb-20">
-              <div className="mb-12">
-                <h2 className="text-4xl font-black text-gray-900 mb-4">{section.heading}</h2>
-                <p className="text-lg text-gray-600 max-w-3xl">{section.description}</p>
+      {sections.map((section, sectionIdx) => (
+        <section key={sectionIdx} className={`${sectionBackgrounds[sectionIdx]} py-20 border-t border-gray-100`}>
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-16">
+              <div className="relative inline-block">
+                <h2 className="text-4xl font-black text-gray-900 mb-2">{section.heading}</h2>
+                <div className="h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full w-24 mt-3"></div>
               </div>
+              <p className="text-lg text-gray-600 max-w-3xl mt-6">{section.description}</p>
+            </div>
 
-              {/* Resource Cards Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {section.resources.map((resource, resourceIdx) => (
-                  <div key={resourceIdx} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-200">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{resource.name}</h3>
-                    <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+            {/* Resource Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {section.resources.map((resource, resourceIdx) => (
+                <div 
+                  key={resourceIdx} 
+                  className="group relative bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-l-4 border-blue-600 overflow-hidden"
+                >
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                  
+                  <div className="relative z-10">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{resource.name}</h3>
+                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">{resource.description}</p>
                     <a 
                       href={resource.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold transition-colors"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200 hover:gap-3"
                     >
                       Visit Resource
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   </div>
-                ))}
-              </div>
-
-              {sectionIdx < sections.length - 1 && (
-                <div className="mt-16 border-b border-gray-200"></div>
-              )}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
+      ))}
 
       {/* AFFILIATE DISCLOSURE & CTA */}
       <section className="bg-gray-50 py-12 border-t border-gray-200">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
+            <p className="text-xs text-gray-500 mb-4 uppercase tracking-widest font-semibold">Disclosure</p>
             <p className="text-sm text-gray-600 mb-6">
-              <strong>Disclosure:</strong> Some links on this page are affiliate links. PestPro Index may earn a small commission at no extra cost to you. This does not influence which resources we recommend.
+              Some links on this page are affiliate links. PestPro Index may earn a small commission at no extra cost to you. This does not influence which resources we recommend.
             </p>
             <p className="text-sm text-gray-600">
-              Know a great pest control resource we've missed? <a href="mailto:pestproindex@zohomail.eu?subject=Resource%20Suggestion" className="text-blue-600 hover:text-blue-800 font-semibold">Let us know — suggest a resource</a>
+              Know a great pest control resource we've missed? <a href="mailto:pestproindex@zohomail.eu?subject=Resource%20Suggestion" className="text-blue-600 hover:text-blue-800 font-semibold transition-colors">Let us know — suggest a resource</a>
             </p>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-gray-900 text-gray-300 py-12">
+      <footer className="bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900 text-gray-300 py-16 border-t-2 border-blue-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h4 className="text-white font-bold mb-4">PestPro Index</h4>
               <p className="text-sm">London's neutral pest control directory</p>
@@ -252,12 +259,15 @@ export default function ResourcesPage() {
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-bold mb-4">Disclaimer</h4>
-              <p className="text-sm">We do not judge outcomes, we display available evidence. No endorsements or guarantees.</p>
+              <h4 className="text-white font-bold mb-4">For Professionals</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/professionals" className="hover:text-white transition">Grow Your Business</Link></li>
+                <li><Link href="/commercial" className="hover:text-white transition">Commercial Directory</Link></li>
+              </ul>
             </div>
           </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-sm">
-            <p>&copy; 2025 PestPro Index. All rights reserved.</p>
+          <div className="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+            <p>© 2024 PestPro Index. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -449,6 +449,20 @@ export default function CommercialPage() {
         </div>
       </section>
 
+      {/* PRODUCTS CTA - PREMIUM BANNER */}
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 py-24 overflow-hidden">
+        {/* Decorative gradient overlay */}
+        <div className="absolute inset-0 opacity-10" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255,255,255,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.2) 0%, transparent 50%)'}}></div>
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <h2 className="text-5xl md:text-6xl font-black text-white mb-4 italic" style={{fontStyle: 'italic', letterSpacing: '-0.02em'}}>The Right Products for the Job</h2>
+          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">Curated commercial pest control products with user ratings and direct purchase links.</p>
+          <Link href="/commercial-products" className="inline-block px-8 py-4 bg-white text-blue-600 font-bold text-lg rounded-lg hover:bg-blue-50 transition-all duration-200 shadow-lg hover:shadow-xl">
+            Browse Commercial Products →
+          </Link>
+        </div>
+      </section>
+
       {/* TOP RATED PROVIDERS - TOP 8 BY RATING */}
       <section className="relative bg-gradient-to-br from-yellow-50 to-white py-16 border-b-2 border-yellow-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -638,38 +652,43 @@ export default function CommercialPage() {
       </section>
 
       {/* COMPLIANCE RESOURCES QUICK LINKS */}
-      <section className="relative bg-gray-50 py-12 border-t border-gray-200">
+      <section className="relative bg-gradient-to-br from-blue-50 to-white py-16 border-t border-gray-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h3 className="text-2xl font-black text-gray-900 mb-2">Compliance Resources</h3>
-            <p className="text-gray-600">Helpful guides and tools for managing pest control compliance in your business.</p>
-          </div>
+          <div className="bg-white rounded-xl p-8 shadow-sm border border-blue-100">
+            <div className="mb-10">
+              <div className="relative inline-block">
+                <h3 className="text-3xl font-black text-gray-900 mb-2">📋 Compliance Resources</h3>
+                <div className="h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full w-16 mt-2"></div>
+              </div>
+              <p className="text-gray-700 mt-4">Helpful guides and tools for managing pest control compliance in your business.</p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
-            <a href="https://www.haccp-international.com/" target="_blank" rel="noopener noreferrer" className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-md transition-all">
-              <h4 className="font-bold text-gray-900 mb-1 text-sm">HACCP International</h4>
-              <p className="text-xs text-gray-600">Global food safety certification guidance</p>
-            </a>
-            <a href="https://fooddocs.com/" target="_blank" rel="noopener noreferrer" className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-md transition-all">
-              <h4 className="font-bold text-gray-900 mb-1 text-sm">FoodDocs HACCP</h4>
-              <p className="text-xs text-gray-600">Automates monitoring and documentation</p>
-            </a>
-            <a href="https://www.rentokil.com/food-safety/" target="_blank" rel="noopener noreferrer" className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-md transition-all">
-              <h4 className="font-bold text-gray-900 mb-1 text-sm">Rentokil Guides</h4>
-              <p className="text-xs text-gray-600">Comprehensive compliance guidance</p>
-            </a>
-            <a href="https://octopushaccp.com/pest-control-plan/" target="_blank" rel="noopener noreferrer" className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-md transition-all">
-              <h4 className="font-bold text-gray-900 mb-1 text-sm">Octopus HACCP</h4>
-              <p className="text-xs text-gray-600">Free pest control plan template</p>
-            </a>
-            <a href="https://www.pestech.com/sqf-audit-pest-control/" target="_blank" rel="noopener noreferrer" className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-md transition-all">
-              <h4 className="font-bold text-gray-900 mb-1 text-sm">Pestech SQF</h4>
-              <p className="text-xs text-gray-600">Preparing for food safety audits</p>
-            </a>
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 mb-8">
+              <a href="https://www.haccp-international.com/" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">HACCP International</h4>
+                <p className="text-xs text-gray-600">Global food safety certification guidance</p>
+              </a>
+              <a href="https://fooddocs.com/" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">FoodDocs HACCP</h4>
+                <p className="text-xs text-gray-600">Automates monitoring and documentation</p>
+              </a>
+              <a href="https://www.rentokil.com/food-safety/" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">Rentokil Guides</h4>
+                <p className="text-xs text-gray-600">Comprehensive compliance guidance</p>
+              </a>
+              <a href="https://octopushaccp.com/pest-control-plan/" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">Octopus HACCP</h4>
+                <p className="text-xs text-gray-600">Free pest control plan template</p>
+              </a>
+              <a href="https://www.pestech.com/sqf-audit-pest-control/" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">Pestech SQF</h4>
+                <p className="text-xs text-gray-600">Preparing for food safety audits</p>
+              </a>
+            </div>
 
-          <div className="text-center">
-            <Link href="/resources" className="text-blue-600 hover:text-blue-800 font-semibold text-sm">See all resources →</Link>
+            <div className="text-center pt-4 border-t border-gray-100">
+              <Link href="/resources" className="inline-block px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200">See all resources →</Link>
+            </div>
           </div>
         </div>
       </section>
