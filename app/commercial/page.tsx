@@ -163,8 +163,6 @@ export default function CommercialPage() {
         console.log('=== END DEBUG ===');
 
         setProviders((data as unknown as Provider[]) || []);
-        calculateFilterCounts((data as unknown as Provider[]) || []);
-        applyFilters((data as unknown as Provider[]) || [], new Set(), 'quality');
       } catch (error) {
         console.error('Error loading providers:', error);
         // Show error state instead of infinite loading
@@ -251,7 +249,21 @@ export default function CommercialPage() {
     return filtered;
   }, [providers, selectedFilters, sortBy, searchResults]);
 
+  // Sync filteredProvidersMemo to filteredProviders state
+  useEffect(() => {
+    setFilteredProviders(filteredProvidersMemo);
+  }, [filteredProvidersMemo]);
 
+  // Calculate filter counts based on current providers
+  useEffect(() => {
+    const counts: FilterCounts = {};
+    Object.values(filterCategories).forEach((category) => {
+      category.forEach((filter) => {
+        counts[filter.key] = providers.filter((p) => p[filter.key] === true).length;
+      });
+    });
+    setFilterCounts(counts);
+  }, [providers]);
 
   // Calculate filter counts
   const calculateFilterCounts = (data: Provider[]) => {
@@ -288,39 +300,9 @@ export default function CommercialPage() {
     return <div className="flex gap-0.5">{stars}</div>;
   };
 
-  // Use filteredProvidersMemo directly instead of state
-
-  // Apply filters
-  // Keep applyFilters for backward compatibility
-  const applyFilters = (data: Provider[], filters: Set<string>, sortByValue?: string) => {
-    const finalSortBy = sortByValue !== undefined ? sortByValue : sortBy;
-    let filtered = data;
-
-    if (filters.size > 0) {
-      filtered = data.filter((provider) => {
-        return Array.from(filters).every((filterKey) => {
-          const columns = filterColumnMap[filterKey] || [filterKey];
-          return columns.some((col) => provider[col] === true);
-        });
-      });
-    }
-
-    // Sort
-    if (finalSortBy === 'quality') {
-      // Sort by Google rating (highest first), then by review count
-      filtered.sort((a, b) => {
-        // Handle null/undefined ratings
-        const ratingA = a.google_rating || 0;
-        const ratingB = b.google_rating || 0;
-        if (ratingB !== ratingA) return ratingB - ratingA; // Highest rating first
-        return (b.google_review_count || 0) - (a.google_review_count || 0); // Then by review count
-      });
-    } else if (finalSortBy === 'name') {
-      // Sort alphabetically (A-Z) by provider name, case-insensitive
-      filtered.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
-    }
-
-    setFilteredProviders(filtered);
+  // Handle sort change
+  const handleSortChange = (newSort: string) => {
+    setSortBy(newSort);
   };
 
   // Handle filter change
@@ -332,15 +314,11 @@ export default function CommercialPage() {
       newFilters.add(filterKey);
     }
     setSelectedFilters(newFilters);
-    // Apply filters immediately with the new filter set
-    applyFilters(providers, newFilters, sortBy);
   };
 
   // Clear all filters
   const clearAllFilters = () => {
     setSelectedFilters(new Set());
-    // Apply filters immediately with empty filter set
-    applyFilters(providers, new Set(), sortBy);
   };
 
   // Handle search from SearchBar
