@@ -46,11 +46,6 @@ export default function CommercialPage() {
   const [searchResults, setSearchResults] = useState<Provider[] | null>(null);
   const pathname = usePathname();
 
-  // TEMPORARY DIAGNOSTIC — DELETE AFTER FIXING
-  const [diagData, setDiagData] = useState<any>(null);
-  const [diagError, setDiagError] = useState<any>(null);
-  const [diagLoading, setDiagLoading] = useState(true);
-
   // Navigation items
   const navItems = [
     { href: '/', label: 'Home' },
@@ -126,26 +121,6 @@ export default function CommercialPage() {
       { key: 'rspca_recognized', label: 'RSPCA Recognized' },
     ],
   };
-
-  // TEMPORARY DIAGNOSTIC useEffect — DELETE AFTER FIXING
-  useEffect(() => {
-    const testQuery = async () => {
-      try {
-        const supabase = createClient();
-        const { data, error, count } = await supabase
-          .from('commercial_providers')
-          .select('provider_id, provider_name, postcode', { count: 'exact' })
-          .limit(3);
-        setDiagData(data);
-        setDiagError(error);
-      } catch (err) {
-        setDiagError(err);
-      } finally {
-        setDiagLoading(false);
-      }
-    };
-    testQuery();
-  }, []);
 
   // Load providers
   useEffect(() => {
@@ -364,15 +339,6 @@ export default function CommercialPage() {
           </div>
         </div>
       </nav>
-
-      {/* TEMPORARY DIAGNOSTIC DELETE AFTER FIXING */}
-      <div style={{ background: 'yellow', padding: '20px', margin: '10px', fontFamily: 'monospace', fontSize: '14px', border: '2px solid red' }}>
-        <p><strong>DIAGNOSTIC (remove after fix):</strong></p>
-        <p>Loading: {diagLoading ? 'true' : 'false'}</p>
-        <p>Error: {diagError ? JSON.stringify(diagError) : 'none'}</p>
-        <p>Data count: {diagData ? diagData.length : 'null'}</p>
-        <p>Sample: {diagData ? JSON.stringify(diagData[0]) : 'loading...'}</p>
-      </div>
 
       {/* HERO SECTION */}
       <section className="relative h-[500px] overflow-hidden">
