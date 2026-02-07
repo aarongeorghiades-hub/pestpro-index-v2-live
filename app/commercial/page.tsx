@@ -154,7 +154,7 @@ export default function CommercialPage() {
         const { data, error } = await supabase
           .from('Providers')
           .select(neededColumns)
-          .eq('commercial', true);
+          .eq('business_commercial', true);
 
         if (error) throw error;
 
