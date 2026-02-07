@@ -190,7 +190,60 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECTION 5: ABOUT PESTPRO INDEX */}
+      <section className="bg-gradient-to-br from-blue-50 to-white py-20 border-t-2 border-blue-200">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-5xl font-black text-gray-900 mb-4">About PestPro Index</h2>
+              <p className="text-xl text-gray-600">London's transparent, neutral pest control directory</p>
+            </div>
 
+            <div className="bg-white rounded-2xl shadow-lg p-12 mb-8">
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                PestPro Index is a free, neutral directory of pest control professionals and products in London. We believe finding the right pest control should be straightforward, transparent, and based on data—not endorsements or commissions.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h3 className="text-xl font-bold text-blue-900 mb-3 flex items-center gap-2">
+                    <span className="text-2xl">✓</span> Comprehensive Directory
+                  </h3>
+                  <p className="text-gray-600">481 residential and 245 commercial pest control providers, all verified and searchable by location, pest type, certifications, and reviews.</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-blue-900 mb-3 flex items-center gap-2">
+                    <span className="text-2xl">✓</span> No Bias, No Commissions
+                  </h3>
+                  <p className="text-gray-600">We don't take commissions, endorsements, or payments from providers. Every listing is provider-stated information only.</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-blue-900 mb-3 flex items-center gap-2">
+                    <span className="text-2xl">✓</span> Advanced Filtering
+                  </h3>
+                  <p className="text-gray-600">Search by postcode, borough, pest type, certifications (BPCA, NPTA, etc.), service features, and more.</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-blue-900 mb-3 flex items-center gap-2">
+                    <span className="text-2xl">✓</span> Free Resources
+                  </h3>
+                  <p className="text-gray-600">Access compliance guides, industry publications, DIY decision guides, and curated product recommendations.</p>
+                </div>
+              </div>
+
+              <p className="text-gray-600 mb-8 italic">
+                Whether you're dealing with a residential pest problem or managing commercial pest control for a business, PestPro Index helps you find the right solution—on your terms.
+              </p>
+
+              <div className="text-center">
+                <Link href="/about" className="inline-block px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition">
+                  Learn More About Us →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* SECTION 6: FOOTER */}
       <footer className="bg-gray-900 text-gray-300 py-12">
