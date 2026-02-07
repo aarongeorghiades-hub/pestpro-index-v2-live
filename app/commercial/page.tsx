@@ -65,7 +65,7 @@ export default function CommercialPage() {
       { key: 'npta_member', label: 'NPTA Member' },
       { key: 'rsph_level_2', label: 'RSPH Level 2' },
       { key: 'safe_contractor', label: 'Safe Contractor' },
-      { key: 'chas_accredited', label: 'CHAS' },
+      { key: 'chas', label: 'CHAS' },
       { key: 'basis_prompt', label: 'Basis Prompt' },
       { key: 'cepa_certified', label: 'CEPA Certified' },
       { key: 'iso_9001', label: 'ISO 9001' },
@@ -87,7 +87,7 @@ export default function CommercialPage() {
       { key: 'no_tie_in_contracts', label: 'No Tie-In Contracts' },
       { key: 'retainer_services', label: 'Retainer Services' },
       { key: 'one_off_services', label: 'One-Off Services' },
-      { key: 'emergency_24_7', label: 'Emergency 24/7' },
+      { key: 'emergency_services_24_7', label: 'Emergency 24/7' },
     ],
     sectors: [
       { key: 'property_management', label: 'Property Management' },
@@ -112,7 +112,7 @@ export default function CommercialPage() {
       { key: 'free_quotes', label: 'Free Quotes' },
       { key: 'guarantees_offered', label: 'Guarantees Offered' },
       { key: 'years_established_25_plus', label: '25+ Years Established' },
-      { key: 'technicians_50_plus', label: '50+ Technicians' },
+      { key: 'technician_count_50_plus', label: '50+ Technicians' },
       { key: 'service_areas_documented', label: 'Service Areas Documented' },
       { key: 'insurance_details_published', label: 'Insurance Details Published' },
       { key: 'eco_friendly_methods', label: 'Eco-Friendly Methods' },
@@ -366,7 +366,7 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      {/* FEATURED PROVIDERS - TOP 3 BY REVIEWS */}
+      {/* FEATURED PROVIDERS - PROVIDERS WITH CERTIFICATIONS */}
       <section className="relative bg-gradient-to-br from-orange-50 to-white py-16 border-b-2 border-orange-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -376,8 +376,7 @@ export default function CommercialPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[...providers]
-              .filter(p => p.google_review_count > 0)
-              .sort((a, b) => (b.google_review_count || 0) - (a.google_review_count || 0))
+              .filter(p => p.bpca_member || p.npta_member || p.cepa_certified)
               .slice(0, 8)
               .map(provider => (
                 <div key={provider.canonical_id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all border-l-4 border-orange-500 p-6">
@@ -823,10 +822,10 @@ export default function CommercialPage() {
                               <span className="text-sm text-gray-700">{provider.phone}</span>
                             </div>
                           )}
-                          {(provider.postcode || provider.address) && (
+                          {provider.postcode && (
                             <div className="flex items-center gap-2">
                               <MapPin size={16} className="text-blue-600" />
-                              <span className="text-sm text-gray-700">{provider.postcode ? `${provider.address || ''}, ${provider.postcode}`.trim() : provider.address}</span>
+                              <span className="text-sm text-gray-700">{provider.postcode}</span>
                             </div>
                           )}
                         </div>
