@@ -96,6 +96,7 @@ export default function ResidentialPage() {
           .eq('business_residential', true);
 
         if (error) throw error;
+        console.log('✅ Supabase query returned:', data?.length, 'providers');
         setProviders(data || []);
         setFilteredProviders(data || []);
       } catch (error) {
@@ -113,6 +114,7 @@ export default function ResidentialPage() {
   // ============================================================================
 
   const filteredProvidersMemo = useMemo(() => {
+    console.log('📊 filteredProvidersMemo: providers.length =', providers.length);
     if (providers.length === 0) return [];
     
     // Start with search results if available, otherwise use all providers
@@ -142,6 +144,7 @@ export default function ResidentialPage() {
       filtered.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
     }
 
+    console.log('📊 filteredProvidersMemo: returning', filtered.length, 'providers');
     return filtered;
   }, [providers, filters, sortBy, searchResults])
 
@@ -288,7 +291,7 @@ export default function ResidentialPage() {
             Residential Pest Control
           </h1>
           <p className="text-2xl md:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
-            405 Verified Providers in London
+            407 Verified Providers in London
           </p>
           <p className="text-lg md:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
             Filter by pest type and service features across our complete directory. 68% of providers have verified Google Reviews. No endorsements, no commissions—just transparent, provider-stated information.
@@ -489,7 +492,7 @@ export default function ResidentialPage() {
               Full List of London Pest Control Providers
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              All 405 residential providers with advanced filtering
+              All 407 residential providers with advanced filtering
             </p>
           </div>
 
