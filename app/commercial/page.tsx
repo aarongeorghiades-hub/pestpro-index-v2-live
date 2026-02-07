@@ -26,6 +26,7 @@ interface Provider {
   phone: string | null;
   email: string | null;
   address: string | null;
+  postcode: string | null;
   bpca_member: boolean;
   npta_member: boolean;
   basis_prompt: boolean;
@@ -845,10 +846,10 @@ export default function CommercialPage() {
                               <span className="text-sm text-gray-700">{provider.phone}</span>
                             </div>
                           )}
-                          {provider.address && (
+                          {(provider.postcode || provider.address) && (
                             <div className="flex items-center gap-2">
                               <MapPin size={16} className="text-blue-600" />
-                              <span className="text-sm text-gray-700">{extractPostcode(provider.address) || provider.address}</span>
+                              <span className="text-sm text-gray-700">{provider.postcode ? `${provider.address || ''}, ${provider.postcode}`.trim() : provider.address}</span>
                             </div>
                           )}
                         </div>

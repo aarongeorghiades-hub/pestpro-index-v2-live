@@ -31,6 +31,7 @@ interface Provider {
   phone: string | null;
   email: string | null;
   address: string | null;
+  postcode: string | null;
   google_rating: number | null;
   google_review_count: number | null;
   business_residential: boolean;
@@ -430,10 +431,10 @@ export default function ResidentialPage() {
                   </h3>
 
                   {/* ADDRESS */}
-                  {provider.address && (
+                  {(provider.postcode || provider.address) && (
                     <div className="flex items-start gap-1 mb-3 text-xs text-gray-600">
                       <span className="text-red-500 mt-0.5">📍</span>
-                      <span className="line-clamp-1">{provider.address}</span>
+                      <span className="line-clamp-1">{provider.postcode ? `${provider.address || ''}, ${provider.postcode}`.trim() : provider.address}</span>
                     </div>
                   )}
 
@@ -612,10 +613,10 @@ export default function ResidentialPage() {
                         <h3 className="font-bold text-base text-gray-900 mb-2 leading-tight line-clamp-2">
                           {provider.name}
                         </h3>
-                        {provider.address && (
+                        {(provider.postcode || provider.address) && (
                           <div className="flex items-start gap-1 mb-2 text-xs text-gray-600">
                             <span className="text-red-500">📍</span>
-                            <span className="line-clamp-1">{extractPostcode(provider.address) || provider.address}</span>
+                            <span className="line-clamp-1">{provider.postcode ? `${provider.address || ''}, ${provider.postcode}`.trim() : provider.address}</span>
                           </div>
                         )}
                         {provider.google_rating && (
