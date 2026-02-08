@@ -354,6 +354,12 @@ export default function CommercialPage() {
                       <span className="text-sm text-gray-700">{provider.phone}</span>
                     </div>
                   )}
+                  {provider.postcode && (
+                    <div className="flex items-center gap-2 mb-2">
+                      <MapPin size={14} className="text-blue-600" />
+                      <span className="text-sm text-gray-700">{provider.postcode}</span>
+                    </div>
+                  )}
                   <div className="flex flex-wrap gap-1 mb-4">
                     {provider.bpca_member && (
                       <span className="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded-full">BPCA</span>
@@ -419,6 +425,12 @@ export default function CommercialPage() {
                     <div className="flex items-center gap-2 mb-2">
                       <Mail size={14} className="text-blue-600" />
                       <span className="text-sm text-gray-700">{provider.email}</span>
+                    </div>
+                  )}
+                  {provider.postcode && (
+                    <div className="flex items-center gap-2 mb-2">
+                      <MapPin size={14} className="text-blue-600" />
+                      <span className="text-sm text-gray-700">{provider.postcode}</span>
                     </div>
                   )}
                   {provider.website && (
