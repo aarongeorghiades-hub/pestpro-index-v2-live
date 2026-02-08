@@ -1,11 +1,9 @@
 // Deployment triggered - 1770229070
 'use client';
 
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, Shield, TrendingUp, Home as HomeIcon, Building2, Users } from 'lucide-react';
+import { Search, Shield, TrendingUp, Home as HomeIcon, Building2, Users } from 'lucide-react'
 
 export default function Home() {
   return (
