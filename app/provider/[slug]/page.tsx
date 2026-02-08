@@ -20,15 +20,26 @@ function generateSlug(name: string): string {
 
 // Fetch provider by matching slug against all providers
 async function getProvider(slug: string) {
-  const supabase = createClient();
+  try {
+    const supabase = createClient();
 
-  const { data: providers, error } = await supabase
-    .from('Providers')
-    .select('*');
+    // First, try to fetch all providers (this is necessary because we need to match by slug)
+    const { data: providers, error } = await supabase
+      .from('Providers')
+      .select('id, name, website, google_rating, google_review_count, phone, email, address, postcode, business_residential, commercial, bpca_member, npta_member, basis_prompt, cepa_certified, chas, emergency_services_24_7, technician_count_50_plus, rats, mice, wasps, bedbugs, cockroaches, ants, fleas, moths, pigeons, squirrels, foxes, badgers, rabbits, hedgehogs, moles, birds_general, pest_proofing, trapping, fumigation, thermal_imaging, uv_detection, thermal_treatment, heat_treatment, cryonite, exclusion_work, garden_treatments, drain_cleaning, odour_removal, decontamination, deep_clean, bio_hazard, crime_scene, hoarding, animal_removal, bird_control, bird_netting, bird_spikes, bird_wire, bird_gel, bird_netting_commercial, bird_proofing, bird_removal, bird_deterrent, bird_exclusion, bird_trapping, bird_relocation, bird_prevention, bird_management, bird_control_services, hospitality, healthcare, education, retail, warehousing_logistics');
 
-  if (error || !providers) return null;
+    if (error || !providers) {
+      console.error('[Provider Page] Supabase error:', error?.message);
+      return null;
+    }
 
-  return providers.find(p => generateSlug(p.name) === slug) || null;
+    // Find provider by matching slug
+    const found = providers.find(p => generateSlug(p.name) === slug);
+    return found || null;
+  } catch (err) {
+    console.error('[Provider Page] Error fetching provider:', err);
+    return null;
+  }
 }
 
 // Generate metadata for SEO
