@@ -13,6 +13,17 @@ import { Trophy } from 'lucide-react';
 // HELPER FUNCTIONS
 // ============================================================================
 
+function generateSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .trim()
+    .replace(/[&]/g, 'and')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+}
+
 const extractPostcode = (address: string | null): string | null => {
   if (!address) return null;
   const postcodeRegex = /[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}/i;
@@ -430,7 +441,9 @@ export default function ResidentialPage() {
 
                   {/* Company Name */}
                   <h3 className="font-bold text-base text-gray-900 mb-2 leading-tight line-clamp-2">
-                    {provider.name}
+                    <Link href={`/provider/${generateSlug(provider.name)}`} className="text-blue-600 hover:underline">
+                      {provider.name}
+                    </Link>
                   </h3>
 
                   {/* ADDRESS */}
@@ -641,7 +654,9 @@ export default function ResidentialPage() {
                       <div key={provider.canonical_id} className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 ${borderClass}`}>
                         {isTrophy && <div className="text-2xl mb-2">🏆</div>}
                         <h3 className="font-bold text-base text-gray-900 mb-2 leading-tight line-clamp-2">
-                          {provider.name}
+                          <Link href={`/provider/${generateSlug(provider.name)}`} className="text-blue-600 hover:underline">
+                            {provider.name}
+                          </Link>
                         </h3>
                         {provider.postcode && (
                           <div className="flex items-start gap-1 mb-2 text-xs text-gray-600">
