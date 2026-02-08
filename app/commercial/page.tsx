@@ -654,10 +654,10 @@ export default function CommercialPage() {
                               <span className="text-sm text-gray-700">{provider.email}</span>
                             </div>
                           )}
-                          {provider.address && (
+                          {provider.postcode && (
                             <div className="flex items-center gap-2">
                               <MapPin size={16} className="text-blue-600" />
-                              <span className="text-sm text-gray-700">{provider.address}</span>
+                              <span className="text-sm text-gray-700">{provider.postcode}</span>
                             </div>
                           )}
                         </div>

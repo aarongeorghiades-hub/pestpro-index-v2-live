@@ -434,10 +434,10 @@ export default function ResidentialPage() {
                   </h3>
 
                   {/* ADDRESS */}
-                  {(provider.postcode || provider.address) && (
+                  {provider.postcode && (
                     <div className="flex items-start gap-1 mb-3 text-xs text-gray-600">
                       <span className="text-red-500 mt-0.5">📍</span>
-                      <span className="line-clamp-1">{provider.postcode || provider.address}</span>
+                      <span className="line-clamp-1">{provider.postcode}</span>
                     </div>
                   )}
 
@@ -616,10 +616,10 @@ export default function ResidentialPage() {
                         <h3 className="font-bold text-base text-gray-900 mb-2 leading-tight line-clamp-2">
                           {provider.name}
                         </h3>
-                        {(provider.postcode || provider.address) && (
+                        {provider.postcode && (
                           <div className="flex items-start gap-1 mb-2 text-xs text-gray-600">
                             <span className="text-red-500">📍</span>
-                            <span className="line-clamp-1">{provider.postcode ? `${provider.address || ''}, ${provider.postcode}`.trim() : provider.address}</span>
+                            <span className="line-clamp-1">{provider.postcode}</span>
                           </div>
                         )}
                         {provider.google_rating && (
