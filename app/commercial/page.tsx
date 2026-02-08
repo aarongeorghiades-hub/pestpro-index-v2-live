@@ -6,7 +6,7 @@ import { createClient } from '@/utils/supabase';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Phone, Mail, MapPin, ShieldCheck, Award, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, MapPin, ShieldCheck, Award, CheckCircle2, Trophy } from 'lucide-react';
 
 interface Provider {
   canonical_id: number;
@@ -510,6 +510,33 @@ export default function CommercialPage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FEATURED PROVIDER OF THE WEEK - COMING SOON */}
+      <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 py-16 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex items-center justify-center mb-6">
+            <Trophy size={48} className="text-amber-400 mr-4" />
+            <h2 className="text-4xl font-black text-white">Featured Provider of the Week</h2>
+            <span className="ml-4 inline-block bg-amber-400 text-blue-900 text-xs font-bold px-4 py-2 rounded-full">Coming Soon</span>
+          </div>
+          <p className="text-lg text-blue-100 mb-6 max-w-2xl mx-auto leading-relaxed">
+            Every week, we spotlight one pest control provider and their real-world success story — a problem they solved, the approach they took, and the result they delivered for their customer.
+          </p>
+          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+            It's more than a listing. It's a showcase.
+          </p>
+          <p className="text-base text-blue-100 mb-8 max-w-2xl mx-auto">
+            Featured providers get prime placement across PestPro Index, seen by hundreds of businesses actively searching for pest control. Your story. Your expertise. Front and centre.
+          </p>
+          <Link href="/contact" className="inline-block px-8 py-3 bg-amber-400 text-blue-900 font-bold rounded-lg hover:bg-amber-300 transition text-lg">
+            Want to be featured? Get in touch →
+          </Link>
         </div>
       </section>
 
