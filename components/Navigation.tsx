@@ -33,30 +33,19 @@ export default function Navigation() {
 
   return (
     <>
-      <style>{`
-        @media (max-width: 767px) {
-          .nav-header {
-            background: transparent !important;
-          }
-          .logo-container {
-            background: transparent;
-            padding: 0;
-            border-radius: 0;
-          }
-        }
-      `}</style>
+
       <nav className="sticky top-0 z-50 nav-header bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812] shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0 logo-container">
-          <Image 
-            src="/logo-header.png" 
-            alt="PestPro Index Logo" 
-            width={180} 
-            height={50}
-            className="h-auto"
-          />
-        </Link>
+          <Link href="/" className="flex-shrink-0 logo-container bg-white rounded-lg p-2">
+            <Image 
+              src="/logo-header.png" 
+              alt="PestPro Index Logo" 
+              width={180} 
+              height={50}
+              className="h-auto"
+            />
+          </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-3">
