@@ -329,7 +329,7 @@ export default function CommercialPage() {
             Commercial Pest Control
           </h1>
           <p className="text-3xl md:text-4xl mb-6 font-extralight tracking-[0.15em] text-white drop-shadow-[0_8px_20px_rgba(0,0,0,0.9)]">
-            249 Verified Providers in London
+            240 Verified Providers in London
           </p>
           <p className="text-xl text-white font-semibold max-w-3xl leading-relaxed drop-shadow-[0_6px_16px_rgba(0,0,0,0.85)] opacity-95">
             Find certified commercial pest control providers with advanced filtering by certifications, capabilities, and business sectors.
@@ -441,12 +441,7 @@ export default function CommercialPage() {
                       <span className="text-sm text-gray-700">{provider.phone}</span>
                     </div>
                   )}
-                  {provider.email && (
-                    <div className="flex items-center gap-2 mb-2">
-                      <Mail size={14} className="text-blue-600" />
-                      <span className="text-sm text-gray-700">{provider.email}</span>
-                    </div>
-                  )}
+
                   {provider.postcode && (
                     <div className="flex items-center gap-2 mb-2">
                       <MapPin size={14} className="text-blue-600" />
@@ -711,12 +706,7 @@ export default function CommercialPage() {
                               <span className="text-sm text-gray-700">{provider.phone}</span>
                             </div>
                           )}
-                          {provider.email && (
-                            <div className="flex items-center gap-2">
-                              <Mail size={16} className="text-blue-600" />
-                              <span className="text-sm text-gray-700">{provider.email}</span>
-                            </div>
-                          )}
+
                           {provider.postcode && (
                             <div className="flex items-center gap-2">
                               <MapPin size={16} className="text-blue-600" />
