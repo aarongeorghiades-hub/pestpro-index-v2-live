@@ -91,6 +91,29 @@ export default function ProviderPage() {
     }
   }, [provider]);
 
+  // Dynamic title and meta description
+  useEffect(() => {
+    if (provider && provider.name) {
+      document.title = `${provider.name} | Pest Control Provider | PestPro Index`;
+      
+      // Update meta description
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.setAttribute('name', 'description');
+        document.head.appendChild(metaDesc);
+      }
+      
+      const rating = provider.google_rating ? ` Rated ${provider.google_rating}/5.` : '';
+      const reviews = provider.google_review_count ? ` ${provider.google_review_count} reviews.` : '';
+      const postcode = provider.postcode ? ` Serving ${provider.postcode} area.` : '';
+      
+      metaDesc.setAttribute('content', 
+        `${provider.name} - pest control provider listed on PestPro Index.${rating}${reviews}${postcode} No lead fees, no commissions.`
+      );
+    }
+  }, [provider]);
+
   if (loading) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
