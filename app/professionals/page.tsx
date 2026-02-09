@@ -72,7 +72,7 @@ export default function ProfessionalsPage() {
       const progress = Math.min(elapsed / duration, 1);
 
       setStats({
-        providers: Math.floor(391 * progress),
+        providers: Math.floor(389 * progress),
         coverage: Math.floor(68 * progress),
         boroughs: Math.floor(32 * progress)
       });
@@ -239,7 +239,7 @@ export default function ProfessionalsPage() {
       <div className="relative bg-gradient-to-br from-[#0a1628] via-[#1e3a8a] to-[#0a1628] py-32 overflow-hidden" style={{
         backgroundImage: 'url(/professionals-hero-bg.png)',
         backgroundSize: 'cover',
-        backgroundPosition: 'right center',
+        backgroundPosition: typeof window !== 'undefined' && window.innerWidth < 768 ? 'center center' : 'right center',
         backgroundAttachment: 'fixed'
       }}>
         {/* Dark overlay for text readability - reduced opacity for better image visibility */}
@@ -264,7 +264,7 @@ export default function ProfessionalsPage() {
           </h1>
           
           <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-blue-100/95 max-w-3xl mx-auto leading-relaxed font-semibold text-center mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Join <span className="font-bold text-white">391 London providers</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
+            Join <span className="font-bold text-white">389 London providers</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
           </p>
 
           <a
