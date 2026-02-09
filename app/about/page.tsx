@@ -131,7 +131,7 @@ export default function AboutPage() {
               </div>
               <div className="bg-white p-8">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  A searchable directory of 481 London pest control providers. Filter by pest type, location, certifications, reviews, and more. Plus curated product recommendations if you prefer DIY.
+                  A searchable directory of 389 London pest control providers. Filter by pest type, location, certifications, reviews, and more. Plus curated product recommendations if you prefer DIY.
                 </p>
                 <Link href="/residential" className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition">
                   Explore <ArrowRight size={16} />
@@ -146,7 +146,7 @@ export default function AboutPage() {
               </div>
               <div className="bg-white p-8">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  457 providers with commercial-specific filters — contract options, multi-site capabilities, industry specialisms. Compliance resources to help you meet regulatory requirements.
+                  240 providers with commercial-specific filters — contract options, multi-site capabilities, industry specialisms. Compliance resources to help you meet regulatory requirements.
                 </p>
                 <Link href="/commercial" className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition">
                   Explore <ArrowRight size={16} />

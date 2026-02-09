@@ -71,7 +71,7 @@ export default function ProfessionalsPage() {
       const progress = Math.min(elapsed / duration, 1);
 
       setStats({
-        providers: Math.floor(483 * progress),
+        providers: Math.floor(391 * progress),
         coverage: Math.floor(68 * progress),
         boroughs: Math.floor(32 * progress)
       });
