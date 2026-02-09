@@ -236,6 +236,7 @@ export default function Home() {
                 <li><Link href="/residential" className="hover:text-white transition">Residential</Link></li>
                 <li><Link href="/commercial" className="hover:text-white transition">Commercial</Link></li>
                 <li><Link href="/professionals" className="hover:text-white transition">For Professionals</Link></li>
+                <li><Link href="/pest-control" className="hover:text-white transition">By Borough</Link></li>
               </ul>
             </div>
             <div>
