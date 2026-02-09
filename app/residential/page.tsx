@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { createClient } from '@/utils/supabase';
 import SearchBar from '@/components/SearchBar';
+import Navigation from '@/components/Navigation';
 import { Trophy } from 'lucide-react';
 
 // Cache bust: 2025-01-15-v3
@@ -262,39 +263,7 @@ export default function ResidentialPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* NAVIGATION */}
-      <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812] shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="flex-shrink-0">
-            <Image 
-              src="/logo-header.png" 
-              alt="PestPro Index Logo" 
-              width={180} 
-              height={50}
-              className="h-auto"
-            />
-          </Link>
-
-          {/* NAVIGATION - ALL TABS SAME BORDER */}
-          <div className="hidden md:flex items-center gap-3">
-            {navItems.map(item => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`
-                  px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200
-                   ${pathname === item.href
-                    ? 'bg-[#1e3a8a] text-white'
-                    : 'bg-transparent text-white hover:border-white/60 hover:bg-white/10'
-                  }
-                `}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* HERO SECTION */}
       <section className="relative h-[500px] overflow-hidden">
@@ -310,13 +279,13 @@ export default function ResidentialPage() {
         </div>
 
         <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4">
-          <h1 className="text-6xl md:text-7xl font-black mb-4 max-w-3xl drop-shadow-lg" style={{textShadow: '0 4px 6px rgba(0,0,0,0.3)'}}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 max-w-3xl drop-shadow-lg" style={{textShadow: '0 4px 6px rgba(0,0,0,0.3)'}}>
             Residential Pest Control
           </h1>
-          <p className="text-2xl md:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
             389 Verified Providers in London
           </p>
-          <p className="text-lg md:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
             Filter by pest type and service features across our complete directory. 68% of providers have verified Google Reviews. No endorsements, no commissions—just transparent, provider-stated information.
           </p>
         </div>

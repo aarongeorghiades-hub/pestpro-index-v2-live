@@ -4,6 +4,7 @@ export const dynamic = 'force-dynamic';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, Eye, BookOpen, Shield, CheckCircle, Users, TrendingUp, Lock, Zap, Award, Target } from 'lucide-react';
+import Navigation from '@/components/Navigation';
 import { useState, useEffect, useRef } from 'react';
 
 export default function ProfessionalsPage() {

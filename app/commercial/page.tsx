@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Phone, Mail, MapPin, ShieldCheck, Award, CheckCircle2, Trophy } from 'lucide-react';
+import Navigation from '@/components/Navigation';
 
 interface Provider {
   canonical_id: number;
@@ -291,37 +292,7 @@ export default function CommercialPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* NAVIGATION */}
-      <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812] shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="flex-shrink-0">
-            <Image 
-              src="/logo-header.png" 
-              alt="PestPro Index Logo" 
-              width={180} 
-              height={50}
-              className="h-auto"
-            />
-          </Link>
-
-          <div className="hidden md:flex items-center gap-3">
-            {navItems.map(item => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`
-                  px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200
-                  ${pathname === item.href
-                    ? 'bg-[#1e3a8a] text-white'
-                    : 'bg-transparent text-white hover:border-white/60 hover:bg-white/10'
-                  }
-                `}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* HERO SECTION */}
       <section className="relative h-[500px] overflow-hidden">
@@ -337,10 +308,10 @@ export default function CommercialPage() {
         </div>
         
         <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-          <h1 className="text-7xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9] text-white drop-shadow-[0_12px_36px_rgba(0,0,0,0.95)]">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter leading-[0.9] text-white drop-shadow-[0_12px_36px_rgba(0,0,0,0.95)]">
             Commercial Pest Control
           </h1>
-          <p className="text-3xl md:text-4xl mb-6 font-extralight tracking-[0.15em] text-white drop-shadow-[0_8px_20px_rgba(0,0,0,0.9)]">
+          <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl mb-6 font-extralight tracking-[0.15em] text-white drop-shadow-[0_8px_20px_rgba(0,0,0,0.9)]">
             240 Verified Providers in London
           </p>
           <p className="text-xl text-white font-semibold max-w-3xl leading-relaxed drop-shadow-[0_6px_16px_rgba(0,0,0,0.85)] opacity-95">

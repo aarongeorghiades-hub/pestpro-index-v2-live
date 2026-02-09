@@ -4,36 +4,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Search, Shield, TrendingUp, Home as HomeIcon, Building2, Users } from 'lucide-react'
+import Navigation from '@/components/Navigation';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      {/* NAVIGATION */}
-      <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812] shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="flex-shrink-0">
-            <Image 
-              src="/logo-header.png" 
-              alt="PestPro Index Logo" 
-              width={180} 
-              height={50}
-              className="h-auto"
-            />
-          </Link>
-
-          {/* NAVIGATION - ALL TABS SAME BORDER */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link href="/" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-[#1e3a8a] text-white">Home</Link>
-            <Link href="/residential" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">Residential</Link>
-            <Link href="/commercial" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">Commercial</Link>
-            <Link href="/professionals" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">For Pest Professionals</Link>
-            <Link href="/products" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">Home Products</Link>
-            <Link href="/commercial-products" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">Commercial Products</Link>
-             <Link href="/about" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">About</Link>
-            <Link href="/contact" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">Contact</Link>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* SECTION 2: HERO SECTION */}
       <section className="relative bg-gradient-to-br from-[#1e293b] via-[#1e3a8a] to-[#2563eb] text-white py-32">
@@ -47,34 +23,34 @@ export default function Home() {
         <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.3) 100%)'}}></div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-9xl font-black tracking-tighter mb-4" style={{fontWeight: 900, letterSpacing: '-0.05em'}}>PestPro Index</h1>
-          <p className="text-3xl font-light mb-8 tracking-widest">London's Neutral Pest Control Directory</p>
+          <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-4" style={{fontWeight: 900, letterSpacing: '-0.05em'}}>PestPro Index</h1>
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-8 tracking-widest">London's Neutral Pest Control Directory</p>
           <p className="text-xl mb-16 max-w-2xl mx-auto leading-relaxed">
             Find the right pest control for your home or business. Filter by location, pest type, certifications, reviews and other criteria specific to your pest problem. No endorsements, just data.
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mb-8">
-            <div className="border-r border-white/30 pr-8">
-              <div className="text-6xl font-black mb-2">389</div>
-              <div className="text-sm font-semibold tracking-widest text-blue-100">RESIDENTIAL PROVIDERS</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto mb-8">
+            <div className="border-b sm:border-b-0 sm:border-r border-white/30 pb-4 sm:pb-0 sm:pr-8">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">389</div>
+              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">RESIDENTIAL PROVIDERS</div>
             </div>
-            <div className="border-r border-white/30 px-8">
-              <div className="text-6xl font-black mb-2">240</div>
-              <div className="text-sm font-semibold tracking-widest text-blue-100">COMMERCIAL PROVIDERS</div>
+            <div className="border-b sm:border-b-0 sm:border-r border-white/30 pb-4 sm:pb-0 sm:px-8">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">240</div>
+              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">COMMERCIAL PROVIDERS</div>
             </div>
-            <div className="pl-8">
-              <div className="text-6xl font-black mb-2">274</div>
-              <div className="text-sm font-semibold tracking-widest text-blue-100">VERIFIED REVIEWS</div>
+            <div className="pt-4 sm:pt-0 sm:pl-8">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">274</div>
+              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">VERIFIED REVIEWS</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* SECTION 3: THREE CATEGORY CARDS (Two-tone design) */}
-      <section className="bg-white py-16 relative z-10">
-        <div className="container mx-auto px-4 -mt-36">
-          <div className="grid grid-cols-3 gap-8 relative z-20">
+      <section className="bg-white py-8 sm:py-16 relative z-10">
+        <div className="container mx-auto px-4 -mt-0 sm:-mt-36">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 relative z-20">
             {/* Residential Card */}
             <div className="rounded-[32px] overflow-hidden transition-all duration-300 hover:-translate-y-1" style={{boxShadow: '0 50px 100px rgba(0, 0, 0, 0.85), 0 35px 70px rgba(0, 0, 0, 0.75), 0 20px 40px rgba(0, 0, 0, 0.65), 0 10px 20px rgba(0, 0, 0, 0.55)', cursor: 'pointer'}} onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 60px 120px rgba(0, 0, 0, 0.9), 0 40px 80px rgba(0, 0, 0, 0.85), 0 25px 50px rgba(0, 0, 0, 0.75), 0 12px 25px rgba(0, 0, 0, 0.65)'} onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 50px 100px rgba(0, 0, 0, 0.85), 0 35px 70px rgba(0, 0, 0, 0.75), 0 20px 40px rgba(0, 0, 0, 0.65), 0 10px 20px rgba(0, 0, 0, 0.55)'}>
               {/* Blue top section */}

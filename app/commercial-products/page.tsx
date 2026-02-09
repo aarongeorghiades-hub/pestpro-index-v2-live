@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { createClient } from '@/utils/supabase';
 import Link from 'next/link';
 import Image from 'next/image';
+import Navigation from '@/components/Navigation';
 
 // Amazon Associates Configuration
 const AMAZON_TRACKING_ID = 'pestproindex-21';
@@ -103,45 +104,7 @@ export default function CommercialProductsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812] shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="flex-shrink-0">
-            <Image 
-              src="/logo-header.png" 
-              alt="PestPro Index Logo" 
-              width={180} 
-              height={50}
-              className="h-auto"
-            />
-          </Link>
-          <div className="hidden md:flex items-center gap-3">
-            <Link href="/" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-[#1e3a8a] text-white">
-              Home
-            </Link>
-            <Link href="/residential" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">
-              Residential
-            </Link>
-            <Link href="/commercial" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">
-              Commercial
-            </Link>
-            <Link href="/professionals" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">
-              Professionals
-            </Link>
-            <Link href="/products" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">
-              Home Products
-            </Link>
-            <Link href="/commercial-products" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">
-              Commercial Products
-            </Link>
-            <Link href="/about" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">
-              About
-            </Link>
-            <Link href="/contact" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">
-              Contact
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-20 overflow-hidden">
@@ -165,11 +128,11 @@ export default function CommercialProductsPage() {
             </div>
           </div>
 
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white mb-6 leading-[0.9] tracking-tight text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-6 leading-[0.9] tracking-tight text-center">
             Commercial<br />Pest Control<br />Products
           </h1>
           
-          <p className="text-xl md:text-2xl text-blue-100/90 max-w-3xl mx-auto leading-relaxed font-medium text-center">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100/90 max-w-3xl mx-auto leading-relaxed font-medium text-center">
             Professional-grade solutions for businesses, facilities, and multi-site operations. <span className="font-bold text-white">Direct Amazon links for bulk ordering</span>. Trusted by commercial pest control providers across London.
           </p>
         </div>
