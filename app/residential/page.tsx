@@ -301,7 +301,7 @@ export default function ResidentialPage() {
                 DIY or Professional? Make the Right Call.
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Our Residential DIY Decision Guide (£1.99) helps you decide by showing:
+                Our Residential DIY Decision Guide (£2.99) helps you decide by showing:
               </p>
 
               {/* 4 Bullets */}
@@ -335,7 +335,7 @@ export default function ResidentialPage() {
                 className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white text-lg font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
               >
                 <span className="text-2xl">📄</span>
-                <span>Get the Guide - £1.99</span>
+                <span>Get the Guide - £2.99</span>
               </Link>
             </div>
 

@@ -468,7 +468,7 @@ export default function CommercialPage() {
               <div className="mb-6">
                 <h3 className="text-2xl font-black text-gray-900 mb-2">Commercial Provider Selection Guide</h3>
                 <p className="text-sm font-semibold text-[#2563eb] mb-3">For Property Managers</p>
-                <p className="text-3xl font-black text-[#f59e0b] mb-4">£14.99</p>
+                <p className="text-3xl font-black text-[#f59e0b] mb-4">£4.99</p>
               </div>
               <p className="text-gray-700 mb-6 leading-relaxed">Step-by-step guide to selecting the right commercial pest control provider for multi-unit properties and commercial portfolios.</p>
               <div className="space-y-3 mb-8">
@@ -486,7 +486,7 @@ export default function CommercialPage() {
                 </div>
               </div>
               <Link href="https://pestproindex.lemonsqueezy.com/checkout/buy/3c02f0c2-baa2-4237-b2ff-e5e70d77fd4b" className="block text-center px-6 py-3 bg-[#1e3a8a] text-white font-bold rounded-lg hover:bg-blue-900 transition-all shadow-md">
-                Get the Guide - £14.99
+                Get the Guide - £4.99
               </Link>
             </div>
 
@@ -494,7 +494,7 @@ export default function CommercialPage() {
               <div className="mb-6">
                 <h3 className="text-2xl font-black text-gray-900 mb-2">Compliance Workbook</h3>
                 <p className="text-sm font-semibold text-[#2563eb] mb-3">For Small Business Owners</p>
-                <p className="text-3xl font-black text-[#f59e0b] mb-4">£29.99</p>
+                <p className="text-3xl font-black text-[#f59e0b] mb-4">£7.99</p>
               </div>
               <p className="text-gray-700 mb-6 leading-relaxed">Essential compliance requirements for commercial pest control in London.</p>
               <div className="space-y-3 mb-8">
@@ -512,7 +512,7 @@ export default function CommercialPage() {
                 </div>
               </div>
               <Link href="https://pestproindex.lemonsqueezy.com/checkout/buy/1b7d0369-1546-49b3-b8c9-88dd4db7e716" className="block text-center px-6 py-3 bg-[#1e3a8a] text-white font-bold rounded-lg hover:bg-blue-900 transition-all shadow-md">
-                Get the Workbook - £29.99
+                Get the Workbook - £7.99
               </Link>
             </div>
           </div>
