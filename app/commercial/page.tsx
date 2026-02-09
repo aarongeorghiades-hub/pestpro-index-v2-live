@@ -46,7 +46,19 @@ export default function CommercialPage() {
   const [filterCounts, setFilterCounts] = useState<FilterCounts>({});
   const [selectedFilters, setSelectedFilters] = useState<Set<string>>(new Set());
   const [sortBy, setSortBy] = useState('quality');
+  const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
+
+  // Mobile detection hook
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Navigation items
   const navItems = [
@@ -367,7 +379,11 @@ export default function CommercialPage() {
                   {provider.phone && (
                     <div className="flex items-center gap-2 mb-2">
                       <Phone size={14} className="text-blue-600" />
-                      <span className="text-sm text-gray-700">{provider.phone}</span>
+                      {isMobile ? (
+                        <a href={`tel:${provider.phone}`} className="text-sm text-blue-600 hover:underline">{provider.phone}</a>
+                      ) : (
+                        <span className="text-sm text-gray-700">{provider.phone}</span>
+                      )}
                     </div>
                   )}
                   {provider.postcode && (
@@ -438,7 +454,11 @@ export default function CommercialPage() {
                   {provider.phone && (
                     <div className="flex items-center gap-2 mb-2">
                       <Phone size={14} className="text-blue-600" />
-                      <span className="text-sm text-gray-700">{provider.phone}</span>
+                      {isMobile ? (
+                        <a href={`tel:${provider.phone}`} className="text-sm text-blue-600 hover:underline">{provider.phone}</a>
+                      ) : (
+                        <span className="text-sm text-gray-700">{provider.phone}</span>
+                      )}
                     </div>
                   )}
 
@@ -703,7 +723,11 @@ export default function CommercialPage() {
                           {provider.phone && (
                             <div className="flex items-center gap-2">
                               <Phone size={16} className="text-blue-600" />
-                              <span className="text-sm text-gray-700">{provider.phone}</span>
+                              {isMobile ? (
+                                <a href={`tel:${provider.phone}`} className="text-sm text-blue-600 hover:underline">{provider.phone}</a>
+                              ) : (
+                                <span className="text-sm text-gray-700">{provider.phone}</span>
+                              )}
                             </div>
                           )}
 

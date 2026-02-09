@@ -91,7 +91,19 @@ export default function ResidentialPage() {
   const [filters, setFilters] = useState({ pests: [] as string[], services: [] as string[] });
   const [sortBy, setSortBy] = useState('quality');
   const [searchResults, setSearchResults] = useState<Provider[] | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
+
+  // Mobile detection hook
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // ============================================================================
   // FETCH DATA
@@ -470,12 +482,18 @@ export default function ResidentialPage() {
                   {/* Contact */}
                   <div className="space-y-2">
                     {provider.phone && (
-                      <a 
-                        href={`tel:${provider.phone}`}
-                        className="block text-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg transition-colors"
-                      >
-                        📞 Call
-                      </a>
+                      isMobile ? (
+                        <a 
+                          href={`tel:${provider.phone}`}
+                          className="block text-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg transition-colors"
+                        >
+                          📞 Call
+                        </a>
+                      ) : (
+                        <span className="block text-center px-3 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg cursor-default">
+                          📞 Call
+                        </span>
+                      )
                     )}
                     {provider.website && (
                       <a 
@@ -673,9 +691,15 @@ export default function ResidentialPage() {
                         )}
                         <div className="space-y-2">
                           {provider.phone && (
-                            <a href={`tel:${provider.phone}`} className="block text-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg">
-                              📞 {provider.phone}
-                            </a>
+                            isMobile ? (
+                              <a href={`tel:${provider.phone}`} className="block text-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg">
+                                📞 {provider.phone}
+                              </a>
+                            ) : (
+                              <span className="block text-center px-3 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg cursor-default">
+                                📞 {provider.phone}
+                              </span>
+                            )
                           )}
                           {provider.website && (
                             <a href={provider.website} target="_blank" rel="noopener noreferrer" className="block text-center px-3 py-2 border border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 text-sm font-semibold rounded-lg">
