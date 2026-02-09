@@ -32,10 +32,20 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812] shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex-shrink-0">
+    <>
+      <style>{`
+        @media (max-width: 767px) {
+          .logo-container {
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+          }
+        }
+      `}</style>
+      <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812] shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0 logo-container">
           <Image 
             src="/logo-header.png" 
             alt="PestPro Index Logo" 
@@ -90,5 +100,6 @@ export default function Navigation() {
         </div>
       )}
     </nav>
+    </>
   );
 }

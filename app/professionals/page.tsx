@@ -13,16 +13,7 @@ export default function ProfessionalsPage() {
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/residential', label: 'Residential' },
-    { href: '/commercial', label: 'Commercial' },
-    { href: '/professionals', label: 'For Pest Professionals' },
-    { href: '/products', label: 'Home Products' },
-    { href: '/commercial-products', label: 'Commercial Products' },
-    { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' },
-  ];
+
 
   const faqItems = [
     {
@@ -208,32 +199,8 @@ export default function ProfessionalsPage() {
         }
       `}</style>
 
-      {/* Header */}
-      <nav className="sticky top-0 z-40 bg-[#0f172a] shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="flex-shrink-0">
-            <Image 
-              src="/logo-header.png" 
-              alt="PestPro Index Logo" 
-              width={180} 
-              height={50}
-              className="h-auto"
-            />
-          </Link>
-
-          <div className="hidden md:flex items-center gap-3">
-            {navItems.map(item => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </nav>
+      {/* Navigation */}
+      <Navigation />
 
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-[#0a1628] via-[#1e3a8a] to-[#0a1628] py-32 overflow-hidden" style={{
