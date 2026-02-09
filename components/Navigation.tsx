@@ -33,7 +33,15 @@ export default function Navigation() {
 
   return (
     <>
-
+      <style>{`
+        @media (min-width: 768px) {
+          .logo-container {
+            background: transparent !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+          }
+        }
+      `}</style>
       <nav className="sticky top-0 z-50 nav-header bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812] shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           {/* Logo */}
