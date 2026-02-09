@@ -257,13 +257,13 @@ export default function ProfessionalsPage() {
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-[0.9] tracking-tight hero-text drop-shadow-lg">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-8 leading-[0.9] tracking-tight hero-text drop-shadow-lg">
             <div className="text-center">Grow Your</div>
             <div className="text-center">Pest Control</div>
             <div className="text-center">Business</div>
           </h1>
           
-          <p className="text-xl md:text-2xl text-blue-100/95 max-w-3xl mx-auto leading-relaxed font-semibold text-center mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-blue-100/95 max-w-3xl mx-auto leading-relaxed font-semibold text-center mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Join <span className="font-bold text-white">391 London providers</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
           </p>
 
@@ -271,7 +271,7 @@ export default function ProfessionalsPage() {
             href="https://forms.gle/f4ZvCrBNXK75kobS8"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-10 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-lg rounded-xl hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 animate-fade-in-up"
+            className="block md:inline-block w-full md:w-auto px-6 md:px-10 py-3 md:py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-base md:text-lg rounded-xl hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 animate-fade-in-up text-center"
             style={{ animationDelay: '0.4s' }}
           >
             Create Your Free Listing On Our Database
@@ -282,34 +282,34 @@ export default function ProfessionalsPage() {
       {/* Stats Bar */}
       <div className="bg-white border-b-2 border-gray-100 py-16" ref={statsRef}>
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             <div className="stat-item text-center group">
               <div className="flex justify-center mb-2">
-                <Users className="w-8 h-8 text-blue-600" />
+                <Users className="w-6 md:w-8 h-6 md:h-8 text-blue-600" />
               </div>
-              <div className="text-5xl font-black text-blue-600 mb-2">{stats.providers}</div>
-              <div className="text-gray-600 font-semibold">Providers Listed</div>
+              <div className="text-3xl md:text-5xl font-black text-blue-600 mb-2">{stats.providers}</div>
+              <div className="text-xs md:text-sm text-gray-600 font-semibold">Providers Listed</div>
             </div>
             <div className="stat-item text-center group">
               <div className="flex justify-center mb-2">
-                <TrendingUp className="w-8 h-8 text-blue-600" />
+                <TrendingUp className="w-6 md:w-8 h-6 md:h-8 text-blue-600" />
               </div>
-              <div className="text-5xl font-black text-blue-600 mb-2">{stats.coverage}%</div>
-              <div className="text-gray-600 font-semibold">Review Coverage</div>
+              <div className="text-3xl md:text-5xl font-black text-blue-600 mb-2">{stats.coverage}%</div>
+              <div className="text-xs md:text-sm text-gray-600 font-semibold">Review Coverage</div>
             </div>
             <div className="stat-item text-center group">
               <div className="flex justify-center mb-2">
-                <Lock className="w-8 h-8 text-blue-600" />
+                <Lock className="w-6 md:w-8 h-6 md:h-8 text-blue-600" />
               </div>
-              <div className="text-5xl font-black text-blue-600 mb-2">£0</div>
-              <div className="text-gray-600 font-semibold">Lead Fees</div>
+              <div className="text-3xl md:text-5xl font-black text-blue-600 mb-2">£0</div>
+              <div className="text-xs md:text-sm text-gray-600 font-semibold">Lead Fees</div>
             </div>
             <div className="stat-item text-center group">
               <div className="flex justify-center mb-2">
-                <Award className="w-8 h-8 text-blue-600" />
+                <Award className="w-6 md:w-8 h-6 md:h-8 text-blue-600" />
               </div>
-              <div className="text-5xl font-black text-blue-600 mb-2">{stats.boroughs}</div>
-              <div className="text-gray-600 font-semibold">London Boroughs</div>
+              <div className="text-3xl md:text-5xl font-black text-blue-600 mb-2">{stats.boroughs}</div>
+              <div className="text-xs md:text-sm text-gray-600 font-semibold">London Boroughs</div>
             </div>
           </div>
         </div>

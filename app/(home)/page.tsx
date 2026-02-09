@@ -5,8 +5,51 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Search, Shield, TrendingUp, Home as HomeIcon, Building2, Users } from 'lucide-react'
 import Navigation from '@/components/Navigation';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
+  const [stats, setStats] = useState({ residential: 0, commercial: 0, reviews: 0 });
+  const statsRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  // Animate stats on scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !hasAnimated) {
+        setHasAnimated(true);
+        animateStats();
+      }
+    }, { threshold: 0.5 });
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
+  const animateStats = () => {
+    const duration = 1500;
+    const start = Date.now();
+
+    const animate = () => {
+      const elapsed = Date.now() - start;
+      const progress = Math.min(elapsed / duration, 1);
+
+      setStats({
+        residential: Math.floor(389 * progress),
+        commercial: Math.floor(240 * progress),
+        reviews: Math.floor(274 * progress)
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    animate();
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -30,17 +73,17 @@ export default function Home() {
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto mb-8" ref={statsRef}>
             <div className="border-b sm:border-b-0 sm:border-r border-white/30 pb-4 sm:pb-0 sm:pr-8">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">389</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.residential}</div>
               <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">RESIDENTIAL PROVIDERS</div>
             </div>
             <div className="border-b sm:border-b-0 sm:border-r border-white/30 pb-4 sm:pb-0 sm:px-8">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">240</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.commercial}</div>
               <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">COMMERCIAL PROVIDERS</div>
             </div>
             <div className="pt-4 sm:pt-0 sm:pl-8">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">274</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.reviews}</div>
               <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">VERIFIED REVIEWS</div>
             </div>
           </div>
@@ -48,188 +91,179 @@ export default function Home() {
       </section>
 
       {/* SECTION 3: THREE CATEGORY CARDS (Two-tone design) */}
-      <section className="bg-white py-8 sm:py-16 relative z-10">
-        <div className="container mx-auto px-4 -mt-0 sm:-mt-36">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 relative z-20">
-            {/* Residential Card */}
-            <div className="rounded-[32px] overflow-hidden transition-all duration-300 hover:-translate-y-1" style={{boxShadow: '0 50px 100px rgba(0, 0, 0, 0.85), 0 35px 70px rgba(0, 0, 0, 0.75), 0 20px 40px rgba(0, 0, 0, 0.65), 0 10px 20px rgba(0, 0, 0, 0.55)', cursor: 'pointer'}} onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 60px 120px rgba(0, 0, 0, 0.9), 0 40px 80px rgba(0, 0, 0, 0.85), 0 25px 50px rgba(0, 0, 0, 0.75), 0 12px 25px rgba(0, 0, 0, 0.65)'} onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 50px 100px rgba(0, 0, 0, 0.85), 0 35px 70px rgba(0, 0, 0, 0.75), 0 20px 40px rgba(0, 0, 0, 0.65), 0 10px 20px rgba(0, 0, 0, 0.55)'}>
-              {/* Blue top section */}
-              <div className="bg-gradient-to-br from-[#2563eb] to-[#1e40af] p-12 text-white text-center">
-                <div className="w-16 h-16 bg-blue-400/40 rounded-2xl flex items-center justify-center mx-auto mb-6">
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Card 1: Residential */}
+            <Link href="/residential" className="group">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-12 h-full hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="flex items-center justify-center w-16 h-16 bg-blue-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
                   <HomeIcon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold">Residential Pest Control</h3>
-              </div>
-              {/* White bottom section */}
-              <div className="bg-white p-8 text-center">
+                <h3 className="text-2xl font-black text-gray-900 mb-3">Residential Pest Control</h3>
                 <p className="text-gray-700 mb-6">Find pest professionals and DIY pest products for your home</p>
-                <div className="space-y-3">
-                  <Link href="/residential" className="block text-blue-600 font-semibold hover:text-blue-800">
-                    Browse 389 providers →
-                  </Link>
-                  <Link href="/products" className="block text-blue-600 font-semibold hover:text-blue-800">
-                    Browse home pest products →
-                  </Link>
+                <div className="flex items-center text-blue-600 font-bold group-hover:translate-x-2 transition-transform">
+                  Browse 389 providers →
                 </div>
               </div>
-            </div>
+            </Link>
 
-            {/* Commercial Card */}
-            <div className="rounded-[32px] overflow-hidden transition-all duration-300 hover:-translate-y-1" style={{boxShadow: '0 50px 100px rgba(0, 0, 0, 0.85), 0 35px 70px rgba(0, 0, 0, 0.75), 0 20px 40px rgba(0, 0, 0, 0.65), 0 10px 20px rgba(0, 0, 0, 0.55)', cursor: 'pointer'}} onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 60px 120px rgba(0, 0, 0, 0.9), 0 40px 80px rgba(0, 0, 0, 0.85), 0 25px 50px rgba(0, 0, 0, 0.75), 0 12px 25px rgba(0, 0, 0, 0.65)'} onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 50px 100px rgba(0, 0, 0, 0.85), 0 35px 70px rgba(0, 0, 0, 0.75), 0 20px 40px rgba(0, 0, 0, 0.65), 0 10px 20px rgba(0, 0, 0, 0.55)'}>
-              {/* Blue top section */}
-              <div className="bg-gradient-to-br from-[#2563eb] to-[#1e40af] p-12 text-white text-center">
-                <div className="w-16 h-16 bg-blue-400/40 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            {/* Card 2: Commercial */}
+            <Link href="/commercial" className="group">
+              <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-3xl p-12 h-full hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="flex items-center justify-center w-16 h-16 bg-amber-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
                   <Building2 className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold">Commercial Pest Control</h3>
-              </div>
-              {/* White bottom section */}
-              <div className="bg-white p-8 text-center">
+                <h3 className="text-2xl font-black text-gray-900 mb-3">Commercial Pest Control</h3>
                 <p className="text-gray-700 mb-6">Find pest professionals, DIY pest products, and compliance services for your business</p>
-                <div className="space-y-3">
-                  <Link href="/commercial" className="block text-blue-600 font-semibold hover:text-blue-800">
-                    Browse 240 providers →
-                  </Link>
-                  <Link href="/commercial-products" className="block text-blue-600 font-semibold hover:text-blue-800">
-                    Browse business pest products →
-                  </Link>
-                  <Link href="/commercial#compliance" className="block text-blue-600 font-semibold hover:text-blue-800">
-                    Remain compliant →
-                  </Link>
+                <div className="flex items-center text-amber-600 font-bold group-hover:translate-x-2 transition-transform">
+                  Browse 240 providers →
                 </div>
               </div>
-            </div>
+            </Link>
 
-            {/* Products Card */}
-            <div className="rounded-[32px] overflow-hidden transition-all duration-300 hover:-translate-y-1" style={{boxShadow: '0 50px 100px rgba(0, 0, 0, 0.85), 0 35px 70px rgba(0, 0, 0, 0.75), 0 20px 40px rgba(0, 0, 0, 0.65), 0 10px 20px rgba(0, 0, 0, 0.55)', cursor: 'pointer'}} onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 60px 120px rgba(0, 0, 0, 0.9), 0 40px 80px rgba(0, 0, 0, 0.85), 0 25px 50px rgba(0, 0, 0, 0.75), 0 12px 25px rgba(0, 0, 0, 0.65)'} onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 50px 100px rgba(0, 0, 0, 0.85), 0 35px 70px rgba(0, 0, 0, 0.75), 0 20px 40px rgba(0, 0, 0, 0.65), 0 10px 20px rgba(0, 0, 0, 0.55)'}>
-              {/* Blue top section */}
-              <div className="bg-gradient-to-br from-[#2563eb] to-[#1e40af] p-12 text-white text-center">
-                <div className="w-16 h-16 bg-blue-400/40 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            {/* Card 3: Professionals */}
+            <Link href="/professionals" className="group">
+              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-12 h-full hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="flex items-center justify-center w-16 h-16 bg-green-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
                   <Users className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold">Pest Professionals</h3>
-              </div>
-              {/* White bottom section */}
-              <div className="bg-white p-8 text-center">
+                <h3 className="text-2xl font-black text-gray-900 mb-3">Pest Professionals</h3>
                 <p className="text-gray-700 mb-6">Customer exposure and compliance services for PestPros</p>
-                <div className="space-y-3">
-                  <Link href="/professionals" className="block text-blue-600 font-semibold hover:text-blue-800">
-                    Explore Services →
-                  </Link>
-                  <Link href="/professionals#compliance" className="block text-blue-600 font-semibold hover:text-blue-800">
-                    Compliance Hub (Coming Soon) →
-                  </Link>
+                <div className="flex items-center text-green-600 font-bold group-hover:translate-x-2 transition-transform">
+                  Explore Services →
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4: ABOUT PESTPRO INDEX - MOVED BELOW THREE CATEGORY CARDS */}
-      <section className="bg-white py-20">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
-              Built Out of Frustration.<br />Designed for Clarity.
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              We believe finding pest control should be straightforward — and so should running a pest control business.
-            </p>
-          </div>
-
-          <div className="space-y-8 text-lg text-gray-700 leading-relaxed mb-12">
-            <p>
-              We've all been there. You've got a problem — whether it's mice in the kitchen or a wasp nest in the eaves — and you need help. So you turn to one of those aggregation sites.
-            </p>
-            
-            <p>
-              What follows is an avalanche. Calls from numbers you don't recognise. Providers you've never heard of pitching hard. And through it all, one nagging question: <em>is this actually the right provider for my problem, or just the one who paid to be first in the queue?</em>
-            </p>
-            
-            <p>
-              That uncertainty didn't sit right with us. So we built something different.
-            </p>
-            
-            <p className="text-xl font-semibold text-gray-900 bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
-              PestPro Index is a neutral directory. No lead fees. No commissions. No pay-per-enquiry. Every provider gets listed — enhanced listings get extra visibility, but the data speaks for itself. Reviews, certifications, service areas, specialisms — organised so you can make your own informed decision.
-            </p>
-          </div>
-
-          <div className="text-center">
-            <Link href="/about" className="inline-block px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition">
-              Learn More About Us →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* SECTION 5: HOW IT WORKS */}
-      <section className="bg-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <p className="text-gray-600 text-lg">We bring available data on pest control professionals to your fingertips so you can find pest control on your terms. A neutral directory designed for transparency, not transactions.</p>
-          </div>
+      {/* SECTION 4: BUILT OUT OF FRUSTRATION */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-12 text-center">
+            Built Out of Frustration.
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Designed for Clarity.</span>
+          </h2>
 
-          <div className="grid grid-cols-3 gap-12">
-            {/* Search & Filter */}
+          <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
+            <p>
+              We believe finding pest control should be straightforward — and so should running a pest control business.
+            </p>
+
+            <p>
+              We've all been there. You've got a problem — whether it's mice in the kitchen or a wasp nest in the eaves — and you need help. So you turn to one of those aggregation sites.
+            </p>
+
+            <p>
+              What follows is an avalanche. Calls from numbers you don't recognise. Providers you've never heard of pitching hard. And through it all, one nagging question: <em>is this actually the right provider for my problem, or just the one who paid to be first in the queue?</em>
+            </p>
+
+            <p>
+              That uncertainty didn't sit right with us. So we built something different.
+            </p>
+
+            <p className="text-xl font-semibold text-gray-900 bg-blue-50 p-6 rounded-2xl border-l-4 border-blue-600">
+              PestPro Index is a neutral directory. No lead fees. No commissions. No pay-per-enquiry. Every provider gets listed — enhanced listings get extra visibility, but the data speaks for itself. Reviews, certifications, service areas, specialisms — organised so you can make your own informed decision.
+            </p>
+
+            <p>
+              We bring available data on pest control professionals to your fingertips so you can find pest control on your terms. A neutral directory designed for transparency, not transactions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5: THREE FEATURES */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-12">
+            {/* Feature 1 */}
             <div className="text-center">
-              <div className="w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg" style={{background: 'linear-gradient(to bottom right, #2563eb, #1e40af)'}}>
-                <Search className="w-12 h-12 text-white" />
+              <div className="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-2xl mx-auto mb-6">
+                <Search className="w-10 h-10 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-bold text-[#1e3a8a] mb-3">Search & Filter</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Search & Filter</h3>
               <p className="text-gray-600">Filter by pest type, service features, and certifications to find the right match</p>
             </div>
 
-            {/* Provider-Stated Info */}
+            {/* Feature 2 */}
             <div className="text-center">
-              <div className="w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg" style={{background: 'linear-gradient(to bottom right, #2563eb, #1e40af)'}}>
-                <Shield className="w-12 h-12 text-white" />
+              <div className="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-2xl mx-auto mb-6">
+                <Shield className="w-10 h-10 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-bold text-[#1e3a8a] mb-3">Provider-Stated Info</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Provider-Stated Info</h3>
               <p className="text-gray-600">All information comes directly from providers - we don't judge outcomes</p>
             </div>
 
-            {/* Make Informed Decisions */}
+            {/* Feature 3 */}
             <div className="text-center">
-              <div className="w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg" style={{background: 'linear-gradient(to bottom right, #2563eb, #1e40af)'}}>
-                <TrendingUp className="w-12 h-12 text-white" />
+              <div className="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-2xl mx-auto mb-6">
+                <TrendingUp className="w-10 h-10 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-bold text-[#1e3a8a] mb-3">Make Informed Decisions</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Make Informed Decisions</h3>
               <p className="text-gray-600">Contact providers directly - no booking fees, no commissions, no bias</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 6: FOOTER */}
-      <footer className="bg-gray-900 text-gray-300 py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-3 gap-12 mb-8">
+      {/* SECTION 6: CTA */}
+      <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-black mb-8">Ready to Find Your Pest Control?</h2>
+          <p className="text-xl mb-12 text-blue-100">Start browsing our neutral directory today. No sign-up required.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/residential" className="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all">
+              Browse Residential →
+            </Link>
+            <Link href="/commercial" className="px-8 py-4 bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-600 transition-all border-2 border-white">
+              Browse Commercial →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-gray-900 text-gray-400 py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
-              <h4 className="text-white font-bold mb-4">PestPro Index</h4>
-              <p className="text-sm">London's neutral pest control directory</p>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/about" className="hover:text-white transition">About</Link></li>
-                <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
-                <li><Link href="/resources" className="hover:text-white transition">Resources</Link></li>
+              <h4 className="text-white font-bold mb-4">Browse</h4>
+              <ul className="space-y-2">
+                <li><Link href="/residential" className="hover:text-white transition">Residential</Link></li>
+                <li><Link href="/commercial" className="hover:text-white transition">Commercial</Link></li>
+                <li><Link href="/professionals" className="hover:text-white transition">For Professionals</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-bold mb-4">Disclaimer</h4>
-              <p className="text-sm">We do not judge outcomes, we display available evidence. No endorsements or guarantees.</p>
+              <h4 className="text-white font-bold mb-4">Products</h4>
+              <ul className="space-y-2">
+                <li><Link href="/products" className="hover:text-white transition">Home Products</Link></li>
+                <li><Link href="/commercial-products" className="hover:text-white transition">Commercial Products</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-bold mb-4">Resources</h4>
+              <ul className="space-y-2">
+                <li><Link href="/about" className="hover:text-white transition">About</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-bold mb-4">Legal</h4>
+              <ul className="space-y-2">
+                <li><Link href="/resources" className="hover:text-white transition">Resources</Link></li>
+              </ul>
             </div>
           </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-sm">
-            <p>&copy; 2025 PestPro Index. All rights reserved.</p>
+          <div className="border-t border-gray-800 pt-8 text-center">
+            <p>&copy; 2026 PestPro Index. All rights reserved.</p>
           </div>
         </div>
       </footer>
     </div>
   );
 }
-// Trigger rebuild Sat Jan 31 08:32:38 EST 2026
-// Clean rebuild trigger - Sat Feb  7 11:33:22 EST 2026
