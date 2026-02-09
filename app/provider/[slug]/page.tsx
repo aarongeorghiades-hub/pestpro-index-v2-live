@@ -1,12 +1,12 @@
-import { createClient } from '@/utils/supabase';
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, Phone, Mail, Globe, MapPin, Star, Award, CheckCircle } from 'lucide-react';
+import Image from 'next/image';
+import { createClient } from '@/utils/supabase';
+import { MapPin, Phone, Mail, Globe, Star, Shield, Award, Briefcase, Home as HomeIcon, AlertCircle } from 'lucide-react';
 
-export const dynamic = 'force-dynamic';
-
-// Slug generation function
 function generateSlug(name: string): string {
   return name
     .toLowerCase()
@@ -18,316 +18,316 @@ function generateSlug(name: string): string {
     .replace(/^-|-$/g, '');
 }
 
-// Fetch provider by matching slug against all providers
-async function getProvider(slug: string) {
-  try {
-    const supabase = createClient();
+export default function ProviderPage() {
+  const params = useParams();
+  const slug = params.slug as string;
+  const [provider, setProvider] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
 
-    // First, try to fetch all providers (this is necessary because we need to match by slug)
-    const { data: providers, error } = await supabase
-      .from('Providers')
-      .select('id, name, website, google_rating, google_review_count, phone, email, address, postcode, business_residential, commercial, bpca_member, npta_member, basis_prompt, cepa_certified, chas, emergency_services_24_7, technician_count_50_plus, rats, mice, wasps, bedbugs, cockroaches, ants, fleas, moths, pigeons, squirrels, foxes, badgers, rabbits, hedgehogs, moles, birds_general, pest_proofing, trapping, fumigation, thermal_imaging, uv_detection, thermal_treatment, heat_treatment, cryonite, exclusion_work, garden_treatments, drain_cleaning, odour_removal, decontamination, deep_clean, bio_hazard, crime_scene, hoarding, animal_removal, bird_control, bird_netting, bird_spikes, bird_wire, bird_gel, bird_netting_commercial, bird_proofing, bird_removal, bird_deterrent, bird_exclusion, bird_trapping, bird_relocation, bird_prevention, bird_management, bird_control_services, hospitality, healthcare, education, retail, warehousing_logistics');
+  useEffect(() => {
+    const fetchProvider = async () => {
+      try {
+        const supabase = createClient();
+        const { data: providers, error } = await supabase
+          .from('Providers')
+          .select('*');
 
-    if (error || !providers) {
-      console.error('[Provider Page] Supabase error:', error?.message);
-      return null;
+        if (error || !providers) {
+          console.error('Supabase error:', error);
+          setNotFound(true);
+          setLoading(false);
+          return;
+        }
+
+        const found = providers.find(p => generateSlug(p.name) === slug);
+
+        if (!found) {
+          setNotFound(true);
+        } else {
+          setProvider(found);
+        }
+        setLoading(false);
+      } catch (err) {
+        console.error('Error fetching provider:', err);
+        setNotFound(true);
+        setLoading(false);
+      }
+    };
+
+    fetchProvider();
+  }, [slug]);
+
+  // JSON-LD structured data
+  useEffect(() => {
+    if (provider) {
+      const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: provider.name,
+        description: `Pest control provider: ${provider.name}`,
+        telephone: provider.phone || undefined,
+        email: provider.email || undefined,
+        url: provider.website || undefined,
+        address: {
+          '@type': 'PostalAddress',
+          postalCode: provider.postcode || undefined,
+        },
+        aggregateRating: provider.google_rating ? {
+          '@type': 'AggregateRating',
+          ratingValue: provider.google_rating,
+          reviewCount: provider.google_review_count || 0,
+        } : undefined,
+      };
+
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.innerHTML = JSON.stringify(jsonLd);
+      document.head.appendChild(script);
+
+      return () => {
+        document.head.removeChild(script);
+      };
     }
+  }, [provider]);
 
-    // Find provider by matching slug
-    const found = providers.find(p => generateSlug(p.name) === slug);
-    return found || null;
-  } catch (err) {
-    console.error('[Provider Page] Error fetching provider:', err);
-    return null;
-  }
-}
-
-// Generate metadata for SEO
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const provider = await getProvider(params.slug);
-
-  if (!provider) {
-    return { title: 'Provider Not Found | PestPro Index' };
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading provider details...</p>
+        </div>
+      </div>
+    );
   }
 
-  const ratingText = provider.google_rating ? `Rated ${provider.google_rating}/5` : '';
-  const reviewText = provider.google_review_count ? `(${provider.google_review_count} reviews)` : '';
-  const serviceType = provider.business_residential && provider.commercial
-    ? 'Residential & Commercial'
-    : provider.commercial
-    ? 'Commercial'
-    : 'Residential';
-
-  return {
-    title: `${provider.name} | ${serviceType} Pest Control London`,
-    description: `${provider.name} - ${serviceType} pest control in London. ${ratingText} ${reviewText}. View certifications, services, and contact details on PestPro Index.`.trim(),
-  };
-}
-
-
-
-export default async function ProviderPage({ params }: { params: { slug: string } }) {
-  const provider = await getProvider(params.slug);
-
-  if (!provider) {
-    notFound();
+  if (notFound) {
+    return (
+      <div className="min-h-screen bg-white">
+        <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812] shadow-lg">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <Link href="/" className="flex-shrink-0">
+              <Image src="/logo-header.png" alt="PestPro Index Logo" width={180} height={50} className="h-auto" />
+            </Link>
+          </div>
+        </nav>
+        <div className="max-w-4xl mx-auto px-4 py-16 text-center">
+          <AlertCircle size={48} className="mx-auto mb-4 text-gray-400" />
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">Provider Not Found</h1>
+          <p className="text-gray-600 mb-8">The provider you're looking for doesn't exist in our directory.</p>
+          <div className="flex gap-4 justify-center">
+            <Link href="/residential" className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+              ← Back to Residential Directory
+            </Link>
+            <Link href="/commercial" className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+              ← Back to Commercial Directory
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
   }
-
-  const serviceType = provider.business_residential && provider.commercial
-    ? 'Residential & Commercial'
-    : provider.commercial
-    ? 'Commercial'
-    : 'Residential';
-
-  // Pest types mapping
-  const pestTypes = [
-    { key: 'rats', label: 'Rats' },
-    { key: 'mice', label: 'Mice' },
-    { key: 'wasps', label: 'Wasps' },
-    { key: 'bedbugs', label: 'Bed Bugs' },
-    { key: 'cockroaches', label: 'Cockroaches' },
-    { key: 'ants', label: 'Ants' },
-    { key: 'fleas', label: 'Fleas' },
-    { key: 'moths', label: 'Moths' },
-    { key: 'flies', label: 'Flies' },
-    { key: 'birds', label: 'Birds' },
-    { key: 'foxes', label: 'Foxes' },
-    { key: 'squirrels', label: 'Squirrels' },
-    { key: 'moles', label: 'Moles' },
-    { key: 'rabbits', label: 'Rabbits' },
-    { key: 'beetles', label: 'Beetles' },
-    { key: 'spiders', label: 'Spiders' },
-    { key: 'silverfish', label: 'Silverfish' },
-    { key: 'woodworm', label: 'Woodworm' },
-  ];
-
-  const certifications = [
-    { key: 'bpca_member', label: 'BPCA Member' },
-    { key: 'npta_member', label: 'NPTA Member' },
-    { key: 'rsph_qualified', label: 'RSPH Qualified' },
-    { key: 'basis_prompt', label: 'BASIS PROMPT Registered' },
-    { key: 'cepa_certified', label: 'CEPA Certified' },
-    { key: 'iso_certified', label: 'ISO Certified' },
-    { key: 'safe_contractor', label: 'SafeContractor Approved' },
-    { key: 'chas_accredited', label: 'CHAS Accredited' },
-    { key: 'which_trusted_trader', label: 'Which? Trusted Trader' },
-    { key: 'checkatrade_member', label: 'Checkatrade Member' },
-    { key: 'trustmark', label: 'TrustMark Registered' },
-  ];
-
-  const services = [
-    { key: 'emergency_service', label: 'Emergency Callout' },
-    { key: 'twenty_four_seven', label: '24/7 Service' },
-    { key: 'free_survey', label: 'Free Survey' },
-    { key: 'free_quote', label: 'Free Quote' },
-    { key: 'contracts_available', label: 'Contracts Available' },
-    { key: 'one_off_treatments', label: 'One-Off Treatments' },
-    { key: 'preventive_services', label: 'Preventive Services' },
-  ];
-
-  const commercialSectors = [
-    { key: 'hospitality', label: 'Hospitality' },
-    { key: 'healthcare', label: 'Healthcare' },
-    { key: 'retail', label: 'Retail' },
-    { key: 'education', label: 'Education' },
-    { key: 'offices', label: 'Offices' },
-    { key: 'warehouses', label: 'Warehouses' },
-    { key: 'food_processing', label: 'Food Processing' },
-    { key: 'restaurants', label: 'Restaurants' },
-    { key: 'hotels', label: 'Hotels' },
-    { key: 'property_management', label: 'Property Management' },
-  ];
-
-  const activePestTypes = pestTypes.filter(p => provider[p.key as keyof typeof provider]);
-  const activeCertifications = certifications.filter(c => provider[c.key as keyof typeof provider]);
-  const activeServices = services.filter(s => provider[s.key as keyof typeof provider]);
-  const activeSectors = commercialSectors.filter(s => provider[s.key as keyof typeof provider]);
-
-  // JSON-LD Structured Data
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    'name': provider.name,
-    'url': `https://pestproindex.com/provider/${params.slug}`,
-    'telephone': provider.phone || undefined,
-    'email': provider.email || undefined,
-    'address': {
-      '@type': 'PostalAddress',
-      'postalCode': provider.postcode || undefined,
-    },
-    ...(provider.google_rating && {
-      'aggregateRating': {
-        '@type': 'AggregateRating',
-        'ratingValue': provider.google_rating,
-        'reviewCount': provider.google_review_count || 0,
-      },
-    }),
-  };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Navigation */}
+    <div className="min-h-screen bg-white">
+      {/* NAVIGATION */}
       <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812] shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="text-white font-bold text-lg">
-            PestPro Index
+          <Link href="/" className="flex-shrink-0">
+            <Image src="/logo-header.png" alt="PestPro Index Logo" width={180} height={50} className="h-auto" />
           </Link>
-          <div className="flex gap-4">
-            {provider.business_residential && (
-              <Link href="/residential" className="text-white hover:text-blue-200 transition">
-                ← Back to Residential
-              </Link>
-            )}
-            {provider.commercial && (
-              <Link href="/commercial" className="text-white hover:text-blue-200 transition">
-                ← Back to Commercial
-              </Link>
-            )}
+          <div className="hidden md:flex items-center gap-3">
+            <Link href="/" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">Home</Link>
+            <Link href="/residential" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">Residential</Link>
+            <Link href="/commercial" className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10">Commercial</Link>
           </div>
         </div>
       </nav>
 
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Header */}
-        <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">{provider.name}</h1>
-
-          <div className="flex flex-wrap gap-6 mb-6">
-            {provider.google_rating && (
-              <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={18}
-                      className={i < Math.floor(provider.google_rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}
-                    />
-                  ))}
-                </div>
-                <span className="text-lg font-semibold text-gray-700">
-                  {provider.google_rating}
-                  {provider.google_review_count && ` (${provider.google_review_count} reviews)`}
-                </span>
+      {/* PROVIDER HEADER */}
+      <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 py-12">
+        <div className="max-w-4xl mx-auto px-4">
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">{provider.name}</h1>
+          {provider.google_rating && (
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    size={18}
+                    className={i < Math.floor(provider.google_rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}
+                  />
+                ))}
               </div>
-            )}
+              <span className="text-lg font-semibold text-gray-900">{provider.google_rating}</span>
+              {provider.google_review_count && (
+                <span className="text-gray-600">({provider.google_review_count} reviews)</span>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
 
+      {/* MAIN CONTENT */}
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        {/* CONTACT DETAILS */}
+        <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Details</h2>
+          <div className="space-y-4">
             {provider.postcode && (
-              <div className="flex items-center gap-2 text-gray-700">
-                <MapPin size={20} className="text-blue-600" />
-                <span className="text-lg">{provider.postcode}</span>
+              <div className="flex items-start gap-3">
+                <MapPin size={20} className="text-blue-600 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-gray-600">Location</p>
+                  <p className="text-lg text-gray-900">{provider.postcode}</p>
+                </div>
               </div>
             )}
-          </div>
-
-          <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-semibold mb-6">
-            {serviceType}
+            {provider.phone && (
+              <div className="flex items-start gap-3">
+                <Phone size={20} className="text-blue-600 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-gray-600">Phone</p>
+                  <a href={`tel:${provider.phone}`} className="text-lg text-blue-600 hover:underline">{provider.phone}</a>
+                </div>
+              </div>
+            )}
+            {provider.email && (
+              <div className="flex items-start gap-3">
+                <Mail size={20} className="text-blue-600 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-gray-600">Email</p>
+                  <a href={`mailto:${provider.email}`} className="text-lg text-blue-600 hover:underline">{provider.email}</a>
+                </div>
+              </div>
+            )}
+            {provider.website && (
+              <div className="flex items-start gap-3">
+                <Globe size={20} className="text-blue-600 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-gray-600">Website</p>
+                  <a href={provider.website} target="_blank" rel="noopener noreferrer" className="text-lg text-blue-600 hover:underline">Visit Website →</a>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Contact Details */}
-        {(provider.phone || provider.email || provider.website) && (
-          <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Details</h2>
-            <div className="space-y-4">
-              {provider.phone && (
-                <div className="flex items-center gap-4">
-                  <Phone size={24} className="text-blue-600" />
-                  <a href={`tel:${provider.phone}`} className="text-lg text-blue-600 hover:underline">
-                    {provider.phone}
-                  </a>
+        {/* CERTIFICATIONS */}
+        {(provider.bpca_member || provider.npta_member || provider.cepa_certified || provider.chas) && (
+          <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+              <Award size={24} className="text-blue-600" />
+              Certifications & Memberships
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {provider.bpca_member && <div className="bg-blue-50 border border-blue-200 rounded p-3 text-center"><p className="font-semibold text-blue-900">BPCA Member</p></div>}
+              {provider.npta_member && <div className="bg-blue-50 border border-blue-200 rounded p-3 text-center"><p className="font-semibold text-blue-900">NPTA Member</p></div>}
+              {provider.cepa_certified && <div className="bg-blue-50 border border-blue-200 rounded p-3 text-center"><p className="font-semibold text-blue-900">CEPA Certified</p></div>}
+              {provider.chas && <div className="bg-blue-50 border border-blue-200 rounded p-3 text-center"><p className="font-semibold text-blue-900">CHAS Accredited</p></div>}
+            </div>
+          </div>
+        )}
+
+        {/* PEST TYPES */}
+        {(provider.rats || provider.mice || provider.wasps || provider.bedbugs || provider.cockroaches || provider.ants || provider.fleas || provider.moths || provider.pigeons || provider.squirrels || provider.foxes || provider.badgers || provider.rabbits || provider.hedgehogs || provider.moles || provider.birds_general) && (
+          <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Pest Types Handled</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {provider.rats && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Rats</div>}
+              {provider.mice && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Mice</div>}
+              {provider.wasps && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Wasps</div>}
+              {provider.bedbugs && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Bed Bugs</div>}
+              {provider.cockroaches && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Cockroaches</div>}
+              {provider.ants && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Ants</div>}
+              {provider.fleas && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Fleas</div>}
+              {provider.moths && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Moths</div>}
+              {provider.pigeons && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Pigeons</div>}
+              {provider.squirrels && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Squirrels</div>}
+              {provider.foxes && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Foxes</div>}
+              {provider.badgers && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Badgers</div>}
+              {provider.rabbits && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Rabbits</div>}
+              {provider.hedgehogs && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Hedgehogs</div>}
+              {provider.moles && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Moles</div>}
+              {provider.birds_general && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Birds</div>}
+            </div>
+          </div>
+        )}
+
+        {/* SERVICES */}
+        {(provider.pest_proofing || provider.trapping || provider.fumigation || provider.thermal_imaging || provider.thermal_treatment || provider.exclusion_work || provider.garden_treatments || provider.drain_cleaning) && (
+          <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Services Offered</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {provider.pest_proofing && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Pest Proofing</div>}
+              {provider.trapping && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Trapping</div>}
+              {provider.fumigation && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Fumigation</div>}
+              {provider.thermal_imaging && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Thermal Imaging</div>}
+              {provider.thermal_treatment && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Thermal Treatment</div>}
+              {provider.exclusion_work && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Exclusion Work</div>}
+              {provider.garden_treatments && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Garden Treatments</div>}
+              {provider.drain_cleaning && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Drain Cleaning</div>}
+            </div>
+          </div>
+        )}
+
+        {/* BUSINESS TYPES */}
+        {(provider.business_residential || provider.commercial) && (
+          <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Business Types Served</h2>
+            <div className="grid grid-cols-2 gap-4">
+              {provider.business_residential && (
+                <div className="flex items-center gap-2 bg-green-50 border border-green-200 rounded p-3">
+                  <HomeIcon size={20} className="text-green-600" />
+                  <span className="font-medium text-green-900">Residential</span>
                 </div>
               )}
-              {provider.email && (
-                <div className="flex items-center gap-4">
-                  <Mail size={24} className="text-blue-600" />
-                  <a href={`mailto:${provider.email}`} className="text-lg text-blue-600 hover:underline">
-                    {provider.email}
-                  </a>
-                </div>
-              )}
-              {provider.website && (
-                <div className="flex items-center gap-4">
-                  <Globe size={24} className="text-blue-600" />
-                  <a href={provider.website} target="_blank" rel="noopener noreferrer" className="text-lg text-blue-600 hover:underline">
-                    Visit Website
-                  </a>
+              {provider.commercial && (
+                <div className="flex items-center gap-2 bg-green-50 border border-green-200 rounded p-3">
+                  <Briefcase size={20} className="text-green-600" />
+                  <span className="font-medium text-green-900">Commercial</span>
                 </div>
               )}
             </div>
           </div>
         )}
 
-        {/* Certifications */}
-        {activeCertifications.length > 0 && (
-          <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Certifications & Memberships</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {activeCertifications.map(cert => (
-                <div key={cert.key} className="flex items-center gap-3">
-                  <CheckCircle size={20} className="text-green-600 flex-shrink-0" />
-                  <span className="text-gray-700">{cert.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Pest Types */}
-        {activePestTypes.length > 0 && (
-          <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Pest Types Covered</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {activePestTypes.map(pest => (
-                <div key={pest.key} className="flex items-center gap-3">
-                  <CheckCircle size={20} className="text-blue-600 flex-shrink-0" />
-                  <span className="text-gray-700">{pest.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Services */}
-        {activeServices.length > 0 && (
-          <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Services & Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {activeServices.map(service => (
-                <div key={service.key} className="flex items-center gap-3">
-                  <CheckCircle size={20} className="text-purple-600 flex-shrink-0" />
-                  <span className="text-gray-700">{service.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Commercial Sectors */}
-        {provider.commercial && activeSectors.length > 0 && (
-          <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Commercial Sectors</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {activeSectors.map(sector => (
-                <div key={sector.key} className="flex items-center gap-3">
-                  <CheckCircle size={20} className="text-orange-600 flex-shrink-0" />
-                  <span className="text-gray-700">{sector.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* BACK LINKS */}
+        <div className="flex gap-4 mt-12">
+          <Link href="/residential" className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            ← Back to Residential
+          </Link>
+          <Link href="/commercial" className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            ← Back to Commercial
+          </Link>
+        </div>
       </div>
 
-      {/* Footer */}
+      {/* FOOTER */}
       <footer className="bg-gray-900 text-gray-300 py-12 mt-16">
-        <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2025 PestPro Index. All rights reserved.</p>
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-3 gap-12 mb-8">
+            <div>
+              <h4 className="text-white font-bold mb-4">PestPro Index</h4>
+              <p className="text-sm">London's neutral pest control directory</p>
+            </div>
+            <div>
+              <h4 className="text-white font-bold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/about" className="hover:text-white transition">About</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
+                <li><Link href="/resources" className="hover:text-white transition">Resources</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-bold mb-4">Disclaimer</h4>
+              <p className="text-sm">We do not judge outcomes, we display available evidence. No endorsements or guarantees.</p>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 pt-8 text-center text-sm">
+            <p>&copy; 2025 PestPro Index. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>
