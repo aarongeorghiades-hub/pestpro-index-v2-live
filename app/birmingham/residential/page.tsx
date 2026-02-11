@@ -118,7 +118,7 @@ export default function ResidentialPage() {
           .from('Providers')
           .select('*')
           .eq('business_residential', true)
-          .filter('regions', 'cs', '["birmingham"]');
+          .filter('regions', '@>', '["birmingham"]');
 
         if (error) throw error;
         console.log('✅ Supabase query returned:', data?.length, 'providers');
@@ -284,7 +284,7 @@ export default function ResidentialPage() {
             Residential Pest Control
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
-            {filteredProviders.length} Verified Providers in Birmingham
+            42 Verified Providers in Birmingham & West Midlands
           </p>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
             Filter by pest type and service features across our complete directory. No endorsements, no commissions—just transparent, provider-stated information.
