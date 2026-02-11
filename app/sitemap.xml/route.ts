@@ -23,6 +23,8 @@ export async function GET() {
     { url: baseUrl, changefreq: 'weekly', priority: '1.0' },
     { url: `${baseUrl}/residential`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/commercial`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/birmingham/residential`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/birmingham/commercial`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/professionals`, changefreq: 'monthly', priority: '0.7' },
     { url: `${baseUrl}/products`, changefreq: 'monthly', priority: '0.6' },
     { url: `${baseUrl}/commercial-products`, changefreq: 'monthly', priority: '0.6' },
