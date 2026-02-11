@@ -270,8 +270,8 @@ export default function ResidentialPage() {
       <section className="relative h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <Image 
-            src="/london-skyline.png" 
-            alt="London skyline illustration" 
+            src="/birmingham-hero.png" 
+            alt="Birmingham skyline illustration" 
             fill
             className="object-cover opacity-95"
             priority

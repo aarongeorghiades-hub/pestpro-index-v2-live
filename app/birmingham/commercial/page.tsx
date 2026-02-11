@@ -299,8 +299,8 @@ export default function CommercialPage() {
       <section className="relative h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <Image 
-            src="/kitchen-cleaning.png" 
-            alt="Commercial pest control kitchen" 
+            src="/birmingham-hero.png" 
+            alt="Birmingham skyline illustration" 
             fill
             className="object-cover opacity-95"
             priority
