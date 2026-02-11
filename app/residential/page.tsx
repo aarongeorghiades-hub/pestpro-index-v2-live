@@ -117,7 +117,8 @@ export default function ResidentialPage() {
         const { data, error } = await supabase
           .from('Providers')
           .select('*')
-          .eq('business_residential', true);
+          .eq('business_residential', true)
+          .or('regions.cs.["london"]');
 
         if (error) throw error;
         console.log('✅ Supabase query returned:', data?.length, 'providers');

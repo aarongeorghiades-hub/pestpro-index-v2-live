@@ -145,7 +145,8 @@ export default function CommercialPage() {
         const { data, error } = await supabase
           .from('Providers')
           .select('*')
-          .eq('commercial', true);
+          .eq('commercial', true)
+          .or('regions.cs.["london"]');
 
         if (error) throw error;
 

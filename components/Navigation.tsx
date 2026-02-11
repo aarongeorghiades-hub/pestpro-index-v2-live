@@ -36,8 +36,20 @@ export default function Navigation() {
   ];
 
   const regions = [
-    { label: 'Birmingham & West Midlands', href: '/birmingham/residential' },
-    { label: 'London & Greater London', href: '/residential' },
+    {
+      name: 'Birmingham & West Midlands',
+      links: [
+        { label: 'Residential', href: '/birmingham/residential' },
+        { label: 'Commercial', href: '/birmingham/commercial' },
+      ]
+    },
+    {
+      name: 'London & Greater London',
+      links: [
+        { label: 'Residential', href: '/residential' },
+        { label: 'Commercial', href: '/commercial' },
+      ]
+    }
   ];
 
   return (
@@ -115,15 +127,26 @@ export default function Navigation() {
                 <div className="px-4 py-3 text-white/60 text-sm font-light border-b border-white/10">
                   Pick your closest region
                 </div>
-                {regions.map((region) => (
-                  <Link
-                    key={region.href}
-                    href={region.href}
-                    className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
-                    onClick={() => setIsRegionsOpen(false)}
-                  >
-                    {region.label}
-                  </Link>
+                {regions.map((region, idx) => (
+                  <div key={idx} className="border-b border-white/10 last:border-b-0">
+                    <div className="px-6 py-2 text-white font-medium text-sm">
+                      {region.name}
+                    </div>
+                    <div className="px-6 pb-3 flex gap-2 text-white/80 text-sm">
+                      {region.links.map((link, linkIdx) => (
+                        <div key={link.href}>
+                          <Link
+                            href={link.href}
+                            className="hover:text-white transition-colors"
+                            onClick={() => setIsRegionsOpen(false)}
+                          >
+                            {link.label}
+                          </Link>
+                          {linkIdx < region.links.length - 1 && <span className="mx-2">|</span>}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             )}
@@ -181,15 +204,22 @@ export default function Navigation() {
               <div className="px-4 py-2 text-white/60 text-sm font-light">
                 Pick your closest region
               </div>
-              {regions.map((region) => (
-                <Link
-                  key={region.href}
-                  href={region.href}
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {region.label}
-                </Link>
+              {regions.map((region, idx) => (
+                <div key={idx} className="mt-2">
+                  <div className="px-4 py-2 text-white font-medium text-sm">
+                    {region.name}
+                  </div>
+                  {region.links.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors text-sm"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
               ))}
             </div>
           </div>

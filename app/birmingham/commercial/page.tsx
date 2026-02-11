@@ -390,7 +390,7 @@ export default function CommercialPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-gray-900 mb-4">Top Rated Providers</h2>
-            <p className="text-lg text-gray-600">Highest-rated commercial pest control providers in London</p>
+            <p className="text-lg text-gray-600">Highest-rated commercial pest control providers in Birmingham & West Midlands</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -496,7 +496,7 @@ export default function CommercialPage() {
                 <p className="text-sm font-semibold text-[#2563eb] mb-3">For Small Business Owners</p>
                 <p className="text-3xl font-black text-[#f59e0b] mb-4">£7.99</p>
               </div>
-              <p className="text-gray-700 mb-6 leading-relaxed">Essential compliance requirements for commercial pest control in London.</p>
+              <p className="text-gray-700 mb-6 leading-relaxed">Essential compliance requirements for commercial pest control in Birmingham & West Midlands.</p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-start gap-3">
                   <span className="text-blue-600 text-lg mt-0.5">•</span>

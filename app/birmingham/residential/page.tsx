@@ -517,10 +517,10 @@ export default function ResidentialPage() {
           {/* Section Title */}
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-gray-900 mb-4">
-              Full List of London Pest Control Providers
+              Full List of Birmingham & West Midlands Pest Control Providers
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              All 389 residential providers with advanced filtering
+              All 42 residential providers with advanced filtering
             </p>
           </div>
 
