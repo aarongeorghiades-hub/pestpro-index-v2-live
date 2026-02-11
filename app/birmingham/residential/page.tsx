@@ -398,14 +398,14 @@ export default function ResidentialPage() {
               Featured Providers
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how our featured provider of the week successfully tackled a tough pest problem in Birmingham.
+              Top pest control providers in Birmingham & West Midlands
             </p>
           </div>
 
           {/* 4-COLUMN GRID - 4 FEATURED PROVIDERS */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {providers
-              .filter(p => ['Wyre Forest Pest Control', 'Betapest Midlands', 'Pest UK (Birmingham)', 'Eliminex Pest Management'].includes(p.name))
+              .filter(p => ['Rentokil (Birmingham)', 'Greenlab Pest Control', 'EcoCare Pest Management', 'Pest UK (Birmingham)'].includes(p.name))
               .sort((a, b) => getQualityScore(b) - getQualityScore(a))
               .map(provider => (
                 <div 
@@ -452,22 +452,22 @@ export default function ResidentialPage() {
                           href={`tel:${provider.phone}`}
                           className="block text-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg transition-colors"
                         >
-                          📞 Call
+                          📞 {provider.phone}
                         </a>
                       ) : (
                         <span className="block text-center px-3 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg cursor-default">
-                          📞 Call
+                          📞 {provider.phone}
                         </span>
                       )
                     )}
                     {provider.website && (
                       <a 
-                        href={provider.website}
+                        href={provider.website?.startsWith('http') ? provider.website : `https://${provider.website}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block text-center px-3 py-2 border border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 text-sm font-semibold rounded-lg transition-colors"
                       >
-                        Website
+                        Visit Website →
                       </a>
                     )}
                   </div>

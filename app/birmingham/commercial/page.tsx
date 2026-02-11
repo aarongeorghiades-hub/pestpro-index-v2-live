@@ -330,7 +330,7 @@ export default function CommercialPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[...providers]
-              .filter(p => ['Wyre Forest Pest Control', 'Betapest Midlands', 'Pest UK (Birmingham)', 'Eliminex Pest Management'].includes(p.name))
+              .filter(p => ['Rentokil (Birmingham)', 'Greenlab Pest Control', 'EcoCare Pest Management', 'Pest UK (Birmingham)'].includes(p.name))
               .sort((a, b) => getQualityScore(b) - getQualityScore(a))
               .map(provider => (
                 <div key={provider.canonical_id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all border-l-4 border-orange-500 p-6">
@@ -374,7 +374,7 @@ export default function CommercialPage() {
                     )}
                   </div>
                   {provider.website && (
-                    <Link href={provider.website} target="_blank" rel="noopener noreferrer" className="block text-center px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm">
+                    <Link href={provider.website?.startsWith('http') ? provider.website : `https://${provider.website}`} target="_blank" rel="noopener noreferrer" className="block text-center px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm">
                       Visit Website →
                     </Link>
                   )}
@@ -385,7 +385,7 @@ export default function CommercialPage() {
       </section>
 
       {/* TOP RATED PROVIDERS - ONLY SHOW IF RATINGS EXIST */}
-      {providers.some(p => p.google_review_count > 0) && (
+      {providers.some(p => p.google_rating != null) && (
       <section className="relative bg-gradient-to-br from-yellow-50 to-white py-16 border-b-2 border-yellow-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
