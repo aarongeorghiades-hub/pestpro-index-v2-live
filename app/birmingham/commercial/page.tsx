@@ -330,7 +330,7 @@ export default function CommercialPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[...providers]
-              .filter(p => ['Rentokil (Birmingham)', 'Greenlab Pest Control', 'EcoCare Pest Management', 'Pest UK (Birmingham)'].includes(p.name))
+              .filter(p => ['Wyre Forest Pest Control', 'Betapest Midlands', 'Pest UK (Birmingham)', 'Eliminex Pest Management'].includes(p.name))
               .sort((a, b) => getQualityScore(b) - getQualityScore(a))
               .map(provider => (
                 <div key={provider.canonical_id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all border-l-4 border-orange-500 p-6">

@@ -405,7 +405,7 @@ export default function ResidentialPage() {
           {/* 4-COLUMN GRID - 4 FEATURED PROVIDERS */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {providers
-              .filter(p => ['Rentokil (Birmingham)', 'Greenlab Pest Control', 'EcoCare Pest Management', 'Pest UK (Birmingham)'].includes(p.name))
+              .filter(p => ['Wyre Forest Pest Control', 'Betapest Midlands', 'Pest UK (Birmingham)', 'Eliminex Pest Management'].includes(p.name))
               .sort((a, b) => getQualityScore(b) - getQualityScore(a))
               .map(provider => (
                 <div 
