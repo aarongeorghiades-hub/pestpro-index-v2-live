@@ -1,5 +1,4 @@
 'use client';
-export const dynamic = 'force-dynamic';
 
 import { useState, useEffect } from 'react';
 import { createClient } from '@/utils/supabase';
@@ -146,7 +145,7 @@ export default function CommercialPage() {
           .from('Providers')
           .select('*')
           .eq('commercial', true)
-          .filter('regions', '@>', '["birmingham"]');
+          .contains('regions', ["birmingham"]);
 
         if (error) throw error;
 
