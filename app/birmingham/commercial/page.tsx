@@ -324,7 +324,7 @@ export default function CommercialPage() {
       <section className="relative bg-gradient-to-br from-orange-50 to-white py-16 border-b-2 border-orange-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">Featured Providers TEST</h2>
+            <h2 className="text-4xl font-black text-gray-900 mb-4">Featured Providers</h2>
             <p className="text-lg text-gray-600">Top commercial pest control providers with verified certifications</p>
           </div>
 
