@@ -145,7 +145,7 @@ export default function CommercialPage() {
           .from('Providers')
           .select('*')
           .eq('commercial', true)
-          .contains('regions', '["birmingham"]');
+          .or('regions.cs.["birmingham"]');
 
         if (error) throw error;
 
