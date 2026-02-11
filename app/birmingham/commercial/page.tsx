@@ -320,19 +320,18 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      {/* FEATURED PROVIDERS - TOP 3 BY REVIEWS */}
+      {/* FEATURED PROVIDERS - 4 HANDPICKED */}
       <section className="relative bg-gradient-to-br from-orange-50 to-white py-16 border-b-2 border-orange-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-gray-900 mb-4">Featured Providers</h2>
-            <p className="text-lg text-gray-600">Top-rated commercial pest control providers with verified certifications</p>
+            <p className="text-lg text-gray-600">Top commercial pest control providers with verified certifications</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[...providers]
-              .filter(p => p.google_review_count > 0)
-              .sort((a, b) => (b.google_review_count || 0) - (a.google_review_count || 0))
-              .slice(0, 8)
+              .filter(p => ['Rentokil (Birmingham)', 'Greenlab Pest Control', 'EcoCare Pest Management', 'Pest UK (Birmingham)'].includes(p.name))
+              .sort((a, b) => getQualityScore(b) - getQualityScore(a))
               .map(provider => (
                 <div key={provider.canonical_id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all border-l-4 border-orange-500 p-6">
                   <span className="inline-block bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">FEATURED</span>
@@ -385,7 +384,8 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      {/* TOP RATED PROVIDERS - TOP 8 BY RATING */}
+      {/* TOP RATED PROVIDERS - ONLY SHOW IF RATINGS EXIST */}
+      {providers.some(p => p.google_review_count > 0) && (
       <section className="relative bg-gradient-to-br from-yellow-50 to-white py-16 border-b-2 border-yellow-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -454,6 +454,7 @@ export default function CommercialPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* PDF GUIDES SECTION */}
       <section className="relative bg-gradient-to-br from-gray-50 to-white py-16 border-b-2 border-gray-200">

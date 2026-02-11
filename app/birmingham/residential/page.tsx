@@ -32,6 +32,15 @@ const extractPostcode = (address: string | null): string | null => {
   return match ? match[0] : null;
 };
 
+const getQualityScore = (provider: any): number => {
+  let score = 0;
+  const pestFields = ['pest_mice', 'pest_rats', 'pest_bed_bugs', 'pest_wasps', 'pest_cockroaches'];
+  pestFields.forEach(field => { if (provider[field] === true) score++; });
+  const serviceFields = ['service_eco_friendly', 'service_emergency_24_7', 'service_bpca_certified'];
+  serviceFields.forEach(field => { if (provider[field] === true) score++; });
+  return score;
+};
+
 // ============================================================================
 // INTERFACES
 // ============================================================================
@@ -393,25 +402,11 @@ export default function ResidentialPage() {
             </p>
           </div>
 
-          {/* 4-COLUMN GRID - NO AI IMAGE */}
+          {/* 4-COLUMN GRID - 4 FEATURED PROVIDERS */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {providers
-              .filter(p => 
-                p.google_rating && p.google_rating >= 4.8 && 
-                p.google_review_count && p.google_review_count >= 30 &&
-                p.address && (
-                  p.address.toLowerCase().includes('london') ||
-                  p.address.toLowerCase().includes('sw') ||
-                  p.address.toLowerCase().includes('se') ||
-                  p.address.toLowerCase().includes('nw') ||
-                  p.address.toLowerCase().includes('ne') ||
-                  p.address.toLowerCase().includes('ec') ||
-                  p.address.toLowerCase().includes('wc') ||
-                  p.address.toLowerCase().includes('e1') ||
-                  p.address.toLowerCase().includes('w1')
-                )
-              )
-              .slice(0, 8)
+              .filter(p => ['Rentokil (Birmingham)', 'Greenlab Pest Control', 'EcoCare Pest Management', 'Pest UK (Birmingham)'].includes(p.name))
+              .sort((a, b) => getQualityScore(b) - getQualityScore(a))
               .map(provider => (
                 <div 
                   key={provider.canonical_id} 
