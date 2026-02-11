@@ -118,7 +118,7 @@ export default function ResidentialPage() {
           .from('Providers')
           .select('*')
           .eq('business_residential', true)
-          .contains('regions', ["birmingham"]);
+          .contains('regions', '["birmingham"]');
 
         if (error) throw error;
         console.log('✅ Supabase query returned:', data?.length, 'providers');
