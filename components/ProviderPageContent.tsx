@@ -61,53 +61,7 @@ export default function ProviderPageContent() {
     fetchProvider();
   }, [slug]);
 
-  // JSON-LD structured data
-  useEffect(() => {
-    if (provider) {
-      const jsonLd: any = {
-        '@context': 'https://schema.org',
-        '@type': 'LocalBusiness',
-        name: provider.name,
-        description: provider.profile_text || `${provider.name} is a pest control provider listed on PestPro Index.`,
-        url: provider.website ? (provider.website.startsWith('http') ? provider.website : `https://${provider.website}`) : undefined,
-        telephone: provider.phone || undefined,
-        email: provider.email || undefined,
-        address: {
-          '@type': 'PostalAddress',
-          postalCode: provider.postcode || undefined,
-          addressLocality: provider.regions?.includes('birmingham') ? 'Birmingham' : 'London',
-          addressCountry: 'GB',
-        },
-      };
 
-      if (provider.google_rating) {
-        jsonLd.aggregateRating = {
-          '@type': 'AggregateRating',
-          ratingValue: provider.google_rating,
-          reviewCount: provider.google_review_count || 1,
-          bestRating: 5,
-        };
-      }
-
-      Object.keys(jsonLd).forEach(key => {
-        if (jsonLd[key] === undefined) delete jsonLd[key];
-      });
-      if (jsonLd.address) {
-        Object.keys(jsonLd.address).forEach(key => {
-          if (jsonLd.address[key] === undefined) delete jsonLd.address[key];
-        });
-      }
-
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.innerHTML = JSON.stringify(jsonLd);
-      document.head.appendChild(script);
-
-      return () => {
-        document.head.removeChild(script);
-      };
-    }
-  }, [provider]);
 
   // Dynamic title and meta description
   useEffect(() => {
@@ -173,50 +127,10 @@ export default function ProviderPageContent() {
     );
   }
 
-  // Generate JSON-LD for this provider
-  const jsonLdData: any = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: provider.name,
-    description: provider.profile_text || generateProfileText(provider),
-    url: provider.website ? (provider.website.startsWith('http') ? provider.website : `https://${provider.website}`) : undefined,
-    telephone: provider.phone || undefined,
-    email: provider.email || undefined,
-    address: {
-      '@type': 'PostalAddress',
-      postalCode: provider.postcode || undefined,
-      addressLocality: provider.regions?.includes('birmingham') ? 'Birmingham' : 'London',
-      addressCountry: 'GB',
-    },
-  };
 
-  if (provider.google_rating) {
-    jsonLdData.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: provider.google_rating,
-      reviewCount: provider.google_review_count || 1,
-      bestRating: 5,
-    };
-  }
-
-  // Remove undefined values
-  Object.keys(jsonLdData).forEach(key => {
-    if (jsonLdData[key] === undefined) delete jsonLdData[key];
-  });
-  if (jsonLdData.address) {
-    Object.keys(jsonLdData.address).forEach(key => {
-      if (jsonLdData.address[key] === undefined) delete jsonLdData.address[key];
-    });
-  }
 
   return (
     <div className="min-h-screen bg-white">
-      {/* JSON-LD STRUCTURED DATA */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
-      />
-
       {/* NAVIGATION */}
       <Navigation />
 
