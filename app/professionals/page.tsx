@@ -9,7 +9,7 @@ import { useState, useEffect, useRef } from 'react';
 
 export default function ProfessionalsPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  const [stats, setStats] = useState({ providers: 0, coverage: 0, boroughs: 0 });
+  const [stats, setStats] = useState({ providers: 389, coverage: 68, boroughs: 32 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 

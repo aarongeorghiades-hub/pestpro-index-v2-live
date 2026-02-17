@@ -36,7 +36,7 @@ export async function generateMetadata({
   const canonicalUrl = `https://pestproindex.com/provider/${slug}`;
 
   return {
-    title: 'Pest Control Provider | PestPro Index',
+    title: 'Pest Control Provider',
     description: 'View pest control provider details, ratings, certifications, and contact information on PestPro Index.',
     alternates: {
       canonical: canonicalUrl,

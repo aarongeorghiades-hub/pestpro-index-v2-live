@@ -13,13 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!borough) {
     return {
-      title: 'Borough Not Found | PestPro Index',
+      title: 'Borough Not Found',
       description: 'The borough you are looking for could not be found.',
     };
   }
 
   return {
-    title: `Pest Control ${borough.name} | Compare Local Providers | PestPro Index`,
+    title: `Pest Control ${borough.name} | Compare Local Providers`,
     description: `Compare pest control providers in ${borough.name}, London. View ratings, certifications and services. No lead fees or commissions.`,
     alternates: {
       canonical: `https://pestproindex.com/pest-control/${slug}`,
@@ -170,7 +170,6 @@ export default async function BoroughPage({ params }: Props) {
             <div>
               <h4 className="text-white font-bold mb-4">Resources</h4>
               <ul className="space-y-2">
-                <li><Link href="/about" className="hover:text-white transition">About</Link></li>
                 <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
               </ul>
             </div>

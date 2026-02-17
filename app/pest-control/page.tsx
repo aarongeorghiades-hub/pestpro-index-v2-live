@@ -4,8 +4,23 @@ import { getAllBoroughs } from './borough-data';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Pest Control by London Borough | PestPro Index',
+  title: 'Pest Control by London Borough',
   description: 'Find pest control providers across all 33 London boroughs. Compare 389 residential and 240 commercial providers. No lead fees, no commissions.',
+  alternates: {
+    canonical: 'https://pestproindex.com/pest-control',
+  },
+  openGraph: {
+    title: 'Pest Control by London Borough',
+    description: 'Find pest control providers across all 33 London boroughs. Compare 389 residential and 240 commercial providers. No lead fees, no commissions.',
+    siteName: 'PestPro Index',
+    locale: 'en_GB',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Pest Control by London Borough',
+    description: 'Find pest control providers across all 33 London boroughs. Compare 389 residential and 240 commercial providers. No lead fees, no commissions.',
+  },
 };
 
 export default function BoroughIndexPage() {
@@ -107,7 +122,6 @@ export default function BoroughIndexPage() {
             <div>
               <h4 className="text-white font-bold mb-4">Resources</h4>
               <ul className="space-y-2">
-                <li><Link href="/about" className="hover:text-white transition">About</Link></li>
                 <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
               </ul>
             </div>

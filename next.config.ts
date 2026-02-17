@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
         destination: 'https://pestproindex.com/:path*',
         permanent: true,
       },
+      {
+        source: '/about',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 };

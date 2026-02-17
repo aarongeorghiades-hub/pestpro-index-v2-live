@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Residential Pest Control Birmingham | Compare Providers | PestPro Index',
+  title: 'Residential Pest Control Birmingham | Compare Providers',
   description: 'Compare residential pest control providers across Birmingham and the West Midlands. Filter by pest type, certifications and services. No lead fees.',
   alternates: {
     canonical: 'https://pestproindex.com/birmingham/residential',

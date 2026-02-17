@@ -8,7 +8,7 @@ import Navigation from '@/components/Navigation';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ residential: 0, commercial: 0, reviews: 0 });
+  const [stats, setStats] = useState({ residential: 389, commercial: 240, reviews: 274 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -265,7 +265,7 @@ export default function Home() {
             <div>
               <h4 className="text-white font-bold mb-4">Resources</h4>
               <ul className="space-y-2">
-                <li><Link href="/about" className="hover:text-white transition">About</Link></li>
+
                 <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
               </ul>
             </div>
