@@ -4,9 +4,9 @@ import ProviderPageContent from '@/components/ProviderPageContent';
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }): Promise<Metadata> {
-  const slug = params.slug;
+  const { slug } = await params;
   const canonicalUrl = `https://pestproindex.com/provider/${slug}`;
 
   return {
