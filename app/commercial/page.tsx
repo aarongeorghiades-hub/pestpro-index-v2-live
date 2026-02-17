@@ -376,7 +376,7 @@ export default function CommercialPage() {
                     )}
                   </div>
                   {provider.website && (
-                    <Link href={provider.website} target="_blank" rel="noopener noreferrer" className="block text-center px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm">
+                    <Link href={provider.website?.startsWith('http') ? provider.website : `https://${provider.website}`} target="_blank" rel="noopener noreferrer" className="block text-center px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm">
                       Visit Website →
                     </Link>
                   )}
@@ -442,7 +442,7 @@ export default function CommercialPage() {
                   )}
                   {provider.website && (
                     <Link
-                      href={provider.website}
+                      href={provider.website?.startsWith('http') ? provider.website : `https://${provider.website}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block text-center px-3 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-xs mt-3"
@@ -730,7 +730,7 @@ export default function CommercialPage() {
                         </div>
 
                         {provider.website && (
-                          <Link href={provider.website} target="_blank" rel="noopener noreferrer" className="inline-block px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm">
+                          <Link href={provider.website?.startsWith('http') ? provider.website : `https://${provider.website}`} target="_blank" rel="noopener noreferrer" className="inline-block px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm">
                             Visit Website →
                           </Link>
                         )}
