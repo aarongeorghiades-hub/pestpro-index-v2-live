@@ -347,12 +347,12 @@ export default function CommercialPage() {
                     </div>
                   )}
                   {provider.phone && (
-                    <div className="flex items-center gap-2 mb-2">
-                      <Phone size={14} className="text-blue-600" />
+                    <div className="flex items-center gap-2 mb-2 whitespace-nowrap">
+                      <Phone size={14} className="text-blue-600 flex-shrink-0" />
                       {isMobile ? (
-                        <a href={`tel:${provider.phone}`} className="text-sm text-blue-600 hover:underline">{provider.phone}</a>
+                        <a href={`tel:${provider.phone}`} className="text-sm text-blue-600 hover:underline whitespace-nowrap">{provider.phone}</a>
                       ) : (
-                        <span className="text-sm text-gray-700">{provider.phone}</span>
+                        <span className="text-sm text-gray-700 whitespace-nowrap">{provider.phone}</span>
                       )}
                     </div>
                   )}
@@ -423,12 +423,12 @@ export default function CommercialPage() {
                     )}
                   </div>
                   {provider.phone && (
-                    <div className="flex items-center gap-2 mb-2">
-                      <Phone size={14} className="text-blue-600" />
+                    <div className="flex items-center gap-2 mb-2 whitespace-nowrap">
+                      <Phone size={14} className="text-blue-600 flex-shrink-0" />
                       {isMobile ? (
-                        <a href={`tel:${provider.phone}`} className="text-sm text-blue-600 hover:underline">{provider.phone}</a>
+                        <a href={`tel:${provider.phone}`} className="text-sm text-blue-600 hover:underline whitespace-nowrap">{provider.phone}</a>
                       ) : (
-                        <span className="text-sm text-gray-700">{provider.phone}</span>
+                        <span className="text-sm text-gray-700 whitespace-nowrap">{provider.phone}</span>
                       )}
                     </div>
                   )}

@@ -662,11 +662,11 @@ export default function ResidentialPage() {
                         <div className="space-y-2">
                           {provider.phone && (
                             isMobile ? (
-                              <a href={`tel:${provider.phone}`} className="block text-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg">
+                              <a href={`tel:${provider.phone}`} className="block text-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg whitespace-nowrap overflow-hidden text-ellipsis">
                                 📞 {provider.phone}
                               </a>
                             ) : (
-                              <span className="block text-center px-3 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg cursor-default">
+                              <span className="block text-center px-3 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg cursor-default whitespace-nowrap overflow-hidden text-ellipsis">
                                 📞 {provider.phone}
                               </span>
                             )
