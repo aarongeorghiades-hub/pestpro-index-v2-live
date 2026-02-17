@@ -10,7 +10,7 @@ export default function ContactPage() {
     { href: '/', label: 'Home' },
     { href: '/residential', label: 'Residential' },
     { href: '/commercial', label: 'Commercial' },
-    { href: '/for-pest-professionals', label: 'For Pest Professionals' },
+    { href: '/professionals', label: 'For Pest Professionals' },
     { href: '/products', label: 'Home Products' },
     { href: '/commercial-products', label: 'Commercial Products' },
     { href: '/about', label: 'About' },
@@ -127,7 +127,7 @@ export default function ContactPage() {
             <div>
               <h4 className="font-bold mb-4">For Professionals</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/for-pest-professionals" className="hover:text-white transition">For Pest Professionals</Link></li>
+                <li><Link href="/professionals" className="hover:text-white transition">For Pest Professionals</Link></li>
               </ul>
             </div>
             <div>
