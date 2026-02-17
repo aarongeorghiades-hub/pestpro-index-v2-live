@@ -1,8 +1,11 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'PestPro Index | Compare Pest Control Providers in London',
-  description: 'Compare 400+ verified pest control providers across Greater London. No lead fees, no commissions. Honest ratings, real reviews, transparent data.',
+  title: 'PestPro Index | Compare Pest Control Providers Across the UK',
+  description: 'Compare pest control providers with transparent, provider-stated information. No lead fees, no commissions. Find trusted pest control in London, Birmingham and beyond.',
+  alternates: {
+    canonical: 'https://pestproindex.com',
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

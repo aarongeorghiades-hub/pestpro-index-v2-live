@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { createClient } from '@/utils/supabase';
 import { MapPin, Phone, Mail, Globe, Star, Shield, Award, Briefcase, Home as HomeIcon, AlertCircle } from 'lucide-react';
 import Navigation from '@/components/Navigation';
+import { Metadata } from 'next';
 
 function generateSlug(name: string): string {
   return name
@@ -112,8 +113,17 @@ export default function ProviderPage() {
       metaDesc.setAttribute('content', 
         `${provider.name} - pest control provider listed on PestPro Index.${rating}${reviews}${postcode} No lead fees, no commissions.`
       );
+      
+      // Update canonical tag
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute('href', `https://pestproindex.com/provider/${slug}`);
     }
-  }, [provider]);
+  }, [provider, slug]);
 
   if (loading) {
     return (

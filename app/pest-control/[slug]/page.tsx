@@ -19,8 +19,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `Pest Control in ${borough.name} | PestPro Index`,
-    description: borough.metaDescription,
+    title: `Pest Control ${borough.name} | Compare Local Providers | PestPro Index`,
+    description: `Compare pest control providers in ${borough.name}, London. View ratings, certifications and services. No lead fees or commissions.`,
+    alternates: {
+      canonical: `https://pestproindex.com/pest-control/${slug}`,
+    },
   };
 }
 

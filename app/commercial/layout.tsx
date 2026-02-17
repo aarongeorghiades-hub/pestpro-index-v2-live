@@ -1,8 +1,11 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Commercial Pest Control London | 240+ Verified Providers',
-  description: 'Compare commercial pest control providers for hospitality, healthcare, retail, education, and more across Greater London. Contract options, certifications, and honest reviews.',
+  title: 'Commercial Pest Control London | Compare Providers | PestPro Index',
+  description: 'Compare commercial pest control providers across London. Filter by sector, certifications, contract types and services. No lead fees.',
+  alternates: {
+    canonical: 'https://pestproindex.com/commercial',
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

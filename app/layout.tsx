@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     type: 'website',
   },
+  alternates: {
+    canonical: 'https://pestproindex.com',
+  },
 }
 
 export default function RootLayout({
@@ -36,6 +39,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="canonical" href="https://pestproindex.com" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
