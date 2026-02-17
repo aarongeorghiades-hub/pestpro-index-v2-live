@@ -63,24 +63,39 @@ export default function ProviderPage() {
   // JSON-LD structured data
   useEffect(() => {
     if (provider) {
-      const jsonLd = {
+      const jsonLd: any = {
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
         name: provider.name,
-        description: `Pest control provider: ${provider.name}`,
+        description: provider.profile_text || `${provider.name} is a pest control provider listed on PestPro Index.`,
+        url: provider.website ? (provider.website.startsWith('http') ? provider.website : `https://${provider.website}`) : undefined,
         telephone: provider.phone || undefined,
         email: provider.email || undefined,
-        url: provider.website || undefined,
         address: {
           '@type': 'PostalAddress',
           postalCode: provider.postcode || undefined,
+          addressLocality: provider.regions?.includes('birmingham') ? 'Birmingham' : 'London',
+          addressCountry: 'GB',
         },
-        aggregateRating: provider.google_rating ? {
+      };
+
+      if (provider.google_rating) {
+        jsonLd.aggregateRating = {
           '@type': 'AggregateRating',
           ratingValue: provider.google_rating,
-          reviewCount: provider.google_review_count || 0,
-        } : undefined,
-      };
+          reviewCount: provider.google_review_count || 1,
+          bestRating: 5,
+        };
+      }
+
+      Object.keys(jsonLd).forEach(key => {
+        if (jsonLd[key] === undefined) delete jsonLd[key];
+      });
+      if (jsonLd.address) {
+        Object.keys(jsonLd.address).forEach(key => {
+          if (jsonLd.address[key] === undefined) delete jsonLd.address[key];
+        });
+      }
 
       const script = document.createElement('script');
       script.type = 'application/ld+json';

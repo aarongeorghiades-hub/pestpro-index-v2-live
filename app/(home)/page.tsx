@@ -50,8 +50,24 @@ export default function Home() {
     animate();
   };
 
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    'name': 'PestPro Index',
+    'url': 'https://pestproindex.com',
+    'description': 'UK pest control provider directory. Compare providers with transparent information. No lead fees or commissions.',
+    'areaServed': [
+      { '@type': 'City', 'name': 'London' },
+      { '@type': 'City', 'name': 'Birmingham' }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <Navigation />
 
       {/* SECTION 2: HERO SECTION */}

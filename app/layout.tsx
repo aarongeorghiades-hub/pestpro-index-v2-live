@@ -14,18 +14,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'PestPro Index | Compare Pest Control Providers in London',
+    default: 'PestPro Index | Compare Pest Control Providers Across the UK',
     template: '%s | PestPro Index',
   },
-  description: 'Compare 400+ verified pest control providers across Greater London. No lead fees, no commissions. Honest ratings, real reviews, transparent data.',
+  description: 'Compare pest control providers with transparent, provider-stated information. No lead fees, no commissions. Find trusted pest control in London, Birmingham and beyond.',
   metadataBase: new URL('https://pestproindex.com'),
   openGraph: {
-    title: 'PestPro Index | Compare Pest Control Providers in London',
-    description: 'Compare 400+ verified pest control providers across Greater London. No lead fees, no commissions.',
-    url: 'https://pestproindex.com',
-    siteName: 'PestPro Index',
-    locale: 'en_GB',
     type: 'website',
+    locale: 'en_GB',
+    siteName: 'PestPro Index',
+  },
+  twitter: {
+    card: 'summary',
   },
   alternates: {
     canonical: 'https://pestproindex.com',
