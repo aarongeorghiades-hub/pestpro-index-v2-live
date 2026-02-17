@@ -465,7 +465,7 @@ export default function ResidentialPage() {
                         href={provider.website?.startsWith('http') ? provider.website : `https://${provider.website}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block text-center px-3 py-2 border border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 text-sm font-semibold rounded-lg transition-colors"
+                        className="block text-center px-3 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm"
                       >
                         Visit Website →
                       </a>
