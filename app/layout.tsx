@@ -27,9 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary',
   },
-  alternates: {
-    canonical: 'https://pestproindex.com',
-  },
+
 }
 
 export default function RootLayout({
