@@ -214,7 +214,7 @@ export default function ProviderPage() {
                 <Globe size={20} className="text-blue-600 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-gray-600">Website</p>
-                  <a href={provider.website} target="_blank" rel="noopener noreferrer" className="text-lg text-blue-600 hover:underline">Visit Website →</a>
+                  <a href={provider.website?.startsWith('http') ? provider.website : `https://${provider.website}`} target="_blank" rel="noopener noreferrer" className="text-lg text-blue-600 hover:underline">Visit Website →</a>
                 </div>
               </div>
             )}
