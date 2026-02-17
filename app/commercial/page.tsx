@@ -786,6 +786,22 @@ export default function CommercialPage() {
         </div>
       </section>
 
+      {/* CROSS-LINKING TO BIRMINGHAM */}
+      <section className="bg-gray-50 border-t border-gray-200 py-12">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="text-gray-700 mb-4">
+            Also compare pest control providers in Birmingham:
+            <Link href="/birmingham/residential" className="text-blue-600 hover:underline font-semibold">
+              Residential
+            </Link>
+            | 
+            <Link href="/birmingham/commercial" className="text-blue-600 hover:underline font-semibold">
+              Commercial
+            </Link>
+          </p>
+        </div>
+      </section>
+
     </div>
   );
 }

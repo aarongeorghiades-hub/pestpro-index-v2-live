@@ -8,6 +8,7 @@ import { createClient } from '@/utils/supabase';
 import { MapPin, Phone, Mail, Globe, Star, Shield, Award, Briefcase, Home as HomeIcon, AlertCircle } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import { Metadata } from 'next';
+import { generateProfileText, generateMetaDescription } from '@/lib/generateProfileText';
 
 function generateSlug(name: string): string {
   return name
@@ -180,6 +181,9 @@ export default function ProviderPage() {
       {/* PROVIDER HEADER */}
       <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 py-12">
         <div className="max-w-4xl mx-auto px-4">
+          <Link href={provider.regions?.includes('birmingham') ? '/birmingham/residential' : '/residential'} className="text-blue-600 hover:text-blue-800 font-semibold mb-4 inline-block">
+            ← Back to {provider.regions?.includes('birmingham') ? 'Birmingham Residential' : 'London Residential'}
+          </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-2">{provider.name}</h1>
           {provider.google_rating && (
             <div className="flex items-center gap-2">
@@ -203,6 +207,15 @@ export default function ProviderPage() {
 
       {/* MAIN CONTENT */}
       <div className="max-w-4xl mx-auto px-4 py-12">
+        {/* PROFILE TEXT (AUTO-GENERATED IF NULL) */}
+        {(provider.profile_text || generateProfileText(provider)) && (
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+            <p className="text-gray-700 leading-relaxed">
+              {provider.profile_text || generateProfileText(provider)}
+            </p>
+          </div>
+        )}
+
         {/* CONTACT DETAILS */}
         <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Details</h2>
