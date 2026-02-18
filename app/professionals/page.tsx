@@ -9,7 +9,7 @@ import { useState, useEffect, useRef } from 'react';
 
 export default function ProfessionalsPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  const [stats, setStats] = useState({ providers: 389, coverage: 68, boroughs: 32 });
+  const [stats, setStats] = useState({ providers: 391, coverage: 84, boroughs: 33 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -63,9 +63,9 @@ export default function ProfessionalsPage() {
       const progress = Math.min(elapsed / duration, 1);
 
       setStats({
-        providers: Math.floor(389 * progress),
-        coverage: Math.floor(68 * progress),
-        boroughs: Math.floor(32 * progress)
+        providers: Math.floor(391 * progress),
+        coverage: Math.floor(84 * progress),
+        boroughs: Math.floor(33 * progress)
       });
 
       if (progress < 1) {
@@ -231,7 +231,7 @@ export default function ProfessionalsPage() {
           </h1>
           
           <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-blue-100/95 max-w-3xl mx-auto leading-relaxed font-semibold text-center mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Join <span className="font-bold text-white">389 London providers</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
+            Join <span className="font-bold text-white">391 London providers</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
           </p>
 
           <a

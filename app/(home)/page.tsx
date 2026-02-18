@@ -8,7 +8,7 @@ import Navigation from '@/components/Navigation';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ residential: 389, commercial: 240, reviews: 274 });
+  const [stats, setStats] = useState({ residential: 391, commercial: 240, reviews: 274 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -37,7 +37,7 @@ export default function Home() {
       const progress = Math.min(elapsed / duration, 1);
 
       setStats({
-        residential: Math.floor(389 * progress),
+        residential: Math.floor(391 * progress),
         commercial: Math.floor(240 * progress),
         reviews: Math.floor(274 * progress)
       });
@@ -119,7 +119,7 @@ export default function Home() {
                 <h3 className="text-2xl font-black text-gray-900 mb-3">Residential Pest Control</h3>
                 <p className="text-gray-700 mb-6">Find pest professionals and DIY pest products for your home</p>
                 <div className="flex items-center text-blue-600 font-bold group-hover:translate-x-2 transition-transform">
-                  Browse 389 providers →
+                  Browse 391 providers →
                 </div>
               </div>
             </Link>
