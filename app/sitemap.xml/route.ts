@@ -32,6 +32,16 @@ export async function GET() {
     { url: `${baseUrl}/about`, changefreq: 'monthly', priority: '0.5' },
     { url: `${baseUrl}/contact`, changefreq: 'monthly', priority: '0.5' },
     { url: `${baseUrl}/pest-control`, changefreq: 'monthly', priority: '0.8' },
+    { url: `${baseUrl}/blog`, changefreq: 'weekly', priority: '0.8' },
+    { url: `${baseUrl}/blog/bpca-vs-npta-pest-control-certifications`, changefreq: 'monthly', priority: '0.7' },
+    { url: `${baseUrl}/blog/signs-of-rat-problem-london`, changefreq: 'monthly', priority: '0.7' },
+    { url: `${baseUrl}/blog/landlord-pest-control-legal-obligation-uk`, changefreq: 'monthly', priority: '0.7' },
+    { url: `${baseUrl}/blog/diy-pest-control-vs-professional`, changefreq: 'monthly', priority: '0.7' },
+    { url: `${baseUrl}/blog/pest-control-cost-london`, changefreq: 'monthly', priority: '0.7' },
+    { url: `${baseUrl}/blog/wasp-season-london`, changefreq: 'monthly', priority: '0.7' },
+    { url: `${baseUrl}/blog/private-vs-council-pest-control-london`, changefreq: 'monthly', priority: '0.7' },
+    { url: `${baseUrl}/blog/eco-friendly-pest-control-london`, changefreq: 'monthly', priority: '0.7' },
+    { url: `${baseUrl}/blog/seasonal-pest-calendar-london`, changefreq: 'monthly', priority: '0.7' },
   ]
 
   // Borough pages
