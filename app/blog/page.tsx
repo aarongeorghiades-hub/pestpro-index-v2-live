@@ -32,7 +32,7 @@ export default function BlogPage() {
               <Link 
                 key={post.slug} 
                 href={`/blog/${post.slug}`} 
-                className="group block bg-white/5 backdrop-blur-sm border-2 border-white/25 rounded-xl p-8 shadow-md shadow-blue-500/5 hover:border-white/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15 transition-all duration-300"
+                className="group block bg-white/5 backdrop-blur-sm border-[3px] border-white/40 rounded-xl p-8 shadow-md shadow-blue-500/5 hover:border-white/70 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15 transition-all duration-300"
               >
                 <h2 className="text-xl font-bold text-white mb-4 group-hover:text-blue-300 transition-colors">
                   {post.title}
