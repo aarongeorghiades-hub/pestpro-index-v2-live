@@ -33,13 +33,52 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params;
-  const canonicalUrl = `https://pestproindex.com/provider/${slug}`;
+  const provider = await getProvider(slug);
+
+  if (!provider) {
+    return {
+      title: 'Provider Not Found',
+      description: 'This pest control provider could not be found on PestPro Index.',
+      alternates: {
+        canonical: `https://pestproindex.com/provider/${slug}`,
+      },
+    };
+  }
+
+  // Build dynamic title
+  const serviceType = provider.commercial && provider.residential 
+    ? 'Pest Control' 
+    : provider.commercial 
+      ? 'Commercial Pest Control' 
+      : 'Residential Pest Control';
+  
+  const location = provider.regions?.includes('birmingham') ? 'Birmingham' : 'London';
+  const title = `${provider.name} | ${serviceType} ${location}`;
+
+  // Build dynamic description
+  let description = `${provider.name} - ${serviceType.toLowerCase()} provider serving ${location}.`;
+  if (provider.google_rating && provider.google_review_count) {
+    description += ` Rated ${provider.google_rating}/5 from ${provider.google_review_count} Google reviews.`;
+  }
+  description += ' Compare services, certifications and contact details on PestPro Index.';
 
   return {
-    title: 'Pest Control Provider',
-    description: 'View pest control provider details, ratings, certifications, and contact information on PestPro Index.',
+    title: title,
+    description: description,
     alternates: {
-      canonical: canonicalUrl,
+      canonical: `https://pestproindex.com/provider/${slug}`,
+    },
+    openGraph: {
+      title: `${provider.name} | ${serviceType} ${location}`,
+      description: description,
+      siteName: 'PestPro Index',
+      locale: 'en_GB',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary',
+      title: `${provider.name} | ${serviceType} ${location}`,
+      description: description,
     },
   };
 }

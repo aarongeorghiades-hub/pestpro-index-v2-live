@@ -13,6 +13,8 @@ export default function ProviderJsonLd({ provider }: ProviderJsonLdProps) {
     url: provider.website ? (provider.website.startsWith('http') ? provider.website : `https://${provider.website}`) : undefined,
     telephone: provider.phone || undefined,
     email: provider.email || undefined,
+    priceRange: '££',
+    image: 'https://pestproindex.com/logo-header.png',
     address: {
       '@type': 'PostalAddress',
       postalCode: provider.postcode || undefined,
