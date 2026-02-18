@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 export default function Navigation() {
+  // Force redeploy
   const pathname = usePathname();
   const [regionsOpen, setRegionsOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
