@@ -9,6 +9,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isRegionsOpen, setIsRegionsOpen] = useState(false);
+  const [isPestProductsOpen, setIsPestProductsOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
 
   useEffect(() => {
@@ -26,12 +27,11 @@ export default function Navigation() {
     { href: '/', label: 'Home' },
     { href: '/residential', label: 'Residential' },
     { href: '/commercial', label: 'Commercial' },
-    { href: '/professionals', label: 'For Pest Professionals' },
   ];
 
-  const resources = [
-    { label: 'Guides', href: '/blog' },
-    { label: 'Products', href: '/products' },
+  const pestProducts = [
+    { label: 'Home Products', href: '/products' },
+    { label: 'Commercial Products', href: '/commercial-products' },
   ];
 
   const regions = [
@@ -87,6 +87,31 @@ export default function Navigation() {
             </Link>
           ))}
           
+          {/* Pest Products Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setIsPestProductsOpen(!isPestProductsOpen)}
+              className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10 flex items-center gap-2"
+            >
+              Pest Products ▾
+            </button>
+            
+            {isPestProductsOpen && (
+              <div className="absolute top-full mt-2 left-0 bg-gradient-to-b from-[#1e3a8a] to-[#050812] border border-white/20 rounded-xl shadow-lg min-w-max z-50">
+                {pestProducts.map((product) => (
+                  <Link
+                    key={product.href}
+                    href={product.href}
+                    className="block px-6 py-3 text-white hover:bg-white/10 transition-colors first:pt-3 last:pb-3"
+                    onClick={() => setIsPestProductsOpen(false)}
+                  >
+                    {product.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+          
           {/* Regions Dropdown */}
           <div className="relative">
             <button
@@ -125,6 +150,13 @@ export default function Navigation() {
               </div>
             )}
           </div>
+
+          <Link 
+            href="/professionals"
+            className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10"
+          >
+            Pest Professionals
+          </Link>
           
           {/* Resources Dropdown */}
           <div className="relative">
@@ -137,16 +169,13 @@ export default function Navigation() {
             
             {isResourcesOpen && (
               <div className="absolute top-full mt-2 left-0 bg-gradient-to-b from-[#1e3a8a] to-[#050812] border border-white/20 rounded-xl shadow-lg min-w-max z-50">
-                {resources.map((resource) => (
-                  <Link
-                    key={resource.href}
-                    href={resource.href}
-                    className="block px-6 py-3 text-white hover:bg-white/10 transition-colors first:pt-3 last:pb-3"
-                    onClick={() => setIsResourcesOpen(false)}
-                  >
-                    {resource.label}
-                  </Link>
-                ))}
+                <Link
+                  href="/blog"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Guides
+                </Link>
               </div>
             )}
           </div>
@@ -188,6 +217,23 @@ export default function Navigation() {
               </Link>
             ))}
             
+            {/* Mobile Pest Products Section */}
+            <div className="border-t border-white/10 mt-2 pt-2">
+              <div className="px-4 py-2 text-white/60 text-sm font-light">
+                Pest Products
+              </div>
+              {pestProducts.map((product) => (
+                <Link
+                  key={product.href}
+                  href={product.href}
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {product.label}
+                </Link>
+              ))}
+            </div>
+            
             {/* Mobile Regions Section */}
             <div className="border-t border-white/10 mt-2 pt-2">
               <div className="px-4 py-2 text-white/60 text-sm font-light">
@@ -211,22 +257,27 @@ export default function Navigation() {
                 </div>
               ))}
             </div>
+
+            <Link
+              href="/professionals"
+              className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Pest Professionals
+            </Link>
             
             {/* Mobile Resources Section */}
             <div className="border-t border-white/10 mt-2 pt-2">
               <div className="px-4 py-2 text-white/60 text-sm font-light">
                 Resources
               </div>
-              {resources.map((resource) => (
-                <Link
-                  key={resource.href}
-                  href={resource.href}
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {resource.label}
-                </Link>
-              ))}
+              <Link
+                href="/blog"
+                className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Guides
+              </Link>
             </div>
 
             <Link
