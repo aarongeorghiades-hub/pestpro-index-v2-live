@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `Pest Control ${borough.name} | Compare Local Providers`,
-    description: `Compare pest control providers in ${borough.name}, London. View ratings, certifications and services. No lead fees or commissions.`,
+    description: `Compare pest control and pest removal providers in ${borough.name}, London. View ratings, certifications and services. No lead fees or commissions.`,
     alternates: {
       canonical: `https://pestproindex.com/pest-control/${slug}`,
     },
@@ -72,7 +72,7 @@ export default async function BoroughPage({ params }: Props) {
             Pest Control in {borough.name}
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-light mb-8 tracking-widest">
-            Find trusted pest control providers serving {borough.name} and surrounding areas
+            Find trusted pest control and pest removal services serving {borough.name} and surrounding areas
           </p>
         </div>
       </section>

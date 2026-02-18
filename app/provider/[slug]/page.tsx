@@ -47,16 +47,16 @@ export async function generateMetadata({
 
   // Build dynamic title
   const serviceType = provider.commercial && provider.residential 
-    ? 'Pest Control' 
+    ? 'Pest Control & Pest Removal' 
     : provider.commercial 
-      ? 'Commercial Pest Control' 
-      : 'Residential Pest Control';
+      ? 'Commercial Pest Control & Pest Removal' 
+      : 'Residential Pest Control & Pest Removal';
   
   const location = provider.regions?.includes('birmingham') ? 'Birmingham' : 'London';
   const title = `${provider.name} | ${serviceType} ${location}`;
 
   // Build dynamic description
-  let description = `${provider.name} - ${serviceType.toLowerCase()} provider serving ${location}.`;
+  let description = `${provider.name} - pest control and pest removal provider serving ${location}.`;
   if (provider.google_rating && provider.google_review_count) {
     description += ` Rated ${provider.google_rating}/5 from ${provider.google_review_count} Google reviews.`;
   }
