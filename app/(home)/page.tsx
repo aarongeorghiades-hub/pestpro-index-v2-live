@@ -83,9 +83,9 @@ export default function Home() {
         
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-4" style={{fontWeight: 900, letterSpacing: '-0.05em'}}>PestPro Index</h1>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-8 tracking-widest">London's Neutral Pest Control & Pest Removal Directory</p>
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-8 tracking-widest">London's Neutral Pest Control Directory</p>
           <p className="text-xl mb-16 max-w-2xl mx-auto leading-relaxed">
-            Find the right pest control or pest removal service for your home or business. Filter by location, pest type, certifications, reviews and other criteria specific to your pest problem. No endorsements, just data.
+            Find the right pest control for your home or business. Filter by location, pest type, certifications, reviews and other criteria specific to your pest problem. No endorsements, just data.
           </p>
 
           {/* Stats */}
@@ -186,7 +186,7 @@ export default function Home() {
             </p>
 
             <p>
-              We bring available data on pest control professionals to your fingertips so you can find pest control on your terms. A neutral directory designed for transparency, not transactions.
+              We bring available data on pest control and pest removal professionals to your fingertips so you can find the right service on your terms. A neutral directory designed for transparency, not transactions.
             </p>
           </div>
         </div>
