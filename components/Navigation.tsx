@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react';
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [isRegionsOpen, setIsRegionsOpen] = useState(false);
+  const [isFindPestControlOpen, setIsFindPestControlOpen] = useState(false);
   const [isPestProductsOpen, setIsPestProductsOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
 
@@ -22,12 +22,6 @@ export default function Navigation() {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
-
-  const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/residential', label: 'Residential' },
-    { href: '/commercial', label: 'Commercial' },
-  ];
 
   const pestProducts = [
     { label: 'Home Products', href: '/products' },
@@ -47,6 +41,13 @@ export default function Navigation() {
     { name: 'Scotland', href: '/pest-control/scotland', status: 'coming-soon' },
     { name: 'Wales', href: '/pest-control/wales', status: 'coming-soon' },
     { name: 'Northern Ireland', href: '/pest-control/northern-ireland', status: 'coming-soon' },
+  ];
+
+  const quickLinks = [
+    { label: 'London Residential', href: '/residential' },
+    { label: 'London Commercial', href: '/commercial' },
+    { label: 'Birmingham Residential', href: '/birmingham/residential' },
+    { label: 'Birmingham Commercial', href: '/birmingham/commercial' },
   ];
 
   return (
@@ -75,15 +76,65 @@ export default function Navigation() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-3">
-          {navItems.map((item) => (
-            <Link 
-              key={item.href}
-              href={item.href} 
-              className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10"
+          <Link 
+            href="/"
+            className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10"
+          >
+            Home
+          </Link>
+          
+          {/* Find Pest Control Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setIsFindPestControlOpen(!isFindPestControlOpen)}
+              className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10 flex items-center gap-2"
             >
-              {item.label}
-            </Link>
-          ))}
+              Find Pest Control ▾
+            </button>
+            
+            {isFindPestControlOpen && (
+              <div className="absolute top-full mt-2 left-0 bg-gradient-to-b from-[#1e3a8a] to-[#050812] border border-white/20 rounded-xl shadow-lg min-w-[280px] max-h-[500px] overflow-y-auto z-50">
+                {/* Browse by Region Section */}
+                <div className="px-4 py-3 text-white/60 text-xs font-semibold uppercase tracking-wider border-b border-white/10">
+                  Browse by Region
+                </div>
+                {regions.map((region) => (
+                  <Link
+                    key={region.href}
+                    href={region.href}
+                    className="block px-6 py-3 text-white hover:bg-white/10 transition-colors border-b border-white/5 last:border-b-0"
+                    onClick={() => setIsFindPestControlOpen(false)}
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <span className={region.status === 'coming-soon' ? 'text-white/70' : 'text-white'}>
+                        {region.name}
+                      </span>
+                      {region.status === 'coming-soon' && (
+                        <span className="text-xs px-2 py-1 bg-amber-500/20 text-amber-300 rounded font-semibold">
+                          Coming Soon
+                        </span>
+                      )}
+                    </div>
+                  </Link>
+                ))}
+                
+                {/* Divider */}
+                <div className="border-t-2 border-white/20 my-2"></div>
+                
+                {/* Quick Links Section */}
+                {quickLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block px-6 py-3 text-white/90 hover:bg-white/10 hover:text-white transition-colors text-sm"
+                    onClick={() => setIsFindPestControlOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
           
           {/* Pest Products Dropdown */}
           <div className="relative">
@@ -104,43 +155,6 @@ export default function Navigation() {
                     onClick={() => setIsPestProductsOpen(false)}
                   >
                     {product.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-          
-          {/* Regions Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setIsRegionsOpen(!isRegionsOpen)}
-              className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10 flex items-center gap-2"
-            >
-              Regions ▾
-            </button>
-            
-            {isRegionsOpen && (
-              <div className="absolute top-full mt-2 left-0 bg-gradient-to-b from-[#1e3a8a] to-[#050812] border border-white/20 rounded-xl shadow-lg min-w-max z-50 max-h-96 overflow-y-auto">
-                <div className="px-4 py-3 text-white/60 text-sm font-light border-b border-white/10">
-                  Pick your closest region
-                </div>
-                {regions.map((region, idx) => (
-                  <Link
-                    key={idx}
-                    href={region.href}
-                    className="block px-6 py-3 text-white hover:bg-white/10 transition-colors border-b border-white/10 last:border-b-0"
-                    onClick={() => setIsRegionsOpen(false)}
-                  >
-                    <div className="flex items-center justify-between gap-3">
-                      <span className={region.status === 'coming-soon' ? 'text-white/70' : 'text-white'}>
-                        {region.name}
-                      </span>
-                      {region.status === 'coming-soon' && (
-                        <span className="text-xs px-2 py-1 bg-blue-400/20 text-blue-300 rounded">
-                          Soon
-                        </span>
-                      )}
-                    </div>
                   </Link>
                 ))}
               </div>
@@ -202,20 +216,62 @@ export default function Navigation() {
       {isOpen && (
         <div className="md:hidden bg-gradient-to-b from-[#1e3a8a] to-[#050812] border-t border-white/10">
           <div className="px-4 py-4 space-y-2">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+            <Link
+              href="/"
+              className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </Link>
+            
+            {/* Mobile Find Pest Control Section */}
+            <div className="border-t border-white/10 mt-2 pt-2">
+              <div className="px-4 py-2 text-white/60 text-xs font-semibold uppercase tracking-wider">
+                Find Pest Control
+              </div>
+              
+              {/* Browse by Region */}
+              <div className="px-4 py-2 text-white/50 text-xs font-light">
+                Browse by Region
+              </div>
+              {regions.map((region) => (
+                <Link
+                  key={region.href}
+                  href={region.href}
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className={region.status === 'coming-soon' ? 'text-white/70' : 'text-white'}>
+                      {region.name}
+                    </span>
+                    {region.status === 'coming-soon' && (
+                      <span className="text-xs px-2 py-1 bg-amber-500/20 text-amber-300 rounded font-semibold">
+                        Soon
+                      </span>
+                    )}
+                  </div>
+                </Link>
+              ))}
+              
+              {/* Quick Links */}
+              <div className="border-t border-white/10 mt-2 pt-2">
+                {quickLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors text-sm"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
             
             {/* Mobile Pest Products Section */}
             <div className="border-t border-white/10 mt-2 pt-2">
-              <div className="px-4 py-2 text-white/60 text-sm font-light">
+              <div className="px-4 py-2 text-white/60 text-xs font-semibold uppercase tracking-wider">
                 Pest Products
               </div>
               {pestProducts.map((product) => (
@@ -226,32 +282,6 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   {product.label}
-                </Link>
-              ))}
-            </div>
-            
-            {/* Mobile Regions Section */}
-            <div className="border-t border-white/10 mt-2 pt-2">
-              <div className="px-4 py-2 text-white/60 text-sm font-light">
-                Pick your closest region
-              </div>
-              {regions.map((region, idx) => (
-                <Link
-                  key={idx}
-                  href={region.href}
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className={region.status === 'coming-soon' ? 'text-white/70' : 'text-white'}>
-                      {region.name}
-                    </span>
-                    {region.status === 'coming-soon' && (
-                      <span className="text-xs px-2 py-1 bg-blue-400/20 text-blue-300 rounded">
-                        Soon
-                      </span>
-                    )}
-                  </div>
                 </Link>
               ))}
             </div>
@@ -266,7 +296,7 @@ export default function Navigation() {
             
             {/* Mobile Resources Section */}
             <div className="border-t border-white/10 mt-2 pt-2">
-              <div className="px-4 py-2 text-white/60 text-sm font-light">
+              <div className="px-4 py-2 text-white/60 text-xs font-semibold uppercase tracking-wider">
                 Resources
               </div>
               <Link

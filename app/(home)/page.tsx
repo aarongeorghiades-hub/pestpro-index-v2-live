@@ -3,12 +3,12 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, Shield, TrendingUp, Home as HomeIcon, Building2, Users } from 'lucide-react'
+import { Search, Shield, TrendingUp, MapPin } from 'lucide-react'
 import Navigation from '@/components/Navigation';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ residential: 391, commercial: 240, reviews: 274 });
+  const [stats, setStats] = useState({ providers: 483, boroughs: 2, reviews: 84 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -37,9 +37,9 @@ export default function Home() {
       const progress = Math.min(elapsed / duration, 1);
 
       setStats({
-        residential: Math.floor(391 * progress),
-        commercial: Math.floor(240 * progress),
-        reviews: Math.floor(274 * progress)
+        providers: Math.floor(483 * progress),
+        boroughs: Math.floor(2 * progress),
+        reviews: Math.floor(84 * progress)
       });
 
       if (progress < 1) {
@@ -50,12 +50,27 @@ export default function Home() {
     animate();
   };
 
+  const regions = [
+    { name: 'Greater London', slug: 'greater-london', status: 'live', providerCount: 391 },
+    { name: 'West Midlands', slug: 'west-midlands', status: 'live', providerCount: 42 },
+    { name: 'North West', slug: 'north-west', status: 'coming-soon' },
+    { name: 'Yorkshire & the Humber', slug: 'yorkshire-and-the-humber', status: 'coming-soon' },
+    { name: 'South East', slug: 'south-east', status: 'coming-soon' },
+    { name: 'South West', slug: 'south-west', status: 'coming-soon' },
+    { name: 'East of England', slug: 'east-of-england', status: 'coming-soon' },
+    { name: 'East Midlands', slug: 'east-midlands', status: 'coming-soon' },
+    { name: 'North East', slug: 'north-east', status: 'coming-soon' },
+    { name: 'Scotland', slug: 'scotland', status: 'coming-soon' },
+    { name: 'Wales', slug: 'wales', status: 'coming-soon' },
+    { name: 'Northern Ireland', slug: 'northern-ireland', status: 'coming-soon' },
+  ];
+
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     'name': 'PestPro Index',
     'url': 'https://pestproindex.com',
-    'description': 'UK pest control provider directory. Compare providers with transparent information. No lead fees or commissions.',
+    'description': 'The UK\'s neutral pest control and pest removal directory. Compare providers with transparent information. No lead fees or commissions.',
     'areaServed': [
       { '@type': 'City', 'name': 'London' },
       { '@type': 'City', 'name': 'Birmingham' }
@@ -70,92 +85,108 @@ export default function Home() {
       />
       <Navigation />
 
-      {/* SECTION 2: HERO SECTION */}
+      {/* HERO SECTION */}
       <section className="relative bg-gradient-to-br from-[#1e293b] via-[#1e3a8a] to-[#2563eb] text-white py-32">
-        {/* Layer 1: MUCH BRIGHTER center glow */}
+        {/* Layer 1: Center glow */}
         <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse 800px 600px at center 20%, rgba(59, 130, 246, 0.5) 0%, transparent 60%)'}}></div>
         
-        {/* Layer 2: MUCH DARKER edge vignette */}
+        {/* Layer 2: Edge vignette */}
         <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse at center, transparent 20%, rgba(15, 23, 42, 0.85) 100%)'}}></div>
         
-        {/* Layer 3: Additional darkening at very edges */}
+        {/* Layer 3: Bottom darkening */}
         <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.3) 100%)'}}></div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-4" style={{fontWeight: 900, letterSpacing: '-0.05em'}}>PestPro Index</h1>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-8 tracking-widest">London's Neutral Pest Control Directory</p>
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-8 tracking-widest">The UK's Neutral Pest Control Directory</p>
           <p className="text-xl mb-16 max-w-2xl mx-auto leading-relaxed">
-            Find the right pest control for your home or business. Filter by location, pest type, certifications, reviews and other criteria specific to your pest problem. No endorsements, just data.
+            Find trusted, verified pest control professionals near you. No lead fees, no commissions, no sponsored rankings.
           </p>
 
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto mb-8" ref={statsRef}>
             <div className="border-b sm:border-b-0 sm:border-r border-white/30 pb-4 sm:pb-0 sm:pr-8">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.residential}</div>
-              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">RESIDENTIAL PROVIDERS</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.providers}</div>
+              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">VERIFIED PROVIDERS</div>
             </div>
             <div className="border-b sm:border-b-0 sm:border-r border-white/30 pb-4 sm:pb-0 sm:px-8">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.commercial}</div>
-              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">COMMERCIAL PROVIDERS</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.boroughs}+</div>
+              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">UK REGIONS</div>
             </div>
             <div className="pt-4 sm:pt-0 sm:pl-8">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.reviews}</div>
-              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">VERIFIED REVIEWS</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.reviews}%</div>
+              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">WITH GOOGLE RATINGS</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: THREE CATEGORY CARDS (Two-tone design) */}
+      {/* REGION PICKER SECTION */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Card 1: Residential */}
-            <Link href="/residential" className="group">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-12 h-full hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="flex items-center justify-center w-16 h-16 bg-blue-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
-                  <HomeIcon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-black text-gray-900 mb-3">Residential Pest Control</h3>
-                <p className="text-gray-700 mb-6">Find pest professionals and DIY pest products for your home</p>
-                <div className="flex items-center text-blue-600 font-bold group-hover:translate-x-2 transition-transform">
-                  Browse 391 providers →
-                </div>
-              </div>
-            </Link>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+              Find Residential or Commercial Pest Control Near You
+            </h2>
+            <p className="text-xl text-gray-600">
+              Choose your region to browse verified providers
+            </p>
+          </div>
 
-            {/* Card 2: Commercial */}
-            <Link href="/commercial" className="group">
-              <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-3xl p-12 h-full hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="flex items-center justify-center w-16 h-16 bg-amber-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
-                  <Building2 className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-black text-gray-900 mb-3">Commercial Pest Control</h3>
-                <p className="text-gray-700 mb-6">Find pest professionals, DIY pest products, and compliance services for your business</p>
-                <div className="flex items-center text-amber-600 font-bold group-hover:translate-x-2 transition-transform">
-                  Browse 240 providers →
-                </div>
-              </div>
-            </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {regions.map((region) => (
+              <Link
+                key={region.slug}
+                href={`/pest-control/${region.slug}`}
+                className="group"
+              >
+                <div className={`rounded-2xl p-8 h-full transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl ${
+                  region.status === 'live' 
+                    ? 'bg-white/5 backdrop-blur-sm border-[3px] border-blue-400 hover:border-blue-500' 
+                    : 'bg-white/5 backdrop-blur-sm border-[3px] border-gray-200 hover:border-gray-300'
+                }`}>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <MapPin className={`w-6 h-6 ${region.status === 'live' ? 'text-blue-600' : 'text-gray-400'}`} />
+                      <h3 className="text-2xl font-black text-gray-900">{region.name}</h3>
+                    </div>
+                    {region.status === 'coming-soon' && (
+                      <span className="px-3 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full whitespace-nowrap">
+                        Coming Soon
+                      </span>
+                    )}
+                  </div>
 
-            {/* Card 3: Professionals */}
-            <Link href="/professionals" className="group">
-              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-12 h-full hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="flex items-center justify-center w-16 h-16 bg-green-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
-                  <Users className="w-8 h-8 text-white" />
+                  {region.status === 'live' && region.providerCount && (
+                    <>
+                      <p className="text-3xl font-black text-blue-600 mb-2">
+                        {region.providerCount} providers
+                      </p>
+                      <p className="text-gray-600 mb-4">
+                        Browse residential & commercial providers
+                      </p>
+                    </>
+                  )}
+
+                  {region.status === 'coming-soon' && (
+                    <p className="text-gray-500 mb-4">
+                      We're expanding to your area soon
+                    </p>
+                  )}
+
+                  <div className={`flex items-center font-bold group-hover:translate-x-2 transition-transform ${
+                    region.status === 'live' ? 'text-blue-600' : 'text-gray-400'
+                  }`}>
+                    {region.status === 'live' ? 'Browse Providers' : 'Learn More'} →
+                  </div>
                 </div>
-                <h3 className="text-2xl font-black text-gray-900 mb-3">Pest Professionals</h3>
-                <p className="text-gray-700 mb-6">Customer exposure and compliance services for PestPros</p>
-                <div className="flex items-center text-green-600 font-bold group-hover:translate-x-2 transition-transform">
-                  Explore Services →
-                </div>
-              </div>
-            </Link>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* SECTION 4: BUILT OUT OF FRUSTRATION */}
+      {/* BUILT OUT OF FRUSTRATION */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-12 text-center">
@@ -186,13 +217,13 @@ export default function Home() {
             </p>
 
             <p>
-              We bring available data on pest control and pest removal professionals to your fingertips so you can find the right service on your terms. A neutral directory designed for transparency, not transactions.
+              Whether you need pest control or pest removal services, we bring available data on professionals across the UK to your fingertips so you can find the right service on your terms. A neutral directory designed for transparency, not transactions.
             </p>
           </div>
         </div>
       </section>
 
-      {/* SECTION 5: THREE FEATURES */}
+      {/* THREE FEATURES */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-12">
@@ -226,23 +257,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 6: CTA */}
+      {/* CTA */}
       <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-8">Ready to Find Your Pest Control?</h2>
           <p className="text-xl mb-12 text-blue-100">Start browsing our neutral directory today. No sign-up required.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/residential" className="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all">
-              Browse Residential →
+            <Link href="/pest-control/greater-london" className="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all">
+              Browse Greater London →
             </Link>
-            <Link href="/commercial" className="px-8 py-4 bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-600 transition-all border-2 border-white">
-              Browse Commercial →
+            <Link href="/pest-control/west-midlands" className="px-8 py-4 bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-600 transition-all border-2 border-white">
+              Browse West Midlands →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
@@ -252,7 +283,6 @@ export default function Home() {
                 <li><Link href="/residential" className="hover:text-white transition">Residential</Link></li>
                 <li><Link href="/commercial" className="hover:text-white transition">Commercial</Link></li>
                 <li><Link href="/professionals" className="hover:text-white transition">For Professionals</Link></li>
-                <li><Link href="/pest-control" className="hover:text-white transition">By Borough</Link></li>
               </ul>
             </div>
             <div>
@@ -265,7 +295,6 @@ export default function Home() {
             <div>
               <h4 className="text-white font-bold mb-4">Resources</h4>
               <ul className="space-y-2">
-
                 <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
               </ul>
             </div>
