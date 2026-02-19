@@ -310,13 +310,13 @@ export default function CommercialPage() {
         
         <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter leading-[0.9] text-white drop-shadow-[0_12px_36px_rgba(0,0,0,0.95)]">
-            Commercial Pest Control
+            Commercial Pest Control & Pest Removal
           </h1>
           <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl mb-6 font-extralight tracking-[0.15em] text-white drop-shadow-[0_8px_20px_rgba(0,0,0,0.9)]">
             240 Verified Providers in London
           </p>
           <p className="text-xl text-white font-semibold max-w-3xl leading-relaxed drop-shadow-[0_6px_16px_rgba(0,0,0,0.85)] opacity-95">
-            Find certified commercial pest control providers with advanced filtering by certifications, capabilities, and business sectors.
+            Find certified commercial pest control and pest removal providers with advanced filtering by certifications, capabilities, and business sectors.
           </p>
         </div>
       </section>
