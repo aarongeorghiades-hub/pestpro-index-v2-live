@@ -35,20 +35,18 @@ export default function Navigation() {
   ];
 
   const regions = [
-    {
-      name: 'Birmingham & West Midlands',
-      links: [
-        { label: 'Residential', href: '/birmingham/residential' },
-        { label: 'Commercial', href: '/birmingham/commercial' },
-      ]
-    },
-    {
-      name: 'London & Greater London',
-      links: [
-        { label: 'Residential', href: '/residential' },
-        { label: 'Commercial', href: '/commercial' },
-      ]
-    }
+    { name: 'Greater London', href: '/pest-control/greater-london', status: 'live' },
+    { name: 'West Midlands', href: '/pest-control/west-midlands', status: 'live' },
+    { name: 'North West', href: '/pest-control/north-west', status: 'coming-soon' },
+    { name: 'Yorkshire & the Humber', href: '/pest-control/yorkshire-and-the-humber', status: 'coming-soon' },
+    { name: 'South East', href: '/pest-control/south-east', status: 'coming-soon' },
+    { name: 'South West', href: '/pest-control/south-west', status: 'coming-soon' },
+    { name: 'East of England', href: '/pest-control/east-of-england', status: 'coming-soon' },
+    { name: 'East Midlands', href: '/pest-control/east-midlands', status: 'coming-soon' },
+    { name: 'North East', href: '/pest-control/north-east', status: 'coming-soon' },
+    { name: 'Scotland', href: '/pest-control/scotland', status: 'coming-soon' },
+    { name: 'Wales', href: '/pest-control/wales', status: 'coming-soon' },
+    { name: 'Northern Ireland', href: '/pest-control/northern-ireland', status: 'coming-soon' },
   ];
 
   return (
@@ -122,30 +120,28 @@ export default function Navigation() {
             </button>
             
             {isRegionsOpen && (
-              <div className="absolute top-full mt-2 left-0 bg-gradient-to-b from-[#1e3a8a] to-[#050812] border border-white/20 rounded-xl shadow-lg min-w-max z-50">
+              <div className="absolute top-full mt-2 left-0 bg-gradient-to-b from-[#1e3a8a] to-[#050812] border border-white/20 rounded-xl shadow-lg min-w-max z-50 max-h-96 overflow-y-auto">
                 <div className="px-4 py-3 text-white/60 text-sm font-light border-b border-white/10">
                   Pick your closest region
                 </div>
                 {regions.map((region, idx) => (
-                  <div key={idx} className="border-b border-white/10 last:border-b-0">
-                    <div className="px-6 py-2 text-white font-medium text-sm">
-                      {region.name}
+                  <Link
+                    key={idx}
+                    href={region.href}
+                    className="block px-6 py-3 text-white hover:bg-white/10 transition-colors border-b border-white/10 last:border-b-0"
+                    onClick={() => setIsRegionsOpen(false)}
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <span className={region.status === 'coming-soon' ? 'text-white/70' : 'text-white'}>
+                        {region.name}
+                      </span>
+                      {region.status === 'coming-soon' && (
+                        <span className="text-xs px-2 py-1 bg-blue-400/20 text-blue-300 rounded">
+                          Soon
+                        </span>
+                      )}
                     </div>
-                    <div className="px-6 pb-3 flex gap-2 text-white/80 text-sm">
-                      {region.links.map((link, linkIdx) => (
-                        <div key={link.href}>
-                          <Link
-                            href={link.href}
-                            className="hover:text-white transition-colors"
-                            onClick={() => setIsRegionsOpen(false)}
-                          >
-                            {link.label}
-                          </Link>
-                          {linkIdx < region.links.length - 1 && <span className="mx-2">|</span>}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}
@@ -240,21 +236,23 @@ export default function Navigation() {
                 Pick your closest region
               </div>
               {regions.map((region, idx) => (
-                <div key={idx} className="mt-2">
-                  <div className="px-4 py-2 text-white font-medium text-sm">
-                    {region.name}
+                <Link
+                  key={idx}
+                  href={region.href}
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className={region.status === 'coming-soon' ? 'text-white/70' : 'text-white'}>
+                      {region.name}
+                    </span>
+                    {region.status === 'coming-soon' && (
+                      <span className="text-xs px-2 py-1 bg-blue-400/20 text-blue-300 rounded">
+                        Soon
+                      </span>
+                    )}
                   </div>
-                  {region.links.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="block px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors text-sm"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
+                </Link>
               ))}
             </div>
 
