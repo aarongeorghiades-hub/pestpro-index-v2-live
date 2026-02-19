@@ -86,7 +86,7 @@ export default async function DynamicPage({ params }: Props) {
     };
 
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#0f172a]">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -122,18 +122,18 @@ export default async function DynamicPage({ params }: Props) {
         </section>
 
         {/* Description Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-transparent">
           <div className="max-w-4xl mx-auto px-4">
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-white/90 leading-relaxed">
               {region.description}
             </p>
           </div>
         </section>
 
         {/* Cities/Areas Section */}
-        <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <section className="py-16 bg-transparent">
           <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-8 text-center">
               {region.status === 'live' ? 'Browse by Area' : 'Planned Coverage'}
             </h2>
             
@@ -141,24 +141,24 @@ export default async function DynamicPage({ params }: Props) {
               {region.cities.map((city) => (
                 <div
                   key={city.slug}
-                  className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border-[3px] border-gray-200 hover:border-blue-400 transition-all duration-300"
+                  className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-2xl p-6 border-[3px] border-white/40 hover:border-white/60 transition-all duration-300"
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-bold text-gray-900">{city.name}</h3>
+                    <h3 className="text-xl font-bold text-white">{city.name}</h3>
                     {city.status === 'live' && (
-                      <span className="px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded">
+                      <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs font-bold rounded">
                         LIVE
                       </span>
                     )}
                     {city.status === 'coming-soon' && (
-                      <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded">
+                      <span className="px-2 py-1 bg-amber-500/20 text-amber-300 text-xs font-bold rounded">
                         SOON
                       </span>
                     )}
                   </div>
 
                   {city.providerCount && (
-                    <p className="text-sm text-gray-600 mb-4">
+                    <p className="text-sm text-white/80 mb-4">
                       {city.providerCount} verified providers
                     </p>
                   )}
@@ -166,7 +166,7 @@ export default async function DynamicPage({ params }: Props) {
                   {city.residentialLink && (
                     <Link
                       href={city.residentialLink}
-                      className="inline-block text-blue-600 hover:text-blue-700 font-semibold text-sm"
+                      className="inline-block text-amber-400 hover:text-amber-300 font-semibold text-sm"
                     >
                       Browse Residential Providers →
                     </Link>
@@ -175,7 +175,7 @@ export default async function DynamicPage({ params }: Props) {
                   {city.commercialLink && (
                     <Link
                       href={city.commercialLink}
-                      className="inline-block text-blue-600 hover:text-blue-700 font-semibold text-sm mt-2"
+                      className="inline-block text-amber-400 hover:text-amber-300 font-semibold text-sm mt-2"
                     >
                       Browse Commercial Providers →
                     </Link>
@@ -184,7 +184,7 @@ export default async function DynamicPage({ params }: Props) {
                   {city.areasLink && (
                     <Link
                       href={city.areasLink}
-                      className="inline-block text-blue-600 hover:text-blue-700 font-semibold text-sm"
+                      className="inline-block text-amber-400 hover:text-amber-300 font-semibold text-sm"
                     >
                       Browse by Borough →
                     </Link>
@@ -227,7 +227,7 @@ export default async function DynamicPage({ params }: Props) {
   if (borough) {
     // Render borough page (existing logic)
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#0f172a]">
         <Navigation />
 
         {/* Hero Section */}
