@@ -121,71 +121,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* REGION PICKER SECTION */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
-              Find Residential or Commercial Pest Control Near You
-            </h2>
-            <p className="text-xl text-gray-600">
-              Choose your region to browse verified providers
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {regions.map((region) => (
-              <Link
-                key={region.slug}
-                href={`/pest-control/${region.slug}`}
-                className="group"
-              >
-                <div className={`rounded-2xl p-8 h-full transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl ${
-                  region.status === 'live' 
-                    ? 'bg-white/5 backdrop-blur-sm border-[3px] border-blue-400 hover:border-blue-500' 
-                    : 'bg-white/5 backdrop-blur-sm border-[3px] border-gray-200 hover:border-gray-300'
-                }`}>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <MapPin className={`w-6 h-6 ${region.status === 'live' ? 'text-blue-600' : 'text-gray-400'}`} />
-                      <h3 className="text-2xl font-black text-gray-900">{region.name}</h3>
-                    </div>
-                    {region.status === 'coming-soon' && (
-                      <span className="px-3 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full whitespace-nowrap">
-                        Coming Soon
-                      </span>
-                    )}
-                  </div>
-
-                  {region.status === 'live' && region.providerCount && (
-                    <>
-                      <p className="text-3xl font-black text-blue-600 mb-2">
-                        {region.providerCount} providers
-                      </p>
-                      <p className="text-gray-600 mb-4">
-                        Browse residential & commercial providers
-                      </p>
-                    </>
-                  )}
-
-                  {region.status === 'coming-soon' && (
-                    <p className="text-gray-500 mb-4">
-                      We're expanding to your area soon
-                    </p>
-                  )}
-
-                  <div className={`flex items-center font-bold group-hover:translate-x-2 transition-transform ${
-                    region.status === 'live' ? 'text-blue-600' : 'text-gray-400'
-                  }`}>
-                    {region.status === 'live' ? 'Browse Providers' : 'Learn More'} →
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* BUILT OUT OF FRUSTRATION */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4">
@@ -219,6 +154,71 @@ export default function Home() {
             <p>
               Whether you need pest control or pest removal services, we bring available data on professionals across the UK to your fingertips so you can find the right service on your terms. A neutral directory designed for transparency, not transactions.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* REGION PICKER SECTION */}
+      <section className="py-24 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#0f172a]">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+              Find Residential or Commercial Pest Control in Your Region
+            </h2>
+            <p className="text-xl text-white/80">
+              Choose your region to browse verified providers
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {regions.map((region) => (
+              <Link
+                key={region.slug}
+                href={`/pest-control/${region.slug}`}
+                className="group"
+              >
+                <div className={`rounded-2xl p-8 h-full transition-all duration-300 transform hover:-translate-y-2 ${
+                  region.status === 'live' 
+                    ? 'bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)]' 
+                    : 'bg-gradient-to-br from-[#1e293b]/80 to-[#0f172a]/80 border-[3px] border-white/30 hover:border-white/40'
+                }`}>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <MapPin className={`w-6 h-6 ${region.status === 'live' ? 'text-amber-400' : 'text-white/60'}`} />
+                      <h3 className="text-2xl font-black text-white">{region.name}</h3>
+                    </div>
+                    {region.status === 'coming-soon' && (
+                      <span className="px-3 py-1 bg-amber-500/20 text-amber-300 text-xs font-bold rounded-full whitespace-nowrap">
+                        Coming Soon
+                      </span>
+                    )}
+                  </div>
+
+                  {region.status === 'live' && region.providerCount && (
+                    <>
+                      <p className="text-3xl font-black text-amber-400 mb-2">
+                        {region.providerCount} providers
+                      </p>
+                      <p className="text-white/80 mb-4">
+                        Browse residential & commercial providers
+                      </p>
+                    </>
+                  )}
+
+                  {region.status === 'coming-soon' && (
+                    <p className="text-white/60 mb-4">
+                      We're expanding to your area soon
+                    </p>
+                  )}
+
+                  <div className={`flex items-center font-bold group-hover:translate-x-2 transition-transform ${
+                    region.status === 'live' ? 'text-amber-400' : 'text-white/60'
+                  }`}>
+                    {region.status === 'live' ? 'Browse Providers' : 'Learn More'} →
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

@@ -68,8 +68,8 @@ export default function Navigation() {
             <Image 
               src="/logo-header.png" 
               alt="PestPro Index Logo" 
-              width={180} 
-              height={50}
+              width={230} 
+              height={56}
               className="h-auto"
             />
           </Link>
@@ -122,6 +122,9 @@ export default function Navigation() {
                 <div className="border-t-2 border-white/20 my-2"></div>
                 
                 {/* Quick Links Section */}
+                <div className="px-4 py-3 text-white/60 text-xs font-semibold uppercase tracking-wider border-b border-white/10">
+                  Quick Links
+                </div>
                 {quickLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -142,7 +145,7 @@ export default function Navigation() {
               onClick={() => setIsPestProductsOpen(!isPestProductsOpen)}
               className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10 flex items-center gap-2"
             >
-              Pest Products ▾
+              Products ▾
             </button>
             
             {isPestProductsOpen && (
@@ -165,7 +168,7 @@ export default function Navigation() {
             href="/professionals"
             className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10"
           >
-            Pest Professionals
+            For Pest Professionals
           </Link>
           
           {/* Resources Dropdown */}
@@ -256,6 +259,9 @@ export default function Navigation() {
               
               {/* Quick Links */}
               <div className="border-t border-white/10 mt-2 pt-2">
+                <div className="px-4 py-2 text-white/50 text-xs font-light">
+                  Quick Links
+                </div>
                 {quickLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -272,7 +278,7 @@ export default function Navigation() {
             {/* Mobile Pest Products Section */}
             <div className="border-t border-white/10 mt-2 pt-2">
               <div className="px-4 py-2 text-white/60 text-xs font-semibold uppercase tracking-wider">
-                Pest Products
+                Products
               </div>
               {pestProducts.map((product) => (
                 <Link
@@ -291,7 +297,7 @@ export default function Navigation() {
               className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              Pest Professionals
+              For Pest Professionals
             </Link>
             
             {/* Mobile Resources Section */}
