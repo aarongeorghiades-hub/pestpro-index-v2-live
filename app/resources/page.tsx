@@ -145,10 +145,11 @@ export default function ResourcesPage() {
     }
   ];
 
-  const sectionBackgrounds = ['bg-white', 'bg-blue-50', 'bg-white', 'bg-blue-50'];
-
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#1e293b] via-[#1e3a8a] to-[#2563eb]">
+      {/* Matching homepage gradient layers */}
+      <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse 800px 600px at center 20%, rgba(59, 130, 246, 0.4) 0%, transparent 60%)'}}></div>
+      <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse at center, transparent 20%, rgba(15, 23, 42, 0.7) 100%)'}}></div>
       {/* NAVIGATION */}
       <Navigation />
 
@@ -165,15 +166,16 @@ export default function ResourcesPage() {
       </section>
 
       {/* RESOURCES SECTIONS */}
+      <div className="relative z-10">
       {sections.map((section, sectionIdx) => (
-        <section key={sectionIdx} className={`${sectionBackgrounds[sectionIdx]} py-20 border-t border-gray-100`}>
+        <section key={sectionIdx} className="py-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-16">
               <div className="relative inline-block">
-                <h2 className="text-4xl font-black text-gray-900 mb-2">{section.heading}</h2>
-                <div className="h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full w-24 mt-3"></div>
+                <h2 className="text-4xl font-black text-white mb-2">{section.heading}</h2>
+                <div className="h-1 bg-gradient-to-r from-blue-400 to-blue-300 rounded-full w-24 mt-3"></div>
               </div>
-              <p className="text-lg text-gray-600 max-w-3xl mt-6">{section.description}</p>
+              <p className="text-lg text-white/80 max-w-3xl mt-6">{section.description}</p>
             </div>
 
             {/* Resource Cards Grid */}
@@ -181,19 +183,16 @@ export default function ResourcesPage() {
               {section.resources.map((resource, resourceIdx) => (
                 <div 
                   key={resourceIdx} 
-                  className="group relative bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-l-4 border-blue-600 overflow-hidden"
+                  className="group relative bg-white/5 backdrop-blur-sm border-[3px] border-white/40 rounded-xl p-6 hover:border-white/70 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15 transition-all duration-300 overflow-hidden"
                 >
-                  {/* Gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                  
                   <div className="relative z-10">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{resource.name}</h3>
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">{resource.description}</p>
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">{resource.name}</h3>
+                    <p className="text-white/70 text-sm mb-4 leading-relaxed">{resource.description}</p>
                     <a 
                       href={resource.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200 hover:gap-3"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-400 transition-all duration-200 hover:gap-3"
                     >
                       Visit Resource
                       <ExternalLink className="w-4 h-4" />
@@ -205,17 +204,18 @@ export default function ResourcesPage() {
           </div>
         </section>
       ))}
+      </div>
 
       {/* AFFILIATE DISCLOSURE & CTA */}
-      <section className="bg-gray-50 py-12 border-t border-gray-200">
+      <section className="relative z-10 bg-white/5 backdrop-blur-sm py-12 border-t border-white/20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <p className="text-xs text-gray-500 mb-4 uppercase tracking-widest font-semibold">Disclosure</p>
-            <p className="text-sm text-gray-600 mb-6">
+            <p className="text-xs text-white/60 mb-4 uppercase tracking-widest font-semibold">Disclosure</p>
+            <p className="text-sm text-white/70 mb-6">
               Some links on this page are affiliate links. PestPro Index may earn a small commission at no extra cost to you. This does not influence which resources we recommend.
             </p>
-            <p className="text-sm text-gray-600">
-              Know a great pest control resource we've missed? <a href="mailto:pestproindex@zohomail.eu?subject=Resource%20Suggestion" className="text-blue-600 hover:text-blue-800 font-semibold transition-colors">Let us know — suggest a resource</a>
+            <p className="text-sm text-white/70">
+              Know a great pest control resource we've missed? <a href="mailto:pestproindex@zohomail.eu?subject=Resource%20Suggestion" className="text-blue-300 hover:text-blue-200 font-semibold transition-colors">Let us know — suggest a resource</a>
             </p>
           </div>
         </div>

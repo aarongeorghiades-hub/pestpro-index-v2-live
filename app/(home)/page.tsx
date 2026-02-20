@@ -261,13 +261,10 @@ export default function Home() {
       <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-8">Ready to Find Your Pest Control?</h2>
-          <p className="text-xl mb-12 text-blue-100">Start browsing our neutral directory today. No sign-up required.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/pest-control/greater-london" className="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all">
-              Browse Greater London →
-            </Link>
-            <Link href="/pest-control/west-midlands" className="px-8 py-4 bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-600 transition-all border-2 border-white">
-              Browse West Midlands →
+          <p className="text-xl mb-12 text-blue-100">Browse verified providers across the UK. No sign-up required.</p>
+          <div className="flex justify-center">
+            <Link href="/pest-control/regions" className="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all">
+              Browse All Regions →
             </Link>
           </div>
         </div>
@@ -280,9 +277,11 @@ export default function Home() {
             <div>
               <h4 className="text-white font-bold mb-4">Browse</h4>
               <ul className="space-y-2">
-                <li><Link href="/residential" className="hover:text-white transition">Residential</Link></li>
-                <li><Link href="/commercial" className="hover:text-white transition">Commercial</Link></li>
-                <li><Link href="/professionals" className="hover:text-white transition">For Professionals</Link></li>
+                <li><Link href="/pest-control/regions" className="hover:text-white transition">Find Pest Control</Link></li>
+                <li><Link href="/residential" className="hover:text-white transition">London Residential</Link></li>
+                <li><Link href="/commercial" className="hover:text-white transition">London Commercial</Link></li>
+                <li><Link href="/birmingham/residential" className="hover:text-white transition">Birmingham Residential</Link></li>
+                <li><Link href="/birmingham/commercial" className="hover:text-white transition">Birmingham Commercial</Link></li>
               </ul>
             </div>
             <div>
@@ -295,13 +294,16 @@ export default function Home() {
             <div>
               <h4 className="text-white font-bold mb-4">Resources</h4>
               <ul className="space-y-2">
-                <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
+                <li><Link href="/blog" className="hover:text-white transition">Guides & Blog</Link></li>
+                <li><Link href="/resources" className="hover:text-white transition">Industry Resources</Link></li>
+                <li><Link href="/professionals" className="hover:text-white transition">For Pest Professionals</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-bold mb-4">Legal</h4>
+              <h4 className="text-white font-bold mb-4">Company</h4>
               <ul className="space-y-2">
-                <li><Link href="/resources" className="hover:text-white transition">Resources</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition">About</Link></li>
               </ul>
             </div>
           </div>

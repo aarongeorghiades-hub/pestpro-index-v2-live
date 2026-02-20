@@ -1,17 +1,22 @@
 'use client';
-// Cache bust: 2025-02-19-r3
+// Cache bust: 2025-02-19-r4
 
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 export default function Navigation() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isFindPestControlOpen, setIsFindPestControlOpen] = useState(false);
   const [isPestProductsOpen, setIsPestProductsOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  
+  // Check if Resources tab should be active
+  const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources');
 
   useEffect(() => {
     // Check if mobile on mount
@@ -79,7 +84,7 @@ export default function Navigation() {
         <div className="hidden md:flex items-center gap-3">
           <Link 
             href="/"
-            className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10"
+            className="px-4 py-2 font-semibold text-base text-white hover:text-white/80 transition-colors duration-200"
           >
             Home
           </Link>
@@ -88,7 +93,7 @@ export default function Navigation() {
           <div className="relative">
             <button
               onClick={() => setIsFindPestControlOpen(!isFindPestControlOpen)}
-              className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10 flex items-center gap-2"
+              className="px-4 py-2 font-semibold text-base text-white hover:text-white/80 transition-colors duration-200 flex items-center gap-1"
             >
               Find Pest Control ▾
             </button>
@@ -144,7 +149,7 @@ export default function Navigation() {
           <div className="relative">
             <button
               onClick={() => setIsPestProductsOpen(!isPestProductsOpen)}
-              className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10 flex items-center gap-2"
+              className="px-4 py-2 font-semibold text-base text-white hover:text-white/80 transition-colors duration-200 flex items-center gap-1"
             >
               Products ▾
             </button>
@@ -167,7 +172,7 @@ export default function Navigation() {
 
           <Link 
             href="/professionals"
-            className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10"
+            className="px-4 py-2 font-semibold text-base text-white hover:text-white/80 transition-colors duration-200"
           >
             For Pest Professionals
           </Link>
@@ -176,7 +181,7 @@ export default function Navigation() {
           <div className="relative">
             <button
               onClick={() => setIsResourcesOpen(!isResourcesOpen)}
-              className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10 flex items-center gap-2"
+              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isResourcesActive ? 'text-white border-b-2 border-white' : 'text-white hover:text-white/80'}`}
             >
               Resources ▾
             </button>
@@ -190,13 +195,20 @@ export default function Navigation() {
                 >
                   Guides
                 </Link>
+                <Link
+                  href="/resources"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Industry Resources
+                </Link>
               </div>
             )}
           </div>
 
           <Link 
             href="/contact"
-            className="px-6 py-2.5 font-medium text-base border-2 border-white/40 rounded-xl transition-all duration-200 bg-transparent text-white hover:border-white/60 hover:bg-white/10"
+            className="px-4 py-2 font-semibold text-base text-white hover:text-white/80 transition-colors duration-200"
           >
             Contact
           </Link>

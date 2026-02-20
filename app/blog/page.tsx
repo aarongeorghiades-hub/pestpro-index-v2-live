@@ -1,15 +1,13 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
-import { posts } from './data/posts'
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Pest Control Guides & Advice | PestPro Index Blog',
-  description: 'Practical pest control and pest removal guides for London homeowners, tenants and commercial operators. Expert advice on rats, bed bugs, wasps, cockroaches and more.',
-}
+import Link from 'next/link'
+import Navigation from '@/components/Navigation'
+import { posts } from './data/posts'
 
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#1e293b] via-[#1e3a8a] to-[#2563eb]">
+      <Navigation />
       {/* Matching homepage gradient layers */}
       <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse 800px 600px at center 20%, rgba(59, 130, 246, 0.4) 0%, transparent 60%)'}}></div>
       <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse at center, transparent 20%, rgba(15, 23, 42, 0.7) 100%)'}}></div>
