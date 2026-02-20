@@ -18,6 +18,11 @@ export default function Navigation() {
 
   // Check if Resources tab should be active
   const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources');
+  const isHomeActive = pathname === '/';
+  const isFindPestControlActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/pest-control');
+  const isProductsActive = pathname === '/products' || pathname === '/commercial-products';
+  const isProfessionalsActive = pathname === '/professionals';
+  const isContactActive = pathname === '/contact';
 
   useEffect(() => {
     // Check if mobile on mount
@@ -96,9 +101,9 @@ export default function Navigation() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-3">
-          <Link 
+          <Link
             href="/"
-            className="px-4 py-2 font-semibold text-base text-white hover:text-white/80 transition-colors duration-200"
+            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isHomeActive ? 'text-white border-b-2 border-white' : 'text-white hover:text-white/80'}`}
           >
             Home
           </Link>
@@ -107,7 +112,7 @@ export default function Navigation() {
           <div className="relative">
             <button
               onClick={() => { setIsFindPestControlOpen(!isFindPestControlOpen); setIsPestProductsOpen(false); setIsResourcesOpen(false); }}
-              className="px-4 py-2 font-semibold text-base text-white hover:text-white/80 transition-colors duration-200 flex items-center gap-1"
+              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isFindPestControlActive ? 'text-white border-b-2 border-white' : 'text-white hover:text-white/80'}`}
             >
               Find Pest Control ▾
             </button>
@@ -163,7 +168,7 @@ export default function Navigation() {
           <div className="relative">
             <button
               onClick={() => { setIsPestProductsOpen(!isPestProductsOpen); setIsFindPestControlOpen(false); setIsResourcesOpen(false); }}
-              className="px-4 py-2 font-semibold text-base text-white hover:text-white/80 transition-colors duration-200 flex items-center gap-1"
+              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isProductsActive ? 'text-white border-b-2 border-white' : 'text-white hover:text-white/80'}`}
             >
               Products ▾
             </button>
@@ -184,9 +189,9 @@ export default function Navigation() {
             )}
           </div>
 
-          <Link 
+          <Link
             href="/professionals"
-            className="px-4 py-2 font-semibold text-base text-white hover:text-white/80 transition-colors duration-200"
+            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isProfessionalsActive ? 'text-white border-b-2 border-white' : 'text-white hover:text-white/80'}`}
           >
             For Pest Professionals
           </Link>
@@ -220,9 +225,9 @@ export default function Navigation() {
             )}
           </div>
 
-          <Link 
+          <Link
             href="/contact"
-            className="px-4 py-2 font-semibold text-base text-white hover:text-white/80 transition-colors duration-200"
+            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isContactActive ? 'text-white border-b-2 border-white' : 'text-white hover:text-white/80'}`}
           >
             Contact
           </Link>
