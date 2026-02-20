@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
@@ -14,7 +14,8 @@ export default function Navigation() {
   const [isFindPestControlOpen, setIsFindPestControlOpen] = useState(false);
   const [isPestProductsOpen, setIsPestProductsOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
-  
+  const navRef = useRef<HTMLDivElement>(null);
+
   // Check if Resources tab should be active
   const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources');
 
@@ -27,6 +28,19 @@ export default function Navigation() {
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Close all dropdowns when clicking outside the nav
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsFindPestControlOpen(false);
+        setIsPestProductsOpen(false);
+        setIsResourcesOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const pestProducts = [
@@ -67,7 +81,7 @@ export default function Navigation() {
           }
         }
       `}</style>
-      <nav className="sticky top-0 z-50 nav-header bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812] shadow-lg">
+      <nav ref={navRef} className="sticky top-0 z-50 nav-header bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812] shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 logo-container bg-white rounded-lg p-2">
@@ -92,7 +106,7 @@ export default function Navigation() {
           {/* Find Pest Control Dropdown */}
           <div className="relative">
             <button
-              onClick={() => setIsFindPestControlOpen(!isFindPestControlOpen)}
+              onClick={() => { setIsFindPestControlOpen(!isFindPestControlOpen); setIsPestProductsOpen(false); setIsResourcesOpen(false); }}
               className="px-4 py-2 font-semibold text-base text-white hover:text-white/80 transition-colors duration-200 flex items-center gap-1"
             >
               Find Pest Control ▾
@@ -148,7 +162,7 @@ export default function Navigation() {
           {/* Pest Products Dropdown */}
           <div className="relative">
             <button
-              onClick={() => setIsPestProductsOpen(!isPestProductsOpen)}
+              onClick={() => { setIsPestProductsOpen(!isPestProductsOpen); setIsFindPestControlOpen(false); setIsResourcesOpen(false); }}
               className="px-4 py-2 font-semibold text-base text-white hover:text-white/80 transition-colors duration-200 flex items-center gap-1"
             >
               Products ▾
@@ -180,7 +194,7 @@ export default function Navigation() {
           {/* Resources Dropdown */}
           <div className="relative">
             <button
-              onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+              onClick={() => { setIsResourcesOpen(!isResourcesOpen); setIsFindPestControlOpen(false); setIsPestProductsOpen(false); }}
               className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isResourcesActive ? 'text-white border-b-2 border-white' : 'text-white hover:text-white/80'}`}
             >
               Resources ▾
