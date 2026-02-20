@@ -284,7 +284,7 @@ export default function ResidentialPage() {
             Residential Pest Control & Pest Removal
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
-            391 Verified Providers in London
+            389 Verified Providers in London
           </p>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
             Filter by pest type and service features across our complete directory. 84% of providers have verified Google Reviews. No endorsements, no commissions—just transparent, provider-stated information.
@@ -520,7 +520,7 @@ export default function ResidentialPage() {
               Full List of London Pest Control Providers
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              All 391 residential providers with advanced filtering
+              All 389 residential providers with advanced filtering
             </p>
           </div>
 
