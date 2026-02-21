@@ -124,7 +124,7 @@ export default function ResidentialPage() {
         const { data, error } = await supabase
           .from('Providers')
           .select('*')
-          .eq('business_residential', true)
+          .eq('residential', true)
           .contains('regions', ['liverpool']);
 
         if (error) throw error;
