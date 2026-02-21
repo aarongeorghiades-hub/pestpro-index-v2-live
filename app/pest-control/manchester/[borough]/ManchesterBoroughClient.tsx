@@ -83,7 +83,7 @@ export default function ManchesterBoroughClient({ borough }: { borough: Manchest
 
       {/* HERO */}
       <section className="relative h-[400px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/80 via-[#2563eb]/70 to-[#1e3a8a]/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812]"></div>
         <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 max-w-3xl drop-shadow-lg" style={{ textShadow: '0 4px 6px rgba(0,0,0,0.3)' }}>
             Pest Control in {borough.name}

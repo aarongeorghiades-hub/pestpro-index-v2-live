@@ -17,6 +17,7 @@ interface Provider {
   phone: string | null;
   email: string | null;
   address: string | null;
+  postcode: string | null;
   bpca_member: boolean;
   npta_member: boolean;
   basis_prompt: boolean;

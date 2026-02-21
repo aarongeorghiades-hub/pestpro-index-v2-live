@@ -89,7 +89,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <p className="text-slate-300 leading-relaxed">
             Browse our directory of{' '}
             <Link href="/residential" className="text-blue-400 hover:text-blue-300 hover:underline font-semibold">
-              391 residential providers
+              389 residential providers
             </Link>
             {' '}or{' '}
             <Link href="/commercial" className="text-blue-400 hover:text-blue-300 hover:underline font-semibold">

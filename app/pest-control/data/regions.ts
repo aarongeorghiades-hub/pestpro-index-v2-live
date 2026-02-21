@@ -23,15 +23,15 @@ export const regions: Region[] = [
     name: "Greater London",
     slug: "greater-london",
     status: "live",
-    description: "Find trusted pest control and pest removal providers across all 33 London boroughs. PestPro Index lists 391 residential and commercial pest control companies in Greater London with verified Google ratings — no lead fees, no commissions.",
-    metaTitle: "Pest Control in Greater London | 391 Verified Providers | PestPro Index",
-    metaDescription: "Compare 391 pest control and pest removal providers across Greater London. Verified Google ratings, no lead fees, no commissions. Find trusted pest control in your borough.",
+    description: "Find trusted pest control and pest removal providers across all 33 London boroughs. PestPro Index lists 389 residential and commercial pest control companies in Greater London with verified Google ratings — no lead fees, no commissions.",
+    metaTitle: "Pest Control in Greater London | 389 Verified Providers | PestPro Index",
+    metaDescription: "Compare 389 pest control and pest removal providers across Greater London. Verified Google ratings, no lead fees, no commissions. Find trusted pest control in your borough.",
     cities: [
       {
         name: "London Residential",
         slug: "london-residential",
         status: "live",
-        providerCount: 391,
+        providerCount: 389,
         residentialLink: "/residential",
       },
       {

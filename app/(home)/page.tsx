@@ -51,7 +51,7 @@ export default function Home() {
   };
 
   const regions = [
-    { name: 'Greater London', slug: 'greater-london', status: 'live', providerCount: 391 },
+    { name: 'Greater London', slug: 'greater-london', status: 'live', providerCount: 389 },
     { name: 'West Midlands', slug: 'west-midlands', status: 'live', providerCount: 42 },
     { name: 'North West', slug: 'north-west', status: 'live', providerCount: 134 },
     { name: 'Yorkshire & the Humber', slug: 'yorkshire-and-the-humber', status: 'coming-soon' },
