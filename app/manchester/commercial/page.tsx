@@ -28,6 +28,13 @@ interface FilterCounts {
   [key: string]: number;
 }
 
+const extractPostcode = (address: string | null): string | null => {
+  if (!address) return null;
+  const postcodeRegex = /[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}/i;
+  const match = address.match(postcodeRegex);
+  return match ? match[0] : null;
+};
+
 // Slug generation function
 function generateSlug(name: string): string {
   return name
@@ -150,9 +157,13 @@ export default function CommercialPage() {
 
         if (error) throw error;
 
-        setProviders(data || []);
-        calculateFilterCounts(data || []);
-        applyFilters(data || [], new Set());
+        const processed = (data || []).map(p => ({
+          ...p,
+          postcode: p.postcode || extractPostcode(p.address),
+        }));
+        setProviders(processed);
+        calculateFilterCounts(processed);
+        applyFilters(processed, new Set());
       } catch (error) {
         console.error('Error loading providers:', error);
       } finally {

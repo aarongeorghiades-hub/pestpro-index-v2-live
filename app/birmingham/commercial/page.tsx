@@ -17,6 +17,7 @@ interface Provider {
   phone: string | null;
   email: string | null;
   address: string | null;
+  postcode: string | null;
   bpca_member: boolean;
   npta_member: boolean;
   basis_prompt: boolean;
@@ -26,6 +27,13 @@ interface Provider {
 interface FilterCounts {
   [key: string]: number;
 }
+
+const extractPostcode = (address: string | null): string | null => {
+  if (!address) return null;
+  const postcodeRegex = /[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}/i;
+  const match = address.match(postcodeRegex);
+  return match ? match[0] : null;
+};
 
 // Slug generation function
 function generateSlug(name: string): string {
@@ -149,9 +157,13 @@ export default function CommercialPage() {
 
         if (error) throw error;
 
-        setProviders(data || []);
-        calculateFilterCounts(data || []);
-        applyFilters(data || [], new Set());
+        const processed = (data || []).map(p => ({
+          ...p,
+          postcode: p.postcode || extractPostcode(p.address),
+        }));
+        setProviders(processed);
+        calculateFilterCounts(processed);
+        applyFilters(processed, new Set());
       } catch (error) {
         console.error('Error loading providers:', error);
       } finally {

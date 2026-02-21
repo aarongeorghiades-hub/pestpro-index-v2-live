@@ -131,8 +131,12 @@ export default function ResidentialPage() {
 
         if (error) throw error;
         console.log('✅ Supabase query returned:', data?.length, 'providers');
-        setProviders(data || []);
-        setFilteredProviders(data || []);
+        const processed = (data || []).map(p => ({
+          ...p,
+          postcode: p.postcode || extractPostcode(p.address),
+        }));
+        setProviders(processed);
+        setFilteredProviders(processed);
       } catch (error) {
         console.error('Error fetching providers:', error);
       } finally {
