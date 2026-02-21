@@ -121,9 +121,9 @@ export const regions: Region[] = [
     name: "North West",
     slug: "north-west",
     status: "live",
-    description: "Find trusted pest control and pest removal providers across the North West. PestPro Index currently covers Manchester with 134 verified providers, with expansion to Liverpool, Lancashire, Cheshire, and Cumbria coming soon.",
-    metaTitle: "Pest Control in the North West | Manchester & Surrounding Areas | PestPro Index",
-    metaDescription: "Compare pest control and pest removal providers across the North West. Currently covering Manchester with 134 verified providers. No lead fees, no commissions.",
+    description: "Find trusted pest control and pest removal providers across the North West. PestPro Index covers Manchester and Liverpool with 207 verified providers, with expansion to Lancashire, Cheshire, and Cumbria coming soon.",
+    metaTitle: "Pest Control in the North West | Manchester, Liverpool & Surrounding Areas | PestPro Index",
+    metaDescription: "Compare 207 pest control and pest removal providers across the North West. Covering Manchester and Liverpool with verified providers. No lead fees, no commissions.",
     cities: [
       {
         name: "Manchester Residential",
@@ -138,7 +138,19 @@ export const regions: Region[] = [
         status: "live",
         commercialLink: "/manchester/commercial",
       },
-      { name: "Liverpool", slug: "liverpool", status: "coming-soon" },
+      {
+        name: "Liverpool Residential",
+        slug: "liverpool-residential",
+        status: "live",
+        providerCount: 73,
+        residentialLink: "/liverpool/residential",
+      },
+      {
+        name: "Liverpool Commercial",
+        slug: "liverpool-commercial",
+        status: "live",
+        commercialLink: "/liverpool/commercial",
+      },
       { name: "Lancashire", slug: "lancashire", status: "coming-soon" },
       { name: "Cheshire", slug: "cheshire", status: "coming-soon" },
       { name: "Cumbria", slug: "cumbria", status: "coming-soon" }

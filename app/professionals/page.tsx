@@ -9,7 +9,7 @@ import { useState, useEffect, useRef } from 'react';
 
 export default function ProfessionalsPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  const [stats, setStats] = useState({ providers: 567, coverage: 84, boroughs: 33 });
+  const [stats, setStats] = useState({ providers: 638, coverage: 84, boroughs: 33 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -63,7 +63,7 @@ export default function ProfessionalsPage() {
       const progress = Math.min(elapsed / duration, 1);
 
       setStats({
-        providers: Math.floor(567 * progress),
+        providers: Math.floor(638 * progress),
         coverage: Math.floor(84 * progress),
         boroughs: Math.floor(33 * progress)
       });
@@ -231,7 +231,7 @@ export default function ProfessionalsPage() {
           </h1>
           
           <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-blue-100/95 max-w-3xl mx-auto leading-relaxed font-semibold text-center mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Join <span className="font-bold text-white">567 UK providers</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
+            Join <span className="font-bold text-white">638 UK providers</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
           </p>
 
           <a
@@ -594,10 +594,10 @@ export default function ProfessionalsPage() {
             <div className="card-hover bg-blue-800/50 rounded-xl p-8 shadow-lg border-l-4 border-blue-300 hover:border-blue-200 hover:bg-blue-800/70">
               <div className="flex gap-4 mb-4">
                 <Target className="w-8 h-8 text-blue-300 flex-shrink-0" />
-                <h3 className="text-xl font-bold text-white">London-Focused</h3>
+                <h3 className="text-xl font-bold text-white">UK-Wide Coverage</h3>
               </div>
               <p className="text-blue-100">
-                Built specifically for Greater London's pest control market. Not a generic national directory.
+                Covering London, Birmingham, Manchester, and Liverpool with verified pest control providers. Expanding across the UK.
               </p>
             </div>
           </div>
@@ -646,7 +646,7 @@ export default function ProfessionalsPage() {
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-5xl font-black text-white mb-4">Ready to Reach More Customers?</h2>
           <p className="text-2xl text-blue-200 mb-12">
-            Join London's fastest-growing pest control directory
+            Join the UK's fastest-growing pest control directory
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -716,7 +716,7 @@ export default function ProfessionalsPage() {
             <div>
               <h3 className="font-bold text-lg mb-4">PestPro Index</h3>
               <p className="text-gray-400">
-                London's neutral pest control directory
+                The UK's neutral pest control directory
               </p>
             </div>
             
@@ -740,7 +740,7 @@ export default function ProfessionalsPage() {
           </div>
           
           <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 PestPro Index. All rights reserved.</p>
+            <p>&copy; 2026 PestPro Index. All rights reserved.</p>
           </div>
         </div>
       </footer>

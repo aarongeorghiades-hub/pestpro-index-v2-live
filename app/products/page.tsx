@@ -530,7 +530,7 @@ export default function ProductsPage() {
             <div>
               <h3 className="font-bold text-lg mb-4">PestPro Index</h3>
               <p className="text-gray-400">
-                London's neutral pest control directory
+                The UK's neutral pest control directory
               </p>
             </div>
             

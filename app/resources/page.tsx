@@ -227,7 +227,7 @@ export default function ResourcesPage() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h4 className="text-white font-bold mb-4">PestPro Index</h4>
-              <p className="text-sm">London's neutral pest control directory</p>
+              <p className="text-sm">The UK's neutral pest control directory</p>
             </div>
             <div>
               <h4 className="text-white font-bold mb-4">Quick Links</h4>
@@ -245,7 +245,7 @@ export default function ResourcesPage() {
             </div>
           </div>
           <div className="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-            <p>© 2024 PestPro Index. All rights reserved.</p>
+            <p>© 2026 PestPro Index. All rights reserved.</p>
           </div>
         </div>
       </footer>
