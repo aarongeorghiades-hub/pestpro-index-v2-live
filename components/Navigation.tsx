@@ -56,7 +56,7 @@ export default function Navigation() {
   const regions = [
     { name: 'Greater London', href: '/pest-control/greater-london', status: 'live' },
     { name: 'West Midlands', href: '/pest-control/west-midlands', status: 'live' },
-    { name: 'North West', href: '/pest-control/north-west', status: 'coming-soon' },
+    { name: 'North West', href: '/pest-control/north-west', status: 'live' },
     { name: 'Yorkshire & the Humber', href: '/pest-control/yorkshire-and-the-humber', status: 'coming-soon' },
     { name: 'South East', href: '/pest-control/south-east', status: 'coming-soon' },
     { name: 'South West', href: '/pest-control/south-west', status: 'coming-soon' },
@@ -73,6 +73,8 @@ export default function Navigation() {
     { label: 'London Commercial', href: '/commercial' },
     { label: 'Birmingham Residential', href: '/birmingham/residential' },
     { label: 'Birmingham Commercial', href: '/birmingham/commercial' },
+    { label: 'Manchester Residential', href: '/manchester/residential' },
+    { label: 'Manchester Commercial', href: '/manchester/commercial' },
   ];
 
   return (
