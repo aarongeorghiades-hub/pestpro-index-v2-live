@@ -47,6 +47,8 @@ export async function GET() {
     { url: `${baseUrl}/blog/private-vs-council-pest-control-london`, changefreq: 'monthly', priority: '0.5' },
     { url: `${baseUrl}/blog/eco-friendly-pest-control-london`, changefreq: 'monthly', priority: '0.5' },
     { url: `${baseUrl}/blog/seasonal-pest-calendar-london`, changefreq: 'monthly', priority: '0.5' },
+    { url: `${baseUrl}/blog/pest-control-manchester-complete-guide`, changefreq: 'monthly', priority: '0.5' },
+    { url: `${baseUrl}/blog/manchester-seasonal-pest-calendar`, changefreq: 'monthly', priority: '0.5' },
   ]
 
   // Borough pages
