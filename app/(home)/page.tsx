@@ -8,7 +8,7 @@ import Navigation from '@/components/Navigation';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ providers: 567, boroughs: 3, reviews: 84 });
+  const [stats, setStats] = useState({ providers: 638, boroughs: 4, reviews: 84 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -37,8 +37,8 @@ export default function Home() {
       const progress = Math.min(elapsed / duration, 1);
 
       setStats({
-        providers: Math.floor(567 * progress),
-        boroughs: Math.floor(3 * progress),
+        providers: Math.floor(638 * progress),
+        boroughs: Math.floor(4 * progress),
         reviews: Math.floor(84 * progress)
       });
 
@@ -53,7 +53,7 @@ export default function Home() {
   const regions = [
     { name: 'Greater London', slug: 'greater-london', status: 'live', providerCount: 389 },
     { name: 'West Midlands', slug: 'west-midlands', status: 'live', providerCount: 42 },
-    { name: 'North West', slug: 'north-west', status: 'live', providerCount: 134 },
+    { name: 'North West', slug: 'north-west', status: 'live', providerCount: 207 },
     { name: 'Yorkshire & the Humber', slug: 'yorkshire-and-the-humber', status: 'coming-soon' },
     { name: 'South East', slug: 'south-east', status: 'coming-soon' },
     { name: 'South West', slug: 'south-west', status: 'coming-soon' },
@@ -74,7 +74,8 @@ export default function Home() {
     'areaServed': [
       { '@type': 'City', 'name': 'London' },
       { '@type': 'City', 'name': 'Birmingham' },
-      { '@type': 'City', 'name': 'Manchester' }
+      { '@type': 'City', 'name': 'Manchester' },
+      { '@type': 'City', 'name': 'Liverpool' }
     ]
   };
 
@@ -285,6 +286,8 @@ export default function Home() {
                 <li><Link href="/birmingham/commercial" className="hover:text-white transition">Birmingham Commercial</Link></li>
                 <li><Link href="/manchester/residential" className="hover:text-white transition">Manchester Residential</Link></li>
                 <li><Link href="/manchester/commercial" className="hover:text-white transition">Manchester Commercial</Link></li>
+                <li><Link href="/liverpool/residential" className="hover:text-white transition">Liverpool Residential</Link></li>
+                <li><Link href="/liverpool/commercial" className="hover:text-white transition">Liverpool Commercial</Link></li>
               </ul>
             </div>
             <div>

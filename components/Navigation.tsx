@@ -19,7 +19,7 @@ export default function Navigation() {
   // Check if Resources tab should be active
   const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources');
   const isHomeActive = pathname === '/';
-  const isFindPestControlActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/manchester') || pathname?.startsWith('/pest-control');
+  const isFindPestControlActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/manchester') || pathname?.startsWith('/liverpool') || pathname?.startsWith('/pest-control');
   const isProductsActive = pathname === '/products' || pathname === '/commercial-products';
   const isProfessionalsActive = pathname === '/professionals';
   const isContactActive = pathname === '/contact';
@@ -75,6 +75,8 @@ export default function Navigation() {
     { label: 'Birmingham Commercial', href: '/birmingham/commercial' },
     { label: 'Manchester Residential', href: '/manchester/residential' },
     { label: 'Manchester Commercial', href: '/manchester/commercial' },
+    { label: 'Liverpool Residential', href: '/liverpool/residential' },
+    { label: 'Liverpool Commercial', href: '/liverpool/commercial' },
   ];
 
   return (

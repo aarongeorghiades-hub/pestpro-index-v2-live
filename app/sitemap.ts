@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllRegions } from './pest-control/data/regions';
 import { getAllBoroughs } from './pest-control/borough-data';
 import { getAllBoroughs as getAllManchesterBoroughs } from './pest-control/manchester/manchester-boroughs';
+import { getAllBoroughs as getAllLiverpoolBoroughs } from './pest-control/liverpool/liverpool-boroughs';
 import { posts } from './blog/data/posts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -29,6 +30,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const manchesterBoroughs = getAllManchesterBoroughs();
   const manchesterBoroughUrls = manchesterBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/manchester/${borough.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Get all Liverpool boroughs
+  const liverpoolBoroughs = getAllLiverpoolBoroughs();
+  const liverpoolBoroughUrls = liverpoolBoroughs.map((borough) => ({
+    url: `${baseUrl}/pest-control/liverpool/${borough.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
@@ -86,6 +96,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/liverpool/residential`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/liverpool/commercial`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/pest-control`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -131,5 +153,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...regionUrls,
     ...boroughUrls,
     ...manchesterBoroughUrls,
+    ...liverpoolBoroughUrls,
   ];
 }
