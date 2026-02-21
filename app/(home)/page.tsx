@@ -8,7 +8,7 @@ import Navigation from '@/components/Navigation';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ providers: 617, boroughs: 3, reviews: 84 });
+  const [stats, setStats] = useState({ providers: 567, boroughs: 3, reviews: 84 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -37,7 +37,7 @@ export default function Home() {
       const progress = Math.min(elapsed / duration, 1);
 
       setStats({
-        providers: Math.floor(617 * progress),
+        providers: Math.floor(567 * progress),
         boroughs: Math.floor(3 * progress),
         reviews: Math.floor(84 * progress)
       });

@@ -9,7 +9,7 @@ import { useState, useEffect, useRef } from 'react';
 
 export default function ProfessionalsPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  const [stats, setStats] = useState({ providers: 617, coverage: 84, boroughs: 33 });
+  const [stats, setStats] = useState({ providers: 567, coverage: 84, boroughs: 33 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -63,7 +63,7 @@ export default function ProfessionalsPage() {
       const progress = Math.min(elapsed / duration, 1);
 
       setStats({
-        providers: Math.floor(617 * progress),
+        providers: Math.floor(567 * progress),
         coverage: Math.floor(84 * progress),
         boroughs: Math.floor(33 * progress)
       });
@@ -231,7 +231,7 @@ export default function ProfessionalsPage() {
           </h1>
           
           <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-blue-100/95 max-w-3xl mx-auto leading-relaxed font-semibold text-center mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Join <span className="font-bold text-white">617 UK providers</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
+            Join <span className="font-bold text-white">567 UK providers</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
           </p>
 
           <a
