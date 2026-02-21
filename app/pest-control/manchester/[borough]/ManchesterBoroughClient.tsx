@@ -6,6 +6,13 @@ import { createClient } from '@/utils/supabase';
 import Navigation from '@/components/Navigation';
 import type { ManchesterBoroughData } from '../manchester-boroughs';
 
+const extractPostcode = (address: string | null): string | null => {
+  if (!address) return null;
+  const postcodeRegex = /[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}/i;
+  const match = address.match(postcodeRegex);
+  return match ? match[0] : null;
+};
+
 function generateSlug(name: string): string {
   return name
     .toLowerCase()
@@ -59,8 +66,12 @@ export default function ManchesterBoroughClient({ borough }: { borough: Manchest
           .or('regions.cs.["manchester"]');
 
         if (error) throw error;
-        // Sort by rating descending
-        const sorted = (data || []).sort((a: any, b: any) => {
+        // Extract postcodes from address when postcode column is null, then sort by rating
+        const processed = (data || []).map(p => ({
+          ...p,
+          postcode: p.postcode || extractPostcode(p.address),
+        }));
+        const sorted = processed.sort((a: any, b: any) => {
           const ratingA = a.google_rating || 0;
           const ratingB = b.google_rating || 0;
           if (ratingB !== ratingA) return ratingB - ratingA;
