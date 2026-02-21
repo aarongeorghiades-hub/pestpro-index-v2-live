@@ -125,7 +125,7 @@ export default function ResidentialPage() {
           .from('Providers')
           .select('*')
           .eq('business_residential', true)
-          .or('regions.cs.["liverpool"]');
+          .contains('regions', ['liverpool']);
 
         if (error) throw error;
         console.log('✅ Supabase query returned:', data?.length, 'providers');
@@ -277,7 +277,16 @@ export default function ResidentialPage() {
 
       {/* HERO SECTION */}
       <section className="relative h-[500px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/90 via-[#2563eb]/85 to-[#1e3a8a]/90"></div>
+        <div className="absolute inset-0">
+          <Image
+            src="/images/liverpool-skyline.png"
+            alt="Liverpool skyline illustration"
+            fill
+            className="object-cover opacity-95"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/50 via-[#2563eb]/45 to-[#1e3a8a]/50"></div>
+        </div>
 
         <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 max-w-3xl drop-shadow-lg" style={{textShadow: '0 4px 6px rgba(0,0,0,0.3)'}}>

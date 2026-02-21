@@ -308,7 +308,16 @@ export default function CommercialPage() {
 
       {/* HERO SECTION */}
       <section className="relative h-[500px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/90 via-[#2563eb]/85 to-[#1e3a8a]/90"></div>
+        <div className="absolute inset-0">
+          <Image
+            src="/images/liverpool-skyline.png"
+            alt="Liverpool skyline illustration"
+            fill
+            className="object-cover opacity-95"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/50 via-[#2563eb]/45 to-[#1e3a8a]/50"></div>
+        </div>
 
         <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter leading-[0.9] text-white drop-shadow-[0_12px_36px_rgba(0,0,0,0.95)]">
