@@ -25,23 +25,28 @@ export async function GET() {
     { url: `${baseUrl}/commercial`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/birmingham/residential`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/birmingham/commercial`, changefreq: 'weekly', priority: '0.9' },
-    { url: `${baseUrl}/professionals`, changefreq: 'monthly', priority: '0.7' },
-    { url: `${baseUrl}/products`, changefreq: 'monthly', priority: '0.6' },
-    { url: `${baseUrl}/commercial-products`, changefreq: 'monthly', priority: '0.6' },
-    { url: `${baseUrl}/resources`, changefreq: 'monthly', priority: '0.7' },
-    { url: `${baseUrl}/about`, changefreq: 'monthly', priority: '0.5' },
-    { url: `${baseUrl}/contact`, changefreq: 'monthly', priority: '0.5' },
+    { url: `${baseUrl}/manchester/residential`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/manchester/commercial`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/professionals`, changefreq: 'monthly', priority: '0.4' },
+    { url: `${baseUrl}/products`, changefreq: 'monthly', priority: '0.7' },
+    { url: `${baseUrl}/commercial-products`, changefreq: 'monthly', priority: '0.7' },
+    { url: `${baseUrl}/resources`, changefreq: 'monthly', priority: '0.5' },
+    { url: `${baseUrl}/contact`, changefreq: 'monthly', priority: '0.4' },
     { url: `${baseUrl}/pest-control`, changefreq: 'monthly', priority: '0.8' },
-    { url: `${baseUrl}/blog`, changefreq: 'weekly', priority: '0.8' },
-    { url: `${baseUrl}/blog/bpca-vs-npta-pest-control-certifications`, changefreq: 'monthly', priority: '0.7' },
-    { url: `${baseUrl}/blog/signs-of-rat-problem-london`, changefreq: 'monthly', priority: '0.7' },
-    { url: `${baseUrl}/blog/landlord-pest-control-legal-obligation-uk`, changefreq: 'monthly', priority: '0.7' },
-    { url: `${baseUrl}/blog/diy-pest-control-vs-professional`, changefreq: 'monthly', priority: '0.7' },
-    { url: `${baseUrl}/blog/pest-control-cost-london`, changefreq: 'monthly', priority: '0.7' },
-    { url: `${baseUrl}/blog/wasp-season-london`, changefreq: 'monthly', priority: '0.7' },
-    { url: `${baseUrl}/blog/private-vs-council-pest-control-london`, changefreq: 'monthly', priority: '0.7' },
-    { url: `${baseUrl}/blog/eco-friendly-pest-control-london`, changefreq: 'monthly', priority: '0.7' },
-    { url: `${baseUrl}/blog/seasonal-pest-calendar-london`, changefreq: 'monthly', priority: '0.7' },
+    { url: `${baseUrl}/pest-control/regions`, changefreq: 'monthly', priority: '0.8' },
+    { url: `${baseUrl}/pest-control/north-west`, changefreq: 'monthly', priority: '0.8' },
+    { url: `${baseUrl}/pest-control/greater-london`, changefreq: 'monthly', priority: '0.8' },
+    { url: `${baseUrl}/pest-control/west-midlands`, changefreq: 'monthly', priority: '0.8' },
+    { url: `${baseUrl}/blog`, changefreq: 'weekly', priority: '0.6' },
+    { url: `${baseUrl}/blog/bpca-vs-npta-pest-control-certifications`, changefreq: 'monthly', priority: '0.5' },
+    { url: `${baseUrl}/blog/signs-of-rat-problem-london`, changefreq: 'monthly', priority: '0.5' },
+    { url: `${baseUrl}/blog/landlord-pest-control-legal-obligation-uk`, changefreq: 'monthly', priority: '0.5' },
+    { url: `${baseUrl}/blog/diy-pest-control-vs-professional`, changefreq: 'monthly', priority: '0.5' },
+    { url: `${baseUrl}/blog/pest-control-cost-london`, changefreq: 'monthly', priority: '0.5' },
+    { url: `${baseUrl}/blog/wasp-season-london`, changefreq: 'monthly', priority: '0.5' },
+    { url: `${baseUrl}/blog/private-vs-council-pest-control-london`, changefreq: 'monthly', priority: '0.5' },
+    { url: `${baseUrl}/blog/eco-friendly-pest-control-london`, changefreq: 'monthly', priority: '0.5' },
+    { url: `${baseUrl}/blog/seasonal-pest-calendar-london`, changefreq: 'monthly', priority: '0.5' },
   ]
 
   // Borough pages
@@ -60,6 +65,18 @@ export async function GET() {
     priority: '0.7',
   }))
 
+  // Manchester borough pages
+  const manchesterBoroughSlugs = [
+    'manchester', 'salford', 'trafford', 'stockport', 'tameside',
+    'oldham', 'rochdale', 'bury', 'bolton', 'wigan'
+  ]
+
+  const manchesterBoroughPages = manchesterBoroughSlugs.map(slug => ({
+    url: `${baseUrl}/pest-control/manchester/${slug}`,
+    changefreq: 'monthly',
+    priority: '0.7',
+  }))
+
   // Fetch all providers for dynamic provider pages
   const supabase = createClient()
   const { data: providers } = await supabase
@@ -74,7 +91,7 @@ export async function GET() {
       }))
     : []
 
-  const pages = [...staticPages, ...boroughPages, ...providerPages]
+  const pages = [...staticPages, ...boroughPages, ...manchesterBoroughPages, ...providerPages]
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -83,7 +100,7 @@ ${pages.map(page => `  <url>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`).join('\n')}
-  <!-- Total URLs: ${pages.length} (${staticPages.length} static + ${boroughPages.length} boroughs + ${providerPages.length} providers) -->
+  <!-- Total URLs: ${pages.length} (${staticPages.length} static + ${boroughPages.length} London boroughs + ${manchesterBoroughPages.length} Manchester boroughs + ${providerPages.length} providers) -->
 </urlset>`
 
   return new NextResponse(xml, {
