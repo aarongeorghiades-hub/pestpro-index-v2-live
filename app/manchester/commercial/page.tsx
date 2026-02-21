@@ -297,7 +297,14 @@ export default function CommercialPage() {
       {/* HERO SECTION */}
       <section className="relative h-[500px] overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/80 via-[#2563eb]/70 to-[#1e3a8a]/80"></div>
+          <Image
+            src="/manchester-hero.png"
+            alt="Manchester skyline illustration"
+            fill
+            className="object-cover opacity-95"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/50 via-[#2563eb]/45 to-[#1e3a8a]/50"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
