@@ -1126,5 +1126,243 @@ export const posts: BlogPost[] = [
 
 <p><a href="/liverpool/residential">Browse Liverpool pest control providers on PestPro Index</a> — all listed with verified Google ratings across Merseyside. No referral fees, no commissions — contact providers directly for quotes.</p>
 `
+  },
+  {
+    slug: 'pest-control-leeds-complete-guide',
+    title: 'Pest Control in Leeds: The Complete Guide for 2026',
+    metaTitle: 'Pest Control Leeds: Complete Guide for 2026 | PestPro Index',
+    metaDescription: 'Everything you need to know about pest control in Leeds and West Yorkshire. Common pests, seasonal patterns, costs, and how to find a trusted local provider.',
+    targetKeyword: 'pest control Leeds',
+    publishDate: '2026-02-22',
+    content: `
+<p>Leeds sits at the heart of West Yorkshire, a city where Victorian mill architecture meets modern glass towers and sprawling suburban housing estates. This urban-rural mix creates unique pest control challenges — from rats near the River Aire to textile moths in older properties to wasps in the leafy suburbs of Roundhay and Horsforth.</p>
+
+<p>Whether you're a homeowner in Headingley, a landlord in Harehills, or a business owner in the city centre, this guide covers everything you need to know about pest control in Leeds and the wider West Yorkshire area.</p>
+
+<h2>Why Leeds Has Unique Pest Challenges</h2>
+
+<p>West Yorkshire's geography creates a distinctive pest landscape that differs from other major UK cities. Leeds sits in the Aire Valley, surrounded by the Pennine hills to the west and flatter agricultural land to the east. This means:</p>
+
+<ul>
+<li><strong>Urban-rural overlap:</strong> Leeds borders working farmland, which means rural pests — rats, mice, foxes, and birds — regularly cross into suburban and urban areas</li>
+<li><strong>Waterway corridors:</strong> The River Aire, Leeds-Liverpool Canal, and Aire and Calder Navigation create transport routes for rat populations right through the city centre</li>
+<li><strong>Victorian housing stock:</strong> Back-to-back terraces in areas like Beeston, Armley, and Harehills have shared wall cavities and aging infrastructure that provide easy rodent access</li>
+<li><strong>Student population:</strong> Over 60,000 students across the University of Leeds and Leeds Beckett University create high-density housing areas in Headingley, Hyde Park, and Burley with elevated bed bug and mouse risks</li>
+<li><strong>Textile heritage:</strong> Leeds was a centre of the wool trade, and many older properties still harbour textile moth populations in original carpets, fabrics, and underlay</li>
+</ul>
+
+<h2>The Most Common Pests in Leeds</h2>
+
+<h3>Rats</h3>
+
+<p>Leeds has a significant rat population, concentrated along the waterway corridors but present across the city. The River Aire running through the city centre, the canal network, and Victorian drainage infrastructure provide extensive harbourage and movement routes. Areas near waterways — Kirkstall, Armley, the city centre, and along the Aire Valley — face particularly high rodent pressure.</p>
+
+<p>Rats follow seasonal patterns: outdoor activity peaks in summer, but residential callouts spike in autumn and winter as rats seek indoor shelter. Leeds' cold winters — typically colder than Manchester or Liverpool — drive this seasonal migration earlier and harder than in western cities.</p>
+
+<h3>Mice</h3>
+
+<p>House mice are ubiquitous across Leeds, particularly in terraced housing where shared wall cavities allow mice to move freely between properties. A mouse problem in one terraced house almost always indicates a neighbourhood-wide issue. Student areas like Headingley and Hyde Park see consistently high mouse activity due to housing density and the annual tenant turnover cycle.</p>
+
+<h3>Wasps</h3>
+
+<p>Wasp season in Leeds runs from April to October, peaking in July and August. Leafy suburban areas — Roundhay, Moortown, Horsforth, and Bramhope — see the highest volumes of wasp nest callouts. Leeds' later spring compared to southern England means wasp emergence starts later, but colonies can be just as large by peak season.</p>
+
+<h3>Bed Bugs</h3>
+
+<p>Leeds' large student population creates a persistent bed bug risk, particularly during the September-October move-in period and the summer festival season. The university areas of Headingley, Hyde Park, and Burley see regular outbreaks. Hotels and short-term lets across the city centre are also vulnerable.</p>
+
+<h3>Textile Moths</h3>
+
+<p>This is where Leeds stands out from other UK cities. The city's historic wool trade means many older properties contain original wool carpets, underlay, and fabrics that attract clothes moths and carpet moths. Properties in conservation areas — Headingley, Chapel Allerton, Roundhay — where original features have been preserved are particularly susceptible. Moth damage can be extensive and expensive to remediate if populations go unchecked.</p>
+
+<h3>Cockroaches</h3>
+
+<p>German cockroaches are found in commercial kitchens across Leeds city centre, particularly in the restaurant and takeaway clusters along Kirkgate, Vicar Lane, and the Headrow. Residential cockroach issues are less common but occur in older apartment buildings with shared plumbing and ducting.</p>
+
+<h3>Pigeons and Birds</h3>
+
+<p>The city centre has a well-established pigeon population, particularly around the markets, Kirkgate, and the train station area. Pigeons cause property damage through acidic droppings and can block drainage. Bird proofing is a growing market for commercial property managers in Leeds.</p>
+
+<h2>What Does Pest Control Cost in Leeds?</h2>
+
+<p>Typical prices for residential pest control in Leeds and West Yorkshire:</p>
+
+<ul>
+<li><strong>Rat treatment:</strong> £90–£160 initial visit, £170–£300 full programme (2–3 visits)</li>
+<li><strong>Mouse treatment:</strong> £75–£130 initial visit, £130–£240 full programme</li>
+<li><strong>Wasp nest:</strong> £50–£85 per nest</li>
+<li><strong>Bed bug treatment:</strong> £140–£230 per room, £400–£900 whole property heat treatment</li>
+<li><strong>Cockroach treatment:</strong> £100–£200 initial, £180–£350 full programme</li>
+<li><strong>Moth treatment:</strong> £80–£160</li>
+<li><strong>Ant treatment:</strong> £55–£110</li>
+</ul>
+
+<p>Leeds prices are generally lower than London but similar to Manchester. Always ask for total programme cost including follow-up visits, not just the initial callout fee. For rodents, expect 2–3 visits minimum for effective treatment.</p>
+
+<h2>Leeds City Council Pest Control</h2>
+
+<p>Leeds City Council offers pest treatment services, but like most UK councils, provision has been scaled back. Council services typically cover rats and mice, with charges for other pests. Waiting times can be significant during peak periods — particularly in autumn when rodent callouts surge.</p>
+
+<p>For most Leeds residents, private pest control offers faster response times (often same-day or next-day), evening and weekend availability, and treatment for all pest types. Council services may be more appropriate for social housing tenants or situations involving communal areas and shared infrastructure.</p>
+
+<h2>How to Choose a Pest Controller in Leeds</h2>
+
+<p>When selecting a pest control provider in West Yorkshire, prioritise:</p>
+
+<ul>
+<li><strong>BPCA or NPTA membership</strong> — demonstrates professional standards and accountability</li>
+<li><strong>Local presence</strong> — a provider based in West Yorkshire understands local pest patterns, property types, and seasonal timing</li>
+<li><strong>Verified reviews</strong> — genuine Google reviews from Leeds and West Yorkshire customers are the most reliable quality signal</li>
+<li><strong>Clear pricing</strong> — a written quote before work begins, with total programme costs stated upfront</li>
+<li><strong>Proofing recommendations</strong> — any competent pest controller should assess and advise on entry points, not just treat visible pests</li>
+<li><strong>Guarantee</strong> — a written guarantee on treatment effectiveness demonstrates confidence in the work</li>
+</ul>
+
+<h2>Leeds-Specific Prevention Tips</h2>
+
+<p><strong>Victorian terraces (Beeston, Armley, Harehills, Burley):</strong> Shared wall cavities are the primary risk. Seal gaps around pipes, replace damaged airbricks with mesh-covered alternatives, and maintain pointing on brickwork. A mouse problem in your property likely exists in neighbouring properties too — coordinate with neighbours where possible.</p>
+
+<p><strong>Canal and riverside properties (Kirkstall, city centre, Hunslet):</strong> Higher rat pressure year-round. Secure waste storage, avoid ground-level compost, and ensure no gaps exist at ground level. Consider ongoing monitoring rather than reactive-only treatment.</p>
+
+<p><strong>Student areas (Headingley, Hyde Park, Burley):</strong> Landlords should include pest inspections in their changeover process between tenancies. Mattress inspections for bed bugs should be standard. Mouse proofing is cost-effective prevention that protects against the most common tenant complaint.</p>
+
+<p><strong>Suburban homes (Roundhay, Moortown, Horsforth, Bramhope):</strong> Keep gardens tidy, trim vegetation away from walls, and secure compost bins. Autumn rodent proofing is essential — seal gaps before October. Check loft spaces for wasp activity from March onwards.</p>
+
+<p><strong>Older properties with original features:</strong> If your property has original wool carpets, check for moth damage regularly. Pheromone traps provide early warning of moth activity. Professional treatment is worthwhile for established moth populations — DIY products rarely penetrate deep enough to reach larvae in underlay.</p>
+
+<h2>Commercial Pest Control in Leeds</h2>
+
+<p>Leeds' growing commercial sector — from the financial district around Park Row to the restaurant scene on Call Lane and the industrial units in Cross Green — requires robust pest management. Food businesses in particular face strict regulatory requirements under the Food Standards Agency.</p>
+
+<p>Commercial pest control in Leeds is typically structured as ongoing contracts rather than one-off treatments. Annual contract prices for a small commercial premises range from £350–£1,100 depending on visit frequency, pest types covered, and documentation requirements.</p>
+
+<p><a href="/leeds/commercial">Browse commercial pest control providers in Leeds</a> to compare certified companies offering contract options for businesses across West Yorkshire.</p>
+
+<h2>The West Yorkshire Wider Area</h2>
+
+<p>Many pest control providers serving Leeds also cover the wider West Yorkshire area, including Bradford, Wakefield, Huddersfield, Halifax, and surrounding towns. If you're in the wider region, the same providers are likely to serve your area — <a href="/pest-control/leeds/bradford">browse Bradford pest control</a>, <a href="/pest-control/leeds/wakefield">Wakefield</a>, <a href="/pest-control/leeds/kirklees">Kirklees (Huddersfield)</a>, or <a href="/pest-control/leeds/calderdale">Calderdale (Halifax)</a> for area-specific information.</p>
+
+<h2>Find a Trusted Pest Controller in Leeds</h2>
+
+<p><a href="/leeds/residential">PestPro Index lists verified pest control providers</a> serving Leeds and West Yorkshire. Filter by pest type, service features, and certifications to find the right provider for your needs. All listings include Google ratings, contact details, and certification status — with no lead fees or commissions.</p>
+
+<h2>Summary</h2>
+
+<p>Leeds' pest landscape is shaped by its river and canal corridors, Victorian housing stock, textile heritage, large student population, and position at the urban-rural boundary. Rats, mice, wasps, bed bugs, textile moths, and cockroaches are the most common issues. Prices are competitive with other northern cities. Act early, choose a provider with verified local reviews, and prioritise proofing alongside treatment for lasting results.</p>
+`
+  },
+  {
+    slug: 'leeds-seasonal-pest-calendar',
+    title: "Leeds Seasonal Pest Calendar: What to Expect Month by Month",
+    metaTitle: 'Leeds Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index',
+    metaDescription: "Month-by-month guide to pest activity in Leeds and West Yorkshire. Know when rats, wasps, moths, and other pests are most active so you can prevent infestations before they start.",
+    targetKeyword: 'seasonal pests Leeds',
+    publishDate: '2026-02-22',
+    content: `
+<p>Leeds and West Yorkshire's climate — cold Pennine winters, wet springs, and relatively cool summers compared to southern England — creates distinct seasonal pest patterns. Understanding when different pests peak helps you take preventive action at the right time, saving money and avoiding the stress of established infestations.</p>
+
+<h2>January – February: Peak Indoor Rodent Season</h2>
+
+<p>The coldest months drive rats and mice indoors in large numbers. Leeds' Pennine-influenced climate means winters are typically colder than Manchester or Liverpool, making the indoor migration more pronounced. Victorian terraces across Beeston, Armley, Harehills, and Burley — with their shared wall cavities and aging infrastructure — are particularly vulnerable.</p>
+
+<p><strong>Key risks:</strong> Rats near the River Aire and canal corridors seeking warmth. Mice entering terraced properties through shared cavities. Squirrels in loft spaces across suburban areas.</p>
+
+<p><strong>What to do:</strong> Inspect loft spaces and under-kitchen units for droppings, gnaw marks, and nesting material. Check the exterior of your property for gaps larger than 1cm — mice can squeeze through remarkably small openings. Ensure wheelie bins are closed and food waste is managed. If you find signs of rodent activity, act immediately — winter populations compound quickly in Leeds' cold conditions.</p>
+
+<h2>March – April: Spring Emergence</h2>
+
+<p>Rising temperatures activate overwintering insects. Queen wasps emerge from hibernation and begin building founding nests — Leeds' slightly later spring compared to southern England means this typically happens in late March or early April. Garden ants start foraging. Carpet moths and clothes moths become active in wardrobes and carpeted areas.</p>
+
+<p><strong>Key risks:</strong> Early wasp nests in loft spaces and eaves. Moth damage becoming visible in stored woolens and carpets. Ant trails entering properties.</p>
+
+<p><strong>What to do:</strong> Check loft spaces and eaves for early wasp activity — small golf-ball-sized nests with a single queen. A nest treated now costs £50–£70; the same colony in August will be ten times larger. Inspect woolens and carpets for moth damage — Leeds' textile heritage means many properties have original wool carpets that attract moths. Set pheromone traps to monitor moth activity early.</p>
+
+<h2>May – June: Wasp and Ant Season Builds</h2>
+
+<p>Wasp nests grow rapidly as worker numbers increase. A nest that was golf-ball-sized in April can be football-sized by June. Ant colonies are at peak foraging activity, with trails commonly entering kitchens and bathrooms. Flea activity increases as temperatures rise, particularly in households with pets.</p>
+
+<p><strong>Key risks:</strong> Rapidly growing wasp nests. Ant invasions through ground-level gaps. Flea populations activating in carpets and pet bedding.</p>
+
+<p><strong>What to do:</strong> Watch for wasps consistently entering and exiting a single point on your property — this indicates a nest. Book wasp treatment early before peak-season availability tightens. Seal ant entry points and apply bait gel to active trails. Ensure pets are on current flea treatment and vacuum frequently around pet sleeping areas.</p>
+
+<h2>July – August: Peak Season for Most Pests</h2>
+
+<p>Summer brings peak activity across all major pest types in Leeds and West Yorkshire.</p>
+
+<p><strong>Wasps:</strong> Nests reach maximum size (5,000–10,000 workers). This is the busiest period for pest controllers — demand outstrips supply, so book early. Professional treatment (£50–£85) remains the only sensible option for established nests.</p>
+
+<p><strong>Bed bugs:</strong> Summer travel and Leeds' festival season bring increased bed bug risk. Leeds Festival at Bramham Park, international cricket at Headingley, and general holiday travel all create opportunities for bed bug introductions. Check accommodation carefully when travelling and inspect luggage on return.</p>
+
+<p><strong>Moths:</strong> Clothes moths and carpet moths are at their most active. Check wardrobes and carpets — particularly under furniture and in areas that aren't regularly disturbed. Leeds properties with original wool carpets or features are at elevated risk.</p>
+
+<p><strong>Flies:</strong> House flies, cluster flies, and bluebottles peak in warm weather. Good hygiene and fly screens are the primary defences. Commercial food premises should ensure their fly control units are serviced before summer.</p>
+
+<p><strong>What to do:</strong> Act on any pest signs immediately during summer. Warm weather accelerates reproduction — a week's delay can double the size of a problem and significantly increase treatment costs.</p>
+
+<h2>September: Wasps Turn Aggressive, Spiders Move Indoors</h2>
+
+<p>September is the most dangerous month for wasp stings. Colonies are breaking down — workers are no longer focused on feeding larvae and instead seek sugary foods. They become noticeably more aggressive around outdoor food and drinks. House spiders also become visible as males enter properties searching for mates.</p>
+
+<p><strong>Key risks:</strong> Aggressive wasp behaviour near food. Multiple stings if nests are disturbed. Spider presence (harmless but unwelcome for many).</p>
+
+<p><strong>What to do:</strong> Avoid disturbing wasp nests in September — the defensive response is at its most intense. Keep outdoor food and drinks covered at barbecues and outdoor events. Spiders are harmless but can be managed with draft proofing and gap sealing if their presence is unwanted.</p>
+
+<h2>October – November: The Critical Prevention Window</h2>
+
+<p>This is the single most important period for pest prevention in Leeds. As temperatures drop — and they drop earlier and harder in West Yorkshire than in coastal cities — rats and mice actively seek indoor harbourage. Sealing entry points now prevents the winter rodent problems that would otherwise establish.</p>
+
+<p><strong>Key risks:</strong> Rodents seeking indoor shelter before winter. Squirrels entering loft spaces. Cluster flies seeking hibernation sites.</p>
+
+<p><strong>What to do:</strong> Walk the exterior perimeter of your property and seal any gaps larger than 1cm with wire wool and expanding foam, steel mesh, or cement. Pay particular attention to:</p>
+
+<ul>
+<li>Gaps around gas, water, and waste pipes where they enter the building</li>
+<li>Damaged or missing airbricks — replace with mesh-covered alternatives</li>
+<li>Gaps under external doors — fit brush strips</li>
+<li>Where utility cables enter the property</li>
+<li>Gaps between roof tiles and soffits</li>
+<li>Old coal chute access points (common in Leeds terraces)</li>
+</ul>
+
+<p>An hour spent proofing in October can save hundreds of pounds in pest control callouts over winter. This is particularly important in Leeds due to the cold winters driving aggressive indoor migration.</p>
+
+<h2>November – December: Indoor Rodent Pressure Builds</h2>
+
+<p>Rodent activity inside Leeds properties increases significantly as winter sets in. Grey squirrels may enter loft spaces for warmth — common in suburban areas near parks and green spaces like Roundhay Park, Golden Acre Park, and Temple Newsam. Cockroach populations in heated commercial premises continue year-round.</p>
+
+<p><strong>Key risks:</strong> Established rodent populations in walls and lofts. Squirrel damage to loft insulation and wiring. Cockroach persistence in heated commercial kitchens.</p>
+
+<p><strong>What to do:</strong> Monitor for fresh signs of rodent activity — new droppings (dark and soft), fresh gnaw marks (pale-coloured), or scratching sounds at night. Check behind kitchen appliances and in cupboards under sinks. If signs appear, set snap traps along walls as a first response and contact a professional if the problem doesn't resolve within two weeks.</p>
+
+<h2>Year-Round Pests in Leeds</h2>
+
+<p>Some pests operate independently of seasons:</p>
+
+<ul>
+<li><strong>Cockroaches</strong> — breed continuously in heated buildings, particularly commercial kitchens and older apartment blocks</li>
+<li><strong>Bed bugs</strong> — travel-related rather than seasonal, can appear any time of year</li>
+<li><strong>Textile moths</strong> — can be active year-round in heated wardrobes and properties with wool carpets</li>
+<li><strong>Silverfish</strong> — thrive in damp conditions, common in bathrooms and kitchens with poor ventilation</li>
+<li><strong>Pigeons</strong> — a year-round concern across Leeds city centre</li>
+</ul>
+
+<h2>Leeds vs Other Northern Cities: Key Differences</h2>
+
+<p>Leeds' pest patterns differ from Manchester and Liverpool in several ways:</p>
+
+<ul>
+<li><strong>Colder winters</strong> mean more aggressive indoor rodent migration and an earlier start to autumn proofing season</li>
+<li><strong>Textile moth prevalence</strong> is notably higher in Leeds due to the city's wool trade heritage</li>
+<li><strong>Less rainfall</strong> than Manchester means fewer damp-related pests (silverfish, woodlice) but still more than southern England</li>
+<li><strong>Urban-rural boundary</strong> effects are more pronounced — rural pests cross into suburban areas more readily</li>
+<li><strong>Later spring</strong> means wasp and ant seasons start slightly later than in western coastal cities</li>
+</ul>
+
+<h2>The Golden Rule</h2>
+
+<p>Act on pest signs when you first notice them. Every week of delay during the relevant season allows populations to grow — and costs to increase. Prevention in the right month (proofing in October, wasp checks in March, moth monitoring in April) is always cheaper than reactive treatment.</p>
+
+<p><a href="/leeds/residential">Browse Leeds pest control providers on PestPro Index</a> — all listed with verified Google ratings across West Yorkshire. No referral fees, no commissions — contact providers directly for quotes.</p>
+`
   }
 ]

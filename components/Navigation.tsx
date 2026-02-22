@@ -19,7 +19,7 @@ export default function Navigation() {
   // Check if Resources tab should be active
   const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources');
   const isHomeActive = pathname === '/';
-  const isFindPestControlActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/manchester') || pathname?.startsWith('/liverpool') || pathname?.startsWith('/pest-control');
+  const isFindPestControlActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/manchester') || pathname?.startsWith('/liverpool') || pathname?.startsWith('/leeds') || pathname?.startsWith('/pest-control');
   const isProductsActive = pathname === '/products' || pathname === '/commercial-products';
   const isProfessionalsActive = pathname === '/professionals';
   const isContactActive = pathname === '/contact';
@@ -57,7 +57,7 @@ export default function Navigation() {
     { name: 'Greater London', href: '/pest-control/greater-london', status: 'live' },
     { name: 'West Midlands', href: '/pest-control/west-midlands', status: 'live' },
     { name: 'North West', href: '/pest-control/north-west', status: 'live' },
-    { name: 'Yorkshire & the Humber', href: '/pest-control/yorkshire-and-the-humber', status: 'coming-soon' },
+    { name: 'Yorkshire & the Humber', href: '/pest-control/yorkshire-and-the-humber', status: 'live' },
     { name: 'South East', href: '/pest-control/south-east', status: 'coming-soon' },
     { name: 'South West', href: '/pest-control/south-west', status: 'coming-soon' },
     { name: 'East of England', href: '/pest-control/east-of-england', status: 'coming-soon' },
@@ -77,6 +77,8 @@ export default function Navigation() {
     { label: 'Manchester Commercial', href: '/manchester/commercial' },
     { label: 'Liverpool Residential', href: '/liverpool/residential' },
     { label: 'Liverpool Commercial', href: '/liverpool/commercial' },
+    { label: 'Leeds Residential', href: '/leeds/residential' },
+    { label: 'Leeds Commercial', href: '/leeds/commercial' },
   ];
 
   return (
