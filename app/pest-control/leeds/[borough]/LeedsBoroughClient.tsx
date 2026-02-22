@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { createClient } from '@/utils/supabase';
 import Navigation from '@/components/Navigation';
 import type { LeedsBoroughData } from '../leeds-boroughs';
@@ -95,7 +96,16 @@ export default function LeedsBoroughClient({ borough }: { borough: LeedsBoroughD
 
       {/* HERO */}
       <section className="relative h-[400px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812]"></div>
+        <div className="absolute inset-0">
+          <Image
+            src="/images/leeds-skyline.webp"
+            alt="Leeds skyline illustration"
+            fill
+            className="object-cover opacity-95"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050812]/70 via-[#1e3a8a]/60 to-[#050812]/70"></div>
+        </div>
         <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 max-w-3xl drop-shadow-lg" style={{ textShadow: '0 4px 6px rgba(0,0,0,0.3)' }}>
             Pest Control in {borough.name}
