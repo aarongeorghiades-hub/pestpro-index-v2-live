@@ -124,8 +124,8 @@ export default function ResidentialPage() {
         const { data, error } = await supabase
           .from('Providers')
           .select('*')
-          .eq('business_residential', true)
-          .or('regions.cs.["manchester"]');
+          .eq('residential', true)
+          .contains('regions', ['manchester']);
 
         if (error) throw error;
         console.log('✅ Supabase query returned:', data?.length, 'providers');
@@ -150,7 +150,6 @@ export default function ResidentialPage() {
   // ============================================================================
 
   const filteredProvidersMemo = useMemo(() => {
-    console.log('📊 filteredProvidersMemo: providers.length =', providers.length);
     if (providers.length === 0) return [];
 
     // Start with search results if available, otherwise use all providers
@@ -180,7 +179,6 @@ export default function ResidentialPage() {
       filtered.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
     }
 
-    console.log('📊 filteredProvidersMemo: returning', filtered.length, 'providers');
     return filtered;
   }, [providers, filters, sortBy, searchResults])
 
