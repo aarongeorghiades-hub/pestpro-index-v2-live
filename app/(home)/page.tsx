@@ -8,7 +8,7 @@ import Navigation from '@/components/Navigation';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ providers: 699, boroughs: 5, reviews: 84 });
+  const [stats, setStats] = useState({ providers: 699, cities: 5, regions: 4 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -38,8 +38,8 @@ export default function Home() {
 
       setStats({
         providers: Math.floor(699 * progress),
-        boroughs: Math.floor(5 * progress),
-        reviews: Math.floor(84 * progress)
+        cities: Math.floor(5 * progress),
+        regions: Math.floor(4 * progress)
       });
 
       if (progress < 1) {
@@ -49,21 +49,6 @@ export default function Home() {
 
     animate();
   };
-
-  const regions = [
-    { name: 'Greater London', slug: 'greater-london', status: 'live', providerCount: 389 },
-    { name: 'West Midlands', slug: 'west-midlands', status: 'live', providerCount: 42 },
-    { name: 'North West', slug: 'north-west', status: 'live', providerCount: 207 },
-    { name: 'Yorkshire & the Humber', slug: 'yorkshire-and-the-humber', status: 'live', providerCount: 61 },
-    { name: 'South East', slug: 'south-east', status: 'coming-soon' },
-    { name: 'South West', slug: 'south-west', status: 'coming-soon' },
-    { name: 'East of England', slug: 'east-of-england', status: 'coming-soon' },
-    { name: 'East Midlands', slug: 'east-midlands', status: 'coming-soon' },
-    { name: 'North East', slug: 'north-east', status: 'coming-soon' },
-    { name: 'Scotland', slug: 'scotland', status: 'coming-soon' },
-    { name: 'Wales', slug: 'wales', status: 'coming-soon' },
-    { name: 'Northern Ireland', slug: 'northern-ireland', status: 'coming-soon' },
-  ];
 
   const organizationSchema = {
     '@context': 'https://schema.org',
@@ -103,22 +88,22 @@ export default function Home() {
           <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-4" style={{fontWeight: 900, letterSpacing: '-0.05em'}}>PestPro Index</h1>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-8 tracking-widest">The UK's Neutral Pest Control Directory</p>
           <p className="text-xl mb-16 max-w-2xl mx-auto leading-relaxed">
-            Find trusted, verified pest control professionals near you. No lead fees, no commissions, no sponsored rankings.
+            Find trusted, vetted pest controllers near you. No lead fees. No commissions. No sponsored rankings.
           </p>
 
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto mb-8" ref={statsRef}>
             <div className="border-b sm:border-b-0 sm:border-r border-white/30 pb-4 sm:pb-0 sm:pr-8">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.providers}</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.providers}+</div>
               <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">VERIFIED PROVIDERS</div>
             </div>
             <div className="border-b sm:border-b-0 sm:border-r border-white/30 pb-4 sm:pb-0 sm:px-8">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.boroughs}+</div>
-              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">UK REGIONS</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.cities}</div>
+              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">CITIES</div>
             </div>
             <div className="pt-4 sm:pt-0 sm:pl-8">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.reviews}%</div>
-              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">WITH GOOGLE RATINGS</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.regions}</div>
+              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">UK REGIONS</div>
             </div>
           </div>
         </div>
@@ -166,63 +151,72 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-              Find Residential or Commercial Pest Control in Your Region
+              Find Pest Control in Your Region
             </h2>
             <p className="text-xl text-white/80">
-              Choose your region to browse verified providers
+              Browse verified providers across the UK
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {regions.map((region) => (
-              <Link
-                key={region.slug}
-                href={`/pest-control/${region.slug}`}
-                className="group"
-              >
-                <div className={`rounded-2xl p-8 h-full transition-all duration-300 transform hover:-translate-y-2 ${
-                  region.status === 'live' 
-                    ? 'bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)]' 
-                    : 'bg-gradient-to-br from-[#1e293b]/80 to-[#0f172a]/80 border-[3px] border-white/30 hover:border-white/40'
-                }`}>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <MapPin className={`w-6 h-6 ${region.status === 'live' ? 'text-amber-400' : 'text-white/60'}`} />
-                      <h3 className="text-2xl font-black text-white">{region.name}</h3>
-                    </div>
-                    {region.status === 'coming-soon' && (
-                      <span className="px-3 py-1 bg-amber-500/20 text-amber-300 text-xs font-bold rounded-full whitespace-nowrap">
-                        Coming Soon
-                      </span>
-                    )}
-                  </div>
-
-                  {region.status === 'live' && region.providerCount && (
-                    <>
-                      <p className="text-3xl font-black text-amber-400 mb-2">
-                        {region.providerCount} providers
-                      </p>
-                      <p className="text-white/80 mb-4">
-                        Browse residential & commercial providers
-                      </p>
-                    </>
-                  )}
-
-                  {region.status === 'coming-soon' && (
-                    <p className="text-white/60 mb-4">
-                      We're expanding to your area soon
-                    </p>
-                  )}
-
-                  <div className={`flex items-center font-bold group-hover:translate-x-2 transition-transform ${
-                    region.status === 'live' ? 'text-amber-400' : 'text-white/60'
-                  }`}>
-                    {region.status === 'live' ? 'Browse Providers' : 'Learn More'} →
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {/* Greater London */}
+            <div className="rounded-2xl p-8 bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="w-6 h-6 text-amber-400" />
+                <h3 className="text-2xl font-black text-white">Greater London</h3>
+              </div>
+              <p className="text-3xl font-black text-amber-400 mb-4">389 providers</p>
+              <Link href="/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                Browse London →
               </Link>
-            ))}
+            </div>
+
+            {/* West Midlands */}
+            <div className="rounded-2xl p-8 bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="w-6 h-6 text-amber-400" />
+                <h3 className="text-2xl font-black text-white">West Midlands</h3>
+              </div>
+              <p className="text-3xl font-black text-amber-400 mb-4">42 providers</p>
+              <Link href="/birmingham/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                Browse Birmingham →
+              </Link>
+            </div>
+
+            {/* North West */}
+            <div className="rounded-2xl p-8 bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="w-6 h-6 text-amber-400" />
+                <h3 className="text-2xl font-black text-white">North West</h3>
+              </div>
+              <p className="text-3xl font-black text-amber-400 mb-4">207 providers</p>
+              <div className="space-y-2">
+                <Link href="/manchester/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                  Browse Manchester →
+                </Link>
+                <Link href="/liverpool/residential" className="block text-center px-4 py-2.5 border-2 border-amber-500/60 hover:border-amber-400 text-amber-400 hover:text-amber-300 font-bold rounded-lg transition-colors text-sm">
+                  Browse Liverpool →
+                </Link>
+              </div>
+            </div>
+
+            {/* Yorkshire & the Humber */}
+            <div className="rounded-2xl p-8 bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="w-6 h-6 text-amber-400" />
+                <h3 className="text-2xl font-black text-white">Yorkshire</h3>
+              </div>
+              <p className="text-3xl font-black text-amber-400 mb-4">61 providers</p>
+              <Link href="/leeds/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                Browse Leeds →
+              </Link>
+            </div>
           </div>
+
+          {/* Coming Soon */}
+          <p className="text-center text-white/50 text-sm">
+            More regions launching in 2026: South East, South West, East of England, East Midlands, North East, Scotland, Wales, Northern Ireland
+          </p>
         </div>
       </section>
 
@@ -303,9 +297,9 @@ export default function Home() {
             <div>
               <h4 className="text-white font-bold mb-4">Resources</h4>
               <ul className="space-y-2">
-                <li><Link href="/blog" className="hover:text-white transition">Guides & Blog</Link></li>
-                <li><Link href="/resources" className="hover:text-white transition">Industry Resources</Link></li>
-                <li><Link href="/professionals" className="hover:text-white transition">For Pest Professionals</Link></li>
+                <li><Link href="/blog" className="hover:text-white transition">Blog</Link></li>
+                <li><Link href="/frequently-asked-questions" className="hover:text-white transition">Pest Control FAQ</Link></li>
+                <li><Link href="/professionals" className="hover:text-white transition">For Professionals</Link></li>
               </ul>
             </div>
             <div>
