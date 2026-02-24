@@ -20,6 +20,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/prices',
+        destination: '/pest-control-costs',
+        permanent: true,
+      },
+      {
         source: '/pests',
         destination: '/pest-library',
         permanent: true,

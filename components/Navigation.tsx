@@ -18,7 +18,7 @@ export default function Navigation() {
   const isFindProviderActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/manchester') || pathname?.startsWith('/liverpool') || pathname?.startsWith('/leeds') || pathname?.startsWith('/pest-control');
   const isProductsActive = pathname === '/products' || pathname === '/commercial-products';
   const isProfessionalsActive = pathname === '/professionals';
-  const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources') || pathname?.startsWith('/frequently-asked-questions') || pathname?.startsWith('/pest-library') || pathname?.startsWith('/pest/');
+  const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources') || pathname?.startsWith('/frequently-asked-questions') || pathname?.startsWith('/pest-library') || pathname?.startsWith('/pest/') || pathname?.startsWith('/pest-control-costs');
   const isContactActive = pathname === '/contact';
 
   // Close all dropdowns when clicking outside the nav
@@ -203,6 +203,13 @@ export default function Navigation() {
                   Pest Guides
                 </Link>
                 <Link
+                  href="/pest-control-costs"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Pest Control Costs
+                </Link>
+                <Link
                   href="/blog"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -347,6 +354,13 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
               >
                 Pest Guides
+              </Link>
+              <Link
+                href="/pest-control-costs"
+                className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Pest Control Costs
               </Link>
               <Link
                 href="/blog"
