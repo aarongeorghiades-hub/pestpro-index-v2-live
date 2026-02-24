@@ -19,6 +19,16 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/pests',
+        destination: '/pest-library',
+        permanent: true,
+      },
+      {
+        source: '/pests/:slug',
+        destination: '/pest/:slug',
+        permanent: true,
+      },
     ];
   },
 };

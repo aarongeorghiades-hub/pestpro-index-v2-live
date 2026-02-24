@@ -18,7 +18,7 @@ export default function Navigation() {
   const isFindProviderActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/manchester') || pathname?.startsWith('/liverpool') || pathname?.startsWith('/leeds') || pathname?.startsWith('/pest-control');
   const isProductsActive = pathname === '/products' || pathname === '/commercial-products';
   const isProfessionalsActive = pathname === '/professionals';
-  const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources') || pathname?.startsWith('/frequently-asked-questions');
+  const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources') || pathname?.startsWith('/frequently-asked-questions') || pathname?.startsWith('/pest-library') || pathname?.startsWith('/pest/');
   const isContactActive = pathname === '/contact';
 
   // Close all dropdowns when clicking outside the nav
@@ -196,6 +196,13 @@ export default function Navigation() {
             {isResourcesOpen && (
               <div className="absolute top-full mt-2 left-0 bg-gradient-to-b from-[#1e3a8a] to-[#050812] border border-white/20 rounded-xl shadow-lg min-w-max z-50">
                 <Link
+                  href="/pest-library"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Pest Guides
+                </Link>
+                <Link
                   href="/blog"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -334,6 +341,13 @@ export default function Navigation() {
               <div className="px-4 py-2 text-white/60 text-xs font-semibold uppercase tracking-wider">
                 Resources
               </div>
+              <Link
+                href="/pest-library"
+                className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Pest Guides
+              </Link>
               <Link
                 href="/blog"
                 className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"

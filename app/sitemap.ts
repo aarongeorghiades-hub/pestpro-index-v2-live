@@ -4,6 +4,7 @@ import { getAllBoroughs } from './pest-control/borough-data';
 import { getAllBoroughs as getAllManchesterBoroughs } from './pest-control/manchester/manchester-boroughs';
 import { getAllBoroughs as getAllLiverpoolBoroughs } from './pest-control/liverpool/liverpool-boroughs';
 import { posts } from './blog/data/posts';
+import { pestGuides } from '@/data/pest-guides';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://pestproindex.com';
@@ -149,6 +150,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/pest-library`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    ...pestGuides.map((pest) => ({
+      url: `${baseUrl}/pest/${pest.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
     ...blogPostUrls,
     ...regionUrls,
     ...boroughUrls,
