@@ -15,7 +15,7 @@ export default function Navigation() {
   const navRef = useRef<HTMLDivElement>(null);
 
   const isHomeActive = pathname === '/';
-  const isFindProviderActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/manchester') || pathname?.startsWith('/liverpool') || pathname?.startsWith('/leeds') || pathname?.startsWith('/pest-control');
+  const isFindProviderActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/manchester') || pathname?.startsWith('/liverpool') || pathname?.startsWith('/leeds') || pathname?.startsWith('/nottingham') || pathname?.startsWith('/pest-control');
   const isProductsActive = pathname === '/products' || pathname === '/commercial-products';
   const isProfessionalsActive = pathname === '/professionals';
   const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources') || pathname?.startsWith('/frequently-asked-questions') || pathname?.startsWith('/pest-library') || pathname?.startsWith('/pest/') || pathname?.startsWith('/pest-control-costs');
@@ -39,10 +39,10 @@ export default function Navigation() {
     { name: 'West Midlands', href: '/pest-control/west-midlands', status: 'live', providerCount: 42 },
     { name: 'North West', href: '/pest-control/north-west', status: 'live', providerCount: 207 },
     { name: 'Yorkshire & the Humber', href: '/pest-control/yorkshire-and-the-humber', status: 'live', providerCount: 61 },
+    { name: 'East Midlands', href: '/pest-control/east-midlands', status: 'live', providerCount: 106 },
     { name: 'South East', href: '/pest-control/south-east', status: 'coming-soon' },
     { name: 'South West', href: '/pest-control/south-west', status: 'coming-soon' },
     { name: 'East of England', href: '/pest-control/east-of-england', status: 'coming-soon' },
-    { name: 'East Midlands', href: '/pest-control/east-midlands', status: 'coming-soon' },
     { name: 'North East', href: '/pest-control/north-east', status: 'coming-soon' },
     { name: 'Scotland', href: '/pest-control/scotland', status: 'coming-soon' },
     { name: 'Wales', href: '/pest-control/wales', status: 'coming-soon' },

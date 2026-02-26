@@ -3,6 +3,8 @@ import { getAllRegions } from './pest-control/data/regions';
 import { getAllBoroughs } from './pest-control/borough-data';
 import { getAllBoroughs as getAllManchesterBoroughs } from './pest-control/manchester/manchester-boroughs';
 import { getAllBoroughs as getAllLiverpoolBoroughs } from './pest-control/liverpool/liverpool-boroughs';
+import { getAllBoroughs as getAllLeedsBoroughs } from './pest-control/leeds/leeds-boroughs';
+import { getAllBoroughs as getAllNottinghamBoroughs } from './pest-control/nottingham/nottingham-boroughs';
 import { posts } from './blog/data/posts';
 import { pestGuides } from '@/data/pest-guides';
 
@@ -40,6 +42,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const liverpoolBoroughs = getAllLiverpoolBoroughs();
   const liverpoolBoroughUrls = liverpoolBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/liverpool/${borough.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Get all Leeds boroughs
+  const leedsBoroughs = getAllLeedsBoroughs();
+  const leedsBoroughUrls = leedsBoroughs.map((borough) => ({
+    url: `${baseUrl}/pest-control/leeds/${borough.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Get all Nottingham boroughs
+  const nottinghamBoroughs = getAllNottinghamBoroughs();
+  const nottinghamBoroughUrls = nottinghamBoroughs.map((borough) => ({
+    url: `${baseUrl}/pest-control/nottingham/${borough.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
@@ -109,6 +129,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/leeds/residential`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/leeds/commercial`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/nottingham/residential`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/nottingham/commercial`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/pest-control`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -173,5 +217,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...boroughUrls,
     ...manchesterBoroughUrls,
     ...liverpoolBoroughUrls,
+    ...leedsBoroughUrls,
+    ...nottinghamBoroughUrls,
   ];
 }
