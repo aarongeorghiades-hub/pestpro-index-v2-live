@@ -8,7 +8,7 @@ import Navigation from '@/components/Navigation';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ providers: 805, cities: 6, regions: 5 });
+  const [stats, setStats] = useState({ providers: 881, cities: 7, regions: 6 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -37,9 +37,9 @@ export default function Home() {
       const progress = Math.min(elapsed / duration, 1);
 
       setStats({
-        providers: Math.floor(805 * progress),
-        cities: Math.floor(6 * progress),
-        regions: Math.floor(5 * progress)
+        providers: Math.floor(881 * progress),
+        cities: Math.floor(7 * progress),
+        regions: Math.floor(6 * progress)
       });
 
       if (progress < 1) {
@@ -62,7 +62,8 @@ export default function Home() {
       { '@type': 'City', 'name': 'Manchester' },
       { '@type': 'City', 'name': 'Liverpool' },
       { '@type': 'City', 'name': 'Leeds' },
-      { '@type': 'City', 'name': 'Nottingham' }
+      { '@type': 'City', 'name': 'Nottingham' },
+      { '@type': 'City', 'name': 'Brighton' }
     ]
   };
 
@@ -224,11 +225,23 @@ export default function Home() {
                 Browse Nottingham →
               </Link>
             </div>
+
+            {/* South East */}
+            <div className="rounded-2xl p-8 bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="w-6 h-6 text-amber-400" />
+                <h3 className="text-2xl font-black text-white">South East</h3>
+              </div>
+              <p className="text-3xl font-black text-amber-400 mb-4">76 providers</p>
+              <Link href="/brighton/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                Browse Brighton →
+              </Link>
+            </div>
           </div>
 
           {/* Coming Soon */}
           <p className="text-center text-white/50 text-sm">
-            More regions launching in 2026: South East, South West, East of England, North East, Scotland, Wales, Northern Ireland
+            More regions launching in 2026: South West, East of England, North East, Scotland, Wales, Northern Ireland
           </p>
         </div>
       </section>
@@ -300,6 +313,8 @@ export default function Home() {
                 <li><Link href="/leeds/commercial" className="hover:text-white transition">Leeds Commercial</Link></li>
                 <li><Link href="/nottingham/residential" className="hover:text-white transition">Nottingham Residential</Link></li>
                 <li><Link href="/nottingham/commercial" className="hover:text-white transition">Nottingham Commercial</Link></li>
+                <li><Link href="/brighton/residential" className="hover:text-white transition">Brighton Residential</Link></li>
+                <li><Link href="/brighton/commercial" className="hover:text-white transition">Brighton Commercial</Link></li>
               </ul>
             </div>
             <div>
