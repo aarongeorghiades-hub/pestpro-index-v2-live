@@ -1549,5 +1549,129 @@ export const posts: BlogPost[] = [
 
 <p><a href="/nottingham/residential">Nottingham Residential Directory</a> | <a href="/nottingham/commercial">Nottingham Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/pest-control-costs">Pest Control Costs Guide</a></p>
 `
+  },
+  {
+    slug: 'pest-control-brighton-complete-guide',
+    title: 'Pest Control in Brighton & Sussex: What Every Homeowner Needs to Know',
+    metaTitle: 'Pest Control in Brighton & Sussex: Complete Guide | PestPro Index',
+    metaDescription: 'A practical guide to common pests in Brighton, Hove, Worthing, and across Sussex. Covers seagulls, rats, mice, wasps, bed bugs and how to choose a trusted local provider.',
+    targetKeyword: 'pest control Brighton',
+    publishDate: '2026-02-27',
+    content: `
+<p>Brighton and Sussex present a distinctive set of pest challenges shaped by the coastal environment, Regency-era housing stock, a thriving hospitality sector, and proximity to the South Downs. Whether you live in a seafront flat in Hove, a Victorian terrace in Kemptown, or a family home in Worthing, understanding local pest pressures helps you act quickly and choose the right provider.</p>
+
+<h2>Seagulls: Brighton's Most Visible Pest Problem</h2>
+
+<p>Herring gulls and lesser black-backed gulls are a defining feature of coastal Sussex. They nest on rooftops across Brighton, Hove, Eastbourne, and Worthing from April to August, becoming aggressive when protecting chicks. Gull droppings damage paintwork and stonework, block gutters, and create slip hazards. Commercial premises along the seafront and in the Lanes face particular pressure during peak tourist season.</p>
+
+<p>Professional bird control in Brighton typically involves spike installation, netting, wire systems, and in some cases falconry deterrents. Gull egg and nest removal requires a Natural England licence. Several Brighton-area providers hold specialist bird control accreditations — check their listings on PestPro Index for certification details.</p>
+
+<h2>Rodents in Period Properties</h2>
+
+<p>Brighton's housing stock includes thousands of Regency, Victorian, and Edwardian properties with features that make them vulnerable to rodent entry. Gaps around original sash windows, worn air bricks, aging pipework, and shared wall cavities in terraced streets all create access points for mice and rats.</p>
+
+<p>The city's busy restaurant and takeaway scene — particularly around the North Laine, Lanes, and Western Road — generates food waste that sustains urban rat populations. Properties backing onto the Level, Preston Park, or railway lines are at higher risk. Lewes faces specific rodent challenges due to its riverside location along the Ouse, where brown rats thrive near water.</p>
+
+<p>Seal gaps around pipes and cables, replace damaged air bricks, and keep bins securely closed. If you hear scratching in walls or ceilings, particularly between October and March when rodents seek warmth, contact a professional promptly before a small problem becomes an established colony.</p>
+
+<h2>Wasps and Bees in Summer</h2>
+
+<p>Sussex's warm coastal summers make it prime territory for wasp nests. From May onwards, queen wasps establish colonies in loft spaces, sheds, garages, and cavity walls. By August, a single nest can contain 5,000–10,000 wasps. Garden sheds and outbuildings across Worthing, Shoreham, and the residential areas of Eastbourne are common nesting sites.</p>
+
+<p>Bee swarms also appear regularly in spring and early summer. Many Brighton pest controllers offer humane bee relocation services rather than destruction — an important distinction to check when booking. If you see a cluster of bees hanging from a branch or gathering around a chimney, call a provider experienced in bee removal before they establish a permanent colony.</p>
+
+<h2>Bed Bugs in Student and Holiday Accommodation</h2>
+
+<p>Brighton's large student population and busy short-let holiday market create ideal conditions for bed bug spread. Properties near the universities, HMOs across Elm Grove, Lewes Road, and Moulsecoomb, and Airbnb apartments in the city centre are all higher-risk environments.</p>
+
+<p>Bed bugs travel in luggage, second-hand furniture, and clothing. They hide in mattress seams, headboard cracks, and skirting boards, emerging at night to feed. If you find small rust-coloured spots on bedding or experience unexplained bites in a line pattern, inspect immediately. Professional heat treatment is the most effective solution for established infestations and several Brighton-area providers offer this service.</p>
+
+<h2>Moths and Carpet Beetles in Older Homes</h2>
+
+<p>The natural fibre carpets, wool curtains, and vintage clothing common in Brighton's period properties attract clothes moths and carpet beetles. Damage often goes unnoticed until bare patches appear on carpets or holes appear in stored woollens.</p>
+
+<p>Check dark corners of wardrobes, under heavy furniture, and along carpet edges near skirting boards. Moth traps can help monitor activity levels, but established infestations usually require professional treatment to reach larvae hidden in carpet underlay and floorboard gaps.</p>
+
+<h2>How to Choose a Pest Controller in Brighton</h2>
+
+<p>PestPro Index lists 76 pest control providers across Brighton, Hove, Worthing, Eastbourne, Lewes, and wider Sussex. When comparing options:</p>
+
+<p><strong>Check certifications</strong> — BPCA (British Pest Control Association) and NPTA (National Pest Technicians Association) membership indicates professional standards and ongoing training. Our listings flag certified providers clearly.</p>
+
+<p><strong>Read Google reviews</strong> for recent experience and response times. A provider with 50+ reviews and a 4.5+ rating offers more confidence than one with no review history.</p>
+
+<p><strong>Ask about guarantees.</strong> Many Sussex providers offer follow-up visits if the initial treatment doesn't fully resolve the issue.</p>
+
+<p><strong>Consider specialism.</strong> Some providers focus on bird control, others on rodent proofing, others on insect heat treatments. PestPro Index filters let you search by pest type and service to find the best match.</p>
+
+<p><a href="/brighton/residential">Brighton Residential Directory</a> | <a href="/brighton/commercial">Brighton Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/pest-control-costs">Pest Control Costs Guide</a></p>
+`
+  },
+  {
+    slug: 'brighton-seasonal-pest-calendar',
+    title: 'Brighton & Sussex Seasonal Pest Calendar: Month-by-Month Guide',
+    metaTitle: 'Brighton & Sussex Seasonal Pest Calendar: Month-by-Month Guide | PestPro Index',
+    metaDescription: 'A month-by-month guide to pest activity across Brighton, Hove, and Sussex. Know when seagulls, wasps, rats, moths, and bed bugs are most active so you can prevent infestations before they start.',
+    targetKeyword: 'Brighton pest calendar',
+    publishDate: '2026-02-27',
+    content: `
+<p>Pest activity across Brighton and Sussex follows predictable seasonal patterns driven by coastal weather, temperature, and breeding cycles. Knowing what to expect each season helps you catch problems early — before a minor nuisance becomes a full infestation requiring professional treatment.</p>
+
+<h2>Spring (March – May)</h2>
+
+<p>Spring signals the start of increased pest activity across Sussex as temperatures rise and daylight extends.</p>
+
+<p><strong>Ants</strong> appear in kitchens and bathrooms from late March, drawn to food residue and moisture. Black garden ants are the most common species across Brighton and Worthing. Seal entry points around doors and window frames, and keep surfaces clean.</p>
+
+<p><strong>Queen wasps</strong> emerge from hibernation in April and begin scouting for nesting sites. Loft spaces, garages, sheds, and wall cavities are preferred locations. At this stage nests are golf-ball sized and easy for professionals to treat — far cheaper and simpler than dealing with a full colony later in summer.</p>
+
+<p><strong>Rats and mice</strong> breeding accelerates in spring. Properties near Brighton's railway lines, the Lewes riverside, or backs of restaurants along the seafront are at higher risk. Check for fresh droppings, gnaw marks on cables, and gaps in exterior walls. A mouse needs only a 6mm gap — the width of a pencil — to enter your property.</p>
+
+<p><strong>Clothes moths</strong> become active in wardrobes and under furniture. If you stored winter woollens without cleaning them first, check for larvae and webbing now.</p>
+
+<h2>Summer (June – August)</h2>
+
+<p>Summer is peak pest season in Sussex, driven by coastal tourism, warm weather, and maximum insect activity.</p>
+
+<p><strong>Wasps</strong> reach peak colony size by August. A mature nest in your loft or garden shed may contain 10,000+ wasps. Never attempt to treat a large nest yourself — disturbed wasps release alarm pheromones that trigger mass stinging. Professional treatment typically costs £50–£90 and resolves the problem within 24 hours.</p>
+
+<p><strong>Seagulls</strong> are at their most aggressive from June to August when chicks are on rooftops. Adult herring gulls will dive-bomb pedestrians, steal food, and attack pets near nesting sites. Brighton, Hove, Eastbourne, and Worthing seafronts are particularly affected. Commercial premises should ensure outdoor dining areas are managed and waste bins are sealed. Gull-proofing measures — spikes, netting, and wire systems — should be installed before the nesting season begins in April.</p>
+
+<p><strong>Bed bug</strong> reports spike in summer as tourism and student moves increase. Airbnb hosts, hotel operators, and landlords across Brighton should inspect between guest changeovers. Look for small dark spots on mattress seams and a distinctive sweet, musty smell.</p>
+
+<p><strong>Flies</strong> increase dramatically near the coast. Cluster flies, bluebottles, and fruit flies are all common in Brighton homes from June onwards. Keep windows screened where possible, clean kitchen waste daily, and ensure drain covers are fitted.</p>
+
+<p><strong>Flea</strong> activity peaks in late summer, particularly in homes with pets. Central-heated carpeted houses provide ideal conditions year-round, but summer warmth accelerates the breeding cycle. Treat pets regularly and vacuum thoroughly before any professional treatment.</p>
+
+<h2>Autumn (September – November)</h2>
+
+<p>Autumn is when pests begin moving indoors as temperatures drop, making prevention critical before winter.</p>
+
+<p><strong>Mice and rats</strong> seek shelter from October onwards. This is the single most important time to rodent-proof your property. Walk the exterior and seal every gap larger than 6mm around pipes, cables, vents, and doorframes. Pay special attention to older properties in Kemptown, Hanover, Seven Dials, and the Lewes conservation area where aging brickwork creates entry points.</p>
+
+<p><strong>Spiders</strong> enter homes in September and October during mating season. While house spiders are harmless, their sudden appearance can be distressing. They enter through open windows, air vents, and gaps under doors. Keeping exterior lights off at night reduces the insects that attract them.</p>
+
+<p><strong>Cluster flies</strong> gather in large numbers in loft spaces and upper rooms of houses across the South Downs and rural Wealden areas. They hibernate over winter in the thousands and while not harmful, their presence is unpleasant. Professional treatment before they settle in autumn is the most effective approach.</p>
+
+<p><strong>Squirrel</strong> activity increases as grey squirrels look for winter shelter. Properties near Preston Park, Stanmer Park, Worthing's parks, or any woodland edge in Mid Sussex and Wealden should check loft spaces for entry points. Squirrels can cause serious damage to roof timbers, electrical wiring, and water tanks.</p>
+
+<h2>Winter (December – February)</h2>
+
+<p>Winter is quieter for insect pests but critical for rodent management.</p>
+
+<p><strong>Rats and mice</strong> are most likely to be noticed between November and February when they are fully established indoors. Scratching sounds in walls, ceilings, or under floorboards — particularly at night — indicate activity. Droppings near food sources, behind kitchen units, and in loft insulation confirm their presence. Do not delay calling a professional — a pair of mice can produce 60+ offspring per year.</p>
+
+<p><strong>Cockroaches</strong> thrive in heated indoor environments year-round. Brighton's restaurant sector, takeaways along London Road, and commercial kitchens should maintain rigorous monitoring through winter. Oriental cockroaches are the most common species in Sussex, favouring damp basements and drain access points.</p>
+
+<p><strong>Overwintering pests</strong> like cluster flies and ladybirds may emerge on warm winter days, causing confusion. They have not infested your property — they are simply using your loft or window frames for hibernation and will leave in spring.</p>
+
+<p><strong>Bird proofing</strong> work is best scheduled in winter before the spring nesting season begins. This is the ideal time to install gull deterrents, pigeon spikes, and netting on commercial and residential buildings across coastal Sussex.</p>
+
+<h2>Find a Provider Before You Need One</h2>
+
+<p>PestPro Index lists 76 pest control providers across Brighton, Hove, Worthing, Eastbourne, Lewes, and wider Sussex. Every listing includes verified Google ratings, certification details, and service information — with no lead fees and no commissions.</p>
+
+<p><a href="/brighton/residential">Brighton Residential Directory</a> | <a href="/brighton/commercial">Brighton Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/pest-control-costs">Pest Control Costs Guide</a></p>
+`
   }
 ]
