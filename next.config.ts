@@ -1,7 +1,49 @@
 import type { NextConfig } from "next";
 
+const londonBoroughSlugs = [
+  'barking-and-dagenham',
+  'barnet',
+  'bexley',
+  'brent',
+  'bromley',
+  'camden',
+  'city-of-london',
+  'croydon',
+  'ealing',
+  'enfield',
+  'greenwich',
+  'hackney',
+  'hammersmith-and-fulham',
+  'haringey',
+  'harrow',
+  'havering',
+  'hillingdon',
+  'hounslow',
+  'islington',
+  'kensington-and-chelsea',
+  'kingston-upon-thames',
+  'lambeth',
+  'lewisham',
+  'merton',
+  'newham',
+  'redbridge',
+  'richmond-upon-thames',
+  'southwark',
+  'sutton',
+  'tower-hamlets',
+  'waltham-forest',
+  'wandsworth',
+  'westminster',
+];
+
 const nextConfig: NextConfig = {
   async redirects() {
+    const londonBoroughRedirects = londonBoroughSlugs.map((slug) => ({
+      source: `/pest-control/${slug}`,
+      destination: `/pest-control/london/${slug}`,
+      permanent: true,
+    }));
+
     return [
       {
         source: '/:path*',
@@ -34,6 +76,7 @@ const nextConfig: NextConfig = {
         destination: '/pest/:slug',
         permanent: true,
       },
+      ...londonBoroughRedirects,
     ];
   },
 };

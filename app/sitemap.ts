@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getAllRegions } from './pest-control/data/regions';
-import { getAllBoroughs } from './pest-control/borough-data';
+import { getAllBoroughs } from './pest-control/london/london-boroughs';
 import { getAllBoroughs as getAllManchesterBoroughs } from './pest-control/manchester/manchester-boroughs';
 import { getAllBoroughs as getAllLiverpoolBoroughs } from './pest-control/liverpool/liverpool-boroughs';
 import { getAllBoroughs as getAllLeedsBoroughs } from './pest-control/leeds/leeds-boroughs';
@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Get all London boroughs
   const boroughs = getAllBoroughs();
   const boroughUrls = boroughs.map((borough) => ({
-    url: `${baseUrl}/pest-control/${borough.slug}`,
+    url: `${baseUrl}/pest-control/london/${borough.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
