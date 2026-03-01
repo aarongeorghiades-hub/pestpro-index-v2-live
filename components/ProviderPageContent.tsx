@@ -141,18 +141,14 @@ export default function ProviderPageContent() {
             ← Back to {provider.regions?.includes('birmingham') ? 'Birmingham Residential' : 'London Residential'}
           </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-2">{provider.name}</h1>
-          {provider.google_rating && (
-            <div className="flex items-center gap-2">
+          {provider.google_rating != null && (
+            <div className="flex items-center gap-2 mt-2">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={18}
-                    className={i < Math.floor(provider.google_rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}
-                  />
+                  <Star key={i} size={18} className={i < Math.floor(provider.google_rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'} />
                 ))}
               </div>
-              <span className="text-lg font-semibold text-gray-900">{provider.google_rating.toFixed(1)}</span>
+              <span className="text-lg font-semibold text-gray-900">{provider.google_rating}</span>
               {provider.google_review_count && (
                 <span className="text-gray-600">({provider.google_review_count.toLocaleString()} reviews)</span>
               )}
