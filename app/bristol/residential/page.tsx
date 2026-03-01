@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useMemo } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { createClient } from '@/utils/supabase';
@@ -277,7 +278,14 @@ export default function ResidentialPage() {
       {/* HERO SECTION */}
       <section className="relative h-[500px] overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812]"></div>
+          <Image
+            src="/images/bristol-skyline.webp"
+            alt="Bristol skyline illustration"
+            fill
+            className="object-cover opacity-95"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/50 via-[#2563eb]/45 to-[#1e3a8a]/50"></div>
         </div>
 
         <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4">
