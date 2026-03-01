@@ -173,12 +173,72 @@ export default function CommercialPage() {
     loadProviders();
   }, []);
 
+  // Column mapping: filter key → all possible Supabase column names
+  const filterColumnMap: Record<string, string[]> = {
+    bpca_member: ['bpca_member'],
+    npta_member: ['npta_member'],
+    rsph_level_2: ['rsph_level_2'],
+    safe_contractor: ['safe_contractor'],
+    chas_accredited: ['chas_accredited'],
+    basis_prompt: ['basis_prompt'],
+    cepa_certified: ['cepa_certified'],
+    iso_9001: ['iso_9001'],
+    iso_14001: ['iso_14001'],
+    iso_45001: ['iso_45001'],
+    constructionline: ['constructionline'],
+    trustmark: ['trustmark'],
+    property_management: ['property_management'],
+    social_housing: ['social_housing'],
+    hospitality: ['hospitality', 'business_restaurants', 'business_hotels'],
+    healthcare: ['healthcare', 'business_healthcare'],
+    education: ['education', 'business_schools'],
+    retail: ['retail', 'business_retail'],
+    food_production: ['food_production'],
+    warehousing_logistics: ['warehousing_logistics', 'business_warehouses'],
+    offices: ['offices', 'business_offices'],
+    leisure_facilities: ['leisure_facilities'],
+    heat_treatment: ['heat_treatment', 'specialist_heat_treatment'],
+    falconry_bird_control: ['falconry_bird_control'],
+    detection_dogs: ['detection_dogs'],
+    high_rise_rope_access: ['high_rise_rope_access'],
+    fumigation: ['fumigation'],
+    proofing_services: ['proofing_services', 'specialist_pest_proofing'],
+    flexible_contracts: ['flexible_contracts'],
+    no_tie_in_contracts: ['no_tie_in_contracts'],
+    retainer_services: ['retainer_services'],
+    one_off_services: ['one_off_services'],
+    emergency_24_7: ['emergency_24_7', 'service_emergency_24_7'],
+    multi_site_coverage: ['multi_site_coverage'],
+    national_coverage: ['national_coverage'],
+    unmarked_vehicles: ['unmarked_vehicles'],
+    non_disruptive_services: ['non_disruptive_services'],
+    out_of_hours_services: ['out_of_hours_services'],
+    same_day_service: ['same_day_service'],
+    free_surveys: ['free_surveys', 'service_free_survey'],
+    free_quotes: ['free_quotes'],
+    guarantees_offered: ['guarantees_offered', 'service_guarantee'],
+    years_established_25_plus: ['years_established_25_plus'],
+    technicians_50_plus: ['technicians_50_plus'],
+    service_areas_documented: ['service_areas_documented'],
+    insurance_details_published: ['insurance_details_published'],
+    eco_friendly_methods: ['eco_friendly_methods', 'service_eco_friendly'],
+    humane_non_lethal_methods: ['humane_non_lethal_methods'],
+    peta_endorsed: ['peta_endorsed'],
+    rspca_recognized: ['rspca_recognized'],
+  };
+
+  // Helper: check if a provider matches a filter key (checks all mapped columns)
+  const providerMatchesFilter = (provider: Provider, filterKey: string): boolean => {
+    const columns = filterColumnMap[filterKey] || [filterKey];
+    return columns.some((col) => provider[col] === true);
+  };
+
   // Calculate filter counts
   const calculateFilterCounts = (data: Provider[]) => {
     const counts: FilterCounts = {};
     Object.values(filterCategories).forEach((category) => {
       category.forEach((filter) => {
-        counts[filter.key] = data.filter((p) => p[filter.key] === true).length;
+        counts[filter.key] = data.filter((p) => providerMatchesFilter(p, filter.key)).length;
       });
     });
     setFilterCounts(counts);
@@ -189,7 +249,7 @@ export default function CommercialPage() {
     let score = 0;
     Object.values(filterCategories).forEach((category) => {
       category.forEach((filter) => {
-        if (provider[filter.key] === true) score++;
+        if (providerMatchesFilter(provider, filter.key)) score++;
       });
     });
     return score;
@@ -213,52 +273,8 @@ export default function CommercialPage() {
     let filtered = data;
 
     if (filters.size > 0) {
-      const filterColumnMap: Record<string, string[]> = {
-        property_management: ['property_management'],
-        social_housing: ['social_housing'],
-        hospitality: ['hospitality', 'business_restaurants', 'business_hotels'],
-        healthcare: ['healthcare', 'business_healthcare'],
-        education: ['education', 'business_schools'],
-        retail: ['retail', 'business_retail'],
-        food_production: ['food_production'],
-        warehousing_logistics: ['warehousing_logistics', 'business_warehouses'],
-        offices: ['offices', 'business_offices'],
-        leisure_facilities: ['leisure_facilities'],
-        heat_treatment: ['heat_treatment', 'specialist_heat_treatment'],
-        falconry_bird_control: ['falconry_bird_control'],
-        detection_dogs: ['detection_dogs'],
-        high_rise_rope_access: ['high_rise_rope_access'],
-        fumigation: ['fumigation'],
-        proofing_services: ['proofing_services', 'specialist_pest_proofing'],
-        flexible_contracts: ['flexible_contracts'],
-        no_tie_in_contracts: ['no_tie_in_contracts'],
-        retainer_services: ['retainer_services'],
-        one_off_services: ['one_off_services'],
-        emergency_24_7: ['emergency_24_7', 'service_emergency_24_7'],
-        multi_site_coverage: ['multi_site_coverage'],
-        national_coverage: ['national_coverage'],
-        unmarked_vehicles: ['unmarked_vehicles'],
-        non_disruptive_services: ['non_disruptive_services'],
-        out_of_hours_services: ['out_of_hours_services'],
-        same_day_service: ['same_day_service'],
-        free_surveys: ['free_surveys', 'service_free_survey'],
-        free_quotes: ['free_quotes'],
-        guarantees_offered: ['guarantees_offered', 'service_guarantee'],
-        years_established_25_plus: ['years_established_25_plus'],
-        technicians_50_plus: ['technicians_50_plus'],
-        service_areas_documented: ['service_areas_documented'],
-        insurance_details_published: ['insurance_details_published'],
-        eco_friendly_methods: ['eco_friendly_methods', 'service_eco_friendly'],
-        humane_non_lethal_methods: ['humane_non_lethal_methods'],
-        peta_endorsed: ['peta_endorsed'],
-        rspca_recognized: ['rspca_recognized'],
-      };
-
       filtered = data.filter((provider) => {
-        return Array.from(filters).some((filterKey) => {
-          const columns = filterColumnMap[filterKey] || [filterKey];
-          return columns.some((col) => provider[col] === true);
-        });
+        return Array.from(filters).some((filterKey) => providerMatchesFilter(provider, filterKey));
       });
     }
 

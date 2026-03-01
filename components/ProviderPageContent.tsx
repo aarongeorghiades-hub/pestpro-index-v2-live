@@ -76,8 +76,10 @@ export default function ProviderPageContent() {
         document.head.appendChild(metaDesc);
       }
       
-      const rating = provider.google_rating ? ` Rated ${provider.google_rating}/5.` : '';
-      const reviews = provider.google_review_count ? ` ${provider.google_review_count} reviews.` : '';
+      const ratingValue = provider.google_rating || provider.totalScore;
+      const reviewCount = provider.google_review_count || provider.reviewsCount;
+      const rating = ratingValue ? ` Rated ${ratingValue}/5.` : '';
+      const reviews = reviewCount ? ` ${reviewCount} reviews.` : '';
       const postcode = provider.postcode ? ` Serving ${provider.postcode} area.` : '';
       
       metaDesc.setAttribute('content', 
@@ -141,20 +143,20 @@ export default function ProviderPageContent() {
             ← Back to {provider.regions?.includes('birmingham') ? 'Birmingham Residential' : 'London Residential'}
           </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-2">{provider.name}</h1>
-          {provider.google_rating && (
+          {(provider.google_rating || provider.totalScore) && (
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
                     size={18}
-                    className={i < Math.floor(provider.google_rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}
+                    className={i < Math.floor(provider.google_rating || provider.totalScore) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}
                   />
                 ))}
               </div>
-              <span className="text-lg font-semibold text-gray-900">{provider.google_rating}</span>
-              {provider.google_review_count && (
-                <span className="text-gray-600">({provider.google_review_count} reviews)</span>
+              <span className="text-lg font-semibold text-gray-900">{(provider.google_rating || provider.totalScore)?.toFixed(1)}</span>
+              {(provider.google_review_count || provider.reviewsCount) && (
+                <span className="text-gray-600">({(provider.google_review_count || provider.reviewsCount)?.toLocaleString()} reviews)</span>
               )}
             </div>
           )}
