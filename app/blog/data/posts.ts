@@ -1994,5 +1994,189 @@ export const posts: BlogPost[] = [
 
 <p><a href="/bristol/residential">Bristol Residential Directory</a> | <a href="/bristol/commercial">Bristol Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/pest-control-costs">Pest Control Costs Guide</a></p>
 `
+  },
+  {
+    slug: 'pest-control-glasgow-complete-guide',
+    title: 'Pest Control in Glasgow: A Complete Guide for Homeowners and Businesses',
+    metaTitle: 'Pest Control in Glasgow: Complete Guide for 2026 | PestPro Index',
+    metaDescription: 'Everything you need to know about pest control in Glasgow. Common pests, costs, when to call a professional, and how to find trusted providers across Scotland.',
+    targetKeyword: 'pest control Glasgow',
+    publishDate: '2026-03-01',
+    content: `
+<p>Glasgow is Scotland's largest city, home to over 630,000 people across diverse neighbourhoods from the grand tenements of the West End to the regenerated East End. Its Victorian infrastructure, riverside location along the Clyde, and dense urban environment create particular pest control challenges that every homeowner and business should understand.</p>
+
+<p>This guide covers the most common pests in Glasgow, when to call a professional, what to expect in terms of cost, and how to find the right pest control provider in Scotland.</p>
+
+<h2>Glasgow's Most Common Pests</h2>
+
+<p>The city's age, climate, and geography mean certain pests are more prevalent than others. Here are the ones Glasgow residents and businesses encounter most frequently.</p>
+
+<h3>Rats</h3>
+
+<p>Glasgow has a well-documented rat problem. The city's extensive Victorian sewer network, the River Clyde corridor, and the dense urban environment provide ideal conditions for brown rats. They're particularly active along the waterfront, in the Merchant City, and around older residential areas where ageing drainage offers easy access to properties. Glasgow's mild, wet winters — rarely cold enough to significantly reduce rat populations — mean activity continues year-round.</p>
+
+<h3>Mice</h3>
+
+<p>House mice are arguably Glasgow's most common domestic pest. The city's tenement buildings, many dating from the 1890s to 1930s, have numerous entry points through ageing stonework, gaps around pipes, and shared wall cavities. Once mice enter one flat in a tenement close, they can access multiple properties. The West End, Southside, and Dennistoun are particularly affected due to the density of older housing stock.</p>
+
+<h3>Seagulls</h3>
+
+<p>Herring gulls and lesser black-backed gulls have become increasingly problematic in Glasgow. They nest on flat-roofed commercial and residential buildings across the city centre, becoming aggressive during the breeding season from April to August. Their noise, mess, and dive-bombing behaviour near nests make them one of the city's most visible pest issues. Note that gulls are protected under the Wildlife and Countryside Act 1981, so control measures require appropriate licensing.</p>
+
+<h3>Bed Bugs</h3>
+
+<p>Glasgow has seen a significant increase in bed bug cases in recent years, driven by international travel, the growth of short-let accommodation, and the city's large student population. Infestations are reported across all types of housing, from student flats in the West End to hotels in the city centre. Bed bugs require professional heat treatment or targeted insecticide application — DIY approaches rarely succeed.</p>
+
+<h3>Wasps</h3>
+
+<p>Wasp nests are a common summer complaint across Glasgow's residential areas. The leafy suburbs of Bearsden, Milngavie, and the West End see particular activity, with nests appearing in roof spaces, wall cavities, garden sheds, and underground burrows. Scottish wasp season typically runs from June to September.</p>
+
+<h3>Pigeons</h3>
+
+<p>Feral pigeons roost extensively on buildings across Glasgow city centre, particularly around George Square, Central Station, and commercial buildings along Sauchiehall Street. Their droppings are corrosive to stonework and can carry diseases. Commercial properties often require ongoing pigeon proofing and deterrent programmes.</p>
+
+<h2>When to Call a Professional</h2>
+
+<p>Some pest issues can be managed with DIY methods, but others require professional intervention. As a general rule, call a professional if:</p>
+
+<ul>
+<li>You have a rat infestation — rats are intelligent, cautious around new objects, and can cause serious structural damage</li>
+<li>Mice keep returning despite trapping — this usually indicates multiple entry points that need professional proofing</li>
+<li>You suspect bed bugs — professional heat treatment is the most reliable elimination method</li>
+<li>A wasp nest is in an inaccessible location or you're allergic to stings</li>
+<li>You're dealing with cockroaches — they breed rapidly and require targeted treatment</li>
+<li>The problem is in a commercial premises — businesses have legal obligations under food safety and health regulations</li>
+</ul>
+
+<h2>Typical Pest Control Costs in Glasgow</h2>
+
+<p>Glasgow pest control costs are generally lower than London but comparable to other major UK cities. Typical prices for residential treatments:</p>
+
+<ul>
+<li><strong>Mice treatment:</strong> £80–£180 for a standard treatment programme (usually 2–3 visits)</li>
+<li><strong>Rat treatment:</strong> £120–£250 depending on severity and access requirements</li>
+<li><strong>Wasp nest removal:</strong> £50–£100 for a single nest</li>
+<li><strong>Bed bug treatment:</strong> £250–£600 depending on room count and treatment method</li>
+<li><strong>Cockroach treatment:</strong> £100–£250 for a standard residential treatment</li>
+</ul>
+
+<p>Commercial contracts vary significantly based on premises size, sector, and frequency of visits. Most Glasgow commercial providers offer free initial surveys and quotations.</p>
+
+<h2>What to Look for in a Glasgow Pest Controller</h2>
+
+<p>When choosing a pest control provider in Glasgow, consider these factors:</p>
+
+<ul>
+<li><strong>Professional membership:</strong> Look for BPCA (British Pest Control Association) or NPTA (National Pest Technicians Association) membership</li>
+<li><strong>Local knowledge:</strong> Glasgow's tenement buildings and Victorian infrastructure require specific expertise</li>
+<li><strong>Google reviews:</strong> Check both the rating and the number of reviews for a realistic picture</li>
+<li><strong>Scottish licensing:</strong> Ensure the provider complies with Scottish Environmental Protection Agency (SEPA) regulations</li>
+<li><strong>Guarantees:</strong> Reputable providers offer guarantees on their work, typically 3–6 months</li>
+<li><strong>Emergency availability:</strong> If you need urgent treatment, check whether they offer same-day or 24/7 service</li>
+</ul>
+
+<h2>Glasgow's Unique Pest Control Challenges</h2>
+
+<p>Several factors make Glasgow's pest control landscape distinct from other UK cities:</p>
+
+<p><strong>Tenement buildings:</strong> Glasgow's iconic tenement flats share wall cavities, roof spaces, and drainage between multiple properties. A pest problem in one flat can quickly spread to neighbours. Effective treatment often requires co-ordination between multiple residents or the factor (property management company).</p>
+
+<p><strong>Climate:</strong> Scotland's mild, wet climate suits rats and mice year-round. Unlike southern England, Glasgow rarely experiences the dry, hot conditions that can naturally suppress some pest populations. Conversely, the cooler summers mean some pests like cockroaches are less established than in London.</p>
+
+<p><strong>The Clyde corridor:</strong> The River Clyde and its tributaries provide highways for rat populations across the city. Properties near the river, canals, and burns face higher pest pressure.</p>
+
+<p><strong>Student population:</strong> Glasgow's large student population (over 70,000 across multiple universities) creates high turnover in rental properties, which can lead to pest issues going unreported or untreated between tenancies.</p>
+
+<h2>Find the Right Provider in Glasgow</h2>
+
+<p>PestPro Index lists 60 verified pest control providers covering Glasgow and Scotland. Browse by pest type, certifications, service features, and Google ratings — with no lead fees and no commissions.</p>
+
+<p><a href="/glasgow/residential">Glasgow Residential Directory</a> | <a href="/glasgow/commercial">Glasgow Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/pest-control-costs">Pest Control Costs Guide</a></p>
+`
+  },
+  {
+    slug: 'glasgow-seasonal-pest-calendar',
+    title: 'Glasgow Seasonal Pest Calendar: What to Expect Throughout the Year',
+    metaTitle: 'Glasgow Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index',
+    metaDescription: 'Month-by-month guide to pest activity in Glasgow and Scotland. Know what pests to expect each season and when to arrange professional treatment.',
+    targetKeyword: 'Glasgow pest control seasonal',
+    publishDate: '2026-03-01',
+    content: `
+<p>Glasgow's climate — mild, wet, and rarely experiencing extreme temperatures — creates a distinctive pattern of pest activity throughout the year. Understanding when different pests are most active helps homeowners and businesses plan prevention and treatment effectively.</p>
+
+<p>This seasonal calendar covers the most common pests in Glasgow and across central Scotland, with practical advice for each period of the year.</p>
+
+<h2>Spring (March–May): The Awakening</h2>
+
+<p>Spring marks the start of increased pest activity as temperatures rise and daylight hours extend. This is when many pest issues first become apparent.</p>
+
+<p><strong>Rats and mice</strong> that have been sheltering indoors during winter begin to explore more widely. As gardens and outdoor spaces come back to life, rat activity increases around compost bins, bird feeders, and outbuildings. Indoor mouse populations that built up over winter may become more noticeable as they become more active.</p>
+
+<p><strong>Ants</strong> emerge as ground temperatures rise, typically from late April. Flying ant activity begins, and ground-nesting species establish new colonies. Black garden ants frequently enter Glasgow properties through cracks in foundations and around door frames.</p>
+
+<p><strong>Wasps</strong> — queen wasps emerge from hibernation in March and April, beginning to build new nests. Early-season nest detection is valuable because nests are small and easier to treat. Check roof spaces, sheds, and wall cavities for early nest activity.</p>
+
+<p><strong>Cluster flies</strong> that overwintered in roof spaces and window frames begin to emerge, sometimes in significant numbers. Upper-floor tenement flats in the West End and Southside frequently report spring cluster fly activity.</p>
+
+<p><strong>Moths</strong> — clothes moths become more active as temperatures rise. Check stored woolens, natural fibres, and carpets for signs of larvae damage. Casemere, silk, and undisturbed wool garments are particularly vulnerable.</p>
+
+<p>Spring is the ideal time for preventative pest-proofing. Seal entry points around pipes, doors, and windows before summer pest pressure increases.</p>
+
+<h2>Summer (June–August): Peak Activity</h2>
+
+<p>Summer brings the highest pest activity across Glasgow, with warm temperatures and long daylight hours driving breeding and foraging.</p>
+
+<p><strong>Wasps</strong> reach peak colony size in July and August. Nests that started with a single queen in spring can now contain thousands of workers. Glasgow's leafy suburbs — Bearsden, Hyndland, Cathcart — see the highest concentration of wasp nest callouts. Late summer is when wasps become most aggressive as colonies begin to decline and workers seek sweet food sources.</p>
+
+<p><strong>Seagulls</strong> are at their most problematic during summer breeding season. Nesting herring gulls and lesser black-backed gulls become territorial and aggressive near their rooftop nests across Glasgow city centre. Chicks fledging in July and August often end up on the ground, prompting aggressive parental behaviour. Contact the council or a licensed pest controller for advice — it is illegal to disturb nesting gulls without appropriate licensing.</p>
+
+<p><strong>Bed bugs</strong> peak during summer months due to increased travel and tourism. Glasgow's hotels, Airbnbs, and student accommodation see the highest bed bug reports between June and September. If you run short-let accommodation, regular inspections during changeovers are essential.</p>
+
+<p><strong>Fleas</strong> become more active in warm weather, particularly in homes with pets. Cat fleas are the most common species in Glasgow. Flea larvae develop faster in warm, humid conditions, meaning populations can explode quickly in summer.</p>
+
+<p><strong>Flies</strong> of various species increase significantly. House flies, bluebottles, and fruit flies are common in domestic kitchens, while commercial kitchens face particular pressure during warm spells. Drain flies can emerge from poorly maintained drains in Glasgow's older properties.</p>
+
+<p><strong>Foxes</strong> are more visible during summer evenings, particularly in the Southside, West End, and around Glasgow Green. While not typically dangerous, they can cause disturbance and damage to gardens. Fox cubs born in spring become increasingly independent and exploratory.</p>
+
+<h2>Autumn (September–November): The Migration Indoors</h2>
+
+<p>Autumn is a critical period for pest prevention in Glasgow. As temperatures drop, pests seek warmth and shelter indoors.</p>
+
+<p><strong>Mice</strong> — autumn is peak season for mouse entry into Glasgow properties. As outdoor food sources diminish and temperatures fall, mice actively seek access to heated buildings. Glasgow's tenement buildings are particularly vulnerable, with mice entering through gaps as small as 6mm around pipes, cable entries, and beneath doors. A single mouse in a tenement close can lead to infestations across multiple flats within weeks.</p>
+
+<p><strong>Rats</strong> also increase their attempts to access buildings in autumn. Rat activity around drains and sewer access points increases as they seek warmth. Properties near the Clyde, the Forth and Clyde Canal, and urban watercourses face the highest pressure.</p>
+
+<p><strong>Cluster flies</strong> seek hibernation sites from late September, congregating in south-facing roof spaces and window frames. Properties in the suburban and semi-rural fringes of Glasgow — Milngavie, Bishopbriggs, East Kilbride — are particularly affected.</p>
+
+<p><strong>Squirrels</strong> may attempt to access roof spaces as temperatures drop, particularly in areas near parks and mature trees. Grey squirrels can cause significant damage to roof timbers, insulation, and electrical wiring. Properties near Kelvingrove Park, Queen's Park, and Pollok Country Park are most at risk.</p>
+
+<p><strong>Spiders</strong> become more noticeable indoors during autumn as males search for mates. While not a pest control issue per se, giant house spiders entering Glasgow homes between September and November generate significant numbers of enquiries.</p>
+
+<p>Autumn is the most important time for pest-proofing. Seal gaps around pipes, fit door brushes, and check roof spaces before winter drives pests indoors.</p>
+
+<h2>Winter (December–February): Indoor Persistence</h2>
+
+<p>Glasgow's winters are mild compared to much of Scotland, with average temperatures rarely dropping below freezing for extended periods. This means pest activity continues through winter, albeit at reduced levels.</p>
+
+<p><strong>Mice</strong> are the most common winter pest complaint in Glasgow. Once established indoors, they breed throughout winter in heated properties. A pair of mice can produce up to 60 offspring per year, so early intervention is critical. Listen for scratching in wall cavities and check for droppings behind kitchen units and in cupboards.</p>
+
+<p><strong>Rats</strong> remain active through Glasgow's mild winters. Sewer rats continue to operate underground, and those that gained access to buildings in autumn will stay throughout winter. Rat activity around bin stores, particularly in tenement back courts, continues year-round.</p>
+
+<p><strong>Cockroaches</strong> — while less common in Glasgow than in London, German cockroaches can be found in centrally heated commercial kitchens and residential blocks with shared heating systems. They remain active year-round in warm indoor environments.</p>
+
+<p><strong>Bed bugs</strong> activity reduces somewhat in winter but does not stop entirely. Heated properties maintain conditions suitable for bed bug survival and reproduction throughout the year.</p>
+
+<p><strong>Cluster flies</strong> remain dormant in roof spaces through winter, occasionally becoming active during mild spells and warm days when they may emerge at windows.</p>
+
+<p><strong>Pigeons</strong> continue to roost on buildings year-round, with their droppings accumulating on ledges, signs, and walkways. Winter is a good time for businesses to install proofing measures such as bird netting, spikes, and deterrent systems.</p>
+
+<p>Winter is an excellent time for businesses to arrange pest surveys and set up annual contracts. Many providers offer competitive rates for contracts agreed during the quieter months.</p>
+
+<h2>Find the Right Provider for Any Season</h2>
+
+<p>Whatever the season, PestPro Index helps you find the right pest control provider in Glasgow and Scotland. Browse 60 providers — filter by pest type, emergency availability, certifications, and more.</p>
+
+<p><a href="/glasgow/residential">Glasgow Residential Directory</a> | <a href="/glasgow/commercial">Glasgow Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/pest-control-costs">Pest Control Costs Guide</a></p>
+`
   }
 ]

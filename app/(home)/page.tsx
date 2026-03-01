@@ -8,7 +8,7 @@ import Navigation from '@/components/Navigation';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ providers: 977, cities: 9, regions: 8 });
+  const [stats, setStats] = useState({ providers: 1037, cities: 10, regions: 9 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -37,9 +37,9 @@ export default function Home() {
       const progress = Math.min(elapsed / duration, 1);
 
       setStats({
-        providers: Math.floor(977 * progress),
-        cities: Math.floor(9 * progress),
-        regions: Math.floor(8 * progress)
+        providers: Math.floor(1037 * progress),
+        cities: Math.floor(10 * progress),
+        regions: Math.floor(9 * progress)
       });
 
       if (progress < 1) {
@@ -65,7 +65,8 @@ export default function Home() {
       { '@type': 'City', 'name': 'Nottingham' },
       { '@type': 'City', 'name': 'Brighton' },
       { '@type': 'City', 'name': 'Sheffield' },
-      { '@type': 'City', 'name': 'Bristol' }
+      { '@type': 'City', 'name': 'Bristol' },
+      { '@type': 'City', 'name': 'Glasgow' }
     ]
   };
 
@@ -263,11 +264,23 @@ export default function Home() {
                 Browse Bristol →
               </Link>
             </div>
+
+            {/* Scotland */}
+            <div className="rounded-2xl p-8 bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="w-6 h-6 text-amber-400" />
+                <h3 className="text-2xl font-black text-white">Scotland</h3>
+              </div>
+              <p className="text-3xl font-black text-amber-400 mb-4">60 providers</p>
+              <Link href="/glasgow/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                Browse Glasgow →
+              </Link>
+            </div>
           </div>
 
           {/* Coming Soon */}
           <p className="text-center text-white/50 text-sm">
-            More regions launching in 2026: East of England, North East, Scotland, Wales, Northern Ireland
+            More regions launching in 2026: East of England, North East, Wales, Northern Ireland
           </p>
         </div>
       </section>
@@ -345,6 +358,8 @@ export default function Home() {
                 <li><Link href="/sheffield/commercial" className="hover:text-white transition">Sheffield Commercial</Link></li>
                 <li><Link href="/bristol/residential" className="hover:text-white transition">Bristol Residential</Link></li>
                 <li><Link href="/bristol/commercial" className="hover:text-white transition">Bristol Commercial</Link></li>
+                <li><Link href="/glasgow/residential" className="hover:text-white transition">Glasgow Residential</Link></li>
+                <li><Link href="/glasgow/commercial" className="hover:text-white transition">Glasgow Commercial</Link></li>
               </ul>
             </div>
             <div>
