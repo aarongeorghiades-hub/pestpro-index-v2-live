@@ -141,7 +141,9 @@ export default function ProviderPageContent() {
             ← Back to {provider.regions?.includes('birmingham') ? 'Birmingham Residential' : 'London Residential'}
           </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-2">{provider.name}</h1>
-          {provider.google_rating != null && (
+          {/* DEBUG: remove after confirming */}
+          <p className="text-xs text-red-500">DEBUG: google_rating={String(provider.google_rating)} | google_review_count={String(provider.google_review_count)}</p>
+          {provider.google_rating != null && provider.google_rating > 0 && (
             <div className="flex items-center gap-2 mt-2">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
