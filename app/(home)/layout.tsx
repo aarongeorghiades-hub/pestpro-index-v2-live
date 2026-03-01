@@ -2,13 +2,13 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: "PestPro Index — The UK's Neutral Pest Control Directory",
-  description: 'Find trusted pest controllers across the UK. Compare 934+ vetted providers in London, Birmingham, Manchester, Liverpool, Leeds, Nottingham, Brighton and Sheffield. No lead fees, no commissions.',
+  description: 'Find trusted pest controllers across the UK. Compare 977+ vetted providers in London, Birmingham, Manchester, Liverpool, Leeds, Nottingham, Brighton, Sheffield and Bristol. No lead fees, no commissions.',
   alternates: {
     canonical: 'https://pestproindex.com',
   },
   openGraph: {
     title: "PestPro Index — The UK's Neutral Pest Control Directory",
-    description: 'Find trusted pest controllers across the UK. Compare 934+ vetted providers in London, Birmingham, Manchester, Liverpool, Leeds, Nottingham, Brighton and Sheffield. No lead fees, no commissions.',
+    description: 'Find trusted pest controllers across the UK. Compare 977+ vetted providers in London, Birmingham, Manchester, Liverpool, Leeds, Nottingham, Brighton, Sheffield and Bristol. No lead fees, no commissions.',
     siteName: 'PestPro Index',
     locale: 'en_GB',
     type: 'website',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary',
     title: "PestPro Index — The UK's Neutral Pest Control Directory",
-    description: 'Find trusted pest controllers across the UK. Compare 934+ vetted providers in London, Birmingham, Manchester, Liverpool, Leeds, Nottingham, Brighton and Sheffield. No lead fees, no commissions.',
+    description: 'Find trusted pest controllers across the UK. Compare 977+ vetted providers in London, Birmingham, Manchester, Liverpool, Leeds, Nottingham, Brighton, Sheffield and Bristol. No lead fees, no commissions.',
   },
 }
 

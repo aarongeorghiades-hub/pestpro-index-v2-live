@@ -7,6 +7,7 @@ import { getAllBoroughs as getAllLeedsBoroughs } from './pest-control/leeds/leed
 import { getAllBoroughs as getAllNottinghamBoroughs } from './pest-control/nottingham/nottingham-boroughs';
 import { getAllBoroughs as getAllBrightonBoroughs } from './pest-control/brighton/brighton-boroughs';
 import { getAllBoroughs as getAllSheffieldBoroughs } from './pest-control/sheffield/sheffield-boroughs';
+import { getAllBoroughs as getAllBristolBoroughs } from './pest-control/bristol/bristol-boroughs';
 import { posts } from './blog/data/posts';
 import { pestGuides } from '@/data/pest-guides';
 
@@ -80,6 +81,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const sheffieldBoroughs = getAllSheffieldBoroughs();
   const sheffieldBoroughUrls = sheffieldBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/sheffield/${borough.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Get all Bristol boroughs
+  const bristolBoroughs = getAllBristolBoroughs();
+  const bristolBoroughUrls = bristolBoroughs.map((borough) => ({
+    url: `${baseUrl}/pest-control/bristol/${borough.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
@@ -197,6 +207,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/bristol/residential`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/bristol/commercial`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/pest-control`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -265,5 +287,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...nottinghamBoroughUrls,
     ...brightonBoroughUrls,
     ...sheffieldBoroughUrls,
+    ...bristolBoroughUrls,
   ];
 }
