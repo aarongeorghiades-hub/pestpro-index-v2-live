@@ -3,28 +3,19 @@ import ProviderPageContent from '@/components/ProviderPageContent';
 import ProviderJsonLd from '@/components/ProviderJsonLd';
 import { createClient } from '@/utils/supabase';
 
-function generateSlug(name: string): string {
-  return name
-    .toLowerCase()
-    .trim()
-    .replace(/[&]/g, 'and')
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
-}
-
 async function getProvider(slug: string) {
   const supabase = createClient();
-  const { data: providers, error } = await supabase
+  const { data: provider, error } = await supabase
     .from('Providers')
-    .select('*');
+    .select('*')
+    .eq('slug', slug)
+    .single();
 
-  if (error || !providers) {
+  if (error || !provider) {
     return null;
   }
 
-  return providers.find(p => generateSlug(p.name) === slug) || null;
+  return provider;
 }
 
 export async function generateMetadata({

@@ -3,7 +3,7 @@ import { Search, X } from 'lucide-react';
 
 interface Provider {
   canonical_id: number;
-  name: string;
+  name: string;  slug: string;
   london_borough?: string;
   [key: string]: any;
 }

@@ -98,11 +98,11 @@ export async function GET() {
   const supabase = createClient()
   const { data: providers } = await supabase
     .from('Providers')
-    .select('name')
+    .select('slug')
 
   const providerPages = providers
-    ? providers.map(p => ({
-        url: `${baseUrl}/provider/${generateSlug(p.name)}`,
+    ? providers.filter(p => p.slug).map(p => ({
+        url: `${baseUrl}/provider/${p.slug}`,
         changefreq: 'monthly',
         priority: '0.7',
       }))

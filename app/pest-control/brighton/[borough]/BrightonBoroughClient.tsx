@@ -26,7 +26,7 @@ function generateSlug(name: string): string {
 
 interface Provider {
   canonical_id?: number;
-  name: string;
+  name: string;  slug: string;
   website: string | null;
   phone: string | null;
   address: string | null;
@@ -154,7 +154,7 @@ export default function BrightonBoroughClient({ borough }: { borough: BrightonBo
                     <div key={provider.canonical_id} className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 ${borderClass}`}>
                       {isTrophy && <div className="text-2xl mb-2">🏆</div>}
                       <h3 className="font-bold text-base text-gray-900 mb-2 leading-tight line-clamp-2">
-                        <Link href={`/provider/${generateSlug(provider.name)}`} className="text-blue-600 hover:underline">
+                        <Link href={`/provider/${provider.slug}`} className="text-blue-600 hover:underline">
                           {provider.name}
                         </Link>
                       </h3>

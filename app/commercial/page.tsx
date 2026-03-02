@@ -11,7 +11,7 @@ import Navigation from '@/components/Navigation';
 
 interface Provider {
   canonical_id: number;
-  name: string;
+  name: string;  slug: string;
   website: string | null;
   google_rating: number;
   google_review_count: number;
@@ -338,7 +338,7 @@ export default function CommercialPage() {
                 <div key={provider.canonical_id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all border-l-4 border-orange-500 p-6">
                   <span className="inline-block bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">FEATURED</span>
                   <h3 className="text-xl font-black text-gray-900 mb-3">
-                    <Link href={`/provider/${generateSlug(provider.name)}`} className="text-blue-600 hover:underline">
+                    <Link href={`/provider/${provider.slug}`} className="text-blue-600 hover:underline">
                       {provider.name}
                     </Link>
                   </h3>
@@ -406,7 +406,7 @@ export default function CommercialPage() {
                 <div key={provider.canonical_id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all border-l-4 border-yellow-500 p-6">
                   <span className="inline-block bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">TOP RATED</span>
                   <h3 className="text-lg font-black text-gray-900 mb-3">
-                    <Link href={`/provider/${generateSlug(provider.name)}`} className="text-blue-600 hover:underline">
+                    <Link href={`/provider/${provider.slug}`} className="text-blue-600 hover:underline">
                       {provider.name}
                     </Link>
                   </h3>
@@ -679,7 +679,7 @@ export default function CommercialPage() {
                     {filteredProviders.map(provider => (
                       <div key={provider.canonical_id} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all border-l-4 border-blue-600 p-6">
                         <h3 className="text-2xl font-black text-gray-900 mb-2">
-                          <Link href={`/provider/${generateSlug(provider.name)}`} className="text-blue-600 hover:underline">
+                          <Link href={`/provider/${provider.slug}`} className="text-blue-600 hover:underline">
                             {provider.name}
                           </Link>
                         </h3>

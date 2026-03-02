@@ -10,17 +10,6 @@ import Navigation from '@/components/Navigation';
 import { Metadata } from 'next';
 import { generateProfileText, generateMetaDescription } from '@/lib/generateProfileText';
 
-function generateSlug(name: string): string {
-  return name
-    .toLowerCase()
-    .trim()
-    .replace(/[&]/g, 'and')
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
-}
-
 export default function ProviderPageContent() {
   const params = useParams();
   const slug = params.slug as string;
@@ -32,24 +21,20 @@ export default function ProviderPageContent() {
     const fetchProvider = async () => {
       try {
         const supabase = createClient();
-        const { data: providers, error } = await supabase
+        const { data: provider, error } = await supabase
           .from('Providers')
-          .select('*');
+          .select('*')
+          .eq('slug', slug)
+          .single();
 
-        if (error || !providers) {
+        if (error || !provider) {
           console.error('Supabase error:', error);
           setNotFound(true);
           setLoading(false);
           return;
         }
 
-        const found = providers.find(p => generateSlug(p.name) === slug);
-
-        if (!found) {
-          setNotFound(true);
-        } else {
-          setProvider(found);
-        }
+        setProvider(provider);
         setLoading(false);
       } catch (err) {
         console.error('Error fetching provider:', err);
