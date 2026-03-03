@@ -18,7 +18,7 @@ export default function Navigation() {
   const isFindProviderActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/manchester') || pathname?.startsWith('/liverpool') || pathname?.startsWith('/leeds') || pathname?.startsWith('/nottingham') || pathname?.startsWith('/brighton') || pathname?.startsWith('/sheffield') || pathname?.startsWith('/bristol') || pathname?.startsWith('/glasgow') || pathname?.startsWith('/pest-control');
   const isProductsActive = pathname === '/products' || pathname === '/commercial-products';
   const isProfessionalsActive = pathname === '/professionals';
-  const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources') || pathname?.startsWith('/frequently-asked-questions') || pathname?.startsWith('/pest-library') || pathname?.startsWith('/pest/') || pathname?.startsWith('/pest-control-costs');
+  const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources') || pathname?.startsWith('/frequently-asked-questions') || pathname?.startsWith('/pest-library') || pathname?.startsWith('/pest/') || pathname?.startsWith('/pest-control-costs') || pathname?.startsWith('/useful-links');
   const isContactActive = pathname === '/contact';
 
   // Close all dropdowns when clicking outside the nav
@@ -224,6 +224,13 @@ export default function Navigation() {
                 >
                   Pest Control FAQ
                 </Link>
+                <Link
+                  href="/useful-links"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Useful Links
+                </Link>
               </div>
             )}
           </div>
@@ -376,6 +383,13 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
               >
                 Pest Control FAQ
+              </Link>
+              <Link
+                href="/useful-links"
+                className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Useful Links
               </Link>
             </div>
 

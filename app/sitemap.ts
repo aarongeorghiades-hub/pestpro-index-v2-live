@@ -294,6 +294,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/useful-links`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
     ...pestGuides.map((pest) => ({
       url: `${baseUrl}/pest/${pest.slug}`,
       lastModified: new Date(),
