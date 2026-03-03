@@ -8,7 +8,7 @@ import Navigation from '@/components/Navigation';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ providers: 1037, cities: 10, regions: 9 });
+  const [stats, setStats] = useState({ providers: 1090, cities: 11, regions: 9 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -37,8 +37,8 @@ export default function Home() {
       const progress = Math.min(elapsed / duration, 1);
 
       setStats({
-        providers: Math.floor(1037 * progress),
-        cities: Math.floor(10 * progress),
+        providers: Math.floor(1090 * progress),
+        cities: Math.floor(11 * progress),
         regions: Math.floor(9 * progress)
       });
 
@@ -66,7 +66,8 @@ export default function Home() {
       { '@type': 'City', 'name': 'Brighton' },
       { '@type': 'City', 'name': 'Sheffield' },
       { '@type': 'City', 'name': 'Bristol' },
-      { '@type': 'City', 'name': 'Glasgow' }
+      { '@type': 'City', 'name': 'Glasgow' },
+      { '@type': 'City', 'name': 'Bradford' }
     ]
   };
 
@@ -212,9 +213,14 @@ export default function Home() {
                 <h3 className="text-2xl font-black text-white">Yorkshire</h3>
               </div>
               <p className="text-3xl font-black text-amber-400 mb-4">61 providers</p>
-              <Link href="/leeds/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
-                Browse Leeds →
-              </Link>
+              <div className="space-y-2">
+                <Link href="/leeds/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                  Browse Leeds →
+                </Link>
+                <Link href="/bradford/residential" className="block text-center px-4 py-2.5 border-2 border-amber-500/60 hover:border-amber-400 text-amber-400 hover:text-amber-300 font-bold rounded-lg transition-colors text-sm">
+                  Browse Bradford →
+                </Link>
+              </div>
             </div>
 
             {/* East Midlands */}
@@ -360,6 +366,8 @@ export default function Home() {
                 <li><Link href="/bristol/commercial" className="hover:text-white transition">Bristol Commercial</Link></li>
                 <li><Link href="/glasgow/residential" className="hover:text-white transition">Glasgow Residential</Link></li>
                 <li><Link href="/glasgow/commercial" className="hover:text-white transition">Glasgow Commercial</Link></li>
+                <li><Link href="/bradford/residential" className="hover:text-white transition">Bradford Residential</Link></li>
+                <li><Link href="/bradford/commercial" className="hover:text-white transition">Bradford Commercial</Link></li>
               </ul>
             </div>
             <div>

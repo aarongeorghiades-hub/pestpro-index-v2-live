@@ -9,6 +9,7 @@ import { getAllBoroughs as getAllBrightonBoroughs } from './pest-control/brighto
 import { getAllBoroughs as getAllSheffieldBoroughs } from './pest-control/sheffield/sheffield-boroughs';
 import { getAllBoroughs as getAllBristolBoroughs } from './pest-control/bristol/bristol-boroughs';
 import { getAllBoroughs as getAllGlasgowBoroughs } from './pest-control/glasgow/glasgow-boroughs';
+import { getAllBoroughs as getAllBradfordBoroughs } from './pest-control/bradford/bradford-boroughs';
 import { posts } from './blog/data/posts';
 import { pestGuides } from '@/data/pest-guides';
 
@@ -100,6 +101,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const glasgowBoroughs = getAllGlasgowBoroughs();
   const glasgowBoroughUrls = glasgowBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/glasgow/${borough.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Get all Bradford boroughs
+  const bradfordBoroughs = getAllBradfordBoroughs();
+  const bradfordBoroughUrls = bradfordBoroughs.map((borough) => ({
+    url: `${baseUrl}/pest-control/bradford/${borough.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
@@ -241,6 +251,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/bradford/residential`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/bradford/commercial`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/pest-control`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -317,5 +339,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...sheffieldBoroughUrls,
     ...bristolBoroughUrls,
     ...glasgowBoroughUrls,
+    ...bradfordBoroughUrls,
   ];
 }
