@@ -50,22 +50,7 @@ const resources = [
 
 export default function UsefulLinksPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1e293b] via-[#1e3a8a] to-[#2563eb]">
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(ellipse 800px 600px at center 20%, rgba(59, 130, 246, 0.4) 0%, transparent 60%)',
-        }}
-      />
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(ellipse at center, transparent 20%, rgba(15, 23, 42, 0.7) 100%)',
-        }}
-      />
-
+    <div className="min-h-screen bg-gray-50">
       <Navigation />
 
       {/* HERO SECTION */}
@@ -105,64 +90,58 @@ export default function UsefulLinksPage() {
         </div>
       </section>
 
-      {/* BREADCRUMBS + INTRO */}
-      <div className="relative z-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-4">
-          <nav className="text-sm text-white/50 mb-8">
-            <Link href="/" className="hover:text-white transition-colors">
-              Home
-            </Link>
-            <span className="mx-2">&gt;</span>
-            <Link
-              href="/resources"
-              className="hover:text-white transition-colors"
-            >
-              Resources
-            </Link>
-            <span className="mx-2">&gt;</span>
-            <span className="text-white/80">Useful Links</span>
-          </nav>
+      {/* BREADCRUMBS + INTRO + CARDS */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20">
+        <nav className="text-sm text-gray-500 mb-8">
+          <Link href="/" className="hover:text-gray-900 transition-colors">
+            Home
+          </Link>
+          <span className="mx-2">&gt;</span>
+          <Link
+            href="/resources"
+            className="hover:text-gray-900 transition-colors"
+          >
+            Resources
+          </Link>
+          <span className="mx-2">&gt;</span>
+          <span className="text-gray-700">Useful Links</span>
+        </nav>
 
-          <p className="text-lg text-white/80 max-w-3xl mb-12">
-            We&apos;ve compiled a selection of trusted, free resources to help
-            UK homeowners manage their property, reduce costs, and stay
-            informed. All links open in a new tab.
-          </p>
-        </div>
+        <p className="text-lg text-gray-600 max-w-3xl mb-12">
+          We&apos;ve compiled a selection of trusted, free resources to help
+          UK homeowners manage their property, reduce costs, and stay
+          informed. All links open in a new tab.
+        </p>
 
         {/* RESOURCE CARDS */}
-        <section className="pb-20">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {resources.map((resource) => (
-                <div
-                  key={resource.url}
-                  className="group relative bg-white/5 backdrop-blur-sm border-[3px] border-white/40 rounded-xl p-6 hover:border-white/70 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15 transition-all duration-300 flex flex-col"
-                >
-                  <div className="relative z-10 flex flex-col flex-1">
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
-                      {resource.name}
-                    </h3>
-                    <p className="text-white/70 text-sm mb-4 leading-relaxed flex-1">
-                      {resource.description}
-                    </p>
-                    <div>
-                      <a
-                        href={resource.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-400 transition-all duration-200 hover:gap-3"
-                      >
-                        Visit Site
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </div>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {resources.map((resource) => (
+            <div
+              key={resource.url}
+              className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col"
+            >
+              <div className="flex flex-col flex-1">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {resource.name}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed flex-1">
+                  {resource.description}
+                </p>
+                <div>
+                  <a
+                    href={resource.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200 hover:gap-3"
+                  >
+                    Visit Site
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
       </div>
 
       {/* FOOTER */}

@@ -15,13 +15,6 @@ export const leedsBoroughs: LeedsBoroughData[] = [
     commonPests: "Rats and mice are widespread across central Leeds, particularly near the River Aire and the canal basin areas where food waste and older drainage systems provide ideal conditions. Bed bugs are increasingly common in the high concentration of student lets and HMOs across Headingley and Hyde Park. Cockroaches are found in restaurant and takeaway districts around the city centre. Pigeons nest extensively on commercial buildings in the city centre. Wasps and ants are seasonal issues in the residential streets of Roundhay and Moortown. Textile moths are a persistent problem in older properties with original wool carpets and fabrics."
   },
   {
-    name: "Bradford",
-    slug: "bradford",
-    metaDescription: "Find trusted pest control services in Bradford, Shipley, Bingley, Keighley, Ilkley and Saltaire. Compare verified providers covering postcodes BD1-BD24.",
-    intro: "Bradford is West Yorkshire's second city, encompassing the urban centre along with the towns of Shipley, Bingley, Keighley, Ilkley and the UNESCO World Heritage Site of Saltaire. The district's mix of Victorian mill towns, stone-built terraces and modern housing estates across postcodes BD1 to BD24 creates varied pest control needs.",
-    commonPests: "Rats are particularly common near Bradford's extensive canal network and the older industrial sites being redeveloped across the city. Mice frequently enter the district's older stone-built terraced properties through gaps in pointing and around pipe entries. Wasps are a significant summer pest in suburban gardens across Shipley and Bingley. Textile moths are notably prevalent in Bradford given the city's historic wool trade — older properties often harbour populations in original carpets and fabrics. Squirrels cause damage in properties near the wooded valleys around Ilkley and Saltaire."
-  },
-  {
     name: "Wakefield",
     slug: "wakefield",
     metaDescription: "Find trusted pest control services in Wakefield, Pontefract, Castleford, Normanton, Ossett and Dewsbury. Compare verified providers covering postcodes WF1-WF17.",

@@ -429,7 +429,7 @@ export default function PestControlCostsPage() {
         <div className="mb-12 p-6 bg-green-50 border border-green-200 rounded-xl text-center">
           <p className="text-gray-900 font-bold mb-2">Find a Trusted Pest Controller Near You</p>
           <p className="text-gray-600 text-sm mb-4">
-            PestPro Index lists 699+ vetted pest controllers across 5 UK cities. No lead fees. No commissions. No sponsored rankings.
+            PestPro Index lists 1,090+ vetted pest controllers across 11 UK cities. No lead fees. No commissions. No sponsored rankings.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
