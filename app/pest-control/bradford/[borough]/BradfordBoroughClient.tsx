@@ -98,8 +98,8 @@ export default function BradfordBoroughClient({ borough }: { borough: BradfordBo
       <section className="relative h-[400px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/leeds-skyline.webp"
-            alt="Bradford skyline illustration"
+            src="/images/bradford-skyline.png"
+            alt="Bradford skyline"
             fill
             className="object-cover opacity-95"
             priority

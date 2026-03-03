@@ -310,8 +310,8 @@ export default function CommercialPage() {
       <section className="relative h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/leeds-skyline.webp"
-            alt="Bradford skyline illustration"
+            src="/images/bradford-skyline.png"
+            alt="Bradford skyline"
             fill
             className="object-cover opacity-95"
             priority
