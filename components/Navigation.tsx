@@ -83,7 +83,7 @@ export default function Navigation() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="/"
-            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isHomeActive ? 'text-white border-b-2 border-white' : 'text-white hover:text-white/80'}`}
+            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isHomeActive ? 'text-white' : 'text-white/70 hover:text-white'}`}
           >
             Home
           </Link>
@@ -92,7 +92,7 @@ export default function Navigation() {
           <div className="relative">
             <button
               onClick={() => { setIsFindProviderOpen(!isFindProviderOpen); setIsPestProductsOpen(false); setIsResourcesOpen(false); }}
-              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isFindProviderActive ? 'text-white border-b-2 border-white' : 'text-white hover:text-white/80'}`}
+              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isFindProviderActive ? 'text-white' : 'text-white/70 hover:text-white'}`}
             >
               Find a Provider ▾
             </button>
@@ -157,7 +157,7 @@ export default function Navigation() {
           <div className="relative">
             <button
               onClick={() => { setIsPestProductsOpen(!isPestProductsOpen); setIsFindProviderOpen(false); setIsResourcesOpen(false); }}
-              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isProductsActive ? 'text-white border-b-2 border-white' : 'text-white hover:text-white/80'}`}
+              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isProductsActive ? 'text-white' : 'text-white/70 hover:text-white'}`}
             >
               Pest Products ▾
             </button>
@@ -180,7 +180,7 @@ export default function Navigation() {
 
           <Link
             href="/professionals"
-            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isProfessionalsActive ? 'text-white border-b-2 border-white' : 'text-white hover:text-white/80'}`}
+            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isProfessionalsActive ? 'text-white' : 'text-white/70 hover:text-white'}`}
           >
             For Professionals
           </Link>
@@ -189,7 +189,7 @@ export default function Navigation() {
           <div className="relative">
             <button
               onClick={() => { setIsResourcesOpen(!isResourcesOpen); setIsFindProviderOpen(false); setIsPestProductsOpen(false); }}
-              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isResourcesActive ? 'text-white border-b-2 border-white' : 'text-white hover:text-white/80'}`}
+              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isResourcesActive ? 'text-white' : 'text-white/70 hover:text-white'}`}
             >
               Resources ▾
             </button>
@@ -237,7 +237,7 @@ export default function Navigation() {
 
           <Link
             href="/contact"
-            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isContactActive ? 'text-white border-b-2 border-white' : 'text-white hover:text-white/80'}`}
+            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isContactActive ? 'text-white' : 'text-white/70 hover:text-white'}`}
           >
             Contact
           </Link>
