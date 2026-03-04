@@ -8,6 +8,7 @@ async function getProvider(slug: string) {
   const { data: provider, error } = await supabase
     .from('Providers')
     .select('*')
+    .eq('active', true)
     .eq('slug', slug)
     .single();
 

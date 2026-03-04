@@ -64,6 +64,7 @@ export default function LeedsBoroughClient({ borough }: { borough: LeedsBoroughD
         const { data, error } = await supabase
           .from('Providers')
           .select('*')
+          .eq('active', true)
           .eq('business_residential', true)
           .or('regions.cs.["leeds"]');
 

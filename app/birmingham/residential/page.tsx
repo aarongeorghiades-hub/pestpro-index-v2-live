@@ -126,6 +126,7 @@ export default function ResidentialPage() {
         const { data, error } = await supabase
           .from('Providers')
           .select('*')
+          .eq('active', true)
           .eq('business_residential', true)
           .or('regions.cs.["birmingham"]');
 

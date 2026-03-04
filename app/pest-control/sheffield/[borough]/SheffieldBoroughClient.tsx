@@ -63,6 +63,7 @@ export default function SheffieldBoroughClient({ borough }: { borough: Sheffield
         const { data, error } = await supabase
           .from('Providers')
           .select('*')
+          .eq('active', true)
           .eq('business_residential', true)
           .or('regions.cs.["sheffield"]');
 

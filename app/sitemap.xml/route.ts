@@ -99,6 +99,7 @@ export async function GET() {
   const { data: providers } = await supabase
     .from('Providers')
     .select('slug')
+    .eq('active', true)
 
   const providerPages = providers
     ? providers.filter(p => p.slug).map(p => ({

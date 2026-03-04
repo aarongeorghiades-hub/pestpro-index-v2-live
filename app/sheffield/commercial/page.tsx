@@ -152,6 +152,7 @@ export default function CommercialPage() {
         const { data, error } = await supabase
           .from('Providers')
           .select('*')
+          .eq('active', true)
           .eq('commercial', true)
           .or('regions.cs.["sheffield"]');
 

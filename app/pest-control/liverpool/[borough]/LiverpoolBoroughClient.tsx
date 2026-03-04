@@ -63,6 +63,7 @@ export default function LiverpoolBoroughClient({ borough }: { borough: Liverpool
         const { data, error } = await supabase
           .from('Providers')
           .select('*')
+          .eq('active', true)
           .or('regions.cs.["liverpool"]');
 
         if (error) throw error;

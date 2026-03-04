@@ -63,6 +63,7 @@ export default function BrightonBoroughClient({ borough }: { borough: BrightonBo
         const { data, error } = await supabase
           .from('Providers')
           .select('*')
+          .eq('active', true)
           .eq('business_residential', true)
           .or('regions.cs.["brighton"]');
 

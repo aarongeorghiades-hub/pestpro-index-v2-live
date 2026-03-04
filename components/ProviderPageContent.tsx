@@ -24,6 +24,7 @@ export default function ProviderPageContent() {
         const { data: provider, error } = await supabase
           .from('Providers')
           .select('*')
+          .eq('active', true)
           .eq('slug', slug)
           .single();
 

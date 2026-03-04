@@ -63,6 +63,7 @@ export default function ManchesterBoroughClient({ borough }: { borough: Manchest
         const { data, error } = await supabase
           .from('Providers')
           .select('*')
+          .eq('active', true)
           .or('regions.cs.["manchester"]');
 
         if (error) throw error;
