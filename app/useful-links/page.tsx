@@ -20,7 +20,7 @@ const resources = [
     name: 'TaxBandCheck',
     url: 'https://taxbandcheck.co.uk',
     description:
-      'Free council tax band checker — instantly find out if you might be overpaying on your council tax.',
+      'Check if your property is in the wrong council tax band — free tool for UK homeowners.',
   },
   {
     name: 'Citizens Advice — Housing',
