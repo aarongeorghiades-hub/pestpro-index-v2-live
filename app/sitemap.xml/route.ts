@@ -42,6 +42,7 @@ export async function GET() {
     { url: `${baseUrl}/glasgow`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/glasgow/residential`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/glasgow/commercial`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/london`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/leeds`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/leeds/residential`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/leeds/commercial`, changefreq: 'weekly', priority: '0.9' },
