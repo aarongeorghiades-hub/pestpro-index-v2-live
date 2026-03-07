@@ -23,6 +23,7 @@ export async function GET() {
     { url: baseUrl, changefreq: 'weekly', priority: '1.0' },
     { url: `${baseUrl}/residential`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/commercial`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/birmingham`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/birmingham/residential`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/birmingham/commercial`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/manchester/residential`, changefreq: 'weekly', priority: '0.9' },
@@ -129,6 +130,19 @@ export async function GET() {
     priority: '0.7',
   }))
 
+  // Birmingham borough pages
+  const birminghamBoroughSlugs = [
+    'birmingham-city-centre', 'sutton-coldfield', 'edgbaston', 'erdington',
+    'handsworth-perry-barr', 'hodge-hill-stechford', 'kings-norton-northfield',
+    'ladywood-nechells', 'selly-oak-bournville', 'yardley-sheldon'
+  ]
+
+  const birminghamBoroughPages = birminghamBoroughSlugs.map(slug => ({
+    url: `${baseUrl}/pest-control/birmingham/${slug}`,
+    changefreq: 'monthly',
+    priority: '0.7',
+  }))
+
   // Fetch all providers for dynamic provider pages
   const supabase = createClient()
   const { data: providers } = await supabase
@@ -144,7 +158,7 @@ export async function GET() {
       }))
     : []
 
-  const pages = [...staticPages, ...boroughPages, ...manchesterBoroughPages, ...liverpoolBoroughPages, ...bradfordBoroughPages, ...providerPages]
+  const pages = [...staticPages, ...boroughPages, ...manchesterBoroughPages, ...liverpoolBoroughPages, ...bradfordBoroughPages, ...birminghamBoroughPages, ...providerPages]
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -153,7 +167,7 @@ ${pages.map(page => `  <url>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`).join('\n')}
-  <!-- Total URLs: ${pages.length} (${staticPages.length} static + ${boroughPages.length} London boroughs + ${manchesterBoroughPages.length} Manchester boroughs + ${liverpoolBoroughPages.length} Liverpool boroughs + ${bradfordBoroughPages.length} Bradford boroughs + ${providerPages.length} providers) -->
+  <!-- Total URLs: ${pages.length} (${staticPages.length} static + ${boroughPages.length} London boroughs + ${manchesterBoroughPages.length} Manchester boroughs + ${liverpoolBoroughPages.length} Liverpool boroughs + ${bradfordBoroughPages.length} Bradford boroughs + ${birminghamBoroughPages.length} Birmingham boroughs + ${providerPages.length} providers) -->
 </urlset>`
 
   return new NextResponse(xml, {
