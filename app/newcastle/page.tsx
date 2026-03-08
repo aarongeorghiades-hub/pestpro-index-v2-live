@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import { createClient } from '@/utils/supabase';
 import { newcastleBoroughs } from '@/lib/newcastle-boroughs';
@@ -75,9 +76,18 @@ export default async function NewcastleHubPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* HERO SECTION — no skyline image, gradient fallback */}
+      {/* HERO SECTION */}
       <section className="relative h-[500px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#1e3a8a]"></div>
+        <div className="absolute inset-0">
+          <Image
+            src="/images/newcastle-skyline.png"
+            alt="Newcastle skyline illustration"
+            fill
+            className="object-cover opacity-95"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/50 via-[#2563eb]/45 to-[#1e3a8a]/50"></div>
+        </div>
 
         <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4">
           <h1
