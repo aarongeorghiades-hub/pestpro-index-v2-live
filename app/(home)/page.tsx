@@ -5,19 +5,36 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Search, Shield, TrendingUp, MapPin } from 'lucide-react'
 import Navigation from '@/components/Navigation';
+import { createClient } from '@/utils/supabase';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ providers: 1090, cities: 13, regions: 11 });
+  const [stats, setStats] = useState({ providers: 0, cities: 13, regions: 11 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [providerTarget, setProviderTarget] = useState(0);
+
+  // Fetch live provider count on mount
+  useEffect(() => {
+    const fetchProviderCount = async () => {
+      const supabase = createClient();
+      const { count } = await supabase
+        .from('Providers')
+        .select('*', { count: 'exact', head: true })
+        .eq('active', true);
+      const roundedCount = Math.floor((count ?? 0) / 10) * 10;
+      setProviderTarget(roundedCount);
+    };
+    fetchProviderCount();
+  }, []);
 
   // Animate stats on scroll
   useEffect(() => {
+    if (providerTarget === 0) return;
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && !hasAnimated) {
         setHasAnimated(true);
-        animateStats();
+        animateStats(providerTarget);
       }
     }, { threshold: 0.5 });
 
@@ -26,9 +43,9 @@ export default function Home() {
     }
 
     return () => observer.disconnect();
-  }, [hasAnimated]);
+  }, [hasAnimated, providerTarget]);
 
-  const animateStats = () => {
+  const animateStats = (target: number) => {
     const duration = 1500;
     const start = Date.now();
 
@@ -37,7 +54,7 @@ export default function Home() {
       const progress = Math.min(elapsed / duration, 1);
 
       setStats({
-        providers: Math.floor(1090 * progress),
+        providers: Math.floor(target * progress),
         cities: Math.floor(13 * progress),
         regions: Math.floor(11 * progress)
       });
