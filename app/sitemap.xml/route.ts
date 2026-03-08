@@ -54,6 +54,12 @@ export async function GET() {
     { url: `${baseUrl}/sheffield`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/sheffield/residential`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/sheffield/commercial`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/newcastle`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/newcastle/residential`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/newcastle/commercial`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/cardiff`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/cardiff/residential`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/cardiff/commercial`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/professionals`, changefreq: 'monthly', priority: '0.4' },
     { url: `${baseUrl}/products`, changefreq: 'monthly', priority: '0.7' },
     { url: `${baseUrl}/commercial-products`, changefreq: 'monthly', priority: '0.7' },
@@ -64,6 +70,8 @@ export async function GET() {
     { url: `${baseUrl}/pest-control/north-west`, changefreq: 'monthly', priority: '0.8' },
     { url: `${baseUrl}/pest-control/greater-london`, changefreq: 'monthly', priority: '0.8' },
     { url: `${baseUrl}/pest-control/west-midlands`, changefreq: 'monthly', priority: '0.8' },
+    { url: `${baseUrl}/pest-control/north-east`, changefreq: 'monthly', priority: '0.8' },
+    { url: `${baseUrl}/pest-control/wales`, changefreq: 'monthly', priority: '0.8' },
     { url: `${baseUrl}/blog`, changefreq: 'weekly', priority: '0.6' },
     { url: `${baseUrl}/blog/bpca-vs-npta-pest-control-certifications`, changefreq: 'monthly', priority: '0.5' },
     { url: `${baseUrl}/blog/signs-of-rat-problem-london`, changefreq: 'monthly', priority: '0.5' },
@@ -159,7 +167,31 @@ export async function GET() {
       }))
     : []
 
-  const pages = [...staticPages, ...boroughPages, ...manchesterBoroughPages, ...liverpoolBoroughPages, ...bradfordBoroughPages, ...birminghamBoroughPages, ...providerPages]
+  // Newcastle borough pages
+  const newcastleBoroughSlugs = [
+    'newcastle-city-centre', 'gateshead', 'north-tyneside', 'south-tyneside',
+    'sunderland', 'washington-houghton', 'cramlington-northumberland', 'consett-county-durham'
+  ]
+
+  const newcastleBoroughPages = newcastleBoroughSlugs.map(slug => ({
+    url: `${baseUrl}/pest-control/newcastle/${slug}`,
+    changefreq: 'monthly',
+    priority: '0.7',
+  }))
+
+  // Cardiff borough pages
+  const cardiffBoroughSlugs = [
+    'cardiff-city-centre', 'cardiff-bay', 'canton-pontcanna', 'roath-cathays',
+    'north-cardiff', 'penarth-vale', 'newport-caerphilly', 'pontypridd-rct'
+  ]
+
+  const cardiffBoroughPages = cardiffBoroughSlugs.map(slug => ({
+    url: `${baseUrl}/pest-control/cardiff/${slug}`,
+    changefreq: 'monthly',
+    priority: '0.7',
+  }))
+
+  const pages = [...staticPages, ...boroughPages, ...manchesterBoroughPages, ...liverpoolBoroughPages, ...bradfordBoroughPages, ...birminghamBoroughPages, ...newcastleBoroughPages, ...cardiffBoroughPages, ...providerPages]
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -168,7 +200,7 @@ ${pages.map(page => `  <url>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`).join('\n')}
-  <!-- Total URLs: ${pages.length} (${staticPages.length} static + ${boroughPages.length} London boroughs + ${manchesterBoroughPages.length} Manchester boroughs + ${liverpoolBoroughPages.length} Liverpool boroughs + ${bradfordBoroughPages.length} Bradford boroughs + ${birminghamBoroughPages.length} Birmingham boroughs + ${providerPages.length} providers) -->
+  <!-- Total URLs: ${pages.length} (${staticPages.length} static + ${boroughPages.length} London boroughs + ${manchesterBoroughPages.length} Manchester boroughs + ${liverpoolBoroughPages.length} Liverpool boroughs + ${bradfordBoroughPages.length} Bradford boroughs + ${birminghamBoroughPages.length} Birmingham boroughs + ${newcastleBoroughPages.length} Newcastle boroughs + ${cardiffBoroughPages.length} Cardiff boroughs + ${providerPages.length} providers) -->
 </urlset>`
 
   return new NextResponse(xml, {

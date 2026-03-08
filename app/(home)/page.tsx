@@ -8,7 +8,7 @@ import Navigation from '@/components/Navigation';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ providers: 1090, cities: 11, regions: 9 });
+  const [stats, setStats] = useState({ providers: 1090, cities: 13, regions: 11 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -38,8 +38,8 @@ export default function Home() {
 
       setStats({
         providers: Math.floor(1090 * progress),
-        cities: Math.floor(11 * progress),
-        regions: Math.floor(9 * progress)
+        cities: Math.floor(13 * progress),
+        regions: Math.floor(11 * progress)
       });
 
       if (progress < 1) {
@@ -67,7 +67,9 @@ export default function Home() {
       { '@type': 'City', 'name': 'Sheffield' },
       { '@type': 'City', 'name': 'Bristol' },
       { '@type': 'City', 'name': 'Glasgow' },
-      { '@type': 'City', 'name': 'Bradford' }
+      { '@type': 'City', 'name': 'Bradford' },
+      { '@type': 'City', 'name': 'Newcastle' },
+      { '@type': 'City', 'name': 'Cardiff' }
     ]
   };
 
@@ -282,11 +284,35 @@ export default function Home() {
                 Browse Glasgow →
               </Link>
             </div>
+
+            {/* North East */}
+            <div className="rounded-2xl p-8 bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="w-6 h-6 text-amber-400" />
+                <h3 className="text-2xl font-black text-white">North East</h3>
+              </div>
+              <p className="text-3xl font-black text-amber-400 mb-4">53 providers</p>
+              <Link href="/newcastle/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                Browse Newcastle →
+              </Link>
+            </div>
+
+            {/* Wales */}
+            <div className="rounded-2xl p-8 bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="w-6 h-6 text-amber-400" />
+                <h3 className="text-2xl font-black text-white">Wales</h3>
+              </div>
+              <p className="text-3xl font-black text-amber-400 mb-4">38 providers</p>
+              <Link href="/cardiff/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                Browse Cardiff →
+              </Link>
+            </div>
           </div>
 
           {/* Coming Soon */}
           <p className="text-center text-white/50 text-sm">
-            More regions launching in 2026: East of England, North East, Wales, Northern Ireland
+            More regions launching in 2026: East of England, Northern Ireland
           </p>
         </div>
       </section>
@@ -368,6 +394,10 @@ export default function Home() {
                 <li><Link href="/glasgow/commercial" className="hover:text-white transition">Glasgow Commercial</Link></li>
                 <li><Link href="/bradford/residential" className="hover:text-white transition">Bradford Residential</Link></li>
                 <li><Link href="/bradford/commercial" className="hover:text-white transition">Bradford Commercial</Link></li>
+                <li><Link href="/newcastle/residential" className="hover:text-white transition">Newcastle Residential</Link></li>
+                <li><Link href="/newcastle/commercial" className="hover:text-white transition">Newcastle Commercial</Link></li>
+                <li><Link href="/cardiff/residential" className="hover:text-white transition">Cardiff Residential</Link></li>
+                <li><Link href="/cardiff/commercial" className="hover:text-white transition">Cardiff Commercial</Link></li>
               </ul>
             </div>
             <div>

@@ -44,9 +44,9 @@ export default function Navigation() {
     { name: 'South Yorkshire', href: '/pest-control/south-yorkshire', status: 'live', providerCount: 53 },
     { name: 'South West', href: '/pest-control/south-west', status: 'live', providerCount: 43 },
     { name: 'Scotland', href: '/pest-control/scotland', status: 'live', providerCount: 60 },
+    { name: 'North East', href: '/pest-control/north-east', status: 'live', providerCount: 53 },
+    { name: 'Wales', href: '/pest-control/wales', status: 'live', providerCount: 38 },
     { name: 'East of England', href: '/pest-control/east-of-england', status: 'coming-soon' },
-    { name: 'North East', href: '/pest-control/north-east', status: 'coming-soon' },
-    { name: 'Wales', href: '/pest-control/wales', status: 'coming-soon' },
     { name: 'Northern Ireland', href: '/pest-control/northern-ireland', status: 'coming-soon' },
   ];
 
