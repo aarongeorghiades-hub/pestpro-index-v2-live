@@ -11,6 +11,7 @@ import { getAllBoroughs as getAllBristolBoroughs } from './pest-control/bristol/
 import { getAllBoroughs as getAllGlasgowBoroughs } from './pest-control/glasgow/glasgow-boroughs';
 import { getAllBoroughs as getAllBradfordBoroughs } from './pest-control/bradford/bradford-boroughs';
 import { getAllBoroughs as getAllNewcastleBoroughs } from './pest-control/newcastle/newcastle-boroughs';
+import { getAllBoroughs as getAllCardiffBoroughs } from './pest-control/cardiff/cardiff-boroughs';
 import { posts } from './blog/data/posts';
 import { pestGuides } from '@/data/pest-guides';
 
@@ -120,6 +121,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const newcastleBoroughs = getAllNewcastleBoroughs();
   const newcastleBoroughUrls = newcastleBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/newcastle/${borough.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Get all Cardiff boroughs
+  const cardiffBoroughs = getAllCardiffBoroughs();
+  const cardiffBoroughUrls = cardiffBoroughs.map((borough) => ({
+    url: `${baseUrl}/pest-control/cardiff/${borough.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
@@ -291,6 +301,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/cardiff`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/cardiff/residential`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/cardiff/commercial`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/pest-control`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -369,5 +397,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...glasgowBoroughUrls,
     ...bradfordBoroughUrls,
     ...newcastleBoroughUrls,
+    ...cardiffBoroughUrls,
   ];
 }
