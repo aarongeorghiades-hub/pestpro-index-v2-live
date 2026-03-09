@@ -253,6 +253,8 @@ export default async function LiverpoolHubPage() {
             <Link href="/glasgow/residential" className="text-blue-600 hover:underline font-semibold">Glasgow</Link>
             {' | '}
             <Link href="/residential" className="text-blue-600 hover:underline font-semibold">London</Link>
+            {' | '}
+            <Link href="/edinburgh/residential" className="text-blue-600 hover:underline font-semibold">Edinburgh</Link>
           </p>
         </div>
       </section>

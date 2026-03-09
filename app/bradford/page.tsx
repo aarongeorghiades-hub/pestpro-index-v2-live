@@ -268,6 +268,10 @@ export default async function BradfordHubPage() {
             <Link href="/residential" className="text-blue-600 hover:underline font-semibold">
               London
             </Link>
+            {' | '}
+            <Link href="/edinburgh/residential" className="text-blue-600 hover:underline font-semibold">
+              Edinburgh
+            </Link>
           </p>
         </div>
       </section>

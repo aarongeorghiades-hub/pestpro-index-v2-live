@@ -292,6 +292,10 @@ export default async function CardiffHubPage() {
             <Link href="/newcastle/residential" className="text-blue-600 hover:underline font-semibold">
               Newcastle
             </Link>
+            {' | '}
+            <Link href="/edinburgh/residential" className="text-blue-600 hover:underline font-semibold">
+              Edinburgh
+            </Link>
           </p>
         </div>
       </section>

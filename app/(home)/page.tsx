@@ -9,7 +9,7 @@ import { createClient } from '@/utils/supabase';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ providers: 0, cities: 13, regions: 11 });
+  const [stats, setStats] = useState({ providers: 0, cities: 14, regions: 11 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [providerTarget, setProviderTarget] = useState(0);
@@ -55,7 +55,7 @@ export default function Home() {
 
       setStats({
         providers: Math.floor(target * progress),
-        cities: Math.floor(13 * progress),
+        cities: Math.floor(14 * progress),
         regions: Math.floor(11 * progress)
       });
 
@@ -86,7 +86,8 @@ export default function Home() {
       { '@type': 'City', 'name': 'Glasgow' },
       { '@type': 'City', 'name': 'Bradford' },
       { '@type': 'City', 'name': 'Newcastle' },
-      { '@type': 'City', 'name': 'Cardiff' }
+      { '@type': 'City', 'name': 'Cardiff' },
+      { '@type': 'City', 'name': 'Edinburgh' }
     ]
   };
 
@@ -296,10 +297,15 @@ export default function Home() {
                 <MapPin className="w-6 h-6 text-amber-400" />
                 <h3 className="text-2xl font-black text-white">Scotland</h3>
               </div>
-              <p className="text-3xl font-black text-amber-400 mb-4">60 providers</p>
-              <Link href="/glasgow/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
-                Browse Glasgow →
-              </Link>
+              <p className="text-3xl font-black text-amber-400 mb-4">60+ providers</p>
+              <div className="space-y-2">
+                <Link href="/glasgow/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                  Browse Glasgow →
+                </Link>
+                <Link href="/edinburgh/residential" className="block text-center px-4 py-3 bg-amber-500/80 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                  Browse Edinburgh →
+                </Link>
+              </div>
             </div>
 
             {/* North East */}
@@ -415,6 +421,8 @@ export default function Home() {
                 <li><Link href="/newcastle/commercial" className="hover:text-white transition">Newcastle Commercial</Link></li>
                 <li><Link href="/cardiff/residential" className="hover:text-white transition">Cardiff Residential</Link></li>
                 <li><Link href="/cardiff/commercial" className="hover:text-white transition">Cardiff Commercial</Link></li>
+                <li><Link href="/edinburgh/residential" className="hover:text-white transition">Edinburgh Residential</Link></li>
+                <li><Link href="/edinburgh/commercial" className="hover:text-white transition">Edinburgh Commercial</Link></li>
               </ul>
             </div>
             <div>

@@ -298,9 +298,9 @@ export const regions: Region[] = [
     name: "Scotland",
     slug: "scotland",
     status: "live",
-    description: "Find trusted pest control and pest removal providers across Scotland. PestPro Index covers Glasgow with 60 verified providers, with expansion to Edinburgh, Aberdeen, and Dundee coming soon.",
-    metaTitle: "Pest Control in Scotland | Glasgow & Surrounding Areas | PestPro Index",
-    metaDescription: "Compare 60 pest control and pest removal providers across Scotland. Currently covering Glasgow with verified providers. No lead fees, no commissions.",
+    description: "Find trusted pest control and pest removal providers across Scotland. PestPro Index covers Glasgow and Edinburgh with verified providers, with expansion to Aberdeen and Dundee coming soon.",
+    metaTitle: "Pest Control in Scotland | Glasgow, Edinburgh & Surrounding Areas | PestPro Index",
+    metaDescription: "Compare pest control and pest removal providers across Scotland. Covering Glasgow and Edinburgh with verified providers. No lead fees, no commissions.",
     cities: [
       {
         name: "Glasgow Residential",
@@ -315,7 +315,18 @@ export const regions: Region[] = [
         status: "live",
         commercialLink: "/glasgow/commercial",
       },
-      { name: "Edinburgh", slug: "edinburgh", status: "coming-soon" },
+      {
+        name: "Edinburgh Residential",
+        slug: "edinburgh-residential",
+        status: "live",
+        residentialLink: "/edinburgh/residential",
+      },
+      {
+        name: "Edinburgh Commercial",
+        slug: "edinburgh-commercial",
+        status: "live",
+        commercialLink: "/edinburgh/commercial",
+      },
       { name: "Aberdeen", slug: "aberdeen", status: "coming-soon" },
       { name: "Dundee", slug: "dundee", status: "coming-soon" },
       { name: "Fife", slug: "fife", status: "coming-soon" },
