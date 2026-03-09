@@ -353,9 +353,9 @@ export default function CommercialPage() {
                     </div>
                   )}
                   {provider.postcode && (
-                    <div className="flex items-center gap-2 mb-2">
-                      <MapPin size={14} className="text-blue-600" />
-                      <span className="text-sm text-gray-700">{provider.postcode}</span>
+                    <div className="flex items-start gap-1 mb-2 text-xs text-gray-600">
+                      <span className="text-red-500 mt-0.5">📍</span>
+                      <span className="line-clamp-1">{provider.postcode}</span>
                     </div>
                   )}
                   <div className="flex flex-wrap gap-1 mb-4">
@@ -430,9 +430,9 @@ export default function CommercialPage() {
                   )}
 
                   {provider.postcode && (
-                    <div className="flex items-center gap-2 mb-2">
-                      <MapPin size={14} className="text-blue-600" />
-                      <span className="text-sm text-gray-700">{provider.postcode}</span>
+                    <div className="flex items-start gap-1 mb-2 text-xs text-gray-600">
+                      <span className="text-red-500 mt-0.5">📍</span>
+                      <span className="line-clamp-1">{provider.postcode}</span>
                     </div>
                   )}
                   {provider.website && (
@@ -687,25 +687,26 @@ export default function CommercialPage() {
                           </div>
                         )}
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                          {provider.phone && (
-                            <div className="flex items-center gap-2">
-                              <Phone size={16} className="text-blue-600" />
-                              {isMobile ? (
-                                <a href={`tel:${provider.phone}`} className="text-sm text-blue-600 hover:underline">{provider.phone}</a>
-                              ) : (
-                                <span className="text-sm text-gray-700">{provider.phone}</span>
-                              )}
-                            </div>
-                          )}
+                        {provider.postcode && (
+                          <div className="flex items-start gap-1 mb-2 text-xs text-gray-600">
+                            <span className="text-red-500 mt-0.5">📍</span>
+                            <span className="line-clamp-1">{provider.postcode}</span>
+                          </div>
+                        )}
 
-                          {provider.postcode && (
-                            <div className="flex items-center gap-2">
-                              <MapPin size={16} className="text-blue-600" />
-                              <span className="text-sm text-gray-700">{provider.postcode}</span>
-                            </div>
-                          )}
-                        </div>
+                        {provider.phone && (
+                          <div className="mb-3">
+                            {isMobile ? (
+                              <a href={`tel:${provider.phone}`} className="block text-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg whitespace-nowrap overflow-hidden text-ellipsis">
+                                📞 {provider.phone}
+                              </a>
+                            ) : (
+                              <span className="block text-center px-3 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg cursor-default whitespace-nowrap overflow-hidden text-ellipsis">
+                                📞 {provider.phone}
+                              </span>
+                            )}
+                          </div>
+                        )}
 
                         <div className="flex flex-wrap gap-2 mb-4">
                           {provider.bpca_member && (
