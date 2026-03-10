@@ -4,7 +4,8 @@
  */
 export function generateProfileText(provider: any): string {
   const parts: string[] = [];
-  const city = provider.regions?.includes('birmingham') ? 'Birmingham and the West Midlands' : 'London';
+  const citySlug = provider.regions?.[0] || 'london';
+  const city = citySlug.charAt(0).toUpperCase() + citySlug.slice(1);
 
   parts.push(`${provider.name} is a pest control provider serving ${city}.`);
 
@@ -64,7 +65,8 @@ export function generateProfileText(provider: any): string {
  * Generate a shortened version for meta description (max ~155 chars)
  */
 export function generateMetaDescription(provider: any): string {
-  const city = provider.regions?.includes('birmingham') ? 'Birmingham' : 'London';
+  const citySlug = provider.regions?.[0] || 'london';
+  const city = citySlug.charAt(0).toUpperCase() + citySlug.slice(1);
   const rating = provider.google_rating ? ` ${provider.google_rating}★` : '';
   const certs = [];
   if (provider.bpca_member) certs.push('BPCA');

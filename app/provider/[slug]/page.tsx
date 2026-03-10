@@ -44,7 +44,8 @@ export async function generateMetadata({
       ? 'Commercial Pest Control & Pest Removal' 
       : 'Residential Pest Control & Pest Removal';
   
-  const location = provider.regions?.includes('birmingham') ? 'Birmingham' : 'London';
+  const citySlug = provider.regions?.[0] || 'london';
+  const location = citySlug.charAt(0).toUpperCase() + citySlug.slice(1);
   const title = `${provider.name} | ${serviceType} ${location}`;
 
   // Build dynamic description

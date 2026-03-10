@@ -115,6 +115,11 @@ export default function ProviderPageContent() {
 
 
 
+  const citySlug = provider.regions?.[0] || 'london';
+  const cityName = citySlug.charAt(0).toUpperCase() + citySlug.slice(1);
+  const residentialLink = citySlug === 'london' ? '/residential' : `/${citySlug}/residential`;
+  const commercialLink = citySlug === 'london' ? '/commercial' : `/${citySlug}/commercial`;
+
   return (
     <div className="min-h-screen bg-white">
       {/* NAVIGATION */}
@@ -123,8 +128,8 @@ export default function ProviderPageContent() {
       {/* PROVIDER HEADER */}
       <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 py-12">
         <div className="max-w-4xl mx-auto px-4">
-          <Link href={provider.regions?.includes('birmingham') ? '/birmingham/residential' : '/residential'} className="text-blue-600 hover:text-blue-800 font-semibold mb-4 inline-block">
-            ← Back to {provider.regions?.includes('birmingham') ? 'Birmingham Residential' : 'London Residential'}
+          <Link href={residentialLink} className="text-blue-600 hover:text-blue-800 font-semibold mb-4 inline-block">
+            ← Back to {cityName} Residential
           </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-2">{provider.name}</h1>
           {provider.google_rating != null && provider.google_rating > 0 && (
@@ -278,11 +283,11 @@ export default function ProviderPageContent() {
 
         {/* BACK LINKS */}
         <div className="flex gap-4 mt-12">
-          <Link href="/residential" className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-            ← Back to Residential
+          <Link href={residentialLink} className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            ← Back to {cityName} Residential
           </Link>
-          <Link href="/commercial" className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-            ← Back to Commercial
+          <Link href={commercialLink} className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            ← Back to {cityName} Commercial
           </Link>
         </div>
       </div>
@@ -293,7 +298,7 @@ export default function ProviderPageContent() {
           <div className="grid grid-cols-3 gap-12 mb-8">
             <div>
               <h4 className="text-white font-bold mb-4">PestPro Index</h4>
-              <p className="text-sm">London's neutral pest control directory</p>
+              <p className="text-sm">The UK's neutral pest control directory</p>
             </div>
             <div>
               <h4 className="text-white font-bold mb-4">Quick Links</h4>
@@ -309,7 +314,7 @@ export default function ProviderPageContent() {
             </div>
           </div>
           <div className="border-t border-gray-700 pt-8 text-center text-sm">
-            <p>&copy; 2025 PestPro Index. All rights reserved.</p>
+            <p>&copy; 2026 PestPro Index. All rights reserved.</p>
           </div>
         </div>
       </footer>
