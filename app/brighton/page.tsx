@@ -256,6 +256,8 @@ export default async function BrightonHubPage() {
             <Link href="/residential" className="text-blue-600 hover:underline font-semibold">London</Link>
             {' | '}
             <Link href="/edinburgh/residential" className="text-blue-600 hover:underline font-semibold">Edinburgh</Link>
+            {' | '}
+            <Link href="/leicester/residential" className="text-blue-600 hover:underline font-semibold">Leicester</Link>
           </p>
         </div>
       </section>

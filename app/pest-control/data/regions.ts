@@ -255,14 +255,37 @@ export const regions: Region[] = [
   {
     name: "East Midlands",
     slug: "east-midlands",
-    status: "coming-soon",
-    description: "PestPro Index is expanding to the East Midlands. We will soon cover Nottingham, Leicester, Derby, Northampton, and Lincolnshire with verified pest control providers.",
-    metaTitle: "Pest Control in the East Midlands | Nottingham, Leicester, Derby & More | PestPro Index",
-    metaDescription: "PestPro Index is expanding to the East Midlands. Soon covering Nottingham, Leicester, Derby, and more. Neutral pest control directory — no lead fees, no commissions.",
+    status: "live",
+    description: "Find trusted pest control and pest removal providers across the East Midlands. PestPro Index covers Nottingham and Leicester with 106 verified providers, with expansion to Derby, Northampton, and Lincolnshire coming soon.",
+    metaTitle: "Pest Control in the East Midlands | Nottingham, Leicester & Surrounding Areas | PestPro Index",
+    metaDescription: "Compare 106 pest control and pest removal providers across the East Midlands. Covering Nottingham and Leicester with verified providers. No lead fees, no commissions.",
     cities: [
-      { name: "Nottinghamshire", slug: "nottinghamshire", status: "coming-soon" },
-      { name: "Leicestershire", slug: "leicestershire", status: "coming-soon" },
-      { name: "Derbyshire", slug: "derbyshire", status: "coming-soon" },
+      {
+        name: "Nottingham Residential",
+        slug: "nottingham-residential",
+        status: "live",
+        providerCount: 106,
+        residentialLink: "/nottingham/residential",
+      },
+      {
+        name: "Nottingham Commercial",
+        slug: "nottingham-commercial",
+        status: "live",
+        commercialLink: "/nottingham/commercial",
+      },
+      {
+        name: "Leicester Residential",
+        slug: "leicester-residential",
+        status: "live",
+        residentialLink: "/leicester/residential",
+      },
+      {
+        name: "Leicester Commercial",
+        slug: "leicester-commercial",
+        status: "live",
+        commercialLink: "/leicester/commercial",
+      },
+      { name: "Derby", slug: "derby", status: "coming-soon" },
       { name: "Northamptonshire", slug: "northamptonshire", status: "coming-soon" },
       { name: "Lincolnshire", slug: "lincolnshire", status: "coming-soon" }
     ]
