@@ -2348,5 +2348,56 @@ export const posts: BlogPost[] = [
 
     <p><a href="/bradford/residential">Bradford Residential Directory</a> | <a href="/bradford/commercial">Bradford Commercial Directory</a></p>
     `
+  },
+  {
+    slug: 'pest-control-after-kitchen-flood-fire-damage',
+    title: 'Pest Control After Kitchen Flood or Fire Damage',
+    metaTitle: 'Pest Control After Kitchen Flood or Fire Damage | PestPro Index',
+    metaDescription: 'Flood and fire damage to kitchens frequently exposes pest infestations. Here\'s why pest control should be part of your restoration plan — and when to call a specialist.',
+    targetKeyword: 'pest control kitchen flood fire damage',
+    publishDate: '2026-03-11',
+    content: `
+<p>Flood and fire damage to a kitchen is stressful enough without discovering a pest problem on top. But it happens more often than homeowners expect. Restoration work — stripping out cabinets, lifting floors, opening up wall cavities — frequently disturbs established pest habitats that were invisible before the damage occurred.</p>
+
+<p>If your kitchen has suffered flood or fire damage, pest control should be part of your restoration plan from the start.</p>
+
+<h2>Why Damage Events Trigger Pest Problems</h2>
+
+<h3>Flood damage</h3>
+
+<p>Rodents and insects are attracted to moisture. A flooded kitchen creates ideal conditions — standing water, damp insulation, and softened structural materials are all environments where pests thrive. Flood damage also tends to affect the lower portions of walls and floor voids, which are primary rodent habitats.</p>
+
+<p>Restoration teams stripping out damaged materials frequently find mouse or rat runs, nesting material, and droppings that were previously concealed behind fitted units.</p>
+
+<h3>Fire damage</h3>
+
+<p>Fire and smoke damage causes structural disruption that opens new entry points into a property. Rodents exploit gaps created by fire damage or the subsequent repair work. Smoke odour can also initially deter pests — but once restoration begins and the property becomes habitable again, displaced animals may return.</p>
+
+<h2>Signs to Look For During Restoration</h2>
+
+<ul>
+<li>Droppings in wall cavities, under flooring, or behind removed units</li>
+<li>Gnaw marks on joists, cables, or pipework</li>
+<li>Nesting material (shredded insulation, paper, fabric) in floor voids</li>
+<li>Insect activity, particularly in damp areas following flood damage</li>
+<li>Unusual odours when cavities are opened</li>
+</ul>
+
+<h2>When to Call a Specialist</h2>
+
+<p>If any of the above are found during restoration, stop and call a pest control specialist before the cavity is sealed or new materials are installed. Sealing a rodent into a wall void creates a significant problem that is far harder and more expensive to resolve later.</p>
+
+<p>A BPCA-accredited or NPTA-member specialist can survey the affected areas, treat any active infestation, and confirm the property is clear before restoration work continues.</p>
+
+<p><a href="https://pestproindex.com">PestPro Index</a> lists verified local pest control specialists across the UK. Search by postcode or city to find an accredited professional near you.</p>
+
+<h2>What About Your Temporary Kitchen?</h2>
+
+<p>Most homeowners dealing with kitchen flood or fire damage need temporary cooking facilities during the restoration period. <a href="https://findakitchen.co.uk" target="_blank" rel="noopener noreferrer">FindAKitchen</a> is a UK comparison service for temporary kitchen hire — domestic pods, modular units, and trailer kitchens for insurance claims and renovation projects. If your insurer is managing the restoration, temporary kitchen hire is typically covered under your home insurance policy.</p>
+
+<h2>Insurance Claims and Pest Control</h2>
+
+<p>If your pest problem is directly caused by or associated with the flood or fire damage event, it may be covered under your home insurance policy as a consequential loss. Check your policy wording and raise it with your loss adjuster or insurer at the outset — do not wait until the restoration is complete.</p>
+    `
   }
 ]
