@@ -141,7 +141,7 @@ export default function CommercialPage() {
           .from('Providers')
           .select('*')
           .eq('active', true)
-          .eq('business_commercial', true)
+          .eq('commercial', true)
           .or('regions.cs.["edinburgh"]');
 
         if (error) throw error;
