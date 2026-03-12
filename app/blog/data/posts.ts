@@ -1240,7 +1240,7 @@ export const posts: BlogPost[] = [
 
 <h2>The West Yorkshire Wider Area</h2>
 
-<p>Many pest control providers serving Leeds also cover the wider West Yorkshire area, including Bradford, Wakefield, Huddersfield, Halifax, and surrounding towns. If you're in the wider region, the same providers are likely to serve your area — <a href="/pest-control/leeds/bradford">browse Bradford pest control</a>, <a href="/pest-control/leeds/wakefield">Wakefield</a>, <a href="/pest-control/leeds/kirklees">Kirklees (Huddersfield)</a>, or <a href="/pest-control/leeds/calderdale">Calderdale (Halifax)</a> for area-specific information.</p>
+<p>Many pest control providers serving Leeds also cover the wider West Yorkshire area, including Bradford, Wakefield, Huddersfield, Halifax, and surrounding towns. If you're in the wider region, the same providers are likely to serve your area — <a href="/bradford">browse Bradford pest control</a>, <a href="/pest-control/leeds/wakefield">Wakefield</a>, <a href="/pest-control/leeds/kirklees">Kirklees (Huddersfield)</a>, or <a href="/pest-control/leeds/calderdale">Calderdale (Halifax)</a> for area-specific information.</p>
 
 <h2>Find a Trusted Pest Controller in Leeds</h2>
 

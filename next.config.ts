@@ -77,6 +77,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       ...londonBoroughRedirects,
+      {
+        source: '/pest-control/leeds/bradford',
+        destination: '/bradford',
+        permanent: true,
+      },
     ];
   },
 };
