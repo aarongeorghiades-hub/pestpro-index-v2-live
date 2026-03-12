@@ -3,37 +3,45 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import { createClient } from '@/utils/supabase';
-import { londonBoroughs } from '@/app/pest-control/london/london-boroughs';
+import { hampshireTowns } from '@/lib/hampshire-towns';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control London | Find Local Experts | PestPro Index',
+  title: 'Pest Control in Hampshire | PestPro Index',
   description:
-    'Find trusted pest control companies in London. Browse residential and commercial pest control services across all 33 London boroughs. Verified providers, no referral fees.',
+    'Compare 90+ trusted pest control companies across Hampshire. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses.',
   alternates: {
-    canonical: 'https://pestproindex.com/london',
+    canonical: 'https://pestproindex.com/hampshire',
   },
   openGraph: {
-    title: 'Pest Control London | Find Local Experts | PestPro Index',
+    title: 'Pest Control in Hampshire | PestPro Index',
     description:
-      'Find trusted pest control companies in London. Browse residential and commercial pest control services across all 33 London boroughs.',
-    url: 'https://pestproindex.com/london',
+      'Compare 90+ trusted pest control companies across Hampshire. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses.',
+    url: 'https://pestproindex.com/hampshire',
     siteName: 'PestPro Index',
     type: 'website',
   },
 };
 
-export default async function LondonHubPage() {
+export default async function HampshireHubPage() {
   const supabase = createClient();
 
-  const { count } = await supabase
+  const { data: allProviders, count } = await supabase
     .from('Providers')
-    .select('*', { count: 'exact', head: true })
+    .select('city', { count: 'exact' })
     .eq('active', true)
-    .or('regions.cs.["london"]');
+    .or('regions.cs.["hampshire"]');
 
   const providerCount = count ?? 0;
+
+  // Compute per-town provider counts from city field
+  const townCounts: Record<string, number> = {};
+  hampshireTowns.forEach(town => {
+    townCounts[town.slug] = (allProviders || []).filter(p =>
+      town.cityNames.some(cn => cn.toLowerCase() === (p.city || '').toLowerCase())
+    ).length;
+  });
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -41,26 +49,26 @@ export default async function LondonHubPage() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'How much does pest control cost in London?',
+        name: 'How much does pest control cost in Hampshire?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Pest control costs in London typically range from £120-£250 for a standard residential treatment such as mice or rats. Wasp nest removal usually costs £60-£100. Bed bug treatments are more expensive, often £200-£400 depending on the size of the property and severity of the infestation. Commercial pest control contracts vary depending on the size of premises and frequency of visits. London prices tend to be higher than other UK cities due to higher operating costs. Always get at least two quotes and check what is included in the price.',
+          text: 'Pest control costs in Hampshire typically range from £80-£150 for a standard residential treatment such as mice or rats. Wasp nest removal usually costs £50-£80. Commercial pest control contracts vary depending on the size of premises and frequency of visits. Prices in rural areas may include additional travel charges. Always get at least two quotes and check what is included in the price.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Are London pest controllers BPCA certified?',
+        name: 'Are Hampshire pest controllers BPCA certified?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Many London pest control providers hold BPCA (British Pest Control Association) certification, which is a recognised industry standard. BPCA members must meet strict technical competence requirements, carry appropriate insurance, and follow a code of conduct. Given the size of the London market, there is a wide range of providers — some BPCA certified, others holding NPTA or other qualifications. You can filter providers by BPCA certification on our residential and commercial directory pages to find accredited companies serving your London borough.',
+          text: 'Many Hampshire pest control providers hold BPCA (British Pest Control Association) certification, which is a recognised industry standard. BPCA members must meet strict technical competence requirements, carry appropriate insurance, and follow a code of conduct. You can filter providers by BPCA certification on our residential and commercial directory pages to find accredited companies across Hampshire.',
         },
       },
       {
         '@type': 'Question',
-        name: 'How quickly can I get a pest controller in London?',
+        name: 'How quickly can I get a pest controller in Hampshire?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Most London pest control companies offer same-day or next-day service for urgent issues such as wasp nests, rat infestations, or bed bugs. Many providers operate 24/7 emergency call-out services across all London boroughs. For routine treatments and surveys, you can usually book within 1-2 working days. London has one of the highest concentrations of pest control providers in the UK, so availability is generally good across all boroughs.',
+          text: 'Most Hampshire pest control companies offer same-day or next-day service for urgent issues such as wasp nests, rat infestations, or bed bugs. Several providers operate 24/7 emergency call-out services. For routine treatments and surveys, you can usually book within 2-3 working days. Response times may be faster in urban areas like Southampton and Portsmouth and slower in more rural parts of the county.',
         },
       },
     ],
@@ -80,8 +88,8 @@ export default async function LondonHubPage() {
       <section className="relative h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/london-skyline.png"
-            alt="London skyline"
+            src="/images/hampshire-skyline.png"
+            alt="Hampshire skyline illustration"
             fill
             className="object-cover opacity-95"
             priority
@@ -94,13 +102,13 @@ export default async function LondonHubPage() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 max-w-3xl drop-shadow-lg"
             style={{ textShadow: '0 4px 6px rgba(0,0,0,0.3)' }}
           >
-            Pest Control in London
+            Pest Control in Hampshire
           </h1>
           <p
             className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg"
             style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
           >
-            Find vetted, local pest control providers across all 33 London boroughs
+            Find vetted, local pest control providers across Hampshire
           </p>
           <p
             className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg"
@@ -120,12 +128,12 @@ export default async function LondonHubPage() {
               <p className="text-lg font-semibold opacity-90">Verified Providers</p>
             </div>
             <div>
-              <p className="text-4xl font-black">{londonBoroughs.length}</p>
-              <p className="text-lg font-semibold opacity-90">London Boroughs</p>
+              <p className="text-4xl font-black">20</p>
+              <p className="text-lg font-semibold opacity-90">Areas Covered</p>
             </div>
             <div>
-              <p className="text-4xl font-black">Free</p>
-              <p className="text-lg font-semibold opacity-90">No Referral Fees</p>
+              <p className="text-4xl font-black">South East</p>
+              <p className="text-lg font-semibold opacity-90">Region</p>
             </div>
           </div>
         </div>
@@ -147,11 +155,11 @@ export default async function LondonHubPage() {
               <div className="text-4xl mb-4">🏠</div>
               <h3 className="text-2xl font-black text-gray-900 mb-3">Residential Pest Control</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Find trusted pest control providers for your home across all 33 London boroughs.
+                Find trusted pest control providers for your home across Hampshire.
                 Filter by pest type, service features, and compare ratings from real customers.
               </p>
               <Link
-                href="/residential"
+                href="/hampshire/residential"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Browse Residential Providers
@@ -167,7 +175,7 @@ export default async function LondonHubPage() {
                 Compare certified commercial pest control providers with advanced filtering by certifications, capabilities, and business sectors.
               </p>
               <Link
-                href="/commercial"
+                href="/hampshire/commercial"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Browse Commercial Providers
@@ -178,38 +186,41 @@ export default async function LondonHubPage() {
         </div>
       </section>
 
-      {/* BROWSE BY BOROUGH */}
+      {/* BROWSE BY TOWN */}
       <section className="relative bg-white py-16 border-b-2 border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">Browse by Borough</h2>
+            <h2 className="text-4xl font-black text-gray-900 mb-4">Browse by Town</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Find pest control providers in your area of London. Select your borough to see local providers and area-specific pest information.
+              Find pest control providers in your area of Hampshire. Select your town to see local providers and area-specific pest information.
             </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {londonBoroughs.map((borough) => (
+            {hampshireTowns.map((town) => (
               <Link
-                key={borough.slug}
-                href={`/pest-control/london/${borough.slug}`}
+                key={town.slug}
+                href={`/pest-control/hampshire/${town.slug}`}
                 className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-md hover:shadow-lg transition-all p-4 text-center border border-blue-100 hover:border-blue-300 hover:-translate-y-1 duration-200"
               >
                 <span className="text-2xl mb-2 block">📍</span>
-                <span className="text-sm font-bold text-gray-900 leading-tight block">{borough.name}</span>
+                <span className="text-sm font-bold text-gray-900 leading-tight block">{town.name}</span>
+                {townCounts[town.slug] > 0 && (
+                  <span className="text-xs text-gray-500 mt-1 block">{townCounts[town.slug]} providers</span>
+                )}
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* COMMON PESTS IN LONDON */}
+      {/* COMMON PESTS IN HAMPSHIRE */}
       <section className="relative bg-gradient-to-br from-gray-50 to-white py-16 border-b-2 border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">Common Pests in London</h2>
+            <h2 className="text-4xl font-black text-gray-900 mb-4">Common Pests in Hampshire</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              London&apos;s dense urban environment makes it one of the UK&apos;s most challenging cities for pest control. Rats and mice thrive in the Underground network and older Victorian housing stock. Bed bugs are prevalent in hotels, rental properties and HMOs. Wasps, foxes, pigeons and cockroaches are widespread across all boroughs. Bed bug infestations have increased significantly in recent years linked to international travel through London&apos;s airports.
+              Hampshire&apos;s mix of historic cities, coastal towns, rural villages, and proximity to the New Forest creates varied pest pressures. Rats, mice, wasps, seagulls, and squirrels are among the most common call-outs across the county.
             </p>
           </div>
 
@@ -217,14 +228,14 @@ export default async function LondonHubPage() {
             {[
               { label: 'Rats', slug: 'rats', icon: '🐀' },
               { label: 'Mice', slug: 'mice', icon: '🐁' },
-              { label: 'Bed Bugs', slug: 'bed-bugs', icon: '🛏️' },
-              { label: 'Cockroaches', slug: 'cockroaches', icon: '🪳' },
               { label: 'Wasps', slug: 'wasps', icon: '🐝' },
-              { label: 'Foxes', slug: 'foxes', icon: '🦊' },
-              { label: 'Pigeons', slug: 'pigeons', icon: '🕊️' },
-              { label: 'Moths', slug: 'moths', icon: '🦋' },
-              { label: 'Ants', slug: 'ants', icon: '🐜' },
+              { label: 'Seagulls', slug: 'seagulls', icon: '🕊️' },
               { label: 'Squirrels', slug: 'squirrels', icon: '🐿️' },
+              { label: 'Ants', slug: 'ants', icon: '🐜' },
+              { label: 'Cockroaches', slug: 'cockroaches', icon: '🪳' },
+              { label: 'Bed Bugs', slug: 'bed-bugs', icon: '🛏️' },
+              { label: 'Moths', slug: 'moths', icon: '🦋' },
+              { label: 'Moles', slug: 'moles', icon: '🐾' },
             ].map((pest) => (
               <Link
                 key={pest.slug}
@@ -245,44 +256,64 @@ export default async function LondonHubPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Pest Control in Other Cities</h2>
           <p className="text-gray-700 mb-4">
             Also compare pest control providers in{' '}
-            <Link href="/birmingham" className="text-blue-600 hover:underline font-semibold">
+            <Link href="/residential" className="text-blue-600 hover:underline font-semibold">
+              London
+            </Link>
+            {' | '}
+            <Link href="/birmingham/residential" className="text-blue-600 hover:underline font-semibold">
               Birmingham
             </Link>
             {' | '}
-            <Link href="/manchester" className="text-blue-600 hover:underline font-semibold">
+            <Link href="/manchester/residential" className="text-blue-600 hover:underline font-semibold">
               Manchester
             </Link>
             {' | '}
-            <Link href="/leeds" className="text-blue-600 hover:underline font-semibold">
-              Leeds
-            </Link>
-            {' | '}
-            <Link href="/liverpool" className="text-blue-600 hover:underline font-semibold">
+            <Link href="/liverpool/residential" className="text-blue-600 hover:underline font-semibold">
               Liverpool
             </Link>
             {' | '}
-            <Link href="/sheffield" className="text-blue-600 hover:underline font-semibold">
+            <Link href="/leeds/residential" className="text-blue-600 hover:underline font-semibold">
+              Leeds
+            </Link>
+            {' | '}
+            <Link href="/sheffield/residential" className="text-blue-600 hover:underline font-semibold">
               Sheffield
             </Link>
             {' | '}
-            <Link href="/bristol" className="text-blue-600 hover:underline font-semibold">
+            <Link href="/nottingham/residential" className="text-blue-600 hover:underline font-semibold">
+              Nottingham
+            </Link>
+            {' | '}
+            <Link href="/bristol/residential" className="text-blue-600 hover:underline font-semibold">
               Bristol
             </Link>
             {' | '}
-            <Link href="/glasgow" className="text-blue-600 hover:underline font-semibold">
+            <Link href="/brighton/residential" className="text-blue-600 hover:underline font-semibold">
+              Brighton
+            </Link>
+            {' | '}
+            <Link href="/glasgow/residential" className="text-blue-600 hover:underline font-semibold">
               Glasgow
             </Link>
             {' | '}
-            <Link href="/edinburgh" className="text-blue-600 hover:underline font-semibold">
+            <Link href="/bradford/residential" className="text-blue-600 hover:underline font-semibold">
+              Bradford
+            </Link>
+            {' | '}
+            <Link href="/newcastle/residential" className="text-blue-600 hover:underline font-semibold">
+              Newcastle
+            </Link>
+            {' | '}
+            <Link href="/cardiff/residential" className="text-blue-600 hover:underline font-semibold">
+              Cardiff
+            </Link>
+            {' | '}
+            <Link href="/edinburgh/residential" className="text-blue-600 hover:underline font-semibold">
               Edinburgh
             </Link>
             {' | '}
-            <Link href="/leicester" className="text-blue-600 hover:underline font-semibold">
+            <Link href="/leicester/residential" className="text-blue-600 hover:underline font-semibold">
               Leicester
-            </Link>
-            {' | '}
-            <Link href="/hampshire/residential" className="text-blue-600 hover:underline font-semibold">
-              Hampshire
             </Link>
           </p>
         </div>

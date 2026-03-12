@@ -9,7 +9,7 @@ import { createClient } from '@/utils/supabase';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ providers: 0, cities: 15, regions: 11 });
+  const [stats, setStats] = useState({ providers: 0, cities: 16, regions: 11 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [providerTarget, setProviderTarget] = useState(0);
@@ -55,7 +55,7 @@ export default function Home() {
 
       setStats({
         providers: Math.floor(target * progress),
-        cities: Math.floor(15 * progress),
+        cities: Math.floor(16 * progress),
         regions: Math.floor(11 * progress)
       });
 
@@ -88,7 +88,8 @@ export default function Home() {
       { '@type': 'City', 'name': 'Newcastle' },
       { '@type': 'City', 'name': 'Cardiff' },
       { '@type': 'City', 'name': 'Edinburgh' },
-      { '@type': 'City', 'name': 'Leicester' }
+      { '@type': 'City', 'name': 'Leicester' },
+      { '@type': 'AdministrativeArea', 'name': 'Hampshire' }
     ]
   };
 
@@ -267,10 +268,15 @@ export default function Home() {
                 <MapPin className="w-6 h-6 text-amber-400" />
                 <h3 className="text-2xl font-black text-white">South East</h3>
               </div>
-              <p className="text-3xl font-black text-amber-400 mb-4">76 providers</p>
-              <Link href="/brighton/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
-                Browse Brighton →
-              </Link>
+              <p className="text-3xl font-black text-amber-400 mb-4">172 providers</p>
+              <div className="space-y-2">
+                <Link href="/brighton/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                  Browse Brighton →
+                </Link>
+                <Link href="/hampshire/residential" className="block text-center px-4 py-2.5 border-2 border-amber-500/60 hover:border-amber-400 text-amber-400 hover:text-amber-300 font-bold rounded-lg transition-colors text-sm">
+                  Browse Hampshire →
+                </Link>
+              </div>
             </div>
 
             {/* South Yorkshire */}
@@ -431,6 +437,8 @@ export default function Home() {
                 <li><Link href="/edinburgh/commercial" className="hover:text-white transition">Edinburgh Commercial</Link></li>
                 <li><Link href="/leicester/residential" className="hover:text-white transition">Leicester Residential</Link></li>
                 <li><Link href="/leicester/commercial" className="hover:text-white transition">Leicester Commercial</Link></li>
+                <li><Link href="/hampshire/residential" className="hover:text-white transition">Hampshire Residential</Link></li>
+                <li><Link href="/hampshire/commercial" className="hover:text-white transition">Hampshire Commercial</Link></li>
               </ul>
             </div>
             <div>

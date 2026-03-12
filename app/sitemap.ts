@@ -14,6 +14,7 @@ import { getAllBoroughs as getAllNewcastleBoroughs } from './pest-control/newcas
 import { getAllBoroughs as getAllCardiffBoroughs } from './pest-control/cardiff/cardiff-boroughs';
 import { getAllBoroughs as getAllEdinburghBoroughs } from './pest-control/edinburgh/edinburgh-boroughs';
 import { getAllBoroughs as getAllLeicesterBoroughs } from './pest-control/leicester/leicester-boroughs';
+import { getAllTowns as getAllHampshireTowns } from './pest-control/hampshire/hampshire-towns';
 import { posts } from './blog/data/posts';
 import { pestGuides } from '@/data/pest-guides';
 
@@ -150,6 +151,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const leicesterBoroughs = getAllLeicesterBoroughs();
   const leicesterBoroughUrls = leicesterBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/leicester/${borough.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Get all Hampshire towns
+  const hampshireTowns = getAllHampshireTowns();
+  const hampshireTownUrls = hampshireTowns.map((town) => ({
+    url: `${baseUrl}/pest-control/hampshire/${town.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
@@ -375,6 +385,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/hampshire`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/hampshire/residential`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/hampshire/commercial`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/pest-control`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -456,5 +484,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...cardiffBoroughUrls,
     ...edinburghBoroughUrls,
     ...leicesterBoroughUrls,
+    ...hampshireTownUrls,
   ];
 }

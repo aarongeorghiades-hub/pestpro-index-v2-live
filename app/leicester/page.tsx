@@ -300,6 +300,10 @@ export default async function LeicesterHubPage() {
             <Link href="/edinburgh/residential" className="text-blue-600 hover:underline font-semibold">
               Edinburgh
             </Link>
+            {' | '}
+            <Link href="/hampshire/residential" className="text-blue-600 hover:underline font-semibold">
+              Hampshire
+            </Link>
           </p>
         </div>
       </section>
