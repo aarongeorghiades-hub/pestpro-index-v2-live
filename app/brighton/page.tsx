@@ -30,8 +30,8 @@ export default async function BrightonHubPage() {
   const { count } = await supabase
     .from('Providers')
     .select('*', { count: 'exact', head: true })
-    .eq('city', 'brighton')
-    .eq('active', true);
+    .eq('active', true)
+    .or('regions.cs.["brighton"]');
 
   const providerCount = count ?? 0;
 

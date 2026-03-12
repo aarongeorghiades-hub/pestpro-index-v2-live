@@ -30,8 +30,8 @@ export default async function BirminghamHubPage() {
   const { count } = await supabase
     .from('Providers')
     .select('*', { count: 'exact', head: true })
-    .eq('city', 'birmingham')
-    .eq('active', true);
+    .eq('active', true)
+    .or('regions.cs.["birmingham"]');
 
   const providerCount = count ?? 0;
 
