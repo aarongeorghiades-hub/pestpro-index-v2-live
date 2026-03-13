@@ -300,6 +300,10 @@ export default async function NewcastleHubPage() {
             <Link href="/hampshire/residential" className="text-blue-600 hover:underline font-semibold">
               Hampshire
             </Link>
+            {' | '}
+            <Link href="/coventry/residential" className="text-blue-600 hover:underline font-semibold">
+              Coventry
+            </Link>
           </p>
         </div>
       </section>

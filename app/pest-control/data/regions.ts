@@ -53,9 +53,9 @@ export const regions: Region[] = [
     name: "West Midlands",
     slug: "west-midlands",
     status: "live",
-    description: "Find trusted pest control and pest removal providers across the West Midlands. PestPro Index currently covers Birmingham with 42 verified providers, with expansion to Coventry, Wolverhampton, and the wider West Midlands region coming soon.",
-    metaTitle: "Pest Control in the West Midlands | Birmingham & Surrounding Areas | PestPro Index",
-    metaDescription: "Compare pest control and pest removal providers across the West Midlands. Currently covering Birmingham with 42 verified providers. No lead fees, no commissions.",
+    description: "Find trusted pest control and pest removal providers across the West Midlands. PestPro Index covers Birmingham and Coventry with verified providers, with expansion to Wolverhampton and the wider West Midlands region coming soon.",
+    metaTitle: "Pest Control in the West Midlands | Birmingham, Coventry & Surrounding Areas | PestPro Index",
+    metaDescription: "Compare pest control and pest removal providers across the West Midlands. Currently covering Birmingham and Coventry with verified providers. No lead fees, no commissions.",
     cities: [
       {
         name: "Birmingham Residential",
@@ -71,9 +71,16 @@ export const regions: Region[] = [
         commercialLink: "/birmingham/commercial",
       },
       {
-        name: "Coventry",
-        slug: "coventry",
-        status: "coming-soon",
+        name: "Coventry Residential",
+        slug: "coventry-residential",
+        status: "live",
+        residentialLink: "/coventry/residential",
+      },
+      {
+        name: "Coventry Commercial",
+        slug: "coventry-commercial",
+        status: "live",
+        commercialLink: "/coventry/commercial",
       },
       {
         name: "Wolverhampton",

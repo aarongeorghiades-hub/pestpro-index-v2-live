@@ -15,6 +15,7 @@ import { getAllBoroughs as getAllCardiffBoroughs } from './pest-control/cardiff/
 import { getAllBoroughs as getAllEdinburghBoroughs } from './pest-control/edinburgh/edinburgh-boroughs';
 import { getAllBoroughs as getAllLeicesterBoroughs } from './pest-control/leicester/leicester-boroughs';
 import { getAllTowns as getAllHampshireTowns } from './pest-control/hampshire/hampshire-towns';
+import { getAllBoroughs as getAllCoventryBoroughs } from './pest-control/coventry/coventry-boroughs';
 import { posts } from './blog/data/posts';
 import { pestGuides } from '@/data/pest-guides';
 
@@ -151,6 +152,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const leicesterBoroughs = getAllLeicesterBoroughs();
   const leicesterBoroughUrls = leicesterBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/leicester/${borough.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Get all Coventry boroughs
+  const coventryBoroughs = getAllCoventryBoroughs();
+  const coventryBoroughUrls = coventryBoroughs.map((borough) => ({
+    url: `${baseUrl}/pest-control/coventry/${borough.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
@@ -385,6 +395,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/coventry`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/coventry/residential`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/coventry/commercial`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/hampshire`,
       lastModified: new Date(),
       changeFrequency: 'daily',
@@ -485,5 +513,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...edinburghBoroughUrls,
     ...leicesterBoroughUrls,
     ...hampshireTownUrls,
+    ...coventryBoroughUrls,
   ];
 }
