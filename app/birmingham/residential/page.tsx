@@ -689,6 +689,22 @@ export default function ResidentialPage() {
         </div>
       </section>
 
+      {/* DIY GUIDES */}
+      <section className="bg-white border-t border-gray-200 py-8">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="text-gray-900 font-bold mb-2">DIY First? Read Our Guides</p>
+          <p className="text-gray-600 text-sm mb-4">Expert advice to help you tackle pest problems yourself</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-semibold text-sm">
+              How to Get Rid of Rats →
+            </Link>
+            <Link href="/best/rat-traps" className="text-blue-600 hover:underline font-semibold text-sm">
+              Best Rat Traps UK 2026 →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CROSS-LINKING TO LONDON */}
       <section className="bg-gray-50 border-t border-gray-200 py-12">
         <div className="max-w-7xl mx-auto px-4 text-center">

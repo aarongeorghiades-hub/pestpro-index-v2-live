@@ -418,6 +418,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PEST CONTROL GUIDES */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Pest Control Guides</h2>
+            <p className="text-xl text-gray-600">Free, expert advice to help you tackle common pest problems</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Link href="/guides/how-to-get-rid-of-rats" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-blue-600 mb-2">Guide</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">How to Get Rid of Rats</h3>
+              <p className="text-gray-600">The complete UK guide to identifying, treating, and preventing rat infestations in your home and garden.</p>
+            </Link>
+            <Link href="/best/rat-traps" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Rat Traps UK 2026</h3>
+              <p className="text-gray-600">Our pick of the most effective rat traps available in the UK — snap traps, electronic, humane, and budget options.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-16">
         <div className="max-w-7xl mx-auto px-4">
@@ -477,6 +499,8 @@ export default function Home() {
                 <li><Link href="/blog" className="hover:text-white transition">Blog</Link></li>
                 <li><Link href="/frequently-asked-questions" className="hover:text-white transition">Pest Control FAQ</Link></li>
                 <li><Link href="/professionals" className="hover:text-white transition">For Professionals</Link></li>
+                <li><Link href="/guides/how-to-get-rid-of-rats" className="hover:text-white transition">How to Get Rid of Rats</Link></li>
+                <li><Link href="/best/rat-traps" className="hover:text-white transition">Best Rat Traps UK</Link></li>
               </ul>
             </div>
             <div>

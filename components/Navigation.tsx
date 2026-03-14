@@ -18,7 +18,7 @@ export default function Navigation() {
   const isFindProviderActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/manchester') || pathname?.startsWith('/liverpool') || pathname?.startsWith('/leeds') || pathname?.startsWith('/nottingham') || pathname?.startsWith('/brighton') || pathname?.startsWith('/sheffield') || pathname?.startsWith('/bristol') || pathname?.startsWith('/glasgow') || pathname?.startsWith('/bradford') || pathname?.startsWith('/newcastle') || pathname?.startsWith('/cardiff') || pathname?.startsWith('/edinburgh') || pathname?.startsWith('/leicester') || pathname?.startsWith('/hampshire') || pathname?.startsWith('/coventry') || pathname?.startsWith('/belfast') || pathname?.startsWith('/pest-control');
   const isProductsActive = pathname === '/products' || pathname === '/commercial-products';
   const isProfessionalsActive = pathname === '/professionals';
-  const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources') || pathname?.startsWith('/frequently-asked-questions') || pathname?.startsWith('/pest-library') || pathname?.startsWith('/pest/') || pathname?.startsWith('/pest-control-costs') || pathname?.startsWith('/useful-links');
+  const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources') || pathname?.startsWith('/frequently-asked-questions') || pathname?.startsWith('/pest-library') || pathname?.startsWith('/pest/') || pathname?.startsWith('/pest-control-costs') || pathname?.startsWith('/useful-links') || pathname?.startsWith('/guides') || pathname?.startsWith('/best');
   const isContactActive = pathname === '/contact';
 
   // Close all dropdowns when clicking outside the nav
@@ -231,6 +231,21 @@ export default function Navigation() {
                 >
                   Useful Links
                 </Link>
+                <div className="border-t border-white/10 my-1"></div>
+                <Link
+                  href="/guides/how-to-get-rid-of-rats"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Rat Control Guide
+                </Link>
+                <Link
+                  href="/best/rat-traps"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Rat Traps
+                </Link>
               </div>
             )}
           </div>
@@ -391,6 +406,22 @@ export default function Navigation() {
               >
                 Useful Links
               </Link>
+              <div className="border-t border-white/10 mt-2 pt-2">
+                <Link
+                  href="/guides/how-to-get-rid-of-rats"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Rat Control Guide
+                </Link>
+                <Link
+                  href="/best/rat-traps"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Rat Traps
+                </Link>
+              </div>
             </div>
 
             <Link
