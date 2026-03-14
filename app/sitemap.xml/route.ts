@@ -72,6 +72,9 @@ export async function GET() {
     { url: `${baseUrl}/coventry`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/coventry/residential`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/coventry/commercial`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/belfast`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/belfast/residential`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/belfast/commercial`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/professionals`, changefreq: 'monthly', priority: '0.4' },
     { url: `${baseUrl}/products`, changefreq: 'monthly', priority: '0.7' },
     { url: `${baseUrl}/commercial-products`, changefreq: 'monthly', priority: '0.7' },
@@ -254,7 +257,19 @@ export async function GET() {
     priority: '0.7',
   }))
 
-  const pages = [...staticPages, ...boroughPages, ...manchesterBoroughPages, ...liverpoolBoroughPages, ...bradfordBoroughPages, ...birminghamBoroughPages, ...newcastleBoroughPages, ...cardiffBoroughPages, ...edinburghBoroughPages, ...leicesterBoroughPages, ...hampshireTownPages, ...coventryBoroughPages, ...providerPages]
+  // Belfast borough pages
+  const belfastBoroughSlugs = [
+    'belfast-city-centre', 'south-belfast', 'east-belfast', 'west-belfast',
+    'north-belfast', 'lisburn-road', 'holywood', 'dunmurry'
+  ]
+
+  const belfastBoroughPages = belfastBoroughSlugs.map(slug => ({
+    url: `${baseUrl}/pest-control/belfast/${slug}`,
+    changefreq: 'monthly',
+    priority: '0.7',
+  }))
+
+  const pages = [...staticPages, ...boroughPages, ...manchesterBoroughPages, ...liverpoolBoroughPages, ...bradfordBoroughPages, ...birminghamBoroughPages, ...newcastleBoroughPages, ...cardiffBoroughPages, ...edinburghBoroughPages, ...leicesterBoroughPages, ...hampshireTownPages, ...coventryBoroughPages, ...belfastBoroughPages, ...providerPages]
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -263,7 +278,7 @@ ${pages.map(page => `  <url>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`).join('\n')}
-  <!-- Total URLs: ${pages.length} (${staticPages.length} static + ${boroughPages.length} London boroughs + ${manchesterBoroughPages.length} Manchester boroughs + ${liverpoolBoroughPages.length} Liverpool boroughs + ${bradfordBoroughPages.length} Bradford boroughs + ${birminghamBoroughPages.length} Birmingham boroughs + ${newcastleBoroughPages.length} Newcastle boroughs + ${cardiffBoroughPages.length} Cardiff boroughs + ${edinburghBoroughPages.length} Edinburgh boroughs + ${leicesterBoroughPages.length} Leicester boroughs + ${hampshireTownPages.length} Hampshire towns + ${coventryBoroughPages.length} Coventry boroughs + ${providerPages.length} providers) -->
+  <!-- Total URLs: ${pages.length} (${staticPages.length} static + ${boroughPages.length} London boroughs + ${manchesterBoroughPages.length} Manchester boroughs + ${liverpoolBoroughPages.length} Liverpool boroughs + ${bradfordBoroughPages.length} Bradford boroughs + ${birminghamBoroughPages.length} Birmingham boroughs + ${newcastleBoroughPages.length} Newcastle boroughs + ${cardiffBoroughPages.length} Cardiff boroughs + ${edinburghBoroughPages.length} Edinburgh boroughs + ${leicesterBoroughPages.length} Leicester boroughs + ${hampshireTownPages.length} Hampshire towns + ${coventryBoroughPages.length} Coventry boroughs + ${belfastBoroughPages.length} Belfast boroughs + ${providerPages.length} providers) -->
 </urlset>`
 
   return new NextResponse(xml, {

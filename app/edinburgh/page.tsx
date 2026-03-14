@@ -308,6 +308,10 @@ export default async function EdinburghHubPage() {
             <Link href="/coventry/residential" className="text-blue-600 hover:underline font-semibold">
               Coventry
             </Link>
+            {' | '}
+            <Link href="/belfast/residential" className="text-blue-600 hover:underline font-semibold">
+              Belfast
+            </Link>
           </p>
         </div>
       </section>

@@ -15,7 +15,7 @@ export default function Navigation() {
   const navRef = useRef<HTMLDivElement>(null);
 
   const isHomeActive = pathname === '/';
-  const isFindProviderActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/manchester') || pathname?.startsWith('/liverpool') || pathname?.startsWith('/leeds') || pathname?.startsWith('/nottingham') || pathname?.startsWith('/brighton') || pathname?.startsWith('/sheffield') || pathname?.startsWith('/bristol') || pathname?.startsWith('/glasgow') || pathname?.startsWith('/bradford') || pathname?.startsWith('/newcastle') || pathname?.startsWith('/cardiff') || pathname?.startsWith('/edinburgh') || pathname?.startsWith('/leicester') || pathname?.startsWith('/hampshire') || pathname?.startsWith('/coventry') || pathname?.startsWith('/pest-control');
+  const isFindProviderActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/manchester') || pathname?.startsWith('/liverpool') || pathname?.startsWith('/leeds') || pathname?.startsWith('/nottingham') || pathname?.startsWith('/brighton') || pathname?.startsWith('/sheffield') || pathname?.startsWith('/bristol') || pathname?.startsWith('/glasgow') || pathname?.startsWith('/bradford') || pathname?.startsWith('/newcastle') || pathname?.startsWith('/cardiff') || pathname?.startsWith('/edinburgh') || pathname?.startsWith('/leicester') || pathname?.startsWith('/hampshire') || pathname?.startsWith('/coventry') || pathname?.startsWith('/belfast') || pathname?.startsWith('/pest-control');
   const isProductsActive = pathname === '/products' || pathname === '/commercial-products';
   const isProfessionalsActive = pathname === '/professionals';
   const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources') || pathname?.startsWith('/frequently-asked-questions') || pathname?.startsWith('/pest-library') || pathname?.startsWith('/pest/') || pathname?.startsWith('/pest-control-costs') || pathname?.startsWith('/useful-links');
@@ -47,7 +47,7 @@ export default function Navigation() {
     { name: 'North East', href: '/pest-control/north-east', status: 'live', providerCount: 53 },
     { name: 'Wales', href: '/pest-control/wales', status: 'live', providerCount: 38 },
     { name: 'East of England', href: '/pest-control/east-of-england', status: 'coming-soon' },
-    { name: 'Northern Ireland', href: '/pest-control/northern-ireland', status: 'coming-soon' },
+    { name: 'Northern Ireland', href: '/pest-control/northern-ireland', status: 'live', providerCount: 23 },
   ];
 
   const pestProducts = [

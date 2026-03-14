@@ -418,12 +418,24 @@ export const regions: Region[] = [
   {
     name: "Northern Ireland",
     slug: "northern-ireland",
-    status: "coming-soon",
-    description: "PestPro Index is expanding to Northern Ireland. We will soon cover Belfast, Derry, and the wider Northern Ireland region with verified pest control providers.",
-    metaTitle: "Pest Control in Northern Ireland | Belfast, Derry & More | PestPro Index",
-    metaDescription: "PestPro Index is expanding to Northern Ireland. Soon covering Belfast, Derry, Lisburn, and Newry. Neutral pest control directory — no lead fees, no commissions.",
+    status: "live",
+    description: "Find trusted pest control and pest removal providers across Northern Ireland. PestPro Index covers Belfast with 23 verified providers, with expansion to Derry, Lisburn, and Newry coming soon.",
+    metaTitle: "Pest Control in Northern Ireland | Belfast & Surrounding Areas | PestPro Index",
+    metaDescription: "Compare 23 pest control and pest removal providers across Northern Ireland. Currently covering Belfast with verified providers. No lead fees, no commissions.",
     cities: [
-      { name: "Belfast", slug: "belfast", status: "coming-soon" },
+      {
+        name: "Belfast Residential",
+        slug: "belfast-residential",
+        status: "live",
+        providerCount: 23,
+        residentialLink: "/belfast/residential",
+      },
+      {
+        name: "Belfast Commercial",
+        slug: "belfast-commercial",
+        status: "live",
+        commercialLink: "/belfast/commercial",
+      },
       { name: "Derry / Londonderry", slug: "derry", status: "coming-soon" },
       { name: "Lisburn", slug: "lisburn", status: "coming-soon" },
       { name: "Newry", slug: "newry", status: "coming-soon" }

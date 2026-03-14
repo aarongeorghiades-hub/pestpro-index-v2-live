@@ -3,35 +3,35 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import { createClient } from '@/utils/supabase';
-import { brightonBoroughs } from '@/app/pest-control/brighton/brighton-boroughs';
+import { belfastBoroughs } from '@/lib/belfast-boroughs';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control Brighton | Find Local Experts | PestPro Index',
+  title: 'Pest Control in Belfast | PestPro Index',
   description:
-    'Find trusted pest control companies in Brighton. Browse residential and commercial services across all Brighton districts including Worthing, Eastbourne, Lewes and more.',
+    'Compare trusted pest control companies in Belfast. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses across Belfast and Northern Ireland.',
   alternates: {
-    canonical: 'https://pestproindex.com/brighton',
+    canonical: 'https://pestproindex.com/belfast',
   },
   openGraph: {
-    title: 'Pest Control Brighton | Find Local Experts | PestPro Index',
+    title: 'Pest Control in Belfast | PestPro Index',
     description:
-      'Find trusted pest control companies in Brighton. Browse residential and commercial services across all Brighton districts.',
-    url: 'https://pestproindex.com/brighton',
+      'Compare trusted pest control companies in Belfast. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses across Belfast and Northern Ireland.',
+    url: 'https://pestproindex.com/belfast',
     siteName: 'PestPro Index',
     type: 'website',
   },
 };
 
-export default async function BrightonHubPage() {
+export default async function BelfastHubPage() {
   const supabase = createClient();
 
   const { count } = await supabase
     .from('Providers')
     .select('*', { count: 'exact', head: true })
     .eq('active', true)
-    .or('regions.cs.["brighton"]');
+    .or('regions.cs.["belfast"]');
 
   const providerCount = count ?? 0;
 
@@ -41,26 +41,26 @@ export default async function BrightonHubPage() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'How much does pest control cost in Brighton?',
+        name: 'How much does pest control cost in Belfast?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Pest control costs in Brighton typically range from £80-£150 for a standard residential treatment such as mice or rats. Wasp nest removal usually costs £50-£80. Seagull deterrent installations vary from £200-£500 depending on the property. Commercial pest control contracts vary depending on the size of premises and frequency of visits. Always get at least two quotes and check what is included in the price.',
+          text: 'Pest control costs in Belfast typically range from £80-£150 for a standard residential treatment such as mice or rats. Wasp nest removal usually costs £50-£80. Commercial pest control contracts vary depending on the size of premises and frequency of visits. Prices in Belfast are generally competitive compared to other UK cities. Always get at least two quotes and check what is included in the price.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Are Brighton pest controllers BPCA certified?',
+        name: 'Are Belfast pest controllers BPCA certified?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Many Brighton pest control providers hold BPCA (British Pest Control Association) certification, which is a recognised industry standard. BPCA members must meet strict technical competence requirements, carry appropriate insurance, and follow a code of conduct. You can filter providers by BPCA certification on our residential and commercial directory pages to find accredited companies in the Brighton area.',
+          text: 'Many Belfast pest control providers hold BPCA (British Pest Control Association) certification, which is a recognised industry standard. BPCA members must meet strict technical competence requirements, carry appropriate insurance, and follow a code of conduct. You can filter providers by BPCA certification on our residential and commercial directory pages to find accredited companies in the Belfast area.',
         },
       },
       {
         '@type': 'Question',
-        name: 'How quickly can I get a pest controller in Brighton?',
+        name: 'How quickly can I get a pest controller in Belfast?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Most Brighton pest control companies offer same-day or next-day service for urgent issues such as wasp nests, rat infestations, or bed bugs. Several providers operate 24/7 emergency call-out services. For routine treatments and surveys, you can usually book within 2-3 working days. Response times may vary during peak summer season when wasp and seagull call-outs increase.',
+          text: 'Most Belfast pest control companies offer same-day or next-day service for urgent issues such as wasp nests, rat infestations, or bed bugs. Several providers operate 24/7 emergency call-out services. For routine treatments and surveys, you can usually book within 2-3 working days. Response times may be faster in central Belfast and slower in the outer areas of the city.',
         },
       },
     ],
@@ -80,8 +80,8 @@ export default async function BrightonHubPage() {
       <section className="relative h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/brighton-skyline.png"
-            alt="Brighton skyline"
+            src="/images/belfast-skyline.png"
+            alt="Belfast skyline"
             fill
             className="object-cover opacity-95"
             priority
@@ -94,13 +94,13 @@ export default async function BrightonHubPage() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 max-w-3xl drop-shadow-lg"
             style={{ textShadow: '0 4px 6px rgba(0,0,0,0.3)' }}
           >
-            Pest Control in Brighton
+            Pest Control in Belfast
           </h1>
           <p
             className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg"
             style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
           >
-            Find vetted, local pest control providers across Brighton &amp; East Sussex
+            Find vetted, local pest control providers across Belfast &amp; Northern Ireland
           </p>
           <p
             className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg"
@@ -120,12 +120,12 @@ export default async function BrightonHubPage() {
               <p className="text-lg font-semibold opacity-90">Verified Providers</p>
             </div>
             <div>
-              <p className="text-4xl font-black">{brightonBoroughs.length}</p>
-              <p className="text-lg font-semibold opacity-90">Districts Covered</p>
+              <p className="text-4xl font-black">8</p>
+              <p className="text-lg font-semibold opacity-90">Areas Covered</p>
             </div>
             <div>
-              <p className="text-4xl font-black">Free</p>
-              <p className="text-lg font-semibold opacity-90">No Referral Fees</p>
+              <p className="text-4xl font-black">Northern Ireland</p>
+              <p className="text-lg font-semibold opacity-90">Region</p>
             </div>
           </div>
         </div>
@@ -142,15 +142,16 @@ export default async function BrightonHubPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Residential Card */}
             <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8 border-t-4 border-[#2563eb]">
               <div className="text-4xl mb-4">🏠</div>
               <h3 className="text-2xl font-black text-gray-900 mb-3">Residential Pest Control</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Find trusted pest control providers for your home across Brighton and East Sussex.
+                Find trusted pest control providers for your home across Belfast and Northern Ireland.
                 Filter by pest type, service features, and compare ratings from real customers.
               </p>
               <Link
-                href="/brighton/residential"
+                href="/belfast/residential"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Browse Residential Providers
@@ -158,6 +159,7 @@ export default async function BrightonHubPage() {
               </Link>
             </div>
 
+            {/* Commercial Card */}
             <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8 border-t-4 border-[#f59e0b]">
               <div className="text-4xl mb-4">🏢</div>
               <h3 className="text-2xl font-black text-gray-900 mb-3">Commercial Pest Control</h3>
@@ -165,7 +167,7 @@ export default async function BrightonHubPage() {
                 Compare certified commercial pest control providers with advanced filtering by certifications, capabilities, and business sectors.
               </p>
               <Link
-                href="/brighton/commercial"
+                href="/belfast/commercial"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Browse Commercial Providers
@@ -176,21 +178,21 @@ export default async function BrightonHubPage() {
         </div>
       </section>
 
-      {/* BROWSE BY DISTRICT */}
+      {/* BROWSE BY AREA */}
       <section className="relative bg-white py-16 border-b-2 border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">Browse by District</h2>
+            <h2 className="text-4xl font-black text-gray-900 mb-4">Browse by Area</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Find pest control providers in your area of Brighton and East Sussex. Select your district to see local providers and area-specific pest information.
+              Find pest control providers in your area of Belfast. Select your area to see local providers and area-specific pest information.
             </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {brightonBoroughs.map((borough) => (
+            {belfastBoroughs.map((borough) => (
               <Link
                 key={borough.slug}
-                href={`/pest-control/brighton/${borough.slug}`}
+                href={`/pest-control/belfast/${borough.slug}`}
                 className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-md hover:shadow-lg transition-all p-4 text-center border border-blue-100 hover:border-blue-300 hover:-translate-y-1 duration-200"
               >
                 <span className="text-2xl mb-2 block">📍</span>
@@ -201,13 +203,13 @@ export default async function BrightonHubPage() {
         </div>
       </section>
 
-      {/* COMMON PESTS IN BRIGHTON */}
+      {/* COMMON PESTS IN BELFAST */}
       <section className="relative bg-gradient-to-br from-gray-50 to-white py-16 border-b-2 border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">Common Pests in Brighton</h2>
+            <h2 className="text-4xl font-black text-gray-900 mb-4">Common Pests in Belfast</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Brighton&apos;s coastal location brings distinctive pest challenges. Seagulls are one of the most visible issues, while rats and mice thrive near the seafront and older Victorian drainage. The busy tourism and hospitality sector means bed bugs and cockroaches are a growing concern in hotels and restaurants.
+              Belfast&apos;s mix of Victorian terraced housing, post-war estates, modern waterfront developments, and proximity to Belfast Lough and the surrounding hills creates varied pest pressures. Rats and mice are the most common call-outs, particularly along the River Lagan and in the older streets of the inner city. Wasps and squirrels thrive in the leafy suburbs of South and East Belfast.
             </p>
           </div>
 
@@ -219,8 +221,8 @@ export default async function BrightonHubPage() {
               { label: 'Bed Bugs', slug: 'bed-bugs', icon: '🛏️' },
               { label: 'Cockroaches', slug: 'cockroaches', icon: '🪳' },
               { label: 'Ants', slug: 'ants', icon: '🐜' },
-              { label: 'Moths', slug: 'moths', icon: '🦋' },
               { label: 'Fleas', slug: 'fleas', icon: '🔬' },
+              { label: 'Moths', slug: 'moths', icon: '🦋' },
               { label: 'Squirrels', slug: 'squirrels', icon: '🐿️' },
               { label: 'Silverfish', slug: 'silverfish', icon: '🐛' },
             ].map((pest) => (
@@ -243,27 +245,73 @@ export default async function BrightonHubPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Pest Control in Other Cities</h2>
           <p className="text-gray-700 mb-4">
             Also compare pest control providers in{' '}
-            <Link href="/bristol/residential" className="text-blue-600 hover:underline font-semibold">Bristol</Link>
+            <Link href="/residential" className="text-blue-600 hover:underline font-semibold">
+              London
+            </Link>
             {' | '}
-            <Link href="/manchester/residential" className="text-blue-600 hover:underline font-semibold">Manchester</Link>
+            <Link href="/birmingham/residential" className="text-blue-600 hover:underline font-semibold">
+              Birmingham
+            </Link>
             {' | '}
-            <Link href="/leeds/residential" className="text-blue-600 hover:underline font-semibold">Leeds</Link>
+            <Link href="/manchester/residential" className="text-blue-600 hover:underline font-semibold">
+              Manchester
+            </Link>
             {' | '}
-            <Link href="/birmingham/residential" className="text-blue-600 hover:underline font-semibold">Birmingham</Link>
+            <Link href="/liverpool/residential" className="text-blue-600 hover:underline font-semibold">
+              Liverpool
+            </Link>
             {' | '}
-            <Link href="/glasgow/residential" className="text-blue-600 hover:underline font-semibold">Glasgow</Link>
+            <Link href="/leeds/residential" className="text-blue-600 hover:underline font-semibold">
+              Leeds
+            </Link>
             {' | '}
-            <Link href="/residential" className="text-blue-600 hover:underline font-semibold">London</Link>
+            <Link href="/sheffield/residential" className="text-blue-600 hover:underline font-semibold">
+              Sheffield
+            </Link>
             {' | '}
-            <Link href="/edinburgh/residential" className="text-blue-600 hover:underline font-semibold">Edinburgh</Link>
+            <Link href="/nottingham/residential" className="text-blue-600 hover:underline font-semibold">
+              Nottingham
+            </Link>
             {' | '}
-            <Link href="/leicester/residential" className="text-blue-600 hover:underline font-semibold">Leicester</Link>
+            <Link href="/bristol/residential" className="text-blue-600 hover:underline font-semibold">
+              Bristol
+            </Link>
             {' | '}
-            <Link href="/hampshire/residential" className="text-blue-600 hover:underline font-semibold">Hampshire</Link>
+            <Link href="/brighton/residential" className="text-blue-600 hover:underline font-semibold">
+              Brighton
+            </Link>
             {' | '}
-            <Link href="/coventry/residential" className="text-blue-600 hover:underline font-semibold">Coventry</Link>
+            <Link href="/glasgow/residential" className="text-blue-600 hover:underline font-semibold">
+              Glasgow
+            </Link>
             {' | '}
-            <Link href="/belfast/residential" className="text-blue-600 hover:underline font-semibold">Belfast</Link>
+            <Link href="/bradford/residential" className="text-blue-600 hover:underline font-semibold">
+              Bradford
+            </Link>
+            {' | '}
+            <Link href="/newcastle/residential" className="text-blue-600 hover:underline font-semibold">
+              Newcastle
+            </Link>
+            {' | '}
+            <Link href="/cardiff/residential" className="text-blue-600 hover:underline font-semibold">
+              Cardiff
+            </Link>
+            {' | '}
+            <Link href="/edinburgh/residential" className="text-blue-600 hover:underline font-semibold">
+              Edinburgh
+            </Link>
+            {' | '}
+            <Link href="/leicester/residential" className="text-blue-600 hover:underline font-semibold">
+              Leicester
+            </Link>
+            {' | '}
+            <Link href="/hampshire/residential" className="text-blue-600 hover:underline font-semibold">
+              Hampshire
+            </Link>
+            {' | '}
+            <Link href="/coventry/residential" className="text-blue-600 hover:underline font-semibold">
+              Coventry
+            </Link>
           </p>
         </div>
       </section>

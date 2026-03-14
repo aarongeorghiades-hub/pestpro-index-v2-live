@@ -9,7 +9,7 @@ import { createClient } from '@/utils/supabase';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ providers: 0, cities: 17, regions: 11 });
+  const [stats, setStats] = useState({ providers: 0, cities: 18, regions: 12 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [providerTarget, setProviderTarget] = useState(0);
@@ -55,8 +55,8 @@ export default function Home() {
 
       setStats({
         providers: Math.floor(target * progress),
-        cities: Math.floor(17 * progress),
-        regions: Math.floor(11 * progress)
+        cities: Math.floor(18 * progress),
+        regions: Math.floor(12 * progress)
       });
 
       if (progress < 1) {
@@ -90,6 +90,7 @@ export default function Home() {
       { '@type': 'City', 'name': 'Edinburgh' },
       { '@type': 'City', 'name': 'Leicester' },
       { '@type': 'City', 'name': 'Coventry' },
+      { '@type': 'City', 'name': 'Belfast' },
       { '@type': 'AdministrativeArea', 'name': 'Hampshire' }
     ]
   };
@@ -349,11 +350,23 @@ export default function Home() {
                 Browse Cardiff →
               </Link>
             </div>
+
+            {/* Northern Ireland */}
+            <div className="rounded-2xl p-8 bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="w-6 h-6 text-amber-400" />
+                <h3 className="text-2xl font-black text-white">Northern Ireland</h3>
+              </div>
+              <p className="text-3xl font-black text-amber-400 mb-4">23 providers</p>
+              <Link href="/belfast/residential" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                Browse Belfast →
+              </Link>
+            </div>
           </div>
 
           {/* Coming Soon */}
           <p className="text-center text-white/50 text-sm">
-            More regions launching in 2026: East of England, Northern Ireland
+            More regions launching in 2026: East of England
           </p>
         </div>
       </section>
@@ -447,6 +460,8 @@ export default function Home() {
                 <li><Link href="/hampshire/commercial" className="hover:text-white transition">Hampshire Commercial</Link></li>
                 <li><Link href="/coventry/residential" className="hover:text-white transition">Coventry Residential</Link></li>
                 <li><Link href="/coventry/commercial" className="hover:text-white transition">Coventry Commercial</Link></li>
+                <li><Link href="/belfast/residential" className="hover:text-white transition">Belfast Residential</Link></li>
+                <li><Link href="/belfast/commercial" className="hover:text-white transition">Belfast Commercial</Link></li>
               </ul>
             </div>
             <div>

@@ -16,6 +16,7 @@ import { getAllBoroughs as getAllEdinburghBoroughs } from './pest-control/edinbu
 import { getAllBoroughs as getAllLeicesterBoroughs } from './pest-control/leicester/leicester-boroughs';
 import { getAllTowns as getAllHampshireTowns } from './pest-control/hampshire/hampshire-towns';
 import { getAllBoroughs as getAllCoventryBoroughs } from './pest-control/coventry/coventry-boroughs';
+import { getAllBoroughs as getAllBelfastBoroughs } from './pest-control/belfast/belfast-boroughs';
 import { posts } from './blog/data/posts';
 import { pestGuides } from '@/data/pest-guides';
 
@@ -161,6 +162,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const coventryBoroughs = getAllCoventryBoroughs();
   const coventryBoroughUrls = coventryBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/coventry/${borough.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Get all Belfast boroughs
+  const belfastBoroughs = getAllBelfastBoroughs();
+  const belfastBoroughUrls = belfastBoroughs.map((borough) => ({
+    url: `${baseUrl}/pest-control/belfast/${borough.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
@@ -413,6 +423,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/belfast`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/belfast/residential`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/belfast/commercial`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/hampshire`,
       lastModified: new Date(),
       changeFrequency: 'daily',
@@ -514,5 +542,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...leicesterBoroughUrls,
     ...hampshireTownUrls,
     ...coventryBoroughUrls,
+    ...belfastBoroughUrls,
   ];
 }
