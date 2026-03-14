@@ -45,14 +45,23 @@ export default function FindProviderCTA({
   };
 
   return (
-    <div className="rounded-2xl bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#0f172a] p-8 my-8">
-      <h3 className="text-2xl font-bold text-white mb-2">{heading}</h3>
-      <p className="text-blue-200 mb-6">{subtext}</p>
-      <div className="flex flex-col sm:flex-row gap-3">
+    <div className="rounded-2xl bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#0f172a] p-8 md:p-10 my-8 shadow-xl">
+      <div className="flex items-start gap-4 mb-4">
+        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center">
+          <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        <div>
+          <h3 className="text-2xl font-bold text-white mb-1">{heading}</h3>
+          <p className="text-blue-200">{subtext}</p>
+        </div>
+      </div>
+      <div className="flex flex-col sm:flex-row gap-3 mb-5">
         <select
           value={selectedCity}
           onChange={(e) => setSelectedCity(e.target.value)}
-          className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400"
         >
           <option value="" className="text-gray-900">Select your city...</option>
           {cities.map((city) => (
@@ -63,10 +72,21 @@ export default function FindProviderCTA({
         </select>
         <button
           onClick={handleFind}
-          className="px-6 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors whitespace-nowrap"
+          className="px-8 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors whitespace-nowrap shadow-lg shadow-amber-500/25"
         >
           Find Local Experts →
         </button>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {cities.slice(0, 8).map((city) => (
+          <a
+            key={city.href}
+            href={city.href}
+            className="text-xs text-blue-300 hover:text-white border border-blue-400/30 hover:border-blue-400/60 px-3 py-1 rounded-full transition-colors"
+          >
+            {city.name}
+          </a>
+        ))}
       </div>
     </div>
   );

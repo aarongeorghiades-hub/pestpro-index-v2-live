@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import GuideLayout from '@/components/GuideLayout';
 import FindProviderCTA from '@/components/FindProviderCTA';
+import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -166,6 +167,12 @@ export default function HowToGetRidOfMicePage() {
         Mice are small, fast, and predominantly nocturnal. The house mouse (<em>Mus musculus</em>) is by far the most common species found inside UK homes, and it is remarkably well adapted to living alongside humans. Because of their size and speed, you will almost always notice the evidence they leave behind long before you see a live mouse. Recognising these signs early is essential &mdash; the sooner you identify a mouse problem, the easier and cheaper it is to resolve. Here are the key indicators to watch for.
       </p>
 
+      <div className="not-prose">
+        <Callout type="info">
+          <p>A single mouse produces between 40 and 100 droppings per day, making droppings the most common first sign of an infestation. Check kitchen cupboards, behind appliances, and along skirting boards.</p>
+        </Callout>
+      </div>
+
       <h3>Droppings</h3>
       <p>
         Mouse droppings are the most common and reliable sign of activity. They are small &mdash; typically <strong>3 to 6 millimetres long</strong> &mdash; dark brown or black, and roughly the shape of a grain of rice. This is significantly smaller than rat droppings, which measure 10 to 20 millimetres and are more capsule-shaped. A single mouse produces between <strong>40 and 100 droppings per day</strong>, so even a small number of mice can leave a substantial trail of evidence. Fresh droppings are dark, soft, and shiny. As they age, they dry out, lighten in colour, and become crumbly. Finding fresh droppings means that mice are actively using that area. Look in kitchen cupboards, behind appliances, along skirting boards, in airing cupboards, under sinks, and in loft spaces.
@@ -240,6 +247,12 @@ export default function HowToGetRidOfMicePage() {
         Mice can squeeze through a gap as small as 6 millimetres, whereas rats need a gap of around 25 millimetres. This means the proofing standards for mice are considerably more demanding. The trap sizes differ too &mdash; mouse snap traps are much smaller and less powerful than rat traps, and using the wrong size will either fail to catch the target or damage the trap mechanism. If you are uncertain which species you are dealing with, the droppings are typically the most reliable indicator.
       </p>
 
+      <div className="not-prose">
+        <Callout type="info">
+          <p>Mice can squeeze through gaps as small as 6mm — the width of a pencil. Rat-proofing standards (25mm) are not sufficient for mice.</p>
+        </Callout>
+      </div>
+
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: Dangers */}
       {/* ------------------------------------------------------------------ */}
@@ -278,6 +291,10 @@ export default function HowToGetRidOfMicePage() {
         The reproductive rate of mice is staggering and is the single biggest reason why mouse problems escalate so rapidly. A female house mouse can produce <strong>5 to 10 litters per year</strong>, with each litter containing <strong>4 to 12 pups</strong>. The gestation period is just 19 to 21 days. Pups are weaned at around 3 weeks and reach sexual maturity at approximately <strong>6 weeks of age</strong>. This means that the offspring from a single litter can themselves be breeding within two months of being born. Under ideal conditions &mdash; warmth, shelter, and plentiful food, exactly what a UK home provides &mdash; a single pair of mice can theoretically produce <strong>hundreds of descendants in a single year</strong>. This exponential growth is why a mouse problem that seems small in October can become a full-blown infestation by Christmas.
       </p>
 
+      <div className="not-prose">
+        <StatCallout value="6 weeks" label="Time for a mouse to reach sexual maturity — populations grow exponentially" />
+      </div>
+
       <h3>Food Contamination</h3>
       <p>
         A single mouse produces <strong>40 to 100 droppings per day</strong> and urinates constantly along its routes. Mice forage widely, visiting multiple food sources in a single night and contaminating far more food than they actually consume. In a domestic kitchen, this means any unsealed food in cupboards is at risk. In commercial food premises, a mouse infestation is an immediate threat to food safety standards and can result in enforcement action from Environmental Health officers.
@@ -296,6 +313,13 @@ export default function HowToGetRidOfMicePage() {
       <p>
         The snap trap is the most effective and most humane DIY method for dealing with a small to moderate mouse infestation. Modern mouse snap traps are inexpensive (typically under two pounds each), easy to set, and deliver an instant kill when triggered correctly. The key to success is placement and quantity. Place traps <strong>perpendicular to walls</strong>, with the trigger end touching the skirting board. Mice run along edges rather than across open floor space, so placing traps in the middle of a room is ineffective.
       </p>
+
+      <div className="not-prose">
+        <Callout type="tip">
+          <p>Set at least 6 to 12 traps for a typical infestation. Unlike rats, mice are naturally curious and will often approach traps on the first night.</p>
+        </Callout>
+      </div>
+
       <p>
         Use <strong>peanut butter</strong> as bait &mdash; it has a strong scent that attracts mice, it is sticky enough that the mouse must work at it (which increases the chance of triggering the trap), and it is cheap. Chocolate spread and hazelnut spread also work well. Avoid cheese, which dries out quickly and is easy for mice to steal without triggering the mechanism.
       </p>
@@ -341,6 +365,13 @@ export default function HowToGetRidOfMicePage() {
       <p>
         If you use this method, follow the <strong>Campaign for Responsible Rodenticide Use (CRRU)</strong> guidelines carefully. Place stations along walls and near areas of known activity. Anticoagulant poisons typically take <strong>3 to 7 days</strong> to take effect. Check and replenish bait regularly, and remove all bait once signs of activity have ceased.
       </p>
+
+      <div className="not-prose">
+        <Callout type="warning">
+          <p>Poisoned mice frequently die inside wall cavities or under floors, creating a persistent smell lasting weeks. There is also a risk of secondary poisoning to pets — especially cats — and wildlife.</p>
+        </Callout>
+      </div>
+
       <p>
         <strong>Pros:</strong> Can deal with multiple mice simultaneously. Bait stations are reasonably affordable.
       </p>
@@ -378,6 +409,10 @@ export default function HowToGetRidOfMicePage() {
       <p>
         If trapping and baiting deal with the mice that are already inside, proofing deals with the reason they got in. <strong>Proofing is the single most important step in long-term mouse control.</strong> Without it, new mice from the surrounding area will find the same access routes and move in within weeks. A mouse can squeeze through any gap that it can get its skull through, and for a house mouse that means a hole as small as <strong>6 millimetres</strong> &mdash; roughly the width of a pencil. This makes mouse-proofing considerably more demanding than rat-proofing, and it requires careful, systematic attention to detail.
       </p>
+
+      <div className="not-prose">
+        <StatCallout value="6mm" label="Minimum gap size a mouse can squeeze through — the width of a pencil" />
+      </div>
 
       <h3>Inspect All External Walls at Ground Level</h3>
       <p>
@@ -485,6 +520,12 @@ export default function HowToGetRidOfMicePage() {
       <p>
         The cost of professional mouse control depends on the severity of the infestation, the size of the property, the accessibility of affected areas, and the extent of proofing work required. Below are typical price ranges for 2026, based on our research across UK pest control providers.
       </p>
+
+      <div className="not-prose">
+        <Callout type="cost">
+          <p>A standard domestic mouse treatment with 2-3 visits typically costs £80 to £150 across most of the UK. Proofing work adds £100 to £400 depending on the property.</p>
+        </Callout>
+      </div>
 
       <h3>Typical Domestic Treatment Costs</h3>
       <ul>

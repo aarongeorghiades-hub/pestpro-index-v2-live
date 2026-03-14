@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import GuideLayout from '@/components/GuideLayout';
 import FindProviderCTA from '@/components/FindProviderCTA';
+import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -157,6 +158,12 @@ export default function HowToGetRidOfRatsPage() {
         Rats are cautious, largely nocturnal animals. You are far more likely to notice the evidence they leave behind than to see a live rat in your home. Learning to recognise the telltale signs early is crucial, because the sooner you act, the easier and cheaper the problem is to resolve. Below are the key indicators to look for.
       </p>
 
+      <div className="not-prose">
+        <Callout type="warning">
+          <p>If you see a rat during daylight hours, it often means the colony is large and overcrowded. Act immediately — the problem is likely more serious than you think.</p>
+        </Callout>
+      </div>
+
       <h3>Droppings</h3>
       <p>
         Rat droppings are the single most common and reliable sign of an infestation. Brown rat droppings are typically <strong>10 to 20 millimetres long</strong> &mdash; roughly the size and shape of an olive or a large grain of rice. They are dark brown or black, tapered at the ends, and often found in clusters of 20 to 50 pellets. Fresh droppings are dark, moist, and shiny. As they age, they turn grey, dry, and crumbly. Finding fresh droppings means that rats are still actively using that area.
@@ -169,6 +176,12 @@ export default function HowToGetRidOfRatsPage() {
       <p>
         Rats have powerful incisor teeth that grow continuously throughout their lives. They must gnaw constantly to keep these teeth worn down, and they will chew through an extraordinary range of materials: wood, plastic, soft metal such as aluminium, rubber, and even concrete in some cases. Look for fresh gnaw marks on skirting boards, door frames, furniture legs, food packaging, plastic storage boxes, and &mdash; critically &mdash; electrical cables. Fresh gnaw marks are lighter in colour; older ones darken over time. If you find gnawed cables, this is a serious fire hazard that should be addressed immediately.
       </p>
+
+      <div className="not-prose">
+        <Callout type="warning">
+          <p>Gnawed electrical cables are a serious fire hazard. If you find evidence of rats chewing through wiring, contact an electrician to inspect the damage before it causes a fire.</p>
+        </Callout>
+      </div>
 
       <h3>Scratching and Scurrying Noises</h3>
       <p>
@@ -217,6 +230,10 @@ export default function HowToGetRidOfRatsPage() {
         Rats also carry and transmit <strong>salmonella</strong> through their droppings, which can contaminate food preparation surfaces and stored food. <strong>Hantavirus</strong>, though less common in the UK than in some parts of Europe and the Americas, has been detected in British wild rat populations and can cause a serious respiratory illness. <strong>Rat-bite fever</strong>, caused by the bacterium <em>Streptobacillus moniliformis</em>, can be transmitted through bites, scratches, or contact with rat saliva.
       </p>
 
+      <div className="not-prose">
+        <StatCallout value="40+" label="Droppings produced by a single rat every day" />
+      </div>
+
       <h3>Property Damage</h3>
       <p>
         The financial cost of rat damage to UK properties runs into millions of pounds each year. Rats gnaw through electrical cables, which creates a very real fire risk &mdash; damaged wiring behind walls or in loft spaces can spark and ignite insulation or timber without any visible warning. They chew through plastic water pipes, causing leaks and, in the worst cases, flooding that can result in thousands of pounds of damage. They destroy insulation in lofts and cavity walls, reducing energy efficiency. They undermine building foundations through burrowing. And they damage stored goods, furniture, and personal possessions.
@@ -231,6 +248,10 @@ export default function HowToGetRidOfRatsPage() {
       <p>
         Rats breed at a remarkable rate. A female brown rat reaches sexual maturity at around 5 weeks of age and can produce a litter of 6 to 12 pups every 3 to 4 weeks. Under ideal conditions (ample food, warmth, and shelter), a single breeding pair can theoretically produce up to <strong>2,000 descendants in a single year</strong>. This is why small rat problems become large ones very quickly if not addressed. Waiting and hoping the problem will resolve itself is never a sound strategy.
       </p>
+
+      <div className="not-prose">
+        <StatCallout value="2,000+" label="Potential descendants from a single breeding pair in one year" />
+      </div>
 
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: DIY Methods */}
@@ -248,6 +269,13 @@ export default function HowToGetRidOfRatsPage() {
       <p>
         Contrary to popular belief, cheese is not the best bait for rats. <strong>Peanut butter</strong> is far more effective because it has a strong scent, it is difficult for the rat to remove without triggering the trap, and it is inexpensive. Other good bait options include chocolate spread, hazelnut spread, and small pieces of dried fruit.
       </p>
+
+      <div className="not-prose">
+        <Callout type="tip">
+          <p>Peanut butter is far more effective than cheese as rat bait. It has a strong scent and is sticky enough that the rat must work at it, increasing the chance of triggering the trap.</p>
+        </Callout>
+      </div>
+
       <p>
         Set multiple traps &mdash; at least three or four &mdash; rather than relying on a single trap. Rats are neophobic, meaning they are suspicious of new objects in their environment, so it can take a day or two before they approach the trap. Some experienced pest controllers recommend leaving traps unset but baited for the first night to allow the rats to become accustomed to feeding from them, then setting them the following evening.
       </p>
@@ -265,6 +293,13 @@ export default function HowToGetRidOfRatsPage() {
       <p>
         If you choose this method, follow the <strong>Campaign for Responsible Rodenticide Use (CRRU)</strong> guidelines closely. Place bait stations along walls and near known activity points. Check and replenish bait regularly. Remove all bait once the infestation is resolved &mdash; never leave poison out as a &ldquo;preventative&rdquo; measure.
       </p>
+
+      <div className="not-prose">
+        <Callout type="warning">
+          <p>Poisoned rats often die in inaccessible locations — inside walls or under floors — causing an extremely unpleasant smell lasting weeks. There is also a real risk of secondary poisoning to pets and wildlife.</p>
+        </Callout>
+      </div>
+
       <p>
         <strong>Pros:</strong> Effective for tackling multiple rats. Bait stations are reasonably affordable. Can treat larger infestations than traps alone.
       </p>
@@ -323,6 +358,12 @@ export default function HowToGetRidOfRatsPage() {
         Killing or removing rats without sealing the entry points they used is a temporary fix at best. New rats from the surrounding area will find the same access routes and move in within weeks. <strong>Proofing is the single most important step in long-term rat control</strong>, and any reputable pest controller will include it as part of a comprehensive treatment plan.
       </p>
 
+      <div className="not-prose">
+        <Callout type="info">
+          <p>A brown rat can squeeze through a gap as small as 25mm — roughly the size of a one-pound coin. Systematic inspection and sealing of all entry points is essential.</p>
+        </Callout>
+      </div>
+
       <h3>Seal Entry Points</h3>
       <p>
         A rat can squeeze through any gap that its skull can fit through. In practice, this means that a brown rat can pass through a hole as small as <strong>25 millimetres in diameter</strong> &mdash; roughly the size of a one-pound coin. Systematically inspect the exterior of your property for gaps, cracks, and holes, paying particular attention to the following areas:
@@ -369,6 +410,10 @@ export default function HowToGetRidOfRatsPage() {
       <p>
         There is no shame in calling in a professional pest controller. Rats are intelligent, cautious, and prolific breeders, and there are situations where DIY methods are simply not going to be enough. Knowing when to escalate is the mark of a sensible homeowner, not a defeated one.
       </p>
+
+      <div className="not-prose">
+        <StatCallout value="3 visits" label="Standard professional treatment plan over 2-3 weeks" />
+      </div>
 
       <h3>Signs the Problem Is Beyond DIY</h3>
       <ul>
@@ -429,6 +474,13 @@ export default function HowToGetRidOfRatsPage() {
       </p>
 
       <h3>Typical Domestic Treatment Costs</h3>
+
+      <div className="not-prose">
+        <Callout type="cost">
+          <p>A standard domestic rat treatment with 2-3 visits typically costs £80 to £150 across most of the UK, with London and the South East at the higher end.</p>
+        </Callout>
+      </div>
+
       <ul>
         <li>
           <strong>Initial survey:</strong> Often free from reputable companies, or included in the treatment price. Some companies charge a survey fee of 30 to 50 pounds that is then deducted from the treatment cost if you proceed.

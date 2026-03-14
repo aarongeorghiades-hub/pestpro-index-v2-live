@@ -7,6 +7,7 @@ interface ProductCardProps {
   price: string;
   asin: string;
   bestFor?: string;
+  rank?: number;
 }
 
 function StarRating({ rating }: { rating: number }) {
@@ -27,11 +28,26 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
-export default function ProductCard({ name, rating, features, price, asin, bestFor }: ProductCardProps) {
+export default function ProductCard({ name, rating, features, price, asin, bestFor, rank }: ProductCardProps) {
   const amazonUrl = `https://www.amazon.co.uk/dp/${asin}?tag=pestproindex-21`;
 
+  const badgeColors: Record<string, string> = {
+    'Best Overall': 'bg-amber-100 text-amber-800 border-amber-300',
+    'Best Budget': 'bg-green-100 text-green-800 border-green-300',
+    'Best Humane': 'bg-emerald-100 text-emerald-800 border-emerald-300',
+    'Best Humane Option': 'bg-emerald-100 text-emerald-800 border-emerald-300',
+    'Best Budget Option': 'bg-green-100 text-green-800 border-green-300',
+    'Best Professional-Grade': 'bg-purple-100 text-purple-800 border-purple-300',
+  };
+  const badgeClass = bestFor ? (badgeColors[bestFor] || 'bg-blue-50 text-blue-700 border-blue-200') : '';
+
   return (
-    <div className="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow bg-white">
+    <div className="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow bg-white relative overflow-hidden">
+      {rank && (
+        <div className="absolute top-0 left-0 w-10 h-10 bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center rounded-br-xl">
+          <span className="text-white font-black text-sm">#{rank}</span>
+        </div>
+      )}
       <div className="flex flex-col sm:flex-row gap-6">
         {/* Product icon */}
         <div className="flex-shrink-0 w-24 h-24 bg-gray-100 rounded-lg flex items-center justify-center">
@@ -46,7 +62,7 @@ export default function ProductCard({ name, rating, features, price, asin, bestF
             <div>
               <h3 className="text-lg font-bold text-gray-900">{name}</h3>
               {bestFor && (
-                <span className="inline-block text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded mt-1">
+                <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full border mt-1 ${badgeClass}`}>
                   {bestFor}
                 </span>
               )}

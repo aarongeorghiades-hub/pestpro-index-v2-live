@@ -3,6 +3,7 @@ import Link from 'next/link';
 import GuideLayout from '@/components/GuideLayout';
 import ProductCard from '@/components/ProductCard';
 import FindProviderCTA from '@/components/FindProviderCTA';
+import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -125,6 +126,12 @@ export default function BestMouseTrapsPage() {
         To compile this guide, we evaluated dozens of mouse traps available on Amazon UK based on four key criteria: <strong>UK availability and fast delivery</strong>, <strong>genuine Amazon customer reviews</strong> (we read hundreds, filtering out obvious fakes and incentivised reviews), <strong>proven effectiveness and reliability</strong>, and <strong>value for money</strong>. We also consulted guidance from the BPCA and spoke with professional pest controllers to understand which products they recommend to homeowners. Every product on this page is available for next-day or two-day Prime delivery at the time of writing.
       </p>
 
+      <div className="not-prose">
+        <Callout type="tip">
+          <p>Use peanut butter as bait — it is sticky, smells strong, and forces the mouse to interact with the trigger plate. A pea-sized amount is ideal. Too much bait lets the mouse eat from the edges without triggering the trap.</p>
+        </Callout>
+      </div>
+
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Mouse Traps at a Glance</h2>
       <p>
@@ -173,11 +180,16 @@ export default function BestMouseTrapsPage() {
         </tbody>
       </table>
 
+      <div className="not-prose">
+        <StatCallout value="£3 – £12" label="Price range across all five recommended traps" />
+      </div>
+
       {/* Best Overall */}
       <h2 id="best-overall">Best Overall — Rentokil Clean Kill Mouse Trap</h2>
       <div className="not-prose my-6">
         <ProductCard
           name="Rentokil Clean Kill Mouse Trap (2-Pack)"
+          rank={1}
           rating={4.3}
           features={[
             'Enclosed tube design — no-see, no-touch disposal',
@@ -229,6 +241,7 @@ export default function BestMouseTrapsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="BOMPOW Mouse Traps (4-Pack)"
+          rank={2}
           rating={4.2}
           features={[
             '4-pack for under £10 — excellent value',
@@ -280,6 +293,7 @@ export default function BestMouseTrapsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="IIWEY Humane Mouse Trap"
+          rank={3}
           rating={4.1}
           features={[
             '32cm metal-reinforced cage trap',
@@ -331,6 +345,7 @@ export default function BestMouseTrapsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="KEPLIN Humane Mouse Trap"
+          rank={4}
           rating={4.0}
           features={[
             'Compact tunnel design fits behind furniture',
@@ -380,6 +395,7 @@ export default function BestMouseTrapsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Pest-Stop Mouse Bait Station"
+          rank={5}
           rating={4.0}
           features={[
             'Lockable tamper-resistant design',
@@ -442,6 +458,12 @@ export default function BestMouseTrapsPage() {
         More than you think. The single most common mistake people make is buying one or two traps and expecting them to solve the problem. Pest control professionals recommend a minimum of six traps for a typical house mouse infestation, and twelve or more for a serious problem. Mice are most active at night and they use multiple routes through your home, so a single trap in one location catches, at best, the mice that happen to pass that particular spot. Multiple traps across multiple locations dramatically increase your chances of catching mice on the first night and bringing the infestation under control quickly. Buy in bulk — the cost of extra traps is trivial compared to the cost of a professional callout.
       </p>
 
+      <div className="not-prose">
+        <Callout type="info">
+          <p>Pest control professionals recommend a minimum of 6 traps for a typical mouse problem, and 12 or more for a serious infestation. The cost of extra traps is trivial compared to a professional callout.</p>
+        </Callout>
+      </div>
+
       <h3>Placement</h3>
       <p>
         Where you put your traps is just as important as which traps you buy. Mice are thigmotactic — they prefer to travel along walls, edges, and behind objects rather than crossing open spaces. Place traps perpendicular to walls with the trigger plate facing the wall, so that a mouse running along the skirting board walks directly over the trigger. Focus on areas where you have seen signs of mouse activity: droppings (small dark pellets about 3-6mm long), gnaw marks, smear marks (greasy streaks where mice repeatedly brush against surfaces), and sounds of scratching or rustling. Behind kitchen appliances, under the sink, in airing cupboards, and in loft spaces are all common hotspots.
@@ -472,6 +494,12 @@ export default function BestMouseTrapsPage() {
       <p>
         This is by far the most common mistake. People buy one or two traps, place them in the kitchen, and wonder why the problem persists. Mice use multiple routes and are active across large areas of your home, not just the one room where you spotted one. You need a minimum of six traps for a typical problem, placed in different locations throughout the ground floor (and loft, if applicable). Twelve traps is not excessive for a serious infestation. The cost of extra traps is negligible — even at £6 per Rentokil Clean Kill, twelve traps costs less than a single professional callout. Deploy generously and you will see results far faster.
       </p>
+
+      <div className="not-prose">
+        <Callout type="warning">
+          <p>One or two traps is never enough. Mice use multiple routes through your home, and a single trap in one location will only catch mice that happen to pass that spot. Deploy generously across multiple locations.</p>
+        </Callout>
+      </div>
 
       <h3>Using Cheese as Bait</h3>
       <p>

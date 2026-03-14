@@ -3,6 +3,7 @@ import Link from 'next/link';
 import GuideLayout from '@/components/GuideLayout';
 import ProductCard from '@/components/ProductCard';
 import FindProviderCTA from '@/components/FindProviderCTA';
+import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -124,6 +125,12 @@ export default function BestRatTrapsPage() {
         To compile this guide, we evaluated dozens of rat traps available on Amazon UK based on four criteria: <strong>UK availability and fast delivery</strong>, <strong>genuine customer reviews</strong> (we read hundreds of them, filtering out obvious fakes), <strong>effectiveness and reliability</strong>, and <strong>value for money</strong>. We also consulted guidance from the BPCA and the Campaign for Responsible Rodenticide Use (CRRU) to ensure our recommendations align with UK best practice. Every product on this page is available for next-day or two-day delivery via Amazon UK at the time of writing.
       </p>
 
+      <div className="not-prose">
+        <Callout type="tip">
+          <p>Peanut butter is the single most effective bait for rat traps. It is sticky, has a strong scent, and forces the rat to interact with the trigger plate. Forget cheese — it dries out and is easy for rats to steal.</p>
+        </Callout>
+      </div>
+
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Rat Traps at a Glance</h2>
       <p>
@@ -172,11 +179,16 @@ export default function BestRatTrapsPage() {
         </tbody>
       </table>
 
+      <div className="not-prose">
+        <StatCallout value="£14 – £18" label="Price range across all five recommended traps" />
+      </div>
+
       {/* Best Overall */}
       <h2 id="best-overall">Best Overall — Rat Reaper by Froboo</h2>
       <div className="not-prose my-6">
         <ProductCard
           name="Rat Reaper by Froboo"
+          rank={1}
           rating={4.3}
           features={[
             'Covered design safe for pets and children',
@@ -226,6 +238,7 @@ export default function BestRatTrapsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Roshield Snap Trap Box"
+          rank={2}
           rating={4.2}
           features={[
             'Lockable tamper-resistant design with key',
@@ -274,6 +287,7 @@ export default function BestRatTrapsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Pest X Pro Shadow"
+          rank={3}
           rating={4.4}
           features={[
             'Heavy-duty commercial-grade construction',
@@ -321,6 +335,7 @@ export default function BestRatTrapsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Gingbau Humane Cage Trap"
+          rank={4}
           rating={4.1}
           features={[
             'No-kill live catch design',
@@ -372,6 +387,7 @@ export default function BestRatTrapsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Baban Rat Traps (6-Pack)"
+          rank={5}
           rating={4.0}
           features={[
             '6-pack for comprehensive coverage',
@@ -432,6 +448,12 @@ export default function BestRatTrapsPage() {
         This is a non-negotiable safety consideration. If you have dogs, cats, or young children in your household, you must use a covered or lockable trap. An exposed snap trap powerful enough to kill a rat will also break a child's finger or injure a pet's nose. The Roshield (lockable with a key) and the Rat Reaper (covered tunnel design) are both suitable for homes with pets and children. The Baban open snap traps are not — place them only in areas that are completely inaccessible to non-target animals and people.
       </p>
 
+      <div className="not-prose">
+        <Callout type="warning">
+          <p>An exposed snap trap powerful enough to kill a rat will break a child's finger or seriously injure a pet's nose. If you have pets or children, always use a covered or lockable trap station.</p>
+        </Callout>
+      </div>
+
       <h3>Severity of the Infestation</h3>
       <p>
         For a single rat that you have seen once or twice, one or two traps placed strategically along its route should suffice. For a more serious infestation — multiple rats, extensive droppings, gnaw damage — you need to deploy at least six traps simultaneously across different locations. The Baban 6-pack is purpose-built for this scenario. For a recurring, long-term problem, invest in the Pest X Pro Shadow stations that will last for years of continuous use.
@@ -472,6 +494,12 @@ export default function BestRatTrapsPage() {
       <p>
         Never rely on a single trap. Pest control professionals recommend setting a minimum of three to four traps for even a minor rat problem, and six or more for a serious infestation. Place traps every two to three metres along known rat runs, near droppings, gnaw marks, and smear marks (the dark, greasy streaks that rats leave on surfaces as they repeatedly travel the same route). More traps means more chances of a catch, and it also reduces the time it takes to bring an infestation under control.
       </p>
+
+      <div className="not-prose">
+        <Callout type="info">
+          <p>Rats are neophobic — they instinctively avoid new objects. It can take 24-72 hours before a rat approaches a newly placed trap. Do not move it too soon.</p>
+        </Callout>
+      </div>
 
       <h3>Do Not Move Traps for the First Few Days</h3>
       <p>
