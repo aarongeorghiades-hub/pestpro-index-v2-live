@@ -431,10 +431,20 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">How to Get Rid of Rats</h3>
               <p className="text-gray-600">The complete UK guide to identifying, treating, and preventing rat infestations in your home and garden.</p>
             </Link>
+            <Link href="/guides/how-to-get-rid-of-mice" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-blue-600 mb-2">Guide</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">How to Get Rid of Mice</h3>
+              <p className="text-gray-600">The complete UK guide to spotting, treating, and preventing mouse infestations in your home.</p>
+            </Link>
             <Link href="/best/rat-traps" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
               <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Rat Traps UK 2026</h3>
               <p className="text-gray-600">Our pick of the most effective rat traps available in the UK — snap traps, electronic, humane, and budget options.</p>
+            </Link>
+            <Link href="/best/mouse-traps" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Mouse Traps UK 2026</h3>
+              <p className="text-gray-600">Snap traps, humane live-catch options, and bait stations — reviewed with honest pros, cons, and buying advice.</p>
             </Link>
           </div>
         </div>
@@ -501,6 +511,8 @@ export default function Home() {
                 <li><Link href="/professionals" className="hover:text-white transition">For Professionals</Link></li>
                 <li><Link href="/guides/how-to-get-rid-of-rats" className="hover:text-white transition">How to Get Rid of Rats</Link></li>
                 <li><Link href="/best/rat-traps" className="hover:text-white transition">Best Rat Traps UK</Link></li>
+                <li><Link href="/guides/how-to-get-rid-of-mice" className="hover:text-white transition">How to Get Rid of Mice</Link></li>
+                <li><Link href="/best/mouse-traps" className="hover:text-white transition">Best Mouse Traps UK</Link></li>
               </ul>
             </div>
             <div>

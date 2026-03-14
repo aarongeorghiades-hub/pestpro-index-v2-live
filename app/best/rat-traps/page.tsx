@@ -97,7 +97,12 @@ export default function BestRatTrapsPage() {
           title: 'How to Get Rid of Rats: Complete UK Guide',
           href: '/guides/how-to-get-rid-of-rats',
         },
+        {
+          title: 'How to Get Rid of Mice: Complete UK Guide',
+          href: '/guides/how-to-get-rid-of-mice',
+        },
       ]}
+      relatedProducts={[{ title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' }]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >

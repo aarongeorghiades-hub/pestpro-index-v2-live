@@ -137,7 +137,8 @@ export default function HowToGetRidOfRatsPage() {
       readingTime="12 min"
       breadcrumbParent={{ label: 'Guides', href: '/guides' }}
       tocItems={tocItems}
-      relatedProducts={[{ title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' }]}
+      relatedGuides={[{ title: 'How to Get Rid of Mice: Complete UK Guide', href: '/guides/how-to-get-rid-of-mice' }]}
+      relatedProducts={[{ title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' }, { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' }]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >

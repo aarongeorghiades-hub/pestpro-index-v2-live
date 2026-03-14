@@ -702,6 +702,12 @@ export default function ResidentialPage() {
             <Link href="/best/rat-traps" className="text-blue-600 hover:underline font-semibold text-sm">
               Best Rat Traps UK 2026 →
             </Link>
+            <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-semibold text-sm">
+              How to Get Rid of Mice →
+            </Link>
+            <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-semibold text-sm">
+              Best Mouse Traps UK 2026 →
+            </Link>
           </div>
         </div>
       </section>
