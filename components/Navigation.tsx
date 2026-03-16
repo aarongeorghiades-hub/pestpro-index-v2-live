@@ -233,6 +233,13 @@ export default function Navigation() {
                 </Link>
                 <div className="border-t border-white/10 my-1"></div>
                 <Link
+                  href="/guides"
+                  className="block px-6 py-3 text-white font-semibold hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  All Guides
+                </Link>
+                <Link
                   href="/guides/how-to-get-rid-of-rats"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -470,6 +477,13 @@ export default function Navigation() {
                 Useful Links
               </Link>
               <div className="border-t border-white/10 mt-2 pt-2">
+                <Link
+                  href="/guides"
+                  className="block px-4 py-3 text-white font-semibold hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  All Guides
+                </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-rats"
                   className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"

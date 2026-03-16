@@ -555,6 +555,7 @@ export default function Home() {
                 <li><Link href="/guides/how-to-get-rid-of-cockroaches" className="hover:text-white transition">How to Get Rid of Cockroaches</Link></li>
                 <li><Link href="/best/cockroach-killers" className="hover:text-white transition">Best Cockroach Killers UK</Link></li>
                 <li><Link href="/guides/pest-control-costs" className="hover:text-white transition">Pest Control Costs UK</Link></li>
+                <li><Link href="/guides" className="hover:text-white transition">All Guides &amp; Reviews</Link></li>
               </ul>
             </div>
             <div>
