@@ -128,6 +128,7 @@ const faqSchema = {
 
 const tocItems = [
   { id: 'signs', title: 'How to Tell If You Have Fleas' },
+  { id: 'no-pets', title: 'Fleas in a House with No Pets' },
   { id: 'lifecycle', title: 'The Flea Life Cycle' },
   { id: 'health-risks', title: 'Why Fleas Are a Health Concern' },
   { id: 'pet-treatment', title: 'Treating Your Pets' },
@@ -207,6 +208,47 @@ export default function HowToGetRidOfFleasPage() {
       <div className="not-prose">
         <Callout type="tip">
           <p>Try the white sock test after returning from holiday or moving into a new property. Vibrations from your footsteps stimulate dormant flea pupae to hatch, making the test an effective early-warning system.</p>
+        </Callout>
+      </div>
+
+      {/* ------------------------------------------------------------------ */}
+      {/* SECTION: Fleas in a House with No Pets */}
+      {/* ------------------------------------------------------------------ */}
+      <h2 id="no-pets">Fleas in a House with No Pets</h2>
+
+      <p>
+        One of the most common questions people ask is how they can have a flea infestation when they do not own any pets. The answer lies in the extraordinary survival abilities of the flea life cycle and the range of ways fleas can enter a property without a resident cat or dog.
+      </p>
+
+      <h3>Previous Occupants&apos; Pets</h3>
+      <p>
+        This is by far the most common scenario. If the previous occupants of your home had pets, flea eggs and pupae may have been left behind in the carpets, between floorboards, and in soft furnishings. Flea pupae are encased in a sticky, silk-like cocoon that is <strong>virtually indestructible</strong> &mdash; resistant to vacuuming, insecticides, and environmental extremes. They can remain dormant in this state for <strong>over 12 months</strong>, waiting for a trigger to hatch. When a new occupant moves in, the vibrations from walking, the warmth of central heating, and the carbon dioxide from breathing act as triggers, causing a mass emergence of hungry adult fleas. This is why so many people experience an overwhelming flea infestation within hours of moving into a previously empty property.
+      </p>
+
+      <h3>Wildlife</h3>
+      <p>
+        Foxes, hedgehogs, squirrels, and nesting birds can all carry fleas. If foxes visit your garden regularly, or if birds are nesting in your loft space or under your eaves, fleas from these animals can find their way into your home. Hedgehogs, in particular, are notorious flea carriers &mdash; a single hedgehog can harbour hundreds of fleas.
+      </p>
+
+      <h3>Visiting Animals</h3>
+      <p>
+        A friend&apos;s dog visiting for an afternoon, a neighbour&apos;s cat entering through an open window, or a pet sitter&apos;s animal spending time in your home can all introduce fleas. A single flea-carrying animal can deposit dozens of eggs within hours. Those eggs fall into your carpet, hatch within days, and within two to three weeks you have an established population.
+      </p>
+
+      <h3>Second-Hand Furniture and Rugs</h3>
+      <p>
+        Flea eggs and pupae can survive in fabric and carpet fibres. Bringing second-hand rugs, upholstered furniture, or pet beds into your home without treatment is a common way to inadvertently introduce fleas.
+      </p>
+
+      <div className="not-prose">
+        <Callout type="tip">
+          <p>If you are moving into a property that has been empty for weeks or months and previously had pets, expect a possible flea emergence. Before moving furniture in, thoroughly vacuum all carpeted areas to trigger dormant pupae to hatch, then treat with a household flea spray containing an IGR (insect growth regulator). This is far easier and cheaper than treating a fully furnished home.</p>
+        </Callout>
+      </div>
+
+      <div className="not-prose">
+        <Callout type="info">
+          <p>The cat flea (<em>Ctenocephalides felis</em>) is responsible for the vast majority of flea infestations in UK homes &mdash; even in homes with dogs or no pets at all. Cat fleas are generalist parasites that will readily feed on dogs, rabbits, foxes, hedgehogs, and humans.</p>
         </Callout>
       </div>
 

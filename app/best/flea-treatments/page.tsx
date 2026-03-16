@@ -119,6 +119,13 @@ export default function BestFleaTreatmentsPage() {
         </p>
       </div>
 
+      {/* Vet disclaimer */}
+      <div className="not-prose bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+        <p className="text-sm text-blue-800">
+          <strong>Important:</strong> This guide covers <strong>home and environment flea treatment products only</strong> &mdash; sprays, powders, and foggers for your carpets and furnishings. We do not recommend pet flea treatments on this page. Pet flea medications (spot-on treatments, oral tablets, and flea collars) should always be prescribed or recommended by your veterinarian, as the most effective products are prescription-only.
+        </p>
+      </div>
+
       {/* Intro paragraphs */}
       <p>
         Fleas are one of the most common household pests in the United Kingdom, and they are far from being a problem exclusive to pet owners. While cats and dogs are the primary hosts that bring fleas indoors, these tiny parasites can also hitch a ride on clothing, second-hand furniture, and even visiting wildlife such as foxes and hedgehogs that pass through your garden. Once inside a home, fleas multiply at an alarming rate &mdash; a single female flea can lay up to 50 eggs per day, and under the warm conditions found in a typical UK home, a small initial population can explode into a full-blown infestation within just two to three weeks. The British Pest Control Association (BPCA) reports that flea call-outs spike every year between late spring and early autumn, with a secondary peak in the winter months when central heating creates the warm, humid conditions that fleas thrive in.
