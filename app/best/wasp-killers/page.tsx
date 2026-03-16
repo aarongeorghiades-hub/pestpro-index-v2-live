@@ -110,6 +110,10 @@ export default function BestWaspKillersPage() {
           title: 'How to Get Rid of Cockroaches: Complete UK Guide',
           href: '/guides/how-to-get-rid-of-cockroaches',
         },
+        {
+          title: 'Pest Control Costs UK 2026',
+          href: '/guides/pest-control-costs',
+        },
       ]}
       relatedProducts={[
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },

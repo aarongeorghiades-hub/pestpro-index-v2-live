@@ -302,6 +302,13 @@ export default function Navigation() {
                 >
                   Best Cockroach Killers
                 </Link>
+                <Link
+                  href="/guides/pest-control-costs"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Pest Control Costs
+                </Link>
               </div>
             )}
           </div>
@@ -532,6 +539,13 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Best Cockroach Killers
+                </Link>
+                <Link
+                  href="/guides/pest-control-costs"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Pest Control Costs
                 </Link>
               </div>
             </div>

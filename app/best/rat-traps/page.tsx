@@ -114,6 +114,10 @@ export default function BestRatTrapsPage() {
           title: 'How to Get Rid of Cockroaches: Complete UK Guide',
           href: '/guides/how-to-get-rid-of-cockroaches',
         },
+        {
+          title: 'Pest Control Costs UK 2026',
+          href: '/guides/pest-control-costs',
+        },
       ]}
       relatedProducts={[{ title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' }, { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' }, { title: 'Best Bed Bug Treatments UK 2026', href: '/best/bed-bug-treatments' }, { title: 'Best Cockroach Killers UK 2026', href: '/best/cockroach-killers' }]}
       articleSchema={articleSchema}

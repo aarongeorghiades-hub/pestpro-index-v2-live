@@ -97,6 +97,7 @@ export default function BestBedBugTreatmentsPage() {
         { title: 'How to Get Rid of Bed Bugs: Complete UK Guide', href: '/guides/how-to-get-rid-of-bed-bugs' },
         { title: 'How to Get Rid of Rats: Complete UK Guide', href: '/guides/how-to-get-rid-of-rats' },
         { title: 'How to Get Rid of Cockroaches: Complete UK Guide', href: '/guides/how-to-get-rid-of-cockroaches' },
+        { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
       ]}
       relatedProducts={[
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },

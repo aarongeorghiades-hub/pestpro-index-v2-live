@@ -476,6 +476,11 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Cockroach Killers UK 2026</h3>
               <p className="text-gray-600">Gel baits, sprays, powders, and monitoring traps — the best cockroach control products reviewed.</p>
             </Link>
+            <Link href="/guides/pest-control-costs" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-amber-200 transition-all">
+              <div className="text-sm font-semibold text-green-600 mb-2">Price Guide</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Pest Control Costs UK 2026</h3>
+              <p className="text-gray-600">Complete pricing breakdown for every common pest — rats, mice, wasps, bed bugs, cockroaches, and more.</p>
+            </Link>
           </div>
         </div>
       </section>
@@ -549,6 +554,7 @@ export default function Home() {
                 <li><Link href="/best/bed-bug-treatments" className="hover:text-white transition">Best Bed Bug Treatments UK</Link></li>
                 <li><Link href="/guides/how-to-get-rid-of-cockroaches" className="hover:text-white transition">How to Get Rid of Cockroaches</Link></li>
                 <li><Link href="/best/cockroach-killers" className="hover:text-white transition">Best Cockroach Killers UK</Link></li>
+                <li><Link href="/guides/pest-control-costs" className="hover:text-white transition">Pest Control Costs UK</Link></li>
               </ul>
             </div>
             <div>
