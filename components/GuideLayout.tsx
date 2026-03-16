@@ -126,25 +126,7 @@ export default function GuideLayout({
 
           {/* Main article content */}
           <main className="flex-1 min-w-0">
-            <article className="prose prose-lg max-w-3xl text-gray-800
-              prose-headings:scroll-mt-24
-              prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:font-bold prose-h2:text-blue-900
-              prose-h2:border-l-4 prose-h2:border-l-amber-500 prose-h2:pl-4
-              prose-h2:border-t prose-h2:border-t-gray-100 prose-h2:pt-8
-              prose-h2:mt-12 md:prose-h2:mt-16 prose-h2:mb-6
-              prose-h3:text-xl prose-h3:font-semibold prose-h3:text-blue-800 prose-h3:mt-8 prose-h3:mb-4
-              prose-p:text-gray-800 prose-p:text-base prose-p:leading-7 prose-p:mb-5
-              prose-ul:text-gray-800 prose-ul:mb-5 prose-ul:ml-6 prose-ul:list-disc
-              prose-ol:text-gray-800 prose-ol:mb-5 prose-ol:ml-6 prose-ol:list-decimal
-              prose-li:mb-2 prose-li:text-gray-800 prose-li:leading-relaxed
-              marker:text-amber-500
-              prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
-              prose-strong:text-gray-950 prose-strong:font-bold
-              prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-600
-              prose-table:border-collapse
-              prose-th:bg-gray-50 prose-th:border prose-th:border-gray-200 prose-th:px-4 prose-th:py-2 prose-th:text-left prose-th:font-semibold prose-th:text-gray-900
-              prose-td:border prose-td:border-gray-200 prose-td:px-4 prose-td:py-2 prose-td:text-gray-800"
-            >
+            <article className="guide-content">
               {children}
             </article>
           </main>
