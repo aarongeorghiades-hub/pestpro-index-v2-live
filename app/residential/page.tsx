@@ -726,6 +726,12 @@ export default function ResidentialPage() {
             <Link href="/best/cockroach-killers" className="text-blue-600 hover:underline font-semibold text-sm">
               Best Cockroach Killers UK 2026 →
             </Link>
+            <Link href="/guides/how-to-get-rid-of-fleas" className="text-blue-600 hover:underline font-semibold text-sm">
+              How to Get Rid of Fleas →
+            </Link>
+            <Link href="/best/flea-treatments" className="text-blue-600 hover:underline font-semibold text-sm">
+              Best Flea Treatments UK 2026 →
+            </Link>
           </div>
         </div>
       </section>

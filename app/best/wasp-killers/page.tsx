@@ -111,6 +111,10 @@ export default function BestWaspKillersPage() {
           href: '/guides/how-to-get-rid-of-cockroaches',
         },
         {
+          title: 'How to Get Rid of Fleas: Complete UK Guide',
+          href: '/guides/how-to-get-rid-of-fleas',
+        },
+        {
           title: 'Pest Control Costs UK 2026',
           href: '/guides/pest-control-costs',
         },
@@ -119,6 +123,7 @@ export default function BestWaspKillersPage() {
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },
         { title: 'Best Bed Bug Treatments UK 2026', href: '/best/bed-bug-treatments' },
+        { title: 'Best Flea Treatments UK 2026', href: '/best/flea-treatments' },
         { title: 'Best Cockroach Killers UK 2026', href: '/best/cockroach-killers' },
       ]}
       articleSchema={articleSchema}

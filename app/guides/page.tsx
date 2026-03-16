@@ -54,6 +54,12 @@ const guides = [
     href: '/guides/how-to-get-rid-of-cockroaches',
   },
   {
+    emoji: '🦟',
+    title: 'How to Get Rid of Fleas',
+    description: 'Signs of infestation, treating pets and your home, professional options, and long-term prevention.',
+    href: '/guides/how-to-get-rid-of-fleas',
+  },
+  {
     emoji: '💰',
     title: 'Pest Control Costs UK 2026',
     description: 'Complete pricing breakdown for every common pest — what you\'ll pay and how to get the best value.',
@@ -91,6 +97,12 @@ const reviews = [
     title: 'Best Cockroach Killers UK 2026',
     description: 'Professional-grade gel baits, sprays, powders, and monitoring traps reviewed.',
     href: '/best/cockroach-killers',
+  },
+  {
+    emoji: '🦟',
+    title: 'Best Flea Treatments UK 2026',
+    description: 'Household sprays, powders, foggers, and natural options reviewed for UK homes.',
+    href: '/best/flea-treatments',
   },
 ];
 

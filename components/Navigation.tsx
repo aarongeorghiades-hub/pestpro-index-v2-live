@@ -310,6 +310,20 @@ export default function Navigation() {
                   Best Cockroach Killers
                 </Link>
                 <Link
+                  href="/guides/how-to-get-rid-of-fleas"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Flea Control Guide
+                </Link>
+                <Link
+                  href="/best/flea-treatments"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Flea Treatments
+                </Link>
+                <Link
                   href="/guides/pest-control-costs"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -553,6 +567,20 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Best Cockroach Killers
+                </Link>
+                <Link
+                  href="/guides/how-to-get-rid-of-fleas"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Flea Control Guide
+                </Link>
+                <Link
+                  href="/best/flea-treatments"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Flea Treatments
                 </Link>
                 <Link
                   href="/guides/pest-control-costs"

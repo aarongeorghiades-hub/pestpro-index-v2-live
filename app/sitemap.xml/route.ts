@@ -86,6 +86,8 @@ export async function GET() {
     { url: `${baseUrl}/guides/how-to-get-rid-of-cockroaches`, changefreq: 'weekly', priority: '0.8' },
     { url: `${baseUrl}/best/cockroach-killers`, changefreq: 'weekly', priority: '0.8' },
     { url: `${baseUrl}/guides/pest-control-costs`, changefreq: 'weekly', priority: '0.9' },
+    { url: `${baseUrl}/guides/how-to-get-rid-of-fleas`, changefreq: 'weekly', priority: '0.8' },
+    { url: `${baseUrl}/best/flea-treatments`, changefreq: 'weekly', priority: '0.8' },
     { url: `${baseUrl}/guides`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/professionals`, changefreq: 'monthly', priority: '0.4' },
     { url: `${baseUrl}/products`, changefreq: 'monthly', priority: '0.7' },

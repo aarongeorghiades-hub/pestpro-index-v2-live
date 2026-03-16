@@ -152,11 +152,13 @@ export default function WaspNestRemovalPage() {
         { title: 'How to Get Rid of Mice: Complete UK Guide', href: '/guides/how-to-get-rid-of-mice' },
         { title: 'How to Get Rid of Bed Bugs: Complete UK Guide', href: '/guides/how-to-get-rid-of-bed-bugs' },
         { title: 'How to Get Rid of Cockroaches: Complete UK Guide', href: '/guides/how-to-get-rid-of-cockroaches' },
+        { title: 'How to Get Rid of Fleas: Complete UK Guide', href: '/guides/how-to-get-rid-of-fleas' },
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
       ]}
       relatedProducts={[
         { title: 'Best Wasp Killer Products UK 2026', href: '/best/wasp-killers' },
         { title: 'Best Bed Bug Treatments UK 2026', href: '/best/bed-bug-treatments' },
+        { title: 'Best Flea Treatments UK 2026', href: '/best/flea-treatments' },
         { title: 'Best Cockroach Killers UK 2026', href: '/best/cockroach-killers' },
       ]}
       articleSchema={articleSchema}
