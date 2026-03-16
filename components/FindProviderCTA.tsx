@@ -9,7 +9,6 @@ interface FindProviderCTAProps {
 }
 
 const cities = [
-  { name: 'London', href: '/residential' },
   { name: 'Belfast', href: '/belfast/residential' },
   { name: 'Birmingham', href: '/birmingham/residential' },
   { name: 'Bradford', href: '/bradford/residential' },
@@ -23,6 +22,7 @@ const cities = [
   { name: 'Leeds', href: '/leeds/residential' },
   { name: 'Leicester', href: '/leicester/residential' },
   { name: 'Liverpool', href: '/liverpool/residential' },
+  { name: 'London', href: '/residential' },
   { name: 'Manchester', href: '/manchester/residential' },
   { name: 'Newcastle', href: '/newcastle/residential' },
   { name: 'Nottingham', href: '/nottingham/residential' },
@@ -78,7 +78,7 @@ export default function FindProviderCTA({
         </button>
       </div>
       <div className="flex flex-wrap gap-2">
-        {cities.slice(0, 8).map((city) => (
+        {cities.map((city) => (
           <a
             key={city.href}
             href={city.href}
