@@ -147,8 +147,8 @@ export default function HowToGetRidOfMicePage() {
       readingTime="12 min"
       breadcrumbParent={{ label: 'Guides', href: '/guides' }}
       tocItems={tocItems}
-      relatedGuides={[{ title: 'How to Get Rid of Rats: Complete UK Guide', href: '/guides/how-to-get-rid-of-rats' }]}
-      relatedProducts={[{ title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' }]}
+      relatedGuides={[{ title: 'How to Get Rid of Rats: Complete UK Guide', href: '/guides/how-to-get-rid-of-rats' }, { title: 'Wasp Nest Removal: Complete UK Guide', href: '/guides/wasp-nest-removal' }]}
+      relatedProducts={[{ title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' }, { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' }]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >

@@ -260,6 +260,20 @@ export default function Navigation() {
                 >
                   Best Mouse Traps
                 </Link>
+                <Link
+                  href="/guides/wasp-nest-removal"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Wasp Nest Removal Guide
+                </Link>
+                <Link
+                  href="/best/wasp-killers"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Wasp Killers
+                </Link>
               </div>
             )}
           </div>
@@ -448,6 +462,20 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Best Mouse Traps
+                </Link>
+                <Link
+                  href="/guides/wasp-nest-removal"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Wasp Nest Removal Guide
+                </Link>
+                <Link
+                  href="/best/wasp-killers"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Wasp Killers
                 </Link>
               </div>
             </div>

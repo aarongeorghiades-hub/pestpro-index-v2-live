@@ -98,11 +98,19 @@ export default function BestMouseTrapsPage() {
           title: 'How to Get Rid of Mice: Complete UK Guide',
           href: '/guides/how-to-get-rid-of-mice',
         },
+        {
+          title: 'Wasp Nest Removal: Complete UK Guide',
+          href: '/guides/wasp-nest-removal',
+        },
       ]}
       relatedProducts={[
         {
           title: 'Best Rat Traps UK 2026',
           href: '/best/rat-traps',
+        },
+        {
+          title: 'Best Wasp Killers UK 2026',
+          href: '/best/wasp-killers',
         },
       ]}
       articleSchema={articleSchema}

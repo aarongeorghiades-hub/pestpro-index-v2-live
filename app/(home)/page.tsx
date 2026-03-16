@@ -425,7 +425,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Pest Control Guides</h2>
             <p className="text-xl text-gray-600">Free, expert advice to help you tackle common pest problems</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Link href="/guides/how-to-get-rid-of-rats" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
               <div className="text-sm font-semibold text-blue-600 mb-2">Guide</div>
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">How to Get Rid of Rats</h3>
@@ -445,6 +445,16 @@ export default function Home() {
               <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Mouse Traps UK 2026</h3>
               <p className="text-gray-600">Snap traps, humane live-catch options, and bait stations — reviewed with honest pros, cons, and buying advice.</p>
+            </Link>
+            <Link href="/guides/wasp-nest-removal" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-blue-600 mb-2">Guide</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Wasp Nest Removal</h3>
+              <p className="text-gray-600">How to identify wasp nests, whether to remove them yourself or call a professional, and UK costs.</p>
+            </Link>
+            <Link href="/best/wasp-killers" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Wasp Killers UK 2026</h3>
+              <p className="text-gray-600">Sprays, powders, and traps — the best wasp control products reviewed with honest pros and cons.</p>
             </Link>
           </div>
         </div>
@@ -513,6 +523,8 @@ export default function Home() {
                 <li><Link href="/best/rat-traps" className="hover:text-white transition">Best Rat Traps UK</Link></li>
                 <li><Link href="/guides/how-to-get-rid-of-mice" className="hover:text-white transition">How to Get Rid of Mice</Link></li>
                 <li><Link href="/best/mouse-traps" className="hover:text-white transition">Best Mouse Traps UK</Link></li>
+                <li><Link href="/guides/wasp-nest-removal" className="hover:text-white transition">Wasp Nest Removal</Link></li>
+                <li><Link href="/best/wasp-killers" className="hover:text-white transition">Best Wasp Killers UK</Link></li>
               </ul>
             </div>
             <div>

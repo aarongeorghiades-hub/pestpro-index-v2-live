@@ -696,6 +696,12 @@ export default function ResidentialPage() {
             <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-semibold text-sm">
               Best Mouse Traps UK 2026 →
             </Link>
+            <Link href="/guides/wasp-nest-removal" className="text-blue-600 hover:underline font-semibold text-sm">
+              Wasp Nest Removal Guide →
+            </Link>
+            <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-semibold text-sm">
+              Best Wasp Killers UK 2026 →
+            </Link>
           </div>
         </div>
       </section>
