@@ -466,6 +466,16 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Bed Bug Treatments UK 2026</h3>
               <p className="text-gray-600">Sprays, powders, mattress encasements, and monitoring traps — reviewed with expert buying guidance.</p>
             </Link>
+            <Link href="/guides/how-to-get-rid-of-cockroaches" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-blue-600 mb-2">Guide</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">How to Get Rid of Cockroaches</h3>
+              <p className="text-gray-600">Species identification, signs of infestation, DIY treatments, professional solutions, and cockroach-proofing your home.</p>
+            </Link>
+            <Link href="/best/cockroach-killers" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Cockroach Killers UK 2026</h3>
+              <p className="text-gray-600">Gel baits, sprays, powders, and monitoring traps — the best cockroach control products reviewed.</p>
+            </Link>
           </div>
         </div>
       </section>
@@ -537,6 +547,8 @@ export default function Home() {
                 <li><Link href="/best/wasp-killers" className="hover:text-white transition">Best Wasp Killers UK</Link></li>
                 <li><Link href="/guides/how-to-get-rid-of-bed-bugs" className="hover:text-white transition">How to Get Rid of Bed Bugs</Link></li>
                 <li><Link href="/best/bed-bug-treatments" className="hover:text-white transition">Best Bed Bug Treatments UK</Link></li>
+                <li><Link href="/guides/how-to-get-rid-of-cockroaches" className="hover:text-white transition">How to Get Rid of Cockroaches</Link></li>
+                <li><Link href="/best/cockroach-killers" className="hover:text-white transition">Best Cockroach Killers UK</Link></li>
               </ul>
             </div>
             <div>

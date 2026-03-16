@@ -719,6 +719,12 @@ export default function ResidentialPage() {
             <Link href="/best/bed-bug-treatments" className="text-blue-600 hover:underline font-semibold text-sm">
               Best Bed Bug Treatments UK 2026 →
             </Link>
+            <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-semibold text-sm">
+              How to Get Rid of Cockroaches →
+            </Link>
+            <Link href="/best/cockroach-killers" className="text-blue-600 hover:underline font-semibold text-sm">
+              Best Cockroach Killers UK 2026 →
+            </Link>
           </div>
         </div>
       </section>

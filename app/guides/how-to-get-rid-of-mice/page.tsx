@@ -147,8 +147,8 @@ export default function HowToGetRidOfMicePage() {
       readingTime="12 min"
       breadcrumbParent={{ label: 'Guides', href: '/guides' }}
       tocItems={tocItems}
-      relatedGuides={[{ title: 'How to Get Rid of Rats: Complete UK Guide', href: '/guides/how-to-get-rid-of-rats' }, { title: 'Wasp Nest Removal: Complete UK Guide', href: '/guides/wasp-nest-removal' }, { title: 'How to Get Rid of Bed Bugs: Complete UK Guide', href: '/guides/how-to-get-rid-of-bed-bugs' }]}
-      relatedProducts={[{ title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' }, { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' }, { title: 'Best Bed Bug Treatments UK 2026', href: '/best/bed-bug-treatments' }]}
+      relatedGuides={[{ title: 'How to Get Rid of Rats: Complete UK Guide', href: '/guides/how-to-get-rid-of-rats' }, { title: 'Wasp Nest Removal: Complete UK Guide', href: '/guides/wasp-nest-removal' }, { title: 'How to Get Rid of Bed Bugs: Complete UK Guide', href: '/guides/how-to-get-rid-of-bed-bugs' }, { title: 'How to Get Rid of Cockroaches: Complete UK Guide', href: '/guides/how-to-get-rid-of-cockroaches' }]}
+      relatedProducts={[{ title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' }, { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' }, { title: 'Best Bed Bug Treatments UK 2026', href: '/best/bed-bug-treatments' }, { title: 'Best Cockroach Killers UK 2026', href: '/best/cockroach-killers' }]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >

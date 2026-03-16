@@ -96,10 +96,12 @@ export default function BestBedBugTreatmentsPage() {
       relatedGuides={[
         { title: 'How to Get Rid of Bed Bugs: Complete UK Guide', href: '/guides/how-to-get-rid-of-bed-bugs' },
         { title: 'How to Get Rid of Rats: Complete UK Guide', href: '/guides/how-to-get-rid-of-rats' },
+        { title: 'How to Get Rid of Cockroaches: Complete UK Guide', href: '/guides/how-to-get-rid-of-cockroaches' },
       ]}
       relatedProducts={[
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' },
+        { title: 'Best Cockroach Killers UK 2026', href: '/best/cockroach-killers' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

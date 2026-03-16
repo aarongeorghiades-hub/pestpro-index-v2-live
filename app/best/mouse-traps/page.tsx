@@ -106,6 +106,10 @@ export default function BestMouseTrapsPage() {
           title: 'How to Get Rid of Bed Bugs: Complete UK Guide',
           href: '/guides/how-to-get-rid-of-bed-bugs',
         },
+        {
+          title: 'How to Get Rid of Cockroaches: Complete UK Guide',
+          href: '/guides/how-to-get-rid-of-cockroaches',
+        },
       ]}
       relatedProducts={[
         {
@@ -119,6 +123,10 @@ export default function BestMouseTrapsPage() {
         {
           title: 'Best Bed Bug Treatments UK 2026',
           href: '/best/bed-bug-treatments',
+        },
+        {
+          title: 'Best Cockroach Killers UK 2026',
+          href: '/best/cockroach-killers',
         },
       ]}
       articleSchema={articleSchema}

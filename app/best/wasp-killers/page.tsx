@@ -106,11 +106,16 @@ export default function BestWaspKillersPage() {
           title: 'How to Get Rid of Rats: Complete UK Guide',
           href: '/guides/how-to-get-rid-of-rats',
         },
+        {
+          title: 'How to Get Rid of Cockroaches: Complete UK Guide',
+          href: '/guides/how-to-get-rid-of-cockroaches',
+        },
       ]}
       relatedProducts={[
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },
         { title: 'Best Bed Bug Treatments UK 2026', href: '/best/bed-bug-treatments' },
+        { title: 'Best Cockroach Killers UK 2026', href: '/best/cockroach-killers' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

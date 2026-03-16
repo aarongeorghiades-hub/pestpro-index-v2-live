@@ -288,6 +288,20 @@ export default function Navigation() {
                 >
                   Best Bed Bug Treatments
                 </Link>
+                <Link
+                  href="/guides/how-to-get-rid-of-cockroaches"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Cockroach Guide
+                </Link>
+                <Link
+                  href="/best/cockroach-killers"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Cockroach Killers
+                </Link>
               </div>
             )}
           </div>
@@ -504,6 +518,20 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Best Bed Bug Treatments
+                </Link>
+                <Link
+                  href="/guides/how-to-get-rid-of-cockroaches"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Cockroach Guide
+                </Link>
+                <Link
+                  href="/best/cockroach-killers"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Cockroach Killers
                 </Link>
               </div>
             </div>
