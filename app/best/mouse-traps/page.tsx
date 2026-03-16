@@ -75,11 +75,11 @@ const breadcrumbSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Mouse Traps at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Rentokil Clean Kill' },
-  { id: 'best-budget', title: 'Best Budget — BOMPOW (4-Pack)' },
-  { id: 'best-humane', title: 'Best Humane — IIWEY Cage Trap' },
-  { id: 'best-small-spaces', title: 'Best for Small Spaces — KEPLIN' },
-  { id: 'best-pets-kids', title: 'Best Around Pets & Kids' },
+  { id: 'best-overall', title: 'Best Overall — ROSHIELD 6-Pack' },
+  { id: 'best-heavy-duty', title: 'Best Heavy Duty — Trisiki 6-Pack' },
+  { id: 'best-budget', title: 'Best Budget — ASPECTEK 6-Pack' },
+  { id: 'best-humane', title: 'Best Humane — ROSHIELD Humane 2-Pack' },
+  { id: 'best-easy-clean', title: 'Best Easy-Clean — Motel Mouse' },
   { id: 'buying-guide', title: 'Mouse Trap Buying Guide' },
   { id: 'mistakes', title: 'Common Mouse Trap Mistakes' },
 ];
@@ -184,57 +184,56 @@ export default function BestMouseTrapsPage() {
         </thead>
         <tbody>
           <tr>
-            <td>Rentokil Clean Kill Mouse Trap (2-pack)</td>
-            <td>Enclosed snap</td>
-            <td>Best overall</td>
-            <td>~£12</td>
-          </tr>
-          <tr>
-            <td>BOMPOW Mouse Traps (4-pack)</td>
-            <td>Plastic snap</td>
-            <td>Best budget</td>
+            <td>ROSHIELD 6-Pack Mouse Trap</td>
+            <td>Snap trap</td>
+            <td>Best Overall</td>
             <td>~£10</td>
           </tr>
           <tr>
-            <td>IIWEY Humane Mouse Trap</td>
-            <td>Live catch cage</td>
-            <td>Best humane</td>
-            <td>~£10</td>
+            <td>Trisiki 6-Pack Heavy Duty Mouse Trap</td>
+            <td>Snap trap</td>
+            <td>Best Heavy Duty</td>
+            <td>~£9</td>
           </tr>
           <tr>
-            <td>KEPLIN Humane Mouse Trap</td>
-            <td>Live catch tunnel</td>
-            <td>Best for small spaces</td>
+            <td>ASPECTEK 6-Pack Mouse Trap</td>
+            <td>Snap trap</td>
+            <td>Best Budget</td>
             <td>~£8</td>
           </tr>
           <tr>
-            <td>Pest-Stop Mouse Bait Station</td>
-            <td>Bait station</td>
-            <td>Best around pets/kids</td>
-            <td>~£3</td>
+            <td>ROSHIELD Humane Mouse Trap 2-Pack</td>
+            <td>Live catch</td>
+            <td>Best Humane</td>
+            <td>~£10</td>
+          </tr>
+          <tr>
+            <td>Motel Mouse Humane Trap</td>
+            <td>Live catch</td>
+            <td>Best Easy-Clean</td>
+            <td>~£8</td>
           </tr>
         </tbody>
       </table>
 
       <div className="not-prose">
-        <StatCallout value="£3 – £12" label="Price range across all five recommended traps" />
+        <StatCallout value="£8 – £10" label="Price range across all five recommended traps" />
       </div>
 
       {/* Best Overall */}
       <h2 id="best-overall">Best Overall — Rentokil Clean Kill Mouse Trap</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Rentokil Clean Kill Mouse Trap (2-Pack)"
+          name="ROSHIELD 6-Pack Mouse Trap"
           rank={1}
-          rating={4.3}
           features={[
-            'Enclosed tube design — no-see, no-touch disposal',
-            'Easy to set with one-click mechanism',
-            'Trusted UK pest control brand',
-            'Reusable and easy to clean',
+            'Professional quality snap traps — 6-pack',
+            'Amazon Choice with 5,000+ reviews',
+            'Trusted by pest controllers across the UK',
+            'Reusable and easy to set',
           ]}
-          price="~£12"
-          asin="B004IMIBI8"
+          price="£10"
+          asin="B01NB0QNPI"
           bestFor="Best Overall"
         />
       </div>
@@ -276,18 +275,17 @@ export default function BestMouseTrapsPage() {
       <h2 id="best-budget">Best Budget — BOMPOW Mouse Traps (4-Pack)</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="BOMPOW Mouse Traps (4-Pack)"
+          name="Trisiki 6-Pack Heavy Duty Mouse Trap"
           rank={2}
-          rating={4.2}
           features={[
-            '4-pack for under £10 — excellent value',
-            'Sensitive trigger mechanism',
-            'Easy to set with one hand',
-            'Durable ABS plastic construction',
+            'Heavy-duty high-sensitivity snap traps',
+            'Effective for persistent mouse problems',
+            'Durable construction for repeated use',
+            '6-pack for whole-house coverage',
           ]}
-          price="~£10"
-          asin="B083FMGP1Z"
-          bestFor="Best Budget"
+          price="£9"
+          asin="B08ML78RC5"
+          bestFor="Best Heavy Duty"
         />
       </div>
       <p>
@@ -328,18 +326,17 @@ export default function BestMouseTrapsPage() {
       <h2 id="best-humane">Best Humane Option — IIWEY Humane Mouse Trap</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="IIWEY Humane Mouse Trap"
+          name="ASPECTEK 6-Pack Mouse Trap"
           rank={3}
-          rating={4.1}
           features={[
-            '32cm metal-reinforced cage trap',
-            'Transparent design — see when mouse is caught',
-            'Sensitive pressure plate trigger',
-            'No-kill catch and release design',
+            'Reusable snap traps with professional design',
+            '5,200+ Amazon reviews — reliable and durable',
+            'Easy bait placement and trigger mechanism',
+            'Excellent value 6-pack',
           ]}
-          price="~£10"
-          asin="B0BB74Y14R"
-          bestFor="Best Humane"
+          price="£8"
+          asin="B00HDVUTZA"
+          bestFor="Best Budget Option"
         />
       </div>
       <p>
@@ -380,18 +377,17 @@ export default function BestMouseTrapsPage() {
       <h2 id="best-small-spaces">Best for Small Spaces — KEPLIN Humane Mouse Trap</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="KEPLIN Humane Mouse Trap"
+          name="ROSHIELD Humane Mouse Trap 2-Pack"
           rank={4}
-          rating={4.0}
           features={[
-            'Compact tunnel design fits behind furniture',
-            'Spring pedal trigger mechanism',
-            'Pet and child safe enclosed design',
-            'Amazon bestseller with thousands of reviews',
+            'Live catch and release design',
+            'Safe for household use around children and pets',
+            'Transparent inspection window',
+            'Reusable — simply release and reset',
           ]}
-          price="~£8"
-          asin="B08X1NXBM3"
-          bestFor="Best for Small Spaces"
+          price="£10"
+          asin="B07L8JNPF2"
+          bestFor="Best Humane Option"
         />
       </div>
       <p>
@@ -430,18 +426,17 @@ export default function BestMouseTrapsPage() {
       <h2 id="best-pets-kids">Best Around Pets &amp; Children — Pest-Stop Mouse Bait Station</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest-Stop Mouse Bait Station"
+          name="Motel Mouse Humane Trap"
           rank={5}
-          rating={4.0}
           features={[
-            'Lockable tamper-resistant design',
-            'Compatible with snap traps or bait inside',
-            'Extremely affordable at ~£3',
-            'Weather resistant for indoor or outdoor use',
+            'Reusable humane mouse trap',
+            'Easy to clean and reset between catches',
+            'No-kill design for ethical pest control',
+            'Compact size fits in tight spaces',
           ]}
-          price="~£3"
-          asin="B000X1DHCS"
-          bestFor="Best Around Pets & Kids"
+          price="£8"
+          asin="B09PKWXRGK"
+          bestFor="Best Easy-Clean Humane"
         />
       </div>
       <p>

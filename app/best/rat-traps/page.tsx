@@ -75,11 +75,11 @@ const breadcrumbSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Rat Traps at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Rat Reaper by Froboo' },
-  { id: 'best-safety', title: 'Best for Pet & Child Safety' },
-  { id: 'best-professional', title: 'Best Professional-Grade' },
-  { id: 'best-humane', title: 'Best Humane Option' },
-  { id: 'best-budget', title: 'Best Budget Option' },
+  { id: 'best-overall', title: 'Best Overall — Rat Reaper XXL Snap Trap' },
+  { id: 'best-safety', title: 'Best for Pet & Child Safety — ROSHIELD Rat Bait Station Box' },
+  { id: 'best-professional', title: 'Best Professional-Grade — ROSHIELD 4-Pack Rat Trap' },
+  { id: 'best-humane', title: 'Best Bait Station — The Big Cheese Rat Bait Station' },
+  { id: 'best-budget', title: 'Best Electronic Option — Ultrasonic Pest Repeller' },
   { id: 'how-to-choose', title: 'How to Choose the Right Rat Trap' },
   { id: 'tips', title: 'Rat Trap Tips for Best Results' },
 ];
@@ -167,57 +167,57 @@ export default function BestRatTrapsPage() {
         </thead>
         <tbody>
           <tr>
-            <td>Rat Reaper by Froboo</td>
-            <td>Covered snap trap</td>
-            <td>Best overall</td>
+            <td>Rat Reaper XXL Snap Trap</td>
+            <td>Snap trap</td>
+            <td>Best Overall</td>
+            <td>~£10</td>
+          </tr>
+          <tr>
+            <td>ROSHIELD Rat Bait Station Box</td>
+            <td>Bait station</td>
+            <td>Best for Safety</td>
             <td>~£15</td>
           </tr>
           <tr>
-            <td>Roshield Snap Trap Box</td>
-            <td>Lockable snap station</td>
-            <td>Best for safety (pets/kids)</td>
+            <td>ROSHIELD 4-Pack Rat Trap</td>
+            <td>Snap trap</td>
+            <td>Best Professional-Grade</td>
+            <td>~£12</td>
+          </tr>
+          <tr>
+            <td>The Big Cheese Rat Bait Station</td>
+            <td>Bait station</td>
+            <td>Best Bait Station</td>
+            <td>~£8</td>
+          </tr>
+          <tr>
+            <td>Ultrasonic Pest Repeller</td>
+            <td>Electronic</td>
+            <td>Best Electronic</td>
             <td>~£15</td>
-          </tr>
-          <tr>
-            <td>Pest X Pro Shadow</td>
-            <td>Professional snap station</td>
-            <td>Best professional-grade</td>
-            <td>~£18</td>
-          </tr>
-          <tr>
-            <td>Gingbau Humane Cage Trap</td>
-            <td>Live catch cage</td>
-            <td>Best humane option</td>
-            <td>~£16</td>
-          </tr>
-          <tr>
-            <td>Baban Rat Traps (6-pack)</td>
-            <td>Classic snap trap</td>
-            <td>Best budget option</td>
-            <td>~£14</td>
           </tr>
         </tbody>
       </table>
 
       <div className="not-prose">
-        <StatCallout value="£14 – £18" label="Price range across all five recommended traps" />
+        <StatCallout value="£8 – £15" label="Price range across all five recommended traps" />
       </div>
 
       {/* Best Overall */}
       <h2 id="best-overall">Best Overall — Rat Reaper by Froboo</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Rat Reaper by Froboo"
+          name="Rat Reaper XXL Snap Trap"
           rank={1}
           rating={4.3}
           features={[
-            'Covered design safe for pets and children',
-            'Dual-entry tunnel for higher catch rate',
-            'Comes with peanut butter bait included',
-            'Strong snap mechanism for instant, humane kill',
+            'Extra large snap trap designed for UK rats',
+            'Professional quality construction',
+            'Effective instant-kill mechanism',
+            'Reusable and easy to set',
           ]}
-          price="~£15"
-          asin="B082L4753B"
+          price="£10"
+          asin="B08V918HNB"
           bestFor="Best Overall"
         />
       </div>
@@ -257,18 +257,18 @@ export default function BestRatTrapsPage() {
       <h2 id="best-safety">Best for Pet &amp; Child Safety — Roshield Snap Trap Box</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Roshield Snap Trap Box"
+          name="ROSHIELD Rat Bait Station Box"
           rank={2}
           rating={4.2}
           features={[
-            'Lockable tamper-resistant design with key',
-            'Weather resistant for indoor and outdoor use',
-            'Robust construction built to last',
-            'Easy to bait and set once opened',
+            'Lockable tamper-resistant bait station',
+            'Protects bait from children and pets',
+            'Professional quality design',
+            'Weatherproof for indoor and outdoor use',
           ]}
-          price="~£15"
-          asin="B07XLYQ5ZT"
-          bestFor="Best for Safety (Pets/Kids)"
+          price="£15"
+          asin="B07W9FMLWF"
+          bestFor="Best for Pet & Child Safety"
         />
       </div>
       <p>
@@ -306,17 +306,17 @@ export default function BestRatTrapsPage() {
       <h2 id="best-professional">Best Professional-Grade — Pest X Pro Shadow</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest X Pro Shadow"
+          name="ROSHIELD 4-Pack Rat Trap"
           rank={3}
           rating={4.4}
           features={[
-            'Heavy-duty commercial-grade construction',
-            'Professional quality used by pest controllers',
-            'Highly durable — built for repeated use over years',
-            'Designed for serious and recurring infestations',
+            'Professional quality heavy-duty snap traps',
+            '4-pack for multiple placement points',
+            'Trusted by pest controllers across the UK',
+            'Amazon Choice product with 5-star rating',
           ]}
-          price="~£18"
-          asin="B0D7JF1ZJH"
+          price="£12"
+          asin="B01NB0QNPI"
           bestFor="Best Professional-Grade"
         />
       </div>
@@ -354,18 +354,18 @@ export default function BestRatTrapsPage() {
       <h2 id="best-humane">Best Humane Option — Gingbau Cage Trap</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Gingbau Humane Cage Trap"
+          name="The Big Cheese Rat Bait Station"
           rank={4}
           rating={4.1}
           features={[
-            'No-kill live catch design',
-            'Sensitive trigger mechanism for reliable capture',
-            'Galvanised steel construction resists rust',
-            'Easy one-hand release mechanism',
+            'Compact lockable bait station',
+            '19,000+ Amazon reviews with proven results',
+            'Tamper-resistant design safe for households',
+            'Works with block or grain baits',
           ]}
-          price="~£16"
-          asin="B07PK6VKR7"
-          bestFor="Best Humane Option"
+          price="£8"
+          asin="B088TH1XCS"
+          bestFor="Best Bait Station"
         />
       </div>
       <p>
@@ -406,18 +406,18 @@ export default function BestRatTrapsPage() {
       <h2 id="best-budget">Best Budget Option — Baban Rat Traps (6-Pack)</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Baban Rat Traps (6-Pack)"
+          name="Ultrasonic Pest Repeller"
           rank={5}
           rating={4.0}
           features={[
-            '6-pack for comprehensive coverage',
-            'Strong spring mechanism for quick, clean kill',
-            'Teethed design for secure hold',
-            'Easy to set with one hand',
+            'Ultrasonic technology repels rats and rodents',
+            'Plug-in device — no chemicals or traps needed',
+            'Safe for use around children and pets',
+            'Covers a wide area for whole-room protection',
           ]}
-          price="~£14"
-          asin="B09FZ1H3NK"
-          bestFor="Best Budget Option"
+          price="£15"
+          asin="B0BW9C4D3J"
+          bestFor="Best Electronic Option"
         />
       </div>
       <p>

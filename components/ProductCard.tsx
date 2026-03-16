@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 interface ProductCardProps {
   name: string;
-  rating: number;
+  rating?: number;
   features: string[];
   price: string;
   asin: string;
@@ -70,7 +70,7 @@ export default function ProductCard({ name, rating, features, price, asin, bestF
             <span className="text-lg font-bold text-gray-900 whitespace-nowrap">From {price}</span>
           </div>
 
-          <StarRating rating={rating} />
+          {rating !== undefined && <StarRating rating={rating} />}
 
           <ul className="mt-3 space-y-1">
             {features.map((feature, i) => (

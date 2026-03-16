@@ -75,11 +75,10 @@ const breadcrumbSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Bed Bug Products at a Glance' },
-  { id: 'best-spray', title: 'Best Overall Spray — Rentokil' },
-  { id: 'best-natural', title: 'Best Natural — Oa2ki Powder' },
-  { id: 'best-prevention', title: 'Best Prevention — SafeRest' },
-  { id: 'best-detection', title: 'Best Detection — Zero In Traps' },
-  { id: 'best-lasting', title: 'Best Long-Lasting — Cimexa' },
+  { id: 'best-overall', title: 'Best Overall — Pest Expert Formula C+' },
+  { id: 'best-powder', title: 'Best Powder — Pest Expert Formula P' },
+  { id: 'best-quick-kill', title: 'Best Quick-Kill — Zero In Bed Bug Killer' },
+  { id: 'best-prevention', title: 'Best Prevention — Utopia Mattress Encasement' },
   { id: 'buying-guide', title: 'Bed Bug Treatment Buying Guide' },
   { id: 'when-to-call', title: 'When to Call a Professional' },
 ];
@@ -136,7 +135,7 @@ export default function BestBedBugTreatmentsPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Bed Bug Products at a Glance</h2>
       <p>
-        Here is a quick comparison of our top five picks. Each product has been selected for a different purpose within a bed bug treatment programme, so the best choice for you depends on where you are in the process &mdash; whether you need immediate knockdown, long-term residual protection, prevention, or monitoring. We go into full detail on every product below the table.
+        Here is a quick comparison of our top four picks. Each product has been selected for a different purpose within a bed bug treatment programme, so the best choice for you depends on where you are in the process &mdash; whether you need immediate knockdown, residual powder protection, quick-kill convenience, or prevention. We go into full detail on every product below the table.
       </p>
       <table>
         <thead>
@@ -149,299 +148,242 @@ export default function BestBedBugTreatmentsPage() {
         </thead>
         <tbody>
           <tr>
-            <td>Rentokil Bed Bug Killer Spray</td>
+            <td>Pest Expert Formula C+ Spray 1L</td>
             <td>Contact spray</td>
-            <td>Best overall spray</td>
-            <td>~&pound;8</td>
+            <td>Best Overall</td>
+            <td>~&pound;15</td>
           </tr>
           <tr>
-            <td>Oa2ki Bed Bug Killer Powder</td>
-            <td>Diatomaceous earth</td>
-            <td>Best natural treatment</td>
+            <td>Pest Expert Formula P Powder 300g</td>
+            <td>Insecticidal powder</td>
+            <td>Best Powder</td>
             <td>~&pound;10</td>
           </tr>
           <tr>
-            <td>SafeRest Premium Mattress Protector</td>
-            <td>Mattress encasement</td>
-            <td>Best prevention</td>
-            <td>~&pound;25</td>
-          </tr>
-          <tr>
-            <td>Zero In Bed Bug Traps (3-Pack)</td>
-            <td>Monitoring trap</td>
-            <td>Best for detection</td>
+            <td>Zero In Bed Bug Killer 300ml</td>
+            <td>Aerosol spray</td>
+            <td>Best Quick-Kill</td>
             <td>~&pound;7</td>
           </tr>
           <tr>
-            <td>CimeXa Insecticidal Dust</td>
-            <td>Silica gel dust</td>
-            <td>Best long-lasting</td>
+            <td>Utopia Bedding Mattress Encasement</td>
+            <td>Mattress protector</td>
+            <td>Best Prevention</td>
             <td>~&pound;15</td>
           </tr>
         </tbody>
       </table>
 
       <div className="not-prose">
-        <StatCallout value="&pound;7 &ndash; &pound;25" label="Price range across all five recommended products" />
+        <StatCallout value="&pound;7 &ndash; &pound;15" label="Price range across all four recommended products" />
       </div>
 
-      {/* Best Overall Spray */}
-      <h2 id="best-spray">Best Overall Spray &mdash; Rentokil Bed Bug Killer</h2>
+      {/* Best Overall */}
+      <h2 id="best-overall">Best Overall &mdash; Pest Expert Formula C+ Bed Bug Killer Spray 1L</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Rentokil Bed Bug Killer Spray"
-          rating={4.0}
+          name="Pest Expert Formula C+ Bed Bug Killer Spray 1L"
+          rating={4.3}
           features={[
-            'Kills bed bugs on contact',
-            'Apply to mattress seams, bed frame joints and crevices',
-            'Trusted UK pest control brand',
-            'Suitable for use on fabrics and hard surfaces',
+            'Professional strength spray with 12-week residual protection',
+            'HSE-approved formula used by pest controllers',
+            'Ready-to-use 1-litre trigger spray',
+            'Kills bed bugs on contact and provides lasting barrier',
           ]}
-          price="~&pound;8"
-          asin="B000TAWQ84"
-          bestFor="Best Overall Spray"
+          price="~&pound;15"
+          asin="B076KQQT8F"
+          bestFor="Best Overall"
           rank={1}
         />
       </div>
       <p>
-        The Rentokil Bed Bug Killer Spray takes our top spot for contact sprays because it comes from one of the most trusted names in UK pest control and delivers reliable results when used correctly. The active ingredient is a permethrin-based formula that kills bed bugs on direct contact, making it ideal for targeting visible bugs and treating known harbourage points such as mattress seams, bed frame joints, headboard fixings, and the crevices where skirting boards meet the wall. Rentokil is a brand that professional pest controllers across the UK know and respect, and this consumer spray uses the same active ingredient class found in many professional-grade treatments.
+        The Pest Expert Formula C+ takes our top spot because it bridges the gap between consumer and professional-grade bed bug treatments. This is the same formula used by many UK pest controllers, and it is HSE-approved (Health and Safety Executive), which means it has been independently assessed for safety and efficacy. Where most consumer bed bug sprays lose their killing power as soon as they dry, the Formula C+ provides up to 12 weeks of residual protection on treated surfaces. This is a significant advantage, because bed bugs do not all emerge at once &mdash; nymphs may hatch from eggs days or weeks after your initial treatment, and a residual spray ensures that these newly hatched bugs are killed when they cross treated surfaces.
       </p>
       <p>
-        Application is straightforward. You shake the can, hold it roughly 30 centimetres from the surface, and spray directly onto the areas where bed bugs hide. Pay particular attention to the piping and seams of your mattress, the joints and slats of your bed frame, the back of your headboard, and any cracks in bedside furniture. The spray is suitable for use on both fabric and hard surfaces, though you should always test a small, inconspicuous area of fabric first to check for staining. One can provides enough product to treat a single bed and its surrounding furniture thoroughly.
+        The 1-litre trigger spray bottle is ready to use straight from the box with no mixing or dilution required. Apply it directly to mattress seams, bed frame joints, headboard fixings, skirting board edges, and any cracks or crevices where bed bugs are likely to harbour. The water-based formula does not leave oily residues or strong chemical odours, making it suitable for use on fabrics, wood, and hard surfaces around the bedroom. One litre provides generous coverage for a thorough treatment of a single room, with enough left over for a follow-up application two weeks later.
       </p>
       <p>
-        It is important to be honest about the limitations of contact sprays. A spray like the Rentokil will kill bed bugs that it touches directly, but it provides limited residual protection &mdash; once the spray dries, it loses much of its killing power. This means that bed bugs hiding deep inside wall voids, behind electrical sockets, or in other inaccessible locations will not be affected unless you can spray them directly. For a light infestation caught early &mdash; perhaps you have found a few bugs in the mattress seams after returning from holiday &mdash; a contact spray combined with thorough laundering at 60&deg;C may be sufficient. For a moderate to heavy infestation, a contact spray should be considered the first step in a broader treatment programme that includes residual powders and mattress encasement, not a standalone solution.
+        The 12-week residual action is what truly sets the Formula C+ apart from standard consumer sprays. Once applied, the active ingredient binds to the treated surface and continues to kill bed bugs that walk across it for up to three months. This means you are not relying solely on direct contact at the moment of spraying &mdash; instead, you are creating a lasting barrier that intercepts bugs as they travel between their harbourage sites and your bed. For light to moderate infestations, this product combined with a mattress encasement and thorough laundering may be all you need.
       </p>
       <p>
         <strong>Pros:</strong>
       </p>
       <ul>
-        <li>Kills bed bugs on direct contact &mdash; provides immediate knockdown of visible bugs</li>
-        <li>Trusted UK pest control brand with decades of reputation</li>
-        <li>Suitable for use on fabrics and hard surfaces around the bed</li>
-        <li>Very affordable at around &pound;8 per can</li>
-        <li>Easy to apply &mdash; no specialist equipment needed</li>
+        <li>Professional-strength formula with 12-week residual protection</li>
+        <li>HSE-approved and used by professional pest controllers across the UK</li>
+        <li>Ready-to-use 1-litre trigger spray &mdash; no mixing required</li>
+        <li>Water-based formula suitable for fabrics, wood, and hard surfaces</li>
+        <li>Kills on contact and continues working for weeks after application</li>
       </ul>
       <p>
         <strong>Cons:</strong>
       </p>
       <ul>
-        <li>Limited residual protection &mdash; once dry, killing power diminishes significantly</li>
-        <li>Will not reach bed bugs hiding deep in wall voids or behind sockets</li>
-        <li>Not a standalone solution for moderate to heavy infestations</li>
-        <li>Bed bugs in some populations have developed resistance to permethrin-based products</li>
+        <li>At around &pound;15, more expensive than basic consumer sprays</li>
+        <li>Will not reach bed bugs hiding deep inside wall voids or behind sockets</li>
+        <li>Not a standalone solution for severe infestations &mdash; best combined with powder and encasement</li>
+        <li>Residual effectiveness reduced on surfaces that are frequently cleaned or wiped</li>
       </ul>
 
-      {/* Best Natural Treatment */}
-      <h2 id="best-natural">Best Natural Treatment &mdash; Oa2ki Bed Bug Killer Powder</h2>
+      {/* Best Powder */}
+      <h2 id="best-powder">Best Powder &mdash; Pest Expert Formula P Bed Bug Powder 300g</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Oa2ki Bed Bug Killer Powder"
+          name="Pest Expert Formula P Bed Bug Powder 300g"
           rating={4.2}
           features={[
-            'Food-grade diatomaceous earth formula',
-            'Non-toxic to humans and pets',
-            'No chemical resistance issues',
-            'Long-lasting residual protection',
+            'Permethrin-based insecticidal powder',
+            'Puffer pack for precise application into cracks and crevices',
+            'Long-lasting residual action',
+            'Ideal for treating bed frames, skirting boards, and carpet edges',
           ]}
           price="~&pound;10"
-          asin="B004HEPBQ0"
-          bestFor="Best Natural Treatment"
+          asin="B010E2H2N6"
+          bestFor="Best Powder"
           rank={2}
         />
       </div>
       <p>
-        Diatomaceous earth (DE) is one of the most effective natural bed bug treatments available, and the Oa2ki Bed Bug Killer Powder is the best DE-based product we have found on the UK market. Diatomaceous earth is a fine powder made from the fossilised remains of microscopic aquatic organisms called diatoms. Under a microscope, each particle has sharp, jagged edges that damage the waxy outer coating of a bed bug&apos;s exoskeleton. This causes the bug to lose moisture through its damaged cuticle and eventually die of dehydration &mdash; a process that typically takes between 24 and 72 hours after contact, depending on the thickness of the dust layer and environmental conditions.
+        Insecticidal powders are a crucial component of any bed bug treatment programme because they reach the hidden areas that sprays cannot. The Pest Expert Formula P is a permethrin-based powder that comes in a convenient puffer pack, allowing you to apply precise, targeted doses into cracks, crevices, and voids where bed bugs harbour during the day. The puffer pack design is a genuine advantage over loose powders that need a separate applicator &mdash; you simply squeeze the bottle to puff a fine cloud of powder exactly where it is needed.
       </p>
       <p>
-        The key advantage of diatomaceous earth over chemical sprays is that bed bugs cannot develop resistance to it. Chemical insecticides work by targeting specific biological pathways in the bug&apos;s nervous system, and bed bug populations across the UK and Europe have been documented developing genetic resistance to pyrethroid-based products in particular. DE, by contrast, works through a purely physical mechanism &mdash; abrasion and desiccation &mdash; which means there is no biological pathway for resistance to evolve. This makes it an exceptionally reliable long-term treatment option, and it is the reason many professional pest controllers now include DE in their treatment programmes alongside chemical applications.
+        The key areas to target with this powder are the joints and channels of your bed frame, the gap between skirting boards and the wall, the edges of carpets, behind bedside furniture, and inside any cracks in walls or flooring near the bed. Bed bugs are creatures of habit and tend to follow the same routes between their hiding places and their feeding source (you), so placing powder along these pathways creates a lethal barrier that bugs must cross. As a bed bug walks through the powder, particles adhere to its body and legs. The permethrin is then absorbed through the cuticle, causing paralysis and death.
       </p>
       <p>
-        Application requires a light touch &mdash; literally. The most common mistake people make with DE is applying too much. Bed bugs are cautious insects, and if they encounter a thick pile of powder, they will simply walk around it. The ideal application is a barely visible dusting &mdash; thin enough that you can still see the surface beneath it. Apply it along the edges of carpets, behind skirting boards, inside cracks in bed frames, around the legs of the bed, and into any crevices where bed bugs might travel. A puffer bottle (sometimes sold separately) makes precise application much easier than shaking powder from the bag.
+        The Formula P provides long-lasting residual action, continuing to kill bed bugs for weeks after application as long as the powder remains undisturbed. This makes it an excellent complement to the Formula C+ spray: use the spray for immediate contact kills and surface treatment, then follow up with the powder in all the hidden locations that the spray cannot penetrate. Together, they form a comprehensive chemical barrier that covers both exposed surfaces and concealed harbourage points.
       </p>
       <p>
-        The Oa2ki formula is food-grade, meaning it is non-toxic to humans and pets. You can safely apply it in bedrooms, including around the bed itself, without concern for chemical exposure. However, you should avoid breathing in the fine dust during application &mdash; while not chemically harmful, inhaling any fine particulate matter can irritate the respiratory tract. Wearing a simple dust mask during application is a sensible precaution.
+        At 300g, the puffer pack provides generous coverage for a thorough treatment of a single bedroom. Apply the powder thinly &mdash; a light, barely visible dusting is more effective than thick piles, which bed bugs will simply walk around. Avoid applying powder to surfaces that will be frequently disturbed or cleaned, as this will remove the active ingredient. The best results come from treating areas that will remain undisturbed for weeks or months, such as inside wall voids, behind permanently placed furniture, and within the structural joints of the bed frame.
       </p>
       <p>
         <strong>Pros:</strong>
       </p>
       <ul>
-        <li>Completely natural and non-toxic &mdash; safe for use around humans and pets</li>
-        <li>Bed bugs cannot develop resistance to the physical mechanism of action</li>
-        <li>Provides long-lasting residual protection &mdash; remains active for months if left undisturbed</li>
-        <li>Affordable at around &pound;10 for a generous supply</li>
-        <li>Can be used in combination with chemical sprays for a dual-action approach</li>
+        <li>Puffer pack allows precise application into cracks, crevices, and hard-to-reach areas</li>
+        <li>Long-lasting residual action continues killing bed bugs for weeks</li>
+        <li>Permethrin-based formula provides reliable insecticidal effect</li>
+        <li>Excellent complement to contact sprays for a comprehensive treatment approach</li>
+        <li>Affordable at around &pound;10 for a 300g puffer pack</li>
       </ul>
       <p>
         <strong>Cons:</strong>
       </p>
       <ul>
-        <li>Takes 24&ndash;72 hours to kill bed bugs rather than providing instant knockdown</li>
-        <li>Must be applied very thinly &mdash; excessive application is counterproductive</li>
-        <li>Loses effectiveness if it gets wet &mdash; not suitable for damp environments</li>
-        <li>Fine dust can irritate the respiratory tract during application without a mask</li>
+        <li>Permethrin-based &mdash; some bed bug populations have developed resistance to pyrethroids</li>
+        <li>Must be applied thinly for best results &mdash; over-application is counterproductive</li>
+        <li>Loses effectiveness if it gets wet or is disturbed by cleaning</li>
+        <li>Wear a dust mask during application to avoid inhaling fine particles</li>
       </ul>
 
-      {/* Best Prevention */}
-      <h2 id="best-prevention">Best Prevention &mdash; SafeRest Mattress Protector</h2>
+      {/* Best Quick-Kill Spray */}
+      <h2 id="best-quick-kill">Best Quick-Kill Spray &mdash; Zero In Bed Bug &amp; Dust Mite Killer 300ml</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="SafeRest Premium Mattress Protector"
-          rating={4.5}
+          name="Zero In Bed Bug & Dust Mite Killer 300ml"
+          rating={3.9}
           features={[
-            'Fully encasing zip closure traps bed bugs inside',
-            'Prevents new bugs from nesting in mattress',
-            'Waterproof and hypoallergenic',
-            'Fits mattresses up to 35cm deep',
+            'Fast-acting aerosol spray kills on contact',
+            'Also effective against dust mites',
+            'Suitable for mattresses, bed frames, and soft furnishings',
+            'Easy-to-use spray can format',
           ]}
-          price="~&pound;25"
-          asin="B003PWNH4M"
-          bestFor="Best Prevention"
+          price="~&pound;7"
+          asin="B00B2KP7U0"
+          bestFor="Best Quick-Kill Spray"
           rank={3}
         />
       </div>
       <p>
-        A mattress encasement is arguably the single most important product in any bed bug treatment programme, and the SafeRest Premium is the best option available in the UK. Unlike a standard fitted mattress protector that only covers the top and sides, a true encasement fully encloses the entire mattress in a sealed, zip-closure cover. This serves two critical purposes: it traps any bed bugs already living inside your mattress (where they will eventually die, unable to feed), and it creates an impenetrable barrier that prevents new bed bugs from colonising the mattress in the future. Your mattress is by far the most common harbourage site for bed bugs, and encasing it effectively removes their primary hiding place.
+        When you spot bed bugs and need to kill them immediately, the Zero In Bed Bug &amp; Dust Mite Killer is an excellent choice. This fast-acting aerosol spray is designed for quick knockdown &mdash; spray directly onto visible bed bugs and they die on contact. The pressurised aerosol format delivers a fine, penetrating mist that reaches into mattress seams, bed frame joints, and the narrow gaps in headboards more effectively than a standard trigger spray, making it ideal for targeting bugs in their harbourage points.
       </p>
       <p>
-        The SafeRest encasement uses a micro-zipper technology with a Velcro flap that covers the zip end, eliminating the tiny gap that bed bugs could potentially exploit to enter or escape through the zip teeth. This attention to detail is what separates a genuine bed bug encasement from a cheap mattress protector marketed as "bed bug proof." The fabric itself is a soft, breathable polyester knit with an inner polyurethane membrane that makes it waterproof, hypoallergenic, and completely impermeable to bed bugs of all life stages &mdash; including nymphs, which are small enough to pass through coarser materials.
+        A practical bonus of the Zero In formula is its dual action against both bed bugs and dust mites. If you are dealing with a bed bug problem, there is a good chance your mattress also harbours dust mites, which can exacerbate allergies and respiratory issues. Treating with this product addresses both problems simultaneously. The spray is suitable for use on mattresses, bed frames, soft furnishings, and upholstered furniture, though as with all insecticidal sprays, you should test a small hidden area first to check for staining on delicate fabrics.
       </p>
       <p>
-        Installation is straightforward: unzip the encasement, slide your mattress inside, and zip it shut. The elastic stretch allows it to accommodate mattresses up to 35 centimetres deep, which covers the vast majority of UK single, double, king, and super king mattresses. Once fitted, you leave the encasement on permanently &mdash; it becomes your new mattress surface, and you put your regular fitted sheet on top of it as normal. The encasement can be wiped down with a damp cloth for routine cleaning, and it is machine washable at low temperatures when needed. You should inspect the zip periodically to ensure it remains fully closed and undamaged.
+        The 300ml can is compact and easy to handle, making it straightforward to direct the spray precisely where you need it. Hold the can roughly 30 centimetres from the surface and apply short bursts to mattress seams, the joints of bed slats, behind the headboard, and into any cracks or crevices around the bed. At around &pound;7, it is the most affordable product in our guide and makes an excellent first-response treatment &mdash; something to have on hand for immediate action when you first discover bed bug activity, before implementing a more comprehensive treatment programme with residual products and mattress encasement.
       </p>
       <p>
-        We recommend fitting a mattress encasement regardless of which other treatment products you use. Even if you spray, powder, and vacuum thoroughly, the mattress itself is almost impossible to treat completely due to its depth, layers, and internal structure. Encasing it is the simplest and most reliable way to neutralise it as a harbourage site. At around &pound;25, it is the most expensive product in our guide, but it is also the one that arguably provides the most value in terms of long-term protection.
+        It is important to understand the limitations of a contact-kill aerosol. The Zero In spray provides minimal residual protection once it has dried, which means it will not kill bed bugs that emerge from hiding hours or days after application. For this reason, it should be used alongside longer-lasting products such as the Pest Expert Formula C+ spray or Formula P powder, rather than as a standalone treatment. Think of it as the first step in your treatment programme: immediate knockdown of visible bugs, followed by residual products for ongoing protection.
+      </p>
+      <p>
+        <strong>Pros:</strong>
+      </p>
+      <ul>
+        <li>Fast-acting aerosol kills bed bugs on contact for immediate results</li>
+        <li>Dual action against bed bugs and dust mites</li>
+        <li>Pressurised format penetrates into seams, joints, and narrow gaps effectively</li>
+        <li>The most affordable product in our guide at around &pound;7</li>
+        <li>Compact 300ml can is easy to handle and direct precisely</li>
+      </ul>
+      <p>
+        <strong>Cons:</strong>
+      </p>
+      <ul>
+        <li>Minimal residual protection &mdash; kills on contact only, not after drying</li>
+        <li>Not a standalone solution &mdash; best used alongside residual sprays and powders</li>
+        <li>300ml can may not be sufficient for treating a heavily infested room thoroughly</li>
+        <li>Test on delicate fabrics first as the aerosol may cause staining on some materials</li>
+      </ul>
+
+      {/* Best Prevention */}
+      <h2 id="best-prevention">Best Prevention &mdash; Utopia Bedding Mattress Encasement</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Utopia Bedding Mattress Encasement"
+          rating={4.5}
+          features={[
+            'Waterproof mattress encasement traps bed bugs inside',
+            '13,900+ Amazon reviews — proven and trusted',
+            'Prevents new bugs from nesting in mattress',
+            'Hypoallergenic and breathable for comfortable sleep',
+          ]}
+          price="~&pound;15"
+          asin="B07ZHF4FVK"
+          bestFor="Best Prevention"
+          rank={4}
+        />
+      </div>
+      <p>
+        A mattress encasement is arguably the single most important product in any bed bug treatment programme, and the Utopia Bedding Mattress Encasement is the best option we have found on Amazon UK. With over 13,900 reviews, it is one of the most purchased and highly rated mattress encasements available, and for good reason. Unlike a standard fitted mattress protector that only covers the top and sides, a true encasement fully encloses the entire mattress in a sealed, zip-closure cover. This serves two critical purposes: it traps any bed bugs already living inside your mattress (where they will eventually die, unable to feed), and it creates an impenetrable barrier that prevents new bed bugs from colonising the mattress in the future.
+      </p>
+      <p>
+        Your mattress is by far the most common harbourage site for bed bugs, and encasing it effectively removes their primary hiding place. The Utopia encasement features a waterproof inner membrane that is completely impermeable to bed bugs of all life stages &mdash; including tiny nymphs that can pass through coarser materials. The zip closure seals the entire mattress inside, and once fitted, you simply put your regular fitted sheet on top as normal. The encasement becomes a permanent, protective layer between the mattress interior and the rest of the room.
+      </p>
+      <p>
+        Despite its protective properties, the Utopia encasement is designed to be comfortable for everyday sleeping. The fabric is hypoallergenic and breathable, so it does not cause overheating or the crinkly, plastic feel that cheaper waterproof protectors are known for. It is also machine washable, making maintenance straightforward. You should inspect the zip periodically to ensure it remains fully closed and undamaged, and replace the encasement if you notice any tears or holes that could allow bed bugs to enter or escape.
+      </p>
+      <p>
+        We recommend fitting a mattress encasement regardless of which other treatment products you use. Even if you spray, powder, and vacuum thoroughly, the mattress itself is almost impossible to treat completely due to its depth, layers, and internal structure. Encasing it is the simplest and most reliable way to neutralise it as a harbourage site. At around &pound;15, the Utopia encasement offers excellent value &mdash; significantly cheaper than many competitors and a fraction of the cost of replacing an infested mattress entirely.
       </p>
       <p>
         <strong>Pros:</strong>
       </p>
       <ul>
         <li>Fully encasing design traps existing bed bugs and prevents new infestations</li>
-        <li>Micro-zipper with Velcro flap eliminates gaps that bugs could exploit</li>
+        <li>Over 13,900 Amazon reviews &mdash; one of the most trusted encasements on the market</li>
         <li>Waterproof, hypoallergenic, and breathable for comfortable sleep</li>
         <li>Machine washable and easy to maintain</li>
-        <li>Fits mattresses up to 35cm deep &mdash; covers most UK sizes</li>
+        <li>Excellent value at around &pound;15</li>
       </ul>
       <p>
         <strong>Cons:</strong>
       </p>
       <ul>
-        <li>The most expensive product in our guide at around &pound;25</li>
         <li>Does not kill bed bugs &mdash; only traps and excludes them</li>
         <li>Must remain in place permanently for ongoing protection</li>
         <li>You still need to treat the bed frame, headboard, and surrounding furniture separately</li>
-      </ul>
-
-      {/* Best for Detection */}
-      <h2 id="best-detection">Best for Detection &mdash; Zero In Bed Bug Traps</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Zero In Bed Bug Traps (3-Pack)"
-          rating={3.9}
-          features={[
-            'Sticky monitoring traps for early detection',
-            'Place under bed legs or near sleeping areas',
-            'Useful for post-treatment monitoring',
-            'Discreet low-profile design',
-          ]}
-          price="~&pound;7"
-          asin="B01BJ8SRHG"
-          bestFor="Best for Detection"
-          rank={4}
-        />
-      </div>
-      <p>
-        Detection and monitoring are often overlooked aspects of bed bug management, but they are critically important &mdash; both for confirming that you have a problem in the first place and for verifying that your treatment programme has been successful. The Zero In Bed Bug Traps are the best monitoring device we have found on Amazon UK. They are simple sticky traps designed to be placed under bed legs, along bed frames, or near other sleeping areas where bed bugs are likely to travel. As a bed bug crosses the trap on its way to or from its feeding source (you), it becomes stuck on the adhesive surface, providing clear visual evidence of activity.
-      </p>
-      <p>
-        The three-pack provides enough traps to monitor a single bed effectively. We recommend placing one trap under each of two bed legs (ideally the legs closest to the wall, where bugs are most likely to climb) and the third near the headboard or bedside table. Check the traps weekly. Finding even a single bed bug on a trap confirms that you have an active infestation and should begin or continue treatment. Conversely, if your traps remain clear for four to six weeks after treatment, this is a strong indicator that the infestation has been eliminated &mdash; though continued monitoring for a further two to three months is advisable, as bed bug eggs can lie dormant and hatch after several weeks.
-      </p>
-      <p>
-        The low-profile design means the traps sit flat and discreet under furniture, where they do not interfere with daily life or look unsightly. They are pesticide-free, relying solely on the adhesive to capture bugs, which makes them safe for use in any bedroom &mdash; including children&apos;s rooms. The adhesive does lose its stickiness over time, particularly in dusty environments, so you should replace the traps every four to six weeks for reliable monitoring.
-      </p>
-      <p>
-        It is important to understand what these traps are and what they are not. They are <strong>monitoring and detection tools</strong>, not a treatment method. Sticky traps will not control an active infestation &mdash; they simply do not catch enough bugs to reduce the population meaningfully. Their value lies in early detection (catching a problem before it becomes severe) and post-treatment confirmation (proving that your sprays, powders, and encasement have done their job). Used for these purposes, they are an invaluable and inexpensive addition to your treatment programme.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Affordable and effective early warning system for bed bug activity</li>
-        <li>Pesticide-free and safe for all rooms including children&apos;s bedrooms</li>
-        <li>Essential for confirming whether post-treatment efforts have been successful</li>
-        <li>Discreet low-profile design fits under bed legs and furniture</li>
-        <li>Three-pack provides enough traps to monitor a single bed properly</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Not a treatment method &mdash; will not control or reduce an active infestation</li>
-        <li>Adhesive loses effectiveness in dusty environments and needs replacing every 4&ndash;6 weeks</li>
-        <li>May not catch bed bugs that travel via walls or ceilings rather than bed legs</li>
-        <li>Requires weekly checking to be useful &mdash; a trap you forget about provides no value</li>
-      </ul>
-
-      {/* Best Long-Lasting */}
-      <h2 id="best-lasting">Best Long-Lasting Treatment &mdash; CimeXa Insecticidal Dust</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="CimeXa Insecticidal Dust"
-          rating={4.4}
-          features={[
-            'Amorphous silica gel — faster than diatomaceous earth',
-            'Remains active up to 10 years in undisturbed areas',
-            'Apply to wall voids, behind skirting boards, outlets',
-            'No chemical resistance possible',
-          ]}
-          price="~&pound;15"
-          asin="B0085HRWI8"
-          bestFor="Best Long-Lasting"
-          rank={5}
-        />
-      </div>
-      <p>
-        CimeXa is a desiccant dust made from amorphous silica gel, and it represents the cutting edge of non-chemical bed bug treatment. Like diatomaceous earth, it works by damaging the bed bug&apos;s protective waxy cuticle and causing death through dehydration. However, CimeXa has a significant advantage over traditional DE: it absorbs moisture from the bug&apos;s exoskeleton approximately three times faster, meaning bugs that come into contact with CimeXa typically die within 24 hours rather than the 24&ndash;72 hours common with diatomaceous earth. This faster kill time translates to fewer bites and a quicker reduction in the active population.
-      </p>
-      <p>
-        The longevity of CimeXa is genuinely remarkable. In undisturbed areas &mdash; such as wall voids, behind skirting boards, inside electrical outlet boxes, and within the channels of bed frame joints &mdash; CimeXa remains fully active for up to 10 years. This makes it an exceptional preventative treatment as well as a curative one. Once applied to the hidden pathways that bed bugs use to travel between their harbourage sites and your bed, it creates a persistent barrier that will kill any bed bug that crosses it for years to come. Even if a new infestation were to be introduced (via luggage, furniture, or a visiting guest), the CimeXa barrier would begin killing the bugs before they could establish a breeding population.
-      </p>
-      <p>
-        Application follows the same principles as diatomaceous earth: a very thin, barely visible layer is far more effective than a thick application. Bed bugs will avoid obvious piles of powder but will readily walk through a fine dusting. Use a hand duster or puffer bottle to apply CimeXa into cracks, crevices, wall voids (via electrical sockets &mdash; with the power off), behind skirting boards, along carpet edges, and into the joints and channels of your bed frame. The key areas to target are the routes between where bed bugs hide and where they feed &mdash; essentially, the paths between your bed frame, the nearby walls, and any furniture within a metre or two of the bed.
-      </p>
-      <p>
-        CimeXa is slightly more expensive than diatomaceous earth and can be harder to source in the UK, as it is manufactured in the United States. However, it is available on Amazon UK, and the higher price is justified by the significantly faster kill time and extraordinary longevity. For anyone dealing with a persistent infestation, or for anyone who wants the best possible long-term preventative treatment in place, CimeXa is the superior choice. Like DE, it is a physical desiccant, which means bed bugs cannot develop resistance to it regardless of how many generations are exposed.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Kills bed bugs approximately three times faster than diatomaceous earth</li>
-        <li>Remains fully active for up to 10 years in undisturbed locations</li>
-        <li>Physical mechanism of action &mdash; no possibility of resistance developing</li>
-        <li>Excellent for treating wall voids, crevices, and other hidden harbourage areas</li>
-        <li>Works as both a curative treatment and a long-term preventative measure</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>More expensive than diatomaceous earth at around &pound;15</li>
-        <li>Can be harder to source in the UK &mdash; availability on Amazon may vary</li>
-        <li>Requires a puffer bottle or hand duster for proper application (not always included)</li>
-        <li>Must be applied very thinly &mdash; excessive application is counterproductive</li>
-        <li>Fine dust requires a dust mask during application to avoid respiratory irritation</li>
+        <li>Zip area should be checked regularly to ensure it has not been damaged</li>
       </ul>
 
       {/* Buying Guide */}
       <h2 id="buying-guide">Bed Bug Treatment Buying Guide</h2>
       <p>
-        With five strong products covering different aspects of bed bug treatment, the question is not which single product to buy &mdash; it is which combination will work best for your situation. Here are the key factors to consider.
+        With four strong products covering different aspects of bed bug treatment, the question is not which single product to buy &mdash; it is which combination will work best for your situation. Here are the key factors to consider.
       </p>
 
       <h3>Sprays vs Powders</h3>
       <p>
-        Contact sprays and residual powders serve fundamentally different purposes, and understanding this distinction is crucial to building an effective treatment programme. A contact spray like the Rentokil delivers <strong>immediate knockdown</strong> &mdash; any bed bug that the spray touches directly will die within minutes. This makes sprays ideal for the initial treatment phase, when you want to reduce the visible bug population as quickly as possible. However, sprays offer little residual protection; once the spray dries, its killing power diminishes rapidly. This is why sprays alone rarely eliminate an infestation completely &mdash; the bugs hiding in deep crevices, wall voids, and other inaccessible areas survive and re-emerge to feed once the spray has dried.
+        Contact sprays and residual powders serve fundamentally different purposes, and understanding this distinction is crucial to building an effective treatment programme. A contact spray like the Pest Expert Formula C+ delivers <strong>immediate knockdown</strong> &mdash; any bed bug that the spray touches directly will die within minutes. This makes sprays ideal for the initial treatment phase, when you want to reduce the visible bug population as quickly as possible. However, sprays offer little residual protection; once the spray dries, its killing power diminishes rapidly. This is why sprays alone rarely eliminate an infestation completely &mdash; the bugs hiding in deep crevices, wall voids, and other inaccessible areas survive and re-emerge to feed once the spray has dried.
       </p>
       <p>
         Residual powders, by contrast, provide <strong>long-term ongoing protection</strong>. Diatomaceous earth and silica gel dusts remain active for weeks, months, or even years after application, killing any bed bug that walks through them. Powders are particularly effective in the hidden locations that sprays cannot reach &mdash; inside wall cavities, behind skirting boards, within electrical outlets, and along carpet edges. The trade-off is that powders do not provide instant results; it takes hours or days for a bug to die after contact. The ideal approach is to use both: spray for immediate knockdown of visible bugs, then apply powder to all hidden pathways for ongoing residual protection.
@@ -449,7 +391,7 @@ export default function BestBedBugTreatmentsPage() {
 
       <h3>Mattress Encasements</h3>
       <p>
-        Regardless of which spray or powder you choose, a mattress encasement should be considered a non-negotiable component of any bed bug treatment plan. Your mattress is the single largest and most difficult-to-treat harbourage site in any bedroom. Its depth, multiple layers, and internal structure make it virtually impossible to treat with sprays or powders alone. An encasement solves this problem completely by sealing the entire mattress in an impermeable barrier. Any bugs already inside are trapped and will eventually die; any bugs outside cannot get in to establish new harbourage. The cost of a quality encasement like the SafeRest (&pound;25) is a fraction of the cost of replacing an infested mattress (typically &pound;200&ndash;&pound;800 or more).
+        Regardless of which spray or powder you choose, a mattress encasement should be considered a non-negotiable component of any bed bug treatment plan. Your mattress is the single largest and most difficult-to-treat harbourage site in any bedroom. Its depth, multiple layers, and internal structure make it virtually impossible to treat with sprays or powders alone. An encasement solves this problem completely by sealing the entire mattress in an impermeable barrier. Any bugs already inside are trapped and will eventually die; any bugs outside cannot get in to establish new harbourage. The cost of a quality encasement like the Utopia Bedding (&pound;15) is a fraction of the cost of replacing an infested mattress (typically &pound;200&ndash;&pound;800 or more).
       </p>
 
       <h3>Monitoring Traps</h3>
@@ -459,7 +401,7 @@ export default function BestBedBugTreatmentsPage() {
 
       <h3>Combination Approach</h3>
       <p>
-        The most effective DIY bed bug treatment programme combines products from multiple categories. Start with a thorough clean: vacuum the mattress, bed frame, and surrounding furniture meticulously, paying close attention to seams, joints, and crevices. Wash all bedding, curtains, and clothing from the affected room at 60&deg;C or above to kill bugs and eggs. Then apply a contact spray to visible harbourage points for immediate knockdown. Next, apply a thin layer of residual powder (DE or CimeXa) to all cracks, crevices, and hidden pathways. Fit a mattress encasement to seal the mattress. Finally, deploy monitoring traps and check them weekly. Repeat the spray and powder application after two weeks to catch any newly hatched nymphs. Continue monitoring for at least six weeks after the last sign of activity.
+        The most effective DIY bed bug treatment programme combines products from multiple categories. Start with a thorough clean: vacuum the mattress, bed frame, and surrounding furniture meticulously, paying close attention to seams, joints, and crevices. Wash all bedding, curtains, and clothing from the affected room at 60&deg;C or above to kill bugs and eggs. Then apply a contact spray to visible harbourage points for immediate knockdown. Next, apply a thin layer of residual powder to all cracks, crevices, and hidden pathways. Fit a mattress encasement to seal the mattress. Repeat the spray and powder application after two weeks to catch any newly hatched nymphs. Continue checking for at least six weeks after the last sign of activity.
       </p>
 
       <div className="not-prose">

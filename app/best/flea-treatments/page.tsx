@@ -75,11 +75,9 @@ const breadcrumbSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Flea Treatments at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Indorex Defence' },
-  { id: 'best-powder', title: 'Best Powder — RIP Fleas Extra' },
-  { id: 'best-fogger', title: 'Best Fogger — Rentokil Flea Bomb' },
-  { id: 'best-natural', title: 'Best Natural — Oa2ki Flea Spray' },
-  { id: 'best-heavy', title: 'Best for Heavy Infestations — Acclaim 2000' },
+  { id: 'best-overall', title: 'Best Overall — Indorex Household Flea Spray' },
+  { id: 'best-powder', title: 'Best Powder — Zero In Home Flea Powder' },
+  { id: 'best-pet-brand', title: 'Best Pet Brand — Beaphar Household Flea Powder' },
   { id: 'buying-guide', title: 'How to Choose the Right Flea Treatment' },
   { id: 'tips', title: 'Flea Treatment Tips for Best Results' },
 ];
@@ -146,7 +144,7 @@ export default function BestFleaTreatmentsPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Flea Treatments at a Glance</h2>
       <p>
-        Below is a quick comparison of our five top-rated household flea treatments. Each product has been selected for a different use case, so the best choice for you depends on the severity of your infestation, the size of your home, and whether you prefer chemical or natural solutions. We go into full detail on every product further down the page.
+        Below is a quick comparison of our three top-rated household flea treatments. Each product has been selected for a different use case, so the best choice for you depends on the severity of your infestation and the type of treatment you prefer. We go into full detail on every product further down the page.
       </p>
       <table>
         <thead>
@@ -159,56 +157,44 @@ export default function BestFleaTreatmentsPage() {
         </thead>
         <tbody>
           <tr>
-            <td>Indorex Defence Household Flea Spray</td>
-            <td>Aerosol spray</td>
-            <td>Best overall</td>
+            <td>Indorex Household Flea Spray 500ml</td>
+            <td>Aerosol spray + IGR</td>
+            <td>Best Overall</td>
             <td>~&pound;12</td>
           </tr>
           <tr>
-            <td>RIP Fleas Extra Powder</td>
-            <td>Powder</td>
-            <td>Best powder</td>
-            <td>~&pound;8</td>
+            <td>Zero In Home Flea Powder 300g</td>
+            <td>Flea powder</td>
+            <td>Best Powder</td>
+            <td>~&pound;6</td>
           </tr>
           <tr>
-            <td>Rentokil Flea Killer Bomb</td>
-            <td>Fogger</td>
-            <td>Best fogger</td>
+            <td>Beaphar Household Flea Powder 300g</td>
+            <td>Flea powder</td>
+            <td>Best Pet Brand</td>
             <td>~&pound;7</td>
-          </tr>
-          <tr>
-            <td>Oa2ki Natural Flea Spray</td>
-            <td>Natural spray</td>
-            <td>Best natural option</td>
-            <td>~&pound;10</td>
-          </tr>
-          <tr>
-            <td>Acclaim 2000 Household Flea Spray</td>
-            <td>Aerosol spray</td>
-            <td>Best professional-grade</td>
-            <td>~&pound;15</td>
           </tr>
         </tbody>
       </table>
 
       <div className="not-prose">
-        <StatCallout value="&pound;7 &ndash; &pound;15" label="Price range across all five recommended flea treatments" />
+        <StatCallout value="&pound;6 &ndash; &pound;12" label="Price range across all three recommended flea treatments" />
       </div>
 
       {/* Best Overall */}
-      <h2 id="best-overall">Best Overall &mdash; Indorex Defence Household Flea Spray</h2>
+      <h2 id="best-overall">Best Overall &mdash; Indorex Household Flea Spray 500ml</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Indorex Defence Household Flea Spray"
+          name="Indorex Household Flea Spray 500ml"
           rating={4.7}
           features={[
-            'Kills adult fleas on contact',
-            'Contains IGR (insect growth regulator) to prevent eggs hatching',
+            '12-month household flea protection',
+            'Contains IGR to break the flea life cycle',
+            'Recommended by UK veterinary surgeries',
             'Single can treats average 2-bed house',
-            'Protection lasts up to 12 months',
           ]}
           price="~&pound;12"
-          asin="B003XI3S2K"
+          asin="B00GKHI2PW"
           bestFor="Best Overall"
           rank={1}
         />
@@ -249,38 +235,38 @@ export default function BestFleaTreatmentsPage() {
       </div>
 
       {/* Best Powder */}
-      <h2 id="best-powder">Best Powder &mdash; RIP Fleas Extra Powder</h2>
+      <h2 id="best-powder">Best Powder &mdash; Zero In Home Flea Powder 300g</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="RIP Fleas Extra Powder"
+          name="Zero In Home Flea Powder 300g"
           rating={4.5}
           features={[
-            'Fine powder reaches deep into carpet fibres',
-            'Contains permethrin for fast knockdown',
-            'Safe for use around pets once settled',
-            'Large 300g container covers multiple rooms',
+            'Amazon Bestseller flea powder',
+            'Treats carpets, rugs, and pet bedding',
+            'Fine powder penetrates deep into carpet fibres',
+            'Easy-to-use shaker container',
           ]}
-          price="~&pound;8"
-          asin="B000TAWSS0"
+          price="~&pound;6"
+          asin="B00KHV77Y4"
           bestFor="Best Powder"
           rank={2}
         />
       </div>
       <p>
-        While aerosol sprays are the most popular format for household flea treatment, powders offer a distinct advantage in certain situations &mdash; and the RIP Fleas Extra Powder is the best option available on the UK market. The key benefit of a powder is its ability to penetrate deep into carpet fibres, reaching down to the base of the pile where flea larvae live, feed, and spin their cocoons. Flea larvae are negatively phototactic, meaning they actively move away from light and burrow into the deepest recesses of the carpet. A surface spray may not reach these hidden larvae, but a fine powder worked into the carpet with a brush or by foot traffic settles down through the fibres to make contact with them at their level.
+        While aerosol sprays are the most popular format for household flea treatment, powders offer a distinct advantage in certain situations &mdash; and the Zero In Home Flea Powder is an Amazon Bestseller for good reason. The key benefit of a powder is its ability to penetrate deep into carpet fibres, reaching down to the base of the pile where flea larvae live, feed, and spin their cocoons. Flea larvae are negatively phototactic, meaning they actively move away from light and burrow into the deepest recesses of the carpet. A surface spray may not reach these hidden larvae, but a fine powder worked into the carpet with a brush or by foot traffic settles down through the fibres to make contact with them at their level.
       </p>
       <p>
-        RIP Fleas Extra contains permethrin as its active ingredient, a synthetic pyrethroid that disrupts the nervous system of fleas on contact, providing rapid knockdown. Permethrin has been used in pest control for decades and has an excellent safety profile for use around mammals when applied as directed. The powder format also means there is no aerosol propellant, which makes it a better choice for people who are sensitive to aerosol sprays or who prefer not to use pressurised cans indoors. The 300g container provides generous coverage &mdash; enough to treat the carpeted areas of several rooms. For best results, sprinkle the powder across the carpet, work it into the fibres using a stiff brush or broom, and leave it for at least one hour before vacuuming up the excess. The active ingredient continues to work in the residue that remains deep within the carpet after vacuuming.
+        The Zero In flea powder comes in an easy-to-use 300g shaker container that makes application quick and mess-free. Simply sprinkle the powder across carpets, rugs, and pet bedding, then work it into the fibres using a stiff brush or broom and leave it for the recommended contact time before vacuuming up the excess. The fine powder formula is designed to penetrate deep into carpet fibres where flea larvae hide, and the powder format means there is no aerosol propellant, making it a better choice for people who are sensitive to aerosol sprays or who prefer not to use pressurised cans indoors. The active ingredient continues to work in the residue that remains deep within the carpet after vacuuming.
       </p>
       <p>
         <strong>Pros:</strong>
       </p>
       <ul>
+        <li>Amazon Bestseller with strong verified customer reviews</li>
         <li>Penetrates deep into carpet fibres where flea larvae hide &mdash; superior to sprays for thick carpets</li>
-        <li>Permethrin provides fast-acting knockdown of adult fleas and larvae on contact</li>
+        <li>Easy-to-use shaker container for quick, mess-free application</li>
         <li>No aerosol propellant &mdash; better for those sensitive to pressurised sprays</li>
-        <li>Large 300g container offers excellent coverage across multiple rooms</li>
-        <li>Very affordable at approximately &pound;8</li>
+        <li>Excellent value at approximately &pound;6</li>
       </ul>
       <p>
         <strong>Cons:</strong>
@@ -292,158 +278,54 @@ export default function BestFleaTreatmentsPage() {
         <li>Not suitable for hard floors, laminate, or tile &mdash; carpet-only product</li>
       </ul>
       <p>
-        <strong>Verdict:</strong> RIP Fleas Extra Powder is the ideal complement to an aerosol spray like Indorex. Use the spray for general room coverage and the IGR protection, then follow up with the powder in areas with thick carpet where larvae tend to concentrate. This two-product approach provides the most thorough household treatment possible at a combined cost of around &pound;20.
+        <strong>Verdict:</strong> Zero In Home Flea Powder is the ideal complement to an aerosol spray like Indorex. Use the spray for general room coverage and the IGR protection, then follow up with the powder in areas with thick carpet where larvae tend to concentrate. This two-product approach provides the most thorough household treatment possible at a combined cost of under &pound;20.
       </p>
 
-      {/* Best Fogger */}
-      <h2 id="best-fogger">Best Fogger &mdash; Rentokil Flea Killer Bomb</h2>
+      {/* Best Pet Brand */}
+      <h2 id="best-pet-brand">Best Pet Brand &mdash; Beaphar Household Flea Powder 300g</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Rentokil Flea Killer Bomb"
+          name="Beaphar Household Flea Powder 300g"
           rating={4.3}
           features={[
-            'Total-release fogger fills entire room',
-            'Quick one-hour treatment time',
-            'Effective against adult fleas and larvae',
-            'Ideal for severe room-wide infestations',
+            'From trusted pet care brand Beaphar',
+            'Kills fleas and larvae in carpets and bedding',
+            'Safe for use around pets once settled',
+            'Effective residual protection',
           ]}
           price="~&pound;7"
-          asin="B000TAWQPU"
-          bestFor="Best Fogger"
+          asin="B001TQRC0K"
+          bestFor="Best Pet Brand"
           rank={3}
         />
       </div>
       <p>
-        For severe infestations where fleas are visibly hopping across the floor, a total-release fogger &mdash; commonly known as a flea bomb &mdash; offers the fastest route to room-wide knockdown. The Rentokil Flea Killer Bomb is the best fogger available on Amazon UK, backed by the trusted Rentokil brand that has been synonymous with pest control in Britain for decades. Once activated, the canister releases a fine insecticidal mist that fills the entire room, reaching into corners, under furniture, behind skirting boards, and into the gaps between floorboards that would be virtually impossible to treat with a handheld spray. This total-coverage approach is what makes foggers so effective for acute infestations where every surface needs treatment simultaneously.
+        Beaphar is one of Europe&apos;s most recognised pet care brands, and their Household Flea Powder brings that expertise to environmental flea control. The 300g container is designed for treating carpets, rugs, and pet bedding &mdash; the key areas where flea eggs and larvae accumulate in a domestic setting. As a brand trusted by pet owners across the United Kingdom, Beaphar offers peace of mind that the product has been formulated with household pets in mind, making it safe for use around cats and dogs once the powder has settled into the carpet fibres.
       </p>
       <p>
-        Using a flea bomb requires a bit of preparation, but the process is straightforward. First, open all cupboard and wardrobe doors in the room so the mist can reach inside. Cover or remove any fish tanks, as the insecticide is toxic to aquatic life. Remove all pets, children, and other household members from the property. Place the fogger in the centre of the room on a sheet of newspaper, activate it, and leave the room immediately, closing the door behind you. The mist disperses over approximately 15 minutes and then needs one hour to settle and work. After the treatment period, open all windows to ventilate the room thoroughly before re-entering. The entire process, from activation to safe re-entry, takes roughly two hours.
-      </p>
-      <p>
-        It is important to understand the limitations of flea bombs. While they provide excellent immediate knockdown of adult fleas and exposed larvae, most foggers &mdash; including the Rentokil &mdash; do not contain an IGR. This means they will not prevent eggs from hatching or pupae from emerging in the weeks following treatment. Flea pupae are enclosed in a sticky, silk cocoon that is highly resistant to insecticides, and a fogger alone will not break this stage of the lifecycle. For this reason, we recommend using a fogger as the first strike in a two-phase approach: deploy the bomb for immediate room-wide knockdown, then follow up with an IGR spray like Indorex or Acclaim 2000 to provide long-term lifecycle disruption.
+        The powder works by killing both adult fleas and larvae on contact within the carpet and bedding. Like other flea powders, it benefits from the ability to penetrate deep into carpet fibres where larvae live and feed, reaching areas that aerosol sprays may not fully cover. The 300g shaker format makes application straightforward &mdash; simply sprinkle across the affected areas, work the powder into the carpet with a brush or by foot traffic, and leave it for the recommended contact time before vacuuming up any excess. The residual powder that remains within the carpet continues to provide protection against fleas for a sustained period after application.
       </p>
       <p>
         <strong>Pros:</strong>
       </p>
       <ul>
-        <li>Total-release mist provides complete room coverage with no manual spraying required</li>
-        <li>Reaches under furniture, behind skirting boards, and into floorboard gaps automatically</li>
-        <li>Quick treatment time &mdash; one hour from activation to ventilation</li>
-        <li>Trusted Rentokil brand with decades of UK pest control expertise</li>
-        <li>Extremely affordable at approximately &pound;7 per room</li>
+        <li>From Beaphar, a trusted and established pet care brand across Europe</li>
+        <li>Kills both adult fleas and larvae on contact</li>
+        <li>Safe for use around pets once the powder has settled</li>
+        <li>Penetrates deep into carpet fibres for thorough treatment</li>
+        <li>Very affordable at approximately &pound;7</li>
       </ul>
       <p>
         <strong>Cons:</strong>
       </p>
       <ul>
-        <li>Does not contain an IGR &mdash; will not prevent eggs hatching or pupae emerging</li>
-        <li>Everyone (including all pets) must vacate the property during treatment</li>
-        <li>Toxic to fish and aquatic invertebrates &mdash; tanks must be covered or removed</li>
-        <li>One bomb treats a single room only &mdash; multiple rooms require multiple canisters</li>
-        <li>Leaves a fine residue on hard surfaces that needs wiping down after treatment</li>
+        <li>Does not contain an IGR &mdash; pair with an IGR spray for complete lifecycle control</li>
+        <li>Carpet-only product &mdash; not suitable for hard floors or laminate</li>
+        <li>Requires brushing into carpet for best results</li>
+        <li>Visible residue on carpet until vacuumed</li>
       </ul>
       <p>
-        <strong>Verdict:</strong> The Rentokil Flea Killer Bomb is the fastest way to bring a severe room-wide infestation under control. It is not a complete solution on its own &mdash; you will need an IGR-containing spray for long-term protection &mdash; but as a first-response treatment for a room that is heavily infested, nothing delivers quicker or more thorough coverage at such a low price.
-      </p>
-
-      {/* Best Natural */}
-      <h2 id="best-natural">Best Natural Option &mdash; Oa2ki Natural Flea Spray</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Oa2ki Natural Flea Spray"
-          rating={4.2}
-          features={[
-            '100% natural formula safe around children and pets',
-            'Kills through physical action not chemical',
-            'No chemical residue left in the home',
-            'Pleasant citrus scent',
-          ]}
-          price="~&pound;10"
-          asin="B004HEPBQ0"
-          bestFor="Best Natural Option"
-          rank={4}
-        />
-      </div>
-      <p>
-        Not everyone is comfortable using chemical insecticides in their home, particularly in households with young children, pets that lick treated surfaces, or family members with chemical sensitivities. The Oa2ki Natural Flea Spray offers a genuinely effective alternative that contains no synthetic chemicals whatsoever. The active ingredient is a naturally derived formula based on neem and other plant extracts that kills fleas through a physical mechanism rather than a chemical one. The spray coats the flea&apos;s exoskeleton and disrupts its waxy outer layer, causing dehydration and death &mdash; a process similar to how diatomaceous earth works on crawling insects, but delivered in a convenient spray format.
-      </p>
-      <p>
-        Because Oa2ki works through physical action rather than by targeting the flea&apos;s nervous system, there is no possibility of fleas developing resistance to it. This is a meaningful advantage in an era when some flea populations in the UK have been documented showing reduced susceptibility to certain pyrethroid insecticides. The spray leaves no chemical residue in the home once dry, and its pleasant citrus scent is a marked improvement over the strong chemical odour of most conventional aerosol sprays. You can spray it directly onto carpets, pet bedding, upholstered furniture, and even hard floor surfaces without worrying about toxic residues.
-      </p>
-      <p>
-        The trade-off with a natural product is that it typically does not deliver the same speed or potency as a chemical insecticide. Oa2ki will kill fleas that it contacts directly, but it does not provide the powerful residual protection of a permethrin-based powder or the months-long IGR effect of Indorex. For a light infestation in a home where chemical avoidance is a priority, Oa2ki may be sufficient as a standalone treatment when combined with thorough and frequent vacuuming. For a moderate to heavy infestation, it works best as part of a broader programme &mdash; perhaps as a maintenance spray between chemical treatments, or as a safe option for treating pet bedding and children&apos;s play areas while using a stronger chemical product on the main carpeted areas.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>100 per cent natural formula with no synthetic insecticides</li>
-        <li>Safe to use around children, pets, and chemically sensitive individuals</li>
-        <li>No chemical residue left on treated surfaces</li>
-        <li>Fleas cannot develop resistance to the physical mechanism of action</li>
-        <li>Pleasant citrus scent rather than chemical aerosol odour</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Less potent than chemical insecticides &mdash; may require multiple applications for heavier infestations</li>
-        <li>No IGR component &mdash; does not prevent eggs from developing</li>
-        <li>Shorter residual protection compared to synthetic sprays</li>
-        <li>Higher cost per application when treating a full house compared to chemical alternatives</li>
-      </ul>
-      <p>
-        <strong>Verdict:</strong> Oa2ki is the best choice for households that want to avoid synthetic chemicals entirely, and it is genuinely effective against adult fleas. For light infestations or as a supplementary treatment for sensitive areas like pet beds and children&apos;s rooms, it is an excellent product. For severe infestations, pair it with a stronger treatment on the main carpeted areas.
-      </p>
-
-      {/* Best for Heavy Infestations */}
-      <h2 id="best-heavy">Best for Heavy Infestations &mdash; Acclaim 2000 Household Flea Spray</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Acclaim 2000 Household Flea Spray"
-          rating={4.6}
-          features={[
-            'Professional-strength formula used by pest controllers',
-            'Contains S-methoprene IGR for long-term control',
-            'One can treats up to 80 square metres',
-            'Protection lasts up to 12 months',
-          ]}
-          price="~&pound;15"
-          asin="B004IR1TQ8"
-          bestFor="Best Professional-Grade"
-          rank={5}
-        />
-      </div>
-      <p>
-        Acclaim 2000 is the heavy artillery of the household flea spray world. This is a professional-strength product that is widely used by pest control technicians across the United Kingdom, and it is the formulation that many BPCA-accredited companies reach for when treating flea infestations in domestic properties. The fact that it is available to consumers on Amazon UK at a reasonable price is a genuine advantage &mdash; you are getting access to the same calibre of product that a professional would use, at a fraction of the cost of a call-out fee. The active formula combines a fast-acting adulticide with S-methoprene, an insect growth regulator that is even more potent than the pyriproxyfen found in Indorex, providing up to 12 months of protection against the re-emergence of immature flea stages.
-      </p>
-      <p>
-        The coverage of Acclaim 2000 is particularly impressive. A single 500ml can treats up to 80 square metres, which is roughly equivalent to a large three-bedroom house. This generous coverage means you can treat every carpeted room, landing, and staircase in a typical UK home with a single can, ensuring that no area is left untreated and there are no refuges where fleas can survive and re-establish. The spray dries to form an invisible residue on carpet fibres and soft furnishings that continues to work against any flea eggs or larvae that emerge over the following months. As with Indorex, you should remove pets and children during application and allow the spray to dry fully before re-entry.
-      </p>
-      <p>
-        Where Acclaim 2000 particularly shines is in dealing with heavy or persistent infestations &mdash; the kind where you have already tried a standard shop-bought spray and found that fleas returned within a few weeks. In these situations, the problem is almost always that the original treatment lacked an IGR, or the IGR was not potent enough to suppress the enormous number of eggs and larvae in the environment. Acclaim&apos;s S-methoprene IGR is formulated at professional concentrations specifically to handle high egg and larval loads, making it the right choice when a standard consumer spray has failed to deliver lasting results.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Professional-strength formula used by BPCA-accredited pest control companies</li>
-        <li>Contains S-methoprene IGR at professional concentrations for robust lifecycle control</li>
-        <li>Exceptional coverage &mdash; one can treats up to 80 square metres</li>
-        <li>Up to 12 months of residual protection against re-infestation</li>
-        <li>Ideal for heavy or persistent infestations that have resisted other treatments</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>The most expensive product in our guide at approximately &pound;15</li>
-        <li>Strong chemical odour during application &mdash; thorough ventilation is essential</li>
-        <li>Pets and children must be removed during application and drying</li>
-        <li>Overkill for a very light infestation where Indorex would suffice</li>
-      </ul>
-      <p>
-        <strong>Verdict:</strong> Acclaim 2000 is the product to reach for when a standard flea spray has not delivered results, or when you are dealing with a heavy infestation from the outset. Its professional-grade IGR and generous coverage make it the most powerful single-product treatment available to UK consumers. If cost is not a primary concern and you want the strongest possible protection, Acclaim 2000 is the one to buy.
+        <strong>Verdict:</strong> The Beaphar Household Flea Powder is a solid choice for pet owners who want a flea powder from a brand they already know and trust. At around &pound;7, it offers excellent value and works well as a complement to an IGR-containing spray like Indorex for comprehensive flea control across your home.
       </p>
 
       <div className="not-prose">
@@ -455,28 +337,25 @@ export default function BestFleaTreatmentsPage() {
       {/* Buying Guide */}
       <h2 id="buying-guide">How to Choose the Right Flea Treatment</h2>
       <p>
-        With five strong products to choose from, selecting the right one depends on your specific situation. Here are the key factors to consider when deciding between sprays, powders, and foggers.
+        With three strong products to choose from, selecting the right one depends on your specific situation. Here are the key factors to consider when deciding between sprays and powders.
       </p>
 
-      <h3>Spray vs Powder vs Fogger</h3>
+      <h3>Spray vs Powder</h3>
       <p>
-        <strong>Aerosol sprays</strong> like Indorex and Acclaim 2000 are the most versatile option and the best starting point for most households. They are easy to apply, cover large areas quickly, and &mdash; when they contain an IGR &mdash; provide months of ongoing protection against re-infestation. Sprays work well on carpets, rugs, upholstered furniture, curtains, and pet bedding. Their main limitation is that the spray mist does not always penetrate to the very base of thick carpet piles, where flea larvae tend to concentrate.
+        <strong>Aerosol sprays</strong> like Indorex are the most versatile option and the best starting point for most households. They are easy to apply, cover large areas quickly, and &mdash; when they contain an IGR &mdash; provide months of ongoing protection against re-infestation. Sprays work well on carpets, rugs, upholstered furniture, curtains, and pet bedding. Their main limitation is that the spray mist does not always penetrate to the very base of thick carpet piles, where flea larvae tend to concentrate.
       </p>
       <p>
-        <strong>Powders</strong> like RIP Fleas Extra excel where sprays fall short. The fine granules work their way down through carpet fibres under gravity and foot traffic, reaching the carpet base where larvae live. This makes powders the superior choice for rooms with thick, deep-pile carpet. However, powders do not adhere well to upholstery or soft furnishings and are not suitable for hard floors. The ideal approach for most homes is to use a spray as the primary treatment, then supplement with powder in rooms with particularly thick carpet.
-      </p>
-      <p>
-        <strong>Foggers</strong> are the right choice when you need rapid, total-room treatment with minimal effort. They are particularly useful for severe infestations or for treating rooms that are difficult to spray manually, such as cluttered spare rooms or loft conversions. The disadvantage is that you must vacate the property during treatment, and most foggers lack an IGR, so they should be followed up with an IGR spray for lasting protection.
+        <strong>Powders</strong> like Zero In and Beaphar excel where sprays fall short. The fine granules work their way down through carpet fibres under gravity and foot traffic, reaching the carpet base where larvae live. This makes powders the superior choice for rooms with thick, deep-pile carpet. However, powders do not adhere well to upholstery or soft furnishings and are not suitable for hard floors. The ideal approach for most homes is to use a spray as the primary treatment, then supplement with powder in rooms with particularly thick carpet.
       </p>
 
       <h3>The Importance of IGR</h3>
       <p>
-        If there is one thing to take away from this guide, it is the importance of choosing a product that contains an insect growth regulator. An IGR is the difference between killing the fleas you can see today and preventing the next generation from emerging over the coming weeks and months. Products without an IGR typically provide only two to four weeks of relief before a new wave of adult fleas emerges from the pupae and eggs already present in the environment. Products <em>with</em> an IGR extend that protection to six to twelve months, because the IGR renders eggs and larvae incapable of developing into adults. Both Indorex (pyriproxyfen) and Acclaim 2000 (S-methoprene) contain effective IGRs. If you choose a product without an IGR, such as the RIP Fleas powder or the Rentokil fogger, be sure to pair it with an IGR spray.
+        If there is one thing to take away from this guide, it is the importance of choosing a product that contains an insect growth regulator. An IGR is the difference between killing the fleas you can see today and preventing the next generation from emerging over the coming weeks and months. Products without an IGR typically provide only two to four weeks of relief before a new wave of adult fleas emerges from the pupae and eggs already present in the environment. Products <em>with</em> an IGR extend that protection to six to twelve months, because the IGR renders eggs and larvae incapable of developing into adults. Indorex contains an effective IGR (pyriproxyfen). If you choose a powder product without an IGR, such as the Zero In or Beaphar powders, be sure to pair it with an IGR spray like Indorex for complete lifecycle control.
       </p>
 
       <h3>Room Size and Coverage</h3>
       <p>
-        Always check the coverage area stated on the product label and match it to the size of your home. Under-treating is one of the most common reasons for flea treatment failure. A single can of Indorex covers an average two-bedroom house; Acclaim 2000 covers up to 80 square metres, roughly a three-bedroom property. If your home is larger, or if you have particularly large rooms, buy an extra can to ensure thorough coverage. It is far better to have product left over than to run out halfway through treatment and leave rooms untreated.
+        Always check the coverage area stated on the product label and match it to the size of your home. Under-treating is one of the most common reasons for flea treatment failure. A single can of Indorex covers an average two-bedroom house. If your home is larger, or if you have particularly large rooms, buy an extra can to ensure thorough coverage. It is far better to have product left over than to run out halfway through treatment and leave rooms untreated.
       </p>
 
       {/* Tips */}

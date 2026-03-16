@@ -76,10 +76,9 @@ const breadcrumbSchema = {
 const tocItems = [
   { id: 'at-a-glance', title: 'At a Glance' },
   { id: 'best-overall', title: 'Best Overall — Advion Gel Bait' },
-  { id: 'best-spray', title: 'Best Quick-Kill Spray' },
-  { id: 'best-german', title: 'Best for German Cockroaches' },
-  { id: 'best-natural', title: 'Best Natural Option' },
   { id: 'best-monitoring', title: 'Best for Monitoring' },
+  { id: 'best-spray', title: 'Best Quick-Kill Spray' },
+  { id: 'best-budget-gel', title: 'Best Budget Gel' },
   { id: 'buying-guide', title: 'Buying Guide' },
 ];
 
@@ -138,7 +137,7 @@ export default function BestCockroachKillersPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Cockroach Killers at a Glance</h2>
       <p>
-        The table below provides a quick comparison of our five recommended products. Each serves a different purpose within a cockroach control programme, and the best choice for you depends on the species you are dealing with, the severity of the infestation, and whether you need immediate knockdown, colony elimination, or ongoing monitoring. We cover each product in full detail further down the page.
+        The table below provides a quick comparison of our four recommended products. Each serves a different purpose within a cockroach control programme, and the best choice for you depends on the species you are dealing with, the severity of the infestation, and whether you need immediate knockdown, colony elimination, or ongoing monitoring. We cover each product in full detail further down the page.
       </p>
       <table>
         <thead>
@@ -151,56 +150,50 @@ export default function BestCockroachKillersPage() {
         </thead>
         <tbody>
           <tr>
-            <td>Advion Cockroach Gel Bait</td>
+            <td>Advion Cockroach Gel Bait 4x30g</td>
             <td>Gel bait</td>
-            <td>Best overall</td>
-            <td>~&pound;20</td>
+            <td>Best Overall</td>
+            <td>~&pound;25</td>
           </tr>
           <tr>
-            <td>Rentokil Cockroach Killer Spray</td>
+            <td>Cockroach Sticky Traps 12-Pack</td>
+            <td>Sticky traps</td>
+            <td>Best Monitoring</td>
+            <td>~&pound;8</td>
+          </tr>
+          <tr>
+            <td>NOPE! CP Cockroach Killer Spray 500ml</td>
             <td>Contact spray</td>
-            <td>Best quick-kill spray</td>
-            <td>~&pound;7</td>
-          </tr>
-          <tr>
-            <td>Maxforce White IC Gel</td>
-            <td>Professional gel bait</td>
-            <td>Best for German cockroaches</td>
-            <td>~&pound;18</td>
-          </tr>
-          <tr>
-            <td>Oa2ki Organic Cockroach Killer</td>
-            <td>Diatomaceous earth</td>
-            <td>Best natural option</td>
+            <td>Best Quick-Kill</td>
             <td>~&pound;10</td>
           </tr>
           <tr>
-            <td>Catchmaster Cockroach Monitors</td>
-            <td>Sticky trap</td>
-            <td>Best for monitoring</td>
-            <td>~&pound;10</td>
+            <td>Pest Expert Cockroach Gel 10g</td>
+            <td>Gel bait</td>
+            <td>Best Budget Gel</td>
+            <td>~&pound;12</td>
           </tr>
         </tbody>
       </table>
 
       <div className="not-prose">
-        <StatCallout value="&pound;7 &ndash; &pound;20" label="Price range across all five recommended cockroach killer products" />
+        <StatCallout value="&pound;8 &ndash; &pound;25" label="Price range across all four recommended cockroach killer products" />
       </div>
 
       {/* Best Overall — Advion Cockroach Gel Bait */}
       <h2 id="best-overall">Best Overall &mdash; Advion Cockroach Gel Bait</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Advion Cockroach Gel Bait"
+          name="Advion Cockroach Gel Bait 4x30g"
           rating={5}
           features={[
-            'Industry-standard gel bait used by professionals worldwide',
-            'Active ingredient indoxacarb — non-repellent formula',
-            'Cascade effect kills cockroaches that feed on dead ones',
-            'Syringe applicator for precise crevice placement',
+            'Professional-grade gel bait used by UK pest controllers',
+            'Domino effect — cockroaches carry bait back to colony',
+            '4x30g tubes for comprehensive treatment',
+            'Effective against both German and Oriental cockroaches',
           ]}
-          price="~&pound;20"
-          asin="B0048E0KOW"
+          price="£25"
+          asin="B0148W0WOE"
           bestFor="Best Overall"
           rank={1}
         />
@@ -237,173 +230,29 @@ export default function BestCockroachKillersPage() {
         <li>More expensive than sprays, though significantly more effective</li>
       </ul>
 
-      {/* Best Quick-Kill Spray — Rentokil */}
-      <h2 id="best-spray">Best Quick-Kill Spray &mdash; Rentokil Cockroach Killer</h2>
+      {/* Best for Monitoring — Cockroach Sticky Traps */}
+      <h2 id="best-monitoring">Best for Monitoring &mdash; Cockroach Sticky Traps 12-Pack</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Rentokil Cockroach Killer Spray"
-          rating={3}
+          name="Cockroach Sticky Traps 12-Pack"
+          rating={4}
           features={[
-            'Aerosol spray for instant knockdown',
-            'Kills cockroaches on contact within seconds',
-            'Good for spraying around drain entry points',
-            'Best used alongside gel bait, not standalone',
+            '#1 Bestseller toxin-free sticky traps',
+            'Food attractant lures cockroaches to the trap',
+            '12-pack provides whole-property coverage',
+            'Ideal for monitoring infestation levels',
           ]}
-          price="~&pound;7"
-          asin="B000TAT5F6"
-          bestFor="Best Spray"
+          price="£8"
+          asin="B075FM7TST"
+          bestFor="Best for Monitoring"
           rank={2}
         />
       </div>
       <p>
-        Contact sprays occupy a specific and limited role in cockroach control, and it is important to be upfront about what they can and cannot do. The Rentokil Cockroach Killer Spray is an aerosol that delivers immediate knockdown &mdash; any cockroach hit directly with the spray will die within seconds. This makes it satisfying to use when you spot a cockroach scuttling across the kitchen floor at midnight, and it provides a sense of immediate action that gel baits, with their slower mode of action, simply cannot match. For visible cockroaches that you can target directly, a contact spray delivers instant results.
+        Monitoring traps are an essential but frequently overlooked component of any cockroach control programme. These cockroach sticky traps are the number-one bestseller in their category on Amazon UK, and for good reason: they provide a completely toxin-free way to detect, monitor, and assess cockroach activity in your property. The traps use a <strong>food-based attractant</strong> that lures cockroaches onto a strong adhesive surface, where they become stuck. Unlike chemical treatments, sticky traps pose no risk to children, pets, or food-preparation areas, making them safe to deploy throughout a kitchen or restaurant without any precautions.
       </p>
       <p>
-        The Rentokil spray is particularly useful around <strong>drain entry points</strong>, which are the primary route by which Oriental cockroaches enter UK homes. Oriental cockroaches live in sewer systems and damp underground environments, and they frequently enter properties through floor drains, waste pipes, and gaps around plumbing. Spraying around these entry points can help intercept cockroaches as they emerge, especially during the warmer months when Oriental cockroaches are most active. The residual effect of the spray is limited &mdash; once it dries, its killing power diminishes significantly &mdash; but regular reapplication around known entry points can provide a degree of ongoing barrier protection.
-      </p>
-      <p>
-        However, it is essential to understand that a contact spray is <strong>not a standalone solution</strong> for a cockroach infestation. Sprays kill only the individual cockroaches they touch directly. They do nothing to address the colony hiding behind walls, under appliances, and in other inaccessible harbourage points. Worse, the repellent nature of most aerosol sprays can actually <strong>scatter the cockroach population</strong>, causing them to flee to new areas of the property and potentially spreading the infestation rather than containing it. This is the opposite of what gel bait does: while gel bait draws cockroaches in and poisons the colony from within, a repellent spray pushes them away and fragments their distribution. For this reason, we recommend using a contact spray only as a supplement to gel bait &mdash; never as your primary treatment method.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Kills cockroaches on contact within seconds &mdash; immediate and visible results</li>
-        <li>Very affordable at around &pound;7 per can</li>
-        <li>Easy to use with no specialist knowledge required</li>
-        <li>Useful for treating drain entry points against Oriental cockroaches</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Does not reach the colony &mdash; kills only individual cockroaches on direct contact</li>
-        <li>Repellent nature can scatter the population to new hiding places, potentially worsening the problem</li>
-        <li>Very limited residual effect once the spray dries</li>
-        <li>Not effective as a standalone treatment for any established infestation</li>
-      </ul>
-
-      {/* Best for German Cockroaches — Maxforce White IC Gel */}
-      <h2 id="best-german">Best for German Cockroaches &mdash; Maxforce White IC Gel</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Maxforce White IC Gel"
-          rating={5}
-          features={[
-            'Professional-grade gel bait from Bayer/Envu',
-            'Contains imidacloprid — strong cascade effect',
-            'White colour shows exactly where you have applied',
-            'Specifically formulated for German cockroaches',
-          ]}
-          price="~&pound;18"
-          asin="B00170MVFY"
-          bestFor="Best for German Cockroaches"
-          rank={3}
-        />
-      </div>
-      <p>
-        The Maxforce White IC Gel is a professional-grade cockroach gel bait manufactured by Bayer (now operating under the Envu brand for professional pest control products). It contains the active ingredient <strong>imidacloprid</strong>, a neonicotinoid insecticide that works in a similar fashion to the indoxacarb in Advion &mdash; it is non-repellent, meaning cockroaches feed on it without detecting the toxin, and it produces a strong cascade effect as poisoned cockroaches are consumed by their nestmates. Where Maxforce White IC distinguishes itself is in its specific formulation for <strong>German cockroaches</strong>, which are the most common and problematic cockroach species in UK kitchens, restaurants, and food businesses.
-      </p>
-      <p>
-        German cockroaches are a particularly challenging pest because of their rapid breeding cycle. A single female German cockroach produces an egg case (ootheca) containing roughly 30 to 40 eggs every few weeks, and nymphs reach maturity in as little as six weeks under warm conditions. This means that a small initial population can explode into hundreds or thousands of individuals within a matter of months if left untreated. German cockroaches show a strong preference for warm, humid environments close to food and water &mdash; the space behind cookers, the motor housing of fridges, the area under dishwashers, and the warm crevices around boilers are all classic harbourage sites. The Maxforce White IC gel is specifically formulated to be highly palatable to German cockroaches, with a bait matrix that competes effectively with the abundant food sources typically available in kitchens.
-      </p>
-      <p>
-        One of the most practical advantages of the Maxforce White IC gel is its <strong>white colour</strong>. Most cockroach gel baits are brown or amber, making them difficult to see once applied in dark crevices. The white formulation of Maxforce allows you to see exactly where you have placed the gel, which is invaluable for ensuring thorough coverage and for checking whether cockroaches have been feeding on the bait during inspections. You can clearly see consumption marks where cockroaches have eaten the gel, giving you real-time feedback on whether your placement strategy is working. This visibility also makes reapplication easier, as you can see precisely which dots have been consumed and need refreshing.
-      </p>
-      <p>
-        Professional pest controllers in the UK have used Maxforce products for decades, and the White IC formulation has an excellent track record against German cockroach infestations in both residential and commercial settings. Like Advion, it is supplied in syringe applicators for precise crevice placement. The cascade effect is strong &mdash; professional data suggests that a properly placed application of Maxforce White IC can reduce a German cockroach population by 90 per cent or more within two weeks, with follow-up applications needed to eliminate remaining nymphs and any newly hatched individuals.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Professional-grade gel bait with decades of proven track record in UK pest control</li>
-        <li>White colour provides clear visibility of placement and consumption by cockroaches</li>
-        <li>Specifically formulated to be highly palatable to German cockroaches</li>
-        <li>Strong cascade effect that targets the entire colony</li>
-        <li>Manufactured by Bayer/Envu &mdash; one of the most trusted names in pest control chemistry</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Slightly more expensive than some alternatives at around &pound;18 per syringe</li>
-        <li>Syringe applicator can be fiddly to use in very tight crevices without practice</li>
-        <li>Requires knowledge of German cockroach harbourage points for optimal placement</li>
-        <li>Less effective against Oriental cockroaches, which have different feeding preferences</li>
-      </ul>
-
-      {/* Best Natural Option — Oa2ki */}
-      <h2 id="best-natural">Best Natural Option &mdash; Oa2ki Organic Cockroach Killer</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Oa2ki Organic Cockroach Killer"
-          rating={3}
-          features={[
-            'Food-grade diatomaceous earth',
-            'Non-toxic to humans and pets',
-            'Damages cockroach exoskeleton through physical action',
-            'Apply thinly behind appliances and around pipes',
-          ]}
-          price="~&pound;10"
-          asin="B004HEPBQ0"
-          bestFor="Best Natural Option"
-          rank={4}
-        />
-      </div>
-      <p>
-        For households that prefer to avoid chemical insecticides &mdash; whether due to concerns about children, pets, or personal preference &mdash; diatomaceous earth (DE) offers a viable natural alternative for cockroach control. The Oa2ki Organic Cockroach Killer is a food-grade DE product that works through an entirely <strong>physical mechanism of action</strong> rather than a chemical one. Under a microscope, diatomaceous earth particles have sharp, abrasive edges that scratch and damage the waxy outer layer of the cockroach&apos;s exoskeleton (cuticle). This waxy layer is vital for preventing water loss, and once it is compromised, the cockroach gradually loses moisture through its damaged cuticle and dies of dehydration. Because the mechanism is physical rather than chemical, cockroaches cannot develop resistance to DE regardless of how many generations are exposed &mdash; a significant advantage over chemical products to which cockroach populations can and do develop resistance over time.
-      </p>
-      <p>
-        The correct application technique for diatomaceous earth is critical. The most common mistake people make is applying too much. A thick layer of powder is counterproductive &mdash; cockroaches will detect the obstruction and simply walk around it. The ideal application is a <strong>barely visible dusting</strong>, thin enough that you can still see the surface beneath it. Apply DE behind cookers and fridges, around pipe entry points under sinks and behind toilets, along the edges of skirting boards, inside the backs of kitchen cupboards, and around any gaps or cracks where cockroaches might travel. A puffer bottle or bellows duster makes precise, thin application much easier than pouring or shaking the powder directly from the container. Keep DE away from areas that get wet, as moisture renders it ineffective &mdash; this makes it unsuitable for use directly around drains or in consistently damp areas.
-      </p>
-      <p>
-        We must be honest about the limitations of diatomaceous earth as a standalone cockroach treatment. It is <strong>significantly slower</strong> than gel bait: while Advion or Maxforce can begin decimating a colony within days, DE typically takes one to two weeks to kill individual cockroaches, and it does not produce the same cascade effect because it works through desiccation rather than ingestion and secondary poisoning. For a light infestation &mdash; perhaps a handful of cockroaches appearing occasionally near pipe entry points &mdash; DE applied thoroughly and left undisturbed can be effective. For a moderate to heavy infestation, particularly of German cockroaches, DE alone is unlikely to achieve elimination. In these cases, it works best as a supplementary product alongside gel bait, providing ongoing passive protection in areas where gel bait has not been placed.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Completely non-toxic to humans and pets &mdash; food-grade and chemical-free</li>
-        <li>Safe for use in kitchens and around food-preparation areas</li>
-        <li>No possibility of cockroaches developing resistance to the physical mechanism</li>
-        <li>Long-lasting &mdash; remains effective indefinitely if left dry and undisturbed</li>
-        <li>Affordable at around &pound;10 for a generous supply</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Much slower than gel baits &mdash; takes one to two weeks to kill individual cockroaches</li>
-        <li>Must be applied very thinly for effectiveness; excessive application is counterproductive</li>
-        <li>Not effective in humid or damp conditions where the powder absorbs moisture</li>
-        <li>Will not eliminate a large or established infestation when used alone</li>
-        <li>Can irritate the respiratory tract during application &mdash; wear a dust mask</li>
-      </ul>
-
-      {/* Best for Monitoring — Catchmaster */}
-      <h2 id="best-monitoring">Best for Monitoring &mdash; Catchmaster Cockroach Monitors</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Catchmaster Cockroach Monitors (12-Pack)"
-          rating={4}
-          features={[
-            'Professional-grade sticky traps',
-            'Flat design fits under appliances and in cupboards',
-            'Pheromone attractant draws cockroaches in',
-            'Essential for assessing and confirming elimination',
-          ]}
-          price="~&pound;10"
-          asin="B003VEGM4M"
-          bestFor="Best for Monitoring"
-          rank={5}
-        />
-      </div>
-      <p>
-        Monitoring traps are an essential but frequently overlooked component of any cockroach control programme. The Catchmaster Cockroach Monitors are professional-grade sticky traps designed specifically for cockroach detection, and they serve two critical purposes: <strong>assessing the severity of an infestation before treatment</strong> and <strong>confirming elimination after treatment</strong>. Without monitoring traps, you are essentially treating blind &mdash; you have no objective way to know how many cockroaches are present, where they are most active, or whether your treatment has been successful. Professional pest controllers never carry out a cockroach treatment without first deploying monitors, and the same discipline should apply to DIY treatment.
-      </p>
-      <p>
-        The Catchmaster monitors feature a <strong>flat, low-profile design</strong> that allows them to be placed in the tight spaces where cockroaches travel &mdash; under fridges, cookers, and dishwashers, inside the backs of kitchen cupboards, beneath sinks near pipe entry points, and along the base of walls. Each trap contains a <strong>pheromone attractant</strong> that draws cockroaches onto the adhesive surface, where they become stuck. The 12-pack provides enough traps for thorough coverage of a standard kitchen, and we recommend placing them in every area where cockroach activity is suspected or likely. After 48 to 72 hours, inspect the traps: the number of cockroaches caught on each trap gives you a clear picture of where activity is concentrated and how severe the problem is. This information is invaluable for targeting your gel bait placement where it will have the greatest impact.
+        The 12-pack provides enough traps for <strong>whole-property coverage</strong>, and we recommend placing them in every area where cockroach activity is suspected or likely. Key placement sites include under fridges and cookers, inside the backs of kitchen cupboards, beneath sinks near pipe entry points, along the base of walls in utility rooms, and near any warm electrical equipment. After 48 to 72 hours, inspect the traps: the number of cockroaches caught on each trap gives you a clear picture of where activity is concentrated and how severe the problem is. This information is invaluable for targeting your gel bait placement where it will have the greatest impact.
       </p>
       <p>
         After treatment with gel bait, leave the monitoring traps in place and continue checking them weekly. A successful treatment will show a progressive decline in catches over two to four weeks. If traps remain clear for four to six consecutive weeks after your final gel bait application, you can be reasonably confident that the infestation has been eliminated. If traps continue to catch cockroaches beyond this timeframe, further treatment &mdash; or professional intervention &mdash; is needed. Monitoring traps also provide valuable evidence for landlords, letting agents, and environmental health officers, as they give an objective, visual record of cockroach activity that supplements verbal reports.
@@ -415,11 +264,11 @@ export default function BestCockroachKillersPage() {
         <strong>Pros:</strong>
       </p>
       <ul>
-        <li>Professional-grade quality used by pest controllers for survey and monitoring work</li>
-        <li>Flat design fits under appliances and into tight spaces where cockroaches harbour</li>
-        <li>Pheromone attractant increases catch rate for more accurate monitoring</li>
-        <li>12-pack provides thorough coverage of a standard kitchen area</li>
+        <li>Number-one bestseller &mdash; toxin-free and safe for use around children and pets</li>
+        <li>Food attractant increases catch rate for more accurate monitoring</li>
+        <li>12-pack provides thorough coverage of a standard kitchen and surrounding areas</li>
         <li>Provides objective evidence of infestation level and treatment progress</li>
+        <li>Very affordable at around &pound;8 for a full pack</li>
       </ul>
       <p>
         <strong>Cons:</strong>
@@ -429,6 +278,98 @@ export default function BestCockroachKillersPage() {
         <li>Adhesive surface loses effectiveness when dusty and needs replacing every four to six weeks</li>
         <li>Can catch non-target insects such as spiders and silverfish</li>
         <li>Requires regular inspection to provide useful monitoring data</li>
+      </ul>
+
+      {/* Best Quick-Kill Spray — NOPE! CP */}
+      <h2 id="best-spray">Best Quick-Kill Spray &mdash; NOPE! CP Cockroach Killer Spray 500ml</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="NOPE! CP Cockroach Killer Spray 500ml"
+          rating={4}
+          features={[
+            'Odourless contact killer spray',
+            'Fast-acting formula kills cockroaches on contact',
+            '500ml bottle covers a large area',
+            'Suitable for kitchens, bathrooms, and utility rooms',
+          ]}
+          price="£10"
+          asin="B074CDY9T4"
+          bestFor="Best Quick-Kill Spray"
+          rank={3}
+        />
+      </div>
+      <p>
+        Contact sprays occupy a specific and limited role in cockroach control, and it is important to be upfront about what they can and cannot do. The NOPE! CP Cockroach Killer Spray is a 500ml contact spray that delivers immediate knockdown &mdash; any cockroach hit directly with the spray will die within seconds. What sets this product apart from many competitors is its <strong>odourless formulation</strong>, which makes it far more practical for use in kitchens, bathrooms, and other enclosed spaces where a strong chemical smell would be unpleasant or unacceptable. The 500ml bottle is generously sized and covers a large area, making it a cost-effective option at around &pound;10.
+      </p>
+      <p>
+        The NOPE! CP spray is particularly useful around <strong>drain entry points</strong>, which are the primary route by which Oriental cockroaches enter UK homes. Oriental cockroaches live in sewer systems and damp underground environments, and they frequently enter properties through floor drains, waste pipes, and gaps around plumbing. Spraying around these entry points can help intercept cockroaches as they emerge, especially during the warmer months when Oriental cockroaches are most active. The spray is also suitable for use in bathrooms and utility rooms where cockroaches may harbour.
+      </p>
+      <p>
+        However, it is essential to understand that a contact spray is <strong>not a standalone solution</strong> for a cockroach infestation. Sprays kill only the individual cockroaches they touch directly. They do nothing to address the colony hiding behind walls, under appliances, and in other inaccessible harbourage points. For this reason, we recommend using a contact spray only as a supplement to gel bait &mdash; never as your primary treatment method. When used in combination with the Advion gel bait above, the NOPE! CP spray provides a useful way to deal with visible cockroaches while the gel bait works its way through the colony over one to two weeks.
+      </p>
+      <p>
+        <strong>Pros:</strong>
+      </p>
+      <ul>
+        <li>Odourless formula makes it practical for use in kitchens and enclosed spaces</li>
+        <li>Fast-acting &mdash; kills cockroaches on contact within seconds</li>
+        <li>500ml bottle provides generous coverage at an affordable price</li>
+        <li>Suitable for kitchens, bathrooms, and utility rooms</li>
+      </ul>
+      <p>
+        <strong>Cons:</strong>
+      </p>
+      <ul>
+        <li>Does not reach the colony &mdash; kills only individual cockroaches on direct contact</li>
+        <li>Limited residual effect once the spray dries</li>
+        <li>Not effective as a standalone treatment for any established infestation</li>
+        <li>Best used as a supplement to gel bait, not a replacement</li>
+      </ul>
+
+      {/* Best Budget Gel — Pest Expert */}
+      <h2 id="best-budget-gel">Best Budget Gel &mdash; Pest Expert Cockroach Gel 10g</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Pest Expert Cockroach Gel 10g"
+          rating={4}
+          features={[
+            'Formula IC gel with domino-effect bait technology',
+            'Professional cockroach gel at consumer price',
+            'Easy syringe application into cracks and crevices',
+            'Effective against all UK cockroach species',
+          ]}
+          price="£12"
+          asin="B07ZZGKQ55"
+          bestFor="Best Budget Gel"
+          rank={4}
+        />
+      </div>
+      <p>
+        For those looking for a professional-quality gel bait at a more accessible price point, the Pest Expert Cockroach Gel offers excellent value. This 10g syringe contains a <strong>Formula IC gel</strong> that works on the same domino-effect principle as the Advion gel bait above &mdash; cockroaches feed on the gel, return to their harbourage, and when they eventually die, other cockroaches consume their remains and ingest a secondary dose of the active ingredient. This cascade mechanism means the gel reaches cockroaches deep within wall voids, behind appliances, and in other harbourage points that you cannot access directly, making it far more effective than contact sprays for colony elimination.
+      </p>
+      <p>
+        The Pest Expert gel is supplied in a <strong>ready-to-use syringe applicator</strong>, which makes it straightforward to apply even for people who have never used a cockroach gel bait before. Simply place tiny dots of gel &mdash; roughly the size of a grain of rice &mdash; into the cracks, crevices, and harbourage points where cockroaches live and travel. Key placement sites include kitchen cupboard hinges, the gap between worktops and walls, behind cookers and fridges, around pipe entry points under sinks, along skirting board edges, and inside any cracks or gaps in walls or flooring. The syringe tip allows precise application into tight spaces that would be impossible to reach with a spray or powder.
+      </p>
+      <p>
+        At around &pound;12, the Pest Expert gel is noticeably cheaper than the Advion gel bait while using a similar mode of action. The 10g syringe is sufficient for treating a single room or a small infestation, though you may need multiple syringes for a larger property or a more widespread problem. The gel is <strong>effective against all UK cockroach species</strong>, including both German and Oriental cockroaches, making it a versatile choice regardless of which species you are dealing with.
+      </p>
+      <p>
+        <strong>Pros:</strong>
+      </p>
+      <ul>
+        <li>Professional-grade gel bait at a consumer-friendly price of around &pound;12</li>
+        <li>Domino-effect bait technology targets the entire colony, not just individual cockroaches</li>
+        <li>Easy syringe application &mdash; no specialist equipment or knowledge required</li>
+        <li>Effective against both German and Oriental cockroaches</li>
+      </ul>
+      <p>
+        <strong>Cons:</strong>
+      </p>
+      <ul>
+        <li>Smaller 10g syringe may not be sufficient for larger infestations &mdash; you may need to purchase multiple units</li>
+        <li>Takes one to two weeks for the full cascade effect to work through the colony</li>
+        <li>Gel dries out after two to three weeks and requires reapplication</li>
+        <li>Less bait per pound than the Advion 4x30g pack for larger treatment areas</li>
       </ul>
 
       {/* Buying Guide */}
