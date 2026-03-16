@@ -150,8 +150,12 @@ export default function WaspNestRemovalPage() {
       relatedGuides={[
         { title: 'How to Get Rid of Rats: Complete UK Guide', href: '/guides/how-to-get-rid-of-rats' },
         { title: 'How to Get Rid of Mice: Complete UK Guide', href: '/guides/how-to-get-rid-of-mice' },
+        { title: 'How to Get Rid of Bed Bugs: Complete UK Guide', href: '/guides/how-to-get-rid-of-bed-bugs' },
       ]}
-      relatedProducts={[{ title: 'Best Wasp Killer Products UK 2026', href: '/best/wasp-killers' }]}
+      relatedProducts={[
+        { title: 'Best Wasp Killer Products UK 2026', href: '/best/wasp-killers' },
+        { title: 'Best Bed Bug Treatments UK 2026', href: '/best/bed-bug-treatments' },
+      ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >

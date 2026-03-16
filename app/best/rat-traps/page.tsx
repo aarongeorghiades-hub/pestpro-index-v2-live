@@ -106,8 +106,12 @@ export default function BestRatTrapsPage() {
           title: 'Wasp Nest Removal: Complete UK Guide',
           href: '/guides/wasp-nest-removal',
         },
+        {
+          title: 'How to Get Rid of Bed Bugs: Complete UK Guide',
+          href: '/guides/how-to-get-rid-of-bed-bugs',
+        },
       ]}
-      relatedProducts={[{ title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' }, { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' }]}
+      relatedProducts={[{ title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' }, { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' }, { title: 'Best Bed Bug Treatments UK 2026', href: '/best/bed-bug-treatments' }]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >

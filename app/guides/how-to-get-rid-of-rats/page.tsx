@@ -138,8 +138,8 @@ export default function HowToGetRidOfRatsPage() {
       readingTime="12 min"
       breadcrumbParent={{ label: 'Guides', href: '/guides' }}
       tocItems={tocItems}
-      relatedGuides={[{ title: 'How to Get Rid of Mice: Complete UK Guide', href: '/guides/how-to-get-rid-of-mice' }, { title: 'Wasp Nest Removal: Complete UK Guide', href: '/guides/wasp-nest-removal' }]}
-      relatedProducts={[{ title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' }, { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' }, { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' }]}
+      relatedGuides={[{ title: 'How to Get Rid of Mice: Complete UK Guide', href: '/guides/how-to-get-rid-of-mice' }, { title: 'Wasp Nest Removal: Complete UK Guide', href: '/guides/wasp-nest-removal' }, { title: 'How to Get Rid of Bed Bugs: Complete UK Guide', href: '/guides/how-to-get-rid-of-bed-bugs' }]}
+      relatedProducts={[{ title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' }, { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' }, { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' }, { title: 'Best Bed Bug Treatments UK 2026', href: '/best/bed-bug-treatments' }]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >

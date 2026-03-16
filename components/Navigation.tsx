@@ -274,6 +274,20 @@ export default function Navigation() {
                 >
                   Best Wasp Killers
                 </Link>
+                <Link
+                  href="/guides/how-to-get-rid-of-bed-bugs"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Bed Bug Guide
+                </Link>
+                <Link
+                  href="/best/bed-bug-treatments"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Bed Bug Treatments
+                </Link>
               </div>
             )}
           </div>
@@ -476,6 +490,20 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Best Wasp Killers
+                </Link>
+                <Link
+                  href="/guides/how-to-get-rid-of-bed-bugs"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Bed Bug Guide
+                </Link>
+                <Link
+                  href="/best/bed-bug-treatments"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Bed Bug Treatments
                 </Link>
               </div>
             </div>

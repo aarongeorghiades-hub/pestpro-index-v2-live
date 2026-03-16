@@ -693,6 +693,12 @@ export default function ResidentialPage() {
             <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-semibold text-sm">
               Best Wasp Killers UK 2026 →
             </Link>
+            <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline font-semibold text-sm">
+              How to Get Rid of Bed Bugs →
+            </Link>
+            <Link href="/best/bed-bug-treatments" className="text-blue-600 hover:underline font-semibold text-sm">
+              Best Bed Bug Treatments UK 2026 →
+            </Link>
           </div>
         </div>
       </section>
