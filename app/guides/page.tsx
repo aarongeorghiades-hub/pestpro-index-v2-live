@@ -84,6 +84,12 @@ const guides = [
     href: '/guides/how-to-get-rid-of-moths',
   },
   {
+    emoji: '🍽️',
+    title: 'Restaurant Pest Control',
+    description: 'Legal requirements, EHO inspections, HACCP compliance, and setting up a pest management programme for your food business.',
+    href: '/guides/restaurant-pest-control',
+  },
+  {
     emoji: '💰',
     title: 'Pest Control Costs UK 2026',
     description: 'Complete pricing breakdown for every common pest — what you\'ll pay and how to get the best value.',
@@ -151,6 +157,12 @@ const reviews = [
     title: 'Best Moth Killers UK 2026',
     description: 'Hanging killers, pheromone traps, carpet sprays, sachets, and budget options reviewed.',
     href: '/best/moth-killers',
+  },
+  {
+    emoji: '🪰',
+    title: 'Best Commercial Fly Killers UK 2026',
+    description: 'UV zappers, glue board units, and LED models for restaurants, kitchens, and food businesses reviewed.',
+    href: '/best/commercial-fly-killers',
   },
 ];
 

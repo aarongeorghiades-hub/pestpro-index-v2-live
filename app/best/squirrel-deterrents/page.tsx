@@ -101,6 +101,7 @@ export default function BestSquirrelDeterrentsPage() {
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
         { title: 'Pigeon Control: Complete UK Guide', href: '/guides/pigeon-control' },
         { title: 'How to Get Rid of Moths', href: '/guides/how-to-get-rid-of-moths' },
+        { title: 'Restaurant Pest Control: UK Compliance Guide', href: '/guides/restaurant-pest-control' },
       ]}
       relatedProducts={[
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
@@ -112,6 +113,7 @@ export default function BestSquirrelDeterrentsPage() {
         { title: 'Best Bed Bug Treatments UK 2026', href: '/best/bed-bug-treatments' },
         { title: 'Best Bird Deterrents UK 2026', href: '/best/bird-deterrents' },
         { title: 'Best Moth Killers UK', href: '/best/moth-killers' },
+        { title: 'Best Commercial Fly Killers UK 2026', href: '/best/commercial-fly-killers' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

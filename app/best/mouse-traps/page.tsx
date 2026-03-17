@@ -134,6 +134,10 @@ export default function BestMouseTrapsPage() {
           title: 'How to Get Rid of Moths',
           href: '/guides/how-to-get-rid-of-moths',
         },
+        {
+          title: 'Restaurant Pest Control: UK Compliance Guide',
+          href: '/guides/restaurant-pest-control',
+        },
       ]}
       relatedProducts={[
         {
@@ -171,6 +175,10 @@ export default function BestMouseTrapsPage() {
         {
           title: 'Best Moth Killers UK',
           href: '/best/moth-killers',
+        },
+        {
+          title: 'Best Commercial Fly Killers UK 2026',
+          href: '/best/commercial-fly-killers',
         },
       ]}
       articleSchema={articleSchema}

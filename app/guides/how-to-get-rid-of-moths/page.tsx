@@ -176,6 +176,7 @@ export default function HowToGetRidOfMothsPage() {
         { title: 'How to Get Rid of Squirrels: Complete UK Guide', href: '/guides/how-to-get-rid-of-squirrels' },
         { title: 'Pigeon Control: Complete UK Guide', href: '/guides/pigeon-control' },
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
+        { title: 'Restaurant Pest Control: UK Compliance Guide', href: '/guides/restaurant-pest-control' },
       ]}
       relatedProducts={[
         { title: 'Best Moth Killers UK 2026', href: '/best/moth-killers' },
@@ -188,6 +189,7 @@ export default function HowToGetRidOfMothsPage() {
         { title: 'Best Ant Killers UK 2026', href: '/best/ant-killers' },
         { title: 'Best Squirrel Deterrents UK 2026', href: '/best/squirrel-deterrents' },
         { title: 'Best Bird Deterrents UK 2026', href: '/best/bird-deterrents' },
+        { title: 'Best Commercial Fly Killers UK 2026', href: '/best/commercial-fly-killers' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

@@ -158,6 +158,7 @@ export default function HowToGetRidOfCockroachesPage() {
         { title: 'How to Get Rid of Squirrels: Complete UK Guide', href: '/guides/how-to-get-rid-of-squirrels' },
         { title: 'Pigeon Control: Complete UK Guide', href: '/guides/pigeon-control' },
         { title: 'How to Get Rid of Moths', href: '/guides/how-to-get-rid-of-moths' },
+        { title: 'Restaurant Pest Control: UK Compliance Guide', href: '/guides/restaurant-pest-control' },
       ]}
       relatedProducts={[
         { title: 'Best Cockroach Killers UK 2026', href: '/best/cockroach-killers' },
@@ -170,6 +171,7 @@ export default function HowToGetRidOfCockroachesPage() {
         { title: 'Best Squirrel Deterrents UK 2026', href: '/best/squirrel-deterrents' },
         { title: 'Best Bird Deterrents UK 2026', href: '/best/bird-deterrents' },
         { title: 'Best Moth Killers UK', href: '/best/moth-killers' },
+        { title: 'Best Commercial Fly Killers UK 2026', href: '/best/commercial-fly-killers' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
