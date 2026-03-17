@@ -66,6 +66,12 @@ const guides = [
     href: '/guides/how-to-get-rid-of-ants',
   },
   {
+    emoji: '🐿️',
+    title: 'How to Get Rid of Squirrels',
+    description: 'Grey squirrel identification, loft proofing, humane deterrents, UK law, and when to call a professional.',
+    href: '/guides/how-to-get-rid-of-squirrels',
+  },
+  {
     emoji: '💰',
     title: 'Pest Control Costs UK 2026',
     description: 'Complete pricing breakdown for every common pest — what you\'ll pay and how to get the best value.',
@@ -115,6 +121,12 @@ const reviews = [
     title: 'Best Ant Killers UK 2026',
     description: 'Bait stations, gel baits, powders and sprays — the best ant killer products reviewed.',
     href: '/best/ant-killers',
+  },
+  {
+    emoji: '🐿️',
+    title: 'Best Squirrel Deterrents UK 2026',
+    description: 'Squirrel-proof bird feeders, repellent sprays, baffles, and humane traps reviewed.',
+    href: '/best/squirrel-deterrents',
   },
 ];
 

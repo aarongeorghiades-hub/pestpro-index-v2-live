@@ -338,6 +338,20 @@ export default function Navigation() {
                   Best Ant Killers
                 </Link>
                 <Link
+                  href="/guides/how-to-get-rid-of-squirrels"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Squirrel Control Guide
+                </Link>
+                <Link
+                  href="/best/squirrel-deterrents"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Squirrel Deterrents
+                </Link>
+                <Link
                   href="/guides/pest-control-costs"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -609,6 +623,20 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Best Ant Killers
+                </Link>
+                <Link
+                  href="/guides/how-to-get-rid-of-squirrels"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Squirrel Control Guide
+                </Link>
+                <Link
+                  href="/best/squirrel-deterrents"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Squirrel Deterrents
                 </Link>
                 <Link
                   href="/guides/pest-control-costs"

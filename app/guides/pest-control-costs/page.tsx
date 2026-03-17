@@ -159,6 +159,7 @@ export default function PestControlCostsPage() {
         { title: 'How to Get Rid of Cockroaches: Complete UK Guide', href: '/guides/how-to-get-rid-of-cockroaches' },
         { title: 'How to Get Rid of Fleas: Complete UK Guide', href: '/guides/how-to-get-rid-of-fleas' },
         { title: 'How to Get Rid of Ants: Complete UK Guide', href: '/guides/how-to-get-rid-of-ants' },
+        { title: 'How to Get Rid of Squirrels: Complete UK Guide', href: '/guides/how-to-get-rid-of-squirrels' },
       ]}
       relatedProducts={[
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
@@ -168,6 +169,7 @@ export default function PestControlCostsPage() {
         { title: 'Best Flea Treatments UK 2026', href: '/best/flea-treatments' },
         { title: 'Best Cockroach Killers UK 2026', href: '/best/cockroach-killers' },
         { title: 'Best Ant Killers UK 2026', href: '/best/ant-killers' },
+        { title: 'Best Squirrel Deterrents UK 2026', href: '/best/squirrel-deterrents' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

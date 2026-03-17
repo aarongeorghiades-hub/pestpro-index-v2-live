@@ -726,6 +726,12 @@ export default function ResidentialPage() {
             <Link href="/best/ant-killers" className="text-blue-600 hover:underline font-semibold text-sm">
               Best Ant Killers UK 2026 →
             </Link>
+            <Link href="/guides/how-to-get-rid-of-squirrels" className="text-blue-600 hover:underline font-semibold text-sm">
+              How to Get Rid of Squirrels →
+            </Link>
+            <Link href="/best/squirrel-deterrents" className="text-blue-600 hover:underline font-semibold text-sm">
+              Best Squirrel Deterrents UK 2026 →
+            </Link>
           </div>
         </div>
       </section>

@@ -122,6 +122,10 @@ export default function BestMouseTrapsPage() {
           title: 'How to Get Rid of Ants: Complete UK Guide',
           href: '/guides/how-to-get-rid-of-ants',
         },
+        {
+          title: 'How to Get Rid of Squirrels: Complete UK Guide',
+          href: '/guides/how-to-get-rid-of-squirrels',
+        },
       ]}
       relatedProducts={[
         {
@@ -147,6 +151,10 @@ export default function BestMouseTrapsPage() {
         {
           title: 'Best Ant Killers UK 2026',
           href: '/best/ant-killers',
+        },
+        {
+          title: 'Best Squirrel Deterrents UK 2026',
+          href: '/best/squirrel-deterrents',
         },
       ]}
       articleSchema={articleSchema}

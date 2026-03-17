@@ -496,6 +496,16 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Ant Killers UK 2026</h3>
               <p className="text-gray-600">Bait stations, gel baits, powders and sprays — the best ant killer products reviewed.</p>
             </Link>
+            <Link href="/guides/how-to-get-rid-of-squirrels" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-blue-600 mb-2">Guide</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">How to Get Rid of Squirrels</h3>
+              <p className="text-gray-600">Grey squirrel identification, loft proofing, humane deterrents, UK law, and when to call a professional.</p>
+            </Link>
+            <Link href="/best/squirrel-deterrents" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Squirrel Deterrents UK 2026</h3>
+              <p className="text-gray-600">Squirrel-proof bird feeders, repellent sprays, baffles, and humane traps reviewed.</p>
+            </Link>
             <Link href="/guides/pest-control-costs" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-amber-200 transition-all">
               <div className="text-sm font-semibold text-green-600 mb-2">Price Guide</div>
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Pest Control Costs UK 2026</h3>
@@ -578,6 +588,8 @@ export default function Home() {
                 <li><Link href="/best/flea-treatments" className="hover:text-white transition">Best Flea Treatments UK</Link></li>
                 <li><Link href="/guides/how-to-get-rid-of-ants" className="hover:text-white transition">How to Get Rid of Ants</Link></li>
                 <li><Link href="/best/ant-killers" className="hover:text-white transition">Best Ant Killers UK</Link></li>
+                <li><Link href="/guides/how-to-get-rid-of-squirrels" className="hover:text-white transition">How to Get Rid of Squirrels</Link></li>
+                <li><Link href="/best/squirrel-deterrents" className="hover:text-white transition">Best Squirrel Deterrents UK</Link></li>
                 <li><Link href="/guides/pest-control-costs" className="hover:text-white transition">Pest Control Costs UK</Link></li>
                 <li><Link href="/guides" className="hover:text-white transition">All Guides &amp; Reviews</Link></li>
               </ul>

@@ -90,6 +90,8 @@ export async function GET() {
     { url: `${baseUrl}/best/flea-treatments`, changefreq: 'weekly', priority: '0.8' },
     { url: `${baseUrl}/guides/how-to-get-rid-of-ants`, changefreq: 'weekly', priority: '0.8' },
     { url: `${baseUrl}/best/ant-killers`, changefreq: 'weekly', priority: '0.8' },
+    { url: `${baseUrl}/guides/how-to-get-rid-of-squirrels`, changefreq: 'weekly', priority: '0.8' },
+    { url: `${baseUrl}/best/squirrel-deterrents`, changefreq: 'weekly', priority: '0.8' },
     { url: `${baseUrl}/guides`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/professionals`, changefreq: 'monthly', priority: '0.4' },
     { url: `${baseUrl}/products`, changefreq: 'monthly', priority: '0.7' },
