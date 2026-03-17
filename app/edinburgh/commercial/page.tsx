@@ -788,13 +788,21 @@ export default function CommercialPage() {
         <div className="bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-3">Running a Food Business?</h2>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">Our commercial pest control guides cover EHO compliance, HACCP requirements, and choosing the right equipment for your business.</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/guides/restaurant-pest-control" className="text-blue-600 hover:underline font-semibold text-sm">
-              Restaurant Pest Control Guide →
+          <div className="flex flex-col items-center gap-4">
+            <Link href="/guides/commercial-pest-control" className="inline-block px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm">
+              Commercial Pest Control Hub →
             </Link>
-            <Link href="/best/commercial-fly-killers" className="text-blue-600 hover:underline font-semibold text-sm">
-              Best Commercial Fly Killers →
-            </Link>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/guides/restaurant-pest-control" className="text-blue-600 hover:underline font-semibold text-sm">
+                Restaurant Guide →
+              </Link>
+              <Link href="/best/commercial-fly-killers" className="text-blue-600 hover:underline font-semibold text-sm">
+                Fly Killer Reviews →
+              </Link>
+              <Link href="/guides/warehouse-pest-management" className="text-blue-600 hover:underline font-semibold text-sm">
+                Warehouse Pest Management Guide →
+              </Link>
+            </div>
           </div>
         </div>
       </section>

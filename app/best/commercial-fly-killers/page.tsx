@@ -105,6 +105,7 @@ export default function BestCommercialFlyKillersPage() {
         { title: 'Pigeon Control: Complete UK Guide', href: '/guides/pigeon-control' },
         { title: 'How to Get Rid of Moths', href: '/guides/how-to-get-rid-of-moths' },
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
+        { title: 'Warehouse Pest Management', href: '/guides/warehouse-pest-management' },
       ]}
       relatedProducts={[
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
@@ -117,10 +118,23 @@ export default function BestCommercialFlyKillersPage() {
         { title: 'Best Squirrel Deterrents UK 2026', href: '/best/squirrel-deterrents' },
         { title: 'Best Bird Deterrents UK 2026', href: '/best/bird-deterrents' },
         { title: 'Best Moth Killers UK', href: '/best/moth-killers' },
+        { title: 'Best Commercial Rodent Bait Stations', href: '/best/commercial-rodent-bait-stations' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
+      {/* Back to Commercial Hub */}
+      <div className="not-prose my-8 p-6 bg-purple-50 border border-purple-200 rounded-xl">
+        <p className="font-bold text-gray-900 mb-2">Part of our Commercial Pest Control series</p>
+        <p className="text-gray-700 mb-3">This review is one of our commercial pest control equipment guides. Visit the hub for all commercial guides, sector-specific compliance resources, and more reviews.</p>
+        <a
+          href="/guides/commercial-pest-control"
+          className="inline-block px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm"
+        >
+          Commercial Pest Control Hub &rarr;
+        </a>
+      </div>
+
       {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
         <p className="text-sm text-amber-800">

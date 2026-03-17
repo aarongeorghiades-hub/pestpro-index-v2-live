@@ -84,6 +84,20 @@ const guides = [
     href: '/guides/how-to-get-rid-of-moths',
   },
   {
+    emoji: '🏢',
+    title: 'Commercial Pest Control Hub',
+    description: 'The gateway to all commercial pest control content — sector guides, equipment reviews, and compliance resources for UK businesses.',
+    href: '/guides/commercial-pest-control',
+    badge: 'Commercial',
+  },
+  {
+    emoji: '🏭',
+    title: 'Warehouse Pest Management',
+    description: 'BRC compliance, stock protection, monitoring systems, and integrated pest management for warehouses and storage facilities.',
+    href: '/guides/warehouse-pest-management',
+    badge: 'Commercial',
+  },
+  {
     emoji: '🍽️',
     title: 'Restaurant Pest Control',
     description: 'Legal requirements, EHO inspections, HACCP compliance, and setting up a pest management programme for your food business.',
@@ -164,6 +178,12 @@ const reviews = [
     description: 'UV zappers, glue board units, and LED models for restaurants, kitchens, and food businesses reviewed.',
     href: '/best/commercial-fly-killers',
   },
+  {
+    emoji: '🪤',
+    title: 'Best Commercial Rodent Bait Stations UK 2026',
+    description: 'Tamper-resistant lockable bait stations for warehouses, restaurants, and commercial premises reviewed.',
+    href: '/best/commercial-rodent-bait-stations',
+  },
 ];
 
 export default function GuidesIndexPage() {
@@ -199,11 +219,16 @@ export default function GuidesIndexPage() {
             <Link
               key={guide.href}
               href={guide.href}
-              className="group block p-6 bg-white rounded-xl border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all"
+              className={`group block p-6 bg-white rounded-xl border hover:shadow-lg transition-all ${'badge' in guide && guide.badge ? 'border-purple-300 hover:border-purple-400 ring-1 ring-purple-100' : 'border-gray-200 hover:border-blue-300'}`}
             >
               <div className="flex items-start gap-4">
                 <span className="text-3xl flex-shrink-0">{guide.emoji}</span>
                 <div>
+                  {'badge' in guide && guide.badge && (
+                    <span className="inline-block text-xs font-semibold px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full mb-2">
+                      {guide.badge}
+                    </span>
+                  )}
                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-1">
                     {guide.title}
                   </h3>

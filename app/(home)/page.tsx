@@ -526,15 +526,30 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Moth Killers UK 2026</h3>
               <p className="text-gray-600">Hanging killers, pheromone traps, carpet sprays, sachets, and budget options reviewed.</p>
             </Link>
+            <Link href="/guides/commercial-pest-control" className="group block p-8 bg-white rounded-2xl border border-purple-300 hover:shadow-lg hover:border-purple-400 ring-1 ring-purple-100 transition-all">
+              <div className="text-sm font-semibold text-purple-600 mb-2">Commercial</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Commercial Pest Control Hub</h3>
+              <p className="text-gray-600">Guides for restaurants, offices, hotels, and warehouses — compliance, equipment reviews, and finding commercial providers.</p>
+            </Link>
             <Link href="/guides/restaurant-pest-control" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
               <div className="text-sm font-semibold text-purple-600 mb-2">Commercial</div>
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Restaurant Pest Control</h3>
               <p className="text-gray-600">Legal requirements, EHO inspections, HACCP compliance, and setting up a pest management programme for your food business.</p>
             </Link>
+            <Link href="/guides/warehouse-pest-management" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-purple-600 mb-2">Commercial</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Warehouse Pest Management</h3>
+              <p className="text-gray-600">BRC compliance, stock protection, monitoring systems, and integrated pest management for warehouses.</p>
+            </Link>
             <Link href="/best/commercial-fly-killers" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
               <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Commercial Fly Killers UK 2026</h3>
               <p className="text-gray-600">UV zappers, glue board units, and LED models for restaurants, kitchens, and food businesses reviewed.</p>
+            </Link>
+            <Link href="/best/commercial-rodent-bait-stations" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Commercial Bait Stations UK 2026</h3>
+              <p className="text-gray-600">Tamper-resistant lockable bait stations for warehouses, restaurants, and commercial premises reviewed.</p>
             </Link>
             <Link href="/guides/pest-control-costs" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-amber-200 transition-all">
               <div className="text-sm font-semibold text-green-600 mb-2">Price Guide</div>
@@ -624,8 +639,11 @@ export default function Home() {
                 <li><Link href="/best/bird-deterrents" className="hover:text-white transition">Best Bird Deterrents UK</Link></li>
                 <li><Link href="/guides/how-to-get-rid-of-moths" className="hover:text-white transition">How to Get Rid of Moths</Link></li>
                 <li><Link href="/best/moth-killers" className="hover:text-white transition">Best Moth Killers UK</Link></li>
+                <li><Link href="/guides/commercial-pest-control" className="hover:text-white transition">Commercial Pest Control</Link></li>
                 <li><Link href="/guides/restaurant-pest-control" className="hover:text-white transition">Restaurant Pest Control</Link></li>
                 <li><Link href="/best/commercial-fly-killers" className="hover:text-white transition">Best Commercial Fly Killers</Link></li>
+                <li><Link href="/guides/warehouse-pest-management" className="hover:text-white transition">Warehouse Pest Management</Link></li>
+                <li><Link href="/best/commercial-rodent-bait-stations" className="hover:text-white transition">Best Commercial Bait Stations</Link></li>
                 <li><Link href="/guides/pest-control-costs" className="hover:text-white transition">Pest Control Costs UK</Link></li>
                 <li><Link href="/guides" className="hover:text-white transition">All Guides &amp; Reviews</Link></li>
               </ul>

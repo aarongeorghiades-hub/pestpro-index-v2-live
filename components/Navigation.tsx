@@ -380,6 +380,13 @@ export default function Navigation() {
                   Best Moth Killers
                 </Link>
                 <Link
+                  href="/guides/commercial-pest-control"
+                  className="block px-6 py-3 text-white font-semibold hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Commercial Pest Control
+                </Link>
+                <Link
                   href="/guides/restaurant-pest-control"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -387,11 +394,25 @@ export default function Navigation() {
                   Restaurant Pest Control
                 </Link>
                 <Link
+                  href="/guides/warehouse-pest-management"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Warehouse Pest Management
+                </Link>
+                <Link
                   href="/best/commercial-fly-killers"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Commercial Fly Killers
+                </Link>
+                <Link
+                  href="/best/commercial-rodent-bait-stations"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Commercial Bait Stations
                 </Link>
                 <Link
                   href="/guides/pest-control-costs"
@@ -709,6 +730,13 @@ export default function Navigation() {
                   Best Moth Killers
                 </Link>
                 <Link
+                  href="/guides/commercial-pest-control"
+                  className="block px-4 py-3 text-white font-semibold hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Commercial Pest Control
+                </Link>
+                <Link
                   href="/guides/restaurant-pest-control"
                   className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
@@ -716,11 +744,25 @@ export default function Navigation() {
                   Restaurant Pest Control
                 </Link>
                 <Link
+                  href="/guides/warehouse-pest-management"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Warehouse Pest Management
+                </Link>
+                <Link
                   href="/best/commercial-fly-killers"
                   className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Commercial Fly Killers
+                </Link>
+                <Link
+                  href="/best/commercial-rodent-bait-stations"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Commercial Bait Stations
                 </Link>
                 <Link
                   href="/guides/pest-control-costs"

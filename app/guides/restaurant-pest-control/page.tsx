@@ -176,6 +176,7 @@ export default function RestaurantPestControlPage() {
         { title: 'Pigeon Control: Complete UK Guide', href: '/guides/pigeon-control' },
         { title: 'How to Get Rid of Moths', href: '/guides/how-to-get-rid-of-moths' },
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
+        { title: 'Warehouse Pest Management', href: '/guides/warehouse-pest-management' },
       ]}
       relatedProducts={[
         { title: 'Best Commercial Fly Killers UK 2026', href: '/best/commercial-fly-killers' },
@@ -189,6 +190,7 @@ export default function RestaurantPestControlPage() {
         { title: 'Best Squirrel Deterrents UK 2026', href: '/best/squirrel-deterrents' },
         { title: 'Best Bird Deterrents UK 2026', href: '/best/bird-deterrents' },
         { title: 'Best Moth Killers UK', href: '/best/moth-killers' },
+        { title: 'Best Commercial Rodent Bait Stations', href: '/best/commercial-rodent-bait-stations' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
@@ -198,6 +200,18 @@ export default function RestaurantPestControlPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+
+      {/* Back to Commercial Hub */}
+      <div className="not-prose my-8 p-6 bg-purple-50 border border-purple-200 rounded-xl">
+        <p className="font-bold text-gray-900 mb-2">Part of our Commercial Pest Control series</p>
+        <p className="text-gray-700 mb-3">This guide is one of our sector-specific commercial pest control resources. Visit the hub for all commercial guides, equipment reviews, and compliance information.</p>
+        <a
+          href="/guides/commercial-pest-control"
+          className="inline-block px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm"
+        >
+          Commercial Pest Control Hub &rarr;
+        </a>
+      </div>
 
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: Why Pest Control Is a Legal Requirement for Food Businesses */}
