@@ -60,6 +60,12 @@ const guides = [
     href: '/guides/how-to-get-rid-of-fleas',
   },
   {
+    emoji: '🐜',
+    title: 'How to Get Rid of Ants',
+    description: 'Species identification, DIY bait methods, flying ants, and when to call a professional.',
+    href: '/guides/how-to-get-rid-of-ants',
+  },
+  {
     emoji: '💰',
     title: 'Pest Control Costs UK 2026',
     description: 'Complete pricing breakdown for every common pest — what you\'ll pay and how to get the best value.',
@@ -103,6 +109,12 @@ const reviews = [
     title: 'Best Flea Treatments UK 2026',
     description: 'Household sprays, powders, foggers, and natural options reviewed for UK homes.',
     href: '/best/flea-treatments',
+  },
+  {
+    emoji: '🐜',
+    title: 'Best Ant Killers UK 2026',
+    description: 'Bait stations, gel baits, powders and sprays — the best ant killer products reviewed.',
+    href: '/best/ant-killers',
   },
 ];
 

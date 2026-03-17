@@ -486,6 +486,16 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Flea Treatments UK 2026</h3>
               <p className="text-gray-600">Household sprays, powders, foggers, and natural options — reviewed with honest pros and cons.</p>
             </Link>
+            <Link href="/guides/how-to-get-rid-of-ants" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-blue-600 mb-2">Guide</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">How to Get Rid of Ants</h3>
+              <p className="text-gray-600">Species identification, DIY bait methods, flying ants, and when to call a professional.</p>
+            </Link>
+            <Link href="/best/ant-killers" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Ant Killers UK 2026</h3>
+              <p className="text-gray-600">Bait stations, gel baits, powders and sprays — the best ant killer products reviewed.</p>
+            </Link>
             <Link href="/guides/pest-control-costs" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-amber-200 transition-all">
               <div className="text-sm font-semibold text-green-600 mb-2">Price Guide</div>
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Pest Control Costs UK 2026</h3>
@@ -566,6 +576,8 @@ export default function Home() {
                 <li><Link href="/best/cockroach-killers" className="hover:text-white transition">Best Cockroach Killers UK</Link></li>
                 <li><Link href="/guides/how-to-get-rid-of-fleas" className="hover:text-white transition">How to Get Rid of Fleas</Link></li>
                 <li><Link href="/best/flea-treatments" className="hover:text-white transition">Best Flea Treatments UK</Link></li>
+                <li><Link href="/guides/how-to-get-rid-of-ants" className="hover:text-white transition">How to Get Rid of Ants</Link></li>
+                <li><Link href="/best/ant-killers" className="hover:text-white transition">Best Ant Killers UK</Link></li>
                 <li><Link href="/guides/pest-control-costs" className="hover:text-white transition">Pest Control Costs UK</Link></li>
                 <li><Link href="/guides" className="hover:text-white transition">All Guides &amp; Reviews</Link></li>
               </ul>

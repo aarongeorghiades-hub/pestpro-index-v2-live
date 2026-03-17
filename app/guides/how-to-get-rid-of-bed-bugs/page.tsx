@@ -153,12 +153,14 @@ export default function HowToGetRidOfBedBugsPage() {
         { title: 'Wasp Nest Removal: Complete UK Guide', href: '/guides/wasp-nest-removal' },
         { title: 'How to Get Rid of Cockroaches: Complete UK Guide', href: '/guides/how-to-get-rid-of-cockroaches' },
         { title: 'How to Get Rid of Fleas: Complete UK Guide', href: '/guides/how-to-get-rid-of-fleas' },
+        { title: 'How to Get Rid of Ants: Complete UK Guide', href: '/guides/how-to-get-rid-of-ants' },
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
       ]}
       relatedProducts={[
         { title: 'Best Bed Bug Treatment Products UK 2026', href: '/best/bed-bug-treatments' },
         { title: 'Best Flea Treatments UK 2026', href: '/best/flea-treatments' },
         { title: 'Best Cockroach Killers UK 2026', href: '/best/cockroach-killers' },
+        { title: 'Best Ant Killers UK 2026', href: '/best/ant-killers' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

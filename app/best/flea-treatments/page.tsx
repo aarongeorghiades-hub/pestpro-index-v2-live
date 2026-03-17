@@ -99,6 +99,7 @@ export default function BestFleaTreatmentsPage() {
         { title: 'How to Get Rid of Cockroaches: Complete UK Guide', href: '/guides/how-to-get-rid-of-cockroaches' },
         { title: 'Wasp Nest Removal: Complete UK Guide', href: '/guides/wasp-nest-removal' },
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
+        { title: 'How to Get Rid of Ants: Complete UK Guide', href: '/guides/how-to-get-rid-of-ants' },
       ]}
       relatedProducts={[
         { title: 'Best Bed Bug Treatments UK 2026', href: '/best/bed-bug-treatments' },
@@ -106,6 +107,7 @@ export default function BestFleaTreatmentsPage() {
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },
         { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' },
         { title: 'Best Cockroach Killers UK 2026', href: '/best/cockroach-killers' },
+        { title: 'Best Ant Killers UK 2026', href: '/best/ant-killers' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

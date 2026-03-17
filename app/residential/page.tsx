@@ -732,6 +732,12 @@ export default function ResidentialPage() {
             <Link href="/best/flea-treatments" className="text-blue-600 hover:underline font-semibold text-sm">
               Best Flea Treatments UK 2026 →
             </Link>
+            <Link href="/guides/how-to-get-rid-of-ants" className="text-blue-600 hover:underline font-semibold text-sm">
+              How to Get Rid of Ants →
+            </Link>
+            <Link href="/best/ant-killers" className="text-blue-600 hover:underline font-semibold text-sm">
+              Best Ant Killers UK 2026 →
+            </Link>
           </div>
         </div>
       </section>
