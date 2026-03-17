@@ -156,6 +156,7 @@ export default function WaspNestRemovalPage() {
         { title: 'How to Get Rid of Ants: Complete UK Guide', href: '/guides/how-to-get-rid-of-ants' },
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
         { title: 'How to Get Rid of Squirrels: Complete UK Guide', href: '/guides/how-to-get-rid-of-squirrels' },
+        { title: 'Pigeon Control: Complete UK Guide', href: '/guides/pigeon-control' },
       ]}
       relatedProducts={[
         { title: 'Best Wasp Killer Products UK 2026', href: '/best/wasp-killers' },
@@ -164,6 +165,7 @@ export default function WaspNestRemovalPage() {
         { title: 'Best Cockroach Killers UK 2026', href: '/best/cockroach-killers' },
         { title: 'Best Ant Killers UK 2026', href: '/best/ant-killers' },
         { title: 'Best Squirrel Deterrents UK 2026', href: '/best/squirrel-deterrents' },
+        { title: 'Best Bird Deterrents UK 2026', href: '/best/bird-deterrents' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

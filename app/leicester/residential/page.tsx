@@ -732,6 +732,12 @@ export default function ResidentialPage() {
             <Link href="/best/squirrel-deterrents" className="text-blue-600 hover:underline font-semibold text-sm">
               Best Squirrel Deterrents UK 2026 →
             </Link>
+            <Link href="/guides/pigeon-control" className="text-blue-600 hover:underline font-semibold text-sm">
+              Pigeon Control Guide →
+            </Link>
+            <Link href="/best/bird-deterrents" className="text-blue-600 hover:underline font-semibold text-sm">
+              Best Bird Deterrents UK 2026 →
+            </Link>
           </div>
         </div>
       </section>

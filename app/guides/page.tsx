@@ -72,6 +72,12 @@ const guides = [
     href: '/guides/how-to-get-rid-of-squirrels',
   },
   {
+    emoji: '🐦',
+    title: 'Pigeon Control',
+    description: 'Bird deterrent methods, proofing, netting, spikes, legal considerations, and when to call a professional.',
+    href: '/guides/pigeon-control',
+  },
+  {
     emoji: '💰',
     title: 'Pest Control Costs UK 2026',
     description: 'Complete pricing breakdown for every common pest — what you\'ll pay and how to get the best value.',
@@ -127,6 +133,12 @@ const reviews = [
     title: 'Best Squirrel Deterrents UK 2026',
     description: 'Squirrel-proof bird feeders, repellent sprays, baffles, and humane traps reviewed.',
     href: '/best/squirrel-deterrents',
+  },
+  {
+    emoji: '🐦',
+    title: 'Best Bird Deterrents UK 2026',
+    description: 'Bird spikes, netting, optical gel, and more — the best pigeon and bird deterrents reviewed.',
+    href: '/best/bird-deterrents',
   },
 ];
 

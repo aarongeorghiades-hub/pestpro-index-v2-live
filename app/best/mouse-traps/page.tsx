@@ -126,6 +126,10 @@ export default function BestMouseTrapsPage() {
           title: 'How to Get Rid of Squirrels: Complete UK Guide',
           href: '/guides/how-to-get-rid-of-squirrels',
         },
+        {
+          title: 'Pigeon Control: Complete UK Guide',
+          href: '/guides/pigeon-control',
+        },
       ]}
       relatedProducts={[
         {
@@ -155,6 +159,10 @@ export default function BestMouseTrapsPage() {
         {
           title: 'Best Squirrel Deterrents UK 2026',
           href: '/best/squirrel-deterrents',
+        },
+        {
+          title: 'Best Bird Deterrents UK 2026',
+          href: '/best/bird-deterrents',
         },
       ]}
       articleSchema={articleSchema}

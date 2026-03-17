@@ -352,6 +352,20 @@ export default function Navigation() {
                   Best Squirrel Deterrents
                 </Link>
                 <Link
+                  href="/guides/pigeon-control"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Pigeon Control Guide
+                </Link>
+                <Link
+                  href="/best/bird-deterrents"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Bird Deterrents
+                </Link>
+                <Link
                   href="/guides/pest-control-costs"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -637,6 +651,20 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Best Squirrel Deterrents
+                </Link>
+                <Link
+                  href="/guides/pigeon-control"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Pigeon Control Guide
+                </Link>
+                <Link
+                  href="/best/bird-deterrents"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Bird Deterrents
                 </Link>
                 <Link
                   href="/guides/pest-control-costs"
