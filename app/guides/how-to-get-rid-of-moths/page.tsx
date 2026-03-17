@@ -8,14 +8,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'How to Get Rid of Moths: The Complete UK Guide (2026) | PestPro Index',
     description:
-      'A comprehensive UK guide to getting rid of clothes moths, carpet moths, and pantry moths. Identification, DIY treatments, pheromone traps, professional fumigation, and prevention tips.',
+      'A comprehensive UK guide to getting rid of clothes moths, carpet moths, and pantry moths. Identification, DIY treatments, pheromone traps, professional fumigation, prevention tips, and costs.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/how-to-get-rid-of-moths',
     },
     openGraph: {
       title: 'How to Get Rid of Moths: The Complete UK Guide (2026) | PestPro Index',
       description:
-        'A comprehensive UK guide to getting rid of clothes moths, carpet moths, and pantry moths. Identification, DIY treatments, pheromone traps, professional fumigation, and prevention tips.',
+        'A comprehensive UK guide to getting rid of clothes moths, carpet moths, and pantry moths. Identification, DIY treatments, pheromone traps, professional fumigation, prevention tips, and costs.',
       url: 'https://pestproindex.com/guides/how-to-get-rid-of-moths',
       type: 'article',
       siteName: 'PestPro Index',
@@ -28,7 +28,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'How to Get Rid of Moths: The Complete UK Guide (2026)',
   description:
-    'A comprehensive UK guide to getting rid of clothes moths, carpet moths, and pantry moths. Identification, DIY treatments, pheromone traps, professional fumigation, and prevention tips.',
+    'A comprehensive UK guide to getting rid of clothes moths, carpet moths, and pantry moths. Identification, DIY treatments, pheromone traps, professional fumigation, prevention tips, and costs.',
   datePublished: '2026-03-17',
   dateModified: '2026-03-17',
   author: {
@@ -77,26 +77,50 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'What are the signs of a moth infestation?',
+      name: 'What causes moths in the house?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The most common signs of a clothes moth infestation are small, irregular holes in woollen, silk, or cashmere garments; fine, sandy-coloured frass (droppings) in the bottom of wardrobes or drawers; silken tubes or cases attached to fabrics; and adult moths fluttering in dark corners of rooms, particularly near wardrobes and clothing storage. For carpet moths, look for threadbare patches on wool carpets, especially under furniture and along skirting boards. Pantry moth signs include webbing or clumping in dry foods such as flour, rice, cereals, and dried fruit, along with small caterpillars crawling on cupboard walls and ceilings.',
+        text: 'Clothes moths are attracted to natural animal fibres such as wool, cashmere, silk, and fur. They are drawn to items that are soiled with sweat, food stains, or body oils, as the larvae feed on the keratin protein in animal fibres and the organic residue provides additional nutrition. Moths can enter your home through open windows, on second-hand clothing or furniture, or in contaminated food packaging. Pantry moths arrive almost exclusively via infested food products such as dried fruit, cereals, flour, nuts, and pet food purchased from shops.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Do moths eat cotton or synthetic fabrics?',
+      name: 'How do I know if I have clothes moths or pantry moths?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. Clothes moth larvae feed exclusively on animal-derived fibres containing the protein keratin. This includes wool, cashmere, silk, fur, feathers, and leather. They cannot digest cotton, polyester, nylon, or other synthetic fabrics. However, moths will sometimes damage blended fabrics that contain a mix of wool and synthetic fibres, and they can damage cotton or synthetic garments that are heavily soiled with food stains, sweat, or body oils, as they feed on the organic residue rather than the fabric itself.',
+        text: 'Clothes moths (Tineola bisselliella) are small, golden-buff coloured moths approximately 6 to 8 millimetres long that avoid light and scuttle rather than fly. You will find them in wardrobes, drawers, and near carpets. Pantry moths (Plodia interpunctella, the Indian meal moth) are slightly larger at 8 to 10 millimetres with distinctive two-toned wings — copper-brown at the tips and pale grey near the body. They are found in kitchens near food storage areas and are more willing to fly towards light. The key indicator is location: damage to clothing and textiles points to clothes moths, while webbing or larvae in food cupboards indicates pantry moths.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Are moths harmful to humans?',
+      name: 'Do pheromone traps kill moths?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Moths are not directly harmful to humans. They do not bite, sting, or transmit diseases. The damage they cause is entirely to materials and food. Clothes moth larvae destroy woollen garments, carpets, upholstery, and other animal-fibre textiles, which can result in significant financial loss. Pantry moth larvae contaminate stored food products with webbing, frass, and shed skins, making the food inedible and requiring it to be discarded. The main impact of moths is economic rather than medical.',
+        text: 'Pheromone traps do not kill moth infestations on their own. They use a synthetic version of the female moth pheromone to attract and trap adult male moths on a sticky pad, which prevents them from mating and helps reduce the next generation. However, pheromone traps do not catch female moths or kill larvae, which are the life stage that causes all the damage. Pheromone traps are best used as a monitoring tool to detect infestations early and to assess the severity of a problem. They should be combined with other treatments such as thorough cleaning, laundering, moth killer sprays, and cedar or lavender deterrents for effective control.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can moths damage carpets?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. The case-bearing clothes moth (Tinea pellionella) and the common clothes moth (Tineola bisselliella) both feed on wool carpets and rugs. Carpet moth larvae eat the wool fibres from the underside of the carpet, creating bare patches that are often first noticed in areas hidden from view — under furniture, along skirting boards, and in corners. A severe carpet moth infestation can cause extensive and expensive damage. Wool-blend carpets with as little as 20 percent wool content can be attacked. Synthetic carpets are not at risk from moth damage.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does freezing kill moths?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Freezing is an effective, chemical-free method for killing moth eggs, larvae, and adults in clothing and textiles. Seal the affected items in a plastic bag, removing as much air as possible, and place them in a domestic freezer at minus 18 degrees Celsius or below for a minimum of 72 hours (three full days). The extreme cold kills all life stages of the moth. After removing from the freezer, allow items to return to room temperature before unpacking, as condensation can form on cold fabrics. This method is particularly useful for delicate items that cannot be washed at high temperatures.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do cedar balls and lavender actually work against moths?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Cedar and lavender have some moth-deterrent properties but their effectiveness is limited. Fresh cedar wood releases volatile oils that can repel adult moths and may kill very young larvae in an enclosed space, but the oils diminish over time and the cedar must be sanded or refreshed regularly to remain effective. Lavender sachets produce a scent that adult moths find unappealing, but lavender does not kill moth eggs or larvae. Neither cedar nor lavender is sufficient to treat an active infestation on its own. They work best as a preventive measure in combination with good storage practices — clean clothes stored in sealed garment bags with cedar or lavender inside.',
       },
     },
     {
@@ -104,39 +128,15 @@ const faqSchema = {
       name: 'How long does it take to get rid of moths?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A thorough DIY moth treatment programme typically takes four to eight weeks to bring an infestation under control, because you need to eliminate not only the adult moths and active larvae but also any eggs that have yet to hatch. The clothes moth life cycle from egg to adult takes approximately four to six weeks in a warm home, so treatment must continue for at least this long to catch newly hatching larvae. Pheromone traps should be left in place for at least three months to monitor for any residual activity. Severe or widespread infestations treated by a professional may require two to three visits spaced several weeks apart to ensure complete eradication.',
+        text: 'A clothes moth infestation typically takes 3 to 6 months to fully resolve with consistent DIY treatment, because the moth life cycle from egg to adult takes approximately 6 to 12 weeks depending on temperature, and you need to break this cycle completely. You may see results within the first few weeks as adult moths are trapped and larvae are killed through cleaning and treatment, but it is important to continue monitoring and treating for at least three to four months to catch any eggs or pupae that survive initial treatment. Professional fumigation can resolve an infestation more quickly, often within one to two treatments over a four to six week period.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Do cedar balls and lavender really repel moths?',
+      name: 'Should I throw away clothes with moth holes?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Cedar wood and lavender have some mild moth-repellent properties, and both have a long history of traditional use for protecting stored clothing. Fresh cedar blocks or shavings release aromatic oils that can deter adult moths from laying eggs in the immediate vicinity. Lavender sachets have a similar mild repellent effect. However, neither cedar nor lavender will kill moth eggs or larvae that are already present, and their effectiveness diminishes as the scent fades over time. They are best used as a supplementary preventive measure alongside proper cleaning, sealed storage, and monitoring with pheromone traps rather than relied upon as a standalone treatment for an active infestation.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can you freeze clothes to kill moths?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. Freezing is an effective chemical-free method for killing moth eggs, larvae, and adults on individual garments and textiles. Place the item in a sealed plastic bag, remove as much air as possible, and freeze it at minus 18 degrees Celsius or colder for at least 72 hours. This will kill all life stages of the moth. For maximum effectiveness, some experts recommend a freeze-thaw-freeze cycle: freeze for 72 hours, thaw at room temperature for 24 hours, then freeze again for a further 72 hours. This ensures that any eggs that survived the first freeze in a dormant state are killed during the second cycle. Freezing is ideal for delicate items that cannot be washed at high temperatures, such as cashmere, silk, and fur.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What temperature kills moths in a washing machine?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A wash temperature of 60 degrees Celsius or above will kill moth eggs, larvae, and adults. This is the most practical method for treating washable woollen items, cotton garments contaminated with moth larvae, bedding, and other machine-washable textiles. Items that cannot withstand a 60-degree wash — such as cashmere, silk, and some delicate woolens — should be dry-cleaned or frozen instead. Tumble drying on a hot setting after washing provides an additional thermal kill step.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How much does professional moth treatment cost in the UK?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Professional moth treatment in the UK typically costs between £120 and £250 for a standard residential property, depending on the size of the affected area and the treatment method used. A single-room treatment with residual insecticide spray may cost £120 to £150, while a whole-house treatment or a heat treatment for severe infestations can cost £200 to £400 or more. Some pest control companies offer follow-up visits included in the price, while others charge separately for each visit. Most domestic moth infestations require at least two professional visits spaced several weeks apart to break the breeding cycle.',
+        text: 'Not necessarily. If the damage is limited to a few small holes, the garment can usually be repaired by a tailor or specialist textile repairer. Knitwear can often be invisibly mended. The important thing is to kill any remaining eggs or larvae on the garment before returning it to your wardrobe — either by washing at 60 degrees Celsius, dry cleaning, or freezing for 72 hours at minus 18 degrees Celsius. Only discard garments if the damage is too extensive to repair or if the item is heavily contaminated with larvae and frass.',
       },
     },
   ],
@@ -204,37 +204,47 @@ export default function HowToGetRidOfMothsPage() {
       <h2 id="signs">How to Tell If You Have Moths</h2>
 
       <p>
-        Moth infestations are often well established before they are noticed. Unlike most household pests, moths operate quietly and out of sight &mdash; the adult moths you occasionally see fluttering near a light are not the ones causing the damage. It is the <strong>larvae</strong> (caterpillars) that feed on your clothes, carpets, and food, and they do their work hidden inside wardrobes, drawers, under furniture, and within food packaging. By the time you spot visible damage, the infestation may have been active for weeks or months. Knowing the early signs can help you catch a moth problem before it causes serious harm.
+        Moth infestations are often well established before homeowners notice them. Unlike most household pests, the adult moths you occasionally see fluttering around your home are not the ones causing damage &mdash; it is their <strong>larvae</strong> that feed on your clothes, carpets, and food. By the time you spot an adult moth, the larvae may have been quietly feeding for weeks or months. Knowing the early signs allows you to act before significant damage occurs.
       </p>
 
-      <h3>Holes in Clothing</h3>
+      <h3>Small Holes in Clothing</h3>
       <p>
-        The most common sign of a clothes moth infestation is finding small, <strong>irregular holes</strong> in woollen, cashmere, silk, or other animal-fibre garments. Unlike damage caused by snagging or wear, moth holes tend to appear in clusters and are often found on items stored at the back of wardrobes or in drawers that are not opened frequently. Moth larvae prefer to feed in dark, undisturbed locations, so garments that are worn regularly are at lower risk than those in long-term storage. If you find holes in a favourite jumper that has been sitting in a drawer for several months, moths are the most likely culprit.
+        The most common first sign of a clothes moth infestation is discovering small, irregular holes in woollen jumpers, cashmere scarves, silk garments, or other natural fibre clothing. The holes are typically <strong>1 to 5 millimetres in diameter</strong> and have rough, uneven edges. They often appear on garments that have been stored unworn for several weeks or months &mdash; the back of a wardrobe, a seasonal storage box, or a rarely opened drawer. Clothes moth larvae prefer soiled fabrics, so items with perspiration stains, food splashes, or body oils are attacked first.
       </p>
 
-      <h3>Silken Tubes, Cases, and Webbing</h3>
+      <h3>Bare Patches on Carpets</h3>
       <p>
-        Some moth species produce distinctive silken structures. The <strong>case-bearing clothes moth</strong> (<em>Tinea pellionella</em>) builds a small, portable case from silk and fragments of the material it is feeding on, dragging this case with it as it moves. The <strong>common webbing clothes moth</strong> (<em>Tineola bisselliella</em>) spins silken tubes and patches of webbing on the surface of fabrics, particularly in folds, creases, and seams. Finding these structures on garments or on the surface of a wool carpet is a definitive sign of clothes moth activity. In food cupboards, <strong>pantry moth</strong> larvae produce webbing that clumps dry food products together, creating noticeable sticky masses in flour, rice, or cereal.
+        Carpet moth larvae eat wool carpet fibres from the underside, creating <strong>threadbare patches</strong> that are often first noticed in areas hidden from view and foot traffic. Check along skirting boards, under heavy furniture, behind curtains, and in the corners of rooms. Carpet moths thrive in undisturbed areas where they can feed without being disturbed by vacuuming. If you lift the edge of a carpet and find bare backing with the wool pile eaten away, carpet moths are the most likely cause.
       </p>
 
-      <h3>Frass and Shed Skins</h3>
+      <h3>Silken Tubes and Cases</h3>
       <p>
-        Moth larvae produce <strong>frass</strong> (tiny droppings) as they feed. Clothes moth frass appears as fine, sandy or grain-like particles, often the same colour as the fabric being eaten. You may find small piles of frass in the bottom of wardrobes, in the folds of stored garments, or along the edges of carpets near skirting boards. Larvae also shed their skins multiple times as they grow, and these <strong>translucent, husk-like shed skins</strong> can accumulate in the same areas. Both frass and shed skins are strong indicators of active larval feeding.
+        The case-bearing clothes moth (<em>Tinea pellionella</em>) constructs a small <strong>silken tube or case</strong> around itself as it feeds. These tubes are approximately 5 to 10 millimetres long, open at both ends, and often incorporate fibres from whatever material the larva is feeding on, giving them a camouflaged appearance. Finding these tiny silk cases on clothing, in carpet pile, or on upholstered furniture is a strong indication of an active moth infestation.
+      </p>
+
+      <h3>Webbing on Clothes or in Wardrobes</h3>
+      <p>
+        The common clothes moth (<em>Tineola bisselliella</em>), also known as the webbing clothes moth, spins a loose <strong>web of silk</strong> across the surface of fabrics as it feeds. You may notice fine silken webbing on the surface of garments, particularly in the folds of stored clothing. In severe infestations, webbing can be visible across the bottom of wardrobes and inside drawers.
+      </p>
+
+      <h3>Moth Larvae</h3>
+      <p>
+        Clothes moth larvae are small, cream-coloured caterpillars approximately <strong>6 to 10 millimetres long</strong>. They avoid light and are most often found in dark, undisturbed areas &mdash; in the folds of stored garments, under the edges of carpets, and inside drawers. If you see small white or cream larvae on your clothing or carpets, you have an active infestation that requires immediate treatment.
       </p>
 
       <h3>Adult Moths</h3>
       <p>
-        Seeing adult moths is often what first alerts homeowners to a problem. Clothes moths are <strong>small, golden-buff coloured moths</strong> approximately 6 to 8 millimetres long. They are poor flyers and tend to scuttle or make short, fluttering hops rather than flying strongly. They actively avoid light and are most often seen in dark corners, on walls near wardrobes, or flying weakly when disturbed by opening a cupboard or drawer. Pantry moths are slightly larger, with distinctive <strong>coppery-brown wing tips</strong> and a wingspan of about 15 to 20 millimetres. They are more confident flyers than clothes moths and are often spotted flying around kitchens in the evening.
+        Adult clothes moths are small, <strong>golden-buff coloured moths approximately 6 to 8 millimetres long</strong> with narrow, fringed wings. Unlike most moths, they actively <strong>avoid light</strong> and tend to scuttle or run along surfaces rather than fly. If you disturb a clothes moth in a wardrobe, it will typically run into a dark corner rather than fly towards a window. Seeing adult moths in or near your wardrobe, in drawers, or near carpets confirms an active breeding population.
       </p>
 
-      <h3>Threadbare Patches on Carpets</h3>
+      <h3>Webbing or Larvae in Food Cupboards</h3>
       <p>
-        Carpet moth larvae feed on the wool fibres in carpets and rugs, creating <strong>threadbare or bald patches</strong> where the pile has been eaten away down to the backing. This damage typically occurs in areas that are dark and undisturbed &mdash; <strong>under heavy furniture, behind sofas, along the edges of fitted carpets next to skirting boards, and beneath curtains</strong>. If you move a piece of furniture and find a bare patch of carpet underneath, carpet moths are the most likely cause. You may also see live larvae, silken webbing, and frass in the damaged area.
+        If you find small moths flying in your kitchen, sticky webbing inside food packaging, or small caterpillars crawling across the ceiling near your food cupboards, you likely have <strong>pantry moths</strong> (Indian meal moths). The larvae spin silken webbing through stored food products and leave behind frass (droppings) that contaminate food. Check all dried food products including flour, cereals, rice, pasta, dried fruit, nuts, chocolate, spices, and pet food.
       </p>
 
       <div className="not-prose">
         <Callout type="warning">
-          <p><strong>Check stored items regularly.</strong> Moth infestations thrive in undisturbed locations. Garments stored in boxes, suitcases, or at the back of wardrobes for months without being moved are at the highest risk. Make a habit of inspecting stored wool, cashmere, and silk items every two to three months, and check under heavy furniture at least twice a year.</p>
+          <p><strong>Do not ignore a single moth.</strong> A single adult clothes moth can lay <strong>50 to 100 eggs</strong> over its short lifetime. If you see one moth in your wardrobe, there are almost certainly eggs and larvae already present. Act immediately &mdash; inspect all natural fibre garments, vacuum thoroughly, and begin treatment.</p>
         </Callout>
       </div>
 
@@ -244,34 +254,39 @@ export default function HowToGetRidOfMothsPage() {
       <h2 id="types">Clothes Moths vs Carpet Moths vs Pantry Moths</h2>
 
       <p>
-        The term &ldquo;moth problem&rdquo; covers several distinct species, and knowing which type you are dealing with determines the correct treatment. The UK&apos;s three main pest moth categories are clothes moths, carpet moths, and pantry moths. Each has different habits, food preferences, and treatment requirements.
+        Understanding which type of moth you are dealing with is essential because the treatment approach differs significantly. The UK has three main categories of problem moths found in homes: clothes moths, carpet moths, and pantry moths. Clothes moths and carpet moths are actually the same species behaving differently depending on the food source, while pantry moths are an entirely different family.
       </p>
 
-      <h3>Common Webbing Clothes Moth (<em>Tineola bisselliella</em>)</h3>
+      <h3>Common Clothes Moth (<em>Tineola bisselliella</em>)</h3>
       <p>
-        The common webbing clothes moth is the single most destructive textile pest in British homes. Adults are <strong>small, golden-buff moths approximately 6 to 8 millimetres long</strong> with a narrow, elongated wing shape and no distinctive markings. They avoid light and prefer dark, undisturbed spaces such as wardrobes, drawers, storage boxes, and the backs of cupboards. Adults do not feed at all &mdash; they have no functional mouthparts &mdash; and live for only two to four weeks, during which time the female lays <strong>50 to 100 eggs</strong> on suitable fabrics. The larvae are creamy-white caterpillars up to 10 millimetres long that feed on <strong>keratin</strong>, the protein found in animal-derived fibres: wool, cashmere, silk, fur, feathers, and leather. They spin a loose web of silk over the feeding area and can cause extensive damage to garments, upholstery, and soft furnishings over several weeks. In a centrally heated UK home, the webbing clothes moth can breed continuously year-round, completing its life cycle from egg to adult in <strong>four to six weeks</strong> in warm conditions.
+        The common clothes moth, also called the webbing clothes moth, is the most widespread textile pest in the UK. Adults are <strong>6 to 8 millimetres long</strong>, uniformly golden-buff in colour with no markings on their wings, and have a distinctive tuft of reddish-gold hair on the head. They strongly avoid light and prefer to run or hop rather than fly. The larvae are cream-white with a brown head capsule and spin a loose web of silk as they feed. They attack <strong>wool, cashmere, silk, fur, feathers</strong>, and any fabric containing animal-derived fibres. A single generation takes <strong>6 to 12 weeks</strong> in a warm home, but the larvae can survive in cooler conditions for much longer, sometimes taking up to two years to complete development. In centrally heated UK homes, clothes moths can breed continuously throughout the year with no dormant period.
       </p>
 
       <h3>Case-Bearing Clothes Moth (<em>Tinea pellionella</em>)</h3>
       <p>
-        The case-bearing clothes moth is similar in size to the webbing clothes moth but can be distinguished by <strong>three faint dark spots on each forewing</strong>. Its larvae construct a distinctive portable case made from silk and fragments of the material they are feeding on, and they carry this case with them as they move. The larval case is typically <strong>6 to 10 millimetres long</strong> and is open at both ends, allowing the larva to extend its head to feed while remaining protected inside. The case-bearing clothes moth causes the same type of damage as the webbing clothes moth &mdash; holes in woollen garments, damage to silk and cashmere &mdash; and the treatment methods are identical. It is slightly less common in UK homes than the webbing clothes moth but is still frequently encountered.
+        The case-bearing clothes moth is the second most common textile pest in UK homes. Adults are slightly smaller than the common clothes moth at <strong>5 to 7 millimetres long</strong> and have <strong>three dark spots</strong> on each wing, though these can be faint. The key distinguishing feature is the larval behaviour: each larva constructs a portable <strong>silken case</strong> that it drags around as it feeds. The case is open at both ends and is often camouflaged with fibres from the material being consumed. The case-bearing moth attacks the same range of natural fibres as the common clothes moth and is equally destructive. It is also the species most commonly associated with damage to wool carpets.
       </p>
 
-      <h3>Carpet Moth (<em>Trichophaga tapetzella</em> and others)</h3>
+      <h3>Carpet Moths</h3>
       <p>
-        The term &ldquo;carpet moth&rdquo; is used loosely to describe any clothes moth species that infests wool carpets rather than (or in addition to) garments. In practice, the species involved are usually the same webbing and case-bearing clothes moths described above, but they are feeding on the <strong>wool fibres in fitted carpets and rugs</strong> rather than on clothes. Carpet moth damage is distinctive: <strong>bald or threadbare patches</strong> where the pile has been eaten away, concentrated in dark, undisturbed areas beneath furniture, along skirting board edges, and under curtains. Carpet moth infestations have become increasingly common in UK homes in recent years, partly due to the popularity of wool-rich carpets and partly due to warmer, centrally heated homes that allow year-round breeding. Treatment for carpet moths is broadly the same as for clothes moths but with additional emphasis on thorough vacuuming, edge treatment, and potentially professional spray application.
-      </p>
-
-      <h3>Indian Meal Moth (<em>Plodia interpunctella</em>)</h3>
-      <p>
-        The Indian meal moth is the UK&apos;s most common <strong>stored-product pest moth</strong>, also known as the pantry moth. Adults are distinctly different in appearance from clothes moths: they are slightly larger, with a wingspan of approximately <strong>15 to 20 millimetres</strong>, and their forewings have a characteristic two-tone pattern &mdash; <strong>pale greyish-cream at the base and coppery-bronze at the tips</strong>. They are stronger, more confident flyers than clothes moths and are often seen flying around kitchens in the evening. Indian meal moth larvae are small, whitish caterpillars that infest a wide range of dry food products including flour, rice, cereals, pasta, dried fruit, nuts, chocolate, pet food, and birdseed. The larvae produce <strong>silk webbing</strong> that binds food particles together into clumps, and they leave behind frass and shed skins as they feed. Pantry moths do not damage textiles &mdash; their diet is entirely food-based &mdash; so the treatment approach is completely different from clothes moth control.
+        &ldquo;Carpet moth&rdquo; is not a separate species but rather a term used to describe clothes moths &mdash; typically the case-bearing clothes moth &mdash; when they infest <strong>wool carpets and rugs</strong> rather than stored clothing. The larvae feed on the wool pile from the underside of the carpet, and carpet moth infestations tend to be concentrated in <strong>undisturbed areas</strong>: under heavy furniture, along skirting boards, behind doors, and in seldom-used rooms. Carpet moth damage can be extensive and expensive to repair. Carpets with as little as <strong>20 percent wool content</strong> can be attacked; fully synthetic carpets are not at risk.
       </p>
 
       <div className="not-prose">
         <Callout type="info">
-          <p><strong>Quick identification:</strong> If you find small, golden-buff moths hiding in dark corners near wardrobes, you almost certainly have clothes moths. If you see slightly larger moths with coppery-brown wing tips flying in the kitchen, you have pantry moths. The treatments are very different, so correct identification is important.</p>
+          <p><strong>Why carpet moths are harder to treat:</strong> Unlike clothes in a wardrobe, wall-to-wall carpets cannot be easily removed for washing or freezing. Larvae feed underneath the carpet where sprays and vacuuming cannot easily reach them. Professional treatment with residual insecticide applied to the carpet backing is often the most effective approach for carpet moth infestations.</p>
         </Callout>
       </div>
+
+      <h3>Indian Meal Moth (<em>Plodia interpunctella</em>) &mdash; Pantry Moth</h3>
+      <p>
+        The Indian meal moth is the most common stored-product moth pest in UK homes. Adults are <strong>8 to 10 millimetres long</strong> with distinctive <strong>two-toned wings</strong>: the outer half is coppery-brown or bronze, while the inner half near the body is pale grey or cream. Unlike clothes moths, pantry moths are <strong>attracted to light</strong> and fly readily, so you may see them fluttering around the kitchen in the evening. The larvae are cream or pinkish caterpillars that feed on a wide range of stored dried foods including <strong>flour, cereals, rice, pasta, dried fruit, nuts, chocolate, spices, birdseed, and pet food</strong>. The larvae spin dense, sticky webbing through infested food and leave behind frass (droppings) and shed larval skins. An infestation typically begins when a moth-infested food product is brought home from a shop.
+      </p>
+
+      <h3>Brown House Moth (<em>Hofmannophila pseudospretella</em>)</h3>
+      <p>
+        The brown house moth is less commonly encountered than the species above but is present in UK homes. Adults are <strong>8 to 14 millimetres long</strong> with brown wings flecked with darker spots. The larvae are scavengers that feed on a wide range of materials including wool, fur, feathers, leather, dried food, and even cork and paper. Brown house moth larvae are particularly associated with <strong>bird nests in lofts</strong>, where they feed on feathers and debris. If you have birds nesting under your eaves or in your roof space, brown house moth larvae may be present in the loft and occasionally find their way into the living areas of the home.
+      </p>
 
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: Why Moths Are a Problem */}
@@ -279,26 +294,26 @@ export default function HowToGetRidOfMothsPage() {
       <h2 id="why-problem">Why Moths Are a Problem</h2>
 
       <p>
-        Moths may seem innocuous compared to rats, wasps, or cockroaches, but the damage they cause can be <strong>financially devastating</strong>. A single undetected clothes moth infestation in a wardrobe can destroy hundreds or thousands of pounds worth of woollen suits, cashmere jumpers, silk garments, and designer clothing. Carpet moth damage to a quality wool carpet can cost thousands to repair or replace. Unlike many pests, moth damage is <strong>irreversible</strong> &mdash; once a garment has been eaten, it cannot be repaired to its original condition. This makes early detection and prompt treatment critically important.
+        Moths are not a health hazard in the way that rats, cockroaches, or bed bugs are &mdash; they do not bite, sting, or transmit diseases. However, the <strong>financial damage</strong> they cause can be substantial, and infestations cause considerable distress.
       </p>
 
       <h3>Damage to Clothing and Textiles</h3>
       <p>
-        Clothes moth larvae feed on <strong>wool, cashmere, silk, fur, feathers, and leather</strong> &mdash; essentially any material containing the protein keratin. A moderate infestation in an undisturbed wardrobe can destroy multiple garments over the course of a few weeks. The larvae are particularly attracted to garments that are <strong>soiled with food stains, sweat, or body oils</strong>, as these organic residues provide additional nutrients. Vintage clothing collections, wedding dresses in storage, military uniforms, antique textiles, and museum artefacts are all at particular risk. In the UK, the <strong>estimated annual cost of moth damage to textiles runs into the tens of millions of pounds</strong>.
+        Clothes moth larvae feed on <strong>keratin</strong>, the protein found in animal-derived fibres. They will attack wool suits, cashmere jumpers, silk blouses, fur coats, feather-filled pillows and duvets, and any fabric that contains animal fibres. The larvae eat irregular holes through the fabric, and a severe infestation can destroy an entire wardrobe of winter clothing. High-value items such as cashmere, designer knitwear, vintage clothing, and wedding dresses are particularly devastating to lose. A single moth infestation can cause <strong>hundreds or even thousands of pounds</strong> worth of damage to a clothing collection.
       </p>
 
-      <h3>Damage to Carpets and Rugs</h3>
+      <h3>Carpet Damage</h3>
       <p>
-        Wool and wool-blend carpets are a major target for moth larvae. Damage typically starts in dark, undisturbed areas &mdash; under sofas, beneath beds, along skirting board edges, and behind curtains &mdash; and may go unnoticed for months until furniture is moved or a room is redecorated. Replacing a damaged section of fitted carpet is expensive and often results in a visible repair, while replacing an entire room&apos;s carpet can cost <strong>&pound;500 to &pound;2,000 or more</strong> depending on the size and quality. Valuable antique rugs can suffer catastrophic and irreplaceable damage.
+        Wool carpet replacement is one of the most expensive consequences of a moth infestation. Carpet moth larvae can eat through the pile of a wool carpet over several months, leaving large <strong>bare patches</strong> that cannot be repaired. Replacing a wool carpet in a single room can cost <strong>&pound;500 to &pound;2,000 or more</strong> depending on the size and quality. In listed buildings, period properties, and homes with fitted heritage carpets, the loss can be even greater.
       </p>
 
       <h3>Food Contamination</h3>
       <p>
-        Pantry moth larvae contaminate stored food products with <strong>webbing, frass (droppings), and shed larval skins</strong>. While eating food that has been contaminated by pantry moth larvae is not considered a significant health risk, it is deeply unpleasant, and the affected food must be discarded. A severe pantry moth infestation can require the disposal of large quantities of flour, rice, cereals, pasta, nuts, dried fruit, and other dry goods, which represents a significant waste. The cost of replacing a fully stocked food cupboard can easily exceed <strong>&pound;100 to &pound;200</strong>.
+        Pantry moth larvae contaminate stored food with <strong>webbing, frass (droppings), and shed skins</strong>. Infested food is unfit for consumption and must be discarded. A severe pantry moth infestation can affect the entire contents of a food cupboard, requiring you to throw away and replace all dried goods. While pantry moths are not known to transmit disease, consuming food contaminated with larvae, webbing, or frass is unpleasant and unhygienic.
       </p>
 
       <div className="not-prose">
-        <StatCallout value="&pound;3,000+" label="potential cost of replacing a damaged wool carpet and ruined garments from a single moth infestation" />
+        <StatCallout value="&pound;500&ndash;&pound;2,000+" label="typical cost to replace a wool carpet destroyed by moth larvae" />
       </div>
 
       {/* ------------------------------------------------------------------ */}
@@ -307,53 +322,53 @@ export default function HowToGetRidOfMothsPage() {
       <h2 id="diy-methods">DIY Moth Control Methods</h2>
 
       <p>
-        Most moth infestations in UK homes can be resolved with thorough, systematic DIY treatment. The key principle is that you must target <strong>all life stages</strong> &mdash; eggs, larvae, and adults &mdash; because killing only the adults you can see will not stop the infestation. Moth eggs and larvae hidden in fabrics, crevices, and cracks will continue to develop and emerge as new adults within weeks. A comprehensive treatment combines physical removal (vacuuming, washing, freezing), chemical treatment (sprays, moth killers), and monitoring (pheromone traps) to break the breeding cycle. Here are the main DIY options available in the UK.
+        Most moth infestations in UK homes can be resolved with thorough, persistent DIY treatment. The key to success is understanding that you are fighting a <strong>lifecycle</strong>, not just the adults you can see. Moth eggs take 4 to 10 days to hatch, larvae feed for 6 to 12 weeks (longer in cool conditions), pupae develop over 1 to 4 weeks, and then adults emerge to mate and lay more eggs. You must break this cycle at every stage. A single round of treatment is rarely enough &mdash; consistent effort over <strong>3 to 6 months</strong> is typically needed.
       </p>
 
-      <h3>Pheromone Moth Traps</h3>
+      <h3>Pheromone Traps</h3>
       <p>
-        Pheromone traps are <strong>sticky traps impregnated with synthetic female moth pheromones</strong> that attract and catch adult male moths. They are an essential monitoring and control tool. By trapping the males, you reduce the fertilisation of eggs and disrupt the breeding cycle. Pheromone traps also serve a crucial diagnostic purpose: they confirm which moth species you have, indicate the severity of the infestation, and show whether your treatment efforts are working over time. Place traps in wardrobes, drawers, and storage areas for clothes moths, or in food cupboards for pantry moths. Check and replace them every <strong>six to eight weeks</strong>. Popular and effective UK brands include <strong>Acana</strong>, <strong>Moth Stop</strong>, and <strong>London Moth Killer</strong> pheromone traps.
-      </p>
-
-      <h3>Moth Killer Sprays and Papers</h3>
-      <p>
-        Moth killer products containing insecticides such as <strong>permethrin, transfluthrin, or pyrethroids</strong> are available as hanging units for wardrobes, sachets for drawers, and sprays for carpets and fabrics. Hanging moth killers release a slow, continuous vapour that kills adult moths and larvae within the enclosed space of a wardrobe or cupboard. Carpet and fabric sprays can be applied directly to affected areas, along skirting board edges, and into crevices. These products are effective at killing active moths and larvae but should be used in combination with thorough cleaning and vacuuming for the best results. Always follow the manufacturer&apos;s instructions regarding application rates and ventilation.
-      </p>
-
-      <h3>Cedar and Lavender</h3>
-      <p>
-        Cedar wood blocks, balls, and rings have a long history of use as moth deterrents. The aromatic oils in fresh cedar have mild repellent properties that can discourage adult moths from laying eggs in the immediate vicinity. Lavender sachets work on the same principle. However, it is important to understand the limitations: <strong>cedar and lavender will not kill moth eggs or larvae</strong> that are already present, and their repellent effect diminishes as the aromatic oils evaporate over time. Cedar blocks should be lightly sanded every few months to refresh the scent. These natural products are best used as a <strong>supplementary preventive measure</strong> in wardrobes and drawers that have already been cleaned and treated, rather than relied upon to resolve an active infestation.
-      </p>
-
-      <h3>Freezing</h3>
-      <p>
-        Freezing is an effective, chemical-free method for killing moth eggs, larvae, and adults on individual items. Place the infested garment or textile in a <strong>sealed plastic bag</strong>, remove as much air as possible, and freeze at <strong>&minus;18&deg;C or colder for at least 72 hours</strong>. For maximum certainty, use a freeze-thaw-freeze cycle: freeze for 72 hours, thaw at room temperature for 24 hours, then freeze again for a further 72 hours. This approach is particularly useful for delicate items that cannot be washed at high temperatures, such as cashmere, silk, and items with embellishments or beading. Domestic freezers typically maintain &minus;18&deg;C, which is sufficient.
-      </p>
-
-      <h3>Hot Washing and Dry Cleaning</h3>
-      <p>
-        Washing garments and textiles at <strong>60&deg;C or above</strong> will kill all moth life stages, including eggs. This is the most practical treatment for washable woollen items, cotton garments contaminated with larvae, bedding, curtains, and other machine-washable textiles. Items that cannot withstand a 60&deg;C wash should be dry-cleaned instead &mdash; the solvents used in the dry-cleaning process are lethal to moths at all life stages. For items that are neither washable nor suitable for dry cleaning, freezing is the preferred alternative.
+        Pheromone traps are sticky traps baited with a synthetic version of the female clothes moth pheromone. They attract and trap <strong>adult male moths</strong>, preventing them from mating with females and thereby reducing the next generation of larvae. Pheromone traps are the single best <strong>monitoring tool</strong> available &mdash; they tell you whether moths are present, where they are most concentrated, and whether your treatment efforts are working. Place traps in wardrobes, near carpets, and in rooms where you have seen signs of moth activity. Check them weekly. However, pheromone traps alone will not eliminate an infestation because they do not catch females or kill larvae. They must be used in combination with other methods.
       </p>
 
       <h3>Thorough Vacuuming</h3>
       <p>
-        Vacuuming is one of the most important steps in any moth treatment programme. A powerful vacuum cleaner will physically remove <strong>eggs, larvae, pupae, frass, and shed skins</strong> from carpets, rugs, wardrobe floors, drawer interiors, and upholstered furniture. Pay particular attention to <strong>edges, corners, crevices, under furniture, along skirting boards, and in the gaps between floorboards</strong>. Use the crevice nozzle to get into tight spaces. After vacuuming, immediately empty the vacuum bag or canister into an outdoor bin and seal the bag to prevent any captured larvae from crawling back out.
+        Regular, thorough vacuuming is one of the most effective weapons against carpet moths and clothes moths alike. Vacuum <strong>every corner, edge, and hidden area</strong> of your carpeted rooms: along skirting boards, under furniture, behind curtains, and in the corners of rooms where dust and fluff accumulate. Move furniture to vacuum underneath it. Vacuum inside wardrobes, in the bottom of drawers, and on shelves where garments are stored. The vacuum physically removes eggs, larvae, and pupae from carpets and fabrics. For carpets, use the <strong>beater bar</strong> attachment to agitate the pile and dislodge larvae from deep within. Empty the vacuum bag or canister into a sealed bag and dispose of it in an outdoor bin immediately after each session.
+      </p>
+
+      <h3>Washing and Dry Cleaning</h3>
+      <p>
+        Washing garments at <strong>60&deg;C or above</strong> kills moth eggs, larvae, and adults. This is the most reliable method for items that can tolerate high temperatures. For delicate items that cannot be machine washed at 60&deg;C &mdash; cashmere, silk, tailored wool garments, and embellished items &mdash; <strong>professional dry cleaning</strong> is the recommended alternative. The dry cleaning solvent kills all moth life stages. After cleaning, store items in sealed garment bags or vacuum storage bags to prevent re-infestation. Items that have been dry cleaned should not be returned to an infested wardrobe until the wardrobe itself has been treated.
+      </p>
+
+      <h3>Freezing</h3>
+      <p>
+        Freezing is an effective, chemical-free method for killing moths in clothing and small textiles. Seal affected items in a <strong>plastic bag</strong>, removing as much air as possible, and place them in a domestic freezer at <strong>&minus;18&deg;C or below</strong> for a minimum of <strong>72 hours</strong> (three full days). The extreme cold kills eggs, larvae, pupae, and adults. After removing from the freezer, allow items to return to room temperature slowly before unpacking, as rapid temperature changes can cause condensation on the fabric. Freezing is particularly useful for delicate items such as vintage textiles, embroidered pieces, and items with trimmings that might be damaged by washing or dry cleaning.
+      </p>
+
+      <h3>Moth Killer Sprays</h3>
+      <p>
+        Moth killer sprays containing insecticides such as <strong>permethrin or transfluthrin</strong> kill adult moths, larvae, and eggs on contact and provide a residual barrier that continues to kill for several weeks after application. Spray the interior of wardrobes, the underside of shelves, the bottom of drawers, and the surface of carpets &mdash; particularly along edges and under furniture. Allow the spray to dry fully before returning garments or walking on treated carpets. Moth killer sprays are available from most supermarkets and hardware shops. Acana, Zero In, and Rentokil are widely available UK brands.
+      </p>
+
+      <h3>Cedar and Lavender</h3>
+      <p>
+        Cedar wood releases volatile oils that can <strong>repel adult moths</strong> and may kill very young larvae in an enclosed space. Cedar rings, blocks, and balls can be placed in wardrobes and drawers. However, the oils diminish over time, and the cedar must be <strong>sanded or refreshed</strong> every few months to remain effective. Lavender sachets produce a scent that adult moths find unappealing. Neither cedar nor lavender is sufficient to treat an active infestation, but they work well as a <strong>preventive measure</strong> in combination with clean storage practices.
       </p>
 
       <div className="not-prose">
         <Callout type="tip">
-          <p><strong>Vacuum before you spray.</strong> Thorough vacuuming before applying any moth killer spray or powder ensures the insecticide reaches the carpet fibres and crevices where eggs and larvae are hiding, rather than being applied on top of a layer of dust and debris. It also physically removes a large proportion of the infestation before chemical treatment begins.</p>
+          <p><strong>Combine methods for best results.</strong> The most effective DIY approach uses multiple methods simultaneously: pheromone traps to monitor, vacuuming to remove larvae, washing or freezing to treat garments, and moth killer spray to treat wardrobes and carpets. No single method is sufficient on its own. Consistency over 3 to 6 months is key.</p>
         </Callout>
       </div>
 
       <p>
-        For a detailed comparison of the most effective moth control products available in the UK, including hanging killers, pheromone traps, carpet sprays, and sachets, see our <Link href="/best/moth-killers" className="text-blue-600 hover:underline font-medium">Best Moth Killers UK 2026</Link> review.
+        For a detailed comparison of the most effective moth control products available in the UK, including hanging moth killers, pheromone traps, carpet sprays, and sachets, see our <Link href="/best/moth-killers" className="text-blue-600 hover:underline font-medium">Best Moth Killers UK 2026</Link> review.
       </p>
 
       {/* Link to product review */}
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Looking for moth killer products?</p>
-        <p className="text-gray-700 mb-3">We&apos;ve reviewed the best moth killers, pheromone traps, carpet sprays, and sachets available in the UK.</p>
+        <p className="text-gray-700 mb-3">We&apos;ve reviewed the best moth killers, pheromone traps, sprays, and sachets available in the UK.</p>
         <a
           href="/best/moth-killers"
           className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
@@ -368,39 +383,38 @@ export default function HowToGetRidOfMothsPage() {
       <h2 id="clothes-moth-treatment">How to Treat a Clothes Moth Infestation</h2>
 
       <p>
-        If you have confirmed a clothes moth infestation in your wardrobe, drawers, or storage areas, follow this systematic step-by-step approach to eliminate it. Half-measures will not work &mdash; clothes moth treatment must be thorough and sustained over several weeks to break the breeding cycle completely.
+        If you have confirmed a clothes moth infestation, follow this step-by-step treatment plan. The process requires time and thoroughness, but it is achievable as a DIY project for most domestic infestations.
       </p>
 
-      <h3>Step 1: Empty and Inspect Everything</h3>
+      <h3>Step 1: Empty Your Wardrobe Completely</h3>
       <p>
-        Remove every garment and textile from the infested wardrobe, drawer, or storage area. Inspect each item individually for signs of damage, larvae, silken cases, webbing, and frass. Separate items into three groups: <strong>those that need washing or dry cleaning</strong> (any woollen, silk, cashmere, or fur items, plus any visibly contaminated items), <strong>those that need freezing</strong> (delicate items that cannot be washed at 60&deg;C), and <strong>those that are undamaged and can be set aside</strong> after inspection. Do not return any items to the wardrobe until the treatment is complete.
+        Remove every garment, shoe, bag, scarf, and accessory from the affected wardrobe, drawers, and any nearby storage areas. Lay everything out on a clean surface in a well-lit room so you can inspect each item individually. This is the most labour-intensive step, but it is essential &mdash; you cannot treat what you cannot see.
       </p>
 
-      <h3>Step 2: Vacuum Thoroughly</h3>
+      <h3>Step 2: Inspect All Garments</h3>
       <p>
-        Vacuum the entire interior of the wardrobe or drawer &mdash; floor, walls, shelves, rails, corners, and crevices &mdash; using the crevice attachment. Moth eggs are tiny (approximately 0.5 millimetres) and can be lodged in the smallest gaps, so take your time and be methodical. If the infestation extends to a carpeted area around the wardrobe, vacuum the carpet thoroughly as well, especially along the edges near the skirting boards. Empty the vacuum immediately into a sealed bin bag and dispose of it outdoors.
+        Examine every item for signs of moth damage: holes, webbing, larvae, silken cases, or frass. Pay particular attention to <strong>wool, cashmere, silk, and fur</strong> items. Check the seams, folds, collars, and underarms of garments, as larvae prefer dark, concealed areas. Separate items into three categories: items that need washing or dry cleaning, items that need freezing, and items that are beyond repair.
       </p>
 
-      <h3>Step 3: Wash, Freeze, or Dry-Clean Affected Items</h3>
+      <h3>Step 3: Launder, Dry Clean, or Freeze Everything</h3>
       <p>
-        Wash all machine-washable items at <strong>60&deg;C or above</strong>. Take delicate woollen, cashmere, and silk items to a dry cleaner, specifying that you are treating a moth infestation. Freeze items that cannot be washed or dry-cleaned by sealing them in plastic bags and placing them in the freezer at &minus;18&deg;C for at least 72 hours (or use the freeze-thaw-freeze method described above). The goal is to ensure that every textile item that was in the infested space has been treated to kill any eggs, larvae, or adults present.
+        Every garment from the infested wardrobe must be treated, even if it shows no visible damage &mdash; moth eggs are microscopic and invisible to the naked eye. Wash items at <strong>60&deg;C</strong> where the care label permits. Dry clean delicate items. Freeze items that cannot be washed or dry cleaned (sealed in plastic bags at &minus;18&deg;C for 72 hours minimum). Do not return any untreated garment to the wardrobe.
       </p>
 
-      <h3>Step 4: Apply Moth Killer Treatment</h3>
+      <h3>Step 4: Vacuum and Spray the Empty Wardrobe</h3>
       <p>
-        Once the wardrobe or storage area is empty and vacuumed, apply a moth killer spray to all internal surfaces, paying particular attention to corners, joints, and any cracks or crevices. Place <strong>hanging moth killers</strong> inside the wardrobe and <strong>sachets</strong> in drawers. These products release a continuous low-level vapour that kills any remaining moths or newly hatched larvae over the following weeks. Also place <strong>pheromone traps</strong> inside the wardrobe to monitor the situation and catch any adult males that emerge.
+        With the wardrobe empty, vacuum the entire interior thoroughly: floor, shelves, hanging rail, corners, and crevices. Use the crevice nozzle attachment to reach into joins and gaps where eggs and pupae may be hiding. After vacuuming, spray the interior of the wardrobe with a <strong>moth killer spray</strong>. Pay close attention to the back corners, shelf undersides, and the floor of the wardrobe. Allow the spray to dry completely before returning any garments.
       </p>
 
-      <h3>Step 5: Monitor for 8&ndash;12 Weeks</h3>
+      <h3>Step 5: Set Up Pheromone Traps</h3>
       <p>
-        Do not assume the problem is solved after the initial treatment. The clothes moth life cycle takes <strong>four to six weeks</strong> in a warm home, so eggs laid before your treatment may still hatch over the following weeks. Keep pheromone traps in place and check them weekly. If you are still catching moths after eight weeks, repeat the vacuuming and treatment steps. Most infestations require at least <strong>two treatment cycles</strong> to fully eradicate. Only when the pheromone traps have been empty for four consecutive weeks can you be confident the infestation is over.
+        Place at least one pheromone trap in each affected wardrobe and room. These will monitor for any remaining adult males and help you track whether the infestation is declining. Check traps weekly and replace them every <strong>8 to 12 weeks</strong> as the pheromone fades. If traps continue catching moths after 8 weeks, larvae are still present and you need to repeat the cleaning and treatment process.
       </p>
 
-      <div className="not-prose">
-        <Callout type="tip">
-          <p><strong>Treat the whole wardrobe, not just the damaged items.</strong> Moth eggs can be on any garment in the wardrobe, not just the ones showing visible damage. Treating only the damaged items while leaving the rest untouched is the most common reason moth infestations recur after treatment.</p>
-        </Callout>
-      </div>
+      <h3>Step 6: Maintain Vigilance for 3 to 6 Months</h3>
+      <p>
+        The moth life cycle means that eggs laid before your treatment may still hatch over the coming weeks. Continue vacuuming weekly, checking pheromone traps, and inspecting garments for new damage. If you see new moths on the traps or new holes in clothing, repeat the spray treatment and consider whether any untreated items may have reintroduced the problem.
+      </p>
 
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: How to Treat a Pantry Moth Infestation */}
@@ -408,37 +422,37 @@ export default function HowToGetRidOfMothsPage() {
       <h2 id="pantry-moth-treatment">How to Treat a Pantry Moth Infestation</h2>
 
       <p>
-        Pantry moth treatment is entirely different from clothes moth treatment because the source is <strong>contaminated food</strong> rather than textiles. The Indian meal moth infests a wide range of dry stored food products, and effective treatment centres on finding and removing the contaminated food, cleaning the storage area, and preventing re-infestation.
+        Pantry moth treatment is more straightforward than clothes moth treatment because the source is always a food product. The goal is to find and remove the infested food, then clean the cupboard thoroughly to eliminate any eggs or larvae left behind.
       </p>
 
-      <h3>Step 1: Inspect All Dry Food Products</h3>
+      <h3>Step 1: Find the Source</h3>
       <p>
-        Check every packet, bag, box, and container of dry food in your kitchen cupboards and pantry. Indian meal moth larvae infest flour, rice, pasta, cereals, oats, dried fruit, nuts, chocolate, spices, tea, pet food, and birdseed. Look for <strong>webbing, clumping, tiny caterpillars, and shed skins</strong> inside packaging. The larvae can chew through thin cardboard and plastic packaging, so even sealed packets may be contaminated. Check particularly the backs of cupboards and items that have been stored for a long time without being used.
+        Inspect every dried food product in your kitchen cupboards. Open packets of flour, cereals, rice, pasta, dried fruit, nuts, seeds, chocolate, spices, stock cubes, tea bags, birdseed, and pet food. Look for <strong>webbing, small caterpillars, and frass</strong> inside the packaging. The source is usually a product that has been open for some time, but moth larvae can chew through thin cardboard and plastic packaging to spread to adjacent products. Check everything, including unopened items with damaged packaging.
       </p>
 
-      <h3>Step 2: Discard All Contaminated Food</h3>
+      <h3>Step 2: Discard All Infested Food</h3>
       <p>
-        Dispose of every food item that shows any sign of infestation, however slight. If in doubt, throw it out. Place discarded food in sealed bin bags and remove them from the house immediately. It is better to over-discard than to leave a contaminated item behind, as even a small number of surviving larvae can restart the infestation cycle. Many people find it easier to simply discard <strong>all</strong> open dry food products and start fresh, particularly in severe infestations.
+        Throw away every contaminated food product. Seal it in a plastic bag before placing it in the outdoor bin to prevent re-infestation. When in doubt, throw it out &mdash; moth eggs are invisible to the naked eye, and apparently uncontaminated food may already contain eggs. It is better to discard <strong>&pound;20 to &pound;50 worth of dried food</strong> than to leave a contaminated product that restarts the infestation.
       </p>
 
-      <h3>Step 3: Deep-Clean the Cupboards</h3>
+      <h3>Step 3: Clean the Cupboard Thoroughly</h3>
       <p>
-        Remove shelf liners and vacuum the entire cupboard interior, paying close attention to corners, hinges, crevices, and the gap between shelves and the cupboard walls. Pantry moth larvae can pupate in surprisingly concealed locations &mdash; behind shelf brackets, in the threads of screw holes, in the gap between a shelf and the wall, and even in the hinge mechanisms of cupboard doors. After vacuuming, wipe all surfaces with a solution of warm water and white vinegar or a diluted kitchen disinfectant. Allow the cupboards to dry completely before restocking.
+        Empty the cupboard completely and vacuum every surface including shelves, corners, shelf supports, hinges, and the back wall. Pantry moth larvae often <strong>pupate in crevices</strong> away from the food source, so check the cupboard joints and any cracks in the woodwork. After vacuuming, wipe down all surfaces with hot, soapy water or a vinegar and water solution. Allow to dry fully.
       </p>
 
-      <h3>Step 4: Place Pheromone Traps</h3>
+      <h3>Step 4: Store Food in Sealed Containers</h3>
       <p>
-        Place pantry moth pheromone traps in the affected cupboards to catch any remaining adult males and to monitor for any recurrence. These traps use a different pheromone from clothes moth traps, so make sure you buy <strong>traps specifically designed for Indian meal moths / pantry moths</strong>. Check the traps weekly and replace them every six to eight weeks.
+        When restocking, transfer all dried food into <strong>airtight glass, metal, or heavy-duty plastic containers</strong> with secure lids. Pantry moth larvae can chew through thin plastic bags and cardboard boxes, so the original packaging is not sufficient protection. Airtight containers serve a dual purpose: they prevent moths from accessing the food, and if a contaminated product does enter your kitchen, the infestation is contained within a single sealed container rather than spreading through your entire cupboard.
       </p>
 
-      <h3>Step 5: Store Food Properly Going Forward</h3>
+      <h3>Step 5: Set Up Pantry Moth Traps</h3>
       <p>
-        Transfer all dry food products to <strong>airtight, hard-sided containers</strong> &mdash; glass jars with screw-top lids or rigid plastic containers with secure seals. Pantry moth larvae can chew through thin plastic bags, paper, and cardboard, so these materials provide no protection. Airtight containers serve a dual purpose: they prevent moths from reaching the food, and if a food item was already contaminated when you bought it (which is a common source of pantry moth infestations), the container prevents any emerging moths from spreading to other products.
+        Pantry moth pheromone traps work on the same principle as clothes moth traps but use a pheromone specific to <strong><em>Plodia interpunctella</em></strong>. Place one or two traps in the affected kitchen cupboard to monitor for any remaining adult moths. If traps continue catching moths after three to four weeks, there may be a hidden food source or pupae that you have missed &mdash; repeat the inspection and cleaning process.
       </p>
 
       <div className="not-prose">
-        <Callout type="info">
-          <p><strong>Pantry moths often arrive with the shopping.</strong> Indian meal moth eggs and larvae are frequently already present in food products when you buy them, having entered the packaging at the warehouse or during transport. This is why pantry moth infestations can appear even in very clean kitchens. Transferring all dry food into sealed containers as soon as you get home from the supermarket is the single most effective prevention measure.</p>
+        <Callout type="tip">
+          <p><strong>Freeze new dried goods as a precaution.</strong> If you have experienced a pantry moth infestation, consider freezing all newly purchased dried food products for 72 hours at &minus;18&deg;C before placing them in your cupboard. This kills any moth eggs or larvae that may be present in the food from the shop, preventing re-infestation.</p>
         </Callout>
       </div>
 
@@ -448,37 +462,42 @@ export default function HowToGetRidOfMothsPage() {
       <h2 id="moth-proofing">How to Moth-Proof Your Home</h2>
 
       <p>
-        Prevention is always cheaper than cure, especially with moths, where the cost of damaged garments and carpets can far exceed the cost of treatment. Once you have dealt with an active infestation, or if you want to protect your home proactively, the following measures will significantly reduce the risk of moth problems.
+        Prevention is far easier and cheaper than treating an established moth infestation. Once you have eliminated moths from your home, these practices will help prevent their return.
       </p>
 
-      <h3>Clean Before You Store</h3>
+      <h3>Wash or Clean Clothes Before Storing</h3>
       <p>
-        Moth larvae are strongly attracted to garments that carry <strong>food stains, sweat, body oils, and skin cells</strong>. Always wash or dry-clean woollen, silk, and cashmere items before putting them into seasonal storage. This single step removes the organic residues that make garments attractive to egg-laying moths and eliminates any eggs or larvae that may already be on the fabric.
+        Moth larvae are attracted to <strong>soiled clothing</strong> &mdash; items stained with sweat, body oils, food, or drink. Always wash or dry clean garments before storing them for the season. Even if a garment looks clean, invisible perspiration and skin oils make it far more attractive to moths. This single habit is the most effective preventive measure against clothes moths.
       </p>
 
-      <h3>Use Sealed Storage</h3>
+      <h3>Use Sealed Garment Bags</h3>
       <p>
-        Store out-of-season woollen and natural-fibre garments in <strong>sealed, airtight containers</strong> &mdash; vacuum storage bags, zipped garment bags, or lidded plastic boxes. This physically prevents adult moths from accessing the garments to lay eggs. Ensure items are thoroughly clean before sealing, and add cedar blocks or lavender sachets as an extra deterrent.
+        Store seasonal clothing in <strong>sealed, zipped garment bags</strong> or vacuum-sealed storage bags. This creates a physical barrier that prevents adult moths from reaching the garments to lay eggs. Cotton or canvas garment bags with zip closures are ideal for hanging items. For folded knitwear and off-season clothing, vacuum-sealed compression bags are effective and space-efficient. Ensure items are clean before sealing.
       </p>
 
       <h3>Regular Vacuuming</h3>
       <p>
-        Vacuum wool carpets and rugs regularly, and make a point of vacuuming <strong>under and behind furniture</strong> at least once a month. Carpet moth larvae thrive in dark, undisturbed areas, so disrupting these zones with regular vacuuming removes eggs and larvae before they can establish themselves. Pay particular attention to the edges of fitted carpets along skirting boards, beneath sofas and beds, and behind curtains.
+        Vacuum carpets, rugs, and upholstered furniture <strong>weekly</strong>, paying particular attention to edges, corners, and areas beneath furniture. Carpet moth larvae thrive in undisturbed areas where fluff, hair, and pet dander accumulate. Regular, thorough vacuuming disturbs potential feeding sites and physically removes eggs and young larvae before they can establish. Use the beater bar attachment on wool carpets to agitate the pile.
       </p>
 
-      <h3>Maintain Pheromone Traps Year-Round</h3>
+      <h3>Rotate and Disturb Stored Items</h3>
       <p>
-        Even after an infestation has been resolved, keep pheromone traps in wardrobes and storage areas as an early warning system. Catching even a single moth in a trap alerts you to a potential new infestation before any damage occurs, allowing you to take action immediately. Replace traps every eight to twelve weeks to ensure the pheromone lure remains effective.
+        Moths prefer <strong>undisturbed environments</strong>. Periodically take out stored clothing, shake it, and refold or rehang it. Move furniture occasionally to expose the carpet beneath it. Open drawers and wardrobes to let in light and air. This regular disturbance makes your home a less hospitable environment for moth larvae and allows you to spot early signs of a problem.
       </p>
 
-      <h3>Rotate Your Wardrobe</h3>
+      <h3>Cedar and Lavender as Deterrents</h3>
       <p>
-        Moths prefer undisturbed locations. Garments that are worn regularly, moved, and exposed to light are at much lower risk than items sitting untouched at the back of a dark wardrobe for months. Make a habit of rotating your wardrobe &mdash; moving stored items to the front periodically and handling garments regularly. The physical disturbance alone deters moths from establishing themselves.
+        Place <strong>cedar rings, blocks, or balls</strong> in wardrobes and drawers. The volatile oils in cedar deter adult moths from entering enclosed spaces to lay eggs. Sand the cedar every two to three months to refresh the oils, or use commercial cedar oil spray. <strong>Lavender sachets</strong> provide a pleasant scent that adult moths dislike. Replace lavender sachets every three to four months as the scent fades. Remember that cedar and lavender are deterrents, not killers &mdash; they reduce the risk of infestation but will not stop one that has already started.
       </p>
 
-      <h3>Maintain Good Ventilation</h3>
+      <h3>Seal Food in Airtight Containers</h3>
       <p>
-        Moths favour warm, humid, still environments. Ensuring good airflow in wardrobes and storage areas &mdash; leaving wardrobe doors slightly ajar when possible, using ventilated garment bags rather than sealed plastic covers for everyday storage, and keeping rooms well ventilated &mdash; makes the environment less attractive to egg-laying moths.
+        Store all dried food in <strong>airtight glass, metal, or heavy-duty plastic containers</strong>. This prevents pantry moths from accessing food and limits the spread of any infestation that does occur. Pay particular attention to items bought from bulk bins or market stalls, which are more likely to harbour moth eggs than factory-sealed products.
+      </p>
+
+      <h3>Check Second-Hand Purchases</h3>
+      <p>
+        Clothes moths are frequently introduced to homes via <strong>second-hand clothing, vintage textiles, antique furniture, and charity shop finds</strong>. Always inspect second-hand woollen, silk, or fur items carefully before bringing them into your home. Wash, dry clean, or freeze any second-hand textiles before storing them alongside your existing wardrobe. Upholstered second-hand furniture should be thoroughly vacuumed and ideally treated with moth killer spray before being placed in your home.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -487,37 +506,37 @@ export default function HowToGetRidOfMothsPage() {
       <h2 id="when-to-call">When to Call a Professional</h2>
 
       <p>
-        Many moth infestations can be resolved with thorough DIY treatment. However, there are specific situations where professional pest control is strongly recommended or essential. Professional moth treatment involves commercial-grade insecticides, residual sprays, and sometimes specialist heat treatment that is not available to consumers.
+        Most domestic moth infestations can be resolved with the DIY methods described above, provided you are thorough and persistent. However, there are situations where professional pest control is the better option.
       </p>
 
-      <h3>Severe or Widespread Carpet Moth Infestations</h3>
+      <h3>Severe Carpet Moth Infestations</h3>
       <p>
-        If carpet moth damage is found across multiple rooms, extends over large areas of carpet, or has been established for many months, professional treatment is likely to be more effective than DIY methods alone. A pest controller can apply a <strong>residual insecticide spray</strong> to the entire carpet surface, edges, and underlay, which continues to kill larvae for several weeks after application. For severe infestations, a <strong>heat treatment</strong> may be recommended, which raises the temperature in the affected rooms to a level that is lethal to all moth life stages.
+        If carpet moths have caused visible damage across large areas of fitted carpet, professional treatment is strongly recommended. A pest control technician can apply a <strong>residual insecticide</strong> to the carpet surface and underside, treat the carpet edges and underlay, and apply dust into the gaps between the carpet and the skirting boards where larvae and pupae concentrate. Professional-grade products provide a longer-lasting residual barrier than over-the-counter sprays. The technician may also recommend lifting sections of carpet to treat the underlay and floor beneath.
       </p>
 
       <h3>Recurring Infestations</h3>
       <p>
-        If you have treated a moth infestation once but it returns within a few months, there is likely a <strong>hidden reservoir of eggs or larvae</strong> that your treatment missed. Common hiding places include beneath underlay, inside wall cavities, in the gap between fitted carpets and skirting boards, inside upholstered furniture, and within the structure of the building itself. A professional pest controller has the experience and equipment to locate and treat these concealed sources.
+        If you have treated a moth infestation yourself but it keeps returning despite thorough cleaning and treatment, a professional survey can identify the <strong>source or harbourage</strong> that you may be missing. Common hidden sources include old bird nests in the loft (a favourite breeding site for brown house moths and case-bearing clothes moths), felt insulation, disused chimney breasts, and forgotten textiles in storage areas such as lofts, cellars, and under-stairs cupboards.
       </p>
 
-      <h3>High-Value Items at Risk</h3>
+      <h3>Large Properties and Valuable Collections</h3>
       <p>
-        If the infestation threatens <strong>high-value textiles</strong> &mdash; a valuable rug collection, antique tapestries, a wardrobe of designer clothing, vintage or heritage garments &mdash; the cost of professional treatment is typically far less than the cost of the damage that an uncontrolled infestation could cause. Professional-grade treatments are faster-acting and more thorough than consumer products, reducing the risk of further damage while treatment is ongoing.
+        For large properties with extensive wool carpeting, or homes containing <strong>valuable textile collections</strong> such as vintage clothing, antique rugs, tapestries, or museum-quality pieces, professional moth treatment is a sensible investment. Some pest control companies offer specialist textile pest services that include <strong>fumigation, heat treatment, and ongoing monitoring programmes</strong> designed to protect high-value collections.
       </p>
 
-      <h3>Commercial Properties</h3>
+      <h3>Commercial Premises</h3>
       <p>
-        Hotels, museums, galleries, theatres, high-end retail stores, and other commercial properties with valuable textiles, costumes, or soft furnishings require professional moth management with documented treatment programmes and ongoing monitoring. The scale and value of the assets at risk make DIY approaches inadequate.
+        Clothes moths are a significant pest in the hospitality industry (hotels, bed and breakfasts), the fashion industry (retail stores, warehouses), museums, and historic properties. Commercial infestations require professional treatment with documented records and ongoing monitoring contracts. Food businesses affected by pantry moths require professional pest control to comply with food safety regulations.
       </p>
 
       <div className="not-prose">
         <Callout type="cost">
-          <p>Professional moth treatment typically costs <strong>&pound;120 to &pound;250</strong> for a standard room. Whole-house treatments or heat treatments for severe infestations can cost <strong>&pound;300 to &pound;500+</strong>. Most infestations require at least two professional visits spaced several weeks apart.</p>
+          <p>Professional moth treatment typically costs <strong>&pound;100 to &pound;250</strong> for a standard domestic property, depending on the size of the area treated and the severity of the infestation. Fumigation for severe or widespread infestations can cost <strong>&pound;300 to &pound;600+</strong>. Ongoing monitoring contracts for commercial premises or large residences typically cost <strong>&pound;200 to &pound;500 per year</strong>.</p>
         </Callout>
       </div>
 
       <div className="not-prose">
-        <StatCallout value="&pound;120&ndash;&pound;250" label="typical cost for professional moth treatment per room in the UK" />
+        <StatCallout value="&pound;100&ndash;&pound;250" label="typical cost for professional moth treatment in a UK home" />
       </div>
 
       <div className="not-prose">
@@ -527,23 +546,34 @@ export default function HowToGetRidOfMothsPage() {
         />
       </div>
 
+      <div className="not-prose">
+        <Callout type="tip">
+          <p>Extensive moth damage to fitted carpets may require replacement. If your kitchen is affected during pest treatment, <a href="https://findakitchen.co.uk" target="_blank" rel="noopener" className="underline font-medium">FindAKitchen</a> helps you find temporary kitchen hire while the work is carried out.</p>
+        </Callout>
+      </div>
+
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: How Much Does Moth Control Cost? */}
       {/* ------------------------------------------------------------------ */}
       <h2 id="costs">How Much Does Moth Control Cost in the UK?</h2>
 
       <p>
-        The cost of moth control in the UK depends on whether you are using DIY methods or hiring a professional, the size of the infested area, and the severity of the problem.
+        The cost of moth control varies depending on whether you take the DIY route or call a professional, and on the severity and type of infestation.
       </p>
 
       <h3>DIY Treatment Costs</h3>
       <p>
-        A comprehensive DIY moth treatment programme for a single wardrobe or room typically costs between <strong>&pound;25 and &pound;60</strong>. This includes pheromone traps (&pound;5 to &pound;12 for a pack), hanging moth killers (&pound;5 to &pound;10 for a set of four), carpet and fabric moth killer spray (&pound;8 to &pound;15 per can), and sachets for drawers (&pound;5 to &pound;10). Cedar products and lavender sachets add another &pound;5 to &pound;15. The total investment is modest relative to the value of the garments and carpets being protected. DIY treatment requires consistent effort over six to twelve weeks but is effective for the majority of domestic infestations.
+        A comprehensive DIY moth treatment programme typically costs <strong>&pound;30 to &pound;80</strong> in total. This includes pheromone traps (&pound;8 to &pound;15 for a pack), moth killer spray (&pound;5 to &pound;12), hanging moth killers or sachets (&pound;5 to &pound;10), and cedar products (&pound;8 to &pound;15). Dry cleaning costs for affected garments can add &pound;50 to &pound;200+ depending on the number and type of items. The main &ldquo;cost&rdquo; of DIY treatment is your time &mdash; emptying wardrobes, inspecting and treating every garment, and maintaining a consistent treatment regime over several months.
       </p>
 
       <h3>Professional Treatment Costs</h3>
       <p>
-        Professional moth treatment in the UK typically costs between <strong>&pound;120 and &pound;250 per room</strong> for a standard residual insecticide spray treatment. A whole-house treatment or a multi-room treatment will cost proportionally more. Specialist <strong>heat treatment</strong>, where the room is heated to approximately 52&ndash;56&deg;C for several hours to kill all moth life stages, costs <strong>&pound;300 to &pound;500+ per room</strong> but provides very high kill rates in a single treatment. Most professional moth treatments include a <strong>follow-up visit</strong> four to six weeks after the initial treatment to check for any recurrence and apply a second treatment if necessary. Some companies offer a guarantee period during which additional treatments are provided at no extra charge if the infestation returns.
+        Professional moth treatment for a <strong>standard domestic property</strong> typically costs <strong>&pound;100 to &pound;250</strong> for an initial treatment. This usually includes a survey, insecticide application to affected areas, and advice on prevention. A follow-up visit four to six weeks later may be included in the price or charged separately at <strong>&pound;60 to &pound;100</strong>. For severe carpet moth infestations requiring extensive treatment of multiple rooms, costs can reach <strong>&pound;300 to &pound;600</strong>. Professional fumigation of a whole property for a severe, widespread infestation costs <strong>&pound;400 to &pound;800+</strong>.
+      </p>
+
+      <h3>Carpet Replacement Costs</h3>
+      <p>
+        If moth larvae have destroyed a wool carpet beyond repair, replacement costs can be substantial. A mid-range wool carpet costs approximately <strong>&pound;30 to &pound;60 per square metre</strong> supplied and fitted. For a typical 4m &times; 5m living room, that equates to <strong>&pound;600 to &pound;1,200</strong> for the carpet alone plus fitting charges. This is why early detection and prompt treatment are so important &mdash; catching a carpet moth infestation early can save hundreds of pounds in replacement costs.
       </p>
 
       <p>
@@ -741,44 +771,44 @@ export default function HowToGetRidOfMothsPage() {
       {/* ------------------------------------------------------------------ */}
       <h2 id="faq">Frequently Asked Questions</h2>
 
-      <h3>What are the signs of a moth infestation?</h3>
+      <h3>What causes moths in the house?</h3>
       <p>
-        The most common signs of a clothes moth infestation are small, irregular holes in woollen, silk, or cashmere garments; fine, sandy-coloured frass (droppings) in the bottom of wardrobes or drawers; silken tubes or cases attached to fabrics; and adult moths fluttering in dark corners, particularly near wardrobes and clothing storage. For carpet moths, look for <strong>threadbare patches on wool carpets</strong>, especially under furniture and along skirting boards. Pantry moth signs include webbing or clumping in dry foods such as flour, rice, cereals, and dried fruit, along with small caterpillars crawling on cupboard walls and ceilings.
+        Clothes moths are attracted to <strong>natural animal fibres</strong> such as wool, cashmere, silk, and fur. They are drawn to items that are soiled with sweat, food stains, or body oils, as the larvae feed on the keratin protein in animal fibres and the organic residue provides additional nutrition. Moths can enter your home through open windows, on second-hand clothing or furniture, or in contaminated food packaging. Pantry moths arrive almost exclusively via <strong>infested food products</strong> such as dried fruit, cereals, flour, nuts, and pet food purchased from shops.
       </p>
 
-      <h3>Do moths eat cotton or synthetic fabrics?</h3>
+      <h3>How do I know if I have clothes moths or pantry moths?</h3>
       <p>
-        No. Clothes moth larvae feed exclusively on <strong>animal-derived fibres</strong> containing the protein keratin. This includes wool, cashmere, silk, fur, feathers, and leather. They cannot digest cotton, polyester, nylon, or other synthetic fabrics. However, moths will sometimes damage blended fabrics that contain a mix of wool and synthetic fibres, and they can damage cotton or synthetic garments that are heavily soiled with food stains, sweat, or body oils, as they feed on the <strong>organic residue</strong> rather than the fabric itself.
+        Clothes moths (<em>Tineola bisselliella</em>) are small, golden-buff coloured moths approximately 6 to 8 millimetres long that <strong>avoid light</strong> and scuttle rather than fly. You will find them in wardrobes, drawers, and near carpets. Pantry moths (<em>Plodia interpunctella</em>, the Indian meal moth) are slightly larger at 8 to 10 millimetres with distinctive <strong>two-toned wings</strong> &mdash; copper-brown at the tips and pale grey near the body. They are found in kitchens near food storage areas and are more willing to fly towards light. The key indicator is <strong>location</strong>: damage to clothing and textiles points to clothes moths, while webbing or larvae in food cupboards indicates pantry moths.
       </p>
 
-      <h3>Are moths harmful to humans?</h3>
+      <h3>Do pheromone traps kill moths?</h3>
       <p>
-        Moths are not directly harmful to humans. They do not bite, sting, or transmit diseases. The damage they cause is entirely to materials and food. Clothes moth larvae destroy woollen garments, carpets, upholstery, and other animal-fibre textiles, which can result in <strong>significant financial loss</strong>. Pantry moth larvae contaminate stored food products with webbing, frass, and shed skins, making the food inedible. The main impact of moths is economic rather than medical.
+        Pheromone traps do not kill moth infestations on their own. They use a synthetic version of the female moth pheromone to attract and trap <strong>adult male moths</strong> on a sticky pad, which prevents them from mating and helps reduce the next generation. However, pheromone traps do not catch female moths or kill larvae, which are the life stage that causes all the damage. Pheromone traps are best used as a <strong>monitoring tool</strong> to detect infestations early and to assess the severity of a problem. They should be combined with other treatments such as thorough cleaning, laundering, moth killer sprays, and cedar or lavender deterrents for effective control.
+      </p>
+
+      <h3>Can moths damage carpets?</h3>
+      <p>
+        Yes. The case-bearing clothes moth (<em>Tinea pellionella</em>) and the common clothes moth (<em>Tineola bisselliella</em>) both feed on <strong>wool carpets and rugs</strong>. Carpet moth larvae eat the wool fibres from the underside of the carpet, creating bare patches that are often first noticed in areas hidden from view &mdash; under furniture, along skirting boards, and in corners. A severe carpet moth infestation can cause extensive and expensive damage. Wool-blend carpets with as little as <strong>20 percent wool content</strong> can be attacked. Fully synthetic carpets are not at risk from moth damage.
+      </p>
+
+      <h3>Does freezing kill moths?</h3>
+      <p>
+        Yes. Freezing is an effective, chemical-free method for killing moth eggs, larvae, and adults in clothing and textiles. Seal the affected items in a plastic bag, removing as much air as possible, and place them in a domestic freezer at <strong>&minus;18&deg;C or below</strong> for a minimum of <strong>72 hours</strong> (three full days). The extreme cold kills all life stages of the moth. After removing from the freezer, allow items to return to room temperature before unpacking, as condensation can form on cold fabrics. This method is particularly useful for delicate items that cannot be washed at high temperatures.
+      </p>
+
+      <h3>Do cedar balls and lavender actually work against moths?</h3>
+      <p>
+        Cedar and lavender have some moth-deterrent properties but their effectiveness is <strong>limited</strong>. Fresh cedar wood releases volatile oils that can repel adult moths and may kill very young larvae in an enclosed space, but the oils diminish over time and the cedar must be sanded or refreshed regularly to remain effective. Lavender sachets produce a scent that adult moths find unappealing, but lavender does not kill moth eggs or larvae. Neither cedar nor lavender is sufficient to treat an active infestation on its own. They work best as a <strong>preventive measure</strong> in combination with good storage practices &mdash; clean clothes stored in sealed garment bags with cedar or lavender inside.
       </p>
 
       <h3>How long does it take to get rid of moths?</h3>
       <p>
-        A thorough DIY moth treatment programme typically takes <strong>four to eight weeks</strong> to bring an infestation under control, because you need to eliminate not only the adult moths and active larvae but also any eggs that have yet to hatch. The clothes moth life cycle from egg to adult takes approximately four to six weeks in a warm home, so treatment must continue for at least this long to catch newly hatching larvae. Pheromone traps should be left in place for at least <strong>three months</strong> to monitor for residual activity. Severe infestations treated professionally may require two to three visits spaced several weeks apart.
+        A clothes moth infestation typically takes <strong>3 to 6 months</strong> to fully resolve with consistent DIY treatment, because the moth life cycle from egg to adult takes approximately 6 to 12 weeks depending on temperature, and you need to break this cycle completely. You may see results within the first few weeks as adult moths are trapped and larvae are killed through cleaning and treatment, but it is important to continue monitoring and treating for at least three to four months to catch any eggs or pupae that survive initial treatment. Professional fumigation can resolve an infestation more quickly, often within one to two treatments over a four to six week period.
       </p>
 
-      <h3>Do cedar balls and lavender really repel moths?</h3>
+      <h3>Should I throw away clothes with moth holes?</h3>
       <p>
-        Cedar wood and lavender have some <strong>mild moth-repellent properties</strong>, and both have a long history of traditional use for protecting stored clothing. Fresh cedar blocks or shavings release aromatic oils that can deter adult moths from laying eggs in the immediate vicinity. Lavender sachets have a similar mild repellent effect. However, neither cedar nor lavender will kill moth eggs or larvae that are already present, and their effectiveness diminishes as the scent fades over time. They are best used as a supplementary preventive measure alongside proper cleaning, sealed storage, and pheromone traps &mdash; not as a standalone treatment for an active infestation.
-      </p>
-
-      <h3>Can you freeze clothes to kill moths?</h3>
-      <p>
-        Yes. Freezing is an effective chemical-free method for killing moth eggs, larvae, and adults. Place the item in a sealed plastic bag, remove as much air as possible, and freeze at <strong>&minus;18&deg;C or colder for at least 72 hours</strong>. For maximum effectiveness, use a freeze-thaw-freeze cycle: freeze for 72 hours, thaw at room temperature for 24 hours, then freeze again for a further 72 hours. This ensures that any eggs surviving the first freeze in a dormant state are killed during the second cycle. Freezing is ideal for delicate items that cannot be washed at high temperatures, such as cashmere, silk, and fur.
-      </p>
-
-      <h3>What temperature kills moths in a washing machine?</h3>
-      <p>
-        A wash temperature of <strong>60&deg;C or above</strong> will kill moth eggs, larvae, and adults. This is the most practical method for treating washable woollen items, contaminated bedding, and other machine-washable textiles. Items that cannot withstand a 60&deg;C wash &mdash; such as cashmere, silk, and some delicate woollens &mdash; should be dry-cleaned or frozen instead. Tumble drying on a hot setting after washing provides an additional thermal kill step.
-      </p>
-
-      <h3>How much does professional moth treatment cost in the UK?</h3>
-      <p>
-        Professional moth treatment typically costs between <strong>&pound;120 and &pound;250</strong> for a standard residential room, depending on the size of the affected area and the treatment method used. A single-room residual insecticide spray may cost &pound;120 to &pound;150, while a whole-house treatment or specialist heat treatment for severe infestations can cost <strong>&pound;300 to &pound;500+</strong>. Most domestic moth infestations require at least two professional visits spaced several weeks apart to break the breeding cycle. For a full cost breakdown, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
+        Not necessarily. If the damage is limited to a few small holes, the garment can usually be <strong>repaired by a tailor</strong> or specialist textile repairer. Knitwear can often be invisibly mended. The important thing is to kill any remaining eggs or larvae on the garment before returning it to your wardrobe &mdash; either by washing at 60&deg;C, dry cleaning, or freezing for 72 hours at &minus;18&deg;C. Only discard garments if the damage is too extensive to repair or if the item is heavily contaminated with larvae and frass.
       </p>
     </GuideLayout>
   );
