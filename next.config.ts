@@ -78,6 +78,16 @@ const nextConfig: NextConfig = {
       },
       ...londonBoroughRedirects,
       {
+        source: '/london/commercial',
+        destination: '/commercial',
+        permanent: true,
+      },
+      {
+        source: '/london/residential',
+        destination: '/residential',
+        permanent: true,
+      },
+      {
         source: '/pest-control/leeds/bradford',
         destination: '/bradford',
         permanent: true,
