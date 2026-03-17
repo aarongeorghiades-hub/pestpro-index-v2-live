@@ -458,6 +458,12 @@ export default function HowToGetRidOfCockroachesPage() {
         />
       </div>
 
+      <div className="not-prose">
+        <Callout type="tip">
+          <p>If a severe cockroach infestation means your kitchen is out of action during professional treatment, temporary kitchen hire can keep your household running. <a href="https://findakitchen.co.uk" target="_blank" rel="noopener" className="underline font-medium">FindAKitchen</a> helps you find temporary kitchen solutions across the UK.</p>
+        </Callout>
+      </div>
+
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: How to Cockroach-Proof Your Home */}
       {/* ------------------------------------------------------------------ */}

@@ -512,6 +512,12 @@ export default function HowToGetRidOfMicePage() {
         />
       </div>
 
+      <div className="not-prose">
+        <Callout type="info">
+          <p>Mice infestations often centre on kitchens where food sources are plentiful. If professional treatment means your kitchen is temporarily out of bounds, <a href="https://findakitchen.co.uk" target="_blank" rel="noopener" className="underline font-medium">FindAKitchen</a> offers temporary kitchen hire solutions across the UK.</p>
+        </Callout>
+      </div>
+
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: Costs */}
       {/* ------------------------------------------------------------------ */}

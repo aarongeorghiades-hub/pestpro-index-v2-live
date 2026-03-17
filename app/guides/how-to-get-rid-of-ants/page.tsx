@@ -399,6 +399,12 @@ export default function HowToGetRidOfAntsPage() {
         />
       </div>
 
+      <div className="not-prose">
+        <Callout type="tip">
+          <p>Ant colonies in kitchen cavities can require extensive treatment. If your kitchen needs to be cleared for professional pest control, <a href="https://findakitchen.co.uk" target="_blank" rel="noopener" className="underline font-medium">FindAKitchen</a> helps you find temporary kitchen hire while the work is carried out.</p>
+        </Callout>
+      </div>
+
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: How to Prevent Ants */}
       {/* ------------------------------------------------------------------ */}

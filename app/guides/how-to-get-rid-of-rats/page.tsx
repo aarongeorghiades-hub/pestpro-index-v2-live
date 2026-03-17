@@ -239,6 +239,12 @@ export default function HowToGetRidOfRatsPage() {
         The financial cost of rat damage to UK properties runs into millions of pounds each year. Rats gnaw through electrical cables, which creates a very real fire risk &mdash; damaged wiring behind walls or in loft spaces can spark and ignite insulation or timber without any visible warning. They chew through plastic water pipes, causing leaks and, in the worst cases, flooding that can result in thousands of pounds of damage. They destroy insulation in lofts and cavity walls, reducing energy efficiency. They undermine building foundations through burrowing. And they damage stored goods, furniture, and personal possessions.
       </p>
 
+      <div className="not-prose">
+        <Callout type="info">
+          <p>Rat damage to kitchen units, wiring, or pipework can mean a full kitchen refit. If your kitchen is unusable while repairs or professional treatment are underway, <a href="https://findakitchen.co.uk" target="_blank" rel="noopener" className="underline font-medium">FindAKitchen</a> can help you find temporary kitchen hire in your area.</p>
+        </Callout>
+      </div>
+
       <h3>Food Contamination</h3>
       <p>
         Rats contaminate far more food than they eat. Their droppings, urine, and hair are deposited continuously as they forage, and a single rat produces approximately 40 droppings per day. In domestic kitchens, rats will gnaw through packaging to reach food, contaminating anything they touch. In commercial food premises, a rat infestation can result in an immediate closure notice from the local authority&apos;s Environmental Health department.

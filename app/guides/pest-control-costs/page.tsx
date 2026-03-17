@@ -201,6 +201,12 @@ export default function PestControlCostsPage() {
         <StatCallout value="&pound;80&ndash;&pound;200" label="average UK domestic pest control treatment cost in 2026" />
       </div>
 
+      <div className="not-prose">
+        <Callout type="info">
+          <p>Moving into a new property? Pest control costs aren&apos;t the only thing to check &mdash; thousands of UK homes are in the wrong council tax band and overpaying. Use our free tool at <a href="https://taxbandcheck.co.uk" target="_blank" rel="noopener" className="underline font-medium">TaxBandCheck</a> to see if you could be paying less.</p>
+        </Callout>
+      </div>
+
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: Pest Control Costs at a Glance */}
       {/* ------------------------------------------------------------------ */}
@@ -353,6 +359,12 @@ export default function PestControlCostsPage() {
       <p>
         Commercial pest control is inherently more expensive than domestic work because of the additional requirements involved. Businesses, particularly those in the food sector, need <strong>documented pest management plans, detailed treatment reports, monitoring records, and compliance documentation</strong> for Environmental Health Officers (EHOs), Food Standards Agency audits, HACCP systems, and BRC (British Retail Consortium) certification. Commercial pest controllers must also carry higher levels of insurance, invest in ongoing training and certification, and often need to work outside normal business hours to avoid disruption to the client&apos;s operations. These factors are all reflected in the pricing.
       </p>
+
+      <div className="not-prose">
+        <Callout type="tip">
+          <p>Recently purchased a property? You may be entitled to a stamp duty refund on items like carpets, curtains, and fitted appliances that were included in the sale price. Check your eligibility at <a href="https://stampdutyback.co.uk" target="_blank" rel="noopener" className="underline font-medium">StampDutyBack</a>.</p>
+        </Callout>
+      </div>
 
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: Rat Control Costs */}

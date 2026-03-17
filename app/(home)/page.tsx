@@ -590,7 +590,15 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center">
+          <div className="border-t border-gray-800 pt-8 mt-12">
+            <h4 className="text-white font-bold mb-4 text-center">Sister Sites</h4>
+            <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2">
+              <li><a href="https://taxbandcheck.co.uk" target="_blank" rel="noopener" className="hover:text-white transition">TaxBandCheck &mdash; Free Council Tax Band Checker</a></li>
+              <li><a href="https://findakitchen.co.uk" target="_blank" rel="noopener" className="hover:text-white transition">FindAKitchen &mdash; Temporary Kitchen Hire UK</a></li>
+              <li><a href="https://stampdutyback.co.uk" target="_blank" rel="noopener" className="hover:text-white transition">StampDutyBack &mdash; Stamp Duty Refund Calculator</a></li>
+            </ul>
+          </div>
+          <div className="border-t border-gray-800 pt-8 mt-8 text-center">
             <p>&copy; 2026 PestPro Index. All rights reserved.</p>
           </div>
         </div>
