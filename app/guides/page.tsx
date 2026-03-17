@@ -78,6 +78,12 @@ const guides = [
     href: '/guides/pigeon-control',
   },
   {
+    emoji: '🦋',
+    title: 'How to Get Rid of Moths',
+    description: 'Clothes moths vs pantry moths, DIY treatments, pheromone traps, professional fumigation, and prevention tips.',
+    href: '/guides/how-to-get-rid-of-moths',
+  },
+  {
     emoji: '💰',
     title: 'Pest Control Costs UK 2026',
     description: 'Complete pricing breakdown for every common pest — what you\'ll pay and how to get the best value.',
@@ -139,6 +145,12 @@ const reviews = [
     title: 'Best Bird Deterrents UK 2026',
     description: 'Bird spikes, netting, optical gel, and more — the best pigeon and bird deterrents reviewed.',
     href: '/best/bird-deterrents',
+  },
+  {
+    emoji: '🦋',
+    title: 'Best Moth Killers UK 2026',
+    description: 'Hanging killers, pheromone traps, carpet sprays, sachets, and budget options reviewed.',
+    href: '/best/moth-killers',
   },
 ];
 

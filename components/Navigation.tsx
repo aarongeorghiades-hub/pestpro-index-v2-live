@@ -366,6 +366,20 @@ export default function Navigation() {
                   Best Bird Deterrents
                 </Link>
                 <Link
+                  href="/guides/how-to-get-rid-of-moths"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Moth Control Guide
+                </Link>
+                <Link
+                  href="/best/moth-killers"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Moth Killers
+                </Link>
+                <Link
                   href="/guides/pest-control-costs"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -665,6 +679,20 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Best Bird Deterrents
+                </Link>
+                <Link
+                  href="/guides/how-to-get-rid-of-moths"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Moth Control Guide
+                </Link>
+                <Link
+                  href="/best/moth-killers"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Moth Killers
                 </Link>
                 <Link
                   href="/guides/pest-control-costs"

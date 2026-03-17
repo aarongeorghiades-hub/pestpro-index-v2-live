@@ -156,6 +156,7 @@ export default function HowToGetRidOfAntsPage() {
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
         { title: 'How to Get Rid of Squirrels: Complete UK Guide', href: '/guides/how-to-get-rid-of-squirrels' },
         { title: 'Pigeon Control: Complete UK Guide', href: '/guides/pigeon-control' },
+        { title: 'How to Get Rid of Moths', href: '/guides/how-to-get-rid-of-moths' },
       ]}
       relatedProducts={[
         { title: 'Best Ant Killers UK 2026', href: '/best/ant-killers' },
@@ -166,6 +167,7 @@ export default function HowToGetRidOfAntsPage() {
         { title: 'Best Flea Treatments UK 2026', href: '/best/flea-treatments' },
         { title: 'Best Squirrel Deterrents UK 2026', href: '/best/squirrel-deterrents' },
         { title: 'Best Bird Deterrents UK 2026', href: '/best/bird-deterrents' },
+        { title: 'Best Moth Killers UK', href: '/best/moth-killers' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

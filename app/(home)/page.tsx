@@ -516,6 +516,16 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Bird Deterrents UK 2026</h3>
               <p className="text-gray-600">Bird spikes, netting, optical gel, and more — the best pigeon and bird deterrents reviewed.</p>
             </Link>
+            <Link href="/guides/how-to-get-rid-of-moths" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-blue-600 mb-2">Guide</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">How to Get Rid of Moths</h3>
+              <p className="text-gray-600">Clothes moths vs pantry moths, DIY treatments, pheromone traps, professional fumigation, and prevention tips.</p>
+            </Link>
+            <Link href="/best/moth-killers" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Moth Killers UK 2026</h3>
+              <p className="text-gray-600">Hanging killers, pheromone traps, carpet sprays, sachets, and budget options reviewed.</p>
+            </Link>
             <Link href="/guides/pest-control-costs" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-amber-200 transition-all">
               <div className="text-sm font-semibold text-green-600 mb-2">Price Guide</div>
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Pest Control Costs UK 2026</h3>
@@ -602,6 +612,8 @@ export default function Home() {
                 <li><Link href="/best/squirrel-deterrents" className="hover:text-white transition">Best Squirrel Deterrents UK</Link></li>
                 <li><Link href="/guides/pigeon-control" className="hover:text-white transition">Pigeon Control Guide</Link></li>
                 <li><Link href="/best/bird-deterrents" className="hover:text-white transition">Best Bird Deterrents UK</Link></li>
+                <li><Link href="/guides/how-to-get-rid-of-moths" className="hover:text-white transition">How to Get Rid of Moths</Link></li>
+                <li><Link href="/best/moth-killers" className="hover:text-white transition">Best Moth Killers UK</Link></li>
                 <li><Link href="/guides/pest-control-costs" className="hover:text-white transition">Pest Control Costs UK</Link></li>
                 <li><Link href="/guides" className="hover:text-white transition">All Guides &amp; Reviews</Link></li>
               </ul>

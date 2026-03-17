@@ -130,6 +130,10 @@ export default function BestMouseTrapsPage() {
           title: 'Pigeon Control: Complete UK Guide',
           href: '/guides/pigeon-control',
         },
+        {
+          title: 'How to Get Rid of Moths',
+          href: '/guides/how-to-get-rid-of-moths',
+        },
       ]}
       relatedProducts={[
         {
@@ -163,6 +167,10 @@ export default function BestMouseTrapsPage() {
         {
           title: 'Best Bird Deterrents UK 2026',
           href: '/best/bird-deterrents',
+        },
+        {
+          title: 'Best Moth Killers UK',
+          href: '/best/moth-killers',
         },
       ]}
       articleSchema={articleSchema}

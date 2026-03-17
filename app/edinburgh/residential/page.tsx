@@ -729,6 +729,12 @@ export default function ResidentialPage() {
             <Link href="/best/bird-deterrents" className="text-blue-600 hover:underline font-semibold text-sm">
               Best Bird Deterrents UK 2026 →
             </Link>
+            <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline font-semibold text-sm">
+              How to Get Rid of Moths →
+            </Link>
+            <Link href="/best/moth-killers" className="text-blue-600 hover:underline font-semibold text-sm">
+              Best Moth Killers UK →
+            </Link>
           </div>
         </div>
       </section>

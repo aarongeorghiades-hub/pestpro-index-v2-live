@@ -94,6 +94,8 @@ export async function GET() {
     { url: `${baseUrl}/best/squirrel-deterrents`, changefreq: 'weekly', priority: '0.8' },
     { url: `${baseUrl}/guides/pigeon-control`, changefreq: 'weekly', priority: '0.8' },
     { url: `${baseUrl}/best/bird-deterrents`, changefreq: 'weekly', priority: '0.8' },
+    { url: `${baseUrl}/guides/how-to-get-rid-of-moths`, changefreq: 'weekly', priority: '0.8' },
+    { url: `${baseUrl}/best/moth-killers`, changefreq: 'weekly', priority: '0.8' },
     { url: `${baseUrl}/guides`, changefreq: 'weekly', priority: '0.9' },
     { url: `${baseUrl}/professionals`, changefreq: 'monthly', priority: '0.4' },
     { url: `${baseUrl}/products`, changefreq: 'monthly', priority: '0.7' },

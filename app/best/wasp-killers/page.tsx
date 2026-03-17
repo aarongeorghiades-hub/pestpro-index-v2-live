@@ -127,6 +127,10 @@ export default function BestWaspKillersPage() {
           title: 'Pigeon Control: Complete UK Guide',
           href: '/guides/pigeon-control',
         },
+        {
+          title: 'How to Get Rid of Moths',
+          href: '/guides/how-to-get-rid-of-moths',
+        },
       ]}
       relatedProducts={[
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
@@ -137,6 +141,7 @@ export default function BestWaspKillersPage() {
         { title: 'Best Ant Killers UK 2026', href: '/best/ant-killers' },
         { title: 'Best Squirrel Deterrents UK 2026', href: '/best/squirrel-deterrents' },
         { title: 'Best Bird Deterrents UK 2026', href: '/best/bird-deterrents' },
+        { title: 'Best Moth Killers UK', href: '/best/moth-killers' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
