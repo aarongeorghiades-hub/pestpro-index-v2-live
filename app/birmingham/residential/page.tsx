@@ -309,51 +309,7 @@ export default function ResidentialPage() {
       {/* DIY vs PROFESSIONAL SECTION */}
       <section className="relative bg-gradient-to-br from-blue-50 to-white py-16 border-b-2 border-blue-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            {/* LEFT: PDF GUIDE */}
-            <div className="text-left flex flex-col justify-between">
-              <h2 className="text-4xl font-black text-gray-900 mb-6">
-                DIY or Professional? Make the Right Call.
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Our Residential DIY Decision Guide (£2.99) helps you decide by showing:
-              </p>
-
-              {/* 4 Bullets */}
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-600 text-xl mt-1">✓</span>
-                  <p className="text-gray-700">When DIY typically works (and saves you money)</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-600 text-xl mt-1">✓</span>
-                  <p className="text-gray-700">When DIY usually fails (so you don't waste time)</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-600 text-xl mt-1">✓</span>
-                  <p className="text-gray-700">The "stop signals" for common pest types that tell you it's time to call a professional</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-600 text-xl mt-1">✓</span>
-                  <p className="text-gray-700">What actually works (and what wastes money) for each pest type</p>
-                </div>
-              </div>
-
-              {/* CTA */}
-              <p className="text-sm text-gray-500 mb-6">
-                Make an informed decision before you spend £100+ on the wrong approach.
-              </p>
-              <Link 
-                href="https://pestproindex.lemonsqueezy.com/checkout/buy/8d8b4f4a-a913-48b3-bf8d-dfcaf6fcb5d6"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white text-lg font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
-              >
-                <span className="text-2xl">📄</span>
-                <span>Get the Guide - £2.99</span>
-              </Link>
-            </div>
-
+          <div className="max-w-2xl">
             {/* RIGHT: PRODUCTS LINK */}
             <div className="text-left flex flex-col justify-between">
               <h2 className="text-4xl font-black text-gray-900 mb-0">

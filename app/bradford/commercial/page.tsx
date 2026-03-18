@@ -473,69 +473,6 @@ export default function CommercialPage() {
       </section>
       )}
 
-      {/* PDF GUIDES SECTION */}
-      <section className="relative bg-gradient-to-br from-gray-50 to-white py-16 border-b-2 border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">Essential Guides for Commercial Pest Control</h2>
-            <p className="text-lg text-gray-600">Expert resources to help you select the right provider and maintain compliance</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-xl shadow-lg p-8 border-t-4 border-[#1e3a8a]">
-              <div className="mb-6">
-                <h3 className="text-2xl font-black text-gray-900 mb-2">Commercial Provider Selection Guide</h3>
-                <p className="text-sm font-semibold text-[#2563eb] mb-3">For Property Managers</p>
-                <p className="text-3xl font-black text-[#f59e0b] mb-4">£4.99</p>
-              </div>
-              <p className="text-gray-700 mb-6 leading-relaxed">Step-by-step guide to selecting the right commercial pest control provider for multi-unit properties and commercial portfolios.</p>
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-600 text-lg mt-0.5">•</span>
-                  <p className="text-gray-700">Certification requirements to look for</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-600 text-lg mt-0.5">•</span>
-                  <p className="text-gray-700">Contract evaluation frameworks</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-600 text-lg mt-0.5">•</span>
-                  <p className="text-gray-700">RFP templates and checklists</p>
-                </div>
-              </div>
-              <Link href="https://pestproindex.lemonsqueezy.com/checkout/buy/3c02f0c2-baa2-4237-b2ff-e5e70d77fd4b" className="block text-center px-6 py-3 bg-[#1e3a8a] text-white font-bold rounded-lg hover:bg-blue-900 transition-all shadow-md">
-                Get the Guide - £4.99
-              </Link>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg p-8 border-t-4 border-[#f59e0b]">
-              <div className="mb-6">
-                <h3 className="text-2xl font-black text-gray-900 mb-2">Compliance Workbook</h3>
-                <p className="text-sm font-semibold text-[#2563eb] mb-3">For Small Business Owners</p>
-                <p className="text-3xl font-black text-[#f59e0b] mb-4">£7.99</p>
-              </div>
-              <p className="text-gray-700 mb-6 leading-relaxed">Essential compliance requirements for commercial pest control in Bradford & West Yorkshire.</p>
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-600 text-lg mt-0.5">•</span>
-                  <p className="text-gray-700">Regulatory compliance checklist</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-600 text-lg mt-0.5">•</span>
-                  <p className="text-gray-700">Documentation templates</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-600 text-lg mt-0.5">•</span>
-                  <p className="text-gray-700">Audit preparation guide</p>
-                </div>
-              </div>
-              <Link href="https://pestproindex.lemonsqueezy.com/checkout/buy/1b7d0369-1546-49b3-b8c9-88dd4db7e716" className="block text-center px-6 py-3 bg-[#1e3a8a] text-white font-bold rounded-lg hover:bg-blue-900 transition-all shadow-md">
-                Get the Workbook - £7.99
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* FEATURED PROVIDER OF THE WEEK - COMING SOON */}
       <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 py-16 overflow-hidden">

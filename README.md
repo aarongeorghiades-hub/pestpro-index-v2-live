@@ -37,7 +37,6 @@ London's neutral pest control directory - a Next.js application featuring 483 pr
 - 38 products across 10 pest types
 - Dark blue gradient hero matching homepage
 - Overlapping card at -mt-20
-- Links to Lemon Squeezy for £1.99 DIY guide
 
 ## Database Structure
 

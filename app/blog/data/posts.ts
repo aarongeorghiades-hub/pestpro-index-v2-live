@@ -2241,8 +2241,6 @@ export const posts: BlogPost[] = [
 
     <p>However, for established infestations — particularly rats, bed bugs, cockroaches, or textile moths — professional treatment is almost always necessary. These pests breed quickly, hide in inaccessible areas, and require targeted treatment methods that aren't available to consumers. Attempting DIY treatment for serious infestations often wastes money and allows the problem to escalate.</p>
 
-    <p>Our <a href="https://pestproindex.lemonsqueezy.com/checkout/buy/8d8b4f4a-a913-48b3-bf8d-dfcaf6fcb5d6">Residential DIY Decision Guide (£2.99)</a> helps you assess whether your specific situation warrants professional help or can be managed with shop-bought products.</p>
-
     <h2>Find a Provider in Bradford &amp; West Yorkshire</h2>
 
     <p>PestPro Index lists 113+ verified pest control providers across Bradford and West Yorkshire. Every listing includes verified contact details, service coverage, pest specialisms, and — where available — BPCA/NPTA accreditation status, Google ratings, and detailed service filters. No lead fees, no commissions, no sponsored rankings.</p>

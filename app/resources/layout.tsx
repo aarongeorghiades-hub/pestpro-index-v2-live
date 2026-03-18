@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Pest Control Resources & Guides',
-  description: 'Download professional pest control guides including our Commercial Provider Selection Guide and Compliance Workbook.',
+  description: 'Curated pest control publications, regulatory guidance, compliance resources, and reference material for professionals and commercial businesses across the UK.',
   alternates: {
     canonical: 'https://pestproindex.com/resources',
   },
