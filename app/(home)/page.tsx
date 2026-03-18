@@ -625,6 +625,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FIND PEST SPECIALISTS */}
+      <section className="bg-gradient-to-br from-blue-50 to-white py-16 border-t-2 border-blue-200">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">Find Pest Specialists by City</h2>
+            <p className="text-lg text-gray-600">Browse providers who specialise in specific pests near you</p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+            <Link href="/pest-control/london/rats" className="px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800 text-center">🐀 Rat Control London</Link>
+            <Link href="/pest-control/london/bed-bugs" className="px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800 text-center">🛏️ Bed Bugs London</Link>
+            <Link href="/pest-control/birmingham/mice" className="px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800 text-center">🐁 Mouse Control Birmingham</Link>
+            <Link href="/pest-control/manchester/wasps" className="px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800 text-center">🐝 Wasp Removal Manchester</Link>
+            <Link href="/pest-control/glasgow/rats" className="px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800 text-center">🐀 Rat Control Glasgow</Link>
+            <Link href="/pest-control/leeds/cockroaches" className="px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800 text-center">🪳 Cockroach Control Leeds</Link>
+            <Link href="/pest-control/bristol/fleas" className="px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800 text-center">🦟 Flea Treatment Bristol</Link>
+            <Link href="/pest-control/edinburgh/pigeons" className="px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800 text-center">🐦 Pigeon Control Edinburgh</Link>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-16">
         <div className="max-w-7xl mx-auto px-4">

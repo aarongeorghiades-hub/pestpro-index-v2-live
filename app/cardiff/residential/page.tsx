@@ -625,6 +625,28 @@ export default function ResidentialPage() {
         </div>
       </section>
 
+      {/* FIND SPECIALISTS BY PEST TYPE */}
+      <section className="bg-gradient-to-br from-blue-50 to-white border-t-2 border-blue-200 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-black text-gray-900 mb-2">Find Specialists by Pest Type</h2>
+            <p className="text-gray-600">Browse Cardiff providers who specialise in specific pests</p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+            <Link href="/pest-control/cardiff/rats" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🐀 Rats</Link>
+            <Link href="/pest-control/cardiff/mice" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🐁 Mice</Link>
+            <Link href="/pest-control/cardiff/wasps" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🐝 Wasps</Link>
+            <Link href="/pest-control/cardiff/bed-bugs" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🛏️ Bed Bugs</Link>
+            <Link href="/pest-control/cardiff/cockroaches" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🪳 Cockroaches</Link>
+            <Link href="/pest-control/cardiff/ants" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🐜 Ants</Link>
+            <Link href="/pest-control/cardiff/fleas" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🦟 Fleas</Link>
+            <Link href="/pest-control/cardiff/foxes" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🦊 Foxes</Link>
+            <Link href="/pest-control/cardiff/moths" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🦋 Moths</Link>
+            <Link href="/pest-control/cardiff/pigeons" className="flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition-all font-semibold text-sm text-gray-800">🐦 Pigeons</Link>
+          </div>
+        </div>
+      </section>
+
       {/* DIY GUIDES */}
       <section className="bg-white border-t border-gray-200 py-8">
         <div className="max-w-7xl mx-auto px-4 text-center">

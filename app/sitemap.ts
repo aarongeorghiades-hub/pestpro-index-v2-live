@@ -19,6 +19,7 @@ import { getAllBoroughs as getAllCoventryBoroughs } from './pest-control/coventr
 import { getAllBoroughs as getAllBelfastBoroughs } from './pest-control/belfast/belfast-boroughs';
 import { posts } from './blog/data/posts';
 import { pestGuides } from '@/data/pest-guides';
+import { LOCATIONS, PESTS } from './pest-control/pest-city-config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://pestproindex.com';
@@ -184,6 +185,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }));
+
+  // Pest-specific city pages (180 = 18 locations × 10 pests)
+  const pestCityUrls = LOCATIONS.flatMap((location) =>
+    PESTS.map((pest) => ({
+      url: `${baseUrl}/pest-control/${location.slug}/${pest.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }))
+  );
 
   // Blog posts
   const blogPostUrls = posts.map((post) => ({
@@ -783,5 +794,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...hampshireTownUrls,
     ...coventryBoroughUrls,
     ...belfastBoroughUrls,
+    ...pestCityUrls,
   ];
 }
