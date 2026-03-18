@@ -163,6 +163,7 @@ export default function OfficePestControlPage() {
         { title: 'Restaurant Pest Control UK', href: '/guides/restaurant-pest-control' },
         { title: 'Warehouse Pest Management', href: '/guides/warehouse-pest-management' },
         { title: 'Hotel Pest Control', href: '/guides/hotel-pest-control' },
+        { title: 'Landlord Pest Control', href: '/guides/landlord-pest-control' },
       ]}
       relatedProducts={[
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },

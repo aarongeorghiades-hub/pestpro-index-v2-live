@@ -429,6 +429,13 @@ export default function Navigation() {
                   Office Pest Control
                 </Link>
                 <Link
+                  href="/guides/landlord-pest-control"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Landlord Pest Control
+                </Link>
+                <Link
                   href="/best/commercial-insect-monitors"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -798,6 +805,13 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Office Pest Control
+                </Link>
+                <Link
+                  href="/guides/landlord-pest-control"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Landlord Pest Control
                 </Link>
                 <Link
                   href="/best/commercial-insect-monitors"

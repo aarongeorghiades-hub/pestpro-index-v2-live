@@ -178,6 +178,7 @@ export default function RestaurantPestControlPage() {
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
         { title: 'Warehouse Pest Management', href: '/guides/warehouse-pest-management' },
         { title: 'Office Pest Control', href: '/guides/office-pest-control' },
+        { title: 'Landlord Pest Control', href: '/guides/landlord-pest-control' },
       ]}
       relatedProducts={[
         { title: 'Best Commercial Fly Killers UK 2026', href: '/best/commercial-fly-killers' },

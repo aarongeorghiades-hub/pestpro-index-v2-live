@@ -104,8 +104,8 @@ const sectorGuides = [
     title: 'Landlord Pest Control',
     description:
       'Tenant responsibilities, HMO compliance, legal obligations, and cost management.',
-    href: null,
-    live: false,
+    href: '/guides/landlord-pest-control',
+    live: true,
   },
 ];
 

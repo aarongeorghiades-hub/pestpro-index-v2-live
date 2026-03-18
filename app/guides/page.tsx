@@ -118,6 +118,13 @@ const guides = [
     badge: 'Commercial',
   },
   {
+    emoji: '🏠',
+    title: 'Landlord Pest Control',
+    description: 'Legal duties, tenant vs landlord responsibilities, HMO compliance, prevention strategies, and Awaab\'s Law implications.',
+    href: '/guides/landlord-pest-control',
+    badge: 'Commercial',
+  },
+  {
     emoji: '💰',
     title: 'Pest Control Costs UK 2026',
     description: 'Complete pricing breakdown for every common pest — what you\'ll pay and how to get the best value.',
