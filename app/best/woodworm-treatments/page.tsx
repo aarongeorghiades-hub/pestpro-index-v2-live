@@ -104,8 +104,10 @@ export default function BestWoodwormTreatmentsPage() {
         { title: 'How to Get Rid of Foxes: Complete UK Guide', href: '/guides/how-to-get-rid-of-foxes' },
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
         { title: 'Landlord Pest Control Responsibilities', href: '/guides/landlord-pest-control' },
+        { title: 'Carpet Beetle Control: Complete UK Guide', href: '/guides/carpet-beetle-control' },
       ]}
       relatedProducts={[
+        { title: 'Best Carpet Beetle Treatments UK 2026', href: '/best/carpet-beetle-treatments' },
         { title: 'Best Silverfish Treatments UK 2026', href: '/best/silverfish-treatments' },
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },

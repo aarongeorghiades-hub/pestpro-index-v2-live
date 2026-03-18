@@ -90,6 +90,12 @@ const guides = [
     href: '/guides/woodworm-treatment',
   },
   {
+    emoji: '🪲',
+    title: 'Carpet Beetle Control',
+    description: 'Identification, larvae damage, DIY treatments, professional solutions, and prevention strategies for UK homes.',
+    href: '/guides/carpet-beetle-control',
+  },
+  {
     emoji: '🐦',
     title: 'Pigeon Control',
     description: 'Bird deterrent methods, proofing, netting, spikes, legal considerations, and when to call a professional.',
@@ -216,6 +222,12 @@ const reviews = [
     title: 'Best Woodworm Treatments UK 2026',
     description: 'Permethrin fluids, boron gels, spray treatments, injection kits, and moisture meters reviewed.',
     href: '/best/woodworm-treatments',
+  },
+  {
+    emoji: '🪲',
+    title: 'Best Carpet Beetle Treatments UK 2026',
+    description: 'Insecticidal sprays, pheromone traps, killer powders, treatment kits, and cedar repellents reviewed.',
+    href: '/best/carpet-beetle-treatments',
   },
   {
     emoji: '🐦',

@@ -202,6 +202,7 @@ export default function LandlordPestControlPage() {
         { title: 'Hotel Pest Control', href: '/guides/hotel-pest-control' },
         { title: 'Office Pest Control', href: '/guides/office-pest-control' },
         { title: 'Woodworm Treatment: Complete UK Guide', href: '/guides/woodworm-treatment' },
+        { title: 'Carpet Beetle Control: Complete UK Guide', href: '/guides/carpet-beetle-control' },
       ]}
       relatedProducts={[
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
@@ -217,6 +218,7 @@ export default function LandlordPestControlPage() {
         { title: 'Best Commercial Insect Monitors', href: '/best/commercial-insect-monitors' },
         { title: 'Best Commercial Bird Proofing UK 2026', href: '/best/commercial-bird-proofing' },
         { title: 'Best Woodworm Treatments UK 2026', href: '/best/woodworm-treatments' },
+        { title: 'Best Carpet Beetle Treatments UK 2026', href: '/best/carpet-beetle-treatments' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
@@ -654,7 +656,7 @@ export default function LandlordPestControlPage() {
         <li><strong>Silverfish</strong> thrive in damp bathrooms, kitchens, and behind wallpaper where condensation forms. They feed on starch, including wallpaper paste, book bindings, and damp cardboard.</li>
         <li><strong>German cockroaches</strong> (<em>Blattella germanica</em>) are attracted to warm, humid environments and are commonly found in damp kitchens. Condensation behind kitchen units creates ideal harbourage conditions. See our <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">cockroach control guide</Link>.</li>
         <li><strong>Woodworm</strong> (furniture beetle larvae) are attracted to damp timber. In rental properties with rising damp or penetrating damp, the moisture content of structural timbers can reach levels that attract woodworm, causing <strong>serious structural damage</strong>.</li>
-        <li><strong>Carpet beetles</strong> and <strong>carpet moths</strong> thrive in humid conditions. Damp carpets in furnished lets are particularly vulnerable. See our <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline font-medium">moth control guide</Link>.</li>
+        <li><strong>Carpet beetles</strong> and <strong>carpet moths</strong> thrive in humid conditions. Damp carpets in furnished lets are particularly vulnerable. See our <Link href="/guides/carpet-beetle-control" className="text-blue-600 hover:underline font-medium">carpet beetle control guide</Link> and <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline font-medium">moth control guide</Link>.</li>
       </ul>
 
       <p>

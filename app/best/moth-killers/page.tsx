@@ -107,8 +107,10 @@ export default function BestMothKillersPage() {
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
         { title: 'Restaurant Pest Control: UK Compliance Guide', href: '/guides/restaurant-pest-control' },
         { title: 'Woodworm Treatment: Complete UK Guide', href: '/guides/woodworm-treatment' },
+        { title: 'Carpet Beetle Control: Complete UK Guide', href: '/guides/carpet-beetle-control' },
       ]}
       relatedProducts={[
+        { title: 'Best Carpet Beetle Treatments UK 2026', href: '/best/carpet-beetle-treatments' },
         { title: 'Best Woodworm Treatments UK 2026', href: '/best/woodworm-treatments' },
         { title: 'Best Silverfish Treatments UK 2026', href: '/best/silverfish-treatments' },
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },

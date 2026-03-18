@@ -158,9 +158,11 @@ export default function HowToGetRidOfAntsPage() {
         { title: 'Pigeon Control: Complete UK Guide', href: '/guides/pigeon-control' },
         { title: 'How to Get Rid of Moths', href: '/guides/how-to-get-rid-of-moths' },
         { title: 'Restaurant Pest Control: UK Compliance Guide', href: '/guides/restaurant-pest-control' },
+        { title: 'Carpet Beetle Control: Complete UK Guide', href: '/guides/carpet-beetle-control' },
       ]}
       relatedProducts={[
         { title: 'Best Ant Killers UK 2026', href: '/best/ant-killers' },
+        { title: 'Best Carpet Beetle Treatments UK 2026', href: '/best/carpet-beetle-treatments' },
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },
         { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' },

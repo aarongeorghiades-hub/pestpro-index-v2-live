@@ -163,9 +163,11 @@ export default function HowToGetRidOfSilverfishPage() {
         { title: 'Landlord Pest Control: Complete UK Guide', href: '/guides/landlord-pest-control' },
         { title: 'Commercial Pest Control: Complete UK Guide', href: '/guides/commercial-pest-control' },
         { title: 'Woodworm Treatment: Complete UK Guide', href: '/guides/woodworm-treatment' },
+        { title: 'Carpet Beetle Control: Complete UK Guide', href: '/guides/carpet-beetle-control' },
       ]}
       relatedProducts={[
         { title: 'Best Silverfish Treatments UK 2026', href: '/best/silverfish-treatments' },
+        { title: 'Best Carpet Beetle Treatments UK 2026', href: '/best/carpet-beetle-treatments' },
         { title: 'Best Woodworm Treatments UK 2026', href: '/best/woodworm-treatments' },
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },
@@ -479,7 +481,7 @@ export default function HowToGetRidOfSilverfishPage() {
 
       <h3>Silverfish vs Carpet Beetles</h3>
       <p>
-        Carpet beetles (<em>Anthrenus</em> and <em>Attagenus</em> species) are <strong>small (2&ndash;4 mm), round or oval</strong>, and often have a <strong>mottled brown, black, and white pattern</strong>. Adult carpet beetles are relatively harmless, but their <strong>larvae</strong> &mdash; small, hairy, caterpillar-like creatures known as &ldquo;woolly bears&rdquo; &mdash; cause significant damage to carpets, clothing, and fabrics made from natural fibres (wool, silk, cotton). Unlike silverfish, carpet beetles are not linked to humidity &mdash; they are attracted to natural fibres and can infest even dry homes. If you are finding fabric damage but no silverfish, carpet beetles may be the culprit. For more information on insects that damage clothing, see our <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline font-medium">how to get rid of moths</Link> guide, which covers both moth and carpet beetle damage to textiles.
+        Carpet beetles (<em>Anthrenus</em> and <em>Attagenus</em> species) are <strong>small (2&ndash;4 mm), round or oval</strong>, and often have a <strong>mottled brown, black, and white pattern</strong>. Adult carpet beetles are relatively harmless, but their <strong>larvae</strong> &mdash; small, hairy, caterpillar-like creatures known as &ldquo;woolly bears&rdquo; &mdash; cause significant damage to carpets, clothing, and fabrics made from natural fibres (wool, silk, cotton). Unlike silverfish, carpet beetles are not linked to humidity &mdash; they are attracted to natural fibres and can infest even dry homes. If you are finding fabric damage but no silverfish, carpet beetles may be the culprit. See our dedicated <Link href="/guides/carpet-beetle-control" className="text-blue-600 hover:underline font-medium">carpet beetle control guide</Link> for full identification, treatment, and prevention advice.
       </p>
 
       {/* ------------------------------------------------------------------ */}

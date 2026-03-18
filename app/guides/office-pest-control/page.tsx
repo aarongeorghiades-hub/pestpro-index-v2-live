@@ -307,7 +307,7 @@ export default function OfficePestControlPage() {
 
       <h3>Carpet Beetles and Textile Pests</h3>
       <p>
-        <strong>Carpet beetles</strong> (<em>Anthrenus</em> species) and their larvae (commonly known as &ldquo;woolly bears&rdquo;) feed on natural fibres including wool carpet, upholstered furniture, and fabric partitions. While the adult beetles are harmless, the larvae can cause significant damage to office furnishings. They are commonly found under desks, behind skirting boards, and in areas that are not regularly vacuumed. In offices with extensive wool carpeting, a carpet beetle problem can become costly if not addressed early.
+        <strong>Carpet beetles</strong> (<em>Anthrenus</em> species) and their larvae (commonly known as &ldquo;woolly bears&rdquo;) feed on natural fibres including wool carpet, upholstered furniture, and fabric partitions. While the adult beetles are harmless, the larvae can cause significant damage to office furnishings. They are commonly found under desks, behind skirting boards, and in areas that are not regularly vacuumed. In offices with extensive wool carpeting, a carpet beetle problem can become costly if not addressed early. See our <Link href="/guides/carpet-beetle-control" className="text-blue-600 hover:underline font-medium">carpet beetle control guide</Link> for detailed identification and treatment advice.
       </p>
 
       <h3>Pigeons and Birds</h3>

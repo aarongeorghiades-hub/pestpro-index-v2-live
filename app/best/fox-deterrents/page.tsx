@@ -105,8 +105,10 @@ export default function BestFoxDeterrentsPage() {
         { title: 'How to Get Rid of Moths', href: '/guides/how-to-get-rid-of-moths' },
         { title: 'How to Get Rid of Silverfish: Complete UK Guide', href: '/guides/how-to-get-rid-of-silverfish' },
         { title: 'Woodworm Treatment: Complete UK Guide', href: '/guides/woodworm-treatment' },
+        { title: 'Carpet Beetle Control: Complete UK Guide', href: '/guides/carpet-beetle-control' },
       ]}
       relatedProducts={[
+        { title: 'Best Carpet Beetle Treatments UK 2026', href: '/best/carpet-beetle-treatments' },
         { title: 'Best Woodworm Treatments UK 2026', href: '/best/woodworm-treatments' },
         { title: 'Best Silverfish Treatments UK 2026', href: '/best/silverfish-treatments' },
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },

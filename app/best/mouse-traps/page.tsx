@@ -138,6 +138,10 @@ export default function BestMouseTrapsPage() {
           title: 'Restaurant Pest Control: UK Compliance Guide',
           href: '/guides/restaurant-pest-control',
         },
+        {
+          title: 'Carpet Beetle Control: Complete UK Guide',
+          href: '/guides/carpet-beetle-control',
+        },
       ]}
       relatedProducts={[
         {
@@ -179,6 +183,10 @@ export default function BestMouseTrapsPage() {
         {
           title: 'Best Commercial Fly Killers UK 2026',
           href: '/best/commercial-fly-killers',
+        },
+        {
+          title: 'Best Carpet Beetle Treatments UK 2026',
+          href: '/best/carpet-beetle-treatments',
         },
       ]}
       articleSchema={articleSchema}

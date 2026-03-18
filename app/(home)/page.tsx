@@ -536,6 +536,16 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Woodworm Treatments UK 2026</h3>
               <p className="text-gray-600">Permethrin fluids, boron gels, spray treatments, injection kits, and moisture meters reviewed.</p>
             </Link>
+            <Link href="/guides/carpet-beetle-control" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-blue-600 mb-2">Guide</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Carpet Beetle Control</h3>
+              <p className="text-gray-600">Identification, larvae damage, DIY treatments, professional solutions, and prevention strategies for UK homes.</p>
+            </Link>
+            <Link href="/best/carpet-beetle-treatments" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Carpet Beetle Treatments UK 2026</h3>
+              <p className="text-gray-600">Insecticidal sprays, pheromone traps, killer powders, treatment kits, and cedar repellents reviewed.</p>
+            </Link>
             <Link href="/guides/pigeon-control" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
               <div className="text-sm font-semibold text-blue-600 mb-2">Guide</div>
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Pigeon Control</h3>
@@ -696,6 +706,8 @@ export default function Home() {
                 <li><Link href="/best/silverfish-treatments" className="hover:text-white transition">Best Silverfish Treatments UK</Link></li>
                 <li><Link href="/guides/woodworm-treatment" className="hover:text-white transition">Woodworm Treatment Guide</Link></li>
                 <li><Link href="/best/woodworm-treatments" className="hover:text-white transition">Best Woodworm Treatments UK</Link></li>
+                <li><Link href="/guides/carpet-beetle-control" className="hover:text-white transition">Carpet Beetle Control Guide</Link></li>
+                <li><Link href="/best/carpet-beetle-treatments" className="hover:text-white transition">Best Carpet Beetle Treatments UK</Link></li>
                 <li><Link href="/guides/pigeon-control" className="hover:text-white transition">Pigeon Control Guide</Link></li>
                 <li><Link href="/best/bird-deterrents" className="hover:text-white transition">Best Bird Deterrents UK</Link></li>
                 <li><Link href="/guides/how-to-get-rid-of-moths" className="hover:text-white transition">How to Get Rid of Moths</Link></li>
