@@ -156,12 +156,14 @@ export default function PigeonControlPage() {
         { title: 'How to Get Rid of Fleas: Complete UK Guide', href: '/guides/how-to-get-rid-of-fleas' },
         { title: 'How to Get Rid of Ants: Complete UK Guide', href: '/guides/how-to-get-rid-of-ants' },
         { title: 'How to Get Rid of Squirrels: Complete UK Guide', href: '/guides/how-to-get-rid-of-squirrels' },
+        { title: 'How to Get Rid of Foxes: Complete UK Guide', href: '/guides/how-to-get-rid-of-foxes' },
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
         { title: 'How to Get Rid of Moths', href: '/guides/how-to-get-rid-of-moths' },
         { title: 'Restaurant Pest Control: UK Compliance Guide', href: '/guides/restaurant-pest-control' },
       ]}
       relatedProducts={[
         { title: 'Best Bird Deterrents UK 2026', href: '/best/bird-deterrents' },
+        { title: 'Best Fox Deterrents UK 2026', href: '/best/fox-deterrents' },
         { title: 'Best Commercial Bird Proofing UK 2026', href: '/best/commercial-bird-proofing' },
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },

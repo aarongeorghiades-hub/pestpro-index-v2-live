@@ -72,6 +72,12 @@ const guides = [
     href: '/guides/how-to-get-rid-of-squirrels',
   },
   {
+    emoji: '🦊',
+    title: 'How to Get Rid of Foxes',
+    description: 'Urban fox behaviour, garden proofing, humane deterrents, UK law, and when to call a professional.',
+    href: '/guides/how-to-get-rid-of-foxes',
+  },
+  {
     emoji: '🐦',
     title: 'Pigeon Control',
     description: 'Bird deterrent methods, proofing, netting, spikes, legal considerations, and when to call a professional.',
@@ -180,6 +186,12 @@ const reviews = [
     title: 'Best Squirrel Deterrents UK 2026',
     description: 'Squirrel-proof bird feeders, repellent sprays, baffles, and humane traps reviewed.',
     href: '/best/squirrel-deterrents',
+  },
+  {
+    emoji: '🦊',
+    title: 'Best Fox Deterrents UK 2026',
+    description: 'Ultrasonic repellers, scent deterrents, motion-activated sprinklers, and garden fencing reviewed.',
+    href: '/best/fox-deterrents',
   },
   {
     emoji: '🐦',

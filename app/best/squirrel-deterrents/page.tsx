@@ -95,6 +95,7 @@ export default function BestSquirrelDeterrentsPage() {
       tocItems={tocItems}
       relatedGuides={[
         { title: 'How to Get Rid of Squirrels: Complete UK Guide', href: '/guides/how-to-get-rid-of-squirrels' },
+        { title: 'How to Get Rid of Foxes: Complete UK Guide', href: '/guides/how-to-get-rid-of-foxes' },
         { title: 'How to Get Rid of Rats: Complete UK Guide', href: '/guides/how-to-get-rid-of-rats' },
         { title: 'How to Get Rid of Mice: Complete UK Guide', href: '/guides/how-to-get-rid-of-mice' },
         { title: 'How to Get Rid of Cockroaches: Complete UK Guide', href: '/guides/how-to-get-rid-of-cockroaches' },
@@ -111,6 +112,7 @@ export default function BestSquirrelDeterrentsPage() {
         { title: 'Best Flea Treatments UK 2026', href: '/best/flea-treatments' },
         { title: 'Best Ant Killers UK 2026', href: '/best/ant-killers' },
         { title: 'Best Bed Bug Treatments UK 2026', href: '/best/bed-bug-treatments' },
+        { title: 'Best Fox Deterrents UK 2026', href: '/best/fox-deterrents' },
         { title: 'Best Bird Deterrents UK 2026', href: '/best/bird-deterrents' },
         { title: 'Best Moth Killers UK', href: '/best/moth-killers' },
         { title: 'Best Commercial Fly Killers UK 2026', href: '/best/commercial-fly-killers' },

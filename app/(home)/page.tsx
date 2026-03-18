@@ -506,6 +506,16 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Squirrel Deterrents UK 2026</h3>
               <p className="text-gray-600">Squirrel-proof bird feeders, repellent sprays, baffles, and humane traps reviewed.</p>
             </Link>
+            <Link href="/guides/how-to-get-rid-of-foxes" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-blue-600 mb-2">Guide</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">How to Get Rid of Foxes</h3>
+              <p className="text-gray-600">Urban fox behaviour, garden proofing, humane deterrents, UK law, and when to call a professional.</p>
+            </Link>
+            <Link href="/best/fox-deterrents" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Fox Deterrents UK 2026</h3>
+              <p className="text-gray-600">Ultrasonic repellers, scent deterrents, motion-activated sprinklers, and garden fencing reviewed.</p>
+            </Link>
             <Link href="/guides/pigeon-control" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
               <div className="text-sm font-semibold text-blue-600 mb-2">Guide</div>
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Pigeon Control</h3>
@@ -660,6 +670,8 @@ export default function Home() {
                 <li><Link href="/best/ant-killers" className="hover:text-white transition">Best Ant Killers UK</Link></li>
                 <li><Link href="/guides/how-to-get-rid-of-squirrels" className="hover:text-white transition">How to Get Rid of Squirrels</Link></li>
                 <li><Link href="/best/squirrel-deterrents" className="hover:text-white transition">Best Squirrel Deterrents UK</Link></li>
+                <li><Link href="/guides/how-to-get-rid-of-foxes" className="hover:text-white transition">How to Get Rid of Foxes</Link></li>
+                <li><Link href="/best/fox-deterrents" className="hover:text-white transition">Best Fox Deterrents UK</Link></li>
                 <li><Link href="/guides/pigeon-control" className="hover:text-white transition">Pigeon Control Guide</Link></li>
                 <li><Link href="/best/bird-deterrents" className="hover:text-white transition">Best Bird Deterrents UK</Link></li>
                 <li><Link href="/guides/how-to-get-rid-of-moths" className="hover:text-white transition">How to Get Rid of Moths</Link></li>

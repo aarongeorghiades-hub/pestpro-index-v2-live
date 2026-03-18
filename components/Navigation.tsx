@@ -352,6 +352,20 @@ export default function Navigation() {
                   Best Squirrel Deterrents
                 </Link>
                 <Link
+                  href="/guides/how-to-get-rid-of-foxes"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Fox Control Guide
+                </Link>
+                <Link
+                  href="/best/fox-deterrents"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Fox Deterrents
+                </Link>
+                <Link
                   href="/guides/pigeon-control"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -735,6 +749,20 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Best Squirrel Deterrents
+                </Link>
+                <Link
+                  href="/guides/how-to-get-rid-of-foxes"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Fox Control Guide
+                </Link>
+                <Link
+                  href="/best/fox-deterrents"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Fox Deterrents
                 </Link>
                 <Link
                   href="/guides/pigeon-control"
