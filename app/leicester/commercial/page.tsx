@@ -811,6 +811,12 @@ export default function CommercialPage() {
               <Link href="/guides/warehouse-pest-management" className="text-blue-600 hover:underline font-semibold text-sm">
                 Warehouse Pest Management Guide →
               </Link>
+              <Link href="/guides/hotel-pest-control" className="text-blue-600 hover:underline font-semibold text-sm">
+                Hotel Pest Control Guide →
+              </Link>
+              <Link href="/best/commercial-insect-monitors" className="text-blue-600 hover:underline font-semibold text-sm">
+                Insect Monitor Reviews →
+              </Link>
             </div>
           </div>
         </div>

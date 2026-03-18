@@ -88,8 +88,8 @@ const sectorGuides = [
     title: 'Hotel Pest Control',
     description:
       'Bed bug management, guest complaint handling, reputation protection, and ongoing monitoring.',
-    href: null,
-    live: false,
+    href: '/guides/hotel-pest-control',
+    live: true,
   },
   {
     emoji: '\u{1F3ED}',
@@ -138,9 +138,9 @@ const productReviews = [
     emoji: '\u{1F50D}',
     title: 'Best Commercial Insect Monitors',
     description:
-      'Glue boards, pheromone traps, and professional monitoring kits reviewed.',
-    href: null,
-    live: false,
+      'Bed bug interceptors, glue traps, and insect monitoring devices for hotels and commercial premises reviewed.',
+    href: '/best/commercial-insect-monitors',
+    live: true,
   },
 ];
 

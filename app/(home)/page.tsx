@@ -551,6 +551,16 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Commercial Bait Stations UK 2026</h3>
               <p className="text-gray-600">Tamper-resistant lockable bait stations for warehouses, restaurants, and commercial premises reviewed.</p>
             </Link>
+            <Link href="/guides/hotel-pest-control" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-purple-600 mb-2">Commercial</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Hotel Pest Control</h3>
+              <p className="text-gray-600">Bed bug management, guest complaint handling, reputation protection, and ongoing monitoring for hotels and B&Bs.</p>
+            </Link>
+            <Link href="/best/commercial-insect-monitors" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Commercial Insect Monitors UK 2026</h3>
+              <p className="text-gray-600">Bed bug interceptors, glue traps, and insect monitoring devices for hotels and commercial premises reviewed.</p>
+            </Link>
             <Link href="/guides/pest-control-costs" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-amber-200 transition-all">
               <div className="text-sm font-semibold text-green-600 mb-2">Price Guide</div>
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Pest Control Costs UK 2026</h3>
@@ -644,6 +654,8 @@ export default function Home() {
                 <li><Link href="/best/commercial-fly-killers" className="hover:text-white transition">Best Commercial Fly Killers</Link></li>
                 <li><Link href="/guides/warehouse-pest-management" className="hover:text-white transition">Warehouse Pest Management</Link></li>
                 <li><Link href="/best/commercial-rodent-bait-stations" className="hover:text-white transition">Best Commercial Bait Stations</Link></li>
+                <li><Link href="/guides/hotel-pest-control" className="hover:text-white transition">Hotel Pest Control</Link></li>
+                <li><Link href="/best/commercial-insect-monitors" className="hover:text-white transition">Best Commercial Insect Monitors</Link></li>
                 <li><Link href="/guides/pest-control-costs" className="hover:text-white transition">Pest Control Costs UK</Link></li>
                 <li><Link href="/guides" className="hover:text-white transition">All Guides &amp; Reviews</Link></li>
               </ul>

@@ -104,6 +104,13 @@ const guides = [
     href: '/guides/restaurant-pest-control',
   },
   {
+    emoji: '🏨',
+    title: 'Hotel Pest Control',
+    description: 'Bed bug management, guest complaint handling, reputation protection, and ongoing monitoring for hotels and B&Bs.',
+    href: '/guides/hotel-pest-control',
+    badge: 'Commercial',
+  },
+  {
     emoji: '💰',
     title: 'Pest Control Costs UK 2026',
     description: 'Complete pricing breakdown for every common pest — what you\'ll pay and how to get the best value.',
@@ -183,6 +190,12 @@ const reviews = [
     title: 'Best Commercial Rodent Bait Stations UK 2026',
     description: 'Tamper-resistant lockable bait stations for warehouses, restaurants, and commercial premises reviewed.',
     href: '/best/commercial-rodent-bait-stations',
+  },
+  {
+    emoji: '🔍',
+    title: 'Best Commercial Insect Monitors UK 2026',
+    description: 'Bed bug interceptors, glue traps, and insect monitoring devices for hotels and commercial premises reviewed.',
+    href: '/best/commercial-insect-monitors',
   },
 ];
 
