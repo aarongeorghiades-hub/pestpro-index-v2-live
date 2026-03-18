@@ -162,6 +162,7 @@ export default function PigeonControlPage() {
       ]}
       relatedProducts={[
         { title: 'Best Bird Deterrents UK 2026', href: '/best/bird-deterrents' },
+        { title: 'Best Commercial Bird Proofing UK 2026', href: '/best/commercial-bird-proofing' },
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },
         { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' },

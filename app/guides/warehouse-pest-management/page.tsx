@@ -184,6 +184,7 @@ export default function WarehousePestManagementPage() {
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },
         { title: 'Best Bird Deterrents UK 2026', href: '/best/bird-deterrents' },
         { title: 'Best Moth Killers UK', href: '/best/moth-killers' },
+        { title: 'Best Commercial Bird Proofing UK 2026', href: '/best/commercial-bird-proofing' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

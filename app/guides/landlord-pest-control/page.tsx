@@ -210,6 +210,7 @@ export default function LandlordPestControlPage() {
         { title: 'Best Bird Deterrents UK 2026', href: '/best/bird-deterrents' },
         { title: 'Best Commercial Rodent Bait Stations', href: '/best/commercial-rodent-bait-stations' },
         { title: 'Best Commercial Insect Monitors', href: '/best/commercial-insect-monitors' },
+        { title: 'Best Commercial Bird Proofing UK 2026', href: '/best/commercial-bird-proofing' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

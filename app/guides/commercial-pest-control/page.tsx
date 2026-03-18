@@ -131,8 +131,8 @@ const productReviews = [
     title: 'Best Commercial Bird Proofing',
     description:
       'Netting, spike systems, wire systems, and electric track deterrents compared.',
-    href: null,
-    live: false,
+    href: '/best/commercial-bird-proofing',
+    live: true,
   },
   {
     emoji: '\u{1F50D}',

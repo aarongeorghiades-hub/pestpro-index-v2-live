@@ -211,6 +211,12 @@ const reviews = [
     description: 'Bed bug interceptors, glue traps, and insect monitoring devices for hotels and commercial premises reviewed.',
     href: '/best/commercial-insect-monitors',
   },
+  {
+    emoji: '🕊️',
+    title: 'Best Commercial Bird Proofing UK 2026',
+    description: 'Heavy-duty netting, stainless steel spikes, bird wire systems, optical gel, and solar panel mesh for commercial premises reviewed.',
+    href: '/best/commercial-bird-proofing',
+  },
 ];
 
 export default function GuidesIndexPage() {

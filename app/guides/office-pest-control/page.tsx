@@ -175,6 +175,7 @@ export default function OfficePestControlPage() {
         { title: 'Best Commercial Fly Killers UK 2026', href: '/best/commercial-fly-killers' },
         { title: 'Best Commercial Rodent Bait Stations', href: '/best/commercial-rodent-bait-stations' },
         { title: 'Best Commercial Insect Monitors', href: '/best/commercial-insect-monitors' },
+        { title: 'Best Commercial Bird Proofing UK 2026', href: '/best/commercial-bird-proofing' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

@@ -120,6 +120,7 @@ export default function BestCommercialFlyKillersPage() {
         { title: 'Best Bird Deterrents UK 2026', href: '/best/bird-deterrents' },
         { title: 'Best Moth Killers UK', href: '/best/moth-killers' },
         { title: 'Best Commercial Rodent Bait Stations', href: '/best/commercial-rodent-bait-stations' },
+        { title: 'Best Commercial Bird Proofing UK 2026', href: '/best/commercial-bird-proofing' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

@@ -113,6 +113,7 @@ export default function BestBirdDeterrentsPage() {
         { title: 'Best Bed Bug Treatments UK 2026', href: '/best/bed-bug-treatments' },
         { title: 'Best Moth Killers UK', href: '/best/moth-killers' },
         { title: 'Best Commercial Fly Killers UK 2026', href: '/best/commercial-fly-killers' },
+        { title: 'Best Commercial Bird Proofing UK 2026', href: '/best/commercial-bird-proofing' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

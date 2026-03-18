@@ -561,6 +561,11 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Commercial Insect Monitors UK 2026</h3>
               <p className="text-gray-600">Bed bug interceptors, glue traps, and insect monitoring devices for hotels and commercial premises reviewed.</p>
             </Link>
+            <Link href="/best/commercial-bird-proofing" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Commercial Bird Proofing UK 2026</h3>
+              <p className="text-gray-600">Heavy-duty netting, stainless steel spikes, bird wire systems, optical gel, and solar panel mesh for commercial premises.</p>
+            </Link>
             <Link href="/guides/office-pest-control" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
               <div className="text-sm font-semibold text-purple-600 mb-2">Commercial</div>
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Office Pest Control</h3>
@@ -668,6 +673,7 @@ export default function Home() {
                 <li><Link href="/guides/office-pest-control" className="hover:text-white transition">Office Pest Control</Link></li>
                 <li><Link href="/guides/landlord-pest-control" className="hover:text-white transition">Landlord Pest Control</Link></li>
                 <li><Link href="/best/commercial-insect-monitors" className="hover:text-white transition">Best Commercial Insect Monitors</Link></li>
+                <li><Link href="/best/commercial-bird-proofing" className="hover:text-white transition">Best Commercial Bird Proofing</Link></li>
                 <li><Link href="/guides/pest-control-costs" className="hover:text-white transition">Pest Control Costs UK</Link></li>
                 <li><Link href="/guides" className="hover:text-white transition">All Guides &amp; Reviews</Link></li>
               </ul>
