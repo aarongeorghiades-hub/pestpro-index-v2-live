@@ -80,8 +80,8 @@ const sectorGuides = [
     title: 'Office Pest Control',
     description:
       'Common office pests, legal obligations for employers, and cost-effective prevention strategies.',
-    href: null,
-    live: false,
+    href: '/guides/office-pest-control',
+    live: true,
   },
   {
     emoji: '\u{1F3E8}',

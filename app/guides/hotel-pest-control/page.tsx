@@ -178,6 +178,7 @@ export default function HotelPestControlPage() {
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
         { title: 'Restaurant Pest Control UK', href: '/guides/restaurant-pest-control' },
         { title: 'Warehouse Pest Management', href: '/guides/warehouse-pest-management' },
+        { title: 'Office Pest Control', href: '/guides/office-pest-control' },
       ]}
       relatedProducts={[
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },

@@ -177,6 +177,7 @@ export default function RestaurantPestControlPage() {
         { title: 'How to Get Rid of Moths', href: '/guides/how-to-get-rid-of-moths' },
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
         { title: 'Warehouse Pest Management', href: '/guides/warehouse-pest-management' },
+        { title: 'Office Pest Control', href: '/guides/office-pest-control' },
       ]}
       relatedProducts={[
         { title: 'Best Commercial Fly Killers UK 2026', href: '/best/commercial-fly-killers' },

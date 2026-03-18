@@ -111,6 +111,13 @@ const guides = [
     badge: 'Commercial',
   },
   {
+    emoji: '🏢',
+    title: 'Office Pest Control',
+    description: 'Common office pests, legal obligations for employers, prevention strategies, and cost-effective solutions for UK offices.',
+    href: '/guides/office-pest-control',
+    badge: 'Commercial',
+  },
+  {
     emoji: '💰',
     title: 'Pest Control Costs UK 2026',
     description: 'Complete pricing breakdown for every common pest — what you\'ll pay and how to get the best value.',

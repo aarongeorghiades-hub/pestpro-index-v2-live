@@ -174,6 +174,7 @@ export default function WarehousePestManagementPage() {
         { title: 'How to Get Rid of Cockroaches: Complete UK Guide', href: '/guides/how-to-get-rid-of-cockroaches' },
         { title: 'How to Get Rid of Moths', href: '/guides/how-to-get-rid-of-moths' },
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
+        { title: 'Office Pest Control', href: '/guides/office-pest-control' },
       ]}
       relatedProducts={[
         { title: 'Best Commercial Rodent Bait Stations UK 2026', href: '/best/commercial-rodent-bait-stations' },

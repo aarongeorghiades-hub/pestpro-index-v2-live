@@ -422,6 +422,13 @@ export default function Navigation() {
                   Hotel Pest Control
                 </Link>
                 <Link
+                  href="/guides/office-pest-control"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Office Pest Control
+                </Link>
+                <Link
                   href="/best/commercial-insect-monitors"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -784,6 +791,13 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Hotel Pest Control
+                </Link>
+                <Link
+                  href="/guides/office-pest-control"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Office Pest Control
                 </Link>
                 <Link
                   href="/best/commercial-insect-monitors"
