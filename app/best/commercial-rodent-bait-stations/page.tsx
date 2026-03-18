@@ -75,6 +75,9 @@ const breadcrumbSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Bait Stations at a Glance' },
+  { id: 'best-large-kit', title: 'Best Large Infestation Kit — Pest Expert Formula B+ 3kg' },
+  { id: 'best-medium-kit', title: 'Best Medium Premises Kit — Pest Expert Formula B+ 2kg' },
+  { id: 'best-starter-kit', title: 'Best Starter Kit — Pest Expert Formula B+ 1.5kg' },
   { id: 'best-overall', title: 'Best Professional Grade — Roshield Pro Quality' },
   { id: 'best-seller', title: 'Best High-Volume Seller — The Big Cheese' },
   { id: 'best-multi-pack', title: 'Best Multi-Pack — Pest Expert Heavy Duty (x4)' },
@@ -160,6 +163,24 @@ export default function BestCommercialRodentBaitStationsPage() {
         </thead>
         <tbody>
           <tr>
+            <td>Pest Expert Formula B+ 3kg + Bait Stations Kit</td>
+            <td>Best Large Infestation Kit</td>
+            <td>4.5/5</td>
+            <td>~&pound;55&ndash;&pound;75</td>
+          </tr>
+          <tr>
+            <td>Pest Expert Formula B+ 2kg + 2 Bait Station Boxes</td>
+            <td>Best Medium Premises Kit</td>
+            <td>4.5/5</td>
+            <td>~&pound;45&ndash;&pound;65</td>
+          </tr>
+          <tr>
+            <td>Pest Expert Formula B+ Block Kit 1.5kg</td>
+            <td>Best Starter Kit</td>
+            <td>4.0/5</td>
+            <td>~&pound;32&ndash;&pound;48</td>
+          </tr>
+          <tr>
             <td>Roshield Pro Quality Tamper-Resistant Bait Station</td>
             <td>Best Overall</td>
             <td>4.5/5</td>
@@ -198,6 +219,147 @@ export default function BestCommercialRodentBaitStationsPage() {
         </tbody>
       </table>
 
+      {/* Kit Product 1: Pest Expert Formula B+ 3kg + Bait Stations Kit */}
+      <h2 id="best-large-kit">Best Large Infestation Kit &mdash; Pest Expert Formula B+ 3kg + Bait Stations</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Pest Expert Formula B+ 3kg + Bait Stations Kit"
+          rating={4.5}
+          features={[
+            'Highest-value rodent control kit on Amazon UK — 3kg professional brodifacoum blocks',
+            'Includes tamper-resistant bait stations for immediate deployment',
+            'Designed for warehouses and large commercial premises with severe infestations',
+            'Professional-grade active ingredient used by commercial pest controllers',
+            'Enough bait for a full perimeter installation on a medium-to-large site',
+          ]}
+          price="~&pound;55&ndash;&pound;75"
+          asin="B010E2HM5O"
+          bestFor="Best Large Infestation Kit"
+          rank={1}
+        />
+      </div>
+      <p>
+        The Pest Expert Formula B+ 3kg Kit is the <strong>highest-value rodent control kit available on Amazon UK</strong> and our top recommendation for warehouses, distribution centres, food factories, and any large commercial premises dealing with a severe or established rodent infestation. The kit includes <strong>3 kilograms of professional brodifacoum wax bait blocks</strong> &mdash; the same second-generation anticoagulant active ingredient used by professional pest controllers &mdash; plus <strong>tamper-resistant bait stations</strong> ready for immediate deployment around your premises perimeter.
+      </p>
+      <p>
+        Brodifacoum is the most potent anticoagulant rodenticide approved for use in the UK, effective against rats and mice that have developed resistance to first-generation anticoagulants such as warfarin and chlorophacinone. The 3kg supply provides enough bait for a full perimeter installation on a medium-to-large commercial site, or for intensive treatment of a heavily infested area. At approximately &pound;55 to &pound;75, the per-gram cost is significantly lower than purchasing smaller bait packs individually, making this kit the most cost-effective option for commercial operators who need to establish or replenish a comprehensive bait programme. Many facilities managers order this kit monthly as a <strong>recurring replenishment supply</strong> for their perimeter stations.
+      </p>
+      <p>
+        <strong>Pros:</strong>
+      </p>
+      <ul>
+        <li>Largest bait supply available in a single kit &mdash; 3kg of professional brodifacoum blocks</li>
+        <li>Includes tamper-resistant bait stations &mdash; ready to deploy out of the box</li>
+        <li>Lowest per-gram cost for commercial-scale rodent management</li>
+        <li>Effective against warfarin-resistant rodent populations</li>
+        <li>Ideal for recurring monthly replenishment orders</li>
+      </ul>
+      <p>
+        <strong>Cons:</strong>
+      </p>
+      <ul>
+        <li>Must be used strictly in accordance with UK Rodenticide Stewardship Regime requirements</li>
+        <li>Brodifacoum is highly toxic &mdash; all bait must be secured in tamper-resistant stations</li>
+        <li>Not suitable for indoor use without confirmed activity &mdash; external perimeter use only as routine</li>
+      </ul>
+      <p>
+        <strong>Verdict:</strong> The Pest Expert Formula B+ 3kg Kit is the clear choice for large commercial premises that need maximum bait supply at the best per-unit cost. If you manage a warehouse perimeter with 20+ bait stations, this kit provides the most economical way to keep them all charged with professional-grade bait.
+      </p>
+
+      {/* Kit Product 2: Pest Expert Formula B+ 2kg + 2 Bait Station Boxes */}
+      <h2 id="best-medium-kit">Best Medium Premises Kit &mdash; Pest Expert Formula B+ 2kg + 2 Bait Station Boxes</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Pest Expert Formula B+ 2kg + 2 Bait Station Boxes"
+          rating={4.5}
+          features={[
+            'Professional-grade kit with 2kg brodifacoum blocks + 2 commercial bait stations',
+            'Ideal for medium commercial premises, restaurants, and retail units',
+            'Tamper-resistant lockable stations included — compliant and ready to use',
+            'Brodifacoum active ingredient — effective against resistant rodent populations',
+            'Good balance of supply volume and price for mid-sized operations',
+          ]}
+          price="~&pound;45&ndash;&pound;65"
+          asin="B07SXB9WNQ"
+          bestFor="Best Medium Premises Kit"
+          rank={2}
+        />
+      </div>
+      <p>
+        The Pest Expert Formula B+ 2kg Kit strikes an excellent balance between bait volume and price, making it our recommendation for <strong>medium-sized commercial premises</strong> including restaurants, retail units, pubs, care homes, and small warehouses. The kit includes <strong>2 kilograms of professional brodifacoum wax bait blocks</strong> and <strong>two commercial-grade tamper-resistant bait stations</strong>, providing everything needed to establish external baiting points at key risk areas around your premises.
+      </p>
+      <p>
+        For a restaurant or retail unit, two bait stations positioned at the primary rodent ingress points (typically near bins, delivery entrances, and pipe penetrations) form the foundation of a compliant external baiting programme. The 2kg bait supply is sufficient for initial charging plus several replenishment cycles, keeping total costs down compared to purchasing smaller packs repeatedly. The kit is also a practical option for businesses that are <strong>supplementing a professional pest control contract</strong> with additional self-managed stations at secondary risk points that the pest controller does not cover.
+      </p>
+      <p>
+        <strong>Pros:</strong>
+      </p>
+      <ul>
+        <li>Good balance of bait volume and price for medium-sized premises</li>
+        <li>Two tamper-resistant stations included &mdash; ready to deploy immediately</li>
+        <li>Professional brodifacoum active ingredient</li>
+        <li>Ideal for restaurants, retail, pubs, and small commercial units</li>
+        <li>Practical for supplementing professional pest control contracts</li>
+      </ul>
+      <p>
+        <strong>Cons:</strong>
+      </p>
+      <ul>
+        <li>Only two stations included &mdash; larger premises will need additional stations</li>
+        <li>Less cost-effective per gram than the 3kg kit for large-scale operations</li>
+        <li>Must comply with UK Rodenticide Stewardship requirements for all outdoor use</li>
+      </ul>
+      <p>
+        <strong>Verdict:</strong> The 2kg kit is the sweet spot for medium commercial premises that need a professional-grade bait programme without the volume commitment of the 3kg kit. Two stations and 2kg of bait is enough to establish effective coverage at the most critical risk points around a restaurant, shop, or small warehouse.
+      </p>
+
+      {/* Kit Product 3: Pest Expert Formula B+ Block Kit 1.5kg */}
+      <h2 id="best-starter-kit">Best Starter Kit &mdash; Pest Expert Formula B+ Block Kit 1.5kg (75 Blocks + 2 Stations)</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Pest Expert Formula B+ Block Kit 1.5kg (75 Blocks + 2 Stations)"
+          rating={4.0}
+          features={[
+            '75 professional bait blocks (1.5kg total) + 2 tamper-resistant stations',
+            'Good starting kit for small-to-medium commercial premises',
+            'Brodifacoum active ingredient — professional-grade efficacy',
+            'Most affordable entry point for a professional bait station programme',
+            'Individual blocks make it easy to portion bait across multiple stations',
+          ]}
+          price="~&pound;32&ndash;&pound;48"
+          asin="B010E2H7KY"
+          bestFor="Best Starter Kit"
+          rank={3}
+        />
+      </div>
+      <p>
+        The Pest Expert Formula B+ 1.5kg Block Kit is the most accessible entry point for businesses setting up a <strong>professional-grade rodent bait programme</strong> for the first time. The kit includes <strong>75 individual brodifacoum bait blocks</strong> (1.5kg total) and <strong>two tamper-resistant bait stations</strong>, giving small commercial premises &mdash; caf&eacute;s, takeaways, small offices, and light-industrial units &mdash; everything they need to establish compliant external baiting at an affordable price.
+      </p>
+      <p>
+        The individual block format is particularly practical for commercial use. Each 20g block can be threaded onto the bait rod inside the station, and the 75-block supply allows precise portioning across multiple stations. For a small premises with two to four external stations, this kit provides enough bait for the initial charge plus several replenishment cycles over the following months. At approximately &pound;32 to &pound;48, the kit offers genuine <strong>professional-grade chemistry</strong> at a price point that is accessible even for sole traders and micro-businesses that need to demonstrate rodent management compliance to their local authority or auditor.
+      </p>
+      <p>
+        <strong>Pros:</strong>
+      </p>
+      <ul>
+        <li>Most affordable professional bait kit &mdash; accessible for small businesses and sole traders</li>
+        <li>75 individual blocks allow precise portioning across stations</li>
+        <li>Two tamper-resistant stations included for immediate deployment</li>
+        <li>Professional brodifacoum active ingredient at an entry-level price</li>
+        <li>Ideal first purchase for businesses establishing a new bait programme</li>
+      </ul>
+      <p>
+        <strong>Cons:</strong>
+      </p>
+      <ul>
+        <li>Smaller bait supply than the 2kg and 3kg kits &mdash; larger premises will run through this quickly</li>
+        <li>Two stations may not be sufficient for premises with a larger perimeter</li>
+        <li>Higher per-gram cost than the larger kits</li>
+      </ul>
+      <p>
+        <strong>Verdict:</strong> The 1.5kg Block Kit is the ideal starting point for small commercial premises that need to establish a professional bait programme on a budget. The 75 blocks and two stations give you everything for a basic but compliant setup, and you can always scale up to the larger kits as your pest management programme matures.
+      </p>
+
       {/* Product 1: Roshield Pro Quality */}
       <h2 id="best-overall">Best Professional Grade &mdash; Roshield Pro Quality Tamper-Resistant Bait Station</h2>
       <div className="not-prose my-6">
@@ -214,7 +376,7 @@ export default function BestCommercialRodentBaitStationsPage() {
           price="~&pound;10&ndash;&pound;15"
           asin="B0CD7QDM1L"
           bestFor="Best Overall"
-          rank={1}
+          rank={4}
         />
       </div>
       <p>
@@ -260,7 +422,7 @@ export default function BestCommercialRodentBaitStationsPage() {
           price="~&pound;8&ndash;&pound;12"
           asin="B088TH1XCS"
           bestFor="Best High-Volume Seller"
-          rank={2}
+          rank={5}
         />
       </div>
       <p>
@@ -307,7 +469,7 @@ export default function BestCommercialRodentBaitStationsPage() {
           price="~&pound;25&ndash;&pound;35"
           asin="B08XWBB8QF"
           bestFor="Best Multi-Pack"
-          rank={3}
+          rank={6}
         />
       </div>
       <p>
@@ -354,7 +516,7 @@ export default function BestCommercialRodentBaitStationsPage() {
           price="~&pound;12&ndash;&pound;18"
           asin="B0BZ8FRT9M"
           bestFor="Best Budget Professional"
-          rank={4}
+          rank={7}
         />
       </div>
       <p>
@@ -401,7 +563,7 @@ export default function BestCommercialRodentBaitStationsPage() {
           price="~&pound;15&ndash;&pound;25"
           asin="B00XL382T4"
           bestFor="Best for Monitoring"
-          rank={5}
+          rank={8}
         />
       </div>
       <p>
@@ -448,7 +610,7 @@ export default function BestCommercialRodentBaitStationsPage() {
           price="~&pound;20&ndash;&pound;30"
           asin="B07B73Y2LW"
           bestFor="Best Station + Bait Kit"
-          rank={6}
+          rank={9}
         />
       </div>
       <p>
@@ -481,6 +643,13 @@ export default function BestCommercialRodentBaitStationsPage() {
       <p>
         <strong>Verdict:</strong> The Roshield Bait Box + Wax Blocks Kit is the best ready-to-deploy option for businesses that want a compliant perimeter baiting solution without the hassle of sourcing station and bait separately. Ideal for small commercial premises, garden centres, car parks, and any site that needs a quick, professional setup.
       </p>
+
+      {/* Multi-Buy Messaging */}
+      <div className="not-prose">
+        <Callout type="info">
+          <p><strong>Setting up a perimeter bait programme?</strong> A standard warehouse perimeter requires bait stations every 5&ndash;10 metres. A 200-metre perimeter means 20&ndash;40 stations, each requiring regular bait replenishment. Initial setup cost for a medium warehouse: &pound;400&ndash;&pound;800 in stations and bait. Many facilities managers order the 3kg kit (&pound;55&ndash;&pound;75) monthly as a replenishment supply, making this a recurring purchase.</p>
+        </Callout>
+      </div>
 
       {/* Buying Guide */}
       <h2 id="buying-guide">Commercial Bait Station Buying Guide</h2>
@@ -531,6 +700,20 @@ export default function BestCommercialRodentBaitStationsPage() {
       <p>
         You should contact a commercial pest controller if you operate a BRC-certified or audit-subject premises, if you are setting up pest management for a new warehouse or commercial building, if you have received a pest-related non-conformance in a recent audit, or if you have confirmed rodent activity that requires professional treatment rather than monitoring alone.
       </p>
+
+      {/* Professional Contract CTA */}
+      <div className="not-prose my-8 p-8 bg-gradient-to-br from-teal-50 to-emerald-50 border-2 border-teal-300 rounded-2xl">
+        <h3 className="text-2xl font-bold text-teal-900 mb-3">Need a Professional Pest Management Contract?</h3>
+        <p className="text-teal-800 mb-6 leading-relaxed">
+          Bait stations are just one component of a professional rodent management programme. For BRC-audited warehouses and food businesses, you need a documented pest management contract with regular monitoring visits, trend analysis, and corrective action plans. A BPCA or NPTA accredited provider will supply all equipment, manage all documentation, and ensure full compliance. Commercial contracts typically cost &pound;2,000&ndash;&pound;15,000 per year depending on premises size and risk level.
+        </p>
+        <a
+          href="/guides/commercial-pest-control"
+          className="inline-block px-8 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg transition-colors"
+        >
+          Find Commercial Pest Controllers &rarr;
+        </a>
+      </div>
 
       <div className="not-prose">
         <FindProviderCTA

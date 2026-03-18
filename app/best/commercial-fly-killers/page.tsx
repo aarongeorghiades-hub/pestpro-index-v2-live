@@ -490,6 +490,13 @@ export default function BestCommercialFlyKillersPage() {
         <strong>Verdict:</strong> The Eazyzap 13W is the professional glue board unit that every restaurant, caf&eacute;, and food business needs in the kitchen. It is the only unit in this review that is compliant for food preparation areas, and it is the product that EHOs expect to see when they walk into your kitchen. If you serve food, you need this alongside the zapper units for your back-of-house areas.
       </p>
 
+      {/* Multi-Buy Messaging */}
+      <div className="not-prose">
+        <Callout type="info">
+          <p><strong>Equipping a restaurant or food business?</strong> Most restaurants need 2&ndash;4 fly killer units: glue board types for the kitchen and food prep areas, plus zapper types for back-of-house corridors and waste areas. A typical restaurant setup costs &pound;150&ndash;&pound;400 in units, plus &pound;60&ndash;&pound;160 per year in replacement bulbs and glue boards. Buying multiple units at once often qualifies for free delivery.</p>
+        </Callout>
+      </div>
+
       {/* Buying Guide */}
       <h2 id="buying-guide">Commercial Fly Killer Buying Guide</h2>
       <p>
@@ -552,6 +559,20 @@ export default function BestCommercialFlyKillersPage() {
       <p>
         You should contact a commercial pest controller if you operate any food business that is subject to EHO inspection, if you need glue board units for food preparation or storage areas, if you are preparing for a food hygiene rating inspection and want to ensure your pest management programme is fully compliant, if you have an existing fly problem that self-purchased units have not resolved, or if your insurer requires evidence of a professional pest control contract. A professional service contract typically includes quarterly or monthly site visits, UV bulb and glue board replacement, catch trend analysis, and a comprehensive pest management report that demonstrates your commitment to food safety compliance. For a detailed overview of pest management obligations for restaurants and food businesses, read our guide: <Link href="/guides/restaurant-pest-control" className="text-blue-600 hover:text-blue-800 underline">Restaurant Pest Control: Complete UK Guide</Link>.
       </p>
+
+      {/* Professional Contract CTA */}
+      <div className="not-prose my-8 p-8 bg-gradient-to-br from-teal-50 to-emerald-50 border-2 border-teal-300 rounded-2xl">
+        <h3 className="text-2xl font-bold text-teal-900 mb-3">Need a Professional Pest Management Contract?</h3>
+        <p className="text-teal-800 mb-6 leading-relaxed">
+          Electric fly killers need professional installation, correct positioning, and annual servicing (bulb replacement, glue board changes) to remain compliant. For food businesses, a pest management contract that includes fly killer supply, installation, and servicing is the most cost-effective approach &mdash; and it&apos;s what EHOs expect to see. Commercial contracts typically cost &pound;800&ndash;&pound;5,000 per year.
+        </p>
+        <a
+          href="/guides/commercial-pest-control"
+          className="inline-block px-8 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg transition-colors"
+        >
+          Find Commercial Pest Controllers &rarr;
+        </a>
+      </div>
 
       <div className="not-prose">
         <FindProviderCTA

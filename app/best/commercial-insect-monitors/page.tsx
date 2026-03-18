@@ -464,6 +464,13 @@ export default function BestCommercialInsectMonitorsPage() {
         <strong>Verdict:</strong> Every hotel using the treatment products above should also deploy Bed Bug Blocker interceptors under every bed on the premises. Treatment without monitoring is flying blind. These traps provide the early-warning system that turns reactive crisis management into proactive pest control.
       </p>
 
+      {/* Multi-Buy Messaging */}
+      <div className="not-prose">
+        <Callout type="info">
+          <p><strong>Buying for a hotel or large property?</strong> A 20-room hotel needs approximately 80 bed bug interceptors (4 per bed) plus treatment supplies for immediate response. At current prices, equipping an entire hotel costs &pound;200&ndash;&pound;500 in monitoring products alone &mdash; but catching an infestation early saves thousands in treatment costs, lost revenue, and reputation damage. Many hotels buy in bulk quarterly.</p>
+        </Callout>
+      </div>
+
       {/* Buying Guide */}
       <h2 id="buying-guide">Buying Guide</h2>
       <p>
@@ -508,6 +515,20 @@ export default function BestCommercialInsectMonitorsPage() {
       <p>
         The treatment products reviewed on this page enable hotel managers to respond rapidly to bed bug sightings and maintain treatment pressure between professional visits. However, for severe infestations, insecticide-resistant populations, or situations requiring documented professional treatment reports for EHO compliance, a commercial pest controller is essential. Professional providers offer heat treatment (the gold standard for resistant infestations), canine bed bug detection, comprehensive monitoring programmes, and the documented service reports that regulators and industry auditors expect to see.
       </p>
+
+      {/* Professional Contract CTA */}
+      <div className="not-prose my-8 p-8 bg-gradient-to-br from-teal-50 to-emerald-50 border-2 border-teal-300 rounded-2xl">
+        <h3 className="text-2xl font-bold text-teal-900 mb-3">Need a Professional Pest Management Contract?</h3>
+        <p className="text-teal-800 mb-6 leading-relaxed">
+          DIY monitoring is a good first step, but hotels and commercial premises with ongoing pest risk need a professional pest management contract. A BPCA or NPTA accredited pest controller will supply, install, and maintain professional-grade monitoring systems as part of a documented pest management programme &mdash; essential for compliance and guest protection. Commercial contracts typically cost &pound;1,500&ndash;&pound;12,000 per year depending on property size.
+        </p>
+        <a
+          href="/guides/commercial-pest-control"
+          className="inline-block px-8 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg transition-colors"
+        >
+          Find Commercial Pest Controllers &rarr;
+        </a>
+      </div>
 
       <div className="not-prose">
         <FindProviderCTA
