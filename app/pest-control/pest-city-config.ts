@@ -44,7 +44,7 @@ export const LOCATIONS: LocationConfig[] = [
 export const PESTS: PestConfig[] = [
   {
     slug: 'rats',
-    name: 'Rats',
+    name: 'Rat',
     namePlural: 'Rats',
     filterColumn: 'pest_rats',
     guideUrl: '/guides/how-to-get-rid-of-rats',
@@ -57,7 +57,7 @@ export const PESTS: PestConfig[] = [
   },
   {
     slug: 'mice',
-    name: 'Mice',
+    name: 'Mouse',
     namePlural: 'Mice',
     filterColumn: 'pest_mice',
     guideUrl: '/guides/how-to-get-rid-of-mice',
@@ -70,7 +70,7 @@ export const PESTS: PestConfig[] = [
   },
   {
     slug: 'wasps',
-    name: 'Wasps',
+    name: 'Wasp',
     namePlural: 'Wasps',
     filterColumn: 'pest_wasps',
     guideUrl: '/guides/wasp-nest-removal',
@@ -83,7 +83,7 @@ export const PESTS: PestConfig[] = [
   },
   {
     slug: 'bed-bugs',
-    name: 'Bed Bugs',
+    name: 'Bed Bug',
     namePlural: 'Bed Bugs',
     filterColumn: 'pest_bed_bugs',
     guideUrl: '/guides/how-to-get-rid-of-bed-bugs',
@@ -96,7 +96,7 @@ export const PESTS: PestConfig[] = [
   },
   {
     slug: 'cockroaches',
-    name: 'Cockroaches',
+    name: 'Cockroach',
     namePlural: 'Cockroaches',
     filterColumn: 'pest_cockroaches',
     guideUrl: '/guides/how-to-get-rid-of-cockroaches',
@@ -109,7 +109,7 @@ export const PESTS: PestConfig[] = [
   },
   {
     slug: 'ants',
-    name: 'Ants',
+    name: 'Ant',
     namePlural: 'Ants',
     filterColumn: 'pest_ants',
     guideUrl: '/guides/how-to-get-rid-of-ants',
@@ -122,7 +122,7 @@ export const PESTS: PestConfig[] = [
   },
   {
     slug: 'fleas',
-    name: 'Fleas',
+    name: 'Flea',
     namePlural: 'Fleas',
     filterColumn: 'pest_fleas',
     guideUrl: '/guides/how-to-get-rid-of-fleas',
@@ -135,7 +135,7 @@ export const PESTS: PestConfig[] = [
   },
   {
     slug: 'foxes',
-    name: 'Foxes',
+    name: 'Fox',
     namePlural: 'Foxes',
     filterColumn: 'pest_foxes',
     guideUrl: '/guides/how-to-get-rid-of-foxes',
@@ -148,7 +148,7 @@ export const PESTS: PestConfig[] = [
   },
   {
     slug: 'moths',
-    name: 'Moths',
+    name: 'Moth',
     namePlural: 'Moths',
     filterColumn: 'pest_moths',
     guideUrl: '/guides/how-to-get-rid-of-moths',
@@ -161,7 +161,7 @@ export const PESTS: PestConfig[] = [
   },
   {
     slug: 'pigeons',
-    name: 'Pigeons',
+    name: 'Pigeon',
     namePlural: 'Pigeons',
     filterColumn: 'pest_pigeons',
     guideUrl: '/guides/pigeon-control',
