@@ -162,9 +162,11 @@ export default function HowToGetRidOfFoxesPage() {
         { title: 'Commercial Pest Control: Complete UK Guide', href: '/guides/commercial-pest-control' },
         { title: 'How to Get Rid of Moths', href: '/guides/how-to-get-rid-of-moths' },
         { title: 'How to Get Rid of Silverfish: Complete UK Guide', href: '/guides/how-to-get-rid-of-silverfish' },
+        { title: 'Woodworm Treatment: Complete UK Guide', href: '/guides/woodworm-treatment' },
       ]}
       relatedProducts={[
         { title: 'Best Fox Deterrents UK 2026', href: '/best/fox-deterrents' },
+        { title: 'Best Woodworm Treatments UK 2026', href: '/best/woodworm-treatments' },
         { title: 'Best Silverfish Treatments UK 2026', href: '/best/silverfish-treatments' },
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },

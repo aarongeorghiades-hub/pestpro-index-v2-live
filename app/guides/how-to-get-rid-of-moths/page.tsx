@@ -178,9 +178,11 @@ export default function HowToGetRidOfMothsPage() {
         { title: 'How to Get Rid of Silverfish: Complete UK Guide', href: '/guides/how-to-get-rid-of-silverfish' },
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
         { title: 'Restaurant Pest Control: UK Compliance Guide', href: '/guides/restaurant-pest-control' },
+        { title: 'Woodworm Treatment: Complete UK Guide', href: '/guides/woodworm-treatment' },
       ]}
       relatedProducts={[
         { title: 'Best Moth Killers UK 2026', href: '/best/moth-killers' },
+        { title: 'Best Woodworm Treatments UK 2026', href: '/best/woodworm-treatments' },
         { title: 'Best Silverfish Treatments UK 2026', href: '/best/silverfish-treatments' },
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },

@@ -104,8 +104,10 @@ export default function BestSilverfishTreatmentsPage() {
         { title: 'How to Get Rid of Squirrels: Complete UK Guide', href: '/guides/how-to-get-rid-of-squirrels' },
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
         { title: 'Landlord Pest Control Responsibilities', href: '/guides/landlord-pest-control' },
+        { title: 'Woodworm Treatment: Complete UK Guide', href: '/guides/woodworm-treatment' },
       ]}
       relatedProducts={[
+        { title: 'Best Woodworm Treatments UK 2026', href: '/best/woodworm-treatments' },
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },
         { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' },

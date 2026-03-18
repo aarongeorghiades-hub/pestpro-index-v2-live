@@ -84,6 +84,12 @@ const guides = [
     href: '/guides/how-to-get-rid-of-silverfish',
   },
   {
+    emoji: '🪵',
+    title: 'Woodworm Treatment',
+    description: 'Identification, active vs inactive infestations, DIY treatments, professional solutions, and property survey advice for UK homes.',
+    href: '/guides/woodworm-treatment',
+  },
+  {
     emoji: '🐦',
     title: 'Pigeon Control',
     description: 'Bird deterrent methods, proofing, netting, spikes, legal considerations, and when to call a professional.',
@@ -204,6 +210,12 @@ const reviews = [
     title: 'Best Silverfish Treatments UK 2026',
     description: 'Diatomaceous earth, killer sprays, traps, dehumidifiers, and insecticidal powders reviewed.',
     href: '/best/silverfish-treatments',
+  },
+  {
+    emoji: '🪵',
+    title: 'Best Woodworm Treatments UK 2026',
+    description: 'Permethrin fluids, boron gels, spray treatments, injection kits, and moisture meters reviewed.',
+    href: '/best/woodworm-treatments',
   },
   {
     emoji: '🐦',

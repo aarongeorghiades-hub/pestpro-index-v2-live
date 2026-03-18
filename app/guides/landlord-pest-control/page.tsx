@@ -201,6 +201,7 @@ export default function LandlordPestControlPage() {
         { title: 'Warehouse Pest Management', href: '/guides/warehouse-pest-management' },
         { title: 'Hotel Pest Control', href: '/guides/hotel-pest-control' },
         { title: 'Office Pest Control', href: '/guides/office-pest-control' },
+        { title: 'Woodworm Treatment: Complete UK Guide', href: '/guides/woodworm-treatment' },
       ]}
       relatedProducts={[
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
@@ -215,6 +216,7 @@ export default function LandlordPestControlPage() {
         { title: 'Best Commercial Rodent Bait Stations', href: '/best/commercial-rodent-bait-stations' },
         { title: 'Best Commercial Insect Monitors', href: '/best/commercial-insect-monitors' },
         { title: 'Best Commercial Bird Proofing UK 2026', href: '/best/commercial-bird-proofing' },
+        { title: 'Best Woodworm Treatments UK 2026', href: '/best/woodworm-treatments' },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}

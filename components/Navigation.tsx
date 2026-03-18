@@ -380,6 +380,20 @@ export default function Navigation() {
                   Best Silverfish Treatments
                 </Link>
                 <Link
+                  href="/guides/woodworm-treatment"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Woodworm Treatment Guide
+                </Link>
+                <Link
+                  href="/best/woodworm-treatments"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Woodworm Treatments
+                </Link>
+                <Link
                   href="/guides/pigeon-control"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -791,6 +805,20 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Best Silverfish Treatments
+                </Link>
+                <Link
+                  href="/guides/woodworm-treatment"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Woodworm Treatment Guide
+                </Link>
+                <Link
+                  href="/best/woodworm-treatments"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Woodworm Treatments
                 </Link>
                 <Link
                   href="/guides/pigeon-control"

@@ -162,9 +162,11 @@ export default function HowToGetRidOfSilverfishPage() {
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
         { title: 'Landlord Pest Control: Complete UK Guide', href: '/guides/landlord-pest-control' },
         { title: 'Commercial Pest Control: Complete UK Guide', href: '/guides/commercial-pest-control' },
+        { title: 'Woodworm Treatment: Complete UK Guide', href: '/guides/woodworm-treatment' },
       ]}
       relatedProducts={[
         { title: 'Best Silverfish Treatments UK 2026', href: '/best/silverfish-treatments' },
+        { title: 'Best Woodworm Treatments UK 2026', href: '/best/woodworm-treatments' },
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },
         { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' },
