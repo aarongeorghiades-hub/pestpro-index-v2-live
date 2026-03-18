@@ -80,6 +80,7 @@ const tocItems = [
   { id: 'best-multi-pack', title: 'Best Multi-Pack — Pest Expert Heavy Duty (x4)' },
   { id: 'best-budget', title: 'Best Budget Professional — Mice&Co 2x Large' },
   { id: 'best-monitoring', title: 'Best for Monitoring — Roshield PRO BOX Transparent Lid' },
+  { id: 'best-kit', title: 'Best Station + Bait Kit — Roshield External Bait Box + 300g Wax Blocks' },
   { id: 'buying-guide', title: 'Commercial Bait Station Buying Guide' },
   { id: 'when-to-call', title: 'When to Contact a Commercial Pest Controller' },
 ];
@@ -187,6 +188,12 @@ export default function BestCommercialRodentBaitStationsPage() {
             <td>Best for Monitoring</td>
             <td>4.5/5</td>
             <td>~&pound;15&ndash;&pound;25</td>
+          </tr>
+          <tr>
+            <td>Roshield External Bait Box + 300g Wax Blocks Kit</td>
+            <td>Best Station + Bait Kit</td>
+            <td>4.0/5</td>
+            <td>~&pound;20&ndash;&pound;30</td>
           </tr>
         </tbody>
       </table>
@@ -423,6 +430,56 @@ export default function BestCommercialRodentBaitStationsPage() {
       </ul>
       <p>
         <strong>Verdict:</strong> The Roshield PRO BOX with Transparent Lid is the best choice for internal monitoring stations in warehouses and food premises. The ability to visually check consumption and activity without opening the station is a genuine time-saver for pest controllers and facilities teams, and the extra large format provides maximum flexibility for different monitoring approaches.
+      </p>
+
+      {/* Product 6: Roshield External Bait Box + 300g Wax Blocks */}
+      <h2 id="best-kit">Best Station + Bait Kit &mdash; Roshield External Bait Box + 300g Wax Blocks</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Roshield External Bait Box + 300g Wax Blocks Kit"
+          rating={4.0}
+          features={[
+            'Complete kit — tamper-proof bait station + 300g professional wax bait blocks',
+            'No need to source bait separately — ready to deploy out of the box',
+            'UK-made bait station from recycled car plastics — heavy-duty construction',
+            'Lockable and tamper-resistant — compliant with UK Rodenticide Stewardship',
+            'Ideal for businesses needing a turnkey perimeter baiting solution',
+          ]}
+          price="~&pound;20&ndash;&pound;30"
+          asin="B07B73Y2LW"
+          bestFor="Best Station + Bait Kit"
+          rank={6}
+        />
+      </div>
+      <p>
+        The Roshield External Bait Box + 300g Wax Blocks Kit solves a common problem for business owners setting up a rodent management programme for the first time: where to source the bait. Most bait stations reviewed on this page are sold empty &mdash; the station itself is one purchase, and the bait blocks, grain, or paste must be sourced separately from a different supplier. For businesses that want a <strong>turnkey, ready-to-deploy solution</strong>, this kit bundles a professional-grade Roshield tamper-proof bait station with <strong>300 grams of professional wax bait blocks</strong>, meaning you can install and bait the station immediately upon delivery without any additional purchases.
+      </p>
+      <p>
+        The bait station is the same UK-manufactured, recycled-car-plastic unit that has earned the standalone Roshield station its top recommendation in this review. It is <strong>lockable, tamper-resistant</strong>, and compliant with the UK Rodenticide Stewardship Regime. The included 300g of wax bait blocks are a professional-grade formulation designed for use in external bait stations &mdash; wax blocks are the preferred bait format for outdoor use because they resist moisture, do not degrade in rain, and remain palatable to rats and mice for extended periods. The blocks are secured on the internal bait rod, which prevents rodents from dragging the bait out of the station and ensures that bait consumption can be accurately monitored at each inspection.
+      </p>
+      <p>
+        At approximately &pound;20 to &pound;30 per kit, this product is competitively priced for a station-plus-bait bundle and represents good value for smaller businesses that need to install a modest number of perimeter stations (five to ten) without the complexity of sourcing bait separately. For larger installations, purchasing stations and bait in bulk from separate suppliers will typically offer a lower per-unit cost, but for the convenience of a single, ready-to-deploy purchase, the Roshield kit is hard to beat.
+      </p>
+      <p>
+        <strong>Pros:</strong>
+      </p>
+      <ul>
+        <li>Complete kit &mdash; station and 300g wax bait blocks included, ready to deploy</li>
+        <li>No need to source bait separately &mdash; ideal for first-time setup</li>
+        <li>Same UK-made Roshield quality as the standalone station</li>
+        <li>Wax blocks resist moisture &mdash; perfect for outdoor perimeter use</li>
+        <li>Lockable and tamper-resistant &mdash; UK rodenticide stewardship compliant</li>
+      </ul>
+      <p>
+        <strong>Cons:</strong>
+      </p>
+      <ul>
+        <li>300g of bait blocks will need replenishing after the initial charge is consumed</li>
+        <li>Single station kit &mdash; less cost-effective per unit than multi-pack options for large installations</li>
+        <li>Bait included is a fixed formulation &mdash; cannot substitute grain or paste bait</li>
+      </ul>
+      <p>
+        <strong>Verdict:</strong> The Roshield Bait Box + Wax Blocks Kit is the best ready-to-deploy option for businesses that want a compliant perimeter baiting solution without the hassle of sourcing station and bait separately. Ideal for small commercial premises, garden centres, car parks, and any site that needs a quick, professional setup.
       </p>
 
       {/* Buying Guide */}
