@@ -366,6 +366,20 @@ export default function Navigation() {
                   Best Fox Deterrents
                 </Link>
                 <Link
+                  href="/guides/how-to-get-rid-of-silverfish"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Silverfish Control Guide
+                </Link>
+                <Link
+                  href="/best/silverfish-treatments"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Silverfish Treatments
+                </Link>
+                <Link
                   href="/guides/pigeon-control"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -763,6 +777,20 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Best Fox Deterrents
+                </Link>
+                <Link
+                  href="/guides/how-to-get-rid-of-silverfish"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Silverfish Control Guide
+                </Link>
+                <Link
+                  href="/best/silverfish-treatments"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Silverfish Treatments
                 </Link>
                 <Link
                   href="/guides/pigeon-control"

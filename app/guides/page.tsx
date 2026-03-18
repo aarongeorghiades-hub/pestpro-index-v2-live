@@ -78,6 +78,12 @@ const guides = [
     href: '/guides/how-to-get-rid-of-foxes',
   },
   {
+    emoji: '🐟',
+    title: 'How to Get Rid of Silverfish',
+    description: 'Identification, humidity control, DIY treatments, professional options, and long-term prevention for UK homes.',
+    href: '/guides/how-to-get-rid-of-silverfish',
+  },
+  {
     emoji: '🐦',
     title: 'Pigeon Control',
     description: 'Bird deterrent methods, proofing, netting, spikes, legal considerations, and when to call a professional.',
@@ -192,6 +198,12 @@ const reviews = [
     title: 'Best Fox Deterrents UK 2026',
     description: 'Ultrasonic repellers, scent deterrents, motion-activated sprinklers, and garden fencing reviewed.',
     href: '/best/fox-deterrents',
+  },
+  {
+    emoji: '🐟',
+    title: 'Best Silverfish Treatments UK 2026',
+    description: 'Diatomaceous earth, killer sprays, traps, dehumidifiers, and insecticidal powders reviewed.',
+    href: '/best/silverfish-treatments',
   },
   {
     emoji: '🐦',

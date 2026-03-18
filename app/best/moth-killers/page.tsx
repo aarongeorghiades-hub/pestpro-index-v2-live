@@ -103,10 +103,12 @@ export default function BestMothKillersPage() {
         { title: 'How to Get Rid of Ants: Complete UK Guide', href: '/guides/how-to-get-rid-of-ants' },
         { title: 'How to Get Rid of Squirrels: Complete UK Guide', href: '/guides/how-to-get-rid-of-squirrels' },
         { title: 'Pigeon Control: Complete UK Guide', href: '/guides/pigeon-control' },
+        { title: 'How to Get Rid of Silverfish: Complete UK Guide', href: '/guides/how-to-get-rid-of-silverfish' },
         { title: 'Pest Control Costs UK 2026', href: '/guides/pest-control-costs' },
         { title: 'Restaurant Pest Control: UK Compliance Guide', href: '/guides/restaurant-pest-control' },
       ]}
       relatedProducts={[
+        { title: 'Best Silverfish Treatments UK 2026', href: '/best/silverfish-treatments' },
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },
         { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' },

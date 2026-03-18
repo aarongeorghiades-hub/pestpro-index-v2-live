@@ -103,8 +103,10 @@ export default function BestFoxDeterrentsPage() {
         { title: 'Pigeon Control: Complete UK Guide', href: '/guides/pigeon-control' },
         { title: 'Landlord Pest Control Responsibilities', href: '/guides/landlord-pest-control' },
         { title: 'How to Get Rid of Moths', href: '/guides/how-to-get-rid-of-moths' },
+        { title: 'How to Get Rid of Silverfish: Complete UK Guide', href: '/guides/how-to-get-rid-of-silverfish' },
       ]}
       relatedProducts={[
+        { title: 'Best Silverfish Treatments UK 2026', href: '/best/silverfish-treatments' },
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },
         { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' },

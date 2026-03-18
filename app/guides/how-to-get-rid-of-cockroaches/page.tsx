@@ -158,10 +158,12 @@ export default function HowToGetRidOfCockroachesPage() {
         { title: 'How to Get Rid of Squirrels: Complete UK Guide', href: '/guides/how-to-get-rid-of-squirrels' },
         { title: 'Pigeon Control: Complete UK Guide', href: '/guides/pigeon-control' },
         { title: 'How to Get Rid of Moths', href: '/guides/how-to-get-rid-of-moths' },
+        { title: 'How to Get Rid of Silverfish: Complete UK Guide', href: '/guides/how-to-get-rid-of-silverfish' },
         { title: 'Restaurant Pest Control: UK Compliance Guide', href: '/guides/restaurant-pest-control' },
       ]}
       relatedProducts={[
         { title: 'Best Cockroach Killers UK 2026', href: '/best/cockroach-killers' },
+        { title: 'Best Silverfish Treatments UK 2026', href: '/best/silverfish-treatments' },
         { title: 'Best Rat Traps UK 2026', href: '/best/rat-traps' },
         { title: 'Best Mouse Traps UK 2026', href: '/best/mouse-traps' },
         { title: 'Best Wasp Killers UK 2026', href: '/best/wasp-killers' },

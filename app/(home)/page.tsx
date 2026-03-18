@@ -516,6 +516,16 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Fox Deterrents UK 2026</h3>
               <p className="text-gray-600">Ultrasonic repellers, scent deterrents, motion-activated sprinklers, and garden fencing reviewed.</p>
             </Link>
+            <Link href="/guides/how-to-get-rid-of-silverfish" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-blue-600 mb-2">Guide</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">How to Get Rid of Silverfish</h3>
+              <p className="text-gray-600">Identification, humidity control, DIY treatments, professional options, and long-term prevention for UK homes.</p>
+            </Link>
+            <Link href="/best/silverfish-treatments" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
+              <div className="text-sm font-semibold text-amber-600 mb-2">Product Review</div>
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Best Silverfish Treatments UK 2026</h3>
+              <p className="text-gray-600">Diatomaceous earth, killer sprays, traps, dehumidifiers, and insecticidal powders reviewed.</p>
+            </Link>
             <Link href="/guides/pigeon-control" className="group block p-8 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all">
               <div className="text-sm font-semibold text-blue-600 mb-2">Guide</div>
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">Pigeon Control</h3>
@@ -672,6 +682,8 @@ export default function Home() {
                 <li><Link href="/best/squirrel-deterrents" className="hover:text-white transition">Best Squirrel Deterrents UK</Link></li>
                 <li><Link href="/guides/how-to-get-rid-of-foxes" className="hover:text-white transition">How to Get Rid of Foxes</Link></li>
                 <li><Link href="/best/fox-deterrents" className="hover:text-white transition">Best Fox Deterrents UK</Link></li>
+                <li><Link href="/guides/how-to-get-rid-of-silverfish" className="hover:text-white transition">How to Get Rid of Silverfish</Link></li>
+                <li><Link href="/best/silverfish-treatments" className="hover:text-white transition">Best Silverfish Treatments UK</Link></li>
                 <li><Link href="/guides/pigeon-control" className="hover:text-white transition">Pigeon Control Guide</Link></li>
                 <li><Link href="/best/bird-deterrents" className="hover:text-white transition">Best Bird Deterrents UK</Link></li>
                 <li><Link href="/guides/how-to-get-rid-of-moths" className="hover:text-white transition">How to Get Rid of Moths</Link></li>
