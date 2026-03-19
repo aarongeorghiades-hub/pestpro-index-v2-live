@@ -16,6 +16,7 @@ const cities = [
   { name: 'Bristol', href: '/bristol/residential' },
   { name: 'Cardiff', href: '/cardiff/residential' },
   { name: 'Coventry', href: '/coventry/residential' },
+  { name: 'Derby', href: '/derby/residential' },
   { name: 'Edinburgh', href: '/edinburgh/residential' },
   { name: 'Glasgow', href: '/glasgow/residential' },
   { name: 'Hampshire', href: '/hampshire/residential' },

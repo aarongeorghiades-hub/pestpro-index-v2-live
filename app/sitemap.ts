@@ -17,6 +17,7 @@ import { getAllBoroughs as getAllLeicesterBoroughs } from './pest-control/leices
 import { getAllTowns as getAllHampshireTowns } from './pest-control/hampshire/hampshire-towns';
 import { getAllBoroughs as getAllCoventryBoroughs } from './pest-control/coventry/coventry-boroughs';
 import { getAllBoroughs as getAllBelfastBoroughs } from './pest-control/belfast/belfast-boroughs';
+import { getAllBoroughs as getAllDerbyBoroughs } from './pest-control/derby/derby-boroughs';
 import { posts } from './blog/data/posts';
 import { pestGuides } from '@/data/pest-guides';
 import { LOCATIONS, PESTS } from './pest-control/pest-city-config';
@@ -172,6 +173,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const belfastBoroughs = getAllBelfastBoroughs();
   const belfastBoroughUrls = belfastBoroughs.map((borough) => ({
     url: `${baseUrl}/pest-control/belfast/${borough.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  // Get all Derby boroughs
+  const derbyBoroughs = getAllDerbyBoroughs();
+  const derbyBoroughUrls = derbyBoroughs.map((borough) => ({
+    url: `${baseUrl}/pest-control/derby/${borough.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
@@ -447,6 +457,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/belfast/commercial`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/derby`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/derby/residential`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/derby/commercial`,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.9,
@@ -794,6 +822,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...hampshireTownUrls,
     ...coventryBoroughUrls,
     ...belfastBoroughUrls,
+    ...derbyBoroughUrls,
     ...pestCityUrls,
   ];
 }

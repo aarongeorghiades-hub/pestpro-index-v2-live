@@ -39,6 +39,7 @@ export const LOCATIONS: LocationConfig[] = [
   { slug: 'hampshire', name: 'Hampshire', region: 'hampshire' },
   { slug: 'coventry', name: 'Coventry', region: 'coventry' },
   { slug: 'belfast', name: 'Belfast', region: 'belfast' },
+  { slug: 'derby', name: 'Derby', region: 'derby' },
 ];
 
 export const PESTS: PestConfig[] = [

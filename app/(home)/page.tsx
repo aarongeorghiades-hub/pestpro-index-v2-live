@@ -9,7 +9,7 @@ import { createClient } from '@/utils/supabase';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Home() {
-  const [stats, setStats] = useState({ providers: 0, cities: 18, regions: 12 });
+  const [stats, setStats] = useState({ providers: 0, cities: 19, regions: 12 });
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [providerTarget, setProviderTarget] = useState(0);
@@ -55,7 +55,7 @@ export default function Home() {
 
       setStats({
         providers: Math.floor(target * progress),
-        cities: Math.floor(18 * progress),
+        cities: Math.floor(19 * progress),
         regions: Math.floor(12 * progress)
       });
 
@@ -91,6 +91,7 @@ export default function Home() {
       { '@type': 'City', 'name': 'Leicester' },
       { '@type': 'City', 'name': 'Coventry' },
       { '@type': 'City', 'name': 'Belfast' },
+      { '@type': 'City', 'name': 'Derby' },
       { '@type': 'AdministrativeArea', 'name': 'Hampshire' }
     ]
   };
@@ -265,6 +266,9 @@ export default function Home() {
                 </Link>
                 <Link href="/leicester/residential" className="block text-center px-4 py-2.5 border-2 border-amber-500/60 hover:border-amber-400 text-amber-400 hover:text-amber-300 font-bold rounded-lg transition-colors text-sm">
                   Browse Leicester →
+                </Link>
+                <Link href="/derby/residential" className="block text-center px-4 py-2.5 border-2 border-amber-500/60 hover:border-amber-400 text-amber-400 hover:text-amber-300 font-bold rounded-lg transition-colors text-sm">
+                  Browse Derby →
                 </Link>
               </div>
             </div>
@@ -687,6 +691,8 @@ export default function Home() {
                 <li><Link href="/hampshire/commercial" className="hover:text-white transition">Hampshire Commercial</Link></li>
                 <li><Link href="/coventry/residential" className="hover:text-white transition">Coventry Residential</Link></li>
                 <li><Link href="/coventry/commercial" className="hover:text-white transition">Coventry Commercial</Link></li>
+                <li><Link href="/derby/residential" className="hover:text-white transition">Derby Residential</Link></li>
+                <li><Link href="/derby/commercial" className="hover:text-white transition">Derby Commercial</Link></li>
                 <li><Link href="/belfast/residential" className="hover:text-white transition">Belfast Residential</Link></li>
                 <li><Link href="/belfast/commercial" className="hover:text-white transition">Belfast Commercial</Link></li>
               </ul>
