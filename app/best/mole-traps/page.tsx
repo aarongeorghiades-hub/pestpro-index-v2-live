@@ -454,7 +454,7 @@ export default function BestMoleTrapsPage() {
       </ol>
 
       <div className="not-prose">
-        <StatCallout stat="20m" description="distance a single mole can tunnel per day through UK garden soil" />
+        <StatCallout value="20m" label="distance a single mole can tunnel per day through UK garden soil" />
       </div>
 
       <FindProviderCTA

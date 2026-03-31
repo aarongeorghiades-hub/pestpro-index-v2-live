@@ -277,7 +277,7 @@ export default function RatPoisonVsRatTrapsPage() {
       </ul>
 
       <div className="not-prose">
-        <StatCallout stat="80%" description="of UK barn owls tested positive for second-generation anticoagulant rodenticides (UK CEH)" />
+        <StatCallout value="80%" label="of UK barn owls tested positive for second-generation anticoagulant rodenticides (UK CEH)" />
       </div>
 
       {/* Rat Traps Pros and Cons */}

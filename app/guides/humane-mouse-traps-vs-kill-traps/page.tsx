@@ -269,7 +269,7 @@ export default function HumaneMouseTrapsVsKillTrapsPage() {
       </ul>
 
       <div className="not-prose">
-        <StatCallout stat="4–6 hrs" description="maximum interval between checking humane mouse traps to prevent suffering" />
+        <StatCallout value="4–6 hrs" label="maximum interval between checking humane mouse traps to prevent suffering" />
       </div>
 
       {/* Kill Traps */}

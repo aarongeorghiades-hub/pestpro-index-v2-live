@@ -315,7 +315,7 @@ export default function ProfessionalPestControlVsDiyPage() {
       </ul>
 
       <div className="not-prose">
-        <StatCallout stat="£700m+" description="annual value of the UK professional pest control industry" />
+        <StatCallout value="£700m+" label="annual value of the UK professional pest control industry" />
       </div>
 
       {/* What Professionals Offer */}

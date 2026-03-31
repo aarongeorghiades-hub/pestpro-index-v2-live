@@ -294,7 +294,7 @@ export default function ElectricFlyKillersVsStickyTrapsPage() {
       </ul>
 
       <div className="not-prose">
-        <StatCallout stat="80%" description="reduction in UV attractiveness after 12 months — always replace tubes annually" />
+        <StatCallout value="80%" label="reduction in UV attractiveness after 12 months — always replace tubes annually" />
       </div>
 
       {/* Hygiene and Compliance */}

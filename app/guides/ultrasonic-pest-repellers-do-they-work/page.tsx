@@ -230,7 +230,7 @@ export default function UltrasonicPestRepellersPage() {
       </p>
 
       <div className="not-prose">
-        <StatCallout stat="0" description="peer-reviewed studies demonstrating ultrasonic repellers can eliminate a pest infestation" />
+        <StatCallout value="0" label="peer-reviewed studies demonstrating ultrasonic repellers can eliminate a pest infestation" />
       </div>
 
       {/* Advertising vs Reality */}

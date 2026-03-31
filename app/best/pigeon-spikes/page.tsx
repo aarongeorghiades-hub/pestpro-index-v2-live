@@ -451,7 +451,7 @@ export default function BestPigeonSpikesPage() {
       </ol>
 
       <div className="not-prose">
-        <StatCallout stat="12 kg" description="of droppings produced per pigeon per year — enough to cause significant property damage" />
+        <StatCallout value="12 kg" label="of droppings produced per pigeon per year — enough to cause significant property damage" />
       </div>
 
       <FindProviderCTA
