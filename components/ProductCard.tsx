@@ -29,7 +29,9 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export default function ProductCard({ name, rating, features, price, asin, bestFor, rank }: ProductCardProps) {
-  const amazonUrl = `https://www.amazon.co.uk/s?k=${encodeURIComponent(name).replace(/%20/g, '+')}&tag=pestproindex-21`;
+  const amazonUrl = asin && asin.startsWith('B0')
+    ? `https://www.amazon.co.uk/dp/${asin}?tag=pestproindex-21`
+    : `https://www.amazon.co.uk/s?k=${encodeURIComponent(name).replace(/%20/g, '+')}&tag=pestproindex-21`;
 
   const badgeColors: Record<string, string> = {
     'Best Overall': 'bg-amber-100 text-amber-800 border-amber-300',
