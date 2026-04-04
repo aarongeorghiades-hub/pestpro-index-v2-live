@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 
 export default function ProductsPage() {
-  const AMAZON_TRACKING_ID = 'pestproindex-21';
+  const AMAZON_TRACKING_ID = 'pestproindex2-21';
   
   function getAmazonLink(asin: string): string {
     return `https://www.amazon.co.uk/dp/${asin}?tag=${AMAZON_TRACKING_ID}`;

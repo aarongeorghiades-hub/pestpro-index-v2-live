@@ -696,7 +696,7 @@ export default function ProfessionalsPage() {
                 <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">Pest Control Technology</h4>
                 <p className="text-xs text-gray-600">US monthly, industry trends and technology</p>
               </a>
-              <a href="https://www.amazon.co.uk/dp/B09TZK7FYS?tag=pestproindex-21" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <a href="https://www.amazon.co.uk/dp/B09TZK7FYS?tag=pestproindex2-21" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                 <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">The Bed Bug Handbook</h4>
                 <p className="text-xs text-gray-600">The complete reference book, available on Amazon</p>
               </a>

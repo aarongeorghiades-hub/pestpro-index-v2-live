@@ -8,7 +8,7 @@ import Image from 'next/image';
 const supabase = createClient();
 
 // Amazon Associates Configuration
-const AMAZON_TRACKING_ID = 'pestproindex-21';
+const AMAZON_TRACKING_ID = 'pestproindex2-21';
 
 interface Product {
   id: string;

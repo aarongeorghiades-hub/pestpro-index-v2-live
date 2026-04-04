@@ -438,7 +438,7 @@ export default function HowToPestProofYourShedPage() {
               <td className="py-3 px-4 text-gray-600">Packing into gaps before foam &mdash; rodents cannot chew through</td>
               <td className="py-3 px-4 text-gray-600">&pound;5&ndash;&pound;12</td>
               <td className="py-3 px-4">
-                <a href="https://www.amazon.co.uk/s?k=steel+wool+pest+proofing&tag=pestproindex-21" target="_blank" rel="noopener noreferrer nofollow" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href="https://www.amazon.co.uk/s?k=steel+wool+pest+proofing&tag=pestproindex2-21" target="_blank" rel="noopener noreferrer nofollow" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
             <tr>
@@ -446,7 +446,7 @@ export default function HowToPestProofYourShedPage() {
               <td className="py-3 px-4 text-gray-600">Sealing gaps around door frame, walls, and windows</td>
               <td className="py-3 px-4 text-gray-600">&pound;6&ndash;&pound;10</td>
               <td className="py-3 px-4">
-                <a href="https://www.amazon.co.uk/s?k=expanding+foam+exterior+grade&tag=pestproindex-21" target="_blank" rel="noopener noreferrer nofollow" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href="https://www.amazon.co.uk/s?k=expanding+foam+exterior+grade&tag=pestproindex2-21" target="_blank" rel="noopener noreferrer nofollow" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
             <tr>
@@ -454,7 +454,7 @@ export default function HowToPestProofYourShedPage() {
               <td className="py-3 px-4 text-gray-600">Covering air vents to exclude mice, wasps, and flies</td>
               <td className="py-3 px-4 text-gray-600">&pound;8&ndash;&pound;15</td>
               <td className="py-3 px-4">
-                <a href="https://www.amazon.co.uk/s?k=stainless+steel+mesh+3mm+pest&tag=pestproindex-21" target="_blank" rel="noopener noreferrer nofollow" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href="https://www.amazon.co.uk/s?k=stainless+steel+mesh+3mm+pest&tag=pestproindex2-21" target="_blank" rel="noopener noreferrer nofollow" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
             <tr>
@@ -462,7 +462,7 @@ export default function HowToPestProofYourShedPage() {
               <td className="py-3 px-4 text-gray-600">Sealing the gap under the shed door</td>
               <td className="py-3 px-4 text-gray-600">&pound;5&ndash;&pound;10</td>
               <td className="py-3 px-4">
-                <a href="https://www.amazon.co.uk/s?k=brush+strip+draught+excluder+door&tag=pestproindex-21" target="_blank" rel="noopener noreferrer nofollow" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href="https://www.amazon.co.uk/s?k=brush+strip+draught+excluder+door&tag=pestproindex2-21" target="_blank" rel="noopener noreferrer nofollow" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
             <tr>
@@ -502,7 +502,7 @@ export default function HowToPestProofYourShedPage() {
               <td className="py-3 px-4 text-gray-600">Annual timber protection to prevent rot and decay</td>
               <td className="py-3 px-4 text-gray-600">&pound;15&ndash;&pound;30</td>
               <td className="py-3 px-4">
-                <a href="https://www.amazon.co.uk/s?k=exterior+wood+preservative+shed&tag=pestproindex-21" target="_blank" rel="noopener noreferrer nofollow" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href="https://www.amazon.co.uk/s?k=exterior+wood+preservative+shed&tag=pestproindex2-21" target="_blank" rel="noopener noreferrer nofollow" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
           </tbody>

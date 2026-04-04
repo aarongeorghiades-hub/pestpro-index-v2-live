@@ -124,7 +124,7 @@ export default function ResourcesPage() {
         {
           name: 'The Bed Bug Handbook',
           description: 'The complete reference book on bed bug biology, detection, and treatment. Available on Amazon.',
-          url: 'https://www.amazon.co.uk/dp/B09TZK7FYS?tag=pestproindex-21'
+          url: 'https://www.amazon.co.uk/dp/B09TZK7FYS?tag=pestproindex2-21'
         },
         {
           name: 'Urban Pest Management in Australia (CSIRO)',
