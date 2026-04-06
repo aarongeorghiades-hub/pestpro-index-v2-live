@@ -104,11 +104,11 @@ const faqSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Wasp Nest Killers at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Rentokil Wasp Nest Killer Foam' },
-  { id: 'best-range', title: 'Best Long-Range — Raid Wasp & Hornet Killer' },
-  { id: 'best-powder', title: 'Best Powder — Pest Expert Formula P Wasp Powder' },
-  { id: 'best-value', title: 'Best Value — Zero In Wasp Nest Killer' },
-  { id: 'best-professional', title: 'Best Professional — Digrain Wasp Nest Destroyer' },
+  { id: 'best-overall', title: 'Best Overall — Rentokil Wasp Nest Destroyer Foam' },
+  { id: 'best-range', title: 'Best Long-Range — Zero In Ultra Power 600ml' },
+  { id: 'best-value', title: 'Best Value — Zero In Wasp Nest Killer Foam' },
+  { id: 'best-powder', title: 'Best Powder — Rentokil Wasp Killer Powder' },
+  { id: 'best-twin', title: 'Best Twin Pack — Zero In Powder Twin Pack' },
   { id: 'buying-guide', title: 'How to Choose the Right Wasp Nest Killer' },
   { id: 'safety', title: 'Safety: How to Treat a Wasp Nest Safely' },
   { id: 'faq', title: 'Frequently Asked Questions' },
@@ -192,34 +192,34 @@ export default function BestWaspNestFoamPage() {
         </thead>
         <tbody>
           <tr>
-            <td>Rentokil Wasp Nest Killer Foam</td>
+            <td>Rentokil Wasp Nest Destroyer Foam 300ml</td>
             <td>Expanding foam</td>
             <td>Best Overall</td>
             <td>~£8</td>
           </tr>
           <tr>
-            <td>Raid Wasp & Hornet Killer</td>
-            <td>Long-range spray</td>
+            <td>Zero In Ultra Power Wasp &amp; Hornet Nest Killer Foam 600ml</td>
+            <td>Long-range foam</td>
             <td>Best Long-Range</td>
-            <td>~£7</td>
-          </tr>
-          <tr>
-            <td>Pest Expert Formula P Wasp Powder</td>
-            <td>Insecticidal powder</td>
-            <td>Best Powder</td>
             <td>~£10</td>
           </tr>
           <tr>
-            <td>Zero In Wasp Nest Killer</td>
+            <td>Zero In Wasp Nest Killer Foam 300ml</td>
             <td>Aerosol foam</td>
             <td>Best Value</td>
             <td>~£5</td>
           </tr>
           <tr>
-            <td>Digrain Wasp Nest Destroyer</td>
-            <td>Professional foam</td>
-            <td>Best Professional</td>
-            <td>~£15</td>
+            <td>Rentokil Wasp Killer Powder 150g</td>
+            <td>Insecticidal powder</td>
+            <td>Best Powder</td>
+            <td>~£6</td>
+          </tr>
+          <tr>
+            <td>Zero In Wasp Nest Control Powder 300g Twin Pack</td>
+            <td>Powder twin pack</td>
+            <td>Best Twin Pack</td>
+            <td>~£8</td>
           </tr>
         </tbody>
       </table>
@@ -229,205 +229,193 @@ export default function BestWaspNestFoamPage() {
       </div>
 
       {/* Product 1 */}
-      <h2 id="best-overall">Best Overall — Rentokil Wasp Nest Killer Foam</h2>
+      <h2 id="best-overall">Best Overall — Rentokil Wasp Nest Destroyer Foam</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Rentokil Wasp Nest Killer Foam"
+          name="Rentokil Wasp Nest Destroyer Foam 300ml"
           rank={1}
           rating={4.3}
           features={[
-            'Expanding foam seals nest entrance and kills on contact',
-            'Reaches nests up to 2 metres away',
-            'Fast-acting — kills wasps within minutes',
-            'Trusted Rentokil brand with clear safety instructions',
+            'Powerful foam jet treats from 2 metres away',
+            'Contains d-phenothrin and tetramethrin for fast kill',
+            'One 300ml can treats up to 3 large nests',
+            'Effective within 24 hours',
           ]}
           price="£8"
-          asin="B00GKHI2PW"
+          asin="B000TAY2EQ"
           bestFor="Best Overall"
         />
       </div>
       <p>
-        Rentokil Wasp Nest Killer Foam takes our top spot for its combination of effectiveness, safety, and ease of use. The expanding foam format is the key advantage — when you spray it into the nest entrance, the foam expands to seal the opening, trapping wasps inside with the insecticide. This means fewer wasps escape during treatment, which significantly reduces the risk of being stung. The active insecticide then kills wasps through direct contact as they try to exit through the foam barrier.
+        The Rentokil Wasp Nest Destroyer Foam is a UK household name for good reason. The powerful foam jet lets you treat from 2 metres away — enough distance to stay safe while delivering insecticide directly into the nest entrance. The active ingredients, d-phenothrin and tetramethrin, provide fast contact kill on wasps inside the nest. One 300ml can is enough to treat up to 3 large nests, making it excellent value for properties with multiple problem areas.
       </p>
       <p>
-        The spray reaches nests up to approximately 2 metres away, allowing you to treat from a safe distance. While this is not as far as some long-range jet sprays, it is sufficient for most accessible ground-level and low-level nests — under shed roofs, in air bricks, in garden walls, and similar locations. The foam is clearly visible when applied, so you can see exactly where it has gone and whether you have covered the entrance fully.
-      </p>
-      <p>
-        Rentokil's instructions are clear and comprehensive, covering when to treat (dusk is best), what protective clothing to wear, and what to do if wasps become aggressive during treatment. At around £8, it is excellent value for a product that can resolve a wasp nest problem in a single application.
+        The foam format is the key advantage here. When sprayed into the nest entrance, the foam expands to seal the opening, trapping wasps inside with the insecticide. This means fewer wasps escape during treatment, significantly reducing the risk of stings. The colony is typically dead within 24 hours. At around £8, Rentokil delivers a reliable, trusted product that resolves most wasp nest problems in a single application.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
         <li>Expanding foam seals entrance — fewer escaping wasps</li>
-        <li>Fast-acting contact kill</li>
-        <li>Trusted brand with excellent instructions</li>
-        <li>Excellent value at around £8</li>
+        <li>Dual active ingredients for fast contact kill</li>
+        <li>One can treats up to 3 large nests</li>
+        <li>Trusted Rentokil brand with clear instructions</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
         <li>2-metre range limits use on elevated nests</li>
         <li>Foam can be messy on surrounding surfaces</li>
-        <li>Single can — may not be enough for very large nests</li>
+        <li>Not ideal for hidden cavity nests — use powder instead</li>
       </ul>
 
       {/* Product 2 */}
-      <h2 id="best-range">Best Long-Range — Raid Wasp & Hornet Killer</h2>
+      <h2 id="best-range">Best Long-Range — Zero In Ultra Power 600ml</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Raid Wasp & Hornet Killer Spray"
+          name="Zero In Ultra Power Wasp &amp; Hornet Nest Killer Foam 600ml"
           rank={2}
           rating={4.2}
           features={[
-            'Long-range jet spray reaches up to 4 metres',
-            'Instant knockdown — kills wasps on contact',
-            'Powerful stream penetrates nest structure',
-            'Globally trusted brand',
+            'Professional-strength 600ml trigger aerosol',
+            '4-metre spray range — double the safe distance',
+            'Treats 4-7 nests per can',
+            'Suitable for indoor and outdoor nests',
           ]}
-          price="£7"
-          asin="B0DJGNRR7T"
+          price="£10"
+          asin="B077G3YB38"
           bestFor="Best Long-Range"
         />
       </div>
       <p>
-        When you need maximum distance between you and an angry wasp nest, Raid Wasp & Hornet Killer delivers a powerful jet stream that reaches up to 4 metres — double the range of most foam products. This extra distance provides a critical safety margin, especially for nests that are slightly elevated or in locations where you cannot easily retreat. The jet spray fires a concentrated stream directly into the nest entrance, delivering a lethal dose of insecticide deep inside the nest structure.
+        When you need maximum distance between you and the nest, the Zero In Ultra Power delivers a 4-metre spray range — double the safe distance of standard 2-metre foam cans. This extra reach provides a critical safety margin, especially for nests that are slightly elevated or in locations where you cannot easily retreat. The professional-strength 600ml trigger aerosol is noticeably larger than standard cans, providing enough product to treat 4-7 nests per can.
       </p>
       <p>
-        The trade-off compared to foam is that a liquid spray does not seal the nest entrance, so wasps can escape during and after treatment. This makes the timing of your application even more important — treating at dusk when most wasps are inside the nest and least active is essential. Despite this, the powerful knockdown effect means wasps that fly out of the treated nest are typically disorientated and die within minutes.
-      </p>
-      <p>
-        Raid is a globally recognised pest control brand, and their wasp killer is one of the best-selling products in this category. The can provides enough product for treating one medium-to-large nest, and the jet nozzle gives you precise, targeted application even at maximum range.
+        The Ultra Power is suitable for both indoor and outdoor nests, including lofts, wall cavities, and roof eaves. The trigger mechanism gives you more control over the spray direction compared to standard push-button aerosols, allowing precise application even at maximum range. At around £10, the larger can size and extended range make this the best option when you need to treat from further away or have multiple nests to deal with across a property.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>4-metre range — maximum safe distance</li>
-        <li>Powerful jet penetrates deep into nest</li>
-        <li>Instant knockdown of escaping wasps</li>
-        <li>Trusted global brand</li>
+        <li>4-metre range — double the safe distance of standard cans</li>
+        <li>Large 600ml can treats 4-7 nests</li>
+        <li>Trigger aerosol for precise, controlled application</li>
+        <li>Suitable for both indoor and outdoor use</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Does not seal the entrance — wasps can escape</li>
-        <li>Liquid spray less contained than foam</li>
-        <li>Must treat at dusk for safety</li>
+        <li>Bulkier can is harder to handle in tight spaces</li>
+        <li>Higher price than standard 300ml products</li>
+        <li>Trigger mechanism requires a firm grip</li>
       </ul>
 
       {/* Product 3 */}
-      <h2 id="best-powder">Best Powder — Pest Expert Formula P Wasp Powder</h2>
+      <h2 id="best-value">Best Value — Zero In Wasp Nest Killer Foam</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Formula P Wasp Killer Powder"
+          name="Zero In Wasp Nest Killer Foam 300ml"
           rank={3}
-          rating={4.4}
-          features={[
-            'Professional-strength permethrin powder',
-            'Ideal for cavity nests, underground nests, and wall voids',
-            'Wasps carry powder into nest — kills entire colony',
-            'Long-lasting residual action',
-          ]}
-          price="£10"
-          asin="B073JPVRFB"
-          bestFor="Best Powder"
-        />
-      </div>
-      <p>
-        Powder is the professional's weapon of choice for wasp nests in cavities — inside walls, under roof tiles, in the ground, or in any location where you cannot see the nest itself but can see wasps entering and exiting through a hole. Pest Expert Formula P is a professional-strength permethrin powder that you puff into the nest entrance. Returning wasps walk through the powder, picking it up on their bodies and legs, and carry it deep into the nest where it spreads to the queen and other workers. Within 24-48 hours, the entire colony is dead.
-      </p>
-      <p>
-        This "transfer effect" is what makes powder so effective for hidden nests. You do not need to reach the nest itself — you just need to treat the entrance hole. The powder clings to the wasps' bodies and is spread throughout the nest as they move around and make contact with other colony members. It is the same principle that professional pest controllers use when treating cavity nests.
-      </p>
-      <p>
-        The powder also provides long-lasting residual protection — any new wasps that attempt to use the treated entrance will encounter the powder and die. This is particularly useful for preventing new colonies from establishing in the same location the following year.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Best option for cavity and underground nests</li>
-        <li>Transfer effect kills the entire colony</li>
-        <li>Professional-strength permethrin</li>
-        <li>Long-lasting residual protection</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Needs a puffer applicator for best results</li>
-        <li>Not suitable for visible hanging nests (use foam instead)</li>
-        <li>Takes 24-48 hours to kill the full colony</li>
-      </ul>
-
-      {/* Product 4 */}
-      <h2 id="best-value">Best Value — Zero In Wasp Nest Killer</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Zero In Wasp Nest Killer Spray"
-          rank={4}
           rating={4.0}
           features={[
-            'Budget-friendly wasp nest treatment',
-            'Fast-acting aerosol spray',
-            'Kills wasps and destroys nests',
-            'Ready-to-use — no preparation needed',
+            'Fast-acting foam from 2 metres',
+            '2-3 treatments per 300ml can',
+            'Simple to use — spray into nest entrance at dusk',
+            'Kills the colony within 24 hours',
           ]}
           price="£5"
-          asin="B004US3F1Y"
-          bestFor="Best Budget"
+          asin="B0082M8TU6"
+          bestFor="Best Value"
         />
       </div>
       <p>
-        At around £5, Zero In Wasp Nest Killer is the most affordable option on our list — and it does the job effectively for small to medium nests that are easily accessible. The aerosol spray delivers insecticide directly into the nest entrance, killing wasps on contact. It is a straightforward, no-frills product that works.
+        At around £5, the Zero In Wasp Nest Killer Foam is the most affordable foam option on our list — and it does the job effectively for small to medium nests. The fast-acting foam reaches 2 metres and provides 2-3 treatments per 300ml can. The application is straightforward: spray directly into the nest entrance at dusk when wasps are less active, and the colony is killed within 24 hours.
       </p>
       <p>
-        The spray range is shorter than the Raid jet spray and it does not produce the sealing effect of a foam product, so it is best suited for nests you can approach safely within 1-2 metres. For a small nest in a shed, garden wall, or air brick that you can reach easily at dusk, Zero In is a perfectly adequate and affordable solution. At this price, you can even buy two cans for the cost of one premium product.
+        This is a no-frills product that works well for accessible, ground-level nests in sheds, garden walls, and air bricks. At this price point, you can buy two cans for less than most premium alternatives, giving you a backup can for retreatment if needed. For homeowners dealing with a single small nest that they can approach safely, Zero In offers genuine value without compromising on effectiveness.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
         <li>Very affordable at around £5</li>
-        <li>Simple, ready-to-use aerosol</li>
-        <li>Effective on small to medium nests</li>
-        <li>Widely available</li>
+        <li>Fast-acting foam kills colony within 24 hours</li>
+        <li>Simple application — no special technique needed</li>
+        <li>2-3 treatments per can</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Shorter spray range than premium products</li>
-        <li>No foam sealing effect</li>
-        <li>May need two cans for larger nests</li>
+        <li>Shorter range than the Ultra Power version</li>
+        <li>Smaller can may not be enough for very large nests</li>
+        <li>Fewer features than premium alternatives</li>
       </ul>
 
-      {/* Product 5 */}
-      <h2 id="best-professional">Best Professional — Digrain Wasp Nest Destroyer</h2>
+      {/* Product 4 */}
+      <h2 id="best-powder">Best Powder — Rentokil Wasp Killer Powder</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Digrain Wasp Nest Destroyer Foam"
-          rank={5}
-          rating={4.5}
+          name="Rentokil Wasp Killer Powder 150g"
+          rank={4}
+          rating={4.1}
           features={[
-            'Professional-grade expanding foam',
-            'High-concentration insecticide for rapid kill',
-            'Large can — enough for multiple nests',
-            'Used by pest control professionals',
+            'Powder for nests in vents, eaves and wall cavities',
+            'Contains permethrin — effective within 24 hours',
+            'Best used alongside foam for comprehensive treatment',
+            'Reaches areas foam cannot access',
           ]}
-          price="£15"
-          asin="B010E2GCIM"
-          bestFor="Best Professional-Grade"
+          price="£6"
+          asin="B0B8HLKZZS"
+          bestFor="Best Powder"
         />
       </div>
       <p>
-        Digrain Wasp Nest Destroyer is the product you will find in many professional pest controllers' vans. It delivers a high-concentration expanding foam that seals the nest entrance and kills the colony rapidly. The larger can size provides significantly more product than consumer alternatives, making it suitable for treating larger nests or multiple nests on a single property.
+        Powder is the right choice for wasp nests that are not visible or easily accessible — inside air vents, roof eaves, and wall cavities where foam simply cannot reach. The Rentokil Wasp Killer Powder contains permethrin, a proven insecticide that kills wasps within 24 hours. You inject the powder into the entrance hole, and returning wasps walk through it, picking it up on their bodies and carrying it deep into the nest where it spreads to the queen and other workers.
       </p>
       <p>
-        The professional-grade formulation contains a higher concentration of active ingredient than standard consumer products, which means faster knockdown and more reliable colony elimination — particularly important for large, mature nests with thousands of workers. The expanding foam fills the nest entrance completely, ensuring comprehensive insecticide coverage inside the nest structure.
-      </p>
-      <p>
-        At £15, it costs more than consumer alternatives but provides significantly more product and higher potency. If you have a large nest or multiple nests to treat, Digrain is the most cost-effective professional-grade option.
+        This "transfer effect" is what makes powder so effective for hidden nests. You do not need to see or reach the nest itself — just treat the entrance. Rentokil recommends using the powder alongside foam spray for comprehensive treatment: foam for the visible entrance and powder for any secondary access points. At around £6, it is an affordable addition to your wasp control toolkit and an essential product when dealing with cavity nests.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Professional-grade concentration</li>
-        <li>Large can — treats bigger or multiple nests</li>
-        <li>Expanding foam seals entrance effectively</li>
-        <li>Fast, reliable colony elimination</li>
+        <li>Reaches cavity nests that foam cannot access</li>
+        <li>Permethrin provides effective kill within 24 hours</li>
+        <li>Transfer effect spreads insecticide through the colony</li>
+        <li>Affordable at around £6</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Higher price than consumer products</li>
-        <li>Overkill for a small, single nest</li>
-        <li>Professional product — less beginner-friendly labelling</li>
+        <li>Not suitable for visible hanging nests — use foam instead</li>
+        <li>150g container is relatively small</li>
+        <li>Needs careful application to avoid inhaling powder</li>
+      </ul>
+
+      {/* Product 5 */}
+      <h2 id="best-twin">Best Twin Pack — Zero In Powder Twin Pack</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Zero In Wasp Nest Control Powder 300g Twin Pack"
+          rank={5}
+          rating={4.0}
+          features={[
+            'Twin-pack powder with puffer applicator',
+            'Apply into gaps in walls, soffits and vents',
+            'Child-resistant cap for safety',
+            '300g per bottle — two bottles for extended season',
+          ]}
+          price="£8"
+          asin="B01FSDM1E6"
+          bestFor="Best Twin Pack"
+        />
+      </div>
+      <p>
+        The Zero In twin pack is the practical choice when you can see wasp activity but cannot access the nest directly. The included puffer applicator lets you accurately inject powder into gaps in walls, soffits, and vents where wasps are entering and exiting. Returning wasps walk through the powder and carry it into the hidden nest, killing the colony from within through the transfer effect.
+      </p>
+      <p>
+        Each bottle contains 300g of powder, and the twin pack gives you two bottles for extended season use — enough to treat multiple nests across the summer months. The child-resistant cap is a welcome safety feature for households with young children. At around £8 for the pair, this twin pack offers the best value if you need powder rather than foam, particularly for homeowners dealing with recurring wasp problems in cavity walls or similar locations.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Two 300g bottles for extended season coverage</li>
+        <li>Puffer applicator for accurate powder delivery</li>
+        <li>Child-resistant cap for household safety</li>
+        <li>Good value twin pack at around £8</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Powder only — not a substitute for foam on visible nests</li>
+        <li>Takes 24-48 hours for full colony kill</li>
+        <li>Requires dry conditions for best results</li>
       </ul>
 
       {/* Buying Guide */}

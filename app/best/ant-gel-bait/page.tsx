@@ -56,7 +56,7 @@ const faqSchema = {
       name: 'How does ant gel bait work?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ant gel bait works by exploiting the ant colony\'s food-sharing behaviour (trophallaxis). Worker ants find the gel, consume it, and carry it back to the nest where they share it with other workers, larvae, and crucially the queen. The active ingredient kills slowly (24-72 hours), giving the poison time to spread throughout the colony. Once the queen is killed, the colony cannot reproduce and dies out completely.',
+        text: "Ant gel bait works by exploiting the ant colony's food-sharing behaviour (trophallaxis). Worker ants find the gel, consume it, and carry it back to the nest where they share it with other workers, larvae, and crucially the queen. The active ingredient kills slowly (24-72 hours), giving the poison time to spread throughout the colony. Once the queen is killed, the colony cannot reproduce and dies out completely.",
       },
     },
     {
@@ -104,11 +104,11 @@ const faqSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Ant Gels at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Advion Ant Gel' },
-  { id: 'best-value', title: 'Best Value — Nippon Ant Killer Liquid' },
-  { id: 'best-indoor', title: 'Best Indoor — Raid Ant Gel' },
+  { id: 'best-overall', title: 'Best Overall — Nippon Ant Killer Gel' },
+  { id: 'best-powder', title: 'Best Powder — Nippon Ant Killer Powder' },
+  { id: 'best-spray', title: 'Best Spray — Nippon Ant & Crawling Insect Spray' },
+  { id: 'best-indoor', title: 'Best Indoor Gel — Raid Ant Killer Gel' },
   { id: 'best-stations', title: 'Best Bait Stations — Terro Liquid Ant Baits' },
-  { id: 'best-professional', title: 'Best Professional — Maxforce Quantum' },
   { id: 'buying-guide', title: 'How to Choose the Right Ant Gel' },
   { id: 'application', title: 'How to Apply Ant Gel for Best Results' },
   { id: 'faq', title: 'Frequently Asked Questions' },
@@ -185,41 +185,41 @@ export default function BestAntGelBaitPage() {
         <thead>
           <tr>
             <th>Product</th>
-            <th>Active Ingredient</th>
+            <th>Format</th>
             <th>Best For</th>
             <th>Price</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Advion Ant Gel</td>
-            <td>Indoxacarb</td>
+            <td>Nippon Ant Killer Gel 25g</td>
+            <td>Gel</td>
             <td>Best Overall</td>
-            <td>~£18</td>
-          </tr>
-          <tr>
-            <td>Nippon Ant Killer Liquid</td>
-            <td>Spinosad</td>
-            <td>Best Value</td>
             <td>~£5</td>
           </tr>
           <tr>
-            <td>Raid Ant Killer Gel</td>
-            <td>D-Glucitol/Permethrin</td>
-            <td>Best Indoor</td>
+            <td>Nippon Ant Killer Powder 500g</td>
+            <td>Powder</td>
+            <td>Best Powder</td>
             <td>~£6</td>
           </tr>
           <tr>
-            <td>Terro Liquid Ant Baits</td>
-            <td>Borax</td>
-            <td>Best Bait Stations</td>
-            <td>~£10</td>
+            <td>Nippon Ant &amp; Crawling Insect Spray 750ml</td>
+            <td>Spray</td>
+            <td>Best Spray</td>
+            <td>~£7</td>
           </tr>
           <tr>
-            <td>Maxforce Quantum</td>
-            <td>Imidacloprid</td>
-            <td>Best Professional</td>
-            <td>~£25</td>
+            <td>Raid Ant Killer Gel</td>
+            <td>Gel</td>
+            <td>Best Indoor Gel</td>
+            <td>~£6</td>
+          </tr>
+          <tr>
+            <td>Terro Liquid Ant Bait Stations</td>
+            <td>Bait Stations</td>
+            <td>Best Bait Stations</td>
+            <td>~£10</td>
           </tr>
         </tbody>
       </table>
@@ -229,208 +229,193 @@ export default function BestAntGelBaitPage() {
       </div>
 
       {/* Product 1 */}
-      <h2 id="best-overall">Best Overall — Advion Ant Gel</h2>
+      <h2 id="best-overall">Best Overall — Nippon Ant Killer Gel 25g</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Advion Ant Gel Bait"
+          name="Nippon Ant Killer Gel 25g — Liquid Bait, Colony Elimination"
           rank={1}
-          rating={4.5}
+          rating={4.4}
           features={[
-            'Indoxacarb active — highly palatable to all UK ant species',
-            'Professional-grade gel used by pest controllers',
-            'Syringe applicator for precise placement',
-            'Eliminates entire colonies including the queen',
+            'UK market leader for ant gel bait',
+            'Sugary liquid bait carried back to the queen',
+            'Eliminates entire colony — not just surface ants',
+            '25g tube treats multiple ant runs',
           ]}
-          price="£18"
-          asin="B00GKHI2PW"
+          price="£5"
+          asin="B000TAUBSC"
           bestFor="Best Overall"
         />
       </div>
       <p>
-        Advion Ant Gel is the gold standard in ant gel bait — the product that professional pest controllers use more than any other for indoor ant infestations. The active ingredient, indoxacarb, has two key properties that make it devastatingly effective: it is highly palatable to all common UK ant species (Black Garden Ants, Pharaoh Ants, and Ghost Ants), and it kills with a delayed action that allows maximum transfer through the colony before any ants die.
+        Nippon Ant Killer Gel is the UK market leader for ant gel bait, and it has earned that position through sheer effectiveness. The sugary liquid bait is irresistible to Black Garden Ants — worker ants feed on the gel, carry it back to the nest, and share it with the colony through trophallaxis. The poison reaches the queen, and once she dies the colony cannot reproduce. You are not just killing the ants you can see; you are eliminating the entire colony from the inside out.
       </p>
       <p>
-        The syringe applicator allows you to place precise, pea-sized dots of gel exactly where ants are trailing — along skirting boards, behind kitchen units, near entry points, and in cracks and crevices. The gel remains moist and attractive for weeks, ensuring continued uptake even if it takes time for worker ants to discover it. Once they do find it, the feeding frenzy begins: scouts recruit more workers, and the gel is carried deep into the nest.
-      </p>
-      <p>
-        In professional pest control circles, Advion is considered the most reliable ant gel on the market. It consistently achieves full colony elimination within 7-14 days, and its broad-spectrum palatability means it works on all the ant species you are likely to encounter in a UK home. If you want the same product that a BPCA-certified technician would use, this is it.
+        The 25g tube treats multiple ant runs, making it excellent value at around £5. Apply pea-sized dots along ant trails, near entry points, and behind kitchen units. The gel remains moist and attractive for days, ensuring continued uptake. For most UK homeowners dealing with a summer ant invasion, this is the first product to reach for — affordable, effective, and safe for indoor use.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Professional-grade indoxacarb formula</li>
-        <li>Highly palatable to all UK ant species</li>
-        <li>Precise syringe applicator for targeted placement</li>
-        <li>Reliable full colony elimination in 7-14 days</li>
+        <li>UK market leader — trusted by millions of homeowners</li>
+        <li>Eliminates the entire colony including the queen</li>
+        <li>25g tube covers multiple ant runs</li>
+        <li>Excellent value at around £5</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Higher price than consumer alternatives</li>
-        <li>Single syringe — may need multiple for severe infestations</li>
-        <li>Professional product — less consumer-friendly packaging</li>
+        <li>Gel can dry out in very warm conditions</li>
+        <li>Tube nozzle makes precise placement slightly tricky</li>
+        <li>Less effective on tropical ant species like Pharaoh Ants</li>
       </ul>
 
       {/* Product 2 */}
-      <h2 id="best-value">Best Value — Nippon Ant Killer Liquid</h2>
+      <h2 id="best-powder">Best Powder — Nippon Ant Killer Powder 500g</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Nippon Ant Killer Liquid Bait"
+          name="Nippon Ant Killer Powder 500g"
           rank={2}
           rating={4.3}
           features={[
-            'The UK\'s best-selling ant killer for decades',
-            'Liquid bait formula ants carry back to the nest',
-            'Includes bait station trays for clean deployment',
-            'Affordable and widely available',
+            'Permethrin-based powder for direct nest treatment',
+            'Apply along ant runs, cracks and garden nest sites',
+            'Long-lasting outdoor control',
+            '6-month effective residual',
           ]}
-          price="£5"
-          asin="B001MIVFGC"
-          bestFor="Best Budget"
+          price="£6"
+          asin="B000TAW39M"
+          bestFor="Best Powder"
         />
       </div>
       <p>
-        Nippon has been the UK's go-to ant killer for decades, and for good reason. The liquid bait formula is highly attractive to Black Garden Ants — by far the most common species causing problems in UK homes. Worker ants drink the liquid, carry it back to the nest, and share it with the colony through trophallaxis. The result is the same as gel bait: the poison spreads through the colony and kills the queen, ending the infestation at its source.
+        Nippon Ant Killer Powder is a permethrin-based powder designed for direct nest treatment and perimeter barriers. Where gel bait works through colony food-sharing, powder works through direct contact — ants walk through the treated area, pick up the powder on their bodies, and die within hours. It is particularly effective when you can identify the nest location and apply powder directly into the entrance.
       </p>
       <p>
-        At around £5, Nippon offers exceptional value. The kit includes small bait station trays where you deposit drops of the liquid, keeping the poison contained and off your kitchen surfaces. The trays can be placed along ant trails, near entry points, and behind appliances. The liquid remains attractive for several days, though you may need to refresh it if it dries out in warm conditions.
-      </p>
-      <p>
-        Nippon is available in virtually every hardware store, supermarket, and garden centre in the UK, making it the most accessible option on our list. For a straightforward Black Garden Ant problem — ants trailing across your kitchen floor in summer — Nippon is the affordable, proven solution that millions of UK homeowners reach for every year.
+        Apply along ant runs, into cracks and crevices, and around garden nest sites for long-lasting outdoor control. The 500g container provides generous coverage, and the permethrin residual remains effective for up to six months — meaning treated areas stay protected well beyond the initial application. This is the ideal complement to gel bait: use gel indoors for colony elimination, and powder outdoors to create a barrier and treat visible nests.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>UK's best-selling ant killer — proven over decades</li>
-        <li>Very affordable at around £5</li>
-        <li>Includes bait station trays</li>
-        <li>Effective against Black Garden Ants</li>
+        <li>Permethrin-based — kills on contact</li>
+        <li>6-month effective residual for long-term protection</li>
+        <li>500g treats a large area — excellent value</li>
+        <li>Ideal for outdoor nests, paths and perimeter barriers</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Liquid can dry out in warm conditions</li>
-        <li>Less effective on tropical ant species (Pharaoh Ants)</li>
-        <li>Not as potent as professional-grade indoxacarb gels</li>
+        <li>Not suitable for indoor use on kitchen surfaces</li>
+        <li>Rain can wash powder away from outdoor treatment areas</li>
+        <li>Does not exploit trophallaxis — kills workers, not the queen directly</li>
       </ul>
 
       {/* Product 3 */}
-      <h2 id="best-indoor">Best Indoor — Raid Ant Killer Gel</h2>
+      <h2 id="best-spray">Best Spray — Nippon Ant &amp; Crawling Insect Killer Spray 750ml</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Raid Ant Killer Gel Bait Stations"
+          name="Nippon Ant &amp; Crawling Insect Killer Spray 750ml"
           rank={3}
-          rating={4.1}
+          rating={4.2}
           features={[
-            'Pre-filled enclosed bait stations — no mess',
-            'Child and pet-resistant design',
-            'Place and forget — no refilling needed',
-            'Kills the colony through bait transfer',
+            'Ready-to-use residual spray for indoor and outdoor',
+            'Kills ants on contact with invisible barrier',
+            'Apply around doorframes, skirting boards, paths',
+            '750ml treats a full property perimeter',
           ]}
-          price="£6"
-          asin="B004US3F1Y"
-          bestFor="Best Indoor"
+          price="£7"
+          asin="B000TAP1R8"
+          bestFor="Best Spray"
         />
       </div>
       <p>
-        Raid Ant Killer Gel Bait Stations are the most convenient option for indoor use. Each station comes pre-filled with ant gel bait inside an enclosed plastic housing — you simply peel off the adhesive backing, place the station along an ant trail, and walk away. There is no mess, no exposed gel, and no need to handle the bait directly. The enclosed design also makes these stations the safest choice for homes with young children or pets who might touch exposed gel.
+        Nippon Ant and Crawling Insect Killer Spray is a ready-to-use residual spray for both indoor and outdoor surfaces. It kills ants on contact and leaves an invisible protective barrier that continues to kill ants crossing the treated surface for weeks after application. Apply around doorframes, windowsills, skirting boards, and garden paths to create a chemical perimeter that ants cannot cross without being poisoned.
       </p>
       <p>
-        The stations work on the same principle as all gel baits: worker ants enter the station through small openings, feed on the gel inside, and carry the poisoned bait back to the colony. The enclosed format does not reduce effectiveness — ants readily enter the stations and feed. The stations are discreet enough to place in visible areas (along skirting boards, behind appliances, on window sills) without them being particularly noticeable.
-      </p>
-      <p>
-        For a clean, hassle-free indoor solution — particularly in kitchens where you do not want exposed gel near food preparation areas — Raid bait stations are the best option. They are also ideal for rental properties where you want to address an ant problem without leaving visible bait marks on surfaces.
+        The 750ml bottle treats a full property perimeter, making it a practical choice for preventing ants from entering your home in the first place. While spray does not offer the colony-killing power of gel bait (it kills workers on contact rather than reaching the queen), it is an excellent defensive measure when used alongside gel. Deploy gel bait at active trails for colony elimination, and spray around entry points to stop new ants getting in while the gel does its work.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Pre-filled and enclosed — no mess or handling</li>
-        <li>Child and pet-resistant design</li>
-        <li>Discreet placement — barely noticeable</li>
-        <li>Place and forget — no maintenance needed</li>
+        <li>Ready-to-use — no mixing or diluting required</li>
+        <li>Residual barrier keeps killing for weeks after application</li>
+        <li>750ml covers a full property perimeter</li>
+        <li>Works on all crawling insects, not just ants</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Cannot target specific cracks and crevices like a syringe</li>
-        <li>Fixed gel amount — cannot increase dose for severe problems</li>
-        <li>Less effective than professional-grade gel for serious infestations</li>
+        <li>Does not kill the colony — kills workers on contact only</li>
+        <li>Can disrupt gel bait if sprayed near bait placements</li>
+        <li>Needs reapplication after rain on outdoor surfaces</li>
       </ul>
 
       {/* Product 4 */}
-      <h2 id="best-stations">Best Bait Stations — Terro Liquid Ant Baits</h2>
+      <h2 id="best-indoor">Best Indoor Gel — Raid Ant Killer Gel</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Raid Ant Killer Gel"
+          rank={4}
+          rating={4.1}
+          features={[
+            'Gel bait format — place drops near ant trails',
+            'Ants carry bait back to nest for colony control',
+            'Discreet application with no mess',
+            'Suitable for kitchens and living areas',
+          ]}
+          price="£6"
+          asin="SEARCH"
+          bestFor="Best Indoor Gel"
+        />
+      </div>
+      <p>
+        Raid Ant Killer Gel offers a gel bait format that lets you place small drops near ant trails without the mess of spraying. Worker ants feed on the gel and carry the bait back to the nest, spreading the poison through the colony via trophallaxis. The discreet application means you can use it in kitchens, bathrooms, and living areas without unsightly bait stations or powder residue.
+      </p>
+      <p>
+        The gel format is particularly well-suited to indoor use where you want a clean, no-mess solution. Place drops along skirting boards, behind kitchen units, near entry points, and in any cracks or crevices where ants are trailing. Raid is a well-known household brand, and the product is widely available in supermarkets and online. For a straightforward indoor ant problem where convenience matters, Raid gel gets the job done.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Gel bait format — discreet and mess-free</li>
+        <li>Colony control through bait transfer, not just contact kill</li>
+        <li>Well-known brand — widely available in UK shops</li>
+        <li>Suitable for kitchens and food preparation areas</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Smaller tube than Nippon — may need more than one for large infestations</li>
+        <li>Gel can dry out if not consumed quickly</li>
+        <li>Less established track record than Nippon for UK ant species</li>
+      </ul>
+
+      {/* Product 5 */}
+      <h2 id="best-stations">Best Bait Stations — Terro Liquid Ant Bait Stations</h2>
       <div className="not-prose my-6">
         <ProductCard
           name="Terro Liquid Ant Bait Stations"
-          rank={4}
+          rank={5}
           rating={4.3}
           features={[
-            'Borax-based liquid bait — proven effective',
-            'Pre-filled snap-off stations for easy placement',
-            'Attracts and kills all common household ants',
-            'Multi-pack for treating multiple locations',
+            'Borax-based liquid bait stations from US market leader',
+            'Pre-filled and ready to place',
+            'Slow-acting formula for maximum colony spread',
+            'Effective on sweet-feeding species common in UK',
           ]}
           price="£10"
-          asin="B07BFQ1V5L"
+          asin="SEARCH"
           bestFor="Best Bait Stations"
         />
       </div>
       <p>
-        Terro is one of the world's most popular ant bait brands, and their liquid bait stations use a tried-and-tested borax formula that has been eliminating ant colonies for over a century. Borax works as a slow-acting stomach poison — ants consume the sweet liquid eagerly, share it with the colony, and the borax gradually disrupts their digestive systems over 24-48 hours. The delayed action is perfectly calibrated: fast enough to kill, slow enough to allow maximum spread through the colony.
+        Terro Liquid Ant Bait Stations use a borax-based liquid bait formula from the US market leader in ant control. Each station comes pre-filled and ready to place — simply position them along ant trails and near entry points. The slow-acting borax formula is specifically designed so that workers have time to share the bait with the colony before dying, ensuring maximum spread through the nest and eventual queen elimination.
       </p>
       <p>
-        The snap-off bait station design is clever — you twist the tab to open the station, and the liquid flows into a small tray that ants access through openings in the base. The stations can be placed flat or against walls, and the enclosed design keeps the liquid contained and protected from dust and debris. A multi-pack provides enough stations to treat multiple rooms or multiple ant trails simultaneously.
-      </p>
-      <p>
-        Borax is a naturally occurring mineral compound, which makes Terro a good choice for people who prefer a less synthetic approach. While it is still toxic and should be kept away from children and pets, it has a well-established safety profile and has been used in household ant control for generations.
+        Terro is particularly effective on sweet-feeding ant species, which includes the Black Garden Ants common in UK kitchens. The enclosed bait station design keeps the liquid contained and protected, making it a clean and child-friendly option. While Terro is a US brand and slightly harder to find in UK shops, it is readily available on Amazon and has a loyal following among UK homeowners who have tried it. For a set-and-forget bait station solution, Terro delivers reliable colony elimination.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Borax — proven effective for over a century</li>
-        <li>Multi-pack for comprehensive treatment</li>
-        <li>Snap-off design is easy and mess-free</li>
-        <li>Naturally occurring active ingredient</li>
+        <li>Borax-based — naturally occurring active ingredient</li>
+        <li>Pre-filled stations — no handling of bait required</li>
+        <li>Slow-acting formula maximises colony spread before kill</li>
+        <li>Enclosed design — safer around children and pets</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
+        <li>US brand — less widely available in UK shops</li>
         <li>Liquid can dry out in warm conditions</li>
-        <li>Stations are visible and not the most discreet</li>
-        <li>May take longer to work than professional-grade products</li>
-      </ul>
-
-      {/* Product 5 */}
-      <h2 id="best-professional">Best Professional — Maxforce Quantum</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Maxforce Quantum Ant Gel"
-          rank={5}
-          rating={4.6}
-          features={[
-            'Imidacloprid active — professional-grade formula',
-            'Moisture-resistant gel stays attractive for weeks',
-            'Effective on all UK ant species including Pharaoh Ants',
-            'Used by professional pest controllers worldwide',
-          ]}
-          price="£25"
-          asin="B073JPVRFB"
-          bestFor="Best Professional-Grade"
-        />
-      </div>
-      <p>
-        Maxforce Quantum is the other professional-grade ant gel alongside Advion, and many pest controllers consider it the superior product for certain ant species — particularly Pharaoh Ants, which are notoriously difficult to control and are becoming increasingly common in UK flats, hospitals, and heated buildings. The imidacloprid active ingredient provides a unique mode of action that is different from indoxacarb, making Maxforce Quantum an excellent alternative if other products have not worked.
-      </p>
-      <p>
-        The gel formulation is specifically engineered to remain moist and attractive for extended periods — a critical feature because ant bait gels that dry out stop attracting ants. Maxforce Quantum uses a unique moisture-retention technology that keeps the gel palatable for weeks, even in dry indoor environments. This extended attractiveness means the gel continues working long after application, catching late-discovering ant trails.
-      </p>
-      <p>
-        At £25, this is the most expensive product on our list — but for persistent or severe ant problems, particularly those involving Pharaoh Ants or multiple colonies, it is often the product that finally resolves the issue. Professional pest controllers routinely deploy Maxforce Quantum in commercial environments (restaurants, hospitals, food factories) where reliable colony elimination is essential.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Professional-grade imidacloprid formula</li>
-        <li>Moisture-resistant — stays attractive for weeks</li>
-        <li>Effective on all UK ant species including Pharaoh Ants</li>
-        <li>Different mode of action from Advion — good alternative</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Most expensive option on our list</li>
-        <li>Professional product — less consumer-friendly packaging</li>
-        <li>Overkill for a basic Black Garden Ant problem</li>
+        <li>May take longer than gel-based products for full colony elimination</li>
       </ul>
 
       {/* Buying Guide */}

@@ -53,11 +53,11 @@ const faqSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Flea Foggers at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Pest Expert Formula P Fogger' },
-  { id: 'best-smoke', title: 'Best Smoke Bomb — Pest Expert Mini Smoke Bomb' },
-  { id: 'best-igr', title: 'Best IGR Fogger — Indorex Flea Defence Fogger' },
-  { id: 'best-value', title: 'Best Value — Zero In Flea Bomb' },
-  { id: 'best-multi', title: 'Best Multi-Pack — Rentokil Flea Killer Fogger' },
+  { id: 'best-overall', title: 'Best Overall — Indorex Defence Flea Spray' },
+  { id: 'best-natural', title: 'Best Natural — Zero In Natural Flea Bomb' },
+  { id: 'best-large', title: 'Best Large Room — NOPE! Flea Bomb 250ml' },
+  { id: 'best-twin', title: 'Best Twin Pack — ARDAP Fogger 2x100ml' },
+  { id: 'best-professional', title: 'Best Professional — Pest Expert Formula P' },
   { id: 'buying-guide', title: 'How to Choose the Right Flea Fogger' },
   { id: 'how-to-use', title: 'How to Use a Flea Fogger Safely' },
   { id: 'faq', title: 'Frequently Asked Questions' },
@@ -129,196 +129,197 @@ export default function BestFleaFoggerPage() {
           <tr><th>Product</th><th>Type</th><th>Best For</th><th>Price</th></tr>
         </thead>
         <tbody>
-          <tr><td>Pest Expert Formula P Fogger</td><td>Aerosol fogger</td><td>Best Overall</td><td>~£12</td></tr>
-          <tr><td>Pest Expert Mini Smoke Bomb</td><td>Smoke bomb</td><td>Best Smoke Bomb</td><td>~£8</td></tr>
-          <tr><td>Indorex Flea Defence Fogger</td><td>IGR fogger</td><td>Best IGR</td><td>~£15</td></tr>
-          <tr><td>Zero In Flea Bomb</td><td>Aerosol fogger</td><td>Best Value</td><td>~£5</td></tr>
-          <tr><td>Rentokil Flea Killer Fogger</td><td>Aerosol fogger</td><td>Best Multi-Pack</td><td>~£10</td></tr>
+          <tr><td>Indorex Defence Household Flea Spray 500ml</td><td>IGR spray</td><td>Best Overall</td><td>~£15</td></tr>
+          <tr><td>Zero In Natural Flea Bomb 150ml</td><td>Natural aerosol</td><td>Best Natural</td><td>~£8</td></tr>
+          <tr><td>NOPE! Flea Bomb 250ml</td><td>Aerosol fogger</td><td>Best Large Room</td><td>~£10</td></tr>
+          <tr><td>ARDAP Flea Fogger Fumigator 2 x 100ml</td><td>Fumigator twin-pack</td><td>Best Twin Pack</td><td>~£12</td></tr>
+          <tr><td>Pest Expert Formula P Flea Fogger</td><td>Fumigation device</td><td>Best Professional</td><td>~£10</td></tr>
         </tbody>
       </table>
 
-      <h2 id="best-overall">Best Overall — Pest Expert Formula P Fogger</h2>
+      <h2 id="best-overall">Best Overall — Indorex Defence Household Flea Spray 500ml</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Formula P Flea Fogger"
+          name="Indorex Defence Household Flea Spray 500ml"
           rank={1}
-          rating={4.4}
+          rating={4.5}
           features={[
-            'Professional-strength permethrin fogger',
-            'Treats up to 40 cubic metres per unit',
-            'Fast-acting with residual protection',
-            'Used by professional pest controllers',
+            '10-time Best Flea Product award winner',
+            'Permethrin kills adults + pyriproxyfen IGR prevents eggs for 12 months',
+            'One 500ml can treats a 3-4 bedroom house',
+            'The professional standard for UK flea control',
           ]}
-          price="£12"
-          asin="B073JPVRFB"
+          price="£15"
+          asin="B00GKHI2PW"
           bestFor="Best Overall"
         />
       </div>
       <p>
-        Pest Expert Formula P Fogger delivers professional-strength permethrin in an aerosol fogger format that fills the room with insecticidal mist. The mist settles on all surfaces, killing adult fleas on contact and leaving a residual layer that continues killing for weeks. Each unit treats up to 40 cubic metres — enough for an average-sized room — and the entire treatment is automated: press the button, lock it in place, leave the room, and return after the recommended time.
+        Indorex Defence is the undisputed gold standard for household flea treatment in the UK, winning the Best Flea Product award ten times. It combines permethrin — which kills adult fleas on contact — with pyriproxyfen, an insect growth regulator (IGR) that prevents flea eggs and larvae from developing for up to 12 months. This dual-action formula means a single application tackles the entire flea lifecycle, not just the adults you can see.
       </p>
       <p>
-        The permethrin formula provides genuine residual protection after the mist settles, meaning surfaces remain lethal to fleas for an extended period. This is important for dealing with the flea lifecycle — pupae that hatch days or weeks after treatment will encounter the residual insecticide as they emerge. Combined with daily vacuuming (which stimulates pupae to hatch), this residual action provides ongoing protection.
+        One 500ml can is enough to treat a 3-4 bedroom house. Spray along skirting boards, under furniture, and across carpets and soft furnishings. The IGR component is what sets Indorex apart from basic knockdown sprays — it breaks the breeding cycle, dramatically reducing the chance of re-infestation. This is the product that professional pest controllers reach for first, and for good reason.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Professional-strength permethrin</li>
-        <li>Large 40 cubic metre coverage</li>
-        <li>Genuine residual protection after settling</li>
-        <li>Automated application — press and leave</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Must vacate property during treatment</li>
-        <li>Mist settles on all surfaces — may need to wipe kitchen surfaces</li>
-        <li>Does not penetrate deep into carpet pile like spray</li>
-      </ul>
-
-      <h2 id="best-smoke">Best Smoke Bomb — Pest Expert Mini Smoke Bomb</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Pest Expert Mini Flea Smoke Bomb"
-          rank={2}
-          rating={4.3}
-          features={[
-            'Smoke penetrates into cracks and hidden areas',
-            'Permethrin-based for effective flea kill',
-            'Compact size — ideal for individual rooms',
-            'Professional-grade formula',
-          ]}
-          price="£8"
-          asin="B010E2GCIM"
-          bestFor="Best Smoke Bomb"
-        />
-      </div>
-      <p>
-        Smoke bombs work differently from aerosol foggers — they produce a warm, insecticidal smoke that rises and disperses more effectively than cold mist, penetrating into ceiling voids, wall cavities, and other enclosed spaces that aerosol foggers cannot reach. This makes smoke bombs particularly effective for rooms with lots of hidden spaces where fleas might harbour — skirting board gaps, underfloor voids, and behind built-in furniture.
-      </p>
-      <p>
-        The Pest Expert Mini Smoke Bomb is compact enough for individual room treatment. Place it on a non-flammable surface (a ceramic plate or metal tray), light the fuse, leave the room immediately, and close the door. The smoke fills the room over approximately 2-3 minutes and then gradually settles, depositing permethrin on all surfaces.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Smoke penetrates hidden spaces better than aerosol mist</li>
-        <li>Professional-strength permethrin</li>
-        <li>Compact and affordable</li>
-        <li>Effective for rooms with many crevices</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Produces visible smoke — may alarm neighbours or trigger smoke detectors</li>
-        <li>Requires a non-flammable surface for activation</li>
-        <li>Stronger smell than aerosol foggers</li>
-      </ul>
-
-      <h2 id="best-igr">Best IGR Fogger — Indorex Flea Defence Fogger</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Indorex Flea Defence Fogger"
-          rank={3}
-          rating={4.3}
-          features={[
-            'Contains IGR (pyriproxyfen) for long-term protection',
-            'Kills adult fleas + prevents egg/larva development',
-            'Up to 12 months residual IGR protection',
-            'From the makers of the UK\'s top-rated flea spray',
-          ]}
-          price="£15"
-          asin="B00GKHI2PW"
-          bestFor="Best IGR Fogger"
-        />
-      </div>
-      <p>
-        If you want a fogger that does more than just kill adult fleas, Indorex Flea Defence Fogger is the one to choose. It contains pyriproxyfen, an insect growth regulator (IGR) that prevents flea eggs and larvae from developing into adults — the same active ingredient that makes Indorex spray the UK's top-rated flea treatment. This means the fogger provides up to 12 months of protection against the hidden 95% of a flea infestation: the eggs, larvae, and pupae in your carpet.
-      </p>
-      <p>
-        The combination of contact kill (for adult fleas) and IGR (for immature stages) makes this the most comprehensive fogger on the market. While other foggers kill the adult fleas you can see, Indorex also breaks the lifecycle by preventing the next generation from ever developing. This dramatically reduces the chance of re-infestation.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>IGR provides up to 12 months of lifecycle disruption</li>
-        <li>Kills adults and prevents immature development</li>
-        <li>Most comprehensive fogger available</li>
-        <li>Trusted Indorex brand</li>
+        <li>10-time award-winning flea treatment</li>
+        <li>Dual-action: permethrin contact kill + IGR lifecycle disruption</li>
+        <li>12 months of residual protection from a single application</li>
+        <li>Professional standard trusted by UK pest controllers</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
         <li>Higher price than basic foggers</li>
-        <li>Still limited by fogger's inability to penetrate deep carpet</li>
-        <li>Best used alongside targeted spray treatment</li>
+        <li>Must vacate the room during application and allow to dry</li>
+        <li>Manual spray requires more effort than a one-shot fogger</li>
       </ul>
 
-      <h2 id="best-value">Best Value — Zero In Flea Bomb</h2>
+      <h2 id="best-natural">Best Natural — Zero In Natural Flea Bomb 150ml</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Zero In Flea Bomb"
-          rank={4}
-          rating={3.9}
+          name="Zero In Natural Flea Bomb 150ml — One-Shot Aerosol"
+          rank={2}
+          rating={4.2}
           features={[
-            'Budget-friendly flea fogger',
-            'Kills adult fleas and other crawling insects',
-            'Easy-to-use aerosol format',
-            'Treats up to 15 cubic metres per unit',
+            'Fire-free, chemical-free whole-room flea bomb',
+            'Natural pyrethrin formula — no smoke or residue',
+            'Treats up to 40m³ per unit',
+            'Safe near carpets, soft furnishings and bedding',
           ]}
-          price="£5"
-          asin="B004US3F1Y"
-          bestFor="Best Budget"
+          price="£8"
+          asin="B077M5TTHL"
+          bestFor="Best Natural"
         />
       </div>
       <p>
-        At around £5, Zero In Flea Bomb is the most affordable fogger on our list. It kills adult fleas on contact and provides basic residual protection. The smaller coverage area (15 cubic metres per unit) means you may need 2-3 units for a standard room, but even so, the total cost is competitive with more expensive single-unit foggers.
+        If you prefer to avoid synthetic chemicals, the Zero In Natural Flea Bomb uses a natural pyrethrin formula derived from chrysanthemum flowers. It is fire-free, produces no smoke, and leaves no visible residue — making it a much cleaner option than traditional smoke bombs. Simply press the nozzle to lock, place the can in the centre of the room, leave, and close the door. The aerosol fills the space and settles over 2-3 hours.
       </p>
       <p>
-        For a budget-conscious approach to supplementing spray treatment, buying several Zero In bombs is a practical option. They are particularly useful for treating specific rooms — a bedroom, living room, or pet's sleeping area — where flea activity is concentrated.
+        Each 150ml unit treats up to 40 cubic metres, which covers an average-sized room comfortably. It kills adult fleas, ticks, and larvae on contact and is safe for use near carpets, soft furnishings, and bedding once the room has been ventilated. For households with young children or those who prefer a more natural approach, this is an excellent choice.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Very affordable at around £5</li>
-        <li>Simple aerosol activation</li>
-        <li>Good for treating individual rooms</li>
+        <li>Natural pyrethrin formula — no synthetic chemicals</li>
+        <li>Fire-free with no smoke or visible residue</li>
+        <li>Generous 40m³ coverage per unit</li>
+        <li>Safe near soft furnishings and bedding after ventilation</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Smaller coverage area — may need multiple units</li>
-        <li>No IGR — adult kill only</li>
-        <li>Less residual protection than premium products</li>
+        <li>No IGR — kills on contact only, no long-term lifecycle disruption</li>
+        <li>Less residual protection than synthetic alternatives</li>
+        <li>May require repeat applications for heavy infestations</li>
       </ul>
 
-      <h2 id="best-multi">Best Multi-Pack — Rentokil Flea Killer Fogger</h2>
+      <h2 id="best-large">Best Large Room — NOPE! Flea Bomb 250ml</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Rentokil Flea Killer Fogger Multi-Pack"
-          rank={5}
+          name="NOPE! Flea Bomb 250ml — Large One-Shot Fogger"
+          rank={3}
           rating={4.1}
           features={[
-            'Multi-pack — treat multiple rooms at once',
-            'Trusted Rentokil brand',
-            'Permethrin-based for effective flea kill',
-            'Clear instructions for safe use',
+            'Larger 250ml one-shot fogger for bigger rooms',
+            'Kills fleas, bed bugs, moths and carpet beetles',
+            'Fire-free and non-staining',
+            'No visible residue after treatment',
           ]}
           price="£10"
-          asin="B07BFQ1V5L"
-          bestFor="Best Multi-Pack"
+          asin="SEARCH"
+          bestFor="Best Large Room"
         />
       </div>
       <p>
-        When you need to fog an entire house, buying individual units becomes expensive and impractical. Rentokil's multi-pack provides several foggers at a discounted price, allowing you to treat every room simultaneously. Activating all foggers at the same time ensures comprehensive coverage — fleas cannot escape to an untreated room.
+        The NOPE! Flea Bomb stands out for its larger 250ml canister, which makes it ideal for bigger rooms such as open-plan living areas, large bedrooms, or loft conversions where a standard 150ml fogger might fall short. It kills fleas, bed bugs, moths, carpet beetles, and flying insects in a single one-shot treatment — making it a versatile option if you suspect multiple pest species are present.
       </p>
       <p>
-        The Rentokil brand provides clear, beginner-friendly instructions covering preparation, activation, and re-entry timing. The permethrin formula kills adult fleas on contact and provides residual protection on settled surfaces. For a whole-house flea treatment, this multi-pack represents the best value.
+        Like the best modern foggers, it is fire-free and non-staining, leaving no visible residue after treatment. Press the valve to lock, place the can on a flat surface, leave the room, and allow 2-3 hours for the mist to settle before ventilating. For large rooms that need full coverage from a single unit, this is the most practical choice.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Multi-pack for whole-house treatment</li>
-        <li>Trusted Rentokil brand</li>
-        <li>Better value than buying individually</li>
-        <li>Clear safety instructions</li>
+        <li>Larger 250ml can covers bigger rooms in one shot</li>
+        <li>Multi-pest formula — fleas, bed bugs, moths, carpet beetles</li>
+        <li>Fire-free, non-staining, no visible residue</li>
+        <li>Simple press-and-leave activation</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>No IGR component</li>
-        <li>Must vacate entire property</li>
-        <li>Standard-strength formula</li>
+        <li>No IGR component for long-term protection</li>
+        <li>Single-room treatment — need multiple cans for whole house</li>
+        <li>Less established brand than Indorex or Pest Expert</li>
+      </ul>
+
+      <h2 id="best-twin">Best Twin Pack — ARDAP Flea Fogger Fumigator 2 x 100ml</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="ARDAP Flea Fogger Fumigator 2 x 100ml"
+          rank={4}
+          rating={4.0}
+          features={[
+            'Twin-pack for treating two rooms simultaneously',
+            'Effective in rooms up to 30m²',
+            'German-made formula with long residual',
+            'Popular for pre/post carpet laying treatment',
+          ]}
+          price="£12"
+          asin="SEARCH"
+          bestFor="Best Twin Pack"
+        />
+      </div>
+      <p>
+        ARDAP is a well-known German pest control brand, and their twin-pack flea fogger lets you treat two rooms simultaneously — ideal for tackling a bedroom and living room at the same time. Each 100ml unit is effective in rooms up to 30 square metres, and the German-made formula provides a long residual that continues working on surfaces after the initial treatment.
+      </p>
+      <p>
+        This product is particularly popular for treating rooms before or after carpet laying, when the underlay and subfloor are exposed and vulnerable to flea infestation. Activate both cans at the same time, vacate the property, and return after the recommended period. The twin-pack format offers better value than buying two individual foggers separately.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Twin-pack treats two rooms in one purchase</li>
+        <li>German-engineered formula with long-lasting residual</li>
+        <li>Effective coverage up to 30m² per unit</li>
+        <li>Ideal for pre/post carpet laying treatment</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Smaller 100ml cans may not suit very large rooms</li>
+        <li>No IGR — contact kill only</li>
+        <li>Less widely available than UK-branded alternatives</li>
+      </ul>
+
+      <h2 id="best-professional">Best Professional — Pest Expert Formula P Flea Fogger / Super Fumer</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Pest Expert Formula P Flea Fogger / Super Fumer"
+          rank={5}
+          rating={4.3}
+          features={[
+            'Professional-strength fumigation device',
+            'Infiltrates cracks, furniture voids and under skirting',
+            'No fire risk, no residue',
+            'Recommended alongside Indorex or Formula C+ spray',
+          ]}
+          price="£10"
+          asin="SEARCH"
+          bestFor="Best Professional"
+        />
+      </div>
+      <p>
+        The Pest Expert Formula P Fogger is a professional-strength fumigation device from the UK's market-leading pest control brand. Unlike standard aerosol foggers, this device is designed to infiltrate the hard-to-reach areas where fleas hide — cracks in floorboards, voids behind and under furniture, and gaps beneath skirting boards. The fumigant reaches places that surface sprays simply cannot access.
+      </p>
+      <p>
+        There is no fire risk and no visible residue after treatment. Pest Expert recommends using this fogger as part of a complete flea treatment plan alongside their Formula C+ spray or Indorex Defence spray for surface coverage. The combination of deep-penetrating fumigation plus surface spray provides the most thorough DIY flea treatment possible, matching what a professional pest controller would deliver.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Professional-strength formula from a trusted UK brand</li>
+        <li>Penetrates cracks, voids, and hidden spaces</li>
+        <li>No fire risk and no residue</li>
+        <li>Ideal complement to surface spray treatment</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Best results require pairing with a separate spray product</li>
+        <li>Must vacate and ventilate the property</li>
+        <li>Not a standalone solution for severe infestations</li>
       </ul>
 
       <h2 id="buying-guide">How to Choose the Right Flea Fogger</h2>

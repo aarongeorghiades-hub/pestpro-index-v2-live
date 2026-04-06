@@ -130,12 +130,11 @@ const faqSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Bed Bug Sprays at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Pest Expert Formula C' },
-  { id: 'best-residual', title: 'Best Residual — Rentokil Bed Bug Killer' },
-  { id: 'best-natural', title: 'Best Natural — Karlsten Bed Bug Spray' },
-  { id: 'best-fast', title: 'Best Fast-Acting — Zero In Bed Bug Killer' },
-  { id: 'best-value', title: 'Best Value — Doff Bed Bug Killer' },
-  { id: 'best-kit', title: 'Best Treatment Kit — Pest Expert Bed Bug Kit' },
+  { id: 'best-overall', title: 'Best Overall — Pest Expert Formula C+ Kit' },
+  { id: 'best-multi-room', title: 'Best Multi-Room — Formula C+ Twin Pack' },
+  { id: 'best-kit', title: 'Best Treatment Kit — Pest Expert Complete Kit' },
+  { id: 'best-combo', title: 'Best Combo — Spray + Smoke Bomb' },
+  { id: 'best-trade', title: 'Best Trade-Size — Formula C+ 5L' },
   { id: 'buying-guide', title: 'How to Choose the Right Bed Bug Spray' },
   { id: 'application', title: 'How to Apply Bed Bug Spray Effectively' },
   { id: 'faq', title: 'Frequently Asked Questions' },
@@ -209,7 +208,7 @@ export default function BestBedBugSprayPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Bed Bug Sprays at a Glance</h2>
       <p>
-        Here is a quick comparison of our top six picks. Each product has been selected for a different use case.
+        Here is a quick comparison of our top five picks. Each product has been selected for a different use case.
       </p>
       <table>
         <thead>
@@ -222,40 +221,34 @@ export default function BestBedBugSprayPage() {
         </thead>
         <tbody>
           <tr>
-            <td>Pest Expert Formula C</td>
-            <td>Residual spray</td>
+            <td>Pest Expert Formula C+ 1L Kit</td>
+            <td>Spray + powder kit</td>
             <td>Best Overall</td>
+            <td>~£20</td>
+          </tr>
+          <tr>
+            <td>Pest Expert Formula C+ Twin Pack</td>
+            <td>Spray + powder twin pack</td>
+            <td>Best Multi-Room</td>
+            <td>~£35</td>
+          </tr>
+          <tr>
+            <td>Pest Expert Complete Kit</td>
+            <td>Treatment kit</td>
+            <td>Best Treatment Kit</td>
+            <td>~£30</td>
+          </tr>
+          <tr>
+            <td>Pest Expert Spray + Smoke Bomb</td>
+            <td>Spray + fumigator</td>
+            <td>Best Combo</td>
             <td>~£18</td>
           </tr>
           <tr>
-            <td>Rentokil Bed Bug Killer</td>
-            <td>Residual spray</td>
-            <td>Best Residual</td>
-            <td>~£8</td>
-          </tr>
-          <tr>
-            <td>Karlsten Bed Bug Spray</td>
-            <td>Natural spray</td>
-            <td>Best Natural</td>
-            <td>~£13</td>
-          </tr>
-          <tr>
-            <td>Zero In Bed Bug Killer</td>
-            <td>Contact spray</td>
-            <td>Best Fast-Acting</td>
-            <td>~£6</td>
-          </tr>
-          <tr>
-            <td>Doff Bed Bug Killer</td>
-            <td>Aerosol spray</td>
-            <td>Best Value</td>
-            <td>~£5</td>
-          </tr>
-          <tr>
-            <td>Pest Expert Bed Bug Kit</td>
-            <td>Treatment kit</td>
-            <td>Best Kit</td>
-            <td>~£30</td>
+            <td>Pest Expert Formula C+ 5L</td>
+            <td>Trade-size spray</td>
+            <td>Best Trade-Size</td>
+            <td>~£55</td>
           </tr>
         </tbody>
       </table>
@@ -265,251 +258,196 @@ export default function BestBedBugSprayPage() {
       </div>
 
       {/* Product 1 */}
-      <h2 id="best-overall">Best Overall — Pest Expert Formula C Bed Bug Spray</h2>
+      <h2 id="best-overall">Best Overall — Pest Expert Formula C+ Bed Bug Killer Kit</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Formula C Bed Bug Killer Spray"
+          name="Pest Expert Formula C+ Bed Bug Killer Spray 1L + Powder 300g Kit"
           rank={1}
-          rating={4.4}
+          rating={4.5}
           features={[
-            'Professional-strength cypermethrin formula',
-            'Fast contact kill + long-lasting residual action',
-            'Kills bed bugs for up to 12 weeks after application',
-            'HSE-approved for indoor use in the UK',
+            'Triple-action: cypermethrin + pyriproxyfen IGR + pyrethrum',
+            'Kills adults, larvae and eggs on contact',
+            'Covers 50m\u00B2 per 1L \u2014 includes 300g powder',
+            'HSE approved \u2014 safe for mattresses once dry',
           ]}
-          price="£18"
-          asin="B073JPVRFB"
+          price="\u00A320"
+          asin="B013K87W4A"
           bestFor="Best Overall"
         />
       </div>
       <p>
-        Pest Expert Formula C is the bed bug spray that professional pest controllers reach for, and it takes our top spot for good reason. The active ingredient is cypermethrin, a synthetic pyrethroid that delivers both a fast contact kill and extended residual action — meaning it kills bugs on contact and continues killing any bug that walks across a treated surface for up to 12 weeks. This residual protection is what separates professional-grade products from basic consumer sprays.
+        The Pest Expert Formula C+ Kit is the UK market leader for bed bug treatment, and it earns our top spot with a triple-action formula that sets it apart from single-active-ingredient competitors. The combination of cypermethrin, pyriproxyfen (an insect growth regulator) and natural pyrethrum delivers three modes of attack: cypermethrin kills adults on contact and provides long-lasting residual protection, pyriproxyfen disrupts the development of larvae and sterilises eggs, and pyrethrum delivers a rapid knockdown effect that flushes bugs from hiding.
       </p>
       <p>
-        The 1-litre concentrate is diluted with water and applied using a standard pump sprayer (not included), which gives you far more coverage than an aerosol can. A single litre of concentrate mixed as directed will treat an average-sized bedroom thoroughly — bed frame, headboard, skirting boards, and surrounding furniture. This makes it significantly more cost-effective per treatment than aerosol alternatives.
-      </p>
-      <p>
-        Application is straightforward: mix the concentrate with water in a pump sprayer, then spray all surfaces where bed bugs may be hiding — focusing on the bed frame joints, headboard, skirting boards, cracks in plasterwork, behind picture frames, and the edges of carpet. Allow the treated surfaces to dry completely (2-4 hours) before using the room. Repeat every 7-10 days for a minimum of 3 applications.
+        Each kit includes a 1-litre spray and a 300g powder pack. The spray covers approximately 50 square metres when applied as directed, which is enough for a thorough treatment of a standard double bedroom and surrounding areas. The powder is designed for cracks, crevices and voids where the spray cannot reach. This dual-format approach mirrors what professional pest controllers use. The product is HSE approved for amateur use and is safe for mattresses, bedding and carpets once dry.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Professional-strength cypermethrin formula</li>
-        <li>Up to 12 weeks of residual protection</li>
-        <li>Excellent coverage — one litre treats a full room</li>
-        <li>HSE-approved for indoor domestic use</li>
-        <li>Cost-effective concentrate format</li>
+        <li>Triple-action formula targets all life stages</li>
+        <li>IGR component breaks the breeding cycle</li>
+        <li>Spray plus powder covers surfaces and voids</li>
+        <li>HSE approved and safe for mattresses once dry</li>
+        <li>Covers 50m&#178; per litre</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
         <li>Requires a pump sprayer (not included)</li>
-        <li>Concentrate needs mixing — slightly more effort than aerosol</li>
         <li>Strong chemical odour during application</li>
+        <li>Single kit may not be enough for multi-room infestations</li>
       </ul>
 
       {/* Product 2 */}
-      <h2 id="best-residual">Best Residual — Rentokil Bed Bug Killer</h2>
+      <h2 id="best-multi-room">Best Multi-Room — Pest Expert Formula C+ Twin Pack</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Rentokil Bed Bug Killer Spray"
+          name="Pest Expert Formula C+ Bed Bug Spray 2 x 1L + Powder 2 x 300g"
           rank={2}
-          rating={4.1}
+          rating={4.5}
           features={[
-            'Trusted Rentokil brand',
-            'Permethrin-based with residual action',
-            'Ready-to-use aerosol — no mixing needed',
-            'Suitable for bed frames, furniture, and carpets',
+            'Twin-pack of maximum-strength Formula C+',
+            'Two full-size 1L sprays + two 300g powder packs',
+            'Treats a whole property \u2014 multi-room coverage',
+            'Best value for larger infestations',
           ]}
-          price="£8"
-          asin="B00GKHI2PW"
-          bestFor="Best Residual"
+          price="\u00A335"
+          asin="B01GJIBI4S"
+          bestFor="Best Multi-Room"
         />
       </div>
       <p>
-        For a ready-to-use aerosol that delivers genuine residual protection, Rentokil Bed Bug Killer is the best option at this price point. The permethrin-based formula kills bed bugs on contact and leaves a residual layer that continues working for several weeks. Unlike basic contact sprays that only kill bugs you hit directly, this residual action catches bugs that emerge from hiding after treatment.
+        If your infestation has spread beyond a single bedroom, the twin-pack version of Formula C+ is the most practical choice. You get two full-size 1-litre sprays and two 300g powder packs, giving you enough product to treat multiple rooms in a single purchase. This is the same maximum-strength Formula C+ formula that tops our list, just doubled in quantity for whole-property coverage.
       </p>
       <p>
-        The aerosol format means zero preparation — shake the can, point, and spray. This makes it the most convenient option for people who want immediate treatment without mixing concentrates or buying a pump sprayer. The spray nozzle delivers a targeted stream that can reach into cracks, joints, and crevices where bed bugs typically hide.
-      </p>
-      <p>
-        Rentokil's clear labelling and instructions make this particularly accessible for first-time users. The can includes detailed guidance on where to spray, how much to use, and how often to reapply. At around £8, it is affordable enough to buy multiple cans for thorough treatment across several rooms.
+        The twin pack is also the best value option if you plan to carry out the recommended repeat treatments. With 2 litres of spray and 600g of powder, you have enough product for a thorough initial treatment of two to three rooms plus a follow-up application 7 to 10 days later. For landlords dealing with a tenant-reported infestation, or for anyone living in a flat where bed bugs may have moved between rooms, this pack avoids the frustration of running out mid-treatment.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Ready-to-use aerosol — no mixing or equipment needed</li>
-        <li>Permethrin provides genuine residual action</li>
-        <li>Targeted nozzle reaches cracks and crevices</li>
-        <li>Trusted Rentokil brand with clear instructions</li>
-        <li>Affordable at around £8 per can</li>
+        <li>Enough product for a whole-property treatment</li>
+        <li>Same maximum-strength triple-action formula</li>
+        <li>Better per-litre value than buying singles</li>
+        <li>Covers repeat treatments without reordering</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Less coverage per unit than a concentrate</li>
-        <li>Shorter residual duration than professional-grade products</li>
-        <li>Aerosol cans run out quickly on larger infestations</li>
+        <li>Higher upfront cost than a single kit</li>
+        <li>Pump sprayer still required (not included)</li>
+        <li>Overkill for a minor, single-room infestation</li>
       </ul>
 
       {/* Product 3 */}
-      <h2 id="best-natural">Best Natural — Karlsten Bed Bug Spray</h2>
+      <h2 id="best-kit">Best Treatment Kit — Pest Expert Complete Kit</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Karlsten Natural Bed Bug Killer Spray"
+          name="Pest Expert Bed Bug Treatment Kit \u2014 Spray, Powder, Fogger &amp; Rentokil Spray"
           rank={3}
-          rating={4.0}
+          rating={4.4}
           features={[
-            'Natural formula — no synthetic chemicals',
-            'Safe for use around children and pets',
-            'Pleasant scent — no harsh chemical odour',
-            'Can be sprayed directly on bedding and mattresses',
+            'Complete treatment kit for a standard bedroom',
+            'Formula C+ spray + Formula P powder + fogger',
+            'Includes Rentokil Insectrol for cracks and crevices',
+            'Everything needed in one purchase',
           ]}
-          price="£13"
-          asin="B0DJGNRR7T"
-          bestFor="Best Natural"
-        />
-      </div>
-      <p>
-        If you prefer to avoid synthetic chemicals — perhaps because you have young children, sensitive skin, or simply prefer a natural approach — Karlsten Natural Bed Bug Spray is the best option available. It uses a plant-based formula including essential oils that kill bed bugs on direct contact while being safe to spray on bedding, mattresses, and soft furnishings where chemical sprays should not be applied.
-      </p>
-      <p>
-        The main advantage of a natural spray is that it can be used directly on your mattress, pillows, and sheets — surfaces where you sleep and where chemical residues would be undesirable. This makes it a useful complement to a professional-strength chemical spray used on the bed frame and room. Use the natural spray on soft surfaces and the chemical spray on hard surfaces for the most comprehensive treatment.
-      </p>
-      <p>
-        However, it is important to be realistic about what natural sprays can and cannot do. They kill bugs on direct contact but lack the long-lasting residual action of synthetic pyrethroids. This means they will not continue killing bugs after the spray dries. For a minor infestation caught very early, a natural spray may be sufficient with diligent repeated application. For anything more than a few bugs, you will likely need to combine it with a chemical product for best results.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Safe for use on bedding, mattresses, and soft furnishings</li>
-        <li>No synthetic chemicals — suitable for sensitive environments</li>
-        <li>Pleasant natural scent</li>
-        <li>Safe around children and pets when dry</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>No residual action — only kills on direct contact</li>
-        <li>Less effective than synthetic pyrethroids for serious infestations</li>
-        <li>Requires very frequent reapplication</li>
-      </ul>
-
-      {/* Product 4 */}
-      <h2 id="best-fast">Best Fast-Acting — Zero In Bed Bug Killer</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Zero In Bed Bug Killer Spray"
-          rank={4}
-          rating={4.0}
-          features={[
-            'Fast contact kill — works in seconds',
-            'Ready-to-use trigger spray',
-            'Odourless formula leaves no staining',
-            'Widely available and affordable',
-          ]}
-          price="£6"
-          asin="B004US3F1Y"
-          bestFor="Best Fast-Acting"
-        />
-      </div>
-      <p>
-        When you spot a bed bug and want it dead immediately, Zero In Bed Bug Killer delivers. This trigger spray kills on contact within seconds, making it ideal for the immediate "search and destroy" phase of bed bug treatment. The water-based formula is odourless and leaves no visible residue or staining, so it can be used freely on and around the bed area without marking fabrics or painted surfaces.
-      </p>
-      <p>
-        The trigger spray format gives you precise, targeted application — you can direct the spray exactly where you see bugs or into cracks and crevices where they are hiding. It is particularly useful for treating visible bugs on headboards, bed frame joints, and behind skirting boards. The generous 500ml bottle provides enough product for multiple treatment sessions across a typical bedroom.
-      </p>
-      <p>
-        Keep in mind that Zero In is primarily a contact killer — its residual action is limited compared to professional-grade products. It excels at killing bugs you can see and reach, but it will not provide the long-term barrier protection that a cypermethrin or permethrin product offers. For best results, use Zero In for immediate bug elimination and follow up with a residual spray for ongoing protection.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Instant contact kill — works in seconds</li>
-        <li>Odourless, non-staining formula</li>
-        <li>Trigger spray for precise application</li>
-        <li>Very affordable at around £6</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Limited residual protection</li>
-        <li>Only effective on bugs you spray directly</li>
-        <li>Not sufficient as a standalone treatment for infestations</li>
-      </ul>
-
-      {/* Product 5 */}
-      <h2 id="best-value">Best Value — Doff Bed Bug Killer</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Doff Bed Bug & Dust Mite Killer Spray"
-          rank={5}
-          rating={3.9}
-          features={[
-            'Kills bed bugs and dust mites',
-            'Permethrin-based aerosol spray',
-            'Budget-friendly at around £5',
-            'Also effective on fleas and other crawling insects',
-          ]}
-          price="£5"
-          asin="B07PPWJH21"
-          bestFor="Best Budget"
-        />
-      </div>
-      <p>
-        At around £5, Doff Bed Bug Killer is the most affordable option on our list — and it punches well above its weight. The permethrin-based formula provides both contact kill and some residual action, making it more effective than many basic sprays at this price point. It also doubles as a dust mite and flea killer, which is a bonus if you are dealing with multiple pest issues.
-      </p>
-      <p>
-        The aerosol format is convenient for quick application, and the spray reaches into crevices and joints where bed bugs hide. While it does not offer the same level of coverage or residual duration as the Pest Expert concentrate, it is perfectly adequate for treating individual pieces of furniture, small rooms, or for use as a supplementary spray alongside more comprehensive treatments.
-      </p>
-      <p>
-        For a budget-conscious approach, buying 3-4 cans of Doff spray (for repeat treatments at 7-10 day intervals) still costs less than a single bottle of professional concentrate — making this a practical option for people who want to try DIY treatment before investing in more expensive products.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Very affordable at around £5</li>
-        <li>Permethrin-based with some residual action</li>
-        <li>Multi-pest — also kills dust mites and fleas</li>
-        <li>Convenient aerosol format</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Less coverage than concentrate products</li>
-        <li>Shorter residual duration</li>
-        <li>May need 3-4 cans for thorough room treatment</li>
-      </ul>
-
-      {/* Product 6 */}
-      <h2 id="best-kit">Best Treatment Kit — Pest Expert Bed Bug Kit</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Pest Expert Complete Bed Bug Treatment Kit"
-          rank={6}
-          rating={4.3}
-          features={[
-            'Complete treatment kit: spray + powder + smoke bomb',
-            'Multi-format approach for comprehensive coverage',
-            'Professional-strength cypermethrin formula',
-            'Everything needed for a full room treatment',
-          ]}
-          price="£30"
-          asin="B073JPVRFB"
+          price="\u00A330"
+          asin="B01E724WFK"
           bestFor="Best Treatment Kit"
         />
       </div>
       <p>
-        For the most thorough DIY approach, the Pest Expert Bed Bug Treatment Kit gives you everything you need for a comprehensive, multi-format attack on bed bugs. The kit typically includes spray concentrate, insecticidal powder (for cracks and crevices), and smoke bombs (for hard-to-reach areas) — providing three different methods of treatment that work together to maximise your chances of success.
+        For people who want a single purchase that covers every angle of bed bug treatment, this complete kit is the answer. It bundles the Formula C+ spray for surface and residual treatment, Formula P insecticidal powder for cracks and voids, a fumigating fogger bomb that fills the room with insecticide vapour, and a Rentokil Insectrol spray for targeted crack-and-crevice work. Together, these four products replicate the multi-method approach used by professional pest controllers.
       </p>
       <p>
-        The spray handles visible surfaces and provides residual protection. The powder is applied into cracks, behind skirting boards, and under furniture where spray cannot reach — bed bugs walking through the powder pick it up on their bodies and are killed. The smoke bombs penetrate into wall voids, ceiling cavities, and other enclosed spaces that neither spray nor powder can access. This layered approach mirrors the multi-treatment strategy used by professional pest controllers.
-      </p>
-      <p>
-        At £30, the kit is the most expensive option on our list — but it replaces what would be three or four separate purchases and provides a genuine professional-level treatment programme. If you are serious about eliminating bed bugs without calling a professional, this kit gives you the best chance of success.
+        The fogger bomb is the standout inclusion. It reaches places that manual spraying simply cannot: inside hollow bed frames, behind fitted headboards, underneath floorboards, and into wall cavities through gaps in skirting boards. Combined with the surface spray, powder and crack-and-crevice treatment, you are attacking the infestation from every possible direction. At around £30, the kit costs less than buying each component separately and saves you the guesswork of assembling your own treatment programme.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Comprehensive multi-format treatment approach</li>
-        <li>Professional-strength ingredients throughout</li>
-        <li>Everything included — nothing else to buy</li>
-        <li>Mirrors professional treatment methodology</li>
+        <li>Four different treatment methods in one box</li>
+        <li>Fogger reaches hidden areas that spray cannot</li>
+        <li>Includes crack-and-crevice spray for precision work</li>
+        <li>No separate purchases needed</li>
+        <li>Mirrors professional multi-method treatment</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Higher upfront cost than individual products</li>
-        <li>Smoke bombs require all windows and doors closed — must vacate room</li>
-        <li>Multiple application methods means more effort and time</li>
+        <li>Fogger requires the room to be vacated and sealed</li>
+        <li>More effort and time to apply all four products</li>
+        <li>Designed for a single bedroom; larger properties need more</li>
+      </ul>
+
+      {/* Product 4 */}
+      <h2 id="best-combo">Best Spray + Fumigator Combo — Pest Expert Spray + Smoke Bomb</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Pest Expert Formula C Bed Bug Spray 1L + Smoke Bomb 11g"
+          rank={4}
+          rating={4.3}
+          features={[
+            'Formula C+ residual spray + smoke bomb combo',
+            'Smoke reaches behind headboards and inside frames',
+            'Surface treatment plus deep penetration in one kit',
+            'Professional-strength cypermethrin formula',
+          ]}
+          price="\u00A318"
+          asin="B07VRQ8XCT"
+          bestFor="Best Spray + Fumigator Combo"
+        />
+      </div>
+      <p>
+        This combo pairs the Formula C+ residual spray with an 11g smoke bomb, giving you both surface treatment and deep penetration at a competitive price. The spray handles the areas you can see and reach: bed frame joints, headboard, skirting boards, and carpet edges. The smoke bomb then fills the room with insecticidal vapour that drifts behind headboards, inside hollow bed frames, through gaps in floorboards, and into other harbourages that a contact spray simply cannot penetrate.
+      </p>
+      <p>
+        At around £18, this is the most affordable way to get a two-pronged surface-plus-fumigation treatment. It is particularly well suited to rooms with heavy or built-in furniture that cannot be easily moved to spray behind. The smoke bomb does the hard-to-reach work for you. Light the smoke bomb, leave the room sealed for two hours, ventilate, and then apply the residual spray to all accessible surfaces for ongoing protection.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Two-pronged attack: surface spray plus fumigation</li>
+        <li>Smoke reaches hidden areas behind furniture</li>
+        <li>Professional-strength cypermethrin residual spray</li>
+        <li>Affordable entry point for combined treatment</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Smoke bomb requires sealing and vacating the room</li>
+        <li>No powder included for crack-and-crevice treatment</li>
+        <li>Single 1L spray may need a top-up for larger rooms</li>
+      </ul>
+
+      {/* Product 5 */}
+      <h2 id="best-trade">Best Trade-Size — Pest Expert Formula C+ 5L</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Pest Expert Formula C+ Bed Bug Spray 5L with Trigger Sprayer"
+          rank={5}
+          rating={4.4}
+          features={[
+            'Trade-size 5L refill with trigger hose sprayer',
+            'Covers 250m\u00B2 \u2014 enough for an entire HMO',
+            'Most cost-effective per m\u00B2 treatment',
+            'Ideal for landlords treating multiple properties',
+          ]}
+          price="\u00A355"
+          asin="B010E2GQ6K"
+          bestFor="Best Trade-Size"
+        />
+      </div>
+      <p>
+        For landlords, letting agents, or anyone managing multiple properties, the 5-litre trade-size Formula C+ is by far the most cost-effective option. At around £55, the per-litre cost is substantially lower than buying individual 1-litre bottles, and the included trigger hose sprayer means you can apply directly from the container without needing a separate pump sprayer. With coverage of approximately 250 square metres, a single container is enough to treat an entire HMO or a large multi-bedroom property.
+      </p>
+      <p>
+        This format is also practical for repeat treatments. With 5 litres on hand, you can carry out the recommended 3-4 treatment cycles across multiple rooms without running out or reordering. The trigger sprayer attaches directly to the container for immediate use. If you are a landlord who has dealt with bed bug callouts before — or if you manage student lets, hostels or short-term rentals where the risk is higher — keeping a 5L container in stock is a sensible investment.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Best value per square metre of any option</li>
+        <li>Covers 250m&#178; — enough for large or multiple properties</li>
+        <li>Trigger hose sprayer included</li>
+        <li>Practical for repeat treatments without reordering</li>
+        <li>Same professional-strength Formula C+ formula</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Higher upfront cost than smaller kits</li>
+        <li>Bulky container — not practical for a single room</li>
+        <li>No powder or fumigator included</li>
       </ul>
 
       {/* Buying Guide */}
