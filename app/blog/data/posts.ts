@@ -2816,5 +2816,318 @@ export const posts: BlogPost[] = [
 
 <p><strong>Got a serious spider problem?</strong> <a href="/residential">Find a local pest controller</a> on PestPro Index who can survey and treat your property.</p>
     `
+  },
+  {
+    slug: 'rats-in-garden-what-to-do',
+    title: "Rats in Your Garden? Here's What to Do",
+    metaTitle: "Rats in Your Garden? Here's What to Do | PestPro Index",
+    metaDescription: "Found rats in your garden? Don't panic. Our step-by-step guide covers what attracts them, how to get rid of them, and when to call a pro.",
+    targetKeyword: 'rats in garden',
+    publishDate: '2026-04-06',
+    content: `
+<p>Finding a rat in your garden is one of those moments that makes your stomach drop. But before you panic, know this: garden rats are extremely common in the UK, and they do not necessarily mean you have a major infestation. What matters is what you do next.</p>
+
+<h2>Why Are Rats in Your Garden?</h2>
+
+<p>Rats go where the food and shelter are. If they are in your garden, something is attracting them. The most common culprits:</p>
+
+<ul>
+<li><strong>Bird feeders:</strong> This is the number one attractant. Spilled seed on the ground is an all-you-can-eat buffet for rats. Hanging feeders with catch trays help, but ground-feeding stations are basically rat restaurants.</li>
+<li><strong>Compost bins:</strong> Open compost heaps with food scraps are irresistible. Even closed bins can attract rats if they contain cooked food, meat, or dairy.</li>
+<li><strong>Pet food:</strong> Bowls left outside, stored bags in sheds, even rabbit and guinea pig food — all attract rats.</li>
+<li><strong>Chicken coops:</strong> Keeping chickens and keeping rats away is one of the great challenges of suburban life. The feed, the eggs, and the warm shelter are all powerful attractants.</li>
+<li><strong>Overgrown vegetation:</strong> Dense shrubs, ivy, log piles, and ground cover provide shelter and nesting sites. Rats prefer to move along cover rather than crossing open ground.</li>
+<li><strong>Drains and sewers:</strong> Broken or damaged drains can give rats a direct route from the sewer network into your garden. This is more common than people think, particularly in older properties.</li>
+</ul>
+
+<h2>Rats vs Mice: How to Tell the Difference</h2>
+
+<p>It matters because the approach is different. Garden rodents are almost always brown rats (Norway rats), not mice:</p>
+
+<ul>
+<li><strong>Rats:</strong> 15–27cm body length (plus tail), blunt nose, thick tail, droppings 10–20mm long (sausage-shaped)</li>
+<li><strong>Mice:</strong> 3–10cm body length, pointed nose, thin tail, droppings 3–8mm (rice-grain shaped)</li>
+</ul>
+
+<p>If you are seeing burrow holes in the soil (typically 6–9cm diameter, often near walls, sheds, or compost bins), you are almost certainly dealing with rats.</p>
+
+<h2>Immediate Actions</h2>
+
+<p>Before spending money on traps or poison, take these steps first — they are free and often make the biggest difference:</p>
+
+<ol>
+<li><strong>Remove food sources:</strong> Take bird feeders down temporarily (yes, it is annoying). Secure compost bins. Bring pet food indoors. Pick up fallen fruit. Store chicken feed in metal containers.</li>
+<li><strong>Cut back vegetation:</strong> Clear overgrown areas near boundaries, sheds, and the house. Remove ground cover that provides shelter. Cut back ivy on walls.</li>
+<li><strong>Tidy up:</strong> Clear woodpiles, stored materials, and garden debris that provide harbourage. Move log stores and garden equipment away from boundaries.</li>
+<li><strong>Check drains:</strong> If you suspect a drain problem, pour water down inspection chambers and watch for unusual flow or backflow. Damaged drains need professional repair.</li>
+</ol>
+
+<h2>DIY Treatment Options</h2>
+
+<p>Once you have removed the attractants, active treatment can help eliminate rats already established in your garden:</p>
+
+<ul>
+<li><strong>Bait stations:</strong> <a href="/best/rat-bait-stations">Lockable rat bait stations</a> with rodenticide are the most common approach for garden rats. They must be tamper-resistant to protect pets, children, and non-target wildlife. Place along rat runs (look for grease marks and worn paths along fence lines).</li>
+<li><strong>Rat poison for outdoor use:</strong> <a href="/best/rat-poison-for-gardens">Garden-grade rat poisons</a> are available for outdoor use, but follow the label instructions carefully. Never scatter loose bait — always use bait stations.</li>
+<li><strong>Traps:</strong> <a href="/best/rat-traps">Rat traps</a> placed inside tunnel-style boxes along known runs can be effective, particularly if you prefer not to use poison. Bait with chocolate spread, peanut butter, or bacon.</li>
+<li><strong>Natural deterrents:</strong> For those who prefer chemical-free approaches, our <a href="/guides/natural-rat-deterrents">natural rat deterrent guide</a> covers what has evidence behind it — from peppermint oil to ultrasonic devices.</li>
+</ul>
+
+<p>For a full treatment walkthrough, see our comprehensive <a href="/guides/how-to-get-rid-of-rats">guide to getting rid of rats</a>.</p>
+
+<h2>When to Call a Professional</h2>
+
+<p>DIY can work for a small, contained garden rat problem. Call a professional if:</p>
+
+<ul>
+<li>You are seeing rats during the day (suggests a large population)</li>
+<li>There are multiple active burrows</li>
+<li>Rats are entering your house or outbuildings</li>
+<li>DIY treatment has not worked after 2–3 weeks</li>
+<li>You suspect a drain problem is providing access</li>
+<li>You have pets or children and are uncomfortable using rodenticide</li>
+</ul>
+
+<p>A qualified pest controller will survey the garden, identify the source and extent of the problem, and implement a treatment plan that addresses the root cause — not just the symptoms.</p>
+
+<p><strong>Need a rat specialist?</strong> <a href="/residential">Find verified pest controllers near you</a> on PestPro Index. Most offer free phone assessments and can visit within 24–48 hours.</p>
+    `
+  },
+  {
+    slug: 'bed-bugs-uk-on-the-rise',
+    title: 'Bed Bugs in the UK: Why Cases Are Rising in 2026',
+    metaTitle: 'Bed Bugs in the UK: Why Cases Are Rising in 2026 | PestPro Index',
+    metaDescription: "Bed bug cases are surging across the UK. What's causing the rise, how to check for them, and what treatment works best.",
+    targetKeyword: 'bed bugs UK 2026',
+    publishDate: '2026-04-06',
+    content: `
+<p>Bed bugs are back — and not just in headlines. Since the Paris outbreak made global news in late 2023, bed bug cases across the UK have been rising steadily. Pest controllers report increased callouts year on year, and the trend shows no sign of slowing down in 2026. Here is what is driving the surge and what you can do about it.</p>
+
+<h2>Why Are Bed Bug Cases Rising?</h2>
+
+<p>The resurgence of bed bugs is not random. Several converging factors explain why these pests are becoming more common:</p>
+
+<ul>
+<li><strong>Increased travel:</strong> International travel is at record levels. Bed bugs are consummate hitchhikers — they travel in luggage, clothing, and personal belongings. Every hotel stay, Airbnb booking, and overnight train journey is a potential exposure.</li>
+<li><strong>Pesticide resistance:</strong> Bed bugs have developed significant resistance to the pyrethroid insecticides that were once the standard treatment. Many populations now shrug off the same chemicals that would have killed them a decade ago. This makes treatment harder and recurrence more likely.</li>
+<li><strong>The second-hand furniture boom:</strong> With the cost of living crisis, more people are buying second-hand mattresses, sofas, and bed frames from Facebook Marketplace, Gumtree, and charity shops. This is one of the most common ways bed bugs enter homes.</li>
+<li><strong>Underreporting and stigma:</strong> Many people are embarrassed to admit they have bed bugs, delaying treatment and allowing infestations to spread. Bed bugs do not discriminate by cleanliness — they are found in five-star hotels and student flats alike.</li>
+<li><strong>Denser housing:</strong> Bed bugs spread between adjoining properties through wall cavities, shared pipes, and electrical conduits. Flats, HMOs, and terraced houses are all at higher risk.</li>
+</ul>
+
+<h2>How to Check for Bed Bugs</h2>
+
+<p>Bed bugs are small (4–5mm adult), flat, and reddish-brown. They hide in crevices during the day and feed on blood at night. The signs to look for:</p>
+
+<ul>
+<li><strong>Bites:</strong> Red, itchy welts usually in lines or clusters on exposed skin (arms, shoulders, neck, face). Not everyone reacts to bites — up to 30% of people show no skin reaction at all.</li>
+<li><strong>Blood spots:</strong> Tiny spots of blood on sheets from crushed bugs or bites that have bled.</li>
+<li><strong>Dark spots:</strong> Small black or dark brown dots on the mattress, headboard, or bed frame. This is bed bug excrement (digested blood).</li>
+<li><strong>Shed skins:</strong> Bed bugs moult five times before reaching adulthood. Look for pale, translucent exoskeletons in mattress seams and crevices.</li>
+<li><strong>Live bugs:</strong> Check mattress seams, headboard joints, bed frame crevices, and behind bedside furniture. Use a torch and a credit card to probe into gaps.</li>
+<li><strong>Musty smell:</strong> Heavy infestations produce a distinctive sweet, musty odour from the bugs' scent glands.</li>
+</ul>
+
+<h2>Checking Hotel Rooms and Airbnbs</h2>
+
+<p>Before unpacking in any accommodation, take two minutes to check:</p>
+
+<ol>
+<li>Pull back the sheets and examine mattress seams, particularly at corners and along piping</li>
+<li>Check the headboard — pull it away from the wall if possible and inspect the back</li>
+<li>Look behind bedside tables and along the bed frame</li>
+<li>Keep your suitcase on the luggage rack, not on the bed or floor</li>
+<li>If you find evidence, request a different room (not adjacent) or change accommodation entirely</li>
+</ol>
+
+<h2>Buying Second-Hand Furniture Safely</h2>
+
+<p>Second-hand furniture can be excellent value, but inspect it thoroughly before bringing it inside:</p>
+
+<ul>
+<li><strong>Mattresses:</strong> Honestly, avoid buying second-hand mattresses entirely. The risk is simply too high and a bed bug infestation will cost far more to treat than a new mattress.</li>
+<li><strong>Sofas and upholstered chairs:</strong> Inspect all seams, cushion zips, and the underside. Look for black spots, shed skins, or live bugs in crevices.</li>
+<li><strong>Wooden bed frames:</strong> Check joints, screw holes, and any cracks in the wood. Bed bugs love wood joints.</li>
+<li><strong>Inspect outdoors:</strong> Do your inspection in natural light, outside your home, before bringing the item in.</li>
+</ul>
+
+<p>Our <a href="/guides/moving-house-pest-checklist">moving house pest checklist</a> has more detail on pre-move inspections.</p>
+
+<h2>Treatment Options</h2>
+
+<p>If you have bed bugs, what works?</p>
+
+<ul>
+<li><strong>Professional chemical treatment:</strong> The most common option. A pest controller applies residual insecticide to all harbourage areas, usually requiring 2–3 treatments over several weeks. Costs &pound;200–&pound;400 per room.</li>
+<li><strong>Professional heat treatment:</strong> The room is heated to 50&deg;C+ for several hours, killing all life stages including eggs. More expensive (&pound;400–&pound;800+) but can be done in a single visit. Highly effective.</li>
+<li><strong>DIY sprays:</strong> <a href="/best/bed-bug-spray">Bed bug sprays</a> can help for very early-stage, localised problems, but have a low success rate for established infestations.</li>
+<li><strong>Mattress encasements:</strong> <a href="/best/bed-bug-mattress-encasement">Bed bug mattress encasements</a> trap bugs inside and prevent new bugs from colonising your mattress. An essential part of any treatment plan, not a treatment on their own.</li>
+</ul>
+
+<p>For a complete treatment guide, see our <a href="/guides/how-to-get-rid-of-bed-bugs">how to get rid of bed bugs guide</a>.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>Bed bugs are a growing problem in the UK and are likely to remain so. The best defence is awareness: know what to look for, check accommodation when you travel, inspect second-hand furniture before buying, and act quickly if you find evidence. Early intervention is dramatically cheaper and easier than treating an established infestation.</p>
+
+<p><strong>Think you might have bed bugs?</strong> <a href="/residential">Find a specialist pest controller near you</a> on PestPro Index. Early treatment makes a huge difference — do not wait.</p>
+    `
+  },
+  {
+    slug: 'awaabs-law-pest-control-landlords',
+    title: "Awaab's Law & Pest Control: What Landlords Need to Know",
+    metaTitle: "Awaab's Law & Pest Control: What Landlords Need to Know | PestPro Index",
+    metaDescription: "Awaab's Law means landlords must act on pest complaints. What are your obligations, timelines and penalties? UK landlord guide.",
+    targetKeyword: "Awaab's law pest control",
+    publishDate: '2026-04-06',
+    content: `
+<p>If you are a landlord in England, Awaab's Law is something you need to understand — and it has direct implications for how you handle pest control complaints from tenants. Here is what the legislation requires, how pests fit into the picture, and what you need to do to stay compliant.</p>
+
+<h2>What Is Awaab's Law?</h2>
+
+<p>Awaab's Law is named after Awaab Ishak, a two-year-old boy who died in 2020 from a respiratory condition caused by extensive mould in his family's social housing flat in Rochdale. His death exposed catastrophic failures in how housing providers responded to reports of hazardous conditions.</p>
+
+<p>The legislation, introduced as part of the Social Housing (Regulation) Act 2023 and extended to the private rented sector through subsequent regulations, sets strict timelines for landlords to respond to reports of hazards in rented properties. The key requirements:</p>
+
+<ul>
+<li><strong>Acknowledge:</strong> Within 14 days of a written complaint about a potential hazard</li>
+<li><strong>Investigate:</strong> Within a further 7 days (total 21 days from complaint)</li>
+<li><strong>Begin remedial action:</strong> Within a further 7 days of investigation (total 28 days from complaint)</li>
+<li><strong>Emergency hazards:</strong> Must be addressed within 24 hours</li>
+</ul>
+
+<h2>How Do Pests Fall Under Awaab's Law?</h2>
+
+<p>Pests are covered because the legislation references the Housing Health and Safety Rating System (HHSRS). Under the HHSRS, pest infestations are a recognised Category 1 or Category 2 hazard depending on severity:</p>
+
+<ul>
+<li><strong>Rats and mice:</strong> Can be a Category 1 hazard due to disease transmission (leptospirosis, salmonella), fire risk from gnawed wiring, and contamination of food preparation areas</li>
+<li><strong>Cockroaches:</strong> Can trigger asthma and allergic reactions, particularly in children. Recognised as a health hazard under HHSRS</li>
+<li><strong>Bed bugs:</strong> While not disease vectors, severe infestations affect mental health and wellbeing and can constitute a hazard</li>
+<li><strong>Wasps:</strong> An active nest near entrances or in living spaces poses a sting risk, particularly to those with allergies</li>
+<li><strong>Fleas:</strong> Can transmit disease and cause significant discomfort, particularly where there are vulnerable occupants</li>
+</ul>
+
+<p>The critical point: if a tenant reports a pest problem in writing, the Awaab's Law timelines begin. You cannot ignore it, delay it, or claim it is the tenant's responsibility without first investigating.</p>
+
+<h2>Landlord vs Tenant Responsibilities</h2>
+
+<p>This is where things get nuanced. The general principles:</p>
+
+<ul>
+<li><strong>Landlord responsibility:</strong> Pest problems caused by structural defects (gaps in brickwork, damaged drains, holes around pipes), poor maintenance (failed proofing, damaged fascia boards), or conditions present before the tenancy began</li>
+<li><strong>Tenant responsibility:</strong> Pest problems clearly caused by the tenant's lifestyle (excessive clutter, food waste, hoarding, refusal to cooperate with treatment). Even then, the landlord usually has a duty to ensure treatment happens</li>
+<li><strong>Shared responsibility:</strong> Most pest problems fall somewhere in between. A mouse problem might be caused by structural gaps (landlord's fault) combined with food left out (tenant's fault). In practice, the landlord usually needs to fund and organise the treatment, then address the underlying cause</li>
+</ul>
+
+<p>Our comprehensive <a href="/guides/landlord-pest-control">landlord pest control guide</a> covers responsibilities, legal obligations, and best practices in detail.</p>
+
+<h2>What Happens If You Do Not Comply?</h2>
+
+<p>The penalties for non-compliance are significant:</p>
+
+<ul>
+<li>Local authority enforcement notices requiring remedial action</li>
+<li>Rent Repayment Orders — tenants can reclaim up to 12 months' rent</li>
+<li>Improvement notices and prohibition orders on the property</li>
+<li>Prosecution in serious cases, with unlimited fines</li>
+<li>Banning orders for the worst offenders, preventing them from letting property</li>
+</ul>
+
+<p>Beyond legal penalties, a pest complaint that is mishandled can result in negative reviews, difficulty finding tenants, and potential claims for compensation.</p>
+
+<h2>What Landlords Should Do</h2>
+
+<ol>
+<li><strong>Take every complaint seriously:</strong> Acknowledge in writing within 14 days. Even if you think the tenant is overreacting, document your response.</li>
+<li><strong>Investigate quickly:</strong> Send a pest controller to survey the property. This satisfies the investigation requirement and gives you professional evidence of what is happening.</li>
+<li><strong>Treat promptly:</strong> If pests are found, authorise treatment immediately. Do not wait for multiple quotes or try to argue about whose fault it is — deal with the active problem first.</li>
+<li><strong>Address the cause:</strong> Treatment alone is not enough. If mice are entering through gaps around pipes, seal the gaps. If rats are coming from a broken drain, repair the drain. If the tenant's behaviour is contributing, provide written guidance.</li>
+<li><strong>Keep records:</strong> Document everything — the complaint, your response, the survey report, the treatment, and the follow-up. If a dispute reaches the tribunal, your paper trail is your defence.</li>
+<li><strong>Consider a pest control contract:</strong> For properties in pest-prone areas or HMOs, a quarterly pest control contract provides proactive monitoring and demonstrates due diligence.</li>
+</ol>
+
+<p>For guidance on choosing between DIY and professional treatment, see our <a href="/guides/professional-pest-control-vs-diy">professional vs DIY pest control comparison</a>. For properties with student tenants, our <a href="/guides/student-house-pest-guide">student house pest guide</a> covers the specific challenges of HMO pest management.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>Awaab's Law means that ignoring pest complaints is no longer just poor practice — it is a legal risk. The timelines are tight, the penalties are real, and the best approach is always proactive: maintain your property, respond to complaints promptly, and treat problems before they escalate.</p>
+
+<p><strong>Need a pest controller for your rental property?</strong> <a href="/residential">Find verified providers</a> on PestPro Index, or browse our <a href="/commercial">commercial directory</a> if you manage a portfolio.</p>
+    `
+  },
+  {
+    slug: 'most-common-pests-uk-by-season',
+    title: 'Most Common UK Pests by Season: What to Watch For',
+    metaTitle: 'Most Common UK Pests by Season: What to Watch For | PestPro Index',
+    metaDescription: "Mice in autumn, wasps in summer, moths in spring — a complete seasonal guide to the UK's most common household pests.",
+    targetKeyword: 'most common pests UK',
+    publishDate: '2026-04-06',
+    content: `
+<p>Pests in the UK follow remarkably predictable seasonal patterns. Understanding which pests are active when — and why — helps you prepare in advance rather than reacting when the problem has already started. Here is your season-by-season guide to the UK's most common household pests.</p>
+
+<h2>Spring (March–May)</h2>
+
+<p>Spring is when the pest world wakes up. Rising temperatures trigger breeding cycles and bring hibernating species back to life.</p>
+
+<ul>
+<li><strong>Ants:</strong> As soil temperatures rise above 10&deg;C, ant colonies become active. By April and May, flying ants are swarming and worker ants are foraging into kitchens. Our <a href="/guides/how-to-get-rid-of-ants">ant removal guide</a> and <a href="/best/ant-killers">best ant killer reviews</a> cover both DIY and professional approaches.</li>
+<li><strong>Moths:</strong> Clothes moths and carpet moths emerge in spring, having pupated over winter. Now is when they start laying eggs on woollens, carpets, and natural fabrics. Early intervention with <a href="/best/moth-traps">moth traps</a> prevents a summer infestation.</li>
+<li><strong>Wasps (queens):</strong> Queen wasps emerge from hibernation and start building nests. This is the ideal time to intercept them — a queen-stage nest is tiny and easy to remove. Wait until summer and you are dealing with thousands of workers. See our <a href="/guides/wasp-season-preparation">wasp season preparation guide</a>.</li>
+<li><strong>Cluster flies:</strong> These large, slow-moving flies that overwintered in lofts and wall cavities start emerging as temperatures rise. They are harmless but annoying.</li>
+</ul>
+
+<p>For a complete spring preparation plan, see our <a href="/guides/spring-pest-prevention">spring pest prevention guide</a>.</p>
+
+<h2>Summer (June–August)</h2>
+
+<p>Peak pest season. Warm temperatures accelerate breeding cycles and bring the widest variety of pest activity.</p>
+
+<ul>
+<li><strong>Wasps (peak):</strong> Nests are at maximum size by late July and August, with 5,000–10,000 workers. They are generally focused on foraging and not aggressive towards people unless the nest is disturbed. The best <a href="/best/wasp-killers">wasp killer products</a> and <a href="/best/wasp-nest-foam">nest foam treatments</a> are essential if you have an active nest.</li>
+<li><strong>Fleas:</strong> Summer is flea season. Warm, humid conditions are ideal for flea reproduction, and pets spending more time outdoors bring fleas back inside. If your cat or dog is scratching, act fast — fleas breed explosively. See our <a href="/guides/how-to-get-rid-of-fleas">flea removal guide</a> and <a href="/best/flea-treatments">flea treatment reviews</a>.</li>
+<li><strong>Flies:</strong> Houseflies, bluebottles, and fruit flies peak in summer. Keep bins sealed, food covered, and consider <a href="/best/fly-killer-indoor">indoor fly killers</a> for kitchens.</li>
+<li><strong>Bed bugs:</strong> Summer travel season brings increased bed bug exposure. Check hotel rooms, inspect Airbnb mattresses, and be wary of bringing luggage straight into bedrooms. Our <a href="/guides/how-to-get-rid-of-bed-bugs">bed bug guide</a> covers prevention and treatment.</li>
+<li><strong>Ants (flying):</strong> Flying ant day (usually July) is when winged males and queens leave the nest to mate. Impressive but short-lived — the swarms last hours, not days.</li>
+</ul>
+
+<h2>Autumn (September–November)</h2>
+
+<p>The seasonal transition when pests move indoors. This is when most people first notice rodent and spider problems.</p>
+
+<ul>
+<li><strong>Mice:</strong> As temperatures drop, mice seek warmth and food indoors. September to November is peak mouse-entry season. Seal gaps around pipes, doors, and vents before they find a way in. Our <a href="/guides/how-to-get-rid-of-mice">mouse removal guide</a> and <a href="/best/mouse-traps">mouse trap reviews</a> are essential reading.</li>
+<li><strong>Rats:</strong> Like mice, rats move closer to buildings in autumn. Garden rats start exploring outbuildings, garages, and eventually houses. Our <a href="/guides/how-to-get-rid-of-rats">rat removal guide</a> covers the full approach.</li>
+<li><strong>Spiders:</strong> September is peak house spider season. Males wander indoors searching for mates, which is why you suddenly see large spiders sprinting across your living room floor. Our <a href="/guides/natural-spider-repellents">natural spider repellent guide</a> covers prevention.</li>
+<li><strong>Wasps (aggressive):</strong> Late August and September is when wasps become most problematic for people. The colony is winding down, workers have no larvae to feed, and they become sugar-seeking and noticeably more aggressive. This is when most stings happen.</li>
+<li><strong>Cluster flies:</strong> Large numbers of cluster flies enter lofts and wall cavities to hibernate, often through tiny gaps in soffits and around windows.</li>
+</ul>
+
+<p>For complete autumn preparation, our <a href="/guides/autumn-pest-proofing">autumn pest-proofing guide</a> walks through every step.</p>
+
+<h2>Winter (December–February)</h2>
+
+<p>Pest activity drops but does not stop. The pests that moved indoors in autumn are now settled in and breeding.</p>
+
+<ul>
+<li><strong>Mice (established):</strong> Mice that entered in autumn are now well established, with nests in wall cavities, loft insulation, and behind kitchen units. If you are hearing scratching at night, finding droppings, or noticing a musky smell, act now. <a href="/best/mouse-traps">Mouse traps</a> and <a href="/best/mouse-poison">mouse poison</a> are your main DIY options.</li>
+<li><strong>Rats (established):</strong> Rats that found harbourage in autumn are settled for winter. They are less visible but still active, particularly in outbuildings, garages, and compost areas. <a href="/best/rat-bait-stations">Bait stations</a> should be checked and refreshed regularly.</li>
+<li><strong>Squirrels:</strong> Grey squirrels in lofts are a winter problem. They enter through damaged soffits or gaps in the roofline and can cause significant damage to wiring, woodwork, and insulation. Our <a href="/guides/how-to-get-rid-of-squirrels">squirrel removal guide</a> covers the options.</li>
+<li><strong>Cockroaches:</strong> German cockroaches thrive in heated buildings year-round. If you have them, winter does not slow them down — centrally heated kitchens and bathrooms provide ideal conditions. See our <a href="/guides/how-to-get-rid-of-cockroaches">cockroach removal guide</a>.</li>
+</ul>
+
+<h2>Year-Round Pest Prevention</h2>
+
+<p>The best pest management is proactive, not reactive. These steps apply all year:</p>
+
+<ol>
+<li><strong>Seal entry points:</strong> Regularly inspect and maintain the building envelope — gaps around pipes, damaged air bricks, failed sealant, broken roof tiles</li>
+<li><strong>Good sanitation:</strong> Store food properly, manage waste, clean behind appliances, and do not leave pet food out overnight</li>
+<li><strong>Reduce harbourage:</strong> Clear clutter, trim vegetation near the building, move stored materials away from external walls</li>
+<li><strong>Monitor:</strong> Check lofts, basements, and outbuildings regularly for signs of activity. Early detection makes treatment cheaper and easier</li>
+</ol>
+
+<p><strong>Got a pest problem that needs professional attention?</strong> <a href="/residential">Find verified pest controllers near you</a> on PestPro Index, or browse our <a href="/commercial">commercial directory</a> for business properties.</p>
+    `
   }
 ]
