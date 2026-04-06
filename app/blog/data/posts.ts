@@ -2583,5 +2583,238 @@ export const posts: BlogPost[] = [
 
 <p><strong>Got a pest problem that needs proper attention?</strong> <a href="/residential">Find a verified pest controller near you</a> on PestPro Index, or browse our <a href="/commercial">commercial pest control directory</a> for business properties.</p>
     `
+  },
+  {
+    slug: 'how-much-does-pest-control-cost-uk',
+    title: 'How Much Does Pest Control Cost in the UK? 2026 Prices',
+    metaTitle: 'How Much Does Pest Control Cost in the UK? 2026 Prices | PestPro Index',
+    metaDescription: 'UK pest control costs for rats, mice, wasps, bed bugs, fleas and more. Full 2026 price breakdown with DIY alternatives.',
+    targetKeyword: 'pest control cost UK',
+    publishDate: '2026-04-06',
+    content: `
+<p>One of the first questions anyone asks when they discover a pest problem is: how much is this going to cost me? Fair enough. Pest control is not cheap, but neither is ignoring the problem. Here is a straightforward breakdown of what you can expect to pay for professional pest control across the UK in 2026, plus what DIY might cost you instead.</p>
+
+<h2>Quick Price Guide by Pest Type</h2>
+
+<p>These are typical UK prices for professional treatment in 2026. Prices vary by region (London is generally 20–40% higher), severity of the infestation, and whether follow-up visits are needed.</p>
+
+<ul>
+<li><strong>Mice:</strong> &pound;80–&pound;180 for a standard treatment (usually 2–3 visits with bait stations and proofing advice)</li>
+<li><strong>Rats:</strong> &pound;120–&pound;250 for indoor treatment; &pound;100–&pound;200 for garden/outdoor treatment</li>
+<li><strong>Wasps:</strong> &pound;50–&pound;90 for a single nest removal (one of the cheaper callouts)</li>
+<li><strong>Bed bugs:</strong> &pound;200–&pound;400 per room for chemical treatment; &pound;400–&pound;800+ for heat treatment</li>
+<li><strong>Fleas:</strong> &pound;100–&pound;200 for a whole-house spray treatment</li>
+<li><strong>Cockroaches:</strong> &pound;120–&pound;250 depending on species and severity (German cockroaches are harder to treat)</li>
+<li><strong>Ants:</strong> &pound;80–&pound;150 for treatment of indoor nests</li>
+<li><strong>Moths:</strong> &pound;100–&pound;200 for survey and treatment</li>
+<li><strong>Squirrels:</strong> &pound;150–&pound;300 for trapping and proofing</li>
+<li><strong>Pigeons/birds:</strong> &pound;200–&pound;500+ depending on proofing required (netting, spikes, etc.)</li>
+</ul>
+
+<h2>What Affects the Price?</h2>
+
+<p>No two pest jobs are identical. The factors that push the price up or down include:</p>
+
+<ul>
+<li><strong>Severity:</strong> A single mouse versus a well-established colony are very different jobs. Severe infestations need more visits, more product, and more time.</li>
+<li><strong>Access:</strong> Pests in easy-to-reach areas cost less to treat. Rats under floorboards, wasps in high soffits, or bed bugs in a cluttered room all add time and complexity.</li>
+<li><strong>Property size:</strong> A studio flat versus a five-bedroom house. Most pest controllers price by the size of the area being treated.</li>
+<li><strong>Location:</strong> London and the South East are significantly more expensive than the Midlands, North, or Scotland. A wasp nest removal that costs &pound;55 in Leeds might be &pound;85 in London.</li>
+<li><strong>Follow-up visits:</strong> Many treatments require 2–3 visits. Check whether the quoted price includes follow-ups or if they are charged separately.</li>
+<li><strong>Emergency/weekend callouts:</strong> Expect a 30–50% premium for out-of-hours or emergency appointments.</li>
+</ul>
+
+<h2>DIY vs Professional: Cost Comparison</h2>
+
+<p>For some pests, DIY treatment is a realistic option. For others, it is a false economy. Our comprehensive <a href="/guides/professional-pest-control-vs-diy">professional vs DIY pest control guide</a> covers when each approach makes sense, but here is the cost comparison:</p>
+
+<ul>
+<li><strong>Mice (DIY):</strong> &pound;15–&pound;40 for traps and proofing materials. Realistic for a minor problem if you are willing to check and reset traps daily.</li>
+<li><strong>Rats (DIY):</strong> &pound;30–&pound;60 for bait stations and traps. Workable for garden rats, but indoor rats usually need professional help.</li>
+<li><strong>Wasps (DIY):</strong> &pound;8–&pound;15 for a can of wasp nest foam. Only suitable for accessible nests you can treat from a safe distance.</li>
+<li><strong>Bed bugs (DIY):</strong> &pound;30–&pound;80 for sprays and encasements. Honestly, DIY bed bug treatment has a very low success rate. Professional treatment is almost always worth the money.</li>
+<li><strong>Fleas (DIY):</strong> &pound;20–&pound;40 for household flea spray. Can work well for mild cases, especially combined with treating pets.</li>
+</ul>
+
+<h2>Council Pest Control: Is It Cheaper?</h2>
+
+<p>Many local councils offer pest control services, sometimes free or at subsidised rates. However, council services have been cut dramatically in recent years. What to expect:</p>
+
+<ul>
+<li>Some councils still offer free treatment for rats (public health obligation)</li>
+<li>Most now charge for mice, wasps, and other pests — often at rates only slightly below private operators</li>
+<li>Waiting times can be significantly longer than private pest controllers (weeks vs days)</li>
+<li>Service quality varies enormously between councils</li>
+</ul>
+
+<p>For most people, a private pest controller offers better response times, more thorough treatment, and often better value when you factor in the cost of a prolonged infestation.</p>
+
+<h2>How to Avoid Overpaying</h2>
+
+<ol>
+<li><strong>Get multiple quotes:</strong> Always get 2–3 quotes. Prices vary significantly between operators.</li>
+<li><strong>Ask what is included:</strong> Does the price include follow-up visits? Proofing advice? Guarantees?</li>
+<li><strong>Check qualifications:</strong> BPCA or NPTA membership is a good baseline. Qualified technicians may charge more, but the job is more likely to be done properly first time.</li>
+<li><strong>Beware of very cheap quotes:</strong> A suspiciously low price often means fewer visits, less product, or no follow-up. You end up paying twice.</li>
+<li><strong>Consider ongoing contracts:</strong> For commercial properties or properties with recurring problems, a quarterly pest control contract (typically &pound;200–&pound;600/year) can be more cost-effective than reactive callouts.</li>
+</ol>
+
+<p>For a deeper dive into UK pest control pricing, our dedicated <a href="/guides/pest-control-costs">pest control costs guide</a> has detailed breakdowns by pest type and region.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>Pest control costs money, but pests cost more if left untreated — in property damage, health risks, stress, and in some cases regulatory penalties. For minor problems, DIY is often viable. For anything established, recurrent, or involving high-risk pests like bed bugs or rats, professional treatment is usually the better investment.</p>
+
+<p><strong>Ready to get quotes?</strong> <a href="/residential">Browse verified pest controllers near you</a> on PestPro Index and compare providers in your area.</p>
+    `
+  },
+  {
+    slug: 'signs-you-have-mice-in-your-house',
+    title: '8 Signs You Have Mice in Your House',
+    metaTitle: '8 Signs You Have Mice in Your House | PestPro Index',
+    metaDescription: 'Droppings, scratching noises, gnaw marks — learn the 8 telltale signs of mice in your home and what to do about them.',
+    targetKeyword: 'signs of mice in house',
+    publishDate: '2026-04-06',
+    content: `
+<p>You might not see a mouse for weeks — they are nocturnal, fast, and remarkably good at staying hidden. But mice leave plenty of evidence behind. If you are wondering whether you have a mouse problem, here are the eight signs that pest professionals look for — and what to do if you tick more than one or two boxes.</p>
+
+<h2>1. Droppings</h2>
+
+<p>This is usually the first and most obvious sign. Mouse droppings are small (3–8mm), dark, and roughly the shape of a grain of rice. Fresh droppings are soft, dark, and shiny; old droppings are dry, grey, and crumbly.</p>
+
+<p>Where to look: along skirting boards, behind the cooker and fridge, inside kitchen cupboards (especially under the sink), in airing cupboards, and in loft spaces. Mice produce 50–80 droppings per day, so even one mouse leaves a lot of evidence.</p>
+
+<p><strong>Important:</strong> Do not vacuum mouse droppings. They can carry Hantavirus and other pathogens. Spray with disinfectant, leave for five minutes, then wipe up with paper towels and dispose of in a sealed bag.</p>
+
+<h2>2. Scratching and Scrabbling Noises</h2>
+
+<p>Mice are most active between dusk and dawn. If you hear scratching, scrabbling, or scurrying noises in the walls, ceiling, or under the floorboards — particularly at night — it is almost certainly rodent activity.</p>
+
+<p>Mice in loft spaces are especially easy to hear because loft insulation does little to muffle sound. If the noises are heavier and slower, you may have rats rather than mice — rats are less agile but louder.</p>
+
+<h2>3. Gnaw Marks</h2>
+
+<p>Mice need to gnaw constantly to keep their teeth from overgrowing. Look for small, clean gnaw marks on food packaging, cardboard boxes, wooden furniture, plastic containers, and — critically — electrical cables.</p>
+
+<p>Gnawed electrical wiring is a genuine fire hazard. If you find chewed cables, take the problem seriously and act immediately.</p>
+
+<h2>4. Grease Marks (Smear Marks)</h2>
+
+<p>Mice follow the same routes repeatedly, running along walls and skirting boards. Their fur carries body oils and dirt, which leave dark, greasy smear marks along their regular paths. These are especially visible on light-coloured walls and around entry points like gaps behind pipes or holes in skirting boards.</p>
+
+<h2>5. Nests or Nesting Material</h2>
+
+<p>Mice build nests from whatever soft material they can find: shredded paper, fabric, loft insulation, cardboard, and even carrier bags. Nests are usually hidden in warm, sheltered spots — behind appliances, inside wall cavities, under floorboards, or in the back of rarely opened cupboards.</p>
+
+<p>If you find a nest, there are mice actively living and breeding in your home. A single female can produce 5–10 litters per year with 5–6 pups each, so a small problem becomes a big one very quickly.</p>
+
+<h2>6. Urine Smell</h2>
+
+<p>Mouse urine has a distinctive, strong ammonia-like smell. In a heavy infestation, the smell can be noticeable in rooms even when you cannot see any other evidence. Mice also create "urine pillars" — small mounds of body grease, dirt, and urine that build up along regular pathways in severe infestations.</p>
+
+<p>If you can smell ammonia in cupboards, behind appliances, or in enclosed spaces like lofts, it is a strong indicator of mouse activity.</p>
+
+<h2>7. Your Pets Are Acting Strangely</h2>
+
+<p>Cats and dogs can detect rodents long before you can. If your cat is suddenly fixated on a particular spot — staring at a wall, pawing at a skirting board gap, or sitting alert by the cooker — pay attention. If your dog is scratching at floorboards or sniffing intensely around a specific area, they are likely detecting something you cannot.</p>
+
+<h2>8. Actual Sightings</h2>
+
+<p>If you see a mouse, you almost certainly have more than one. Mice are social animals that live in groups, and they are very good at staying hidden. A daytime sighting in particular suggests a significant population — mice only venture out in daylight when the nest is overcrowded or food is scarce.</p>
+
+<p>A single sighting does not necessarily mean a full infestation, but it does mean you should investigate further and take action before the population grows.</p>
+
+<h2>What to Do If You Have Mice</h2>
+
+<p>If you are ticking two or more of the signs above, you likely have an active mouse problem. Here is what to do next:</p>
+
+<ol>
+<li><strong>Identify entry points:</strong> Check around pipes, behind cookers, gaps under doors, and around utility entries. Mice can fit through a gap the width of a pencil (about 6mm).</li>
+<li><strong>Set traps:</strong> <a href="/best/mouse-traps">The best mouse traps</a> placed along walls and near droppings are the most effective first response. Bait with chocolate spread or peanut butter.</li>
+<li><strong>Remove food sources:</strong> Store all food in sealed containers. Clean behind and under appliances. Do not leave pet food out overnight.</li>
+<li><strong>Seal gaps:</strong> Use steel wool, copper mesh, and expanding foam to block entry points. This is the most important long-term step.</li>
+<li><strong>Consider bait:</strong> For persistent problems, <a href="/best/mouse-poison">mouse poison (rodenticide)</a> in tamper-resistant bait stations can be effective — but use carefully, especially if you have pets or children.</li>
+</ol>
+
+<p>For a complete walkthrough, our <a href="/guides/how-to-get-rid-of-mice">guide to getting rid of mice</a> covers everything from identification to long-term prevention. If you prefer chemical-free options, see our <a href="/guides/natural-mouse-deterrents">natural mouse deterrent guide</a>.</p>
+
+<h2>When to Call a Professional</h2>
+
+<p>Call a pest controller if:</p>
+
+<ul>
+<li>DIY traps are not catching anything after a week (mice may be avoiding them)</li>
+<li>You are finding droppings in multiple rooms</li>
+<li>You suspect mice are inside wall cavities or under floors</li>
+<li>You have found gnawed electrical wiring</li>
+<li>The problem keeps coming back despite your efforts</li>
+</ul>
+
+<p><strong>Need help?</strong> <a href="/residential">Find a local pest controller</a> on PestPro Index — most offer free phone advice and can visit within 24–48 hours.</p>
+    `
+  },
+  {
+    slug: 'do-conkers-keep-spiders-away',
+    title: 'Do Conkers Keep Spiders Away? The British Myth Explained',
+    metaTitle: 'Do Conkers Keep Spiders Away? The British Myth Explained | PestPro Index',
+    metaDescription: 'Every autumn, people scatter conkers to repel spiders. But does it actually work? We look at the science behind the folklore.',
+    targetKeyword: 'do conkers repel spiders',
+    publishDate: '2026-04-06',
+    content: `
+<p>Every September, the same ritual plays out in homes across Britain: horse chestnuts are collected from parks, placed on windowsills and in corners, and expected to keep spiders at bay. It is one of those pieces of folk wisdom that everyone has heard and many people swear by. But is there any truth to it?</p>
+
+<h2>The Folklore</h2>
+
+<p>The conker-spider myth has been part of British culture for generations. The basic claim is that horse chestnuts (conkers) contain a chemical that spiders find repulsive, and that placing them around your home will keep spiders out.</p>
+
+<p>Some versions of the myth are more specific: the conkers need to be fresh, they need to be split open to release the scent, they should be placed on windowsills where spiders enter. Some people even claim that conkers need to be replaced every few weeks as they dry out and lose their potency.</p>
+
+<h2>What Does the Science Say?</h2>
+
+<p>In 2010, the Royal Society of Chemistry ran a competition inviting schoolchildren to design experiments testing whether conkers repel spiders. The results? <strong>Inconclusive at best.</strong></p>
+
+<p>Some student experiments appeared to show that spiders avoided areas with conkers, while others showed no effect at all. The experiments were not rigorous enough to draw firm conclusions (they were school projects, after all), but the RSC acknowledged that the results did not provide convincing evidence that conkers repel spiders.</p>
+
+<p>The chemical most often cited as the active ingredient is <strong>saponin</strong>, a naturally occurring compound found in horse chestnuts. Saponins are mildly toxic and do have insecticidal properties in concentrated form. However:</p>
+
+<ul>
+<li>The concentration of saponin in an intact conker on a windowsill is extremely low</li>
+<li>Saponin is not volatile — it does not readily evaporate into the air, so spiders would need to physically contact the conker to be affected</li>
+<li>There is no peer-reviewed study demonstrating that saponin at naturally occurring levels repels spiders</li>
+<li>Spiders do not have a strong sense of smell in the way mammals do — they detect chemicals through sensory hairs on their legs, not from a distance</li>
+</ul>
+
+<h2>Why People Think It Works</h2>
+
+<p>The same factors that make people believe in Irish Spring soap for mice apply to conkers for spiders:</p>
+
+<ul>
+<li><strong>Timing:</strong> Conkers fall in September and October — exactly when house spiders are most active (males wander indoors searching for mates). By November, spider activity naturally drops as mating season ends. People place conkers in September, notice fewer spiders by November, and credit the conkers.</li>
+<li><strong>Confirmation bias:</strong> If you place conkers and do not see a spider in that corner, you assume it worked. You do not count the spiders you would have seen without conkers, because you have no way of knowing.</li>
+<li><strong>It is harmless and pleasant:</strong> Conker-collecting is a nice autumn activity. Placing them around the house is free, easy, and gives a sense of control. Even if it does not work, it does not cost anything — so people keep doing it.</li>
+</ul>
+
+<h2>What Actually Keeps Spiders Out</h2>
+
+<p>If you genuinely want fewer spiders in your home, here is what works:</p>
+
+<ol>
+<li><strong>Seal entry points:</strong> Gaps around windows, doors, pipes, and vents are how spiders get in. Draught excluders, sealant, and mesh over vents make a genuine difference.</li>
+<li><strong>Reduce outdoor habitats:</strong> Clear vegetation, woodpiles, and debris from around your external walls. Spiders congregate near exterior walls and come inside when it gets cold. An open gap between plants and your house reduces the bridge.</li>
+<li><strong>Keep things tidy:</strong> Spiders love clutter, dark corners, and undisturbed areas. Regular vacuuming, moving stored boxes, and keeping rooms well-lit discourages them from settling in.</li>
+<li><strong>Use proven repellents:</strong> Peppermint oil sprayed around entry points has slightly more evidence behind it than conkers — though it is still not a reliable standalone solution. Our <a href="/guides/natural-spider-repellents">natural spider repellent guide</a> covers the options that have some genuine promise.</li>
+<li><strong>Commercial spider repellents:</strong> If natural methods are not cutting it, there are <a href="/best/spider-repellent">effective spider repellent products</a> available that use proven active ingredients.</li>
+</ol>
+
+<h2>Should You Worry About Spiders at All?</h2>
+
+<p>Worth remembering: UK spiders are almost entirely harmless. The large house spiders that appear in September (usually <em>Eratigena atrica</em>) are not dangerous. They do not bite, they do not carry diseases, and they actively reduce populations of flies, mosquitoes, and other genuinely problematic insects.</p>
+
+<p>For most people, the issue is not danger but discomfort. If you have a genuine phobia or simply want fewer spiders indoors, the practical steps above will make a bigger difference than conkers ever will.</p>
+
+<p>For seasonal pest-proofing tips that cover spiders and much more, see our <a href="/guides/autumn-pest-proofing">autumn pest-proofing guide</a>.</p>
+
+<p><strong>Got a serious spider problem?</strong> <a href="/residential">Find a local pest controller</a> on PestPro Index who can survey and treat your property.</p>
+    `
   }
 ]
