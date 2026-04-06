@@ -2397,5 +2397,191 @@ export const posts: BlogPost[] = [
 
 <p>If your pest problem is directly caused by or associated with the flood or fire damage event, it may be covered under your home insurance policy as a consequential loss. Check your policy wording and raise it with your loss adjuster or insurer at the outset — do not wait until the restoration is complete.</p>
     `
+  },
+  {
+    slug: 'does-irish-spring-soap-repel-pests',
+    title: 'Does Irish Spring Soap Repel Pests? The Truth',
+    metaTitle: 'Does Irish Spring Soap Repel Pests? The Truth | PestPro Index',
+    metaDescription: 'TikTok says Irish Spring soap keeps rats, mice and bugs away. We look at the evidence and tell you what actually works.',
+    targetKeyword: 'does irish spring soap repel mice',
+    publishDate: '2026-04-06',
+    content: `
+<p>If you have spent any time on TikTok or Facebook in the last couple of years, you will have seen the hack: grate a bar of Irish Spring soap, scatter the shavings around your garden, under your decking, or in your loft — and rodents, deer, and insects will stay away forever. Sounds brilliant. But does it actually work?</p>
+
+<p>As pest control professionals, we get asked about this constantly. So here is what the evidence actually says — and what you should do instead if you have a real pest problem.</p>
+
+<h2>Why People Think Irish Spring Works</h2>
+
+<p>Irish Spring is a strongly fragranced deodorant soap. The theory is simple: mice, rats, and other pests find the overwhelming scent unpleasant and will avoid areas where it is present. The fragrance comes from a blend of synthetic compounds that, to be fair, do produce a very strong smell.</p>
+
+<p>People who swear by it typically grate the bars and scatter shavings in flower beds, near entry points, or inside outbuildings. Some stuff whole bars inside wall cavities or under decking. And to their credit, many do report short-term results — they stop seeing pests for a few days or weeks after placing the soap.</p>
+
+<h2>What the Evidence Actually Says</h2>
+
+<p>Here is the problem: there is essentially <strong>no scientific evidence</strong> that Irish Spring soap repels mice, rats, or insects in any meaningful way. No controlled studies. No peer-reviewed research. No endorsement from any pest management body in the UK or elsewhere.</p>
+
+<p>What there is, is a lot of anecdotal evidence — and anecdotal evidence is notoriously unreliable when it comes to pest control. Here is why:</p>
+
+<ul>
+<li><strong>Seasonal timing:</strong> Many people try the soap hack in late autumn when mice are actively entering homes. If mouse activity drops naturally (because the initial wave has passed), people credit the soap.</li>
+<li><strong>Novelty avoidance:</strong> Rodents are neophobic — they instinctively avoid new objects in their environment. Any new item placed along a run will temporarily deter them. It is not the soap specifically; a brick would have the same short-term effect.</li>
+<li><strong>Scent habituation:</strong> Even if the fragrance is initially unpleasant, rodents habituate to smells extremely quickly. Within days, the soap becomes just another background scent.</li>
+<li><strong>Confirmation bias:</strong> If someone places soap and does not see a mouse, they assume it worked. But they might not have seen a mouse anyway.</li>
+</ul>
+
+<h2>What About Bugs and Insects?</h2>
+
+<p>The claims extend to insects too — ants, mosquitoes, even spiders. There is even less evidence for these claims. Insects respond to specific chemical compounds (like DEET or permethrin), and there is nothing in soap fragrance that has been shown to repel them. If anything, the fats in soap could attract certain insects.</p>
+
+<h2>What Actually Works for Mice and Rats</h2>
+
+<p>If you have a genuine rodent problem, forget the soap. Here is what pest professionals actually recommend:</p>
+
+<ol>
+<li><strong>Seal entry points:</strong> Mice can squeeze through gaps as small as 6mm. Steel wool, wire mesh, and expanding foam are your first line of defence. This is the single most effective thing you can do.</li>
+<li><strong>Remove food sources:</strong> Store food in sealed containers, clean up crumbs and pet food, and secure your bins. No food means no reason for rodents to stay.</li>
+<li><strong>Use proper traps:</strong> Snap traps and <a href="/best/mouse-traps">the best mouse traps</a> are proven, effective, and humane when used correctly.</li>
+<li><strong>Consider natural deterrents that have some evidence:</strong> Peppermint oil has slightly more research behind it than soap, though it is still not a standalone solution. Our guide to <a href="/guides/natural-mouse-deterrents">natural mouse deterrents</a> covers what has genuine promise and what does not.</li>
+<li><strong>For rats:</strong> Rats are larger, bolder, and more destructive than mice. You will need <a href="/guides/natural-rat-deterrents">a more robust approach to natural rat deterrents</a>, or professional-grade <a href="/best/mouse-repellent">repellent products</a> that are actually formulated for the job.</li>
+</ol>
+
+<h2>The Bottom Line</h2>
+
+<p>Irish Spring soap is a fine soap for washing your hands. It is not pest control. If you have a mild problem and want to try it as part of a broader approach, it will not do any harm — but do not rely on it. And if you have an active infestation, grated soap is not going to cut it.</p>
+
+<p>The pest control industry exists because pests are persistent, adaptable, and difficult to manage. There are no miracle shortcuts, no matter what TikTok says. Stick with proven methods — exclusion, sanitation, traps, and professional treatment when needed.</p>
+
+<p><strong>Need professional help?</strong> <a href="/residential">Browse verified pest controllers near you</a> on PestPro Index, or explore our <a href="/commercial">commercial pest control directory</a> if you manage a business property.</p>
+    `
+  },
+  {
+    slug: 'wasp-season-uk-2026-what-to-expect',
+    title: 'Wasp Season UK 2026: When It Starts & What to Expect',
+    metaTitle: 'Wasp Season UK 2026: When It Starts & What to Expect | PestPro Index',
+    metaDescription: 'Wasp season 2026 is here. When do wasps appear, when are they most aggressive, and what can you do to prepare? Expert UK guide.',
+    targetKeyword: 'wasp season 2026 UK',
+    publishDate: '2026-04-06',
+    content: `
+<p>Every year, the same question starts trending from around April onwards: when does wasp season start, and is it going to be a bad one this year? If you are reading this in spring or summer 2026, here is what you need to know — and what you can do about it now, before the problems start.</p>
+
+<h2>The Wasp Season Timeline</h2>
+
+<p>Wasps in the UK follow a predictable annual cycle, driven almost entirely by temperature and daylight hours. Here is how the year typically unfolds:</p>
+
+<ul>
+<li><strong>March–April:</strong> Queen wasps emerge from hibernation and begin searching for nest sites. You might spot large, slow-moving wasps in loft spaces, garages, or around eaves. These are queens, not workers — they are not aggressive at this stage.</li>
+<li><strong>May–June:</strong> The queen builds the initial nest (roughly golf-ball sized) and lays her first batch of eggs. The first generation of workers hatches and takes over nest-building duties. Nests grow rapidly.</li>
+<li><strong>July–August:</strong> Peak activity. Nests can contain 5,000–10,000 workers. Wasps are busy foraging for protein (insects) to feed larvae. They are focused on the job and generally not aggressive towards humans — unless you disturb the nest.</li>
+<li><strong>Late August–September:</strong> This is when wasps become a real nuisance. The queen stops laying, the workers have no larvae to feed, and they go searching for sugar. Pub gardens, picnics, fizzy drinks, fallen fruit — anywhere with sugar attracts swarms of increasingly desperate wasps.</li>
+<li><strong>October–November:</strong> The colony dies off. Only newly mated queens survive, finding sheltered spots to hibernate through winter.</li>
+</ul>
+
+<h2>Is 2026 Going to Be a Bad Year for Wasps?</h2>
+
+<p>The honest answer: it depends on the spring. But the signs are not encouraging for anyone who dislikes wasps.</p>
+
+<p>The winter of 2025/26 was <strong>relatively mild</strong> across most of the UK. That matters because queen wasp survival is directly linked to winter temperatures. In a harsh winter, a significant proportion of hibernating queens die. In a mild winter, more queens survive — which means more nests in spring, which means more wasps by summer.</p>
+
+<p>The key variable now is April and May temperatures. If we get a warm, dry spring, queens will establish nests early and colonies will have a longer growing season. If spring is cold and wet, colony establishment will be delayed and some queens will fail.</p>
+
+<p>Based on current conditions, pest controllers across the UK are already reporting <strong>higher than average queen activity</strong> in March and early April 2026. Prepare accordingly.</p>
+
+<h2>What You Can Do Now</h2>
+
+<p>The best time to deal with wasps is before they become a problem. Our complete <a href="/guides/wasp-season-preparation">wasp season preparation guide</a> covers everything in detail, but here are the headlines:</p>
+
+<ol>
+<li><strong>Inspect your property in April:</strong> Check loft spaces, soffits, shed roofs, air bricks, and wall cavities for early-stage nests. A queen-stage nest is the size of a golf ball and easy to remove. By July, it could be the size of a football and home to thousands of wasps.</li>
+<li><strong>Seal entry points:</strong> Block gaps around soffits, fascia boards, and air bricks with mesh. Prevention is vastly cheaper than removal.</li>
+<li><strong>Have products ready:</strong> If you are in a wasp-prone area, stock up early. The <a href="/best/wasp-killers">best wasp killer sprays</a> and <a href="/best/wasp-nest-foam">wasp nest foam treatments</a> sell out fast in peak season.</li>
+<li><strong>Consider natural deterrents:</strong> For areas where you want to discourage nesting without chemicals, our <a href="/guides/natural-wasp-deterrents">natural wasp deterrent guide</a> covers options from fake nests to essential oil sprays.</li>
+<li><strong>Know when to call a professional:</strong> Any nest larger than a tennis ball, any nest in a location you cannot safely reach, or any nest near a doorway or high-traffic area — call a professional. It is not worth the risk.</li>
+</ol>
+
+<h2>When Are Wasps Most Dangerous?</h2>
+
+<p>Wasps are most likely to sting in three situations:</p>
+
+<ul>
+<li><strong>Nest disturbance:</strong> Getting within a metre or two of an active nest, especially if there are vibrations (lawnmowing, drilling, walking on a loft floor). Worker wasps release alarm pheromone, and multiple stings can follow.</li>
+<li><strong>Late season sugar-seeking:</strong> In September, wasps are erratic, desperate for sugar, and more likely to sting if you swat at them. Stay calm, move slowly, and cover sweet drinks outdoors.</li>
+<li><strong>Trapped wasps:</strong> A wasp inside a car, caught in clothing, or stuck in a drink is a wasp that will sting. Check cans and bottles before drinking outdoors.</li>
+</ul>
+
+<h2>The Bottom Line for 2026</h2>
+
+<p>A mild winter likely means more wasps this year. The window for easy prevention is now — check your property, seal entry points, and deal with queen nests before they become colonies. If you leave it until August, you will be competing with everyone else for pest control appointments at peak season.</p>
+
+<p><strong>Need a wasp nest removed?</strong> <a href="/residential">Find a local pest controller</a> on PestPro Index — most offer same-day or next-day wasp nest treatment during the season.</p>
+    `
+  },
+  {
+    slug: 'do-ultrasonic-pest-repellers-actually-work',
+    title: 'Do Ultrasonic Pest Repellers Actually Work? Honest Answer',
+    metaTitle: 'Do Ultrasonic Pest Repellers Actually Work? Honest Answer | PestPro Index',
+    metaDescription: 'Ultrasonic pest repellers sell millions on Amazon. But do they actually repel mice, rats or insects? We review the evidence.',
+    targetKeyword: 'do ultrasonic pest repellers work',
+    publishDate: '2026-04-06',
+    content: `
+<p>Ultrasonic pest repellers are one of the best-selling pest control products on Amazon. Plug them in, they emit high-frequency sound, and mice, rats, spiders, and insects flee your home forever. At least, that is the promise. But after reviewing the evidence and speaking to dozens of pest professionals over the years, we have a less encouraging answer.</p>
+
+<h2>How Ultrasonic Repellers Claim to Work</h2>
+
+<p>The premise is straightforward: these devices emit sound waves at frequencies above human hearing (typically 20–65 kHz). The theory is that these high-frequency sounds are intensely uncomfortable for rodents and insects, driving them away from your home without chemicals, traps, or mess.</p>
+
+<p>It sounds ideal. Humane, effortless, chemical-free, and available for under £20. No wonder they sell millions of units every year.</p>
+
+<h2>What the Research Actually Shows</h2>
+
+<p>Here is where things get uncomfortable for the manufacturers. The scientific evidence for ultrasonic pest repellers is, to put it bluntly, <strong>poor</strong>.</p>
+
+<p>Multiple independent studies have reached broadly the same conclusion:</p>
+
+<ul>
+<li>A 2001 study by the University of Arizona found that while some ultrasonic devices produced short-term avoidance behaviour in rodents, the effect <strong>disappeared within days</strong> as the animals habituated to the sound.</li>
+<li>The US Federal Trade Commission (FTC) has taken enforcement action against several ultrasonic repeller manufacturers for making unsubstantiated claims about their products' effectiveness.</li>
+<li>A review published in the <em>Journal of Economic Entomology</em> found no consistent evidence that ultrasonic devices repel cockroaches, ants, spiders, or other insects.</li>
+<li>The British Pest Control Association (BPCA) does not recommend ultrasonic devices as a standalone pest control method.</li>
+</ul>
+
+<p>Our own <a href="/guides/ultrasonic-pest-repellers-do-they-work">in-depth guide on ultrasonic repellers</a> covers the research in more detail, but the summary is clear: the evidence does not support the marketing claims.</p>
+
+<h2>Why Do They Get Good Amazon Reviews?</h2>
+
+<p>This is the question that confuses people. If they do not work, why do so many people leave 4- and 5-star reviews? Several factors explain this:</p>
+
+<ul>
+<li><strong>Seasonal timing:</strong> Most people buy ultrasonic repellers in autumn when mice start coming indoors. Mouse activity naturally fluctuates — a quiet week after plugging in the device feels like proof it is working.</li>
+<li><strong>Placebo effect:</strong> Once you have spent money on a solution, you notice evidence that confirms it is working and ignore evidence that it is not. This is basic confirmation bias.</li>
+<li><strong>Coincidence:</strong> Maybe the mice found a better food source elsewhere. Maybe a neighbour got a cat. Correlation is not causation.</li>
+<li><strong>Multiple interventions:</strong> Many people plug in a repeller AND seal gaps AND clean up food sources. The exclusion and sanitation work, and the repeller gets the credit.</li>
+<li><strong>Review manipulation:</strong> Some budget ultrasonic repeller brands on Amazon have been caught soliciting or incentivising positive reviews.</li>
+</ul>
+
+<h2>Are They Completely Useless?</h2>
+
+<p>In fairness, we would not say they are 100% useless. Some laboratory studies have shown very short-term avoidance behaviour in controlled conditions. And if you have a very mild, early-stage mouse problem, the novelty of a new sound source might cause temporary disruption to established rodent runs.</p>
+
+<p>But as a standalone solution for an active infestation? No. Absolutely not. If you are seeing mice regularly, hearing scratching at night, or finding droppings, an ultrasonic repeller is not going to solve your problem.</p>
+
+<p>For a balanced look at specific products and where they might fit into a broader strategy, see our <a href="/best/ultrasonic-pest-repellers">ultrasonic pest repeller reviews</a>.</p>
+
+<h2>What Actually Works Instead</h2>
+
+<p>If you are dealing with mice or rats, here is what pest professionals actually recommend:</p>
+
+<ol>
+<li><strong>Exclusion first:</strong> Find and seal every entry point. Steel wool, copper mesh, and expanding foam for gaps. This is by far the most effective long-term solution.</li>
+<li><strong>Trapping:</strong> <a href="/best/mouse-traps">Quality mouse traps</a> or <a href="/best/rat-traps">rat traps</a>, properly positioned along walls and known runs, are proven and effective. Bait with chocolate spread or peanut butter, not cheese.</li>
+<li><strong>Sanitation:</strong> Remove food sources. Store dry goods in sealed containers. Clean behind appliances. Take bins out regularly.</li>
+<li><strong>Professional treatment:</strong> For anything beyond a one-off mouse, a qualified pest controller will survey, treat, and proof your property properly.</li>
+</ol>
+
+<h2>The Bottom Line</h2>
+
+<p>Ultrasonic pest repellers are a product that sells well because the promise is irresistible: effortless, humane pest control at the plug of a device. Unfortunately, the evidence does not match the marketing. If you have a genuine pest problem, spend your money on traps, exclusion materials, or a professional — not on a gadget that science says does not reliably work.</p>
+
+<p><strong>Got a pest problem that needs proper attention?</strong> <a href="/residential">Find a verified pest controller near you</a> on PestPro Index, or browse our <a href="/commercial">commercial pest control directory</a> for business properties.</p>
+    `
   }
 ]
