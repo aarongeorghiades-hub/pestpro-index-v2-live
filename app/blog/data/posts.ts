@@ -2985,7 +2985,7 @@ export const posts: BlogPost[] = [
 
 <h2>What Is Awaab's Law?</h2>
 
-<p>Awaab's Law is named after Awaab Ishak, a two-year-old boy who died in 2020 from a respiratory condition caused by extensive mould in his family's social housing flat in Rochdale. His death exposed catastrophic failures in how housing providers responded to reports of hazardous conditions.</p>
+<p>Awaab's Law is named after Awaab Ishak, a two-year-old boy who died in 2020 from a respiratory condition caused by extensive mould in his family's social housing flat in Rochdale — a situation that <a href="/best/commercial-dehumidifiers" class="text-green-600 hover:underline">commercial dehumidifiers</a> and proper ventilation could have mitigated. His death exposed catastrophic failures in how housing providers responded to reports of hazardous conditions.</p>
 
 <p>The legislation, introduced as part of the Social Housing (Regulation) Act 2023 and extended to the private rented sector through subsequent regulations, sets strict timelines for landlords to respond to reports of hazards in rented properties. The key requirements:</p>
 
@@ -3044,7 +3044,7 @@ export const posts: BlogPost[] = [
 <li><strong>Treat promptly:</strong> If pests are found, authorise treatment immediately. Do not wait for multiple quotes or try to argue about whose fault it is — deal with the active problem first.</li>
 <li><strong>Address the cause:</strong> Treatment alone is not enough. If mice are entering through gaps around pipes, seal the gaps. If rats are coming from a broken drain, repair the drain. If the tenant's behaviour is contributing, provide written guidance.</li>
 <li><strong>Keep records:</strong> Document everything — the complaint, your response, the survey report, the treatment, and the follow-up. If a dispute reaches the tribunal, your paper trail is your defence.</li>
-<li><strong>Consider a pest control contract:</strong> For properties in pest-prone areas or HMOs, a quarterly pest control contract provides proactive monitoring and demonstrates due diligence.</li>
+<li><strong>Consider a pest control contract:</strong> For properties in pest-prone areas or HMOs, a quarterly pest control contract with <a href="/best/professional-bait-station-kits" class="text-green-600 hover:underline">tamper-resistant bait stations</a> provides proactive monitoring and demonstrates due diligence.</li>
 </ol>
 
 <p>For guidance on choosing between DIY and professional treatment, see our <a href="/guides/professional-pest-control-vs-diy">professional vs DIY pest control comparison</a>. For properties with student tenants, our <a href="/guides/student-house-pest-guide">student house pest guide</a> covers the specific challenges of HMO pest management.</p>
@@ -3084,7 +3084,7 @@ export const posts: BlogPost[] = [
 <p>Peak pest season. Warm temperatures accelerate breeding cycles and bring the widest variety of pest activity.</p>
 
 <ul>
-<li><strong>Wasps (peak):</strong> Nests are at maximum size by late July and August, with 5,000–10,000 workers. They are generally focused on foraging and not aggressive towards people unless the nest is disturbed. The best <a href="/best/wasp-killers">wasp killer products</a> and <a href="/best/wasp-nest-foam">nest foam treatments</a> are essential if you have an active nest.</li>
+<li><strong>Wasps (peak):</strong> Nests are at maximum size by late July and August, with 5,000–10,000 workers. They are generally focused on foraging and not aggressive towards people unless the nest is disturbed. The best <a href="/best/wasp-killers">wasp killer products</a> and <a href="/best/wasp-nest-foam" class="text-green-600 hover:underline">wasp nest foam</a> treatments are essential if you have an active nest.</li>
 <li><strong>Fleas:</strong> Summer is flea season. Warm, humid conditions are ideal for flea reproduction, and pets spending more time outdoors bring fleas back inside. If your cat or dog is scratching, act fast — fleas breed explosively. See our <a href="/guides/how-to-get-rid-of-fleas">flea removal guide</a> and <a href="/best/flea-treatments">flea treatment reviews</a>.</li>
 <li><strong>Flies:</strong> Houseflies, bluebottles, and fruit flies peak in summer. Keep bins sealed, food covered, and consider <a href="/best/fly-killer-indoor">indoor fly killers</a> for kitchens.</li>
 <li><strong>Bed bugs:</strong> Summer travel season brings increased bed bug exposure. Check hotel rooms, inspect Airbnb mattresses, and be wary of bringing luggage straight into bedrooms. Our <a href="/guides/how-to-get-rid-of-bed-bugs">bed bug guide</a> covers prevention and treatment.</li>
@@ -3111,7 +3111,7 @@ export const posts: BlogPost[] = [
 
 <ul>
 <li><strong>Mice (established):</strong> Mice that entered in autumn are now well established, with nests in wall cavities, loft insulation, and behind kitchen units. If you are hearing scratching at night, finding droppings, or noticing a musky smell, act now. <a href="/best/mouse-traps">Mouse traps</a> and <a href="/best/mouse-poison">mouse poison</a> are your main DIY options.</li>
-<li><strong>Rats (established):</strong> Rats that found harbourage in autumn are settled for winter. They are less visible but still active, particularly in outbuildings, garages, and compost areas. <a href="/best/rat-bait-stations">Bait stations</a> should be checked and refreshed regularly.</li>
+<li><strong>Rats (established):</strong> Rats that found harbourage in autumn are settled for winter. They are less visible but still active, particularly in outbuildings, garages, and compost areas. <a href="/best/rat-bait-stations" class="text-green-600 hover:underline">Rat bait stations</a> should be checked and refreshed regularly.</li>
 <li><strong>Squirrels:</strong> Grey squirrels in lofts are a winter problem. They enter through damaged soffits or gaps in the roofline and can cause significant damage to wiring, woodwork, and insulation. Our <a href="/guides/how-to-get-rid-of-squirrels">squirrel removal guide</a> covers the options.</li>
 <li><strong>Cockroaches:</strong> German cockroaches thrive in heated buildings year-round. If you have them, winter does not slow them down — centrally heated kitchens and bathrooms provide ideal conditions. See our <a href="/guides/how-to-get-rid-of-cockroaches">cockroach removal guide</a>.</li>
 </ul>
@@ -3166,7 +3166,7 @@ export const posts: BlogPost[] = [
 <ol>
 <li><strong>Remove food sources:</strong> Secure bins, take bird feeders down temporarily if you are seeing rats, clear fallen fruit, and do not leave pet food outside. This is the single most impactful thing you can do.</li>
 <li><strong>Seal entry points:</strong> Rats can enter through gaps as small as 25mm. Check around pipes, under doors, around air bricks, and along the junction between walls and ground level. Steel wool and wire mesh are effective blockers.</li>
-<li><strong>Set up bait stations or traps:</strong> For active problems, <a href="/best/rat-bait-stations">lockable bait stations</a> positioned along known rat runs are the standard approach. <a href="/best/rat-traps">Snap traps</a> work well in sheltered positions. <a href="/best/rat-poison">Rat poison</a> should always be used in tamper-resistant stations to protect children, pets, and wildlife.</li>
+<li><strong>Set up bait stations or traps:</strong> For active problems, <a href="/best/rat-bait-stations" class="text-green-600 hover:underline">rat bait stations</a> positioned along known rat runs are the standard approach. <a href="/best/rat-traps">Snap traps</a> work well in sheltered positions. <a href="/best/rat-poison" class="text-green-600 hover:underline">Rat poison</a> should always be used in tamper-resistant stations to protect children, pets, and wildlife.</li>
 <li><strong>Consider natural deterrents:</strong> If you prefer a chemical-free first step, our <a href="/guides/natural-rat-deterrents">natural rat deterrent guide</a> covers the options that have some evidence behind them.</li>
 <li><strong>Call a professional if needed:</strong> If you are seeing rats during the day, finding multiple burrow holes, or the problem persists after two weeks of DIY effort, it is time for professional help.</li>
 </ol>
@@ -3212,7 +3212,7 @@ export const posts: BlogPost[] = [
 <li><strong>Inspect your property now:</strong> Check around foundations, outbuildings, sheds, and garages for burrow holes (typically 6–9cm diameter). Look for droppings, gnaw marks, and grease smears along walls.</li>
 <li><strong>Secure food sources:</strong> This means bird feeders, compost bins, pet food, stored animal feed, and unsecured household waste. If rats have a food source, they will stay.</li>
 <li><strong>Proof outbuildings:</strong> Sheds, garages, and garden stores are often the first point of entry. Our <a href="/guides/how-to-pest-proof-your-shed">shed pest-proofing guide</a> covers the key steps.</li>
-<li><strong>Deploy traps or bait stations:</strong> <a href="/best/rat-traps">Rat traps</a> and <a href="/best/rat-poison-for-gardens">garden-rated bait stations</a> placed along boundaries and known runs are the most effective DIY measures.</li>
+<li><strong>Deploy traps or <a href="/best/rat-bait-stations" class="text-green-600 hover:underline">rat bait stations</a>:</strong> <a href="/best/rat-traps">Rat traps</a> and <a href="/best/rat-poison-for-gardens">garden-rated bait stations</a> placed along boundaries and known runs are the most effective DIY measures.</li>
 <li><strong>Call a professional early:</strong> Do not wait until the problem is severe. A professional survey can identify the source, treat the active infestation, and proof your property against reentry.</li>
 </ol>
 
@@ -3256,7 +3256,7 @@ export const posts: BlogPost[] = [
 <p>Here is something the articles warning about bed bugs rarely mention: most DIY bed bug treatments have a poor success rate. There are several reasons:</p>
 
 <ul>
-<li><strong>Pesticide resistance:</strong> Many bed bug populations in the UK have developed resistance to pyrethroid insecticides — the active ingredient in most off-the-shelf <a href="/best/bed-bug-spray">bed bug sprays</a>. The sprays may kill some bugs on contact but fail to eliminate the colony.</li>
+<li><strong>Pesticide resistance:</strong> Many bed bug populations in the UK have developed resistance to pyrethroid insecticides — the active ingredient in most off-the-shelf <a href="/best/bed-bug-spray" class="text-green-600 hover:underline">bed bug spray</a> products. The sprays may kill some bugs on contact but fail to eliminate the colony.</li>
 <li><strong>Egg survival:</strong> Bed bug eggs are resistant to most contact sprays. Even if you kill every adult, unhatched eggs will produce a new generation within 7–10 days.</li>
 <li><strong>Hidden harbourage:</strong> Bed bugs hide in places sprays cannot reach — inside wall sockets, behind skirting boards, in the seams of curtains. A surface spray will not touch them.</li>
 <li><strong>Insufficient coverage:</strong> Effective treatment requires treating every harbourage point, not just the mattress. Most DIY attempts under-treat, leaving survivors to recolonise.</li>
@@ -3268,7 +3268,7 @@ export const posts: BlogPost[] = [
 
 <ul>
 <li><strong>Chemical treatment:</strong> A pest controller applies residual insecticide to all harbourage areas, typically requiring 2–3 visits over several weeks. Effective and widely available.</li>
-<li><strong>Heat treatment:</strong> The room is heated to over 50&deg;C for several hours, killing all life stages including eggs in a single visit. More expensive but highly effective, especially for severe infestations.</li>
+<li><strong>Heat treatment:</strong> Using <a href="/best/professional-bed-bug-steamers" class="text-green-600 hover:underline">professional bed bug steamers</a>, the room is heated to over 50&deg;C for several hours, killing all life stages including eggs in a single visit. More expensive but highly effective, especially for severe infestations.</li>
 </ul>
 
 <p>Whichever route you take, <a href="/best/bed-bug-mattress-encasement">mattress encasements</a> should be fitted as part of the treatment plan — they trap any remaining bugs inside and prevent recolonisation of the mattress.</p>
@@ -3309,7 +3309,7 @@ export const posts: BlogPost[] = [
 <li><strong>Know the signs:</strong> Black spots on mattress seams (excrement), tiny blood spots on sheets, shed skins in crevices, and itchy bite marks in lines or clusters on exposed skin. Not everyone reacts to bites, so physical evidence on the mattress is more reliable than skin reactions.</li>
 <li><strong>Be cautious with second-hand furniture:</strong> The cost-of-living crisis has driven a boom in second-hand purchases. Always inspect sofas, bed frames, and especially mattresses before bringing them inside. Better yet, avoid second-hand mattresses entirely.</li>
 <li><strong>Act quickly:</strong> A handful of bed bugs discovered early can be treated in one or two professional visits. Leave it a month and you could be looking at a multi-room infestation costing hundreds of pounds to resolve.</li>
-<li><strong>Use <a href="/best/bed-bug-spray">bed bug sprays</a> for early detection:</strong> If you have found a single bug or a few spots, a quality spray can help contain the problem while you arrange professional treatment. But do not rely on sprays alone for an established infestation.</li>
+<li><strong>Use <a href="/best/bed-bug-spray" class="text-green-600 hover:underline">bed bug killer spray</a> for early detection:</strong> If you have found a single bug or a few spots, a quality spray can help contain the problem while you arrange professional treatment. But do not rely on sprays alone for an established infestation.</li>
 <li><strong>Get professional treatment:</strong> For anything beyond the earliest stages, professional chemical or heat treatment is the only reliable solution. Our <a href="/guides/how-to-get-rid-of-bed-bugs">bed bug treatment guide</a> covers what to expect.</li>
 </ol>
 
@@ -3342,7 +3342,7 @@ export const posts: BlogPost[] = [
 <li><strong>Resistance:</strong> Many UK bed bug populations have developed significant resistance to pyrethroid insecticides. A treatment approach that relies solely on standard sprays will often fail.</li>
 <li><strong>Biology:</strong> Bed bug eggs are resistant to most contact insecticides. An effective treatment must account for the egg-to-adult lifecycle (7–10 days) and include follow-up treatments or use methods that kill all life stages simultaneously.</li>
 <li><strong>Behaviour:</strong> Bed bugs hide in places that are extremely difficult to treat — inside electrical sockets, behind skirting boards, within the structure of furniture, and in wall cavities. Thorough knowledge of bed bug harbourage is essential for effective treatment.</li>
-<li><strong>Heat treatment complexity:</strong> Thermal treatment (heating a room to 50&deg;C+) is highly effective but requires specialist equipment and training. Incorrectly applied heat treatment can fail to reach lethal temperatures in cold spots, drive bugs into adjoining rooms, or damage the property.</li>
+<li><strong>Heat treatment complexity:</strong> Thermal treatment using <a href="/best/professional-bed-bug-steamers" class="text-green-600 hover:underline">professional bed bug steamers</a> (heating a room to 50&deg;C+) is highly effective but requires specialist equipment and training. Incorrectly applied heat treatment can fail to reach lethal temperatures in cold spots, drive bugs into adjoining rooms, or damage the property.</li>
 </ul>
 
 <h2>What Qualifications to Look For</h2>
@@ -3354,7 +3354,7 @@ export const posts: BlogPost[] = [
 <li><strong>Specific bed bug training:</strong> Ask whether the technician has completed specialist bed bug training beyond the standard RSPH Level 2 pest management qualification. Reputable operators will be happy to discuss their training.</li>
 <li><strong>Heat treatment certification:</strong> If you are considering heat treatment, check that the operator has specific training and certification for thermal remediation. It is a skilled process, not just pointing heaters at a room.</li>
 <li><strong>Experience and track record:</strong> Ask how many bed bug treatments they have completed. An operator who does dozens of bed bug jobs a month is likely more proficient than one who does a handful a year.</li>
-<li><strong>Clear treatment protocol:</strong> A competent specialist will explain their treatment plan before starting — how many visits, what products or methods, what preparation you need to do, and what guarantee they offer.</li>
+<li><strong>Clear treatment protocol:</strong> A competent specialist will explain their treatment plan before starting — how many visits, what products or methods, whether <a href="/best/professional-mattress-encasements" class="text-green-600 hover:underline">mattress encasements</a> are included, what preparation you need to do, and what guarantee they offer.</li>
 </ul>
 
 <p>For a broader comparison of when professional treatment is worth the cost versus DIY approaches, see our <a href="/guides/professional-pest-control-vs-diy">professional vs DIY pest control guide</a>.</p>

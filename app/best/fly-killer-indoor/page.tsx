@@ -381,6 +381,8 @@ export default function BestFlyKillerIndoorPage() {
       <h3>Electric zapper vs sticky trap — which is better?</h3>
       <p>Sticky traps for kitchens and dining areas (hygienic, silent). Electric zappers for garages, conservatories, and utility rooms (more effective, no consumables).</p>
 
+      <p>For businesses, restaurants or commercial premises, see our guide to <a href="/best/professional-insect-light-traps" className="text-green-600 hover:underline">commercial insect light traps</a> with institutional-grade UV units.</p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Serious Fly Problem?"

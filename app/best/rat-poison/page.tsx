@@ -612,6 +612,8 @@ export default function BestRatPoisonPage() {
         You should call a professional pest controller if: the infestation persists after 2-3 weeks of baiting, you are seeing rats during the daytime (a sign of a large population), the rats are in a location that is difficult to access (such as inside wall cavities or under floorboards), or you are uncomfortable handling rodenticides. A BPCA-certified technician has access to professional-strength products and can implement a comprehensive treatment plan.
       </p>
 
+      <p>Remember: UK regulations require all rodenticide to be used inside a tamper-resistant bait station. See our guide to <a href="/best/professional-bait-station-kits" className="text-green-600 hover:underline">professional bait station kits</a> for compliant options.</p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Rather Leave It to a Professional?"

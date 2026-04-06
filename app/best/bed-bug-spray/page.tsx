@@ -530,6 +530,8 @@ export default function BestBedBugSprayPage() {
         Natural bed bug sprays can kill bugs on direct contact but lack the residual action of synthetic pyrethroids. They are best used as a supplement to chemical treatments — for example, spraying directly on mattresses and bedding where chemical sprays should not be applied — not as a standalone solution for an established infestation.
       </p>
 
+      <p>For serious or recurring infestations, combine spray treatment with <a href="/best/professional-bed-bug-steamers" className="text-green-600 hover:underline">professional bed bug steamers</a> for heat treatment that kills all life stages on contact.</p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Bed Bugs Keep Coming Back?"

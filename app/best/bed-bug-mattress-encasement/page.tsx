@@ -363,6 +363,8 @@ export default function BestMattressEncasementPage() {
       <h3>Do I still need to treat my room?</h3>
       <p>Yes. Bed bugs also hide in bed frames, headboards, skirting boards, and furniture. The encasement protects the mattress; you must treat the rest of the room with spray or professional treatment.</p>
 
+      <p>Running a rental property or HMO? See our dedicated guide to <a href="/best/professional-mattress-encasements" className="text-green-600 hover:underline">professional mattress encasements for landlords</a>.</p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Bed Bug Infestation?"

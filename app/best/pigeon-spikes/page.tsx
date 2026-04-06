@@ -491,6 +491,8 @@ export default function BestPigeonSpikesPage() {
       <p>
         No. Pigeon spikes are a minor home improvement and do not require planning permission. The exception is listed buildings — check with your local conservation officer before modifying the exterior.
       </p>
+
+      <p>For large commercial properties or full building exclusion, see our guide to <a href="/best/professional-bird-netting-kits" className="text-green-600 hover:underline">professional bird netting kits</a>.</p>
     </GuideLayout>
   );
 }

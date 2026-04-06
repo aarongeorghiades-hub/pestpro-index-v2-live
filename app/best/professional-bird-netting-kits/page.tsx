@@ -482,6 +482,10 @@ export default function BestProfessionalBirdNettingKitsPage() {
         Yes. Heavy-duty knotted netting with 50mm mesh is effective against herring gulls and lesser black-backed gulls, the two species most commonly responsible for gull problems on UK commercial buildings. Seagulls are larger and more aggressive than pigeons, so the netting must be correctly tensioned and securely fixed to withstand the additional force. For gull exclusion, professional installation with heavy-gauge perimeter wire is particularly important.
       </p>
 
+      <p>
+        For smaller ledges and sills where netting is not practical, see our guide to <a href="/best/pigeon-spikes" className="text-green-600 hover:underline">pigeon spikes</a>.
+      </p>
+
       {/* FindProviderCTA */}
       <div className="not-prose">
         <FindProviderCTA

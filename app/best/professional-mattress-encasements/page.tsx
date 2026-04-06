@@ -349,6 +349,10 @@ export default function ProfessionalMattressEncasementsPage() {
         Replace immediately if: the zipper is damaged or does not close fully, there are tears or holes in the fabric, seams are fraying, or the waterproof layer has degraded. For rental properties, inspect at every tenancy changeover. As a precaution, replace every 3–5 years even without visible damage — zipper mechanisms and fabric integrity degrade with use over time.
       </p>
 
+      <p>
+        For the most effective bed bug prevention, combine encasements with <a href="/best/professional-bed-bug-steamers" className="text-green-600 hover:underline">professional bed bug steamers</a> and a residual <a href="/best/bed-bug-spray" className="text-green-600 hover:underline">bed bug spray treatment</a>.
+      </p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Need Professional Bed Bug Treatment?"

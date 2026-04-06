@@ -355,6 +355,10 @@ export default function ProfessionalULVFoggersPage() {
         A ULV cold fogger uses a high-powered motor to break liquid into ultra-fine droplets without heat. A thermal fogger heats the solution to create visible smoke. ULV foggers are preferred for indoor use because they produce no heat, no smoke, and minimal residue. Thermal foggers are mainly used outdoors for mosquito control where visible coverage confirmation is useful.
       </p>
 
+      <p>
+        For targeted surface treatment, pair ULV fogging with <a href="/best/professional-pressure-sprayers" className="text-green-600 hover:underline">professional pressure sprayers</a>. For ongoing passive monitoring, add <a href="/best/professional-insect-light-traps" className="text-green-600 hover:underline">commercial insect light traps</a>.
+      </p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Need Professional Pest Treatment?"

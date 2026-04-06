@@ -579,6 +579,8 @@ export default function BestUltrasonicPestRepellersPage() {
         Reviews for ultrasonic pest repellers are notoriously polarised — you will see a mix of five-star and one-star reviews for virtually every product on the market. This is likely because: confirmation bias plays a role (people who buy them want them to work); pest activity is often seasonal and may decline naturally, leading people to credit the device; some users may simultaneously be taking other measures (cleaning, sealing gaps) without realising those actions are doing the real work; and the devices may have a short-term startling effect on pests that wears off quickly as they habituate.
       </p>
 
+      <p>For facilities managers needing active chemical treatment across large spaces, see our guide to <a href="/best/professional-ulv-foggers" className="text-green-600 hover:underline">professional ULV foggers</a>.</p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Want a Solution That Actually Works?"

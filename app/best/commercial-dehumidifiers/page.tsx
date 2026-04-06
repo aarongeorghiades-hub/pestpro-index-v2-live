@@ -605,6 +605,10 @@ export default function BestCommercialDehumidifiersPage() {
         Yes. Many common UK pests are directly dependent on high moisture levels. Silverfish require 75&ndash;90% relative humidity to breed. Cockroaches thrive in damp conditions and are rarely found in dry properties. Mould mites feed exclusively on mould, which only grows above 60% RH. Woodlice, booklice, and plaster beetles are all moisture-dependent. By maintaining humidity below 55%, you eliminate the environmental conditions these pests need to survive and reproduce, making a dehumidifier one of the most effective long-term pest prevention investments a landlord can make.
       </p>
 
+      <p>
+        Controlling damp removes the habitat conditions that attract cockroaches, silverfish and mould mites. Pair with <a href="/best/professional-bait-station-kits" className="text-green-600 hover:underline">professional bait station kits</a> for complete rodent prevention.
+      </p>
+
       {/* FindProviderCTA */}
       <div className="not-prose">
         <FindProviderCTA

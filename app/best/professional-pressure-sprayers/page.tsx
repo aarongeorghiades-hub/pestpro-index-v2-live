@@ -363,6 +363,10 @@ export default function ProfessionalPressureSprayersPage() {
         A flat fan nozzle produces a wide, flat spray pattern — best for covering walls, floors, and perimeters evenly. A hollow cone nozzle produces a circular ring pattern with finer droplets, ideal for penetrating into cracks and crevices. A full cone nozzle produces a solid circle of spray for heavy-duty coverage. For standard pest control, use the flat fan as your default and switch to the hollow cone for targeted applications around harbourage points.
       </p>
 
+      <p>
+        For treating large open spaces where a sprayer cannot reach, pair with a <a href="/best/professional-ulv-foggers" className="text-green-600 hover:underline">professional ULV fogger</a>.
+      </p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Need Professional Pest Control?"

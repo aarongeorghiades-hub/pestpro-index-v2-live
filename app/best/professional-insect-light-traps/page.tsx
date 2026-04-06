@@ -543,6 +543,10 @@ export default function ProfessionalInsectLightTrapsPage() {
         Glue board ILTs are essential for food preparation and food storage areas where electric grid units are prohibited. They capture insects intact on adhesive boards, eliminating any risk of fragmentation or bacterial dispersal. The main drawback is ongoing cost: glue boards need replacing at least monthly (&pound;3&ndash;8 per board), adding approximately &pound;36&ndash;96 per year in consumables per unit. However, this cost is trivial compared to the compliance risk of using an electric grid unit in a food area. For most food businesses, the optimal setup is a combination of electric grid units in back-of-house areas and glue board units in food-facing zones.
       </p>
 
+      <p>
+        For active chemical treatment alongside passive UV trapping, see our guide to <a href="/best/professional-ulv-foggers" className="text-green-600 hover:underline">professional ULV foggers</a>.
+      </p>
+
       {/* FindProviderCTA */}
       <div className="not-prose">
         <FindProviderCTA

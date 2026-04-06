@@ -393,6 +393,8 @@ export default function BestRatBaitStationsPage() {
       <h3>Are bait stations safe for pets?</h3>
       <p>A properly designed tamper-resistant station with a key lock prevents pet access. The entry holes are sized for rats and the internal baffles prevent larger animals from reaching the bait.</p>
 
+      <p>Managing multiple properties? See our guide to <a href="/best/professional-bait-station-kits" className="text-green-600 hover:underline">professional bait station kits for landlords and HMO operators</a>.</p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Persistent Rat Problem?"

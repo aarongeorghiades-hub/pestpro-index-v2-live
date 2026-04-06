@@ -430,6 +430,10 @@ export default function ProfessionalBaitStationKitsPage() {
         Most professional bait stations accept both poison blocks (mounted on the internal bait rod) and snap traps. Using snap traps inside a tamper-resistant station gives you a poison-free option that is still safe around tenants, children, and pets. This is particularly useful in food preparation areas or properties with vulnerable occupants where chemical rodenticides are less appropriate.
       </p>
 
+      <p>
+        Use bait stations with the right <a href="/best/rat-poison" className="text-green-600 hover:underline">rat poison</a> for maximum effectiveness. For insect infestations alongside rodent problems, see our guide to <a href="/best/professional-ulv-foggers" className="text-green-600 hover:underline">professional ULV foggers</a>.
+      </p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Need Professional Rodent Control?"

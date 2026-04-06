@@ -436,6 +436,8 @@ export default function BestMouseBaitStationsPage() {
       <h3>Can I use a mouse bait station with snap traps?</h3>
       <p>Some stations accept small snap traps, giving you tamper-resistant trap housing safe for homes with pets and children. The Pest Expert station is the best option for this dual-purpose use.</p>
 
+      <p>Managing multiple properties? See our guide to <a href="/best/professional-bait-station-kits" className="text-green-600 hover:underline">professional bait station kits</a>.</p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Mice Keep Coming Back?"

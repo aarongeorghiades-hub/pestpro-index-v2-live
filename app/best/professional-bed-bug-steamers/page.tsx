@@ -282,6 +282,10 @@ export default function ProfessionalBedBugSteamersPage() {
       <h3>How often should I treat?</h3>
       <p>For active infestations: every 7–10 days for three cycles. For prevention between tenancies: one thorough treatment of all beds, soft furnishings, and skirting boards during turnaround.</p>
 
+      <p>
+        Pair steam treatment with <a href="/best/professional-mattress-encasements" className="text-green-600 hover:underline">professional mattress encasements</a> to seal treated mattresses, and follow up with a residual <a href="/best/bed-bug-spray" className="text-green-600 hover:underline">bed bug killer spray</a> for ongoing protection.
+      </p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Need Professional Bed Bug Treatment?"
