@@ -92,6 +92,11 @@ const nextConfig: NextConfig = {
         destination: '/bradford',
         permanent: true,
       },
+      {
+        source: '/best',
+        destination: '/products',
+        permanent: false,
+      },
     ];
   },
 };

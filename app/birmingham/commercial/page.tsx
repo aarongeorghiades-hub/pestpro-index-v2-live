@@ -454,7 +454,7 @@ export default function CommercialPage() {
                   )}
                   {provider.website && (
                     <Link
-                      href={provider.website}
+                      href={provider.website?.startsWith('http') ? provider.website : `https://${provider.website}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block text-center px-3 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-xs mt-3"
