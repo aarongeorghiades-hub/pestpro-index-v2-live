@@ -930,6 +930,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/best/damp-proof-paint-mould-treatment`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/guides/wasp-season-preparation`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
