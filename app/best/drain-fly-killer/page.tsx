@@ -51,12 +51,11 @@ const faqSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Drain Fly Killers at a Glance' },
-  { id: 'envii-drain-clear', title: 'Best Overall — Envii Drain Clear' },
-  { id: 'biopure-drain-gel', title: 'Best Drain Gel — Biopure Drain Gel' },
-  { id: 'pest-expert-formula-c', title: 'Best Professional-Grade — Pest Expert Formula C' },
-  { id: 'drain-fly-traps', title: 'Best for Monitoring — Drain Fly Traps' },
-  { id: 'bio-enzyme-drain-cleaner', title: 'Best Value — Bio Enzyme Drain Cleaner' },
-  { id: 'hg-drain-unblocker', title: 'HG Drain Unblocker' },
+  { id: 'fruit-fly-drain-gel', title: '1. Fruit Fly & Drain Fly Gel Treatment' },
+  { id: 'zero-in-drain-gel', title: '2. Zero In Drain Fly Killer Gel' },
+  { id: 'green-gobbler', title: '3. Green Gobbler Fruit Fly Goodbye Gel' },
+  { id: 'biopipe', title: '4. Biopipe Drain Fly Killer' },
+  { id: 'pest-expert', title: '5. Pest Expert Drain Fly Killer' },
   { id: 'buying-guide', title: 'Buying Guide' },
   { id: 'faq', title: 'Frequently Asked Questions' },
 ];
@@ -115,12 +114,11 @@ export default function BestDrainFlyKillerPage() {
           <tr><th>Product</th><th>Type</th><th>Best For</th><th>Price</th></tr>
         </thead>
         <tbody>
-          <tr><td>Envii Drain Clear</td><td>Enzyme cleaner</td><td>Best Overall</td><td>~£12</td></tr>
-          <tr><td>Biopure Drain Gel</td><td>Bio-enzyme gel</td><td>Best Drain Gel</td><td>~£10</td></tr>
-          <tr><td>Pest Expert Formula C</td><td>Professional treatment</td><td>Best Professional-Grade</td><td>~£14</td></tr>
-          <tr><td>Drain Fly Sticky Traps</td><td>Adhesive traps</td><td>Best for Monitoring</td><td>~£6</td></tr>
-          <tr><td>Bio Enzyme Drain Cleaner</td><td>Concentrated enzyme</td><td>Best Value</td><td>~£8</td></tr>
-          <tr><td>HG Drain Unblocker</td><td>Drain cleaning gel</td><td>Drain Maintenance</td><td>~£7</td></tr>
+          <tr><td>Fruit Fly &amp; Drain Fly Gel Treatment 1 Gallon</td><td>Enzyme gel</td><td>Best Overall</td><td>~£25</td></tr>
+          <tr><td>Zero In Drain Fly Killer Gel</td><td>Drain gel</td><td>Best UK Brand</td><td>~£8</td></tr>
+          <tr><td>Green Gobbler Fruit Fly Goodbye Gel</td><td>Drain gel</td><td>Best Professional-Strength</td><td>~£15</td></tr>
+          <tr><td>Biopipe Drain Fly Killer</td><td>Microbial cleaner</td><td>Best for Prevention</td><td>~£12</td></tr>
+          <tr><td>Pest Expert Drain Fly Killer</td><td>Drain treatment</td><td>Best Targeted Treatment</td><td>~£10</td></tr>
         </tbody>
       </table>
 
@@ -128,248 +126,204 @@ export default function BestDrainFlyKillerPage() {
         <StatCallout value="2-3 weeks" label="Time to fully eliminate a drain fly infestation by breaking the breeding cycle" />
       </div>
 
-      <h2 id="envii-drain-clear">Best Overall — Envii Drain Clear</h2>
+      <h2 id="fruit-fly-drain-gel">1. Fruit Fly &amp; Drain Fly Gel Treatment 1 Gallon — Best Overall</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Envii Drain Clear"
+          name="Fruit Fly & Drain Fly Gel Treatment 1 Gallon"
           rank={1}
           rating={4.3}
           features={[
-            'Enzyme-based formula breaks down organic matter',
-            'Safe for all pipe types including septic tanks',
-            'Monthly maintenance dose prevents return',
-            'Eco-friendly and non-toxic',
+            'Enzyme-based gel breaks down organic matter',
+            'All-natural formula with peppermint oil',
+            'Safe for all drain types including septic systems',
+            'Pour directly into drains — works overnight',
           ]}
-          price="£12"
-          asin="B01HKTL312"
+          price="£25"
+          asin="B0BCP3VT97"
           bestFor="Best Overall"
         />
       </div>
       <p>
-        Envii Drain Clear is our top pick for drain fly control because it tackles the root cause — the organic biofilm inside your pipes — rather than simply killing adult flies. The enzyme-based formula contains billions of beneficial bacteria that actively digest fat, grease, hair, food particles, and soap scum that coat the inside of waste pipes. This is exactly the material that drain flies breed in, so by removing it, you eliminate their habitat entirely.
+        This enzyme-based gel treatment is our top pick for drain fly control because it tackles the root cause — the organic matter inside your pipes that drain flies breed in. Pour it directly into affected drains and it gets to work overnight, breaking down the slimy biofilm of decomposing food particles, grease, hair and soap scum that coats the inside of waste pipes. Remove that biofilm and you eliminate the drain fly breeding habitat entirely.
       </p>
       <p>
-        The treatment is straightforward to use: pour the recommended dose down affected drains at night (when the drain will not be flushed for several hours), and the bacteria get to work breaking down the biofilm overnight. An initial course of daily treatments for the first week accelerates the process, followed by a weekly dose for weeks two and three. After that, a single monthly maintenance dose prevents organic matter from building up again — and with it, prevents drain flies from returning.
+        The all-natural formula uses peppermint oil alongside its enzyme blend, making it safe for all drain types including PVC, copper, old clay pipes, and septic systems. There are no harsh chemicals, so it is suitable for households with children and pets. The 1-gallon size provides enough product to treat multiple drains over several weeks — ideal for tackling a whole-house drain fly problem rather than just a single drain.
       </p>
       <p>
-        Envii Drain Clear is safe for all pipe types including PVC, copper, and old clay pipes, and is fully compatible with septic tanks and cesspits. The eco-friendly formula contains no harsh chemicals, making it safe for households with children and pets. For a product that is both a drain fly solution and an ongoing drain maintenance treatment, it represents excellent value.
+        US-made and available on amazon.co.uk, this gel has built a strong reputation for effectiveness. Apply it at night when the drain will not be flushed for several hours, giving the enzymes maximum contact time with the biofilm. For best results, treat affected drains nightly for the first week, then weekly until no more drain flies appear — typically 2-3 weeks for complete elimination.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Targets the root cause of drain flies — removes biofilm breeding ground</li>
-        <li>Safe for all pipe types and septic tanks</li>
-        <li>Eco-friendly, non-toxic formula</li>
-        <li>Monthly maintenance prevents re-infestation</li>
-        <li>Also improves drain flow and reduces odours</li>
+        <li>Targets the root cause — breaks down biofilm breeding ground</li>
+        <li>All-natural enzyme formula with peppermint oil</li>
+        <li>Safe for all drain types and septic systems</li>
+        <li>Large 1-gallon size for whole-house treatment</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
+        <li>Higher upfront cost due to large size</li>
         <li>Takes 2-3 weeks for full results — not an instant fix</li>
-        <li>Must be used at night for best results (bacteria need dwell time)</li>
-        <li>Does not kill adult flies directly — treats the source</li>
+        <li>Must be used at night for best results</li>
       </ul>
 
-      <h2 id="biopure-drain-gel">Best Drain Gel — Biopure Drain Gel</h2>
+      <h2 id="zero-in-drain-gel">2. Zero In Drain Fly Killer Gel — Best UK Brand</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Biopure Drain Gel"
+          name="Zero In Drain Fly Killer Gel"
           rank={2}
           rating={4.1}
           features={[
-            'Thick gel formula clings to pipe walls',
-            'Bio-enzyme action targets drain fly breeding sites',
-            'Works in kitchen and bathroom drains',
-            'Pleasant citrus scent',
+            'Pour-and-leave drain treatment',
+            'Eliminates organic slime layer where drain flies breed',
+            'Treats kitchen sinks, bathroom drains and shower traps',
+            'No need to dismantle pipework',
           ]}
-          price="£10"
+          price="£8"
           asin="SEARCH"
-          bestFor="Best Drain Gel"
+          bestFor="Best UK Brand"
         />
       </div>
       <p>
-        The advantage of a gel formulation over a liquid is contact time. Where liquid treatments pass quickly through the drain, Biopure Drain Gel clings to the inside walls of the pipe — exactly where the biofilm builds up and drain fly larvae develop. This extended contact means the bio-enzymes have longer to digest the organic matter, making each application more effective than a watery alternative.
+        Zero In is one of the UK's most trusted pest control brands, and their Drain Fly Killer Gel provides a straightforward pour-and-leave treatment that eliminates the organic slime layer where drain flies breed. Simply pour the gel into the affected drain and leave it to work — no dismantling pipework, no complicated application, no mess. The gel clings to the inside walls of the pipe where the biofilm accumulates, giving it prolonged contact time to break down the organic matter.
       </p>
       <p>
-        Biopure is particularly effective for bathroom drains where hair, soap scum, and skin cells create a thick, slimy buildup in the U-bend. Apply the gel directly into the plughole in the evening, and its thick consistency ensures it coats the pipe walls rather than simply flowing through. The pleasant citrus scent is a welcome bonus — many enzyme drain treatments have an earthy, biological smell, but Biopure manages to remain pleasant throughout the treatment process.
+        The treatment works in kitchen sinks, bathroom drains and shower traps — all the common hotspots for drain fly infestations. It is particularly effective for bathroom drains where hair, soap scum and skin cells create the thick, slimy buildup that drain fly larvae thrive in. Apply in the evening when the drain will not be used for several hours, and the gel gets to work dissolving the breeding habitat overnight.
       </p>
       <p>
-        For kitchen drains with grease and fat buildup, Biopure is equally effective. The bio-enzymes break down fats and oils that solidify inside pipes, removing both the drain fly breeding ground and improving overall drainage. Use it as a targeted treatment for the first 2-3 weeks, then monthly for ongoing prevention.
+        As a well-known UK brand, Zero In products are widely available and competitively priced. The drain fly gel is an affordable entry point for anyone dealing with drain flies for the first time and wanting a simple, no-fuss solution from a brand they recognise and trust.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Gel formula clings to pipe walls for better contact time</li>
-        <li>Bio-enzyme formula targets organic buildup</li>
-        <li>Works in both bathroom and kitchen drains</li>
-        <li>Pleasant citrus scent</li>
-        <li>Affordable at around £10</li>
+        <li>Simple pour-and-leave application</li>
+        <li>Trusted UK brand widely available</li>
+        <li>Works in kitchen, bathroom and shower drains</li>
+        <li>Affordable price point</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
         <li>Requires consistent use over 2-3 weeks</li>
-        <li>Gel may not reach deep blockages</li>
-        <li>Smaller bottle — may need multiple for whole-house treatment</li>
+        <li>Smaller bottle than the gallon-sized alternative</li>
+        <li>Does not kill adult flies directly — treats the source</li>
       </ul>
 
-      <h2 id="pest-expert-formula-c">Best Professional-Grade — Pest Expert Formula C Drain Treatment</h2>
+      <h2 id="green-gobbler">3. Green Gobbler Fruit Fly Goodbye Gel — Best Professional-Strength</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Formula C Drain Treatment"
+          name="Green Gobbler Fruit Fly Goodbye Gel"
           rank={3}
           rating={4.2}
           features={[
-            'Professional-strength drain treatment',
-            'Kills adult drain flies on contact',
-            'Residual action prevents re-infestation',
-            'HSE-approved formula',
+            'Professional-strength drain gel',
+            'Citronella-based formula destroys biofilm',
+            'Apply at night, rinse in the morning',
+            'Works in 24-48 hours',
           ]}
-          price="£14"
-          asin="B014GFH0WK"
-          bestFor="Best Professional-Grade"
-        />
-      </div>
-      <p>
-        While enzyme treatments work by removing the breeding habitat over time, Pest Expert Formula C takes a more direct approach. This professional-grade insecticidal drain treatment kills adult drain flies on contact and provides a residual action that continues to kill emerging flies for several weeks. It is the type of product that professional pest controllers use on drain fly callouts, now available directly to homeowners.
-      </p>
-      <p>
-        Formula C is HSE-approved (Health and Safety Executive), meaning it has been assessed for safety and efficacy. The active ingredient provides both a quick knockdown of existing adult drain flies and a lasting residual that kills newly emerging flies as they hatch — breaking the lifecycle from both ends. This dual-action approach makes it the fastest-acting drain fly killer on our list.
-      </p>
-      <p>
-        For the best results, use Pest Expert Formula C alongside an enzyme drain treatment. The Formula C kills existing adults and emerging flies immediately, while the enzyme treatment removes the biofilm breeding ground for a permanent solution. This two-pronged approach is exactly what professional pest controllers recommend — and it typically resolves even severe drain fly infestations within 1-2 weeks.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Professional-grade insecticidal treatment</li>
-        <li>Kills adult drain flies on contact</li>
-        <li>Residual action kills emerging flies for weeks</li>
-        <li>HSE-approved for domestic use</li>
-        <li>Fastest-acting option on this list</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Contains insecticide — not suitable for septic tanks without checking</li>
-        <li>Does not remove the underlying biofilm (use alongside enzyme treatment)</li>
-        <li>Higher price point at £14</li>
-      </ul>
-
-      <h2 id="drain-fly-traps">Best for Monitoring — Drain Fly Traps (Sticky Window Traps)</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Drain Fly Traps (Sticky Window Traps)"
-          rank={4}
-          rating={3.9}
-          features={[
-            'Catches adult drain flies to confirm infestation source',
-            'Non-toxic adhesive traps',
-            'Place near drains to monitor population',
-            'Pack of 10+',
-          ]}
-          price="£6"
+          price="£15"
           asin="SEARCH"
-          bestFor="Best for Monitoring"
+          bestFor="Best Professional-Strength"
         />
       </div>
       <p>
-        Sticky traps play a vital role in drain fly control — not as the primary treatment, but as a monitoring tool. Place a sticky trap over or beside a suspect drain overnight, and check it in the morning. If drain flies are stuck to the trap, you have confirmed which drain is the source of the infestation. This avoids the common mistake of treating every drain in the house when only one is actually harbouring the breeding colony.
+        Green Gobbler is the US market leader in drain fly treatments, and their Fruit Fly Goodbye Gel brings professional-strength biofilm destruction to the domestic market. The citronella-based formula is specifically designed to destroy the organic biofilm that drain flies need to breed — the slimy layer of decomposing matter that coats the inside of waste pipes and provides both food and a breeding site for drain fly larvae.
       </p>
       <p>
-        Once you have identified the source drain and begun enzyme or insecticidal treatment, continue using sticky traps to monitor progress. A declining number of trapped flies over the 2-3 week treatment period confirms that the treatment is working. If fly numbers plateau or increase, it may indicate a secondary source drain or a more serious drainage issue that needs professional investigation.
+        The application process is simple: apply the gel at night before bed, and rinse it away in the morning when you first use the drain. The gel clings to pipe walls during the overnight dwell period, giving the active ingredients maximum contact time with the biofilm. Many users report seeing a noticeable reduction in drain fly numbers within 24-48 hours of the first treatment — faster than most enzyme-only alternatives.
       </p>
       <p>
-        These traps are non-toxic, chemical-free, and safe to use in kitchens and bathrooms. They are also useful for distinguishing drain flies from other small flies — fruit flies, fungus gnats, and phorid flies are commonly mistaken for drain flies but require different treatment approaches. A sticky trap near the drain provides a clear sample to identify the species.
+        For severe infestations or drains with heavy organic buildup, the professional-strength formula provides more aggressive biofilm removal than gentler enzyme treatments. Continue applying nightly until no more drain flies appear, then use a weekly maintenance dose to prevent the biofilm from re-establishing. The citronella scent is more pleasant than many chemical drain treatments.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Identifies which drain is the infestation source</li>
-        <li>Monitors treatment effectiveness over time</li>
-        <li>Non-toxic and chemical-free</li>
-        <li>Cheap and easy to use</li>
-        <li>Helps distinguish drain flies from other species</li>
+        <li>Professional-strength biofilm destruction</li>
+        <li>Fast results — visible improvement in 24-48 hours</li>
+        <li>Simple overnight application</li>
+        <li>Pleasant citronella scent</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Does not eliminate the infestation — monitoring tool only</li>
-        <li>Must be used alongside a treatment product</li>
-        <li>Adhesive can be messy if mishandled</li>
+        <li>Higher price point than basic drain gels</li>
+        <li>US brand — check availability on amazon.co.uk</li>
+        <li>Still requires consistent use for full elimination</li>
       </ul>
 
-      <h2 id="bio-enzyme-drain-cleaner">Best Value — Bio Enzyme Drain Cleaner</h2>
+      <h2 id="biopipe">4. Biopipe Drain Fly Killer — Best for Prevention</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Bio Enzyme Drain Cleaner"
-          rank={5}
+          name="Biopipe Drain Fly Killer"
+          rank={4}
           rating={4.0}
           features={[
-            'Concentrated enzyme formula',
-            'Treats multiple drains per bottle',
-            'Breaks down fat, grease, and hair that drain flies feed on',
-            'Safe for all plumbing',
+            'Professional microbial drain cleaner',
+            'Beneficial bacteria digest organic matter continuously',
+            'Eliminates breeding sites and prevents recurrence',
+            'Monthly maintenance dose keeps drains fly-free',
           ]}
-          price="£8"
+          price="£12"
           asin="SEARCH"
-          bestFor="Best Value"
+          bestFor="Best for Prevention"
         />
       </div>
       <p>
-        If you have multiple drains to treat — and most drain fly infestations involve at least 2-3 drains in a bathroom — the concentrated Bio Enzyme Drain Cleaner offers the best value per treatment. The concentrated formula means a single bottle can treat multiple drains over the full 2-3 week treatment cycle, making it significantly more economical than buying separate bottles for each drain.
+        Biopipe takes a different approach to drain fly control: rather than a one-off chemical blast, it introduces beneficial bacteria into your drainage system that continuously digest organic matter, eliminating drain fly breeding sites and preventing them from ever re-establishing. The professional microbial formula is the same type of biological treatment used in commercial and industrial drainage systems, now available for domestic use.
       </p>
       <p>
-        The enzyme blend targets the three main components of drain biofilm: fats and grease (common in kitchen drains), hair and skin cells (common in bathroom drains), and soap scum residue (present in virtually all domestic drains). By breaking down all three, it removes the complete food source and breeding habitat that drain flies depend on. The formula is safe for all plumbing types including plastic, copper, and cast iron, and will not damage pipe joints or seals.
+        The initial treatment eliminates existing organic buildup, while the beneficial bacteria colony that establishes itself inside the drain continues to digest new organic matter as it accumulates. This means the biofilm never gets the chance to build up to the point where drain flies can breed. A monthly maintenance dose tops up the bacterial population, keeping drains clean and fly-free on an ongoing basis.
       </p>
       <p>
-        For households on a budget dealing with drain flies in multiple bathrooms, this concentrated enzyme cleaner provides the most treatments per pound. Dilute according to the instructions, apply nightly for the first week, then weekly for two more weeks. Combine with sticky traps for monitoring and you have a complete, cost-effective drain fly elimination programme.
+        For anyone who has dealt with recurring drain fly problems — where the flies disappear after treatment but return a few weeks later — Biopipe offers a long-term prevention strategy rather than a reactive treatment cycle. By maintaining a healthy population of beneficial bacteria in your drains, you prevent the conditions that drain flies need rather than repeatedly treating the symptoms.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Concentrated formula — treats multiple drains per bottle</li>
-        <li>Best value for whole-house drain treatment</li>
-        <li>Breaks down fat, grease, hair, and soap scum</li>
-        <li>Safe for all plumbing types</li>
+        <li>Continuous biological protection against drain flies</li>
+        <li>Professional microbial formula</li>
+        <li>Prevents recurrence with monthly maintenance</li>
+        <li>Eco-friendly biological approach</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Requires dilution — slightly less convenient than ready-to-use</li>
-        <li>Less well-known brand</li>
-        <li>Results take the standard 2-3 weeks</li>
+        <li>Takes longer than chemical treatments for initial results</li>
+        <li>Requires ongoing monthly maintenance doses</li>
+        <li>Less effective against severe existing blockages</li>
       </ul>
 
-      <h2 id="hg-drain-unblocker">HG Drain Unblocker</h2>
+      <h2 id="pest-expert">5. Pest Expert Drain Fly Killer — Best Targeted Treatment</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="HG Drain Unblocker"
-          rank={6}
+          name="Pest Expert Drain Fly Killer"
+          rank={5}
           rating={4.1}
           features={[
-            'Powerful drain cleaning gel',
-            'Removes organic buildup that harbours drain fly larvae',
-            'Dutch-made quality',
-            'Also prevents blocked drains',
+            "Targeted drain fly treatment from the UK's leading pest brand",
+            'Apply directly to affected drains',
+            'Kills larvae and eliminates breeding sites',
+            'Part of a complete drain fly treatment programme',
           ]}
-          price="£7"
-          asin="B001ABTPFM"
+          price="£10"
+          asin="SEARCH"
+          bestFor="Best Targeted Treatment"
         />
       </div>
       <p>
-        HG is a well-respected Dutch cleaning brand, and their Drain Unblocker is a powerful chemical drain cleaner that removes the organic buildup where drain flies breed. While it is not specifically marketed as a drain fly product, it is highly effective at dissolving the fat, grease, hair, and biofilm that forms inside pipes — and removing this material eliminates the drain fly breeding habitat.
+        Pest Expert is the UK's leading pest control brand, and their dedicated drain fly killer is a targeted treatment designed to be applied directly to affected drains to kill larvae and eliminate breeding sites. Unlike general-purpose drain cleaners that happen to help with drain flies, this product is specifically formulated to tackle drain fly infestations and forms part of Pest Expert's complete drain fly treatment programme.
       </p>
       <p>
-        The thick gel formula clings to pipe walls as it works, dissolving organic matter on contact. For drain fly control, use it as a one-off deep clean to strip away heavy buildup, followed by an ongoing enzyme treatment (such as Envii Drain Clear or Bio Enzyme Drain Cleaner) for maintenance. This combination of a chemical deep clean followed by biological maintenance is particularly effective for drains with significant existing blockages where enzyme treatments alone may struggle to penetrate the buildup.
+        The targeted approach means you apply the treatment directly to the drains where you have identified drain fly activity, rather than treating every drain in the house. This makes it efficient and cost-effective — particularly if you have already used sticky traps to pinpoint which drains are harbouring the infestation. The formula kills drain fly larvae on contact and breaks down the organic matter they feed on, attacking the problem from both angles.
       </p>
       <p>
-        Note that HG Drain Unblocker contains strong chemicals and should be used according to the instructions. It is not suitable for septic tanks, and you should ventilate the room when using it. Wear gloves and avoid mixing with other cleaning products. Despite these precautions, it remains an excellent tool for tackling severe drain buildup as part of a drain fly elimination strategy.
+        For those who want a brand with genuine pest control expertise behind it, Pest Expert delivers. Their drain fly killer can be used as a standalone treatment or combined with their other drain fly products for a comprehensive multi-step programme. The UK-based brand also provides detailed usage instructions and dosage guidance specific to drain fly elimination.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Powerful chemical action dissolves heavy organic buildup</li>
-        <li>Trusted Dutch brand with proven effectiveness</li>
-        <li>Also unblocks slow-running drains</li>
-        <li>Affordable at around £7</li>
+        <li>Specifically formulated for drain fly control</li>
+        <li>UK's leading pest control brand</li>
+        <li>Kills larvae and eliminates breeding sites</li>
+        <li>Part of a wider treatment programme</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Contains strong chemicals — not eco-friendly</li>
-        <li>Not suitable for septic tanks</li>
-        <li>One-off treatment, not ongoing maintenance</li>
-        <li>Requires ventilation and gloves</li>
+        <li>Best used as part of a broader treatment approach</li>
+        <li>Results take the standard 2-3 weeks</li>
+        <li>Smaller bottle — may need multiple for whole-house treatment</li>
       </ul>
 
       <h2 id="buying-guide">Buying Guide: How to Get Rid of Drain Flies</h2>

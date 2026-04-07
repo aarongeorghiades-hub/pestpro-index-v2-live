@@ -130,12 +130,11 @@ const faqSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Garden Rat Poisons at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Roshield Outdoor Bait Station Kit' },
-  { id: 'best-professional', title: 'Best Professional-Grade — Pest Expert Formula B' },
-  { id: 'best-value', title: 'Best Value — Elixir Gardens Rat Poison Sachets' },
-  { id: 'best-bait-station', title: 'Best Bait Station — Rentokil Heavy-Duty' },
-  { id: 'best-for-sheds', title: 'Best for Sheds — Rat Poison Grain Bait' },
-  { id: 'best-complementary', title: 'Best Complementary — Solar Ultrasonic Deterrent' },
+  { id: 'best-overall', title: 'Best Overall — Pest Expert Formula B+ Combo' },
+  { id: 'best-bulk', title: 'Best Bulk Pack — Pest Expert Formula B+ 1.5kg' },
+  { id: 'best-starter', title: 'Best Starter Kit — Roshield External Bait Box Kit' },
+  { id: 'best-multi-station', title: 'Best Multi-Station — Roshield 2x Bait Box Kit' },
+  { id: 'best-value', title: 'Best Value — Elixir Gardens Outdoor Sachets' },
   { id: 'buying-guide', title: 'Buying Guide: Outdoor Rat Poison' },
   { id: 'faq', title: 'Frequently Asked Questions' },
 ];
@@ -196,7 +195,7 @@ export default function BestRatPoisonForGardensPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">Garden Rat Poisons at a Glance</h2>
       <p>
-        Here is a quick comparison of our six picks for garden rat control. Each product serves a different purpose, so the right choice depends on whether you need a complete bait station kit, standalone bait, or a complementary deterrent.
+        Here is a quick comparison of our five picks for garden rat control. Each product serves a different purpose, so the right choice depends on whether you need a complete bait station kit, standalone bait, or multi-station coverage.
       </p>
       <table>
         <thead>
@@ -204,45 +203,33 @@ export default function BestRatPoisonForGardensPage() {
             <th>Product</th>
             <th>Active Ingredient / Type</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Roshield Outdoor Rat Bait Station Kit</td>
-            <td>Brodifacoum blocks</td>
+            <td>Pest Expert Formula B+ + Outdoor Bait Box Combo 900g</td>
+            <td>Brodifacoum sachets + bait box</td>
             <td>Best Overall</td>
-            <td>~£22</td>
           </tr>
           <tr>
-            <td>Pest Expert Formula B Outdoor Bait</td>
-            <td>Brodifacoum grain</td>
-            <td>Best Professional-Grade</td>
-            <td>~£18</td>
+            <td>Pest Expert Formula B+ Rat Poison 1.5kg</td>
+            <td>Brodifacoum sachets</td>
+            <td>Best Bulk Pack</td>
           </tr>
           <tr>
-            <td>Elixir Gardens Rat Poison Sachets</td>
-            <td>Bromadiolone wheat sachets</td>
+            <td>Roshield External Bait Box + 300g Block Kit</td>
+            <td>Bromadiolone wax blocks + bait box</td>
+            <td>Best Starter Kit</td>
+          </tr>
+          <tr>
+            <td>Roshield 2x External Tamper-Proof Bait Box + Wax Blocks Kit</td>
+            <td>Wax blocks + 2 bait boxes</td>
+            <td>Best Multi-Station</td>
+          </tr>
+          <tr>
+            <td>Elixir Gardens Rat Poison 1kg Outdoor Sachets</td>
+            <td>Difenacoum grain sachets</td>
             <td>Best Value</td>
-            <td>~£12</td>
-          </tr>
-          <tr>
-            <td>Rentokil Heavy-Duty Rat Bait Station</td>
-            <td>Bait station (no bait included)</td>
-            <td>Best Bait Station</td>
-            <td>~£15</td>
-          </tr>
-          <tr>
-            <td>Rat Poison Grain Bait for Sheds</td>
-            <td>Bromadiolone grain sachets</td>
-            <td>Best for Sheds</td>
-            <td>~£10</td>
-          </tr>
-          <tr>
-            <td>Solar Ultrasonic Rat Deterrent</td>
-            <td>Ultrasonic (chemical-free)</td>
-            <td>Best Complementary</td>
-            <td>~£15</td>
           </tr>
         </tbody>
       </table>
@@ -252,39 +239,39 @@ export default function BestRatPoisonForGardensPage() {
       </div>
 
       {/* Product 1 */}
-      <h2 id="best-overall">Best Overall — Roshield Outdoor Rat Bait Station Kit</h2>
+      <h2 id="best-overall">Best Overall — Pest Expert Formula B+ + Outdoor Bait Box Combo 900g</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Roshield Outdoor Rat Bait Station Kit"
+          name="Pest Expert Formula B+ + Outdoor Bait Box Combo 900g"
           rank={1}
           rating={4.5}
           features={[
-            'Includes tamper-resistant bait station + brodifacoum blocks',
-            'Weatherproof design for year-round outdoor use',
-            'Lockable to protect children and pets',
+            'Maximum-strength Brodifacoum sachets + professional lockable bait box',
+            'Everything needed for outdoor rat control in one kit',
+            'CRRU-compliant tamper-resistant station included',
             'Single-feed lethal dose for rapid results',
           ]}
-          price="£22"
-          asin="B082WNRCQR"
+          price="£30"
+          asin="B07Z6CQ5HT"
           bestFor="Best Overall"
         />
       </div>
       <p>
-        The Roshield Outdoor Rat Bait Station Kit is our top pick for garden rat control because it provides everything you need in a single purchase: a tamper-resistant bait station and brodifacoum wax blocks — the most potent active ingredient available to UK consumers. This means you can unbox, load, lock, and deploy immediately without needing to source a compatible station separately. For anyone dealing with garden rats for the first time, this removes all the guesswork.
+        Everything needed for outdoor rat control in one kit. The Pest Expert Formula B+ Combo includes maximum-strength Brodifacoum sachets with a professional lockable bait box, giving you a complete, ready-to-deploy solution straight out of the box. This is the correct way to bait outdoors — UK law requires all rodenticide to be used inside a tamper-resistant station, and this kit ensures full compliance from day one.
       </p>
       <p>
-        The included bait station is specifically designed for outdoor use. It features a weighted base to prevent tipping, drainage holes to stop water pooling inside during heavy rain, and a lockable lid that requires a key to open. The entry tunnels are sized to admit rats but restrict access by larger non-target animals such as cats, hedgehogs, and squirrels. This is exactly the type of station that CRRU guidelines require for outdoor SGAR use — making this kit fully compliant out of the box.
+        The included bait box is a professional-grade lockable station designed specifically for outdoor placement. It is weatherproof, tamper-resistant, and sized to admit rats while restricting access by larger non-target animals such as cats, hedgehogs, and squirrels. The lockable lid requires a key to open, keeping children and pets safe. Position the station along a fence line, beside a shed wall, or near a compost bin — anywhere you have seen rat activity — and the enclosed bait does the rest.
       </p>
       <p>
-        The brodifacoum blocks included are weather-resistant wax formulations that will not absorb moisture, go mouldy, or break down in typical UK garden conditions. Each block has a central hole for threading onto the station&apos;s internal bait rod, which prevents rats from dragging the bait outside. Brodifacoum delivers a lethal dose in a single feed, so once a rat enters the station and consumes the block, the outcome is typically fatal within 3 to 5 days. This single-feed action is particularly important outdoors, where rats may have multiple food sources and you cannot guarantee they will return to the station repeatedly.
+        The 900g of Brodifacoum sachets included are the most potent active ingredient available to UK consumers. Brodifacoum delivers a lethal dose in a single feed, so once a rat enters the station and consumes bait, the outcome is typically fatal within 3 to 5 days. This single-feed action is particularly important outdoors, where rats have multiple food sources and you cannot guarantee they will return to the station repeatedly. For anyone dealing with garden rats for the first time, this combo kit removes all the guesswork.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Complete kit — bait station and brodifacoum blocks included</li>
+        <li>Complete kit — Brodifacoum sachets and lockable bait box included</li>
         <li>CRRU-compliant tamper-resistant station for outdoor use</li>
-        <li>Weatherproof construction with drainage and lockable lid</li>
-        <li>Single-feed brodifacoum for fast, reliable results</li>
-        <li>Strong Amazon reviews from UK garden users</li>
+        <li>Maximum legal strength Brodifacoum — single-feed lethal dose</li>
+        <li>Professional-grade station keeps children, pets, and wildlife safe</li>
+        <li>900g of bait is generous for a single-station kit</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
@@ -294,209 +281,167 @@ export default function BestRatPoisonForGardensPage() {
       </ul>
 
       {/* Product 2 */}
-      <h2 id="best-professional">Best Professional-Grade — Pest Expert Formula B Outdoor Bait</h2>
+      <h2 id="best-bulk">Best Bulk Pack — Pest Expert Formula B+ Rat Poison 1.5kg (15x100g)</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Formula B Outdoor Bait"
+          name="Pest Expert Formula B+ Rat Poison 1.5kg (15x100g)"
           rank={2}
           rating={4.4}
           features={[
-            'Professional-strength brodifacoum grain bait',
-            'Highly palatable wheat-based formula',
-            'Fast-acting single-feed formulation',
-            'Ideal for garden perimeters and outbuildings',
+            'Large 1.5kg pack — 15 x 100g Brodifacoum sachets',
+            'Single-feed at maximum legal strength',
+            'Enough for multiple bait stations over several weeks',
+            'Ideal for treating external rat populations around buildings',
           ]}
-          price="£18"
-          asin="B010E2GCIM"
-          bestFor="Best Professional-Grade"
+          price="£25"
+          asin="B07B51YZC6"
+          bestFor="Best Bulk Pack"
         />
       </div>
       <p>
-        Pest Expert Formula B is the grain bait that professional pest controllers across the UK rely on for outdoor rodent control, and it is equally effective in the hands of a homeowner. The brodifacoum-based wheat grain formulation is highly palatable — rats are natural grain eaters, so a wheat-based bait closely mimics their preferred food sources and encourages faster uptake compared to blocks. In garden settings where rats have access to bird seed, compost scraps, and other competing food, palatability is critical. Formula B competes.
+        Large pack for treating external rat populations around buildings, compost heaps, and outbuildings. The Pest Expert Formula B+ 1.5kg pack contains 15 x 100g sachets of single-feed Brodifacoum at maximum legal strength — enough bait for multiple bait stations over several weeks of treatment. If you already own one or more outdoor bait stations and need a reliable, professional-strength refill supply, this is the product to buy.
       </p>
       <p>
-        This is a standalone bait product — you will need to purchase a separate tamper-resistant bait station for outdoor use (see our Rentokil station pick below, or the Roshield kit above which includes one). Pour the grain into the bait tray inside the station, and rats will find it quickly thanks to its strong scent profile. The grain is dyed blue-green for easy identification and includes Bitrex bittering agent as a safety measure to deter accidental ingestion by children.
+        Each 100g sachet is individually wrapped, making deployment clean and straightforward. Place one or two sachets inside each tamper-resistant bait station positioned along rat runs, beside sheds, near compost bins, or against boundary walls. Check every 2-3 days and replace consumed bait until activity ceases. The single-feed Brodifacoum formulation means that a lethal dose is delivered in one sitting — critical in outdoor environments where rats have access to multiple competing food sources and may not return to the station repeatedly.
       </p>
       <p>
-        For garden perimeters, outbuildings, and areas along fence lines where rat activity is concentrated, Formula B is the professional choice. Each grain carries a precisely measured brodifacoum dose, and the single-feed formulation means a lethal dose is delivered in one sitting. If you already own outdoor bait stations and want the most effective refill bait on the market, this is the product to buy.
+        The 1.5kg quantity represents excellent value compared to smaller packs, and gives you the flexibility to treat a large garden perimeter with several stations simultaneously. For established rat populations that have been active for weeks or months, this bulk approach — multiple stations, generously stocked, checked regularly — is the most effective strategy for bringing the colony under control within 2 to 4 weeks.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Professional-grade brodifacoum at maximum permitted strength</li>
-        <li>Wheat grain formula is highly palatable for garden rats</li>
-        <li>Includes Bitrex bittering agent for child safety</li>
-        <li>Trusted by UK pest controllers for outdoor treatments</li>
+        <li>Generous 1.5kg quantity for sustained outdoor baiting campaigns</li>
+        <li>Maximum legal strength Brodifacoum — single-feed lethal dose</li>
+        <li>15 individually wrapped sachets for clean, easy deployment</li>
+        <li>Trusted professional-grade product from Pest Expert</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
         <li>No bait station included — must be purchased separately</li>
-        <li>Grain can absorb moisture if station seal is poor</li>
-        <li>Higher price point than basic bromadiolone alternatives</li>
+        <li>Brodifacoum carries higher secondary poisoning risk</li>
+        <li>Higher price point than weaker active ingredients</li>
       </ul>
 
       {/* Product 3 */}
-      <h2 id="best-value">Best Value — Elixir Gardens Rat Poison Sachets</h2>
+      <h2 id="best-starter">Best Starter Kit — Roshield External Bait Box + 300g Block Kit</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Elixir Gardens Rat Poison Sachets"
+          name="Roshield External Bait Box + 300g Block Kit"
           rank={3}
           rating={4.3}
           features={[
-            'Bromadiolone whole wheat sachets',
-            'Excellent quantity for the price',
-            'Individual sachets for easy deployment',
-            'Effective against outdoor rat populations',
+            'UK-made tamper-resistant external bait station included',
+            'Bromadiolone wax blocks included — ready to deploy',
+            'Weatherproof design for fences, walls and under decking',
+            'Lockable and compliant with UK rodenticide regulations',
+          ]}
+          price="£18"
+          asin="B07B73Y2LW"
+          bestFor="Best Starter Kit"
+        />
+      </div>
+      <p>
+        UK-made tamper-resistant external bait station with Bromadiolone wax blocks included. The Roshield kit provides a complete, ready-to-use outdoor baiting solution at a very competitive price point. The weatherproof bait box is designed for outdoor placement along fences, walls, and under decking — exactly the locations where garden rats are most active. It is lockable and fully compliant with UK rodenticide regulations, so you can deploy with confidence.
+      </p>
+      <p>
+        The 300g of Bromadiolone wax blocks included are formulated to resist moisture and weathering, maintaining their palatability in typical UK garden conditions. Thread the blocks onto the internal bait rod inside the station, lock the lid, and position the box flush against a wall or fence along a known rat run. Bromadiolone is a second-generation anticoagulant that is effective against common UK brown rats — slightly less potent than Brodifacoum but with a lower secondary poisoning risk, making it a more balanced choice for gardens where hedgehogs and other wildlife are present.
+      </p>
+      <p>
+        For a single-station setup in a smaller garden, or as a first purchase for someone who has never dealt with outdoor rats before, this Roshield kit is an excellent entry point. The included quantity of bait is sufficient for initial treatment, and refill blocks can be purchased separately when needed. The station itself is robust enough to last several seasons of outdoor use.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Complete kit — bait station and Bromadiolone blocks included</li>
+        <li>UK-made, weatherproof, and lockable</li>
+        <li>Compliant with UK rodenticide regulations out of the box</li>
+        <li>Lower secondary poisoning risk than Brodifacoum products</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Only one station included — larger gardens need multiples</li>
+        <li>300g of bait may not be enough for severe infestations</li>
+        <li>Bromadiolone may require multiple feeds for large rats</li>
+      </ul>
+
+      {/* Product 4 */}
+      <h2 id="best-multi-station">Best Multi-Station — Roshield 2x External Tamper-Proof Bait Box + Wax Blocks Kit</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Roshield 2x External Tamper-Proof Bait Box + Wax Blocks Kit"
+          rank={4}
+          rating={4.2}
+          features={[
+            'Two lockable external bait stations included',
+            'Wax blocks included — ready to deploy immediately',
+            'Ideal for larger gardens or multi-property coverage',
+            'Place 10+ metres apart along rat runs for maximum effectiveness',
+          ]}
+          price="£30"
+          asin="SEARCH"
+          bestFor="Best Multi-Station"
+        />
+      </div>
+      <p>
+        Two-box kit for treating larger garden areas or multi-property coverage. The Roshield 2x kit includes wax blocks and two lockable external bait stations, giving you the ability to cover more ground from day one. Professional pest controllers routinely place multiple stations along a garden perimeter — spacing them 10 or more metres apart along rat runs — to maximise the chance of interception. This kit lets you do the same without buying each component separately.
+      </p>
+      <p>
+        Each station is identical to the single Roshield kit above: tamper-resistant, lockable, weatherproof, and compliant with UK rodenticide regulations. Position one station near the primary activity area (burrow entrance, compost bin, or shed wall) and the second further along the rat run or at a secondary activity point. Rats are thigmotactic — they travel along edges — so place both stations flush against a fence, wall, or structure with entry holes facing along the run for maximum effectiveness.
+      </p>
+      <p>
+        For anyone with a medium to large garden, or multiple outbuildings that need protecting simultaneously, the two-station kit represents better value than buying two single kits. It also ensures consistent station design across your garden, which simplifies checking and refilling. Once the initial infestation is under control, keep the stations in place and check monthly as a preventive measure — particularly from autumn through spring when rat activity peaks.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Two stations for broader garden coverage</li>
+        <li>Wax blocks included — complete kit, ready to use</li>
+        <li>Better value than buying two single kits separately</li>
+        <li>Both stations are lockable and CRRU-compliant</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Included bait quantity may need topping up for severe infestations</li>
+        <li>Two stations may still not be enough for very large properties</li>
+        <li>Bromadiolone may require multiple feeds for large rats</li>
+      </ul>
+
+      {/* Product 5 */}
+      <h2 id="best-value">Best Value — Elixir Gardens Rat Poison 1kg Outdoor Sachets</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Elixir Gardens Rat Poison 1kg Outdoor Sachets"
+          rank={5}
+          rating={4.1}
+          features={[
+            'Difenacoum-based grain bait in chew-through sachets',
+            '10 x 100g sachets — no need to handle the bait directly',
+            'Must be used inside a tamper-resistant bait station',
+            'Affordable option for sustained outdoor baiting',
           ]}
           price="£12"
-          asin="B071K8WQZB"
+          asin="SEARCH"
           bestFor="Best Value"
         />
       </div>
       <p>
-        When you need to bait multiple stations across a large garden — along a fence perimeter, beside the compost bin, near the shed, and against the garage wall — cost adds up quickly. The Elixir Gardens sachets solve this problem by providing a generous quantity of bromadiolone-based whole wheat bait at a price that undercuts most competitors. If volume and value are your priorities, this is the product to choose.
+        Grain bait sachets in convenient chew-through packets — no need to handle the bait. The Elixir Gardens 1kg pack contains 10 x 100g Difenacoum-based sachets, providing a generous quantity of outdoor rat poison at a price point that undercuts most competitors. Difenacoum is a second-generation anticoagulant that is effective against common UK brown rats, and the sachet format makes deployment clean and straightforward. As required by UK law, these sachets must be used inside a tamper-resistant bait station.
       </p>
       <p>
-        Bromadiolone is a second-generation anticoagulant that is slightly less potent than brodifacoum — it may require two or three feeds to deliver a lethal dose in larger rats. However, the highly palatable whole wheat formulation encourages repeated feeding, so in practice the difference is often negligible. The individual sachet format is a practical bonus for garden use: each sachet can be placed directly inside a bait station without handling loose grain, reducing mess and minimising your contact with the rodenticide.
+        The chew-through sachet design is a practical advantage for garden use. Place one or two sachets directly inside your bait station without needing to pour loose grain or handle blocks. Rats gnaw through the packet to reach the grain inside, which reduces mess and minimises your contact with the rodenticide. The individual wrapping also helps protect the bait from moisture between station checks, maintaining palatability for longer in outdoor conditions.
       </p>
       <p>
-        For gardeners dealing with a moderate rat problem across a large outdoor area, Elixir Gardens sachets represent the best balance of effectiveness and affordability. Place two to three sachets per station, check every few days, and replace consumed bait until activity ceases. At this price point, you can afford to maintain multiple stations simultaneously without breaking the budget.
+        For gardeners who already own a bait station and need an affordable refill supply, or for those running multiple stations across a large garden, the Elixir Gardens sachets represent the best value on our list. Place two sachets per station, check every 2-3 days, and replace consumed bait until rat activity ceases. At this price, you can afford to maintain a sustained baiting campaign without breaking the budget.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Excellent value — generous quantity for the price</li>
-        <li>Individual sachets are clean and easy to deploy outdoors</li>
-        <li>Bromadiolone is effective against most UK rat populations</li>
-        <li>Whole wheat formulation is highly palatable</li>
+        <li>Excellent value — 1kg of bait at a competitive price</li>
+        <li>Chew-through sachets are clean and easy to deploy</li>
+        <li>10 individually wrapped sachets for flexible station stocking</li>
+        <li>Difenacoum is effective against common UK rat populations</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Slightly less potent than brodifacoum products</li>
-        <li>May require multiple feeds for large rats</li>
-        <li>Sachets can absorb moisture in poorly sealed outdoor stations</li>
-      </ul>
-
-      {/* Product 4 */}
-      <h2 id="best-bait-station">Best Bait Station — Rentokil Heavy-Duty Rat Bait Station</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Rentokil Heavy-Duty Rat Bait Station"
-          rank={4}
-          rating={4.2}
-          features={[
-            'Professional-grade tamper-resistant station',
-            'Heavy-duty construction withstands weather',
-            'Lockable with key for safety',
-            'Suitable for gardens and outbuildings',
-          ]}
-          price="£15"
-          asin="B000TAVQBW"
-          bestFor="Best Bait Station"
-        />
-      </div>
-      <p>
-        If you already have rat poison but lack a compliant outdoor bait station, the Rentokil Heavy-Duty is the standalone station we recommend. Under CRRU guidelines, using SGARs outdoors without a tamper-resistant bait station is non-compliant — this station ensures you meet the requirements. Rentokil is the most recognised pest control brand in the UK, and their heavy-duty station is built to a professional standard that matches what pest technicians use on commercial contracts.
-      </p>
-      <p>
-        The station features heavy-duty plastic construction that withstands rain, frost, and UV exposure without cracking or warping. It includes a key-operated lock that prevents access by children, pets, and curious wildlife, while the entry tunnels are sized to admit rats. Internal baffles force the rat to navigate a winding path to reach the bait, which further reduces the chance of non-target animals accessing the rodenticide. The base is weighted for stability, and you can anchor it to the ground with pegs or cable ties for additional security in exposed garden locations.
-      </p>
-      <p>
-        Pair this station with any of the bait products on our list — Pest Expert Formula B grain, Elixir Gardens sachets, or brodifacoum blocks — and you have a fully compliant outdoor baiting setup. For larger gardens, buying two or three stations and spacing them 5 to 10 metres apart along active rat runs will provide thorough coverage.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Professional-quality construction from a trusted brand</li>
-        <li>Lockable and tamper-resistant — CRRU compliant</li>
-        <li>Weatherproof for year-round outdoor use</li>
-        <li>Compatible with blocks, grain, and sachet bait types</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>No bait included — must be purchased separately</li>
-        <li>Single station — you may need multiples for large gardens</li>
-        <li>Slightly bulky for very small or narrow garden spaces</li>
-      </ul>
-
-      {/* Product 5 */}
-      <h2 id="best-for-sheds">Best for Sheds — Rat Poison Grain Bait for Sheds</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Rat Poison Grain Bait for Sheds"
-          rank={5}
-          rating={4.1}
-          features={[
-            'Bromadiolone grain bait for outbuildings',
-            'Individual sachets reduce mess',
-            'Effective in sheltered locations',
-            'Good value for garden sheds and garages',
-          ]}
-          price="£10"
-          asin="SEARCH"
-          bestFor="Best for Sheds"
-        />
-      </div>
-      <p>
-        Garden sheds, garages, and outbuildings are prime rat habitat. They offer shelter from the weather, often contain stored food (including pet food, bird seed, and grass seed), and are typically undisturbed for long periods — ideal conditions for rats to nest. This bromadiolone grain bait is specifically suited to these sheltered environments, where the bait is protected from direct rain exposure and can maintain its palatability over a longer period.
-      </p>
-      <p>
-        The individual sachet format works particularly well in shed environments. You can tuck sachets inside a bait station positioned against the shed wall or in a corner where you have noticed droppings or gnaw marks. Rats navigating the clutter of a typical garden shed will follow the edges, so position the station flush against the wall near entry points — often gaps under the door, holes where pipes enter, or cracks in the timber panelling.
-      </p>
-      <p>
-        At around £10 this is the most affordable bait option on our list, making it a practical choice for baiting sheds, greenhouses, and garages where you need a cost-effective solution. Bromadiolone is effective against the common brown rat, and in a sheltered environment where the bait stays dry and palatable, it performs reliably. Remember that even inside a shed, you should still use a bait station to protect any pets or children who might access the space.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Very affordable — ideal for budget-conscious garden use</li>
-        <li>Individual sachets are easy to handle and deploy</li>
-        <li>Performs well in sheltered shed and garage environments</li>
-        <li>Bromadiolone is effective against common UK rats</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Less potent than brodifacoum — may need multiple feeds</li>
-        <li>Grain can degrade if exposed to moisture in leaky sheds</li>
-        <li>No bait station included</li>
-      </ul>
-
-      {/* Product 6 */}
-      <h2 id="best-complementary">Best Complementary — Solar Ultrasonic Rat Deterrent (Garden)</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Solar Ultrasonic Rat Deterrent (Garden)"
-          rank={6}
-          rating={3.5}
-          features={[
-            'Solar-powered — no batteries needed',
-            'Covers 650 sq m claimed area',
-            'IP44 weatherproof rating',
-            'Chemical-free complementary deterrent (note: limited evidence for ultrasonic devices — use alongside proven methods)',
-          ]}
-          price="£15"
-          asin="SEARCH"
-          bestFor="Best Complementary"
-        />
-      </div>
-      <p>
-        We include this solar ultrasonic deterrent with an important caveat: the scientific evidence for ultrasonic pest repellers is limited and inconclusive. Independent studies, including those cited by the BPCA, have found little reliable evidence that ultrasonic devices effectively repel rodents on their own. Rats are highly adaptable and can become habituated to ultrasonic frequencies over time. We do not recommend this as a standalone solution for a garden rat problem.
-      </p>
-      <p>
-        That said, as a <em>complementary</em> measure alongside proven methods — bait stations with rodenticide, snap traps, and habitat management — an ultrasonic deterrent may provide an additional layer of discouragement, particularly in areas where you want to reduce rat activity without using poison (such as near a children&apos;s play area or vegetable patch). The solar-powered design means no ongoing battery costs, and the IP44 weatherproof rating ensures it survives typical UK garden conditions year-round.
-      </p>
-      <p>
-        Think of this product as insurance, not treatment. If you have already placed bait stations along fence lines and near burrows, an ultrasonic deterrent in the middle of the garden may help discourage rats from crossing open ground. But do not rely on it as your primary control method — the rodenticide in your bait stations is doing the real work.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Solar-powered with no ongoing running costs</li>
-        <li>Chemical-free — safe for all animals and children</li>
-        <li>IP44 weatherproof for outdoor garden use</li>
-        <li>Easy to install — push into the ground and leave</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Limited scientific evidence for ultrasonic rodent repellers</li>
-        <li>Rats may habituate to the frequency over time</li>
-        <li>Should not be used as a standalone solution</li>
-        <li>Claimed coverage area is likely optimistic</li>
+        <li>Less potent than Brodifacoum — may require multiple feeds</li>
+        <li>No bait station included — must be purchased separately</li>
+        <li>Sachets can absorb moisture in poorly sealed stations</li>
       </ul>
 
       {/* Buying Guide */}

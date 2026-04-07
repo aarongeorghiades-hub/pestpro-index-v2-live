@@ -75,12 +75,11 @@ const breadcrumbSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Mole Traps at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Duffus Mole Trap' },
-  { id: 'best-easyset', title: 'Best Easy-Set — Beagle Easyset Mole Trap' },
-  { id: 'best-scissor', title: 'Best Scissor Trap — Putange Mole Trap' },
-  { id: 'best-tunnel', title: 'Best Tunnel Trap — Trapline Mole Tunnel Trap' },
-  { id: 'best-humane', title: 'Best Humane Option — The Big Cheese Live Catch Mole Trap' },
-  { id: 'best-repellent', title: 'Best Mole Repellent — Defenders Mole Scatter Granules' },
+  { id: 'best-overall', title: 'Best Overall — Victor Push Mole Trap' },
+  { id: 'best-traditional', title: 'Best Traditional — Duffus Half-Barrel Mole Trap' },
+  { id: 'best-professional', title: 'Best Professional — Talpex Mole Trap' },
+  { id: 'best-discreet', title: 'Best Discreet — WCS Tube Mole Trap' },
+  { id: 'best-beginner', title: 'Best for Beginners — Trapline Easy-Set Mole Trap' },
   { id: 'how-to-choose', title: 'How to Choose the Right Mole Trap' },
   { id: 'tips', title: 'Mole Trap Placement Tips' },
 ];
@@ -212,210 +211,167 @@ export default function BestMoleTrapsPage() {
         </thead>
         <tbody>
           <tr>
-            <td>Duffus Mole Trap</td>
-            <td>Half-barrel</td>
+            <td>Victor Push Mole Trap</td>
+            <td>Scissor-jaw</td>
             <td>Best Overall</td>
-            <td>~£8</td>
-          </tr>
-          <tr>
-            <td>Beagle Easyset Mole Trap</td>
-            <td>Claw / easy-set</td>
-            <td>Easiest to Set</td>
             <td>~£15</td>
           </tr>
           <tr>
-            <td>Putange Mole Trap</td>
-            <td>Scissor</td>
+            <td>Duffus Half-Barrel Mole Trap</td>
+            <td>Half-barrel</td>
+            <td>Traditional Pick</td>
+            <td>~£8</td>
+          </tr>
+          <tr>
+            <td>Talpex Mole Trap</td>
+            <td>Plunger</td>
             <td>Professional Pick</td>
             <td>~£12</td>
           </tr>
           <tr>
-            <td>Trapline Tunnel Trap</td>
-            <td>Tunnel / barrel</td>
-            <td>Deep Tunnel Runs</td>
+            <td>WCS Tube Mole Trap</td>
+            <td>Tube / enclosed</td>
+            <td>Most Discreet</td>
             <td>~£10</td>
           </tr>
           <tr>
-            <td>Big Cheese Live Catch</td>
-            <td>Humane / live catch</td>
-            <td>Humane Option</td>
-            <td>~£8</td>
-          </tr>
-          <tr>
-            <td>Defenders Scatter Granules</td>
-            <td>Repellent</td>
-            <td>Prevention</td>
-            <td>~£9</td>
+            <td>Trapline Easy-Set Mole Trap</td>
+            <td>Easy-set</td>
+            <td>Best for Beginners</td>
+            <td>~£15</td>
           </tr>
         </tbody>
       </table>
 
       {/* Product 1 */}
-      <h2 id="best-overall">Best Overall — Duffus Mole Trap</h2>
+      <h2 id="best-overall">Best Overall — Victor Push Mole Trap</h2>
       <div className="not-prose">
         <ProductCard
-          name="Duffus Mole Trap (2-Pack)"
+          name="Victor Push Mole Trap"
           rating={4.4}
           features={[
-            'Traditional half-barrel design used by professional UK mole catchers for decades',
-            'DEFRA-approved — compliant with the Spring Traps Approval Order',
-            'Galvanised steel construction resists rust and corrosion in damp soil',
-            'Sits flush within the tunnel — no excavation needed, moles approach naturally',
-            'Powerful spring delivers an instant, humane kill',
-            'Reusable season after season with minimal maintenance',
+            'Classic scissor-jaw design trusted by UK gardeners and groundskeepers for decades',
+            'Push directly into active mole runs — no bait required',
+            'Heavy-duty metal construction for long-term durability',
+            'Reusable season after season',
+            'The default choice for effective mole control',
           ]}
-          price="~£8"
-          asin="B006G4GXV2"
-          bestFor="Professional-grade mole control for any garden size"
+          price="~£15"
+          asin="B00004RAMS"
+          bestFor="The go-to mole trap for reliable, proven performance"
           rank={1}
         />
       </div>
       <p>
-        The Duffus half-barrel trap is the gold standard among UK mole catchers for good reason. Its simple, robust design has been refined over decades, and it remains the trap most recommended by members of the British Mole Catchers Register. The half-barrel shape sits neatly inside the tunnel without disrupting the mole&apos;s natural path, which is crucial for success.
+        The Victor Push Mole Trap is the classic scissor-jaw trap that has been trusted by UK gardeners and groundskeepers for decades. Its simple, proven design requires no bait — you push it directly into an active mole run, and the powerful scissor jaws clamp shut when the mole passes through, delivering a swift and humane kill.
       </p>
       <p>
-        Setting the trap requires a bit of practice — you need to locate an active run, carefully open it, and position the trap so the trigger plate sits at tunnel floor level. Once you have done it a few times it becomes second nature. The galvanised steel construction means these traps last for years, even buried in wet clay soil through a British winter. At around £8 for two, they represent exceptional value.
+        The heavy-duty metal construction means this trap will last for years of repeated use, even in wet, heavy clay soil. Setting is straightforward once you have identified an active run: compress the jaws, push the trap into the tunnel, and leave it. Most catches happen within 24 to 48 hours. The Victor is widely available, well-reviewed, and remains the default recommendation for anyone starting out with mole control.
       </p>
 
       {/* Product 2 */}
-      <h2 id="best-easyset">Best Easy-Set — Beagle Easyset Mole Trap</h2>
+      <h2 id="best-traditional">Best Traditional — Duffus Half-Barrel Mole Trap</h2>
       <div className="not-prose">
         <ProductCard
-          name="Beagle Easyset Mole Trap"
-          rating={4.2}
+          name="Duffus Half-Barrel Mole Trap"
+          rating={4.3}
           features={[
-            'Innovative claw design can be set without fully opening the tunnel',
-            'Push-in mechanism — simply push the trap into the ground over an active run',
-            'Bright orange handle makes it easy to locate in the garden',
-            'No special tools required — set it with your hands and feet only',
-            'DEFRA-approved spring trap for humane dispatch',
-            'Ideal for beginners who have never used a mole trap before',
+            'Traditional half-barrel design widely used by professional mole catchers',
+            'Set inside active runs — triggers when mole passes through',
+            'Metal construction for durability in all soil types',
+            'Sits flush within the tunnel for natural mole approach',
+            'Powerful spring delivers an instant, humane kill',
+            'Reusable with minimal maintenance',
           ]}
-          price="~£15"
-          asin="B01N6PJDFE"
-          bestFor="First-time users and gardeners who want a simple set-and-forget trap"
+          price="~£8"
+          asin="SEARCH"
+          bestFor="Professional-grade traditional mole trapping"
           rank={2}
         />
       </div>
       <p>
-        The Beagle Easyset has revolutionised mole trapping for home gardeners. Unlike traditional traps that require you to dig into the tunnel and position the mechanism by hand, the Easyset is pushed vertically into the ground above an active run. The claw mechanism drops into the tunnel below, and when the mole passes through it triggers a swift kill.
+        The Duffus half-barrel trap is the traditional choice of professional mole catchers across the UK. Its half-barrel shape sits neatly inside the tunnel without disrupting the mole's natural path — a critical factor for success, as moles will avoid tunnels that feel different underfoot. When the mole passes through and contacts the trigger, the powerful spring delivers an instant kill.
       </p>
       <p>
-        The trade-off is that it is not quite as consistently effective as a well-placed Duffus or Putange trap. Because you are inserting it from above rather than inside the tunnel, placement is slightly less precise. However, for gardeners who find the idea of opening a mole tunnel and reaching in to place a trap daunting, the Beagle is an excellent alternative. The bright orange top makes it easy to spot in the lawn.
+        Setting a Duffus requires a bit of practice. You need to locate an active run, carefully open it, and position the trap so the trigger plate sits at tunnel floor level. The metal construction resists rust and corrosion even in damp soil, and these traps last for years with minimal maintenance. At around £8, the Duffus represents exceptional value for a professional-quality trap.
       </p>
 
       {/* Product 3 */}
-      <h2 id="best-scissor">Best Scissor Trap — Putange Mole Trap</h2>
+      <h2 id="best-professional">Best Professional — Talpex Mole Trap</h2>
       <div className="not-prose">
         <ProductCard
-          name="Putange Scissor Mole Trap"
+          name="Talpex Mole Trap"
           rating={4.3}
           features={[
-            'Professional-grade scissor mechanism for rapid dispatch',
-            'Exceptionally strong spring — very high catch rate when set correctly',
-            'Stainless steel construction for long-term durability',
-            'Favoured by professional mole catchers across the UK and Europe',
-            'Works in both shallow and deep runs',
-            'Compact design fits in tight tunnel systems',
+            'European professional-standard trap',
+            'Spring-loaded plunger mechanism for fast, humane kill',
+            'Set in the run and triggered by mole movement',
+            'Widely used by professional mole catchers across the UK',
+            'Robust construction for repeated use',
           ]}
           price="~£12"
-          asin="B07VK96Z2V"
-          bestFor="Experienced users and professionals wanting maximum catch rates"
+          asin="SEARCH"
+          bestFor="Professional mole catchers and experienced users"
           rank={3}
         />
       </div>
       <p>
-        The Putange (sometimes spelled Putange-style or French scissor trap) is the other mainstay of professional mole catching alongside the Duffus. Its scissor-action jaws clamp shut with considerable force when triggered, delivering an instant kill. Many professional mole catchers rate the Putange as slightly more effective than the Duffus in certain soil types, particularly heavy clay.
+        The Talpex is the European professional-standard mole trap, widely used by professional mole catchers across the UK and mainland Europe. Its spring-loaded plunger mechanism is set in the active run, and when the mole moves through the tunnel and disturbs the trigger, the plunger fires downward for a fast and humane kill. Many professionals consider the Talpex to be the most reliable trap available when set correctly.
       </p>
       <p>
-        Setting a Putange requires more experience and hand strength than the Beagle Easyset. The powerful spring means you need to compress it firmly while positioning the trigger — we recommend watching a couple of YouTube tutorials before your first attempt. Once mastered, however, the catch rate is excellent. These traps are built to last and many professionals use the same Putange traps for 10 years or more.
+        Setting a Talpex requires more experience than a simple push trap like the Victor. You need to carefully excavate the tunnel, position the trap with the plunger above the run, and ensure the trigger is at the correct sensitivity. We recommend watching a tutorial before your first attempt. Once mastered, however, the catch rate is excellent — many professional mole catchers use Talpex traps exclusively.
       </p>
 
       {/* Product 4 */}
-      <h2 id="best-tunnel">Best Tunnel Trap — Trapline Mole Tunnel Trap</h2>
+      <h2 id="best-discreet">Best Discreet — WCS Tube Mole Trap</h2>
       <div className="not-prose">
         <ProductCard
-          name="Trapline Mole Tunnel Trap"
+          name="WCS Tube Mole Trap"
           rating={4.1}
           features={[
-            'Full barrel design catches moles travelling in either direction',
-            'Self-setting trigger mechanism with sensitive plate',
-            'Galvanised steel barrel resists soil moisture and corrosion',
-            'Catches in both shallow surface runs and deeper main tunnels',
-            'Transparent top option allows visual check without disturbing trap',
-            'Good choice for longer, straight tunnel runs',
+            'Enclosed tube design conceals the trap mechanism',
+            'Less conspicuous above ground than scissor or plunger traps',
+            'Reduces trigger failures from soil disturbance',
+            'Popular for lawns and sports turf',
+            'Durable construction for repeated use',
           ]}
           price="~£10"
-          asin="B0BYVYLGJK"
-          bestFor="Deeper tunnel systems and two-way trapping"
+          asin="SEARCH"
+          bestFor="Lawns, sports turf and situations where discreet placement matters"
           rank={4}
         />
       </div>
       <p>
-        The Trapline tunnel trap is a full-barrel design that sits inside the mole&apos;s tunnel and catches from either direction. This makes it particularly effective in main runs — the deeper, more permanent tunnels that moles use repeatedly. Where the Duffus half-barrel only catches moles travelling in one direction, the full-barrel Trapline covers both.
+        The WCS Tube Mole Trap takes a different approach to mole trapping. The enclosed tube design conceals the trap mechanism inside a barrel that sits within the mole tunnel, making it far less conspicuous above ground than scissor-jaw or plunger traps. This makes it popular for well-maintained lawns and sports turf where aesthetics matter.
       </p>
       <p>
-        Installation requires a careful excavation of the tunnel to slide the barrel in, and you need to ensure the floor level matches perfectly so the mole does not detect a change underfoot. This takes practice but becomes straightforward with experience. The galvanised finish holds up well in all soil types. If you have deeper runs or a larger garden with established tunnel networks, this is an excellent choice.
+        The enclosed design also reduces trigger failures caused by soil falling onto the mechanism — a common problem with open traps in sandy or crumbly soil. The mole enters the tube as part of its normal tunnel patrol and triggers the mechanism inside. Installation requires careful placement to match the tunnel floor level, but the enclosed design is more forgiving of minor positioning errors than open traps.
       </p>
 
       {/* Product 5 */}
-      <h2 id="best-humane">Best Humane Option — The Big Cheese Live Catch Mole Trap</h2>
+      <h2 id="best-beginner">Best for Beginners — Trapline Easy-Set Mole Trap</h2>
       <div className="not-prose">
         <ProductCard
-          name="The Big Cheese Live Catch Mole Trap"
-          rating={3.8}
+          name="Trapline Easy-Set Mole Trap"
+          rating={4.0}
           features={[
-            'Catches moles alive for relocation — no kill mechanism',
-            'Simple barrel design slots into an active mole run',
-            'One-way door allows mole to enter but not escape',
-            'Check at least every 12 hours — moles can die from stress if left too long',
-            'Suitable for gardeners who do not want to use lethal traps',
-            'Reusable — simply release the mole and reset',
+            'Beginner-friendly design — easier to set than traditional scissor traps',
+            'Clear instructions included — no special tools needed',
+            'Good starting point for first-time mole trappers',
+            'Reliable trigger mechanism',
+            'Reusable metal construction',
           ]}
-          price="~£8"
-          asin="B00DJBJGRW"
-          bestFor="Gardeners seeking a non-lethal mole control option"
+          price="~£15"
+          asin="SEARCH"
+          bestFor="Homeowners attempting mole control for the first time"
           rank={5}
         />
       </div>
       <p>
-        For gardeners who prefer not to kill moles, the Big Cheese live-catch trap offers a humane alternative. The barrel sits inside the tunnel, and a one-way door allows the mole to enter but prevents it from leaving. You then relocate the mole at least one mile from your garden — any closer and it is likely to find its way back.
+        The Trapline Easy-Set is designed specifically for homeowners who have never trapped a mole before. Traditional scissor and plunger traps can be intimidating to set — the powerful springs require firm handling, and incorrect positioning leads to failed catches. The Easy-Set simplifies the process with a more intuitive mechanism and clear instructions that walk you through each step.
       </p>
       <p>
-        The critical point with live-catch traps is checking frequency. Moles have extremely high metabolic rates and can die within 12 hours without food. You must check the trap at least twice daily, ideally every 8 to 12 hours. If you cannot commit to this, a lethal trap is actually the more humane option. The catch rate is also lower than lethal traps because moles are cautious of the one-way door mechanism.
-      </p>
-
-      <div className="not-prose">
-        <Callout type="warning">
-          <p>Live-catch mole traps must be checked at least every 12 hours. Moles have very high metabolisms and can die from starvation or stress if left trapped for longer. If you cannot check twice daily, use a lethal trap instead.</p>
-        </Callout>
-      </div>
-
-      {/* Product 6 */}
-      <h2 id="best-repellent">Best Mole Repellent — Defenders Mole Scatter Granules</h2>
-      <div className="not-prose">
-        <ProductCard
-          name="Defenders Mole Scatter Granules (450g)"
-          rating={3.5}
-          features={[
-            'Castor oil-based formula makes soil taste unpleasant to moles',
-            'Simply scatter on lawn and water in — no digging required',
-            'Covers up to 25 square metres per application',
-            'Non-toxic to pets, children, and other wildlife',
-            'Best used as a preventive measure rather than a cure for active infestations',
-            'Reapply every 4 to 6 weeks for ongoing protection',
-          ]}
-          price="~£9"
-          asin="B000TAT60A"
-          bestFor="Prevention and deterring moles from small garden areas"
-          rank={6}
-        />
-      </div>
-      <p>
-        We include mole repellent granules with a caveat: they are not a substitute for trapping when you have an active mole problem. Castor oil-based repellents work by making the soil unpleasant for moles to forage in, which can encourage them to move elsewhere. Some gardeners report good results, while others see no effect at all.
-      </p>
-      <p>
-        Where granules can be useful is as a preventive measure. If you have successfully trapped a mole and want to deter new ones from moving in, scattering granules around the border of your lawn may help. They are also a reasonable first step if you have only seen one or two small molehills and want to try a non-invasive approach before committing to traps. At around £9 for a 450g tub, the investment is low.
+        No special tools are needed — the trap can be set with your hands alone. While experienced mole catchers may prefer the higher catch rates of a Duffus or Talpex, the Easy-Set is a genuine improvement for beginners who would otherwise struggle with traditional traps. If you have never attempted mole control before, starting with the Trapline Easy-Set is a sensible approach before graduating to more advanced traps.
       </p>
 
       {/* How to Choose */}

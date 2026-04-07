@@ -54,12 +54,11 @@ const faqSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Mouse Bait Stations at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Rentokil Mouse Bait Station' },
-  { id: 'best-value', title: 'Best Value — The Big Cheese Mouse Bait Station' },
-  { id: 'best-professional', title: 'Best Professional — Pest Expert Mouse Station' },
-  { id: 'best-compact', title: 'Best Compact — Racan Mouse Bait Station' },
-  { id: 'best-outdoor', title: 'Best Outdoor — Roshield Mouse Bait Box' },
-  { id: 'best-kit', title: 'Best Complete Kit — Roshield Station + Poison Kit' },
+  { id: 'best-overall', title: 'Best Overall — Roshield 5x Pre-Baited Kit' },
+  { id: 'best-bulk', title: 'Best Bulk — Roshield 10x Empty Bait Boxes' },
+  { id: 'best-compact', title: 'Best Compact — Roshield 5x Black Bait Boxes' },
+  { id: 'best-brand', title: 'Best Brand — The Big Cheese Bait Station' },
+  { id: 'best-budget', title: 'Best Budget — Pest-Stop Lockable Station' },
   { id: 'buying-guide', title: 'How to Choose the Right Mouse Bait Station' },
   { id: 'placement', title: 'Placement Guide for Best Results' },
   { id: 'faq', title: 'Frequently Asked Questions' },
@@ -128,12 +127,11 @@ export default function BestMouseBaitStationsPage() {
           <tr><th>Product</th><th>Key Feature</th><th>Best For</th><th>Price</th></tr>
         </thead>
         <tbody>
-          <tr><td>Rentokil Mouse Bait Station</td><td>Lockable + trusted brand</td><td>Best Overall</td><td>~£6</td></tr>
-          <tr><td>The Big Cheese Mouse Station</td><td>Budget multi-pack</td><td>Best Value</td><td>~£5</td></tr>
-          <tr><td>Pest Expert Mouse Station</td><td>Professional heavy-duty</td><td>Best Professional</td><td>~£8</td></tr>
-          <tr><td>Racan Mouse Bait Station</td><td>Compact for tight spaces</td><td>Best Compact</td><td>~£5</td></tr>
-          <tr><td>Roshield Mouse Bait Box</td><td>Weatherproof UV-stabilised</td><td>Best Outdoor</td><td>~£7</td></tr>
-          <tr><td>Roshield Station + Poison Kit</td><td>Complete ready-to-use kit</td><td>Best Kit</td><td>~£15</td></tr>
+          <tr><td>Roshield 5x Pre-Baited Kit</td><td>Pre-baited with Brodifacoum</td><td>Best Overall</td><td>Check price</td></tr>
+          <tr><td>Roshield 10x Empty Boxes</td><td>Bulk pack for landlords</td><td>Best Bulk</td><td>Check price</td></tr>
+          <tr><td>Roshield 5x Black Boxes</td><td>Compact for tight spaces</td><td>Best Compact</td><td>Check price</td></tr>
+          <tr><td>The Big Cheese Bait Station</td><td>20,000+ reviews</td><td>Best Brand</td><td>Check price</td></tr>
+          <tr><td>Pest-Stop Lockable Station</td><td>Low-profile discreet design</td><td>Best Budget</td><td>Check price</td></tr>
         </tbody>
       </table>
 
@@ -141,229 +139,204 @@ export default function BestMouseBaitStationsPage() {
         <StatCallout value="3–5 stations" label="Recommended number of mouse bait stations for a typical UK home" />
       </div>
 
-      <h2 id="best-overall">Best Overall — Rentokil Mouse Bait Station</h2>
+      <h2 id="best-overall">Best Overall — Roshield 5x Pre-Baited Mouse Bait Box Kit</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Rentokil Mouse Bait Station"
+          name="Roshield 5x Pre-Baited Mouse Bait Box Kit"
           rank={1}
-          rating={4.3}
+          rating={4.4}
           features={[
-            'Lockable tamper-resistant design with key',
-            'Mouse-sized entry holes prevent pet access',
-            'Accepts block and grain bait formats',
-            'Trusted Rentokil brand with clear instructions',
+            "5 tamper-resistant boxes pre-baited with Brodifacoum single-feed poison",
+            "Just place and leave — no separate bait purchase needed",
+            "UK-made from recycled plastics",
+            "3,500+ reviews — most popular mouse bait kit on Amazon UK",
           ]}
-          price="£6"
-          asin="B00GKHI2PW"
+          price="Check price"
+          asin="B07J2NSX9M"
           bestFor="Best Overall"
         />
       </div>
       <p>
-        The Rentokil Mouse Bait Station takes our top spot for its combination of genuine tamper-resistance, brand reliability, and value. The lockable lid requires a key to open — not a simple clip that a child could figure out — providing a genuine safety barrier. The entry holes are sized at approximately 25mm, large enough for a mouse but too small for a cat's paw or a toddler's fingers to reach inside.
+        The Roshield 5x Pre-Baited Mouse Bait Box Kit is the most popular mouse bait kit on Amazon UK, with over 3,500 reviews — and it earns that position through sheer convenience and effectiveness. Each of the five tamper-resistant boxes comes pre-baited with Brodifacoum single-feed poison, so there is nothing else to buy. Open the box, place the stations, and leave them to work.
       </p>
       <p>
-        Inside, the station accepts standard bait blocks on the internal rod and can also hold grain sachets on the station floor. The interior baffles create a tunnel effect that mice find inviting — they naturally prefer to feed in enclosed, sheltered spaces. This design actually increases bait uptake compared to open poison placement, meaning more mice consume a lethal dose on each visit.
+        Brodifacoum is a single-feed anticoagulant, meaning a mouse only needs to consume one dose for a lethal result. The tamper-resistant boxes comply with all UK rodenticide regulations and prevent access by children, pets, and non-target wildlife. The boxes are UK-made from recycled plastics, and the entry holes are sized specifically for mice — too small for a cat's paw or a toddler's fingers.
       </p>
       <p>
-        Rentokil's instructions are clear and comprehensive, making this the most beginner-friendly option. At around £6 per station, it is affordable enough to buy multiple units for whole-house coverage.
+        With five stations included, you have enough for whole-house coverage in a typical UK home. Place them along walls, behind kitchen units, under appliances, and near any identified entry points. This kit is the simplest and most effective way to start mouse control immediately.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Key-lockable lid — genuine tamper resistance</li>
-        <li>Trusted Rentokil brand with excellent instructions</li>
-        <li>Accepts blocks and grain sachets</li>
-        <li>Affordable at ~£6 per station</li>
+        <li>Pre-baited — nothing else to buy or prepare</li>
+        <li>Brodifacoum single-feed for maximum potency</li>
+        <li>5 stations for whole-house coverage</li>
+        <li>UK-made from recycled plastics</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Bait not included — must purchase separately</li>
-        <li>Lighter plastic than professional-grade stations</li>
-        <li>Key is small and easy to misplace</li>
+        <li>Fixed bait type — cannot swap to a different poison</li>
+        <li>Bait cannot be topped up once consumed</li>
+        <li>Not suitable for use where non-target rodenticides are required</li>
       </ul>
 
-      <h2 id="best-value">Best Value — The Big Cheese Mouse Bait Station</h2>
+      <h2 id="best-bulk">Best Bulk — Roshield 10x Mouse Bait Boxes (Empty, No Bait)</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="The Big Cheese Mouse Bait Station"
+          name="Roshield 10x Mouse Bait Boxes (Empty, No Bait)"
           rank={2}
-          rating={4.1}
+          rating={4.3}
           features={[
-            'Budget-friendly with tamper-resistant design',
-            'Compact size fits behind kitchen units',
-            'Accepts block and grain bait',
-            'Over 10,000 Amazon reviews',
+            "Bulk pack of 10 lockable tamper-resistant boxes",
+            "Use with your own choice of rodenticide",
+            "UK-made from recycled plastic",
+            "Complies with UK and EU regulations — key included",
           ]}
-          price="£5"
-          asin="B088TH1XCS"
-          bestFor="Best Budget"
+          price="Check price"
+          asin="B00XL351Y8"
+          bestFor="Best Bulk"
         />
       </div>
       <p>
-        The Big Cheese is one of the UK's most popular pest control brands, and their mouse bait station offers genuine tamper-resistance at the lowest price on our list. At around £5, it is affordable enough to deploy multiple stations throughout your home for comprehensive coverage. The compact design fits easily behind kitchen units, under appliances, and in the tight spaces where mice typically travel.
+        For landlords, property managers, and anyone managing multiple properties or a larger infestation, the Roshield 10x pack provides the best value per station. These are empty, lockable tamper-resistant boxes — you supply your own rodenticide, giving you full control over which bait you use and how much you load into each station.
       </p>
       <p>
-        The station accepts standard bait blocks and grain sachets. The entry holes are appropriately sized for mice, and the design includes internal baffles that prevent larger animals from reaching the bait. While the construction is lighter than professional-grade alternatives, it is perfectly adequate for indoor domestic use where weather resistance is not a concern.
+        The lockable design requires a key (included) to open, providing genuine tamper resistance that meets UK and EU rodenticide regulations. The boxes are UK-made from recycled plastic and are robust enough for both indoor and sheltered outdoor use. Each box holds standard wax blocks and pasta sachets, giving you flexibility to use whichever bait format suits your situation.
+      </p>
+      <p>
+        At ten stations per pack, you have enough to cover a large property, multiple flats, or a commercial premises. For landlords conducting routine rodent monitoring across a portfolio, this is the most cost-effective option.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Most affordable station on our list</li>
-        <li>Compact — fits in tight spaces</li>
-        <li>Trusted brand with thousands of reviews</li>
-        <li>Tamper-resistant design</li>
+        <li>Best value per station — 10 in one pack</li>
+        <li>Choose your own bait for maximum flexibility</li>
+        <li>Lockable with key — complies with UK and EU regulations</li>
+        <li>Ideal for landlords and property managers</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Lighter construction — not ideal for outdoor use</li>
-        <li>Not lockable with a key (clip closure)</li>
-        <li>Bait not included</li>
+        <li>Bait not included — must be purchased separately</li>
+        <li>Overkill for a single small property</li>
+        <li>Requires knowledge of which bait to use</li>
       </ul>
 
-      <h2 id="best-professional">Best Professional — Pest Expert Mouse Bait Station</h2>
+      <h2 id="best-compact">Best Compact — Roshield 5x Black Tamper-Resistant Mouse Bait Boxes</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Professional Mouse Bait Station"
+          name="Roshield 5x Black Tamper-Resistant Mouse Bait Boxes"
           rank={3}
-          rating={4.4}
+          rating={4.2}
           features={[
-            'Heavy-duty professional-grade construction',
-            'Used by BPCA-certified pest controllers',
-            'Lockable with key for maximum safety',
-            'Accepts bait blocks, grain, and snap traps',
+            "Compact design for tight spaces and enclosed areas",
+            "Fits under kitchen units, in loft voids and cupboards",
+            "Holds wax blocks and pasta sachets",
+            "5-pack of empty lockable stations — bait sold separately",
           ]}
-          price="£8"
-          asin="B010E2GRGO"
-          bestFor="Best Professional-Grade"
-        />
-      </div>
-      <p>
-        The Pest Expert Mouse Bait Station is the same unit used by professional pest controllers across the UK. The construction is noticeably heavier and more robust than consumer alternatives — thicker walls, reinforced entry tunnels, and a professional-grade locking mechanism. It accepts bait blocks, grain sachets, and even small snap traps, giving you maximum flexibility in your approach to mouse control.
-      </p>
-      <p>
-        The ability to house a snap trap inside a tamper-resistant station is a valuable feature. It means you can use mechanical traps in homes with pets and children without worrying about curious fingers or noses getting caught. The trap fires inside the enclosed station, and you simply unlock the lid to check and reset it.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Professional-grade heavy-duty construction</li>
-        <li>Accepts poison bait AND snap traps</li>
-        <li>Lockable with key</li>
-        <li>Used by certified pest controllers</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Higher price than consumer stations</li>
-        <li>Bulkier than compact alternatives</li>
-        <li>Bait/traps not included</li>
-      </ul>
-
-      <h2 id="best-compact">Best Compact — Racan Mouse Bait Station</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Racan Mouse Bait Station"
-          rank={4}
-          rating={4.0}
-          features={[
-            'Ultra-compact design for tight spaces',
-            'Fits behind fridges, cookers, and in cupboards',
-            'Tamper-resistant with secure closure',
-            'Low-profile — barely visible when placed',
-          ]}
-          price="£5"
-          asin="B07H8NZGH7"
+          price="Check price"
+          asin="B00KVGCBJG"
           bestFor="Best Compact"
         />
       </div>
       <p>
-        Mice excel at squeezing into the tightest spaces — and your bait station needs to follow them there. The Racan Mouse Bait Station is the most compact option on our list, designed specifically for placement in the narrow gaps behind kitchen appliances, inside kitchen cupboards, and under bathroom units where standard stations would not fit.
+        Mice excel at squeezing into the tightest spaces — under kitchen units, inside loft voids, behind bathroom panels — and your bait station needs to follow them there. The Roshield 5x Black Bait Boxes are specifically designed for these compact placements, with a smaller footprint than standard stations that allows them to fit in spaces where larger boxes simply will not go.
       </p>
       <p>
-        Despite its compact size, the station maintains tamper-resistant features with a secure closure and appropriately sized entry holes. It accepts small bait blocks and grain sachets, and the low-profile design means it sits virtually flush with the floor — barely visible even in open areas.
+        Despite the compact size, these are genuine lockable tamper-resistant stations that hold standard wax blocks and pasta sachets. The black colour makes them discreet when placed in visible areas — far less conspicuous than the bright green or grey stations used by some brands. Bait must be purchased separately, giving you the flexibility to choose the rodenticide that best suits your needs.
+      </p>
+      <p>
+        For kitchens with limited space behind units, loft conversions, utility cupboards, and other tight spots, these compact stations are the practical choice. The five-pack provides enough for whole-house coverage in most properties.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Ultra-compact — fits where others cannot</li>
-        <li>Low-profile and discreet</li>
-        <li>Tamper-resistant</li>
-        <li>Affordable</li>
+        <li>Compact design fits in the tightest spaces</li>
+        <li>Discreet black colour</li>
+        <li>Lockable and tamper-resistant</li>
+        <li>Accepts wax blocks and pasta sachets</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
+        <li>Bait not included — must be purchased separately</li>
+        <li>Smaller bait capacity than full-size stations</li>
         <li>Too small for snap traps</li>
-        <li>Limited bait capacity</li>
-        <li>Not suitable for outdoor use</li>
       </ul>
 
-      <h2 id="best-outdoor">Best Outdoor — Roshield Mouse Bait Box</h2>
+      <h2 id="best-brand">Best Brand — The Big Cheese Rat & Mouse Bait Station Compact</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Roshield External Mouse Bait Station Box"
+          name="The Big Cheese Rat & Mouse Bait Station Compact"
+          rank={4}
+          rating={4.1}
+          features={[
+            "Compact tamper-resistant station from the UK's top rodent brand",
+            "Lockable lid for indoor and outdoor use",
+            "Compatible with The Big Cheese bait blocks and pasta sachets",
+            "20,000+ reviews — the UK's most reviewed bait station",
+          ]}
+          price="Check price"
+          asin="SEARCH"
+          bestFor="Best Brand"
+        />
+      </div>
+      <p>
+        The Big Cheese is the UK's most recognisable rodent control brand, and their compact bait station is the most reviewed mouse bait station on Amazon UK with over 20,000 customer reviews. That volume of feedback provides genuine confidence in the product — thousands of UK homeowners have used this station successfully to deal with mouse problems.
+      </p>
+      <p>
+        The station features a lockable lid and tamper-resistant design suitable for both indoor and outdoor use. It is compatible with The Big Cheese's own range of bait blocks and pasta sachets, though it also accepts standard bait formats from other brands. The compact design fits behind kitchen units, alongside skirting boards, and in the sheltered spots where mice travel.
+      </p>
+      <p>
+        For anyone who wants a reliable bait station from a brand they recognise and trust, The Big Cheese is the obvious choice. The sheer volume of positive reviews provides reassurance that this station works as intended for typical UK mouse problems.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>20,000+ reviews — proven track record</li>
+        <li>Lockable and tamper-resistant</li>
+        <li>Suitable for indoor and outdoor use</li>
+        <li>Compatible with multiple bait formats</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Bait not included — must be purchased separately</li>
+        <li>Lighter construction than professional-grade stations</li>
+        <li>Compact size limits bait capacity</li>
+      </ul>
+
+      <h2 id="best-budget">Best Budget — Pest-Stop Lockable Mouse Bait Station</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Pest-Stop Lockable Mouse Bait Station"
           rank={5}
-          rating={4.2}
+          rating={4.0}
           features={[
-            'Weatherproof UV-stabilised plastic',
-            'Lockable with key for outdoor safety',
-            'Drainage holes prevent water pooling',
-            'Durable enough for year-round outdoor use',
+            "All-weather lockable mouse bait station",
+            "Low-profile design for discreet wall placement",
+            "Suitable for home, office and garden use",
+            "Affordable option for budget-conscious buyers",
           ]}
-          price="£7"
-          asin="B00XL382T4"
-          bestFor="Best Outdoor"
+          price="Check price"
+          asin="SEARCH"
+          bestFor="Best Budget"
         />
       </div>
       <p>
-        If you need to bait around the outside of your property — along external walls, near air bricks, close to sheds and outbuildings — you need a station that can withstand the UK's reliably wet weather. The Roshield External Mouse Bait Box is built from UV-stabilised plastic that will not crack, warp, or degrade in sunlight, rain, or frost. Drainage holes in the base prevent water from pooling inside and ruining the bait.
+        The Pest-Stop Lockable Mouse Bait Station offers genuine tamper-resistant protection at a budget-friendly price point. The all-weather design makes it suitable for indoor, office, and garden use, and the lockable mechanism prevents access by children, pets, and non-target wildlife. It is a straightforward, no-frills station that does exactly what it needs to do.
       </p>
       <p>
-        The lockable design with key meets CRRU requirements for outdoor rodenticide use and prevents access by hedgehogs, birds, and other non-target wildlife that may be present in gardens. The heavier construction means the station stays put in windy conditions, though securing it with a ground stake or heavy stone is recommended for long-term outdoor deployment.
+        The low-profile design is a particular strength — the station sits close to the ground and can be placed flush against walls and skirting boards for discreet placement. Mice are thigmotactic (they travel along edges), so a station that sits tight against the wall is in the perfect position to intercept them on their natural travel routes. The station fits in voids under kitchen units, behind appliances, and in other sheltered spots.
+      </p>
+      <p>
+        For budget-conscious buyers who need multiple stations to cover a property, the Pest-Stop offers reliable tamper-resistant protection without the premium price tag of branded alternatives.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Weatherproof and UV-stabilised</li>
-        <li>Lockable with key for outdoor safety</li>
-        <li>Drainage holes prevent bait degradation</li>
-        <li>Durable for year-round use</li>
+        <li>Budget-friendly price point</li>
+        <li>Low-profile and discreet</li>
+        <li>All-weather — suitable indoors and outdoors</li>
+        <li>Lockable for genuine tamper resistance</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Larger than indoor-only stations</li>
-        <li>Higher price than basic indoor stations</li>
-        <li>Bait not included</li>
-      </ul>
-
-      <h2 id="best-kit">Best Complete Kit — Roshield Station + Poison Kit</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Roshield Mouse Bait Station + Poison Kit"
-          rank={6}
-          rating={4.3}
-          features={[
-            'Complete kit: bait station + brodifacoum bait included',
-            'Ready to deploy immediately — nothing else to buy',
-            'Professional-quality lockable station',
-            'Ideal for beginners — no compatibility guesswork',
-          ]}
-          price="£15"
-          asin="B07J2NSX9M"
-          bestFor="Best Complete Kit"
-        />
-      </div>
-      <p>
-        If you want a single purchase that includes everything you need to start mouse control immediately, the Roshield Kit is the one to buy. It comes with a professional-quality lockable bait station and brodifacoum bait — the most potent consumer rodenticide available. Open the box, load the bait into the station, lock it, and place it. No researching compatible products or buying components separately.
-      </p>
-      <p>
-        The included bait is professional-strength brodifacoum, delivering a lethal dose in a single feed. The station is the same weatherproof, lockable unit sold to pest professionals. At £15, the kit represents better value than purchasing the station and bait separately, and it ensures compatibility between the bait format and station design.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Complete all-in-one kit — nothing else to buy</li>
-        <li>Professional-quality station and bait</li>
-        <li>Brodifacoum — strongest available poison</li>
-        <li>Ideal for beginners</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Single station — may need more for larger homes</li>
-        <li>Higher upfront cost than station alone</li>
-        <li>Fixed bait type — cannot choose a different formulation</li>
+        <li>Bait not included — must be purchased separately</li>
+        <li>Less well-known brand than competitors</li>
+        <li>Basic construction compared to premium stations</li>
       </ul>
 
       <h2 id="buying-guide">How to Choose the Right Mouse Bait Station</h2>

@@ -95,11 +95,11 @@ const faqSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Cockroach Gels at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Advion Cockroach Gel' },
+  { id: 'best-overall', title: 'Best Overall — Advion Cockroach Gel Bait' },
   { id: 'best-alternative', title: 'Best Alternative — Maxforce Platin' },
-  { id: 'best-value', title: 'Best Value — Combat Roach Killing Gel' },
-  { id: 'best-stations', title: 'Best Bait Stations — Rentokil Cockroach Killer' },
-  { id: 'best-kit', title: 'Best Treatment Kit — Pest Expert Cockroach Kit' },
+  { id: 'best-kit', title: 'Best Kit — Pest Expert Cockroach Killer Kit' },
+  { id: 'best-spray', title: 'Best Spray — Rentokil Cockroach Killer Spray' },
+  { id: 'best-budget', title: 'Best Budget — Zero In Crawling Insect Killer' },
   { id: 'buying-guide', title: 'How to Choose the Right Cockroach Gel' },
   { id: 'application', title: 'How to Apply Cockroach Gel Effectively' },
   { id: 'faq', title: 'Frequently Asked Questions' },
@@ -181,34 +181,34 @@ export default function BestCockroachGelBaitPage() {
         </thead>
         <tbody>
           <tr>
-            <td>Advion Cockroach Gel</td>
-            <td>Indoxacarb</td>
+            <td>Advion Cockroach Gel Bait 4x30g</td>
+            <td>Indoxacarb 0.6%</td>
             <td>Best Overall</td>
-            <td>~£18</td>
+            <td>Check price</td>
           </tr>
           <tr>
-            <td>Maxforce Platin</td>
-            <td>Clothianidin</td>
+            <td>Maxforce Platin Cockroach Gel</td>
+            <td>Imidacloprid</td>
             <td>Best Alternative</td>
-            <td>~£22</td>
+            <td>Check price</td>
           </tr>
           <tr>
-            <td>Combat Roach Killing Gel</td>
-            <td>Fipronil</td>
-            <td>Best Value</td>
-            <td>~£8</td>
-          </tr>
-          <tr>
-            <td>Rentokil Cockroach Killer</td>
-            <td>Various</td>
-            <td>Best Bait Stations</td>
-            <td>~£6</td>
-          </tr>
-          <tr>
-            <td>Pest Expert Cockroach Kit</td>
-            <td>Cypermethrin + gel</td>
+            <td>Pest Expert Cockroach Killer Kit</td>
+            <td>Gel + residual spray</td>
             <td>Best Kit</td>
-            <td>~£28</td>
+            <td>Check price</td>
+          </tr>
+          <tr>
+            <td>Rentokil Cockroach Killer Spray</td>
+            <td>Contact insecticide</td>
+            <td>Best Spray</td>
+            <td>Check price</td>
+          </tr>
+          <tr>
+            <td>Zero In Crawling Insect Killer</td>
+            <td>Cypermethrin</td>
+            <td>Best Budget</td>
+            <td>Check price</td>
           </tr>
         </tbody>
       </table>
@@ -217,201 +217,204 @@ export default function BestCockroachGelBaitPage() {
         <StatCallout value="24–72 hrs" label="Time for the cascade effect to start killing cockroaches after gel application" />
       </div>
 
-      <h2 id="best-overall">Best Overall — Advion Cockroach Gel Bait</h2>
+      <h2 id="best-overall">Best Overall — Advion Cockroach Gel Bait 4x30g Tubes</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Advion Cockroach Gel Bait"
+          name="Advion Cockroach Gel Bait 4x30g Tubes (Syngenta)"
           rank={1}
           rating={4.6}
           features={[
-            'Indoxacarb active — the professional standard',
-            'Highly palatable to German and Oriental cockroaches',
-            'Cascade effect kills cockroaches that never touched the gel',
-            'Syringe applicator for precise crack-and-crevice placement',
+            "Indoxacarb 0.6% — the professional standard worldwide",
+            "Cascade effect transfers bait to up to 40 cockroaches per treated insect",
+            "Targets German, American and gel-bait-averse species",
+            "4x30g tubes — used by professional pest controllers worldwide",
           ]}
-          price="£18"
-          asin="B00GKHI2PW"
+          price="Check price"
+          asin="B0148W0WOE"
           bestFor="Best Overall"
         />
       </div>
       <p>
-        Advion is the undisputed number one cockroach gel bait worldwide, and it is the product you will find in virtually every professional pest controller's kit in the UK. The indoxacarb active ingredient is uniquely effective because it is highly palatable to cockroaches — they eat it eagerly — and it kills with a perfectly calibrated delay that maximises the cascade effect.
+        Advion is the undisputed number one cockroach gel bait worldwide, and it is the product you will find in virtually every professional pest controller's kit in the UK. The indoxacarb 0.6% active ingredient is uniquely effective because it is highly palatable to cockroaches — they eat it eagerly — and it kills with a perfectly calibrated delay that maximises the cascade effect.
       </p>
       <p>
-        The cascade effect is what makes Advion so devastating against cockroach populations. A cockroach eats the gel, returns to the harbourage, and dies within 24-72 hours. Before and after death, it contaminates the harbourage with poisoned droppings and vomit. Other cockroaches — which are coprophagous (they eat droppings) and cannibalistic (they eat dead cockroaches) — consume these contaminated materials and die in turn. Studies have shown that a single cockroach feeding on Advion can kill up to 40 additional cockroaches through the cascade effect.
+        Once consumed, treated cockroaches transfer the bait to up to 40 others before dying. The cascade effect is what makes Advion so devastating: a cockroach eats the gel, returns to the harbourage, and dies within 24-72 hours. Before and after death, it contaminates the harbourage with poisoned droppings and vomit. Other cockroaches consume these contaminated materials and die in turn. This 4x30g tube pack from Syngenta provides enough gel for multiple rooms and repeat treatments.
       </p>
       <p>
-        The syringe applicator allows you to place precise, small dots (3mm diameter) in the cracks, crevices, and harbourage points where cockroaches hide. Behind cookers, inside cupboard door hinges, under sinks, around pipe entry points, and along the backs of drawers are all ideal placement locations. The gel stays moist and attractive for weeks, ensuring ongoing uptake.
+        Advion targets German, American, and even gel-bait-averse cockroach species that have learned to avoid other baits. The syringe applicator allows precise placement in cracks, crevices, and harbourage points — behind cookers, inside cupboard hinges, under sinks, and around pipe entry points.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
         <li>Professional standard — used by pest controllers worldwide</li>
         <li>Devastating cascade effect kills entire harbourages</li>
-        <li>Highly palatable to all UK cockroach species</li>
-        <li>Precise syringe applicator for targeted placement</li>
+        <li>Effective against gel-bait-averse species</li>
+        <li>4 tubes provide enough gel for thorough treatment</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
         <li>Higher price than consumer products</li>
         <li>Professional packaging — less beginner-friendly</li>
-        <li>Single syringe may not be enough for severe infestations</li>
+        <li>Requires precise crack-and-crevice placement for best results</li>
       </ul>
 
-      <h2 id="best-alternative">Best Alternative — Maxforce Platin</h2>
+      <h2 id="best-alternative">Best Alternative — Maxforce Platin Cockroach Gel</h2>
       <div className="not-prose my-6">
         <ProductCard
           name="Maxforce Platin Cockroach Gel"
           rank={2}
           rating={4.5}
           features={[
-            'Clothianidin — different mode of action from Advion',
-            'Ideal for rotating active ingredients to prevent resistance',
-            'Long-lasting gel remains attractive for weeks',
-            'Professional-grade formula used worldwide',
+            "Professional-grade cockroach bait from Bayer",
+            "Imidacloprid-based with highly palatable bait matrix",
+            "Effective against German and Oriental cockroaches",
+            "Essential rotation product with Advion to prevent resistance",
           ]}
-          price="£22"
-          asin="B073JPVRFB"
+          price="Check price"
+          asin="SEARCH"
           bestFor="Best Alternative"
         />
       </div>
       <p>
-        Maxforce Platin uses clothianidin, a neonicotinoid that provides a different mode of action from Advion's indoxacarb. This makes it an essential tool for resistance management — professional pest controllers routinely rotate between Advion and Maxforce Platin to prevent cockroach populations from developing resistance to either product. If you have used Advion before and are seeing a return of cockroaches, switching to Maxforce Platin is the professional approach.
+        Maxforce Platin is a professional-grade cockroach bait from Bayer that uses imidacloprid as its active ingredient, providing a different mode of action from Advion's indoxacarb. This makes it an essential tool for resistance management — professional pest controllers routinely rotate between Advion and Maxforce Platin to prevent cockroach populations from developing resistance to either product.
       </p>
       <p>
-        The gel formulation is specifically designed to remain moist and palatable in the warm, humid environments where cockroaches thrive — behind cookers, under dishwashers, inside boiler cupboards. Cockroaches prefer moist food sources, so a gel that dries out quickly loses its attractiveness. Maxforce Platin's extended moisture retention keeps it working for weeks after application.
+        The highly palatable bait matrix is specifically designed to attract German and Oriental cockroaches, the two most common species in UK properties. Cockroaches feed eagerly on the gel, and the delayed action allows maximum spread through the colony before mortality occurs. If you have used Advion before and are seeing a return of cockroaches, switching to Maxforce Platin is the professional approach.
       </p>
       <p>
-        At £22, it is the most expensive product on our list — but for persistent cockroach problems or situations where other products have stopped working, it is often the breakthrough gel that finally brings the population under control.
+        The gel formulation remains moist and attractive in the warm, humid environments where cockroaches thrive — behind cookers, under dishwashers, inside boiler cupboards. For persistent cockroach problems or situations where other products have stopped working, Maxforce Platin is often the breakthrough that finally brings the population under control.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
         <li>Different mode of action — essential for resistance management</li>
-        <li>Extended moisture retention for long-lasting attractiveness</li>
-        <li>Professional-grade formula</li>
+        <li>Highly palatable bait matrix attracts even cautious cockroaches</li>
+        <li>Professional-grade Bayer formula</li>
         <li>Effective on all UK cockroach species</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Most expensive option</li>
+        <li>Best used as a rotation product alongside Advion</li>
+        <li>Professional packaging — less beginner-friendly</li>
         <li>Overkill for a minor cockroach sighting</li>
-        <li>Professional packaging</li>
       </ul>
 
-      <h2 id="best-value">Best Value — Combat Roach Killing Gel</h2>
+      <h2 id="best-kit">Best Kit — Pest Expert Cockroach Killer Kit</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Combat Roach Killing Gel Syringe"
+          name="Pest Expert Cockroach Killer Kit"
           rank={3}
-          rating={4.2}
-          features={[
-            'Fipronil-based gel — proven cockroach killer',
-            'Syringe applicator for precise placement',
-            'Excellent value at around £8',
-            'Kills through cascade effect like professional gels',
-          ]}
-          price="£8"
-          asin="B07BFQ1V5L"
-          bestFor="Best Budget"
-        />
-      </div>
-      <p>
-        Combat Roach Killing Gel uses fipronil, a well-established active ingredient that provides the same cascade effect as indoxacarb at a fraction of the price. Fipronil has been used in cockroach control for decades and has a strong track record of effectiveness against both German and Oriental cockroaches. At around £8, it is the most affordable gel syringe on our list.
-      </p>
-      <p>
-        The syringe applicator works just like the professional products — apply small dots in cracks, crevices, and harbourage points. The gel is palatable and cockroaches feed on it readily. The delayed action allows the poison to spread through the population via droppings, vomit, and cannibalism, just as with Advion and Maxforce.
-      </p>
-      <p>
-        For a budget-conscious first attempt at gel baiting, Combat is an excellent starting point. It may not have the same level of palatability as Advion or the moisture retention of Maxforce, but it delivers genuine cockroach colony elimination at a consumer-friendly price.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Excellent value — professional-style gel at consumer price</li>
-        <li>Proven fipronil active ingredient</li>
-        <li>Syringe applicator for precise placement</li>
-        <li>Cascade effect kills entire harbourages</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Slightly less palatable than Advion</li>
-        <li>May dry out faster than professional gels</li>
-        <li>Some cockroach populations show fipronil resistance</li>
-      </ul>
-
-      <h2 id="best-stations">Best Bait Stations — Rentokil Cockroach Killer</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Rentokil Cockroach Killer Bait Stations"
-          rank={4}
-          rating={4.0}
-          features={[
-            'Pre-filled enclosed bait stations',
-            'Safe for use in kitchens — no exposed bait',
-            'Place and forget — no refilling needed',
-            'Trusted Rentokil brand',
-          ]}
-          price="£6"
-          asin="B001MIVFGC"
-          bestFor="Best Bait Stations"
-        />
-      </div>
-      <p>
-        For people who want a simple, no-mess cockroach treatment, Rentokil bait stations are the most convenient option. Each station comes pre-filled with cockroach bait inside an enclosed plastic housing — place them in areas of cockroach activity and the insects enter the station, feed, and carry the poison back to the harbourage. No syringes, no exposed gel, no mess.
-      </p>
-      <p>
-        The enclosed design makes these particularly suitable for kitchens where you do not want exposed gel near food areas. Place stations behind the cooker, under the sink, inside the cupboard under the boiler, and near any pipe entry points. The stations are discreet and can be tucked out of sight while still being accessible to cockroaches that travel along edges and through gaps.
-      </p>
-      <p>
-        Bait stations are less effective than gel syringes for severe infestations because you cannot target specific cracks and harbourage points. But for a minor cockroach problem or as a monitoring tool, they are a clean, safe, and affordable option from a trusted brand.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Enclosed and mess-free</li>
-        <li>Safe for kitchen use — no exposed bait</li>
-        <li>Trusted Rentokil brand</li>
-        <li>Very affordable at around £6</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Cannot target specific harbourage points</li>
-        <li>Less effective than gel syringes for severe problems</li>
-        <li>Fixed bait amount</li>
-      </ul>
-
-      <h2 id="best-kit">Best Treatment Kit — Pest Expert Cockroach Kit</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Pest Expert Cockroach Treatment Kit"
-          rank={5}
           rating={4.3}
           features={[
-            'Multi-format kit: spray + gel + powder',
-            'Professional-strength cypermethrin spray for barrier treatment',
-            'Gel bait for harbourage targeting',
-            'Comprehensive approach for serious infestations',
+            "Complete cockroach treatment kit from a leading UK brand",
+            "Includes gel bait and residual spray",
+            "Covers both harbourage areas and foraging routes",
+            "Comprehensive approach for serious infestations",
           ]}
-          price="£28"
-          asin="B010E2GCIM"
-          bestFor="Best Treatment Kit"
+          price="Check price"
+          asin="SEARCH"
+          bestFor="Best Kit"
         />
       </div>
       <p>
-        For a serious cockroach infestation that needs a multi-pronged attack, the Pest Expert Kit provides everything in one package. The kit combines a cypermethrin spray (for barrier treatment of skirting boards, door frames, and pipe entry points), gel bait (for direct harbourage targeting), and insecticidal powder (for cracks and voids). This three-format approach mirrors professional pest control methodology.
+        For a serious cockroach infestation that needs a multi-pronged attack, the Pest Expert Cockroach Killer Kit provides everything in one package. The kit includes gel bait for targeting harbourage areas directly and a residual spray for treating foraging routes — this two-format approach mirrors professional pest control methodology and is far more effective than using either product alone.
       </p>
       <p>
-        The spray creates a residual barrier that kills cockroaches as they cross treated surfaces — useful for containing the infestation and preventing spread to adjacent rooms. The gel targets the nest itself through the cascade effect. The powder reaches into cracks and voids that spray and gel cannot penetrate. Together, these three methods provide comprehensive coverage.
+        The gel bait targets the nest itself through the cascade effect — cockroaches eat the gel, return to the harbourage, and spread the poison to others through contaminated droppings and cannibalism. The residual spray creates a barrier along foraging routes, skirting boards, door frames, and pipe entry points, killing cockroaches as they cross treated surfaces. Together, these two methods provide comprehensive coverage of both the colony and the routes cockroaches use to reach food and water.
+      </p>
+      <p>
+        As the UK's leading pest control brand, Pest Expert formulates products to professional standards. This kit is the ideal choice for anyone dealing with a moderate to severe cockroach problem who wants a complete treatment in a single purchase.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Comprehensive multi-format approach</li>
-        <li>Mirrors professional pest control methodology</li>
+        <li>Comprehensive gel + spray approach</li>
+        <li>Targets both harbourage and foraging routes</li>
         <li>Everything in one purchase</li>
-        <li>Professional-strength ingredients</li>
+        <li>Professional-strength from a trusted UK brand</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
         <li>Higher price than individual products</li>
-        <li>More effort to apply all three formats</li>
+        <li>More effort to apply both formats correctly</li>
         <li>May be overkill for a minor problem</li>
+      </ul>
+
+      <h2 id="best-spray">Best Spray — Rentokil Cockroach Killer Spray</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Rentokil Cockroach Killer Spray"
+          rank={4}
+          rating={4.0}
+          features={[
+            "Fast-acting contact insecticide for immediate knockdown",
+            "Use alongside gel bait for best results",
+            "Kills visible cockroaches on contact",
+            "Trusted Rentokil formulation",
+          ]}
+          price="Check price"
+          asin="SEARCH"
+          bestFor="Best Spray"
+        />
+      </div>
+      <p>
+        While gel bait is the primary weapon for colony elimination, there are times when you need to kill visible cockroaches immediately — and that is where Rentokil Cockroach Killer Spray excels. This fast-acting contact insecticide delivers immediate knockdown of cockroaches you can see, providing instant results while your gel bait works on the colony over the following days and weeks.
+      </p>
+      <p>
+        The ideal approach is to use this spray for immediate kill of visible cockroaches and as a barrier treatment around entry points, while relying on gel bait (Advion or Maxforce Platin) for long-term colony elimination via the cascade effect. Do not spray directly near gel placements, as the spray can repel cockroaches away from the gel — keep spray and gel in separate zones for maximum effectiveness.
+      </p>
+      <p>
+        Rentokil is one of the most trusted names in UK pest control, and their consumer spray formulation is designed for safe indoor use when applied according to the label. It is a valuable supporting product alongside gel bait for any cockroach treatment programme.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Fast-acting contact kill of visible cockroaches</li>
+        <li>Trusted Rentokil brand</li>
+        <li>Effective as a barrier treatment</li>
+        <li>Complements gel bait for a comprehensive approach</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Spray alone will not eliminate a colony</li>
+        <li>Must not be used near gel bait placements</li>
+        <li>No cascade effect — kills on contact only</li>
+      </ul>
+
+      <h2 id="best-budget">Best Budget — Zero In Crawling Insect Killer</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Zero In Crawling Insect Killer"
+          rank={5}
+          rating={4.0}
+          features={[
+            "Ready-to-use spray for cockroaches and crawling insects",
+            "Cypermethrin-based for fast contact kill",
+            "Residual protection on treated surfaces",
+            "Suitable for kitchens and bathrooms when surfaces are dry",
+          ]}
+          price="Check price"
+          asin="SEARCH"
+          bestFor="Best Budget"
+        />
+      </div>
+      <p>
+        Zero In Crawling Insect Killer is a versatile, ready-to-use spray that targets cockroaches, ants, and other crawling insects. The cypermethrin-based formula delivers fast contact kill and leaves a residual layer on treated surfaces that continues to kill crawling insects for weeks after application. It is the most affordable option on our list and widely available.
+      </p>
+      <p>
+        The spray is suitable for use in kitchens and bathrooms once surfaces are dry — spray along skirting boards, around pipe entry points, behind appliances, and along any routes where you have seen cockroach activity. The residual protection means cockroaches that cross treated surfaces later will also be killed, providing ongoing barrier protection.
+      </p>
+      <p>
+        For best results, use Zero In as a supporting product alongside a gel bait like Advion. The spray handles immediate knockdown and barrier protection while the gel works on eliminating the colony through the cascade effect. As a standalone product, it will kill individual cockroaches but is unlikely to eliminate an established colony on its own.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Most affordable option on our list</li>
+        <li>Ready-to-use — no mixing or preparation</li>
+        <li>Residual protection on treated surfaces</li>
+        <li>Versatile — works on multiple crawling insect species</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Spray alone will not eliminate a colony</li>
+        <li>Must wait for surfaces to dry before kitchen use</li>
+        <li>No cascade effect — contact kill only</li>
       </ul>
 
       <h2 id="buying-guide">How to Choose the Right Cockroach Gel</h2>

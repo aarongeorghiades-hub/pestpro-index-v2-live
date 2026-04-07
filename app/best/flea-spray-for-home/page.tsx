@@ -104,12 +104,11 @@ const faqSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Flea Sprays at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Indorex Defence' },
-  { id: 'best-professional', title: 'Best Professional — Acclaim Household Flea Spray' },
+  { id: 'best-overall', title: 'Best Overall — Indorex Defence 500ml' },
+  { id: 'best-twin', title: 'Best Twin Pack — Indorex Defence 2x500ml' },
+  { id: 'best-professional', title: 'Best Professional — Pest Expert Formula C+ 1L' },
   { id: 'best-fast', title: 'Best Fast-Acting — RIP Fleas Extra' },
-  { id: 'best-concentrate', title: 'Best Concentrate — Pest Expert Formula C' },
-  { id: 'best-natural', title: 'Best Natural — Johnson\'s Flea Spray' },
-  { id: 'best-value', title: 'Best Value — Bob Martin Flea Spray' },
+  { id: 'best-value', title: 'Best Value — Bob Martin Home Flea Spray' },
   { id: 'buying-guide', title: 'How to Choose the Right Flea Spray' },
   { id: 'application', title: 'How to Apply Flea Spray for Best Results' },
   { id: 'faq', title: 'Frequently Asked Questions' },
@@ -182,7 +181,7 @@ export default function BestFleaSprayPage() {
 
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Flea Sprays at a Glance</h2>
-      <p>Here is a quick comparison of our top six picks.</p>
+      <p>Here is a quick comparison of our top five picks.</p>
       <table>
         <thead>
           <tr>
@@ -194,16 +193,22 @@ export default function BestFleaSprayPage() {
         </thead>
         <tbody>
           <tr>
-            <td>Indorex Defence</td>
+            <td>Indorex Defence 500ml</td>
             <td>IGR — 12 months protection</td>
             <td>Best Overall</td>
             <td>~£15</td>
           </tr>
           <tr>
-            <td>Acclaim Household Flea Spray</td>
-            <td>IGR — professional formula</td>
+            <td>Indorex Defence 2x500ml</td>
+            <td>Twin pack — whole-home treatment</td>
+            <td>Best Twin Pack</td>
+            <td>~£25</td>
+          </tr>
+          <tr>
+            <td>Pest Expert Formula C+ 1L</td>
+            <td>Triple-action — 12-week residual</td>
             <td>Best Professional</td>
-            <td>~£14</td>
+            <td>~£18</td>
           </tr>
           <tr>
             <td>RIP Fleas Extra</td>
@@ -212,20 +217,8 @@ export default function BestFleaSprayPage() {
             <td>~£12</td>
           </tr>
           <tr>
-            <td>Pest Expert Formula C</td>
-            <td>Concentrate — large coverage</td>
-            <td>Best Concentrate</td>
-            <td>~£18</td>
-          </tr>
-          <tr>
-            <td>Johnson's Household Flea Spray</td>
-            <td>Plant-based formula</td>
-            <td>Best Natural</td>
-            <td>~£8</td>
-          </tr>
-          <tr>
-            <td>Bob Martin Flea Spray</td>
-            <td>Budget-friendly with IGR</td>
+            <td>Bob Martin Home Flea Spray</td>
+            <td>Trusted brand — easy aerosol</td>
             <td>Best Value</td>
             <td>~£7</td>
           </tr>
@@ -237,17 +230,17 @@ export default function BestFleaSprayPage() {
       </div>
 
       {/* Product 1 */}
-      <h2 id="best-overall">Best Overall — Indorex Defence Household Flea Spray</h2>
+      <h2 id="best-overall">Best Overall — Indorex Defence Flea Spray 500ml</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Indorex Defence Household Flea Spray"
+          name="Indorex Defence Flea Spray 500ml"
           rank={1}
           rating={4.5}
           features={[
             'Permethrin + pyriproxyfen IGR dual-action formula',
-            'Kills adult fleas on contact and prevents re-infestation',
+            '10-time Best Flea Product award winner',
             'Up to 12 months residual protection from one application',
-            'Used by vets and professional pest controllers across the UK',
+            'One can treats a 3-4 bedroom house',
           ]}
           price="£15"
           asin="B00GKHI2PW"
@@ -255,20 +248,20 @@ export default function BestFleaSprayPage() {
         />
       </div>
       <p>
-        Indorex Defence is the household flea spray recommended by more UK vets and pest controllers than any other product. It combines permethrin (a fast-acting insecticide that kills adult fleas on contact) with pyriproxyfen (an insect growth regulator that prevents flea eggs and larvae from developing for up to 12 months). This dual-action formula tackles both the visible adult fleas and the hidden 95% of the infestation — eggs, larvae, and pupae — in a single treatment.
+        Indorex Defence is the household flea spray recommended by more UK vets and pest controllers than any other product — and with 10 Best Flea Product awards to its name, the reputation is well-earned. It combines permethrin (a fast-acting insecticide that kills adult fleas on contact) with pyriproxyfen (an insect growth regulator that prevents flea eggs and larvae from developing for up to 12 months). This dual-action formula tackles both the visible adult fleas and the hidden 95% of the infestation — eggs, larvae, and pupae — in a single treatment.
       </p>
       <p>
         The 12-month residual protection is the standout feature. After spraying, the IGR continues to work in your carpet fibres for up to a year, preventing any eggs or larvae that you missed from ever developing into biting adults. This is why Indorex is so effective at breaking the flea lifecycle and preventing re-infestation — even if a few eggs survive the initial treatment, they cannot mature while the IGR is active.
       </p>
       <p>
-        One 500ml can treats approximately 79 square metres — enough for an average three-bedroom house. The aerosol provides even coverage when sprayed at arm's length from the floor, and the fine mist settles into carpet fibres where flea eggs and larvae are concentrated. After spraying, ventilate the room and allow it to dry for 1-2 hours before allowing pets and children back in.
+        One 500ml can treats a 3-4 bedroom house. The aerosol provides even coverage when sprayed at arm's length from the floor, and the fine mist settles into carpet fibres where flea eggs and larvae are concentrated. After spraying, ventilate the room and allow it to dry for 1-2 hours before allowing pets and children back in. For a standard household flea problem, this single can is the professional standard for treatment.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
         <li>Dual-action: kills adults and prevents egg/larva development</li>
         <li>Up to 12 months of residual IGR protection</li>
-        <li>Recommended by UK vets and pest controllers</li>
-        <li>One can covers an average 3-bed house</li>
+        <li>10-time award winner — the professional standard</li>
+        <li>One can covers a 3-4 bed house</li>
         <li>Fast-acting permethrin kills adult fleas on contact</li>
       </ul>
       <p><strong>Cons:</strong></p>
@@ -279,61 +272,102 @@ export default function BestFleaSprayPage() {
       </ul>
 
       {/* Product 2 */}
-      <h2 id="best-professional">Best Professional — Acclaim Household Flea Spray</h2>
+      <h2 id="best-twin">Best Twin Pack — Indorex Defence Flea Spray 2x500ml</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Acclaim Household Flea Spray"
+          name="Indorex Defence Flea Spray 2x500ml Twin Pack"
           rank={2}
+          rating={4.5}
+          features={[
+            'Same award-winning Indorex formula — two full cans',
+            'Complete whole-home treatment with enough for follow-up',
+            'Ideal for larger homes or recurring infestations',
+            'Better value per ml than buying single cans',
+          ]}
+          price="£25"
+          asin="B07D19P8S2"
+          bestFor="Best Twin Pack"
+        />
+      </div>
+      <p>
+        The Indorex twin pack is the smart buy for larger homes or anyone dealing with a recurring flea problem. You get two full 500ml cans of the same award-winning Indorex Defence formula — enough to treat a large property thoroughly with spare left over for a follow-up application if needed. Buying the twin pack also works out cheaper per millilitre than purchasing two single cans separately.
+      </p>
+      <p>
+        Two cans gives you the flexibility to treat every room comprehensively on day one, and then re-treat high-traffic pet areas 2-3 weeks later if you are still seeing fleas emerging from pupae. This two-pass approach is exactly what professional pest controllers recommend for severe infestations, and having both cans ready from the start means you will not lose momentum waiting for a second order to arrive.
+      </p>
+      <p>
+        For households with multiple pets, large carpeted areas, or a history of seasonal flea problems, the twin pack provides peace of mind. The second can also serves as insurance — if your initial treatment does not fully break the cycle (often because flea pupae are resistant to all sprays and continue hatching for weeks), you have immediate backup without needing to reorder.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Two cans for complete whole-home coverage</li>
+        <li>Better value per ml than single cans</li>
+        <li>Spare can for follow-up treatment or high-traffic areas</li>
+        <li>Same proven 12-month IGR protection per application</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Higher upfront cost than a single can</li>
+        <li>May be more than needed for a small, localised problem</li>
+        <li>Same aerosol format — still requires room ventilation</li>
+      </ul>
+
+      {/* Product 3 */}
+      <h2 id="best-professional">Best Professional — Pest Expert Formula C+ Flea Killer Spray 1L</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Pest Expert Formula C+ Flea Killer Spray 1L"
+          rank={3}
           rating={4.4}
           features={[
-            'Professional-strength IGR formula (S-methoprene)',
-            'Kills fleas, eggs, and larvae in one application',
-            'Up to 12 months protection',
-            'Trusted by professional pest controllers',
+            'Triple-action: cypermethrin, pyriproxyfen IGR, and natural pyrethrum',
+            'Maximum-strength formula from a leading UK pest control brand',
+            '12-week residual protection on treated surfaces',
+            'Water-based — safe for carpets, furnishings, and pet bedding once dry',
           ]}
-          price="£14"
-          asin="B001MIVFGC"
+          price="£18"
+          asin="B09GYGC5FL"
           bestFor="Best Professional-Grade"
         />
       </div>
       <p>
-        Acclaim is the professional alternative to Indorex, using a different IGR — S-methoprene — combined with a permethrin contact killer. Many professional pest controllers prefer Acclaim because it is specifically formulated for use in domestic environments with pets, and the S-methoprene IGR has been shown in studies to be particularly effective at preventing flea larval development in carpet fibres.
+        Pest Expert Formula C+ is the most comprehensively formulated flea spray on our list. It combines three active ingredients — cypermethrin for long-lasting residual kill, pyriproxyfen IGR to prevent egg and larval development, and natural pyrethrum for immediate knockdown. This triple-action approach means it tackles every stage of the flea lifecycle: adults die on contact from the pyrethrum, the cypermethrin continues killing for weeks after application, and the IGR ensures no new adults develop from surviving eggs or larvae.
       </p>
       <p>
-        The coverage is excellent — a single 500ml can treats up to 80 square metres of floor space. The aerosol produces a fine, even mist that penetrates deep into carpet pile where flea eggs and larvae are most concentrated. Like Indorex, it provides up to 12 months of residual protection from the IGR, meaning a single application during flea season should last until the following year.
+        The water-based formula is a significant advantage over solvent-based aerosols. It is safe for use on carpets, soft furnishings, curtains, and pet bedding once dry, and it does not leave the strong chemical odour that many aerosol sprays produce. The 1-litre bottle provides generous coverage, and the 12-week residual protection means you get sustained control throughout the peak of flea season.
       </p>
       <p>
-        Acclaim has been on the UK market for decades and has built a strong reputation among both pest professionals and pet owners. If you have used Indorex before and found that it did not fully resolve your flea problem, switching to Acclaim (which uses a different IGR) can sometimes provide better results — different flea populations may respond better to different growth regulators.
+        This is the product to choose when you want a professional-grade treatment that goes beyond what a standard aerosol offers. The inclusion of an IGR alongside the contact and residual insecticides makes Formula C+ a genuine all-in-one solution — no need to layer multiple products for comprehensive coverage. For severe infestations or homes where previous treatments have failed, this is the step up.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Professional-grade S-methoprene IGR</li>
-        <li>12 months of residual protection</li>
-        <li>Excellent 80 sq m coverage per can</li>
-        <li>Decades of proven effectiveness in UK homes</li>
+        <li>Triple-action formula covers all flea lifecycle stages</li>
+        <li>Includes IGR — prevents egg and larval development</li>
+        <li>Water-based and safe for soft furnishings once dry</li>
+        <li>12-week residual protection from a single application</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Slightly harder to find in shops than Indorex</li>
-        <li>Aerosol format requires room ventilation</li>
-        <li>Must remove pets during treatment</li>
+        <li>Shorter residual than Indorex (12 weeks vs 12 months)</li>
+        <li>Requires a trigger sprayer or pump sprayer</li>
+        <li>Higher price than basic aerosol alternatives</li>
       </ul>
 
-      {/* Product 3 */}
-      <h2 id="best-fast">Best Fast-Acting — RIP Fleas Extra</h2>
+      {/* Product 4 */}
+      <h2 id="best-fast">Best Fast-Acting — RIP Fleas Extra Household Spray</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="RIP Fleas Extra Household Flea Spray"
-          rank={3}
-          rating={4.3}
+          name="RIP Fleas Extra Household Spray"
+          rank={4}
+          rating={4.2}
           features={[
-            'Fast knockdown of adult fleas plus IGR',
-            'Permethrin + pyriproxyfen formula',
-            'Works on carpets, soft furnishings, and pet bedding',
-            'Treats up to 50 sq m per can',
+            'Fast-acting residual flea spray for carpets and furnishings',
+            'Contains permethrin and an IGR for long-lasting protection',
+            'Popular choice for homes with cats and dogs',
+            'Works on carpets, furniture, and pet bedding',
           ]}
           price="£12"
-          asin="B004US3F1Y"
+          asin="SEARCH"
           bestFor="Best Fast-Acting"
         />
       </div>
@@ -341,10 +375,10 @@ export default function BestFleaSprayPage() {
         RIP Fleas Extra is formulated for rapid knockdown — it kills adult fleas within minutes of application while also containing an IGR for long-term control. This makes it the best choice when you are dealing with an active infestation and need immediate relief from biting fleas. The fast-acting permethrin component provides that satisfying "kill on contact" effect that gives you confidence the treatment is working.
       </p>
       <p>
-        The combined permethrin + pyriproxyfen formula is essentially the same dual-action approach used by Indorex, just in a different brand. RIP Fleas Extra can be sprayed on carpets, rugs, soft furnishings, and pet bedding (once dry, it is safe for pets). The treatment provides several months of residual protection, though the manufacturer's claims are somewhat less than the 12-month protection offered by Indorex and Acclaim.
+        The combined permethrin + IGR formula is essentially the same dual-action approach used by Indorex, just from a different brand. RIP Fleas Extra can be sprayed on carpets, rugs, soft furnishings, and pet bedding (once dry, it is safe for pets). It is a particularly popular choice among cat and dog owners who want a trusted product that provides both immediate relief and ongoing protection against re-infestation.
       </p>
       <p>
-        At around £12, it slots in below the premium options and offers genuine value, particularly for treating specific areas rather than an entire house. The 600ml can treats approximately 50 square metres, which is enough for 2-3 rooms — ideal if your flea problem is localised to the rooms where your pet spends the most time.
+        At around £12, it slots in below the premium options and offers genuine value, particularly for treating specific areas rather than an entire house. The residual protection lasts several months, making it effective through the peak of flea season. If you need fast results at a reasonable price, RIP Fleas Extra delivers on both counts.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
@@ -355,131 +389,49 @@ export default function BestFleaSprayPage() {
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Shorter residual protection than Indorex/Acclaim</li>
-        <li>Smaller coverage area (50 sq m)</li>
+        <li>Shorter residual protection than Indorex</li>
+        <li>Smaller coverage area than premium options</li>
         <li>May need 2 cans for a whole house</li>
       </ul>
 
-      {/* Product 4 */}
-      <h2 id="best-concentrate">Best Concentrate — Pest Expert Formula C</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Pest Expert Formula C Flea Killer Spray"
-          rank={4}
-          rating={4.3}
-          features={[
-            'Professional-strength cypermethrin concentrate',
-            'Dilute with water — massive coverage area',
-            'Long-lasting residual action on hard and soft surfaces',
-            'Also effective on bed bugs, cockroaches, and ants',
-          ]}
-          price="£18"
-          asin="B073JPVRFB"
-          bestFor="Best Concentrate"
-        />
-      </div>
-      <p>
-        For large homes, severe infestations, or anyone who wants maximum coverage per pound, Pest Expert Formula C concentrate is the most cost-effective option. A single 1-litre bottle diluted with water provides enough solution to treat a large house multiple times over — far more coverage than any aerosol can. The cypermethrin formula provides excellent residual protection on both hard floors and carpets.
-      </p>
-      <p>
-        The main trade-off is that you need a pump sprayer (not included) and the concentrate needs to be mixed with water. This is slightly more effort than pressing the button on an aerosol, but the result is a more thorough, controllable treatment. You can direct the spray exactly where you need it, adjust the spray pattern, and cover areas that an aerosol would struggle to reach — such as under heavy furniture and inside built-in cupboards.
-      </p>
-      <p>
-        Note that this is a cypermethrin product without an IGR, so it does not prevent egg and larval development in the same way as Indorex or Acclaim. For the most comprehensive treatment, use Formula C for the residual barrier and consider combining it with an IGR aerosol for the carpet areas where flea eggs are concentrated.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Maximum coverage — treats a large house multiple times</li>
-        <li>Professional-strength cypermethrin</li>
-        <li>Long-lasting residual protection</li>
-        <li>Multi-pest: also effective on other crawling insects</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Requires a pump sprayer (not included)</li>
-        <li>No IGR — does not prevent egg development</li>
-        <li>Needs mixing — more effort than aerosol</li>
-      </ul>
-
       {/* Product 5 */}
-      <h2 id="best-natural">Best Natural — Johnson's Household Flea Spray</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Johnson's Household Flea Spray"
-          rank={5}
-          rating={3.9}
-          features={[
-            'Plant-based active ingredients',
-            'Lower toxicity — safer around children and pets',
-            'Pleasant scent — no harsh chemical odour',
-            'Kills fleas, ants, and other crawling insects',
-          ]}
-          price="£8"
-          asin="B07PPWJH21"
-          bestFor="Best Natural"
-        />
-      </div>
-      <p>
-        For households with concerns about synthetic chemicals — perhaps because of young children, sensitive pets, or personal preference — Johnson's Household Flea Spray offers a plant-based alternative. It uses naturally derived insecticides that kill fleas on contact without the strong chemical odour associated with pyrethroid sprays. The pleasant scent is a genuine advantage in living spaces where you want to treat without the room smelling like a chemical plant for hours afterwards.
-      </p>
-      <p>
-        The trade-off is effectiveness. Natural sprays kill fleas on direct contact but typically lack the powerful residual action and IGR components of synthetic products. This means you will need to reapply more frequently and may need to combine the natural spray with other methods (thorough vacuuming, hot-washing pet bedding, diatomaceous earth in cracks) for comprehensive flea control.
-      </p>
-      <p>
-        For a minor flea problem — perhaps you have found a few fleas after a summer walk with your dog — a natural spray combined with diligent vacuuming and pet treatment may be all you need. For a serious infestation with fleas jumping off carpets, a synthetic IGR spray will be significantly more effective.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Plant-based formula with lower toxicity</li>
-        <li>Pleasant scent, no harsh chemical odour</li>
-        <li>Safe for use in sensitive environments</li>
-        <li>Multi-pest: also kills ants and crawling insects</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Weaker residual action than synthetic products</li>
-        <li>No IGR — does not prevent egg development</li>
-        <li>Not sufficient for serious infestations</li>
-      </ul>
-
-      {/* Product 6 */}
-      <h2 id="best-value">Best Value — Bob Martin Flea Spray</h2>
+      <h2 id="best-value">Best Value — Bob Martin Home Flea Spray</h2>
       <div className="not-prose my-6">
         <ProductCard
           name="Bob Martin Home Flea Spray"
-          rank={6}
+          rank={5}
           rating={4.0}
           features={[
-            'Budget-friendly price with IGR included',
-            'Kills fleas and prevents re-infestation',
-            'Ready-to-use aerosol spray',
-            'Trusted pet care brand',
+            'Trusted UK pet brand household flea spray',
+            'Kills fleas and larvae in carpets, upholstery, and pet bedding',
+            'Easy-to-use aerosol format',
+            'Available at most pet shops and online',
           ]}
           price="£7"
-          asin="B003ZG7CMA"
+          asin="SEARCH"
           bestFor="Best Budget"
         />
       </div>
       <p>
-        Bob Martin Home Flea Spray proves that you do not need to spend a fortune to get effective flea control with an IGR. At around £7, it is the most affordable IGR-containing flea spray on our list — and the inclusion of an insect growth regulator at this price point is genuinely impressive. The IGR disrupts the flea lifecycle by preventing eggs and larvae from developing, while the contact insecticide deals with adult fleas immediately.
+        Bob Martin is one of the most recognised pet care brands in the UK, and their Home Flea Spray offers an affordable, accessible option for tackling household fleas. Available at most pet shops, supermarkets, and online, it is the product many pet owners reach for first because of the familiar brand name and straightforward aerosol format — shake, spray, and let dry.
       </p>
       <p>
-        Bob Martin is a well-established UK pet care brand, and their flea spray is available in most supermarkets and pet shops alongside Amazon. The ready-to-use aerosol format is straightforward — spray onto carpets, soft furnishings, and pet bedding areas, then allow to dry before re-entering the room. Coverage per can is slightly less than the premium products, so you may need two cans for a larger house.
+        The spray kills fleas and larvae on contact in carpets, upholstery, and pet bedding areas. The easy-to-use aerosol delivers even coverage without the need for mixing or additional equipment. At around £7, it is the most budget-friendly option on our list, making it an accessible starting point for pet owners dealing with their first flea problem.
       </p>
       <p>
-        For budget-conscious pet owners dealing with a flea problem, Bob Martin represents the best balance of price and effectiveness. The IGR component elevates it well above basic contact-only sprays, and the trusted brand name provides reassurance.
+        For budget-conscious pet owners who want a trusted brand at a low price, Bob Martin gets the job done for minor flea problems. If you are dealing with a more severe or persistent infestation, however, stepping up to an IGR-containing spray like Indorex will provide significantly longer-lasting protection by breaking the flea lifecycle at the egg and larval stage.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Includes IGR at a budget-friendly price</li>
-        <li>Trusted Bob Martin brand</li>
+        <li>Trusted Bob Martin brand — widely available</li>
+        <li>Very affordable at around £7</li>
         <li>Easy-to-use aerosol format</li>
-        <li>Widely available in supermarkets</li>
+        <li>Kills fleas and larvae on contact</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
         <li>Less coverage per can than premium sprays</li>
-        <li>Shorter IGR duration than Indorex/Acclaim</li>
+        <li>Shorter residual protection than IGR sprays</li>
         <li>May need 2 cans for a larger house</li>
       </ul>
 

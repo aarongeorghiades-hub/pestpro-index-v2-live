@@ -130,12 +130,11 @@ const faqSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Mouse Repellents at a Glance' },
-  { id: 'steel-wool', title: 'Best Overall — Xcluder Steel Wool Kit' },
-  { id: 'expanding-foam', title: 'Best for Large Gaps — Expanding Foam' },
-  { id: 'peppermint-spray', title: 'Best Natural — Peppermint Oil Spray' },
-  { id: 'copper-mesh', title: 'Best for Exterior — Copper Mesh' },
-  { id: 'draught-excluder', title: 'Best for Door Gaps — Draught Excluder' },
-  { id: 'air-brick-covers', title: 'Best for Air Bricks — Steel Mesh Covers' },
+  { id: 'best-ultrasonic', title: 'Best Overall — EcoMyLife Ultrasonic Repeller' },
+  { id: 'best-spray', title: 'Best Spray — Zero In Peppermint Spray' },
+  { id: 'best-premium-spray', title: 'Best Premium Spray — RepellShield 250ml' },
+  { id: 'best-battery', title: 'Best Battery-Powered — Pestbye Repeller' },
+  { id: 'best-natural', title: 'Best Natural — Nikura Peppermint Oil' },
   { id: 'buying-guide', title: 'Mouse Proofing Buying Guide' },
   { id: 'faq', title: 'Frequently Asked Questions' },
 ];
@@ -199,7 +198,7 @@ export default function BestMouseRepellentPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">Mouse Repellents at a Glance</h2>
       <p>
-        Below is a quick comparison of our six recommended products. Each tackles a different aspect of mouse prevention, and for the best results you should combine several of them to cover every potential entry point around your property.
+        Below is a quick comparison of our five recommended mouse repellent products. Each takes a different approach to deterring mice, and for the best results you should combine repellents with physical proofing to cover every potential entry point around your property.
       </p>
       <table>
         <thead>
@@ -207,45 +206,33 @@ export default function BestMouseRepellentPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Xcluder Steel Wool Mouse Proofing Kit</td>
-            <td>Steel wool</td>
+            <td>EcoMyLife Ultrasonic Pest Repeller 2 Pack</td>
+            <td>Ultrasonic plug-in</td>
             <td>Best Overall</td>
-            <td>~&pound;12</td>
           </tr>
           <tr>
-            <td>Expanding Foam Mouse Gap Filler</td>
-            <td>Expanding foam</td>
-            <td>Best for Large Gaps</td>
-            <td>~&pound;8</td>
+            <td>Zero In Mouse Repellent Peppermint Spray</td>
+            <td>Peppermint spray</td>
+            <td>Best Spray</td>
           </tr>
           <tr>
-            <td>Peppermint Oil Mouse Repellent Spray</td>
-            <td>Natural spray</td>
-            <td>Best Natural Option</td>
-            <td>~&pound;10</td>
+            <td>RepellShield Rat &amp; Mouse Repellent Spray 250ml</td>
+            <td>Peppermint spray</td>
+            <td>Best Premium Spray</td>
           </tr>
           <tr>
-            <td>Copper Mesh Mouse Proofing</td>
-            <td>Copper mesh</td>
-            <td>Best for Exterior Gaps</td>
-            <td>~&pound;14</td>
+            <td>Pestbye Battery Operated Spider &amp; Mouse Repeller</td>
+            <td>Ultrasonic battery-powered</td>
+            <td>Best Battery-Powered</td>
           </tr>
           <tr>
-            <td>Draught Excluder Brush Strips</td>
-            <td>Brush strip</td>
-            <td>Best for Door Gaps</td>
-            <td>~&pound;6</td>
-          </tr>
-          <tr>
-            <td>Mouse-Proof Air Brick Covers</td>
-            <td>Steel mesh cover</td>
-            <td>Best for Air Bricks</td>
-            <td>~&pound;4</td>
+            <td>Nikura Peppermint Essential Oil 10ml</td>
+            <td>Essential oil</td>
+            <td>Best Natural</td>
           </tr>
         </tbody>
       </table>
@@ -255,128 +242,86 @@ export default function BestMouseRepellentPage() {
       </div>
 
       {/* Product 1 */}
-      <h2 id="steel-wool">Best Overall &mdash; Xcluder Steel Wool Mouse Proofing Kit</h2>
+      <h2 id="best-ultrasonic">Best Overall &mdash; EcoMyLife Ultrasonic Pest Repeller 2 Pack</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Xcluder Steel Wool Mouse Proofing Kit"
+          name="EcoMyLife Ultrasonic Pest Repeller 2 Pack"
           rank={1}
-          rating={4.5}
+          rating={4.3}
           features={[
-            'Stainless steel wool that mice cannot chew through',
-            'Easy to push into gaps around pipes and cables',
-            'Long-lasting — won\'t rust or degrade',
-            'The single most effective mouse prevention product',
+            'Plug-in ultrasonic repeller — no chemicals, no traps',
+            '2-pack for treating two rooms simultaneously',
+            'Covers up to 80-120m² per unit',
+            'Safe around children and pets',
           ]}
-          price="£12"
-          asin="B01B3QXQMI"
+          price="£15"
+          asin="B0B8VQ6C76"
           bestFor="Best Overall"
         />
       </div>
       <p>
-        Xcluder steel wool takes our top spot because it addresses the root cause of mouse infestations &mdash; the gaps they use to get inside. This is not ordinary steel wool from the supermarket cleaning aisle. Xcluder is made from stainless steel fibres specifically designed to resist rodent gnawing. Regular steel wool can be pulled apart by a determined mouse over time, and it rusts quickly in damp conditions. Xcluder&apos;s stainless steel construction means it will not corrode, will not degrade, and mice simply cannot chew through it. Professional pest controllers across the UK use this exact approach &mdash; packing steel wool into gaps &mdash; as the primary method of mouse proofing.
+        Plug-in ultrasonic repeller emitting frequencies that disorient rodents without harm to humans or pets. The EcoMyLife 2-pack allows you to treat two rooms simultaneously &mdash; kitchen and utility room, or loft conversion and garage &mdash; providing broader coverage from a single purchase. Each unit covers up to 80-120m&sup2;, which is sufficient for most standard UK rooms. No chemicals, no traps, and no ongoing bait costs make this a genuinely low-maintenance approach to mouse deterrence.
       </p>
       <p>
-        Using it is straightforward. Identify every gap around your property where a pipe, cable, or conduit enters the building. Pull off a section of wool, roll it into a tight plug, and push it firmly into the gap using a screwdriver or the end of a pencil. Pack it tightly &mdash; loose steel wool is less effective because mice can pull at it and create a gap. For the best results, combine steel wool with a bead of expanding foam or silicone sealant over the top, which holds the wool firmly in place and creates a double barrier. Focus on the gaps around boiler flues, water pipes under the kitchen sink, central heating pipes entering from the floor, and any cable entry points on exterior walls.
+        Simply plug each unit into a mains socket and it begins emitting high-frequency sound waves that are inaudible to humans but deeply unpleasant for rodents. The frequencies cycle through different patterns to reduce the risk of mice becoming habituated to a single tone. Position the units in rooms where you have seen signs of mouse activity &mdash; droppings, gnaw marks, or scratching sounds &mdash; and ensure the sound path is not blocked by large furniture, as ultrasonic waves do not penetrate solid objects or travel around corners effectively.
       </p>
       <p>
-        At around &pound;12, the Xcluder kit provides enough material to proof a typical three-bedroom house. Compare that to the cost of a professional pest control callout (&pound;100&ndash;&pound;250 for a mouse treatment) or the ongoing expense of traps and poison, and proofing with steel wool is extraordinarily cost-effective. It is a one-time investment that provides permanent protection &mdash; once a gap is properly sealed, it stays sealed. This is why every professional pest controller will tell you that proofing is the most important step in mouse control, and steel wool is the single most useful product in their toolkit.
+        An important caveat: the scientific evidence for ultrasonic pest repellers remains mixed. Some users report noticeable reductions in mouse activity, while independent studies have found limited long-term effectiveness. We recommend using ultrasonic repellers as one layer in a broader prevention strategy &mdash; alongside physical proofing and traps &mdash; rather than relying on them as a standalone solution. That said, for a chemical-free, set-and-forget deterrent that requires zero maintenance, the EcoMyLife 2-pack is the best option in the category.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Mice cannot chew through stainless steel fibres</li>
-        <li>Will not rust, corrode, or degrade over time</li>
-        <li>Easy to cut and push into any size gap</li>
-        <li>Enough in one kit to proof a typical house</li>
-        <li>Used by professional pest controllers daily</li>
+        <li>Chemical-free and completely safe around children and pets</li>
+        <li>2-pack covers two rooms from a single purchase</li>
+        <li>No ongoing costs &mdash; plug in and leave</li>
+        <li>Covers up to 80-120m&sup2; per unit</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Must be packed tightly &mdash; loose wool is less effective</li>
-        <li>Best combined with sealant for a permanent fix</li>
-        <li>Not suitable for very large gaps on its own</li>
+        <li>Mixed scientific evidence for ultrasonic repellers</li>
+        <li>Ultrasonic waves do not pass through walls or solid furniture</li>
+        <li>Mice may habituate to the frequencies over time</li>
+        <li>Not recommended as a standalone solution for active infestations</li>
       </ul>
 
       {/* Product 2 */}
-      <h2 id="expanding-foam">Best for Large Gaps &mdash; Expanding Foam Mouse Gap Filler</h2>
+      <h2 id="best-spray">Best Spray &mdash; Zero In Mouse Repellent Peppermint Spray</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Expanding Foam Mouse Gap Filler"
+          name="Zero In Mouse Repellent Peppermint Spray"
           rank={2}
-          rating={4.2}
+          rating={4.0}
           features={[
-            'Fills larger gaps around pipes and under units',
-            'Sets hard to prevent gnawing',
-            'Paintable once cured',
-            'Combine with steel wool for maximum effectiveness',
+            'Natural peppermint oil formula deters mice from treated areas',
+            'Apply to entry points, under sinks and along skirting boards',
+            'Non-toxic and safe around children and pets',
+            'Ready-to-use spray bottle — no dilution needed',
           ]}
           price="£8"
           asin="SEARCH"
-          bestFor="Best for Large Gaps"
+          bestFor="Best Spray"
         />
       </div>
       <p>
-        When gaps are too large for steel wool alone &mdash; such as the space around a waste pipe under the kitchen sink, a hole where old cable trunking has been removed, or a gap beneath a kitchen unit &mdash; expanding foam is the practical solution. The foam expands to fill irregularly shaped voids and sets hard within a few hours, creating a solid barrier that is difficult for mice to gnaw through. Once cured, it can be trimmed with a knife and painted to match the surrounding surface, making for a neat and professional-looking finish.
+        Natural peppermint oil spray that deters mice from entering treated areas. The Zero In spray is a ready-to-use formula &mdash; no dilution, no mixing, just point and spray. Apply to entry points, under sinks, along skirting boards, behind kitchen appliances, and anywhere else you have seen signs of mouse activity. The strong peppermint scent is pleasant for humans but thought to overwhelm the sensitive olfactory receptors of mice, making treated areas uncomfortable for them to occupy.
       </p>
       <p>
-        There is an important caveat, however. Standard expanding foam on its own is not completely mouse-proof. A determined mouse can gnaw through cured foam over time, particularly if it can detect warmth or food odours coming through the barrier. The most effective approach &mdash; and the one used by professional pest controllers &mdash; is to <strong>combine expanding foam with steel wool</strong>. Pack steel wool into the gap first, then apply expanding foam over the top. The steel wool provides the gnaw-proof core, while the foam fills the remaining voids, holds the wool in place, and creates a smooth, sealed surface. This combination is virtually impenetrable to mice and is the gold standard for proofing larger gaps.
+        The non-toxic formula is completely safe around children and pets, which makes it a practical choice for kitchens, utility rooms, and areas where you would not want to place poison or snap traps. The spray leaves no staining or residue on most surfaces, though it is worth testing on a small area first on delicate materials. For best results, apply every 2-3 days to maintain scent strength, as the peppermint oil dissipates naturally over time.
       </p>
       <p>
-        Application is simple with the included nozzle. Shake the can, apply the foam in short bursts (it expands significantly, so use less than you think), and allow it to cure for at least four hours before trimming. Wear gloves &mdash; uncured expanding foam is extremely difficult to remove from skin and clothing. At around &pound;8 per can, a single tin will fill numerous gaps around a typical property, making it excellent value for the coverage it provides.
+        As with all peppermint-based repellents, the scientific evidence for long-term effectiveness is limited. The spray works best as a supporting measure alongside physical proofing &mdash; seal entry points with steel wool or copper mesh first, then apply the spray as an additional deterrent layer. On its own, peppermint spray is unlikely to resolve an established mouse infestation. But as part of a combined approach, it adds one more barrier that mice must overcome.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Fills large, irregular gaps that steel wool cannot cover alone</li>
-        <li>Sets hard and can be trimmed and painted</li>
-        <li>Very affordable at around &pound;8 per can</li>
-        <li>Easy to apply with no specialist tools needed</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Not fully mouse-proof on its own &mdash; combine with steel wool</li>
-        <li>Messy to apply &mdash; wear gloves and protect surfaces</li>
-        <li>Cannot be repositioned once it begins to expand</li>
-      </ul>
-
-      {/* Product 3 */}
-      <h2 id="peppermint-spray">Best Natural Option &mdash; Peppermint Oil Mouse Repellent Spray</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Peppermint Oil Mouse Repellent Spray"
-          rank={3}
-          rating={3.7}
-          features={[
-            'Pure peppermint oil formula',
-            'Pleasant scent for humans',
-            'Non-toxic and safe around children',
-            'Limited scientific evidence but popular choice',
-          ]}
-          price="£10"
-          asin="SEARCH"
-          bestFor="Best Natural Option"
-        />
-      </div>
-      <p>
-        Peppermint oil is by far the most popular natural mouse repellent, and it is the product most people search for when they want a chemical-free approach. The theory is straightforward: mice have a highly sensitive sense of smell, and the intense menthol in concentrated peppermint oil is thought to overwhelm their olfactory receptors, making treated areas unpleasant for them to occupy. There is some anecdotal support for this &mdash; many homeowners report that mice seem to avoid areas where peppermint oil has been freshly applied &mdash; and the spray is genuinely pleasant-smelling, non-toxic, and completely safe around children and pets.
-      </p>
-      <p>
-        However, <strong>we need to be honest about the evidence</strong>. Scientific research on peppermint oil as a mouse repellent is limited and inconclusive. Laboratory studies have shown that high concentrations of peppermint oil can have a short-term deterrent effect, but the effect diminishes rapidly as the scent fades &mdash; typically within 24 to 48 hours. In real-world conditions, where mice are motivated by hunger, warmth, and established nesting sites, there is no reliable evidence that peppermint oil provides lasting protection against determined mice. The British Pest Control Association does not list peppermint oil among its recommended mouse prevention methods.
-      </p>
-      <p>
-        That said, peppermint oil spray can play a supporting role as part of a broader prevention strategy. Use it alongside physical proofing &mdash; seal all entry points with steel wool and copper mesh first, then apply peppermint spray to areas where you have seen signs of mouse activity as an additional deterrent. On its own, it is unlikely to solve a mouse problem. But as a supplementary measure, combined with proper proofing and traps, it adds one more layer of discouragement. Apply it every two to three days to maintain the scent strength, focusing on entry points, skirting boards, and areas behind appliances.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>100% natural and non-toxic</li>
-        <li>Safe around children and pets</li>
+        <li>Ready-to-use spray &mdash; no dilution required</li>
+        <li>Non-toxic and safe around children and pets</li>
         <li>Pleasant peppermint scent for humans</li>
-        <li>Easy to spray in targeted areas</li>
+        <li>Easy to apply to targeted areas</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Limited scientific evidence of effectiveness</li>
-        <li>Scent fades within 24&ndash;48 hours &mdash; needs frequent reapplication</li>
-        <li>Not a standalone solution for active infestations</li>
-        <li>Will not stop determined, hungry mice</li>
+        <li>Limited scientific evidence for peppermint oil as a mouse repellent</li>
+        <li>Scent fades within 2-3 days &mdash; needs regular reapplication</li>
+        <li>Not effective as a standalone solution for active infestations</li>
       </ul>
 
       <div className="not-prose">
@@ -385,129 +330,129 @@ export default function BestMouseRepellentPage() {
         </Callout>
       </div>
 
-      {/* Product 4 */}
-      <h2 id="copper-mesh">Best for Exterior Gaps &mdash; Copper Mesh Mouse Proofing</h2>
+      {/* Product 3 */}
+      <h2 id="best-premium-spray">Best Premium Spray &mdash; RepellShield Rat &amp; Mouse Repellent Spray 250ml</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Copper Mesh Mouse Proofing"
-          rank={4}
-          rating={4.4}
+          name="RepellShield Rat & Mouse Repellent Spray 250ml"
+          rank={3}
+          rating={4.2}
           features={[
-            'Copper won\'t rust like steel wool',
-            'Maintains shape when packed into gaps',
-            'Ideal for external air bricks and weep holes',
-            'Rodents cannot chew through copper',
+            'German-made peppermint oil mouse repellent spray',
+            'Non-staining formula — safe for kitchen units and loft spaces',
+            'Family and pet safe',
+            'Best seller in the repellent spray category',
           ]}
-          price="£14"
+          price="£12"
           asin="SEARCH"
-          bestFor="Best for Exterior Gaps"
+          bestFor="Best Premium Spray"
         />
       </div>
       <p>
-        Copper mesh serves the same purpose as steel wool &mdash; it is packed into gaps to create a physical barrier that mice cannot chew through &mdash; but it has one critical advantage for exterior use: <strong>copper does not rust</strong>. Standard steel wool, even stainless steel varieties, can eventually corrode when exposed to persistent moisture, rain, and the damp British climate. Copper mesh is completely immune to rust and corrosion, which makes it the superior choice for any gap that is exposed to the elements. Air brick openings, weep holes in cavity walls, gaps around external pipe entries, and spaces under fascia boards are all prime candidates for copper mesh proofing.
+        German-made peppermint oil mouse repellent spray. RepellShield is a best seller in the repellent spray category, and it earns that position through a well-formulated, non-staining product that is safe for use throughout the home. Apply indoors to protect kitchen units, loft spaces, garages, and car engines from mouse nesting. The 250ml bottle provides enough spray for thorough coverage of a typical property, focusing on the areas where mice are most likely to travel and nest.
       </p>
       <p>
-        Copper mesh also holds its shape better than steel wool when packed into a gap. The slightly stiffer structure of woven copper means that once you push it into a hole, it stays put without sagging, compressing, or working loose over time. This structural stability makes it particularly effective for vertical gaps and overhead positions where steel wool might gradually sag under its own weight. Mice, rats, and squirrels are all unable to chew through copper &mdash; the metal is too hard for rodent teeth, and the woven mesh construction means they cannot gain purchase to pull it apart.
+        The non-staining formula is a practical advantage over cheaper peppermint sprays. You can apply RepellShield directly to kitchen unit interiors, under-sink areas, loft insulation surrounds, and even inside the engine bay of a car (mice nesting in car engines is a surprisingly common problem in rural and semi-rural UK areas) without worrying about marks or residue. The spray is family and pet safe, making it suitable for use in homes with young children, cats, and dogs.
       </p>
       <p>
-        Installation follows the same technique as steel wool. Cut a piece of mesh slightly larger than the gap, roll or fold it into a plug, and push it firmly into the opening. Pack it tightly so there are no loose edges that a mouse could hook a tooth around. For a permanent seal, apply a bead of exterior-grade silicone sealant over the copper mesh to lock it in place. The mesh remains hidden behind the sealant but continues to provide its gnaw-proof barrier underneath. At &pound;14 for a roll, copper mesh is more expensive than steel wool, but for exterior use where durability matters, it is the better long-term investment.
+        As a premium product, RepellShield commands a slightly higher price than basic peppermint sprays, but the quality of the formulation justifies the difference. The peppermint oil concentration is higher than many competitors, which may provide a stronger and longer-lasting deterrent effect. Reapply every 3-5 days for best results, and combine with physical proofing for comprehensive mouse prevention. The same caveats about limited scientific evidence apply &mdash; use this as one layer in a multi-layered approach, not as your sole line of defence.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Completely rust-proof &mdash; ideal for exterior use</li>
-        <li>Holds its shape when packed into gaps</li>
-        <li>Rodents cannot chew through copper</li>
-        <li>Long-lasting &mdash; will not degrade in the British climate</li>
+        <li>German-made with higher peppermint oil concentration</li>
+        <li>Non-staining formula suitable for kitchens, lofts, and cars</li>
+        <li>Family and pet safe</li>
+        <li>Best-selling repellent spray with strong customer reviews</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>More expensive than steel wool</li>
-        <li>Slightly harder to cut and shape than soft steel wool</li>
-        <li>Copper tarnishes (turns green) over time if left exposed</li>
+        <li>Higher price than basic peppermint sprays</li>
+        <li>Still requires regular reapplication every 3-5 days</li>
+        <li>Not a standalone solution &mdash; combine with physical proofing</li>
+      </ul>
+
+      {/* Product 4 */}
+      <h2 id="best-battery">Best Battery-Powered &mdash; Pestbye Battery Operated Spider &amp; Mouse Repeller</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Pestbye Battery Operated Spider & Mouse Repeller"
+          rank={4}
+          rating={4.1}
+          features={[
+            'Battery-powered ultrasonic repeller from UK-based Pestbye',
+            'Ideal for garages, sheds and loft spaces without mains power',
+            'Repels mice and spiders',
+            'Hang from ceiling or fix to wall for maximum coverage',
+          ]}
+          price="£12"
+          asin="B0072H60MG"
+          bestFor="Best Battery-Powered"
+        />
+      </div>
+      <p>
+        Battery-powered ultrasonic repeller from UK-based Pestbye. The key advantage of this unit over mains-powered alternatives is that it works anywhere &mdash; including garages, sheds, loft spaces, and outbuildings where mains power is not available. These are exactly the locations where mice are most likely to nest undisturbed, and where a plug-in repeller simply cannot reach. The Pestbye unit runs on standard batteries and can be hung from a ceiling joist or fixed to a wall for maximum coverage.
+      </p>
+      <p>
+        The device repels both mice and spiders, which is a useful dual function for loft spaces and garden sheds where both pests are commonly found. The ultrasonic frequencies emitted are inaudible to humans and safe around pets (though it is worth noting that hamsters, gerbils, and other small rodent pets may be affected &mdash; do not use in the same room as pet rodents). The Pestbye brand is UK-based with a responsive customer service team, which provides added confidence compared to unbranded imports.
+      </p>
+      <p>
+        Battery life varies depending on the brand and type of batteries used, but expect around 3-6 months of continuous operation from a set of quality alkaline batteries. This makes the running cost very low. For best results in a loft space, position the unit centrally and ensure it has a clear line of sight to the main roof void area &mdash; ultrasonic waves are directional and will not travel around corners or through solid partitions. In sheds and garages, mount it on the wall opposite the main entry point.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Battery-powered &mdash; works in spaces without mains electricity</li>
+        <li>Ideal for lofts, sheds, garages, and outbuildings</li>
+        <li>Dual function &mdash; repels mice and spiders</li>
+        <li>UK-based brand with good customer support</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Batteries need replacing every 3-6 months</li>
+        <li>Mixed evidence for ultrasonic repeller effectiveness</li>
+        <li>Not suitable for rooms with pet hamsters, gerbils, or other rodents</li>
+        <li>Directional output &mdash; does not cover around corners</li>
       </ul>
 
       {/* Product 5 */}
-      <h2 id="draught-excluder">Best for Door Gaps &mdash; Draught Excluder Brush Strips</h2>
+      <h2 id="best-natural">Best Natural &mdash; Nikura Peppermint Essential Oil 10ml</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Draught Excluder Brush Strips"
+          name="Nikura Peppermint Essential Oil 10ml — Mouse Repellent"
           rank={5}
-          rating={4.3}
+          rating={4.0}
           features={[
-            'Seals the gap under exterior doors',
-            'Self-adhesive for easy fitting',
-            'Also reduces draughts and energy bills',
-            'Brown or white to match door colour',
+            'Pure peppermint essential oil — the active ingredient in commercial sprays',
+            'Dilute with water and apply to cotton balls at entry points',
+            'Vegan, UK-made',
+            'Far more cost-effective than pre-made repellent sprays',
           ]}
-          price="£6"
-          asin="B001FWYHN8"
-          bestFor="Best for Door Gaps"
-        />
-      </div>
-      <p>
-        The gap under an exterior door is one of the most commonly overlooked mouse entry points in UK homes. Many front doors, back doors, and particularly side doors and garage doors have a gap of 10mm or more between the bottom of the door and the threshold &mdash; more than enough for a mouse to walk straight underneath. A draught excluder brush strip is the simplest and most effective way to seal this gap. The strip consists of a rigid aluminium or plastic carrier fitted with a dense row of nylon bristles that brush against the floor when the door is closed, sealing the gap without impeding the door&apos;s operation.
-      </p>
-      <p>
-        Installation takes less than ten minutes. The self-adhesive backing means no drilling, screwing, or specialist tools are required. Clean the bottom edge of the door, peel off the backing, and press the strip firmly into place. The bristles should just touch the floor or threshold when the door is fully closed &mdash; tight enough to block a mouse but not so tight that the door becomes difficult to open. Most strips can be trimmed to length with scissors or a hacksaw to fit any standard door width. Available in brown and white to match the most common door finishes.
-      </p>
-      <p>
-        Beyond mouse prevention, draught excluder strips provide a genuine secondary benefit. Sealing the gap under an exterior door significantly reduces heat loss, cuts draughts, and can make a noticeable difference to your energy bills &mdash; particularly on older properties where doors have settled and the gap has widened over the years. At just &pound;6, this is one of the cheapest and most practical home improvements you can make, and it serves double duty as mouse proofing. Every exterior door on your property should have one.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Seals the most commonly overlooked mouse entry point</li>
-        <li>Self-adhesive &mdash; no drilling or tools needed</li>
-        <li>Also reduces draughts and lowers energy bills</li>
-        <li>Extremely affordable at around &pound;6</li>
-        <li>Available in brown or white to match door finish</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Adhesive can fail on dirty or damp surfaces &mdash; clean door first</li>
-        <li>Bristles wear down over time and may need replacing after 2&ndash;3 years</li>
-        <li>Not effective for very large gaps (over 15mm)</li>
-      </ul>
-
-      {/* Product 6 */}
-      <h2 id="air-brick-covers">Best for Air Bricks &mdash; Mouse-Proof Air Brick Covers</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Mouse-Proof Air Brick Covers"
-          rank={6}
-          rating={4.1}
-          features={[
-            'Stainless steel mesh covers for air bricks',
-            'Maintains ventilation while blocking mice',
-            'Easy screw-fit installation',
-            'Prevents the most common mouse entry point',
-          ]}
-          price="£4"
+          price="£5"
           asin="SEARCH"
-          bestFor="Best for Air Bricks"
+          bestFor="Best Natural"
         />
       </div>
       <p>
-        Air bricks are arguably the single most common entry point for mice in UK homes. These ventilation bricks are built into the external walls of most British houses to provide airflow beneath suspended timber floors, preventing moisture build-up and rot. The problem is that the openings in standard air bricks are large enough for mice to walk straight through them &mdash; and the warm air flowing out from under the house acts as an irresistible beacon on a cold autumn evening. Professional pest controllers consistently identify uncovered air bricks as the number one cause of recurring mouse infestations.
+        Pure peppermint essential oil &mdash; the natural active ingredient in most commercial mouse repellent sprays. Rather than paying a premium for a pre-mixed spray, Nikura peppermint oil lets you create your own repellent at a fraction of the cost. Dilute 10-15 drops with water in a spray bottle, or apply undiluted to cotton balls and place them in entry points, under appliances, in voids behind kitchen units, and anywhere else you have detected mouse activity. The 10ml bottle will produce dozens of applications.
       </p>
       <p>
-        Mouse-proof air brick covers solve this problem elegantly. Each cover is a flat panel of fine stainless steel mesh &mdash; small enough to block mice (and insects) but open enough to maintain the ventilation that the air brick is designed to provide. The covers attach directly over the existing air brick using stainless steel screws into the surrounding mortar. Installation takes a few minutes per brick with a drill and a masonry bit. The stainless steel construction means the covers will not rust, and the mesh is too fine and too strong for mice to chew through or push past.
+        Nikura is a UK-made, vegan brand with a strong reputation in the essential oils market. The peppermint oil is pure and undiluted, which means you get the highest possible concentration of menthol &mdash; the compound thought to deter mice. This is significantly more potent than most pre-made sprays, where the peppermint oil is heavily diluted with water and other carriers. If you are going to use peppermint oil as part of your mouse prevention strategy, using the pure essential oil gives you the best chance of achieving a deterrent effect.
       </p>
       <p>
-        At just &pound;4 per cover, these are exceptionally affordable considering the protection they provide. A typical semi-detached house has four to eight air bricks, so the total cost to cover every one is &pound;16&ndash;&pound;32 &mdash; a trivial investment compared to the cost of dealing with a mouse infestation. Walk around the outside of your property and count every air brick. If any of them are uncovered, fitting mesh covers should be the very first item on your mouse-proofing checklist. This single measure alone can make the difference between a mouse-free home and one with an annual autumn invasion.
+        The cotton ball method is the most commonly recommended application approach. Soak cotton balls with 5-10 drops of undiluted peppermint oil and place them at known or suspected entry points &mdash; gaps around pipes, under the kitchen sink, in the loft hatch opening, behind the washing machine, and inside cupboards where droppings have been found. Replace the cotton balls every 5-7 days as the scent fades. Alternatively, mix 15-20 drops with 200ml of water in a spray bottle and use as a surface spray. The same evidence caveats apply &mdash; peppermint oil is a supporting measure, not a replacement for physical proofing.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Covers the most common mouse entry point in UK homes</li>
-        <li>Stainless steel will not rust or degrade</li>
-        <li>Maintains essential underfloor ventilation</li>
-        <li>Remarkably cheap at around &pound;4 per cover</li>
-        <li>Simple screw-fit installation</li>
+        <li>Pure, undiluted peppermint oil &mdash; highest possible concentration</li>
+        <li>Far more cost-effective than pre-mixed sprays</li>
+        <li>Vegan, UK-made by a reputable essential oils brand</li>
+        <li>Versatile &mdash; use on cotton balls or dilute as a spray</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Requires a drill and masonry bit for installation</li>
-        <li>Must be checked periodically for leaf debris blocking the mesh</li>
-        <li>Not all air bricks are standard size &mdash; measure before buying</li>
+        <li>Requires DIY preparation &mdash; not a ready-to-use product</li>
+        <li>Undiluted oil can irritate skin &mdash; handle with care</li>
+        <li>Same limited evidence base as all peppermint repellents</li>
+        <li>Scent fades and requires regular reapplication</li>
       </ul>
 
       {/* Buying Guide */}

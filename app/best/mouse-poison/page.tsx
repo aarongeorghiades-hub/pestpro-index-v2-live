@@ -130,12 +130,11 @@ const faqSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Mouse Poison at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Pest Expert Formula B+ Grain Bait' },
-  { id: 'best-blocks', title: 'Best Blocks — Roshield Brodifacoum Blocks' },
-  { id: 'best-value', title: 'Best Value — The Big Cheese Mouse Killer Grain' },
-  { id: 'best-paste', title: 'Best Paste — Racan Force Paste Sachets' },
-  { id: 'best-kit', title: 'Best Complete Kit — Pest Expert Mouse Poison Kit' },
-  { id: 'best-brand', title: 'Best Trusted Brand — Rentokil Mouse Killer' },
+  { id: 'best-overall', title: 'Best Overall — Pest Expert Formula B+ 900g' },
+  { id: 'best-starter', title: 'Best Starter Pack — Pest Expert Formula B+ 360g' },
+  { id: 'best-blocks', title: 'Best Blocks — The Big Cheese All-Weather 15x10g' },
+  { id: 'best-bulk', title: 'Best Bulk — The Big Cheese All-Weather 30x10g' },
+  { id: 'best-professional', title: 'Best Professional — Roshield Wax Block Bait 600g' },
   { id: 'buying-guide', title: 'How to Choose the Right Mouse Poison' },
   { id: 'faq', title: 'Frequently Asked Questions' },
 ];
@@ -210,7 +209,7 @@ export default function BestMousePoisonPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Mouse Poison at a Glance</h2>
       <p>
-        Here is a quick comparison of our top six picks. Each product targets a different use case, so the best choice depends on your situation.
+        Here is a quick comparison of our top five picks. Each product targets a different use case, so the best choice depends on your situation.
       </p>
       <table>
         <thead>
@@ -223,40 +222,34 @@ export default function BestMousePoisonPage() {
         </thead>
         <tbody>
           <tr>
-            <td>Pest Expert Formula B+ Grain Bait</td>
+            <td>Pest Expert Formula B+ 900g</td>
             <td>Brodifacoum</td>
             <td>Best Overall</td>
+            <td>~£25</td>
+          </tr>
+          <tr>
+            <td>Pest Expert Formula B+ 360g</td>
+            <td>Brodifacoum</td>
+            <td>Best Starter Pack</td>
             <td>~£14</td>
           </tr>
           <tr>
-            <td>Roshield Brodifacoum Blocks</td>
-            <td>Brodifacoum</td>
-            <td>Best Blocks</td>
-            <td>~£13</td>
-          </tr>
-          <tr>
-            <td>The Big Cheese Mouse Killer Grain</td>
-            <td>Alphachloralose</td>
-            <td>Best Value</td>
-            <td>~£6</td>
-          </tr>
-          <tr>
-            <td>Racan Force Paste Sachets</td>
-            <td>Brodifacoum</td>
-            <td>Best Paste</td>
-            <td>~£15</td>
-          </tr>
-          <tr>
-            <td>Pest Expert Mouse Poison Kit</td>
-            <td>Brodifacoum</td>
-            <td>Best Complete Kit</td>
-            <td>~£22</td>
-          </tr>
-          <tr>
-            <td>Rentokil Mouse Killer Grain</td>
+            <td>The Big Cheese All-Weather 15x10g</td>
             <td>Difenacoum</td>
-            <td>Best Trusted Brand</td>
-            <td>~£6</td>
+            <td>Best Blocks</td>
+            <td>~£8</td>
+          </tr>
+          <tr>
+            <td>The Big Cheese All-Weather 30x10g</td>
+            <td>Difenacoum</td>
+            <td>Best Bulk</td>
+            <td>~£12</td>
+          </tr>
+          <tr>
+            <td>Roshield Wax Block Bait 600g</td>
+            <td>Bromadiolone</td>
+            <td>Best Professional</td>
+            <td>~£15</td>
           </tr>
         </tbody>
       </table>
@@ -266,249 +259,208 @@ export default function BestMousePoisonPage() {
       </div>
 
       {/* Product 1 */}
-      <h2 id="best-overall">Best Overall — Pest Expert Formula B+ Grain Bait</h2>
+      <h2 id="best-overall">Best Overall — Pest Expert Formula B+ Rat & Mouse Killer Poison 900g</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Formula B+ Mouse Killer Grain Bait"
+          name="Pest Expert Formula B+ Rat & Mouse Killer Poison 900g (15x60g)"
           rank={1}
           rating={4.5}
           features={[
-            'Professional-strength brodifacoum grain bait',
-            'Highly palatable wheat-based formula mice prefer',
-            'Single-feed lethal dose for fast results',
-            'Blue-dyed grains for easy monitoring',
+            "Maximum-strength Brodifacoum 0.0029% — single-feed kills",
+            '15 x 60g sachets for thorough whole-property baiting',
+            'Effective indoors and outdoors in bait stations',
+            "The UK's strongest mouse poison available to the amateur market",
           ]}
-          price="£14"
-          asin="B010E2GCIM"
+          price="£25"
+          asin="B07B51YPRR"
           bestFor="Best Overall"
         />
       </div>
       <p>
-        Pest Expert Formula B+ takes our top spot for mouse poison because it combines the strongest available active ingredient with the most palatable formulation. Brodifacoum delivers a lethal dose in a single feed, and the wheat grain format is exactly what mice prefer to eat — making this the fastest, most effective option for eliminating a mouse infestation.
+        Pest Expert Formula B+ takes our top spot because it is the strongest mouse poison you can buy in the UK without a professional licence. The active ingredient is Brodifacoum at 0.0029% — the maximum concentration permitted for amateur use — and it delivers a lethal dose in a single feed. That single-feed action is critical: mice are cautious nibblers that sample small amounts from multiple food sources, so a poison that kills after one feed is far more reliable than one that requires repeat visits.
       </p>
       <p>
-        Mice are primarily grain and seed eaters, so a wheat-based bait has a natural advantage over blocks or paste. The Formula B+ grains are treated with a bittering agent (Bitrex) to deter accidental ingestion by children while remaining highly attractive to rodents. The distinctive blue-green dye makes it easy to spot consumed bait and monitor uptake levels inside your bait station.
+        This 900g pack contains 15 individually wrapped 60g sachets, giving you enough bait to load multiple stations across an entire property. The sachets are ready to use — simply drop one into each tamper-resistant bait station and place along walls, behind kitchen units, and near entry points. Check and replace every 2-3 days until consumption stops, which typically indicates the colony has been eliminated.
       </p>
       <p>
-        This is the same product used by professional pest controllers across the UK. The grain flows easily into mouse bait stations and can be deployed in bait trays or directly on the station floor. For maximum effect, place 10-20g of grain per station and check every 2-3 days, topping up as needed until consumption stops — which indicates the colony has been controlled.
+        Formula B+ is the same product trusted by professional pest controllers throughout the UK. It works equally well indoors and outdoors when used inside a bait station, and the generous 900g quantity means you will not run out mid-treatment even on a larger property. For a serious mouse infestation, this is the product to reach for first.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
         <li>Brodifacoum — the most potent SGAR available to consumers</li>
-        <li>Wheat grain format that mice naturally prefer</li>
         <li>Single-feed lethality for fastest colony knockdown</li>
+        <li>Generous 15-sachet pack covers a whole property</li>
         <li>Professional-grade product with strong reviews</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Grain can absorb moisture in damp locations</li>
         <li>Must be used inside a tamper-resistant bait station</li>
         <li>Higher price than basic alternatives</li>
+        <li>Sachets can absorb moisture in very damp locations</li>
       </ul>
 
       {/* Product 2 */}
-      <h2 id="best-blocks">Best Blocks — Roshield Brodifacoum Wax Blocks</h2>
+      <h2 id="best-starter">Best Starter Pack — Pest Expert Formula B+ Mouse & Rat Poison 360g</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Roshield Brodifacoum Wax Blocks"
+          name="Pest Expert Formula B+ Mouse & Rat Poison 360g (6x60g)"
           rank={2}
           rating={4.4}
           features={[
-            'Brodifacoum 0.005% wax block formulation',
-            'Waterproof and mould-resistant for any location',
-            'Central hole for secure mounting in bait stations',
-            'Long-lasting — ideal for ongoing prevention',
+            'Same single-feed Brodifacoum formula as the 900g pack',
+            '6 x 60g sachets — ideal for a small infestation',
+            'Best value entry point for homeowners',
+            'Perfect for a single property or targeted baiting',
           ]}
-          price="£13"
-          asin="B0DL2SLHTM"
+          price="£14"
+          asin="B07TLY5CGS"
+          bestFor="Best Starter Pack"
+        />
+      </div>
+      <p>
+        If you are dealing with a small mouse problem — perhaps a few droppings in the kitchen or a single mouse spotted at night — the 360g starter pack of Formula B+ is the most cost-effective way to deploy the strongest amateur-grade poison. It contains the identical Brodifacoum formulation as the 900g pack above, just in a smaller quantity: six 60g sachets, enough to load 2-3 bait stations for a targeted treatment.
+      </p>
+      <p>
+        This is the pack to choose when you want maximum potency without committing to a bulk purchase. Six sachets is typically sufficient for a single property with a localised infestation — place stations in the kitchen, utility room, and any other area showing signs of activity. If you find you need more, you can always step up to the 900g pack for a follow-up treatment.
+      </p>
+      <p>
+        At around £14, the 360g pack represents the best value entry point for homeowners who want professional-grade results. The single-feed Brodifacoum action means you are not relying on mice returning for multiple feeds, which is especially important in kitchens where competing food sources can distract rodents from bait stations.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Identical Brodifacoum formula to the full-size pack</li>
+        <li>Affordable entry point at around £14</li>
+        <li>Ideal quantity for a small or localised infestation</li>
+        <li>Single-feed lethality — no repeat visits needed</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Only 6 sachets — may not be enough for larger properties</li>
+        <li>Higher cost per gram than the 900g pack</li>
+        <li>Bait station not included — must buy separately</li>
+      </ul>
+
+      {/* Product 3 */}
+      <h2 id="best-blocks">Best Blocks — The Big Cheese All-Weather Bait Block 15x10g</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="The Big Cheese All-Weather Bait Block 15x10g"
+          rank={3}
+          rating={4.1}
+          features={[
+            'Multi-feed difenacoum bait blocks',
+            'Moisture-resistant — suitable for damp conditions',
+            '15 ready-to-use blocks from a trusted UK brand',
+            'Must be used with a tamper-resistant bait station',
+          ]}
+          price="£8"
+          asin="B077MH6BVS"
           bestFor="Best Blocks"
         />
       </div>
       <p>
-        If you need a mouse poison that works reliably in damp or outdoor locations, Roshield wax blocks are the best choice. The wax formulation is completely waterproof — it will not absorb moisture, go mouldy, or deteriorate in the UK's persistently damp climate. This makes blocks the go-to formulation for garages, sheds, outbuildings, and any location where grain bait would degrade.
+        The Big Cheese is one of the UK's best-known rodent control brands, and their All-Weather Bait Blocks are a reliable, affordable option for mouse control in damp or challenging environments. The blocks use difenacoum as their active ingredient — a second-generation anticoagulant that requires multiple feeds to deliver a lethal dose but carries a lower secondary poisoning risk than brodifacoum, making it a more conservative choice in areas with active wildlife.
       </p>
       <p>
-        Each block contains brodifacoum at the maximum permitted concentration (0.005%), delivering the same single-feed lethality as the grain bait above but in a more durable format. The central hole allows you to thread blocks onto the bait rod inside your station, preventing mice from dragging bait out — an important safety feature that keeps the rodenticide contained within the station.
+        The key advantage of these blocks is their moisture resistance. Unlike grain or paste baits that can absorb water and deteriorate, the wax-bound block formulation holds up in damp garages, sheds, outbuildings, and outdoor bait stations. The 15 pre-formed 10g blocks are ready to use straight from the pack — simply place inside a tamper-resistant bait station and check every few days for signs of feeding.
       </p>
       <p>
-        Blocks are also easier to monitor than grain. You can clearly see gnaw marks and estimate how much has been consumed at each check, which helps you track the progress of your baiting programme and judge when the infestation is under control. For long-term preventative baiting around the perimeter of a property, blocks are the professional's choice because of their durability and longevity.
+        At around £8 for 15 blocks, this is an excellent-value option from a brand you can trust. The blocks are easy to handle and monitor — gnaw marks are clearly visible, so you can track consumption and judge when the infestation is coming under control. For standard mouse problems in typical UK conditions, these blocks offer a solid balance of effectiveness, safety, and affordability.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Completely waterproof and mould-resistant</li>
-        <li>Brodifacoum strength with single-feed lethality</li>
-        <li>Secure mounting prevents bait being dragged away</li>
-        <li>Easy to monitor consumption levels</li>
+        <li>Moisture-resistant for damp and outdoor locations</li>
+        <li>Trusted Big Cheese brand with strong market presence</li>
+        <li>Affordable at around £8 for 15 blocks</li>
+        <li>Easy to monitor consumption via gnaw marks</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Slightly less palatable to mice than grain</li>
+        <li>Difenacoum requires multiple feeds — slower than brodifacoum</li>
+        <li>Less palatable to mice than grain-based baits</li>
         <li>Bait station not included — must buy separately</li>
-        <li>Takes 3-5 days to take effect</li>
-      </ul>
-
-      {/* Product 3 */}
-      <h2 id="best-value">Best Value — The Big Cheese Mouse Killer Grain</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="The Big Cheese Mouse Killer Grain Sachets"
-          rank={3}
-          rating={4.0}
-          features={[
-            'Alphachloralose-based — fast-acting narcotic poison',
-            'Works in as little as 24 hours',
-            'Pre-measured sachets for easy use',
-            'Excellent value at under £6',
-          ]}
-          price="£6"
-          asin="B088TH1XCS"
-          bestFor="Best Budget"
-        />
-      </div>
-      <p>
-        The Big Cheese is one of the UK's most popular pest control brands, and their mouse killer grain sachets offer an affordable entry point for tackling a mouse problem. Unlike the other products on this list, these sachets use alphachloralose rather than an anticoagulant — a narcotic agent that works by lowering the mouse's body temperature, causing it to fall into a deep sleep from which it does not wake.
-      </p>
-      <p>
-        The advantage of alphachloralose is speed. While anticoagulant poisons take 3-7 days to work, alphachloralose can kill mice within 24 hours. However, it is only effective on mice — it is not potent enough to kill rats, and it works best in cooler environments (it is less effective in warm conditions where the mouse's body temperature does not drop sufficiently). For a straightforward mouse problem in a typical UK home during autumn or winter, it is a highly effective and affordable option.
-      </p>
-      <p>
-        The pre-measured sachets make deployment simple — place one or two sachets per bait station and check daily. At under £6 per pack, this is by far the most budget-friendly option on our list, making it ideal for people dealing with a minor mouse problem who want a quick, affordable solution.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Fast-acting — can work within 24 hours</li>
-        <li>Excellent value at under £6</li>
-        <li>Pre-measured sachets for easy, mess-free use</li>
-        <li>Well-known, trusted brand</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Only effective on mice, not rats</li>
-        <li>Less effective in warm environments</li>
-        <li>Not as potent as brodifacoum for severe infestations</li>
       </ul>
 
       {/* Product 4 */}
-      <h2 id="best-paste">Best Paste — Racan Force Paste Sachets</h2>
+      <h2 id="best-bulk">Best Bulk — The Big Cheese All-Weather Rodent Block 30x10g</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Racan Force Mouse & Rat Killer Paste"
+          name="The Big Cheese All-Weather Rodent Block 30x10g"
           rank={4}
-          rating={4.2}
+          rating={4.1}
           features={[
-            'Brodifacoum paste — extremely palatable to mice',
-            'Moisture-resistant for damp locations',
-            'Individual foil sachets for clean deployment',
-            'Ideal when mice reject other bait types',
+            'Bulk pack — 30 bait blocks for larger infestations',
+            'Same damp-proof difenacoum formula as the 15-pack',
+            'Excellent value for landlords or repeat users',
+            'Suitable for multiple bait stations across a property',
           ]}
-          price="£15"
-          asin="B07H8NZGH7"
-          bestFor="Best Paste Bait"
+          price="£12"
+          asin="B077MBL7MS"
+          bestFor="Best Bulk Pack"
         />
       </div>
       <p>
-        If mice in your property have been ignoring grain bait or blocks — a frustrating but not uncommon scenario — paste is often the solution. Racan Force paste is extremely palatable, with a soft texture and strong scent that mice find irresistible even in environments where they have access to other food sources. Professional pest controllers frequently switch to paste as a "second line" treatment when standard formulations are not being taken.
+        The 30-block bulk pack is the same proven All-Weather formula as the standard 15-pack above, doubled up for larger infestations or properties that need multiple bait stations. At around £12, you are getting twice the bait for significantly less than twice the price — making this the obvious choice for landlords managing multiple properties, homeowners with extensive outbuildings, or anyone who wants spare bait on hand for ongoing preventative baiting.
       </p>
       <p>
-        The brodifacoum content means this paste is just as potent as the top-ranked grain and block products — delivering a lethal dose in a single feed. The moisture-resistant formulation also makes it suitable for damp areas like cellars, underfloor voids, and external bait stations, where grain bait would quickly degrade. Each foil sachet can be placed directly inside a bait station without any handling of the poison itself.
+        The damp-proof wax formulation holds up in any UK climate condition, from draughty loft spaces to damp cellars and external bait stations. Each 10g block fits neatly into standard mouse bait stations, and the 30-block quantity allows you to maintain a comprehensive baiting programme with stations placed at every potential entry point and activity hotspot around the property.
       </p>
       <p>
-        Paste is more expensive per gram than grain or block alternatives, so it is not the most cost-effective choice for large-scale baiting. But for targeted use in areas where other formulations have failed, it is often the breakthrough product that finally gets results.
+        For repeat users who already know the product works, the bulk pack eliminates the frustration of running out mid-treatment. It is also the most practical option if you are maintaining bait stations year-round as a preventative measure — topping up stations every few months to intercept new mice before they have a chance to establish inside the property.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Extremely palatable — works when other baits fail</li>
-        <li>Brodifacoum strength for single-feed lethality</li>
-        <li>Moisture-resistant for damp environments</li>
-        <li>Clean foil sachet deployment</li>
+        <li>Excellent value — nearly double the bait for less than double the price</li>
+        <li>Same proven damp-proof formula as the standard pack</li>
+        <li>Enough bait for multiple stations across a large property</li>
+        <li>Ideal for ongoing preventative baiting programmes</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>More expensive per gram than grain or blocks</li>
-        <li>Smaller pack sizes</li>
-        <li>Overkill for a basic mouse problem that standard bait would solve</li>
+        <li>Difenacoum is slower-acting than brodifacoum</li>
+        <li>May be more than needed for a single small infestation</li>
+        <li>Requires tamper-resistant bait stations (not included)</li>
       </ul>
 
       {/* Product 5 */}
-      <h2 id="best-kit">Best Complete Kit — Pest Expert Mouse Poison Kit</h2>
+      <h2 id="best-professional">Best Professional — Roshield Wax Block Bait 600g</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Mouse Poison Bait Box Kit"
+          name="Roshield Wax Block Bait 600g (2x300g Bromadiolone)"
           rank={5}
           rating={4.3}
           features={[
-            'Complete kit: brodifacoum grain + tamper-resistant bait stations',
-            'Professional-quality lockable stations included',
-            'Everything needed for immediate deployment',
-            'Ideal for beginners — no separate purchases needed',
+            "UK-made bromadiolone wax blocks from the professional pest control industry's preferred brand",
+            'Chocolatey scent for excellent rodent uptake',
+            'Threads onto bait station rod for secure mounting',
+            '2 x 300g packs for sustained control',
           ]}
-          price="£22"
-          asin="B010E2H7KY"
-          bestFor="Best Complete Kit"
+          price="£15"
+          asin="B076QFPHLH"
+          bestFor="Best Professional"
         />
       </div>
       <p>
-        For anyone new to rodenticide, the Pest Expert Mouse Poison Kit eliminates all the guesswork. It includes both the poison (professional-strength brodifacoum grain) and tamper-resistant bait stations — everything you need to start baiting immediately. No need to research which station is compatible with which bait, or whether you have the right size for mice versus rats.
+        Roshield is the brand most frequently specified by professional pest controllers in the UK, and their bromadiolone wax blocks bring that professional pedigree to the consumer market. The blocks are UK-made and use bromadiolone — a potent second-generation anticoagulant that sits between difenacoum and brodifacoum in terms of strength. Bromadiolone is effective against most mouse populations, though some resistant strains in parts of the UK may require brodifacoum instead.
       </p>
       <p>
-        The included stations are proper lockable units with small entry holes sized for mice. They require a key to open, are made from durable plastic that will withstand outdoor conditions, and have restricted access points that prevent children, pets, and non-target animals from reaching the bait inside. These are the same type of stations that professional pest controllers deploy.
+        The standout feature of these blocks is their palatability. The wax formulation includes a chocolatey scent that rodents find extremely attractive, resulting in excellent bait uptake even in environments where mice have access to competing food sources. Each block has a central hole for threading onto the bait rod inside your station, which prevents mice from carrying chunks of bait away — keeping the poison safely contained within the station.
       </p>
       <p>
-        At £22, the kit represents good value compared to buying components separately — especially when you factor in that you get multiple stations plus a generous supply of grain bait. For a first-time user who wants a reliable, one-purchase solution, this is the most convenient option on our list.
+        The 600g pack (2 x 300g bags) provides plenty of bait for sustained control across multiple stations. The wax formulation is durable and weather-resistant, making it suitable for both indoor and outdoor use. For anyone who wants a professional-specification product with proven field performance, Roshield delivers exactly what pest controllers rely on every day.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Everything included — poison, stations, and instructions</li>
-        <li>Professional-quality lockable bait stations</li>
-        <li>Brodifacoum grain for maximum effectiveness</li>
-        <li>Great value as a complete package</li>
+        <li>Professional pest control industry standard brand</li>
+        <li>Chocolatey scent for excellent rodent uptake</li>
+        <li>Weatherproof wax blocks suitable indoors and outdoors</li>
+        <li>Secure bait rod mounting prevents bait displacement</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Higher upfront cost than buying bait alone</li>
-        <li>May not need the stations if you already own them</li>
-        <li>Kit contents are fixed — no customisation</li>
-      </ul>
-
-      {/* Product 6 */}
-      <h2 id="best-brand">Best Trusted Brand — Rentokil Mouse Killer</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Rentokil Mouse Killer Grain Bait"
-          rank={6}
-          rating={4.0}
-          features={[
-            'From Rentokil — the UK\'s most trusted pest brand',
-            'Difenacoum-based grain bait',
-            'Clear, beginner-friendly instructions',
-            'Available everywhere — supermarkets, hardware stores, Amazon',
-          ]}
-          price="£6"
-          asin="B07BFQ1V5L"
-          bestFor="Best Trusted Brand"
-        />
-      </div>
-      <p>
-        Rentokil is the name most people think of when they think of pest control in the UK, and their mouse killer grain bait is the go-to product for first-time users who want a familiar, trusted brand. Available in virtually every hardware store and supermarket, it is the most accessible mouse poison on the market.
-      </p>
-      <p>
-        The active ingredient is difenacoum, a second-generation anticoagulant that is effective but less potent than brodifacoum. This means it may take multiple feeds and 5-7 days to achieve a lethal dose, rather than the single-feed action of brodifacoum products. However, difenacoum carries a lower secondary poisoning risk, making it a more conservative choice in areas where owls, kestrels, or other predators might consume poisoned mice.
-      </p>
-      <p>
-        The packaging includes clear, step-by-step instructions that are particularly helpful for beginners. Rentokil also provides a customer support line for product queries, which is reassuring if you have never used rodenticide before. For a minor mouse problem in a standard UK home, Rentokil grain bait is a perfectly adequate and affordable solution.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Trusted Rentokil brand name</li>
-        <li>Clear instructions for beginners</li>
-        <li>Lower secondary poisoning risk with difenacoum</li>
-        <li>Very affordable at around £6</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Less potent than brodifacoum — slower acting</li>
-        <li>May not control severe or resistant infestations</li>
-        <li>Smaller quantity per pack</li>
+        <li>Bromadiolone may not work on resistant mouse populations</li>
+        <li>Blocks are less palatable to mice than grain-based baits</li>
+        <li>Bait station not included — must buy separately</li>
       </ul>
 
       {/* Buying Guide */}

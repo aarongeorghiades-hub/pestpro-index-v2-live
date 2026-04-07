@@ -51,11 +51,11 @@ const faqSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Indoor Fly Killers at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Aspectek Wall-Mounted UV Zapper' },
-  { id: 'best-sticky', title: 'Best Sticky Trap — Katchy Indoor Insect Trap' },
-  { id: 'best-kitchen', title: 'Best for Kitchen — Raid Electric Fly Killer' },
-  { id: 'best-value', title: 'Best Value — Zero In Fly Killer Lantern' },
-  { id: 'best-window', title: 'Best Window Traps — Window Fly Sticky Strips' },
+  { id: 'best-overall', title: 'Best Overall — Insect-O-Cutor PlusZap 30W' },
+  { id: 'best-seller', title: 'Best Seller — Aspectek Professional 30W' },
+  { id: 'best-quiet', title: 'Quietest Option — Quiet Hybrid Spectrum Fly Zapper' },
+  { id: 'best-commercial', title: 'Best Commercial-Grade — Flymatic Professional 30W' },
+  { id: 'best-value', title: 'Best Value — Aspectek Upgraded 20W Bug Zapper' },
   { id: 'buying-guide', title: 'How to Choose the Right Indoor Fly Killer' },
   { id: 'placement', title: 'Placement Guide' },
   { id: 'faq', title: 'Frequently Asked Questions' },
@@ -121,11 +121,11 @@ export default function BestFlyKillerIndoorPage() {
           <tr><th>Product</th><th>Type</th><th>Best For</th><th>Price</th></tr>
         </thead>
         <tbody>
-          <tr><td>Aspectek UV Zapper</td><td>Electric UV zapper</td><td>Best Overall</td><td>~£30</td></tr>
-          <tr><td>Katchy Indoor Trap</td><td>UV sticky trap</td><td>Best Sticky Trap</td><td>~£35</td></tr>
-          <tr><td>Raid Electric Fly Killer</td><td>UV sticky trap</td><td>Best for Kitchen</td><td>~£25</td></tr>
-          <tr><td>Zero In Fly Killer</td><td>Electric UV zapper</td><td>Best Value</td><td>~£15</td></tr>
-          <tr><td>Window Fly Sticky Strips</td><td>Sticky window strips</td><td>Best Window Traps</td><td>~£5</td></tr>
+          <tr><td>Insect-O-Cutor PlusZap 30W</td><td>Electric UV zapper</td><td>Best Overall</td><td>~£80</td></tr>
+          <tr><td>Aspectek Professional 30W</td><td>Electric UV zapper</td><td>Best Seller</td><td>~£30</td></tr>
+          <tr><td>Quiet Hybrid Spectrum Zapper</td><td>Electric UV zapper</td><td>Quietest Option</td><td>~£25</td></tr>
+          <tr><td>Flymatic Professional 30W</td><td>Electric UV zapper</td><td>Commercial-Grade</td><td>~£50</td></tr>
+          <tr><td>Aspectek Upgraded 20W</td><td>Electric UV zapper</td><td>Best Value</td><td>~£25</td></tr>
         </tbody>
       </table>
 
@@ -133,196 +133,210 @@ export default function BestFlyKillerIndoorPage() {
         <StatCallout value="1–3p per day" label="Typical running cost of a domestic electric fly killer" />
       </div>
 
-      <h2 id="best-overall">Best Overall — Aspectek Wall-Mounted UV Zapper</h2>
+      <h2 id="best-overall">Best Overall — Insect-O-Cutor PlusZap 30W</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Aspectek 20W Electronic Indoor Bug Zapper"
+          name="Insect-O-Cutor PlusZap 30W Indoor Fly Killer"
           rank={1}
-          rating={4.3}
+          rating={4.5}
           features={[
-            'Powerful 20W UV light attracts flies from across the room',
-            'Electrified grid delivers instant kill',
-            'Wall-mounted or freestanding — versatile placement',
-            'Removable tray for easy cleaning',
+            "World's leading flying insect control brand, founded 1962",
+            '30W killing grid with aluminium construction',
+            'Pre-installed UV lamps — ready to use out of the box',
+            'Deep catch tray for easy cleaning',
+            'Suitable for kitchens, warehouses and retail environments',
           ]}
-          price="£30"
-          asin="B00GKHI2PW"
+          price="£80"
+          asin="B0B41H37HB"
           bestFor="Best Overall"
         />
       </div>
       <p>
-        The Aspectek 20W Bug Zapper is the most popular indoor electric fly killer on Amazon UK — and it earns that position through sheer effectiveness. The dual 10W UV tubes produce a powerful ultraviolet light that attracts house flies, fruit flies, and other flying insects from across a room. When they make contact with the electrified grid, they are killed instantly with an audible "zap." The removable collection tray at the base catches the debris for easy disposal.
+        Insect-O-Cutor is the world's leading flying insect control brand, founded in 1962, and the PlusZap 30W represents the professional standard for indoor fly control. The 30W killing grid delivers a powerful zap to house flies, fruit flies, and other flying insects, while the aluminium construction ensures long-term durability in demanding environments. The pre-installed UV lamps mean you can mount the unit and start catching flies immediately.
       </p>
       <p>
-        The 20W output covers rooms up to approximately 60 square metres — more than enough for any domestic room, including large open-plan kitchens and living areas. Wall mounting keeps the unit out of reach of children and pets, and the protective outer grille prevents accidental contact with the electrified grid. The UV tubes last approximately 8,000 hours (around 2 years of 12-hour daily use) before needing replacement.
+        The deep catch tray is a standout feature — it holds significantly more debris than budget alternatives, reducing maintenance frequency. This makes the PlusZap particularly suitable for busy kitchens, warehouses, and retail environments where checking the unit daily is not always practical. Wall mounting keeps the unit at optimal fly height and out of the way.
       </p>
       <p>
-        The main consideration is that electric zappers scatter tiny fragments of insect when they kill, which makes them less suitable for direct proximity to food preparation areas. For kitchens, either mount the zapper away from work surfaces or use a sticky trap instead. For conservatories, utility rooms, garages, and living rooms, the Aspectek is the most effective option available.
+        At around £80, the PlusZap sits at the premium end of the market, but you are paying for genuine professional-grade build quality and the Insect-O-Cutor name. For anyone serious about indoor fly control — whether at home or in a commercial setting — this is the benchmark product.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Powerful 20W UV — attracts flies from across large rooms</li>
-        <li>Instant electrified kill</li>
-        <li>Wall-mounted or freestanding</li>
-        <li>Easy-clean removable collection tray</li>
-        <li>Long-lasting UV tubes (~8,000 hours)</li>
+        <li>Professional-grade 30W killing grid</li>
+        <li>Trusted brand with 60+ years of heritage</li>
+        <li>Aluminium construction — built to last</li>
+        <li>Deep catch tray reduces maintenance</li>
+        <li>Pre-installed UV lamps</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Zapping noise may bother some people</li>
-        <li>Scatters tiny insect fragments — not ideal near food prep</li>
-        <li>Larger unit — not the most discreet</li>
+        <li>Premium price point (~£80)</li>
+        <li>Larger unit — may be overkill for a single small room</li>
+        <li>Electric zapper scatters some insect debris</li>
       </ul>
 
-      <h2 id="best-sticky">Best Sticky Trap — Katchy Indoor Insect Trap</h2>
+      <h2 id="best-seller">Best Seller — Aspectek Professional 30W</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Katchy Indoor Insect Trap"
+          name="Aspectek Professional 30W Electronic Insect Killer"
           rank={2}
+          rating={4.3}
+          features={[
+            "Amazon's longest-selling indoor electronic insect killer",
+            '30W UV bulbs with powerful electrified grid',
+            'Removable washable tray for easy cleaning',
+            '3,000+ customer reviews',
+            'UK plug included — ready to use',
+          ]}
+          price="£30"
+          asin="B017TETOE2"
+          bestFor="Best Seller"
+        />
+      </div>
+      <p>
+        The Aspectek Professional 30W is Amazon UK's longest-selling electronic insect killer, and with over 3,000 customer reviews it has a proven track record. The dual 15W UV bulbs produce a strong ultraviolet output that attracts house flies, fruit flies, moths, and mosquitoes from across a room. The powerful electrified grid delivers an instant kill on contact.
+      </p>
+      <p>
+        The removable washable tray makes maintenance straightforward — slide it out, clean it, and slide it back in. This is a significant advantage over units with disposable trays that add ongoing costs. The unit is suitable for home kitchens, restaurants, offices, and garages, and comes with a UK plug so there is no need for adapters.
+      </p>
+      <p>
+        At around £30, the Aspectek Professional offers excellent value for a 30W unit. It covers rooms up to approximately 60 square metres, making it suitable for large open-plan living spaces as well as smaller rooms. If you want a reliable, well-reviewed fly killer without paying professional-grade prices, this is the one to buy.
+      </p>
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>Powerful 30W UV output — covers large rooms</li>
+        <li>3,000+ positive reviews — proven performer</li>
+        <li>Washable tray — no ongoing consumable costs</li>
+        <li>Excellent value at ~£30</li>
+        <li>UK plug included</li>
+      </ul>
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>Zapping noise may bother light sleepers</li>
+        <li>Scatters insect fragments — not ideal directly above food prep</li>
+        <li>Plastic construction less durable than aluminium alternatives</li>
+      </ul>
+
+      <h2 id="best-quiet">Quietest Option — Quiet Hybrid Spectrum Fly Zapper</h2>
+      <div className="not-prose my-6">
+        <ProductCard
+          name="Quiet Hybrid Spectrum Fly Zapper (UK Plug)"
+          rank={3}
           rating={4.2}
           features={[
-            'UV light + fan + sticky glue board — triple action',
-            'Completely silent operation — perfect for bedrooms',
-            'No zapping debris — hygienic capture',
-            'Compact, stylish design suits any room',
-          ]}
-          price="£35"
-          asin="B07BFQ1V5L"
-          bestFor="Best Sticky Trap"
-        />
-      </div>
-      <p>
-        The Katchy combines UV light attraction with a fan that draws insects down onto a sticky glue board — a triple-action approach that catches flies, fruit flies, gnats, and mosquitoes effectively and hygienically. The captured insects are stuck to the glue board with zero debris, making this the cleanest fly-catching option available. When the board is full, simply replace it — the Katchy uses standard-size replacement boards.
-      </p>
-      <p>
-        The near-silent operation makes the Katchy ideal for bedrooms and living rooms where the zapping sound of an electric grid would be intrusive. The compact, modern design also means it does not look like a pest control device — it could pass for a small Bluetooth speaker or night light, making it far more aesthetically acceptable than a traditional fly zapper.
-      </p>
-      <p>
-        The Katchy works best in smaller, darker rooms where its UV light is the dominant light source. In bright, sunlit rooms, the UV light cannot compete with natural light and effectiveness drops significantly. For best results, run it in the evening and overnight when flies are attracted to light sources.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Triple-action: UV + fan + sticky board</li>
-        <li>Silent operation — perfect for bedrooms</li>
-        <li>Hygienic — no debris or fragments</li>
-        <li>Compact, stylish design</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Less effective in bright rooms during the day</li>
-        <li>Requires replacement glue boards (ongoing cost)</li>
-        <li>Fan effectiveness limited to nearby flies</li>
-      </ul>
-
-      <h2 id="best-kitchen">Best for Kitchen — Raid Electric Fly Killer</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Raid Electric Fly Killer"
-          rank={3}
-          rating={4.1}
-          features={[
-            'Compact plug-in design — ideal for kitchen sockets',
-            'UV light attracts and glue pad catches flies',
-            'No noise, no zapping, no debris',
-            'Refill pads readily available',
+            '50% quieter than standard zappers',
+            'UV and black light combination attracts wider range of insects',
+            '4,200V zapping grid for instant kill',
+            'Hangable or freestanding — flexible placement',
+            'Suitable for bedrooms, kitchens and living rooms',
           ]}
           price="£25"
-          asin="B073JPVRFB"
-          bestFor="Best for Kitchen"
+          asin="B0BVKGC941"
+          bestFor="Quietest Option"
         />
       </div>
       <p>
-        Raid's compact plug-in fly killer is purpose-built for kitchen use. It plugs directly into a wall socket, emits UV light to attract flies, and catches them on a replaceable glue pad — no zapping, no noise, no debris near your food. The compact size means it does not take up counter or wall space, and the trusted Raid brand provides reliable performance.
+        The biggest complaint about electric fly zappers is the noise — that loud "crack" every time an insect hits the grid. The Quiet Hybrid Spectrum addresses this directly, running approximately 50% quieter than standard zappers. This makes it suitable for bedrooms, living rooms, and kitchens where a loud zap every few minutes would be intrusive.
       </p>
       <p>
-        Position the unit in a socket near where flies congregate — typically near the bin, fruit bowl, or kitchen window. The UV light works continuously, drawing flies away from food preparation areas and onto the glue pad. Replacement pads are widely available on Amazon and in supermarkets.
+        The hybrid UV and black light combination is also noteworthy. Standard zappers use a single UV frequency, but the dual-spectrum approach attracts a wider range of flying insects including flies, mosquitoes, gnats, and moths. The 4,200V grid delivers a powerful instant kill despite the reduced noise. The unit can be hung from a hook or placed freestanding on a shelf.
+      </p>
+      <p>
+        For anyone who has tried an electric fly zapper and given up because of the noise, the Quiet Hybrid Spectrum offers a genuine improvement. It is not silent — it is still an electric zapper — but the difference is noticeable and makes it far more liveable in bedrooms and living spaces.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Compact plug-in — minimal space required</li>
-        <li>Silent and hygienic — perfect for kitchens</li>
-        <li>Trusted Raid brand</li>
-        <li>Affordable with readily available refills</li>
+        <li>50% quieter than standard electric zappers</li>
+        <li>Dual UV + black light spectrum attracts more insect types</li>
+        <li>Powerful 4,200V grid</li>
+        <li>Hangable or freestanding</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Smaller UV output — covers a limited area</li>
-        <li>Socket-dependent positioning</li>
-        <li>Ongoing refill pad costs</li>
+        <li>Still produces some zapping noise — not fully silent</li>
+        <li>Smaller coverage area than 30W units</li>
+        <li>Less well-known brand</li>
       </ul>
 
-      <h2 id="best-value">Best Value — Zero In Fly Killer Lantern</h2>
+      <h2 id="best-commercial">Best Commercial-Grade — Flymatic Professional 30W</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Zero In Fly Killer Lantern"
+          name="Flymatic Professional Insect Killer 30W"
           rank={4}
-          rating={4.0}
+          rating={4.3}
           features={[
-            'Budget-friendly electric UV zapper',
-            'Lantern design — hang or freestanding',
-            'Effective for small to medium rooms',
-            'Removable tray for easy cleaning',
+            'UK-designed commercial-grade unit',
+            '368nm UV tubes — more effective than budget 350nm alternatives',
+            'Aluminium alloy casing for durability',
+            'Wall, ceiling or freestanding mounting options',
+            '8,000-hour UV tube life with 1-year warranty',
           ]}
-          price="£15"
-          asin="B004US3F1Y"
-          bestFor="Best Budget"
+          price="£50"
+          asin="B00KRCJB8I"
+          bestFor="Commercial-Grade"
         />
       </div>
       <p>
-        At around £15, the Zero In Fly Killer Lantern is the most affordable electric fly killer on our list. The lantern-style design can be hung from a hook or placed freestanding on a shelf, giving you flexible positioning options. The UV tube attracts flies, and the electrified grid delivers a quick kill. A removable collection tray catches debris for easy cleaning.
+        The Flymatic Professional is a UK-designed commercial-grade insect killer that sits between budget domestic units and full professional systems like the Insect-O-Cutor. The key differentiator is the 368nm UV tubes — most budget zappers use cheaper 350nm tubes, but 368nm is the optimal wavelength for attracting house flies, and the difference in catch rates is significant.
       </p>
       <p>
-        The lower wattage UV tube means this unit is best suited to smaller rooms — bedrooms, home offices, and utility rooms rather than large open-plan spaces. For a budget-conscious approach to fly control, particularly in rooms where flies are a seasonal nuisance rather than a constant problem, the Zero In lantern does the job at a fraction of the cost of premium alternatives.
+        The aluminium alloy casing is a step up from the plastic construction of most domestic units, offering better durability and a more professional appearance. Mounting versatility is excellent — wall, ceiling, or freestanding — making it suitable for a range of environments from home kitchens to small restaurants and offices. The removable catch tray slides out for easy cleaning.
+      </p>
+      <p>
+        With an 8,000-hour UV tube life (approximately 2 years of 12-hour daily use) and a 1-year warranty, the Flymatic offers professional-level performance at a mid-range price point. If you want something better than a basic domestic zapper but do not need a full Insect-O-Cutor, the Flymatic is the smart middle ground.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Very affordable at ~£15</li>
-        <li>Versatile hang or freestanding placement</li>
-        <li>Lantern design looks better than industrial zappers</li>
-        <li>Easy-clean removable tray</li>
+        <li>368nm UV tubes — optimal wavelength for fly attraction</li>
+        <li>Aluminium alloy construction</li>
+        <li>Wall, ceiling or freestanding mounting</li>
+        <li>8,000-hour tube life</li>
+        <li>1-year warranty</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Lower UV output — smaller coverage area</li>
-        <li>Electric grid scatters some debris</li>
-        <li>Not suitable for near food preparation</li>
+        <li>Mid-range price — more expensive than basic zappers</li>
+        <li>Replacement UV tubes are specific to Flymatic</li>
+        <li>Electric zapper scatters some insect debris</li>
       </ul>
 
-      <h2 id="best-window">Best Window Traps — Fly Sticky Strips</h2>
+      <h2 id="best-value">Best Value — Aspectek Upgraded 20W Bug Zapper</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Window Fly Catcher Sticky Strips"
+          name="Aspectek Upgraded 20W Bug Zapper"
           rank={5}
-          rating={3.9}
+          rating={4.1}
           features={[
-            'Transparent sticky strips attach to window glass',
-            'Catches flies where they congregate — at windows',
-            'No electricity, no chemicals, no noise',
-            'Budget-friendly multi-pack',
+            '365nm UVA bulbs — effective fly attraction',
+            '2800V electrified grid for reliable kills',
+            'Detachable grid design for easy bulb replacement',
+            'Protective cage for safety around children and pets',
+            'UK plug included',
           ]}
-          price="£5"
-          asin="B010E2GCIM"
-          bestFor="Best Window Traps"
+          price="£25"
+          asin="B086DK71VX"
+          bestFor="Best Value"
         />
       </div>
       <p>
-        Sometimes the simplest solution is the most effective. Flies naturally congregate at windows, drawn to the light — and a transparent sticky strip attached to the glass catches them exactly where they gather. No electricity, no UV light, no chemicals — just a clear adhesive strip that traps flies on contact. The transparent design means the strips are barely visible from outside, avoiding the unsightly look of traditional hanging fly papers.
+        The Aspectek Upgraded 20W is the updated version of the original Aspectek zapper, featuring improved 365nm UVA bulbs and a redesigned 2800V grid. The 365nm wavelength is closer to the optimal range for attracting house flies than the older model, resulting in better catch rates. The detachable grid design is a practical improvement — it makes replacing UV bulbs much easier than on units where the grid is permanently fixed.
       </p>
       <p>
-        Window sticky strips are the most cost-effective fly control option available — a multi-pack costs around £5 and provides enough strips for every window in your home. They are particularly effective for cluster flies in autumn, which gather at windows in large numbers. Replace strips when they become full or dusty (typically every 2-4 weeks during peak fly season).
+        The protective cage prevents accidental contact with the electrified grid, making this a safer option for households with children and pets. The unit comes with a UK plug and is suitable for home, office, restaurant, and warehouse use. At around £25, it offers strong performance for the price and is a solid entry point for anyone trying an electric fly killer for the first time.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Extremely affordable</li>
-        <li>No electricity or chemicals needed</li>
-        <li>Catches flies where they naturally gather</li>
-        <li>Transparent — barely visible on windows</li>
+        <li>365nm UVA bulbs — improved fly attraction</li>
+        <li>Detachable grid for easy maintenance</li>
+        <li>Protective safety cage</li>
+        <li>Affordable at ~£25</li>
+        <li>UK plug included</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Passive — only catches flies that land on the strip</li>
-        <li>Need regular replacement</li>
-        <li>Can look unattractive when covered in flies</li>
+        <li>20W output — smaller coverage than 30W units</li>
+        <li>Standard zapping noise</li>
+        <li>Plastic construction</li>
       </ul>
 
       <h2 id="buying-guide">How to Choose the Right Indoor Fly Killer</h2>
