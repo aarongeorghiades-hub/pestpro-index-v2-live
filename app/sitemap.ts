@@ -984,6 +984,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/guides/landlord-pest-control-responsibilities`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/guides/natural-ant-repellents`,
       lastModified: new Date(),
       changeFrequency: 'weekly',

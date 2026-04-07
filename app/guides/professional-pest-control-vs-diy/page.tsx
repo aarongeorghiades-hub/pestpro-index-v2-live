@@ -439,6 +439,9 @@ export default function ProfessionalPestControlVsDiyPage() {
       <p>
         The money you spend on a professional is well spent when the alternative is months of frustration, wasted products, and a problem that keeps getting worse. On the other hand, there is no need to pay £150 for someone to place mouse traps you could set yourself. Use the pest-by-pest guide above to make the right call for your situation.
       </p>
+      <p>
+        Landlords have specific legal obligations &mdash; see our guide to <Link href="/guides/landlord-pest-control-responsibilities" className="text-green-600 hover:underline">landlord pest control responsibilities</Link>.
+      </p>
 
       <FindProviderCTA
         heading="Ready to find a professional?"

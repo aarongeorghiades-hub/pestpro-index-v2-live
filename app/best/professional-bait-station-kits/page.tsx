@@ -435,7 +435,7 @@ export default function ProfessionalBaitStationKitsPage() {
       </p>
 
       <p>
-        Also relevant for landlords and property managers: our guide to <Link href="/best/awaabs-law-damp-mould-equipment" className="text-green-600 hover:underline">Awaab&apos;s Law damp and mould compliance equipment</Link>.
+        Also relevant for landlords and property managers: our guide to <Link href="/best/awaabs-law-damp-mould-equipment" className="text-green-600 hover:underline">Awaab&apos;s Law damp and mould compliance equipment</Link>. Landlords &mdash; understand your legal obligations with our guide to <Link href="/guides/landlord-pest-control-responsibilities" className="text-green-600 hover:underline">landlord pest control responsibilities</Link>.
       </p>
 
       <div className="not-prose">

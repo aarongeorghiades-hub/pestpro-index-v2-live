@@ -699,7 +699,7 @@ export default function AwaabsLawDampMouldEquipmentPage() {
 
       {/* Closing CTA links */}
       <p>
-        For more high-capacity dehumidifier options, see our full guide to <Link href="/best/commercial-dehumidifiers" className="text-green-600 hover:underline">commercial dehumidifiers</Link>. For the regulatory context behind this equipment, read our <Link href="/blog/awaabs-law-pest-control-landlords" className="text-green-600 hover:underline">full Awaab&apos;s Law guide for landlords</Link>. Also see our guide to <Link href="/best/damp-proof-paint-mould-treatment" className="text-green-600 hover:underline">damp-proof paint and mould treatment products</Link> for surface remediation once ventilation is in place.
+        For more high-capacity dehumidifier options, see our full guide to <Link href="/best/commercial-dehumidifiers" className="text-green-600 hover:underline">commercial dehumidifiers</Link>. For the regulatory context behind this equipment, read our <Link href="/blog/awaabs-law-pest-control-landlords" className="text-green-600 hover:underline">full Awaab&apos;s Law guide for landlords</Link>. Also see our guide to <Link href="/best/damp-proof-paint-mould-treatment" className="text-green-600 hover:underline">damp-proof paint and mould treatment products</Link> for surface remediation once ventilation is in place. Understand your full legal position with our guide to <Link href="/guides/landlord-pest-control-responsibilities" className="text-green-600 hover:underline">landlord pest control responsibilities in the UK</Link>.
       </p>
 
       {/* FindProviderCTA */}
