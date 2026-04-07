@@ -140,6 +140,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Awaab's Law Feature Banner */}
+      <div className="max-w-4xl mx-auto px-4 mt-8">
+        <div className="bg-amber-50 border border-amber-300 rounded-lg p-4 mb-8 flex items-start gap-4">
+          <div className="text-2xl flex-shrink-0">🏠</div>
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-xs font-semibold uppercase tracking-wide text-amber-700 bg-amber-100 px-2 py-0.5 rounded">In the News</span>
+              <span className="text-xs text-gray-500">Awaab&apos;s Law 2026</span>
+            </div>
+            <p className="text-sm font-semibold text-gray-900 mb-1">
+              Are you a landlord? Awaab&apos;s Law requires fast action on damp and mould.
+            </p>
+            <p className="text-sm text-gray-600 mb-2">
+              See the PIV units, dehumidifiers and compliance documentation tools landlords are using to meet the new regulations.
+            </p>
+            <Link
+              href="/best/awaabs-law-damp-mould-equipment"
+              className="text-sm font-medium text-amber-700 hover:text-amber-900 underline"
+            >
+              View the landlord compliance equipment guide →
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* BUILT OUT OF FRUSTRATION */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4">
