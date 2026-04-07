@@ -48,6 +48,37 @@ function EffectivenessBadge({ level }: { level: string }) {
   );
 }
 
+const productLinks: Record<string, { label: string; href: string }[]> = {
+  rats: [
+    { label: 'Best Rat Poison (UK)', href: '/best/rat-poison-for-gardens' },
+    { label: 'Best Rat Bait Stations', href: '/best/rat-bait-stations' },
+  ],
+  mice: [
+    { label: 'Best Mouse Bait Stations', href: '/best/mouse-bait-stations' },
+    { label: 'Best Mouse Repellent', href: '/best/mouse-repellent' },
+  ],
+  'bed-bugs': [
+    { label: 'Best Bed Bug Spray', href: '/best/bed-bug-spray' },
+    { label: 'Best Bed Bug Steamers', href: '/best/professional-bed-bug-steamers' },
+  ],
+  wasps: [
+    { label: 'Best Wasp Nest Foam', href: '/best/wasp-nest-foam' },
+  ],
+  fleas: [
+    { label: 'Best Flea Spray for Home', href: '/best/flea-spray-for-home' },
+    { label: 'Best Flea Fogger', href: '/best/flea-fogger' },
+  ],
+  ants: [
+    { label: 'Best Ant Gel Bait', href: '/best/ant-gel-bait' },
+  ],
+  cockroaches: [
+    { label: 'Best Cockroach Gel Bait', href: '/best/cockroach-gel-bait' },
+  ],
+  moths: [
+    { label: 'Best Moth Traps', href: '/best/moth-traps' },
+  ],
+};
+
 export default async function PestGuidePage({ params }: Props) {
   const { slug } = await params;
   const pest = pestGuides.find((p) => p.slug === slug);
@@ -191,6 +222,25 @@ export default async function PestGuidePage({ params }: Props) {
             ))}
           </div>
         </section>
+
+        {/* Recommended Products */}
+        {productLinks[slug] && (
+          <section className="mb-12">
+            <h2 className="text-2xl font-black text-gray-900 mb-4">Recommended Products</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {productLinks[slug].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="flex items-center gap-3 p-5 bg-green-50 border border-green-200 rounded-xl hover:border-green-400 hover:shadow-md transition-all"
+                >
+                  <span className="text-green-600 font-bold text-lg">&rarr;</span>
+                  <span className="font-bold text-gray-900">{link.label}</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* When to Call Professional */}
         <section id="professional" className="mb-12">
