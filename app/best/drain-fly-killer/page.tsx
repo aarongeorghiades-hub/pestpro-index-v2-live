@@ -52,10 +52,10 @@ const faqSchema = {
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Drain Fly Killers at a Glance' },
   { id: 'fruit-fly-drain-gel', title: '1. Fruit Fly & Drain Fly Gel Treatment' },
-  { id: 'zero-in-drain-gel', title: '2. Zero In Drain Fly Killer Gel' },
-  { id: 'green-gobbler', title: '3. Green Gobbler Fruit Fly Goodbye Gel' },
-  { id: 'biopipe', title: '4. Biopipe Drain Fly Killer' },
-  { id: 'pest-expert', title: '5. Pest Expert Drain Fly Killer' },
+  { id: 'zero-in-drain-gel', title: '2. Zero In Total Insect Killer 300ml' },
+  { id: 'green-gobbler', title: '3. Rentokil Insectrol Insect Killer Spray 250ml' },
+  { id: 'biopipe', title: '4. Doff Ant & Crawling Insect Killer Spray 1L' },
+  { id: 'pest-expert', title: '5. Pest Expert Formula C+ Cockroach & Insect Killer Spray 5L' },
   { id: 'buying-guide', title: 'Buying Guide' },
   { id: 'faq', title: 'Frequently Asked Questions' },
 ];
@@ -115,10 +115,10 @@ export default function BestDrainFlyKillerPage() {
         </thead>
         <tbody>
           <tr><td>Fruit Fly &amp; Drain Fly Gel Treatment 1 Gallon</td><td>Enzyme gel</td><td>Best Overall</td><td>~£25</td></tr>
-          <tr><td>Zero In Drain Fly Killer Gel</td><td>Drain gel</td><td>Best UK Brand</td><td>~£8</td></tr>
-          <tr><td>Green Gobbler Fruit Fly Goodbye Gel</td><td>Drain gel</td><td>Best Professional-Strength</td><td>~£15</td></tr>
-          <tr><td>Biopipe Drain Fly Killer</td><td>Microbial cleaner</td><td>Best for Prevention</td><td>~£12</td></tr>
-          <tr><td>Pest Expert Drain Fly Killer</td><td>Drain treatment</td><td>Best Targeted Treatment</td><td>~£10</td></tr>
+          <tr><td>Zero In Total Insect Killer 300ml</td><td>Insect spray</td><td>Best UK Brand</td><td>~£8</td></tr>
+          <tr><td>Rentokil Insectrol Insect Killer Spray 250ml</td><td>Insect spray</td><td>Best Professional-Strength</td><td>~£15</td></tr>
+          <tr><td>Doff Ant &amp; Crawling Insect Killer Spray 1L</td><td>Insect spray</td><td>Best for Prevention</td><td>~£12</td></tr>
+          <tr><td>Pest Expert Formula C+ Cockroach &amp; Insect Killer Spray 5L</td><td>Insect spray</td><td>Best Targeted Treatment</td><td>~£10</td></tr>
         </tbody>
       </table>
 
@@ -166,164 +166,164 @@ export default function BestDrainFlyKillerPage() {
         <li>Must be used at night for best results</li>
       </ul>
 
-      <h2 id="zero-in-drain-gel">2. Zero In Drain Fly Killer Gel — Best UK Brand</h2>
+      <h2 id="zero-in-drain-gel">2. Zero In Total Insect Killer 300ml — Best UK Brand</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Zero In Drain Fly Killer Gel"
+          name="Zero In Total Insect Killer 300ml"
           rank={2}
           rating={4.1}
           features={[
-            'Pour-and-leave drain treatment',
-            'Eliminates organic slime layer where drain flies breed',
-            'Treats kitchen sinks, bathroom drains and shower traps',
-            'No need to dismantle pipework',
+            'Kills drain flies, fungus gnats and flying insects',
+            'Rainproof formula with up to 4 weeks protection',
+            'Use around drain openings, windows and entry points',
+            'Trusted UK brand with 60+ years heritage',
           ]}
           price="£8"
-          asin="SEARCH"
+          asin="B00EE3C1IS"
           bestFor="Best UK Brand"
         />
       </div>
       <p>
-        Zero In is one of the UK's most trusted pest control brands, and their Drain Fly Killer Gel provides a straightforward pour-and-leave treatment that eliminates the organic slime layer where drain flies breed. Simply pour the gel into the affected drain and leave it to work — no dismantling pipework, no complicated application, no mess. The gel clings to the inside walls of the pipe where the biofilm accumulates, giving it prolonged contact time to break down the organic matter.
+        Zero In is one of the UK's most trusted household pest control brands, with over 60 years of heritage. Their Total Insect Killer is a versatile 300ml spray effective against drain flies, fungus gnats and a wide range of flying insects. The rainproof formula provides up to 4 weeks of residual protection, making it ideal for spraying around drain openings, windows and any area where flying insect activity has been observed.
       </p>
       <p>
-        The treatment works in kitchen sinks, bathroom drains and shower traps — all the common hotspots for drain fly infestations. It is particularly effective for bathroom drains where hair, soap scum and skin cells create the thick, slimy buildup that drain fly larvae thrive in. Apply in the evening when the drain will not be used for several hours, and the gel gets to work dissolving the breeding habitat overnight.
+        For drain fly control, spray around the drain opening, under sinks and on surrounding surfaces where adult drain flies rest. The residual action means that flies landing on treated surfaces continue to be killed for weeks after application, helping to break the cycle while you address the underlying biofilm with an enzyme treatment. This combination approach — killing adults on contact while treating the source — delivers faster visible results.
       </p>
       <p>
-        As a well-known UK brand, Zero In products are widely available and competitively priced. The drain fly gel is an affordable entry point for anyone dealing with drain flies for the first time and wanting a simple, no-fuss solution from a brand they recognise and trust.
+        As a well-known UK brand, Zero In products are widely available in supermarkets and online. The Total Insect Killer is an affordable, multi-purpose spray that tackles drain flies alongside other household flying insects, making it a practical addition to any pest control toolkit.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Simple pour-and-leave application</li>
-        <li>Trusted UK brand widely available</li>
-        <li>Works in kitchen, bathroom and shower drains</li>
+        <li>Kills drain flies and other flying insects on contact</li>
+        <li>Rainproof formula with up to 4 weeks residual protection</li>
+        <li>Trusted UK brand with 60+ years heritage</li>
         <li>Affordable price point</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Requires consistent use over 2-3 weeks</li>
-        <li>Smaller bottle than the gallon-sized alternative</li>
-        <li>Does not kill adult flies directly — treats the source</li>
+        <li>Does not treat the biofilm source inside drains</li>
+        <li>Best used alongside an enzyme drain treatment</li>
+        <li>300ml can may not last long in heavy infestations</li>
       </ul>
 
-      <h2 id="green-gobbler">3. Green Gobbler Fruit Fly Goodbye Gel — Best Professional-Strength</h2>
+      <h2 id="green-gobbler">3. Rentokil Insectrol Insect Killer Spray 250ml — Best Professional-Strength</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Green Gobbler Fruit Fly Goodbye Gel"
+          name="Rentokil Insectrol Insect Killer Spray 250ml"
           rank={3}
           rating={4.2}
           features={[
-            'Professional-strength drain gel',
-            'Citronella-based formula destroys biofilm',
-            'Apply at night, rinse in the morning',
-            'Works in 24-48 hours',
+            'Permethrin-based formula kills drain flies on contact',
+            'Long-lasting residual activity on treated surfaces',
+            'Spray around drain openings, under sinks and on window sills',
+            'Professional-grade from the Rentokil brand',
           ]}
           price="£15"
-          asin="SEARCH"
+          asin="B000TARC7A"
           bestFor="Best Professional-Strength"
         />
       </div>
       <p>
-        Green Gobbler is the US market leader in drain fly treatments, and their Fruit Fly Goodbye Gel brings professional-strength biofilm destruction to the domestic market. The citronella-based formula is specifically designed to destroy the organic biofilm that drain flies need to breed — the slimy layer of decomposing matter that coats the inside of waste pipes and provides both food and a breeding site for drain fly larvae.
+        Rentokil is synonymous with professional pest control in the UK, and their Insectrol Insect Killer Spray brings that expertise to a domestic-use product. The permethrin-based formula kills drain flies, fungus gnats and other small flies on contact, while providing long-lasting residual activity on treated surfaces. Spray around drain openings, under sinks and on window sills where flies congregate, and the residual coating continues to kill insects that land on those surfaces for weeks after application.
       </p>
       <p>
-        The application process is simple: apply the gel at night before bed, and rinse it away in the morning when you first use the drain. The gel clings to pipe walls during the overnight dwell period, giving the active ingredients maximum contact time with the biofilm. Many users report seeing a noticeable reduction in drain fly numbers within 24-48 hours of the first treatment — faster than most enzyme-only alternatives.
+        The professional-strength permethrin formulation is more potent than many general-purpose household insect sprays, making it the right choice when you are dealing with a heavy drain fly infestation and need to knock down the adult population quickly. Used alongside an enzyme drain treatment, it provides a two-pronged approach: the spray kills adult flies on sight while the enzyme treatment removes the biofilm breeding ground inside the pipes.
       </p>
       <p>
-        For severe infestations or drains with heavy organic buildup, the professional-strength formula provides more aggressive biofilm removal than gentler enzyme treatments. Continue applying nightly until no more drain flies appear, then use a weekly maintenance dose to prevent the biofilm from re-establishing. The citronella scent is more pleasant than many chemical drain treatments.
+        The 250ml aerosol is easy to use and delivers a fine, targeted spray for precision application around drains, plugholes and other tight areas. Rentokil's reputation for effective pest control gives confidence that the active ingredients and concentrations are properly formulated for the job.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Professional-strength biofilm destruction</li>
-        <li>Fast results — visible improvement in 24-48 hours</li>
-        <li>Simple overnight application</li>
-        <li>Pleasant citronella scent</li>
+        <li>Permethrin formula kills drain flies on contact</li>
+        <li>Long-lasting residual activity on surfaces</li>
+        <li>Professional-grade from a trusted pest control brand</li>
+        <li>Fine spray for targeted application around drains</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Higher price point than basic drain gels</li>
-        <li>US brand — check availability on amazon.co.uk</li>
-        <li>Still requires consistent use for full elimination</li>
+        <li>Does not treat the biofilm source inside drains</li>
+        <li>250ml size may not be sufficient for large properties</li>
+        <li>Chemical spray — ventilate area during use</li>
       </ul>
 
-      <h2 id="biopipe">4. Biopipe Drain Fly Killer — Best for Prevention</h2>
+      <h2 id="biopipe">4. Doff Ant &amp; Crawling Insect Killer Spray 1L — Best for Prevention</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Biopipe Drain Fly Killer"
+          name="Doff Ant & Crawling Insect Killer Spray 1L"
           rank={4}
           rating={4.0}
           features={[
-            'Professional microbial drain cleaner',
-            'Beneficial bacteria digest organic matter continuously',
-            'Eliminates breeding sites and prevents recurrence',
-            'Monthly maintenance dose keeps drains fly-free',
+            'Fast-acting permethrin spray for drain flies and crawling insects',
+            '1L ready-to-use pump spray for indoor and outdoor use',
+            'Apply around drains, under kitchen units and bathroom surfaces',
+            'Large volume for treating multiple areas',
           ]}
           price="£12"
-          asin="SEARCH"
+          asin="B007XD60C4"
           bestFor="Best for Prevention"
         />
       </div>
       <p>
-        Biopipe takes a different approach to drain fly control: rather than a one-off chemical blast, it introduces beneficial bacteria into your drainage system that continuously digest organic matter, eliminating drain fly breeding sites and preventing them from ever re-establishing. The professional microbial formula is the same type of biological treatment used in commercial and industrial drainage systems, now available for domestic use.
+        The Doff Ant and Crawling Insect Killer is a fast-acting permethrin spray that is effective against drain flies alongside a wide range of crawling and flying insects. The generous 1L ready-to-use pump spray bottle makes it practical for treating multiple areas around the home — spray around drains, under kitchen units, along bathroom surfaces and anywhere drain flies are seen resting or congregating.
       </p>
       <p>
-        The initial treatment eliminates existing organic buildup, while the beneficial bacteria colony that establishes itself inside the drain continues to digest new organic matter as it accumulates. This means the biofilm never gets the chance to build up to the point where drain flies can breed. A monthly maintenance dose tops up the bacterial population, keeping drains clean and fly-free on an ongoing basis.
+        The pump-spray design gives you precise control over where the product is applied, making it easy to target the areas immediately surrounding drain openings without wasting product. For prevention, apply a barrier spray around drain covers, under sinks and along skirting boards in kitchens and bathrooms. The residual action of the permethrin means the treated surfaces continue to kill insects that land on them, providing ongoing protection between applications.
       </p>
       <p>
-        For anyone who has dealt with recurring drain fly problems — where the flies disappear after treatment but return a few weeks later — Biopipe offers a long-term prevention strategy rather than a reactive treatment cycle. By maintaining a healthy population of beneficial bacteria in your drains, you prevent the conditions that drain flies need rather than repeatedly treating the symptoms.
+        Suitable for both indoor and outdoor use, the Doff spray is a versatile addition to your pest control toolkit. The 1L bottle provides significantly more product than smaller aerosol sprays, making it more economical when you need to treat multiple rooms or large surface areas. Pair it with an enzyme drain treatment for comprehensive drain fly control — the spray handles the adults while the enzyme tackles the breeding source.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Continuous biological protection against drain flies</li>
-        <li>Professional microbial formula</li>
-        <li>Prevents recurrence with monthly maintenance</li>
-        <li>Eco-friendly biological approach</li>
+        <li>Fast-acting permethrin formula</li>
+        <li>Large 1L pump spray bottle</li>
+        <li>Suitable for indoor and outdoor use</li>
+        <li>Economical for treating multiple areas</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Takes longer than chemical treatments for initial results</li>
-        <li>Requires ongoing monthly maintenance doses</li>
-        <li>Less effective against severe existing blockages</li>
+        <li>Does not treat the biofilm source inside drains</li>
+        <li>Pump spray less precise than aerosol for tight spaces</li>
+        <li>Best used as part of a combined treatment approach</li>
       </ul>
 
-      <h2 id="pest-expert">5. Pest Expert Drain Fly Killer — Best Targeted Treatment</h2>
+      <h2 id="pest-expert">5. Pest Expert Formula C+ Cockroach &amp; Insect Killer Spray 5L — Best Targeted Treatment</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Drain Fly Killer"
+          name="Pest Expert Formula C+ Cockroach & Insect Killer Spray 5L"
           rank={5}
           rating={4.1}
           features={[
-            "Targeted drain fly treatment from the UK's leading pest brand",
-            'Apply directly to affected drains',
-            'Kills larvae and eliminates breeding sites',
-            'Part of a complete drain fly treatment programme',
+            "Professional-strength 5L spray from the UK's leading pest control brand",
+            'Effective against drain flies, fungus gnats, cockroaches and crawling insects',
+            'Large volume for commercial kitchens and multi-room treatment',
+            'Suitable for catering premises and large-scale infestations',
           ]}
           price="£10"
-          asin="SEARCH"
+          asin="B085S1KX82"
           bestFor="Best Targeted Treatment"
         />
       </div>
       <p>
-        Pest Expert is the UK's leading pest control brand, and their dedicated drain fly killer is a targeted treatment designed to be applied directly to affected drains to kill larvae and eliminate breeding sites. Unlike general-purpose drain cleaners that happen to help with drain flies, this product is specifically formulated to tackle drain fly infestations and forms part of Pest Expert's complete drain fly treatment programme.
+        Pest Expert Formula C+ is a professional-strength 5L insect killer spray from the UK's leading pest control brand. Effective against drain flies, fungus gnats, cockroaches and all crawling insects, the large volume makes it the go-to choice for treating commercial kitchens, catering premises and multi-room infestations where smaller spray cans simply do not provide enough product. The professional-grade formulation delivers the same active ingredient concentrations used by pest control technicians.
       </p>
       <p>
-        The targeted approach means you apply the treatment directly to the drains where you have identified drain fly activity, rather than treating every drain in the house. This makes it efficient and cost-effective — particularly if you have already used sticky traps to pinpoint which drains are harbouring the infestation. The formula kills drain fly larvae on contact and breaks down the organic matter they feed on, attacking the problem from both angles.
+        The 5L container provides exceptional value for anyone dealing with a widespread drain fly problem across multiple drains or rooms. Apply around drain openings, under kitchen units, along skirting boards and on bathroom surfaces where drain flies rest. The residual action continues to kill insects that land on treated surfaces, providing ongoing protection between applications and helping to suppress the adult population while you treat the underlying drain biofilm.
       </p>
       <p>
-        For those who want a brand with genuine pest control expertise behind it, Pest Expert delivers. Their drain fly killer can be used as a standalone treatment or combined with their other drain fly products for a comprehensive multi-step programme. The UK-based brand also provides detailed usage instructions and dosage guidance specific to drain fly elimination.
+        For commercial properties — restaurants, pubs, hotels and food preparation areas — the Formula C+ is particularly well-suited. The large volume means you can treat an entire premises without running out, and the professional-strength formula meets the demands of commercial pest management. For domestic users with a severe or multi-room drain fly infestation, the 5L size eliminates the need to buy multiple smaller products.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Specifically formulated for drain fly control</li>
-        <li>UK's leading pest control brand</li>
-        <li>Kills larvae and eliminates breeding sites</li>
-        <li>Part of a wider treatment programme</li>
+        <li>Professional-strength formula from a leading UK pest brand</li>
+        <li>Generous 5L volume for large-scale treatment</li>
+        <li>Effective against drain flies and a wide range of insects</li>
+        <li>Ideal for commercial kitchens and catering premises</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Best used as part of a broader treatment approach</li>
-        <li>Results take the standard 2-3 weeks</li>
-        <li>Smaller bottle — may need multiple for whole-house treatment</li>
+        <li>5L size may be excessive for a single domestic drain</li>
+        <li>Does not treat the biofilm source inside drains</li>
+        <li>Requires a separate sprayer or decanting into a smaller bottle</li>
       </ul>
 
       <h2 id="buying-guide">Buying Guide: How to Get Rid of Drain Flies</h2>

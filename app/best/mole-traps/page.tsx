@@ -76,10 +76,10 @@ const breadcrumbSchema = {
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Mole Traps at a Glance' },
   { id: 'best-overall', title: 'Best Overall — Victor Push Mole Trap' },
-  { id: 'best-traditional', title: 'Best Traditional — Duffus Half-Barrel Mole Trap' },
-  { id: 'best-professional', title: 'Best Professional — Talpex Mole Trap' },
-  { id: 'best-discreet', title: 'Best Discreet — WCS Tube Mole Trap' },
-  { id: 'best-beginner', title: 'Best for Beginners — Trapline Easy-Set Mole Trap' },
+  { id: 'best-traditional', title: 'Best Traditional — Doff Complete Mole Trap' },
+  { id: 'best-professional', title: 'Best Professional — Talpex Mole Trap (Professional)' },
+  { id: 'best-discreet', title: 'Best Discreet — Kinetic Mole Trap — Scissor Jaw (Twin Pack)' },
+  { id: 'best-beginner', title: 'Best for Beginners — Defenders Easy-Set Mole Trap' },
   { id: 'how-to-choose', title: 'How to Choose the Right Mole Trap' },
   { id: 'tips', title: 'Mole Trap Placement Tips' },
 ];
@@ -217,25 +217,25 @@ export default function BestMoleTrapsPage() {
             <td>~£15</td>
           </tr>
           <tr>
-            <td>Duffus Half-Barrel Mole Trap</td>
+            <td>Doff Complete Mole Trap</td>
             <td>Half-barrel</td>
             <td>Traditional Pick</td>
             <td>~£8</td>
           </tr>
           <tr>
-            <td>Talpex Mole Trap</td>
+            <td>Talpex Mole Trap (Professional)</td>
             <td>Plunger</td>
             <td>Professional Pick</td>
             <td>~£12</td>
           </tr>
           <tr>
-            <td>WCS Tube Mole Trap</td>
-            <td>Tube / enclosed</td>
+            <td>Kinetic Mole Trap — Scissor Jaw (Twin Pack)</td>
+            <td>Scissor-jaw</td>
             <td>Most Discreet</td>
             <td>~£10</td>
           </tr>
           <tr>
-            <td>Trapline Easy-Set Mole Trap</td>
+            <td>Defenders Easy-Set Mole Trap</td>
             <td>Easy-set</td>
             <td>Best for Beginners</td>
             <td>~£15</td>
@@ -270,10 +270,10 @@ export default function BestMoleTrapsPage() {
       </p>
 
       {/* Product 2 */}
-      <h2 id="best-traditional">Best Traditional — Duffus Half-Barrel Mole Trap</h2>
+      <h2 id="best-traditional">Best Traditional — Doff Complete Mole Trap</h2>
       <div className="not-prose">
         <ProductCard
-          name="Duffus Half-Barrel Mole Trap"
+          name="Doff Complete Mole Trap"
           rating={4.3}
           features={[
             'Traditional half-barrel design widely used by professional mole catchers',
@@ -290,17 +290,17 @@ export default function BestMoleTrapsPage() {
         />
       </div>
       <p>
-        The Duffus half-barrel trap is the traditional choice of professional mole catchers across the UK. Its half-barrel shape sits neatly inside the tunnel without disrupting the mole's natural path — a critical factor for success, as moles will avoid tunnels that feel different underfoot. When the mole passes through and contacts the trigger, the powerful spring delivers an instant kill.
+        The Doff Complete Mole Trap is the traditional choice of professional mole catchers across the UK. Its half-barrel shape sits neatly inside the tunnel without disrupting the mole's natural path — a critical factor for success, as moles will avoid tunnels that feel different underfoot. When the mole passes through and contacts the trigger, the powerful spring delivers an instant kill.
       </p>
       <p>
-        Setting a Duffus requires a bit of practice. You need to locate an active run, carefully open it, and position the trap so the trigger plate sits at tunnel floor level. The metal construction resists rust and corrosion even in damp soil, and these traps last for years with minimal maintenance. At around £8, the Duffus represents exceptional value for a professional-quality trap.
+        Setting the Doff Complete requires a bit of practice. You need to locate an active run, carefully open it, and position the trap so the trigger plate sits at tunnel floor level. The metal construction resists rust and corrosion even in damp soil, and these traps last for years with minimal maintenance. At around £8, the Doff Complete represents exceptional value for a professional-quality trap.
       </p>
 
       {/* Product 3 */}
-      <h2 id="best-professional">Best Professional — Talpex Mole Trap</h2>
+      <h2 id="best-professional">Best Professional — Talpex Mole Trap (Professional)</h2>
       <div className="not-prose">
         <ProductCard
-          name="Talpex Mole Trap"
+          name="Talpex Mole Trap (Professional)"
           rating={4.3}
           features={[
             'European professional-standard trap',
@@ -323,15 +323,15 @@ export default function BestMoleTrapsPage() {
       </p>
 
       {/* Product 4 */}
-      <h2 id="best-discreet">Best Discreet — WCS Tube Mole Trap</h2>
+      <h2 id="best-discreet">Best Discreet — Kinetic Mole Trap — Scissor Jaw (Twin Pack)</h2>
       <div className="not-prose">
         <ProductCard
-          name="WCS Tube Mole Trap"
+          name="Kinetic Mole Trap — Scissor Jaw (Twin Pack)"
           rating={4.1}
           features={[
-            'Enclosed tube design conceals the trap mechanism',
-            'Less conspicuous above ground than scissor or plunger traps',
-            'Reduces trigger failures from soil disturbance',
+            'Twin pack offers excellent value — two scissor-jaw traps included',
+            'Compact scissor-jaw design sits low in the tunnel',
+            'Less conspicuous above ground than plunger traps',
             'Popular for lawns and sports turf',
             'Durable construction for repeated use',
           ]}
@@ -342,17 +342,17 @@ export default function BestMoleTrapsPage() {
         />
       </div>
       <p>
-        The WCS Tube Mole Trap takes a different approach to mole trapping. The enclosed tube design conceals the trap mechanism inside a barrel that sits within the mole tunnel, making it far less conspicuous above ground than scissor-jaw or plunger traps. This makes it popular for well-maintained lawns and sports turf where aesthetics matter.
+        The Kinetic Mole Trap — Scissor Jaw (Twin Pack) offers a practical and discreet approach to mole trapping. The compact scissor-jaw design sits low in the tunnel, making it far less conspicuous above ground than plunger traps. The twin pack means you get two traps for the price, allowing you to cover more active runs from the outset — ideal for well-maintained lawns and sports turf where aesthetics matter.
       </p>
       <p>
-        The enclosed design also reduces trigger failures caused by soil falling onto the mechanism — a common problem with open traps in sandy or crumbly soil. The mole enters the tube as part of its normal tunnel patrol and triggers the mechanism inside. Installation requires careful placement to match the tunnel floor level, but the enclosed design is more forgiving of minor positioning errors than open traps.
+        The low-profile design reduces the chance of accidental disturbance from pets, children, or mowing. Each trap is pushed into an active run and triggers when the mole passes through, delivering a swift kill. Installation is straightforward — identify an active run, compress the jaws, and push the trap into the tunnel. The twin pack represents good value and is a sensible choice for gardeners who want to set multiple traps across different runs.
       </p>
 
       {/* Product 5 */}
-      <h2 id="best-beginner">Best for Beginners — Trapline Easy-Set Mole Trap</h2>
+      <h2 id="best-beginner">Best for Beginners — Defenders Easy-Set Mole Trap</h2>
       <div className="not-prose">
         <ProductCard
-          name="Trapline Easy-Set Mole Trap"
+          name="Defenders Easy-Set Mole Trap"
           rating={4.0}
           features={[
             'Beginner-friendly design — easier to set than traditional scissor traps',
@@ -368,10 +368,10 @@ export default function BestMoleTrapsPage() {
         />
       </div>
       <p>
-        The Trapline Easy-Set is designed specifically for homeowners who have never trapped a mole before. Traditional scissor and plunger traps can be intimidating to set — the powerful springs require firm handling, and incorrect positioning leads to failed catches. The Easy-Set simplifies the process with a more intuitive mechanism and clear instructions that walk you through each step.
+        The Defenders Easy-Set Mole Trap is designed specifically for homeowners who have never trapped a mole before. Traditional scissor and plunger traps can be intimidating to set — the powerful springs require firm handling, and incorrect positioning leads to failed catches. The Defenders Easy-Set simplifies the process with a more intuitive mechanism and clear instructions that walk you through each step.
       </p>
       <p>
-        No special tools are needed — the trap can be set with your hands alone. While experienced mole catchers may prefer the higher catch rates of a Duffus or Talpex, the Easy-Set is a genuine improvement for beginners who would otherwise struggle with traditional traps. If you have never attempted mole control before, starting with the Trapline Easy-Set is a sensible approach before graduating to more advanced traps.
+        No special tools are needed — the trap can be set with your hands alone. While experienced mole catchers may prefer the higher catch rates of a Doff Complete or Talpex, the Defenders Easy-Set is a genuine improvement for beginners who would otherwise struggle with traditional traps. If you have never attempted mole control before, starting with the Defenders Easy-Set is a sensible approach before graduating to more advanced traps.
       </p>
 
       {/* How to Choose */}

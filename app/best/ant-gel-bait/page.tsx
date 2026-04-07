@@ -107,8 +107,8 @@ const tocItems = [
   { id: 'best-overall', title: 'Best Overall — Nippon Ant Killer Gel' },
   { id: 'best-powder', title: 'Best Powder — Nippon Ant Killer Powder' },
   { id: 'best-spray', title: 'Best Spray — Nippon Ant & Crawling Insect Spray' },
-  { id: 'best-indoor', title: 'Best Indoor Gel — Raid Ant Killer Gel' },
-  { id: 'best-stations', title: 'Best Bait Stations — Terro Liquid Ant Baits' },
+  { id: 'best-indoor', title: 'Best Spray — Zero In Ant & Cockroach Killer' },
+  { id: 'best-stations', title: 'Best Bait Stations — Doff 2-in-1 Ant & Nest Killer' },
   { id: 'buying-guide', title: 'How to Choose the Right Ant Gel' },
   { id: 'application', title: 'How to Apply Ant Gel for Best Results' },
   { id: 'faq', title: 'Frequently Asked Questions' },
@@ -210,16 +210,16 @@ export default function BestAntGelBaitPage() {
             <td>~£7</td>
           </tr>
           <tr>
-            <td>Raid Ant Killer Gel</td>
-            <td>Gel</td>
-            <td>Best Indoor Gel</td>
-            <td>~£6</td>
+            <td>Zero In Ant &amp; Cockroach Killer 1.5L</td>
+            <td>Spray</td>
+            <td>Best Spray</td>
+            <td>~£8</td>
           </tr>
           <tr>
-            <td>Terro Liquid Ant Bait Stations</td>
+            <td>Doff 2-in-1 Ant &amp; Nest Bait Killer Stations</td>
             <td>Bait Stations</td>
             <td>Best Bait Stations</td>
-            <td>~£10</td>
+            <td>~£5</td>
           </tr>
         </tbody>
       </table>
@@ -343,79 +343,79 @@ export default function BestAntGelBaitPage() {
       </ul>
 
       {/* Product 4 */}
-      <h2 id="best-indoor">Best Indoor Gel — Raid Ant Killer Gel</h2>
+      <h2 id="best-indoor">Best Spray — Zero In Ant &amp; Cockroach Killer 1.5L</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Raid Ant Killer Gel"
+          name="Zero In Ant & Cockroach Killer 1.5L — Ready-to-Use Pressure Sprayer"
           rank={4}
           rating={4.1}
           features={[
-            'Gel bait format — place drops near ant trails',
-            'Ants carry bait back to nest for colony control',
-            'Discreet application with no mess',
-            'Suitable for kitchens and living areas',
+            'Large 1.5L ready-to-use pressure sprayer',
+            'Cypermethrin with antibacterial agent',
+            'Adjustable nozzle for cracks, crevices and surfaces',
+            'Treats a full property perimeter in one application',
           ]}
-          price="£6"
-          asin="SEARCH"
-          bestFor="Best Indoor Gel"
+          price="£8"
+          asin="B0B71D3QS1"
+          bestFor="Best Spray"
         />
       </div>
       <p>
-        Raid Ant Killer Gel offers a gel bait format that lets you place small drops near ant trails without the mess of spraying. Worker ants feed on the gel and carry the bait back to the nest, spreading the poison through the colony via trophallaxis. The discreet application means you can use it in kitchens, bathrooms, and living areas without unsightly bait stations or powder residue.
+        Zero In Ant and Cockroach Killer is a large 1.5-litre ready-to-use pressure sprayer that targets ants and cockroaches both indoors and outdoors. The active ingredient is cypermethrin combined with an antibacterial agent, giving you a dual-action formula that kills crawling insects on contact and leaves a residual barrier on treated surfaces. The adjustable nozzle lets you switch between a fine mist for surface treatment and a targeted stream for cracks, crevices and hard-to-reach harbourage points.
       </p>
       <p>
-        The gel format is particularly well-suited to indoor use where you want a clean, no-mess solution. Place drops along skirting boards, behind kitchen units, near entry points, and in any cracks or crevices where ants are trailing. Raid is a well-known household brand, and the product is widely available in supermarkets and online. For a straightforward indoor ant problem where convenience matters, Raid gel gets the job done.
+        The generous 1.5-litre volume means you can treat a full property perimeter in a single application — around doorframes, windowsills, skirting boards, patio edges and garden paths. While this is a contact killer rather than a colony-eliminating bait, it is an excellent complement to gel bait: use the Zero In spray to create a defensive barrier around your home while gel bait works on eliminating the nest from the inside. For homeowners dealing with both ants and cockroaches, this one product covers both pests.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Gel bait format — discreet and mess-free</li>
-        <li>Colony control through bait transfer, not just contact kill</li>
-        <li>Well-known brand — widely available in UK shops</li>
-        <li>Suitable for kitchens and food preparation areas</li>
+        <li>Large 1.5L volume — treats a full property perimeter</li>
+        <li>Adjustable nozzle for precision and broad surface application</li>
+        <li>Dual ant and cockroach formula with antibacterial agent</li>
+        <li>Ready-to-use pressure sprayer — no mixing required</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Smaller tube than Nippon — may need more than one for large infestations</li>
-        <li>Gel can dry out if not consumed quickly</li>
-        <li>Less established track record than Nippon for UK ant species</li>
+        <li>Contact killer only — does not eliminate the colony or queen</li>
+        <li>Can disrupt gel bait if sprayed near bait placements</li>
+        <li>Needs reapplication after rain on outdoor surfaces</li>
       </ul>
 
       {/* Product 5 */}
-      <h2 id="best-stations">Best Bait Stations — Terro Liquid Ant Bait Stations</h2>
+      <h2 id="best-stations">Best Bait Stations — Doff 2-in-1 Ant &amp; Nest Bait Killer Stations</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Terro Liquid Ant Bait Stations"
+          name="Doff 2-in-1 Ant & Nest Bait Killer Stations"
           rank={5}
           rating={4.3}
           features={[
-            'Borax-based liquid bait stations from US market leader',
-            'Pre-filled and ready to place',
-            'Slow-acting formula for maximum colony spread',
-            'Effective on sweet-feeding species common in UK',
+            'Pre-baited ant bait stations from UK manufacturer Doff',
+            'Workers carry bait back to nest — eliminates the queen',
+            'Safe indoors and outdoors around children and pets',
+            'Up to 3 months protection per station',
           ]}
-          price="£10"
-          asin="SEARCH"
+          price="£5"
+          asin="B086DX7HM7"
           bestFor="Best Bait Stations"
         />
       </div>
       <p>
-        Terro Liquid Ant Bait Stations use a borax-based liquid bait formula from the US market leader in ant control. Each station comes pre-filled and ready to place — simply position them along ant trails and near entry points. The slow-acting borax formula is specifically designed so that workers have time to share the bait with the colony before dying, ensuring maximum spread through the nest and eventual queen elimination.
+        Doff 2-in-1 Ant and Nest Bait Killer Stations are pre-baited bait stations from the established UK manufacturer Doff. Each station is ready to use straight out of the box — simply place them along ant trails and near entry points. Worker ants enter the station, feed on the bait, and carry it back to the nest where they share it with other workers, larvae, and the queen. The colony is eliminated from the inside out, including the queen, so the problem does not return.
       </p>
       <p>
-        Terro is particularly effective on sweet-feeding ant species, which includes the Black Garden Ants common in UK kitchens. The enclosed bait station design keeps the liquid contained and protected, making it a clean and child-friendly option. While Terro is a US brand and slightly harder to find in UK shops, it is readily available on Amazon and has a loyal following among UK homeowners who have tried it. For a set-and-forget bait station solution, Terro delivers reliable colony elimination.
+        The enclosed bait station design makes Doff a particularly practical choice for homes with children and pets. The bait is contained inside the station where it cannot be easily accessed, and the stations can be used both indoors and outdoors. Each station provides up to three months of protection, making them a genuine set-and-forget solution. As a UK brand, Doff products are widely available and competitively priced — excellent value for reliable colony elimination.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Borax-based — naturally occurring active ingredient</li>
-        <li>Pre-filled stations — no handling of bait required</li>
-        <li>Slow-acting formula maximises colony spread before kill</li>
-        <li>Enclosed design — safer around children and pets</li>
+        <li>UK manufacturer — widely available and competitively priced</li>
+        <li>Pre-baited stations — no handling of bait required</li>
+        <li>Eliminates the entire colony including the queen</li>
+        <li>Enclosed design — safe around children and pets when used as directed</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>US brand — less widely available in UK shops</li>
-        <li>Liquid can dry out in warm conditions</li>
-        <li>May take longer than gel-based products for full colony elimination</li>
+        <li>Fixed station placement — less flexible than gel syringe</li>
+        <li>Stations are visible when placed in living areas</li>
+        <li>May take 1-2 weeks for full colony elimination</li>
       </ul>
 
       {/* Buying Guide */}

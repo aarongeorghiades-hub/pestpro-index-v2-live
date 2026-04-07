@@ -55,9 +55,9 @@ const tocItems = [
   { id: 'at-a-glance', title: 'Best Flea Foggers at a Glance' },
   { id: 'best-overall', title: 'Best Overall — Indorex Defence Flea Spray' },
   { id: 'best-natural', title: 'Best Natural — Zero In Natural Flea Bomb' },
-  { id: 'best-large', title: 'Best Large Room — NOPE! Flea Bomb 250ml' },
-  { id: 'best-twin', title: 'Best Twin Pack — ARDAP Fogger 2x100ml' },
-  { id: 'best-professional', title: 'Best Professional — Pest Expert Formula P' },
+  { id: 'best-large', title: 'Best Large Room — NOPE! CP Flea Spray 500ml' },
+  { id: 'best-twin', title: 'Best Twin Pack — Strikeback Triple Action Flea Spray' },
+  { id: 'best-professional', title: 'Best Professional — Pest Expert Formula C+' },
   { id: 'buying-guide', title: 'How to Choose the Right Flea Fogger' },
   { id: 'how-to-use', title: 'How to Use a Flea Fogger Safely' },
   { id: 'faq', title: 'Frequently Asked Questions' },
@@ -131,9 +131,9 @@ export default function BestFleaFoggerPage() {
         <tbody>
           <tr><td>Indorex Defence Household Flea Spray 500ml</td><td>IGR spray</td><td>Best Overall</td><td>~£15</td></tr>
           <tr><td>Zero In Natural Flea Bomb 150ml</td><td>Natural aerosol</td><td>Best Natural</td><td>~£8</td></tr>
-          <tr><td>NOPE! Flea Bomb 250ml</td><td>Aerosol fogger</td><td>Best Large Room</td><td>~£10</td></tr>
-          <tr><td>ARDAP Flea Fogger Fumigator 2 x 100ml</td><td>Fumigator twin-pack</td><td>Best Twin Pack</td><td>~£12</td></tr>
-          <tr><td>Pest Expert Formula P Flea Fogger</td><td>Fumigation device</td><td>Best Professional</td><td>~£10</td></tr>
+          <tr><td>NOPE! CP Flea Spray 500ml for the Home</td><td>Cypermethrin spray</td><td>Best Large Room</td><td>~£10</td></tr>
+          <tr><td>Strikeback Super Strength Triple Action Flea Spray 1L</td><td>Triple-action spray</td><td>Best Twin Pack</td><td>~£12</td></tr>
+          <tr><td>Pest Expert Formula C+ Flea Killer Spray 1L</td><td>Professional spray</td><td>Best Professional</td><td>~£10</td></tr>
         </tbody>
       </table>
 
@@ -211,115 +211,115 @@ export default function BestFleaFoggerPage() {
         <li>May require repeat applications for heavy infestations</li>
       </ul>
 
-      <h2 id="best-large">Best Large Room — NOPE! Flea Bomb 250ml</h2>
+      <h2 id="best-large">Best Large Room — NOPE! CP Flea Spray 500ml for the Home</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="NOPE! Flea Bomb 250ml — Large One-Shot Fogger"
+          name="NOPE! CP Flea Spray 500ml for the Home"
           rank={3}
           rating={4.1}
           features={[
-            'Larger 250ml one-shot fogger for bigger rooms',
-            'Kills fleas, bed bugs, moths and carpet beetles',
-            'Fire-free and non-staining',
-            'No visible residue after treatment',
+            'Fast-acting odourless cypermethrin formula',
+            '3-month residual action on treated surfaces',
+            'Non-staining — safe for carpets, soft furnishings, mattresses',
+            'Ideal complement to a flea fogger treatment',
           ]}
           price="£10"
-          asin="SEARCH"
+          asin="B097F82JSG"
           bestFor="Best Large Room"
         />
       </div>
       <p>
-        The NOPE! Flea Bomb stands out for its larger 250ml canister, which makes it ideal for bigger rooms such as open-plan living areas, large bedrooms, or loft conversions where a standard 150ml fogger might fall short. It kills fleas, bed bugs, moths, carpet beetles, and flying insects in a single one-shot treatment — making it a versatile option if you suspect multiple pest species are present.
+        The NOPE! CP Flea Spray is a fast-acting odourless cypermethrin spray with 3-month residual action, designed for targeted treatment of carpets, soft furnishings, skirting boards, and mattresses. Its non-staining formula makes it safe to use across the home without worrying about marks on fabrics or flooring. Use it as part of a complete flea treatment programme alongside a fogger for the most thorough results.
       </p>
       <p>
-        Like the best modern foggers, it is fire-free and non-staining, leaving no visible residue after treatment. Press the valve to lock, place the can on a flat surface, leave the room, and allow 2-3 hours for the mist to settle before ventilating. For large rooms that need full coverage from a single unit, this is the most practical choice.
+        The 500ml bottle provides generous coverage for multiple rooms. Spray along skirting boards, under furniture, across carpets, and around pet bedding areas. The 3-month residual means the cypermethrin continues killing fleas that emerge from pupae long after the initial application — an important feature given that flea pupae can remain dormant for weeks before hatching.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Larger 250ml can covers bigger rooms in one shot</li>
-        <li>Multi-pest formula — fleas, bed bugs, moths, carpet beetles</li>
-        <li>Fire-free, non-staining, no visible residue</li>
-        <li>Simple press-and-leave activation</li>
+        <li>Odourless cypermethrin formula for discreet treatment</li>
+        <li>3-month residual action for ongoing protection</li>
+        <li>Non-staining — suitable for carpets, fabrics, and mattresses</li>
+        <li>Excellent complement to a fogger for complete coverage</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>No IGR component for long-term protection</li>
-        <li>Single-room treatment — need multiple cans for whole house</li>
-        <li>Less established brand than Indorex or Pest Expert</li>
+        <li>No IGR component for lifecycle disruption</li>
+        <li>Manual spray requires more effort than a one-shot fogger</li>
+        <li>Best used alongside a fogger rather than as a standalone treatment</li>
       </ul>
 
-      <h2 id="best-twin">Best Twin Pack — ARDAP Flea Fogger Fumigator 2 x 100ml</h2>
+      <h2 id="best-twin">Best Twin Pack — Strikeback Super Strength Triple Action Flea Spray 1L</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="ARDAP Flea Fogger Fumigator 2 x 100ml"
+          name="Strikeback Super Strength Triple Action Flea Spray 1L"
           rank={4}
           rating={4.0}
           features={[
-            'Twin-pack for treating two rooms simultaneously',
-            'Effective in rooms up to 30m²',
-            'German-made formula with long residual',
-            'Popular for pre/post carpet laying treatment',
+            'Triple-action: cypermethrin, chrysanthemum extract + pyriproxyfen IGR',
+            'Kills adults on contact, stops eggs hatching',
+            '1L trigger spray for precise, targeted application',
+            'Trusted UK brand since 2007',
           ]}
           price="£12"
-          asin="SEARCH"
+          asin="B0D7WFDYD2"
           bestFor="Best Twin Pack"
         />
       </div>
       <p>
-        ARDAP is a well-known German pest control brand, and their twin-pack flea fogger lets you treat two rooms simultaneously — ideal for tackling a bedroom and living room at the same time. Each 100ml unit is effective in rooms up to 30 square metres, and the German-made formula provides a long residual that continues working on surfaces after the initial treatment.
+        The Strikeback Super Strength Triple Action Flea Spray combines three active ingredients — cypermethrin, chrysanthemum extract, and pyriproxyfen IGR — in a single 1L trigger spray. This triple-action formula kills adult fleas on contact while the IGR component stops eggs from hatching, providing long-term control that breaks the flea breeding cycle. It is one of only two products on our list that includes an IGR.
       </p>
       <p>
-        This product is particularly popular for treating rooms before or after carpet laying, when the underlay and subfloor are exposed and vulnerable to flea infestation. Activate both cans at the same time, vacate the property, and return after the recommended period. The twin-pack format offers better value than buying two individual foggers separately.
+        The 1L trigger spray format allows precise application to carpets, furniture, door thresholds, and skirting boards — exactly the areas where fleas and their eggs concentrate. Strikeback has been a trusted UK pest control brand since 2007, and this product represents their most comprehensive flea treatment formula. For homeowners who want IGR protection without the premium price of Indorex, this is an excellent alternative.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Twin-pack treats two rooms in one purchase</li>
-        <li>German-engineered formula with long-lasting residual</li>
-        <li>Effective coverage up to 30m² per unit</li>
-        <li>Ideal for pre/post carpet laying treatment</li>
+        <li>Triple-action formula with IGR for lifecycle disruption</li>
+        <li>1L trigger spray for precise, targeted application</li>
+        <li>Kills adults on contact and prevents eggs from hatching</li>
+        <li>Trusted UK brand with nearly two decades of experience</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Smaller 100ml cans may not suit very large rooms</li>
-        <li>No IGR — contact kill only</li>
-        <li>Less widely available than UK-branded alternatives</li>
+        <li>Manual spray requires room-by-room application</li>
+        <li>Does not penetrate hidden voids like a fumigation device</li>
+        <li>Best results require thorough coverage of all floor areas</li>
       </ul>
 
-      <h2 id="best-professional">Best Professional — Pest Expert Formula P Flea Fogger / Super Fumer</h2>
+      <h2 id="best-professional">Best Professional — Pest Expert Formula C+ Flea Killer Spray 1L</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Formula P Flea Fogger / Super Fumer"
+          name="Pest Expert Formula C+ Flea Killer Spray 1L"
           rank={5}
           rating={4.3}
           features={[
-            'Professional-strength fumigation device',
-            'Infiltrates cracks, furniture voids and under skirting',
-            'No fire risk, no residue',
-            'Recommended alongside Indorex or Formula C+ spray',
+            "Maximum-strength spray from the UK's leading pest control brand",
+            'Three active ingredients including pyriproxyfen IGR',
+            '12-week residual protection on treated surfaces',
+            'Water-based — safe for carpets and fabrics once dry',
           ]}
           price="£10"
-          asin="SEARCH"
+          asin="B09GYGC5FL"
           bestFor="Best Professional"
         />
       </div>
       <p>
-        The Pest Expert Formula P Fogger is a professional-strength fumigation device from the UK's market-leading pest control brand. Unlike standard aerosol foggers, this device is designed to infiltrate the hard-to-reach areas where fleas hide — cracks in floorboards, voids behind and under furniture, and gaps beneath skirting boards. The fumigant reaches places that surface sprays simply cannot access.
+        Pest Expert Formula C+ is a maximum-strength flea killer spray from the UK's leading pest control brand. It contains three active ingredients including pyriproxyfen IGR for complete lifecycle disruption — killing adult fleas on contact while preventing eggs and larvae from developing. The 12-week residual protection means treated surfaces continue working long after the initial application, catching newly emerged fleas as dormant pupae hatch over the following weeks.
       </p>
       <p>
-        There is no fire risk and no visible residue after treatment. Pest Expert recommends using this fogger as part of a complete flea treatment plan alongside their Formula C+ spray or Indorex Defence spray for surface coverage. The combination of deep-penetrating fumigation plus surface spray provides the most thorough DIY flea treatment possible, matching what a professional pest controller would deliver.
+        The water-based formula is safe for carpets and fabrics once dry, leaving no staining or visible residue. Apply to carpets, skirting boards, under furniture, and around pet bedding areas for comprehensive coverage. For the most thorough DIY flea treatment, pair this spray with a Pest Expert fogger to reach hidden voids that surface sprays cannot access — a combination that matches what a professional pest controller would deliver.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Professional-strength formula from a trusted UK brand</li>
-        <li>Penetrates cracks, voids, and hidden spaces</li>
-        <li>No fire risk and no residue</li>
-        <li>Ideal complement to surface spray treatment</li>
+        <li>Maximum-strength professional formula with three active ingredients</li>
+        <li>IGR pyriproxyfen disrupts the entire flea lifecycle</li>
+        <li>12-week residual protection from a single application</li>
+        <li>Water-based — no staining on carpets or fabrics</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Best results require pairing with a separate spray product</li>
-        <li>Must vacate and ventilate the property</li>
-        <li>Not a standalone solution for severe infestations</li>
+        <li>Best results require pairing with a fogger for hidden areas</li>
+        <li>Manual spray requires thorough room-by-room application</li>
+        <li>Must allow surfaces to dry before pets and children re-enter</li>
       </ul>
 
       <h2 id="buying-guide">How to Choose the Right Flea Fogger</h2>

@@ -107,8 +107,8 @@ const tocItems = [
   { id: 'best-overall', title: 'Best Overall — Indorex Defence 500ml' },
   { id: 'best-twin', title: 'Best Twin Pack — Indorex Defence 2x500ml' },
   { id: 'best-professional', title: 'Best Professional — Pest Expert Formula C+ 1L' },
-  { id: 'best-fast', title: 'Best Fast-Acting — RIP Fleas Extra' },
-  { id: 'best-value', title: 'Best Value — Bob Martin Home Flea Spray' },
+  { id: 'best-fast', title: 'Best Fast-Acting — RIP Fleas Extra Household Flea Spray' },
+  { id: 'best-value', title: 'Best Value — Bob Martin Clear Plus Flea Spray 500ml Twin Pack' },
   { id: 'buying-guide', title: 'How to Choose the Right Flea Spray' },
   { id: 'application', title: 'How to Apply Flea Spray for Best Results' },
   { id: 'faq', title: 'Frequently Asked Questions' },
@@ -211,14 +211,14 @@ export default function BestFleaSprayPage() {
             <td>~£18</td>
           </tr>
           <tr>
-            <td>RIP Fleas Extra</td>
-            <td>Fast knockdown + IGR</td>
+            <td>RIP Fleas Extra Household Flea Spray</td>
+            <td>Fast knockdown + residual protection</td>
             <td>Best Fast-Acting</td>
             <td>~£12</td>
           </tr>
           <tr>
-            <td>Bob Martin Home Flea Spray</td>
-            <td>Trusted brand — easy aerosol</td>
+            <td>Bob Martin Clear Plus Flea Spray 500ml Twin Pack</td>
+            <td>Twin-pack — kills fleas, ticks and dust mites</td>
             <td>Best Value</td>
             <td>~£7</td>
           </tr>
@@ -354,37 +354,37 @@ export default function BestFleaSprayPage() {
       </ul>
 
       {/* Product 4 */}
-      <h2 id="best-fast">Best Fast-Acting — RIP Fleas Extra Household Spray</h2>
+      <h2 id="best-fast">Best Fast-Acting — RIP Fleas Extra Household Flea Spray</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="RIP Fleas Extra Household Spray"
+          name="RIP Fleas Extra Household Flea Spray"
           rank={4}
           rating={4.2}
           features={[
-            'Fast-acting residual flea spray for carpets and furnishings',
-            'Contains permethrin and an IGR for long-lasting protection',
-            'Popular choice for homes with cats and dogs',
-            'Works on carpets, furniture, and pet bedding',
+            'Permethrin-based contact killer with residual protection',
+            'Fast-acting formula for carpets, pet bedding and soft furnishings',
+            'Popular with cat and dog owners as a home treatment between vet appointments',
+            'Effective residual layer continues killing fleas after application',
           ]}
           price="£12"
-          asin="SEARCH"
+          asin="B001MIXHMM"
           bestFor="Best Fast-Acting"
         />
       </div>
       <p>
-        RIP Fleas Extra is formulated for rapid knockdown — it kills adult fleas within minutes of application while also containing an IGR for long-term control. This makes it the best choice when you are dealing with an active infestation and need immediate relief from biting fleas. The fast-acting permethrin component provides that satisfying "kill on contact" effect that gives you confidence the treatment is working.
+        RIP Fleas Extra Household Flea Spray is a fast-acting residual household flea spray built around a permethrin-based contact killer. It delivers rapid knockdown of adult fleas within minutes of application while leaving a residual protective layer on carpets, pet bedding, and soft furnishings that continues working long after the initial spray has dried. This makes it the best choice when you are dealing with an active infestation and need immediate relief from biting fleas.
       </p>
       <p>
-        The combined permethrin + IGR formula is essentially the same dual-action approach used by Indorex, just from a different brand. RIP Fleas Extra can be sprayed on carpets, rugs, soft furnishings, and pet bedding (once dry, it is safe for pets). It is a particularly popular choice among cat and dog owners who want a trusted product that provides both immediate relief and ongoing protection against re-infestation.
+        The permethrin-based formula is popular with cat and dog owners as a home treatment between vet appointments. RIP Fleas Extra can be sprayed on carpets, rugs, soft furnishings, and pet bedding — once dry, the treated surfaces are safe for pets. The residual protection on treated surfaces means fleas that emerge from pupae in the days and weeks after application are killed on contact with the treated carpet fibres.
       </p>
       <p>
         At around £12, it slots in below the premium options and offers genuine value, particularly for treating specific areas rather than an entire house. The residual protection lasts several months, making it effective through the peak of flea season. If you need fast results at a reasonable price, RIP Fleas Extra delivers on both counts.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Very fast knockdown of adult fleas</li>
-        <li>Contains IGR for long-term cycle control</li>
-        <li>Safe for pet bedding once dry</li>
+        <li>Very fast knockdown of adult fleas on contact</li>
+        <li>Residual protection on carpets, pet bedding and soft furnishings</li>
+        <li>Popular home treatment between vet appointments</li>
         <li>Good value at around £12</li>
       </ul>
       <p><strong>Cons:</strong></p>
@@ -395,44 +395,44 @@ export default function BestFleaSprayPage() {
       </ul>
 
       {/* Product 5 */}
-      <h2 id="best-value">Best Value — Bob Martin Home Flea Spray</h2>
+      <h2 id="best-value">Best Value — Bob Martin Clear Plus Flea Spray 500ml Twin Pack</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Bob Martin Home Flea Spray"
+          name="Bob Martin Clear Plus Flea Spray 500ml Twin Pack"
           rank={5}
           rating={4.0}
           features={[
-            'Trusted UK pet brand household flea spray',
-            'Kills fleas and larvae in carpets, upholstery, and pet bedding',
-            'Easy-to-use aerosol format',
-            'Available at most pet shops and online',
+            "Twin-pack from one of the UK's most trusted pet care brands",
+            'Kills fleas, ticks and dust mites on contact',
+            'Safe for use on furniture, carpets and pet bedding',
+            '500ml per can — enough for a full home treatment',
           ]}
           price="£7"
-          asin="SEARCH"
+          asin="B0CMPY8ZXP"
           bestFor="Best Budget"
         />
       </div>
       <p>
-        Bob Martin is one of the most recognised pet care brands in the UK, and their Home Flea Spray offers an affordable, accessible option for tackling household fleas. Available at most pet shops, supermarkets, and online, it is the product many pet owners reach for first because of the familiar brand name and straightforward aerosol format — shake, spray, and let dry.
+        Bob Martin is one of the most recognised pet care brands in the UK, and the Clear Plus Flea Spray 500ml Twin Pack offers outstanding value for tackling household fleas. You get two full 500ml cans — enough for a complete home treatment — from a brand that pet owners have trusted for decades. The twin-pack format means you have plenty of product to treat every room thoroughly, with spare left over for a follow-up application if needed.
       </p>
       <p>
-        The spray kills fleas and larvae on contact in carpets, upholstery, and pet bedding areas. The easy-to-use aerosol delivers even coverage without the need for mixing or additional equipment. At around £7, it is the most budget-friendly option on our list, making it an accessible starting point for pet owners dealing with their first flea problem.
+        The spray kills fleas, ticks, and dust mites on contact, making it effective against a broader range of household pests than many single-action flea sprays. It is safe for use on furniture, carpets, and pet bedding once dry, and the easy-to-use aerosol format requires no mixing or additional equipment. At around £7 for two cans, it is comfortably the best value option on our list.
       </p>
       <p>
-        For budget-conscious pet owners who want a trusted brand at a low price, Bob Martin gets the job done for minor flea problems. If you are dealing with a more severe or persistent infestation, however, stepping up to an IGR-containing spray like Indorex will provide significantly longer-lasting protection by breaking the flea lifecycle at the egg and larval stage.
+        For budget-conscious pet owners who want a trusted brand at a low price, the Bob Martin Clear Plus twin pack gets the job done for minor to moderate flea problems. If you are dealing with a more severe or persistent infestation, however, stepping up to an IGR-containing spray like Indorex will provide significantly longer-lasting protection by breaking the flea lifecycle at the egg and larval stage.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Trusted Bob Martin brand — widely available</li>
-        <li>Very affordable at around £7</li>
-        <li>Easy-to-use aerosol format</li>
-        <li>Kills fleas and larvae on contact</li>
+        <li>Trusted Bob Martin brand — twin-pack value</li>
+        <li>Kills fleas, ticks and dust mites on contact</li>
+        <li>Two 500ml cans — enough for a full home treatment</li>
+        <li>Safe for furniture, carpets and pet bedding once dry</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Less coverage per can than premium sprays</li>
-        <li>Shorter residual protection than IGR sprays</li>
-        <li>May need 2 cans for a larger house</li>
+        <li>No IGR — shorter residual protection than Indorex</li>
+        <li>Less effective at breaking the flea lifecycle long-term</li>
+        <li>May need a follow-up application for severe infestations</li>
       </ul>
 
       {/* Buying Guide */}
