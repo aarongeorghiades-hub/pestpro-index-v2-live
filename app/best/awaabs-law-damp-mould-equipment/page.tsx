@@ -561,14 +561,14 @@ export default function AwaabsLawDampMouldEquipmentPage() {
       <h2 id="hygrometer">Best Hygrometer &mdash; Digital Hygrometer with Data Logger</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Digital Hygrometer with Data Logger — Humidity & Temperature Monitor"
+          name="Govee WiFi Thermometer Hygrometer"
           rank={8}
           rating={4.0}
           price="Check price"
-          asin="SEARCH"
+          asin="B0CZRWVNRJ"
           features={[
-            "Records humidity and temperature over time",
-            "Provides the audit trail needed for compliance evidence",
+            "WiFi & Bluetooth connectivity, Swiss-made sensor",
+            "App alerts, 2-year data storage and export — monitor damp levels remotely from any property",
             "Place in affected rooms before and after treatment",
             "Essential if a complaint or enforcement action is raised",
           ]}
