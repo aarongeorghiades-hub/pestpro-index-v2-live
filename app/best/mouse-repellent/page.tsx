@@ -131,10 +131,10 @@ const faqSchema = {
 const tocItems = [
   { id: 'at-a-glance', title: 'Mouse Repellents at a Glance' },
   { id: 'best-ultrasonic', title: 'Best Overall — EcoMyLife Ultrasonic Repeller' },
-  { id: 'best-spray', title: 'Best Spray — Zero In Peppermint Spray' },
-  { id: 'best-premium-spray', title: 'Best Premium Spray — RepellShield 250ml' },
+  { id: 'best-spray', title: 'Best Spray — RepellShield Made in Germany' },
+  { id: 'best-premium-spray', title: 'Best Premium Spray — REPELEM Peppermint Oil Spray' },
   { id: 'best-battery', title: 'Best Battery-Powered — Pestbye Repeller' },
-  { id: 'best-natural', title: 'Best Natural — Nikura Peppermint Oil' },
+  { id: 'best-natural', title: 'Best Natural — REPELEM Peppermint Oil Sachets' },
   { id: 'buying-guide', title: 'Mouse Proofing Buying Guide' },
   { id: 'faq', title: 'Frequently Asked Questions' },
 ];
@@ -215,12 +215,12 @@ export default function BestMouseRepellentPage() {
             <td>Best Overall</td>
           </tr>
           <tr>
-            <td>Zero In Mouse Repellent Peppermint Spray</td>
+            <td>RepellShield Rat &amp; Mouse Repellent Spray 250ml — Made in Germany</td>
             <td>Peppermint spray</td>
             <td>Best Spray</td>
           </tr>
           <tr>
-            <td>RepellShield Rat &amp; Mouse Repellent Spray 250ml</td>
+            <td>REPELEM Rat &amp; Mouse Repellent Spray 250ml — Peppermint Oil</td>
             <td>Peppermint spray</td>
             <td>Best Premium Spray</td>
           </tr>
@@ -230,8 +230,8 @@ export default function BestMouseRepellentPage() {
             <td>Best Battery-Powered</td>
           </tr>
           <tr>
-            <td>Nikura Peppermint Essential Oil 10ml</td>
-            <td>Essential oil</td>
+            <td>REPELEM Rat &amp; Mouse Repellent Peppermint Oil Sachets — 6 Pack</td>
+            <td>Peppermint oil sachets</td>
             <td>Best Natural</td>
           </tr>
         </tbody>
@@ -284,43 +284,43 @@ export default function BestMouseRepellentPage() {
       </ul>
 
       {/* Product 2 */}
-      <h2 id="best-spray">Best Spray &mdash; Zero In Mouse Repellent Peppermint Spray</h2>
+      <h2 id="best-spray">Best Spray &mdash; RepellShield Rat &amp; Mouse Repellent Spray 250ml — Made in Germany</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Zero In Mouse Repellent Peppermint Spray"
+          name="RepellShield Rat & Mouse Repellent Spray 250ml — Made in Germany"
           rank={2}
-          rating={4.0}
+          rating={4.2}
           features={[
-            'Natural peppermint oil formula deters mice from treated areas',
-            'Apply to entry points, under sinks and along skirting boards',
-            'Non-toxic and safe around children and pets',
-            'Ready-to-use spray bottle — no dilution needed',
+            "Germany's best-selling peppermint oil mouse repellent spray",
+            'Non-staining formula — safe for kitchens, lofts and skirting boards',
+            "Peppermint and geraniol formula irritates rodents' sensitive noses",
+            'Family and pet safe — 11,000+ reviews on Amazon',
           ]}
-          price="£8"
-          asin="SEARCH"
+          price="£12"
+          asin="B08DKSX32W"
           bestFor="Best Spray"
         />
       </div>
       <p>
-        Natural peppermint oil spray that deters mice from entering treated areas. The Zero In spray is a ready-to-use formula &mdash; no dilution, no mixing, just point and spray. Apply to entry points, under sinks, along skirting boards, behind kitchen appliances, and anywhere else you have seen signs of mouse activity. The strong peppermint scent is pleasant for humans but thought to overwhelm the sensitive olfactory receptors of mice, making treated areas uncomfortable for them to occupy.
+        Germany's best-selling peppermint oil mouse repellent spray, and for good reason. RepellShield combines peppermint oil with geraniol to create a dual-action formula that irritates rodents' sensitive noses far more effectively than peppermint alone. The 250ml bottle is ready to use straight out of the box &mdash; simply spray at entry points, under sinks, along skirting boards, in loft spaces, and anywhere else you have seen signs of mouse activity. The formula is non-staining, so you can apply it directly to kitchen units, carpets, and soft furnishings without worrying about marks or residue.
       </p>
       <p>
-        The non-toxic formula is completely safe around children and pets, which makes it a practical choice for kitchens, utility rooms, and areas where you would not want to place poison or snap traps. The spray leaves no staining or residue on most surfaces, though it is worth testing on a small area first on delicate materials. For best results, apply every 2-3 days to maintain scent strength, as the peppermint oil dissipates naturally over time.
+        With over 11,000 reviews on Amazon, RepellShield has built a strong following among UK homeowners looking for a chemical-free mouse deterrent. The spray is completely family and pet safe, making it a practical choice for homes with young children, cats, and dogs. Apply generously to known entry points and refresh every 3-5 days to maintain scent strength. The geraniol component adds a secondary layer of deterrence that pure peppermint sprays lack, which may explain the consistently positive customer feedback compared to cheaper alternatives.
       </p>
       <p>
-        As with all peppermint-based repellents, the scientific evidence for long-term effectiveness is limited. The spray works best as a supporting measure alongside physical proofing &mdash; seal entry points with steel wool or copper mesh first, then apply the spray as an additional deterrent layer. On its own, peppermint spray is unlikely to resolve an established mouse infestation. But as part of a combined approach, it adds one more barrier that mice must overcome.
+        As with all scent-based repellents, RepellShield works best as a supporting measure alongside physical proofing. Seal entry points with steel wool or copper mesh first, then apply the spray as an additional deterrent layer. On its own, no peppermint spray is likely to resolve an established mouse infestation &mdash; but as part of a combined approach, RepellShield adds a genuine extra barrier. The German manufacturing quality and the peppermint-geraniol formulation set it apart from generic peppermint sprays in the category.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Ready-to-use spray &mdash; no dilution required</li>
-        <li>Non-toxic and safe around children and pets</li>
-        <li>Pleasant peppermint scent for humans</li>
-        <li>Easy to apply to targeted areas</li>
+        <li>Peppermint and geraniol dual-action formula</li>
+        <li>Non-staining &mdash; safe for kitchens, carpets, and soft furnishings</li>
+        <li>Family and pet safe with 11,000+ positive reviews</li>
+        <li>German-made with higher quality formulation than most competitors</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
         <li>Limited scientific evidence for peppermint oil as a mouse repellent</li>
-        <li>Scent fades within 2-3 days &mdash; needs regular reapplication</li>
+        <li>Scent fades within 3-5 days &mdash; needs regular reapplication</li>
         <li>Not effective as a standalone solution for active infestations</li>
       </ul>
 
@@ -331,43 +331,43 @@ export default function BestMouseRepellentPage() {
       </div>
 
       {/* Product 3 */}
-      <h2 id="best-premium-spray">Best Premium Spray &mdash; RepellShield Rat &amp; Mouse Repellent Spray 250ml</h2>
+      <h2 id="best-premium-spray">Best Premium Spray &mdash; REPELEM Rat &amp; Mouse Repellent Spray 250ml — Peppermint Oil</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="RepellShield Rat & Mouse Repellent Spray 250ml"
+          name="REPELEM Rat & Mouse Repellent Spray 250ml — Peppermint Oil"
           rank={3}
-          rating={4.2}
+          rating={4.1}
           features={[
-            'German-made peppermint oil mouse repellent spray',
-            'Non-staining formula — safe for kitchen units and loft spaces',
-            'Family and pet safe',
-            'Best seller in the repellent spray category',
+            'UK brand peppermint oil rodent deterrent',
+            'Fast-acting, non-toxic and safe around pets',
+            'Mist and squirt modes for different surfaces',
+            'Effective in kitchens, lofts, garages and car engines',
           ]}
-          price="£12"
-          asin="SEARCH"
+          price="£10"
+          asin="B0CRRSTHNG"
           bestFor="Best Premium Spray"
         />
       </div>
       <p>
-        German-made peppermint oil mouse repellent spray. RepellShield is a best seller in the repellent spray category, and it earns that position through a well-formulated, non-staining product that is safe for use throughout the home. Apply indoors to protect kitchen units, loft spaces, garages, and car engines from mouse nesting. The 250ml bottle provides enough spray for thorough coverage of a typical property, focusing on the areas where mice are most likely to travel and nest.
+        UK brand peppermint oil rodent deterrent with a practical dual-mode spray nozzle. REPELEM offers both mist and squirt settings, letting you switch between a fine mist for broad coverage on open surfaces and a targeted squirt for getting into tight gaps, crevices, and hard-to-reach areas behind appliances. The 250ml bottle is non-toxic and completely safe around pets, making it suitable for kitchens, utility rooms, lofts, garages, and even inside car engine bays where mice commonly nest.
       </p>
       <p>
-        The non-staining formula is a practical advantage over cheaper peppermint sprays. You can apply RepellShield directly to kitchen unit interiors, under-sink areas, loft insulation surrounds, and even inside the engine bay of a car (mice nesting in car engines is a surprisingly common problem in rural and semi-rural UK areas) without worrying about marks or residue. The spray is family and pet safe, making it suitable for use in homes with young children, cats, and dogs.
+        The recommended application method is straightforward: spray generously at entry points and along known mouse routes twice daily for the first 3-7 days to build up scent saturation and drive mice out of treated areas. Once the initial treatment period is complete, switch to monthly reapplication for ongoing prevention. This two-phase approach &mdash; intensive treatment followed by maintenance &mdash; is more structured than most competing sprays, which simply recommend reapplication "as needed" without clear guidance.
       </p>
       <p>
-        As a premium product, RepellShield commands a slightly higher price than basic peppermint sprays, but the quality of the formulation justifies the difference. The peppermint oil concentration is higher than many competitors, which may provide a stronger and longer-lasting deterrent effect. Reapply every 3-5 days for best results, and combine with physical proofing for comprehensive mouse prevention. The same caveats about limited scientific evidence apply &mdash; use this as one layer in a multi-layered approach, not as your sole line of defence.
+        REPELEM is a fast-acting formula designed for immediate deterrence. The peppermint oil concentration is strong enough that you will notice the scent immediately upon application, and rodents find it intensely unpleasant. The spray is effective across a wide range of locations &mdash; kitchens, lofts, garages, sheds, caravans, and car engines are all suitable. As with all peppermint-based products, combine with physical proofing for the best results. The spray adds a scent barrier, but steel wool and copper mesh provide the permanent physical barrier that actually prevents entry.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>German-made with higher peppermint oil concentration</li>
-        <li>Non-staining formula suitable for kitchens, lofts, and cars</li>
-        <li>Family and pet safe</li>
-        <li>Best-selling repellent spray with strong customer reviews</li>
+        <li>Dual mist and squirt modes for versatile application</li>
+        <li>Clear two-phase treatment plan &mdash; intensive then monthly maintenance</li>
+        <li>Non-toxic and safe around pets and children</li>
+        <li>UK brand with responsive customer support</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Higher price than basic peppermint sprays</li>
-        <li>Still requires regular reapplication every 3-5 days</li>
+        <li>Requires twice-daily application during the initial 3-7 day phase</li>
+        <li>Limited scientific evidence for peppermint oil as a long-term repellent</li>
         <li>Not a standalone solution &mdash; combine with physical proofing</li>
       </ul>
 
@@ -414,45 +414,45 @@ export default function BestMouseRepellentPage() {
       </ul>
 
       {/* Product 5 */}
-      <h2 id="best-natural">Best Natural &mdash; Nikura Peppermint Essential Oil 10ml</h2>
+      <h2 id="best-natural">Best Natural &mdash; REPELEM Rat &amp; Mouse Repellent Peppermint Oil Sachets — 6 Pack</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Nikura Peppermint Essential Oil 10ml — Mouse Repellent"
+          name="REPELEM Rat & Mouse Repellent Peppermint Oil Sachets — 6 Pack"
           rank={5}
           rating={4.0}
           features={[
-            'Pure peppermint essential oil — the active ingredient in commercial sprays',
-            'Dilute with water and apply to cotton balls at entry points',
-            'Vegan, UK-made',
-            'Far more cost-effective than pre-made repellent sprays',
+            'Long-lasting peppermint oil sachets — just place and leave',
+            'Ideal for enclosed spaces where spray cannot reach',
+            'Each sachet lasts months with no mess or reapplication',
+            '6-pack covers multiple locations around the home',
           ]}
-          price="£5"
-          asin="SEARCH"
+          price="£10"
+          asin="B0CNV2CWQS"
           bestFor="Best Natural"
         />
       </div>
       <p>
-        Pure peppermint essential oil &mdash; the natural active ingredient in most commercial mouse repellent sprays. Rather than paying a premium for a pre-mixed spray, Nikura peppermint oil lets you create your own repellent at a fraction of the cost. Dilute 10-15 drops with water in a spray bottle, or apply undiluted to cotton balls and place them in entry points, under appliances, in voids behind kitchen units, and anywhere else you have detected mouse activity. The 10ml bottle will produce dozens of applications.
+        Long-lasting peppermint oil sachets that you simply place in enclosed spaces and leave. The REPELEM 6-pack solves a genuine problem with spray-based repellents: they cannot reach the enclosed, hidden voids where mice actually nest and travel. These sachets are designed to be placed behind appliances, in loft voids, under floorboards, inside car engines, in caravans, and in any other tight, enclosed space where a spray bottle simply cannot reach or where liquid application is impractical. No mess, no dripping, no application skill required &mdash; just place the sachet and let the peppermint oil do the work.
       </p>
       <p>
-        Nikura is a UK-made, vegan brand with a strong reputation in the essential oils market. The peppermint oil is pure and undiluted, which means you get the highest possible concentration of menthol &mdash; the compound thought to deter mice. This is significantly more potent than most pre-made sprays, where the peppermint oil is heavily diluted with water and other carriers. If you are going to use peppermint oil as part of your mouse prevention strategy, using the pure essential oil gives you the best chance of achieving a deterrent effect.
+        Each sachet lasts for months, which is a significant advantage over sprays that need reapplication every few days. The slow-release design means the peppermint oil diffuses gradually over time, maintaining a consistent scent level in the surrounding area without the peaks and troughs you get with spray application. The 6-pack provides enough sachets to cover the most common problem areas in a typical UK home &mdash; one behind the washing machine, one under the kitchen sink, one in the loft hatch area, one in the garage, and two more for wherever you have seen signs of activity.
       </p>
       <p>
-        The cotton ball method is the most commonly recommended application approach. Soak cotton balls with 5-10 drops of undiluted peppermint oil and place them at known or suspected entry points &mdash; gaps around pipes, under the kitchen sink, in the loft hatch opening, behind the washing machine, and inside cupboards where droppings have been found. Replace the cotton balls every 5-7 days as the scent fades. Alternatively, mix 15-20 drops with 200ml of water in a spray bottle and use as a surface spray. The same evidence caveats apply &mdash; peppermint oil is a supporting measure, not a replacement for physical proofing.
+        The sachets are particularly effective in combination with the REPELEM spray (reviewed above). Use the spray for open, accessible areas like skirting boards, kitchen worktops, and visible entry points, then place sachets in the hidden, enclosed spaces that spray cannot reach. This combination gives you scent-based coverage across both visible and concealed areas of your home. As always, combine with physical proofing for the most effective mouse prevention &mdash; sachets and sprays add a deterrent layer, but steel wool and copper mesh provide the permanent physical barrier.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Pure, undiluted peppermint oil &mdash; highest possible concentration</li>
-        <li>Far more cost-effective than pre-mixed sprays</li>
-        <li>Vegan, UK-made by a reputable essential oils brand</li>
-        <li>Versatile &mdash; use on cotton balls or dilute as a spray</li>
+        <li>Place and leave &mdash; no application, no mess, no respraying</li>
+        <li>Each sachet lasts months, far longer than any spray</li>
+        <li>Ideal for enclosed spaces spray cannot reach</li>
+        <li>6-pack covers multiple locations around the home</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Requires DIY preparation &mdash; not a ready-to-use product</li>
-        <li>Undiluted oil can irritate skin &mdash; handle with care</li>
+        <li>Less effective in open, well-ventilated areas where scent disperses</li>
         <li>Same limited evidence base as all peppermint repellents</li>
-        <li>Scent fades and requires regular reapplication</li>
+        <li>Cannot target specific narrow gaps like a spray can</li>
+        <li>Not a standalone solution &mdash; combine with proofing and spray</li>
       </ul>
 
       {/* Buying Guide */}

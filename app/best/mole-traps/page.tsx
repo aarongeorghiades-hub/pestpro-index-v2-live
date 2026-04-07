@@ -76,10 +76,10 @@ const breadcrumbSchema = {
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Mole Traps at a Glance' },
   { id: 'best-overall', title: 'Best Overall — Victor Push Mole Trap' },
-  { id: 'best-traditional', title: 'Best Traditional — Doff Complete Mole Trap' },
-  { id: 'best-professional', title: 'Best Professional — Talpex Mole Trap (Professional)' },
-  { id: 'best-discreet', title: 'Best Discreet — Kinetic Mole Trap — Scissor Jaw (Twin Pack)' },
-  { id: 'best-beginner', title: 'Best for Beginners — Defenders Easy-Set Mole Trap' },
+  { id: 'best-traditional', title: 'Best Traditional — The Big Cheese Mole Tunnel Trap' },
+  { id: 'best-professional', title: 'Best Professional — Pest-Stop Tunnel Mole Trap' },
+  { id: 'best-discreet', title: 'Best Discreet — SWISSINNO SuperCat Mole Trap' },
+  { id: 'best-beginner', title: 'Best for Beginners — REPELEM Claw Mole Trap (Pack of 3)' },
   { id: 'how-to-choose', title: 'How to Choose the Right Mole Trap' },
   { id: 'tips', title: 'Mole Trap Placement Tips' },
 ];
@@ -217,28 +217,28 @@ export default function BestMoleTrapsPage() {
             <td>~£15</td>
           </tr>
           <tr>
-            <td>Doff Complete Mole Trap</td>
+            <td>The Big Cheese Mole Tunnel Trap</td>
             <td>Half-barrel</td>
             <td>Traditional Pick</td>
             <td>~£8</td>
           </tr>
           <tr>
-            <td>Talpex Mole Trap (Professional)</td>
-            <td>Plunger</td>
+            <td>Pest-Stop Tunnel Mole Trap</td>
+            <td>Tunnel</td>
             <td>Professional Pick</td>
             <td>~£12</td>
           </tr>
           <tr>
-            <td>Kinetic Mole Trap — Scissor Jaw (Twin Pack)</td>
-            <td>Scissor-jaw</td>
+            <td>SWISSINNO SuperCat Mole Trap</td>
+            <td>Claw</td>
             <td>Most Discreet</td>
-            <td>~£10</td>
+            <td>~£15</td>
           </tr>
           <tr>
-            <td>Defenders Easy-Set Mole Trap</td>
-            <td>Easy-set</td>
+            <td>REPELEM Claw Mole Trap (Pack of 3)</td>
+            <td>Claw</td>
             <td>Best for Beginners</td>
-            <td>~£15</td>
+            <td>~£20</td>
           </tr>
         </tbody>
       </table>
@@ -270,108 +270,111 @@ export default function BestMoleTrapsPage() {
       </p>
 
       {/* Product 2 */}
-      <h2 id="best-traditional">Best Traditional — Doff Complete Mole Trap</h2>
+      <h2 id="best-traditional">Best Traditional — The Big Cheese Mole Tunnel Trap</h2>
       <div className="not-prose">
         <ProductCard
-          name="Doff Complete Mole Trap"
+          name="The Big Cheese Mole Tunnel Trap — Traditional Two-Way Galvanised"
           rating={4.3}
           features={[
-            'Traditional half-barrel design widely used by professional mole catchers',
-            'Set inside active runs — triggers when mole passes through',
-            'Metal construction for durability in all soil types',
-            'Sits flush within the tunnel for natural mole approach',
-            'Powerful spring delivers an instant, humane kill',
-            'Reusable with minimal maintenance',
+            "The UK's best-selling tunnel mole trap with 1,100+ reviews",
+            'Traditional half-barrel design in galvanised metal',
+            'Catches moles travelling in either direction through the tunnel',
+            'Rust-free, weatherproof construction for year-round use',
+            'Reusable season after season with minimal maintenance',
+            'The standard choice for UK gardens and lawns',
           ]}
           price="~£8"
-          asin="SEARCH"
-          bestFor="Professional-grade traditional mole trapping"
+          asin="B001DYTNV4"
+          bestFor="The standard traditional tunnel trap for UK gardens"
           rank={2}
         />
       </div>
       <p>
-        The Doff Complete Mole Trap is the traditional choice of professional mole catchers across the UK. Its half-barrel shape sits neatly inside the tunnel without disrupting the mole's natural path — a critical factor for success, as moles will avoid tunnels that feel different underfoot. When the mole passes through and contacts the trigger, the powerful spring delivers an instant kill.
+        The Big Cheese Mole Tunnel Trap is the UK's best-selling tunnel mole trap, and for good reason. Its traditional half-barrel design in galvanised metal sits neatly inside the tunnel and catches moles travelling in either direction — a critical advantage over single-entry traps. With over 1,100 reviews on Amazon, it is the proven standard choice for UK gardens and lawns.
       </p>
       <p>
-        Setting the Doff Complete requires a bit of practice. You need to locate an active run, carefully open it, and position the trap so the trigger plate sits at tunnel floor level. The metal construction resists rust and corrosion even in damp soil, and these traps last for years with minimal maintenance. At around £8, the Doff Complete represents exceptional value for a professional-quality trap.
+        Setting the trap requires a bit of practice. You need to locate an active run, carefully open it, and position the trap so it sits flush at tunnel level. The galvanised metal construction is rust-free and weatherproof, so the trap lasts for years even in damp, heavy soil. At around £8, The Big Cheese represents exceptional value for a reliable, reusable trap that professional mole catchers and homeowners alike trust.
       </p>
 
       {/* Product 3 */}
-      <h2 id="best-professional">Best Professional — Talpex Mole Trap (Professional)</h2>
+      <h2 id="best-professional">Best Professional — Pest-Stop Tunnel Mole Trap</h2>
       <div className="not-prose">
         <ProductCard
-          name="Talpex Mole Trap (Professional)"
+          name="Pest-Stop Tunnel Mole Trap — Dual Entry, 30% Stronger"
           rating={4.3}
           features={[
-            'European professional-standard trap',
-            'Spring-loaded plunger mechanism for fast, humane kill',
-            'Set in the run and triggered by mole movement',
-            'Widely used by professional mole catchers across the UK',
-            'Robust construction for repeated use',
+            "Traditional barrel-design trap from the UK's leading pest control manufacturer",
+            '30% stronger spring than standard tunnel traps',
+            'Dual entry catches moles from either direction',
+            'Rust-resistant metal construction for long-term use',
+            'Developed with professional mole catchers',
+            'Reusable season after season',
           ]}
           price="~£12"
-          asin="SEARCH"
+          asin="B000YPXJG8"
           bestFor="Professional mole catchers and experienced users"
           rank={3}
         />
       </div>
       <p>
-        The Talpex is the European professional-standard mole trap, widely used by professional mole catchers across the UK and mainland Europe. Its spring-loaded plunger mechanism is set in the active run, and when the mole moves through the tunnel and disturbs the trigger, the plunger fires downward for a fast and humane kill. Many professionals consider the Talpex to be the most reliable trap available when set correctly.
+        The Pest-Stop Tunnel Mole Trap comes from the UK's leading pest control manufacturer and is designed in collaboration with professional mole catchers. Its traditional barrel design features a 30% stronger spring than standard models, delivering a faster, more reliable kill. The dual-entry design catches moles travelling in either direction through the tunnel, so there is no need to guess which way the mole is heading.
       </p>
       <p>
-        Setting a Talpex requires more experience than a simple push trap like the Victor. You need to carefully excavate the tunnel, position the trap with the plunger above the run, and ensure the trigger is at the correct sensitivity. We recommend watching a tutorial before your first attempt. Once mastered, however, the catch rate is excellent — many professional mole catchers use Talpex traps exclusively.
+        Setting the Pest-Stop requires some experience — you need to carefully open an active run, position the trap so it sits flush at tunnel level, and ensure the trigger mechanism is properly engaged. The rust-resistant metal construction holds up well in wet, heavy soil and lasts for years of repeated use. For gardeners who want a step up from basic tunnel traps, the Pest-Stop offers professional-grade performance at a reasonable price.
       </p>
 
       {/* Product 4 */}
-      <h2 id="best-discreet">Best Discreet — Kinetic Mole Trap — Scissor Jaw (Twin Pack)</h2>
+      <h2 id="best-discreet">Best Discreet — SWISSINNO SuperCat Mole Trap</h2>
       <div className="not-prose">
         <ProductCard
-          name="Kinetic Mole Trap — Scissor Jaw (Twin Pack)"
+          name="SWISSINNO SuperCat Mole Trap — Swiss Precision Claw Design"
           rating={4.1}
           features={[
-            'Twin pack offers excellent value — two scissor-jaw traps included',
-            'Compact scissor-jaw design sits low in the tunnel',
-            'Less conspicuous above ground than plunger traps',
-            'Popular for lawns and sports turf',
-            'Durable construction for repeated use',
+            'High-performance claw trap from Swiss engineering with 1,700+ reviews',
+            'Advanced trigger system responds from either direction in the tunnel',
+            'Corrosion-resistant construction for multiple seasons of use',
+            'No bait or chemicals required — purely mechanical',
+            "The modern professional's alternative to traditional tunnel traps",
+            'Low-profile design sits discreetly in the run',
           ]}
-          price="~£10"
-          asin="SEARCH"
+          price="~£15"
+          asin="B011BX33HG"
           bestFor="Lawns, sports turf and situations where discreet placement matters"
           rank={4}
         />
       </div>
       <p>
-        The Kinetic Mole Trap — Scissor Jaw (Twin Pack) offers a practical and discreet approach to mole trapping. The compact scissor-jaw design sits low in the tunnel, making it far less conspicuous above ground than plunger traps. The twin pack means you get two traps for the price, allowing you to cover more active runs from the outset — ideal for well-maintained lawns and sports turf where aesthetics matter.
+        The SWISSINNO SuperCat Mole Trap brings Swiss precision engineering to mole control. Its advanced claw design and trigger system responds to mole movement from either direction in the tunnel, so there is no need to determine the direction of travel. With over 1,700 reviews on Amazon, this is the modern professional's alternative to traditional barrel-style tunnel traps — no bait, no chemicals, just reliable mechanical trapping.
       </p>
       <p>
-        The low-profile design reduces the chance of accidental disturbance from pets, children, or mowing. Each trap is pushed into an active run and triggers when the mole passes through, delivering a swift kill. Installation is straightforward — identify an active run, compress the jaws, and push the trap into the tunnel. The twin pack represents good value and is a sensible choice for gardeners who want to set multiple traps across different runs.
+        The low-profile claw design sits discreetly in the run, making it far less conspicuous above ground than plunger traps — ideal for well-maintained lawns and sports turf. The corrosion-resistant construction holds up across multiple seasons of use without degradation. Installation is straightforward: locate an active run, set the trigger mechanism, and place the trap into the tunnel. For gardeners who want a modern, proven trap with a high catch rate, the SWISSINNO SuperCat is an excellent choice.
       </p>
 
       {/* Product 5 */}
-      <h2 id="best-beginner">Best for Beginners — Defenders Easy-Set Mole Trap</h2>
+      <h2 id="best-beginner">Best for Beginners — REPELEM Claw Mole Trap (Pack of 3)</h2>
       <div className="not-prose">
         <ProductCard
-          name="Defenders Easy-Set Mole Trap"
+          name="REPELEM Claw Mole Trap — Reusable, Rust-Free, Pack of 3"
           rating={4.0}
           features={[
-            'Beginner-friendly design — easier to set than traditional scissor traps',
-            'Clear instructions included — no special tools needed',
-            'Good starting point for first-time mole trappers',
-            'Reliable trigger mechanism',
-            'Reusable metal construction',
+            'Pack of 3 traps — treat multiple active runs simultaneously',
+            'Claw-style design with humane instant-kill mechanism',
+            'Rust-free construction for long-term outdoor use',
+            'Reusable across multiple seasons',
+            'Good value for gardens with persistent mole activity',
+            'UK brand with straightforward setup',
           ]}
-          price="~£15"
-          asin="SEARCH"
-          bestFor="Homeowners attempting mole control for the first time"
+          price="~£20"
+          asin="B0CZTRKZFD"
+          bestFor="Gardens with persistent mole activity across multiple areas"
           rank={5}
         />
       </div>
       <p>
-        The Defenders Easy-Set Mole Trap is designed specifically for homeowners who have never trapped a mole before. Traditional scissor and plunger traps can be intimidating to set — the powerful springs require firm handling, and incorrect positioning leads to failed catches. The Defenders Easy-Set simplifies the process with a more intuitive mechanism and clear instructions that walk you through each step.
+        The REPELEM Claw Mole Trap is a UK brand claw-style trap sold in a pack of three, making it ideal for gardens with persistent mole activity across multiple areas. The 3-pack lets you treat several active runs simultaneously, which significantly increases your chance of a quick catch — professional mole catchers always recommend setting multiple traps rather than relying on a single one.
       </p>
       <p>
-        No special tools are needed — the trap can be set with your hands alone. While experienced mole catchers may prefer the higher catch rates of a Doff Complete or Talpex, the Defenders Easy-Set is a genuine improvement for beginners who would otherwise struggle with traditional traps. If you have never attempted mole control before, starting with the Defenders Easy-Set is a sensible approach before graduating to more advanced traps.
+        Each trap features a humane instant-kill mechanism and rust-free construction that holds up to repeated outdoor use across multiple seasons. The claw design is straightforward to set and does not require special tools. For homeowners dealing with moles in several parts of the garden, the REPELEM 3-pack offers good value compared to buying individual traps. It is a practical starting point for anyone new to mole control who wants coverage across a larger area.
       </p>
 
       {/* How to Choose */}
