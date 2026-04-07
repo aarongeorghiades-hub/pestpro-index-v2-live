@@ -82,7 +82,7 @@ const faqSchema = {
       name: "Does Awaab's Law apply to private landlords?",
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Awaab's Law (Section 42 of the Social Housing (Regulation) Act 2023) currently applies to registered providers of social housing only. However, private landlords are already subject to the Homes (Fitness for Human Habitation) Act 2018 and the Housing Health and Safety Rating System (HHSRS), both of which cover damp and mould. The direction of travel is clear: the government has signalled that similar timeframe requirements may be extended to the private rented sector. Treating Awaab's Law standards as best practice now puts private landlords ahead of likely future regulation and demonstrates due diligence in the event of a complaint.",
+        text: "Awaab's Law (Section 42, Social Housing Regulation Act 2023) currently applies to registered social housing providers. However, private landlords are already subject to the Housing Health and Safety Rating System (HHSRS), and enforcement is increasing. Awaab's Law is widely regarded as the direction of travel for all rental property legislation.",
       },
     },
     {
@@ -90,7 +90,7 @@ const faqSchema = {
       name: 'Will a PIV unit definitely fix my mould problem?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "PIV is highly effective against condensation damp, which is the most common type of damp in UK rental properties (estimated 80-90% of all damp complaints). By continuously introducing fresh, dry air from the loft space, a PIV unit reduces indoor humidity below the 60% threshold that mould needs to grow. However, PIV will not fix rising damp (moisture wicking up from the ground through masonry) or penetrating damp (water entering through structural defects such as cracked render, failed flashings or leaking gutters). If your property has structural damp issues, these must be addressed through building repairs before or alongside PIV installation.",
+        text: "PIV units are highly effective at eliminating condensation damp, which is the most common cause of mould in UK rental properties. Most users report mould and condensation disappearing within 2-6 weeks of installation. However, PIV does not fix structural damp, rising damp or penetrating damp — these require separate remediation.",
       },
     },
     {
@@ -98,7 +98,7 @@ const faqSchema = {
       name: 'How long does a PIV unit take to work?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Most landlords and tenants notice a significant improvement within 2-4 weeks of PIV installation. Humidity levels typically drop to the target 45-55% range within the first week. Existing surface mould stops spreading almost immediately once humidity falls below 60%. However, established mould staining on walls and ceilings will need to be physically cleaned and treated separately — the PIV unit prevents new growth but does not remove existing staining. For severely damp properties, allow 4-8 weeks for the building fabric to dry out fully.",
+        text: "Most homeowners and landlords report a significant improvement in condensation within the first 1-2 weeks of installation. Full resolution of mould problems typically takes 4-8 weeks as the property dries out. Running the unit continuously (it uses approximately 1-2p of electricity per day) gives the fastest results.",
       },
     },
     {
@@ -106,7 +106,7 @@ const faqSchema = {
       name: 'What humidity level should a rental property be at?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "The ideal indoor relative humidity for a UK rental property is 45-55%. Below 40% can cause dry skin, irritated airways and static electricity. Above 60% creates conditions for mould growth and attracts moisture-dependent pests such as silverfish, mould mites and booklice. Above 70% is a serious concern — mould will actively grow on most surfaces, timber decay can begin, and the property becomes highly attractive to cockroaches and other damp-loving insects. A digital hygrometer placed in the most affected room provides continuous monitoring.",
+        text: "The ideal indoor relative humidity is 40-60%. Above 70% creates conditions favourable for mould growth. A digital hygrometer allows landlords to document humidity levels before and after treatment — important evidence for Awaab's Law compliance records.",
       },
     },
     {
@@ -114,7 +114,7 @@ const faqSchema = {
       name: 'Do I need an electrician to install a PIV unit?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Yes. PIV units require a permanent electrical connection, which in England and Wales must be installed by a Part P registered electrician under Building Regulations. The unit itself is mounted in the loft space with a diffuser cut into the hallway ceiling. A competent electrician can typically install a PIV unit in 2-3 hours. Total installation cost including the electrician is typically £150-£300 on top of the unit price. Some PIV manufacturers offer installation kits with clear instructions for the electrician, and some Amazon listings include installation by a local approved engineer.",
+        text: "The physical installation of a loft-mounted PIV unit is manageable for a competent DIYer. However, the electrical connection to a spur or fused connection unit should be done by a qualified electrician. Most installers budget 2-3 hours total, with the electrical work taking 30-60 minutes.",
       },
     },
   ],

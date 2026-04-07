@@ -609,6 +609,19 @@ export default function BestCommercialDehumidifiersPage() {
         Controlling damp removes the habitat conditions that attract cockroaches, silverfish and mould mites. Pair with <a href="/best/professional-bait-station-kits" className="text-green-600 hover:underline">professional bait station kits</a> for complete rodent prevention.
       </p>
 
+      <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-6 my-8">
+        <p className="font-bold text-amber-900 mb-2">Landlord compliance guide</p>
+        <p className="text-amber-800 mb-3">
+          If you&apos;re a landlord dealing with damp or mould, see our complete guide to Awaab&apos;s Law compliance equipment &mdash; covering PIV units, dehumidifiers and compliance documentation tools.
+        </p>
+        <Link
+          href="/best/awaabs-law-damp-mould-equipment"
+          className="inline-block px-5 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg transition-colors text-sm"
+        >
+          View Awaab&apos;s Law equipment guide &rarr;
+        </Link>
+      </div>
+
       {/* FindProviderCTA */}
       <div className="not-prose">
         <FindProviderCTA

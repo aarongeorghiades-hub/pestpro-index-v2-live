@@ -367,6 +367,10 @@ export default function ProfessionalPressureSprayersPage() {
         For treating large open spaces where a sprayer cannot reach, pair with a <a href="/best/professional-ulv-foggers" className="text-green-600 hover:underline">professional ULV fogger</a>.
       </p>
 
+      <p>
+        Also relevant for landlords and property managers: our guide to <Link href="/best/awaabs-law-damp-mould-equipment" className="text-green-600 hover:underline">Awaab&apos;s Law damp and mould compliance equipment</Link>.
+      </p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Need Professional Pest Control?"

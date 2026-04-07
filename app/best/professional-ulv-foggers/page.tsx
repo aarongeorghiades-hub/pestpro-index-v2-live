@@ -359,6 +359,10 @@ export default function ProfessionalULVFoggersPage() {
         For targeted surface treatment, pair ULV fogging with <a href="/best/professional-pressure-sprayers" className="text-green-600 hover:underline">professional pressure sprayers</a>. For ongoing passive monitoring, add <a href="/best/professional-insect-light-traps" className="text-green-600 hover:underline">commercial insect light traps</a>.
       </p>
 
+      <p>
+        Also relevant for landlords and property managers: our guide to <Link href="/best/awaabs-law-damp-mould-equipment" className="text-green-600 hover:underline">Awaab&apos;s Law damp and mould compliance equipment</Link>.
+      </p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Need Professional Pest Treatment?"

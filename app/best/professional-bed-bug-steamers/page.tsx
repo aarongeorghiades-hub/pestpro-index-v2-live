@@ -286,6 +286,10 @@ export default function ProfessionalBedBugSteamersPage() {
         Pair steam treatment with <a href="/best/professional-mattress-encasements" className="text-green-600 hover:underline">professional mattress encasements</a> to seal treated mattresses, and follow up with a residual <a href="/best/bed-bug-spray" className="text-green-600 hover:underline">bed bug killer spray</a> for ongoing protection.
       </p>
 
+      <p>
+        Also relevant for landlords and property managers: our guide to <Link href="/best/awaabs-law-damp-mould-equipment" className="text-green-600 hover:underline">Awaab&apos;s Law damp and mould compliance equipment</Link>.
+      </p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Need Professional Bed Bug Treatment?"

@@ -486,6 +486,10 @@ export default function BestProfessionalBirdNettingKitsPage() {
         For smaller ledges and sills where netting is not practical, see our guide to <a href="/best/pigeon-spikes" className="text-green-600 hover:underline">pigeon spikes</a>.
       </p>
 
+      <p>
+        Also relevant for landlords and property managers: our guide to <Link href="/best/awaabs-law-damp-mould-equipment" className="text-green-600 hover:underline">Awaab&apos;s Law damp and mould compliance equipment</Link>.
+      </p>
+
       {/* FindProviderCTA */}
       <div className="not-prose">
         <FindProviderCTA

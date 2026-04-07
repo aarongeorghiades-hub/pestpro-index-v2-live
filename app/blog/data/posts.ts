@@ -3010,6 +3010,12 @@ export const posts: BlogPost[] = [
 
 <p>The critical point: if a tenant reports a pest problem in writing, the Awaab's Law timelines begin. You cannot ignore it, delay it, or claim it is the tenant's responsibility without first investigating.</p>
 
+<div style="background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:1.5rem;margin:1.5rem 0">
+<p style="font-weight:bold;color:#92400e;margin-bottom:0.5rem">Equipment guide: Awaab's Law compliance</p>
+<p style="color:#92400e;margin-bottom:0.75rem">Looking for the actual equipment to fix damp and mould? See our full guide to PIV units, commercial dehumidifiers and damp meters for landlords.</p>
+<a href="/best/awaabs-law-damp-mould-equipment" style="display:inline-block;padding:0.5rem 1.25rem;background:#d97706;color:white;font-weight:bold;border-radius:8px;text-decoration:none;font-size:0.875rem">View the equipment guide →</a>
+</div>
+
 <h2>Landlord vs Tenant Responsibilities</h2>
 
 <p>This is where things get nuanced. The general principles:</p>
@@ -3052,6 +3058,10 @@ export const posts: BlogPost[] = [
 <h2>The Bottom Line</h2>
 
 <p>Awaab's Law means that ignoring pest complaints is no longer just poor practice — it is a legal risk. The timelines are tight, the penalties are real, and the best approach is always proactive: maintain your property, respond to complaints promptly, and treat problems before they escalate.</p>
+
+<div style="background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:1.5rem;margin:1.5rem 0">
+<p style="color:#92400e">The right equipment makes Awaab's Law compliance straightforward. See our <a href="/best/awaabs-law-damp-mould-equipment" class="text-green-600 hover:underline" style="color:#059669;font-weight:bold">landlord equipment guide</a> for PIV units, dehumidifiers and damp meters — all available on Amazon with next-day delivery.</p>
+</div>
 
 <p><strong>Need a pest controller for your rental property?</strong> <a href="/residential">Find verified providers</a> on PestPro Index, or browse our <a href="/commercial">commercial directory</a> if you manage a portfolio.</p>
     `

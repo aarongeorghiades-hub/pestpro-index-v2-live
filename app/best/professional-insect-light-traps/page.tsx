@@ -547,6 +547,10 @@ export default function ProfessionalInsectLightTrapsPage() {
         For active chemical treatment alongside passive UV trapping, see our guide to <a href="/best/professional-ulv-foggers" className="text-green-600 hover:underline">professional ULV foggers</a>.
       </p>
 
+      <p>
+        Also relevant for landlords and property managers: our guide to <Link href="/best/awaabs-law-damp-mould-equipment" className="text-green-600 hover:underline">Awaab&apos;s Law damp and mould compliance equipment</Link>.
+      </p>
+
       {/* FindProviderCTA */}
       <div className="not-prose">
         <FindProviderCTA

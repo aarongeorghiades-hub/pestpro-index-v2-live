@@ -353,6 +353,10 @@ export default function ProfessionalMattressEncasementsPage() {
         For the most effective bed bug prevention, combine encasements with <a href="/best/professional-bed-bug-steamers" className="text-green-600 hover:underline">professional bed bug steamers</a> and a residual <a href="/best/bed-bug-spray" className="text-green-600 hover:underline">bed bug spray treatment</a>.
       </p>
 
+      <p>
+        Also relevant for landlords and property managers: our guide to <Link href="/best/awaabs-law-damp-mould-equipment" className="text-green-600 hover:underline">Awaab&apos;s Law damp and mould compliance equipment</Link>.
+      </p>
+
       <div className="not-prose">
         <FindProviderCTA
           heading="Need Professional Bed Bug Treatment?"
