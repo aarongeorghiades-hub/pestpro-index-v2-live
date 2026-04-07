@@ -413,7 +413,7 @@ export default function NaturalMouseDeterrentsPage() {
       </ul>
 
       <p>
-        For an established mouse problem, <strong>humane live-catch traps</strong> are the next step that stays aligned with a non-lethal approach. These traps capture mice alive so you can release them at a distance from your home. If live-catch traps prove insufficient, snap traps provide a quick, humane kill and are the method recommended by most pest control professionals as the standard for DIY mouse control.
+        For an established mouse problem, <strong>humane live-catch traps</strong> are the next step that stays aligned with a non-lethal approach. These traps capture mice alive so you can release them at a distance from your home. If live-catch traps prove insufficient, snap traps provide a quick, humane kill and are the method recommended by most pest control professionals as the standard for DIY mouse control. For persistent infestations, combine <Link href="/best/mouse-repellent" className="text-green-600 hover:underline">mouse repellent sprays</Link> with <Link href="/best/mouse-bait-stations" className="text-green-600 hover:underline">mouse bait stations</Link> for a complete approach.
       </p>
 
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">

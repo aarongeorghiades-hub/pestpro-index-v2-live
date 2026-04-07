@@ -476,7 +476,7 @@ export default function NaturalAntRepellentsPage() {
       </ul>
 
       <p>
-        In these cases, you may need to consider a targeted ant bait product. Unlike repellents, baits work <em>with</em> the ants&apos; foraging behaviour &mdash; worker ants carry the bait back to the nest, where it kills the queen and collapses the colony. This is more effective than killing individual ants on contact.
+        In these cases, you may need to consider a targeted ant bait product. Unlike repellents, baits work <em>with</em> the ants&apos; foraging behaviour &mdash; worker ants carry the bait back to the nest, where it kills the queen and collapses the colony. This is more effective than killing individual ants on contact. If natural deterrents aren&apos;t providing sufficient control, see our guide to <Link href="/best/ant-gel-bait" className="text-green-600 hover:underline">ant killer gel</Link> for stronger colony-eliminating treatments.
       </p>
 
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">

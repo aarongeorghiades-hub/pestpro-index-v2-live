@@ -308,7 +308,7 @@ export default function SpringPestPreventionPage() {
       </p>
 
       <p>
-        For colonies that are already showing early foraging activity, <strong>ant gel bait</strong> is the most effective DIY treatment. Gel baits contain a slow-acting insecticide mixed with an attractive sugar-based bait. Worker ants carry the bait back to the colony and feed it to the queen and other workers, killing the entire nest from within. This is far more effective than spray insecticides, which only kill the ants you can see without affecting the colony. Apply gel bait in small dots along ant trails and near entry points.
+        For colonies that are already showing early foraging activity, <Link href="/best/ant-gel-bait" className="text-green-600 hover:underline">ant killer gel</Link> is the most effective DIY treatment. Gel baits contain a slow-acting insecticide mixed with an attractive sugar-based bait. Worker ants carry the bait back to the colony and feed it to the queen and other workers, killing the entire nest from within. This is far more effective than spray insecticides, which only kill the ants you can see without affecting the colony. Apply gel bait in small dots along ant trails and near entry points.
       </p>
 
       <p>
@@ -335,7 +335,7 @@ export default function SpringPestPreventionPage() {
       <h3>Wasps: Inspect, Seal, and Act Early</h3>
 
       <p>
-        Wasp prevention in spring is all about <strong>intercepting queens before they establish colonies</strong>. In April, each queen wasp is working alone &mdash; she has no workers to defend her, and her nest is tiny. Removing a golf-ball-sized queen nest in April is a simple five-minute job. Removing a football-sized nest full of thousands of aggressive workers in August requires professional pest control, protective equipment, and costs &pound;50 to &pound;100 or more.
+        Wasp prevention in spring is all about <strong>intercepting queens before they establish colonies</strong>. In April, each queen wasp is working alone &mdash; she has no workers to defend her, and her nest is tiny. Removing a golf-ball-sized queen nest in April is a simple five-minute job &mdash; a can of <Link href="/best/wasp-nest-foam" className="text-green-600 hover:underline">wasp nest foam</Link> applied at dusk is all you need. Removing a football-sized nest full of thousands of aggressive workers in August requires professional pest control, protective equipment, and costs &pound;50 to &pound;100 or more.
       </p>
 
       <p>

@@ -160,6 +160,9 @@ export default function PlantsThatRepelPestsPage() {
       <p className="text-sm text-gray-600">
         <em>For more: <Link href="/guides/natural-ant-repellents" className="text-blue-600 hover:text-blue-800 underline">Natural Ant Repellents Guide</Link></em>
       </p>
+      <p>
+        If ants persist despite planting mint and other deterrent herbs, our guide to <Link href="/best/ant-gel-bait" className="text-green-600 hover:underline">ant killer gel</Link> covers stronger colony-eliminating options.
+      </p>
 
       <h3>Plants That Deter Mosquitoes and Flies</h3>
       <p>

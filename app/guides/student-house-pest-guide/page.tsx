@@ -236,7 +236,7 @@ export default function StudentHousePestGuidePage() {
       </p>
 
       <p>
-        Flea bites are typically concentrated around the <strong>ankles and lower legs</strong>, appearing as small, red, intensely itchy bumps, often in clusters. If the previous tenants had pets and the property was not professionally treated during the void period, this is a <strong>landlord responsibility</strong>. The landlord should have arranged a flea treatment before you moved in. See our <Link href="/guides/how-to-get-rid-of-fleas" className="text-blue-600 hover:underline font-medium">flea control guide</Link> for comprehensive treatment advice.
+        Flea bites are typically concentrated around the <strong>ankles and lower legs</strong>, appearing as small, red, intensely itchy bumps, often in clusters. A household <Link href="/best/flea-spray-for-home" className="text-green-600 hover:underline">flea spray</Link> containing an insect growth regulator (IGR) is the most effective immediate treatment. If the previous tenants had pets and the property was not professionally treated during the void period, this is a <strong>landlord responsibility</strong>. The landlord should have arranged a flea treatment before you moved in. See our <Link href="/guides/how-to-get-rid-of-fleas" className="text-blue-600 hover:underline font-medium">flea control guide</Link> for comprehensive treatment advice.
       </p>
 
       <h3>Cockroaches</h3>
@@ -371,7 +371,7 @@ export default function StudentHousePestGuidePage() {
       <h3>Bed Bug Spray</h3>
 
       <p>
-        If you suspect bed bugs, a <strong>residual bed bug spray</strong> is the most accessible DIY option. Look for sprays containing <strong>cypermethrin</strong> or <strong>permethrin</strong> as the active ingredient. Spray the mattress seams, bed frame joints, headboard, and the edges of the carpet near the bed. Allow the spray to dry before using the bed (follow the product instructions). Bed bug sprays provide a residual barrier that kills bugs on contact for several weeks. However, for a serious bed bug infestation, DIY sprays are unlikely to be enough &mdash; professional heat treatment is the most effective solution, and this is a cost your landlord should bear if the infestation pre-dates your tenancy or has spread from another room.
+        If you suspect bed bugs, a <strong>residual <Link href="/best/bed-bug-spray" className="text-green-600 hover:underline">bed bug spray</Link></strong> is the most accessible DIY option. Look for sprays containing <strong>cypermethrin</strong> or <strong>permethrin</strong> as the active ingredient. Spray the mattress seams, bed frame joints, headboard, and the edges of the carpet near the bed. Allow the spray to dry before using the bed (follow the product instructions). Bed bug sprays provide a residual barrier that kills bugs on contact for several weeks. However, for a serious bed bug infestation, DIY sprays are unlikely to be enough &mdash; professional heat treatment is the most effective solution, and this is a cost your landlord should bear if the infestation pre-dates your tenancy or has spread from another room.
       </p>
 
       <div className="not-prose space-y-6 my-8">

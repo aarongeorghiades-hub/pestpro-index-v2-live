@@ -311,7 +311,7 @@ export default function NaturalSpiderRepellentsPage() {
         For most people in the UK, natural spider repellents combined with good household practices are more than sufficient. UK house spiders are harmless, and reducing their numbers &mdash; rather than eliminating them entirely &mdash; is a realistic and sensible goal. Complete elimination is neither necessary nor practically achievable in most homes.
       </p>
       <p>
-        However, if you have a severe spider phobia that affects your daily life, or if you are dealing with an unusually large number of spiders in a specific area (perhaps a basement or outbuilding), chemical spider repellent sprays can provide a stronger barrier. These typically contain synthetic pyrethroids that create a residual barrier lasting several weeks.
+        However, if you have a severe spider phobia that affects your daily life, or if you are dealing with an unusually large number of spiders in a specific area (perhaps a basement or outbuilding), chemical spider repellent sprays can provide a stronger barrier. These typically contain synthetic pyrethroids that create a residual barrier lasting several weeks. For longer-lasting protection, see our guide to <Link href="/best/spider-repellent" className="text-green-600 hover:underline">spider repellent sprays</Link> including peppermint oil and chemical options.
       </p>
 
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">

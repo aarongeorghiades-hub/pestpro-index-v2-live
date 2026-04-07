@@ -346,6 +346,10 @@ export default function NaturalFoxDeterrentsPage() {
         <li><strong>Foxes causing significant damage</strong> to gardens, allotments, or livestock &mdash; professional fox deterrence may involve cage trapping and relocation (requires a licence) or professional-grade deterrent systems.</li>
       </ul>
 
+      <p>
+        For covering a large garden perimeter with deterrent spray, a <Link href="/best/professional-pressure-sprayers" className="text-green-600 hover:underline">pressure sprayer</Link> makes application much faster and more thorough.
+      </p>
+
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Need professional fox deterrence?</p>
         <p className="text-gray-700 mb-3">Our comprehensive review covers all fox deterrent products and approaches, from natural to professional-grade.</p>

@@ -327,7 +327,7 @@ export default function NaturalWaspDeterrentsPage() {
       </ul>
 
       <p>
-        For active nest removal, professional pest controllers use specialised insecticidal dust or foam that is applied directly to the nest entrance. The treatment typically takes effect within 24 to 48 hours. Never attempt to remove or destroy an active wasp nest yourself &mdash; a disturbed nest can release hundreds of defensive wasps simultaneously.
+        For active nest removal, professional pest controllers use specialised insecticidal dust or foam that is applied directly to the nest entrance. The treatment typically takes effect within 24 to 48 hours. Never attempt to remove or destroy an active wasp nest yourself &mdash; a disturbed nest can release hundreds of defensive wasps simultaneously. If you&apos;ve located a nest that needs treating, see our guide to <Link href="/best/wasp-nest-foam" className="text-green-600 hover:underline">wasp nest foam</Link> for safe distance application.
       </p>
 
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">

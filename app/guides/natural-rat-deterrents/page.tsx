@@ -421,7 +421,7 @@ export default function NaturalRatDeterrentsPage() {
       </ul>
 
       <p>
-        In these situations, the recommended approach is a combination of <strong>snap traps</strong> (which provide a quick, humane kill) and <strong>professional pest control</strong>. A BPCA-certified pest controller will survey the property, identify all entry points, place traps or bait stations strategically, and carry out comprehensive proofing to prevent recurrence. Many modern pest controllers offer poison-free treatment options if that is your preference.
+        In these situations, the recommended approach is a combination of <strong>snap traps</strong> (which provide a quick, humane kill) and <strong>professional pest control</strong>. A BPCA-certified pest controller will survey the property, identify all entry points, place traps or bait stations strategically, and carry out comprehensive proofing to prevent recurrence. Many modern pest controllers offer poison-free treatment options if that is your preference. When natural deterrents aren&apos;t enough, see our guide to <Link href="/best/rat-poison" className="text-green-600 hover:underline">rat poison</Link> for stronger options.
       </p>
 
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">

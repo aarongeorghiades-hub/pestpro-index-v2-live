@@ -420,7 +420,7 @@ export default function RatPoisonVsRatTrapsPage() {
         <li>You are working with a professional pest controller who holds the appropriate qualifications for SGAR use.</li>
       </ul>
       <p>
-        In many cases, a <strong>combined approach</strong> works best for serious infestations: traps for immediate knockdown of the population, with bait stations for ongoing control in hard-to-reach areas. Always combine either method with proofing — seal entry points with wire wool and expanding foam to prevent reinfestation.
+        In many cases, a <strong>combined approach</strong> works best for serious infestations: traps for immediate knockdown of the population, with bait stations for ongoing control in hard-to-reach areas. See our guides to the best <Link href="/best/rat-poison" className="text-green-600 hover:underline">rat poison</Link> and <Link href="/best/rat-bait-stations" className="text-green-600 hover:underline">rat bait stations</Link> for our top-rated products. Always combine either method with proofing — seal entry points with wire wool and expanding foam to prevent reinfestation.
       </p>
 
       <FindProviderCTA

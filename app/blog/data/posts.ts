@@ -2733,10 +2733,10 @@ export const posts: BlogPost[] = [
 <li><strong>Set traps:</strong> <a href="/best/mouse-traps">The best mouse traps</a> placed along walls and near droppings are the most effective first response. Bait with chocolate spread or peanut butter.</li>
 <li><strong>Remove food sources:</strong> Store all food in sealed containers. Clean behind and under appliances. Do not leave pet food out overnight.</li>
 <li><strong>Seal gaps:</strong> Use steel wool, copper mesh, and expanding foam to block entry points. This is the most important long-term step.</li>
-<li><strong>Consider bait:</strong> For persistent problems, <a href="/best/mouse-poison">mouse poison (rodenticide)</a> in tamper-resistant bait stations can be effective — but use carefully, especially if you have pets or children.</li>
+<li><strong>Consider bait:</strong> For persistent problems, <a href="/best/mouse-poison">mouse poison (rodenticide)</a> in tamper-resistant <a href="/best/mouse-bait-stations" class="text-green-600 hover:underline">mouse bait stations</a> can be effective — but use carefully, especially if you have pets or children.</li>
 </ol>
 
-<p>For a complete walkthrough, our <a href="/guides/how-to-get-rid-of-mice">guide to getting rid of mice</a> covers everything from identification to long-term prevention. If you prefer chemical-free options, see our <a href="/guides/natural-mouse-deterrents">natural mouse deterrent guide</a>.</p>
+<p>For a complete walkthrough, our <a href="/guides/how-to-get-rid-of-mice">guide to getting rid of mice</a> covers everything from identification to long-term prevention. If you prefer chemical-free options, see our <a href="/guides/natural-mouse-deterrents">natural mouse deterrent guide</a> or browse the best <a href="/best/mouse-repellent" class="text-green-600 hover:underline">mouse repellent</a> products.</p>
 
 <h2>When to Call a Professional</h2>
 
@@ -2959,7 +2959,7 @@ export const posts: BlogPost[] = [
 
 <ul>
 <li><strong>Professional chemical treatment:</strong> The most common option. A pest controller applies residual insecticide to all harbourage areas, usually requiring 2–3 treatments over several weeks. Costs &pound;200–&pound;400 per room.</li>
-<li><strong>Professional heat treatment:</strong> The room is heated to 50&deg;C+ for several hours, killing all life stages including eggs. More expensive (&pound;400–&pound;800+) but can be done in a single visit. Highly effective.</li>
+<li><strong>Professional heat treatment:</strong> Using <a href="/best/professional-bed-bug-steamers" class="text-green-600 hover:underline">professional bed bug steamers</a>, the room is heated to 50&deg;C+ for several hours, killing all life stages including eggs. More expensive (&pound;400–&pound;800+) but can be done in a single visit. Highly effective.</li>
 <li><strong>DIY sprays:</strong> <a href="/best/bed-bug-spray">Bed bug sprays</a> can help for very early-stage, localised problems, but have a low success rate for established infestations.</li>
 <li><strong>Mattress encasements:</strong> <a href="/best/bed-bug-mattress-encasement">Bed bug mattress encasements</a> trap bugs inside and prevent new bugs from colonising your mattress. An essential part of any treatment plan, not a treatment on their own.</li>
 </ul>

@@ -308,6 +308,10 @@ export default function NaturalMothRepellentsPage() {
         <li><strong>Professional treatment</strong> &mdash; for severe or persistent infestations, particularly those affecting carpets as well as clothing, a professional pest controller can apply targeted treatments.</li>
       </ul>
 
+      <p>
+        Pair natural deterrents with <Link href="/best/moth-traps" className="text-green-600 hover:underline">moth traps</Link> to monitor activity and catch adult moths before they lay more eggs.
+      </p>
+
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Already have moth damage?</p>
         <p className="text-gray-700 mb-3">Our in-depth reviews cover pheromone traps for monitoring and killer products for active infestations.</p>

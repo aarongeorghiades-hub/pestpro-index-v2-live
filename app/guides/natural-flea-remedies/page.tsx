@@ -343,7 +343,7 @@ export default function NaturalFleaRemediesPage() {
       </ul>
 
       <p>
-        For serious infestations, a combination of <strong>household flea spray</strong> (which contains an insecticide and an insect growth regulator to break the lifecycle) and a <strong>vet-prescribed pet flea treatment</strong> is the fastest and most reliable solution. In severe cases, a flea fogger (smoke bomb) can treat an entire room in one application.
+        For serious infestations, a combination of <strong>household flea spray</strong> (which contains an insecticide and an insect growth regulator to break the lifecycle) and a <strong>vet-prescribed pet flea treatment</strong> is the fastest and most reliable solution. In severe cases, a flea fogger (smoke bomb) can treat an entire room in one application. For a serious infestation, a professional-grade <Link href="/best/flea-spray-for-home" className="text-green-600 hover:underline">household flea spray</Link> will be more effective than natural remedies alone.
       </p>
 
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">

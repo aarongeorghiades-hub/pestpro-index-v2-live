@@ -169,7 +169,7 @@ export default function EssentialOilsForPestControlPage() {
         <strong>Evidence summary:</strong> A study published in the <em>Cornell Hospitality Quarterly</em> found that peppermint oil significantly reduced spider activity in treated hotel rooms. Research at the University of Nebraska demonstrated that concentrated peppermint oil caused avoidance behaviour in mice. However, the effects are temporary (5 to 7 days) and require high concentrations of pure oil. Cheap, diluted products are far less effective.
       </p>
       <p>
-        <strong>Our verdict:</strong> The best general-purpose essential oil for pest control. Genuinely effective as a supplementary deterrent, particularly against mice and spiders. Not a standalone solution for established problems.
+        <strong>Our verdict:</strong> The best general-purpose essential oil for pest control. Genuinely effective as a supplementary deterrent, particularly against mice and spiders. Not a standalone solution for established problems. For ready-made peppermint-based products, see our guides to <Link href="/best/spider-repellent" className="text-green-600 hover:underline">spider repellent sprays</Link> and <Link href="/best/mouse-repellent" className="text-green-600 hover:underline">mouse repellent sprays</Link>.
       </p>
 
       <h3>Citronella Oil &mdash; Evidence: 3/5 Stars</h3>

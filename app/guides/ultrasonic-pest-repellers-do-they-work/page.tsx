@@ -387,7 +387,7 @@ export default function UltrasonicPestRepellersPage() {
         We understand that some readers will want to try an ultrasonic device despite the evidence — perhaps as a supplement to other methods, or because the idea of a chemical-free, maintenance-free solution is too appealing to ignore. If so, manage your expectations:
       </p>
       <ul>
-        <li><strong>Do not rely on it as your sole method of pest control.</strong> Use it alongside traps, bait, and proofing.</li>
+        <li><strong>Do not rely on it as your sole method of pest control.</strong> Use it alongside traps, bait, and proofing. See our full product guide to <Link href="/best/ultrasonic-pest-repellers" className="text-green-600 hover:underline">ultrasonic pest repellers</Link> for our top picks.</li>
         <li><strong>Buy from a brand that offers a money-back guarantee.</strong> You may well want to return it.</li>
         <li><strong>Monitor carefully.</strong> If you still see signs of pest activity after 2 to 3 weeks, the device is not working — switch to proven methods immediately.</li>
         <li><strong>Be cautious with pets.</strong> Dogs and cats can hear ultrasonic frequencies. Watch for signs of anxiety, stress, or behavioural changes.</li>
