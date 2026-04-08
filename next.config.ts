@@ -49,12 +49,18 @@ const citySlugs = [
 ];
 
 const nextConfig: NextConfig = {
-  async redirects() {
-    const londonBoroughRedirects = londonBoroughSlugs.map((slug) => ({
+  async rewrites() {
+    // Serve London borough pages at /pest-control/[borough] without redirecting
+    const londonBoroughRewrites = londonBoroughSlugs.map((slug) => ({
       source: `/pest-control/${slug}`,
       destination: `/pest-control/london/${slug}`,
-      permanent: true,
     }));
+
+    return {
+      beforeFiles: londonBoroughRewrites,
+    };
+  },
+  async redirects() {
 
     // Old provider URL pattern: /[city]/[website-domain]
     // Website domains contain dots, real routes (residential/commercial) do not
@@ -96,7 +102,6 @@ const nextConfig: NextConfig = {
         destination: '/pest/:slug',
         permanent: true,
       },
-      ...londonBoroughRedirects,
       {
         source: '/london/commercial',
         destination: '/commercial',
