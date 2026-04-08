@@ -36,11 +36,31 @@ const londonBoroughSlugs = [
   'westminster',
 ];
 
+const citySlugs = [
+  'birmingham',
+  'manchester',
+  'liverpool',
+  'nottingham',
+  'brighton',
+  'leeds',
+  'sheffield',
+  'bristol',
+  'glasgow',
+];
+
 const nextConfig: NextConfig = {
   async redirects() {
     const londonBoroughRedirects = londonBoroughSlugs.map((slug) => ({
       source: `/pest-control/${slug}`,
       destination: `/pest-control/london/${slug}`,
+      permanent: true,
+    }));
+
+    // Old provider URL pattern: /[city]/[website-domain]
+    // Website domains contain dots, real routes (residential/commercial) do not
+    const oldProviderRedirects = citySlugs.map((city) => ({
+      source: `/${city}/:slug(.*\\..*)`,
+      destination: `/pest-control/${city}`,
       permanent: true,
     }));
 
@@ -92,10 +112,28 @@ const nextConfig: NextConfig = {
         destination: '/bradford',
         permanent: true,
       },
+      // Old provider URLs for cities
+      ...oldProviderRedirects,
+      // One-off 404 fixes
       {
         source: '/best',
-        destination: '/products',
-        permanent: false,
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/guides/how-to-get-rid-of-wasps',
+        destination: '/guides/natural-wasp-deterrents',
+        permanent: true,
+      },
+      {
+        source: '/pest/pigeons',
+        destination: '/pest-control/london',
+        permanent: true,
+      },
+      {
+        source: '/southampton/:path*',
+        destination: '/',
+        permanent: true,
       },
     ];
   },
