@@ -38,12 +38,12 @@ export async function generateMetadata({
   }
 
   // Build dynamic title
-  const serviceType = provider.commercial && provider.residential 
-    ? 'Pest Control & Pest Removal' 
-    : provider.commercial 
-      ? 'Commercial Pest Control & Pest Removal' 
+  const serviceType = provider.commercial && provider.residential
+    ? 'Pest Control & Pest Removal'
+    : provider.commercial
+      ? 'Commercial Pest Control & Pest Removal'
       : 'Residential Pest Control & Pest Removal';
-  
+
   const citySlug = provider.regions?.[0] || 'london';
   const location = citySlug.charAt(0).toUpperCase() + citySlug.slice(1);
   const title = `${provider.name} | ${serviceType} ${location}`;
@@ -55,12 +55,18 @@ export async function generateMetadata({
   }
   description += ' Compare services, certifications and contact details on PestPro Index.';
 
+  // Detect thin providers — noindex pages with insufficient content to avoid soft 404
+  const hasContact = provider.phone || provider.website || provider.email;
+  const hasRating = provider.google_rating && provider.google_rating > 0;
+  const isThinProvider = !hasContact && !hasRating;
+
   return {
     title: title,
     description: description,
     alternates: {
       canonical: `https://pestproindex.com/provider/${slug}`,
     },
+    ...(isThinProvider && { robots: { index: false, follow: true } }),
     openGraph: {
       title: `${provider.name} | ${serviceType} ${location}`,
       description: description,
