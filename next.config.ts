@@ -121,11 +121,6 @@ const nextConfig: NextConfig = {
       ...oldProviderRedirects,
       // One-off 404 fixes
       {
-        source: '/best',
-        destination: '/',
-        permanent: true,
-      },
-      {
         source: '/guides/how-to-get-rid-of-wasps',
         destination: '/guides/natural-wasp-deterrents',
         permanent: true,
