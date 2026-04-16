@@ -3,6 +3,41 @@ import ProviderPageContent from '@/components/ProviderPageContent';
 import ProviderJsonLd from '@/components/ProviderJsonLd';
 import { createClient } from '@/utils/supabase';
 
+// Providers that GSC reported as soft 404s — noindex them explicitly
+// even when the automatic thin-content threshold doesn't fire.
+const NOINDEX_SLUGS = new Set([
+  'eko-services',
+  'gb-pest-control',
+  'aderyn-pest-control-cardiff',
+  'derby-pest-control-service',
+  'greener-ways-pest-control-cardiff',
+  'ratcure-pest-control-cardiff',
+  'servicecare-pest-solutions-cardiff',
+  'country-wildlife-management-cardiff',
+  'sj-pest-control-cardiff',
+  'welsh-pest-control-services',
+  'anti-pest-south-wales',
+  'pest-solutions-cardiff',
+  'able-group-gwent',
+  'predator-pest-control-cardiff',
+  'mr-wasp-cardiff',
+  'heath-pest-control-services',
+  'pest-professionals-derby',
+  'thermopest-bed-bug-treatment',
+  'peak-forest-pest-control',
+  'rathbone-pest-control-cardiff',
+  'derbyshire-site-services',
+  'musca-pest-management-services',
+  'dial-a-kill',
+  'hatfields-pest-control',
+  'pest-arrest-derby',
+  'vista-environmental',
+  'peak-pest-control',
+  'driveout-site-services',
+  'the-pest-control-co-pestco',
+  'projex-pest-control-bradford',
+]);
+
 async function getProvider(slug: string) {
   const supabase = createClient();
   const { data: provider, error } = await supabase
@@ -59,6 +94,7 @@ export async function generateMetadata({
   const hasContact = provider.phone || provider.website || provider.email;
   const hasRating = provider.google_rating && provider.google_rating > 0;
   const isThinProvider = !hasContact && !hasRating;
+  const isManualNoindex = NOINDEX_SLUGS.has(slug);
 
   return {
     title: title,
@@ -66,7 +102,7 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://pestproindex.com/provider/${slug}`,
     },
-    ...(isThinProvider && { robots: { index: false, follow: true } }),
+    ...((isThinProvider || isManualNoindex) && { robots: { index: false, follow: true } }),
     openGraph: {
       title: `${provider.name} | ${serviceType} ${location}`,
       description: description,

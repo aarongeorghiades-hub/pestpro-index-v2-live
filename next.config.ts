@@ -63,10 +63,13 @@ const nextConfig: NextConfig = {
   async redirects() {
 
     // Old provider URL pattern: /[city]/[website-domain]
-    // Website domains contain dots, real routes (residential/commercial) do not
+    // Website domains contain dots, real routes (residential/commercial) do not.
+    // Destination is the city homepage (/brighton, /manchester, etc.) — the
+    // pest-control/{city} routes do not exist as standalone pages and would
+    // land on the [slug] "Not Found" branch (soft 404).
     const oldProviderRedirects = citySlugs.map((city) => ({
       source: `/${city}/:slug(.*\\..*)`,
-      destination: `/pest-control/${city}`,
+      destination: `/${city}`,
       permanent: true,
     }));
 

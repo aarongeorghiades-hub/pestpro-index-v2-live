@@ -34,10 +34,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: region.status === 'live' ? 0.8 : 0.7,
   }));
 
-  // Get all London boroughs
+  // Get all London boroughs (short-URL form — matches the canonical
+  // rendered by the [borough] route and the rewrite in next.config.ts)
   const boroughs = getAllBoroughs();
   const boroughUrls = boroughs.map((borough) => ({
-    url: `${baseUrl}/pest-control/london/${borough.slug}`,
+    url: `${baseUrl}/pest-control/${borough.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,

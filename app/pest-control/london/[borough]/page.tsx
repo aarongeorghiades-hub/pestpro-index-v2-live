@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Pest Control ${data.name} | Trusted Local Services | PestPro Index`,
     description: data.metaDescription,
     alternates: {
-      canonical: `https://pestproindex.com/pest-control/london/${data.slug}`,
+      canonical: `https://pestproindex.com/pest-control/${data.slug}`,
     },
   };
 }
@@ -78,7 +78,7 @@ export default async function LondonBoroughPage({ params }: Props) {
         name: 'Greater London',
       },
     },
-    url: `https://pestproindex.com/pest-control/london/${data.slug}`,
+    url: `https://pestproindex.com/pest-control/${data.slug}`,
   };
 
   return (
