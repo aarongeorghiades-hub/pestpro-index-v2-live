@@ -117,8 +117,22 @@ const nextConfig: NextConfig = {
         destination: '/bradford',
         permanent: true,
       },
-      // Old provider URLs for cities
+      // Catch-all: old city/website-domain pattern → city page
+      // Matches any second path segment that looks like a domain (contains a dot).
+      // Covers the 37 indexed /:city/:website-domain 404s regardless of city.
+      {
+        source: '/:city/:domain((?:www\\.)?[a-zA-Z0-9][a-zA-Z0-9\\-]*\\.[a-zA-Z0-9\\./\\-?=&_%+]*)',
+        destination: '/:city',
+        permanent: true,
+      },
+      // Old provider URLs for cities (narrow fallback for the 9 citySlugs
+      // → pest-control city page; kept after the broader catch-all)
       ...oldProviderRedirects,
+      // Edge cases that contain additional path segments or trailing slashes
+      { source: '/brighton/www.pest-force.co.uk/Heathfield', destination: '/brighton', permanent: true },
+      { source: '/manchester/www.azpestcontrol.co.uk', destination: '/manchester', permanent: true },
+      { source: '/brighton/www.peststopboys.co.uk', destination: '/brighton', permanent: true },
+      { source: '/liverpool/rentokil.co.uk/pest-control/liverpool', destination: '/liverpool', permanent: true },
       // One-off 404 fixes
       {
         source: '/guides/how-to-get-rid-of-wasps',
@@ -127,7 +141,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/pest/pigeons',
-        destination: '/pest-control/london',
+        destination: '/pest-control',
+        permanent: true,
+      },
+      {
+        source: '/southampton/residential',
+        destination: '/residential',
         permanent: true,
       },
       {
