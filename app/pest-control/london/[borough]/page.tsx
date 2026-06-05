@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getBoroughBySlug, getAllBoroughs } from '../london-boroughs';
+import { getBoroughBySlug } from '../london-boroughs';
 import LondonBoroughClient from './LondonBoroughClient';
-import { PESTS, getPestBySlug, getLocationBySlug } from '@/app/pest-control/pest-city-config';
+import { getPestBySlug, getLocationBySlug } from '@/app/pest-control/pest-city-config';
 import PestCityPageClient from '@/components/PestCityPageClient';
 import { createServerClient } from '@/utils/supabase-server';
 
-export const revalidate = 3600;
+export const dynamic = 'force-dynamic';
 
 interface Props {
   params: Promise<{ borough: string }>;
@@ -59,12 +59,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export async function generateStaticParams() {
-  const boroughParams = getAllBoroughs().map(b => ({ borough: b.slug }));
-  const pestParams = PESTS.map(p => ({ borough: p.slug }));
-  return [...boroughParams, ...pestParams];
-}
-
 export default async function LondonBoroughPage({ params }: Props) {
   const { borough } = await params;
   const supabase = createServerClient();
@@ -72,25 +66,27 @@ export default async function LondonBoroughPage({ params }: Props) {
   const pest = getPestBySlug(borough);
   if (pest) {
     // First try: providers matching the pest type in this region.
-    const { data: pestData } = await supabase
+    const { data: pestData, error: pestError } = await supabase
       .from('Providers')
       .select('*')
       .eq('active', true)
       .eq('business_residential', true)
       .eq(pest.filterColumn, true)
       .or(`regions.cs.["${cityConfig.region}"]`);
+    if (pestError) console.error('[SSR fetch] london-pest-primary:', pestError.message);
 
     let providers = processProviders(pestData);
     let isFallback = false;
 
     // Fallback: all residential providers for the region.
     if (providers.length === 0) {
-      const { data: fallbackData } = await supabase
+      const { data: fallbackData, error: fallbackError } = await supabase
         .from('Providers')
         .select('*')
         .eq('active', true)
         .eq('business_residential', true)
         .or(`regions.cs.["${cityConfig.region}"]`);
+      if (fallbackError) console.error('[SSR fetch] london-pest-fallback:', fallbackError.message);
       providers = processProviders(fallbackData);
       isFallback = true;
     }
@@ -114,12 +110,13 @@ export default async function LondonBoroughPage({ params }: Props) {
   if (!data) notFound();
 
   // Borough page: all residential providers serving London.
-  const { data: boroughData } = await supabase
+  const { data: boroughData, error: boroughError } = await supabase
     .from('Providers')
     .select('*')
     .eq('active', true)
     .eq('business_residential', true)
     .or('regions.cs.["london"]');
+  if (boroughError) console.error('[SSR fetch] london-borough:', boroughError.message);
   const providers = processProviders(boroughData);
 
   const jsonLd = {

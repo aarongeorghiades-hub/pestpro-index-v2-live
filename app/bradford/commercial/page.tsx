@@ -1,7 +1,7 @@
 import { createServerClient } from '@/utils/supabase-server';
 import CommercialDirectoryClient, { type Provider } from './CommercialDirectoryClient';
 
-export const revalidate = 3600;
+export const dynamic = 'force-dynamic';
 
 const extractPostcode = (address: string | null): string | null => {
   if (!address) return null;
@@ -12,12 +12,13 @@ const extractPostcode = (address: string | null): string | null => {
 
 export default async function CommercialPage() {
   const supabase = createServerClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from('Providers')
     .select('*')
     .eq('active', true)
     .eq('commercial', true)
     .or('regions.cs.["bradford"]');
+  if (error) console.error('[SSR fetch] bradford-commercial:', error.message);
   const providers = (data || []).map((p: any) => ({ ...p, postcode: p.postcode || extractPostcode(p.address) }));
   return <CommercialDirectoryClient initialProviders={providers as Provider[]} />;
 }
