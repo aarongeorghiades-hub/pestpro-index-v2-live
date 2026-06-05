@@ -1547,7 +1547,7 @@ export const posts: BlogPost[] = [
 
 <p>Whatever the season, PestPro Index helps you find the right pest control provider in Nottingham and the East Midlands. Browse 106 providers — filter by pest type, emergency availability, certifications, and more.</p>
 
-<p><a href="/nottingham/residential">Nottingham Residential Directory</a> | <a href="/nottingham/commercial">Nottingham Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/pest-control-costs">Pest Control Costs Guide</a></p>
+<p><a href="/nottingham/residential">Nottingham Residential Directory</a> | <a href="/nottingham/commercial">Nottingham Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/guides/pest-control-costs">Pest Control Costs Guide</a></p>
 `
   },
   {
@@ -1604,7 +1604,7 @@ export const posts: BlogPost[] = [
 
 <p><strong>Consider specialism.</strong> Some providers focus on bird control, others on rodent proofing, others on insect heat treatments. PestPro Index filters let you search by pest type and service to find the best match.</p>
 
-<p><a href="/brighton/residential">Brighton Residential Directory</a> | <a href="/brighton/commercial">Brighton Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/pest-control-costs">Pest Control Costs Guide</a></p>
+<p><a href="/brighton/residential">Brighton Residential Directory</a> | <a href="/brighton/commercial">Brighton Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/guides/pest-control-costs">Pest Control Costs Guide</a></p>
 `
   },
   {
@@ -1671,7 +1671,7 @@ export const posts: BlogPost[] = [
 
 <p>PestPro Index lists 76 pest control providers across Brighton, Hove, Worthing, Eastbourne, Lewes, and wider Sussex. Every listing includes verified Google ratings, certification details, and service information — with no lead fees and no commissions.</p>
 
-<p><a href="/brighton/residential">Brighton Residential Directory</a> | <a href="/brighton/commercial">Brighton Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/pest-control-costs">Pest Control Costs Guide</a></p>
+<p><a href="/brighton/residential">Brighton Residential Directory</a> | <a href="/brighton/commercial">Brighton Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/guides/pest-control-costs">Pest Control Costs Guide</a></p>
 `
   },
   {
@@ -1901,7 +1901,7 @@ export const posts: BlogPost[] = [
 
 <p>Ready to find a trusted pest controller in Bristol? PestPro Index lists 43 local providers with no lead fees or commissions — just honest comparison. Filter by pest type, certifications, emergency availability, and more.</p>
 
-<p><a href="/bristol/residential">Bristol Residential Directory</a> | <a href="/bristol/commercial">Bristol Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/pest-control-costs">Pest Control Costs Guide</a></p>
+<p><a href="/bristol/residential">Bristol Residential Directory</a> | <a href="/bristol/commercial">Bristol Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/guides/pest-control-costs">Pest Control Costs Guide</a></p>
 `
   },
   {
@@ -1992,7 +1992,7 @@ export const posts: BlogPost[] = [
 
 <p>Whatever the season, PestPro Index helps you find the right pest control provider in Bristol and the South West. Browse 43 providers — filter by pest type, emergency availability, certifications, and more.</p>
 
-<p><a href="/bristol/residential">Bristol Residential Directory</a> | <a href="/bristol/commercial">Bristol Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/pest-control-costs">Pest Control Costs Guide</a></p>
+<p><a href="/bristol/residential">Bristol Residential Directory</a> | <a href="/bristol/commercial">Bristol Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/guides/pest-control-costs">Pest Control Costs Guide</a></p>
 `
   },
   {
@@ -2091,7 +2091,7 @@ export const posts: BlogPost[] = [
 
 <p>PestPro Index lists 60 verified pest control providers covering Glasgow and Scotland. Browse by pest type, certifications, service features, and Google ratings — with no lead fees and no commissions.</p>
 
-<p><a href="/glasgow/residential">Glasgow Residential Directory</a> | <a href="/glasgow/commercial">Glasgow Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/pest-control-costs">Pest Control Costs Guide</a></p>
+<p><a href="/glasgow/residential">Glasgow Residential Directory</a> | <a href="/glasgow/commercial">Glasgow Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/guides/pest-control-costs">Pest Control Costs Guide</a></p>
 `
   },
   {
@@ -2176,7 +2176,7 @@ export const posts: BlogPost[] = [
 
 <p>Whatever the season, PestPro Index helps you find the right pest control provider in Glasgow and Scotland. Browse 60 providers — filter by pest type, emergency availability, certifications, and more.</p>
 
-<p><a href="/glasgow/residential">Glasgow Residential Directory</a> | <a href="/glasgow/commercial">Glasgow Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/pest-control-costs">Pest Control Costs Guide</a></p>
+<p><a href="/glasgow/residential">Glasgow Residential Directory</a> | <a href="/glasgow/commercial">Glasgow Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/guides/pest-control-costs">Pest Control Costs Guide</a></p>
 `
   },
   {

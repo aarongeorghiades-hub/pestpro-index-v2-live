@@ -92,7 +92,15 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/prices',
-        destination: '/pest-control-costs',
+        destination: '/guides/pest-control-costs',
+        permanent: true,
+      },
+      // Consolidate duplicate costs page → canonical guide version.
+      // The whole site links to /guides/pest-control-costs; the standalone
+      // /pest-control-costs was an orphaned near-duplicate (crawled, not indexed).
+      {
+        source: '/pest-control-costs',
+        destination: '/guides/pest-control-costs',
         permanent: true,
       },
       {
