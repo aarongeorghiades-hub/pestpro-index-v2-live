@@ -14,7 +14,7 @@ const extractPostcode = (address: string | null): string | null => {
   return match ? match[0] : null;
 };
 
-interface Provider {
+export interface Provider {
   canonical_id?: number;
   name: string;
   slug: string;
@@ -33,13 +33,17 @@ interface Provider {
 interface Props {
   city: LocationConfig;
   pest: PestConfig;
+  // Optional: when supplied by a Server Component the list is rendered from these
+  // (SSR). When omitted, the component falls back to its original client fetch.
+  initialProviders?: Provider[];
+  initialIsFallback?: boolean;
 }
 
-export default function PestCityPageClient({ city, pest }: Props) {
-  const [providers, setProviders] = useState<Provider[]>([]);
-  const [loading, setLoading] = useState(true);
+export default function PestCityPageClient({ city, pest, initialProviders, initialIsFallback }: Props) {
+  const [providers, setProviders] = useState<Provider[]>(initialProviders ?? []);
+  const [loading, setLoading] = useState(initialProviders === undefined);
   const [isMobile, setIsMobile] = useState(false);
-  const [isFallback, setIsFallback] = useState(false);
+  const [isFallback, setIsFallback] = useState(initialIsFallback ?? false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -49,6 +53,8 @@ export default function PestCityPageClient({ city, pest }: Props) {
   }, []);
 
   useEffect(() => {
+    // When a Server Component supplies providers (SSR path), skip the client fetch.
+    if (initialProviders !== undefined) return;
     const fetchProviders = async () => {
       try {
         const supabase = createClient();
