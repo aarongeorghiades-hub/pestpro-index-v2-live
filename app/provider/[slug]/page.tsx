@@ -3,40 +3,27 @@ import ProviderPageContent from '@/components/ProviderPageContent';
 import ProviderJsonLd from '@/components/ProviderJsonLd';
 import { createClient } from '@/utils/supabase';
 
-// Providers that GSC reported as soft 404s — noindex them explicitly
-// even when the automatic thin-content threshold doesn't fire.
-const NOINDEX_SLUGS = new Set([
-  'eko-services',
-  'gb-pest-control',
-  'aderyn-pest-control-cardiff',
-  'derby-pest-control-service',
-  'greener-ways-pest-control-cardiff',
-  'ratcure-pest-control-cardiff',
-  'servicecare-pest-solutions-cardiff',
-  'country-wildlife-management-cardiff',
-  'sj-pest-control-cardiff',
-  'welsh-pest-control-services',
-  'anti-pest-south-wales',
-  'pest-solutions-cardiff',
-  'able-group-gwent',
-  'predator-pest-control-cardiff',
-  'mr-wasp-cardiff',
-  'heath-pest-control-services',
-  'pest-professionals-derby',
-  'thermopest-bed-bug-treatment',
-  'peak-forest-pest-control',
-  'rathbone-pest-control-cardiff',
-  'derbyshire-site-services',
-  'musca-pest-management-services',
-  'dial-a-kill',
-  'hatfields-pest-control',
-  'pest-arrest-derby',
-  'vista-environmental',
-  'peak-pest-control',
-  'driveout-site-services',
-  'the-pest-control-co-pestco',
-  'projex-pest-control-bradford',
-]);
+// A provider page is "thin" (low unique value → soft 404 risk) when it lacks
+// enough distinguishing signals. Score the available content and noindex any
+// provider that falls below the threshold. This replaces the old hardcoded
+// NOINDEX_SLUGS list so new thin providers are handled automatically.
+function isProviderThin(provider: {
+  phone?: string | null;
+  website?: string | null;
+  email?: string | null;
+  google_rating?: number | null;
+  google_review_count?: number | null;
+  profile_text?: string | null;
+}): boolean {
+  let score = 0;
+  if (provider.phone) score += 1;
+  if (provider.website) score += 2;        // website is higher value — 2 points
+  if (provider.email) score += 1;
+  if (provider.google_rating && provider.google_rating > 0) score += 1;
+  if (provider.google_review_count && provider.google_review_count >= 3) score += 2; // reviews are strong signal
+  if (provider.profile_text && provider.profile_text.length > 50) score += 1;
+  return score < 3;  // score below 3 = thin
+}
 
 async function getProvider(slug: string) {
   const supabase = createClient();
@@ -91,10 +78,7 @@ export async function generateMetadata({
   description += ' Compare services, certifications and contact details on PestPro Index.';
 
   // Detect thin providers — noindex pages with insufficient content to avoid soft 404
-  const hasContact = provider.phone || provider.website || provider.email;
-  const hasRating = provider.google_rating && provider.google_rating > 0;
-  const isThinProvider = !hasContact && !hasRating;
-  const isManualNoindex = NOINDEX_SLUGS.has(slug);
+  const isThin = isProviderThin(provider);
 
   return {
     title: title,
@@ -102,7 +86,7 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://pestproindex.com/provider/${slug}`,
     },
-    ...((isThinProvider || isManualNoindex) && { robots: { index: false, follow: true } }),
+    ...(isThin && { robots: { index: false, follow: true } }),
     openGraph: {
       title: `${provider.name} | ${serviceType} ${location}`,
       description: description,
