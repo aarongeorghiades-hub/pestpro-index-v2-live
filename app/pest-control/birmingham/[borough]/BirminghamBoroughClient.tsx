@@ -5,13 +5,6 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import type { BirminghamBoroughData } from '../birmingham-boroughs';
 
-const extractPostcode = (address: string | null): string | null => {
-  if (!address) return null;
-  const postcodeRegex = /[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}/i;
-  const match = address.match(postcodeRegex);
-  return match ? match[0] : null;
-};
-
 interface Provider {
   canonical_id?: number;
   name: string;  slug: string;

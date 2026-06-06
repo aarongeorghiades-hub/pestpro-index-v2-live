@@ -2,17 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { createClient } from '@/utils/supabase';
 import Navigation from '@/components/Navigation';
 import { LOCATIONS, PESTS } from '@/app/pest-control/pest-city-config';
 import type { LocationConfig, PestConfig } from '@/app/pest-control/pest-city-config';
-
-const extractPostcode = (address: string | null): string | null => {
-  if (!address) return null;
-  const postcodeRegex = /[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}/i;
-  const match = address.match(postcodeRegex);
-  return match ? match[0] : null;
-};
 
 export interface Provider {
   canonical_id?: number;
@@ -33,17 +25,18 @@ export interface Provider {
 interface Props {
   city: LocationConfig;
   pest: PestConfig;
-  // Optional: when supplied by a Server Component the list is rendered from these
-  // (SSR). When omitted, the component falls back to its original client fetch.
-  initialProviders?: Provider[];
+  // Providers are fetched server-side by the route and passed in, so the full
+  // list is in the initial HTML. This component renders them and owns only
+  // search / sort / mobile UI — it does NOT fetch.
+  initialProviders: Provider[];
   initialIsFallback?: boolean;
 }
 
 export default function PestCityPageClient({ city, pest, initialProviders, initialIsFallback }: Props) {
-  const [providers, setProviders] = useState<Provider[]>(initialProviders ?? []);
-  const [loading, setLoading] = useState(initialProviders === undefined);
+  const providers = initialProviders;
+  const loading = false;
+  const isFallback = initialIsFallback ?? false;
   const [isMobile, setIsMobile] = useState(false);
-  const [isFallback, setIsFallback] = useState(initialIsFallback ?? false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -51,70 +44,6 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
-
-  useEffect(() => {
-    // When a Server Component supplies providers (SSR path), skip the client fetch.
-    if (initialProviders !== undefined) return;
-    const fetchProviders = async () => {
-      try {
-        const supabase = createClient();
-
-        // First try: filter by region AND pest type
-        const { data, error } = await supabase
-          .from('Providers')
-          .select('*')
-          .eq('active', true)
-          .eq('business_residential', true)
-          .eq(pest.filterColumn, true)
-          .or(`regions.cs.["${city.region}"]`);
-
-        if (error) throw error;
-
-        if (data && data.length > 0) {
-          const processed = (data || []).map(p => ({
-            ...p,
-            postcode: p.postcode || extractPostcode(p.address),
-          }));
-          const sorted = processed.sort((a: any, b: any) => {
-            const ratingA = a.google_rating || 0;
-            const ratingB = b.google_rating || 0;
-            if (ratingB !== ratingA) return ratingB - ratingA;
-            return (b.google_review_count || 0) - (a.google_review_count || 0);
-          });
-          setProviders(sorted);
-        } else {
-          // Fallback: show all residential providers for this city
-          const { data: fallbackData, error: fallbackError } = await supabase
-            .from('Providers')
-            .select('*')
-            .eq('active', true)
-            .eq('business_residential', true)
-            .or(`regions.cs.["${city.region}"]`);
-
-          if (fallbackError) throw fallbackError;
-
-          const processed = (fallbackData || []).map(p => ({
-            ...p,
-            postcode: p.postcode || extractPostcode(p.address),
-          }));
-          const sorted = processed.sort((a: any, b: any) => {
-            const ratingA = a.google_rating || 0;
-            const ratingB = b.google_rating || 0;
-            if (ratingB !== ratingA) return ratingB - ratingA;
-            return (b.google_review_count || 0) - (a.google_review_count || 0);
-          });
-          setProviders(sorted);
-          setIsFallback(true);
-        }
-      } catch (error) {
-        console.error('Error fetching providers:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProviders();
-  }, [city.region, pest.filterColumn]);
 
   const introText = pest.seoIntro.replace(/\{city\}/g, city.name);
   const otherPests = PESTS.filter(p => p.slug !== pest.slug);

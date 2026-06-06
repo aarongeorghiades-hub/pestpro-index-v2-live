@@ -2,16 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import type { EdinburghBoroughData } from '../edinburgh-boroughs';
-
-const extractPostcode = (address: string | null): string | null => {
-  if (!address) return null;
-  const postcodeRegex = /[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}/i;
-  const match = address.match(postcodeRegex);
-  return match ? match[0] : null;
-};
 
 interface Provider {
   canonical_id?: number;
