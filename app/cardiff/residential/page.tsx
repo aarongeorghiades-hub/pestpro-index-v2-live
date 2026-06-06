@@ -33,6 +33,7 @@ export default async function ResidentialPage() {
         areaName="Cardiff"
         breadcrumbs={[
           { name: 'Home', url: '/' },
+          { name: 'Pest Control', url: '/pest-control' },
           { name: 'Cardiff', url: '/cardiff/residential' },
         ]}
       />

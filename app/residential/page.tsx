@@ -41,7 +41,8 @@ export default async function ResidentialPage() {
         areaName="London"
         breadcrumbs={[
           { name: 'Home', url: '/' },
-          { name: 'Residential Pest Control London', url: '/residential' },
+          { name: 'Pest Control', url: '/pest-control' },
+          { name: 'London', url: '/residential' },
         ]}
       />
       <ResidentialDirectoryClient initialProviders={providers} />

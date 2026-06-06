@@ -150,7 +150,7 @@ export default async function LondonBoroughPage({ params }: Props) {
         breadcrumbs={[
           { name: 'Home', url: '/' },
           { name: 'Pest Control', url: '/pest-control' },
-          { name: cityConfig.name, url: `/${cityConfig.slug}/residential` },
+          { name: cityConfig.name, url: '/residential' },
           { name: data.name, url: `/pest-control/${cityConfig.slug}/${data.slug}` },
         ]}
       />

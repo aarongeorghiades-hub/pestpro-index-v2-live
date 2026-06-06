@@ -237,6 +237,14 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
     <div className="min-h-screen bg-white">
       <Navigation />
 
+      <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 text-sm text-gray-500">
+        <Link href="/" className="hover:text-blue-600">Home</Link>
+        <span className="mx-2">/</span>
+        <Link href="/pest-control" className="hover:text-blue-600">Pest Control</Link>
+        <span className="mx-2">/</span>
+        <span className="text-gray-700">Brighton</span>
+      </nav>
+
       {/* HERO SECTION */}
       <section className="relative h-[500px] overflow-hidden">
         <div className="absolute inset-0">
