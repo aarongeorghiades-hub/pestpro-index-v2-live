@@ -1,7 +1,11 @@
 import { createServerClient } from '@/utils/supabase-server';
 import ResidentialDirectoryClient, { type Provider } from './ResidentialDirectoryClient';
+import ListingSchema from '@/components/ListingSchema';
+import { cityDirectoryMetadata } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
+
+export const metadata = cityDirectoryMetadata('Sheffield', 'sheffield');
 
 const extractPostcode = (address: string | null): string | null => {
   if (!address) return null;
@@ -20,5 +24,19 @@ export default async function ResidentialPage() {
     .or('regions.cs.["sheffield"]');
   if (error) console.error('[SSR fetch] sheffield-residential:', error.message);
   const providers = (data || []).map((p: any) => ({ ...p, postcode: p.postcode || extractPostcode(p.address) }));
-  return <ResidentialDirectoryClient initialProviders={providers as Provider[]} />;
+  return (
+    <>
+      <ListingSchema
+        providers={providers}
+        listName={`Pest Control Providers in Sheffield`}
+        listUrl="/sheffield/residential"
+        areaName="Sheffield"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Sheffield', url: '/sheffield/residential' },
+        ]}
+      />
+      <ResidentialDirectoryClient initialProviders={providers as Provider[]} />
+    </>
+  );
 }
