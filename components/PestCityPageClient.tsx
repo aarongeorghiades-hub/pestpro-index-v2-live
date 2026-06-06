@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
+import ListingSchema from '@/components/ListingSchema';
 import { LOCATIONS, PESTS } from '@/app/pest-control/pest-city-config';
 import type { LocationConfig, PestConfig } from '@/app/pest-control/pest-city-config';
 
@@ -52,6 +53,30 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
+
+      <ListingSchema
+        providers={providers}
+        listName={`${pest.name} Control Providers in ${city.name}`}
+        listUrl={`/pest-control/${city.slug}/${pest.slug}`}
+        areaName={city.name}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Pest Control', url: '/pest-control' },
+          { name: city.name, url: `/${city.slug}/residential` },
+          { name: `${pest.name} Control`, url: `/pest-control/${city.slug}/${pest.slug}` },
+        ]}
+      />
+
+      {/* Breadcrumb trail */}
+      <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 text-sm text-gray-500">
+        <Link href="/" className="hover:text-blue-600">Home</Link>
+        <span className="mx-2">/</span>
+        <Link href="/pest-control" className="hover:text-blue-600">Pest Control</Link>
+        <span className="mx-2">/</span>
+        <Link href={`/${city.slug}/residential`} className="hover:text-blue-600">{city.name}</Link>
+        <span className="mx-2">/</span>
+        <span className="text-gray-700">{pest.name} Control</span>
+      </nav>
 
       {/* HERO */}
       <section className="relative h-[400px] overflow-hidden">
