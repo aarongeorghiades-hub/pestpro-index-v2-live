@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = getBoroughBySlug(borough);
   if (!data) return {};
   return {
-    title: `Pest Control ${data.name} | Bristol & South West`,
+    title: `Pest Control in ${data.name} — ${cityConfig.name} Specialists`,
     description: data.metaDescription,
     alternates: {
       canonical: `https://pestproindex.com/pest-control/bristol/${data.slug}`,
