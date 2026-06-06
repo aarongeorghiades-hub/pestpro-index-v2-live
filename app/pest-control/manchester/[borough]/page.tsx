@@ -1,15 +1,38 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getBoroughBySlug, getAllBoroughs } from '../manchester-boroughs';
+import { getBoroughBySlug } from '../manchester-boroughs';
 import ManchesterBoroughClient from './ManchesterBoroughClient';
-import { PESTS, getPestBySlug, getLocationBySlug } from '@/app/pest-control/pest-city-config';
+import { getPestBySlug, getLocationBySlug } from '@/app/pest-control/pest-city-config';
 import PestCityPageClient from '@/components/PestCityPageClient';
+import { createServerClient } from '@/utils/supabase-server';
+
+export const dynamic = 'force-dynamic';
 
 interface Props {
   params: Promise<{ borough: string }>;
 }
 
 const cityConfig = getLocationBySlug('manchester')!;
+
+const extractPostcode = (address: string | null): string | null => {
+  if (!address) return null;
+  const postcodeRegex = /[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}/i;
+  const match = address.match(postcodeRegex);
+  return match ? match[0] : null;
+};
+
+// Postcode-fill from address then sort by rating (then review count) —
+// mirrors the processing PestCityPageClient previously did client-side.
+function processProviders(data: any[] | null) {
+  return (data || [])
+    .map((p) => ({ ...p, postcode: p.postcode || extractPostcode(p.address) }))
+    .sort((a: any, b: any) => {
+      const ratingA = a.google_rating || 0;
+      const ratingB = b.google_rating || 0;
+      if (ratingB !== ratingA) return ratingB - ratingA;
+      return (b.google_review_count || 0) - (a.google_review_count || 0);
+    });
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { borough } = await params;
@@ -36,17 +59,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export async function generateStaticParams() {
-  const boroughParams = getAllBoroughs().map(b => ({ borough: b.slug }));
-  const pestParams = PESTS.map(p => ({ borough: p.slug }));
-  return [...boroughParams, ...pestParams];
-}
-
 export default async function ManchesterBoroughPage({ params }: Props) {
   const { borough } = await params;
 
   const pest = getPestBySlug(borough);
   if (pest) {
+    const supabase = createServerClient();
+    const { data: pestData, error: pestError } = await supabase
+      .from('Providers')
+      .select('*')
+      .eq('active', true)
+      .eq('business_residential', true)
+      .eq(pest.filterColumn, true)
+      .or(`regions.cs.["${cityConfig.region}"]`);
+    if (pestError) console.error(`[SSR fetch] ${cityConfig.slug}-pest-primary:`, pestError.message);
+
+    let providers = processProviders(pestData);
+    let isFallback = false;
+
+    if (providers.length === 0) {
+      const { data: fallbackData, error: fallbackError } = await supabase
+        .from('Providers')
+        .select('*')
+        .eq('active', true)
+        .eq('business_residential', true)
+        .or(`regions.cs.["${cityConfig.region}"]`);
+      if (fallbackError) console.error(`[SSR fetch] ${cityConfig.slug}-pest-fallback:`, fallbackError.message);
+      providers = processProviders(fallbackData);
+      isFallback = true;
+    }
+
     const serviceSchema = {
       '@context': 'https://schema.org',
       '@type': 'Service',
@@ -57,7 +99,7 @@ export default async function ManchesterBoroughPage({ params }: Props) {
     return (
       <>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-        <PestCityPageClient city={cityConfig} pest={pest} />
+        <PestCityPageClient city={cityConfig} pest={pest} initialProviders={providers} initialIsFallback={isFallback} />
       </>
     );
   }
