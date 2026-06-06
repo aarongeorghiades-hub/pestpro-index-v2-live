@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
+import CityPestLinks from '@/components/CityPestLinks';
+import { cityDirectoryHref } from '@/lib/seo';
 import type { EdinburghBoroughData } from '../edinburgh-boroughs';
 
 interface Provider {
@@ -40,6 +42,16 @@ export default function EdinburghBoroughClient({ borough, initialProviders }: { 
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
+
+      <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 text-sm text-gray-500">
+        <Link href="/" className="hover:text-blue-600">Home</Link>
+        <span className="mx-2">/</span>
+        <Link href="/pest-control" className="hover:text-blue-600">Pest Control</Link>
+        <span className="mx-2">/</span>
+        <Link href={cityDirectoryHref('edinburgh')} className="hover:text-blue-600">Edinburgh</Link>
+        <span className="mx-2">/</span>
+        <span className="text-gray-700">{borough.name}</span>
+      </nav>
 
       {/* HERO */}
       <section className="relative h-[400px] overflow-hidden">
@@ -165,6 +177,8 @@ export default function EdinburghBoroughClient({ borough, initialProviders }: { 
           </p>
         </div>
       </section>
+
+      <CityPestLinks citySlug="edinburgh" cityName="Edinburgh" />
     </div>
   );
 }
