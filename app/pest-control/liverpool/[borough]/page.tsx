@@ -4,6 +4,7 @@ import { getBoroughBySlug } from '../liverpool-boroughs';
 import LiverpoolBoroughClient from './LiverpoolBoroughClient';
 import { getPestBySlug, getLocationBySlug } from '@/app/pest-control/pest-city-config';
 import PestCityPageClient from '@/components/PestCityPageClient';
+import ListingSchema from '@/components/ListingSchema';
 import { createServerClient } from '@/utils/supabase-server';
 
 export const dynamic = 'force-dynamic';
@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const pest = getPestBySlug(borough);
   if (pest) {
     return {
-      title: `${pest.name} Control ${cityConfig.name} — Find Verified ${pest.name} Specialists | PestPro Index`,
+      title: `${pest.name} Control ${cityConfig.name} — Find Verified ${pest.name} Specialists`,
       description: `Find verified ${pest.namePlural.toLowerCase()} control specialists in ${cityConfig.name}. Compare providers with ratings, certifications, and service details. No lead fees, no commissions.`,
       alternates: {
         canonical: `https://pestproindex.com/pest-control/${cityConfig.slug}/${pest.slug}`,
@@ -51,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = getBoroughBySlug(borough);
   if (!data) return {};
   return {
-    title: `Pest Control ${data.name} | Trusted Local Services | PestPro Index`,
+    title: `Pest Control ${data.name} | Trusted Local Services`,
     description: data.metaDescription,
     alternates: {
       canonical: `https://pestproindex.com/pest-control/liverpool/${data.slug}`,
@@ -139,6 +140,18 @@ export default async function LiverpoolBoroughPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ListingSchema
+        providers={providers}
+        listName={`Pest Control Providers Serving ${data.name}`}
+        listUrl={`/pest-control/${cityConfig.slug}/${data.slug}`}
+        areaName={data.name}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Pest Control', url: '/pest-control' },
+          { name: cityConfig.name, url: `/${cityConfig.slug}/residential` },
+          { name: data.name, url: `/pest-control/${cityConfig.slug}/${data.slug}` },
+        ]}
       />
       <LiverpoolBoroughClient borough={data} initialProviders={providers} />
     </>

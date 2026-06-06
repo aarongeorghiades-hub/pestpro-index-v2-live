@@ -4,7 +4,7 @@ import { getAllRegions } from '../data/regions';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'UK Pest Control Directory by Region | PestPro Index',
+  title: 'UK Pest Control Directory by Region',
   description: 'Browse pest control providers across all UK regions. Currently covering Greater London and West Midlands with more regions launching soon. No lead fees, no commissions.',
   alternates: {
     canonical: 'https://pestproindex.com/pest-control/regions',

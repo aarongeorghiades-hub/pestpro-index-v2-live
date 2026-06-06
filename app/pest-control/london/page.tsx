@@ -4,7 +4,7 @@ import { getAllBoroughs } from './london-boroughs';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Pest Control London | 389 Verified Providers Across 33 Boroughs | PestPro Index',
+  title: 'Pest Control London | 389 Verified Providers Across 33 Boroughs',
   description: 'Find trusted pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs. Verified Google ratings, no lead fees, no commissions.',
   alternates: {
     canonical: 'https://pestproindex.com/pest-control/london',

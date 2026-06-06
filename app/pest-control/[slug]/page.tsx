@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: 'Page Not Found | PestPro Index',
+    title: 'Page Not Found',
     description: 'The page you are looking for could not be found.',
   };
 }
