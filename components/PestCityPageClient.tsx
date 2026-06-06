@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import ListingSchema from '@/components/ListingSchema';
+import CityAreaLinks from '@/components/CityAreaLinks';
+import { cityDirectoryHref } from '@/lib/seo';
 import { LOCATIONS, PESTS } from '@/app/pest-control/pest-city-config';
 import type { LocationConfig, PestConfig } from '@/app/pest-control/pest-city-config';
 
@@ -31,9 +33,12 @@ interface Props {
   // search / sort / mobile UI — it does NOT fetch.
   initialProviders: Provider[];
   initialIsFallback?: boolean;
+  // The city's borough / sub-area pages, for the "Areas we cover" interlinking
+  // block. Optional — omitted renders nothing.
+  areas?: { name: string; slug: string }[];
 }
 
-export default function PestCityPageClient({ city, pest, initialProviders, initialIsFallback }: Props) {
+export default function PestCityPageClient({ city, pest, initialProviders, initialIsFallback, areas }: Props) {
   const providers = initialProviders;
   const loading = false;
   const isFallback = initialIsFallback ?? false;
@@ -62,7 +67,7 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
         breadcrumbs={[
           { name: 'Home', url: '/' },
           { name: 'Pest Control', url: '/pest-control' },
-          { name: city.name, url: `/${city.slug}/residential` },
+          { name: city.name, url: cityDirectoryHref(city.slug) },
           { name: `${pest.name} Control`, url: `/pest-control/${city.slug}/${pest.slug}` },
         ]}
       />
@@ -73,7 +78,7 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
         <span className="mx-2">/</span>
         <Link href="/pest-control" className="hover:text-blue-600">Pest Control</Link>
         <span className="mx-2">/</span>
-        <Link href={`/${city.slug}/residential`} className="hover:text-blue-600">{city.name}</Link>
+        <Link href={cityDirectoryHref(city.slug)} className="hover:text-blue-600">{city.name}</Link>
         <span className="mx-2">/</span>
         <span className="text-gray-700">{pest.name} Control</span>
       </nav>
@@ -304,12 +309,14 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
 
           {/* Back to city hub */}
           <div className="text-center pt-4 border-t border-gray-200">
-            <Link href={`/${city.slug}/residential`} className="text-blue-600 hover:underline font-semibold">
+            <Link href={cityDirectoryHref(city.slug)} className="text-blue-600 hover:underline font-semibold">
               &larr; Back to {city.name} Pest Control Directory
             </Link>
           </div>
         </div>
       </section>
+
+      <CityAreaLinks citySlug={city.slug} cityName={city.name} areas={areas ?? []} />
     </div>
   );
 }

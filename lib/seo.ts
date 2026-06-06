@@ -2,6 +2,12 @@ import type { Metadata } from 'next';
 
 const SITE = 'https://pestproindex.com';
 
+// The residential directory URL for a city. London's directory is the national
+// /residential page; every other city lives at /{slug}/residential.
+export function cityDirectoryHref(citySlug: string): string {
+  return citySlug === 'london' ? '/residential' : `/${citySlug}/residential`;
+}
+
 // Unique, intent-matched metadata for a per-city residential directory page.
 // Title intentionally omits the "| PestPro Index" suffix — the root layout's
 // title template (`%s | PestPro Index`) appends it once.

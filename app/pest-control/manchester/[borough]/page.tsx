@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getBoroughBySlug } from '../manchester-boroughs';
+import { getBoroughBySlug, getAllBoroughs } from '../manchester-boroughs';
 import ManchesterBoroughClient from './ManchesterBoroughClient';
 import { getPestBySlug, getLocationBySlug } from '@/app/pest-control/pest-city-config';
 import PestCityPageClient from '@/components/PestCityPageClient';
@@ -100,7 +100,7 @@ export default async function ManchesterBoroughPage({ params }: Props) {
     return (
       <>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-        <PestCityPageClient city={cityConfig} pest={pest} initialProviders={providers} initialIsFallback={isFallback} />
+        <PestCityPageClient city={cityConfig} pest={pest} initialProviders={providers} initialIsFallback={isFallback} areas={getAllBoroughs().map(b => ({ name: b.name, slug: b.slug }))} />
       </>
     );
   }

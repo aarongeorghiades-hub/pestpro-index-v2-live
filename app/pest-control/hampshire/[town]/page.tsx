@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getTownBySlug } from '../hampshire-towns';
+import { getTownBySlug, getAllTowns } from '../hampshire-towns';
 import HampshireTownClient from './HampshireTownClient';
 import { getPestBySlug, getLocationBySlug } from '@/app/pest-control/pest-city-config';
 import PestCityPageClient from '@/components/PestCityPageClient';
@@ -100,7 +100,7 @@ export default async function HampshireTownPage({ params }: Props) {
     return (
       <>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-        <PestCityPageClient city={cityConfig} pest={pest} initialProviders={providers} initialIsFallback={isFallback} />
+        <PestCityPageClient city={cityConfig} pest={pest} initialProviders={providers} initialIsFallback={isFallback} areas={getAllTowns().map(b => ({ name: b.name, slug: b.slug }))} />
       </>
     );
   }
