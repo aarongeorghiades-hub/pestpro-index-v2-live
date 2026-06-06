@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { createClient } from '@/utils/supabase';
 import Navigation from '@/components/Navigation';
 import type { CoventryBoroughData } from '../coventry-boroughs';
 
@@ -34,9 +33,9 @@ interface Provider {
   service_bpca_certified: boolean;
 }
 
-export default function CoventryBoroughClient({ borough }: { borough: CoventryBoroughData }) {
-  const [providers, setProviders] = useState<Provider[]>([]);
-  const [loading, setLoading] = useState(true);
+export default function CoventryBoroughClient({ borough, initialProviders }: { borough: CoventryBoroughData; initialProviders: Provider[] }) {
+  const providers = initialProviders;
+  const loading = false;
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -44,39 +43,6 @@ export default function CoventryBoroughClient({ borough }: { borough: CoventryBo
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  useEffect(() => {
-    const fetchProviders = async () => {
-      try {
-        const supabase = createClient();
-        const { data, error } = await supabase
-          .from('Providers')
-          .select('*')
-          .eq('active', true)
-          .eq('business_residential', true)
-          .or('regions.cs.["coventry"]');
-
-        if (error) throw error;
-        const processed = (data || []).map(p => ({
-          ...p,
-          postcode: p.postcode || extractPostcode(p.address),
-        }));
-        const sorted = processed.sort((a: any, b: any) => {
-          const ratingA = a.google_rating || 0;
-          const ratingB = b.google_rating || 0;
-          if (ratingB !== ratingA) return ratingB - ratingA;
-          return (b.google_review_count || 0) - (a.google_review_count || 0);
-        });
-        setProviders(sorted);
-      } catch (error) {
-        console.error('Error fetching providers:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProviders();
   }, []);
 
   return (

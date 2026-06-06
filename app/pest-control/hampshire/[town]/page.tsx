@@ -107,6 +107,17 @@ export default async function HampshireTownPage({ params }: Props) {
   const data = getTownBySlug(town);
   if (!data) notFound();
 
+  // Town page: all residential providers serving this city/region.
+  const supabase = createServerClient();
+  const { data: townData, error: townError } = await supabase
+    .from('Providers')
+    .select('*')
+    .eq('active', true)
+    .eq('business_residential', true)
+    .or(`regions.cs.["${cityConfig.region}"]`);
+  if (townError) console.error(`[SSR fetch] ${cityConfig.slug}-town:`, townError.message);
+  const providers = processProviders(townData);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -129,7 +140,7 @@ export default async function HampshireTownPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <HampshireTownClient town={data} />
+      <HampshireTownClient town={data} initialProviders={providers} />
     </>
   );
 }

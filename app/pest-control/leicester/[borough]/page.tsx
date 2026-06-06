@@ -107,6 +107,17 @@ export default async function LeicesterBoroughPage({ params }: Props) {
   const data = getBoroughBySlug(borough);
   if (!data) notFound();
 
+  // Borough page: all residential providers serving this city/region.
+  const supabase = createServerClient();
+  const { data: boroughData, error: boroughError } = await supabase
+    .from('Providers')
+    .select('*')
+    .eq('active', true)
+    .eq('business_residential', true)
+    .or(`regions.cs.["${cityConfig.region}"]`);
+  if (boroughError) console.error(`[SSR fetch] ${cityConfig.slug}-borough:`, boroughError.message);
+  const providers = processProviders(boroughData);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -129,7 +140,7 @@ export default async function LeicesterBoroughPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <LeicesterBoroughClient borough={data} />
+      <LeicesterBoroughClient borough={data} initialProviders={providers} />
     </>
   );
 }

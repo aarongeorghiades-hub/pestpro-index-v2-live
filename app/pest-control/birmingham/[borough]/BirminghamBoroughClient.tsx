@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { createClient } from '@/utils/supabase';
 import Navigation from '@/components/Navigation';
 import type { BirminghamBoroughData } from '../birmingham-boroughs';
 
@@ -33,9 +32,11 @@ interface Provider {
   service_bpca_certified: boolean;
 }
 
-export default function BirminghamBoroughClient({ borough }: { borough: BirminghamBoroughData }) {
-  const [providers, setProviders] = useState<Provider[]>([]);
-  const [loading, setLoading] = useState(true);
+export default function BirminghamBoroughClient({ borough, initialProviders }: { borough: BirminghamBoroughData; initialProviders: Provider[] }) {
+  // Providers are fetched server-side and passed in as a prop so the full list
+  // is present in the initial HTML.
+  const providers = initialProviders;
+  const loading = false;
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -43,39 +44,6 @@ export default function BirminghamBoroughClient({ borough }: { borough: Birmingh
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  useEffect(() => {
-    const fetchProviders = async () => {
-      try {
-        const supabase = createClient();
-        const { data, error } = await supabase
-          .from('Providers')
-          .select('*')
-          .eq('active', true)
-          .eq('business_residential', true)
-          .or('regions.cs.["birmingham"]');
-
-        if (error) throw error;
-        const processed = (data || []).map(p => ({
-          ...p,
-          postcode: p.postcode || extractPostcode(p.address),
-        }));
-        const sorted = processed.sort((a: any, b: any) => {
-          const ratingA = a.google_rating || 0;
-          const ratingB = b.google_rating || 0;
-          if (ratingB !== ratingA) return ratingB - ratingA;
-          return (b.google_review_count || 0) - (a.google_review_count || 0);
-        });
-        setProviders(sorted);
-      } catch (error) {
-        console.error('Error fetching providers:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProviders();
   }, []);
 
   return (
