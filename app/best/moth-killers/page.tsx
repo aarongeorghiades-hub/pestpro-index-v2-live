@@ -96,7 +96,7 @@ export default function BestMothKillersPage() {
         { title: 'How to Get Rid of Moths: Complete UK Guide', href: '/guides/how-to-get-rid-of-moths' },
         { title: 'How to Get Rid of Rats: Complete UK Guide', href: '/guides/how-to-get-rid-of-rats' },
         { title: 'How to Get Rid of Mice: Complete UK Guide', href: '/guides/how-to-get-rid-of-mice' },
-        { title: 'How to Get Rid of Wasps: Complete UK Guide', href: '/guides/how-to-get-rid-of-wasps' },
+        { title: 'Wasp Nest Removal: Complete UK Guide', href: '/guides/wasp-nest-removal' },
         { title: 'How to Get Rid of Bed Bugs: Complete UK Guide', href: '/guides/how-to-get-rid-of-bed-bugs' },
         { title: 'How to Get Rid of Cockroaches: Complete UK Guide', href: '/guides/how-to-get-rid-of-cockroaches' },
         { title: 'How to Get Rid of Fleas: Complete UK Guide', href: '/guides/how-to-get-rid-of-fleas' },

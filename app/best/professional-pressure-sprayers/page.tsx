@@ -76,7 +76,7 @@ export default function ProfessionalPressureSprayersPage() {
         { title: 'How to Get Rid of Rats', href: '/guides/how-to-get-rid-of-rats' },
         { title: 'How to Get Rid of Ants', href: '/guides/how-to-get-rid-of-ants' },
         { title: 'Landlord Pest Control Guide', href: '/guides/landlord-pest-control' },
-        { title: 'Professional vs DIY Pest Control', href: '/guides/professional-vs-diy-pest-control' },
+        { title: 'Professional vs DIY Pest Control', href: '/guides/professional-pest-control-vs-diy' },
       ]}
       relatedProducts={[
         { title: 'Best Rat Poison UK 2026', href: '/best/rat-poison' },

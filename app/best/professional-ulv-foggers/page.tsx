@@ -77,7 +77,7 @@ export default function ProfessionalULVFoggersPage() {
         { title: 'Landlord Pest Control Guide', href: '/guides/landlord-pest-control' },
         { title: 'How to Get Rid of Fleas', href: '/guides/how-to-get-rid-of-fleas' },
         { title: 'How to Get Rid of Cockroaches', href: '/guides/how-to-get-rid-of-cockroaches' },
-        { title: 'Professional vs DIY Pest Control', href: '/guides/professional-vs-diy-pest-control' },
+        { title: 'Professional vs DIY Pest Control', href: '/guides/professional-pest-control-vs-diy' },
       ]}
       relatedProducts={[
         { title: 'Best Flea Foggers UK 2026', href: '/best/flea-fogger' },
