@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import Navigation from '@/components/Navigation';
 import { getRegionBySlug, getAllRegions } from '../data/regions';
 import { Metadata } from 'next';
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: 'Page Not Found',
     description: 'The page you are looking for could not be found.',
+    robots: { index: false, follow: false },
   };
 }
 
@@ -202,17 +204,8 @@ export default async function DynamicPage({ params }: Props) {
     );
   }
 
-  // Not found
-  return (
-    <div className="min-h-screen bg-white">
-      <Navigation />
-      <div className="py-24 text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Page Not Found</h1>
-        <p className="text-gray-600 mb-8">The page you are looking for could not be found.</p>
-        <Link href="/pest-control" className="text-blue-600 hover:text-blue-700 font-semibold">
-          Back to Regions →
-        </Link>
-      </div>
-    </div>
-  );
+  // Unknown slug → real HTTP 404 (previously rendered a 200 "Page Not Found"
+  // soft 404). Known city slugs are 301-redirected to /{city}/residential in
+  // next.config.ts before they ever reach this route.
+  notFound();
 }

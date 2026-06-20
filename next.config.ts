@@ -73,6 +73,22 @@ const nextConfig: NextConfig = {
       permanent: true,
     }));
 
+    // /pest-control/{city} hubs were thin/near-duplicate and served an HTTP 200
+    // "Page Not Found" (soft 404). Redirect each to its real residential
+    // directory equivalent. London is excluded — it has its own substantive
+    // /pest-control/london hub. These slugs never collide with the London
+    // borough rewrites or the region slugs handled by /pest-control/[slug].
+    const pestControlCityHubs = [
+      'belfast', 'birmingham', 'bradford', 'brighton', 'bristol', 'cardiff',
+      'coventry', 'derby', 'edinburgh', 'glasgow', 'hampshire', 'leeds',
+      'leicester', 'liverpool', 'manchester', 'newcastle', 'nottingham', 'sheffield',
+    ];
+    const pestControlCityRedirects = pestControlCityHubs.map((city) => ({
+      source: `/pest-control/${city}`,
+      destination: `/${city}/residential`,
+      permanent: true,
+    }));
+
     return [
       {
         source: '/:path*',
@@ -85,6 +101,7 @@ const nextConfig: NextConfig = {
         destination: 'https://pestproindex.com/:path*',
         permanent: true,
       },
+      ...pestControlCityRedirects,
       {
         source: '/about',
         destination: '/',
