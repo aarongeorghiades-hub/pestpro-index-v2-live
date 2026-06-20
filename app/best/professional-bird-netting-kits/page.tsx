@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Professional Bird Netting Kits UK (2026) | PestPro Index',
+    title: 'Best Professional Bird Netting Kits UK (2026)',
     description:
       'Professional bird netting kits for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.',
     alternates: {
       canonical: 'https://pestproindex.com/best/professional-bird-netting-kits',
     },
     openGraph: {
-      title: 'Best Professional Bird Netting Kits UK (2026) | PestPro Index',
+      title: 'Best Professional Bird Netting Kits UK (2026)',
       description:
         'Professional bird netting kits for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.',
       url: 'https://pestproindex.com/best/professional-bird-netting-kits',

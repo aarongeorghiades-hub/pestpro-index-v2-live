@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'How to Get Rid of Cockroaches: The Complete UK Guide (2026) | PestPro Index',
+    title: 'How to Get Rid of Cockroaches: The Complete UK Guide (2026)',
     description:
       'A comprehensive UK guide to identifying and eliminating cockroaches. Species identification, signs of infestation, DIY treatments, professional solutions, and how to keep them out for good.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/how-to-get-rid-of-cockroaches',
     },
     openGraph: {
-      title: 'How to Get Rid of Cockroaches: The Complete UK Guide (2026) | PestPro Index',
+      title: 'How to Get Rid of Cockroaches: The Complete UK Guide (2026)',
       description:
         'A comprehensive UK guide to identifying and eliminating cockroaches. Species identification, signs of infestation, DIY treatments, professional solutions, and how to keep them out for good.',
       url: 'https://pestproindex.com/guides/how-to-get-rid-of-cockroaches',

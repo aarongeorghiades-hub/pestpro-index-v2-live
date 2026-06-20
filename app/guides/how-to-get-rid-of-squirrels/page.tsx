@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'How to Get Rid of Squirrels: The Complete UK Guide (2026) | PestPro Index',
+    title: 'How to Get Rid of Squirrels: The Complete UK Guide (2026)',
     description:
       'Expert guide to squirrel control in UK homes and gardens. Learn about grey squirrel problems, humane deterrents, loft proofing, and when to call a professional.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/how-to-get-rid-of-squirrels',
     },
     openGraph: {
-      title: 'How to Get Rid of Squirrels: The Complete UK Guide (2026) | PestPro Index',
+      title: 'How to Get Rid of Squirrels: The Complete UK Guide (2026)',
       description:
         'Expert guide to squirrel control in UK homes and gardens. Learn about grey squirrel problems, humane deterrents, loft proofing, and when to call a professional.',
       url: 'https://pestproindex.com/guides/how-to-get-rid-of-squirrels',

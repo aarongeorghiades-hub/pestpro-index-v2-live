@@ -7,12 +7,12 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Professional Bait Station Kits UK (2026) | PestPro Index',
+    title: 'Best Professional Bait Station Kits UK (2026)',
     description:
       'Trade-grade rat & mouse bait station kits for landlords, facilities managers & HMO operators. Tamper-resistant, UK regulation compliant.',
     alternates: { canonical: 'https://pestproindex.com/best/professional-bait-station-kits' },
     openGraph: {
-      title: 'Best Professional Bait Station Kits UK (2026) | PestPro Index',
+      title: 'Best Professional Bait Station Kits UK (2026)',
       description: 'Trade-grade rat & mouse bait station kits for landlords, facilities managers & HMO operators. Tamper-resistant, UK regulation compliant.',
       url: 'https://pestproindex.com/best/professional-bait-station-kits',
       type: 'article',

@@ -12,7 +12,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'bpca-vs-npta-pest-control-certifications',
     title: 'BPCA vs NPTA: What Do Pest Control Certifications Actually Mean?',
-    metaTitle: 'BPCA vs NPTA: Pest Control Certifications Explained | PestPro Index',
+    metaTitle: 'BPCA vs NPTA: Pest Control Certifications Explained',
     metaDescription: 'BPCA or NPTA — what do pest control certifications actually mean and does it matter? A plain-language guide for London homeowners and commercial operators.',
     targetKeyword: 'pest control certifications UK',
     publishDate: '2026-02-18',
@@ -96,7 +96,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'signs-of-rat-problem-london',
     title: 'Signs You Have a Rat Problem (And What to Do Next)',
-    metaTitle: 'Signs of a Rat Problem in Your Home | Pest Removal London | PestPro Index',
+    metaTitle: 'Signs of a Rat Problem in Your Home | Pest Removal London',
     metaDescription: 'Droppings, gnaw marks, scratching sounds — how to identify a rat infestation early and when to call a pest removal specialist in London.',
     targetKeyword: 'signs of rats in house UK',
     publishDate: '2026-02-18',
@@ -174,7 +174,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'landlord-pest-control-legal-obligation-uk',
     title: 'Do Landlords Have a Legal Obligation for Pest Control?',
-    metaTitle: 'Landlord Pest Control Legal Obligation UK | PestPro Index',
+    metaTitle: 'Landlord Pest Control Legal Obligation UK',
     metaDescription: 'Who is responsible for pest control in a rented property — landlord or tenant? What UK law actually says and what landlords should do in practice.',
     targetKeyword: 'landlord pest control legal obligation UK',
     publishDate: '2026-02-18',
@@ -252,7 +252,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'diy-pest-control-vs-professional',
     title: 'Pest Control Company vs DIY: When Does It Make Sense to Call a Professional?',
-    metaTitle: 'DIY Pest Control vs Professional: When to Call in London | PestPro Index',
+    metaTitle: 'DIY Pest Control vs Professional: When to Call in London',
     metaDescription: 'For some pests DIY works fine. For others it wastes time and money. A clear guide to when professional pest removal is worth it — and when it isn\'t.',
     targetKeyword: 'DIY pest control vs professional UK',
     publishDate: '2026-02-18',
@@ -325,7 +325,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'pest-control-cost-london',
     title: 'How Much Does Pest Control Cost in London?',
-    metaTitle: 'Pest Control & Pest Removal Cost London 2026 | PestPro Index',
+    metaTitle: 'Pest Control & Pest Removal Cost London 2026',
     metaDescription: 'Realistic price ranges for pest control and pest removal in London — rats, mice, bed bugs, wasps, cockroaches. What drives prices and what to watch out for.',
     targetKeyword: 'pest control cost London',
     publishDate: '2026-02-18',
@@ -447,7 +447,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'wasp-season-london',
     title: 'Wasp Season in London: What to Expect and How to Prepare',
-    metaTitle: 'Wasp Season London: When It Peaks and What to Do | PestPro Index',
+    metaTitle: 'Wasp Season London: When It Peaks and What to Do',
     metaDescription: 'When does wasp season peak in London, where do wasps nest, and should you treat a nest yourself? Everything London residents need to know.',
     targetKeyword: 'wasp season London',
     publishDate: '2026-02-18',
@@ -508,7 +508,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'private-vs-council-pest-control-london',
     title: 'Private vs Council Pest Control: What London Residents Need to Know',
-    metaTitle: 'Private vs Council Pest Control London | PestPro Index',
+    metaTitle: 'Private vs Council Pest Control London',
     metaDescription: 'Is council pest control still worth it in London? An honest comparison of council and private pest removal services — speed, cost, scope and when to use each.',
     targetKeyword: 'council pest control London',
     publishDate: '2026-02-18',
@@ -611,7 +611,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'eco-friendly-pest-control-london',
     title: 'Eco-Friendly Pest Control: What Actually Works and What Doesn\'t',
-    metaTitle: 'Eco-Friendly Pest Control London: What Actually Works | PestPro Index',
+    metaTitle: 'Eco-Friendly Pest Control London: What Actually Works',
     metaDescription: 'From IPM to heat treatment to natural sprays — an honest guide to eco-friendly pest removal in London. What works, what doesn\'t, and what to ask a pest controller.',
     targetKeyword: 'eco-friendly pest control London',
     publishDate: '2026-02-18',
@@ -680,7 +680,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'seasonal-pest-calendar-london',
     title: 'London\'s Seasonal Pest Calendar: What to Expect Month by Month',
-    metaTitle: 'London Seasonal Pest Calendar 2026 | Pest Control & Removal Guide | PestPro Index',
+    metaTitle: 'London Seasonal Pest Calendar 2026 | Pest Control & Removal Guide',
     metaDescription: 'Month-by-month guide to pest pressure in London — rats in winter, wasps in summer, spiders in September. What to expect and when to act.',
     targetKeyword: 'seasonal pests London',
     publishDate: '2026-02-18',
@@ -762,7 +762,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'pest-control-manchester-complete-guide',
     title: 'Pest Control in Manchester: What Every Homeowner Needs to Know',
-    metaTitle: 'Pest Control Manchester: Complete Guide for Homeowners | PestPro Index',
+    metaTitle: 'Pest Control Manchester: Complete Guide for Homeowners',
     metaDescription: 'Everything Manchester homeowners need to know about pest control — common pests, costs, when to call a professional, and how to find a trusted local provider.',
     targetKeyword: 'pest control Manchester',
     publishDate: '2026-02-21',
@@ -851,7 +851,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'manchester-seasonal-pest-calendar',
     title: "Manchester Seasonal Pest Calendar: What to Watch For Throughout the Year",
-    metaTitle: 'Manchester Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index',
+    metaTitle: 'Manchester Seasonal Pest Calendar 2026 | Month-by-Month Guide',
     metaDescription: "Month-by-month guide to pest pressure in Manchester — when rats move indoors, when wasps peak, and when to act. Plan your pest prevention with this seasonal calendar.",
     targetKeyword: 'seasonal pests Manchester',
     publishDate: '2026-02-21',
@@ -954,7 +954,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'pest-control-liverpool-complete-guide',
     title: 'Pest Control in Liverpool: What Every Homeowner Needs to Know',
-    metaTitle: 'Pest Control Liverpool: Complete Guide for Homeowners | PestPro Index',
+    metaTitle: 'Pest Control Liverpool: Complete Guide for Homeowners',
     metaDescription: 'A complete guide to pest control in Liverpool and Merseyside. Learn about common pests, costs, prevention tips, and how to find trusted local pest controllers.',
     targetKeyword: 'pest control Liverpool',
     publishDate: '2026-02-21',
@@ -1049,7 +1049,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'liverpool-seasonal-pest-calendar',
     title: "Liverpool Seasonal Pest Calendar: What to Watch For Throughout the Year",
-    metaTitle: 'Liverpool Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index',
+    metaTitle: 'Liverpool Seasonal Pest Calendar 2026 | Month-by-Month Guide',
     metaDescription: "Month-by-month guide to pest activity in Liverpool and Merseyside. Know when rats, wasps, bed bugs, and other pests are most active so you can prevent infestations before they start.",
     targetKeyword: 'seasonal pests Liverpool',
     publishDate: '2026-02-21',
@@ -1130,7 +1130,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'pest-control-leeds-complete-guide',
     title: 'Pest Control in Leeds: The Complete Guide for 2026',
-    metaTitle: 'Pest Control Leeds: Complete Guide for 2026 | PestPro Index',
+    metaTitle: 'Pest Control Leeds: Complete Guide for 2026',
     metaDescription: 'Everything you need to know about pest control in Leeds and West Yorkshire. Common pests, seasonal patterns, costs, and how to find a trusted local provider.',
     targetKeyword: 'pest control Leeds',
     publishDate: '2026-02-22',
@@ -1254,7 +1254,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'leeds-seasonal-pest-calendar',
     title: "Leeds Seasonal Pest Calendar: What to Expect Month by Month",
-    metaTitle: 'Leeds Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index',
+    metaTitle: 'Leeds Seasonal Pest Calendar 2026 | Month-by-Month Guide',
     metaDescription: "Month-by-month guide to pest activity in Leeds and West Yorkshire. Know when rats, wasps, moths, and other pests are most active so you can prevent infestations before they start.",
     targetKeyword: 'seasonal pests Leeds',
     publishDate: '2026-02-22',
@@ -1368,7 +1368,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'pest-control-nottingham-east-midlands-guide',
     title: 'Pest Control in Nottingham & the East Midlands: A Complete Local Guide',
-    metaTitle: 'Pest Control Nottingham & East Midlands: Complete Local Guide | PestPro Index',
+    metaTitle: 'Pest Control Nottingham & East Midlands: Complete Local Guide',
     metaDescription: 'Everything you need to know about finding pest control in Nottingham, Derby, and surrounding East Midlands areas — from common pests to choosing a provider.',
     targetKeyword: 'pest control Nottingham',
     publishDate: '2026-02-26',
@@ -1445,7 +1445,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'nottingham-seasonal-pest-calendar',
     title: 'Nottingham Seasonal Pest Calendar: What to Expect Throughout the Year',
-    metaTitle: 'Nottingham Seasonal Pest Calendar: Month-by-Month Guide | PestPro Index',
+    metaTitle: 'Nottingham Seasonal Pest Calendar: Month-by-Month Guide',
     metaDescription: 'A month-by-month guide to the pests most likely to affect homes and businesses across Nottingham, Derby, and the East Midlands — and when to call a professional.',
     targetKeyword: 'Nottingham pest calendar',
     publishDate: '2026-02-26',
@@ -1553,7 +1553,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'pest-control-brighton-complete-guide',
     title: 'Pest Control in Brighton & Sussex: What Every Homeowner Needs to Know',
-    metaTitle: 'Pest Control in Brighton & Sussex: Complete Guide | PestPro Index',
+    metaTitle: 'Pest Control in Brighton & Sussex: Complete Guide',
     metaDescription: 'A practical guide to common pests in Brighton, Hove, Worthing, and across Sussex. Covers seagulls, rats, mice, wasps, bed bugs and how to choose a trusted local provider.',
     targetKeyword: 'pest control Brighton',
     publishDate: '2026-02-27',
@@ -1610,7 +1610,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'brighton-seasonal-pest-calendar',
     title: 'Brighton & Sussex Seasonal Pest Calendar: Month-by-Month Guide',
-    metaTitle: 'Brighton & Sussex Seasonal Pest Calendar: Month-by-Month Guide | PestPro Index',
+    metaTitle: 'Brighton & Sussex Seasonal Pest Calendar: Month-by-Month Guide',
     metaDescription: 'A month-by-month guide to pest activity across Brighton, Hove, and Sussex. Know when seagulls, wasps, rats, moths, and bed bugs are most active so you can prevent infestations before they start.',
     targetKeyword: 'Brighton pest calendar',
     publishDate: '2026-02-27',
@@ -1677,7 +1677,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'pest-control-sheffield-complete-guide',
     title: 'Pest Control in Sheffield: The Complete 2026 Guide for Homes & Businesses',
-    metaTitle: 'Pest Control Sheffield: Complete 2026 Guide | PestPro Index',
+    metaTitle: 'Pest Control Sheffield: Complete 2026 Guide',
     metaDescription: 'Comprehensive guide to pest control in Sheffield. Learn about common pests, prevention tips, and find trusted local pest controllers across South Yorkshire.',
     targetKeyword: 'pest control Sheffield',
     publishDate: '2026-02-27',
@@ -1819,7 +1819,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'pest-control-bristol-complete-guide',
     title: 'Pest Control in Bristol: What Every Homeowner Needs to Know',
-    metaTitle: 'Pest Control in Bristol: Complete Guide | PestPro Index',
+    metaTitle: 'Pest Control in Bristol: Complete Guide',
     metaDescription: 'A complete guide to pest control in Bristol and the South West. Learn about common pests, costs, prevention tips, and how to find trusted local pest controllers.',
     targetKeyword: 'pest control Bristol',
     publishDate: '2026-03-01',
@@ -1907,7 +1907,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'bristol-seasonal-pest-calendar',
     title: 'Bristol Seasonal Pest Calendar: What to Expect Month by Month',
-    metaTitle: 'Bristol Seasonal Pest Calendar: Month-by-Month Guide | PestPro Index',
+    metaTitle: 'Bristol Seasonal Pest Calendar: Month-by-Month Guide',
     metaDescription: 'Month-by-month guide to pest activity in Bristol and the South West. Know what pests to watch for each season and when to arrange professional treatment.',
     targetKeyword: 'Bristol pest calendar',
     publishDate: '2026-03-01',
@@ -1998,7 +1998,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'pest-control-glasgow-complete-guide',
     title: 'Pest Control in Glasgow: A Complete Guide for Homeowners and Businesses',
-    metaTitle: 'Pest Control in Glasgow: Complete Guide for 2026 | PestPro Index',
+    metaTitle: 'Pest Control in Glasgow: Complete Guide for 2026',
     metaDescription: 'Everything you need to know about pest control in Glasgow. Common pests, costs, when to call a professional, and how to find trusted providers across Scotland.',
     targetKeyword: 'pest control Glasgow',
     publishDate: '2026-03-01',
@@ -2097,7 +2097,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'glasgow-seasonal-pest-calendar',
     title: 'Glasgow Seasonal Pest Calendar: What to Expect Throughout the Year',
-    metaTitle: 'Glasgow Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index',
+    metaTitle: 'Glasgow Seasonal Pest Calendar 2026 | Month-by-Month Guide',
     metaDescription: 'Month-by-month guide to pest activity in Glasgow and Scotland. Know what pests to expect each season and when to arrange professional treatment.',
     targetKeyword: 'Glasgow pest control seasonal',
     publishDate: '2026-03-01',
@@ -2182,7 +2182,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'pest-control-bradford-west-yorkshire-guide',
     title: 'Pest Control in Bradford & West Yorkshire: A Complete Local Guide',
-    metaTitle: 'Pest Control Bradford & West Yorkshire | Complete Local Guide | PestPro Index',
+    metaTitle: 'Pest Control Bradford & West Yorkshire | Complete Local Guide',
     metaDescription: 'Everything you need to know about pest control in Bradford, Shipley, Keighley, Halifax, Huddersfield and across West Yorkshire — common pests, costs, and choosing a provider.',
     targetKeyword: 'pest control Bradford',
     publishDate: '2026-03-04',
@@ -2350,7 +2350,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'pest-control-after-kitchen-flood-fire-damage',
     title: 'Pest Control After Kitchen Flood or Fire Damage',
-    metaTitle: 'Pest Control After Kitchen Flood or Fire Damage | PestPro Index',
+    metaTitle: 'Pest Control After Kitchen Flood or Fire Damage',
     metaDescription: 'Flood and fire damage to kitchens frequently exposes pest infestations. Here\'s why pest control should be part of your restoration plan — and when to call a specialist.',
     targetKeyword: 'pest control kitchen flood fire damage',
     publishDate: '2026-03-11',
@@ -2401,7 +2401,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'does-irish-spring-soap-repel-pests',
     title: 'Does Irish Spring Soap Repel Pests? The Truth',
-    metaTitle: 'Does Irish Spring Soap Repel Pests? The Truth | PestPro Index',
+    metaTitle: 'Does Irish Spring Soap Repel Pests? The Truth',
     metaDescription: 'TikTok says Irish Spring soap keeps rats, mice and bugs away. We look at the evidence and tell you what actually works.',
     targetKeyword: 'does irish spring soap repel mice',
     publishDate: '2026-04-06',
@@ -2457,7 +2457,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'wasp-season-uk-2026-what-to-expect',
     title: 'Wasp Season UK 2026: When It Starts & What to Expect',
-    metaTitle: 'Wasp Season UK 2026: When It Starts & What to Expect | PestPro Index',
+    metaTitle: 'Wasp Season UK 2026: When It Starts & What to Expect',
     metaDescription: 'Wasp season 2026 is here. When do wasps appear, when are they most aggressive, and what can you do to prepare? Expert UK guide.',
     targetKeyword: 'wasp season 2026 UK',
     publishDate: '2026-04-06',
@@ -2518,7 +2518,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'do-ultrasonic-pest-repellers-actually-work',
     title: 'Do Ultrasonic Pest Repellers Actually Work? Honest Answer',
-    metaTitle: 'Do Ultrasonic Pest Repellers Actually Work? Honest Answer | PestPro Index',
+    metaTitle: 'Do Ultrasonic Pest Repellers Actually Work? Honest Answer',
     metaDescription: 'Ultrasonic pest repellers sell millions on Amazon. But do they actually repel mice, rats or insects? We review the evidence.',
     targetKeyword: 'do ultrasonic pest repellers work',
     publishDate: '2026-04-06',
@@ -2587,7 +2587,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'how-much-does-pest-control-cost-uk',
     title: 'How Much Does Pest Control Cost in the UK? 2026 Prices',
-    metaTitle: 'How Much Does Pest Control Cost in the UK? 2026 Prices | PestPro Index',
+    metaTitle: 'How Much Does Pest Control Cost in the UK? 2026 Prices',
     metaDescription: 'UK pest control costs for rats, mice, wasps, bed bugs, fleas and more. Full 2026 price breakdown with DIY alternatives.',
     targetKeyword: 'pest control cost UK',
     publishDate: '2026-04-06',
@@ -2671,7 +2671,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'signs-you-have-mice-in-your-house',
     title: '8 Signs You Have Mice in Your House',
-    metaTitle: '8 Signs You Have Mice in Your House | PestPro Index',
+    metaTitle: '8 Signs You Have Mice in Your House',
     metaDescription: 'Droppings, scratching noises, gnaw marks — learn the 8 telltale signs of mice in your home and what to do about them.',
     targetKeyword: 'signs of mice in house',
     publishDate: '2026-04-06',
@@ -2756,7 +2756,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'do-conkers-keep-spiders-away',
     title: 'Do Conkers Keep Spiders Away? The British Myth Explained',
-    metaTitle: 'Do Conkers Keep Spiders Away? The British Myth Explained | PestPro Index',
+    metaTitle: 'Do Conkers Keep Spiders Away? The British Myth Explained',
     metaDescription: 'Every autumn, people scatter conkers to repel spiders. But does it actually work? We look at the science behind the folklore.',
     targetKeyword: 'do conkers repel spiders',
     publishDate: '2026-04-06',
@@ -2820,7 +2820,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'rats-in-garden-what-to-do',
     title: "Rats in Your Garden? Here's What to Do",
-    metaTitle: "Rats in Your Garden? Here's What to Do | PestPro Index",
+    metaTitle: "Rats in Your Garden? Here's What to Do",
     metaDescription: "Found rats in your garden? Don't panic. Our step-by-step guide covers what attracts them, how to get rid of them, and when to call a pro.",
     targetKeyword: 'rats in garden',
     publishDate: '2026-04-06',
@@ -2896,7 +2896,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'bed-bugs-uk-on-the-rise',
     title: 'Bed Bugs in the UK: Why Cases Are Rising in 2026',
-    metaTitle: 'Bed Bugs in the UK: Why Cases Are Rising in 2026 | PestPro Index',
+    metaTitle: 'Bed Bugs in the UK: Why Cases Are Rising in 2026',
     metaDescription: "Bed bug cases are surging across the UK. What's causing the rise, how to check for them, and what treatment works best.",
     targetKeyword: 'bed bugs UK 2026',
     publishDate: '2026-04-06',
@@ -2976,7 +2976,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'awaabs-law-pest-control-landlords',
     title: "Awaab's Law & Pest Control: What Landlords Need to Know",
-    metaTitle: "Awaab's Law & Pest Control: What Landlords Need to Know | PestPro Index",
+    metaTitle: "Awaab's Law & Pest Control: What Landlords Need to Know",
     metaDescription: "Awaab's Law means landlords must act on pest complaints. What are your obligations, timelines and penalties? UK landlord guide.",
     targetKeyword: "Awaab's law pest control",
     publishDate: '2026-04-06',
@@ -3069,7 +3069,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'most-common-pests-uk-by-season',
     title: 'Most Common UK Pests by Season: What to Watch For',
-    metaTitle: 'Most Common UK Pests by Season: What to Watch For | PestPro Index',
+    metaTitle: 'Most Common UK Pests by Season: What to Watch For',
     metaDescription: "Mice in autumn, wasps in summer, moths in spring — a complete seasonal guide to the UK's most common household pests.",
     targetKeyword: 'most common pests UK',
     publishDate: '2026-04-06',
@@ -3143,7 +3143,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'uk-rat-activity-rising-2026',
     title: 'UK Rat Activity Rising: What Homeowners Need to Know in 2026',
-    metaTitle: 'UK Rat Activity Rising: What Homeowners Need to Know in 2026 | PestPro Index',
+    metaTitle: 'UK Rat Activity Rising: What Homeowners Need to Know in 2026',
     metaDescription: "Rat sightings across UK homes are up significantly in 2026. Why it's happening, which regions are worst hit, and what to do about it.",
     targetKeyword: 'rats in UK homes 2026',
     publishDate: '2026-04-06',
@@ -3193,7 +3193,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'northern-ireland-rat-spike-2026',
     title: "Northern Ireland Has Highest Rat Spike in the UK — Here's Why",
-    metaTitle: "Northern Ireland Has Highest Rat Spike in the UK — Here's Why | PestPro Index",
+    metaTitle: "Northern Ireland Has Highest Rat Spike in the UK — Here's Why",
     metaDescription: 'Northern Ireland recorded a 20% spike in rat activity — the highest in the UK. Climate change and mild winters are driving rodent numbers up.',
     targetKeyword: 'rats Northern Ireland 2026',
     publishDate: '2026-04-06',
@@ -3238,7 +3238,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'bed-bug-warning-uk-homes-2026',
     title: 'Bed Bug Warning for UK Homes: How to Check and Protect Yourself',
-    metaTitle: 'Bed Bug Warning for UK Homes: How to Check and Protect Yourself | PestPro Index',
+    metaTitle: 'Bed Bug Warning for UK Homes: How to Check and Protect Yourself',
     metaDescription: 'UK homeowners are being warned about bed bugs as cases continue to rise. How to spot the signs and what treatment actually works.',
     targetKeyword: 'bed bugs UK homes warning',
     publishDate: '2026-04-06',
@@ -3295,7 +3295,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'bed-bug-epidemic-birmingham-2026',
     title: 'Bed Bug Epidemic Warning: Birmingham and UK Cities at Risk',
-    metaTitle: 'Bed Bug Epidemic Warning: Birmingham and UK Cities at Risk | PestPro Index',
+    metaTitle: 'Bed Bug Epidemic Warning: Birmingham and UK Cities at Risk',
     metaDescription: 'Pest experts warn of a bed bug epidemic hitting Birmingham and other UK cities. Why infestations are surging and how to protect your home.',
     targetKeyword: 'bed bug epidemic Birmingham UK',
     publishDate: '2026-04-06',
@@ -3335,7 +3335,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'higher-standards-bed-bug-control-london',
     title: 'London Pest Controller Calls for Higher Standards in Bed Bug Treatment',
-    metaTitle: 'London Pest Controller Calls for Higher Standards in Bed Bug Treatment | PestPro Index',
+    metaTitle: 'London Pest Controller Calls for Higher Standards in Bed Bug Treatment',
     metaDescription: 'A London pest control firm is calling for higher industry standards for bed bug treatment. Why qualifications matter when choosing a bed bug specialist.',
     targetKeyword: 'bed bug treatment standards London',
     publishDate: '2026-04-06',
@@ -3385,7 +3385,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'awaabs-law-landlord-equipment-guide',
     title: "What Equipment Do Landlords Need for Awaab\u2019s Law Compliance?",
-    metaTitle: "Awaab\u2019s Law Landlord Equipment Guide: PIV Units, Dehumidifiers &amp; Damp Meters | PestPro Index",
+    metaTitle: "Awaab\u2019s Law Landlord Equipment Guide: PIV Units, Dehumidifiers &amp; Damp Meters",
     metaDescription: "PIV units, dehumidifiers and damp meters explained \u2014 the practical equipment guide for landlords responding to Awaab\u2019s Law damp and mould requirements.",
     targetKeyword: "Awaab\u2019s Law landlord equipment",
     publishDate: '2026-04-07',

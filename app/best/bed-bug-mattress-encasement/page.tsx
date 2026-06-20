@@ -7,12 +7,12 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Bed Bug Mattress Encasement UK 2026 | PestPro Index',
+    title: 'Best Bed Bug Mattress Encasement UK 2026',
     description:
       'Our pick of the best bed bug mattress encasements available in the UK for 2026. Zippered protectors tested for bed bug protection, comfort, and durability.',
     alternates: { canonical: 'https://pestproindex.com/best/bed-bug-mattress-encasement' },
     openGraph: {
-      title: 'Best Bed Bug Mattress Encasement UK 2026 | PestPro Index',
+      title: 'Best Bed Bug Mattress Encasement UK 2026',
       description: 'Our pick of the best bed bug mattress encasements available in the UK for 2026. Zippered protectors tested for bed bug protection, comfort, and durability.',
       url: 'https://pestproindex.com/best/bed-bug-mattress-encasement',
       type: 'article',

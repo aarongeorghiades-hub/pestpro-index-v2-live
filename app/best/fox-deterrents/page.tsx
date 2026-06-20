@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Fox Deterrents UK 2026 — Ultrasonic, Scent & Sprinkler Repellents | PestPro Index',
+    title: 'Best Fox Deterrents UK 2026 — Ultrasonic, Scent & Sprinkler Repellents',
     description:
       'Expert reviews of the best fox deterrents available in the UK. Compare ultrasonic devices, scent repellents, motion-activated sprinklers, and garden fox-proofing products.',
     alternates: {
       canonical: 'https://pestproindex.com/best/fox-deterrents',
     },
     openGraph: {
-      title: 'Best Fox Deterrents UK 2026 — Ultrasonic, Scent & Sprinkler Repellents | PestPro Index',
+      title: 'Best Fox Deterrents UK 2026 — Ultrasonic, Scent & Sprinkler Repellents',
       description:
         'Expert reviews of the best fox deterrents available in the UK. Compare ultrasonic devices, scent repellents, motion-activated sprinklers, and garden fox-proofing products.',
       url: 'https://pestproindex.com/best/fox-deterrents',

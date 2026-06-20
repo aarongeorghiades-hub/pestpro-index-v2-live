@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Flea Spray for Home UK 2026: Kill Fleas Fast | PestPro Index',
+    title: 'Best Flea Spray for Home UK 2026: Kill Fleas Fast',
     description:
       'Our pick of the best flea sprays for the home available in the UK for 2026. IGR sprays, aerosols, and natural options reviewed with application tips and buying advice.',
     alternates: {
       canonical: 'https://pestproindex.com/best/flea-spray-for-home',
     },
     openGraph: {
-      title: 'Best Flea Spray for Home UK 2026: Kill Fleas Fast | PestPro Index',
+      title: 'Best Flea Spray for Home UK 2026: Kill Fleas Fast',
       description:
         'Our pick of the best flea sprays for the home available in the UK for 2026. IGR sprays, aerosols, and natural options reviewed with application tips and buying advice.',
       url: 'https://pestproindex.com/best/flea-spray-for-home',

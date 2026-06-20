@@ -7,14 +7,14 @@ import ProductCard from '@/components/ProductCard';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Woodworm Treatment UK — Identification, Causes & How to Treat | PestPro Index',
+    title: 'Woodworm Treatment UK — Identification, Causes & How to Treat',
     description:
       'Complete guide to woodworm treatment in the UK. Learn how to identify woodworm, understand the causes, DIY and professional treatment options, and how to protect your property.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/woodworm-treatment',
     },
     openGraph: {
-      title: 'Woodworm Treatment UK — Identification, Causes & How to Treat | PestPro Index',
+      title: 'Woodworm Treatment UK — Identification, Causes & How to Treat',
       description:
         'Complete guide to woodworm treatment in the UK. Learn how to identify woodworm, understand the causes, DIY and professional treatment options, and how to protect your property.',
       url: 'https://pestproindex.com/guides/woodworm-treatment',

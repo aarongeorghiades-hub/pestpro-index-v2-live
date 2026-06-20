@@ -7,12 +7,12 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Rat Bait Stations UK 2026: Tamper-Resistant & Lockable | PestPro Index',
+    title: 'Best Rat Bait Stations UK 2026: Tamper-Resistant & Lockable',
     description:
       'Our pick of the best rat bait stations available in the UK for 2026. Lockable, tamper-resistant stations for poison and snap traps reviewed with placement advice.',
     alternates: { canonical: 'https://pestproindex.com/best/rat-bait-stations' },
     openGraph: {
-      title: 'Best Rat Bait Stations UK 2026: Tamper-Resistant & Lockable | PestPro Index',
+      title: 'Best Rat Bait Stations UK 2026: Tamper-Resistant & Lockable',
       description: 'Our pick of the best rat bait stations available in the UK for 2026. Lockable, tamper-resistant stations for poison and snap traps reviewed with placement advice.',
       url: 'https://pestproindex.com/best/rat-bait-stations',
       type: 'article',

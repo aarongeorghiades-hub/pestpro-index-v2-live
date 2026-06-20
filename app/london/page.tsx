@@ -8,14 +8,14 @@ import { londonBoroughs } from '@/app/pest-control/london/london-boroughs';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control London | Find Local Experts | PestPro Index',
+  title: 'Pest Control London | Find Local Experts',
   description:
     'Find trusted pest control companies in London. Browse residential and commercial pest control services across all 33 London boroughs. Verified providers, no referral fees.',
   alternates: {
     canonical: 'https://pestproindex.com/london',
   },
   openGraph: {
-    title: 'Pest Control London | Find Local Experts | PestPro Index',
+    title: 'Pest Control London | Find Local Experts',
     description:
       'Find trusted pest control companies in London. Browse residential and commercial pest control services across all 33 London boroughs.',
     url: 'https://pestproindex.com/london',

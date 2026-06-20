@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Carpet Beetle Treatments UK 2026 — Sprays, Traps & Killer Products | PestPro Index',
+    title: 'Best Carpet Beetle Treatments UK 2026 — Sprays, Traps & Killer Products',
     description:
       'Expert reviews of the best carpet beetle treatments available in the UK. Compare insecticidal sprays, pheromone traps, powders, and prevention products for carpet beetle control.',
     alternates: {
       canonical: 'https://pestproindex.com/best/carpet-beetle-treatments',
     },
     openGraph: {
-      title: 'Best Carpet Beetle Treatments UK 2026 — Sprays, Traps & Killer Products | PestPro Index',
+      title: 'Best Carpet Beetle Treatments UK 2026 — Sprays, Traps & Killer Products',
       description:
         'Expert reviews of the best carpet beetle treatments available in the UK. Compare insecticidal sprays, pheromone traps, powders, and prevention products for carpet beetle control.',
       url: 'https://pestproindex.com/best/carpet-beetle-treatments',

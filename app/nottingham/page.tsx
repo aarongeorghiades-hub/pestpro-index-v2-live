@@ -7,14 +7,14 @@ import { nottinghamBoroughs } from '@/app/pest-control/nottingham/nottingham-bor
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control Nottingham | Find Local Experts | PestPro Index',
+  title: 'Pest Control Nottingham | Find Local Experts',
   description:
     'Find trusted pest control companies in Nottingham. Browse residential and commercial services across all Nottingham districts including Gedling, Broxtowe, Rushcliffe and more.',
   alternates: {
     canonical: 'https://pestproindex.com/nottingham',
   },
   openGraph: {
-    title: 'Pest Control Nottingham | Find Local Experts | PestPro Index',
+    title: 'Pest Control Nottingham | Find Local Experts',
     description:
       'Find trusted pest control companies in Nottingham. Browse residential and commercial services across all Nottingham districts.',
     url: 'https://pestproindex.com/nottingham',

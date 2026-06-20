@@ -7,14 +7,14 @@ import Callout from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Commercial Rodent Bait Stations UK 2026 | Tamper-Proof Stations Reviewed | PestPro Index',
+    title: 'Best Commercial Rodent Bait Stations UK 2026 | Tamper-Proof Stations Reviewed',
     description:
       'Expert reviews of tamper-resistant rodent bait stations for UK businesses and warehouses. Lockable, BRC-compliant bait boxes for professional pest control.',
     alternates: {
       canonical: 'https://pestproindex.com/best/commercial-rodent-bait-stations',
     },
     openGraph: {
-      title: 'Best Commercial Rodent Bait Stations UK 2026 | Tamper-Proof Stations Reviewed | PestPro Index',
+      title: 'Best Commercial Rodent Bait Stations UK 2026 | Tamper-Proof Stations Reviewed',
       description:
         'Expert reviews of tamper-resistant rodent bait stations for UK businesses and warehouses. Lockable, BRC-compliant bait boxes for professional pest control.',
       url: 'https://pestproindex.com/best/commercial-rodent-bait-stations',

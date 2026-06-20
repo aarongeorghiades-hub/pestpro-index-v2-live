@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Commercial Bed Bug Treatment UK 2026 | Professional Sprays, Kits & Monitors Reviewed | PestPro Index',
+    title: 'Best Commercial Bed Bug Treatment UK 2026 | Professional Sprays, Kits & Monitors Reviewed',
     description:
       'Expert reviews of professional-grade bed bug treatment products for UK hotels, B&Bs, and commercial premises. Concentrate kits, sprays, bulk treatments, and monitoring traps compared.',
     alternates: {
       canonical: 'https://pestproindex.com/best/commercial-insect-monitors',
     },
     openGraph: {
-      title: 'Best Commercial Bed Bug Treatment UK 2026 | Professional Sprays, Kits & Monitors Reviewed | PestPro Index',
+      title: 'Best Commercial Bed Bug Treatment UK 2026 | Professional Sprays, Kits & Monitors Reviewed',
       description:
         'Expert reviews of professional-grade bed bug treatment products for UK hotels, B&Bs, and commercial premises. Concentrate kits, sprays, bulk treatments, and monitoring traps compared.',
       url: 'https://pestproindex.com/best/commercial-insect-monitors',

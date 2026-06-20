@@ -4,10 +4,10 @@ import Navigation from '@/components/Navigation';
 import { pestGuides } from '@/data/pest-guides';
 
 export const metadata: Metadata = {
-  title: 'Pest Library — UK Pest Identification & Treatment Guides | PestPro Index',
+  title: 'Pest Library — UK Pest Identification & Treatment Guides',
   description: 'Browse our comprehensive pest library. Identification guides, treatment options, costs and prevention tips for mice, rats, bed bugs, wasps, ants, cockroaches and more.',
   openGraph: {
-    title: 'Pest Library — UK Pest Identification & Treatment Guides | PestPro Index',
+    title: 'Pest Library — UK Pest Identification & Treatment Guides',
     description: 'Browse our comprehensive pest library. Identification guides, treatment options, costs and prevention tips for common UK pests.',
     url: 'https://pestproindex.com/pest-library',
     siteName: 'PestPro Index',

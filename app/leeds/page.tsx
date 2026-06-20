@@ -7,14 +7,14 @@ import { leedsBoroughs } from '@/app/pest-control/leeds/leeds-boroughs';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control Leeds | Find Local Experts | PestPro Index',
+  title: 'Pest Control Leeds | Find Local Experts',
   description:
     'Find trusted pest control companies in Leeds. Browse residential and commercial services across all Leeds districts including Wakefield, Kirklees, Calderdale and more.',
   alternates: {
     canonical: 'https://pestproindex.com/leeds',
   },
   openGraph: {
-    title: 'Pest Control Leeds | Find Local Experts | PestPro Index',
+    title: 'Pest Control Leeds | Find Local Experts',
     description:
       'Find trusted pest control companies in Leeds. Browse residential and commercial services across all Leeds districts.',
     url: 'https://pestproindex.com/leeds',

@@ -8,14 +8,14 @@ import { sheffieldBoroughs } from '@/app/pest-control/sheffield/sheffield-boroug
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control Sheffield | Find Local Experts | PestPro Index',
+  title: 'Pest Control Sheffield | Find Local Experts',
   description:
     'Find trusted pest control companies in Sheffield. Browse residential and commercial services across all Sheffield districts including Rotherham, Doncaster, Barnsley and more.',
   alternates: {
     canonical: 'https://pestproindex.com/sheffield',
   },
   openGraph: {
-    title: 'Pest Control Sheffield | Find Local Experts | PestPro Index',
+    title: 'Pest Control Sheffield | Find Local Experts',
     description:
       'Find trusted pest control companies in Sheffield. Browse residential and commercial services across all Sheffield districts.',
     url: 'https://pestproindex.com/sheffield',

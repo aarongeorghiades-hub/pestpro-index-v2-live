@@ -4,7 +4,7 @@ import { ExternalLink } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'UK Homeowner & Property Resources | PestPro Index',
+  title: 'UK Homeowner & Property Resources',
   description:
     'Useful links and resources for UK homeowners — council tax, housing advice, energy efficiency, property prices, and pest control guidance.',
 };

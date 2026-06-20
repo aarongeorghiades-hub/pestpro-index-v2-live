@@ -3,13 +3,13 @@ import Navigation from '@/components/Navigation';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Best Pest Control Products UK 2026 | PestPro Index',
+  title: 'Best Pest Control Products UK 2026',
   description: 'Expert-reviewed pest control products — sprays, traps, baits and professional equipment. Find the best products for every pest.',
   alternates: {
     canonical: 'https://pestproindex.com/best',
   },
   openGraph: {
-    title: 'Best Pest Control Products UK 2026 | PestPro Index',
+    title: 'Best Pest Control Products UK 2026',
     description: 'Expert-reviewed pest control products — sprays, traps, baits and professional equipment. Find the best products for every pest.',
     url: 'https://pestproindex.com/best',
     siteName: 'PestPro Index',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Best Pest Control Products UK 2026 | PestPro Index',
+    title: 'Best Pest Control Products UK 2026',
     description: 'Expert-reviewed pest control products — sprays, traps, baits and professional equipment for every pest.',
   },
 };

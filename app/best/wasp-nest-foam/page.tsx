@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Wasp Nest Killer Foam UK 2026: Tested & Recommended | PestPro Index',
+    title: 'Best Wasp Nest Killer Foam UK 2026: Tested & Recommended',
     description:
       'Our pick of the best wasp nest killer foams and sprays available in the UK for 2026. Long-range foams, powders, and aerosols reviewed with safety advice and application tips.',
     alternates: {
       canonical: 'https://pestproindex.com/best/wasp-nest-foam',
     },
     openGraph: {
-      title: 'Best Wasp Nest Killer Foam UK 2026: Tested & Recommended | PestPro Index',
+      title: 'Best Wasp Nest Killer Foam UK 2026: Tested & Recommended',
       description:
         'Our pick of the best wasp nest killer foams and sprays available in the UK for 2026. Long-range foams, powders, and aerosols reviewed with safety advice and application tips.',
       url: 'https://pestproindex.com/best/wasp-nest-foam',

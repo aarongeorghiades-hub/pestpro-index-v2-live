@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Woodworm Treatments UK 2026 — Sprays, Gels & Professional Products | PestPro Index',
+    title: 'Best Woodworm Treatments UK 2026 — Sprays, Gels & Professional Products',
     description:
       'Expert reviews of the best woodworm treatment products available in the UK. Compare permethrin sprays, boron gels, injection kits, and timber preservers for DIY woodworm treatment.',
     alternates: {
       canonical: 'https://pestproindex.com/best/woodworm-treatments',
     },
     openGraph: {
-      title: 'Best Woodworm Treatments UK 2026 — Sprays, Gels & Professional Products | PestPro Index',
+      title: 'Best Woodworm Treatments UK 2026 — Sprays, Gels & Professional Products',
       description:
         'Expert reviews of the best woodworm treatment products available in the UK. Compare permethrin sprays, boron gels, injection kits, and timber preservers for DIY woodworm treatment.',
       url: 'https://pestproindex.com/best/woodworm-treatments',

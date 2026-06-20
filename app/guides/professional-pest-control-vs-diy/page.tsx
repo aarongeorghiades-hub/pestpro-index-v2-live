@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Professional Pest Control vs DIY: Which Is Worth It? (UK 2026) | PestPro Index',
+    title: 'Professional Pest Control vs DIY: Which Is Worth It? (UK 2026)',
     description:
       'Should you hire a professional pest controller or tackle the problem yourself? A detailed UK comparison covering cost, effectiveness, safety, and when to call in the experts.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/professional-pest-control-vs-diy',
     },
     openGraph: {
-      title: 'Professional Pest Control vs DIY: Which Is Worth It? (UK 2026) | PestPro Index',
+      title: 'Professional Pest Control vs DIY: Which Is Worth It? (UK 2026)',
       description:
         'Should you hire a professional pest controller or tackle the problem yourself? A detailed UK comparison covering cost, effectiveness, safety, and when to call in the experts.',
       url: 'https://pestproindex.com/guides/professional-pest-control-vs-diy',

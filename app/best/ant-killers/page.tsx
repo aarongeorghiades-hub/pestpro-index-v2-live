@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Ant Killer Products UK 2026: Baits, Gels, Powders & Sprays Reviewed | PestPro Index',
+    title: 'Best Ant Killer Products UK 2026: Baits, Gels, Powders & Sprays Reviewed',
     description:
       'The best ant killer products for UK homes in 2026. Bait stations, gel baits, powders and sprays reviewed with honest pros, cons, and buying advice from pest control experts.',
     alternates: {
       canonical: 'https://pestproindex.com/best/ant-killers',
     },
     openGraph: {
-      title: 'Best Ant Killer Products UK 2026: Baits, Gels, Powders & Sprays Reviewed | PestPro Index',
+      title: 'Best Ant Killer Products UK 2026: Baits, Gels, Powders & Sprays Reviewed',
       description:
         'The best ant killer products for UK homes in 2026. Bait stations, gel baits, powders and sprays reviewed with honest pros, cons, and buying advice from pest control experts.',
       url: 'https://pestproindex.com/best/ant-killers',

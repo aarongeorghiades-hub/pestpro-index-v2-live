@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Landlord Pest Control UK — Legal Duties, Responsibilities & Solutions | PestPro Index',
+    title: 'Landlord Pest Control UK — Legal Duties, Responsibilities & Solutions',
     description:
       'Complete guide to landlord pest control responsibilities in the UK. Understand your legal obligations, tenant vs landlord duties, prevention strategies, and how to find reliable pest management.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/landlord-pest-control',
     },
     openGraph: {
-      title: 'Landlord Pest Control UK — Legal Duties, Responsibilities & Solutions | PestPro Index',
+      title: 'Landlord Pest Control UK — Legal Duties, Responsibilities & Solutions',
       description:
         'Complete guide to landlord pest control responsibilities in the UK. Understand your legal obligations, tenant vs landlord duties, prevention strategies, and how to find reliable pest management.',
       url: 'https://pestproindex.com/guides/landlord-pest-control',

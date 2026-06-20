@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Warehouse Pest Management UK | BRC Compliance Guide 2026 | PestPro Index',
+    title: 'Warehouse Pest Management UK | BRC Compliance Guide 2026',
     description:
       'Essential guide to pest management for UK warehouses and distribution centres. BRC compliance, stock protection, monitoring systems, IPM strategies, and audit preparation.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/warehouse-pest-management',
     },
     openGraph: {
-      title: 'Warehouse Pest Management UK | BRC Compliance Guide 2026 | PestPro Index',
+      title: 'Warehouse Pest Management UK | BRC Compliance Guide 2026',
       description:
         'Essential guide to pest management for UK warehouses and distribution centres. BRC compliance, stock protection, monitoring systems, IPM strategies, and audit preparation.',
       url: 'https://pestproindex.com/guides/warehouse-pest-management',

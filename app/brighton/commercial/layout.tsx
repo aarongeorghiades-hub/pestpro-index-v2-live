@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Brighton & Sussex Commercial Pest Control | PestPro Index',
+  title: 'Brighton & Sussex Commercial Pest Control',
   description: 'Commercial pest control services across Brighton and Sussex. Compare verified providers for offices, restaurants, hotels, warehouses and more.',
   alternates: {
     canonical: 'https://pestproindex.com/brighton/commercial',
   },
   openGraph: {
-    title: 'Brighton & Sussex Commercial Pest Control | PestPro Index',
+    title: 'Brighton & Sussex Commercial Pest Control',
     description: 'Commercial pest control services across Brighton and Sussex. Compare verified providers for offices, restaurants, hotels, warehouses and more.',
     siteName: 'PestPro Index',
     locale: 'en_GB',

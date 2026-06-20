@@ -8,14 +8,14 @@ import { bradfordBoroughs } from '@/app/pest-control/bradford/bradford-boroughs'
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control Bradford | Find Local Experts | PestPro Index',
+  title: 'Pest Control Bradford | Find Local Experts',
   description:
     'Find trusted pest control companies in Bradford. Browse residential and commercial services across all Bradford districts including Shipley, Keighley, Bingley and more.',
   alternates: {
     canonical: 'https://pestproindex.com/bradford',
   },
   openGraph: {
-    title: 'Pest Control Bradford | Find Local Experts | PestPro Index',
+    title: 'Pest Control Bradford | Find Local Experts',
     description:
       'Find trusted pest control companies in Bradford. Browse residential and commercial services across all Bradford districts.',
     url: 'https://pestproindex.com/bradford',

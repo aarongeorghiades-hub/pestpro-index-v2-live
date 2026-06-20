@@ -8,14 +8,14 @@ import { coventryBoroughs } from '@/lib/coventry-boroughs';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control in Coventry | PestPro Index',
+  title: 'Pest Control in Coventry',
   description:
     'Compare trusted pest control companies in Coventry. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses across Coventry and the West Midlands.',
   alternates: {
     canonical: 'https://pestproindex.com/coventry',
   },
   openGraph: {
-    title: 'Pest Control in Coventry | PestPro Index',
+    title: 'Pest Control in Coventry',
     description:
       'Compare trusted pest control companies in Coventry. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses across Coventry and the West Midlands.',
     url: 'https://pestproindex.com/coventry',

@@ -8,14 +8,14 @@ import { hampshireTowns } from '@/lib/hampshire-towns';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control in Hampshire | PestPro Index',
+  title: 'Pest Control in Hampshire',
   description:
     'Compare 90+ trusted pest control companies across Hampshire. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses.',
   alternates: {
     canonical: 'https://pestproindex.com/hampshire',
   },
   openGraph: {
-    title: 'Pest Control in Hampshire | PestPro Index',
+    title: 'Pest Control in Hampshire',
     description:
       'Compare 90+ trusted pest control companies across Hampshire. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses.',
     url: 'https://pestproindex.com/hampshire',

@@ -6,14 +6,14 @@ import FindProviderCTA from '@/components/FindProviderCTA';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Moth Killers UK 2026 — Top 5 Tested & Reviewed | PestPro Index',
+    title: 'Best Moth Killers UK 2026 — Top 5 Tested & Reviewed',
     description:
       'The best moth killers for UK homes in 2026. Hanging killers, pheromone traps, carpet sprays and sachets reviewed with honest pros, cons, and buying advice from pest control experts.',
     alternates: {
       canonical: 'https://pestproindex.com/best/moth-killers',
     },
     openGraph: {
-      title: 'Best Moth Killers UK 2026 — Top 5 Tested & Reviewed | PestPro Index',
+      title: 'Best Moth Killers UK 2026 — Top 5 Tested & Reviewed',
       description:
         'The best moth killers for UK homes in 2026. Hanging killers, pheromone traps, carpet sprays and sachets reviewed with honest pros, cons, and buying advice from pest control experts.',
       url: 'https://pestproindex.com/best/moth-killers',

@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'How to Get Rid of Mice: The Complete UK Guide (2026) | PestPro Index',
+    title: 'How to Get Rid of Mice: The Complete UK Guide (2026)',
     description:
       'A comprehensive UK guide to getting rid of mice in your home. How to spot them, DIY control methods, the best mouse traps, when to call a professional, and how to keep them out for good.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/how-to-get-rid-of-mice',
     },
     openGraph: {
-      title: 'How to Get Rid of Mice: The Complete UK Guide (2026) | PestPro Index',
+      title: 'How to Get Rid of Mice: The Complete UK Guide (2026)',
       description:
         'A comprehensive UK guide to getting rid of mice in your home. How to spot them, DIY control methods, the best mouse traps, when to call a professional, and how to keep them out for good.',
       url: 'https://pestproindex.com/guides/how-to-get-rid-of-mice',

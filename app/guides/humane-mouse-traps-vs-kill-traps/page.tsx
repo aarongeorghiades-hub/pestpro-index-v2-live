@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Humane Mouse Traps vs Kill Traps: Which Is Better? (UK 2026) | PestPro Index',
+    title: 'Humane Mouse Traps vs Kill Traps: Which Is Better? (UK 2026)',
     description:
       'A detailed comparison of humane live-catch mouse traps and kill traps for UK homes. Effectiveness, ethics, practicality, and our top product picks for each method.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/humane-mouse-traps-vs-kill-traps',
     },
     openGraph: {
-      title: 'Humane Mouse Traps vs Kill Traps: Which Is Better? (UK 2026) | PestPro Index',
+      title: 'Humane Mouse Traps vs Kill Traps: Which Is Better? (UK 2026)',
       description:
         'A detailed comparison of humane live-catch mouse traps and kill traps for UK homes. Effectiveness, ethics, practicality, and our top product picks for each method.',
       url: 'https://pestproindex.com/guides/humane-mouse-traps-vs-kill-traps',

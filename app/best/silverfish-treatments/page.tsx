@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Silverfish Treatments UK 2026 — Sprays, Traps & Natural Remedies | PestPro Index',
+    title: 'Best Silverfish Treatments UK 2026 — Sprays, Traps & Natural Remedies',
     description:
       'Expert reviews of the best silverfish treatments available in the UK. Compare insecticidal sprays, diatomaceous earth, sticky traps, and prevention products.',
     alternates: {
       canonical: 'https://pestproindex.com/best/silverfish-treatments',
     },
     openGraph: {
-      title: 'Best Silverfish Treatments UK 2026 — Sprays, Traps & Natural Remedies | PestPro Index',
+      title: 'Best Silverfish Treatments UK 2026 — Sprays, Traps & Natural Remedies',
       description:
         'Expert reviews of the best silverfish treatments available in the UK. Compare insecticidal sprays, diatomaceous earth, sticky traps, and prevention products.',
       url: 'https://pestproindex.com/best/silverfish-treatments',

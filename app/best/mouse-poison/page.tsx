@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Mouse Poison UK 2026: Strongest & Most Effective | PestPro Index',
+    title: 'Best Mouse Poison UK 2026: Strongest & Most Effective',
     description:
       'Our pick of the best mouse poison available in the UK for 2026. Brodifacoum blocks, grain bait, and paste formulations reviewed with safety advice and buying guidance.',
     alternates: {
       canonical: 'https://pestproindex.com/best/mouse-poison',
     },
     openGraph: {
-      title: 'Best Mouse Poison UK 2026: Strongest & Most Effective | PestPro Index',
+      title: 'Best Mouse Poison UK 2026: Strongest & Most Effective',
       description:
         'Our pick of the best mouse poison available in the UK for 2026. Brodifacoum blocks, grain bait, and paste formulations reviewed with safety advice and buying guidance.',
       url: 'https://pestproindex.com/best/mouse-poison',

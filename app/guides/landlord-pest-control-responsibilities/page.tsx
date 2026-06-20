@@ -6,14 +6,14 @@ import Callout from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Landlord Pest Control Responsibilities UK — Who Pays & What the Law Says (2026) | PestPro Index",
+    title: "Landlord Pest Control Responsibilities UK — Who Pays & What the Law Says (2026)",
     description:
       "UK landlords' legal obligations for pest control under the Landlord and Tenant Act, HHSRS and Awaab's Law. Who is responsible — landlord or tenant — and what you must do.",
     alternates: {
       canonical: 'https://pestproindex.com/guides/landlord-pest-control-responsibilities',
     },
     openGraph: {
-      title: "Landlord Pest Control Responsibilities UK — Who Pays & What the Law Says (2026) | PestPro Index",
+      title: "Landlord Pest Control Responsibilities UK — Who Pays & What the Law Says (2026)",
       description:
         "UK landlords' legal obligations for pest control under the Landlord and Tenant Act, HHSRS and Awaab's Law. Who is responsible — landlord or tenant — and what you must do.",
       url: 'https://pestproindex.com/guides/landlord-pest-control-responsibilities',

@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Flea Treatments UK 2026: Sprays, Powders & Foggers Reviewed | PestPro Index',
+    title: 'Best Flea Treatments UK 2026: Sprays, Powders & Foggers Reviewed',
     description:
       'The best flea treatment products for UK homes in 2026. Household sprays, powders and foggers reviewed with honest pros, cons, and expert buying guidance to help you eliminate fleas fast.',
     alternates: {
       canonical: 'https://pestproindex.com/best/flea-treatments',
     },
     openGraph: {
-      title: 'Best Flea Treatments UK 2026: Sprays, Powders & Foggers Reviewed | PestPro Index',
+      title: 'Best Flea Treatments UK 2026: Sprays, Powders & Foggers Reviewed',
       description:
         'The best flea treatment products for UK homes in 2026. Household sprays, powders and foggers reviewed with honest pros, cons, and expert buying guidance to help you eliminate fleas fast.',
       url: 'https://pestproindex.com/best/flea-treatments',

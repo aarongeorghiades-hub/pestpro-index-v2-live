@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Pigeon Control: Complete UK Guide | PestPro Index',
+    title: 'Pigeon Control: Complete UK Guide',
     description:
       'Expert guide to pigeon deterrence and control in the UK. Learn about pigeon problems, health risks, DIY deterrent methods, bird-proofing, legal considerations, and when to call a professional.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/pigeon-control',
     },
     openGraph: {
-      title: 'Pigeon Control: Complete UK Guide | PestPro Index',
+      title: 'Pigeon Control: Complete UK Guide',
       description:
         'Expert guide to pigeon deterrence and control in the UK. Learn about pigeon problems, health risks, DIY deterrent methods, bird-proofing, legal considerations, and when to call a professional.',
       url: 'https://pestproindex.com/guides/pigeon-control',

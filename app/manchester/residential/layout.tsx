@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Pest Control Manchester | Compare 134+ Local Providers | PestPro Index',
+  title: 'Pest Control Manchester | Compare 134+ Local Providers',
   description: 'Compare 134+ pest control companies in Manchester. Independent ratings, verified reviews, and BPCA/NPTA certified providers. No lead fees, no commissions.',
   alternates: {
     canonical: 'https://pestproindex.com/manchester/residential',
   },
   openGraph: {
-    title: 'Pest Control Manchester | Compare 134+ Local Providers | PestPro Index',
+    title: 'Pest Control Manchester | Compare 134+ Local Providers',
     description: 'Compare 134+ pest control companies in Manchester. Independent ratings, verified reviews, and BPCA/NPTA certified providers. No lead fees, no commissions.',
     siteName: 'PestPro Index',
     locale: 'en_GB',

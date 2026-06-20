@@ -7,14 +7,14 @@ import { bristolBoroughs } from '@/app/pest-control/bristol/bristol-boroughs';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control Bristol | Find Local Experts | PestPro Index',
+  title: 'Pest Control Bristol | Find Local Experts',
   description:
     'Find trusted pest control companies in Bristol. Browse residential and commercial services across all Bristol districts including Bath, South Gloucestershire and more.',
   alternates: {
     canonical: 'https://pestproindex.com/bristol',
   },
   openGraph: {
-    title: 'Pest Control Bristol | Find Local Experts | PestPro Index',
+    title: 'Pest Control Bristol | Find Local Experts',
     description:
       'Find trusted pest control companies in Bristol. Browse residential and commercial services across all Bristol districts.',
     url: 'https://pestproindex.com/bristol',

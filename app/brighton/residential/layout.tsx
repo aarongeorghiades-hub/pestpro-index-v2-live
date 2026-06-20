@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Brighton & Sussex Residential Pest Control | 76 Providers | PestPro Index',
+  title: 'Brighton & Sussex Residential Pest Control | 76 Providers',
   description: 'Find trusted residential pest control providers across Brighton, Hove, Worthing, Eastbourne and Sussex. Compare 76 verified providers — no lead fees, no commissions.',
   alternates: {
     canonical: 'https://pestproindex.com/brighton/residential',
   },
   openGraph: {
-    title: 'Brighton & Sussex Residential Pest Control | 76 Providers | PestPro Index',
+    title: 'Brighton & Sussex Residential Pest Control | 76 Providers',
     description: 'Find trusted residential pest control providers across Brighton, Hove, Worthing, Eastbourne and Sussex. Compare 76 verified providers — no lead fees, no commissions.',
     siteName: 'PestPro Index',
     locale: 'en_GB',

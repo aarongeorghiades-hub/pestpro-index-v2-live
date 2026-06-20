@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Bristol & South West Residential Pest Control | 43 Providers | PestPro Index',
+  title: 'Bristol & South West Residential Pest Control | 43 Providers',
   description: 'Find trusted residential pest control providers across Bristol, Bath, South Gloucestershire and the South West. Compare 43 verified providers — no lead fees, no commissions.',
   alternates: {
     canonical: 'https://pestproindex.com/bristol/residential',
   },
   openGraph: {
-    title: 'Bristol & South West Residential Pest Control | 43 Providers | PestPro Index',
+    title: 'Bristol & South West Residential Pest Control | 43 Providers',
     description: 'Find trusted residential pest control providers across Bristol, Bath, South Gloucestershire and the South West. Compare 43 verified providers — no lead fees, no commissions.',
     siteName: 'PestPro Index',
     locale: 'en_GB',

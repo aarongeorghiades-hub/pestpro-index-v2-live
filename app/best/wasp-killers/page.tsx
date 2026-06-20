@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Wasp Killer Products UK 2026: Sprays, Powders & Traps | PestPro Index',
+    title: 'Best Wasp Killer Products UK 2026: Sprays, Powders & Traps',
     description:
       'The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders, and wasp traps reviewed with honest pros, cons, and buying advice.',
     alternates: {
       canonical: 'https://pestproindex.com/best/wasp-killers',
     },
     openGraph: {
-      title: 'Best Wasp Killer Products UK 2026: Sprays, Powders & Traps | PestPro Index',
+      title: 'Best Wasp Killer Products UK 2026: Sprays, Powders & Traps',
       description:
         'The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders, and wasp traps reviewed with honest pros, cons, and buying advice.',
       url: 'https://pestproindex.com/best/wasp-killers',

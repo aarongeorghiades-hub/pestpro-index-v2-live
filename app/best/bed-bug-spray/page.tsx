@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Bed Bug Spray UK 2026: Kill Bed Bugs Fast | PestPro Index',
+    title: 'Best Bed Bug Spray UK 2026: Kill Bed Bugs Fast',
     description:
       'Our pick of the best bed bug sprays available in the UK for 2026. Contact killers, residual sprays, and natural options reviewed with application advice and buying guidance.',
     alternates: {
       canonical: 'https://pestproindex.com/best/bed-bug-spray',
     },
     openGraph: {
-      title: 'Best Bed Bug Spray UK 2026: Kill Bed Bugs Fast | PestPro Index',
+      title: 'Best Bed Bug Spray UK 2026: Kill Bed Bugs Fast',
       description:
         'Our pick of the best bed bug sprays available in the UK for 2026. Contact killers, residual sprays, and natural options reviewed with application advice and buying guidance.',
       url: 'https://pestproindex.com/best/bed-bug-spray',

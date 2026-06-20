@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Wasp Season UK 2026: When It Starts & How to Prepare | PestPro Index',
+    title: 'Wasp Season UK 2026: When It Starts & How to Prepare',
     description:
       'Wasp season in the UK runs April to October. Learn when to act, what to buy and how to prevent nests before they become a problem.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/wasp-season-preparation',
     },
     openGraph: {
-      title: 'Wasp Season UK 2026: When It Starts & How to Prepare | PestPro Index',
+      title: 'Wasp Season UK 2026: When It Starts & How to Prepare',
       description:
         'Wasp season in the UK runs April to October. Learn when to act, what to buy and how to prevent nests before they become a problem.',
       url: 'https://pestproindex.com/guides/wasp-season-preparation',

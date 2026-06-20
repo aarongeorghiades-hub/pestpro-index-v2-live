@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Damp & Mould Equipment for Landlords — Awaab\'s Law Compliance (2026) | PestPro Index',
+    title: 'Best Damp & Mould Equipment for Landlords — Awaab\'s Law Compliance (2026)',
     description:
       'PIV units, dehumidifiers and damp meters for landlords complying with Awaab\'s Law. Equipment to eliminate mould and condensation in rental properties.',
     alternates: {
       canonical: 'https://pestproindex.com/best/awaabs-law-damp-mould-equipment',
     },
     openGraph: {
-      title: 'Best Damp & Mould Equipment for Landlords — Awaab\'s Law Compliance (2026) | PestPro Index',
+      title: 'Best Damp & Mould Equipment for Landlords — Awaab\'s Law Compliance (2026)',
       description:
         'PIV units, dehumidifiers and damp meters for landlords complying with Awaab\'s Law. Equipment to eliminate mould and condensation in rental properties.',
       url: 'https://pestproindex.com/best/awaabs-law-damp-mould-equipment',

@@ -8,14 +8,14 @@ import { liverpoolBoroughs } from '@/app/pest-control/liverpool/liverpool-boroug
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control Liverpool | Find Local Experts | PestPro Index',
+  title: 'Pest Control Liverpool | Find Local Experts',
   description:
     'Find trusted pest control companies in Liverpool. Browse residential and commercial services across all Liverpool districts including Wirral, Sefton, Knowsley and more.',
   alternates: {
     canonical: 'https://pestproindex.com/liverpool',
   },
   openGraph: {
-    title: 'Pest Control Liverpool | Find Local Experts | PestPro Index',
+    title: 'Pest Control Liverpool | Find Local Experts',
     description:
       'Find trusted pest control companies in Liverpool. Browse residential and commercial services across all Liverpool districts.',
     url: 'https://pestproindex.com/liverpool',

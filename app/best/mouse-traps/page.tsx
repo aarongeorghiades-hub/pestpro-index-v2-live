@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Mouse Traps UK 2026: Tested & Recommended | PestPro Index',
+    title: 'Best Mouse Traps UK 2026: Tested & Recommended',
     description:
       'The best mouse traps you can buy in the UK for 2026. Snap traps, electronic traps, humane live-catch options and bait stations — reviewed with honest pros, cons, and buying guidance.',
     alternates: {
       canonical: 'https://pestproindex.com/best/mouse-traps',
     },
     openGraph: {
-      title: 'Best Mouse Traps UK 2026: Tested & Recommended | PestPro Index',
+      title: 'Best Mouse Traps UK 2026: Tested & Recommended',
       description:
         'The best mouse traps you can buy in the UK for 2026. Snap traps, electronic traps, humane live-catch options and bait stations — reviewed with honest pros, cons, and buying guidance.',
       url: 'https://pestproindex.com/best/mouse-traps',

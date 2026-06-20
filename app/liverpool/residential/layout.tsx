@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Pest Control Liverpool | Compare 73+ Local Providers | PestPro Index',
+  title: 'Pest Control Liverpool | Compare 73+ Local Providers',
   description: 'Compare 73+ pest control companies in Liverpool & Merseyside. Independent ratings, verified reviews, and BPCA/NPTA certified providers. No lead fees, no commissions.',
   alternates: {
     canonical: 'https://pestproindex.com/liverpool/residential',
   },
   openGraph: {
-    title: 'Pest Control Liverpool | Compare 73+ Local Providers | PestPro Index',
+    title: 'Pest Control Liverpool | Compare 73+ Local Providers',
     description: 'Compare 73+ pest control companies in Liverpool & Merseyside. Independent ratings, verified reviews, and BPCA/NPTA certified providers. No lead fees, no commissions.',
     siteName: 'PestPro Index',
     locale: 'en_GB',

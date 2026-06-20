@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Pest Control Bradford | Compare 113+ Local Providers | PestPro Index',
+  title: 'Pest Control Bradford | Compare 113+ Local Providers',
   description: 'Compare 113+ pest control companies in Bradford & West Yorkshire. Independent ratings, verified reviews, and BPCA/NPTA certified providers. No lead fees, no commissions.',
   alternates: {
     canonical: 'https://pestproindex.com/bradford/residential',
   },
   openGraph: {
-    title: 'Pest Control Bradford | Compare 113+ Local Providers | PestPro Index',
+    title: 'Pest Control Bradford | Compare 113+ Local Providers',
     description: 'Compare 113+ pest control companies in Bradford & West Yorkshire. Independent ratings, verified reviews, and BPCA/NPTA certified providers. No lead fees, no commissions.',
     siteName: 'PestPro Index',
     locale: 'en_GB',

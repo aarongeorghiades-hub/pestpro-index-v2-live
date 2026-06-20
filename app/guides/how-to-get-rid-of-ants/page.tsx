@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'How to Get Rid of Ants: The Complete UK Guide (2026) | PestPro Index',
+    title: 'How to Get Rid of Ants: The Complete UK Guide (2026)',
     description:
       'A comprehensive UK guide to getting rid of ants in your home and garden. Species identification, DIY treatments, the best ant killers, flying ants, and when to call a professional.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/how-to-get-rid-of-ants',
     },
     openGraph: {
-      title: 'How to Get Rid of Ants: The Complete UK Guide (2026) | PestPro Index',
+      title: 'How to Get Rid of Ants: The Complete UK Guide (2026)',
       description:
         'A comprehensive UK guide to getting rid of ants in your home and garden. Species identification, DIY treatments, the best ant killers, flying ants, and when to call a professional.',
       url: 'https://pestproindex.com/guides/how-to-get-rid-of-ants',

@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'How to Get Rid of Bed Bugs: The Complete UK Guide (2026) | PestPro Index',
+    title: 'How to Get Rid of Bed Bugs: The Complete UK Guide (2026)',
     description:
       'A comprehensive UK guide to identifying and eliminating bed bugs. Signs of infestation, DIY treatment options, professional heat treatment, costs, and prevention tips.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/how-to-get-rid-of-bed-bugs',
     },
     openGraph: {
-      title: 'How to Get Rid of Bed Bugs: The Complete UK Guide (2026) | PestPro Index',
+      title: 'How to Get Rid of Bed Bugs: The Complete UK Guide (2026)',
       description:
         'A comprehensive UK guide to identifying and eliminating bed bugs. Signs of infestation, DIY treatment options, professional heat treatment, costs, and prevention tips.',
       url: 'https://pestproindex.com/guides/how-to-get-rid-of-bed-bugs',

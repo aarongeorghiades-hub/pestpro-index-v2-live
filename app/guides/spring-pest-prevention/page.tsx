@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Spring Pest Prevention UK 2026: Get Ahead Before Pests Arrive | PestPro Index',
+    title: 'Spring Pest Prevention UK 2026: Get Ahead Before Pests Arrive',
     description:
       'Spring is when ants, wasps, moths and flies emerge. Our UK guide covers what to do now to prevent infestations this year.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/spring-pest-prevention',
     },
     openGraph: {
-      title: 'Spring Pest Prevention UK 2026: Get Ahead Before Pests Arrive | PestPro Index',
+      title: 'Spring Pest Prevention UK 2026: Get Ahead Before Pests Arrive',
       description:
         'Spring is when ants, wasps, moths and flies emerge. Our UK guide covers what to do now to prevent infestations this year.',
       url: 'https://pestproindex.com/guides/spring-pest-prevention',

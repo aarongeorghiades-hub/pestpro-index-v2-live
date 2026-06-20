@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Rat Poison UK 2026: Strongest & Most Effective | PestPro Index',
+    title: 'Best Rat Poison UK 2026: Strongest & Most Effective',
     description:
       'Our pick of the best rat poison available in the UK for 2026. Brodifacoum blocks, bromadiolone grain bait, and paste formulations reviewed with safety advice and buying guidance.',
     alternates: {
       canonical: 'https://pestproindex.com/best/rat-poison',
     },
     openGraph: {
-      title: 'Best Rat Poison UK 2026: Strongest & Most Effective | PestPro Index',
+      title: 'Best Rat Poison UK 2026: Strongest & Most Effective',
       description:
         'Our pick of the best rat poison available in the UK for 2026. Brodifacoum blocks, bromadiolone grain bait, and paste formulations reviewed with safety advice and buying guidance.',
       url: 'https://pestproindex.com/best/rat-poison',

@@ -24,7 +24,7 @@ export const regions: Region[] = [
     slug: "greater-london",
     status: "live",
     description: "Find trusted pest control and pest removal providers across all 33 London boroughs. PestPro Index lists 389 residential and commercial pest control companies in Greater London with verified Google ratings — no lead fees, no commissions.",
-    metaTitle: "Pest Control in Greater London | 389 Verified Providers | PestPro Index",
+    metaTitle: "Pest Control in Greater London | 389 Verified Providers",
     metaDescription: "Compare 389 pest control and pest removal providers across Greater London. Verified Google ratings, no lead fees, no commissions. Find trusted pest control in your borough.",
     cities: [
       {
@@ -54,7 +54,7 @@ export const regions: Region[] = [
     slug: "west-midlands",
     status: "live",
     description: "Find trusted pest control and pest removal providers across the West Midlands. PestPro Index covers Birmingham and Coventry with verified providers, with expansion to Wolverhampton and the wider West Midlands region coming soon.",
-    metaTitle: "Pest Control in the West Midlands | Birmingham, Coventry & Surrounding Areas | PestPro Index",
+    metaTitle: "Pest Control in the West Midlands | Birmingham, Coventry & Surrounding Areas",
     metaDescription: "Compare pest control and pest removal providers across the West Midlands. Currently covering Birmingham and Coventry with verified providers. No lead fees, no commissions.",
     cities: [
       {
@@ -129,7 +129,7 @@ export const regions: Region[] = [
     slug: "north-west",
     status: "live",
     description: "Find trusted pest control and pest removal providers across the North West. PestPro Index covers Manchester and Liverpool with 207 verified providers, with expansion to Lancashire, Cheshire, and Cumbria coming soon.",
-    metaTitle: "Pest Control in the North West | Manchester, Liverpool & Surrounding Areas | PestPro Index",
+    metaTitle: "Pest Control in the North West | Manchester, Liverpool & Surrounding Areas",
     metaDescription: "Compare 207 pest control and pest removal providers across the North West. Covering Manchester and Liverpool with verified providers. No lead fees, no commissions.",
     cities: [
       {
@@ -168,7 +168,7 @@ export const regions: Region[] = [
     slug: "yorkshire-and-the-humber",
     status: "live",
     description: "Find trusted pest control and pest removal providers across Yorkshire. PestPro Index currently covers Leeds with 61 verified providers, with expansion to Sheffield, Bradford, Hull, York, and the wider Yorkshire region coming soon.",
-    metaTitle: "Pest Control in Yorkshire & the Humber | Leeds & Surrounding Areas | PestPro Index",
+    metaTitle: "Pest Control in Yorkshire & the Humber | Leeds & Surrounding Areas",
     metaDescription: "Compare 61 pest control and pest removal providers across Yorkshire. Currently covering Leeds with verified providers. No lead fees, no commissions.",
     cities: [
       {
@@ -199,7 +199,7 @@ export const regions: Region[] = [
     slug: "south-east",
     status: "live",
     description: "Find trusted pest control and pest removal providers across the South East. PestPro Index covers Brighton and Hampshire with 172 verified providers, with expansion to Kent, Surrey, and more coming soon.",
-    metaTitle: "Pest Control in the South East | Brighton, Hampshire & Surrounding Areas | PestPro Index",
+    metaTitle: "Pest Control in the South East | Brighton, Hampshire & Surrounding Areas",
     metaDescription: "Compare 172 pest control and pest removal providers across the South East. Covering Brighton and Hampshire with verified providers. No lead fees, no commissions.",
     cities: [
       {
@@ -243,7 +243,7 @@ export const regions: Region[] = [
     slug: "south-west",
     status: "live",
     description: "Find trusted pest control providers across Bristol, Bath, and the South West. PestPro Index lists 43 residential and commercial pest control companies with verified Google ratings — no lead fees, no commissions.",
-    metaTitle: "Pest Control in the South West | 43 Verified Providers | PestPro Index",
+    metaTitle: "Pest Control in the South West | 43 Verified Providers",
     metaDescription: "Compare 43 pest control providers across Bristol, Bath, and the South West. Verified Google ratings, no lead fees, no commissions. Find trusted pest control near you.",
     cities: [
       {
@@ -274,7 +274,7 @@ export const regions: Region[] = [
     slug: "east-of-england",
     status: "coming-soon",
     description: "PestPro Index is expanding to the East of England. We will soon cover Norfolk, Suffolk, Cambridgeshire, and Bedfordshire with verified pest control providers.",
-    metaTitle: "Pest Control in the East of England | Norfolk, Suffolk, Cambridge & More | PestPro Index",
+    metaTitle: "Pest Control in the East of England | Norfolk, Suffolk, Cambridge & More",
     metaDescription: "PestPro Index is expanding to the East of England. Soon covering Norfolk, Suffolk, Cambridgeshire, and Bedfordshire. Neutral pest control directory — no lead fees.",
     cities: [
       { name: "Norfolk", slug: "norfolk", status: "coming-soon" },
@@ -288,7 +288,7 @@ export const regions: Region[] = [
     slug: "east-midlands",
     status: "live",
     description: "Find trusted pest control and pest removal providers across the East Midlands. PestPro Index covers Nottingham and Leicester with 106 verified providers, with expansion to Derby, Northampton, and Lincolnshire coming soon.",
-    metaTitle: "Pest Control in the East Midlands | Nottingham, Leicester & Surrounding Areas | PestPro Index",
+    metaTitle: "Pest Control in the East Midlands | Nottingham, Leicester & Surrounding Areas",
     metaDescription: "Compare 106 pest control and pest removal providers across the East Midlands. Covering Nottingham and Leicester with verified providers. No lead fees, no commissions.",
     cities: [
       {
@@ -326,7 +326,7 @@ export const regions: Region[] = [
     slug: "north-east",
     status: "live",
     description: "Find trusted pest control and pest removal providers across the North East. PestPro Index covers Newcastle upon Tyne with 53 verified providers, with expansion to Sunderland, County Durham, and Teesside coming soon.",
-    metaTitle: "Pest Control in the North East | Newcastle & Surrounding Areas | PestPro Index",
+    metaTitle: "Pest Control in the North East | Newcastle & Surrounding Areas",
     metaDescription: "Compare 53 pest control and pest removal providers across the North East. Currently covering Newcastle with verified providers. No lead fees, no commissions.",
     cities: [
       {
@@ -353,7 +353,7 @@ export const regions: Region[] = [
     slug: "scotland",
     status: "live",
     description: "Find trusted pest control and pest removal providers across Scotland. PestPro Index covers Glasgow and Edinburgh with verified providers, with expansion to Aberdeen and Dundee coming soon.",
-    metaTitle: "Pest Control in Scotland | Glasgow, Edinburgh & Surrounding Areas | PestPro Index",
+    metaTitle: "Pest Control in Scotland | Glasgow, Edinburgh & Surrounding Areas",
     metaDescription: "Compare pest control and pest removal providers across Scotland. Covering Glasgow and Edinburgh with verified providers. No lead fees, no commissions.",
     cities: [
       {
@@ -394,7 +394,7 @@ export const regions: Region[] = [
     slug: "wales",
     status: "live",
     description: "Find trusted pest control and pest removal providers across Wales. PestPro Index covers Cardiff with 38 verified providers, with expansion to Swansea, Newport, and North Wales coming soon.",
-    metaTitle: "Pest Control in Wales | Cardiff & Surrounding Areas | PestPro Index",
+    metaTitle: "Pest Control in Wales | Cardiff & Surrounding Areas",
     metaDescription: "Compare 38 pest control and pest removal providers across Wales. Currently covering Cardiff with verified providers. No lead fees, no commissions.",
     cities: [
       {
@@ -420,7 +420,7 @@ export const regions: Region[] = [
     slug: "northern-ireland",
     status: "live",
     description: "Find trusted pest control and pest removal providers across Northern Ireland. PestPro Index covers Belfast with 23 verified providers, with expansion to Derry, Lisburn, and Newry coming soon.",
-    metaTitle: "Pest Control in Northern Ireland | Belfast & Surrounding Areas | PestPro Index",
+    metaTitle: "Pest Control in Northern Ireland | Belfast & Surrounding Areas",
     metaDescription: "Compare 23 pest control and pest removal providers across Northern Ireland. Currently covering Belfast with verified providers. No lead fees, no commissions.",
     cities: [
       {

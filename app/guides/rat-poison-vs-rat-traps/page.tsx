@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Rat Poison vs Rat Traps: Which Is Better? (UK Guide 2026) | PestPro Index',
+    title: 'Rat Poison vs Rat Traps: Which Is Better? (UK Guide 2026)',
     description:
       'An honest comparison of rat poison and rat traps for UK homes. Pros, cons, safety, effectiveness, legal considerations, and our product picks for each method.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/rat-poison-vs-rat-traps',
     },
     openGraph: {
-      title: 'Rat Poison vs Rat Traps: Which Is Better? (UK Guide 2026) | PestPro Index',
+      title: 'Rat Poison vs Rat Traps: Which Is Better? (UK Guide 2026)',
       description:
         'An honest comparison of rat poison and rat traps for UK homes. Pros, cons, safety, effectiveness, legal considerations, and our product picks for each method.',
       url: 'https://pestproindex.com/guides/rat-poison-vs-rat-traps',

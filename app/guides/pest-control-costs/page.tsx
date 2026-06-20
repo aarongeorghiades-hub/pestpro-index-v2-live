@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'How Much Does Pest Control Cost in the UK? Complete Price Guide (2026) | PestPro Index',
+    title: 'How Much Does Pest Control Cost in the UK? Complete Price Guide (2026)',
     description:
       'A comprehensive breakdown of pest control costs across the UK in 2026. Rats, mice, wasps, bed bugs, cockroaches and more — typical prices, what affects cost, and how to get the best value.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/pest-control-costs',
     },
     openGraph: {
-      title: 'How Much Does Pest Control Cost in the UK? Complete Price Guide (2026) | PestPro Index',
+      title: 'How Much Does Pest Control Cost in the UK? Complete Price Guide (2026)',
       description:
         'A comprehensive breakdown of pest control costs across the UK in 2026. Rats, mice, wasps, bed bugs, cockroaches and more — typical prices, what affects cost, and how to get the best value.',
       url: 'https://pestproindex.com/guides/pest-control-costs',

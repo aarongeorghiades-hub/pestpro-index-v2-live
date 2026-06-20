@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Hotel Pest Control UK | Bed Bug Management & Compliance Guide 2026 | PestPro Index',
+    title: 'Hotel Pest Control UK | Bed Bug Management & Compliance Guide 2026',
     description:
       'Essential pest control guide for UK hotels, B&Bs and hospitality businesses. Bed bug prevention, guest complaint handling, reputation protection, and ongoing monitoring.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/hotel-pest-control',
     },
     openGraph: {
-      title: 'Hotel Pest Control UK | Bed Bug Management & Compliance Guide 2026 | PestPro Index',
+      title: 'Hotel Pest Control UK | Bed Bug Management & Compliance Guide 2026',
       description:
         'Essential pest control guide for UK hotels, B&Bs and hospitality businesses. Bed bug prevention, guest complaint handling, reputation protection, and ongoing monitoring.',
       url: 'https://pestproindex.com/guides/hotel-pest-control',

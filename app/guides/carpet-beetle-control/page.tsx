@@ -7,14 +7,14 @@ import ProductCard from '@/components/ProductCard';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Carpet Beetle Control UK — Identification, Prevention & Treatment | PestPro Index',
+    title: 'Carpet Beetle Control UK — Identification, Prevention & Treatment',
     description:
       'Complete guide to carpet beetle control in the UK. Learn how to identify carpet beetles and their larvae, prevent infestations, effective treatments, and when to call a professional.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/carpet-beetle-control',
     },
     openGraph: {
-      title: 'Carpet Beetle Control UK — Identification, Prevention & Treatment | PestPro Index',
+      title: 'Carpet Beetle Control UK — Identification, Prevention & Treatment',
       description:
         'Complete guide to carpet beetle control in the UK. Learn how to identify carpet beetles and their larvae, prevent infestations, effective treatments, and when to call a professional.',
       url: 'https://pestproindex.com/guides/carpet-beetle-control',

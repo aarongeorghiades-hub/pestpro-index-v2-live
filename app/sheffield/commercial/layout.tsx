@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Sheffield & South Yorkshire Commercial Pest Control | PestPro Index',
+  title: 'Sheffield & South Yorkshire Commercial Pest Control',
   description: 'Commercial pest control services across Sheffield and South Yorkshire. Compare verified providers for offices, restaurants, hotels, warehouses and more.',
   alternates: {
     canonical: 'https://pestproindex.com/sheffield/commercial',
   },
   openGraph: {
-    title: 'Sheffield & South Yorkshire Commercial Pest Control | PestPro Index',
+    title: 'Sheffield & South Yorkshire Commercial Pest Control',
     description: 'Commercial pest control services across Sheffield and South Yorkshire. Compare verified providers for offices, restaurants, hotels, warehouses and more.',
     siteName: 'PestPro Index',
     locale: 'en_GB',

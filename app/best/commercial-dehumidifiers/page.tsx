@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Commercial Dehumidifiers for Landlords UK (2026) | PestPro Index',
+    title: 'Best Commercial Dehumidifiers for Landlords UK (2026)',
     description:
       'High-capacity dehumidifiers for landlords, property managers & damp remediation. Industrial-grade units for HMOs, basements & commercial spaces.',
     alternates: {
       canonical: 'https://pestproindex.com/best/commercial-dehumidifiers',
     },
     openGraph: {
-      title: 'Best Commercial Dehumidifiers for Landlords UK (2026) | PestPro Index',
+      title: 'Best Commercial Dehumidifiers for Landlords UK (2026)',
       description:
         'High-capacity dehumidifiers for landlords, property managers & damp remediation. Industrial-grade units for HMOs, basements & commercial spaces.',
       url: 'https://pestproindex.com/best/commercial-dehumidifiers',

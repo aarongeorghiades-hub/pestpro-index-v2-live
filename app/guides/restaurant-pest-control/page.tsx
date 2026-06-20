@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Restaurant Pest Control UK | Complete Compliance Guide 2026 | PestPro Index',
+    title: 'Restaurant Pest Control UK | Complete Compliance Guide 2026',
     description:
       'Essential guide to pest control for UK restaurants, cafés and food businesses. EHO inspections, HACCP compliance, legal obligations, and how to protect your food hygiene rating.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/restaurant-pest-control',
     },
     openGraph: {
-      title: 'Restaurant Pest Control UK | Complete Compliance Guide 2026 | PestPro Index',
+      title: 'Restaurant Pest Control UK | Complete Compliance Guide 2026',
       description:
         'Essential guide to pest control for UK restaurants, cafés and food businesses. EHO inspections, HACCP compliance, legal obligations, and how to protect your food hygiene rating.',
       url: 'https://pestproindex.com/guides/restaurant-pest-control',

@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Rat Traps UK 2026: Tested & Recommended | PestPro Index',
+    title: 'Best Rat Traps UK 2026: Tested & Recommended',
     description:
       'Our pick of the best rat traps available in the UK for 2026. Snap traps, electronic traps, humane options, and bait stations reviewed with pros, cons, and buying advice.',
     alternates: {
       canonical: 'https://pestproindex.com/best/rat-traps',
     },
     openGraph: {
-      title: 'Best Rat Traps UK 2026: Tested & Recommended | PestPro Index',
+      title: 'Best Rat Traps UK 2026: Tested & Recommended',
       description:
         'Our pick of the best rat traps available in the UK for 2026. Snap traps, electronic traps, humane options, and bait stations reviewed with pros, cons, and buying advice.',
       url: 'https://pestproindex.com/best/rat-traps',

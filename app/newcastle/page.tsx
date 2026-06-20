@@ -8,14 +8,14 @@ import { newcastleBoroughs } from '@/lib/newcastle-boroughs';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control Newcastle | Find Local Pest Controllers | PestPro Index',
+  title: 'Pest Control Newcastle | Find Local Pest Controllers',
   description:
     'Find trusted pest control companies in Newcastle upon Tyne and the North East. Compare BPCA-certified local specialists for rats, mice, wasps, bed bugs and more.',
   alternates: {
     canonical: 'https://pestproindex.com/newcastle',
   },
   openGraph: {
-    title: 'Pest Control Newcastle | Find Local Pest Controllers | PestPro Index',
+    title: 'Pest Control Newcastle | Find Local Pest Controllers',
     description:
       'Find trusted pest control companies in Newcastle upon Tyne and the North East. Compare BPCA-certified local specialists for rats, mice, wasps, bed bugs and more.',
     url: 'https://pestproindex.com/newcastle',

@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Ultrasonic Pest Repellers: Do They Actually Work? (UK 2026) | PestPro Index',
+    title: 'Ultrasonic Pest Repellers: Do They Actually Work? (UK 2026)',
     description:
       'An evidence-based review of ultrasonic pest repellers. We examine the science, test results, advertising claims, and whether these devices are worth buying for UK homes.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/ultrasonic-pest-repellers-do-they-work',
     },
     openGraph: {
-      title: 'Ultrasonic Pest Repellers: Do They Actually Work? (UK 2026) | PestPro Index',
+      title: 'Ultrasonic Pest Repellers: Do They Actually Work? (UK 2026)',
       description:
         'An evidence-based review of ultrasonic pest repellers. We examine the science, advertising claims, and whether these devices are worth buying for UK homes.',
       url: 'https://pestproindex.com/guides/ultrasonic-pest-repellers-do-they-work',

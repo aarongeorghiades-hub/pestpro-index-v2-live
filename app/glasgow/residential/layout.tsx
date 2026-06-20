@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Glasgow & Scotland Residential Pest Control | 60 Providers | PestPro Index',
+  title: 'Glasgow & Scotland Residential Pest Control | 60 Providers',
   description: 'Find trusted residential pest control providers across Glasgow, the West End, Southside and Scotland. Compare 60 verified providers — no lead fees, no commissions.',
   alternates: {
     canonical: 'https://pestproindex.com/glasgow/residential',
   },
   openGraph: {
-    title: 'Glasgow & Scotland Residential Pest Control | 60 Providers | PestPro Index',
+    title: 'Glasgow & Scotland Residential Pest Control | 60 Providers',
     description: 'Find trusted residential pest control providers across Glasgow, the West End, Southside and Scotland. Compare 60 verified providers — no lead fees, no commissions.',
     siteName: 'PestPro Index',
     locale: 'en_GB',

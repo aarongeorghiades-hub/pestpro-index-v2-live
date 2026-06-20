@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Mole Traps UK 2026: Tested & Recommended | PestPro Index',
+    title: 'Best Mole Traps UK 2026: Tested & Recommended',
     description:
       'Our pick of the best mole traps available in the UK for 2026. Duffus, scissor, tunnel, and humane options reviewed with buying advice and placement tips.',
     alternates: {
       canonical: 'https://pestproindex.com/best/mole-traps',
     },
     openGraph: {
-      title: 'Best Mole Traps UK 2026: Tested & Recommended | PestPro Index',
+      title: 'Best Mole Traps UK 2026: Tested & Recommended',
       description:
         'Our pick of the best mole traps available in the UK for 2026. Duffus, scissor, tunnel, and humane options reviewed with buying advice and placement tips.',
       url: 'https://pestproindex.com/best/mole-traps',

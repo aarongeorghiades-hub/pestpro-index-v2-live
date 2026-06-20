@@ -8,14 +8,14 @@ import { cardiffBoroughs } from '@/lib/cardiff-boroughs';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control Cardiff | Find Local Pest Controllers | PestPro Index',
+  title: 'Pest Control Cardiff | Find Local Pest Controllers',
   description:
     'Find trusted pest control companies in Cardiff and South Wales. Compare BPCA-certified local specialists for rats, mice, wasps, bed bugs and more.',
   alternates: {
     canonical: 'https://pestproindex.com/cardiff',
   },
   openGraph: {
-    title: 'Pest Control Cardiff | Find Local Pest Controllers | PestPro Index',
+    title: 'Pest Control Cardiff | Find Local Pest Controllers',
     description:
       'Find trusted pest control companies in Cardiff and South Wales. Compare BPCA-certified local specialists for rats, mice, wasps, bed bugs and more.',
     url: 'https://pestproindex.com/cardiff',

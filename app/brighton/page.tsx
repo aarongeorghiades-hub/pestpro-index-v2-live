@@ -8,14 +8,14 @@ import { brightonBoroughs } from '@/app/pest-control/brighton/brighton-boroughs'
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control Brighton | Find Local Experts | PestPro Index',
+  title: 'Pest Control Brighton | Find Local Experts',
   description:
     'Find trusted pest control companies in Brighton. Browse residential and commercial services across all Brighton districts including Worthing, Eastbourne, Lewes and more.',
   alternates: {
     canonical: 'https://pestproindex.com/brighton',
   },
   openGraph: {
-    title: 'Pest Control Brighton | Find Local Experts | PestPro Index',
+    title: 'Pest Control Brighton | Find Local Experts',
     description:
       'Find trusted pest control companies in Brighton. Browse residential and commercial services across all Brighton districts.',
     url: 'https://pestproindex.com/brighton',

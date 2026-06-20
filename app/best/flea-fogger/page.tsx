@@ -7,12 +7,12 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Flea Fogger UK 2026: Flea Bombs That Actually Work | PestPro Index',
+    title: 'Best Flea Fogger UK 2026: Flea Bombs That Actually Work',
     description:
       'Our pick of the best flea foggers (flea bombs) available in the UK for 2026. Smoke bombs, aerosol foggers, and IGR foggers reviewed with application advice.',
     alternates: { canonical: 'https://pestproindex.com/best/flea-fogger' },
     openGraph: {
-      title: 'Best Flea Fogger UK 2026: Flea Bombs That Actually Work | PestPro Index',
+      title: 'Best Flea Fogger UK 2026: Flea Bombs That Actually Work',
       description: 'Our pick of the best flea foggers (flea bombs) available in the UK for 2026. Smoke bombs, aerosol foggers, and IGR foggers reviewed with application advice.',
       url: 'https://pestproindex.com/best/flea-fogger',
       type: 'article',

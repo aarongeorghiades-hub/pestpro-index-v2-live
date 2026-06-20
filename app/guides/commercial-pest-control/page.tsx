@@ -6,14 +6,14 @@ import Callout from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Commercial Pest Control UK | Guides for Businesses 2026 | PestPro Index',
+    title: 'Commercial Pest Control UK | Guides for Businesses 2026',
     description:
       'Essential pest control guides for UK businesses. Restaurant compliance, warehouse pest management, EHO inspections, HACCP requirements, and commercial pest control equipment reviewed.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/commercial-pest-control',
     },
     openGraph: {
-      title: 'Commercial Pest Control UK | Guides for Businesses 2026 | PestPro Index',
+      title: 'Commercial Pest Control UK | Guides for Businesses 2026',
       description:
         'Essential pest control guides for UK businesses. Restaurant compliance, warehouse pest management, EHO inspections, HACCP requirements, and commercial pest control equipment reviewed.',
       url: 'https://pestproindex.com/guides/commercial-pest-control',

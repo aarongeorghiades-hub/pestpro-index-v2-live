@@ -8,14 +8,14 @@ import { belfastBoroughs } from '@/lib/belfast-boroughs';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control in Belfast | PestPro Index',
+  title: 'Pest Control in Belfast',
   description:
     'Compare trusted pest control companies in Belfast. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses across Belfast and Northern Ireland.',
   alternates: {
     canonical: 'https://pestproindex.com/belfast',
   },
   openGraph: {
-    title: 'Pest Control in Belfast | PestPro Index',
+    title: 'Pest Control in Belfast',
     description:
       'Compare trusted pest control companies in Belfast. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses across Belfast and Northern Ireland.',
     url: 'https://pestproindex.com/belfast',

@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Bird Deterrents UK 2026 | Top 5 Tested & Reviewed | PestPro Index',
+    title: 'Best Bird Deterrents UK 2026 | Top 5 Tested & Reviewed',
     description:
       'Expert reviews of the best bird and pigeon deterrents for UK homes and businesses. Spikes, netting, optical gel, and more — with honest pros and cons.',
     alternates: {
       canonical: 'https://pestproindex.com/best/bird-deterrents',
     },
     openGraph: {
-      title: 'Best Bird Deterrents UK 2026 | Top 5 Tested & Reviewed | PestPro Index',
+      title: 'Best Bird Deterrents UK 2026 | Top 5 Tested & Reviewed',
       description:
         'Expert reviews of the best bird and pigeon deterrents for UK homes and businesses. Spikes, netting, optical gel, and more — with honest pros and cons.',
       url: 'https://pestproindex.com/best/bird-deterrents',

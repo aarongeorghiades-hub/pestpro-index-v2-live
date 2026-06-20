@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Ant Killer Gel UK 2026: Kill the Colony, Not Just the Workers | PestPro Index',
+    title: 'Best Ant Killer Gel UK 2026: Kill the Colony, Not Just the Workers',
     description:
       'Our pick of the best ant killer gels available in the UK for 2026. Borax gels, fipronil baits, and indoxacarb formulations reviewed with application advice and buying guidance.',
     alternates: {
       canonical: 'https://pestproindex.com/best/ant-gel-bait',
     },
     openGraph: {
-      title: 'Best Ant Killer Gel UK 2026: Kill the Colony, Not Just the Workers | PestPro Index',
+      title: 'Best Ant Killer Gel UK 2026: Kill the Colony, Not Just the Workers',
       description:
         'Our pick of the best ant killer gels available in the UK for 2026. Borax gels, fipronil baits, and indoxacarb formulations reviewed with application advice and buying guidance.',
       url: 'https://pestproindex.com/best/ant-gel-bait',

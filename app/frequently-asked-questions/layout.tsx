@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Pest Control FAQ | Frequently Asked Questions | PestPro Index',
+  title: 'Pest Control FAQ | Frequently Asked Questions',
   description: 'Common questions about finding pest control in the UK. Learn how PestPro Index works, what areas we cover, how providers are selected, and how we differ from lead-generation platforms.',
   alternates: {
     canonical: 'https://pestproindex.com/frequently-asked-questions',
   },
   openGraph: {
-    title: 'Pest Control FAQ | Frequently Asked Questions | PestPro Index',
+    title: 'Pest Control FAQ | Frequently Asked Questions',
     description: 'Common questions about finding pest control in the UK. Learn how PestPro Index works, what areas we cover, and how we differ from lead-generation platforms.',
     siteName: 'PestPro Index',
     locale: 'en_GB',

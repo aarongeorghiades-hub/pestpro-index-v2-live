@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Commercial Bird Proofing UK 2026 | Netting, Spikes & Wire Systems Reviewed | PestPro Index',
+    title: 'Best Commercial Bird Proofing UK 2026 | Netting, Spikes & Wire Systems Reviewed',
     description:
       'Expert reviews of commercial bird proofing products for UK businesses. Heavy-duty netting, stainless steel spikes, bird wire systems, optical gel, and solar panel mesh compared.',
     alternates: {
       canonical: 'https://pestproindex.com/best/commercial-bird-proofing',
     },
     openGraph: {
-      title: 'Best Commercial Bird Proofing UK 2026 | Netting, Spikes & Wire Systems Reviewed | PestPro Index',
+      title: 'Best Commercial Bird Proofing UK 2026 | Netting, Spikes & Wire Systems Reviewed',
       description:
         'Expert reviews of commercial bird proofing products for UK businesses. Heavy-duty netting, stainless steel spikes, bird wire systems, optical gel, and solar panel mesh compared.',
       url: 'https://pestproindex.com/best/commercial-bird-proofing',

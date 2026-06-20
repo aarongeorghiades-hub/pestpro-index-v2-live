@@ -7,14 +7,14 @@ import Callout from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Damp-Proof Paint & Mould Treatment for Landlords — Awaab's Law 2026 | PestPro Index",
+    title: "Best Damp-Proof Paint & Mould Treatment for Landlords — Awaab's Law 2026",
     description:
       'The best anti-mould paint, damp sealers and mould killers for landlords remediating condensation damp and mould in rental properties. Awaab\'s Law compliant solutions.',
     alternates: {
       canonical: 'https://pestproindex.com/best/damp-proof-paint-mould-treatment',
     },
     openGraph: {
-      title: "Best Damp-Proof Paint & Mould Treatment for Landlords — Awaab's Law 2026 | PestPro Index",
+      title: "Best Damp-Proof Paint & Mould Treatment for Landlords — Awaab's Law 2026",
       description:
         'The best anti-mould paint, damp sealers and mould killers for landlords remediating condensation damp and mould in rental properties. Awaab\'s Law compliant solutions.',
       url: 'https://pestproindex.com/best/damp-proof-paint-mould-treatment',

@@ -8,14 +8,14 @@ import { edinburghBoroughs } from '@/lib/edinburgh-boroughs';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control Edinburgh | Find Local Pest Controllers | PestPro Index',
+  title: 'Pest Control Edinburgh | Find Local Pest Controllers',
   description:
     'Find trusted pest control companies in Edinburgh and the Lothians. Compare BPCA-certified local specialists for rats, mice, wasps, bed bugs and more.',
   alternates: {
     canonical: 'https://pestproindex.com/edinburgh',
   },
   openGraph: {
-    title: 'Pest Control Edinburgh | Find Local Pest Controllers | PestPro Index',
+    title: 'Pest Control Edinburgh | Find Local Pest Controllers',
     description:
       'Find trusted pest control companies in Edinburgh and the Lothians. Compare BPCA-certified local specialists for rats, mice, wasps, bed bugs and more.',
     url: 'https://pestproindex.com/edinburgh',

@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'How to Get Rid of Moths: The Complete UK Guide (2026) | PestPro Index',
+    title: 'How to Get Rid of Moths: The Complete UK Guide (2026)',
     description:
       'A comprehensive UK guide to getting rid of clothes moths, carpet moths, and pantry moths. Identification, DIY treatments, pheromone traps, professional fumigation, prevention tips, and costs.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/how-to-get-rid-of-moths',
     },
     openGraph: {
-      title: 'How to Get Rid of Moths: The Complete UK Guide (2026) | PestPro Index',
+      title: 'How to Get Rid of Moths: The Complete UK Guide (2026)',
       description:
         'A comprehensive UK guide to getting rid of clothes moths, carpet moths, and pantry moths. Identification, DIY treatments, pheromone traps, professional fumigation, prevention tips, and costs.',
       url: 'https://pestproindex.com/guides/how-to-get-rid-of-moths',

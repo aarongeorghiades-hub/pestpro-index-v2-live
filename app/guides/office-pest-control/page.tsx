@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Office Pest Control UK | Prevention, Compliance & Expert Solutions 2026 | PestPro Index',
+    title: 'Office Pest Control UK | Prevention, Compliance & Expert Solutions 2026',
     description:
       'Complete guide to pest control for UK offices and commercial buildings. Legal obligations for employers, common office pests, prevention strategies, cost-effective solutions, and finding accredited providers.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/office-pest-control',
     },
     openGraph: {
-      title: 'Office Pest Control UK | Prevention, Compliance & Expert Solutions 2026 | PestPro Index',
+      title: 'Office Pest Control UK | Prevention, Compliance & Expert Solutions 2026',
       description:
         'Complete guide to pest control for UK offices and commercial buildings. Legal obligations for employers, common office pests, prevention strategies, cost-effective solutions, and finding accredited providers.',
       url: 'https://pestproindex.com/guides/office-pest-control',

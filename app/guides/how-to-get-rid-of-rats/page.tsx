@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'How to Get Rid of Rats: The Complete UK Guide (2026) | PestPro Index',
+    title: 'How to Get Rid of Rats: The Complete UK Guide (2026)',
     description:
       'Everything you need to know about getting rid of rats in your home and garden. Signs of infestation, DIY methods, when to call a professional, and the best products to use.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/how-to-get-rid-of-rats',
     },
     openGraph: {
-      title: 'How to Get Rid of Rats: The Complete UK Guide (2026) | PestPro Index',
+      title: 'How to Get Rid of Rats: The Complete UK Guide (2026)',
       description:
         'Everything you need to know about getting rid of rats in your home and garden. Signs of infestation, DIY methods, when to call a professional, and the best products to use.',
       url: 'https://pestproindex.com/guides/how-to-get-rid-of-rats',

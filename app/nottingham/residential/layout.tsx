@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Pest Control in Nottingham | Residential Services | PestPro Index',
+  title: 'Pest Control in Nottingham | Residential Services',
   description: 'Find trusted residential pest control services in Nottingham and the East Midlands. Compare BPCA-certified providers, read reviews, and get quotes — no lead fees.',
   alternates: {
     canonical: 'https://pestproindex.com/nottingham/residential',
   },
   openGraph: {
-    title: 'Pest Control in Nottingham | Residential Services | PestPro Index',
+    title: 'Pest Control in Nottingham | Residential Services',
     description: 'Find trusted residential pest control services in Nottingham and the East Midlands. Compare BPCA-certified providers, read reviews, and get quotes — no lead fees.',
     siteName: 'PestPro Index',
     locale: 'en_GB',

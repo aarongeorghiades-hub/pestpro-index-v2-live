@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Cockroach Killer Products UK 2026: Gels, Sprays & Traps Reviewed | PestPro Index',
+    title: 'Best Cockroach Killer Products UK 2026: Gels, Sprays & Traps Reviewed',
     description:
       'The best cockroach killer products available in the UK for 2026. Gel baits, sprays, powders and monitoring traps reviewed with honest pros, cons, and expert buying guidance.',
     alternates: {
       canonical: 'https://pestproindex.com/best/cockroach-killers',
     },
     openGraph: {
-      title: 'Best Cockroach Killer Products UK 2026: Gels, Sprays & Traps Reviewed | PestPro Index',
+      title: 'Best Cockroach Killer Products UK 2026: Gels, Sprays & Traps Reviewed',
       description:
         'The best cockroach killer products available in the UK for 2026. Gel baits, sprays, powders and monitoring traps reviewed with honest pros, cons, and expert buying guidance.',
       url: 'https://pestproindex.com/best/cockroach-killers',

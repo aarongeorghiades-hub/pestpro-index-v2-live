@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Electric Fly Killers vs Sticky Traps: Which Is Better? (UK 2026) | PestPro Index',
+    title: 'Electric Fly Killers vs Sticky Traps: Which Is Better? (UK 2026)',
     description:
       'A side-by-side comparison of UV electric fly killers and sticky fly traps for UK homes and businesses. Effectiveness, hygiene, cost, and our top product picks.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/electric-fly-killers-vs-sticky-traps',
     },
     openGraph: {
-      title: 'Electric Fly Killers vs Sticky Traps: Which Is Better? (UK 2026) | PestPro Index',
+      title: 'Electric Fly Killers vs Sticky Traps: Which Is Better? (UK 2026)',
       description:
         'A side-by-side comparison of UV electric fly killers and sticky fly traps for UK homes and businesses. Effectiveness, hygiene, cost, and our top product picks.',
       url: 'https://pestproindex.com/guides/electric-fly-killers-vs-sticky-traps',

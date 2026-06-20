@@ -8,14 +8,14 @@ import { derbyBoroughs } from '@/app/pest-control/derby/derby-boroughs';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control in Derby | PestPro Index',
+  title: 'Pest Control in Derby',
   description:
     'Compare 88+ trusted pest control companies in Derby. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses across Derbyshire.',
   alternates: {
     canonical: 'https://pestproindex.com/derby',
   },
   openGraph: {
-    title: 'Pest Control in Derby | PestPro Index',
+    title: 'Pest Control in Derby',
     description:
       'Compare 88+ trusted pest control companies in Derby. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses across Derbyshire.',
     url: 'https://pestproindex.com/derby',

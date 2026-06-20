@@ -8,14 +8,14 @@ import { birminghamBoroughs } from '@/app/pest-control/birmingham/birmingham-bor
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control Birmingham | Find Local Experts | PestPro Index',
+  title: 'Pest Control Birmingham | Find Local Experts',
   description:
     'Find trusted pest control companies in Birmingham. Browse residential and commercial pest control services across all Birmingham districts including Sutton Coldfield, Edgbaston, Erdington and more.',
   alternates: {
     canonical: 'https://pestproindex.com/birmingham',
   },
   openGraph: {
-    title: 'Pest Control Birmingham | Find Local Experts | PestPro Index',
+    title: 'Pest Control Birmingham | Find Local Experts',
     description:
       'Find trusted pest control companies in Birmingham. Browse residential and commercial services across all Birmingham districts.',
     url: 'https://pestproindex.com/birmingham',

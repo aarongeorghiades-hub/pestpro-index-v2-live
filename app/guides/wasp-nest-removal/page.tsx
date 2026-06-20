@@ -6,14 +6,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Wasp Nest Removal: The Complete UK Guide (2026) | PestPro Index',
+    title: 'Wasp Nest Removal: The Complete UK Guide (2026)',
     description:
       'Everything you need to know about wasp nests in the UK. How to identify them, whether to remove them yourself or call a professional, costs, and the best wasp control products.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/wasp-nest-removal',
     },
     openGraph: {
-      title: 'Wasp Nest Removal: The Complete UK Guide (2026) | PestPro Index',
+      title: 'Wasp Nest Removal: The Complete UK Guide (2026)',
       description:
         'Everything you need to know about wasp nests in the UK. How to identify them, whether to remove them yourself or call a professional, costs, and the best wasp control products.',
       url: 'https://pestproindex.com/guides/wasp-nest-removal',

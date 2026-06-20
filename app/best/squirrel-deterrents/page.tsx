@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Squirrel Deterrents UK 2026: Top 5 Tested & Reviewed | PestPro Index',
+    title: 'Best Squirrel Deterrents UK 2026: Top 5 Tested & Reviewed',
     description:
       'Expert reviews of the best squirrel deterrents for UK homes and gardens. From repellent sprays to squirrel-proof bird feeders and humane traps.',
     alternates: {
       canonical: 'https://pestproindex.com/best/squirrel-deterrents',
     },
     openGraph: {
-      title: 'Best Squirrel Deterrents UK 2026: Top 5 Tested & Reviewed | PestPro Index',
+      title: 'Best Squirrel Deterrents UK 2026: Top 5 Tested & Reviewed',
       description:
         'Expert reviews of the best squirrel deterrents for UK homes and gardens. From repellent sprays to squirrel-proof bird feeders and humane traps.',
       url: 'https://pestproindex.com/best/squirrel-deterrents',

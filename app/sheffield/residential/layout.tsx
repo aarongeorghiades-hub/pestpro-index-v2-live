@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Sheffield & South Yorkshire Residential Pest Control | 53 Providers | PestPro Index',
+  title: 'Sheffield & South Yorkshire Residential Pest Control | 53 Providers',
   description: 'Find trusted residential pest control providers across Sheffield, Rotherham, Doncaster, Barnsley and South Yorkshire. Compare 53 verified providers — no lead fees, no commissions.',
   alternates: {
     canonical: 'https://pestproindex.com/sheffield/residential',
   },
   openGraph: {
-    title: 'Sheffield & South Yorkshire Residential Pest Control | 53 Providers | PestPro Index',
+    title: 'Sheffield & South Yorkshire Residential Pest Control | 53 Providers',
     description: 'Find trusted residential pest control providers across Sheffield, Rotherham, Doncaster, Barnsley and South Yorkshire. Compare 53 verified providers — no lead fees, no commissions.',
     siteName: 'PestPro Index',
     locale: 'en_GB',

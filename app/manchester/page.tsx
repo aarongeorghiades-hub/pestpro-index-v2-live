@@ -7,14 +7,14 @@ import { manchesterBoroughs } from '@/app/pest-control/manchester/manchester-bor
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control Manchester | Find Local Experts | PestPro Index',
+  title: 'Pest Control Manchester | Find Local Experts',
   description:
     'Find trusted pest control companies in Manchester. Browse residential and commercial services across all Greater Manchester districts including Salford, Trafford, Stockport and more.',
   alternates: {
     canonical: 'https://pestproindex.com/manchester',
   },
   openGraph: {
-    title: 'Pest Control Manchester | Find Local Experts | PestPro Index',
+    title: 'Pest Control Manchester | Find Local Experts',
     description:
       'Find trusted pest control companies in Manchester. Browse residential and commercial services across all Greater Manchester districts.',
     url: 'https://pestproindex.com/manchester',

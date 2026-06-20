@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Cockroach Gel Bait UK 2026: Kill the Nest | PestPro Index',
+    title: 'Best Cockroach Gel Bait UK 2026: Kill the Nest',
     description:
       'Our pick of the best cockroach gel baits available in the UK for 2026. Professional-grade gels, bait stations, and IGR products reviewed with application advice.',
     alternates: {
       canonical: 'https://pestproindex.com/best/cockroach-gel-bait',
     },
     openGraph: {
-      title: 'Best Cockroach Gel Bait UK 2026: Kill the Nest | PestPro Index',
+      title: 'Best Cockroach Gel Bait UK 2026: Kill the Nest',
       description:
         'Our pick of the best cockroach gel baits available in the UK for 2026. Professional-grade gels, bait stations, and IGR products reviewed with application advice.',
       url: 'https://pestproindex.com/best/cockroach-gel-bait',

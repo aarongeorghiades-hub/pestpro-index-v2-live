@@ -7,14 +7,14 @@ import { glasgowBoroughs } from '@/app/pest-control/glasgow/glasgow-boroughs';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control Glasgow | Find Local Experts | PestPro Index',
+  title: 'Pest Control Glasgow | Find Local Experts',
   description:
     'Find trusted pest control companies in Glasgow. Browse residential and commercial services across all Glasgow districts including East Dunbartonshire, Greater Glasgow and more.',
   alternates: {
     canonical: 'https://pestproindex.com/glasgow',
   },
   openGraph: {
-    title: 'Pest Control Glasgow | Find Local Experts | PestPro Index',
+    title: 'Pest Control Glasgow | Find Local Experts',
     description:
       'Find trusted pest control companies in Glasgow. Browse residential and commercial services across all Glasgow districts.',
     url: 'https://pestproindex.com/glasgow',

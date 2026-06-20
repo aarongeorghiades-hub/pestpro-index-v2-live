@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Bristol & South West Commercial Pest Control | PestPro Index',
+  title: 'Bristol & South West Commercial Pest Control',
   description: 'Commercial pest control services across Bristol and the South West. Compare verified providers for offices, restaurants, hotels, warehouses and more.',
   alternates: {
     canonical: 'https://pestproindex.com/bristol/commercial',
   },
   openGraph: {
-    title: 'Bristol & South West Commercial Pest Control | PestPro Index',
+    title: 'Bristol & South West Commercial Pest Control',
     description: 'Commercial pest control services across Bristol and the South West. Compare verified providers for offices, restaurants, hotels, warehouses and more.',
     siteName: 'PestPro Index',
     locale: 'en_GB',

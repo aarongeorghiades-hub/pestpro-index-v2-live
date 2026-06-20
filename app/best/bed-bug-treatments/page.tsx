@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Bed Bug Treatment Products UK 2026: Sprays, Powders & Prevention | PestPro Index',
+    title: 'Best Bed Bug Treatment Products UK 2026: Sprays, Powders & Prevention',
     description:
       'The best bed bug treatment products available in the UK for 2026. Sprays, powders, mattress encasements and monitoring traps reviewed with honest pros, cons, and expert buying guidance.',
     alternates: {
       canonical: 'https://pestproindex.com/best/bed-bug-treatments',
     },
     openGraph: {
-      title: 'Best Bed Bug Treatment Products UK 2026: Sprays, Powders & Prevention | PestPro Index',
+      title: 'Best Bed Bug Treatment Products UK 2026: Sprays, Powders & Prevention',
       description:
         'The best bed bug treatment products available in the UK for 2026. Sprays, powders, mattress encasements and monitoring traps reviewed with honest pros, cons, and expert buying guidance.',
       url: 'https://pestproindex.com/best/bed-bug-treatments',

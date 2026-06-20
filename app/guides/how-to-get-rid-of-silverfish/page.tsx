@@ -7,14 +7,14 @@ import ProductCard from '@/components/ProductCard';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'How to Get Rid of Silverfish UK — Causes, Prevention & Treatment | PestPro Index',
+    title: 'How to Get Rid of Silverfish UK — Causes, Prevention & Treatment',
     description:
       'Complete guide to silverfish control in the UK. Learn what causes silverfish, how to prevent infestations, effective treatments, and when to call a professional pest controller.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/how-to-get-rid-of-silverfish',
     },
     openGraph: {
-      title: 'How to Get Rid of Silverfish UK — Causes, Prevention & Treatment | PestPro Index',
+      title: 'How to Get Rid of Silverfish UK — Causes, Prevention & Treatment',
       description:
         'Complete guide to silverfish control in the UK. Learn what causes silverfish, how to prevent infestations, effective treatments, and when to call a professional pest controller.',
       url: 'https://pestproindex.com/guides/how-to-get-rid-of-silverfish',

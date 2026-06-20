@@ -7,14 +7,14 @@ import ProductCard from '@/components/ProductCard';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'How to Get Rid of Foxes UK — Humane Deterrents, Prevention & Expert Help | PestPro Index',
+    title: 'How to Get Rid of Foxes UK — Humane Deterrents, Prevention & Expert Help',
     description:
       'Complete guide to fox control in the UK. Learn humane deterrent methods, garden proofing, legal protections, and when to call a professional pest controller.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/how-to-get-rid-of-foxes',
     },
     openGraph: {
-      title: 'How to Get Rid of Foxes UK — Humane Deterrents, Prevention & Expert Help | PestPro Index',
+      title: 'How to Get Rid of Foxes UK — Humane Deterrents, Prevention & Expert Help',
       description:
         'Complete guide to fox control in the UK. Learn humane deterrent methods, garden proofing, legal protections, and when to call a professional pest controller.',
       url: 'https://pestproindex.com/guides/how-to-get-rid-of-foxes',

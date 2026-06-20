@@ -8,14 +8,14 @@ import { leicesterBoroughs } from '@/lib/leicester-boroughs';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pest Control in Leicester | PestPro Index',
+  title: 'Pest Control in Leicester',
   description:
     'Compare 28+ trusted pest control companies in Leicester. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses across Leicestershire.',
   alternates: {
     canonical: 'https://pestproindex.com/leicester',
   },
   openGraph: {
-    title: 'Pest Control in Leicester | PestPro Index',
+    title: 'Pest Control in Leicester',
     description:
       'Compare 28+ trusted pest control companies in Leicester. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses across Leicestershire.',
     url: 'https://pestproindex.com/leicester',
