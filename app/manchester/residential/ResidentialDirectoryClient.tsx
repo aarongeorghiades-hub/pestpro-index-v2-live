@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useMemo } from 'react';
+import { externalHref } from '@/lib/externalUrl';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -392,9 +393,9 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
                     )}
                     {provider.website && (
                       <a
-                        href={provider.website?.startsWith('http') ? provider.website : `https://${provider.website}`}
+                        href={externalHref(provider.website)}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="nofollow noopener noreferrer"
                         className="block text-center px-3 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm"
                       >
                         Visit Website →
@@ -597,7 +598,7 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
                             )
                           )}
                           {provider.website && (
-                            <a href={provider.website?.startsWith('http') ? provider.website : `https://${provider.website}`} target="_blank" rel="noopener noreferrer" className="block text-center px-3 py-2 border border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 text-sm font-semibold rounded-lg">
+                            <a href={externalHref(provider.website)} target="_blank" rel="nofollow noopener noreferrer" className="block text-center px-3 py-2 border border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 text-sm font-semibold rounded-lg">
                               Website
                             </a>
                           )}

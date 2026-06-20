@@ -1,44 +1,35 @@
 import { Metadata } from 'next';
-import ProviderPageContent from '@/components/ProviderPageContent';
+import { notFound } from 'next/navigation';
+import ProviderDetails from '@/components/ProviderDetails';
 import ProviderJsonLd from '@/components/ProviderJsonLd';
-import { createClient } from '@/utils/supabase';
+import { createServerClient } from '@/utils/supabase-server';
+import { isProviderThin } from '@/lib/provider';
 
-// A provider page is "thin" (low unique value → soft 404 risk) when it lacks
-// enough distinguishing signals. Score the available content and noindex any
-// provider that falls below the threshold. This replaces the old hardcoded
-// NOINDEX_SLUGS list so new thin providers are handled automatically.
-function isProviderThin(provider: {
-  phone?: string | null;
-  website?: string | null;
-  email?: string | null;
-  google_rating?: number | null;
-  google_review_count?: number | null;
-  profile_text?: string | null;
-}): boolean {
-  let score = 0;
-  if (provider.phone) score += 1;
-  if (provider.website) score += 2;        // website is higher value — 2 points
-  if (provider.email) score += 1;
-  if (provider.google_rating && provider.google_rating > 0) score += 1;
-  if (provider.google_review_count && provider.google_review_count >= 3) score += 2; // reviews are strong signal
-  if (provider.profile_text && provider.profile_text.length > 50) score += 1;
-  return score < 3;  // score below 3 = thin
-}
+export const dynamic = 'force-dynamic';
 
+// Fetch the active provider for a slug. Some providers share a slug — the same
+// business is listed under two regions (e.g. nottingham + derby), and a few
+// Cardiff records are exact duplicates. `.single()` ERRORS when more than one
+// row matches, which previously returned null and rendered an HTTP 200
+// "Provider Not Found" page (a soft 404) for ~65 real, active providers.
+// Order by review count and take the first row so duplicates resolve to the
+// richest listing instead of 404ing.
 async function getProvider(slug: string) {
-  const supabase = createClient();
-  const { data: provider, error } = await supabase
+  const supabase = createServerClient();
+  const { data, error } = await supabase
     .from('Providers')
     .select('*')
     .eq('active', true)
     .eq('slug', slug)
-    .single();
+    .order('google_review_count', { ascending: false, nullsFirst: false })
+    .limit(1);
 
-  if (error || !provider) {
+  if (error) {
+    console.error('[SSR fetch] provider:', error.message);
     return null;
   }
 
-  return provider;
+  return (data && data[0]) || null;
 }
 
 export async function generateMetadata({
@@ -49,18 +40,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const provider = await getProvider(slug);
 
+  // Genuinely missing/inactive provider — the route returns a real 404, so the
+  // metadata only needs to keep the page out of the index.
   if (!provider) {
     return {
       title: 'Provider Not Found',
       description: 'This pest control provider could not be found on PestPro Index.',
-      alternates: {
-        canonical: `https://pestproindex.com/provider/${slug}`,
-      },
+      robots: { index: false, follow: true },
     };
   }
 
-  // Build dynamic title
-  const serviceType = provider.commercial && provider.residential
+  const serviceType = provider.commercial && provider.business_residential
     ? 'Pest Control & Pest Removal'
     : provider.commercial
       ? 'Commercial Pest Control & Pest Removal'
@@ -70,26 +60,25 @@ export async function generateMetadata({
   const location = citySlug.charAt(0).toUpperCase() + citySlug.slice(1);
   const title = `${provider.name} | ${serviceType} ${location}`;
 
-  // Build dynamic description
   let description = `${provider.name} - pest control and pest removal provider serving ${location}.`;
   if (provider.google_rating && provider.google_review_count) {
     description += ` Rated ${provider.google_rating}/5 from ${provider.google_review_count} Google reviews.`;
   }
   description += ' Compare services, certifications and contact details on PestPro Index.';
 
-  // Detect thin providers — noindex pages with insufficient content to avoid soft 404
+  // Detect thin providers — noindex pages with insufficient content to avoid soft 404.
   const isThin = isProviderThin(provider);
 
   return {
-    title: title,
-    description: description,
+    title,
+    description,
     alternates: {
       canonical: `https://pestproindex.com/provider/${slug}`,
     },
     ...(isThin && { robots: { index: false, follow: true } }),
     openGraph: {
       title: `${provider.name} | ${serviceType} ${location}`,
-      description: description,
+      description,
       siteName: 'PestPro Index',
       locale: 'en_GB',
       type: 'website',
@@ -97,7 +86,7 @@ export async function generateMetadata({
     twitter: {
       card: 'summary',
       title: `${provider.name} | ${serviceType} ${location}`,
-      description: description,
+      description,
     },
   };
 }
@@ -110,10 +99,13 @@ export default async function ProviderPage({
   const { slug } = await params;
   const provider = await getProvider(slug);
 
+  // Genuinely absent/inactive → real HTTP 404 (replaces the old 200 soft 404).
+  if (!provider) notFound();
+
   return (
     <>
-      {provider && <ProviderJsonLd provider={provider} />}
-      <ProviderPageContent />
+      <ProviderJsonLd provider={provider} />
+      <ProviderDetails provider={provider} />
     </>
   );
 }

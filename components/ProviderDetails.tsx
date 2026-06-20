@@ -1,120 +1,14 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
-import { createClient } from '@/utils/supabase';
-import { MapPin, Phone, Mail, Globe, Star, Shield, Award, Briefcase, Home as HomeIcon, AlertCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe, Star, Award, Briefcase, Home as HomeIcon } from 'lucide-react';
 import Navigation from '@/components/Navigation';
-import { Metadata } from 'next';
-import { generateProfileText, generateMetaDescription } from '@/lib/generateProfileText';
+import { generateProfileText } from '@/lib/generateProfileText';
+import { externalHref, EXTERNAL_LINK_REL } from '@/lib/externalUrl';
 
-export default function ProviderPageContent() {
-  const params = useParams();
-  const slug = params.slug as string;
-  const [provider, setProvider] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
-  const [notFound, setNotFound] = useState(false);
-
-  useEffect(() => {
-    const fetchProvider = async () => {
-      try {
-        const supabase = createClient();
-        const { data: provider, error } = await supabase
-          .from('Providers')
-          .select('*')
-          .eq('active', true)
-          .eq('slug', slug)
-          .single();
-
-        if (error || !provider) {
-          console.error('Supabase error:', error);
-          setNotFound(true);
-          setLoading(false);
-          return;
-        }
-
-        setProvider(provider);
-        setLoading(false);
-      } catch (err) {
-        console.error('Error fetching provider:', err);
-        setNotFound(true);
-        setLoading(false);
-      }
-    };
-
-    fetchProvider();
-  }, [slug]);
-
-
-
-  // Dynamic title and meta description
-  useEffect(() => {
-    if (provider && provider.name) {
-      document.title = `${provider.name} | Pest Control Provider | PestPro Index`;
-      
-      // Update meta description
-      let metaDesc = document.querySelector('meta[name="description"]');
-      if (!metaDesc) {
-        metaDesc = document.createElement('meta');
-        metaDesc.setAttribute('name', 'description');
-        document.head.appendChild(metaDesc);
-      }
-      
-      const rating = provider.google_rating ? ` Rated ${provider.google_rating}/5.` : '';
-      const reviews = provider.google_review_count ? ` ${provider.google_review_count} reviews.` : '';
-      const postcode = provider.postcode ? ` Serving ${provider.postcode} area.` : '';
-      
-      metaDesc.setAttribute('content', 
-        `${provider.name} - pest control provider listed on PestPro Index.${rating}${reviews}${postcode} No lead fees, no commissions.`
-      );
-      
-      // Update canonical tag
-      let canonical = document.querySelector('link[rel="canonical"]');
-      if (!canonical) {
-        canonical = document.createElement('link');
-        canonical.setAttribute('rel', 'canonical');
-        document.head.appendChild(canonical);
-      }
-      canonical.setAttribute('href', `https://pestproindex.com/provider/${slug}`);
-    }
-  }, [provider, slug]);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading provider details...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (notFound) {
-    return (
-      <div className="min-h-screen bg-white">
-      <Navigation />
-        <div className="max-w-4xl mx-auto px-4 py-16 text-center">
-          <AlertCircle size={48} className="mx-auto mb-4 text-gray-400" />
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Provider Not Found</h1>
-          <p className="text-gray-600 mb-8">The provider you're looking for doesn't exist in our directory.</p>
-          <div className="flex gap-4 justify-center">
-            <Link href="/residential" className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-              ← Back to Residential Directory
-            </Link>
-            <Link href="/commercial" className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-              ← Back to Commercial Directory
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-
-
+// Server-rendered provider detail view. The provider is fetched in the page's
+// Server Component and passed in, so the full content is present in the initial
+// HTML (no client-side fetch, no "Loading provider details…" state) — this is
+// what stops valid provider pages reading as soft 404s.
+export default function ProviderDetails({ provider }: { provider: any }) {
   const citySlug = provider.regions?.[0] || 'london';
   const cityName = citySlug.charAt(0).toUpperCase() + citySlug.slice(1);
   const residentialLink = citySlug === 'london' ? '/residential' : `/${citySlug}/residential`;
@@ -195,7 +89,7 @@ export default function ProviderPageContent() {
                 <Globe size={20} className="text-blue-600 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-gray-600">Website</p>
-                  <a href={provider.website?.startsWith('http') ? provider.website : `https://${provider.website}`} target="_blank" rel="noopener noreferrer" className="text-lg text-blue-600 hover:underline">Visit Website →</a>
+                  <a href={externalHref(provider.website)} target="_blank" rel={EXTERNAL_LINK_REL} className="text-lg text-blue-600 hover:underline">Visit Website →</a>
                 </div>
               </div>
             )}
@@ -298,12 +192,11 @@ export default function ProviderPageContent() {
           <div className="grid grid-cols-3 gap-12 mb-8">
             <div>
               <h4 className="text-white font-bold mb-4">PestPro Index</h4>
-              <p className="text-sm">The UK's neutral pest control directory</p>
+              <p className="text-sm">The UK&apos;s neutral pest control directory</p>
             </div>
             <div>
               <h4 className="text-white font-bold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/about" className="hover:text-white transition">About</Link></li>
                 <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
                 <li><Link href="/resources" className="hover:text-white transition">Resources</Link></li>
               </ul>

@@ -1,4 +1,5 @@
 import { generateProfileText } from '@/lib/generateProfileText';
+import { externalHref } from '@/lib/externalUrl';
 
 interface ProviderJsonLdProps {
   provider: any;
@@ -10,7 +11,7 @@ export default function ProviderJsonLd({ provider }: ProviderJsonLdProps) {
     '@type': 'LocalBusiness',
     name: provider.name,
     description: provider.profile_text || generateProfileText(provider),
-    url: provider.website ? (provider.website.startsWith('http') ? provider.website : `https://${provider.website}`) : undefined,
+    url: provider.website ? externalHref(provider.website) : undefined,
     telephone: provider.phone || undefined,
     email: provider.email || undefined,
     priceRange: '££',

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { externalHref } from '@/lib/externalUrl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -363,7 +364,7 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
                     )}
                   </div>
                   {provider.website && (
-                    <Link href={provider.website?.startsWith('http') ? provider.website : `https://${provider.website}`} target="_blank" rel="noopener noreferrer" className="block text-center px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm">
+                    <Link href={externalHref(provider.website)} target="_blank" rel="nofollow noopener noreferrer" className="block text-center px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm">
                       Visit Website →
                     </Link>
                   )}
@@ -430,9 +431,9 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
                   )}
                   {provider.website && (
                     <Link
-                      href={provider.website?.startsWith('http') ? provider.website : `https://${provider.website}`}
+                      href={externalHref(provider.website)}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="nofollow noopener noreferrer"
                       className="block text-center px-3 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-xs mt-3"
                     >
                       Visit Website →
@@ -656,7 +657,7 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
                         </div>
 
                         {provider.website && (
-                          <Link href={provider.website?.startsWith('http') ? provider.website : `https://${provider.website}`} target="_blank" rel="noopener noreferrer" className="inline-block px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm">
+                          <Link href={externalHref(provider.website)} target="_blank" rel="nofollow noopener noreferrer" className="inline-block px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm">
                             Visit Website →
                           </Link>
                         )}
