@@ -79,7 +79,7 @@ export default async function AboutPage() {
         <h2 className="text-3xl font-black text-gray-900 mb-4 mt-10">Who operates the site</h2>
         <p className="text-gray-700 leading-relaxed mb-4">
           PestPro Index is operated by <strong>ENA Enterprises Ltd</strong>, a company registered in the United Kingdom
-          (company number <strong>[CONFIRM]</strong>). For any question about a listing, a correction, or getting your
+          (company number <strong>17257845</strong>). For any question about a listing, a correction, or getting your
           business added or removed, please use our{' '}
           <Link href="/contact" className="text-blue-600 hover:underline">contact page</Link>.
         </p>
