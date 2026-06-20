@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import Navigation from '@/components/Navigation';
+import { isAffiliateUrl, SPONSORED_LINK_REL } from '@/lib/externalUrl';
 
 interface Resource {
   name: string;
@@ -188,10 +189,10 @@ export default function ResourcesPage() {
                   <div className="relative z-10">
                     <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">{resource.name}</h3>
                     <p className="text-white/70 text-sm mb-4 leading-relaxed">{resource.description}</p>
-                    <a 
+                    <a
                       href={resource.url}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel={isAffiliateUrl(resource.url) ? SPONSORED_LINK_REL : 'noopener noreferrer'}
                       className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-400 transition-all duration-200 hover:gap-3"
                     >
                       Visit Resource

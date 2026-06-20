@@ -196,7 +196,7 @@ export default function ProductsPage() {
                   <span className="text-gray-600 text-sm">({product.note})</span>
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
-                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
                   View on Amazon
                 </a>
               </div>
@@ -229,7 +229,7 @@ export default function ProductsPage() {
                   <span className="text-gray-600 text-sm">({product.note})</span>
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
-                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
                   View on Amazon
                 </a>
               </div>
@@ -261,7 +261,7 @@ export default function ProductsPage() {
                   <span className="text-gray-600 text-sm">({product.note})</span>
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
-                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
                   View on Amazon
                 </a>
               </div>
@@ -293,7 +293,7 @@ export default function ProductsPage() {
                   <span className="text-gray-600 text-sm">({product.note})</span>
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
-                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
                   View on Amazon
                 </a>
               </div>
@@ -325,7 +325,7 @@ export default function ProductsPage() {
                   <span className="text-gray-600 text-sm">({product.note})</span>
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
-                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
                   View on Amazon
                 </a>
               </div>
@@ -356,7 +356,7 @@ export default function ProductsPage() {
                   <span className="text-gray-600 text-sm">({product.note})</span>
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
-                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
                   View on Amazon
                 </a>
               </div>
@@ -387,7 +387,7 @@ export default function ProductsPage() {
                   <span className="text-gray-600 text-sm">({product.note})</span>
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
-                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
                   View on Amazon
                 </a>
               </div>
@@ -418,7 +418,7 @@ export default function ProductsPage() {
                   <span className="text-gray-600 text-sm">({product.note})</span>
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
-                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
                   View on Amazon
                 </a>
               </div>
@@ -449,7 +449,7 @@ export default function ProductsPage() {
                   <span className="text-gray-600 text-sm">({product.note})</span>
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
-                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
                   View on Amazon
                 </a>
               </div>
@@ -482,7 +482,7 @@ export default function ProductsPage() {
                   <span className="text-gray-600 text-sm">({product.note})</span>
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
-                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
                   View on Amazon
                 </a>
               </div>
@@ -513,7 +513,7 @@ export default function ProductsPage() {
                   <span className="text-gray-600 text-sm">({product.note})</span>
                 </div>
                 <p className="text-gray-700 text-sm mb-4">{product.desc}</p>
-                <a href={getAmazonLink(product.asin)} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
+                <a href={getAmazonLink(product.asin)} target="_blank" rel="sponsored nofollow noopener noreferrer" className="block w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:from-amber-600 hover:to-amber-700 transition-all">
                   View on Amazon
                 </a>
               </div>

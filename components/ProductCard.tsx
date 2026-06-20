@@ -89,7 +89,7 @@ export default function ProductCard({ name, rating, features, price, asin, bestF
             <a
               href={amazonUrl}
               target="_blank"
-              rel="noopener noreferrer nofollow"
+              rel="sponsored nofollow noopener noreferrer"
               className="inline-block text-center px-6 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-lg transition-colors text-sm"
             >
               View on Amazon
