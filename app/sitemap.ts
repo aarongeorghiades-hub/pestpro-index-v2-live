@@ -1,4 +1,6 @@
 import { MetadataRoute } from 'next';
+import { createServerClient } from '@/utils/supabase-server';
+import { isProviderThin } from '@/lib/provider';
 import { getAllRegions } from './pest-control/data/regions';
 import { getAllBoroughs } from './pest-control/london/london-boroughs';
 import { getAllBoroughs as getAllManchesterBoroughs } from './pest-control/manchester/manchester-boroughs';
@@ -22,8 +24,47 @@ import { posts } from './blog/data/posts';
 import { pestGuides } from '@/data/pest-guides';
 import { LOCATIONS, PESTS } from './pest-control/pest-city-config';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+// Query providers at request time so the sitemap reflects the live table.
+export const dynamic = 'force-dynamic';
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://pestproindex.com';
+
+  // Bare city hub pages (/{city}) that aren't already listed in the static
+  // array below. Each has an app/{city}/page.tsx. (london, newcastle, cardiff,
+  // edinburgh, leicester, coventry, belfast, derby and hampshire are already
+  // present, so they're intentionally omitted here to avoid duplicate URLs.)
+  const cityHubSlugs = [
+    'birmingham', 'manchester', 'liverpool', 'leeds', 'nottingham',
+    'brighton', 'sheffield', 'bristol', 'glasgow', 'bradford',
+  ];
+  const cityHubUrls = cityHubSlugs.map((slug) => ({
+    url: `${baseUrl}/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'daily' as const,
+    priority: 0.9,
+  }));
+
+  // Provider listing pages. Only active providers with a slug, deduplicated
+  // (65 slugs are shared by 2 rows — same business cross-listed by region, or
+  // exact Cardiff duplicates), and excluding thin listings that the provider
+  // page marks noindex — so the sitemap lists only indexable, 200-status URLs.
+  const supabase = createServerClient();
+  const { data: providerRows, error: providerError } = await supabase
+    .from('Providers')
+    .select('slug, phone, website, email, google_rating, google_review_count, profile_text')
+    .eq('active', true);
+  if (providerError) console.error('[sitemap] providers:', providerError.message);
+
+  const seenSlugs = new Set<string>();
+  const providerUrls = (providerRows || [])
+    .filter((p) => p.slug && !isProviderThin(p) && !seenSlugs.has(p.slug) && seenSlugs.add(p.slug))
+    .map((p) => ({
+      url: `${baseUrl}/provider/${p.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }));
 
   // Get all regions
   const regions = getAllRegions();
@@ -1128,6 +1169,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
+    ...cityHubUrls,
+    ...providerUrls,
     ...blogPostUrls,
     ...regionUrls,
     ...boroughUrls,
