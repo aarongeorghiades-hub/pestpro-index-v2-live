@@ -103,11 +103,6 @@ const nextConfig: NextConfig = {
       },
       ...pestControlCityRedirects,
       {
-        source: '/about',
-        destination: '/',
-        permanent: true,
-      },
-      {
         source: '/prices',
         destination: '/guides/pest-control-costs',
         permanent: true,
