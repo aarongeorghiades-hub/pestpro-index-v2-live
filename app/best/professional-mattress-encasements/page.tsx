@@ -188,7 +188,7 @@ export default function ProfessionalMattressEncasementsPage() {
             'Excellent value for equipping multiple rooms',
           ]}
           price="£15"
-          asin="SEARCH"
+          asin="B077STRSZ7"
           bestFor="Best Budget"
         />
       </div>
@@ -215,7 +215,7 @@ export default function ProfessionalMattressEncasementsPage() {
             'Popular in the HMO and rental market',
           ]}
           price="£20"
-          asin="SEARCH"
+          asin="B0C5XFD8X5"
         />
       </div>
       <p>
@@ -238,7 +238,7 @@ export default function ProfessionalMattressEncasementsPage() {
             'Use for early detection in previously infested properties',
           ]}
           price="£12"
-          asin="SEARCH"
+          asin="B07MG8BD7X"
         />
       </div>
       <p>

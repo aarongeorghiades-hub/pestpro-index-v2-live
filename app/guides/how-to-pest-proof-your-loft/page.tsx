@@ -343,7 +343,7 @@ export default function HowToPestProofYourLoftPage() {
             'Place perpendicular to walls with trigger end against the joist',
           ]}
           price="&pound;4"
-          asin="SEARCH"
+          asin="B00IUE6FSE"
           bestFor="Best for Loft Trapping"
           rank={1}
         />

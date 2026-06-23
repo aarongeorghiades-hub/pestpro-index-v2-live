@@ -148,7 +148,7 @@ export default function BestMattressEncasementPage() {
             'Available in all UK mattress sizes (Single to Super King)',
           ]}
           price="£30"
-          asin="B00GKHI2PW"
+          asin="B004BAB28O"
           bestFor="Best Overall"
         />
       </div>
@@ -189,7 +189,7 @@ export default function BestMattressEncasementPage() {
             'Machine washable for easy care',
           ]}
           price="£15"
-          asin="B07BFQ1V5L"
+          asin="B00MRH58V0"
           bestFor="Best Budget"
         />
       </div>
@@ -226,7 +226,7 @@ export default function BestMattressEncasementPage() {
             'Designed for long-term permanent use',
           ]}
           price="£35"
-          asin="B073JPVRFB"
+          asin="B00WI0D5A2"
           bestFor="Best for Comfort"
         />
       </div>
@@ -263,7 +263,7 @@ export default function BestMattressEncasementPage() {
             'Independently tested and certified bed bug proof',
           ]}
           price="£45"
-          asin="B010E2GCIM"
+          asin="B004P1I4US"
           bestFor="Best Heavy-Duty"
         />
       </div>

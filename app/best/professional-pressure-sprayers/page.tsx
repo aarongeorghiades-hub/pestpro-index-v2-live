@@ -210,7 +210,7 @@ export default function ProfessionalPressureSprayersPage() {
             'Durable construction for professional pesticide use',
           ]}
           price="£60"
-          asin="SEARCH"
+          asin="B0001P0GHG"
           bestFor="Best Budget"
         />
       </div>
@@ -234,7 +234,7 @@ export default function ProfessionalPressureSprayersPage() {
             'Comfortable backpack design for extended use',
           ]}
           price="£50"
-          asin="SEARCH"
+          asin="B0D6YPYFRX"
         />
       </div>
       <p>

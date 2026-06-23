@@ -331,7 +331,7 @@ export default function WaspSeasonPreparationPage() {
             'Keep in the shed from March — ready for immediate use',
           ]}
           price="&pound;6"
-          asin="SEARCH"
+          asin="B01C7IKL56"
           bestFor="Best for Early Season"
           rank={1}
         />
@@ -345,7 +345,7 @@ export default function WaspSeasonPreparationPage() {
             'Professional-grade active ingredient (permethrin)',
           ]}
           price="&pound;8"
-          asin="SEARCH"
+          asin="B000TAY2EQ"
           bestFor="Best Nest Treatment"
           rank={2}
         />
@@ -359,7 +359,7 @@ export default function WaspSeasonPreparationPage() {
             'Effective for wall cavity and underground nests',
           ]}
           price="&pound;10"
-          asin="SEARCH"
+          asin="B00AC1IM6Q"
           bestFor="Best for Hidden Nests"
           rank={3}
         />

@@ -264,7 +264,7 @@ export default function ProfessionalBaitStationKitsPage() {
             'Designed for outdoor placement around buildings',
           ]}
           price="£40"
-          asin="SEARCH"
+          asin="B08XWBB8QF"
           bestFor="Best Professional-Grade"
         />
       </div>

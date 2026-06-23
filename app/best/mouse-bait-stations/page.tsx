@@ -272,7 +272,7 @@ export default function BestMouseBaitStationsPage() {
             "20,000+ reviews — the UK's most reviewed bait station",
           ]}
           price="Check price"
-          asin="SEARCH"
+          asin="B00OHI13ZW"
           bestFor="Best Brand"
         />
       </div>
@@ -312,7 +312,7 @@ export default function BestMouseBaitStationsPage() {
             "Affordable option for budget-conscious buyers",
           ]}
           price="Check price"
-          asin="SEARCH"
+          asin="B000YPXJ1I"
           bestFor="Best Budget"
         />
       </div>

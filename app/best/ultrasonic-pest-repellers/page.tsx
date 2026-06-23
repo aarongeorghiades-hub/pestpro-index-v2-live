@@ -307,7 +307,7 @@ export default function BestUltrasonicPestRepellersPage() {
             'Low running cost — minimal electricity usage',
           ]}
           price="£12"
-          asin="SEARCH"
+          asin="B07D1T56BJ"
           bestFor="Best Budget"
         />
       </div>
@@ -432,7 +432,7 @@ export default function BestUltrasonicPestRepellersPage() {
             'Variable frequency mode included',
           ]}
           price="£18"
-          asin="SEARCH"
+          asin="B0D1MSGYQV"
         />
       </div>
       <p>
@@ -473,7 +473,7 @@ export default function BestUltrasonicPestRepellersPage() {
             'Most cost-effective per-unit price at scale',
           ]}
           price="£30"
-          asin="SEARCH"
+          asin="B0DB1K1VR5"
           bestFor="Best for Coverage"
         />
       </div>

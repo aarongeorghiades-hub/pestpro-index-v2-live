@@ -146,7 +146,7 @@ export default function BestMothTrapsPage() {
             'Non-toxic and pesticide-free',
           ]}
           price="£12"
-          asin="B00GKHI2PW"
+          asin="B0B21S966L"
           bestFor="Best Overall"
         />
       </div>
@@ -186,7 +186,7 @@ export default function BestMothTrapsPage() {
             'Effective for 8 weeks per trap',
           ]}
           price="£10"
-          asin="B07BFQ1V5L"
+          asin="B0189FU8KO"
           bestFor="Best Pantry Moth"
         />
       </div>
@@ -223,7 +223,7 @@ export default function BestMothTrapsPage() {
             'Widely available in supermarkets and Amazon',
           ]}
           price="£5"
-          asin="B004US3F1Y"
+          asin="B07SS5DDWH"
           bestFor="Best Budget"
         />
       </div>
@@ -260,7 +260,7 @@ export default function BestMothTrapsPage() {
             'Long-lasting 8-week effectiveness',
           ]}
           price="£10"
-          asin="B073JPVRFB"
+          asin="B01NCZJ2P4"
           bestFor="Best Professional-Grade"
         />
       </div>
@@ -329,7 +329,7 @@ export default function BestMothTrapsPage() {
             'Refeshable — sand surface to release more cedar oil',
           ]}
           price="£8"
-          asin="B010E2GCIM"
+          asin="B000LNFINU"
           bestFor="Best Repellent"
         />
       </div>

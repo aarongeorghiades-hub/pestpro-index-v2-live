@@ -72,6 +72,7 @@ const categories: { heading: string; items: Category[] }[] = [
     heading: 'Wildlife & Birds',
     items: [
       { slug: 'fox-deterrents', name: 'Best Fox Deterrents', description: 'Ultrasonic, chemical and physical fox deterrents tested.' },
+      { slug: 'cat-deterrents', name: 'Best Cat Deterrents', description: 'Humane sprinkler, ultrasonic and scent deterrents to keep cats off lawns and borders.' },
       { slug: 'squirrel-deterrents', name: 'Best Squirrel Deterrents', description: 'Stop squirrels accessing lofts, feeders and gardens.' },
       { slug: 'mole-traps', name: 'Best Mole Traps', description: 'Professional scissor and tunnel mole traps reviewed.' },
       { slug: 'bird-deterrents', name: 'Best Bird Deterrents', description: 'Spikes, nets, sonic and visual bird deterrents.' },

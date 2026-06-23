@@ -239,7 +239,7 @@ export default function ProfessionalULVFoggersPage() {
             'Ergonomic backpack design for extended sessions',
           ]}
           price="£200"
-          asin="SEARCH"
+          asin="B09J1LNZGS"
         />
       </div>
       <p>

@@ -384,7 +384,7 @@ export default function AutumnPestProofingPage() {
             'Place perpendicular to walls with trigger end against skirting board',
           ]}
           price="&pound;4"
-          asin="SEARCH"
+          asin="B00IUE6FSE"
           bestFor="Best Budget Trap"
           rank={2}
         />
@@ -398,7 +398,7 @@ export default function AutumnPestProofingPage() {
             'Reapply every 2 to 4 weeks during spider season (September-October)',
           ]}
           price="&pound;10"
-          asin="SEARCH"
+          asin="B087GY5S86"
           bestFor="Best Spider Deterrent"
           rank={3}
         />

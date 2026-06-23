@@ -358,7 +358,7 @@ export default function StudentHousePestGuidePage() {
             'Pack of 6 covers a typical student kitchen',
           ]}
           price="&pound;5"
-          asin="SEARCH"
+          asin="B004B9XPOO"
           bestFor="Best Budget Option"
           rank={1}
         />
@@ -386,7 +386,7 @@ export default function StudentHousePestGuidePage() {
             'Immediate action while waiting for landlord to arrange professional treatment',
           ]}
           price="&pound;8"
-          asin="SEARCH"
+          asin="B07F93ZV15"
           bestFor="Best for Bed Bugs"
           rank={2}
         />
@@ -414,7 +414,7 @@ export default function StudentHousePestGuidePage() {
             'Safe to use in kitchens — enclosed station design',
           ]}
           price="&pound;8"
-          asin="SEARCH"
+          asin="B08Z4KSG45"
           bestFor="Best for Ants"
           rank={3}
         />

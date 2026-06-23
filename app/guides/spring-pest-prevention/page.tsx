@@ -291,7 +291,7 @@ export default function SpringPestPreventionPage() {
             'Chemical-free monitoring — ideal for spring prevention',
           ]}
           price="&pound;10"
-          asin="SEARCH"
+          asin="B0B21S966L"
           bestFor="Best Moth Trap"
           rank={1}
         />
@@ -326,7 +326,7 @@ export default function SpringPestPreventionPage() {
             'Effective against black garden ants and other common UK species',
           ]}
           price="&pound;12"
-          asin="SEARCH"
+          asin="B0CCY1L3YY"
           bestFor="Best Ant Gel Bait"
           rank={1}
         />
@@ -379,7 +379,7 @@ export default function SpringPestPreventionPage() {
             'Recommended by vets and pest control professionals',
           ]}
           price="&pound;12"
-          asin="SEARCH"
+          asin="B00GKHI2PW"
           bestFor="Best Home Flea Spray"
           rank={1}
         />

@@ -366,6 +366,13 @@ export default function Navigation() {
                   Best Fox Deterrents
                 </Link>
                 <Link
+                  href="/best/cat-deterrents"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Cat Deterrents
+                </Link>
+                <Link
                   href="/guides/how-to-get-rid-of-silverfish"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -805,6 +812,13 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Best Fox Deterrents
+                </Link>
+                <Link
+                  href="/best/cat-deterrents"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Cat Deterrents
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-silverfish"

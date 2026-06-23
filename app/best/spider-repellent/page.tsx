@@ -299,7 +299,7 @@ export default function BestSpiderRepellentPage() {
             '3-month residual protection',
           ]}
           price="£10"
-          asin="SEARCH"
+          asin="B09FB4QX9H"
           bestFor="Best Kill & Repel"
         />
       </div>

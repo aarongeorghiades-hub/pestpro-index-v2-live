@@ -342,7 +342,7 @@ export default function MovingHousePestChecklistPage() {
             'Ideal for treating an empty property before moving in',
           ]}
           price="&pound;12"
-          asin="SEARCH"
+          asin="B00GKHI2PW"
           bestFor="Best for Flea Treatment"
           rank={1}
         />

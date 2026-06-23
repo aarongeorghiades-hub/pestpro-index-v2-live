@@ -429,7 +429,7 @@ export default function BestCommercialDehumidifiersPage() {
           rank={5}
           rating={4.1}
           price="&pound;200"
-          asin="SEARCH"
+          asin="B0FT3LZJZD"
           features={[
             '30L/day high-capacity extraction',
             'WiFi app for remote humidity monitoring',

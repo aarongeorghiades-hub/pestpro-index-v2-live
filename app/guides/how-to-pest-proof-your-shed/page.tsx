@@ -322,7 +322,7 @@ export default function HowToPestProofYourShedPage() {
             'Weather-resistant for year-round outdoor use',
           ]}
           price="&pound;12"
-          asin="SEARCH"
+          asin="B07DVJ2JNW"
           bestFor="Best for Shed Perimeter"
           rank={1}
         />

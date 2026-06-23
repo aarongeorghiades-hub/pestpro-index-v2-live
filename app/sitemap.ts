@@ -678,6 +678,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/best/cat-deterrents`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/guides/how-to-get-rid-of-silverfish`,
       lastModified: new Date(),
       changeFrequency: 'weekly',

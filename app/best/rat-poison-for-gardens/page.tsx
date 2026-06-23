@@ -376,7 +376,7 @@ export default function BestRatPoisonForGardensPage() {
             'Place 10+ metres apart along rat runs for maximum effectiveness',
           ]}
           price="£30"
-          asin="SEARCH"
+          asin="B07B7CH7W6"
           bestFor="Best Multi-Station"
         />
       </div>
@@ -417,7 +417,7 @@ export default function BestRatPoisonForGardensPage() {
             'Affordable option for sustained outdoor baiting',
           ]}
           price="£12"
-          asin="SEARCH"
+          asin="B071GNVKTK"
           bestFor="Best Value"
         />
       </div>
