@@ -132,7 +132,7 @@ const tocItems = [
   { id: 'at-a-glance', title: 'Ultrasonic Pest Repellers at a Glance' },
   { id: 'best-overall', title: 'Best Overall — PestBye Advanced' },
   { id: 'best-budget', title: 'Best Budget — Pest Reject Pro' },
-  { id: 'best-multi-pack', title: 'Best Multi-Pack — Diaotec 2 Pack' },
+  { id: 'best-multi-pack', title: 'Best Multi-Mode — Diaotec 4-Mode' },
   { id: 'brison', title: 'BRISON 4 Pack' },
   { id: 'dual-speaker', title: 'Upgraded Dual-Speaker Repeller' },
   { id: 'best-coverage', title: 'Best for Coverage — 6-Unit Pack' },
@@ -221,10 +221,10 @@ export default function BestUltrasonicPestRepellersPage() {
             <td>~£12</td>
           </tr>
           <tr>
-            <td>Diaotec 2 Pack</td>
+            <td>Diaotec 4-Mode Plug-In</td>
             <td>~100 sq m per unit</td>
-            <td>Best Multi-Pack</td>
-            <td>~£16</td>
+            <td>Best Multi-Mode</td>
+            <td>~£20</td>
           </tr>
           <tr>
             <td>BRISON 4 Pack</td>
@@ -336,31 +336,31 @@ export default function BestUltrasonicPestRepellersPage() {
       </ul>
 
       {/* Product 3 */}
-      <h2 id="best-multi-pack">Best Multi-Pack — Diaotec Ultrasonic Pest Repeller (2 Pack)</h2>
+      <h2 id="best-multi-pack">Best Multi-Mode — Diaotec Ultrasonic Pest Repeller (4-Mode Plug-In)</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Diaotec Ultrasonic Pest Repeller (2 Pack)"
+          name="Diaotec Ultrasonic Pest Repeller — 4-Mode Plug-In"
           rank={3}
           rating={3.6}
           features={[
-            'Two units included — cover multiple rooms',
+            'Four selectable modes (test, ultrasonic, transonic, dual)',
+            'Targets rodents, squirrels, spiders and insects',
             'Variable frequency sweep to reduce habituation',
-            'Compact plug-in design for each unit',
-            'Good value per unit compared to buying singles',
+            'Single compact plug-in unit',
           ]}
-          price="£16"
-          asin="SEARCH"
-          bestFor="Best Multi-Pack"
+          price="£20"
+          asin="B09PBSZ3JX"
+          bestFor="Best Multi-Mode"
         />
       </div>
       <p>
-        Since ultrasonic sound waves cannot penetrate walls, ceilings, or large pieces of furniture, covering multiple rooms requires multiple units. The Diaotec 2 Pack offers a practical and affordable way to place repellers in two separate rooms — such as the kitchen and a utility room, or a bedroom and a living room. At around £16 for two units, the cost per device is competitive.
+        The Diaotec is a single plug-in unit with four selectable modes — test, ultrasonic, transonic and a dual mode — that you cycle through to find the setting the manufacturer claims suits your target pest. Because ultrasonic sound waves cannot penetrate walls, ceilings, or large pieces of furniture, you will need one unit per room you want to cover, so factor that in when buying. At around £20 it sits in the mid-range of the plug-in market.
       </p>
       <p>
         Each unit features a variable frequency sweep, which rotates through different ultrasonic frequencies rather than emitting a single constant tone. This is intended to combat habituation — the well-documented tendency for rodents to become accustomed to a persistent sound and simply ignore it. While variable frequency is theoretically better than a fixed output, the fundamental question of whether any ultrasonic frequency reliably repels pests in the real world remains unanswered.
       </p>
       <p>
-        Build quality is reasonable for the price point, and the compact form factor means the units sit flush against the wall without blocking adjacent sockets. Customer reviews follow the same polarised pattern seen across the entire ultrasonic repeller category: some swear by them, some report zero effect. If you want to try covering more than one room without a large upfront cost, the Diaotec 2 Pack is a sensible starting point.
+        Build quality is reasonable for the price point, and the compact form factor means the unit sits flush against the wall without blocking adjacent sockets. Customer reviews follow the same polarised pattern seen across the entire ultrasonic repeller category: some swear by them, some report zero effect. If you want to try ultrasonic deterrence in a single room without a large upfront cost, the Diaotec 4-mode unit is a sensible starting point.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>

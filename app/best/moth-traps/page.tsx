@@ -55,7 +55,7 @@ const tocItems = [
   { id: 'best-pantry', title: 'Best Pantry Moth Trap — Demi Diamond Pantry Moth Traps' },
   { id: 'best-value', title: 'Best Value — Zero In Clothes Moth Traps' },
   { id: 'best-professional', title: 'Best Professional — Pest Expert Moth Traps' },
-  { id: 'best-refill', title: 'Best Refills — Caraselle Moth Trap Refills' },
+  { id: 'best-refill', title: 'Best Refills — SiSi Moth Trap Refill Pads' },
   { id: 'best-repellent', title: 'Best Repellent — Cedar Wood Moth Balls' },
   { id: 'buying-guide', title: 'How to Choose the Right Moth Trap' },
   { id: 'faq', title: 'Frequently Asked Questions' },
@@ -124,7 +124,7 @@ export default function BestMothTrapsPage() {
           <tr><td>Demi Diamond Pantry Moth Traps</td><td>Pantry moths</td><td>Best Pantry Moth</td><td>~£10</td></tr>
           <tr><td>Zero In Clothes Moth Traps</td><td>Clothes moths</td><td>Best Value</td><td>~£5</td></tr>
           <tr><td>Pest Expert Moth Traps</td><td>Clothes moths</td><td>Best Professional</td><td>~£10</td></tr>
-          <tr><td>Caraselle Moth Trap Refills</td><td>Clothes moths</td><td>Best Refills</td><td>~£8</td></tr>
+          <tr><td>SiSi Moth Trap Refill Pads</td><td>Clothes &amp; carpet moths</td><td>Best Refills</td><td>~£9</td></tr>
           <tr><td>Cedar Wood Moth Balls</td><td>All moths</td><td>Best Repellent</td><td>~£8</td></tr>
         </tbody>
       </table>
@@ -284,25 +284,25 @@ export default function BestMothTrapsPage() {
         <li>Only targets clothes moths</li>
       </ul>
 
-      <h2 id="best-refill">Best Refills — Caraselle Moth Trap Refills</h2>
+      <h2 id="best-refill">Best Refills — SiSi Moth Trap Refill Pads</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Caraselle Moth Trap Pheromone Refill Strips"
+          name="SiSi Clothes & Carpet Moth Pheromone Trap Refills (20 Pads)"
           rank={5}
           rating={4.1}
           features={[
-            'Replacement pheromone strips for existing traps',
+            '20 replacement pheromone pads for moth traps',
+            'Targets clothes and carpet moths',
             'Refreshes worn-out traps without buying new housings',
-            'Compatible with most standard moth trap formats',
-            'Cost-effective for ongoing monitoring',
+            'Non-toxic, odourless — cost-effective for ongoing monitoring',
           ]}
-          price="£8"
-          asin="B001MIVFGC"
+          price="£9"
+          asin="B0086OZO12"
           bestFor="Best Refills"
         />
       </div>
       <p>
-        If you already own moth trap housings from any brand, Caraselle refill strips provide fresh pheromone lures at a lower cost than buying complete new traps. The refill strips are compatible with most standard moth trap formats and provide the same attractant strength as new traps. For ongoing monitoring throughout the moth season, refills are the most cost-effective approach.
+        If you already own moth trap housings, SiSi refill pads provide fresh pheromone lures at a lower cost than buying complete new traps. The pads suit most standard clothes and carpet moth trap formats and provide the same attractant strength as new traps. For ongoing monitoring throughout the moth season, refills are the most cost-effective approach.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>

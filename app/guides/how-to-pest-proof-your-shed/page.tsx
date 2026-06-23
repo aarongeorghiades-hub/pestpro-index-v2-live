@@ -335,16 +335,16 @@ export default function HowToPestProofYourShedPage() {
 
       <div className="not-prose space-y-4">
         <ProductCard
-          name="Rentokil Mouse Traps (Pack of 6)"
+          name="Rentokil Advanced Mouse Trap (3 Pack)"
           rating={4.3}
           features={[
             'Classic snap trap with easy-set mechanism',
             'Instant kill — the most humane lethal trap type',
-            'Affordable enough to set multiple traps at once',
+            'Three traps per pack — set several at once',
             'Place perpendicular to walls with trigger end against skirting',
           ]}
-          price="&pound;8"
-          asin="SEARCH"
+          price="&pound;10"
+          asin="B07VKD7ZK4"
           bestFor="Best for Shed Mice"
           rank={2}
         />

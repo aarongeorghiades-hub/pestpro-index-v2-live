@@ -57,7 +57,6 @@ const tocItems = [
   { id: 'best-value', title: 'Best Value — Utopia Bedding Encasement' },
   { id: 'best-comfort', title: 'Best for Comfort — SureGuard Encasement' },
   { id: 'best-heavy', title: 'Best Heavy-Duty — Protect-A-Bed AllerZip' },
-  { id: 'best-set', title: 'Best Mattress + Pillow Set — Linens Limited' },
   { id: 'buying-guide', title: 'How to Choose the Right Encasement' },
   { id: 'faq', title: 'Frequently Asked Questions' },
 ];
@@ -131,7 +130,6 @@ export default function BestMattressEncasementPage() {
           <tr><td>Utopia Bedding</td><td>Affordable micro-zipper</td><td>Best Value</td><td>~£15</td></tr>
           <tr><td>SureGuard</td><td>Soft cotton terry surface</td><td>Best Comfort</td><td>~£35</td></tr>
           <tr><td>Protect-A-Bed AllerZip</td><td>Commercial-grade zipper</td><td>Best Heavy-Duty</td><td>~£45</td></tr>
-          <tr><td>Linens Limited Set</td><td>Mattress + pillow protectors</td><td>Best Set</td><td>~£25</td></tr>
         </tbody>
       </table>
 
@@ -285,43 +283,6 @@ export default function BestMattressEncasementPage() {
         <li>Most expensive option at ~£45</li>
         <li>Smooth surface is less soft than cotton terry</li>
         <li>Can feel warm in summer without a cotton sheet</li>
-      </ul>
-
-      <h2 id="best-set">Best Mattress + Pillow Set — Linens Limited</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Linens Limited Bed Bug Mattress & Pillow Protector Set"
-          rank={5}
-          rating={4.1}
-          features={[
-            'Mattress encasement + pillow protectors in one set',
-            'Micro-zipper closures on all pieces',
-            'Comprehensive bed bug protection for the whole bed',
-            'Good value for a complete set',
-          ]}
-          price="£25"
-          asin="B004US3F1Y"
-          bestFor="Best Complete Set"
-        />
-      </div>
-      <p>
-        Bed bugs do not just hide in mattresses — pillows are another common harbourage point. The Linens Limited set includes both a mattress encasement and pillow protectors with micro-zipper closures, providing comprehensive protection for the entire bed in a single purchase. This is significantly better value than buying mattress and pillow encasements separately.
-      </p>
-      <p>
-        The mattress encasement features the same micro-zipper protection as standalone products, fully enclosing all six sides. The pillow protectors are equally important — they prevent bed bugs from colonising pillows, which are frequently the second most common hiding spot after the mattress itself. Protecting both eliminates the two primary bed-level harbourage points.
-      </p>
-      <p><strong>Pros:</strong></p>
-      <ul>
-        <li>Complete bed protection — mattress and pillows</li>
-        <li>Micro-zippers on all pieces</li>
-        <li>Better value than buying separately</li>
-        <li>Comprehensive approach</li>
-      </ul>
-      <p><strong>Cons:</strong></p>
-      <ul>
-        <li>Set may not include the exact number of pillow cases you need</li>
-        <li>May be less durable than premium standalone products</li>
-        <li>Limited size options</li>
       </ul>
 
       <h2 id="buying-guide">How to Choose the Right Encasement</h2>
