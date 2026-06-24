@@ -358,16 +358,16 @@ export default function MovingHousePestChecklistPage() {
 
       <div className="not-prose space-y-4">
         <ProductCard
-          name="Pest Expert Formula C Bed Bug Killer Spray (1L)"
+          name="Pest Expert Formula C Bed Bug Killer Spray 1L + Formula P Powder Kit"
           rating={4.3}
           features={[
-            'Professional-strength residual spray for bed bug harbourages',
-            'Apply along skirting boards, bed frame joints, and cracks in walls',
+            'Professional-strength 1L residual spray plus Formula P powder',
+            'Apply spray along skirting boards, bed frame joints, and cracks in walls',
             'Residual action continues killing for weeks after application',
             'Ideal for preventive treatment of an empty property before moving furniture in',
           ]}
-          price="&pound;15"
-          asin="SEARCH"
+          price="&pound;20"
+          asin="B013K87W4A"
           bestFor="Best for Bed Bug Prevention"
           rank={2}
         />

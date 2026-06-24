@@ -133,7 +133,7 @@ const tocItems = [
   { id: 'best-overall', title: 'Best Overall — PestBye Advanced' },
   { id: 'best-budget', title: 'Best Budget — Pest Reject Pro' },
   { id: 'best-multi-pack', title: 'Best Multi-Mode — Diaotec 4-Mode' },
-  { id: 'brison', title: 'BRISON 4 Pack' },
+  { id: 'brison', title: 'BRISON 2 Pack' },
   { id: 'dual-speaker', title: 'Upgraded Dual-Speaker Repeller' },
   { id: 'best-coverage', title: 'Best for Coverage — 6-Unit Pack' },
   { id: 'buying-guide', title: 'Buying Guide' },
@@ -227,10 +227,10 @@ export default function BestUltrasonicPestRepellersPage() {
             <td>~£20</td>
           </tr>
           <tr>
-            <td>BRISON 4 Pack</td>
+            <td>BRISON 2 Pack</td>
             <td>~80-120 sq m per unit</td>
             <td>Budget Multi-Room</td>
-            <td>~£20</td>
+            <td>~£14</td>
           </tr>
           <tr>
             <td>Upgraded Dual-Speaker</td>
@@ -378,24 +378,24 @@ export default function BestUltrasonicPestRepellersPage() {
       </ul>
 
       {/* Product 4 */}
-      <h2 id="brison">BRISON Ultrasonic Pest Repeller (4 Pack)</h2>
+      <h2 id="brison">BRISON Ultrasonic Pest Repeller (2 Pack)</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="BRISON Ultrasonic Pest Repeller (4 Pack)"
+          name="BRISON Ultrasonic Pest Repeller (2 Pack)"
           rank={4}
           rating={3.4}
           features={[
-            'Four units for wider home coverage',
+            'Two units for multi-room coverage',
             'Claims effectiveness against rodents, insects, and spiders',
             'Simple plug-in operation — no setup required',
-            'Affordable per-unit cost in the 4-pack format',
+            'Affordable per-unit cost in the 2-pack format',
           ]}
-          price="£20"
-          asin="SEARCH"
+          price="£14"
+          asin="B07WHKSPYK"
         />
       </div>
       <p>
-        The BRISON 4 Pack provides four individual plug-in units, which is enough to cover the main rooms in a small to medium-sized home — for example, kitchen, living room, bedroom, and bathroom or utility room. At around £20 for four units, the per-unit cost comes in at just £5, making this one of the most affordable ways to deploy ultrasonic repellers throughout your home.
+        The BRISON 2 Pack provides two individual plug-in units — enough to cover a couple of key rooms, such as the kitchen and a living room or bedroom. At around £14 for two units, it is an inexpensive way to try ultrasonic repellers in more than one room without a large upfront cost.
       </p>
       <p>
         Each unit is a basic single-frequency emitter without the variable sweep feature found in some competitors. This means there is a higher risk of pest habituation over time, as rodents and insects exposed to a constant, unchanging frequency may simply learn to ignore it. The manufacturer claims effectiveness against mice, rats, mosquitoes, cockroaches, spiders, and ants — an ambitious list that the scientific literature does not support.
@@ -405,7 +405,7 @@ export default function BestUltrasonicPestRepellersPage() {
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>Four units provide wider home coverage</li>
+        <li>Two units cover a couple of rooms</li>
         <li>Very affordable per-unit cost</li>
         <li>Simple plug-and-forget operation</li>
         <li>Silent to human ears</li>
