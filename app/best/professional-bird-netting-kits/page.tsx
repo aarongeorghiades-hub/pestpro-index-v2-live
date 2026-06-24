@@ -7,16 +7,16 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Professional Bird Netting Kits UK (2026)',
+    title: 'Best Professional Bird Netting UK (2026)',
     description:
-      'Professional bird netting kits for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.',
+      'Professional bird netting for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.',
     alternates: {
       canonical: 'https://pestproindex.com/best/professional-bird-netting-kits',
     },
     openGraph: {
-      title: 'Best Professional Bird Netting Kits UK (2026)',
+      title: 'Best Professional Bird Netting UK (2026)',
       description:
-        'Professional bird netting kits for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.',
+        'Professional bird netting for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.',
       url: 'https://pestproindex.com/best/professional-bird-netting-kits',
       type: 'article',
       siteName: 'PestPro Index',
@@ -27,9 +27,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Best Professional Bird Netting Kits UK (2026)',
+  headline: 'Best Professional Bird Netting UK (2026)',
   description:
-    'Professional bird netting kits for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.',
+    'Professional bird netting for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.',
   datePublished: '2026-04-06',
   dateModified: '2026-04-06',
   author: {
@@ -67,7 +67,7 @@ const breadcrumbSchema = {
     {
       '@type': 'ListItem',
       position: 3,
-      name: 'Best Professional Bird Netting Kits UK (2026)',
+      name: 'Best Professional Bird Netting UK (2026)',
       item: 'https://pestproindex.com/best/professional-bird-netting-kits',
     },
   ],
@@ -128,8 +128,8 @@ const tocItems = [
 export default function BestProfessionalBirdNettingKitsPage() {
   return (
     <GuideLayout
-      title="Best Professional Bird Netting Kits for Commercial Properties & Landlords (2026)"
-      subtitle="Professional bird netting kits for commercial properties, landlords and facilities managers. Large-scale pigeon and bird exclusion systems reviewed and compared."
+      title="Best Professional Bird Netting for Commercial Properties & Landlords (2026)"
+      subtitle="Professional bird netting for commercial properties, landlords and facilities managers. Large-scale pigeon and bird exclusion systems reviewed and compared."
       lastUpdated="April 2026"
       readingTime="9 min"
       breadcrumbParent={{ label: 'Best', href: '/best' }}
@@ -399,7 +399,7 @@ export default function BestProfessionalBirdNettingKitsPage() {
       </p>
 
       {/* Buying Guide */}
-      <h2 id="buying-guide">Buying Guide: Choosing the Right Netting Kit</h2>
+      <h2 id="buying-guide">Buying Guide: Choosing the Right Bird Netting</h2>
       <p>
         Selecting the correct bird netting specification for your commercial property requires attention to several key factors. Getting these right ensures an effective, long-lasting installation; getting them wrong results in premature failure, wasted expenditure, and ongoing bird problems.
       </p>

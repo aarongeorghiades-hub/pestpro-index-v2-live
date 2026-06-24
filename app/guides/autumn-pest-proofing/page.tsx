@@ -370,7 +370,7 @@ export default function AutumnPestProofingPage() {
             'Use with expanding foam for a permanent, weathertight seal',
           ]}
           price="&pound;12"
-          asin="B01B3QXQMI"
+          asin="B006GQQVDW"
           bestFor="Best for Gap Sealing"
           rank={1}
         />

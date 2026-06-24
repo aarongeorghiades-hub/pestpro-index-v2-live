@@ -413,7 +413,7 @@ export default function MovingHousePestChecklistPage() {
             'Use with expanding foam for a permanent, rodent-proof seal',
           ]}
           price="&pound;12"
-          asin="B01B3QXQMI"
+          asin="B006GQQVDW"
           bestFor="Best for Gap Sealing"
           rank={3}
         />
