@@ -6,6 +6,8 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import ListingSchema from '@/components/ListingSchema';
 import CityAreaLinks from '@/components/CityAreaLinks';
+import ProductCard from '@/components/ProductCard';
+import { topProductsByPest } from '@/data/pest-products';
 import { cityDirectoryHref } from '@/lib/seo';
 import { LOCATIONS, PESTS } from '@/app/pest-control/pest-city-config';
 import type { LocationConfig, PestConfig } from '@/app/pest-control/pest-city-config';
@@ -133,6 +135,42 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
           </div>
         </div>
       </section>
+
+      {/* TOP DIY PRODUCTS — reuses the rank 1-3 products from the matching /best page.
+          Keys off pest.slug only, so it renders correctly on fallback pest pages too. */}
+      {(topProductsByPest[pest.slug]?.length ?? 0) > 0 && (
+        <section className="py-16 bg-white border-b-2 border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-black text-gray-900 mb-4">
+                Top DIY {pest.name} Products
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Our top-rated picks for treating {pest.namePlural.toLowerCase()} yourself
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {topProductsByPest[pest.slug].map((product, i) => (
+                <ProductCard
+                  key={product.asin}
+                  name={product.name}
+                  rating={product.rating}
+                  features={product.features}
+                  price={product.price}
+                  asin={product.asin}
+                  bestFor={product.bestFor}
+                  rank={i + 1}
+                />
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <Link href={pest.reviewUrl} className="text-blue-600 hover:underline font-semibold text-lg">
+                See all {pest.name} products &rarr;
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* PROVIDER CARDS */}
       <section className="py-16 bg-white">
