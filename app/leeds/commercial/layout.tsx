@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'Commercial Pest Control Leeds | Business Pest Management',
   description: 'Find commercial pest control providers in Leeds & West Yorkshire. Compare services for offices, restaurants, warehouses and retail. BPCA certified, contract options available.',
   alternates: {

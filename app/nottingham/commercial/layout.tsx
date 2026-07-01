@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'Commercial Pest Control in Nottingham | Business Services',
   description: 'Find commercial pest control services in Nottingham and the East Midlands. BPCA-certified providers for offices, restaurants, hotels, warehouses, and more.',
   alternates: {

@@ -1,5 +1,9 @@
 import { createServerClient } from '@/utils/supabase-server';
 import CommercialDirectoryClient, { type Provider } from './CommercialDirectoryClient';
+import type { Metadata } from 'next';
+
+// Commercial directory pages are pruned from the index (thin/duplicate service-lead content).
+export const metadata: Metadata = { robots: { index: false, follow: true } };
 
 export const dynamic = 'force-dynamic';
 

@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'Commercial Pest Control Liverpool | Business Pest Management',
   description: 'Find commercial pest control providers in Liverpool & Merseyside. Compare services for offices, restaurants, warehouses and retail. BPCA certified, contract options available.',
   alternates: {

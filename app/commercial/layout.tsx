@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'Commercial Pest Control London | Compare Providers',
   description: 'Compare commercial pest control providers across London. Filter by sector, certifications, contract types and services. No lead fees.',
   alternates: {

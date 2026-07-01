@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'Brighton & Sussex Commercial Pest Control',
   description: 'Commercial pest control services across Brighton and Sussex. Compare verified providers for offices, restaurants, hotels, warehouses and more.',
   alternates: {

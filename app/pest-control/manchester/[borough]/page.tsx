@@ -40,12 +40,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const pest = getPestBySlug(borough);
   if (pest) {
+    // noindex when the pest-filtered query is empty and the page falls back to
+    // the city-residential set (duplicate). Mirrors the fallback in the page body.
+    const supabase = createServerClient();
+    const { count } = await supabase
+      .from('Providers')
+      .select('canonical_id', { count: 'exact', head: true })
+      .eq('active', true)
+      .eq('business_residential', true)
+      .eq(pest.filterColumn, true)
+      .or(`regions.cs.["${cityConfig.region}"]`);
+    const isFallback = (count ?? 0) === 0;
     return {
       title: `${pest.name} Control ${cityConfig.name} — Find Verified ${pest.name} Specialists`,
       description: `Find verified ${pest.namePlural.toLowerCase()} control specialists in ${cityConfig.name}. Compare providers with ratings, certifications, and service details. No lead fees, no commissions.`,
       alternates: {
         canonical: `https://pestproindex.com/pest-control/${cityConfig.slug}/${pest.slug}`,
       },
+      ...(isFallback && { robots: { index: false, follow: true } }),
     };
   }
 
@@ -54,6 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Pest Control in ${data.name} — ${cityConfig.name} Specialists`,
     description: data.metaDescription,
+    robots: { index: false, follow: true },
     alternates: {
       canonical: `https://pestproindex.com/pest-control/manchester/${data.slug}`,
     },
