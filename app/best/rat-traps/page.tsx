@@ -340,7 +340,7 @@ export default function BestRatTrapsPage() {
             'Amazon Choice product with 5-star rating',
           ]}
           price="£12"
-          asin="B01NB0QNPI"
+          asin="B071DJVBT4"
           bestFor="Best Professional-Grade"
         />
       </div>

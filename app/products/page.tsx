@@ -216,7 +216,7 @@ export default function ProductsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: 'ROSHIELD 4-Pack Rat Trap', asin: 'B01NB0QNPI', rating: '★★★★★', note: 'Heavy duty', desc: 'Professional quality rat traps. Heavy duty design for large rats.' },
+              { name: 'ROSHIELD 4-Pack Rat Trap', asin: 'B071DJVBT4', rating: '★★★★★', note: 'Heavy duty', desc: 'Professional quality rat traps. Heavy duty design for large rats.' },
               { name: 'ROSHIELD Rat Bait Station Box', asin: 'B07W9FMLWF', rating: '★★★★★', note: 'Tamper-resistant', desc: 'Lockable bait station. Protects bait from children and pets.' },
               { name: 'Rat Reaper XXL Snap Trap', asin: 'B08V918HNB', rating: '★★★★☆', note: 'Extra large', desc: 'Extra large snap trap designed for UK rats.' },
               { name: 'The Big Cheese Rat Bait Station', asin: 'B088TH1XCS', rating: '★★★★★', note: '19K+ reviews', desc: 'Compact bait station. 19,000+ reviews, proven effective.' },

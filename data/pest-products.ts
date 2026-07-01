@@ -45,7 +45,7 @@ export const topProductsByPest: Record<string, PestProduct[]> = {
     },
     {
       name: 'ROSHIELD 4-Pack Rat Trap',
-      asin: 'B01NB0QNPI',
+      asin: 'B071DJVBT4',
       price: '£12',
       rating: 4.4,
       bestFor: 'Best Professional-Grade',
