@@ -164,7 +164,27 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/pest/pigeons',
-        destination: '/pest-control',
+        destination: '/guides/pigeon-control',
+        permanent: true,
+      },
+      {
+        source: '/guides/professional-vs-diy-pest-control',
+        destination: '/guides/professional-pest-control-vs-diy',
+        permanent: true,
+      },
+      {
+        source: '/pest/foxes',
+        destination: '/guides/how-to-get-rid-of-foxes',
+        permanent: true,
+      },
+      {
+        source: '/pest/moles',
+        destination: '/best/mole-traps',
+        permanent: true,
+      },
+      {
+        source: '/pest/seagulls',
+        destination: '/best/bird-deterrents',
         permanent: true,
       },
       {
