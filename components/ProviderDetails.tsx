@@ -8,7 +8,78 @@ import { externalHref, EXTERNAL_LINK_REL } from '@/lib/externalUrl';
 // Server Component and passed in, so the full content is present in the initial
 // HTML (no client-side fetch, no "Loading provider details…" state) — this is
 // what stops valid provider pages reading as soft 404s.
+
+// Badge definitions keyed by the ACTUAL "Providers" column names. These were
+// previously read without the pest_ prefix (provider.rats rather than
+// provider.pest_rats), so every badge resolved to undefined and no pest or
+// service section ever rendered. Keys are checked against the live schema —
+// do not add one without a backing column.
+//
+// Overlaps: pest_birds is used rather than pest_birds_general, and rats/mice
+// are rendered individually rather than via pest_rodents(_general), so the
+// specific column wins and no pest is badged twice.
+const PEST_BADGES: { column: string; label: string }[] = [
+  { column: 'pest_rats', label: 'Rats' },
+  { column: 'pest_mice', label: 'Mice' },
+  { column: 'pest_squirrels', label: 'Squirrels' },
+  { column: 'pest_foxes', label: 'Foxes' },
+  { column: 'pest_wasps', label: 'Wasps' },
+  { column: 'pest_bees', label: 'Bees' },
+  { column: 'pest_ants', label: 'Ants' },
+  { column: 'pest_cockroaches', label: 'Cockroaches' },
+  { column: 'pest_bed_bugs', label: 'Bed Bugs' },
+  { column: 'pest_fleas', label: 'Fleas' },
+  { column: 'pest_moths', label: 'Moths' },
+  { column: 'pest_flies', label: 'Flies' },
+  { column: 'pest_beetles', label: 'Beetles' },
+  { column: 'pest_spiders', label: 'Spiders' },
+  { column: 'pest_silverfish', label: 'Silverfish' },
+  { column: 'pest_ladybirds', label: 'Ladybirds' },
+  { column: 'pest_pigeons', label: 'Pigeons' },
+  { column: 'pest_seagulls', label: 'Seagulls' },
+  { column: 'pest_birds', label: 'Birds' },
+];
+
+const SERVICE_BADGES: { column: string; label: string }[] = [
+  { column: 'proofing_services', label: 'Pest Proofing' },
+  { column: 'fumigation', label: 'Fumigation' },
+  { column: 'heat_treatment', label: 'Heat Treatment' },
+  { column: 'detection_dogs', label: 'Detection Dogs' },
+  { column: 'falconry_bird_control', label: 'Falconry Bird Control' },
+  { column: 'specialist_bird_control', label: 'Specialist Bird Control' },
+  { column: 'specialist_fly_killers', label: 'Fly Killer Systems' },
+  { column: 'high_rise_rope_access', label: 'High-Rise Rope Access' },
+  { column: 'humane_non_lethal_methods', label: 'Humane / Non-Lethal Methods' },
+  { column: 'eco_friendly_methods', label: 'Eco-Friendly Methods' },
+  { column: 'emergency_24_7', label: '24/7 Emergency Callout' },
+  { column: 'free_surveys', label: 'Free Surveys' },
+];
+
+const CERTIFICATION_BADGES: { column: string; label: string }[] = [
+  { column: 'bpca_member', label: 'BPCA Member' },
+  { column: 'npta_member', label: 'NPTA Member' },
+  { column: 'cepa_certified', label: 'CEPA Certified' },
+  { column: 'chas_accredited', label: 'CHAS Accredited' },
+  { column: 'basis_prompt', label: 'BASIS PROMPT' },
+  { column: 'rsph_level_2', label: 'RSPH Level 2' },
+  { column: 'safe_contractor', label: 'SafeContractor' },
+  { column: 'trustmark', label: 'TrustMark' },
+];
+
+// Only ever badge an explicit true. NULL (unknown — the provider was never
+// researched for this pest) and false both render as absent, so an unresearched
+// provider is never presented as actively not offering something.
+function activeBadges(
+  provider: Record<string, unknown>,
+  badges: { column: string; label: string }[]
+) {
+  return badges.filter((badge) => provider[badge.column] === true);
+}
+
 export default function ProviderDetails({ provider }: { provider: any }) {
+  const pestBadges = activeBadges(provider, PEST_BADGES);
+  const serviceBadges = activeBadges(provider, SERVICE_BADGES);
+  const certificationBadges = activeBadges(provider, CERTIFICATION_BADGES);
   const citySlug = provider.regions?.[0] || 'london';
   const cityName = citySlug.charAt(0).toUpperCase() + citySlug.slice(1);
   const residentialLink = citySlug === 'london' ? '/residential' : `/${citySlug}/residential`;
@@ -97,59 +168,46 @@ export default function ProviderDetails({ provider }: { provider: any }) {
         </div>
 
         {/* CERTIFICATIONS */}
-        {(provider.bpca_member || provider.npta_member || provider.cepa_certified || provider.chas) && (
+        {certificationBadges.length > 0 && (
           <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
               <Award size={24} className="text-blue-600" />
               Certifications & Memberships
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {provider.bpca_member && <div className="bg-blue-50 border border-blue-200 rounded p-3 text-center"><p className="font-semibold text-blue-900">BPCA Member</p></div>}
-              {provider.npta_member && <div className="bg-blue-50 border border-blue-200 rounded p-3 text-center"><p className="font-semibold text-blue-900">NPTA Member</p></div>}
-              {provider.cepa_certified && <div className="bg-blue-50 border border-blue-200 rounded p-3 text-center"><p className="font-semibold text-blue-900">CEPA Certified</p></div>}
-              {provider.chas && <div className="bg-blue-50 border border-blue-200 rounded p-3 text-center"><p className="font-semibold text-blue-900">CHAS Accredited</p></div>}
+              {certificationBadges.map((badge) => (
+                <div key={badge.column} className="bg-blue-50 border border-blue-200 rounded p-3 text-center">
+                  <p className="font-semibold text-blue-900">{badge.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         )}
 
         {/* PEST TYPES */}
-        {(provider.rats || provider.mice || provider.wasps || provider.bedbugs || provider.cockroaches || provider.ants || provider.fleas || provider.moths || provider.pigeons || provider.squirrels || provider.foxes || provider.badgers || provider.rabbits || provider.hedgehogs || provider.moles || provider.birds_general) && (
+        {pestBadges.length > 0 && (
           <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Pest Types Handled</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {provider.rats && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Rats</div>}
-              {provider.mice && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Mice</div>}
-              {provider.wasps && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Wasps</div>}
-              {provider.bedbugs && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Bed Bugs</div>}
-              {provider.cockroaches && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Cockroaches</div>}
-              {provider.ants && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Ants</div>}
-              {provider.fleas && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Fleas</div>}
-              {provider.moths && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Moths</div>}
-              {provider.pigeons && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Pigeons</div>}
-              {provider.squirrels && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Squirrels</div>}
-              {provider.foxes && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Foxes</div>}
-              {provider.badgers && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Badgers</div>}
-              {provider.rabbits && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Rabbits</div>}
-              {provider.hedgehogs && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Hedgehogs</div>}
-              {provider.moles && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Moles</div>}
-              {provider.birds_general && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Birds</div>}
+              {pestBadges.map((badge) => (
+                <div key={badge.column} className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">
+                  {badge.label}
+                </div>
+              ))}
             </div>
           </div>
         )}
 
         {/* SERVICES */}
-        {(provider.pest_proofing || provider.trapping || provider.fumigation || provider.thermal_imaging || provider.thermal_treatment || provider.exclusion_work || provider.garden_treatments || provider.drain_cleaning) && (
+        {serviceBadges.length > 0 && (
           <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Services Offered</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {provider.pest_proofing && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Pest Proofing</div>}
-              {provider.trapping && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Trapping</div>}
-              {provider.fumigation && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Fumigation</div>}
-              {provider.thermal_imaging && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Thermal Imaging</div>}
-              {provider.thermal_treatment && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Thermal Treatment</div>}
-              {provider.exclusion_work && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Exclusion Work</div>}
-              {provider.garden_treatments && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Garden Treatments</div>}
-              {provider.drain_cleaning && <div className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">Drain Cleaning</div>}
+              {serviceBadges.map((badge) => (
+                <div key={badge.column} className="bg-gray-100 rounded px-3 py-2 text-sm font-medium text-gray-900">
+                  {badge.label}
+                </div>
+              ))}
             </div>
           </div>
         )}
