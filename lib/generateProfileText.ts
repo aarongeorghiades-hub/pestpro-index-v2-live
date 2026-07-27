@@ -1,3 +1,15 @@
+import { activePests } from './pests';
+
+/**
+ * How many pests to name before falling back to "and more".
+ *
+ * Five keeps the sentence readable while covering the great majority of
+ * providers outright — most carry five or fewer true flags, so most
+ * descriptions now list every pest with no "and more" at all. The suffix is
+ * only appended when there are genuinely unnamed pests left over.
+ */
+const MAX_PESTS_NAMED = 5;
+
 /**
  * Generates a unique profile description for providers with NULL profile_text
  * Uses existing database fields to create meaningful content
@@ -22,19 +34,33 @@ export function generateProfileText(provider: any): string {
     parts.push(`They hold ${certs.join(', ')} certification${certs.length > 1 ? 's' : ''}.`);
   }
 
-  // Services - residential
-  const pests: string[] = [];
-  if (provider.pest_mice) pests.push('mice');
-  if (provider.pest_rats) pests.push('rats');
-  if (provider.pest_bed_bugs) pests.push('bed bugs');
-  if (provider.pest_wasps) pests.push('wasps');
-  if (provider.pest_cockroaches) pests.push('cockroaches');
-  if (provider.pest_ants) pests.push('ants');
-  if (provider.pest_birds_general) pests.push('birds');
-  if (provider.pest_squirrels) pests.push('squirrels');
+  // Pests handled. Read from the shared canonical list so this sentence and the
+  // badges on the provider page can never name different pests. Only explicit
+  // true counts — NULL and false are absent, never a claim either way. A
+  // provider with no true pest flags gets no pest sentence at all.
+  const pests = activePests(provider);
   if (pests.length > 0) {
-    const pestList = pests.length > 3 ? pests.slice(0, 5).join(', ') + ' and more' : pests.join(', ');
-    parts.push(`Their residential services cover ${pestList}.`);
+    const named = pests.slice(0, MAX_PESTS_NAMED).map((pest) => pest.proseLabel);
+    // "and more" only when pests genuinely remain unnamed.
+    const pestList =
+      pests.length > MAX_PESTS_NAMED ? `${named.join(', ')} and more` : named.join(', ');
+
+    // Word the sentence to the sectors the provider actually serves, so a
+    // commercial-only firm is never described as residential.
+    const residential = provider.business_residential === true;
+    const commercial = provider.commercial === true || provider.business_commercial === true;
+    let scope: string;
+    if (residential && commercial) {
+      scope = 'Their residential and commercial services cover';
+    } else if (commercial) {
+      scope = 'Their commercial services cover';
+    } else if (residential) {
+      scope = 'Their residential services cover';
+    } else {
+      // Neither flag set — say nothing about sector rather than guess.
+      scope = 'They treat';
+    }
+    parts.push(`${scope} ${pestList}.`);
   }
 
   // Commercial features
@@ -50,7 +76,11 @@ export function generateProfileText(provider: any): string {
 
   // Rating
   if (provider.google_rating) {
-    parts.push(`They have a ${provider.google_rating} star rating on Google${provider.google_review_count ? ` from ${provider.google_review_count} reviews` : ''}.`);
+    const reviewCount = provider.google_review_count;
+    const reviewText = reviewCount
+      ? ` from ${reviewCount} ${reviewCount === 1 ? 'review' : 'reviews'}`
+      : '';
+    parts.push(`They have a ${provider.google_rating} star rating on Google${reviewText}.`);
   }
 
   // Contact

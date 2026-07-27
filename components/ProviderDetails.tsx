@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { MapPin, Phone, Mail, Globe, Star, Award, Briefcase, Home as HomeIcon } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import { generateProfileText } from '@/lib/generateProfileText';
+import { activePests } from '@/lib/pests';
 import { externalHref, EXTERNAL_LINK_REL } from '@/lib/externalUrl';
 
 // Server-rendered provider detail view. The provider is fetched in the page's
@@ -9,38 +10,15 @@ import { externalHref, EXTERNAL_LINK_REL } from '@/lib/externalUrl';
 // HTML (no client-side fetch, no "Loading provider details…" state) — this is
 // what stops valid provider pages reading as soft 404s.
 
-// Badge definitions keyed by the ACTUAL "Providers" column names. These were
-// previously read without the pest_ prefix (provider.rats rather than
+// Pest badges come from lib/pests.ts — the same list the description generator
+// reads, so the badges and the prose can no longer disagree. Service and
+// certification badges are local because nothing else consumes them.
+//
+// Badge definitions are keyed by the ACTUAL "Providers" column names. These
+// were previously read without the pest_ prefix (provider.rats rather than
 // provider.pest_rats), so every badge resolved to undefined and no pest or
 // service section ever rendered. Keys are checked against the live schema —
 // do not add one without a backing column.
-//
-// Overlaps: pest_birds is used rather than pest_birds_general, and rats/mice
-// are rendered individually rather than via pest_rodents(_general), so the
-// specific column wins and no pest is badged twice.
-const PEST_BADGES: { column: string; label: string }[] = [
-  { column: 'pest_rats', label: 'Rats' },
-  { column: 'pest_mice', label: 'Mice' },
-  { column: 'pest_squirrels', label: 'Squirrels' },
-  { column: 'pest_foxes', label: 'Foxes' },
-  { column: 'pest_moles', label: 'Moles' },
-  { column: 'pest_wasps', label: 'Wasps' },
-  { column: 'pest_bees', label: 'Bees' },
-  { column: 'pest_ants', label: 'Ants' },
-  { column: 'pest_cockroaches', label: 'Cockroaches' },
-  { column: 'pest_bed_bugs', label: 'Bed Bugs' },
-  { column: 'pest_fleas', label: 'Fleas' },
-  { column: 'pest_moths', label: 'Moths' },
-  { column: 'pest_flies', label: 'Flies' },
-  { column: 'pest_beetles', label: 'Beetles' },
-  { column: 'pest_spiders', label: 'Spiders' },
-  { column: 'pest_silverfish', label: 'Silverfish' },
-  { column: 'pest_ladybirds', label: 'Ladybirds' },
-  { column: 'pest_pigeons', label: 'Pigeons' },
-  { column: 'pest_seagulls', label: 'Seagulls' },
-  { column: 'pest_birds', label: 'Birds' },
-];
-
 const SERVICE_BADGES: { column: string; label: string }[] = [
   { column: 'proofing_services', label: 'Pest Proofing' },
   { column: 'fumigation', label: 'Fumigation' },
@@ -78,7 +56,7 @@ function activeBadges(
 }
 
 export default function ProviderDetails({ provider }: { provider: any }) {
-  const pestBadges = activeBadges(provider, PEST_BADGES);
+  const pestBadges = activePests(provider);
   const serviceBadges = activeBadges(provider, SERVICE_BADGES);
   const certificationBadges = activeBadges(provider, CERTIFICATION_BADGES);
   const citySlug = provider.regions?.[0] || 'london';
@@ -107,7 +85,7 @@ export default function ProviderDetails({ provider }: { provider: any }) {
               </div>
               <span className="text-lg font-semibold text-gray-900">{provider.google_rating}</span>
               {provider.google_review_count && (
-                <span className="text-gray-600">({provider.google_review_count.toLocaleString()} reviews)</span>
+                <span className="text-gray-600"> ({provider.google_review_count.toLocaleString()} {provider.google_review_count === 1 ? 'review' : 'reviews'})</span>
               )}
             </div>
           )}
@@ -143,7 +121,10 @@ export default function ProviderDetails({ provider }: { provider: any }) {
                 <Phone size={20} className="text-blue-600 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-gray-600">Phone</p>
-                  <a href={`tel:${provider.phone}`} className="text-lg text-blue-600 hover:underline">{provider.phone}</a>
+                  {/* href is stripped of whitespace — a space in a tel: URI breaks
+                      tap-to-call on some mobile browsers. The displayed number
+                      keeps its formatting. */}
+                  <a href={`tel:${String(provider.phone).replace(/\s+/g, '')}`} className="text-lg text-blue-600 hover:underline">{provider.phone}</a>
                 </div>
               </div>
             )}
