@@ -234,15 +234,13 @@ export default function ProfessionalsPage() {
             Join <span className="font-bold text-white">1,090+ UK providers</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
           </p>
 
-          <a
-            href="https://forms.gle/f4ZvCrBNXK75kobS8"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/professionals/submit"
             className="block md:inline-block w-full md:w-auto px-6 md:px-10 py-3 md:py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-base md:text-lg rounded-xl hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 animate-fade-in-up text-center"
             style={{ animationDelay: '0.4s' }}
           >
             Create Your Free Listing On Our Database
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -420,14 +418,12 @@ export default function ProfessionalsPage() {
                   <span className="text-gray-700">Appear in search results based on your service area and information available online</span>
                 </li>
               </ul>
-              <a
-                href="https://forms.gle/f4ZvCrBNXK75kobS8"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/professionals/submit?tier=free"
                 className="block w-full text-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all"
               >
                 Create Your Free Listing
-              </a>
+              </Link>
             </div>
 
             {/* Enhanced Listing */}
@@ -460,14 +456,12 @@ export default function ProfessionalsPage() {
                   <span className="text-gray-700">Photo gallery (up to 6 images)</span>
                 </li>
               </ul>
-              <a
-                href="https://forms.gle/f4ZvCrBNXK75kobS8"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/professionals/submit?tier=enhanced"
                 className="block w-full text-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all"
               >
                 Get Enhanced Listing
-              </a>
+              </Link>
             </div>
 
             {/* Featured Provider of the Week */}
@@ -499,14 +493,12 @@ export default function ProfessionalsPage() {
                   <span className="text-gray-700">Perfect for seasonal promotions or new launches</span>
                 </li>
               </ul>
-              <a
-                href="https://forms.gle/f4ZvCrBNXK75kobS8"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/professionals/submit?tier=featured"
                 className="block w-full text-center px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-lg hover:from-amber-600 hover:to-orange-600 transition-all shadow-lg"
               >
                 Become Featured Provider
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -649,14 +641,12 @@ export default function ProfessionalsPage() {
             Join the UK's fastest-growing pest control directory
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://forms.gle/f4ZvCrBNXK75kobS8"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/professionals/submit"
               className="px-10 py-4 bg-white text-blue-600 font-bold text-lg rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               Create Your Free Listing
-            </a>
+            </Link>
             <Link
               href="/contact"
               className="px-10 py-4 border-2 border-white text-white font-bold text-lg rounded-xl hover:bg-white/10 transition-all"
