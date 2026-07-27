@@ -26,7 +26,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
     },
     {
       question: 'What certifications do you display?',
-      answer: 'We display BPCA membership, RSPH qualifications, CEPA certification, BASIS PROMPT, and local authority approvals. You control which credentials appear on your profile, and we verify each one.'
+      answer: 'We display BPCA membership, RSPH qualifications, CEPA certification, BASIS PROMPT, and local authority approvals.'
     },
     {
       question: 'How do reviews work?',
@@ -377,10 +377,10 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
             <div className="card-hover bg-blue-800/50 rounded-xl p-8 shadow-lg border-l-4 border-blue-300 hover:border-blue-200 hover:bg-blue-800/70">
               <div className="flex gap-4 mb-4">
                 <TrendingUp className="w-8 h-8 text-blue-300 flex-shrink-0" />
-                <h3 className="text-xl font-bold text-white">Neutral Rankings</h3>
+                <h3 className="text-xl font-bold text-white">No Paid Placement</h3>
               </div>
               <p className="text-blue-100">
-                Listings ranked by reviews and data, not who pays most.
+                No provider can pay to appear higher.
               </p>
             </div>
 
