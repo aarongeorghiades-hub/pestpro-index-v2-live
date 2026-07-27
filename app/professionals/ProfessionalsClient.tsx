@@ -30,7 +30,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
     },
     {
       question: 'How do reviews work?',
-      answer: 'We aggregate reviews from Google, Trustpilot, and other verified sources. We never edit or remove authentic reviews. Your rating is built on real customer feedback.'
+      answer: 'Your rating and review count are imported from Google. We do not edit them.'
     }
   ];
 
@@ -293,7 +293,7 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Verified review rating (where available)</span>
+                  <span className="text-gray-700">Review rating (where available)</span>
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
