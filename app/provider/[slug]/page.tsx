@@ -62,7 +62,8 @@ export async function generateMetadata({
 
   let description = `${provider.name} - pest control and pest removal provider serving ${location}.`;
   if (provider.google_rating && provider.google_review_count) {
-    description += ` Rated ${provider.google_rating}/5 from ${provider.google_review_count} Google reviews.`;
+    const reviewNoun = provider.google_review_count === 1 ? 'review' : 'reviews';
+    description += ` Rated ${provider.google_rating}/5 from ${provider.google_review_count} Google ${reviewNoun}.`;
   }
   description += ' Compare services, certifications and contact details on PestPro Index.';
 

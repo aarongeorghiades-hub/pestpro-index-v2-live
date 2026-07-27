@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useMemo } from 'react';
+import { PESTS } from '@/lib/pests';
 import { externalHref } from '@/lib/externalUrl';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -45,26 +46,26 @@ export interface Provider {
   is_featured?: boolean;
 
   // 20 pest type filters
-  pest_mice: boolean;
   pest_rats: boolean;
-  pest_rodents_general: boolean;
-  pest_bed_bugs: boolean;
+  pest_mice: boolean;
+  pest_squirrels: boolean;
+  pest_foxes: boolean;
+  pest_moles: boolean;
   pest_wasps: boolean;
-  pest_cockroaches: boolean;
+  pest_bees: boolean;
   pest_ants: boolean;
+  pest_cockroaches: boolean;
+  pest_bed_bugs: boolean;
   pest_fleas: boolean;
   pest_moths: boolean;
-  pest_pigeons: boolean;
-  pest_birds_general: boolean;
-  pest_squirrels: boolean;
   pest_flies: boolean;
-  pest_bees: boolean;
-  pest_foxes: boolean;
-  pest_spiders: boolean;
-  pest_seagulls: boolean;
-  pest_silverfish: boolean;
   pest_beetles: boolean;
+  pest_spiders: boolean;
+  pest_silverfish: boolean;
   pest_ladybirds: boolean;
+  pest_pigeons: boolean;
+  pest_seagulls: boolean;
+  pest_birds: boolean;
 
   // 7 service feature filters
   service_eco_friendly: boolean;
@@ -178,28 +179,11 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
   // RENDER
   // ============================================================================
 
-  const pestFilters = [
-    { value: 'pest_mice', label: 'Mice' },
-    { value: 'pest_rats', label: 'Rats' },
-    { value: 'pest_rodents_general', label: 'Rodents (General)' },
-    { value: 'pest_bed_bugs', label: 'Bed Bugs' },
-    { value: 'pest_wasps', label: 'Wasps' },
-    { value: 'pest_cockroaches', label: 'Cockroaches' },
-    { value: 'pest_ants', label: 'Ants' },
-    { value: 'pest_fleas', label: 'Fleas' },
-    { value: 'pest_moths', label: 'Moths' },
-    { value: 'pest_pigeons', label: 'Pigeons' },
-    { value: 'pest_birds_general', label: 'Birds (General)' },
-    { value: 'pest_squirrels', label: 'Squirrels' },
-    { value: 'pest_flies', label: 'Flies' },
-    { value: 'pest_bees', label: 'Bees' },
-    { value: 'pest_foxes', label: 'Foxes' },
-    { value: 'pest_spiders', label: 'Spiders' },
-    { value: 'pest_seagulls', label: 'Seagulls' },
-    { value: 'pest_silverfish', label: 'Silverfish' },
-    { value: 'pest_beetles', label: 'Beetles' },
-    { value: 'pest_ladybirds', label: 'Ladybirds' },
-  ];
+  // Filter options come from lib/pests.ts — the same canonical list the badges
+  // and the generated descriptions read, so a filter can never offer a pest the
+  // provider's own page does not show. The _general columns are deliberately
+  // absent: they hold stale import data we do not display.
+  const pestFilters = PESTS.map(pest => ({ value: pest.column, label: pest.label }));
 
   const serviceFilters = [
     { value: 'service_eco_friendly', label: 'Eco-Friendly' },
