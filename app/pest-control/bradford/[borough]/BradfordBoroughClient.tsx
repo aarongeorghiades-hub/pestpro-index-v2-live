@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { isTrophyProvider, TROPHY_LEGEND, TROPHY_ARIA_LABEL } from '@/lib/trophy';
 import { externalHref } from '@/lib/externalUrl';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -118,15 +119,15 @@ export default function BradfordBoroughClient({ borough, initialProviders }: { b
           ) : (
             <>
               <p className="text-gray-600 font-medium mb-8">Showing {providers.length} providers sorted by rating</p>
+              <p className="text-sm text-gray-600 mb-6">{TROPHY_LEGEND}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {providers.map(provider => {
-                  const isTrophy = provider.google_rating && provider.google_rating >= 4.5 &&
-                    provider.google_review_count && provider.google_review_count >= 30;
+                  const isTrophy = isTrophyProvider(provider);
                   const borderClass = isTrophy ? 'border-l-4 border-amber-500' : 'border-l-4 border-[#1e3a8a]';
 
                   return (
                     <div key={provider.canonical_id} className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 ${borderClass}`}>
-                      {isTrophy && <div className="text-2xl mb-2">🏆</div>}
+                      {isTrophy && <div className="text-2xl mb-2" role="img" aria-label={TROPHY_ARIA_LABEL}>🏆</div>}
                       <h3 className="font-bold text-base text-gray-900 mb-2 leading-tight line-clamp-2">
                         <Link href={`/provider/${provider.slug}`} className="text-blue-600 hover:underline">
                           {provider.name}
