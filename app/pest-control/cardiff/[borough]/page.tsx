@@ -52,8 +52,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       .or(`regions.cs.["${cityConfig.region}"]`);
     const isFallback = (count ?? 0) === 0;
     return {
-      title: `${pest.name} Control ${cityConfig.name} — Find Verified ${pest.name} Specialists`,
-      description: `Find verified ${pest.namePlural.toLowerCase()} control specialists in ${cityConfig.name}. Compare providers with ratings, certifications, and service details. No lead fees, no commissions.`,
+      title: `${pest.name} Control ${cityConfig.name} — Find ${pest.name} Specialists`,
+      description: `Find ${pest.namePlural.toLowerCase()} control specialists in ${cityConfig.name}. Compare providers with ratings, certifications, and service details. No lead fees, no commissions.`,
       alternates: {
         canonical: `https://pestproindex.com/pest-control/${cityConfig.slug}/${pest.slug}`,
       },

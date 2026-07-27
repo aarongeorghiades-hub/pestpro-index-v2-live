@@ -4,14 +4,14 @@ import { getAllBoroughs } from './london-boroughs';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Pest Control London | 389 Verified Providers Across 33 Boroughs',
-  description: 'Find trusted pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs. Verified Google ratings, no lead fees, no commissions.',
+  title: 'Pest Control London | 389 Providers Across 33 Boroughs',
+  description: 'Find trusted pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs. Google ratings, no lead fees, no commissions.',
   alternates: {
     canonical: 'https://pestproindex.com/pest-control/london',
   },
   openGraph: {
-    title: 'Pest Control London | 389 Verified Providers Across 33 Boroughs',
-    description: 'Find trusted pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs. Verified Google ratings, no lead fees, no commissions.',
+    title: 'Pest Control London | 389 Providers Across 33 Boroughs',
+    description: 'Find trusted pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs. Google ratings, no lead fees, no commissions.',
     url: 'https://pestproindex.com/pest-control/london',
     siteName: 'PestPro Index',
     locale: 'en_GB',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Pest Control London | 389 Verified Providers Across 33 Boroughs',
+    title: 'Pest Control London | 389 Providers Across 33 Boroughs',
     description: 'Find trusted pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs.',
   },
 };
@@ -41,7 +41,7 @@ export default function LondonPestControlHubPage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Pest Control Services in London',
-    description: 'Directory of 389 verified residential and 240 commercial pest control providers across all 33 London boroughs.',
+    description: 'Directory of 389 residential and 240 commercial pest control providers across all 33 London boroughs.',
     areaServed: { '@type': 'City', name: 'London' },
     url: 'https://pestproindex.com/pest-control/london',
   };
@@ -69,7 +69,7 @@ export default function LondonPestControlHubPage() {
             Pest Control in London
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-light mb-8 tracking-widest">
-            389 verified providers across all 33 London boroughs
+            389 providers across all 33 London boroughs
           </p>
         </div>
       </section>
@@ -104,7 +104,7 @@ export default function LondonPestControlHubPage() {
             London is one of the most challenging pest environments in the UK. The combination of dense Victorian and Georgian housing, extensive underground infrastructure, a network of canals and rivers, and an enormous food and hospitality industry creates conditions that sustain significant pest populations year-round. Mice, rats, cockroaches, bed bugs, foxes and moths are all commonly reported across the capital, and effective treatment often depends on finding a provider who understands the specific property type, borough and pest involved.
           </p>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            PestPro Index lists 389 verified residential and 240 commercial pest control providers across all 33 London boroughs, from the financial centre of the City of London to the outer suburbs of Havering, Bromley and Hillingdon. Every provider has been verified against Google ratings and business records, and every listing is free — no lead fees, no commissions, just honest directory data so Londoners can find trusted local providers quickly.
+            PestPro Index lists 389 residential and 240 commercial pest control providers across all 33 London boroughs, from the financial centre of the City of London to the outer suburbs of Havering, Bromley and Hillingdon. Every listing is free — no lead fees, no commissions, just honest directory data so Londoners can find local providers quickly.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Link href="/residential" className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all">
@@ -155,7 +155,7 @@ export default function LondonPestControlHubPage() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 text-center">Browse by London Borough</h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-            Select your borough to learn about local pest issues and connect with verified providers in your area.
+            Select your borough to learn about local pest issues and connect with providers in your area.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {boroughs.map((borough) => (

@@ -96,7 +96,7 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
             {pest.name} Control in {city.name}
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-bold mb-4 max-w-2xl drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
-            Find Verified {pest.name} Specialists
+            Find {pest.name} Specialists
           </p>
           <p className="text-sm sm:text-base md:text-lg font-semibold max-w-2xl drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
             No lead fees &middot; No commissions &middot; Free to contact
@@ -192,7 +192,7 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
               </div>
             ) : (
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                {providers.length} verified {pest.description} serving {city.name}
+                {providers.length} {pest.description} serving {city.name}
               </p>
             )}
           </div>

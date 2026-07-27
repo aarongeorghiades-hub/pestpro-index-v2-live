@@ -141,7 +141,7 @@ export default async function DynamicPage({ params }: Props) {
 
                   {city.providerCount && (
                     <p className="text-sm text-white/80 mb-4">
-                      {city.providerCount} verified providers
+                      {city.providerCount} providers
                     </p>
                   )}
 

@@ -55,7 +55,7 @@ export default function BoroughIndexPage() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <p className="text-lg text-gray-700 leading-relaxed">
-            Find pest control providers in your London borough. Select your area below to learn about local pest issues and connect with verified providers.
+            Find pest control providers in your London borough. Select your area below to learn about local pest issues and connect with providers.
           </p>
         </div>
       </section>

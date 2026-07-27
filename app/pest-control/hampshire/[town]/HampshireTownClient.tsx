@@ -63,7 +63,7 @@ export default function HampshireTownClient({ town, initialProviders }: { town: 
             Pest Control in {town.name}
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-bold mb-4 max-w-2xl drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
-            {providers.length} Verified Providers Serving {town.name}
+            {providers.length} Providers Serving {town.name}
           </p>
           <p className="text-sm sm:text-base md:text-lg font-semibold max-w-2xl drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
             South East &middot; No lead fees &middot; No commissions

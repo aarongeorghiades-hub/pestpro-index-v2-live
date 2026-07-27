@@ -63,7 +63,7 @@ export default function NottinghamBoroughClient({ borough, initialProviders }: {
             Pest Control in {borough.name}
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-bold mb-4 max-w-2xl drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
-            {providers.length} Verified Providers Serving {borough.name}
+            {providers.length} Providers Serving {borough.name}
           </p>
           <p className="text-sm sm:text-base md:text-lg font-semibold max-w-2xl drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
             East Midlands &middot; No lead fees &middot; No commissions
