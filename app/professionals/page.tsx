@@ -2,14 +2,17 @@
 export const dynamic = 'force-dynamic';
 
 import Link from 'next/link';
-import Image from 'next/image';
-import { ChevronDown, Eye, BookOpen, Shield, CheckCircle, Users, TrendingUp, Lock, Zap, Award, Target } from 'lucide-react';
+import { ChevronDown, Shield, CheckCircle, Users, TrendingUp, Lock, Target } from 'lucide-react';
 import Navigation from '@/components/Navigation';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { createClient } from '@/utils/supabase';
 
 export default function ProfessionalsPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  const [stats, setStats] = useState({ providers: 1090, coverage: 84, boroughs: 33 });
+  // Live count of active rows in "Providers". Null until it arrives, so the
+  // page never shows a number we have not actually counted.
+  const [providerCount, setProviderCount] = useState<number | null>(null);
+  const [displayCount, setDisplayCount] = useState(0);
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -30,12 +33,52 @@ export default function ProfessionalsPage() {
     }
   ];
 
-  // Animate stats on scroll
+  // Count active providers. head:true fetches no rows — just the count header.
   useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const supabase = createClient();
+        const { count, error } = await supabase
+          .from('Providers')
+          .select('canonical_id', { count: 'exact', head: true })
+          .eq('active', true);
+        if (!cancelled && !error && typeof count === 'number') {
+          setProviderCount(count);
+        }
+      } catch {
+        // Leave providerCount null; the stat stays hidden rather than guessing.
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const animateStats = useCallback((target: number) => {
+    const duration = 2000;
+    const start = Date.now();
+
+    const animate = () => {
+      const elapsed = Date.now() - start;
+      const progress = Math.min(elapsed / duration, 1);
+      setDisplayCount(Math.floor(target * progress));
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    animate();
+  }, []);
+
+  // Animate on scroll, but only once the real count has loaded.
+  useEffect(() => {
+    if (providerCount === null) return;
+
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && !hasAnimated) {
         setHasAnimated(true);
-        animateStats();
+        animateStats(providerCount);
       }
     }, { threshold: 0.5 });
 
@@ -44,29 +87,7 @@ export default function ProfessionalsPage() {
     }
 
     return () => observer.disconnect();
-  }, [hasAnimated]);
-
-  const animateStats = () => {
-    const duration = 2000;
-    const start = Date.now();
-
-    const animate = () => {
-      const elapsed = Date.now() - start;
-      const progress = Math.min(elapsed / duration, 1);
-
-      setStats({
-        providers: Math.floor(1090 * progress),
-        coverage: Math.floor(84 * progress),
-        boroughs: Math.floor(33 * progress)
-      });
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    animate();
-  };
+  }, [hasAnimated, providerCount, animateStats]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -223,7 +244,7 @@ export default function ProfessionalsPage() {
           </h1>
           
           <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-blue-100/95 max-w-3xl mx-auto leading-relaxed font-semibold text-center mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Join <span className="font-bold text-white">1,090+ UK providers</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
+            Join <span className="font-bold text-white">{providerCount !== null ? `${providerCount.toLocaleString()} UK providers` : 'UK providers'}</span> on the UK's only <span className="font-bold text-white">neutral pest control directory</span>. No lead fees. No commissions. Just customers finding you.
           </p>
 
           <Link
@@ -239,34 +260,22 @@ export default function ProfessionalsPage() {
       {/* Stats Bar */}
       <div className="bg-white border-b-2 border-gray-100 py-16" ref={statsRef}>
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-            <div className="stat-item text-center group">
-              <div className="flex justify-center mb-2">
-                <Users className="w-6 md:w-8 h-6 md:h-8 text-blue-600" />
+          <div className="grid grid-cols-2 gap-4 md:gap-8 max-w-2xl mx-auto">
+            {providerCount !== null && (
+              <div className="stat-item text-center group">
+                <div className="flex justify-center mb-2">
+                  <Users className="w-6 md:w-8 h-6 md:h-8 text-blue-600" />
+                </div>
+                <div className="text-3xl md:text-5xl font-black text-blue-600 mb-2">{displayCount.toLocaleString()}</div>
+                <div className="text-xs md:text-sm text-gray-600 font-semibold">Providers Listed</div>
               </div>
-              <div className="text-3xl md:text-5xl font-black text-blue-600 mb-2">{stats.providers}</div>
-              <div className="text-xs md:text-sm text-gray-600 font-semibold">Providers Listed</div>
-            </div>
-            <div className="stat-item text-center group">
-              <div className="flex justify-center mb-2">
-                <TrendingUp className="w-6 md:w-8 h-6 md:h-8 text-blue-600" />
-              </div>
-              <div className="text-3xl md:text-5xl font-black text-blue-600 mb-2">{stats.coverage}%</div>
-              <div className="text-xs md:text-sm text-gray-600 font-semibold">Review Coverage</div>
-            </div>
+            )}
             <div className="stat-item text-center group">
               <div className="flex justify-center mb-2">
                 <Lock className="w-6 md:w-8 h-6 md:h-8 text-blue-600" />
               </div>
               <div className="text-3xl md:text-5xl font-black text-blue-600 mb-2">£0</div>
               <div className="text-xs md:text-sm text-gray-600 font-semibold">Lead Fees</div>
-            </div>
-            <div className="stat-item text-center group">
-              <div className="flex justify-center mb-2">
-                <Award className="w-6 md:w-8 h-6 md:h-8 text-blue-600" />
-              </div>
-              <div className="text-3xl md:text-5xl font-black text-blue-600 mb-2">{stats.boroughs}</div>
-              <div className="text-xs md:text-sm text-gray-600 font-semibold">London Boroughs</div>
             </div>
           </div>
         </div>
@@ -280,55 +289,6 @@ export default function ProfessionalsPage() {
         </p>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Card 1: Exposure */}
-          <div className="card-hover bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-lg border-2 border-gray-100 p-10 hover:border-blue-300">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6 icon-bounce">
-              <Eye className="w-8 h-8 text-blue-600" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Exposure</h3>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>"Top Rated" badge eligibility</span>
-              </li>
-              <li className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>Priority placement in search results</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Card 2: Continuing Education */}
-          <div className="card-hover bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-lg border-2 border-gray-100 p-10 hover:border-blue-300 relative md:row-span-2">
-            <div className="absolute top-4 right-4 bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-bold animate-pulse-glow">
-              Coming Soon
-            </div>
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6 icon-bounce">
-              <BookOpen className="w-8 h-8 text-blue-600" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Continuing Education</h3>
-            <p className="text-gray-700 mb-6">
-              CPD-accredited courses to support your professional development and certification requirements.
-            </p>
-            <ul className="space-y-3 text-gray-700 mb-8">
-              <li className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>BPCA Certified (20 CPD points/year)</span>
-              </li>
-              <li className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>RSPH Level 2 Award</span>
-              </li>
-              <li className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>City & Guilds qualifications</span>
-              </li>
-            </ul>
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-4 border-l-4 border-blue-500">
-              <p className="text-sm font-semibold text-blue-900">Launching Q2 2026</p>
-            </div>
-          </div>
-
           {/* Card 3: Compliance Hub */}
           <div className="card-hover bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-lg border-2 border-gray-100 p-10 hover:border-blue-300 relative">
             <div className="absolute top-4 right-4 bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-bold animate-pulse-glow">
