@@ -13,8 +13,8 @@ export function cityDirectoryHref(citySlug: string): string {
 // title template (`%s | PestPro Index`) appends it once.
 export function cityDirectoryMetadata(cityName: string, citySlug: string): Metadata {
   const url = `${SITE}/${citySlug}/residential`;
-  const title = `Pest Control in ${cityName} — Compare Verified Local Providers`;
-  const description = `Compare verified residential pest control providers in ${cityName}. Filter by pest type, ratings and service features, then contact ${cityName} pest controllers directly. No lead fees, no commissions.`;
+  const title = `Pest Control in ${cityName} — Compare Local Providers`;
+  const description = `Compare residential pest control providers in ${cityName}. Filter by pest type, ratings and service features, then contact ${cityName} pest controllers directly. No lead fees, no commissions.`;
   return {
     title,
     description,

@@ -298,7 +298,7 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
             Commercial Pest Control
           </h1>
           <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl mb-6 font-extralight tracking-[0.15em] text-white drop-shadow-[0_8px_20px_rgba(0,0,0,0.9)]">
-            {filteredProviders.length} Verified Providers in Liverpool & Merseyside
+            {filteredProviders.length} Providers in Liverpool & Merseyside
           </p>
           <p className="text-xl text-white font-semibold max-w-3xl leading-relaxed drop-shadow-[0_6px_16px_rgba(0,0,0,0.85)] opacity-95">
             Find certified commercial pest control providers with advanced filtering by certifications, capabilities, and business sectors.
@@ -588,7 +588,7 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
             <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg p-8 border-t-4 border-[#1e3a8a]">
               <div className="text-5xl font-black text-[#1e3a8a] mb-4">1</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Independent Research</h3>
-              <p className="text-gray-600">We independently verify provider certifications, capabilities, and credentials from official sources. No provider pays for inclusion.</p>
+              <p className="text-gray-600">No provider pays for inclusion.</p>
             </div>
 
             <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg p-8 border-t-4 border-[#1e3a8a]">

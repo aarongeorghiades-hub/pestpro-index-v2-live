@@ -3,13 +3,13 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   robots: { index: false, follow: true },
   title: 'Glasgow & Scotland Commercial Pest Control',
-  description: 'Commercial pest control services across Glasgow and Scotland. Compare verified providers for offices, restaurants, hotels, warehouses and more.',
+  description: 'Commercial pest control services across Glasgow and Scotland. Compare providers for offices, restaurants, hotels, warehouses and more.',
   alternates: {
     canonical: 'https://pestproindex.com/glasgow/commercial',
   },
   openGraph: {
     title: 'Glasgow & Scotland Commercial Pest Control',
-    description: 'Commercial pest control services across Glasgow and Scotland. Compare verified providers for offices, restaurants, hotels, warehouses and more.',
+    description: 'Commercial pest control services across Glasgow and Scotland. Compare providers for offices, restaurants, hotels, warehouses and more.',
     siteName: 'PestPro Index',
     locale: 'en_GB',
     type: 'website',

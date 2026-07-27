@@ -20,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Residential Pest Control in Nottingham',
-    description: 'Compare 106+ residential pest control providers in Nottingham and the East Midlands. Independent ratings, verified reviews, BPCA and NPTA certified companies.',
+    description: 'Compare 106+ residential pest control providers in Nottingham and the East Midlands. Independent ratings, reviews, BPCA and NPTA certified companies.',
     serviceType: 'Pest Control',
     areaServed: {
       '@type': 'City',

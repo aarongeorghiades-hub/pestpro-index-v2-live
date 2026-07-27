@@ -6,14 +6,14 @@ import ListingSchema from '@/components/ListingSchema';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Residential Pest Control in London — Compare Verified Providers',
+  title: 'Residential Pest Control in London — Compare Providers',
   description:
-    'Compare verified residential pest control providers across London. Filter by pest type, ratings and service features, then contact London pest controllers directly. No lead fees, no commissions.',
+    'Compare residential pest control providers across London. Filter by pest type, ratings and service features, then contact London pest controllers directly. No lead fees, no commissions.',
   alternates: { canonical: 'https://pestproindex.com/residential' },
   openGraph: {
     title: 'Residential Pest Control in London',
     description:
-      'Compare verified residential pest control providers across London. No lead fees, no commissions.',
+      'Compare residential pest control providers across London. No lead fees, no commissions.',
     url: 'https://pestproindex.com/residential',
     type: 'website',
     siteName: 'PestPro Index',

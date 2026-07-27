@@ -227,7 +227,7 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
             Pest Control Services in Cardiff
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
-            {providers.length} Verified Providers in Cardiff &amp; South Wales
+            {providers.length} Providers in Cardiff &amp; South Wales
           </p>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
             Filter by pest type and service features across our complete directory. No endorsements, no commissions—just transparent, provider-stated information.
