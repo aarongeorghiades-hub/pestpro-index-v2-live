@@ -373,7 +373,11 @@ function SubmitForm() {
         </div>
       </section>
 
-      {/* 6. Listing interest */}
+      {/* 6. Listing interest — hidden while only one tier is on offer. There is
+          nothing to choose between, so asking would be a pointless step; the
+          server records the default tier. Add a tier to TIERS and this section
+          reappears on its own. */}
+      {TIERS.length > 1 && (
       <section className={sectionClass}>
         <h2 className={sectionHeading}>Listing interest</h2>
         <div className="space-y-3">
@@ -403,6 +407,7 @@ function SubmitForm() {
         </div>
         <FieldError message={fieldErrors.tier_interest} />
       </section>
+      )}
 
       {/* Honeypot — visually hidden but not display:none, so bots still fill it.
           aria-hidden + tabIndex keep it away from screen readers and keyboards. */}

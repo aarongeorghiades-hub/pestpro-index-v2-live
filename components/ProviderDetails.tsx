@@ -23,6 +23,7 @@ const PEST_BADGES: { column: string; label: string }[] = [
   { column: 'pest_mice', label: 'Mice' },
   { column: 'pest_squirrels', label: 'Squirrels' },
   { column: 'pest_foxes', label: 'Foxes' },
+  { column: 'pest_moles', label: 'Moles' },
   { column: 'pest_wasps', label: 'Wasps' },
   { column: 'pest_bees', label: 'Bees' },
   { column: 'pest_ants', label: 'Ants' },

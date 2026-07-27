@@ -35,10 +35,6 @@ export const REGION_SLUGS = REGIONS.map((r) => r.slug);
  *
  * Deliberately excludes pest_rodents, pest_rodents_general and
  * pest_birds_general — those are derived at promotion time, not captured.
- *
- * Note: pest_moles has no matching column on Providers. It is stored in the
- * submission jsonb so the information is not lost, but it cannot be promoted
- * to a Providers column without a schema change.
  */
 export const PEST_GROUPS: { group: string; pests: { key: string; label: string }[] }[] = [
   {
@@ -80,13 +76,23 @@ export const PEST_GROUPS: { group: string; pests: { key: string; label: string }
 
 export const PEST_KEYS = PEST_GROUPS.flatMap((g) => g.pests.map((p) => p.key));
 
+/**
+ * Listing tiers offered today. Only the free standard listing exists — the
+ * paid Enhanced and Featured tiers were withdrawn because none of their
+ * promised features are implemented and there is no billing integration.
+ *
+ * While this list has a single entry the form hides the tier control entirely
+ * and every submission is recorded as 'standard'. Re-adding an entry here is
+ * all that is needed to bring the chooser back.
+ */
 export const TIERS = [
-  { value: 'free', label: 'Free Listing', hint: '£0/month' },
-  { value: 'enhanced', label: 'Enhanced Listing', hint: '£15/month — free until 1st April 2026' },
-  { value: 'featured', label: 'Featured Provider of the Week', hint: '£30/week — free until 1st April 2026' },
+  { value: 'standard', label: 'Standard Listing', hint: 'Free' },
 ];
 
 export const TIER_VALUES = TIERS.map((t) => t.value);
+
+/** Written to provider_submissions.tier_interest when no chooser is shown. */
+export const DEFAULT_TIER = 'standard';
 
 /** Name of the honeypot field. Bots fill it; real users never see it. */
 export const HONEYPOT_FIELD = 'company_website_confirm';

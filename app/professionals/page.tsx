@@ -18,19 +18,11 @@ export default function ProfessionalsPage() {
   const faqItems = [
     {
       question: 'Is there really no lead fee?',
-      answer: 'Correct. Unlike marketplace directories, we don\'t charge you per enquiry or take commission. Your listing fee is fixed and predictable. You pay once, you get listed, and customers find you.'
-    },
-    {
-      question: 'How do I become a Featured Provider?',
-      answer: 'Enhanced listing subscribers with strong reviews and complete profiles are eligible for Featured Provider status and Provider of the Week selection. Featured providers appear at the top of search results and get priority placement across the directory.'
+      answer: 'Correct. Unlike marketplace directories, we don\'t charge you per enquiry or take commission. Listing is free, and customers contact you directly.'
     },
     {
       question: 'What certifications do you display?',
       answer: 'We display BPCA membership, RSPH qualifications, CEPA certification, BASIS PROMPT, and local authority approvals. You control which credentials appear on your profile, and we verify each one.'
-    },
-    {
-      question: 'Can I manage multiple locations?',
-      answer: 'Yes. Enhanced listings can display multiple depot locations and service coverage areas across London boroughs. Perfect for multi-site operations.'
     },
     {
       question: 'How do reviews work?',
@@ -297,15 +289,7 @@ export default function ProfessionalsPage() {
             <ul className="space-y-3 text-gray-700">
               <li className="flex gap-3">
                 <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>Featured provider listings</span>
-              </li>
-              <li className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <span>"Top Rated" badge eligibility</span>
-              </li>
-              <li className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>Provider of the Week spotlight</span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -385,10 +369,10 @@ export default function ProfessionalsPage() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-5xl font-black text-gray-900 mb-4 text-center">Simple Pricing</h2>
           <p className="text-xl text-gray-600 text-center mb-20 max-w-3xl mx-auto">
-            Choose the plan that fits your business
+            Getting listed is free
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="max-w-md mx-auto">
             {/* Free Listing */}
             <div className="card-hover bg-white rounded-2xl shadow-lg border-2 border-gray-200 p-10">
               <h3 className="text-3xl font-bold text-gray-900 mb-2">Free Listing</h3>
@@ -419,87 +403,16 @@ export default function ProfessionalsPage() {
                 </li>
               </ul>
               <Link
-                href="/professionals/submit?tier=free"
+                href="/professionals/submit"
                 className="block w-full text-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all"
               >
                 Create Your Free Listing
               </Link>
             </div>
 
-            {/* Enhanced Listing */}
-            <div className="card-hover bg-white rounded-2xl shadow-lg border-2 border-gray-200 p-10">
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">Enhanced Listing</h3>
-              <div className="mb-2">
-                <span className="text-5xl font-black text-blue-600">£15</span>
-                <span className="text-gray-600 font-semibold">/month</span>
-              </div>
-              <p className="text-sm text-gray-600 mb-8 font-semibold">Free until 1st April 2026</p>
-              <ul className="space-y-4 mb-10">
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Everything in Free Listing, plus:</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Enhanced visibility in search results</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Company logo display</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Detailed service descriptions</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Photo gallery (up to 6 images)</span>
-                </li>
-              </ul>
-              <Link
-                href="/professionals/submit?tier=enhanced"
-                className="block w-full text-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all"
-              >
-                Get Enhanced Listing
-              </Link>
-            </div>
-
-            {/* Featured Provider of the Week */}
-            <div className="card-hover bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl shadow-xl border-2 border-amber-300 p-10 relative ring-2 ring-amber-400/50">
-              <div className="absolute top-4 right-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-4 py-1 rounded-full text-xs font-bold">
-                Premium
-              </div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">Featured Provider of the Week</h3>
-              <div className="mb-2">
-                <span className="text-5xl font-black text-amber-600">£30</span>
-                <span className="text-gray-600 font-semibold">/week</span>
-              </div>
-              <p className="text-sm text-gray-600 mb-8 font-semibold">Free until 1st April 2026</p>
-              <ul className="space-y-4 mb-10">
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Prominent homepage placement for one week</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Spotlight position above search results</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Enhanced visibility across all pages</span>
-                </li>
-                <li className="flex gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Perfect for seasonal promotions or new launches</span>
-                </li>
-              </ul>
-              <Link
-                href="/professionals/submit?tier=featured"
-                className="block w-full text-center px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-lg hover:from-amber-600 hover:to-orange-600 transition-all shadow-lg"
-              >
-                Become Featured Provider
-              </Link>
-            </div>
+            <p className="text-center text-gray-600 mt-8">
+              Paid listing options are in development.
+            </p>
           </div>
         </div>
       </div>

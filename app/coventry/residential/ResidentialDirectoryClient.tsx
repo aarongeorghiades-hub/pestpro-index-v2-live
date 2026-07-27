@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import SearchBar from '@/components/SearchBar';
 import Navigation from '@/components/Navigation';
-import { Trophy } from 'lucide-react';
 
 // ============================================================================
 // HELPER FUNCTIONS
@@ -301,127 +300,6 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
             </div>
 
           </div>
-        </div>
-      </section>
-
-      {/* SECTION 1: FEATURED PROVIDERS - 4 COLUMNS, NO IMAGE */}
-      <section className="relative bg-gradient-to-br from-amber-50 to-white py-16 border-b-2 border-amber-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* Section Title */}
-          <div className="text-center mb-12">
-            <h2 className="text-5xl font-black text-gray-900 mb-4">
-              Featured Providers
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Top pest control providers in Coventry &amp; the West Midlands
-            </p>
-          </div>
-
-          {/* 4-COLUMN GRID - TOP 4 PROVIDERS BY QUALITY */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[...providers]
-              .sort((a, b) => {
-                const ratingDiff = (b.google_rating || 0) - (a.google_rating || 0);
-                if (ratingDiff !== 0) return ratingDiff;
-                return (b.google_review_count || 0) - (a.google_review_count || 0);
-              })
-              .slice(0, 4)
-              .map(provider => (
-                <div
-                  key={provider.canonical_id}
-                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border-l-4 border-amber-500"
-                >
-
-                  {/* Trophy */}
-                  <div className="text-3xl mb-2">🏆</div>
-
-                  {/* Company Name */}
-                  <h3 className="font-bold text-base text-gray-900 mb-2 leading-tight line-clamp-2">
-                    <Link href={`/provider/${provider.slug}`} className="text-blue-600 hover:underline">
-                      {provider.name}
-                    </Link>
-                  </h3>
-
-                  {/* ADDRESS */}
-                  {provider.postcode && (
-                    <div className="flex items-start gap-1 mb-3 text-xs text-gray-600">
-                      <span className="text-red-500 mt-0.5">📍</span>
-                      <span className="line-clamp-1">{provider.postcode}</span>
-                    </div>
-                  )}
-
-                  {/* Rating */}
-                  {provider.google_rating && (
-                    <div className="flex items-center gap-1 mb-4">
-                      <span className="text-yellow-500">⭐</span>
-                      <span className="text-lg font-bold text-gray-900">
-                        {provider.google_rating.toFixed(1)}
-                      </span>
-                      <span className="text-xs text-gray-600">
-                        ({provider.google_review_count})
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Contact */}
-                  <div className="space-y-2">
-                    {provider.phone && (
-                      isMobile ? (
-                        <a
-                          href={`tel:${provider.phone}`}
-                          className="block text-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg transition-colors whitespace-nowrap overflow-hidden text-ellipsis"
-                        >
-                          📞 {provider.phone}
-                        </a>
-                      ) : (
-                        <span className="block text-center px-3 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg cursor-default whitespace-nowrap overflow-hidden text-ellipsis">
-                          📞 {provider.phone}
-                        </span>
-                      )
-                    )}
-                    {provider.website && (
-                      <a
-                        href={externalHref(provider.website)}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        className="block text-center px-3 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm"
-                      >
-                        Visit Website →
-                      </a>
-                    )}
-                  </div>
-                </div>
-              ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* FEATURED PROVIDER OF THE WEEK - COMING SOON */}
-      <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 py-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl"></div>
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center mb-6">
-            <Trophy size={48} className="text-amber-400 mr-4" />
-            <h2 className="text-4xl font-black text-white">Featured Provider of the Week</h2>
-            <span className="ml-4 inline-block bg-amber-400 text-blue-900 text-xs font-bold px-4 py-2 rounded-full">Coming Soon</span>
-          </div>
-          <p className="text-lg text-blue-100 mb-6 max-w-2xl mx-auto leading-relaxed">
-            Every week, we spotlight one pest control provider and their real-world success story — a problem they solved, the approach they took, and the result they delivered for their customer.
-          </p>
-          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-            It's more than a listing. It's a showcase.
-          </p>
-          <p className="text-base text-blue-100 mb-8 max-w-2xl mx-auto">
-            Featured providers get prime placement across PestPro Index, seen by hundreds of homeowners actively searching for pest control. Your story. Your expertise. Front and centre.
-          </p>
-          <Link href="/contact" className="inline-block px-8 py-3 bg-amber-400 text-blue-900 font-bold rounded-lg hover:bg-amber-300 transition text-lg">
-            Want to be featured? Get in touch →
-          </Link>
         </div>
       </section>
 

@@ -5,7 +5,7 @@ import { externalHref } from '@/lib/externalUrl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Phone, Mail, MapPin, ShieldCheck, Award, CheckCircle2, Trophy } from 'lucide-react';
+import { Phone, MapPin, ShieldCheck, Award, CheckCircle2 } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 
 export interface Provider {
@@ -306,74 +306,6 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
         </div>
       </section>
 
-      {/* FEATURED PROVIDERS - TOP 4 BY QUALITY */}
-      <section className="relative bg-gradient-to-br from-orange-50 to-white py-16 border-b-2 border-orange-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">Featured Providers</h2>
-            <p className="text-lg text-gray-600">Top commercial pest control providers with verified certifications</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[...providers]
-              .sort((a, b) => {
-                const ratingDiff = (b.google_rating || 0) - (a.google_rating || 0);
-                if (ratingDiff !== 0) return ratingDiff;
-                return (b.google_review_count || 0) - (a.google_review_count || 0);
-              })
-              .slice(0, 4)
-              .map(provider => (
-                <div key={provider.canonical_id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all border-l-4 border-orange-500 p-6">
-                  <span className="inline-block bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">FEATURED</span>
-                  <h3 className="text-xl font-black text-gray-900 mb-3">
-                    <Link href={`/provider/${provider.slug}`} className="text-blue-600 hover:underline">
-                      {provider.name}
-                    </Link>
-                  </h3>
-                  {provider.google_review_count > 0 && (
-                    <div className="flex items-center gap-2 mb-2">
-                      {renderStars(provider.google_rating)}
-                      <span className="text-sm font-semibold text-gray-600">{provider.google_rating?.toFixed(1)} ({provider.google_review_count} reviews)</span>
-                    </div>
-                  )}
-                  {provider.phone && (
-                    <div className="flex items-center gap-2 mb-2 whitespace-nowrap">
-                      <Phone size={14} className="text-blue-600 flex-shrink-0" />
-                      {isMobile ? (
-                        <a href={`tel:${provider.phone}`} className="text-sm text-blue-600 hover:underline whitespace-nowrap">{provider.phone}</a>
-                      ) : (
-                        <span className="text-sm text-gray-700 whitespace-nowrap">{provider.phone}</span>
-                      )}
-                    </div>
-                  )}
-                  {provider.postcode && (
-                    <div className="flex items-center gap-2 mb-2">
-                      <MapPin size={14} className="text-blue-600" />
-                      <span className="text-sm text-gray-700">{provider.postcode}</span>
-                    </div>
-                  )}
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {provider.bpca_member && (
-                      <span className="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded-full">BPCA</span>
-                    )}
-                    {provider.npta_member && (
-                      <span className="inline-block bg-green-100 text-green-800 text-xs font-bold px-2 py-0.5 rounded-full">NPTA</span>
-                    )}
-                    {provider.basis_prompt && (
-                      <span className="inline-block bg-purple-100 text-purple-800 text-xs font-bold px-2 py-0.5 rounded-full">BASIS PROMPT</span>
-                    )}
-                  </div>
-                  {provider.website && (
-                    <Link href={externalHref(provider.website)} target="_blank" rel="nofollow noopener noreferrer" className="block text-center px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition text-sm">
-                      Visit Website →
-                    </Link>
-                  )}
-                </div>
-              ))}
-          </div>
-        </div>
-      </section>
-
       {/* TOP RATED PROVIDERS - ONLY SHOW IF RATINGS EXIST */}
       {providers.some(p => p.google_rating != null) && (
       <section className="relative bg-gradient-to-br from-yellow-50 to-white py-16 border-b-2 border-yellow-200">
@@ -446,33 +378,6 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
       </section>
       )}
 
-
-      {/* FEATURED PROVIDER OF THE WEEK - COMING SOON */}
-      <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 py-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl"></div>
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center mb-6">
-            <Trophy size={48} className="text-amber-400 mr-4" />
-            <h2 className="text-4xl font-black text-white">Featured Provider of the Week</h2>
-            <span className="ml-4 inline-block bg-amber-400 text-blue-900 text-xs font-bold px-4 py-2 rounded-full">Coming Soon</span>
-          </div>
-          <p className="text-lg text-blue-100 mb-6 max-w-2xl mx-auto leading-relaxed">
-            Every week, we spotlight one pest control provider and their real-world success story — a problem they solved, the approach they took, and the result they delivered for their customer.
-          </p>
-          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-            It's more than a listing. It's a showcase.
-          </p>
-          <p className="text-base text-blue-100 mb-8 max-w-2xl mx-auto">
-            Featured providers get prime placement across PestPro Index, seen by hundreds of businesses actively searching for pest control. Your story. Your expertise. Front and centre.
-          </p>
-          <Link href="/contact" className="inline-block px-8 py-3 bg-amber-400 text-blue-900 font-bold rounded-lg hover:bg-amber-300 transition text-lg">
-            Want to be featured? Get in touch →
-          </Link>
-        </div>
-      </section>
 
       {/* FULL PROVIDER LIST WITH FILTERS */}
       <section className="relative bg-white py-16">

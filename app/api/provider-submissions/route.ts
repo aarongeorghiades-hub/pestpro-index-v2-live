@@ -4,6 +4,7 @@ import {
   REGION_SLUGS,
   PEST_KEYS,
   TIER_VALUES,
+  DEFAULT_TIER,
   HONEYPOT_FIELD,
   PROFILE_TEXT_MAX,
 } from '@/lib/providerSubmissions';
@@ -92,6 +93,9 @@ export async function POST(request: Request) {
     fieldErrors.profile_text = `Please keep your description to ${PROFILE_TEXT_MAX} characters or fewer.`;
   }
 
+  // A tier is only rejected when the client sends one that is not on offer.
+  // Sending nothing is normal — the form hides the chooser while a single tier
+  // exists — and is recorded as DEFAULT_TIER below.
   if (tierInterest && !TIER_VALUES.includes(tierInterest)) {
     fieldErrors.tier_interest = 'Unrecognised listing type.';
   }
@@ -113,7 +117,7 @@ export async function POST(request: Request) {
     business_residential: body.business_residential === true,
     commercial: body.commercial === true,
     profile_text: profileText || null,
-    tier_interest: tierInterest || null,
+    tier_interest: tierInterest || DEFAULT_TIER,
     source: 'site_form',
     user_agent: request.headers.get('user-agent'),
   };
