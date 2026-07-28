@@ -31,14 +31,12 @@ export const regions: Region[] = [
         name: "London Residential",
         slug: "london-residential",
         status: "live",
-        providerCount: 389,
         residentialLink: "/residential",
       },
       {
         name: "London Commercial",
         slug: "london-commercial",
         status: "live",
-        providerCount: 240,
         commercialLink: "/commercial",
       },
       {
@@ -61,7 +59,6 @@ export const regions: Region[] = [
         name: "Birmingham Residential",
         slug: "birmingham-residential",
         status: "live",
-        providerCount: 42,
         residentialLink: "/birmingham/residential",
       },
       {
@@ -136,7 +133,6 @@ export const regions: Region[] = [
         name: "Manchester Residential",
         slug: "manchester-residential",
         status: "live",
-        providerCount: 134,
         residentialLink: "/manchester/residential",
       },
       {
@@ -149,7 +145,6 @@ export const regions: Region[] = [
         name: "Liverpool Residential",
         slug: "liverpool-residential",
         status: "live",
-        providerCount: 73,
         residentialLink: "/liverpool/residential",
       },
       {
@@ -175,7 +170,6 @@ export const regions: Region[] = [
         name: "Leeds Residential",
         slug: "leeds-residential",
         status: "live",
-        providerCount: 61,
         residentialLink: "/leeds/residential",
       },
       {
@@ -206,7 +200,6 @@ export const regions: Region[] = [
         name: "Brighton Residential",
         slug: "brighton-residential",
         status: "live",
-        providerCount: 76,
         residentialLink: "/brighton/residential",
       },
       {
@@ -250,14 +243,12 @@ export const regions: Region[] = [
         name: "Bristol Residential",
         slug: "bristol-residential",
         status: "live",
-        providerCount: 43,
         residentialLink: "/bristol/residential",
       },
       {
         name: "Bristol Commercial",
         slug: "bristol-commercial",
         status: "live",
-        providerCount: 43,
         commercialLink: "/bristol/commercial",
       },
       { name: "Bath", slug: "bath", status: "coming-soon" },
@@ -267,20 +258,6 @@ export const regions: Region[] = [
       { name: "Dorset", slug: "dorset", status: "coming-soon" },
       { name: "Wiltshire", slug: "wiltshire", status: "coming-soon" },
       { name: "Gloucestershire", slug: "gloucestershire", status: "coming-soon" }
-    ]
-  },
-  {
-    name: "East of England",
-    slug: "east-of-england",
-    status: "coming-soon",
-    description: "PestPro Index is expanding to the East of England. We will soon cover Norfolk, Suffolk, Cambridgeshire, and Bedfordshire with pest control providers.",
-    metaTitle: "Pest Control in the East of England | Norfolk, Suffolk, Cambridge & More",
-    metaDescription: "PestPro Index is expanding to the East of England. Soon covering Norfolk, Suffolk, Cambridgeshire, and Bedfordshire. Neutral pest control directory — no lead fees.",
-    cities: [
-      { name: "Norfolk", slug: "norfolk", status: "coming-soon" },
-      { name: "Suffolk", slug: "suffolk", status: "coming-soon" },
-      { name: "Cambridgeshire", slug: "cambridgeshire", status: "coming-soon" },
-      { name: "Bedfordshire", slug: "bedfordshire", status: "coming-soon" }
     ]
   },
   {
@@ -295,7 +272,6 @@ export const regions: Region[] = [
         name: "Nottingham Residential",
         slug: "nottingham-residential",
         status: "live",
-        providerCount: 106,
         residentialLink: "/nottingham/residential",
       },
       {
@@ -333,7 +309,6 @@ export const regions: Region[] = [
         name: "Newcastle Residential",
         slug: "newcastle-residential",
         status: "live",
-        providerCount: 53,
         residentialLink: "/newcastle/residential",
       },
       {
@@ -360,7 +335,6 @@ export const regions: Region[] = [
         name: "Glasgow Residential",
         slug: "glasgow-residential",
         status: "live",
-        providerCount: 60,
         residentialLink: "/glasgow/residential",
       },
       {
@@ -401,7 +375,6 @@ export const regions: Region[] = [
         name: "Cardiff Residential",
         slug: "cardiff-residential",
         status: "live",
-        providerCount: 38,
         residentialLink: "/cardiff/residential",
       },
       {
@@ -427,7 +400,6 @@ export const regions: Region[] = [
         name: "Belfast Residential",
         slug: "belfast-residential",
         status: "live",
-        providerCount: 23,
         residentialLink: "/belfast/residential",
       },
       {
