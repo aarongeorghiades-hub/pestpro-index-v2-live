@@ -25,7 +25,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         'name': 'What is PestPro Index?',
         'acceptedAnswer': {
           '@type': 'Answer',
-          'text': "PestPro Index is the UK's neutral pest control directory. We don't charge providers lead fees or commissions, and we don't accept sponsored rankings. Our goal is to help you find a trusted, qualified pest controller near you."
+          'text': "PestPro Index is the UK's neutral pest control directory. We don't charge providers lead fees or commissions, and we don't accept sponsored rankings. Our goal is to help you find a pest controller near you."
         }
       },
       {

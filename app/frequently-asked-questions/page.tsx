@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation';
 const faqs = [
   {
     question: 'What is PestPro Index?',
-    answer: "PestPro Index is the UK's neutral pest control directory. We don't charge providers lead fees or commissions, and we don't accept sponsored rankings. Our goal is to help you find a trusted, qualified pest controller near you.",
+    answer: "PestPro Index is the UK's neutral pest control directory. We don't charge providers lead fees or commissions, and we don't accept sponsored rankings. Our goal is to help you find a pest controller near you.",
   },
   {
     question: 'How do I find a pest controller?',
