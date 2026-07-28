@@ -49,7 +49,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         'name': 'How are providers selected?',
         'acceptedAnswer': {
           '@type': 'Answer',
-          'text': 'We research and verify providers using Google Maps data, BPCA and NPTA membership databases, company websites, and public reviews. We aim to include every legitimate pest control provider in each area we cover.'
+          'text': 'We aim to include every legitimate pest control provider in each area we cover.'
         }
       },
       {

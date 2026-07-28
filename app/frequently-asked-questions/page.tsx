@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: 'How are providers selected?',
-    answer: 'We research and verify providers using Google Maps data, BPCA and NPTA membership databases, company websites, and public reviews. We aim to include every legitimate pest control provider in each area we cover.',
+    answer: 'We aim to include every legitimate pest control provider in each area we cover.',
   },
   {
     question: 'What areas do you cover?',
