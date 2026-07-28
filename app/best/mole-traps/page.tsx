@@ -257,7 +257,7 @@ export default function BestMoleTrapsPage() {
         The Victor Push Mole Trap is the classic scissor-jaw trap that has been trusted by UK gardeners and groundskeepers for decades. Its simple, proven design requires no bait — you push it directly into an active mole run, and the powerful scissor jaws clamp shut when the mole passes through, delivering a swift and humane kill.
       </p>
       <p>
-        The heavy-duty metal construction means this trap will last for years of repeated use, even in wet, heavy clay soil. Setting is straightforward once you have identified an active run: compress the jaws, push the trap into the tunnel, and leave it. Most catches happen within 24 to 48 hours. The Victor is widely available, well-reviewed, and remains the default recommendation for anyone starting out with mole control.
+        The heavy-duty metal construction means this trap will last for years of repeated use, even in wet, heavy clay soil. Setting is straightforward once you have identified an active run: compress the jaws, push the trap into the tunnel, and leave it. Most catches happen within 24 to 48 hours. The Victor is widely available and remains the default recommendation for anyone starting out with mole control.
       </p>
 
       {/* Product 2 */}
@@ -279,7 +279,7 @@ export default function BestMoleTrapsPage() {
         />
       </div>
       <p>
- The Big Cheese Mole Tunnel Trap is a UK standard tunnel mole trap. Its traditional half-barrel design in galvanised metal sits neatly inside the tunnel and catches moles travelling in either direction — a critical advantage over single-entry traps. on Amazon, it is the proven standard choice for UK gardens and lawns.
+ The Big Cheese Mole Tunnel Trap is a UK standard tunnel mole trap. Its traditional half-barrel design in galvanised metal sits neatly inside the tunnel and catches moles travelling in either direction — a critical advantage over single-entry traps. It is a proven standard choice for UK gardens and lawns.
       </p>
       <p>
         Setting the trap requires a bit of practice. You need to locate an active run, carefully open it, and position the trap so it sits flush at tunnel level. The galvanised metal construction is rust-free and weatherproof, so the trap lasts for years even in damp, heavy soil. At around £8, The Big Cheese represents exceptional value for a reliable, reusable trap that professional mole catchers and homeowners alike trust.
@@ -329,7 +329,7 @@ export default function BestMoleTrapsPage() {
         />
       </div>
       <p>
- The SWISSINNO SuperCat Mole Trap brings Swiss precision engineering to mole control. Its advanced claw design and trigger system responds to mole movement from either direction in the tunnel, so there is no need to determine the direction of travel. on Amazon, this is the modern professional's alternative to traditional barrel-style tunnel traps — no bait, no chemicals, just reliable mechanical trapping.
+ The SWISSINNO SuperCat Mole Trap brings Swiss precision engineering to mole control. Its advanced claw design and trigger system responds to mole movement from either direction in the tunnel, so there is no need to determine the direction of travel. It is a modern alternative to traditional barrel-style tunnel traps — no bait, no chemicals, just reliable mechanical trapping.
       </p>
       <p>
         The low-profile claw design sits discreetly in the run, making it far less conspicuous above ground than plunger traps — ideal for well-maintained lawns and sports turf. The corrosion-resistant construction holds up across multiple seasons of use without degradation. Installation is straightforward: locate an active run, set the trigger mechanism, and place the trap into the tunnel. For gardeners who want a modern, proven trap with a high catch rate, the SWISSINNO SuperCat is an excellent choice.
