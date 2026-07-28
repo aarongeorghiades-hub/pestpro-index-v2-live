@@ -133,7 +133,7 @@ export default function CommercialProductsPage() {
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100/90 max-w-3xl mx-auto leading-relaxed font-medium text-center">
-            Professional-grade solutions for businesses, facilities, and multi-site operations. <span className="font-bold text-white">Direct Amazon links for bulk ordering</span>. Trusted by commercial pest control providers across London.
+            Professional-grade solutions for businesses, facilities, and multi-site operations. <span className="font-bold text-white">Direct Amazon links for bulk ordering</span>. Selected for commercial and multi-site use.
           </p>
         </div>
       </div>
@@ -151,7 +151,7 @@ export default function CommercialProductsPage() {
             </div>
             <div className="text-center">
               <div className="text-4xl mb-3">✅</div>
-              <h3 className="font-bold text-lg text-gray-900 mb-2">Verified Products</h3>
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Professional-Grade Products</h3>
               <p className="text-gray-600 text-sm">Only professional-grade products recommended by commercial providers</p>
             </div>
             <div className="text-center">

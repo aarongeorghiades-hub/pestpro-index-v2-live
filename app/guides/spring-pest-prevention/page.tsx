@@ -434,62 +434,36 @@ export default function SpringPestPreventionPage() {
             <tr className="bg-gray-100">
               <th className="text-left p-3 font-bold text-gray-900 border-b border-gray-200">Product</th>
               <th className="text-left p-3 font-bold text-gray-900 border-b border-gray-200">Target Pest</th>
-              <th className="text-left p-3 font-bold text-gray-900 border-b border-gray-200">Approx. Price</th>
-              <th className="text-left p-3 font-bold text-gray-900 border-b border-gray-200">Our Review</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b border-gray-100">
               <td className="p-3 text-gray-700">Pheromone moth traps (pack of 6)</td>
               <td className="p-3 text-gray-700">Moths</td>
-              <td className="p-3 text-gray-700">&pound;10&ndash;&pound;15</td>
-              <td className="p-3">
-                <Link href="/best/moth-traps" className="text-blue-600 hover:underline font-medium">Best Moth Traps &rarr;</Link>
-              </td>
             </tr>
             <tr className="border-b border-gray-100 bg-gray-50">
               <td className="p-3 text-gray-700">Ant gel bait syringe</td>
               <td className="p-3 text-gray-700">Ants</td>
-              <td className="p-3 text-gray-700">&pound;8&ndash;&pound;15</td>
-              <td className="p-3">
-                <Link href="/best/ant-gel-bait" className="text-blue-600 hover:underline font-medium">Best Ant Gel Bait &rarr;</Link>
-              </td>
             </tr>
             <tr className="border-b border-gray-100">
               <td className="p-3 text-gray-700">Ant killer powder/spray</td>
               <td className="p-3 text-gray-700">Ants</td>
-              <td className="p-3 text-gray-700">&pound;5&ndash;&pound;10</td>
-              <td className="p-3">
-                <Link href="/best/ant-killers" className="text-blue-600 hover:underline font-medium">Best Ant Killers &rarr;</Link>
-              </td>
             </tr>
             <tr className="border-b border-gray-100 bg-gray-50">
               <td className="p-3 text-gray-700">Wasp killer spray (for early nests)</td>
               <td className="p-3 text-gray-700">Wasps</td>
-              <td className="p-3 text-gray-700">&pound;5&ndash;&pound;10</td>
-              <td className="p-3">
-                <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-medium">Best Wasp Killers &rarr;</Link>
-              </td>
             </tr>
             <tr className="border-b border-gray-100">
               <td className="p-3 text-gray-700">Home flea spray with IGR</td>
               <td className="p-3 text-gray-700">Fleas</td>
-              <td className="p-3 text-gray-700">&pound;10&ndash;&pound;15</td>
-              <td className="p-3">
-                <Link href="/best/flea-spray-for-home" className="text-blue-600 hover:underline font-medium">Best Flea Spray &rarr;</Link>
-              </td>
             </tr>
             <tr className="border-b border-gray-100 bg-gray-50">
               <td className="p-3 text-gray-700">Silicone sealant / expanding foam</td>
               <td className="p-3 text-gray-700">Ants, wasps</td>
-              <td className="p-3 text-gray-700">&pound;5&ndash;&pound;8</td>
-              <td className="p-3 text-gray-400">General hardware</td>
             </tr>
             <tr className="border-b border-gray-100">
               <td className="p-3 text-gray-700">Sealed garment bags / vacuum bags</td>
               <td className="p-3 text-gray-700">Moths</td>
-              <td className="p-3 text-gray-700">&pound;8&ndash;&pound;15</td>
-              <td className="p-3 text-gray-400">General storage</td>
             </tr>
           </tbody>
         </table>

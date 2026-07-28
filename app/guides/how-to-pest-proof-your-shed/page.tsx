@@ -424,7 +424,6 @@ export default function HowToPestProofYourShedPage() {
             <tr className="bg-gray-50 border-b-2 border-gray-200">
               <th className="text-left py-3 px-4 font-bold text-gray-900">Product</th>
               <th className="text-left py-3 px-4 font-bold text-gray-900">Purpose</th>
-              <th className="text-left py-3 px-4 font-bold text-gray-900">Approx. Price</th>
               <th className="text-left py-3 px-4 font-bold text-gray-900">Link</th>
             </tr>
           </thead>
@@ -432,7 +431,6 @@ export default function HowToPestProofYourShedPage() {
             <tr>
               <td className="py-3 px-4 text-gray-800">Steel wool (coarse grade)</td>
               <td className="py-3 px-4 text-gray-600">Packing into gaps before foam &mdash; rodents cannot chew through</td>
-              <td className="py-3 px-4 text-gray-600">&pound;5&ndash;&pound;12</td>
               <td className="py-3 px-4">
                 <a href="https://www.amazon.co.uk/dp/B006GQQVDW?tag=pestproindex2-21" target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>
@@ -440,7 +438,6 @@ export default function HowToPestProofYourShedPage() {
             <tr>
               <td className="py-3 px-4 text-gray-800">Expanding foam (exterior grade)</td>
               <td className="py-3 px-4 text-gray-600">Sealing gaps around door frame, walls, and windows</td>
-              <td className="py-3 px-4 text-gray-600">&pound;6&ndash;&pound;10</td>
               <td className="py-3 px-4">
                 <a href="https://www.amazon.co.uk/dp/B07YM5BY58?tag=pestproindex2-21" target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>
@@ -448,7 +445,6 @@ export default function HowToPestProofYourShedPage() {
             <tr>
               <td className="py-3 px-4 text-gray-800">Stainless steel insect mesh (fine aperture)</td>
               <td className="py-3 px-4 text-gray-600">Covering air vents to exclude mice, wasps, and flies</td>
-              <td className="py-3 px-4 text-gray-600">&pound;8&ndash;&pound;15</td>
               <td className="py-3 px-4">
                 <a href="https://www.amazon.co.uk/dp/B077XX6NKB?tag=pestproindex2-21" target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>
@@ -456,7 +452,6 @@ export default function HowToPestProofYourShedPage() {
             <tr>
               <td className="py-3 px-4 text-gray-800">Brush strip draught excluder</td>
               <td className="py-3 px-4 text-gray-600">Sealing the gap under the shed door</td>
-              <td className="py-3 px-4 text-gray-600">&pound;5&ndash;&pound;10</td>
               <td className="py-3 px-4">
                 <a href="https://www.amazon.co.uk/dp/B002Q0ZB9M?tag=pestproindex2-21" target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>
@@ -464,7 +459,6 @@ export default function HowToPestProofYourShedPage() {
             <tr>
               <td className="py-3 px-4 text-gray-800">Mouse snap traps (pack of 6)</td>
               <td className="py-3 px-4 text-gray-600">Catching mice already inside the shed</td>
-              <td className="py-3 px-4 text-gray-600">&pound;6&ndash;&pound;12</td>
               <td className="py-3 px-4">
                 <Link href="/best/mouse-traps" className="text-blue-600 hover:underline text-sm">See our review</Link>
               </td>
@@ -472,7 +466,6 @@ export default function HowToPestProofYourShedPage() {
             <tr>
               <td className="py-3 px-4 text-gray-800">Rat bait station (lockable)</td>
               <td className="py-3 px-4 text-gray-600">Safe rodenticide placement outside the shed</td>
-              <td className="py-3 px-4 text-gray-600">&pound;10&ndash;&pound;15</td>
               <td className="py-3 px-4">
                 <Link href="/best/rat-bait-stations" className="text-blue-600 hover:underline text-sm">See our review</Link>
               </td>
@@ -480,7 +473,6 @@ export default function HowToPestProofYourShedPage() {
             <tr>
               <td className="py-3 px-4 text-gray-800">Wasp nest foam spray</td>
               <td className="py-3 px-4 text-gray-600">Treating active wasp nests in the shed roof</td>
-              <td className="py-3 px-4 text-gray-600">&pound;6&ndash;&pound;10</td>
               <td className="py-3 px-4">
                 <Link href="/best/wasp-nest-foam" className="text-blue-600 hover:underline text-sm">See our review</Link>
               </td>
@@ -488,7 +480,6 @@ export default function HowToPestProofYourShedPage() {
             <tr>
               <td className="py-3 px-4 text-gray-800">Woodworm treatment spray (permethrin)</td>
               <td className="py-3 px-4 text-gray-600">Treating active woodworm in shed timber</td>
-              <td className="py-3 px-4 text-gray-600">&pound;12&ndash;&pound;25</td>
               <td className="py-3 px-4">
                 <Link href="/best/woodworm-treatments" className="text-blue-600 hover:underline text-sm">See our review</Link>
               </td>
@@ -496,7 +487,6 @@ export default function HowToPestProofYourShedPage() {
             <tr>
               <td className="py-3 px-4 text-gray-800">Exterior wood preservative</td>
               <td className="py-3 px-4 text-gray-600">Annual timber protection to prevent rot and decay</td>
-              <td className="py-3 px-4 text-gray-600">&pound;15&ndash;&pound;30</td>
               <td className="py-3 px-4">
                 <a href="https://www.amazon.co.uk/dp/B0024LNI8E?tag=pestproindex2-21" target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>

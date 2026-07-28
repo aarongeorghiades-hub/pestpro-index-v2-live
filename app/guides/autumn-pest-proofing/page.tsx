@@ -446,54 +446,44 @@ export default function AutumnPestProofingPage() {
             <tr className="bg-gray-50 border-b-2 border-gray-200">
               <th className="text-left py-3 px-4 font-bold text-gray-900">Product</th>
               <th className="text-left py-3 px-4 font-bold text-gray-900">Purpose</th>
-              <th className="text-left py-3 px-4 font-bold text-gray-900">Approx. Price</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
             <tr>
               <td className="py-3 px-4 text-gray-800">Steel wool (coarse grade)</td>
               <td className="py-3 px-4 text-gray-600">Packing into gaps before foam &mdash; mice cannot chew through</td>
-              <td className="py-3 px-4 text-gray-600">&pound;5&ndash;&pound;12</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Expanding foam (exterior grade)</td>
               <td className="py-3 px-4 text-gray-600">Sealing gaps around pipes, cables, and wall penetrations</td>
-              <td className="py-3 px-4 text-gray-600">&pound;6&ndash;&pound;10</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Galvanised wire mesh (6mm aperture)</td>
               <td className="py-3 px-4 text-gray-600">Covering air bricks, eaves gaps, and larger openings</td>
-              <td className="py-3 px-4 text-gray-600">&pound;8&ndash;&pound;15</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Door brush strips / draught excluders</td>
               <td className="py-3 px-4 text-gray-600">Sealing gaps beneath external doors and garage doors</td>
-              <td className="py-3 px-4 text-gray-600">&pound;5&ndash;&pound;12</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Mouse snap traps (pack of 6&ndash;12)</td>
               <td className="py-3 px-4 text-gray-600">Catching any mice that are already inside</td>
-              <td className="py-3 px-4 text-gray-600">&pound;8&ndash;&pound;15</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Spider repellent spray</td>
               <td className="py-3 px-4 text-gray-600">Barrier spray for window frames, door thresholds, and vents</td>
-              <td className="py-3 px-4 text-gray-600">&pound;8&ndash;&pound;12</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Exterior-grade silicone sealant</td>
               <td className="py-3 px-4 text-gray-600">Sealing small cracks in mortar and around window frames</td>
-              <td className="py-3 px-4 text-gray-600">&pound;5&ndash;&pound;8</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Air brick covers (galvanised mesh)</td>
               <td className="py-3 px-4 text-gray-600">Preventing mice, rats, and cluster flies entering via air bricks</td>
-              <td className="py-3 px-4 text-gray-600">&pound;3&ndash;&pound;6 each</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Pest-proof vent covers</td>
               <td className="py-3 px-4 text-gray-600">Replacing damaged or missing extractor fan and tumble dryer vent flaps</td>
-              <td className="py-3 px-4 text-gray-600">&pound;5&ndash;&pound;10</td>
             </tr>
           </tbody>
         </table>

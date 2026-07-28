@@ -400,59 +400,48 @@ export default function HowToPestProofYourLoftPage() {
             <tr className="bg-gray-50 border-b-2 border-gray-200">
               <th className="text-left py-3 px-4 font-bold text-gray-900">Product</th>
               <th className="text-left py-3 px-4 font-bold text-gray-900">Purpose</th>
-              <th className="text-left py-3 px-4 font-bold text-gray-900">Approx. Price</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
             <tr>
               <td className="py-3 px-4 text-gray-800">Stainless steel wire mesh (6mm aperture)</td>
               <td className="py-3 px-4 text-gray-600">Covering eaves gaps, soffit vents, and larger openings</td>
-              <td className="py-3 px-4 text-gray-600">&pound;10&ndash;&pound;20</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Coarse-grade steel wool</td>
               <td className="py-3 px-4 text-gray-600">Packing into gaps around pipes and cables (rodent-proof)</td>
-              <td className="py-3 px-4 text-gray-600">&pound;5&ndash;&pound;12</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Exterior-grade expanding foam</td>
               <td className="py-3 px-4 text-gray-600">Sealing around steel wool to create a permanent, weathertight seal</td>
-              <td className="py-3 px-4 text-gray-600">&pound;6&ndash;&pound;10</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Tin snips</td>
               <td className="py-3 px-4 text-gray-600">Cutting wire mesh to size for eaves gaps and vents</td>
-              <td className="py-3 px-4 text-gray-600">&pound;8&ndash;&pound;15</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Stainless steel staples or screws</td>
               <td className="py-3 px-4 text-gray-600">Fixing mesh over eaves gaps and vent openings</td>
-              <td className="py-3 px-4 text-gray-600">&pound;4&ndash;&pound;8</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Self-adhesive draught strip (foam/rubber)</td>
               <td className="py-3 px-4 text-gray-600">Sealing the loft hatch to prevent mice entering living spaces</td>
-              <td className="py-3 px-4 text-gray-600">&pound;3&ndash;&pound;6</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Wire mesh chimney cap</td>
               <td className="py-3 px-4 text-gray-600">Blocking pest access via unused chimney pots</td>
-              <td className="py-3 px-4 text-gray-600">&pound;10&ndash;&pound;25</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Mouse snap traps (pack of 6)</td>
               <td className="py-3 px-4 text-gray-600">Trapping mice already present in the loft space</td>
-              <td className="py-3 px-4 text-gray-600">&pound;8&ndash;&pound;15</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Cluster fly smoke bomb / fumigator</td>
               <td className="py-3 px-4 text-gray-600">Treating large cluster fly infestations in the loft</td>
-              <td className="py-3 px-4 text-gray-600">&pound;5&ndash;&pound;10</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Torch (high-brightness LED)</td>
               <td className="py-3 px-4 text-gray-600">Essential for loft inspections &mdash; standard loft lighting is rarely adequate</td>
-              <td className="py-3 px-4 text-gray-600">&pound;10&ndash;&pound;20</td>
             </tr>
           </tbody>
         </table>

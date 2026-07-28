@@ -434,70 +434,48 @@ export default function MovingHousePestChecklistPage() {
             <tr className="bg-gray-50 border-b-2 border-gray-200">
               <th className="text-left py-3 px-4 font-bold text-gray-900">Product</th>
               <th className="text-left py-3 px-4 font-bold text-gray-900">Purpose</th>
-              <th className="text-left py-3 px-4 font-bold text-gray-900">Approx. Price</th>
-              <th className="text-left py-3 px-4 font-bold text-gray-900">Our Review</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
             <tr>
               <td className="py-3 px-4 text-gray-800">Household flea spray (with IGR)</td>
               <td className="py-3 px-4 text-gray-600">Treat carpets if previous owners had pets</td>
-              <td className="py-3 px-4 text-gray-600">&pound;10&ndash;&pound;15</td>
-              <td className="py-3 px-4"><Link href="/best/flea-spray-for-home" className="text-blue-600 hover:underline text-sm">Best Flea Sprays &rarr;</Link></td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Bed bug spray (residual)</td>
               <td className="py-3 px-4 text-gray-600">Treat skirting boards and cracks in bedrooms</td>
-              <td className="py-3 px-4 text-gray-600">&pound;12&ndash;&pound;18</td>
-              <td className="py-3 px-4"><Link href="/best/bed-bug-spray" className="text-blue-600 hover:underline text-sm">Best Bed Bug Sprays &rarr;</Link></td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">General insect killer spray</td>
               <td className="py-3 px-4 text-gray-600">Baseline treatment for skirting boards and dark corners</td>
-              <td className="py-3 px-4 text-gray-600">&pound;5&ndash;&pound;10</td>
-              <td className="py-3 px-4 text-gray-400 text-sm">&mdash;</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Steel wool (coarse grade)</td>
               <td className="py-3 px-4 text-gray-600">Packing into gaps before foam &mdash; rodent-proof</td>
-              <td className="py-3 px-4 text-gray-600">&pound;5&ndash;&pound;12</td>
-              <td className="py-3 px-4"><Link href="/best/mouse-repellent" className="text-blue-600 hover:underline text-sm">Mouse Repellents &rarr;</Link></td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Expanding foam (exterior grade)</td>
               <td className="py-3 px-4 text-gray-600">Sealing gaps around pipes and cables</td>
-              <td className="py-3 px-4 text-gray-600">&pound;6&ndash;&pound;10</td>
-              <td className="py-3 px-4 text-gray-400 text-sm">&mdash;</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Air brick mesh covers (galvanised)</td>
               <td className="py-3 px-4 text-gray-600">Covering air bricks to prevent rodent entry</td>
-              <td className="py-3 px-4 text-gray-600">&pound;3&ndash;&pound;6 each</td>
-              <td className="py-3 px-4 text-gray-400 text-sm">&mdash;</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Door brush strips / draught excluders</td>
               <td className="py-3 px-4 text-gray-600">Sealing gaps beneath external doors</td>
-              <td className="py-3 px-4 text-gray-600">&pound;5&ndash;&pound;12</td>
-              <td className="py-3 px-4 text-gray-400 text-sm">&mdash;</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Exterior-grade silicone sealant</td>
               <td className="py-3 px-4 text-gray-600">Sealing small cracks around windows and mortar joints</td>
-              <td className="py-3 px-4 text-gray-600">&pound;5&ndash;&pound;8</td>
-              <td className="py-3 px-4 text-gray-400 text-sm">&mdash;</td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Mouse snap traps (pack of 6)</td>
               <td className="py-3 px-4 text-gray-600">Set traps in loft and kitchen void if droppings found</td>
-              <td className="py-3 px-4 text-gray-600">&pound;8&ndash;&pound;15</td>
-              <td className="py-3 px-4"><Link href="/best/mouse-traps" className="text-blue-600 hover:underline text-sm">Best Mouse Traps &rarr;</Link></td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Rat snap traps (pack of 2&ndash;4)</td>
               <td className="py-3 px-4 text-gray-600">Set in garage or loft if rat droppings found</td>
-              <td className="py-3 px-4 text-gray-600">&pound;6&ndash;&pound;12</td>
-              <td className="py-3 px-4"><Link href="/best/rat-traps" className="text-blue-600 hover:underline text-sm">Best Rat Traps &rarr;</Link></td>
             </tr>
           </tbody>
         </table>

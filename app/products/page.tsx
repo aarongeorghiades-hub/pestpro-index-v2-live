@@ -94,8 +94,8 @@ export default function ProductsPage() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-bold text-lg text-gray-900 mb-2">Verified UK ASINs</h3>
-                <p className="text-gray-600">All products verified from Amazon UK bestsellers with real reviews and pricing.</p>
+                <h3 className="font-bold text-lg text-gray-900 mb-2">Checked UK ASINs</h3>
+                <p className="text-gray-600">Every ASIN is checked on Amazon UK before publishing, so each link opens the product it names.</p>
               </div>
             </div>
           </div>
