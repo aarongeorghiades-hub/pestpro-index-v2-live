@@ -157,10 +157,10 @@ export default function EssentialOilsForPestControlPage() {
       <h2 id="oil-guide">Oil-by-Oil Guide with Evidence Ratings</h2>
 
       <p>
-        Each oil below is rated on a 1 to 5 star evidence scale, where 5 stars means strong, peer-reviewed scientific evidence and 1 star means primarily anecdotal or folklore-based claims.
+        Each oil below is rated on a 1 to 5 evidence scale, where 5 means strong, peer-reviewed scientific evidence and 1 means primarily anecdotal or folklore-based claims.
       </p>
 
-      <h3>Peppermint Oil &mdash; Evidence: 3/5 Stars</h3>
+      <h3>Peppermint Oil &mdash; Evidence: 3/5</h3>
       <p>
         <strong>Best for:</strong> Mice, spiders, ants<br />
         Peppermint oil is the most widely used essential oil for pest control, and it has the most research to support its use. The active compound, <strong>menthol</strong>, overwhelms the sensitive olfactory systems of mice and spiders and disrupts ant pheromone trails. Multiple studies have documented measurable repellent effects against house mice and common house spiders.
@@ -172,7 +172,7 @@ export default function EssentialOilsForPestControlPage() {
         <strong>Our verdict:</strong> The best general-purpose essential oil for pest control. Genuinely effective as a supplementary deterrent, particularly against mice and spiders. Not a standalone solution for established problems. For ready-made peppermint-based products, see our guides to <Link href="/best/spider-repellent" className="text-green-600 hover:underline">spider repellent sprays</Link> and <Link href="/best/mouse-repellent" className="text-green-600 hover:underline">mouse repellent sprays</Link>.
       </p>
 
-      <h3>Citronella Oil &mdash; Evidence: 3/5 Stars</h3>
+      <h3>Citronella Oil &mdash; Evidence: 3/5</h3>
       <p>
         <strong>Best for:</strong> Mosquitoes, flies, wasps<br />
         Citronella is the most well-researched essential oil for repelling flying insects, particularly mosquitoes. It is the active ingredient in citronella candles, outdoor torches, and many commercial insect repellent products. The compound <strong>citronellal</strong> masks the scents that mosquitoes use to locate hosts (carbon dioxide and body odour).
@@ -184,7 +184,7 @@ export default function EssentialOilsForPestControlPage() {
         <strong>Our verdict:</strong> Well-established and genuine mosquito and flying insect repellent. Most useful for outdoor areas during summer. Limited effect against crawling pests.
       </p>
 
-      <h3>Lavender Oil &mdash; Evidence: 3/5 Stars</h3>
+      <h3>Lavender Oil &mdash; Evidence: 3/5</h3>
       <p>
         <strong>Best for:</strong> Moths, fleas, flies<br />
         Lavender oil contains <strong>linalool and linalyl acetate</strong>, compounds with documented insecticidal and repellent properties. Lavender has the longest history of any essential oil in pest control &mdash; dried lavender sachets have been used to protect clothing from moths for centuries across European and Asian cultures.
@@ -196,7 +196,7 @@ export default function EssentialOilsForPestControlPage() {
         <strong>Our verdict:</strong> An excellent and well-established moth repellent with additional benefits against fleas and flying insects. One of the most pleasant-smelling options for home use.
       </p>
 
-      <h3>Cedar Oil &mdash; Evidence: 3/5 Stars</h3>
+      <h3>Cedar Oil &mdash; Evidence: 3/5</h3>
       <p>
         <strong>Best for:</strong> Moths, fleas<br />
         Cedar oil, extracted from cedar wood, contains <strong>cedrol and cedrene</strong> &mdash; compounds that are directly toxic to clothes moth larvae and repellent to adult moths. Cedar has centuries of documented use as a textile protectant, from Egyptian cedar chests to modern cedar-lined wardrobes.
@@ -208,7 +208,7 @@ export default function EssentialOilsForPestControlPage() {
         <strong>Our verdict:</strong> The gold standard for natural moth protection. If moths are your concern, cedar is the oil to use. Also effective against fleas.
       </p>
 
-      <h3>Clove Oil &mdash; Evidence: 2/5 Stars</h3>
+      <h3>Clove Oil &mdash; Evidence: 2/5</h3>
       <p>
         <strong>Best for:</strong> Ants, wasps, flies<br />
         Clove oil contains <strong>eugenol</strong>, a phenolic compound with established insecticidal properties. Eugenol is used commercially in some organic pesticide formulations. The strong, spicy scent of clove oil is a broad-spectrum insect repellent with particular effectiveness against ants and wasps.
@@ -220,7 +220,7 @@ export default function EssentialOilsForPestControlPage() {
         <strong>Our verdict:</strong> A useful component of essential oil blends, particularly for wasps and ants. Best used in combination with other oils rather than alone.
       </p>
 
-      <h3>Eucalyptus Oil &mdash; Evidence: 2/5 Stars</h3>
+      <h3>Eucalyptus Oil &mdash; Evidence: 2/5</h3>
       <p>
         <strong>Best for:</strong> Spiders, flies<br />
         Eucalyptus oil, containing <strong>eucalyptol (1,8-cineole)</strong>, has mild repellent properties against spiders and flying insects. The strong, medicinal scent is thought to overwhelm insect chemoreceptors. Lemon eucalyptus oil (<em>Corymbia citriodora</em>) has better evidence as a mosquito repellent than standard eucalyptus.
@@ -229,7 +229,7 @@ export default function EssentialOilsForPestControlPage() {
         <strong>Our verdict:</strong> A reasonable alternative for people who dislike peppermint. The evidence is weaker than for peppermint, citronella, or cedar. Lemon eucalyptus is the better choice if mosquitoes are your primary concern.
       </p>
 
-      <h3>Tea Tree Oil &mdash; Evidence: 2/5 Stars</h3>
+      <h3>Tea Tree Oil &mdash; Evidence: 2/5</h3>
       <p>
         <strong>Best for:</strong> General insect repellent<br />
         Tea tree oil has broad antibacterial and antifungal properties, and some repellent activity against a range of insects. The evidence for tea tree as a pest-specific repellent is limited compared to peppermint, citronella, or cedar.
@@ -245,7 +245,7 @@ export default function EssentialOilsForPestControlPage() {
         <strong>Our verdict:</strong> Not a first-choice pest control oil. The pet safety concerns, particularly for cats, make it a poor choice for home use. Better alternatives exist for every pest it claims to repel.
       </p>
 
-      <h3>Lemongrass Oil &mdash; Evidence: 2/5 Stars</h3>
+      <h3>Lemongrass Oil &mdash; Evidence: 2/5</h3>
       <p>
         <strong>Best for:</strong> Mosquitoes, flies<br />
         Lemongrass oil is closely related to citronella and contains similar repellent compounds, particularly <strong>citral</strong>. It is effective against mosquitoes and other flying insects, though slightly less potent than citronella. It has a pleasant, clean scent that many people prefer to citronella.
@@ -254,7 +254,7 @@ export default function EssentialOilsForPestControlPage() {
         <strong>Our verdict:</strong> A good alternative to citronella for flying insect repellence. Particularly useful in essential oil blends for outdoor areas.
       </p>
 
-      <h3>Rosemary Oil &mdash; Evidence: 2/5 Stars</h3>
+      <h3>Rosemary Oil &mdash; Evidence: 2/5</h3>
       <p>
         <strong>Best for:</strong> Moths, mosquitoes, flies<br />
         Rosemary oil has mild repellent properties against several pests and has been used in traditional moth-repellent herb mixtures for centuries. The active compounds include <strong>camphor and 1,8-cineole</strong>. It works best as part of a blend rather than as a standalone repellent.
@@ -263,7 +263,7 @@ export default function EssentialOilsForPestControlPage() {
         <strong>Our verdict:</strong> A pleasant supplementary oil best used in combination with cedar or lavender for moths, or with citronella for flying insects.
       </p>
 
-      <h3>Neem Oil &mdash; Evidence: 3/5 Stars</h3>
+      <h3>Neem Oil &mdash; Evidence: 3/5</h3>
       <p>
         <strong>Best for:</strong> General insect repellent, garden pests<br />
         Neem oil, derived from the neem tree (<em>Azadirachta indica</em>), contains <strong>azadirachtin</strong>, a compound with documented insecticidal, repellent, and anti-feeding properties. Neem is widely used in organic farming as a natural pesticide and is approved for use in UK organic agriculture.

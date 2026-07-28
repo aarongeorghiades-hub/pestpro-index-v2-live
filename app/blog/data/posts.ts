@@ -2523,7 +2523,7 @@ export const posts: BlogPost[] = [
     targetKeyword: 'do ultrasonic pest repellers work',
     publishDate: '2026-04-06',
     content: `
-<p>Ultrasonic pest repellers are one of the best-selling pest control products on Amazon. Plug them in, they emit high-frequency sound, and mice, rats, spiders, and insects flee your home forever. At least, that is the promise. But after reviewing the evidence and speaking to dozens of pest professionals over the years, we have a less encouraging answer.</p>
+<p>Ultrasonic pest repellers are widely sold as a chemical-free way to deal with pests. Plug them in, they emit high-frequency sound, and mice, rats, spiders, and insects flee your home forever. At least, that is the promise. But after reviewing the evidence and speaking to dozens of pest professionals over the years, we have a less encouraging answer.</p>
 
 <h2>How Ultrasonic Repellers Claim to Work</h2>
 

@@ -400,7 +400,7 @@ export default function BestCommercialFlyKillersPage() {
         <li>Lighter build quality than premium units &mdash; functional rather than robust</li>
         <li>Zapper mechanism &mdash; not suitable for food preparation or storage areas</li>
         <li>No wall mounting bracket included &mdash; ceiling chain only</li>
-        <li>Rated 3.5 out of 5 &mdash; slightly lower customer satisfaction than premium alternatives</li>
+        
       </ul>
       <p>
         <strong>Verdict:</strong> The 30W Industrial Electric Fly Insect Killer is the smart choice for budget-conscious businesses that need reliable fly control in non-food areas. At &pound;20, it costs less than a single replacement glue board for some professional units, yet it delivers genuine 30W UV performance. Ideal for corridors, stores, bin areas, loading bays, and any commercial space where effective fly control matters more than premium build quality.

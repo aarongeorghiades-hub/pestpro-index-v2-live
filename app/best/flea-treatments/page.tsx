@@ -242,7 +242,6 @@ export default function BestFleaTreatmentsPage() {
         <ProductCard
           name="Zero In Home Flea Powder 300g"
           features={[
-            'Amazon Bestseller flea powder',
             'Treats carpets, rugs, and pet bedding',
             'Fine powder penetrates deep into carpet fibres',
             'Easy-to-use shaker container',
@@ -253,7 +252,7 @@ export default function BestFleaTreatmentsPage() {
         />
       </div>
       <p>
-        While aerosol sprays are the most popular format for household flea treatment, powders offer a distinct advantage in certain situations &mdash; and the Zero In Home Flea Powder is an Amazon Bestseller for good reason. The key benefit of a powder is its ability to penetrate deep into carpet fibres, reaching down to the base of the pile where flea larvae live, feed, and spin their cocoons. Flea larvae are negatively phototactic, meaning they actively move away from light and burrow into the deepest recesses of the carpet. A surface spray may not reach these hidden larvae, but a fine powder worked into the carpet with a brush or by foot traffic settles down through the fibres to make contact with them at their level.
+        While aerosol sprays are the most popular format for household flea treatment, powders offer a distinct advantage in certain situations. The key benefit of a powder is its ability to penetrate deep into carpet fibres, reaching down to the base of the pile where flea larvae live, feed, and spin their cocoons. Flea larvae are negatively phototactic, meaning they actively move away from light and burrow into the deepest recesses of the carpet. A surface spray may not reach these hidden larvae, but a fine powder worked into the carpet with a brush or by foot traffic settles down through the fibres to make contact with them at their level.
       </p>
       <p>
         The Zero In flea powder comes in an easy-to-use 300g shaker container that makes application quick and mess-free. Simply sprinkle the powder across carpets, rugs, and pet bedding, then work it into the fibres using a stiff brush or broom and leave it for the recommended contact time before vacuuming up the excess. The fine powder formula is designed to penetrate deep into carpet fibres where flea larvae hide, and the powder format means there is no aerosol propellant, making it a better choice for people who are sensitive to aerosol sprays or who prefer not to use pressurised cans indoors. The active ingredient continues to work in the residue that remains deep within the carpet after vacuuming.
@@ -262,7 +261,7 @@ export default function BestFleaTreatmentsPage() {
         <strong>Pros:</strong>
       </p>
       <ul>
-        <li>Amazon Bestseller with strong verified customer reviews</li>
+        
         <li>Penetrates deep into carpet fibres where flea larvae hide &mdash; superior to sprays for thick carpets</li>
         <li>Easy-to-use shaker container for quick, mess-free application</li>
         <li>No aerosol propellant &mdash; better for those sensitive to pressurised sprays</li>
