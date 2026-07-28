@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Search, Shield, TrendingUp, MapPin } from 'lucide-react'
 import Navigation from '@/components/Navigation';
 import { useState, useEffect, useRef } from 'react';
+import { formatCount } from '@/lib/formatCount';
 
 export interface RegionCount {
   slug: string;
@@ -130,12 +131,12 @@ export default function Home({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 max-w-3xl mx-auto mb-8" ref={statsRef}>
             {providerCount !== null && (
               <div className="border-b sm:border-b-0 sm:border-r border-white/30 pb-4 sm:pb-0 sm:pr-8">
-                <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.providers}</div>
+                <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{formatCount(stats.providers)}</div>
                 <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">PROVIDERS</div>
               </div>
             )}
             <div className="pt-4 sm:pt-0 sm:pl-8">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.cities}</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{formatCount(stats.cities)}</div>
               <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">AREAS COVERED</div>
             </div>
           </div>
@@ -224,7 +225,7 @@ export default function Home({
                   <h3 className="text-2xl font-black text-white">{region.label}</h3>
                 </div>
                 {region.count !== null && (
-                  <p className="text-3xl font-black text-amber-400 mb-4">{region.count} providers</p>
+                  <p className="text-3xl font-black text-amber-400 mb-4">{formatCount(region.count)} providers</p>
                 )}
                 <Link href={region.href} className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
                   Browse {region.label} →
@@ -233,10 +234,6 @@ export default function Home({
             ))}
           </div>
 
-          {/* Coming Soon */}
-          <p className="text-center text-white/50 text-sm">
-            More regions launching in 2026: East of England
-          </p>
         </div>
       </section>
 
