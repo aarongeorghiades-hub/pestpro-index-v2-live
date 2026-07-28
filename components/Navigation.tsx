@@ -35,19 +35,18 @@ export default function Navigation() {
   }, []);
 
   const regions = [
-    { name: 'Greater London', href: '/pest-control/greater-london', status: 'live', providerCount: 389 },
-    { name: 'West Midlands', href: '/pest-control/west-midlands', status: 'live', providerCount: 42 },
-    { name: 'North West', href: '/pest-control/north-west', status: 'live', providerCount: 207 },
-    { name: 'Yorkshire & the Humber', href: '/pest-control/yorkshire-and-the-humber', status: 'live', providerCount: 61 },
-    { name: 'East Midlands', href: '/pest-control/east-midlands', status: 'live', providerCount: 106 },
-    { name: 'South East', href: '/pest-control/south-east', status: 'live', providerCount: 172 },
-    { name: 'South Yorkshire', href: '/pest-control/south-yorkshire', status: 'live', providerCount: 53 },
-    { name: 'South West', href: '/pest-control/south-west', status: 'live', providerCount: 43 },
-    { name: 'Scotland', href: '/pest-control/scotland', status: 'live', providerCount: 60 },
-    { name: 'North East', href: '/pest-control/north-east', status: 'live', providerCount: 53 },
-    { name: 'Wales', href: '/pest-control/wales', status: 'live', providerCount: 38 },
-    { name: 'East of England', href: '/pest-control/east-of-england', status: 'coming-soon' },
-    { name: 'Northern Ireland', href: '/pest-control/northern-ireland', status: 'live', providerCount: 23 },
+    { name: 'Greater London', href: '/pest-control/greater-london', status: 'live' },
+    { name: 'West Midlands', href: '/pest-control/west-midlands', status: 'live' },
+    { name: 'North West', href: '/pest-control/north-west', status: 'live' },
+    { name: 'Yorkshire & the Humber', href: '/pest-control/yorkshire-and-the-humber', status: 'live' },
+    { name: 'East Midlands', href: '/pest-control/east-midlands', status: 'live' },
+    { name: 'South East', href: '/pest-control/south-east', status: 'live' },
+    { name: 'South Yorkshire', href: '/pest-control/south-yorkshire', status: 'live' },
+    { name: 'South West', href: '/pest-control/south-west', status: 'live' },
+    { name: 'Scotland', href: '/pest-control/scotland', status: 'live' },
+    { name: 'North East', href: '/pest-control/north-east', status: 'live' },
+    { name: 'Wales', href: '/pest-control/wales', status: 'live' },
+    { name: 'Northern Ireland', href: '/pest-control/northern-ireland', status: 'live' },
   ];
 
   const pestProducts = [
@@ -111,9 +110,8 @@ export default function Navigation() {
                       className="block px-6 py-3 text-white hover:bg-white/10 transition-colors border-b border-white/5"
                       onClick={() => setIsFindProviderOpen(false)}
                     >
-                      <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3">
                         <span className="text-white">{region.name}</span>
-                        <span className="text-xs text-white/50">{region.providerCount}</span>
                       </div>
                     </Link>
                   ) : (
@@ -575,9 +573,8 @@ export default function Navigation() {
                     className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center">
                       <span className="text-white">{region.name}</span>
-                      <span className="text-xs text-white/50">{region.providerCount}</span>
                     </div>
                   </Link>
                 ) : (
