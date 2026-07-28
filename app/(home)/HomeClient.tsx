@@ -162,7 +162,7 @@ export default function Home({
                 <h3 className="text-2xl font-black text-white">Pest Control Products for Your Home</h3>
               </div>
               <p className="text-white/80 mb-6 flex-grow">
-                Organised by pest type, with Amazon ratings and review counts shown. Every product links straight to the item on Amazon UK.
+                Organised by pest type. Every product links straight to the item on Amazon UK.
               </p>
               <Link href="/products" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
                 Browse Home Products →
