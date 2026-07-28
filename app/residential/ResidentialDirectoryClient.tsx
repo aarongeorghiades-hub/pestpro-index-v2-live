@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useMemo } from 'react';
+import { formatCount } from '@/lib/formatCount';
 import { isTrophyProvider, TROPHY_LEGEND, TROPHY_ARIA_LABEL } from '@/lib/trophy';
 import { PESTS } from '@/lib/pests';
 import { externalHref } from '@/lib/externalUrl';
@@ -245,7 +246,7 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
             Residential Pest Control & Pest Removal
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
-            389 Providers in London
+            {formatCount(providers.length)} Providers in London
           </p>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg" style={{textShadow: '0 2px 4px rgba(0,0,0,0.3)'}}>
             Filter by pest type and service features across our complete directory. No endorsements, no commissions—just transparent, provider-stated information.
