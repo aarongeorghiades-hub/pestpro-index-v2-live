@@ -10,6 +10,7 @@
 // emits the Postgres array form cs.{"slug"}, which Postgres rejects with 22P02.
 
 import { createServerClient } from '@/utils/supabase-server';
+import { formatCount } from '@/lib/formatCount';
 import type { Region, RegionCity } from '@/app/pest-control/data/regions';
 
 /** Which directory a city entry points at, and therefore how to count it. */
@@ -106,4 +107,30 @@ export async function countsByRegion(regions: Region[]): Promise<Record<string, 
     out[region.slug] = counts.length > 0 ? counts.reduce((a, b) => a + b, 0) : null;
   }
   return out;
+}
+
+/**
+ * Substitutes a live count into a region string carrying a {count} placeholder.
+ *
+ * The region prose in data/regions.ts holds a placeholder rather than a figure,
+ * so the numbers cannot go stale. When the count is unavailable the numbered
+ * phrase is removed outright and the sentence is left reading naturally —
+ * never a zero, never a blank where a number should be.
+ *
+ * Three shapes exist in the data:
+ *   "… | {count} Providers"              -> "…"
+ *   "Compare {count} pest control …"     -> "Compare pest control …"
+ *   "… with {count} providers, …"        -> "…, …"
+ */
+export function withCount(text: string, count: number | null): string {
+  if (count !== null) return text.replace('{count}', formatCount(count));
+
+  return text
+    .replace(/ \| \{count\} Providers/g, '')
+    .replace(/Compare \{count\} /g, 'Compare ')
+    .replace(/ with \{count\} providers/g, '')
+    .replace(/\{count\} /g, '')
+    .replace(/\{count\}/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
 }

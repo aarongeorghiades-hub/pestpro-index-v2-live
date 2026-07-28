@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Navigation from '@/components/Navigation';
 import { getRegionBySlug, getAllRegions } from '../data/regions';
-import { cityTarget, countForTarget } from '@/lib/regionCounts';
+import { cityTarget, countForTarget, countsByRegion, withCount } from '@/lib/regionCounts';
 import { formatCount } from '@/lib/formatCount';
 import { Metadata } from 'next';
 
@@ -15,9 +15,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   const region = getRegionBySlug(slug);
   if (region) {
+    // Region total from the same shared counter the page body uses.
+    const regionTotal = (await countsByRegion([region]))[region.slug];
     return {
-      title: region.metaTitle,
-      description: region.metaDescription,
+      title: withCount(region.metaTitle, regionTotal),
+      description: withCount(region.metaDescription, regionTotal),
       alternates: {
         canonical: `https://pestproindex.com/pest-control/${slug}`,
       },
@@ -46,6 +48,7 @@ export default async function DynamicPage({ params }: Props) {
   // One head-only count per city entry, in parallel. Entries that point at no
   // directory ("Browse by Borough", coming-soon areas) resolve to no target and
   // render no number.
+  const regionTotal = region ? (await countsByRegion([region]))[region.slug] : null;
   const cityCounts: Record<string, number | null> = Object.fromEntries(
     await Promise.all(
       (region?.cities ?? []).map(async (city) => {
@@ -121,7 +124,7 @@ export default async function DynamicPage({ params }: Props) {
         <section className="py-16 bg-transparent">
           <div className="max-w-4xl mx-auto px-4">
             <p className="text-lg text-white/90 leading-relaxed">
-              {region.description}
+              {withCount(region.description, regionTotal)}
             </p>
           </div>
         </section>
