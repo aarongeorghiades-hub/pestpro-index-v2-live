@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, Shield, TrendingUp, MapPin } from 'lucide-react'
+import { Search, Shield, TrendingUp, MapPin, Home as HomeIcon, Briefcase } from 'lucide-react'
 import Navigation from '@/components/Navigation';
 import { useState, useEffect, useRef } from 'react';
 import { formatCount } from '@/lib/formatCount';
@@ -167,6 +167,49 @@ export default function Home({
           </div>
         </div>
       </div>
+
+      {/* PRODUCTS SECTION */}
+      <section className="py-24 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#0f172a]">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+              Pest Control Products
+            </h2>
+            <p className="text-xl text-white/80">
+              Sort it yourself, or find a provider
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-2xl p-8 bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] transition-all duration-300 flex flex-col">
+              <div className="flex items-center gap-3 mb-4">
+                <HomeIcon className="w-6 h-6 text-amber-400" />
+                <h3 className="text-2xl font-black text-white">Pest Control Products for Your Home</h3>
+              </div>
+              <p className="text-white/80 mb-6 flex-grow">
+                Organised by pest type, with Amazon ratings and review counts shown. Every product links straight to the item on Amazon UK.
+              </p>
+              <Link href="/products" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                Browse Home Products →
+              </Link>
+            </div>
+
+            <div className="rounded-2xl p-8 bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] transition-all duration-300 flex flex-col">
+              <div className="flex items-center gap-3 mb-4">
+                <Briefcase className="w-6 h-6 text-amber-400" />
+                <h3 className="text-2xl font-black text-white">Pest Control Products for Business</h3>
+              </div>
+              <p className="text-white/80 mb-6 flex-grow">
+                Professional-grade equipment and treatments for commercial premises, organised by pest type.
+              </p>
+              <Link href="/commercial-products" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                Browse Commercial Products →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* BUILT OUT OF FRUSTRATION */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
