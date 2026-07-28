@@ -2,30 +2,56 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import { getAllBoroughs } from './london-boroughs';
 import { Metadata } from 'next';
+import { countForTarget } from '@/lib/regionCounts';
+import { formatCount } from '@/lib/formatCount';
 
-export const metadata: Metadata = {
-  title: 'Pest Control London | 389 Providers Across 33 Boroughs',
-  description: 'Find pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs. Google ratings, no lead fees, no commissions.',
-  alternates: {
-    canonical: 'https://pestproindex.com/pest-control/london',
-  },
-  openGraph: {
-    title: 'Pest Control London | 389 Providers Across 33 Boroughs',
-    description: 'Find pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs. Google ratings, no lead fees, no commissions.',
-    url: 'https://pestproindex.com/pest-control/london',
-    siteName: 'PestPro Index',
-    locale: 'en_GB',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary',
-    title: 'Pest Control London | 389 Providers Across 33 Boroughs',
-    description: 'Find pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs.',
-  },
-};
+async function londonCounts() {
+  const [residential, commercial] = await Promise.all([
+    countForTarget({ slug: 'london', kind: 'residential' }),
+    countForTarget({ slug: 'london', kind: 'commercial' }),
+  ]);
+  return { residential, commercial };
+}
 
-export default function LondonPestControlHubPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const { residential, commercial } = await londonCounts();
+
+  // Two whole variants rather than interpolating an empty string: when a count
+  // is unavailable the sentence is written without numerals at all.
+  const title =
+    residential !== null
+      ? `Pest Control London | ${formatCount(residential)} Providers Across 33 Boroughs`
+      : 'Pest Control London | Providers Across 33 Boroughs';
+
+  const description =
+    residential !== null && commercial !== null
+      ? `Find pest control in London. Compare ${formatCount(residential)} residential and ${formatCount(commercial)} commercial providers across all 33 boroughs. Google ratings, no lead fees, no commissions.`
+      : 'Find pest control in London. Compare residential and commercial providers across all 33 boroughs. Google ratings, no lead fees, no commissions.';
+
+  const shortDescription =
+    residential !== null && commercial !== null
+      ? `Find pest control in London. Compare ${formatCount(residential)} residential and ${formatCount(commercial)} commercial providers across all 33 boroughs.`
+      : 'Find pest control in London. Compare residential and commercial providers across all 33 boroughs.';
+
+  return {
+    title,
+    description,
+    alternates: { canonical: 'https://pestproindex.com/pest-control/london' },
+    openGraph: {
+      title,
+      description,
+      url: 'https://pestproindex.com/pest-control/london',
+      siteName: 'PestPro Index',
+      locale: 'en_GB',
+      type: 'website',
+    },
+    twitter: { card: 'summary', title, description: shortDescription },
+  };
+}
+
+export default async function LondonPestControlHubPage() {
   const boroughs = getAllBoroughs();
+  const { residential, commercial } = await londonCounts();
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -41,7 +67,10 @@ export default function LondonPestControlHubPage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Pest Control Services in London',
-    description: 'Directory of 389 residential and 240 commercial pest control providers across all 33 London boroughs.',
+    description:
+      residential !== null && commercial !== null
+        ? `Directory of ${formatCount(residential)} residential and ${formatCount(commercial)} commercial pest control providers across all 33 London boroughs.`
+        : 'Directory of residential and commercial pest control providers across all 33 London boroughs.',
     areaServed: { '@type': 'City', name: 'London' },
     url: 'https://pestproindex.com/pest-control/london',
   };
@@ -69,7 +98,9 @@ export default function LondonPestControlHubPage() {
             Pest Control in London
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-light mb-8 tracking-widest">
-            389 providers across all 33 London boroughs
+            {residential !== null
+              ? `${formatCount(residential)} providers across all 33 London boroughs`
+              : 'Providers across all 33 London boroughs'}
           </p>
         </div>
       </section>
@@ -78,11 +109,11 @@ export default function LondonPestControlHubPage() {
       <section className="py-12 bg-gradient-to-br from-blue-50 to-white border-b border-gray-100">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
-            <div className="text-4xl md:text-5xl font-black text-blue-600 mb-2">389</div>
+            <div className="text-4xl md:text-5xl font-black text-blue-600 mb-2">{residential !== null ? formatCount(residential) : '—'}</div>
             <div className="text-sm text-gray-600 font-semibold">Residential Providers</div>
           </div>
           <div>
-            <div className="text-4xl md:text-5xl font-black text-blue-600 mb-2">240</div>
+            <div className="text-4xl md:text-5xl font-black text-blue-600 mb-2">{commercial !== null ? formatCount(commercial) : '—'}</div>
             <div className="text-sm text-gray-600 font-semibold">Commercial Providers</div>
           </div>
           <div>
@@ -104,7 +135,9 @@ export default function LondonPestControlHubPage() {
             London is one of the most challenging pest environments in the UK. The combination of dense Victorian and Georgian housing, extensive underground infrastructure, a network of canals and rivers, and an enormous food and hospitality industry creates conditions that sustain significant pest populations year-round. Mice, rats, cockroaches, bed bugs, foxes and moths are all commonly reported across the capital, and effective treatment often depends on finding a provider who understands the specific property type, borough and pest involved.
           </p>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            PestPro Index lists 389 residential and 240 commercial pest control providers across all 33 London boroughs, from the financial centre of the City of London to the outer suburbs of Havering, Bromley and Hillingdon. Every listing is free — no lead fees, no commissions, just honest directory data so Londoners can find local providers quickly.
+            {residential !== null && commercial !== null
+              ? `PestPro Index lists ${formatCount(residential)} residential and ${formatCount(commercial)} commercial pest control providers across all 33 London boroughs, from the financial centre of the City of London to the outer suburbs of Havering, Bromley and Hillingdon. Every listing is free — no lead fees, no commissions, just honest directory data so Londoners can find local providers quickly.`
+              : `PestPro Index lists residential and commercial pest control providers across all 33 London boroughs, from the financial centre of the City of London to the outer suburbs of Havering, Bromley and Hillingdon. Every listing is free — no lead fees, no commissions, just honest directory data so Londoners can find local providers quickly.`}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Link href="/residential" className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all">
