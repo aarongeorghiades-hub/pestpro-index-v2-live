@@ -205,7 +205,6 @@ export default function CommercialProductsPage() {
                     
                     <p className="text-sm text-gray-600 mb-3 capitalize">{product.product_type.replace(/_/g, ' ')}</p>
                     
-                    <p className="text-2xl font-black text-blue-600 mb-4">{product.price_range}</p>
                     
                     <p className="text-xs text-gray-500 mb-4">{product.notes}</p>
                     

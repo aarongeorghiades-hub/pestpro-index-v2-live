@@ -262,56 +262,48 @@ export default function NaturalFleaRemediesPage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="Diatomaceous Earth Food Grade (1kg Tub)"
-          rating={4.5}
           features={[
             'Food-grade DE — safe around humans and pets',
             'Kills fleas through natural dehydration within 24-48 hours',
             'Also effective against ants, bed bugs, and crawling insects',
             '1kg tub — enough to treat a whole house multiple times',
           ]}
-          price="£8.54"
           asin="B0083H1B3W"
           bestFor="Best Natural Treatment"
         />
 
         <ProductCard
           name="Petforia Natural Flea Spray for Home (500ml)"
-          rating={4.1}
           features={[
             'Fast-acting plant-based formula',
             'Safe around children and pets when dry',
             'Spray on carpets, pet bedding, upholstery',
             'Pleasant herbal scent — no harsh chemical smell',
           ]}
-          price="£12.99"
           asin="B0C6MYGPT7"
           bestFor="Best Ready-Made Spray"
         />
 
         <ProductCard
           name="Cedar Wood Chip Sachets (30 Pack)"
-          rating={4.2}
           features={[
             'Natural cedar scent deters fleas and moths',
             'Place inside pet bedding, wardrobes, drawers',
             'Long-lasting — scent lasts months per sachet',
             'Also freshens stored clothing and linens',
           ]}
-          price="£13.99"
           asin="B0839L33DW"
           bestFor="Best Prevention"
         />
 
         <ProductCard
           name="Fine-Toothed Flea Comb — Stainless Steel (2 Pack)"
-          rating={4.4}
           features={[
             'Stainless steel teeth catch fleas, eggs, and flea dirt',
             'Essential tool for checking pets and removing fleas',
             'Works on cats and dogs of all coat types',
             'Dip in soapy water between strokes to trap caught fleas',
           ]}
-          price="£4.99"
           asin="B0C4F2ZJFM"
           bestFor="Best Pet Tool"
         />

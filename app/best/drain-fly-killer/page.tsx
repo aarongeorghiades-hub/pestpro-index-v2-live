@@ -131,14 +131,12 @@ export default function BestDrainFlyKillerPage() {
         <ProductCard
           name="Fruit Fly & Drain Fly Gel Treatment 1 Gallon"
           rank={1}
-          rating={4.3}
           features={[
             'Enzyme-based gel breaks down organic matter',
             'All-natural formula with peppermint oil',
             'Safe for all drain types including septic systems',
             'Pour directly into drains — works overnight',
           ]}
-          price="£25"
           asin="B0BCP3VT97"
           bestFor="Best Overall"
         />
@@ -171,14 +169,12 @@ export default function BestDrainFlyKillerPage() {
         <ProductCard
           name="Zero In Total Insect Killer 300ml"
           rank={2}
-          rating={4.1}
           features={[
             'Kills drain flies, fungus gnats and flying insects',
             'Rainproof formula with up to 4 weeks protection',
             'Use around drain openings, windows and entry points',
             'Trusted UK brand with 60+ years heritage',
           ]}
-          price="£8"
           asin="B00EE3C1IS"
           bestFor="Best UK Brand"
         />
@@ -211,14 +207,12 @@ export default function BestDrainFlyKillerPage() {
         <ProductCard
           name="Rentokil Insectrol Insect Killer Spray 250ml"
           rank={3}
-          rating={4.2}
           features={[
             'Permethrin-based formula kills drain flies on contact',
             'Long-lasting residual activity on treated surfaces',
             'Spray around drain openings, under sinks and on window sills',
             'Professional-grade from the Rentokil brand',
           ]}
-          price="£15"
           asin="B000TARC7A"
           bestFor="Best Professional-Strength"
         />
@@ -251,14 +245,12 @@ export default function BestDrainFlyKillerPage() {
         <ProductCard
           name="Doff Ant & Crawling Insect Killer Spray 1L"
           rank={4}
-          rating={4.0}
           features={[
             'Fast-acting permethrin spray for drain flies and crawling insects',
             '1L ready-to-use pump spray for indoor and outdoor use',
             'Apply around drains, under kitchen units and bathroom surfaces',
             'Large volume for treating multiple areas',
           ]}
-          price="£12"
           asin="B007XD60C4"
           bestFor="Best for Prevention"
         />
@@ -291,14 +283,12 @@ export default function BestDrainFlyKillerPage() {
         <ProductCard
           name="Pest Expert Formula C+ Cockroach & Insect Killer Spray 5L"
           rank={5}
-          rating={4.1}
           features={[
             "Professional-strength 5L spray from the UK's leading pest control brand",
             'Effective against drain flies, fungus gnats, cockroaches and crawling insects',
             'Large volume for commercial kitchens and multi-room treatment',
             'Suitable for catering premises and large-scale infestations',
           ]}
-          price="£10"
           asin="B085S1KX82"
           bestFor="Best Targeted Treatment"
         />

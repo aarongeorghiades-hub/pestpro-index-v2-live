@@ -138,14 +138,12 @@ export default function BestMothTrapsPage() {
         <ProductCard
           name="Moth Prevention Clothes Moth Pheromone Traps"
           rank={1}
-          rating={4.4}
           features={[
             'Premium pheromone lure — strongest attractant available',
             'Targets Common Clothes Moth (Tineola bisselliella)',
             'Lasts up to 12 weeks per trap',
             'Non-toxic and pesticide-free',
           ]}
-          price="£12"
           asin="B0B21S966L"
           bestFor="Best Overall"
         />
@@ -178,14 +176,12 @@ export default function BestMothTrapsPage() {
         <ProductCard
           name="Demi Diamond Pantry Moth Traps"
           rank={2}
-          rating={4.3}
           features={[
             'Pheromone targets Indian Meal Moth specifically',
             'Triangular design fits in kitchen cupboard corners',
             'Non-toxic — safe for use near food',
             'Effective for 8 weeks per trap',
           ]}
-          price="£10"
           asin="B0189FU8KO"
           bestFor="Best Pantry Moth"
         />
@@ -215,14 +211,12 @@ export default function BestMothTrapsPage() {
         <ProductCard
           name="Zero In Clothes Moth Traps"
           rank={3}
-          rating={4.0}
           features={[
             'Affordable pheromone traps for clothes moths',
             'Ready-to-use — peel and place',
             'Lasts up to 6 weeks per trap',
             'Widely available in supermarkets and Amazon',
           ]}
-          price="£5"
           asin="B07SS5DDWH"
           bestFor="Best Budget"
         />
@@ -252,14 +246,12 @@ export default function BestMothTrapsPage() {
         <ProductCard
           name="Pest Expert Clothes Moth Pheromone Traps"
           rank={4}
-          rating={4.3}
           features={[
             'Professional-grade pheromone lure',
             'Large glue board for high catch capacity',
             'Used by textile conservation professionals',
             'Long-lasting 8-week effectiveness',
           ]}
-          price="£10"
           asin="B01NCZJ2P4"
           bestFor="Best Professional-Grade"
         />
@@ -289,14 +281,12 @@ export default function BestMothTrapsPage() {
         <ProductCard
           name="SiSi Clothes & Carpet Moth Pheromone Trap Refills (20 Pads)"
           rank={5}
-          rating={4.1}
           features={[
             '20 replacement pheromone pads for moth traps',
             'Targets clothes and carpet moths',
             'Refreshes worn-out traps without buying new housings',
             'Non-toxic, odourless — cost-effective for ongoing monitoring',
           ]}
-          price="£9"
           asin="B0086OZO12"
           bestFor="Best Refills"
         />
@@ -321,14 +311,12 @@ export default function BestMothTrapsPage() {
         <ProductCard
           name="Natural Cedar Wood Moth Repellent Balls"
           rank={6}
-          rating={4.2}
           features={[
             'Natural cedar oil repels clothes moths',
             'Pleasant scent — not the harsh naphthalene smell of old-fashioned mothballs',
             'Place in wardrobes, drawers, and storage boxes',
             'Refeshable — sand surface to release more cedar oil',
           ]}
-          price="£8"
           asin="B000LNFINU"
           bestFor="Best Repellent"
         />

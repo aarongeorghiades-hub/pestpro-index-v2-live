@@ -248,7 +248,6 @@ export default function BestMoleTrapsPage() {
       <div className="not-prose">
         <ProductCard
           name="Victor Push Mole Trap"
-          rating={4.4}
           features={[
             'Classic scissor-jaw design trusted by UK gardeners and groundskeepers for decades',
             'Push directly into active mole runs — no bait required',
@@ -256,7 +255,6 @@ export default function BestMoleTrapsPage() {
             'Reusable season after season',
             'The default choice for effective mole control',
           ]}
-          price="~£15"
           asin="B00004RAMS"
           bestFor="The go-to mole trap for reliable, proven performance"
           rank={1}
@@ -274,23 +272,21 @@ export default function BestMoleTrapsPage() {
       <div className="not-prose">
         <ProductCard
           name="The Big Cheese Mole Tunnel Trap — Traditional Two-Way Galvanised"
-          rating={4.3}
           features={[
-            "The UK's best-selling tunnel mole trap with 1,100+ reviews",
+ "The UK's best-selling tunnel mole trap with ",
             'Traditional half-barrel design in galvanised metal',
             'Catches moles travelling in either direction through the tunnel',
             'Rust-free, weatherproof construction for year-round use',
             'Reusable season after season with minimal maintenance',
             'The standard choice for UK gardens and lawns',
           ]}
-          price="~£8"
           asin="B001DYTNV4"
           bestFor="The standard traditional tunnel trap for UK gardens"
           rank={2}
         />
       </div>
       <p>
-        The Big Cheese Mole Tunnel Trap is the UK's best-selling tunnel mole trap, and for good reason. Its traditional half-barrel design in galvanised metal sits neatly inside the tunnel and catches moles travelling in either direction — a critical advantage over single-entry traps. With over 1,100 reviews on Amazon, it is the proven standard choice for UK gardens and lawns.
+ The Big Cheese Mole Tunnel Trap is the UK's best-selling tunnel mole trap, and for good reason. Its traditional half-barrel design in galvanised metal sits neatly inside the tunnel and catches moles travelling in either direction — a critical advantage over single-entry traps. on Amazon, it is the proven standard choice for UK gardens and lawns.
       </p>
       <p>
         Setting the trap requires a bit of practice. You need to locate an active run, carefully open it, and position the trap so it sits flush at tunnel level. The galvanised metal construction is rust-free and weatherproof, so the trap lasts for years even in damp, heavy soil. At around £8, The Big Cheese represents exceptional value for a reliable, reusable trap that professional mole catchers and homeowners alike trust.
@@ -301,7 +297,6 @@ export default function BestMoleTrapsPage() {
       <div className="not-prose">
         <ProductCard
           name="Pest-Stop Tunnel Mole Trap — Dual Entry, 30% Stronger"
-          rating={4.3}
           features={[
             "Traditional barrel-design trap from the UK's leading pest control manufacturer",
             '30% stronger spring than standard tunnel traps',
@@ -310,7 +305,6 @@ export default function BestMoleTrapsPage() {
             'Developed with professional mole catchers',
             'Reusable season after season',
           ]}
-          price="~£12"
           asin="B000YPXJG8"
           bestFor="Professional mole catchers and experienced users"
           rank={3}
@@ -328,23 +322,21 @@ export default function BestMoleTrapsPage() {
       <div className="not-prose">
         <ProductCard
           name="SWISSINNO SuperCat Mole Trap — Swiss Precision Claw Design"
-          rating={4.1}
           features={[
-            'High-performance claw trap from Swiss engineering with 1,700+ reviews',
+ 'High-performance claw trap from Swiss engineering with ',
             'Advanced trigger system responds from either direction in the tunnel',
             'Corrosion-resistant construction for multiple seasons of use',
             'No bait or chemicals required — purely mechanical',
             "The modern professional's alternative to traditional tunnel traps",
             'Low-profile design sits discreetly in the run',
           ]}
-          price="~£15"
           asin="B011BX33HG"
           bestFor="Lawns, sports turf and situations where discreet placement matters"
           rank={4}
         />
       </div>
       <p>
-        The SWISSINNO SuperCat Mole Trap brings Swiss precision engineering to mole control. Its advanced claw design and trigger system responds to mole movement from either direction in the tunnel, so there is no need to determine the direction of travel. With over 1,700 reviews on Amazon, this is the modern professional's alternative to traditional barrel-style tunnel traps — no bait, no chemicals, just reliable mechanical trapping.
+ The SWISSINNO SuperCat Mole Trap brings Swiss precision engineering to mole control. Its advanced claw design and trigger system responds to mole movement from either direction in the tunnel, so there is no need to determine the direction of travel. on Amazon, this is the modern professional's alternative to traditional barrel-style tunnel traps — no bait, no chemicals, just reliable mechanical trapping.
       </p>
       <p>
         The low-profile claw design sits discreetly in the run, making it far less conspicuous above ground than plunger traps — ideal for well-maintained lawns and sports turf. The corrosion-resistant construction holds up across multiple seasons of use without degradation. Installation is straightforward: locate an active run, set the trigger mechanism, and place the trap into the tunnel. For gardeners who want a modern, proven trap with a high catch rate, the SWISSINNO SuperCat is an excellent choice.
@@ -355,7 +347,6 @@ export default function BestMoleTrapsPage() {
       <div className="not-prose">
         <ProductCard
           name="REPELEM Claw Mole Trap — Reusable, Rust-Free, Pack of 3"
-          rating={4.0}
           features={[
             'Pack of 3 traps — treat multiple active runs simultaneously',
             'Claw-style design with humane instant-kill mechanism',
@@ -364,7 +355,6 @@ export default function BestMoleTrapsPage() {
             'Good value for gardens with persistent mole activity',
             'UK brand with straightforward setup',
           ]}
-          price="~£20"
           asin="B0CZTRKZFD"
           bestFor="Gardens with persistent mole activity across multiple areas"
           rank={5}

@@ -348,42 +348,36 @@ export default function PlantsThatRepelPestsPage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="Citronella / Lemongrass Seeds"
-          rating={4.1}
           features={[
             'Grow your own citronella — the classic mosquito deterrent',
             'Can be grown in pots and brought indoors over winter',
             'Fresh lemongrass doubles as a cooking ingredient',
             'Sow indoors from March, transplant after last frost',
           ]}
-          price="£2.95"
           asin="B0824ZJWK2"
           bestFor="Best for Mosquitoes"
         />
 
         <ProductCard
           name="Organic Peppermint Seeds (~3,300 Seeds)"
-          rating={4.0}
           features={[
             'Strong peppermint variety — high menthol content',
             'Organic/BIO certified seeds',
             'Best grown in pots to control spreading',
             'Deters ants, mice, spiders, and wasps',
           ]}
-          price="£2.20"
           asin="B00ICQQWQU"
           bestFor="Best Multi-Pest Deterrent"
         />
 
         <ProductCard
           name="English Lavender 'Munstead' Plug Plants (Pack of 6)"
-          rating={4.3}
           features={[
             'Ready-to-plant lavender plugs — faster than seeds',
             'Munstead variety — compact, strongly scented, fully hardy',
             'Deters moths, fleas, flies, and mosquitoes',
             'Beautiful purple flowers attract pollinators',
           ]}
-          price="£10.99"
           asin="B08X1MHTQN"
           bestFor="Best All-Round Plant"
         />

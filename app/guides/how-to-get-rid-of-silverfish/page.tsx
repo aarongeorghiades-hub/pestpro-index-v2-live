@@ -496,28 +496,24 @@ export default function HowToGetRidOfSilverfishPage() {
       <div className="not-prose">
         <ProductCard
           name="Diatomaceous Earth Food Grade 1kg"
-          rating={4.5}
           features={[
             '100% natural fossilised diatom powder',
             'Food-grade safe for homes with children and pets',
             'Apply to cracks, crevices, and dry harbourage areas',
             'Long-lasting in dry conditions',
           ]}
-          price="~&pound;10&ndash;&pound;12"
           asin="B0083H1B3W"
           bestFor="Best Natural Treatment"
           rank={1}
         />
         <ProductCard
           name="Pro Breeze 12L/Day Dehumidifier"
-          rating={4.5}
           features={[
             '12L/day extraction capacity',
             'Automatic humidity sensor (30-80% range)',
             'Sleep mode under 38dB',
             'Continuous drainage option',
           ]}
-          price="~&pound;120&ndash;&pound;150"
           asin="B073XNK45P"
           bestFor="Best Long-Term Solution"
           rank={2}

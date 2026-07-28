@@ -147,14 +147,12 @@ export default function BestRatBaitStationsPage() {
         <ProductCard
           name="Rentokil Advanced Rat Bait Station"
           rank={1}
-          rating={4.3}
           features={[
             'Lockable tamper-resistant design with key',
             'Accepts both poison bait blocks and snap traps',
             'Weatherproof for year-round outdoor use',
             'Trusted Rentokil brand with clear instructions',
           ]}
-          price="£12"
           asin="B072KL5YRK"
           bestFor="Best Overall"
         />
@@ -188,14 +186,12 @@ export default function BestRatBaitStationsPage() {
         <ProductCard
           name="Pest Expert Professional Rat Bait Station"
           rank={2}
-          rating={4.4}
           features={[
             'Heavy-duty professional-grade construction',
             'Used by BPCA-certified pest controllers',
             'Ground anchor points for permanent installation',
             'UV-stabilised plastic for multi-year outdoor use',
           ]}
-          price="£15"
           asin="B010E2GRGO"
           bestFor="Best Professional-Grade"
         />
@@ -228,14 +224,12 @@ export default function BestRatBaitStationsPage() {
         <ProductCard
           name="Roshield External Rat Bait Station Box"
           rank={3}
-          rating={4.2}
           features={[
             'Lockable tamper-resistant design',
             'Compact size ideal for gardens and small spaces',
             'Weatherproof with drainage holes',
             'Affordable entry-level professional station',
           ]}
-          price="£8"
           asin="B00XL382T4"
           bestFor="Best Budget"
         />
@@ -265,14 +259,12 @@ export default function BestRatBaitStationsPage() {
         <ProductCard
           name="The Big Cheese Rat Bait Station Pack"
           rank={4}
-          rating={4.1}
           features={[
             'Multi-pack for perimeter protection',
             'Tamper-resistant lockable design',
             'Accepts block and grain bait',
             'Affordable per-station cost in bulk',
           ]}
-          price="£20"
           asin="B088TH1XCS"
           bestFor="Best Multi-Pack"
         />
@@ -302,14 +294,12 @@ export default function BestRatBaitStationsPage() {
         <ProductCard
           name="Pest Expert Rat Bait Station + Poison Kit"
           rank={5}
-          rating={4.3}
           features={[
             'Complete kit: professional station + brodifacoum bait blocks',
             'Everything needed for immediate deployment',
             'Lockable station with key',
             'Ideal for beginners — no compatibility guesswork',
           ]}
-          price="£25"
           asin="B010E2H7KY"
           bestFor="Best Complete Kit"
         />

@@ -458,70 +458,60 @@ export default function EssentialOilsForPestControlPage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="Nikura Peppermint Essential Oil (10ml, 100% Pure)"
-          rating={4.6}
           features={[
             '100% pure peppermint oil — no dilution or additives',
             'UK-made, vegan, and cruelty-free',
             'High menthol content for maximum pest repellent effect',
             'Specifically marketed for repelling spiders, mice, ants',
           ]}
-          price="£4.99"
           asin="B01ENGPL1E"
           bestFor="Best Overall Oil"
         />
 
         <ProductCard
           name="Citronella Essential Oil (10ml, Pure)"
-          rating={4.3}
           features={[
             '100% pure citronella oil — the classic mosquito repellent',
             'Use in spray bottles, diffusers, or on outdoor furniture',
             'Also effective against flies and wasps',
             'Mix with lemongrass for a stronger outdoor blend',
           ]}
-          price="£3.99"
           asin="B09M93THY5"
           bestFor="Best for Flying Insects"
         />
 
         <ProductCard
           name="Nikura Cedarwood Essential Oil (10ml, 100% Pure)"
-          rating={4.5}
           features={[
             'Himalayan cedarwood — rich, warm, woody scent',
             'The gold standard for natural moth protection',
             'Apply to cedar blocks, sachets, or cotton pads',
             'Also effective against fleas and other fabric pests',
           ]}
-          price="£4.99"
           asin="B01LBDBKVM"
           bestFor="Best for Moths"
         />
 
         <ProductCard
           name="Amber Glass Spray Bottles (2 x 500ml)"
-          rating={4.4}
           features={[
             'Amber glass protects oil from UV degradation',
             'Essential oils can degrade plastic — glass is better',
             '500ml capacity — ideal for diluted pest control sprays',
             'Trigger sprayer for easy, even application',
           ]}
-          price="£10.50"
           asin="B08782Q67D"
           bestFor="Best Spray Bottles"
         />
 
         <ProductCard
           name="EcoWidow Natural Pest Repellent Spray (500ml)"
-          rating={4.1}
           features={[
             'Pre-mixed essential oil blend — ready to use',
             'No mixing or measuring required',
             'Eco-friendly formula using plant-based oils',
             'Ideal for people who prefer convenience over DIY mixing',
           ]}
-          price="£9.99"
           asin="B09YDBWL4F"
           bestFor="Best Pre-Mixed Option"
         />

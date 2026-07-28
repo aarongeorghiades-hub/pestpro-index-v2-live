@@ -276,11 +276,10 @@ export default function BestMouseTrapsPage() {
           rank={1}
           features={[
             'Professional quality snap traps — 6-pack',
-            'Amazon Choice with 5,000+ reviews',
+ 'Amazon Choice with ',
             'Trusted by pest controllers across the UK',
             'Reusable and easy to set',
           ]}
-          price="£10"
           asin="B01NB0QNPI"
           bestFor="Best Overall"
         />
@@ -331,7 +330,6 @@ export default function BestMouseTrapsPage() {
             'Durable construction for repeated use',
             '6-pack for whole-house coverage',
           ]}
-          price="£9"
           asin="B08ML78RC5"
           bestFor="Best Heavy Duty"
         />
@@ -382,7 +380,6 @@ export default function BestMouseTrapsPage() {
             'Easy bait placement and trigger mechanism',
             'Excellent value 6-pack',
           ]}
-          price="£8"
           asin="B00HDVUTZA"
           bestFor="Best Budget Option"
         />
@@ -433,7 +430,6 @@ export default function BestMouseTrapsPage() {
             'Transparent inspection window',
             'Reusable — simply release and reset',
           ]}
-          price="£10"
           asin="B07L8JNPF2"
           bestFor="Best Humane Option"
         />
@@ -482,7 +478,6 @@ export default function BestMouseTrapsPage() {
             'No-kill design for ethical pest control',
             'Compact size fits in tight spaces',
           ]}
-          price="£8"
           asin="B09PKWXRGK"
           bestFor="Best Easy-Clean Humane"
         />

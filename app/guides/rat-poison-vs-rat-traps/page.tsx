@@ -356,7 +356,6 @@ export default function RatPoisonVsRatTrapsPage() {
       <div className="not-prose">
         <ProductCard
           name="Rat Reaper XXL Snap Trap (2-Pack)"
-          rating={4.5}
           features={[
             'Powerful snap mechanism designed specifically for rats — not a scaled-up mouse trap',
             'Large trigger plate for consistent activation',
@@ -364,7 +363,6 @@ export default function RatPoisonVsRatTrapsPage() {
             'Reusable — built from tough ABS plastic and steel',
             'Can be used inside a bait station for pet and child safety',
           ]}
-          price="~£10"
           asin="B0DMGY66T3"
           bestFor="Best overall rat trap for domestic use"
         />
@@ -374,7 +372,6 @@ export default function RatPoisonVsRatTrapsPage() {
       <div className="not-prose">
         <ProductCard
           name="Roshield Rat & Mouse Killer Bait Blocks (300g)"
-          rating={4.4}
           features={[
             'Brodifacoum-based blocks — single-feed lethal dose',
             'Wax-coated for moisture resistance in damp environments',
@@ -382,7 +379,6 @@ export default function RatPoisonVsRatTrapsPage() {
             'Suitable for indoor and outdoor use per label directions',
             'Professional-strength formulation',
           ]}
-          price="~£12"
           asin="B082WNRCQR"
           bestFor="Professional-grade poison for severe infestations"
         />
@@ -392,7 +388,6 @@ export default function RatPoisonVsRatTrapsPage() {
       <div className="not-prose">
         <ProductCard
           name="Rentokil Rat Bait Station"
-          rating={4.3}
           features={[
             'Tamper-resistant design prevents access by children and pets',
             'Compatible with both snap traps and bait blocks',
@@ -400,7 +395,6 @@ export default function RatPoisonVsRatTrapsPage() {
             'Durable plastic construction for indoor and outdoor use',
             'Discreet black design blends into most environments',
           ]}
-          price="~£10"
           asin="B000TAVQBW"
           bestFor="Safe deployment of either traps or poison"
         />

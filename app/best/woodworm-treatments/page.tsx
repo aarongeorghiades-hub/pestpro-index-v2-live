@@ -204,14 +204,12 @@ export default function BestWoodwormTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Barrettine Premier Woodworm Killer 1L"
-          rating={4.5}
           features={[
             'Permethrin-based solvent formula',
             'Industry-standard professional treatment',
             'Creates 20+ year residual barrier',
             'Suitable for brush or spray application',
           ]}
-          price="~&pound;10&ndash;&pound;15"
           asin="B0041WB2E6"
           bestFor="Best Treatment Fluid"
           rank={1}
@@ -250,14 +248,12 @@ export default function BestWoodwormTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Rempro Woodwyse Internal Wood Treatment"
-          rating={4.0}
           features={[
             'Water-based low-toxicity formula',
             'Dual action: woodworm + dry rot',
             'Suitable for occupied spaces',
             'Low odour — no solvent fumes',
           ]}
-          price="~&pound;15&ndash;&pound;25"
           asin="B01MZ7ZB2V"
           bestFor="Best Water-Based Treatment"
           rank={2}
@@ -302,14 +298,12 @@ export default function BestWoodwormTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Rentokil PSW85 Woodworm Treatment Spray 300ml"
-          rating={4.0}
           features={[
             'Aerosol format — ready to use',
             'Kills eggs, larvae and adult beetles',
             'Straw nozzle for hole injection',
             'Ideal for small areas and furniture',
           ]}
-          price="~&pound;8&ndash;&pound;12"
           asin="B000TVLY1O"
           bestFor="Best Spray Can"
           rank={3}
@@ -347,14 +341,12 @@ export default function BestWoodwormTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Rentokil PSW92 Woodworm Treatment 250ml"
-          rating={4.0}
           features={[
             'Built-in injection nozzle',
             'Targets treatment deep into tunnels',
             'Permethrin-based formula',
             'Most thorough DIY approach',
           ]}
-          price="~&pound;8&ndash;&pound;12"
           asin="B000TVIXZY"
           bestFor="Best Injection Applicator"
           rank={4}
@@ -392,14 +384,12 @@ export default function BestWoodwormTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Stanley 0-77-030 Moisture Meter"
-          rating={4.5}
           features={[
             'Pin-type timber moisture measurement',
             'LCD screen with clear readout',
             'Measures 6-44% moisture range',
             'Trusted Stanley brand',
           ]}
-          price="~&pound;22&ndash;&pound;25"
           asin="B003ASOBG8"
           bestFor="Best Diagnostic Tool"
           rank={5}

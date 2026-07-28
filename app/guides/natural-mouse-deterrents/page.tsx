@@ -300,56 +300,48 @@ export default function NaturalMouseDeterrentsPage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="REPELEM Peppermint Mouse Repellent Spray (250ml)"
-          rating={4.2}
           features={[
             'Concentrated peppermint essential oil formula',
             'Ready-to-use spray for skirting boards, lofts, garages',
             'Non-toxic and safe around children when dry',
             'Lasts up to 2 weeks per application indoors',
           ]}
-          price="£12.99"
           asin="B0CRRSTHNG"
           bestFor="Best Natural Spray"
         />
 
         <ProductCard
           name="The Big Cheese Steel Wool Mouse Proofing Kit"
-          rating={4.5}
           features={[
             '8 steel wool pads for filling gaps and holes',
             'Mice cannot chew through steel wool — permanent barrier',
             'Includes peppermint oil spray as a bonus deterrent',
             'Simple to push into gaps, cover with foam or caulk',
           ]}
-          price="£9.99"
           asin="B0DG63BNGT"
           bestFor="Best Physical Proofing"
         />
 
         <ProductCard
           name="Ultrasonic Pest Repeller Plug-In (115m² Coverage)"
-          rating={3.8}
           features={[
             'Covers up to 115 square metres per unit',
             'Simply plug into any mains socket',
             'Inaudible to humans and most pets',
             'Chemical-free — use as supplementary deterrent',
           ]}
-          price="£24.99"
           asin="B0CN69X7GT"
           bestFor="Best Supplementary Device"
         />
 
         <ProductCard
           name="Copper Mesh Mouse-Proof Gap Filler (20 Feet)"
-          rating={4.4}
           features={[
             'Double-layer knitted copper mesh — mice cannot chew through',
             'Does not rust — suitable for exterior and damp areas',
             '20 feet of material — enough for a whole house',
             'Cut to size with scissors, pack tightly into gaps',
           ]}
-          price="£12.99"
           asin="B0BL14WK6V"
           bestFor="Best Rust-Proof Barrier"
         />
@@ -438,14 +430,12 @@ export default function NaturalMouseDeterrentsPage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="B-Free Humane Mouse Trap — Live Catch & Release"
-          rating={4.3}
           features={[
             'Catches mice alive for humane release at a distance',
             'Reusable design — just open, release, and reset',
             'No poison, no kill — fully humane approach',
             'Suitable for indoor and outdoor use',
           ]}
-          price="£8.49"
           asin="B09FKLKNV7"
           bestFor="Best Humane Option"
         />

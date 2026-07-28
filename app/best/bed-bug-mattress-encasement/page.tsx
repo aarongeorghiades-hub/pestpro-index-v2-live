@@ -138,14 +138,12 @@ export default function BestMattressEncasementPage() {
         <ProductCard
           name="SafeRest Premium Zippered Mattress Encasement"
           rank={1}
-          rating={4.5}
           features={[
             'Micro-zipper with Velcro flap — bed bug proof',
             'Waterproof membrane protects against spills and stains',
             'Breathable cotton terry surface for comfortable sleep',
             'Available in all UK mattress sizes (Single to Super King)',
           ]}
-          price="£30"
           asin="B004BAB28O"
           bestFor="Best Overall"
         />
@@ -179,14 +177,12 @@ export default function BestMattressEncasementPage() {
         <ProductCard
           name="Utopia Bedding Zippered Mattress Encasement"
           rank={2}
-          rating={4.2}
           features={[
             'Micro-zipper bed bug protection at a budget price',
             'Knitted polyester — smooth and quiet',
             'Full six-sided mattress enclosure',
             'Machine washable for easy care',
           ]}
-          price="£15"
           asin="B00MRH58V0"
           bestFor="Best Budget"
         />
@@ -216,14 +212,12 @@ export default function BestMattressEncasementPage() {
         <ProductCard
           name="SureGuard Premium Mattress Encasement"
           rank={3}
-          rating={4.4}
           features={[
             'Premium cotton terry — softest encasement available',
             'Micro-zipper with patented SecureSeal closure',
             'Waterproof, breathable, and hypoallergenic',
             'Designed for long-term permanent use',
           ]}
-          price="£35"
           asin="B00WI0D5A2"
           bestFor="Best for Comfort"
         />
@@ -253,14 +247,12 @@ export default function BestMattressEncasementPage() {
         <ProductCard
           name="Protect-A-Bed AllerZip Smooth Encasement"
           rank={4}
-          rating={4.3}
           features={[
             'Commercial-grade BugLock zipper — industry standard',
             'Used in hotels and healthcare facilities worldwide',
             'Smooth polyester surface — easy to wipe clean',
             'Independently tested and certified bed bug proof',
           ]}
-          price="£45"
           asin="B004P1I4US"
           bestFor="Best Heavy-Duty"
         />

@@ -136,14 +136,12 @@ export default function ProfessionalBaitStationKitsPage() {
         <ProductCard
           name="Roshield PRO BOX 4-Pack Extra Large Bait Stations"
           rank={1}
-          rating={4.4}
           features={[
             'Professional-grade — designed for the pest control industry',
             'Extra-large capacity with transparent inspection lid',
             'UK-made from recycled plastics, all UK/EU regulation compliant',
             '4-pack covers a standard residential HMO property',
           ]}
-          price="£35"
           asin="B00XL3CENO"
           bestFor="Best Overall"
         />
@@ -178,14 +176,12 @@ export default function ProfessionalBaitStationKitsPage() {
         <ProductCard
           name="Roshield PRO BOX 2-Pack Extra Large with Inspection Window"
           rank={2}
-          rating={4.3}
           features={[
             'Transparent lid for checking bait without opening',
             'Reduces servicing time across multiple properties',
             'Holds both poison blocks and snap traps',
             'Professional construction, wall-mounting capability',
           ]}
-          price="£20"
           asin="B00XL382T4"
         />
       </div>
@@ -218,14 +214,12 @@ export default function ProfessionalBaitStationKitsPage() {
         <ProductCard
           name="Roshield Pro Quality Tamper-Resistant Bait Box (Single)"
           rank={3}
-          rating={4.2}
           features={[
             'UK-made compact bait station',
             'Lockable, key-operated tamper-resistant design',
             'Complies with latest amateur rodenticide regulations',
             'Suitable for indoor and external wall placement',
           ]}
-          price="£10"
           asin="B0CD7QDM1L"
           bestFor="Best Budget"
         />
@@ -256,14 +250,12 @@ export default function ProfessionalBaitStationKitsPage() {
         <ProductCard
           name="Pest Expert Heavy Duty Outdoor Bait Boxes — Pack of 4"
           rank={4}
-          rating={4.3}
           features={[
             'Industrial-strength lockable bait stations',
             'From the UK leading professional pest control brand',
             'Large, secure, and key-operated',
             'Designed for outdoor placement around buildings',
           ]}
-          price="£40"
           asin="B08XWBB8QF"
           bestFor="Best Professional-Grade"
         />
@@ -297,14 +289,12 @@ export default function ProfessionalBaitStationKitsPage() {
         <ProductCard
           name="Roshield 2x Pre-Baited Rat Kit — Ready to Deploy"
           rank={5}
-          rating={4.1}
           features={[
             'Ready-to-use with pre-baited tamper-resistant boxes',
             'Zero setup — just place and monitor',
             'UK-made, Brodifacoum single-feed bait included',
             'Ideal for landlords wanting immediate deployment',
           ]}
-          price="£25"
           asin="B07JGDJFQY"
         />
       </div>

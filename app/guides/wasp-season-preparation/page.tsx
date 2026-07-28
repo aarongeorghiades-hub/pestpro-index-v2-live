@@ -323,42 +323,36 @@ export default function WaspSeasonPreparationPage() {
       <div className="not-prose">
         <ProductCard
           name="Rentokil Wasp Killer Spray 300ml"
-          rating={4.2}
           features={[
             'Fast-acting pyrethroid formula kills wasps on contact',
             'Jet spray reaches nests from up to 4 metres away',
             'Ideal for treating small, accessible nests in early season',
             'Keep in the shed from March — ready for immediate use',
           ]}
-          price="&pound;6"
           asin="B01C7IKL56"
           bestFor="Best for Early Season"
           rank={1}
         />
         <ProductCard
           name="Rentokil Wasp Nest Killer Foam 300ml"
-          rating={4.3}
           features={[
             'Expanding foam seals and treats nest entrances simultaneously',
             'Reaches nests in wall cavities, loft vents, and air bricks',
             'Long-lasting residual action kills returning wasps',
             'Professional-grade active ingredient (permethrin)',
           ]}
-          price="&pound;8"
           asin="B000TAY2EQ"
           bestFor="Best Nest Treatment"
           rank={2}
         />
         <ProductCard
           name="Pest Expert Wasp Killer Powder 300g"
-          rating={4.4}
           features={[
             'Permethrin-based dust for treating concealed nests',
             'Apply into nest entrance with puffer bottle',
             'Wasps carry powder into the nest, killing the colony',
             'Effective for wall cavity and underground nests',
           ]}
-          price="&pound;10"
           asin="B00AC1IM6Q"
           bestFor="Best for Hidden Nests"
           rank={3}

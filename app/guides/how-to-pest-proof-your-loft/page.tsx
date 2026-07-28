@@ -335,14 +335,12 @@ export default function HowToPestProofYourLoftPage() {
       <div className="not-prose space-y-4">
         <ProductCard
           name="Rentokil Advanced Mouse Traps (Twin Pack)"
-          rating={4.3}
           features={[
             'Easy-set mechanism — no risk of trapping your fingers',
             'Instant kill — the most humane lethal trap design',
             'Reusable and affordable for setting multiple traps at once',
             'Place perpendicular to walls with trigger end against the joist',
           ]}
-          price="&pound;4"
           asin="B00IUE6FSE"
           bestFor="Best for Loft Trapping"
           rank={1}

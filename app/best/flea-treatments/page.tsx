@@ -198,14 +198,12 @@ export default function BestFleaTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Indorex Household Flea Spray 500ml"
-          rating={4.7}
           features={[
             '12-month household flea protection',
             'Contains IGR to break the flea life cycle',
             'Recommended by UK veterinary surgeries',
             'Single can treats average 2-bed house',
           ]}
-          price="~&pound;12"
           asin="B00GKHI2PW"
           bestFor="Best Overall"
           rank={1}
@@ -251,14 +249,12 @@ export default function BestFleaTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Zero In Home Flea Powder 300g"
-          rating={4.5}
           features={[
             'Amazon Bestseller flea powder',
             'Treats carpets, rugs, and pet bedding',
             'Fine powder penetrates deep into carpet fibres',
             'Easy-to-use shaker container',
           ]}
-          price="~&pound;6"
           asin="B00KHV77Y4"
           bestFor="Best Powder"
           rank={2}
@@ -298,14 +294,12 @@ export default function BestFleaTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Beaphar Household Flea Powder 300g"
-          rating={4.3}
           features={[
             'From trusted pet care brand Beaphar',
             'Kills fleas and larvae in carpets and bedding',
             'Safe for use around pets once settled',
             'Effective residual protection',
           ]}
-          price="~&pound;7"
           asin="B001TQRC0K"
           bestFor="Best Pet Brand"
           rank={3}

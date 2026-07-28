@@ -225,14 +225,12 @@ export default function BestWaspKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Rentokil Wasp Foam 300ml"
-          rating={4.2}
           features={[
             '4-meter jet spray for safe distance application',
             'Professional strength formula',
             'Kills wasps on contact and destroys nests',
             'From the UK\'s most trusted pest control brand',
           ]}
-          price="~&pound;8"
           asin="B000TAY2EQ"
           bestFor="Best Overall"
           rank={1}
@@ -273,14 +271,12 @@ export default function BestWaspKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Zero In Ultra Power XL Wasp Trap"
-          rating={4.1}
           features={[
             'Dual chamber reusable design',
             'Ready-baited — just add water',
             'Chemical-free outdoor protection',
             'Effective for gardens, patios, and BBQ areas',
           ]}
-          price="~&pound;10"
           asin="B08BJ1LFNS"
           bestFor="Best Wasp Trap"
           rank={2}
@@ -326,14 +322,12 @@ export default function BestWaspKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Zero In Wasp Killer 300ml"
-          rating={4.0}
           features={[
             'Expanding foam reaches deep into nests',
             'Fast-acting contact killer',
             'Suitable for indoor and outdoor use',
             'Easy-to-use aerosol application',
           ]}
-          price="~&pound;6"
           asin="B0082M8TU6"
           bestFor="Best Quick-Kill Spray"
           rank={3}

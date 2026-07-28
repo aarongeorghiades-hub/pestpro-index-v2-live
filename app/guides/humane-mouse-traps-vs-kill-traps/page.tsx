@@ -319,7 +319,6 @@ export default function HumaneMouseTrapsVsKillTrapsPage() {
       <div className="not-prose">
         <ProductCard
           name="Rentokil Live Capture Mouse Trap (Twin Pack)"
-          rating={4.3}
           features={[
             'Transparent design lets you see if a mouse has been caught without opening',
             'Sensitive tip-trap mechanism — mouse weight triggers the door',
@@ -327,7 +326,6 @@ export default function HumaneMouseTrapsVsKillTrapsPage() {
             'Easy to release — simply open the door outdoors',
             'Reusable and easy to clean between catches',
           ]}
-          price="~£6"
           asin="B000TAT45G"
           bestFor="Best humane mouse trap for reliable live capture"
         />
@@ -337,7 +335,6 @@ export default function HumaneMouseTrapsVsKillTrapsPage() {
       <div className="not-prose">
         <ProductCard
           name="Rentokil Enclosed Mouse Trap (Twin Pack)"
-          rating={4.4}
           features={[
             'Enclosed design — set and dispose without seeing or touching the mouse',
             'Powerful snap mechanism for an instant, humane kill',
@@ -345,7 +342,6 @@ export default function HumaneMouseTrapsVsKillTrapsPage() {
             'Can be baited through a small opening',
             'Reusable and easy to clean',
           ]}
-          price="~£5"
           asin="B000TATQ8C"
           bestFor="Best snap mouse trap for a quick, clean kill"
         />
@@ -355,7 +351,6 @@ export default function HumaneMouseTrapsVsKillTrapsPage() {
       <div className="not-prose">
         <ProductCard
           name="Victor M250S Electronic Mouse Trap"
-          rating={4.2}
           features={[
             'Delivers a lethal electric shock in under 5 seconds',
             'LED indicator light shows when a mouse has been caught',
@@ -363,7 +358,6 @@ export default function HumaneMouseTrapsVsKillTrapsPage() {
             'Runs on 4 AA batteries — kills up to 100 mice per set',
             'Easy disposal — tip the trap over a bin',
           ]}
-          price="~£25"
           asin="B000E1RIUO"
           bestFor="Hands-off, high-tech mouse control"
         />

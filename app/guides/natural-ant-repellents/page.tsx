@@ -363,56 +363,48 @@ export default function NaturalAntRepellentsPage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="TRAP IT! Peppermint Oil Ant Repellent Spray (450ml)"
-          rating={4.3}
           features={[
             'Natural peppermint essential oil formula',
             'Ready-to-use spray — no mixing required',
             'Safe around children and pets when dry',
             'Works on kitchen surfaces, windowsills, doorways',
           ]}
-          price="£9.99"
           asin="B0D1TQBB3J"
           bestFor="Best Natural Spray"
         />
 
         <ProductCard
           name="Diatomaceous Earth Food Grade Pest Control (1 Litre)"
-          rating={4.5}
           features={[
             'Food-grade — safe around humans and pets',
             'Kills ants, fleas, beetles and crawling insects naturally',
             'UK-made, ultra-fine powder for effective application',
             'Long-lasting when kept dry — no chemicals',
           ]}
-          price="£9.99"
           asin="B0CZ9PJVS1"
           bestFor="Best Natural Treatment"
         />
 
         <ProductCard
           name="REPELEM Natural Lemongrass Ant Repellent Spray (250ml)"
-          rating={4.2}
           features={[
             'Natural lemongrass essential oil formula',
             'Pleasant citrus scent — not overpowering',
             'Creates an invisible scent barrier at entry points',
             'Also deters spiders, flies and other insects',
           ]}
-          price="£11.99"
           asin="B0DBM24JBF"
           bestFor="Best Citrus Alternative"
         />
 
         <ProductCard
           name="Silicone Sealant for Gap Filling (70g)"
-          rating={4.4}
           features={[
             'Permanently seals gaps and cracks ants use as entry points',
             'Clear finish — invisible once applied',
             'Flexible and waterproof — lasts for years',
             'The most effective long-term natural barrier',
           ]}
-          price="£4.99"
           asin="B0036GEK9W"
           bestFor="Best Physical Barrier"
         />
@@ -501,14 +493,12 @@ export default function NaturalAntRepellentsPage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="Maxforce Quantum Ant Bait Gel"
-          rating={4.6}
           features={[
             'Professional-grade gel bait — extremely effective',
             'Ants carry bait back to nest, killing the queen',
             'Works on multiple UK ant species',
             'Single application can collapse an entire colony',
           ]}
-          price="£19.99"
           asin="B0CCY1L3YY"
           bestFor="Best for Serious Infestations"
         />

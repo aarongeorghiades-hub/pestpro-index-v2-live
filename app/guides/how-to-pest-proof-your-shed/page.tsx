@@ -314,14 +314,12 @@ export default function HowToPestProofYourShedPage() {
       <div className="not-prose space-y-4">
         <ProductCard
           name="Rentokil Rat Bait Station with Key"
-          rating={4.4}
           features={[
             'Lockable tamper-resistant design — safe around pets and children',
             'Place against shed walls along rat runs',
             'Holds standard bait blocks securely inside',
             'Weather-resistant for year-round outdoor use',
           ]}
-          price="&pound;12"
           asin="B07DVJ2JNW"
           bestFor="Best for Shed Perimeter"
           rank={1}
@@ -336,14 +334,12 @@ export default function HowToPestProofYourShedPage() {
       <div className="not-prose space-y-4">
         <ProductCard
           name="Rentokil Advanced Mouse Trap (3 Pack)"
-          rating={4.3}
           features={[
             'Classic snap trap with easy-set mechanism',
             'Instant kill — the most humane lethal trap type',
             'Three traps per pack — set several at once',
             'Place perpendicular to walls with trigger end against skirting',
           ]}
-          price="&pound;10"
           asin="B07VKD7ZK4"
           bestFor="Best for Shed Mice"
           rank={2}

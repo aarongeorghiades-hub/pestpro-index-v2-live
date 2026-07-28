@@ -253,7 +253,6 @@ export default function BestPigeonSpikesPage() {
       <div className="not-prose">
         <ProductCard
           name="Defenders Stainless Steel Bird Spikes (2m Pack)"
-          rating={4.4}
           features={[
             'Medical-grade stainless steel pins on a UV-resistant polycarbonate base',
             'Two rows of pins cover ledges up to 12 cm wide',
@@ -262,7 +261,6 @@ export default function BestPigeonSpikesPage() {
             'Weather-resistant — rated for 15+ years outdoor use',
             'Each strip is 33 cm long with 6 strips per 2m pack',
           ]}
-          price="~£12"
           asin="B003ZSHN6S"
           bestFor="All-round pigeon deterrent for ledges, sills, and gutters"
           rank={1}
@@ -280,7 +278,6 @@ export default function BestPigeonSpikesPage() {
       <div className="not-prose">
         <ProductCard
           name="Pestbye Stainless Steel Bird Spikes (5m Pack)"
-          rating={4.3}
           features={[
             '5 metres of coverage — enough for multiple window sills or a full roof ridge',
             'Stainless steel pins on a flexible polycarbonate base',
@@ -289,7 +286,6 @@ export default function BestPigeonSpikesPage() {
             'Can also be fixed with screws, cable ties, or silicone',
             'Excellent value per metre compared to smaller packs',
           ]}
-          price="~£20"
           asin="B010MVDJ58"
           bestFor="Covering larger areas at a lower cost per metre"
           rank={2}
@@ -307,7 +303,6 @@ export default function BestPigeonSpikesPage() {
       <div className="not-prose">
         <ProductCard
           name="The Big Cheese Bird Deterrent Spikes (2m Pack)"
-          rating={4.1}
           features={[
             'Stainless steel pins on a tough plastic base',
             'Snap-apart strips — cut to any length without tools',
@@ -316,7 +311,6 @@ export default function BestPigeonSpikesPage() {
             'Suitable for ledges, fences, walls, and flat roofs',
             'Most affordable stainless steel option on the market',
           ]}
-          price="~£8"
           asin="B004TTES1C"
           bestFor="Budget-friendly pigeon deterrent with decent quality"
           rank={3}
@@ -334,7 +328,6 @@ export default function BestPigeonSpikesPage() {
       <div className="not-prose">
         <ProductCard
           name="Defender Polycarbonate Bird Spikes (3m Pack)"
-          rating={4.0}
           features={[
             '100% polycarbonate construction — virtually invisible from ground level',
             'Clear/transparent finish blends in with any surface colour',
@@ -343,7 +336,6 @@ export default function BestPigeonSpikesPage() {
             'Lightweight — ideal for PVC guttering and thin ledges',
             'Can be fixed with adhesive, screws, or cable ties',
           ]}
-          price="~£10"
           asin="B008J0BGIK"
           bestFor="Discreet deterrent where aesthetics matter"
           rank={4}
@@ -361,7 +353,6 @@ export default function BestPigeonSpikesPage() {
       <div className="not-prose">
         <ProductCard
           name="Bird-X Stainless Steel Bird Spikes (3m Kit)"
-          rating={4.2}
           features={[
             'Includes adhesive tubes for immediate installation — no trips to the hardware shop',
             'Premium 304 stainless steel pins for maximum corrosion resistance',
@@ -370,7 +361,6 @@ export default function BestPigeonSpikesPage() {
             'Adhesive bonds to concrete, brick, metal, wood, and PVC',
             'Supplied in 30 cm strips for flexible, gap-free coverage',
           ]}
-          price="~£15"
           asin="B000ZK3GM8"
           bestFor="Quick adhesive-only installation on narrow ledges"
           rank={5}
@@ -388,7 +378,6 @@ export default function BestPigeonSpikesPage() {
       <div className="not-prose">
         <ProductCard
           name="Defenders Bird Netting (4m x 10m)"
-          rating={4.0}
           features={[
             'Covers large areas where spikes are not practical — balconies, allotments, flat roofs',
             'Heavy-duty HDPE mesh with UV stabiliser for multi-year outdoor use',
@@ -397,7 +386,6 @@ export default function BestPigeonSpikesPage() {
             'Includes cable ties for quick attachment to frames and posts',
             'Virtually invisible from a distance when taut',
           ]}
-          price="~£15"
           asin="B000TAT4S8"
           bestFor="Protecting large open areas like balconies, allotments, and under-eave gaps"
           rank={6}

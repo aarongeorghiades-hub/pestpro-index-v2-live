@@ -234,14 +234,12 @@ export default function BestAntGelBaitPage() {
         <ProductCard
           name="Nippon Ant Killer Gel 25g — Liquid Bait, Colony Elimination"
           rank={1}
-          rating={4.4}
           features={[
             'UK market leader for ant gel bait',
             'Sugary liquid bait carried back to the queen',
             'Eliminates entire colony — not just surface ants',
             '25g tube treats multiple ant runs',
           ]}
-          price="£5"
           asin="B000TAUBSC"
           bestFor="Best Overall"
         />
@@ -272,14 +270,12 @@ export default function BestAntGelBaitPage() {
         <ProductCard
           name="Nippon Ant Killer Powder 500g"
           rank={2}
-          rating={4.3}
           features={[
             'Permethrin-based powder for direct nest treatment',
             'Apply along ant runs, cracks and garden nest sites',
             'Long-lasting outdoor control',
             '6-month effective residual',
           ]}
-          price="£6"
           asin="B000TAW39M"
           bestFor="Best Powder"
         />
@@ -310,14 +306,12 @@ export default function BestAntGelBaitPage() {
         <ProductCard
           name="Nippon Ant &amp; Crawling Insect Killer Spray 750ml"
           rank={3}
-          rating={4.2}
           features={[
             'Ready-to-use residual spray for indoor and outdoor',
             'Kills ants on contact with invisible barrier',
             'Apply around doorframes, skirting boards, paths',
             '750ml treats a full property perimeter',
           ]}
-          price="£7"
           asin="B000TAP1R8"
           bestFor="Best Spray"
         />
@@ -348,14 +342,12 @@ export default function BestAntGelBaitPage() {
         <ProductCard
           name="Zero In Ant & Cockroach Killer 1.5L — Ready-to-Use Pressure Sprayer"
           rank={4}
-          rating={4.1}
           features={[
             'Large 1.5L ready-to-use pressure sprayer',
             'Cypermethrin with antibacterial agent',
             'Adjustable nozzle for cracks, crevices and surfaces',
             'Treats a full property perimeter in one application',
           ]}
-          price="£8"
           asin="B0B71D3QS1"
           bestFor="Best Spray"
         />
@@ -386,14 +378,12 @@ export default function BestAntGelBaitPage() {
         <ProductCard
           name="Doff 2-in-1 Ant & Nest Bait Killer Stations"
           rank={5}
-          rating={4.3}
           features={[
             'Pre-baited ant bait stations from UK manufacturer Doff',
             'Workers carry bait back to nest — eliminates the queen',
             'Safe indoors and outdoors around children and pets',
             'Up to 3 months protection per station',
           ]}
-          price="£5"
           asin="B086DX7HM7"
           bestFor="Best Bait Stations"
         />

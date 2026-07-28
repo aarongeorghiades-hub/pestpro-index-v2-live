@@ -700,7 +700,6 @@ export default function LandlordPestControlPage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="Meaco MeacoDry Arete One 20L Dehumidifier"
-          rating={4.6}
           features={[
             '20 litres/day extraction — suitable for 2–5 bed properties',
             'Low energy consumption (255W) — under 5p/hour to run',
@@ -708,7 +707,6 @@ export default function LandlordPestControlPage() {
             'Quiet operation (37dB) — won\'t disturb tenants',
             'Auto-restart after power cut — ideal for unattended rental properties',
           ]}
-          price="£199.99"
           asin="B093TK2M7F"
           bestFor="Best Overall"
           rank={1}
@@ -716,7 +714,6 @@ export default function LandlordPestControlPage() {
 
         <ProductCard
           name="EcoAir DD1 Simple MK3 Desiccant Dehumidifier"
-          rating={4.4}
           features={[
             'Desiccant technology — works efficiently in cold/unheated spaces',
             '7.5 litres/day extraction capacity',
@@ -724,7 +721,6 @@ export default function LandlordPestControlPage() {
             'Ideal for garages, basements, and void properties',
             'Rotary compressor-free — operates down to 1°C',
           ]}
-          price="£139.99"
           asin="B00474K8SY"
           bestFor="Best for Unheated Spaces"
           rank={2}
@@ -732,7 +728,6 @@ export default function LandlordPestControlPage() {
 
         <ProductCard
           name="ThermoPro TP50 Digital Hygrometer"
-          rating={4.5}
           features={[
             'Displays temperature and humidity with high/low records',
             'Comfort level indicator — shows when humidity is too high',
@@ -740,7 +735,6 @@ export default function LandlordPestControlPage() {
             'Battery powered — no wiring required',
             'Budget-friendly — buy multiple for different rooms',
           ]}
-          price="£8.99"
           asin="B01H1R0K68"
           bestFor="Best Budget Monitor"
           rank={3}
@@ -748,7 +742,6 @@ export default function LandlordPestControlPage() {
 
         <ProductCard
           name="HG Mould Spray 500ml"
-          rating={4.5}
           features={[
             'Removes mould effectively from walls, ceilings, tiles, and grout',
             'Chlorine-based formula — kills mould at the root',
@@ -756,7 +749,6 @@ export default function LandlordPestControlPage() {
             'Works on painted surfaces, silicone, and plaster',
             'Essential for between-tenancy mould treatment',
           ]}
-          price="£5.99"
           asin="B000IU40HQ"
           bestFor="Best Mould Treatment"
           rank={4}

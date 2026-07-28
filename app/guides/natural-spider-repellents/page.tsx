@@ -249,56 +249,48 @@ export default function NaturalSpiderRepellentsPage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="REPELEM Natural Peppermint Spider Repellent Spray (250ml)"
-          rating={4.2}
           features={[
             'Pure peppermint essential oil formula',
             'Ready-to-use spray for windowsills, doors, corners',
             'Pleasant minty scent — not chemical',
             'Also deters ants and other crawling insects',
           ]}
-          price="£9.99"
           asin="B0DBLZFZ9L"
           bestFor="Best Natural Spray"
         />
 
         <ProductCard
           name="Quickdraw Spider Catcher — Humane Catch & Release (65cm)"
-          rating={4.5}
           features={[
             'Gentle bristles catch spiders without harming them',
             '65cm long handle — no need to get close',
             'Release spiders safely outside without touching them',
             'Ideal for arachnophobes — simple one-handed operation',
           ]}
-          price="£12.00"
           asin="B0BWF8BCQC"
           bestFor="Best Humane Tool"
         />
 
         <ProductCard
           name="Inovida Cedar Wood Moth & Spider Repellent Planks (16 Pack)"
-          rating={4.3}
           features={[
             'Natural cedarwood — releases repellent oils for months',
             'Place in wardrobes, on windowsills, in corners',
             'Sand lightly to refresh the scent',
             'Also deters moths and carpet beetles',
           ]}
-          price="£9.99"
           asin="B0D71625BY"
           bestFor="Best Long-Lasting"
         />
 
         <ProductCard
           name="Stormguard Door Brush Strip Draught Excluder (914mm)"
-          rating={4.4}
           features={[
             'Seals the gap under doors — blocks spider entry',
             'Also improves energy efficiency and reduces draughts',
             'Simple screw-on or adhesive installation',
             'White finish suits most door frames',
           ]}
-          price="£5.50"
           asin="B002Q0ZB9M"
           bestFor="Best Physical Barrier"
         />

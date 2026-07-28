@@ -334,14 +334,12 @@ export default function MovingHousePestChecklistPage() {
       <div className="not-prose space-y-4">
         <ProductCard
           name="Indorex Household Flea Spray (500ml)"
-          rating={4.5}
           features={[
             'Contains permethrin knockdown + IGR for long-lasting flea control',
             'Single can treats an average three-bedroom house',
             'Kills adult fleas on contact and prevents larvae developing for up to 12 months',
             'Ideal for treating an empty property before moving in',
           ]}
-          price="&pound;12"
           asin="B00GKHI2PW"
           bestFor="Best for Flea Treatment"
           rank={1}
@@ -359,14 +357,12 @@ export default function MovingHousePestChecklistPage() {
       <div className="not-prose space-y-4">
         <ProductCard
           name="Pest Expert Formula C Bed Bug Killer Spray 1L + Formula P Powder Kit"
-          rating={4.3}
           features={[
             'Professional-strength 1L residual spray plus Formula P powder',
             'Apply spray along skirting boards, bed frame joints, and cracks in walls',
             'Residual action continues killing for weeks after application',
             'Ideal for preventive treatment of an empty property before moving furniture in',
           ]}
-          price="&pound;20"
           asin="B013K87W4A"
           bestFor="Best for Bed Bug Prevention"
           rank={2}
@@ -405,14 +401,12 @@ export default function MovingHousePestChecklistPage() {
       <div className="not-prose space-y-4">
         <ProductCard
           name="Xcluder Rodent Control Steel Wool Fill Fabric"
-          rating={4.5}
           features={[
             'Professional-grade stainless steel wool for sealing gaps and holes',
             'Mice and rats cannot chew through the metal fibres',
             'Flexible — pack into irregular gaps around pipes and cables',
             'Use with expanding foam for a permanent, rodent-proof seal',
           ]}
-          price="&pound;12"
           asin="B006GQQVDW"
           bestFor="Best for Gap Sealing"
           rank={3}

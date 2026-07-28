@@ -257,14 +257,12 @@ export default function BestUltrasonicPestRepellersPage() {
         <ProductCard
           name="PestBye Advanced Whole House Repeller"
           rank={1}
-          rating={3.8}
           features={[
             'Mains-powered unit with stronger output than plug-in models',
             'Variable frequency to reduce habituation',
             'From PestBye — a recognised UK pest product brand',
             'Designed for whole-house coverage via mains wiring',
           ]}
-          price="£25"
           asin="B003TU4YPA"
           bestFor="Best Overall"
         />
@@ -299,14 +297,12 @@ export default function BestUltrasonicPestRepellersPage() {
         <ProductCard
           name="Pest Reject Pro Ultrasonic Repeller"
           rank={2}
-          rating={3.5}
           features={[
             'Affordable single-unit plug-in design',
             'Claims to cover 80-120 sq m per unit',
             'Night light feature doubles as a plug-in light',
             'Low running cost — minimal electricity usage',
           ]}
-          price="£12"
           asin="B07D1T56BJ"
           bestFor="Best Budget"
         />
@@ -341,14 +337,12 @@ export default function BestUltrasonicPestRepellersPage() {
         <ProductCard
           name="Diaotec Ultrasonic Pest Repeller — 4-Mode Plug-In"
           rank={3}
-          rating={3.6}
           features={[
             'Four selectable modes (test, ultrasonic, transonic, dual)',
             'Targets rodents, squirrels, spiders and insects',
             'Variable frequency sweep to reduce habituation',
             'Single compact plug-in unit',
           ]}
-          price="£20"
           asin="B09PBSZ3JX"
           bestFor="Best Multi-Mode"
         />
@@ -383,14 +377,12 @@ export default function BestUltrasonicPestRepellersPage() {
         <ProductCard
           name="BRISON Ultrasonic Pest Repeller (2 Pack)"
           rank={4}
-          rating={3.4}
           features={[
             'Two units for multi-room coverage',
             'Claims effectiveness against rodents, insects, and spiders',
             'Simple plug-in operation — no setup required',
             'Affordable per-unit cost in the 2-pack format',
           ]}
-          price="£14"
           asin="B07WHKSPYK"
         />
       </div>
@@ -424,14 +416,12 @@ export default function BestUltrasonicPestRepellersPage() {
         <ProductCard
           name="Upgraded Dual-Speaker Pest Repeller"
           rank={5}
-          rating={3.3}
           features={[
             'Dual speakers for wider frequency dispersion',
             'Claims to emit both ultrasonic and electromagnetic waves',
             'LED indicator light shows operating status',
             'Variable frequency mode included',
           ]}
-          price="£18"
           asin="B0D1MSGYQV"
         />
       </div>
@@ -465,14 +455,12 @@ export default function BestUltrasonicPestRepellersPage() {
         <ProductCard
           name="Whole-House Plug-In Repeller Pack (6 Units)"
           rank={6}
-          rating={3.5}
           features={[
             'Six units — enough for every main room in a house',
             'Simple plug-in design for each unit',
             'Ideal for comprehensive whole-house deployment',
             'Most cost-effective per-unit price at scale',
           ]}
-          price="£30"
           asin="B0DB1K1VR5"
           bestFor="Best for Coverage"
         />

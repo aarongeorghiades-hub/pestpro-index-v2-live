@@ -232,14 +232,12 @@ export default function BestProfessionalBirdNettingKitsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Birdgo Anti-Pigeon Netting 10m x 10m (50mm, Knotted, UV-Stabilised)"
-          rating={4.2}
           features={[
             'Large 10m x 10m net — 100 sq m of coverage per pack',
             '50mm knotted mesh for pigeon and gull exclusion',
             'UV-stabilised polyethylene rated for years outdoors',
             'Net only — pair with the fixing clips below',
           ]}
-          price="£60"
           asin="B07KB3BWZP"
           bestFor="Best Overall"
           rank={1}
@@ -263,14 +261,12 @@ export default function BestProfessionalBirdNettingKitsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Birdgo Anti-Pigeon Netting 5m x 10m (50mm, Knotted, UV-Stabilised)"
-          rating={4.3}
           features={[
             '5m x 10m net — 50 sq m, ideal for smaller areas',
             '50mm knotted mesh for pigeon and gull exclusion',
             'UV-stabilised knotted polyethylene from a specialist brand',
             'Lower-cost entry point than the 10m x 10m net',
           ]}
-          price="£30"
           asin="B07KB29QTF"
           bestFor="Best Value Net"
           rank={2}
@@ -294,14 +290,12 @@ export default function BestProfessionalBirdNettingKitsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Defender Wide Plastic Bird Spikes — 5m Professional Pack"
-          rating={4.4}
           features={[
             'UK-manufactured, patented design (25+ year track record)',
             'Stainless steel spikes on UV-resistant plastic base',
             'Covers ledges up to 20cm wide',
             'Professional standard for ledge exclusion alongside netting',
           ]}
-          price="£25"
           asin="B006Y9L57S"
           bestFor="Best for Ledges"
           rank={3}
@@ -325,14 +319,12 @@ export default function BestProfessionalBirdNettingKitsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Birdgo Bird Netting & Mesh Fixing Clips — No-Drill (60-Pack)"
-          rating={4.0}
           features={[
             'Pack of 60 UV-stabilised nylon fixing clips',
             'No-drill installation for netting and proofing mesh',
             'Originally designed for solar-panel and roof mesh fixing',
             'Quick way to attach netting without specialist tools',
           ]}
-          price="£20"
           asin="B0823ZVZSN"
           rank={4}
         />
@@ -355,14 +347,12 @@ export default function BestProfessionalBirdNettingKitsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Pest-Stop Professional Stainless Steel Bird Spikes"
-          rating={4.2}
           features={[
             '304 stainless steel spikes, UV-resistant base',
             'Flexible base for curved surfaces like ridge tiles',
             'Pigeon and seagull exclusion for rooflines and sills',
             'Complements netting on buildings with complex geometry',
           ]}
-          price="£20"
           asin="B0024NL0OQ"
           rank={5}
         />

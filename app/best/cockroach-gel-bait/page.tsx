@@ -222,14 +222,12 @@ export default function BestCockroachGelBaitPage() {
         <ProductCard
           name="Advion Cockroach Gel Bait 4x30g Tubes (Syngenta)"
           rank={1}
-          rating={4.6}
           features={[
             "Indoxacarb 0.6% — the professional standard worldwide",
             "Cascade effect transfers bait to up to 40 cockroaches per treated insect",
             "Targets German, American and gel-bait-averse species",
             "4x30g tubes — used by professional pest controllers worldwide",
           ]}
-          price="Check price"
           asin="B0148W0WOE"
           bestFor="Best Overall"
         />
@@ -262,14 +260,12 @@ export default function BestCockroachGelBaitPage() {
         <ProductCard
           name="NOPE! CP Cockroach Killer Spray 500ml"
           rank={2}
-          rating={4.5}
           features={[
             "Odourless cypermethrin formula — kills on contact",
             "3-month residual barrier on treated surfaces",
             "Disinfects as well as kills — ideal for kitchens and bathrooms",
             "Use alongside Advion gel for combined colony and route treatment",
           ]}
-          price="Check price"
           asin="B0B1QNQ7Y1"
           bestFor="Best Alternative"
         />
@@ -302,14 +298,12 @@ export default function BestCockroachGelBaitPage() {
         <ProductCard
           name="Pest Expert Cockroach Killer Kit (Advanced)"
           rank={3}
-          rating={4.3}
           features={[
             "Complete treatment kit from the UK's leading pest control brand",
             "Combines gel bait, spray and powder for comprehensive coverage",
             "Designed for heavy infestations in domestic and commercial kitchens",
             "Includes step-by-step treatment guide",
           ]}
-          price="Check price"
           asin="B071K8X44X"
           bestFor="Best Kit"
         />
@@ -342,14 +336,12 @@ export default function BestCockroachGelBaitPage() {
         <ProductCard
           name="Rentokil Insectrol Insect Killer Spray 250ml"
           rank={4}
-          rating={4.0}
           features={[
             "Trusted Rentokil formulation with permethrin and d-allethrin",
             "Kills cockroaches, fleas, ants and earwigs on contact",
             "Long-lasting residual activity on treated surfaces",
             "Spray into cracks, crevices and harbourage areas",
           ]}
-          price="Check price"
           asin="B000TARC7A"
           bestFor="Best Spray"
         />
@@ -382,14 +374,12 @@ export default function BestCockroachGelBaitPage() {
         <ProductCard
           name="Zero In Ant & Cockroach Killer 1.5L Ready-to-Use"
           rank={5}
-          rating={4.0}
           features={[
             "Large 1.5L pressurised spray with adjustable nozzle",
             "Cypermethrin and benzalkonium chloride antibacterial formula",
             "Fan spray or crack-and-crevice treatment modes",
             "Suitable for indoor and outdoor use",
           ]}
-          price="Check price"
           asin="B0B71D3QS1"
           bestFor="Best Budget"
         />

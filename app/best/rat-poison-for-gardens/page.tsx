@@ -244,14 +244,12 @@ export default function BestRatPoisonForGardensPage() {
         <ProductCard
           name="Pest Expert Formula B+ + Outdoor Bait Box Combo 900g"
           rank={1}
-          rating={4.5}
           features={[
             'Maximum-strength Brodifacoum sachets + professional lockable bait box',
             'Everything needed for outdoor rat control in one kit',
             'CRRU-compliant tamper-resistant station included',
             'Single-feed lethal dose for rapid results',
           ]}
-          price="£30"
           asin="B07Z6CQ5HT"
           bestFor="Best Overall"
         />
@@ -286,14 +284,12 @@ export default function BestRatPoisonForGardensPage() {
         <ProductCard
           name="Pest Expert Formula B+ Rat Poison 1.5kg (15x100g)"
           rank={2}
-          rating={4.4}
           features={[
             'Large 1.5kg pack — 15 x 100g Brodifacoum sachets',
             'Single-feed at maximum legal strength',
             'Enough for multiple bait stations over several weeks',
             'Ideal for treating external rat populations around buildings',
           ]}
-          price="£25"
           asin="B07B51YZC6"
           bestFor="Best Bulk Pack"
         />
@@ -327,14 +323,12 @@ export default function BestRatPoisonForGardensPage() {
         <ProductCard
           name="Roshield External Bait Box + 300g Block Kit"
           rank={3}
-          rating={4.3}
           features={[
             'UK-made tamper-resistant external bait station included',
             'Bromadiolone wax blocks included — ready to deploy',
             'Weatherproof design for fences, walls and under decking',
             'Lockable and compliant with UK rodenticide regulations',
           ]}
-          price="£18"
           asin="B07B73Y2LW"
           bestFor="Best Starter Kit"
         />
@@ -368,14 +362,12 @@ export default function BestRatPoisonForGardensPage() {
         <ProductCard
           name="Roshield 2x External Tamper-Proof Bait Box + Wax Blocks Kit"
           rank={4}
-          rating={4.2}
           features={[
             'Two lockable external bait stations included',
             'Wax blocks included — ready to deploy immediately',
             'Ideal for larger gardens or multi-property coverage',
             'Place 10+ metres apart along rat runs for maximum effectiveness',
           ]}
-          price="£30"
           asin="B07B7CH7W6"
           bestFor="Best Multi-Station"
         />
@@ -409,14 +401,12 @@ export default function BestRatPoisonForGardensPage() {
         <ProductCard
           name="Elixir Gardens Rat Poison 1kg Outdoor Sachets"
           rank={5}
-          rating={4.1}
           features={[
             'Difenacoum-based grain bait in chew-through sachets',
             '10 x 100g sachets — no need to handle the bait directly',
             'Must be used inside a tamper-resistant bait station',
             'Affordable option for sustained outdoor baiting',
           ]}
-          price="£12"
           asin="B071GNVKTK"
           bestFor="Best Value"
         />

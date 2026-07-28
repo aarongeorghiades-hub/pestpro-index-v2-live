@@ -332,7 +332,6 @@ export default function ElectricFlyKillersVsStickyTrapsPage() {
       <div className="not-prose">
         <ProductCard
           name="Aspectek 20W Electronic Bug Zapper"
-          rating={4.3}
           features={[
             '20W UV-A light tubes attract flies, mosquitoes, and moths from up to 60 sq m',
             'Electrified grid delivers an instant kill — no chemicals',
@@ -341,7 +340,6 @@ export default function ElectricFlyKillersVsStickyTrapsPage() {
             'Protective outer cage prevents accidental contact with the grid',
             'Ideal for conservatories, garages, porches, and utility rooms',
           ]}
-          price="~£25"
           asin="B01LDE3TIW"
           bestFor="Best electric fly zapper for home use"
         />
@@ -351,7 +349,6 @@ export default function ElectricFlyKillersVsStickyTrapsPage() {
       <div className="not-prose">
         <ProductCard
           name="Katchy Indoor Insect Trap"
-          rating={4.2}
           features={[
             'UV light + fan + sticky glueboard — triple-action capture',
             'Whisper-quiet fan draws insects onto the glueboard',
@@ -360,7 +357,6 @@ export default function ElectricFlyKillersVsStickyTrapsPage() {
             'Replaceable glueboard cartridges (3 included)',
             'USB-powered — plug into any USB adapter or power bank',
           ]}
-          price="~£30"
           asin="B07B6RZP4H"
           bestFor="Best sticky trap for home kitchens — especially for fruit flies"
         />
@@ -370,7 +366,6 @@ export default function ElectricFlyKillersVsStickyTrapsPage() {
       <div className="not-prose">
         <ProductCard
           name="Vermatik Pro 16W Glueboard Fly Killer"
-          rating={4.4}
           features={[
             'Professional glueboard unit designed for food businesses',
             '16W UV-A tube attracts flies from up to 40 sq m',
@@ -379,7 +374,6 @@ export default function ElectricFlyKillersVsStickyTrapsPage() {
             'Easy-access glueboard replacement — no tools needed',
             'Wall mountable — ideal for restaurants, cafés, and bakeries',
           ]}
-          price="~£45"
           asin="B01N3B33KV"
           bestFor="Best glueboard fly killer for food businesses and commercial kitchens"
         />

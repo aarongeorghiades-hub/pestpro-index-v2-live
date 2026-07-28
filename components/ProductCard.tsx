@@ -1,34 +1,18 @@
 import Link from 'next/link';
 
+// Deliberately has no rating or price prop. Every figure the site previously
+// showed for these was hand-typed rather than sourced from Amazon, so the
+// component is structurally unable to display one. Price is left to Amazon via
+// the affiliate link.
 interface ProductCardProps {
   name: string;
-  rating?: number;
   features: string[];
-  price: string;
   asin: string;
   bestFor?: string;
   rank?: number;
 }
 
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex items-center gap-1">
-      {[1, 2, 3, 4, 5].map((star) => (
-        <svg
-          key={star}
-          className={`w-5 h-5 ${star <= Math.floor(rating) ? 'text-amber-400' : star - 0.5 <= rating ? 'text-amber-300' : 'text-gray-300'}`}
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-        </svg>
-      ))}
-      <span className="text-sm text-gray-600 ml-1">{rating.toFixed(1)}</span>
-    </div>
-  );
-}
-
-export default function ProductCard({ name, rating, features, price, asin, bestFor, rank }: ProductCardProps) {
+export default function ProductCard({ name, features, asin, bestFor, rank }: ProductCardProps) {
   const amazonUrl = asin && asin.startsWith('B0')
     ? `https://www.amazon.co.uk/dp/${asin}?tag=pestproindex2-21`
     : `https://www.amazon.co.uk/s?k=${encodeURIComponent(name).replace(/%20/g, '+')}&tag=pestproindex2-21`;
@@ -69,10 +53,7 @@ export default function ProductCard({ name, rating, features, price, asin, bestF
                 </span>
               )}
             </div>
-            <span className="text-lg font-bold text-gray-900 whitespace-nowrap">From {price}</span>
           </div>
-
-          {rating !== undefined && <StarRating rating={rating} />}
 
           <ul className="mt-3 space-y-1">
             {features.map((feature, i) => (
@@ -92,7 +73,7 @@ export default function ProductCard({ name, rating, features, price, asin, bestF
               rel="sponsored nofollow noopener noreferrer"
               className="inline-block text-center px-6 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-lg transition-colors text-sm"
             >
-              View on Amazon
+              Check price on Amazon
             </a>
             <p className="text-xs text-gray-400">
               As an Amazon Associate, PestPro Index earns from qualifying purchases.

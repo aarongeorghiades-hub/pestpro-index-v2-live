@@ -224,7 +224,6 @@ export default function BestCommercialFlyKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Xterminate UV LED Wall Mounted Fly Killer (Large)"
-          rating={4.0}
           features={[
             'LED capture unit — safe to use near food service areas',
             'Dual UV LED strips attract a wide range of flying insects',
@@ -232,7 +231,6 @@ export default function BestCommercialFlyKillersPage() {
             'Heavy-duty steel frame with ABS plastic construction',
             'Wall-mounted design with discreet, professional appearance',
           ]}
-          price="~&pound;40"
           asin="B07CKP6XL5"
           bestFor="Best Overall"
           rank={1}
@@ -275,7 +273,6 @@ export default function BestCommercialFlyKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Xterminate 30W UV Electronic Commercial Fly Killer"
-          rating={4.0}
           features={[
             '30W UV tubes attract flies from a wide radius',
             'High-voltage electrified grid delivers instant kill',
@@ -283,7 +280,6 @@ export default function BestCommercialFlyKillersPage() {
             'Removable collection tray for easy cleaning',
             'Suitable for back-of-house, corridors, and storage areas',
           ]}
-          price="~&pound;30"
           asin="B0027EWFLE"
           bestFor="Best Classic Zapper"
           rank={2}
@@ -333,7 +329,6 @@ export default function BestCommercialFlyKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Xterminate 40W UV Commercial Fly Killer with Remote Control"
-          rating={4.0}
           features={[
             '40W UV output (2 x 20W UV-A tubes) for maximum coverage',
             'Remote control for convenient on/off operation',
@@ -341,7 +336,6 @@ export default function BestCommercialFlyKillersPage() {
             'Fireproof ABS construction meets commercial safety standards',
             'Ideal for warehouses, large kitchens, and industrial spaces',
           ]}
-          price="~&pound;50"
           asin="B07SG6W5XF"
           bestFor="Best Large Coverage"
           rank={3}
@@ -384,7 +378,6 @@ export default function BestCommercialFlyKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="30W Industrial Electric Fly Insect Killer"
-          rating={3.5}
           features={[
             '30W output (2 x 15W UV tubes) at an unbeatable price',
             'Chain included for ceiling suspension mounting',
@@ -392,7 +385,6 @@ export default function BestCommercialFlyKillersPage() {
             'Low power consumption — affordable to run continuously',
             'Suitable for non-food-prep commercial areas',
           ]}
-          price="~&pound;20"
           asin="B07RPT58C3"
           bestFor="Best Budget Option"
           rank={4}
@@ -435,7 +427,6 @@ export default function BestCommercialFlyKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Eazyzap 13W Professional Glue Board Fly Killer"
-          rating={4.0}
           features={[
             'Professional glue board unit — EHO-compliant for food preparation areas',
             '13W infrared lighting attracts flies without UV fragmentation risk',
@@ -443,7 +434,6 @@ export default function BestCommercialFlyKillersPage() {
             'Black metal construction — discreet, professional wall or shelf mounting',
             'Replaceable glue boards capture insects intact — no bacterial dispersal',
           ]}
-          price="~&pound;80&ndash;&pound;120"
           asin="B08P5X6T1P"
           bestFor="Best for Food Prep Areas"
           rank={5}

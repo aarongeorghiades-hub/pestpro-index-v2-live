@@ -349,7 +349,6 @@ export default function StudentHousePestGuidePage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="Budget Snap Mouse Traps (6 Pack)"
-          rating={4.3}
           features={[
             'Classic wooden snap trap design — proven effective',
             'Reusable — can be cleaned and reset multiple times',
@@ -357,7 +356,6 @@ export default function StudentHousePestGuidePage() {
             'Place along skirting boards with peanut butter bait',
             'Pack of 6 covers a typical student kitchen',
           ]}
-          price="&pound;5"
           asin="B004B9XPOO"
           bestFor="Best Budget Option"
           rank={1}
@@ -377,7 +375,6 @@ export default function StudentHousePestGuidePage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="Bed Bug Killer Spray 500ml"
-          rating={4.2}
           features={[
             'Residual spray — kills bed bugs on contact and leaves a lasting barrier',
             'Suitable for mattresses, bed frames, headboards, and carpet edges',
@@ -385,7 +382,6 @@ export default function StudentHousePestGuidePage() {
             'Apply to seams, joints, and crevices where bed bugs hide',
             'Immediate action while waiting for landlord to arrange professional treatment',
           ]}
-          price="&pound;8"
           asin="B07F93ZV15"
           bestFor="Best for Bed Bugs"
           rank={2}
@@ -405,7 +401,6 @@ export default function StudentHousePestGuidePage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="Ant Gel Bait Stations (3 Pack)"
-          rating={4.4}
           features={[
             'Gel bait attracts ants who carry poison back to the colony',
             'Kills the queen — collapses the entire nest within 7 to 14 days',
@@ -413,7 +408,6 @@ export default function StudentHousePestGuidePage() {
             'Place along ant trails and near entry points',
             'Safe to use in kitchens — enclosed station design',
           ]}
-          price="&pound;8"
           asin="B08Z4KSG45"
           bestFor="Best for Ants"
           rank={3}

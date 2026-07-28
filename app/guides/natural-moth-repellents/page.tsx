@@ -237,56 +237,48 @@ export default function NaturalMothRepellentsPage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="Elegancely Cedar Wood Moth Rings (60 Pack)"
-          rating={4.4}
           features={[
             '100% natural red cedar wood rings',
             'Hang directly on wardrobe rail or place in drawers',
             'Sand lightly every few months to refresh the scent',
             'Long-lasting — cedar blocks last years with maintenance',
           ]}
-          price="£7.99"
           asin="B09MJ9J6BK"
           bestFor="Best Overall"
         />
 
         <ProductCard
           name="SCENTORINI Dried Lavender Sachets (8 x 30g)"
-          rating={4.3}
           features={[
             'Real dried lavender buds — natural, not synthetic',
             '8 generous sachets for wardrobes and drawers',
             'Pleasant floral scent that freshens stored clothing',
             'Replace every 3-6 months for continued effectiveness',
           ]}
-          price="£8.99"
           asin="B08BYMWHGC"
           bestFor="Best Lavender Option"
         />
 
         <ProductCard
           name="Herbal Clothes Moth Repeller Sachets (12 Pack)"
-          rating={4.2}
           features={[
             'Mixed herb blend — lavender, rosemary, thyme, cloves',
             'Stronger combined scent than single-herb sachets',
             '12 sachets — enough for a full wardrobe',
             'Traditional herbal moth protection',
           ]}
-          price="£5.99"
           asin="B0039OCWEG"
           bestFor="Best Value"
         />
 
         <ProductCard
           name="Bramble Vacuum Storage Bags (20 Pack, 6 Sizes)"
-          rating={4.5}
           features={[
             'Airtight seal — moths cannot reach stored garments',
             '20 bags in 6 sizes for jumpers, coats, and duvets',
             'Includes hand pump — no vacuum cleaner needed',
             'The most effective physical barrier against moths',
           ]}
-          price="£19.99"
           asin="B01LXOOXSL"
           bestFor="Best Physical Protection"
         />

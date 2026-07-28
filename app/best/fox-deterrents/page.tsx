@@ -208,14 +208,12 @@ export default function BestFoxDeterrentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="PestBye Solar Ultrasonic Fox Repeller"
-          rating={4.0}
           features={[
             'Solar powered — no batteries needed',
             'Motion-activated PIR sensor',
             'Adjustable frequency range',
             'Weatherproof IP44 rating',
           ]}
-          price="~&pound;20&ndash;&pound;30"
           asin="B075XMS835"
           bestFor="Best Ultrasonic Deterrent"
           rank={1}
@@ -255,14 +253,12 @@ export default function BestFoxDeterrentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Scoot Fox Repellent Concentrate 100g"
-          rating={4.0}
           features={[
             'Mimics rival fox territorial marking',
             'Non-toxic to pets and plants',
             'Covers up to 34 sqm per pack',
             'UK best-selling fox repellent',
           ]}
-          price="~&pound;8&ndash;&pound;13"
           asin="B00FAMLXAE"
           bestFor="Best Scent Repellent"
           rank={2}
@@ -302,14 +298,12 @@ export default function BestFoxDeterrentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="PestBye Jet Spray Motion-Activated Sprinkler"
-          rating={4.5}
           features={[
             '120-degree detection arc',
             'Covers up to 100 sqm',
             'Connects to standard garden hose',
             'Battery-powered PIR sensor',
           ]}
-          price="~&pound;19&ndash;&pound;25"
           asin="B0153BJ7NQ"
           bestFor="Best Overall Deterrent"
           rank={3}
@@ -355,14 +349,12 @@ export default function BestFoxDeterrentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Coyote Roller Fence Top Spinning Bar"
-          rating={3.5}
           features={[
             'Spinning aluminium tube',
             'Prevents climbing over fences',
             'UV-resistant construction',
             'Also effective against cats',
           ]}
-          price="~&pound;15&ndash;&pound;40"
           asin="B0BMNP26FP"
           bestFor="Best Fence Exclusion"
           rank={4}
@@ -402,14 +394,12 @@ export default function BestFoxDeterrentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Galvanised Welded Steel Mesh 25mm x 25mm"
-          rating={4.5}
           features={[
             '25mm hole size — fox-proof',
             'Hot-dip galvanised for rust resistance',
             '0.9m x 15m roll',
             'Suitable for burial around perimeters',
           ]}
-          price="~&pound;20&ndash;&pound;35"
           asin="B08MWB89CB"
           bestFor="Best for Chicken Runs"
           rank={5}

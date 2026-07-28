@@ -131,20 +131,18 @@ export default function BestSpiderRepellentPage() {
         <ProductCard
           name="Zero In Spider Repellent Peppermint Oil Spray 500ml"
           rank={1}
-          rating={4.3}
           features={[
             "UK's best-selling spider repellent",
             'Natural peppermint oil formula — non-toxic',
             'Safe around children and pets',
             'Lasts up to 3 weeks per application',
           ]}
-          price="£5"
           asin="B00IIOR7NS"
           bestFor="Best Overall"
         />
       </div>
       <p>
-        Zero In is the UK's best-selling spider repellent for good reason. Its natural peppermint oil formula is non-toxic and completely safe around children and pets, making it suitable for use in every room of the house. With over 12,000 reviews on Amazon, it has a proven track record as the go-to spider deterrent for UK households.
+ Zero In is the UK's best-selling spider repellent for good reason. Its natural peppermint oil formula is non-toxic and completely safe around children and pets, making it suitable for use in every room of the house. on Amazon, it has a proven track record as the go-to spider deterrent for UK households.
       </p>
       <p>
         Application is simple: spray generously around windowsills, doorframes, skirting boards and loft hatches — anywhere spiders are likely to enter or build webs. The peppermint scent is pleasant for humans but spiders find it deeply unpleasant, encouraging them to stay away from treated areas. Each application lasts up to 3 weeks, so a regular reapplication schedule throughout the autumn spider season keeps your home spider-free.
@@ -154,7 +152,7 @@ export default function BestSpiderRepellentPage() {
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
-        <li>UK's best-selling spider repellent with 12,000+ reviews</li>
+ <li>UK's best-selling spider repellent with </li>
         <li>Natural, non-toxic peppermint oil formula</li>
         <li>Safe around children and pets</li>
         <li>Pleasant scent that freshens the room</li>
@@ -171,14 +169,12 @@ export default function BestSpiderRepellentPage() {
         <ProductCard
           name="Zero In Spider Repellent 500ml Twin Pack"
           rank={2}
-          rating={4.3}
           features={[
             'Two full 500ml bottles of peppermint repellent',
             'Better value than buying individually',
             'Ideal for whole-home autumn treatment',
             'Same trusted Zero In formula',
           ]}
-          price="£9"
           asin="B0DBZXWGLG"
           bestFor="Best Value"
         />
@@ -211,14 +207,12 @@ export default function BestSpiderRepellentPage() {
         <ProductCard
           name="Acana Natural Spider Stopper 500ml"
           rank={3}
-          rating={4.2}
           features={[
             'Peppermint and clove oil formula',
             'Lasts up to 12 weeks per application',
             'Non-staining on surfaces',
             'No dead spiders — just keeps them away',
           ]}
-          price="£8"
           asin="B0DFMLDNPT"
           bestFor="Best Long-Lasting"
         />
@@ -251,14 +245,12 @@ export default function BestSpiderRepellentPage() {
         <ProductCard
           name="Pestbye Spider Repellent Spray"
           rank={4}
-          rating={4.1}
           features={[
             'UK-developed natural barrier spray',
             'Stops cobweb building on treated areas',
             'Protection lasts up to 4 weeks',
             'From a specialist UK pest control brand',
           ]}
-          price="£10"
           asin="B00FJ4LWWW"
           bestFor="Best Barrier Spray"
         />
@@ -291,14 +283,12 @@ export default function BestSpiderRepellentPage() {
         <ProductCard
           name="NOPE! Spider Killer Spray 500ml"
           rank={5}
-          rating={4.4}
           features={[
             'Kills spiders on contact',
             'Odourless, non-staining residual barrier',
             'Suitable for indoor and outdoor use',
             '3-month residual protection',
           ]}
-          price="£10"
           asin="B09FB4QX9H"
           bestFor="Best Kill & Repel"
         />

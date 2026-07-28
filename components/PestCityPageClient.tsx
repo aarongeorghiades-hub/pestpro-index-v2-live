@@ -154,9 +154,7 @@ export default function PestCityPageClient({ city, pest, initialProviders, initi
                 <ProductCard
                   key={product.asin}
                   name={product.name}
-                  rating={product.rating}
                   features={product.features}
-                  price={product.price}
                   asin={product.asin}
                   bestFor={product.bestFor}
                   rank={i + 1}

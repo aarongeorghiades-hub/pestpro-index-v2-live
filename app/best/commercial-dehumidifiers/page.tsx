@@ -240,8 +240,6 @@ export default function BestCommercialDehumidifiersPage() {
         <ProductCard
           name="electriQ ECD30 Industrial 30L Dehumidifier — Metal Body, Large Wheels"
           rank={1}
-          rating={4.3}
-          price="&pound;280"
           asin="B08TRT57ZP"
           bestFor="Best Overall"
           features={[
@@ -286,8 +284,6 @@ export default function BestCommercialDehumidifiersPage() {
         <ProductCard
           name="MeacoDry Arete One 25L Dehumidifier & HEPA Air Purifier"
           rank={2}
-          rating={4.5}
-          price="&pound;300"
           asin="B093TLCDVC"
           bestFor="Best Professional-Grade"
           features={[
@@ -338,8 +334,6 @@ export default function BestCommercialDehumidifiersPage() {
         <ProductCard
           name="Meaco MeacoDry Arete Two 20L Dehumidifier & HEPA Air Purifier"
           rank={3}
-          rating={4.4}
-          price="&pound;280"
           asin="B0CTKK5WHR"
           features={[
             'Latest generation with Wi-Fi app control',
@@ -382,8 +376,6 @@ export default function BestCommercialDehumidifiersPage() {
         <ProductCard
           name="Meaco 25L Ultra Low Energy Dehumidifier"
           rank={4}
-          rating={4.3}
-          price="&pound;250"
           asin="B01DNZ2A5G"
           bestFor="Best Budget"
           features={[
@@ -427,8 +419,6 @@ export default function BestCommercialDehumidifiersPage() {
         <ProductCard
           name="VonHaus 30L Smart Dehumidifier — WiFi Control"
           rank={5}
-          rating={4.1}
-          price="&pound;200"
           asin="B0FT3LZJZD"
           features={[
             '30L/day high-capacity extraction',

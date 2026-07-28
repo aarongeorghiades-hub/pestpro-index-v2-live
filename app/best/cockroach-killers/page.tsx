@@ -197,14 +197,12 @@ export default function BestCockroachKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Advion Cockroach Gel Bait 4x30g"
-          rating={5}
           features={[
             'Professional-grade gel bait used by UK pest controllers',
             'Domino effect — cockroaches carry bait back to colony',
             '4x30g tubes for comprehensive treatment',
             'Effective against both German and Oriental cockroaches',
           ]}
-          price="£25"
           asin="B0148W0WOE"
           bestFor="Best Overall"
           rank={1}
@@ -247,14 +245,12 @@ export default function BestCockroachKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Cockroach Sticky Traps 12-Pack"
-          rating={4}
           features={[
             '#1 Bestseller toxin-free sticky traps',
             'Food attractant lures cockroaches to the trap',
             '12-pack provides whole-property coverage',
             'Ideal for monitoring infestation levels',
           ]}
-          price="£8"
           asin="B075FM7TST"
           bestFor="Best for Monitoring"
           rank={2}
@@ -297,14 +293,12 @@ export default function BestCockroachKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="NOPE! CP Cockroach Killer Spray 500ml"
-          rating={4}
           features={[
             'Odourless contact killer spray',
             'Fast-acting formula kills cockroaches on contact',
             '500ml bottle covers a large area',
             'Suitable for kitchens, bathrooms, and utility rooms',
           ]}
-          price="£10"
           asin="B074CDY9T4"
           bestFor="Best Quick-Kill Spray"
           rank={3}
@@ -343,14 +337,12 @@ export default function BestCockroachKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Pest Expert Cockroach Gel 10g"
-          rating={4}
           features={[
             'Formula IC gel with domino-effect bait technology',
             'Professional cockroach gel at consumer price',
             'Easy syringe application into cracks and crevices',
             'Effective against all UK cockroach species',
           ]}
-          price="£12"
           asin="B07ZZGKQ55"
           bestFor="Best Budget Gel"
           rank={4}

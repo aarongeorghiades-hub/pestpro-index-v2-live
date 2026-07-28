@@ -198,14 +198,12 @@ export default function BestMothKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Acana Hanging Moth Killer"
-          rating={4.5}
           features={[
             'Four hanging units protect an entire wardrobe',
             'Kills moths, larvae, and eggs on contact',
             'Fresh linen fragrance — no unpleasant chemical odour',
             'Lasts up to six months per unit',
           ]}
-          price="~&pound;8 for 4"
           asin="B00BMO6HKA"
           bestFor="Best Overall"
           rank={1}
@@ -245,14 +243,12 @@ export default function BestMothKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="London Moth Killer Pheromone Traps"
-          rating={4.4}
           features={[
             'Six traps per pack for whole-home monitoring',
             'Pheromone-based — attracts and traps male moths',
             'Non-toxic and pesticide-free design',
             'Helps identify infestation hotspots before they spread',
           ]}
-          price="~&pound;10 for 6"
           asin="B0CGB12XNN"
           bestFor="Best Pheromone Trap"
           rank={2}
@@ -292,14 +288,12 @@ export default function BestMothKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Acana Carpet & Fabric Moth Killer Spray"
-          rating={4.3}
           features={[
             'Kills moths, larvae, and eggs on carpets and fabrics',
             'Residual protection lasts up to three months after application',
             'Safe on wool carpets, rugs, upholstery, and curtains',
             'Targeted spray nozzle for treating edges, corners, and under furniture',
           ]}
-          price="~&pound;9"
           asin="B00E8I39EE"
           bestFor="Best Carpet Moth Spray"
           rank={3}
@@ -339,14 +333,12 @@ export default function BestMothKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Acana Sachet Moth Killer 20 Pack"
-          rating={4.4}
           features={[
             'Twenty sachets per pack — enough for every drawer and storage box',
             'Kills moths, larvae, and eggs within enclosed spaces',
             'Compact size slips easily between folded garments',
             'Fresh floral fragrance protects and freshens simultaneously',
           ]}
-          price="~&pound;8"
           asin="B008BG6JFK"
           bestFor="Best for Drawers & Storage"
           rank={4}
@@ -386,14 +378,12 @@ export default function BestMothKillersPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Rentokil Moth Killer Hanging Unit Twin Pack"
-          rating={4.2}
           features={[
             'Two hanging units from a trusted UK pest control brand',
             'Kills moths and larvae on contact within enclosed wardrobes',
             'Lasts up to six months per unit',
             'Lowest price point of any effective hanging moth killer',
           ]}
-          price="~&pound;5"
           asin="B002DYARYK"
           bestFor="Best Budget Option"
           rank={5}

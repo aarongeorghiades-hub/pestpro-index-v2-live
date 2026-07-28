@@ -136,14 +136,12 @@ export default function ProfessionalBedBugSteamersPage() {
         <ProductCard
           name="Polti Cimex Eradicator Professional Bed Bug Steamer"
           rank={1}
-          rating={4.4}
           features={[
             'Purpose-built for bed bug eradication — patented nozzle design',
             'Superheated dry steam to 180°C kills adults, larvae and eggs instantly',
             'No chemicals, no vacate time, no residue',
             'Used by professional pest controllers worldwide',
           ]}
-          price="£400"
           asin="B00R3C8OW4"
           bestFor="Best Overall"
         />
@@ -160,14 +158,12 @@ export default function ProfessionalBedBugSteamersPage() {
         <ProductCard
           name="Dupray Neat Steam Cleaner — 17 Piece Professional Kit"
           rank={2}
-          rating={4.3}
           features={[
             'Continuous heavy-duty steam — large 54oz tank',
             '17-piece accessory kit covering mattresses, upholstery, frames and crevices',
             '2-year warranty from North America\'s leading steam brand',
             'Multi-purpose: pest treatment + deep cleaning in one unit',
           ]}
-          price="£200"
           asin="B07DJNGYSV"
           bestFor="Best Value"
         />
@@ -184,14 +180,12 @@ export default function ProfessionalBedBugSteamersPage() {
         <ProductCard
           name="McCulloch MC1385 Deluxe Canister Steam Cleaner — 23 Accessories"
           rank={3}
-          rating={4.2}
           features={[
             '23 accessories for maximum versatility',
             'Large 48oz tank for extended treatment sessions',
             'Handles floors, counters, upholstery and pest treatment',
             'Popular with landlords for combined cleaning and pest control',
           ]}
-          price="£180"
           asin="B00G00BTEA"
         />
       </div>
@@ -207,14 +201,12 @@ export default function ProfessionalBedBugSteamersPage() {
         <ProductCard
           name="Dupray Neat Plus Steam Cleaner — 40 Piece Kit"
           rank={4}
-          rating={4.3}
           features={[
             '40-piece accessory kit — the most comprehensive available',
             'Same powerful continuous steam as the Dupray Neat',
             'Ideal for facilities managers treating multiple room types',
             'Covers every surface type in a commercial property',
           ]}
-          price="£250"
           asin="B0DG6T85WF"
         />
       </div>
@@ -227,14 +219,12 @@ export default function ProfessionalBedBugSteamersPage() {
         <ProductCard
           name="AEOLUS LP01SB Professional Bed Bug Steam System"
           rank={5}
-          rating={4.5}
           features={[
             'Italian-made professional steam system — 200°C dry steam',
             'Continuous load capability for long treatment sessions',
             'Bactericidal, virucidal and insecticidal classification',
             'The closest thing to genuine professional pest controller equipment on Amazon',
           ]}
-          price="£500"
           asin="B0CV5VP2TW"
           bestFor="Best Professional-Grade"
         />

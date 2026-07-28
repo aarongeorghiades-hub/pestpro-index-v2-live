@@ -530,28 +530,24 @@ export default function WoodwormTreatmentPage() {
       <div className="not-prose">
         <ProductCard
           name="Barrettine Premier Woodworm Killer 1L"
-          rating={4.5}
           features={[
             'Permethrin-based solvent formula',
             'Industry-standard professional treatment',
             'Creates 20+ year residual barrier',
             'Suitable for brush or spray application',
           ]}
-          price="~&pound;10&ndash;&pound;15"
           asin="B0041WB2E6"
           bestFor="Best Treatment Fluid"
           rank={1}
         />
         <ProductCard
           name="Stanley 0-77-030 Moisture Meter"
-          rating={4.0}
           features={[
             'Pin-type timber moisture measurement',
             'LCD screen with clear readout',
             'Includes 4 x AAA batteries',
             'Essential diagnostic tool for woodworm',
           ]}
-          price="~&pound;22&ndash;&pound;25"
           asin="B003ASOBG8"
           bestFor="Best Diagnostic Tool"
           rank={2}

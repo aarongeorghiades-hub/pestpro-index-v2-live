@@ -562,28 +562,24 @@ export default function CarpetBeetleControlPage() {
       <div className="not-prose">
         <ProductCard
           name="Zero In Carpet Beetle & Moth Spray 300ml"
-          rating={4.0}
           features={[
             'Kills carpet beetles, moths, and their larvae on contact',
             'Residual protection lasts up to 3 months',
             'Odour-free formula safe for use on carpets and fabrics',
             'Apply along carpet edges, skirting boards, and inside wardrobes',
           ]}
-          price="&pound;6"
           asin="B06Y19DMBG"
           bestFor="Best Spray Treatment"
           rank={1}
         />
         <ProductCard
           name="Zeroin Carpet Beetle Trap (Monitoring)"
-          rating={4.0}
           features={[
             'Pheromone-based sticky trap catches adult carpet beetles',
             'Place in wardrobes and along skirting boards',
             'Monitors infestation levels and treatment effectiveness',
             'Chemical-free detection method',
           ]}
-          price="&pound;8"
           asin="B0758F5HY1"
           bestFor="Best Monitoring Trap"
           rank={2}

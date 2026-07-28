@@ -150,14 +150,12 @@ export default function BestCatDeterrentsPage() {
         <ProductCard
           name="PestBye Jet Spray Motion-Activated Sprinkler"
           rank={1}
-          rating={4.5}
           features={[
             'Motion-activated water burst — cats find it very hard to ignore',
             '120-degree detection arc, covers up to 100 sqm',
             'Connects to a standard garden hose',
             'Battery-powered PIR sensor — works day and night',
           ]}
-          price="~&pound;20&ndash;&pound;25"
           asin="B0153BJ7NQ"
           bestFor="Best Overall"
         />
@@ -188,14 +186,12 @@ export default function BestCatDeterrentsPage() {
         <ProductCard
           name="PestBye Solar Ultrasonic Cat Repeller (Twin Pack)"
           rank={2}
-          rating={4.0}
           features={[
             'Solar powered — no batteries or wiring needed',
             'Motion-activated PIR with ~7m range',
             'Twin pack covers two entry points',
             'Weatherproof for year-round outdoor use',
           ]}
-          price="~&pound;30"
           asin="B075XN4NNB"
           bestFor="Best Ultrasonic Deterrent"
         />
@@ -226,14 +222,12 @@ export default function BestCatDeterrentsPage() {
         <ProductCard
           name="Get Off My Garden Cat & Dog Repellent Crystals 240g"
           rank={3}
-          rating={4.0}
           features={[
             'Jelly-crystal scent deterrent for beds and borders',
             'Conditions cats to avoid treated areas',
             'Non-toxic to plants when used as directed',
             'Long-running UK best-seller for cat repellence',
           ]}
-          price="~&pound;7"
           asin="B00THGEB5S"
           bestFor="Best Scent Deterrent"
         />
@@ -263,14 +257,12 @@ export default function BestCatDeterrentsPage() {
         <ProductCard
           name="Defenders Prickle Strip Dig Stopper (Cat & Dog), 3-Pack"
           rank={4}
-          rating={4.2}
           features={[
             'Flexible plastic prickle strips — uncomfortable but harmless',
             'Stops cats digging and fouling in beds and pots',
             'Push into soil or pin onto fence tops and ledges',
             '3-pack covers multiple beds or a boundary run',
           ]}
-          price="~&pound;9"
           asin="B01I3E0PKY"
           bestFor="Best Physical Deterrent"
         />
@@ -301,14 +293,12 @@ export default function BestCatDeterrentsPage() {
         <ProductCard
           name="Silent Roar Lion Manure Cat Repellent Pellets 500g"
           rank={5}
-          rating={4.0}
           features={[
             'Pellets infused with lion-dung essence',
             'Exploits cats’ instinct to avoid a larger predator’s territory',
             'Doubles as a slow-release nitrogen feed for lawns',
             'Topped UK consumer cat-deterrent trials',
           ]}
-          price="~&pound;9"
           asin="B0002B7OT2"
           bestFor="Best Natural Deterrent"
         />

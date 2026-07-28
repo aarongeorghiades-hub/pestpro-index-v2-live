@@ -280,14 +280,12 @@ export default function BestRatPoisonPage() {
         <ProductCard
           name="Roshield Brodifacoum Wax Blocks"
           rank={1}
-          rating={4.5}
           features={[
             'Contains brodifacoum 0.005% — the strongest SGAR available',
             'Wax block formulation resists moisture and mould',
             'Single-feed lethal dose for rapid results',
             'Suitable for indoor and outdoor use in bait stations',
           ]}
-          price="£15"
           asin="B0DL2SLHTM"
           bestFor="Best Overall"
         />
@@ -322,14 +320,12 @@ export default function BestRatPoisonPage() {
         <ProductCard
           name="Pest Expert Formula B+ Grain Bait"
           rank={2}
-          rating={4.4}
           features={[
             'Professional-strength brodifacoum grain bait',
             'Highly palatable wheat-based formula rats prefer',
             'Fast-acting single-feed formulation',
             'Used by professional pest controllers across the UK',
           ]}
-          price="£20"
           asin="B010E2GCIM"
           bestFor="Best Professional-Grade"
         />
@@ -363,14 +359,12 @@ export default function BestRatPoisonPage() {
         <ProductCard
           name="Elixir Gardens Rodex Whole Wheat Sachets"
           rank={3}
-          rating={4.3}
           features={[
             'Bromadiolone 0.005% whole wheat bait',
             'Individual sachets for easy, mess-free deployment',
             'Excellent value — large quantity for the price',
             'Highly palatable to rats and mice',
           ]}
-          price="£12"
           asin="B071K8WQZB"
           bestFor="Best Budget"
         />
@@ -404,14 +398,12 @@ export default function BestRatPoisonPage() {
         <ProductCard
           name="Rentokil Rodine Mouse & Rat Killer Grain Bait"
           rank={4}
-          rating={4.1}
           features={[
             'From Rentokil — the UK\'s most recognised pest control brand',
             'Difenacoum-based grain bait',
             'Ready-to-use sachets with clear instructions',
             'Widely available and trusted by UK consumers',
           ]}
-          price="£8"
           asin="B07BFQ1V5L"
           bestFor="Best Trusted Brand"
         />
@@ -445,14 +437,12 @@ export default function BestRatPoisonPage() {
         <ProductCard
           name="Racan Force Rat & Mouse Killer Paste"
           rank={5}
-          rating={4.2}
           features={[
             'Brodifacoum paste formulation — highly palatable',
             'Individual foil sachets for easy deployment',
             'Strong single-feed formulation for rapid results',
             'Moisture-resistant paste ideal for damp locations',
           ]}
-          price="£18"
           asin="B07H8NZGH7"
           bestFor="Best Paste Bait"
         />
@@ -486,14 +476,12 @@ export default function BestRatPoisonPage() {
         <ProductCard
           name="Pest Expert Rat Poison Bait Block Kit"
           rank={6}
-          rating={4.3}
           features={[
             'Complete kit: bait blocks + tamper-resistant bait station',
             'Brodifacoum blocks for maximum strength',
             'Professional-quality lockable station included',
             'Everything you need in one purchase — no extras required',
           ]}
-          price="£25"
           asin="B010E2H7KY"
           bestFor="Best Combo Kit"
         />

@@ -224,56 +224,48 @@ export default function NaturalWaspDeterrentsPage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="Waspinator Wasp Nest Decoy (2 Pack)"
-          rating={4.1}
           features={[
             'Territorial deterrent — mimics an active wasp nest',
             'Hang in early spring before queen wasps nest',
             'Waterproof and tear-resistant — lasts all season',
             'No chemicals, no baits — purely visual deterrent',
           ]}
-          price="£8.99"
           asin="B001UABS2S"
           bestFor="Best Prevention"
         />
 
         <ProductCard
           name="ASPECTEK Reusable Wasp Traps (2 Pack)"
-          rating={4.3}
           features={[
             'Hourglass design traps wasps effectively',
             'Reusable — empty and refill with sugar water bait',
             'Position 5m+ from seating area to draw wasps away',
             'No chemicals — uses simple sugar water or fruit juice',
           ]}
-          price="£8.99"
           asin="B00HFDGMNO"
           bestFor="Best Wasp Trap"
         />
 
         <ProductCard
           name="Natural Essential Oil Wasp Repellent Spray Concentrate"
-          rating={4.0}
           features={[
             '100% natural blend of 8 essential oils including citronella and peppermint',
             'Concentrate makes 10+ litres of spray',
             'Apply to outdoor furniture, parasols, table legs',
             'Research-backed essential oil combination',
           ]}
-          price="£9.99"
           asin="B0BWNJK9FN"
           bestFor="Best Natural Spray"
         />
 
         <ProductCard
           name="Bramble Mesh Pop-Up Food Covers (5 Pack)"
-          rating={4.5}
           features={[
             'Collapsible mesh domes cover food completely',
             'Fine mesh keeps wasps, flies, and insects out',
             'Easy pop-up design — sets up in seconds',
             'Essential for outdoor dining in wasp season',
           ]}
-          price="£9.99"
           asin="B07PN6T6T6"
           bestFor="Best Food Protection"
         />

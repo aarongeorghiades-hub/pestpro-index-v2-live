@@ -283,14 +283,12 @@ export default function SpringPestPreventionPage() {
       <div className="not-prose">
         <ProductCard
           name="Moth Prevention Pheromone Wardrobe Moth Traps"
-          rating={4.5}
           features={[
             'Pheromone-based sticky traps catch adult male clothes moths',
             'Place inside wardrobes and drawers for early detection',
             'Each trap lasts up to 3 months',
             'Chemical-free monitoring — ideal for spring prevention',
           ]}
-          price="&pound;10"
           asin="B0B21S966L"
           bestFor="Best Moth Trap"
           rank={1}
@@ -318,14 +316,12 @@ export default function SpringPestPreventionPage() {
       <div className="not-prose">
         <ProductCard
           name="Maxforce Quantum Ant Gel Bait"
-          rating={4.6}
           features={[
             'Professional-strength gel bait kills the entire colony including the queen',
             'Workers carry bait back to the nest — eliminates the source',
             'Apply in small dots along trails and near entry points',
             'Effective against black garden ants and other common UK species',
           ]}
-          price="&pound;12"
           asin="B0CCY1L3YY"
           bestFor="Best Ant Gel Bait"
           rank={1}
@@ -371,14 +367,12 @@ export default function SpringPestPreventionPage() {
       <div className="not-prose">
         <ProductCard
           name="Indorex Defence Household Flea Spray"
-          rating={4.7}
           features={[
             'Kills adult fleas, larvae, and eggs on contact',
             'Contains IGR to prevent dormant pupae developing for up to 12 months',
             'Single 500ml can treats an average 2-bedroom home',
             'Recommended by vets and pest control professionals',
           ]}
-          price="&pound;12"
           asin="B00GKHI2PW"
           bestFor="Best Home Flea Spray"
           rank={1}

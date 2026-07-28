@@ -233,14 +233,12 @@ export default function BestRatTrapsPage() {
         <ProductCard
           name="Rat Reaper XXL Snap Trap"
           rank={1}
-          rating={4.3}
           features={[
             'Extra large snap trap designed for UK rats',
             'Professional quality construction',
             'Effective instant-kill mechanism',
             'Reusable and easy to set',
           ]}
-          price="£10"
           asin="B08V918HNB"
           bestFor="Best Overall"
         />
@@ -283,14 +281,12 @@ export default function BestRatTrapsPage() {
         <ProductCard
           name="ROSHIELD Rat Bait Station Box"
           rank={2}
-          rating={4.2}
           features={[
             'Lockable tamper-resistant bait station',
             'Protects bait from children and pets',
             'Professional quality design',
             'Weatherproof for indoor and outdoor use',
           ]}
-          price="£15"
           asin="B07W9FMLWF"
           bestFor="Best for Pet & Child Safety"
         />
@@ -332,14 +328,12 @@ export default function BestRatTrapsPage() {
         <ProductCard
           name="ROSHIELD 4-Pack Rat Trap"
           rank={3}
-          rating={4.4}
           features={[
             'Professional quality heavy-duty snap traps',
             '4-pack for multiple placement points',
             'Trusted by pest controllers across the UK',
             'Amazon Choice product with 5-star rating',
           ]}
-          price="£12"
           asin="B071DJVBT4"
           bestFor="Best Professional-Grade"
         />
@@ -380,14 +374,12 @@ export default function BestRatTrapsPage() {
         <ProductCard
           name="The Big Cheese Rat Bait Station"
           rank={4}
-          rating={4.1}
           features={[
             'Compact lockable bait station',
             '19,000+ Amazon reviews with proven results',
             'Tamper-resistant design safe for households',
             'Works with block or grain baits',
           ]}
-          price="£8"
           asin="B088TH1XCS"
           bestFor="Best Bait Station"
         />
@@ -432,14 +424,12 @@ export default function BestRatTrapsPage() {
         <ProductCard
           name="Ultrasonic Pest Repeller"
           rank={5}
-          rating={4.0}
           features={[
             'Ultrasonic technology repels rats and rodents',
             'Plug-in device — no chemicals or traps needed',
             'Safe for use around children and pets',
             'Covers a wide area for whole-room protection',
           ]}
-          price="£15"
           asin="B0BW9C4D3J"
           bestFor="Best Electronic Option"
         />

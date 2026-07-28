@@ -205,14 +205,12 @@ export default function BestCarpetBeetleTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Zero In Carpet Beetle & Moth Killer Spray 300ml"
-          rating={4.0}
           features={[
             'Kills carpet beetles, moths, and larvae on contact',
             'Cypermethrin formula with 3-month residual protection',
             'Odour-free — safe for use on carpets, rugs, and inside wardrobes',
             'Apply along carpet edges, skirting boards, under furniture, and in wardrobes',
           ]}
-          price="~&pound;6"
           asin="B06Y19DMBG"
           bestFor="Best Spray Treatment"
           rank={1}
@@ -233,14 +231,12 @@ export default function BestCarpetBeetleTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Rentokil Carpet Beetle & Cloth Moth Trap (Pack of 2)"
-          rating={4.0}
           features={[
             'Poison-free pheromone sticky trap technology',
             'Catches adult carpet beetles and cloth moths',
             'Essential for detecting infestations early and monitoring treatment',
             'Place in wardrobes, along skirting boards, and near windows',
           ]}
-          price="~&pound;9"
           asin="B097C28LVM"
           bestFor="Best Monitoring Trap"
           rank={2}
@@ -267,14 +263,12 @@ export default function BestCarpetBeetleTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Pest Expert Formula 'P' Carpet Beetle Killer Powder XL (2 &times; 300g)"
-          rating={4.5}
           features={[
             'Maximum-strength permethrin formula — HSE approved',
             'Puffer pack format for easy application into crevices',
             'Treats up to 50m² — ideal for whole-room treatment',
             'Long-lasting residual action in dry, undisturbed areas',
           ]}
-          price="~&pound;12"
           asin="B011UTS3VW"
           bestFor="Best Professional-Grade"
           rank={3}
@@ -295,14 +289,12 @@ export default function BestCarpetBeetleTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Pest Expert Carpet Moth Killer Kit (Standard — 1 Room)"
-          rating={4.5}
           features={[
             '4-piece kit: spray + fogger + killer powder + pheromone trap',
             'Treats one average-sized room comprehensively',
             'Fast knockdown plus long-lasting control for up to 12 weeks',
             'Works on carpet beetles, carpet moths, and their larvae',
           ]}
-          price="~&pound;24"
           asin="B010E2HEWU"
           bestFor="Best Complete Kit"
           rank={4}
@@ -329,14 +321,12 @@ export default function BestCarpetBeetleTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Cedarwood Moth Repellent for Wardrobes (28 Pieces)"
-          rating={4.0}
           features={[
             '100% natural cedar wood — no chemicals',
             '28-piece set: 10 balls, 10 cubes, 6 rings, 2 hanging units',
             'Natural repellent for wardrobes, drawers, and storage boxes',
             'Sand or refresh every 6-12 months to maintain effectiveness',
           ]}
-          price="~&pound;9"
           asin="B09F31QSQB"
           bestFor="Best Natural Prevention"
           rank={5}

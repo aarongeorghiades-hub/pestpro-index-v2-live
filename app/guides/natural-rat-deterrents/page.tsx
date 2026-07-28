@@ -341,56 +341,48 @@ export default function NaturalRatDeterrentsPage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="REPELEM Peppermint Rat Repellent Sachets (6 Pack)"
-          rating={4.0}
           features={[
             'Concentrated peppermint oil sachets — 90-day lifespan each',
             'Place in lofts, garages, sheds, under kitchen units',
             'Non-toxic and safe around children and pets',
             'Supplementary deterrent — best used alongside proofing',
           ]}
-          price="£14.99"
           asin="B0CNV2CWQS"
           bestFor="Best Scent Deterrent"
         />
 
         <ProductCard
           name="Ready Steady Defend Stainless Steel Air Brick Covers (4 Pack)"
-          rating={4.6}
           features={[
             'Stainless steel — rats cannot chew through',
             'UK-made, fits standard UK air bricks',
             'Maintains airflow while blocking rodent access',
             'Simple screw-on installation — no specialist tools needed',
           ]}
-          price="£21.99"
           asin="B0CSK61L94"
           bestFor="Best Physical Barrier"
         />
 
         <ProductCard
           name="Solar Ultrasonic Animal Repeller (2 Pack)"
-          rating={3.7}
           features={[
             'Motion-activated ultrasonic and flashing LED deterrent',
             'Solar powered — no batteries or wiring needed',
             'IP65 waterproof for year-round outdoor use',
             'Deters rats, foxes, cats and other garden pests',
           ]}
-          price="£25.99"
           asin="B0C4F578DF"
           bestFor="Best Garden Deterrent"
         />
 
         <ProductCard
           name="Tomcat Rodent Block Expanding Foam (340g)"
-          rating={4.3}
           features={[
             'Expanding foam with embedded rodent-resistant fibres',
             'Specifically formulated to block mice and rats',
             'Fills gaps around pipes, cables, and conduits',
             'Combines insulation with rodent-proofing in one step',
           ]}
-          price="£19.99"
           asin="B07YM5BY58"
           bestFor="Best Gap Filler"
         />

@@ -271,56 +271,48 @@ export default function NaturalFoxDeterrentsPage() {
       <div className="not-prose space-y-6 my-8">
         <ProductCard
           name="Silent Roar Lion Dung Pellets (500g)"
-          rating={3.9}
           features={[
             'Infused with genuine lion manure — predator scent',
             'Scatter around garden borders and fox entry points',
             'Safe for plants, soil, and wildlife',
             'Reapply every 3-4 weeks for continued effectiveness',
           ]}
-          price="£9.99"
           asin="B0002B7OT2"
           bestFor="Best Scent Deterrent"
         />
 
         <ProductCard
           name="PestBye Jet Spray Motion-Activated Fox Deterrent"
-          rating={4.4}
           features={[
             'Motion-activated water jet startles foxes immediately',
             'Foxes learn to avoid the area within 2-3 encounters',
             'Covers up to 10 metre range, adjustable sensitivity',
             'Connects to standard garden hose — battery powered sensor',
           ]}
-          price="£44.00"
           asin="B0153BJ7NQ"
           bestFor="Most Effective"
         />
 
         <ProductCard
           name="Solar Ultrasonic Fox Deterrent"
-          rating={3.8}
           features={[
             'Solar powered — no batteries or wiring needed',
             '5 adjustable frequency modes',
             'Includes motion-activated LED flash for added deterrent',
             'IP44 weatherproof for year-round outdoor use',
           ]}
-          price="£21.99"
           asin="B08RYT7S7D"
           bestFor="Best Low-Maintenance"
         />
 
         <ProductCard
           name="Karlsten Fox Repellent Spray (1 Litre)"
-          rating={4.0}
           features={[
             'Anti-fouling and anti-digging formula',
             'Strong scent that foxes find unpleasant',
             'Spray along fence lines, borders, and entry points',
             'Lasts up to 2 weeks per application — rain-resistant',
           ]}
-          price="£14.99"
           asin="B0B4W3RTB9"
           bestFor="Best Spray"
         />

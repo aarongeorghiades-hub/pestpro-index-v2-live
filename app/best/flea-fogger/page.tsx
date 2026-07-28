@@ -142,14 +142,12 @@ export default function BestFleaFoggerPage() {
         <ProductCard
           name="Indorex Defence Household Flea Spray 500ml"
           rank={1}
-          rating={4.5}
           features={[
             '10-time Best Flea Product award winner',
             'Permethrin kills adults + pyriproxyfen IGR prevents eggs for 12 months',
             'One 500ml can treats a 3-4 bedroom house',
             'The professional standard for UK flea control',
           ]}
-          price="£15"
           asin="B00GKHI2PW"
           bestFor="Best Overall"
         />
@@ -179,14 +177,12 @@ export default function BestFleaFoggerPage() {
         <ProductCard
           name="Zero In Natural Flea Bomb 150ml — One-Shot Aerosol"
           rank={2}
-          rating={4.2}
           features={[
             'Fire-free, chemical-free whole-room flea bomb',
             'Natural pyrethrin formula — no smoke or residue',
             'Treats up to 40m³ per unit',
             'Safe near carpets, soft furnishings and bedding',
           ]}
-          price="£8"
           asin="B077M5TTHL"
           bestFor="Best Natural"
         />
@@ -216,14 +212,12 @@ export default function BestFleaFoggerPage() {
         <ProductCard
           name="NOPE! CP Flea Spray 500ml for the Home"
           rank={3}
-          rating={4.1}
           features={[
             'Fast-acting odourless cypermethrin formula',
             '3-month residual action on treated surfaces',
             'Non-staining — safe for carpets, soft furnishings, mattresses',
             'Ideal complement to a flea fogger treatment',
           ]}
-          price="£10"
           asin="B097F82JSG"
           bestFor="Best Large Room"
         />
@@ -253,14 +247,12 @@ export default function BestFleaFoggerPage() {
         <ProductCard
           name="Strikeback Super Strength Triple Action Flea Spray 1L"
           rank={4}
-          rating={4.0}
           features={[
             'Triple-action: cypermethrin, chrysanthemum extract + pyriproxyfen IGR',
             'Kills adults on contact, stops eggs hatching',
             '1L trigger spray for precise, targeted application',
             'Trusted UK brand since 2007',
           ]}
-          price="£12"
           asin="B0D7WFDYD2"
           bestFor="Best Twin Pack"
         />
@@ -290,14 +282,12 @@ export default function BestFleaFoggerPage() {
         <ProductCard
           name="Pest Expert Formula C+ Flea Killer Spray 1L"
           rank={5}
-          rating={4.3}
           features={[
             "Maximum-strength spray from the UK's leading pest control brand",
             'Three active ingredients including pyriproxyfen IGR',
             '12-week residual protection on treated surfaces',
             'Water-based — safe for carpets and fabrics once dry',
           ]}
-          price="£10"
           asin="B09GYGC5FL"
           bestFor="Best Professional"
         />

@@ -263,14 +263,12 @@ export default function BestBedBugSprayPage() {
         <ProductCard
           name="Pest Expert Formula C+ Bed Bug Killer Spray 1L + Powder 300g Kit"
           rank={1}
-          rating={4.5}
           features={[
             'Triple-action: cypermethrin + pyriproxyfen IGR + pyrethrum',
             'Kills adults, larvae and eggs on contact',
             'Covers 50m\u00B2 per 1L \u2014 includes 300g powder',
             'HSE approved \u2014 safe for mattresses once dry',
           ]}
-          price="\u00A320"
           asin="B013K87W4A"
           bestFor="Best Overall"
         />
@@ -302,14 +300,12 @@ export default function BestBedBugSprayPage() {
         <ProductCard
           name="Pest Expert Formula C+ Bed Bug Spray 2 x 1L + Powder 2 x 300g"
           rank={2}
-          rating={4.5}
           features={[
             'Twin-pack of maximum-strength Formula C+',
             'Two full-size 1L sprays + two 300g powder packs',
             'Treats a whole property \u2014 multi-room coverage',
             'Best value for larger infestations',
           ]}
-          price="\u00A335"
           asin="B01GJIBI4S"
           bestFor="Best Multi-Room"
         />
@@ -340,14 +336,12 @@ export default function BestBedBugSprayPage() {
         <ProductCard
           name="Pest Expert Bed Bug Treatment Kit \u2014 Spray, Powder, Fogger &amp; Rentokil Spray"
           rank={3}
-          rating={4.4}
           features={[
             'Complete treatment kit for a standard bedroom',
             'Formula C+ spray + Formula P powder + fogger',
             'Includes Rentokil Insectrol for cracks and crevices',
             'Everything needed in one purchase',
           ]}
-          price="\u00A330"
           asin="B01E724WFK"
           bestFor="Best Treatment Kit"
         />
@@ -379,14 +373,12 @@ export default function BestBedBugSprayPage() {
         <ProductCard
           name="Pest Expert Formula C Bed Bug Spray 1L + Smoke Bomb 11g"
           rank={4}
-          rating={4.3}
           features={[
             'Formula C+ residual spray + smoke bomb combo',
             'Smoke reaches behind headboards and inside frames',
             'Surface treatment plus deep penetration in one kit',
             'Professional-strength cypermethrin formula',
           ]}
-          price="\u00A318"
           asin="B07VRQ8XCT"
           bestFor="Best Spray + Fumigator Combo"
         />
@@ -417,14 +409,12 @@ export default function BestBedBugSprayPage() {
         <ProductCard
           name="Pest Expert Formula C+ Bed Bug Spray 5L with Trigger Sprayer"
           rank={5}
-          rating={4.4}
           features={[
             'Trade-size 5L refill with trigger hose sprayer',
             'Covers 250m\u00B2 \u2014 enough for an entire HMO',
             'Most cost-effective per m\u00B2 treatment',
             'Ideal for landlords treating multiple properties',
           ]}
-          price="\u00A355"
           asin="B010E2GQ6K"
           bestFor="Best Trade-Size"
         />

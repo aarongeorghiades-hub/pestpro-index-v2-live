@@ -224,7 +224,6 @@ export default function BestCommercialBirdProofingPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Heavy Duty Anti-Pigeon Bird Netting 10m × 20m"
-          rating={4.0}
           features={[
             'Heavy-duty knotted mesh — far stronger than extruded netting',
             '50mm mesh size — excludes pigeons, gulls, and most pest species',
@@ -232,7 +231,6 @@ export default function BestCommercialBirdProofingPage() {
             'UV-stabilised black polyethylene — resists degradation in direct sunlight',
             'Suitable for warehouses, loading bays, courtyards, and roof voids',
           ]}
-          price="~£35"
           asin="B07FTN3LQ3"
           bestFor="Best for Large Areas"
           rank={1}
@@ -259,7 +257,6 @@ export default function BestCommercialBirdProofingPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="OFFO Stainless Steel Bird Spikes"
-          rating={4.0}
           features={[
             'Stainless steel pins on a stainless steel base — fully corrosion-resistant',
             'Covers 78cm per strip — link multiple strips for continuous coverage',
@@ -267,7 +264,6 @@ export default function BestCommercialBirdProofingPage() {
             'Flexible base conforms to curved surfaces and irregular ledges',
             'Humane deterrent — prevents landing without harming birds',
           ]}
-          price="~£12"
           asin="B0BL7PF3WG"
           bestFor="Best for Ledges"
           rank={2}
@@ -291,7 +287,6 @@ export default function BestCommercialBirdProofingPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Birdgo Pigeon Post & Pad Kit (10 × 90mm)"
-          rating={4.0}
           features={[
             '10 stainless steel posts with adhesive pads — no drilling required',
             '90mm post height — standard specification for pigeon deterrence',
@@ -299,7 +294,6 @@ export default function BestCommercialBirdProofingPage() {
             'Suitable for fencing, parapets, ledges, and non-drill surfaces',
             'Used by professional pest controllers as part of wire systems',
           ]}
-          price="~£20"
           asin="B07L435L3F"
           bestFor="Best Wire System"
           rank={3}
@@ -326,7 +320,6 @@ export default function BestCommercialBirdProofingPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Bird Barrier Optical Gel (24 Pack)"
-          rating={3.5}
           features={[
             'Multi-sensory deterrent — visual, olfactory, and tactile',
             'Appears as flames to birds through UV vision — immediate avoidance response',
@@ -334,7 +327,6 @@ export default function BestCommercialBirdProofingPage() {
             '24 pre-filled dishes for rapid installation on ledges and flat surfaces',
             'Virtually invisible to humans — ideal for heritage and customer-facing buildings',
           ]}
-          price="~£90"
           asin="B01MQSRJQ6"
           bestFor="Best Discreet Option"
           rank={4}
@@ -361,7 +353,6 @@ export default function BestCommercialBirdProofingPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Birdgo Bird Proofing Mesh & 60 Fixing Clip Kit"
-          rating={4.0}
           features={[
             'Complete kit: 30m PVC-coated galvanised mesh + 60 nylon clips',
             'No-drill nylon clips attach to solar panel frame lip (min 20mm)',
@@ -369,7 +360,6 @@ export default function BestCommercialBirdProofingPage() {
             'Prevents pigeons nesting under solar panels — a major UK problem',
             'Cable ties included for joining corners and securing mesh edges',
           ]}
-          price="~£45"
           asin="B081CXWXQH"
           bestFor="Best for Solar Panels"
           rank={5}
@@ -396,7 +386,6 @@ export default function BestCommercialBirdProofingPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Birdgo 100 Nylon Plastic Net Hooks"
-          rating={4.0}
           features={[
             '100 nylon net hooks for bird control netting fixing and repair',
             'Compatible with standard 50mm and 75mm commercial bird netting',
@@ -404,7 +393,6 @@ export default function BestCommercialBirdProofingPage() {
             'Essential for maintaining existing netting installations',
             'Can also be used for initial netting installations on wire rope',
           ]}
-          price="~£9"
           asin="B07KX4CX4J"
           bestFor="Best Repair Kit"
           rank={6}
@@ -428,7 +416,6 @@ export default function BestCommercialBirdProofingPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Ultrasonic Bird Repeller — 4 Speaker, UK Made"
-          rating={3.5}
           features={[
             'Multi-frequency ultrasonic output from 4 speakers',
             'Waterproof construction for indoor and outdoor use',
@@ -436,7 +423,6 @@ export default function BestCommercialBirdProofingPage() {
             'Supplementary deterrent for use alongside physical barriers',
             'Adjustable frequency settings for different bird species',
           ]}
-          price="~£45"
           asin="B0157D7CXW"
           bestFor="Best Electronic Deterrent"
           rank={7}

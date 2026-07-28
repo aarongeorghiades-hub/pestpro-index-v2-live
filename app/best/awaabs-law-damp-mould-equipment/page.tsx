@@ -275,8 +275,6 @@ export default function AwaabsLawDampMouldEquipmentPage() {
         <ProductCard
           name="Nuaire Drimaster Eco Heat — With Hall Controls (Heated PIV)"
           rank={1}
-          rating={4.4}
-          price="Check price"
           asin="B00NIV51RU"
           bestFor="Best Overall"
           features={[
@@ -313,8 +311,6 @@ export default function AwaabsLawDampMouldEquipmentPage() {
         <ProductCard
           name="Dryzone PIV Unit with Heater — Complete Home Ventilation Kit"
           rank={2}
-          rating={4.3}
-          price="Check price"
           asin="B0FF4XV6LV"
           bestFor="Best Budget"
           features={[
@@ -351,8 +347,6 @@ export default function AwaabsLawDampMouldEquipmentPage() {
         <ProductCard
           name="Kair Kalahari ECO PIV Unit — Standard (No Heater)"
           rank={3}
-          rating={4.1}
-          price="Check price"
           asin="B0914Q4SP5"
           features={[
             "Budget-friendly loft-mounted PIV unit",
@@ -394,8 +388,6 @@ export default function AwaabsLawDampMouldEquipmentPage() {
         <ProductCard
           name="Vent-Axia PureAir PIV Unit with 500W Heater + Hygrometer Bundle"
           rank={4}
-          rating={4.3}
-          price="Check price"
           asin="B0BTB1VSMP"
           features={[
             "F7 filtration — filters fine particulates and allergens",
@@ -443,8 +435,6 @@ export default function AwaabsLawDampMouldEquipmentPage() {
         <ProductCard
           name="electriQ ECD30 Industrial 30L Dehumidifier — Metal Body, Large Wheels"
           rank={5}
-          rating={4.3}
-          price="&pound;280"
           asin="B08TRT57ZP"
           bestFor="Best Professional-Grade"
           features={[
@@ -481,8 +471,6 @@ export default function AwaabsLawDampMouldEquipmentPage() {
         <ProductCard
           name="MeacoDry Arete One 25L Dehumidifier & HEPA Air Purifier"
           rank={6}
-          rating={4.5}
-          price="&pound;300"
           asin="B093TLCDVC"
           features={[
             "25L/day extraction + HEPA H13 air purification",
@@ -527,8 +515,6 @@ export default function AwaabsLawDampMouldEquipmentPage() {
         <ProductCard
           name="Dryzone Moisture Meter Detector — Damp Meter for Walls & Wood"
           rank={7}
-          rating={4.2}
-          price="Check price"
           asin="B099FBZWHJ"
           features={[
             "Pre-calibrated for wood and building materials",
@@ -563,8 +549,6 @@ export default function AwaabsLawDampMouldEquipmentPage() {
         <ProductCard
           name="Govee WiFi Thermometer Hygrometer"
           rank={8}
-          rating={4.0}
-          price="Check price"
           asin="B0CZRWVNRJ"
           features={[
             "WiFi & Bluetooth connectivity, Swiss-made sensor",

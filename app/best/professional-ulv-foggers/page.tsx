@@ -138,14 +138,12 @@ export default function ProfessionalULVFoggersPage() {
         <ProductCard
           name="VectorFog C150+ Cold ULV Fogger — 5L Tank, 1250W Samsung Motor"
           rank={1}
-          rating={4.5}
           features={[
             'Flagship from the world most trusted fogger brand',
             '5L tank, 1250W Samsung motor, 8m spray distance',
             'Adjustable 5-50 micron droplet size',
             'Covers 100m² per minute — designed for large-space treatment',
           ]}
-          price="£300"
           asin="B08FH8HV24"
           bestFor="Best Overall"
         />
@@ -162,14 +160,12 @@ export default function ProfessionalULVFoggersPage() {
         <ProductCard
           name="VectorFog C100 Plus Cold ULV Fogger — 4L Tank"
           rank={2}
-          rating={4.4}
           features={[
             'Compact yet powerful — 4L tank, 1250W motor',
             'Covers 100m² in under a minute',
             '5-50 micron adjustable droplet for versatile use',
             'Ideal for flats, houses and HMO common areas',
           ]}
-          price="£250"
           asin="B00MMWPK6S"
         />
       </div>
@@ -185,14 +181,12 @@ export default function ProfessionalULVFoggersPage() {
         <ProductCard
           name="VectorFog C150 Cold Fogger — 6L Tank"
           rank={3}
-          rating={4.3}
           features={[
             'Original VectorFog flagship, 6L large tank',
             '8-metre spray distance, proven by pest controllers worldwide',
             'Adjustable droplet: fine for flying insects, coarse for surfaces',
             'Robust construction for years of professional use',
           ]}
-          price="£280"
           asin="B00MMX1T94"
         />
       </div>
@@ -208,14 +202,12 @@ export default function ProfessionalULVFoggersPage() {
         <ProductCard
           name="VectorFog DC20+ Cordless ULV Fogger — Battery Powered"
           rank={4}
-          rating={4.2}
           features={[
             'Battery powered — no power socket needed',
             'Ideal for lofts, outbuildings and garages',
             'Same professional atomisation as corded VectorFog models',
             'Complete freedom of movement during treatment',
           ]}
-          price="£350"
           asin="B08FF71Z32"
         />
       </div>
@@ -231,14 +223,12 @@ export default function ProfessionalULVFoggersPage() {
         <ProductCard
           name="Ewbank EW5000 Commercial Backpack Fogger — 10L, 1400W"
           rank={5}
-          rating={4.1}
           features={[
             '10L backpack for hands-free large-area treatment',
             '1400W motor for powerful atomisation',
             'Suitable for warehouses, schools, offices',
             'Ergonomic backpack design for extended sessions',
           ]}
-          price="£200"
           asin="B09J1LNZGS"
         />
       </div>

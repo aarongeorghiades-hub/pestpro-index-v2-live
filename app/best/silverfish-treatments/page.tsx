@@ -206,14 +206,12 @@ export default function BestSilverfishTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Diatomaceous Earth Food Grade 1kg"
-          rating={4.5}
           features={[
             '100% natural fossilised diatom powder',
             'Food-grade safe for homes with children and pets',
             'Damages silverfish waxy exoskeleton causing dehydration',
             'Long-lasting in dry conditions — no expiry',
           ]}
-          price="~&pound;8&ndash;&pound;12"
           asin="B0083H1B3W"
           bestFor="Best Natural Treatment"
           rank={1}
@@ -253,14 +251,12 @@ export default function BestSilverfishTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Ready Steady Defend Silverfish Killer Spray 1L"
-          rating={4.0}
           features={[
             'Cypermethrin + Pyriproxyfen formula',
             'HSE registered (No. 10802)',
             '12-week residual protection',
             'Non-staining, low odour, water-based',
           ]}
-          price="~&pound;13&ndash;&pound;16"
           asin="B0BGY8196B"
           bestFor="Best Chemical Spray"
           rank={2}
@@ -299,14 +295,12 @@ export default function BestSilverfishTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Super Ninja Silverfish Trap (3-Pack)"
-          rating={4.0}
           features={[
             'Pre-baited with food-based attractant',
             'Non-toxic and odourless',
             'Each trap lasts up to 3 months',
             'Recycled cardboard construction',
           ]}
-          price="~&pound;12&ndash;&pound;15"
           asin="B0BJKY8MB3"
           bestFor="Best Monitoring Trap"
           rank={3}
@@ -351,14 +345,12 @@ export default function BestSilverfishTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Pro Breeze 12L/Day Dehumidifier"
-          rating={4.5}
           features={[
             '12L/day extraction capacity',
             'Automatic humidity sensor (30-80% range)',
             'Sleep mode under 38dB',
             'Continuous drainage hose option',
           ]}
-          price="~&pound;120&ndash;&pound;150"
           asin="B073XNK45P"
           bestFor="Best Long-Term Solution"
           rank={4}
@@ -401,14 +393,12 @@ export default function BestSilverfishTreatmentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Pest Expert Formula &apos;P&apos; Silverfish Killer Powder 300g"
-          rating={4.0}
           features={[
             'Professional-strength permethrin formula',
             'HSE approved for amateur use',
             '12-week residual killing power',
             '300g pack — twice the size of competitors',
           ]}
-          price="~&pound;7&ndash;&pound;10"
           asin="B013EIB87I"
           bestFor="Best Insecticidal Dust"
           rank={5}

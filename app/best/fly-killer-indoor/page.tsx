@@ -138,7 +138,6 @@ export default function BestFlyKillerIndoorPage() {
         <ProductCard
           name="Insect-O-Cutor PlusZap 30W Indoor Fly Killer"
           rank={1}
-          rating={4.5}
           features={[
             "World's leading flying insect control brand, founded 1962",
             '30W killing grid with aluminium construction',
@@ -146,7 +145,6 @@ export default function BestFlyKillerIndoorPage() {
             'Deep catch tray for easy cleaning',
             'Suitable for kitchens, warehouses and retail environments',
           ]}
-          price="£80"
           asin="B0B41H37HB"
           bestFor="Best Overall"
         />
@@ -180,21 +178,19 @@ export default function BestFlyKillerIndoorPage() {
         <ProductCard
           name="Aspectek Professional 30W Electronic Insect Killer"
           rank={2}
-          rating={4.3}
           features={[
             "Amazon's longest-selling indoor electronic insect killer",
             '30W UV bulbs with powerful electrified grid',
             'Removable washable tray for easy cleaning',
-            '3,000+ customer reviews',
+ 
             'UK plug included — ready to use',
           ]}
-          price="£30"
           asin="B017TETOE2"
           bestFor="Best Seller"
         />
       </div>
       <p>
-        The Aspectek Professional 30W is Amazon UK's longest-selling electronic insect killer, and with over 3,000 customer reviews it has a proven track record. The dual 15W UV bulbs produce a strong ultraviolet output that attracts house flies, fruit flies, moths, and mosquitoes from across a room. The powerful electrified grid delivers an instant kill on contact.
+ The Aspectek Professional 30W is Amazon UK's longest-selling electronic insect killer, and with over it has a proven track record. The dual 15W UV bulbs produce a strong ultraviolet output that attracts house flies, fruit flies, moths, and mosquitoes from across a room. The powerful electrified grid delivers an instant kill on contact.
       </p>
       <p>
         The removable washable tray makes maintenance straightforward — slide it out, clean it, and slide it back in. This is a significant advantage over units with disposable trays that add ongoing costs. The unit is suitable for home kitchens, restaurants, offices, and garages, and comes with a UK plug so there is no need for adapters.
@@ -222,7 +218,6 @@ export default function BestFlyKillerIndoorPage() {
         <ProductCard
           name="Quiet Hybrid Spectrum Fly Zapper (UK Plug)"
           rank={3}
-          rating={4.2}
           features={[
             '50% quieter than standard zappers',
             'UV and black light combination attracts wider range of insects',
@@ -230,7 +225,6 @@ export default function BestFlyKillerIndoorPage() {
             'Hangable or freestanding — flexible placement',
             'Suitable for bedrooms, kitchens and living rooms',
           ]}
-          price="£25"
           asin="B0BVKGC941"
           bestFor="Quietest Option"
         />
@@ -263,7 +257,6 @@ export default function BestFlyKillerIndoorPage() {
         <ProductCard
           name="Flymatic Professional Insect Killer 30W"
           rank={4}
-          rating={4.3}
           features={[
             'UK-designed commercial-grade unit',
             '368nm UV tubes — more effective than budget 350nm alternatives',
@@ -271,7 +264,6 @@ export default function BestFlyKillerIndoorPage() {
             'Wall, ceiling or freestanding mounting options',
             '8,000-hour UV tube life with 1-year warranty',
           ]}
-          price="£50"
           asin="B00KRCJB8I"
           bestFor="Commercial-Grade"
         />
@@ -305,7 +297,6 @@ export default function BestFlyKillerIndoorPage() {
         <ProductCard
           name="Aspectek Upgraded 20W Bug Zapper"
           rank={5}
-          rating={4.1}
           features={[
             '365nm UVA bulbs — effective fly attraction',
             '2800V electrified grid for reliable kills',
@@ -313,7 +304,6 @@ export default function BestFlyKillerIndoorPage() {
             'Protective cage for safety around children and pets',
             'UK plug included',
           ]}
-          price="£25"
           asin="B086DK71VX"
           bestFor="Best Value"
         />

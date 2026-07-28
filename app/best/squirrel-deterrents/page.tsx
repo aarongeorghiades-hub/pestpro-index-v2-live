@@ -203,14 +203,12 @@ export default function BestSquirrelDeterrentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Jacobi Jayne Squirrel Buster Bird Feeder"
-          rating={4.5}
           features={[
             'Weight-activated closing mechanism',
             'All-metal construction',
             '5-year manufacturer warranty',
             'Also deters pigeons',
           ]}
-          price="~&pound;30&ndash;&pound;50"
           asin="B00BXLF3WU"
           bestFor="Best Overall"
           rank={1}
@@ -250,14 +248,12 @@ export default function BestSquirrelDeterrentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="RepellShield Squirrel Repellent Spray 250ml"
-          rating={4.0}
           features={[
             'Natural essential oils',
             'Safe around pets and children',
             'Made in Germany',
             '250ml bottle',
           ]}
-          price="~&pound;10&ndash;&pound;15"
           asin="B08DDCJJ1N"
           bestFor="Best Repellent Spray"
           rank={2}
@@ -297,14 +293,12 @@ export default function BestSquirrelDeterrentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Selections Squirrel Proof Bird Feeder Baffle (Pack of 2)"
-          rating={4.0}
           features={[
             '40cm smooth dome design',
             'Fits feeding station poles',
             'Pack of 2 included',
             'Also keeps food dry in rain',
           ]}
-          price="~&pound;10&ndash;&pound;20"
           asin="B07KQJM334"
           bestFor="Best Baffle"
           rank={3}
@@ -350,14 +344,12 @@ export default function BestSquirrelDeterrentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="The Big Cheese Hot Nuts Deterrent Spray 1L"
-          rating={3.5}
           features={[
             '1 litre ready-to-use',
             'Natural capsicum chilli formula',
             'Harmless to birds — they cannot taste capsaicin',
             'Well-known UK pest brand',
           ]}
-          price="~&pound;5&ndash;&pound;10"
           asin="B007EAH6K6"
           bestFor="Best Bird Food Treatment"
           rank={4}
@@ -397,14 +389,12 @@ export default function BestSquirrelDeterrentsPage() {
       <div className="not-prose my-6">
         <ProductCard
           name="Kabalo Humane Squirrel Cage Trap"
-          rating={4.0}
           features={[
             'Heavy-duty metal construction',
             'Spring-loaded door mechanism',
             'Suitable for squirrels and large rats',
             'Durable outdoor use',
           ]}
-          price="~&pound;15&ndash;&pound;25"
           asin="B082J2YLDY"
           bestFor="Best Humane Trap"
           rank={5}

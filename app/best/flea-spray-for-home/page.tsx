@@ -235,14 +235,12 @@ export default function BestFleaSprayPage() {
         <ProductCard
           name="Indorex Defence Flea Spray 500ml"
           rank={1}
-          rating={4.5}
           features={[
             'Permethrin + pyriproxyfen IGR dual-action formula',
             '10-time Best Flea Product award winner',
             'Up to 12 months residual protection from one application',
             'One can treats a 3-4 bedroom house',
           ]}
-          price="£15"
           asin="B00GKHI2PW"
           bestFor="Best Overall"
         />
@@ -277,14 +275,12 @@ export default function BestFleaSprayPage() {
         <ProductCard
           name="Indorex Defence Flea Spray 2x500ml Twin Pack"
           rank={2}
-          rating={4.5}
           features={[
             'Same award-winning Indorex formula — two full cans',
             'Complete whole-home treatment with enough for follow-up',
             'Ideal for larger homes or recurring infestations',
             'Better value per ml than buying single cans',
           ]}
-          price="£25"
           asin="B07D19P8S2"
           bestFor="Best Twin Pack"
         />
@@ -318,14 +314,12 @@ export default function BestFleaSprayPage() {
         <ProductCard
           name="Pest Expert Formula C+ Flea Killer Spray 1L"
           rank={3}
-          rating={4.4}
           features={[
             'Triple-action: cypermethrin, pyriproxyfen IGR, and natural pyrethrum',
             'Maximum-strength formula from a leading UK pest control brand',
             '12-week residual protection on treated surfaces',
             'Water-based — safe for carpets, furnishings, and pet bedding once dry',
           ]}
-          price="£18"
           asin="B09GYGC5FL"
           bestFor="Best Professional-Grade"
         />
@@ -359,14 +353,12 @@ export default function BestFleaSprayPage() {
         <ProductCard
           name="RIP Fleas Extra Household Flea Spray"
           rank={4}
-          rating={4.2}
           features={[
             'Permethrin-based contact killer with residual protection',
             'Fast-acting formula for carpets, pet bedding and soft furnishings',
             'Popular with cat and dog owners as a home treatment between vet appointments',
             'Effective residual layer continues killing fleas after application',
           ]}
-          price="£12"
           asin="B001MIXHMM"
           bestFor="Best Fast-Acting"
         />
@@ -400,14 +392,12 @@ export default function BestFleaSprayPage() {
         <ProductCard
           name="Bob Martin Clear Plus Flea Spray 500ml Twin Pack"
           rank={5}
-          rating={4.0}
           features={[
             "Twin-pack from one of the UK's most trusted pet care brands",
             'Kills fleas, ticks and dust mites on contact',
             'Safe for use on furniture, carpets and pet bedding',
             '500ml per can — enough for a full home treatment',
           ]}
-          price="£7"
           asin="B0CMPY8ZXP"
           bestFor="Best Budget"
         />

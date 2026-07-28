@@ -234,14 +234,12 @@ export default function BestWaspNestFoamPage() {
         <ProductCard
           name="Rentokil Wasp Nest Destroyer Foam 300ml"
           rank={1}
-          rating={4.3}
           features={[
             'Powerful foam jet treats from 2 metres away',
             'Contains d-phenothrin and tetramethrin for fast kill',
             'One 300ml can treats up to 3 large nests',
             'Effective within 24 hours',
           ]}
-          price="£8"
           asin="B000TAY2EQ"
           bestFor="Best Overall"
         />
@@ -272,14 +270,12 @@ export default function BestWaspNestFoamPage() {
         <ProductCard
           name="Zero In Ultra Power Wasp &amp; Hornet Nest Killer Foam 600ml"
           rank={2}
-          rating={4.2}
           features={[
             'Professional-strength 600ml trigger aerosol',
             '4-metre spray range — double the safe distance',
             'Treats 4-7 nests per can',
             'Suitable for indoor and outdoor nests',
           ]}
-          price="£10"
           asin="B077G3YB38"
           bestFor="Best Long-Range"
         />
@@ -310,14 +306,12 @@ export default function BestWaspNestFoamPage() {
         <ProductCard
           name="Zero In Wasp Nest Killer Foam 300ml"
           rank={3}
-          rating={4.0}
           features={[
             'Fast-acting foam from 2 metres',
             '2-3 treatments per 300ml can',
             'Simple to use — spray into nest entrance at dusk',
             'Kills the colony within 24 hours',
           ]}
-          price="£5"
           asin="B0082M8TU6"
           bestFor="Best Value"
         />
@@ -348,14 +342,12 @@ export default function BestWaspNestFoamPage() {
         <ProductCard
           name="Rentokil Wasp Killer Powder 150g"
           rank={4}
-          rating={4.1}
           features={[
             'Powder for nests in vents, eaves and wall cavities',
             'Contains permethrin — effective within 24 hours',
             'Best used alongside foam for comprehensive treatment',
             'Reaches areas foam cannot access',
           ]}
-          price="£6"
           asin="B0B8HLKZZS"
           bestFor="Best Powder"
         />
@@ -386,14 +378,12 @@ export default function BestWaspNestFoamPage() {
         <ProductCard
           name="Zero In Wasp Nest Control Powder 300g Twin Pack"
           rank={5}
-          rating={4.0}
           features={[
             'Twin-pack powder with puffer applicator',
             'Apply into gaps in walls, soffits and vents',
             'Child-resistant cap for safety',
             '300g per bottle — two bottles for extended season',
           ]}
-          price="£8"
           asin="B01FSDM1E6"
           bestFor="Best Twin Pack"
         />

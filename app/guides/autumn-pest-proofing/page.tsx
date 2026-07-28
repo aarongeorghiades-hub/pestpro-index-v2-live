@@ -362,42 +362,36 @@ export default function AutumnPestProofingPage() {
       <div className="not-prose space-y-4">
         <ProductCard
           name="Xcluder Rodent Control Steel Wool Fill Fabric"
-          rating={4.5}
           features={[
             'Professional-grade stainless steel wool for sealing gaps and holes',
             'Mice and rats cannot chew through the metal fibres',
             'Flexible — can be packed into irregular gaps around pipes and cables',
             'Use with expanding foam for a permanent, weathertight seal',
           ]}
-          price="&pound;12"
           asin="B006GQQVDW"
           bestFor="Best for Gap Sealing"
           rank={1}
         />
         <ProductCard
           name="Rentokil Mouse Traps Twin Pack"
-          rating={4.3}
           features={[
             'Classic snap trap design with easy-set mechanism',
             'Instant kill — considered the most humane lethal trap type',
             'Reusable and affordable for setting multiple traps at once',
             'Place perpendicular to walls with trigger end against skirting board',
           ]}
-          price="&pound;4"
           asin="B00IUE6FSE"
           bestFor="Best Budget Trap"
           rank={2}
         />
         <ProductCard
           name="Karlsten Spider Repellent Spray (500ml)"
-          rating={4.1}
           features={[
             'Peppermint-based formula creates a barrier spiders avoid',
             'Spray around window frames, door thresholds, and air vents',
             'Non-toxic and safe for use around children and pets',
             'Reapply every 2 to 4 weeks during spider season (September-October)',
           ]}
-          price="&pound;10"
           asin="B087GY5S86"
           bestFor="Best Spider Deterrent"
           rank={3}

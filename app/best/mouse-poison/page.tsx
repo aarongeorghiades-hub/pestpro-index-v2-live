@@ -264,14 +264,12 @@ export default function BestMousePoisonPage() {
         <ProductCard
           name="Pest Expert Formula B+ Rat & Mouse Killer Poison 900g (15x60g)"
           rank={1}
-          rating={4.5}
           features={[
             "Maximum-strength Brodifacoum 0.0029% — single-feed kills",
             '15 x 60g sachets for thorough whole-property baiting',
             'Effective indoors and outdoors in bait stations',
             "The UK's strongest mouse poison available to the amateur market",
           ]}
-          price="£25"
           asin="B07B51YPRR"
           bestFor="Best Overall"
         />
@@ -305,14 +303,12 @@ export default function BestMousePoisonPage() {
         <ProductCard
           name="Pest Expert Formula B+ Mouse & Rat Poison 360g (6x60g)"
           rank={2}
-          rating={4.4}
           features={[
             'Same single-feed Brodifacoum formula as the 900g pack',
             '6 x 60g sachets — ideal for a small infestation',
             'Best value entry point for homeowners',
             'Perfect for a single property or targeted baiting',
           ]}
-          price="£14"
           asin="B07TLY5CGS"
           bestFor="Best Starter Pack"
         />
@@ -346,14 +342,12 @@ export default function BestMousePoisonPage() {
         <ProductCard
           name="The Big Cheese All-Weather Bait Block 15x10g"
           rank={3}
-          rating={4.1}
           features={[
             'Multi-feed difenacoum bait blocks',
             'Moisture-resistant — suitable for damp conditions',
             '15 ready-to-use blocks from a trusted UK brand',
             'Must be used with a tamper-resistant bait station',
           ]}
-          price="£8"
           asin="B077MH6BVS"
           bestFor="Best Blocks"
         />
@@ -387,14 +381,12 @@ export default function BestMousePoisonPage() {
         <ProductCard
           name="The Big Cheese All-Weather Rodent Block 30x10g"
           rank={4}
-          rating={4.1}
           features={[
             'Bulk pack — 30 bait blocks for larger infestations',
             'Same damp-proof difenacoum formula as the 15-pack',
             'Excellent value for landlords or repeat users',
             'Suitable for multiple bait stations across a property',
           ]}
-          price="£12"
           asin="B077MBL7MS"
           bestFor="Best Bulk Pack"
         />
@@ -428,14 +420,12 @@ export default function BestMousePoisonPage() {
         <ProductCard
           name="Roshield Wax Block Bait 600g (2x300g Bromadiolone)"
           rank={5}
-          rating={4.3}
           features={[
             "UK-made bromadiolone wax blocks from the professional pest control industry's preferred brand",
             'Chocolatey scent for excellent rodent uptake',
             'Threads onto bait station rod for secure mounting',
             '2 x 300g packs for sustained control',
           ]}
-          price="£15"
           asin="B076QFPHLH"
           bestFor="Best Professional"
         />
