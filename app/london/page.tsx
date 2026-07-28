@@ -10,14 +10,14 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Pest Control London | Find Local Experts',
   description:
-    'Find trusted pest control companies in London. Browse residential and commercial pest control services across all 33 London boroughs. No referral fees.',
+    'Find pest control companies in London. Browse residential and commercial pest control services across all 33 London boroughs. No referral fees.',
   alternates: {
     canonical: 'https://pestproindex.com/london',
   },
   openGraph: {
     title: 'Pest Control London | Find Local Experts',
     description:
-      'Find trusted pest control companies in London. Browse residential and commercial pest control services across all 33 London boroughs.',
+      'Find pest control companies in London. Browse residential and commercial pest control services across all 33 London boroughs.',
     url: 'https://pestproindex.com/london',
     siteName: 'PestPro Index',
     type: 'website',
@@ -100,7 +100,7 @@ export default async function LondonHubPage() {
             className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg"
             style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
           >
-            Find vetted, local pest control providers across all 33 London boroughs
+            Find local pest control providers across all 33 London boroughs
           </p>
           <p
             className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg"
@@ -147,7 +147,7 @@ export default async function LondonHubPage() {
               <div className="text-4xl mb-4">🏠</div>
               <h3 className="text-2xl font-black text-gray-900 mb-3">Residential Pest Control</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Find trusted pest control providers for your home across all 33 London boroughs.
+                Find pest control providers for your home across all 33 London boroughs.
                 Filter by pest type, service features, and compare ratings from real customers.
               </p>
               <Link

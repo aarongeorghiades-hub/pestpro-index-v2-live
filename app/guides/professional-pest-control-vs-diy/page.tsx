@@ -445,7 +445,7 @@ export default function ProfessionalPestControlVsDiyPage() {
 
       <FindProviderCTA
         heading="Ready to find a professional?"
-        subtext="Compare BPCA-certified pest controllers in your area. Get quotes, check reviews, and book treatment from trusted providers."
+        subtext="Compare BPCA-certified pest controllers in your area. Get quotes, check reviews, and book treatment from providers."
       />
 
       {/* FAQ */}

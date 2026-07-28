@@ -9,14 +9,14 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Pest Control Bristol | Find Local Experts',
   description:
-    'Find trusted pest control companies in Bristol. Browse residential and commercial services across all Bristol districts including Bath, South Gloucestershire and more.',
+    'Find pest control companies in Bristol. Browse residential and commercial services across all Bristol districts including Bath, South Gloucestershire and more.',
   alternates: {
     canonical: 'https://pestproindex.com/bristol',
   },
   openGraph: {
     title: 'Pest Control Bristol | Find Local Experts',
     description:
-      'Find trusted pest control companies in Bristol. Browse residential and commercial services across all Bristol districts.',
+      'Find pest control companies in Bristol. Browse residential and commercial services across all Bristol districts.',
     url: 'https://pestproindex.com/bristol',
     siteName: 'PestPro Index',
     type: 'website',
@@ -89,7 +89,7 @@ export default async function BristolHubPage() {
             className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg"
             style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
           >
-            Find vetted, local pest control providers across Bristol &amp; Bath
+            Find local pest control providers across Bristol &amp; Bath
           </p>
           <p
             className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg"
@@ -135,7 +135,7 @@ export default async function BristolHubPage() {
               <div className="text-4xl mb-4">🏠</div>
               <h3 className="text-2xl font-black text-gray-900 mb-3">Residential Pest Control</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Find trusted pest control providers for your home across Bristol and the surrounding area.
+                Find pest control providers for your home across Bristol and the surrounding area.
                 Filter by pest type, service features, and compare ratings from real customers.
               </p>
               <Link

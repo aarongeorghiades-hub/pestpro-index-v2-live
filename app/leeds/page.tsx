@@ -9,14 +9,14 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Pest Control Leeds | Find Local Experts',
   description:
-    'Find trusted pest control companies in Leeds. Browse residential and commercial services across all Leeds districts including Wakefield, Kirklees, Calderdale and more.',
+    'Find pest control companies in Leeds. Browse residential and commercial services across all Leeds districts including Wakefield, Kirklees, Calderdale and more.',
   alternates: {
     canonical: 'https://pestproindex.com/leeds',
   },
   openGraph: {
     title: 'Pest Control Leeds | Find Local Experts',
     description:
-      'Find trusted pest control companies in Leeds. Browse residential and commercial services across all Leeds districts.',
+      'Find pest control companies in Leeds. Browse residential and commercial services across all Leeds districts.',
     url: 'https://pestproindex.com/leeds',
     siteName: 'PestPro Index',
     type: 'website',
@@ -89,7 +89,7 @@ export default async function LeedsHubPage() {
             className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg"
             style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
           >
-            Find vetted, local pest control providers across Leeds &amp; West Yorkshire
+            Find local pest control providers across Leeds &amp; West Yorkshire
           </p>
           <p
             className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg"
@@ -135,7 +135,7 @@ export default async function LeedsHubPage() {
               <div className="text-4xl mb-4">🏠</div>
               <h3 className="text-2xl font-black text-gray-900 mb-3">Residential Pest Control</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Find trusted pest control providers for your home across Leeds and West Yorkshire.
+                Find pest control providers for your home across Leeds and West Yorkshire.
                 Filter by pest type, service features, and compare ratings from real customers.
               </p>
               <Link

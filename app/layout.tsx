@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: 'PestPro Index | Compare Pest Control Providers Across the UK',
     template: '%s | PestPro Index',
   },
-  description: 'Compare pest control providers with transparent, provider-stated information. No lead fees, no commissions. Find trusted pest control in London, Birmingham and beyond.',
+  description: 'Compare pest control providers with transparent, provider-stated information. No lead fees, no commissions. Find pest control in London, Birmingham and beyond.',
   metadataBase: new URL('https://pestproindex.com'),
   openGraph: {
     type: 'website',

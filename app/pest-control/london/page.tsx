@@ -5,13 +5,13 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Pest Control London | 389 Providers Across 33 Boroughs',
-  description: 'Find trusted pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs. Google ratings, no lead fees, no commissions.',
+  description: 'Find pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs. Google ratings, no lead fees, no commissions.',
   alternates: {
     canonical: 'https://pestproindex.com/pest-control/london',
   },
   openGraph: {
     title: 'Pest Control London | 389 Providers Across 33 Boroughs',
-    description: 'Find trusted pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs. Google ratings, no lead fees, no commissions.',
+    description: 'Find pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs. Google ratings, no lead fees, no commissions.',
     url: 'https://pestproindex.com/pest-control/london',
     siteName: 'PestPro Index',
     locale: 'en_GB',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary',
     title: 'Pest Control London | 389 Providers Across 33 Boroughs',
-    description: 'Find trusted pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs.',
+    description: 'Find pest control in London. Compare 389 residential and 240 commercial providers across all 33 boroughs.',
   },
 };
 

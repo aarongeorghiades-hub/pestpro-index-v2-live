@@ -2,13 +2,13 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Bristol & South West Residential Pest Control | 43 Providers',
-  description: 'Find trusted residential pest control providers across Bristol, Bath, South Gloucestershire and the South West. Compare 43 providers — no lead fees, no commissions.',
+  description: 'Find residential pest control providers across Bristol, Bath, South Gloucestershire and the South West. Compare 43 providers — no lead fees, no commissions.',
   alternates: {
     canonical: 'https://pestproindex.com/bristol/residential',
   },
   openGraph: {
     title: 'Bristol & South West Residential Pest Control | 43 Providers',
-    description: 'Find trusted residential pest control providers across Bristol, Bath, South Gloucestershire and the South West. Compare 43 providers — no lead fees, no commissions.',
+    description: 'Find residential pest control providers across Bristol, Bath, South Gloucestershire and the South West. Compare 43 providers — no lead fees, no commissions.',
     siteName: 'PestPro Index',
     locale: 'en_GB',
     type: 'website',
@@ -20,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Residential Pest Control in Bristol & South West',
-    description: 'Compare 43+ residential pest control providers across Bristol, Bath, South Gloucestershire and the South West. Independent ratings, reviews, BPCA and NPTA certified companies.',
+    description: 'Compare 43+ residential pest control providers across Bristol, Bath, South Gloucestershire and the South West. Ratings, reviews, BPCA and NPTA certified companies.',
     serviceType: 'Pest Control',
     areaServed: {
       '@type': 'City',

@@ -102,7 +102,7 @@ export default function PestLibraryPage() {
         {/* Bottom CTA */}
         <div className="p-8 bg-gradient-to-br from-gray-900 to-blue-950 text-white rounded-2xl text-center mt-8">
           <h2 className="text-2xl font-black mb-3">Need Professional Pest Control?</h2>
-          <p className="text-gray-300 mb-6">PestPro Index lists trusted, vetted pest controllers across the UK. No lead fees. No commissions. No sponsored rankings.</p>
+          <p className="text-gray-300 mb-6">PestPro Index lists pest controllers across the UK. No lead fees. No commissions. No sponsored rankings.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/residential" className="px-6 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors">
               Find Residential Controllers

@@ -10,14 +10,14 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Pest Control Cardiff | Find Local Pest Controllers',
   description:
-    'Find trusted pest control companies in Cardiff and South Wales. Compare BPCA-certified local specialists for rats, mice, wasps, bed bugs and more.',
+    'Find pest control companies in Cardiff and South Wales. Compare BPCA-certified local specialists for rats, mice, wasps, bed bugs and more.',
   alternates: {
     canonical: 'https://pestproindex.com/cardiff',
   },
   openGraph: {
     title: 'Pest Control Cardiff | Find Local Pest Controllers',
     description:
-      'Find trusted pest control companies in Cardiff and South Wales. Compare BPCA-certified local specialists for rats, mice, wasps, bed bugs and more.',
+      'Find pest control companies in Cardiff and South Wales. Compare BPCA-certified local specialists for rats, mice, wasps, bed bugs and more.',
     url: 'https://pestproindex.com/cardiff',
     siteName: 'PestPro Index',
     type: 'website',
@@ -100,7 +100,7 @@ export default async function CardiffHubPage() {
             className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg"
             style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
           >
-            Find vetted, local pest control providers across Cardiff &amp; South Wales
+            Find local pest control providers across Cardiff &amp; South Wales
           </p>
           <p
             className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg"
@@ -147,7 +147,7 @@ export default async function CardiffHubPage() {
               <div className="text-4xl mb-4">🏠</div>
               <h3 className="text-2xl font-black text-gray-900 mb-3">Residential Pest Control</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Find trusted pest control providers for your home across Cardiff and South Wales.
+                Find pest control providers for your home across Cardiff and South Wales.
                 Filter by pest type, service features, and compare ratings from real customers.
               </p>
               <Link
@@ -209,7 +209,7 @@ export default async function CardiffHubPage() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-gray-900 mb-4">Common Pests in Cardiff</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Cardiff is Wales&apos;s capital city, home to over 360,000 people across diverse neighbourhoods from the historic city centre to Cardiff Bay, Canton, Roath, and the surrounding Vale of Glamorgan. Whether you need residential or commercial pest control in Cardiff, our directory connects you with vetted local providers covering the whole city and surrounding areas including Newport, Caerphilly, Penarth and Pontypridd.
+              Cardiff is Wales&apos;s capital city, home to over 360,000 people across diverse neighbourhoods from the historic city centre to Cardiff Bay, Canton, Roath, and the surrounding Vale of Glamorgan. Whether you need residential or commercial pest control in Cardiff, our directory connects you with local providers covering the whole city and surrounding areas including Newport, Caerphilly, Penarth and Pontypridd.
             </p>
           </div>
 

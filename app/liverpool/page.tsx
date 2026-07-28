@@ -10,14 +10,14 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Pest Control Liverpool | Find Local Experts',
   description:
-    'Find trusted pest control companies in Liverpool. Browse residential and commercial services across all Liverpool districts including Wirral, Sefton, Knowsley and more.',
+    'Find pest control companies in Liverpool. Browse residential and commercial services across all Liverpool districts including Wirral, Sefton, Knowsley and more.',
   alternates: {
     canonical: 'https://pestproindex.com/liverpool',
   },
   openGraph: {
     title: 'Pest Control Liverpool | Find Local Experts',
     description:
-      'Find trusted pest control companies in Liverpool. Browse residential and commercial services across all Liverpool districts.',
+      'Find pest control companies in Liverpool. Browse residential and commercial services across all Liverpool districts.',
     url: 'https://pestproindex.com/liverpool',
     siteName: 'PestPro Index',
     type: 'website',
@@ -99,7 +99,7 @@ export default async function LiverpoolHubPage() {
             className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 max-w-2xl drop-shadow-lg"
             style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
           >
-            Find vetted, local pest control providers across Liverpool &amp; Merseyside
+            Find local pest control providers across Liverpool &amp; Merseyside
           </p>
           <p
             className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-8 max-w-2xl drop-shadow-lg"
@@ -145,7 +145,7 @@ export default async function LiverpoolHubPage() {
               <div className="text-4xl mb-4">🏠</div>
               <h3 className="text-2xl font-black text-gray-900 mb-3">Residential Pest Control</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Find trusted pest control providers for your home across Liverpool and Merseyside.
+                Find pest control providers for your home across Liverpool and Merseyside.
                 Filter by pest type, service features, and compare ratings from real customers.
               </p>
               <Link

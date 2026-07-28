@@ -256,8 +256,8 @@ export default async function PestGuidePage({ params }: Props) {
             </ul>
           </div>
           <div className="mt-6 p-6 bg-green-50 border border-green-200 rounded-xl text-center">
-            <p className="text-gray-900 font-bold mb-2">Find a Trusted {pest.name} Controller Near You</p>
-            <p className="text-gray-600 text-sm mb-4">No lead fees. No commissions. Just trusted, vetted pest controllers.</p>
+            <p className="text-gray-900 font-bold mb-2">Find a {pest.name} Controller Near You</p>
+            <p className="text-gray-600 text-sm mb-4">No lead fees. No commissions.</p>
             <Link href="/residential" className="inline-block px-6 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors">
               Browse Residential Pest Controllers
             </Link>
@@ -325,7 +325,7 @@ export default async function PestGuidePage({ params }: Props) {
         {/* Bottom CTA */}
         <div className="p-8 bg-gradient-to-br from-gray-900 to-blue-950 text-white rounded-2xl text-center">
           <h2 className="text-2xl font-black mb-3">Need Professional Help with {pest.name}?</h2>
-          <p className="text-gray-300 mb-6">PestPro Index lists trusted, vetted pest controllers across the UK. No lead fees. No commissions. No sponsored rankings.</p>
+          <p className="text-gray-300 mb-6">PestPro Index lists pest controllers across the UK. No lead fees. No commissions. No sponsored rankings.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/residential" className="px-6 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors">
               Find Residential Controllers

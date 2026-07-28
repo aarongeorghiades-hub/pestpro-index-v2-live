@@ -119,7 +119,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-4" style={{fontWeight: 900, letterSpacing: '-0.05em'}}>PestPro Index</h1>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-8 tracking-widest">The UK's Neutral Pest Control Directory</p>
           <p className="text-xl mb-16 max-w-2xl mx-auto leading-relaxed">
-            Find trusted, vetted pest controllers near you. No lead fees. No commissions. No sponsored rankings.
+            Find pest controllers near you. No lead fees. No commissions. No sponsored rankings.
           </p>
 
           {/* Stats */}

@@ -1035,7 +1035,7 @@ export const posts: BlogPost[] = [
 
 <p><strong>Commercial premises:</strong> Regular pest control contracts, staff training on hygiene standards. Food businesses along Bold Street and the Baltic Triangle should treat pest prevention as essential, not optional.</p>
 
-<h2>Find a Trusted Pest Controller</h2>
+<h2>Find a Pest Controller</h2>
 
 <p><a href="/liverpool/residential">PestPro Index lists 73 pest control providers</a> serving Liverpool and Merseyside. Filter by pest type, service features, and certifications to find the right provider for your needs. All listings include Google ratings, contact details, and certification status — with no lead fees or commissions.</p>
 
@@ -1242,7 +1242,7 @@ export const posts: BlogPost[] = [
 
 <p>Many pest control providers serving Leeds also cover the wider West Yorkshire area, including Bradford, Wakefield, Huddersfield, Halifax, and surrounding towns. If you're in the wider region, the same providers are likely to serve your area — <a href="/bradford">browse Bradford pest control</a>, <a href="/pest-control/leeds/wakefield">Wakefield</a>, <a href="/pest-control/leeds/kirklees">Kirklees (Huddersfield)</a>, or <a href="/pest-control/leeds/calderdale">Calderdale (Halifax)</a> for area-specific information.</p>
 
-<h2>Find a Trusted Pest Controller in Leeds</h2>
+<h2>Find a Pest Controller in Leeds</h2>
 
 <p><a href="/leeds/residential">PestPro Index lists pest control providers</a> serving Leeds and West Yorkshire. Filter by pest type, service features, and certifications to find the right provider for your needs. All listings include Google ratings, contact details, and certification status — with no lead fees or commissions.</p>
 
@@ -1826,7 +1826,7 @@ export const posts: BlogPost[] = [
     content: `
 <p>Bristol and the surrounding South West region present a distinctive mix of pest challenges. The city's combination of Georgian and Victorian terraces in Clifton and Redland, waterfront developments around the Harbourside, modern estates in Bradley Stoke and Emersons Green, and rural-edge properties near the Mendips and Chew Valley means different pests thrive in different areas. Whether you're in a period conversion near Whiteladies Road, a flat overlooking the docks, or a family home in South Gloucestershire, understanding local pest risks helps you act quickly when problems arise.</p>
 
-<p>PestPro Index lists 43 vetted pest control providers across Bristol and the surrounding area, with advanced filtering so you can find the right specialist for your situation.</p>
+<p>PestPro Index lists pest control providers across Bristol and the surrounding area, with advanced filtering so you can find the right specialist for your situation.</p>
 
 <h2>The Most Common Pests in Bristol Homes</h2>
 
@@ -1899,7 +1899,7 @@ export const posts: BlogPost[] = [
 <li>If you have a cat flap, consider a microchip-activated one to prevent rodent entry</li>
 </ul>
 
-<p>Ready to find a trusted pest controller in Bristol? PestPro Index lists 43 local providers with no lead fees or commissions — just honest comparison. Filter by pest type, certifications, emergency availability, and more.</p>
+<p>Ready to find a pest controller in Bristol? PestPro Index lists 43 local providers with no lead fees or commissions — just honest comparison. Filter by pest type, certifications, emergency availability, and more.</p>
 
 <p><a href="/bristol/residential">Bristol Residential Directory</a> | <a href="/bristol/commercial">Bristol Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/guides/pest-control-costs">Pest Control Costs Guide</a></p>
 `

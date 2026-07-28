@@ -2,13 +2,13 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Pest Control in Nottingham | Residential Services',
-  description: 'Find trusted residential pest control services in Nottingham and the East Midlands. Compare BPCA-certified providers, read reviews, and get quotes — no lead fees.',
+  description: 'Find residential pest control services in Nottingham and the East Midlands. Compare BPCA-certified providers, read reviews, and get quotes — no lead fees.',
   alternates: {
     canonical: 'https://pestproindex.com/nottingham/residential',
   },
   openGraph: {
     title: 'Pest Control in Nottingham | Residential Services',
-    description: 'Find trusted residential pest control services in Nottingham and the East Midlands. Compare BPCA-certified providers, read reviews, and get quotes — no lead fees.',
+    description: 'Find residential pest control services in Nottingham and the East Midlands. Compare BPCA-certified providers, read reviews, and get quotes — no lead fees.',
     siteName: 'PestPro Index',
     locale: 'en_GB',
     type: 'website',
@@ -20,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Residential Pest Control in Nottingham',
-    description: 'Compare 106+ residential pest control providers in Nottingham and the East Midlands. Independent ratings, reviews, BPCA and NPTA certified companies.',
+    description: 'Compare 106+ residential pest control providers in Nottingham and the East Midlands. Ratings, reviews, BPCA and NPTA certified companies.',
     serviceType: 'Pest Control',
     areaServed: {
       '@type': 'City',
