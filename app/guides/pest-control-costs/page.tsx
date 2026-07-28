@@ -645,7 +645,7 @@ export default function PestControlCostsPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Compare Pest Control Prices in Your Area"
-          subtext="Get free, no-obligation quotes from verified pest control providers near you."
+          subtext="Get free, no-obligation quotes from pest control providers near you."
         />
       </div>
 
@@ -829,13 +829,13 @@ export default function PestControlCostsPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Find Pest Control Providers Near You"
-          subtext="Compare prices and reviews from verified providers in your area — completely free."
+          subtext="Compare prices and reviews from providers in your area — completely free."
         />
       </div>
 
       {/* City grid */}
       <p>
-        PestPro Index lists verified, accredited pest control professionals in cities across the UK. Use the links below to find providers and compare prices in your area.
+        Use the links below to find providers and compare prices in your area.
       </p>
 
       <div className="not-prose my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

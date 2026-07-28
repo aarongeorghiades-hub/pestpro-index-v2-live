@@ -468,7 +468,7 @@ export default function HowToGetRidOfCockroachesPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Cockroach Problem Too Big for DIY?"
-          subtext="Compare verified pest control providers in your area — free, no-obligation quotes."
+          subtext="Compare pest control providers in your area — free, no-obligation quotes."
         />
       </div>
 
@@ -592,7 +592,7 @@ export default function HowToGetRidOfCockroachesPage() {
       <h2 id="cockroach-control-by-city">Cockroach Control by City</h2>
 
       <p>
-        PestPro Index lists verified, accredited pest control professionals in cities across the UK. Use the links below to find cockroach control specialists in your area.
+        Use the links below to find cockroach control specialists in your area.
       </p>
 
       <div className="not-prose my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

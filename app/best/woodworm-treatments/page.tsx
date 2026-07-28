@@ -480,7 +480,7 @@ export default function BestWoodwormTreatmentsPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Woodworm Problem Too Big for DIY?"
-          subtext="Compare verified pest control providers near you — free, no-obligation quotes."
+          subtext="Compare pest control providers near you — free, no-obligation quotes."
         />
       </div>
 

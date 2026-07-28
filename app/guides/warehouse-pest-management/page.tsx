@@ -580,7 +580,7 @@ export default function WarehousePestManagementPage() {
       <h2 id="find-provider">Find a Commercial Pest Controller</h2>
 
       <p>
-        PestPro Index lists verified, accredited commercial pest control providers across the UK. Whether you need a new pest management contract for your warehouse, are preparing for a BRC audit, or want to compare quotes from BPCA and NPTA accredited providers, use the links below.
+        Whether you need a new pest management contract for your warehouse, are preparing for a BRC audit, or want to compare quotes from BPCA and NPTA accredited providers, use the links below.
       </p>
 
       <div className="not-prose">

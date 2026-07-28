@@ -626,7 +626,7 @@ export default function BestCommercialDehumidifiersPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Damp or Pest Problem Beyond DIY?"
-          subtext="Compare verified pest control and damp remediation specialists near you — free, no-obligation quotes"
+          subtext="Compare pest control and damp remediation specialists near you — free, no-obligation quotes"
         />
       </div>
 

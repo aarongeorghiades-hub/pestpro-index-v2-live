@@ -522,7 +522,7 @@ export default function BestCommercialBirdProofingPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Need Professional Bird Proofing for Your Business?"
-          subtext="Compare verified commercial pest control providers near you — free, no-obligation quotes."
+          subtext="Compare commercial pest control providers near you — free, no-obligation quotes."
         />
       </div>
 

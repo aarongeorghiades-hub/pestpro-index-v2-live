@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Pest Control London | Find Local Experts',
   description:
-    'Find trusted pest control companies in London. Browse residential and commercial pest control services across all 33 London boroughs. Verified providers, no referral fees.',
+    'Find trusted pest control companies in London. Browse residential and commercial pest control services across all 33 London boroughs. No referral fees.',
   alternates: {
     canonical: 'https://pestproindex.com/london',
   },
@@ -117,7 +117,7 @@ export default async function LondonHubPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center text-white">
             <div>
               <p className="text-4xl font-black">{providerCount}</p>
-              <p className="text-lg font-semibold opacity-90">Verified Providers</p>
+              <p className="text-lg font-semibold opacity-90">Providers</p>
             </div>
             <div>
               <p className="text-4xl font-black">{londonBoroughs.length}</p>

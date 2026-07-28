@@ -106,7 +106,7 @@ export default async function LeedsHubPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center text-white">
             <div>
               <p className="text-4xl font-black">{providerCount}</p>
-              <p className="text-lg font-semibold opacity-90">Verified Providers</p>
+              <p className="text-lg font-semibold opacity-90">Providers</p>
             </div>
             <div>
               <p className="text-4xl font-black">{leedsBoroughs.length}</p>

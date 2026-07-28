@@ -451,7 +451,7 @@ export default function HowToGetRidOfSilverfishPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Silverfish Problem in Your Home?"
-          subtext="Compare verified pest control providers near you — free, no-obligation quotes."
+          subtext="Compare pest control providers near you — free, no-obligation quotes."
         />
       </div>
 
@@ -530,7 +530,7 @@ export default function HowToGetRidOfSilverfishPage() {
       <h2 id="find-provider">Find a Pest Control Provider</h2>
 
       <p>
-        PestPro Index lists verified, accredited pest control professionals in cities across the UK. If you need help with a silverfish problem &mdash; whether it&apos;s a professional spray treatment, a damp investigation, or advice on humidity control &mdash; use the links below to find pest control specialists in your area.
+        If you need help with a silverfish problem &mdash; whether it&apos;s a professional spray treatment, a damp investigation, or advice on humidity control &mdash; use the links below to find pest control specialists in your area.
       </p>
 
       <div className="not-prose">

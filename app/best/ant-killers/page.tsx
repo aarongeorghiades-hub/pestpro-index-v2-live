@@ -433,7 +433,7 @@ export default function BestAntKillersPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Ant Problem Too Big for DIY?"
-          subtext="Compare verified pest control providers near you — free, no-obligation quotes."
+          subtext="Compare pest control providers near you — free, no-obligation quotes."
         />
       </div>
 

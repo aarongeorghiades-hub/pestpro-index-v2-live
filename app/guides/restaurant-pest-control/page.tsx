@@ -597,7 +597,7 @@ export default function RestaurantPestControlPage() {
       <h2 id="find-provider">Find a Commercial Pest Controller Near You</h2>
 
       <p>
-        PestPro Index lists verified, accredited commercial pest control providers across the UK. Whether you are looking for a new pest control contract, need an emergency call-out, or want to compare quotes from BPCA and NPTA accredited providers, use the links below to find commercial pest controllers in your area.
+        Whether you are looking for a new pest control contract, need an emergency call-out, or want to compare quotes from BPCA and NPTA accredited providers, use the links below to find commercial pest controllers in your area.
       </p>
 
       <div className="not-prose">

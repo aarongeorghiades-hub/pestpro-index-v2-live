@@ -511,13 +511,13 @@ export default function SpringPestPreventionPage() {
       <h2 id="find-provider">Find a Pest Control Provider</h2>
 
       <p>
-        If you discover an existing infestation during your spring prevention routine &mdash; a wardrobe full of moth-damaged clothing, a large ant colony with multiple entry points, or a wasp nest that has already grown beyond the early queen stage &mdash; professional pest control may be the most effective and cost-efficient option. PestPro Index lists verified, accredited pest control professionals in cities across the UK.
+        If you discover an existing infestation during your spring prevention routine &mdash; a wardrobe full of moth-damaged clothing, a large ant colony with multiple entry points, or a wasp nest that has already grown beyond the early queen stage &mdash; professional pest control may be the most effective and cost-efficient option.
       </p>
 
       <div className="not-prose">
         <FindProviderCTA
           heading="Already Spotted a Spring Pest Problem?"
-          subtext="Compare verified pest control providers near you — free, no-obligation quotes."
+          subtext="Compare pest control providers near you — free, no-obligation quotes."
         />
       </div>
 

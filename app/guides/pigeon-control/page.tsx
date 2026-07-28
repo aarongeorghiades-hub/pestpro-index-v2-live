@@ -476,7 +476,7 @@ export default function PigeonControlPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Pigeon Problem Beyond DIY?"
-          subtext="Compare verified, BPCA-accredited bird control specialists near you &mdash; free, no-obligation quotes for residential and commercial properties."
+          subtext="Compare BPCA-accredited bird control specialists near you &mdash; free, no-obligation quotes for residential and commercial properties."
         />
       </div>
 
@@ -536,7 +536,7 @@ export default function PigeonControlPage() {
       <h2 id="pigeon-control-by-city">Find a Pigeon Control Expert</h2>
 
       <p>
-        PestPro Index lists verified, accredited pest control and bird control professionals in cities across the UK. Use the links below to find pigeon control specialists in your area.
+        Use the links below to find pigeon control specialists in your area.
       </p>
 
       <div className="not-prose">

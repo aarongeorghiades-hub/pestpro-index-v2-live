@@ -562,7 +562,7 @@ export default function HowToGetRidOfMicePage() {
       <h2 id="mouse-control-by-city">Mouse Control by City</h2>
 
       <p>
-        PestPro Index lists verified, accredited pest control professionals in cities across the UK. Use the links below to find mouse control experts in your area.
+        Use the links below to find mouse control experts in your area.
       </p>
 
       <div className="not-prose my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

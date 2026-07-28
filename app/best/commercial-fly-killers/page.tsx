@@ -578,7 +578,7 @@ export default function BestCommercialFlyKillersPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Need Professional Fly Control for Your Business?"
-          subtext="Compare verified commercial pest control providers near you — free, no-obligation quotes."
+          subtext="Compare commercial pest control providers near you — free, no-obligation quotes."
         />
       </div>
 

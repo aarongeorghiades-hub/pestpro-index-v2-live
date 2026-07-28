@@ -580,7 +580,7 @@ export default function StudentHousePestGuidePage() {
       <h2 id="find-provider">Find a Pest Controller Near You</h2>
 
       <p>
-        If DIY methods are not enough, or you need professional backup to support your case with the landlord, PestPro Index lists verified pest control providers across the UK. A professional inspection report documenting the infestation and the structural entry points can be powerful evidence when pushing your landlord to take action.
+        If DIY methods are not enough, or you need professional backup to support your case with the landlord, PestPro Index lists pest control providers across the UK. A professional inspection report documenting the infestation and the structural entry points can be powerful evidence when pushing your landlord to take action.
       </p>
 
       <div className="not-prose">

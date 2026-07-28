@@ -534,7 +534,7 @@ export default function BestCommercialInsectMonitorsPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Need Professional Bed Bug Treatment?"
-          subtext="Compare verified commercial pest control providers specialising in hotel and hospitality pest management."
+          subtext="Compare commercial pest control providers specialising in hotel and hospitality pest management."
         />
       </div>
 

@@ -430,7 +430,7 @@ export default function BestCockroachKillersPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Cockroaches Keep Coming Back?"
-          subtext="Compare verified pest control providers in your area — free, no-obligation quotes."
+          subtext="Compare pest control providers in your area — free, no-obligation quotes."
         />
       </div>
 

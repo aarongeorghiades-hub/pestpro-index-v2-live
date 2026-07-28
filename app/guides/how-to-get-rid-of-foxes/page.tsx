@@ -382,7 +382,7 @@ export default function HowToGetRidOfFoxesPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Fox Problem in Your Garden?"
-          subtext="Compare verified pest control providers near you — free, no-obligation quotes."
+          subtext="Compare pest control providers near you — free, no-obligation quotes."
         />
       </div>
 
@@ -472,7 +472,7 @@ export default function HowToGetRidOfFoxesPage() {
       <h2 id="find-provider">Find a Pest Control Provider</h2>
 
       <p>
-        PestPro Index lists verified, accredited pest control professionals in cities across the UK. If you need help with a fox problem &mdash; whether it&apos;s deterrent installation, garden proofing, den exclusion, or livestock protection &mdash; use the links below to find fox control specialists in your area.
+        If you need help with a fox problem &mdash; whether it&apos;s deterrent installation, garden proofing, den exclusion, or livestock protection &mdash; use the links below to find fox control specialists in your area.
       </p>
 
       <div className="not-prose">

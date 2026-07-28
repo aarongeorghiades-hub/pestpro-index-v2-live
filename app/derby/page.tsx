@@ -10,14 +10,14 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Pest Control in Derby',
   description:
-    'Compare 88+ trusted pest control companies in Derby. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses across Derbyshire.',
+    'Compare 88+ trusted pest control companies in Derby.',
   alternates: {
     canonical: 'https://pestproindex.com/derby',
   },
   openGraph: {
     title: 'Pest Control in Derby',
     description:
-      'Compare 88+ trusted pest control companies in Derby. BPCA & NPTA verified providers with ratings, reviews, and services for homes and businesses across Derbyshire.',
+      'Compare 88+ trusted pest control companies in Derby.',
     url: 'https://pestproindex.com/derby',
     siteName: 'PestPro Index',
     type: 'website',
@@ -117,7 +117,7 @@ export default async function DerbyHubPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center text-white">
             <div>
               <p className="text-4xl font-black">{providerCount}</p>
-              <p className="text-lg font-semibold opacity-90">Verified Providers</p>
+              <p className="text-lg font-semibold opacity-90">Providers</p>
             </div>
             <div>
               <p className="text-4xl font-black">8</p>

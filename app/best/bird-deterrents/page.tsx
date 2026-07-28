@@ -520,7 +520,7 @@ export default function BestBirdDeterrentsPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Bird Problem Beyond DIY?"
-          subtext="Compare verified pest control providers near you — free, no-obligation quotes for professional bird deterrent installation."
+          subtext="Compare pest control providers near you — free, no-obligation quotes for professional bird deterrent installation."
         />
       </div>
 

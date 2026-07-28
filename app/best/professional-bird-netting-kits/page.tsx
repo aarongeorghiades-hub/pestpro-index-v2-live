@@ -491,7 +491,7 @@ export default function BestProfessionalBirdNettingKitsPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Need Professional Bird Netting Installation?"
-          subtext="Compare verified commercial pest control providers near you — free, no-obligation quotes."
+          subtext="Compare commercial pest control providers near you — free, no-obligation quotes."
         />
       </div>
 

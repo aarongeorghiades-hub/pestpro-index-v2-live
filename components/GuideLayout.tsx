@@ -97,7 +97,7 @@ export default function GuideLayout({
               {/* Need a Professional? CTA */}
               <div className="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-100">
                 <h4 className="font-bold text-gray-900 mb-2 text-sm">Need a Professional?</h4>
-                <p className="text-xs text-gray-600 mb-3">Compare verified pest control providers near you — no fees, no commissions.</p>
+                <p className="text-xs text-gray-600 mb-3">Compare pest control providers near you — no fees, no commissions.</p>
                 <Link
                   href="/pest-control/regions"
                   className="block text-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"

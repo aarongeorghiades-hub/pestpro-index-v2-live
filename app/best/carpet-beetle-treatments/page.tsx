@@ -409,7 +409,7 @@ export default function BestCarpetBeetleTreatmentsPage() {
       <div className="not-prose mt-12">
         <FindProviderCTA
           heading="Need Professional Carpet Beetle Treatment?"
-          subtext="Compare verified pest control providers in your area — free, no-obligation quotes."
+          subtext="Compare pest control providers in your area — free, no-obligation quotes."
         />
       </div>
 

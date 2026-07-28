@@ -596,7 +596,7 @@ export default function CarpetBeetleControlPage() {
       <h2 id="find-provider">Find a Pest Control Provider</h2>
 
       <p>
-        PestPro Index lists verified, accredited pest control professionals in cities across the UK. If you need help with a carpet beetle problem &mdash; whether it&apos;s a professional spray treatment, bird nest removal and proofing, or specialist treatment for a heritage collection &mdash; use the links below to find pest control specialists in your area.
+        If you need help with a carpet beetle problem &mdash; whether it&apos;s a professional spray treatment, bird nest removal and proofing, or specialist treatment for a heritage collection &mdash; use the links below to find pest control specialists in your area.
       </p>
 
       <div className="not-prose">

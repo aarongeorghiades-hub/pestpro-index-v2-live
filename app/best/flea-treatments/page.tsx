@@ -405,7 +405,7 @@ export default function BestFleaTreatmentsPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Flea Problem Too Big for DIY?"
-          subtext="Compare verified pest control providers near you — free, no-obligation quotes."
+          subtext="Compare pest control providers near you — free, no-obligation quotes."
         />
       </div>
 

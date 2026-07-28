@@ -462,7 +462,7 @@ export default function HowToGetRidOfFleasPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Flea Problem Too Big for DIY?"
-          subtext="Compare verified pest control providers near you — free, no-obligation quotes."
+          subtext="Compare pest control providers near you — free, no-obligation quotes."
         />
       </div>
 
@@ -510,7 +510,7 @@ export default function HowToGetRidOfFleasPage() {
 
       <h3>Find Flea Treatment Providers by City</h3>
       <p>
-        PestPro Index lists verified, accredited pest control professionals in cities across the UK. Use the links below to find flea treatment specialists in your area.
+        Use the links below to find flea treatment specialists in your area.
       </p>
 
       <div className="not-prose my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

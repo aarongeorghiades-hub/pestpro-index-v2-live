@@ -73,7 +73,7 @@ export default function FAQPage() {
       <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-black mb-6">Ready to Find a Pest Controller?</h2>
-          <p className="text-lg mb-8 text-blue-100">Browse verified providers across the UK. No sign-up required.</p>
+          <p className="text-lg mb-8 text-blue-100">Browse providers across the UK. No sign-up required.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/residential" className="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all">
               Browse Residential Providers

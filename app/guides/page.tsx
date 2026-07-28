@@ -359,7 +359,7 @@ export default function GuidesIndexPage() {
       <section className="max-w-4xl mx-auto px-4 py-16">
         <FindProviderCTA
           heading="Need Professional Help?"
-          subtext="Compare verified pest control providers in your area — free, no-obligation quotes."
+          subtext="Compare pest control providers in your area — free, no-obligation quotes."
         />
       </section>
     </div>

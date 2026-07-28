@@ -126,7 +126,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto mb-8" ref={statsRef}>
             <div className="border-b sm:border-b-0 sm:border-r border-white/30 pb-4 sm:pb-0 sm:pr-8">
               <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.providers}+</div>
-              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">VERIFIED PROVIDERS</div>
+              <div className="text-xs sm:text-sm font-semibold tracking-widest text-blue-100">PROVIDERS</div>
             </div>
             <div className="border-b sm:border-b-0 sm:border-r border-white/30 pb-4 sm:pb-0 sm:px-8">
               <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stats.cities}</div>
@@ -210,7 +210,7 @@ export default function Home() {
               Find Pest Control in Your Region
             </h2>
             <p className="text-xl text-white/80">
-              Browse verified providers across the UK
+              Browse providers across the UK
             </p>
           </div>
 
@@ -438,7 +438,7 @@ export default function Home() {
       <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-8">Ready to Find Your Pest Control?</h2>
-          <p className="text-xl mb-12 text-blue-100">Browse verified providers across the UK. No sign-up required.</p>
+          <p className="text-xl mb-12 text-blue-100">Browse providers across the UK. No sign-up required.</p>
           <div className="flex justify-center">
             <Link href="/pest-control/regions" className="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all">
               Browse All Regions →

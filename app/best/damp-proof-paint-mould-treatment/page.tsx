@@ -649,7 +649,7 @@ export default function DampProofPaintMouldTreatmentPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Damp or Mould Problem Beyond DIY?"
-          subtext="Compare verified damp remediation and pest control specialists near you — free, no-obligation quotes"
+          subtext="Compare damp remediation and pest control specialists near you — free, no-obligation quotes"
         />
       </div>
 

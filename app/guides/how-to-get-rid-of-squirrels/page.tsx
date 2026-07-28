@@ -462,7 +462,7 @@ export default function HowToGetRidOfSquirrelsPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Squirrel Problem in Your Loft?"
-          subtext="Compare verified pest control providers near you — free, no-obligation quotes."
+          subtext="Compare pest control providers near you — free, no-obligation quotes."
         />
       </div>
 
@@ -546,7 +546,7 @@ export default function HowToGetRidOfSquirrelsPage() {
       <h2 id="squirrel-control-by-city">Find a Squirrel Control Expert</h2>
 
       <p>
-        PestPro Index lists verified, accredited pest control professionals in cities across the UK. Use the links below to find squirrel control specialists in your area.
+        Use the links below to find squirrel control specialists in your area.
       </p>
 
       <div className="not-prose">

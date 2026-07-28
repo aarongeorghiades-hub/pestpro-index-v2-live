@@ -503,7 +503,7 @@ export default function HowToGetRidOfBedBugsPage() {
       <h2 id="bed-bug-treatment-by-city">Bed Bug Treatment by City</h2>
 
       <p>
-        PestPro Index lists verified, accredited pest control professionals in cities across the UK. Use the links below to find bed bug specialists in your area.
+        Use the links below to find bed bug specialists in your area.
       </p>
 
       <div className="not-prose my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

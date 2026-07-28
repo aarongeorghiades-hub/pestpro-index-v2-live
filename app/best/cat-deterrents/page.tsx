@@ -384,7 +384,7 @@ export default function BestCatDeterrentsPage() {
       <div className="not-prose">
         <FindProviderCTA
           heading="Persistent Garden Pest Problem?"
-          subtext="Compare verified pest control providers near you — free, no-obligation quotes."
+          subtext="Compare pest control providers near you — free, no-obligation quotes."
         />
       </div>
 

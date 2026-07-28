@@ -779,7 +779,7 @@ export default function LandlordPestControlPage() {
       <h2 id="find-provider">Find a Commercial Pest Controller Near You</h2>
 
       <p>
-        PestPro Index lists verified, accredited commercial pest control providers across the UK. Whether you need a pest management contract for your property portfolio, an emergency callout for a tenant complaint, or a between-tenancy inspection and treatment, use the links below to find commercial pest controllers in your area.
+        Whether you need a pest management contract for your property portfolio, an emergency callout for a tenant complaint, or a between-tenancy inspection and treatment, use the links below to find commercial pest controllers in your area.
       </p>
 
       {/* Directory CTA */}

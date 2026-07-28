@@ -564,7 +564,7 @@ export default function WoodwormTreatmentPage() {
       <h2 id="find-provider">Find a Pest Control Provider</h2>
 
       <p>
-        PestPro Index lists verified, accredited pest control professionals in cities across the UK. If you need help with a woodworm problem &mdash; whether it&apos;s a professional timber survey, spray treatment, or specialist Deathwatch Beetle work in a listed building &mdash; use the links below to find pest control and timber treatment specialists in your area.
+        If you need help with a woodworm problem &mdash; whether it&apos;s a professional timber survey, spray treatment, or specialist Deathwatch Beetle work in a listed building &mdash; use the links below to find pest control and timber treatment specialists in your area.
       </p>
 
       <div className="not-prose">
