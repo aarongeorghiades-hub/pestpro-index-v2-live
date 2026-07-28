@@ -111,14 +111,14 @@ export default function BestDrainFlyKillerPage() {
       <h2 id="at-a-glance">Best Drain Fly Killers at a Glance</h2>
       <table>
         <thead>
-          <tr><th>Product</th><th>Type</th><th>Best For</th><th>Price</th></tr>
+          <tr><th>Product</th><th>Type</th><th>Best For</th></tr>
         </thead>
         <tbody>
-          <tr><td>Fruit Fly &amp; Drain Fly Gel Treatment 1 Gallon</td><td>Enzyme gel</td><td>Best Overall</td><td>~£25</td></tr>
-          <tr><td>Zero In Total Insect Killer 300ml</td><td>Insect spray</td><td>Best UK Brand</td><td>~£8</td></tr>
-          <tr><td>Rentokil Insectrol Insect Killer Spray 250ml</td><td>Insect spray</td><td>Best Professional-Strength</td><td>~£15</td></tr>
-          <tr><td>Doff Ant &amp; Crawling Insect Killer Spray 1L</td><td>Insect spray</td><td>Best for Prevention</td><td>~£12</td></tr>
-          <tr><td>Pest Expert Formula C+ Cockroach &amp; Insect Killer Spray 5L</td><td>Insect spray</td><td>Best Targeted Treatment</td><td>~£10</td></tr>
+          <tr><td>Fruit Fly &amp; Drain Fly Gel Treatment 1 Gallon</td><td>Enzyme gel</td><td>Best Overall</td></tr>
+          <tr><td>Zero In Total Insect Killer 300ml</td><td>Insect spray</td><td>Best UK Brand</td></tr>
+          <tr><td>Rentokil Insectrol Insect Killer Spray 250ml</td><td>Insect spray</td><td>Best Professional-Strength</td></tr>
+          <tr><td>Doff Ant &amp; Crawling Insect Killer Spray 1L</td><td>Insect spray</td><td>Best for Prevention</td></tr>
+          <tr><td>Pest Expert Formula C+ Cockroach &amp; Insect Killer Spray 5L</td><td>Insect spray</td><td>Best Targeted Treatment</td></tr>
         </tbody>
       </table>
 

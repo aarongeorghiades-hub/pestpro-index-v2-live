@@ -120,14 +120,14 @@ export default function ProfessionalBedBugSteamersPage() {
       <h2 id="at-a-glance">Best Bed Bug Steamers at a Glance</h2>
       <table>
         <thead>
-          <tr><th>Product</th><th>Steam Temp</th><th>Best For</th><th>Price</th></tr>
+          <tr><th>Product</th><th>Steam Temp</th><th>Best For</th></tr>
         </thead>
         <tbody>
-          <tr><td>Polti Cimex Eradicator</td><td>180°C dry steam</td><td>Purpose-built bed bug steamer</td><td>~£400</td></tr>
-          <tr><td>Dupray Neat 17-piece</td><td>150°C+</td><td>Best all-rounder for landlords</td><td>~£200</td></tr>
-          <tr><td>McCulloch MC1385</td><td>150°C+</td><td>Multi-purpose cleaning + pest</td><td>~£180</td></tr>
-          <tr><td>Dupray Neat Plus 40-piece</td><td>150°C+</td><td>Maximum accessory kit</td><td>~£250</td></tr>
-          <tr><td>AEOLUS LP01SB</td><td>200°C dry steam</td><td>Closest to professional kit</td><td>~£500</td></tr>
+          <tr><td>Polti Cimex Eradicator</td><td>180°C dry steam</td><td>Purpose-built bed bug steamer</td></tr>
+          <tr><td>Dupray Neat 17-piece</td><td>150°C+</td><td>Best all-rounder for landlords</td></tr>
+          <tr><td>McCulloch MC1385</td><td>150°C+</td><td>Multi-purpose cleaning + pest</td></tr>
+          <tr><td>Dupray Neat Plus 40-piece</td><td>150°C+</td><td>Maximum accessory kit</td></tr>
+          <tr><td>AEOLUS LP01SB</td><td>200°C dry steam</td><td>Closest to professional kit</td></tr>
         </tbody>
       </table>
 

@@ -227,7 +227,6 @@ export default function BestMouseTrapsPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -235,38 +234,29 @@ export default function BestMouseTrapsPage() {
             <td>ROSHIELD 6-Pack Mouse Trap</td>
             <td>Snap trap</td>
             <td>Best Overall</td>
-            <td>~£10</td>
           </tr>
           <tr>
             <td>Trisiki 6-Pack Heavy Duty Mouse Trap</td>
             <td>Snap trap</td>
             <td>Best Heavy Duty</td>
-            <td>~£9</td>
           </tr>
           <tr>
             <td>ASPECTEK 6-Pack Mouse Trap</td>
             <td>Snap trap</td>
             <td>Best Budget</td>
-            <td>~£8</td>
           </tr>
           <tr>
             <td>ROSHIELD Humane Mouse Trap 2-Pack</td>
             <td>Live catch</td>
             <td>Best Humane</td>
-            <td>~£10</td>
           </tr>
           <tr>
             <td>Motel Mouse Humane Trap</td>
             <td>Live catch</td>
             <td>Best Easy-Clean</td>
-            <td>~£8</td>
           </tr>
         </tbody>
       </table>
-
-      <div className="not-prose">
-        <StatCallout value="£8 – £10" label="Price range across all five recommended traps" />
-      </div>
 
       {/* Best Overall */}
       <h2 id="best-overall">Best Overall — Rentokil Clean Kill Mouse Trap</h2>

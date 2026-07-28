@@ -157,7 +157,6 @@ export default function BestSquirrelDeterrentsPage() {
             <th>Product</th>
             <th>Category</th>
             <th>Best For</th>
-            <th>Price Range</th>
           </tr>
         </thead>
         <tbody>
@@ -165,38 +164,29 @@ export default function BestSquirrelDeterrentsPage() {
             <td>Jacobi Jayne Squirrel Buster Bird Feeder</td>
             <td>Squirrel-proof feeder</td>
             <td>Best Overall</td>
-            <td>~&pound;30&ndash;&pound;50</td>
           </tr>
           <tr>
             <td>RepellShield Squirrel Repellent Spray 250ml</td>
             <td>Repellent spray</td>
             <td>Best Repellent Spray</td>
-            <td>~&pound;10&ndash;&pound;15</td>
           </tr>
           <tr>
             <td>Selections Squirrel Proof Bird Feeder Baffle (Pack of 2)</td>
             <td>Pole baffle</td>
             <td>Best Baffle</td>
-            <td>~&pound;10&ndash;&pound;20</td>
           </tr>
           <tr>
             <td>The Big Cheese Hot Nuts Deterrent Spray 1L</td>
             <td>Bird food treatment</td>
             <td>Best Bird Food Treatment</td>
-            <td>~&pound;5&ndash;&pound;10</td>
           </tr>
           <tr>
             <td>Kabalo Humane Squirrel Cage Trap</td>
             <td>Humane cage trap</td>
             <td>Best Humane Trap</td>
-            <td>~&pound;15&ndash;&pound;25</td>
           </tr>
         </tbody>
       </table>
-
-      <div className="not-prose">
-        <StatCallout value="&pound;5 &ndash; &pound;50" label="Price range across all five recommended squirrel deterrents" />
-      </div>
 
       {/* Best Overall */}
       <h2 id="best-overall">Best Overall &mdash; Jacobi Jayne Squirrel Buster Bird Feeder</h2>

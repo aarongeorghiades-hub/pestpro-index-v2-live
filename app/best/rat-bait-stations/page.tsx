@@ -127,14 +127,14 @@ export default function BestRatBaitStationsPage() {
       <h2 id="at-a-glance">Best Rat Bait Stations at a Glance</h2>
       <table>
         <thead>
-          <tr><th>Product</th><th>Key Feature</th><th>Best For</th><th>Price</th></tr>
+          <tr><th>Product</th><th>Key Feature</th><th>Best For</th></tr>
         </thead>
         <tbody>
-          <tr><td>Rentokil Advanced</td><td>Lockable + snap trap compatible</td><td>Best Overall</td><td>~£12</td></tr>
-          <tr><td>Pest Expert Station</td><td>Professional heavy-duty</td><td>Best Professional</td><td>~£15</td></tr>
-          <tr><td>Roshield External Box</td><td>Weatherproof + UV-stabilised</td><td>Best Value</td><td>~£8</td></tr>
-          <tr><td>Big Cheese Rat Station</td><td>Multi-pack for coverage</td><td>Best Multi-Pack</td><td>~£20</td></tr>
-          <tr><td>Pest Expert Kit</td><td>Station + poison included</td><td>Best Kit</td><td>~£25</td></tr>
+          <tr><td>Rentokil Advanced</td><td>Lockable + snap trap compatible</td><td>Best Overall</td></tr>
+          <tr><td>Pest Expert Station</td><td>Professional heavy-duty</td><td>Best Professional</td></tr>
+          <tr><td>Roshield External Box</td><td>Weatherproof + UV-stabilised</td><td>Best Value</td></tr>
+          <tr><td>Big Cheese Rat Station</td><td>Multi-pack for coverage</td><td>Best Multi-Pack</td></tr>
+          <tr><td>Pest Expert Kit</td><td>Station + poison included</td><td>Best Kit</td></tr>
         </tbody>
       </table>
 

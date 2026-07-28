@@ -160,7 +160,6 @@ export default function BestSilverfishTreatmentsPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price Range</th>
           </tr>
         </thead>
         <tbody>
@@ -168,38 +167,29 @@ export default function BestSilverfishTreatmentsPage() {
             <td>Diatomaceous Earth Food Grade 1kg</td>
             <td>Natural powder</td>
             <td>Cracks, crevices, dry areas</td>
-            <td>~&pound;8&ndash;&pound;12</td>
           </tr>
           <tr>
             <td>Ready Steady Defend Silverfish Spray 1L</td>
             <td>Chemical spray</td>
             <td>Skirting boards, harbourage</td>
-            <td>~&pound;13&ndash;&pound;16</td>
           </tr>
           <tr>
             <td>Super Ninja Silverfish Trap 3-Pack</td>
             <td>Sticky trap</td>
             <td>Monitoring, bathrooms</td>
-            <td>~&pound;12&ndash;&pound;15</td>
           </tr>
           <tr>
             <td>Pro Breeze 12L/Day Dehumidifier</td>
             <td>Environmental</td>
             <td>Root cause treatment</td>
-            <td>~&pound;120&ndash;&pound;150</td>
           </tr>
           <tr>
             <td>Pest Expert Killer Powder 300g</td>
             <td>Insecticidal dust</td>
             <td>Wall cavities, under floors</td>
-            <td>~&pound;7&ndash;&pound;10</td>
           </tr>
         </tbody>
       </table>
-
-      <div className="not-prose">
-        <StatCallout value="&pound;7 &ndash; &pound;150" label="Price range across all five silverfish treatment products" />
-      </div>
 
       {/* Best Natural Treatment */}
       <h2 id="best-natural">Best Natural Treatment &mdash; Diatomaceous Earth Food Grade 1kg</h2>

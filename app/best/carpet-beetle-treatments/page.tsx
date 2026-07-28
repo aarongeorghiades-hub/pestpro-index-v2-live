@@ -159,7 +159,6 @@ export default function BestCarpetBeetleTreatmentsPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -167,38 +166,29 @@ export default function BestCarpetBeetleTreatmentsPage() {
             <td>Zero In Carpet Beetle &amp; Moth Killer 300ml</td>
             <td>Aerosol spray</td>
             <td>Carpet edges, skirting boards</td>
-            <td>~&pound;6</td>
           </tr>
           <tr>
             <td>Rentokil Carpet Beetle &amp; Cloth Moth Trap (2-Pack)</td>
             <td>Pheromone trap</td>
             <td>Monitoring, early detection</td>
-            <td>~&pound;9</td>
           </tr>
           <tr>
             <td>Pest Expert Formula P Powder XL (2 &times; 300g)</td>
             <td>Insecticidal powder</td>
             <td>Crevices, under-carpet treatment</td>
-            <td>~&pound;12</td>
           </tr>
           <tr>
             <td>Pest Expert Carpet Moth Killer Kit (1 Room)</td>
             <td>Complete kit</td>
             <td>Whole-room treatment</td>
-            <td>~&pound;24</td>
           </tr>
           <tr>
             <td>Cedarwood Moth &amp; Beetle Repellent (28 Pieces)</td>
             <td>Natural repellent</td>
             <td>Wardrobes, drawers, storage</td>
-            <td>~&pound;9</td>
           </tr>
         </tbody>
       </table>
-
-      <div className="not-prose">
-        <StatCallout value="&pound;6 &ndash; &pound;24" label="Price range across all five carpet beetle treatment products" />
-      </div>
 
       {/* Best Spray */}
       <h2 id="best-spray">Best Spray &mdash; Zero In Carpet Beetle &amp; Moth Killer</h2>

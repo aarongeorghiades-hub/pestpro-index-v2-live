@@ -115,14 +115,14 @@ export default function ProfessionalBaitStationKitsPage() {
       <h2 id="at-a-glance">Professional Bait Station Kits at a Glance</h2>
       <table>
         <thead>
-          <tr><th>Product</th><th>Key Feature</th><th>Best For</th><th>Price</th></tr>
+          <tr><th>Product</th><th>Key Feature</th><th>Best For</th></tr>
         </thead>
         <tbody>
-          <tr><td>Roshield PRO BOX 4-Pack</td><td>Extra-large with inspection lid</td><td>Best Overall</td><td>~£35</td></tr>
-          <tr><td>Roshield PRO BOX 2-Pack</td><td>Transparent inspection window</td><td>Runner-Up</td><td>~£20</td></tr>
-          <tr><td>Roshield Tamper-Resistant Single</td><td>Compact, key-operated lock</td><td>Best Budget</td><td>~£10</td></tr>
-          <tr><td>Pest Expert Heavy Duty 4-Pack</td><td>Industrial-strength outdoor</td><td>Best Professional-Grade</td><td>~£40</td></tr>
-          <tr><td>Roshield Pre-Baited 2x Kit</td><td>Ready-to-deploy, bait included</td><td>Best Convenience</td><td>~£25</td></tr>
+          <tr><td>Roshield PRO BOX 4-Pack</td><td>Extra-large with inspection lid</td><td>Best Overall</td></tr>
+          <tr><td>Roshield PRO BOX 2-Pack</td><td>Transparent inspection window</td><td>Runner-Up</td></tr>
+          <tr><td>Roshield Tamper-Resistant Single</td><td>Compact, key-operated lock</td><td>Best Budget</td></tr>
+          <tr><td>Pest Expert Heavy Duty 4-Pack</td><td>Industrial-strength outdoor</td><td>Best Professional-Grade</td></tr>
+          <tr><td>Roshield Pre-Baited 2x Kit</td><td>Ready-to-deploy, bait included</td><td>Best Convenience</td></tr>
         </tbody>
       </table>
 

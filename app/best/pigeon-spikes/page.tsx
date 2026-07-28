@@ -205,7 +205,6 @@ export default function BestPigeonSpikesPage() {
             <th>Product</th>
             <th>Material</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -213,37 +212,31 @@ export default function BestPigeonSpikesPage() {
             <td>Defenders Stainless Steel Spikes</td>
             <td>Stainless steel</td>
             <td>Best Overall</td>
-            <td>~£12 / 2m</td>
           </tr>
           <tr>
             <td>Pestbye Stainless Steel (5m)</td>
             <td>Stainless steel</td>
             <td>Best Coverage</td>
-            <td>~£20 / 5m</td>
           </tr>
           <tr>
             <td>Big Cheese Deterrent Spikes</td>
             <td>Stainless steel / plastic base</td>
             <td>Best Budget</td>
-            <td>~£8 / 2m</td>
           </tr>
           <tr>
             <td>Defender Plastic Bird Spikes</td>
             <td>Polycarbonate</td>
             <td>Best Plastic Option</td>
-            <td>~£10 / 3m</td>
           </tr>
           <tr>
             <td>Bird-X Stainless Steel Spikes</td>
             <td>Stainless steel</td>
             <td>Best Adhesive Mount</td>
-            <td>~£15 / 3m</td>
           </tr>
           <tr>
             <td>Defenders Bird Netting</td>
             <td>HDPE netting</td>
             <td>Large Area Coverage</td>
-            <td>~£15 / 4m×10m</td>
           </tr>
         </tbody>
       </table>

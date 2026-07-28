@@ -217,7 +217,6 @@ export default function BestMousePoisonPage() {
             <th>Product</th>
             <th>Active Ingredient</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -225,31 +224,26 @@ export default function BestMousePoisonPage() {
             <td>Pest Expert Formula B+ 900g</td>
             <td>Brodifacoum</td>
             <td>Best Overall</td>
-            <td>~£25</td>
           </tr>
           <tr>
             <td>Pest Expert Formula B+ 360g</td>
             <td>Brodifacoum</td>
             <td>Best Starter Pack</td>
-            <td>~£14</td>
           </tr>
           <tr>
             <td>The Big Cheese All-Weather 15x10g</td>
             <td>Difenacoum</td>
             <td>Best Blocks</td>
-            <td>~£8</td>
           </tr>
           <tr>
             <td>The Big Cheese All-Weather 30x10g</td>
             <td>Difenacoum</td>
             <td>Best Bulk</td>
-            <td>~£12</td>
           </tr>
           <tr>
             <td>Roshield Wax Block Bait 600g</td>
             <td>Bromadiolone</td>
             <td>Best Professional</td>
-            <td>~£15</td>
           </tr>
         </tbody>
       </table>

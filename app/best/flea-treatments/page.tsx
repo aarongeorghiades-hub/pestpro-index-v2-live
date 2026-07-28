@@ -164,7 +164,6 @@ export default function BestFleaTreatmentsPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price Range</th>
           </tr>
         </thead>
         <tbody>
@@ -172,26 +171,19 @@ export default function BestFleaTreatmentsPage() {
             <td>Indorex Household Flea Spray 500ml</td>
             <td>Aerosol spray + IGR</td>
             <td>Best Overall</td>
-            <td>~&pound;12</td>
           </tr>
           <tr>
             <td>Zero In Home Flea Powder 300g</td>
             <td>Flea powder</td>
             <td>Best Powder</td>
-            <td>~&pound;6</td>
           </tr>
           <tr>
             <td>Beaphar Household Flea Powder 300g</td>
             <td>Flea powder</td>
             <td>Best Pet Brand</td>
-            <td>~&pound;7</td>
           </tr>
         </tbody>
       </table>
-
-      <div className="not-prose">
-        <StatCallout value="&pound;6 &ndash; &pound;12" label="Price range across all three recommended flea treatments" />
-      </div>
 
       {/* Best Overall */}
       <h2 id="best-overall">Best Overall &mdash; Indorex Household Flea Spray 500ml</h2>

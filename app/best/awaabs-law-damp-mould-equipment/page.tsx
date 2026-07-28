@@ -196,7 +196,6 @@ export default function AwaabsLawDampMouldEquipmentPage() {
             <th>Product</th>
             <th>Category</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -204,49 +203,41 @@ export default function AwaabsLawDampMouldEquipmentPage() {
             <td>Nuaire Drimaster Eco Heat</td>
             <td>PIV unit (heated)</td>
             <td>Best overall PIV</td>
-            <td>Check price</td>
           </tr>
           <tr>
             <td>Dryzone PIV Kit with Heater</td>
             <td>PIV unit (heated)</td>
             <td>Best value PIV kit</td>
-            <td>Check price</td>
           </tr>
           <tr>
             <td>Kair Kalahari ECO PIV</td>
             <td>PIV unit (unheated)</td>
             <td>Best budget PIV</td>
-            <td>Check price</td>
           </tr>
           <tr>
             <td>Vent-Axia PureAir PIV + Hygrometer</td>
             <td>PIV unit (heated)</td>
             <td>Premium PIV + compliance</td>
-            <td>Check price</td>
           </tr>
           <tr>
             <td>electriQ 30L Industrial</td>
             <td>Dehumidifier</td>
             <td>Best for remediation</td>
-            <td>&pound;280</td>
           </tr>
           <tr>
             <td>MeacoDry Arete One 25L</td>
             <td>Dehumidifier + HEPA</td>
             <td>Best for occupied properties</td>
-            <td>&pound;300</td>
           </tr>
           <tr>
             <td>Dryzone Moisture Meter</td>
             <td>Damp meter</td>
             <td>Wall &amp; timber readings</td>
-            <td>Check price</td>
           </tr>
           <tr>
             <td>Digital Hygrometer Data Logger</td>
             <td>Hygrometer</td>
             <td>Humidity audit trail</td>
-            <td>Check price</td>
           </tr>
         </tbody>
       </table>

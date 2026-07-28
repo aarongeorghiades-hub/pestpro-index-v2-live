@@ -186,7 +186,6 @@ export default function BestProfessionalBirdNettingKitsPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -194,38 +193,29 @@ export default function BestProfessionalBirdNettingKitsPage() {
             <td>Birdgo Anti-Pigeon Netting &mdash; 10m x 10m</td>
             <td>50mm knotted netting</td>
             <td>Best Overall (largest net)</td>
-            <td>&pound;60</td>
           </tr>
           <tr>
             <td>Birdgo Anti-Pigeon Netting &mdash; 5m x 10m</td>
             <td>50mm knotted netting</td>
             <td>Best Value Net</td>
-            <td>&pound;30</td>
           </tr>
           <tr>
             <td>Defender Wide Plastic Bird Spikes &mdash; 5m Pack</td>
             <td>Spike strip</td>
             <td>Best Ledge Exclusion</td>
-            <td>&pound;25</td>
           </tr>
           <tr>
             <td>Birdgo Bird Netting Fixing Clips (60-Pack)</td>
             <td>No-drill fixing clips</td>
             <td>Essential Accessory</td>
-            <td>&pound;20</td>
           </tr>
           <tr>
             <td>Pest-Stop Professional Stainless Steel Bird Spikes</td>
             <td>Stainless steel spike strip</td>
             <td>Complex Geometry</td>
-            <td>&pound;20</td>
           </tr>
         </tbody>
       </table>
-
-      <div className="not-prose">
-        <StatCallout value="&pound;20 &ndash; &pound;60" label="Price range across all five recommended professional bird exclusion products" />
-      </div>
 
       {/* Product 1 */}
       <h2 id="product-1">#1 Birdgo Anti-Pigeon Netting &mdash; 10m x 10m (Largest Coverage)</h2>

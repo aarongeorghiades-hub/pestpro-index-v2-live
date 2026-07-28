@@ -206,7 +206,6 @@ export default function BestMoleTrapsPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -214,31 +213,26 @@ export default function BestMoleTrapsPage() {
             <td>Victor Push Mole Trap</td>
             <td>Scissor-jaw</td>
             <td>Best Overall</td>
-            <td>~£15</td>
           </tr>
           <tr>
             <td>The Big Cheese Mole Tunnel Trap</td>
             <td>Half-barrel</td>
             <td>Traditional Pick</td>
-            <td>~£8</td>
           </tr>
           <tr>
             <td>Pest-Stop Tunnel Mole Trap</td>
             <td>Tunnel</td>
             <td>Professional Pick</td>
-            <td>~£12</td>
           </tr>
           <tr>
             <td>SWISSINNO SuperCat Mole Trap</td>
             <td>Claw</td>
             <td>Most Discreet</td>
-            <td>~£15</td>
           </tr>
           <tr>
             <td>REPELEM Claw Mole Trap (Pack of 3)</td>
             <td>Claw</td>
             <td>Best for Beginners</td>
-            <td>~£20</td>
           </tr>
         </tbody>
       </table>

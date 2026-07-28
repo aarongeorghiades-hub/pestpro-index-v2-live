@@ -191,7 +191,6 @@ export default function BestWaspKillersPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -199,26 +198,19 @@ export default function BestWaspKillersPage() {
             <td>Rentokil Wasp Foam 300ml</td>
             <td>Foam spray</td>
             <td>Best Overall</td>
-            <td>~&pound;8</td>
           </tr>
           <tr>
             <td>Zero In Ultra Power XL Wasp Trap</td>
             <td>Reusable trap</td>
             <td>Best Trap</td>
-            <td>~&pound;10</td>
           </tr>
           <tr>
             <td>Zero In Wasp Killer 300ml</td>
             <td>Aerosol spray</td>
             <td>Best Quick-Kill</td>
-            <td>~&pound;6</td>
           </tr>
         </tbody>
       </table>
-
-      <div className="not-prose">
-        <StatCallout value="&pound;6 &ndash; &pound;10" label="Price range across all three recommended products" />
-      </div>
 
       {/* Best Overall */}
       <h2 id="best-overall">Best Overall &mdash; Rentokil Wasp Foam 300ml</h2>

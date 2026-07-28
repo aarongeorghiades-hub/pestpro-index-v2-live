@@ -176,7 +176,6 @@ export default function BestCockroachGelBaitPage() {
             <th>Product</th>
             <th>Active Ingredient</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -184,31 +183,26 @@ export default function BestCockroachGelBaitPage() {
             <td>Advion Cockroach Gel Bait 4x30g</td>
             <td>Indoxacarb 0.6%</td>
             <td>Best Overall</td>
-            <td>Check price</td>
           </tr>
           <tr>
             <td>NOPE! CP Cockroach Killer Spray 500ml</td>
             <td>Cypermethrin</td>
             <td>Best Alternative</td>
-            <td>Check price</td>
           </tr>
           <tr>
             <td>Pest Expert Cockroach Killer Kit (Advanced)</td>
             <td>Gel + spray + powder</td>
             <td>Best Kit</td>
-            <td>Check price</td>
           </tr>
           <tr>
             <td>Rentokil Insectrol Insect Killer Spray 250ml</td>
             <td>Permethrin + d-allethrin</td>
             <td>Best Spray</td>
-            <td>Check price</td>
           </tr>
           <tr>
             <td>Zero In Ant & Cockroach Killer 1.5L Ready-to-Use</td>
             <td>Cypermethrin + benzalkonium chloride</td>
             <td>Best Budget</td>
-            <td>Check price</td>
           </tr>
         </tbody>
       </table>

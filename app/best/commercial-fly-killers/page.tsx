@@ -172,8 +172,6 @@ export default function BestCommercialFlyKillersPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Rating</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -181,43 +179,29 @@ export default function BestCommercialFlyKillersPage() {
             <td>Xterminate UV LED Wall Mounted Fly Killer (Large)</td>
             <td>LED capture unit</td>
             <td>Best Overall</td>
-            <td>4.0/5</td>
-            <td>~&pound;40</td>
           </tr>
           <tr>
             <td>Xterminate 30W UV Electronic Commercial Fly Killer</td>
             <td>UV zapper</td>
             <td>Best Classic Zapper</td>
-            <td>4.0/5</td>
-            <td>~&pound;30</td>
           </tr>
           <tr>
             <td>Xterminate 40W UV Commercial Fly Killer with Remote</td>
             <td>UV zapper</td>
             <td>Best Large Coverage</td>
-            <td>4.0/5</td>
-            <td>~&pound;50</td>
           </tr>
           <tr>
             <td>30W Industrial Electric Fly Insect Killer</td>
             <td>UV zapper</td>
             <td>Best Budget Option</td>
-            <td>3.5/5</td>
-            <td>~&pound;20</td>
           </tr>
           <tr>
             <td>Eazyzap 13W Professional Glue Board Fly Killer</td>
             <td>Glue board</td>
             <td>Best for Food Prep Areas</td>
-            <td>4.0/5</td>
-            <td>~&pound;80&ndash;&pound;120</td>
           </tr>
         </tbody>
       </table>
-
-      <div className="not-prose">
-        <StatCallout value="&pound;20 &ndash; &pound;120" label="Price range across all five recommended commercial fly killers" />
-      </div>
 
       {/* Best Overall */}
       <h2 id="best-overall">Best for Restaurants &mdash; Xterminate UV LED Wall Mounted Fly Killer (Large)</h2>

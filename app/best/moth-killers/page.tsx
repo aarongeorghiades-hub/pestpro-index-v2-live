@@ -156,7 +156,6 @@ export default function BestMothKillersPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price Range</th>
           </tr>
         </thead>
         <tbody>
@@ -164,31 +163,26 @@ export default function BestMothKillersPage() {
             <td>Acana Hanging Moth Killer</td>
             <td>Hanging killer strip</td>
             <td>Best Overall</td>
-            <td>~&pound;8 for 4</td>
           </tr>
           <tr>
             <td>London Moth Killer Pheromone Traps</td>
             <td>Pheromone sticky trap</td>
             <td>Best Pheromone Trap</td>
-            <td>~&pound;10 for 6</td>
           </tr>
           <tr>
             <td>Acana Carpet &amp; Fabric Moth Killer Spray</td>
             <td>Aerosol spray</td>
             <td>Best Carpet Moth Spray</td>
-            <td>~&pound;9</td>
           </tr>
           <tr>
             <td>Acana Sachet Moth Killer 20 Pack</td>
             <td>Sachet</td>
             <td>Best for Drawers &amp; Storage</td>
-            <td>~&pound;8</td>
           </tr>
           <tr>
             <td>Rentokil Moth Killer Hanging Unit Twin Pack</td>
             <td>Hanging killer strip</td>
             <td>Best Budget Option</td>
-            <td>~&pound;5</td>
           </tr>
         </tbody>
       </table>

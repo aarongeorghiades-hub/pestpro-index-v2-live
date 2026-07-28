@@ -227,7 +227,6 @@ export default function BestRatPoisonPage() {
             <th>Product</th>
             <th>Active Ingredient</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -235,37 +234,31 @@ export default function BestRatPoisonPage() {
             <td>Roshield Brodifacoum Blocks</td>
             <td>Brodifacoum (0.005%)</td>
             <td>Best Overall</td>
-            <td>~£15</td>
           </tr>
           <tr>
             <td>Pest Expert Formula B+ Grain Bait</td>
             <td>Brodifacoum (0.005%)</td>
             <td>Best Professional-Strength</td>
-            <td>~£20</td>
           </tr>
           <tr>
             <td>Elixir Gardens Rodex Sachets</td>
             <td>Bromadiolone (0.005%)</td>
             <td>Best Value</td>
-            <td>~£12</td>
           </tr>
           <tr>
             <td>Rentokil Rodine Grain Bait</td>
             <td>Difenacoum (0.005%)</td>
             <td>Best Trusted Brand</td>
-            <td>~£8</td>
           </tr>
           <tr>
             <td>Racan Force Paste</td>
             <td>Brodifacoum (0.005%)</td>
             <td>Best Paste Bait</td>
-            <td>~£18</td>
           </tr>
           <tr>
             <td>Pest Expert Bait Block Kit</td>
             <td>Brodifacoum (0.005%)</td>
             <td>Best Combo Kit</td>
-            <td>~£25</td>
           </tr>
         </tbody>
       </table>

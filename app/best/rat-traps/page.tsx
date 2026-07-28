@@ -186,7 +186,6 @@ export default function BestRatTrapsPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -194,38 +193,29 @@ export default function BestRatTrapsPage() {
             <td>Rat Reaper XXL Snap Trap</td>
             <td>Snap trap</td>
             <td>Best Overall</td>
-            <td>~£10</td>
           </tr>
           <tr>
             <td>ROSHIELD Rat Bait Station Box</td>
             <td>Bait station</td>
             <td>Best for Safety</td>
-            <td>~£15</td>
           </tr>
           <tr>
             <td>ROSHIELD 4-Pack Rat Trap</td>
             <td>Snap trap</td>
             <td>Best Professional-Grade</td>
-            <td>~£12</td>
           </tr>
           <tr>
             <td>The Big Cheese Rat Bait Station</td>
             <td>Bait station</td>
             <td>Best Bait Station</td>
-            <td>~£8</td>
           </tr>
           <tr>
             <td>Ultrasonic Pest Repeller</td>
             <td>Electronic</td>
             <td>Best Electronic</td>
-            <td>~£15</td>
           </tr>
         </tbody>
       </table>
-
-      <div className="not-prose">
-        <StatCallout value="£8 – £15" label="Price range across all five recommended traps" />
-      </div>
 
       {/* Best Overall */}
       <h2 id="best-overall">Best Overall — Rat Reaper by Froboo</h2>

@@ -157,47 +157,31 @@ export default function BestWoodwormTreatmentsPage() {
           <tr>
             <th>Product</th>
             <th>Best For</th>
-            <th>Price</th>
-            <th>Rating</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Barrettine Premier Woodworm Killer 1L</td>
             <td>Best Treatment Fluid</td>
-            <td>~&pound;10&ndash;&pound;15</td>
-            <td>4.5/5</td>
           </tr>
           <tr>
             <td>Rempro Woodwyse Internal Wood Treatment</td>
             <td>Best Water-Based Treatment</td>
-            <td>~&pound;15&ndash;&pound;25</td>
-            <td>4.0/5</td>
           </tr>
           <tr>
             <td>Rentokil PSW85 Woodworm Treatment Spray 300ml</td>
             <td>Best Spray Can</td>
-            <td>~&pound;8&ndash;&pound;12</td>
-            <td>4.0/5</td>
           </tr>
           <tr>
             <td>Rentokil PSW92 Woodworm Treatment 250ml</td>
             <td>Best Injection Applicator</td>
-            <td>~&pound;8&ndash;&pound;12</td>
-            <td>4.0/5</td>
           </tr>
           <tr>
             <td>Stanley 0-77-030 Moisture Meter</td>
             <td>Best Diagnostic Tool</td>
-            <td>~&pound;22&ndash;&pound;25</td>
-            <td>4.5/5</td>
           </tr>
         </tbody>
       </table>
-
-      <div className="not-prose">
-        <StatCallout value="&pound;8 &ndash; &pound;25" label="Price range for DIY woodworm treatment products" />
-      </div>
 
       {/* Best Treatment Fluid */}
       <h2 id="best-fluid">Best Treatment Fluid &mdash; Barrettine Premier Woodworm Killer 1L</h2>

@@ -157,7 +157,6 @@ export default function BestCockroachKillersPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price Range</th>
           </tr>
         </thead>
         <tbody>
@@ -165,32 +164,24 @@ export default function BestCockroachKillersPage() {
             <td>Advion Cockroach Gel Bait 4x30g</td>
             <td>Gel bait</td>
             <td>Best Overall</td>
-            <td>~&pound;25</td>
           </tr>
           <tr>
             <td>Cockroach Sticky Traps 12-Pack</td>
             <td>Sticky traps</td>
             <td>Best Monitoring</td>
-            <td>~&pound;8</td>
           </tr>
           <tr>
             <td>NOPE! CP Cockroach Killer Spray 500ml</td>
             <td>Contact spray</td>
             <td>Best Quick-Kill</td>
-            <td>~&pound;10</td>
           </tr>
           <tr>
             <td>Pest Expert Cockroach Gel 10g</td>
             <td>Gel bait</td>
             <td>Best Budget Gel</td>
-            <td>~&pound;12</td>
           </tr>
         </tbody>
       </table>
-
-      <div className="not-prose">
-        <StatCallout value="&pound;8 &ndash; &pound;25" label="Price range across all four recommended cockroach killer products" />
-      </div>
 
       {/* Best Overall — Advion Cockroach Gel Bait */}
       <h2 id="best-overall">Best Overall &mdash; Advion Cockroach Gel Bait</h2>

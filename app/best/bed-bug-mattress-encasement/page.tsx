@@ -123,13 +123,13 @@ export default function BestMattressEncasementPage() {
       <h2 id="at-a-glance">Best Encasements at a Glance</h2>
       <table>
         <thead>
-          <tr><th>Product</th><th>Key Feature</th><th>Best For</th><th>Price</th></tr>
+          <tr><th>Product</th><th>Key Feature</th><th>Best For</th></tr>
         </thead>
         <tbody>
-          <tr><td>SafeRest Premium</td><td>Micro-zipper + waterproof</td><td>Best Overall</td><td>~£30</td></tr>
-          <tr><td>Utopia Bedding</td><td>Affordable micro-zipper</td><td>Best Value</td><td>~£15</td></tr>
-          <tr><td>SureGuard</td><td>Soft cotton terry surface</td><td>Best Comfort</td><td>~£35</td></tr>
-          <tr><td>Protect-A-Bed AllerZip</td><td>Commercial-grade zipper</td><td>Best Heavy-Duty</td><td>~£45</td></tr>
+          <tr><td>SafeRest Premium</td><td>Micro-zipper + waterproof</td><td>Best Overall</td></tr>
+          <tr><td>Utopia Bedding</td><td>Affordable micro-zipper</td><td>Best Value</td></tr>
+          <tr><td>SureGuard</td><td>Soft cotton terry surface</td><td>Best Comfort</td></tr>
+          <tr><td>Protect-A-Bed AllerZip</td><td>Commercial-grade zipper</td><td>Best Heavy-Duty</td></tr>
         </tbody>
       </table>
 

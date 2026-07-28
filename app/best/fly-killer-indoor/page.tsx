@@ -118,14 +118,14 @@ export default function BestFlyKillerIndoorPage() {
       <h2 id="at-a-glance">Best Indoor Fly Killers at a Glance</h2>
       <table>
         <thead>
-          <tr><th>Product</th><th>Type</th><th>Best For</th><th>Price</th></tr>
+          <tr><th>Product</th><th>Type</th><th>Best For</th></tr>
         </thead>
         <tbody>
-          <tr><td>Insect-O-Cutor PlusZap 30W</td><td>Electric UV zapper</td><td>Best Overall</td><td>~£80</td></tr>
-          <tr><td>Aspectek Professional 30W</td><td>Electric UV zapper</td><td>Best Seller</td><td>~£30</td></tr>
-          <tr><td>Quiet Hybrid Spectrum Zapper</td><td>Electric UV zapper</td><td>Quietest Option</td><td>~£25</td></tr>
-          <tr><td>Flymatic Professional 30W</td><td>Electric UV zapper</td><td>Commercial-Grade</td><td>~£50</td></tr>
-          <tr><td>Aspectek Upgraded 20W</td><td>Electric UV zapper</td><td>Best Value</td><td>~£25</td></tr>
+          <tr><td>Insect-O-Cutor PlusZap 30W</td><td>Electric UV zapper</td><td>Best Overall</td></tr>
+          <tr><td>Aspectek Professional 30W</td><td>Electric UV zapper</td><td>Best Seller</td></tr>
+          <tr><td>Quiet Hybrid Spectrum Zapper</td><td>Electric UV zapper</td><td>Quietest Option</td></tr>
+          <tr><td>Flymatic Professional 30W</td><td>Electric UV zapper</td><td>Commercial-Grade</td></tr>
+          <tr><td>Aspectek Upgraded 20W</td><td>Electric UV zapper</td><td>Best Value</td></tr>
         </tbody>
       </table>
 

@@ -216,7 +216,6 @@ export default function BestBedBugSprayPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -224,31 +223,26 @@ export default function BestBedBugSprayPage() {
             <td>Pest Expert Formula C+ 1L Kit</td>
             <td>Spray + powder kit</td>
             <td>Best Overall</td>
-            <td>~£20</td>
           </tr>
           <tr>
             <td>Pest Expert Formula C+ Twin Pack</td>
             <td>Spray + powder twin pack</td>
             <td>Best Multi-Room</td>
-            <td>~£35</td>
           </tr>
           <tr>
             <td>Pest Expert Complete Kit</td>
             <td>Treatment kit</td>
             <td>Best Treatment Kit</td>
-            <td>~£30</td>
           </tr>
           <tr>
             <td>Pest Expert Spray + Smoke Bomb</td>
             <td>Spray + fumigator</td>
             <td>Best Combo</td>
-            <td>~£18</td>
           </tr>
           <tr>
             <td>Pest Expert Formula C+ 5L</td>
             <td>Trade-size spray</td>
             <td>Best Trade-Size</td>
-            <td>~£55</td>
           </tr>
         </tbody>
       </table>

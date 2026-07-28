@@ -111,14 +111,14 @@ export default function BestSpiderRepellentPage() {
       <h2 id="at-a-glance">Best Spider Repellents at a Glance</h2>
       <table>
         <thead>
-          <tr><th>Product</th><th>Type</th><th>Best For</th><th>Price</th></tr>
+          <tr><th>Product</th><th>Type</th><th>Best For</th></tr>
         </thead>
         <tbody>
-          <tr><td>Zero In Spider Repellent Peppermint Oil Spray 500ml</td><td>Natural spray</td><td>Best Overall</td><td>~£5</td></tr>
-          <tr><td>Zero In Spider Repellent 500ml Twin Pack</td><td>Natural spray</td><td>Best Value</td><td>~£9</td></tr>
-          <tr><td>Acana Natural Spider Stopper 500ml</td><td>Natural spray</td><td>Best Long-Lasting</td><td>~£8</td></tr>
-          <tr><td>Pestbye Spider Repellent Spray</td><td>Natural spray</td><td>Best Barrier Spray</td><td>~£10</td></tr>
-          <tr><td>NOPE! Spider Killer Spray 500ml</td><td>Contact killer</td><td>Best Kill &amp; Repel</td><td>~£10</td></tr>
+          <tr><td>Zero In Spider Repellent Peppermint Oil Spray 500ml</td><td>Natural spray</td><td>Best Overall</td></tr>
+          <tr><td>Zero In Spider Repellent 500ml Twin Pack</td><td>Natural spray</td><td>Best Value</td></tr>
+          <tr><td>Acana Natural Spider Stopper 500ml</td><td>Natural spray</td><td>Best Long-Lasting</td></tr>
+          <tr><td>Pestbye Spider Repellent Spray</td><td>Natural spray</td><td>Best Barrier Spray</td></tr>
+          <tr><td>NOPE! Spider Killer Spray 500ml</td><td>Contact killer</td><td>Best Kill &amp; Repel</td></tr>
         </tbody>
       </table>
 

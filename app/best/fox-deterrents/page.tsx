@@ -162,7 +162,6 @@ export default function BestFoxDeterrentsPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price Range</th>
           </tr>
         </thead>
         <tbody>
@@ -170,38 +169,29 @@ export default function BestFoxDeterrentsPage() {
             <td>PestBye Solar Ultrasonic Fox Repeller</td>
             <td>Electronic deterrent</td>
             <td>Gardens, driveways, patios</td>
-            <td>~&pound;20&ndash;&pound;30</td>
           </tr>
           <tr>
             <td>Scoot Fox Repellent 100g</td>
             <td>Scent deterrent</td>
             <td>Lawns, flower beds, bin areas</td>
-            <td>~&pound;8&ndash;&pound;13</td>
           </tr>
           <tr>
             <td>PestBye Jet Spray Motion Sprinkler</td>
             <td>Water deterrent</td>
             <td>Lawns, chicken runs, fox paths</td>
-            <td>~&pound;19&ndash;&pound;25</td>
           </tr>
           <tr>
             <td>Fence Top Roller Bar</td>
             <td>Physical exclusion</td>
             <td>Preventing foxes climbing fences</td>
-            <td>~&pound;15&ndash;&pound;40</td>
           </tr>
           <tr>
             <td>Galvanised Welded Mesh 25mm</td>
             <td>Physical exclusion</td>
             <td>Protecting chicken/rabbit runs</td>
-            <td>~&pound;20&ndash;&pound;35</td>
           </tr>
         </tbody>
       </table>
-
-      <div className="not-prose">
-        <StatCallout value="&pound;8 &ndash; &pound;40" label="Price range across all five recommended fox deterrents" />
-      </div>
 
       {/* Best Ultrasonic */}
       <h2 id="best-ultrasonic">Best Ultrasonic Deterrent &mdash; PestBye Solar Ultrasonic Fox Repeller</h2>

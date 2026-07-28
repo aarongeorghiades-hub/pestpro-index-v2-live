@@ -188,7 +188,6 @@ export default function BestFleaSprayPage() {
             <th>Product</th>
             <th>Key Feature</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -196,31 +195,26 @@ export default function BestFleaSprayPage() {
             <td>Indorex Defence 500ml</td>
             <td>IGR — 12 months protection</td>
             <td>Best Overall</td>
-            <td>~£15</td>
           </tr>
           <tr>
             <td>Indorex Defence 2x500ml</td>
             <td>Twin pack — whole-home treatment</td>
             <td>Best Twin Pack</td>
-            <td>~£25</td>
           </tr>
           <tr>
             <td>Pest Expert Formula C+ 1L</td>
             <td>Triple-action — 12-week residual</td>
             <td>Best Professional</td>
-            <td>~£18</td>
           </tr>
           <tr>
             <td>RIP Fleas Extra Household Flea Spray</td>
             <td>Fast knockdown + residual protection</td>
             <td>Best Fast-Acting</td>
-            <td>~£12</td>
           </tr>
           <tr>
             <td>Bob Martin Clear Plus Flea Spray 500ml Twin Pack</td>
             <td>Twin-pack — kills fleas, ticks and dust mites</td>
             <td>Best Value</td>
-            <td>~£7</td>
           </tr>
         </tbody>
       </table>

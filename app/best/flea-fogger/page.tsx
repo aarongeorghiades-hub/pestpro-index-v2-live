@@ -126,14 +126,14 @@ export default function BestFleaFoggerPage() {
       <h2 id="at-a-glance">Best Flea Foggers at a Glance</h2>
       <table>
         <thead>
-          <tr><th>Product</th><th>Type</th><th>Best For</th><th>Price</th></tr>
+          <tr><th>Product</th><th>Type</th><th>Best For</th></tr>
         </thead>
         <tbody>
-          <tr><td>Indorex Defence Household Flea Spray 500ml</td><td>IGR spray</td><td>Best Overall</td><td>~£15</td></tr>
-          <tr><td>Zero In Natural Flea Bomb 150ml</td><td>Natural aerosol</td><td>Best Natural</td><td>~£8</td></tr>
-          <tr><td>NOPE! CP Flea Spray 500ml for the Home</td><td>Cypermethrin spray</td><td>Best Large Room</td><td>~£10</td></tr>
-          <tr><td>Strikeback Super Strength Triple Action Flea Spray 1L</td><td>Triple-action spray</td><td>Best Twin Pack</td><td>~£12</td></tr>
-          <tr><td>Pest Expert Formula C+ Flea Killer Spray 1L</td><td>Professional spray</td><td>Best Professional</td><td>~£10</td></tr>
+          <tr><td>Indorex Defence Household Flea Spray 500ml</td><td>IGR spray</td><td>Best Overall</td></tr>
+          <tr><td>Zero In Natural Flea Bomb 150ml</td><td>Natural aerosol</td><td>Best Natural</td></tr>
+          <tr><td>NOPE! CP Flea Spray 500ml for the Home</td><td>Cypermethrin spray</td><td>Best Large Room</td></tr>
+          <tr><td>Strikeback Super Strength Triple Action Flea Spray 1L</td><td>Triple-action spray</td><td>Best Twin Pack</td></tr>
+          <tr><td>Pest Expert Formula C+ Flea Killer Spray 1L</td><td>Professional spray</td><td>Best Professional</td></tr>
         </tbody>
       </table>
 

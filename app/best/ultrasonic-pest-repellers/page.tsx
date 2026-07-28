@@ -204,7 +204,6 @@ export default function BestUltrasonicPestRepellersPage() {
             <th>Product</th>
             <th>Claimed Coverage</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -212,37 +211,31 @@ export default function BestUltrasonicPestRepellersPage() {
             <td>PestBye Advanced Whole House</td>
             <td>Whole house (mains-powered)</td>
             <td>Best Overall</td>
-            <td>~£25</td>
           </tr>
           <tr>
             <td>Pest Reject Pro</td>
             <td>~80-120 sq m per unit</td>
             <td>Best Budget</td>
-            <td>~£12</td>
           </tr>
           <tr>
             <td>Diaotec 4-Mode Plug-In</td>
             <td>~100 sq m per unit</td>
             <td>Best Multi-Mode</td>
-            <td>~£20</td>
           </tr>
           <tr>
             <td>BRISON 2 Pack</td>
             <td>~80-120 sq m per unit</td>
             <td>Budget Multi-Room</td>
-            <td>~£14</td>
           </tr>
           <tr>
             <td>Upgraded Dual-Speaker</td>
             <td>~120 sq m per unit</td>
             <td>Dual Frequency</td>
-            <td>~£18</td>
           </tr>
           <tr>
             <td>Whole-House Plug-In 6 Pack</td>
             <td>~80 sq m per unit</td>
             <td>Best for Coverage</td>
-            <td>~£30</td>
           </tr>
         </tbody>
       </table>

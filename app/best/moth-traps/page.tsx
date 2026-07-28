@@ -117,15 +117,15 @@ export default function BestMothTrapsPage() {
       <h2 id="at-a-glance">Best Moth Traps at a Glance</h2>
       <table>
         <thead>
-          <tr><th>Product</th><th>Target Moth</th><th>Best For</th><th>Price</th></tr>
+          <tr><th>Product</th><th>Target Moth</th><th>Best For</th></tr>
         </thead>
         <tbody>
-          <tr><td>Moth Prevention Pheromone Traps</td><td>Clothes moths</td><td>Best Clothes Moth</td><td>~£12</td></tr>
-          <tr><td>Demi Diamond Pantry Moth Traps</td><td>Pantry moths</td><td>Best Pantry Moth</td><td>~£10</td></tr>
-          <tr><td>Zero In Clothes Moth Traps</td><td>Clothes moths</td><td>Best Value</td><td>~£5</td></tr>
-          <tr><td>Pest Expert Moth Traps</td><td>Clothes moths</td><td>Best Professional</td><td>~£10</td></tr>
-          <tr><td>SiSi Moth Trap Refill Pads</td><td>Clothes &amp; carpet moths</td><td>Best Refills</td><td>~£9</td></tr>
-          <tr><td>Cedar Wood Moth Balls</td><td>All moths</td><td>Best Repellent</td><td>~£8</td></tr>
+          <tr><td>Moth Prevention Pheromone Traps</td><td>Clothes moths</td><td>Best Clothes Moth</td></tr>
+          <tr><td>Demi Diamond Pantry Moth Traps</td><td>Pantry moths</td><td>Best Pantry Moth</td></tr>
+          <tr><td>Zero In Clothes Moth Traps</td><td>Clothes moths</td><td>Best Value</td></tr>
+          <tr><td>Pest Expert Moth Traps</td><td>Clothes moths</td><td>Best Professional</td></tr>
+          <tr><td>SiSi Moth Trap Refill Pads</td><td>Clothes &amp; carpet moths</td><td>Best Refills</td></tr>
+          <tr><td>Cedar Wood Moth Balls</td><td>All moths</td><td>Best Repellent</td></tr>
         </tbody>
       </table>
 

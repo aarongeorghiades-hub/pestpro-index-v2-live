@@ -122,14 +122,14 @@ export default function ProfessionalULVFoggersPage() {
       <h2 id="at-a-glance">Professional ULV Foggers at a Glance</h2>
       <table>
         <thead>
-          <tr><th>Product</th><th>Tank</th><th>Power</th><th>Best For</th><th>Price</th></tr>
+          <tr><th>Product</th><th>Tank</th><th>Power</th><th>Best For</th></tr>
         </thead>
         <tbody>
-          <tr><td>VectorFog C150+</td><td>5L</td><td>1250W (corded)</td><td>Best overall</td><td>~£300</td></tr>
-          <tr><td>VectorFog C100 Plus</td><td>4L</td><td>1250W (corded)</td><td>Flats & HMOs</td><td>~£250</td></tr>
-          <tr><td>VectorFog C150</td><td>6L</td><td>1250W (corded)</td><td>Large tanks & proven design</td><td>~£280</td></tr>
-          <tr><td>VectorFog DC20+</td><td>2L</td><td>Battery</td><td>No-socket locations</td><td>~£350</td></tr>
-          <tr><td>Ewbank EW5000</td><td>10L</td><td>1400W (corded)</td><td>Warehouses & large spaces</td><td>~£200</td></tr>
+          <tr><td>VectorFog C150+</td><td>5L</td><td>1250W (corded)</td><td>Best overall</td></tr>
+          <tr><td>VectorFog C100 Plus</td><td>4L</td><td>1250W (corded)</td><td>Flats & HMOs</td></tr>
+          <tr><td>VectorFog C150</td><td>6L</td><td>1250W (corded)</td><td>Large tanks & proven design</td></tr>
+          <tr><td>VectorFog DC20+</td><td>2L</td><td>Battery</td><td>No-socket locations</td></tr>
+          <tr><td>Ewbank EW5000</td><td>10L</td><td>1400W (corded)</td><td>Warehouses & large spaces</td></tr>
         </tbody>
       </table>
 

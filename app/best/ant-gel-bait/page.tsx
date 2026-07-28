@@ -187,7 +187,6 @@ export default function BestAntGelBaitPage() {
             <th>Product</th>
             <th>Format</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -195,31 +194,26 @@ export default function BestAntGelBaitPage() {
             <td>Nippon Ant Killer Gel 25g</td>
             <td>Gel</td>
             <td>Best Overall</td>
-            <td>~£5</td>
           </tr>
           <tr>
             <td>Nippon Ant Killer Powder 500g</td>
             <td>Powder</td>
             <td>Best Powder</td>
-            <td>~£6</td>
           </tr>
           <tr>
             <td>Nippon Ant &amp; Crawling Insect Spray 750ml</td>
             <td>Spray</td>
             <td>Best Spray</td>
-            <td>~£7</td>
           </tr>
           <tr>
             <td>Zero In Ant &amp; Cockroach Killer 1.5L</td>
             <td>Spray</td>
             <td>Best Spray</td>
-            <td>~£8</td>
           </tr>
           <tr>
             <td>Doff 2-in-1 Ant &amp; Nest Bait Killer Stations</td>
             <td>Bait Stations</td>
             <td>Best Bait Stations</td>
-            <td>~£5</td>
           </tr>
         </tbody>
       </table>

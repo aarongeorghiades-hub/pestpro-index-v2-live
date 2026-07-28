@@ -166,7 +166,6 @@ export default function BestCommercialBirdProofingPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -174,50 +173,39 @@ export default function BestCommercialBirdProofingPage() {
             <td>Heavy Duty Anti-Pigeon Bird Netting 10m &times; 20m</td>
             <td>Knotted mesh netting</td>
             <td>Large Area Exclusion</td>
-            <td>~&pound;35</td>
           </tr>
           <tr>
             <td>OFFO Stainless Steel Bird Spikes</td>
             <td>Spike strip</td>
             <td>Ledges &amp; Sills</td>
-            <td>~&pound;12</td>
           </tr>
           <tr>
             <td>Birdgo Pigeon Post &amp; Pad Kit</td>
             <td>Wire system posts</td>
             <td>Architectural Applications</td>
-            <td>~&pound;20</td>
           </tr>
           <tr>
             <td>Bird Barrier Optical Gel (24 Pack)</td>
             <td>Multi-sensory gel</td>
             <td>Listed &amp; Heritage Buildings</td>
-            <td>~&pound;90</td>
           </tr>
           <tr>
             <td>Birdgo Bird Proofing Mesh &amp; 60 Clip Kit</td>
             <td>PVC-coated mesh</td>
             <td>Solar Panel Protection</td>
-            <td>~&pound;45</td>
           </tr>
           <tr>
             <td>Birdgo 100 Nylon Net Hooks</td>
             <td>Repair kit</td>
             <td>Netting Maintenance</td>
-            <td>~&pound;9</td>
           </tr>
           <tr>
             <td>Ultrasonic Bird Repeller (UK Made)</td>
             <td>Electronic deterrent</td>
             <td>Supplementary Coverage</td>
-            <td>~&pound;45</td>
           </tr>
         </tbody>
       </table>
-
-      <div className="not-prose">
-        <StatCallout value="&pound;9 &ndash; &pound;90" label="Price range across all seven recommended commercial bird proofing products" />
-      </div>
 
       {/* Product 1: Bird Netting */}
       <h2 id="best-netting">Best for Large Areas &mdash; Heavy Duty Anti-Pigeon Bird Netting 10m &times; 20m</h2>

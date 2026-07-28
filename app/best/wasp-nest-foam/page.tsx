@@ -187,7 +187,6 @@ export default function BestWaspNestFoamPage() {
             <th>Product</th>
             <th>Type</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -195,31 +194,26 @@ export default function BestWaspNestFoamPage() {
             <td>Rentokil Wasp Nest Destroyer Foam 300ml</td>
             <td>Expanding foam</td>
             <td>Best Overall</td>
-            <td>~£8</td>
           </tr>
           <tr>
             <td>Zero In Ultra Power Wasp &amp; Hornet Nest Killer Foam 600ml</td>
             <td>Long-range foam</td>
             <td>Best Long-Range</td>
-            <td>~£10</td>
           </tr>
           <tr>
             <td>Zero In Wasp Nest Killer Foam 300ml</td>
             <td>Aerosol foam</td>
             <td>Best Value</td>
-            <td>~£5</td>
           </tr>
           <tr>
             <td>Rentokil Wasp Killer Powder 150g</td>
             <td>Insecticidal powder</td>
             <td>Best Powder</td>
-            <td>~£6</td>
           </tr>
           <tr>
             <td>Zero In Wasp Nest Control Powder 300g Twin Pack</td>
             <td>Powder twin pack</td>
             <td>Best Twin Pack</td>
-            <td>~£8</td>
           </tr>
         </tbody>
       </table>

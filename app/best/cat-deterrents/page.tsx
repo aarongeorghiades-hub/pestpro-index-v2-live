@@ -129,20 +129,16 @@ export default function BestCatDeterrentsPage() {
       </p>
       <table>
         <thead>
-          <tr><th>Product</th><th>Type</th><th>Best For</th><th>Price</th></tr>
+          <tr><th>Product</th><th>Type</th><th>Best For</th></tr>
         </thead>
         <tbody>
-          <tr><td>PestBye Jet Spray Sprinkler</td><td>Motion water deterrent</td><td>Lawns, paths, open gardens</td><td>~&pound;20&ndash;&pound;25</td></tr>
-          <tr><td>PestBye Solar Ultrasonic Cat Repeller</td><td>Ultrasonic (solar)</td><td>Entry points, borders</td><td>~&pound;30 (twin)</td></tr>
-          <tr><td>Get Off My Garden Crystals</td><td>Scent deterrent</td><td>Flower beds, borders</td><td>~&pound;7</td></tr>
-          <tr><td>Defenders Prickle Strips</td><td>Physical deterrent</td><td>Stopping digging &amp; fouling</td><td>~&pound;9</td></tr>
-          <tr><td>Silent Roar Lion Manure Pellets</td><td>Natural scent deterrent</td><td>Beds, lawn edges</td><td>~&pound;9</td></tr>
+          <tr><td>PestBye Jet Spray Sprinkler</td><td>Motion water deterrent</td><td>Lawns, paths, open gardens</td></tr>
+          <tr><td>PestBye Solar Ultrasonic Cat Repeller</td><td>Ultrasonic (solar)</td><td>Entry points, borders</td></tr>
+          <tr><td>Get Off My Garden Crystals</td><td>Scent deterrent</td><td>Flower beds, borders</td></tr>
+          <tr><td>Defenders Prickle Strips</td><td>Physical deterrent</td><td>Stopping digging &amp; fouling</td></tr>
+          <tr><td>Silent Roar Lion Manure Pellets</td><td>Natural scent deterrent</td><td>Beds, lawn edges</td></tr>
         </tbody>
       </table>
-
-      <div className="not-prose">
-        <StatCallout value="~&pound;7 &ndash; &pound;30" label="Price range across all five recommended cat deterrents" />
-      </div>
 
       {/* Best Overall — Sprinkler (HERO) */}
       <h2 id="best-sprinkler">Best Overall &mdash; PestBye Jet Spray Motion-Activated Sprinkler</h2>

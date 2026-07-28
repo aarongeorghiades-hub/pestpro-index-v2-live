@@ -197,7 +197,6 @@ export default function BestCommercialDehumidifiersPage() {
             <th>Product</th>
             <th>Extraction</th>
             <th>Best For</th>
-            <th>Price</th>
           </tr>
         </thead>
         <tbody>
@@ -205,31 +204,26 @@ export default function BestCommercialDehumidifiersPage() {
             <td>electriQ ECD30 Industrial 30L</td>
             <td>30L/day</td>
             <td>Restoration &amp; commercial sites</td>
-            <td>&pound;280</td>
           </tr>
           <tr>
             <td>MeacoDry Arete One 25L</td>
             <td>25L/day</td>
             <td>Professional multi-room coverage</td>
-            <td>&pound;300</td>
           </tr>
           <tr>
             <td>Meaco Arete Two 20L</td>
             <td>20L/day</td>
             <td>Occupied rental properties</td>
-            <td>&pound;280</td>
           </tr>
           <tr>
             <td>Meaco 25L Ultra Low Energy</td>
             <td>25L/day</td>
             <td>Budget-conscious landlords</td>
-            <td>&pound;250</td>
           </tr>
           <tr>
             <td>VonHaus 30L Smart WiFi</td>
             <td>30L/day</td>
             <td>Remote property management</td>
-            <td>&pound;200</td>
           </tr>
         </tbody>
       </table>
