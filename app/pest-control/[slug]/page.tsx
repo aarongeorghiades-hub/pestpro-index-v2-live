@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Navigation from '@/components/Navigation';
 import { getRegionBySlug, getAllRegions } from '../data/regions';
+import { cityTarget, countForTarget } from '@/lib/regionCounts';
+import { formatCount } from '@/lib/formatCount';
 import { Metadata } from 'next';
 
 interface Props {
@@ -40,6 +42,18 @@ export default async function DynamicPage({ params }: Props) {
   
   // Check if it's a region first
   const region = getRegionBySlug(slug);
+
+  // One head-only count per city entry, in parallel. Entries that point at no
+  // directory ("Browse by Borough", coming-soon areas) resolve to no target and
+  // render no number.
+  const cityCounts: Record<string, number | null> = Object.fromEntries(
+    await Promise.all(
+      (region?.cities ?? []).map(async (city) => {
+        const target = cityTarget(city);
+        return [city.slug, target ? await countForTarget(target) : null] as const;
+      })
+    )
+  );
   if (region) {
     // Render region page
     const breadcrumbSchema = {
@@ -139,9 +153,9 @@ export default async function DynamicPage({ params }: Props) {
                     )}
                   </div>
 
-                  {city.providerCount && (
+                  {cityCounts[city.slug] !== undefined && cityCounts[city.slug] !== null && (
                     <p className="text-sm text-white/80 mb-4">
-                      {city.providerCount} providers
+                      {formatCount(cityCounts[city.slug] as number)} providers
                     </p>
                   )}
 

@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import { getAllRegions } from '../data/regions';
+import { countsByRegion } from '@/lib/regionCounts';
+import { formatCount } from '@/lib/formatCount';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -11,8 +13,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RegionsIndexPage() {
+export default async function RegionsIndexPage() {
   const regions = getAllRegions();
+  // Head-only counts, one per distinct city slug, issued in parallel.
+  const regionCounts = await countsByRegion(regions);
 
   return (
     <div className="min-h-screen bg-white">
@@ -70,9 +74,9 @@ export default function RegionsIndexPage() {
                     {region.description}
                   </p>
 
-                  {region.status === 'live' && (
+                  {region.status === 'live' && regionCounts[region.slug] !== null && (
                     <div className="text-sm text-gray-700 mb-4">
-                      <strong>{region.cities.filter(c => c.status === 'live').length}</strong> live areas
+                      <strong>{formatCount(regionCounts[region.slug] as number)}</strong> providers
                     </div>
                   )}
 
