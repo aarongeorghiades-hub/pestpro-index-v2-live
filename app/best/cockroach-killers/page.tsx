@@ -237,7 +237,7 @@ export default function BestCockroachKillersPage() {
         <ProductCard
           name="Cockroach Sticky Traps 12-Pack"
           features={[
-            '#1 Bestseller toxin-free sticky traps',
+            'Toxin-free sticky traps',
             'Food attractant lures cockroaches to the trap',
             '12-pack provides whole-property coverage',
             'Ideal for monitoring infestation levels',
@@ -248,7 +248,7 @@ export default function BestCockroachKillersPage() {
         />
       </div>
       <p>
-        Monitoring traps are an essential but frequently overlooked component of any cockroach control programme. These cockroach sticky traps are the number-one bestseller in their category on Amazon UK, and for good reason: they provide a completely toxin-free way to detect, monitor, and assess cockroach activity in your property. The traps use a <strong>food-based attractant</strong> that lures cockroaches onto a strong adhesive surface, where they become stuck. Unlike chemical treatments, sticky traps pose no risk to children, pets, or food-preparation areas, making them safe to deploy throughout a kitchen or restaurant without any precautions.
+        Monitoring traps are an essential but frequently overlooked component of any cockroach control programme. These cockroach sticky traps are a widely used monitoring option on Amazon UK, and for good reason: they provide a completely toxin-free way to detect, monitor, and assess cockroach activity in your property. The traps use a <strong>food-based attractant</strong> that lures cockroaches onto a strong adhesive surface, where they become stuck. Unlike chemical treatments, sticky traps pose no risk to children, pets, or food-preparation areas, making them safe to deploy throughout a kitchen or restaurant without any precautions.
       </p>
       <p>
         The 12-pack provides enough traps for <strong>whole-property coverage</strong>, and we recommend placing them in every area where cockroach activity is suspected or likely. Key placement sites include under fridges and cookers, inside the backs of kitchen cupboards, beneath sinks near pipe entry points, along the base of walls in utility rooms, and near any warm electrical equipment. After 48 to 72 hours, inspect the traps: the number of cockroaches caught on each trap gives you a clear picture of where activity is concentrated and how severe the problem is. This information is invaluable for targeting your gel bait placement where it will have the greatest impact.
@@ -263,7 +263,7 @@ export default function BestCockroachKillersPage() {
         <strong>Pros:</strong>
       </p>
       <ul>
-        <li>Number-one bestseller &mdash; toxin-free and safe for use around children and pets</li>
+        <li>Toxin-free and safe for use around children and pets</li>
         <li>Food attractant increases catch rate for more accurate monitoring</li>
         <li>12-pack provides thorough coverage of a standard kitchen and surrounding areas</li>
         <li>Provides objective evidence of infestation level and treatment progress</li>

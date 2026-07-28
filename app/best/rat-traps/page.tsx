@@ -321,7 +321,7 @@ export default function BestRatTrapsPage() {
             'Professional quality heavy-duty snap traps',
             '4-pack for multiple placement points',
             'Trusted by pest controllers across the UK',
-            'Amazon Choice product with 5-star rating',
+            
           ]}
           asin="B071DJVBT4"
           bestFor="Best Professional-Grade"
@@ -365,7 +365,7 @@ export default function BestRatTrapsPage() {
           rank={4}
           features={[
             'Compact lockable bait station',
-            '19,000+ Amazon reviews with proven results',
+            
             'Tamper-resistant design safe for households',
             'Works with block or grain baits',
           ]}

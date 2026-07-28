@@ -49,7 +49,7 @@ export const topProductsByPest: Record<string, PestProduct[]> = {
       name: 'ROSHIELD 6-Pack Mouse Trap',
       asin: 'B01NB0QNPI',
       bestFor: 'Best Overall',
- features: ['Professional quality snap traps — 6-pack', 'Amazon Choice with '],
+ features: ['Professional quality snap traps — 6-pack', ],
     },
     {
       name: 'Trisiki 6-Pack Heavy Duty Mouse Trap',
@@ -61,7 +61,7 @@ export const topProductsByPest: Record<string, PestProduct[]> = {
       name: 'ASPECTEK 6-Pack Mouse Trap',
       asin: 'B00HDVUTZA',
       bestFor: 'Best Budget Option',
-      features: ['Reusable snap traps with professional design', '5,200+ Amazon reviews — reliable and durable'],
+      features: ['Reusable snap traps with professional design'],
     },
   ],
   'wasps': [
@@ -115,7 +115,7 @@ export const topProductsByPest: Record<string, PestProduct[]> = {
       name: 'Cockroach Sticky Traps 12-Pack',
       asin: 'B075FM7TST',
       bestFor: 'Best for Monitoring',
-      features: ['#1 Bestseller toxin-free sticky traps', 'Food attractant lures cockroaches to the trap'],
+      features: ['Toxin-free sticky traps', 'Food attractant lures cockroaches to the trap'],
     },
     {
       name: 'NOPE! CP Cockroach Killer Spray 500ml',
@@ -155,7 +155,7 @@ export const topProductsByPest: Record<string, PestProduct[]> = {
       name: 'Zero In Home Flea Powder 300g',
       asin: 'B00KHV77Y4',
       bestFor: 'Best Powder',
-      features: ['Amazon Bestseller flea powder', 'Treats carpets, rugs, and pet bedding'],
+      features: ['Flea powder for carpets and bedding', 'Treats carpets, rugs, and pet bedding'],
     },
     {
       name: 'Beaphar Household Flea Powder 300g',

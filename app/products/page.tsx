@@ -180,7 +180,7 @@ export default function ProductsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-                { name: 'ROSHIELD 6-Pack Mouse Trap', asin: 'B01NB0QNPI', note: 'Amazon Choice', desc: 'Professional quality snap traps. trusted by pest controllers.' },
+                { name: 'ROSHIELD 6-Pack Mouse Trap', asin: 'B01NB0QNPI', note: 'Professional', desc: 'Professional quality snap traps. trusted by pest controllers.' },
               { name: 'Trisiki 6-Pack Mouse Trap', asin: 'B08ML78RC5', note: 'Heavy duty', desc: 'Heavy duty, high sensitivity snap traps. Effective for persistent problems.' },
                 { name: 'ASPECTEK 6-Pack Mouse Trap', asin: 'B00HDVUTZA', desc: 'Reusable snap traps with professional design. Reliable and durable.' },
               { name: 'ROSHIELD Humane Mouse Trap 2-Pack', asin: 'B07L8JNPF2', note: 'Humane', desc: 'Live catch and release option. Safe for household use.' },
@@ -280,7 +280,7 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { name: 'Advion Cockroach Gel Bait 4x30g', asin: 'B0148W0WOE', note: 'Professional', desc: 'Professional strength gel. Domino effect kills entire colony.' },
-              { name: 'Sticky Traps 12-Pack', asin: 'B075FM7TST', note: '#1 Bestseller', desc: 'Bestselling toxin-free traps. Sticky traps with food attractant.' },
+              { name: 'Sticky Traps 12-Pack', asin: 'B075FM7TST', note: 'Toxin-free', desc: 'Toxin-free sticky traps with food attractant.' },
               { name: 'NOPE! CP Cockroach Killer Spray 500ml', asin: 'B074CDY9T4', note: 'Odourless', desc: 'Odourless contact killer. Fast-acting spray formula.' },
               { name: 'Pest Expert Cockroach Gel 10g', asin: 'B07ZZGKQ55', note: 'Formula IC', desc: 'Formula IC gel. Domino effect bait for cockroaches.' }
             ].map((product, idx) => (
@@ -402,7 +402,7 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { name: 'Indorex Household Spray 500ml', asin: 'B00GKHI2PW', note: '12-month', desc: 'Household spray. 12-month protection.' },
-              { name: 'Zero In Home Flea Powder 300g', asin: 'B00KHV77Y4', note: 'Bestseller', desc: 'Powder for carpets and pet bedding.' },
+              { name: 'Zero In Home Flea Powder 300g', asin: 'B00KHV77Y4', note: 'Powder', desc: 'Powder for carpets and pet bedding.' },
               { name: 'Beaphar Household Flea Powder 300g', asin: 'B001TQRC0K', note: 'Pet brand', desc: 'Trusted pet brand. Kills fleas and larvae.' }
             ].map((product, idx) => (
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">

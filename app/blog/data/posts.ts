@@ -2519,7 +2519,7 @@ export const posts: BlogPost[] = [
     slug: 'do-ultrasonic-pest-repellers-actually-work',
     title: 'Do Ultrasonic Pest Repellers Actually Work? Honest Answer',
     metaTitle: 'Do Ultrasonic Pest Repellers Actually Work? Honest Answer',
-    metaDescription: 'Ultrasonic pest repellers sell millions on Amazon. But do they actually repel mice, rats or insects? We review the evidence.',
+    metaDescription: 'Ultrasonic pest repellers are widely sold as a chemical-free fix. But do they actually repel mice, rats or insects? We review the evidence.',
     targetKeyword: 'do ultrasonic pest repellers work',
     publishDate: '2026-04-06',
     content: `
@@ -2529,7 +2529,7 @@ export const posts: BlogPost[] = [
 
 <p>The premise is straightforward: these devices emit sound waves at frequencies above human hearing (typically 20–65 kHz). The theory is that these high-frequency sounds are intensely uncomfortable for rodents and insects, driving them away from your home without chemicals, traps, or mess.</p>
 
-<p>It sounds ideal. Humane, effortless, chemical-free, and available for under £20. No wonder they sell millions of units every year.</p>
+<p>It sounds ideal. Humane, effortless, chemical-free, and available for under £20. No wonder they are so widely bought.</p>
 
 <h2>What the Research Actually Shows</h2>
 

@@ -266,7 +266,7 @@ export default function BestMoleTrapsPage() {
         <ProductCard
           name="The Big Cheese Mole Tunnel Trap — Traditional Two-Way Galvanised"
           features={[
- "The UK's best-selling tunnel mole trap with ",
+ "A UK standard traditional tunnel mole trap",
             'Traditional half-barrel design in galvanised metal',
             'Catches moles travelling in either direction through the tunnel',
             'Rust-free, weatherproof construction for year-round use',
@@ -279,7 +279,7 @@ export default function BestMoleTrapsPage() {
         />
       </div>
       <p>
- The Big Cheese Mole Tunnel Trap is the UK's best-selling tunnel mole trap, and for good reason. Its traditional half-barrel design in galvanised metal sits neatly inside the tunnel and catches moles travelling in either direction — a critical advantage over single-entry traps. on Amazon, it is the proven standard choice for UK gardens and lawns.
+ The Big Cheese Mole Tunnel Trap is a UK standard tunnel mole trap. Its traditional half-barrel design in galvanised metal sits neatly inside the tunnel and catches moles travelling in either direction — a critical advantage over single-entry traps. on Amazon, it is the proven standard choice for UK gardens and lawns.
       </p>
       <p>
         Setting the trap requires a bit of practice. You need to locate an active run, carefully open it, and position the trap so it sits flush at tunnel level. The galvanised metal construction is rust-free and weatherproof, so the trap lasts for years even in damp, heavy soil. At around £8, The Big Cheese represents exceptional value for a reliable, reusable trap that professional mole catchers and homeowners alike trust.

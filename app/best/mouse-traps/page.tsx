@@ -265,7 +265,7 @@ export default function BestMouseTrapsPage() {
           rank={1}
           features={[
             'Professional quality snap traps — 6-pack',
- 'Amazon Choice with ',
+ 
             'Trusted by pest controllers across the UK',
             'Reusable and easy to set',
           ]}
@@ -365,7 +365,7 @@ export default function BestMouseTrapsPage() {
           rank={3}
           features={[
             'Reusable snap traps with professional design',
-            '5,200+ Amazon reviews — reliable and durable',
+            
             'Easy bait placement and trigger mechanism',
             'Excellent value 6-pack',
           ]}
@@ -441,7 +441,7 @@ export default function BestMouseTrapsPage() {
       <ul>
         <li>Compact tunnel design fits behind appliances and in tight spaces</li>
         <li>Fully enclosed — safe around pets and young children</li>
-        <li>Thousands of positive UK Amazon reviews</li>
+        
         <li>Affordable at around £8</li>
         <li>Easy to transport and release</li>
       </ul>
