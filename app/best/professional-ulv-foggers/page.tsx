@@ -139,7 +139,7 @@ export default function ProfessionalULVFoggersPage() {
           name="VectorFog C150+ Cold ULV Fogger — 5L Tank, 1250W Samsung Motor"
           rank={1}
           features={[
-            'Flagship from the world most trusted fogger brand',
+            'Flagship from the world\'s most trusted fogger brand',
             '5L tank, 1250W Samsung motor, 8m spray distance',
             'Adjustable 5-50 micron droplet size',
             'Covers 100m² per minute — designed for large-space treatment',

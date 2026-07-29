@@ -316,7 +316,7 @@ export default function BestMoleTrapsPage() {
         <ProductCard
           name="SWISSINNO SuperCat Mole Trap — Swiss Precision Claw Design"
           features={[
- 'High-performance claw trap from Swiss engineering with ',
+ 'High-performance claw trap from Swiss engineering',
             'Advanced trigger system responds from either direction in the tunnel',
             'Corrosion-resistant construction for multiple seasons of use',
             'No bait or chemicals required — purely mechanical',
