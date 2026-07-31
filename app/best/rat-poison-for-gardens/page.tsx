@@ -183,7 +183,7 @@ export default function BestRatPoisonForGardensPage() {
         Using rat poison outdoors presents unique challenges compared to indoor use. You must protect hedgehogs, birds, pets, and children from accidental exposure. Weather resistance is critical — rain, frost, and UV light can degrade bait that is not properly formulated or housed. And under CRRU (Campaign for Responsible Rodenticide Use) guidelines, all second-generation anticoagulant rodenticides must be placed inside tamper-resistant bait stations when used outside. Loose poison scattered in a garden is both dangerous and non-compliant.
       </p>
       <p>
-        We evaluated the best outdoor rat poisons and bait stations available on Amazon UK, focusing on four criteria: <strong>effectiveness of the active ingredient</strong>, <strong>weather resistance</strong>, <strong>safety for non-target wildlife and pets</strong>, and <strong>value for money</strong>. Every recommendation on this page is designed specifically for — or proven to work well in — outdoor garden environments.
+        We selected these outdoor rat poisons and bait stations on published specifications and manufacturer information, looking at <strong>effectiveness of the active ingredient</strong>, <strong>weather resistance</strong>, <strong>safety for non-target wildlife and pets</strong>, and <strong>value for money</strong>. Every recommendation on this page is designed specifically for — or proven to work well in — outdoor garden environments.
       </p>
 
       <div className="not-prose">
