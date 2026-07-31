@@ -171,7 +171,7 @@ export default function BestWaspKillersPage() {
         There are three main categories of wasp killer product available in the UK. <strong>Nest killer sprays and foams</strong> are designed to be applied directly to or into a nest entrance, delivering insecticide that kills wasps on contact and continues to work as returning foragers pass through the treated area. <strong>Insecticidal powders</strong> work on a similar principle but use a dust formulation that wasps track deeper into the colony on their legs and bodies, making them particularly effective for nests hidden in wall cavities, under decking, or in the ground. Finally, <strong>wasp traps</strong> are non-insecticidal devices that lure individual wasps into a container from which they cannot escape &mdash; useful for reducing the number of wasps bothering you outdoors, though they will not eliminate a nest.
       </p>
       <p>
-        To compile this guide, we evaluated wasp killer products available on Amazon UK based on three criteria: <strong>UK availability and fast delivery</strong>, <strong>effectiveness and reliability</strong>, and <strong>value for money</strong>. We also consulted guidance from the British Pest Control Association (BPCA) and HSE-approved product labels to ensure our recommendations are safe and legal for consumer use in the UK. Every product on this page is available for next-day or two-day delivery via Amazon UK at the time of writing. </p>
+        We selected these wasp killer products on published specifications and manufacturer information, looking at <strong>UK availability and fast delivery</strong>, <strong>effectiveness and reliability</strong>, and <strong>value for money</strong>. We also consulted guidance from the British Pest Control Association (BPCA) and HSE-approved product labels to ensure our recommendations are safe and legal for consumer use in the UK. Every product on this page is available for next-day or two-day delivery via Amazon UK at the time of writing. </p>
 
       <div className="not-prose">
         <Callout type="tip">
@@ -245,8 +245,7 @@ export default function BestWaspKillersPage() {
         <li>Kills wasps on contact and destroys nests</li>
         <li>Trusted Rentokil brand with decades of UK pest control expertise</li>
         <li>Easy to see where the product has been applied</li>
-        <li>Excellent value at around &pound;8 per can</li>
-      </ul>
+        </ul>
       <p>
         <strong>Cons:</strong>
       </p>
@@ -334,7 +333,7 @@ export default function BestWaspKillersPage() {
         The easy-to-use aerosol application means there is no complicated setup or mixing required. Simply point the nozzle at the nest entrance and spray. The expanding foam does the rest, working its way into the nest structure and coating the internal surfaces with insecticide. For best results, apply at dusk when the majority of the colony has returned to the nest. Leave the nest undisturbed for at least 48 hours after treatment before attempting to remove it.
       </p>
       <p>
-        At around &pound;6, the Zero In Wasp Killer is the most affordable option on this list, making it an excellent choice for households that want effective wasp control without spending more than necessary. It is also a good product to keep in reserve during the summer months, so you can act quickly if a nest appears.
+        The Zero In Wasp Killer is the most affordable option on this list, making it an excellent choice for households that want effective wasp control without spending more than necessary. It is also a good product to keep in reserve during the summer months, so you can act quickly if a nest appears.
       </p>
       <p>
         <strong>Pros:</strong>
@@ -344,7 +343,7 @@ export default function BestWaspKillersPage() {
         <li>Expanding foam reaches deep into nest structures</li>
         <li>Suitable for both indoor and outdoor use</li>
         <li>Easy aerosol application with no mixing required</li>
-        <li>Most affordable option at around &pound;6 per can</li>
+        <li>Most affordable option on this list</li>
       </ul>
       <p>
         <strong>Cons:</strong>
