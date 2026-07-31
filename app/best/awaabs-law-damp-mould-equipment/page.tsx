@@ -486,7 +486,6 @@ export default function AwaabsLawDampMouldEquipmentPage() {
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Premium price at &pound;300</li>
         <li>No Wi-Fi connectivity for remote monitoring</li>
         <li>HEPA filter requires annual replacement</li>
       </ul>
