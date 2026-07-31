@@ -137,7 +137,7 @@ export default function BestCockroachKillersPage() {
         The cockroach treatment products available to UK consumers broadly fall into four categories: <strong>gel baits</strong> (which cockroaches eat and carry back to the colony, creating a cascade effect that eliminates the entire population), <strong>contact sprays</strong> (aerosols that kill cockroaches on direct contact but do little to address the wider colony), <strong>powders and dusts</strong> (such as diatomaceous earth, which damages the cockroach exoskeleton through physical action), and <strong>monitoring traps</strong> (sticky traps used to assess infestation levels and confirm whether treatment has been successful). Of these four categories, gel bait is by far the most effective for eliminating an established cockroach population, and it is the product type that professional pest controllers rely on for the vast majority of cockroach call-outs in the UK.
       </p>
       <p>
-        To compile this guide, we evaluated the leading cockroach killer products available on Amazon UK against four criteria: <strong>proven effectiveness</strong> against UK cockroach species (backed by professional pest control usage), <strong>ease of use</strong> for non-professionals, <strong>value for money</strong>, and <strong>UK availability with reliable delivery</strong>. We also drew on published guidance from the British Pest Control Association (BPCA), the Chartered Institute of Environmental Health (CIEH), and peer-reviewed entomological research to ensure our recommendations reflect current best practice rather than manufacturer marketing claims. Every product featured on this page is available for purchase on Amazon UK at the time of writing.
+        We selected these cockroach killer products on published specifications and manufacturer information, looking at <strong>proven effectiveness</strong> against UK cockroach species (backed by professional pest control usage), <strong>ease of use</strong> for non-professionals, <strong>value for money</strong>, and <strong>UK availability with reliable delivery</strong>. We also drew on published guidance from the British Pest Control Association (BPCA), the Chartered Institute of Environmental Health (CIEH), and peer-reviewed entomological research to ensure our recommendations reflect current best practice rather than manufacturer marketing claims. Every product featured on this page is available for purchase on Amazon UK at the time of writing.
       </p>
 
       <div className="not-prose">
@@ -267,7 +267,7 @@ export default function BestCockroachKillersPage() {
         <li>Food attractant increases catch rate for more accurate monitoring</li>
         <li>12-pack provides thorough coverage of a standard kitchen and surrounding areas</li>
         <li>Provides objective evidence of infestation level and treatment progress</li>
-        <li>Very affordable at around &pound;8 for a full pack</li>
+        <li>Twelve traps per pack</li>
       </ul>
       <p>
         <strong>Cons:</strong>
@@ -296,7 +296,7 @@ export default function BestCockroachKillersPage() {
         />
       </div>
       <p>
-        Contact sprays occupy a specific and limited role in cockroach control, and it is important to be upfront about what they can and cannot do. The NOPE! CP Cockroach Killer Spray is a 500ml contact spray that delivers immediate knockdown &mdash; any cockroach hit directly with the spray will die within seconds. What sets this product apart from many competitors is its <strong>odourless formulation</strong>, which makes it far more practical for use in kitchens, bathrooms, and other enclosed spaces where a strong chemical smell would be unpleasant or unacceptable. The 500ml bottle is generously sized and covers a large area, making it a cost-effective option at around &pound;10.
+        Contact sprays occupy a specific and limited role in cockroach control, and it is important to be upfront about what they can and cannot do. The NOPE! CP Cockroach Killer Spray is a 500ml contact spray that delivers immediate knockdown &mdash; any cockroach hit directly with the spray will die within seconds. What sets this product apart from many competitors is its <strong>odourless formulation</strong>, which makes it far more practical for use in kitchens, bathrooms, and other enclosed spaces where a strong chemical smell would be unpleasant or unacceptable. The 500ml bottle is generously sized and covers a large area.
       </p>
       <p>
         The NOPE! CP spray is particularly useful around <strong>drain entry points</strong>, which are the primary route by which Oriental cockroaches enter UK homes. Oriental cockroaches live in sewer systems and damp underground environments, and they frequently enter properties through floor drains, waste pipes, and gaps around plumbing. Spraying around these entry points can help intercept cockroaches as they emerge, especially during the warmer months when Oriental cockroaches are most active. The spray is also suitable for use in bathrooms and utility rooms where cockroaches may harbour.
@@ -346,13 +346,13 @@ export default function BestCockroachKillersPage() {
         The Pest Expert gel is supplied in a <strong>ready-to-use syringe applicator</strong>, which makes it straightforward to apply even for people who have never used a cockroach gel bait before. Simply place tiny dots of gel &mdash; roughly the size of a grain of rice &mdash; into the cracks, crevices, and harbourage points where cockroaches live and travel. Key placement sites include kitchen cupboard hinges, the gap between worktops and walls, behind cookers and fridges, around pipe entry points under sinks, along skirting board edges, and inside any cracks or gaps in walls or flooring. The syringe tip allows precise application into tight spaces that would be impossible to reach with a spray or powder.
       </p>
       <p>
-        At around &pound;12, the Pest Expert gel is noticeably cheaper than the Advion gel bait while using a similar mode of action. The 10g syringe is sufficient for treating a single room or a small infestation, though you may need multiple syringes for a larger property or a more widespread problem. The gel is <strong>effective against all UK cockroach species</strong>, including both German and Oriental cockroaches, making it a versatile choice regardless of which species you are dealing with.
+        The Pest Expert gel uses a similar mode of action to the Advion gel bait. The 10g syringe is sufficient for treating a single room or a small infestation, though you may need multiple syringes for a larger property or a more widespread problem. The gel is <strong>effective against all UK cockroach species</strong>, including both German and Oriental cockroaches, making it a versatile choice regardless of which species you are dealing with.
       </p>
       <p>
         <strong>Pros:</strong>
       </p>
       <ul>
-        <li>Professional-grade gel bait at a consumer-friendly price of around &pound;12</li>
+        <li>Professional-grade gel bait in a 10g consumer syringe</li>
         <li>Domino-effect bait technology targets the entire colony, not just individual cockroaches</li>
         <li>Easy syringe application &mdash; no specialist equipment or knowledge required</li>
         <li>Effective against both German and Oriental cockroaches</li>
