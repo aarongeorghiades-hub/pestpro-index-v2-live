@@ -98,7 +98,7 @@ export default function ProfessionalBedBugSteamersPage() {
         If you manage rental properties and bed bugs are on your radar — and they should be — a professional steam cleaner is one of the best investments you can make. Steam kills bed bugs, larvae, and eggs on contact with zero chemical residue, zero vacate time, and zero risk to tenants. One steamer pays for itself after a single treatment versus calling an exterminator at £200–400 per room.
       </p>
       <p>
-        For portfolio landlords, HMO operators, and facilities managers, the economics are straightforward: a £200–500 steamer treats unlimited rooms across unlimited properties. Combined with <Link href="/best/bed-bug-mattress-encasement">proper mattress encasements</Link>, steam treatment is the cornerstone of a professional bed bug prevention programme.
+        For portfolio landlords, HMO operators, and facilities managers, the economics are straightforward: one steamer treats unlimited rooms across unlimited properties. Combined with <Link href="/best/bed-bug-mattress-encasement">proper mattress encasements</Link>, steam treatment is the cornerstone of a professional bed bug prevention programme.
       </p>
 
       <h2 id="why-steam">Why Steam Is the Gold Standard for Rental Properties</h2>
@@ -230,7 +230,7 @@ export default function ProfessionalBedBugSteamersPage() {
         />
       </div>
       <p>
-        The AEOLUS LP01SB is the most powerful steam system available on Amazon UK. Italian-made, generating 200°C dry steam with continuous-load capability (you can refill the tank without stopping), it is classified as bactericidal, virucidal, and insecticidal. This is as close to genuine professional pest controller equipment as you can buy without going through a trade supplier.
+        The AEOLUS LP01SB is the most powerful steam system in this guide. Italian-made, generating 200°C dry steam with continuous-load capability (you can refill the tank without stopping), it is classified as bactericidal, virucidal, and insecticidal. This is as close to genuine professional pest controller equipment as you can buy without going through a trade supplier.
       </p>
       <p>
         The higher price is justified for facilities managers and portfolio landlords with regular treatment requirements. The continuous-load system means you can treat multiple rooms in a single session without downtime, and the 200°C output ensures lethal temperatures even when penetrating thick mattresses and heavy upholstery.
