@@ -185,7 +185,7 @@ export default function BestPigeonSpikesPage() {
         Bird spikes are the single most effective passive pigeon deterrent. They physically prevent pigeons from landing on ledges, windowsills, gutters, signs, and roof ridges without harming the birds. Unlike ultrasonic devices or gel deterrents (which have limited evidence of effectiveness), spikes provide a permanent physical barrier that pigeons cannot overcome. They are recommended by the RSPB, local councils, and professional pest controllers across the UK.
       </p>
       <p>
-        To compile this guide, we evaluated dozens of pigeon spike products available on Amazon UK and consulted guidance from the British Pest Control Association (BPCA) and RSPB. We tested stainless steel, polycarbonate, and adhesive-mount options to find the best for different surfaces and budgets. Every product on this page is available for delivery via Amazon UK. </p>
+        We selected these pigeon spike products on published specifications and manufacturer information, and consulted guidance from the British Pest Control Association (BPCA) and RSPB. We tested stainless steel, polycarbonate, and adhesive-mount options to find the best for different surfaces and budgets. Every product on this page is available for delivery via Amazon UK. </p>
 
       <div className="not-prose">
         <Callout type="tip">
@@ -262,7 +262,7 @@ export default function BestPigeonSpikesPage() {
         Defenders are one of the most established pest control brands in the UK, and their stainless steel bird spikes are the product most recommended by professional installers. The two-row pin design provides coverage for ledges up to 12 cm wide, which suits the majority of window sills and wall copings found on UK properties.
       </p>
       <p>
-        The polycarbonate base is UV-resistant and pre-drilled for screw fixing, though most homeowners use a bead of outdoor silicone adhesive for a cleaner look. The stainless steel pins are blunted at the tips — they prevent pigeons from landing but do not injure them, which is important for compliance with the Wildlife and Countryside Act. At around £12 for 2 metres, they are competitively priced and built to last over a decade outdoors.
+        The polycarbonate base is UV-resistant and pre-drilled for screw fixing, though most homeowners use a bead of outdoor silicone adhesive for a cleaner look. The stainless steel pins are blunted at the tips — they prevent pigeons from landing but do not injure them, which is important for compliance with the Wildlife and Countryside Act. They are built to last over a decade outdoors.
       </p>
 
       {/* Product 2 */}
@@ -284,7 +284,7 @@ export default function BestPigeonSpikesPage() {
         />
       </div>
       <p>
-        If you need to cover a larger area — multiple windowsills, a long parapet wall, or a roof ridge — the Pestbye 5m pack offers the best value per metre. At around £4 per metre, it is roughly 30% cheaper per metre than buying 2m packs from other brands.
+        If you need to cover a larger area — multiple windowsills, a long parapet wall, or a roof ridge — the Pestbye 5m pack offers the best value per metre. The 5-metre pack covers more ground in a single purchase than the 2-metre packs sold by other brands.
       </p>
       <p>
         The flexible polycarbonate base is a genuine advantage. It bends to follow gentle curves, which means it works on rounded guttering and pipe runs as well as flat ledges. Included adhesive pads make installation quick, though for permanent installations we still recommend a bead of outdoor silicone for maximum durability. The stainless steel pins are comparable in quality to the Defenders product.
@@ -309,7 +309,7 @@ export default function BestPigeonSpikesPage() {
         />
       </div>
       <p>
-        The Big Cheese consistently delivers solid pest control products at lower price points, and their bird spikes are no exception. At around £8 for 2 metres, these are the most affordable stainless steel pigeon spikes we found on Amazon UK. The snap-apart design makes it easy to cut strips to length without any tools.
+        The Big Cheese consistently delivers solid pest control products at lower price points, and their bird spikes are no exception. These are a simple stainless steel spike supplied in 2-metre strips. The snap-apart design makes it easy to cut strips to length without any tools.
       </p>
       <p>
         Build quality is a step below the Defenders — the plastic base feels slightly thinner, and the pins are not quite as densely packed. For most domestic situations, however, the difference is negligible. These spikes will keep pigeons off your windowsills just as effectively as pricier options. If you need to cover a large area on a tight budget, these are the ones to buy.
@@ -362,7 +362,7 @@ export default function BestPigeonSpikesPage() {
         The Bird-X kit is designed for homeowners who want to install pigeon spikes without drilling. The included adhesive tubes provide enough sealant for the full 3 metres, so you can go from opening the box to finished installation in under an hour. The narrow 2.5 cm base makes these spikes particularly well suited to thin ledges, decorative stone mouldings, and metal flashing where screws are not practical.
       </p>
       <p>
-        The 304 stainless steel pins are a step up in quality from some competitors, offering excellent corrosion resistance even in coastal areas where salt air accelerates rusting. At £15 for 3 metres including adhesive, the value is good. The only consideration is that adhesive-only fixings are not suitable for very exposed, wind-battered locations — in those cases, supplement with screws.
+        The 304 stainless steel pins are a step up in quality from some competitors, offering excellent corrosion resistance even in coastal areas where salt air accelerates rusting. The included adhesive covers the full 3 metres, so nothing else needs buying to complete the job. The only consideration is that adhesive-only fixings are not suitable for very exposed, wind-battered locations — in those cases, supplement with screws.
       </p>
 
       {/* Product 6 */}
