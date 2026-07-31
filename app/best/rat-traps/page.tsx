@@ -166,7 +166,7 @@ export default function BestRatTrapsPage() {
         Choosing the right trap is the single most important decision you will make when tackling a rat problem yourself. There are four main categories of rat trap available in the UK: <strong>snap traps</strong> (the traditional spring-loaded mechanism that delivers a quick kill), <strong>electronic traps</strong> (battery-powered devices that deliver a lethal electric shock), <strong>live catch traps</strong> (cage-style traps that capture the rat alive for release), and <strong>bait stations</strong> (enclosed boxes that house either a snap trap or poison bait). Each type has distinct advantages and drawbacks depending on your situation — whether you have pets, children, or an outdoor infestation, for example.
       </p>
       <p>
-        To compile this guide, we evaluated dozens of rat traps available on Amazon UK based on three criteria: <strong>UK availability and fast delivery</strong>, <strong>effectiveness and reliability</strong>, and <strong>value for money</strong>. We also consulted guidance from the BPCA and the Campaign for Responsible Rodenticide Use (CRRU) to ensure our recommendations align with UK best practice. Every product on this page is available for next-day or two-day delivery via Amazon UK at the time of writing. </p>
+        We selected these rat traps on published specifications and manufacturer information, looking at three criteria: <strong>UK availability and fast delivery</strong>, <strong>effectiveness and reliability</strong>, and <strong>value for money</strong>. We also consulted guidance from the BPCA and the Campaign for Responsible Rodenticide Use (CRRU) to ensure our recommendations align with UK best practice. Every product on this page is available for next-day or two-day delivery via Amazon UK at the time of writing. </p>
 
       <div className="not-prose">
         <Callout type="tip">
@@ -252,7 +252,7 @@ export default function BestRatTrapsPage() {
         <li>Dual-entry tunnel increases catch rate significantly</li>
         <li>Comes with peanut butter bait — the most effective bait available</li>
         <li>Reusable and easy to clean between catches</li>
-        <li>Affordable at around £15 per trap</li>
+        <li>Low cost per trap</li>
         <li>Works well both indoors and outdoors</li>
       </ul>
       <p>
@@ -374,7 +374,7 @@ export default function BestRatTrapsPage() {
         />
       </div>
       <p>
-        For those who prefer not to kill rats, the Gingbau Cage Trap is the best live catch option we have found on Amazon UK. It is a traditional cage-style trap made from galvanised steel wire: you place bait at the far end of the cage, the rat enters to reach the food, steps on a pressure plate, and the door snaps shut behind it. The rat is then contained alive and unharmed, ready for you to release it at a suitable location away from your property.
+        For those who prefer not to kill rats, the Gingbau Cage Trap is the best live catch option in this guide. It is a traditional cage-style trap made from galvanised steel wire: you place bait at the far end of the cage, the rat enters to reach the food, steps on a pressure plate, and the door snaps shut behind it. The rat is then contained alive and unharmed, ready for you to release it at a suitable location away from your property.
       </p>
       <p>
         The trigger mechanism on the Gingbau is notably sensitive, which is important because rats are lighter and more cautious than you might expect. A trap with an insensitive trigger will allow the rat to steal the bait without triggering the door — an incredibly frustrating experience. The Gingbau's mechanism is well-calibrated to trigger under the weight of even a smaller rat, though you should always test it before deployment by pressing the plate gently with a pencil to ensure it is functioning correctly.
@@ -489,7 +489,7 @@ export default function BestRatTrapsPage() {
 
       <h3>Budget</h3>
       <p>
-        Rat traps are not expensive items, and this is one area where it genuinely pays to buy the right tool for the job rather than the cheapest option available. That said, the Baban 6-pack at £14 proves that effective traps do not have to be costly. If safety is a concern, the Rat Reaper and Roshield at £15 each add covered/lockable designs for just a pound more. The Pest X Pro Shadow at £18 is the premium option but is only necessary for serious, ongoing problems.
+        Rat traps are not expensive items, and this is one area where it genuinely pays to buy the right tool for the job rather than the cheapest option available. That said, the Baban 6-pack at £14 proves that effective traps do not have to be costly. If safety is a concern, the Rat Reaper and Roshield add covered and lockable designs. The Pest X Pro Shadow at £18 is the premium option but is only necessary for serious, ongoing problems.
       </p>
 
       <h3>UK-Specific Considerations</h3>
