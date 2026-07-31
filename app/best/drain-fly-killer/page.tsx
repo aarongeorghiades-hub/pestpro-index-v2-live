@@ -99,7 +99,7 @@ export default function BestDrainFlyKillerPage() {
         The key to eliminating drain flies permanently is treating the source — the organic buildup inside the drain itself. Enzyme-based and bio-gel drain treatments break down this biofilm, destroying the breeding habitat. Simply pouring bleach or boiling water down the plughole may kill a few adults, but the biofilm remains intact and new flies emerge within days. A proper enzyme treatment, used consistently over 2-3 weeks, eliminates the breeding cycle entirely.
       </p>
       <p>
-        We have tested and reviewed the best drain fly killers available on Amazon UK in 2026, covering enzyme drain cleaners, professional-grade treatments, bio gels, and sticky traps for monitoring. Every product below targets the root cause of drain fly infestations — not just the visible adults.
+        We selected these drain fly killers on published specifications and manufacturer information, covering enzyme drain cleaners, professional-grade treatments, bio gels, and sticky traps for monitoring. Each is available on Amazon UK. Every product below targets the root cause of drain fly infestations — not just the visible adults.
       </p>
 
       <div className="not-prose">
