@@ -379,13 +379,13 @@ export default function BestRatPoisonForGardensPage() {
         Each station is identical to the single Roshield kit above: tamper-resistant, lockable, weatherproof, and compliant with UK rodenticide regulations. Position one station near the primary activity area (burrow entrance, compost bin, or shed wall) and the second further along the rat run or at a secondary activity point. Rats are thigmotactic — they travel along edges — so place both stations flush against a fence, wall, or structure with entry holes facing along the run for maximum effectiveness.
       </p>
       <p>
-        For anyone with a medium to large garden, or multiple outbuildings that need protecting simultaneously, the two-station kit represents better value than buying two single kits. It also ensures consistent station design across your garden, which simplifies checking and refilling. Once the initial infestation is under control, keep the stations in place and check monthly as a preventive measure — particularly from autumn through spring when rat activity peaks.
+        For anyone with a medium to large garden, or multiple outbuildings that need protecting simultaneously, the two-station kit covers both placements in a single purchase. It also ensures consistent station design across your garden, which simplifies checking and refilling. Once the initial infestation is under control, keep the stations in place and check monthly as a preventive measure — particularly from autumn through spring when rat activity peaks.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
         <li>Two stations for broader garden coverage</li>
         <li>Wax blocks included — complete kit, ready to use</li>
-        <li>Better value than buying two single kits separately</li>
+        <li>Two matching stations in a single purchase</li>
         <li>Both stations are lockable and CRRU-compliant</li>
       </ul>
       <p><strong>Cons:</strong></p>
