@@ -185,7 +185,7 @@ export default function BestPigeonSpikesPage() {
         Bird spikes are the single most effective passive pigeon deterrent. They physically prevent pigeons from landing on ledges, windowsills, gutters, signs, and roof ridges without harming the birds. Unlike ultrasonic devices or gel deterrents (which have limited evidence of effectiveness), spikes provide a permanent physical barrier that pigeons cannot overcome. They are recommended by the RSPB, local councils, and professional pest controllers across the UK.
       </p>
       <p>
-        We selected these pigeon spike products on published specifications and manufacturer information, and consulted guidance from the British Pest Control Association (BPCA) and RSPB. We tested stainless steel, polycarbonate, and adhesive-mount options to find the best for different surfaces and budgets. Every product on this page is available for delivery via Amazon UK. </p>
+        We selected these pigeon spike products on published specifications and manufacturer information, and consulted guidance from the British Pest Control Association (BPCA) and RSPB. We selected stainless steel, polycarbonate, and adhesive-mount options on published specifications and manufacturer information, covering different surfaces and budgets. Every product on this page is available for delivery via Amazon UK. </p>
 
       <div className="not-prose">
         <Callout type="tip">
