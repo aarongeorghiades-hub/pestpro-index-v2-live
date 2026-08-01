@@ -173,7 +173,7 @@ export default function BestCommercialDehumidifiersPage() {
         Damp is the gateway pest problem. If you manage rental properties, HMOs, or commercial buildings in the UK, you already know that excess moisture leads to mould, structural decay, and tenant complaints. What many landlords overlook is that high humidity is also the single biggest driver of pest infestations in residential and commercial premises. Cockroaches, silverfish, mould mites, booklice, woodlice, and plaster beetles are all <strong>moisture-dependent pests</strong> that cannot survive or reproduce in dry conditions. A building with relative humidity consistently above 65% is not just a damp problem &mdash; it is a pest problem waiting to happen.
       </p>
       <p>
-        Investing in a high-capacity commercial dehumidifier is one of the most cost-effective decisions a landlord or property manager can make. A single &pound;200&ndash;&pound;300 unit can prevent thousands of pounds in damp remediation, mould removal, pest control callouts, and tenant void periods. For HMO landlords managing multi-occupancy properties with heavy moisture loads from cooking, showering, and laundry, a commercial-grade dehumidifier is not a luxury &mdash; it is essential equipment. In this guide, we review the five best high-capacity dehumidifiers available in the UK for landlords and property managers, focusing on extraction rate, running costs, remote monitoring capability, and long-term reliability for commercial use.
+        Investing in a high-capacity commercial dehumidifier is one of the most cost-effective decisions a landlord or property manager can make. A single unit can prevent thousands of pounds in damp remediation, mould removal, pest control callouts, and tenant void periods. For HMO landlords managing multi-occupancy properties with heavy moisture loads from cooking, showering, and laundry, a commercial-grade dehumidifier is not a luxury &mdash; it is essential equipment. In this guide, we review the five best high-capacity dehumidifiers available in the UK for landlords and property managers, focusing on extraction rate, running costs, remote monitoring capability, and long-term reliability for commercial use.
       </p>
 
       <div className="not-prose">
@@ -183,7 +183,7 @@ export default function BestCommercialDehumidifiersPage() {
       </div>
 
       <div className="not-prose">
-        <StatCallout value="&pound;200 &ndash; &pound;300" label="Typical cost of a commercial dehumidifier vs &pound;5,000+ for professional damp remediation" />
+        <StatCallout value="&pound;5,000+" label="Typical cost of professional damp remediation for a UK property" />
       </div>
 
       {/* At a Glance */}
@@ -308,7 +308,7 @@ export default function BestCommercialDehumidifiersPage() {
         <strong>Cons:</strong>
       </p>
       <ul>
-        <li>Premium price at &pound;300 &mdash; the most expensive unit on this list</li>
+        <li>Premium price for the build quality and HEPA filtration</li>
         <li>No Wi-Fi connectivity &mdash; cannot be monitored remotely</li>
         <li>HEPA filter requires periodic replacement (approximately annually)</li>
       </ul>
@@ -384,7 +384,7 @@ export default function BestCommercialDehumidifiersPage() {
         The Meaco 25L Ultra Low Energy is the most energy-efficient large-capacity dehumidifier Meaco produces, and it is our top recommendation for budget-conscious landlords who need to keep running costs to a minimum across multiple properties. The &ldquo;ultra low energy&rdquo; designation is not marketing fluff &mdash; this unit genuinely delivers the <strong>lowest energy cost per litre of moisture extracted</strong> of any Meaco dehumidifier, making it the cheapest to operate over months and years of continuous use. For landlords who are either paying the electricity bill themselves (common in HMOs with inclusive bills) or who need to reassure tenants that the unit will not significantly impact their energy costs, this is the model to install.
       </p>
       <p>
-        With a <strong>25L/day extraction capacity</strong>, it matches the Arete One for raw dehumidification power while costing &pound;50 less. The unit includes <strong>continuous drainage capability</strong> via a rear hose connection, allowing you to run a hose to a drain or sink for completely unattended, set-and-forget operation &mdash; essential for basements, cellars, and properties where regular tank emptying is not practical. The built-in humidistat maintains your target humidity level automatically, and the unit features a laundry mode that boosts fan speed for faster clothes drying &mdash; a useful feature in rental properties where tenants drying laundry indoors is often the primary source of excess moisture.
+        With a <strong>25L/day extraction capacity</strong>, it matches the Arete One for raw dehumidification power. The unit includes <strong>continuous drainage capability</strong> via a rear hose connection, allowing you to run a hose to a drain or sink for completely unattended, set-and-forget operation &mdash; essential for basements, cellars, and properties where regular tank emptying is not practical. The built-in humidistat maintains your target humidity level automatically, and the unit features a laundry mode that boosts fan speed for faster clothes drying &mdash; a useful feature in rental properties where tenants drying laundry indoors is often the primary source of excess moisture.
       </p>
       <p>
         <strong>Pros:</strong>
@@ -404,7 +404,7 @@ export default function BestCommercialDehumidifiersPage() {
         <li>Slightly louder than the Arete Two at higher fan speeds</li>
       </ul>
       <p>
-        <strong>Verdict:</strong> The Meaco 25L Ultra Low Energy is the best value commercial dehumidifier for landlords who need effective, affordable damp control without premium features. It delivers the same 25L extraction as the Arete One at &pound;50 less, and its ultra-low running costs make it the most economical choice for continuous operation across multiple properties. If you are installing dehumidifiers in three or four rental properties and want to minimise both upfront and ongoing costs, this is the unit to buy.
+        <strong>Verdict:</strong> The Meaco 25L Ultra Low Energy is the best value commercial dehumidifier for landlords who need effective, affordable damp control without premium features. It delivers the same 25L extraction as the Arete One, and its ultra-low running costs suit continuous operation across multiple properties. If you are installing dehumidifiers in three or four rental properties and want to minimise both upfront and ongoing costs, this is the unit to buy.
       </p>
 
       {/* Product 5: VonHaus 30L Smart */}
@@ -423,7 +423,7 @@ export default function BestCommercialDehumidifiersPage() {
         />
       </div>
       <p>
-        The VonHaus 30L Smart Dehumidifier offers the highest extraction rate and the lowest price point on this list, making it a compelling option for landlords who need maximum dehumidification on a tight budget. At <strong>&pound;200</strong>, it undercuts every other unit reviewed here while delivering a <strong>30L/day extraction capacity</strong> that matches the industrial electriQ ECD30. The headline feature is <strong>Wi-Fi app control</strong>, which gives landlords remote access to monitor humidity levels, adjust settings, and confirm the unit is operating &mdash; essential functionality for anyone managing properties that they do not visit daily.
+        The VonHaus 30L Smart Dehumidifier offers the highest extraction rate on this list, making it a compelling option for landlords who need maximum dehumidification on a tight budget. It delivers a <strong>30L/day extraction capacity</strong> that matches the industrial electriQ ECD30. The headline feature is <strong>Wi-Fi app control</strong>, which gives landlords remote access to monitor humidity levels, adjust settings, and confirm the unit is operating &mdash; essential functionality for anyone managing properties that they do not visit daily.
       </p>
       <p>
         The unit includes <strong>continuous drainage</strong> via a rear hose connection and a <strong>24-hour timer</strong> that allows you to schedule operation during off-peak electricity hours to reduce running costs. The built-in humidistat maintains your target humidity level automatically, and the large water tank means the unit can operate for extended periods even without continuous drainage connected. For landlords who need a high-capacity unit at the lowest possible cost &mdash; particularly for properties where the dehumidifier needs to work hard but aesthetics and noise levels are secondary considerations &mdash; the VonHaus 30L offers outstanding value for money.
@@ -432,7 +432,7 @@ export default function BestCommercialDehumidifiersPage() {
         <strong>Pros:</strong>
       </p>
       <ul>
-        <li>Lowest price on this list at &pound;200 for 30L/day extraction</li>
+        <li>30L/day extraction in an entry-level unit</li>
         <li>Wi-Fi app control for remote monitoring and management</li>
         <li>Continuous drainage + 24-hour timer for flexible, unattended operation</li>
         <li>30L/day matches the electriQ ECD30 at a significantly lower price</li>
@@ -447,7 +447,7 @@ export default function BestCommercialDehumidifiersPage() {
         <li>Less established brand than Meaco in the UK dehumidifier market</li>
       </ul>
       <p>
-        <strong>Verdict:</strong> The VonHaus 30L is the best budget option for landlords who want high extraction and Wi-Fi monitoring without the premium price tag. It does not match the build quality of the electriQ or the refinement of the Meaco units, but at &pound;200 for 30L extraction and app control, the value proposition is difficult to ignore. Ideal for landlords managing remote properties on a budget.
+        <strong>Verdict:</strong> The VonHaus 30L is the best budget option for landlords who want high extraction and Wi-Fi monitoring without the premium price tag. It does not match the build quality of the electriQ or the refinement of the Meaco units, but with 30L extraction and app control, the value proposition is difficult to ignore. Ideal for landlords managing remote properties on a budget.
       </p>
 
       {/* Sizing Guide */}
@@ -537,7 +537,7 @@ export default function BestCommercialDehumidifiersPage() {
       </p>
 
       <div className="not-prose">
-        <StatCallout value="&pound;5,000+" label="Average cost of professional damp remediation for a UK property — vs &pound;200-&pound;300 for a commercial dehumidifier" />
+        <StatCallout value="&pound;5,000+" label="Average cost of professional damp remediation for a UK property" />
       </div>
 
       <p>
@@ -552,7 +552,7 @@ export default function BestCommercialDehumidifiersPage() {
         <li><strong>Structural damage:</strong> Untreated damp causes plaster degradation, timber rot, and structural decay that can cost tens of thousands to remediate</li>
       </ul>
       <p>
-        Against these costs, a &pound;200&ndash;&pound;300 dehumidifier running at &pound;1&ndash;&pound;2 per day is a trivial investment. Even accounting for electricity costs over several years, the total cost of ownership for a commercial dehumidifier is a fraction of a single mould remediation callout. For landlords managing portfolios, the ROI calculation is even more compelling: preventing one damp-related disrepair claim pays for dehumidifiers in every property you own.
+        Against these costs, a dehumidifier running at &pound;1&ndash;&pound;2 per day is a trivial investment. Even accounting for electricity costs over several years, the total cost of ownership for a commercial dehumidifier is a fraction of a single mould remediation callout. For landlords managing portfolios, the ROI calculation is even more compelling: preventing one damp-related disrepair claim pays for dehumidifiers in every property you own.
       </p>
 
       <div className="not-prose">
