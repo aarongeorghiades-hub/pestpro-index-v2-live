@@ -327,13 +327,13 @@ export default function BestCommercialBirdProofingPage() {
         The 24-pack format provides pre-filled magnetic dishes that can be placed on any flat ledge, sill, or parapet surface. Each dish is approximately 6cm in diameter and 1cm tall &mdash; small enough to be virtually invisible from ground level, even on light-coloured stone or concrete. This makes Optical Gel the product of choice for heritage buildings, listed properties, hotels, corporate offices, and any commercial premises where the visual impact of spikes, wire, or netting would be unacceptable or where planning restrictions prevent physical modifications to the building&apos;s exterior. Installation is straightforward: clean the surface, place the dishes at approximately 15cm intervals along the affected ledge, and the system is operational immediately.
       </p>
       <p>
-        The gel dishes have a lifespan of approximately two to three years before they need replacing, depending on exposure to weather and UV degradation. The cost per dish is higher than spikes or wire on a per-metre basis, but for specific applications where discretion is paramount, Optical Gel offers a solution that no other product category can match. It is approved by the Humane Society of the United States and causes no harm to birds &mdash; it simply makes the treated area appear dangerous, prompting birds to roost elsewhere.
+        The gel dishes have a lifespan of approximately two to three years before they need replacing, depending on exposure to weather and UV degradation. Optical Gel is a specialist rather than a general-purpose deterrent, but for specific applications where discretion is paramount, it offers a solution that no other product category can match. It is approved by the Humane Society of the United States and causes no harm to birds &mdash; it simply makes the treated area appear dangerous, prompting birds to roost elsewhere.
       </p>
       <p>
         <strong>Pros:</strong> Virtually invisible to humans; multi-sensory deterrent mechanism; no drilling or physical modification to the building; ideal for listed and heritage buildings; humane and non-toxic.
       </p>
       <p>
-        <strong>Cons:</strong> Higher cost per metre than spikes or wire; dishes need replacing every two to three years; not effective for total area exclusion (use netting for that); may be less effective against heavily habituated feral pigeons in extreme pressure situations; weather exposure reduces lifespan.
+        <strong>Cons:</strong> Requires a dish every 15cm, so long runs are labour-intensive; dishes need replacing every two to three years; not effective for total area exclusion (use netting for that); may be less effective against heavily habituated feral pigeons in extreme pressure situations; weather exposure reduces lifespan.
       </p>
 
       {/* Product 5: Solar Panel Mesh */}
