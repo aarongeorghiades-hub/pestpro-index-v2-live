@@ -363,7 +363,7 @@ export default function BestCockroachKillersPage() {
         <li>Smaller 10g syringe may not be sufficient for larger infestations &mdash; you may need to purchase multiple units</li>
         <li>Takes one to two weeks for the full cascade effect to work through the colony</li>
         <li>Gel dries out after two to three weeks and requires reapplication</li>
-        <li>Less bait per pound than the Advion 4x30g pack for larger treatment areas</li>
+        <li>Contains less bait than the Advion 4x30g pack for larger treatment areas</li>
       </ul>
 
       {/* Buying Guide */}
