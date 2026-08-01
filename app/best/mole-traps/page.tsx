@@ -186,7 +186,7 @@ export default function BestMoleTrapsPage() {
         Trapping remains the most effective and humane method of mole control recommended by professional mole catchers and DEFRA. While there are dozens of mole traps on the market, only a handful are consistently effective. The difference between a cheap trap and a professional-grade one is often the difference between months of frustration and a catch within 24 hours.
       </p>
       <p>
-        To compile this guide, we reviewed the mole traps most commonly used by UK professional mole catchers. We also consulted guidance from the British Mole Catchers Register and DEFRA&apos;s Spring Traps Approval Order. Every product listed is available for delivery via Amazon UK at the time of writing. </p>
+        We selected these mole traps on published specifications and manufacturer information, focusing on the types most commonly used by UK professional mole catchers. We also consulted guidance from the British Mole Catchers Register and DEFRA&apos;s Spring Traps Approval Order. Every product listed is available for delivery via Amazon UK at the time of writing. </p>
 
       <div className="not-prose">
         <Callout type="tip">
