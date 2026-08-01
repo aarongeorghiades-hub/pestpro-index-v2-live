@@ -403,7 +403,7 @@ export default function AwaabsLawDampMouldEquipmentPage() {
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
-        <li>Premium price &mdash; the most expensive PIV unit on this list</li>
+        <li>Premium price for the heated specification</li>
         <li>F7 filters cost more to replace than G4 filters</li>
         <li>500W heater uses more electricity than 400W alternatives</li>
       </ul>
