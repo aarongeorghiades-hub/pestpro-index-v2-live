@@ -385,7 +385,7 @@ export default function BestCommercialFlyKillersPage() {
         <strong>Pros:</strong>
       </p>
       <ul>
-        <li>Genuine 30W commercial unit in a compact housing</li>
+        <li>Two 15W fluorescent tubes driving a high-voltage grid</li>
         <li>Chain included for straightforward ceiling suspension</li>
         <li>30W UV output provides effective coverage for medium-sized rooms</li>
         <li>Low running costs &mdash; approximately &pound;35 per year for continuous operation</li>
@@ -401,7 +401,7 @@ export default function BestCommercialFlyKillersPage() {
         
       </ul>
       <p>
-        <strong>Verdict:</strong> The 30W Industrial Electric Fly Insect Killer is the smart choice for budget-conscious businesses that need reliable fly control in non-food areas. It delivers genuine 30W UV performance. Ideal for corridors, stores, bin areas, loading bays, and any commercial space where effective fly control matters more than premium build quality.
+        <strong>Verdict:</strong> The 30W Industrial Electric Fly Insect Killer is the smart choice for budget-conscious businesses that need reliable fly control in non-food areas. Ideal for corridors, stores, bin areas, loading bays, and any commercial space where effective fly control matters more than premium build quality.
       </p>
 
       {/* Best Professional Glue Board */}
