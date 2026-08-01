@@ -418,7 +418,7 @@ export default function BestRatPoisonForGardensPage() {
         The chew-through sachet design is a practical advantage for garden use. Place one or two sachets directly inside your bait station without needing to pour loose grain or handle blocks. Rats gnaw through the packet to reach the grain inside, which reduces mess and minimises your contact with the rodenticide. The individual wrapping also helps protect the bait from moisture between station checks, maintaining palatability for longer in outdoor conditions.
       </p>
       <p>
-        For gardeners who already own a bait station and need an affordable refill supply, or for those running multiple stations across a large garden, the Elixir Gardens sachets represent the best value on our list. Place two sachets per station, check every 2-3 days, and replace consumed bait until rat activity ceases. At this price, you can afford to maintain a sustained baiting campaign without breaking the budget.
+        For gardeners who already own a bait station and need an affordable refill supply, or for those running multiple stations across a large garden, the Elixir Gardens sachets are a practical choice. Place two sachets per station, check every 2-3 days, and replace consumed bait until rat activity ceases. At this price, you can afford to maintain a sustained baiting campaign without breaking the budget.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
