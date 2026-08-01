@@ -152,7 +152,7 @@ export default function BestCommercialFlyKillersPage() {
         The solution that has been standard practice in the UK food industry for decades is the <strong>electric fly killer</strong> (EFK), also known as an insect light trap (ILT). These wall-mounted or ceiling-suspended units use ultraviolet (UV) light to attract flying insects and then either kill them on a high-voltage electrified grid (zapper-type) or capture them on a replaceable glue board (sticky board-type). Both approaches are effective, but they serve different purposes and are subject to different regulatory guidance &mdash; a distinction that many business owners overlook and that can cost them dearly during an EHO inspection. The key rule is simple: <strong>zapper-type units must never be used in food preparation or food storage areas</strong> because the electrocution process causes insect fragments and bacteria to be expelled into the surrounding air, potentially contaminating food and surfaces. In food-facing areas, only glue board units are appropriate, as they capture the insect intact without any risk of fragmentation.
       </p>
       <p>
-        To compile this guide, we reviewed the leading commercial fly killers available on Amazon UK, focusing on units that are genuinely suitable for restaurants, commercial kitchens, takeaways, food production facilities, and other business premises. We assessed each product on UV output and coverage area, build quality, energy efficiency, ease of maintenance, and suitability for different commercial environments. We also consulted guidance from the British Pest Control Association (BPCA), the Chartered Institute of Environmental Health (CIEH), and experienced commercial pest control technicians. For a broader overview of pest management obligations for food businesses, see our companion guide: <Link href="/guides/restaurant-pest-control" className="text-blue-600 hover:text-blue-800 underline">Restaurant Pest Control: Complete UK Guide</Link>.
+        We selected these commercial fly killers on published specifications and manufacturer information, focusing on units that are genuinely suitable for restaurants, commercial kitchens, takeaways, food production facilities, and other business premises. We assessed each product on UV output and coverage area, build quality, energy efficiency, ease of maintenance, and suitability for different commercial environments. We also consulted guidance from the British Pest Control Association (BPCA), the Chartered Institute of Environmental Health (CIEH), and experienced commercial pest control technicians. For a broader overview of pest management obligations for food businesses, see our companion guide: <Link href="/guides/restaurant-pest-control" className="text-blue-600 hover:text-blue-800 underline">Restaurant Pest Control: Complete UK Guide</Link>.
       </p>
 
       <div className="not-prose">
@@ -224,7 +224,7 @@ export default function BestCommercialFlyKillersPage() {
         The Xterminate UV LED Wall Mounted Fly Killer is our top recommendation for restaurants, caf&eacute;s, and any food business that needs a fly control unit in or near customer-facing and food service areas. Unlike the traditional zapper-style units that dominate the budget end of the commercial market, this model uses a capture mechanism rather than an electrocution grid, which means it does not blast insect fragments and bacteria into the surrounding air when a fly is killed. This is a critical distinction for food businesses, because Environmental Health Officers specifically look for evidence that the correct type of fly killer is installed in the correct location &mdash; and a zapper positioned above a food preparation counter or service area is a compliance failure waiting to happen. The Xterminate LED unit sidesteps this issue entirely by attracting flies with dual UV LED strips and then retaining them on an internal collection area, making it significantly more appropriate for use in environments where food is handled, served, or stored.
       </p>
       <p>
-        The unit&apos;s build quality is notably superior to many competing products in this price bracket. The chassis is constructed from heavy-gauge steel with ABS plastic panelling, giving it a robust, professional appearance that will not look out of place in a commercial kitchen or dining room. The wall-mounted design keeps the unit off worktops and out of the way of kitchen staff, and installation is straightforward with the included mounting bracket and fixings. At 20W total power consumption, the LED technology delivers a significant reduction in energy costs compared to traditional fluorescent UV tube units that typically draw 30W to 40W for similar coverage. Over the course of a year of continuous operation &mdash; which is standard practice in commercial food premises &mdash; the energy savings are meaningful, particularly for businesses running multiple units across a larger premises.
+        The unit&apos;s build quality is notably superior to many competing products in this price bracket. The chassis is constructed from heavy-gauge steel with ABS plastic panelling, giving it a robust, professional appearance that will not look out of place in a commercial kitchen or dining room. The wall-mounted design keeps the unit off worktops and out of the way of kitchen staff, and installation is straightforward with the included mounting bracket and fixings. At 20W total power consumption, the LED technology draws appreciably less power than traditional fluorescent UV tube units for similar coverage. Over the course of a year of continuous operation &mdash; which is standard practice in commercial food premises &mdash; the energy savings are meaningful, particularly for businesses running multiple units across a larger premises.
       </p>
       <p>
         The dual UV LED strips emit light in the 365nm wavelength range, which is the peak attractant frequency for houseflies, fruit flies, drain flies, and other common flying pests found in UK restaurants and kitchens. The LED design also offers a longer operational lifespan than traditional fluorescent tubes, which degrade in UV output by approximately 30 per cent within six to eight months and need annual replacement. LED units maintain their UV output for considerably longer, reducing maintenance costs and the frequency of bulb changes. The unit covers a room of up to approximately 40 square metres, making it suitable for small to medium-sized restaurant kitchens, prep areas, and dining rooms.
@@ -283,7 +283,7 @@ export default function BestCommercialFlyKillersPage() {
         One of this unit&apos;s greatest strengths is its mounting versatility. It can be wall-mounted using the included bracket, suspended from the ceiling using chains (also included), or placed freestanding on a shelf or counter in a non-food area. This flexibility makes it easy to position the unit in the optimal location for fly interception &mdash; ideally at approximately two metres height, perpendicular to windows and doorways, and away from competing light sources that might reduce its attractant effect. The 30W UV output provides effective coverage for rooms of up to approximately 60 square metres, making it suitable for medium-sized storage rooms, corridors, goods-in areas, and back-of-house spaces in pubs, restaurants, and takeaways.
       </p>
       <p>
-        At approximately &pound;30, this unit represents outstanding value for a genuine commercial-grade fly killer. The build quality is solid, with a metal housing and protective outer guard to prevent accidental contact with the electrified grid. The UV tubes will need replacing annually &mdash; UV output degrades over time even though the tubes still appear to glow &mdash; and replacement tubes are widely available from electrical wholesalers and online retailers. Running costs are modest: 30W of continuous operation costs approximately &pound;35 per year at current UK electricity rates, and the unit is designed to run 24 hours a day, seven days a week during the fly season (typically April to October in the UK, though many food businesses run their fly killers year-round as a precaution).
+        This is a genuine commercial-grade fly killer. The build quality is solid, with a metal housing and protective outer guard to prevent accidental contact with the electrified grid. The UV tubes will need replacing annually &mdash; UV output degrades over time even though the tubes still appear to glow &mdash; and replacement tubes are widely available from electrical wholesalers and online retailers. Running costs are modest: 30W of continuous operation costs approximately &pound;35 per year at current UK electricity rates, and the unit is designed to run 24 hours a day, seven days a week during the fly season (typically April to October in the UK, though many food businesses run their fly killers year-round as a precaution).
       </p>
       <p>
         <strong>Pros:</strong>
@@ -293,8 +293,7 @@ export default function BestCommercialFlyKillersPage() {
         <li>Versatile wall, ceiling, or freestanding mounting options</li>
         <li>Instant kill on the high-voltage grid &mdash; highly effective at reducing fly numbers quickly</li>
         <li>Removable collection tray simplifies cleaning and catch monitoring</li>
-        <li>Excellent value at approximately &pound;30</li>
-      </ul>
+        </ul>
       <p>
         <strong>Cons:</strong>
       </p>
@@ -305,7 +304,7 @@ export default function BestCommercialFlyKillersPage() {
         <li>Audible zapping noise may be distracting in quiet environments</li>
       </ul>
       <p>
-        <strong>Verdict:</strong> The Xterminate 30W is an excellent, no-frills commercial zapper for back-of-house use. Its combination of strong UV output, versatile mounting options, and a sub-&pound;30 price tag makes it the obvious choice for corridors, store rooms, bin areas, changing rooms, and other non-food zones where a high-voltage grid is perfectly appropriate. Just remember: never install it in a food prep or food storage area.
+        <strong>Verdict:</strong> The Xterminate 30W is an excellent, no-frills commercial zapper for back-of-house use. Its combination of strong UV output, versatile mounting options, and a compact footprint make it the obvious choice for corridors, store rooms, bin areas, changing rooms, and other non-food zones where a high-voltage grid is perfectly appropriate. Just remember: never install it in a food prep or food storage area.
       </p>
 
       {/* Best Large Coverage */}
@@ -348,7 +347,6 @@ export default function BestCommercialFlyKillersPage() {
         <strong>Cons:</strong>
       </p>
       <ul>
-        <li>Higher price point at approximately &pound;50</li>
         <li>Zapper mechanism &mdash; not suitable for food preparation or storage areas</li>
         <li>Larger physical dimensions may limit mounting options in smaller spaces</li>
         <li>40W continuous operation results in higher running costs than lower-wattage models</li>
@@ -375,7 +373,7 @@ export default function BestCommercialFlyKillersPage() {
         />
       </div>
       <p>
-        Not every commercial premises needs a premium fly killer, and for businesses on a tight budget &mdash; particularly those that need to equip multiple rooms or satellite locations &mdash; the 30W Industrial Electric Fly Insect Killer offers genuine commercial-grade performance at a price that is difficult to argue with. At approximately &pound;20, this is comfortably the most affordable unit in our roundup, yet it still delivers 30W of UV attractant output from its two 15W fluorescent tubes and uses the same high-voltage electrified grid kill mechanism as units costing twice as much. For businesses that need basic, reliable fly control in non-food-prep areas such as corridors, staff changing rooms, bin stores, loading bays, and goods-in areas, this unit does exactly what it needs to do without any unnecessary frills.
+        Not every commercial premises needs a premium fly killer, and for businesses on a tight budget &mdash; particularly those that need to equip multiple rooms or satellite locations &mdash; the 30W Industrial Electric Fly Insect Killer offers genuine commercial-grade performance at a price that is difficult to argue with. This unit delivers 30W of UV attractant output from its two 15W fluorescent tubes and uses the same high-voltage electrified grid kill mechanism as far larger units. For businesses that need basic, reliable fly control in non-food-prep areas such as corridors, staff changing rooms, bin stores, loading bays, and goods-in areas, this unit does exactly what it needs to do without any unnecessary frills.
       </p>
       <p>
         The unit comes with a chain for ceiling suspension, which is the most common mounting method in commercial environments where wall space may be at a premium or where ceiling mounting provides better UV coverage of the room. The collection tray slides out from the base of the unit for emptying and cleaning &mdash; a task that should be performed at least weekly during the fly season and ideally daily in high-activity environments. The build quality is functional rather than premium; the housing is lighter-gauge metal than the Xterminate models, and the overall finish is more utilitarian. That said, for a unit that will spend its life mounted high on a wall or ceiling in a back-of-house corridor, cosmetic refinement is not a priority &mdash; effectiveness and reliability are what matter, and this unit delivers both.
@@ -387,7 +385,7 @@ export default function BestCommercialFlyKillersPage() {
         <strong>Pros:</strong>
       </p>
       <ul>
-        <li>Unbeatable price at approximately &pound;20 for a genuine 30W commercial unit</li>
+        <li>Genuine 30W commercial unit in a compact housing</li>
         <li>Chain included for straightforward ceiling suspension</li>
         <li>30W UV output provides effective coverage for medium-sized rooms</li>
         <li>Low running costs &mdash; approximately &pound;35 per year for continuous operation</li>
@@ -403,7 +401,7 @@ export default function BestCommercialFlyKillersPage() {
         
       </ul>
       <p>
-        <strong>Verdict:</strong> The 30W Industrial Electric Fly Insect Killer is the smart choice for budget-conscious businesses that need reliable fly control in non-food areas. At &pound;20, it costs less than a single replacement glue board for some professional units, yet it delivers genuine 30W UV performance. Ideal for corridors, stores, bin areas, loading bays, and any commercial space where effective fly control matters more than premium build quality.
+        <strong>Verdict:</strong> The 30W Industrial Electric Fly Insect Killer is the smart choice for budget-conscious businesses that need reliable fly control in non-food areas. It delivers genuine 30W UV performance. Ideal for corridors, stores, bin areas, loading bays, and any commercial space where effective fly control matters more than premium build quality.
       </p>
 
       {/* Best Professional Glue Board */}
@@ -440,7 +438,7 @@ export default function BestCommercialFlyKillersPage() {
         The <strong>black metal construction</strong> gives the unit a professional, unobtrusive appearance that blends into commercial kitchen and restaurant environments without drawing customer attention. It can be wall-mounted or placed on a shelf, providing flexibility for different kitchen layouts. The glue boards are replaceable and should be changed at least monthly &mdash; or more frequently in high-activity environments during summer months &mdash; to maintain capture effectiveness. Replacement boards are widely available from catering and pest control suppliers.
       </p>
       <p>
-        At approximately &pound;80 to &pound;120, the Eazyzap sits at a significantly higher price point than the zapper units in this review. This is typical of professional glue board units &mdash; the technology, food-safe design, and commercial build quality command a premium. However, for any food business that needs a fly killer in or near the kitchen, this is not optional expenditure: it is the minimum compliance standard that EHOs expect, and the cost of the unit is trivial compared to the cost of a failed food hygiene inspection (reduced rating, lost revenue, potential prosecution).
+        The Eazyzap sits above the zapper units in this review on build and specification. This is typical of professional glue board units &mdash; the technology, food-safe design, and commercial build quality command a premium. However, for any food business that needs a fly killer in or near the kitchen, this is not optional expenditure: it is the minimum compliance standard that EHOs expect, and the cost of the unit is trivial compared to the cost of a failed food hygiene inspection (reduced rating, lost revenue, potential prosecution).
       </p>
       <p>
         <strong>Pros:</strong>
@@ -456,7 +454,6 @@ export default function BestCommercialFlyKillersPage() {
         <strong>Cons:</strong>
       </p>
       <ul>
-        <li>Significantly higher price than zapper units &mdash; approximately &pound;80 to &pound;120</li>
         <li>Glue boards need monthly replacement, adding ongoing costs</li>
         <li>13W output means lower attractant range than 30W or 40W zappers &mdash; designed for targeted areas, not large warehouses</li>
         <li>Replacement glue boards must be sourced from specialist suppliers</li>
