@@ -100,10 +100,10 @@ export default function ProfessionalBaitStationKitsPage() {
         If you manage rental properties in the UK, rodent control is not optional — it is a legal obligation. Under the Prevention of Damage by Pests Act 1949 and the Housing Health and Safety Rating System (HHSRS), landlords must take reasonable steps to keep properties free from rat and mouse infestations. And if you choose to use rodenticide, the law is unambiguous: all amateur-use rodenticide <strong>must</strong> be deployed inside a tamper-resistant bait station. Non-compliance is a criminal offence under the Control of Pesticides Regulations 1986.
       </p>
       <p>
-        For portfolio landlords managing multiple properties, investing in professional-grade bait station kits is significantly more cost-effective than calling out pest control contractors every time a tenant reports activity. A single professional call-out for rats typically costs £150-300. A proper bait station kit costs £30-80 and can be reused across properties for years.
+        For portfolio landlords managing multiple properties, investing in professional-grade bait station kits is significantly more cost-effective than calling out pest control contractors every time a tenant reports activity. A single professional call-out for rats typically costs £150-300. A proper bait station kit can be reused across properties for years.
       </p>
       <p>
-        We evaluated the leading professional bait station kits available on Amazon UK based on <strong>tamper-resistance and regulatory compliance</strong>, <strong>build quality and durability</strong>, <strong>capacity and versatility</strong>, and <strong>value for multi-property landlords</strong>.
+        We selected these professional bait station kits on published specifications and manufacturer information, looking at <strong>tamper-resistance and regulatory compliance</strong>, <strong>build quality and durability</strong>, <strong>capacity and versatility</strong>, and <strong>value for multi-property landlords</strong>.
       </p>
 
       <div className="not-prose">
@@ -127,7 +127,7 @@ export default function ProfessionalBaitStationKitsPage() {
       </table>
 
       <div className="not-prose">
-        <StatCallout value="£30–80" label="Cost of a proper bait station kit vs £150–300 for a single professional call-out" />
+        <StatCallout value="&pound;150&ndash;300" label="Cost of a single professional call-out for rats &mdash; a reusable bait station kit costs a fraction of it" />
       </div>
 
       {/* --- Product 1 --- */}
@@ -147,7 +147,7 @@ export default function ProfessionalBaitStationKitsPage() {
         />
       </div>
       <p>
-        The Roshield PRO BOX 4-Pack is the standout choice for landlords because it gives you everything you need for a standard residential or HMO property in a single purchase. Four extra-large stations at £35 works out at under £9 per station — exceptional value for a product that is genuinely designed for the pest control trade, not repackaged consumer-grade plastic.
+        The Roshield PRO BOX 4-Pack is the standout choice for landlords because it gives you everything you need for a standard residential or HMO property in a single purchase. Four extra-large stations in one pack, genuinely designed for the pest control trade rather than repackaged consumer-grade plastic.
       </p>
       <p>
         The transparent inspection lid is the feature that sets this apart for multi-property management. You can check bait consumption levels without unlocking and opening every station — saving significant time when you are servicing 10+ stations across a portfolio. The extra-large capacity means you can load more bait per station, extending the interval between refills.
@@ -161,7 +161,7 @@ export default function ProfessionalBaitStationKitsPage() {
         <li>Transparent lid reduces servicing time</li>
         <li>Extra-large bait capacity</li>
         <li>UK-made, regulation compliant</li>
-        <li>Under £9 per station</li>
+        <li>Low cost per station</li>
       </ul>
       <p><strong>Cons:</strong></p>
       <ul>
@@ -186,7 +186,7 @@ export default function ProfessionalBaitStationKitsPage() {
         />
       </div>
       <p>
-        The 2-pack version of the Roshield PRO BOX is ideal if you need to top up your existing stock or only require coverage for a smaller property. At £20 for two stations, the per-unit cost is slightly higher than the 4-pack, but this remains a professional-grade product at a sensible price.
+        The 2-pack version of the Roshield PRO BOX is ideal if you need to top up your existing stock or only require coverage for a smaller property. Two stations per pack suits a smaller deployment, and this remains a professional-grade product.
       </p>
       <p>
         The inspection window is the same transparent lid design as the 4-pack — allowing you to assess bait take without opening the station. The wall-mounting capability is particularly useful for indoor deployment in garages, utility rooms, and loft spaces where you want the station secured off the floor and out of sight.
@@ -225,7 +225,7 @@ export default function ProfessionalBaitStationKitsPage() {
         />
       </div>
       <p>
-        At £10 for a single station, this is the most affordable way to get a genuinely compliant, key-operated bait station. For landlords dealing with a single-property issue or needing to add one extra station to an existing setup, this is the practical choice. It does not compromise on the essentials: the key-operated lock meets all current amateur rodenticide regulations, and the tamper-resistant design keeps children and pets out.
+        A single station is the simplest way to get a genuinely compliant, key-operated bait station. For landlords dealing with a single-property issue or needing to add one extra station to an existing setup, this is the practical choice. It does not compromise on the essentials: the key-operated lock meets all current amateur rodenticide regulations, and the tamper-resistant design keeps children and pets out.
       </p>
       <p>
         The compact size makes it suitable for indoor deployment — inside kitchen units, behind appliances, in utility cupboards — where larger stations would not fit. It also works well as an external wall-mounted station for small garden areas. The UK-made construction is solid for the price, though it is lighter than the PRO BOX range and lacks the inspection window.
@@ -264,7 +264,7 @@ export default function ProfessionalBaitStationKitsPage() {
         Pest Expert is the brand you will find in the vans of BPCA-certified pest controllers across the UK. These heavy-duty outdoor bait boxes are built to a different standard than consumer products — thicker walls, reinforced entry tunnels, and an industrial-strength locking mechanism that will not degrade after years of repeated use.
       </p>
       <p>
-        At £40 for a 4-pack, they are the most expensive option on our list, but the build quality justifies the premium for landlords who need stations that will last for years of continuous outdoor deployment. The UV-stabilised construction will not crack or become brittle in sunlight, and the heavy weight means they stay in place without additional anchoring in most situations.
+        The build quality justifies choosing these for landlords who need stations that will last for years of continuous outdoor deployment. The UV-stabilised construction will not crack or become brittle in sunlight, and the heavy weight means they stay in place without additional anchoring in most situations.
       </p>
       <p>
         For commercial landlords, facilities managers, and anyone deploying stations around larger buildings, these are the stations the professionals use — and for good reason.
@@ -383,7 +383,7 @@ export default function ProfessionalBaitStationKitsPage() {
 
       <div className="not-prose">
         <Callout type="cost">
-          <p><strong>Cost comparison:</strong> A 4-pack bait station kit (£35-40) plus a supply of bait blocks (£15-20) gives you a complete, reusable rodent control setup for under £60 — less than half the cost of a single professional call-out. For a landlord managing 5+ properties, this approach saves hundreds of pounds annually while maintaining full legal compliance.</p>
+          <p><strong>Cost comparison:</strong> A 4-pack bait station kit plus a supply of bait blocks gives you a complete, reusable rodent control setup for less than half the cost of a single professional call-out. For a landlord managing 5+ properties, this approach saves hundreds of pounds annually while maintaining full legal compliance.</p>
         </Callout>
       </div>
 
