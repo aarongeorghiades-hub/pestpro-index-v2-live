@@ -101,7 +101,7 @@ export default function ProfessionalULVFoggersPage() {
         If you manage rental properties, warehouses, or commercial premises, a ULV (Ultra Low Volume) cold fogger is one of the most cost-effective pest control investments you can make. Unlike aerosol spray cans that treat one surface at a time, a ULV fogger converts liquid insecticide into an ultra-fine mist of 5-50 micron droplets that suspends in the air and penetrates every crack, crevice, and hidden harbourage point in a room — all in under a minute.
       </p>
       <p>
-        The economics are straightforward. A single professional fog treatment costs £80-150 per visit. A ULV fogger priced at £200-350 treats unlimited rooms across unlimited properties, with insecticide concentrate costing just a few pounds per treatment. For portfolio landlords, HMO operators, and facilities managers dealing with fleas, cockroaches, flies, or general insect prevention, owning a ULV fogger eliminates the recurring cost of call-outs entirely.
+        The economics are straightforward. A single professional fog treatment costs £80-150 per visit. A ULV fogger treats unlimited rooms across unlimited properties, with insecticide concentrate costing just a few pounds per treatment. For portfolio landlords, HMO operators, and facilities managers dealing with fleas, cockroaches, flies, or general insect prevention, owning a ULV fogger eliminates the recurring cost of call-outs entirely.
       </p>
       <p>
         Coverage is the key advantage. A good ULV fogger covers 100m² per minute — an entire flat treated in the time it takes to walk through it. The fine droplets reach behind skirting boards, under furniture, inside wall cavities, and into carpet fibres where pests harbour. No amount of hand-spraying matches this level of penetration.
@@ -236,7 +236,7 @@ export default function ProfessionalULVFoggersPage() {
         The Ewbank EW5000 takes a different approach: a 10L backpack design with a 1400W motor for hands-free operation across large commercial spaces. Warehouses, school halls, office buildings, and multi-storey properties can be treated in a single session without stopping to refill. The ergonomic backpack distributes weight evenly for extended treatment sessions.
       </p>
       <p>
-        At £200, it is the most affordable option on this list and offers the largest tank capacity by far. The trade-off versus VectorFog models is less precise droplet control and a less established reputation in the professional pest control market. For facilities managers covering large floor areas on a budget, the Ewbank delivers excellent value.
+        It offers the largest tank capacity by far. The trade-off versus VectorFog models is less precise droplet control and a less established reputation in the professional pest control market. For facilities managers covering large floor areas on a budget, the Ewbank delivers excellent value.
       </p>
 
       <h2 id="chemicals">What Chemicals Can I Use in a ULV Fogger?</h2>
@@ -311,8 +311,8 @@ export default function ProfessionalULVFoggersPage() {
       </p>
       <ul>
         <li><strong>Professional fog treatment:</strong> £80-150 per visit, per property. A three-bedroom house with a flea infestation requiring two treatments costs £160-300 in call-out fees alone.</li>
-        <li><strong>ULV fogger purchase:</strong> £200-350 one-off cost. Treats unlimited rooms across unlimited properties. Insecticide concentrate costs £10-20 per litre, and a typical room treatment uses 50-100ml of diluted solution.</li>
-        <li><strong>Break-even:</strong> A £300 fogger pays for itself after 2-3 professional call-outs. For a landlord with 10+ properties, the annual saving runs into thousands of pounds.</li>
+        <li><strong>ULV fogger purchase:</strong> a one-off cost. Treats unlimited rooms across unlimited properties. Insecticide concentrate costs £10-20 per litre, and a typical room treatment uses 50-100ml of diluted solution.</li>
+        <li><strong>Break-even:</strong> A fogger pays for itself after 2-3 professional call-outs. For a landlord with 10+ properties, the annual saving runs into thousands of pounds.</li>
       </ul>
 
       <div className="not-prose">
