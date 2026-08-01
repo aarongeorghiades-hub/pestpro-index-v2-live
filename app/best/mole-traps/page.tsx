@@ -357,7 +357,7 @@ export default function BestMoleTrapsPage() {
         The REPELEM Claw Mole Trap is a UK brand claw-style trap sold in a pack of three, making it ideal for gardens with persistent mole activity across multiple areas. The 3-pack lets you treat several active runs simultaneously, which significantly increases your chance of a quick catch — professional mole catchers always recommend setting multiple traps rather than relying on a single one.
       </p>
       <p>
-        Each trap features a humane instant-kill mechanism and rust-free construction that holds up to repeated outdoor use across multiple seasons. The claw design is straightforward to set and does not require special tools. For homeowners dealing with moles in several parts of the garden, the REPELEM 3-pack offers good value compared to buying individual traps. It is a practical starting point for anyone new to mole control who wants coverage across a larger area.
+        Each trap features a humane instant-kill mechanism and rust-free construction that holds up to repeated outdoor use across multiple seasons. The claw design is straightforward to set and does not require special tools. For homeowners dealing with moles in several parts of the garden, the REPELEM 3-pack lets you cover three runs at once. It is a practical starting point for anyone new to mole control who wants coverage across a larger area.
       </p>
 
       {/* How to Choose */}
