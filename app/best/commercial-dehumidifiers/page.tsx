@@ -183,7 +183,7 @@ export default function BestCommercialDehumidifiersPage() {
       </div>
 
       <div className="not-prose">
-        <StatCallout value="&pound;5,000+" label="Typical cost of professional damp remediation for a UK property" />
+        <StatCallout value="&pound;1 &ndash; &pound;2" label="Daily electricity cost of running a commercial dehumidifier" />
       </div>
 
       {/* At a Glance */}
