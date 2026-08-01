@@ -333,7 +333,7 @@ export default function BestWaspKillersPage() {
         The easy-to-use aerosol application means there is no complicated setup or mixing required. Simply point the nozzle at the nest entrance and spray. The expanding foam does the rest, working its way into the nest structure and coating the internal surfaces with insecticide. For best results, apply at dusk when the majority of the colony has returned to the nest. Leave the nest undisturbed for at least 48 hours after treatment before attempting to remove it.
       </p>
       <p>
-        The Zero In Wasp Killer is the most affordable option on this list, making it an excellent choice for households that want effective wasp control without spending more than necessary. It is also a good product to keep in reserve during the summer months, so you can act quickly if a nest appears.
+        The Zero In Wasp Killer is an excellent choice for households that want straightforward, effective wasp control. It is also a good product to keep in reserve during the summer months, so you can act quickly if a nest appears.
       </p>
       <p>
         <strong>Pros:</strong>
@@ -343,7 +343,7 @@ export default function BestWaspKillersPage() {
         <li>Expanding foam reaches deep into nest structures</li>
         <li>Suitable for both indoor and outdoor use</li>
         <li>Easy aerosol application with no mixing required</li>
-        <li>Most affordable option on this list</li>
+        <li>Straightforward ready-to-use aerosol</li>
       </ul>
       <p>
         <strong>Cons:</strong>
