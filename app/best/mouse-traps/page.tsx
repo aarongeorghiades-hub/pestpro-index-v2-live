@@ -207,7 +207,7 @@ export default function BestMouseTrapsPage() {
         Choosing the right trap is the most important step you can take when dealing with a mouse problem yourself. There are four main categories of mouse trap available to UK buyers: <strong>snap traps</strong> (the classic spring-loaded mechanism that delivers a quick kill), <strong>enclosed snap traps</strong> (snap traps housed inside a tunnel or tube for no-see, no-touch disposal), <strong>live catch traps</strong> (humane traps that capture the mouse alive for release elsewhere), and <strong>bait stations</strong> (lockable boxes designed to house a trap or poison bait safely away from pets and children). Each type has genuine advantages and drawbacks depending on your situation, your household, and your personal preferences.
       </p>
       <p>
-        To compile this guide, we evaluated dozens of mouse traps available on Amazon UK based on three key criteria: <strong>UK availability and fast delivery</strong>, <strong>proven effectiveness and reliability</strong>, and <strong>value for money</strong>. We also consulted guidance from the BPCA and spoke with professional pest controllers to understand which products they recommend to homeowners. Every product on this page is available for next-day or two-day Prime delivery at the time of writing. </p>
+        We selected these mouse traps on published specifications and manufacturer information, looking at three key criteria: <strong>UK availability</strong>, <strong>proven effectiveness and reliability</strong>, and <strong>value for money</strong>. We also consulted guidance from the BPCA and spoke with professional pest controllers to understand which products they recommend to homeowners. Every product on this page is available for next-day or two-day Prime delivery at the time of writing. </p>
 
       <div className="not-prose">
         <Callout type="tip">
@@ -286,7 +286,7 @@ export default function BestMouseTrapsPage() {
         For best results, place the Clean Kill along walls and skirting boards where mice naturally travel. Mice are thigmotactic — they prefer to run along edges rather than crossing open spaces — so positioning the tube entrance flush against a wall means mice will walk straight into it as they follow their usual routes. The enclosed design also means the trap is considerably safer around pets than an open snap trap, though it is not lockable and a determined dog could still chew or carry it.
       </p>
       <p>
-        The main downside is that it only comes as a 2-pack, and for any serious mouse problem you will need considerably more than two traps. Pest control professionals recommend deploying a minimum of six traps simultaneously for a typical house mouse infestation, so you may need to buy three packs. At roughly £6 per trap, it is more expensive per unit than basic plastic snap traps, but the enclosed design and ease of use make it well worth the premium for most households.
+        The main downside is that it only comes as a 2-pack, and for any serious mouse problem you will need considerably more than two traps. Pest control professionals recommend deploying a minimum of six traps simultaneously for a typical house mouse infestation, so you may need to buy three packs. The enclosed design and ease of use make it well worth choosing for most households.
       </p>
       <p>
         <strong>Pros:</strong>
@@ -303,7 +303,7 @@ export default function BestMouseTrapsPage() {
       </p>
       <ul>
         <li>Only 2 in a pack — you will likely need to buy multiple packs</li>
-        <li>Slightly more expensive per trap than basic snap traps</li>
+        <li>Bulkier than a basic snap trap</li>
         <li>Not lockable — a large dog could still interfere with it</li>
       </ul>
 
@@ -324,7 +324,7 @@ export default function BestMouseTrapsPage() {
         />
       </div>
       <p>
-        The BOMPOW 4-pack delivers the classic plastic snap trap experience at a price point that is hard to argue with. At roughly £10 for four traps — that is around £2.50 per trap — you can afford to place them generously around your home, which is exactly what pest control professionals recommend. The number one piece of advice from any qualified mouse controller is to use multiple traps simultaneously, and the BOMPOW's price makes that approach genuinely affordable.
+        The BOMPOW 4-pack delivers the classic plastic snap trap experience at a price point that is hard to argue with. A four-trap pack lets you place them generously around your home, which is exactly what pest control professionals recommend. The number one piece of advice from any qualified mouse controller is to use multiple traps simultaneously, and the BOMPOW's price makes that approach genuinely affordable.
       </p>
       <p>
         The trigger mechanism on the BOMPOW is impressively sensitive. Mice are light — a typical house mouse weighs just 15 to 25 grams — and a trap with a heavy, insensitive trigger will allow them to nibble at the bait and wander away without triggering the snap bar. The BOMPOW's trigger plate is calibrated to respond to very light pressure, meaning even small juvenile mice will set it off. This matters because a mouse infestation typically includes mice of varying sizes, and a trap that only catches the bigger ones is going to leave the younger mice to grow and breed.
@@ -333,7 +333,7 @@ export default function BestMouseTrapsPage() {
         Setting the trap is straightforward and can genuinely be done with one hand. There are no fiddly metal bars or tiny copper hooks to negotiate — you simply pull back the snap bar, lock it against the trigger, and place a small amount of bait on the trigger plate. Peanut butter remains the gold standard bait for mice: it is sticky, so the mouse has to work at it rather than simply grabbing it and running, and the oily scent carries well in enclosed spaces like kitchen cupboards and cavity walls. Use a pea-sized amount — too much bait actually makes it easier for the mouse to eat without applying enough pressure to trigger the mechanism.
       </p>
       <p>
-        The ABS plastic construction is durable enough for multiple uses. After a catch, wash the trap with warm soapy water, allow it to dry, rebait, and redeploy. Some users report getting dozens of catches from a single trap before the mechanism starts to lose tension. At £2.50 per trap, you could simply dispose of it after each catch if you prefer, though that is not strictly necessary.
+        The ABS plastic construction is durable enough for multiple uses. After a catch, wash the trap with warm soapy water, allow it to dry, rebait, and redeploy. Some users report getting dozens of catches from a single trap before the mechanism starts to lose tension. You could simply dispose of a trap after each catch if you prefer, though that is not strictly necessary.
       </p>
       <p>
         The obvious downside is that these are open snap traps. The mechanism is fully exposed, which means they are absolutely not suitable for use in areas accessible to pets or young children. A mouse trap's snap bar will not break a human finger, but it will give a sharp, painful whack that will cause a child to scream — and it could injure a pet's nose or paw. If you have pets or toddlers, place these traps only in locations they cannot reach: behind heavy appliances, inside closed cupboards, in loft spaces, or inside bait stations.
@@ -342,7 +342,7 @@ export default function BestMouseTrapsPage() {
         <strong>Pros:</strong>
       </p>
       <ul>
-        <li>Excellent value at around £2.50 per trap</li>
+        <li>Four traps supplied in one pack</li>
         <li>Sensitive trigger mechanism catches even small mice</li>
         <li>Easy to set with one hand — no fiddly metal components</li>
         <li>4-pack lets you cover multiple locations simultaneously</li>
@@ -374,7 +374,7 @@ export default function BestMouseTrapsPage() {
         />
       </div>
       <p>
-        For those who want to deal with a mouse problem without killing, the IIWEY is the best humane mouse trap we have found on Amazon UK. It is a 32cm cage trap with a metal-reinforced door and a sensitive pressure plate trigger inside. The mouse enters the cage to reach the bait at the far end, steps on the pressure plate, and the spring-loaded door snaps shut behind it. The mouse is contained alive and unharmed, ready for you to transport and release it at a suitable location away from your home.
+        For those who want to deal with a mouse problem without killing, the IIWEY is a well-made humane mouse trap. It is a 32cm cage trap with a metal-reinforced door and a sensitive pressure plate trigger inside. The mouse enters the cage to reach the bait at the far end, steps on the pressure plate, and the spring-loaded door snaps shut behind it. The mouse is contained alive and unharmed, ready for you to transport and release it at a suitable location away from your home.
       </p>
       <p>
         The transparent plastic construction is a thoughtful design choice. With opaque traps, you have to pick up and open the trap to check whether anything has been caught — which is unnerving if you are not sure whether you are about to come face to face with a live mouse. The IIWEY's clear body lets you glance at it from across the room and see immediately whether the trap is occupied. This makes the twice-daily checking routine much less stressful, especially for people who are uncomfortable around mice.
@@ -442,7 +442,7 @@ export default function BestMouseTrapsPage() {
         <li>Compact tunnel design fits behind appliances and in tight spaces</li>
         <li>Fully enclosed — safe around pets and young children</li>
         
-        <li>Affordable at around £8</li>
+        <li>Reusable cage trap</li>
         <li>Easy to transport and release</li>
       </ul>
       <p>
@@ -472,7 +472,7 @@ export default function BestMouseTrapsPage() {
         />
       </div>
       <p>
-        The Pest-Stop Mouse Bait Station is not a trap in itself — it is a tamper-resistant housing that makes whatever trap or bait you place inside it safe from interference by pets, children, and non-target wildlife. It is a sturdy plastic box with small entry holes sized for mice, a lockable lid, and enough internal space to house a standard snap trap or bait blocks. At roughly £3 per station, it is remarkably cheap, and you should buy several. In fact, at this price there is no good reason not to buy half a dozen.
+        The Pest-Stop Mouse Bait Station is not a trap in itself — it is a tamper-resistant housing that makes whatever trap or bait you place inside it safe from interference by pets, children, and non-target wildlife. It is a sturdy plastic box with small entry holes sized for mice, a lockable lid, and enough internal space to house a standard snap trap or bait blocks. These stations are inexpensive enough to buy several. In fact, at this price there is no good reason not to buy half a dozen.
       </p>
       <p>
         The lockable design is the key feature. Once the lid is clicked shut, it cannot be opened without pressing a specific release mechanism that requires opposable thumbs and deliberate intent to operate. A cat pawing at it, a dog nosing it, or a toddler picking it up will not get the station open. This is genuinely important if you are using snap traps or poison bait in a household with pets or young children. An exposed snap trap on a kitchen floor is an accident waiting to happen; the same trap inside a locked Pest-Stop station is completely safe.
@@ -484,14 +484,14 @@ export default function BestMouseTrapsPage() {
         Weather resistance is another practical benefit. The Pest-Stop station is made from UV-stabilised plastic that will not crack or degrade when left outdoors in the British weather. This makes it ideal for placing in sheds, garages, outbuildings, and along exterior walls where mice often enter properties. Mice commonly gain access to UK homes through gaps around utility pipes, under doors, and through air bricks, so placing stations at these entry points provides an effective first line of defence.
       </p>
       <p>
-        The station itself is basic in construction — this is not a premium product, and the plastic is thinner than professional-grade bait stations. But at £3, that is entirely reasonable. It does the job it is designed to do: keep the trap inside safe from non-target interference. The small entry holes may deter particularly large mice, though standard UK house mice should have no trouble entering.
+        The station itself is basic in construction — this is not a premium product, and the plastic is thinner than professional-grade bait stations. For a station of this type, that is entirely reasonable. It does the job it is designed to do: keep the trap inside safe from non-target interference. The small entry holes may deter particularly large mice, though standard UK house mice should have no trouble entering.
       </p>
       <p>
         <strong>Pros:</strong>
       </p>
       <ul>
         <li>Genuinely tamper-resistant — safe around pets and children</li>
-        <li>Incredibly affordable at roughly £3 per station</li>
+        <li>Simple, no-frills station design</li>
         <li>Versatile — works with snap traps or bait blocks</li>
         <li>Weather resistant for outdoor use in sheds, garages, and around walls</li>
         <li>Lockable lid prevents non-target access</li>
