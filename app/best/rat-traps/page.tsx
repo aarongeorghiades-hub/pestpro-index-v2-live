@@ -300,7 +300,7 @@ export default function BestRatTrapsPage() {
       </ul>
 
       {/* Best Professional-Grade */}
-      <h2 id="best-professional">Best Professional-Grade — Pest X Pro Shadow</h2>
+      <h2 id="best-professional">Best Professional-Grade — ROSHIELD 4-Pack Rat Trap</h2>
       <div className="not-prose my-6">
         <ProductCard
           name="ROSHIELD 4-Pack Rat Trap"
@@ -316,33 +316,18 @@ export default function BestRatTrapsPage() {
         />
       </div>
       <p>
-        The Pest X Pro Shadow is the kind of trap station you will find in the kit of professional pest controllers up and down the UK. It is built to a commercial standard, which means heavier, thicker plastic, reinforced entry points, and an overall construction quality that is noticeably above consumer-grade products. If you pick up a Pest X Pro Shadow and compare it to a cheaper bait station, the difference in build quality is immediately obvious — it feels solid, heavy, and built to last.
+        The ROSHIELD 4-Pack Rat Trap is a set of professional quality, heavy-duty snap traps, from a brand trusted by pest controllers across the UK.
       </p>
       <p>
-        This station is designed for serious infestations where you need a trap that will perform reliably catch after catch, week after week, without degrading. The entry tunnels are sized and angled specifically to encourage rat entry while preventing non-target species from accessing the mechanism inside. The interior is designed to accept standard snap traps, and the layout guides the rat directly over the trigger plate, maximising the chance of a clean catch every time.
+        It is supplied as a 4-pack, which gives you multiple placement points rather than a single trap in a single location.
       </p>
       <p>
-        For homeowners dealing with a recurring rat problem — perhaps you live near farmland, a canal, or a known rat hotspot — the Pest X Pro Shadow is a worthwhile investment. While it costs a few pounds more than consumer-grade options, the durability means you will not be replacing it after a single season. Professional pest controllers routinely use these stations for years, servicing them on regular schedules. The same station that a BPCA-certified technician would bolt to the ground outside a commercial premises is what you are getting here, just purchased directly from Amazon rather than through a trade supplier.
-      </p>
-      <p>
-        The higher price point does mean this is overkill if you have spotted a single rat in your garden and want a quick, one-off solution. For that scenario, the Rat Reaper or Baban 6-pack would serve you better. But if rats are an ongoing concern — or if you want to set up a permanent perimeter of stations around your property as a preventative measure — the Pest X Pro Shadow is the one to buy.
-      </p>
-      <p>
-        <strong>Pros:</strong>
+        <strong>Key features:</strong>
       </p>
       <ul>
-        <li>Professional-grade build quality used by certified pest controllers</li>
-        <li>Highly effective tunnel design maximises catch rate</li>
-        <li>Extremely durable — will last for years of repeated use</li>
-        <li>Tamper-resistant design for safety around pets and children</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Higher price point than consumer-grade alternatives</li>
-        <li>Overkill for a single rat or minor, one-off problem</li>
-        <li>Larger size may not fit in tight spaces such as behind kitchen units</li>
+        <li>Professional quality heavy-duty snap traps</li>
+        <li>4-pack for multiple placement points</li>
+        <li>Trusted by pest controllers across the UK</li>
       </ul>
 
       {/* How to Choose */}
@@ -353,7 +338,7 @@ export default function BestRatTrapsPage() {
 
       <h3>Indoor vs Outdoor Use</h3>
       <p>
-        If you are trapping indoors — in a kitchen, loft, garage, or under floorboards — almost any trap will work, as it is sheltered from the elements. For outdoor use in a garden, along a fence line, or near a shed, you need a trap that can withstand the UK's reliably wet weather. The Roshield and Pest X Pro Shadow are both weather-resistant enclosed stations that will hold up outdoors. The Baban snap traps, by contrast, are best kept indoors or under cover, as rain and damp will degrade them and make them less effective.
+        If you are trapping indoors — in a kitchen, loft, garage, or under floorboards — almost any trap will work, as it is sheltered from the elements. For outdoor use in a garden, along a fence line, or near a shed, you need a trap that can withstand the UK's reliably wet weather. The ROSHIELD Rat Bait Station Box is a weatherproof enclosed station rated for indoor and outdoor use. The Baban snap traps, by contrast, are best kept indoors or under cover, as rain and damp will degrade them and make them less effective.
       </p>
 
       <h3>Pets and Children</h3>
@@ -369,7 +354,7 @@ export default function BestRatTrapsPage() {
 
       <h3>Severity of the Infestation</h3>
       <p>
-        For a single rat that you have seen once or twice, one or two traps placed strategically along its route should suffice. For a more serious infestation — multiple rats, extensive droppings, gnaw damage — you need to deploy at least six traps simultaneously across different locations. The Baban 6-pack is purpose-built for this scenario. For a recurring, long-term problem, invest in the Pest X Pro Shadow stations that will last for years of continuous use.
+        For a single rat that you have seen once or twice, one or two traps placed strategically along its route should suffice. For a more serious infestation — multiple rats, extensive droppings, gnaw damage — you need to deploy at least six traps simultaneously across different locations. The Baban 6-pack is purpose-built for this scenario.
       </p>
 
       <h3>Humane vs Lethal</h3>
@@ -379,7 +364,7 @@ export default function BestRatTrapsPage() {
 
       <h3>Budget</h3>
       <p>
-        Rat traps are not expensive items, and this is one area where it genuinely pays to buy the right tool for the job rather than the cheapest option available. If safety is a concern, the Rat Reaper and Roshield add covered and lockable designs. The Pest X Pro Shadow is the premium option but is only necessary for serious, ongoing problems.
+        Rat traps are not expensive items, and this is one area where it genuinely pays to buy the right tool for the job rather than the cheapest option available. If safety is a concern, the Rat Reaper and Roshield add covered and lockable designs.
       </p>
 
       <h3>UK-Specific Considerations</h3>
