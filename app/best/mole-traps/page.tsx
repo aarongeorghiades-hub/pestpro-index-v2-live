@@ -379,7 +379,7 @@ export default function BestMoleTrapsPage() {
       </p>
       <h3>Budget</h3>
       <p>
-        Mole traps are inexpensive compared to other pest control tools. A pair of Duffus traps costs around £8, and you can equip a full garden for under £40. Buying 3 to 5 traps gives you the best chance of a quick catch.
+        Mole traps are inexpensive compared to other pest control tools. Buying 3 to 5 traps gives you the best chance of a quick catch.
       </p>
 
       {/* Tips */}

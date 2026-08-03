@@ -555,7 +555,7 @@ export default function BestMouseTrapsPage() {
 
       <h3>Not Using Enough Traps</h3>
       <p>
-        This is by far the most common mistake. People buy one or two traps, place them in the kitchen, and wonder why the problem persists. Mice use multiple routes and are active across large areas of your home, not just the one room where you spotted one. You need a minimum of six traps for a typical problem, placed in different locations throughout the ground floor (and loft, if applicable). Twelve traps is not excessive for a serious infestation. The cost of extra traps is negligible — even at £6 per Rentokil Clean Kill, twelve traps costs less than a single professional callout. Deploy generously and you will see results far faster.
+        This is by far the most common mistake. People buy one or two traps, place them in the kitchen, and wonder why the problem persists. Mice use multiple routes and are active across large areas of your home, not just the one room where you spotted one. You need a minimum of six traps for a typical problem, placed in different locations throughout the ground floor (and loft, if applicable). Twelve traps is not excessive for a serious infestation. The cost of extra traps is negligible — twelve traps costs less than a single professional callout. Deploy generously and you will see results far faster.
       </p>
 
       <div className="not-prose">

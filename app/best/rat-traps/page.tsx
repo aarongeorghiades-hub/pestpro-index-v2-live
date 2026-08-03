@@ -78,8 +78,6 @@ const tocItems = [
   { id: 'best-overall', title: 'Best Overall — Rat Reaper XXL Snap Trap' },
   { id: 'best-safety', title: 'Best for Pet & Child Safety — ROSHIELD Rat Bait Station Box' },
   { id: 'best-professional', title: 'Best Professional-Grade — ROSHIELD 4-Pack Rat Trap' },
-  { id: 'best-humane', title: 'Best Bait Station — The Big Cheese Rat Bait Station' },
-  { id: 'best-budget', title: 'Best Electronic Option — Ultrasonic Pest Repeller' },
   { id: 'how-to-choose', title: 'How to Choose the Right Rat Trap' },
   { id: 'tips', title: 'Rat Trap Tips for Best Results' },
 ];
@@ -88,7 +86,7 @@ export default function BestRatTrapsPage() {
   return (
     <GuideLayout
       title="Best Rat Traps UK 2026: Tested & Recommended"
-      subtitle="Our pick of the most effective rat traps available in the UK, from snap traps to humane options"
+      subtitle="Our pick of the most effective rat traps available in the UK"
       lastUpdated="March 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: 'Best', href: '/best' }}
@@ -177,7 +175,7 @@ export default function BestRatTrapsPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Rat Traps at a Glance</h2>
       <p>
-        Here is a quick comparison of our top five picks. Each trap has been selected for a different use case, so the best choice for you depends on your specific situation. We go into full detail on every product below the table.
+        Here is a quick comparison of our top three picks. Each trap has been selected for a different use case, so the best choice for you depends on your specific situation. We go into full detail on every product below the table.
       </p>
       <table>
         <thead>
@@ -202,16 +200,6 @@ export default function BestRatTrapsPage() {
             <td>ROSHIELD 4-Pack Rat Trap</td>
             <td>Snap trap</td>
             <td>Best Professional-Grade</td>
-          </tr>
-          <tr>
-            <td>The Big Cheese Rat Bait Station</td>
-            <td>Bait station</td>
-            <td>Best Bait Station</td>
-          </tr>
-          <tr>
-            <td>Ultrasonic Pest Repeller</td>
-            <td>Electronic</td>
-            <td>Best Electronic</td>
           </tr>
         </tbody>
       </table>
@@ -357,108 +345,10 @@ export default function BestRatTrapsPage() {
         <li>Larger size may not fit in tight spaces such as behind kitchen units</li>
       </ul>
 
-      {/* Best Humane */}
-      <h2 id="best-humane">Best Humane Option — Gingbau Cage Trap</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="The Big Cheese Rat Bait Station"
-          rank={4}
-          features={[
-            'Compact lockable bait station',
-            
-            'Tamper-resistant design safe for households',
-            'Works with block or grain baits',
-          ]}
-          asin="B088TH1XCS"
-          bestFor="Best Bait Station"
-        />
-      </div>
-      <p>
-        For those who prefer not to kill rats, the Gingbau Cage Trap is the best live catch option in this guide. It is a traditional cage-style trap made from galvanised steel wire: you place bait at the far end of the cage, the rat enters to reach the food, steps on a pressure plate, and the door snaps shut behind it. The rat is then contained alive and unharmed, ready for you to release it at a suitable location away from your property.
-      </p>
-      <p>
-        The trigger mechanism on the Gingbau is notably sensitive, which is important because rats are lighter and more cautious than you might expect. A trap with an insensitive trigger will allow the rat to steal the bait without triggering the door — an incredibly frustrating experience. The Gingbau's mechanism is well-calibrated to trigger under the weight of even a smaller rat, though you should always test it before deployment by pressing the plate gently with a pencil to ensure it is functioning correctly.
-      </p>
-      <p>
-        The galvanised steel construction is a practical choice for the UK climate. Untreated steel cage traps rust quickly when left outdoors in our damp conditions, and a rusty trap is both less effective (rats can smell oxidised metal) and less hygienic to handle. Galvanisation provides a protective zinc coating that resists corrosion, meaning this trap will last through multiple seasons of outdoor use without deteriorating.
-      </p>
-      <p>
-        However, there is an important legal and ethical point to address. Under the <strong>Animal Welfare Act 2006</strong>, if you use a live catch trap, you are legally obligated to check it at least twice daily — once in the morning and once in the evening as a minimum. A rat left in a cage trap without food or water will suffer from severe stress, dehydration, and hypothermia (particularly in winter), and will likely die within 24 to 48 hours. This defeats the entire purpose of using a humane trap in the first place, and also puts you in breach of the law. If you cannot commit to checking the trap twice daily without fail, a humane trap is not the right choice for you.
-      </p>
-      <p>
-        You should also be realistic about release. You must transport the rat a significant distance from your property — at least two miles is the commonly cited guideline — and release it in a suitable habitat away from other homes. Rats are territorial and have excellent homing instincts; a rat released a few hundred metres away will very likely find its way back. Be prepared for the possibility that the humane approach requires more effort and ongoing commitment than lethal methods.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Humane no-kill option for those opposed to lethal traps</li>
-        <li>Sturdy galvanised steel construction resists rust and corrosion</li>
-        <li>Sensitive trigger mechanism captures rats reliably</li>
-        <li>Easy one-hand release mechanism for safe, distant release</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Legal obligation to check the trap at least twice daily under the Animal Welfare Act 2006</li>
-        <li>Rats may return if released too close to your property</li>
-        <li>The trapping and transport process is stressful for the animal</li>
-        <li>Only catches one rat at a time</li>
-      </ul>
-
-      {/* Best Budget */}
-      <h2 id="best-budget">Best Budget Option — Baban Rat Traps (6-Pack)</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Ultrasonic Pest Repeller"
-          rank={5}
-          features={[
-            'Ultrasonic technology repels rats and rodents',
-            'Plug-in device — no chemicals or traps needed',
-            'Safe for use around children and pets',
-            'Covers a wide area for whole-room protection',
-          ]}
-          asin="B0BW9C4D3J"
-          bestFor="Best Electronic Option"
-        />
-      </div>
-      <p>
-        If you are dealing with a rat problem on a budget — or if you simply want to deploy multiple traps across your property for maximum coverage — the Baban 6-pack is outstanding value. At around £14 for six traps, you are paying roughly £2.30 per trap, which is a fraction of the cost of covered or enclosed alternatives. And there is a genuine tactical advantage to buying in bulk: pest control professionals universally recommend setting multiple traps simultaneously rather than relying on a single trap in one location.
-      </p>
-      <p>
-        The traps themselves are a classic snap trap design, similar in concept to the traditional wooden rat trap but made from modern materials. The spring mechanism is strong — strong enough to dispatch a large brown rat instantly — and the teethed jaw design ensures that once the trap has sprung, the rat is held securely. This prevents the unpleasant scenario of a rat being caught but then dragging the trap away, which can happen with weaker or poorly designed mechanisms.
-      </p>
-      <p>
-        Setting the traps is straightforward: pull back the kill bar, engage the locking rod onto the bait pedal, place your bait (peanut butter, as always, is the best option), and position the trap. A word of caution, though — these are open, uncovered snap traps with a powerful spring, so you absolutely must take care with your fingers when setting them. Set them on a flat surface, keep your fingers clear of the kill bar, and never set a trap while holding it in your hand. These traps are emphatically not suitable for use in areas where pets or children can access them. If you have a dog that investigates everything with its nose, or a toddler who picks things up off the floor, use a covered trap instead.
-      </p>
-      <p>
-        The real advantage of the 6-pack is coverage. Pest controllers recommend placing traps every two to three metres along known rat runs — typically along walls, behind furniture, near entry points, and close to signs of activity like droppings or gnaw marks. With six traps, you can cover a significant area and dramatically increase your chances of catching rats on the first night. For the price of a single premium trap, you get six working units — and that quantity advantage is often more important than any single trap's individual features.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Exceptional value — six traps for around £14 (roughly £2.30 each)</li>
-        <li>Strong spring mechanism delivers a quick, humane kill</li>
-        <li>Multiple traps allow you to cover more area simultaneously</li>
-        <li>Teethed design holds the catch securely</li>
-        <li>Easy to set once you have practised the technique</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>No cover — absolutely not safe around pets or young children</li>
-        <li>Basic design with no weather protection for outdoor use</li>
-        <li>Requires careful handling when setting to avoid injury to your fingers</li>
-        <li>Plastic construction may not last as many seasons as metal alternatives</li>
-      </ul>
-
       {/* How to Choose */}
       <h2 id="how-to-choose">How to Choose the Right Rat Trap</h2>
       <p>
-        With five strong options on the table, choosing the right one comes down to your specific circumstances. Here are the key factors to consider before you buy.
+        With three strong options on the table, choosing the right one comes down to your specific circumstances. Here are the key factors to consider before you buy.
       </p>
 
       <h3>Indoor vs Outdoor Use</h3>
@@ -489,7 +379,7 @@ export default function BestRatTrapsPage() {
 
       <h3>Budget</h3>
       <p>
-        Rat traps are not expensive items, and this is one area where it genuinely pays to buy the right tool for the job rather than the cheapest option available. That said, the Baban 6-pack at £14 proves that effective traps do not have to be costly. If safety is a concern, the Rat Reaper and Roshield add covered and lockable designs. The Pest X Pro Shadow at £18 is the premium option but is only necessary for serious, ongoing problems.
+        Rat traps are not expensive items, and this is one area where it genuinely pays to buy the right tool for the job rather than the cheapest option available. If safety is a concern, the Rat Reaper and Roshield add covered and lockable designs. The Pest X Pro Shadow is the premium option but is only necessary for serious, ongoing problems.
       </p>
 
       <h3>UK-Specific Considerations</h3>
