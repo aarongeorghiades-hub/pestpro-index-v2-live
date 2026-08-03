@@ -7,16 +7,16 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Rat Traps UK 2026: Tested & Recommended',
+    title: 'Best Rat Traps UK 2026: Snap Traps & Bait Stations',
     description:
-      'Our pick of the best rat traps available in the UK for 2026. Snap traps, electronic traps, humane options, and bait stations reviewed with pros, cons, and buying advice.',
+      'Our pick of the best rat traps available in the UK for 2026. Snap traps and bait stations compared, with pros, cons and buying advice.',
     alternates: {
       canonical: 'https://pestproindex.com/best/rat-traps',
     },
     openGraph: {
-      title: 'Best Rat Traps UK 2026: Tested & Recommended',
+      title: 'Best Rat Traps UK 2026: Snap Traps & Bait Stations',
       description:
-        'Our pick of the best rat traps available in the UK for 2026. Snap traps, electronic traps, humane options, and bait stations reviewed with pros, cons, and buying advice.',
+        'Our pick of the best rat traps available in the UK for 2026. Snap traps and bait stations compared, with pros, cons and buying advice.',
       url: 'https://pestproindex.com/best/rat-traps',
       type: 'article',
       siteName: 'PestPro Index',
@@ -27,9 +27,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Best Rat Traps UK 2026: Tested & Recommended',
+  headline: 'Best Rat Traps UK 2026: Snap Traps & Bait Stations',
   description:
-    'Our pick of the best rat traps available in the UK for 2026. Snap traps, electronic traps, humane options, and bait stations reviewed with pros, cons, and buying advice.',
+    'Our pick of the best rat traps available in the UK for 2026. Snap traps and bait stations compared, with pros, cons and buying advice.',
   datePublished: '2026-03-14',
   dateModified: '2026-03-14',
   author: {
@@ -85,8 +85,8 @@ const tocItems = [
 export default function BestRatTrapsPage() {
   return (
     <GuideLayout
-      title="Best Rat Traps UK 2026: Tested & Recommended"
-      subtitle="Our pick of the most effective rat traps available in the UK"
+      title="Best Rat Traps UK 2026: Snap Traps & Bait Stations"
+      subtitle="Snap traps and bait stations for UK homes, selected on published specifications and manufacturer information."
       lastUpdated="March 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: 'Best', href: '/best' }}
