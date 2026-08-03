@@ -258,7 +258,7 @@ export default function BestMouseTrapsPage() {
       </table>
 
       {/* Best Overall */}
-      <h2 id="best-overall">Best Overall — Rentokil Clean Kill Mouse Trap</h2>
+      <h2 id="best-overall">Best Overall — ROSHIELD 6-Pack Mouse Trap</h2>
       <div className="not-prose my-6">
         <ProductCard
           name="ROSHIELD 6-Pack Mouse Trap"
@@ -274,41 +274,22 @@ export default function BestMouseTrapsPage() {
         />
       </div>
       <p>
-        The Rentokil Clean Kill takes our top spot because it solves the single biggest complaint people have about mouse traps: having to see and handle a dead mouse. The trap is designed as a fully enclosed plastic tube, roughly 15cm long, that conceals the snap mechanism entirely inside. When a mouse enters the tube, attracted by the bait placed at the back, it triggers a powerful snap mechanism that delivers an instant kill. The mouse remains inside the tube at all times, completely hidden from view. To dispose of the catch, you simply open the back of the tube and tip it into a bin bag. No touching, no seeing, no fuss.
+        The ROSHIELD 6-Pack Mouse Trap takes our top spot. It is a set of professional quality snap traps supplied as a 6-pack, from a brand trusted by pest controllers across the UK.
       </p>
       <p>
-        The one-click setting mechanism is another genuine highlight. Traditional snap traps can be fiddly and frankly nerve-wracking to set — the spring tension means there is always a risk of snapping your fingers if you slip. The Rentokil eliminates this entirely. You pull back the setting lever until it clicks into place, apply a small dab of bait (peanut butter works best) to the bait cup at the rear of the tube, and you are done. The whole process takes about ten seconds, and at no point are your fingers anywhere near the snap bar. This makes it genuinely safe to set, even for people who are nervous around traps.
+        The traps are reusable and easy to set, so each one can be put back to work after a catch rather than replaced. Being supplied as a 6-pack, a single purchase covers six placement points instead of one.
       </p>
       <p>
-        Rentokil is a household name in UK pest control with decades of experience, and their products reflect that heritage. The Clean Kill is solidly built from durable plastic that can be washed and reused multiple times. The snap mechanism is strong enough to dispatch mice cleanly and humanely in a fraction of a second, which is important from a welfare perspective. A weak mechanism risks injuring the mouse without killing it outright, which is both inhumane and creates a problem you then have to deal with.
-      </p>
-      <p>
-        For best results, place the Clean Kill along walls and skirting boards where mice naturally travel. Mice are thigmotactic — they prefer to run along edges rather than crossing open spaces — so positioning the tube entrance flush against a wall means mice will walk straight into it as they follow their usual routes. The enclosed design also means the trap is considerably safer around pets than an open snap trap, though it is not lockable and a determined dog could still chew or carry it.
-      </p>
-      <p>
-        The main downside is that it only comes as a 2-pack, and for any serious mouse problem you will need considerably more than two traps. Pest control professionals recommend deploying a minimum of six traps simultaneously for a typical house mouse infestation, so you may need to buy three packs. The enclosed design and ease of use make it well worth choosing for most households.
-      </p>
-      <p>
-        <strong>Pros:</strong>
+        <strong>Key features:</strong>
       </p>
       <ul>
-        <li>No-see, no-touch disposal — ideal for squeamish users</li>
-        <li>One-click setting mechanism is safe and easy</li>
-        <li>Trusted UK brand with decades of pest control expertise</li>
-        <li>Reusable and easy to clean between catches</li>
-        <li>Enclosed design is safer around pets than open snap traps</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Only 2 in a pack — you will likely need to buy multiple packs</li>
-        <li>Bulkier than a basic snap trap</li>
-        <li>Not lockable — a large dog could still interfere with it</li>
+        <li>Professional quality snap traps — 6-pack</li>
+        <li>Trusted by pest controllers across the UK</li>
+        <li>Reusable and easy to set</li>
       </ul>
 
-      {/* Best Budget */}
-      <h2 id="best-budget">Best Budget — BOMPOW Mouse Traps (4-Pack)</h2>
+      {/* Best Heavy Duty */}
+      <h2 id="best-heavy-duty">Best Heavy Duty — Trisiki 6-Pack Heavy Duty Mouse Trap</h2>
       <div className="not-prose my-6">
         <ProductCard
           name="Trisiki 6-Pack Heavy Duty Mouse Trap"
@@ -324,41 +305,23 @@ export default function BestMouseTrapsPage() {
         />
       </div>
       <p>
-        The BOMPOW 4-pack delivers the classic plastic snap trap experience at a price point that is hard to argue with. A four-trap pack lets you place them generously around your home, which is exactly what pest control professionals recommend. The number one piece of advice from any qualified mouse controller is to use multiple traps simultaneously, and the BOMPOW's price makes that approach genuinely affordable.
+        The Trisiki 6-Pack Heavy Duty Mouse Trap is a set of heavy-duty, high-sensitivity snap traps, supplied as a 6-pack for whole-house coverage.
       </p>
       <p>
-        The trigger mechanism on the BOMPOW is impressively sensitive. Mice are light — a typical house mouse weighs just 15 to 25 grams — and a trap with a heavy, insensitive trigger will allow them to nibble at the bait and wander away without triggering the snap bar. The BOMPOW's trigger plate is calibrated to respond to very light pressure, meaning even small juvenile mice will set it off. This matters because a mouse infestation typically includes mice of varying sizes, and a trap that only catches the bigger ones is going to leave the younger mice to grow and breed.
+        Trisiki rates these traps as effective for persistent mouse problems, and the construction is durable enough for repeated use rather than a single catch.
       </p>
       <p>
-        Setting the trap is straightforward and can genuinely be done with one hand. There are no fiddly metal bars or tiny copper hooks to negotiate — you simply pull back the snap bar, lock it against the trigger, and place a small amount of bait on the trigger plate. Peanut butter remains the gold standard bait for mice: it is sticky, so the mouse has to work at it rather than simply grabbing it and running, and the oily scent carries well in enclosed spaces like kitchen cupboards and cavity walls. Use a pea-sized amount — too much bait actually makes it easier for the mouse to eat without applying enough pressure to trigger the mechanism.
-      </p>
-      <p>
-        The ABS plastic construction is durable enough for multiple uses. After a catch, wash the trap with warm soapy water, allow it to dry, rebait, and redeploy. Some users report getting dozens of catches from a single trap before the mechanism starts to lose tension. You could simply dispose of a trap after each catch if you prefer, though that is not strictly necessary.
-      </p>
-      <p>
-        The obvious downside is that these are open snap traps. The mechanism is fully exposed, which means they are absolutely not suitable for use in areas accessible to pets or young children. A mouse trap's snap bar will not break a human finger, but it will give a sharp, painful whack that will cause a child to scream — and it could injure a pet's nose or paw. If you have pets or toddlers, place these traps only in locations they cannot reach: behind heavy appliances, inside closed cupboards, in loft spaces, or inside bait stations.
-      </p>
-      <p>
-        <strong>Pros:</strong>
+        <strong>Key features:</strong>
       </p>
       <ul>
-        <li>Four traps supplied in one pack</li>
-        <li>Sensitive trigger mechanism catches even small mice</li>
-        <li>Easy to set with one hand — no fiddly metal components</li>
-        <li>4-pack lets you cover multiple locations simultaneously</li>
-        <li>Durable ABS plastic is easy to clean and reuse</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Open design — not safe around pets or young children</li>
-        <li>Basic no-frills design with no enclosure or cover</li>
-        <li>Dead mouse is fully visible after a catch</li>
+        <li>Heavy-duty high-sensitivity snap traps</li>
+        <li>Effective for persistent mouse problems</li>
+        <li>Durable construction for repeated use</li>
+        <li>6-pack for whole-house coverage</li>
       </ul>
 
-      {/* Best Humane */}
-      <h2 id="best-humane">Best Humane Option — IIWEY Humane Mouse Trap</h2>
+      {/* Best Budget */}
+      <h2 id="best-budget">Best Budget — ASPECTEK 6-Pack Mouse Trap</h2>
       <div className="not-prose my-6">
         <ProductCard
           name="ASPECTEK 6-Pack Mouse Trap"
@@ -374,41 +337,22 @@ export default function BestMouseTrapsPage() {
         />
       </div>
       <p>
-        For those who want to deal with a mouse problem without killing, the IIWEY is a well-made humane mouse trap. It is a 32cm cage trap with a metal-reinforced door and a sensitive pressure plate trigger inside. The mouse enters the cage to reach the bait at the far end, steps on the pressure plate, and the spring-loaded door snaps shut behind it. The mouse is contained alive and unharmed, ready for you to transport and release it at a suitable location away from your home.
+        The ASPECTEK 6-Pack Mouse Trap is a set of reusable snap traps with a professional design, sold as a 6-pack that ASPECTEK positions as excellent value.
       </p>
       <p>
-        The transparent plastic construction is a thoughtful design choice. With opaque traps, you have to pick up and open the trap to check whether anything has been caught — which is unnerving if you are not sure whether you are about to come face to face with a live mouse. The IIWEY's clear body lets you glance at it from across the room and see immediately whether the trap is occupied. This makes the twice-daily checking routine much less stressful, especially for people who are uncomfortable around mice.
+        Bait placement and the trigger mechanism are both straightforward, which keeps the traps quick to set and quick to reset after a catch.
       </p>
       <p>
-        The pressure plate trigger is sensitive enough to catch even small mice, which is important because house mice can be surprisingly light. The metal-reinforced door prevents escape — a common problem with cheaper plastic-only humane traps where mice can gnaw through the door hinge or push it open. Once the IIWEY's door has closed, the mouse is securely contained until you release it.
-      </p>
-      <p>
-        <strong>There is an important point to address about humane traps that many manufacturers gloss over.</strong> You must check live catch traps at least every twelve hours, and ideally more frequently than that. Mice are small animals with extremely fast metabolisms. They dehydrate quickly and can die from stress, dehydration, or hypothermia (in winter) within just a few hours of being trapped. If you leave a humane trap unchecked overnight in a cold garage, the mouse may well be dead by morning — which entirely defeats the purpose of using a humane trap. Under the <strong>Animal Welfare Act 2006</strong>, you have a legal duty of care to any animal you have trapped, and allowing a mouse to suffer through neglect is an offence.
-      </p>
-      <p>
-        Release is the other reality to confront. You need to transport the mouse at least two miles from your property and release it in a suitable habitat — ideally woodland or hedgerow — well away from other homes (releasing your mouse problem onto a neighbour is not exactly neighbourly). Mice have reasonable homing instincts, and a mouse released a few hundred metres away will frequently find its way back. Be prepared for this process to take time and effort, and be honest with yourself about whether you are willing to do it every time the trap catches something. If you are dealing with more than a couple of mice, the humane approach becomes very time-consuming very quickly.
-      </p>
-      <p>
-        <strong>Pros:</strong>
+        <strong>Key features:</strong>
       </p>
       <ul>
-        <li>Genuinely humane no-kill option for ethical mouse control</li>
-        <li>Transparent body allows at-a-glance checking</li>
-        <li>Metal-reinforced door prevents escape</li>
-        <li>Sturdy construction that will last for many uses</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Must check at least every 12 hours — mice die quickly from stress and dehydration</li>
-        <li>Mice may return if released too close to your property</li>
-        <li>Only catches one mouse at a time</li>
-        <li>Release location and distance genuinely matter</li>
+        <li>Reusable snap traps with professional design</li>
+        <li>Easy bait placement and trigger mechanism</li>
+        <li>Excellent value 6-pack</li>
       </ul>
 
-      {/* Best for Small Spaces */}
-      <h2 id="best-small-spaces">Best for Small Spaces — KEPLIN Humane Mouse Trap</h2>
+      {/* Best Humane */}
+      <h2 id="best-humane">Best Humane — ROSHIELD Humane Mouse Trap 2-Pack</h2>
       <div className="not-prose my-6">
         <ProductCard
           name="ROSHIELD Humane Mouse Trap 2-Pack"
@@ -424,39 +368,23 @@ export default function BestMouseTrapsPage() {
         />
       </div>
       <p>
-        The KEPLIN is a compact tunnel-style humane trap designed to fit in the places where mice actually travel — behind kitchen appliances, under furniture, along skirting boards, and inside cupboards. At roughly 17cm long, it is considerably smaller than a full cage trap, which means it can be deployed in tight spaces that larger traps simply cannot reach. This is a practical advantage because mice actively prefer narrow, enclosed spaces. A trap that fits into the gap between your fridge and the wall is far more likely to catch a mouse than one sitting in the middle of your kitchen floor.
+        The ROSHIELD Humane Mouse Trap 2-Pack uses a live catch and release design, so mice are caught alive rather than killed. It is supplied as a 2-pack.
       </p>
       <p>
-        The spring pedal trigger mechanism is simple and effective. The mouse enters the tunnel, walks along the inside towards the bait at the far end, and steps on a spring-loaded pedal that releases the door behind it. The fully enclosed design means the trap is safe around pets and children — there are no exposed snap bars, springs, or mechanisms that could cause injury.
+        A transparent inspection window lets you see whether a trap is occupied without opening it, and ROSHIELD rates the design as safe for household use around children and pets. Each trap is reusable — you simply release the mouse and reset it. If you choose a live catch trap, read the checking frequency guidance further down this page before you deploy it.
       </p>
       <p>
-        In use, baiting the KEPLIN is straightforward. Open the trap, place a small amount of peanut butter on the bait plate at the far end of the tunnel, close the trap, arm the trigger mechanism, and position it along a wall or in a known mouse run. Check at least twice daily — the same welfare obligations apply to any live catch trap, regardless of size. When you have caught a mouse, simply carry the whole trap to your release point, open the door, and let the mouse go. The compact size makes transport easier than carrying a larger cage trap.
-      </p>
-      <p>
-        The tunnel design does have a limitation: it is sized for house mice, and a larger mouse may not fit comfortably inside or may be deterred from entering. Baiting can also be slightly fiddly because you are working inside a narrow tube. Some users find it easier to apply bait to a cotton bud or cocktail stick and then position it at the back of the tunnel, rather than trying to reach in with their fingers. Despite these minor niggles, the KEPLIN's combination of compact size, safety around pets, strong reviews, and affordable price make it an excellent choice for anyone who needs to trap mice in tight or awkward locations.
-      </p>
-      <p>
-        <strong>Pros:</strong>
+        <strong>Key features:</strong>
       </p>
       <ul>
-        <li>Compact tunnel design fits behind appliances and in tight spaces</li>
-        <li>Fully enclosed — safe around pets and young children</li>
-        
-        <li>Reusable cage trap</li>
-        <li>Easy to transport and release</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Smaller size may not accommodate larger mice</li>
-        <li>Tunnel design can be fiddly to bait</li>
-        <li>Must check frequently — live catch welfare obligations apply</li>
-        <li>Only catches one mouse at a time</li>
+        <li>Live catch and release design</li>
+        <li>Safe for household use around children and pets</li>
+        <li>Transparent inspection window</li>
+        <li>Reusable — simply release and reset</li>
       </ul>
 
-      {/* Best Around Pets & Kids */}
-      <h2 id="best-pets-kids">Best Around Pets &amp; Children — Pest-Stop Mouse Bait Station</h2>
+      {/* Best Easy-Clean */}
+      <h2 id="best-easy-clean">Best Easy-Clean — Motel Mouse Humane Trap</h2>
       <div className="not-prose my-6">
         <ProductCard
           name="Motel Mouse Humane Trap"
@@ -472,37 +400,19 @@ export default function BestMouseTrapsPage() {
         />
       </div>
       <p>
-        The Pest-Stop Mouse Bait Station is not a trap in itself — it is a tamper-resistant housing that makes whatever trap or bait you place inside it safe from interference by pets, children, and non-target wildlife. It is a sturdy plastic box with small entry holes sized for mice, a lockable lid, and enough internal space to house a standard snap trap or bait blocks. These stations are inexpensive enough to buy several. In fact, at this price there is no good reason not to buy half a dozen.
+        The Motel Mouse Humane Trap is a reusable humane mouse trap with a no-kill design, aimed at ethical pest control.
       </p>
       <p>
-        The lockable design is the key feature. Once the lid is clicked shut, it cannot be opened without pressing a specific release mechanism that requires opposable thumbs and deliberate intent to operate. A cat pawing at it, a dog nosing it, or a toddler picking it up will not get the station open. This is genuinely important if you are using snap traps or poison bait in a household with pets or young children. An exposed snap trap on a kitchen floor is an accident waiting to happen; the same trap inside a locked Pest-Stop station is completely safe.
+        It is easy to clean and reset between catches, and its compact size fits in tight spaces. As with any live catch trap, read the checking frequency guidance further down this page before you deploy it.
       </p>
       <p>
-        The most common configuration is to place a small snap trap inside the station, baited with peanut butter. The mouse enters through one of the entry holes, takes the bait, and the snap trap does its work — all safely enclosed within the station. Alternatively, you can use the station with commercial mouse bait blocks (rodenticide), which slot into the internal bait rod. If you do use poison, the station ensures that only mice can access it, reducing the risk of secondary poisoning in pets. However, we generally recommend snap traps over poison for home use, as poison creates the problem of mice dying in inaccessible locations (inside walls, under floors) and creating an extremely unpleasant smell.
-      </p>
-      <p>
-        Weather resistance is another practical benefit. The Pest-Stop station is made from UV-stabilised plastic that will not crack or degrade when left outdoors in the British weather. This makes it ideal for placing in sheds, garages, outbuildings, and along exterior walls where mice often enter properties. Mice commonly gain access to UK homes through gaps around utility pipes, under doors, and through air bricks, so placing stations at these entry points provides an effective first line of defence.
-      </p>
-      <p>
-        The station itself is basic in construction — this is not a premium product, and the plastic is thinner than professional-grade bait stations. For a station of this type, that is entirely reasonable. It does the job it is designed to do: keep the trap inside safe from non-target interference. The small entry holes may deter particularly large mice, though standard UK house mice should have no trouble entering.
-      </p>
-      <p>
-        <strong>Pros:</strong>
+        <strong>Key features:</strong>
       </p>
       <ul>
-        <li>Genuinely tamper-resistant — safe around pets and children</li>
-        <li>Simple, no-frills station design</li>
-        <li>Versatile — works with snap traps or bait blocks</li>
-        <li>Weather resistant for outdoor use in sheds, garages, and around walls</li>
-        <li>Lockable lid prevents non-target access</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Does not include a trap — you need to buy a snap trap or bait separately</li>
-        <li>Basic plastic construction — not as robust as professional-grade stations</li>
-        <li>Small entry holes may deter larger mice</li>
+        <li>Reusable humane mouse trap</li>
+        <li>Easy to clean and reset between catches</li>
+        <li>No-kill design for ethical pest control</li>
+        <li>Compact size fits in tight spaces</li>
       </ul>
 
       {/* Buying Guide */}
