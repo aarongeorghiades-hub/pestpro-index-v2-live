@@ -8,11 +8,11 @@ import Callout, { StatCallout } from '@/components/Callout';
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Best Drain Fly Killer UK 2026 | Get Rid of Drain Flies Fast',
-    description: 'Eliminate drain flies from your kitchen and bathroom. The best drain fly killers, gels and treatments reviewed for UK homes in 2026.',
+    description: 'Eliminate drain flies from your kitchen and bathroom. The best drain fly killers, gels and treatments for UK homes in 2026.',
     alternates: { canonical: 'https://pestproindex.com/best/drain-fly-killer' },
     openGraph: {
       title: 'Best Drain Fly Killer UK 2026 | Get Rid of Drain Flies Fast',
-      description: 'Eliminate drain flies from your kitchen and bathroom. The best drain fly killers, gels and treatments reviewed for UK homes in 2026.',
+      description: 'Eliminate drain flies from your kitchen and bathroom. The best drain fly killers, gels and treatments for UK homes in 2026.',
       url: 'https://pestproindex.com/best/drain-fly-killer', type: 'article', siteName: 'PestPro Index',
     },
   };
@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: 'Best Drain Fly Killer UK 2026: Get Rid of Drain Flies Fast',
-  description: 'Eliminate drain flies from your kitchen and bathroom. The best drain fly killers, gels and treatments reviewed for UK homes in 2026.',
+  description: 'Eliminate drain flies from your kitchen and bathroom. The best drain fly killers, gels and treatments for UK homes in 2026.',
   datePublished: '2026-03-31', dateModified: '2026-03-31',
   author: { '@type': 'Organization', name: 'PestPro Index', url: 'https://pestproindex.com' },
   publisher: { '@type': 'Organization', name: 'PestPro Index', url: 'https://pestproindex.com' },

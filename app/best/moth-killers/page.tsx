@@ -6,16 +6,16 @@ import FindProviderCTA from '@/components/FindProviderCTA';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Moth Killers UK 2026 — Top 5 Tested & Reviewed',
+    title: 'Best Moth Killers UK 2026 — Top 5',
     description:
-      'The best moth killers for UK homes in 2026. Hanging killers, pheromone traps, carpet sprays and sachets reviewed with honest pros, cons, and buying advice from pest control experts.',
+      'The best moth killers for UK homes in 2026. Hanging killers, pheromone traps, carpet sprays and sachets compared, with pros, cons and buying advice.',
     alternates: {
       canonical: 'https://pestproindex.com/best/moth-killers',
     },
     openGraph: {
-      title: 'Best Moth Killers UK 2026 — Top 5 Tested & Reviewed',
+      title: 'Best Moth Killers UK 2026 — Top 5',
       description:
-        'The best moth killers for UK homes in 2026. Hanging killers, pheromone traps, carpet sprays and sachets reviewed with honest pros, cons, and buying advice from pest control experts.',
+        'The best moth killers for UK homes in 2026. Hanging killers, pheromone traps, carpet sprays and sachets compared, with pros, cons and buying advice.',
       url: 'https://pestproindex.com/best/moth-killers',
       type: 'article',
       siteName: 'PestPro Index',
@@ -26,9 +26,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Best Moth Killers UK 2026 — Top 5 Tested & Reviewed',
+  headline: 'Best Moth Killers UK 2026 — Top 5',
   description:
-    'The best moth killers for UK homes in 2026. Hanging killers, pheromone traps, carpet sprays and sachets reviewed with honest pros, cons, and buying advice from pest control experts.',
+    'The best moth killers for UK homes in 2026. Hanging killers, pheromone traps, carpet sprays and sachets compared, with pros, cons and buying advice.',
   datePublished: '2026-03-17',
   dateModified: '2026-03-17',
   author: {

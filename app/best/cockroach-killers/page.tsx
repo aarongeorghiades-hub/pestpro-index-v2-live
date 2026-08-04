@@ -7,16 +7,16 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Cockroach Killer Products UK 2026: Gels, Sprays & Traps Reviewed',
+    title: 'Best Cockroach Killer Products UK 2026: Gels, Sprays & Traps',
     description:
-      'The best cockroach killer products available in the UK for 2026. Gel baits, sprays, powders and monitoring traps reviewed with honest pros, cons, and expert buying guidance.',
+      'The best cockroach killer products available in the UK for 2026. Gel baits, sprays, powders and monitoring traps compared, with pros, cons and buying advice.',
     alternates: {
       canonical: 'https://pestproindex.com/best/cockroach-killers',
     },
     openGraph: {
-      title: 'Best Cockroach Killer Products UK 2026: Gels, Sprays & Traps Reviewed',
+      title: 'Best Cockroach Killer Products UK 2026: Gels, Sprays & Traps',
       description:
-        'The best cockroach killer products available in the UK for 2026. Gel baits, sprays, powders and monitoring traps reviewed with honest pros, cons, and expert buying guidance.',
+        'The best cockroach killer products available in the UK for 2026. Gel baits, sprays, powders and monitoring traps compared, with pros, cons and buying advice.',
       url: 'https://pestproindex.com/best/cockroach-killers',
       type: 'article',
       siteName: 'PestPro Index',
@@ -27,9 +27,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Best Cockroach Killer Products UK 2026: Gels, Sprays & Traps Reviewed',
+  headline: 'Best Cockroach Killer Products UK 2026: Gels, Sprays & Traps',
   description:
-    'The best cockroach killer products available in the UK for 2026. Gel baits, sprays, powders and monitoring traps reviewed with honest pros, cons, and expert buying guidance.',
+    'The best cockroach killer products available in the UK for 2026. Gel baits, sprays, powders and monitoring traps compared, with pros, cons and buying advice.',
   datePublished: '2026-03-16',
   dateModified: '2026-03-16',
   author: {

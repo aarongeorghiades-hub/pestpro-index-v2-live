@@ -7,16 +7,16 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Commercial Fly Killers UK 2026 | Restaurant & Kitchen Units Reviewed',
+    title: 'Best Commercial Fly Killers UK 2026 | Restaurant & Kitchen Units',
     description:
-      'Expert reviews of commercial electric fly killers for UK restaurants, kitchens, and food businesses. UV zappers, glue board units, and LED models compared.',
+      'Our pick of commercial electric fly killers for UK restaurants, kitchens, and food businesses. UV zappers, glue board units, and LED models compared.',
     alternates: {
       canonical: 'https://pestproindex.com/best/commercial-fly-killers',
     },
     openGraph: {
-      title: 'Best Commercial Fly Killers UK 2026 | Restaurant & Kitchen Units Reviewed',
+      title: 'Best Commercial Fly Killers UK 2026 | Restaurant & Kitchen Units',
       description:
-        'Expert reviews of commercial electric fly killers for UK restaurants, kitchens, and food businesses. UV zappers, glue board units, and LED models compared.',
+        'Our pick of commercial electric fly killers for UK restaurants, kitchens, and food businesses. UV zappers, glue board units, and LED models compared.',
       url: 'https://pestproindex.com/best/commercial-fly-killers',
       type: 'article',
       siteName: 'PestPro Index',
@@ -27,9 +27,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Best Commercial Fly Killers UK 2026 | Restaurant & Kitchen Units Reviewed',
+  headline: 'Best Commercial Fly Killers UK 2026 | Restaurant & Kitchen Units',
   description:
-    'Expert reviews of commercial electric fly killers for UK restaurants, kitchens, and food businesses. UV zappers, glue board units, and LED models compared.',
+    'Our pick of commercial electric fly killers for UK restaurants, kitchens, and food businesses. UV zappers, glue board units, and LED models compared.',
   datePublished: '2026-03-17',
   dateModified: '2026-03-17',
   author: {

@@ -7,16 +7,16 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Pigeon Spikes UK 2026: Tested & Recommended',
+    title: 'Best Pigeon Spikes UK 2026',
     description:
-      'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate, and adhesive options reviewed with installation advice.',
+      'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate, and adhesive options compared, with installation advice.',
     alternates: {
       canonical: 'https://pestproindex.com/best/pigeon-spikes',
     },
     openGraph: {
-      title: 'Best Pigeon Spikes UK 2026: Tested & Recommended',
+      title: 'Best Pigeon Spikes UK 2026',
       description:
-        'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate, and adhesive options reviewed with installation advice.',
+        'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate, and adhesive options compared, with installation advice.',
       url: 'https://pestproindex.com/best/pigeon-spikes',
       type: 'article',
       siteName: 'PestPro Index',
@@ -27,9 +27,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Best Pigeon Spikes UK 2026: Tested & Recommended',
+  headline: 'Best Pigeon Spikes UK 2026',
   description:
-    'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate, and adhesive options reviewed with installation advice.',
+    'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate, and adhesive options compared, with installation advice.',
   datePublished: '2026-03-31',
   dateModified: '2026-03-31',
   author: {

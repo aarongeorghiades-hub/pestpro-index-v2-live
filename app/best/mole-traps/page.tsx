@@ -7,16 +7,16 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Mole Traps UK 2026: Tested & Recommended',
+    title: 'Best Mole Traps UK 2026',
     description:
-      'Our pick of the best mole traps available in the UK for 2026. Duffus, scissor, tunnel, and humane options reviewed with buying advice and placement tips.',
+      'Our pick of the best mole traps available in the UK for 2026. Duffus, scissor, tunnel, and humane options compared, with buying advice and placement tips.',
     alternates: {
       canonical: 'https://pestproindex.com/best/mole-traps',
     },
     openGraph: {
-      title: 'Best Mole Traps UK 2026: Tested & Recommended',
+      title: 'Best Mole Traps UK 2026',
       description:
-        'Our pick of the best mole traps available in the UK for 2026. Duffus, scissor, tunnel, and humane options reviewed with buying advice and placement tips.',
+        'Our pick of the best mole traps available in the UK for 2026. Duffus, scissor, tunnel, and humane options compared, with buying advice and placement tips.',
       url: 'https://pestproindex.com/best/mole-traps',
       type: 'article',
       siteName: 'PestPro Index',
@@ -27,9 +27,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Best Mole Traps UK 2026: Tested & Recommended',
+  headline: 'Best Mole Traps UK 2026',
   description:
-    'Our pick of the best mole traps available in the UK for 2026. Duffus, scissor, tunnel, and humane options reviewed with buying advice and placement tips.',
+    'Our pick of the best mole traps available in the UK for 2026. Duffus, scissor, tunnel, and humane options compared, with buying advice and placement tips.',
   datePublished: '2026-03-31',
   dateModified: '2026-03-31',
   author: {

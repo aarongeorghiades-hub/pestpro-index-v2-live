@@ -9,14 +9,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Best Rat Poison for Gardens UK 2026 | Outdoor Rodenticides',
     description:
-      'Eliminate garden rats safely with the best outdoor rat poisons for UK gardens. Weather-proof bait stations and rodenticides reviewed.',
+      'Eliminate garden rats safely with the best outdoor rat poisons for UK gardens. Weather-proof bait stations and rodenticides.',
     alternates: {
       canonical: 'https://pestproindex.com/best/rat-poison-for-gardens',
     },
     openGraph: {
       title: 'Best Rat Poison for Gardens UK 2026 | Outdoor Rodenticides',
       description:
-        'Eliminate garden rats safely with the best outdoor rat poisons for UK gardens. Weather-proof bait stations and rodenticides reviewed.',
+        'Eliminate garden rats safely with the best outdoor rat poisons for UK gardens. Weather-proof bait stations and rodenticides.',
       url: 'https://pestproindex.com/best/rat-poison-for-gardens',
       type: 'article',
       siteName: 'PestPro Index',
@@ -29,7 +29,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Best Rat Poison for Gardens UK 2026 | Outdoor Rodenticides',
   description:
-    'Eliminate garden rats safely with the best outdoor rat poisons for UK gardens. Weather-proof bait stations and rodenticides reviewed.',
+    'Eliminate garden rats safely with the best outdoor rat poisons for UK gardens. Weather-proof bait stations and rodenticides.',
   datePublished: '2026-03-31',
   dateModified: '2026-03-31',
   author: {
