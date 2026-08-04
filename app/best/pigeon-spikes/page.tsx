@@ -143,7 +143,7 @@ const faqSchema = {
 export default function BestPigeonSpikesPage() {
   return (
     <GuideLayout
-      title="Best Pigeon Spikes UK 2026: Tested & Recommended"
+      title="Best Pigeon Spikes UK 2026"
       subtitle="Our pick of the most effective pigeon spikes and bird deterrent strips for UK homes and businesses"
       lastUpdated="March 2026"
       readingTime="8 min"

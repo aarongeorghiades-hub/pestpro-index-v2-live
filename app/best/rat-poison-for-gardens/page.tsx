@@ -143,7 +143,7 @@ export default function BestRatPoisonForGardensPage() {
   return (
     <GuideLayout
       title="Best Rat Poison for Gardens UK 2026"
-      subtitle="Outdoor rodenticides and weather-proof bait stations reviewed for safe, effective garden rat control"
+      subtitle="Outdoor rodenticides and weather-proof bait stations for safe, effective garden rat control"
       lastUpdated="March 2026"
       readingTime="9 min"
       breadcrumbParent={{ label: 'Best', href: '/best' }}

@@ -85,8 +85,8 @@ const tocItems = [
 export default function BestCockroachKillersPage() {
   return (
     <GuideLayout
-      title="Best Cockroach Killer Products UK 2026: Gels, Sprays & Traps Reviewed"
-      subtitle="Expert-reviewed cockroach control products for UK homes and businesses — from professional-grade gel baits to monitoring traps."
+      title="Best Cockroach Killer Products UK 2026: Gels, Sprays & Traps"
+      subtitle="Cockroach control products for UK homes and businesses, selected on published specifications and manufacturer information — from professional-grade gel baits to monitoring traps."
       lastUpdated="March 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: 'Best', href: '/best' }}

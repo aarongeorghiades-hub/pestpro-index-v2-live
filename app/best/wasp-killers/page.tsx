@@ -84,7 +84,7 @@ const tocItems = [
 export default function BestWaspKillersPage() {
   return (
     <GuideLayout
-      title="Best Wasp Killer Products UK 2026: Sprays, Powders & Traps Reviewed"
+      title="Best Wasp Killer Products UK 2026: Sprays, Powders & Traps"
       subtitle="Our pick of the most effective wasp control products available in the UK, from nest killer sprays to outdoor traps"
       lastUpdated="March 2026"
       readingTime="7 min"

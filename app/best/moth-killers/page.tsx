@@ -86,8 +86,8 @@ const tocItems = [
 export default function BestMothKillersPage() {
   return (
     <GuideLayout
-      title="Best Moth Killers UK 2026 — Top 5 Tested & Reviewed"
-      subtitle="Expert-reviewed moth killer products for UK homes — from hanging killers and pheromone traps to carpet sprays and storage sachets."
+      title="Best Moth Killers UK 2026 — Top 5"
+      subtitle="Moth killer products for UK homes, selected on published specifications and manufacturer information — from hanging killers and pheromone traps to carpet sprays and storage sachets."
       lastUpdated="March 2026"
       readingTime="12 min"
       breadcrumbParent={{ label: 'Best', href: '/best' }}

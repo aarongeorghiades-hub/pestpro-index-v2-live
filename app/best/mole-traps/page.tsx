@@ -142,7 +142,7 @@ const faqSchema = {
 export default function BestMoleTrapsPage() {
   return (
     <GuideLayout
-      title="Best Mole Traps UK 2026: Tested & Recommended"
+      title="Best Mole Traps UK 2026"
       subtitle="Our pick of the most effective mole traps for UK gardens, from professional-grade Duffus traps to humane live-catch options"
       lastUpdated="March 2026"
       readingTime="8 min"

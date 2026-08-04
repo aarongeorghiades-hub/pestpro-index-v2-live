@@ -129,7 +129,7 @@ export default function BestProfessionalBirdNettingKitsPage() {
   return (
     <GuideLayout
       title="Best Professional Bird Netting for Commercial Properties & Landlords (2026)"
-      subtitle="Professional bird netting for commercial properties, landlords and facilities managers. Large-scale pigeon and bird exclusion systems reviewed and compared."
+      subtitle="Professional bird netting for commercial properties, landlords and facilities managers. Large-scale pigeon and bird exclusion systems compared."
       lastUpdated="April 2026"
       readingTime="9 min"
       breadcrumbParent={{ label: 'Best', href: '/best' }}

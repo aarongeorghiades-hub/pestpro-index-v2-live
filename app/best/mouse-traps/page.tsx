@@ -87,7 +87,7 @@ const tocItems = [
 export default function BestMouseTrapsPage() {
   return (
     <GuideLayout
-      title="Best Mouse Traps UK 2026: Tested & Recommended"
+      title="Best Mouse Traps UK 2026"
       subtitle="Our pick of the most effective mouse traps available in the UK, from snap traps to humane live-catch options"
       lastUpdated="March 2026"
       readingTime="8 min"

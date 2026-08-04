@@ -89,8 +89,8 @@ const tocItems = [
 export default function BestCommercialBirdProofingPage() {
   return (
     <GuideLayout
-      title="Best Commercial Bird Proofing UK 2026: Netting, Spikes & Wire Systems Reviewed"
-      subtitle="Expert reviews of commercial bird proofing products for UK businesses — heavy-duty netting, stainless steel spikes, bird wire systems, optical gel, and solar panel mesh compared."
+      title="Best Commercial Bird Proofing UK 2026: Netting, Spikes & Wire Systems"
+      subtitle="Our pick of commercial bird proofing products for UK businesses — heavy-duty netting, stainless steel spikes, bird wire systems, optical gel, and solar panel mesh compared."
       lastUpdated="March 2026"
       readingTime="14 min"
       breadcrumbParent={{ label: 'Best', href: '/best' }}

@@ -87,8 +87,8 @@ const tocItems = [
 export default function BestCommercialFlyKillersPage() {
   return (
     <GuideLayout
-      title="Best Commercial Fly Killers UK 2026: Restaurant & Kitchen Units Reviewed"
-      subtitle="Expert reviews of commercial electric fly killers for UK restaurants, kitchens, and food businesses — UV zappers, glue board units, and LED models compared."
+      title="Best Commercial Fly Killers UK 2026: Restaurant & Kitchen Units"
+      subtitle="Our pick of commercial electric fly killers for UK restaurants, kitchens, and food businesses — UV zappers, glue board units, and LED models compared."
       lastUpdated="March 2026"
       readingTime="12 min"
       breadcrumbParent={{ label: 'Best', href: '/best' }}
