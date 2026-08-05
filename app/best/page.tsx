@@ -4,13 +4,13 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Best Pest Control Products UK 2026',
-  description: 'Expert-reviewed pest control products — sprays, traps, baits and professional equipment. Find the best products for every pest.',
+  description: 'Our pick of pest control products — sprays, traps, baits and professional equipment. Find the best products for every pest.',
   alternates: {
     canonical: 'https://pestproindex.com/best',
   },
   openGraph: {
     title: 'Best Pest Control Products UK 2026',
-    description: 'Expert-reviewed pest control products — sprays, traps, baits and professional equipment. Find the best products for every pest.',
+    description: 'Our pick of pest control products — sprays, traps, baits and professional equipment. Find the best products for every pest.',
     url: 'https://pestproindex.com/best',
     siteName: 'PestPro Index',
     locale: 'en_GB',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary',
     title: 'Best Pest Control Products UK 2026',
-    description: 'Expert-reviewed pest control products — sprays, traps, baits and professional equipment for every pest.',
+    description: 'Our pick of pest control products — sprays, traps, baits and professional equipment for every pest.',
   },
 };
 
@@ -33,11 +33,11 @@ const categories: { heading: string; items: Category[] }[] = [
   {
     heading: 'Rats & Mice',
     items: [
-      { slug: 'rat-traps', name: 'Best Rat Traps', description: 'Snap, electronic, humane and bait-station options tested and reviewed.' },
+      { slug: 'rat-traps', name: 'Best Rat Traps', description: 'Snap traps and bait stations for UK homes.' },
       { slug: 'rat-poison', name: 'Best Rat Poison', description: 'UK-legal rodenticides compared for domestic use.' },
       { slug: 'rat-bait-stations', name: 'Best Rat Bait Stations', description: 'Tamper-resistant stations for safe rat control.' },
       { slug: 'rat-poison-for-gardens', name: 'Best Garden Rat Poison', description: 'Outdoor-use rodenticides for gardens and outbuildings.' },
-      { slug: 'mouse-traps', name: 'Best Mouse Traps', description: 'Classic, humane and electronic mouse traps reviewed.' },
+      { slug: 'mouse-traps', name: 'Best Mouse Traps', description: 'Snap traps and humane live-catch traps.' },
       { slug: 'mouse-poison', name: 'Best Mouse Poison', description: 'Effective UK-available mouse rodenticides.' },
       { slug: 'mouse-bait-stations', name: 'Best Mouse Bait Stations', description: 'Child- and pet-safe mouse bait stations.' },
       { slug: 'mouse-repellent', name: 'Best Mouse Repellent', description: 'Repellent options to keep mice away from your home.' },
@@ -47,7 +47,7 @@ const categories: { heading: string; items: Category[] }[] = [
     heading: 'Insects',
     items: [
       { slug: 'ant-killers', name: 'Best Ant Killers', description: 'Sprays, powders and baits for UK ant species.' },
-      { slug: 'ant-gel-bait', name: 'Best Ant Gel Bait', description: 'Colony-eliminating gel baits reviewed.' },
+      { slug: 'ant-gel-bait', name: 'Best Ant Gel Bait', description: 'Colony-eliminating gel baits.' },
       { slug: 'cockroach-killers', name: 'Best Cockroach Killers', description: 'Effective treatments for German and Oriental cockroaches.' },
       { slug: 'cockroach-gel-bait', name: 'Best Cockroach Gel Bait', description: 'Professional-grade gel baits for cockroach control.' },
       { slug: 'wasp-killers', name: 'Best Wasp Killers', description: 'Sprays, foams and traps for wasp nests and individual wasps.' },
@@ -62,7 +62,7 @@ const categories: { heading: string; items: Category[] }[] = [
       { slug: 'carpet-beetle-treatments', name: 'Best Carpet Beetle Treatments', description: 'Sprays and powders for carpet beetle infestations.' },
       { slug: 'moth-killers', name: 'Best Moth Killers', description: 'Treatments for clothes, carpet and pantry moths.' },
       { slug: 'moth-traps', name: 'Best Moth Traps', description: 'Pheromone-based moth traps for monitoring and control.' },
-      { slug: 'bed-bug-treatments', name: 'Best Bed Bug Treatments', description: 'Complete bed bug treatment systems reviewed.' },
+      { slug: 'bed-bug-treatments', name: 'Best Bed Bug Treatments', description: 'Sprays, powders and mattress encasements.' },
       { slug: 'bed-bug-spray', name: 'Best Bed Bug Spray', description: 'UK-available insecticide sprays for bed bugs.' },
       { slug: 'bed-bug-mattress-encasement', name: 'Best Bed Bug Mattress Encasements', description: 'Certified encasements to trap and prevent bed bugs.' },
       { slug: 'spider-repellent', name: 'Best Spider Repellent', description: 'Natural and chemical spider deterrents compared.' },
@@ -71,10 +71,10 @@ const categories: { heading: string; items: Category[] }[] = [
   {
     heading: 'Wildlife & Birds',
     items: [
-      { slug: 'fox-deterrents', name: 'Best Fox Deterrents', description: 'Ultrasonic, chemical and physical fox deterrents tested.' },
+      { slug: 'fox-deterrents', name: 'Best Fox Deterrents', description: 'Ultrasonic, chemical and physical fox deterrents.' },
       { slug: 'cat-deterrents', name: 'Best Cat Deterrents', description: 'Humane sprinkler, ultrasonic and scent deterrents to keep cats off lawns and borders.' },
       { slug: 'squirrel-deterrents', name: 'Best Squirrel Deterrents', description: 'Stop squirrels accessing lofts, feeders and gardens.' },
-      { slug: 'mole-traps', name: 'Best Mole Traps', description: 'Professional scissor and tunnel mole traps reviewed.' },
+      { slug: 'mole-traps', name: 'Best Mole Traps', description: 'Push, tunnel and claw mole traps for UK gardens.' },
       { slug: 'bird-deterrents', name: 'Best Bird Deterrents', description: 'Spikes, nets, sonic and visual bird deterrents.' },
       { slug: 'pigeon-spikes', name: 'Best Pigeon Spikes', description: 'Stainless steel and plastic pigeon spikes compared.' },
     ],
@@ -82,7 +82,7 @@ const categories: { heading: string; items: Category[] }[] = [
   {
     heading: 'General & Preventative',
     items: [
-      { slug: 'ultrasonic-pest-repellers', name: 'Best Ultrasonic Pest Repellers', description: 'Do ultrasonic repellers work? Our tested picks.' },
+      { slug: 'ultrasonic-pest-repellers', name: 'Best Ultrasonic Pest Repellers', description: 'Do ultrasonic repellers work? Our picks and the evidence.' },
     ],
   },
   {
@@ -140,7 +140,7 @@ export default function BestProductsHubPage() {
             Best Pest Control Products
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-light mb-4 tracking-wide max-w-3xl mx-auto">
-            Expert-reviewed sprays, traps, baits and professional equipment — for every pest.
+            Sprays, traps, baits and professional equipment — for every pest.
           </p>
         </div>
       </section>
