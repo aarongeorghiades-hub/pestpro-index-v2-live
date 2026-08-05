@@ -173,7 +173,7 @@ export default function BestCommercialDehumidifiersPage() {
         Damp is the gateway pest problem. If you manage rental properties, HMOs, or commercial buildings in the UK, you already know that excess moisture leads to mould, structural decay, and tenant complaints. What many landlords overlook is that high humidity is also the single biggest driver of pest infestations in residential and commercial premises. Cockroaches, silverfish, mould mites, booklice, woodlice, and plaster beetles are all <strong>moisture-dependent pests</strong> that cannot survive or reproduce in dry conditions. A building with relative humidity consistently above 65% is not just a damp problem &mdash; it is a pest problem waiting to happen.
       </p>
       <p>
-        Investing in a high-capacity commercial dehumidifier is one of the most cost-effective decisions a landlord or property manager can make. A single unit can prevent thousands of pounds in damp remediation, mould removal, pest control callouts, and tenant void periods. For HMO landlords managing multi-occupancy properties with heavy moisture loads from cooking, showering, and laundry, a commercial-grade dehumidifier is not a luxury &mdash; it is essential equipment. In this guide, we review the five best high-capacity dehumidifiers available in the UK for landlords and property managers, focusing on extraction rate, running costs, remote monitoring capability, and long-term reliability for commercial use.
+        Investing in a high-capacity commercial dehumidifier is one of the most cost-effective decisions a landlord or property manager can make. A single unit can prevent thousands of pounds in damp remediation, mould removal, pest control callouts, and tenant void periods. For HMO landlords managing multi-occupancy properties with heavy moisture loads from cooking, showering, and laundry, a commercial-grade dehumidifier is not a luxury &mdash; it is essential equipment. In this guide, we cover the five best high-capacity dehumidifiers available in the UK for landlords and property managers, focusing on extraction rate, running costs, remote monitoring capability, and long-term reliability for commercial use.
       </p>
 
       <div className="not-prose">
@@ -189,7 +189,7 @@ export default function BestCommercialDehumidifiersPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Commercial Dehumidifiers at a Glance</h2>
       <p>
-        A quick comparison of our five recommended units. Each is suitable for landlord and property management use, but they differ in extraction rate, features, and price point. Full reviews follow below.
+        A quick comparison of our five recommended units. Each is suitable for landlord and property management use, but they differ in extraction rate, features, and price point. Full details follow below.
       </p>
       <table>
         <thead>
@@ -507,7 +507,7 @@ export default function BestCommercialDehumidifiersPage() {
 
       <h3>Continuous Drainage</h3>
       <p>
-        For landlord use, <strong>continuous drainage is essential</strong>. A dehumidifier that stops when its water tank is full is useless in an empty property where nobody is present to empty it. All five units reviewed here support continuous drainage via a rear hose connection. Route the hose to a floor drain, sink, or large container and the unit will run indefinitely without intervention. This is particularly important for basement and cellar installations where the dehumidifier may need to run 24/7 for weeks or months.
+        For landlord use, <strong>continuous drainage is essential</strong>. A dehumidifier that stops when its water tank is full is useless in an empty property where nobody is present to empty it. All five units on this page support continuous drainage via a rear hose connection. Route the hose to a floor drain, sink, or large container and the unit will run indefinitely without intervention. This is particularly important for basement and cellar installations where the dehumidifier may need to run 24/7 for weeks or months.
       </p>
 
       <h3>Coverage Area</h3>
@@ -522,7 +522,7 @@ export default function BestCommercialDehumidifiersPage() {
 
       <h3>Noise Level</h3>
       <p>
-        Noise matters in occupied properties. A unit running at 45dB+ in a bedroom will generate tenant complaints. The Meaco Arete Two at 38dB is the quietest unit reviewed here and is suitable for bedrooms. Industrial units like the electriQ ECD30 are louder and best suited for empty properties, basements, or during turnaround periods between tenancies.
+        Noise matters in occupied properties. A unit running at 45dB+ in a bedroom will generate tenant complaints. The Meaco Arete Two at 38dB is the quietest unit on this page and is suitable for bedrooms. Industrial units like the electriQ ECD30 are louder and best suited for empty properties, basements, or during turnaround periods between tenancies.
       </p>
 
       <h3>Warranty</h3>

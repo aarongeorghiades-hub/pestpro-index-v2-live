@@ -122,7 +122,7 @@ export default function BestCommercialBirdProofingPage() {
       {/* Back to Commercial Hub */}
       <div className="not-prose my-8 p-6 bg-purple-50 border border-purple-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Part of our Commercial Pest Control series</p>
-        <p className="text-gray-700 mb-3">This review is one of our commercial pest control equipment guides. Visit the hub for all commercial guides, sector-specific compliance resources, and more reviews.</p>
+        <p className="text-gray-700 mb-3">This is one of our commercial pest control equipment guides. Visit the hub for all commercial guides, sector-specific compliance resources, and more product guides.</p>
         <a
           href="/guides/commercial-pest-control"
           className="inline-block px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm"
@@ -146,7 +146,7 @@ export default function BestCommercialBirdProofingPage() {
         Beyond the direct physical damage, bird infestations carry significant health risks. Pigeon droppings harbour <em>Chlamydia psittaci</em> (psittacosis), <em>Cryptococcus neoformans</em> (cryptococcosis), and <em>Histoplasma capsulatum</em> (histoplasmosis) &mdash; respiratory pathogens that pose a genuine occupational health risk to employees who work in or near areas with accumulated guano. Under the Health and Safety at Work Act 1974 and the Control of Substances Hazardous to Health (COSHH) Regulations 2002, employers have a legal duty to assess and control these biological hazards. The cost of professional guano removal from a commercial roof or loading bay typically runs into thousands of pounds, making proactive bird proofing the far more cost-effective strategy.
       </p>
       <p>
-        The products reviewed on this page represent the main categories of commercial bird proofing equipment available to UK businesses: heavy-duty netting for complete area exclusion, stainless steel spike systems for ledge and sill protection, post-and-wire deterrent systems for architectural applications, optical gel for discreet placement on historic or listed buildings, solar panel mesh kits for an increasingly common bird harbourage issue, and netting repair components for maintaining existing installations. We have also included an ultrasonic deterrent for supplementary coverage. Each product is described by its suitability for different commercial environments, durability under UK weather conditions, compliance with the Wildlife and Countryside Act 1981, and overall value for money. For residential bird deterrent options, see our companion review: <Link href="/best/bird-deterrents" className="text-blue-600 hover:text-blue-800 underline">Best Bird Deterrents UK 2026</Link>. For a broader guide to pigeon control methods, read our <Link href="/guides/pigeon-control" className="text-blue-600 hover:text-blue-800 underline">Pigeon Control: Complete UK Guide</Link>.
+        The products on this page represent the main categories of commercial bird proofing equipment available to UK businesses: heavy-duty netting for complete area exclusion, stainless steel spike systems for ledge and sill protection, post-and-wire deterrent systems for architectural applications, optical gel for discreet placement on historic or listed buildings, solar panel mesh kits for an increasingly common bird harbourage issue, and netting repair components for maintaining existing installations. We have also included an ultrasonic deterrent for supplementary coverage. Each product is described by its suitability for different commercial environments, durability under UK weather conditions, compliance with the Wildlife and Countryside Act 1981, and overall value for money. For residential bird deterrent options, see our companion guide: <Link href="/best/bird-deterrents" className="text-blue-600 hover:text-blue-800 underline">Best Bird Deterrents UK 2026</Link>. For a broader guide to pigeon control methods, read our <Link href="/guides/pigeon-control" className="text-blue-600 hover:text-blue-800 underline">Pigeon Control: Complete UK Guide</Link>.
       </p>
 
       <div className="not-prose">
@@ -158,7 +158,7 @@ export default function BestCommercialBirdProofingPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Commercial Bird Proofing at a Glance</h2>
       <p>
-        Below is a quick comparison of our seven recommended commercial bird proofing products. Each serves a different purpose, so the best option for your premises depends on the species causing the problem, the areas affected, and whether you need total exclusion or visual deterrence. Full reviews of every product follow below.
+        Below is a quick comparison of our seven recommended commercial bird proofing products. Each serves a different purpose, so the best option for your premises depends on the species causing the problem, the areas affected, and whether you need total exclusion or visual deterrence. Full details of every product follow below.
       </p>
       <table>
         <thead>
@@ -501,7 +501,7 @@ export default function BestCommercialBirdProofingPage() {
       </div>
 
       <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        <p className="text-gray-700 mb-3">Looking for residential bird deterrent options? Read our companion review.</p>
+        <p className="text-gray-700 mb-3">Looking for residential bird deterrent options? Read our companion guide.</p>
         <a
           href="/best/bird-deterrents"
           className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"

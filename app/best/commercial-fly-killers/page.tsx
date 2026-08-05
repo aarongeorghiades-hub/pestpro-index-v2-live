@@ -128,7 +128,7 @@ export default function BestCommercialFlyKillersPage() {
       {/* Back to Commercial Hub */}
       <div className="not-prose my-8 p-6 bg-purple-50 border border-purple-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Part of our Commercial Pest Control series</p>
-        <p className="text-gray-700 mb-3">This review is one of our commercial pest control equipment guides. Visit the hub for all commercial guides, sector-specific compliance resources, and more reviews.</p>
+        <p className="text-gray-700 mb-3">This is one of our commercial pest control equipment guides. Visit the hub for all commercial guides, sector-specific compliance resources, and more product guides.</p>
         <a
           href="/guides/commercial-pest-control"
           className="inline-block px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm"
@@ -157,14 +157,14 @@ export default function BestCommercialFlyKillersPage() {
 
       <div className="not-prose">
         <Callout type="warning">
-          <p>Most products reviewed on this page are zapper-type (electrocution grid) units suitable for back-of-house areas, corridors, store rooms, bin areas, and non-food-prep zones. We have also included one professional glue board unit (the Eazyzap) for food preparation and storage areas where zapper units are prohibited. Scroll down for full details on which type of unit you need for each area of your premises.</p>
+          <p>Most products on this page are zapper-type (electrocution grid) units suitable for back-of-house areas, corridors, store rooms, bin areas, and non-food-prep zones. We have also included one professional glue board unit (the Eazyzap) for food preparation and storage areas where zapper units are prohibited. Scroll down for full details on which type of unit you need for each area of your premises.</p>
         </Callout>
       </div>
 
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Commercial Fly Killers at a Glance</h2>
       <p>
-        Below is a quick comparison of our four recommended commercial fly killer units. Each has been selected for a different use case and budget, so the best option for your business depends on your premises size, where the unit will be installed, and whether you need a zapper or a capture-style unit. We provide full reviews of every product further down the page.
+        Below is a quick comparison of our four recommended commercial fly killer units. Each has been selected for a different use case and budget, so the best option for your business depends on your premises size, where the unit will be installed, and whether you need a zapper or a capture-style unit. We cover every product in full further down the page.
       </p>
       <table>
         <thead>
@@ -337,7 +337,7 @@ export default function BestCommercialFlyKillersPage() {
         <strong>Pros:</strong>
       </p>
       <ul>
-        <li>40W UV output provides the highest coverage area of any unit in this review &mdash; up to 100 square metres</li>
+        <li>40W UV output provides the highest coverage area of any unit on this page &mdash; up to 100 square metres</li>
         <li>Remote control allows convenient operation from ground level</li>
         <li>Open-top design maximises UV light dispersion for wider room coverage</li>
         <li>Fireproof ABS construction meets commercial fire safety requirements</li>
@@ -424,12 +424,12 @@ export default function BestCommercialFlyKillersPage() {
 
       <div className="not-prose">
         <Callout type="info">
-          <p>This is the only <strong>glue board</strong> unit in this review. Glue board fly killers capture insects intact on adhesive boards &mdash; no electrocution, no fragmentation, no bacterial dispersal. This makes them the <strong>only type of fly killer that should be used in food preparation and food storage areas</strong>. If your EHO inspection requires a fly killer in the kitchen, this is what you need.</p>
+          <p>This is the only <strong>glue board</strong> unit on this page. Glue board fly killers capture insects intact on adhesive boards &mdash; no electrocution, no fragmentation, no bacterial dispersal. This makes them the <strong>only type of fly killer that should be used in food preparation and food storage areas</strong>. If your EHO inspection requires a fly killer in the kitchen, this is what you need.</p>
         </Callout>
       </div>
 
       <p>
-        The Eazyzap 13W Professional Glue Board Fly Killer is a purpose-built commercial unit designed specifically for the food preparation and food service environments where zapper-type units are prohibited. While the four zapper units reviewed above are excellent for back-of-house corridors, bin stores, and changing rooms, they must <strong>never</strong> be installed in food preparation areas, food storage rooms, or customer-facing dining spaces &mdash; the electrocution grid causes insect fragments and bacteria to be expelled into the surrounding air, creating a contamination risk that will fail an EHO inspection. The Eazyzap solves this problem with a professional-grade glue board mechanism that captures flying insects <strong>intact</strong> on a replaceable adhesive board, with zero fragmentation and zero bacterial dispersal.
+        The Eazyzap 13W Professional Glue Board Fly Killer is a purpose-built commercial unit designed specifically for the food preparation and food service environments where zapper-type units are prohibited. While the four zapper units above are excellent for back-of-house corridors, bin stores, and changing rooms, they must <strong>never</strong> be installed in food preparation areas, food storage rooms, or customer-facing dining spaces &mdash; the electrocution grid causes insect fragments and bacteria to be expelled into the surrounding air, creating a contamination risk that will fail an EHO inspection. The Eazyzap solves this problem with a professional-grade glue board mechanism that captures flying insects <strong>intact</strong> on a replaceable adhesive board, with zero fragmentation and zero bacterial dispersal.
       </p>
       <p>
         The unit uses <strong>13W of infrared lighting</strong> to attract a wide range of flying insects including houseflies, fruit flies, drain flies, and moths. Infrared light is effective as a fly attractant while producing less visible light than traditional UV tubes, making the unit discreet when installed in customer-facing areas such as restaurant dining rooms, hotel breakfast rooms, and caf&eacute; counters. The <strong>50 square metre coverage area</strong> is sufficient for most commercial kitchens, food preparation areas, and dining rooms, and multiple units can be deployed in larger premises to provide overlapping coverage.
@@ -438,7 +438,7 @@ export default function BestCommercialFlyKillersPage() {
         The <strong>black metal construction</strong> gives the unit a professional, unobtrusive appearance that blends into commercial kitchen and restaurant environments without drawing customer attention. It can be wall-mounted or placed on a shelf, providing flexibility for different kitchen layouts. The glue boards are replaceable and should be changed at least monthly &mdash; or more frequently in high-activity environments during summer months &mdash; to maintain capture effectiveness. Replacement boards are widely available from catering and pest control suppliers.
       </p>
       <p>
-        The Eazyzap sits above the zapper units in this review on build and specification. This is typical of professional glue board units &mdash; the technology, food-safe design, and commercial build quality command a premium. However, for any food business that needs a fly killer in or near the kitchen, this is not optional expenditure: it is the minimum compliance standard that EHOs expect, and the cost of the unit is trivial compared to the cost of a failed food hygiene inspection (reduced rating, lost revenue, potential prosecution).
+        The Eazyzap sits above the zapper units on this page on build and specification. This is typical of professional glue board units &mdash; the technology, food-safe design, and commercial build quality command a premium. However, for any food business that needs a fly killer in or near the kitchen, this is not optional expenditure: it is the minimum compliance standard that EHOs expect, and the cost of the unit is trivial compared to the cost of a failed food hygiene inspection (reduced rating, lost revenue, potential prosecution).
       </p>
       <p>
         <strong>Pros:</strong>
@@ -459,7 +459,7 @@ export default function BestCommercialFlyKillersPage() {
         <li>Replacement glue boards must be sourced from specialist suppliers</li>
       </ul>
       <p>
-        <strong>Verdict:</strong> The Eazyzap 13W is the professional glue board unit that every restaurant, caf&eacute;, and food business needs in the kitchen. It is the only unit in this review that is compliant for food preparation areas, and it is the product that EHOs expect to see when they walk into your kitchen. If you serve food, you need this alongside the zapper units for your back-of-house areas.
+        <strong>Verdict:</strong> The Eazyzap 13W is the professional glue board unit that every restaurant, caf&eacute;, and food business needs in the kitchen. It is the only unit on this page that is compliant for food preparation areas, and it is the product that EHOs expect to see when they walk into your kitchen. If you serve food, you need this alongside the zapper units for your back-of-house areas.
       </p>
 
       {/* Multi-Buy Messaging */}
@@ -491,7 +491,7 @@ export default function BestCommercialFlyKillersPage() {
       </div>
 
       <p>
-        Four of the five products reviewed on this page are zapper-type units, which means they are suitable for back-of-house and non-food areas only. The fifth product &mdash; the Eazyzap glue board unit &mdash; is a professional-grade glue board fly killer that is compliant for food preparation areas. For additional professional-grade glue board units from manufacturers such as Insect-O-Cutor, PestWest, and Brandenburg, we recommend contacting a commercial pest control provider through our directory. These units are typically supplied, installed, and maintained as part of a commercial pest control contract, which also provides the documentation and service records that EHOs expect to see during inspections.
+        Four of the five products on this page are zapper-type units, which means they are suitable for back-of-house and non-food areas only. The fifth product &mdash; the Eazyzap glue board unit &mdash; is a professional-grade glue board fly killer that is compliant for food preparation areas. For additional professional-grade glue board units from manufacturers such as Insect-O-Cutor, PestWest, and Brandenburg, we recommend contacting a commercial pest control provider through our directory. These units are typically supplied, installed, and maintained as part of a commercial pest control contract, which also provides the documentation and service records that EHOs expect to see during inspections.
       </p>
 
       <h3>Positioning Guidelines</h3>
@@ -519,14 +519,14 @@ export default function BestCommercialFlyKillersPage() {
 
       <div className="not-prose">
         <Callout type="info">
-          <p>This review now includes both zapper-type units for back-of-house areas and the Eazyzap professional glue board unit for food preparation and storage areas. For additional professional-grade glue board options from Insect-O-Cutor, PestWest, and Brandenburg, contact a commercial pest control provider through our directory. These premium units are typically supplied, installed, and maintained as part of a managed pest control contract.</p>
+          <p>This page now includes both zapper-type units for back-of-house areas and the Eazyzap professional glue board unit for food preparation and storage areas. For additional professional-grade glue board options from Insect-O-Cutor, PestWest, and Brandenburg, contact a commercial pest control provider through our directory. These premium units are typically supplied, installed, and maintained as part of a managed pest control contract.</p>
         </Callout>
       </div>
 
       {/* When to Contact a Commercial Pest Controller */}
       <h2 id="when-to-call">When to Contact a Commercial Pest Controller</h2>
       <p>
-        While the electric fly killers reviewed on this page can form a useful part of your overall pest management strategy, most UK food businesses will benefit from working with a professional commercial pest control provider rather than relying entirely on self-purchased equipment. Commercial pest controllers offer several critical advantages that go beyond simply supplying hardware: they conduct a full site survey to identify risk areas, recommend the correct type and number of units for your specific premises, install equipment in compliance with BPCA and CIEH guidance, supply and maintain professional-grade glue board units that are not available through consumer retail channels, and provide the documented service reports and pest management records that Environmental Health Officers expect to see during routine inspections.
+        While the electric fly killers on this page can form a useful part of your overall pest management strategy, most UK food businesses will benefit from working with a professional commercial pest control provider rather than relying entirely on self-purchased equipment. Commercial pest controllers offer several critical advantages that go beyond simply supplying hardware: they conduct a full site survey to identify risk areas, recommend the correct type and number of units for your specific premises, install equipment in compliance with BPCA and CIEH guidance, supply and maintain professional-grade glue board units that are not available through consumer retail channels, and provide the documented service reports and pest management records that Environmental Health Officers expect to see during routine inspections.
       </p>
       <p>
         You should contact a commercial pest controller if you operate any food business that is subject to EHO inspection, if you need glue board units for food preparation or storage areas, if you are preparing for a food hygiene rating inspection and want to ensure your pest management programme is fully compliant, if you have an existing fly problem that self-purchased units have not resolved, or if your insurer requires evidence of a professional pest control contract. A professional service contract typically includes quarterly or monthly site visits, UV bulb and glue board replacement, catch trend analysis, and a comprehensive pest management report that demonstrates your commitment to food safety compliance. For a detailed overview of pest management obligations for restaurants and food businesses, read our guide: <Link href="/guides/restaurant-pest-control" className="text-blue-600 hover:text-blue-800 underline">Restaurant Pest Control: Complete UK Guide</Link>.

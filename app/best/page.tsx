@@ -149,7 +149,7 @@ export default function BestProductsHubPage() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <p className="text-lg text-gray-700 leading-relaxed">
-            PestPro Index reviews the pest control products available to UK homeowners, landlords and professionals. Each guide covers what&apos;s available, what works, safety considerations, and our specific recommendations — whether you&apos;re dealing with a one-off mouse problem or managing a commercial pest programme. Browse by pest type or category below.
+            PestPro Index covers the pest control products available to UK homeowners, landlords and professionals. Each guide covers what&apos;s available, what works, safety considerations, and our specific recommendations — whether you&apos;re dealing with a one-off mouse problem or managing a commercial pest programme. Browse by pest type or category below.
           </p>
         </div>
       </section>
@@ -166,7 +166,7 @@ export default function BestProductsHubPage() {
                     <h3 className="text-lg font-bold text-gray-900 mb-2">{item.name}</h3>
                     <p className="text-gray-600 text-sm">{item.description}</p>
                     <div className="mt-4 flex items-center text-blue-600 font-semibold text-sm">
-                      Read Review →
+                      Read Guide →
                     </div>
                   </div>
                 </Link>

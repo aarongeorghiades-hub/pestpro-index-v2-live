@@ -182,7 +182,7 @@ export default function GuideLayout({
                         <span className="text-xs font-semibold text-amber-600 uppercase tracking-wider">Review</span>
                       </div>
                       <h3 className="font-bold text-gray-900 group-hover:text-amber-600 transition-colors">{product.title}</h3>
-                      <span className="inline-block mt-3 text-sm text-amber-600 font-medium group-hover:translate-x-1 transition-transform">Read review &rarr;</span>
+                      <span className="inline-block mt-3 text-sm text-amber-600 font-medium group-hover:translate-x-1 transition-transform">Read guide &rarr;</span>
                     </Link>
                   ))}
                 </div>

@@ -188,7 +188,7 @@ export default function AwaabsLawDampMouldEquipmentPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Damp &amp; Mould Equipment at a Glance</h2>
       <p>
-        A quick comparison of our eight recommended products across PIV units, dehumidifiers and compliance tools. Full reviews follow below.
+        A quick comparison of our eight recommended products across PIV units, dehumidifiers and compliance tools. Full details follow below.
       </p>
       <table>
         <thead>
@@ -392,7 +392,7 @@ export default function AwaabsLawDampMouldEquipmentPage() {
         The Vent-Axia PureAir is the premium PIV option for landlords who want the best filtration available and a compliance documentation tool included in the box. Vent-Axia is one of the UK&apos;s most established ventilation manufacturers, and the PureAir unit features <strong>F7-grade filtration</strong> &mdash; significantly finer than the G4 filters used in most PIV units. F7 filters capture fine particulates, pollen, and airborne allergens, making this unit particularly suitable for properties where tenants have respiratory conditions or allergies that are being exacerbated by mould spore exposure.
       </p>
       <p>
-        The <strong>500W heater</strong> is the most powerful in this review, ensuring comfortable air delivery even in the coldest UK winter conditions. The bundle includes a <strong>digital hygrometer</strong>, which is essential for documenting humidity levels before and after PIV installation &mdash; this is exactly the kind of evidence you need to demonstrate compliance if a complaint is escalated to the Housing Ombudsman or local authority. Smart Sense control automatically adjusts ventilation based on ambient conditions, and the unit is suitable for properties up to <strong>150m&sup2;</strong>. This is the PIV to choose when you need both the best air quality and built-in compliance evidence.
+        The <strong>500W heater</strong> is the most powerful on this page, ensuring comfortable air delivery even in the coldest UK winter conditions. The bundle includes a <strong>digital hygrometer</strong>, which is essential for documenting humidity levels before and after PIV installation &mdash; this is exactly the kind of evidence you need to demonstrate compliance if a complaint is escalated to the Housing Ombudsman or local authority. Smart Sense control automatically adjusts ventilation based on ambient conditions, and the unit is suitable for properties up to <strong>150m&sup2;</strong>. This is the PIV to choose when you need both the best air quality and built-in compliance evidence.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>

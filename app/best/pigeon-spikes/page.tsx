@@ -196,7 +196,7 @@ export default function BestPigeonSpikesPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Pigeon Spikes at a Glance</h2>
       <p>
-        Here is a quick comparison of our top picks. The best choice depends on your surface type, budget, and the size of birds you need to deter. Full reviews follow below.
+        Here is a quick comparison of our top picks. The best choice depends on your surface type, budget, and the size of birds you need to deter. Full details follow below.
       </p>
       <table>
         <thead>

@@ -345,7 +345,7 @@ export default function GuidesIndexPage() {
                     </h3>
                     <p className="text-gray-600 text-sm mb-3">{review.description}</p>
                     <span className="text-sm text-amber-600 font-medium group-hover:translate-x-1 inline-block transition-transform">
-                      Read review &rarr;
+                      Read guide &rarr;
                     </span>
                   </div>
                 </div>

@@ -197,7 +197,7 @@ export default function BestMoleTrapsPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Mole Traps at a Glance</h2>
       <p>
-        Here is a quick comparison of our top picks. Each trap suits a different situation, so the best choice depends on your garden and experience level. Full reviews follow below the table.
+        Here is a quick comparison of our top picks. Each trap suits a different situation, so the best choice depends on your garden and experience level. Full details follow below the table.
       </p>
       <table>
         <thead>

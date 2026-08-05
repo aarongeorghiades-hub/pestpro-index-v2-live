@@ -83,7 +83,7 @@ export default function ProductsPage() {
               </div>
               <div>
                 <h3 className="font-bold text-lg text-gray-900 mb-2">Regular Updates</h3>
-                <p className="text-gray-600">Always current. We review the marketplace regularly to make sure you're seeing the most effective products.</p>
+                <p className="text-gray-600">Always current. We check the marketplace regularly to make sure you're seeing the most effective products.</p>
               </div>
             </div>
             
