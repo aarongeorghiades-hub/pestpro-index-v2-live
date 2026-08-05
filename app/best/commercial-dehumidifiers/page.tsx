@@ -82,7 +82,7 @@ const faqSchema = {
       name: 'Can I leave a commercial dehumidifier running unattended in a rental property?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, all five dehumidifiers reviewed here are designed for continuous, unattended operation. Models with continuous drainage allow you to connect a hose directly to a drain or sink, eliminating the need to empty the water tank. Units with built-in humidistats will cycle on and off automatically to maintain your target humidity level. For landlords managing remote properties, Wi-Fi-enabled models like the VonHaus 30L and Meaco Arete Two 20L allow you to monitor humidity and control the unit from your phone.',
+        text: 'Yes, all five dehumidifiers on this page are designed for continuous, unattended operation. Models with continuous drainage allow you to connect a hose directly to a drain or sink, eliminating the need to empty the water tank. Units with built-in humidistats will cycle on and off automatically to maintain your target humidity level. For landlords managing remote properties, Wi-Fi-enabled models like the VonHaus 30L and Meaco Arete Two 20L allow you to monitor humidity and control the unit from your phone.',
       },
     },
     {
@@ -98,7 +98,7 @@ const faqSchema = {
       name: 'Does a compressor dehumidifier work in a cold garage or basement?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Standard compressor dehumidifiers lose efficiency below 15°C and may stop working entirely below 5°C because the evaporator coils ice up. For cold, unheated spaces such as garages, basements, and outbuildings, you need a desiccant dehumidifier which uses a chemical absorbent rather than refrigeration and works effectively down to 1°C. None of the compressor models reviewed here are suitable for consistently sub-10°C environments.',
+        text: 'Standard compressor dehumidifiers lose efficiency below 15°C and may stop working entirely below 5°C because the evaporator coils ice up. For cold, unheated spaces such as garages, basements, and outbuildings, you need a desiccant dehumidifier which uses a chemical absorbent rather than refrigeration and works effectively down to 1°C. None of the compressor models on this page are suitable for consistently sub-10°C environments.',
       },
     },
     {
@@ -566,7 +566,7 @@ export default function BestCommercialDehumidifiersPage() {
 
       <h3>Can I leave a commercial dehumidifier running unattended in a rental property?</h3>
       <p>
-        Yes, all five dehumidifiers reviewed here are designed for continuous, unattended operation. Models with continuous drainage allow you to connect a hose directly to a drain or sink, eliminating the need to empty the water tank. Units with built-in humidistats will cycle on and off automatically to maintain your target humidity level. For landlords managing remote properties, Wi-Fi-enabled models like the VonHaus 30L and Meaco Arete Two 20L allow you to monitor humidity and control the unit from your phone.
+        Yes, all five dehumidifiers on this page are designed for continuous, unattended operation. Models with continuous drainage allow you to connect a hose directly to a drain or sink, eliminating the need to empty the water tank. Units with built-in humidistats will cycle on and off automatically to maintain your target humidity level. For landlords managing remote properties, Wi-Fi-enabled models like the VonHaus 30L and Meaco Arete Two 20L allow you to monitor humidity and control the unit from your phone.
       </p>
 
       <h3>What humidity level should I target in a rental property?</h3>
@@ -576,7 +576,7 @@ export default function BestCommercialDehumidifiersPage() {
 
       <h3>Does a compressor dehumidifier work in a cold garage or basement?</h3>
       <p>
-        Standard compressor dehumidifiers lose efficiency below 15&deg;C and may stop working entirely below 5&deg;C because the evaporator coils ice up. For cold, unheated spaces such as garages, outbuildings, and unheated basements, you need a <strong>desiccant dehumidifier</strong> which uses a chemical absorbent rather than refrigeration and works effectively down to 1&deg;C. None of the compressor models reviewed here are suitable for consistently sub-10&deg;C environments.
+        Standard compressor dehumidifiers lose efficiency below 15&deg;C and may stop working entirely below 5&deg;C because the evaporator coils ice up. For cold, unheated spaces such as garages, outbuildings, and unheated basements, you need a <strong>desiccant dehumidifier</strong> which uses a chemical absorbent rather than refrigeration and works effectively down to 1&deg;C. None of the compressor models on this page are suitable for consistently sub-10&deg;C environments.
       </p>
 
       <h3>How much does it cost to run a commercial dehumidifier?</h3>
