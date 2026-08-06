@@ -189,7 +189,7 @@ export default function OfficePestControlPage() {
       {/* Back to Commercial Hub */}
       <div className="not-prose my-8 p-6 bg-purple-50 border border-purple-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Part of our Commercial Pest Control series</p>
-        <p className="text-gray-700 mb-3">This guide is one of our sector-specific commercial pest control resources. Visit the hub for all commercial guides, equipment reviews, and compliance information.</p>
+        <p className="text-gray-700 mb-3">This guide is one of our sector-specific commercial pest control resources. Visit the hub for all commercial guides, equipment recommendations, and compliance information.</p>
         <a
           href="/guides/commercial-pest-control"
           className="inline-block px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm"
@@ -744,7 +744,7 @@ export default function OfficePestControlPage() {
       </p>
 
       <p>
-        For further reading, see our guides on <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">how to get rid of cockroaches</Link>, <Link href="/guides/how-to-get-rid-of-ants" className="text-blue-600 hover:underline font-medium">how to get rid of ants</Link>, and <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">pest control costs UK 2026</Link>. For commercial equipment, browse our <Link href="/best/commercial-fly-killers" className="text-blue-600 hover:underline font-medium">best commercial fly killers</Link>, <Link href="/best/commercial-rodent-bait-stations" className="text-blue-600 hover:underline font-medium">best commercial rodent bait stations</Link>, and <Link href="/best/commercial-insect-monitors" className="text-blue-600 hover:underline font-medium">best commercial insect monitors</Link> reviews.
+        For further reading, see our guides on <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">how to get rid of cockroaches</Link>, <Link href="/guides/how-to-get-rid-of-ants" className="text-blue-600 hover:underline font-medium">how to get rid of ants</Link>, and <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">pest control costs UK 2026</Link>. For commercial equipment, browse our <Link href="/best/commercial-fly-killers" className="text-blue-600 hover:underline font-medium">best commercial fly killers</Link>, <Link href="/best/commercial-rodent-bait-stations" className="text-blue-600 hover:underline font-medium">best commercial rodent bait stations</Link>, and <Link href="/best/commercial-insect-monitors" className="text-blue-600 hover:underline font-medium">best commercial insect monitors</Link> guides.
       </p>
     </GuideLayout>
   );

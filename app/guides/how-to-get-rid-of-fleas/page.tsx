@@ -410,7 +410,7 @@ export default function HowToGetRidOfFleasPage() {
       </p>
 
       <p>
-        For a detailed comparison of the most effective household flea products available in the UK, see our <Link href="/best/flea-treatments" className="text-blue-600 hover:underline font-medium">Best Flea Treatments UK 2026</Link> review.
+        For a detailed comparison of the most effective household flea products available in the UK, see our <Link href="/best/flea-treatments" className="text-blue-600 hover:underline font-medium">Best Flea Treatments UK 2026</Link> guide.
       </p>
 
       <h3>Flea Foggers (Flea Bombs)</h3>
@@ -421,7 +421,7 @@ export default function HowToGetRidOfFleasPage() {
       {/* Link to product review */}
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Looking for flea treatment products?</p>
-        <p className="text-gray-700 mb-3">We&apos;ve reviewed the best household sprays, foggers, and flea treatments available in the UK.</p>
+        <p className="text-gray-700 mb-3">Our guide covers the best household sprays, foggers, and flea treatments available in the UK.</p>
         <a
           href="/best/flea-treatments"
           className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
@@ -505,7 +505,7 @@ export default function HowToGetRidOfFleasPage() {
       </div>
 
       <p>
-        For a detailed breakdown of pest control costs across all common UK pests, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide. You might also find our other guides helpful: <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/wasp-nest-removal" className="text-blue-600 hover:underline font-medium">wasp nest removal</Link>, <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline font-medium">how to get rid of bed bugs</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">how to get rid of cockroaches</Link>, and <Link href="/guides/how-to-get-rid-of-ants" className="text-blue-600 hover:underline font-medium">how to get rid of ants</Link>. For product reviews, browse our <Link href="/best/rat-traps" className="text-blue-600 hover:underline font-medium">best rat traps</Link>, <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">best mouse traps</Link>, <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-medium">best wasp killers</Link>, <Link href="/best/bed-bug-treatments" className="text-blue-600 hover:underline font-medium">best bed bug treatments</Link>, <Link href="/best/cockroach-killers" className="text-blue-600 hover:underline font-medium">best cockroach killers</Link>, and <Link href="/best/ant-killers" className="text-blue-600 hover:underline font-medium">best ant killers</Link> guides.
+        For a detailed breakdown of pest control costs across all common UK pests, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide. You might also find our other guides helpful: <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/wasp-nest-removal" className="text-blue-600 hover:underline font-medium">wasp nest removal</Link>, <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline font-medium">how to get rid of bed bugs</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">how to get rid of cockroaches</Link>, and <Link href="/guides/how-to-get-rid-of-ants" className="text-blue-600 hover:underline font-medium">how to get rid of ants</Link>. For product recommendations, browse our <Link href="/best/rat-traps" className="text-blue-600 hover:underline font-medium">best rat traps</Link>, <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">best mouse traps</Link>, <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-medium">best wasp killers</Link>, <Link href="/best/bed-bug-treatments" className="text-blue-600 hover:underline font-medium">best bed bug treatments</Link>, <Link href="/best/cockroach-killers" className="text-blue-600 hover:underline font-medium">best cockroach killers</Link>, and <Link href="/best/ant-killers" className="text-blue-600 hover:underline font-medium">best ant killers</Link> guides.
       </p>
 
       <h3>Find Flea Treatment Providers by City</h3>

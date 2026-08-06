@@ -294,7 +294,7 @@ export default function NaturalMouseDeterrentsPage() {
       <h2 id="deterrent-products">Best Natural Deterrent Products</h2>
 
       <p>
-        These are the top-rated natural mouse deterrent products available in the UK &mdash; a combination of scent-based repellents and physical proofing materials. We have prioritised products that are genuinely non-toxic and humane.
+        These are the natural mouse deterrent products we recommend, available in the UK &mdash; a combination of scent-based repellents and physical proofing materials. We have prioritised products that are genuinely non-toxic and humane.
       </p>
 
       <div className="not-prose space-y-6 my-8">
@@ -410,7 +410,7 @@ export default function NaturalMouseDeterrentsPage() {
 
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Need to escalate?</p>
-        <p className="text-gray-700 mb-3">Our in-depth reviews cover both humane and standard mouse traps for every situation.</p>
+        <p className="text-gray-700 mb-3">Our in-depth guides cover both humane and standard mouse traps for every situation.</p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/best/mouse-traps"

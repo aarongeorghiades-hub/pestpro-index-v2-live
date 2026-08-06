@@ -172,7 +172,7 @@ export default function MovingHousePestChecklistPage() {
       {/* Affiliate Disclosure */}
       <div className="not-prose">
         <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-8 text-sm text-gray-600">
-          <p><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small affiliate commission from Amazon at no extra cost to you. This helps fund our independent research and testing. We only recommend products we believe in. <Link href="/about" className="text-blue-600 hover:underline">Learn more</Link>.</p>
+          <p><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small affiliate commission from Amazon at no extra cost to you. This helps fund our independent research. We only recommend products we believe in. <Link href="/about" className="text-blue-600 hover:underline">Learn more</Link>.</p>
         </div>
       </div>
 
@@ -579,7 +579,7 @@ export default function MovingHousePestChecklistPage() {
 
       <h3>Do I need to treat for fleas when moving into a property with previous pets?</h3>
       <p>
-        <strong>Yes, always.</strong> Flea pupae can lie dormant in carpets, floorboard gaps, and soft furnishings for up to six months without a host. When new occupants move in and the vibrations and warmth of foot traffic stimulate the pupae, they hatch simultaneously &mdash; often producing a sudden and severe infestation within hours of moving in. The best approach is to treat all carpeted areas and soft flooring with a household flea spray containing an <strong>insect growth regulator (IGR)</strong> before you move any furniture in. Treat at least twice, with a two-week gap between applications, to catch any pupae that hatch after the first treatment. If you are unsure whether the previous occupants had pets, treat the property anyway &mdash; the cost of a can of flea spray is negligible compared to the misery of a flea infestation. For product recommendations, see our <Link href="/best/flea-spray-for-home" className="text-blue-600 hover:underline font-medium">Best Flea Sprays for Home UK 2026</Link> review.
+        <strong>Yes, always.</strong> Flea pupae can lie dormant in carpets, floorboard gaps, and soft furnishings for up to six months without a host. When new occupants move in and the vibrations and warmth of foot traffic stimulate the pupae, they hatch simultaneously &mdash; often producing a sudden and severe infestation within hours of moving in. The best approach is to treat all carpeted areas and soft flooring with a household flea spray containing an <strong>insect growth regulator (IGR)</strong> before you move any furniture in. Treat at least twice, with a two-week gap between applications, to catch any pupae that hatch after the first treatment. If you are unsure whether the previous occupants had pets, treat the property anyway &mdash; the cost of a can of flea spray is negligible compared to the misery of a flea infestation. For product recommendations, see our <Link href="/best/flea-spray-for-home" className="text-blue-600 hover:underline font-medium">Best Flea Sprays for Home UK 2026</Link> guide.
       </p>
 
       <h3>Can bed bugs be in an empty property?</h3>
@@ -601,8 +601,8 @@ export default function MovingHousePestChecklistPage() {
       {/* Cross-link box */}
       {/* ------------------------------------------------------------------ */}
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-3">Related Reviews &amp; Guides</p>
-        <p className="text-gray-700 mb-4">Explore our product reviews for the items mentioned in this guide:</p>
+        <p className="font-bold text-gray-900 mb-3">Related Product Guides</p>
+        <p className="text-gray-700 mb-4">Explore our product guides for the items mentioned in this guide:</p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/best/flea-spray-for-home"

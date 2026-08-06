@@ -256,7 +256,7 @@ export default function NaturalFleaRemediesPage() {
       <h2 id="deterrent-products">Best Natural Flea Products</h2>
 
       <p>
-        These are the top-rated natural flea treatment products available in the UK, focused on non-chemical and plant-based options.
+        These are the natural flea treatment products we recommend, available in the UK, focused on non-chemical and plant-based options.
       </p>
 
       <div className="not-prose space-y-6 my-8">
@@ -340,7 +340,7 @@ export default function NaturalFleaRemediesPage() {
 
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Need stronger treatment?</p>
-        <p className="text-gray-700 mb-3">Our reviews cover the most effective chemical flea treatments for homes and pets when natural methods are not sufficient.</p>
+        <p className="text-gray-700 mb-3">Our guides cover the most effective chemical flea treatments for homes and pets when natural methods are not sufficient.</p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/best/flea-spray-for-home"

@@ -76,8 +76,8 @@ const breadcrumbSchema = {
 const tocItems = [
   { id: 'overview', title: 'The Quick Answer' },
   { id: 'comparison-table', title: 'Head-to-Head Comparison' },
-  { id: 'humane-traps', title: 'Humane Live-Catch Traps: Full Review' },
-  { id: 'kill-traps', title: 'Kill Traps: Full Review' },
+  { id: 'humane-traps', title: 'Humane Live-Catch Traps: In Detail' },
+  { id: 'kill-traps', title: 'Kill Traps: In Detail' },
   { id: 'the-release-problem', title: 'The Release Problem' },
   { id: 'product-picks', title: 'Our Product Picks' },
   { id: 'verdict', title: 'Our Verdict' },
@@ -243,7 +243,7 @@ export default function HumaneMouseTrapsVsKillTrapsPage() {
       </table>
 
       {/* Humane Traps */}
-      <h2 id="humane-traps">Humane Live-Catch Traps: Full Review</h2>
+      <h2 id="humane-traps">Humane Live-Catch Traps: In Detail</h2>
       <h3>How They Work</h3>
       <p>
         Humane mouse traps are typically small plastic or metal tunnels with a one-way door. The mouse is lured inside by bait, and the door snaps shut behind it. The mouse is uninjured and can be released outdoors. There are several designs: tip-trap (the mouse&apos;s weight tips the trap to close the door), spring-door (a sensitive trigger releases a spring-loaded door), and multi-catch (holds several mice at once).
@@ -273,7 +273,7 @@ export default function HumaneMouseTrapsVsKillTrapsPage() {
       </div>
 
       {/* Kill Traps */}
-      <h2 id="kill-traps">Kill Traps: Full Review</h2>
+      <h2 id="kill-traps">Kill Traps: In Detail</h2>
       <h3>Types of Kill Trap</h3>
       <p>
         There are three main types of mouse kill trap available in the UK:

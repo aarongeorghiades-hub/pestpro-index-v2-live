@@ -317,7 +317,7 @@ export default function WaspSeasonPreparationPage() {
       </p>
 
       <p>
-        For a comprehensive comparison of all the best products available in the UK, see our dedicated reviews: <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-medium">Best Wasp Killer Products UK 2026</Link> and <Link href="/best/wasp-nest-foam" className="text-blue-600 hover:underline font-medium">Best Wasp Nest Killer Foam UK 2026</Link>.
+        For a comprehensive comparison of all the best products available in the UK, see our dedicated guides: <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-medium">Best Wasp Killer Products UK 2026</Link> and <Link href="/best/wasp-nest-foam" className="text-blue-600 hover:underline font-medium">Best Wasp Nest Killer Foam UK 2026</Link>.
       </p>
 
       <div className="not-prose">
@@ -361,7 +361,7 @@ export default function WaspSeasonPreparationPage() {
 
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Looking for more wasp control products?</p>
-        <p className="text-gray-700 mb-3">We&apos;ve reviewed and compared the best sprays, foams, powders, and traps available in the UK.</p>
+        <p className="text-gray-700 mb-3">We&apos;ve compared the best sprays, foams, powders, and traps available in the UK.</p>
         <div className="flex flex-wrap gap-3">
           <a
             href="/best/wasp-killers"
@@ -540,7 +540,7 @@ export default function WaspSeasonPreparationPage() {
       {/* CROSS-LINK BOX */}
       {/* ------------------------------------------------------------------ */}
       <div className="not-prose my-8 p-6 bg-gray-50 border border-gray-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-3">Related guides and reviews</p>
+        <p className="font-bold text-gray-900 mb-3">Related guides and product picks</p>
         <ul className="space-y-2">
           <li>
             <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-medium">

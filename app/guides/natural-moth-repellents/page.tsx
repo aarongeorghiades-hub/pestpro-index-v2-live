@@ -306,7 +306,7 @@ export default function NaturalMothRepellentsPage() {
 
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Already have moth damage?</p>
-        <p className="text-gray-700 mb-3">Our in-depth reviews cover pheromone traps for monitoring and killer products for active infestations.</p>
+        <p className="text-gray-700 mb-3">Our in-depth guides cover pheromone traps for monitoring and killer products for active infestations.</p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/best/moth-traps"

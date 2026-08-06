@@ -173,7 +173,7 @@ export default function HowToPestProofYourLoftPage() {
       {/* Affiliate Disclosure */}
       <div className="not-prose">
         <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-8 text-sm text-gray-600">
-          <p><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small affiliate commission from Amazon at no extra cost to you. This helps fund our independent research and testing. We only recommend products we believe in. <Link href="/about" className="text-blue-600 hover:underline">Learn more</Link>.</p>
+          <p><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small affiliate commission from Amazon at no extra cost to you. This helps fund our independent research. We only recommend products we believe in. <Link href="/about" className="text-blue-600 hover:underline">Learn more</Link>.</p>
         </div>
       </div>
 
@@ -324,12 +324,12 @@ export default function HowToPestProofYourLoftPage() {
       <h2 id="treating-infestations">Treating Existing Infestations by Pest</h2>
 
       <p>
-        If your inspection reveals pests that are already living in your loft, you need to deal with them before or alongside your proofing work. The approach depends entirely on which pest is present. Below is a pest-by-pest guide to treatment, including recommended products and links to our detailed reviews.
+        If your inspection reveals pests that are already living in your loft, you need to deal with them before or alongside your proofing work. The approach depends entirely on which pest is present. Below is a pest-by-pest guide to treatment, including recommended products and links to our detailed product guides.
       </p>
 
       <h3>Mice in the Loft</h3>
       <p>
-        For mice in the loft, <strong>snap traps</strong> are the most effective and humane DIY treatment. Place traps along joists and against walls, perpendicular to the wall with the trigger end touching the skirting or timber. Mice travel along edges rather than across open spaces, so traps placed in the middle of the loft floor will catch very little. Bait with a small amount of peanut butter, chocolate spread, or hazelnut spread smeared onto the trigger plate &mdash; do not use large pieces of food that mice can steal without triggering the trap. Set <strong>at least six traps</strong> for a standard loft &mdash; more is better, because the first night of trapping is typically the most productive before surviving mice become trap-shy. Check traps daily and reset or reposition any that have been triggered without a catch. Continue trapping for at least two weeks after the last catch to ensure the infestation is fully cleared. For our top recommendations, see the <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps UK 2026</Link> review.
+        For mice in the loft, <strong>snap traps</strong> are the most effective and humane DIY treatment. Place traps along joists and against walls, perpendicular to the wall with the trigger end touching the skirting or timber. Mice travel along edges rather than across open spaces, so traps placed in the middle of the loft floor will catch very little. Bait with a small amount of peanut butter, chocolate spread, or hazelnut spread smeared onto the trigger plate &mdash; do not use large pieces of food that mice can steal without triggering the trap. Set <strong>at least six traps</strong> for a standard loft &mdash; more is better, because the first night of trapping is typically the most productive before surviving mice become trap-shy. Check traps daily and reset or reposition any that have been triggered without a catch. Continue trapping for at least two weeks after the last catch to ensure the infestation is fully cleared. For our top recommendations, see the <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps UK 2026</Link> guide.
       </p>
 
       <div className="not-prose space-y-4">
@@ -349,12 +349,12 @@ export default function HowToPestProofYourLoftPage() {
 
       <h3>Squirrels in the Loft</h3>
       <p>
-        Squirrels are more challenging than mice because of their size, strength, and legal status. Grey squirrels in the loft should be removed using <strong>cage traps</strong> (also called live-capture traps) baited with peanuts, apple, or peanut butter. Place the trap near the entry point or along a route the squirrel is known to use. Check the trap at least twice a day &mdash; it is both a legal requirement and essential for animal welfare not to leave a trapped animal in distress. <strong>Important legal note:</strong> under the Invasive Alien Species (Enforcement and Permitting) Order 2019 and the Wildlife and Countryside Act 1981, it is illegal to release a trapped grey squirrel back into the wild. A trapped grey squirrel must be <strong>humanely dispatched</strong>. If you are not comfortable with this, hire a professional pest controller to carry out the trapping and dispatch. Once all squirrels have been removed, seal the entry point immediately to prevent re-entry. For product recommendations, see our <Link href="/best/squirrel-deterrents" className="text-blue-600 hover:underline font-medium">Best Squirrel Deterrents UK 2026</Link> review.
+        Squirrels are more challenging than mice because of their size, strength, and legal status. Grey squirrels in the loft should be removed using <strong>cage traps</strong> (also called live-capture traps) baited with peanuts, apple, or peanut butter. Place the trap near the entry point or along a route the squirrel is known to use. Check the trap at least twice a day &mdash; it is both a legal requirement and essential for animal welfare not to leave a trapped animal in distress. <strong>Important legal note:</strong> under the Invasive Alien Species (Enforcement and Permitting) Order 2019 and the Wildlife and Countryside Act 1981, it is illegal to release a trapped grey squirrel back into the wild. A trapped grey squirrel must be <strong>humanely dispatched</strong>. If you are not comfortable with this, hire a professional pest controller to carry out the trapping and dispatch. Once all squirrels have been removed, seal the entry point immediately to prevent re-entry. For product recommendations, see our <Link href="/best/squirrel-deterrents" className="text-blue-600 hover:underline font-medium">Best Squirrel Deterrents UK 2026</Link> guide.
       </p>
 
       <h3>Wasps in the Loft</h3>
       <p>
-        If you discover an active wasp nest in your loft during summer, <strong>do not attempt to remove or treat it yourself</strong> unless the nest is very small (golf-ball sized, indicating an early-stage colony with only a queen and a few workers). For established nests, contact a professional pest controller who will treat the nest with insecticidal powder or foam. Professional treatment typically costs <strong>&pound;50 to &pound;100</strong> and is extremely effective &mdash; the colony usually dies within 24 to 48 hours. After the colony has died, the nest can be removed (though this is not strictly necessary, as old nests are not reused). If you identify a very small, early-stage nest in spring, you can treat it yourself with a <strong>wasp nest foam</strong> designed for the purpose. These are aerosol products that deliver insecticidal foam from a safe distance of 2 to 3 metres. For our recommended products, see the <Link href="/best/wasp-nest-foam" className="text-blue-600 hover:underline font-medium">Best Wasp Nest Foam UK 2026</Link> review.
+        If you discover an active wasp nest in your loft during summer, <strong>do not attempt to remove or treat it yourself</strong> unless the nest is very small (golf-ball sized, indicating an early-stage colony with only a queen and a few workers). For established nests, contact a professional pest controller who will treat the nest with insecticidal powder or foam. Professional treatment typically costs <strong>&pound;50 to &pound;100</strong> and is extremely effective &mdash; the colony usually dies within 24 to 48 hours. After the colony has died, the nest can be removed (though this is not strictly necessary, as old nests are not reused). If you identify a very small, early-stage nest in spring, you can treat it yourself with a <strong>wasp nest foam</strong> designed for the purpose. These are aerosol products that deliver insecticidal foam from a safe distance of 2 to 3 metres. For our recommended products, see the <Link href="/best/wasp-nest-foam" className="text-blue-600 hover:underline font-medium">Best Wasp Nest Foam UK 2026</Link> guide.
       </p>
 
       <h3>Cluster Flies in the Loft</h3>
@@ -518,8 +518,8 @@ export default function HowToPestProofYourLoftPage() {
       {/* Cross-link box */}
       {/* ------------------------------------------------------------------ */}
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-3">Related Reviews &amp; Guides</p>
-        <p className="text-gray-700 mb-4">Explore our product reviews for the items mentioned in this guide:</p>
+        <p className="font-bold text-gray-900 mb-3">Related Product Guides</p>
+        <p className="text-gray-700 mb-4">Explore our product guides for the items mentioned in this guide:</p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/best/mouse-traps"

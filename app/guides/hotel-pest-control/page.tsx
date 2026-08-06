@@ -209,7 +209,7 @@ export default function HotelPestControlPage() {
       {/* Back to Commercial Hub */}
       <div className="not-prose my-8 p-6 bg-purple-50 border border-purple-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Part of our Commercial Pest Control series</p>
-        <p className="text-gray-700 mb-3">This guide is one of our sector-specific commercial pest control resources. Visit the hub for all commercial guides, equipment reviews, and compliance information.</p>
+        <p className="text-gray-700 mb-3">This guide is one of our sector-specific commercial pest control resources. Visit the hub for all commercial guides, equipment recommendations, and compliance information.</p>
         <a
           href="/guides/commercial-pest-control"
           className="inline-block px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm"
@@ -268,7 +268,7 @@ export default function HotelPestControlPage() {
       {/* Insect monitors product link */}
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Need bed bug monitoring equipment?</p>
-        <p className="text-gray-700 mb-3">We&apos;ve reviewed the best commercial insect monitors and bed bug interceptors for hotels and hospitality businesses.</p>
+        <p className="text-gray-700 mb-3">Our guide covers the best commercial insect monitors and bed bug interceptors for hotels and hospitality businesses.</p>
         <a
           href="/best/commercial-insect-monitors"
           className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
@@ -846,7 +846,7 @@ export default function HotelPestControlPage() {
       </p>
 
       <p>
-        For further reading, see our dedicated guides on <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline font-medium">how to get rid of bed bugs</Link>, <Link href="/guides/restaurant-pest-control" className="text-blue-600 hover:underline font-medium">restaurant pest control</Link>, <Link href="/guides/warehouse-pest-management" className="text-blue-600 hover:underline font-medium">warehouse pest management</Link>, and <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">pest control costs UK 2026</Link>. For commercial pest control across all sectors, visit our <Link href="/guides/commercial-pest-control" className="text-blue-600 hover:underline font-medium">commercial pest control hub</Link>. For product recommendations, browse our <Link href="/best/commercial-insect-monitors" className="text-blue-600 hover:underline font-medium">best commercial insect monitors</Link>, <Link href="/best/bed-bug-treatments" className="text-blue-600 hover:underline font-medium">best bed bug treatments</Link>, and <Link href="/best/commercial-fly-killers" className="text-blue-600 hover:underline font-medium">best commercial fly killers</Link> reviews.
+        For further reading, see our dedicated guides on <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline font-medium">how to get rid of bed bugs</Link>, <Link href="/guides/restaurant-pest-control" className="text-blue-600 hover:underline font-medium">restaurant pest control</Link>, <Link href="/guides/warehouse-pest-management" className="text-blue-600 hover:underline font-medium">warehouse pest management</Link>, and <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">pest control costs UK 2026</Link>. For commercial pest control across all sectors, visit our <Link href="/guides/commercial-pest-control" className="text-blue-600 hover:underline font-medium">commercial pest control hub</Link>. For product recommendations, browse our <Link href="/best/commercial-insect-monitors" className="text-blue-600 hover:underline font-medium">best commercial insect monitors</Link>, <Link href="/best/bed-bug-treatments" className="text-blue-600 hover:underline font-medium">best bed bug treatments</Link>, and <Link href="/best/commercial-fly-killers" className="text-blue-600 hover:underline font-medium">best commercial fly killers</Link> guides.
       </p>
     </GuideLayout>
   );

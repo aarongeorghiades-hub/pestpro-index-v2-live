@@ -172,7 +172,7 @@ export default function AutumnPestProofingPage() {
       {/* Affiliate Disclosure */}
       <div className="not-prose">
         <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-8 text-sm text-gray-600">
-          <p><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small affiliate commission from Amazon at no extra cost to you. This helps fund our independent research and testing. We only recommend products we believe in. <Link href="/about" className="text-blue-600 hover:underline">Learn more</Link>.</p>
+          <p><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small affiliate commission from Amazon at no extra cost to you. This helps fund our independent research. We only recommend products we believe in. <Link href="/about" className="text-blue-600 hover:underline">Learn more</Link>.</p>
         </div>
       </div>
 
@@ -356,7 +356,7 @@ export default function AutumnPestProofingPage() {
       <h2 id="products">Products for Autumn Pest Proofing</h2>
 
       <p>
-        The right products make pest proofing faster and more effective. Below are our recommended picks for the most common autumn pest threats. For full reviews and comparisons, see our dedicated product pages: <Link href="/best/mouse-repellent" className="text-blue-600 hover:underline font-medium">Best Mouse Repellents</Link>, <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps</Link>, and <Link href="/best/spider-repellent" className="text-blue-600 hover:underline font-medium">Best Spider Repellents</Link>.
+        The right products make pest proofing faster and more effective. Below are our recommended picks for the most common autumn pest threats. For full details and comparisons, see our dedicated product pages: <Link href="/best/mouse-repellent" className="text-blue-600 hover:underline font-medium">Best Mouse Repellents</Link>, <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps</Link>, and <Link href="/best/spider-repellent" className="text-blue-600 hover:underline font-medium">Best Spider Repellents</Link>.
       </p>
 
       <div className="not-prose space-y-4">
@@ -399,7 +399,7 @@ export default function AutumnPestProofingPage() {
       </div>
 
       <p>
-        For a full comparison of mouse control products, see our <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps UK 2026</Link> and <Link href="/best/mouse-repellent" className="text-blue-600 hover:underline font-medium">Best Mouse Repellents UK 2026</Link> reviews. If rats are your primary concern, our <Link href="/best/rat-poison" className="text-blue-600 hover:underline font-medium">Best Rat Poison UK 2026</Link> review covers the most effective options.
+        For a full comparison of mouse control products, see our <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps UK 2026</Link> and <Link href="/best/mouse-repellent" className="text-blue-600 hover:underline font-medium">Best Mouse Repellents UK 2026</Link> guides. If rats are your primary concern, our <Link href="/best/rat-poison" className="text-blue-600 hover:underline font-medium">Best Rat Poison UK 2026</Link> guide covers the most effective options.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -548,7 +548,7 @@ export default function AutumnPestProofingPage() {
 
       <h3>Should I use poison or traps for autumn mice?</h3>
       <p>
-        For most domestic situations, <strong>traps are the recommended first choice</strong>. Snap traps are inexpensive (typically under &pound;2 each), highly effective when placed correctly, and deliver an instant kill &mdash; making them the most humane lethal option. They also allow you to confirm catches, monitor your progress, and dispose of each carcass properly. Poison (rodenticide) carries the risk of mice dying in inaccessible locations such as wall cavities and beneath floorboards, creating a <strong>persistent and extremely unpleasant smell</strong> that can last for several weeks. There is also a real risk of secondary poisoning to pets &mdash; particularly cats &mdash; and to wildlife such as owls and birds of prey. If the infestation is too large for traps alone, call a professional pest controller who can use restricted-access second-generation rodenticides safely and in accordance with <strong>CRRU guidelines</strong>. For a detailed comparison, see our <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps UK 2026</Link> review.
+        For most domestic situations, <strong>traps are the recommended first choice</strong>. Snap traps are inexpensive (typically under &pound;2 each), highly effective when placed correctly, and deliver an instant kill &mdash; making them the most humane lethal option. They also allow you to confirm catches, monitor your progress, and dispose of each carcass properly. Poison (rodenticide) carries the risk of mice dying in inaccessible locations such as wall cavities and beneath floorboards, creating a <strong>persistent and extremely unpleasant smell</strong> that can last for several weeks. There is also a real risk of secondary poisoning to pets &mdash; particularly cats &mdash; and to wildlife such as owls and birds of prey. If the infestation is too large for traps alone, call a professional pest controller who can use restricted-access second-generation rodenticides safely and in accordance with <strong>CRRU guidelines</strong>. For a detailed comparison, see our <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps UK 2026</Link> guide.
       </p>
 
       <h3>How much does a professional pest survey cost?</h3>
@@ -560,8 +560,8 @@ export default function AutumnPestProofingPage() {
       {/* Cross-link box */}
       {/* ------------------------------------------------------------------ */}
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-3">Related Reviews &amp; Guides</p>
-        <p className="text-gray-700 mb-4">Explore our product reviews for the items mentioned in this guide:</p>
+        <p className="font-bold text-gray-900 mb-3">Related Product Guides</p>
+        <p className="text-gray-700 mb-4">Explore our product guides for the items mentioned in this guide:</p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/best/mouse-repellent"

@@ -198,7 +198,7 @@ export default function WarehousePestManagementPage() {
       {/* Back to Commercial Hub */}
       <div className="not-prose my-8 p-6 bg-purple-50 border border-purple-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Part of our Commercial Pest Control series</p>
-        <p className="text-gray-700 mb-3">This guide is one of our sector-specific commercial pest control resources. Visit the hub for all commercial guides, equipment reviews, and compliance information.</p>
+        <p className="text-gray-700 mb-3">This guide is one of our sector-specific commercial pest control resources. Visit the hub for all commercial guides, equipment recommendations, and compliance information.</p>
         <a
           href="/guides/commercial-pest-control"
           className="inline-block px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm"
@@ -408,7 +408,7 @@ export default function WarehousePestManagementPage() {
       {/* Link to bait station product review */}
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Need tamper-resistant bait stations for your warehouse?</p>
-        <p className="text-gray-700 mb-3">We&apos;ve reviewed the best commercial rodent bait stations suitable for warehouse perimeters and BRC-audited premises.</p>
+        <p className="text-gray-700 mb-3">Our guide covers the best commercial rodent bait stations suitable for warehouse perimeters and BRC-audited premises.</p>
         <a
           href="/best/commercial-rodent-bait-stations"
           className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
@@ -450,7 +450,7 @@ export default function WarehousePestManagementPage() {
       {/* Link to fly killer review */}
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Need commercial fly killers for your warehouse?</p>
-        <p className="text-gray-700 mb-3">We&apos;ve reviewed the best commercial electric fly killers for warehouses, kitchens, and food businesses.</p>
+        <p className="text-gray-700 mb-3">Our guide covers the best commercial electric fly killers for warehouses, kitchens, and food businesses.</p>
         <a
           href="/best/commercial-fly-killers"
           className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
@@ -669,7 +669,7 @@ export default function WarehousePestManagementPage() {
       </p>
 
       <p>
-        For further reading, see our guides on <Link href="/guides/restaurant-pest-control" className="text-blue-600 hover:underline font-medium">restaurant pest control</Link>, <Link href="/guides/pigeon-control" className="text-blue-600 hover:underline font-medium">pigeon control</Link>, and <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">pest control costs UK 2026</Link>. For equipment, browse our <Link href="/best/commercial-rodent-bait-stations" className="text-blue-600 hover:underline font-medium">best commercial rodent bait stations</Link> and <Link href="/best/commercial-fly-killers" className="text-blue-600 hover:underline font-medium">best commercial fly killers</Link> reviews. Visit our <Link href="/guides/commercial-pest-control" className="text-blue-600 hover:underline font-medium">Commercial Pest Control Hub</Link> for all commercial resources.
+        For further reading, see our guides on <Link href="/guides/restaurant-pest-control" className="text-blue-600 hover:underline font-medium">restaurant pest control</Link>, <Link href="/guides/pigeon-control" className="text-blue-600 hover:underline font-medium">pigeon control</Link>, and <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">pest control costs UK 2026</Link>. For equipment, browse our <Link href="/best/commercial-rodent-bait-stations" className="text-blue-600 hover:underline font-medium">best commercial rodent bait stations</Link> and <Link href="/best/commercial-fly-killers" className="text-blue-600 hover:underline font-medium">best commercial fly killers</Link> guides. Visit our <Link href="/guides/commercial-pest-control" className="text-blue-600 hover:underline font-medium">Commercial Pest Control Hub</Link> for all commercial resources.
       </p>
     </GuideLayout>
   );

@@ -122,7 +122,7 @@ const productReviews = [
     emoji: '\u{1FAA4}',
     title: 'Best Commercial Rodent Bait Stations',
     description:
-      'Lockable tamper-proof stations and professional monitoring systems reviewed.',
+      'Lockable tamper-proof stations and professional monitoring systems.',
     href: '/best/commercial-rodent-bait-stations',
     live: true,
   },
@@ -138,7 +138,7 @@ const productReviews = [
     emoji: '\u{1F50D}',
     title: 'Best Commercial Insect Monitors',
     description:
-      'Bed bug interceptors, glue traps, and insect monitoring devices for hotels and commercial premises reviewed.',
+      'Bed bug interceptors, glue traps, and insect monitoring devices for hotels and commercial premises.',
     href: '/best/commercial-insect-monitors',
     live: true,
   },
@@ -287,7 +287,7 @@ export default function CommercialPestControlHubPage() {
       {/* Commercial Product Reviews */}
       <section className="max-w-7xl mx-auto px-4 py-16">
         <h2 className="text-2xl md:text-3xl font-bold text-blue-900 border-l-4 border-amber-500 pl-4 mb-8">
-          Commercial Equipment Reviews
+          Commercial Equipment Guides
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
           {productReviews.map((review) =>

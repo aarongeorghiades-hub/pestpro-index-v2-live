@@ -259,7 +259,7 @@ export default function SpringPestPreventionPage() {
       <h2 id="prevention">Prevention for Each Pest</h2>
 
       <p>
-        Each spring pest requires a slightly different prevention strategy. Below is a detailed breakdown of the most effective actions and products for the four main spring pests in UK homes: moths, ants, wasps, and fleas. Where relevant, we have included recommended products with links to our detailed review pages.
+        Each spring pest requires a slightly different prevention strategy. Below is a detailed breakdown of the most effective actions and products for the four main spring pests in UK homes: moths, ants, wasps, and fleas. Where relevant, we have included recommended products with links to our detailed product guides.
       </p>
 
       <h3>Moths: Protect Your Wardrobe and Carpets</h3>
@@ -277,7 +277,7 @@ export default function SpringPestPreventionPage() {
       </p>
 
       <p>
-        For a detailed comparison of the best moth traps available in the UK, see our <Link href="/best/moth-traps" className="text-blue-600 hover:underline font-medium">Best Moth Traps UK 2026</Link> review.
+        For a detailed comparison of the best moth traps available in the UK, see our <Link href="/best/moth-traps" className="text-blue-600 hover:underline font-medium">Best Moth Traps UK 2026</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -310,7 +310,7 @@ export default function SpringPestPreventionPage() {
       </p>
 
       <p>
-        For a detailed comparison of the best ant gel baits available in the UK, see our <Link href="/best/ant-gel-bait" className="text-blue-600 hover:underline font-medium">Best Ant Gel Bait UK 2026</Link> review.
+        For a detailed comparison of the best ant gel baits available in the UK, see our <Link href="/best/ant-gel-bait" className="text-blue-600 hover:underline font-medium">Best Ant Gel Bait UK 2026</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -343,7 +343,7 @@ export default function SpringPestPreventionPage() {
       </p>
 
       <p>
-        For wasp killer sprays and prevention products, see our <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-medium">Best Wasp Killers UK 2026</Link> review. For a comprehensive guide to preparing for wasp season, see our <Link href="/guides/wasp-season-preparation" className="text-blue-600 hover:underline font-medium">Wasp Season Preparation Guide</Link>.
+        For wasp killer sprays and prevention products, see our <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-medium">Best Wasp Killers UK 2026</Link> guide. For a comprehensive guide to preparing for wasp season, see our <Link href="/guides/wasp-season-preparation" className="text-blue-600 hover:underline font-medium">Wasp Season Preparation Guide</Link>.
       </p>
 
       <h3>Fleas: Treat Pets, Vacuum, and Spray</h3>
@@ -361,7 +361,7 @@ export default function SpringPestPreventionPage() {
       </p>
 
       <p>
-        For a detailed comparison of the best home flea sprays available in the UK, see our <Link href="/best/flea-spray-for-home" className="text-blue-600 hover:underline font-medium">Best Flea Spray for Home UK 2026</Link> review.
+        For a detailed comparison of the best home flea sprays available in the UK, see our <Link href="/best/flea-spray-for-home" className="text-blue-600 hover:underline font-medium">Best Flea Spray for Home UK 2026</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -425,7 +425,7 @@ export default function SpringPestPreventionPage() {
       <h2 id="shopping-list">Quick-Win Shopping List</h2>
 
       <p>
-        Here is everything you need to get ahead of spring pests. All of these products are available on Amazon and have been reviewed and recommended by the PestPro Index team. The total cost is approximately <strong>&pound;40 to &pound;70</strong> &mdash; a fraction of what you would spend on professional treatments or replacing moth-damaged clothing.
+        Here is everything you need to get ahead of spring pests. All of these products are available on Amazon and are recommended by the PestPro Index team. The total cost is approximately <strong>&pound;40 to &pound;70</strong> &mdash; a fraction of what you would spend on professional treatments or replacing moth-damaged clothing.
       </p>
 
       <div className="not-prose my-8 overflow-x-auto">
@@ -506,7 +506,7 @@ export default function SpringPestPreventionPage() {
 
       <h3>How do I stop ants in my kitchen in spring?</h3>
       <p>
-        To stop ants in your kitchen in spring, start by <strong>eliminating their food sources</strong>: wipe down all surfaces to remove crumbs and sticky residues, store food in sealed containers, empty bins regularly, and clean behind appliances where food debris accumulates. Next, find and <strong>seal their entry points</strong> &mdash; ants typically enter through gaps around pipes, cracks in walls, and spaces under doors. Apply <strong>ant gel bait</strong> along their trails and near entry points; the workers carry the bait back to the colony and it kills the queen, eliminating the entire nest. Avoid using spray insecticide directly on ant trails, as this only kills the visible workers without affecting the colony. For persistent infestations, a professional ant treatment targeting the nest is the most effective solution. See our <Link href="/best/ant-gel-bait" className="text-blue-600 hover:underline font-medium">Best Ant Gel Bait UK 2026</Link> review for product recommendations.
+        To stop ants in your kitchen in spring, start by <strong>eliminating their food sources</strong>: wipe down all surfaces to remove crumbs and sticky residues, store food in sealed containers, empty bins regularly, and clean behind appliances where food debris accumulates. Next, find and <strong>seal their entry points</strong> &mdash; ants typically enter through gaps around pipes, cracks in walls, and spaces under doors. Apply <strong>ant gel bait</strong> along their trails and near entry points; the workers carry the bait back to the colony and it kills the queen, eliminating the entire nest. Avoid using spray insecticide directly on ant trails, as this only kills the visible workers without affecting the colony. For persistent infestations, a professional ant treatment targeting the nest is the most effective solution. See our <Link href="/best/ant-gel-bait" className="text-blue-600 hover:underline font-medium">Best Ant Gel Bait UK 2026</Link> guide for product recommendations.
       </p>
 
       <h3>Do I need to worry about wasps in April?</h3>
@@ -528,7 +528,7 @@ export default function SpringPestPreventionPage() {
       {/* Cross-Link Box */}
       {/* ------------------------------------------------------------------ */}
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-3">Related Guides &amp; Product Reviews</p>
+        <p className="font-bold text-gray-900 mb-3">Related Guides &amp; Product Picks</p>
         <div className="grid sm:grid-cols-2 gap-2">
           <Link href="/best/moth-traps" className="text-sm text-blue-600 hover:underline font-medium block py-1">
             Best Moth Traps UK 2026 &rarr;

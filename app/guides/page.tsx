@@ -110,7 +110,7 @@ const guides = [
   {
     emoji: '🏢',
     title: 'Commercial Pest Control Hub',
-    description: 'The gateway to all commercial pest control content — sector guides, equipment reviews, and compliance resources for UK businesses.',
+    description: 'The gateway to all commercial pest control content — sector guides, equipment recommendations, and compliance resources for UK businesses.',
     href: '/guides/commercial-pest-control',
     badge: 'Commercial',
   },
@@ -160,7 +160,7 @@ const reviews = [
   {
     emoji: '🪤',
     title: 'Best Rat Traps UK 2026',
-    description: 'Snap traps, electronic traps, and humane options — tested and reviewed.',
+    description: 'Snap traps, electronic traps, and humane options.',
     href: '/best/rat-traps',
   },
   {
@@ -172,97 +172,97 @@ const reviews = [
   {
     emoji: '🐝',
     title: 'Best Wasp Killers UK 2026',
-    description: 'Nest killer sprays, insecticidal powders, and outdoor traps reviewed.',
+    description: 'Nest killer sprays, insecticidal powders, and outdoor traps.',
     href: '/best/wasp-killers',
   },
   {
     emoji: '🛏️',
     title: 'Best Bed Bug Treatments UK 2026',
-    description: 'Sprays, powders, mattress encasements, and monitoring traps compared.',
+    description: 'Sprays, powders, mattress encasements, and monitoring traps.',
     href: '/best/bed-bug-treatments',
   },
   {
     emoji: '🪳',
     title: 'Best Cockroach Killers UK 2026',
-    description: 'Professional-grade gel baits, sprays, powders, and monitoring traps reviewed.',
+    description: 'Professional-grade gel baits, sprays, powders, and monitoring traps.',
     href: '/best/cockroach-killers',
   },
   {
     emoji: '🦟',
     title: 'Best Flea Treatments UK 2026',
-    description: 'Household sprays, powders, foggers, and natural options reviewed for UK homes.',
+    description: 'Household sprays, powders, foggers, and natural options for UK homes.',
     href: '/best/flea-treatments',
   },
   {
     emoji: '🐜',
     title: 'Best Ant Killers UK 2026',
-    description: 'Bait stations, gel baits, powders and sprays — the best ant killer products reviewed.',
+    description: 'Bait stations, gel baits, powders and sprays — the best ant killer products.',
     href: '/best/ant-killers',
   },
   {
     emoji: '🐿️',
     title: 'Best Squirrel Deterrents UK 2026',
-    description: 'Squirrel-proof bird feeders, repellent sprays, baffles, and humane traps reviewed.',
+    description: 'Squirrel-proof bird feeders, repellent sprays, baffles, and humane traps.',
     href: '/best/squirrel-deterrents',
   },
   {
     emoji: '🦊',
     title: 'Best Fox Deterrents UK 2026',
-    description: 'Ultrasonic repellers, scent deterrents, motion-activated sprinklers, and garden fencing reviewed.',
+    description: 'Ultrasonic repellers, scent deterrents, motion-activated sprinklers, and garden fencing.',
     href: '/best/fox-deterrents',
   },
   {
     emoji: '🐟',
     title: 'Best Silverfish Treatments UK 2026',
-    description: 'Diatomaceous earth, killer sprays, traps, dehumidifiers, and insecticidal powders reviewed.',
+    description: 'Diatomaceous earth, killer sprays, traps, dehumidifiers, and insecticidal powders.',
     href: '/best/silverfish-treatments',
   },
   {
     emoji: '🪵',
     title: 'Best Woodworm Treatments UK 2026',
-    description: 'Permethrin fluids, boron gels, spray treatments, injection kits, and moisture meters reviewed.',
+    description: 'Permethrin fluids, boron gels, spray treatments, injection kits, and moisture meters.',
     href: '/best/woodworm-treatments',
   },
   {
     emoji: '🪲',
     title: 'Best Carpet Beetle Treatments UK 2026',
-    description: 'Insecticidal sprays, pheromone traps, killer powders, treatment kits, and cedar repellents reviewed.',
+    description: 'Insecticidal sprays, pheromone traps, killer powders, treatment kits, and cedar repellents.',
     href: '/best/carpet-beetle-treatments',
   },
   {
     emoji: '🐦',
     title: 'Best Bird Deterrents UK 2026',
-    description: 'Bird spikes, netting, optical gel, and more — the best pigeon and bird deterrents reviewed.',
+    description: 'Bird spikes, netting, optical gel, and more — the best pigeon and bird deterrents.',
     href: '/best/bird-deterrents',
   },
   {
     emoji: '🦋',
     title: 'Best Moth Killers UK 2026',
-    description: 'Hanging killers, pheromone traps, carpet sprays, sachets, and budget options reviewed.',
+    description: 'Hanging killers, pheromone traps, carpet sprays, sachets, and budget options.',
     href: '/best/moth-killers',
   },
   {
     emoji: '🪰',
     title: 'Best Commercial Fly Killers UK 2026',
-    description: 'UV zappers, glue board units, and LED models for restaurants, kitchens, and food businesses reviewed.',
+    description: 'UV zappers, glue board units, and LED models for restaurants, kitchens, and food businesses.',
     href: '/best/commercial-fly-killers',
   },
   {
     emoji: '🪤',
     title: 'Best Commercial Rodent Bait Stations UK 2026',
-    description: 'Tamper-resistant lockable bait stations for warehouses, restaurants, and commercial premises reviewed.',
+    description: 'Tamper-resistant lockable bait stations for warehouses, restaurants, and commercial premises.',
     href: '/best/commercial-rodent-bait-stations',
   },
   {
     emoji: '🔍',
     title: 'Best Commercial Insect Monitors UK 2026',
-    description: 'Bed bug interceptors, glue traps, and insect monitoring devices for hotels and commercial premises reviewed.',
+    description: 'Bed bug interceptors, glue traps, and insect monitoring devices for hotels and commercial premises.',
     href: '/best/commercial-insect-monitors',
   },
   {
     emoji: '🕊️',
     title: 'Best Commercial Bird Proofing UK 2026',
-    description: 'Heavy-duty netting, stainless steel spikes, bird wire systems, optical gel, and solar panel mesh for commercial premises reviewed.',
+    description: 'Heavy-duty netting, stainless steel spikes, bird wire systems, optical gel, and solar panel mesh for commercial premises.',
     href: '/best/commercial-bird-proofing',
   },
 ];
@@ -328,7 +328,7 @@ export default function GuidesIndexPage() {
       <section className="bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 py-16">
           <h2 className="text-2xl md:text-3xl font-bold text-blue-900 border-l-4 border-amber-500 pl-4 mb-8">
-            Product Reviews
+            Product Guides
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {reviews.map((review) => (

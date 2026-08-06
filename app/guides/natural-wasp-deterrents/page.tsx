@@ -218,7 +218,7 @@ export default function NaturalWaspDeterrentsPage() {
       <h2 id="deterrent-products">Best Natural Wasp Deterrent Products</h2>
 
       <p>
-        These are the top-rated natural wasp deterrent products for UK gardens. All are non-lethal and designed to keep wasps away from your outdoor living space rather than kill them.
+        These are the natural wasp deterrent products we recommend for UK gardens. All are non-lethal and designed to keep wasps away from your outdoor living space rather than kill them.
       </p>
 
       <div className="not-prose space-y-6 my-8">

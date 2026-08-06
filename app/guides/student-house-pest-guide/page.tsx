@@ -363,7 +363,7 @@ export default function StudentHousePestGuidePage() {
       </div>
 
       <p>
-        For more mouse trap options, including humane live-catch traps and professional-grade alternatives, see our <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">best mouse traps UK</Link> review page.
+        For more mouse trap options, including humane live-catch traps and professional-grade alternatives, see our <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">best mouse traps UK</Link> guide.
       </p>
 
       <h3>Bed Bug Spray</h3>
@@ -389,7 +389,7 @@ export default function StudentHousePestGuidePage() {
       </div>
 
       <p>
-        See our <Link href="/best/bed-bug-spray" className="text-blue-600 hover:underline font-medium">best bed bug spray UK</Link> review page for full product comparisons.
+        See our <Link href="/best/bed-bug-spray" className="text-blue-600 hover:underline font-medium">best bed bug spray UK</Link> guide for full product comparisons.
       </p>
 
       <h3>Ant Gel Bait</h3>
@@ -415,7 +415,7 @@ export default function StudentHousePestGuidePage() {
       </div>
 
       <p>
-        For more ant control products, see our <Link href="/best/ant-gel-bait" className="text-blue-600 hover:underline font-medium">best ant gel bait UK</Link> review page.
+        For more ant control products, see our <Link href="/best/ant-gel-bait" className="text-blue-600 hover:underline font-medium">best ant gel bait UK</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -623,8 +623,8 @@ export default function StudentHousePestGuidePage() {
       {/* Cross-Link Box */}
       {/* ------------------------------------------------------------------ */}
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-3">Related Guides &amp; Product Reviews</p>
-        <p className="text-gray-700 mb-4">For more detailed information on specific pests and the best budget-friendly products, see our dedicated guides and reviews:</p>
+        <p className="font-bold text-gray-900 mb-3">Related Guides &amp; Product Picks</p>
+        <p className="text-gray-700 mb-4">For more detailed information on specific pests and the best budget-friendly products, see our dedicated guides and product picks:</p>
         <div className="flex flex-wrap gap-3">
           <a href="/best/mouse-traps" className="inline-block px-5 py-2 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-lg transition-colors text-sm">Best Mouse Traps &rarr;</a>
           <a href="/best/bed-bug-spray" className="inline-block px-5 py-2 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-lg transition-colors text-sm">Best Bed Bug Spray &rarr;</a>

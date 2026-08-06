@@ -403,7 +403,7 @@ export default function CarpetBeetleControlPage() {
       {/* Link to product review */}
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
         <p className="text-blue-900 font-bold text-lg mb-2">Carpet Beetle Treatment Products</p>
-        <p className="text-blue-800 text-sm mb-3">See our expert reviews of the best carpet beetle sprays, traps, powders, and prevention products available in the UK.</p>
+        <p className="text-blue-800 text-sm mb-3">See our guide to the best carpet beetle sprays, traps, powders, and prevention products available in the UK.</p>
         <Link href="/best/carpet-beetle-treatments" className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm">View Best Carpet Beetle Treatments &rarr;</Link>
       </div>
 
@@ -556,7 +556,7 @@ export default function CarpetBeetleControlPage() {
       <h2 id="products">Recommended Carpet Beetle Treatment Products</h2>
 
       <p>
-        Below are two of the most effective products for carpet beetle control in UK homes. For a comprehensive comparison of all the best carpet beetle treatments &mdash; including sprays, traps, powders, and prevention products &mdash; see our dedicated <Link href="/best/carpet-beetle-treatments" className="text-blue-600 hover:underline font-medium">Best Carpet Beetle Treatments UK 2026</Link> review page.
+        Below are two of the most effective products for carpet beetle control in UK homes. For a comprehensive comparison of all the best carpet beetle treatments &mdash; including sprays, traps, powders, and prevention products &mdash; see our dedicated <Link href="/best/carpet-beetle-treatments" className="text-blue-600 hover:underline font-medium">Best Carpet Beetle Treatments UK 2026</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -823,7 +823,7 @@ export default function CarpetBeetleControlPage() {
       {/* BOTTOM CROSS-LINKS */}
       {/* ------------------------------------------------------------------ */}
       <div className="not-prose mt-12 pt-8 border-t border-gray-200">
-        <h3 className="text-lg font-bold text-gray-900 mb-4">More Pest Control Guides &amp; Reviews</h3>
+        <h3 className="text-lg font-bold text-gray-900 mb-4">More Pest Control Guides</h3>
         <div className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
           <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline">How to Get Rid of Rats: Complete UK Guide</Link>
           <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline">How to Get Rid of Mice: Complete UK Guide</Link>

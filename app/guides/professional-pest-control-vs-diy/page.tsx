@@ -289,7 +289,7 @@ export default function ProfessionalPestControlVsDiyPage() {
 
       <h3>DIY Products That Actually Work</h3>
       <p>
-        Not all DIY pest products are equal. Based on our testing and research, these categories of product deliver genuine results:
+        Not all DIY pest products are equal. Based on our research, these categories of product deliver genuine results:
       </p>
       <ul>
         <li><strong>Snap traps for rats and mice:</strong> As effective as what professionals use. Placement is key — along walls, behind appliances, near entry points. For a more comprehensive setup, consider <Link href="/best/professional-bait-station-kits" className="text-green-600 hover:underline">professional bait station kits</Link> that combine traps with tamper-resistant enclosures. See our <Link href="/best/rat-traps">best rat traps</Link> and <Link href="/best/mouse-traps">best mouse traps</Link> guides.</li>

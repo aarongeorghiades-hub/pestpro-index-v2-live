@@ -335,7 +335,7 @@ export default function NaturalRatDeterrentsPage() {
       <h2 id="deterrent-products">Best Natural Rat Deterrent Products</h2>
 
       <p>
-        These are the top-rated natural and humane rat deterrent products available in the UK. We have focused on physical proofing products and supplementary deterrents rather than kill products.
+        These are the natural and humane rat deterrent products we recommend, available in the UK. We have focused on physical proofing products and supplementary deterrents rather than kill products.
       </p>
 
       <div className="not-prose space-y-6 my-8">
@@ -418,7 +418,7 @@ export default function NaturalRatDeterrentsPage() {
 
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Need to take stronger action?</p>
-        <p className="text-gray-700 mb-3">Our in-depth reviews cover the most effective rat control products and methods for every situation.</p>
+        <p className="text-gray-700 mb-3">Our in-depth guides cover the most effective rat control products and methods for every situation.</p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/best/rat-traps"

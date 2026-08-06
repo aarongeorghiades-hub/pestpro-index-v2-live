@@ -243,7 +243,7 @@ export default function NaturalSpiderRepellentsPage() {
       <h2 id="deterrent-products">Best Natural Spider Deterrent Products</h2>
 
       <p>
-        These are the top-rated natural and humane spider deterrent products available in the UK. We have prioritised genuinely non-toxic repellents and humane catch-and-release tools.
+        These are the natural and humane spider deterrent products we recommend, available in the UK. We have prioritised genuinely non-toxic repellents and humane catch-and-release tools.
       </p>
 
       <div className="not-prose space-y-6 my-8">
@@ -308,7 +308,7 @@ export default function NaturalSpiderRepellentsPage() {
 
       <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">Want a stronger barrier?</p>
-        <p className="text-gray-700 mb-3">Our reviews cover chemical spider repellent sprays that create a longer-lasting barrier for people who need extra protection.</p>
+        <p className="text-gray-700 mb-3">Our guides cover chemical spider repellent sprays that create a longer-lasting barrier for people who need extra protection.</p>
         <Link
           href="/best/spider-repellent"
           className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"

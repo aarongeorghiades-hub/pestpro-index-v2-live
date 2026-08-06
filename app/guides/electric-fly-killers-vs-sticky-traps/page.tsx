@@ -259,7 +259,7 @@ export default function ElectricFlyKillersVsStickyTrapsPage() {
         <li><strong>Satisfying:</strong> The audible zap gives you confidence the unit is working.</li>
       </ul>
       <p>
-        For our top-rated picks, see our guide to the best <Link href="/best/fly-killer-indoor" className="text-green-600 hover:underline">indoor fly killers</Link>. If you need a unit for a commercial kitchen or food business, see our <Link href="/best/professional-insect-light-traps" className="text-green-600 hover:underline">commercial insect light traps</Link> guide.
+        For our picks, see our guide to the best <Link href="/best/fly-killer-indoor" className="text-green-600 hover:underline">indoor fly killers</Link>. If you need a unit for a commercial kitchen or food business, see our <Link href="/best/professional-insect-light-traps" className="text-green-600 hover:underline">commercial insect light traps</Link> guide.
       </p>
 
       <h3>Cons</h3>
