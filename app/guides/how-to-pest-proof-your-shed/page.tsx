@@ -460,28 +460,28 @@ export default function HowToPestProofYourShedPage() {
               <td className="py-3 px-4 text-gray-800">Mouse snap traps (pack of 6)</td>
               <td className="py-3 px-4 text-gray-600">Catching mice already inside the shed</td>
               <td className="py-3 px-4">
-                <Link href="/best/mouse-traps" className="text-blue-600 hover:underline text-sm">See our review</Link>
+                <Link href="/best/mouse-traps" className="text-blue-600 hover:underline text-sm">See our guide</Link>
               </td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Rat bait station (lockable)</td>
               <td className="py-3 px-4 text-gray-600">Safe rodenticide placement outside the shed</td>
               <td className="py-3 px-4">
-                <Link href="/best/rat-bait-stations" className="text-blue-600 hover:underline text-sm">See our review</Link>
+                <Link href="/best/rat-bait-stations" className="text-blue-600 hover:underline text-sm">See our guide</Link>
               </td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Wasp nest foam spray</td>
               <td className="py-3 px-4 text-gray-600">Treating active wasp nests in the shed roof</td>
               <td className="py-3 px-4">
-                <Link href="/best/wasp-nest-foam" className="text-blue-600 hover:underline text-sm">See our review</Link>
+                <Link href="/best/wasp-nest-foam" className="text-blue-600 hover:underline text-sm">See our guide</Link>
               </td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Woodworm treatment spray (permethrin)</td>
               <td className="py-3 px-4 text-gray-600">Treating active woodworm in shed timber</td>
               <td className="py-3 px-4">
-                <Link href="/best/woodworm-treatments" className="text-blue-600 hover:underline text-sm">See our review</Link>
+                <Link href="/best/woodworm-treatments" className="text-blue-600 hover:underline text-sm">See our guide</Link>
               </td>
             </tr>
             <tr>

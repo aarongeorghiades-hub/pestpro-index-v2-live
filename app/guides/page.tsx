@@ -7,14 +7,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Pest Control Guides & Expert Advice',
     description:
-      'Free, comprehensive UK pest control guides. How to identify, treat, and prevent rats, mice, wasps, bed bugs, cockroaches and more. Plus honest product reviews and cost breakdowns.',
+      'Free, comprehensive UK pest control guides. How to identify, treat, and prevent rats, mice, wasps, bed bugs, cockroaches and more. Plus honest product guides and cost breakdowns.',
     alternates: {
       canonical: 'https://pestproindex.com/guides',
     },
     openGraph: {
       title: 'Pest Control Guides & Expert Advice',
       description:
-        'Free, comprehensive UK pest control guides. How to identify, treat, and prevent rats, mice, wasps, bed bugs, cockroaches and more. Plus honest product reviews and cost breakdowns.',
+        'Free, comprehensive UK pest control guides. How to identify, treat, and prevent rats, mice, wasps, bed bugs, cockroaches and more. Plus honest product guides and cost breakdowns.',
       url: 'https://pestproindex.com/guides',
       type: 'website',
       siteName: 'PestPro Index',

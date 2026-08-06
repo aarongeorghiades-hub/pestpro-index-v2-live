@@ -8,14 +8,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Commercial Pest Control UK | Guides for Businesses 2026',
     description:
-      'Essential pest control guides for UK businesses. Restaurant compliance, warehouse pest management, EHO inspections, HACCP requirements, and commercial pest control equipment reviewed.',
+      'Essential pest control guides for UK businesses. Restaurant compliance, warehouse pest management, EHO inspections, HACCP requirements, and commercial pest control equipment.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/commercial-pest-control',
     },
     openGraph: {
       title: 'Commercial Pest Control UK | Guides for Businesses 2026',
       description:
-        'Essential pest control guides for UK businesses. Restaurant compliance, warehouse pest management, EHO inspections, HACCP requirements, and commercial pest control equipment reviewed.',
+        'Essential pest control guides for UK businesses. Restaurant compliance, warehouse pest management, EHO inspections, HACCP requirements, and commercial pest control equipment.',
       url: 'https://pestproindex.com/guides/commercial-pest-control',
       type: 'website',
       siteName: 'PestPro Index',
@@ -28,7 +28,7 @@ const webPageSchema = {
   '@type': 'WebPage',
   name: 'Commercial Pest Control UK | Guides for Businesses 2026',
   description:
-    'Essential pest control guides for UK businesses. Restaurant compliance, warehouse pest management, EHO inspections, HACCP requirements, and commercial pest control equipment reviewed.',
+    'Essential pest control guides for UK businesses. Restaurant compliance, warehouse pest management, EHO inspections, HACCP requirements, and commercial pest control equipment.',
   url: 'https://pestproindex.com/guides/commercial-pest-control',
   publisher: {
     '@type': 'Organization',

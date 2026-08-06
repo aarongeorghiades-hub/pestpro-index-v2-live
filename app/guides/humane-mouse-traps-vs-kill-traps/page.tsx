@@ -124,7 +124,7 @@ const faqSchema = {
       name: 'Are glue traps legal in the UK?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Glue Traps (Offences) Act 2022 made it illegal for members of the public to use glue traps in England. Only licensed pest control professionals can use them, and only under strict conditions. Scotland and Wales are considering similar legislation. We do not recommend or review glue traps.',
+        text: 'The Glue Traps (Offences) Act 2022 made it illegal for members of the public to use glue traps in England. Only licensed pest control professionals can use them, and only under strict conditions. Scotland and Wales are considering similar legislation. We do not recommend glue traps.',
       },
     },
     {

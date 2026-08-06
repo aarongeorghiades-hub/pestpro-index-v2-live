@@ -9,14 +9,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Natural Mouse Deterrents UK: Keep Mice Away Without Poison',
     description:
-      'Deter mice from your home without poison or kill traps. Peppermint oil, steel wool, ultrasonic devices and more natural methods reviewed.',
+      'Deter mice from your home without poison or kill traps. Peppermint oil, steel wool, ultrasonic devices and more natural methods.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/natural-mouse-deterrents',
     },
     openGraph: {
       title: 'Natural Mouse Deterrents UK: Keep Mice Away Without Poison',
       description:
-        'Deter mice from your home without poison or kill traps. Peppermint oil, steel wool, ultrasonic devices and more natural methods reviewed.',
+        'Deter mice from your home without poison or kill traps. Peppermint oil, steel wool, ultrasonic devices and more natural methods.',
       url: 'https://pestproindex.com/guides/natural-mouse-deterrents',
       type: 'article',
       siteName: 'PestPro Index',
@@ -29,7 +29,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Natural Mouse Deterrents UK: Keep Mice Away Without Poison',
   description:
-    'Deter mice from your home without poison or kill traps. Peppermint oil, steel wool, ultrasonic devices and more natural methods reviewed.',
+    'Deter mice from your home without poison or kill traps. Peppermint oil, steel wool, ultrasonic devices and more natural methods.',
   datePublished: '2026-04-02',
   dateModified: '2026-04-02',
   author: {
