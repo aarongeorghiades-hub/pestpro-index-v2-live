@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { formatCount } from '@/lib/formatCount';
 import { externalHref } from '@/lib/externalUrl';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -294,7 +295,7 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
             Commercial Pest Control & Pest Removal
           </h1>
           <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl mb-6 font-extralight tracking-[0.15em] text-white drop-shadow-[0_8px_20px_rgba(0,0,0,0.9)]">
-            240 Providers in London
+            {formatCount(providers.length)} Providers in London
           </p>
           <p className="text-xl text-white font-semibold max-w-3xl leading-relaxed drop-shadow-[0_6px_16px_rgba(0,0,0,0.85)] opacity-95">
             Find certified commercial pest control and pest removal providers with advanced filtering by certifications, capabilities, and business sectors.

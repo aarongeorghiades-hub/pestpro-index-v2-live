@@ -1,26 +1,32 @@
-import { Metadata } from 'next'
+import { createServerClient } from '@/utils/supabase-server'
+import { formatCount } from '@/lib/formatCount'
 
-export const metadata: Metadata = {
-  title: 'Pest Control in Nottingham | Residential Services',
-  description: 'Find residential pest control services in Nottingham and the East Midlands. Compare BPCA-certified providers, read reviews, and get quotes — no lead fees.',
-  alternates: {
-    canonical: 'https://pestproindex.com/nottingham/residential',
-  },
-  openGraph: {
-    title: 'Pest Control in Nottingham | Residential Services',
-    description: 'Find residential pest control services in Nottingham and the East Midlands. Compare BPCA-certified providers, read reviews, and get quotes — no lead fees.',
-    siteName: 'PestPro Index',
-    locale: 'en_GB',
-    type: 'website',
-  },
-}
+export default async function Layout({ children }: { children: React.ReactNode }) {
+  // Counts exactly the population this page lists: active providers flagged
+  // business_residential inside the nottingham region. Head-only, so the
+  // 1,000-row PostgREST cap cannot silently truncate the figure.
+  const supabase = createServerClient()
+  const { count, error } = await supabase
+    .from('Providers')
+    .select('canonical_id', { count: 'exact', head: true })
+    .eq('active', true)
+    .eq('business_residential', true)
+    .or('regions.cs.["nottingham"]')
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+  // If the count fails or comes back null we describe the page without a
+  // number. Never 0, never a hardcoded fallback: a wrong figure is worse
+  // than no figure.
+  const providerCount = error ? null : count
+  const countLead =
+    providerCount == null
+      ? 'Compare residential pest control providers'
+      : `Compare ${formatCount(providerCount)} residential pest control providers`
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Residential Pest Control in Nottingham',
-    description: 'Compare 106+ residential pest control providers in Nottingham and the East Midlands. Ratings, reviews, BPCA and NPTA certified companies.',
+    description: `${countLead} in Nottingham and the East Midlands. Ratings, reviews, BPCA and NPTA certified companies.`,
     serviceType: 'Pest Control',
     areaServed: {
       '@type': 'City',

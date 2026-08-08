@@ -299,7 +299,7 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
               Full List of London Pest Control Providers
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              All 389 residential providers with advanced filtering
+              All {formatCount(providers.length)} residential providers with advanced filtering
             </p>
           </div>
 

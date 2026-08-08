@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useMemo } from 'react';
+import { formatCount } from '@/lib/formatCount';
 import { isTrophyProvider, TROPHY_LEGEND, TROPHY_ARIA_LABEL } from '@/lib/trophy';
 import { PESTS } from '@/lib/pests';
 import { externalHref } from '@/lib/externalUrl';
@@ -305,7 +306,7 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
               Full List of Birmingham & West Midlands Pest Control Providers
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              All 42 residential providers with advanced filtering
+              All {formatCount(providers.length)} residential providers with advanced filtering
             </p>
           </div>
 
