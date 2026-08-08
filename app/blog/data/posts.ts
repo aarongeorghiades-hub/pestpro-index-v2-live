@@ -1598,7 +1598,7 @@ export const posts: BlogPost[] = [
 
 <p><strong>Check certifications</strong> — BPCA (British Pest Control Association) and NPTA (National Pest Technicians Association) membership indicates professional standards and ongoing training. Our listings flag certified providers clearly.</p>
 
-<p><strong>Read Google reviews</strong> for recent experience and response times. A provider with 50+ reviews and a 4.5+ rating offers more confidence than one with no review history.</p>
+<p><strong>Read Google reviews</strong> for recent experience and response times. A provider with an established review history offers more confidence than one with none.</p>
 
 <p><strong>Ask about guarantees.</strong> Many Sussex providers offer follow-up visits if the initial treatment doesn't fully resolve the issue.</p>
 
@@ -1870,7 +1870,7 @@ export const posts: BlogPost[] = [
 
 <p><strong>Transparency on pricing</strong> — Get a written quote before treatment begins. Be wary of providers who quote without a survey for anything other than straightforward wasp nest removal. Most Bristol pest controllers charge between £50–£80 for wasp treatment and £120–£250+ for rodent treatment programmes.</p>
 
-<p><strong>Reviews and track record</strong> — Check Google reviews and ask for references. The best Bristol providers — several of whom have 4.9–5.0 star ratings with over 100 reviews — have built their reputation through consistent, reliable service.</p>
+<p><strong>Reviews and track record</strong> — Check Google reviews and ask for references. The best Bristol providers have built their reputation through consistent, reliable service.</p>
 
 <h2>Typical Pest Control Costs in Bristol</h2>
 
