@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { posts } from '../data/posts'
+import { createServerClient } from '@/utils/supabase-server'
+import { formatCount } from '@/lib/formatCount'
 
 export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }))
@@ -18,6 +20,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  // Both figures use the same filters as the pages they describe, so the
+  // prose and the destination can never disagree: /residential lists
+  // active + business_residential + london, /commercial lists active +
+  // commercial + london. Note `commercial`, not `business_commercial` -
+  // different columns, different totals.
+  const supabase = createServerClient()
+  const [res, com] = await Promise.all([
+    supabase.from('Providers').select('canonical_id', { count: 'exact', head: true })
+      .eq('active', true).eq('business_residential', true).or('regions.cs.["london"]'),
+    supabase.from('Providers').select('canonical_id', { count: 'exact', head: true })
+      .eq('active', true).eq('commercial', true).or('regions.cs.["london"]'),
+  ])
+  // Ruling 4 posture: a failed or null count renders no number at all.
+  const residentialCount = res.error ? null : res.count
+  const commercialCount = com.error ? null : com.count
+
   const { slug } = await params
   const post = posts.find((p) => p.slug === slug)
   if (!post) notFound()
@@ -89,11 +107,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <p className="text-slate-300 leading-relaxed">
             Browse our directory of{' '}
             <Link href="/residential" className="text-blue-400 hover:text-blue-300 hover:underline font-semibold">
-              389 residential providers
+              {residentialCount == null ? 'residential providers' : `${formatCount(residentialCount)} residential providers`}
             </Link>
             {' '}or{' '}
             <Link href="/commercial" className="text-blue-400 hover:text-blue-300 hover:underline font-semibold">
-              240 commercial providers
+              {commercialCount == null ? 'commercial providers' : `${formatCount(commercialCount)} commercial providers`}
             </Link>
             .
           </p>

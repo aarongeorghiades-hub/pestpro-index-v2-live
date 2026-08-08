@@ -2,16 +2,41 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import { getAllBoroughs } from './borough-data';
 import { Metadata } from 'next';
+import { createServerClient } from '@/utils/supabase-server';
+import { formatCount } from '@/lib/formatCount';
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  // Both figures use the same filters as the pages they describe, so the
+  // prose and the destination can never disagree: /residential lists
+  // active + business_residential + london, /commercial lists active +
+  // commercial + london. Note `commercial`, not `business_commercial` -
+  // different columns, different totals.
+  const supabase = createServerClient()
+  const [res, com] = await Promise.all([
+    supabase.from('Providers').select('canonical_id', { count: 'exact', head: true })
+      .eq('active', true).eq('business_residential', true).or('regions.cs.["london"]'),
+    supabase.from('Providers').select('canonical_id', { count: 'exact', head: true })
+      .eq('active', true).eq('commercial', true).or('regions.cs.["london"]'),
+  ])
+  // Ruling 4 posture: a failed or null count renders no number at all.
+  const residentialCount = res.error ? null : res.count
+  const commercialCount = com.error ? null : com.count
+  const boroughCount = getAllBoroughs().length
+  const compare =
+    residentialCount == null || commercialCount == null
+      ? 'Compare residential and commercial providers'
+      : `Compare ${formatCount(residentialCount)} residential and ${formatCount(commercialCount)} commercial providers`
+  const description = `Find pest control providers across all ${boroughCount} London boroughs. ${compare}. No lead fees, no commissions.`
+
+  return {
   title: 'Pest Control by London Borough',
-  description: 'Find pest control providers across all 33 London boroughs. Compare 389 residential and 240 commercial providers. No lead fees, no commissions.',
+  description: description,
   alternates: {
     canonical: 'https://pestproindex.com/pest-control',
   },
   openGraph: {
     title: 'Pest Control by London Borough',
-    description: 'Find pest control providers across all 33 London boroughs. Compare 389 residential and 240 commercial providers. No lead fees, no commissions.',
+    description: description,
     siteName: 'PestPro Index',
     locale: 'en_GB',
     type: 'website',
@@ -19,9 +44,10 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary',
     title: 'Pest Control by London Borough',
-    description: 'Find pest control providers across all 33 London boroughs. Compare 389 residential and 240 commercial providers. No lead fees, no commissions.',
+    description: description,
   },
-};
+  };
+}
 
 export default function BoroughIndexPage() {
   const boroughs = getAllBoroughs();
