@@ -1037,7 +1037,7 @@ export const posts: BlogPost[] = [
 
 <h2>Find a Pest Controller</h2>
 
-<p><a href="/liverpool/residential">PestPro Index lists 73 pest control providers</a> serving Liverpool and Merseyside. Filter by pest type, service features, and certifications to find the right provider for your needs. All listings include Google ratings, contact details, and certification status — with no lead fees or commissions.</p>
+<p><a href="/liverpool/residential">PestPro Index lists pest control providers</a> serving Liverpool and Merseyside. Filter by pest type, service features, and certifications to find the right provider for your needs. All listings include Google ratings, contact details, and certification status — with no lead fees or commissions.</p>
 
 <p>For commercial pest control needs — restaurants, offices, warehouses, and retail — <a href="/liverpool/commercial">browse Liverpool commercial pest control providers</a> to find BPCA-certified companies offering contract options.</p>
 
@@ -1375,7 +1375,7 @@ export const posts: BlogPost[] = [
     content: `
 <p>Nottingham and the wider East Midlands present a unique mix of pest control challenges. From the densely packed Victorian terraces of Sneinton and Hyson Green to the modern commercial developments around Nottingham's Creative Quarter, the region's varied building stock creates diverse conditions for pest activity. Whether you're a homeowner in West Bridgford, a landlord in Beeston, or a restaurant owner in the Lace Market, understanding the local pest landscape helps you make informed decisions about protection and treatment.</p>
 
-<p>PestPro Index lists 106 pest control providers across the East Midlands — covering Nottingham, Derby, Mansfield, Ashfield, and the surrounding boroughs — all without lead fees or commissions. This guide walks you through what you need to know about pest control in the region.</p>
+<p>PestPro Index lists pest control providers across the East Midlands — covering Nottingham, Derby, Mansfield, Ashfield, and the surrounding boroughs — all without lead fees or commissions. This guide walks you through what you need to know about pest control in the region.</p>
 
 <h2>Why Nottingham Has Specific Pest Challenges</h2>
 
@@ -1409,9 +1409,9 @@ export const posts: BlogPost[] = [
 
 <h2>Choosing a Pest Control Provider in the East Midlands</h2>
 
-<p>With 106 providers listed across the region, choosing the right one comes down to a few key factors:</p>
+<p>With a broad choice of providers listed across the region, choosing the right one comes down to a few key factors:</p>
 
-<p><strong>Certifications matter.</strong> Look for BPCA (British Pest Control Association) or NPTA (National Pest Technicians Association) membership — these indicate adherence to industry standards, ongoing training, and insurance requirements. Our directory shows 21 BPCA-certified providers in the East Midlands.</p>
+<p><strong>Certifications matter.</strong> Look for BPCA (British Pest Control Association) or NPTA (National Pest Technicians Association) membership — these indicate adherence to industry standards, ongoing training, and insurance requirements. Our directory flags which East Midlands providers hold BPCA certification.</p>
 
 <p><strong>Local knowledge counts.</strong> A provider based in Nottingham understands the cave network factor, knows which Derby neighbourhoods have particular rat problems, and recognises the seasonal patterns that affect the East Midlands specifically. National chains offer consistency, but local operators often provide faster response times and more contextual advice.</p>
 
@@ -1545,7 +1545,7 @@ export const posts: BlogPost[] = [
 
 <p>Act on pest signs when you first notice them. Every week of delay during the relevant season allows populations to grow — and costs to increase. Prevention in the right month (proofing in October, wasp checks in March, ant monitoring in April) is always cheaper than reactive treatment.</p>
 
-<p>Whatever the season, PestPro Index helps you find the right pest control provider in Nottingham and the East Midlands. Browse 106 providers — filter by pest type, emergency availability, certifications, and more.</p>
+<p>Whatever the season, PestPro Index helps you find the right pest control provider in Nottingham and the East Midlands. Browse the directory — filter by pest type, emergency availability, certifications, and more.</p>
 
 <p><a href="/nottingham/residential">Nottingham Residential Directory</a> | <a href="/nottingham/commercial">Nottingham Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/guides/pest-control-costs">Pest Control Costs Guide</a></p>
 `
@@ -1594,7 +1594,7 @@ export const posts: BlogPost[] = [
 
 <h2>How to Choose a Pest Controller in Brighton</h2>
 
-<p>PestPro Index lists 76 pest control providers across Brighton, Hove, Worthing, Eastbourne, Lewes, and wider Sussex. When comparing options:</p>
+<p>PestPro Index lists pest control providers across Brighton, Hove, Worthing, Eastbourne, Lewes, and wider Sussex. When comparing options:</p>
 
 <p><strong>Check certifications</strong> — BPCA (British Pest Control Association) and NPTA (National Pest Technicians Association) membership indicates professional standards and ongoing training. Our listings flag certified providers clearly.</p>
 
@@ -1669,7 +1669,7 @@ export const posts: BlogPost[] = [
 
 <h2>Find a Provider Before You Need One</h2>
 
-<p>PestPro Index lists 76 pest control providers across Brighton, Hove, Worthing, Eastbourne, Lewes, and wider Sussex. Every listing includes Google ratings, certification details, and service information — with no lead fees and no commissions.</p>
+<p>PestPro Index lists pest control providers across Brighton, Hove, Worthing, Eastbourne, Lewes, and wider Sussex. Every listing includes Google ratings, certification details, and service information — with no lead fees and no commissions.</p>
 
 <p><a href="/brighton/residential">Brighton Residential Directory</a> | <a href="/brighton/commercial">Brighton Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/guides/pest-control-costs">Pest Control Costs Guide</a></p>
 `
@@ -1862,7 +1862,7 @@ export const posts: BlogPost[] = [
 
 <h2>How to Choose a Pest Control Provider in Bristol</h2>
 
-<p><strong>Professional accreditation</strong> — BPCA (British Pest Control Association) and NPTA (National Pest Technicians Association) membership indicates formal training, adherence to codes of practice, and ongoing professional development. Of the 43 providers on PestPro Index covering Bristol, 15 hold BPCA certification.</p>
+<p><strong>Professional accreditation</strong> — BPCA (British Pest Control Association) and NPTA (National Pest Technicians Association) membership indicates formal training, adherence to codes of practice, and ongoing professional development. PestPro Index flags which of its Bristol providers hold BPCA certification.</p>
 
 <p><strong>Insurance and guarantees</strong> — Reputable providers carry public liability insurance and offer treatment guarantees. Ask about callback policies if the first treatment doesn't resolve the issue.</p>
 
@@ -1899,7 +1899,7 @@ export const posts: BlogPost[] = [
 <li>If you have a cat flap, consider a microchip-activated one to prevent rodent entry</li>
 </ul>
 
-<p>Ready to find a pest controller in Bristol? PestPro Index lists 43 local providers with no lead fees or commissions — just honest comparison. Filter by pest type, certifications, emergency availability, and more.</p>
+<p>Ready to find a pest controller in Bristol? PestPro Index lists local providers with no lead fees or commissions — just honest comparison. Filter by pest type, certifications, emergency availability, and more.</p>
 
 <p><a href="/bristol/residential">Bristol Residential Directory</a> | <a href="/bristol/commercial">Bristol Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/guides/pest-control-costs">Pest Control Costs Guide</a></p>
 `
@@ -1990,7 +1990,7 @@ export const posts: BlogPost[] = [
 
 <h2>Find the Right Provider for Any Season</h2>
 
-<p>Whatever the season, PestPro Index helps you find the right pest control provider in Bristol and the South West. Browse 43 providers — filter by pest type, emergency availability, certifications, and more.</p>
+<p>Whatever the season, PestPro Index helps you find the right pest control provider in Bristol and the South West. Browse the directory — filter by pest type, emergency availability, certifications, and more.</p>
 
 <p><a href="/bristol/residential">Bristol Residential Directory</a> | <a href="/bristol/commercial">Bristol Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/guides/pest-control-costs">Pest Control Costs Guide</a></p>
 `
@@ -2089,7 +2089,7 @@ export const posts: BlogPost[] = [
 
 <h2>Find the Right Provider in Glasgow</h2>
 
-<p>PestPro Index lists 60 pest control providers covering Glasgow and Scotland. Browse by pest type, certifications, service features, and Google ratings — with no lead fees and no commissions.</p>
+<p>PestPro Index lists pest control providers covering Glasgow and Scotland. Browse by pest type, certifications, service features, and Google ratings — with no lead fees and no commissions.</p>
 
 <p><a href="/glasgow/residential">Glasgow Residential Directory</a> | <a href="/glasgow/commercial">Glasgow Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/guides/pest-control-costs">Pest Control Costs Guide</a></p>
 `
@@ -2174,7 +2174,7 @@ export const posts: BlogPost[] = [
 
 <h2>Find the Right Provider for Any Season</h2>
 
-<p>Whatever the season, PestPro Index helps you find the right pest control provider in Glasgow and Scotland. Browse 60 providers — filter by pest type, emergency availability, certifications, and more.</p>
+<p>Whatever the season, PestPro Index helps you find the right pest control provider in Glasgow and Scotland. Browse the directory — filter by pest type, emergency availability, certifications, and more.</p>
 
 <p><a href="/glasgow/residential">Glasgow Residential Directory</a> | <a href="/glasgow/commercial">Glasgow Commercial Directory</a> | <a href="/pest-library">Pest Library</a> | <a href="/guides/pest-control-costs">Pest Control Costs Guide</a></p>
 `
@@ -2243,7 +2243,7 @@ export const posts: BlogPost[] = [
 
     <h2>Find a Provider in Bradford &amp; West Yorkshire</h2>
 
-    <p>PestPro Index lists 113+ pest control providers across Bradford and West Yorkshire. Every listing includes contact details, service coverage, pest specialisms, and — where available — BPCA/NPTA accreditation status, Google ratings, and detailed service filters. No lead fees, no commissions, no sponsored rankings.</p>
+    <p>PestPro Index lists pest control providers across Bradford and West Yorkshire. Every listing includes contact details, service coverage, pest specialisms, and — where available — BPCA/NPTA accreditation status, Google ratings, and detailed service filters. No lead fees, no commissions, no sponsored rankings.</p>
 
     <p><a href="/bradford/residential">Bradford Residential Directory</a> | <a href="/bradford/commercial">Bradford Commercial Directory</a></p>
     `
@@ -2342,7 +2342,7 @@ export const posts: BlogPost[] = [
 
     <p>Address damp — many pests (silverfish, woodlice, cockroaches) are attracted to damp conditions. Fix leaking pipes, improve ventilation in bathrooms and kitchens, and address rising damp in older properties.</p>
 
-    <p>If you need help identifying or treating a pest problem in Bradford and West Yorkshire, browse our directory of 113+ local providers.</p>
+    <p>If you need help identifying or treating a pest problem in Bradford and West Yorkshire, browse our directory of local providers.</p>
 
     <p><a href="/bradford/residential">Bradford Residential Directory</a> | <a href="/bradford/commercial">Bradford Commercial Directory</a></p>
     `
