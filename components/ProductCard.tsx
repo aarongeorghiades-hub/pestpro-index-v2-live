@@ -13,9 +13,15 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ name, features, asin, bestFor, rank }: ProductCardProps) {
+  // Only a direct /dp/<ASIN> link is ever produced. There is deliberately no
+  // fallback branch: a search-results link is not a link to the product being
+  // described, so when the ASIN is missing the card renders no Amazon link and
+  // no Amazon call to action at all rather than sending the reader somewhere
+  // approximate. null is the whole of the else branch, so the component is
+  // structurally unable to emit a search URL.
   const amazonUrl = asin && asin.startsWith('B0')
     ? `https://www.amazon.co.uk/dp/${asin}?tag=pestproindex2-21`
-    : `https://www.amazon.co.uk/s?k=${encodeURIComponent(name).replace(/%20/g, '+')}&tag=pestproindex2-21`;
+    : null;
 
   const badgeColors: Record<string, string> = {
     'Best Overall': 'bg-amber-100 text-amber-800 border-amber-300',
@@ -67,14 +73,16 @@ export default function ProductCard({ name, features, asin, bestFor, rank }: Pro
           </ul>
 
           <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-3">
-            <a
-              href={amazonUrl}
-              target="_blank"
-              rel="sponsored nofollow noopener noreferrer"
-              className="inline-block text-center px-6 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-lg transition-colors text-sm"
-            >
-              Check price on Amazon
-            </a>
+            {amazonUrl && (
+              <a
+                href={amazonUrl}
+                target="_blank"
+                rel="sponsored nofollow noopener noreferrer"
+                className="inline-block text-center px-6 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-lg transition-colors text-sm"
+              >
+                Check price on Amazon
+              </a>
+            )}
             <p className="text-xs text-gray-400">
               As an Amazon Associate, PestPro Index earns from qualifying purchases.
             </p>
