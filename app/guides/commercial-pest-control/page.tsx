@@ -284,7 +284,7 @@ export default function CommercialPestControlHubPage() {
         </div>
       </section>
 
-      {/* Commercial Product Reviews */}
+      {/* Commercial Equipment Guides */}
       <section className="max-w-7xl mx-auto px-4 py-16">
         <h2 className="text-2xl md:text-3xl font-bold text-blue-900 border-l-4 border-amber-500 pl-4 mb-8">
           Commercial Equipment Guides
