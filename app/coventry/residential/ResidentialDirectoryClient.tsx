@@ -156,21 +156,13 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
     setFilters({ pests: [], services: [] });
   };
 
-  const handleSearch = (results: any[], searchType: 'postcode' | 'borough' | 'provider' | 'all') => {
+  const handleSearch = (results: any[], searchType: 'postcode' | 'provider' | 'all') => {
     setSearchResults(results as Provider[]);
   };
 
   const handleClearSearch = () => {
     setSearchResults(null);
   };
-
-  // Add area field to providers for SearchBar compatibility
-  const providersWithBorough = useMemo(() => {
-    return providers.map(p => ({
-      ...p,
-      london_borough: p.address?.split(',').pop()?.trim() || 'Coventry'
-    }));
-  }, [providers]);
 
   const getFilterCount = (filterValue: string) => {
     return providers.filter(p => p[filterValue as keyof Provider] === true).length;
@@ -306,7 +298,7 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
           <div className="mb-8">
             <SearchBar
               onSearch={handleSearch}
-              allProviders={providersWithBorough as any}
+              allProviders={providers as any}
               onClear={handleClearSearch}
             />
           </div>
