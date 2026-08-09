@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import { getAllRegions } from '../data/regions';
-import { countsByRegion } from '@/lib/regionCounts';
+import { countsByRegion, withCount } from '@/lib/regionCounts';
 import { formatCount } from '@/lib/formatCount';
 import { Metadata } from 'next';
 
@@ -71,7 +71,10 @@ export default async function RegionsIndexPage() {
                   </div>
 
                   <p className="text-gray-600 mb-6 line-clamp-3">
-                    {region.description}
+                    {/* The description carries a {count} placeholder so the figure is
+                        computed rather than hardcoded. It must be resolved here as
+                        well as on the region page, or the literal token renders. */}
+                    {withCount(region.description, regionCounts[region.slug])}
                   </p>
 
                   {region.status === 'live' && regionCounts[region.slug] !== null && (
