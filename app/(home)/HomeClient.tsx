@@ -181,7 +181,7 @@ export default function Home({
                 Organised by pest type. Every product links straight to the item on Amazon UK.
               </p>
               <Link href="/products" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
-                Home Products
+                View Home Products →
               </Link>
             </div>
 
@@ -194,7 +194,7 @@ export default function Home({
                 Professional-grade equipment and treatments for commercial premises, organised by pest type.
               </p>
               <Link href="/commercial-products" className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
-                Commercial Products
+                View Commercial Products →
               </Link>
             </div>
           </div>
