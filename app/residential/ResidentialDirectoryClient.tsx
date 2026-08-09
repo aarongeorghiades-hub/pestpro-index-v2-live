@@ -288,8 +288,7 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
                 href="/products"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] text-white text-lg font-bold rounded-xl hover:from-[#2563eb] hover:to-[#3b82f6] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
               >
-                View Products Page
-                <span>→</span>
+                Home Products
               </Link>
             </div>
 

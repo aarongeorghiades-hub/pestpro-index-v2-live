@@ -10,13 +10,11 @@ export default function Navigation() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isFindProviderOpen, setIsFindProviderOpen] = useState(false);
-  const [isPestProductsOpen, setIsPestProductsOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
 
   const isHomeActive = pathname === '/';
   const isFindProviderActive = pathname?.startsWith('/residential') || pathname?.startsWith('/commercial') || pathname?.startsWith('/birmingham') || pathname?.startsWith('/manchester') || pathname?.startsWith('/liverpool') || pathname?.startsWith('/leeds') || pathname?.startsWith('/nottingham') || pathname?.startsWith('/brighton') || pathname?.startsWith('/sheffield') || pathname?.startsWith('/bristol') || pathname?.startsWith('/glasgow') || pathname?.startsWith('/bradford') || pathname?.startsWith('/newcastle') || pathname?.startsWith('/cardiff') || pathname?.startsWith('/edinburgh') || pathname?.startsWith('/leicester') || pathname?.startsWith('/hampshire') || pathname?.startsWith('/coventry') || pathname?.startsWith('/belfast') || pathname?.startsWith('/derby') || pathname?.startsWith('/pest-control');
-  const isProductsActive = pathname === '/products' || pathname === '/commercial-products';
   const isProfessionalsActive = pathname === '/professionals';
   const isResourcesActive = pathname?.startsWith('/blog') || pathname?.startsWith('/resources') || pathname?.startsWith('/frequently-asked-questions') || pathname?.startsWith('/pest-library') || pathname?.startsWith('/pest/') || pathname?.startsWith('/useful-links') || pathname?.startsWith('/guides') || pathname?.startsWith('/best');
   const isContactActive = pathname === '/contact';
@@ -26,7 +24,6 @@ export default function Navigation() {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
         setIsFindProviderOpen(false);
-        setIsPestProductsOpen(false);
         setIsResourcesOpen(false);
       }
     };
@@ -49,7 +46,7 @@ export default function Navigation() {
   ];
 
   const pestProducts = [
-    { label: 'Home Pest Products', href: '/products' },
+    { label: 'Home Products', href: '/products' },
     { label: 'Commercial Products', href: '/commercial-products' },
   ];
 
@@ -89,7 +86,7 @@ export default function Navigation() {
           {/* Find a Provider Dropdown */}
           <div className="relative">
             <button
-              onClick={() => { setIsFindProviderOpen(!isFindProviderOpen); setIsPestProductsOpen(false); setIsResourcesOpen(false); }}
+              onClick={() => { setIsFindProviderOpen(!isFindProviderOpen); setIsResourcesOpen(false); }}
               className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isFindProviderActive ? 'text-white' : 'text-white/70 hover:text-white'}`}
             >
               Find a Provider ▾
@@ -150,30 +147,19 @@ export default function Navigation() {
             )}
           </div>
 
-          {/* Pest Products Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => { setIsPestProductsOpen(!isPestProductsOpen); setIsFindProviderOpen(false); setIsResourcesOpen(false); }}
-              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isProductsActive ? 'text-white' : 'text-white/70 hover:text-white'}`}
+          {/* Product pages sit at the top level rather than inside a dropdown:
+              a dropdown item is two interactions away and its markup only exists
+              once client state has opened it, so neither page was reachable in a
+              single click. Each renders as its own always-present nav link. */}
+          {pestProducts.map((product) => (
+            <Link
+              key={product.href}
+              href={product.href}
+              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${pathname === product.href ? 'text-white' : 'text-white/70 hover:text-white'}`}
             >
-              Pest Products ▾
-            </button>
-
-            {isPestProductsOpen && (
-              <div className="absolute top-full mt-2 left-0 bg-gradient-to-b from-[#1e3a8a] to-[#050812] border border-white/20 rounded-xl shadow-lg min-w-max z-50">
-                {pestProducts.map((product) => (
-                  <Link
-                    key={product.href}
-                    href={product.href}
-                    className="block px-6 py-3 text-white hover:bg-white/10 transition-colors first:pt-3 last:pb-3"
-                    onClick={() => setIsPestProductsOpen(false)}
-                  >
-                    {product.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+              {product.label}
+            </Link>
+          ))}
 
           <Link
             href="/professionals"
@@ -185,7 +171,7 @@ export default function Navigation() {
           {/* Resources Dropdown */}
           <div className="relative">
             <button
-              onClick={() => { setIsResourcesOpen(!isResourcesOpen); setIsFindProviderOpen(false); setIsPestProductsOpen(false); }}
+              onClick={() => { setIsResourcesOpen(!isResourcesOpen); setIsFindProviderOpen(false); }}
               className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isResourcesActive ? 'text-white' : 'text-white/70 hover:text-white'}`}
             >
               Resources ▾

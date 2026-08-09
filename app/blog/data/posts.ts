@@ -315,7 +315,7 @@ export const posts: BlogPost[] = [
 <li>Are there signs of gnaw damage to cables, pipes, or structure? (If yes, professional — this is a safety issue)</li>
 </ul>
 
-<p>For a guide to over-the-counter pest control products that are genuinely effective, see our <a href="/products">pest control products page</a>. If you've determined professional help is the right call, <a href="/residential">browse London pest control providers on PestPro Index</a> — all listed with Google ratings and no referral fees attached.</p>
+<p>For a guide to over-the-counter pest control products that are genuinely effective, see our <a href="/products">Home Products</a> page. If you've determined professional help is the right call, <a href="/residential">browse London pest control providers on PestPro Index</a> — all listed with Google ratings and no referral fees attached.</p>
 
 <h2>Summary</h2>
 
@@ -2237,7 +2237,7 @@ export const posts: BlogPost[] = [
 
     <h2>DIY vs Professional Treatment</h2>
 
-    <p>For minor ant activity around patios, a few silverfish in a bathroom, or a single mouse sighting, DIY methods can be effective. Our <a href="/products">Pest Products page</a> lists the most popular and highly-rated products for each pest type.</p>
+    <p>For minor ant activity around patios, a few silverfish in a bathroom, or a single mouse sighting, DIY methods can be effective. Our <a href="/products">Home Products</a> page lists the most popular and highly-rated products for each pest type.</p>
 
     <p>However, for established infestations — particularly rats, bed bugs, cockroaches, or textile moths — professional treatment is almost always necessary. These pests breed quickly, hide in inaccessible areas, and require targeted treatment methods that aren't available to consumers. Attempting DIY treatment for serious infestations often wastes money and allows the problem to escalate.</p>
 

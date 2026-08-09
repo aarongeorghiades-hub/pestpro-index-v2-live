@@ -591,8 +591,7 @@ export default function CommercialDirectoryClient({ initialProviders }: { initia
           <h3 className="text-2xl font-bold text-gray-900 mb-3">Looking for Product Recommendations?</h3>
           <p className="text-gray-600 mb-6">Visit our Products page to see the most popular pest control products available today, organized by pest type. Includes user ratings and direct purchase links.</p>
           <Link href="/products" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold text-lg">
-            View Products Page
-            <span>→</span>
+            Home Products
           </Link>
         </div>
       </section>
