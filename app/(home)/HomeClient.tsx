@@ -33,6 +33,22 @@ export default function Home({
   const statsRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
+  // The area grid is 1/2/3/4 columns at base/md/lg/xl. Whenever the card count
+  // leaves a remainder of one at a breakpoint, the final card sits alone on its
+  // own row and reads as a layout fault, so it spans the full row instead.
+  //
+  // Every breakpoint is stated explicitly rather than only the ones that need a
+  // span: Tailwind's md:/lg: prefixes apply at every width at or above their
+  // breakpoint, so an md span left unreset would still be in force at lg and
+  // overflow the row. The class strings are literals — Tailwind v4 scans source
+  // text and would not emit a class assembled from an interpolated column count.
+  const areaCardCount = regionCounts.length;
+  const lastAreaCardSpan = [
+    areaCardCount % 2 === 1 ? 'md:col-span-2' : 'md:col-span-1',
+    areaCardCount % 3 === 1 ? 'lg:col-span-3' : 'lg:col-span-1',
+    areaCardCount % 4 === 1 ? 'xl:col-span-4' : 'xl:col-span-1',
+  ].join(' ');
+
   // Count up on scroll to the real, already-known figures.
   useEffect(() => {
     if (providerCount === null) return;
@@ -186,6 +202,38 @@ export default function Home({
       </section>
 
 
+      {/* REGION PICKER SECTION */}
+      <section className="py-24 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#0f172a]">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+              Find Pest Control in Your Region
+            </h2>
+            <p className="text-xl text-white/80">
+              Browse providers across the UK
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+            {regionCounts.map((region, i) => (
+              <div key={region.slug} className={`rounded-2xl p-8 bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] transition-all duration-300${i === areaCardCount - 1 ? ` ${lastAreaCardSpan}` : ''}`}>
+                <div className="flex items-center gap-3 mb-4">
+                  <MapPin className="w-6 h-6 text-amber-400" />
+                  <h3 className="text-2xl font-black text-white">{region.label}</h3>
+                </div>
+                {region.count !== null && (
+                  <p className="text-3xl font-black text-amber-400 mb-4">{formatCount(region.count)} providers</p>
+                )}
+                <Link href={region.href} className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
+                  Browse {region.label} →
+                </Link>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
       {/* BUILT OUT OF FRUSTRATION */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4">
@@ -220,38 +268,6 @@ export default function Home({
               Whether you need pest control or pest removal services, we bring available data on professionals across the UK to your fingertips so you can find the right service on your terms. A neutral directory designed for transparency, not transactions.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* REGION PICKER SECTION */}
-      <section className="py-24 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#0f172a]">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-              Find Pest Control in Your Region
-            </h2>
-            <p className="text-xl text-white/80">
-              Browse providers across the UK
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-            {regionCounts.map(region => (
-              <div key={region.slug} className="rounded-2xl p-8 bg-gradient-to-br from-[#1e293b] to-[#0f172a] border-[3px] border-amber-500/60 hover:border-amber-400 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] transition-all duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <MapPin className="w-6 h-6 text-amber-400" />
-                  <h3 className="text-2xl font-black text-white">{region.label}</h3>
-                </div>
-                {region.count !== null && (
-                  <p className="text-3xl font-black text-amber-400 mb-4">{formatCount(region.count)} providers</p>
-                )}
-                <Link href={region.href} className="block text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-white font-bold rounded-lg transition-colors">
-                  Browse {region.label} →
-                </Link>
-              </div>
-            ))}
-          </div>
-
         </div>
       </section>
 
