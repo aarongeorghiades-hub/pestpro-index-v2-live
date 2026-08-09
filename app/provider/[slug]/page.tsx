@@ -18,7 +18,7 @@ async function getProvider(slug: string) {
   const supabase = createServerClient();
   const { data, error } = await supabase
     .from('Providers')
-    .select('*')
+    .select('address, basis_prompt, bpca_member, business_commercial, business_residential, cepa_certified, chas_accredited, commercial, detection_dogs, eco_friendly_methods, email, emergency_24_7, falconry_bird_control, flexible_contracts, free_surveys, fumigation, google_rating, google_review_count, heat_treatment, high_rise_rope_access, humane_non_lethal_methods, iso_14001, iso_9001, multi_site_coverage, name, npta_member, pest_ants, pest_bed_bugs, pest_bees, pest_beetles, pest_birds, pest_cockroaches, pest_fleas, pest_flies, pest_foxes, pest_ladybirds, pest_mice, pest_moles, pest_moths, pest_pigeons, pest_rats, pest_seagulls, pest_silverfish, pest_spiders, pest_squirrels, pest_wasps, phone, postcode, profile_text, proofing_services, regions, rsph_level_2, safe_contractor, specialist_bird_control, specialist_fly_killers, trustmark, website')
     .eq('active', true)
     .eq('slug', slug)
     .order('google_review_count', { ascending: false, nullsFirst: false })

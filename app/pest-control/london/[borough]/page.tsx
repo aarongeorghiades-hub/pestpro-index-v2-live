@@ -82,7 +82,7 @@ export default async function LondonBoroughPage({ params }: Props) {
     // First try: providers matching the pest type in this region.
     const { data: pestData, error: pestError } = await supabase
       .from('Providers')
-      .select('*')
+      .select('address, canonical_id, google_rating, google_review_count, name, pest_ants, pest_bed_bugs, pest_cockroaches, pest_fleas, pest_foxes, pest_mice, pest_moths, pest_pigeons, pest_rats, pest_wasps, phone, postcode, service_bpca_certified, service_eco_friendly, service_emergency_24_7, slug, website')
       .eq('active', true)
       .eq('business_residential', true)
       .eq(pest.filterColumn, true)
@@ -96,7 +96,7 @@ export default async function LondonBoroughPage({ params }: Props) {
     if (providers.length === 0) {
       const { data: fallbackData, error: fallbackError } = await supabase
         .from('Providers')
-        .select('*')
+        .select('address, canonical_id, google_rating, google_review_count, name, pest_ants, pest_bed_bugs, pest_cockroaches, pest_fleas, pest_foxes, pest_mice, pest_moths, pest_pigeons, pest_rats, pest_wasps, phone, postcode, service_bpca_certified, service_eco_friendly, service_emergency_24_7, slug, website')
         .eq('active', true)
         .eq('business_residential', true)
         .or(`regions.cs.["${cityConfig.region}"]`);
@@ -126,7 +126,7 @@ export default async function LondonBoroughPage({ params }: Props) {
   // Borough page: all residential providers serving London.
   const { data: boroughData, error: boroughError } = await supabase
     .from('Providers')
-    .select('*')
+    .select('address, canonical_id, google_rating, google_review_count, name, pest_ants, pest_bed_bugs, pest_cockroaches, pest_fleas, pest_foxes, pest_mice, pest_moths, pest_pigeons, pest_rats, pest_wasps, phone, postcode, service_bpca_certified, service_eco_friendly, service_emergency_24_7, slug, website')
     .eq('active', true)
     .eq('business_residential', true)
     .or('regions.cs.["london"]');

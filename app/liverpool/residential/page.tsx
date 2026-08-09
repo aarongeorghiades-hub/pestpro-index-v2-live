@@ -18,7 +18,7 @@ export default async function ResidentialPage() {
   const supabase = createServerClient();
   const { data, error } = await supabase
     .from('Providers')
-    .select('*')
+    .select('address, canonical_id, google_rating, google_review_count, name, pest_ants, pest_bed_bugs, pest_bees, pest_beetles, pest_birds, pest_cockroaches, pest_fleas, pest_flies, pest_foxes, pest_ladybirds, pest_mice, pest_moles, pest_moths, pest_pigeons, pest_rats, pest_seagulls, pest_silverfish, pest_spiders, pest_squirrels, pest_wasps, phone, postcode, service_bpca_certified, service_eco_friendly, service_emergency_24_7, service_free_survey, service_guarantee, service_proofing, service_weekend, slug, website')
     .eq('active', true)
     .eq('business_residential', true)
     .or('regions.cs.["liverpool"]');
