@@ -426,11 +426,23 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
                   className={`w-6 h-6 text-blue-600 flex-shrink-0 transition-transform duration-300 ${expandedFaq === idx ? 'rotate-180' : ''}`}
                 />
               </button>
-              {expandedFaq === idx && (
-                <div className="px-8 py-6 bg-gradient-to-r from-blue-50 to-blue-100 border-t-2 border-gray-100 animate-fade-in-up">
-                  <p className="text-gray-700 text-lg leading-relaxed">{item.answer}</p>
+              {/* The answer is ALWAYS mounted so it is present in the server
+                  HTML and readable without JavaScript. Collapse is done with
+                  CSS (a zero-height grid row) rather than by unmounting, which
+                  keeps the accordion behaving exactly as before while making
+                  the text crawlable. */}
+              <div
+                className={`grid transition-all duration-300 ${
+                  expandedFaq === idx ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                }`}
+                aria-hidden={expandedFaq !== idx}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-8 py-6 bg-gradient-to-r from-blue-50 to-blue-100 border-t-2 border-gray-100">
+                    <p className="text-gray-700 text-lg leading-relaxed">{item.answer}</p>
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
