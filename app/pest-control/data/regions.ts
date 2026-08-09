@@ -178,8 +178,30 @@ export const regions: Region[] = [
         status: "live",
         commercialLink: "/leeds/commercial",
       },
-      { name: "Sheffield", slug: "sheffield", status: "coming-soon" },
-      { name: "Bradford", slug: "bradford", status: "coming-soon" },
+      {
+        name: "Sheffield Residential",
+        slug: "sheffield-residential",
+        status: "live",
+        residentialLink: "/sheffield/residential",
+      },
+      {
+        name: "Sheffield Commercial",
+        slug: "sheffield-commercial",
+        status: "live",
+        commercialLink: "/sheffield/commercial",
+      },
+      {
+        name: "Bradford Residential",
+        slug: "bradford-residential",
+        status: "live",
+        residentialLink: "/bradford/residential",
+      },
+      {
+        name: "Bradford Commercial",
+        slug: "bradford-commercial",
+        status: "live",
+        commercialLink: "/bradford/commercial",
+      },
       { name: "Hull", slug: "hull", status: "coming-soon" },
       { name: "York", slug: "york", status: "coming-soon" },
       { name: "North Yorkshire", slug: "north-yorkshire", status: "coming-soon" },
@@ -292,7 +314,18 @@ export const regions: Region[] = [
         status: "live",
         commercialLink: "/leicester/commercial",
       },
-      { name: "Derby", slug: "derby", status: "coming-soon" },
+      {
+        name: "Derby Residential",
+        slug: "derby-residential",
+        status: "live",
+        residentialLink: "/derby/residential",
+      },
+      {
+        name: "Derby Commercial",
+        slug: "derby-commercial",
+        status: "live",
+        commercialLink: "/derby/commercial",
+      },
       { name: "Northamptonshire", slug: "northamptonshire", status: "coming-soon" },
       { name: "Lincolnshire", slug: "lincolnshire", status: "coming-soon" }
     ]

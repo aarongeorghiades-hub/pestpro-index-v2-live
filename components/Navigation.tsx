@@ -41,7 +41,6 @@ export default function Navigation() {
     { name: 'Yorkshire & the Humber', href: '/pest-control/yorkshire-and-the-humber', status: 'live' },
     { name: 'East Midlands', href: '/pest-control/east-midlands', status: 'live' },
     { name: 'South East', href: '/pest-control/south-east', status: 'live' },
-    { name: 'South Yorkshire', href: '/pest-control/south-yorkshire', status: 'live' },
     { name: 'South West', href: '/pest-control/south-west', status: 'live' },
     { name: 'Scotland', href: '/pest-control/scotland', status: 'live' },
     { name: 'North East', href: '/pest-control/north-east', status: 'live' },
