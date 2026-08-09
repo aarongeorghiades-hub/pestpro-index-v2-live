@@ -9,14 +9,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Best Pigeon Spikes UK 2026',
     description:
-      'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate, and adhesive options compared, with installation advice.',
+      'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate and adhesive options.',
     alternates: {
       canonical: 'https://pestproindex.com/best/pigeon-spikes',
     },
     openGraph: {
       title: 'Best Pigeon Spikes UK 2026',
       description:
-        'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate, and adhesive options compared, with installation advice.',
+        'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate and adhesive options.',
       url: 'https://pestproindex.com/best/pigeon-spikes',
       type: 'article',
       siteName: 'PestPro Index',
@@ -29,7 +29,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Best Pigeon Spikes UK 2026',
   description:
-    'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate, and adhesive options compared, with installation advice.',
+    'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate and adhesive options.',
   datePublished: '2026-03-31',
   dateModified: '2026-03-31',
   author: {

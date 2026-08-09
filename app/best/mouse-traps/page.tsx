@@ -9,14 +9,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Best Mouse Traps UK 2026',
     description:
-      'The best mouse traps you can buy in the UK for 2026. Snap traps, electronic traps, humane live-catch options and bait stations — compared, with pros, cons and buying guidance.',
+      'The best mouse traps you can buy in the UK for 2026. Snap traps, electronic traps, humane live-catch options and bait stations.',
     alternates: {
       canonical: 'https://pestproindex.com/best/mouse-traps',
     },
     openGraph: {
       title: 'Best Mouse Traps UK 2026',
       description:
-        'The best mouse traps you can buy in the UK for 2026. Snap traps, electronic traps, humane live-catch options and bait stations — compared, with pros, cons and buying guidance.',
+        'The best mouse traps you can buy in the UK for 2026. Snap traps, electronic traps, humane live-catch options and bait stations.',
       url: 'https://pestproindex.com/best/mouse-traps',
       type: 'article',
       siteName: 'PestPro Index',
@@ -29,7 +29,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Best Mouse Traps UK 2026',
   description:
-    'The best mouse traps you can buy in the UK for 2026. Snap traps, electronic traps, humane live-catch options and bait stations — compared, with pros, cons and buying guidance.',
+    'The best mouse traps you can buy in the UK for 2026. Snap traps, electronic traps, humane live-catch options and bait stations.',
   datePublished: '2026-03-14',
   dateModified: '2026-03-14',
   author: {

@@ -7,14 +7,14 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Best Commercial Fly Killers UK 2026 | Restaurant & Kitchen Units',
+    title: 'Best Commercial Fly Killers UK 2026 | Kitchen Units',
     description:
       'Our pick of commercial electric fly killers for UK restaurants, kitchens, and food businesses. UV zappers, glue board units, and LED models compared.',
     alternates: {
       canonical: 'https://pestproindex.com/best/commercial-fly-killers',
     },
     openGraph: {
-      title: 'Best Commercial Fly Killers UK 2026 | Restaurant & Kitchen Units',
+      title: 'Best Commercial Fly Killers UK 2026 | Kitchen Units',
       description:
         'Our pick of commercial electric fly killers for UK restaurants, kitchens, and food businesses. UV zappers, glue board units, and LED models compared.',
       url: 'https://pestproindex.com/best/commercial-fly-killers',
@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Best Commercial Fly Killers UK 2026 | Restaurant & Kitchen Units',
+  headline: 'Best Commercial Fly Killers UK 2026 | Kitchen Units',
   description:
     'Our pick of commercial electric fly killers for UK restaurants, kitchens, and food businesses. UV zappers, glue board units, and LED models compared.',
   datePublished: '2026-03-17',

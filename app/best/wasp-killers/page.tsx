@@ -8,14 +8,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Best Wasp Killer Products UK 2026: Sprays, Powders & Traps',
     description:
-      'The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders, and wasp traps compared, with pros, cons and buying advice.',
+      'The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders and wasp traps, with buying advice.',
     alternates: {
       canonical: 'https://pestproindex.com/best/wasp-killers',
     },
     openGraph: {
       title: 'Best Wasp Killer Products UK 2026: Sprays, Powders & Traps',
       description:
-        'The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders, and wasp traps compared, with pros, cons and buying advice.',
+        'The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders and wasp traps, with buying advice.',
       url: 'https://pestproindex.com/best/wasp-killers',
       type: 'article',
       siteName: 'PestPro Index',
@@ -28,7 +28,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Best Wasp Killer Products UK 2026: Sprays, Powders & Traps',
   description:
-    'The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders, and wasp traps compared, with pros, cons and buying advice.',
+    'The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders and wasp traps, with buying advice.',
   datePublished: '2026-03-16',
   dateModified: '2026-03-16',
   author: {
