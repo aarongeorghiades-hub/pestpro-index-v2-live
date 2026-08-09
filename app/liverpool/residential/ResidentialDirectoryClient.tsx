@@ -187,7 +187,15 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
   // and the generated descriptions read, so a filter can never offer a pest the
   // provider's own page does not show. The _general columns are deliberately
   // absent: they hold stale import data we do not display.
-  const pestFilters = PESTS.map(pest => ({ value: pest.column, label: pest.label }));
+  // A filter offering fewer than three providers is a dead end: the visitor
+  // clicks it and lands on a near-empty list. Hide those, but never hide the
+  // lot - if the threshold would strip every filter, show them all rather
+  // than leave the page with no way to narrow anything.
+  const PEST_FILTER_MIN = 3;
+  const visiblePestFilters = PESTS.filter(pest => getFilterCount(pest.column) >= PEST_FILTER_MIN);
+  const pestFilters = (visiblePestFilters.length > 0 ? visiblePestFilters : PESTS).map(
+    pest => ({ value: pest.column, label: pest.label })
+  );
 
   const serviceFilters = [
     { value: 'service_eco_friendly', label: 'Eco-Friendly' },
