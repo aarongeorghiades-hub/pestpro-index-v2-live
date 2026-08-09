@@ -23,7 +23,7 @@ export const regions: Region[] = [
     name: "Greater London",
     slug: "greater-london",
     status: "live",
-    description: "Find pest control and pest removal providers across all 33 London boroughs. PestPro Index lists 389 residential and commercial pest control companies in Greater London with Google ratings — no lead fees, no commissions.",
+    description: "Find pest control and pest removal providers across all 33 London boroughs. PestPro Index lists {count} residential and commercial pest control companies in Greater London with Google ratings — no lead fees, no commissions.",
     metaTitle: "Pest Control in Greater London | {count} Providers",
     metaDescription: "Compare {count} pest control and pest removal providers across Greater London. Google ratings, no lead fees, no commissions. Find pest control in your borough.",
     cities: [
@@ -257,7 +257,7 @@ export const regions: Region[] = [
     name: "South West",
     slug: "south-west",
     status: "live",
-    description: "Find pest control providers across Bristol, Bath, and the South West. PestPro Index lists 43 residential and commercial pest control companies with Google ratings — no lead fees, no commissions.",
+    description: "Find pest control providers across Bristol, Bath, and the South West. PestPro Index lists {count} residential and commercial pest control companies with Google ratings — no lead fees, no commissions.",
     metaTitle: "Pest Control in the South West | {count} Providers",
     metaDescription: "Compare {count} pest control providers across Bristol, Bath, and the South West. Google ratings, no lead fees, no commissions. Find pest control near you.",
     cities: [

@@ -1437,7 +1437,7 @@ export const posts: BlogPost[] = [
 
 <h2>Find a Provider Today</h2>
 
-<p>Browse all 106 East Midlands pest control providers on PestPro Index — filter by pest type, certifications, service features, and more. No lead fees, no commissions, no sponsored rankings.</p>
+<p>Browse East Midlands pest control providers on PestPro Index — filter by pest type, certifications, service features, and more. No lead fees, no commissions, no sponsored rankings.</p>
 
 <p><a href="/nottingham/residential">Nottingham Residential Directory</a> | <a href="/nottingham/commercial">Nottingham Commercial Directory</a></p>
 `
