@@ -45,6 +45,12 @@ export default function CommercialProductsPage({ products }: { products: Product
 
     { emoji: '🐜', name: 'Ants', id: 'Ants' },
     { emoji: '🦟', name: 'Drain Flies', id: 'Drain Flies' },
+    // 8 active commercial rows carry pest_category = 'Textile Pests'. The
+    // array above listed nine categories and this was not one of them, so
+    // those rows were fetched, grouped, and then filtered out by
+    // categoriesWithProducts - fetched but never reachable. Same shape as the
+    // nine above; no change to the grouping code.
+    { emoji: '🦋', name: 'Textile Pests (Clothes Moths, Carpet Beetles)', id: 'Textile Pests' },
   ];
 
 
