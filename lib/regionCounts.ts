@@ -123,7 +123,10 @@ export async function countsByRegion(regions: Region[]): Promise<Record<string, 
  *   "… with {count} providers, …"        -> "…, …"
  */
 export function withCount(text: string, count: number | null): string {
-  if (count !== null) return text.replace('{count}', formatCount(count));
+  // Global, not first-only: a metaDescription carries the figure twice ("Compare
+  // {count} providers across X. Covering Y with {count} providers.") and a
+  // first-only replace would leave the second token literal in the head.
+  if (count !== null) return text.replace(/\{count\}/g, formatCount(count));
 
   return text
     .replace(/ \| \{count\} Providers/g, '')

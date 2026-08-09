@@ -51,9 +51,9 @@ export const regions: Region[] = [
     name: "West Midlands",
     slug: "west-midlands",
     status: "live",
-    description: "Find pest control and pest removal providers across the West Midlands. PestPro Index covers Birmingham and Coventry with providers, with expansion to Wolverhampton and the wider West Midlands region coming soon.",
+    description: "Find pest control and pest removal providers across the West Midlands. PestPro Index covers Birmingham and Coventry with {count} providers, with expansion to Wolverhampton and the wider West Midlands region coming soon.",
     metaTitle: "Pest Control in the West Midlands | Birmingham, Coventry & Surrounding Areas",
-    metaDescription: "Compare pest control and pest removal providers across the West Midlands. Currently covering Birmingham and Coventry with providers. No lead fees, no commissions.",
+    metaDescription: "Compare pest control and pest removal providers across the West Midlands. Currently covering Birmingham and Coventry with {count} providers. No lead fees, no commissions.",
     cities: [
       {
         name: "Birmingham Residential",
@@ -127,7 +127,7 @@ export const regions: Region[] = [
     status: "live",
     description: "Find pest control and pest removal providers across the North West. PestPro Index covers Manchester and Liverpool with {count} providers, with expansion to Lancashire, Cheshire, and Cumbria coming soon.",
     metaTitle: "Pest Control in the North West | Manchester, Liverpool & Surrounding Areas",
-    metaDescription: "Compare {count} pest control and pest removal providers across the North West. Covering Manchester and Liverpool with providers. No lead fees, no commissions.",
+    metaDescription: "Compare {count} pest control and pest removal providers across the North West. Covering Manchester and Liverpool with {count} providers. No lead fees, no commissions.",
     cities: [
       {
         name: "Manchester Residential",
@@ -164,7 +164,7 @@ export const regions: Region[] = [
     status: "live",
     description: "Find pest control and pest removal providers across Yorkshire. PestPro Index currently covers Leeds with {count} providers, with expansion to Sheffield, Bradford, Hull, York, and the wider Yorkshire region coming soon.",
     metaTitle: "Pest Control in Yorkshire & the Humber | Leeds & Surrounding Areas",
-    metaDescription: "Compare {count} pest control and pest removal providers across Yorkshire. Currently covering Leeds with providers. No lead fees, no commissions.",
+    metaDescription: "Compare {count} pest control and pest removal providers across Yorkshire. Currently covering Leeds with {count} providers. No lead fees, no commissions.",
     cities: [
       {
         name: "Leeds Residential",
@@ -216,7 +216,7 @@ export const regions: Region[] = [
     status: "live",
     description: "Find pest control and pest removal providers across the South East. PestPro Index covers Brighton and Hampshire with {count} providers, with expansion to Kent, Surrey, and more coming soon.",
     metaTitle: "Pest Control in the South East | Brighton, Hampshire & Surrounding Areas",
-    metaDescription: "Compare {count} pest control and pest removal providers across the South East. Covering Brighton and Hampshire with providers. No lead fees, no commissions.",
+    metaDescription: "Compare {count} pest control and pest removal providers across the South East. Covering Brighton and Hampshire with {count} providers. No lead fees, no commissions.",
     cities: [
       {
         name: "Brighton Residential",
@@ -288,7 +288,7 @@ export const regions: Region[] = [
     status: "live",
     description: "Find pest control and pest removal providers across the East Midlands. PestPro Index covers Nottingham and Leicester with {count} providers, with expansion to Derby, Northampton, and Lincolnshire coming soon.",
     metaTitle: "Pest Control in the East Midlands | Nottingham, Leicester & Surrounding Areas",
-    metaDescription: "Compare {count} pest control and pest removal providers across the East Midlands. Covering Nottingham and Leicester with providers. No lead fees, no commissions.",
+    metaDescription: "Compare {count} pest control and pest removal providers across the East Midlands. Covering Nottingham and Leicester with {count} providers. No lead fees, no commissions.",
     cities: [
       {
         name: "Nottingham Residential",
@@ -336,7 +336,7 @@ export const regions: Region[] = [
     status: "live",
     description: "Find pest control and pest removal providers across the North East. PestPro Index covers Newcastle upon Tyne with {count} providers, with expansion to Sunderland, County Durham, and Teesside coming soon.",
     metaTitle: "Pest Control in the North East | Newcastle & Surrounding Areas",
-    metaDescription: "Compare {count} pest control and pest removal providers across the North East. Currently covering Newcastle with providers. No lead fees, no commissions.",
+    metaDescription: "Compare {count} pest control and pest removal providers across the North East. Currently covering Newcastle with {count} providers. No lead fees, no commissions.",
     cities: [
       {
         name: "Newcastle Residential",
@@ -360,9 +360,9 @@ export const regions: Region[] = [
     name: "Scotland",
     slug: "scotland",
     status: "live",
-    description: "Find pest control and pest removal providers across Scotland. PestPro Index covers Glasgow and Edinburgh with providers, with expansion to Aberdeen and Dundee coming soon.",
+    description: "Find pest control and pest removal providers across Scotland. PestPro Index covers Glasgow and Edinburgh with {count} providers, with expansion to Aberdeen and Dundee coming soon.",
     metaTitle: "Pest Control in Scotland | Glasgow, Edinburgh & Surrounding Areas",
-    metaDescription: "Compare pest control and pest removal providers across Scotland. Covering Glasgow and Edinburgh with providers. No lead fees, no commissions.",
+    metaDescription: "Compare pest control and pest removal providers across Scotland. Covering Glasgow and Edinburgh with {count} providers. No lead fees, no commissions.",
     cities: [
       {
         name: "Glasgow Residential",
@@ -402,7 +402,7 @@ export const regions: Region[] = [
     status: "live",
     description: "Find pest control and pest removal providers across Wales. PestPro Index covers Cardiff with {count} providers, with expansion to Swansea, Newport, and North Wales coming soon.",
     metaTitle: "Pest Control in Wales | Cardiff & Surrounding Areas",
-    metaDescription: "Compare {count} pest control and pest removal providers across Wales. Currently covering Cardiff with providers. No lead fees, no commissions.",
+    metaDescription: "Compare {count} pest control and pest removal providers across Wales. Currently covering Cardiff with {count} providers. No lead fees, no commissions.",
     cities: [
       {
         name: "Cardiff Residential",
@@ -427,7 +427,7 @@ export const regions: Region[] = [
     status: "live",
     description: "Find pest control and pest removal providers across Northern Ireland. PestPro Index covers Belfast with {count} providers, with expansion to Derry, Lisburn, and Newry coming soon.",
     metaTitle: "Pest Control in Northern Ireland | Belfast & Surrounding Areas",
-    metaDescription: "Compare {count} pest control and pest removal providers across Northern Ireland. Currently covering Belfast with providers. No lead fees, no commissions.",
+    metaDescription: "Compare {count} pest control and pest removal providers across Northern Ireland. Currently covering Belfast with {count} providers. No lead fees, no commissions.",
     cities: [
       {
         name: "Belfast Residential",
