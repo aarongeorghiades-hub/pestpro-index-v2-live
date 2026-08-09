@@ -322,7 +322,7 @@ export default function BestRatTrapsPage() {
         It is supplied as a 4-pack, which gives you multiple placement points rather than a single trap in a single location.
       </p>
       <p>
-        <strong>Key features:</strong>
+        <strong>Pros:</strong>
       </p>
       <ul>
         <li>Professional quality heavy-duty snap traps</li>

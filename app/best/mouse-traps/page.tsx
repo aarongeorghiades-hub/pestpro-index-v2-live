@@ -280,7 +280,7 @@ export default function BestMouseTrapsPage() {
         The traps are reusable and easy to set, so each one can be put back to work after a catch rather than replaced. Being supplied as a 6-pack, a single purchase covers six placement points instead of one.
       </p>
       <p>
-        <strong>Key features:</strong>
+        <strong>Pros:</strong>
       </p>
       <ul>
         <li>Professional quality snap traps — 6-pack</li>
@@ -311,7 +311,7 @@ export default function BestMouseTrapsPage() {
         Trisiki rates these traps as effective for persistent mouse problems, and the construction is durable enough for repeated use rather than a single catch.
       </p>
       <p>
-        <strong>Key features:</strong>
+        <strong>Pros:</strong>
       </p>
       <ul>
         <li>Heavy-duty high-sensitivity snap traps</li>
@@ -343,7 +343,7 @@ export default function BestMouseTrapsPage() {
         Bait placement and the trigger mechanism are both straightforward, which keeps the traps quick to set and quick to reset after a catch.
       </p>
       <p>
-        <strong>Key features:</strong>
+        <strong>Pros:</strong>
       </p>
       <ul>
         <li>Reusable snap traps with professional design</li>
@@ -374,7 +374,7 @@ export default function BestMouseTrapsPage() {
         A transparent inspection window lets you see whether a trap is occupied without opening it, and ROSHIELD rates the design as safe for household use around children and pets. Each trap is reusable — you simply release the mouse and reset it. If you choose a live catch trap, read the checking frequency guidance further down this page before you deploy it.
       </p>
       <p>
-        <strong>Key features:</strong>
+        <strong>Pros:</strong>
       </p>
       <ul>
         <li>Live catch and release design</li>
@@ -406,7 +406,7 @@ export default function BestMouseTrapsPage() {
         It is easy to clean and reset between catches, and its compact size fits in tight spaces. As with any live catch trap, read the checking frequency guidance further down this page before you deploy it.
       </p>
       <p>
-        <strong>Key features:</strong>
+        <strong>Pros:</strong>
       </p>
       <ul>
         <li>Reusable humane mouse trap</li>
