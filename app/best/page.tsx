@@ -194,46 +194,6 @@ export default function BestProductsHubPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <h4 className="text-white font-bold mb-4">Browse</h4>
-              <ul className="space-y-2">
-                <li><Link href="/residential" className="hover:text-white transition">Residential</Link></li>
-                <li><Link href="/commercial" className="hover:text-white transition">Commercial</Link></li>
-                <li><Link href="/professionals" className="hover:text-white transition">For Professionals</Link></li>
-                <li><Link href="/pest-control" className="hover:text-white transition">By Borough</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-4">Products</h4>
-              <ul className="space-y-2">
-                <li><Link href="/products" className="hover:text-white transition">Home Products</Link></li>
-                <li><Link href="/commercial-products" className="hover:text-white transition">Commercial Products</Link></li>
-                <li><Link href="/best" className="hover:text-white transition">Best Products</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-4">Resources</h4>
-              <ul className="space-y-2">
-                <li><Link href="/guides" className="hover:text-white transition">Guides</Link></li>
-                <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-4">Legal</h4>
-              <ul className="space-y-2">
-                <li><Link href="/resources" className="hover:text-white transition">Resources</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center">
-            <p>&copy; 2026 PestPro Index. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

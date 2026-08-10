@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import { AlertCircle, Building2, Bell, MessageSquare } from 'lucide-react';
 import Navigation from '@/components/Navigation';
@@ -106,44 +105,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h4 className="font-bold mb-4">Find Providers</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/residential" className="hover:text-white transition">Residential Pest Control</Link></li>
-                <li><Link href="/commercial" className="hover:text-white transition">Commercial Pest Control</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Products</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/products" className="hover:text-white transition">Home Products</Link></li>
-                <li><Link href="/commercial-products" className="hover:text-white transition">Commercial Products</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">For Professionals</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/professionals" className="hover:text-white transition">For Pest Professionals</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">About</h4>
-              <ul className="space-y-2 text-gray-400">
-
-                <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
-                <li><Link href="/resources" className="hover:text-white transition">Resources</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2026 PestPro Index. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
