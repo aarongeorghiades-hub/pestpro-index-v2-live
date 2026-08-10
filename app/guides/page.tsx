@@ -108,6 +108,12 @@ const guides = [
     href: '/guides/how-to-get-rid-of-moths',
   },
   {
+    emoji: '🕷️',
+    title: 'Natural Spider Repellents UK: Conkers, Peppermint & More',
+    description: 'Keep spiders out of your house naturally. Do conkers really work? We rate every natural spider repellent from peppermint oil to citrus peels.',
+    href: '/guides/natural-spider-repellents',
+  },
+  {
     emoji: '🏢',
     title: 'Commercial Pest Control Hub',
     description: 'The gateway to all commercial pest control content — sector guides, equipment recommendations, and compliance resources for UK businesses.',
