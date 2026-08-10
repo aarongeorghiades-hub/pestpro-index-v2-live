@@ -77,6 +77,9 @@ const productLinks: Record<string, { label: string; href: string }[]> = {
   moths: [
     { label: 'Best Moth Traps', href: '/best/moth-traps' },
   ],
+  spiders: [
+    { label: 'Best Spider Repellent', href: '/best/spider-repellent' },
+  ],
 };
 
 export default async function PestGuidePage({ params }: Props) {
