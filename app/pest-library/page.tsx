@@ -27,6 +27,12 @@ const categories = [
     name: 'Insects',
     pests: ['bed-bugs', 'wasps', 'ants', 'cockroaches', 'fleas', 'moths', 'silverfish'],
   },
+  // Spiders are arachnids, not insects, so they get their own group rather
+  // than being filed under 'Insects' where they would be miscategorised.
+  {
+    name: 'Spiders & Arachnids',
+    pests: ['spiders'],
+  },
 ];
 
 function PestCard({ pest }: { pest: typeof pestGuides[number] }) {
