@@ -522,41 +522,6 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900 text-white py-16 border-t-2 border-blue-800">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-bold text-lg mb-4">PestPro Index</h3>
-              <p className="text-gray-400">
-                The UK's neutral pest control directory
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <div className="space-y-2">
-                <Link href="/" className="block text-gray-400 hover:text-white transition">Home</Link>
-                <Link href="/residential" className="block text-gray-400 hover:text-white transition">Residential</Link>
-                <Link href="/commercial" className="block text-gray-400 hover:text-white transition">Commercial</Link>
-                <Link href="/professionals" className="block text-gray-400 hover:text-white transition">For Pest Professionals</Link>
-                <Link href="/resources" className="block text-gray-400 hover:text-white transition">Resources</Link>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">For Professionals</h4>
-              <p className="text-gray-400">
-                Grow your pest control business with PestPro Index. Get listed today.
-              </p>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2026 PestPro Index. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

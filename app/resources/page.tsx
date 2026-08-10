@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import Navigation from '@/components/Navigation';
@@ -222,34 +221,6 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900 text-gray-300 py-16 border-t-2 border-blue-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h4 className="text-white font-bold mb-4">PestPro Index</h4>
-              <p className="text-sm">The UK's neutral pest control directory</p>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
-                <li><Link href="/resources" className="hover:text-white transition">Resources</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-4">For Professionals</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/professionals" className="hover:text-white transition">Grow Your Business</Link></li>
-                <li><Link href="/commercial" className="hover:text-white transition">Commercial Directory</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-            <p>© 2026 PestPro Index. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

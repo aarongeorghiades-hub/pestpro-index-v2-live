@@ -226,31 +226,6 @@ export default function ProviderDetails({ provider }: { provider: any }) {
         </div>
       </div>
 
-      {/* FOOTER */}
-      <footer className="bg-gray-900 text-gray-300 py-12 mt-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-3 gap-12 mb-8">
-            <div>
-              <h4 className="text-white font-bold mb-4">PestPro Index</h4>
-              <p className="text-sm">The UK&apos;s neutral pest control directory</p>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
-                <li><Link href="/resources" className="hover:text-white transition">Resources</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-4">Disclaimer</h4>
-              <p className="text-sm">We do not judge outcomes, we display available evidence. No endorsements or guarantees.</p>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-sm">
-            <p>&copy; 2026 PestPro Index. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
