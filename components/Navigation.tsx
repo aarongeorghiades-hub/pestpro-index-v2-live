@@ -178,7 +178,16 @@ export default function Navigation() {
             </button>
 
             {isResourcesOpen && (
-              <div className="absolute top-full mt-2 left-0 bg-gradient-to-b from-[#1e3a8a] to-[#050812] border border-white/20 rounded-xl shadow-lg min-w-max z-50">
+              // This dropdown renders 47 links and measured 2,267px tall at
+              // 1400x900 with max-height:none and overflow-y:visible, so the
+              // lower two thirds could not be clicked - page scroll moves an
+              // absolutely-positioned dropdown under a sticky header by only
+              // 36px. It now scrolls inside itself. The dropdown opens at
+              // y=130 on that viewport, so 11rem of headroom keeps its bottom
+              // edge clear of the fold at any viewport height. Desktop only:
+              // the mobile menu is a separate block and already scrolls with
+              // the page.
+              <div className="absolute top-full mt-2 left-0 bg-gradient-to-b from-[#1e3a8a] to-[#050812] border border-white/20 rounded-xl shadow-lg min-w-max z-50 max-h-[calc(100vh-11rem)] overflow-y-auto">
                 <Link
                   href="/pest-library"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
