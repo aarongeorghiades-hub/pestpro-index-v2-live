@@ -931,5 +931,96 @@ export const pestGuides: PestGuide[] = [
       }
     ],
     relatedPests: ['mice', 'rats']
+  },
+  {
+    slug: 'spiders',
+    name: 'Spiders',
+    pluralName: 'Spiders',
+    seoTitle: 'Spiders in UK Homes | Species, Autumn Season & Control | PestPro Index',
+    metaDescription: 'UK house spider guide. Why spiders come indoors in September, how to identify the noble false widow, and how to keep spiders out without chemicals.',
+    heroDescription: 'House spiders are among the most commonly seen creatures in UK homes, particularly in autumn. Almost all are harmless, most are useful, and the great majority of spider problems are solved by exclusion and tidying rather than by treatment.',
+    overview: 'The spiders found indoors in the UK are overwhelmingly the common house spider (Tegenaria domestica) and the giant house spider (Eratigena atrica, formerly placed in Tegenaria), both long-legged brown spiders that build sheet webs in corners, lofts, garages, and behind furniture. Neither is dangerous to people. Both are predators of flies, mosquitoes, and other insects, so a resident house spider population reduces the insects a household would otherwise notice. The one UK species with a genuine, if usually mild, bite risk is the noble false widow (Steatoda nobilis), a glossy dark spider with a bulbous abdomen that has spread north from the south coast over recent decades. Bites from it are uncommon, are usually described as comparable to a wasp sting, and rarely require more than cleaning the site and monitoring it. Spiders are not a hygiene pest: they do not contaminate food, do not carry disease to humans, and do not damage the fabric of a building. For most households the honest answer is that no treatment is needed at all.',
+    signsOfInfestation: [
+      'Sheet or funnel webs appearing in corners of rooms, in garages, sheds, and lofts, and behind or beneath furniture that is rarely moved',
+      'Fast-moving long-legged brown spiders crossing floors and walls in the evening, most noticeably between late August and October',
+      'Small white or cream silk egg sacs attached to webs in undisturbed corners, window recesses, and behind stored items',
+      'Repeated sightings in the same rooms, which usually indicates a nearby entry point or a reliable supply of prey insects rather than a growing population',
+      'Glossy dark spiders with a bulbous, marbled abdomen around door frames, window frames, conservatories, and outbuildings, which may indicate noble false widow (Steatoda nobilis) rather than a house spider'
+    ],
+    healthRisks: [
+      'The common house spider and the giant house spider are harmless: they do not transmit disease and their bites are not considered a medical concern in the UK',
+      'The noble false widow can bite if trapped against skin, most often in bedding or clothing. Reactions are usually local and comparable to a wasp sting; more severe reactions are uncommon and medical advice should be sought if a bite becomes hot, swollen, or spreads',
+      'Arachnophobia is a genuine and common condition, and distress caused by spiders in the home is a real effect even though the spiders themselves are not dangerous',
+      'Spider webs and accumulated dust in food-production and food-service premises are a documented housekeeping failure under UK food hygiene expectations, even though the spiders present no direct contamination risk'
+    ],
+    diyMethods: [
+      {
+        method: 'Sealing entry points',
+        description: 'Filling gaps around door and window frames, air bricks, cable and pipe entries, and the gaps beneath external doors with sealant, brush strips, or expanding foam. Exclusion is the single most effective spider measure because indoor spider numbers are driven almost entirely by how easily spiders can walk in from outside.',
+        effectiveness: 'High'
+      },
+      {
+        method: 'Reducing outdoor lighting',
+        description: 'Switching off or shielding external lights near doors and windows, or replacing them with warm-toned or motion-activated fittings. Bright outdoor lighting attracts the flies and moths that spiders feed on, and reducing the prey supply near the building reduces the reason for spiders to settle there.',
+        effectiveness: 'Medium'
+      },
+      {
+        method: 'Clearing webs regularly',
+        description: 'Removing webs and egg sacs with a vacuum, a long-handled brush, or a duster, including in lofts, garages, and behind furniture. This does not kill the spiders but removes their established anchor points, and repeated clearance of the same corners usually persuades them to relocate outdoors.',
+        effectiveness: 'Medium'
+      },
+      {
+        method: 'Decluttering harbourage',
+        description: 'Lifting stored boxes off the floor, thinning out piles of firewood, bags, and materials in garages and sheds, and keeping a clear gap between stored items and external walls. Undisturbed clutter is the harbourage spiders prefer, and reducing it removes the places they can settle unnoticed.',
+        effectiveness: 'Medium'
+      },
+      {
+        method: 'Peppermint oil and other scent deterrents',
+        description: 'Wiping diluted peppermint oil, or a proprietary scent-based spray, around door frames, window frames, and skirting boards. This is a commonly used household approach and is popular because it is low-toxicity, but the evidence that it repels spiders is weak and any effect fades quickly as the oil evaporates. It should be treated as a supplement to sealing and cleaning, not a substitute for them.',
+        effectiveness: 'Low'
+      }
+    ],
+    whenToCallProfessional: [
+      'Noble false widow (Steatoda nobilis) has been confirmed in the property, particularly in bedrooms, around beds, or anywhere clothing and bedding are stored',
+      'Indoor spider numbers are large and persistent across several rooms despite sealing, clearing webs, and reducing outdoor lighting, which usually points to an unfound entry route or a heavy prey population',
+      'The premises are commercial, and especially if they handle or serve food, where a documented and auditable pest control regime is required regardless of whether the spiders themselves pose a risk',
+      'Arachnophobia is severe enough to affect daily life in the home, where a professional survey, exclusion work, and treatment can be worthwhile for the occupant even though the spiders are harmless'
+    ],
+    costRange: {
+      typical: 'Rarely required',
+      description: 'PestPro Index does not publish a spider-specific treatment price, because spiders are very seldom treated as a standalone job in the UK and we have no sourced figure for one. Where a professional does attend for spiders, the work is normally either an exclusion survey — finding and sealing the routes spiders are using — or a residual insecticide application to door and window frames and other entry surfaces, priced the same way as a general crawling-insect visit rather than as a spider treatment. For most households the honest position is that the money is better spent on sealing gaps and improving external lighting than on a treatment. Ask any provider for a written quotation before work begins, and see our pest control costs guide for how UK callout pricing is generally structured.'
+    },
+    preventionTips: [
+      'Seal gaps around external doors, windows, air bricks, and service entries, and fit brush strips to the bottom of external doors',
+      'Turn off or shield outdoor lighting near entrances, or switch to motion-activated fittings, so fewer prey insects gather at the building',
+      'Clear webs and egg sacs from corners, lofts, garages, and sheds regularly, so spiders do not establish permanent anchor points',
+      'Keep stored boxes, firewood, and bags off the floor and away from external walls, and reduce clutter in garages and outbuildings',
+      'Cut back climbing plants, ivy, and dense shrubs that touch the walls or reach window frames, since these carry spiders directly to the building',
+      'Shake out and check bedding, towels, shoes, and clothing that have been stored or left undisturbed, which is the simplest way to avoid an accidental false widow bite'
+    ],
+    seasonalInfo: 'Spider sightings in UK homes peak sharply in early autumn, and the reason is misunderstood: the spiders are not moving in to escape the cold. Mature male house spiders leave their webs from late August through October and roam in search of females, which is why they are suddenly seen crossing floors and caught in baths during September. Most of the spiders seen indoors at this time have lived in or around the building all year and have simply become visible. Numbers fall away through November as the mating season ends. The noble false widow is also most noticeable in autumn, when it matures and when cooler weather brings it into sheds, garages, and conservatories. Through winter and spring, spiders retreat to lofts, voids, and undisturbed corners and are rarely seen, and outdoor garden spiders build their orb webs through late summer without normally entering the house at all.',
+    faqItems: [
+      {
+        question: 'Why do I suddenly see so many spiders in September?',
+        answer: 'September is the peak of the house spider mating season. Mature males leave their webs and roam in search of females, so spiders that have lived quietly in the building all year suddenly cross floors and walls in the evening and end up in baths and sinks. It is a change in behaviour and visibility, not an invasion — the spiders are not coming indoors to escape the cold. Sightings drop off again through November.'
+      },
+      {
+        question: 'Are UK house spiders dangerous?',
+        answer: 'No. The common house spider (Tegenaria domestica) and the giant house spider (Eratigena atrica) are harmless to people. They do not transmit disease, they do not contaminate food, and they do not damage the building. They are predators of flies and other insects, so a resident house spider population reduces the insects a household would otherwise notice.'
+      },
+      {
+        question: 'How do I know if it is a false widow?',
+        answer: 'The noble false widow (Steatoda nobilis) is much smaller and stockier than a house spider, with short legs, a glossy dark body, and a bulbous abdomen carrying a pale marbled or skull-like pattern. House spiders by comparison are long-legged, matt brown, and fast-moving. False widows are usually found around door and window frames, in conservatories, sheds, and garages rather than running across open floors. If you are unsure, photograph it from a safe distance rather than handling it.'
+      },
+      {
+        question: 'Does a false widow bite need treatment?',
+        answer: 'Most bites do not. The noble false widow only bites if it is trapped against skin, usually in bedding or clothing, and the usual result is a local reaction comparable to a wasp sting. Clean the site and keep an eye on it. Seek medical advice if the area becomes hot, swollen, increasingly painful, or if the reaction spreads — those cases are uncommon but should be looked at.'
+      },
+      {
+        question: 'Do I need professional pest control for spiders?',
+        answer: 'Usually not. For ordinary house spiders, sealing entry points, reducing outdoor lighting, clearing webs, and decluttering will do more than any treatment, and the spiders are harmless in the first place. Professional help is worth considering if false widows are confirmed in bedrooms or storage areas, if numbers stay high across several rooms despite exclusion work, if the premises are commercial and need a documented control regime, or if arachnophobia is severe enough to affect daily life at home.'
+      }
+    ],
+    relatedPests: ['silverfish', 'moths']
   }
 ];
