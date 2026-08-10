@@ -132,3 +132,25 @@ similar) is ever added, it must survive every subsequent edit.
     Location on the same host, so an exact-match custom rule for the same
     path still loses to it. **Measure the framework's own hops before writing
     any hop-count gate**, or the gate will be unsatisfiable by construction.
+
+## Laws 48–52 (new)
+
+Law 47 was already recorded above when this section was appended, so it is
+not repeated here. Laws 48 to 52 are new.
+
+48. A NEXT BUILD STAMPS A PER-BUILD ID AND DERIVED ASSET HASHES INTO EVERY
+    ROUTE, IN MORE THAN ONE SPELLING (underscore in the HTML comment, hyphen
+    in the flight payload). ANY BEFORE/AFTER HTML COMPARISON MUST NORMALISE
+    BUILD CHURN AND MUST PROVE THE NORMALISATION AGAINST UNTOUCHED CONTROL
+    ROUTES FIRST.
+
+49. STATE WHETHER A GAP IS IN THE DATA OR IN THE ROUTES.
+
+50. BEFORE CORRECTING A NUMERAL AGAINST A MEASURED FIGURE, PROVE THE NUMERAL
+    AND THE FIGURE COUNT THE SAME POPULATION.
+
+51. EVERY FIX PROMPT MUST TEST ITS OWN PREMISE BEFORE ACTING AND PROCEED ON
+    WHAT IT FINDS.
+
+52. A ROUTE INDEX PAGE IS A DIFFERENT FILE FROM ITS [slug] ROUTE. WHENEVER A
+    SHARED MECHANISM CHANGES, CHECK BOTH.
