@@ -398,6 +398,13 @@ export default function Navigation() {
                   Best Carpet Beetle Treatments
                 </Link>
                 <Link
+                  href="/best/spider-repellent"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Spider Repellent
+                </Link>
+                <Link
                   href="/guides/pigeon-control"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -843,6 +850,13 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Best Carpet Beetle Treatments
+                </Link>
+                <Link
+                  href="/best/spider-repellent"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Spider Repellent
                 </Link>
                 <Link
                   href="/guides/pigeon-control"
