@@ -1,7 +1,6 @@
 'use client';
 export const dynamic = 'force-dynamic';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 
@@ -513,41 +512,6 @@ export default function ProductsPage() {
 
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900 text-white py-16 mt-32 border-t-2 border-blue-800">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-bold text-lg mb-4">PestPro Index</h3>
-              <p className="text-gray-400">
-                The UK's neutral pest control directory
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <div className="space-y-2">
-                <Link href="/" className="block text-gray-400 hover:text-white transition">Home</Link>
-                <Link href="/residential" className="block text-gray-400 hover:text-white transition">Residential</Link>
-                <Link href="/commercial" className="block text-gray-400 hover:text-white transition">Commercial</Link>
-                <Link href="/products" className="block text-gray-400 hover:text-white transition">Home Products</Link>
-                <Link href="/resources" className="block text-gray-400 hover:text-white transition">Resources</Link>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Products</h4>
-              <p className="text-gray-400">
-                Free product recommendations for London pest control. All links are Amazon affiliate links.
-              </p>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 PestPro Index. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
