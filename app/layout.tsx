@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import AnnouncementBar from "@/components/AnnouncementBar";
+import Footer from '@/components/Footer';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -45,6 +46,7 @@ export default function RootLayout({
       >
         <AnnouncementBar />
         {children}
+        <Footer />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-EGGZMHZ6NL"
           strategy="afterInteractive"
