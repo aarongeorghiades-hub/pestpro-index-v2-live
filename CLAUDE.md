@@ -171,3 +171,26 @@ not repeated here. Laws 48 to 52 are new.
 56. TWO ARRAYS IN ONE FILE ARE TWO POPULATIONS. app/guides/page.tsx holds both
     `guides` and `reviews`; a slug set-diff of one is blind to the other. Law
     52 applies WITHIN a file, not only across files.
+
+## Laws 57–61 (new)
+
+57. A SEARCH-ENGINE SNIPPET OF OUR OWN SITE IS A STALE ASSERTION, NOT A
+    MEASUREMENT. Google's index lagged this site by several sessions and
+    described products and methodology wording that no longer exist. Read the
+    repo, never the index.
+
+58. SCOPE A FACTUAL-CLAIM DEFECT BY THE CLAIM, NEVER BY THE AFFILIATE LINK. A
+    page with no ASIN still misleads a reader, and an ASIN-anchored gate will
+    report zero while the claim is live.
+
+59. A TEMPLATED PROP MULTIPLIES ONE ASIN ACROSS EVERY GENERATED ROUTE.
+    `asin={product.asin}` in a shared client component is invisible to any
+    literal-ASIN search of route files. Count the generated routes, not the
+    source occurrences.
+
+60. ONE ASIN CAN CARRY MANY NAME SURFACES. A rename is not scoped by the ASIN
+    count.
+
+61. A PROTECTION GIVEN BY NAME IS NOT OVERRIDDEN BY A BROAD CLASS
+    AUTHORISATION. Stop and escalate; the ruling must name the single
+    sentence.
