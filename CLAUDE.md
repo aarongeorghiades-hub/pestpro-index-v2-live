@@ -154,3 +154,20 @@ not repeated here. Laws 48 to 52 are new.
 
 52. A ROUTE INDEX PAGE IS A DIFFERENT FILE FROM ITS [slug] ROUTE. WHENEVER A
     SHARED MECHANISM CHANGES, CHECK BOTH.
+
+## Laws 53–56 (new)
+
+53. A FIGURE INHERITED FROM A CARRYOVER IS AN ASSERTION, NOT A MEASUREMENT.
+    Re-measure before instructing against it.
+
+54. A COORDINATE IS NOT A DIMENSION. A bottom y-position is not a height.
+    State which you mean and how you measured it.
+
+55. A GATE CAN BE UNSATISFIABLE BY CONSTRUCTION WHEN THE ROUND TOUCHES EVERY
+    ROUTE. When no untouched control can exist, replace the control with a
+    character-level diff of the stripped surface and state the expected delta
+    in advance.
+
+56. TWO ARRAYS IN ONE FILE ARE TWO POPULATIONS. app/guides/page.tsx holds both
+    `guides` and `reviews`; a slug set-diff of one is blind to the other. Law
+    52 applies WITHIN a file, not only across files.
