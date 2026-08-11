@@ -194,6 +194,26 @@ not repeated here. Laws 48 to 52 are new.
 61. A PROTECTION GIVEN BY NAME IS NOT OVERRIDDEN BY A BROAD CLASS
     AUTHORISATION. Stop and escalate; the ruling must name the single
     sentence.
+62. A COUNT IS BOUND TO ITS MATCHER AND ITS SURFACE. 473 rendered
+    anchors and 342 source-side anchors are BOTH CORRECT and count
+    different populations. State the matcher and the surface with
+    every count, or the number is meaningless. Never reconcile two
+    populations; report the difference.
+63. A ROUTE-FILE COUNT AND A RENDERED-URL COUNT ARE TWO POPULATIONS.
+    191 source route files, 185 rendered URLs. Neither is wrong.
+64. A SUPERLATIVE CAN ASSERT A LEGAL CEILING AS WELL AS A MARKET ONE.
+    A sweep for "strongest available to consumers" is blind to
+    "maximum legal strength". Sweep both shapes.
+65. A REGULATORY FACT MUST BE ESTABLISHED FROM THE REGULATOR'S OWN
+    REGISTER - never from the product listing, the repo, or the
+    database. HSE publishes both registers free.
+66. INFORMATION PRESENT BUT PLACED AFTER THE DECISION POINT IS
+    FUNCTIONALLY ABSENT. Measure position as a percentage through the
+    file against the first ProductCard. Fired three times: B0DL2SLHTM,
+    the gardens page, and the bait-station gap.
+67. A SUBSTANCE-NAME MATCHER MUST USE THE SOURCE'S OWN SPELLING. HSE
+    spells brodifacoum's IUPAC name "napthyl". A matcher on the
+    correct spelling returned a confident, completely wrong verdict.
 
 ## NEVER TOUCH — PROTECTED FROM EVERY CHECK
 
