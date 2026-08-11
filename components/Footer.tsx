@@ -166,7 +166,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-white font-bold mb-2">Products</h4>
-            <p>Free product recommendations for London pest control. All links are Amazon affiliate links.</p>
+            <p>Free product recommendations for pest control across the UK. All links are Amazon affiliate links.</p>
             <p className="mt-2">Amazon Associates: We earn commissions from qualifying purchases through Amazon Associates links</p>
           </div>
         </div>
