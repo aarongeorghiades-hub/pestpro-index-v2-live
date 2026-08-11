@@ -255,7 +255,7 @@ export default function BestRatPoisonForGardensPage() {
         />
       </div>
       <p>
-        Everything needed for outdoor rat control in one kit. The Pest Expert Formula B+ Combo includes maximum-strength Brodifacoum sachets with a professional lockable bait box, giving you a complete, ready-to-deploy solution straight out of the box. This is the correct way to bait outdoors — UK law requires all rodenticide to be used inside a tamper-resistant station, and this kit ensures full compliance from day one.
+        Everything needed for outdoor rat control in one kit. The Pest Expert Formula B+ Combo includes maximum-strength Brodifacoum sachets with a professional lockable bait box, giving you a complete, ready-to-deploy solution straight out of the box. This is the correct way to bait outdoors — the product label and its authorisation conditions require outdoor rodenticide to be used inside a tamper-resistant station, and this kit ensures full compliance from day one.
       </p>
       <p>
         The included bait box is a professional-grade lockable station designed specifically for outdoor placement. It is weatherproof, tamper-resistant, and sized to admit rats while restricting access by larger non-target animals such as cats, hedgehogs, and squirrels. The lockable lid requires a key to open, keeping children and pets safe. Position the station along a fence line, beside a shed wall, or near a compost bin — anywhere you have seen rat activity — and the enclosed bait does the rest.
@@ -442,7 +442,7 @@ export default function BestRatPoisonForGardensPage() {
 
       <h3>Legal Requirements for Outdoor Rodenticide Use in the UK</h3>
       <p>
-        The Campaign for Responsible Rodenticide Use (CRRU) sets the legally enforced standards for rodenticide use in the UK. The key requirements for garden use are: all second-generation anticoagulant rodenticides (SGARs) — including brodifacoum, bromadiolone, and difenacoum — must be placed inside tamper-resistant bait stations when used outdoors. You must not leave bait down permanently — remove it once the infestation is controlled. And you must search for and dispose of dead rodents during and after treatment to minimise secondary poisoning risk. These are not optional best practices; non-compliance can result in prosecution under the Wildlife and Countryside Act 1981 or the Environmental Protection Act 1990 if non-target animals are harmed.
+        The Campaign for Responsible Rodenticide Use (CRRU) sets the legally enforced standards for rodenticide use in the UK. The key requirements for garden use are: all second-generation anticoagulant rodenticides (SGARs) — including brodifacoum, bromadiolone, and difenacoum — must be placed inside tamper-resistant bait stations when used outdoors. Rodenticides sold to the general public are authorised for use indoors and outdoors around buildings, and are not authorised for use in open areas away from buildings. You must not leave bait down permanently — remove it once the infestation is controlled. And you must search for and dispose of dead rodents during and after treatment to minimise secondary poisoning risk. These are not optional best practices; non-compliance can result in prosecution under the Wildlife and Countryside Act 1981 or the Environmental Protection Act 1990 if non-target animals are harmed.
       </p>
 
       <h3>Protecting Wildlife — Bait Stations Are ESSENTIAL Outdoors</h3>
@@ -472,7 +472,7 @@ export default function BestRatPoisonForGardensPage() {
 
       <h3>Bird Table Rat Prevention</h3>
       <p>
-        Bird feeders and bird tables are a major attractant for garden rats. Spilled seed on the ground is an easy meal, and rats quickly learn to visit feeding stations at dusk. To reduce the problem: use squirrel-proof feeders with caged designs that restrict access to small birds, sweep up spilled seed daily, bring feeders in at night when rats are most active, and avoid ground-feeding if you have a rat problem. Placing a bait station within 2-3 metres of the bird table (but out of the feeding zone) targets rats that are visiting for spilled seed.
+        Bird feeders and bird tables are a major attractant for garden rats. Spilled seed on the ground is an easy meal, and rats quickly learn to visit feeding stations at dusk. To reduce the problem: use squirrel-proof feeders with caged designs that restrict access to small birds, sweep up spilled seed daily, bring feeders in at night when rats are most active, and avoid ground-feeding if you have a rat problem. The food source is the problem, so deal with that first: clear spilled seed from the ground daily and fit a seed tray beneath the feeder to catch the rest. If you do bait, site the station against a nearby wall, fence or shed along the route the rats are using, never out in the open by the feeder.
       </p>
 
       <h3>When to Call a Professional</h3>
