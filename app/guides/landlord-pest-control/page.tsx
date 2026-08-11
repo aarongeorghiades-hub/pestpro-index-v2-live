@@ -692,7 +692,11 @@ export default function LandlordPestControlPage() {
         </Callout>
       </div>
 
-      <h3>Recommended Products for Landlords</h3>
+<Callout type="info">
+        <p>If you manage rented property, damp and mould are not only a pest problem - they carry statutory duties under Awaab&apos;s Law, with fixed response deadlines and enforcement consequences for missing them. Our sister site <a href="https://awaabslawguide.co.uk/compliance-pack" target="_blank" rel="noopener noreferrer">Awaab&apos;s Law Guide</a>, also published by ENA Enterprises Ltd, has a Phase 1 compliance toolkit covering hazard triage, deadline tracking and the audit trail.</p>
+      </Callout>
+
+            <h3>Recommended Products for Landlords</h3>
       <p>
         The following products are recommended for landlords managing damp, condensation, and the associated pest risks in rental properties.
       </p>

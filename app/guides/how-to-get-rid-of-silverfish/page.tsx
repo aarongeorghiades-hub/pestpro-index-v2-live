@@ -487,7 +487,11 @@ export default function HowToGetRidOfSilverfishPage() {
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: Recommended Products */}
       {/* ------------------------------------------------------------------ */}
-      <h2 id="products">Recommended Silverfish Treatment Products</h2>
+<Callout type="info">
+        <p>Damp and condensation are what sustain this infestation - control the moisture and the problem usually leaves with it. If you rent out the property, damp and mould also carry statutory duties under Awaab&apos;s Law with fixed response deadlines. Our sister site <a href="https://awaabslawguide.co.uk/compliance-pack" target="_blank" rel="noopener noreferrer">Awaab&apos;s Law Guide</a>, also published by ENA Enterprises Ltd, has a Phase 1 compliance toolkit for landlords.</p>
+      </Callout>
+
+            <h2 id="products">Recommended Silverfish Treatment Products</h2>
 
       <p>
         Below are two of the most effective products for silverfish control in UK homes. For a comprehensive comparison of all the best silverfish treatments &mdash; including insecticidal powders, traps, sprays, and dehumidifiers &mdash; see our dedicated <Link href="/best/silverfish-treatments" className="text-blue-600 hover:underline font-medium">Best Silverfish Treatments UK 2026</Link> guide.
