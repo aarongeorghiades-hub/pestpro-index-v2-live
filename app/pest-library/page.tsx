@@ -18,22 +18,18 @@ export const metadata: Metadata = {
   },
 };
 
-const categories = [
-  {
-    name: 'Rodents & Wildlife',
-    pests: ['mice', 'rats', 'squirrels'],
-  },
-  {
-    name: 'Insects',
-    pests: ['bed-bugs', 'wasps', 'ants', 'cockroaches', 'fleas', 'moths', 'silverfish'],
-  },
-  // Spiders are arachnids, not insects, so they get their own group rather
-  // than being filed under 'Insects' where they would be miscategorised.
-  {
-    name: 'Spiders & Arachnids',
-    pests: ['spiders'],
-  },
-];
+// The category headings and their membership are no longer held here. Each
+// guide carries its own `category`, so adding one entry to data/pest-guides.ts
+// creates its card under the right heading with no second edit.
+//
+// Heading order is the order in which each category FIRST APPEARS in the
+// pestGuides array. That is computed explicitly rather than left to object key
+// order, so it is deterministic: it reproduces the order this page has always
+// rendered, and a new category lands where its first guide sits in the array.
+const categoryOrder: string[] = pestGuides.reduce<string[]>(
+  (acc, pest) => (acc.includes(pest.category) ? acc : [...acc, pest.category]),
+  [],
+);
 
 function PestCard({ pest }: { pest: typeof pestGuides[number] }) {
   return (
@@ -88,14 +84,12 @@ export default function PestLibraryPage() {
       </section>
 
       <div className="max-w-5xl mx-auto px-4 py-16">
-        {categories.map((category) => {
-          const categoryPests = category.pests
-            .map((slug) => pestGuides.find((p) => p.slug === slug))
-            .filter(Boolean) as typeof pestGuides;
+        {categoryOrder.map((category) => {
+          const categoryPests = pestGuides.filter((p) => p.category === category);
 
           return (
-            <section key={category.name} className="mb-14">
-              <h2 className="text-2xl font-black text-gray-900 mb-6">{category.name}</h2>
+            <section key={category} className="mb-14">
+              <h2 className="text-2xl font-black text-gray-900 mb-6">{category}</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {categoryPests.map((pest) => (
                   <PestCard key={pest.slug} pest={pest} />

@@ -1,5 +1,9 @@
 export interface PestGuide {
   slug: string;
+  /** Display group on /pest-library. Required: a guide with no category
+   *  would render under no heading. Values are the three headings the page
+   *  already used, relocated here from its hardcoded array. */
+  category: string;
   name: string;
   pluralName: string;
   seoTitle: string;
@@ -20,6 +24,7 @@ export interface PestGuide {
 export const pestGuides: PestGuide[] = [
   {
     slug: 'mice',
+    category: 'Rodents & Wildlife',
     name: 'Mice',
     pluralName: 'Mice',
     seoTitle: 'Mice Pest Control UK | Treatment, Costs & Removal',
@@ -114,6 +119,7 @@ export const pestGuides: PestGuide[] = [
   },
   {
     slug: 'rats',
+    category: 'Rodents & Wildlife',
     name: 'Rats',
     pluralName: 'Rats',
     seoTitle: 'Rat Pest Control UK | Treatment, Costs & Removal',
@@ -208,6 +214,7 @@ export const pestGuides: PestGuide[] = [
   },
   {
     slug: 'bed-bugs',
+    category: 'Insects',
     name: 'Bed Bugs',
     pluralName: 'Bed Bugs',
     seoTitle: 'Bed Bug Pest Control UK | Treatment, Costs & Removal',
@@ -302,6 +309,7 @@ export const pestGuides: PestGuide[] = [
   },
   {
     slug: 'wasps',
+    category: 'Insects',
     name: 'Wasps',
     pluralName: 'Wasps',
     seoTitle: 'Wasp Nest Removal UK | Treatment, Costs & Pest Control',
@@ -387,6 +395,7 @@ export const pestGuides: PestGuide[] = [
   },
   {
     slug: 'ants',
+    category: 'Insects',
     name: 'Ants',
     pluralName: 'Ants',
     seoTitle: 'Ant Pest Control UK | Treatment, Costs & Removal',
@@ -478,6 +487,7 @@ export const pestGuides: PestGuide[] = [
   },
   {
     slug: 'cockroaches',
+    category: 'Insects',
     name: 'Cockroaches',
     pluralName: 'Cockroaches',
     seoTitle: 'Cockroach Pest Control UK | Treatment, Costs & Removal',
@@ -566,6 +576,7 @@ export const pestGuides: PestGuide[] = [
   },
   {
     slug: 'fleas',
+    category: 'Insects',
     name: 'Fleas',
     pluralName: 'Fleas',
     seoTitle: 'Flea Pest Control UK | Treatment, Costs & Removal',
@@ -658,6 +669,7 @@ export const pestGuides: PestGuide[] = [
   },
   {
     slug: 'moths',
+    category: 'Insects',
     name: 'Moths',
     pluralName: 'Moths',
     seoTitle: 'Moth Pest Control UK | Treatment, Costs & Removal',
@@ -749,6 +761,7 @@ export const pestGuides: PestGuide[] = [
   },
   {
     slug: 'silverfish',
+    category: 'Insects',
     name: 'Silverfish',
     pluralName: 'Silverfish',
     seoTitle: 'Silverfish Pest Control UK | Treatment, Costs & Removal',
@@ -840,6 +853,7 @@ export const pestGuides: PestGuide[] = [
   },
   {
     slug: 'squirrels',
+    category: 'Rodents & Wildlife',
     name: 'Squirrels',
     pluralName: 'Squirrels',
     seoTitle: 'Squirrel Pest Control UK | Treatment, Costs & Removal',
@@ -934,6 +948,7 @@ export const pestGuides: PestGuide[] = [
   },
   {
     slug: 'spiders',
+    category: 'Spiders & Arachnids',
     name: 'Spiders',
     pluralName: 'Spiders',
     seoTitle: 'Spiders in UK Homes | Species, Autumn Season & Control',
