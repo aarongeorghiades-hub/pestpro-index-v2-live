@@ -75,10 +75,10 @@ const breadcrumbSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'At a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Advion Gel Bait' },
+  { id: 'professional-only', title: 'What You Can and Cannot Buy' },
+  { id: 'best-overall', title: 'Best Overall — Pest Expert Cockroach Gel' },
   { id: 'best-monitoring', title: 'Best for Monitoring' },
   { id: 'best-spray', title: 'Best Quick-Kill Spray' },
-  { id: 'best-budget-gel', title: 'Best Budget Gel' },
   { id: 'buying-guide', title: 'Buying Guide' },
 ];
 
@@ -149,7 +149,7 @@ export default function BestCockroachKillersPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Cockroach Killers at a Glance</h2>
       <p>
-        The table below provides a quick comparison of our four recommended products. Each serves a different purpose within a cockroach control programme, and the best choice for you depends on the species you are dealing with, the severity of the infestation, and whether you need immediate knockdown, colony elimination, or ongoing monitoring. We cover each product in full detail further down the page.
+        The table below provides a quick comparison of our three recommended products. Each serves a different purpose within a cockroach control programme, and the best choice for you depends on the species you are dealing with, the severity of the infestation, and whether you need immediate knockdown, colony elimination, or ongoing monitoring. We cover each product in full detail further down the page.
       </p>
       <table>
         <thead>
@@ -161,7 +161,7 @@ export default function BestCockroachKillersPage() {
         </thead>
         <tbody>
           <tr>
-            <td>Advion Cockroach Gel Bait 4x30g</td>
+            <td>Pest Expert Cockroach Gel 10g</td>
             <td>Gel bait</td>
             <td>Best Overall</td>
           </tr>
@@ -175,59 +175,68 @@ export default function BestCockroachKillersPage() {
             <td>Contact spray</td>
             <td>Best Quick-Kill</td>
           </tr>
-          <tr>
-            <td>Pest Expert Cockroach Gel 10g</td>
-            <td>Gel bait</td>
-            <td>Best Budget Gel</td>
-          </tr>
         </tbody>
       </table>
 
-      {/* Best Overall — Advion Cockroach Gel Bait */}
-      <h2 id="best-overall">Best Overall &mdash; Advion Cockroach Gel Bait</h2>
+      {/* What you can and cannot buy */}
+      <h2 id="professional-only">What You Can and Cannot Buy</h2>
+      <p>
+        The gel baits that clear a cockroach colony fastest are not sold to the public. In the UK the strongest cockroach gels are authorised for professional use only, and their labels restrict sale and use to qualified pest control operators. A guide that puts one of those products at the top of the list is recommending something a householder is not entitled to buy, so this page does not list them.
+      </p>
+      <p>
+        What you can buy is a consumer-grade gel bait, and it is worth being straight about the difference. It works on the same cascade principle and it is a real treatment, but it is a step down: smaller quantities, and formulations chosen for general sale rather than for the hardest infestations. For a few cockroaches caught early, in a single room, that is usually enough. Every product on this page is on general sale in the UK and needs no licence.
+      </p>
+      <p>
+        For an established infestation the honest answer is different. If you are seeing cockroaches during the day, finding droppings in more than one room, or dealing with any sighting in a flat or shared building, a consumer gel is unlikely to finish the job on its own. A professional can use the restricted products, has the equipment to treat wall voids and service ducts, and can deal with the neighbouring properties that a shared infestation almost always involves.
+      </p>
+      <div className="not-prose">
+        <FindProviderCTA
+          heading="Cockroaches in More Than One Room?"
+          subtext="Compare pest control providers in your area — free, no-obligation quotes."
+        />
+      </div>
+
+      {/* Best Overall — Pest Expert Cockroach Gel */}
+      <h2 id="best-overall">Best Overall &mdash; Pest Expert Cockroach Gel</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Advion Cockroach Gel Bait 4x30g"
+          name="Pest Expert Cockroach Gel 10g"
           features={[
-            'Professional-grade gel bait used by UK pest controllers',
-            'Domino effect — cockroaches carry bait back to colony',
-            '4x30g tubes for comprehensive treatment',
-            'Effective against both German and Oriental cockroaches',
+            'Formula IC gel with domino-effect bait technology',
+            'Professional cockroach gel at consumer price',
+            'Easy syringe application into cracks and crevices',
+            'Effective against all UK cockroach species',
           ]}
-          asin="B0148W0WOE"
+          asin="B07ZZGKQ55"
           bestFor="Best Overall"
           rank={1}
         />
       </div>
       <p>
-        If you could buy only one cockroach killer product, this should be it. The Advion Cockroach Gel Bait is the single most effective cockroach control product available to the UK public, and it is the same gel bait that professional pest controllers across Britain and Europe rely on for the majority of their cockroach treatments. Manufactured by Syngenta, Advion contains the active ingredient <strong>indoxacarb</strong>, a non-repellent insecticide that works by disrupting the cockroach&apos;s nervous system. The non-repellent formulation is critically important: because cockroaches cannot detect the toxin, they feed on the gel willingly and enthusiastically, consuming a lethal dose before returning to their harbourage.
+        For those looking for a professional-quality gel bait at a more accessible price point, the Pest Expert Cockroach Gel offers excellent value. This 10g syringe contains a <strong>Formula IC gel</strong> that works on the domino-effect principle &mdash; cockroaches feed on the gel, return to their harbourage, and when they eventually die, other cockroaches consume their remains and ingest a secondary dose of the active ingredient. This cascade mechanism means the gel reaches cockroaches deep within wall voids, behind appliances, and in other harbourage points that you cannot access directly, making it far more effective than contact sprays for colony elimination.
       </p>
       <p>
-        What makes Advion so devastatingly effective against cockroach colonies is the <strong>cascade effect</strong> (sometimes called the domino effect or secondary kill). When a cockroach feeds on Advion gel, it does not die immediately. Instead, it returns to its harbourage, where it eventually dies. Other cockroaches &mdash; which are naturally coprophagic and cannibalistic &mdash; then feed on the dead cockroach&apos;s body and droppings, ingesting a secondary dose of indoxacarb. These cockroaches in turn die and are consumed by others. Through this chain reaction, a single application of gel bait can work its way through an entire colony, killing cockroaches that never directly touched the bait themselves. This cascade mechanism is the reason gel baits are so much more effective than contact sprays, which only kill individual cockroaches on direct contact and leave the rest of the colony untouched.
+        The Pest Expert gel is supplied in a <strong>ready-to-use syringe applicator</strong>, which makes it straightforward to apply even for people who have never used a cockroach gel bait before. Simply place tiny dots of gel &mdash; roughly the size of a grain of rice &mdash; into the cracks, crevices, and harbourage points where cockroaches live and travel. Key placement sites include kitchen cupboard hinges, the gap between worktops and walls, behind cookers and fridges, around pipe entry points under sinks, along skirting board edges, and inside any cracks or gaps in walls or flooring. The syringe tip allows precise application into tight spaces that would be impossible to reach with a spray or powder.
       </p>
       <p>
-        The Advion gel is supplied in syringe applicators, which allow for precise placement in the cracks, crevices, and harbourage points where cockroaches live. The correct application technique is to place <strong>small dots</strong> &mdash; roughly the size of a grain of rice &mdash; in dozens of locations throughout the affected area. Key placement sites include the hinges of kitchen cupboard doors, the gap between the worktop and the wall, behind cookers and fridges, around pipe entry points under sinks, along the edges of skirting boards, and inside any cracks or crevices in walls or flooring. The gel remains attractive to cockroaches for approximately two to three weeks before it dries out and needs refreshing. For a moderate infestation, you should plan on making at least two to three applications at two-week intervals to catch newly hatched nymphs that were not exposed to the first round of treatment.
-      </p>
-      <p>
-        Advion is effective against both German and Oriental cockroaches, the two species most commonly encountered in UK properties. It works in both domestic kitchens and commercial food-preparation areas, though businesses should note that professional pest control certification may be required for treatments in food premises under UK regulations.
+        The 10g syringe is sufficient for treating a single room or a small infestation, though you may need multiple syringes for a larger property or a more widespread problem. The gel is <strong>effective against all UK cockroach species</strong>, including both German and Oriental cockroaches, making it a versatile choice regardless of which species you are dealing with.
       </p>
       <p>
         <strong>Pros:</strong>
       </p>
       <ul>
-        <li>The single most effective cockroach killer available to consumers &mdash; used by professionals worldwide</li>
-        <li>Non-repellent indoxacarb formula ensures cockroaches feed willingly</li>
-        <li>Cascade effect targets the entire colony, not just individual cockroaches</li>
-        <li>Syringe applicator allows precise, discreet placement in cracks and crevices</li>
+        <li>Professional-grade gel bait in a 10g consumer syringe</li>
+        <li>Domino-effect bait technology targets the entire colony, not just individual cockroaches</li>
+        <li>Easy syringe application &mdash; no specialist equipment or knowledge required</li>
         <li>Effective against both German and Oriental cockroaches</li>
       </ul>
       <p>
         <strong>Cons:</strong>
       </p>
       <ul>
-        <li>Takes one to two weeks for the full cascade effect to eliminate the colony</li>
-        <li>Gel dries out after two to three weeks and needs reapplication</li>
-        <li>Requires strategic placement knowledge &mdash; random application reduces effectiveness</li>
+        <li>Smaller 10g syringe may not be sufficient for larger infestations &mdash; you may need to purchase multiple units</li>
+        <li>Takes one to two weeks for the full cascade effect to work through the colony</li>
+        <li>Gel dries out after two to three weeks and requires reapplication</li>
       </ul>
 
       {/* Best for Monitoring — Cockroach Sticky Traps */}
@@ -301,7 +310,7 @@ export default function BestCockroachKillersPage() {
         The NOPE! CP spray is particularly useful around <strong>drain entry points</strong>, which are the primary route by which Oriental cockroaches enter UK homes. Oriental cockroaches live in sewer systems and damp underground environments, and they frequently enter properties through floor drains, waste pipes, and gaps around plumbing. Spraying around these entry points can help intercept cockroaches as they emerge, especially during the warmer months when Oriental cockroaches are most active. The spray is also suitable for use in bathrooms and utility rooms where cockroaches may harbour.
       </p>
       <p>
-        However, it is essential to understand that a contact spray is <strong>not a standalone solution</strong> for a cockroach infestation. Sprays kill only the individual cockroaches they touch directly. They do nothing to address the colony hiding behind walls, under appliances, and in other inaccessible harbourage points. For this reason, we recommend using a contact spray only as a supplement to gel bait &mdash; never as your primary treatment method. When used in combination with the Advion gel bait above, the NOPE! CP spray provides a useful way to deal with visible cockroaches while the gel bait works its way through the colony over one to two weeks.
+        However, it is essential to understand that a contact spray is <strong>not a standalone solution</strong> for a cockroach infestation. Sprays kill only the individual cockroaches they touch directly. They do nothing to address the colony hiding behind walls, under appliances, and in other inaccessible harbourage points. For this reason, we recommend using a contact spray only as a supplement to gel bait &mdash; never as your primary treatment method. When used in combination with the gel bait above, the NOPE! CP spray provides a useful way to deal with visible cockroaches while the gel bait works its way through the colony over one to two weeks.
       </p>
       <p>
         <strong>Pros:</strong>
@@ -322,50 +331,6 @@ export default function BestCockroachKillersPage() {
         <li>Best used as a supplement to gel bait, not a replacement</li>
       </ul>
 
-      {/* Best Budget Gel — Pest Expert */}
-      <h2 id="best-budget-gel">Best Budget Gel &mdash; Pest Expert Cockroach Gel 10g</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Pest Expert Cockroach Gel 10g"
-          features={[
-            'Formula IC gel with domino-effect bait technology',
-            'Professional cockroach gel at consumer price',
-            'Easy syringe application into cracks and crevices',
-            'Effective against all UK cockroach species',
-          ]}
-          asin="B07ZZGKQ55"
-          bestFor="Best Budget Gel"
-          rank={4}
-        />
-      </div>
-      <p>
-        For those looking for a professional-quality gel bait at a more accessible price point, the Pest Expert Cockroach Gel offers excellent value. This 10g syringe contains a <strong>Formula IC gel</strong> that works on the same domino-effect principle as the Advion gel bait above &mdash; cockroaches feed on the gel, return to their harbourage, and when they eventually die, other cockroaches consume their remains and ingest a secondary dose of the active ingredient. This cascade mechanism means the gel reaches cockroaches deep within wall voids, behind appliances, and in other harbourage points that you cannot access directly, making it far more effective than contact sprays for colony elimination.
-      </p>
-      <p>
-        The Pest Expert gel is supplied in a <strong>ready-to-use syringe applicator</strong>, which makes it straightforward to apply even for people who have never used a cockroach gel bait before. Simply place tiny dots of gel &mdash; roughly the size of a grain of rice &mdash; into the cracks, crevices, and harbourage points where cockroaches live and travel. Key placement sites include kitchen cupboard hinges, the gap between worktops and walls, behind cookers and fridges, around pipe entry points under sinks, along skirting board edges, and inside any cracks or gaps in walls or flooring. The syringe tip allows precise application into tight spaces that would be impossible to reach with a spray or powder.
-      </p>
-      <p>
-        The Pest Expert gel uses a similar mode of action to the Advion gel bait. The 10g syringe is sufficient for treating a single room or a small infestation, though you may need multiple syringes for a larger property or a more widespread problem. The gel is <strong>effective against all UK cockroach species</strong>, including both German and Oriental cockroaches, making it a versatile choice regardless of which species you are dealing with.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Professional-grade gel bait in a 10g consumer syringe</li>
-        <li>Domino-effect bait technology targets the entire colony, not just individual cockroaches</li>
-        <li>Easy syringe application &mdash; no specialist equipment or knowledge required</li>
-        <li>Effective against both German and Oriental cockroaches</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Smaller 10g syringe may not be sufficient for larger infestations &mdash; you may need to purchase multiple units</li>
-        <li>Takes one to two weeks for the full cascade effect to work through the colony</li>
-        <li>Gel dries out after two to three weeks and requires reapplication</li>
-        <li>Contains less bait than the Advion 4x30g pack for larger treatment areas</li>
-      </ul>
-
       {/* Buying Guide */}
       <h2 id="buying-guide">Cockroach Killer Buying Guide</h2>
       <p>
@@ -382,7 +347,7 @@ export default function BestCockroachKillersPage() {
 
       <h3>Species Matters: German vs Oriental Cockroaches</h3>
       <p>
-        Identifying which species of cockroach you are dealing with is important because the two common UK species have different habits and respond to treatment differently. <strong>German cockroaches</strong> are small (12&ndash;15mm), light brown with two dark stripes behind the head, and are almost exclusively found indoors in warm, humid environments close to food and water &mdash; kitchens and commercial food premises are their primary habitat. They breed rapidly and harbour in tight crevices near heat sources. Gel bait (Advion or Maxforce White IC) is the most effective treatment, placed directly into the crevices where they live.
+        Identifying which species of cockroach you are dealing with is important because the two common UK species have different habits and respond to treatment differently. <strong>German cockroaches</strong> are small (12&ndash;15mm), light brown with two dark stripes behind the head, and are almost exclusively found indoors in warm, humid environments close to food and water &mdash; kitchens and commercial food premises are their primary habitat. They breed rapidly and harbour in tight crevices near heat sources. Gel bait is the most effective treatment, placed directly into the crevices where they live &mdash; though the most potent gels are professional-only, as set out above.
       </p>
       <p>
         <strong>Oriental cockroaches</strong> are larger (20&ndash;25mm), dark brown to black, and tend to favour cooler, damper environments than their German cousins. They are commonly found in basements, cellars, drains, and utility rooms, and frequently enter properties through sewer systems and drain pipes. While gel bait is still effective against Oriental cockroaches, a combined approach of gel bait for indoor harbourage points plus contact spray around drain entry points and perimeter treatment can be particularly effective. Sealing gaps around pipes and installing drain covers or u-bend traps are important complementary steps for Oriental cockroach control.

@@ -278,7 +278,6 @@ export default function ProductsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: 'Advion Cockroach Gel Bait 4x30g', asin: 'B0148W0WOE', note: 'Professional', desc: 'Professional strength gel. Domino effect kills entire colony.' },
               { name: 'Sticky Traps 12-Pack', asin: 'B075FM7TST', note: 'Toxin-free', desc: 'Toxin-free sticky traps with food attractant.' },
               { name: 'NOPE! CP Cockroach Killer Spray 500ml', asin: 'B074CDY9T4', note: 'Odourless', desc: 'Odourless contact killer. Fast-acting spray formula.' },
               { name: 'Pest Expert Cockroach Gel 10g', asin: 'B07ZZGKQ55', note: 'Formula IC', desc: 'Formula IC gel. Domino effect bait for cockroaches.' }

@@ -106,12 +106,6 @@ export const topProductsByPest: Record<string, PestProduct[]> = {
   ],
   'cockroaches': [
     {
-      name: 'Advion Cockroach Gel Bait 4x30g',
-      asin: 'B0148W0WOE',
-      bestFor: 'Best Overall',
-      features: ['Professional-grade gel bait used by UK pest controllers', 'Domino effect — cockroaches carry bait back to colony'],
-    },
-    {
       name: 'Cockroach Sticky Traps 12-Pack',
       asin: 'B075FM7TST',
       bestFor: 'Best for Monitoring',
