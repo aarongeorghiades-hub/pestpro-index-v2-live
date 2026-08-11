@@ -407,7 +407,7 @@ export default function ProfessionalPestControlVsDiyPage() {
 
       <h3>Cockroaches</h3>
       <p>
-        <strong>A few cockroaches in the kitchen: DIY.</strong> Cockroach gel bait is available on Amazon and is the same active ingredient professionals use. Apply in small dots near harbourage sites. <strong>Established infestation: Professional.</strong> Cockroaches breed rapidly, and if you are seeing them during the day or in multiple rooms, the population is likely large enough to require targeted professional treatment.
+        <strong>A few cockroaches in the kitchen: DIY.</strong> The strongest cockroach gels are professional-only and are not sold to the public. A consumer gel bait is a step down, but on a small infestation caught early it will do the job. Apply in small dots near harbourage sites. <strong>Established infestation: Professional.</strong> Cockroaches breed rapidly, and if you are seeing them during the day or in multiple rooms, the population is likely large enough to require targeted professional treatment.
       </p>
 
       <h3>Ants</h3>
