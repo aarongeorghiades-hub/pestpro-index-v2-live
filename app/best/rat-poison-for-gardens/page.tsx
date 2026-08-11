@@ -267,7 +267,7 @@ export default function BestRatPoisonForGardensPage() {
       <ul>
         <li>Complete kit — Brodifacoum sachets and lockable bait box included</li>
         <li>CRRU-compliant tamper-resistant station for outdoor use</li>
-        <li>Maximum legal strength Brodifacoum — single-feed lethal dose</li>
+        <li>Brodifacoum — single-feed lethal dose</li>
         <li>Professional-grade station keeps children, pets, and wildlife safe</li>
         <li>900g of bait is generous for a single-station kit</li>
       </ul>
@@ -286,7 +286,7 @@ export default function BestRatPoisonForGardensPage() {
           rank={2}
           features={[
             'Large 1.5kg pack — 15 x 100g Brodifacoum sachets',
-            'Single-feed at maximum legal strength',
+            'Single-feed Brodifacoum formulation',
             'Enough for multiple bait stations over several weeks',
             'Ideal for treating external rat populations around buildings',
           ]}
@@ -295,7 +295,7 @@ export default function BestRatPoisonForGardensPage() {
         />
       </div>
       <p>
-        Large pack for treating external rat populations around buildings, compost heaps, and outbuildings. The Pest Expert Formula B+ 1.5kg pack contains 15 x 100g sachets of single-feed Brodifacoum at maximum legal strength — enough bait for multiple bait stations over several weeks of treatment. If you already own one or more outdoor bait stations and need a reliable, professional-strength refill supply, this is the product to buy.
+        Large pack for treating external rat populations around buildings, compost heaps, and outbuildings. The Pest Expert Formula B+ 1.5kg pack contains 15 x 100g sachets of single-feed Brodifacoum — enough bait for multiple bait stations over several weeks of treatment. If you already own one or more outdoor bait stations and need a reliable, professional-strength refill supply, this is the product to buy.
       </p>
       <p>
         Each 100g sachet is individually wrapped, making deployment clean and straightforward. Place one or two sachets inside each tamper-resistant bait station positioned along rat runs, beside sheds, near compost bins, or against boundary walls. Check every 2-3 days and replace consumed bait until activity ceases. The single-feed Brodifacoum formulation means that a lethal dose is delivered in one sitting — critical in outdoor environments where rats have access to multiple competing food sources and may not return to the station repeatedly.
@@ -306,7 +306,7 @@ export default function BestRatPoisonForGardensPage() {
       <p><strong>Pros:</strong></p>
       <ul>
         <li>Generous 1.5kg quantity for sustained outdoor baiting campaigns</li>
-        <li>Maximum legal strength Brodifacoum — single-feed lethal dose</li>
+        <li>Brodifacoum — single-feed lethal dose</li>
         <li>15 individually wrapped sachets for clean, easy deployment</li>
         <li>Trusted professional-grade product from Pest Expert</li>
       </ul>
