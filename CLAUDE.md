@@ -172,7 +172,7 @@ not repeated here. Laws 48 to 52 are new.
     `guides` and `reviews`; a slug set-diff of one is blind to the other. Law
     52 applies WITHIN a file, not only across files.
 
-## Laws 57–61 (new)
+## Laws 57 onwards - appended after the original block
 
 57. A SEARCH-ENGINE SNIPPET OF OUR OWN SITE IS A STALE ASSERTION, NOT A
     MEASUREMENT. Google's index lagged this site by several sessions and
