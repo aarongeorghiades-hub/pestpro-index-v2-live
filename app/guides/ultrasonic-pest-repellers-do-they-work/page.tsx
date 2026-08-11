@@ -367,7 +367,7 @@ export default function UltrasonicPestRepellersPage() {
 
       <h3>4. Targeted Baiting</h3>
       <p>
-        Gel baits for ants and cockroaches, bait blocks in tamper-resistant stations for rodents — these are the same products professionals use, and many are available on Amazon UK. Applied correctly, they are far more effective than any plug-in device. See our <Link href="/best/ant-gel-bait">ant gel bait</Link> and <Link href="/best/cockroach-gel-bait">cockroach gel bait</Link> guides.
+        Gel baits for ants and cockroaches, and bait blocks in tamper-resistant stations for rodents, are the most effective approach open to a consumer, and many are available on Amazon UK. For cockroaches it is worth knowing that the strongest gels are professional-only and are not sold to the public; a consumer gel is a step down but will handle a smaller infestation. Applied correctly, all of these are far more effective than any plug-in device. See our <Link href="/best/ant-gel-bait">ant gel bait</Link> and <Link href="/best/cockroach-gel-bait">cockroach gel bait</Link> guides.
       </p>
 
       <h3>5. Professional Treatment</h3>
