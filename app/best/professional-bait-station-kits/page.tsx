@@ -299,7 +299,7 @@ export default function ProfessionalBaitStationKitsPage() {
         />
       </div>
       <p>
-        When a tenant calls to report rodent activity and you need to respond the same day, the Roshield Pre-Baited Kit is the fastest path from delivery to deployment. The two tamper-resistant stations come pre-loaded with Brodifacoum bait blocks — the most potent single-feed rodenticide available to amateur users. Open the box, place the stations against walls near the reported activity, and you are done.
+        When a tenant calls to report rodent activity and you need to respond the same day, the Roshield Pre-Baited Kit is the fastest path from delivery to deployment. The two tamper-resistant stations come pre-loaded with Brodifacoum bait blocks — a single-feed rodenticide available to amateur users. Open the box, place the stations against walls near the reported activity, and you are done.
       </p>
       <p>
         Brodifacoum is a single-feed anticoagulant, meaning a rat or mouse only needs to consume one dose for a lethal effect. This makes the pre-baited kit particularly effective because even a brief visit to the station can deliver a lethal dose — you do not need the rodent to return multiple times as with some weaker active ingredients.

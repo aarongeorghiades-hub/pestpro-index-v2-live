@@ -261,7 +261,7 @@ export default function BestRatPoisonForGardensPage() {
         The included bait box is a professional-grade lockable station designed specifically for outdoor placement. It is weatherproof, tamper-resistant, and sized to admit rats while restricting access by larger non-target animals such as cats, hedgehogs, and squirrels. The lockable lid requires a key to open, keeping children and pets safe. Position the station along a fence line, beside a shed wall, or near a compost bin — anywhere you have seen rat activity — and the enclosed bait does the rest.
       </p>
       <p>
-        The 900g of Brodifacoum sachets included are the most potent active ingredient available to UK consumers. Brodifacoum delivers a lethal dose in a single feed, so once a rat enters the station and consumes bait, the outcome is typically fatal within 3 to 5 days. This single-feed action is particularly important outdoors, where rats have multiple food sources and you cannot guarantee they will return to the station repeatedly. For anyone dealing with garden rats for the first time, this combo kit removes all the guesswork.
+        The 900g of Brodifacoum sachets included use an active ingredient available to UK consumers. Brodifacoum delivers a lethal dose in a single feed, so once a rat enters the station and consumes bait, the outcome is typically fatal within 3 to 5 days. This single-feed action is particularly important outdoors, where rats have multiple food sources and you cannot guarantee they will return to the station repeatedly. For anyone dealing with garden rats for the first time, this combo kit removes all the guesswork.
       </p>
       <p><strong>Pros:</strong></p>
       <ul>
