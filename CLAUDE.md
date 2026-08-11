@@ -194,3 +194,40 @@ not repeated here. Laws 48 to 52 are new.
 61. A PROTECTION GIVEN BY NAME IS NOT OVERRIDDEN BY A BROAD CLASS
     AUTHORISATION. Stop and escalate; the ruling must name the single
     sentence.
+
+## NEVER TOUCH — PROTECTED FROM EVERY CHECK
+
+- app/best/rat-traps/page.tsx line 164, the four-categories sentence.
+- app/best/rat-traps/page.tsx, "most effective" x3, which are about BAIT.
+- app/best/cockroach-killers, the sentence arguing AGAINST relying on the
+  highest-rated product on Amazon.
+- app/best/ultrasonic-pest-repellers: the mixed-reviews H3, its FAQ schema
+  twin, and the "full evidence review" link label.
+- app/guides/ultrasonic-pest-repellers-do-they-work: the 4.5-star rating
+  discussion, which is the file's subject matter. This file has NO FAQ-schema
+  rating twin. Line 370 was narrowly authorised and edited in Session 22; the
+  rest stands.
+- app/guides/professional-pest-control-vs-diy: ALL 73 PRICES. Two sentences
+  were narrowly authorised in Session 22; the file otherwise remains NEVER
+  TOUCH.
+- app/guides/pest-control-costs: all prices. NEVER TOUCH. NO AUTHORISATION HAS
+  EVER BEEN GIVEN FOR THIS FILE.
+- drain-fly-killer, "The most effective drain fly killers".
+- "10-time Best Flea Product award winner".
+- the anchor id="best-seller" on commercial-rodent-bait-stations.
+- the essential-oils Evidence scale.
+- the 12 "rated for effectiveness" instances on natural-fox, natural-moth,
+  natural-wasp and natural-rat.
+- components/FindProviderCTA.tsx line 77, "Find Local Experts".
+- components/ProviderDetails.tsx line 88, the google_review_count switch.
+- brand and manufacturer marketing describing a product's maker.
+- Amazon Verified Purchase references.
+- ALL award labels and rank numerals site-wide.
+- "Verdict:" — out of scope by ruling R3.
+- The availability-on-Amazon-UK statements. Availability is EXPRESSLY
+  PERMITTED; only a price or price ranking located at Amazon is banned.
+- Everything shipped in Sessions 19, 20, 21 and 22.
+
+A PROTECTION GIVEN BY NAME IS NOT OVERRIDDEN BY A BROAD CLASS AUTHORISATION.
+If a task appears to require touching anything above, STOP AND ESCALATE.
+Proceed only on a ruling that names the single sentence.
