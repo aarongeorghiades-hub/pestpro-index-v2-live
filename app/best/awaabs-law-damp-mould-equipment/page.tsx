@@ -261,7 +261,7 @@ export default function AwaabsLawDampMouldEquipmentPage() {
       </div>
 
 <Callout type="info">
-        <p>Damp and condensation are what sustain this infestation - control the moisture and the problem usually leaves with it. If you rent out the property, damp and mould also carry statutory duties under Awaab&apos;s Law with fixed response deadlines. Our sister site <a href="https://awaabslawguide.co.uk/compliance-pack" target="_blank" rel="noopener noreferrer">Awaab&apos;s Law Guide</a>, also published by ENA Enterprises Ltd, has a Phase 1 compliance toolkit for landlords.</p>
+        <p>Damp and condensation are what drive mould growth, and the same moisture sustains silverfish, booklice and mould mites. If you rent out the property, damp and mould also carry statutory duties under Awaab&apos;s Law with fixed response deadlines. Our sister site <a href="https://awaabslawguide.co.uk/compliance-pack" target="_blank" rel="noopener noreferrer">Awaab&apos;s Law Guide</a>, also published by ENA Enterprises Ltd, has a Phase 1 compliance toolkit for landlords.</p>
       </Callout>
 
             {/* Product 1: Nuaire Drimaster */}
