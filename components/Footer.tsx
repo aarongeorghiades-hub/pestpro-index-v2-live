@@ -28,8 +28,8 @@ export default function Footer() {
           <p>The UK&apos;s neutral pest control directory</p>
         </div>
         <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-12 mb-12">
-          <div>
-            <h4 className="text-white font-bold mb-4">Browse</h4>
+          <details className="footer-group">
+            <summary className="text-white font-bold mb-4">Browse</summary>
             <ul className="space-y-2">
               <li><Link href="/pest-control/regions" className="hover:text-white transition">Find Pest Control</Link></li>
               <li><Link href="/pest-control" className="hover:text-white transition">By Borough</Link></li>
@@ -72,9 +72,9 @@ export default function Footer() {
               <li><Link href="/belfast/residential" className="hover:text-white transition">Belfast Residential</Link></li>
               <li><Link href="/belfast/commercial" className="hover:text-white transition">Belfast Commercial</Link></li>
             </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-bold mb-4">Products</h4>
+          </details>
+          <details className="footer-group">
+            <summary className="text-white font-bold mb-4">Products</summary>
             <ul className="space-y-2">
               <li><Link href="/products" className="hover:text-white transition">Home Products</Link></li>
               <li><Link href="/commercial-products" className="hover:text-white transition">Commercial Products</Link></li>
@@ -98,9 +98,9 @@ export default function Footer() {
               <li><Link href="/best/commercial-insect-monitors" className="hover:text-white transition">Best Commercial Insect Monitors</Link></li>
               <li><Link href="/best/commercial-bird-proofing" className="hover:text-white transition">Best Commercial Bird Proofing</Link></li>
             </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-bold mb-4">Resources</h4>
+          </details>
+          <details className="footer-group">
+            <summary className="text-white font-bold mb-4">Resources</summary>
             <ul className="space-y-2">
               <li><Link href="/guides" className="hover:text-white transition">Pest Control Guides &amp; Expert Advice</Link></li>
               <li><Link href="/pest-library" className="hover:text-white transition">Pest Library</Link></li>
@@ -123,9 +123,9 @@ export default function Footer() {
               <li><Link href="/guides/how-to-get-rid-of-moths" className="hover:text-white transition">How to Get Rid of Moths</Link></li>
               <li><Link href="/guides/pest-control-costs" className="hover:text-white transition">Pest Control Costs UK</Link></li>
             </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-bold mb-4">For Professionals</h4>
+          </details>
+          <details className="footer-group">
+            <summary className="text-white font-bold mb-4">For Professionals</summary>
             <ul className="space-y-2">
               <li><Link href="/professionals" className="hover:text-white transition">For Pest Professionals</Link></li>
               <li><Link href="/guides/commercial-pest-control" className="hover:text-white transition">Commercial Pest Control</Link></li>
@@ -135,15 +135,15 @@ export default function Footer() {
               <li><Link href="/guides/office-pest-control" className="hover:text-white transition">Office Pest Control</Link></li>
               <li><Link href="/guides/landlord-pest-control" className="hover:text-white transition">Landlord Pest Control</Link></li>
             </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-bold mb-4">Company</h4>
+          </details>
+          <details className="footer-group">
+            <summary className="text-white font-bold mb-4">Company</summary>
             <ul className="space-y-2">
               <li><Link href="/" className="hover:text-white transition">Home</Link></li>
               <li><Link href="/about" className="hover:text-white transition">About</Link></li>
               <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
             </ul>
-          </div>
+          </details>
         </div>
 
         <div className="border-t border-gray-800 pt-8 mt-12">

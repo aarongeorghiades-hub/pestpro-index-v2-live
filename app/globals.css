@@ -144,3 +144,56 @@ body {
     margin: 2.5rem 0;
   }
 }
+
+@layer base {
+  /* Footer group collapse. MOBILE ONLY, and deliberately CSS-driven rather
+     than state-driven: the five footer link groups are <details> elements, so
+     every anchor is in the server HTML and in the DOM whether the group is
+     open or shut. Nothing is conditionally rendered, so nothing is hidden
+     from a crawler - which is the entire reason the shared footer exists.
+     Verified with JavaScript disabled at both viewports before this was
+     written, not assumed. */
+  .footer-group > summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .footer-group > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .footer-group > summary::after {
+    content: "+";
+    float: right;
+    margin-left: 1rem;
+    font-weight: 400;
+  }
+
+  .footer-group[open] > summary::after {
+    content: "\2212";
+  }
+
+  /* From md up the groups are always open and behave exactly as the plain
+     columns did before, so the desktop layout is unchanged. Both the modern
+     ::details-content override and the older child-display override are
+     present, because which one a browser needs depends on how its UA
+     stylesheet implements <details>. */
+  @media (min-width: 768px) {
+    .footer-group::details-content {
+      content-visibility: visible;
+      block-size: auto;
+    }
+
+    .footer-group:not([open]) > ul {
+      display: block;
+    }
+
+    .footer-group > summary {
+      cursor: default;
+    }
+
+    .footer-group > summary::after {
+      content: none;
+    }
+  }
+}
