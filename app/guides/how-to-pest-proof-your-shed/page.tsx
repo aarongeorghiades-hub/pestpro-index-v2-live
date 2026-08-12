@@ -306,7 +306,11 @@ export default function HowToPestProofYourShedPage() {
         If pests have already established themselves in your shed, you need to deal with the existing infestation before or alongside your proofing work. Sealing a shed with pests still inside it simply traps them in, and some &mdash; particularly rats &mdash; may cause more damage trying to gnaw their way out. Below are the recommended approaches for each common shed pest.
       </p>
 
-      <h3>Rats: Bait Stations Outside the Shed</h3>
+<Callout type="tip">
+        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-blue-600 hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
+      </Callout>
+
+            <h3>Rats: Bait Stations Outside the Shed</h3>
       <p>
         If you have evidence of rat activity in or around your shed (droppings, gnaw marks, burrow holes nearby), the most effective DIY approach is to place <strong>tamper-resistant bait stations outside the shed</strong> along known or suspected rat runs. Bait stations should be positioned against walls, fences, or along the edges of paths where rats travel &mdash; rats are thigmotactic, meaning they prefer to run along edges rather than across open ground. Do not place loose poison inside the shed, as this creates a risk to pets, children, and non-target wildlife. A lockable bait station with a secured poison block inside is the safe and responsible method. Check and replenish bait stations weekly until all feeding activity has stopped, then seal the entry points the rats were using. For severe or persistent infestations, call a professional pest controller &mdash; they have access to more potent restricted-use rodenticides and the expertise to resolve the problem quickly. For detailed bait station advice, see our <Link href="/best/rat-bait-stations" className="text-blue-600 hover:underline font-medium">Best Rat Bait Stations UK 2026</Link> guide.
       </p>

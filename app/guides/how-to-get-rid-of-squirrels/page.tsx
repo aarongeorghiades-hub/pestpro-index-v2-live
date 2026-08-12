@@ -209,7 +209,11 @@ export default function HowToGetRidOfSquirrelsPage() {
         The grey squirrel (<em>Sciurus carolinensis</em>) is the UK&apos;s most common nuisance wildlife pest. Originally introduced from North America in the 1870s as a fashionable addition to country estates, the grey squirrel has since spread to every corner of mainland Britain. There are now an estimated <strong>2.7 million grey squirrels</strong> in the UK &mdash; vastly outnumbering the native red squirrel (<em>Sciurus vulgaris</em>), whose population has declined to approximately 140,000 and is now largely confined to parts of Scotland, Northumberland, Cumbria, and a handful of isolated reserves. The grey squirrel is directly responsible for this decline through competition for food and habitat, and through carrying the squirrelpox virus, which is fatal to reds but harmless to greys.
       </p>
 
-      <p>
+<Callout type="tip">
+        <p>Sealing the entry points matters more than anything you put down. Our guide to the <Link href="/best/rodent-proofing" className="text-blue-600 hover:underline font-medium">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips that keep them out for good.</p>
+      </Callout>
+
+            <p>
         For homeowners, grey squirrels present a different but equally serious set of problems. They are highly adept at entering loft spaces through remarkably small gaps and, once inside, they gnaw electrical wiring, tear up insulation, damage roof timbers, and can cause water damage by chewing through plastic pipes. A squirrel infestation in a loft is not merely an annoyance &mdash; it is a genuine fire hazard and a structural risk that can lead to thousands of pounds in repair costs if left unaddressed. In gardens, grey squirrels strip bark from trees, dig up newly planted bulbs, raid bird feeders, and take fruit and vegetables from allotments and growing beds.
       </p>
 

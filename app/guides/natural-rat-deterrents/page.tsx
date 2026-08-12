@@ -332,7 +332,11 @@ export default function NaturalRatDeterrentsPage() {
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: Deterrent Products */}
       {/* ------------------------------------------------------------------ */}
-      <h2 id="deterrent-products">Best Natural Rat Deterrent Products</h2>
+<Callout type="info">
+        <p>Sealing the entry points matters more than anything you put down. Our guide to the <Link href="/best/rodent-proofing" className="text-green-600 hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips that keep them out for good.</p>
+      </Callout>
+
+            <h2 id="deterrent-products">Best Natural Rat Deterrent Products</h2>
 
       <p>
         These are the natural and humane rat deterrent products we recommend, available in the UK. We have focused on physical proofing products and supplementary deterrents rather than kill products.

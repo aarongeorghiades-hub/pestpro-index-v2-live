@@ -696,6 +696,10 @@ export default function LandlordPestControlPage() {
         <p>If you manage rented property, damp and mould are not only a pest problem - they carry statutory duties under Awaab&apos;s Law, with fixed response deadlines and enforcement consequences for missing them. Our sister site <a href="https://awaabslawguide.co.uk/compliance-pack" target="_blank" rel="noopener noreferrer">Awaab&apos;s Law Guide</a>, also published by ENA Enterprises Ltd, has a Phase 1 compliance toolkit covering hazard triage, deadline tracking and the audit trail.</p>
       </Callout>
 
+      <Callout type="tip">
+        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-blue-600 hover:underline font-medium">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
+      </Callout>
+
             <h3>Recommended Products for Landlords</h3>
       <p>
         The following products are recommended for landlords managing damp, condensation, and the associated pest risks in rental properties.

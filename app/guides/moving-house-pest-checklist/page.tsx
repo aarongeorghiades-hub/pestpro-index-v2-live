@@ -323,7 +323,11 @@ export default function MovingHousePestChecklistPage() {
         Once you have the keys and before the removal van arrives, there is a narrow but crucial window in which you can treat the empty property far more effectively and cheaply than you ever could with furniture in place. An empty property allows full access to every floor surface, every skirting board edge, and every corner &mdash; exactly the areas where pest treatments need to be applied. Taking a few hours to treat the property on the day before moving (or earlier if possible) is one of the best investments you can make in your new home.
       </p>
 
-      <h3>Flea Treatment (If Previous Owners Had Pets)</h3>
+<Callout type="tip">
+        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-blue-600 hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
+      </Callout>
+
+            <h3>Flea Treatment (If Previous Owners Had Pets)</h3>
       <p>
         If the previous occupants had cats or dogs, treat the entire property for fleas before moving any soft furnishings or carpets in. Flea pupae can remain dormant in carpets, between floorboards, and in floor crevices for <strong>up to six months</strong>. They hatch when they detect vibration, pressure, and warmth &mdash; exactly what happens when new occupants start walking through the house. This can produce a sudden, explosive flea infestation that seems to come from nowhere, with hundreds of freshly hatched fleas biting within hours of moving in.
       </p>

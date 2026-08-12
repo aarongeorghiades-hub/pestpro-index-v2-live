@@ -327,7 +327,11 @@ export default function HowToPestProofYourLoftPage() {
         If your inspection reveals pests that are already living in your loft, you need to deal with them before or alongside your proofing work. The approach depends entirely on which pest is present. Below is a pest-by-pest guide to treatment, including recommended products and links to our detailed product guides.
       </p>
 
-      <h3>Mice in the Loft</h3>
+<Callout type="tip">
+        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-blue-600 hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
+      </Callout>
+
+            <h3>Mice in the Loft</h3>
       <p>
         For mice in the loft, <strong>snap traps</strong> are the most effective and humane DIY treatment. Place traps along joists and against walls, perpendicular to the wall with the trigger end touching the skirting or timber. Mice travel along edges rather than across open spaces, so traps placed in the middle of the loft floor will catch very little. Bait with a small amount of peanut butter, chocolate spread, or hazelnut spread smeared onto the trigger plate &mdash; do not use large pieces of food that mice can steal without triggering the trap. Set <strong>at least six traps</strong> for a standard loft &mdash; more is better, because the first night of trapping is typically the most productive before surviving mice become trap-shy. Check traps daily and reset or reposition any that have been triggered without a catch. Continue trapping for at least two weeks after the last catch to ensure the infestation is fully cleared. For our top recommendations, see the <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps UK 2026</Link> guide.
       </p>

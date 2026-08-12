@@ -353,7 +353,11 @@ export default function AutumnPestProofingPage() {
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: Products */}
       {/* ------------------------------------------------------------------ */}
-      <h2 id="products">Products for Autumn Pest Proofing</h2>
+<Callout type="tip">
+        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-blue-600 hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
+      </Callout>
+
+            <h2 id="products">Products for Autumn Pest Proofing</h2>
 
       <p>
         The right products make pest proofing faster and more effective. Below are our recommended picks for the most common autumn pest threats. For full details and comparisons, see our dedicated product pages: <Link href="/best/mouse-repellent" className="text-blue-600 hover:underline font-medium">Best Mouse Repellents</Link>, <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps</Link>, and <Link href="/best/spider-repellent" className="text-blue-600 hover:underline font-medium">Best Spider Repellents</Link>.

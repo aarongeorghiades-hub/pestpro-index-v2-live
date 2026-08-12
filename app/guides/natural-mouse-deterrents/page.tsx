@@ -291,7 +291,11 @@ export default function NaturalMouseDeterrentsPage() {
       {/* ------------------------------------------------------------------ */}
       {/* SECTION: Deterrent Products */}
       {/* ------------------------------------------------------------------ */}
-      <h2 id="deterrent-products">Best Natural Deterrent Products</h2>
+<Callout type="tip">
+        <p>Sealing the entry points matters more than anything you put down. Our guide to the <Link href="/best/rodent-proofing" className="text-green-600 hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips that keep them out for good.</p>
+      </Callout>
+
+            <h2 id="deterrent-products">Best Natural Deterrent Products</h2>
 
       <p>
         These are the natural mouse deterrent products we recommend, available in the UK &mdash; a combination of scent-based repellents and physical proofing materials. We have prioritised products that are genuinely non-toxic and humane.

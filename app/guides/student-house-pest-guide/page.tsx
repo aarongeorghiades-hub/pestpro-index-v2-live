@@ -340,7 +340,11 @@ export default function StudentHousePestGuidePage() {
         <strong>Important:</strong> DIY solutions are a stopgap, not a substitute for proper landlord action. Putting down mouse traps without sealing the entry points means you will keep catching mice indefinitely. Always report the problem formally to your landlord and push for structural proofing.
       </p>
 
-      <h3>Mouse Traps</h3>
+<Callout type="info">
+        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-blue-600 hover:underline font-medium">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
+      </Callout>
+
+            <h3>Mouse Traps</h3>
 
       <p>
         Classic <strong>snap traps</strong> remain the cheapest and most effective DIY mouse control method. Place them perpendicular to the wall with the trigger end touching the skirting board &mdash; mice run along walls and will walk straight onto the trap. Bait with a small smear of <strong>peanut butter</strong> or <strong>chocolate spread</strong> (not cheese &mdash; it dries out quickly and mice are not particularly attracted to it). Place traps where you have seen droppings or along known mouse runs. Check traps daily and dispose of caught mice in a sealed bag in the outside bin. For a typical student kitchen, three to four traps along the skirting boards and behind appliances is a good starting point.

@@ -167,7 +167,11 @@ export default function HowToGetRidOfMicePage() {
         Mice are small, fast, and predominantly nocturnal. The house mouse (<em>Mus musculus</em>) is by far the most common species found inside UK homes, and it is remarkably well adapted to living alongside humans. Because of their size and speed, you will almost always notice the evidence they leave behind long before you see a live mouse. Recognising these signs early is essential &mdash; the sooner you identify a mouse problem, the easier and cheaper it is to resolve. Here are the key indicators to watch for.
       </p>
 
-      <div className="not-prose">
+<Callout type="tip">
+        <p>Sealing the entry points matters more than anything you put down. Our guide to the <Link href="/best/rodent-proofing">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips that keep them out for good.</p>
+      </Callout>
+
+            <div className="not-prose">
         <Callout type="info">
           <p>A single mouse produces between 40 and 100 droppings per day, making droppings the most common first sign of an infestation. Check kitchen cupboards, behind appliances, and along skirting boards.</p>
         </Callout>

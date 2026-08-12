@@ -158,7 +158,11 @@ export default function HowToGetRidOfRatsPage() {
         Rats are cautious, largely nocturnal animals. You are far more likely to notice the evidence they leave behind than to see a live rat in your home. Learning to recognise the telltale signs early is crucial, because the sooner you act, the easier and cheaper the problem is to resolve. Below are the key indicators to look for.
       </p>
 
-      <div className="not-prose">
+<Callout type="tip">
+        <p>Sealing the entry points matters more than anything you put down. Our guide to the <Link href="/best/rodent-proofing">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips that keep them out for good.</p>
+      </Callout>
+
+            <div className="not-prose">
         <Callout type="warning">
           <p>If you see a rat during daylight hours, it often means the colony is large and overcrowded. Act immediately — the problem is likely more serious than you think.</p>
         </Callout>
