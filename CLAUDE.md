@@ -238,6 +238,34 @@ not repeated here. Laws 48 to 52 are new.
     nothing today because the page rebuilds the URL from the asin. A column
     that is currently unused is a defect waiting for the code path that uses
     it.
+73. A GENERATED COLUMN CANNOT BE CORRECTED ROW BY ROW.
+    amazon_products.amazon_url was generated from asin by a stored
+    expression carrying the wrong affiliate tag. It presented as 152
+    defective rows; it was ONE defective expression rendered 152 times.
+    PostgreSQL refuses a per-row UPDATE outright. ESTABLISH WHETHER A COLUMN
+    IS GENERATED BEFORE AUTHORISING ANY WRITE AGAINST IT, AND FIX THE
+    EXPRESSION, NOT THE ROWS.
+74. POSTGREST IS A DATA API, NOT A DATABASE CLIENT. CC reaches Supabase
+    through PostgREST, which can read and write rows but CANNOT read a
+    column definition, issue DDL, or control transactions. Schema work goes
+    to the Supabase SQL Editor and is executed by Aaron. Do not attempt DDL
+    from CC and do not conclude a schema fact is unknowable merely because
+    PostgREST cannot see it.
+75. A GATE THAT TESTS A DERIVED VALUE AGAINST ITS SOURCE CAN ONLY PASS. A
+    gate requiring that a generated URL's /dp/ segment match the asin column
+    it is generated FROM is unsatisfiable in the failing direction and
+    proves nothing. Before writing a gate, ask what result would constitute
+    a failure. If none can exist, the gate is theatre.
+76. A LAW NUMBER CARRIED IN A CARRYOVER IS AN ASSERTION, EXACTLY LIKE A
+    FIGURE. Claude's inherited summary of laws 1-67 had drifted from the
+    repository's own CLAUDE.md and cited the flag rule under the wrong
+    number. THE REPO COPY IS AUTHORITATIVE. Cite a rule by its text, never
+    by its number alone.
+77. A CREDENTIAL THAT HAS LEFT ITS INTENDED CHANNEL IS BURNED. A live client
+    secret was captured in a screenshot pasted into chat. It was rotated and
+    deleted within minutes and no harm followed. NEVER SCREENSHOT A
+    CREDENTIAL DIALOG. NEVER SEND A SECRET TO CLAUDE IN ANY FORM. Secrets go
+    from the vendor's download straight into Railway and nowhere else.
 
 ## NEVER TOUCH — PROTECTED FROM EVERY CHECK
 
