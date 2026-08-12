@@ -260,6 +260,13 @@ export default function Navigation() {
                   Best Mouse Traps
                 </Link>
                 <Link
+                  href="/best/rodent-proofing"
+                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  onClick={() => setIsResourcesOpen(false)}
+                >
+                  Best Rodent Proofing
+                </Link>
+                <Link
                   href="/guides/wasp-nest-removal"
                   className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
@@ -712,6 +719,13 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                 >
                   Best Mouse Traps
+                </Link>
+                <Link
+                  href="/best/rodent-proofing"
+                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Best Rodent Proofing
                 </Link>
                 <Link
                   href="/guides/wasp-nest-removal"

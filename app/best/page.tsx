@@ -41,6 +41,7 @@ const categories: { heading: string; items: Category[] }[] = [
       { slug: 'mouse-poison', name: 'Best Mouse Poison', description: 'Effective UK-available mouse rodenticides.' },
       { slug: 'mouse-bait-stations', name: 'Best Mouse Bait Stations', description: 'Child- and pet-safe mouse bait stations.' },
       { slug: 'mouse-repellent', name: 'Best Mouse Repellent', description: 'Repellent options to keep mice away from your home.' },
+      { slug: 'rodent-proofing', name: 'Best Rodent Proofing', description: 'Mesh, steel wool, drain guards and brush strips to seal entry points.' },
     ],
   },
   {

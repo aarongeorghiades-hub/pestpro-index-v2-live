@@ -81,6 +81,7 @@ export default function Footer() {
               <li><Link href="/best" className="hover:text-white transition">Best Pest Control Products</Link></li>
               <li><Link href="/best/rat-traps" className="hover:text-white transition">Best Rat Traps UK</Link></li>
               <li><Link href="/best/mouse-traps" className="hover:text-white transition">Best Mouse Traps UK</Link></li>
+              <li><Link href="/best/rodent-proofing" className="hover:text-white transition">Best Rodent Proofing UK</Link></li>
               <li><Link href="/best/wasp-killers" className="hover:text-white transition">Best Wasp Killers UK</Link></li>
               <li><Link href="/best/bed-bug-treatments" className="hover:text-white transition">Best Bed Bug Treatments UK</Link></li>
               <li><Link href="/best/cockroach-killers" className="hover:text-white transition">Best Cockroach Killers UK</Link></li>
