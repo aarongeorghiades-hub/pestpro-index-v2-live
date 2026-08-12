@@ -214,6 +214,30 @@ not repeated here. Laws 48 to 52 are new.
 67. A SUBSTANCE-NAME MATCHER MUST USE THE SOURCE'S OWN SPELLING. HSE
     spells brodifacoum's IUPAC name "napthyl". A matcher on the
     correct spelling returned a confident, completely wrong verdict.
+68. A CODE REMOVAL IS NOT A DATABASE REMOVAL. Session 23 removed the
+    Flymatic from the repo, proved zero occurrences, and closed the arc. The
+    row survived in amazon_products and the dead affiliate link stayed live
+    in production for two sessions. WHEN A SURFACE READS FROM A TABLE, THE
+    TABLE IS PART OF THE SURFACE. Sweep both.
+69. VERIFY A VENDOR CAPABILITY AGAINST THE VENDOR'S CURRENT DOCUMENTATION
+    BEFORE RECOMMENDING IT. Claude recommended PA-API repeatedly; Amazon had
+    retired it three months earlier and was refusing new customers. A
+    capability named in a carryover is an ASSERTION with an expiry date,
+    exactly like a figure.
+70. CHAT IS A LOSSY TRANSPORT. Three CC reports in one session arrived
+    corrupted mid-word, one of them under an explicit sub-100-character
+    rule, destroying a deployed hash and a sha256. ALL DETAIL GOES TO A
+    FILE, IS UPLOADED TO CLAUDE, AND IS VERIFIED BY sha256. CHAT CARRIES
+    ONLY A SHORT ENUMERATED RESULT LIST.
+71. NEW SOURCING CAN DUPLICATE WHAT THE SITE ALREADY SELLS. Before sourcing
+    any product class, ENUMERATE THE EXISTING ProductCard ASINs AND NAME
+    PROPS IN THAT CLASS FIRST. Session 24 sourced two products already on
+    the site under different ASINs.
+72. AN UNRENDERED COLUMN CAN STILL BE WRONG. amazon_products.amazon_url
+    carries a malformed affiliate tag on at least one row. It renders
+    nothing today because the page rebuilds the URL from the asin. A column
+    that is currently unused is a defect waiting for the code path that uses
+    it.
 
 ## NEVER TOUCH — PROTECTED FROM EVERY CHECK
 
