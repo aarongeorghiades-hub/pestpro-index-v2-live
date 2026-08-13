@@ -266,6 +266,26 @@ not repeated here. Laws 48 to 52 are new.
     deleted within minutes and no harm followed. NEVER SCREENSHOT A
     CREDENTIAL DIALOG. NEVER SEND A SECRET TO CLAUDE IN ANY FORM. Secrets go
     from the vendor's download straight into Railway and nowhere else.
+78. A VENDOR'S CURRENT DOCUMENTATION CAN STILL BE WRONG. Amazon's Creators
+    API docs name the response root itemResults; the live API returns
+    itemsResult. Three healthy ASINs were silently classified UNDETERMINED
+    before a real call caught it. Law 69 said check the documentation before
+    recommending a capability. THIS EXTENDS IT: CHECK THE LIVE RESPONSE
+    BEFORE TRUSTING THE DOCUMENTATION. The running system is the register.
+79. A DEAD LINK AND AN OUT-OF-STOCK LINK ARE DIFFERENT DEFECTS WITH
+    DIFFERENT REMEDIES. DEAD needs re-sourcing. UNAVAILABLE needs waiting.
+    NEVER DEACTIVATE, RE-SOURCE OR REMOVE ON AN UNAVAILABLE. And whatever
+    deactivates on DEAD must have a counterpart that reactivates on ALIVE,
+    or the estate decays in one direction only.
+80. A SAFETY CEILING THAT FIRES IS WORKING. When the interlock refused to
+    act on 14 rows against a ceiling of 10, the answer was to inspect all 14
+    by name, not to raise the ceiling. A limit relaxed because it triggered
+    is not a limit. Do the inspection the ceiling was protecting, then act
+    by name.
+81. A CAP AND ITS REASONING ARE TWO DIFFERENT THINGS. What creates
+    link-scheme risk is a SITEWIDE link rendering on every route, not the
+    number four. BEFORE HOLDING OR MOVING A LIMIT, RESTATE WHAT IT WAS
+    PROTECTING AGAINST AND CHECK THE NUMBER STILL SERVES IT.
 
 ## NEVER TOUCH — PROTECTED FROM EVERY CHECK
 
