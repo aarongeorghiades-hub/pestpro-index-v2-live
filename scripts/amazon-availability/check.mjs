@@ -455,6 +455,26 @@ async function main() {
   const limitArg = args.indexOf('--limit');
   const limit = limitArg >= 0 ? parseInt(args[limitArg + 1], 10) : null;
 
+  // --asins B0XXXXXXXX,B0YYYYYYYY checks exactly and only the ASINs named,
+  // in the order given. It does NOT construct or infer an ASIN: anything that
+  // is not exactly ten characters of [A-Z0-9] is rejected loudly rather than
+  // silently dropped or corrected.
+  const asinsArg = args.indexOf('--asins');
+  let namedAsins = null;
+  if (asinsArg >= 0) {
+    const raw = (args[asinsArg + 1] || '')
+      .split(',')
+      .map((a) => a.trim())
+      .filter(Boolean);
+    const bad = raw.filter((a) => !/^[A-Z0-9]{10}$/.test(a));
+    if (!raw.length || bad.length) {
+      console.error(`[availability] --asins needs a comma-separated list of 10-character ASINs.`);
+      if (bad.length) console.error(`[availability] rejected: ${bad.join(', ')}`);
+      process.exit(1);
+    }
+    namedAsins = [...new Set(raw)];
+  }
+
   const creds = requireCredentials();
 
   const tok = await getToken(creds);
@@ -476,10 +496,19 @@ async function main() {
   const dbAsins = db.rows.map((r) => r.asin);
   const repoAsins = [...repo.map.keys()];
   const all = [...new Set([...dbAsins, ...repoAsins])].sort();
-  const target = limit ? all.slice(0, limit) : all;
+  // --asins wins over --limit. The populations are still loaded, because the
+  // report has to say which one each ASIN belongs to and where it appears.
+  const target = namedAsins ?? (limit ? all.slice(0, limit) : all);
 
   console.log(`[availability] P1 database distinct ASINs: ${new Set(dbAsins).size} (available=${db.available})`);
   console.log(`[availability] P2 repo distinct ASINs: ${repoAsins.length} across ${repo.fileCount} files`);
+  if (namedAsins) {
+    console.log(`[availability] --asins: checking exactly and only these ${target.length}: ${target.join(', ')}`);
+    const unknown = target.filter((a) => !dbAsins.includes(a) && !repo.map.has(a));
+    if (unknown.length) {
+      console.log(`[availability] NOTE: not in either population, checked anyway: ${unknown.join(', ')}`);
+    }
+  }
   console.log(`[availability] combined distinct: ${all.length}; checking ${target.length}`);
   console.log(`[availability] batch size ${BATCH_SIZE}, delay ${DELAY_MS}ms between calls`);
 

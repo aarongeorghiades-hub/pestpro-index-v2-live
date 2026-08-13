@@ -36,7 +36,20 @@ Credentials live in Railway and nowhere else. They are deliberately absent from
 railway run node scripts/amazon-availability/check.mjs           # full run
 railway run node scripts/amazon-availability/check.mjs --probe   # batch probe
 railway run node scripts/amazon-availability/check.mjs --limit 20
+railway run node scripts/amazon-availability/check.mjs --asins B0CSK61L94,B002Q0ZB9M
 ```
+
+`--asins` takes a comma-separated list and checks exactly and only those,
+in the order given. It wins over `--limit`. Anything that is not exactly ten
+characters of `[A-Z0-9]` is rejected loudly and the job exits non-zero — it
+never constructs, infers or silently drops an ASIN. Both populations are still
+loaded, because the report has to say which one each ASIN belongs to and where
+it appears; an ASIN in neither is checked anyway and flagged as such.
+
+It writes nothing to disk. `node:fs` is imported read-only — `readFileSync`,
+`readdirSync`, `statSync` — and the report goes to stdout. The only non-GET
+requests it ever makes are the OAuth `POST`, the `getItems` `POST`, and the
+interlock's `PATCH`, which is unreachable unless the interlock is armed.
 
 Run without credentials and it exits non-zero, naming which one is missing,
 having called nothing and written nothing.
