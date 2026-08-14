@@ -75,14 +75,15 @@ const breadcrumbSchema = {
 
 const tocItems = [
   { id: 'at-a-glance', title: 'Best Pigeon Spikes at a Glance' },
-  { id: 'best-overall', title: 'Best Overall — Defenders Stainless Steel Bird Spikes' },
-  { id: 'best-coverage', title: 'Best Coverage — Pestbye Stainless Steel Spikes (5m)' },
-  { id: 'best-budget', title: 'Best Budget — The Big Cheese Bird Deterrent Spikes' },
-  { id: 'best-plastic', title: 'Best Polycarbonate — Defender Plastic Bird Spikes' },
-  { id: 'best-adhesive', title: 'Best Adhesive Option — Bird-X Stainless Steel Spikes' },
-  { id: 'best-netting', title: 'Best Netting — Defenders Bird Netting' },
+  { id: 'best-overall', title: 'Best Overall — S4U Stainless Steel Spikes' },
+  { id: 'best-wide-ledges', title: 'Best for Wide Ledges — Defender Wide Plastic' },
+  { id: 'steel-3m-strip', title: 'Stainless Steel Spikes (3m)' },
+  { id: 'best-for-gutters', title: 'Best for Gutters — Half Round Gutter Kit' },
+  { id: 'offo-steel-spikes', title: 'OFFO Stainless Steel Spikes' },
+  { id: 'best-large-areas', title: 'Best for Large Areas — Birdgo Netting' },
   { id: 'how-to-choose', title: 'How to Choose the Right Pigeon Deterrent' },
   { id: 'tips', title: 'Installation Tips' },
+  { id: 'faq', title: 'Frequently Asked Questions' },
 ];
 
 const faqSchema = {
@@ -208,186 +209,184 @@ export default function BestPigeonSpikesPage() {
         </thead>
         <tbody>
           <tr>
-            <td>Defenders Stainless Steel Spikes</td>
+            <td>S4U Stainless Steel Spikes (12 Strips, 3m)</td>
             <td>Stainless steel</td>
             <td>Best Overall</td>
           </tr>
           <tr>
-            <td>Pestbye Stainless Steel (5m)</td>
+            <td>Defender Wide Plastic Spikes (5m)</td>
+            <td>Plastic</td>
+            <td>Best for Wide Ledges</td>
+          </tr>
+          <tr>
+            <td>Stainless Steel Spikes (3m)</td>
             <td>Stainless steel</td>
-            <td>Best Coverage</td>
+            <td>A plain unbranded steel strip</td>
           </tr>
           <tr>
-            <td>Big Cheese Deterrent Spikes</td>
-            <td>Stainless steel / plastic base</td>
-            <td>Best Budget</td>
-          </tr>
-          <tr>
-            <td>Defender Plastic Bird Spikes</td>
-            <td>Polycarbonate</td>
-            <td>Best Plastic Option</td>
-          </tr>
-          <tr>
-            <td>Bird-X Stainless Steel Spikes</td>
+            <td>Half Round Gutter Kit (1m)</td>
             <td>Stainless steel</td>
-            <td>Best Adhesive Mount</td>
+            <td>Best for Gutters</td>
           </tr>
           <tr>
-            <td>Defenders Bird Netting</td>
-            <td>HDPE netting</td>
-            <td>Large Area Coverage</td>
+            <td>OFFO Stainless Steel Spikes</td>
+            <td>Stainless steel</td>
+            <td>A named-brand steel alternative</td>
+          </tr>
+          <tr>
+            <td>Birdgo Anti-Pigeon Netting (5m x 5m)</td>
+            <td>Netting</td>
+            <td>Best for Large Areas</td>
           </tr>
         </tbody>
       </table>
 
       {/* Product 1 */}
-      <h2 id="best-overall">Best Overall — Defenders Stainless Steel Bird Spikes</h2>
+      <h2 id="best-overall">Best Overall — S4U Stainless Steel Bird Spikes</h2>
       <div className="not-prose">
         <ProductCard
-          name="Defenders Stainless Steel Bird Spikes (2m Pack)"
+          name="S4U Stainless Steel Bird Spikes (12 Strips, 3m)"
           features={[
-            'Medical-grade stainless steel pins on a UV-resistant polycarbonate base',
-            'Two rows of pins cover ledges up to 12 cm wide',
-            'Pre-drilled base for screw fixing — also compatible with adhesive mounting',
-            'Blunted pin tips deter birds without causing injury',
-            'Weather-resistant — rated for 15+ years outdoor use',
-            'Each strip is 33 cm long with 6 strips per 2m pack',
+            'Stainless steel construction',
+            'Supplied as 12 separate strips',
+            '3 metres of coverage in total',
+            'Strips can be placed individually where birds land',
+            'No cutting required to cover several short ledges',
+            'Suits sills, copings and flat ledges',
           ]}
-          asin="B003ZSHN6S"
-          bestFor="All-round pigeon deterrent for ledges, sills, and gutters"
+          asin="B09B2FSW55"
+          bestFor="Best Overall"
           rank={1}
         />
       </div>
       <p>
-        Defenders are one of the most established pest control brands in the UK, and their stainless steel bird spikes are the product most recommended by professional installers. The two-row pin design provides coverage for ledges up to 12 cm wide, which suits the majority of window sills and wall copings found on UK properties.
+        Stainless steel is the material to want on a pigeon spike, because it is the one that survives a British winter on an exposed sill without rusting into a stain down the brickwork below it. This kit is supplied as twelve separate strips making up three metres in total, which is the practical advantage over one long run: you cut nothing, and you place strips only where birds actually land.
       </p>
       <p>
-        The polycarbonate base is UV-resistant and pre-drilled for screw fixing, though most homeowners use a bead of outdoor silicone adhesive for a cleaner look. The stainless steel pins are blunted at the tips — they prevent pigeons from landing but do not injure them, which is important for compliance with the Wildlife and Countryside Act. They are built to last over a decade outdoors.
+        Three metres covers most domestic jobs, a couple of window sills and a length of coping, with strips left over for the spots you find later. It takes our top place because it is the most completely specified product here, not because we have tested it against the others. Spikes work by denying a bird somewhere to stand, so where you put them matters more than any claim made about the spikes themselves.
       </p>
 
       {/* Product 2 */}
-      <h2 id="best-coverage">Best Coverage — Pestbye Stainless Steel Spikes (5m)</h2>
+      <h2 id="best-wide-ledges">Best for Wide Ledges — Defender Wide Plastic Bird Spikes</h2>
       <div className="not-prose">
         <ProductCard
-          name="Pestbye Stainless Steel Bird Spikes (5m Pack)"
+          name="Defender Wide Plastic Bird Spikes (5m)"
           features={[
-            '5 metres of coverage — enough for multiple window sills or a full roof ridge',
-            'Stainless steel pins on a flexible polycarbonate base',
-            'Base flexes to follow curved surfaces like guttering and pipes',
-            'Includes adhesive pads for quick no-drill installation',
-            'Can also be fixed with screws, cable ties, or silicone',
-            'Excellent value per metre compared to smaller packs',
+            'Wide base for deeper ledges',
+            '5 metre run, the longest on this page',
+            'Plastic rather than stainless steel',
+            'From Defender, an established UK deterrent brand',
+            'Less visually obtrusive on light stonework',
+            'Will not rust or stain brickwork',
           ]}
-          asin="B010MVDJ58"
-          bestFor="Covering larger areas at a lower cost per metre"
+          asin="B006Y9L57S"
+          bestFor="Best for Wide Ledges"
           rank={2}
         />
       </div>
       <p>
-        If you need to cover a larger area — multiple windowsills, a long parapet wall, or a roof ridge — the Pestbye 5m pack offers the best value per metre. The 5-metre pack covers more ground in a single purchase than the 2-metre packs sold by other brands.
+        Defender is a long-established UK deterrent brand, and this is its wide plastic spike sold in a five-metre run. Wide is the operative word: a wider base spans a deeper ledge, which matters on sills, parapets and wall copings where a narrow strip leaves a landing space beside it.
       </p>
       <p>
-        The flexible polycarbonate base is a genuine advantage. It bends to follow gentle curves, which means it works on rounded guttering and pipe runs as well as flat ledges. Included adhesive pads make installation quick, though for permanent installations we still recommend a bead of outdoor silicone for maximum durability. The stainless steel pins are comparable in quality to the Defenders product.
+        Plastic rather than steel is a genuine trade-off rather than a downgrade. It is less obtrusive against light stonework and it cannot stain, but it does not carry the same reputation for longevity in strong sunlight as stainless steel. At five metres this is the longest single run on this page, so it is the sensible choice when you have a lot of continuous ledge to cover.
       </p>
 
       {/* Product 3 */}
-      <h2 id="best-budget">Best Budget — The Big Cheese Bird Deterrent Spikes</h2>
+      <h2 id="steel-3m-strip">Stainless Steel Bird Spikes (3m)</h2>
       <div className="not-prose">
         <ProductCard
-          name="The Big Cheese Bird Deterrent Spikes (2m Pack)"
+          name="Stainless Steel Bird Spikes (3m)"
           features={[
-            'Stainless steel pins on a tough plastic base',
-            'Snap-apart strips — cut to any length without tools',
-            'Easy push-fit connection between strips for longer runs',
-            'UV-resistant base holds up in direct sunlight',
-            'Suitable for ledges, fences, walls, and flat roofs',
-            'Most affordable stainless steel option on the market',
+            'Stainless steel construction',
+            '3 metre run',
+            'No manufacturer name attached to the listing',
+            'Currently available in the UK',
+            'Suits standard sills and flat ledges',
+            'Plain specification with no added features',
           ]}
-          asin="B004TTES1C"
-          bestFor="Budget-friendly pigeon deterrent with decent quality"
+          asin="B07L19T8L4"
           rank={3}
         />
       </div>
       <p>
-        The Big Cheese consistently delivers solid pest control products at lower price points, and their bird spikes are no exception. These are a simple stainless steel spike supplied in 2-metre strips. The snap-apart design makes it easy to cut strips to length without any tools.
+        This is a plain, unbranded three-metre stainless steel spike strip, and that is the whole description. There is no manufacturer name attached to the listing and no feature that sets it apart from the branded steel options above and below it.
       </p>
       <p>
-        Build quality is a step below the Defenders — the plastic base feels slightly thinner, and the pins are not quite as densely packed. For most domestic situations, however, the difference is negligible. These spikes will keep pigeons off your windowsills just as effectively as pricier options. If you need to cover a large area on a tight budget, these are the ones to buy.
+        We include it because it is a currently available UK listing at the standard three-metre length, and because not every job needs a brand on the packaging. If you want steel and you want three metres, this does that and nothing more. Judge it on that basis rather than on any claim we are in a position to make about it.
       </p>
 
       {/* Product 4 */}
-      <h2 id="best-plastic">Best Polycarbonate — Defender Plastic Bird Spikes</h2>
+      <h2 id="best-for-gutters">Best for Gutters — Stainless Steel Half Round Gutter Kit</h2>
       <div className="not-prose">
         <ProductCard
-          name="Defender Polycarbonate Bird Spikes (3m Pack)"
+          name="Stainless Steel Pigeon Spikes Half Round Gutter Kit (1m)"
           features={[
-            '100% polycarbonate construction — virtually invisible from ground level',
-            'Clear/transparent finish blends in with any surface colour',
-            'Effective against smaller birds: starlings, sparrows, and small pigeons',
-            'UV-stabilised for long-term outdoor use (10+ years)',
-            'Lightweight — ideal for PVC guttering and thin ledges',
-            'Can be fixed with adhesive, screws, or cable ties',
+            'Half-round profile shaped for guttering',
+            'Stainless steel construction',
+            '1 metre kit',
+            'Fits curved surfaces a flat strip cannot',
+            'For gutter runs rather than flat ledges',
+            'Can be combined with flat strips elsewhere on the building',
           ]}
-          asin="B008J0BGIK"
-          bestFor="Discreet deterrent where aesthetics matter"
+          asin="B004EE18JK"
+          bestFor="Best for Gutters"
           rank={4}
         />
       </div>
       <p>
-        If you live in a conservation area or simply want your bird deterrent to be as invisible as possible, polycarbonate spikes are the answer. These clear plastic spikes are virtually invisible from street level, making them ideal for listed buildings, shopfronts, and residential properties where stainless steel pins might look unsightly.
+        Guttering is the one place a standard flat spike strip does not work, because the surface is curved and a flat base cannot sit against it. This is a half-round kit built for exactly that shape, supplied as a one-metre run.
       </p>
       <p>
-        The trade-off is effectiveness against larger birds. Polycarbonate spikes are somewhat flexible, and determined feral pigeons can occasionally push past them to land. They work well against smaller species like starlings, sparrows, and collared doves, and against pigeons on narrow ledges where there is limited space to manoeuvre. For heavy pigeon pressure on wide ledges, stainless steel spikes are more reliable.
+        One metre is short by the standards of the rest of this page, and deliberately so, because you are covering a specific gutter run rather than a whole elevation. If pigeons are roosting on your guttering rather than your sills, this is the shape that fits. If they are using both, you will need this and one of the flat strips above it.
       </p>
 
       {/* Product 5 */}
-      <h2 id="best-adhesive">Best Adhesive Option — Bird-X Stainless Steel Spikes</h2>
+      <h2 id="offo-steel-spikes">OFFO Stainless Steel Bird Spikes</h2>
       <div className="not-prose">
         <ProductCard
-          name="Bird-X Stainless Steel Bird Spikes (3m Kit)"
+          name="OFFO Stainless Steel Bird Spikes"
           features={[
-            'Includes adhesive tubes for immediate installation — no trips to the hardware shop',
-            'Premium 304 stainless steel pins for maximum corrosion resistance',
-            'Narrow base (2.5 cm) suits thin ledges and decorative mouldings',
-            'Pin height covers ledges up to 15 cm wide',
-            'Adhesive bonds to concrete, brick, metal, wood, and PVC',
-            'Supplied in 30 cm strips for flexible, gap-free coverage',
+            'Stainless steel construction',
+            'Named-brand listing from OFFO',
+            'Currently available in the UK',
+            'Check pack size and length on the listing',
+            'Alternative to the unbranded steel strip above',
+            'Suits sills, copings and flat ledges',
           ]}
-          asin="B000ZK3GM8"
-          bestFor="Quick adhesive-only installation on narrow ledges"
+          asin="B0BL7PF3WG"
           rank={5}
         />
       </div>
       <p>
-        The Bird-X kit is designed for homeowners who want to install pigeon spikes without drilling. The included adhesive tubes provide enough sealant for the full 3 metres, so you can go from opening the box to finished installation in under an hour. The narrow 2.5 cm base makes these spikes particularly well suited to thin ledges, decorative stone mouldings, and metal flashing where screws are not practical.
+        OFFO is a named brand selling stainless steel spike strips, and it sits here as the branded steel alternative to the unbranded option further up this page.
       </p>
       <p>
-        The 304 stainless steel pins are a step up in quality from some competitors, offering excellent corrosion resistance even in coastal areas where salt air accelerates rusting. The included adhesive covers the full 3 metres, so nothing else needs buying to complete the job. The only consideration is that adhesive-only fixings are not suitable for very exposed, wind-battered locations — in those cases, supplement with screws.
+        We hold no length or strip count for this listing, so we are not going to state one. What we can say is that it is stainless steel, it is currently available in the UK, and it comes from a seller who puts a name to it. Check the pack size on the listing before you buy, because the length of ledge you need to cover is the only number that decides whether it is enough.
       </p>
 
       {/* Product 6 */}
-      <h2 id="best-netting">Best Netting — Defenders Bird Netting</h2>
+      <h2 id="best-large-areas">Best for Large Areas — Birdgo Anti-Pigeon Netting</h2>
       <div className="not-prose">
         <ProductCard
-          name="Defenders Bird Netting (4m x 10m)"
+          name="Birdgo Anti-Pigeon Netting (5m x 5m)"
           features={[
-            'Covers large areas where spikes are not practical — balconies, allotments, flat roofs',
-            'Heavy-duty HDPE mesh with UV stabiliser for multi-year outdoor use',
-            '20 mm mesh size blocks pigeons while allowing light and rain through',
-            'Can be cut to size with scissors — no special tools needed',
-            'Includes cable ties for quick attachment to frames and posts',
-            'Virtually invisible from a distance when taut',
+            '5m x 5m net, 25 square metres of coverage',
+            'Excludes birds from an entire opening rather than a ledge',
+            'Suits balconies, car ports and light wells',
+            'Must be fitted taut to work correctly',
+            'A larger installation job than a spike strip',
+            'The most complete exclusion method on this page',
           ]}
-          asin="B000TAT4S8"
-          bestFor="Protecting large open areas like balconies, allotments, and under-eave gaps"
+          asin="B07KB3PGZB"
+          bestFor="Best for Large Areas"
           rank={6}
         />
       </div>
       <p>
-        Spikes work brilliantly on ledges, but for larger open areas — balconies, courtyard gardens, flat roofs, and gaps under eaves — netting is the more practical solution. The Defenders bird netting covers a generous 4m × 10m area, enough for most domestic applications. The 20 mm mesh blocks pigeons and their nesting material while letting light and rainwater through.
+        Netting solves a different problem from spikes. Spikes deny a bird a narrow ledge; netting closes off an entire opening, which is what you need for a balcony, a car port, a light well, or the underside of a raised structure.
       </p>
       <p>
-        Installation requires some DIY confidence — you need to create a frame using hooks, cable ties, or a taught wire perimeter, then stretch the netting across it. Done well, netting is the single most effective pigeon exclusion method for large areas. Done poorly, it sags and creates pockets where pigeons can actually nest, so take time to pull it tight. For professional-grade installations on commercial buildings, consider hiring a BPCA-registered pest controller.
+        This is a five by five metre net, twenty-five square metres, which is more area than any spike strip on this page could address. Fitting it is a bigger job than sticking down a strip, and a slack net traps birds instead of excluding them, so tension it properly and check the edges are closed. Done correctly it is the most complete exclusion on this page.
       </p>
 
       <div className="not-prose">
