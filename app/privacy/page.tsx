@@ -63,7 +63,7 @@ export default async function PrivacyPage() {
           with the Information Commissioner&apos;s Office under registration number ZC164333.
         </p>
         <p className="text-gray-700 leading-relaxed mb-4">
-          You can contact us about anything in this notice at pestproindex@zohomail.eu, or by post at 61 Bridge Street,
+          You can contact us about anything in this notice at <a href="mailto:pestproindex@zohomail.eu" className="text-blue-600 hover:underline">pestproindex@zohomail.eu</a>, or by post at 61 Bridge Street,
           Kington, United Kingdom, HR5 3DJ.
         </p>
 
@@ -209,7 +209,7 @@ export default async function PrivacyPage() {
           </li>
         </ul>
         <p className="text-gray-700 leading-relaxed mb-4">
-          To exercise any of these, email pestproindex@zohomail.eu. We will respond within one month.
+          To exercise any of these, email <a href="mailto:pestproindex@zohomail.eu" className="text-blue-600 hover:underline">pestproindex@zohomail.eu</a>. We will respond within one month.
         </p>
         <p className="text-gray-700 leading-relaxed mb-4">
           You also have the right to complain to the Information Commissioner&apos;s Office, the UK&apos;s data
