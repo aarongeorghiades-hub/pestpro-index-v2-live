@@ -173,6 +173,12 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-8 mt-8 text-center">
+          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4">
+            <li><Link href="/privacy" className="hover:text-white transition">Privacy Notice</Link></li>
+            <li><Link href="/cookies" className="hover:text-white transition">Cookie Policy</Link></li>
+            <li><button type="button" data-cookie-preferences="" className="hover:text-white transition">Cookie preferences</button></li>
+          </ul>
+          <p className="mb-2">ENA Enterprises Ltd · Company number 17257845 · ICO registration ZC164333</p>
           <p>&copy; 2026 PestPro Index. All rights reserved.</p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import AnnouncementBar from "@/components/AnnouncementBar";
+import ConsentManager from "@/components/ConsentManager";
 import Footer from '@/components/Footer';
 import "./globals.css";
 
@@ -40,32 +40,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <script
-          data-grow-initializer=""
-          dangerouslySetInnerHTML={{
-            __html: `!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTpjOTg5ZDcxNy01NWNhLTQ4MjAtOGUwNS1hY2Q4NTgyZmRhMzA=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();`,
-          }}
-        />
-      </head>
+      <head></head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AnnouncementBar />
         {children}
         <Footer />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-EGGZMHZ6NL"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-EGGZMHZ6NL');
-          `}
-        </Script>
+        <ConsentManager />
       </body>
     </html>
   );
