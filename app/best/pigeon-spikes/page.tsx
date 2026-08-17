@@ -9,14 +9,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Best Pigeon Spikes UK 2026',
     description:
-      'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate and adhesive options.',
+      'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, plastic and netting options for ledges, gutters and open areas.',
     alternates: {
       canonical: 'https://pestproindex.com/best/pigeon-spikes',
     },
     openGraph: {
       title: 'Best Pigeon Spikes UK 2026',
       description:
-        'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate and adhesive options.',
+        'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, plastic and netting options for ledges, gutters and open areas.',
       url: 'https://pestproindex.com/best/pigeon-spikes',
       type: 'article',
       siteName: 'PestPro Index',
@@ -29,7 +29,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Best Pigeon Spikes UK 2026',
   description:
-    'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, polycarbonate and adhesive options.',
+    'Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, plastic and netting options for ledges, gutters and open areas.',
   datePublished: '2026-03-31',
   dateModified: '2026-03-31',
   author: {
@@ -186,7 +186,7 @@ export default function BestPigeonSpikesPage() {
         Bird spikes are the single most effective passive pigeon deterrent. They physically prevent pigeons from landing on ledges, windowsills, gutters, signs, and roof ridges without harming the birds. Unlike ultrasonic devices or gel deterrents (which have limited evidence of effectiveness), spikes provide a permanent physical barrier that pigeons cannot overcome. They are recommended by the RSPB, local councils, and professional pest controllers across the UK.
       </p>
       <p>
-        We selected these pigeon spike products on published specifications and manufacturer information, and consulted guidance from the British Pest Control Association (BPCA) and RSPB. We selected stainless steel, polycarbonate, and adhesive-mount options on published specifications and manufacturer information, covering different surfaces and budgets. Every product on this page is available for delivery via Amazon UK. </p>
+        We selected these pigeon spike products on published specifications and manufacturer information, and consulted guidance from the British Pest Control Association (BPCA) and RSPB. We selected stainless steel, plastic and netting options on published specifications and manufacturer information, covering ledges, gutters and open areas. Every product on this page is available for delivery via Amazon UK. </p>
 
       <div className="not-prose">
         <Callout type="tip">
@@ -421,7 +421,7 @@ export default function BestPigeonSpikesPage() {
       <h2 id="tips">Installation Tips</h2>
       <ol>
         <li><strong>Clean first:</strong> Remove all pigeon droppings, nesting material, and debris before installing. Wear a dust mask — dried pigeon droppings can carry fungal spores. Adhesive will not bond to a dirty surface.</li>
-        <li><strong>Cover the full width:</strong> Use wider spike strips or two rows side by side on ledges wider than 12 cm. Pigeons will land on any uncovered area.</li>
+        <li><strong>Cover the full width:</strong> Use wider spike strips or two rows side by side on ledges wider than one strip covers. Pigeons will land on any uncovered area.</li>
         <li><strong>Leave no gaps:</strong> Butt strips tightly together. Pigeons can squeeze into remarkably small spaces.</li>
         <li><strong>Use silicone, not superglue:</strong> Outdoor silicone sealant (like CT1 or Stixall) provides a flexible, weatherproof bond. Superglue becomes brittle in cold weather and fails.</li>
         <li><strong>Check after storms:</strong> High winds can occasionally dislodge adhesive-mounted spikes. Walk around your property after severe weather and re-fix any loose strips.</li>
