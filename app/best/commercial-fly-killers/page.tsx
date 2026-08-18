@@ -96,7 +96,7 @@ const tocItems = [
   },
   {
     id: "best-glue-board",
-    title: "Best Glue Board Unit — Eazyzap 13W Commercial Fly Killer",
+    title: "Best Glue Board Unit — Eazyzap 13W Fly Killer",
   },
   { id: "buying-guide", title: "Commercial Fly Killer Buying Guide" },
   { id: "when-to-call", title: "When to Contact a Commercial Pest Controller" },
@@ -787,8 +787,7 @@ export default function BestCommercialFlyKillersPage() {
 
       {/* Best Professional Glue Board */}
       <h2 id="best-glue-board">
-        Best Glue Board Unit &mdash; Eazyzap 13W Commercial Fly Killer with
-        Infrared Lighting
+        Best Glue Board Unit &mdash; Eazyzap 13W Fly Killer
       </h2>
       <div className="not-prose my-6">
         <ProductCard

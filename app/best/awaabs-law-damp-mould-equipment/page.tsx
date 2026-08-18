@@ -134,7 +134,10 @@ const tocItems = [
   { id: "meaco-25l", title: "Best Occupied Property — MeacoDry Arete One 25L" },
   { id: "damp-meters", title: "Damp Meters & Hygrometers" },
   { id: "dryzone-meter", title: "Best Damp Meter — Dryzone Moisture Meter" },
-  { id: "hygrometer", title: "Best Hygrometer — Digital Data Logger" },
+  {
+    id: "hygrometer",
+    title: "Best Hygrometer — Govee WiFi Thermometer Hygrometer",
+  },
   {
     id: "piv-vs-dehumidifier",
     title: "PIV vs Dehumidifier: Which Do You Need?",
@@ -876,7 +879,7 @@ export default function AwaabsLawDampMouldEquipmentPage() {
 
       {/* Product 8: Hygrometer */}
       <h2 id="hygrometer">
-        Best Hygrometer &mdash; Digital Hygrometer with Data Logger
+        Best Hygrometer &mdash; Govee WiFi Thermometer Hygrometer
       </h2>
       <div className="not-prose my-6">
         <ProductCard

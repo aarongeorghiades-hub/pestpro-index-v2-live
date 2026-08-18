@@ -118,8 +118,8 @@ const tocItems = [
     title: "Best for Porous Surfaces — HG Mould Remover Foam Spray 500ml",
   },
   {
-    id: "zinsser-killer",
-    title: "Best Pre-Paint — HG Mould Spray 500ml — Pack of 2",
+    id: "hg-mould-killer",
+    title: "Best Pre-Paint — HG Mould Spray 500ml, Pack of 2",
   },
   { id: "primers", title: "Damp-Seal Primers & Stain Blockers" },
   { id: "zinsser-bin", title: "Best Primer — Zinsser BIN Shellac" },
@@ -135,8 +135,7 @@ const tocItems = [
   },
   {
     id: "johnstones",
-    title:
-      "Best for Full Rooms — Johnstone's Paint to Cover Damp 750ml — White",
+    title: "Best for Full Rooms — Johnstone's Paint to Cover Damp 750ml, White",
   },
   { id: "three-step", title: "The Three-Step Remediation System" },
   {
@@ -338,7 +337,7 @@ export default function DampProofPaintMouldTreatmentPage() {
       </div>{" "}
       {/* Product 1: HG Mould Spray */}{" "}
       <h2 id="hg-mould-spray">
-        Best Mould Killer &mdash; HG Mould Spray Extra Strong 500ml
+        Best Mould Killer &mdash; HG Mould Spray 500ml
       </h2>{" "}
       <div className="not-prose">
         {" "}
@@ -474,9 +473,8 @@ export default function DampProofPaintMouldTreatmentPage() {
         </li>{" "}
       </ul>{" "}
       {/* Product 3: Zinsser Mould Killer */}{" "}
-      <h2 id="zinsser-killer">
-        Best Pre-Paint Preparation &mdash; HG Mould Spray 500ml &mdash; Pack of
-        2
+      <h2 id="hg-mould-killer">
+        Best Pre-Paint Preparation &mdash; HG Mould Spray 500ml, Pack of 2
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
@@ -844,8 +842,8 @@ export default function DampProofPaintMouldTreatmentPage() {
       </ul>{" "}
       {/* Product 8: Johnstone's */}{" "}
       <h2 id="johnstones">
-        Best for Full Rooms &mdash; Johnstone&apos;s Paint to Cover Damp 750ml
-        &mdash; White
+        Best for Full Rooms &mdash; Johnstone&apos;s Paint to Cover Damp 750ml,
+        White
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}

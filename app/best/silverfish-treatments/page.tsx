@@ -72,7 +72,10 @@ const breadcrumbSchema = {
 const tocItems = [
   { id: "at-a-glance", title: "Best Silverfish Treatments at a Glance" },
   { id: "best-natural", title: "Best Natural Treatment — Diatomaceous Earth" },
-  { id: "best-spray", title: "Best Spray — Cypermethrin Silverfish Killer" },
+  {
+    id: "best-spray",
+    title: "Best Spray — Ready Steady Defend Silverfish Killer Spray",
+  },
   { id: "best-trap", title: "Best Trap — Super Ninja Silverfish Trap" },
   {
     id: "best-dehumidifier",

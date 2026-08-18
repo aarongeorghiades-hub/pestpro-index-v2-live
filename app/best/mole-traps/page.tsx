@@ -94,6 +94,7 @@ const tocItems = [
   },
   { id: "how-to-choose", title: "How to Choose the Right Mole Trap" },
   { id: "tips", title: "Mole Trap Placement Tips" },
+  { id: "faq", title: "Frequently Asked Questions" },
 ];
 
 const faqSchema = {

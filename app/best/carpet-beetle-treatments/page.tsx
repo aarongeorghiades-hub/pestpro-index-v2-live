@@ -610,7 +610,7 @@ export default function BestCarpetBeetleTreatmentsPage() {
       </div>{" "}
       {/* Best Natural */}{" "}
       <h2 id="best-natural">
-        Best Natural &mdash; Cedarwood Moth &amp; Beetle Repellent Set
+        Best Natural &mdash; Cedarwood Moth Repellent for Wardrobes
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
