@@ -485,6 +485,7 @@ export default function BestCommercialDehumidifiersPage() {
           name="Meaco MeacoDry Arete Two 20L Dehumidifier & HEPA Air Purifier"
           rank={3}
           asin="B0CTKK5WHR"
+          bestFor="Best 20L Unit"
           features={[
             "Latest generation with Wi-Fi app control",
             "HEPA H13 filtration + smart humidity mode",
@@ -646,6 +647,7 @@ export default function BestCommercialDehumidifiersPage() {
           name="VonHaus 30L Smart Dehumidifier — WiFi Control"
           rank={5}
           asin="B0FT3LZJZD"
+          bestFor="Best Smart Control"
           features={[
             "30L/day high-capacity extraction",
             "WiFi app for remote humidity monitoring",

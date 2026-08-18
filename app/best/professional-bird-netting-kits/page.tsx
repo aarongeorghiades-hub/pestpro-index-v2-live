@@ -409,6 +409,7 @@ export default function BestProfessionalBirdNettingKitsPage() {
             "Quick way to attach netting without specialist tools",
           ]}
           asin="B0823ZVZSN"
+          bestFor="Best No-Drill Fixings"
           rank={4}
         />
       </div>
@@ -453,6 +454,7 @@ export default function BestProfessionalBirdNettingKitsPage() {
             "Complements netting on buildings with complex geometry",
           ]}
           asin="B0024NL0OQ"
+          bestFor="Best Spikes Option"
           rank={5}
         />
       </div>

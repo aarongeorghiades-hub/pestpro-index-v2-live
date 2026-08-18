@@ -347,6 +347,7 @@ export default function ProfessionalBaitStationKitsPage() {
             "Professional construction, wall-mounting capability",
           ]}
           asin="B00XL382T4"
+          bestFor="Runner-Up"
         />
       </div>
       <p>
@@ -510,6 +511,7 @@ export default function ProfessionalBaitStationKitsPage() {
             "Ideal for landlords wanting immediate deployment",
           ]}
           asin="B07JGDJFQY"
+          bestFor="Best Ready to Deploy"
         />
       </div>
       <p>

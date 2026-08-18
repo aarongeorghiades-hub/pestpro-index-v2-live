@@ -356,6 +356,7 @@ export default function ProfessionalMattressEncasementsPage() {
             "Popular in the HMO and rental market",
           ]}
           asin="B0C5XFD8X5"
+          bestFor="Best Cotton Encasement"
         />{" "}
       </div>{" "}
       <p>
@@ -390,6 +391,7 @@ export default function ProfessionalMattressEncasementsPage() {
             "Use for early detection in previously infested properties",
           ]}
           asin="B07MG8BD7X"
+          bestFor="Best Interceptor Traps"
         />{" "}
       </div>{" "}
       <p>

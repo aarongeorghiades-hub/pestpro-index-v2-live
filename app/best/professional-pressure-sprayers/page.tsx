@@ -338,6 +338,7 @@ export default function ProfessionalPressureSprayersPage() {
             "Treats large external areas without refilling",
           ]}
           asin="B00002N6BW"
+          bestFor="Best 15L Backpack"
         />{" "}
       </div>{" "}
       <p>
@@ -411,6 +412,7 @@ export default function ProfessionalPressureSprayersPage() {
             "Comfortable backpack design for extended use",
           ]}
           asin="B0D6YPYFRX"
+          bestFor="Best 20L Backpack"
         />{" "}
       </div>{" "}
       <p>

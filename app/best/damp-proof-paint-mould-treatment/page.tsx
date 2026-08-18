@@ -424,7 +424,6 @@ export default function DampProofPaintMouldTreatmentPage() {
         <li>Can discolour coloured grout and fabrics</li>{" "}
         <li>Less effective on deeply embedded mould in porous masonry</li>{" "}
       </ul>{" "}
-      {/* Product 2: Dryzone Mould Remover */}{" "}
       <h2 id="hg-remover">
         Best for Porous Surfaces &mdash; HG Mould Remover Foam Spray 500ml
       </h2>{" "}
@@ -434,6 +433,7 @@ export default function DampProofPaintMouldTreatmentPage() {
           name="HG Mould Remover Foam Spray 500ml"
           rank={2}
           asin="B01CRBEUVO"
+          bestFor="Best for Porous Surfaces"
           features={[
             "Foam clings to vertical and porous surfaces instead of running off",
             "Designed for plaster, render, grout and bathroom seals",
@@ -448,8 +448,6 @@ export default function DampProofPaintMouldTreatmentPage() {
       <ul>
         {" "}
         <li>Penetrates porous surfaces where other sprays cannot reach</li>{" "}
-        <li>Surfactant system breaks down biofilm for deeper kill</li>{" "}
-        <li>From the UK&apos;s most trusted damp-proofing brand</li>{" "}
         <li>Effective on plaster, render, masonry and concrete</li>{" "}
       </ul>{" "}
       <p>
@@ -457,8 +455,6 @@ export default function DampProofPaintMouldTreatmentPage() {
       </p>{" "}
       <ul>
         {" "}
-        <li>Less widely available than HG in high-street stores</li>{" "}
-        <li>Slightly higher price per 500ml</li>{" "}
         <li>
           Not the best choice for smooth, non-porous surfaces like tiles
         </li>{" "}
@@ -473,6 +469,7 @@ export default function DampProofPaintMouldTreatmentPage() {
           name="HG Mould Spray 500ml — Pack of 2"
           rank={3}
           asin="B0DDKX1GKY"
+          bestFor="Best Pre-Paint Preparation"
           features={[
             "Two 500ml bottles for larger or repeat jobs",
             "Same formula as the single bottle",
@@ -498,8 +495,8 @@ export default function DampProofPaintMouldTreatmentPage() {
         job after job. The mould killer is no exception: it kills mould and
         mildew effectively and leaves a clean surface ready for primer
         application without any additional preparation. For landlords who want a
-        complete, matched system from one trusted brand, the Zinsser three-step
-        approach is the professional standard.{" "}
+        complete, matched system from one brand, the Zinsser three-step approach
+        is the professional standard.{" "}
       </p>{" "}
       <p>
         <strong>Pros:</strong>
@@ -508,7 +505,7 @@ export default function DampProofPaintMouldTreatmentPage() {
         {" "}
         <li>Part of a matched three-step system with Zinsser BIN</li>{" "}
         <li>
-          Professional decorators&apos; brand &mdash; trusted by tradespeople
+          Professional decorators&apos; brand &mdash; used by tradespeople
         </li>{" "}
         <li>Optimised for pre-paint surface preparation</li>{" "}
         <li>Leaves a clean surface ready for immediate priming</li>{" "}
@@ -629,6 +626,7 @@ export default function DampProofPaintMouldTreatmentPage() {
           name="Ronseal One Coat Damp Seal 500ml"
           rank={5}
           asin="B008W4CP04"
+          bestFor="Best Damp Sealer"
           features={[
             "Water-based sealer for walls with residual moisture",
             "One coat seals the surface against moisture bleed-through",
@@ -672,7 +670,7 @@ export default function DampProofPaintMouldTreatmentPage() {
         <li>Seals residual moisture in the substrate</li>{" "}
         <li>Water-based &mdash; low odour, easy brush cleanup</li>{" "}
         <li>Can be overcoated with any emulsion or anti-mould paint</li>{" "}
-        <li>From Zinsser &mdash; the trusted professional brand</li>{" "}
+        <li>From Zinsser &mdash; the professional decorating brand</li>{" "}
       </ul>{" "}
       <p>
         <strong>Cons:</strong>
@@ -756,7 +754,7 @@ export default function DampProofPaintMouldTreatmentPage() {
         <li>Dual function &mdash; kills mould and prevents regrowth</li>{" "}
         <li>5-year guarantee against mould regrowth</li>{" "}
         <li>Versatile &mdash; standalone treatment or primer coat</li>{" "}
-        <li>Trusted Ronseal brand, widely available</li>{" "}
+        <li>Ronseal brand, widely available</li>{" "}
       </ul>{" "}
       <p>
         <strong>Cons:</strong>
@@ -772,7 +770,6 @@ export default function DampProofPaintMouldTreatmentPage() {
           Not a substitute for Zinsser BIN on heavily stained surfaces
         </li>{" "}
       </ul>{" "}
-      {/* Product 7: Polycell */}{" "}
       <h2 id="rapide">
         Best for Small Areas &mdash; Rapide Anti Mould Spray Paint 400ml
       </h2>{" "}
@@ -782,6 +779,7 @@ export default function DampProofPaintMouldTreatmentPage() {
           name="Rapide Anti Mould Spray Paint 400ml"
           rank={7}
           asin="B07NJFLYNW"
+          bestFor="Best for Small Areas"
           features={[
             "Aerosol format for small patches and awkward corners",
             "Matt finish for interior walls and ceilings",
@@ -792,24 +790,8 @@ export default function DampProofPaintMouldTreatmentPage() {
       </div>{" "}
       <p>
         {" "}
-        Polycell Damp Seal Paint is a{" "}
-        <strong>one-coat damp-sealing paint</strong> designed for small areas
-        where a full Zinsser BIN system would be excessive. It seals minor damp
-        patches and stains on interior walls and ceilings in a single
-        application, and the white finish can be overcoated with standard
-        emulsion once dry. For isolated damp spots &mdash; a single patch on a
-        bathroom ceiling, a small area around a window reveal, or minor staining
-        behind a radiator &mdash; the Polycell is the quickest and most
-        practical solution.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The Polycell brand is trusted and widely available in every UK DIY
-        store, which makes it easy to pick up at short notice when a tenant
-        reports a small damp issue. It is not a substitute for the full
-        three-step system on severely affected rooms, but for reactive
-        maintenance on minor, localised problems, it gets the job done quickly
-        and affordably.{" "}
+        The Rapide Anti Mould Spray Paint 400ml is a spray-applied anti-mould
+        paint intended for small areas rather than whole rooms.{" "}
       </p>{" "}
       <p>
         <strong>Pros:</strong>
@@ -843,6 +825,7 @@ export default function DampProofPaintMouldTreatmentPage() {
           name="Johnstone's Paint to Cover Damp 750ml — White"
           rank={8}
           asin="B00OUULC4Y"
+          bestFor="Best for Full Rooms"
           features={[
             "Covers and seals damp patches and staining",
             "White finish for interior walls and ceilings",
@@ -870,7 +853,7 @@ export default function DampProofPaintMouldTreatmentPage() {
         condensation mould. For landlords who are repainting a full room as part
         of a mould remediation or end-of-tenancy turnaround, the 2.5L
         Johnstone&apos;s is significantly more cost-effective per square metre
-        than buying multiple small tins of Ronseal or Polycell.{" "}
+        than buying multiple small tins of Ronseal.{" "}
       </p>{" "}
       <p>
         <strong>Pros:</strong>

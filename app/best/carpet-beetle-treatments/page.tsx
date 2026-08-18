@@ -632,16 +632,13 @@ export default function BestCarpetBeetleTreatmentsPage() {
       </div>{" "}
       <p>
         {" "}
-        The Cedarwood Moth &amp; Beetle Repellent Set is a 28-piece collection
-        of natural cedar wood items &mdash; 10 balls, 10 cubes, 6 rings, and 2
+        The Cedarwood Moth Repellent for Wardrobes is a 28-piece collection of
+        natural cedar wood items &mdash; 10 balls, 10 cubes, 6 rings, and 2
         hanging wardrobe units &mdash; designed to be placed inside wardrobes,
-        chest of drawers, storage boxes, and any enclosed space where you want
-        to deter carpet beetles and moths from laying eggs. Cedar wood contains{" "}
-        <strong>cedrol</strong>, a naturally occurring terpene alcohol that has
-        been used as an insect repellent for centuries. The cedar oil vapour
-        creates an environment that is inhospitable to egg-laying female carpet
-        beetles and moths, discouraging them from depositing eggs near your most
-        vulnerable textiles. The 28-piece set is generous enough to protect
+        chest of drawers, storage boxes, and any enclosed space where you store
+        vulnerable textiles. Cedar wood contains <strong>cedrol</strong>, a
+        naturally occurring terpene alcohol that has been used as an insect
+        repellent for centuries. The 28-piece set is generous enough to protect
         several wardrobes and drawers simultaneously &mdash; place 3&ndash;4
         items per shelf or drawer, and hang the wardrobe units from the rail
         between garments.{" "}

@@ -365,6 +365,7 @@ export default function BestPigeonSpikesPage() {
             "Plain specification with no added features",
           ]}
           asin="B07L19T8L4"
+          bestFor="Best 3m Coverage"
           rank={3}
         />
       </div>
@@ -430,6 +431,7 @@ export default function BestPigeonSpikesPage() {
             "Suits sills, copings and flat ledges",
           ]}
           asin="B0BL7PF3WG"
+          bestFor="Best Stainless Steel Strips"
           rank={5}
         />
       </div>

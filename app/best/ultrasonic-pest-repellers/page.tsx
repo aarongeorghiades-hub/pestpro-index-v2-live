@@ -398,6 +398,7 @@ export default function BestUltrasonicPestRepellersPage() {
             "Runs continuously while plugged in",
           ]}
           asin="B08CGW5M9X"
+          bestFor="Best Plug-In"
         />{" "}
       </div>{" "}
       <p>
@@ -611,6 +612,7 @@ export default function BestUltrasonicPestRepellersPage() {
             "Goes where it is needed rather than where the sockets are",
           ]}
           asin="B003ZIV9Y0"
+          bestFor="Best for Rodents"
         />{" "}
       </div>{" "}
       <p>

@@ -354,6 +354,7 @@ export default function ProfessionalBedBugSteamersPage() {
             "Popular with landlords for combined cleaning and pest control",
           ]}
           asin="B00G00BTEA"
+          bestFor="Best Accessory Kit"
         />
       </div>
       <p>
@@ -383,6 +384,7 @@ export default function ProfessionalBedBugSteamersPage() {
             "Covers every surface type in a commercial property",
           ]}
           asin="B0DG6T85WF"
+          bestFor="Best Large Kit"
         />
       </div>
       <p>

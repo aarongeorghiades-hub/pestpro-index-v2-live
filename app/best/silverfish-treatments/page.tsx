@@ -455,12 +455,7 @@ export default function BestSilverfishTreatmentsPage() {
         {" "}
         For homeowners dealing with a heavy silverfish infestation who need
         fast, visible results, the Ready Steady Defend Silverfish Killer Spray
-        delivers the rapid knockdown that natural treatments cannot match. The
-        formula contains two active ingredients working in tandem:{" "}
-        <strong>cypermethrin</strong>, a synthetic pyrethroid that kills adult
-        silverfish on contact by disrupting their nervous system, and{" "}
-        <strong>pyriproxyfen</strong>, an insect growth regulator (IGR) that
-        prevents eggs and nymphs from developing into reproductive adults. This
+        delivers the rapid knockdown that natural treatments cannot match. This
         dual-action approach means the spray does not merely kill the silverfish
         you can see &mdash; it also breaks the breeding cycle by ensuring that
         any eggs laid in treated areas will fail to produce viable offspring.
@@ -480,7 +475,7 @@ export default function BestSilverfishTreatmentsPage() {
         the spray dries to form an invisible residual film that continues to
         kill silverfish for up to <strong>12 weeks</strong> after application.
         Any silverfish that crosses the treated surface picks up a lethal dose
-        of cypermethrin on its legs and body, which is absorbed through the
+        of the residue on its legs and body, which is absorbed through the
         exoskeleton. Allow the spray to dry completely (approximately 2 hours)
         before allowing children or pets to access treated areas. While the
         spray is highly effective at eliminating existing silverfish
@@ -536,12 +531,11 @@ export default function BestSilverfishTreatmentsPage() {
         <strong>Verdict:</strong> The Ready Steady Defend spray is the best
         chemical silverfish treatment for rapid knockdown and medium-term
         control. Its 12-week residual makes it far more effective than standard
-        household insect sprays, and the addition of pyriproxyfen as an insect
-        growth regulator gives it a genuine lifecycle-breaking capability that
-        contact-kill-only sprays lack. Use it alongside diatomaceous earth in
-        dry harbourage areas and a dehumidifier for root cause treatment, and
-        you have a comprehensive three-pronged silverfish elimination
-        strategy.{" "}
+        household insect sprays, and its insect growth regulator gives it a
+        genuine lifecycle-breaking capability that contact-kill-only sprays
+        lack. Use it alongside diatomaceous earth in dry harbourage areas and a
+        dehumidifier for root cause treatment, and you have a comprehensive
+        three-pronged silverfish elimination strategy.{" "}
       </p>{" "}
       {/* Best Trap */}{" "}
       <h2 id="best-trap">

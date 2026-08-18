@@ -517,6 +517,7 @@ export default function AwaabsLawDampMouldEquipmentPage() {
           name="Kair Kalahari ECO PIV Unit — Standard (No Heater)"
           rank={3}
           asin="B0914Q4SP5"
+          bestFor="Best Budget PIV"
           features={[
             "Budget-friendly loft-mounted PIV unit",
             "G4 filters for clean air delivery",
@@ -591,6 +592,7 @@ export default function AwaabsLawDampMouldEquipmentPage() {
           name="Vent-Axia PureAir PIV Unit with 500W Heater + Hygrometer Bundle"
           rank={4}
           asin="B0BTB1VSMP"
+          bestFor="Premium PIV"
           features={[
             "F7 filtration — filters fine particulates and allergens",
             "500W heater for maximum comfort in cold climates",
@@ -754,6 +756,7 @@ export default function AwaabsLawDampMouldEquipmentPage() {
           name="MeacoDry Arete One 25L Dehumidifier & HEPA Air Purifier"
           rank={6}
           asin="B093TLCDVC"
+          bestFor="Best for Occupied Properties"
           features={[
             "25L/day extraction + HEPA H13 air purification",
             "Removes mould spores and allergens while dehumidifying",
@@ -835,6 +838,7 @@ export default function AwaabsLawDampMouldEquipmentPage() {
           name="Dryzone Moisture Meter Detector — Damp Meter for Walls & Wood"
           rank={7}
           asin="B099FBZWHJ"
+          bestFor="Best Damp Meter"
           features={[
             "Pre-calibrated for wood and building materials",
             "Measures moisture in brickwork, masonry, render and timber",
@@ -893,6 +897,7 @@ export default function AwaabsLawDampMouldEquipmentPage() {
           name="Govee WiFi Thermometer Hygrometer"
           rank={8}
           asin="B0CZRWVNRJ"
+          bestFor="Best Hygrometer"
           features={[
             "WiFi & Bluetooth connectivity, Swiss-made sensor",
             "App alerts, 2-year data storage and export — monitor damp levels remotely from any property",

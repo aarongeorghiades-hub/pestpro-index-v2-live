@@ -323,6 +323,7 @@ export default function ProfessionalULVFoggersPage() {
             "Ideal for flats, houses and HMO common areas",
           ]}
           asin="B00MMWPK6S"
+          bestFor="Best 4L Fogger"
         />
       </div>
       <p>
@@ -354,6 +355,7 @@ export default function ProfessionalULVFoggersPage() {
             "Robust construction for years of professional use",
           ]}
           asin="B00MMX1T94"
+          bestFor="Best 6L Fogger"
         />
       </div>
       <p>
@@ -385,6 +387,7 @@ export default function ProfessionalULVFoggersPage() {
             "Complete freedom of movement during treatment",
           ]}
           asin="B08FF71Z32"
+          bestFor="Best Cordless Fogger"
         />
       </div>
       <p>
@@ -416,6 +419,7 @@ export default function ProfessionalULVFoggersPage() {
             "Ergonomic backpack design for extended sessions",
           ]}
           asin="B09J1LNZGS"
+          bestFor="Best Backpack Fogger"
         />
       </div>
       <p>

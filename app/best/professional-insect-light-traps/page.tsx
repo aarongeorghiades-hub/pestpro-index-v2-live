@@ -392,6 +392,7 @@ export default function ProfessionalInsectLightTrapsPage() {
             "16W — lower running costs for smaller spaces",
           ]}
           asin="B0B41C7JHV"
+          bestFor="Best Compact Unit"
           rank={2}
         />{" "}
       </div>{" "}
@@ -573,6 +574,7 @@ export default function ProfessionalInsectLightTrapsPage() {
             "Suitable for restaurants, offices, warehouses and garages",
           ]}
           asin="B086DK71VX"
+          bestFor="Best Dual-Use Unit"
           rank={4}
         />{" "}
       </div>{" "}
