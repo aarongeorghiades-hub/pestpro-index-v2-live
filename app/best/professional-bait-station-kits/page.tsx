@@ -490,7 +490,6 @@ export default function ProfessionalBaitStationKitsPage() {
         <strong>Cons:</strong>
       </p>
       <ul>
-        <li>Highest price on our list</li>
         <li>Bulkier than compact models</li>
         <li>Bait not included</li>
       </ul>
