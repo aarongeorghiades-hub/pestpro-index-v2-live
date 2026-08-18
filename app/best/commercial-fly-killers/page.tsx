@@ -203,6 +203,17 @@ export default function BestCommercialFlyKillersPage() {
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
+      {/* Affiliate disclosure */}
+      <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+        <p className="text-sm text-amber-800">
+          <strong>Affiliate disclosure:</strong> PestPro Index is
+          reader-supported. When you buy through links on this page, we may earn
+          a small commission at no extra cost to you. This helps us keep the
+          site running and free for everyone. As an Amazon Associate, PestPro
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       {/* Back to Commercial Hub */}
       <div className="not-prose my-8 p-6 bg-purple-50 border border-purple-200 rounded-xl">
         <p className="font-bold text-gray-900 mb-2">
@@ -219,17 +230,6 @@ export default function BestCommercialFlyKillersPage() {
         >
           Commercial Pest Control Hub &rarr;
         </a>
-      </div>
-
-      {/* Affiliate disclosure */}
-      <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        <p className="text-sm text-amber-800">
-          <strong>Affiliate disclosure:</strong> PestPro Index is
-          reader-supported. When you buy through links on this page, we may earn
-          a small commission at no extra cost to you. This helps us keep the
-          site running and free for everyone. As an Amazon Associate, PestPro
-          Index earns from qualifying purchases.
-        </p>
       </div>
 
       {/* Intro paragraphs */}

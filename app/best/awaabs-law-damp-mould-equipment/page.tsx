@@ -293,7 +293,7 @@ export default function AwaabsLawDampMouldEquipmentPage() {
             <td>Wall &amp; timber readings</td>
           </tr>
           <tr>
-            <td>Digital Hygrometer Data Logger</td>
+            <td>Govee WiFi Thermometer Hygrometer</td>
             <td>Hygrometer</td>
             <td>Humidity audit trail</td>
           </tr>

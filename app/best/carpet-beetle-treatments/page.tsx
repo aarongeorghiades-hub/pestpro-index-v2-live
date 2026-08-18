@@ -78,7 +78,10 @@ const tocItems = [
   { id: "best-trap", title: "Best Trap — Rentokil Pheromone Trap" },
   { id: "best-powder", title: "Best Powder — Pest Expert Formula P" },
   { id: "best-kit", title: "Best Kit — Pest Expert Carpet Moth Killer Kit" },
-  { id: "best-natural", title: "Best Natural — Cedarwood Repellent Set" },
+  {
+    id: "best-natural",
+    title: "Best Natural — Cedarwood Moth Repellent for Wardrobes",
+  },
   { id: "buying-guide", title: "Carpet Beetle Treatment Buying Guide" },
   { id: "when-to-call", title: "When to Call a Professional" },
 ];
@@ -308,7 +311,7 @@ export default function BestCarpetBeetleTreatmentsPage() {
           </tr>{" "}
           <tr>
             {" "}
-            <td>Cedarwood Moth &amp; Beetle Repellent (28 Pieces)</td>{" "}
+            <td>Cedarwood Moth Repellent for Wardrobes (28 Pieces)</td>{" "}
             <td>Natural repellent</td> <td>Wardrobes, drawers, storage</td>{" "}
           </tr>{" "}
         </tbody>{" "}

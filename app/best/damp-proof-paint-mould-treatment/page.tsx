@@ -122,7 +122,10 @@ const tocItems = [
     title: "Best Pre-Paint — HG Mould Spray 500ml, Pack of 2",
   },
   { id: "primers", title: "Damp-Seal Primers & Stain Blockers" },
-  { id: "zinsser-bin", title: "Best Primer — Zinsser BIN Shellac" },
+  {
+    id: "zinsser-bin",
+    title: "Best Primer — Zinsser B-I-N Primer-Sealer & Stain Killer 1L",
+  },
   {
     id: "ronseal-damp-seal",
     title: "Best Damp Sealer — Ronseal One Coat Damp Seal 500ml",
@@ -561,7 +564,8 @@ export default function DampProofPaintMouldTreatmentPage() {
       </p>{" "}
       {/* Product 4: Zinsser BIN */}{" "}
       <h2 id="zinsser-bin">
-        Best Stain Blocker &mdash; Zinsser BIN Shellac Primer 1L
+        Best Stain Blocker &mdash; Zinsser B-I-N Primer-Sealer &amp; Stain
+        Killer 1L
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}

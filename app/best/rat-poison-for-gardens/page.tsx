@@ -672,10 +672,10 @@ export default function BestRatPoisonForGardensPage() {
         at the base to prevent water pooling inside, UV-resistant plastic that
         will not crack or become brittle in sunlight, a heavy or weighted base
         to prevent wind or animals tipping it over, and the option to anchor it
-        to the ground with pegs or stakes. The Roshield and Rentokil stations on
-        our list both meet these criteria. Avoid cheap, lightweight stations
-        that can be knocked over by foxes or badgers — a compromised station
-        becomes a hazard rather than a safety measure.
+        to the ground with pegs or stakes. The Roshield stations on our list
+        both meet these criteria. Avoid cheap, lightweight stations that can be
+        knocked over by foxes or badgers — a compromised station becomes a
+        hazard rather than a safety measure.
       </p>
 
       <h3>Placement in Gardens</h3>
