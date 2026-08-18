@@ -688,9 +688,6 @@ export default function BestCommercialDehumidifiersPage() {
         <li>
           Continuous drainage + 24-hour timer for flexible, unattended operation
         </li>
-        <li>
-          30L/day matches the electriQ ECD30 at a significantly lower price
-        </li>
       </ul>
       <p>
         <strong>Cons:</strong>
