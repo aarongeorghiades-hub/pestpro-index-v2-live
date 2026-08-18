@@ -610,9 +610,6 @@ export default function BestCommercialDehumidifiersPage() {
           continuous operation
         </li>
         <li>
-          25L/day extraction matches premium models at a lower purchase price
-        </li>
-        <li>
           Continuous drainage for basements, cellars, and unattended operation
         </li>
         <li>
