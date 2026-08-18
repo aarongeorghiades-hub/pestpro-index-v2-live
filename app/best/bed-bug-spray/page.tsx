@@ -463,7 +463,7 @@ export default function BestBedBugSprayPage() {
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Bed Bug Treatment Kit \u2014 Spray, Powder, Fogger &amp; Rentokil Spray"
+          name="Pest Expert Bed Bug Treatment Kit — Spray, Powder, Fogger &amp; Rentokil Spray"
           rank={3}
           features={[
             "Complete treatment kit for a standard bedroom",

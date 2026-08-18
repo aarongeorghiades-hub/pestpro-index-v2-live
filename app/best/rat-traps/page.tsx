@@ -369,7 +369,7 @@ export default function BestRatTrapsPage() {
 
       {/* Best for Safety */}
       <h2 id="best-safety">
-        Best for Pet &amp; Child Safety — Roshield Snap Trap Box
+        Best for Pet &amp; Child Safety — ROSHIELD Rat Bait Station Box
       </h2>
       <div className="not-prose my-6">
         <ProductCard

@@ -113,15 +113,31 @@ const tocItems = [
   { id: "at-a-glance", title: "At a Glance" },
   { id: "mould-killers", title: "Mould Killer Sprays" },
   { id: "hg-mould-spray", title: "Best Mould Killer — HG Mould Spray" },
-  { id: "dryzone-remover", title: "Best for Porous Surfaces — Dryzone" },
-  { id: "zinsser-killer", title: "Best Pre-Paint — Zinsser Mould Killer" },
+  {
+    id: "hg-remover",
+    title: "Best for Porous Surfaces — HG Mould Remover Foam Spray 500ml",
+  },
+  {
+    id: "zinsser-killer",
+    title: "Best Pre-Paint — HG Mould Spray 500ml — Pack of 2",
+  },
   { id: "primers", title: "Damp-Seal Primers & Stain Blockers" },
   { id: "zinsser-bin", title: "Best Primer — Zinsser BIN Shellac" },
-  { id: "zinsser-damp-seal", title: "Best Damp Sealer — Zinsser Damp Seal" },
+  {
+    id: "ronseal-damp-seal",
+    title: "Best Damp Sealer — Ronseal One Coat Damp Seal 500ml",
+  },
   { id: "anti-mould-paints", title: "Anti-Mould Paints" },
   { id: "ronseal", title: "Best All-Rounder — Ronseal Mould Killer Paint" },
-  { id: "polycell", title: "Best for Small Areas — Polycell Damp Seal" },
-  { id: "johnstones", title: "Best for Full Rooms — Johnstone's Anti Mould" },
+  {
+    id: "rapide",
+    title: "Best for Small Areas — Rapide Anti Mould Spray Paint 400ml",
+  },
+  {
+    id: "johnstones",
+    title:
+      "Best for Full Rooms — Johnstone's Paint to Cover Damp 750ml — White",
+  },
   { id: "three-step", title: "The Three-Step Remediation System" },
   {
     id: "ventilation",
@@ -400,8 +416,8 @@ export default function DampProofPaintMouldTreatmentPage() {
         <li>Less effective on deeply embedded mould in porous masonry</li>{" "}
       </ul>{" "}
       {/* Product 2: Dryzone Mould Remover */}{" "}
-      <h2 id="dryzone-remover">
-        Best for Porous Surfaces &mdash; Dryzone Mould Remover Spray 500ml
+      <h2 id="hg-remover">
+        Best for Porous Surfaces &mdash; HG Mould Remover Foam Spray 500ml
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
@@ -459,8 +475,8 @@ export default function DampProofPaintMouldTreatmentPage() {
       </ul>{" "}
       {/* Product 3: Zinsser Mould Killer */}{" "}
       <h2 id="zinsser-killer">
-        Best Pre-Paint Preparation &mdash; Zinsser Mould Killer &amp; Remover
-        500ml
+        Best Pre-Paint Preparation &mdash; HG Mould Spray 500ml &mdash; Pack of
+        2
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
@@ -614,8 +630,8 @@ export default function DampProofPaintMouldTreatmentPage() {
         <li>Premium price per litre</li>{" "}
       </ul>{" "}
       {/* Product 5: Zinsser Damp Seal */}{" "}
-      <h2 id="zinsser-damp-seal">
-        Best Damp Sealer &mdash; Zinsser Damp Seal 1L
+      <h2 id="ronseal-damp-seal">
+        Best Damp Sealer &mdash; Ronseal One Coat Damp Seal 500ml
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
@@ -767,8 +783,8 @@ export default function DampProofPaintMouldTreatmentPage() {
         </li>{" "}
       </ul>{" "}
       {/* Product 7: Polycell */}{" "}
-      <h2 id="polycell">
-        Best for Small Areas &mdash; Polycell Damp Seal Paint 500ml
+      <h2 id="rapide">
+        Best for Small Areas &mdash; Rapide Anti Mould Spray Paint 400ml
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
@@ -828,8 +844,8 @@ export default function DampProofPaintMouldTreatmentPage() {
       </ul>{" "}
       {/* Product 8: Johnstone's */}{" "}
       <h2 id="johnstones">
-        Best for Full Rooms &mdash; Johnstone&apos;s Anti Mould Paint 2.5L
-        (Brilliant White)
+        Best for Full Rooms &mdash; Johnstone&apos;s Paint to Cover Damp 750ml
+        &mdash; White
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}

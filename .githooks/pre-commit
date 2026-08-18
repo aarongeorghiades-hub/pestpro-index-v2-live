@@ -1,0 +1,24 @@
+#!/bin/sh
+# Blocks a commit when any STAGED file under app/best/ is not prettier-clean.
+# Judges the STAGED content (git show :file), not the working tree, so a file that
+# is clean on disk but minified in the index cannot slip through.
+ROOT=$(git rev-parse --show-toplevel)
+FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '^app/best/.*\.tsx$' || true)
+[ -z "$FILES" ] && exit 0
+TMP=$(mktemp -d)
+FAIL=0
+for f in $FILES; do
+  mkdir -p "$TMP/$(dirname "$f")"
+  git show ":$f" > "$TMP/$f" 2>/dev/null || continue
+  if ! npx --no-install prettier --config "$ROOT/.prettierrc.json" --check "$TMP/$f" >/dev/null 2>&1; then
+    echo "pre-commit: NOT prettier-formatted: $f"
+    FAIL=1
+  fi
+done
+rm -rf "$TMP"
+if [ "$FAIL" -ne 0 ]; then
+  echo "pre-commit: app/best must stay de-minified (Session 30 Stage 0)."
+  echo "pre-commit: run  npx prettier --write \"app/best/**/page.tsx\"  then re-stage."
+  exit 1
+fi
+exit 0
