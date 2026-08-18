@@ -83,25 +83,135 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B072KL5YRK",
+    rank: 1,
+    cardName: "Rentokil Advanced Rat Bait Station",
+    cardLabel: "Best Overall",
+    features: [
+      "Lockable tamper-resistant design with key",
+      "Accepts both poison bait blocks and snap traps",
+      "Weatherproof for year-round outdoor use",
+      "Trusted Rentokil brand with clear instructions",
+    ],
+    tableCells: [
+      "Rentokil Advanced",
+      "Lockable + snap trap compatible",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Rentokil Advanced Rat Bait Station",
+    tocLabel: "Best Overall",
+    tocName: "Rentokil Advanced Bait Station",
+  },
+  {
+    anchorId: "best-professional",
+    asin: "B010E2GRGO",
+    rank: 2,
+    cardName: "Pest Expert Professional Rat Bait Station",
+    cardLabel: "Best Professional-Grade",
+    features: [
+      "Heavy-duty professional-grade construction",
+      "Used by BPCA-certified pest controllers",
+      "Ground anchor points for permanent installation",
+      "UV-stabilised plastic for multi-year outdoor use",
+    ],
+    tableCells: [
+      "Pest Expert Station",
+      "Professional heavy-duty",
+      "Best Professional",
+    ],
+    h2Label: "Best Professional",
+    h2Name: "Pest Expert Rat Bait Station",
+    tocLabel: "Best Professional",
+    tocName: "Pest Expert Rat Bait Station",
+  },
+  {
+    anchorId: "best-value",
+    asin: "B00XL382T4",
+    rank: 3,
+    cardName: "Roshield External Rat Bait Station Box",
+    cardLabel: "Best Budget",
+    features: [
+      "Lockable tamper-resistant design",
+      "Compact size ideal for gardens and small spaces",
+      "Weatherproof with drainage holes",
+      "Affordable entry-level professional station",
+    ],
+    tableCells: [
+      "Roshield External Box",
+      "Weatherproof + UV-stabilised",
+      "Best Value",
+    ],
+    h2Label: "Best Value",
+    h2Name: "Roshield External Bait Box",
+    tocLabel: "Best Value",
+    tocName: "Roshield External Bait Box",
+  },
+  {
+    anchorId: "best-multi",
+    asin: "B088TH1XCS",
+    rank: 4,
+    cardName: "The Big Cheese Rat Bait Station Pack",
+    cardLabel: "Best Multi-Pack",
+    features: [
+      "Multi-pack for perimeter protection",
+      "Tamper-resistant lockable design",
+      "Accepts block and grain bait",
+      "Affordable per-station cost in bulk",
+    ],
+    tableCells: [
+      "Big Cheese Rat Station",
+      "Multi-pack for coverage",
+      "Best Multi-Pack",
+    ],
+    h2Label: "Best Multi-Pack",
+    h2Name: "The Big Cheese Rat Bait Station",
+    tocLabel: "Best Multi-Pack",
+    tocName: "The Big Cheese Rat Bait Station",
+  },
+  {
+    anchorId: "best-kit",
+    asin: "B010E2H7KY",
+    rank: 5,
+    cardName: "Pest Expert Rat Bait Station + Poison Kit",
+    cardLabel: "Best Complete Kit",
+    features: [
+      "Complete kit: professional station + brodifacoum bait blocks",
+      "Everything needed for immediate deployment",
+      "Lockable station with key",
+      "Ideal for beginners — no compatibility guesswork",
+    ],
+    tableCells: ["Pest Expert Kit", "Station + poison included", "Best Kit"],
+    h2Label: "Best Complete Kit",
+    h2Name: "Pest Expert Station + Poison Kit",
+    tocLabel: "Best Complete Kit",
+    tocName: "Pest Expert Station + Poison Kit",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Rat Bait Stations at a Glance" },
-  {
-    id: "best-overall",
-    title: "Best Overall — Rentokil Advanced Bait Station",
-  },
-  {
-    id: "best-professional",
-    title: "Best Professional — Pest Expert Rat Bait Station",
-  },
-  { id: "best-value", title: "Best Value — Roshield External Bait Box" },
-  {
-    id: "best-multi",
-    title: "Best Multi-Pack — The Big Cheese Rat Bait Station",
-  },
-  {
-    id: "best-kit",
-    title: "Best Complete Kit — Pest Expert Station + Poison Kit",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "How to Choose the Right Bait Station" },
   { id: "placement", title: "Where and How to Place Bait Stations" },
   { id: "faq", title: "Frequently Asked Questions" },
@@ -257,32 +367,13 @@ export default function BestRatBaitStationsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            <td>Rentokil Advanced</td>
-            <td>Lockable + snap trap compatible</td>
-            <td>Best Overall</td>
-          </tr>{" "}
-          <tr>
-            <td>Pest Expert Station</td>
-            <td>Professional heavy-duty</td>
-            <td>Best Professional</td>
-          </tr>{" "}
-          <tr>
-            <td>Roshield External Box</td>
-            <td>Weatherproof + UV-stabilised</td>
-            <td>Best Value</td>
-          </tr>{" "}
-          <tr>
-            <td>Big Cheese Rat Station</td>
-            <td>Multi-pack for coverage</td>
-            <td>Best Multi-Pack</td>
-          </tr>{" "}
-          <tr>
-            <td>Pest Expert Kit</td>
-            <td>Station + poison included</td>
-            <td>Best Kit</td>
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       <div className="not-prose">
@@ -292,22 +383,17 @@ export default function BestRatBaitStationsPage() {
           label="Recommended spacing between rat bait stations for perimeter protection"
         />{" "}
       </div>{" "}
-      <h2 id="best-overall">
-        Best Overall — Rentokil Advanced Rat Bait Station
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Rentokil Advanced Rat Bait Station"
-          rank={1}
-          features={[
-            "Lockable tamper-resistant design with key",
-            "Accepts both poison bait blocks and snap traps",
-            "Weatherproof for year-round outdoor use",
-            "Trusted Rentokil brand with clear instructions",
-          ]}
-          asin="B072KL5YRK"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -356,22 +442,17 @@ export default function BestRatBaitStationsPage() {
         <li>Single station — may need multiple for larger areas</li>{" "}
         <li>Key is small and easy to misplace</li>{" "}
       </ul>{" "}
-      <h2 id="best-professional">
-        Best Professional — Pest Expert Rat Bait Station
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Professional Rat Bait Station"
-          rank={2}
-          features={[
-            "Heavy-duty professional-grade construction",
-            "Used by BPCA-certified pest controllers",
-            "Ground anchor points for permanent installation",
-            "UV-stabilised plastic for multi-year outdoor use",
-          ]}
-          asin="B010E2GRGO"
-          bestFor="Best Professional-Grade"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -419,20 +500,17 @@ export default function BestRatBaitStationsPage() {
         <li>Heavier and bulkier</li>{" "}
         <li>Professional-style packaging — less consumer-friendly</li>{" "}
       </ul>{" "}
-      <h2 id="best-value">Best Value — Roshield External Bait Box</h2>{" "}
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Roshield External Rat Bait Station Box"
-          rank={3}
-          features={[
-            "Lockable tamper-resistant design",
-            "Compact size ideal for gardens and small spaces",
-            "Weatherproof with drainage holes",
-            "Affordable entry-level professional station",
-          ]}
-          asin="B00XL382T4"
-          bestFor="Best Budget"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -471,20 +549,17 @@ export default function BestRatBaitStationsPage() {
         <li>No ground anchor points</li>{" "}
         <li>May not fit larger snap traps</li>{" "}
       </ul>{" "}
-      <h2 id="best-multi">Best Multi-Pack — The Big Cheese Rat Bait Station</h2>{" "}
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="The Big Cheese Rat Bait Station Pack"
-          rank={4}
-          features={[
-            "Multi-pack for perimeter protection",
-            "Tamper-resistant lockable design",
-            "Accepts block and grain bait",
-            "Affordable per-station cost in bulk",
-          ]}
-          asin="B088TH1XCS"
-          bestFor="Best Multi-Pack"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -524,22 +599,17 @@ export default function BestRatBaitStationsPage() {
         <li>May be more than you need for a single-station situation</li>{" "}
         <li>Standard construction — not heavy-duty</li>{" "}
       </ul>{" "}
-      <h2 id="best-kit">
-        Best Complete Kit — Pest Expert Station + Poison Kit
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Rat Bait Station + Poison Kit"
-          rank={5}
-          features={[
-            "Complete kit: professional station + brodifacoum bait blocks",
-            "Everything needed for immediate deployment",
-            "Lockable station with key",
-            "Ideal for beginners — no compatibility guesswork",
-          ]}
-          asin="B010E2H7KY"
-          bestFor="Best Complete Kit"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>

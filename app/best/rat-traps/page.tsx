@@ -73,17 +73,90 @@ const breadcrumbSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B08V918HNB",
+    rank: 1,
+    cardName: "Rat Reaper XXL Snap Trap",
+    cardLabel: "Best Overall",
+    features: [
+      "Extra large snap trap designed for UK rats",
+      "Professional quality construction",
+      "Effective instant-kill mechanism",
+      "Reusable and easy to set",
+    ],
+    tableCells: ["Rat Reaper XXL Snap Trap", "Snap trap", "Best Overall"],
+    h2Label: "Best Overall",
+    h2Name: "Rat Reaper by Froboo",
+    tocLabel: "Best Overall",
+    tocName: "Rat Reaper XXL Snap Trap",
+  },
+  {
+    anchorId: "best-safety",
+    asin: "B07W9FMLWF",
+    rank: 2,
+    cardName: "ROSHIELD Rat Bait Station Box",
+    cardLabel: "Best for Pet & Child Safety",
+    features: [
+      "Lockable tamper-resistant bait station",
+      "Protects bait from children and pets",
+      "Professional quality design",
+      "Weatherproof for indoor and outdoor use",
+    ],
+    tableCells: [
+      "ROSHIELD Rat Bait Station Box",
+      "Bait station",
+      "Best for Safety",
+    ],
+    h2Label: "Best for Pet & Child Safety",
+    h2Name: "ROSHIELD Rat Bait Station Box",
+    tocLabel: "Best for Pet & Child Safety",
+    tocName: "ROSHIELD Rat Bait Station Box",
+  },
+  {
+    anchorId: "best-professional",
+    asin: "B071DJVBT4",
+    rank: 3,
+    cardName: "ROSHIELD 4-Pack Rat Trap",
+    cardLabel: "Best Professional-Grade",
+    features: [
+      "Professional quality heavy-duty snap traps",
+      "4-pack for multiple placement points",
+      "Trusted by pest controllers across the UK",
+    ],
+    tableCells: [
+      "ROSHIELD 4-Pack Rat Trap",
+      "Snap trap",
+      "Best Professional-Grade",
+    ],
+    h2Label: "Best Professional-Grade",
+    h2Name: "ROSHIELD 4-Pack Rat Trap",
+    tocLabel: "Best Professional-Grade",
+    tocName: "ROSHIELD 4-Pack Rat Trap",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Rat Traps at a Glance" },
-  { id: "best-overall", title: "Best Overall — Rat Reaper XXL Snap Trap" },
-  {
-    id: "best-safety",
-    title: "Best for Pet & Child Safety — ROSHIELD Rat Bait Station Box",
-  },
-  {
-    id: "best-professional",
-    title: "Best Professional-Grade — ROSHIELD 4-Pack Rat Trap",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "how-to-choose", title: "How to Choose the Right Rat Trap" },
   { id: "tips", title: "Rat Trap Tips for Best Results" },
 ];
@@ -264,38 +337,27 @@ export default function BestRatTrapsPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Rat Reaper XXL Snap Trap</td>
-            <td>Snap trap</td>
-            <td>Best Overall</td>
-          </tr>
-          <tr>
-            <td>ROSHIELD Rat Bait Station Box</td>
-            <td>Bait station</td>
-            <td>Best for Safety</td>
-          </tr>
-          <tr>
-            <td>ROSHIELD 4-Pack Rat Trap</td>
-            <td>Snap trap</td>
-            <td>Best Professional-Grade</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
       {/* Best Overall */}
-      <h2 id="best-overall">Best Overall — Rat Reaper by Froboo</h2>
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
+      </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Rat Reaper XXL Snap Trap"
-          rank={1}
-          features={[
-            "Extra large snap trap designed for UK rats",
-            "Professional quality construction",
-            "Effective instant-kill mechanism",
-            "Reusable and easy to set",
-          ]}
-          asin="B08V918HNB"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -368,21 +430,16 @@ export default function BestRatTrapsPage() {
       </ul>
 
       {/* Best for Safety */}
-      <h2 id="best-safety">
-        Best for Pet &amp; Child Safety — ROSHIELD Rat Bait Station Box
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="ROSHIELD Rat Bait Station Box"
-          rank={2}
-          features={[
-            "Lockable tamper-resistant bait station",
-            "Protects bait from children and pets",
-            "Professional quality design",
-            "Weatherproof for indoor and outdoor use",
-          ]}
-          asin="B07W9FMLWF"
-          bestFor="Best for Pet & Child Safety"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -448,20 +505,16 @@ export default function BestRatTrapsPage() {
       </ul>
 
       {/* Best Professional-Grade */}
-      <h2 id="best-professional">
-        Best Professional-Grade — ROSHIELD 4-Pack Rat Trap
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="ROSHIELD 4-Pack Rat Trap"
-          rank={3}
-          features={[
-            "Professional quality heavy-duty snap traps",
-            "4-pack for multiple placement points",
-            "Trusted by pest controllers across the UK",
-          ]}
-          asin="B071DJVBT4"
-          bestFor="Best Professional-Grade"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>

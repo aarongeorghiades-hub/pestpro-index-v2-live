@@ -113,25 +113,140 @@ const faqSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-mesh",
+    asin: "B07GWNN623",
+    rank: 1,
+    cardName: "Roshield Rodent Proofing Wire Mesh (6m x 900mm)",
+    cardLabel: "Best Overall",
+    features: [
+      "Hot-dipped galvanised welded steel mesh",
+      "6mm x 6mm aperture — too small for a mouse to pass through",
+      "900mm wide, 6m long — enough for a run of air bricks or a soffit line",
+      "Cuts with tin snips or strong scissors and shapes around pipework",
+      "Suitable for internal or external use",
+    ],
+    tableCells: [
+      "Roshield Rodent Proofing Wire Mesh",
+      "Galvanised welded mesh",
+      "Large Openings",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Roshield Rodent Proofing Wire Mesh (6m × 900mm)",
+    tocLabel: "Best Overall",
+    tocName: "Roshield Rodent Proofing Wire Mesh",
+  },
+  {
+    anchorId: "best-fill",
+    asin: "B09P22PPJ2",
+    rank: 2,
+    cardName: "Xcluder Rodent Control Steel Wool Fill Fabric",
+    cardLabel: "Best for Gaps & Holes",
+    features: [
+      "Stainless steel wool blend fill fabric supplied on a roll",
+      "4 inch by 10 foot roll — tears and packs without tools",
+      "Packs into irregular gaps and holes that mesh cannot cover",
+      "Will not rust like plain steel wool",
+      "Works as a base layer under proofing paste or filler",
+    ],
+    tableCells: [
+      "Xcluder Rodent Control Steel Wool Fill Fabric",
+      "Fill fabric roll",
+      "Gaps & Holes",
+    ],
+    h2Label: "Best for Gaps & Holes",
+    h2Name: "Xcluder Rodent Control Steel Wool Fill Fabric",
+    tocLabel: "Best for Gaps & Holes",
+    tocName: "Xcluder Steel Wool Fill Fabric",
+  },
+  {
+    anchorId: "best-drain",
+    asin: "B07FKQLPFV",
+    rank: 3,
+    cardName: "Roshield Rat Drain Guard (Stainless Steel 4 inch / 110mm)",
+    cardLabel: "Best for Drains",
+    features: [
+      "316 marine-grade stainless steel one-way flap",
+      "Fits 4 inch / 110mm drain pipe",
+      "Lets waste flow out and stops rats moving back up",
+      "Installs by hand without tools",
+      "Bolt reverses to match the direction of flow — made in the UK",
+    ],
+    tableCells: ["Roshield Rat Drain Guard", "One-way drain flap", "Drains"],
+    h2Label: "Best for Drains",
+    h2Name: 'Roshield Rat Drain Guard (Stainless Steel 4"/110mm)',
+    tocLabel: "Best for Drains",
+    tocName: "Roshield Rat Drain Guard",
+  },
+  {
+    anchorId: "best-door",
+    asin: "B00FO7OLA4",
+    rank: 4,
+    cardName: "Stormguard Door Brush Strip Draught Excluder (914mm)",
+    cardLabel: "Best for Door Gaps",
+    features: [
+      "Aluminium carrier with brush pile",
+      "Seals gaps up to 25mm under a door",
+      "914mm long and cuts to size",
+      "Pre-drilled fixing holes, fixings included",
+      "Doubles as a draught excluder on the same fitting",
+    ],
+    tableCells: [
+      "Stormguard Door Brush Strip Draught Excluder",
+      "Brush pile strip",
+      "Door Gaps",
+    ],
+    h2Label: "Best for Door Gaps",
+    h2Name: "Stormguard Door Brush Strip Draught Excluder (914mm)",
+    tocLabel: "Best for Door Gaps",
+    tocName: "Stormguard Door Brush Strip",
+  },
+  {
+    anchorId: "best-paste",
+    asin: "B07VWCQ647",
+    rank: 5,
+    cardName: "Roshield Rodent Proofing Control Paste",
+    cardLabel: "Best Finishing Seal",
+    features: [
+      "Non-toxic proofing paste for filling gaps",
+      "Made from natural fibres and oils",
+      "Soft core deters gnawing",
+      "Suitable for food-preparation and storage areas",
+      "Can be applied over wire wool or mesh for extra strength",
+    ],
+    tableCells: [
+      "Roshield Rodent Proofing Control Paste",
+      "Non-toxic paste",
+      "Finishing Seal",
+    ],
+    h2Label: "Best Finishing Seal",
+    h2Name: "Roshield Rodent Proofing Control Paste",
+    tocLabel: "Best Finishing Seal",
+    tocName: "Roshield Rodent Proofing Paste",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Rodent Proofing at a Glance" },
-  {
-    id: "best-mesh",
-    title: "Best Overall — Roshield Rodent Proofing Wire Mesh",
-  },
-  {
-    id: "best-fill",
-    title: "Best for Gaps & Holes — Xcluder Steel Wool Fill Fabric",
-  },
-  { id: "best-drain", title: "Best for Drains — Roshield Rat Drain Guard" },
-  {
-    id: "best-door",
-    title: "Best for Door Gaps — Stormguard Door Brush Strip",
-  },
-  {
-    id: "best-paste",
-    title: "Best Finishing Seal — Roshield Rodent Proofing Paste",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Rodent Proofing Buying Guide" },
   { id: "faq", title: "Rodent Proofing FAQ" },
   { id: "when-to-call", title: "When to Contact a Pest Control Professional" },
@@ -296,52 +411,27 @@ export default function BestRodentProofingPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Roshield Rodent Proofing Wire Mesh</td>
-            <td>Galvanised welded mesh</td>
-            <td>Large Openings</td>
-          </tr>
-          <tr>
-            <td>Xcluder Rodent Control Steel Wool Fill Fabric</td>
-            <td>Fill fabric roll</td>
-            <td>Gaps &amp; Holes</td>
-          </tr>
-          <tr>
-            <td>Roshield Rat Drain Guard</td>
-            <td>One-way drain flap</td>
-            <td>Drains</td>
-          </tr>
-          <tr>
-            <td>Stormguard Door Brush Strip Draught Excluder</td>
-            <td>Brush pile strip</td>
-            <td>Door Gaps</td>
-          </tr>
-          <tr>
-            <td>Roshield Rodent Proofing Control Paste</td>
-            <td>Non-toxic paste</td>
-            <td>Finishing Seal</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
       {/* Product 1: Wire Mesh */}
-      <h2 id="best-mesh">
-        Best Overall &mdash; Roshield Rodent Proofing Wire Mesh (6m &times;
-        900mm)
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Roshield Rodent Proofing Wire Mesh (6m x 900mm)"
-          features={[
-            "Hot-dipped galvanised welded steel mesh",
-            "6mm x 6mm aperture — too small for a mouse to pass through",
-            "900mm wide, 6m long — enough for a run of air bricks or a soffit line",
-            "Cuts with tin snips or strong scissors and shapes around pipework",
-            "Suitable for internal or external use",
-          ]}
-          asin="B07GWNN623"
-          bestFor="Best Overall"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -394,23 +484,16 @@ export default function BestRodentProofingPage() {
       </p>
 
       {/* Product 2: Steel Wool Fill Fabric */}
-      <h2 id="best-fill">
-        Best for Gaps &amp; Holes &mdash; Xcluder Rodent Control Steel Wool Fill
-        Fabric
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Xcluder Rodent Control Steel Wool Fill Fabric"
-          features={[
-            "Stainless steel wool blend fill fabric supplied on a roll",
-            "4 inch by 10 foot roll — tears and packs without tools",
-            "Packs into irregular gaps and holes that mesh cannot cover",
-            "Will not rust like plain steel wool",
-            "Works as a base layer under proofing paste or filler",
-          ]}
-          asin="B09P22PPJ2"
-          bestFor="Best for Gaps & Holes"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -460,23 +543,16 @@ export default function BestRodentProofingPage() {
       </p>
 
       {/* Product 3: Drain Guard */}
-      <h2 id="best-drain">
-        Best for Drains &mdash; Roshield Rat Drain Guard (Stainless Steel
-        4&quot;/110mm)
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Roshield Rat Drain Guard (Stainless Steel 4 inch / 110mm)"
-          features={[
-            "316 marine-grade stainless steel one-way flap",
-            "Fits 4 inch / 110mm drain pipe",
-            "Lets waste flow out and stops rats moving back up",
-            "Installs by hand without tools",
-            "Bolt reverses to match the direction of flow — made in the UK",
-          ]}
-          asin="B07FKQLPFV"
-          bestFor="Best for Drains"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>
@@ -525,23 +601,16 @@ export default function BestRodentProofingPage() {
       </p>
 
       {/* Product 4: Door Brush Strip */}
-      <h2 id="best-door">
-        Best for Door Gaps &mdash; Stormguard Door Brush Strip Draught Excluder
-        (914mm)
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Stormguard Door Brush Strip Draught Excluder (914mm)"
-          features={[
-            "Aluminium carrier with brush pile",
-            "Seals gaps up to 25mm under a door",
-            "914mm long and cuts to size",
-            "Pre-drilled fixing holes, fixings included",
-            "Doubles as a draught excluder on the same fitting",
-          ]}
-          asin="B00FO7OLA4"
-          bestFor="Best for Door Gaps"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />
       </div>
       <p>
@@ -591,22 +660,16 @@ export default function BestRodentProofingPage() {
       </p>
 
       {/* Product 5: Proofing Paste */}
-      <h2 id="best-paste">
-        Best Finishing Seal &mdash; Roshield Rodent Proofing Control Paste
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Roshield Rodent Proofing Control Paste"
-          features={[
-            "Non-toxic proofing paste for filling gaps",
-            "Made from natural fibres and oils",
-            "Soft core deters gnawing",
-            "Suitable for food-preparation and storage areas",
-            "Can be applied over wire wool or mesh for extra strength",
-          ]}
-          asin="B07VWCQ647"
-          bestFor="Best Finishing Seal"
-          rank={5}
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />
       </div>
       <p>

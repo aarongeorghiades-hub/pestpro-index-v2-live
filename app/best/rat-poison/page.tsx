@@ -129,20 +129,161 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B0DL2SLHTM",
+    rank: 1,
+    cardName: "Roshield Brodifacoum Wax Blocks",
+    cardLabel: "Best Overall",
+    features: [
+      "Contains brodifacoum 0.005% — the strongest SGAR available",
+      "Wax block formulation resists moisture and mould",
+      "Single-feed lethal dose for rapid results",
+      "Refill blocks only — a tamper-resistant bait station is required and is not included",
+    ],
+    tableCells: [
+      "Roshield Brodifacoum Blocks (refill — station not included)",
+      "Brodifacoum (0.005%)",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Roshield Brodifacoum Blocks",
+    tocLabel: "Best Overall",
+    tocName: "Roshield Brodifacoum Blocks",
+  },
+  {
+    anchorId: "best-professional",
+    asin: "B010E2GCIM",
+    rank: 2,
+    cardName: "Pest Expert Formula B+ Grain Bait",
+    cardLabel: "Best Professional-Grade",
+    features: [
+      "Professional-strength brodifacoum grain bait",
+      "Highly palatable wheat-based formula rats prefer",
+      "Fast-acting single-feed formulation",
+      "Used by professional pest controllers across the UK",
+    ],
+    tableCells: [
+      "Pest Expert Formula B+ Grain Bait",
+      "Brodifacoum (0.005%)",
+      "Best Professional-Strength",
+    ],
+    h2Label: "Best Professional-Strength",
+    h2Name: "Pest Expert Formula B+ Grain Bait",
+    tocLabel: "Best Professional-Strength",
+    tocName: "Pest Expert Formula B+",
+  },
+  {
+    anchorId: "best-value",
+    asin: "B071K8WQZB",
+    rank: 3,
+    cardName: "Elixir Gardens Rodex Whole Wheat Sachets",
+    cardLabel: "Best Budget",
+    features: [
+      "Bromadiolone 0.005% whole wheat bait",
+      "Individual sachets for easy, mess-free deployment",
+      "Excellent value — large quantity for the price",
+      "Highly palatable to rats and mice",
+    ],
+    tableCells: [
+      "Elixir Gardens Rodex Sachets",
+      "Bromadiolone (0.005%)",
+      "Best Value",
+    ],
+    h2Label: "Best Value",
+    h2Name: "Elixir Gardens Rodex Whole Wheat",
+    tocLabel: "Best Value",
+    tocName: "Elixir Gardens Rodex Sachets",
+  },
+  {
+    anchorId: "best-brand",
+    asin: "B07BFQ1V5L",
+    rank: 4,
+    cardName: "Rentokil Rodine Mouse & Rat Killer Grain Bait",
+    cardLabel: "Best Trusted Brand",
+    features: [
+      "From Rentokil — the UK's most recognised pest control brand",
+      "Difenacoum-based grain bait",
+      "Ready-to-use sachets with clear instructions",
+      "Widely available and trusted by UK consumers",
+    ],
+    tableCells: [
+      "Rentokil Rodine Grain Bait",
+      "Difenacoum (0.005%)",
+      "Best Trusted Brand",
+    ],
+    h2Label: "Best Trusted Brand",
+    h2Name: "Rentokil Rodine Grain Bait",
+    tocLabel: "Best Trusted Brand",
+    tocName: "Rentokil Rodine Grain Bait",
+  },
+  {
+    anchorId: "best-paste",
+    asin: "B07H8NZGH7",
+    rank: 5,
+    cardName: "Racan Force Rat & Mouse Killer Paste",
+    cardLabel: "Best Paste Bait",
+    features: [
+      "Brodifacoum paste formulation — highly palatable",
+      "Individual foil sachets for easy deployment",
+      "Strong single-feed formulation for rapid results",
+      "Moisture-resistant paste ideal for damp locations",
+    ],
+    tableCells: [
+      "Racan Force Paste",
+      "Brodifacoum (0.005%)",
+      "Best Paste Bait",
+    ],
+    h2Label: "Best Paste Bait",
+    h2Name: "Racan Force Paste",
+    tocLabel: "Best Paste Bait",
+    tocName: "Racan Force Paste",
+  },
+  {
+    anchorId: "best-kit",
+    asin: "B010E2H7KY",
+    rank: 6,
+    cardName: "Pest Expert Rat Poison Bait Block Kit",
+    cardLabel: "Best Combo Kit",
+    features: [
+      "Complete kit: bait blocks + tamper-resistant bait station",
+      "Brodifacoum blocks for maximum strength",
+      "Professional-quality lockable station included",
+      "Everything you need in one purchase — no extras required",
+    ],
+    tableCells: [
+      "Pest Expert Bait Block Kit",
+      "Brodifacoum (0.005%)",
+      "Best Combo Kit",
+    ],
+    h2Label: "Best Combo Kit",
+    h2Name: "Pest Expert Bait Block Kit",
+    tocLabel: "Best Combo Kit",
+    tocName: "Pest Expert Bait Block Kit",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Rat Poison at a Glance" },
-  { id: "best-overall", title: "Best Overall — Roshield Brodifacoum Blocks" },
-  {
-    id: "best-professional",
-    title: "Best Professional-Strength — Pest Expert Formula B+",
-  },
-  { id: "best-value", title: "Best Value — Elixir Gardens Rodex Sachets" },
-  {
-    id: "best-brand",
-    title: "Best Trusted Brand — Rentokil Rodine Grain Bait",
-  },
-  { id: "best-paste", title: "Best Paste Bait — Racan Force Paste" },
-  { id: "best-kit", title: "Best Combo Kit — Pest Expert Bait Block Kit" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "How to Choose the Right Rat Poison" },
   { id: "safety", title: "Safety and Legal Requirements" },
   { id: "faq", title: "Frequently Asked Questions" },
@@ -330,40 +471,13 @@ export default function BestRatPoisonPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>
-              Roshield Brodifacoum Blocks (refill &mdash; station not included)
-            </td>{" "}
-            <td>Brodifacoum (0.005%)</td> <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Formula B+ Grain Bait</td>{" "}
-            <td>Brodifacoum (0.005%)</td>{" "}
-            <td>Best Professional-Strength</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Elixir Gardens Rodex Sachets</td> <td>Bromadiolone (0.005%)</td>{" "}
-            <td>Best Value</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Rentokil Rodine Grain Bait</td> <td>Difenacoum (0.005%)</td>{" "}
-            <td>Best Trusted Brand</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Racan Force Paste</td> <td>Brodifacoum (0.005%)</td>{" "}
-            <td>Best Paste Bait</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Bait Block Kit</td> <td>Brodifacoum (0.005%)</td>{" "}
-            <td>Best Combo Kit</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       <div className="not-prose">
@@ -374,20 +488,17 @@ export default function BestRatPoisonPage() {
         />{" "}
       </div>{" "}
       {/* Product 1 */}{" "}
-      <h2 id="best-overall">Best Overall — Roshield Brodifacoum Blocks</h2>{" "}
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Roshield Brodifacoum Wax Blocks"
-          rank={1}
-          features={[
-            "Contains brodifacoum 0.005% — the strongest SGAR available",
-            "Wax block formulation resists moisture and mould",
-            "Single-feed lethal dose for rapid results",
-            "Refill blocks only — a tamper-resistant bait station is required and is not included",
-          ]}
-          asin="B0DL2SLHTM"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -450,22 +561,17 @@ export default function BestRatPoisonPage() {
         <li>Takes 3-5 days to work — not instant</li>{" "}
       </ul>{" "}
       {/* Product 2 */}{" "}
-      <h2 id="best-professional">
-        Best Professional-Strength — Pest Expert Formula B+ Grain Bait
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Formula B+ Grain Bait"
-          rank={2}
-          features={[
-            "Professional-strength brodifacoum grain bait",
-            "Highly palatable wheat-based formula rats prefer",
-            "Fast-acting single-feed formulation",
-            "Used by professional pest controllers across the UK",
-          ]}
-          asin="B010E2GCIM"
-          bestFor="Best Professional-Grade"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -517,20 +623,17 @@ export default function BestRatPoisonPage() {
         <li>Loose grain requires careful handling and containment</li>{" "}
       </ul>{" "}
       {/* Product 3 */}{" "}
-      <h2 id="best-value">Best Value — Elixir Gardens Rodex Whole Wheat</h2>{" "}
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Elixir Gardens Rodex Whole Wheat Sachets"
-          rank={3}
-          features={[
-            "Bromadiolone 0.005% whole wheat bait",
-            "Individual sachets for easy, mess-free deployment",
-            "Excellent value — large quantity for the price",
-            "Highly palatable to rats and mice",
-          ]}
-          asin="B071K8WQZB"
-          bestFor="Best Budget"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -580,20 +683,17 @@ export default function BestRatPoisonPage() {
         <li>Sachets can absorb moisture in poorly sealed stations</li>{" "}
       </ul>{" "}
       {/* Product 4 */}{" "}
-      <h2 id="best-brand">Best Trusted Brand — Rentokil Rodine Grain Bait</h2>{" "}
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Rentokil Rodine Mouse & Rat Killer Grain Bait"
-          rank={4}
-          features={[
-            "From Rentokil — the UK's most recognised pest control brand",
-            "Difenacoum-based grain bait",
-            "Ready-to-use sachets with clear instructions",
-            "Widely available and trusted by UK consumers",
-          ]}
-          asin="B07BFQ1V5L"
-          bestFor="Best Trusted Brand"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -644,20 +744,17 @@ export default function BestRatPoisonPage() {
         <li>Smaller quantity per pack than specialist brands</li>{" "}
       </ul>{" "}
       {/* Product 5 */}{" "}
-      <h2 id="best-paste">Best Paste Bait — Racan Force Paste</h2>{" "}
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Racan Force Rat & Mouse Killer Paste"
-          rank={5}
-          features={[
-            "Brodifacoum paste formulation — highly palatable",
-            "Individual foil sachets for easy deployment",
-            "Strong single-feed formulation for rapid results",
-            "Moisture-resistant paste ideal for damp locations",
-          ]}
-          asin="B07H8NZGH7"
-          bestFor="Best Paste Bait"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -713,20 +810,17 @@ export default function BestRatPoisonPage() {
         <li>Smaller pack sizes than bulk grain options</li>{" "}
       </ul>{" "}
       {/* Product 6 */}{" "}
-      <h2 id="best-kit">Best Combo Kit — Pest Expert Bait Block Kit</h2>{" "}
+      <h2 id={products[5].anchorId}>
+        {products[5].h2Label} &mdash; {products[5].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Rat Poison Bait Block Kit"
-          rank={6}
-          features={[
-            "Complete kit: bait blocks + tamper-resistant bait station",
-            "Brodifacoum blocks for maximum strength",
-            "Professional-quality lockable station included",
-            "Everything you need in one purchase — no extras required",
-          ]}
-          asin="B010E2H7KY"
-          bestFor="Best Combo Kit"
+          name={products[5].cardName}
+          features={products[5].features}
+          asin={products[5].asin}
+          bestFor={products[5].cardLabel}
+          rank={products[5].rank}
         />{" "}
       </div>{" "}
       <p>

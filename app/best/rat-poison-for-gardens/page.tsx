@@ -128,19 +128,139 @@ const faqSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B07Z6CQ5HT",
+    rank: 1,
+    cardName: "Pest Expert Formula B+ + Outdoor Bait Box Combo 900g",
+    cardLabel: "Best Overall",
+    features: [
+      "Maximum-strength Brodifacoum sachets + professional lockable bait box",
+      "Everything needed for outdoor rat control in one kit",
+      "CRRU-compliant tamper-resistant station included",
+      "Single-feed lethal dose for rapid results",
+    ],
+    tableCells: [
+      "Pest Expert Formula B+ + Outdoor Bait Box Combo 900g",
+      "Brodifacoum sachets + bait box",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Pest Expert Formula B+ + Outdoor Bait Box Combo 900g",
+    tocLabel: "Best Overall",
+    tocName: "Pest Expert Formula B+ Combo",
+  },
+  {
+    anchorId: "best-bulk",
+    asin: "B07B51YZC6",
+    rank: 2,
+    cardName: "Pest Expert Formula B+ Rat Poison 1.5kg (15x100g)",
+    cardLabel: "Best Bulk Pack",
+    features: [
+      "Large 1.5kg pack — 15 x 100g Brodifacoum sachets",
+      "Single-feed Brodifacoum formulation",
+      "Enough for multiple bait stations over several weeks",
+      "Ideal for treating external rat populations around buildings",
+    ],
+    tableCells: [
+      "Pest Expert Formula B+ Rat Poison 1.5kg",
+      "Brodifacoum sachets",
+      "Best Bulk Pack",
+    ],
+    h2Label: "Best Bulk Pack",
+    h2Name: "Pest Expert Formula B+ Rat Poison 1.5kg (15x100g)",
+    tocLabel: "Best Bulk Pack",
+    tocName: "Pest Expert Formula B+ 1.5kg",
+  },
+  {
+    anchorId: "best-starter",
+    asin: "B07B73Y2LW",
+    rank: 3,
+    cardName: "Roshield External Bait Box + 300g Block Kit",
+    cardLabel: "Best Starter Kit",
+    features: [
+      "UK-made tamper-resistant external bait station included",
+      "Bromadiolone wax blocks included — ready to deploy",
+      "Weatherproof design for fences, walls and under decking",
+      "Lockable and compliant with UK rodenticide regulations",
+    ],
+    tableCells: [
+      "Roshield External Bait Box + 300g Block Kit",
+      "Bromadiolone wax blocks + bait box",
+      "Best Starter Kit",
+    ],
+    h2Label: "Best Starter Kit",
+    h2Name: "Roshield External Bait Box + 300g Block Kit",
+    tocLabel: "Best Starter Kit",
+    tocName: "Roshield External Bait Box Kit",
+  },
+  {
+    anchorId: "best-multi-station",
+    asin: "B07B7CH7W6",
+    rank: 4,
+    cardName: "Roshield 2x External Tamper-Proof Bait Box + Wax Blocks Kit",
+    cardLabel: "Best Multi-Station",
+    features: [
+      "Two lockable external bait stations included",
+      "Wax blocks included — ready to deploy immediately",
+      "Ideal for larger gardens or multi-property coverage",
+      "Place 10+ metres apart along rat runs for maximum effectiveness",
+    ],
+    tableCells: [
+      "Roshield 2x External Tamper-Proof Bait Box + Wax Blocks Kit",
+      "Wax blocks + 2 bait boxes",
+      "Best Multi-Station",
+    ],
+    h2Label: "Best Multi-Station",
+    h2Name: "Roshield 2x External Tamper-Proof Bait Box + Wax Blocks Kit",
+    tocLabel: "Best Multi-Station",
+    tocName: "Roshield 2x Bait Box Kit",
+  },
+  {
+    anchorId: "best-value",
+    asin: "B071GNVKTK",
+    rank: 5,
+    cardName: "Elixir Gardens Rat Poison 1kg Outdoor Sachets",
+    cardLabel: "Best Value",
+    features: [
+      "Difenacoum-based grain bait in chew-through sachets",
+      "10 x 100g sachets — no need to handle the bait directly",
+      "Must be used inside a tamper-resistant bait station",
+      "Affordable option for sustained outdoor baiting",
+    ],
+    tableCells: [
+      "Elixir Gardens Rat Poison 1kg Outdoor Sachets",
+      "Difenacoum grain sachets",
+      "Best Value",
+    ],
+    h2Label: "Best Value",
+    h2Name: "Elixir Gardens Rat Poison 1kg Outdoor Sachets",
+    tocLabel: "Best Value",
+    tocName: "Elixir Gardens Outdoor Sachets",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Garden Rat Poisons at a Glance" },
-  { id: "best-overall", title: "Best Overall — Pest Expert Formula B+ Combo" },
-  { id: "best-bulk", title: "Best Bulk Pack — Pest Expert Formula B+ 1.5kg" },
-  {
-    id: "best-starter",
-    title: "Best Starter Kit — Roshield External Bait Box Kit",
-  },
-  {
-    id: "best-multi-station",
-    title: "Best Multi-Station — Roshield 2x Bait Box Kit",
-  },
-  { id: "best-value", title: "Best Value — Elixir Gardens Outdoor Sachets" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Buying Guide: Outdoor Rat Poison" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
@@ -261,31 +381,13 @@ export default function BestRatPoisonForGardensPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Pest Expert Formula B+ + Outdoor Bait Box Combo 900g</td>
-            <td>Brodifacoum sachets + bait box</td>
-            <td>Best Overall</td>
-          </tr>
-          <tr>
-            <td>Pest Expert Formula B+ Rat Poison 1.5kg</td>
-            <td>Brodifacoum sachets</td>
-            <td>Best Bulk Pack</td>
-          </tr>
-          <tr>
-            <td>Roshield External Bait Box + 300g Block Kit</td>
-            <td>Bromadiolone wax blocks + bait box</td>
-            <td>Best Starter Kit</td>
-          </tr>
-          <tr>
-            <td>Roshield 2x External Tamper-Proof Bait Box + Wax Blocks Kit</td>
-            <td>Wax blocks + 2 bait boxes</td>
-            <td>Best Multi-Station</td>
-          </tr>
-          <tr>
-            <td>Elixir Gardens Rat Poison 1kg Outdoor Sachets</td>
-            <td>Difenacoum grain sachets</td>
-            <td>Best Value</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
@@ -297,21 +399,16 @@ export default function BestRatPoisonForGardensPage() {
       </div>
 
       {/* Product 1 */}
-      <h2 id="best-overall">
-        Best Overall — Pest Expert Formula B+ + Outdoor Bait Box Combo 900g
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Formula B+ + Outdoor Bait Box Combo 900g"
-          rank={1}
-          features={[
-            "Maximum-strength Brodifacoum sachets + professional lockable bait box",
-            "Everything needed for outdoor rat control in one kit",
-            "CRRU-compliant tamper-resistant station included",
-            "Single-feed lethal dose for rapid results",
-          ]}
-          asin="B07Z6CQ5HT"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -369,21 +466,16 @@ export default function BestRatPoisonForGardensPage() {
       </ul>
 
       {/* Product 2 */}
-      <h2 id="best-bulk">
-        Best Bulk Pack — Pest Expert Formula B+ Rat Poison 1.5kg (15x100g)
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Formula B+ Rat Poison 1.5kg (15x100g)"
-          rank={2}
-          features={[
-            "Large 1.5kg pack — 15 x 100g Brodifacoum sachets",
-            "Single-feed Brodifacoum formulation",
-            "Enough for multiple bait stations over several weeks",
-            "Ideal for treating external rat populations around buildings",
-          ]}
-          asin="B07B51YZC6"
-          bestFor="Best Bulk Pack"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -431,21 +523,16 @@ export default function BestRatPoisonForGardensPage() {
       </ul>
 
       {/* Product 3 */}
-      <h2 id="best-starter">
-        Best Starter Kit — Roshield External Bait Box + 300g Block Kit
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Roshield External Bait Box + 300g Block Kit"
-          rank={3}
-          features={[
-            "UK-made tamper-resistant external bait station included",
-            "Bromadiolone wax blocks included — ready to deploy",
-            "Weatherproof design for fences, walls and under decking",
-            "Lockable and compliant with UK rodenticide regulations",
-          ]}
-          asin="B07B73Y2LW"
-          bestFor="Best Starter Kit"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>
@@ -495,22 +582,16 @@ export default function BestRatPoisonForGardensPage() {
       </ul>
 
       {/* Product 4 */}
-      <h2 id="best-multi-station">
-        Best Multi-Station — Roshield 2x External Tamper-Proof Bait Box + Wax
-        Blocks Kit
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Roshield 2x External Tamper-Proof Bait Box + Wax Blocks Kit"
-          rank={4}
-          features={[
-            "Two lockable external bait stations included",
-            "Wax blocks included — ready to deploy immediately",
-            "Ideal for larger gardens or multi-property coverage",
-            "Place 10+ metres apart along rat runs for maximum effectiveness",
-          ]}
-          asin="B07B7CH7W6"
-          bestFor="Best Multi-Station"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />
       </div>
       <p>
@@ -562,21 +643,16 @@ export default function BestRatPoisonForGardensPage() {
       </ul>
 
       {/* Product 5 */}
-      <h2 id="best-value">
-        Best Value — Elixir Gardens Rat Poison 1kg Outdoor Sachets
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Elixir Gardens Rat Poison 1kg Outdoor Sachets"
-          rank={5}
-          features={[
-            "Difenacoum-based grain bait in chew-through sachets",
-            "10 x 100g sachets — no need to handle the bait directly",
-            "Must be used inside a tamper-resistant bait station",
-            "Affordable option for sustained outdoor baiting",
-          ]}
-          asin="B071GNVKTK"
-          bestFor="Best Value"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />
       </div>
       <p>
