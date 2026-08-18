@@ -846,10 +846,7 @@ export default function DampProofPaintMouldTreatmentPage() {
         Johnstone&apos;s is a well-established UK paint brand used by
         professional decorators, and the anti-mould formulation is suitable for
         bathrooms, kitchens, bedrooms and any room previously affected by
-        condensation mould. For landlords who are repainting a full room as part
-        of a mould remediation or end-of-tenancy turnaround, the 2.5L
-        Johnstone&apos;s is significantly more cost-effective per square metre
-        than buying multiple small tins of Ronseal.{" "}
+        condensation mould.{" "}
       </p>{" "}
       <p>
         <strong>Pros:</strong>
