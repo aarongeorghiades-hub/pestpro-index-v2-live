@@ -787,10 +787,7 @@ export default function ProfessionalInsectLightTrapsPage() {
         Aluminium-cased units (such as the Insect-O-Cutor PlusZap) are more
         durable, corrosion-resistant, and easier to clean to food-safe
         standards. They cost more upfront but last significantly longer in
-        demanding commercial environments. Plastic-cased units (such as the
-        Aspectek models) are lighter and cheaper, making them practical for
-        offices, garages, and non-food commercial spaces where the unit will not
-        be subjected to steam, grease, or aggressive cleaning chemicals.{" "}
+        demanding commercial environments.{" "}
       </p>{" "}
       <h3>Ease of Bulb Replacement</h3>{" "}
       <p>
