@@ -200,6 +200,13 @@ export default function BestProfessionalBirdNettingKitsPage() {
         </Callout>
       </div>
 
+      <p>
+        We selected these bird netting kits on published specifications and
+        manufacturer information, weighing mesh size against the species each
+        kit is intended to exclude, net material and strength, and the
+        completeness of the fixings supplied.
+      </p>
+
       {/* At a Glance */}
       <h2 id="at-a-glance">At a Glance</h2>
       <p>

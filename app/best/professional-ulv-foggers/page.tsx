@@ -175,6 +175,13 @@ export default function ProfessionalULVFoggersPage() {
         </p>
       </div>
 
+      <p>
+        We selected these ULV foggers on published specifications and
+        manufacturer information, weighing stated droplet size, tank capacity,
+        flow rate control, and suitability for the treatment areas they are
+        marketed for.
+      </p>
+
       <h2 id="intro">Why Use a ULV Fogger?</h2>
       <p>
         If you manage rental properties, warehouses, or commercial premises, a

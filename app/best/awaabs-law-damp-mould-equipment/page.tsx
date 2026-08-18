@@ -242,6 +242,13 @@ export default function AwaabsLawDampMouldEquipmentPage() {
         />
       </div>
 
+      <p>
+        We selected this damp and mould monitoring equipment on published
+        specifications and manufacturer information, weighing measurement
+        accuracy, ease of daily use by tenants and housing staff, and
+        suitability for evidencing conditions in UK rented homes.
+      </p>
+
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Damp &amp; Mould Equipment at a Glance</h2>
       <p>

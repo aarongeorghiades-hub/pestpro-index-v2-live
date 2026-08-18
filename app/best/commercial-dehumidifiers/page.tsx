@@ -242,6 +242,13 @@ export default function BestCommercialDehumidifiersPage() {
         />
       </div>
 
+      <p>
+        We selected these commercial dehumidifiers on published specifications
+        and manufacturer information, weighing stated extraction rate, tank or
+        drainage arrangement, and suitability for the room sizes and duty cycles
+        they are marketed for.
+      </p>
+
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Commercial Dehumidifiers at a Glance</h2>
       <p>

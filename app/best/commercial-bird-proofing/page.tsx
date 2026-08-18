@@ -283,6 +283,13 @@ export default function BestCommercialBirdProofingPage() {
         </Callout>
       </div>
 
+      <p>
+        We selected these commercial bird proofing products on published
+        specifications and manufacturer information, weighing durability in UK
+        weather, coverage per unit, and suitability for the building surfaces
+        they are most often fitted to.
+      </p>
+
       {/* At a Glance */}
       <h2 id="at-a-glance">Best Commercial Bird Proofing at a Glance</h2>
       <p>

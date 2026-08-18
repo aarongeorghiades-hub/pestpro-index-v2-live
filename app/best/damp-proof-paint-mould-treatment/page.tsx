@@ -245,6 +245,13 @@ export default function DampProofPaintMouldTreatmentPage() {
         landlords with a documented remediation record if a complaint is raised
         under Awaab&apos;s Law or HHSRS.{" "}
       </p>{" "}
+      <p>
+        {" "}
+        We selected these damp proofing paints and mould treatments on published
+        specifications and manufacturer information, weighing the surfaces each
+        product is formulated for, stated coverage, and ease of application for
+        non-specialist users.{" "}
+      </p>{" "}
       {/* At a Glance */}{" "}
       <h2 id="at-a-glance">
         Best Damp-Proof Paint &amp; Mould Treatment at a Glance
@@ -435,25 +442,6 @@ export default function DampProofPaintMouldTreatmentPage() {
           ]}
         />{" "}
       </div>{" "}
-      <p>
-        {" "}
-        The Dryzone Mould Remover is the choice for landlords dealing with mould
-        on <strong>porous surfaces</strong> &mdash; bare plaster, render,
-        exposed masonry and unpainted concrete. Where supermarket sprays sit on
-        the surface and kill only what they touch, the Dryzone formula contains
-        a surfactant system that breaks down the mould&apos;s protective biofilm
-        before the biocide penetrates into the substrate. This deeper
-        penetration is critical on porous materials where mould hyphae extend
-        well below the visible surface.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Dryzone is the UK&apos;s leading damp-proofing brand, and their mould
-        remover is formulated specifically for the building materials that
-        professional damp surveyors encounter daily. If your rental properties
-        have exposed brickwork, lime plaster, or unfinished render with mould
-        growth, this is the product to reach for before HG or Zinsser.{" "}
-      </p>{" "}
       <p>
         <strong>Pros:</strong>
       </p>{" "}

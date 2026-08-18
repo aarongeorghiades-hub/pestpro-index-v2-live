@@ -441,7 +441,7 @@ export default function BestSilverfishTreatmentsPage() {
         <ProductCard
           name="Ready Steady Defend Silverfish Killer Spray 1L"
           features={[
-            "Cypermethrin + Pyriproxyfen formula",
+            "Dual-action contact and residual formula",
             "HSE registered for amateur use",
             "12-week residual protection",
             "Non-staining, low odour, water-based",

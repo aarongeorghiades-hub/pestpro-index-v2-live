@@ -190,6 +190,13 @@ export default function ProfessionalBedBugSteamersPage() {
         prevention programme.
       </p>
 
+      <p>
+        We selected these bed bug steamers on published specifications and
+        manufacturer information, weighing stated steam temperature at the
+        nozzle, tank capacity and run time, and the attachments supplied for
+        treating seams, frames and upholstery.
+      </p>
+
       <h2 id="why-steam">
         Why Steam Is the Gold Standard for Rental Properties
       </h2>
