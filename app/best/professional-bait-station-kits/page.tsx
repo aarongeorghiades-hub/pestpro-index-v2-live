@@ -385,7 +385,6 @@ export default function ProfessionalBaitStationKitsPage() {
         <li>
           Only 2 stations — may need additional units for larger properties
         </li>
-        <li>Per-unit cost higher than the 4-pack</li>
         <li>Bait not included</li>
       </ul>
 
