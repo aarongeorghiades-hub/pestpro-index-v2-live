@@ -700,11 +700,11 @@ export default function BestCommercialDehumidifiersPage() {
       </ul>
       <p>
         <strong>Verdict:</strong> The VonHaus 30L is the best budget option for
-        landlords who want high extraction and Wi-Fi monitoring without the
-        premium price tag. It does not match the build quality of the electriQ
-        or the refinement of the Meaco units, but with 30L extraction and app
-        control, the value proposition is difficult to ignore. Ideal for
-        landlords managing remote properties on a budget.
+        landlords who want high extraction and Wi-Fi monitoring. It does not
+        match the build quality of the electriQ or the refinement of the Meaco
+        units, but with 30L extraction and app control, the value proposition is
+        difficult to ignore. Ideal for landlords managing remote properties on a
+        budget.
       </p>
 
       {/* Sizing Guide */}
