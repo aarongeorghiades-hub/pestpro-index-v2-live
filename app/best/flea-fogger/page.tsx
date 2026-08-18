@@ -89,19 +89,139 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B00GKHI2PW",
+    rank: 1,
+    cardName: "Indorex Defence Household Flea Spray 500ml",
+    cardLabel: "Best Overall",
+    features: [
+      "10-time Best Flea Product award winner",
+      "Permethrin kills adults + pyriproxyfen IGR prevents eggs for 12 months",
+      "One 500ml can treats a 3-4 bedroom house",
+      "The professional standard for UK flea control",
+    ],
+    tableCells: [
+      "Indorex Defence Household Flea Spray 500ml",
+      "IGR spray",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Indorex Defence Household Flea Spray 500ml",
+    tocLabel: "Best Overall",
+    tocName: "Indorex Defence Flea Spray",
+  },
+  {
+    anchorId: "best-natural",
+    asin: "B077M5TTHL",
+    rank: 2,
+    cardName: "Zero In Natural Flea Bomb 150ml — One-Shot Aerosol",
+    cardLabel: "Best Natural",
+    features: [
+      "Fire-free, chemical-free whole-room flea bomb",
+      "Natural pyrethrin formula — no smoke or residue",
+      "Treats up to 40m³ per unit",
+      "Safe near carpets, soft furnishings and bedding",
+    ],
+    tableCells: [
+      "Zero In Natural Flea Bomb 150ml",
+      "Natural aerosol",
+      "Best Natural",
+    ],
+    h2Label: "Best Natural",
+    h2Name: "Zero In Natural Flea Bomb 150ml",
+    tocLabel: "Best Natural",
+    tocName: "Zero In Natural Flea Bomb",
+  },
+  {
+    anchorId: "best-large",
+    asin: "B097F82JSG",
+    rank: 3,
+    cardName: "NOPE! CP Flea Spray 500ml for the Home",
+    cardLabel: "Best Large Room",
+    features: [
+      "Fast-acting odourless cypermethrin formula",
+      "3-month residual action on treated surfaces",
+      "Non-staining — safe for carpets, soft furnishings, mattresses",
+      "Ideal complement to a flea fogger treatment",
+    ],
+    tableCells: [
+      "NOPE! CP Flea Spray 500ml for the Home",
+      "Cypermethrin spray",
+      "Best Large Room",
+    ],
+    h2Label: "Best Large Room",
+    h2Name: "NOPE! CP Flea Spray 500ml for the Home",
+    tocLabel: "Best Large Room",
+    tocName: "NOPE! CP Flea Spray 500ml",
+  },
+  {
+    anchorId: "best-twin",
+    asin: "B0D7WFDYD2",
+    rank: 4,
+    cardName: "Strikeback Super Strength Triple Action Flea Spray 1L",
+    cardLabel: "Best Twin Pack",
+    features: [
+      "Triple-action: cypermethrin, chrysanthemum extract + pyriproxyfen IGR",
+      "Kills adults on contact, stops eggs hatching",
+      "1L trigger spray for precise, targeted application",
+      "Trusted UK brand since 2007",
+    ],
+    tableCells: [
+      "Strikeback Super Strength Triple Action Flea Spray 1L",
+      "Triple-action spray",
+      "Best Twin Pack",
+    ],
+    h2Label: "Best Twin Pack",
+    h2Name: "Strikeback Super Strength Triple Action Flea Spray 1L",
+    tocLabel: "Best Twin Pack",
+    tocName: "Strikeback Triple Action Flea Spray",
+  },
+  {
+    anchorId: "best-professional",
+    asin: "B09GYGC5FL",
+    rank: 5,
+    cardName: "Pest Expert Formula C+ Flea Killer Spray 1L",
+    cardLabel: "Best Professional",
+    features: [
+      "Maximum-strength spray from the UK's leading pest control brand",
+      "Three active ingredients including pyriproxyfen IGR",
+      "12-week residual protection on treated surfaces",
+      "Water-based — safe for carpets and fabrics once dry",
+    ],
+    tableCells: [
+      "Pest Expert Formula C+ Flea Killer Spray 1L",
+      "Professional spray",
+      "Best Professional",
+    ],
+    h2Label: "Best Professional",
+    h2Name: "Pest Expert Formula C+ Flea Killer Spray 1L",
+    tocLabel: "Best Professional",
+    tocName: "Pest Expert Formula C+",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Flea Foggers at a Glance" },
-  { id: "best-overall", title: "Best Overall — Indorex Defence Flea Spray" },
-  { id: "best-natural", title: "Best Natural — Zero In Natural Flea Bomb" },
-  { id: "best-large", title: "Best Large Room — NOPE! CP Flea Spray 500ml" },
-  {
-    id: "best-twin",
-    title: "Best Twin Pack — Strikeback Triple Action Flea Spray",
-  },
-  {
-    id: "best-professional",
-    title: "Best Professional — Pest Expert Formula C+",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "How to Choose the Right Flea Fogger" },
   { id: "how-to-use", title: "How to Use a Flea Fogger Safely" },
   { id: "faq", title: "Frequently Asked Questions" },
@@ -263,50 +383,26 @@ export default function BestFleaFoggerPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            <td>Indorex Defence Household Flea Spray 500ml</td>
-            <td>IGR spray</td>
-            <td>Best Overall</td>
-          </tr>{" "}
-          <tr>
-            <td>Zero In Natural Flea Bomb 150ml</td>
-            <td>Natural aerosol</td>
-            <td>Best Natural</td>
-          </tr>{" "}
-          <tr>
-            <td>NOPE! CP Flea Spray 500ml for the Home</td>
-            <td>Cypermethrin spray</td>
-            <td>Best Large Room</td>
-          </tr>{" "}
-          <tr>
-            <td>Strikeback Super Strength Triple Action Flea Spray 1L</td>
-            <td>Triple-action spray</td>
-            <td>Best Twin Pack</td>
-          </tr>{" "}
-          <tr>
-            <td>Pest Expert Formula C+ Flea Killer Spray 1L</td>
-            <td>Professional spray</td>
-            <td>Best Professional</td>
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
-      <h2 id="best-overall">
-        Best Overall — Indorex Defence Household Flea Spray 500ml
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Indorex Defence Household Flea Spray 500ml"
-          rank={1}
-          features={[
-            "10-time Best Flea Product award winner",
-            "Permethrin kills adults + pyriproxyfen IGR prevents eggs for 12 months",
-            "One 500ml can treats a 3-4 bedroom house",
-            "The professional standard for UK flea control",
-          ]}
-          asin="B00GKHI2PW"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -347,20 +443,17 @@ export default function BestFleaFoggerPage() {
         <li>Must vacate the room during application and allow to dry</li>{" "}
         <li>Manual spray requires more effort than a one-shot fogger</li>{" "}
       </ul>{" "}
-      <h2 id="best-natural">Best Natural — Zero In Natural Flea Bomb 150ml</h2>{" "}
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Zero In Natural Flea Bomb 150ml — One-Shot Aerosol"
-          rank={2}
-          features={[
-            "Fire-free, chemical-free whole-room flea bomb",
-            "Natural pyrethrin formula — no smoke or residue",
-            "Treats up to 40m³ per unit",
-            "Safe near carpets, soft furnishings and bedding",
-          ]}
-          asin="B077M5TTHL"
-          bestFor="Best Natural"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -403,22 +496,17 @@ export default function BestFleaFoggerPage() {
         <li>Less residual protection than synthetic alternatives</li>{" "}
         <li>May require repeat applications for heavy infestations</li>{" "}
       </ul>{" "}
-      <h2 id="best-large">
-        Best Large Room — NOPE! CP Flea Spray 500ml for the Home
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="NOPE! CP Flea Spray 500ml for the Home"
-          rank={3}
-          features={[
-            "Fast-acting odourless cypermethrin formula",
-            "3-month residual action on treated surfaces",
-            "Non-staining — safe for carpets, soft furnishings, mattresses",
-            "Ideal complement to a flea fogger treatment",
-          ]}
-          asin="B097F82JSG"
-          bestFor="Best Large Room"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -461,22 +549,17 @@ export default function BestFleaFoggerPage() {
           Best used alongside a fogger rather than as a standalone treatment
         </li>{" "}
       </ul>{" "}
-      <h2 id="best-twin">
-        Best Twin Pack — Strikeback Super Strength Triple Action Flea Spray 1L
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Strikeback Super Strength Triple Action Flea Spray 1L"
-          rank={4}
-          features={[
-            "Triple-action: cypermethrin, chrysanthemum extract + pyriproxyfen IGR",
-            "Kills adults on contact, stops eggs hatching",
-            "1L trigger spray for precise, targeted application",
-            "Trusted UK brand since 2007",
-          ]}
-          asin="B0D7WFDYD2"
-          bestFor="Best Twin Pack"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -518,22 +601,17 @@ export default function BestFleaFoggerPage() {
         <li>Does not penetrate hidden voids like a fumigation device</li>{" "}
         <li>Best results require thorough coverage of all floor areas</li>{" "}
       </ul>{" "}
-      <h2 id="best-professional">
-        Best Professional — Pest Expert Formula C+ Flea Killer Spray 1L
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Formula C+ Flea Killer Spray 1L"
-          rank={5}
-          features={[
-            "Maximum-strength spray from the UK's leading pest control brand",
-            "Three active ingredients including pyriproxyfen IGR",
-            "12-week residual protection on treated surfaces",
-            "Water-based — safe for carpets and fabrics once dry",
-          ]}
-          asin="B09GYGC5FL"
-          bestFor="Best Professional"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>

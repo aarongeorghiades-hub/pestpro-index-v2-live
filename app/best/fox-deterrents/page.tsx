@@ -67,13 +67,139 @@ const breadcrumbSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-ultrasonic",
+    asin: "B075XMS835",
+    rank: 1,
+    cardName: "PestBye Solar Ultrasonic Fox Repeller",
+    cardLabel: "Best Ultrasonic Deterrent",
+    features: [
+      "Solar powered — no batteries needed",
+      "Motion-activated PIR sensor",
+      "Adjustable frequency range",
+      "Weatherproof IP44 rating",
+    ],
+    tableCells: [
+      "PestBye Solar Ultrasonic Fox Repeller",
+      "Electronic deterrent",
+      "Gardens, driveways, patios",
+    ],
+    h2Label: "Best Ultrasonic Deterrent",
+    h2Name: "PestBye Solar Ultrasonic Fox Repeller",
+    tocLabel: "Best Ultrasonic",
+    tocName: "PestBye Solar Repeller",
+  },
+  {
+    anchorId: "best-scent",
+    asin: "B00FAMLXAE",
+    rank: 2,
+    cardName: "Scoot Fox Repellent Concentrate 100g",
+    cardLabel: "Best Scent Repellent",
+    features: [
+      "Mimics rival fox territorial marking",
+      "Non-toxic to pets and plants",
+      "Covers up to 34 sqm per pack",
+      "Established UK fox repellent",
+    ],
+    tableCells: [
+      "Scoot Fox Repellent 100g",
+      "Scent deterrent",
+      "Lawns, flower beds, bin areas",
+    ],
+    h2Label: "Best Scent Repellent",
+    h2Name: "Scoot Fox Repellent",
+    tocLabel: "Best Scent Repellent",
+    tocName: "Scoot Fox Repellent",
+  },
+  {
+    anchorId: "best-sprinkler",
+    asin: "B0153BJ7NQ",
+    rank: 3,
+    cardName: "PestBye Jet Spray Motion-Activated Sprinkler",
+    cardLabel: "Best Overall Deterrent",
+    features: [
+      "120-degree detection arc",
+      "Covers up to 100 sqm",
+      "Connects to standard garden hose",
+      "Battery-powered PIR sensor",
+    ],
+    tableCells: [
+      "PestBye Jet Spray Motion Sprinkler",
+      "Water deterrent",
+      "Lawns, chicken runs, fox paths",
+    ],
+    h2Label: "Best Motion Sprinkler",
+    h2Name: "PestBye Jet Spray",
+    tocLabel: "Best Sprinkler",
+    tocName: "PestBye Jet Spray",
+  },
+  {
+    anchorId: "best-fence",
+    asin: "B0BMNP26FP",
+    rank: 4,
+    cardName: "Coyote Roller Fence Top Spinning Bar",
+    cardLabel: "Best Fence Exclusion",
+    features: [
+      "Spinning aluminium tube",
+      "Prevents climbing over fences",
+      "UV-resistant construction",
+      "Also effective against cats",
+    ],
+    tableCells: [
+      "Fence Top Roller Bar",
+      "Physical exclusion",
+      "Preventing foxes climbing fences",
+    ],
+    h2Label: "Best Fence Exclusion",
+    h2Name: "Fence Top Roller Bar",
+    tocLabel: "Best Fence Exclusion",
+    tocName: "Fence Top Roller Bar",
+  },
+  {
+    anchorId: "best-mesh",
+    asin: "B08MWB89CB",
+    rank: 5,
+    cardName: "Galvanised Welded Steel Mesh 25mm x 25mm",
+    cardLabel: "Best for Chicken Runs",
+    features: [
+      "25mm hole size — fox-proof",
+      "Hot-dip galvanised for rust resistance",
+      "0.9m x 15m roll",
+      "Suitable for burial around perimeters",
+    ],
+    tableCells: [
+      "Galvanised Welded Mesh 25mm",
+      "Physical exclusion",
+      "Protecting chicken/rabbit runs",
+    ],
+    h2Label: "Best Mesh",
+    h2Name: "Galvanised Welded Mesh",
+    tocLabel: "Best Mesh",
+    tocName: "Galvanised Welded Mesh",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Fox Deterrents at a Glance" },
-  { id: "best-ultrasonic", title: "Best Ultrasonic — PestBye Solar Repeller" },
-  { id: "best-scent", title: "Best Scent Repellent — Scoot Fox Repellent" },
-  { id: "best-sprinkler", title: "Best Sprinkler — PestBye Jet Spray" },
-  { id: "best-fence", title: "Best Fence Exclusion — Fence Top Roller Bar" },
-  { id: "best-mesh", title: "Best Mesh — Galvanised Welded Mesh" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Fox Deterrent Buying Guide" },
   { id: "when-to-call", title: "When to Call a Professional" },
 ];
@@ -291,52 +417,27 @@ export default function BestFoxDeterrentsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>PestBye Solar Ultrasonic Fox Repeller</td>{" "}
-            <td>Electronic deterrent</td>{" "}
-            <td>Gardens, driveways, patios</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Scoot Fox Repellent 100g</td> <td>Scent deterrent</td>{" "}
-            <td>Lawns, flower beds, bin areas</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>PestBye Jet Spray Motion Sprinkler</td> <td>Water deterrent</td>{" "}
-            <td>Lawns, chicken runs, fox paths</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Fence Top Roller Bar</td> <td>Physical exclusion</td>{" "}
-            <td>Preventing foxes climbing fences</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Galvanised Welded Mesh 25mm</td> <td>Physical exclusion</td>{" "}
-            <td>Protecting chicken/rabbit runs</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       {/* Best Ultrasonic */}{" "}
-      <h2 id="best-ultrasonic">
-        Best Ultrasonic Deterrent &mdash; PestBye Solar Ultrasonic Fox Repeller
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="PestBye Solar Ultrasonic Fox Repeller"
-          features={[
-            "Solar powered — no batteries needed",
-            "Motion-activated PIR sensor",
-            "Adjustable frequency range",
-            "Weatherproof IP44 rating",
-          ]}
-          asin="B075XMS835"
-          bestFor="Best Ultrasonic Deterrent"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -437,20 +538,17 @@ export default function BestFoxDeterrentsPage() {
         reposition it regularly to prevent habituation.{" "}
       </p>{" "}
       {/* Best Scent Repellent */}{" "}
-      <h2 id="best-scent">Best Scent Repellent &mdash; Scoot Fox Repellent</h2>{" "}
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Scoot Fox Repellent Concentrate 100g"
-          features={[
-            "Mimics rival fox territorial marking",
-            "Non-toxic to pets and plants",
-            "Covers up to 34 sqm per pack",
-            "Established UK fox repellent",
-          ]}
-          asin="B00FAMLXAE"
-          bestFor="Best Scent Repellent"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -541,22 +639,17 @@ export default function BestFoxDeterrentsPage() {
         deterrent methods.{" "}
       </p>{" "}
       {/* Best Sprinkler */}{" "}
-      <h2 id="best-sprinkler">
-        Best Motion Sprinkler &mdash; PestBye Jet Spray
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="PestBye Jet Spray Motion-Activated Sprinkler"
-          features={[
-            "120-degree detection arc",
-            "Covers up to 100 sqm",
-            "Connects to standard garden hose",
-            "Battery-powered PIR sensor",
-          ]}
-          asin="B0153BJ7NQ"
-          bestFor="Best Overall Deterrent"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -667,20 +760,17 @@ export default function BestFoxDeterrentsPage() {
         </Callout>{" "}
       </div>{" "}
       {/* Best Fence Exclusion */}{" "}
-      <h2 id="best-fence">Best Fence Exclusion &mdash; Fence Top Roller Bar</h2>{" "}
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Coyote Roller Fence Top Spinning Bar"
-          features={[
-            "Spinning aluminium tube",
-            "Prevents climbing over fences",
-            "UV-resistant construction",
-            "Also effective against cats",
-          ]}
-          asin="B0BMNP26FP"
-          bestFor="Best Fence Exclusion"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -778,20 +868,17 @@ export default function BestFoxDeterrentsPage() {
         aluminium construction will last for many years.{" "}
       </p>{" "}
       {/* Best Mesh */}{" "}
-      <h2 id="best-mesh">Best Mesh &mdash; Galvanised Welded Mesh</h2>{" "}
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Galvanised Welded Steel Mesh 25mm x 25mm"
-          features={[
-            "25mm hole size — fox-proof",
-            "Hot-dip galvanised for rust resistance",
-            "0.9m x 15m roll",
-            "Suitable for burial around perimeters",
-          ]}
-          asin="B08MWB89CB"
-          bestFor="Best for Chicken Runs"
-          rank={5}
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>

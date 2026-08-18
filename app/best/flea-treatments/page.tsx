@@ -67,14 +67,90 @@ const breadcrumbSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B00GKHI2PW",
+    rank: 1,
+    cardName: "Indorex Household Flea Spray 500ml",
+    cardLabel: "Best Overall",
+    features: [
+      "12-month household flea protection",
+      "Contains IGR to break the flea life cycle",
+      "Recommended by UK veterinary surgeries",
+      "Single can treats average 2-bed house",
+    ],
+    tableCells: [
+      "Indorex Household Flea Spray 500ml",
+      "Aerosol spray + IGR",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Indorex Household Flea Spray 500ml",
+    tocLabel: "Best Overall",
+    tocName: "Indorex Household Flea Spray",
+  },
+  {
+    anchorId: "best-powder",
+    asin: "B00KHV77Y4",
+    rank: 2,
+    cardName: "Zero In Home Flea Powder 300g",
+    cardLabel: "Best Powder",
+    features: [
+      "Treats carpets, rugs, and pet bedding",
+      "Fine powder penetrates deep into carpet fibres",
+      "Easy-to-use shaker container",
+    ],
+    tableCells: ["Zero In Home Flea Powder 300g", "Flea powder", "Best Powder"],
+    h2Label: "Best Powder",
+    h2Name: "Zero In Home Flea Powder 300g",
+    tocLabel: "Best Powder",
+    tocName: "Zero In Home Flea Powder",
+  },
+  {
+    anchorId: "best-pet-brand",
+    asin: "B001TQRC0K",
+    rank: 3,
+    cardName: "Beaphar Household Flea Powder 300g",
+    cardLabel: "Best Pet Brand",
+    features: [
+      "From trusted pet care brand Beaphar",
+      "Kills fleas and larvae in carpets and bedding",
+      "Safe for use around pets once settled",
+      "Effective residual protection",
+    ],
+    tableCells: [
+      "Beaphar Household Flea Powder 300g",
+      "Flea powder",
+      "Best Pet Brand",
+    ],
+    h2Label: "Best Pet Brand",
+    h2Name: "Beaphar Household Flea Powder 300g",
+    tocLabel: "Best Pet Brand",
+    tocName: "Beaphar Household Flea Powder",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Flea Treatments at a Glance" },
-  { id: "best-overall", title: "Best Overall — Indorex Household Flea Spray" },
-  { id: "best-powder", title: "Best Powder — Zero In Home Flea Powder" },
-  {
-    id: "best-pet-brand",
-    title: "Best Pet Brand — Beaphar Household Flea Powder",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "How to Choose the Right Flea Treatment" },
   { id: "tips", title: "Flea Treatment Tips for Best Results" },
 ];
@@ -294,41 +370,27 @@ export default function BestFleaTreatmentsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Indorex Household Flea Spray 500ml</td>{" "}
-            <td>Aerosol spray + IGR</td> <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Zero In Home Flea Powder 300g</td> <td>Flea powder</td>{" "}
-            <td>Best Powder</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Beaphar Household Flea Powder 300g</td> <td>Flea powder</td>{" "}
-            <td>Best Pet Brand</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       {/* Best Overall */}{" "}
-      <h2 id="best-overall">
-        Best Overall &mdash; Indorex Household Flea Spray 500ml
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Indorex Household Flea Spray 500ml"
-          features={[
-            "12-month household flea protection",
-            "Contains IGR to break the flea life cycle",
-            "Recommended by UK veterinary surgeries",
-            "Single can treats average 2-bed house",
-          ]}
-          asin="B00GKHI2PW"
-          bestFor="Best Overall"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -433,21 +495,17 @@ export default function BestFleaTreatmentsPage() {
         </Callout>{" "}
       </div>{" "}
       {/* Best Powder */}{" "}
-      <h2 id="best-powder">
-        Best Powder &mdash; Zero In Home Flea Powder 300g
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Zero In Home Flea Powder 300g"
-          features={[
-            "Treats carpets, rugs, and pet bedding",
-            "Fine powder penetrates deep into carpet fibres",
-            "Easy-to-use shaker container",
-          ]}
-          asin="B00KHV77Y4"
-          bestFor="Best Powder"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -525,22 +583,17 @@ export default function BestFleaTreatmentsPage() {
         possible.{" "}
       </p>{" "}
       {/* Best Pet Brand */}{" "}
-      <h2 id="best-pet-brand">
-        Best Pet Brand &mdash; Beaphar Household Flea Powder 300g
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Beaphar Household Flea Powder 300g"
-          features={[
-            "From trusted pet care brand Beaphar",
-            "Kills fleas and larvae in carpets and bedding",
-            "Safe for use around pets once settled",
-            "Effective residual protection",
-          ]}
-          asin="B001TQRC0K"
-          bestFor="Best Pet Brand"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>

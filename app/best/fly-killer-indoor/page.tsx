@@ -123,15 +123,116 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B0B41H37HB",
+    rank: 1,
+    cardName: "Insect-O-Cutor PlusZap 30W Indoor Fly Killer",
+    cardLabel: "Best Overall",
+    features: [
+      "World's leading flying insect control brand, founded 1962",
+      "30W killing grid with aluminium construction",
+      "Pre-installed UV lamps — ready to use out of the box",
+      "Deep catch tray for easy cleaning",
+      "Suitable for kitchens, warehouses and retail environments",
+    ],
+    tableCells: [
+      "Insect-O-Cutor PlusZap 30W",
+      "Electric UV zapper",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Insect-O-Cutor PlusZap 30W",
+    tocLabel: "Best Overall",
+    tocName: "Insect-O-Cutor PlusZap 30W",
+  },
+  {
+    anchorId: "best-seller",
+    asin: "B017TETOE2",
+    rank: 2,
+    cardName: "Aspectek Professional 30W Electronic Insect Killer",
+    cardLabel: "Best Value",
+    features: [
+      "Long-established indoor electronic insect killer",
+      "30W UV bulbs with powerful electrified grid",
+      "Removable washable tray for easy cleaning",
+      "UK plug included — ready to use",
+    ],
+    tableCells: [
+      "Aspectek Professional 30W",
+      "Electric UV zapper",
+      "Best Value",
+    ],
+    h2Label: "Best Value",
+    h2Name: "Aspectek Professional 30W",
+    tocLabel: "Best Value",
+    tocName: "Aspectek Professional 30W",
+  },
+  {
+    anchorId: "best-quiet",
+    asin: "B0BVKGC941",
+    rank: 3,
+    cardName: "Quiet Hybrid Spectrum Fly Zapper (UK Plug)",
+    cardLabel: "Quietest Option",
+    features: [
+      "50% quieter than standard zappers",
+      "UV and black light combination attracts wider range of insects",
+      "4,200V zapping grid for instant kill",
+      "Hangable or freestanding — flexible placement",
+      "Suitable for bedrooms, kitchens and living rooms",
+    ],
+    tableCells: [
+      "Quiet Hybrid Spectrum Zapper",
+      "Electric UV zapper",
+      "Quietest Option",
+    ],
+    h2Label: "Quietest Option",
+    h2Name: "Quiet Hybrid Spectrum Fly Zapper",
+    tocLabel: "Quietest Option",
+    tocName: "Quiet Hybrid Spectrum Fly Zapper",
+  },
+  {
+    anchorId: "best-value",
+    asin: "B086DK71VX",
+    rank: 4,
+    cardName: "Aspectek Upgraded 20W Bug Zapper",
+    cardLabel: "Best Value",
+    features: [
+      "365nm UVA bulbs — effective fly attraction",
+      "2800V electrified grid for reliable kills",
+      "Detachable grid design for easy bulb replacement",
+      "Protective cage for safety around children and pets",
+      "UK plug included",
+    ],
+    tableCells: ["Aspectek Upgraded 20W", "Electric UV zapper", "Best Value"],
+    h2Label: "Best Value",
+    h2Name: "Aspectek Upgraded 20W Bug Zapper",
+    tocLabel: "Best Value",
+    tocName: "Aspectek Upgraded 20W Bug Zapper",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Indoor Fly Killers at a Glance" },
-  { id: "best-overall", title: "Best Overall — Insect-O-Cutor PlusZap 30W" },
-  { id: "best-seller", title: "Best Value — Aspectek Professional 30W" },
-  {
-    id: "best-quiet",
-    title: "Quietest Option — Quiet Hybrid Spectrum Fly Zapper",
-  },
-  { id: "best-value", title: "Best Value — Aspectek Upgraded 20W Bug Zapper" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "How to Choose the Right Indoor Fly Killer" },
   { id: "placement", title: "Placement Guide" },
   { id: "faq", title: "Frequently Asked Questions" },
@@ -268,27 +369,13 @@ export default function BestFlyKillerIndoorPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            <td>Insect-O-Cutor PlusZap 30W</td>
-            <td>Electric UV zapper</td>
-            <td>Best Overall</td>
-          </tr>{" "}
-          <tr>
-            <td>Aspectek Professional 30W</td>
-            <td>Electric UV zapper</td>
-            <td>Best Value</td>
-          </tr>{" "}
-          <tr>
-            <td>Quiet Hybrid Spectrum Zapper</td>
-            <td>Electric UV zapper</td>
-            <td>Quietest Option</td>
-          </tr>{" "}
-          <tr>
-            <td>Aspectek Upgraded 20W</td>
-            <td>Electric UV zapper</td>
-            <td>Best Value</td>
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       <div className="not-prose">
@@ -298,21 +385,17 @@ export default function BestFlyKillerIndoorPage() {
           label="Typical running cost of a domestic electric fly killer"
         />{" "}
       </div>{" "}
-      <h2 id="best-overall">Best Overall — Insect-O-Cutor PlusZap 30W</h2>{" "}
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Insect-O-Cutor PlusZap 30W Indoor Fly Killer"
-          rank={1}
-          features={[
-            "World's leading flying insect control brand, founded 1962",
-            "30W killing grid with aluminium construction",
-            "Pre-installed UV lamps — ready to use out of the box",
-            "Deep catch tray for easy cleaning",
-            "Suitable for kitchens, warehouses and retail environments",
-          ]}
-          asin="B0B41H37HB"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -360,20 +443,17 @@ export default function BestFlyKillerIndoorPage() {
         <li>Larger unit — may be overkill for a single small room</li>{" "}
         <li>Electric zapper scatters some insect debris</li>{" "}
       </ul>{" "}
-      <h2 id="best-seller">Best Value — Aspectek Professional 30W</h2>{" "}
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Aspectek Professional 30W Electronic Insect Killer"
-          rank={2}
-          features={[
-            "Long-established indoor electronic insect killer",
-            "30W UV bulbs with powerful electrified grid",
-            "Removable washable tray for easy cleaning",
-            "UK plug included — ready to use",
-          ]}
-          asin="B017TETOE2"
-          bestFor="Best Value"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -420,23 +500,17 @@ export default function BestFlyKillerIndoorPage() {
           Plastic construction less durable than aluminium alternatives
         </li>{" "}
       </ul>{" "}
-      <h2 id="best-quiet">
-        Quietest Option — Quiet Hybrid Spectrum Fly Zapper
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Quiet Hybrid Spectrum Fly Zapper (UK Plug)"
-          rank={3}
-          features={[
-            "50% quieter than standard zappers",
-            "UV and black light combination attracts wider range of insects",
-            "4,200V zapping grid for instant kill",
-            "Hangable or freestanding — flexible placement",
-            "Suitable for bedrooms, kitchens and living rooms",
-          ]}
-          asin="B0BVKGC941"
-          bestFor="Quietest Option"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -482,21 +556,17 @@ export default function BestFlyKillerIndoorPage() {
         <li>Smaller coverage area than 30W units</li>{" "}
         <li>Less well-known brand</li>{" "}
       </ul>{" "}
-      <h2 id="best-value">Best Value — Aspectek Upgraded 20W Bug Zapper</h2>{" "}
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Aspectek Upgraded 20W Bug Zapper"
-          rank={4}
-          features={[
-            "365nm UVA bulbs — effective fly attraction",
-            "2800V electrified grid for reliable kills",
-            "Detachable grid design for easy bulb replacement",
-            "Protective cage for safety around children and pets",
-            "UK plug included",
-          ]}
-          asin="B086DK71VX"
-          bestFor="Best Value"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>

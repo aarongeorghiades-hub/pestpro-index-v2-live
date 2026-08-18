@@ -115,22 +115,139 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B00GKHI2PW",
+    rank: 1,
+    cardName: "Indorex Defence Flea Spray 500ml",
+    cardLabel: "Best Overall",
+    features: [
+      "Permethrin + pyriproxyfen IGR dual-action formula",
+      "10-time Best Flea Product award winner",
+      "Up to 12 months residual protection from one application",
+      "One can treats a 3-4 bedroom house",
+    ],
+    tableCells: [
+      "Indorex Defence 500ml",
+      "IGR — 12 months protection",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Indorex Defence Flea Spray 500ml",
+    tocLabel: "Best Overall",
+    tocName: "Indorex Defence 500ml",
+  },
+  {
+    anchorId: "best-twin",
+    asin: "B07D19P8S2",
+    rank: 2,
+    cardName: "Indorex Defence Flea Spray 2x500ml Twin Pack",
+    cardLabel: "Best Twin Pack",
+    features: [
+      "Same award-winning Indorex formula — two full cans",
+      "Complete whole-home treatment with enough for follow-up",
+      "Ideal for larger homes or recurring infestations",
+      "Second can on hand if the cycle is not broken first time",
+    ],
+    tableCells: [
+      "Indorex Defence 2x500ml",
+      "Twin pack — whole-home treatment",
+      "Best Twin Pack",
+    ],
+    h2Label: "Best Twin Pack",
+    h2Name: "Indorex Defence Flea Spray 2x500ml",
+    tocLabel: "Best Twin Pack",
+    tocName: "Indorex Defence 2x500ml",
+  },
+  {
+    anchorId: "best-professional",
+    asin: "B09GYGC5FL",
+    rank: 3,
+    cardName: "Pest Expert Formula C+ Flea Killer Spray 1L",
+    cardLabel: "Best Professional-Grade",
+    features: [
+      "Triple-action: cypermethrin, pyriproxyfen IGR, and natural pyrethrum",
+      "Maximum-strength formula from a leading UK pest control brand",
+      "12-week residual protection on treated surfaces",
+      "Water-based — safe for carpets, furnishings, and pet bedding once dry",
+    ],
+    tableCells: [
+      "Pest Expert Formula C+ 1L",
+      "Triple-action — 12-week residual",
+      "Best Professional",
+    ],
+    h2Label: "Best Professional",
+    h2Name: "Pest Expert Formula C+ Flea Killer Spray 1L",
+    tocLabel: "Best Professional",
+    tocName: "Pest Expert Formula C+ 1L",
+  },
+  {
+    anchorId: "best-fast",
+    asin: "B001MIXHMM",
+    rank: 4,
+    cardName: "RIP Fleas Extra Household Flea Spray",
+    cardLabel: "Best Fast-Acting",
+    features: [
+      "Permethrin-based contact killer with residual protection",
+      "Fast-acting formula for carpets, pet bedding and soft furnishings",
+      "Popular with cat and dog owners as a home treatment between vet appointments",
+      "Effective residual layer continues killing fleas after application",
+    ],
+    tableCells: [
+      "RIP Fleas Extra Household Flea Spray",
+      "Fast knockdown + residual protection",
+      "Best Fast-Acting",
+    ],
+    h2Label: "Best Fast-Acting",
+    h2Name: "RIP Fleas Extra Household Flea Spray",
+    tocLabel: "Best Fast-Acting",
+    tocName: "RIP Fleas Extra Household Flea Spray",
+  },
+  {
+    anchorId: "best-value",
+    asin: "B0CMPY8ZXP",
+    rank: 5,
+    cardName: "Bob Martin Clear Plus Flea Spray 500ml Twin Pack",
+    cardLabel: "Best Budget",
+    features: [
+      "Twin-pack from one of the UK's most trusted pet care brands",
+      "Kills fleas, ticks and dust mites on contact",
+      "Safe for use on furniture, carpets and pet bedding",
+      "500ml per can — enough for a full home treatment",
+    ],
+    tableCells: [
+      "Bob Martin Clear Plus Flea Spray 500ml Twin Pack",
+      "Twin-pack — kills fleas, ticks and dust mites",
+      "Best Value",
+    ],
+    h2Label: "Best Value",
+    h2Name: "Bob Martin Clear Plus Flea Spray 500ml Twin Pack",
+    tocLabel: "Best Value",
+    tocName: "Bob Martin Clear Plus Flea Spray 500ml Twin Pack",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Flea Sprays at a Glance" },
-  { id: "best-overall", title: "Best Overall — Indorex Defence 500ml" },
-  { id: "best-twin", title: "Best Twin Pack — Indorex Defence 2x500ml" },
-  {
-    id: "best-professional",
-    title: "Best Professional — Pest Expert Formula C+ 1L",
-  },
-  {
-    id: "best-fast",
-    title: "Best Fast-Acting — RIP Fleas Extra Household Flea Spray",
-  },
-  {
-    id: "best-value",
-    title: "Best Value — Bob Martin Clear Plus Flea Spray 500ml Twin Pack",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "How to Choose the Right Flea Spray" },
   { id: "application", title: "How to Apply Flea Spray for Best Results" },
   { id: "faq", title: "Frequently Asked Questions" },
@@ -297,36 +414,13 @@ export default function BestFleaSprayPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Indorex Defence 500ml</td> <td>IGR — 12 months protection</td>{" "}
-            <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Indorex Defence 2x500ml</td>{" "}
-            <td>Twin pack — whole-home treatment</td>{" "}
-            <td>Best Twin Pack</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Formula C+ 1L</td>{" "}
-            <td>Triple-action — 12-week residual</td>{" "}
-            <td>Best Professional</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>RIP Fleas Extra Household Flea Spray</td>{" "}
-            <td>Fast knockdown + residual protection</td>{" "}
-            <td>Best Fast-Acting</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Bob Martin Clear Plus Flea Spray 500ml Twin Pack</td>{" "}
-            <td>Twin-pack — kills fleas, ticks and dust mites</td>{" "}
-            <td>Best Value</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       <div className="not-prose">
@@ -337,20 +431,17 @@ export default function BestFleaSprayPage() {
         />{" "}
       </div>{" "}
       {/* Product 1 */}{" "}
-      <h2 id="best-overall">Best Overall — Indorex Defence Flea Spray 500ml</h2>{" "}
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Indorex Defence Flea Spray 500ml"
-          rank={1}
-          features={[
-            "Permethrin + pyriproxyfen IGR dual-action formula",
-            "10-time Best Flea Product award winner",
-            "Up to 12 months residual protection from one application",
-            "One can treats a 3-4 bedroom house",
-          ]}
-          asin="B00GKHI2PW"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -407,22 +498,17 @@ export default function BestFleaSprayPage() {
         <li>Slightly higher price than basic alternatives</li>{" "}
       </ul>{" "}
       {/* Product 2 */}{" "}
-      <h2 id="best-twin">
-        Best Twin Pack — Indorex Defence Flea Spray 2x500ml
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Indorex Defence Flea Spray 2x500ml Twin Pack"
-          rank={2}
-          features={[
-            "Same award-winning Indorex formula — two full cans",
-            "Complete whole-home treatment with enough for follow-up",
-            "Ideal for larger homes or recurring infestations",
-            "Second can on hand if the cycle is not broken first time",
-          ]}
-          asin="B07D19P8S2"
-          bestFor="Best Twin Pack"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -471,22 +557,17 @@ export default function BestFleaSprayPage() {
         <li>Same aerosol format — still requires room ventilation</li>{" "}
       </ul>{" "}
       {/* Product 3 */}{" "}
-      <h2 id="best-professional">
-        Best Professional — Pest Expert Formula C+ Flea Killer Spray 1L
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Formula C+ Flea Killer Spray 1L"
-          rank={3}
-          features={[
-            "Triple-action: cypermethrin, pyriproxyfen IGR, and natural pyrethrum",
-            "Maximum-strength formula from a leading UK pest control brand",
-            "12-week residual protection on treated surfaces",
-            "Water-based — safe for carpets, furnishings, and pet bedding once dry",
-          ]}
-          asin="B09GYGC5FL"
-          bestFor="Best Professional-Grade"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -538,22 +619,17 @@ export default function BestFleaSprayPage() {
         <li>Higher price than basic aerosol alternatives</li>{" "}
       </ul>{" "}
       {/* Product 4 */}{" "}
-      <h2 id="best-fast">
-        Best Fast-Acting — RIP Fleas Extra Household Flea Spray
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="RIP Fleas Extra Household Flea Spray"
-          rank={4}
-          features={[
-            "Permethrin-based contact killer with residual protection",
-            "Fast-acting formula for carpets, pet bedding and soft furnishings",
-            "Popular with cat and dog owners as a home treatment between vet appointments",
-            "Effective residual layer continues killing fleas after application",
-          ]}
-          asin="B001MIXHMM"
-          bestFor="Best Fast-Acting"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -604,22 +680,17 @@ export default function BestFleaSprayPage() {
         <li>May need 2 cans for a whole house</li>{" "}
       </ul>{" "}
       {/* Product 5 */}{" "}
-      <h2 id="best-value">
-        Best Value — Bob Martin Clear Plus Flea Spray 500ml Twin Pack
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Bob Martin Clear Plus Flea Spray 500ml Twin Pack"
-          rank={5}
-          features={[
-            "Twin-pack from one of the UK's most trusted pet care brands",
-            "Kills fleas, ticks and dust mites on contact",
-            "Safe for use on furniture, carpets and pet bedding",
-            "500ml per can — enough for a full home treatment",
-          ]}
-          asin="B0CMPY8ZXP"
-          bestFor="Best Budget"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>
