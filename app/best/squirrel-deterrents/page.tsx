@@ -69,19 +69,139 @@ const breadcrumbSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B00BXLF3WU",
+    rank: 1,
+    cardName: "Jacobi Jayne Squirrel Buster Bird Feeder",
+    cardLabel: "Best Overall",
+    features: [
+      "Weight-activated closing mechanism",
+      "All-metal construction",
+      "5-year manufacturer warranty",
+      "Also deters pigeons",
+    ],
+    tableCells: [
+      "Jacobi Jayne Squirrel Buster Bird Feeder",
+      "Squirrel-proof feeder",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Jacobi Jayne Squirrel Buster Bird Feeder",
+    tocLabel: "Best Overall",
+    tocName: "Jacobi Jayne Squirrel Buster",
+  },
+  {
+    anchorId: "best-spray",
+    asin: "B08DDCJJ1N",
+    rank: 2,
+    cardName: "RepellShield Squirrel Repellent Spray 250ml",
+    cardLabel: "Best Repellent Spray",
+    features: [
+      "Natural essential oils",
+      "Safe around pets and children",
+      "Made in Germany",
+      "250ml bottle",
+    ],
+    tableCells: [
+      "RepellShield Squirrel Repellent Spray 250ml",
+      "Repellent spray",
+      "Best Repellent Spray",
+    ],
+    h2Label: "Best Repellent Spray",
+    h2Name: "RepellShield Squirrel Repellent Spray",
+    tocLabel: "Best Repellent Spray",
+    tocName: "RepellShield",
+  },
+  {
+    anchorId: "best-baffle",
+    asin: "B07KQJM334",
+    rank: 3,
+    cardName: "Selections Squirrel Proof Bird Feeder Baffle (Pack of 2)",
+    cardLabel: "Best Baffle",
+    features: [
+      "40cm smooth dome design",
+      "Fits feeding station poles",
+      "Pack of 2 included",
+      "Also keeps food dry in rain",
+    ],
+    tableCells: [
+      "Selections Squirrel Proof Bird Feeder Baffle (Pack of 2)",
+      "Pole baffle",
+      "Best Baffle",
+    ],
+    h2Label: "Best Baffle",
+    h2Name: "Selections Squirrel Proof Baffle (Pack of 2)",
+    tocLabel: "Best Baffle",
+    tocName: "Selections Squirrel Proof Baffle",
+  },
+  {
+    anchorId: "best-food-treatment",
+    asin: "B007EAH6K6",
+    rank: 4,
+    cardName: "The Big Cheese Hot Nuts Deterrent Spray 1L",
+    cardLabel: "Best Bird Food Treatment",
+    features: [
+      "1 litre ready-to-use",
+      "Natural capsicum chilli formula",
+      "Harmless to birds — they cannot taste capsaicin",
+      "Well-known UK pest brand",
+    ],
+    tableCells: [
+      "The Big Cheese Hot Nuts Deterrent Spray 1L",
+      "Bird food treatment",
+      "Best Bird Food Treatment",
+    ],
+    h2Label: "Best Bird Food Treatment",
+    h2Name: "The Big Cheese Hot Nuts Deterrent Spray",
+    tocLabel: "Best Bird Food Treatment",
+    tocName: "The Big Cheese Hot Nuts",
+  },
+  {
+    anchorId: "best-trap",
+    asin: "B082J2YLDY",
+    rank: 5,
+    cardName: "Kabalo Humane Squirrel Cage Trap",
+    cardLabel: "Best Humane Trap",
+    features: [
+      "Heavy-duty metal construction",
+      "Spring-loaded door mechanism",
+      "Suitable for squirrels and large rats",
+      "Durable outdoor use",
+    ],
+    tableCells: [
+      "Kabalo Humane Squirrel Cage Trap",
+      "Humane cage trap",
+      "Best Humane Trap",
+    ],
+    h2Label: "Best Humane Trap",
+    h2Name: "Kabalo Humane Squirrel Cage Trap",
+    tocLabel: "Best Humane Trap",
+    tocName: "Kabalo Cage Trap",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Squirrel Deterrents at a Glance" },
-  { id: "best-overall", title: "Best Overall — Jacobi Jayne Squirrel Buster" },
-  { id: "best-spray", title: "Best Repellent Spray — RepellShield" },
-  {
-    id: "best-baffle",
-    title: "Best Baffle — Selections Squirrel Proof Baffle",
-  },
-  {
-    id: "best-food-treatment",
-    title: "Best Bird Food Treatment — The Big Cheese Hot Nuts",
-  },
-  { id: "best-trap", title: "Best Humane Trap — Kabalo Cage Trap" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Squirrel Deterrent Buying Guide" },
   { id: "when-to-call", title: "When to Call a Professional" },
 ];
@@ -278,53 +398,27 @@ export default function BestSquirrelDeterrentsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Jacobi Jayne Squirrel Buster Bird Feeder</td>{" "}
-            <td>Squirrel-proof feeder</td> <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>RepellShield Squirrel Repellent Spray 250ml</td>{" "}
-            <td>Repellent spray</td> <td>Best Repellent Spray</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>
-              Selections Squirrel Proof Bird Feeder Baffle (Pack of 2)
-            </td>{" "}
-            <td>Pole baffle</td> <td>Best Baffle</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>The Big Cheese Hot Nuts Deterrent Spray 1L</td>{" "}
-            <td>Bird food treatment</td> <td>Best Bird Food Treatment</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Kabalo Humane Squirrel Cage Trap</td> <td>Humane cage trap</td>{" "}
-            <td>Best Humane Trap</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       {/* Best Overall */}{" "}
-      <h2 id="best-overall">
-        Best Overall &mdash; Jacobi Jayne Squirrel Buster Bird Feeder
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Jacobi Jayne Squirrel Buster Bird Feeder"
-          features={[
-            "Weight-activated closing mechanism",
-            "All-metal construction",
-            "5-year manufacturer warranty",
-            "Also deters pigeons",
-          ]}
-          asin="B00BXLF3WU"
-          bestFor="Best Overall"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -421,22 +515,17 @@ export default function BestSquirrelDeterrentsPage() {
         solution that actually works.{" "}
       </p>{" "}
       {/* Best Repellent Spray */}{" "}
-      <h2 id="best-spray">
-        Best Repellent Spray &mdash; RepellShield Squirrel Repellent Spray
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="RepellShield Squirrel Repellent Spray 250ml"
-          features={[
-            "Natural essential oils",
-            "Safe around pets and children",
-            "Made in Germany",
-            "250ml bottle",
-          ]}
-          asin="B08DDCJJ1N"
-          bestFor="Best Repellent Spray"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -528,22 +617,17 @@ export default function BestSquirrelDeterrentsPage() {
         require a physical deterrent as well.{" "}
       </p>{" "}
       {/* Best Baffle */}{" "}
-      <h2 id="best-baffle">
-        Best Baffle &mdash; Selections Squirrel Proof Baffle (Pack of 2)
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Selections Squirrel Proof Bird Feeder Baffle (Pack of 2)"
-          features={[
-            "40cm smooth dome design",
-            "Fits feeding station poles",
-            "Pack of 2 included",
-            "Also keeps food dry in rain",
-          ]}
-          asin="B07KQJM334"
-          bestFor="Best Baffle"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -649,22 +733,17 @@ export default function BestSquirrelDeterrentsPage() {
         </Callout>{" "}
       </div>{" "}
       {/* Best Bird Food Treatment */}{" "}
-      <h2 id="best-food-treatment">
-        Best Bird Food Treatment &mdash; The Big Cheese Hot Nuts Deterrent Spray
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="The Big Cheese Hot Nuts Deterrent Spray 1L"
-          features={[
-            "1 litre ready-to-use",
-            "Natural capsicum chilli formula",
-            "Harmless to birds — they cannot taste capsaicin",
-            "Well-known UK pest brand",
-          ]}
-          asin="B007EAH6K6"
-          bestFor="Best Bird Food Treatment"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -749,22 +828,17 @@ export default function BestSquirrelDeterrentsPage() {
         baffle or squirrel-proof feeder for best results.{" "}
       </p>{" "}
       {/* Best Humane Trap */}{" "}
-      <h2 id="best-trap">
-        Best Humane Trap &mdash; Kabalo Humane Squirrel Cage Trap
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Kabalo Humane Squirrel Cage Trap"
-          features={[
-            "Heavy-duty metal construction",
-            "Spring-loaded door mechanism",
-            "Suitable for squirrels and large rats",
-            "Durable outdoor use",
-          ]}
-          asin="B082J2YLDY"
-          bestFor="Best Humane Trap"
-          rank={5}
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>

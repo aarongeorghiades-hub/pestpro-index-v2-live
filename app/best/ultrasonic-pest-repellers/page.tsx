@@ -123,17 +123,148 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Text: string;
+  tocTitle: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B000LP64K4",
+    rank: 1,
+    cardName: "The Big Cheese Sonic Mouse & Rat Repeller Plug-In",
+    cardLabel: "Best Overall",
+    features: [
+      "Long-established UK pest control brand",
+      "Plugs straight into a standard UK socket, no wiring or batteries",
+      "Targets mice and rats specifically rather than every pest",
+      "Nothing to assemble or configure",
+    ],
+    tableCells: [
+      "The Big Cheese Sonic Mouse & Rat Repeller",
+      "Mains plug-in, single unit",
+      "Best Overall",
+    ],
+    h2Text: "Best Overall — The Big Cheese Sonic Mouse & Rat Repeller",
+    tocTitle: "Best Overall — The Big Cheese Sonic",
+  },
+  {
+    anchorId: "vneed-plug-in",
+    asin: "B08CGW5M9X",
+    rank: 2,
+    cardName: "VNEED Ultrasonic Pest Repeller Plug-In",
+    cardLabel: "Best Plug-In",
+    features: [
+      "Simple mains plug-in with nothing to set up",
+      "No batteries to buy or replace",
+      "Occupies one standard UK wall socket",
+      "Runs continuously while plugged in",
+    ],
+    tableCells: [
+      "VNEED Ultrasonic Pest Repeller",
+      "Mains plug-in, single unit",
+      "Trying the technology in one room",
+    ],
+    h2Text: "VNEED Ultrasonic Pest Repeller (Plug-In)",
+    tocTitle: "VNEED Plug-In",
+  },
+  {
+    anchorId: "best-multiple-rooms",
+    asin: "B0B8VQ6C76",
+    rank: 3,
+    cardName: "EcoMyLife Ultrasonic Pest Repeller (2 Pack)",
+    cardLabel: "Best for Multiple Rooms",
+    features: [
+      "Two units rather than one",
+      "Mains plug-in, no batteries required",
+      "Covers two rooms instead of one",
+      "Lets you try the technology in two places at once",
+    ],
+    tableCells: [
+      "EcoMyLife Ultrasonic Pest Repeller (2 Pack)",
+      "Mains plug-in, 2 units",
+      "Best for Multiple Rooms",
+    ],
+    h2Text:
+      "Best for Multiple Rooms — EcoMyLife Ultrasonic Pest Repeller (2 Pack)",
+    tocTitle: "Best for Multiple Rooms — EcoMyLife 2 Pack",
+  },
+  {
+    anchorId: "best-cordless",
+    asin: "B0D984JR8Z",
+    rank: 4,
+    cardName: "PestBye 360 Ultrasonic Rechargeable Rodent Repeller",
+    cardLabel: "Best Cordless",
+    features: [
+      "Rechargeable, so it works where there is no socket",
+      "Suits lofts, garages, sheds and outbuildings",
+      "Established UK brand in this category",
+      "Aimed at rodents rather than a broad pest list",
+    ],
+    tableCells: [
+      "PestBye 360 Ultrasonic Rechargeable Rodent Repeller",
+      "Rechargeable, cordless",
+      "Best Cordless",
+    ],
+    h2Text:
+      "Best Cordless — PestBye 360 Ultrasonic Rechargeable Rodent Repeller",
+    tocTitle: "Best Cordless — PestBye 360",
+  },
+  {
+    anchorId: "best-for-spiders",
+    asin: "B0072H60MG",
+    rank: 5,
+    cardName: "PestBye Battery Operated Spider & Mouse Repeller",
+    cardLabel: "Best for Spiders",
+    features: [
+      "Battery powered, no socket required",
+      "Marketed for spiders as well as mice",
+      "Suits lofts, garages and sheds",
+      "Established UK brand in this category",
+    ],
+    tableCells: [
+      "PestBye Battery Operated Spider & Mouse Repeller",
+      "Battery powered, cordless",
+      "Best for Spiders",
+    ],
+    h2Text:
+      "Best for Spiders — PestBye Battery Operated Spider & Mouse Repeller",
+    tocTitle: "Best for Spiders — PestBye Battery",
+  },
+  {
+    anchorId: "pestbye-long-life",
+    asin: "B003ZIV9Y0",
+    rank: 6,
+    cardName:
+      "PestBye Long Life Battery Operated Sonic Rat and Mouse Repellent",
+    cardLabel: "Best for Rodents",
+    features: [
+      "Battery powered, no socket required",
+      "Aimed at rats and mice rather than a broad pest list",
+      "Established UK brand in this category",
+      "Goes where it is needed rather than where the sockets are",
+    ],
+    tableCells: [
+      "PestBye Long Life Battery Operated Sonic Rat and Mouse Repellent",
+      "Battery powered, cordless",
+      "Unpowered spaces such as lofts and sheds",
+    ],
+    h2Text: "PestBye Long Life Battery Operated Sonic Rat and Mouse Repellent",
+    tocTitle: "PestBye Long Life Battery",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Ultrasonic Pest Repellers at a Glance" },
-  { id: "best-overall", title: "Best Overall — The Big Cheese Sonic" },
-  { id: "vneed-plug-in", title: "VNEED Plug-In" },
-  {
-    id: "best-multiple-rooms",
-    title: "Best for Multiple Rooms — EcoMyLife 2 Pack",
-  },
-  { id: "best-cordless", title: "Best Cordless — PestBye 360" },
-  { id: "best-for-spiders", title: "Best for Spiders — PestBye Battery" },
-  { id: "pestbye-long-life", title: "PestBye Long Life Battery" },
+  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
   { id: "buying-guide", title: "Buying Guide" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
@@ -273,42 +404,13 @@ export default function BestUltrasonicPestRepellersPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>The Big Cheese Sonic Mouse & Rat Repeller</td>{" "}
-            <td>Mains plug-in, single unit</td> <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>VNEED Ultrasonic Pest Repeller</td>{" "}
-            <td>Mains plug-in, single unit</td>{" "}
-            <td>Trying the technology in one room</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>EcoMyLife Ultrasonic Pest Repeller (2 Pack)</td>{" "}
-            <td>Mains plug-in, 2 units</td>{" "}
-            <td>Best for Multiple Rooms</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>PestBye 360 Ultrasonic Rechargeable Rodent Repeller</td>{" "}
-            <td>Rechargeable, cordless</td> <td>Best Cordless</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>PestBye Battery Operated Spider & Mouse Repeller</td>{" "}
-            <td>Battery powered, cordless</td> <td>Best for Spiders</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>
-              PestBye Long Life Battery Operated Sonic Rat and Mouse Repellent
-            </td>{" "}
-            <td>Battery powered, cordless</td>{" "}
-            <td>Unpowered spaces such as lofts and sheds</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       <div className="not-prose">
@@ -318,23 +420,15 @@ export default function BestUltrasonicPestRepellersPage() {
           label="Scientific evidence supporting ultrasonic pest repeller effectiveness in real-world conditions"
         />{" "}
       </div>{" "}
-      {/* Product 1 */}{" "}
-      <h2 id="best-overall">
-        Best Overall — The Big Cheese Sonic Mouse & Rat Repeller
-      </h2>{" "}
+      {/* Product 1 */} <h2 id={products[0].anchorId}>{products[0].h2Text}</h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="The Big Cheese Sonic Mouse & Rat Repeller Plug-In"
-          rank={1}
-          features={[
-            "Long-established UK pest control brand",
-            "Plugs straight into a standard UK socket, no wiring or batteries",
-            "Targets mice and rats specifically rather than every pest",
-            "Nothing to assemble or configure",
-          ]}
-          asin="B000LP64K4"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -384,21 +478,15 @@ export default function BestUltrasonicPestRepellersPage() {
           Should never be your only measure against an active infestation
         </li>{" "}
       </ul>{" "}
-      {/* Product 2 */}{" "}
-      <h2 id="vneed-plug-in">VNEED Ultrasonic Pest Repeller (Plug-In)</h2>{" "}
+      {/* Product 2 */} <h2 id={products[1].anchorId}>{products[1].h2Text}</h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="VNEED Ultrasonic Pest Repeller Plug-In"
-          rank={2}
-          features={[
-            "Simple mains plug-in with nothing to set up",
-            "No batteries to buy or replace",
-            "Occupies one standard UK wall socket",
-            "Runs continuously while plugged in",
-          ]}
-          asin="B08CGW5M9X"
-          bestFor="Best Plug-In"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -435,23 +523,15 @@ export default function BestUltrasonicPestRepellersPage() {
         <li>Treats one room only</li>{" "}
         <li>Same unproven technology as every product on this page</li>{" "}
       </ul>{" "}
-      {/* Product 3 */}{" "}
-      <h2 id="best-multiple-rooms">
-        Best for Multiple Rooms — EcoMyLife Ultrasonic Pest Repeller (2 Pack)
-      </h2>{" "}
+      {/* Product 3 */} <h2 id={products[2].anchorId}>{products[2].h2Text}</h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="EcoMyLife Ultrasonic Pest Repeller (2 Pack)"
-          rank={3}
-          features={[
-            "Two units rather than one",
-            "Mains plug-in, no batteries required",
-            "Covers two rooms instead of one",
-            "Lets you try the technology in two places at once",
-          ]}
-          asin="B0B8VQ6C76"
-          bestFor="Best for Multiple Rooms"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -489,23 +569,15 @@ export default function BestUltrasonicPestRepellersPage() {
         <li>Doubling the hardware does not improve the evidence</li>{" "}
         <li>Occupies two wall sockets</li>{" "}
       </ul>{" "}
-      {/* Product 4 */}{" "}
-      <h2 id="best-cordless">
-        Best Cordless — PestBye 360 Ultrasonic Rechargeable Rodent Repeller
-      </h2>{" "}
+      {/* Product 4 */} <h2 id={products[3].anchorId}>{products[3].h2Text}</h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="PestBye 360 Ultrasonic Rechargeable Rodent Repeller"
-          rank={4}
-          features={[
-            "Rechargeable, so it works where there is no socket",
-            "Suits lofts, garages, sheds and outbuildings",
-            "Established UK brand in this category",
-            "Aimed at rodents rather than a broad pest list",
-          ]}
-          asin="B0D984JR8Z"
-          bestFor="Best Cordless"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -541,23 +613,15 @@ export default function BestUltrasonicPestRepellersPage() {
         <li>No mains option if you want it running permanently</li>{" "}
         <li>Same unproven technology as the plug-in units</li>{" "}
       </ul>{" "}
-      {/* Product 5 */}{" "}
-      <h2 id="best-for-spiders">
-        Best for Spiders — PestBye Battery Operated Spider & Mouse Repeller
-      </h2>{" "}
+      {/* Product 5 */} <h2 id={products[4].anchorId}>{products[4].h2Text}</h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="PestBye Battery Operated Spider & Mouse Repeller"
-          rank={5}
-          features={[
-            "Battery powered, no socket required",
-            "Marketed for spiders as well as mice",
-            "Suits lofts, garages and sheds",
-            "Established UK brand in this category",
-          ]}
-          asin="B0072H60MG"
-          bestFor="Best for Spiders"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -596,23 +660,15 @@ export default function BestUltrasonicPestRepellersPage() {
         <li>Evidence for ultrasonic spider deterrence is especially thin</li>{" "}
         <li>Physical exclusion works better than any repeller</li>{" "}
       </ul>{" "}
-      {/* Product 6 */}{" "}
-      <h2 id="pestbye-long-life">
-        PestBye Long Life Battery Operated Sonic Rat and Mouse Repellent
-      </h2>{" "}
+      {/* Product 6 */} <h2 id={products[5].anchorId}>{products[5].h2Text}</h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="PestBye Long Life Battery Operated Sonic Rat and Mouse Repellent"
-          rank={6}
-          features={[
-            "Battery powered, no socket required",
-            "Aimed at rats and mice rather than a broad pest list",
-            "Established UK brand in this category",
-            "Goes where it is needed rather than where the sockets are",
-          ]}
-          asin="B003ZIV9Y0"
-          bestFor="Best for Rodents"
+          name={products[5].cardName}
+          features={products[5].features}
+          asin={products[5].asin}
+          bestFor={products[5].cardLabel}
+          rank={products[5].rank}
         />{" "}
       </div>{" "}
       <p>

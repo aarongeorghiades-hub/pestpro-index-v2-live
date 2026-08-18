@@ -69,19 +69,139 @@ const breadcrumbSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-natural",
+    asin: "B0083H1B3W",
+    rank: 1,
+    cardName: "Diatomaceous Earth Food Grade 1kg",
+    cardLabel: "Best Natural Treatment",
+    features: [
+      "100% natural fossilised diatom powder",
+      "Food-grade safe for homes with children and pets",
+      "Damages silverfish waxy exoskeleton causing dehydration",
+      "Long-lasting in dry conditions — no expiry",
+    ],
+    tableCells: [
+      "Diatomaceous Earth Food Grade 1kg",
+      "Natural powder",
+      "Cracks, crevices, dry areas",
+    ],
+    h2Label: "Best Natural Treatment",
+    h2Name: "Diatomaceous Earth Food Grade 1kg",
+    tocLabel: "Best Natural Treatment",
+    tocName: "Diatomaceous Earth",
+  },
+  {
+    anchorId: "best-spray",
+    asin: "B0BGY8196B",
+    rank: 2,
+    cardName: "Ready Steady Defend Silverfish Killer Spray 1L",
+    cardLabel: "Best Chemical Spray",
+    features: [
+      "Dual-action contact and residual formula",
+      "HSE registered for amateur use",
+      "12-week residual protection",
+      "Non-staining, low odour, water-based",
+    ],
+    tableCells: [
+      "Ready Steady Defend Silverfish Spray 1L",
+      "Chemical spray",
+      "Skirting boards, harbourage",
+    ],
+    h2Label: "Best Spray",
+    h2Name: "Ready Steady Defend Silverfish Killer Spray 1L",
+    tocLabel: "Best Spray",
+    tocName: "Ready Steady Defend Silverfish Killer Spray",
+  },
+  {
+    anchorId: "best-trap",
+    asin: "B0BJKY8MB3",
+    rank: 3,
+    cardName: "Super Ninja Silverfish Trap (3-Pack)",
+    cardLabel: "Best Monitoring Trap",
+    features: [
+      "Pre-baited with food-based attractant",
+      "Non-toxic and odourless",
+      "Each trap lasts up to 3 months",
+      "Recycled cardboard construction",
+    ],
+    tableCells: [
+      "Super Ninja Silverfish Trap 3-Pack",
+      "Sticky trap",
+      "Monitoring, bathrooms",
+    ],
+    h2Label: "Best Trap",
+    h2Name: "Super Ninja Silverfish Trap (3-Pack)",
+    tocLabel: "Best Trap",
+    tocName: "Super Ninja Silverfish Trap",
+  },
+  {
+    anchorId: "best-dehumidifier",
+    asin: "B073XNK45P",
+    rank: 4,
+    cardName: "Pro Breeze 12L/Day Dehumidifier",
+    cardLabel: "Best Long-Term Solution",
+    features: [
+      "12L/day extraction capacity",
+      "Automatic humidity sensor (30-80% range)",
+      "Sleep mode under 38dB",
+      "Continuous drainage hose option",
+    ],
+    tableCells: [
+      "Pro Breeze 12L/Day Dehumidifier",
+      "Environmental",
+      "Root cause treatment",
+    ],
+    h2Label: "Best Long-Term Solution",
+    h2Name: "Pro Breeze 12L/Day Dehumidifier",
+    tocLabel: "Best Long-Term Solution",
+    tocName: "Pro Breeze Dehumidifier",
+  },
+  {
+    anchorId: "best-powder",
+    asin: "B013EIB87I",
+    rank: 5,
+    cardName: "Pest Expert Formula 'P' Silverfish Killer Powder 300g",
+    cardLabel: "Best Insecticidal Dust",
+    features: [
+      "Professional-strength permethrin formula",
+      "HSE approved for amateur use",
+      "12-week residual killing power",
+      "300g pack — twice the size of competitors",
+    ],
+    tableCells: [
+      "Pest Expert Killer Powder 300g",
+      "Insecticidal dust",
+      "Wall cavities, under floors",
+    ],
+    h2Label: "Best Powder",
+    h2Name: "Pest Expert Formula 'P' Silverfish Killer Powder 300g",
+    tocLabel: "Best Powder",
+    tocName: "Pest Expert Killer Powder",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Silverfish Treatments at a Glance" },
-  { id: "best-natural", title: "Best Natural Treatment — Diatomaceous Earth" },
-  {
-    id: "best-spray",
-    title: "Best Spray — Ready Steady Defend Silverfish Killer Spray",
-  },
-  { id: "best-trap", title: "Best Trap — Super Ninja Silverfish Trap" },
-  {
-    id: "best-dehumidifier",
-    title: "Best Long-Term Solution — Pro Breeze Dehumidifier",
-  },
-  { id: "best-powder", title: "Best Powder — Pest Expert Killer Powder" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Silverfish Treatment Buying Guide" },
   { id: "when-to-call", title: "When to Call a Professional" },
 ];
@@ -288,51 +408,27 @@ export default function BestSilverfishTreatmentsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Diatomaceous Earth Food Grade 1kg</td> <td>Natural powder</td>{" "}
-            <td>Cracks, crevices, dry areas</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Ready Steady Defend Silverfish Spray 1L</td>{" "}
-            <td>Chemical spray</td> <td>Skirting boards, harbourage</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Super Ninja Silverfish Trap 3-Pack</td> <td>Sticky trap</td>{" "}
-            <td>Monitoring, bathrooms</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pro Breeze 12L/Day Dehumidifier</td> <td>Environmental</td>{" "}
-            <td>Root cause treatment</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Killer Powder 300g</td> <td>Insecticidal dust</td>{" "}
-            <td>Wall cavities, under floors</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       {/* Best Natural Treatment */}{" "}
-      <h2 id="best-natural">
-        Best Natural Treatment &mdash; Diatomaceous Earth Food Grade 1kg
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Diatomaceous Earth Food Grade 1kg"
-          features={[
-            "100% natural fossilised diatom powder",
-            "Food-grade safe for homes with children and pets",
-            "Damages silverfish waxy exoskeleton causing dehydration",
-            "Long-lasting in dry conditions — no expiry",
-          ]}
-          asin="B0083H1B3W"
-          bestFor="Best Natural Treatment"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -433,22 +529,17 @@ export default function BestSilverfishTreatmentsPage() {
         its abrasive killing properties.{" "}
       </p>{" "}
       {/* Best Spray */}{" "}
-      <h2 id="best-spray">
-        Best Spray &mdash; Ready Steady Defend Silverfish Killer Spray 1L
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Ready Steady Defend Silverfish Killer Spray 1L"
-          features={[
-            "Dual-action contact and residual formula",
-            "HSE registered for amateur use",
-            "12-week residual protection",
-            "Non-staining, low odour, water-based",
-          ]}
-          asin="B0BGY8196B"
-          bestFor="Best Chemical Spray"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -538,22 +629,17 @@ export default function BestSilverfishTreatmentsPage() {
         three-pronged silverfish elimination strategy.{" "}
       </p>{" "}
       {/* Best Trap */}{" "}
-      <h2 id="best-trap">
-        Best Trap &mdash; Super Ninja Silverfish Trap (3-Pack)
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Super Ninja Silverfish Trap (3-Pack)"
-          features={[
-            "Pre-baited with food-based attractant",
-            "Non-toxic and odourless",
-            "Each trap lasts up to 3 months",
-            "Recycled cardboard construction",
-          ]}
-          asin="B0BJKY8MB3"
-          bestFor="Best Monitoring Trap"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -664,22 +750,17 @@ export default function BestSilverfishTreatmentsPage() {
         </Callout>{" "}
       </div>{" "}
       {/* Best Dehumidifier */}{" "}
-      <h2 id="best-dehumidifier">
-        Best Long-Term Solution &mdash; Pro Breeze 12L/Day Dehumidifier
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pro Breeze 12L/Day Dehumidifier"
-          features={[
-            "12L/day extraction capacity",
-            "Automatic humidity sensor (30-80% range)",
-            "Sleep mode under 38dB",
-            "Continuous drainage hose option",
-          ]}
-          asin="B073XNK45P"
-          bestFor="Best Long-Term Solution"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -795,23 +876,17 @@ export default function BestSilverfishTreatmentsPage() {
         here.{" "}
       </p>{" "}
       {/* Best Powder */}{" "}
-      <h2 id="best-powder">
-        Best Powder &mdash; Pest Expert Formula &apos;P&apos; Silverfish Killer
-        Powder 300g
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Formula 'P' Silverfish Killer Powder 300g"
-          features={[
-            "Professional-strength permethrin formula",
-            "HSE approved for amateur use",
-            "12-week residual killing power",
-            "300g pack — twice the size of competitors",
-          ]}
-          asin="B013EIB87I"
-          bestFor="Best Insecticidal Dust"
-          rank={5}
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>

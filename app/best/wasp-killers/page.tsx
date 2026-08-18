@@ -72,11 +72,91 @@ const breadcrumbSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B000TAY2EQ",
+    rank: 1,
+    cardName: "Rentokil Wasp Foam 300ml",
+    cardLabel: "Best Overall",
+    features: [
+      "4-meter jet spray for safe distance application",
+      "Professional strength formula",
+      "Kills wasps on contact and destroys nests",
+      "From the UK's most trusted pest control brand",
+    ],
+    tableCells: ["Rentokil Wasp Foam 300ml", "Foam spray", "Best Overall"],
+    h2Label: "Best Overall",
+    h2Name: "Rentokil Wasp Foam 300ml",
+    tocLabel: "Best Overall",
+    tocName: "Rentokil Foam",
+  },
+  {
+    anchorId: "best-trap",
+    asin: "B08BJ1LFNS",
+    rank: 2,
+    cardName: "Zero In Ultra Power XL Wasp Trap",
+    cardLabel: "Best Wasp Trap",
+    features: [
+      "Dual chamber reusable design",
+      "Ready-baited — just add water",
+      "Chemical-free outdoor protection",
+      "Effective for gardens, patios, and BBQ areas",
+    ],
+    tableCells: [
+      "Zero In Ultra Power XL Wasp Trap",
+      "Reusable trap",
+      "Best Trap",
+    ],
+    h2Label: "Best Wasp Trap",
+    h2Name: "Zero In Ultra Power XL Wasp Trap",
+    tocLabel: "Best Trap",
+    tocName: "Zero In XL",
+  },
+  {
+    anchorId: "best-spray",
+    asin: "B0082M8TU6",
+    rank: 3,
+    cardName: "Zero In Wasp Killer 300ml",
+    cardLabel: "Best Quick-Kill Spray",
+    features: [
+      "Expanding foam reaches deep into nests",
+      "Fast-acting contact killer",
+      "Suitable for indoor and outdoor use",
+      "Easy-to-use aerosol application",
+    ],
+    tableCells: [
+      "Zero In Wasp Killer 300ml",
+      "Aerosol spray",
+      "Best Quick-Kill",
+    ],
+    h2Label: "Best Quick-Kill Spray",
+    h2Name: "Zero In Wasp Killer 300ml",
+    tocLabel: "Best Spray",
+    tocName: "Zero In Killer",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Wasp Killers at a Glance" },
-  { id: "best-overall", title: "Best Overall — Rentokil Foam" },
-  { id: "best-trap", title: "Best Trap — Zero In XL" },
-  { id: "best-spray", title: "Best Spray — Zero In Killer" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Wasp Killer Buying Guide" },
   { id: "safety", title: "Safety Tips" },
 ];
@@ -258,38 +338,27 @@ export default function BestWaspKillersPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Rentokil Wasp Foam 300ml</td>
-            <td>Foam spray</td>
-            <td>Best Overall</td>
-          </tr>
-          <tr>
-            <td>Zero In Ultra Power XL Wasp Trap</td>
-            <td>Reusable trap</td>
-            <td>Best Trap</td>
-          </tr>
-          <tr>
-            <td>Zero In Wasp Killer 300ml</td>
-            <td>Aerosol spray</td>
-            <td>Best Quick-Kill</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
       {/* Best Overall */}
-      <h2 id="best-overall">Best Overall &mdash; Rentokil Wasp Foam 300ml</h2>
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
+      </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Rentokil Wasp Foam 300ml"
-          features={[
-            "4-meter jet spray for safe distance application",
-            "Professional strength formula",
-            "Kills wasps on contact and destroys nests",
-            "From the UK's most trusted pest control brand",
-          ]}
-          asin="B000TAY2EQ"
-          bestFor="Best Overall"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -361,21 +430,16 @@ export default function BestWaspKillersPage() {
       </ul>
 
       {/* Best Trap */}
-      <h2 id="best-trap">
-        Best Wasp Trap &mdash; Zero In Ultra Power XL Wasp Trap
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Zero In Ultra Power XL Wasp Trap"
-          features={[
-            "Dual chamber reusable design",
-            "Ready-baited — just add water",
-            "Chemical-free outdoor protection",
-            "Effective for gardens, patios, and BBQ areas",
-          ]}
-          asin="B08BJ1LFNS"
-          bestFor="Best Wasp Trap"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -447,21 +511,16 @@ export default function BestWaspKillersPage() {
       </div>
 
       {/* Best Quick-Kill Spray */}
-      <h2 id="best-spray">
-        Best Quick-Kill Spray &mdash; Zero In Wasp Killer 300ml
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Zero In Wasp Killer 300ml"
-          features={[
-            "Expanding foam reaches deep into nests",
-            "Fast-acting contact killer",
-            "Suitable for indoor and outdoor use",
-            "Easy-to-use aerosol application",
-          ]}
-          asin="B0082M8TU6"
-          bestFor="Best Quick-Kill Spray"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>

@@ -121,13 +121,130 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocTitle: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "zero-in",
+    asin: "B00IIOR7NS",
+    rank: 1,
+    cardName: "Zero In Spider Repellent Peppermint Oil Spray 500ml",
+    cardLabel: "Best Overall",
+    features: [
+      "Established UK spider repellent",
+      "Natural peppermint oil formula — non-toxic",
+      "Safe around children and pets",
+      "Lasts up to 3 weeks per application",
+    ],
+    tableCells: [
+      "Zero In Spider Repellent Peppermint Oil Spray 500ml",
+      "Natural spray",
+      "Best Overall",
+    ],
+    h2Label: "1. Zero In Spider Repellent Peppermint Oil Spray 500ml",
+    h2Name: "Best Overall",
+    tocTitle: "1. Zero In Spider Repellent Peppermint Oil Spray",
+  },
+  {
+    anchorId: "zero-in-twin",
+    asin: "B0DBZXWGLG",
+    rank: 2,
+    cardName: "Zero In Spider Repellent 500ml Twin Pack",
+    cardLabel: "Best Value",
+    features: [
+      "Two full 500ml bottles of peppermint repellent",
+      "Second bottle on hand for the next reapplication",
+      "Ideal for whole-home autumn treatment",
+      "Same trusted Zero In formula",
+    ],
+    tableCells: [
+      "Zero In Spider Repellent 500ml Twin Pack",
+      "Natural spray",
+      "Best Value",
+    ],
+    h2Label: "2. Zero In Spider Repellent 500ml Twin Pack",
+    h2Name: "Best Value",
+    tocTitle: "2. Zero In Spider Repellent Twin Pack",
+  },
+  {
+    anchorId: "acana",
+    asin: "B0DFMLDNPT",
+    rank: 3,
+    cardName: "Acana Natural Spider Stopper 500ml",
+    cardLabel: "Best Long-Lasting",
+    features: [
+      "Peppermint and clove oil formula",
+      "Lasts up to 12 weeks per application",
+      "Non-staining on surfaces",
+      "No dead spiders — just keeps them away",
+    ],
+    tableCells: [
+      "Acana Natural Spider Stopper 500ml",
+      "Natural spray",
+      "Best Long-Lasting",
+    ],
+    h2Label: "3. Acana Natural Spider Stopper 500ml",
+    h2Name: "Best Long-Lasting",
+    tocTitle: "3. Acana Natural Spider Stopper",
+  },
+  {
+    anchorId: "pestbye",
+    asin: "B00FJ4LWWW",
+    rank: 4,
+    cardName: "Pestbye Spider Repellent Spray",
+    cardLabel: "Best Barrier Spray",
+    features: [
+      "UK-developed natural barrier spray",
+      "Stops cobweb building on treated areas",
+      "Protection lasts up to 4 weeks",
+      "From a specialist UK pest control brand",
+    ],
+    tableCells: [
+      "Pestbye Spider Repellent Spray",
+      "Natural spray",
+      "Best Barrier Spray",
+    ],
+    h2Label: "4. Pestbye Spider Repellent Spray",
+    h2Name: "Best Barrier Spray",
+    tocTitle: "4. Pestbye Spider Repellent Spray",
+  },
+  {
+    anchorId: "nope",
+    asin: "B09FB4QX9H",
+    rank: 5,
+    cardName: "NOPE! Spider Killer Spray 500ml",
+    cardLabel: "Best Kill & Repel",
+    features: [
+      "Kills spiders on contact",
+      "Odourless, non-staining residual barrier",
+      "Suitable for indoor and outdoor use",
+      "3-month residual protection",
+    ],
+    tableCells: [
+      "NOPE! Spider Killer Spray 500ml",
+      "Contact killer",
+      "Best Kill & Repel",
+    ],
+    h2Label: "5. NOPE! Spider Killer Spray 500ml",
+    h2Name: "Best Kill & Repel",
+    tocTitle: "5. NOPE! Spider Killer Spray",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Spider Repellents at a Glance" },
-  { id: "zero-in", title: "1. Zero In Spider Repellent Peppermint Oil Spray" },
-  { id: "zero-in-twin", title: "2. Zero In Spider Repellent Twin Pack" },
-  { id: "acana", title: "3. Acana Natural Spider Stopper" },
-  { id: "pestbye", title: "4. Pestbye Spider Repellent Spray" },
-  { id: "nope", title: "5. NOPE! Spider Killer Spray" },
+  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
   { id: "buying-guide", title: "How to Choose Spider Repellent" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
@@ -243,32 +360,13 @@ export default function BestSpiderRepellentPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            <td>Zero In Spider Repellent Peppermint Oil Spray 500ml</td>
-            <td>Natural spray</td>
-            <td>Best Overall</td>
-          </tr>{" "}
-          <tr>
-            <td>Zero In Spider Repellent 500ml Twin Pack</td>
-            <td>Natural spray</td>
-            <td>Best Value</td>
-          </tr>{" "}
-          <tr>
-            <td>Acana Natural Spider Stopper 500ml</td>
-            <td>Natural spray</td>
-            <td>Best Long-Lasting</td>
-          </tr>{" "}
-          <tr>
-            <td>Pestbye Spider Repellent Spray</td>
-            <td>Natural spray</td>
-            <td>Best Barrier Spray</td>
-          </tr>{" "}
-          <tr>
-            <td>NOPE! Spider Killer Spray 500ml</td>
-            <td>Contact killer</td>
-            <td>Best Kill &amp; Repel</td>
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       <div className="not-prose">
@@ -278,22 +376,17 @@ export default function BestSpiderRepellentPage() {
           label="spider species found in the UK — but only a handful commonly enter homes"
         />{" "}
       </div>{" "}
-      <h2 id="zero-in">
-        1. Zero In Spider Repellent Peppermint Oil Spray 500ml — Best Overall
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Zero In Spider Repellent Peppermint Oil Spray 500ml"
-          rank={1}
-          features={[
-            "Established UK spider repellent",
-            "Natural peppermint oil formula — non-toxic",
-            "Safe around children and pets",
-            "Lasts up to 3 weeks per application",
-          ]}
-          asin="B00IIOR7NS"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -339,22 +432,17 @@ export default function BestSpiderRepellentPage() {
         <li>Does not kill spiders — deterrent only</li>{" "}
         <li>Limited scientific evidence for peppermint effectiveness</li>{" "}
       </ul>{" "}
-      <h2 id="zero-in-twin">
-        2. Zero In Spider Repellent 500ml Twin Pack — Best Value
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Zero In Spider Repellent 500ml Twin Pack"
-          rank={2}
-          features={[
-            "Two full 500ml bottles of peppermint repellent",
-            "Second bottle on hand for the next reapplication",
-            "Ideal for whole-home autumn treatment",
-            "Same trusted Zero In formula",
-          ]}
-          asin="B0DBZXWGLG"
-          bestFor="Best Value"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -400,22 +488,17 @@ export default function BestSpiderRepellentPage() {
         <li>Still needs reapplication every 3 weeks</li>{" "}
         <li>Deterrent only — does not kill spiders</li>{" "}
       </ul>{" "}
-      <h2 id="acana">
-        3. Acana Natural Spider Stopper 500ml — Best Long-Lasting
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Acana Natural Spider Stopper 500ml"
-          rank={3}
-          features={[
-            "Peppermint and clove oil formula",
-            "Lasts up to 12 weeks per application",
-            "Non-staining on surfaces",
-            "No dead spiders — just keeps them away",
-          ]}
-          asin="B0DFMLDNPT"
-          bestFor="Best Long-Lasting"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -468,22 +551,17 @@ export default function BestSpiderRepellentPage() {
           Limited scientific evidence for essential oil effectiveness
         </li>{" "}
       </ul>{" "}
-      <h2 id="pestbye">
-        4. Pestbye Spider Repellent Spray — Best Barrier Spray
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pestbye Spider Repellent Spray"
-          rank={4}
-          features={[
-            "UK-developed natural barrier spray",
-            "Stops cobweb building on treated areas",
-            "Protection lasts up to 4 weeks",
-            "From a specialist UK pest control brand",
-          ]}
-          asin="B00FJ4LWWW"
-          bestFor="Best Barrier Spray"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -532,22 +610,17 @@ export default function BestSpiderRepellentPage() {
         <li>Deterrent only — does not kill spiders</li>{" "}
         <li>Less well-known brand than Zero In</li>{" "}
       </ul>{" "}
-      <h2 id="nope">
-        5. NOPE! Spider Killer Spray 500ml — Best Kill &amp; Repel
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="NOPE! Spider Killer Spray 500ml"
-          rank={5}
-          features={[
-            "Kills spiders on contact",
-            "Odourless, non-staining residual barrier",
-            "Suitable for indoor and outdoor use",
-            "3-month residual protection",
-          ]}
-          asin="B09FB4QX9H"
-          bestFor="Best Kill & Repel"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>
