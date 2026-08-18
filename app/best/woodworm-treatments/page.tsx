@@ -69,91 +69,133 @@ const breadcrumbSchema = {
     },
   ],
 };
-const tocItems = [
-  { id: "at-a-glance", title: "Best Woodworm Treatments at a Glance" },
-  {
-    id: "best-fluid",
-    title: "Best Treatment Fluid — Barrettine Woodworm Killer",
-  },
-  {
-    id: "best-water-based",
-    title: "Best Water-Based Treatment — Rempro Woodwyse",
-  },
-  { id: "best-spray", title: "Best Spray Can — Rentokil Woodworm Spray" },
-  { id: "best-injector", title: "Best Injection Applicator — Rentokil PSW92" },
-  { id: "best-meter", title: "Best Moisture Meter — Stanley 0-77-030" },
-  { id: "buying-guide", title: "Woodworm Treatment Buying Guide" },
-  { id: "when-to-call", title: "When to Call a Professional" },
-];
-type WoodwormProduct = {
-  name: string;
-  features: string[];
+type ProductRecord = {
+  anchorId: string;
   asin: string;
-  bestFor: string;
   rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
 };
 
-const products: WoodwormProduct[] = [
+const products: ProductRecord[] = [
   {
-    name: "Barrettine Premier Woodworm Killer 1L",
+    anchorId: "best-fluid",
+    asin: "B0041WB2E6",
+    rank: 1,
+    cardName: "Barrettine Premier Woodworm Killer 1L",
+    cardLabel: "Best Treatment Fluid",
     features: [
       "Permethrin-based solvent formula",
       "Industry-standard professional treatment",
       "Creates 20+ year residual barrier",
       "Suitable for brush or spray application",
     ],
-    asin: "B0041WB2E6",
-    bestFor: "Best Treatment Fluid",
-    rank: 1,
+    tableCells: [
+      "Barrettine Premier Woodworm Killer 1L",
+      "Best Treatment Fluid",
+    ],
+    h2Label: "Best Treatment Fluid",
+    h2Name: "Barrettine Premier Woodworm Killer 1L",
+    tocLabel: "Best Treatment Fluid",
+    tocName: "Barrettine Woodworm Killer",
   },
   {
-    name: "Rempro Woodwyse Internal Wood Treatment",
+    anchorId: "best-water-based",
+    asin: "B01MZ7ZB2V",
+    rank: 2,
+    cardName: "Rempro Woodwyse Internal Wood Treatment",
+    cardLabel: "Best Water-Based Treatment",
     features: [
       "Water-based low-toxicity formula",
       "Dual action: woodworm + dry rot",
       "Suitable for occupied spaces",
       "Low odour — no solvent fumes",
     ],
-    asin: "B01MZ7ZB2V",
-    bestFor: "Best Water-Based Treatment",
-    rank: 2,
+    tableCells: [
+      "Rempro Woodwyse Internal Wood Treatment",
+      "Best Water-Based Treatment",
+    ],
+    h2Label: "Best Water-Based Treatment",
+    h2Name: "Rempro Woodwyse Internal Wood Treatment",
+    tocLabel: "Best Water-Based Treatment",
+    tocName: "Rempro Woodwyse",
   },
   {
-    name: "Rentokil PSW85 Woodworm Treatment Spray 300ml",
+    anchorId: "best-spray",
+    asin: "B000TVLY1O",
+    rank: 3,
+    cardName: "Rentokil PSW85 Woodworm Treatment Spray 300ml",
+    cardLabel: "Best Spray Can",
     features: [
       "Aerosol format — ready to use",
       "Kills eggs, larvae and adult beetles",
       "Straw nozzle for hole injection",
       "Ideal for small areas and furniture",
     ],
-    asin: "B000TVLY1O",
-    bestFor: "Best Spray Can",
-    rank: 3,
+    tableCells: [
+      "Rentokil PSW85 Woodworm Treatment Spray 300ml",
+      "Best Spray Can",
+    ],
+    h2Label: "Best Spray Can",
+    h2Name: "Rentokil PSW85 Woodworm Treatment Spray 300ml",
+    tocLabel: "Best Spray Can",
+    tocName: "Rentokil Woodworm Spray",
   },
   {
-    name: "Rentokil PSW92 Woodworm Treatment 250ml",
+    anchorId: "best-injector",
+    asin: "B000TVIXZY",
+    rank: 4,
+    cardName: "Rentokil PSW92 Woodworm Treatment 250ml",
+    cardLabel: "Best Injection Applicator",
     features: [
       "Built-in injection nozzle",
       "Targets treatment deep into tunnels",
       "Permethrin-based formula",
       "Most thorough DIY approach",
     ],
-    asin: "B000TVIXZY",
-    bestFor: "Best Injection Applicator",
-    rank: 4,
+    tableCells: [
+      "Rentokil PSW92 Woodworm Treatment 250ml",
+      "Best Injection Applicator",
+    ],
+    h2Label: "Best Injection Applicator",
+    h2Name: "Rentokil PSW92 Woodworm Treatment 250ml",
+    tocLabel: "Best Injection Applicator",
+    tocName: "Rentokil PSW92",
   },
   {
-    name: "Stanley 0-77-030 Moisture Meter",
+    anchorId: "best-meter",
+    asin: "B003ASOBG8",
+    rank: 5,
+    cardName: "Stanley 0-77-030 Moisture Meter",
+    cardLabel: "Best Diagnostic Tool",
     features: [
       "Pin-type timber moisture measurement",
       "LCD screen with clear readout",
       "Measures 6-44% moisture range",
       "Trusted Stanley brand",
     ],
-    asin: "B003ASOBG8",
-    bestFor: "Best Diagnostic Tool",
-    rank: 5,
+    tableCells: ["Stanley 0-77-030 Moisture Meter", "Best Diagnostic Tool"],
+    h2Label: "Best Moisture Meter",
+    h2Name: "Stanley 0-77-030",
+    tocLabel: "Best Moisture Meter",
+    tocName: "Stanley 0-77-030",
   },
+];
+
+const tocItems = [
+  { id: "at-a-glance", title: "Best Woodworm Treatments at a Glance" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
+  { id: "buying-guide", title: "Woodworm Treatment Buying Guide" },
+  { id: "when-to-call", title: "When to Call a Professional" },
 ];
 export default function BestWoodwormTreatmentsPage() {
   return (
@@ -350,18 +392,25 @@ export default function BestWoodwormTreatmentsPage() {
         <tbody>
           {products.map((p) => (
             <tr key={p.asin}>
-              <td>{p.name}</td> <td>{p.bestFor}</td>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
             </tr>
           ))}
         </tbody>{" "}
       </table>{" "}
       {/* Best Treatment Fluid */}{" "}
-      <h2 id="best-fluid">
-        Best Treatment Fluid &mdash; Barrettine Premier Woodworm Killer 1L
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
-        <ProductCard {...products[0]} />{" "}
+        <ProductCard
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
+        />{" "}
       </div>{" "}
       <p>
         {" "}
@@ -458,13 +507,18 @@ export default function BestWoodwormTreatmentsPage() {
         product to buy.{" "}
       </p>{" "}
       {/* Best Water-Based Treatment */}{" "}
-      <h2 id="best-water-based">
-        Best Water-Based Treatment &mdash; Rempro Woodwyse Internal Wood
-        Treatment
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
-        <ProductCard {...products[1]} />{" "}
+        <ProductCard
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
+        />{" "}
       </div>{" "}
       <p>
         {" "}
@@ -574,12 +628,18 @@ export default function BestWoodwormTreatmentsPage() {
         </Callout>{" "}
       </div>{" "}
       {/* Best Spray Can */}{" "}
-      <h2 id="best-spray">
-        Best Spray Can &mdash; Rentokil PSW85 Woodworm Treatment Spray 300ml
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
-        <ProductCard {...products[2]} />{" "}
+        <ProductCard
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
+        />{" "}
       </div>{" "}
       <p>
         {" "}
@@ -661,13 +721,18 @@ export default function BestWoodwormTreatmentsPage() {
         Barrettine fluid in bulk format.{" "}
       </p>{" "}
       {/* Best Injection Applicator */}{" "}
-      <h2 id="best-injector">
-        Best Injection Applicator &mdash; Rentokil PSW92 Woodworm Treatment
-        250ml
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
-        <ProductCard {...products[3]} />{" "}
+        <ProductCard
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
+        />{" "}
       </div>{" "}
       <p>
         {" "}
@@ -757,10 +822,18 @@ export default function BestWoodwormTreatmentsPage() {
         professional timber treatment companies.{" "}
       </p>{" "}
       {/* Best Moisture Meter */}{" "}
-      <h2 id="best-meter">Best Moisture Meter &mdash; Stanley 0-77-030</h2>{" "}
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
-        <ProductCard {...products[4]} />{" "}
+        <ProductCard
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
+        />{" "}
       </div>{" "}
       <p>
         {" "}
