@@ -518,7 +518,6 @@ export default function DampProofPaintMouldTreatmentPage() {
         <li>
           Smaller 500ml bottle &mdash; may need multiples for large areas
         </li>{" "}
-        <li>Premium price compared to HG</li>{" "}
         <li>
           Full benefit only realised when used with Zinsser BIN primer
         </li>{" "}
@@ -798,17 +797,14 @@ export default function DampProofPaintMouldTreatmentPage() {
       </p>{" "}
       <ul>
         {" "}
-        <li>One-coat application &mdash; fast for small repairs</li>{" "}
         <li>Seals minor damp patches and light staining</li>{" "}
         <li>Widely available in UK DIY stores</li>{" "}
-        <li>Affordable for small-area treatment</li>{" "}
       </ul>{" "}
       <p>
         <strong>Cons:</strong>
       </p>{" "}
       <ul>
         {" "}
-        <li>500ml &mdash; not practical for full-room repaints</li>{" "}
         <li>Not as effective as Zinsser BIN for severe staining</li>{" "}
         <li>
           Limited mould-killing capability compared to dedicated mould killers
