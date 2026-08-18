@@ -104,14 +104,121 @@ const faqSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocTitle: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "vectorfog-c150-plus",
+    asin: "B08FH8HV24",
+    rank: 1,
+    cardName: "VectorFog C150+ Cold ULV Fogger — 5L Tank, 1250W Samsung Motor",
+    cardLabel: "Best Overall",
+    features: [
+      "Flagship from the world's most trusted fogger brand",
+      "5L tank, 1250W Samsung motor, 8m spray distance",
+      "Adjustable 5-50 micron droplet size",
+      "Covers 100m² per minute — designed for large-space treatment",
+    ],
+    tableCells: ["VectorFog C150+", "5L", "1250W (corded)", "Best overall"],
+    h2Label: "#1 VectorFog C150+ Cold ULV Fogger",
+    h2Name: "Best Overall",
+    tocTitle: "#1 VectorFog C150+",
+  },
+  {
+    anchorId: "vectorfog-c100-plus",
+    asin: "B00MMWPK6S",
+    rank: 2,
+    cardName: "VectorFog C100 Plus Cold ULV Fogger — 4L Tank",
+    cardLabel: "Best 4L Fogger",
+    features: [
+      "Compact yet powerful — 4L tank, 1250W motor",
+      "Covers 100m² in under a minute",
+      "5-50 micron adjustable droplet for versatile use",
+      "Ideal for flats, houses and HMO common areas",
+    ],
+    tableCells: ["VectorFog C100 Plus", "4L", "1250W (corded)", "Flats & HMOs"],
+    h2Label: "#2 VectorFog C100 Plus Cold ULV Fogger",
+    h2Name: "Best for Flats & HMOs",
+    tocTitle: "#2 VectorFog C100 Plus",
+  },
+  {
+    anchorId: "vectorfog-c150",
+    asin: "B00MMX1T94",
+    rank: 3,
+    cardName: "VectorFog C150 Cold Fogger — 6L Tank",
+    cardLabel: "Best 6L Fogger",
+    features: [
+      "Original VectorFog flagship, 6L large tank",
+      "8-metre spray distance, proven by pest controllers worldwide",
+      "Adjustable droplet: fine for flying insects, coarse for surfaces",
+      "Robust construction for years of professional use",
+    ],
+    tableCells: [
+      "VectorFog C150",
+      "6L",
+      "1250W (corded)",
+      "Large tanks & proven design",
+    ],
+    h2Label: "#3 VectorFog C150 Cold Fogger",
+    h2Name: "Proven Large-Tank Design",
+    tocTitle: "#3 VectorFog C150",
+  },
+  {
+    anchorId: "vectorfog-dc20-plus",
+    asin: "B08FF71Z32",
+    rank: 4,
+    cardName: "VectorFog DC20+ Cordless ULV Fogger — Battery Powered",
+    cardLabel: "Best Cordless Fogger",
+    features: [
+      "Battery powered — no power socket needed",
+      "Ideal for lofts, outbuildings and garages",
+      "Same professional atomisation as corded VectorFog models",
+      "Complete freedom of movement during treatment",
+    ],
+    tableCells: ["VectorFog DC20+", "2L", "Battery", "No-socket locations"],
+    h2Label: "#4 VectorFog DC20+ Cordless ULV Fogger",
+    h2Name: "Battery Powered Freedom",
+    tocTitle: "#4 VectorFog DC20+ Cordless",
+  },
+  {
+    anchorId: "ewbank-ew5000",
+    asin: "B09J1LNZGS",
+    rank: 5,
+    cardName: "Ewbank EW5000 Commercial Backpack Fogger — 10L, 1400W",
+    cardLabel: "Best Backpack Fogger",
+    features: [
+      "10L backpack for hands-free large-area treatment",
+      "1400W motor for powerful atomisation",
+      "Suitable for warehouses, schools, offices",
+      "Ergonomic backpack design for extended sessions",
+    ],
+    tableCells: [
+      "Ewbank EW5000",
+      "10L",
+      "1400W (corded)",
+      "Warehouses & large spaces",
+    ],
+    h2Label: "#5 Ewbank EW5000 Commercial Backpack Fogger",
+    h2Name: "Large-Area Specialist",
+    tocTitle: "#5 Ewbank EW5000 Backpack",
+  },
+];
+
 const tocItems = [
   { id: "intro", title: "Why Use a ULV Fogger?" },
   { id: "at-a-glance", title: "At a Glance" },
-  { id: "vectorfog-c150-plus", title: "#1 VectorFog C150+" },
-  { id: "vectorfog-c100-plus", title: "#2 VectorFog C100 Plus" },
-  { id: "vectorfog-c150", title: "#3 VectorFog C150" },
-  { id: "vectorfog-dc20-plus", title: "#4 VectorFog DC20+ Cordless" },
-  { id: "ewbank-ew5000", title: "#5 Ewbank EW5000 Backpack" },
+  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
   { id: "chemicals", title: "What Chemicals Can I Use?" },
   { id: "safety", title: "Safety & PPE Requirements" },
   { id: "buying-guide", title: "Buying Guide" },
@@ -243,54 +350,27 @@ export default function ProfessionalULVFoggersPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>VectorFog C150+</td>
-            <td>5L</td>
-            <td>1250W (corded)</td>
-            <td>Best overall</td>
-          </tr>
-          <tr>
-            <td>VectorFog C100 Plus</td>
-            <td>4L</td>
-            <td>1250W (corded)</td>
-            <td>Flats & HMOs</td>
-          </tr>
-          <tr>
-            <td>VectorFog C150</td>
-            <td>6L</td>
-            <td>1250W (corded)</td>
-            <td>Large tanks & proven design</td>
-          </tr>
-          <tr>
-            <td>VectorFog DC20+</td>
-            <td>2L</td>
-            <td>Battery</td>
-            <td>No-socket locations</td>
-          </tr>
-          <tr>
-            <td>Ewbank EW5000</td>
-            <td>10L</td>
-            <td>1400W (corded)</td>
-            <td>Warehouses & large spaces</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+              <td>{p.tableCells[3]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
-      <h2 id="vectorfog-c150-plus">
-        #1 VectorFog C150+ Cold ULV Fogger — Best Overall
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="VectorFog C150+ Cold ULV Fogger — 5L Tank, 1250W Samsung Motor"
-          rank={1}
-          features={[
-            "Flagship from the world's most trusted fogger brand",
-            "5L tank, 1250W Samsung motor, 8m spray distance",
-            "Adjustable 5-50 micron droplet size",
-            "Covers 100m² per minute — designed for large-space treatment",
-          ]}
-          asin="B08FH8HV24"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -309,21 +389,16 @@ export default function ProfessionalULVFoggersPage() {
         fogging in a warehouse — the C150+ is the professional standard.
       </p>
 
-      <h2 id="vectorfog-c100-plus">
-        #2 VectorFog C100 Plus Cold ULV Fogger — Best for Flats & HMOs
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="VectorFog C100 Plus Cold ULV Fogger — 4L Tank"
-          rank={2}
-          features={[
-            "Compact yet powerful — 4L tank, 1250W motor",
-            "Covers 100m² in under a minute",
-            "5-50 micron adjustable droplet for versatile use",
-            "Ideal for flats, houses and HMO common areas",
-          ]}
-          asin="B00MMWPK6S"
-          bestFor="Best 4L Fogger"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -341,21 +416,16 @@ export default function ProfessionalULVFoggersPage() {
         same professional-grade atomisation at a lower price point.
       </p>
 
-      <h2 id="vectorfog-c150">
-        #3 VectorFog C150 Cold Fogger — Proven Large-Tank Design
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="VectorFog C150 Cold Fogger — 6L Tank"
-          rank={3}
-          features={[
-            "Original VectorFog flagship, 6L large tank",
-            "8-metre spray distance, proven by pest controllers worldwide",
-            "Adjustable droplet: fine for flying insects, coarse for surfaces",
-            "Robust construction for years of professional use",
-          ]}
-          asin="B00MMX1T94"
-          bestFor="Best 6L Fogger"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>
@@ -373,21 +443,16 @@ export default function ProfessionalULVFoggersPage() {
         unit, the C150 is the dependable choice.
       </p>
 
-      <h2 id="vectorfog-dc20-plus">
-        #4 VectorFog DC20+ Cordless ULV Fogger — Battery Powered Freedom
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="VectorFog DC20+ Cordless ULV Fogger — Battery Powered"
-          rank={4}
-          features={[
-            "Battery powered — no power socket needed",
-            "Ideal for lofts, outbuildings and garages",
-            "Same professional atomisation as corded VectorFog models",
-            "Complete freedom of movement during treatment",
-          ]}
-          asin="B08FF71Z32"
-          bestFor="Best Cordless Fogger"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />
       </div>
       <p>
@@ -405,21 +470,16 @@ export default function ProfessionalULVFoggersPage() {
         charge.
       </p>
 
-      <h2 id="ewbank-ew5000">
-        #5 Ewbank EW5000 Commercial Backpack Fogger — Large-Area Specialist
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Ewbank EW5000 Commercial Backpack Fogger — 10L, 1400W"
-          rank={5}
-          features={[
-            "10L backpack for hands-free large-area treatment",
-            "1400W motor for powerful atomisation",
-            "Suitable for warehouses, schools, offices",
-            "Ergonomic backpack design for extended sessions",
-          ]}
-          asin="B09J1LNZGS"
-          bestFor="Best Backpack Fogger"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />
       </div>
       <p>

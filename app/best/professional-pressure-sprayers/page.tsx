@@ -91,13 +91,104 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Text: string;
+  tocTitle: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "solo-473d",
+    asin: "B00ESW2YDM",
+    rank: 1,
+    cardName: "Solo 473D Classic Knapsack Sprayer — 10L Diaphragm Pump",
+    cardLabel: "Best Overall",
+    features: [
+      "German-engineered — the professional default for pest control",
+      "10L capacity, diaphragm pump for chemical resistance",
+      "Consistent pressure for even insecticide distribution",
+      "Industry standard for residual insecticide application",
+    ],
+    tableCells: ["Solo 473D Classic", "10L", "Diaphragm", "Best Overall"],
+    h2Text: "#1 Solo 473D Classic Knapsack Sprayer — 10L Diaphragm Pump",
+    tocTitle: "#1 Solo 473D Classic 10L",
+  },
+  {
+    anchorId: "solo-90psi",
+    asin: "B00KBTAAF0",
+    rank: 2,
+    cardName: "Solo 10L 90psi Diaphragm Pump Backpack Sprayer",
+    cardLabel: "Best Professional-Grade",
+    features: [
+      "High-pressure 90psi for maximum penetration",
+      "Diaphragm pump handles abrasive and emulsifiable concentrates",
+      "Ideal for perimeter treatments and crack/crevice work",
+      "Professional-grade pressure for deep application",
+    ],
+    tableCells: ["Solo 10L 90psi", "10L", "Diaphragm", "Professional-Grade"],
+    h2Text: "#2 Solo 10L 90psi Diaphragm Pump Backpack Sprayer",
+    tocTitle: "#2 Solo 10L 90psi",
+  },
+  {
+    anchorId: "solo-425",
+    asin: "B00002N6BW",
+    rank: 3,
+    cardName: "Solo 425 Professional Piston Backpack Sprayer — 15L",
+    cardLabel: "Best 15L Backpack",
+    features: [
+      "Larger 15L capacity for extended treatments",
+      "Piston pump up to 90psi pressure",
+      "Preferred by grounds and facilities teams",
+      "Treats large external areas without refilling",
+    ],
+    tableCells: ["Solo 425 Professional", "15L", "Piston", "Large Area Work"],
+    h2Text: "#3 Solo 425 Professional Piston Backpack Sprayer — 15L",
+    tocTitle: "#3 Solo 425 Professional 15L",
+  },
+  {
+    anchorId: "matabi",
+    asin: "B0001P0GHG",
+    rank: 4,
+    cardName: "Matabi Super Green 12L Backpack Sprayer — European Made",
+    cardLabel: "Best Budget",
+    features: [
+      "European-manufactured with fibreglass lance",
+      "3-position pressure regulator, padded straps",
+      "— proven chemical-resistant seals",
+      "Durable construction for professional pesticide use",
+    ],
+    tableCells: ["Matabi Super Green", "12L", "Piston", "Best Budget"],
+    h2Text: "#4 Matabi Super Green 12L Backpack Sprayer — European Made",
+    tocTitle: "#4 Matabi Super Green 12L",
+  },
+  {
+    anchorId: "oregon",
+    asin: "B0D6YPYFRX",
+    rank: 5,
+    cardName: "Oregon 20L Backpack Pressure Sprayer — 20L Capacity",
+    cardLabel: "Best 20L Backpack",
+    features: [
+      "High-capacity 20L for large outdoor treatments",
+      "Suitable for commercial property perimeters",
+      "Cost-effective for warehouse and garden treatment",
+      "Comfortable backpack design for extended use",
+    ],
+    tableCells: ["Oregon 20L", "20L", "Piston", "Maximum Capacity"],
+    h2Text: "#5 Oregon 20L Backpack Pressure Sprayer — 20L Capacity",
+    tocTitle: "#5 Oregon 20L Backpack",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Sprayers at a Glance" },
-  { id: "solo-473d", title: "#1 Solo 473D Classic 10L" },
-  { id: "solo-90psi", title: "#2 Solo 10L 90psi" },
-  { id: "solo-425", title: "#3 Solo 425 Professional 15L" },
-  { id: "matabi", title: "#4 Matabi Super Green 12L" },
-  { id: "oregon", title: "#5 Oregon 20L Backpack" },
+  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
   { id: "piston-vs-diaphragm", title: "Piston vs Diaphragm Pumps" },
   { id: "what-can-you-treat", title: "What Can You Treat?" },
   { id: "safety", title: "Safety & PPE" },
@@ -208,55 +299,25 @@ export default function ProfessionalPressureSprayersPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            <td>Solo 473D Classic</td>
-            <td>10L</td>
-            <td>Diaphragm</td>
-            <td>Best Overall</td>
-          </tr>{" "}
-          <tr>
-            <td>Solo 10L 90psi</td>
-            <td>10L</td>
-            <td>Diaphragm</td>
-            <td>Professional-Grade</td>
-          </tr>{" "}
-          <tr>
-            <td>Solo 425 Professional</td>
-            <td>15L</td>
-            <td>Piston</td>
-            <td>Large Area Work</td>
-          </tr>{" "}
-          <tr>
-            <td>Matabi Super Green</td>
-            <td>12L</td>
-            <td>Piston</td>
-            <td>Best Budget</td>
-          </tr>{" "}
-          <tr>
-            <td>Oregon 20L</td>
-            <td>20L</td>
-            <td>Piston</td>
-            <td>Maximum Capacity</td>
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+              <td>{p.tableCells[3]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
-      <h2 id="solo-473d">
-        #1 Solo 473D Classic Knapsack Sprayer — 10L Diaphragm Pump
-      </h2>{" "}
+      <h2 id={products[0].anchorId}>{products[0].h2Text}</h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Solo 473D Classic Knapsack Sprayer — 10L Diaphragm Pump"
-          rank={1}
-          features={[
-            "German-engineered — the professional default for pest control",
-            "10L capacity, diaphragm pump for chemical resistance",
-            "Consistent pressure for even insecticide distribution",
-            "Industry standard for residual insecticide application",
-          ]}
-          asin="B00ESW2YDM"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -286,22 +347,15 @@ export default function ProfessionalPressureSprayersPage() {
         features a pressure lock to maintain consistent output. If you buy one
         sprayer and want it to last, this is the one.{" "}
       </p>{" "}
-      <h2 id="solo-90psi">
-        #2 Solo 10L 90psi Diaphragm Pump Backpack Sprayer
-      </h2>{" "}
+      <h2 id={products[1].anchorId}>{products[1].h2Text}</h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Solo 10L 90psi Diaphragm Pump Backpack Sprayer"
-          rank={2}
-          features={[
-            "High-pressure 90psi for maximum penetration",
-            "Diaphragm pump handles abrasive and emulsifiable concentrates",
-            "Ideal for perimeter treatments and crack/crevice work",
-            "Professional-grade pressure for deep application",
-          ]}
-          asin="B00KBTAAF0"
-          bestFor="Best Professional-Grade"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -323,22 +377,15 @@ export default function ProfessionalPressureSprayersPage() {
         matches the 473D, with the added benefit of a pressure gauge so you can
         dial in exactly the right output for each application.{" "}
       </p>{" "}
-      <h2 id="solo-425">
-        #3 Solo 425 Professional Piston Backpack Sprayer — 15L
-      </h2>{" "}
+      <h2 id={products[2].anchorId}>{products[2].h2Text}</h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Solo 425 Professional Piston Backpack Sprayer — 15L"
-          rank={3}
-          features={[
-            "Larger 15L capacity for extended treatments",
-            "Piston pump up to 90psi pressure",
-            "Preferred by grounds and facilities teams",
-            "Treats large external areas without refilling",
-          ]}
-          asin="B00002N6BW"
-          bestFor="Best 15L Backpack"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -360,22 +407,15 @@ export default function ProfessionalPressureSprayersPage() {
         perimeters with standard insecticide, the extra 5L capacity saves time
         on larger properties.{" "}
       </p>{" "}
-      <h2 id="matabi">
-        #4 Matabi Super Green 12L Backpack Sprayer — European Made
-      </h2>{" "}
+      <h2 id={products[3].anchorId}>{products[3].h2Text}</h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Matabi Super Green 12L Backpack Sprayer — European Made"
-          rank={4}
-          features={[
-            "European-manufactured with fibreglass lance",
-            "3-position pressure regulator, padded straps",
-            "— proven chemical-resistant seals",
-            "Durable construction for professional pesticide use",
-          ]}
-          asin="B0001P0GHG"
-          bestFor="Best Budget"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -394,22 +434,15 @@ export default function ProfessionalPressureSprayersPage() {
         regular pesticide use. The 12L capacity sits between the Solo 10L and
         15L models, offering a good balance of capacity and weight.{" "}
       </p>{" "}
-      <h2 id="oregon">
-        #5 Oregon 20L Backpack Pressure Sprayer — 20L Capacity
-      </h2>{" "}
+      <h2 id={products[4].anchorId}>{products[4].h2Text}</h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Oregon 20L Backpack Pressure Sprayer — 20L Capacity"
-          rank={5}
-          features={[
-            "High-capacity 20L for large outdoor treatments",
-            "Suitable for commercial property perimeters",
-            "Cost-effective for warehouse and garden treatment",
-            "Comfortable backpack design for extended use",
-          ]}
-          asin="B0D6YPYFRX"
-          bestFor="Best 20L Backpack"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>

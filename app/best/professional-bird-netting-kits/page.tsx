@@ -88,13 +88,126 @@ const faqSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Text: string;
+  tocTitle: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "product-1",
+    asin: "B07KB3BWZP",
+    rank: 1,
+    cardName:
+      "Birdgo Anti-Pigeon Netting 10m x 10m (50mm, Knotted, UV-Stabilised)",
+    cardLabel: "Best Overall",
+    features: [
+      "Large 10m x 10m net — 100 sq m of coverage per pack",
+      "50mm knotted mesh for pigeon and gull exclusion",
+      "UV-stabilised polyethylene rated for years outdoors",
+      "Net only — pair with the fixing clips below",
+    ],
+    tableCells: [
+      "Birdgo Anti-Pigeon Netting — 10m x 10m",
+      "50mm knotted netting",
+      "Best Overall (largest net)",
+    ],
+    h2Text: "#1 Birdgo Anti-Pigeon Netting — 10m x 10m (Largest Coverage)",
+    tocTitle: "#1 Birdgo Anti-Pigeon Netting — 10m x 10m",
+  },
+  {
+    anchorId: "product-2",
+    asin: "B07KB29QTF",
+    rank: 2,
+    cardName:
+      "Birdgo Anti-Pigeon Netting 5m x 10m (50mm, Knotted, UV-Stabilised)",
+    cardLabel: "Best Value Net",
+    features: [
+      "5m x 10m net — 50 sq m, ideal for smaller areas",
+      "50mm knotted mesh for pigeon and gull exclusion",
+      "UV-stabilised knotted polyethylene from a specialist brand",
+      "Lower-cost entry point than the 10m x 10m net",
+    ],
+    tableCells: [
+      "Birdgo Anti-Pigeon Netting — 5m x 10m",
+      "50mm knotted netting",
+      "Best Value Net",
+    ],
+    h2Text: "#2 Birdgo Anti-Pigeon Netting — 5m x 10m (Best Value)",
+    tocTitle: "#2 Birdgo Anti-Pigeon Netting — 5m x 10m",
+  },
+  {
+    anchorId: "product-3",
+    asin: "B006Y9L57S",
+    rank: 3,
+    cardName: "Defender Wide Plastic Bird Spikes — 5m Professional Pack",
+    cardLabel: "Best for Ledges",
+    features: [
+      "UK-manufactured, patented design (25+ year track record)",
+      "Stainless steel spikes on UV-resistant plastic base",
+      "Covers ledges up to 20cm wide",
+      "Professional standard for ledge exclusion alongside netting",
+    ],
+    tableCells: [
+      "Defender Wide Plastic Bird Spikes — 5m Pack",
+      "Spike strip",
+      "Best Ledge Exclusion",
+    ],
+    h2Text: "#3 Defender Wide Plastic Bird Spikes — 5m Professional Pack",
+    tocTitle: "#3 Defender Wide Plastic Bird Spikes",
+  },
+  {
+    anchorId: "product-4",
+    asin: "B0823ZVZSN",
+    rank: 4,
+    cardName: "Birdgo Bird Netting & Mesh Fixing Clips — No-Drill (60-Pack)",
+    cardLabel: "Best No-Drill Fixings",
+    features: [
+      "Pack of 60 UV-stabilised nylon fixing clips",
+      "No-drill installation for netting and proofing mesh",
+      "Originally designed for solar-panel and roof mesh fixing",
+      "Quick way to attach netting without specialist tools",
+    ],
+    tableCells: [
+      "Birdgo Bird Netting Fixing Clips (60-Pack)",
+      "No-drill fixing clips",
+      "Essential Accessory",
+    ],
+    h2Text: "#4 Birdgo Bird Netting Fixing Clips (60-Pack)",
+    tocTitle: "#4 Birdgo Bird Netting Fixing Clips (60-Pack)",
+  },
+  {
+    anchorId: "product-5",
+    asin: "B0024NL0OQ",
+    rank: 5,
+    cardName: "Pest-Stop Professional Stainless Steel Bird Spikes",
+    cardLabel: "Best Spikes Option",
+    features: [
+      "304 stainless steel spikes, UV-resistant base",
+      "Flexible base for curved surfaces like ridge tiles",
+      "Pigeon and seagull exclusion for rooflines and sills",
+      "Complements netting on buildings with complex geometry",
+    ],
+    tableCells: [
+      "Pest-Stop Professional Stainless Steel Bird Spikes",
+      "Stainless steel spike strip",
+      "Complex Geometry",
+    ],
+    h2Text: "#5 Pest-Stop Professional Stainless Steel Bird Spikes",
+    tocTitle: "#5 Pest-Stop Stainless Steel Bird Spikes",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "At a Glance" },
-  { id: "product-1", title: "#1 Birdgo Anti-Pigeon Netting — 10m x 10m" },
-  { id: "product-2", title: "#2 Birdgo Anti-Pigeon Netting — 5m x 10m" },
-  { id: "product-3", title: "#3 Defender Wide Plastic Bird Spikes" },
-  { id: "product-4", title: "#4 Birdgo Bird Netting Fixing Clips (60-Pack)" },
-  { id: "product-5", title: "#5 Pest-Stop Stainless Steel Bird Spikes" },
+  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
   { id: "netting-vs-spikes", title: "Netting vs Spikes" },
   { id: "buying-guide", title: "Buying Guide" },
   { id: "roi", title: "ROI: Why Exclusion Pays for Itself" },
@@ -224,50 +337,25 @@ export default function BestProfessionalBirdNettingKitsPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Birdgo Anti-Pigeon Netting &mdash; 10m x 10m</td>
-            <td>50mm knotted netting</td>
-            <td>Best Overall (largest net)</td>
-          </tr>
-          <tr>
-            <td>Birdgo Anti-Pigeon Netting &mdash; 5m x 10m</td>
-            <td>50mm knotted netting</td>
-            <td>Best Value Net</td>
-          </tr>
-          <tr>
-            <td>Defender Wide Plastic Bird Spikes &mdash; 5m Pack</td>
-            <td>Spike strip</td>
-            <td>Best Ledge Exclusion</td>
-          </tr>
-          <tr>
-            <td>Birdgo Bird Netting Fixing Clips (60-Pack)</td>
-            <td>No-drill fixing clips</td>
-            <td>Essential Accessory</td>
-          </tr>
-          <tr>
-            <td>Pest-Stop Professional Stainless Steel Bird Spikes</td>
-            <td>Stainless steel spike strip</td>
-            <td>Complex Geometry</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
       {/* Product 1 */}
-      <h2 id="product-1">
-        #1 Birdgo Anti-Pigeon Netting &mdash; 10m x 10m (Largest Coverage)
-      </h2>
+      <h2 id={products[0].anchorId}>{products[0].h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Birdgo Anti-Pigeon Netting 10m x 10m (50mm, Knotted, UV-Stabilised)"
-          features={[
-            "Large 10m x 10m net — 100 sq m of coverage per pack",
-            "50mm knotted mesh for pigeon and gull exclusion",
-            "UV-stabilised polyethylene rated for years outdoors",
-            "Net only — pair with the fixing clips below",
-          ]}
-          asin="B07KB3BWZP"
-          bestFor="Best Overall"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -301,21 +389,14 @@ export default function BestProfessionalBirdNettingKitsPage() {
       </p>
 
       {/* Product 2 */}
-      <h2 id="product-2">
-        #2 Birdgo Anti-Pigeon Netting &mdash; 5m x 10m (Best Value)
-      </h2>
+      <h2 id={products[1].anchorId}>{products[1].h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Birdgo Anti-Pigeon Netting 5m x 10m (50mm, Knotted, UV-Stabilised)"
-          features={[
-            "5m x 10m net — 50 sq m, ideal for smaller areas",
-            "50mm knotted mesh for pigeon and gull exclusion",
-            "UV-stabilised knotted polyethylene from a specialist brand",
-            "Lower-cost entry point than the 10m x 10m net",
-          ]}
-          asin="B07KB29QTF"
-          bestFor="Best Value Net"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -346,21 +427,14 @@ export default function BestProfessionalBirdNettingKitsPage() {
       </p>
 
       {/* Product 3 */}
-      <h2 id="product-3">
-        #3 Defender Wide Plastic Bird Spikes &mdash; 5m Professional Pack
-      </h2>
+      <h2 id={products[2].anchorId}>{products[2].h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Defender Wide Plastic Bird Spikes — 5m Professional Pack"
-          features={[
-            "UK-manufactured, patented design (25+ year track record)",
-            "Stainless steel spikes on UV-resistant plastic base",
-            "Covers ledges up to 20cm wide",
-            "Professional standard for ledge exclusion alongside netting",
-          ]}
-          asin="B006Y9L57S"
-          bestFor="Best for Ledges"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>
@@ -398,19 +472,14 @@ export default function BestProfessionalBirdNettingKitsPage() {
       </p>
 
       {/* Product 4 */}
-      <h2 id="product-4">#4 Birdgo Bird Netting Fixing Clips (60-Pack)</h2>
+      <h2 id={products[3].anchorId}>{products[3].h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Birdgo Bird Netting & Mesh Fixing Clips — No-Drill (60-Pack)"
-          features={[
-            "Pack of 60 UV-stabilised nylon fixing clips",
-            "No-drill installation for netting and proofing mesh",
-            "Originally designed for solar-panel and roof mesh fixing",
-            "Quick way to attach netting without specialist tools",
-          ]}
-          asin="B0823ZVZSN"
-          bestFor="Best No-Drill Fixings"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />
       </div>
       <p>
@@ -441,21 +510,14 @@ export default function BestProfessionalBirdNettingKitsPage() {
       </p>
 
       {/* Product 5 */}
-      <h2 id="product-5">
-        #5 Pest-Stop Professional Stainless Steel Bird Spikes
-      </h2>
+      <h2 id={products[4].anchorId}>{products[4].h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest-Stop Professional Stainless Steel Bird Spikes"
-          features={[
-            "304 stainless steel spikes, UV-resistant base",
-            "Flexible base for curved surfaces like ridge tiles",
-            "Pigeon and seagull exclusion for rooflines and sills",
-            "Complements netting on buildings with complex geometry",
-          ]}
-          asin="B0024NL0OQ"
-          bestFor="Best Spikes Option"
-          rank={5}
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />
       </div>
       <p>

@@ -84,12 +84,95 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocTitle: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "pluszap-30w",
+    asin: "B0B41H37HB",
+    rank: 1,
+    cardName: "Insect-O-Cutor PlusZap 30W Indoor Fly Killer — Aluminium Grid",
+    cardLabel: "Best Overall",
+    features: [
+      "From the world's leading flying insect control brand (est. 1962)",
+      "30W professional killing grid, aluminium casing",
+      "Pre-installed UV lamps, deep catch tray",
+      "Suitable for commercial kitchens, warehouses and retail",
+    ],
+    tableCells: ["Insect-O-Cutor PlusZap 30W", "30W", "Best Overall"],
+    h2Label: "#1 Insect-O-Cutor PlusZap 30W Indoor Fly Killer",
+    h2Name: "Aluminium Grid",
+    tocTitle: "#1 Insect-O-Cutor PlusZap 30W",
+  },
+  {
+    anchorId: "pluszap-16w",
+    asin: "B0B41C7JHV",
+    rank: 2,
+    cardName: "Insect-O-Cutor PlusZap 16W — Compact Commercial Unit",
+    cardLabel: "Best Compact Unit",
+    features: [
+      "Compact version for offices and smaller food areas",
+      "Same professional aluminium construction as 30W",
+      "Ideal for food preparation areas and service counters",
+      "16W — lower running costs for smaller spaces",
+    ],
+    tableCells: ["Insect-O-Cutor PlusZap 16W", "16W", "Compact Commercial"],
+    h2Label: "#2 Insect-O-Cutor PlusZap 16W",
+    h2Name: "Compact Commercial Unit",
+    tocTitle: "#2 Insect-O-Cutor PlusZap 16W",
+  },
+  {
+    anchorId: "aspectek-30w",
+    asin: "B017TETOE2",
+    rank: 3,
+    cardName:
+      "Aspectek Professional Electronic Insect Killer — 30W UV (UK Plug)",
+    cardLabel: "Best Budget",
+    features: [
+      "Long-established indoor electronic insect killer",
+      "30W UV bulbs, powerful killing grid, washable tray",
+      "— proven commercial and home use",
+      "Strong value proposition for cost-conscious facilities managers",
+    ],
+    tableCells: ["Aspectek 30W Electronic Insect Killer", "30W", "Best Budget"],
+    h2Label: "#3 Aspectek Professional Electronic Insect Killer",
+    h2Name: "30W UV",
+    tocTitle: "#3 Aspectek 30W Electronic Insect Killer",
+  },
+  {
+    anchorId: "aspectek-20w",
+    asin: "B086DK71VX",
+    rank: 4,
+    cardName:
+      "Aspectek Upgraded 20W Electronic Bug Zapper — Commercial & Residential",
+    cardLabel: "Best Dual-Use Unit",
+    features: [
+      "365nm UVA bulbs for optimal insect attraction",
+      "2800V killing grid, protective cage design",
+      "Detachable grid for easy bulb replacement",
+      "Suitable for restaurants, offices, warehouses and garages",
+    ],
+    tableCells: ["Aspectek 20W Bug Zapper", "20W", "Budget Multi-Site"],
+    h2Label: "#4 Aspectek Upgraded 20W Electronic Bug Zapper",
+    h2Name: "Commercial & Residential",
+    tocTitle: "#4 Aspectek 20W Bug Zapper",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "At a Glance: Top 4 Commercial ILTs" },
-  { id: "pluszap-30w", title: "#1 Insect-O-Cutor PlusZap 30W" },
-  { id: "pluszap-16w", title: "#2 Insect-O-Cutor PlusZap 16W" },
-  { id: "aspectek-30w", title: "#3 Aspectek 30W Electronic Insect Killer" },
-  { id: "aspectek-20w", title: "#4 Aspectek 20W Bug Zapper" },
+  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
   { id: "grid-vs-glue", title: "Electric Grid vs Glue Board" },
   { id: "buying-guide", title: "Buying Guide" },
   { id: "roi", title: "ROI: ILT vs EHO Fines" },
@@ -248,46 +331,27 @@ export default function ProfessionalInsectLightTrapsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Insect-O-Cutor PlusZap 30W</td> <td>30W</td>{" "}
-            <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Insect-O-Cutor PlusZap 16W</td> <td>16W</td>{" "}
-            <td>Compact Commercial</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Aspectek 30W Electronic Insect Killer</td> <td>30W</td>{" "}
-            <td>Best Budget</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Aspectek 20W Bug Zapper</td> <td>20W</td>{" "}
-            <td>Budget Multi-Site</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       {/* Product 1 — PlusZap 30W */}{" "}
-      <h2 id="pluszap-30w">
-        #1 Insect-O-Cutor PlusZap 30W Indoor Fly Killer &mdash; Aluminium Grid
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Insect-O-Cutor PlusZap 30W Indoor Fly Killer — Aluminium Grid"
-          features={[
-            "From the world's leading flying insect control brand (est. 1962)",
-            "30W professional killing grid, aluminium casing",
-            "Pre-installed UV lamps, deep catch tray",
-            "Suitable for commercial kitchens, warehouses and retail",
-          ]}
-          asin="B0B41H37HB"
-          bestFor="Best Overall"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -378,22 +442,17 @@ export default function ProfessionalInsectLightTrapsPage() {
         lifespan of the aluminium casing.{" "}
       </p>{" "}
       {/* Product 2 — PlusZap 16W */}{" "}
-      <h2 id="pluszap-16w">
-        #2 Insect-O-Cutor PlusZap 16W &mdash; Compact Commercial Unit
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Insect-O-Cutor PlusZap 16W — Compact Commercial Unit"
-          features={[
-            "Compact version for offices and smaller food areas",
-            "Same professional aluminium construction as 30W",
-            "Ideal for food preparation areas and service counters",
-            "16W — lower running costs for smaller spaces",
-          ]}
-          asin="B0B41C7JHV"
-          bestFor="Best Compact Unit"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -466,22 +525,17 @@ export default function ProfessionalInsectLightTrapsPage() {
         cost.{" "}
       </p>{" "}
       {/* Product 3 — Aspectek 30W */}{" "}
-      <h2 id="aspectek-30w">
-        #3 Aspectek Professional Electronic Insect Killer &mdash; 30W UV
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Aspectek Professional Electronic Insect Killer — 30W UV (UK Plug)"
-          features={[
-            "Long-established indoor electronic insect killer",
-            "30W UV bulbs, powerful killing grid, washable tray",
-            "— proven commercial and home use",
-            "Strong value proposition for cost-conscious facilities managers",
-          ]}
-          asin="B017TETOE2"
-          bestFor="Best Budget"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -559,23 +613,17 @@ export default function ProfessionalInsectLightTrapsPage() {
         Ideal for offices, warehouses, care homes, and any business that
         prioritises coverage breadth over brand prestige.{" "}
       </p>{" "}
-      <h2 id="aspectek-20w">
-        #4 Aspectek Upgraded 20W Electronic Bug Zapper &mdash; Commercial &amp;
-        Residential
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Aspectek Upgraded 20W Electronic Bug Zapper — Commercial & Residential"
-          features={[
-            "365nm UVA bulbs for optimal insect attraction",
-            "2800V killing grid, protective cage design",
-            "Detachable grid for easy bulb replacement",
-            "Suitable for restaurants, offices, warehouses and garages",
-          ]}
-          asin="B086DK71VX"
-          bestFor="Best Dual-Use Unit"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>

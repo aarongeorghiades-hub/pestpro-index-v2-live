@@ -70,13 +70,131 @@ const breadcrumbSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocTitle: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "silentnight",
+    asin: "B0FHRPBZGR",
+    rank: 1,
+    cardName:
+      "Silentnight Complete Encasement Waterproof Mattress Protector — Double",
+    cardLabel: "Best Overall",
+    features: [
+      "Full six-sided zip encasement — complete bed bug barrier",
+      "Waterproof polypropylene backing, hypoallergenic",
+      "Machine washable, quiet and rustle-free",
+      "UK sizing (Double 135x190cm, 30cm deep) — Silentnight trusted brand",
+    ],
+    tableCells: [
+      "Silentnight Complete Encasement",
+      "Six-sided zip + waterproof",
+      "Best Overall",
+    ],
+    h2Label: "#1 Silentnight Complete Encasement",
+    h2Name: "Best Overall for Landlords",
+    tocTitle: "#1 Silentnight Complete Encasement",
+  },
+  {
+    anchorId: "sureguard",
+    asin: "B00WI09NM6",
+    rank: 2,
+    cardName: "SureGuard Mattress Encasement — 100% Waterproof, Bed Bug Proof",
+    cardLabel: "Best Professional-Grade",
+    features: [
+      "Invisi-Zip with SureSeal technology — zero gap",
+      "100% cotton terry top for comfort",
+      "GREENGUARD Gold certified, 10-year quality guarantee",
+      "US hospitality standard — used in hotels worldwide",
+    ],
+    tableCells: [
+      "SureGuard Mattress Encasement",
+      "Invisi-Zip SureSeal, cotton terry",
+      "Best Professional-Grade",
+    ],
+    h2Label: "#2 SureGuard Mattress Encasement",
+    h2Name: "Best Professional-Grade",
+    tocTitle: "#2 SureGuard Mattress Encasement",
+  },
+  {
+    anchorId: "utopia",
+    asin: "B077STRSZ7",
+    rank: 3,
+    cardName: "Utopia Bedding Waterproof Zippered Mattress Encasement — Double",
+    cardLabel: "Best Budget",
+    features: [
+      "Six-sided zippered protection, waterproof",
+      "Dust mite and bed bug proof",
+      "Excellent value for equipping multiple rooms",
+    ],
+    tableCells: [
+      "Utopia Bedding Encasement",
+      "Six-sided zip, budget price",
+      "Best Budget",
+    ],
+    h2Label: "#3 Utopia Bedding Encasement",
+    h2Name: "Best Budget for Bulk Buy",
+    tocTitle: "#3 Utopia Bedding Encasement",
+  },
+  {
+    anchorId: "wrappybag",
+    asin: "B0C5XFD8X5",
+    rank: 4,
+    cardName:
+      "WRAPPYBAG Bed Bug Mattress Protector — Zipped, Waterproof, Cotton",
+    cardLabel: "Best Cotton Encasement",
+    features: [
+      "Full zippered encasement with cotton surface",
+      "Designed specifically for bed bug prevention",
+      "Available in UK sizes",
+      "Popular in the HMO and rental market",
+    ],
+    tableCells: [
+      "WRAPPYBAG Bed Bug Protector",
+      "Cotton surface, UK rental market",
+      "HMO & Rental",
+    ],
+    h2Label: "#4 WRAPPYBAG Bed Bug Protector",
+    h2Name: "Popular in the Rental Market",
+    tocTitle: "#4 WRAPPYBAG Bed Bug Protector",
+  },
+  {
+    anchorId: "interceptors",
+    asin: "B07MG8BD7X",
+    rank: 5,
+    cardName: "Bed Bug Blocker Pro Interceptor Traps — 8 Pack",
+    cardLabel: "Best Interceptor Traps",
+    features: [
+      "Place under bed legs to monitor and trap bed bugs",
+      "No chemicals — passive detection system",
+      "Essential monitoring tool alongside encasements",
+      "Use for early detection in previously infested properties",
+    ],
+    tableCells: [
+      "Bed Bug Blocker Pro Interceptors",
+      "Passive monitoring traps",
+      "Detection & Monitoring",
+    ],
+    h2Label: "#5 Bed Bug Blocker Pro Interceptor Traps",
+    h2Name: "Essential Monitoring",
+    tocTitle: "#5 Bed Bug Blocker Pro Interceptors",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Encasements at a Glance" },
-  { id: "silentnight", title: "#1 Silentnight Complete Encasement" },
-  { id: "sureguard", title: "#2 SureGuard Mattress Encasement" },
-  { id: "utopia", title: "#3 Utopia Bedding Encasement" },
-  { id: "wrappybag", title: "#4 WRAPPYBAG Bed Bug Protector" },
-  { id: "interceptors", title: "#5 Bed Bug Blocker Pro Interceptors" },
+  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
   { id: "encasement-vs-protector", title: "Encasement vs Mattress Protector" },
   { id: "buying-guide", title: "Buying Guide" },
   { id: "roi", title: "ROI: The Numbers" },
@@ -185,50 +303,26 @@ export default function ProfessionalMattressEncasementsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            <td>Silentnight Complete Encasement</td>
-            <td>Six-sided zip + waterproof</td>
-            <td>Best Overall</td>
-          </tr>{" "}
-          <tr>
-            <td>SureGuard Mattress Encasement</td>
-            <td>Invisi-Zip SureSeal, cotton terry</td>
-            <td>Best Professional-Grade</td>
-          </tr>{" "}
-          <tr>
-            <td>Utopia Bedding Encasement</td>
-            <td>Six-sided zip, budget price</td>
-            <td>Best Budget</td>
-          </tr>{" "}
-          <tr>
-            <td>WRAPPYBAG Bed Bug Protector</td>
-            <td>Cotton surface, UK rental market</td>
-            <td>HMO &amp; Rental</td>
-          </tr>{" "}
-          <tr>
-            <td>Bed Bug Blocker Pro Interceptors</td>
-            <td>Passive monitoring traps</td>
-            <td>Detection &amp; Monitoring</td>
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
-      <h2 id="silentnight">
-        #1 Silentnight Complete Encasement — Best Overall for Landlords
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Silentnight Complete Encasement Waterproof Mattress Protector — Double"
-          rank={1}
-          features={[
-            "Full six-sided zip encasement — complete bed bug barrier",
-            "Waterproof polypropylene backing, hypoallergenic",
-            "Machine washable, quiet and rustle-free",
-            "UK sizing (Double 135x190cm, 30cm deep) — Silentnight trusted brand",
-          ]}
-          asin="B0FHRPBZGR"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -257,22 +351,17 @@ export default function ProfessionalMattressEncasementsPage() {
         are equipping multiple properties. Buy in bulk and your per-unit cost is
         negligible compared to the potential cost of a single infestation.{" "}
       </p>{" "}
-      <h2 id="sureguard">
-        #2 SureGuard Mattress Encasement — Best Professional-Grade
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="SureGuard Mattress Encasement — 100% Waterproof, Bed Bug Proof"
-          rank={2}
-          features={[
-            "Invisi-Zip with SureSeal technology — zero gap",
-            "100% cotton terry top for comfort",
-            "GREENGUARD Gold certified, 10-year quality guarantee",
-            "US hospitality standard — used in hotels worldwide",
-          ]}
-          asin="B00WI09NM6"
-          bestFor="Best Professional-Grade"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -301,21 +390,17 @@ export default function ProfessionalMattressEncasementsPage() {
         bed bug issues. For serviced accommodation, Airbnb properties, and
         premium HMOs, this is the professional choice.{" "}
       </p>{" "}
-      <h2 id="utopia">
-        #3 Utopia Bedding Encasement — Best Budget for Bulk Buy
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Utopia Bedding Waterproof Zippered Mattress Encasement — Double"
-          rank={3}
-          features={[
-            "Six-sided zippered protection, waterproof",
-            "Dust mite and bed bug proof",
-            "Excellent value for equipping multiple rooms",
-          ]}
-          asin="B077STRSZ7"
-          bestFor="Best Budget"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -341,22 +426,17 @@ export default function ProfessionalMattressEncasementsPage() {
         at each tenancy changeover, the Utopia provides more than adequate
         protection at a price that makes universal deployment practical.{" "}
       </p>{" "}
-      <h2 id="wrappybag">
-        #4 WRAPPYBAG Bed Bug Protector — Popular in the Rental Market
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="WRAPPYBAG Bed Bug Mattress Protector — Zipped, Waterproof, Cotton"
-          rank={4}
-          features={[
-            "Full zippered encasement with cotton surface",
-            "Designed specifically for bed bug prevention",
-            "Available in UK sizes",
-            "Popular in the HMO and rental market",
-          ]}
-          asin="B0C5XFD8X5"
-          bestFor="Best Cotton Encasement"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -376,22 +456,17 @@ export default function ProfessionalMattressEncasementsPage() {
         prevention, the WRAPPYBAG strikes a sensible balance between cost and
         quality.{" "}
       </p>{" "}
-      <h2 id="interceptors">
-        #5 Bed Bug Blocker Pro Interceptor Traps — Essential Monitoring
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Bed Bug Blocker Pro Interceptor Traps — 8 Pack"
-          rank={5}
-          features={[
-            "Place under bed legs to monitor and trap bed bugs",
-            "No chemicals — passive detection system",
-            "Essential monitoring tool alongside encasements",
-            "Use for early detection in previously infested properties",
-          ]}
-          asin="B07MG8BD7X"
-          bestFor="Best Interceptor Traps"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>
