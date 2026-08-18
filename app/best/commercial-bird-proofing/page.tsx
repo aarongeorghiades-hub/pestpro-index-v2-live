@@ -73,33 +73,190 @@ const breadcrumbSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-netting",
+    asin: "B07FTN3LQ3",
+    rank: 1,
+    cardName: "Heavy Duty Anti-Pigeon Bird Netting 10m × 20m",
+    cardLabel: "Best for Large Areas",
+    features: [
+      "Heavy-duty knotted mesh — far stronger than extruded netting",
+      "50mm mesh size — excludes pigeons, gulls, and most pest species",
+      "200 square metres of coverage per roll (10m × 20m)",
+      "UV-stabilised black polyethylene — resists degradation in direct sunlight",
+      "Suitable for warehouses, loading bays, courtyards, and roof voids",
+    ],
+    tableCells: [
+      "Heavy Duty Anti-Pigeon Bird Netting 10m × 20m",
+      "Knotted mesh netting",
+      "Large Area Exclusion",
+    ],
+    h2Label: "Best for Large Areas",
+    h2Name: "Heavy Duty Anti-Pigeon Bird Netting 10m × 20m",
+    tocLabel: "Best for Large Areas",
+    tocName: "Heavy Duty Anti-Pigeon Bird Netting",
+  },
+  {
+    anchorId: "best-spikes",
+    asin: "B0BL7PF3WG",
+    rank: 2,
+    cardName: "OFFO Stainless Steel Bird Spikes",
+    cardLabel: "Best for Ledges",
+    features: [
+      "Stainless steel pins on a stainless steel base — fully corrosion-resistant",
+      "Covers 78cm per strip — link multiple strips for continuous coverage",
+      "Effective against pigeons, seagulls, and crows",
+      "Flexible base conforms to curved surfaces and irregular ledges",
+      "Humane deterrent — prevents landing without harming birds",
+    ],
+    tableCells: [
+      "OFFO Stainless Steel Bird Spikes",
+      "Spike strip",
+      "Ledges & Sills",
+    ],
+    h2Label: "Best for Ledges",
+    h2Name: "OFFO Stainless Steel Bird Spikes",
+    tocLabel: "Best for Ledges",
+    tocName: "OFFO Stainless Steel Bird Spikes",
+  },
+  {
+    anchorId: "best-wire",
+    asin: "B07L435L3F",
+    rank: 3,
+    cardName: "Birdgo Pigeon Post & Pad Kit (10 × 90mm)",
+    cardLabel: "Best Wire System",
+    features: [
+      "10 stainless steel posts with adhesive pads — no drilling required",
+      "90mm post height — standard specification for pigeon deterrence",
+      "Designed for post-and-wire bird deterrent installations",
+      "Suitable for fencing, parapets, ledges, and non-drill surfaces",
+      "Used by professional pest controllers as part of wire systems",
+    ],
+    tableCells: [
+      "Birdgo Pigeon Post & Pad Kit",
+      "Wire system posts",
+      "Architectural Applications",
+    ],
+    h2Label: "Best Wire System",
+    h2Name: "Birdgo Pigeon Post & Pad Kit",
+    tocLabel: "Best Wire System",
+    tocName: "Birdgo Pigeon Post & Pad Kit",
+  },
+  {
+    anchorId: "best-gel",
+    asin: "B01MQSRJQ6",
+    rank: 4,
+    cardName: "Bird Barrier Optical Gel (24 Pack)",
+    cardLabel: "Best Discreet Option",
+    features: [
+      "Multi-sensory deterrent — visual, olfactory, and tactile",
+      "Appears as flames to birds through UV vision — immediate avoidance response",
+      "Contains peppermint and citronella oils — scent-based secondary deterrent",
+      "24 pre-filled dishes for rapid installation on ledges and flat surfaces",
+      "Virtually invisible to humans — ideal for heritage and customer-facing buildings",
+    ],
+    tableCells: [
+      "Bird Barrier Optical Gel (24 Pack)",
+      "Multi-sensory gel",
+      "Listed & Heritage Buildings",
+    ],
+    h2Label: "Best Discreet Deterrent",
+    h2Name: "Bird Barrier Optical Gel (24 Pack)",
+    tocLabel: "Best Discreet Deterrent",
+    tocName: "Bird Barrier Optical Gel",
+  },
+  {
+    anchorId: "best-solar",
+    asin: "B081CXWXQH",
+    rank: 5,
+    cardName: "Birdgo Bird Proofing Mesh & 60 Fixing Clip Kit",
+    cardLabel: "Best for Solar Panels",
+    features: [
+      "Complete kit: 30m PVC-coated galvanised mesh + 60 nylon clips",
+      "No-drill nylon clips attach to solar panel frame lip (min 20mm)",
+      "PVC coating prevents corrosion and protects panel frames from scratching",
+      "Prevents pigeons nesting under solar panels — a major UK problem",
+      "Cable ties included for joining corners and securing mesh edges",
+    ],
+    tableCells: [
+      "Birdgo Bird Proofing Mesh & 60 Clip Kit",
+      "PVC-coated mesh",
+      "Solar Panel Protection",
+    ],
+    h2Label: "Best for Solar Panels",
+    h2Name: "Birdgo Bird Proofing Mesh & 60 Fixing Clip Kit",
+    tocLabel: "Best for Solar Panels",
+    tocName: "Birdgo Bird Proofing Mesh Kit",
+  },
+  {
+    anchorId: "best-repair",
+    asin: "B07KX4CX4J",
+    rank: 6,
+    cardName: "Birdgo 100 Nylon Plastic Net Hooks",
+    cardLabel: "Best Repair Kit",
+    features: [
+      "100 nylon net hooks for bird control netting fixing and repair",
+      "Compatible with standard 50mm and 75mm commercial bird netting",
+      "UV-stabilised nylon construction for long outdoor life",
+      "Essential for maintaining existing netting installations",
+      "Can also be used for initial netting installations on wire rope",
+    ],
+    tableCells: [
+      "Birdgo 100 Nylon Net Hooks",
+      "Repair kit",
+      "Netting Maintenance",
+    ],
+    h2Label: "Best Netting Repair Kit",
+    h2Name: "Birdgo 100 Nylon Net Hooks",
+    tocLabel: "Best Netting Repair Kit",
+    tocName: "Birdgo 100 Nylon Net Hooks",
+  },
+  {
+    anchorId: "best-ultrasonic",
+    asin: "B0157D7CXW",
+    rank: 7,
+    cardName: "Ultrasonic Bird Repeller — 4 Speaker, UK Made",
+    cardLabel: "Best Electronic Deterrent",
+    features: [
+      "Multi-frequency ultrasonic output from 4 speakers",
+      "Waterproof construction for indoor and outdoor use",
+      "UK manufactured with UK plug and safety certification",
+      "Supplementary deterrent for use alongside physical barriers",
+      "Adjustable frequency settings for different bird species",
+    ],
+    tableCells: [
+      "Ultrasonic Bird Repeller (UK Made)",
+      "Electronic deterrent",
+      "Supplementary Coverage",
+    ],
+    h2Label: "Best Electronic Deterrent",
+    h2Name: "Ultrasonic Bird Repeller (UK Made)",
+    tocLabel: "Best Electronic Deterrent",
+    tocName: "Ultrasonic Bird Repeller",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Commercial Bird Proofing at a Glance" },
-  {
-    id: "best-netting",
-    title: "Best for Large Areas — Heavy Duty Anti-Pigeon Bird Netting",
-  },
-  {
-    id: "best-spikes",
-    title: "Best for Ledges — OFFO Stainless Steel Bird Spikes",
-  },
-  { id: "best-wire", title: "Best Wire System — Birdgo Pigeon Post & Pad Kit" },
-  {
-    id: "best-gel",
-    title: "Best Discreet Deterrent — Bird Barrier Optical Gel",
-  },
-  {
-    id: "best-solar",
-    title: "Best for Solar Panels — Birdgo Bird Proofing Mesh Kit",
-  },
-  {
-    id: "best-repair",
-    title: "Best Netting Repair Kit — Birdgo 100 Nylon Net Hooks",
-  },
-  {
-    id: "best-ultrasonic",
-    title: "Best Electronic Deterrent — Ultrasonic Bird Repeller",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Commercial Bird Proofing Buying Guide" },
   { id: "when-to-call", title: "When to Contact a Bird Control Specialist" },
 ];
@@ -308,62 +465,27 @@ export default function BestCommercialBirdProofingPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Heavy Duty Anti-Pigeon Bird Netting 10m &times; 20m</td>
-            <td>Knotted mesh netting</td>
-            <td>Large Area Exclusion</td>
-          </tr>
-          <tr>
-            <td>OFFO Stainless Steel Bird Spikes</td>
-            <td>Spike strip</td>
-            <td>Ledges &amp; Sills</td>
-          </tr>
-          <tr>
-            <td>Birdgo Pigeon Post &amp; Pad Kit</td>
-            <td>Wire system posts</td>
-            <td>Architectural Applications</td>
-          </tr>
-          <tr>
-            <td>Bird Barrier Optical Gel (24 Pack)</td>
-            <td>Multi-sensory gel</td>
-            <td>Listed &amp; Heritage Buildings</td>
-          </tr>
-          <tr>
-            <td>Birdgo Bird Proofing Mesh &amp; 60 Clip Kit</td>
-            <td>PVC-coated mesh</td>
-            <td>Solar Panel Protection</td>
-          </tr>
-          <tr>
-            <td>Birdgo 100 Nylon Net Hooks</td>
-            <td>Repair kit</td>
-            <td>Netting Maintenance</td>
-          </tr>
-          <tr>
-            <td>Ultrasonic Bird Repeller (UK Made)</td>
-            <td>Electronic deterrent</td>
-            <td>Supplementary Coverage</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
       {/* Product 1: Bird Netting */}
-      <h2 id="best-netting">
-        Best for Large Areas &mdash; Heavy Duty Anti-Pigeon Bird Netting 10m
-        &times; 20m
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Heavy Duty Anti-Pigeon Bird Netting 10m × 20m"
-          features={[
-            "Heavy-duty knotted mesh — far stronger than extruded netting",
-            "50mm mesh size — excludes pigeons, gulls, and most pest species",
-            "200 square metres of coverage per roll (10m × 20m)",
-            "UV-stabilised black polyethylene — resists degradation in direct sunlight",
-            "Suitable for warehouses, loading bays, courtyards, and roof voids",
-          ]}
-          asin="B07FTN3LQ3"
-          bestFor="Best for Large Areas"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -418,22 +540,16 @@ export default function BestCommercialBirdProofingPage() {
       </p>
 
       {/* Product 2: Stainless Steel Spikes */}
-      <h2 id="best-spikes">
-        Best for Ledges &mdash; OFFO Stainless Steel Bird Spikes
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="OFFO Stainless Steel Bird Spikes"
-          features={[
-            "Stainless steel pins on a stainless steel base — fully corrosion-resistant",
-            "Covers 78cm per strip — link multiple strips for continuous coverage",
-            "Effective against pigeons, seagulls, and crows",
-            "Flexible base conforms to curved surfaces and irregular ledges",
-            "Humane deterrent — prevents landing without harming birds",
-          ]}
-          asin="B0BL7PF3WG"
-          bestFor="Best for Ledges"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -477,22 +593,16 @@ export default function BestCommercialBirdProofingPage() {
       </p>
 
       {/* Product 3: Bird Wire System */}
-      <h2 id="best-wire">
-        Best Wire System &mdash; Birdgo Pigeon Post &amp; Pad Kit
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Birdgo Pigeon Post & Pad Kit (10 × 90mm)"
-          features={[
-            "10 stainless steel posts with adhesive pads — no drilling required",
-            "90mm post height — standard specification for pigeon deterrence",
-            "Designed for post-and-wire bird deterrent installations",
-            "Suitable for fencing, parapets, ledges, and non-drill surfaces",
-            "Used by professional pest controllers as part of wire systems",
-          ]}
-          asin="B07L435L3F"
-          bestFor="Best Wire System"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>
@@ -543,22 +653,16 @@ export default function BestCommercialBirdProofingPage() {
       </p>
 
       {/* Product 4: Optical Gel */}
-      <h2 id="best-gel">
-        Best Discreet Deterrent &mdash; Bird Barrier Optical Gel (24 Pack)
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Bird Barrier Optical Gel (24 Pack)"
-          features={[
-            "Multi-sensory deterrent — visual, olfactory, and tactile",
-            "Appears as flames to birds through UV vision — immediate avoidance response",
-            "Contains peppermint and citronella oils — scent-based secondary deterrent",
-            "24 pre-filled dishes for rapid installation on ledges and flat surfaces",
-            "Virtually invisible to humans — ideal for heritage and customer-facing buildings",
-          ]}
-          asin="B01MQSRJQ6"
-          bestFor="Best Discreet Option"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />
       </div>
       <p>
@@ -612,23 +716,16 @@ export default function BestCommercialBirdProofingPage() {
       </p>
 
       {/* Product 5: Solar Panel Mesh */}
-      <h2 id="best-solar">
-        Best for Solar Panels &mdash; Birdgo Bird Proofing Mesh &amp; 60 Fixing
-        Clip Kit
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Birdgo Bird Proofing Mesh & 60 Fixing Clip Kit"
-          features={[
-            "Complete kit: 30m PVC-coated galvanised mesh + 60 nylon clips",
-            "No-drill nylon clips attach to solar panel frame lip (min 20mm)",
-            "PVC coating prevents corrosion and protects panel frames from scratching",
-            "Prevents pigeons nesting under solar panels — a major UK problem",
-            "Cable ties included for joining corners and securing mesh edges",
-          ]}
-          asin="B081CXWXQH"
-          bestFor="Best for Solar Panels"
-          rank={5}
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />
       </div>
       <p>
@@ -680,22 +777,16 @@ export default function BestCommercialBirdProofingPage() {
       </p>
 
       {/* Product 6: Netting Repair Kit */}
-      <h2 id="best-repair">
-        Best Netting Repair Kit &mdash; Birdgo 100 Nylon Net Hooks
+      <h2 id={products[5].anchorId}>
+        {products[5].h2Label} &mdash; {products[5].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Birdgo 100 Nylon Plastic Net Hooks"
-          features={[
-            "100 nylon net hooks for bird control netting fixing and repair",
-            "Compatible with standard 50mm and 75mm commercial bird netting",
-            "UV-stabilised nylon construction for long outdoor life",
-            "Essential for maintaining existing netting installations",
-            "Can also be used for initial netting installations on wire rope",
-          ]}
-          asin="B07KX4CX4J"
-          bestFor="Best Repair Kit"
-          rank={6}
+          name={products[5].cardName}
+          features={products[5].features}
+          asin={products[5].asin}
+          bestFor={products[5].cardLabel}
+          rank={products[5].rank}
         />
       </div>
       <p>
@@ -735,22 +826,16 @@ export default function BestCommercialBirdProofingPage() {
       </p>
 
       {/* Product 7: Ultrasonic Deterrent */}
-      <h2 id="best-ultrasonic">
-        Best Electronic Deterrent &mdash; Ultrasonic Bird Repeller (UK Made)
+      <h2 id={products[6].anchorId}>
+        {products[6].h2Label} &mdash; {products[6].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Ultrasonic Bird Repeller — 4 Speaker, UK Made"
-          features={[
-            "Multi-frequency ultrasonic output from 4 speakers",
-            "Waterproof construction for indoor and outdoor use",
-            "UK manufactured with UK plug and safety certification",
-            "Supplementary deterrent for use alongside physical barriers",
-            "Adjustable frequency settings for different bird species",
-          ]}
-          asin="B0157D7CXW"
-          bestFor="Best Electronic Deterrent"
-          rank={7}
+          name={products[6].cardName}
+          features={products[6].features}
+          asin={products[6].asin}
+          bestFor={products[6].cardLabel}
+          rank={products[6].rank}
         />
       </div>
       <p>

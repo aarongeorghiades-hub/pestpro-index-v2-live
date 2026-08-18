@@ -69,27 +69,145 @@ const breadcrumbSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-professional-kit",
+    asin: "B098XMZM6M",
+    rank: 1,
+    cardName:
+      "Pest Expert Formula 'P+' Ultimate Bed Bug Killer Concentrate + 5L Pressure Sprayer",
+    cardLabel: "Best Overall",
+    features: [
+      "Makes 10 litres of professional-strength insecticide — treats approx. 100 sqm",
+      "Three active ingredients: Tetramethrin + Permethrin + PBO (piperonyl butoxide)",
+      "Includes 5L pressure sprayer for professional application",
+      "Bed bug insecticide available on the UK amateur market",
+      "Fast knockdown + long residual kill — continues working for weeks",
+    ],
+    tableCells: [
+      "Pest Expert Formula 'P+' Concentrate + 5L Sprayer",
+      "Professional Treatment Kit",
+      "Best Professional Kit",
+    ],
+    h2Label: "Best Professional Treatment Kit",
+    h2Name:
+      "Pest Expert Formula 'P+' Ultimate Bed Bug Killer Concentrate + 5L Pressure Sprayer",
+    tocLabel: "Best Professional Treatment Kit",
+    tocName: "Pest Expert Formula P+ Concentrate + 5L Sprayer",
+  },
+  {
+    anchorId: "best-professional-spray",
+    asin: "B076KQQT8F",
+    rank: 2,
+    cardName: "Pest Expert Bed Bug Killer Spray 2 x 1L Formula 'C+'",
+    cardLabel: "Best Professional Spray",
+    features: [
+      "2 x 1 litre bottles — professional strength approved for amateur use",
+      "Three active ingredients including insect growth regulator (pyriproxyfen)",
+      "Fast knockdown + long residual + prevents egg development",
+      "Water-based formula — safe for mattresses, carpets, and upholstery",
+      "Suitable for hotels, hospitals, care homes, and B&Bs",
+    ],
+    tableCells: [
+      "Pest Expert Formula 'C+' 2 x 1L Spray",
+      "Professional Spray",
+      "Best Professional Spray",
+    ],
+    h2Label: "Best Professional Spray",
+    h2Name: "Pest Expert Bed Bug Killer Spray 2 x 1L Formula 'C+'",
+    tocLabel: "Best Professional Spray",
+    tocName: "Pest Expert Formula C+ 2 x 1L",
+  },
+  {
+    anchorId: "best-bulk",
+    asin: "B0973D1DB8",
+    rank: 3,
+    cardName: "NOPE! CP Bed Bug Killer Spray 5L + Pressure Sprayer",
+    cardLabel: "Best Bulk Treatment",
+    features: [
+      "5 litres of professional cypermethrin spray + pressure sprayer included",
+      "Extended residual kill — continues working for up to 3 months",
+      "Odourless and non-staining — suitable for hotel rooms and guest areas",
+      "HSE-registered insecticide — compliant for commercial use",
+    ],
+    tableCells: [
+      "NOPE! CP Bed Bug Killer 5L + Sprayer",
+      "Bulk Treatment",
+      "Best Bulk Treatment",
+    ],
+    h2Label: "Best Bulk Treatment",
+    h2Name: "NOPE! CP Bed Bug Killer 5L + Sprayer",
+    tocLabel: "Best Bulk Treatment",
+    tocName: "NOPE! CP 5L + Sprayer",
+  },
+  {
+    anchorId: "best-room-kit",
+    asin: "B01E724WFK",
+    rank: 4,
+    cardName: "Pest Expert Bed Bug Treatment Kit (Standard)",
+    cardLabel: "Best Complete Room Kit",
+    features: [
+      "Complete kit for one room — everything included for a thorough treatment",
+      "1L Formula C+ spray + fogger bomb + insecticidal powder + aerosol spray",
+      "Multiple application methods attack bed bugs in every harbourage",
+      "Step-by-step treatment guide included for non-specialist staff",
+      "Professional strength — the same products pest controllers use",
+    ],
+    tableCells: [
+      "Pest Expert Treatment Kit (Standard)",
+      "Complete Room Kit",
+      "Best Complete Room Kit",
+    ],
+    h2Label: "Best Complete Room Kit",
+    h2Name: "Pest Expert Bed Bug Treatment Kit (Standard)",
+    tocLabel: "Best Complete Room Kit",
+    tocName: "Pest Expert Treatment Kit (Standard)",
+  },
+  {
+    anchorId: "best-monitoring",
+    asin: "B07MG8BD7X",
+    rank: 5,
+    cardName: "Bed Bug Blocker (Pro) Interceptor Traps 8-Pack",
+    cardLabel: "Best Monitoring Add-On",
+    features: [
+      "Pack of 8 heavy-duty interceptor traps — covers 2 hotel beds",
+      "Textured exterior + slippery interior = proven capture mechanism",
+      "Chemical-free, reusable, eco-friendly passive monitoring",
+      "Fits bed and furniture legs up to 3 inches diameter",
+      "Essential for post-treatment monitoring and early detection",
+    ],
+    tableCells: [
+      "Bed Bug Blocker (Pro) 8-Pack",
+      "Monitoring Traps",
+      "Best Monitoring Add-On",
+    ],
+    h2Label: "Best Monitoring Add-On",
+    h2Name: "Bed Bug Blocker (Pro) Interceptor Traps 8-Pack",
+    tocLabel: "Best Monitoring Add-On",
+    tocName: "Bed Bug Blocker (Pro) Interceptor Traps 8-Pack",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Commercial Bed Bug Treatment at a Glance" },
-  {
-    id: "best-professional-kit",
-    title:
-      "Best Professional Treatment Kit — Pest Expert Formula P+ Concentrate + 5L Sprayer",
-  },
-  {
-    id: "best-professional-spray",
-    title: "Best Professional Spray — Pest Expert Formula C+ 2 x 1L",
-  },
-  { id: "best-bulk", title: "Best Bulk Treatment — NOPE! CP 5L + Sprayer" },
-  {
-    id: "best-room-kit",
-    title: "Best Complete Room Kit — Pest Expert Treatment Kit (Standard)",
-  },
-  {
-    id: "best-monitoring",
-    title:
-      "Best Monitoring Add-On — Bed Bug Blocker (Pro) Interceptor Traps 8-Pack",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Buying Guide" },
   { id: "find-provider", title: "Find a Commercial Pest Controller" },
 ];
@@ -307,56 +425,27 @@ export default function BestCommercialInsectMonitorsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>
-              Pest Expert Formula &apos;P+&apos; Concentrate + 5L Sprayer
-            </td>{" "}
-            <td>Professional Treatment Kit</td>{" "}
-            <td>Best Professional Kit</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Formula &apos;C+&apos; 2 x 1L Spray</td>{" "}
-            <td>Professional Spray</td> <td>Best Professional Spray</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>NOPE! CP Bed Bug Killer 5L + Sprayer</td>{" "}
-            <td>Bulk Treatment</td> <td>Best Bulk Treatment</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Treatment Kit (Standard)</td>{" "}
-            <td>Complete Room Kit</td> <td>Best Complete Room Kit</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Bed Bug Blocker (Pro) 8-Pack</td> <td>Monitoring Traps</td>{" "}
-            <td>Best Monitoring Add-On</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       {/* Product 1: Pest Expert Formula P+ Concentrate + 5L Sprayer */}{" "}
-      <h2 id="best-professional-kit">
-        Best Professional Treatment Kit &mdash; Pest Expert Formula
-        &apos;P+&apos; Ultimate Bed Bug Killer Concentrate + 5L Pressure Sprayer
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Formula 'P+' Ultimate Bed Bug Killer Concentrate + 5L Pressure Sprayer"
-          features={[
-            "Makes 10 litres of professional-strength insecticide — treats approx. 100 sqm",
-            "Three active ingredients: Tetramethrin + Permethrin + PBO (piperonyl butoxide)",
-            "Includes 5L pressure sprayer for professional application",
-            "Bed bug insecticide available on the UK amateur market",
-            "Fast knockdown + long residual kill — continues working for weeks",
-          ]}
-          asin="B098XMZM6M"
-          bestFor="Best Overall"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -457,24 +546,17 @@ export default function BestCommercialInsectMonitorsPage() {
         treatment product for your hotel, this is it.{" "}
       </p>{" "}
       {/* Product 2: Pest Expert Formula C+ 2x1L */}{" "}
-      <h2 id="best-professional-spray">
-        Best Professional Spray &mdash; Pest Expert Bed Bug Killer Spray 2 x 1L
-        Formula &apos;C+&apos;
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Bed Bug Killer Spray 2 x 1L Formula 'C+'"
-          features={[
-            "2 x 1 litre bottles — professional strength approved for amateur use",
-            "Three active ingredients including insect growth regulator (pyriproxyfen)",
-            "Fast knockdown + long residual + prevents egg development",
-            "Water-based formula — safe for mattresses, carpets, and upholstery",
-            "Suitable for hotels, hospitals, care homes, and B&Bs",
-          ]}
-          asin="B076KQQT8F"
-          bestFor="Best Professional Spray"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -570,22 +652,17 @@ export default function BestCommercialInsectMonitorsPage() {
         store for immediate response to confirmed sightings.{" "}
       </p>{" "}
       {/* Product 3: NOPE! CP 5L + Sprayer */}{" "}
-      <h2 id="best-bulk">
-        Best Bulk Treatment &mdash; NOPE! CP Bed Bug Killer 5L + Sprayer
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="NOPE! CP Bed Bug Killer Spray 5L + Pressure Sprayer"
-          features={[
-            "5 litres of professional cypermethrin spray + pressure sprayer included",
-            "Extended residual kill — continues working for up to 3 months",
-            "Odourless and non-staining — suitable for hotel rooms and guest areas",
-            "HSE-registered insecticide — compliant for commercial use",
-          ]}
-          asin="B0973D1DB8"
-          bestFor="Best Bulk Treatment"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -684,24 +761,17 @@ export default function BestCommercialInsectMonitorsPage() {
         comprehensive two-product treatment programme.{" "}
       </p>{" "}
       {/* Product 4: Pest Expert Treatment Kit (Standard) */}{" "}
-      <h2 id="best-room-kit">
-        Best Complete Room Kit &mdash; Pest Expert Bed Bug Treatment Kit
-        (Standard)
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Bed Bug Treatment Kit (Standard)"
-          features={[
-            "Complete kit for one room — everything included for a thorough treatment",
-            "1L Formula C+ spray + fogger bomb + insecticidal powder + aerosol spray",
-            "Multiple application methods attack bed bugs in every harbourage",
-            "Step-by-step treatment guide included for non-specialist staff",
-            "Professional strength — the same products pest controllers use",
-          ]}
-          asin="B01E724WFK"
-          bestFor="Best Complete Room Kit"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -800,24 +870,17 @@ export default function BestCommercialInsectMonitorsPage() {
         positive.{" "}
       </p>{" "}
       {/* Product 5: Bed Bug Blocker (Pro) 8-Pack */}{" "}
-      <h2 id="best-monitoring">
-        Best Monitoring Add-On &mdash; Bed Bug Blocker (Pro) Interceptor Traps
-        8-Pack
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Bed Bug Blocker (Pro) Interceptor Traps 8-Pack"
-          features={[
-            "Pack of 8 heavy-duty interceptor traps — covers 2 hotel beds",
-            "Textured exterior + slippery interior = proven capture mechanism",
-            "Chemical-free, reusable, eco-friendly passive monitoring",
-            "Fits bed and furniture legs up to 3 inches diameter",
-            "Essential for post-treatment monitoring and early detection",
-          ]}
-          asin="B07MG8BD7X"
-          bestFor="Best Monitoring Add-On"
-          rank={5}
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>

@@ -126,22 +126,130 @@ const faqSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocTitle: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "fruit-fly-drain-gel",
+    asin: "B0BCP3VT97",
+    rank: 1,
+    cardName: "Fruit Fly & Drain Fly Gel Treatment 1 Gallon",
+    cardLabel: "Best Overall",
+    features: [
+      "Enzyme-based gel breaks down organic matter",
+      "All-natural formula with peppermint oil",
+      "Safe for all drain types including septic systems",
+      "Pour directly into drains — works overnight",
+    ],
+    tableCells: [
+      "Fruit Fly & Drain Fly Gel Treatment 1 Gallon",
+      "Enzyme gel",
+      "Best Overall",
+    ],
+    h2Label: "1. Fruit Fly & Drain Fly Gel Treatment 1 Gallon",
+    h2Name: "Best Overall",
+    tocTitle: "1. Fruit Fly & Drain Fly Gel Treatment",
+  },
+  {
+    anchorId: "zero-in-drain-gel",
+    asin: "B00EE3C1IS",
+    rank: 2,
+    cardName: "Zero In Total Insect Killer 300ml",
+    cardLabel: "Best UK Brand",
+    features: [
+      "Kills drain flies, fungus gnats and flying insects",
+      "Rainproof formula with up to 4 weeks protection",
+      "Use around drain openings, windows and entry points",
+      "Trusted UK brand with 60+ years heritage",
+    ],
+    tableCells: [
+      "Zero In Total Insect Killer 300ml",
+      "Insect spray",
+      "Best UK Brand",
+    ],
+    h2Label: "2. Zero In Total Insect Killer 300ml",
+    h2Name: "Best UK Brand",
+    tocTitle: "2. Zero In Total Insect Killer 300ml",
+  },
+  {
+    anchorId: "green-gobbler",
+    asin: "B000TARC7A",
+    rank: 3,
+    cardName: "Rentokil Insectrol Insect Killer Spray 250ml",
+    cardLabel: "Best Professional-Strength",
+    features: [
+      "Permethrin-based formula kills drain flies on contact",
+      "Long-lasting residual activity on treated surfaces",
+      "Spray around drain openings, under sinks and on window sills",
+      "Professional-grade from the Rentokil brand",
+    ],
+    tableCells: [
+      "Rentokil Insectrol Insect Killer Spray 250ml",
+      "Insect spray",
+      "Best Professional-Strength",
+    ],
+    h2Label: "3. Rentokil Insectrol Insect Killer Spray 250ml",
+    h2Name: "Best Professional-Strength",
+    tocTitle: "3. Rentokil Insectrol Insect Killer Spray 250ml",
+  },
+  {
+    anchorId: "biopipe",
+    asin: "B007XD60C4",
+    rank: 4,
+    cardName: "Doff Ant & Crawling Insect Killer Spray 1L",
+    cardLabel: "Best for Prevention",
+    features: [
+      "Fast-acting permethrin spray for drain flies and crawling insects",
+      "1L ready-to-use pump spray for indoor and outdoor use",
+      "Apply around drains, under kitchen units and bathroom surfaces",
+      "Large volume for treating multiple areas",
+    ],
+    tableCells: [
+      "Doff Ant & Crawling Insect Killer Spray 1L",
+      "Insect spray",
+      "Best for Prevention",
+    ],
+    h2Label: "4. Doff Ant & Crawling Insect Killer Spray 1L",
+    h2Name: "Best for Prevention",
+    tocTitle: "4. Doff Ant & Crawling Insect Killer Spray 1L",
+  },
+  {
+    anchorId: "pest-expert",
+    asin: "B085S1KX82",
+    rank: 5,
+    cardName: "Pest Expert Formula C+ Cockroach & Insect Killer Spray 5L",
+    cardLabel: "Best Targeted Treatment",
+    features: [
+      "Professional-strength 5L spray from the UK's leading pest control brand",
+      "Effective against drain flies, fungus gnats, cockroaches and crawling insects",
+      "Large volume for commercial kitchens and multi-room treatment",
+      "Suitable for catering premises and large-scale infestations",
+    ],
+    tableCells: [
+      "Pest Expert Formula C+ Cockroach & Insect Killer Spray 5L",
+      "Insect spray",
+      "Best Targeted Treatment",
+    ],
+    h2Label: "5. Pest Expert Formula C+ Cockroach & Insect Killer Spray 5L",
+    h2Name: "Best Targeted Treatment",
+    tocTitle: "5. Pest Expert Formula C+ Cockroach & Insect Killer Spray 5L",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Drain Fly Killers at a Glance" },
-  {
-    id: "fruit-fly-drain-gel",
-    title: "1. Fruit Fly & Drain Fly Gel Treatment",
-  },
-  { id: "zero-in-drain-gel", title: "2. Zero In Total Insect Killer 300ml" },
-  {
-    id: "green-gobbler",
-    title: "3. Rentokil Insectrol Insect Killer Spray 250ml",
-  },
-  { id: "biopipe", title: "4. Doff Ant & Crawling Insect Killer Spray 1L" },
-  {
-    id: "pest-expert",
-    title: "5. Pest Expert Formula C+ Cockroach & Insect Killer Spray 5L",
-  },
+  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
   { id: "buying-guide", title: "Buying Guide" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
@@ -250,33 +358,13 @@ export default function BestDrainFlyKillerPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Fruit Fly &amp; Drain Fly Gel Treatment 1 Gallon</td>
-            <td>Enzyme gel</td>
-            <td>Best Overall</td>
-          </tr>
-          <tr>
-            <td>Zero In Total Insect Killer 300ml</td>
-            <td>Insect spray</td>
-            <td>Best UK Brand</td>
-          </tr>
-          <tr>
-            <td>Rentokil Insectrol Insect Killer Spray 250ml</td>
-            <td>Insect spray</td>
-            <td>Best Professional-Strength</td>
-          </tr>
-          <tr>
-            <td>Doff Ant &amp; Crawling Insect Killer Spray 1L</td>
-            <td>Insect spray</td>
-            <td>Best for Prevention</td>
-          </tr>
-          <tr>
-            <td>
-              Pest Expert Formula C+ Cockroach &amp; Insect Killer Spray 5L
-            </td>
-            <td>Insect spray</td>
-            <td>Best Targeted Treatment</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
@@ -287,21 +375,16 @@ export default function BestDrainFlyKillerPage() {
         />
       </div>
 
-      <h2 id="fruit-fly-drain-gel">
-        1. Fruit Fly &amp; Drain Fly Gel Treatment 1 Gallon — Best Overall
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Fruit Fly & Drain Fly Gel Treatment 1 Gallon"
-          rank={1}
-          features={[
-            "Enzyme-based gel breaks down organic matter",
-            "All-natural formula with peppermint oil",
-            "Safe for all drain types including septic systems",
-            "Pour directly into drains — works overnight",
-          ]}
-          asin="B0BCP3VT97"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -348,21 +431,16 @@ export default function BestDrainFlyKillerPage() {
         <li>Must be used at night for best results</li>
       </ul>
 
-      <h2 id="zero-in-drain-gel">
-        2. Zero In Total Insect Killer 300ml — Best UK Brand
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Zero In Total Insect Killer 300ml"
-          rank={2}
-          features={[
-            "Kills drain flies, fungus gnats and flying insects",
-            "Rainproof formula with up to 4 weeks protection",
-            "Use around drain openings, windows and entry points",
-            "Trusted UK brand with 60+ years heritage",
-          ]}
-          asin="B00EE3C1IS"
-          bestFor="Best UK Brand"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -407,22 +485,16 @@ export default function BestDrainFlyKillerPage() {
         <li>300ml can may not last long in heavy infestations</li>
       </ul>
 
-      <h2 id="green-gobbler">
-        3. Rentokil Insectrol Insect Killer Spray 250ml — Best
-        Professional-Strength
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Rentokil Insectrol Insect Killer Spray 250ml"
-          rank={3}
-          features={[
-            "Permethrin-based formula kills drain flies on contact",
-            "Long-lasting residual activity on treated surfaces",
-            "Spray around drain openings, under sinks and on window sills",
-            "Professional-grade from the Rentokil brand",
-          ]}
-          asin="B000TARC7A"
-          bestFor="Best Professional-Strength"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>
@@ -469,21 +541,16 @@ export default function BestDrainFlyKillerPage() {
         <li>Chemical spray — ventilate area during use</li>
       </ul>
 
-      <h2 id="biopipe">
-        4. Doff Ant &amp; Crawling Insect Killer Spray 1L — Best for Prevention
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Doff Ant & Crawling Insect Killer Spray 1L"
-          rank={4}
-          features={[
-            "Fast-acting permethrin spray for drain flies and crawling insects",
-            "1L ready-to-use pump spray for indoor and outdoor use",
-            "Apply around drains, under kitchen units and bathroom surfaces",
-            "Large volume for treating multiple areas",
-          ]}
-          asin="B007XD60C4"
-          bestFor="Best for Prevention"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />
       </div>
       <p>
@@ -530,22 +597,16 @@ export default function BestDrainFlyKillerPage() {
         <li>Best used as part of a combined treatment approach</li>
       </ul>
 
-      <h2 id="pest-expert">
-        5. Pest Expert Formula C+ Cockroach &amp; Insect Killer Spray 5L — Best
-        Targeted Treatment
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Formula C+ Cockroach & Insect Killer Spray 5L"
-          rank={5}
-          features={[
-            "Professional-strength 5L spray from the UK's leading pest control brand",
-            "Effective against drain flies, fungus gnats, cockroaches and crawling insects",
-            "Large volume for commercial kitchens and multi-room treatment",
-            "Suitable for catering premises and large-scale infestations",
-          ]}
-          asin="B085S1KX82"
-          bestFor="Best Targeted Treatment"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />
       </div>
       <p>
