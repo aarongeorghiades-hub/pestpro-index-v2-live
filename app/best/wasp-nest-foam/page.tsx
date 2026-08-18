@@ -121,16 +121,139 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B000TAY2EQ",
+    rank: 1,
+    cardName: "Rentokil Wasp Nest Destroyer Foam 300ml",
+    cardLabel: "Best Overall",
+    features: [
+      "Powerful foam jet treats from 2 metres away",
+      "Contains d-phenothrin and tetramethrin for fast kill",
+      "One 300ml can treats up to 3 large nests",
+      "Effective within 24 hours",
+    ],
+    tableCells: [
+      "Rentokil Wasp Nest Destroyer Foam 300ml",
+      "Expanding foam",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Rentokil Wasp Nest Destroyer Foam",
+    tocLabel: "Best Overall",
+    tocName: "Rentokil Wasp Nest Destroyer Foam",
+  },
+  {
+    anchorId: "best-range",
+    asin: "B077G3YB38",
+    rank: 2,
+    cardName: "Zero In Ultra Power Wasp & Hornet Nest Killer Foam 600ml",
+    cardLabel: "Best Long-Range",
+    features: [
+      "Professional-strength 600ml trigger aerosol",
+      "4-metre spray range — double the safe distance",
+      "Treats 4-7 nests per can",
+      "Suitable for indoor and outdoor nests",
+    ],
+    tableCells: [
+      "Zero In Ultra Power Wasp & Hornet Nest Killer Foam 600ml",
+      "Long-range foam",
+      "Best Long-Range",
+    ],
+    h2Label: "Best Long-Range",
+    h2Name: "Zero In Ultra Power 600ml",
+    tocLabel: "Best Long-Range",
+    tocName: "Zero In Ultra Power 600ml",
+  },
+  {
+    anchorId: "best-value",
+    asin: "B0082M8TU6",
+    rank: 3,
+    cardName: "Zero In Wasp Nest Killer Foam 300ml",
+    cardLabel: "Best Value",
+    features: [
+      "Fast-acting foam from 2 metres",
+      "2-3 treatments per 300ml can",
+      "Simple to use — spray into nest entrance at dusk",
+      "Kills the colony within 24 hours",
+    ],
+    tableCells: [
+      "Zero In Wasp Nest Killer Foam 300ml",
+      "Aerosol foam",
+      "Best Value",
+    ],
+    h2Label: "Best Value",
+    h2Name: "Zero In Wasp Nest Killer Foam",
+    tocLabel: "Best Value",
+    tocName: "Zero In Wasp Nest Killer Foam",
+  },
+  {
+    anchorId: "best-powder",
+    asin: "B0B8HLKZZS",
+    rank: 4,
+    cardName: "Rentokil Wasp Killer Powder 150g",
+    cardLabel: "Best Powder",
+    features: [
+      "Powder for nests in vents, eaves and wall cavities",
+      "Contains permethrin — effective within 24 hours",
+      "Best used alongside foam for comprehensive treatment",
+      "Reaches areas foam cannot access",
+    ],
+    tableCells: [
+      "Rentokil Wasp Killer Powder 150g",
+      "Insecticidal powder",
+      "Best Powder",
+    ],
+    h2Label: "Best Powder",
+    h2Name: "Rentokil Wasp Killer Powder",
+    tocLabel: "Best Powder",
+    tocName: "Rentokil Wasp Killer Powder",
+  },
+  {
+    anchorId: "best-twin",
+    asin: "B01FSDM1E6",
+    rank: 5,
+    cardName: "Zero In Wasp Nest Control Powder 300g Twin Pack",
+    cardLabel: "Best Twin Pack",
+    features: [
+      "Twin-pack powder with puffer applicator",
+      "Apply into gaps in walls, soffits and vents",
+      "Child-resistant cap for safety",
+      "300g per bottle — two bottles for extended season",
+    ],
+    tableCells: [
+      "Zero In Wasp Nest Control Powder 300g Twin Pack",
+      "Powder twin pack",
+      "Best Twin Pack",
+    ],
+    h2Label: "Best Twin Pack",
+    h2Name: "Zero In Powder Twin Pack",
+    tocLabel: "Best Twin Pack",
+    tocName: "Zero In Powder Twin Pack",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Wasp Nest Killers at a Glance" },
-  {
-    id: "best-overall",
-    title: "Best Overall — Rentokil Wasp Nest Destroyer Foam",
-  },
-  { id: "best-range", title: "Best Long-Range — Zero In Ultra Power 600ml" },
-  { id: "best-value", title: "Best Value — Zero In Wasp Nest Killer Foam" },
-  { id: "best-powder", title: "Best Powder — Rentokil Wasp Killer Powder" },
-  { id: "best-twin", title: "Best Twin Pack — Zero In Powder Twin Pack" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "How to Choose the Right Wasp Nest Killer" },
   { id: "safety", title: "Safety: How to Treat a Wasp Nest Safely" },
   { id: "faq", title: "Frequently Asked Questions" },
@@ -294,34 +417,13 @@ export default function BestWaspNestFoamPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Rentokil Wasp Nest Destroyer Foam 300ml</td>{" "}
-            <td>Expanding foam</td> <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>
-              Zero In Ultra Power Wasp &amp; Hornet Nest Killer Foam 600ml
-            </td>{" "}
-            <td>Long-range foam</td> <td>Best Long-Range</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Zero In Wasp Nest Killer Foam 300ml</td> <td>Aerosol foam</td>{" "}
-            <td>Best Value</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Rentokil Wasp Killer Powder 150g</td>{" "}
-            <td>Insecticidal powder</td> <td>Best Powder</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Zero In Wasp Nest Control Powder 300g Twin Pack</td>{" "}
-            <td>Powder twin pack</td> <td>Best Twin Pack</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       <div className="not-prose">
@@ -332,22 +434,17 @@ export default function BestWaspNestFoamPage() {
         />{" "}
       </div>{" "}
       {/* Product 1 */}{" "}
-      <h2 id="best-overall">
-        Best Overall — Rentokil Wasp Nest Destroyer Foam
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Rentokil Wasp Nest Destroyer Foam 300ml"
-          rank={1}
-          features={[
-            "Powerful foam jet treats from 2 metres away",
-            "Contains d-phenothrin and tetramethrin for fast kill",
-            "One 300ml can treats up to 3 large nests",
-            "Effective within 24 hours",
-          ]}
-          asin="B000TAY2EQ"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -389,20 +486,17 @@ export default function BestWaspNestFoamPage() {
         <li>Not ideal for hidden cavity nests — use powder instead</li>{" "}
       </ul>{" "}
       {/* Product 2 */}{" "}
-      <h2 id="best-range">Best Long-Range — Zero In Ultra Power 600ml</h2>{" "}
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Zero In Ultra Power Wasp &amp; Hornet Nest Killer Foam 600ml"
-          rank={2}
-          features={[
-            "Professional-strength 600ml trigger aerosol",
-            "4-metre spray range — double the safe distance",
-            "Treats 4-7 nests per can",
-            "Suitable for indoor and outdoor nests",
-          ]}
-          asin="B077G3YB38"
-          bestFor="Best Long-Range"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -445,20 +539,17 @@ export default function BestWaspNestFoamPage() {
         <li>Trigger mechanism requires a firm grip</li>{" "}
       </ul>{" "}
       {/* Product 3 */}{" "}
-      <h2 id="best-value">Best Value — Zero In Wasp Nest Killer Foam</h2>{" "}
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Zero In Wasp Nest Killer Foam 300ml"
-          rank={3}
-          features={[
-            "Fast-acting foam from 2 metres",
-            "2-3 treatments per 300ml can",
-            "Simple to use — spray into nest entrance at dusk",
-            "Kills the colony within 24 hours",
-          ]}
-          asin="B0082M8TU6"
-          bestFor="Best Value"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -497,20 +588,17 @@ export default function BestWaspNestFoamPage() {
         <li>Fewer features than premium alternatives</li>{" "}
       </ul>{" "}
       {/* Product 4 */}{" "}
-      <h2 id="best-powder">Best Powder — Rentokil Wasp Killer Powder</h2>{" "}
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Rentokil Wasp Killer Powder 150g"
-          rank={4}
-          features={[
-            "Powder for nests in vents, eaves and wall cavities",
-            "Contains permethrin — effective within 24 hours",
-            "Best used alongside foam for comprehensive treatment",
-            "Reaches areas foam cannot access",
-          ]}
-          asin="B0B8HLKZZS"
-          bestFor="Best Powder"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -552,20 +640,17 @@ export default function BestWaspNestFoamPage() {
         <li>Needs careful application to avoid inhaling powder</li>{" "}
       </ul>{" "}
       {/* Product 5 */}{" "}
-      <h2 id="best-twin">Best Twin Pack — Zero In Powder Twin Pack</h2>{" "}
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Zero In Wasp Nest Control Powder 300g Twin Pack"
-          rank={5}
-          features={[
-            "Twin-pack powder with puffer applicator",
-            "Apply into gaps in walls, soffits and vents",
-            "Child-resistant cap for safety",
-            "300g per bottle — two bottles for extended season",
-          ]}
-          asin="B01FSDM1E6"
-          bestFor="Best Twin Pack"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>
