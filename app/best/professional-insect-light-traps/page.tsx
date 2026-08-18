@@ -786,8 +786,7 @@ export default function ProfessionalInsectLightTrapsPage() {
         {" "}
         Aluminium-cased units (such as the Insect-O-Cutor PlusZap) are more
         durable, corrosion-resistant, and easier to clean to food-safe
-        standards. They cost more upfront but last significantly longer in
-        demanding commercial environments.{" "}
+        standards.{" "}
       </p>{" "}
       <h3>Ease of Bulb Replacement</h3>{" "}
       <p>
