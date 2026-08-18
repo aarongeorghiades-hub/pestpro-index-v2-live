@@ -85,6 +85,76 @@ const tocItems = [
   { id: "buying-guide", title: "Woodworm Treatment Buying Guide" },
   { id: "when-to-call", title: "When to Call a Professional" },
 ];
+type WoodwormProduct = {
+  name: string;
+  features: string[];
+  asin: string;
+  bestFor: string;
+  rank: number;
+};
+
+const products: WoodwormProduct[] = [
+  {
+    name: "Barrettine Premier Woodworm Killer 1L",
+    features: [
+      "Permethrin-based solvent formula",
+      "Industry-standard professional treatment",
+      "Creates 20+ year residual barrier",
+      "Suitable for brush or spray application",
+    ],
+    asin: "B0041WB2E6",
+    bestFor: "Best Treatment Fluid",
+    rank: 1,
+  },
+  {
+    name: "Rempro Woodwyse Internal Wood Treatment",
+    features: [
+      "Water-based low-toxicity formula",
+      "Dual action: woodworm + dry rot",
+      "Suitable for occupied spaces",
+      "Low odour — no solvent fumes",
+    ],
+    asin: "B01MZ7ZB2V",
+    bestFor: "Best Water-Based Treatment",
+    rank: 2,
+  },
+  {
+    name: "Rentokil PSW85 Woodworm Treatment Spray 300ml",
+    features: [
+      "Aerosol format — ready to use",
+      "Kills eggs, larvae and adult beetles",
+      "Straw nozzle for hole injection",
+      "Ideal for small areas and furniture",
+    ],
+    asin: "B000TVLY1O",
+    bestFor: "Best Spray Can",
+    rank: 3,
+  },
+  {
+    name: "Rentokil PSW92 Woodworm Treatment 250ml",
+    features: [
+      "Built-in injection nozzle",
+      "Targets treatment deep into tunnels",
+      "Permethrin-based formula",
+      "Most thorough DIY approach",
+    ],
+    asin: "B000TVIXZY",
+    bestFor: "Best Injection Applicator",
+    rank: 4,
+  },
+  {
+    name: "Stanley 0-77-030 Moisture Meter",
+    features: [
+      "Pin-type timber moisture measurement",
+      "LCD screen with clear readout",
+      "Measures 6-44% moisture range",
+      "Trusted Stanley brand",
+    ],
+    asin: "B003ASOBG8",
+    bestFor: "Best Diagnostic Tool",
+    rank: 5,
+  },
+];
 export default function BestWoodwormTreatmentsPage() {
   return (
     <GuideLayout
@@ -278,32 +348,11 @@ export default function BestWoodwormTreatmentsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Barrettine Premier Woodworm Killer 1L</td>{" "}
-            <td>Best Treatment Fluid</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Rempro Woodwyse Internal Wood Treatment</td>{" "}
-            <td>Best Water-Based Treatment</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Rentokil PSW85 Woodworm Treatment Spray 300ml</td>{" "}
-            <td>Best Spray Can</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Rentokil PSW92 Woodworm Treatment 250ml</td>{" "}
-            <td>Best Injection Applicator</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Stanley 0-77-030 Moisture Meter</td>{" "}
-            <td>Best Diagnostic Tool</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.name}</td> <td>{p.bestFor}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       {/* Best Treatment Fluid */}{" "}
@@ -312,18 +361,7 @@ export default function BestWoodwormTreatmentsPage() {
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
-        <ProductCard
-          name="Barrettine Premier Woodworm Killer 1L"
-          features={[
-            "Permethrin-based solvent formula",
-            "Industry-standard professional treatment",
-            "Creates 20+ year residual barrier",
-            "Suitable for brush or spray application",
-          ]}
-          asin="B0041WB2E6"
-          bestFor="Best Treatment Fluid"
-          rank={1}
-        />{" "}
+        <ProductCard {...products[0]} />{" "}
       </div>{" "}
       <p>
         {" "}
@@ -426,18 +464,7 @@ export default function BestWoodwormTreatmentsPage() {
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
-        <ProductCard
-          name="Rempro Woodwyse Internal Wood Treatment"
-          features={[
-            "Water-based low-toxicity formula",
-            "Dual action: woodworm + dry rot",
-            "Suitable for occupied spaces",
-            "Low odour — no solvent fumes",
-          ]}
-          asin="B01MZ7ZB2V"
-          bestFor="Best Water-Based Treatment"
-          rank={2}
-        />{" "}
+        <ProductCard {...products[1]} />{" "}
       </div>{" "}
       <p>
         {" "}
@@ -552,18 +579,7 @@ export default function BestWoodwormTreatmentsPage() {
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
-        <ProductCard
-          name="Rentokil PSW85 Woodworm Treatment Spray 300ml"
-          features={[
-            "Aerosol format — ready to use",
-            "Kills eggs, larvae and adult beetles",
-            "Straw nozzle for hole injection",
-            "Ideal for small areas and furniture",
-          ]}
-          asin="B000TVLY1O"
-          bestFor="Best Spray Can"
-          rank={3}
-        />{" "}
+        <ProductCard {...products[2]} />{" "}
       </div>{" "}
       <p>
         {" "}
@@ -651,18 +667,7 @@ export default function BestWoodwormTreatmentsPage() {
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
-        <ProductCard
-          name="Rentokil PSW92 Woodworm Treatment 250ml"
-          features={[
-            "Built-in injection nozzle",
-            "Targets treatment deep into tunnels",
-            "Permethrin-based formula",
-            "Most thorough DIY approach",
-          ]}
-          asin="B000TVIXZY"
-          bestFor="Best Injection Applicator"
-          rank={4}
-        />{" "}
+        <ProductCard {...products[3]} />{" "}
       </div>{" "}
       <p>
         {" "}
@@ -755,18 +760,7 @@ export default function BestWoodwormTreatmentsPage() {
       <h2 id="best-meter">Best Moisture Meter &mdash; Stanley 0-77-030</h2>{" "}
       <div className="not-prose my-6">
         {" "}
-        <ProductCard
-          name="Stanley 0-77-030 Moisture Meter"
-          features={[
-            "Pin-type timber moisture measurement",
-            "LCD screen with clear readout",
-            "Measures 6-44% moisture range",
-            "Trusted Stanley brand",
-          ]}
-          asin="B003ASOBG8"
-          bestFor="Best Diagnostic Tool"
-          rank={5}
-        />{" "}
+        <ProductCard {...products[4]} />{" "}
       </div>{" "}
       <p>
         {" "}
