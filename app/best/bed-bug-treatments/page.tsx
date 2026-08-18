@@ -69,15 +69,116 @@ const breadcrumbSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B076KQQT8F",
+    rank: 1,
+    cardName: "Pest Expert Formula C+ Bed Bug Killer Spray 1L",
+    cardLabel: "Best Overall",
+    features: [
+      "Professional strength spray with 12-week residual protection",
+      "HSE-approved formula used by pest controllers",
+      "Ready-to-use 1-litre trigger spray",
+      "Kills bed bugs on contact and provides lasting barrier",
+    ],
+    tableCells: [
+      "Pest Expert Formula C+ Spray 1L",
+      "Contact spray",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Pest Expert Formula C+ Bed Bug Killer Spray 1L",
+    tocLabel: "Best Overall",
+    tocName: "Pest Expert Formula C+",
+  },
+  {
+    anchorId: "best-powder",
+    asin: "B010E2H2N6",
+    rank: 2,
+    cardName: "Pest Expert Formula P Bed Bug Powder 300g",
+    cardLabel: "Best Powder",
+    features: [
+      "Permethrin-based insecticidal powder",
+      "Puffer pack for precise application into cracks and crevices",
+      "Long-lasting residual action",
+      "Ideal for treating bed frames, skirting boards, and carpet edges",
+    ],
+    tableCells: [
+      "Pest Expert Formula P Powder 300g",
+      "Insecticidal powder",
+      "Best Powder",
+    ],
+    h2Label: "Best Powder",
+    h2Name: "Pest Expert Formula P Bed Bug Powder 300g",
+    tocLabel: "Best Powder",
+    tocName: "Pest Expert Formula P",
+  },
+  {
+    anchorId: "best-quick-kill",
+    asin: "B00B2KP7U0",
+    rank: 3,
+    cardName: "Zero In Bed Bug & Dust Mite Killer 300ml",
+    cardLabel: "Best Quick-Kill Spray",
+    features: [
+      "Fast-acting aerosol spray kills on contact",
+      "Also effective against dust mites",
+      "Suitable for mattresses, bed frames, and soft furnishings",
+      "Easy-to-use spray can format",
+    ],
+    tableCells: [
+      "Zero In Bed Bug Killer 300ml",
+      "Aerosol spray",
+      "Best Quick-Kill",
+    ],
+    h2Label: "Best Quick-Kill Spray",
+    h2Name: "Zero In Bed Bug & Dust Mite Killer 300ml",
+    tocLabel: "Best Quick-Kill",
+    tocName: "Zero In Bed Bug Killer",
+  },
+  {
+    anchorId: "best-prevention",
+    asin: "B07ZHF4FVK",
+    rank: 4,
+    cardName: "Utopia Bedding Mattress Encasement",
+    cardLabel: "Best Prevention",
+    features: [
+      "Waterproof mattress encasement traps bed bugs inside",
+      "Prevents new bugs from nesting in mattress",
+      "Hypoallergenic and breathable for comfortable sleep",
+    ],
+    tableCells: [
+      "Utopia Bedding Mattress Encasement",
+      "Mattress protector",
+      "Best Prevention",
+    ],
+    h2Label: "Best Prevention",
+    h2Name: "Utopia Bedding Mattress Encasement",
+    tocLabel: "Best Prevention",
+    tocName: "Utopia Mattress Encasement",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Bed Bug Products at a Glance" },
-  { id: "best-overall", title: "Best Overall — Pest Expert Formula C+" },
-  { id: "best-powder", title: "Best Powder — Pest Expert Formula P" },
-  { id: "best-quick-kill", title: "Best Quick-Kill — Zero In Bed Bug Killer" },
-  {
-    id: "best-prevention",
-    title: "Best Prevention — Utopia Mattress Encasement",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Bed Bug Treatment Buying Guide" },
   { id: "when-to-call", title: "When to Call a Professional" },
 ];
@@ -259,46 +360,27 @@ export default function BestBedBugTreatmentsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Formula C+ Spray 1L</td> <td>Contact spray</td>{" "}
-            <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Formula P Powder 300g</td>{" "}
-            <td>Insecticidal powder</td> <td>Best Powder</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Zero In Bed Bug Killer 300ml</td> <td>Aerosol spray</td>{" "}
-            <td>Best Quick-Kill</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Utopia Bedding Mattress Encasement</td>{" "}
-            <td>Mattress protector</td> <td>Best Prevention</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       {/* Best Overall */}{" "}
-      <h2 id="best-overall">
-        Best Overall &mdash; Pest Expert Formula C+ Bed Bug Killer Spray 1L
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Formula C+ Bed Bug Killer Spray 1L"
-          features={[
-            "Professional strength spray with 12-week residual protection",
-            "HSE-approved formula used by pest controllers",
-            "Ready-to-use 1-litre trigger spray",
-            "Kills bed bugs on contact and provides lasting barrier",
-          ]}
-          asin="B076KQQT8F"
-          bestFor="Best Overall"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -380,22 +462,17 @@ export default function BestBedBugTreatmentsPage() {
         </li>{" "}
       </ul>{" "}
       {/* Best Powder */}{" "}
-      <h2 id="best-powder">
-        Best Powder &mdash; Pest Expert Formula P Bed Bug Powder 300g
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Formula P Bed Bug Powder 300g"
-          features={[
-            "Permethrin-based insecticidal powder",
-            "Puffer pack for precise application into cracks and crevices",
-            "Long-lasting residual action",
-            "Ideal for treating bed frames, skirting boards, and carpet edges",
-          ]}
-          asin="B010E2H2N6"
-          bestFor="Best Powder"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -484,23 +561,17 @@ export default function BestBedBugTreatmentsPage() {
         </li>{" "}
       </ul>{" "}
       {/* Best Quick-Kill Spray */}{" "}
-      <h2 id="best-quick-kill">
-        Best Quick-Kill Spray &mdash; Zero In Bed Bug &amp; Dust Mite Killer
-        300ml
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Zero In Bed Bug & Dust Mite Killer 300ml"
-          features={[
-            "Fast-acting aerosol spray kills on contact",
-            "Also effective against dust mites",
-            "Suitable for mattresses, bed frames, and soft furnishings",
-            "Easy-to-use spray can format",
-          ]}
-          asin="B00B2KP7U0"
-          bestFor="Best Quick-Kill Spray"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -588,21 +659,17 @@ export default function BestBedBugTreatmentsPage() {
         </li>{" "}
       </ul>{" "}
       {/* Best Prevention */}{" "}
-      <h2 id="best-prevention">
-        Best Prevention &mdash; Utopia Bedding Mattress Encasement
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Utopia Bedding Mattress Encasement"
-          features={[
-            "Waterproof mattress encasement traps bed bugs inside",
-            "Prevents new bugs from nesting in mattress",
-            "Hypoallergenic and breathable for comfortable sleep",
-          ]}
-          asin="B07ZHF4FVK"
-          bestFor="Best Prevention"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>

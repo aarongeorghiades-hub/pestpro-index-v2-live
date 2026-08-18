@@ -121,19 +121,128 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B000TAUBSC",
+    rank: 1,
+    cardName: "Nippon Ant Killer Gel 25g — Liquid Bait, Colony Elimination",
+    cardLabel: "Best Overall",
+    features: [
+      "UK market leader for ant gel bait",
+      "Sugary liquid bait carried back to the queen",
+      "Eliminates entire colony — not just surface ants",
+      "25g tube treats multiple ant runs",
+    ],
+    tableCells: ["Nippon Ant Killer Gel 25g", "Gel", "Best Overall"],
+    h2Label: "Best Overall",
+    h2Name: "Nippon Ant Killer Gel 25g",
+    tocLabel: "Best Overall",
+    tocName: "Nippon Ant Killer Gel",
+  },
+  {
+    anchorId: "best-powder",
+    asin: "B000TAW39M",
+    rank: 2,
+    cardName: "Nippon Ant Killer Powder 500g",
+    cardLabel: "Best Powder",
+    features: [
+      "Permethrin-based powder for direct nest treatment",
+      "Apply along ant runs, cracks and garden nest sites",
+      "Long-lasting outdoor control",
+      "6-month effective residual",
+    ],
+    tableCells: ["Nippon Ant Killer Powder 500g", "Powder", "Best Powder"],
+    h2Label: "Best Powder",
+    h2Name: "Nippon Ant Killer Powder 500g",
+    tocLabel: "Best Powder",
+    tocName: "Nippon Ant Killer Powder",
+  },
+  {
+    anchorId: "best-spray",
+    asin: "B000TAP1R8",
+    rank: 3,
+    cardName: "Nippon Ant & Crawling Insect Killer Spray 750ml",
+    cardLabel: "Best Spray",
+    features: [
+      "Ready-to-use residual spray for indoor and outdoor",
+      "Kills ants on contact with invisible barrier",
+      "Apply around doorframes, skirting boards, paths",
+      "750ml treats a full property perimeter",
+    ],
+    tableCells: [
+      "Nippon Ant & Crawling Insect Spray 750ml",
+      "Spray",
+      "Best Spray",
+    ],
+    h2Label: "Best Spray",
+    h2Name: "Nippon Ant & Crawling Insect Killer Spray 750ml",
+    tocLabel: "Best Spray",
+    tocName: "Nippon Ant & Crawling Insect Spray",
+  },
+  {
+    anchorId: "best-indoor",
+    asin: "B0B71D3QS1",
+    rank: 4,
+    cardName:
+      "Zero In Ant & Cockroach Killer 1.5L — Ready-to-Use Pressure Sprayer",
+    cardLabel: "Best Spray",
+    features: [
+      "Large 1.5L ready-to-use pressure sprayer",
+      "Cypermethrin with antibacterial agent",
+      "Adjustable nozzle for cracks, crevices and surfaces",
+      "Treats a full property perimeter in one application",
+    ],
+    tableCells: ["Zero In Ant & Cockroach Killer 1.5L", "Spray", "Best Spray"],
+    h2Label: "Best Spray",
+    h2Name: "Zero In Ant & Cockroach Killer 1.5L",
+    tocLabel: "Best Spray",
+    tocName: "Zero In Ant & Cockroach Killer",
+  },
+  {
+    anchorId: "best-stations",
+    asin: "B086DX7HM7",
+    rank: 5,
+    cardName: "Doff 2-in-1 Ant & Nest Bait Killer Stations",
+    cardLabel: "Best Bait Stations",
+    features: [
+      "Pre-baited ant bait stations from UK manufacturer Doff",
+      "Workers carry bait back to nest — eliminates the queen",
+      "Safe indoors and outdoors around children and pets",
+      "Up to 3 months protection per station",
+    ],
+    tableCells: [
+      "Doff 2-in-1 Ant & Nest Bait Killer Stations",
+      "Bait Stations",
+      "Best Bait Stations",
+    ],
+    h2Label: "Best Bait Stations",
+    h2Name: "Doff 2-in-1 Ant & Nest Bait Killer Stations",
+    tocLabel: "Best Bait Stations",
+    tocName: "Doff 2-in-1 Ant & Nest Killer",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Ant Gels at a Glance" },
-  { id: "best-overall", title: "Best Overall — Nippon Ant Killer Gel" },
-  { id: "best-powder", title: "Best Powder — Nippon Ant Killer Powder" },
-  {
-    id: "best-spray",
-    title: "Best Spray — Nippon Ant & Crawling Insect Spray",
-  },
-  { id: "best-indoor", title: "Best Spray — Zero In Ant & Cockroach Killer" },
-  {
-    id: "best-stations",
-    title: "Best Bait Stations — Doff 2-in-1 Ant & Nest Killer",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "How to Choose the Right Ant Gel" },
   { id: "application", title: "How to Apply Ant Gel for Best Results" },
   { id: "faq", title: "Frequently Asked Questions" },
@@ -296,32 +405,13 @@ export default function BestAntGelBaitPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Nippon Ant Killer Gel 25g</td> <td>Gel</td>{" "}
-            <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Nippon Ant Killer Powder 500g</td> <td>Powder</td>{" "}
-            <td>Best Powder</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Nippon Ant &amp; Crawling Insect Spray 750ml</td> <td>Spray</td>{" "}
-            <td>Best Spray</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Zero In Ant &amp; Cockroach Killer 1.5L</td> <td>Spray</td>{" "}
-            <td>Best Spray</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Doff 2-in-1 Ant &amp; Nest Bait Killer Stations</td>{" "}
-            <td>Bait Stations</td> <td>Best Bait Stations</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       <div className="not-prose">
@@ -332,20 +422,17 @@ export default function BestAntGelBaitPage() {
         />{" "}
       </div>{" "}
       {/* Product 1 */}{" "}
-      <h2 id="best-overall">Best Overall — Nippon Ant Killer Gel 25g</h2>{" "}
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Nippon Ant Killer Gel 25g — Liquid Bait, Colony Elimination"
-          rank={1}
-          features={[
-            "UK market leader for ant gel bait",
-            "Sugary liquid bait carried back to the queen",
-            "Eliminates entire colony — not just surface ants",
-            "25g tube treats multiple ant runs",
-          ]}
-          asin="B000TAUBSC"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -385,20 +472,17 @@ export default function BestAntGelBaitPage() {
         <li>Less effective on tropical ant species like Pharaoh Ants</li>{" "}
       </ul>{" "}
       {/* Product 2 */}{" "}
-      <h2 id="best-powder">Best Powder — Nippon Ant Killer Powder 500g</h2>{" "}
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Nippon Ant Killer Powder 500g"
-          rank={2}
-          features={[
-            "Permethrin-based powder for direct nest treatment",
-            "Apply along ant runs, cracks and garden nest sites",
-            "Long-lasting outdoor control",
-            "6-month effective residual",
-          ]}
-          asin="B000TAW39M"
-          bestFor="Best Powder"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -442,22 +526,17 @@ export default function BestAntGelBaitPage() {
         </li>{" "}
       </ul>{" "}
       {/* Product 3 */}{" "}
-      <h2 id="best-spray">
-        Best Spray — Nippon Ant &amp; Crawling Insect Killer Spray 750ml
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Nippon Ant &amp; Crawling Insect Killer Spray 750ml"
-          rank={3}
-          features={[
-            "Ready-to-use residual spray for indoor and outdoor",
-            "Kills ants on contact with invisible barrier",
-            "Apply around doorframes, skirting boards, paths",
-            "750ml treats a full property perimeter",
-          ]}
-          asin="B000TAP1R8"
-          bestFor="Best Spray"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -499,22 +578,17 @@ export default function BestAntGelBaitPage() {
         <li>Needs reapplication after rain on outdoor surfaces</li>{" "}
       </ul>{" "}
       {/* Product 4 */}{" "}
-      <h2 id="best-indoor">
-        Best Spray — Zero In Ant &amp; Cockroach Killer 1.5L
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Zero In Ant & Cockroach Killer 1.5L — Ready-to-Use Pressure Sprayer"
-          rank={4}
-          features={[
-            "Large 1.5L ready-to-use pressure sprayer",
-            "Cypermethrin with antibacterial agent",
-            "Adjustable nozzle for cracks, crevices and surfaces",
-            "Treats a full property perimeter in one application",
-          ]}
-          asin="B0B71D3QS1"
-          bestFor="Best Spray"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -561,22 +635,17 @@ export default function BestAntGelBaitPage() {
         <li>Needs reapplication after rain on outdoor surfaces</li>{" "}
       </ul>{" "}
       {/* Product 5 */}{" "}
-      <h2 id="best-stations">
-        Best Bait Stations — Doff 2-in-1 Ant &amp; Nest Bait Killer Stations
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Doff 2-in-1 Ant & Nest Bait Killer Stations"
-          rank={5}
-          features={[
-            "Pre-baited ant bait stations from UK manufacturer Doff",
-            "Workers carry bait back to nest — eliminates the queen",
-            "Safe indoors and outdoors around children and pets",
-            "Up to 3 months protection per station",
-          ]}
-          asin="B086DX7HM7"
-          bestFor="Best Bait Stations"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>

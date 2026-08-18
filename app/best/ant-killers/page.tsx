@@ -67,18 +67,108 @@ const breadcrumbSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B001CJ11ZQ",
+    rank: 1,
+    cardName: "Nippon Ant Bait Station",
+    cardLabel: "Best Overall",
+    features: [
+      "UK's #1 ant bait station — trusted for decades",
+      "Eliminates entire colonies including the queen",
+      "Discreet, low-profile design safe around children and pets",
+      "Simple peel-and-place activation — no mess",
+    ],
+    tableCells: ["Nippon Ant Bait Station", "Bait station", "Best Overall"],
+    h2Label: "Best Overall",
+    h2Name: "Nippon Ant Bait Station",
+    tocLabel: "Best Overall",
+    tocName: "Nippon Ant Bait Station",
+  },
+  {
+    anchorId: "best-multi-pack",
+    asin: "B08YFJWGX2",
+    rank: 2,
+    cardName: "NOPE! Ant Killer Bait Station 6-Pack",
+    cardLabel: "Best Multi-Pack",
+    features: [
+      "Six bait stations for whole-house coverage",
+      "Suitable for both indoor and outdoor use",
+      "Pre-filled and ready to use — no preparation needed",
+    ],
+    tableCells: [
+      "NOPE! Ant Killer Bait Station 6-Pack",
+      "Bait station (multi-pack)",
+      "Best Multi-Pack",
+    ],
+    h2Label: "Best Multi-Pack",
+    h2Name: "NOPE! Ant Killer Bait Station 6-Pack",
+    tocLabel: "Best Multi-Pack",
+    tocName: "NOPE! Ant Killer Bait Station 6-Pack",
+  },
+  {
+    anchorId: "best-outdoor",
+    asin: "B00HKQL90K",
+    rank: 3,
+    cardName: "Zero In Ant Killer Outdoor Powder 450g",
+    cardLabel: "Best Outdoor Powder",
+    features: [
+      "Covers up to 45 square metres of outdoor area",
+      "Kills ants on contact with residual barrier effect",
+      "Ideal for patios, driveways, paths, and nest entrances",
+      "Easy-to-use puffer bottle for precise application",
+    ],
+    tableCells: [
+      "Zero In Ant Killer Outdoor Powder 450g",
+      "Outdoor powder",
+      "Best Outdoor Powder",
+    ],
+    h2Label: "Best Outdoor Powder",
+    h2Name: "Zero In Ant Killer Outdoor Powder 450g",
+    tocLabel: "Best Outdoor Powder",
+    tocName: "Zero In Ant Killer Outdoor Powder",
+  },
+  {
+    anchorId: "best-gel",
+    asin: "B000BQT5IG",
+    rank: 4,
+    cardName: "Combat Ant Killing Gel 27g",
+    cardLabel: "Best Gel Bait",
+    features: [
+      "Professional-strength fipronil gel bait",
+      "Syringe applicator for precise placement in cracks and crevices",
+      "Kills the entire colony including the queen",
+      "Ideal for kitchens, bathrooms, and hard-to-reach areas",
+    ],
+    tableCells: ["Combat Ant Killing Gel 27g", "Gel bait", "Best Gel Bait"],
+    h2Label: "Best Gel Bait",
+    h2Name: "Combat Ant Killing Gel 27g",
+    tocLabel: "Best Gel Bait",
+    tocName: "Combat Ant Killing Gel",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Ant Killers at a Glance" },
-  { id: "best-overall", title: "Best Overall — Nippon Ant Bait Station" },
-  {
-    id: "best-multi-pack",
-    title: "Best Multi-Pack — NOPE! Ant Killer Bait Station 6-Pack",
-  },
-  {
-    id: "best-outdoor",
-    title: "Best Outdoor Powder — Zero In Ant Killer Outdoor Powder",
-  },
-  { id: "best-gel", title: "Best Gel Bait — Combat Ant Killing Gel" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Ant Killer Buying Guide" },
   { id: "when-to-call", title: "When to Call a Professional" },
 ];
@@ -279,44 +369,27 @@ export default function BestAntKillersPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Nippon Ant Bait Station</td> <td>Bait station</td>{" "}
-            <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>NOPE! Ant Killer Bait Station 6-Pack</td>{" "}
-            <td>Bait station (multi-pack)</td> <td>Best Multi-Pack</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Zero In Ant Killer Outdoor Powder 450g</td>{" "}
-            <td>Outdoor powder</td> <td>Best Outdoor Powder</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Combat Ant Killing Gel 27g</td> <td>Gel bait</td>{" "}
-            <td>Best Gel Bait</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       {/* Best Overall */}{" "}
-      <h2 id="best-overall">Best Overall &mdash; Nippon Ant Bait Station</h2>{" "}
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Nippon Ant Bait Station"
-          features={[
-            "UK's #1 ant bait station — trusted for decades",
-            "Eliminates entire colonies including the queen",
-            "Discreet, low-profile design safe around children and pets",
-            "Simple peel-and-place activation — no mess",
-          ]}
-          asin="B001CJ11ZQ"
-          bestFor="Best Overall"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -401,21 +474,17 @@ export default function BestAntKillersPage() {
         black garden ant invasion in your kitchen or bathroom, start here.{" "}
       </p>{" "}
       {/* Best Multi-Pack */}{" "}
-      <h2 id="best-multi-pack">
-        Best Multi-Pack &mdash; NOPE! Ant Killer Bait Station 6-Pack
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="NOPE! Ant Killer Bait Station 6-Pack"
-          features={[
-            "Six bait stations for whole-house coverage",
-            "Suitable for both indoor and outdoor use",
-            "Pre-filled and ready to use — no preparation needed",
-          ]}
-          asin="B08YFJWGX2"
-          bestFor="Best Multi-Pack"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -491,22 +560,17 @@ export default function BestAntKillersPage() {
         spring or summer ant invasion.{" "}
       </p>{" "}
       {/* Best Outdoor Powder */}{" "}
-      <h2 id="best-outdoor">
-        Best Outdoor Powder &mdash; Zero In Ant Killer Outdoor Powder 450g
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Zero In Ant Killer Outdoor Powder 450g"
-          features={[
-            "Covers up to 45 square metres of outdoor area",
-            "Kills ants on contact with residual barrier effect",
-            "Ideal for patios, driveways, paths, and nest entrances",
-            "Easy-to-use puffer bottle for precise application",
-          ]}
-          asin="B00HKQL90K"
-          bestFor="Best Outdoor Powder"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -590,20 +654,17 @@ export default function BestAntKillersPage() {
         inside-and-outside ant control strategy.{" "}
       </p>{" "}
       {/* Best Gel Bait */}{" "}
-      <h2 id="best-gel">Best Gel Bait &mdash; Combat Ant Killing Gel 27g</h2>{" "}
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Combat Ant Killing Gel 27g"
-          features={[
-            "Professional-strength fipronil gel bait",
-            "Syringe applicator for precise placement in cracks and crevices",
-            "Kills the entire colony including the queen",
-            "Ideal for kitchens, bathrooms, and hard-to-reach areas",
-          ]}
-          asin="B000BQT5IG"
-          bestFor="Best Gel Bait"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>

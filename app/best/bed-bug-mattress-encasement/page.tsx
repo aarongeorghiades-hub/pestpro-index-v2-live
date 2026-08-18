@@ -83,12 +83,109 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B004BAB28O",
+    rank: 1,
+    cardName: "SafeRest Premium Zippered Mattress Encasement",
+    cardLabel: "Best Overall",
+    features: [
+      "Micro-zipper with Velcro flap — bed bug proof",
+      "Waterproof membrane protects against spills and stains",
+      "Breathable cotton terry surface for comfortable sleep",
+      "Available in all UK mattress sizes (Single to Super King)",
+    ],
+    tableCells: [
+      "SafeRest Premium",
+      "Micro-zipper + waterproof",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "SafeRest Premium Mattress Encasement",
+    tocLabel: "Best Overall",
+    tocName: "SafeRest Premium Encasement",
+  },
+  {
+    anchorId: "best-value",
+    asin: "B00MRH58V0",
+    rank: 2,
+    cardName: "Utopia Bedding Zippered Mattress Encasement",
+    cardLabel: "Best Budget",
+    features: [
+      "Micro-zipper bed bug protection at a budget price",
+      "Knitted polyester — smooth and quiet",
+      "Full six-sided mattress enclosure",
+      "Machine washable for easy care",
+    ],
+    tableCells: ["Utopia Bedding", "Affordable micro-zipper", "Best Value"],
+    h2Label: "Best Value",
+    h2Name: "Utopia Bedding Mattress Encasement",
+    tocLabel: "Best Value",
+    tocName: "Utopia Bedding Encasement",
+  },
+  {
+    anchorId: "best-comfort",
+    asin: "B00WI0D5A2",
+    rank: 3,
+    cardName: "SureGuard Premium Mattress Encasement",
+    cardLabel: "Best for Comfort",
+    features: [
+      "Premium cotton terry — softest encasement available",
+      "Micro-zipper with patented SecureSeal closure",
+      "Waterproof, breathable, and hypoallergenic",
+      "Designed for long-term permanent use",
+    ],
+    tableCells: ["SureGuard", "Soft cotton terry surface", "Best Comfort"],
+    h2Label: "Best for Comfort",
+    h2Name: "SureGuard Mattress Encasement",
+    tocLabel: "Best for Comfort",
+    tocName: "SureGuard Encasement",
+  },
+  {
+    anchorId: "best-heavy",
+    asin: "B004P1I4US",
+    rank: 4,
+    cardName: "Protect-A-Bed AllerZip Smooth Encasement",
+    cardLabel: "Best Heavy-Duty",
+    features: [
+      "Commercial-grade BugLock zipper — industry standard",
+      "Used in hotels and healthcare facilities worldwide",
+      "Smooth polyester surface — easy to wipe clean",
+      "Independently tested and certified bed bug proof",
+    ],
+    tableCells: [
+      "Protect-A-Bed AllerZip",
+      "Commercial-grade zipper",
+      "Best Heavy-Duty",
+    ],
+    h2Label: "Best Heavy-Duty",
+    h2Name: "Protect-A-Bed AllerZip",
+    tocLabel: "Best Heavy-Duty",
+    tocName: "Protect-A-Bed AllerZip",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Encasements at a Glance" },
-  { id: "best-overall", title: "Best Overall — SafeRest Premium Encasement" },
-  { id: "best-value", title: "Best Value — Utopia Bedding Encasement" },
-  { id: "best-comfort", title: "Best for Comfort — SureGuard Encasement" },
-  { id: "best-heavy", title: "Best Heavy-Duty — Protect-A-Bed AllerZip" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "How to Choose the Right Encasement" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
@@ -249,45 +346,26 @@ export default function BestMattressEncasementPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            <td>SafeRest Premium</td>
-            <td>Micro-zipper + waterproof</td>
-            <td>Best Overall</td>
-          </tr>{" "}
-          <tr>
-            <td>Utopia Bedding</td>
-            <td>Affordable micro-zipper</td>
-            <td>Best Value</td>
-          </tr>{" "}
-          <tr>
-            <td>SureGuard</td>
-            <td>Soft cotton terry surface</td>
-            <td>Best Comfort</td>
-          </tr>{" "}
-          <tr>
-            <td>Protect-A-Bed AllerZip</td>
-            <td>Commercial-grade zipper</td>
-            <td>Best Heavy-Duty</td>
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
-      <h2 id="best-overall">
-        Best Overall — SafeRest Premium Mattress Encasement
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="SafeRest Premium Zippered Mattress Encasement"
-          rank={1}
-          features={[
-            "Micro-zipper with Velcro flap — bed bug proof",
-            "Waterproof membrane protects against spills and stains",
-            "Breathable cotton terry surface for comfortable sleep",
-            "Available in all UK mattress sizes (Single to Super King)",
-          ]}
-          asin="B004BAB28O"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -337,20 +415,17 @@ export default function BestMattressEncasementPage() {
         <li>White colour shows stains if used without a fitted sheet</li>{" "}
         <li>Cotton terry surface may pill with heavy use over time</li>{" "}
       </ul>{" "}
-      <h2 id="best-value">Best Value — Utopia Bedding Mattress Encasement</h2>{" "}
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Utopia Bedding Zippered Mattress Encasement"
-          rank={2}
-          features={[
-            "Micro-zipper bed bug protection at a budget price",
-            "Knitted polyester — smooth and quiet",
-            "Full six-sided mattress enclosure",
-            "Machine washable for easy care",
-          ]}
-          asin="B00MRH58V0"
-          bestFor="Best Budget"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -387,22 +462,17 @@ export default function BestMattressEncasementPage() {
         <li>Thinner fabric than premium options</li> <li>Not waterproof</li>{" "}
         <li>May not be as durable for long-term use</li>{" "}
       </ul>{" "}
-      <h2 id="best-comfort">
-        Best for Comfort — SureGuard Mattress Encasement
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="SureGuard Premium Mattress Encasement"
-          rank={3}
-          features={[
-            "Premium cotton terry — softest encasement available",
-            "Micro-zipper with patented SecureSeal closure",
-            "Waterproof, breathable, and hypoallergenic",
-            "Designed for long-term permanent use",
-          ]}
-          asin="B00WI0D5A2"
-          bestFor="Best for Comfort"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -441,20 +511,17 @@ export default function BestMattressEncasementPage() {
         <li>May be difficult to find in less common UK sizes</li>{" "}
         <li>Cotton terry requires occasional machine washing</li>{" "}
       </ul>{" "}
-      <h2 id="best-heavy">Best Heavy-Duty — Protect-A-Bed AllerZip</h2>{" "}
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Protect-A-Bed AllerZip Smooth Encasement"
-          rank={4}
-          features={[
-            "Commercial-grade BugLock zipper — industry standard",
-            "Used in hotels and healthcare facilities worldwide",
-            "Smooth polyester surface — easy to wipe clean",
-            "Independently tested and certified bed bug proof",
-          ]}
-          asin="B004P1I4US"
-          bestFor="Best Heavy-Duty"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>

@@ -121,13 +121,141 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B013K87W4A",
+    rank: 1,
+    cardName:
+      "Pest Expert Formula C+ Bed Bug Killer Spray 1L + Powder 300g Kit",
+    cardLabel: "Best Overall",
+    features: [
+      "Triple-action: cypermethrin + pyriproxyfen IGR + pyrethrum",
+      "Kills adults, larvae and eggs on contact",
+      "Covers 50m² per 1L — includes 300g powder",
+      "HSE approved — safe for mattresses once dry",
+    ],
+    tableCells: [
+      "Pest Expert Formula C+ 1L Kit",
+      "Spray + powder kit",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Pest Expert Formula C+ Bed Bug Killer Kit",
+    tocLabel: "Best Overall",
+    tocName: "Pest Expert Formula C+ Kit",
+  },
+  {
+    anchorId: "best-multi-room",
+    asin: "B01GJIBI4S",
+    rank: 2,
+    cardName: "Pest Expert Formula C+ Bed Bug Spray 2 x 1L + Powder 2 x 300g",
+    cardLabel: "Best Multi-Room",
+    features: [
+      "Twin-pack of maximum-strength Formula C+",
+      "Two full-size 1L sprays + two 300g powder packs",
+      "Treats a whole property — multi-room coverage",
+      "Best value for larger infestations",
+    ],
+    tableCells: [
+      "Pest Expert Formula C+ Twin Pack",
+      "Spray + powder twin pack",
+      "Best Multi-Room",
+    ],
+    h2Label: "Best Multi-Room",
+    h2Name: "Pest Expert Formula C+ Twin Pack",
+    tocLabel: "Best Multi-Room",
+    tocName: "Formula C+ Twin Pack",
+  },
+  {
+    anchorId: "best-kit",
+    asin: "B01E724WFK",
+    rank: 3,
+    cardName:
+      "Pest Expert Bed Bug Treatment Kit — Spray, Powder, Fogger & Rentokil Spray",
+    cardLabel: "Best Treatment Kit",
+    features: [
+      "Complete treatment kit for a standard bedroom",
+      "Formula C+ spray + Formula P powder + fogger",
+      "Includes Rentokil Insectrol for cracks and crevices",
+      "Everything needed in one purchase",
+    ],
+    tableCells: [
+      "Pest Expert Complete Kit",
+      "Treatment kit",
+      "Best Treatment Kit",
+    ],
+    h2Label: "Best Treatment Kit",
+    h2Name: "Pest Expert Complete Kit",
+    tocLabel: "Best Treatment Kit",
+    tocName: "Pest Expert Complete Kit",
+  },
+  {
+    anchorId: "best-combo",
+    asin: "B07VRQ8XCT",
+    rank: 4,
+    cardName: "Pest Expert Formula C Bed Bug Spray 1L + Smoke Bomb 11g",
+    cardLabel: "Best Spray + Fumigator Combo",
+    features: [
+      "Formula C+ residual spray + smoke bomb combo",
+      "Smoke reaches behind headboards and inside frames",
+      "Surface treatment plus deep penetration in one kit",
+      "Professional-strength cypermethrin formula",
+    ],
+    tableCells: [
+      "Pest Expert Spray + Smoke Bomb",
+      "Spray + fumigator",
+      "Best Combo",
+    ],
+    h2Label: "Best Spray + Fumigator Combo",
+    h2Name: "Pest Expert Spray + Smoke Bomb",
+    tocLabel: "Best Combo",
+    tocName: "Spray + Smoke Bomb",
+  },
+  {
+    anchorId: "best-trade",
+    asin: "B010E2GQ6K",
+    rank: 5,
+    cardName: "Pest Expert Formula C+ Bed Bug Spray 5L with Trigger Sprayer",
+    cardLabel: "Best Trade-Size",
+    features: [
+      "Trade-size 5L refill with trigger hose sprayer",
+      "Covers 250m² — enough for an entire HMO",
+      "Most cost-effective per m² treatment",
+      "Ideal for landlords treating multiple properties",
+    ],
+    tableCells: [
+      "Pest Expert Formula C+ 5L",
+      "Trade-size spray",
+      "Best Trade-Size",
+    ],
+    h2Label: "Best Trade-Size",
+    h2Name: "Pest Expert Formula C+ 5L",
+    tocLabel: "Best Trade-Size",
+    tocName: "Formula C+ 5L",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Bed Bug Sprays at a Glance" },
-  { id: "best-overall", title: "Best Overall — Pest Expert Formula C+ Kit" },
-  { id: "best-multi-room", title: "Best Multi-Room — Formula C+ Twin Pack" },
-  { id: "best-kit", title: "Best Treatment Kit — Pest Expert Complete Kit" },
-  { id: "best-combo", title: "Best Combo — Spray + Smoke Bomb" },
-  { id: "best-trade", title: "Best Trade-Size — Formula C+ 5L" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "How to Choose the Right Bed Bug Spray" },
   { id: "application", title: "How to Apply Bed Bug Spray Effectively" },
   { id: "faq", title: "Frequently Asked Questions" },
@@ -305,32 +433,13 @@ export default function BestBedBugSprayPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Formula C+ 1L Kit</td> <td>Spray + powder kit</td>{" "}
-            <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Formula C+ Twin Pack</td>{" "}
-            <td>Spray + powder twin pack</td> <td>Best Multi-Room</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Complete Kit</td> <td>Treatment kit</td>{" "}
-            <td>Best Treatment Kit</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Spray + Smoke Bomb</td> <td>Spray + fumigator</td>{" "}
-            <td>Best Combo</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Formula C+ 5L</td> <td>Trade-size spray</td>{" "}
-            <td>Best Trade-Size</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       <div className="not-prose">
@@ -341,22 +450,17 @@ export default function BestBedBugSprayPage() {
         />{" "}
       </div>{" "}
       {/* Product 1 */}{" "}
-      <h2 id="best-overall">
-        Best Overall — Pest Expert Formula C+ Bed Bug Killer Kit
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Formula C+ Bed Bug Killer Spray 1L + Powder 300g Kit"
-          rank={1}
-          features={[
-            "Triple-action: cypermethrin + pyriproxyfen IGR + pyrethrum",
-            "Kills adults, larvae and eggs on contact",
-            "Covers 50m\u00B2 per 1L \u2014 includes 300g powder",
-            "HSE approved \u2014 safe for mattresses once dry",
-          ]}
-          asin="B013K87W4A"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -402,22 +506,17 @@ export default function BestBedBugSprayPage() {
         <li>Single kit may not be enough for multi-room infestations</li>{" "}
       </ul>{" "}
       {/* Product 2 */}{" "}
-      <h2 id="best-multi-room">
-        Best Multi-Room — Pest Expert Formula C+ Twin Pack
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Formula C+ Bed Bug Spray 2 x 1L + Powder 2 x 300g"
-          rank={2}
-          features={[
-            "Twin-pack of maximum-strength Formula C+",
-            "Two full-size 1L sprays + two 300g powder packs",
-            "Treats a whole property \u2014 multi-room coverage",
-            "Best value for larger infestations",
-          ]}
-          asin="B01GJIBI4S"
-          bestFor="Best Multi-Room"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -459,20 +558,17 @@ export default function BestBedBugSprayPage() {
         <li>Overkill for a minor, single-room infestation</li>{" "}
       </ul>{" "}
       {/* Product 3 */}{" "}
-      <h2 id="best-kit">Best Treatment Kit — Pest Expert Complete Kit</h2>{" "}
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Bed Bug Treatment Kit — Spray, Powder, Fogger &amp; Rentokil Spray"
-          rank={3}
-          features={[
-            "Complete treatment kit for a standard bedroom",
-            "Formula C+ spray + Formula P powder + fogger",
-            "Includes Rentokil Insectrol for cracks and crevices",
-            "Everything needed in one purchase",
-          ]}
-          asin="B01E724WFK"
-          bestFor="Best Treatment Kit"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -517,22 +613,17 @@ export default function BestBedBugSprayPage() {
         <li>Designed for a single bedroom; larger properties need more</li>{" "}
       </ul>{" "}
       {/* Product 4 */}{" "}
-      <h2 id="best-combo">
-        Best Spray + Fumigator Combo — Pest Expert Spray + Smoke Bomb
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Formula C Bed Bug Spray 1L + Smoke Bomb 11g"
-          rank={4}
-          features={[
-            "Formula C+ residual spray + smoke bomb combo",
-            "Smoke reaches behind headboards and inside frames",
-            "Surface treatment plus deep penetration in one kit",
-            "Professional-strength cypermethrin formula",
-          ]}
-          asin="B07VRQ8XCT"
-          bestFor="Best Spray + Fumigator Combo"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -576,20 +667,17 @@ export default function BestBedBugSprayPage() {
         <li>Single 1L spray may need a top-up for larger rooms</li>{" "}
       </ul>{" "}
       {/* Product 5 */}{" "}
-      <h2 id="best-trade">Best Trade-Size — Pest Expert Formula C+ 5L</h2>{" "}
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Formula C+ Bed Bug Spray 5L with Trigger Sprayer"
-          rank={5}
-          features={[
-            "Trade-size 5L refill with trigger hose sprayer",
-            "Covers 250m\u00B2 \u2014 enough for an entire HMO",
-            "Most cost-effective per m\u00B2 treatment",
-            "Ideal for landlords treating multiple properties",
-          ]}
-          asin="B010E2GQ6K"
-          bestFor="Best Trade-Size"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>
