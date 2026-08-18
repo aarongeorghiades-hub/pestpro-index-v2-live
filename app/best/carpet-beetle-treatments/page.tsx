@@ -69,19 +69,140 @@ const breadcrumbSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-spray",
+    asin: "B06Y19DMBG",
+    rank: 1,
+    cardName: "Zero In Carpet Beetle & Moth Killer Spray 300ml",
+    cardLabel: "Best Spray Treatment",
+    features: [
+      "Kills carpet beetles, moths, and larvae on contact",
+      "Cypermethrin formula with 3-month residual protection",
+      "Odour-free — safe for use on carpets, rugs, and inside wardrobes",
+      "Apply along carpet edges, skirting boards, under furniture, and in wardrobes",
+    ],
+    tableCells: [
+      "Zero In Carpet Beetle & Moth Killer 300ml",
+      "Aerosol spray",
+      "Carpet edges, skirting boards",
+    ],
+    h2Label: "Best Spray",
+    h2Name: "Zero In Carpet Beetle & Moth Killer",
+    tocLabel: "Best Spray",
+    tocName: "Zero In Carpet Beetle & Moth Killer",
+  },
+  {
+    anchorId: "best-trap",
+    asin: "B097C28LVM",
+    rank: 2,
+    cardName: "Rentokil Carpet Beetle & Cloth Moth Trap (Pack of 2)",
+    cardLabel: "Best Monitoring Trap",
+    features: [
+      "Poison-free pheromone sticky trap technology",
+      "Catches adult carpet beetles and cloth moths",
+      "Essential for detecting infestations early and monitoring treatment",
+      "Place in wardrobes, along skirting boards, and near windows",
+    ],
+    tableCells: [
+      "Rentokil Carpet Beetle & Cloth Moth Trap (2-Pack)",
+      "Pheromone trap",
+      "Monitoring, early detection",
+    ],
+    h2Label: "Best Trap",
+    h2Name: "Rentokil Carpet Beetle & Cloth Moth Trap",
+    tocLabel: "Best Trap",
+    tocName: "Rentokil Pheromone Trap",
+  },
+  {
+    anchorId: "best-powder",
+    asin: "B011UTS3VW",
+    rank: 3,
+    cardName:
+      "Pest Expert Formula 'P' Carpet Beetle Killer Powder XL (2 × 300g)",
+    cardLabel: "Best Professional-Grade",
+    features: [
+      "Maximum-strength permethrin formula — HSE approved",
+      "Puffer pack format for easy application into crevices",
+      "Treats up to 50m² — ideal for whole-room treatment",
+      "Long-lasting residual action in dry, undisturbed areas",
+    ],
+    tableCells: [
+      "Pest Expert Formula P Powder XL (2 × 300g)",
+      "Insecticidal powder",
+      "Crevices, under-carpet treatment",
+    ],
+    h2Label: "Best Powder",
+    h2Name: "Pest Expert Formula P Carpet Beetle Killer Powder",
+    tocLabel: "Best Powder",
+    tocName: "Pest Expert Formula P",
+  },
+  {
+    anchorId: "best-kit",
+    asin: "B010E2HEWU",
+    rank: 4,
+    cardName: "Pest Expert Carpet Moth Killer Kit (Standard — 1 Room)",
+    cardLabel: "Best Complete Kit",
+    features: [
+      "4-piece kit: spray + fogger + killer powder + pheromone trap",
+      "Treats one average-sized room comprehensively",
+      "Fast knockdown plus long-lasting control for up to 12 weeks",
+      "Works on carpet beetles, carpet moths, and their larvae",
+    ],
+    tableCells: [
+      "Pest Expert Carpet Moth Killer Kit (1 Room)",
+      "Complete kit",
+      "Whole-room treatment",
+    ],
+    h2Label: "Best Kit",
+    h2Name: "Pest Expert Carpet Moth Killer Kit",
+    tocLabel: "Best Kit",
+    tocName: "Pest Expert Carpet Moth Killer Kit",
+  },
+  {
+    anchorId: "best-natural",
+    asin: "B09F31QSQB",
+    rank: 5,
+    cardName: "Cedarwood Moth Repellent for Wardrobes (28 Pieces)",
+    cardLabel: "Best Natural Prevention",
+    features: [
+      "100% natural cedar wood — no chemicals",
+      "28-piece set: 10 balls, 10 cubes, 6 rings, 2 hanging units",
+      "Natural repellent for wardrobes, drawers, and storage boxes",
+      "Sand or refresh every 6-12 months to maintain effectiveness",
+    ],
+    tableCells: [
+      "Cedarwood Moth Repellent for Wardrobes (28 Pieces)",
+      "Natural repellent",
+      "Wardrobes, drawers, storage",
+    ],
+    h2Label: "Best Natural",
+    h2Name: "Cedarwood Moth Repellent for Wardrobes",
+    tocLabel: "Best Natural",
+    tocName: "Cedarwood Moth Repellent for Wardrobes",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Carpet Beetle Treatments at a Glance" },
-  {
-    id: "best-spray",
-    title: "Best Spray — Zero In Carpet Beetle & Moth Killer",
-  },
-  { id: "best-trap", title: "Best Trap — Rentokil Pheromone Trap" },
-  { id: "best-powder", title: "Best Powder — Pest Expert Formula P" },
-  { id: "best-kit", title: "Best Kit — Pest Expert Carpet Moth Killer Kit" },
-  {
-    id: "best-natural",
-    title: "Best Natural — Cedarwood Moth Repellent for Wardrobes",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Carpet Beetle Treatment Buying Guide" },
   { id: "when-to-call", title: "When to Call a Professional" },
 ];
@@ -287,52 +408,27 @@ export default function BestCarpetBeetleTreatmentsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Zero In Carpet Beetle &amp; Moth Killer 300ml</td>{" "}
-            <td>Aerosol spray</td> <td>Carpet edges, skirting boards</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Rentokil Carpet Beetle &amp; Cloth Moth Trap (2-Pack)</td>{" "}
-            <td>Pheromone trap</td> <td>Monitoring, early detection</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Formula P Powder XL (2 &times; 300g)</td>{" "}
-            <td>Insecticidal powder</td>{" "}
-            <td>Crevices, under-carpet treatment</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Carpet Moth Killer Kit (1 Room)</td>{" "}
-            <td>Complete kit</td> <td>Whole-room treatment</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Cedarwood Moth Repellent for Wardrobes (28 Pieces)</td>{" "}
-            <td>Natural repellent</td> <td>Wardrobes, drawers, storage</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       {/* Best Spray */}{" "}
-      <h2 id="best-spray">
-        Best Spray &mdash; Zero In Carpet Beetle &amp; Moth Killer
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Zero In Carpet Beetle & Moth Killer Spray 300ml"
-          features={[
-            "Kills carpet beetles, moths, and larvae on contact",
-            "Cypermethrin formula with 3-month residual protection",
-            "Odour-free — safe for use on carpets, rugs, and inside wardrobes",
-            "Apply along carpet edges, skirting boards, under furniture, and in wardrobes",
-          ]}
-          asin="B06Y19DMBG"
-          bestFor="Best Spray Treatment"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -388,22 +484,17 @@ export default function BestCarpetBeetleTreatmentsPage() {
         colony.{" "}
       </p>{" "}
       {/* Best Trap */}{" "}
-      <h2 id="best-trap">
-        Best Trap &mdash; Rentokil Carpet Beetle &amp; Cloth Moth Trap
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Rentokil Carpet Beetle & Cloth Moth Trap (Pack of 2)"
-          features={[
-            "Poison-free pheromone sticky trap technology",
-            "Catches adult carpet beetles and cloth moths",
-            "Essential for detecting infestations early and monitoring treatment",
-            "Place in wardrobes, along skirting boards, and near windows",
-          ]}
-          asin="B097C28LVM"
-          bestFor="Best Monitoring Trap"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -465,22 +556,17 @@ export default function BestCarpetBeetleTreatmentsPage() {
         </Callout>{" "}
       </div>{" "}
       {/* Best Powder */}{" "}
-      <h2 id="best-powder">
-        Best Powder &mdash; Pest Expert Formula P Carpet Beetle Killer Powder
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Formula 'P' Carpet Beetle Killer Powder XL (2 &times; 300g)"
-          features={[
-            "Maximum-strength permethrin formula — HSE approved",
-            "Puffer pack format for easy application into crevices",
-            "Treats up to 50m² — ideal for whole-room treatment",
-            "Long-lasting residual action in dry, undisturbed areas",
-          ]}
-          asin="B011UTS3VW"
-          bestFor="Best Professional-Grade"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -534,20 +620,17 @@ export default function BestCarpetBeetleTreatmentsPage() {
         crevices and gaps.{" "}
       </p>{" "}
       {/* Best Kit */}{" "}
-      <h2 id="best-kit">Best Kit &mdash; Pest Expert Carpet Moth Killer Kit</h2>{" "}
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Carpet Moth Killer Kit (Standard — 1 Room)"
-          features={[
-            "4-piece kit: spray + fogger + killer powder + pheromone trap",
-            "Treats one average-sized room comprehensively",
-            "Fast knockdown plus long-lasting control for up to 12 weeks",
-            "Works on carpet beetles, carpet moths, and their larvae",
-          ]}
-          asin="B010E2HEWU"
-          bestFor="Best Complete Kit"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -612,22 +695,17 @@ export default function BestCarpetBeetleTreatmentsPage() {
         </Callout>{" "}
       </div>{" "}
       {/* Best Natural */}{" "}
-      <h2 id="best-natural">
-        Best Natural &mdash; Cedarwood Moth Repellent for Wardrobes
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Cedarwood Moth Repellent for Wardrobes (28 Pieces)"
-          features={[
-            "100% natural cedar wood — no chemicals",
-            "28-piece set: 10 balls, 10 cubes, 6 rings, 2 hanging units",
-            "Natural repellent for wardrobes, drawers, and storage boxes",
-            "Sand or refresh every 6-12 months to maintain effectiveness",
-          ]}
-          asin="B09F31QSQB"
-          bestFor="Best Natural Prevention"
-          rank={5}
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>

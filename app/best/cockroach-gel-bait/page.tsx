@@ -107,22 +107,118 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B071K8X44X",
+    rank: 1,
+    cardName: "Pest Expert Cockroach Killer Kit (Advanced)",
+    cardLabel: "Best Overall",
+    features: [
+      "Complete treatment kit from the UK's leading pest control brand",
+      "Combines gel bait, spray and powder for comprehensive coverage",
+      "Designed for heavy infestations in domestic and commercial kitchens",
+      "Includes step-by-step treatment guide",
+    ],
+    tableCells: [
+      "Pest Expert Cockroach Killer Kit (Advanced)",
+      "Gel + spray + powder",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Pest Expert Cockroach Killer Kit (Advanced)",
+    tocLabel: "Best Overall",
+    tocName: "Pest Expert Cockroach Killer Kit",
+  },
+  {
+    anchorId: "best-alternative",
+    asin: "B0B1QNQ7Y1",
+    rank: 2,
+    cardName: "NOPE! CP Cockroach Killer Spray 500ml",
+    cardLabel: "Best Alternative",
+    features: [
+      "Odourless cypermethrin formula — kills on contact",
+      "3-month residual barrier on treated surfaces",
+      "Disinfects as well as kills — ideal for kitchens and bathrooms",
+      "Use alongside a gel bait for combined colony and route treatment",
+    ],
+    tableCells: [
+      "NOPE! CP Cockroach Killer Spray 500ml",
+      "Cypermethrin",
+      "Best Alternative",
+    ],
+    h2Label: "Best Alternative",
+    h2Name: "NOPE! CP Cockroach Killer Spray 500ml",
+    tocLabel: "Best Alternative",
+    tocName: "NOPE! CP Cockroach Killer Spray",
+  },
+  {
+    anchorId: "best-spray",
+    asin: "B000TARC7A",
+    rank: 3,
+    cardName: "Rentokil Insectrol Insect Killer Spray 250ml",
+    cardLabel: "Best Spray",
+    features: [
+      "Trusted Rentokil formulation with permethrin and d-allethrin",
+      "Kills cockroaches, fleas, ants and earwigs on contact",
+      "Long-lasting residual activity on treated surfaces",
+      "Spray into cracks, crevices and harbourage areas",
+    ],
+    tableCells: [
+      "Rentokil Insectrol Insect Killer Spray 250ml",
+      "Permethrin + d-allethrin",
+      "Best Spray",
+    ],
+    h2Label: "Best Spray",
+    h2Name: "Rentokil Insectrol Insect Killer Spray 250ml",
+    tocLabel: "Best Spray",
+    tocName: "Rentokil Insectrol Insect Killer Spray",
+  },
+  {
+    anchorId: "best-budget",
+    asin: "B0B71D3QS1",
+    rank: 4,
+    cardName: "Zero In Ant & Cockroach Killer 1.5L Ready-to-Use",
+    cardLabel: "Best Budget",
+    features: [
+      "Large 1.5L pressurised spray with adjustable nozzle",
+      "Cypermethrin and benzalkonium chloride antibacterial formula",
+      "Fan spray or crack-and-crevice treatment modes",
+      "Suitable for indoor and outdoor use",
+    ],
+    tableCells: [
+      "Zero In Ant & Cockroach Killer 1.5L Ready-to-Use",
+      "Cypermethrin + benzalkonium chloride",
+      "Best Budget",
+    ],
+    h2Label: "Best Budget",
+    h2Name: "Zero In Ant & Cockroach Killer 1.5L Ready-to-Use",
+    tocLabel: "Best Budget",
+    tocName: "Zero In Ant & Cockroach Killer",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Cockroach Gels at a Glance" },
   { id: "professional-only", title: "What You Can and Cannot Buy" },
-  {
-    id: "best-overall",
-    title: "Best Overall — Pest Expert Cockroach Killer Kit",
-  },
-  {
-    id: "best-alternative",
-    title: "Best Alternative — NOPE! CP Cockroach Killer Spray",
-  },
-  {
-    id: "best-spray",
-    title: "Best Spray — Rentokil Insectrol Insect Killer Spray",
-  },
-  { id: "best-budget", title: "Best Budget — Zero In Ant & Cockroach Killer" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "How to Choose the Right Cockroach Gel" },
   { id: "application", title: "How to Apply Cockroach Gel Effectively" },
   { id: "faq", title: "Frequently Asked Questions" },
@@ -286,28 +382,13 @@ export default function BestCockroachGelBaitPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Cockroach Killer Kit (Advanced)</td>{" "}
-            <td>Gel + spray + powder</td> <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>NOPE! CP Cockroach Killer Spray 500ml</td> <td>Cypermethrin</td>{" "}
-            <td>Best Alternative</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Rentokil Insectrol Insect Killer Spray 250ml</td>{" "}
-            <td>Permethrin + d-allethrin</td> <td>Best Spray</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Zero In Ant & Cockroach Killer 1.5L Ready-to-Use</td>{" "}
-            <td>Cypermethrin + benzalkonium chloride</td>{" "}
-            <td>Best Budget</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       <div className="not-prose">
@@ -352,22 +433,17 @@ export default function BestCockroachGelBaitPage() {
           subtext="Compare pest control providers in your area — free, no-obligation quotes."
         />{" "}
       </div>{" "}
-      <h2 id="best-overall">
-        Best Overall — Pest Expert Cockroach Killer Kit (Advanced)
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Cockroach Killer Kit (Advanced)"
-          rank={1}
-          features={[
-            "Complete treatment kit from the UK's leading pest control brand",
-            "Combines gel bait, spray and powder for comprehensive coverage",
-            "Designed for heavy infestations in domestic and commercial kitchens",
-            "Includes step-by-step treatment guide",
-          ]}
-          asin="B071K8X44X"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -420,22 +496,17 @@ export default function BestCockroachGelBaitPage() {
         <li>More effort to apply all three formats correctly</li>{" "}
         <li>May be overkill for a minor problem</li>{" "}
       </ul>{" "}
-      <h2 id="best-alternative">
-        Best Alternative — NOPE! CP Cockroach Killer Spray 500ml
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="NOPE! CP Cockroach Killer Spray 500ml"
-          rank={2}
-          features={[
-            "Odourless cypermethrin formula — kills on contact",
-            "3-month residual barrier on treated surfaces",
-            "Disinfects as well as kills — ideal for kitchens and bathrooms",
-            "Use alongside a gel bait for combined colony and route treatment",
-          ]}
-          asin="B0B1QNQ7Y1"
-          bestFor="Best Alternative"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -487,22 +558,17 @@ export default function BestCockroachGelBaitPage() {
         <li>Must not be sprayed near gel bait placements</li>{" "}
         <li>Contact kill only — no cascade effect</li>{" "}
       </ul>{" "}
-      <h2 id="best-spray">
-        Best Spray — Rentokil Insectrol Insect Killer Spray 250ml
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Rentokil Insectrol Insect Killer Spray 250ml"
-          rank={3}
-          features={[
-            "Trusted Rentokil formulation with permethrin and d-allethrin",
-            "Kills cockroaches, fleas, ants and earwigs on contact",
-            "Long-lasting residual activity on treated surfaces",
-            "Spray into cracks, crevices and harbourage areas",
-          ]}
-          asin="B000TARC7A"
-          bestFor="Best Spray"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -555,22 +621,17 @@ export default function BestCockroachGelBaitPage() {
           250ml is a smaller can — may need multiples for large areas
         </li>{" "}
       </ul>{" "}
-      <h2 id="best-budget">
-        Best Budget — Zero In Ant & Cockroach Killer 1.5L Ready-to-Use
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Zero In Ant & Cockroach Killer 1.5L Ready-to-Use"
-          rank={4}
-          features={[
-            "Large 1.5L pressurised spray with adjustable nozzle",
-            "Cypermethrin and benzalkonium chloride antibacterial formula",
-            "Fan spray or crack-and-crevice treatment modes",
-            "Suitable for indoor and outdoor use",
-          ]}
-          asin="B0B71D3QS1"
-          bestFor="Best Budget"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>

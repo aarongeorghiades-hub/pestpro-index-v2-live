@@ -113,16 +113,139 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-sprinkler",
+    asin: "B0153BJ7NQ",
+    rank: 1,
+    cardName: "PestBye Jet Spray Motion-Activated Sprinkler",
+    cardLabel: "Best Overall",
+    features: [
+      "Motion-activated water burst — cats find it very hard to ignore",
+      "120-degree detection arc, covers up to 100 sqm",
+      "Connects to a standard garden hose",
+      "Battery-powered PIR sensor — works day and night",
+    ],
+    tableCells: [
+      "PestBye Jet Spray Sprinkler",
+      "Motion water deterrent",
+      "Lawns, paths, open gardens",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "PestBye Jet Spray Motion-Activated Sprinkler",
+    tocLabel: "Best Overall",
+    tocName: "PestBye Jet Spray Sprinkler",
+  },
+  {
+    anchorId: "best-ultrasonic",
+    asin: "B075XN4NNB",
+    rank: 2,
+    cardName: "PestBye Solar Ultrasonic Cat Repeller (Twin Pack)",
+    cardLabel: "Best Ultrasonic Deterrent",
+    features: [
+      "Solar powered — no batteries or wiring needed",
+      "Motion-activated PIR with ~7m range",
+      "Twin pack covers two entry points",
+      "Weatherproof for year-round outdoor use",
+    ],
+    tableCells: [
+      "PestBye Solar Ultrasonic Cat Repeller",
+      "Ultrasonic (solar)",
+      "Entry points, borders",
+    ],
+    h2Label: "Best Ultrasonic",
+    h2Name: "PestBye Solar Ultrasonic Cat Repeller",
+    tocLabel: "Best Ultrasonic",
+    tocName: "PestBye Solar Cat Repeller",
+  },
+  {
+    anchorId: "best-scent",
+    asin: "B00THGEB5S",
+    rank: 3,
+    cardName: "Get Off My Garden Cat & Dog Repellent Crystals 240g",
+    cardLabel: "Best Scent Deterrent",
+    features: [
+      "Jelly-crystal scent deterrent for beds and borders",
+      "Conditions cats to avoid treated areas",
+      "Non-toxic to plants when used as directed",
+      "Long-established UK cat repellent",
+    ],
+    tableCells: [
+      "Get Off My Garden Crystals",
+      "Scent deterrent",
+      "Flower beds, borders",
+    ],
+    h2Label: "Best Scent Crystals",
+    h2Name: "Get Off My Garden Repellent",
+    tocLabel: "Best Scent Crystals",
+    tocName: "Get Off My Garden",
+  },
+  {
+    anchorId: "best-physical",
+    asin: "B01I3E0PKY",
+    rank: 4,
+    cardName: "Defenders Prickle Strip Dig Stopper (Cat & Dog), 3-Pack",
+    cardLabel: "Best Physical Deterrent",
+    features: [
+      "Flexible plastic prickle strips — uncomfortable but harmless",
+      "Stops cats digging and fouling in beds and pots",
+      "Push into soil or pin onto fence tops and ledges",
+      "3-pack covers multiple beds or a boundary run",
+    ],
+    tableCells: [
+      "Defenders Prickle Strips",
+      "Physical deterrent",
+      "Stopping digging & fouling",
+    ],
+    h2Label: "Best Physical Deterrent",
+    h2Name: "Defenders Prickle Strip Dig Stopper",
+    tocLabel: "Best Physical",
+    tocName: "Defenders Prickle Strips",
+  },
+  {
+    anchorId: "best-natural",
+    asin: "B0002B7OT2",
+    rank: 5,
+    cardName: "Silent Roar Lion Manure Cat Repellent Pellets 500g",
+    cardLabel: "Best Natural Deterrent",
+    features: [
+      "Pellets infused with lion-dung essence",
+      "Exploits cats’ instinct to avoid a larger predator’s territory",
+      "Doubles as a slow-release nitrogen feed for lawns",
+      "Topped UK consumer cat-deterrent trials",
+    ],
+    tableCells: [
+      "Silent Roar Lion Manure Pellets",
+      "Natural scent deterrent",
+      "Beds, lawn edges",
+    ],
+    h2Label: "Best Natural Scent",
+    h2Name: "Silent Roar Lion Manure Pellets",
+    tocLabel: "Best Natural Scent",
+    tocName: "Silent Roar Pellets",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Cat Deterrents at a Glance" },
-  { id: "best-sprinkler", title: "Best Overall — PestBye Jet Spray Sprinkler" },
-  {
-    id: "best-ultrasonic",
-    title: "Best Ultrasonic — PestBye Solar Cat Repeller",
-  },
-  { id: "best-scent", title: "Best Scent Crystals — Get Off My Garden" },
-  { id: "best-physical", title: "Best Physical — Defenders Prickle Strips" },
-  { id: "best-natural", title: "Best Natural Scent — Silent Roar Pellets" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Cat Deterrent Buying Guide" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
@@ -287,51 +410,27 @@ export default function BestCatDeterrentsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            <td>PestBye Jet Spray Sprinkler</td>
-            <td>Motion water deterrent</td>
-            <td>Lawns, paths, open gardens</td>
-          </tr>{" "}
-          <tr>
-            <td>PestBye Solar Ultrasonic Cat Repeller</td>
-            <td>Ultrasonic (solar)</td>
-            <td>Entry points, borders</td>
-          </tr>{" "}
-          <tr>
-            <td>Get Off My Garden Crystals</td>
-            <td>Scent deterrent</td>
-            <td>Flower beds, borders</td>
-          </tr>{" "}
-          <tr>
-            <td>Defenders Prickle Strips</td>
-            <td>Physical deterrent</td>
-            <td>Stopping digging &amp; fouling</td>
-          </tr>{" "}
-          <tr>
-            <td>Silent Roar Lion Manure Pellets</td>
-            <td>Natural scent deterrent</td>
-            <td>Beds, lawn edges</td>
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       {/* Best Overall — Sprinkler (HERO) */}{" "}
-      <h2 id="best-sprinkler">
-        Best Overall &mdash; PestBye Jet Spray Motion-Activated Sprinkler
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="PestBye Jet Spray Motion-Activated Sprinkler"
-          rank={1}
-          features={[
-            "Motion-activated water burst — cats find it very hard to ignore",
-            "120-degree detection arc, covers up to 100 sqm",
-            "Connects to a standard garden hose",
-            "Battery-powered PIR sensor — works day and night",
-          ]}
-          asin="B0153BJ7NQ"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -393,22 +492,17 @@ export default function BestCatDeterrentsPage() {
         </li>{" "}
       </ul>{" "}
       {/* Best Ultrasonic */}{" "}
-      <h2 id="best-ultrasonic">
-        Best Ultrasonic &mdash; PestBye Solar Ultrasonic Cat Repeller
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="PestBye Solar Ultrasonic Cat Repeller (Twin Pack)"
-          rank={2}
-          features={[
-            "Solar powered — no batteries or wiring needed",
-            "Motion-activated PIR with ~7m range",
-            "Twin pack covers two entry points",
-            "Weatherproof for year-round outdoor use",
-          ]}
-          asin="B075XN4NNB"
-          bestFor="Best Ultrasonic Deterrent"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -463,22 +557,17 @@ export default function BestCatDeterrentsPage() {
         <li>Best as part of a layered approach, not a standalone fix</li>{" "}
       </ul>{" "}
       {/* Best Scent Crystals */}{" "}
-      <h2 id="best-scent">
-        Best Scent Crystals &mdash; Get Off My Garden Repellent
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Get Off My Garden Cat & Dog Repellent Crystals 240g"
-          rank={3}
-          features={[
-            "Jelly-crystal scent deterrent for beds and borders",
-            "Conditions cats to avoid treated areas",
-            "Non-toxic to plants when used as directed",
-            "Long-established UK cat repellent",
-          ]}
-          asin="B00THGEB5S"
-          bestFor="Best Scent Deterrent"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -529,22 +618,17 @@ export default function BestCatDeterrentsPage() {
         </li>{" "}
       </ul>{" "}
       {/* Best Physical */}{" "}
-      <h2 id="best-physical">
-        Best Physical Deterrent &mdash; Defenders Prickle Strip Dig Stopper
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Defenders Prickle Strip Dig Stopper (Cat & Dog), 3-Pack"
-          rank={4}
-          features={[
-            "Flexible plastic prickle strips — uncomfortable but harmless",
-            "Stops cats digging and fouling in beds and pots",
-            "Push into soil or pin onto fence tops and ledges",
-            "3-pack covers multiple beds or a boundary run",
-          ]}
-          asin="B01I3E0PKY"
-          bestFor="Best Physical Deterrent"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -592,22 +676,17 @@ export default function BestCatDeterrentsPage() {
         <li>Does not deter cats from the wider garden</li>{" "}
       </ul>{" "}
       {/* Best Natural Scent */}{" "}
-      <h2 id="best-natural">
-        Best Natural Scent &mdash; Silent Roar Lion Manure Pellets
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Silent Roar Lion Manure Cat Repellent Pellets 500g"
-          rank={5}
-          features={[
-            "Pellets infused with lion-dung essence",
-            "Exploits cats’ instinct to avoid a larger predator’s territory",
-            "Doubles as a slow-release nitrogen feed for lawns",
-            "Topped UK consumer cat-deterrent trials",
-          ]}
-          asin="B0002B7OT2"
-          bestFor="Best Natural Deterrent"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>

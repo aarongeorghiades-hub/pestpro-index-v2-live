@@ -67,16 +67,138 @@ const breadcrumbSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B006Y9L57S",
+    rank: 1,
+    cardName: "Defender Wide Plastic Bird Spikes (5m)",
+    cardLabel: "Best Overall",
+    features: [
+      "Made in Devon by Defender (25+ years)",
+      "Wide design for ledges up to 20cm",
+      "15 strips covering 5 metres",
+      "Humane — prevents landing without harm",
+    ],
+    tableCells: [
+      "Defender Wide Plastic Bird Spikes (5m)",
+      "Plastic spikes",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Defender Wide Plastic Bird Spikes (5m)",
+    tocLabel: "Best Overall",
+    tocName: "Defender Wide Plastic Bird Spikes",
+  },
+  {
+    anchorId: "best-netting",
+    asin: "B07KB3PGZB",
+    rank: 2,
+    cardName: "Birdgo Anti-Pigeon Netting (5m x 5m)",
+    cardLabel: "Best Netting",
+    features: [
+      "UK brand established 2002",
+      "50mm mesh for pigeons",
+      "UV-stabilised knotted construction",
+      "Technical support included",
+    ],
+    tableCells: [
+      "Birdgo Anti-Pigeon Netting (5m x 5m)",
+      "Knotted netting",
+      "Best Netting",
+    ],
+    h2Label: "Best Netting",
+    h2Name: "Birdgo Anti-Pigeon Netting (5m x 5m)",
+    tocLabel: "Best Netting",
+    tocName: "Birdgo Anti-Pigeon Netting",
+  },
+  {
+    anchorId: "best-discreet",
+    asin: "B01MQSRJQ6",
+    rank: 3,
+    cardName: "Bird Barrier Optical Gel (24 Pack)",
+    cardLabel: "Best Discreet",
+    features: [
+      "Multi-sensory deterrent (UV + smell + touch)",
+      "Discreet dishes only 2.5 inches wide",
+      "No tools required",
+      "Ideal for heritage buildings",
+    ],
+    tableCells: [
+      "Bird Barrier Optical Gel (24 Pack)",
+      "Sensory gel dishes",
+      "Best Discreet",
+    ],
+    h2Label: "Best Discreet",
+    h2Name: "Bird Barrier Optical Gel (24 Pack)",
+    tocLabel: "Best Discreet",
+    tocName: "Bird Barrier Optical Gel",
+  },
+  {
+    anchorId: "best-budget",
+    asin: "B07L19T8L4",
+    rank: 4,
+    cardName: "Stainless Steel Bird Spikes (3m)",
+    cardLabel: "Best Budget",
+    features: [
+      "Stainless steel construction",
+      "3 metre coverage",
+      "Suitable for pigeons/seagulls/crows",
+    ],
+    tableCells: [
+      "Stainless Steel Bird Spikes (3m)",
+      "Steel spikes",
+      "Best Budget",
+    ],
+    h2Label: "Best Budget",
+    h2Name: "Stainless Steel Bird Spikes (3m)",
+    tocLabel: "Best Budget",
+    tocName: "Stainless Steel Bird Spikes",
+  },
+  {
+    anchorId: "best-coverage",
+    asin: "B0C4Y7LSL6",
+    rank: 5,
+    cardName: "Fly-Bye Anti Bird Spikes (6m)",
+    cardLabel: "Best Coverage",
+    features: [
+      "6 metre coverage",
+      "2,500+ spikes irregular pattern",
+      "Also deters cats/foxes/squirrels",
+      "15 strips, glue/screw/cable-tie",
+    ],
+    tableCells: [
+      "Fly-Bye Anti Bird Spikes (6m)",
+      "Plastic spikes",
+      "Best Coverage",
+    ],
+    h2Label: "Best Coverage",
+    h2Name: "Fly-Bye Anti Bird Spikes (6m)",
+    tocLabel: "Best Coverage",
+    tocName: "Fly-Bye Anti Bird Spikes",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Bird Deterrents at a Glance" },
-  {
-    id: "best-overall",
-    title: "Best Overall — Defender Wide Plastic Bird Spikes",
-  },
-  { id: "best-netting", title: "Best Netting — Birdgo Anti-Pigeon Netting" },
-  { id: "best-discreet", title: "Best Discreet — Bird Barrier Optical Gel" },
-  { id: "best-budget", title: "Best Budget — Stainless Steel Bird Spikes" },
-  { id: "best-coverage", title: "Best Coverage — Fly-Bye Anti Bird Spikes" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Bird Deterrent Buying Guide" },
   { id: "when-to-call", title: "When to Call a Professional" },
 ];
@@ -280,51 +402,27 @@ export default function BestBirdDeterrentsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Defender Wide Plastic Bird Spikes (5m)</td>{" "}
-            <td>Plastic spikes</td> <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Birdgo Anti-Pigeon Netting (5m x 5m)</td>{" "}
-            <td>Knotted netting</td> <td>Best Netting</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Bird Barrier Optical Gel (24 Pack)</td>{" "}
-            <td>Sensory gel dishes</td> <td>Best Discreet</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Stainless Steel Bird Spikes (3m)</td> <td>Steel spikes</td>{" "}
-            <td>Best Budget</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Fly-Bye Anti Bird Spikes (6m)</td> <td>Plastic spikes</td>{" "}
-            <td>Best Coverage</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       {/* Best Overall */}{" "}
-      <h2 id="best-overall">
-        Best Overall &mdash; Defender Wide Plastic Bird Spikes (5m)
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Defender Wide Plastic Bird Spikes (5m)"
-          features={[
-            "Made in Devon by Defender (25+ years)",
-            "Wide design for ledges up to 20cm",
-            "15 strips covering 5 metres",
-            "Humane — prevents landing without harm",
-          ]}
-          asin="B006Y9L57S"
-          bestFor="Best Overall"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -432,22 +530,17 @@ export default function BestBirdDeterrentsPage() {
         start here.{" "}
       </p>{" "}
       {/* Best Netting */}{" "}
-      <h2 id="best-netting">
-        Best Netting &mdash; Birdgo Anti-Pigeon Netting (5m x 5m)
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Birdgo Anti-Pigeon Netting (5m x 5m)"
-          features={[
-            "UK brand established 2002",
-            "50mm mesh for pigeons",
-            "UV-stabilised knotted construction",
-            "Technical support included",
-          ]}
-          asin="B07KB3PGZB"
-          bestFor="Best Netting"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -565,22 +658,17 @@ export default function BestBirdDeterrentsPage() {
         </Callout>{" "}
       </div>{" "}
       {/* Best Discreet */}{" "}
-      <h2 id="best-discreet">
-        Best Discreet &mdash; Bird Barrier Optical Gel (24 Pack)
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Bird Barrier Optical Gel (24 Pack)"
-          features={[
-            "Multi-sensory deterrent (UV + smell + touch)",
-            "Discreet dishes only 2.5 inches wide",
-            "No tools required",
-            "Ideal for heritage buildings",
-          ]}
-          asin="B01MQSRJQ6"
-          bestFor="Best Discreet"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -682,21 +770,17 @@ export default function BestBirdDeterrentsPage() {
         but for the right application it is worth every penny.{" "}
       </p>{" "}
       {/* Best Budget */}{" "}
-      <h2 id="best-budget">
-        Best Budget &mdash; Stainless Steel Bird Spikes (3m)
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Stainless Steel Bird Spikes (3m)"
-          features={[
-            "Stainless steel construction",
-            "3 metre coverage",
-            "Suitable for pigeons/seagulls/crows",
-          ]}
-          asin="B07L19T8L4"
-          bestFor="Best Budget"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -789,22 +873,17 @@ export default function BestBirdDeterrentsPage() {
         quickly &mdash; measure your ledges carefully before ordering.{" "}
       </p>{" "}
       {/* Best Coverage */}{" "}
-      <h2 id="best-coverage">
-        Best Coverage &mdash; Fly-Bye Anti Bird Spikes (6m)
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Fly-Bye Anti Bird Spikes (6m)"
-          features={[
-            "6 metre coverage",
-            "2,500+ spikes irregular pattern",
-            "Also deters cats/foxes/squirrels",
-            "15 strips, glue/screw/cable-tie",
-          ]}
-          asin="B0C4Y7LSL6"
-          bestFor="Best Coverage"
-          rank={5}
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>

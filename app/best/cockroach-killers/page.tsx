@@ -73,12 +73,85 @@ const breadcrumbSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocTitle: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B07ZZGKQ55",
+    rank: 1,
+    cardName: "Pest Expert Cockroach Gel 10g",
+    cardLabel: "Best Overall",
+    features: [
+      "Formula IC gel with domino-effect bait technology",
+      "Professional cockroach gel at consumer price",
+      "Easy syringe application into cracks and crevices",
+      "Effective against all UK cockroach species",
+    ],
+    tableCells: ["Pest Expert Cockroach Gel 10g", "Gel bait", "Best Overall"],
+    h2Label: "Best Overall",
+    h2Name: "Pest Expert Cockroach Gel",
+    tocTitle: "Best Overall — Pest Expert Cockroach Gel",
+  },
+  {
+    anchorId: "best-monitoring",
+    asin: "B075FM7TST",
+    rank: 2,
+    cardName: "Cockroach Sticky Traps 12-Pack",
+    cardLabel: "Best for Monitoring",
+    features: [
+      "Toxin-free sticky traps",
+      "Food attractant lures cockroaches to the trap",
+      "12-pack provides whole-property coverage",
+      "Ideal for monitoring infestation levels",
+    ],
+    tableCells: [
+      "Cockroach Sticky Traps 12-Pack",
+      "Sticky traps",
+      "Best Monitoring",
+    ],
+    h2Label: "Best for Monitoring",
+    h2Name: "Cockroach Sticky Traps 12-Pack",
+    tocTitle: "Best for Monitoring",
+  },
+  {
+    anchorId: "best-spray",
+    asin: "B074CDY9T4",
+    rank: 3,
+    cardName: "NOPE! CP Cockroach Killer Spray 500ml",
+    cardLabel: "Best Quick-Kill Spray",
+    features: [
+      "Odourless contact killer spray",
+      "Fast-acting formula kills cockroaches on contact",
+      "500ml bottle covers a large area",
+      "Suitable for kitchens, bathrooms, and utility rooms",
+    ],
+    tableCells: [
+      "NOPE! CP Cockroach Killer Spray 500ml",
+      "Contact spray",
+      "Best Quick-Kill",
+    ],
+    h2Label: "Best Quick-Kill Spray",
+    h2Name: "NOPE! CP Cockroach Killer Spray 500ml",
+    tocTitle: "Best Quick-Kill Spray",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "At a Glance" },
   { id: "professional-only", title: "What You Can and Cannot Buy" },
-  { id: "best-overall", title: "Best Overall — Pest Expert Cockroach Gel" },
-  { id: "best-monitoring", title: "Best for Monitoring" },
-  { id: "best-spray", title: "Best Quick-Kill Spray" },
+  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
   { id: "buying-guide", title: "Buying Guide" },
 ];
 
@@ -272,21 +345,13 @@ export default function BestCockroachKillersPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Pest Expert Cockroach Gel 10g</td>
-            <td>Gel bait</td>
-            <td>Best Overall</td>
-          </tr>
-          <tr>
-            <td>Cockroach Sticky Traps 12-Pack</td>
-            <td>Sticky traps</td>
-            <td>Best Monitoring</td>
-          </tr>
-          <tr>
-            <td>NOPE! CP Cockroach Killer Spray 500ml</td>
-            <td>Contact spray</td>
-            <td>Best Quick-Kill</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
@@ -326,19 +391,16 @@ export default function BestCockroachKillersPage() {
       </div>
 
       {/* Best Overall — Pest Expert Cockroach Gel */}
-      <h2 id="best-overall">Best Overall &mdash; Pest Expert Cockroach Gel</h2>
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
+      </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Cockroach Gel 10g"
-          features={[
-            "Formula IC gel with domino-effect bait technology",
-            "Professional cockroach gel at consumer price",
-            "Easy syringe application into cracks and crevices",
-            "Effective against all UK cockroach species",
-          ]}
-          asin="B07ZZGKQ55"
-          bestFor="Best Overall"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -407,21 +469,16 @@ export default function BestCockroachKillersPage() {
       </ul>
 
       {/* Best for Monitoring — Cockroach Sticky Traps */}
-      <h2 id="best-monitoring">
-        Best for Monitoring &mdash; Cockroach Sticky Traps 12-Pack
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Cockroach Sticky Traps 12-Pack"
-          features={[
-            "Toxin-free sticky traps",
-            "Food attractant lures cockroaches to the trap",
-            "12-pack provides whole-property coverage",
-            "Ideal for monitoring infestation levels",
-          ]}
-          asin="B075FM7TST"
-          bestFor="Best for Monitoring"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -504,21 +561,16 @@ export default function BestCockroachKillersPage() {
       </ul>
 
       {/* Best Quick-Kill Spray — NOPE! CP */}
-      <h2 id="best-spray">
-        Best Quick-Kill Spray &mdash; NOPE! CP Cockroach Killer Spray 500ml
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="NOPE! CP Cockroach Killer Spray 500ml"
-          features={[
-            "Odourless contact killer spray",
-            "Fast-acting formula kills cockroaches on contact",
-            "500ml bottle covers a large area",
-            "Suitable for kitchens, bathrooms, and utility rooms",
-          ]}
-          asin="B074CDY9T4"
-          bestFor="Best Quick-Kill Spray"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>
