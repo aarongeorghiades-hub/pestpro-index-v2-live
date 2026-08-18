@@ -426,7 +426,6 @@ export default function ProfessionalBaitStationKitsPage() {
         <strong>Pros:</strong>
       </p>
       <ul>
-        <li>Lowest cost compliant bait station available</li>
         <li>Compact — fits in tight indoor spaces</li>
         <li>Key-operated lock meets all regulations</li>
         <li>UK-made</li>
