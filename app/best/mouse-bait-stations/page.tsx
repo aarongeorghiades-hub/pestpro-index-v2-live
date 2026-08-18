@@ -123,13 +123,137 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B07J2NSX9M",
+    rank: 1,
+    cardName: "Roshield 5x Pre-Baited Mouse Bait Box Kit",
+    cardLabel: "Best Overall",
+    features: [
+      "5 tamper-resistant boxes pre-baited with Brodifacoum single-feed poison",
+      "Just place and leave — no separate bait purchase needed",
+      "UK-made from recycled plastics",
+    ],
+    tableCells: [
+      "Roshield 5x Pre-Baited Kit",
+      "Pre-baited with Brodifacoum",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Roshield 5x Pre-Baited Mouse Bait Box Kit",
+    tocLabel: "Best Overall",
+    tocName: "Roshield 5x Pre-Baited Kit",
+  },
+  {
+    anchorId: "best-bulk",
+    asin: "B00XL351Y8",
+    rank: 2,
+    cardName: "Roshield 10x Mouse Bait Boxes (Empty, No Bait)",
+    cardLabel: "Best Bulk",
+    features: [
+      "Bulk pack of 10 lockable tamper-resistant boxes",
+      "Use with your own choice of rodenticide",
+      "UK-made from recycled plastic",
+      "Complies with UK and EU regulations — key included",
+    ],
+    tableCells: [
+      "Roshield 10x Empty Boxes",
+      "Bulk pack for landlords",
+      "Best Bulk",
+    ],
+    h2Label: "Best Bulk",
+    h2Name: "Roshield 10x Mouse Bait Boxes (Empty, No Bait)",
+    tocLabel: "Best Bulk",
+    tocName: "Roshield 10x Empty Bait Boxes",
+  },
+  {
+    anchorId: "best-compact",
+    asin: "B00KVGCBJG",
+    rank: 3,
+    cardName: "Roshield 5x Black Tamper-Resistant Mouse Bait Boxes",
+    cardLabel: "Best Compact",
+    features: [
+      "Compact design for tight spaces and enclosed areas",
+      "Fits under kitchen units, in loft voids and cupboards",
+      "Holds wax blocks and pasta sachets",
+      "5-pack of empty lockable stations — bait sold separately",
+    ],
+    tableCells: [
+      "Roshield 5x Black Boxes",
+      "Compact for tight spaces",
+      "Best Compact",
+    ],
+    h2Label: "Best Compact",
+    h2Name: "Roshield 5x Black Tamper-Resistant Mouse Bait Boxes",
+    tocLabel: "Best Compact",
+    tocName: "Roshield 5x Black Bait Boxes",
+  },
+  {
+    anchorId: "best-brand",
+    asin: "B00OHI13ZW",
+    rank: 4,
+    cardName: "The Big Cheese Rat & Mouse Bait Station Compact",
+    cardLabel: "Best Brand",
+    features: [
+      "Compact tamper-resistant station from the UK's top rodent brand",
+      "Lockable lid for indoor and outdoor use",
+      "Compatible with The Big Cheese bait blocks and pasta sachets",
+    ],
+    tableCells: [
+      "The Big Cheese Bait Station",
+      "Lockable lid, indoor and outdoor use",
+      "Best Brand",
+    ],
+    h2Label: "Best Brand",
+    h2Name: "The Big Cheese Rat & Mouse Bait Station Compact",
+    tocLabel: "Best Brand",
+    tocName: "The Big Cheese Bait Station",
+  },
+  {
+    anchorId: "best-budget",
+    asin: "B000YPXJ1I",
+    rank: 5,
+    cardName: "Pest-Stop Lockable Mouse Bait Station",
+    cardLabel: "Best Budget",
+    features: [
+      "All-weather lockable mouse bait station",
+      "Low-profile design for discreet wall placement",
+      "Suitable for home, office and garden use",
+      "Affordable option for budget-conscious buyers",
+    ],
+    tableCells: [
+      "Pest-Stop Lockable Station",
+      "Low-profile discreet design",
+      "Best Budget",
+    ],
+    h2Label: "Best Budget",
+    h2Name: "Pest-Stop Lockable Mouse Bait Station",
+    tocLabel: "Best Budget",
+    tocName: "Pest-Stop Lockable Station",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Mouse Bait Stations at a Glance" },
-  { id: "best-overall", title: "Best Overall — Roshield 5x Pre-Baited Kit" },
-  { id: "best-bulk", title: "Best Bulk — Roshield 10x Empty Bait Boxes" },
-  { id: "best-compact", title: "Best Compact — Roshield 5x Black Bait Boxes" },
-  { id: "best-brand", title: "Best Brand — The Big Cheese Bait Station" },
-  { id: "best-budget", title: "Best Budget — Pest-Stop Lockable Station" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "How to Choose the Right Mouse Bait Station" },
   { id: "placement", title: "Placement Guide for Best Results" },
   { id: "faq", title: "Frequently Asked Questions" },
@@ -274,32 +398,13 @@ export default function BestMouseBaitStationsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            <td>Roshield 5x Pre-Baited Kit</td>
-            <td>Pre-baited with Brodifacoum</td>
-            <td>Best Overall</td>
-          </tr>{" "}
-          <tr>
-            <td>Roshield 10x Empty Boxes</td>
-            <td>Bulk pack for landlords</td>
-            <td>Best Bulk</td>
-          </tr>{" "}
-          <tr>
-            <td>Roshield 5x Black Boxes</td>
-            <td>Compact for tight spaces</td>
-            <td>Best Compact</td>
-          </tr>{" "}
-          <tr>
-            <td>The Big Cheese Bait Station</td>
-            <td>Lockable lid, indoor and outdoor use</td>
-            <td>Best Brand</td>
-          </tr>{" "}
-          <tr>
-            <td>Pest-Stop Lockable Station</td>
-            <td>Low-profile discreet design</td>
-            <td>Best Budget</td>
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       <div className="not-prose">
@@ -309,21 +414,17 @@ export default function BestMouseBaitStationsPage() {
           label="Recommended number of mouse bait stations for a typical UK home"
         />{" "}
       </div>{" "}
-      <h2 id="best-overall">
-        Best Overall — Roshield 5x Pre-Baited Mouse Bait Box Kit
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Roshield 5x Pre-Baited Mouse Bait Box Kit"
-          rank={1}
-          features={[
-            "5 tamper-resistant boxes pre-baited with Brodifacoum single-feed poison",
-            "Just place and leave — no separate bait purchase needed",
-            "UK-made from recycled plastics",
-          ]}
-          asin="B07J2NSX9M"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -371,22 +472,17 @@ export default function BestMouseBaitStationsPage() {
           Not suitable for use where non-target rodenticides are required
         </li>{" "}
       </ul>{" "}
-      <h2 id="best-bulk">
-        Best Bulk — Roshield 10x Mouse Bait Boxes (Empty, No Bait)
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Roshield 10x Mouse Bait Boxes (Empty, No Bait)"
-          rank={2}
-          features={[
-            "Bulk pack of 10 lockable tamper-resistant boxes",
-            "Use with your own choice of rodenticide",
-            "UK-made from recycled plastic",
-            "Complies with UK and EU regulations — key included",
-          ]}
-          asin="B00XL351Y8"
-          bestFor="Best Bulk"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -432,22 +528,17 @@ export default function BestMouseBaitStationsPage() {
         <li>Overkill for a single small property</li>{" "}
         <li>Requires knowledge of which bait to use</li>{" "}
       </ul>{" "}
-      <h2 id="best-compact">
-        Best Compact — Roshield 5x Black Tamper-Resistant Mouse Bait Boxes
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Roshield 5x Black Tamper-Resistant Mouse Bait Boxes"
-          rank={3}
-          features={[
-            "Compact design for tight spaces and enclosed areas",
-            "Fits under kitchen units, in loft voids and cupboards",
-            "Holds wax blocks and pasta sachets",
-            "5-pack of empty lockable stations — bait sold separately",
-          ]}
-          asin="B00KVGCBJG"
-          bestFor="Best Compact"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -493,21 +584,17 @@ export default function BestMouseBaitStationsPage() {
         <li>Smaller bait capacity than full-size stations</li>{" "}
         <li>Too small for snap traps</li>{" "}
       </ul>{" "}
-      <h2 id="best-brand">
-        Best Brand — The Big Cheese Rat & Mouse Bait Station Compact
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="The Big Cheese Rat & Mouse Bait Station Compact"
-          rank={4}
-          features={[
-            "Compact tamper-resistant station from the UK's top rodent brand",
-            "Lockable lid for indoor and outdoor use",
-            "Compatible with The Big Cheese bait blocks and pasta sachets",
-          ]}
-          asin="B00OHI13ZW"
-          bestFor="Best Brand"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -547,22 +634,17 @@ export default function BestMouseBaitStationsPage() {
         <li>Lighter construction than professional-grade stations</li>{" "}
         <li>Compact size limits bait capacity</li>{" "}
       </ul>{" "}
-      <h2 id="best-budget">
-        Best Budget — Pest-Stop Lockable Mouse Bait Station
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest-Stop Lockable Mouse Bait Station"
-          rank={5}
-          features={[
-            "All-weather lockable mouse bait station",
-            "Low-profile design for discreet wall placement",
-            "Suitable for home, office and garden use",
-            "Affordable option for budget-conscious buyers",
-          ]}
-          asin="B000YPXJ1I"
-          bestFor="Best Budget"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>

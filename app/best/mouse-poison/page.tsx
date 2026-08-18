@@ -121,22 +121,135 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B07B51YPRR",
+    rank: 1,
+    cardName: "Pest Expert Formula B+ Rat & Mouse Killer Poison 900g (15x60g)",
+    cardLabel: "Best Overall",
+    features: [
+      "Maximum-strength Brodifacoum 0.0029% — single-feed kills",
+      "15 x 60g sachets for thorough whole-property baiting",
+      "Effective indoors and outdoors in bait stations",
+      "Brodifacoum formulation available to the amateur market",
+    ],
+    tableCells: ["Pest Expert Formula B+ 900g", "Brodifacoum", "Best Overall"],
+    h2Label: "Best Overall",
+    h2Name: "Pest Expert Formula B+ Rat & Mouse Killer Poison 900g",
+    tocLabel: "Best Overall",
+    tocName: "Pest Expert Formula B+ 900g",
+  },
+  {
+    anchorId: "best-starter",
+    asin: "B07TLY5CGS",
+    rank: 2,
+    cardName: "Pest Expert Formula B+ Mouse & Rat Poison 360g (6x60g)",
+    cardLabel: "Best Starter Pack",
+    features: [
+      "Same single-feed Brodifacoum formula as the 900g pack",
+      "6 x 60g sachets — ideal for a small infestation",
+      "Best value entry point for homeowners",
+      "Perfect for a single property or targeted baiting",
+    ],
+    tableCells: [
+      "Pest Expert Formula B+ 360g",
+      "Brodifacoum",
+      "Best Starter Pack",
+    ],
+    h2Label: "Best Starter Pack",
+    h2Name: "Pest Expert Formula B+ Mouse & Rat Poison 360g",
+    tocLabel: "Best Starter Pack",
+    tocName: "Pest Expert Formula B+ 360g",
+  },
+  {
+    anchorId: "best-blocks",
+    asin: "B077MH6BVS",
+    rank: 3,
+    cardName: "The Big Cheese All-Weather Bait Block 15x10g",
+    cardLabel: "Best Blocks",
+    features: [
+      "Multi-feed difenacoum bait blocks",
+      "Moisture-resistant — suitable for damp conditions",
+      "15 ready-to-use blocks from a trusted UK brand",
+      "Must be used with a tamper-resistant bait station",
+    ],
+    tableCells: [
+      "The Big Cheese All-Weather 15x10g",
+      "Difenacoum",
+      "Best Blocks",
+    ],
+    h2Label: "Best Blocks",
+    h2Name: "The Big Cheese All-Weather Bait Block 15x10g",
+    tocLabel: "Best Blocks",
+    tocName: "The Big Cheese All-Weather 15x10g",
+  },
+  {
+    anchorId: "best-bulk",
+    asin: "B077MBL7MS",
+    rank: 4,
+    cardName: "The Big Cheese All-Weather Rodent Block 30x10g",
+    cardLabel: "Best Bulk Pack",
+    features: [
+      "Bulk pack — 30 bait blocks for larger infestations",
+      "Same damp-proof difenacoum formula as the 15-pack",
+      "Excellent value for landlords or repeat users",
+      "Suitable for multiple bait stations across a property",
+    ],
+    tableCells: [
+      "The Big Cheese All-Weather 30x10g",
+      "Difenacoum",
+      "Best Bulk",
+    ],
+    h2Label: "Best Bulk",
+    h2Name: "The Big Cheese All-Weather Rodent Block 30x10g",
+    tocLabel: "Best Bulk",
+    tocName: "The Big Cheese All-Weather 30x10g",
+  },
+  {
+    anchorId: "best-professional",
+    asin: "B076QFPHLH",
+    rank: 5,
+    cardName: "Roshield Wax Block Bait 600g (2x300g Bromadiolone)",
+    cardLabel: "Best Professional",
+    features: [
+      "UK-made bromadiolone wax blocks from the professional pest control industry's preferred brand",
+      "Chocolatey scent for excellent rodent uptake",
+      "Threads onto bait station rod for secure mounting",
+      "2 x 300g packs for sustained control",
+    ],
+    tableCells: [
+      "Roshield Wax Block Bait 600g",
+      "Bromadiolone",
+      "Best Professional",
+    ],
+    h2Label: "Best Professional",
+    h2Name: "Roshield Wax Block Bait 600g",
+    tocLabel: "Best Professional",
+    tocName: "Roshield Wax Block Bait 600g",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Mouse Poison at a Glance" },
-  { id: "best-overall", title: "Best Overall — Pest Expert Formula B+ 900g" },
-  {
-    id: "best-starter",
-    title: "Best Starter Pack — Pest Expert Formula B+ 360g",
-  },
-  {
-    id: "best-blocks",
-    title: "Best Blocks — The Big Cheese All-Weather 15x10g",
-  },
-  { id: "best-bulk", title: "Best Bulk — The Big Cheese All-Weather 30x10g" },
-  {
-    id: "best-professional",
-    title: "Best Professional — Roshield Wax Block Bait 600g",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "How to Choose the Right Mouse Poison" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
@@ -316,32 +429,13 @@ export default function BestMousePoisonPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Formula B+ 900g</td> <td>Brodifacoum</td>{" "}
-            <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pest Expert Formula B+ 360g</td> <td>Brodifacoum</td>{" "}
-            <td>Best Starter Pack</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>The Big Cheese All-Weather 15x10g</td> <td>Difenacoum</td>{" "}
-            <td>Best Blocks</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>The Big Cheese All-Weather 30x10g</td> <td>Difenacoum</td>{" "}
-            <td>Best Bulk</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Roshield Wax Block Bait 600g</td> <td>Bromadiolone</td>{" "}
-            <td>Best Professional</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       <div className="not-prose">
@@ -352,22 +446,17 @@ export default function BestMousePoisonPage() {
         />{" "}
       </div>{" "}
       {/* Product 1 */}{" "}
-      <h2 id="best-overall">
-        Best Overall — Pest Expert Formula B+ Rat & Mouse Killer Poison 900g
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Formula B+ Rat & Mouse Killer Poison 900g (15x60g)"
-          rank={1}
-          features={[
-            "Maximum-strength Brodifacoum 0.0029% — single-feed kills",
-            "15 x 60g sachets for thorough whole-property baiting",
-            "Effective indoors and outdoors in bait stations",
-            "Brodifacoum formulation available to the amateur market",
-          ]}
-          asin="B07B51YPRR"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -417,22 +506,17 @@ export default function BestMousePoisonPage() {
         <li>Sachets can absorb moisture in very damp locations</li>{" "}
       </ul>{" "}
       {/* Product 2 */}{" "}
-      <h2 id="best-starter">
-        Best Starter Pack — Pest Expert Formula B+ Mouse & Rat Poison 360g
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Formula B+ Mouse & Rat Poison 360g (6x60g)"
-          rank={2}
-          features={[
-            "Same single-feed Brodifacoum formula as the 900g pack",
-            "6 x 60g sachets — ideal for a small infestation",
-            "Best value entry point for homeowners",
-            "Perfect for a single property or targeted baiting",
-          ]}
-          asin="B07TLY5CGS"
-          bestFor="Best Starter Pack"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -480,22 +564,17 @@ export default function BestMousePoisonPage() {
         <li>Bait station not included — must buy separately</li>{" "}
       </ul>{" "}
       {/* Product 3 */}{" "}
-      <h2 id="best-blocks">
-        Best Blocks — The Big Cheese All-Weather Bait Block 15x10g
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="The Big Cheese All-Weather Bait Block 15x10g"
-          rank={3}
-          features={[
-            "Multi-feed difenacoum bait blocks",
-            "Moisture-resistant — suitable for damp conditions",
-            "15 ready-to-use blocks from a trusted UK brand",
-            "Must be used with a tamper-resistant bait station",
-          ]}
-          asin="B077MH6BVS"
-          bestFor="Best Blocks"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -548,22 +627,17 @@ export default function BestMousePoisonPage() {
         <li>Bait station not included — must buy separately</li>{" "}
       </ul>{" "}
       {/* Product 4 */}{" "}
-      <h2 id="best-bulk">
-        Best Bulk — The Big Cheese All-Weather Rodent Block 30x10g
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="The Big Cheese All-Weather Rodent Block 30x10g"
-          rank={4}
-          features={[
-            "Bulk pack — 30 bait blocks for larger infestations",
-            "Same damp-proof difenacoum formula as the 15-pack",
-            "Excellent value for landlords or repeat users",
-            "Suitable for multiple bait stations across a property",
-          ]}
-          asin="B077MBL7MS"
-          bestFor="Best Bulk Pack"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -613,22 +687,17 @@ export default function BestMousePoisonPage() {
         <li>Requires tamper-resistant bait stations (not included)</li>{" "}
       </ul>{" "}
       {/* Product 5 */}{" "}
-      <h2 id="best-professional">
-        Best Professional — Roshield Wax Block Bait 600g
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Roshield Wax Block Bait 600g (2x300g Bromadiolone)"
-          rank={5}
-          features={[
-            "UK-made bromadiolone wax blocks from the professional pest control industry's preferred brand",
-            "Chocolatey scent for excellent rodent uptake",
-            "Threads onto bait station rod for secure mounting",
-            "2 x 300g packs for sustained control",
-          ]}
-          asin="B076QFPHLH"
-          bestFor="Best Professional"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>

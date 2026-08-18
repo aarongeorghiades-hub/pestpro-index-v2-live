@@ -121,23 +121,153 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-clothes",
+    asin: "B0B21S966L",
+    rank: 1,
+    cardName: "Moth Prevention Clothes Moth Pheromone Traps",
+    cardLabel: "Best Overall",
+    features: [
+      "Premium pheromone lure — strongest attractant available",
+      "Targets Common Clothes Moth (Tineola bisselliella)",
+      "Lasts up to 12 weeks per trap",
+      "Non-toxic and pesticide-free",
+    ],
+    tableCells: [
+      "Moth Prevention Pheromone Traps",
+      "Clothes moths",
+      "Best Clothes Moth",
+    ],
+    h2Label: "Best Clothes Moth Trap",
+    h2Name: "Moth Prevention Pheromone Traps",
+    tocLabel: "Best Clothes Moth Trap",
+    tocName: "Moth Prevention Pheromone Traps",
+  },
+  {
+    anchorId: "best-pantry",
+    asin: "B0189FU8KO",
+    rank: 2,
+    cardName: "Demi Diamond Pantry Moth Traps",
+    cardLabel: "Best Pantry Moth",
+    features: [
+      "Pheromone targets Indian Meal Moth specifically",
+      "Triangular design fits in kitchen cupboard corners",
+      "Non-toxic — safe for use near food",
+      "Effective for 8 weeks per trap",
+    ],
+    tableCells: [
+      "Demi Diamond Pantry Moth Traps",
+      "Pantry moths",
+      "Best Pantry Moth",
+    ],
+    h2Label: "Best Pantry Moth Trap",
+    h2Name: "Demi Diamond Pantry Moth Traps",
+    tocLabel: "Best Pantry Moth Trap",
+    tocName: "Demi Diamond Pantry Moth Traps",
+  },
+  {
+    anchorId: "best-value",
+    asin: "B07SS5DDWH",
+    rank: 3,
+    cardName: "Zero In Clothes Moth Traps",
+    cardLabel: "Best Budget",
+    features: [
+      "Affordable pheromone traps for clothes moths",
+      "Ready-to-use — peel and place",
+      "Lasts up to 6 weeks per trap",
+      "Widely available in supermarkets and Amazon",
+    ],
+    tableCells: ["Zero In Clothes Moth Traps", "Clothes moths", "Best Value"],
+    h2Label: "Best Value",
+    h2Name: "Zero In Clothes Moth Traps",
+    tocLabel: "Best Value",
+    tocName: "Zero In Clothes Moth Traps",
+  },
+  {
+    anchorId: "best-professional",
+    asin: "B01NCZJ2P4",
+    rank: 4,
+    cardName: "Pest Expert Clothes Moth Pheromone Traps",
+    cardLabel: "Best Professional-Grade",
+    features: [
+      "Professional-grade pheromone lure",
+      "Large glue board for high catch capacity",
+      "Used by textile conservation professionals",
+      "Long-lasting 8-week effectiveness",
+    ],
+    tableCells: [
+      "Pest Expert Moth Traps",
+      "Clothes moths",
+      "Best Professional",
+    ],
+    h2Label: "Best Professional",
+    h2Name: "Pest Expert Moth Traps",
+    tocLabel: "Best Professional",
+    tocName: "Pest Expert Moth Traps",
+  },
+  {
+    anchorId: "best-refill",
+    asin: "B0086OZO12",
+    rank: 5,
+    cardName: "SiSi Clothes & Carpet Moth Pheromone Trap Refills (20 Pads)",
+    cardLabel: "Best Refills",
+    features: [
+      "20 replacement pheromone pads for moth traps",
+      "Targets clothes and carpet moths",
+      "Refreshes worn-out traps without buying new housings",
+      "Non-toxic, odourless — cost-effective for ongoing monitoring",
+    ],
+    tableCells: [
+      "SiSi Moth Trap Refill Pads",
+      "Clothes & carpet moths",
+      "Best Refills",
+    ],
+    h2Label: "Best Refills",
+    h2Name: "SiSi Moth Trap Refill Pads",
+    tocLabel: "Best Refills",
+    tocName: "SiSi Moth Trap Refill Pads",
+  },
+  {
+    anchorId: "best-repellent",
+    asin: "B000LNFINU",
+    rank: 6,
+    cardName: "Natural Cedar Wood Moth Repellent Balls",
+    cardLabel: "Best Repellent",
+    features: [
+      "Natural cedar oil repels clothes moths",
+      "Pleasant scent — not the harsh naphthalene smell of old-fashioned mothballs",
+      "Place in wardrobes, drawers, and storage boxes",
+      "Refeshable — sand surface to release more cedar oil",
+    ],
+    tableCells: ["Cedar Wood Moth Balls", "All moths", "Best Repellent"],
+    h2Label: "Best Repellent",
+    h2Name: "Cedar Wood Moth Balls",
+    tocLabel: "Best Repellent",
+    tocName: "Cedar Wood Moth Balls",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Moth Traps at a Glance" },
-  {
-    id: "best-clothes",
-    title: "Best Clothes Moth Trap — Moth Prevention Pheromone Traps",
-  },
-  {
-    id: "best-pantry",
-    title: "Best Pantry Moth Trap — Demi Diamond Pantry Moth Traps",
-  },
-  { id: "best-value", title: "Best Value — Zero In Clothes Moth Traps" },
-  {
-    id: "best-professional",
-    title: "Best Professional — Pest Expert Moth Traps",
-  },
-  { id: "best-refill", title: "Best Refills — SiSi Moth Trap Refill Pads" },
-  { id: "best-repellent", title: "Best Repellent — Cedar Wood Moth Balls" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "How to Choose the Right Moth Trap" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
@@ -275,37 +405,13 @@ export default function BestMothTrapsPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            <td>Moth Prevention Pheromone Traps</td>
-            <td>Clothes moths</td>
-            <td>Best Clothes Moth</td>
-          </tr>{" "}
-          <tr>
-            <td>Demi Diamond Pantry Moth Traps</td>
-            <td>Pantry moths</td>
-            <td>Best Pantry Moth</td>
-          </tr>{" "}
-          <tr>
-            <td>Zero In Clothes Moth Traps</td>
-            <td>Clothes moths</td>
-            <td>Best Value</td>
-          </tr>{" "}
-          <tr>
-            <td>Pest Expert Moth Traps</td>
-            <td>Clothes moths</td>
-            <td>Best Professional</td>
-          </tr>{" "}
-          <tr>
-            <td>SiSi Moth Trap Refill Pads</td>
-            <td>Clothes &amp; carpet moths</td>
-            <td>Best Refills</td>
-          </tr>{" "}
-          <tr>
-            <td>Cedar Wood Moth Balls</td>
-            <td>All moths</td>
-            <td>Best Repellent</td>
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       <div className="not-prose">
@@ -315,22 +421,17 @@ export default function BestMothTrapsPage() {
           label="Effective lifespan of a typical pheromone moth trap before replacement"
         />{" "}
       </div>{" "}
-      <h2 id="best-clothes">
-        Best Clothes Moth Trap — Moth Prevention Pheromone Traps
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Moth Prevention Clothes Moth Pheromone Traps"
-          rank={1}
-          features={[
-            "Premium pheromone lure — strongest attractant available",
-            "Targets Common Clothes Moth (Tineola bisselliella)",
-            "Lasts up to 12 weeks per trap",
-            "Non-toxic and pesticide-free",
-          ]}
-          asin="B0B21S966L"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -379,22 +480,17 @@ export default function BestMothTrapsPage() {
         <li>Only catches male moths — does not kill larvae</li>{" "}
         <li>Will not catch pantry moths (different pheromone needed)</li>{" "}
       </ul>{" "}
-      <h2 id="best-pantry">
-        Best Pantry Moth Trap — Demi Diamond Pantry Moth Traps
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Demi Diamond Pantry Moth Traps"
-          rank={2}
-          features={[
-            "Pheromone targets Indian Meal Moth specifically",
-            "Triangular design fits in kitchen cupboard corners",
-            "Non-toxic — safe for use near food",
-            "Effective for 8 weeks per trap",
-          ]}
-          asin="B0189FU8KO"
-          bestFor="Best Pantry Moth"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -436,20 +532,17 @@ export default function BestMothTrapsPage() {
         </li>{" "}
         <li>Glue board can attract dust in humid kitchens</li>{" "}
       </ul>{" "}
-      <h2 id="best-value">Best Value — Zero In Clothes Moth Traps</h2>{" "}
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Zero In Clothes Moth Traps"
-          rank={3}
-          features={[
-            "Affordable pheromone traps for clothes moths",
-            "Ready-to-use — peel and place",
-            "Lasts up to 6 weeks per trap",
-            "Widely available in supermarkets and Amazon",
-          ]}
-          asin="B07SS5DDWH"
-          bestFor="Best Budget"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -486,20 +579,17 @@ export default function BestMothTrapsPage() {
         <li>Weaker attractant than premium brands</li>{" "}
         <li>Smaller glue board surface area</li>{" "}
       </ul>{" "}
-      <h2 id="best-professional">Best Professional — Pest Expert Moth Traps</h2>{" "}
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pest Expert Clothes Moth Pheromone Traps"
-          rank={4}
-          features={[
-            "Professional-grade pheromone lure",
-            "Large glue board for high catch capacity",
-            "Used by textile conservation professionals",
-            "Long-lasting 8-week effectiveness",
-          ]}
-          asin="B01NCZJ2P4"
-          bestFor="Best Professional-Grade"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -538,20 +628,17 @@ export default function BestMothTrapsPage() {
         <li>Larger traps may be more visible in wardrobes</li>{" "}
         <li>Only targets clothes moths</li>{" "}
       </ul>{" "}
-      <h2 id="best-refill">Best Refills — SiSi Moth Trap Refill Pads</h2>{" "}
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="SiSi Clothes & Carpet Moth Pheromone Trap Refills (20 Pads)"
-          rank={5}
-          features={[
-            "20 replacement pheromone pads for moth traps",
-            "Targets clothes and carpet moths",
-            "Refreshes worn-out traps without buying new housings",
-            "Non-toxic, odourless — cost-effective for ongoing monitoring",
-          ]}
-          asin="B0086OZO12"
-          bestFor="Best Refills"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -579,20 +666,17 @@ export default function BestMothTrapsPage() {
         <li>Requires existing trap housings</li>{" "}
         <li>May not fit all proprietary trap designs</li>{" "}
       </ul>{" "}
-      <h2 id="best-repellent">Best Repellent — Cedar Wood Moth Balls</h2>{" "}
+      <h2 id={products[5].anchorId}>
+        {products[5].h2Label} &mdash; {products[5].h2Name}
+      </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Natural Cedar Wood Moth Repellent Balls"
-          rank={6}
-          features={[
-            "Natural cedar oil repels clothes moths",
-            "Pleasant scent — not the harsh naphthalene smell of old-fashioned mothballs",
-            "Place in wardrobes, drawers, and storage boxes",
-            "Refeshable — sand surface to release more cedar oil",
-          ]}
-          asin="B000LNFINU"
-          bestFor="Best Repellent"
+          name={products[5].cardName}
+          features={products[5].features}
+          asin={products[5].asin}
+          bestFor={products[5].cardLabel}
+          rank={products[5].rank}
         />{" "}
       </div>{" "}
       <p>

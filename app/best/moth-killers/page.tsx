@@ -72,25 +72,139 @@ const breadcrumbSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B00BMO6HKA",
+    rank: 1,
+    cardName: "Acana Hanging Moth Killer",
+    cardLabel: "Best Overall",
+    features: [
+      "Four hanging units protect an entire wardrobe",
+      "Kills moths, larvae, and eggs on contact",
+      "Fresh linen fragrance — no unpleasant chemical odour",
+      "Lasts up to six months per unit",
+    ],
+    tableCells: [
+      "Acana Hanging Moth Killer",
+      "Hanging killer strip",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Acana Hanging Moth Killer",
+    tocLabel: "Best Overall",
+    tocName: "Acana Hanging Moth Killer",
+  },
+  {
+    anchorId: "best-pheromone-trap",
+    asin: "B0CGB12XNN",
+    rank: 2,
+    cardName: "London Moth Killer Pheromone Traps",
+    cardLabel: "Best Pheromone Trap",
+    features: [
+      "Six traps per pack for whole-home monitoring",
+      "Pheromone-based — attracts and traps male moths",
+      "Non-toxic and pesticide-free design",
+      "Helps identify infestation hotspots before they spread",
+    ],
+    tableCells: [
+      "London Moth Killer Pheromone Traps",
+      "Pheromone sticky trap",
+      "Best Pheromone Trap",
+    ],
+    h2Label: "Best Pheromone Trap",
+    h2Name: "London Moth Killer Pheromone Traps",
+    tocLabel: "Best Pheromone Trap",
+    tocName: "London Moth Killer Pheromone Traps",
+  },
+  {
+    anchorId: "best-carpet-spray",
+    asin: "B00E8I39EE",
+    rank: 3,
+    cardName: "Acana Carpet & Fabric Moth Killer Spray",
+    cardLabel: "Best Carpet Moth Spray",
+    features: [
+      "Kills moths, larvae, and eggs on carpets and fabrics",
+      "Residual protection lasts up to three months after application",
+      "Safe on wool carpets, rugs, upholstery, and curtains",
+      "Targeted spray nozzle for treating edges, corners, and under furniture",
+    ],
+    tableCells: [
+      "Acana Carpet & Fabric Moth Killer Spray",
+      "Aerosol spray",
+      "Best Carpet Moth Spray",
+    ],
+    h2Label: "Best Carpet Moth Spray",
+    h2Name: "Acana Carpet & Fabric Moth Killer Spray",
+    tocLabel: "Best Carpet Moth Spray",
+    tocName: "Acana Carpet & Fabric Moth Killer Spray",
+  },
+  {
+    anchorId: "best-drawers-storage",
+    asin: "B008BG6JFK",
+    rank: 4,
+    cardName: "Acana Sachet Moth Killer 20 Pack",
+    cardLabel: "Best for Drawers & Storage",
+    features: [
+      "Twenty sachets per pack — enough for every drawer and storage box",
+      "Kills moths, larvae, and eggs within enclosed spaces",
+      "Compact size slips easily between folded garments",
+      "Fresh floral fragrance protects and freshens simultaneously",
+    ],
+    tableCells: [
+      "Acana Sachet Moth Killer 20 Pack",
+      "Sachet",
+      "Best for Drawers & Storage",
+    ],
+    h2Label: "Best for Drawers & Storage",
+    h2Name: "Acana Sachet Moth Killer 20 Pack",
+    tocLabel: "Best for Drawers & Storage",
+    tocName: "Acana Sachet Moth Killer 20 Pack",
+  },
+  {
+    anchorId: "best-budget",
+    asin: "B002DYARYK",
+    rank: 5,
+    cardName: "Rentokil Moth Killer Hanging Unit Twin Pack",
+    cardLabel: "Best Budget Option",
+    features: [
+      "Two hanging units from a trusted UK pest control brand",
+      "Kills moths and larvae on contact within enclosed wardrobes",
+      "Lasts up to six months per unit",
+      "Lowest price point of any effective hanging moth killer",
+    ],
+    tableCells: [
+      "Rentokil Moth Killer Hanging Unit Twin Pack",
+      "Hanging killer strip",
+      "Best Budget Option",
+    ],
+    h2Label: "Best Budget Option",
+    h2Name: "Rentokil Moth Killer Hanging Unit Twin Pack",
+    tocLabel: "Best Budget Option",
+    tocName: "Rentokil Moth Killer Hanging Unit Twin Pack",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Moth Killers at a Glance" },
-  { id: "best-overall", title: "Best Overall — Acana Hanging Moth Killer" },
-  {
-    id: "best-pheromone-trap",
-    title: "Best Pheromone Trap — London Moth Killer Pheromone Traps",
-  },
-  {
-    id: "best-carpet-spray",
-    title: "Best Carpet Moth Spray — Acana Carpet & Fabric Moth Killer Spray",
-  },
-  {
-    id: "best-drawers-storage",
-    title: "Best for Drawers & Storage — Acana Sachet Moth Killer 20 Pack",
-  },
-  {
-    id: "best-budget",
-    title: "Best Budget Option — Rentokil Moth Killer Hanging Unit Twin Pack",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "how-to-choose", title: "How to Choose the Right Moth Killer" },
   { id: "tips", title: "Moth Killer Tips for Best Results" },
 ];
@@ -301,48 +415,27 @@ export default function BestMothKillersPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Acana Hanging Moth Killer</td>
-            <td>Hanging killer strip</td>
-            <td>Best Overall</td>
-          </tr>
-          <tr>
-            <td>London Moth Killer Pheromone Traps</td>
-            <td>Pheromone sticky trap</td>
-            <td>Best Pheromone Trap</td>
-          </tr>
-          <tr>
-            <td>Acana Carpet &amp; Fabric Moth Killer Spray</td>
-            <td>Aerosol spray</td>
-            <td>Best Carpet Moth Spray</td>
-          </tr>
-          <tr>
-            <td>Acana Sachet Moth Killer 20 Pack</td>
-            <td>Sachet</td>
-            <td>Best for Drawers &amp; Storage</td>
-          </tr>
-          <tr>
-            <td>Rentokil Moth Killer Hanging Unit Twin Pack</td>
-            <td>Hanging killer strip</td>
-            <td>Best Budget Option</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
       {/* Best Overall */}
-      <h2 id="best-overall">Best Overall &mdash; Acana Hanging Moth Killer</h2>
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
+      </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Acana Hanging Moth Killer"
-          features={[
-            "Four hanging units protect an entire wardrobe",
-            "Kills moths, larvae, and eggs on contact",
-            "Fresh linen fragrance — no unpleasant chemical odour",
-            "Lasts up to six months per unit",
-          ]}
-          asin="B00BMO6HKA"
-          bestFor="Best Overall"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -420,21 +513,16 @@ export default function BestMothKillersPage() {
       </p>
 
       {/* Best Pheromone Trap */}
-      <h2 id="best-pheromone-trap">
-        Best Pheromone Trap &mdash; London Moth Killer Pheromone Traps
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="London Moth Killer Pheromone Traps"
-          features={[
-            "Six traps per pack for whole-home monitoring",
-            "Pheromone-based — attracts and traps male moths",
-            "Non-toxic and pesticide-free design",
-            "Helps identify infestation hotspots before they spread",
-          ]}
-          asin="B0CGB12XNN"
-          bestFor="Best Pheromone Trap"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -517,22 +605,16 @@ export default function BestMothKillersPage() {
       </p>
 
       {/* Best Carpet Moth Spray */}
-      <h2 id="best-carpet-spray">
-        Best Carpet Moth Spray &mdash; Acana Carpet &amp; Fabric Moth Killer
-        Spray
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Acana Carpet & Fabric Moth Killer Spray"
-          features={[
-            "Kills moths, larvae, and eggs on carpets and fabrics",
-            "Residual protection lasts up to three months after application",
-            "Safe on wool carpets, rugs, upholstery, and curtains",
-            "Targeted spray nozzle for treating edges, corners, and under furniture",
-          ]}
-          asin="B00E8I39EE"
-          bestFor="Best Carpet Moth Spray"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>
@@ -617,21 +699,16 @@ export default function BestMothKillersPage() {
       </p>
 
       {/* Best for Drawers & Storage */}
-      <h2 id="best-drawers-storage">
-        Best for Drawers &amp; Storage &mdash; Acana Sachet Moth Killer 20 Pack
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Acana Sachet Moth Killer 20 Pack"
-          features={[
-            "Twenty sachets per pack — enough for every drawer and storage box",
-            "Kills moths, larvae, and eggs within enclosed spaces",
-            "Compact size slips easily between folded garments",
-            "Fresh floral fragrance protects and freshens simultaneously",
-          ]}
-          asin="B008BG6JFK"
-          bestFor="Best for Drawers & Storage"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />
       </div>
       <p>
@@ -713,21 +790,16 @@ export default function BestMothKillersPage() {
       </p>
 
       {/* Best Budget Option */}
-      <h2 id="best-budget">
-        Best Budget Option &mdash; Rentokil Moth Killer Hanging Unit Twin Pack
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Rentokil Moth Killer Hanging Unit Twin Pack"
-          features={[
-            "Two hanging units from a trusted UK pest control brand",
-            "Kills moths and larvae on contact within enclosed wardrobes",
-            "Lasts up to six months per unit",
-            "Lowest price point of any effective hanging moth killer",
-          ]}
-          asin="B002DYARYK"
-          bestFor="Best Budget Option"
-          rank={5}
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />
       </div>
       <p>

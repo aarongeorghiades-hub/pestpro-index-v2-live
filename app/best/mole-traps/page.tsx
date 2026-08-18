@@ -73,25 +73,138 @@ const breadcrumbSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B00004RAMS",
+    rank: 1,
+    cardName: "Victor Push Mole Trap",
+    cardLabel: "The go-to mole trap for reliable, proven performance",
+    features: [
+      "Classic scissor-jaw design trusted by UK gardeners and groundskeepers for decades",
+      "Push directly into active mole runs — no bait required",
+      "Heavy-duty metal construction for long-term durability",
+      "Reusable season after season",
+      "The default choice for effective mole control",
+    ],
+    tableCells: ["Victor Push Mole Trap", "Scissor-jaw", "Best Overall"],
+    h2Label: "Best Overall",
+    h2Name: "Victor Push Mole Trap",
+    tocLabel: "Best Overall",
+    tocName: "Victor Push Mole Trap",
+  },
+  {
+    anchorId: "best-traditional",
+    asin: "B001DYTNV4",
+    rank: 2,
+    cardName:
+      "The Big Cheese Mole Tunnel Trap — Traditional Two-Way Galvanised",
+    cardLabel: "The standard traditional tunnel trap for UK gardens",
+    features: [
+      "A UK standard traditional tunnel mole trap",
+      "Traditional half-barrel design in galvanised metal",
+      "Catches moles travelling in either direction through the tunnel",
+      "Rust-free, weatherproof construction for year-round use",
+      "Reusable season after season with minimal maintenance",
+      "The standard choice for UK gardens and lawns",
+    ],
+    tableCells: [
+      "The Big Cheese Mole Tunnel Trap",
+      "Half-barrel",
+      "Traditional Pick",
+    ],
+    h2Label: "Best Traditional",
+    h2Name: "The Big Cheese Mole Tunnel Trap",
+    tocLabel: "Best Traditional",
+    tocName: "The Big Cheese Mole Tunnel Trap",
+  },
+  {
+    anchorId: "best-professional",
+    asin: "B000YPXJG8",
+    rank: 3,
+    cardName: "Pest-Stop Tunnel Mole Trap — Dual Entry, 30% Stronger",
+    cardLabel: "Professional mole catchers and experienced users",
+    features: [
+      "Traditional barrel-design trap from the UK's leading pest control manufacturer",
+      "30% stronger spring than standard tunnel traps",
+      "Dual entry catches moles from either direction",
+      "Rust-resistant metal construction for long-term use",
+      "Developed with professional mole catchers",
+      "Reusable season after season",
+    ],
+    tableCells: ["Pest-Stop Tunnel Mole Trap", "Tunnel", "Professional Pick"],
+    h2Label: "Best Professional",
+    h2Name: "Pest-Stop Tunnel Mole Trap",
+    tocLabel: "Best Professional",
+    tocName: "Pest-Stop Tunnel Mole Trap",
+  },
+  {
+    anchorId: "best-discreet",
+    asin: "B011BX33HG",
+    rank: 4,
+    cardName: "SWISSINNO SuperCat Mole Trap — Swiss Precision Claw Design",
+    cardLabel:
+      "Lawns, sports turf and situations where discreet placement matters",
+    features: [
+      "High-performance claw trap from Swiss engineering",
+      "Advanced trigger system responds from either direction in the tunnel",
+      "Corrosion-resistant construction for multiple seasons of use",
+      "No bait or chemicals required — purely mechanical",
+      "The modern professional's alternative to traditional tunnel traps",
+      "Low-profile design sits discreetly in the run",
+    ],
+    tableCells: ["SWISSINNO SuperCat Mole Trap", "Claw", "Most Discreet"],
+    h2Label: "Best Discreet",
+    h2Name: "SWISSINNO SuperCat Mole Trap",
+    tocLabel: "Best Discreet",
+    tocName: "SWISSINNO SuperCat Mole Trap",
+  },
+  {
+    anchorId: "best-beginner",
+    asin: "B0CZTRKZFD",
+    rank: 5,
+    cardName: "REPELEM Claw Mole Trap — Reusable, Rust-Free, Pack of 3",
+    cardLabel: "Gardens with persistent mole activity across multiple areas",
+    features: [
+      "Pack of 3 traps — treat multiple active runs simultaneously",
+      "Claw-style design with humane instant-kill mechanism",
+      "Rust-free construction for long-term outdoor use",
+      "Reusable across multiple seasons",
+      "Good value for gardens with persistent mole activity",
+      "UK brand with straightforward setup",
+    ],
+    tableCells: [
+      "REPELEM Claw Mole Trap (Pack of 3)",
+      "Claw",
+      "Best for Beginners",
+    ],
+    h2Label: "Best for Beginners",
+    h2Name: "REPELEM Claw Mole Trap (Pack of 3)",
+    tocLabel: "Best for Beginners",
+    tocName: "REPELEM Claw Mole Trap (Pack of 3)",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Mole Traps at a Glance" },
-  { id: "best-overall", title: "Best Overall — Victor Push Mole Trap" },
-  {
-    id: "best-traditional",
-    title: "Best Traditional — The Big Cheese Mole Tunnel Trap",
-  },
-  {
-    id: "best-professional",
-    title: "Best Professional — Pest-Stop Tunnel Mole Trap",
-  },
-  {
-    id: "best-discreet",
-    title: "Best Discreet — SWISSINNO SuperCat Mole Trap",
-  },
-  {
-    id: "best-beginner",
-    title: "Best for Beginners — REPELEM Claw Mole Trap (Pack of 3)",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "how-to-choose", title: "How to Choose the Right Mole Trap" },
   { id: "tips", title: "Mole Trap Placement Tips" },
   { id: "faq", title: "Frequently Asked Questions" },
@@ -269,49 +382,27 @@ export default function BestMoleTrapsPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Victor Push Mole Trap</td>
-            <td>Scissor-jaw</td>
-            <td>Best Overall</td>
-          </tr>
-          <tr>
-            <td>The Big Cheese Mole Tunnel Trap</td>
-            <td>Half-barrel</td>
-            <td>Traditional Pick</td>
-          </tr>
-          <tr>
-            <td>Pest-Stop Tunnel Mole Trap</td>
-            <td>Tunnel</td>
-            <td>Professional Pick</td>
-          </tr>
-          <tr>
-            <td>SWISSINNO SuperCat Mole Trap</td>
-            <td>Claw</td>
-            <td>Most Discreet</td>
-          </tr>
-          <tr>
-            <td>REPELEM Claw Mole Trap (Pack of 3)</td>
-            <td>Claw</td>
-            <td>Best for Beginners</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
       {/* Product 1 */}
-      <h2 id="best-overall">Best Overall — Victor Push Mole Trap</h2>
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
+      </h2>
       <div className="not-prose">
         <ProductCard
-          name="Victor Push Mole Trap"
-          features={[
-            "Classic scissor-jaw design trusted by UK gardeners and groundskeepers for decades",
-            "Push directly into active mole runs — no bait required",
-            "Heavy-duty metal construction for long-term durability",
-            "Reusable season after season",
-            "The default choice for effective mole control",
-          ]}
-          asin="B00004RAMS"
-          bestFor="The go-to mole trap for reliable, proven performance"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -331,23 +422,16 @@ export default function BestMoleTrapsPage() {
       </p>
 
       {/* Product 2 */}
-      <h2 id="best-traditional">
-        Best Traditional — The Big Cheese Mole Tunnel Trap
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>
       <div className="not-prose">
         <ProductCard
-          name="The Big Cheese Mole Tunnel Trap — Traditional Two-Way Galvanised"
-          features={[
-            "A UK standard traditional tunnel mole trap",
-            "Traditional half-barrel design in galvanised metal",
-            "Catches moles travelling in either direction through the tunnel",
-            "Rust-free, weatherproof construction for year-round use",
-            "Reusable season after season with minimal maintenance",
-            "The standard choice for UK gardens and lawns",
-          ]}
-          asin="B001DYTNV4"
-          bestFor="The standard traditional tunnel trap for UK gardens"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -367,23 +451,16 @@ export default function BestMoleTrapsPage() {
       </p>
 
       {/* Product 3 */}
-      <h2 id="best-professional">
-        Best Professional — Pest-Stop Tunnel Mole Trap
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>
       <div className="not-prose">
         <ProductCard
-          name="Pest-Stop Tunnel Mole Trap — Dual Entry, 30% Stronger"
-          features={[
-            "Traditional barrel-design trap from the UK's leading pest control manufacturer",
-            "30% stronger spring than standard tunnel traps",
-            "Dual entry catches moles from either direction",
-            "Rust-resistant metal construction for long-term use",
-            "Developed with professional mole catchers",
-            "Reusable season after season",
-          ]}
-          asin="B000YPXJG8"
-          bestFor="Professional mole catchers and experienced users"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>
@@ -405,21 +482,16 @@ export default function BestMoleTrapsPage() {
       </p>
 
       {/* Product 4 */}
-      <h2 id="best-discreet">Best Discreet — SWISSINNO SuperCat Mole Trap</h2>
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
+      </h2>
       <div className="not-prose">
         <ProductCard
-          name="SWISSINNO SuperCat Mole Trap — Swiss Precision Claw Design"
-          features={[
-            "High-performance claw trap from Swiss engineering",
-            "Advanced trigger system responds from either direction in the tunnel",
-            "Corrosion-resistant construction for multiple seasons of use",
-            "No bait or chemicals required — purely mechanical",
-            "The modern professional's alternative to traditional tunnel traps",
-            "Low-profile design sits discreetly in the run",
-          ]}
-          asin="B011BX33HG"
-          bestFor="Lawns, sports turf and situations where discreet placement matters"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />
       </div>
       <p>
@@ -442,23 +514,16 @@ export default function BestMoleTrapsPage() {
       </p>
 
       {/* Product 5 */}
-      <h2 id="best-beginner">
-        Best for Beginners — REPELEM Claw Mole Trap (Pack of 3)
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>
       <div className="not-prose">
         <ProductCard
-          name="REPELEM Claw Mole Trap — Reusable, Rust-Free, Pack of 3"
-          features={[
-            "Pack of 3 traps — treat multiple active runs simultaneously",
-            "Claw-style design with humane instant-kill mechanism",
-            "Rust-free construction for long-term outdoor use",
-            "Reusable across multiple seasons",
-            "Good value for gardens with persistent mole activity",
-            "UK brand with straightforward setup",
-          ]}
-          asin="B0CZTRKZFD"
-          bestFor="Gardens with persistent mole activity across multiple areas"
-          rank={5}
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />
       </div>
       <p>
