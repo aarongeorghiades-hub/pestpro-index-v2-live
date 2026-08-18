@@ -392,10 +392,7 @@ export default function ProfessionalPressureSprayersPage() {
         With overand a strong reputation among grounds maintenance teams, the
         Matabi has proven its durability with chemical-resistant seals that hold
         up to regular pesticide use. The 12L capacity sits between the Solo 10L
-        and 15L models, offering a good balance of capacity and weight. For
-        landlords who need a reliable sprayer for occasional perimeter
-        treatments without the premium price of the Solo diaphragm models, the
-        Matabi delivers genuine value.{" "}
+        and 15L models, offering a good balance of capacity and weight.{" "}
       </p>{" "}
       <h2 id="oregon">
         #5 Oregon 20L Backpack Pressure Sprayer — 20L Capacity
