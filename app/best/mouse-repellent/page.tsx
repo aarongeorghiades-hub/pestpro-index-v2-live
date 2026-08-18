@@ -76,7 +76,7 @@ const faqSchema = {
       name: "What is the best way to stop mice getting into my house?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Physical proofing is the most effective method. Use steel wool, copper mesh, or expanding foam to seal every gap 6mm or larger around your property. Focus on air bricks, pipe entry points, door bottoms, cable gaps, and garage door seals. Proofing prevents mice from entering in the first place, which is far more reliable than repellents alone.",
+        text: "Physical proofing is the most effective method by far. Use steel wool, copper mesh, or expanding foam to seal every gap 6mm or larger around your property. Focus on air bricks, pipe entry points, door bottoms, cable gaps, and garage door seals. A thorough proofing job prevents mice from entering in the first place, which is far more reliable than relying on repellents, sprays, or ultrasonic devices alone.",
       },
     },
     {
@@ -84,7 +84,7 @@ const faqSchema = {
       name: "Does peppermint oil repel mice?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "There is limited scientific evidence that peppermint oil repels mice. Some homeowners report temporary success, and the strong scent may deter mice from specific areas in the short term. However, peppermint oil is not a reliable solution for an active infestation and should never be used as a standalone treatment. Physical proofing is far more effective.",
+        text: "There is limited scientific evidence that peppermint oil repels mice. Some homeowners report temporary success, and the strong menthol scent may deter mice from specific areas in the short term. However, the effect fades within 24 to 48 hours, and peppermint oil is not a reliable solution for an active infestation. It should never be used as a standalone treatment — physical proofing with steel wool and copper mesh is far more effective.",
       },
     },
     {
@@ -92,7 +92,7 @@ const faqSchema = {
       name: "What gaps should I seal to keep mice out?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Seal all gaps 6mm or larger. The most common mouse entry points are air bricks, gaps around pipes where they enter the building, the gap under exterior doors, spaces around cables and wiring, garage door seals, and cracks in brickwork or mortar. A mouse can fit through any gap it can get its skull through.",
+        text: "Seal all gaps 6mm or larger. The most common mouse entry points are air bricks, gaps around pipes where they enter the building, the space under exterior doors, gaps around cables and wiring, garage door seals, cracks in brickwork or deteriorating mortar, and where roof tiles meet the wall. Walk around your entire property with a pencil — if the pencil fits into a gap, a mouse can fit through it.",
       },
     },
     {
@@ -100,7 +100,7 @@ const faqSchema = {
       name: "Is steel wool or copper mesh better for mouse proofing?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Both are highly effective. Steel wool is cheaper and widely available, but it can rust over time when exposed to moisture. Copper mesh will not rust, maintains its shape better, and is ideal for exterior use. For interior gaps, steel wool is excellent value. For exterior gaps exposed to rain, copper mesh is the better long-term choice. Pack either material tightly into the gap.",
+        text: "Both are highly effective — mice cannot chew through either material. Steel wool is cheaper and widely available, making it excellent value for interior gaps. However, steel wool can rust over time when exposed to persistent moisture. Copper mesh will not rust, holds its shape better, and is the superior choice for exterior gaps exposed to rain and damp. For most homes, use steel wool inside and copper mesh outside. Pack either material tightly into the gap for best results.",
       },
     },
     {
@@ -108,7 +108,7 @@ const faqSchema = {
       name: "When should I mouse-proof my house?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The best time to mouse-proof your house is before autumn. Mice begin seeking warmth indoors from October as temperatures drop, so completing your proofing in September or early October gives you the best chance of preventing an infestation before it starts. However, proofing is worthwhile at any time of year.",
+        text: "The ideal time is before autumn. Mice begin seeking warmth indoors from October as temperatures drop, so completing your proofing in September or early October gives you the best chance of preventing an infestation before it starts. Spring and summer are actually the most practical time to do the work — better weather makes outdoor inspection and sealing much easier. However, proofing is worthwhile at any time of year, including during an active winter infestation.",
       },
     },
     {
@@ -116,7 +116,7 @@ const faqSchema = {
       name: "Should I use repellents alongside traps?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. The best approach is to proof your home first by sealing all entry points with steel wool, copper mesh, or expanding foam. Then place traps as a backup to catch any mice that are already inside. Physical proofing stops new mice from getting in, while traps deal with those already present. Repellent sprays can be used as an additional layer but should not replace physical barriers.",
+        text: "Yes — the best approach combines prevention and treatment. Proof your home first by sealing all entry points with steel wool, copper mesh, or expanding foam. Then place snap traps or humane traps as a backup to catch any mice that are already inside the property. Physical proofing stops new mice from getting in, while traps deal with those already present. Repellent sprays such as peppermint oil can be used as an additional layer of deterrence but should not replace physical barriers or trapping.",
       },
     },
   ],

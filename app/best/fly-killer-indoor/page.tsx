@@ -78,7 +78,7 @@ const faqSchema = {
       name: "What is the best indoor fly killer for a home kitchen?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "For a home kitchen, a UV sticky trap (like the Katchy) is the best option. Unlike electric zappers that scatter insect fragments when they zap, sticky traps capture flies hygienically on a glue board with zero debris. They are also silent, making them suitable for open-plan living/kitchen areas. Electric zappers are better suited to garages, conservatories, and utility rooms where hygiene near food is less of a concern.",
+        text: "A UV sticky trap like the Katchy or Raid plug-in. Unlike electric zappers, sticky traps capture flies hygienically with zero debris — important near food preparation areas.",
       },
     },
     {
@@ -86,7 +86,7 @@ const faqSchema = {
       name: "Do electric fly killers use a lot of electricity?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No — most domestic electric fly killers use between 4W and 20W of power, which costs approximately 1-3 pence per day to run continuously. Even leaving a fly killer on 24/7 through the summer months costs only £3-£10 for the entire season. The UV tubes typically last 8,000-12,000 hours (roughly 2 years of continuous use) before needing replacement.",
+        text: "No — most use 4-20W, costing 1-3 pence per day to run continuously. UV tubes last approximately 2 years before replacement.",
       },
     },
     {
@@ -94,7 +94,7 @@ const faqSchema = {
       name: "Where should I place an indoor fly killer?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Place fly killers away from competing light sources (windows, bright overhead lights) and at the height flies typically travel (1-2 metres from the floor for house flies). For kitchens, place near the bin or fruit bowl where flies congregate. For living rooms, place near windows where flies enter. The UV light needs to be the most attractive light source in the immediate area to draw flies effectively.",
+        text: "Away from competing light sources, at fly height (1-2m from floor), near bins, fruit bowls, or windows where flies enter. The UV light needs to be the dominant light source nearby.",
       },
     },
     {
@@ -102,7 +102,7 @@ const faqSchema = {
       name: "Are UV fly killers safe for pets?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "UV fly killers are generally safe around pets. The UV light is not harmful at the low levels used in domestic units. Electric zapper grids are enclosed behind protective grilles that prevent pets from touching the electrified grid. The main risk is if a pet knocks over a freestanding unit — wall-mounted models eliminate this risk. Sticky traps are also pet-safe, though a curious cat may investigate the glue board.",
+        text: "Yes — the UV levels are safe, and protective grilles prevent contact with electrified grids. Wall-mounting prevents pets from knocking over freestanding units.",
       },
     },
     {
@@ -110,7 +110,7 @@ const faqSchema = {
       name: "What about cluster flies in the loft?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Cluster flies in a loft are a different problem from regular house flies. Cluster flies hibernate in roof spaces over winter and can appear in large numbers. Standard indoor fly killers are not designed for this situation. Instead, use a smoke bomb (cluster fly fumigator) in the loft space during autumn before they hibernate. Seal any entry points in the eaves and roof to prevent them returning the following year.",
+        text: "Cluster flies need different treatment — a smoke bomb fumigator in the loft during autumn. Standard indoor fly killers are not designed for cluster fly infestations.",
       },
     },
     {
@@ -118,7 +118,7 @@ const faqSchema = {
       name: "Electric zapper vs sticky trap — which is better?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "It depends on the location. Electric zappers provide a satisfying instant kill and require no consumables, but they scatter tiny insect fragments and make a zapping noise. Sticky traps are silent, hygienic (no debris), and are the only type approved by Environmental Health Officers for use near food. For kitchens and dining areas, choose sticky. For garages, conservatories, and utility rooms, electric zappers work well.",
+        text: "Sticky traps for kitchens and dining areas (hygienic, silent). Electric zappers for garages, conservatories, and utility rooms (more effective, no consumables).",
       },
     },
   ],

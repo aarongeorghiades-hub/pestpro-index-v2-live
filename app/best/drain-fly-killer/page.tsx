@@ -88,7 +88,7 @@ const faqSchema = {
       name: "Why do I keep getting drain flies?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Persistent drain fly problems indicate an ongoing source of organic buildup inside your drains. Even if you kill the adult flies, more will emerge unless you remove the biofilm where they breed. Common causes include infrequently used drains (e.g. guest bathrooms), slow-draining sinks with grease buildup, leaking pipes creating damp areas, or cracked drains underground. The solution is to remove the organic matter with an enzyme-based drain treatment, not just kill the visible adults.",
+        text: "Persistent drain fly problems indicate an ongoing source of organic buildup inside your drains. Even if you kill the adult flies, more will emerge unless you remove the biofilm where they breed. Common causes include infrequently used drains, slow-draining sinks with grease buildup, leaking pipes creating damp areas, or cracked drains underground. The solution is to remove the organic matter with an enzyme-based drain treatment, not just kill the visible adults.",
       },
     },
     {
@@ -96,7 +96,7 @@ const faqSchema = {
       name: "Will bleach kill drain flies?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Pouring bleach down a drain will kill some adult drain flies on contact, but it does not solve the problem. Bleach passes straight through the drain and does not break down the biofilm coating the inside of the pipes where drain fly larvae live and feed. The biofilm quickly re-establishes itself, and a new generation of drain flies emerges within days. Enzyme-based drain treatments are far more effective because they actively digest and remove the organic buildup that drain flies depend on.",
+        text: "Bleach will temporarily kill adult drain flies on contact, but it does not remove the biofilm coating the inside of the pipes where drain fly larvae live and feed. The biofilm quickly re-establishes itself, and a new generation of drain flies emerges within days. Enzyme-based drain treatments are far more effective because they actively digest and remove the organic buildup that drain flies depend on.",
       },
     },
     {
@@ -104,7 +104,7 @@ const faqSchema = {
       name: "Are drain flies harmful?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Drain flies do not bite, sting, or transmit diseases to humans. However, they are a hygiene concern because their presence indicates a buildup of decomposing organic matter inside your drainage system. In large numbers, their tiny hairs and shed body fragments can become airborne and may aggravate asthma in sensitive individuals. They are primarily a nuisance pest, but the underlying cause — dirty, blocked, or damaged drains — should be addressed for hygiene reasons.",
+        text: "Drain flies do not bite, sting, or transmit diseases. However, they are a hygiene concern because their presence indicates decomposing organic matter inside your drainage system. In large numbers, their shed body fragments can become airborne and may aggravate asthma in sensitive individuals. The underlying cause — dirty or damaged drains — should be addressed for both pest control and general hygiene reasons.",
       },
     },
     {
@@ -112,7 +112,7 @@ const faqSchema = {
       name: "How long does it take to get rid of drain flies?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "With consistent enzyme-based drain treatment, it typically takes 2-3 weeks to fully eliminate a drain fly infestation. This is because the treatment needs to break down the biofilm where larvae are developing, and drain fly eggs take approximately 2 days to hatch while larvae take 9-15 days to mature. You may see a reduction in adult flies within a few days, but continuing treatment for the full cycle ensures all eggs and larvae are eliminated.",
+        text: "With consistent enzyme-based drain treatment, it typically takes 2-3 weeks to fully eliminate a drain fly infestation. This accounts for the complete drain fly lifecycle from egg to adult. You may see a reduction in adult flies within a few days, but continuing treatment for the full cycle ensures all eggs and larvae are eliminated and the biofilm breeding ground is removed.",
       },
     },
     {
@@ -120,7 +120,7 @@ const faqSchema = {
       name: "Should I call a plumber or pest controller?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "If drain flies persist after 3-4 weeks of enzyme treatment, you may have a structural drainage problem. Call a pest controller if you need the adult fly population managed quickly while treating the source. Call a plumber if you suspect a cracked, broken, or collapsed drain — particularly if drain flies appear in unusual locations (e.g. coming up through the floor or from behind walls), as this can indicate a leaking waste pipe or damaged underground drain that is creating a breeding site outside the normal drainage system.",
+        text: "Call a pest controller if you need the adult fly population managed quickly while treating the drain source. Call a plumber if drain flies persist after 3-4 weeks of treatment, or if they appear in unusual locations such as coming up through the floor or from behind walls — this can indicate a cracked or broken drain that is creating a breeding site outside the normal drainage system and requires structural repair.",
       },
     },
   ],

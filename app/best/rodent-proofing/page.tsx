@@ -83,7 +83,7 @@ const faqSchema = {
       name: "How small a gap can a mouse get through?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A mouse can pass through a gap of about 6mm. That is why proofing work is measured in millimetres rather than in obvious holes: the openings that matter are usually the ones nobody notices, around pipework, under doors and behind air bricks.",
+        text: "About 6mm. That is why proofing work is measured in millimetres rather than in obvious holes: the openings that matter are usually the ones nobody notices, around pipework, under doors and behind air bricks. It is also why mesh aperture is the single specification worth checking before you buy anything.",
       },
     },
     {

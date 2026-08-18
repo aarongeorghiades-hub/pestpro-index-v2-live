@@ -25,7 +25,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Cat Deterrents UK 2026 — Ultrasonic & Scent",
   description:
-    "Our pick of the best cat deterrents for UK gardens. Compare motion-activated sprinklers, ultrasonic repellers, scent deterrents and prickle strips to humanely keep cats off lawns and borders.",
+    "Our pick of the best cat deterrents for UK gardens: motion-activated sprinklers, ultrasonic repellers, scent deterrents and prickle strips.",
   datePublished: "2026-06-23",
   dateModified: "2026-06-23",
   author: {
@@ -76,7 +76,7 @@ const faqSchema = {
       name: "What is the most effective cat deterrent for a garden?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Motion-activated water sprinklers are widely regarded as the single most effective cat deterrent for open gardens, because cats strongly dislike sudden bursts of water and find them very hard to habituate to. The PestBye Jet Spray connects to a garden hose and fires a short burst whenever its sensor detects a cat. For the best results, combine a sprinkler with a scent deterrent on borders and an ultrasonic device near the cat’s entry point — a layered approach is far more reliable than any single product.",
+        text: "Motion-activated water sprinklers like the PestBye Jet Spray are the most effective single deterrent for open gardens, because cats find sudden water very hard to habituate to. Combine with scent on borders and an ultrasonic unit at the entry point for the best results.",
       },
     },
     {
@@ -84,7 +84,7 @@ const faqSchema = {
       name: "Do ultrasonic cat repellers actually work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, motion-activated ultrasonic repellers work for many cats, emitting a high-frequency sound (typically inaudible to most adults) when movement is detected. Independent UK garden trials, including testing referenced by the RSPB and RHS, found ultrasonic devices reduce cat visits for a majority of users, though effectiveness varies between individual cats and some bold cats habituate over time. Position the device at the cat’s entry point, keep the detection path clear, and pair it with a scent or water deterrent for best results.",
+        text: "Yes for many cats — UK garden trials referenced by the RSPB and RHS found ultrasonic devices reduce cat visits for most households, though effectiveness varies between individual cats and some habituate. Position them at the entry point and pair with another deterrent.",
       },
     },
     {
@@ -92,7 +92,7 @@ const faqSchema = {
       name: "Is it legal to deter cats from my garden in the UK?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. It is perfectly legal to use humane deterrents — sprinklers, ultrasonic devices, scent repellents and prickle strips — to discourage cats from entering your garden. What is illegal is causing a cat unnecessary suffering: under the Animal Welfare Act 2006 you must not trap, poison, or physically harm cats. All the products on this page are humane and designed to discourage rather than injure.",
+        text: "Yes. Humane deterrents — sprinklers, ultrasonic devices, scent repellents and prickle strips — are entirely legal. Trapping, poisoning or harming a cat is an offence under the Animal Welfare Act 2006.",
       },
     },
     {
@@ -100,7 +100,7 @@ const faqSchema = {
       name: "How do I stop cats fouling in my flower beds?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Cats prefer to toilet in soft, bare, dug-over soil. Make beds physically uncomfortable with prickle strips or a dense mulch of pine cones, holly clippings or sharp gravel, and apply a scent deterrent such as repellent crystals or lion-manure pellets along the border. Keeping soil moist and densely planted also helps, as cats avoid wet ground and have nowhere to dig. A motion sprinkler aimed at a favoured spot will usually break the habit within a couple of weeks.",
+        text: "Make the soil uncomfortable with prickle strips, sharp gravel or dense mulch, apply a scent deterrent along the border, and keep beds moist and densely planted. A motion sprinkler aimed at the spot usually breaks the habit within a couple of weeks.",
       },
     },
     {
@@ -108,7 +108,7 @@ const faqSchema = {
       name: "Do scent deterrents like lion manure and repellent crystals work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Scent deterrents work by making an area smell unfamiliar or territorially “claimed”. Repellent crystals (containing methyl nonyl ketone) and lion-manure pellets such as Silent Roar both topped UK consumer trials for scent-based cat deterrence. They are most effective on borders and flower beds, are non-toxic to plants and pets when used as directed, and must be reapplied after heavy rain. Use them alongside a physical or water deterrent rather than on their own.",
+        text: "Yes — repellent crystals and lion-manure pellets such as Silent Roar both topped UK consumer trials. They work best on borders and beds, are non-toxic to plants and pets when used as directed, and need reapplying after rain. Use them alongside a water or physical deterrent.",
       },
     },
   ],

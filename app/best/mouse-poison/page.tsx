@@ -92,7 +92,7 @@ const faqSchema = {
       name: "Is mouse poison safe around pets?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Mouse poison is toxic to all mammals, including dogs and cats. You must always use mouse poison inside a tamper-resistant bait station that prevents pet access. Mouse bait stations have smaller entry holes than rat stations, but a determined dog could still chew through a poorly made station. Always use a lockable, professional-quality station and place it where pets cannot reach it.",
+        text: "Mouse poison is toxic to all mammals, including dogs and cats. You must always use mouse poison inside a tamper-resistant bait station that prevents pet access. Always use a lockable, professional-quality station and place it where pets cannot reach it. If you suspect a pet has ingested mouse poison, contact your vet immediately.",
       },
     },
     {
@@ -100,7 +100,7 @@ const faqSchema = {
       name: "Do I need a bait station for mouse poison?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Under CRRU (Campaign for Responsible Rodenticide Use) guidelines, all second-generation anticoagulant rodenticides must be used inside tamper-resistant bait stations in the UK. This protects children, pets, and non-target wildlife from accidental poisoning.",
+        text: "Yes. Under CRRU guidelines, all second-generation anticoagulant rodenticides must be used inside tamper-resistant bait stations in the UK. This protects children, pets, and non-target wildlife from accidental poisoning.",
       },
     },
     {
@@ -108,7 +108,7 @@ const faqSchema = {
       name: "Can mice become resistant to poison?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, some mouse populations in the UK have developed genetic resistance to first-generation anticoagulants and, in some areas, to certain second-generation anticoagulants like bromadiolone. If you suspect resistance, switch to a brodifacoum-based product, which remains effective against all known resistant populations. If poison is still not working after 2-3 weeks, call a professional pest controller.",
+        text: "Yes, some mouse populations in the UK have developed genetic resistance to certain anticoagulants. If you suspect resistance, switch to a brodifacoum-based product, which remains effective against all known resistant populations. If poison is still not working after 2-3 weeks, call a professional pest controller.",
       },
     },
     {
@@ -116,7 +116,7 @@ const faqSchema = {
       name: "Where should I put mouse poison?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Place mouse bait stations along walls, behind kitchen units, under appliances, near entry points, and close to signs of mouse activity such as droppings, gnaw marks, and grease smears. Mice travel along edges and rarely cross open spaces, so placing stations flush against a wall gives the best results. Check and replenish stations every 2-3 days.",
+        text: "Place mouse bait stations along walls, behind kitchen units, under appliances, near entry points, and close to signs of mouse activity such as droppings, gnaw marks, and grease smears. Mice travel along edges and rarely cross open spaces, so placing stations flush against a wall gives the best results.",
       },
     },
   ],

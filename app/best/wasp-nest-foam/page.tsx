@@ -76,7 +76,7 @@ const faqSchema = {
       name: "What is the best wasp nest killer foam in the UK?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Rentokil Wasp Nest Killer Foam is the best overall option for UK consumers. It delivers a long-range expanding foam that seals the nest entrance and kills wasps inside through contact with the insecticide. The foam format is safer than liquid sprays because it reduces the number of escaping wasps.",
+        text: "Rentokil Wasp Nest Killer Foam is the best overall option. It delivers expanding foam that seals the nest entrance and kills wasps through contact with the insecticide, reducing the number of escaping wasps.",
       },
     },
     {
@@ -84,7 +84,7 @@ const faqSchema = {
       name: "Is it safe to remove a wasp nest yourself?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Small, accessible wasp nests (e.g. under a garden shed roof or in an air brick) can be treated safely by a confident homeowner using the right products and protective clothing. However, nests at height (requiring a ladder), nests in enclosed roof spaces, very large nests (bigger than a football), and nests where you have a wasp allergy should always be left to a professional pest controller. A professional treatment typically costs £50-£80 and takes about 30 minutes.",
+        text: "Small, accessible nests can be treated safely with the right products and protective clothing. However, nests at height, in enclosed roof spaces, very large nests, and situations where you have a wasp allergy should always be handled by a professional. Professional treatment typically costs £50-£80.",
       },
     },
     {
@@ -92,7 +92,7 @@ const faqSchema = {
       name: "When is the best time to treat a wasp nest?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Treat a wasp nest at dusk or dawn when wasps are least active and most of the colony is inside the nest. Never attempt to treat a nest during the middle of the day when wasps are at their most active and aggressive. Evening treatment also means returning wasps will encounter the insecticide as they re-enter the treated nest overnight.",
+        text: "Treat at dusk or dawn when wasps are least active and most of the colony is inside the nest. Never attempt treatment during the middle of the day.",
       },
     },
     {
@@ -100,7 +100,7 @@ const faqSchema = {
       name: "How long does wasp nest foam take to work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most wasp nest foams kill wasps within minutes of contact. However, it can take 24-48 hours for the entire colony to die, as wasps that were away from the nest when you treated it need to return and make contact with the insecticide. Do not approach or disturb the nest for at least 24 hours after treatment.",
+        text: "Foam kills wasps within minutes on contact. However, it takes 24-48 hours for the entire colony to die. Do not approach the nest for at least 24 hours after treatment.",
       },
     },
     {
@@ -108,7 +108,7 @@ const faqSchema = {
       name: "Do I need to remove the nest after treating it?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No, you do not need to remove a treated wasp nest. Once the colony is dead, the nest is harmless — it will not be reused by wasps next year. If it is in a visible location and you want to remove it for aesthetic reasons, wait at least 48 hours after treatment to ensure all wasps are dead, then knock it down with a long pole or scrape it off the surface.",
+        text: "No. A treated, dead nest is harmless and will not be reused. Remove it only if you want to for aesthetic reasons, and wait at least 48 hours after treatment before doing so.",
       },
     },
     {
@@ -116,7 +116,7 @@ const faqSchema = {
       name: "Is wasp nest foam or powder better?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Foam is generally better for visible nests with a clear entrance hole — it seals the entrance, trapping wasps inside with the insecticide. Powder (such as Ficam D or Rentokil wasp powder) is better for nests in cavities, wall voids, and underground — you puff the powder into the entrance and returning wasps carry it into the nest on their bodies. For most above-ground nests, foam is the easier and more effective option.",
+        text: "Foam is better for visible nests with clear entrances. Powder is better for cavity nests, wall voids, and underground nests where the transfer effect carries the insecticide deep inside the hidden nest.",
       },
     },
   ],

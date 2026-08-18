@@ -29,7 +29,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Professional Bed Bug Steamers UK (2026)",
   description:
-    "Top bed bug steamers for landlords, facilities managers & property investors.",
+    "Top bed bug steamers for landlords, facilities managers & property investors. Commercial-grade heat treatment that kills on contact.",
   datePublished: "2026-04-06",
   dateModified: "2026-04-06",
   author: {
@@ -82,7 +82,7 @@ const faqSchema = {
       name: "What temperature kills bed bugs?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Bed bugs and their eggs die at sustained temperatures above 55°C (131°F). Professional steamers output steam at 160–200°C, which is more than sufficient. The key is maintaining lethal temperature at the point of contact with fabrics and surfaces — a steam output of at least 160°C ensures the temperature remains lethal even after penetrating mattress seams and upholstery layers.",
+        text: "Bed bugs die at sustained contact temperatures above 55°C. Professional steamers output at 160–200°C to ensure lethal temperatures penetrate fabric layers. Eggs are slightly more heat-resistant than adults but still die reliably at these temperatures.",
       },
     },
     {
@@ -90,23 +90,7 @@ const faqSchema = {
       name: "Can steam damage mattresses?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Dry steam at 160°C+ will not damage most mattresses when used correctly. Move the nozzle slowly and steadily across surfaces — do not hold it in one spot. Avoid soaking fabrics with wet steam. Professional units like the Polti Cimex Eradicator produce dry superheated steam specifically to minimise moisture. Memory foam mattresses are safe to steam; spring mattresses are also fine. Allow the mattress to air-dry fully before re-making the bed.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is steam enough to eliminate bed bugs on its own?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Steam kills bed bugs on contact, including eggs — but only where the steam reaches. It is extremely effective for treating mattresses, bed frames, headboards, and soft furnishings. For a comprehensive approach, combine steaming with mattress encasements, interceptor traps, and monitoring. Severe or widespread infestations in wall cavities and electrical sockets may still need professional chemical or whole-room heat treatment.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How often should I steam-treat a rental property?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "For active infestations, steam-treat every 7–10 days for at least three cycles to catch newly hatched nymphs. For preventive treatment between tenancies, a single thorough steam of all beds, soft furnishings, and skirting boards is sufficient. Many portfolio landlords include steaming as part of their standard end-of-tenancy turnaround process.",
+        text: "No, when used correctly. Move the nozzle steadily across surfaces — do not hold in one spot. Dry steam units minimise moisture. Allow the mattress to air-dry fully before re-making the bed. Memory foam and spring mattresses are both safe to steam.",
       },
     },
   ],

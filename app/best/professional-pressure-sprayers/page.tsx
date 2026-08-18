@@ -78,15 +78,7 @@ const faqSchema = {
       name: "Can I use any pesticide in a knapsack sprayer?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. Always check the product label before loading any pesticide into a sprayer. Some formulations — particularly oil-based concentrates — may damage seals or gaskets in certain pump types. Wettable powders and abrasive formulations require a diaphragm pump rather than a piston pump. Only use products labelled for sprayer application, and confirm compatibility with your pump type.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I clean a pressure sprayer after use?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Triple rinse the tank with clean water after every use. Fill the tank one-third full, pressurise, and spray through the lance and nozzle to flush the entire system. Repeat three times. This removes chemical residue that can corrode seals, block nozzles, and contaminate future treatments. Store the sprayer with the pressure released and the lid slightly open to allow ventilation.",
+        text: "No — always check the product label before loading any pesticide into a sprayer. Some formulations, particularly oil-based concentrates, may damage seals or gaskets in certain pump types. Wettable powders and abrasive formulations require a diaphragm pump. Only use products labelled for sprayer application, and confirm compatibility with your specific pump type.",
       },
     },
     {
@@ -94,15 +86,7 @@ const faqSchema = {
       name: "What nozzle should I use for fine vs coarse spray?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A flat fan nozzle produces an even, fan-shaped pattern ideal for surface residual treatments and perimeter spraying. A hollow cone nozzle produces a finer mist for crack and crevice work and indoor applications where precise targeting is needed. Most professional sprayers include both nozzle types. For general pest control perimeter work, a flat fan nozzle at 30-40psi gives the best coverage.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the difference between a flat fan and cone nozzle?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A flat fan nozzle produces a wide, flat spray pattern — best for covering walls, floors, and perimeters evenly. A cone nozzle (hollow or full) produces a circular spray pattern. Hollow cone nozzles create a ring pattern with finer droplets, ideal for penetrating into cracks and crevices. Full cone nozzles produce a solid circle of spray for heavy-duty coverage. For most pest control work, a flat fan nozzle is the primary choice, with a hollow cone for targeted applications.",
+        text: "A flat fan nozzle at 30–40psi produces an even, wide pattern for surface residual treatments and perimeter spraying. A hollow cone nozzle at higher pressure produces a finer mist for crack and crevice work where precise targeting is needed. For most perimeter pest control work, start with the flat fan nozzle — it gives the most consistent coverage over large areas.",
       },
     },
   ],

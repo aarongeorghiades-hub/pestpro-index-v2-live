@@ -78,7 +78,7 @@ const faqSchema = {
       name: "What is the best cockroach gel bait a UK consumer can buy?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The strongest cockroach gels are authorised for professional use only in the UK and are not sold to the public. Of the gels and kits on general sale, a consumer treatment kit containing gel, spray and powder gives the widest coverage for a household infestation. For an established infestation, a professional pest controller is the reliable answer.",
+        text: "The strongest cockroach gels are authorised for professional use only and are not sold to the public. Of the products on general sale, a treatment kit combining gel, spray and powder gives the widest coverage for a household infestation. For an established infestation, a professional pest controller is the reliable answer.",
       },
     },
     {
@@ -86,7 +86,7 @@ const faqSchema = {
       name: "How does cockroach gel bait work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: 'Cockroach gel bait exploits cockroach feeding behaviour. Cockroaches eat the gel and return to their harbourage (hiding place). The poison takes 24-72 hours to kill, during which time the cockroach excretes contaminated droppings and vomit that other cockroaches consume. When the poisoned cockroach dies, other cockroaches eat the body — spreading the poison further. This "cascade effect" can kill cockroaches that never directly contacted the gel.',
+        text: "Cockroaches eat the gel and die 24-72 hours later. Other cockroaches consume contaminated droppings and dead bodies, spreading the poison through the population. This cascade effect can kill dozens of cockroaches from a single gel dot.",
       },
     },
     {
@@ -94,15 +94,7 @@ const faqSchema = {
       name: "How long does cockroach gel take to work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You should see a significant reduction in cockroach activity within 3-5 days of applying gel bait. Complete elimination of a moderate infestation typically takes 2-4 weeks. Severe infestations, particularly of German cockroaches, may require multiple gel applications and 4-6 weeks for full control.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is cockroach gel bait safe to use in kitchens?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, cockroach gel bait is specifically designed for use in kitchens and food preparation areas. The gel is applied in small dots in concealed locations — behind units, inside cupboard hinges, under appliances, and in cracks. The tiny amounts used and the concealed placement mean it does not contaminate food or food preparation surfaces.",
+        text: "You should see reduced activity within 3-5 days. Complete elimination of a moderate infestation takes 2-4 weeks. Severe German cockroach infestations may take 4-6 weeks with multiple applications.",
       },
     },
     {
@@ -110,7 +102,7 @@ const faqSchema = {
       name: "How do I know if I have German or Oriental cockroaches?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "German cockroaches are small (10-15mm), light brown with two dark stripes behind the head, and are found almost exclusively indoors in warm, humid areas like kitchens and bathrooms. Oriental cockroaches are larger (20-25mm), very dark brown or black, and are often found in cooler areas like basements, drains, and ground floors. German cockroaches are by far the more serious indoor pest in the UK.",
+        text: "German cockroaches: small (10-15mm), light brown, two dark stripes, found in warm/humid indoor areas. Oriental cockroaches: larger (20-25mm), very dark brown/black, found in cooler areas near drains and basements.",
       },
     },
   ],

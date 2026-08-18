@@ -98,7 +98,7 @@ const faqSchema = {
       name: "Are pigeon spikes legal in the UK?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Pigeon spikes are legal in the UK and are one of the methods recommended by the RSPB and local councils for deterring pigeons. They do not harm the birds — they simply prevent them from landing. However, you must not use any method that injures or kills pigeons without a general licence, as all wild birds are protected under the Wildlife and Countryside Act 1981.",
+        text: "Yes. Pigeon spikes are legal and recommended by the RSPB and local councils as a humane deterrent. They prevent landing without injuring birds. However, you must not use any method that injures or kills pigeons without a general licence, as all wild birds are protected under the Wildlife and Countryside Act 1981.",
       },
     },
     {
@@ -106,15 +106,7 @@ const faqSchema = {
       name: "Do pigeon spikes actually work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Pigeon spikes are one of the most effective pigeon deterrents available. They physically prevent pigeons from landing on ledges, windowsills, gutters, and roof ridges. Stainless steel spikes are more effective than plastic ones for larger birds like pigeons, as pigeons can sometimes push past flexible plastic spikes.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Stainless steel or polycarbonate pigeon spikes — which is better?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Stainless steel spikes are more effective against larger birds like pigeons and last longer (15 to 25 years). Polycarbonate spikes are cheaper, less visible, and adequate for smaller birds like starlings and sparrows. For pigeon control specifically, stainless steel is the better choice.",
+        text: "Yes. Pigeon spikes are one of the most effective pigeon deterrents available. They physically prevent landing on ledges, sills, gutters, and ridges. Stainless steel spikes are more effective than plastic for larger birds like pigeons.",
       },
     },
     {
@@ -122,7 +114,7 @@ const faqSchema = {
       name: "How do you attach pigeon spikes?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most pigeon spikes can be attached with outdoor adhesive (silicone sealant), screws, or cable ties. Adhesive is best for smooth surfaces like windowsills and PVC guttering. Screws are more secure for concrete ledges and roof ridges. Clean the surface thoroughly before applying adhesive for the best bond.",
+        text: "Most spikes attach with outdoor silicone adhesive, screws, or cable ties. Adhesive works best on smooth surfaces like PVC and painted wood. Screws are more secure for brick, concrete, and exposed locations. Always clean the surface thoroughly before applying adhesive.",
       },
     },
     {
@@ -130,7 +122,7 @@ const faqSchema = {
       name: "How many metres of pigeon spikes do I need?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Measure the total length of all ledges, sills, and ridges where pigeons land. Cover the entire length — gaps of even 10 cm allow pigeons to squeeze in beside the spikes. Most homes need 5 to 15 metres depending on the number of window ledges and the roof configuration.",
+        text: "Measure every ledge, sill, and ridge where pigeons land. Cover the entire length — gaps of even 10 cm allow pigeons to land beside the spikes. Most homes need 5 to 15 metres depending on the property.",
       },
     },
     {
@@ -138,7 +130,7 @@ const faqSchema = {
       name: "Do I need planning permission for pigeon spikes?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. Pigeon spikes are classed as a minor home improvement and do not require planning permission in most cases. The exception is listed buildings, where you should check with your local conservation officer before making any external modifications.",
+        text: "No. Pigeon spikes are a minor home improvement and do not require planning permission. The exception is listed buildings — check with your local conservation officer before modifying the exterior.",
       },
     },
   ],

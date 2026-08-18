@@ -29,7 +29,7 @@ const articleSchema = {
   headline:
     "Best Damp-Proof Paint & Mould Treatment Products for Landlords (2026)",
   description:
-    "The best anti-mould paint, damp sealers and mould killers for landlords remediating condensation damp and mould in rental properties.",
+    "Anti-mould paint, damp sealers and mould killers for landlords remediating condensation damp and mould in rental properties.",
   datePublished: "2026-04-07",
   dateModified: "2026-04-07",
   author: {
@@ -104,7 +104,7 @@ const faqSchema = {
       name: "Does Awaab's Law require landlords to use specific products?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Awaab's Law (Section 42, Social Housing Regulation Act 2023) does not mandate specific products or brands. It requires landlords to investigate damp and mould hazards within 14 days and remediate within prescribed timeframes. The choice of products is left to the landlord, but using professional-grade treatments and documenting the remediation process (products used, dates, before/after photos) demonstrates due diligence and compliance with the spirit of the legislation.",
+        text: "No. Awaab's Law (Section 42, Social Housing Regulation Act 2023) does not mandate specific products or brands. It requires landlords to investigate damp and mould hazards within 14 days and remediate within prescribed timeframes. The choice of products is left to the landlord, but using professional-grade treatments and documenting the remediation process (products used, dates, before/after photos) demonstrates due diligence and compliance with the spirit of the legislation.",
       },
     },
   ],

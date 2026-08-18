@@ -27,7 +27,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Bed Bug Mattress Encasement UK 2026",
   description:
-    "Our pick of the best bed bug mattress encasements available in the UK for 2026.",
+    "Our pick of the best bed bug mattress encasements available in the UK for 2026. Zippered protectors for bed bug protection, comfort, and durability.",
   datePublished: "2026-03-30",
   dateModified: "2026-03-30",
   author: {
@@ -78,39 +78,7 @@ const faqSchema = {
       name: "Do bed bug mattress encasements actually work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, mattress encasements are one of the most effective tools in bed bug control. They work in two ways: they trap existing bed bugs inside the encasement where they cannot feed and eventually die (this takes about 12 months), and they prevent new bed bugs from colonising the mattress by eliminating all hiding spots. Encasements do not kill bed bugs on their own — they must be used alongside spray treatment and other control measures for the room.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long should I leave a bed bug encasement on?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Leave the encasement on for at least 12-18 months to ensure all trapped bed bugs (including eggs) have died. Many pest professionals recommend leaving encasements on permanently — they also protect against dust mites, allergens, and future infestations. Most quality encasements are designed for long-term use and can be wiped down or surface-cleaned without removal.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What size mattress encasement do I need?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Measure your mattress depth (thickness) as well as the standard size (Single, Double, King, Super King). Most UK mattresses are 20-30cm deep. Choose an encasement rated for your mattress depth — too shallow and the zip will strain and potentially fail, allowing bed bugs to escape. Too deep and the excess fabric creates uncomfortable folds.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can bed bugs get through a mattress encasement?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A quality bed bug mattress encasement with a micro-zipper (teeth too small for bed bugs to pass through) and reinforced seams provides a complete barrier. Bed bugs cannot bite through the fabric, squeeze through the zip teeth, or find gaps in the seams. The most important feature to look for is the micro-zipper — standard zippers have teeth wide enough for bed bugs and nymphs to pass through.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do I still need to treat my room if I use an encasement?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. An encasement protects the mattress but bed bugs also hide in the bed frame, headboard, skirting boards, furniture, and carpet edges. You must treat the entire room with spray or professional treatment alongside using an encasement. The encasement eliminates the mattress as a hiding spot, making the rest of your treatment more effective by reducing the number of harbourage points.",
+        text: "Yes. They trap existing bed bugs inside (where they starve over ~12 months) and prevent new bugs from colonising the mattress. They must be used alongside room treatment — not as a standalone solution.",
       },
     },
   ],

@@ -98,7 +98,7 @@ const faqSchema = {
       name: "Does a compressor dehumidifier work in a cold garage or basement?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Standard compressor dehumidifiers lose efficiency below 15°C and may stop working entirely below 5°C because the evaporator coils ice up. For cold, unheated spaces such as garages, basements, and outbuildings, you need a desiccant dehumidifier which uses a chemical absorbent rather than refrigeration and works effectively down to 1°C. None of the compressor models on this page are suitable for consistently sub-10°C environments.",
+        text: "Standard compressor dehumidifiers lose efficiency below 15°C and may stop working entirely below 5°C because the evaporator coils ice up. For cold, unheated spaces such as garages, outbuildings, and unheated basements, you need a desiccant dehumidifier which uses a chemical absorbent rather than refrigeration and works effectively down to 1°C. None of the compressor models on this page are suitable for consistently sub-10°C environments.",
       },
     },
     {
@@ -106,7 +106,7 @@ const faqSchema = {
       name: "How much does it cost to run a commercial dehumidifier?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Running costs depend on the wattage and how many hours per day the unit operates. A typical 20-25L compressor dehumidifier draws 400-500W, costing approximately 12-15p per hour at current UK electricity prices (around 30p/kWh). In practice, once humidity reaches the target level, the humidistat cycles the unit on and off, so actual daily running costs are typically £1-£2 per day. Energy-efficient models like the Meaco 25L Ultra Low Energy can reduce this further.",
+        text: "A typical 20–25L compressor dehumidifier draws 400–500W, costing approximately 12–15p per hour at current UK electricity prices (around 30p/kWh). In practice, once humidity reaches the target level, the humidistat cycles the unit on and off, so actual daily running costs are typically £1–£2 per day. Energy-efficient models like the Meaco 25L Ultra Low Energy can reduce this further.",
       },
     },
     {

@@ -90,7 +90,7 @@ const faqSchema = {
       name: "Will rat poison harm hedgehogs?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes — secondary poisoning is a real and well-documented risk to hedgehogs. A hedgehog that eats a poisoned rat or mouse, or that directly accesses loose rodenticide, can suffer fatal internal bleeding. This is why tamper-resistant bait stations are essential for outdoor use. A properly designed station has entry holes sized for rats but too small for hedgehogs. Always anchor stations to prevent them being tipped over, and check regularly for dead rodents nearby.",
+        text: "Yes — secondary poisoning is a real and well-documented risk to hedgehogs. A hedgehog that eats a poisoned rat or mouse, or that directly accesses loose rodenticide, can suffer fatal internal bleeding. This is why tamper-resistant bait stations are essential for outdoor use. A properly designed station has entry holes sized for rats but too small for hedgehogs. Always anchor stations to prevent them being tipped over, and check regularly for dead rodents nearby to remove them before they are scavenged.",
       },
     },
     {
@@ -98,7 +98,7 @@ const faqSchema = {
       name: "How do I stop rats coming from my compost bin?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Rats are attracted to compost bins because they provide food, warmth, and shelter. To deter them: turn your compost regularly to disturb nesting, never add cooked food, meat, or dairy, use a fully enclosed tumbler composter rather than an open heap, and line the base of open bins with wire mesh (6mm gauge) to prevent burrowing. Place bait stations nearby along the rat runs leading to the compost area for active infestations.",
+        text: "Rats are attracted to compost bins because they provide food, warmth, and shelter. To deter them: turn your compost regularly to disturb nesting, never add cooked food, meat, or dairy, use a fully enclosed tumbler composter rather than an open heap, and line the base of open bins with wire mesh (6 mm gauge) to prevent burrowing. Place bait stations nearby along the rat runs leading to the compost area for active infestations.",
       },
     },
     {
@@ -106,7 +106,7 @@ const faqSchema = {
       name: "Where should I place bait stations in my garden?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Place bait stations along known rat runs and near signs of activity. The best locations are: along fence lines (rats travel along edges), near burrow entrances, beside compost bins, against shed or garage walls, and along the base of boundary walls. Rats are thigmotactic — they prefer to move along edges rather than across open ground — so always position stations flush against a wall, fence, or structure.",
+        text: "Place bait stations along known rat runs and near signs of activity. The best locations are: along fence lines (rats travel along edges), near burrow entrances, beside compost bins, against shed or garage walls, and along the base of boundary walls. Rats are thigmotactic — they prefer to move along edges rather than across open ground — so always position stations flush against a wall, fence, or structure with entry holes facing along the run.",
       },
     },
     {
@@ -114,7 +114,7 @@ const faqSchema = {
       name: "How long does outdoor rat poison take to work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Anticoagulant rat poisons typically take 3 to 7 days to kill a rat after ingestion. Brodifacoum-based products tend to act faster (3-5 days) as they deliver a lethal dose in a single feed. Bromadiolone may take slightly longer if multiple feeds are required. Full colony control in a garden setting usually takes 2 to 4 weeks, as not all rats will feed from the station on the first night. Check and replenish bait every 2-3 days.",
+        text: "Anticoagulant rat poisons typically take 3 to 7 days to kill a rat after ingestion. Brodifacoum-based products tend to act faster (3-5 days) as they deliver a lethal dose in a single feed. Bromadiolone may take slightly longer if multiple feeds are required. Full colony control in a garden setting usually takes 2 to 4 weeks, as not all rats will feed from the station on the first night. Check and replenish bait every 2-3 days for best results.",
       },
     },
     {
@@ -122,7 +122,7 @@ const faqSchema = {
       name: "Can I use rat poison near a pond or stream?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Extreme caution is required near water. Rodenticide can contaminate water sources and harm aquatic life. Place bait stations well away from ponds, streams, ditches, and any other water features — a minimum of 10 metres is advisable. Ensure stations are securely anchored so they cannot be knocked or washed into water during heavy rain. If rats are active near water, consider snap traps as a non-toxic alternative in that specific area.",
+        text: "Extreme caution is required near water. Rodenticide can contaminate water sources and harm aquatic life if it enters the water. Place bait stations well away from ponds, streams, ditches, and any other water features — a minimum of 10 metres is advisable. Ensure stations are securely anchored so they cannot be knocked or washed into water during heavy rain. If rats are active near water, consider snap traps as a non-toxic alternative in that specific area and restrict rodenticide use to locations further from the water source.",
       },
     },
   ],

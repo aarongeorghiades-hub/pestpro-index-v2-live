@@ -86,7 +86,7 @@ const faqSchema = {
       name: "Are ultrasonic pest repellers safe for pets (dogs, cats)?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most manufacturers claim their devices are safe for dogs and cats, but some pets may be able to hear frequencies in the ultrasonic range — particularly dogs, which can hear sounds up to around 65 kHz. Cats can hear up to approximately 64 kHz. If your pet seems distressed, agitated, or is avoiding certain rooms after you plug in an ultrasonic repeller, remove the device. Smaller pets such as hamsters, guinea pigs, and rabbits are more likely to be affected and should not be kept in the same room as an ultrasonic device.",
+        text: "Most manufacturers claim their devices are safe for dogs and cats, but some pets may be able to hear frequencies in the ultrasonic range — particularly dogs, which can hear sounds up to around 65 kHz. Cats can hear up to approximately 64 kHz. If your pet seems distressed, agitated, or is avoiding certain rooms after you plug in an ultrasonic repeller, remove the device immediately. Smaller pets such as hamsters, guinea pigs, and rabbits are more likely to be affected and should not be kept in the same room as an ultrasonic device.",
       },
     },
     {
@@ -94,7 +94,7 @@ const faqSchema = {
       name: "How many ultrasonic repellers do I need per room?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: 'Most manufacturers recommend one unit per room, as ultrasonic sound waves do not pass through walls, furniture, or other solid objects. For larger rooms or open-plan spaces, you may need two or more units. Coverage claims on packaging (e.g. "covers 200 sq m") should be treated with scepticism — in practice, any furniture, curtains, or obstacles between the device and the pest will significantly reduce the effective range.',
+        text: 'Most manufacturers recommend one unit per room, as ultrasonic sound waves do not pass through walls, furniture, or other solid objects. For larger rooms or open-plan spaces, you may need two or more units. Coverage claims on packaging (e.g. "covers 200 sq m") should be treated with scepticism — in practice, any furniture, curtains, or obstacles between the device and the pest will significantly reduce the effective range. A realistic effective range in a furnished room is around 3-5 metres from the device.',
       },
     },
     {
@@ -102,7 +102,7 @@ const faqSchema = {
       name: "Do ultrasonic repellers work on rats, mice, spiders, and insects?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Manufacturers claim their devices work on a wide range of pests including rats, mice, spiders, cockroaches, ants, and mosquitoes. However, the limited scientific evidence that does exist relates primarily to rodents, and even that evidence is inconsistent. There is almost no credible scientific evidence that ultrasonic devices have any meaningful effect on insects or spiders. Rats and mice may show initial avoidance behaviour but often habituate to the sound within days.",
+        text: "Manufacturers claim their devices work on a wide range of pests including rats, mice, spiders, cockroaches, ants, and mosquitoes. However, the limited scientific evidence that does exist relates primarily to rodents, and even that evidence is inconsistent. There is almost no credible scientific evidence that ultrasonic devices have any meaningful effect on insects or spiders. Rats and mice may show initial avoidance behaviour but often habituate to the sound within days or weeks.",
       },
     },
     {
@@ -110,7 +110,7 @@ const faqSchema = {
       name: "Can I use ultrasonic repellers alongside traps and poison?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, and in fact we strongly recommend it. If you choose to use an ultrasonic repeller, treat it as one component of an integrated pest management approach. Combine it with snap traps, bait stations, sealing entry points, and removing food sources. Using an ultrasonic device as your sole method of pest control is unlikely to resolve an active infestation.",
+        text: "Yes, and in fact we strongly recommend it. If you choose to use an ultrasonic repeller, treat it as one component of an integrated pest management approach. Combine it with snap traps, bait stations, sealing entry points, and removing food sources. Using an ultrasonic device as your sole method of pest control is unlikely to resolve an active infestation. Think of it as a belt alongside braces — not a replacement for them.",
       },
     },
     {
@@ -118,7 +118,7 @@ const faqSchema = {
       name: "Why are reviews so mixed for ultrasonic pest repellers?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Reviews for ultrasonic pest repellers are notoriously polarised — you will see a mix of five-star and one-star reviews for virtually every product on the market. This is likely because: (1) confirmation bias plays a role — people who buy them want them to work; (2) pest activity is often seasonal and may decline naturally, leading people to credit the device; (3) some users may simultaneously be taking other measures (cleaning, sealing gaps) without realising those actions are doing the real work; and (4) the devices may have a short-term startling effect that wears off quickly.",
+        text: "Reviews for ultrasonic pest repellers are notoriously polarised — you will see a mix of five-star and one-star reviews for virtually every product on the market. This is likely because: confirmation bias plays a role (people who buy them want them to work); pest activity is often seasonal and may decline naturally, leading people to credit the device; some users may simultaneously be taking other measures (cleaning, sealing gaps) without realising those actions are doing the real work; and the devices may have a short-term startling effect on pests that wears off quickly as they habituate.",
       },
     },
   ],

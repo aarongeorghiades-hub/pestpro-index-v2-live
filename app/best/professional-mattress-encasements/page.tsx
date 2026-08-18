@@ -70,44 +70,6 @@ const breadcrumbSchema = {
     },
   ],
 };
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Do mattress encasements really stop bed bugs?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. A quality six-sided zippered encasement with a micro-zipper or SureSeal closure creates a complete barrier around the mattress. Bed bugs already inside are trapped and eventually starve (within 12-18 months). New bed bugs cannot colonise the mattress because there are no seams, folds, or crevices to hide in. Encasements do not kill bed bugs on their own — they must be combined with room treatment — but they eliminate the single largest harbourage point in any infestation.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long do mattress encasements last?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A quality encasement should last 3-5 years with proper care. Commercial-grade products like the SureGuard and Silentnight encasements are designed for long-term permanent use. Machine wash on a gentle cycle every few months and inspect the zipper closure regularly for damage. Replace immediately if you find any tears, holes, or zipper failures — even a small gap compromises the barrier.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can you put a mattress topper over an encasement?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, you can place a mattress topper on top of an encasement, then add a fitted sheet over both. The encasement seals the mattress itself, and the topper sits on top for added comfort. However, be aware that the topper itself can harbour bed bugs in its seams and folds. For maximum protection in rental properties, consider using a separate topper encasement or replacing toppers between tenancies.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "When should you replace a mattress encasement?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Replace an encasement immediately if: the zipper is damaged or no longer closes fully, there are any tears or holes in the fabric, seams are fraying or separating, or the waterproof layer has degraded (you notice moisture seeping through). For rental properties, inspect encasements at every tenancy changeover. Even without visible damage, replace encasements every 3-5 years as a precaution — the zipper mechanism and fabric integrity degrade over time.",
-      },
-    },
-  ],
-};
 const tocItems = [
   { id: "at-a-glance", title: "Encasements at a Glance" },
   { id: "silentnight", title: "#1 Silentnight Complete Encasement" },
@@ -162,10 +124,6 @@ export default function ProfessionalMattressEncasementsPage() {
       breadcrumbSchema={breadcrumbSchema}
     >
       {" "}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />{" "}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
         {" "}
         <p className="text-sm text-amber-800">

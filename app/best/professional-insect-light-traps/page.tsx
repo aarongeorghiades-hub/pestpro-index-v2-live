@@ -76,34 +76,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "How often do UV tubes need replacing in an insect light trap?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "UV tubes should be replaced annually, ideally at the start of the fly season (March or April). Even though the tubes still appear to glow, UV output degrades by 30-50% after approximately 8,000 hours of continuous use. Most commercial pest control contracts include annual tube replacement as standard. Some higher-end tubes rated to 8,000+ hours may last slightly longer, but annual replacement is the industry standard recommended by the BPCA.",
-      },
-    },
-    {
-      "@type": "Question",
       name: "Where should I position an insect light trap?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Position ILTs near entrances, doorways, and loading bays where flying insects are most likely to enter the building. Mount the unit at approximately 2 metres height and perpendicular to windows and doors — never directly opposite a window, as natural light will overpower the UV. Crucially, the UV light should not be visible from outside the building, as this can attract more insects towards the premises rather than intercepting those already inside.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I use an electric grid insect light trap in a food preparation area?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. Electric grid (zapper) ILTs must not be used in food preparation or food storage areas. The electrocution process causes insect fragments and bacteria to be expelled up to 2 metres from the unit, creating a contamination risk. In food-facing areas, only glue board ILTs should be used, as they capture insects intact with no fragmentation. This is a key point that EHOs check during inspections.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are glue board insect light traps and when should I use them?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Glue board ILTs use the same UV light attraction as electric grid units, but instead of electrocuting the insect, they capture it intact on a replaceable adhesive board. This eliminates any risk of insect fragmentation or bacterial dispersal. Glue board units are the only type of ILT that should be used in food preparation areas, food storage rooms, and customer-facing dining areas. They are more expensive to run due to monthly board replacements, but they are essential for EHO compliance in food-handling environments.",
+        text: "Position ILTs near entrances, doorways, and loading bays where flying insects are most likely to enter the building. Mount at approximately two metres height and perpendicular to windows and external doors — never directly opposite a window, as natural light will overpower the UV. Crucially, the UV light should not be visible from outside the building, as this can attract more insects towards the premises rather than intercepting those already inside. In larger premises, create a perimeter of ILTs around the building entrance points, with additional units covering interior corridors and transition zones.",
       },
     },
   ],

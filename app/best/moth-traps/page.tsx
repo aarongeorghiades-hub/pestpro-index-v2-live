@@ -76,7 +76,7 @@ const faqSchema = {
       name: "Do pheromone moth traps actually work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes — pheromone moth traps are scientifically proven to attract and catch male moths of the target species. The pheromone lure mimics the scent released by female moths, drawing males onto the sticky glue board where they become trapped. This disrupts the breeding cycle by preventing males from mating. However, traps alone may not eliminate an established infestation — they are most effective as part of a combined approach with thorough cleaning, moth spray, and preventative measures like cedar products.",
+        text: "Yes — they are scientifically proven to attract and catch male moths of the target species. They disrupt the breeding cycle, but work best as part of a combined approach with cleaning, spray, and preventative measures.",
       },
     },
     {
@@ -84,7 +84,7 @@ const faqSchema = {
       name: "What is the difference between clothes moth traps and pantry moth traps?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Clothes moth traps and pantry moth traps use different pheromone lures to attract different species. Clothes moth traps target the Common Clothes Moth (Tineola bisselliella) and the Case-Bearing Clothes Moth — these eat wool, silk, cashmere, and other natural fibres. Pantry moth traps target the Indian Meal Moth (Plodia interpunctella) — these infest dried food like flour, rice, cereals, and nuts. Using the wrong trap for your moth type will not catch anything, so correct identification is essential.",
+        text: "They use different pheromone lures for different species. Clothes moth traps target the Common Clothes Moth; pantry moth traps target the Indian Meal Moth. Using the wrong trap will not catch anything.",
       },
     },
     {
@@ -92,7 +92,7 @@ const faqSchema = {
       name: "How many moth traps do I need?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "For clothes moths, place one trap per wardrobe or chest of drawers, plus one in each room where you store natural fibre clothing or textiles. For pantry moths, place one trap in each kitchen cupboard that contains dried food. A typical treatment might use 3-6 traps for clothes moths (bedroom wardrobes, linen cupboards, storage areas) and 2-4 traps for pantry moths (kitchen cupboards and pantry).",
+        text: "One per wardrobe or storage area for clothes moths; one per kitchen cupboard for pantry moths. A typical home needs 3-6 clothes moth traps or 2-4 pantry moth traps.",
       },
     },
     {
@@ -100,7 +100,7 @@ const faqSchema = {
       name: "How long do pheromone moth traps last?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most pheromone moth traps remain effective for 6-8 weeks before the pheromone lure loses its potency and needs replacing. Some premium traps last up to 12 weeks. The sticky glue board also degrades over time as it collects dust and moth debris. Replace traps according to the manufacturer's instructions, or sooner if the glue board is full of caught moths.",
+        text: "6-12 weeks depending on the product. Premium traps last up to 12 weeks; budget options around 6 weeks. Replace when the pheromone fades or the glue board is full.",
       },
     },
     {
@@ -108,7 +108,7 @@ const faqSchema = {
       name: "Do cedar products actually repel moths?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Cedar wood contains natural oils (primarily cedrol) that repel clothes moths and can kill moth larvae at high concentrations. Fresh cedar balls, rings, and blocks are genuinely effective as a preventative measure when placed in wardrobes and drawers alongside clean clothing. However, cedar loses its potency over time as the oils evaporate — sand the surface lightly or apply cedar oil every 6-12 months to refresh the scent. Cedar is a deterrent, not a treatment — it will not eliminate an existing infestation.",
+        text: "Yes — fresh cedar oil genuinely repels clothes moths and can kill larvae. However, cedar is a preventative, not a treatment. Refresh cedar products every 6-12 months by sanding the surface or applying cedar oil.",
       },
     },
     {
@@ -116,7 +116,7 @@ const faqSchema = {
       name: "How do I know if I have clothes moths or pantry moths?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Clothes moths are small (6-8mm), gold/buff coloured, and avoid light — you rarely see them flying around. Look for damage to wool, silk, and cashmere garments, small silk tubes or cases on fabric, and tiny cream-coloured larvae. Pantry moths are larger (8-10mm) with distinctive brown and cream wing markings, and they fly readily — you will often see them fluttering around the kitchen. Look for webbing and small larvae in dried food packets.",
+        text: "Clothes moths: small (6-8mm), gold/buff, avoid light, found in wardrobes. Pantry moths: larger (8-10mm), brown/cream wings, fly readily, found in kitchen cupboards near dried food.",
       },
     },
   ],

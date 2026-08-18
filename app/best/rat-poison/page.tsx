@@ -108,7 +108,7 @@ const faqSchema = {
       name: "Do I need a bait station for rat poison?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Under CRRU guidelines, all second-generation anticoagulant rodenticides (SGARs) must be used inside tamper-resistant bait stations in the UK. This applies to both indoor and outdoor use. Using loose poison without a bait station is not only dangerous but also non-compliant with UK best practice and potentially illegal if it results in harm to non-target animals.",
+        text: "Yes. Under CRRU guidelines, all second-generation anticoagulant rodenticides must be used inside tamper-resistant bait stations in the UK. This applies to both indoor and outdoor use. Using loose poison without a bait station is not only dangerous but also non-compliant with UK best practice.",
       },
     },
     {

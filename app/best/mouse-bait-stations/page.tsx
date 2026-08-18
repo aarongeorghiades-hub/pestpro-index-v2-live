@@ -78,7 +78,7 @@ const faqSchema = {
       name: "Are mouse bait stations safe for pets and children?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: 'Yes — a properly designed tamper-resistant mouse bait station is specifically engineered to prevent access by children, dogs, and cats. The entry holes are sized for mice (approximately 25mm) but too small for most pets to reach inside. Lockable stations require a key to open, providing an additional safety layer. Always choose a station labelled "tamper-resistant" and place it where pets and children do not play.',
+        text: 'Yes — a properly designed tamper-resistant station prevents access by children and pets. The entry holes are sized for mice only, and lockable stations require a key. Always choose a station labelled "tamper-resistant" and place it where pets and children do not play.',
       },
     },
     {
@@ -86,7 +86,7 @@ const faqSchema = {
       name: "Where should I place mouse bait stations?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Place stations along walls, behind kitchen units, under appliances, near entry points (gaps around pipes, door frames), and close to signs of mouse activity (droppings, gnaw marks, grease smears). Mice are thigmotactic — they travel along edges — so positioning stations flush against a wall or skirting board maximises the chance of mice finding and entering them.",
+        text: "Along walls, behind kitchen units, under appliances, near entry points, and close to signs of mouse activity. Mice travel along edges, so position stations flush against walls for best results.",
       },
     },
     {
@@ -94,7 +94,7 @@ const faqSchema = {
       name: "How often should I check mouse bait stations?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Check stations every 2-3 days during active baiting. Look for signs of bait consumption, droppings inside the station, and any disturbance. Replace consumed bait promptly. Once there is no bait consumption for a full week, the infestation is likely controlled — but leave stations in place for monitoring.",
+        text: "Every 2-3 days during active baiting. Replace consumed bait promptly. Once consumption stops for a full week, the infestation is likely controlled.",
       },
     },
     {
@@ -102,7 +102,7 @@ const faqSchema = {
       name: "What bait should I use in a mouse bait station?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Use a purpose-made rodenticide bait — either grain bait (most palatable to mice), wax blocks (most durable), or paste sachets. Do not use food bait (chocolate, peanut butter) in a poison bait station — food bait is for snap traps only. Choose brodifacoum-based bait for maximum potency or difenacoum for lower secondary poisoning risk.",
+        text: "Use purpose-made rodenticide — grain bait (most palatable), wax blocks (most durable), or paste sachets. Choose brodifacoum for maximum potency or difenacoum for lower secondary poisoning risk.",
       },
     },
     {
@@ -110,7 +110,7 @@ const faqSchema = {
       name: "How many mouse bait stations do I need?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "For a typical UK home, 3-5 stations provide adequate coverage. Place one in each room where you have seen signs of mouse activity, plus one at each identified entry point. Mice have small territories (typically 3-5 metres from the nest), so stations need to be closer together than rat stations — every 2-3 metres along known routes.",
+        text: "For a typical UK home, 3-5 stations provide adequate coverage. Place one in each room with mouse activity, plus one at each entry point. Space stations every 2-3 metres along known routes.",
       },
     },
     {
@@ -118,7 +118,7 @@ const faqSchema = {
       name: "Can I use a mouse bait station with snap traps?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Some mouse bait stations are designed to accept small snap traps as well as poison bait. This gives you the option of trap-based control inside a tamper-resistant housing, making snap traps safe for use in homes with pets and children. Check the station dimensions to ensure it fits your preferred snap trap.",
+        text: "Some stations accept small snap traps, giving you tamper-resistant trap housing safe for homes with pets and children. The Pest Expert station is the best option for this dual-purpose use.",
       },
     },
   ],
