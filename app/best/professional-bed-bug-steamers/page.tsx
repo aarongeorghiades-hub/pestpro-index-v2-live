@@ -96,14 +96,121 @@ const faqSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Text: string;
+  tocTitle: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "polti",
+    asin: "B00R3C8OW4",
+    rank: 1,
+    cardName: "Polti Cimex Eradicator Professional Bed Bug Steamer",
+    cardLabel: "Best Overall",
+    features: [
+      "Purpose-built for bed bug eradication — patented nozzle design",
+      "Superheated dry steam to 180°C kills adults, larvae and eggs instantly",
+      "No chemicals, no vacate time, no residue",
+      "Used by professional pest controllers worldwide",
+    ],
+    tableCells: [
+      "Polti Cimex Eradicator",
+      "180°C dry steam",
+      "Purpose-built bed bug steamer",
+    ],
+    h2Text: "#1 Polti Cimex Eradicator — The Purpose-Built Bed Bug Steamer",
+    tocTitle: "#1 Polti Cimex Eradicator",
+  },
+  {
+    anchorId: "dupray-neat",
+    asin: "B07DJNGYSV",
+    rank: 2,
+    cardName: "Dupray Neat Steam Cleaner — 17 Piece Professional Kit",
+    cardLabel: "Best Value",
+    features: [
+      "Continuous heavy-duty steam — large 54oz tank",
+      "17-piece accessory kit covering mattresses, upholstery, frames and crevices",
+      "2-year warranty from North America's leading steam brand",
+      "Multi-purpose: pest treatment + deep cleaning in one unit",
+    ],
+    tableCells: [
+      "Dupray Neat 17-piece",
+      "150°C+",
+      "Best all-rounder for landlords",
+    ],
+    h2Text: "#2 Dupray Neat Steam Cleaner — Best All-Rounder for Landlords",
+    tocTitle: "#2 Dupray Neat Steam Cleaner",
+  },
+  {
+    anchorId: "mcculloch",
+    asin: "B00G00BTEA",
+    rank: 3,
+    cardName: "McCulloch MC1385 Deluxe Canister Steam Cleaner — 23 Accessories",
+    cardLabel: "Best Accessory Kit",
+    features: [
+      "23 accessories for maximum versatility",
+      "Large 48oz tank for extended treatment sessions",
+      "Handles floors, counters, upholstery and pest treatment",
+      "Popular with landlords for combined cleaning and pest control",
+    ],
+    tableCells: ["McCulloch MC1385", "150°C+", "Multi-purpose cleaning + pest"],
+    h2Text: "#3 McCulloch MC1385 Deluxe Canister Steam Cleaner",
+    tocTitle: "#3 McCulloch MC1385 Deluxe",
+  },
+  {
+    anchorId: "dupray-plus",
+    asin: "B0DG6T85WF",
+    rank: 4,
+    cardName: "Dupray Neat Plus Steam Cleaner — 40 Piece Kit",
+    cardLabel: "Best Large Kit",
+    features: [
+      "40-piece accessory kit — the most comprehensive available",
+      "Same powerful continuous steam as the Dupray Neat",
+      "Ideal for facilities managers treating multiple room types",
+      "Covers every surface type in a commercial property",
+    ],
+    tableCells: [
+      "Dupray Neat Plus 40-piece",
+      "150°C+",
+      "Maximum accessory kit",
+    ],
+    h2Text: "#4 Dupray Neat Plus — Maximum Accessory Kit",
+    tocTitle: "#4 Dupray Neat Plus 40-Piece",
+  },
+  {
+    anchorId: "aeolus",
+    asin: "B0CV5VP2TW",
+    rank: 5,
+    cardName: "AEOLUS LP01SB Professional Bed Bug Steam System",
+    cardLabel: "Best Professional-Grade",
+    features: [
+      "Italian-made professional steam system — 200°C dry steam",
+      "Continuous load capability for long treatment sessions",
+      "Bactericidal, virucidal and insecticidal classification",
+      "The closest thing to genuine professional pest controller equipment on Amazon",
+    ],
+    tableCells: [
+      "AEOLUS LP01SB",
+      "200°C dry steam",
+      "Closest to professional kit",
+    ],
+    h2Text: "#5 AEOLUS LP01SB — Closest to Professional Equipment",
+    tocTitle: "#5 AEOLUS LP01SB Professional",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Bed Bug Steamers at a Glance" },
   { id: "why-steam", title: "Why Steam Is the Gold Standard" },
-  { id: "polti", title: "#1 Polti Cimex Eradicator" },
-  { id: "dupray-neat", title: "#2 Dupray Neat Steam Cleaner" },
-  { id: "mcculloch", title: "#3 McCulloch MC1385 Deluxe" },
-  { id: "dupray-plus", title: "#4 Dupray Neat Plus 40-Piece" },
-  { id: "aeolus", title: "#5 AEOLUS LP01SB Professional" },
+  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
   { id: "buying-guide", title: "Buying Guide: What to Look For" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
@@ -249,49 +356,24 @@ export default function ProfessionalBedBugSteamersPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Polti Cimex Eradicator</td>
-            <td>180°C dry steam</td>
-            <td>Purpose-built bed bug steamer</td>
-          </tr>
-          <tr>
-            <td>Dupray Neat 17-piece</td>
-            <td>150°C+</td>
-            <td>Best all-rounder for landlords</td>
-          </tr>
-          <tr>
-            <td>McCulloch MC1385</td>
-            <td>150°C+</td>
-            <td>Multi-purpose cleaning + pest</td>
-          </tr>
-          <tr>
-            <td>Dupray Neat Plus 40-piece</td>
-            <td>150°C+</td>
-            <td>Maximum accessory kit</td>
-          </tr>
-          <tr>
-            <td>AEOLUS LP01SB</td>
-            <td>200°C dry steam</td>
-            <td>Closest to professional kit</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
-      <h2 id="polti">
-        #1 Polti Cimex Eradicator — The Purpose-Built Bed Bug Steamer
-      </h2>
+      <h2 id={products[0].anchorId}>{products[0].h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Polti Cimex Eradicator Professional Bed Bug Steamer"
-          rank={1}
-          features={[
-            "Purpose-built for bed bug eradication — patented nozzle design",
-            "Superheated dry steam to 180°C kills adults, larvae and eggs instantly",
-            "No chemicals, no vacate time, no residue",
-            "Used by professional pest controllers worldwide",
-          ]}
-          asin="B00R3C8OW4"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -310,21 +392,14 @@ export default function ProfessionalBedBugSteamersPage() {
         across your portfolio, the Polti is the professional choice.
       </p>
 
-      <h2 id="dupray-neat">
-        #2 Dupray Neat Steam Cleaner — Best All-Rounder for Landlords
-      </h2>
+      <h2 id={products[1].anchorId}>{products[1].h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Dupray Neat Steam Cleaner — 17 Piece Professional Kit"
-          rank={2}
-          features={[
-            "Continuous heavy-duty steam — large 54oz tank",
-            "17-piece accessory kit covering mattresses, upholstery, frames and crevices",
-            "2-year warranty from North America's leading steam brand",
-            "Multi-purpose: pest treatment + deep cleaning in one unit",
-          ]}
-          asin="B07DJNGYSV"
-          bestFor="Best Value"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -342,19 +417,14 @@ export default function ProfessionalBedBugSteamersPage() {
         our top recommendation.
       </p>
 
-      <h2 id="mcculloch">#3 McCulloch MC1385 Deluxe Canister Steam Cleaner</h2>
+      <h2 id={products[2].anchorId}>{products[2].h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="McCulloch MC1385 Deluxe Canister Steam Cleaner — 23 Accessories"
-          rank={3}
-          features={[
-            "23 accessories for maximum versatility",
-            "Large 48oz tank for extended treatment sessions",
-            "Handles floors, counters, upholstery and pest treatment",
-            "Popular with landlords for combined cleaning and pest control",
-          ]}
-          asin="B00G00BTEA"
-          bestFor="Best Accessory Kit"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>
@@ -372,19 +442,14 @@ export default function ProfessionalBedBugSteamersPage() {
         multi-purpose investment.
       </p>
 
-      <h2 id="dupray-plus">#4 Dupray Neat Plus — Maximum Accessory Kit</h2>
+      <h2 id={products[3].anchorId}>{products[3].h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Dupray Neat Plus Steam Cleaner — 40 Piece Kit"
-          rank={4}
-          features={[
-            "40-piece accessory kit — the most comprehensive available",
-            "Same powerful continuous steam as the Dupray Neat",
-            "Ideal for facilities managers treating multiple room types",
-            "Covers every surface type in a commercial property",
-          ]}
-          asin="B0DG6T85WF"
-          bestFor="Best Large Kit"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />
       </div>
       <p>
@@ -396,19 +461,14 @@ export default function ProfessionalBedBugSteamersPage() {
         40-piece kit covers every scenario.
       </p>
 
-      <h2 id="aeolus">#5 AEOLUS LP01SB — Closest to Professional Equipment</h2>
+      <h2 id={products[4].anchorId}>{products[4].h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="AEOLUS LP01SB Professional Bed Bug Steam System"
-          rank={5}
-          features={[
-            "Italian-made professional steam system — 200°C dry steam",
-            "Continuous load capability for long treatment sessions",
-            "Bactericidal, virucidal and insecticidal classification",
-            "The closest thing to genuine professional pest controller equipment on Amazon",
-          ]}
-          asin="B0CV5VP2TW"
-          bestFor="Best Professional-Grade"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />
       </div>
       <p>

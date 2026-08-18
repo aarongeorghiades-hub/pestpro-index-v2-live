@@ -73,13 +73,125 @@ const breadcrumbSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B01NB0QNPI",
+    rank: 1,
+    cardName: "ROSHIELD 6-Pack Mouse Trap",
+    cardLabel: "Best Overall",
+    features: [
+      "Professional quality snap traps — 6-pack",
+      "Trusted by pest controllers across the UK",
+      "Reusable and easy to set",
+    ],
+    tableCells: ["ROSHIELD 6-Pack Mouse Trap", "Snap trap", "Best Overall"],
+    h2Label: "Best Overall",
+    h2Name: "ROSHIELD 6-Pack Mouse Trap",
+    tocLabel: "Best Overall",
+    tocName: "ROSHIELD 6-Pack",
+  },
+  {
+    anchorId: "best-heavy-duty",
+    asin: "B08ML78RC5",
+    rank: 2,
+    cardName: "Trisiki 6-Pack Heavy Duty Mouse Trap",
+    cardLabel: "Best Heavy Duty",
+    features: [
+      "Heavy-duty high-sensitivity snap traps",
+      "Effective for persistent mouse problems",
+      "Durable construction for repeated use",
+      "6-pack for whole-house coverage",
+    ],
+    tableCells: [
+      "Trisiki 6-Pack Heavy Duty Mouse Trap",
+      "Snap trap",
+      "Best Heavy Duty",
+    ],
+    h2Label: "Best Heavy Duty",
+    h2Name: "Trisiki 6-Pack Heavy Duty Mouse Trap",
+    tocLabel: "Best Heavy Duty",
+    tocName: "Trisiki 6-Pack",
+  },
+  {
+    anchorId: "best-budget",
+    asin: "B00HDVUTZA",
+    rank: 3,
+    cardName: "ASPECTEK 6-Pack Mouse Trap",
+    cardLabel: "Best Budget Option",
+    features: [
+      "Reusable snap traps with professional design",
+      "Easy bait placement and trigger mechanism",
+      "Excellent value 6-pack",
+    ],
+    tableCells: ["ASPECTEK 6-Pack Mouse Trap", "Snap trap", "Best Budget"],
+    h2Label: "Best Budget",
+    h2Name: "ASPECTEK 6-Pack Mouse Trap",
+    tocLabel: "Best Budget",
+    tocName: "ASPECTEK 6-Pack",
+  },
+  {
+    anchorId: "best-humane",
+    asin: "B07L8JNPF2",
+    rank: 4,
+    cardName: "ROSHIELD Humane Mouse Trap 2-Pack",
+    cardLabel: "Best Humane Option",
+    features: [
+      "Live catch and release design",
+      "Safe for household use around children and pets",
+      "Transparent inspection window",
+      "Reusable — simply release and reset",
+    ],
+    tableCells: [
+      "ROSHIELD Humane Mouse Trap 2-Pack",
+      "Live catch",
+      "Best Humane",
+    ],
+    h2Label: "Best Humane",
+    h2Name: "ROSHIELD Humane Mouse Trap 2-Pack",
+    tocLabel: "Best Humane",
+    tocName: "ROSHIELD Humane 2-Pack",
+  },
+  {
+    anchorId: "best-easy-clean",
+    asin: "B09PKWXRGK",
+    rank: 5,
+    cardName: "Motel Mouse Humane Trap",
+    cardLabel: "Best Easy-Clean Humane",
+    features: [
+      "Reusable humane mouse trap",
+      "Easy to clean and reset between catches",
+      "No-kill design for ethical pest control",
+      "Compact size fits in tight spaces",
+    ],
+    tableCells: ["Motel Mouse Humane Trap", "Live catch", "Best Easy-Clean"],
+    h2Label: "Best Easy-Clean",
+    h2Name: "Motel Mouse Humane Trap",
+    tocLabel: "Best Easy-Clean",
+    tocName: "Motel Mouse",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Mouse Traps at a Glance" },
-  { id: "best-overall", title: "Best Overall — ROSHIELD 6-Pack" },
-  { id: "best-heavy-duty", title: "Best Heavy Duty — Trisiki 6-Pack" },
-  { id: "best-budget", title: "Best Budget — ASPECTEK 6-Pack" },
-  { id: "best-humane", title: "Best Humane — ROSHIELD Humane 2-Pack" },
-  { id: "best-easy-clean", title: "Best Easy-Clean — Motel Mouse" },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Mouse Trap Buying Guide" },
   { id: "mistakes", title: "Common Mouse Trap Mistakes" },
 ];
@@ -273,48 +385,27 @@ export default function BestMouseTrapsPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>ROSHIELD 6-Pack Mouse Trap</td>
-            <td>Snap trap</td>
-            <td>Best Overall</td>
-          </tr>
-          <tr>
-            <td>Trisiki 6-Pack Heavy Duty Mouse Trap</td>
-            <td>Snap trap</td>
-            <td>Best Heavy Duty</td>
-          </tr>
-          <tr>
-            <td>ASPECTEK 6-Pack Mouse Trap</td>
-            <td>Snap trap</td>
-            <td>Best Budget</td>
-          </tr>
-          <tr>
-            <td>ROSHIELD Humane Mouse Trap 2-Pack</td>
-            <td>Live catch</td>
-            <td>Best Humane</td>
-          </tr>
-          <tr>
-            <td>Motel Mouse Humane Trap</td>
-            <td>Live catch</td>
-            <td>Best Easy-Clean</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
       {/* Best Overall */}
-      <h2 id="best-overall">Best Overall — ROSHIELD 6-Pack Mouse Trap</h2>
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
+      </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="ROSHIELD 6-Pack Mouse Trap"
-          rank={1}
-          features={[
-            "Professional quality snap traps — 6-pack",
-
-            "Trusted by pest controllers across the UK",
-            "Reusable and easy to set",
-          ]}
-          asin="B01NB0QNPI"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -337,21 +428,16 @@ export default function BestMouseTrapsPage() {
       </ul>
 
       {/* Best Heavy Duty */}
-      <h2 id="best-heavy-duty">
-        Best Heavy Duty — Trisiki 6-Pack Heavy Duty Mouse Trap
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Trisiki 6-Pack Heavy Duty Mouse Trap"
-          rank={2}
-          features={[
-            "Heavy-duty high-sensitivity snap traps",
-            "Effective for persistent mouse problems",
-            "Durable construction for repeated use",
-            "6-pack for whole-house coverage",
-          ]}
-          asin="B08ML78RC5"
-          bestFor="Best Heavy Duty"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -375,19 +461,16 @@ export default function BestMouseTrapsPage() {
       </ul>
 
       {/* Best Budget */}
-      <h2 id="best-budget">Best Budget — ASPECTEK 6-Pack Mouse Trap</h2>
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
+      </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="ASPECTEK 6-Pack Mouse Trap"
-          rank={3}
-          features={[
-            "Reusable snap traps with professional design",
-
-            "Easy bait placement and trigger mechanism",
-            "Excellent value 6-pack",
-          ]}
-          asin="B00HDVUTZA"
-          bestFor="Best Budget Option"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>
@@ -409,19 +492,16 @@ export default function BestMouseTrapsPage() {
       </ul>
 
       {/* Best Humane */}
-      <h2 id="best-humane">Best Humane — ROSHIELD Humane Mouse Trap 2-Pack</h2>
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
+      </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="ROSHIELD Humane Mouse Trap 2-Pack"
-          rank={4}
-          features={[
-            "Live catch and release design",
-            "Safe for household use around children and pets",
-            "Transparent inspection window",
-            "Reusable — simply release and reset",
-          ]}
-          asin="B07L8JNPF2"
-          bestFor="Best Humane Option"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />
       </div>
       <p>
@@ -447,19 +527,16 @@ export default function BestMouseTrapsPage() {
       </ul>
 
       {/* Best Easy-Clean */}
-      <h2 id="best-easy-clean">Best Easy-Clean — Motel Mouse Humane Trap</h2>
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
+      </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Motel Mouse Humane Trap"
-          rank={5}
-          features={[
-            "Reusable humane mouse trap",
-            "Easy to clean and reset between catches",
-            "No-kill design for ethical pest control",
-            "Compact size fits in tight spaces",
-          ]}
-          asin="B09PKWXRGK"
-          bestFor="Best Easy-Clean Humane"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />
       </div>
       <p>

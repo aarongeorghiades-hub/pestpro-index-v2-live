@@ -73,17 +73,156 @@ const breadcrumbSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Text: string;
+  tocTitle: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B09B2FSW55",
+    rank: 1,
+    cardName: "S4U Stainless Steel Bird Spikes (12 Strips, 3m)",
+    cardLabel: "Best Overall",
+    features: [
+      "Stainless steel construction",
+      "Supplied as 12 separate strips",
+      "3 metres of coverage in total",
+      "Strips can be placed individually where birds land",
+      "No cutting required to cover several short ledges",
+      "Suits sills, copings and flat ledges",
+    ],
+    tableCells: [
+      "S4U Stainless Steel Spikes (12 Strips, 3m)",
+      "Stainless steel",
+      "Best Overall",
+    ],
+    h2Text: "Best Overall — S4U Stainless Steel Bird Spikes",
+    tocTitle: "Best Overall — S4U Stainless Steel Spikes",
+  },
+  {
+    anchorId: "best-wide-ledges",
+    asin: "B006Y9L57S",
+    rank: 2,
+    cardName: "Defender Wide Plastic Bird Spikes (5m)",
+    cardLabel: "Best for Wide Ledges",
+    features: [
+      "Wide base for deeper ledges",
+      "5 metre run, the longest on this page",
+      "Plastic rather than stainless steel",
+      "From Defender, an established UK deterrent brand",
+      "Less visually obtrusive on light stonework",
+      "Will not rust or stain brickwork",
+    ],
+    tableCells: [
+      "Defender Wide Plastic Spikes (5m)",
+      "Plastic",
+      "Best for Wide Ledges",
+    ],
+    h2Text: "Best for Wide Ledges — Defender Wide Plastic Bird Spikes",
+    tocTitle: "Best for Wide Ledges — Defender Wide Plastic",
+  },
+  {
+    anchorId: "steel-3m-strip",
+    asin: "B07L19T8L4",
+    rank: 3,
+    cardName: "Stainless Steel Bird Spikes (3m)",
+    cardLabel: "Best 3m Coverage",
+    features: [
+      "Stainless steel construction",
+      "3 metre run",
+      "No manufacturer name attached to the listing",
+      "Currently available in the UK",
+      "Suits standard sills and flat ledges",
+      "Plain specification with no added features",
+    ],
+    tableCells: [
+      "Stainless Steel Spikes (3m)",
+      "Stainless steel",
+      "A plain unbranded steel strip",
+    ],
+    h2Text: "Stainless Steel Bird Spikes (3m)",
+    tocTitle: "Stainless Steel Spikes (3m)",
+  },
+  {
+    anchorId: "best-for-gutters",
+    asin: "B004EE18JK",
+    rank: 4,
+    cardName: "Stainless Steel Pigeon Spikes Half Round Gutter Kit (1m)",
+    cardLabel: "Best for Gutters",
+    features: [
+      "Half-round profile shaped for guttering",
+      "Stainless steel construction",
+      "1 metre kit",
+      "Fits curved surfaces a flat strip cannot",
+      "For gutter runs rather than flat ledges",
+      "Can be combined with flat strips elsewhere on the building",
+    ],
+    tableCells: [
+      "Half Round Gutter Kit (1m)",
+      "Stainless steel",
+      "Best for Gutters",
+    ],
+    h2Text: "Best for Gutters — Stainless Steel Half Round Gutter Kit",
+    tocTitle: "Best for Gutters — Half Round Gutter Kit",
+  },
+  {
+    anchorId: "offo-steel-spikes",
+    asin: "B0BL7PF3WG",
+    rank: 5,
+    cardName: "OFFO Stainless Steel Bird Spikes",
+    cardLabel: "Best Stainless Steel Strips",
+    features: [
+      "Stainless steel construction",
+      "Named-brand listing from OFFO",
+      "Currently available in the UK",
+      "Check pack size and length on the listing",
+      "Alternative to the unbranded steel strip above",
+      "Suits sills, copings and flat ledges",
+    ],
+    tableCells: [
+      "OFFO Stainless Steel Spikes",
+      "Stainless steel",
+      "A named-brand steel alternative",
+    ],
+    h2Text: "OFFO Stainless Steel Bird Spikes",
+    tocTitle: "OFFO Stainless Steel Spikes",
+  },
+  {
+    anchorId: "best-large-areas",
+    asin: "B07KB3PGZB",
+    rank: 6,
+    cardName: "Birdgo Anti-Pigeon Netting (5m x 5m)",
+    cardLabel: "Best for Large Areas",
+    features: [
+      "5m x 5m net, 25 square metres of coverage",
+      "Excludes birds from an entire opening rather than a ledge",
+      "Suits balconies, car ports and light wells",
+      "Must be fitted taut to work correctly",
+      "A larger installation job than a spike strip",
+      "The most complete exclusion method on this page",
+    ],
+    tableCells: [
+      "Birdgo Anti-Pigeon Netting (5m x 5m)",
+      "Netting",
+      "Best for Large Areas",
+    ],
+    h2Text: "Best for Large Areas — Birdgo Anti-Pigeon Netting",
+    tocTitle: "Best for Large Areas — Birdgo Netting",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Pigeon Spikes at a Glance" },
-  { id: "best-overall", title: "Best Overall — S4U Stainless Steel Spikes" },
-  {
-    id: "best-wide-ledges",
-    title: "Best for Wide Ledges — Defender Wide Plastic",
-  },
-  { id: "steel-3m-strip", title: "Stainless Steel Spikes (3m)" },
-  { id: "best-for-gutters", title: "Best for Gutters — Half Round Gutter Kit" },
-  { id: "offo-steel-spikes", title: "OFFO Stainless Steel Spikes" },
-  { id: "best-large-areas", title: "Best for Large Areas — Birdgo Netting" },
+  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
   { id: "how-to-choose", title: "How to Choose the Right Pigeon Deterrent" },
   { id: "tips", title: "Installation Tips" },
   { id: "faq", title: "Frequently Asked Questions" },
@@ -248,55 +387,25 @@ export default function BestPigeonSpikesPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>S4U Stainless Steel Spikes (12 Strips, 3m)</td>
-            <td>Stainless steel</td>
-            <td>Best Overall</td>
-          </tr>
-          <tr>
-            <td>Defender Wide Plastic Spikes (5m)</td>
-            <td>Plastic</td>
-            <td>Best for Wide Ledges</td>
-          </tr>
-          <tr>
-            <td>Stainless Steel Spikes (3m)</td>
-            <td>Stainless steel</td>
-            <td>A plain unbranded steel strip</td>
-          </tr>
-          <tr>
-            <td>Half Round Gutter Kit (1m)</td>
-            <td>Stainless steel</td>
-            <td>Best for Gutters</td>
-          </tr>
-          <tr>
-            <td>OFFO Stainless Steel Spikes</td>
-            <td>Stainless steel</td>
-            <td>A named-brand steel alternative</td>
-          </tr>
-          <tr>
-            <td>Birdgo Anti-Pigeon Netting (5m x 5m)</td>
-            <td>Netting</td>
-            <td>Best for Large Areas</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
       {/* Product 1 */}
-      <h2 id="best-overall">Best Overall — S4U Stainless Steel Bird Spikes</h2>
+      <h2 id={products[0].anchorId}>{products[0].h2Text}</h2>
       <div className="not-prose">
         <ProductCard
-          name="S4U Stainless Steel Bird Spikes (12 Strips, 3m)"
-          features={[
-            "Stainless steel construction",
-            "Supplied as 12 separate strips",
-            "3 metres of coverage in total",
-            "Strips can be placed individually where birds land",
-            "No cutting required to cover several short ledges",
-            "Suits sills, copings and flat ledges",
-          ]}
-          asin="B09B2FSW55"
-          bestFor="Best Overall"
-          rank={1}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -317,23 +426,14 @@ export default function BestPigeonSpikesPage() {
       </p>
 
       {/* Product 2 */}
-      <h2 id="best-wide-ledges">
-        Best for Wide Ledges — Defender Wide Plastic Bird Spikes
-      </h2>
+      <h2 id={products[1].anchorId}>{products[1].h2Text}</h2>
       <div className="not-prose">
         <ProductCard
-          name="Defender Wide Plastic Bird Spikes (5m)"
-          features={[
-            "Wide base for deeper ledges",
-            "5 metre run, the longest on this page",
-            "Plastic rather than stainless steel",
-            "From Defender, an established UK deterrent brand",
-            "Less visually obtrusive on light stonework",
-            "Will not rust or stain brickwork",
-          ]}
-          asin="B006Y9L57S"
-          bestFor="Best for Wide Ledges"
-          rank={2}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -352,21 +452,14 @@ export default function BestPigeonSpikesPage() {
       </p>
 
       {/* Product 3 */}
-      <h2 id="steel-3m-strip">Stainless Steel Bird Spikes (3m)</h2>
+      <h2 id={products[2].anchorId}>{products[2].h2Text}</h2>
       <div className="not-prose">
         <ProductCard
-          name="Stainless Steel Bird Spikes (3m)"
-          features={[
-            "Stainless steel construction",
-            "3 metre run",
-            "No manufacturer name attached to the listing",
-            "Currently available in the UK",
-            "Suits standard sills and flat ledges",
-            "Plain specification with no added features",
-          ]}
-          asin="B07L19T8L4"
-          bestFor="Best 3m Coverage"
-          rank={3}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>
@@ -384,23 +477,14 @@ export default function BestPigeonSpikesPage() {
       </p>
 
       {/* Product 4 */}
-      <h2 id="best-for-gutters">
-        Best for Gutters — Stainless Steel Half Round Gutter Kit
-      </h2>
+      <h2 id={products[3].anchorId}>{products[3].h2Text}</h2>
       <div className="not-prose">
         <ProductCard
-          name="Stainless Steel Pigeon Spikes Half Round Gutter Kit (1m)"
-          features={[
-            "Half-round profile shaped for guttering",
-            "Stainless steel construction",
-            "1 metre kit",
-            "Fits curved surfaces a flat strip cannot",
-            "For gutter runs rather than flat ledges",
-            "Can be combined with flat strips elsewhere on the building",
-          ]}
-          asin="B004EE18JK"
-          bestFor="Best for Gutters"
-          rank={4}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />
       </div>
       <p>
@@ -418,21 +502,14 @@ export default function BestPigeonSpikesPage() {
       </p>
 
       {/* Product 5 */}
-      <h2 id="offo-steel-spikes">OFFO Stainless Steel Bird Spikes</h2>
+      <h2 id={products[4].anchorId}>{products[4].h2Text}</h2>
       <div className="not-prose">
         <ProductCard
-          name="OFFO Stainless Steel Bird Spikes"
-          features={[
-            "Stainless steel construction",
-            "Named-brand listing from OFFO",
-            "Currently available in the UK",
-            "Check pack size and length on the listing",
-            "Alternative to the unbranded steel strip above",
-            "Suits sills, copings and flat ledges",
-          ]}
-          asin="B0BL7PF3WG"
-          bestFor="Best Stainless Steel Strips"
-          rank={5}
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />
       </div>
       <p>
@@ -450,23 +527,14 @@ export default function BestPigeonSpikesPage() {
       </p>
 
       {/* Product 6 */}
-      <h2 id="best-large-areas">
-        Best for Large Areas — Birdgo Anti-Pigeon Netting
-      </h2>
+      <h2 id={products[5].anchorId}>{products[5].h2Text}</h2>
       <div className="not-prose">
         <ProductCard
-          name="Birdgo Anti-Pigeon Netting (5m x 5m)"
-          features={[
-            "5m x 5m net, 25 square metres of coverage",
-            "Excludes birds from an entire opening rather than a ledge",
-            "Suits balconies, car ports and light wells",
-            "Must be fitted taut to work correctly",
-            "A larger installation job than a spike strip",
-            "The most complete exclusion method on this page",
-          ]}
-          asin="B07KB3PGZB"
-          bestFor="Best for Large Areas"
-          rank={6}
+          name={products[5].cardName}
+          features={products[5].features}
+          asin={products[5].asin}
+          bestFor={products[5].cardLabel}
+          rank={products[5].rank}
         />
       </div>
       <p>

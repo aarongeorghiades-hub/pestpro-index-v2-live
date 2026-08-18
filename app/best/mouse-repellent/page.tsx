@@ -121,22 +121,140 @@ const faqSchema = {
     },
   ],
 };
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-ultrasonic",
+    asin: "B0B8VQ6C76",
+    rank: 1,
+    cardName: "EcoMyLife Ultrasonic Pest Repeller 2 Pack",
+    cardLabel: "Best Overall",
+    features: [
+      "Plug-in ultrasonic repeller — no chemicals, no traps",
+      "2-pack for treating two rooms simultaneously",
+      "Covers up to 80-120m² per unit",
+      "Safe around children and pets",
+    ],
+    tableCells: [
+      "EcoMyLife Ultrasonic Pest Repeller 2 Pack",
+      "Ultrasonic plug-in",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "EcoMyLife Ultrasonic Pest Repeller 2 Pack",
+    tocLabel: "Best Overall",
+    tocName: "EcoMyLife Ultrasonic Repeller",
+  },
+  {
+    anchorId: "best-spray",
+    asin: "B08DKSX32W",
+    rank: 2,
+    cardName:
+      "RepellShield Rat & Mouse Repellent Spray 250ml — Made in Germany",
+    cardLabel: "Best Spray",
+    features: [
+      "A widely sold German peppermint oil mouse repellent spray",
+      "Non-staining formula — safe for kitchens, lofts and skirting boards",
+      "Peppermint and geraniol formula irritates rodents' sensitive noses",
+      "Family and pet safe",
+    ],
+    tableCells: [
+      "RepellShield Rat & Mouse Repellent Spray 250ml — Made in Germany",
+      "Peppermint spray",
+      "Best Spray",
+    ],
+    h2Label: "Best Spray",
+    h2Name: "RepellShield Rat & Mouse Repellent Spray 250ml — Made in Germany",
+    tocLabel: "Best Spray",
+    tocName: "RepellShield Made in Germany",
+  },
+  {
+    anchorId: "best-premium-spray",
+    asin: "B0CRRSTHNG",
+    rank: 3,
+    cardName: "REPELEM Rat & Mouse Repellent Spray 250ml — Peppermint Oil",
+    cardLabel: "Best Premium Spray",
+    features: [
+      "UK brand peppermint oil rodent deterrent",
+      "Fast-acting, non-toxic and safe around pets",
+      "Mist and squirt modes for different surfaces",
+      "Effective in kitchens, lofts, garages and car engines",
+    ],
+    tableCells: [
+      "REPELEM Rat & Mouse Repellent Spray 250ml — Peppermint Oil",
+      "Peppermint spray",
+      "Best Premium Spray",
+    ],
+    h2Label: "Best Premium Spray",
+    h2Name: "REPELEM Rat & Mouse Repellent Spray 250ml — Peppermint Oil",
+    tocLabel: "Best Premium Spray",
+    tocName: "REPELEM Peppermint Oil Spray",
+  },
+  {
+    anchorId: "best-battery",
+    asin: "B0072H60MG",
+    rank: 4,
+    cardName: "Pestbye Battery Operated Spider & Mouse Repeller",
+    cardLabel: "Best Battery-Powered",
+    features: [
+      "Battery-powered ultrasonic repeller from UK-based Pestbye",
+      "Ideal for garages, sheds and loft spaces without mains power",
+      "Repels mice and spiders",
+      "Hang from ceiling or fix to wall for maximum coverage",
+    ],
+    tableCells: [
+      "Pestbye Battery Operated Spider & Mouse Repeller",
+      "Ultrasonic battery-powered",
+      "Best Battery-Powered",
+    ],
+    h2Label: "Best Battery-Powered",
+    h2Name: "Pestbye Battery Operated Spider & Mouse Repeller",
+    tocLabel: "Best Battery-Powered",
+    tocName: "Pestbye Repeller",
+  },
+  {
+    anchorId: "best-natural",
+    asin: "B0CNV2CWQS",
+    rank: 5,
+    cardName: "REPELEM Rat & Mouse Repellent Peppermint Oil Sachets — 6 Pack",
+    cardLabel: "Best Natural",
+    features: [
+      "Long-lasting peppermint oil sachets — just place and leave",
+      "Ideal for enclosed spaces where spray cannot reach",
+      "Each sachet lasts months with no mess or reapplication",
+      "6-pack covers multiple locations around the home",
+    ],
+    tableCells: [
+      "REPELEM Rat & Mouse Repellent Peppermint Oil Sachets — 6 Pack",
+      "Peppermint oil sachets",
+      "Best Natural",
+    ],
+    h2Label: "Best Natural",
+    h2Name: "REPELEM Rat & Mouse Repellent Peppermint Oil Sachets — 6 Pack",
+    tocLabel: "Best Natural",
+    tocName: "REPELEM Peppermint Oil Sachets",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "Mouse Repellents at a Glance" },
-  {
-    id: "best-ultrasonic",
-    title: "Best Overall — EcoMyLife Ultrasonic Repeller",
-  },
-  { id: "best-spray", title: "Best Spray — RepellShield Made in Germany" },
-  {
-    id: "best-premium-spray",
-    title: "Best Premium Spray — REPELEM Peppermint Oil Spray",
-  },
-  { id: "best-battery", title: "Best Battery-Powered — Pestbye Repeller" },
-  {
-    id: "best-natural",
-    title: "Best Natural — REPELEM Peppermint Oil Sachets",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "buying-guide", title: "Mouse Proofing Buying Guide" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
@@ -277,40 +395,13 @@ export default function BestMouseRepellentPage() {
           </tr>{" "}
         </thead>{" "}
         <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>EcoMyLife Ultrasonic Pest Repeller 2 Pack</td>{" "}
-            <td>Ultrasonic plug-in</td> <td>Best Overall</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>
-              RepellShield Rat &amp; Mouse Repellent Spray 250ml — Made in
-              Germany
-            </td>{" "}
-            <td>Peppermint spray</td> <td>Best Spray</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>
-              REPELEM Rat &amp; Mouse Repellent Spray 250ml — Peppermint Oil
-            </td>{" "}
-            <td>Peppermint spray</td> <td>Best Premium Spray</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Pestbye Battery Operated Spider &amp; Mouse Repeller</td>{" "}
-            <td>Ultrasonic battery-powered</td>{" "}
-            <td>Best Battery-Powered</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>
-              REPELEM Rat &amp; Mouse Repellent Peppermint Oil Sachets — 6 Pack
-            </td>{" "}
-            <td>Peppermint oil sachets</td> <td>Best Natural</td>{" "}
-          </tr>{" "}
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>{" "}
       </table>{" "}
       <div className="not-prose">
@@ -333,22 +424,17 @@ export default function BestMouseRepellentPage() {
         </p>{" "}
       </Callout>{" "}
       {/* Product 1 */}{" "}
-      <h2 id="best-ultrasonic">
-        Best Overall &mdash; EcoMyLife Ultrasonic Pest Repeller 2 Pack
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="EcoMyLife Ultrasonic Pest Repeller 2 Pack"
-          rank={1}
-          features={[
-            "Plug-in ultrasonic repeller — no chemicals, no traps",
-            "2-pack for treating two rooms simultaneously",
-            "Covers up to 80-120m² per unit",
-            "Safe around children and pets",
-          ]}
-          asin="B0B8VQ6C76"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -408,23 +494,17 @@ export default function BestMouseRepellentPage() {
         </li>{" "}
       </ul>{" "}
       {/* Product 2 */}{" "}
-      <h2 id="best-spray">
-        Best Spray &mdash; RepellShield Rat &amp; Mouse Repellent Spray 250ml —
-        Made in Germany
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="RepellShield Rat & Mouse Repellent Spray 250ml — Made in Germany"
-          rank={2}
-          features={[
-            "A widely sold German peppermint oil mouse repellent spray",
-            "Non-staining formula — safe for kitchens, lofts and skirting boards",
-            "Peppermint and geraniol formula irritates rodents' sensitive noses",
-            "Family and pet safe",
-          ]}
-          asin="B08DKSX32W"
-          bestFor="Best Spray"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -501,23 +581,17 @@ export default function BestMouseRepellentPage() {
         </Callout>{" "}
       </div>{" "}
       {/* Product 3 */}{" "}
-      <h2 id="best-premium-spray">
-        Best Premium Spray &mdash; REPELEM Rat &amp; Mouse Repellent Spray 250ml
-        — Peppermint Oil
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="REPELEM Rat & Mouse Repellent Spray 250ml — Peppermint Oil"
-          rank={3}
-          features={[
-            "UK brand peppermint oil rodent deterrent",
-            "Fast-acting, non-toxic and safe around pets",
-            "Mist and squirt modes for different surfaces",
-            "Effective in kitchens, lofts, garages and car engines",
-          ]}
-          asin="B0CRRSTHNG"
-          bestFor="Best Premium Spray"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -583,23 +657,17 @@ export default function BestMouseRepellentPage() {
         </li>{" "}
       </ul>{" "}
       {/* Product 4 */}{" "}
-      <h2 id="best-battery">
-        Best Battery-Powered &mdash; Pestbye Battery Operated Spider &amp; Mouse
-        Repeller
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="Pestbye Battery Operated Spider & Mouse Repeller"
-          rank={4}
-          features={[
-            "Battery-powered ultrasonic repeller from UK-based Pestbye",
-            "Ideal for garages, sheds and loft spaces without mains power",
-            "Repels mice and spiders",
-            "Hang from ceiling or fix to wall for maximum coverage",
-          ]}
-          asin="B0072H60MG"
-          bestFor="Best Battery-Powered"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -660,23 +728,17 @@ export default function BestMouseRepellentPage() {
         <li>Directional output &mdash; does not cover around corners</li>{" "}
       </ul>{" "}
       {/* Product 5 */}{" "}
-      <h2 id="best-natural">
-        Best Natural &mdash; REPELEM Rat &amp; Mouse Repellent Peppermint Oil
-        Sachets — 6 Pack
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name="REPELEM Rat & Mouse Repellent Peppermint Oil Sachets — 6 Pack"
-          rank={5}
-          features={[
-            "Long-lasting peppermint oil sachets — just place and leave",
-            "Ideal for enclosed spaces where spray cannot reach",
-            "Each sachet lasts months with no mess or reapplication",
-            "6-pack covers multiple locations around the home",
-          ]}
-          asin="B0CNV2CWQS"
-          bestFor="Best Natural"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>

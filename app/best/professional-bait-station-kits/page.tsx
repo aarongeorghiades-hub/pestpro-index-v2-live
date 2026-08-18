@@ -113,22 +113,139 @@ const faqSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B00XL3CENO",
+    rank: 1,
+    cardName: "Roshield PRO BOX 4-Pack Extra Large Bait Stations",
+    cardLabel: "Best Overall",
+    features: [
+      "Professional-grade — designed for the pest control industry",
+      "Extra-large capacity with transparent inspection lid",
+      "UK-made from recycled plastics, all UK/EU regulation compliant",
+      "4-pack covers a standard residential HMO property",
+    ],
+    tableCells: [
+      "Roshield PRO BOX 4-Pack",
+      "Extra-large with inspection lid",
+      "Best Overall",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Roshield PRO BOX 4-Pack Extra Large Bait Stations",
+    tocLabel: "Best Overall",
+    tocName: "Roshield PRO BOX 4-Pack",
+  },
+  {
+    anchorId: "runner-up",
+    asin: "B00XL382T4",
+    rank: 2,
+    cardName: "Roshield PRO BOX 2-Pack Extra Large with Inspection Window",
+    cardLabel: "Runner-Up",
+    features: [
+      "Transparent lid for checking bait without opening",
+      "Reduces servicing time across multiple properties",
+      "Holds both poison blocks and snap traps",
+      "Professional construction, wall-mounting capability",
+    ],
+    tableCells: [
+      "Roshield PRO BOX 2-Pack",
+      "Transparent inspection window",
+      "Runner-Up",
+    ],
+    h2Label: "Runner-Up",
+    h2Name: "Roshield PRO BOX 2-Pack with Inspection Window",
+    tocLabel: "Runner-Up",
+    tocName: "Roshield PRO BOX 2-Pack",
+  },
+  {
+    anchorId: "best-budget",
+    asin: "B0CD7QDM1L",
+    rank: 3,
+    cardName: "Roshield Pro Quality Tamper-Resistant Bait Box (Single)",
+    cardLabel: "Best Budget",
+    features: [
+      "UK-made compact bait station",
+      "Lockable, key-operated tamper-resistant design",
+      "Complies with latest amateur rodenticide regulations",
+      "Suitable for indoor and external wall placement",
+    ],
+    tableCells: [
+      "Roshield Tamper-Resistant Single",
+      "Compact, key-operated lock",
+      "Best Budget",
+    ],
+    h2Label: "Best Budget",
+    h2Name: "Roshield Pro Quality Tamper-Resistant Bait Box",
+    tocLabel: "Best Budget",
+    tocName: "Roshield Tamper-Resistant Single",
+  },
+  {
+    anchorId: "best-professional",
+    asin: "B08XWBB8QF",
+    rank: 4,
+    cardName: "Pest Expert Heavy Duty Outdoor Bait Boxes — Pack of 4",
+    cardLabel: "Best Professional-Grade",
+    features: [
+      "Industrial-strength lockable bait stations",
+      "From the UK leading professional pest control brand",
+      "Large, secure, and key-operated",
+      "Designed for outdoor placement around buildings",
+    ],
+    tableCells: [
+      "Pest Expert Heavy Duty 4-Pack",
+      "Industrial-strength outdoor",
+      "Best Professional-Grade",
+    ],
+    h2Label: "Best Professional-Grade",
+    h2Name: "Pest Expert Heavy Duty Outdoor Bait Boxes",
+    tocLabel: "Best Professional-Grade",
+    tocName: "Pest Expert 4-Pack",
+  },
+  {
+    anchorId: "best-ready-to-deploy",
+    asin: "B07JGDJFQY",
+    rank: 5,
+    cardName: "Roshield 2x Pre-Baited Rat Kit — Ready to Deploy",
+    cardLabel: "Best Ready to Deploy",
+    features: [
+      "Ready-to-use with pre-baited tamper-resistant boxes",
+      "Zero setup — just place and monitor",
+      "UK-made, Brodifacoum single-feed bait included",
+      "Ideal for landlords wanting immediate deployment",
+    ],
+    tableCells: [
+      "Roshield Pre-Baited 2x Kit",
+      "Ready-to-deploy, bait included",
+      "Best Convenience",
+    ],
+    h2Label: "Best Ready to Deploy",
+    h2Name: "Roshield 2x Pre-Baited Rat Kit",
+    tocLabel: "Best Ready to Deploy",
+    tocName: "Roshield Pre-Baited Kit",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "At a Glance" },
-  { id: "best-overall", title: "Best Overall — Roshield PRO BOX 4-Pack" },
-  { id: "runner-up", title: "Runner-Up — Roshield PRO BOX 2-Pack" },
-  {
-    id: "best-budget",
-    title: "Best Budget — Roshield Tamper-Resistant Single",
-  },
-  {
-    id: "best-professional",
-    title: "Best Professional-Grade — Pest Expert 4-Pack",
-  },
-  {
-    id: "best-ready-to-deploy",
-    title: "Best Ready to Deploy — Roshield Pre-Baited Kit",
-  },
+  ...products.map((p) => ({
+    id: p.anchorId,
+    title: `${p.tocLabel} — ${p.tocName}`,
+  })),
   { id: "how-many", title: "How Many Bait Stations Do I Need?" },
   { id: "buying-guide", title: "Buying Guide" },
   { id: "roi", title: "ROI: DIY Kit vs Professional Call-Out" },
@@ -239,31 +356,13 @@ export default function ProfessionalBaitStationKitsPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Roshield PRO BOX 4-Pack</td>
-            <td>Extra-large with inspection lid</td>
-            <td>Best Overall</td>
-          </tr>
-          <tr>
-            <td>Roshield PRO BOX 2-Pack</td>
-            <td>Transparent inspection window</td>
-            <td>Runner-Up</td>
-          </tr>
-          <tr>
-            <td>Roshield Tamper-Resistant Single</td>
-            <td>Compact, key-operated lock</td>
-            <td>Best Budget</td>
-          </tr>
-          <tr>
-            <td>Pest Expert Heavy Duty 4-Pack</td>
-            <td>Industrial-strength outdoor</td>
-            <td>Best Professional-Grade</td>
-          </tr>
-          <tr>
-            <td>Roshield Pre-Baited 2x Kit</td>
-            <td>Ready-to-deploy, bait included</td>
-            <td>Best Convenience</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
@@ -275,21 +374,16 @@ export default function ProfessionalBaitStationKitsPage() {
       </div>
 
       {/* --- Product 1 --- */}
-      <h2 id="best-overall">
-        Best Overall — Roshield PRO BOX 4-Pack Extra Large Bait Stations
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Roshield PRO BOX 4-Pack Extra Large Bait Stations"
-          rank={1}
-          features={[
-            "Professional-grade — designed for the pest control industry",
-            "Extra-large capacity with transparent inspection lid",
-            "UK-made from recycled plastics, all UK/EU regulation compliant",
-            "4-pack covers a standard residential HMO property",
-          ]}
-          asin="B00XL3CENO"
-          bestFor="Best Overall"
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -333,21 +427,16 @@ export default function ProfessionalBaitStationKitsPage() {
       </ul>
 
       {/* --- Product 2 --- */}
-      <h2 id="runner-up">
-        Runner-Up — Roshield PRO BOX 2-Pack with Inspection Window
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Roshield PRO BOX 2-Pack Extra Large with Inspection Window"
-          rank={2}
-          features={[
-            "Transparent lid for checking bait without opening",
-            "Reduces servicing time across multiple properties",
-            "Holds both poison blocks and snap traps",
-            "Professional construction, wall-mounting capability",
-          ]}
-          asin="B00XL382T4"
-          bestFor="Runner-Up"
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -389,21 +478,16 @@ export default function ProfessionalBaitStationKitsPage() {
       </ul>
 
       {/* --- Product 3 --- */}
-      <h2 id="best-budget">
-        Best Budget — Roshield Pro Quality Tamper-Resistant Bait Box
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Roshield Pro Quality Tamper-Resistant Bait Box (Single)"
-          rank={3}
-          features={[
-            "UK-made compact bait station",
-            "Lockable, key-operated tamper-resistant design",
-            "Complies with latest amateur rodenticide regulations",
-            "Suitable for indoor and external wall placement",
-          ]}
-          asin="B0CD7QDM1L"
-          bestFor="Best Budget"
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>
@@ -440,21 +524,16 @@ export default function ProfessionalBaitStationKitsPage() {
       </ul>
 
       {/* --- Product 4 --- */}
-      <h2 id="best-professional">
-        Best Professional-Grade — Pest Expert Heavy Duty Outdoor Bait Boxes
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Pest Expert Heavy Duty Outdoor Bait Boxes — Pack of 4"
-          rank={4}
-          features={[
-            "Industrial-strength lockable bait stations",
-            "From the UK leading professional pest control brand",
-            "Large, secure, and key-operated",
-            "Designed for outdoor placement around buildings",
-          ]}
-          asin="B08XWBB8QF"
-          bestFor="Best Professional-Grade"
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />
       </div>
       <p>
@@ -494,21 +573,16 @@ export default function ProfessionalBaitStationKitsPage() {
       </ul>
 
       {/* --- Product 5 --- */}
-      <h2 id="best-ready-to-deploy">
-        Best Ready to Deploy — Roshield 2x Pre-Baited Rat Kit
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Roshield 2x Pre-Baited Rat Kit — Ready to Deploy"
-          rank={5}
-          features={[
-            "Ready-to-use with pre-baited tamper-resistant boxes",
-            "Zero setup — just place and monitor",
-            "UK-made, Brodifacoum single-feed bait included",
-            "Ideal for landlords wanting immediate deployment",
-          ]}
-          asin="B07JGDJFQY"
-          bestFor="Best Ready to Deploy"
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />
       </div>
       <p>
