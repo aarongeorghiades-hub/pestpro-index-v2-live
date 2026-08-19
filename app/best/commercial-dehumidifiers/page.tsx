@@ -120,16 +120,131 @@ const faqSchema = {
   ],
 };
 
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocTitle: string;
+};
+
+const products: ProductRecord[] = [
+  {
+    anchorId: "best-overall",
+    asin: "B08TRT57ZP",
+    rank: 1,
+    cardName:
+      "electriQ ECD30 Industrial 30L Dehumidifier — Metal Body, Large Wheels",
+    cardLabel: "Best Overall",
+    features: [
+      "Genuinely industrial — metal casing, large wheels",
+      "30L/day extraction for restoration and commercial use",
+      "Built for 24/7 continuous operation",
+      "First choice for serious property managers",
+    ],
+    tableCells: [
+      "electriQ ECD30 Industrial 30L",
+      "30L/day",
+      "Restoration & commercial sites",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "electriQ ECD30 Industrial 30L Dehumidifier",
+    tocTitle: "Best Overall — electriQ ECD30",
+  },
+  {
+    anchorId: "best-professional",
+    asin: "B093TLCDVC",
+    rank: 2,
+    cardName: "MeacoDry Arete One 25L Dehumidifier & HEPA Air Purifier",
+    cardLabel: "Best Professional-Grade",
+    features: [
+      "Multi-award winning from the UK leading dehumidifier brand",
+      "25L/day extraction + HEPA H13 air purification",
+      "Smart humidity mode, 5-year warranty",
+      "Handles multiple rooms from a single unit",
+    ],
+    tableCells: [
+      "MeacoDry Arete One 25L",
+      "25L/day",
+      "Professional multi-room coverage",
+    ],
+    h2Label: "Best Professional-Grade",
+    h2Name: "MeacoDry Arete One 25L Dehumidifier & HEPA Air Purifier",
+    tocTitle: "Best Professional-Grade — MeacoDry Arete One 25L",
+  },
+  {
+    anchorId: "arete-two",
+    asin: "B0CTKK5WHR",
+    rank: 3,
+    cardName: "Meaco MeacoDry Arete Two 20L Dehumidifier & HEPA Air Purifier",
+    cardLabel: "Best 20L Unit",
+    features: [
+      "Latest generation with Wi-Fi app control",
+      "HEPA H13 filtration + smart humidity mode",
+      "38dB operation — ideal for occupied rental properties",
+      "Remote monitoring for landlords",
+    ],
+    tableCells: [
+      "Meaco Arete Two 20L",
+      "20L/day",
+      "Occupied rental properties",
+    ],
+    h2Label: "Meaco Arete Two 20L Dehumidifier & HEPA Air Purifier",
+    h2Name: "Wi-Fi Control",
+    tocTitle: "Meaco Arete Two 20L — Wi-Fi Control",
+  },
+  {
+    anchorId: "best-budget",
+    asin: "B01DNZ2A5G",
+    rank: 4,
+    cardName: "Meaco 25L Ultra Low Energy Dehumidifier",
+    cardLabel: "Best Budget",
+    features: [
+      "Award-winning 25L model for UK climate",
+      "Lowest energy cost per litre of any Meaco unit",
+      "Continuous drainage for set-and-forget operation",
+      "Ideal for basements and cellars",
+    ],
+    tableCells: [
+      "Meaco 25L Ultra Low Energy",
+      "25L/day",
+      "Budget-conscious landlords",
+    ],
+    h2Label: "Best Budget",
+    h2Name: "Meaco 25L Ultra Low Energy Dehumidifier",
+    tocTitle: "Best Budget — Meaco 25L Ultra Low Energy",
+  },
+  {
+    anchorId: "vonhaus-30l",
+    asin: "B0FT3LZJZD",
+    rank: 5,
+    cardName: "VonHaus 30L Smart Dehumidifier — WiFi Control",
+    cardLabel: "Best Smart Control",
+    features: [
+      "30L/day high-capacity extraction",
+      "WiFi app for remote humidity monitoring",
+      "Continuous drainage + 24-hour timer",
+      "Essential for landlords managing remote properties",
+    ],
+    tableCells: [
+      "VonHaus 30L Smart WiFi",
+      "30L/day",
+      "Remote property management",
+    ],
+    h2Label: "VonHaus 30L Smart Dehumidifier",
+    h2Name: "WiFi Control",
+    tocTitle: "VonHaus 30L Smart Dehumidifier",
+  },
+];
+
 const tocItems = [
   { id: "at-a-glance", title: "At a Glance" },
-  { id: "best-overall", title: "Best Overall — electriQ ECD30" },
-  {
-    id: "best-professional",
-    title: "Best Professional-Grade — MeacoDry Arete One 25L",
-  },
-  { id: "arete-two", title: "Meaco Arete Two 20L — Wi-Fi Control" },
-  { id: "best-budget", title: "Best Budget — Meaco 25L Ultra Low Energy" },
-  { id: "vonhaus-30l", title: "VonHaus 30L Smart Dehumidifier" },
+  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
   { id: "sizing-guide", title: "What Size Dehumidifier Do I Need?" },
   { id: "buying-guide", title: "Buying Guide" },
   { id: "roi", title: "ROI: Dehumidifier vs Damp Remediation" },
@@ -265,50 +380,27 @@ export default function BestCommercialDehumidifiersPage() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>electriQ ECD30 Industrial 30L</td>
-            <td>30L/day</td>
-            <td>Restoration &amp; commercial sites</td>
-          </tr>
-          <tr>
-            <td>MeacoDry Arete One 25L</td>
-            <td>25L/day</td>
-            <td>Professional multi-room coverage</td>
-          </tr>
-          <tr>
-            <td>Meaco Arete Two 20L</td>
-            <td>20L/day</td>
-            <td>Occupied rental properties</td>
-          </tr>
-          <tr>
-            <td>Meaco 25L Ultra Low Energy</td>
-            <td>25L/day</td>
-            <td>Budget-conscious landlords</td>
-          </tr>
-          <tr>
-            <td>VonHaus 30L Smart WiFi</td>
-            <td>30L/day</td>
-            <td>Remote property management</td>
-          </tr>
+          {products.map((p) => (
+            <tr key={p.asin}>
+              <td>{p.tableCells[0]}</td>
+              <td>{p.tableCells[1]}</td>
+              <td>{p.tableCells[2]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
       {/* Product 1: electriQ ECD30 */}
-      <h2 id="best-overall">
-        Best Overall &mdash; electriQ ECD30 Industrial 30L Dehumidifier
+      <h2 id={products[0].anchorId}>
+        {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="electriQ ECD30 Industrial 30L Dehumidifier — Metal Body, Large Wheels"
-          rank={1}
-          asin="B08TRT57ZP"
-          bestFor="Best Overall"
-          features={[
-            "Genuinely industrial — metal casing, large wheels",
-            "30L/day extraction for restoration and commercial use",
-            "Built for 24/7 continuous operation",
-            "First choice for serious property managers",
-          ]}
+          name={products[0].cardName}
+          features={products[0].features}
+          asin={products[0].asin}
+          bestFor={products[0].cardLabel}
+          rank={products[0].rank}
         />
       </div>
       <p>
@@ -377,22 +469,16 @@ export default function BestCommercialDehumidifiersPage() {
       </p>
 
       {/* Product 2: MeacoDry Arete One 25L */}
-      <h2 id="best-professional">
-        Best Professional-Grade &mdash; MeacoDry Arete One 25L Dehumidifier
-        &amp; HEPA Air Purifier
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="MeacoDry Arete One 25L Dehumidifier & HEPA Air Purifier"
-          rank={2}
-          asin="B093TLCDVC"
-          bestFor="Best Professional-Grade"
-          features={[
-            "Multi-award winning from the UK leading dehumidifier brand",
-            "25L/day extraction + HEPA H13 air purification",
-            "Smart humidity mode, 5-year warranty",
-            "Handles multiple rooms from a single unit",
-          ]}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />
       </div>
       <p>
@@ -476,22 +562,16 @@ export default function BestCommercialDehumidifiersPage() {
       </div>
 
       {/* Product 3: Meaco Arete Two 20L */}
-      <h2 id="arete-two">
-        Meaco Arete Two 20L Dehumidifier &amp; HEPA Air Purifier &mdash; Wi-Fi
-        Control
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Meaco MeacoDry Arete Two 20L Dehumidifier & HEPA Air Purifier"
-          rank={3}
-          asin="B0CTKK5WHR"
-          bestFor="Best 20L Unit"
-          features={[
-            "Latest generation with Wi-Fi app control",
-            "HEPA H13 filtration + smart humidity mode",
-            "38dB operation — ideal for occupied rental properties",
-            "Remote monitoring for landlords",
-          ]}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />
       </div>
       <p>
@@ -557,21 +637,16 @@ export default function BestCommercialDehumidifiersPage() {
       </p>
 
       {/* Product 4: Meaco 25L Ultra Low Energy */}
-      <h2 id="best-budget">
-        Best Budget &mdash; Meaco 25L Ultra Low Energy Dehumidifier
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="Meaco 25L Ultra Low Energy Dehumidifier"
-          rank={4}
-          asin="B01DNZ2A5G"
-          bestFor="Best Budget"
-          features={[
-            "Award-winning 25L model for UK climate",
-            "Lowest energy cost per litre of any Meaco unit",
-            "Continuous drainage for set-and-forget operation",
-            "Ideal for basements and cellars",
-          ]}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />
       </div>
       <p>
@@ -636,21 +711,16 @@ export default function BestCommercialDehumidifiersPage() {
       </p>
 
       {/* Product 5: VonHaus 30L Smart */}
-      <h2 id="vonhaus-30l">
-        VonHaus 30L Smart Dehumidifier &mdash; WiFi Control
+      <h2 id={products[4].anchorId}>
+        {products[4].h2Label} &mdash; {products[4].h2Name}
       </h2>
       <div className="not-prose my-6">
         <ProductCard
-          name="VonHaus 30L Smart Dehumidifier — WiFi Control"
-          rank={5}
-          asin="B0FT3LZJZD"
-          bestFor="Best Smart Control"
-          features={[
-            "30L/day high-capacity extraction",
-            "WiFi app for remote humidity monitoring",
-            "Continuous drainage + 24-hour timer",
-            "Essential for landlords managing remote properties",
-          ]}
+          name={products[4].cardName}
+          features={products[4].features}
+          asin={products[4].asin}
+          bestFor={products[4].cardLabel}
+          rank={products[4].rank}
         />
       </div>
       <p>
