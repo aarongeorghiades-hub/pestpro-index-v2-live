@@ -102,30 +102,9 @@ type ProductRecord = {
 
 const products: ProductRecord[] = [
   {
-    anchorId: "product-1",
-    asin: "B07KB3BWZP",
-    rank: 1,
-    cardName:
-      "Birdgo Anti-Pigeon Netting 10m x 10m (50mm, Knotted, UV-Stabilised)",
-    cardLabel: "Best Overall",
-    features: [
-      "Large 10m x 10m net — 100 sq m of coverage per pack",
-      "50mm knotted mesh for pigeon and gull exclusion",
-      "UV-stabilised polyethylene rated for years outdoors",
-      "Net only — pair with the fixing clips below",
-    ],
-    tableCells: [
-      "Birdgo Anti-Pigeon Netting — 10m x 10m",
-      "50mm knotted netting",
-      "Best Overall (largest net)",
-    ],
-    h2Text: "#1 Birdgo Anti-Pigeon Netting — 10m x 10m (Largest Coverage)",
-    tocTitle: "#1 Birdgo Anti-Pigeon Netting — 10m x 10m",
-  },
-  {
     anchorId: "product-2",
     asin: "B07KB29QTF",
-    rank: 2,
+    rank: 1,
     cardName:
       "Birdgo Anti-Pigeon Netting 5m x 10m (50mm, Knotted, UV-Stabilised)",
     cardLabel: "Best Value Net",
@@ -133,20 +112,19 @@ const products: ProductRecord[] = [
       "5m x 10m net — 50 sq m, ideal for smaller areas",
       "50mm knotted mesh for pigeon and gull exclusion",
       "UV-stabilised knotted polyethylene from a specialist brand",
-      "Lower-cost entry point than the 10m x 10m net",
     ],
     tableCells: [
       "Birdgo Anti-Pigeon Netting — 5m x 10m",
       "50mm knotted netting",
       "Best Value Net",
     ],
-    h2Text: "#2 Birdgo Anti-Pigeon Netting — 5m x 10m (Best Value)",
-    tocTitle: "#2 Birdgo Anti-Pigeon Netting — 5m x 10m",
+    h2Text: "#1 Birdgo Anti-Pigeon Netting — 5m x 10m (Best Value)",
+    tocTitle: "#1 Birdgo Anti-Pigeon Netting — 5m x 10m",
   },
   {
     anchorId: "product-3",
     asin: "B006Y9L57S",
-    rank: 3,
+    rank: 2,
     cardName: "Defender Wide Plastic Bird Spikes — 5m Professional Pack",
     cardLabel: "Best for Ledges",
     features: [
@@ -160,13 +138,13 @@ const products: ProductRecord[] = [
       "Spike strip",
       "Best Ledge Exclusion",
     ],
-    h2Text: "#3 Defender Wide Plastic Bird Spikes — 5m Professional Pack",
-    tocTitle: "#3 Defender Wide Plastic Bird Spikes",
+    h2Text: "#2 Defender Wide Plastic Bird Spikes — 5m Professional Pack",
+    tocTitle: "#2 Defender Wide Plastic Bird Spikes",
   },
   {
     anchorId: "product-4",
     asin: "B0823ZVZSN",
-    rank: 4,
+    rank: 3,
     cardName: "Birdgo Bird Netting & Mesh Fixing Clips — No-Drill (60-Pack)",
     cardLabel: "Best No-Drill Fixings",
     features: [
@@ -180,13 +158,13 @@ const products: ProductRecord[] = [
       "No-drill fixing clips",
       "Essential Accessory",
     ],
-    h2Text: "#4 Birdgo Bird Netting Fixing Clips (60-Pack)",
-    tocTitle: "#4 Birdgo Bird Netting Fixing Clips (60-Pack)",
+    h2Text: "#3 Birdgo Bird Netting Fixing Clips (60-Pack)",
+    tocTitle: "#3 Birdgo Bird Netting Fixing Clips (60-Pack)",
   },
   {
     anchorId: "product-5",
     asin: "B0024NL0OQ",
-    rank: 5,
+    rank: 4,
     cardName: "Pest-Stop Professional Stainless Steel Bird Spikes",
     cardLabel: "Best Spikes Option",
     features: [
@@ -200,8 +178,8 @@ const products: ProductRecord[] = [
       "Stainless steel spike strip",
       "Complex Geometry",
     ],
-    h2Text: "#5 Pest-Stop Professional Stainless Steel Bird Spikes",
-    tocTitle: "#5 Pest-Stop Stainless Steel Bird Spikes",
+    h2Text: "#4 Pest-Stop Professional Stainless Steel Bird Spikes",
+    tocTitle: "#4 Pest-Stop Stainless Steel Bird Spikes",
   },
 ];
 
@@ -335,7 +313,7 @@ export default function BestProfessionalBirdNettingKitsPage() {
       {/* At a Glance */}
       <h2 id="at-a-glance">At a Glance</h2>
       <p>
-        Below is a quick comparison of our five recommended professional bird
+        Below is a quick comparison of our four recommended professional bird
         netting and exclusion products. Most commercial installations require a
         combination of netting for large open areas and spikes for ledges and
         linear surfaces, so we have included the best of both categories.
@@ -359,47 +337,6 @@ export default function BestProfessionalBirdNettingKitsPage() {
         </tbody>
       </table>
 
-      {/* Product 1 */}
-      <h2 id={product("product-1").anchorId}>{product("product-1").h2Text}</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={product("product-1").cardName}
-          features={product("product-1").features}
-          asin={product("product-1").asin}
-          bestFor={product("product-1").cardLabel}
-          rank={product("product-1").rank}
-        />
-      </div>
-      <p>
-        This Birdgo 10m x 10m net is our top pick for covering a large
-        commercial area in a single purchase &mdash; 100 square metres of
-        professional-quality, UV-stabilised knotted netting. Knotted
-        construction is the critical quality indicator that distinguishes
-        professional-grade netting from cheaper extruded alternatives: knotted
-        mesh maintains its structural integrity under wind loading, resists
-        tearing at fixing points, and does not sag over time the way extruded
-        netting inevitably does.
-      </p>
-      <p>
-        The 50mm mesh is intended for pigeon and gull exclusion; if you also
-        need to keep out smaller species such as starlings or sparrows, choose a
-        tighter mesh for those areas. This is netting only &mdash; the fixing
-        clips, perimeter wire and fasteners are sold separately, so budget for
-        the fixing clips further down (or a full perimeter-wire system for
-        larger spans). It is suitable for warehouses, multi-storey car parks,
-        loading bays, underpasses and courtyards.
-      </p>
-      <p>
-        <strong>Pros:</strong> 100 sq m of coverage per pack; knotted mesh for
-        long-term durability; UV-stabilised for years of outdoor use;
-        professional-quality netting at a fair price.
-      </p>
-      <p>
-        <strong>Cons:</strong> Net only &mdash; fixings purchased separately;
-        50mm mesh is too large for starling or sparrow exclusion; large-area
-        installation at height still requires professional fitting.
-      </p>
-
       {/* Product 2 */}
       <h2 id={product("product-2").anchorId}>{product("product-2").h2Text}</h2>
       <div className="not-prose my-6">
@@ -413,29 +350,26 @@ export default function BestProfessionalBirdNettingKitsPage() {
       </div>
       <p>
         For smaller installations &mdash; a single loading bay, a covered
-        walkway, a courtyard corner &mdash; the 5m x 10m Birdgo net delivers the
-        same professional-quality, UV-stabilised knotted construction as the
-        larger net above at a lower price. At 50 square metres it is the
-        sensible choice where the full 10m x 10m net would be more than you
-        need.
+        walkway, a courtyard corner &mdash; the 5m x 10m Birdgo net delivers
+        professional-quality, UV-stabilised knotted construction. At 50 square
+        metres it is the sensible choice.
       </p>
       <p>
-        Like all the netting here it uses a 50mm knotted mesh, the right
-        aperture for pigeon and gull exclusion. UV stabilisation is essential
-        for anything installed in direct sunlight: non-stabilised netting
-        becomes brittle and disintegrates within two to three years,
-        particularly on south-facing and west-facing elevations. As with the
-        larger net, fixings and tensioning wire are not included &mdash; pair it
-        with the fixing clips below.
+        It uses a 50mm knotted mesh, the right aperture for pigeon and gull
+        exclusion. UV stabilisation is essential for anything installed in
+        direct sunlight: non-stabilised netting becomes brittle and
+        disintegrates within two to three years, particularly on south-facing
+        and west-facing elevations. Fixings and tensioning wire are not included
+        &mdash; pair it with the fixing clips below.
       </p>
       <p>
-        <strong>Pros:</strong> 50 sq m of coverage at a lower price; 50mm
-        knotted mesh for pigeon and gull exclusion; UV-stabilised for outdoor
-        durability; right-sized for smaller jobs.
+        <strong>Pros:</strong> 50 sq m of coverage; 50mm knotted mesh for pigeon
+        and gull exclusion; UV-stabilised for outdoor durability; right-sized
+        for smaller jobs.
       </p>
       <p>
-        <strong>Cons:</strong> Smaller coverage than the 10m x 10m net; fixings
-        not included; 50mm mesh will not exclude starlings or sparrows.
+        <strong>Cons:</strong> Fixings not included; 50mm mesh will not exclude
+        starlings or sparrows.
       </p>
 
       {/* Product 3 */}
@@ -512,7 +446,7 @@ export default function BestProfessionalBirdNettingKitsPage() {
       </p>
       <p>
         <strong>Pros:</strong> 60 clips per pack; no-drill, no specialist tools;
-        UV-stabilised nylon for outdoor use; inexpensive companion to either net
+        UV-stabilised nylon for outdoor use; inexpensive companion to the net
         above.
       </p>
       <p>
