@@ -122,31 +122,9 @@ const products: ProductRecord[] = [
     tocName: "NOPE! Ant Killer Bait Station 6-Pack",
   },
   {
-    anchorId: "best-outdoor",
-    asin: "B00HKQL90K",
-    rank: 3,
-    cardName: "Zero In Ant Killer Outdoor Powder 450g",
-    cardLabel: "Best Outdoor Powder",
-    features: [
-      "Covers up to 45 square metres of outdoor area",
-      "Kills ants on contact with residual barrier effect",
-      "Ideal for patios, driveways, paths, and nest entrances",
-      "Easy-to-use puffer bottle for precise application",
-    ],
-    tableCells: [
-      "Zero In Ant Killer Outdoor Powder 450g",
-      "Outdoor powder",
-      "Best Outdoor Powder",
-    ],
-    h2Label: "Best Outdoor Powder",
-    h2Name: "Zero In Ant Killer Outdoor Powder 450g",
-    tocLabel: "Best Outdoor Powder",
-    tocName: "Zero In Ant Killer Outdoor Powder",
-  },
-  {
     anchorId: "best-gel",
     asin: "B000BQT5IG",
-    rank: 4,
+    rank: 3,
     cardName: "Combat Ant Killing Gel 27g",
     cardLabel: "Best Gel Bait",
     features: [
@@ -573,101 +551,6 @@ export default function BestAntKillersPage() {
         households, this pack alone will be sufficient to resolve a typical
         spring or summer ant invasion.{" "}
       </p>{" "}
-      {/* Best Outdoor Powder */}{" "}
-      <h2 id={product("best-outdoor").anchorId}>
-        {product("best-outdoor").h2Label} &mdash;{" "}
-        {product("best-outdoor").h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={product("best-outdoor").cardName}
-          features={product("best-outdoor").features}
-          asin={product("best-outdoor").asin}
-          bestFor={product("best-outdoor").cardLabel}
-          rank={product("best-outdoor").rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        While bait stations are the most effective method for eliminating ant
-        colonies from the inside out, there are situations where a fast-acting
-        contact powder is the better tool for the job &mdash; particularly for
-        outdoor use where you need to create a barrier around your home&apos;s
-        perimeter or treat visible nest entrances directly. The Zero In Ant
-        Killer Outdoor Powder is a 450g puffer bottle that delivers a fine
-        insecticidal dust capable of covering up to 45 square metres of outdoor
-        surface area. The active ingredient kills ants on contact and leaves a
-        residual barrier that continues to kill any ant that walks across the
-        treated surface for weeks after application. This makes it an excellent
-        defensive tool for creating a chemical perimeter around door thresholds,
-        window frames, air bricks, and the gaps where pipes and cables enter the
-        house &mdash; all common ant entry points.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The puffer bottle design allows you to direct the powder precisely where
-        it is needed, squeezing puffs of dust into cracks in paving slabs, along
-        the base of external walls, into weep holes in brickwork, and directly
-        onto visible ant nest entrances. When applied directly to a nest
-        entrance, the powder coats the ants as they enter and exit, and they
-        carry particles of the insecticide into the nest on their bodies, where
-        it spreads to other colony members through physical contact. This
-        secondary transfer effect gives the powder a degree of colony-kill
-        capability, although it is not as thorough as a dedicated bait product.
-        For best results, use the Zero In powder as a barrier and nest-entrance
-        treatment in combination with indoor bait stations like the Nippon or
-        NOPE! products. This two-pronged approach cuts off the colony&apos;s
-        access to your home while simultaneously poisoning it from within.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Large 450g bottle covers up to 45 square metres &mdash; enough for
-          most gardens and patios
-        </li>{" "}
-        <li>Kills ants on contact with long-lasting residual barrier effect</li>{" "}
-        <li>
-          Puffer bottle allows precise application into cracks, gaps, and nest
-          entrances
-        </li>{" "}
-        <li>
-          Fast-acting &mdash; visible reduction in ant activity within hours
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Outdoor use only &mdash; not suitable for indoor application
-        </li>{" "}
-        <li>
-          Rain washes away the powder, requiring reapplication after wet weather
-        </li>{" "}
-        <li>
-          Contact killer only &mdash; does not have the deep colony-kill effect
-          of bait products
-        </li>{" "}
-        <li>
-          Powder is visible on dark surfaces such as paving and decking
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> The Zero In Outdoor Powder is the best choice
-        for tackling ant problems at their source &mdash; outside. Use it to
-        treat nest entrances on your patio, create a barrier around your
-        home&apos;s perimeter, and dust entry points where ants are getting
-        inside. Combine it with indoor bait stations for a comprehensive
-        inside-and-outside ant control strategy.{" "}
-      </p>{" "}
       {/* Best Gel Bait */}{" "}
       <h2 id={product("best-gel").anchorId}>
         {product("best-gel").h2Label} &mdash; {product("best-gel").h2Name}
@@ -821,12 +704,12 @@ export default function BestAntKillersPage() {
         gaps in search of food and water. For this reason, the most effective
         approach is to treat <strong>both indoors and outdoors</strong>{" "}
         simultaneously. Place bait stations along ant trails inside the house
-        and use an outdoor powder like the Zero In product to treat nest
-        entrances and create a barrier around external entry points. Treating
-        only indoors may kill one wave of foragers, but the outdoor nest will
-        simply send more. Treating only outdoors may reduce the colony but not
-        eliminate the trail into your kitchen. A combined approach addresses
-        both the source and the symptom.{" "}
+        and use an outdoor powder to treat nest entrances and create a barrier
+        around external entry points. Treating only indoors may kill one wave of
+        foragers, but the outdoor nest will simply send more. Treating only
+        outdoors may reduce the colony but not eliminate the trail into your
+        kitchen. A combined approach addresses both the source and the
+        symptom.{" "}
       </p>{" "}
       <h3>Kitchen Safety</h3>{" "}
       <p>

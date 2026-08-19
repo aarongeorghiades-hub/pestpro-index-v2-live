@@ -105,31 +105,9 @@ const products: ProductRecord[] = [
     tocName: "Defender Wide Plastic Bird Spikes",
   },
   {
-    anchorId: "best-netting",
-    asin: "B07KB3PGZB",
-    rank: 2,
-    cardName: "Birdgo Anti-Pigeon Netting (5m x 5m)",
-    cardLabel: "Best Netting",
-    features: [
-      "UK brand established 2002",
-      "50mm mesh for pigeons",
-      "UV-stabilised knotted construction",
-      "Technical support included",
-    ],
-    tableCells: [
-      "Birdgo Anti-Pigeon Netting (5m x 5m)",
-      "Knotted netting",
-      "Best Netting",
-    ],
-    h2Label: "Best Netting",
-    h2Name: "Birdgo Anti-Pigeon Netting (5m x 5m)",
-    tocLabel: "Best Netting",
-    tocName: "Birdgo Anti-Pigeon Netting",
-  },
-  {
     anchorId: "best-discreet",
     asin: "B01MQSRJQ6",
-    rank: 3,
+    rank: 2,
     cardName: "Bird Barrier Optical Gel (24 Pack)",
     cardLabel: "Best Discreet",
     features: [
@@ -151,7 +129,7 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-budget",
     asin: "B07L19T8L4",
-    rank: 4,
+    rank: 3,
     cardName: "Stainless Steel Bird Spikes (3m)",
     cardLabel: "Best Budget",
     features: [
@@ -172,7 +150,7 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-coverage",
     asin: "B0C4Y7LSL6",
-    rank: 5,
+    rank: 4,
     cardName: "Fly-Bye Anti Bird Spikes (6m)",
     cardLabel: "Best Coverage",
     features: [
@@ -541,121 +519,6 @@ export default function BestBirdDeterrentsPage() {
         and reliable bird spike product on the market. If you are protecting
         window ledges, parapets, or gutter edges on a residential property,
         start here.{" "}
-      </p>{" "}
-      {/* Best Netting */}{" "}
-      <h2 id={product("best-netting").anchorId}>
-        {product("best-netting").h2Label} &mdash;{" "}
-        {product("best-netting").h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={product("best-netting").cardName}
-          features={product("best-netting").features}
-          asin={product("best-netting").asin}
-          bestFor={product("best-netting").cardLabel}
-          rank={product("best-netting").rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Bird netting is widely regarded by professional pest controllers as the
-        single most effective method of bird exclusion, and for good reason: a
-        properly installed net creates a complete physical barrier that prevents
-        birds from accessing the protected area entirely. Unlike spikes, which
-        deter landing on specific surfaces, netting can enclose entire
-        balconies, courtyards, loading bays, undercroft areas, and roof voids
-        &mdash; making it the only practical solution for large or complex
-        spaces where spikes alone would be insufficient. The Birdgo Anti-Pigeon
-        Netting is a 5m x 5m (25 square metre) panel of heavy-duty knotted
-        polyethylene netting with a 50mm mesh size specifically designed to
-        exclude pigeons, the most common urban pest bird in the UK.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Birdgo is a UK brand that has been supplying bird control products since
-        2002, and their netting is manufactured to a high standard using
-        UV-stabilised polyethylene with knotted intersections rather than the
-        cheaper heat-welded construction found in budget alternatives. Knotted
-        netting is significantly stronger and more durable than welded mesh
-        because the knots distribute stress across the entire junction rather
-        than relying on a single heat-bonded point that can fail under tension
-        or after UV degradation. The 50mm mesh size is the industry standard for
-        pigeon exclusion &mdash; large enough to be relatively unobtrusive from
-        a distance, but small enough to prevent any pigeon from passing through.
-        For properties with starling or sparrow problems, a smaller mesh size
-        (28mm for starlings, 19mm for sparrows) would be required, but for the
-        vast majority of domestic bird netting projects &mdash; which involve
-        pigeons &mdash; the 50mm mesh is the correct choice.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Installation of bird netting requires more planning and effort than
-        spike strips, but it is achievable as a DIY project for smaller areas.
-        You will need to create a frame of fixings (hooks, eye bolts, or
-        tensioning wire) around the perimeter of the area to be netted, then
-        stretch and secure the net across the opening. Birdgo provides technical
-        support to help customers plan their installations, which is a valuable
-        service that most budget netting brands do not offer. For larger or more
-        complex installations &mdash; particularly at height or on listed
-        buildings &mdash; professional installation is recommended.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Most effective bird exclusion method available &mdash; creates a
-          complete physical barrier
-        </li>{" "}
-        <li>
-          25 square metres of coverage in a single panel &mdash; enough for a
-          large balcony or courtyard
-        </li>{" "}
-        <li>
-          UV-stabilised knotted polyethylene for superior durability in all
-          weather conditions
-        </li>{" "}
-        <li>50mm mesh is the industry standard for pigeon exclusion</li>{" "}
-        <li>
-          Technical support from the manufacturer to help plan your installation
-        </li>{" "}
-        <li>Can be cut to size with scissors for irregular openings</li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          More complex to install than spike strips &mdash; requires perimeter
-          fixings and tensioning
-        </li>{" "}
-        <li>
-          50mm mesh will not exclude smaller species such as starlings or
-          sparrows
-        </li>{" "}
-        <li>
-          Netting can trap small birds if not installed taut and properly
-          maintained
-        </li>{" "}
-        <li>
-          May require planning permission on listed buildings or in conservation
-          areas
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> The Birdgo Anti-Pigeon Netting is the best
-        solution for protecting larger areas such as balconies, courtyards, car
-        parks, and building voids where spikes alone would be impractical. Its
-        knotted UV-stabilised construction and the manufacturer&apos;s technical
-        support set it apart from budget alternatives. If pigeons are nesting or
-        roosting in an enclosed or semi-enclosed space on your property, netting
-        is the definitive answer.{" "}
       </p>{" "}
       <div className="not-prose">
         {" "}
@@ -1059,7 +922,7 @@ export default function BestBirdDeterrentsPage() {
         <li>
           <strong>50mm mesh</strong> &mdash; excludes pigeons and all larger
           species. The most commonly used mesh for domestic and commercial
-          pigeon exclusion, and the size used by the Birdgo netting above.
+          pigeon exclusion.
         </li>{" "}
         <li>
           <strong>75mm mesh</strong> &mdash; excludes gulls and other large
