@@ -132,10 +132,10 @@ export const topProductsByPest: Record<string, PestProduct[]> = {
  features: ['Six bait stations for whole-house coverage'],
     },
     {
-      name: 'Combat Ant Killing Gel 27g',
-      asin: 'B000BQT5IG',
-      bestFor: 'Best Gel Bait',
-      features: ['Professional-strength fipronil gel bait', 'Kills the entire colony including the queen'],
+      name: 'Nippon Ant Killer Powder 500g',
+      asin: 'B000TAW39M',
+      bestFor: 'Best Powder',
+      features: ['Permethrin-based powder for direct nest treatment', 'Apply along ant runs, cracks and garden nest sites'],
     },
   ],
   'fleas': [
