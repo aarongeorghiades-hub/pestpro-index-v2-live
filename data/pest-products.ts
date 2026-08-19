@@ -132,10 +132,10 @@ export const topProductsByPest: Record<string, PestProduct[]> = {
  features: ['Six bait stations for whole-house coverage'],
     },
     {
-      name: 'Zero In Ant Killer Outdoor Powder 450g',
-      asin: 'B00HKQL90K',
-      bestFor: 'Best Outdoor Powder',
-      features: ['Covers up to 45 square metres of outdoor area', 'Kills ants on contact with residual barrier effect'],
+      name: 'Combat Ant Killing Gel 27g',
+      asin: 'B000BQT5IG',
+      bestFor: 'Best Gel Bait',
+      features: ['Professional-strength fipronil gel bait', 'Kills the entire colony including the queen'],
     },
   ],
   'fleas': [
@@ -206,10 +206,10 @@ export const topProductsByPest: Record<string, PestProduct[]> = {
       features: ['Made in Devon by Defender (25+ years)', 'Wide design for ledges up to 20cm'],
     },
     {
-      name: 'Birdgo Anti-Pigeon Netting (5m x 5m)',
-      asin: 'B07KB3PGZB',
-      bestFor: 'Best Netting',
-      features: ['UK brand established 2002', '50mm mesh for pigeons'],
+      name: 'Stainless Steel Bird Spikes (3m)',
+      asin: 'B07L19T8L4',
+      bestFor: 'Best Budget',
+      features: ['Stainless steel construction', '3 metre coverage'],
     },
     {
       name: 'Bird Barrier Optical Gel (24 Pack)',
