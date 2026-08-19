@@ -220,6 +220,18 @@ const products: ProductRecord[] = [
   },
 ];
 
+// Records are addressed BY IDENTITY, never by position. A positional lookup
+// silently rebinds every later product when a record is added, removed or
+// reordered; this cannot. A missing anchorId throws, so the build fails loudly
+// rather than rendering undefined.
+function product(anchorId: string): ProductRecord {
+  const found = products.find((p) => p.anchorId === anchorId);
+  if (!found) {
+    throw new Error(`No product record with anchorId "${anchorId}"`);
+  }
+  return found;
+}
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Pigeon Spikes at a Glance" },
   ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
@@ -398,14 +410,16 @@ export default function BestPigeonSpikesPage() {
       </table>
 
       {/* Product 1 */}
-      <h2 id={products[0].anchorId}>{products[0].h2Text}</h2>
+      <h2 id={product("best-overall").anchorId}>
+        {product("best-overall").h2Text}
+      </h2>
       <div className="not-prose">
         <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
+          name={product("best-overall").cardName}
+          features={product("best-overall").features}
+          asin={product("best-overall").asin}
+          bestFor={product("best-overall").cardLabel}
+          rank={product("best-overall").rank}
         />
       </div>
       <p>
@@ -426,14 +440,16 @@ export default function BestPigeonSpikesPage() {
       </p>
 
       {/* Product 2 */}
-      <h2 id={products[1].anchorId}>{products[1].h2Text}</h2>
+      <h2 id={product("best-wide-ledges").anchorId}>
+        {product("best-wide-ledges").h2Text}
+      </h2>
       <div className="not-prose">
         <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
+          name={product("best-wide-ledges").cardName}
+          features={product("best-wide-ledges").features}
+          asin={product("best-wide-ledges").asin}
+          bestFor={product("best-wide-ledges").cardLabel}
+          rank={product("best-wide-ledges").rank}
         />
       </div>
       <p>
@@ -452,14 +468,16 @@ export default function BestPigeonSpikesPage() {
       </p>
 
       {/* Product 3 */}
-      <h2 id={products[2].anchorId}>{products[2].h2Text}</h2>
+      <h2 id={product("steel-3m-strip").anchorId}>
+        {product("steel-3m-strip").h2Text}
+      </h2>
       <div className="not-prose">
         <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
+          name={product("steel-3m-strip").cardName}
+          features={product("steel-3m-strip").features}
+          asin={product("steel-3m-strip").asin}
+          bestFor={product("steel-3m-strip").cardLabel}
+          rank={product("steel-3m-strip").rank}
         />
       </div>
       <p>
@@ -477,14 +495,16 @@ export default function BestPigeonSpikesPage() {
       </p>
 
       {/* Product 4 */}
-      <h2 id={products[3].anchorId}>{products[3].h2Text}</h2>
+      <h2 id={product("best-for-gutters").anchorId}>
+        {product("best-for-gutters").h2Text}
+      </h2>
       <div className="not-prose">
         <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
+          name={product("best-for-gutters").cardName}
+          features={product("best-for-gutters").features}
+          asin={product("best-for-gutters").asin}
+          bestFor={product("best-for-gutters").cardLabel}
+          rank={product("best-for-gutters").rank}
         />
       </div>
       <p>
@@ -502,14 +522,16 @@ export default function BestPigeonSpikesPage() {
       </p>
 
       {/* Product 5 */}
-      <h2 id={products[4].anchorId}>{products[4].h2Text}</h2>
+      <h2 id={product("offo-steel-spikes").anchorId}>
+        {product("offo-steel-spikes").h2Text}
+      </h2>
       <div className="not-prose">
         <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
+          name={product("offo-steel-spikes").cardName}
+          features={product("offo-steel-spikes").features}
+          asin={product("offo-steel-spikes").asin}
+          bestFor={product("offo-steel-spikes").cardLabel}
+          rank={product("offo-steel-spikes").rank}
         />
       </div>
       <p>
@@ -527,14 +549,16 @@ export default function BestPigeonSpikesPage() {
       </p>
 
       {/* Product 6 */}
-      <h2 id={products[5].anchorId}>{products[5].h2Text}</h2>
+      <h2 id={product("best-large-areas").anchorId}>
+        {product("best-large-areas").h2Text}
+      </h2>
       <div className="not-prose">
         <ProductCard
-          name={products[5].cardName}
-          features={products[5].features}
-          asin={products[5].asin}
-          bestFor={products[5].cardLabel}
-          rank={products[5].rank}
+          name={product("best-large-areas").cardName}
+          features={product("best-large-areas").features}
+          asin={product("best-large-areas").asin}
+          bestFor={product("best-large-areas").cardLabel}
+          rank={product("best-large-areas").rank}
         />
       </div>
       <p>

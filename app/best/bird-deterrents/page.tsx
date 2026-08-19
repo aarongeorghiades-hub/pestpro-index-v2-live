@@ -193,6 +193,18 @@ const products: ProductRecord[] = [
   },
 ];
 
+// Records are addressed BY IDENTITY, never by position. A positional lookup
+// silently rebinds every later product when a record is added, removed or
+// reordered; this cannot. A missing anchorId throws, so the build fails loudly
+// rather than rendering undefined.
+function product(anchorId: string): ProductRecord {
+  const found = products.find((p) => p.anchorId === anchorId);
+  if (!found) {
+    throw new Error(`No product record with anchorId "${anchorId}"`);
+  }
+  return found;
+}
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Bird Deterrents at a Glance" },
   ...products.map((p) => ({
@@ -412,17 +424,18 @@ export default function BestBirdDeterrentsPage() {
         </tbody>{" "}
       </table>{" "}
       {/* Best Overall */}{" "}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
+      <h2 id={product("best-overall").anchorId}>
+        {product("best-overall").h2Label} &mdash;{" "}
+        {product("best-overall").h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
+          name={product("best-overall").cardName}
+          features={product("best-overall").features}
+          asin={product("best-overall").asin}
+          bestFor={product("best-overall").cardLabel}
+          rank={product("best-overall").rank}
         />{" "}
       </div>{" "}
       <p>
@@ -530,17 +543,18 @@ export default function BestBirdDeterrentsPage() {
         start here.{" "}
       </p>{" "}
       {/* Best Netting */}{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
+      <h2 id={product("best-netting").anchorId}>
+        {product("best-netting").h2Label} &mdash;{" "}
+        {product("best-netting").h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
+          name={product("best-netting").cardName}
+          features={product("best-netting").features}
+          asin={product("best-netting").asin}
+          bestFor={product("best-netting").cardLabel}
+          rank={product("best-netting").rank}
         />{" "}
       </div>{" "}
       <p>
@@ -658,17 +672,18 @@ export default function BestBirdDeterrentsPage() {
         </Callout>{" "}
       </div>{" "}
       {/* Best Discreet */}{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
+      <h2 id={product("best-discreet").anchorId}>
+        {product("best-discreet").h2Label} &mdash;{" "}
+        {product("best-discreet").h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
+          name={product("best-discreet").cardName}
+          features={product("best-discreet").features}
+          asin={product("best-discreet").asin}
+          bestFor={product("best-discreet").cardLabel}
+          rank={product("best-discreet").rank}
         />{" "}
       </div>{" "}
       <p>
@@ -770,17 +785,17 @@ export default function BestBirdDeterrentsPage() {
         but for the right application it is worth every penny.{" "}
       </p>{" "}
       {/* Best Budget */}{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
+      <h2 id={product("best-budget").anchorId}>
+        {product("best-budget").h2Label} &mdash; {product("best-budget").h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
+          name={product("best-budget").cardName}
+          features={product("best-budget").features}
+          asin={product("best-budget").asin}
+          bestFor={product("best-budget").cardLabel}
+          rank={product("best-budget").rank}
         />{" "}
       </div>{" "}
       <p>
@@ -873,17 +888,18 @@ export default function BestBirdDeterrentsPage() {
         quickly &mdash; measure your ledges carefully before ordering.{" "}
       </p>{" "}
       {/* Best Coverage */}{" "}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
+      <h2 id={product("best-coverage").anchorId}>
+        {product("best-coverage").h2Label} &mdash;{" "}
+        {product("best-coverage").h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
+          name={product("best-coverage").cardName}
+          features={product("best-coverage").features}
+          asin={product("best-coverage").asin}
+          bestFor={product("best-coverage").cardLabel}
+          rank={product("best-coverage").rank}
         />{" "}
       </div>{" "}
       <p>

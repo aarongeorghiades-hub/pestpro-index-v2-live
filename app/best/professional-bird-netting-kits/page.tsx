@@ -205,6 +205,18 @@ const products: ProductRecord[] = [
   },
 ];
 
+// Records are addressed BY IDENTITY, never by position. A positional lookup
+// silently rebinds every later product when a record is added, removed or
+// reordered; this cannot. A missing anchorId throws, so the build fails loudly
+// rather than rendering undefined.
+function product(anchorId: string): ProductRecord {
+  const found = products.find((p) => p.anchorId === anchorId);
+  if (!found) {
+    throw new Error(`No product record with anchorId "${anchorId}"`);
+  }
+  return found;
+}
+
 const tocItems = [
   { id: "at-a-glance", title: "At a Glance" },
   ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
@@ -348,14 +360,14 @@ export default function BestProfessionalBirdNettingKitsPage() {
       </table>
 
       {/* Product 1 */}
-      <h2 id={products[0].anchorId}>{products[0].h2Text}</h2>
+      <h2 id={product("product-1").anchorId}>{product("product-1").h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
+          name={product("product-1").cardName}
+          features={product("product-1").features}
+          asin={product("product-1").asin}
+          bestFor={product("product-1").cardLabel}
+          rank={product("product-1").rank}
         />
       </div>
       <p>
@@ -389,14 +401,14 @@ export default function BestProfessionalBirdNettingKitsPage() {
       </p>
 
       {/* Product 2 */}
-      <h2 id={products[1].anchorId}>{products[1].h2Text}</h2>
+      <h2 id={product("product-2").anchorId}>{product("product-2").h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
+          name={product("product-2").cardName}
+          features={product("product-2").features}
+          asin={product("product-2").asin}
+          bestFor={product("product-2").cardLabel}
+          rank={product("product-2").rank}
         />
       </div>
       <p>
@@ -427,14 +439,14 @@ export default function BestProfessionalBirdNettingKitsPage() {
       </p>
 
       {/* Product 3 */}
-      <h2 id={products[2].anchorId}>{products[2].h2Text}</h2>
+      <h2 id={product("product-3").anchorId}>{product("product-3").h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
+          name={product("product-3").cardName}
+          features={product("product-3").features}
+          asin={product("product-3").asin}
+          bestFor={product("product-3").cardLabel}
+          rank={product("product-3").rank}
         />
       </div>
       <p>
@@ -472,14 +484,14 @@ export default function BestProfessionalBirdNettingKitsPage() {
       </p>
 
       {/* Product 4 */}
-      <h2 id={products[3].anchorId}>{products[3].h2Text}</h2>
+      <h2 id={product("product-4").anchorId}>{product("product-4").h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
+          name={product("product-4").cardName}
+          features={product("product-4").features}
+          asin={product("product-4").asin}
+          bestFor={product("product-4").cardLabel}
+          rank={product("product-4").rank}
         />
       </div>
       <p>
@@ -510,14 +522,14 @@ export default function BestProfessionalBirdNettingKitsPage() {
       </p>
 
       {/* Product 5 */}
-      <h2 id={products[4].anchorId}>{products[4].h2Text}</h2>
+      <h2 id={product("product-5").anchorId}>{product("product-5").h2Text}</h2>
       <div className="not-prose my-6">
         <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
+          name={product("product-5").cardName}
+          features={product("product-5").features}
+          asin={product("product-5").asin}
+          bestFor={product("product-5").cardLabel}
+          rank={product("product-5").rank}
         />
       </div>
       <p>

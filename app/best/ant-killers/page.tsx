@@ -163,6 +163,18 @@ const products: ProductRecord[] = [
   },
 ];
 
+// Records are addressed BY IDENTITY, never by position. A positional lookup
+// silently rebinds every later product when a record is added, removed or
+// reordered; this cannot. A missing anchorId throws, so the build fails loudly
+// rather than rendering undefined.
+function product(anchorId: string): ProductRecord {
+  const found = products.find((p) => p.anchorId === anchorId);
+  if (!found) {
+    throw new Error(`No product record with anchorId "${anchorId}"`);
+  }
+  return found;
+}
+
 const tocItems = [
   { id: "at-a-glance", title: "Best Ant Killers at a Glance" },
   ...products.map((p) => ({
@@ -379,17 +391,18 @@ export default function BestAntKillersPage() {
         </tbody>{" "}
       </table>{" "}
       {/* Best Overall */}{" "}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
+      <h2 id={product("best-overall").anchorId}>
+        {product("best-overall").h2Label} &mdash;{" "}
+        {product("best-overall").h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
+          name={product("best-overall").cardName}
+          features={product("best-overall").features}
+          asin={product("best-overall").asin}
+          bestFor={product("best-overall").cardLabel}
+          rank={product("best-overall").rank}
         />{" "}
       </div>{" "}
       <p>
@@ -474,17 +487,18 @@ export default function BestAntKillersPage() {
         black garden ant invasion in your kitchen or bathroom, start here.{" "}
       </p>{" "}
       {/* Best Multi-Pack */}{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
+      <h2 id={product("best-multi-pack").anchorId}>
+        {product("best-multi-pack").h2Label} &mdash;{" "}
+        {product("best-multi-pack").h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
+          name={product("best-multi-pack").cardName}
+          features={product("best-multi-pack").features}
+          asin={product("best-multi-pack").asin}
+          bestFor={product("best-multi-pack").cardLabel}
+          rank={product("best-multi-pack").rank}
         />{" "}
       </div>{" "}
       <p>
@@ -560,17 +574,18 @@ export default function BestAntKillersPage() {
         spring or summer ant invasion.{" "}
       </p>{" "}
       {/* Best Outdoor Powder */}{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
+      <h2 id={product("best-outdoor").anchorId}>
+        {product("best-outdoor").h2Label} &mdash;{" "}
+        {product("best-outdoor").h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
+          name={product("best-outdoor").cardName}
+          features={product("best-outdoor").features}
+          asin={product("best-outdoor").asin}
+          bestFor={product("best-outdoor").cardLabel}
+          rank={product("best-outdoor").rank}
         />{" "}
       </div>{" "}
       <p>
@@ -654,17 +669,17 @@ export default function BestAntKillersPage() {
         inside-and-outside ant control strategy.{" "}
       </p>{" "}
       {/* Best Gel Bait */}{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
+      <h2 id={product("best-gel").anchorId}>
+        {product("best-gel").h2Label} &mdash; {product("best-gel").h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
+          name={product("best-gel").cardName}
+          features={product("best-gel").features}
+          asin={product("best-gel").asin}
+          bestFor={product("best-gel").cardLabel}
+          rank={product("best-gel").rank}
         />{" "}
       </div>{" "}
       <p>
