@@ -196,28 +196,6 @@ const products: ProductRecord[] = [
     h2Text: "OFFO Stainless Steel Bird Spikes",
     tocTitle: "OFFO Stainless Steel Spikes",
   },
-  {
-    anchorId: "best-large-areas",
-    asin: "B07KB3PGZB",
-    rank: 6,
-    cardName: "Birdgo Anti-Pigeon Netting (5m x 5m)",
-    cardLabel: "Best for Large Areas",
-    features: [
-      "5m x 5m net, 25 square metres of coverage",
-      "Excludes birds from an entire opening rather than a ledge",
-      "Suits balconies, car ports and light wells",
-      "Must be fitted taut to work correctly",
-      "A larger installation job than a spike strip",
-      "The most complete exclusion method on this page",
-    ],
-    tableCells: [
-      "Birdgo Anti-Pigeon Netting (5m x 5m)",
-      "Netting",
-      "Best for Large Areas",
-    ],
-    h2Text: "Best for Large Areas — Birdgo Anti-Pigeon Netting",
-    tocTitle: "Best for Large Areas — Birdgo Netting",
-  },
 ];
 
 // Records are addressed BY IDENTITY, never by position. A positional lookup
@@ -546,34 +524,6 @@ export default function BestPigeonSpikesPage() {
         name to it. Check the pack size on the listing before you buy, because
         the length of ledge you need to cover is the only number that decides
         whether it is enough.
-      </p>
-
-      {/* Product 6 */}
-      <h2 id={product("best-large-areas").anchorId}>
-        {product("best-large-areas").h2Text}
-      </h2>
-      <div className="not-prose">
-        <ProductCard
-          name={product("best-large-areas").cardName}
-          features={product("best-large-areas").features}
-          asin={product("best-large-areas").asin}
-          bestFor={product("best-large-areas").cardLabel}
-          rank={product("best-large-areas").rank}
-        />
-      </div>
-      <p>
-        Netting solves a different problem from spikes. Spikes deny a bird a
-        narrow ledge; netting closes off an entire opening, which is what you
-        need for a balcony, a car port, a light well, or the underside of a
-        raised structure.
-      </p>
-      <p>
-        This is a five by five metre net, twenty-five square metres, which is
-        more area than any spike strip on this page could address. Fitting it is
-        a bigger job than sticking down a strip, and a slack net traps birds
-        instead of excluding them, so tension it properly and check the edges
-        are closed. Done correctly it is the most complete exclusion on this
-        page.
       </p>
 
       <div className="not-prose">
