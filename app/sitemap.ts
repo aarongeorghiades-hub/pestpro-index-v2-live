@@ -23,27 +23,188 @@ import { getAllBoroughs as getAllDerbyBoroughs } from './pest-control/derby/derb
 import { posts } from './blog/data/posts';
 import { pestGuides } from '@/data/pest-guides';
 import { LOCATIONS, PESTS } from './pest-control/pest-city-config';
+import fs from 'node:fs';
+import path from 'node:path';
 
 // Query providers at request time so the sitemap reflects the live table.
 export const dynamic = 'force-dynamic';
 
+// ---------------------------------------------------------------------------
+// ROUTE DISCOVERY
+// ---------------------------------------------------------------------------
+// Static routes are DISCOVERED, never listed. Before this file was rewritten
+// it carried 156 hand-typed URL literals, and four live pages — /london,
+// /frequently-asked-questions, /resources and /get-help — had simply never
+// been added to that list. A list cannot notice what is missing from it.
+//
+// Two independent discovery sources are tried in order:
+//
+//   1. .next/app-path-routes-manifest.json — the App Router's own enumeration,
+//      emitted by `next build` and shipped inside .next. Route groups such as
+//      (home) are already resolved to their URL form, and page routes are
+//      distinguishable from route handlers by the `/page` vs `/route` suffix
+//      on the key. This is the authoritative source.
+//
+//   2. a walk of the app/ source tree, used only if the manifest is absent or
+//      unreadable — during `next dev`, or if a future Next release renames it.
+//
+// A new segment, for example app/us/anything/page.tsx, is therefore picked up
+// by the next build with NO change to this file.
+
+const APP_DIR = path.join(process.cwd(), 'app');
+const ROUTES_MANIFEST = path.join(process.cwd(), '.next', 'app-path-routes-manifest.json');
+
+// Discovery must never silently degrade. If both sources fail, or return an
+// implausibly small set, emitting a truncated sitemap would tell Google that
+// the missing URLs are gone. Throwing instead leaves the last good sitemap in
+// place. The floor is set well below the real figure (171 at the time of
+// writing) and well above zero.
+const MIN_EXPECTED_STATIC_ROUTES = 100;
+
+// ---- the deny rule -------------------------------------------------------
+// Nothing is excluded by omission. Everything excluded is excluded here.
+
+// Any URL segment equal to one of these makes the whole path unpublishable.
+const DENY_SEGMENTS = new Set([
+  'api', 'admin', 'auth', 'login', 'logout', 'signin', 'signup',
+  'dashboard', 'account', 'preview', 'draft',
+]);
+
+// Exact paths that render and return 200 but must not be advertised. Each
+// carries the measured reason it is here.
+const DENY_PATHS = new Map<string, string>([
+  // 'use client' form with no metadata of its own, so it inherits
+  // alternates.canonical = https://pestproindex.com/professionals from
+  // app/professionals/layout.tsx. Listing a URL that canonicalises elsewhere
+  // asks Google to crawl a page that then points it somewhere else.
+  ['/professionals/submit', 'canonicalises to /professionals'],
+]);
+
+function isPublishable(urlPath: string): boolean {
+  if (DENY_PATHS.has(urlPath)) return false;
+  // Dynamic segments are supplied by their own data sources further down.
+  if (urlPath.includes('[')) return false;
+  for (const segment of urlPath.split('/')) {
+    if (!segment) continue;
+    // Private/internal conventions: /_not-found, /_global-error, @slots.
+    if (segment.startsWith('_') || segment.startsWith('@')) return false;
+    if (DENY_SEGMENTS.has(segment)) return false;
+  }
+  return true;
+}
+
+// ---- source 1: the build's own route manifest -----------------------------
+function discoverFromManifest(): string[] {
+  const raw = fs.readFileSync(ROUTES_MANIFEST, 'utf8');
+  const manifest = JSON.parse(raw) as Record<string, string>;
+  return Object.entries(manifest)
+    .filter(([key]) => key.endsWith('/page'))
+    .map(([, urlPath]) => urlPath);
+}
+
+// ---- source 2: the app/ source tree ---------------------------------------
+function discoverFromFilesystem(): string[] {
+  const found: string[] = [];
+  const walk = (dir: string, segments: string[]) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (entry.isDirectory()) {
+        const name = entry.name;
+        // A (group) directory contributes no URL segment.
+        const next =
+          name.startsWith('(') && name.endsWith(')') ? segments : [...segments, name];
+        walk(path.join(dir, name), next);
+      } else if (/^page\.(tsx|ts|jsx|js)$/.test(entry.name)) {
+        found.push('/' + segments.join('/'));
+      }
+    }
+  };
+  walk(APP_DIR, []);
+  return found.map((p) => (p === '/' ? '/' : p));
+}
+
+function discoverStaticRoutes(): string[] {
+  let discovered: string[] = [];
+  let source = 'manifest';
+  try {
+    discovered = discoverFromManifest();
+  } catch {
+    source = 'filesystem';
+    discovered = discoverFromFilesystem();
+  }
+  if (discovered.filter(isPublishable).length < MIN_EXPECTED_STATIC_ROUTES && source === 'manifest') {
+    source = 'filesystem';
+    discovered = discoverFromFilesystem();
+  }
+  const publishable = Array.from(new Set(discovered.filter(isPublishable))).sort();
+  if (publishable.length < MIN_EXPECTED_STATIC_ROUTES) {
+    throw new Error(
+      `[sitemap] route discovery returned ${publishable.length} static routes via ${source}, ` +
+        `below the floor of ${MIN_EXPECTED_STATIC_ROUTES}. Refusing to emit a truncated sitemap.`
+    );
+  }
+  return publishable;
+}
+
+// ---- crawl hints ----------------------------------------------------------
+// Routes are discovered; changefreq and priority are editorial and cannot be.
+// The rules below reproduce every one of the 166 static entries the previous
+// hand-maintained array carried, verified by simulation before this file was
+// written. Six URLs were tuned individually there and are preserved verbatim.
+
+type CrawlHint = {
+  changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+  priority: number;
+};
+
+const HINT_OVERRIDES: Record<string, CrawlHint> = {
+  '/best/awaabs-law-damp-mould-equipment': { changeFrequency: 'daily', priority: 0.9 },
+  '/best/damp-proof-paint-mould-treatment': { changeFrequency: 'monthly', priority: 0.8 },
+  '/best/rodent-proofing': { changeFrequency: 'monthly', priority: 0.8 },
+  '/guides/commercial-pest-control': { changeFrequency: 'weekly', priority: 0.9 },
+  '/guides/landlord-pest-control-responsibilities': { changeFrequency: 'monthly', priority: 0.8 },
+  '/guides/pest-control-costs': { changeFrequency: 'weekly', priority: 0.9 },
+};
+
+const HINT_RULES: Array<[RegExp, CrawlHint]> = [
+  [/^\/$/, { changeFrequency: 'daily', priority: 1 }],
+  [/^\/(residential|commercial)$/, { changeFrequency: 'daily', priority: 0.9 }],
+  [/^\/best$/, { changeFrequency: 'weekly', priority: 0.8 }],
+  [/^\/best\//, { changeFrequency: 'weekly', priority: 0.8 }],
+  [/^\/guides$/, { changeFrequency: 'weekly', priority: 0.9 }],
+  [/^\/guides\//, { changeFrequency: 'weekly', priority: 0.8 }],
+  [/^\/blog$/, { changeFrequency: 'weekly', priority: 0.6 }],
+  [/^\/pest-control$/, { changeFrequency: 'weekly', priority: 0.8 }],
+  [/^\/pest-control\/london$/, { changeFrequency: 'weekly', priority: 0.9 }],
+  [/^\/pest-control\//, { changeFrequency: 'weekly', priority: 0.8 }],
+  [/^\/pest-library$/, { changeFrequency: 'monthly', priority: 0.7 }],
+  [/^\/(products|commercial-products)$/, { changeFrequency: 'weekly', priority: 0.7 }],
+  [/^\/professionals$/, { changeFrequency: 'weekly', priority: 0.4 }],
+  [/^\/(about|contact|privacy|cookies)$/, { changeFrequency: 'monthly', priority: 0.4 }],
+  [/^\/useful-links$/, { changeFrequency: 'monthly', priority: 0.5 }],
+  [/^\/[^/]+\/(residential|commercial)$/, { changeFrequency: 'daily', priority: 0.9 }],
+];
+
+const DEFAULT_HINT: CrawlHint = { changeFrequency: 'monthly', priority: 0.5 };
+
+// City hub slugs come from the same LOCATIONS data the pest-city URLs use, so
+// a new city is a data change, not a change to this file.
+const CITY_HUB_SLUGS = new Set(LOCATIONS.map((location) => location.slug));
+
+function hintFor(urlPath: string): CrawlHint {
+  const override = HINT_OVERRIDES[urlPath];
+  if (override) return override;
+  for (const [pattern, hint] of HINT_RULES) {
+    if (pattern.test(urlPath)) return hint;
+  }
+  const single = urlPath.match(/^\/([^/]+)$/);
+  if (single && CITY_HUB_SLUGS.has(single[1])) {
+    return { changeFrequency: 'daily', priority: 0.9 };
+  }
+  return DEFAULT_HINT;
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://pestproindex.com';
-
-  // Bare city hub pages (/{city}) that aren't already listed in the static
-  // array below. Each has an app/{city}/page.tsx. (london, newcastle, cardiff,
-  // edinburgh, leicester, coventry, belfast, derby and hampshire are already
-  // present, so they're intentionally omitted here to avoid duplicate URLs.)
-  const cityHubSlugs = [
-    'birmingham', 'manchester', 'liverpool', 'leeds', 'nottingham',
-    'brighton', 'sheffield', 'bristol', 'glasgow', 'bradford',
-  ];
-  const cityHubUrls = cityHubSlugs.map((slug) => ({
-    url: `${baseUrl}/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'daily' as const,
-    priority: 0.9,
-  }));
 
   // Provider listing pages. Only active providers with a slug, deduplicated
   // (65 slugs are shared by 2 rows — same business cross-listed by region, or
@@ -255,951 +416,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly' as const,
     priority: 0.5,
   }));
+  // Static routes, discovered. The root is emitted as the bare origin with no
+  // trailing slash, matching the sitemap this replaces and the site's
+  // trailingSlash:false normalisation.
+  const staticUrls = discoverStaticRoutes().map((urlPath) => ({
+    url: urlPath === '/' ? baseUrl : `${baseUrl}${urlPath}`,
+    lastModified: new Date(),
+    ...hintFor(urlPath),
+  }));
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/birmingham/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/birmingham/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/manchester/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/manchester/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/liverpool/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/liverpool/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/leeds/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/leeds/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/nottingham/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/nottingham/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/brighton/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/brighton/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/sheffield/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/sheffield/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/bristol/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/bristol/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/glasgow/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/glasgow/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/bradford/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/bradford/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/newcastle`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/newcastle/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/newcastle/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/cardiff`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/cardiff/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/cardiff/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/edinburgh`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/edinburgh/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/edinburgh/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/leicester`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/leicester/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/leicester/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/coventry`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/coventry/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/coventry/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/belfast`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/belfast/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/belfast/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/derby`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/derby/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/derby/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/hampshire`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/hampshire/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/hampshire/commercial`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/guides/how-to-get-rid-of-mice`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/mouse-traps`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/how-to-get-rid-of-rats`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/rat-traps`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/wasp-nest-removal`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/wasp-killers`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/how-to-get-rid-of-bed-bugs`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/bed-bug-treatments`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/how-to-get-rid-of-cockroaches`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/cockroach-killers`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/pest-control-costs`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/guides/how-to-get-rid-of-fleas`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/flea-treatments`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/how-to-get-rid-of-ants`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/ant-killers`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/how-to-get-rid-of-squirrels`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/squirrel-deterrents`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/pigeon-control`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/bird-deterrents`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/how-to-get-rid-of-moths`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/moth-killers`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/how-to-get-rid-of-foxes`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/fox-deterrents`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/cat-deterrents`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/how-to-get-rid-of-silverfish`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/silverfish-treatments`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/woodworm-treatment`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/woodworm-treatments`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/carpet-beetle-control`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/carpet-beetle-treatments`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/restaurant-pest-control`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/commercial-fly-killers`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/commercial-pest-control`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/guides/warehouse-pest-management`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/commercial-rodent-bait-stations`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/hotel-pest-control`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/commercial-insect-monitors`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/office-pest-control`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/commercial-bird-proofing`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/rat-poison`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/mouse-poison`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/bed-bug-spray`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/flea-spray-for-home`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/wasp-nest-foam`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/ant-gel-bait`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/cockroach-gel-bait`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/flea-fogger`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/bed-bug-mattress-encasement`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/rat-bait-stations`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/mouse-bait-stations`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/moth-traps`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/fly-killer-indoor`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/mole-traps`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/pigeon-spikes`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/rat-poison-vs-rat-traps`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/humane-mouse-traps-vs-kill-traps`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/professional-pest-control-vs-diy`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/ultrasonic-pest-repellers-do-they-work`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/electric-fly-killers-vs-sticky-traps`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/ultrasonic-pest-repellers`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/spider-repellent`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/drain-fly-killer`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/rat-poison-for-gardens`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/mouse-repellent`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/professional-bed-bug-steamers`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/professional-mattress-encasements`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/commercial-dehumidifiers`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/professional-bait-station-kits`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/professional-insect-light-traps`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/professional-ulv-foggers`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/professional-pressure-sprayers`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/professional-bird-netting-kits`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/awaabs-law-damp-mould-equipment`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/best/damp-proof-paint-mould-treatment`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best/rodent-proofing`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/wasp-season-preparation`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/autumn-pest-proofing`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/spring-pest-prevention`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/moving-house-pest-checklist`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/how-to-pest-proof-your-shed`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/how-to-pest-proof-your-loft`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/student-house-pest-guide`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/landlord-pest-control`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/landlord-pest-control-responsibilities`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/natural-ant-repellents`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/natural-mouse-deterrents`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/natural-rat-deterrents`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/natural-spider-repellents`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/natural-wasp-deterrents`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/natural-flea-remedies`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/natural-moth-repellents`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/natural-fox-deterrents`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/plants-that-repel-pests`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/essential-oils-for-pest-control`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/pest-control`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/pest-control/london`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/pest-control/regions`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/best`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/professionals`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.4,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.4,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.4,
-    },
-    {
-      url: `${baseUrl}/cookies`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.4,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.4,
-    },
-    {
-      url: `${baseUrl}/products`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/commercial-products`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/pest-library`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/useful-links`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
+  const entries: MetadataRoute.Sitemap = [
+    ...staticUrls,
     ...pestGuides.map((pest) => ({
       url: `${baseUrl}/pest/${pest.slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
-    ...cityHubUrls,
     ...providerUrls,
     ...blogPostUrls,
     ...regionUrls,
@@ -1223,4 +456,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...derbyBoroughUrls,
     ...pestCityUrls,
   ];
+
+  // One URL, one entry. Discovery and the data-driven arrays are independent
+  // sources and could in principle name the same URL; first occurrence wins.
+  const seenUrls = new Set<string>();
+  return entries.filter((entry) => {
+    if (seenUrls.has(entry.url)) return false;
+    seenUrls.add(entry.url);
+    return true;
+  });
 }
