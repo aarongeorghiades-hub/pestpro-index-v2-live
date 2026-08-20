@@ -323,3 +323,35 @@ not repeated here. Laws 48 to 52 are new.
 A PROTECTION GIVEN BY NAME IS NOT OVERRIDDEN BY A BROAD CLASS AUTHORISATION.
 If a task appears to require touching anything above, STOP AND ESCALATE.
 Proceed only on a ruling that names the single sentence.
+
+## STANDING PRODUCT BARS — PERMANENT, SURVIVE EVERY SESSION
+
+A standing bar is a permanent restriction on a specific product. It is not a defect
+awaiting a fix and it is never "closed". It binds every future round on every route.
+
+### B000BQT5IG — Combat Ant Killing Gel 27g
+
+STATUS: PERMANENTLY BARRED FROM CARRYING ANY AWARD ANYWHERE ON THE ESTATE.
+
+Origin: the Session 26 bar. Reason: US import.
+
+WHAT IS BARRED: any label conferring rank, endorsement or superlative, on any surface,
+on any route. This includes any string beginning "Best". It applies to cardLabel,
+h2Label, tocLabel, any tableCells entry, prose, headings, JSON-LD and JSX comments alike.
+
+WHAT IS PERMITTED: a neutral descriptor naming the product format and claiming no
+ranking. The current compliant value is "Gel Bait" on app/best/ant-killers/page.tsx.
+
+MECHANISM, AND WHY IT IS A SUBSTITUTION AND NOT A DELETION: h2Label and tocLabel cannot
+be emptied. Both render sites hardcode an em-dash separator, so an empty label yields a
+dangling em-dash. Removing the award therefore means replacing it with a neutral
+descriptor, never blanking the field. cardLabel alone can be emptied.
+
+BREACH HISTORY: live and unrecorded through Sessions 33 and 34. Corrected in Session 35
+Round 1 across cardLabel, h2Label, tocLabel, tableCells[2] and the JSX comment.
+Commit 18a4fbbe1f1049557c6f901b0396cb5c22baaa41. Verified live on pestproindex.com,
+zero occurrences in both visible HTML and flight payload, with a control route passing.
+
+WHY THIS ENTRY EXISTS: the bar was ruled in Session 26 and written down nowhere. That
+omission alone caused a live compliance breach to survive two consecutive sessions. A
+ruling that is not in this file does not exist.
