@@ -126,17 +126,17 @@ const products: ProductRecord[] = [
     asin: "B000BQT5IG",
     rank: 3,
     cardName: "Combat Ant Killing Gel 27g",
-    cardLabel: "Best Gel Bait",
+    cardLabel: "Gel Bait",
     features: [
       "Professional-strength fipronil gel bait",
       "Syringe applicator for precise placement in cracks and crevices",
       "Kills the entire colony including the queen",
       "Ideal for kitchens, bathrooms, and hard-to-reach areas",
     ],
-    tableCells: ["Combat Ant Killing Gel 27g", "Gel bait", "Best Gel Bait"],
-    h2Label: "Best Gel Bait",
+    tableCells: ["Combat Ant Killing Gel 27g", "Gel bait", "Gel Bait"],
+    h2Label: "Gel Bait",
     h2Name: "Combat Ant Killing Gel 27g",
-    tocLabel: "Best Gel Bait",
+    tocLabel: "Gel Bait",
     tocName: "Combat Ant Killing Gel",
   },
 ];
@@ -551,7 +551,7 @@ export default function BestAntKillersPage() {
         households, this pack alone will be sufficient to resolve a typical
         spring or summer ant invasion.{" "}
       </p>{" "}
-      {/* Best Gel Bait */}{" "}
+      {/* Gel Bait */}{" "}
       <h2 id={product("best-gel").anchorId}>
         {product("best-gel").h2Label} &mdash; {product("best-gel").h2Name}
       </h2>{" "}
