@@ -275,7 +275,7 @@ export default function NaturalMouseDeterrentsPage() {
 
       <h3>Copper Mesh</h3>
       <p>
-        Copper mesh serves the same purpose as steel wool but with two advantages: it <strong>does not rust</strong> (making it suitable for exterior use and damp areas) and it is slightly more resistant to being pulled out by persistent rodents. Copper mesh is more expensive than steel wool but is a superior long-term solution for permanent proofing.
+        Copper mesh serves the same purpose as steel wool but with two advantages: it <strong>does not rust</strong> (making it suitable for exterior use and damp areas) and it is slightly more resistant to being pulled out by persistent rodents. Copper mesh is a superior long-term solution for permanent proofing.
       </p>
 
       <h3>Expanding Foam with Wire Wool</h3>

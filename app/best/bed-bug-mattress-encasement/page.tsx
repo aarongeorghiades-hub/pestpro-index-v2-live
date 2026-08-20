@@ -557,7 +557,6 @@ export default function BestMattressEncasementPage() {
       </p>{" "}
       <ul>
         {" "}
-        <li>Most expensive option</li>{" "}
         <li>Smooth surface is less soft than cotton terry</li>{" "}
         <li>Can feel warm in summer without a cotton sheet</li>{" "}
       </ul>{" "}

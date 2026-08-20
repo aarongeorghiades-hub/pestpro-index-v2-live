@@ -579,8 +579,7 @@ export default function BestFleaFoggerPage() {
         where fleas and their eggs concentrate. Strikeback has been a trusted UK
         pest control brand since 2007, and this product represents their most
         comprehensive flea treatment formula. For homeowners who want IGR
-        protection without the premium price of Indorex, this is an excellent
-        alternative.{" "}
+        protection, this is an excellent alternative.{" "}
       </p>{" "}
       <p>
         <strong>Pros:</strong>

@@ -139,7 +139,6 @@ const products: ProductRecord[] = [
       "75 professional bait blocks (1.5kg total) + 2 tamper-resistant stations",
       "Good starting kit for small-to-medium commercial premises",
       "Brodifacoum active ingredient — professional-grade efficacy",
-      "Most affordable entry point for a professional bait station programme",
       "Individual blocks make it easy to portion bait across multiple stations",
     ],
     tableCells: ["Pest Expert Formula B+ Block Kit 1.5kg", "Best Starter Kit"],
@@ -535,7 +534,6 @@ export default function BestCommercialRodentBaitStationsPage() {
           Includes tamper-resistant bait stations &mdash; ready to deploy out of
           the box
         </li>{" "}
-        <li>Lowest per-gram cost for commercial-scale rodent management</li>{" "}
         <li>Effective against warfarin-resistant rodent populations</li>{" "}
         <li>Ideal for recurring monthly replenishment orders</li>{" "}
       </ul>{" "}
@@ -939,9 +937,7 @@ export default function BestCommercialRodentBaitStationsPage() {
       </p>{" "}
       <ul>
         {" "}
-        <li>
-          Pack of four provides the best per-unit value for large installations
-        </li>{" "}
+        <li>Pack of four for large installations</li>{" "}
         <li>
           Heavy-duty industrial construction built for commercial environments
         </li>{" "}
@@ -1002,8 +998,7 @@ export default function BestCommercialRodentBaitStationsPage() {
         Large Professional Bait Boxes offer an excellent{" "}
         <strong>budget-friendly entry point</strong>. Sold in a{" "}
         <strong>pack of two</strong>, these stations provide genuine
-        commercial-grade quality at a price that undercuts most competing
-        products.{" "}
+        commercial-grade quality.{" "}
       </p>{" "}
       <p>
         {" "}
@@ -1131,8 +1126,9 @@ export default function BestCommercialRodentBaitStationsPage() {
           Transparent lid is less suitable for external use where UV degradation
           may cloud the plastic over time
         </li>{" "}
-        <li>Extra large size may be excessive for smaller monitoring points</li>{" "}
-        <li>Higher price per unit than basic opaque stations</li>{" "}
+        <li>
+          Extra large size may be excessive for smaller monitoring points
+        </li>{" "}
       </ul>{" "}
       <p>
         {" "}

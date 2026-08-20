@@ -407,8 +407,7 @@ export default function ProfessionalMattressEncasementsPage() {
         {" "}
         When you need to encase every mattress across a large portfolio and
         budget is a real constraint, the Utopia Bedding encasement delivers
-        genuine six-sided protection at roughly half the price of branded
-        alternatives.{" "}
+        genuine six-sided protection.{" "}
       </p>{" "}
       <p>
         {" "}

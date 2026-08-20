@@ -347,7 +347,7 @@ export default function StudentHousePestGuidePage() {
             <h3>Mouse Traps</h3>
 
       <p>
-        Classic <strong>snap traps</strong> remain the cheapest and most effective DIY mouse control method. Place them perpendicular to the wall with the trigger end touching the skirting board &mdash; mice run along walls and will walk straight onto the trap. Bait with a small smear of <strong>peanut butter</strong> or <strong>chocolate spread</strong> (not cheese &mdash; it dries out quickly and mice are not particularly attracted to it). Place traps where you have seen droppings or along known mouse runs. Check traps daily and dispose of caught mice in a sealed bag in the outside bin. For a typical student kitchen, three to four traps along the skirting boards and behind appliances is a good starting point.
+        Classic <strong>snap traps</strong> remain the most effective DIY mouse control method. Place them perpendicular to the wall with the trigger end touching the skirting board &mdash; mice run along walls and will walk straight onto the trap. Bait with a small smear of <strong>peanut butter</strong> or <strong>chocolate spread</strong> (not cheese &mdash; it dries out quickly and mice are not particularly attracted to it). Place traps where you have seen droppings or along known mouse runs. Check traps daily and dispose of caught mice in a sealed bag in the outside bin. For a typical student kitchen, three to four traps along the skirting boards and behind appliances is a good starting point.
       </p>
 
       <div className="not-prose space-y-6 my-8">

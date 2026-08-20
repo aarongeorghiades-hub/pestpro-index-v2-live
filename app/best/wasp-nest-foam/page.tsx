@@ -563,11 +563,9 @@ export default function BestWaspNestFoamPage() {
       <p>
         {" "}
         This is a no-frills product that works well for accessible, ground-level
-        nests in sheds, garden walls, and air bricks. At this price point, you
-        can buy two cans for less than most premium alternatives, giving you a
-        backup can for retreatment if needed. For homeowners dealing with a
-        single small nest that they can approach safely, Zero In offers genuine
-        value without compromising on effectiveness.{" "}
+        nests in sheds, garden walls, and air bricks. For homeowners dealing
+        with a single small nest that they can approach safely, Zero In offers
+        genuine value without compromising on effectiveness.{" "}
       </p>{" "}
       <p>
         <strong>Pros:</strong>

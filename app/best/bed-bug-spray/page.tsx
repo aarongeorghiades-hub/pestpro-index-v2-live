@@ -235,7 +235,6 @@ const products: ProductRecord[] = [
     features: [
       "Trade-size 5L refill with trigger hose sprayer",
       "Covers 250m² — enough for an entire HMO",
-      "Most cost-effective per m² treatment",
       "Ideal for landlords treating multiple properties",
     ],
     tableCells: [
@@ -716,7 +715,6 @@ export default function BestBedBugSprayPage() {
       </p>{" "}
       <ul>
         {" "}
-        <li>Higher upfront cost than smaller kits</li>{" "}
         <li>Bulky container — not practical for a single room</li>{" "}
         <li>No powder or fumigator included</li>{" "}
       </ul>{" "}

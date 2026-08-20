@@ -662,18 +662,18 @@ export default function BestWoodwormTreatmentsPage() {
         The key limitation of the PSW85 is its <strong>300ml volume</strong>,
         which makes it wholly impractical for treating larger areas such as loft
         rafters, floor joists, or subfloor timbers. For those applications, the
-        1L or 5L Barrettine fluid applied by garden sprayer is far more
-        economical and provides better, more even coverage. Think of the PSW85
-        as a precision tool rather than a broad-spectrum treatment &mdash; it
-        excels at treating individual pieces of furniture, filling specific exit
-        holes with treatment fluid, and providing targeted protection to small
-        timber sections. It also works well as a first-response product: if you
-        discover fresh woodworm holes on a Saturday afternoon, you can treat the
-        affected area immediately with the PSW85 while researching and ordering
-        a comprehensive treatment solution for delivery during the week. The
-        Rentokil brand provides reassurance &mdash; they are the UK&apos;s
-        largest pest control company and their products are formulated to the
-        same standards as their professional treatment range.{" "}
+        1L or 5L Barrettine fluid applied by garden sprayer provides better,
+        more even coverage. Think of the PSW85 as a precision tool rather than a
+        broad-spectrum treatment &mdash; it excels at treating individual pieces
+        of furniture, filling specific exit holes with treatment fluid, and
+        providing targeted protection to small timber sections. It also works
+        well as a first-response product: if you discover fresh woodworm holes
+        on a Saturday afternoon, you can treat the affected area immediately
+        with the PSW85 while researching and ordering a comprehensive treatment
+        solution for delivery during the week. The Rentokil brand provides
+        reassurance &mdash; they are the UK&apos;s largest pest control company
+        and their products are formulated to the same standards as their
+        professional treatment range.{" "}
       </p>{" "}
       <p>
         {" "}

@@ -447,7 +447,6 @@ export default function AwaabsLawDampMouldEquipmentPage() {
           Requires loft access &mdash; not suitable for flats without loft space
         </li>
         <li>Electrician required for installation (Part P compliant)</li>
-        <li>Premium price compared to unheated alternatives</li>
       </ul>
 
       {/* Product 2: Dryzone PIV */}
@@ -531,9 +530,8 @@ export default function AwaabsLawDampMouldEquipmentPage() {
         guide, making it an attractive option for landlords managing multiple
         properties on a tight budget. It delivers the core PIV functionality
         &mdash; continuous filtered ventilation that reduces condensation and
-        prevents mould &mdash; at a significantly lower price point than heated
-        alternatives. The unit includes <strong>G4 filters</strong> that remove
-        dust, pollen and coarse particulates from incoming loft air.
+        prevents mould. The unit includes <strong>G4 filters</strong> that
+        remove dust, pollen and coarse particulates from incoming loft air.
       </p>
       <p>
         The key trade-off is the <strong>absence of an integral heater</strong>.

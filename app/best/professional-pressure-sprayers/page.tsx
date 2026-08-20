@@ -501,7 +501,7 @@ export default function ProfessionalPressureSprayersPage() {
         </li>{" "}
         <li>
           <strong>Lower maintenance:</strong> Fewer seal replacements, less
-          downtime, lower lifetime cost despite the higher purchase price.
+          downtime.
         </li>{" "}
         <li>
           <strong>Professional standard:</strong> Every BPCA-certified pest

@@ -437,9 +437,7 @@ export default function ProfessionalInsectLightTrapsPage() {
         <strong>Verdict:</strong> The Insect-O-Cutor PlusZap 30W is the gold
         standard for commercial insect light traps. If your business needs a
         unit that will satisfy EHOs, last for years, and deliver reliable fly
-        control in demanding environments, this is the one to buy. The price
-        premium over budget units is modest when spread over the multi-year
-        lifespan of the aluminium casing.{" "}
+        control in demanding environments, this is the one to buy.{" "}
       </p>{" "}
       {/* Product 2 — PlusZap 16W */}{" "}
       <h2 id={products[1].anchorId}>

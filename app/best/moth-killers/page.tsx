@@ -185,7 +185,6 @@ const products: ProductRecord[] = [
       "Two hanging units from a trusted UK pest control brand",
       "Kills moths and larvae on contact within enclosed wardrobes",
       "Lasts up to six months per unit",
-      "Lowest price point of any effective hanging moth killer",
     ],
     tableCells: [
       "Rentokil Moth Killer Hanging Unit Twin Pack",
@@ -828,13 +827,10 @@ export default function BestMothKillersPage() {
         <em>Tineola bisselliella</em>) and the case-bearing clothes moth (
         <em>Tinea pellionella</em>). The twin pack is ideal for a single
         wardrobe or for splitting between two smaller wardrobes or garment
-        storage areas. If you have a larger home with multiple wardrobes, the
-        Acana four-pack above offers better per-unit value, but for a single
-        wardrobe or a trial purchase, the Rentokil twin pack is hard to beat on
-        price. It is worth noting that while the product is effective at killing
-        moths and larvae within the wardrobe, it does not provide the same level
-        of egg-killing action as some premium alternatives, so pairing it with
-        pheromone traps for monitoring is advisable.
+        storage areas. It is worth noting that while the product is effective at
+        killing moths and larvae within the wardrobe, it does not provide the
+        same level of egg-killing action as some premium alternatives, so
+        pairing it with pheromone traps for monitoring is advisable.
       </p>
       <p>
         <strong>Pros:</strong>

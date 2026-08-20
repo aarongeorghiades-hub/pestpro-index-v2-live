@@ -336,7 +336,7 @@ export default function PigeonControlPage() {
 
       <h3>Reflective Tape and Visual Deterrents</h3>
       <p>
-        <strong>Reflective tape, holographic strips, and predator decoys</strong> (such as plastic hawks and owls) are among the cheapest pigeon deterrent options, costing just a few pounds. They work by startling pigeons with unexpected flashes of light or the appearance of a predator. However, their effectiveness is <strong>short-lived</strong>. Pigeons are intelligent birds and quickly learn that a stationary plastic owl poses no threat. Reflective tape may deter pigeons for a few days or weeks, but habituation almost always occurs. These methods can provide a temporary reprieve while you arrange more permanent deterrents, but they should not be relied upon as a long-term solution.
+        <strong>Reflective tape, holographic strips, and predator decoys</strong> (such as plastic hawks and owls) work by startling pigeons with unexpected flashes of light or the appearance of a predator. However, their effectiveness is <strong>short-lived</strong>. Pigeons are intelligent birds and quickly learn that a stationary plastic owl poses no threat. Reflective tape may deter pigeons for a few days or weeks, but habituation almost always occurs. These methods can provide a temporary reprieve while you arrange more permanent deterrents, but they should not be relied upon as a long-term solution.
       </p>
 
       <h3>Removing Food Sources</h3>

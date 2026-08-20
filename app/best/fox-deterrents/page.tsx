@@ -863,8 +863,7 @@ export default function BestFoxDeterrentsPage() {
         foxes are entering your garden by climbing over the fence, this is the
         most reliable way to stop them. Combine it with buried mesh along the
         fence base if foxes are also digging under the fence, and you have a
-        comprehensive perimeter defence. The initial cost is higher than scent
-        or electronic deterrents, but there are zero ongoing costs and the
+        comprehensive perimeter defence. There are zero ongoing costs and the
         aluminium construction will last for many years.{" "}
       </p>{" "}
       {/* Best Mesh */}{" "}

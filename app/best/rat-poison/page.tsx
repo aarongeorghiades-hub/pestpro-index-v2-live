@@ -901,9 +901,9 @@ export default function BestRatPoisonPage() {
         <strong>Grain bait</strong> is the most palatable (rats are natural
         grain eaters) but can absorb moisture and degrade in damp conditions.{" "}
         <strong>Paste</strong> is extremely palatable and moisture-resistant,
-        making it ideal for damp locations, but comes in smaller quantities and
-        is more expensive per gram. For most situations, blocks are the default
-        choice. Switch to grain or paste if rats are not taking the blocks.{" "}
+        making it ideal for damp locations, but comes in smaller quantities. For
+        most situations, blocks are the default choice. Switch to grain or paste
+        if rats are not taking the blocks.{" "}
       </p>{" "}
       <h3>Indoor vs Outdoor Use</h3>{" "}
       <p>
