@@ -24,6 +24,22 @@ interface RelatedLink {
   href: string;
 }
 
+// The header nav belongs to the CLUSTER, not to the layout. R5 hardcoded the four
+// Joro links here because there was only one cluster. R6 added a second, and the two
+// must not link to each other, so the nav became a prop.
+//
+// The defaults below are the exact values R5 hardcoded. They exist so that the four
+// Joro pages keep rendering byte-identically without being edited, which is provable
+// rather than assumed. They should become REQUIRED, and these defaults deleted, as
+// soon as a /us hub page exists to point the wordmark at.
+const DEFAULT_HOME_HREF = '/us/joro-spider';
+const DEFAULT_CLUSTER_NAV: RelatedLink[] = [
+  { title: 'Joro Spider', href: '/us/joro-spider' },
+  { title: 'Danger', href: '/us/are-joro-spiders-dangerous' },
+  { title: 'Webs', href: '/us/joro-spider-webs' },
+  { title: 'Range', href: '/us/joro-spider-range' },
+];
+
 interface UsPageLayoutProps {
   title: string;
   subtitle: string;
@@ -35,6 +51,10 @@ interface UsPageLayoutProps {
   relatedPages?: RelatedLink[];
   children: React.ReactNode;
   schemas: object[];
+  // Where the wordmark points. Should be this cluster's hub.
+  homeHref?: string;
+  // The header nav for this cluster. Never links out of its own cluster.
+  clusterNav?: RelatedLink[];
 }
 
 export default function UsPageLayout({
@@ -47,6 +67,8 @@ export default function UsPageLayout({
   relatedPages = [],
   children,
   schemas,
+  homeHref = DEFAULT_HOME_HREF,
+  clusterNav = DEFAULT_CLUSTER_NAV,
 }: UsPageLayoutProps) {
   return (
     <div className="min-h-screen bg-white">
@@ -62,14 +84,13 @@ export default function UsPageLayout({
           cluster hub, never to the UK home page. */}
       <header className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
-          <Link href="/us/joro-spider" className="font-black text-lg text-gray-900 tracking-tight">
+          <Link href={homeHref} className="font-black text-lg text-gray-900 tracking-tight">
             PestPro Index <span className="text-blue-600">US</span>
           </Link>
           <nav className="hidden sm:flex items-center gap-5 text-sm font-semibold text-gray-600">
-            <Link href="/us/joro-spider" className="hover:text-blue-600 transition-colors">Joro Spider</Link>
-            <Link href="/us/are-joro-spiders-dangerous" className="hover:text-blue-600 transition-colors">Danger</Link>
-            <Link href="/us/joro-spider-webs" className="hover:text-blue-600 transition-colors">Webs</Link>
-            <Link href="/us/joro-spider-range" className="hover:text-blue-600 transition-colors">Range</Link>
+            {clusterNav.map((item) => (
+              <Link key={item.href} href={item.href} className="hover:text-blue-600 transition-colors">{item.title}</Link>
+            ))}
           </nav>
         </div>
       </header>
