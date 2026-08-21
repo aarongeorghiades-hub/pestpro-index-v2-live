@@ -121,7 +121,7 @@ const products: ProductRecord[] = [
     whatItDoes: [
       'Two-pronged pincer trap listed by the seller as a heavy-duty build',
       'We have found no controlled test comparing this listing against the other Gophinator listings',
-      'Named here because it is a distinct, verifiable listing of the same mechanism',
+      'Named here because it is a distinct listing of the same mechanism',
       'Set exactly as the other pincer traps: main tunnel, paired, staked',
     ],
   },
@@ -341,7 +341,7 @@ export default function BestGopherTrapsPage() {
   return (
     <UsPageLayout
       title="Gopher Traps"
-      subtitle="Every extension source we read makes the trap conditional on the placement, and the cheapest thing on this page is the tool that finds the spot. One trial compared three models; we give its figures and its limits rather than a ranking."
+      subtitle="Every extension source we read makes the trap conditional on the placement, and the tool that decides the outcome is a blunt stick most sheds already hold. One trial compared three models; we give its figures and its limits rather than a ranking."
       lastUpdated="August 2026"
       readingTime="9 min"
       tocItems={tocItems}
@@ -442,7 +442,7 @@ export default function BestGopherTrapsPage() {
           (KW X2 = 7.12, df= 2, P = 0.03).
         </li>
         <li>
-          <strong>The cost of that.</strong> The same traps were also tripped or plugged
+          <strong>The trade-off.</strong> The same traps were also tripped or plugged
           statistically more than the other two (KW X2 = 6.05, df = 2, P = 0.048). A trap that
           attracts more attention gets set off without a catch more often too.
         </li>
@@ -456,7 +456,7 @@ export default function BestGopherTrapsPage() {
       <p>
         Set against that, UC IPM states that the Gophinator trap can be more effective than the
         Macabee in catching larger, mature gophers. Two extension sources, two different measures,
-        no contradiction between them and no winner declared. That is the honest state of the
+        no contradiction between them, and we are not going to crown one. That is the honest state of the
         evidence, and it is why the sections below are grouped by how a trap works rather than
         ordered first to last.
       </p>
