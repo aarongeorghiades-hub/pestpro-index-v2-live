@@ -182,9 +182,12 @@ export default function PocketGophersPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        You will almost certainly never see one. Pocket gophers live underground and are
-        solitary, so what you get is the evidence: fresh soil pushed up in mounds, plants
-        wilting for no visible reason, and occasionally a whole row of them gone.
+        You will almost certainly never see one: Utah State University Extension describes
+        pocket gophers as solitary animals that are rarely seen aboveground, and University of
+        California IPM states that gophers spend almost all their time underground in their
+        burrow and aren&rsquo;t commonly seen. What you get instead is the evidence: fresh soil
+        pushed up in mounds, plants wilting for no visible reason, and occasionally a whole row
+        of them gone.
       </p>
       <p>
         This page covers what the animal is and what the sourced options are. The trap
@@ -195,7 +198,9 @@ export default function PocketGophersPage() {
 
       <h2 id="what-it-is">What It Is</h2>
       <p>
-        A pocket gopher is a burrowing rodent named for its fur-lined external cheek pouches.
+        University of California IPM describes pocket gophers, Thomomys species, as burrowing
+        rodents that get their name from the fur-lined, external cheek pouches they use for
+        carrying food and nesting materials.
         We cannot give you a national species count: no extension or government source we
         could obtain states how many species occur in the United States, so rather than
         repeat a figure we cannot trace, here is what the state-level sources do say.
@@ -243,8 +248,8 @@ export default function PocketGophersPage() {
         </li>
       </ul>
       <p>
-        The plug position is the single most useful check. On a gopher mound the plug sits to
-        one side of a fan or crescent; on a mole hill the opening is in the middle of a cone.
+        On a gopher mound the plug sits to one side of a fan or crescent; on a mole hill the
+        opening is in the middle of a cone.
       </p>
       <h3>The pattern of several mounds</h3>
       <p>
@@ -311,11 +316,6 @@ export default function PocketGophersPage() {
           spring and fall when pocket gophers are most active near the surface.
         </li>
       </ul>
-      <p>
-        So there is no closed season on the animal, but there is a season on your success rate,
-        and fresh mounds are the signal that it has opened.
-      </p>
-
       <h2 id="damage">What They Damage</h2>
       <ul>
         <li>
@@ -405,10 +405,6 @@ export default function PocketGophersPage() {
       </p>
 
       <h2 id="doesnt-work">What Does Not Work</h2>
-      <p>
-        A long list, and it is worth reading before spending anything, because most of what is
-        marketed for gophers is on it.
-      </p>
       <ul>
         <li>
           <strong>Repellents.</strong> University of California IPM: no repellents have proven
@@ -490,8 +486,11 @@ export default function PocketGophersPage() {
 
       <h2 id="sources">Sources</h2>
       <p>
-        Every claim above traces to one of the following. Where sources give different figures
-        for the same measurement, all are reported and attributed rather than averaged.
+        Every factual claim above names the source it rests on, in the sentence that makes it or
+        in the text immediately adjacent to it, and every source named is listed below. Framing,
+        ordering, emphasis, and our reading of where the evidence is stronger are our own
+        judgement and are not a finding of any source. Where sources give different figures for
+        the same measurement, all are reported and attributed rather than averaged.
       </p>
       <SourceList sources={sources} />
     </UsPageLayout>
