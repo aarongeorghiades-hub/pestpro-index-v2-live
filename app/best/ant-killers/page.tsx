@@ -567,18 +567,16 @@ export default function BestAntKillersPage() {
       </div>{" "}
       <p>
         {" "}
-        Gel baits represent the professional end of the consumer ant killer
-        market, and the Combat Ant Killing Gel is one of the most effective gel
-        formulations. The active ingredient is fipronil, a broad-spectrum
-        insecticide that is widely used by professional pest control technicians
-        for ant, cockroach, and termite control around the world. Fipronil works
-        by disrupting the central nervous system of insects, and it has the
-        critical property of being non-repellent &mdash; meaning that ants
-        cannot detect it in the bait, so they feed on it freely and carry it
-        back to the colony without any avoidance behaviour. The gel is packaged
-        in a syringe-style applicator that allows you to dispense precise dots
-        and lines of bait into cracks, crevices, and tight spaces where ants
-        travel but where bait stations cannot physically fit.{" "}
+        The active ingredient is fipronil, a broad-spectrum insecticide that is
+        widely used by professional pest control technicians for ant, cockroach,
+        and termite control around the world. Fipronil works by disrupting the
+        central nervous system of insects, and it has the critical property of
+        being non-repellent &mdash; meaning that ants cannot detect it in the
+        bait, so they feed on it freely and carry it back to the colony without
+        any avoidance behaviour. The gel is packaged in a syringe-style
+        applicator that allows you to dispense precise dots and lines of bait
+        into cracks, crevices, and tight spaces where ants travel but where bait
+        stations cannot physically fit.{" "}
       </p>{" "}
       <p>
         {" "}
@@ -648,12 +646,8 @@ export default function BestAntKillersPage() {
       </ul>{" "}
       <p>
         {" "}
-        <strong>Verdict:</strong> The Combat Ant Killing Gel is the product to
-        reach for when you need to treat hard-to-access spots that bait stations
-        cannot reach. Its professional-grade fipronil formula and precision
-        syringe applicator make it the closest thing to a professional pest
-        control treatment available over the counter. Use it alongside bait
-        stations for a thorough, multi-point attack on ant colonies.{" "}
+        <strong>Verdict:</strong> Use it alongside bait stations for a thorough,
+        multi-point attack on ant colonies.{" "}
       </p>{" "}
       <div className="not-prose">
         {" "}
