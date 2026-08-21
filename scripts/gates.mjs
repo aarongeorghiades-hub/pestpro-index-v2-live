@@ -98,7 +98,7 @@ const GATES = [
     id: 'G4',
     name: 'No UK spellings on a US route',
     surface: 'prose',
-    re: /colour|behaviour|centre|licence|organis|emphasise|storey|\bgrey\b|mould|whilst|analys|practise|neighbour|defence/gi,
+    re: /colour|behaviour|centre|licence|organis|emphasise|storey|\bgrey\b|mould|whilst|analyse|analysing|analysed|practise|neighbour|defence/gi,
     probePos: 'the colour of the centre',
     probeNeg: 'the color of the center',
   },
