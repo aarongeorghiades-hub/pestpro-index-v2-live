@@ -5,11 +5,10 @@
 // and a four-item Joro nav, which would be wrong on the raccoon page and wrong
 // silently. Passing this module is what prevents that.
 //
-// THE CLUSTER IS ONE PAGE. The S38 R1 source pack did find a raccoon-specific
-// product category with a stated specification, unlike the opossum round, so a
-// second page is possible later. It is not listed here because it does not exist
-// yet, and a nav entry to an unbuilt route would be a 404 in the header of the
-// only page in the cluster.
+// THE CLUSTER IS TWO PAGES. The S38 R1 source pack found a raccoon-specific
+// product category with a stated size specification, unlike the opossum round,
+// which is what made the second page buildable. Both entries below are built, so
+// neither is a 404 in the header of the other.
 //
 // homeHref points at the informational page because it is the only page in the
 // cluster. When a /us hub eventually exists this should point there instead.
@@ -20,4 +19,7 @@
 
 export const RACCOON_HOME = '/us/raccoons';
 
-export const RACCOON_NAV = [{ title: 'Raccoons', href: '/us/raccoons' }];
+export const RACCOON_NAV = [
+  { title: 'Raccoons', href: '/us/raccoons' },
+  { title: 'Cage Traps', href: '/us/best-raccoon-traps' },
+];
