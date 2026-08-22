@@ -287,6 +287,235 @@ not repeated here. Laws 48 to 52 are new.
     number four. BEFORE HOLDING OR MOVING A LIMIT, RESTATE WHAT IT WAS
     PROTECTING AGAINST AND CHECK THE NUMBER STILL SERVES IT.
 
+82. A COMPONENT-ANCHORED INVENTORY IS BLIND TO A SURFACE THAT BUILDS
+    ITS OWN URLS. A count of <ProductCard> occurrences is NOT a count
+    of affiliate links. app/products/page.tsx carries 45 ASIN literals
+    and ZERO ProductCards, building its Amazon URLs from a local helper
+    — invisible to any sweep anchored on the component. Law 44 said a
+    route-file extractor is blind to strings in a shared component.
+    THIS IS THE MIRROR: A COMPONENT-ANCHORED EXTRACTOR IS BLIND TO A
+    SURFACE THAT DOES NOT USE THE COMPONENT. STATE WHICH SURFACES A
+    MATCHER CAN SEE BEFORE TRUSTING ITS ZERO.
+83. A CANDIDATE POOL MUST BE SIZED FOR THE ESTATE'S OUT-OF-STOCK RATE.
+    30 candidates were checked and 12 came back UNAVAILABLE and 2 DEAD
+    — 40% unusable, against an expectation of 10-20%. A pool sized to
+    the number of cards you intend to ship will always come up short.
+    SOURCE ROUGHLY DOUBLE, AND CHECK BEFORE WRITING ANY CARD.
+84. A SEARCH SNIPPET OF OUR OWN SITE CAN INVENT A DEFECT AS WELL AS
+    HIDE ONE. A Google result appeared to show methodology copy
+    breaching four settled compliance rulings; the repo was clean and
+    carried the correct house pattern. Law 57 said such a snippet is a
+    stale assertion. THIS EXTENDS IT: A STALE ASSERTION CAN BE
+    FABRICATED IN EITHER DIRECTION. NEVER WRITE A FIX FROM ONE —
+    SEND IT TO BE MEASURED IN THE REPO FIRST.
+85. A PROMPT MUST NOT REQUIRE OUTPUT A FROZEN TOOL CANNOT EMIT. Session
+    27 gated on the raw availability.type field; check.mjs emits a
+    fixed reason sentence and is finished. WHERE A GATE IS
+    UNSATISFIABLE, HALT AND REPORT — NEVER SPEND VENDOR API CALLS TO
+    SATISFY A DEFECTIVE GATE. Law 55 said a gate can be unsatisfiable
+    by construction; this names the remedy.
+86. A DEAD ASIN CAN BE REASSIGNED TO AN UNRELATED PRODUCT. B003TU4YPA
+    was our rank-1 "Best Overall" ultrasonic repeller; Amazon's own
+    linked-product report titles it a black T-shirt. DEAD DOES NOT MEAN
+    THE LINK 404s. It can resolve, transact, and sell the wrong thing
+    under our strongest endorsement. CHECK WHAT A DEAD ASIN RESOLVES TO
+    NOW BEFORE ASSUMING A BROKEN LINK IS MERELY INERT.
+87. A CARD REPLACEMENT IS NOT A SECTION REPLACEMENT. Before scoping any
+    product swap, ENUMERATE EVERY SURFACE THAT NAMES THE PRODUCT —
+    heading, table of contents, ANCHOR ID, prose, comparison table,
+    schema, alt text, title attribute — AND AUTHORISE ALL OF THEM OR
+    NONE. A prose sentence can describe a product's features WITHOUT
+    NAMING IT and will survive every name-based and numeral-based
+    check. Session 27 halted on exactly this.
+88. A BLOCKING CHECK THAT READS A LOCAL TRACKING REF IS NOT READING THE REMOTE. `git rev-parse origin/main` reads a cached local reference and does NOT update when a push is made via an explicit URL. USE `git ls-remote origin main`. Every prior session's push was verified against a local cache and happened to be correct. THAT IS LUCK, NOT A CHECK.
+89. A METADATA SURFACE CAN BE INHERITED FROM A PARENT LAYOUT AND IS THEREFORE INVISIBLE TO A PAGE-FILE COUNT. /best/pigeon-spikes serves THREE description tags — description, og:description and twitter:description — but declares only two. The third comes from app/layout.tsx. A COUNT OF DESCRIPTION SURFACES DONE ON A PAGE FILE ALONE IS A CONFIDENT UNDERCOUNT. Law 24 said metadata can be inherited from layout.tsx; THIS IS THE MEASURED PROOF.
+90. A PAGE SHELL COPIED FROM ANOTHER PAGE CARRIES THAT PAGE'S LINKS. /privacy and /cookies were built from the
+    /about shell and arrived with a trailing link each that no instruction authorised. Harmless there. On a page
+    where supplied copy is the whole point, a shell can introduce text that was never approved. ENUMERATE WHAT
+    THE SHELL BRINGS, NOT ONLY WHAT THE COPY SAYS.
+91. A TAG-STRIP MATCHER READS RENDERED BODY TEXT AND IS BLIND TO TEXT PASSED AS A COMPONENT PROP. The woodworm
+    page's methodology sentence lives in a subtitle prop and survived a correct tag-strip as a false zero.
+    Law 82 said a component-anchored inventory is blind to a surface that builds its own URLs; this is the
+    mirror — a text-anchored sweep is blind to a surface that passes its own text. MATCH BOTH SURFACES OR
+    REPORT NEITHER.
+92. REACT EMITS <!-- --> TEXT-SEPARATOR COMMENTS DERIVED FROM JSX LINE BREAKS. Any source reformat changes them.
+    A byte-identity gate on rendered HTML is therefore UNSATISFIABLE ACROSS A FORMATTING CHANGE — it tests a
+    value the tooling cannot hold constant while performing the requested operation. Law 85 said do not require
+    output a frozen tool cannot emit; this is the same failure in a gate rather than a report. BEFORE WRITING A
+    GATE, ASK NOT ONLY WHAT WOULD CONSTITUTE FAILURE BUT WHETHER SUCCESS IS ACHIEVABLE AT ALL.
+93. A NORMALISATION BUILT FOR ONE COMPARISON CAN INVALIDATE ANOTHER IN THE SAME ROUND. Round 5's N1 strips all
+    non-ld+json script tags — correct for the formatting gate, and it would have forced the consent-gate script
+    counts to zero regardless of live behaviour. A STRIP THAT GUARANTEES THE ANSWER YOU WANT IS NOT A TEST.
+    State which normalisation each gate uses and confirm each can still fail.
+94. A DEFECT CLASS CAN BE AN ARTEFACT OF THE QUESTION, NOT A PROPERTY OF THE ESTATE. C-AWARD's 204
+    findings were ONE component fact; C-NUM's 12 were ZERO real defects. BEFORE REMEDIATING A
+    LARGE CLASS, ASK WHETHER THE TEST THAT PRODUCED IT WAS MEASURING THE RIGHT THING.
+95. NEVER SUPPLY A "FROM" STRING FROM MEMORY OR A CORRUPTED PASTE. Instruct CC to LOCATE THE
+    TARGET BY ITS OWN MEASUREMENT using stable identifiers — section id, card, sentence position.
+    Claude invented a FROM string in R5 and CC correctly refused to substitute against it.
+96. A GATE THAT TESTS A VOCABULARY RATHER THAN A CLAIM IS UNSATISFIABLE. "Zero price implication"
+    matched 659 strings, almost none a price. Law 92 said ask whether success is achievable; this
+    is the same failure in the DEFINITION rather than the tooling. DEFINE THE CLAIM, NOT THE WORDS.
+97. A SENTENCE IS NOT A PARAGRAPH IS NOT A BULLET. Claude conflated them THREE TIMES in one
+    session. Each time CC halted and each time applying it literally would have destroyed adjacent
+    true content. NAME THE CONTAINER EXACTLY AND HAVE CC CONFIRM ITS BOUNDARIES BEFORE EDITING.
+98. WRITE BY FILE-AND-ASIN, NEVER GLOBALLY. Six of 32 target ASINs appear on other pages with
+    different award labels. A global replace would have overwritten five protected labels.
+    CC INFERRED THIS UNINSTRUCTED.
+99. A CASE-SENSITIVE COUNT UNDER-REPORTS AND A SUBSTRING COUNT OVER-REPORTS. "trusted" was 5 by
+    Claude's count and 68 by measurement. "pyrethroid" double-counted inside "cypermethrin".
+    STATE CASE-SENSITIVITY AND WORD-BOUNDARY HANDLING ON EVERY COUNT.
+100. A PROTECTION RULE CAN BLOCK A REMEDIATION, AND THAT IS THE PROTECTION WORKING. bestFor="Best
+    Trusted Brand" makes a full "trusted" sweep impossible without lifting NEVER TOUCH. SURFACE
+    THE CONFLICT TO AARON. DO NOT QUIETLY CARVE AN EXCEPTION.
+101. A TEST HARNESS MUST PROVE IT IS TESTING THE BUILD IT CLAIMS TO TEST. R9's serve harness
+     produced a FALSE PASS on a negative control by serving a STALE build. Verify BUILD_ID (or
+     equivalent) inside every render-compare loop. A gate that passed on an unverified harness
+     is NOT evidence, even if the conclusion later holds.
+102. A CARRYOVER ITEM IS AN ASSERTION ABOUT THE REPO, NOT A FACT. Two of six carried price
+     claims were false — one already fixed, one never existed. CC locates targets by its own
+     measurement; a halt on "zero candidates" is the system working, not an error.
+103. WHEN A GENERATION RULE FAILS, MEASURE THE ESTATE BEFORE CHOOSING A REMEDY. The pilot's
+     G5 failure looked like a woodworm quirk; the census showed 49/50 routes diverge. Ruling on
+     the sample of one would have produced either a mass rewrite or a wrong architecture.
+104. PRESERVE DIVERGENCE AS PER-SURFACE FIELDS; NEVER COLLAPSE IDENTICAL VALUES INTO A SHARED
+     FIELD. Collapsing reintroduces exactly the coupling C2 removes.
+105. A PLATFORM INCIDENT IS DIAGNOSED BY ITS SIGNATURE: build succeeds + image pushes + deploy
+     stage fails with zero logs + identical repeat = platform, not code. Two attempts, then wait.
+106. A RULING THAT IS NOT WRITTEN INTO CLAUDE.md WILL BE SILENTLY REVERSED. The Session 26 bar
+     on B000BQT5IG lived only in session carryover; a later selection rule inserted the barred
+     award on 19 live routes. Any standing product bar, award prohibition or permanent ruling
+     MUST be written into the repo, not carried in prose.
+107. AN ARRAY ADDRESSED BY INDEX CANNOT HAVE MEMBERS REMOVED. products[0], products[1] in JSX
+     makes every record undeletable — removing one shifts every later index and the last reads
+     past the end. Address records BY IDENTITY (anchorId or asin). This is a prerequisite for
+     any record deletion on a migrated route.
+108. COUNTING FILES IS NOT COUNTING ROUTES. Round 5 reported 14 dead ASINs in 10 files; Round 6
+     measured 48 live routes, because two data-file entries fan out across 19 cities x 2 pest
+     slugs. Always follow a data file through its consuming component to the URLs a reader can
+     actually reach.
+109. A VERIFICATION THAT PASSES OVER AN EMPTY SET IS VACUOUS. R7's harness reported
+     "verified: True" over zero captured files. Assert a NON-EMPTY capture set before reporting
+     any pass. Related: a build-id matcher that reads only a leading HTML comment fails on
+     dynamic routes, which carry the id inside the RSC flight payload — search the whole
+     document in every spelling.
+110. A NARROW LIFT IS NOT EXTENDED BY INFERENCE. A lift naming DEAD products does not authorise
+     changing LIVE products' visible text, even when the two are structurally coupled. Surface
+     the collision and ask; do not reason your way to the broader permission.
+111. A COMMIT SUBJECT IS AN ASSERTION. Never fix its wording before the work it describes has
+     been measured.
+112. A CLASSIFICATION TAXONOMY WITH NO FALLBACK BUCKET FORCES A GUESS. Every occurrence must
+     land in a named bucket or trip a stop. An item matching no bucket is a defect in the
+     taxonomy, not a judgement call for the executor.
+113. A SEQUENTIAL DIFF MIS-PAIRS AFTER A REMOVAL. Compare rendered surfaces AS A SET — exactly
+     one removal per surface, zero additions — never by position.
+114. A CLOSED CLASS IS CLOSED ONLY WHERE IT WAS MEASURED. Record the exact method that closed
+     it; a later false negative overturns the closure, not the finding.
+115. A STRING MATCHER IS NOT A CLASS TEST. A class defined by meaning must be searched by
+     READING, with string matching used only to corroborate. "Lower-cost entry point than"
+     contains no price vocabulary.
+116. A CLASS DEFINITION CAN BE THE DEFECT. When a class closes at zero, test the DEFINITION
+     against a known positive before trusting the result.
+117. CALIBRATE AGAINST A KNOWN-POSITIVE BEFORE SWEEPING. A pre-fix baseline is a control
+     document. A method that cannot rediscover a defect you know is there cannot be trusted.
+118. MEASURE THE POPULATION, DO NOT INHERIT IT. 137 of 237 routes had never been captured by
+     any sweep in this programme.
+119. A CLASS AUTHORISATION DOES NOT PIERCE A NAMED PROTECTION. Any exception must name the
+     file and the sentence.
+120. A PRICE FOR A CATEGORY IS NOT A PRICE FOR A PRODUCT. Market cost ranges for product types
+     are protected; prices attributed to Amazon or attached to a carded product are not.
+121. A PER-ROUTE TWIN SEARCH IS BLIND TO INTRA-FILE TWINS. Count OCCURRENCES, not routes, and
+     cover every surface including schema.
+122. NEVER prettier --write ANY FILE MID-EDIT. The pre-commit hook gates only app/best/*.tsx;
+     every other file will churn. Estate-wide, not just data/pest-products.ts.
+123. A MATCHING COUNT IS NOT A MATCHING SET. Never adopt a list because its cardinality agrees
+     with an expected figure. CC nearly deleted fourteen LIVE CONVERTERS this way.
+124. A GATE IN A BRIEF INHERITS ANY CONTRADICTION IN THE BRIEF. When two figures in a brief
+     disagree, they are BOTH suspect. CC MEASURES THE ACTUAL SET and reports which figure it
+     supports and why.
+125. AN AGGREGATE FROM A TOOL WITH A KNOWN FAULT MUST BE RE-DERIVED BEFORE A DECISION RESTS ON
+     IT. Strip the known-bad days, re-measure, then rule. Raw GA4 "sessions" over a window that
+     contains the late-July/early-August bot spike is a number, not a fact.
+126. A TEMPORAL CLAIM ABOUT A FAST-MOVING THING IS NOT A CLAIM ABOUT THE PRESENT. A 2021
+     research-summary line about a 2014 detection is not evidence about a 2026 page's
+     competitive position. MEASURE THE CURRENT STATE.
+127. MEASURE THE SET, NOT THE FILE. A route count is never a file count. A hard-coded list of
+     routes is a bug. The sitemap enumerates routes by discovery against a measured include/
+     exclude rule with a probe proof (add a route → appears; remove it → disappears).
+128. A COMMISSIONED RESEARCH PRIORITY IS AN ASSERTION. Invert it where the defensibility of a
+     page is the binding constraint. Weakest competitive defence first, termites last.
+129. A PAGE MAY NOT CITE A CONTROLLING STATUTE UNLESS THE ROUND HAS FETCHED THE PRIMARY LEGAL
+     TEXT. A subordinate clause elided from a statutory quotation changes its scope. When the
+     clause is the narrowing condition, every sentence depending on it is an overstatement
+     until the clause is restored verbatim.
+130. A FOOTER OR OTHER SHARED CHROME IS A PAGE-LEVEL CLAIM ON EVERY ROUTE IT RENDERS ON. A UK
+     Amazon disclosure on a /us/ page that earns no commission is a false statement on every
+     US page, however truthful on the UK pages. SCOPE SHARED CHROME BY ROUTE, THEN PROVE THE
+     UNSCOPED ROUTES ARE BYTE-IDENTICAL.
+131. A "PROVIDED UNDER §X" READING IS NOT "PROVIDED UNDER §X WHEN Y". Read the section, then
+     the subsection, then the qualifier. The qualifier is the law.
+132. WHEN TWO PAGES ON THE SAME SITE DISAGREE ON A FACT, THE DISAGREEMENT IS THE DEFECT, NOT
+     EITHER PAGE. Resolve to the primary source or render the disagreement openly with both
+     citations. Never pick the more convenient one.
+133. A PEER-WRITTEN PAGE IS NOT REVIEWED UNTIL IT HAS BEEN READ LINE BY LINE AGAINST ITS OWN
+     SOURCE PACK. Gate scripts catch vocabulary; only a reading catches a qualifier omission.
+134. "THIS SITE IS NOT LEGAL ADVICE" DOES NOT LICENCE A LEGAL CONCLUSION IN THE SITE'S OWN
+     VOICE. Attribute every legal statement to its statute or agency. The site may report;
+     it may not rule.
+135. A GEOGRAPHIC CLAIM SOURCED FROM ONE STATE'S EXTENSION APPLIES TO THAT STATE. "In the
+     western United States" is an overgeneralisation of a California source unless a second
+     source covers the rest.
+136. A SOURCE PACK FIGURE WITH NO SOURCE LINE IS NOT IN THE PACK. "80,000 times" and the
+     body-temperature rabies explanation were dropped because no .edu or .gov line carried
+     them. A figure that cannot be traced is not published, however widely repeated.
+137. AN ANTI-BOT INTERSTITIAL IS A TERMINAL STATE FOR THE ROUND. One attempt, no header
+     change, no retry. Record the status with a date. The next round may try once more.
+138. A LAYOUT-INJECTED STRING ON A GATED ROUTE IS A KNOWN EXCEPTION, NOT A PASS. Name it,
+     attribute it to its file, and carry it as a flag. A gate that reports PASS because the
+     known exception was subtracted without naming it is hiding the exception.
+139. A PRODUCT PAGE IS NOT BUILT UNTIL ITS RANKING CRITERION IS A SOURCED SPECIFICATION.
+     "Enclosed and large enough" is a vocabulary. "At least X by Y inches per source Z" is a
+     criterion. No criterion, no page.
+140. A PARKED PAGE REOPENS ON A NEW SOURCED CRITERION, NOT ON A NEW PRODUCT SEARCH. If every
+     candidate fails the criterion, the criterion is the block, not the pool.
+141. A US-ONLY ASIN CHECKED BY THE UK AVAILABILITY JOB IS NOT DEAD. The job is hardcoded to
+     amazon.co.uk. Its output never rules on a /us/ ASIN. Record the marketplace with every
+     availability verdict.
+142. DEPLOYMENT STATE IS READ FROM THE RAILWAY CLI, NEVER THE GRAPHQL API. The API returns
+     "Not Authorized" under the project token. railway deployment list --json is the method.
+143. A SOURCES BLOCK NEVER CARRIES A PRODUCT LINK. A source is a reference; a product link is
+     a commercial call. The two never share an element.
+144. A ROUTE COUNT IS TIED TO A NAMED MATCHER OR IT IS NOT A COUNT. Keys in
+     .next/app-path-routes-manifest.json ending in /page, as a rule, not "the route count".
+145. A SCIENTIFIC NAME IS CHECKED AGAINST ITS OWN SOURCE ROW BEFORE COMMIT. A genus mix-up
+     between sibling species in the same pack is a sourcing error, not a typo.
+146. A FACTUAL DISAGREEMENT BETWEEN TWO SOURCES IN THE SAME PACK IS RENDERED, NOT RESOLVED,
+     UNLESS A PRIMARY SOURCE SETTLES IT. The reader sees both, with citations.
+147. A SIZE SPECIFICATION FROM ONE SOURCE IS THE SOLE RANKING CRITERION UNTIL A SECOND SOURCE
+     IS IN THE PACK. Do not blend a second criterion from memory.
+148. A DATED OBSERVATION RECORD REPLACES A STANDING STATUS FOR ANY EXTERNAL SERVICE THAT
+     BEHAVES INTERMITTENTLY. "Amazon fetch blocked" is a status; "Amazon fetch succeeded
+     6/6 on 22 Aug, failed 0/4 on 21 Aug" is a record.
+149. A CANONICAL TAG, A JSON-LD BLOCK AND A SITEMAP ENTRY ARE THREE SEPARATE SURFACES.
+     Verify each by its own matcher on the live route. One passing does not imply the others.
+150. A CARRYOVER STATES THE FILE A FIGURE WAS MEASURED FROM, OR THE FIGURE IS UNSIZED.
+151. A FALSE-ZERO FROM A STRIPPER IS A STRIPPER BUG UNTIL A KNOWN POSITIVE RE-PROVES IT.
+     S39 R1's RSC stripper returned zero on routes that carried hits; the PROTECTED string on
+     /best/ant-killers was the control that exposed it. Every estate-wide sweep carries a
+     named known-positive control.
+152. A BRAND'S OWN MARKETING STRING ON A PRODUCT CARD IS PROTECTED CONTENT UNDER CLAUDE.md:315.
+     A G3 hit inside a manufacturer's product name or feature string is not the site's voice.
+     Deferred permanently; never edited.
+153. AN OWN-VOICE VETTING CLAIM IS EDITED; A PROPER NOUN CONTAINING THE SAME STEM IS KEPT.
+     "Trustpilot", "TrustMark" and "wildlife trust" are names. "Our trusted picks" is a claim.
+154. A PRE-COMMIT HOOK IS NEVER BYPASSED. If prettier re-wraps a file, the diff is proven
+     whitespace-only and committed as such. --no-verify is banned in every prompt.
+155. AN AVAILABILITY RUN IN REPORT-ONLY MODE MAKES NO DATABASE WRITE. Group D was confirmed
+     inactive by reading, not by writing. A run that writes is a different round with its own
+     authorisation.
+156. A PROTECTED STRING'S LOCATION IS MEASURED, NOT CARRIED. "Best Trusted Brand" was carried
+     as /best/mouse-poison for three sessions; it lives on /best/rat-poison.
+
 ## NEVER TOUCH — PROTECTED FROM EVERY CHECK
 
 - app/best/rat-traps/page.tsx line 164, the four-categories sentence.
