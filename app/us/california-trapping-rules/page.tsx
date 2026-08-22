@@ -428,8 +428,8 @@ export default function CaliforniaTrappingRulesPage() {
       <ul>
         <li>
           <em>
-            &ldquo;A mammal ... that is not a game mammal, exotic game mammal, fully protected
-            mammal, or fur-bearing mammal is a nongame mammal.&rdquo;
+            &ldquo;A mammal occurring naturally in California that is not a game mammal, exotic
+            game mammal, fully protected mammal, or fur-bearing mammal is a nongame mammal.&rdquo;
           </em>{' '}
           &mdash; FGC § 4150(a)
         </li>
