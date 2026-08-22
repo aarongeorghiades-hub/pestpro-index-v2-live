@@ -249,7 +249,7 @@ export default function ProductsPage() {
             {[
               { name: 'Nippon Bait Station', asin: 'B001CJ11ZQ', note: 'UK #1', desc: 'UK\'s #1 ant bait station. Eliminates entire colonies.' },
                 { name: 'NOPE! Ant Killer Bait Station 6-Pack', asin: 'B08YFJWGX2', desc: 'Indoor/outdoor use. Effective colony elimination.' },
-              { name: 'Zero In Ant Killer Outdoor Powder 450g', asin: 'B00HKQL90K', note: 'Covers 45m²', desc: 'Powder formula. Covers 45 square meters, kills on contact.' },
+              { name: 'Nippon Ant Killer Powder 500g', asin: 'B000TAW39M' },
               { name: 'Combat Ant Killing Gel 27g', asin: 'B000BQT5IG', note: 'Fipronil', desc: 'Professional strength fipronil gel. Kills whole colony.' }
             ].map((product, idx) => (
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">

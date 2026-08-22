@@ -317,14 +317,9 @@ export default function HowToPestProofYourShedPage() {
 
       <div className="not-prose space-y-4">
         <ProductCard
-          name="Rentokil Rat Bait Station with Key"
-          features={[
-            'Lockable tamper-resistant design — safe around pets and children',
-            'Place against shed walls along rat runs',
-            'Holds standard bait blocks securely inside',
-            'Weather-resistant for year-round outdoor use',
-          ]}
-          asin="B07DVJ2JNW"
+          name="Pest X Pro Hollow 2X Tamper-Resistant"
+          features={[]}
+          asin="B0BF61LH6P"
           bestFor="Best for Shed Perimeter"
           rank={1}
         />
