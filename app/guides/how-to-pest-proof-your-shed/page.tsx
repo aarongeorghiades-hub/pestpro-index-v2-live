@@ -319,7 +319,7 @@ export default function HowToPestProofYourShedPage() {
         <ProductCard
           name="Pest X Pro Hollow 2X Tamper-Resistant"
           features={[]}
-          asin="B0BF61LH6P"
+          asin="B0F8QP23M7"
           bestFor="Best for Shed Perimeter"
           rank={1}
         />
