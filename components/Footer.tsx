@@ -18,6 +18,7 @@
 // of the thirteen at 89 links. It paints its own dark ground (bg-gray-900), so
 // it renders identically regardless of the page background above it.
 import Link from 'next/link';
+import FooterAssociatesNotice from './FooterAssociatesNotice';
 
 export default function Footer() {
   return (
@@ -167,8 +168,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-white font-bold mb-2">Products</h4>
-            <p>Free product recommendations for pest control across the UK. All links are Amazon affiliate links.</p>
-            <p className="mt-2">Amazon Associates: We earn commissions from qualifying purchases through Amazon Associates links</p>
+            <FooterAssociatesNotice />
           </div>
         </div>
 
