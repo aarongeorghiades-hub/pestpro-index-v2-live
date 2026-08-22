@@ -763,7 +763,7 @@ export const posts: BlogPost[] = [
     slug: 'pest-control-manchester-complete-guide',
     title: 'Pest Control in Manchester: What Every Homeowner Needs to Know',
     metaTitle: 'Pest Control Manchester: Complete Guide for Homeowners',
-    metaDescription: 'Everything Manchester homeowners need to know about pest control — common pests, costs, when to call a professional, and how to find a trusted local provider.',
+    metaDescription: 'Everything Manchester homeowners need to know about pest control — common pests, costs, when to call a professional, and how to find a local provider.',
     targetKeyword: 'pest control Manchester',
     publishDate: '2026-02-21',
     content: `
@@ -955,7 +955,7 @@ export const posts: BlogPost[] = [
     slug: 'pest-control-liverpool-complete-guide',
     title: 'Pest Control in Liverpool: What Every Homeowner Needs to Know',
     metaTitle: 'Pest Control Liverpool: Complete Guide for Homeowners',
-    metaDescription: 'A complete guide to pest control in Liverpool and Merseyside. Learn about common pests, costs, prevention tips, and how to find trusted local pest controllers.',
+    metaDescription: 'A complete guide to pest control in Liverpool and Merseyside. Learn about common pests, costs, prevention tips, and how to find local pest controllers.',
     targetKeyword: 'pest control Liverpool',
     publishDate: '2026-02-21',
     content: `
@@ -1131,7 +1131,7 @@ export const posts: BlogPost[] = [
     slug: 'pest-control-leeds-complete-guide',
     title: 'Pest Control in Leeds: The Complete Guide for 2026',
     metaTitle: 'Pest Control Leeds: Complete Guide for 2026',
-    metaDescription: 'Everything you need to know about pest control in Leeds and West Yorkshire. Common pests, seasonal patterns, costs, and how to find a trusted local provider.',
+    metaDescription: 'Everything you need to know about pest control in Leeds and West Yorkshire. Common pests, seasonal patterns, costs, and how to find a local provider.',
     targetKeyword: 'pest control Leeds',
     publishDate: '2026-02-22',
     content: `
@@ -1554,7 +1554,7 @@ export const posts: BlogPost[] = [
     slug: 'pest-control-brighton-complete-guide',
     title: 'Pest Control in Brighton & Sussex: What Every Homeowner Needs to Know',
     metaTitle: 'Pest Control in Brighton & Sussex: Complete Guide',
-    metaDescription: 'A practical guide to common pests in Brighton, Hove, Worthing, and across Sussex. Covers seagulls, rats, mice, wasps, bed bugs and how to choose a trusted local provider.',
+    metaDescription: 'A practical guide to common pests in Brighton, Hove, Worthing, and across Sussex. Covers seagulls, rats, mice, wasps, bed bugs and how to choose a local provider.',
     targetKeyword: 'pest control Brighton',
     publishDate: '2026-02-27',
     content: `
@@ -1678,7 +1678,7 @@ export const posts: BlogPost[] = [
     slug: 'pest-control-sheffield-complete-guide',
     title: 'Pest Control in Sheffield: The Complete 2026 Guide for Homes & Businesses',
     metaTitle: 'Pest Control Sheffield: Complete 2026 Guide',
-    metaDescription: 'Comprehensive guide to pest control in Sheffield. Learn about common pests, prevention tips, and find trusted local pest controllers across South Yorkshire.',
+    metaDescription: 'Comprehensive guide to pest control in Sheffield. Learn about common pests, prevention tips, and find local pest controllers across South Yorkshire.',
     targetKeyword: 'pest control Sheffield',
     publishDate: '2026-02-27',
     content: `
@@ -1820,7 +1820,7 @@ export const posts: BlogPost[] = [
     slug: 'pest-control-bristol-complete-guide',
     title: 'Pest Control in Bristol: What Every Homeowner Needs to Know',
     metaTitle: 'Pest Control in Bristol: Complete Guide',
-    metaDescription: 'A complete guide to pest control in Bristol and the South West. Learn about common pests, costs, prevention tips, and how to find trusted local pest controllers.',
+    metaDescription: 'A complete guide to pest control in Bristol and the South West. Learn about common pests, costs, prevention tips, and how to find local pest controllers.',
     targetKeyword: 'pest control Bristol',
     publishDate: '2026-03-01',
     content: `
@@ -1999,7 +1999,7 @@ export const posts: BlogPost[] = [
     slug: 'pest-control-glasgow-complete-guide',
     title: 'Pest Control in Glasgow: A Complete Guide for Homeowners and Businesses',
     metaTitle: 'Pest Control in Glasgow: Complete Guide for 2026',
-    metaDescription: 'Everything you need to know about pest control in Glasgow. Common pests, costs, when to call a professional, and how to find trusted providers across Scotland.',
+    metaDescription: 'Everything you need to know about pest control in Glasgow. Common pests, costs, when to call a professional, and how to find providers across Scotland.',
     targetKeyword: 'pest control Glasgow',
     publishDate: '2026-03-01',
     content: `

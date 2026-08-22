@@ -89,7 +89,7 @@ const products: ProductRecord[] = [
     cardName: "Nippon Ant Bait Station",
     cardLabel: "Best Overall",
     features: [
-      "UK's #1 ant bait station — trusted for decades",
+      "UK's #1 ant bait station",
       "Eliminates entire colonies including the queen",
       "Discreet, low-profile design safe around children and pets",
       "Simple peel-and-place activation — no mess",
@@ -432,7 +432,7 @@ export default function BestAntKillersPage() {
         <li>
           Extremely easy to use &mdash; simply peel and place on an ant trail
         </li>{" "}
-        <li>Trusted UK brand manufactured by Vitax in Leicestershire</li>{" "}
+        <li>UK brand manufactured by Vitax in Leicestershire</li>{" "}
       </ul>{" "}
       <p>
         {" "}

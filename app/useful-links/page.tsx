@@ -85,7 +85,7 @@ export default function UsefulLinksPage() {
             UK Homeowner &amp; Property Resources
           </h1>
           <p className="text-2xl font-light mb-8 tracking-widest max-w-3xl mx-auto">
-            Helpful tools and trusted sources for UK property owners
+            Helpful tools and sources for UK property owners
           </p>
         </div>
       </section>
@@ -108,7 +108,7 @@ export default function UsefulLinksPage() {
         </nav>
 
         <p className="text-lg text-gray-600 max-w-3xl mb-12">
-          We&apos;ve compiled a selection of trusted, free resources to help
+          We&apos;ve compiled a selection of free resources to help
           UK homeowners manage their property, reduce costs, and stay
           informed. All links open in a new tab.
         </p>
