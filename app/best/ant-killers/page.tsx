@@ -386,22 +386,21 @@ export default function BestAntKillersPage() {
       <p>
         {" "}
         The Nippon Ant Bait Station has been a staple of UK ant control for
-        decades, and it remains the single most effective and trusted consumer
-        bait station on the market. Its longevity is no accident &mdash; the
-        product is manufactured by Vitax, a British company based in
-        Leicestershire, and it has been continuously refined over the years to
-        maintain its effectiveness against <em>Lasius niger</em>, the black
-        garden ant that causes the overwhelming majority of household ant
-        problems across Britain. The bait station works on a simple but
-        devastatingly effective principle: inside the enclosed plastic station
-        is a reservoir of sweet, sugary bait laced with a slow-acting
-        insecticide. Worker ants enter the station through small access holes,
-        feed on the bait, and then return to the nest to share the poisoned food
-        with the queen, larvae, and other workers through trophallaxis. Because
-        the insecticide acts slowly &mdash; typically over 24 to 48 hours
-        &mdash; the foraging workers have ample time to distribute it throughout
-        the colony before they themselves succumb. Within three to seven days,
-        the entire colony is destroyed from the inside out.{" "}
+        decades. Its longevity is no accident &mdash; the product is
+        manufactured by Vitax, a British company based in Leicestershire, and it
+        has been continuously refined over the years to maintain its
+        effectiveness against <em>Lasius niger</em>, the black garden ant that
+        causes the overwhelming majority of household ant problems across
+        Britain. The bait station works on a simple but devastatingly effective
+        principle: inside the enclosed plastic station is a reservoir of sweet,
+        sugary bait laced with a slow-acting insecticide. Worker ants enter the
+        station through small access holes, feed on the bait, and then return to
+        the nest to share the poisoned food with the queen, larvae, and other
+        workers through trophallaxis. Because the insecticide acts slowly
+        &mdash; typically over 24 to 48 hours &mdash; the foraging workers have
+        ample time to distribute it throughout the colony before they themselves
+        succumb. Within three to seven days, the entire colony is destroyed from
+        the inside out.{" "}
       </p>{" "}
       <p>
         {" "}
