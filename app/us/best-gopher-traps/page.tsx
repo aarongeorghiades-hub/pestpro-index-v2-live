@@ -251,7 +251,7 @@ const faqs: Faq[] = [
   {
     question: 'Is it legal to trap a gopher, and can I release it somewhere else?',
     answer:
-      'It depends on your state, and releasing it elsewhere is the part people get wrong. In California, the Fish and Game Code provides that nongame mammals injuring growing crops or other property may be taken at any time or in any manner by the owner or tenant of the premises, and UC IPM states a trapping license is not required for gopher removal. California’s separate restriction on body-gripping traps applies to trapping for the purposes of recreation or commerce in fur, which is a different purpose from a property owner controlling damage. In Washington, the state Department of Fish and Wildlife states pocket gophers are unclassified and may be trapped or killed, but that a special trapping permit is required for the use of all traps other than live traps, and that it is unlawful to release a pocket gopher anywhere within the state other than where it was legally trapped without a permit. Washington also has a state threatened pocket gopher in four counties where lethal control is not permitted. We have checked two states. Check yours.',
+      'It depends on your state, and releasing it elsewhere is the part people get wrong. In California, Fish and Game Code § 4152 provides that nongame mammals injuring growing crops or other property “may be taken at any time or in any manner in accordance with this code and regulations adopted pursuant to this code by the owner or tenant of the premises”, and UC IPM, an extension source rather than the statute, states a trapping license is not required for gopher removal. California’s separate restriction on body-gripping traps applies to trapping for the purposes of recreation or commerce in fur. In Washington, the state Department of Fish and Wildlife states pocket gophers are unclassified and may be trapped or killed, but that a special trapping permit is required for the use of all traps other than live traps, and that it is unlawful to release a pocket gopher anywhere within the state other than where it was legally trapped without a permit. The same source states that the Mazama pocket gopher of four counties is state threatened and that people are not permitted to use lethal control in these areas. We have checked two states. Check yours.',
   },
   {
     question: 'Will a repellent or a sonic stake save me the trouble?',
@@ -545,18 +545,20 @@ export default function BestGopherTrapsPage() {
 
       <h2 id="legal">The Legal Position</h2>
       <p>
-        Two states, checked against primary sources. Yours may differ and this is not legal advice.
+        Yours may differ and this is not legal advice.
       </p>
       <p>
-        <strong>California.</strong> The Fish and Game Code provides that nongame mammals found to
-        be injuring growing crops or other property may be taken at any time or in any manner, by
-        the owner or tenant of the premises. UC IPM adds that a trapping license is not required
-        for gopher removal. California also restricts body-gripping traps, but the restriction is
+        <strong>California.</strong> Fish and Game Code &sect; 4152 provides that nongame mammals
+        found to be injuring growing crops or other property &ldquo;may be taken at any time or in
+        any manner in accordance with this code and regulations adopted pursuant to this code by the
+        owner or tenant of the premises&rdquo;. The qualifying words are part of the sentence: the
+        permission is expressly subject to the regulations adopted under the code. UC IPM, an
+        extension source rather than the statute, adds that a trapping license is not required for
+        gopher removal. California also restricts body-gripping traps, but the restriction is
         written by purpose: the code makes it unlawful to trap for the purposes of recreation or
         commerce in fur with such a trap, and it expressly provides that cage and box traps, nets,
         suitcase-type live beaver traps, and common rat and mouse traps shall not be considered
-        body-gripping traps. A property owner controlling damage is not trapping for recreation or
-        for commerce in fur. Whether any particular trap design falls inside the statutory
+        body-gripping traps. Whether any particular trap design falls inside the statutory
         definition is a legal question the code does not answer for you.
       </p>
       <p>
@@ -564,13 +566,15 @@ export default function BestGopherTrapsPage() {
         unclassified and may be trapped or killed, but that a special trapping permit is required
         for the use of all traps other than live traps. It also states that it is unlawful to
         release a pocket gopher anywhere within the state other than on the property where it was
-        legally trapped, without a permit. And the Mazama pocket gopher of four counties is state
-        threatened, where lethal control is not permitted at all.
+        legally trapped, without a permit. The same source states that the Mazama pocket gopher of
+        four counties is state threatened, and that people are not permitted to use lethal control in
+        these areas.
       </p>
       <p>
-        The relocation point is the one worth carrying away, because it is the opposite of what
-        most people assume is the kind option: catching an animal alive and driving it elsewhere
-        can be the illegal act, not the humane one.
+        On that Washington statement, moving a live-caught gopher off the property where it was
+        trapped is the step that needs a permit there. That is one state, and it is the opposite of
+        what many people assume is the kind option. It is not a general rule, and this page has
+        checked two states.
       </p>
 
       <h2 id="faq">Questions</h2>
