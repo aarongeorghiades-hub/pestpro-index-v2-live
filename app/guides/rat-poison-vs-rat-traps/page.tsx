@@ -355,15 +355,15 @@ export default function RatPoisonVsRatTrapsPage() {
       <h3>Best Rat Trap</h3>
       <div className="not-prose">
         <ProductCard
-          name="Rat Reaper XXL Snap Trap (2-Pack)"
+          name="ROSHIELD Rat Traps (2 Pack)"
           features={[
-            'Powerful snap mechanism designed specifically for rats — not a scaled-up mouse trap',
-            'Large trigger plate for consistent activation',
-            'Easy to set with one hand once you know the technique',
-            'Reusable — built from tough ABS plastic and steel',
-            'Can be used inside a bait station for pet and child safety',
+            'This listing is for 2 Roshield rat traps',
+            'High strength spring, sensitive trigger and welded kill bar',
+            'Made specifically for rats and larger than mouse traps',
+            'Larger trigger plate reduces false triggering',
+            'Reusable, and can be installed within Roshield rodent bait stations',
           ]}
-          asin="B0DMGY66T3"
+          asin="B01NB0IQ24"
           bestFor="Best overall rat trap for domestic use"
         />
       </div>
@@ -371,31 +371,31 @@ export default function RatPoisonVsRatTrapsPage() {
       <h3>Best Rat Poison (Professional Use)</h3>
       <div className="not-prose">
         <ProductCard
-          name="Roshield Rat & Mouse Killer Bait Blocks (300g)"
+          name="The Big Cheese Ultra Power Rodent Killer Bait Block (15 x 20g)"
           features={[
-            'Brodifacoum-based blocks — single-feed lethal dose',
-            'Wax-coated for moisture resistance in damp environments',
-            'Must be used inside a tamper-resistant bait station',
-            'Suitable for indoor and outdoor use per label directions',
-            'Professional-strength formulation',
+            'Each pack contains 15 ready-to-use 20g bait blocks',
+            'Kills rodents in a single feed',
+            'For indoor and outdoor use in and around the home',
+            'Must be used inside a tamper-resistant bait station, which is legally required for baiting',
+            'Use gloves for safe, hygienic handling of the bait',
           ]}
-          asin="B082WNRCQR"
-          bestFor="Professional-grade poison for severe infestations"
+          asin="B077MDFHKM"
+          bestFor="Single-feed strength poison for severe infestations"
         />
       </div>
 
       <h3>Best Bait Station</h3>
       <div className="not-prose">
         <ProductCard
-          name="Rentokil Rat Bait Station"
+          name="Opkill Lockable Rat & Mouse Bait Box"
           features={[
-            'Tamper-resistant design prevents access by children and pets',
-            'Compatible with both snap traps and bait blocks',
-            'Lockable lid with key for secure bait storage',
-            'Durable plastic construction for indoor and outdoor use',
-            'Discreet black design blends into most environments',
+            'Holds block, grain or paste rodent poison',
+            'Tamper resistant box',
+            'Single lock accessible from the front to stop debris building up',
+            'Removable lid for ease of inspection and record keeping',
+            'Supplied empty, heavy duty and suitable for outdoor use',
           ]}
-          asin="B000TAVQBW"
+          asin="B07RJ1LF2J"
           bestFor="Safe deployment of either traps or poison"
         />
       </div>
@@ -403,7 +403,7 @@ export default function RatPoisonVsRatTrapsPage() {
       {/* Verdict */}
       <h2 id="verdict">Our Verdict: Which Should You Use?</h2>
       <p>
-        For the vast majority of UK homeowners, <strong>we recommend rat traps as the first line of defence</strong>. They are safer, more humane, legal without restriction, and give you immediate confirmation that the problem is being addressed. Use high-quality snap traps (like the Rat Reaper XXL) placed inside bait stations for maximum safety and effectiveness.
+        For the vast majority of UK homeowners, <strong>we recommend rat traps as the first line of defence</strong>. They are safer, more humane, legal without restriction, and give you immediate confirmation that the problem is being addressed. Use high-quality snap traps (like the Roshield rat traps) placed inside bait stations for maximum safety and effectiveness.
       </p>
       <p>
         <strong>Consider rat poison only if:</strong>

@@ -108,7 +108,7 @@ const faqSchema = {
       name: 'What is the most effective type of mouse kill trap?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Snap traps remain the most effective and cost-efficient kill traps. Modern enclosed snap traps like the Rentokil Enclosed Mouse Trap are easy to set and allow disposal without touching the mouse. Electronic traps are also highly effective but more expensive. Avoid cheap wooden snap traps — they lack the spring power for a reliable kill.',
+        text: 'Snap traps remain the most effective and cost-efficient kill traps. Modern enclosed snap traps like the SWISSINNO No See No Touch mousetrap are easy to set and allow disposal without touching the mouse. Electronic traps are also highly effective but more expensive. Avoid cheap wooden snap traps — they lack the spring power for a reliable kill.',
       },
     },
     {
@@ -318,15 +318,15 @@ export default function HumaneMouseTrapsVsKillTrapsPage() {
       <h3>Best Humane Mouse Trap</h3>
       <div className="not-prose">
         <ProductCard
-          name="Rentokil Live Capture Mouse Trap (Twin Pack)"
+          name="The Big Cheese Live Catch Mouse Trap"
           features={[
-            'Transparent design lets you see if a mouse has been caught without opening',
-            'Sensitive tip-trap mechanism — mouse weight triggers the door',
-            'Large enough for house mice without causing cramped confinement',
-            'Easy to release — simply open the door outdoors',
-            'Reusable and easy to clean between catches',
+            'Pre-baited and ready to use straight from the box',
+            'Tip and trap mechanism for easy setting',
+            'Catches one mouse at a time without causing injury',
+            'Locking bar ensures captured mice cannot escape',
+            'Suitable for use around children and pets',
           ]}
-          asin="B000TAT45G"
+          asin="B000LS57UE"
           bestFor="Best humane mouse trap for reliable live capture"
         />
       </div>
@@ -334,15 +334,15 @@ export default function HumaneMouseTrapsVsKillTrapsPage() {
       <h3>Best Snap Trap</h3>
       <div className="not-prose">
         <ProductCard
-          name="Rentokil Enclosed Mouse Trap (Twin Pack)"
+          name="SWISSINNO Mousetrap No See No Touch"
           features={[
-            'Enclosed design — set and dispose without seeing or touching the mouse',
-            'Powerful snap mechanism for an instant, humane kill',
-            'Easy one-click setting — no risk of snapping your fingers',
-            'Can be baited through a small opening',
-            'Reusable and easy to clean',
+            'Hygienic disposal without seeing or touching the mouse',
+            'Delivered pre-baited with peanut butter bait',
+            'Strong spring action for an instant strike',
+            'Suitable for use indoors and outdoors',
+            'Reusable snap trap of Swiss design',
           ]}
-          asin="B000TATQ8C"
+          asin="B00CFKGZAC"
           bestFor="Best snap mouse trap for a quick, clean kill"
         />
       </div>
@@ -350,15 +350,15 @@ export default function HumaneMouseTrapsVsKillTrapsPage() {
       <h3>Best Electronic Trap</h3>
       <div className="not-prose">
         <ProductCard
-          name="Victor M250S Electronic Mouse Trap"
+          name="The Big Cheese Ultra Power Electronic Mouse Killer"
           features={[
-            'Delivers a lethal electric shock in under 5 seconds',
-            'LED indicator light shows when a mouse has been caught',
-            'Enclosed tunnel design — no contact with the mouse',
-            'Runs on 4 AA batteries — kills up to 100 mice per set',
-            'Easy disposal — tip the trap over a bin',
+            'Kills over 100 mice per set of 4 AA batteries, not included',
+            'Enclosed design with an internal micro-switch, safe around children and pets',
+            'LED indicator glows green when the trap is active',
+            'Open the lid and tip the catch into the bin, no contact needed',
+            'Not for use in damp or dusty environments',
           ]}
-          asin="B000E1RIUO"
+          asin="B00TU1VL08"
           bestFor="Hands-off, high-tech mouse control"
         />
       </div>
@@ -366,7 +366,7 @@ export default function HumaneMouseTrapsVsKillTrapsPage() {
       {/* Verdict */}
       <h2 id="verdict">Our Verdict</h2>
       <p>
-        <strong>For most UK homeowners dealing with a mouse problem, we recommend modern enclosed snap traps.</strong> They deliver an instant, humane kill, require minimal maintenance (check once daily), allow disposal without handling the mouse, and are reusable. The Rentokil Enclosed Mouse Trap is our top pick for its ease of use and reliable mechanism.
+        <strong>For most UK homeowners dealing with a mouse problem, we recommend modern enclosed snap traps.</strong> They deliver an instant, humane kill, require minimal maintenance (check once daily), allow disposal without handling the mouse, and are reusable. The SWISSINNO No See No Touch mousetrap is our top pick for its easy setting and hygienic no-contact disposal.
       </p>
       <p>
         <strong>Choose humane traps if:</strong>
