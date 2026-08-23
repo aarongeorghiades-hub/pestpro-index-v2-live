@@ -211,25 +211,25 @@ const products: ProductRecord[] = [
     tocName: "Elixir Gardens Rodex Sachets",
   },
   {
-    anchorId: "best-brand",
+    anchorId: "best-difenacoum",
     asin: "B07BFQ1V5L",
     rank: 4,
     cardName: "Rentokil Rodine Mouse & Rat Killer Grain Bait",
-    cardLabel: "Best Trusted Brand",
+    cardLabel: "Best Difenacoum Bait",
     features: [
       "From Rentokil — the UK's most recognised pest control brand",
       "Difenacoum-based grain bait",
       "Ready-to-use sachets with clear instructions",
-      "Widely available and trusted by UK consumers",
+      "Widely available in the UK",
     ],
     tableCells: [
       "Rentokil Rodine Grain Bait",
       "Difenacoum (0.005%)",
-      "Best Trusted Brand",
+      "Best Difenacoum Bait",
     ],
-    h2Label: "Best Trusted Brand",
+    h2Label: "Best Difenacoum Bait",
     h2Name: "Rentokil Rodine Grain Bait",
-    tocLabel: "Best Trusted Brand",
+    tocLabel: "Best Difenacoum Bait",
     tocName: "Rentokil Rodine Grain Bait",
   },
   {
@@ -703,8 +703,8 @@ export default function BestRatPoisonPage() {
         discover a rat problem. Available in virtually every hardware store,
         supermarket, and of course Amazon, it offers the reassurance of a
         household name backed by decades of pest control expertise. If you want
-        a straightforward, well-established product from a brand you know and
-        trust, Rodine is a solid choice.{" "}
+        a straightforward, well-established product, Rodine is a solid
+        choice.{" "}
       </p>{" "}
       <p>
         {" "}
@@ -730,7 +730,7 @@ export default function BestRatPoisonPage() {
       </p>{" "}
       <ul>
         {" "}
-        <li>Trusted Rentokil brand with strong consumer recognition</li>{" "}
+        <li>Rentokil brand with strong consumer recognition</li>{" "}
         <li>Clear, beginner-friendly instructions included</li>{" "}
         <li>Lower secondary poisoning risk with difenacoum</li>{" "}
       </ul>{" "}

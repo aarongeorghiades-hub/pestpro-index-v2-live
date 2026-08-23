@@ -542,6 +542,23 @@ not repeated here. Laws 48 to 52 are new.
 - components/FindProviderCTA.tsx line 77, "Find Local Experts".
 - components/ProviderDetails.tsx line 88, the google_review_count switch.
 - brand and manufacturer marketing describing a product's maker.
+  R40-1 LIFT EXERCISED S43 R1c, ONCE, FOR ONE STRING ON ONE ROUTE, AND NOW SPENT.
+  On app/best/rat-poison/page.tsx the award label was SUBSTITUTED, not deleted:
+  "Best Trusted Brand" -> "Best Difenacoum Bait", applied to cardLabel, h2Label,
+  tocLabel and tableCells, with anchorId best-brand -> best-difenacoum. THE
+  PRODUCT WAS RETAINED: B07BFQ1V5L, Rentokil Rodine Grain Bait, still rank 4 of
+  six, no renumbering. This follows the B000BQT5IG precedent above — an award
+  label is removed by substitution because h2Label and tocLabel render against a
+  hardcoded em-dash and cannot be emptied. A first attempt that DELETED the whole
+  record was discarded unpushed; deleting a product is not how a claim is removed.
+  Three further trust assertions about that same product were cleared in the same
+  commit: a feature bullet, a Verdict-section sentence and a Pros item. The
+  rank-1 "Trusted brand" bullet on the same page belongs to a DIFFERENT product
+  and was left untouched, as were the 3 trusted strings on /products.
+  SUCCESSOR G3 KNOWN-POSITIVE CONTROL: /products G3 = 3, measured 2026-08-23
+  BEFORE the old control was altered. The string being removed WAS the control,
+  so the successor had to be pinned first or the gate would have been left with
+  nothing proving it still fires.
 - Amazon Verified Purchase references.
 - ALL award labels and rank numerals site-wide.
 - "Verdict:" — out of scope by ruling R3.
