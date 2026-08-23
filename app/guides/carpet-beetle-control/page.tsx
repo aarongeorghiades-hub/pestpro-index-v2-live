@@ -556,7 +556,7 @@ export default function CarpetBeetleControlPage() {
       <h2 id="products">Recommended Carpet Beetle Treatment Products</h2>
 
       <p>
-        Below are two of the most effective products for carpet beetle control in UK homes. For a comprehensive comparison of all the best carpet beetle treatments &mdash; including sprays, traps, powders, and prevention products &mdash; see our dedicated <Link href="/best/carpet-beetle-treatments" className="text-blue-600 hover:underline font-medium">Best Carpet Beetle Treatments UK 2026</Link> guide.
+        Below is one of the most effective products for carpet beetle control in UK homes. For a comprehensive comparison of all the best carpet beetle treatments &mdash; including sprays, traps, powders, and prevention products &mdash; see our dedicated <Link href="/best/carpet-beetle-treatments" className="text-blue-600 hover:underline font-medium">Best Carpet Beetle Treatments UK 2026</Link> guide.
       </p>
 
       <div className="not-prose">
