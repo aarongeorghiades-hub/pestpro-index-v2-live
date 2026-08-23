@@ -21,9 +21,16 @@
 // FUTURE ROUTES ANTICIPATED BUT NOT BUILT, and deliberately not linked because a
 // link to a route that does not exist is a 404: a Northeast Lyme-belt page, an
 // alpha-gal / lone star page for the South and Central states, a Pacific-coast
-// page for Ixodes pacificus, and separate chigger and no-see-um routes. The pack
-// could not source chigger-versus-tick bite disambiguation this round, so this
-// page says nothing about chiggers at all.
+// page for Ixodes pacificus, and a no-see-um route.
+//
+// SUPERSEDED, S45 R8: this comment previously said the pack could not source
+// chigger-versus-tick bite disambiguation, so the ticks page said nothing about
+// chiggers. The S45 R7 chigger pack DID source it, on both sides — three
+// extension services on the chigger side and CDC on the tick side — and
+// /us/chiggers is now built and carries that comparison. The ticks page still
+// says nothing about chiggers, which is now a scoping choice rather than a
+// sourcing gap: the comparison lives on the chigger page, which is where a
+// reader who cannot tell the two apart will land.
 //
 // homeHref points at the page itself because it is the only page in the cluster.
 // When a /us hub eventually exists this should point there instead.
