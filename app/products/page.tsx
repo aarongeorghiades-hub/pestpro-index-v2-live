@@ -185,7 +185,7 @@ export default function ProductsPage() {
               { name: 'ROSHIELD Humane Mouse Trap 2-Pack', asin: 'B07L8JNPF2', note: 'Humane', desc: 'Live catch and release option. Safe for household use.' },
               { name: 'Motel Mouse Humane Trap', asin: 'B09PKWXRGK', note: 'Easy clean', desc: 'Reusable humane trap. Easy to clean and reset.' },
               { name: 'REPELEM Peppermint Repellent Sachets', asin: 'B0CGVDXC9C', note: 'Natural', desc: 'Natural peppermint deterrent. Prevents mice from entering.' },
-              { name: 'Steel Wool 2-Pack', asin: 'B0CJRLK9RX', note: '0000 grade', desc: '0000 grade steel wool for blocking gaps and holes.' },
+              { name: 'ASelected 16 Meter Steel Wire Wool 4Pcs 0000 Steel Wool Mice, Grade 0000 Wire Hardware Cloth for Cleaning, Buffing, Polishing Glass, Windows, Tiles, Metal, 4x100g, (4m/Roll) x 4, Grey', asin: 'B0B8SHRBWK' },
               { name: 'The Big Cheese Barrier Foam', asin: 'B0DG629WMQ', note: 'Expanding foam', desc: 'Stops mouse access through holes and gaps.' },
               { name: 'Wire Mesh Roll for Proofing', asin: 'B0BF531JPD', note: 'Air brick protection', desc: 'Protects air bricks and vents from mouse entry.' },
             ].map((product, idx) => (

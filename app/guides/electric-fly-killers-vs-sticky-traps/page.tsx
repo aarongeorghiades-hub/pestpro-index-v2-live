@@ -331,16 +331,9 @@ export default function ElectricFlyKillersVsStickyTrapsPage() {
       <h3>Best Electric Fly Zapper (Home Use)</h3>
       <div className="not-prose">
         <ProductCard
-          name="Aspectek 20W Electronic Bug Zapper"
-          features={[
-            '20W UV-A light tubes attract flies, mosquitoes, and moths from up to 60 sq m',
-            'Electrified grid delivers an instant kill — no chemicals',
-            'Removable collection tray for easy cleaning',
-            'Includes hanging chain for wall or ceiling mounting',
-            'Protective outer cage prevents accidental contact with the grid',
-            'Ideal for conservatories, garages, porches, and utility rooms',
-          ]}
-          asin="B01LDE3TIW"
+          name="Bug Zapper, 4200V 18W UV Insect Pest Fly Killer, Electric Mosquito Zapper for Indoor and Outdoor, Waterproof Mosquito Killer Lamp for Flying Insect Control Lamp, Outdoor & Indoor Fly Zapper（White）"
+          features={[]}
+          asin="B0DRN8LSGP"
           bestFor="Best electric fly zapper for home use"
         />
       </div>
@@ -365,16 +358,9 @@ export default function ElectricFlyKillersVsStickyTrapsPage() {
       <h3>Best Commercial Glueboard Unit</h3>
       <div className="not-prose">
         <ProductCard
-          name="Vermatik Pro 16W Glueboard Fly Killer"
-          features={[
-            'Professional glueboard unit designed for food businesses',
-            '16W UV-A tube attracts flies from up to 40 sq m',
-            'Discreet white casing — looks like a wall light',
-            'Shatterproof tube option available for food prep areas',
-            'Easy-access glueboard replacement — no tools needed',
-            'Wall mountable — ideal for restaurants, cafés, and bakeries',
-          ]}
-          asin="B01N3B33KV"
+          name="INSECT-O-CUTOR Infiniti 2 UV LED Glueboard Fly Killer | Energy-Efficient Indoor Insect Trap | Black | Wall Mounted"
+          features={[]}
+          asin="B0C6R23BHR"
           bestFor="Best glueboard fly killer for food businesses and commercial kitchens"
         />
       </div>

@@ -572,18 +572,6 @@ export default function CarpetBeetleControlPage() {
           bestFor="Best Spray Treatment"
           rank={1}
         />
-        <ProductCard
-          name="Zeroin Carpet Beetle Trap (Monitoring)"
-          features={[
-            'Pheromone-based sticky trap catches adult carpet beetles',
-            'Place in wardrobes and along skirting boards',
-            'Monitors infestation levels and treatment effectiveness',
-            'Chemical-free detection method',
-          ]}
-          asin="B0758F5HY1"
-          bestFor="Best Monitoring Trap"
-          rank={2}
-        />
       </div>
 
       {/* ------------------------------------------------------------------ */}
