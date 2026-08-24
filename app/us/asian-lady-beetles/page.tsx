@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
+import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
 import { OVERWINTERING_NAV, OVERWINTERING_HOME } from '../components/overwinteringNav';
 
@@ -111,6 +112,12 @@ const sources: Source[] = [
     publisher: 'Ohio State University Extension (Joe Boggs and Susan C. Jones)',
     date: 'June 2, 2014',
     href: 'https://ohioline.osu.edu/factsheet/ENT-44',
+  },
+  {
+    label: 'Multicolored Asian Lady Beetle Light Traps',
+    publisher: 'Ohio State University Integrated Pest Management',
+    date: 'Accessed 24 August 2026',
+    href: 'https://ipm.osu.edu/sites/ipm/files/imce/light_0.pdf',
   },
 ];
 
@@ -358,6 +365,95 @@ export default function AsianLadyBeetlesPage() {
         will not prevent more beetles emerging shortly afterward. We make no claim about the performance
         of any product; these are the sources&rsquo; statements about timing and about what goes wrong.
       </p>
+
+      <h3>Hardware for the sealing work</h3>
+      <p>
+        <strong>
+          These are examples of the two things Penn State Extension specifies above, and nothing
+          else. They are in no order of preference, none is called better than another, and nothing
+          here is a claim about how well any of them performs &mdash; that limit is the one stated
+          at the end of the paragraph above and it applies to these cards too.
+        </strong>
+      </p>
+      <p>
+        The two criteria are the ones already quoted on this page: <strong>good quality silicone or
+        silicone-latex caulk</strong> for cracks around windows, doors, siding, utility pipes and
+        behind chimneys, and <strong>number 20 or smaller screen mesh</strong> for attics, fireplace
+        chimneys and exhaust vents. Each card below is selected against one of those two figures and
+        is described only as its own product listing describes it.
+      </p>
+
+      <UsToolCard
+        name="GE Advanced Silicone Caulk for Window &amp; Door, Clear, 10 fl oz Cartridge"
+        whatItDoes={[
+          'A silicone caulk, which is the material Penn State Extension names for sealing cracks around windows, doors, siding, utility pipes and behind chimneys.',
+          'Its own listing states silicone and a 10 fl oz cartridge. Nothing further about it is claimed here.',
+          'Ohio State University Extension adds that gaps of about 1/8 inch are worth sealing.',
+        ]}
+        asin="B0BVGTM2XY"
+      />
+
+      <UsToolCard
+        name="GE Advanced Silicone Window &amp; Door Sealant, Clear, 10.1 oz Cartridge"
+        whatItDoes={[
+          'A second silicone option in the same cartridge size range, for the same sealing work.',
+          'Penn State Extension names the material and the locations; it does not name a product, and neither does this page.',
+        ]}
+        asin="B0000CBJ7W"
+      />
+
+      <UsToolCard
+        name="GE All Purpose Silicone Caulk, Clear, 10 fl oz Cartridge"
+        whatItDoes={[
+          'Also a silicone caulk. Its listing describes it as all purpose rather than as a window and door product, which is the difference between this and the two above.',
+          'Penn State Extension specifies good quality silicone or silicone-latex caulk without distinguishing between formulations, so the distinction here is the listings\u2019, not the source\u2019s.',
+        ]}
+        asin="B0B8QPH3RW"
+      />
+
+      <UsToolCard
+        name="Insect Screen, 20 x 20 Mesh Roll, 36 inch x 25 feet"
+        whatItDoes={[
+          'A 20 x 20 mesh screening roll. Penn State Extension specifies number 20 or smaller screen mesh for attics, fireplace chimneys and exhaust vents.',
+          'The mesh count is the sourced criterion and it is stated in the product\u2019s own title. The product is marketed under a no-see-um name, which refers to the mesh grade rather than to this beetle.',
+          'The same screening is listed on our no-see-ums page against a separate specification.',
+        ]}
+        asin="B0BS4KH2FH"
+      />
+
+      <UsToolCard
+        name="Insect Screen, 20 x 20 Mesh Roll, 36 inch x 100 feet"
+        whatItDoes={[
+          'The same 20 x 20 mesh in a longer roll, for more than one vent or chimney.',
+          'Penn State Extension gives the mesh number; it gives no roll length, so length is a practical choice rather than a sourced one.',
+        ]}
+        asin="B01N3BAPJO"
+      />
+
+      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
+        <p className="m-0 text-base font-bold text-slate-900">
+          Three things this page does not sell, and why
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          <strong>Indoor insecticides.</strong> Both sources above point away from them: Ohio State
+          University Extension advises against indoor aerosol foggers, and Penn State Extension warns
+          that insecticidal treatment of wall voids may kill thousands of beetles but that carpet
+          beetles will then feed on the dead ones.
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          <strong>Exterior perimeter treatment.</strong> Penn State Extension says exterior treatment
+          should be applied by a licensed pest control operator in late September or early October.
+          That is work assigned to a licensed operator, so no perimeter product is listed here.
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          <strong>Light traps.</strong> Ohio State University Integrated Pest Management reports of a
+          commercial black light trap that it was &ldquo;very effective, catching 90% of the beetles
+          in our tests&rdquo;, operated in a dark room or at night. That figure belongs to one
+          particular trap, which the same source says is bought from a named specialist supplier
+          rather than at retail. A different trap bought elsewhere is not the article that was
+          tested, so none is listed here.
+        </p>
+      </div>
 
       <h2 id="faq">Questions</h2>
       <UsFaq faqs={faqs} />
