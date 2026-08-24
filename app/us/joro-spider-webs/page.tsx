@@ -4,6 +4,7 @@ import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
+import { JORO_NAV, JORO_HOME } from '../components/joroNav';
 
 const URL = 'https://pestproindex.com/us/joro-spider-webs';
 const TITLE = 'Joro Spider Webs: Why They Are So Big and How to Clear Them';
@@ -162,18 +163,6 @@ const relatedPages = [
   { title: 'Joro spider: identification and origin', href: '/us/joro-spider' },
   { title: 'Are Joro spiders dangerous?', href: '/us/are-joro-spiders-dangerous' },
   { title: 'Where Joro spiders are found', href: '/us/joro-spider-range' },
-];
-
-// The Joro cluster's own header nav and home pointer. These were UsPageLayout's
-// hardcoded defaults until S47 R3 made both props required and deleted them; the
-// values below are those defaults, unchanged, now stated by the page that uses them.
-const JORO_HOME = '/us/joro-spider';
-
-const JORO_NAV = [
-  { title: 'Joro Spider', href: '/us/joro-spider' },
-  { title: 'Danger', href: '/us/are-joro-spiders-dangerous' },
-  { title: 'Webs', href: '/us/joro-spider-webs' },
-  { title: 'Range', href: '/us/joro-spider-range' },
 ];
 
 export default function JoroSpiderWebsPage() {

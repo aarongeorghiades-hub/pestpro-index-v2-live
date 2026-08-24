@@ -1,9 +1,14 @@
 // The header nav for the tick cluster.
 //
-// WHY THIS FILE EXISTS AT ALL: UsPageLayout defaults `homeHref` and `clusterNav`
-// to the Joro cluster. A page that omits both props renders a Joro wordmark link
-// and a four-item Joro nav, which would be wrong on this page and wrong
-// silently. Passing this module is what prevents that.
+// WHY THIS FILE EXISTS AT ALL: UsPageLayout requires `homeHref` and `clusterNav`
+// explicitly. There is no default behind either prop, so every cluster states its
+// own here rather than inheriting another cluster's identity by omission.
+//
+// COMMENT CORRECTED, S47 R4: what stood here said the layout DEFAULTED both props
+// to the Joro cluster, and that omitting them rendered a Joro wordmark and a
+// four-item Joro nav silently. That was true until S47 R3 made the props required
+// and deleted those defaults. Omission is now a compile error, not a silent wrong
+// render. Nothing in this module's values changed in this round.
 //
 // THE CLUSTER IS ONE PAGE. The S45 R4 source pack found no published
 // specification that would let one tick product be measured against another, and
