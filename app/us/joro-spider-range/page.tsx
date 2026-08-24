@@ -170,6 +170,18 @@ const relatedPages = [
   { title: 'Joro spider webs and how to remove them', href: '/us/joro-spider-webs' },
 ];
 
+// The Joro cluster's own header nav and home pointer. These were UsPageLayout's
+// hardcoded defaults until S47 R3 made both props required and deleted them; the
+// values below are those defaults, unchanged, now stated by the page that uses them.
+const JORO_HOME = '/us/joro-spider';
+
+const JORO_NAV = [
+  { title: 'Joro Spider', href: '/us/joro-spider' },
+  { title: 'Danger', href: '/us/are-joro-spiders-dangerous' },
+  { title: 'Webs', href: '/us/joro-spider-webs' },
+  { title: 'Range', href: '/us/joro-spider-range' },
+];
+
 export default function JoroSpiderRangePage() {
   return (
     <UsPageLayout
@@ -180,6 +192,8 @@ export default function JoroSpiderRangePage() {
       breadcrumbParent={{ label: 'Joro Spider', href: '/us/joro-spider' }}
       tocItems={tocItems}
       relatedPages={relatedPages}
+      homeHref={JORO_HOME}
+      clusterNav={JORO_NAV}
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>

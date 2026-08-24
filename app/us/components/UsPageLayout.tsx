@@ -28,17 +28,13 @@ interface RelatedLink {
 // Joro links here because there was only one cluster. R6 added a second, and the two
 // must not link to each other, so the nav became a prop.
 //
-// The defaults below are the exact values R5 hardcoded. They exist so that the four
-// Joro pages keep rendering byte-identically without being edited, which is provable
-// rather than assumed. They should become REQUIRED, and these defaults deleted, as
-// soon as a /us hub page exists to point the wordmark at.
-const DEFAULT_HOME_HREF = '/us/joro-spider';
-const DEFAULT_CLUSTER_NAV: RelatedLink[] = [
-  { title: 'Joro Spider', href: '/us/joro-spider' },
-  { title: 'Danger', href: '/us/are-joro-spiders-dangerous' },
-  { title: 'Webs', href: '/us/joro-spider-webs' },
-  { title: 'Range', href: '/us/joro-spider-range' },
-];
+// DONE, S47 R3: the defaults that stood here carried the Joro cluster's own home
+// pointer and its four-item nav, so any page that omitted both props rendered the
+// Joro cluster silently and wrongly. The condition the old comment set — "as soon
+// as a /us hub page exists" — was met by the hub at app/us/page.tsx in S46 R5.
+// `homeHref` and `clusterNav` are now REQUIRED and the defaults are deleted. The
+// four Joro pages carry the identical values explicitly, and this round proved the
+// rendered output unchanged rather than assuming it.
 
 interface UsPageLayoutProps {
   title: string;
@@ -51,10 +47,12 @@ interface UsPageLayoutProps {
   relatedPages?: RelatedLink[];
   children: React.ReactNode;
   schemas: object[];
-  // Where the wordmark points. Should be this cluster's hub.
-  homeHref?: string;
-  // The header nav for this cluster. Never links out of its own cluster.
-  clusterNav?: RelatedLink[];
+  // Where the wordmark points. Should be this cluster's hub. REQUIRED: there is no
+  // default, so a cluster cannot inherit another cluster's home pointer by omission.
+  homeHref: string;
+  // The header nav for this cluster. Never links out of its own cluster. REQUIRED
+  // for the same reason.
+  clusterNav: RelatedLink[];
 }
 
 export default function UsPageLayout({
@@ -67,8 +65,8 @@ export default function UsPageLayout({
   relatedPages = [],
   children,
   schemas,
-  homeHref = DEFAULT_HOME_HREF,
-  clusterNav = DEFAULT_CLUSTER_NAV,
+  homeHref,
+  clusterNav,
 }: UsPageLayoutProps) {
   return (
     <div className="min-h-screen bg-white">
