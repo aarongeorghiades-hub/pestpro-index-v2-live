@@ -10,14 +10,16 @@
 // route would be a 404 in the header of every page in the cluster, and neither
 // entry here is unbuilt.
 //
-// homeHref points at the informational page rather than a hub, because there is
-// no hub. When a /us hub eventually exists this should point there instead.
+// SUPERSEDED, S46 R5: the /us hub now exists at app/us/page.tsx, and this
+// module's HOME constant points at it. The wordmark on every page in this
+// cluster therefore leads up to the hub rather than sideways to a page the
+// reader is already on.
 //
 // It contains no link to the gopher cluster, none to the Joro cluster and none
 // to the overwintering cluster: different animal, different range, different
 // reader.
 
-export const ARMADILLO_HOME = '/us/armadillos';
+export const ARMADILLO_HOME = '/us';
 
 export const ARMADILLO_NAV = [
   { title: 'Armadillos', href: '/us/armadillos' },

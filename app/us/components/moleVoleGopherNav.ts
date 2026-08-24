@@ -11,9 +11,11 @@
 // identification page into a funnel, and would invite a reader to carry a
 // method across to an animal the page has just told them they may not have.
 //
-// homeHref points at the page itself because it is the only page in the
-// cluster. When a /us hub eventually exists this should point there instead.
+// SUPERSEDED, S46 R5: the /us hub now exists at app/us/page.tsx, and this
+// module's HOME constant points at it. The wordmark on every page in this
+// cluster therefore leads up to the hub rather than sideways to a page the
+// reader is already on.
 
-export const MVG_HOME = '/us/moles-voles-gophers';
+export const MVG_HOME = '/us';
 
 export const MVG_NAV = [{ title: 'Moles, Voles and Gophers', href: '/us/moles-voles-gophers' }];

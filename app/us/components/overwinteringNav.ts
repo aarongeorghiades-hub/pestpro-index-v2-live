@@ -4,8 +4,13 @@
 // drift into linking somewhere it should not. It deliberately contains no link to
 // the Joro cluster: different pest, different season, no user value in crossing
 // between them.
+//
+// SUPERSEDED, S46 R5: the /us hub now exists at app/us/page.tsx, and this
+// module's HOME constant points at it. The wordmark on every page in this
+// cluster therefore leads up to the hub rather than sideways to a page the
+// reader is already on.
 
-export const OVERWINTERING_HOME = '/us/stink-bugs-in-house';
+export const OVERWINTERING_HOME = '/us';
 
 export const OVERWINTERING_NAV = [
   { title: 'Stink Bugs', href: '/us/stink-bugs-in-house' },

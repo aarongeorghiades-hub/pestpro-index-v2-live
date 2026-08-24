@@ -19,9 +19,11 @@
 // monitoring and spot treatment, each with its own sourced limitation. They are
 // not a second page and must not become one without a new sourced criterion.
 //
-// homeHref points at the page itself because it is the only page in the cluster.
-// When a /us hub eventually exists this should point there instead.
+// SUPERSEDED, S46 R5: the /us hub now exists at app/us/page.tsx, and this
+// module's HOME constant points at it. The wordmark on every page in this
+// cluster therefore leads up to the hub rather than sideways to a page the
+// reader is already on.
 
-export const TERMITES_HOME = '/us/termites';
+export const TERMITES_HOME = '/us';
 
 export const TERMITES_NAV = [{ title: 'Termites', href: '/us/termites' }];

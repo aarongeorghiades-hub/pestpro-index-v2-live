@@ -33,9 +33,11 @@
 // marsh and decaying seaweed habitat would carry weight. Not linked, because a link
 // to a route that does not exist is a 404.
 //
-// homeHref points at the page itself because it is the only page in the cluster.
-// When a /us hub eventually exists this should point there instead.
+// SUPERSEDED, S46 R5: the /us hub now exists at app/us/page.tsx, and this
+// module's HOME constant points at it. The wordmark on every page in this
+// cluster therefore leads up to the hub rather than sideways to a page the
+// reader is already on.
 
-export const NOSEEUMS_HOME = '/us/no-see-ums';
+export const NOSEEUMS_HOME = '/us';
 
 export const NOSEEUMS_NAV = [{ title: 'No-See-Ums', href: '/us/no-see-ums' }];

@@ -11,10 +11,12 @@
 // animal the regulation never names, which is the exact error the S37 R7 source
 // pack found in the secondary pages it surveyed. The separation is the point.
 //
-// homeHref points at this page because it is the only page in the cluster. When
-// a /us hub eventually exists this should point there instead.
+// SUPERSEDED, S46 R5: the /us hub now exists at app/us/page.tsx, and this
+// module's HOME constant points at it. The wordmark on every page in this
+// cluster therefore leads up to the hub rather than sideways to a page the
+// reader is already on.
 
-export const CALIFORNIA_HOME = '/us/california-trapping-rules';
+export const CALIFORNIA_HOME = '/us';
 
 export const CALIFORNIA_NAV = [
   { title: 'California Trapping Rules', href: '/us/california-trapping-rules' },

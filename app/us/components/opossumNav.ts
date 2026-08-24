@@ -12,12 +12,14 @@
 // describes any trap feature as opossum-specific. There is nothing to build a
 // second page on, so no second entry is listed here.
 //
-// homeHref points at the informational page because it is the only page in the
-// cluster. When a /us hub eventually exists this should point there instead.
+// SUPERSEDED, S46 R5: the /us hub now exists at app/us/page.tsx, and this
+// module's HOME constant points at it. The wordmark on every page in this
+// cluster therefore leads up to the hub rather than sideways to a page the
+// reader is already on.
 //
 // It contains no link to the skunk, armadillo, gopher, Joro or overwintering
 // clusters: different animal, different reader.
 
-export const OPOSSUM_HOME = '/us/opossums';
+export const OPOSSUM_HOME = '/us';
 
 export const OPOSSUM_NAV = [{ title: 'Opossums', href: '/us/opossums' }];

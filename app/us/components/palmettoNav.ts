@@ -18,9 +18,11 @@
 // carried here as a short mention only, following the Formosan precedent on
 // /us/termites. When that page exists it joins this array.
 //
-// homeHref points at the page itself because it is the only page in the cluster.
-// When a /us hub eventually exists this should point there instead.
+// SUPERSEDED, S46 R5: the /us hub now exists at app/us/page.tsx, and this
+// module's HOME constant points at it. The wordmark on every page in this
+// cluster therefore leads up to the hub rather than sideways to a page the
+// reader is already on.
 
-export const PALMETTO_HOME = '/us/palmetto-bugs';
+export const PALMETTO_HOME = '/us';
 
 export const PALMETTO_NAV = [{ title: 'Palmetto Bugs', href: '/us/palmetto-bugs' }];

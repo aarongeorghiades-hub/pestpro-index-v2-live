@@ -12,12 +12,14 @@
 // round. A nav entry to an unbuilt /us/best-skunk-traps would be a 404 in the
 // header of this page, so it is not listed until that page exists.
 //
-// homeHref points at the informational page because it is the only page in the
-// cluster. When a /us hub eventually exists this should point there instead.
+// SUPERSEDED, S46 R5: the /us hub now exists at app/us/page.tsx, and this
+// module's HOME constant points at it. The wordmark on every page in this
+// cluster therefore leads up to the hub rather than sideways to a page the
+// reader is already on.
 //
 // It contains no link to the armadillo, gopher, Joro or overwintering clusters:
 // different animal, different reader.
 
-export const SKUNK_HOME = '/us/skunks';
+export const SKUNK_HOME = '/us';
 
 export const SKUNK_NAV = [{ title: 'Skunks', href: '/us/skunks' }];
