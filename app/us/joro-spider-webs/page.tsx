@@ -132,6 +132,14 @@ const sources: Source[] = [
     href: 'https://fieldreport.caes.uga.edu/publications/C1273/',
   },
   {
+    label:
+      'Managing Joro Spiders in the Landscape (Circular 1289) — the source of the manual-removal and reach material',
+    publisher:
+      'University of Georgia Extension (William G. Hudson, Shimat V. Joseph and Jason Schmidt)',
+    date: 'July 13, 2023',
+    href: 'https://fieldreport.caes.uga.edu/publications/C1289/managing-joro-spiders-in-the-landscape/',
+  },
+  {
     label: 'Joro Watch Season',
     publisher: 'Joro Watch, UGA Center for Invasive Species and Ecosystem Health',
     date: 'Accessed August 21, 2026',
@@ -277,6 +285,23 @@ export default function JoroSpiderWebsPage() {
         nine feet of reach standing on the ground; a three-stage pole roughly doubles that, which is
         the difference between clearing a gutter-line web from the lawn and getting a ladder out.
       </p>
+      <p>
+        University of Georgia Extension names the same manual approach and the same everyday tools in
+        Circular 1289: <strong>&ldquo;A rake, a broom, or a stick can be used for wrapping up the
+        spiders.&rdquo;</strong> The same publication gives the reason reach matters, and it puts it
+        more bluntly than most sources would:{' '}
+        <strong>
+          &ldquo;The higher up the spider is, however, the better the chance it will end up on your
+          head.&rdquo;
+        </strong>{' '}
+        That is the argument for a pole rather than a broom in one sentence, from the extension
+        service closest to this animal. It also explains why the work is worth doing once and
+        properly: University of Georgia states in the same circular that{' '}
+        <strong>
+          &ldquo;Simply destroying the web is not effective, as they can rebuild it in short
+          order.&rdquo;
+        </strong>
+      </p>
 
       <UsToolCard
         name="EVERSPROUT 5-to-12 Foot Cobweb Duster & Pole Combo"
@@ -291,7 +316,7 @@ export default function JoroSpiderWebsPage() {
 
       <p>
         One tool, named plainly. We have not built a ranking, a comparison table, or a
-        &ldquo;best of&rdquo; category around a single item, because a table of one is not a
+        &ldquo;top picks&rdquo; category around a single item, because a table of one is not a
         comparison. Any telescoping duster of similar length does the same job; this one is named
         so the description points at something specific rather than at a shopping category.
       </p>
