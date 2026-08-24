@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
+import UsToolCard from '../components/UsToolCard';
 import { SourceList, AsOf, type Source } from '../components/UsSources';
 import { OPOSSUM_NAV, OPOSSUM_HOME } from '../components/opossumNav';
 
@@ -131,6 +132,18 @@ const sources: Source[] = [
     publisher: 'Louisiana Department of Health, Office of Public Health',
     date: 'June 2023. Accessed August 22, 2026',
     href: 'https://ldh.la.gov/assets/oph/Center-PHCH/Center-CH/infectious-epi/VetInfo/Rabies/RabiesSummary_6_2023_ab.pdf',
+  },
+  {
+    label: 'Opossum, Pest Notes Publication 74123 (R. A. Baldwin), updated 10/2015',
+    publisher: 'UC Statewide IPM Program',
+    date: 'Accessed 24 August 2026',
+    href: 'https://ipm.ucanr.edu/home-and-landscape/opossum/',
+  },
+  {
+    label: 'Problems with Skunks & Opossums',
+    publisher: 'Virginia Department of Wildlife Resources',
+    date: 'Accessed 24 August 2026',
+    href: 'https://dwr.virginia.gov/wildlife/nuisance/skunks-and-opossums/',
   },
   {
     label: 'Problem Wildlife in the Garden and Yard',
@@ -432,6 +445,108 @@ export default function OpossumsPage() {
         </li>
       </ul>
 
+      <h3>Hardware for closing the openings</h3>
+      <p>
+        <strong>
+          These are examples of one thing: quarter-inch mesh hardware cloth. They are in no order of
+          preference and none is called better than another, because no source read for this page
+          compares one product against another.
+        </strong>{' '}
+        UC IPM states plainly what to close the gaps with: &ldquo;Close off all potential entrances
+        or openings under the house, garden tool shed, mobile home, deck, etc. with 1/4&ndash;inch
+        mesh hardware cloth.&rdquo; That quarter-inch figure is what every card below is selected
+        against, and it is printed on each product&rsquo;s own listing.
+      </p>
+      <p>
+        <strong>The sources do not give one set of numbers, and this page does not merge them.</strong>{' '}
+        UC IPM gives quarter-inch mesh, and says to &ldquo;bury the hardware cloth up to 6
+        inches.&rdquo; Nebraska Extension, quoted higher up this page, gives 1 inch by half-inch
+        galvanized hardware cloth for crawl spaces, names 10-gauge quarter-inch wire mesh among its
+        repair materials, and asks for the mesh to be buried at least 4 inches with a 12 to 18 inch
+        skirt. Los Angeles County Department of Animal Care and Control gives quarter-inch grid
+        screening for attic vents and chimneys. Two of the three converge on a quarter inch; the
+        burial depths genuinely differ, and each figure is quoted with the source that published it.
+      </p>
+      <p>
+        One thing the listings cannot settle: Nebraska Extension specifies <em>galvanized</em>
+        hardware cloth, and that word does not appear in the product titles below. Where a title
+        states a coating, the card repeats it; where it does not, this page says nothing about the
+        finish rather than guessing at it.
+      </p>
+
+      <UsToolCard
+        name="Hardware Cloth 1/4 inch, 48 x 50 ft Wire Fencing"
+        whatItDoes={[
+          'Its own title states a 1/4 inch mesh, which is the figure UC IPM gives for closing openings under a house, shed, mobile home or deck.',
+          'Its title states no coating, so this card claims none.',
+          'UC IPM states to bury the hardware cloth up to 6 inches; Nebraska Extension asks for at least 4 inches with a 12 to 18 inch skirt. The two figures differ and both are given here.',
+        ]}
+        asin="B0832YDD5B"
+      />
+
+      <UsToolCard
+        name="SEBOSS Hardware Cloth Wire Mesh 1/4 inch, 48 x 100 ft, 23 Gauge"
+        whatItDoes={[
+          'A longer roll at the same 1/4 inch mesh stated in its own title.',
+          'Its title states a 23 gauge and no coating.',
+          'Los Angeles County Department of Animal Care and Control gives quarter-inch grid screening as its answer for attic vents and chimneys.',
+        ]}
+        asin="B08PPYX999"
+      />
+
+      <UsToolCard
+        name="Black PVC Coated 1/4&quot; Hardware Cloth, 48&quot; x 100&#39;, 23 Gauge"
+        whatItDoes={[
+          'The same 1/4 inch mesh, in a roll its own title describes as PVC coated.',
+          'The coating is stated here only because the product title states it. No source read for this page expresses a preference between coated and uncoated mesh.',
+        ]}
+        asin="B0D1QXZFKJ"
+      />
+
+      <UsToolCard
+        name="FORIMO Hardware Cloth 1/4 inch, 24 in x 50 ft, 19 Gauge, Black Vinyl Coated"
+        whatItDoes={[
+          'A narrower roll at the same 1/4 inch mesh, described in its own title as 19 gauge and black vinyl coated.',
+          'A narrow roll suits the trench-and-skirt work Nebraska Extension describes rather than a large vent or wall panel.',
+        ]}
+        asin="B09W8XZDVS"
+      />
+
+      <UsToolCard
+        name="Hardware Cloth 1/4 inch, 19 Gauge, 8 in x 10 ft"
+        whatItDoes={[
+          'The smallest roll of the five, at the same 1/4 inch mesh stated in its own title.',
+          'Sized for a single vent or a patch rather than a run of decking. Los Angeles County Department of Animal Care and Control also names slotted metal vent covers for foundation vents, which this is not.',
+        ]}
+        asin="B0H75HHMDX"
+      />
+
+      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
+        <p className="m-0 text-base font-bold text-slate-900">
+          Two things this page does not sell, and why
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          <strong>
+            Repellents. UC IPM states: &ldquo;An array of chemical products is marketed for
+            repelling various wildlife species but, unfortunately, none offer significant results
+            for opossums.&rdquo;
+          </strong>{' '}
+          The same source notes that the odor of mothballs, naphthalene crystals, or household
+          ammonia has been used as a home remedy repellent, which is a report of what people do
+          rather than a finding that it works.
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          <strong>Motion-activated devices.</strong> UC IPM states that &ldquo;A motion-activated
+          sprinkler device sometimes induces a fright response in opossums, skunks, and raccoons. If
+          the animal has established the habit of visiting the yard or garden, such frightening
+          responses rarely last for more than a few days.&rdquo; The Virginia Department of Wildlife
+          Resources states that &ldquo;Reflective tape, lights, or noise sometimes works, but they
+          will eventually grow accustomed to these methods, so this is only a temporary
+          solution.&rdquo; Both sources that address these devices describe the effect as
+          short-lived, so none is listed here.
+        </p>
+      </div>
+
       <h2 id="trapping">Control: Trapping</h2>
       <p>
         Everything in this section comes from one source, Nebraska Extension, and that source
@@ -465,7 +580,16 @@ export default function OpossumsPage() {
       </ul>
       <p>
         No source read for this page describes a trap feature as opossum-specific, and no source
-        compares one trap against another. We do not publish an opossum product page.
+        compares one trap against another. <strong>We do not card opossum traps, and the reason
+        is not the traps.</strong> UC IPM states that &ldquo;Live-trapping presents the problem of
+        dealing with the animal once captured,&rdquo; and that &ldquo;Since it is illegal to
+        relocate an opossum without a permit, those not wanting to deal with its disposal may
+        prefer to hire a professional wildlife control operator.&rdquo; The Virginia Department of
+        Wildlife Resources states that &ldquo;It is illegal in the State of Virginia to trap and
+        relocate an animal to another area.&rdquo; Those two statements are about California and
+        Virginia and neither is a national rule, so a reader has to check their own state before
+        trapping anything. What the sources do recommend is closing the openings, and the hardware
+        for that is in the section above.
       </p>
 
       <h2 id="breeding">Breeding and Pouch Young</h2>
