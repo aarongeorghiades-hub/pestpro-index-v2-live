@@ -126,6 +126,19 @@ const products: ProductRecord[] = [
     ],
   },
   {
+    asin: 'B09ZK6Y4W7',
+    cardName: 'Stainless Steel Pincer Gopher Trap, 3-Pack',
+    titleAsFetched:
+      'Amazon.com : Worlds Best Gopher Trap, New, Stainless Steel, (3 Pack) USA Made! Weatherproof-Reusable, Below Ground, Pocket Gopher Kill Trap, : Patio, Lawn & Garden',
+    mechanism: 'pincer',
+    whatItDoes: [
+      'Two-pronged pincer trap — the mechanism UC IPM names first, triggered when the gopher pushes against a flat, vertical pan or metal wire',
+      'Stainless steel, supplied as three, with dimensions of 5.5 by 2.5 by 1.5 inches per the listing',
+      'The listing names no mechanism in its own text; the type was read from its own product images, which show two wire prongs, a coil spring and a flat vertical wire trigger frame',
+      'Set exactly as the other pincer traps: main tunnel, paired, staked',
+    ],
+  },
+  {
     asin: 'B002J89XYA',
     cardName: 'Cinch Gopher Trap Kit',
     titleAsFetched:
@@ -160,14 +173,31 @@ const products: ProductRecord[] = [
 // exported to nothing and rendered nowhere by design: this round's ruling is
 // that the REASON for a rejection belongs in the record, not on the page.
 // ---------------------------------------------------------------------------
+// RECLASSIFIED, S48 R1: B09ZK6Y4W7 was removed from this array and carded as the
+// fifth pincer trap above. It sat here from S36 R5 on two grounds, and both are
+// unsound.
+//
+// Its reason string claimed, verbatim: "ASIN verifies clean (HTTP 200, title
+// confirmed, not unavailable). REJECTED because the product name itself contains
+// the superlative 'Worlds Best'. Carding it would render an award bar inside a
+// product title, which the estate bars without stated evidence, and no extension
+// source names this trap type at all."
+//
+// GROUND ONE, the superlative, is superseded by Aaron's S47-F rule: manufacturer
+// self-praise in a product's own title is never grounds for exclusion. It is
+// trimmed from card copy instead, which is what the card above does — the name is
+// written from the listing's identity and carries no part of the seller's title.
+//
+// GROUND TWO, "no extension source names this trap type at all", was simply wrong.
+// S47 R11 read the listing's own product images: two wire prongs closing at the
+// top, a coil spring, a flat vertical wire trigger frame and a leader cable. That
+// is the two-pronged pincer trap UC IPM names FIRST, and the type four traps on
+// this page were already carded as. The listing's own TEXT names no mechanism, so
+// the images are what settled it, and that is stated on the card itself.
+//
+// The history is recorded here rather than erased. What follows is the array as it
+// now stands: four dead listings and one that was marked unavailable.
 const REJECTED_PRODUCTS: { asin: string; titleAsFetched: string; reason: string }[] = [
-  {
-    asin: 'B09ZK6Y4W7',
-    titleAsFetched:
-      'Amazon.com : Worlds Best Gopher Trap, New, Stainless Steel, (3 Pack) USA Made! : Patio, Lawn & Garden',
-    reason:
-      'ASIN verifies clean (HTTP 200, title confirmed, not unavailable). REJECTED because the product name itself contains the superlative "Worlds Best". Carding it would render an award bar inside a product title, which the estate bars without stated evidence, and no extension source names this trap type at all.',
-  },
   {
     asin: 'B00KZJG4JC',
     titleAsFetched: 'Amazon.com : Cinch Gopher Trap Deluxe Kit - Medium (3 Packs) : Patio, Lawn & Garden',
@@ -485,10 +515,9 @@ export default function BestGopherTrapsPage() {
       ))}
 
       <p>
-        <strong>What we checked and did not include.</strong> Six further listings were fetched
-        while writing this page and none is named here. Four were dead pages, one was marked
-        currently unavailable, and one was excluded on our own editorial rules. A trap you cannot
-        buy is not an option, and a listing we exclude is not one we quietly link anyway.
+        <strong>What we checked and did not include.</strong> Five further listings were fetched
+        while writing this page and none is named here. Four were dead pages and one was marked
+        currently unavailable. A trap you cannot buy is not an option.
       </p>
 
       <h2 id="exclusion">Fencing Instead of Trapping</h2>
