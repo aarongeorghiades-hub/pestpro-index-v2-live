@@ -229,7 +229,7 @@ const comparisonRows: ComparisonRow[] = [
 
 const faqs: Faq[] = [
   {
-    question: 'Which gopher trap works best?',
+    question: 'Is one gopher trap more effective than the others?',
     answer:
       'We are not going to rank them, because the evidence does not support a ranking. One extension trial exists: Utah State University compared Macabee, DK-1 and Cinch traps in four alfalfa fields outside Beaver, Beaver County, Utah, in 2015. It reported Macabee traps were more time efficient than the DK-1 or Cinch traps, at KW X2 = 10.2, df=2, P = 0.006, and more effective per animal visit at KW X2 = 7.12, df= 2, P = 0.03. The same trial reported Macabee traps were also tripped or plugged more often, at KW X2 = 6.05, df = 2, P = 0.048. The authors state their sample size was small and treat P at or below 0.05 as different. That is one trial, in alfalfa, on one species, in one county. It supports a description; it does not support a league table.',
   },
@@ -244,7 +244,7 @@ const faqs: Faq[] = [
       'Not for that reason. UC IPM states there is no impact of human scent on trapping success. Wear gloves if you want to keep your hands clean or protected; do not skip a set because you touched the trap.',
   },
   {
-    question: 'When is the best time of year to trap?',
+    question: 'What time of year should I trap?',
     answer:
       'Gophers do not stop. UC IPM states gophers don’t hibernate and are active year-round. What changes is how visible they are: Utah State University reports gophers are usually most active in the spring and fall, and New Mexico State says trapping is most effective when gophers are pushing up new mounds, usually in spring and fall. Fresh mounds are the signal, in any month.',
   },

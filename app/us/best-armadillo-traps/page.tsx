@@ -54,7 +54,7 @@ const breadcrumbSchema = {
 
 const faqs: Faq[] = [
   {
-    question: 'What is the best bait for an armadillo trap?',
+    question: 'What bait should I put in an armadillo trap?',
     answer:
       'The published evidence says the question has no useful answer. University of Georgia tested live night crawlers, live crickets, rotten chicken feed, whole eggs, rotten eggs, bananas, marshmallows, sardines, vanilla wafers, moistened soil and a commercially available lure, and reported that the use of baits and attractants does not appear to increase trap success, and that armadillos in the study were just as likely to enter a baited trap as an unbaited trap. UF/IFAS Extension states that there are also no effective methods for baiting armadillos into traps, and separately that the benefit of using baits with this trap is questionable. No bait or lure is listed on this page.',
   },

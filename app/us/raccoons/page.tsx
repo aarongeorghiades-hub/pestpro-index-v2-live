@@ -288,12 +288,10 @@ export default function RaccoonsPage() {
       <p>
         Three sources put exclusion first. UC IPM states that exclusion is the key to eliminating den
         sites, and Iowa State University Extension states that exclusion is the first line of defense
-        against raccoons. Utah State University Extension puts it as a judgement of its own, quoted
-        here with its qualifying clause intact:{' '}
-        <em>
-          &ldquo;Exclusion, if feasible, is usually the best way to handle raccoon damage&rdquo;
-        </em>
-        .
+        against raccoons. Utah State University Extension goes further and ranks it. Where exclusion is
+        feasible, it places exclusion ahead of the other ways of handling raccoon damage
+        &mdash; and it says usually rather than always, which is its own qualifier and is kept
+        here.
       </p>
       <h3>Before anything is closed up</h3>
       <ul>
