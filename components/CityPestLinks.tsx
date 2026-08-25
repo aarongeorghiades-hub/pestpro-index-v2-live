@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { PESTS } from '@/app/pest-control/pest-city-config';
+import { PESTS } from '@/app/(uk)/pest-control/pest-city-config';
 
 // "Pest control by type in {City}" interlinking block — links a borough/town
 // page to that city's pest-specific pages. Mirrors the pest-type block the

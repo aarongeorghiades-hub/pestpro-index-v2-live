@@ -9,8 +9,8 @@ import CityAreaLinks from '@/components/CityAreaLinks';
 import ProductCard from '@/components/ProductCard';
 import { topProductsByPest } from '@/data/pest-products';
 import { cityDirectoryHref } from '@/lib/seo';
-import { LOCATIONS, PESTS } from '@/app/pest-control/pest-city-config';
-import type { LocationConfig, PestConfig } from '@/app/pest-control/pest-city-config';
+import { LOCATIONS, PESTS } from '@/app/(uk)/pest-control/pest-city-config';
+import type { LocationConfig, PestConfig } from '@/app/(uk)/pest-control/pest-city-config';
 
 export interface Provider {
   canonical_id?: number;

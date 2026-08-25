@@ -11,7 +11,7 @@
 
 import { createServerClient } from '@/utils/supabase-server';
 import { formatCount } from '@/lib/formatCount';
-import type { Region, RegionCity } from '@/app/pest-control/data/regions';
+import type { Region, RegionCity } from '@/app/(uk)/pest-control/data/regions';
 
 /** Which directory a city entry points at, and therefore how to count it. */
 export type CityTarget = { slug: string; kind: 'residential' | 'commercial' };
