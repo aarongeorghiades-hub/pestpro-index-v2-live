@@ -5,7 +5,7 @@ import UsPageLayout from './components/UsPageLayout';
 const URL = 'https://pestproindex.com/us';
 const TITLE = 'US Pest Guides';
 const DESCRIPTION =
-  'Twenty-five US pest pages, grouped by the problem you actually have: biting pests, cockroaches and termites, overwintering invaders, Joro spiders, wildlife, burrowing rodents, and one page on state trapping rules.';
+  'Twenty-six US pest pages, grouped by the problem you actually have: biting and stinging pests, cockroaches and termites, overwintering invaders, Joro spiders, wildlife, burrowing rodents, and one page on state trapping rules.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -25,15 +25,18 @@ export async function generateMetadata(): Promise<Metadata> {
 // The hub is the top of the trail. UsPageLayout omits the breadcrumb parent when
 // none is passed, and the wordmark points at whatever homeHref is given, so the
 // hub points at itself. clusterNav is passed EXPLICITLY AS AN EMPTY ARRAY rather
-// than omitted: omitting it makes UsPageLayout fall back to its hardcoded Joro
-// defaults, which would put four Joro links in the header of a page that is not
-// the Joro cluster. An empty array renders no header links at all, which is what
+// than omitted, and an empty array renders no header links at all, which is what
 // the top of the trail wants.
+//
+// COMMENT CORRECTED, S47 R6: what stood here said that omitting clusterNav made
+// UsPageLayout fall back to hardcoded Joro defaults. That was true until S47 R3
+// made both props required and deleted those defaults; omission is now a compile
+// error. This file was outside R4's scope, so the correction lands here instead.
 const HUB_HOME = '/us';
 const HUB_NAV: { title: string; href: string }[] = [];
 
 // Every route under /us, grouped by the problem a reader arrives with rather than
-// by taxonomy. Each of the 25 routes appears exactly once. The `title` on each
+// by taxonomy. Each of the 26 routes appears exactly once. The `title` on each
 // entry is the page's own h1, read from the page, not a rewritten label. The
 // `covers` line is navigation copy: it says what the page is about and asserts
 // nothing about the pest itself, because no source pack governs this file.
@@ -42,8 +45,9 @@ type HubGroup = { heading: string; blurb: string; items: HubLink[] };
 
 const groups: HubGroup[] = [
   {
-    heading: 'Biting Pests',
-    blurb: 'Things that bite people outdoors, and what the sources say about avoiding them.',
+    heading: 'Biting & Stinging Pests',
+    blurb:
+      'Things that bite or sting people, and what the sources say about avoiding them.',
     items: [
       {
         title: 'Ticks',
@@ -59,6 +63,12 @@ const groups: HubGroup[] = [
         title: 'No-See-Ums',
         href: '/us/no-see-ums',
         covers: 'Biting midges, window screen mesh sizes, and the sand fly naming problem.',
+      },
+      {
+        title: 'Arizona Bark Scorpions',
+        href: '/us/arizona-bark-scorpions',
+        covers:
+          'Telling it from the harmless desert scorpions, the sting, and sealing a building.',
       },
     ],
   },
@@ -245,7 +255,7 @@ export default function UsHubPage() {
   return (
     <UsPageLayout
       title="US Pest Guides"
-      subtitle="Twenty-five pages on pests in the United States, grouped by the problem rather than by the taxonomy. Every page is written from university extension and public health sources, and cites them."
+      subtitle="Twenty-six pages on pests in the United States, grouped by the problem rather than by the taxonomy. Every page is written from university extension and public health sources, and cites them."
       lastUpdated="August 2026"
       readingTime="3 min"
       tocItems={tocItems}
