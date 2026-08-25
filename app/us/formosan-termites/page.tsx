@@ -338,6 +338,17 @@ export default function FormosanTermitesPage() {
         adults.
       </p>
       <p>
+        <strong>On what that adds up to nationally.</strong> University of Florida IFAS
+        Extension states that{' '}
+        <em>
+          &ldquo;the annual economic impact of Coptotermes formosanus alone in the United States
+          is likely &gt;$4 billion&rdquo;
+        </em>
+        , citing Su and Lee. <strong>That estimate is dated 2023 by the work it comes from</strong>,
+        and it is a national figure for damage and control across the species&rsquo; whole US
+        range &mdash; not a cost to any particular household, and not a price for anything.
+      </p>
+      <p>
         <strong>On foraging distance, the same publication gives two figures for two different
         settings, and they are not the same claim.</strong> It records foraging{' '}
         <strong>up to 100 m in the field</strong>, and{' '}
