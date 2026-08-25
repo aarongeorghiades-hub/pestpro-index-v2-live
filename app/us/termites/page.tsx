@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
@@ -123,6 +124,13 @@ const sources: Source[] = [
     publisher: 'Alabama Cooperative Extension System',
     date: 'Accessed 23 August 2026',
     href: 'https://aces.edu/blog/topics/home/subterranean-termite-control-products-for-alabamians/',
+  },
+  {
+    label:
+      'Formosan Subterranean Termite, Coptotermes formosanus Shiraki (EENY-121/IN278) — the source of the second soldier-proportion row in the table above',
+    publisher: 'University of Florida IFAS Extension',
+    date: 'Distribution data as of July 2024; accessed 25 August 2026',
+    href: 'https://edis.ifas.ufl.edu/publication/in278',
   },
   {
     label: 'Circular C868 — Formosan Subterranean Termite',
@@ -307,18 +315,41 @@ export default function TermitesPage() {
                 <td className="px-4 py-3 text-gray-700">Black</td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-semibold text-gray-900">Soldiers, share of colony</td>
+                <td className="px-4 py-3 font-semibold text-gray-900">
+                  Soldiers, share of colony
+                  <span className="block font-normal text-gray-600">
+                    University of Georgia Extension
+                  </span>
+                </td>
                 <td className="px-4 py-3 text-gray-700">15 to 20 percent</td>
                 <td className="px-4 py-3 text-gray-700">1 to 3 percent</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3 font-semibold text-gray-900">
+                  Soldiers, share of colony
+                  <span className="block font-normal text-gray-600">
+                    University of Florida IFAS Extension
+                  </span>
+                </td>
+                <td className="px-4 py-3 text-gray-700">10% to 15%</td>
+                <td className="px-4 py-3 text-gray-700">1%&ndash;2%</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
       <p>
-        Those three figures are all this page carries on the Formosan termite. The source
-        distinguishes the two, and the distinction is recorded; nothing is added about range,
-        severity or treatment that the source consulted did not state.
+        <strong>Two extension services publish different soldier proportions, and both rows
+        are given above rather than one being chosen.</strong> The Formosan ranges overlap at 15
+        percent and nowhere else. Neither is corrected here and neither is averaged, because
+        both are published figures from extension services and this page has no basis for
+        preferring one.
+      </p>
+      <p>
+        Beyond the characters in that table, this page carries nothing further on the Formosan
+        termite. Its range, its colony size, its swarm season and what the sources say a
+        householder can and cannot do about it are set out on our{' '}
+        <Link href="/us/formosan-termites">Formosan termites page</Link>.
       </p>
 
       <h2 id="getting-rid">Getting Rid of Them</h2>
@@ -479,7 +510,7 @@ export default function TermitesPage() {
 
       <h2 id="sources">Sources</h2>
       <p>
-        Every factual statement on this page traces to one of the eight extension service
+        Every factual statement on this page traces to one of the nine extension service
         publications below. Where a source qualified its own statement, the qualification is kept.
         The product names above were read from each product&rsquo;s own listing on 23 August 2026
         and are recorded rather than assessed; the listings read were B00AA8WVLI, B00EORPBQI,
