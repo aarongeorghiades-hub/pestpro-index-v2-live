@@ -1006,11 +1006,12 @@ export default function BrownRecluseSpidersPage() {
         </em>
       </p>
       <p>
-        K-State publishes the same idea in its own words:{' '}
+        K-State publishes the same idea in its own words, and scopes it to a house already known
+        to be infested:{' '}
         <em>
-          &ldquo;you can reduce the chance of being bitten by shaking out shoes and clothing before
-          putting them on, keeping bed sheets from touching the floor, and hanging clothes in
-          closets rather than leaving them on the floor.&rdquo;
+          &ldquo;In an infested home, you can reduce the chance of being bitten by shaking out shoes
+          and clothing before putting them on, keeping bed sheets from touching the floor, and
+          hanging clothes in closets rather than leaving them on the floor.&rdquo;
         </em>
       </p>
       <p>
