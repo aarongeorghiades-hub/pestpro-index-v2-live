@@ -5,7 +5,7 @@ import UsPageLayout from './components/UsPageLayout';
 const URL = 'https://pestproindex.com/us';
 const TITLE = 'US Pest Guides';
 const DESCRIPTION =
-  'Thirty-three US pest pages, grouped by the problem you actually have: biting and stinging pests, cockroaches and termites, overwintering invaders, Joro spiders, wildlife, burrowing rodents, and one page on state trapping rules.';
+  'Thirty-four US pest pages, grouped by the problem you actually have: biting and stinging pests, cockroaches and termites, overwintering invaders, Joro spiders, wildlife, burrowing rodents, and one page on state trapping rules.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -36,7 +36,7 @@ const HUB_HOME = '/us';
 const HUB_NAV: { title: string; href: string }[] = [];
 
 // Every route under /us, grouped by the problem a reader arrives with rather than
-// by taxonomy. Each of the 33 routes appears exactly once. The `title` on each
+// by taxonomy. Each of the 34 routes appears exactly once. The `title` on each
 // entry is the page's own h1, read from the page, not a rewritten label. The
 // `covers` line is navigation copy: it says what the page is about and asserts
 // nothing about the pest itself, because no source pack governs this file.
@@ -222,6 +222,11 @@ const groups: HubGroup[] = [
         covers: 'Trap types and how they are set.',
       },
       {
+        title: 'Ground Squirrels',
+        href: '/us/ground-squirrels',
+        covers: 'The methods the sources support, the California legal frame, and why no product is named.',
+      },
+      {
         title: 'Chipmunks',
         href: '/us/chipmunks',
         covers: 'When the sources say control is warranted, and what they support when it is.',
@@ -297,7 +302,7 @@ export default function UsHubPage() {
   return (
     <UsPageLayout
       title="US Pest Guides"
-      subtitle="Thirty-three pages on pests in the United States, grouped by the problem rather than by the taxonomy. Every page is written from university extension and public health sources, and cites them."
+      subtitle="Thirty-four pages on pests in the United States, grouped by the problem rather than by the taxonomy. Every page is written from university extension and public health sources, and cites them."
       lastUpdated="August 2026"
       readingTime="3 min"
       tocItems={tocItems}
