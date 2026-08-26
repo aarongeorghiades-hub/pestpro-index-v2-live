@@ -156,7 +156,7 @@ const products: ProductRecord[] = [
     titleAsFetched: 'GE Advanced Silicone Window & Door Sealant, Clear, 10.1 oz Cartridge',
     group: 'sealant',
     whatItDoes: [
-      'UC IPM describes blocking house access by sealing cracks around doors and access holes for electrical conduits or plumbing',
+      'UC IPM scopes this advice to residences with attached garages: blocking house access by sealing cracks around doors and access holes for electrical conduits or plumbing',
       'A clear cartridge sealant for those gaps, sold in the same size class as the one above',
       'K-State Extension puts it more broadly: sealing both interior and exterior cracks and crevices prevents spiders and their insect prey from moving in',
       'Named as a specific example of the type. No source tested this or any other brand against this spider',
@@ -901,10 +901,10 @@ export default function BrownRecluseSpidersPage() {
           &ldquo;Sealing both interior and exterior cracks and crevices prevents spiders and insect
           prey from moving into and around the home.&rdquo;
         </em>{' '}
-        UC IPM describes the same job in a garage:{' '}
+        UC IPM states it for one house type, and the condition is part of the sentence:{' '}
         <em>
-          &ldquo;block off house access to spiders by sealing cracks around doors and access holes
-          for electrical conduits or plumbing.&rdquo;
+          &ldquo;In residences with attached garages, block off house access to spiders by sealing
+          cracks around doors and access holes for electrical conduits or plumbing.&rdquo;
         </em>
       </p>
       <p>

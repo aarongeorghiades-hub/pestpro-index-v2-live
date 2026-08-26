@@ -204,12 +204,12 @@ const faqs: Faq[] = [
   {
     question: 'What does a bite feel like, and how long does it last?',
     answer:
-      'Four sources give four different accounts and this page gives all four. On the bite itself, UC IPM says it is painless or may feel like a little pinprick, Penn State says a bite is almost painless at first because the venom is principally neurotoxic, and Colorado State says the bite can go unnoticed although it most often produces an immediate sharp, pin-prick pain. On what follows, UC IPM says other symptoms may start to appear within an hour; Penn State says pain will be felt one to two hours later and generalized body symptoms develop within one to three hours; Colorado State says there is often a general sense of discomfort shortly after the bite and acute symptoms increase in severity during the first day. On duration, UC IPM says symptoms usually dissipate in a few days, Penn State says they generally dissipate within four days but may last as long as a week, and Colorado State says they usually decline after two to three days but some may continue for several weeks up to a month after the bite. UF/IFAS gives a different measure again, and one conditioned on care: patients usually recover within 24 hours following treatment or 3 to 5 days without supportive care. Those four courses are not averaged here and the outer bounds differ widely.',
+      'Four sources give four different accounts and this page gives all four. On the bite itself, UC IPM says that in the unlikely event of an actual bite it is painless or may feel like a little pinprick, Penn State says a bite is almost painless at first because the venom is principally neurotoxic, and Colorado State says the bite can go unnoticed although it most often produces an immediate sharp, pin-prick pain. On what follows, UC IPM says other symptoms may start to appear within an hour; Penn State says pain will be felt one to two hours later and generalized body symptoms develop within one to three hours; Colorado State says there is often a general sense of discomfort shortly after the bite and acute symptoms increase in severity during the first day. On duration, UC IPM says symptoms usually dissipate in a few days, Penn State says they generally dissipate within four days but may last as long as a week, and Colorado State says they usually decline after two to three days but some may continue for several weeks up to a month after the bite. UF/IFAS gives a different measure again, and one conditioned on care: patients usually recover within 24 hours following treatment or 3 to 5 days without supportive care. Those four courses are not averaged here and the outer bounds differ widely.',
   },
   {
     question: 'What are the symptoms?',
     answer:
-      'Reported from the sources, not assessed here. UC IPM lists rigid stomach muscles, which it notes some medical professionals have misdiagnosed as appendicitis; sweating, sometimes of just the bitten body part; pain that can be local, radiating or regional; urine retention; and less commonly numbness, agitation, fever and patchy paralysis. It then puts the list in proportion in its own words: although these are the most severe manifestations of black widow bites, symptoms most often merely resemble those of the flu. Colorado State states that muscle and chest pain or tightness are some of the most common reactions to the widow toxin. One negative is worth carrying because it separates this spider from the brown recluse: UC IPM states that black widow bites do not cause conspicuous swelling, necrosis, or deterioration of tissue around the bite. Kansas State adds that reactions vary with the age and health of the person bitten and the area of the body bitten, and that the very young and very old are most likely to be severely affected.',
+      'Reported from the sources, not assessed here. UC IPM qualifies its list before giving it, saying bite victims might suffer from some but not all of the following symptoms. It lists rigid stomach muscles, which it notes some medical professionals have misdiagnosed as appendicitis; sweating, sometimes of just the bitten body part; pain that can be local, radiating or regional; urine retention; and less commonly numbness, agitation, fever and patchy paralysis. It then puts the list in proportion in its own words: although these are the most severe manifestations of black widow bites, symptoms most often merely resemble those of the flu. Colorado State states that muscle and chest pain or tightness are some of the most common reactions to the widow toxin. One negative is worth carrying because it separates this spider from the brown recluse: UC IPM states that black widow bites do not cause conspicuous swelling, necrosis, or deterioration of tissue around the bite. Kansas State adds that reactions vary with the age and health of the person bitten and the area of the body bitten, and that the very young and very old are most likely to be severely affected.',
   },
   {
     question: 'What should I do if I think I have been bitten?',
@@ -580,8 +580,11 @@ export default function BlackWidowSpidersPage() {
 
       <h3>⚠ What the bite itself feels like: the sources do not agree</h3>
       <p>
-        <strong>UC IPM:</strong> <em>&ldquo;the bite itself is painless or may feel like a little
-        pinprick&rdquo;</em>. <strong>Penn State:</strong>{' '}
+        <strong>UC IPM:</strong>{' '}
+        <em>
+          &ldquo;In the unlikely event of an actual bite from a black widow, the bite itself is
+          painless or may feel like a little pinprick.&rdquo;
+        </em> <strong>Penn State:</strong>{' '}
         <em>
           &ldquo;Black widow venom is principally neurotoxic, so at first a bite is almost
           painless.&rdquo;
@@ -648,7 +651,12 @@ export default function BlackWidowSpidersPage() {
 
       <h3>What the symptoms are</h3>
       <p>
-        <strong>UC IPM</strong> lists rigid stomach muscles{' '}
+        <strong>UC IPM</strong> qualifies the list before giving it &mdash;{' '}
+        <em>
+          &ldquo;Bite victims might suffer from some but not all of the following
+          symptoms&rdquo;
+        </em>{' '}
+        &mdash; and lists rigid stomach muscles{' '}
         <em>&ldquo;which some medical professionals have misdiagnosed as appendicitis&rdquo;</em>,
         sweating that is sometimes confined to the bitten limb, pain that can be local, radiating or
         regional, urine retention, and less commonly numbness, agitation, fever and patchy
