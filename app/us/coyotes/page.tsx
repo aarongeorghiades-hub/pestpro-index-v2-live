@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
+import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
 
 const URL = 'https://pestproindex.com/us/coyotes';
@@ -30,7 +31,7 @@ const webPageSchema = {
   description: DESCRIPTION,
   url: URL,
   datePublished: '2026-08-26',
-  dateModified: '2026-08-26',
+  dateModified: '2026-08-27',
   author: { '@type': 'Organization', name: 'PestPro Index' },
   publisher: { '@type': 'Organization', name: 'PestPro Index', url: 'https://pestproindex.com' },
   isPartOf: { '@type': 'WebSite', name: 'PestPro Index', url: 'https://pestproindex.com' },
@@ -43,24 +44,118 @@ const breadcrumbSchema = {
 };
 
 // ---------------------------------------------------------------------------
-// THIS PAGE CARDS NOTHING, AND THE REASON IS DIFFERENT FROM /us/ground-squirrels.
+// THIS PAGE NOW CARDS TWO CLASSES OF FOUR, AND THE OTHER TWO ARE ZERO-CARD FOR
+// TWO DIFFERENT REASONS. NEITHER IS THE /us/ground-squirrels REASON.
 //
-// There is no product record array here and no UsToolCard import.
+// The listing check was run on 2026-08-27. Eight listings, one per candidate,
+// every one returning a real product page. What it found, class by class:
 //
-// That page names no product because three classes WERE checked against retail
-// listings and none evidenced the criterion. This page names no product because
-// the classes have NOT been checked yet: the fence specification is the most
-// precise in any source pack on this estate, and the listing check that would
-// test it against real products has not been run. The marketplace has refused
-// every request made to it on 2026-08-26.
+//   ROLLERS   three listings evidence the criterion in their own text. CARDED.
+//             The two Coyote Roller entries are one kit in two fence-type
+//             fitments, so they are ONE card under S47-H, with both fitments
+//             named in the copy.
+//   FENCING   three listings state a mesh aperture inside UC IPM's 6-inch
+//             limit. CARDED ON THE MESH. None states a height in its own text,
+//             so the height renders as a reader instruction and no card claims
+//             to meet it.
+//   APRON     ZERO CARDS. The one apron product publishes its ground coverage
+//             and the figure is below what UC IPM specifies. An evidenced
+//             failure on the listing's own number.
+//   OVERHANG  ZERO CARDS. The retail class exists but is built for the
+//             opposite purpose, and no listing states the direction the
+//             criterion turns on. Half a criterion is not a criterion.
 //
-// DEFERRED, NOT REFUSED. Nothing here says a suitable product does not exist.
-// The criteria are written out below so that a later round tests listings
-// against a published specification rather than against a vocabulary.
+// WHY THIS IS NOT THE /us/ground-squirrels SHAPE. That page names no product at
+// all, because every class it proposed failed. This page cards two classes and
+// declines two, each for its own stated reason. The two must not be conflated:
+// "we checked and nothing qualified" and "we checked and some things qualified"
+// are different findings about different classes.
 // ---------------------------------------------------------------------------
 
+type ProductGroup = 'roller' | 'fencing';
+
+type ProductRecord = {
+  asin: string;
+  cardName: string;
+  titleAsFetched: string;
+  group: ProductGroup;
+  whatItDoes: string[];
+};
+
+// Titles are the fetched product titles, verbatim, from the identity bank entry
+// written when each listing was read on 2026-08-27 (S47-J). Card copy describes
+// fitness against the source criterion and nothing else; manufacturer
+// superlatives in the listings are not reproduced (S46-G).
+const products: ProductRecord[] = [
+  {
+    asin: 'B0BMNPPN65',
+    cardName: 'Coyote Roller 8 Foot Kit',
+    titleAsFetched:
+      '8 Foot Kit - Keep Pets Contained, Coyotes Out - Cats, Dogs, Coyotes - Wood Dog Ear',
+    group: 'roller',
+    whatItDoes: [
+      'Meets the roller criterion in the listing\u2019s own words: the manufacturer text says it is \u201cDesigned to deny an animals paws the traction needed to pull themselves up and over a fence by spinning freely when attempting to enter or exit a yard\u201d',
+      'That is the mechanism UC IPM describes \u2014 denying a foothold at the top of the fence \u2014 stated by the seller rather than inferred by us',
+      'The listing states a roller length of 48.5 inches including end caps, and an 8-foot kit containing two rollers and four mounting brackets',
+      'Sold in fence-type fitments. This link is the wood dog-ear fitment; the same kit in a chain-link fitment is a separate listing under ASIN B0BMNP26FP. Pick the one matching your fence',
+      'UC IPM presents a roller as an addition to a fence that already meets the height, mesh and apron figures, not as a substitute for any of them',
+    ],
+  },
+  {
+    asin: 'B0H74XZQT5',
+    cardName: 'Guutuca 4 Foot Fence Topper Roller Kit',
+    titleAsFetched: '4 Foot Kit, Fence Topper Roller for Pet Contained, Wildlife Away',
+    group: 'roller',
+    whatItDoes: [
+      'Meets the same criterion on its own feature text: \u201cThe anti-climb fence topper creates a rotating barrier at the top of the fence\u201d, and the listing says the roller system helps prevent climbing',
+      'A shorter kit than the one above \u2014 the listing states two 60 cm rollers and connecting hardware \u2014 and a different manufacturer, so it is a separate product rather than a fitment of it',
+      'The listing states compatibility with chain-link and wood dog-ear fences',
+      'Named here because its own text carries the criterion. No source consulted for this page compares one roller against another, and none is called better than another',
+    ],
+  },
+  {
+    asin: 'B0H1W3T7ZZ',
+    cardName: 'Welded Wire Mesh Fence Roll, 2 x 4 Inch Mesh, 50 Foot',
+    titleAsFetched:
+      'Welded Wire Mesh Fence 6ft x 50ft 2"x4" 15 Gauge Galvanized Wire Fence Roll',
+    group: 'fencing',
+    whatItDoes: [
+      'Meets the mesh criterion on the listing\u2019s own words: \u201cthe versatile 2\u201dx4\u201d mesh opening\u201d. Two inches by four inches is inside UC IPM\u2019s limit of no larger than 6 inches on both axes',
+      'The listing states galvanized steel wire and a 15 gauge',
+      'Sold as a roll measuring 6 ft by 50 ft. THAT IS THE ROLL, NOT AN ERECTED FENCE \u2014 the listing never describes the 6 ft figure as a height, and this card makes no height claim on its behalf',
+      'The only dimension field on the listing reads 8.7 x 8.7 x 71.7 inches, which is the rolled package',
+    ],
+  },
+  {
+    asin: 'B0FX21JKKQ',
+    cardName: 'Welded Wire Mesh Fence Roll, 2 x 4 Inch Mesh, 50 Foot, Hot-Dip Galvanized',
+    titleAsFetched:
+      'Welded Wire Mesh 6ft X 50ft Galvanized Steel Wire Fence 15 Gauge 2x4in Mesh',
+    group: 'fencing',
+    whatItDoes: [
+      'Meets the mesh criterion on its own words: \u201cMade from 15 gauge welded steel with 2\u201d x 4\u201d mesh openings\u201d. Inside the 6-inch limit on both axes',
+      'The listing states it is hot-dip galvanized after welding, so the weld joints are coated rather than bare',
+      'Sold as a roll the listing describes as \u201cMeasuring 6 ft x 50 ft\u201d. Again a roll dimension, not a stated fence height',
+      'The listing states it can be trimmed with wire cutters or metal shears',
+    ],
+  },
+  {
+    asin: 'B0DPGFB9ZM',
+    cardName: 'Fencer Wire Welded Wire Fence Roll, 4 x 4 Inch Mesh, 100 Foot',
+    titleAsFetched:
+      'Fencer Wire Welded Wire Fence 12.5 Gauge, Galvanized Welded Fence Wire Roll, Mesh Size 4-Inch x 4-Inch, Hog Wire Fencing Cage, Multiple Use for Home Improvement & Animals Enclosure (6ft. x 100ft.)',
+    group: 'fencing',
+    whatItDoes: [
+      'Meets the mesh criterion on its own words: \u201c4\u201d x 4\u201d Opening Square Mesh Weave; With 4 inch by 4 inch mesh\u201d. Four inches is inside the 6-inch limit, and it is the largest aperture of the three carded here',
+      'The listing states 12.5 gauge wire, galvanized before welding, with a Class 1 zinc coating',
+      'The listing gives \u201cFence Size: 6 ft. x 100 ft.\u201d \u2014 a roll dimension. It does not state a height and this card does not claim one',
+      'Twice the roll length of the two above, at a heavier gauge and a wider aperture',
+    ],
+  },
+];
+
 const tocItems = [
-  { id: 'no-products', title: 'Why This Page Names No Product Yet' },
+  { id: 'no-products', title: 'What Was Checked, and What Is Named Here' },
   { id: 'what', title: 'What the Sources Describe' },
   { id: 'attractants', title: 'Attractants: Where the Sources Put the Cause' },
   { id: 'hazing', title: 'Hazing: a Live Disagreement' },
@@ -77,9 +172,9 @@ const tocItems = [
 
 const faqs: Faq[] = [
   {
-    question: 'Why does this page not recommend any product?',
+    question: 'Which parts of the fence specification can actually be bought?',
     answer:
-      'Because the listing check has not been done, not because nothing suitable exists. The exclusion specification below is the most precise this site has worked from: a fence height, a mesh aperture, an apron depth and an apron extension, all published as figures. Testing real listings against those figures is a separate piece of work and it has not been run. This page sets the criteria out so that when it is run, listings are measured against a published specification rather than against a general impression of what looks sturdy.',
+      'Two of the four, on the evidence of a listing check run on 2026-08-27. Rollers: three listings state the mechanism UC IPM describes in their own text, and they are carded. Fence mesh: three listings state a mesh aperture inside UC IPM\u2019s 6-inch limit, and they are carded on that basis; none of them states a height in its own text, so the 5 1/2 foot minimum is given here as an instruction to whoever builds the fence rather than as a property of any product. The buried apron: one product publishes its ground coverage and the figure is below what UC IPM asks for, so nothing is carded. The outward overhang: the retail class exists, but it is built to keep animals in rather than out, and no listing read states which way it faces, so nothing is carded there either.',
   },
   {
     question: 'What fence does UC IPM actually specify?',
@@ -153,7 +248,7 @@ export default function CoyotesPage() {
   return (
     <UsPageLayout
       title="Coyotes"
-      subtitle="The extension sources specify a coyote-resistant fence to the inch, disagree openly about whether hazing achieves anything lasting, and hand the removal half to agencies rather than to a householder. This page carries all three, with the dates the sources themselves carry, and it names nothing you can buy — yet."
+      subtitle="The extension sources specify a coyote-resistant fence to the inch, disagree openly about whether hazing achieves anything lasting, and hand the removal half to agencies rather than to a householder. This page carries all three, with the dates the sources themselves carry, and it names the products whose own text carries the parts of that specification a seller actually states."
       lastUpdated="August 2026"
       readingTime="18 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -169,20 +264,32 @@ export default function CoyotesPage() {
         cautious in the other.
       </p>
 
-      <h2 id="no-products">Why This Page Names No Product Yet</h2>
+      <h2 id="no-products">What Was Checked, and What Is Named Here</h2>
       <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
         <p className="m-0 text-base font-bold text-blue-900">
-          Nothing on this page is a product recommendation, and that is a gap in our work rather
-          than a finding about what is on sale.
+          The exclusion specification below gives four things a product could be measured against.
+          On 2026-08-27 we read eight listings to see which of them a seller actually states.
         </p>
         <p className="mt-3 mb-0 text-base text-blue-900">
-          The exclusion specification below gives four figures &mdash; a height, a mesh aperture, an
-          apron depth and an apron extension. Checking real listings against those figures is a
-          separate piece of work and it has not been done. So this page sets the criteria out and
-          stops there. <strong>It does not say that no suitable fencing exists</strong>, because we
-          have not looked properly, and saying otherwise would be a claim we cannot support.
+          <strong>Two of the four produced something to name.</strong> Three roller listings state
+          the mechanism UC IPM describes, in their own words, and three fence-mesh listings state an
+          aperture inside its limit. Those six are named further down.{' '}
+          <strong>Two produced nothing, for two different reasons.</strong> The one buried-apron
+          product publishes its own ground-coverage figure and that figure is smaller than UC IPM
+          asks for. The outward overhang is a class that exists in retail but is built for the
+          opposite job, and no listing we read states the one thing the criterion turns on. Both are
+          set out where they belong rather than left as a silence.
         </p>
       </div>
+      <p>
+        <strong>
+          One figure in that specification is not something any product can carry, and it is worth
+          separating before the cards appear.
+        </strong>{' '}
+        UC IPM&rsquo;s minimum fence height of 5 1/2 feet is an instruction to whoever builds the
+        fence. It is not a property of a roll of wire, and no product below is described here as
+        meeting it.
+      </p>
 
       <h2 id="what">What the Sources Describe</h2>
       <p>
@@ -360,6 +467,65 @@ export default function CoyotesPage() {
           width. The depth describes the work.
         </p>
       </div>
+      <h3 id="mesh-products">The mesh figure, and what sellers state</h3>
+      <p>
+        Of the four figures above, <strong>the mesh aperture is the one retail listings state
+        plainly.</strong> All three rolls below give it in their own text, and all three are inside
+        UC IPM&rsquo;s limit of no larger than 6 inches.
+      </p>
+      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
+        <p className="m-0 text-base font-bold text-amber-900">
+          Two 6-figures appear near these products and they are not the same measurement.
+        </p>
+        <p className="mt-3 mb-0 text-base text-amber-900">
+          UC IPM&rsquo;s <strong>5 1/2 feet</strong> is the height of an erected fence, measured
+          from the ground up. The <strong>6 ft</strong> in a listing like &ldquo;6 ft x 50 ft&rdquo;
+          is <strong>the width of a roll of wire as it is sold</strong>. One is a specification for
+          a finished structure; the other is a dimension of goods on a pallet.{' '}
+          <strong>
+            None of the three listings below uses the word height, tall or high of its 6 ft figure
+          </strong>
+          , and this page does not translate one into the other on their behalf. Whether a roll of a
+          given width yields a fence of a given height depends on how it is set, how much is turned
+          into the apron, and the ground it stands on &mdash; and that is the builder&rsquo;s
+          arithmetic, not the seller&rsquo;s claim.
+        </p>
+      </div>
+      <p>
+        The three rolls are in no order of preference and none is called better than another,
+        because no source consulted for this page compares one product against another. What each
+        entry records is which part of the specification the seller states, and which it does not.
+      </p>
+      {products
+        .filter((p) => p.group === 'fencing')
+        .map((p) => (
+          <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+        ))}
+
+      <h3 id="apron-products">The buried apron: nothing is named, and the number is the reason</h3>
+      <p>
+        UC IPM asks for an apron <strong>extending outward at least 15 inches</strong>. One product
+        we read is built for exactly that job &mdash; its own description calls it a physical
+        barrier of galvanized welded wire on the ground leading up to the fence &mdash; and it
+        publishes what it achieves:
+      </p>
+      <p>
+        <strong>
+          Its own text states the kit allows for 8 to 12 inches of coverage on the ground.
+        </strong>{' '}
+        Against a specification of at least 15 inches, that is short, and{' '}
+        <strong>the seller is the one supplying the number.</strong> So nothing is named for this
+        class. That is a finding about a published figure rather than a doubt about a product, and
+        it is the cleanest kind of result this method produces: the criterion was answerable, and
+        the answer was no.
+      </p>
+      <p>
+        The same description mentions a larger version of the same system with a greater ground
+        coverage, which would clear the 15 inches. <strong>We have not read that listing</strong>,
+        and this page names products it has read. It is recorded as something to check rather than
+        as something to buy.
+      </p>
+
       <h3>Rollers and overhangs: additions to that fence, not alternatives to it</h3>
       <p>
         UC IPM gives both in a single sentence, and the opening words govern everything after them:
@@ -380,6 +546,50 @@ export default function CoyotesPage() {
         Both are <em>an extra degree of protection</em> added to a fence that already has those
         three. A roller fitted to a four-foot fence with an eight-inch mesh and no apron is not what
         this sentence describes, and this page will not present it as though it were.
+      </p>
+
+      <h4>Rollers: three listings state the mechanism</h4>
+      <p>
+        Two of the three are the same kit in two fence-type fitments and are named here as one
+        product, with both fitments identified so a reader picks the one matching their fence. The
+        third is a different manufacturer and a different length.
+      </p>
+      {products
+        .filter((p) => p.group === 'roller')
+        .map((p) => (
+          <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+        ))}
+
+      <h4 id="overhang-finding">
+        The outward overhang: a class that exists, and nothing named in it
+      </h4>
+      <p>
+        <strong>
+          This is the one place where what is sold and what the source specifies come apart, and it
+          is worth setting out rather than passing over.
+        </strong>
+      </p>
+      <p>
+        UC IPM asks for a wire-mesh overhang of at least 18 inches{' '}
+        <strong>slanted outward</strong>. Outward matters: the point of the angle is to defeat an
+        animal climbing <em>in</em> from the far side.
+      </p>
+      <p>
+        There is a healthy retail category of fence-top extension arms with mesh, and several
+        listings state an outreach figure comfortably past 18 inches.{' '}
+        <strong>Almost all of them are containment toppers.</strong> They are sold to stop a cat or
+        a dog getting <em>out</em>, and the arm therefore turns back over the owner&rsquo;s own
+        garden. A stated outreach of twenty-four inches is a real measurement of a real arm; it says
+        nothing whatever about which side of the fence that arm leans over.
+      </p>
+      <p>
+        <strong>
+          A figure that matches half a criterion does not satisfy it. The direction is not a detail
+          attached to the specification &mdash; it is the part that does the work
+        </strong>
+        , and no listing we read states it. So nothing is named for this class, the criterion stands
+        as UC IPM writes it, and no product is faulted by name for being built to do a different
+        job perfectly well.
       </p>
       <p>
         UC IPM closes the section with a caveat that belongs with every figure above it:{' '}
