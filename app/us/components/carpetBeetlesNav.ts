@@ -13,12 +13,19 @@
 // never carded: UC IPM states that where exclusion and sanitation succeed,
 // insecticide treatment is not required.
 //
-// IT LINKS TO NO OTHER PAGE ON THE ESTATE, AND THE MOTHS PAGE DOES NOT EXIST YET.
-// Four sources draw a damage-pattern distinction between clothes moths and carpet
-// beetles, and that material is recorded in the R2 pack as RECORDED, NOT USED. A
-// link to a route that does not exist is a 404, so none is written. When the moths
-// page is built, the link is written then and not before.
+// IT NOW LINKS TO ITS TWO SIBLINGS, AND THAT INSTRUCTION IS DISCHARGED. What stood
+// here said the moths page did not exist and that the link should be written when it
+// did. Both /us/moths and /us/silverfish exist, so the links are written, and this
+// paragraph is corrected rather than left standing as a false statement.
+//
+// THE THREE LISTS ARE IDENTICAL IN VALUE AND DELIBERATELY NOT SHARED. Law 104:
+// identical values are never collapsed into a shared source, because that
+// reintroduces the coupling the per-cluster design removes.
 
 export const CARPETBEETLES_HOME = '/us';
 
-export const CARPETBEETLES_NAV = [{ title: 'Carpet Beetles', href: '/us/carpet-beetles' }];
+export const CARPETBEETLES_NAV = [
+  { title: 'Carpet Beetles', href: '/us/carpet-beetles' },
+  { title: 'Moths', href: '/us/moths' },
+  { title: 'Silverfish', href: '/us/silverfish' },
+];

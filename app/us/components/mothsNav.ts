@@ -12,13 +12,19 @@
 // will not work on their pest. The nav therefore names the page once, and the page
 // itself carries the dividing line.
 //
-// IT DOES NOT LINK TO /us/carpet-beetles, AND THAT IS A SCOPE DECISION, NOT AN
-// OVERSIGHT. carpetBeetlesNav.ts carries a standing instruction that the moths link
-// be written when this page exists. That is a change to a shipped page's rendered
-// nav and belongs to the round that is authorised to make it, on both sides at once,
-// so the two modules stay symmetrical. The body of this page cross-links to the
-// carpet beetles page in prose, where the sources draw the damage distinction.
+// IT NOW LINKS TO ITS TWO SIBLINGS. What stood here recorded that the carpet beetles
+// link was withheld until a round was authorised to change both modules at once. That
+// round has happened and all three were changed in one pass, so the modules stayed
+// symmetrical and this paragraph is corrected rather than left standing.
+//
+// THE THREE LISTS ARE IDENTICAL IN VALUE AND DELIBERATELY NOT SHARED. Law 104:
+// identical values are never collapsed into a shared source. The body of this page
+// also cross-links in prose, where the sources draw the damage distinction.
 
 export const MOTHS_HOME = '/us';
 
-export const MOTHS_NAV = [{ title: 'Moths', href: '/us/moths' }];
+export const MOTHS_NAV = [
+  { title: 'Carpet Beetles', href: '/us/carpet-beetles' },
+  { title: 'Moths', href: '/us/moths' },
+  { title: 'Silverfish', href: '/us/silverfish' },
+];
