@@ -27,7 +27,7 @@ const articleSchema = {
   description:
     "Our pick of the best fox deterrents in the UK: ultrasonic devices, scent repellents, motion-activated sprinklers and garden fox-proofing.",
   datePublished: "2026-03-18",
-  dateModified: "2026-03-18",
+  dateModified: "2026-08-28",
   author: {
     "@type": "Organization",
     name: "PestPro Index",
@@ -157,7 +157,6 @@ const products: ProductRecord[] = [
     features: [
       "Spinning aluminium tube",
       "Prevents climbing over fences",
-      "UV-resistant construction",
       "Also effective against cats",
     ],
     tableCells: [
@@ -365,9 +364,14 @@ export default function BestFoxDeterrentsPage() {
         We selected these fox deterrent products on published specifications and
         manufacturer information, looking at three criteria:{" "}
         <strong>UK availability and fast Prime delivery</strong>,{" "}
-        <strong>proven design and mechanism</strong> with demonstrated
-        effectiveness against urban and rural foxes, and{" "}
-        <strong>value for money</strong>. We also consulted guidance from the
+        <strong>proven design and mechanism</strong>, and{" "}
+        <strong>value for money</strong>. Judgements about how each product
+        performs against urban and rural foxes are ours. Not every manufacturer
+        makes a claim about foxes at all &mdash; the fence top roller bar is
+        sold against coyotes, dogs, cats and birds, and our view that it works
+        on a fox rests on the climbing mechanism its maker describes rather
+        than on anything its maker says about foxes. We also consulted guidance
+        from the
         BPCA, the National Fox Welfare Society, and professional pest control
         technicians to ensure our recommendations reflect real-world best
         practice. For a complete step-by-step fox management strategy &mdash;
@@ -792,9 +796,9 @@ export default function BestFoxDeterrentsPage() {
       </p>{" "}
       <p>
         {" "}
-        The roller bar is constructed from lightweight aluminium that is
-        UV-resistant and will not corrode or degrade when exposed to years of
-        British weather. The mounting brackets are designed to be screwed
+        The roller bar is constructed from lightweight aluminium that will not
+        corrode or degrade when exposed to years of British weather. The
+        mounting brackets are designed to be screwed
         directly into the top of standard wooden fence posts, and the aluminium
         tube slides onto the brackets and spins freely without any moving parts
         that could jam, seize, or wear out. Installation is a straightforward
@@ -822,7 +826,7 @@ export default function BestFoxDeterrentsPage() {
           foxes from climbing over
         </li>{" "}
         <li>
-          UV-resistant aluminium construction built to last for years in outdoor
+          Aluminium construction built to last for years in outdoor
           conditions
         </li>{" "}
         <li>
