@@ -11,7 +11,16 @@
 // THIS PAGE LINKS TO /us/california-trapping-rules AND NOT THE OTHER WAY. That
 // page is a quotation record of primary legal text and states in its own voice
 // that it does nothing else with what it quotes. It is not edited by this round.
+//
+// A FLEAS ENTRY WAS ADDED, S54 R2. This page renders UC IPM's statement that plague
+// is transmitted by fleas associated with the squirrels, and until now it gave the
+// reader nowhere to follow that. /us/fleas exists, so the link is written. All three
+// modules in this cross-link were changed in one pass so none sat asymmetric. This
+// module still holds its own value and is not shared (Law 104).
 
 export const GS_HOME = '/us';
 
-export const GS_NAV = [{ title: 'Ground Squirrels', href: '/us/ground-squirrels' }];
+export const GS_NAV = [
+  { title: 'Ground Squirrels', href: '/us/ground-squirrels' },
+  { title: 'Fleas', href: '/us/fleas' },
+];
