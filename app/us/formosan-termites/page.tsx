@@ -3,6 +3,7 @@ import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import { SourceList, type Source } from '../components/UsSources';
+import { FORMOSAN_NAV, FORMOSAN_HOME } from '../components/formosanTermitesNav';
 
 const URL = 'https://pestproindex.com/us/formosan-termites';
 const TITLE =
@@ -144,18 +145,6 @@ const tocItems = [
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
 ];
-
-// This cluster's header nav and home pointer, declared here rather than in
-// app/us/components/<cluster>Nav.ts because S48 R4 fixed this round's file scope at
-// three files — the same pattern S47 R3 used for the Joro pages and S48 R3 used for
-// the choosing-a-service page. A later round should collect all three into modules.
-//
-// THE CLUSTER IS ONE PAGE AND IT CARRIES NO COMMERCE. Every source consulted says
-// this species is a professional's job, so there is no product class to card and
-// nothing to disclose. That is the design, not a gap.
-const FORMOSAN_HOME = '/us';
-
-const FORMOSAN_NAV = [{ title: 'Formosan Termites', href: '/us/formosan-termites' }];
 
 export default function FormosanTermitesPage() {
   return (

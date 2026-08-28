@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import { SourceList, type Source } from '../components/UsSources';
+import { GS_NAV, GS_HOME } from '../components/groundSquirrelNav';
 
 const URL = 'https://pestproindex.com/us/ground-squirrels';
 const TITLE = 'Ground Squirrels: What the Sources Support, and Why Nothing Is Recommended Here';
@@ -169,19 +170,6 @@ const tocItems = [
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
 ];
-
-// This cluster's header nav and home pointer. Every other /us cluster keeps these
-// in app/us/components/<cluster>Nav.ts and this one should too; they are declared
-// here because this round's file scope is fixed at two files, exactly as S47 R3,
-// S48 R3, S48 R8d, S48 R11, S49 R3 and S49 R6 did before it. Declared 2026-08-26;
-// a later collection round should move all of them into modules together.
-//
-// THIS PAGE LINKS TO /us/california-trapping-rules AND NOT THE OTHER WAY. That
-// page is a quotation record of primary legal text and states in its own voice
-// that it does nothing else with what it quotes. It is not edited by this round.
-const GS_HOME = '/us';
-
-const GS_NAV = [{ title: 'Ground Squirrels', href: '/us/ground-squirrels' }];
 
 export default function GroundSquirrelsPage() {
   return (

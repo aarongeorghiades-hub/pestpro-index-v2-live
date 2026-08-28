@@ -3,6 +3,7 @@ import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
+import { RECLUSE_NAV, RECLUSE_HOME } from '../components/brownRecluseNav';
 
 const URL = 'https://pestproindex.com/us/brown-recluse-spiders';
 const TITLE = 'Brown Recluse Spiders: Identification, Range and What the Sources Say';
@@ -342,23 +343,6 @@ const tocItems = [
   { id: 'insecticides', title: 'Insecticides, and Why Nothing Is Offered Here' },
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
-];
-
-// This cluster's header nav and home pointer. Every other /us cluster keeps these
-// in app/us/components/<cluster>Nav.ts and this one should too; they are declared
-// here because this round's file scope is fixed at two files, exactly as S47 R3
-// did for the four Joro pages before S47 R4 collected them into a module, and as
-// S48 R3 and S48 R8d did since. The props are passed explicitly either way, which
-// is what UsPageLayout requires.
-//
-// THIS PAGE IS NOT PART OF THE JORO CLUSTER, and must never be added to it. That
-// cluster is four pages about one species; putting a second spider in it would
-// turn a named cluster into a general spiders group and would invite those four
-// pages to link here.
-const RECLUSE_HOME = '/us';
-
-const RECLUSE_NAV = [
-  { title: 'Brown Recluse Spiders', href: '/us/brown-recluse-spiders' },
 ];
 
 export default function BrownRecluseSpidersPage() {

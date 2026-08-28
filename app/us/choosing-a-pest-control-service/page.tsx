@@ -3,6 +3,7 @@ import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import { SourceList, type Source } from '../components/UsSources';
+import { CHOOSINGSERVICE_NAV, CHOOSINGSERVICE_HOME } from '../components/choosingServiceNav';
 
 const URL = 'https://pestproindex.com/us/choosing-a-pest-control-service';
 const TITLE = 'Choosing a Pest Control Service: How to Check a Licence Before You Hire';
@@ -119,21 +120,6 @@ const tocItems = [
   { id: 'scope', title: 'What This Page Does Not Cover' },
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
-];
-
-// This cluster's header nav and home pointer. Every other /us cluster keeps these
-// in app/us/components/<cluster>Nav.ts and this one should too; they are declared
-// here because S48 R3 fixed this round's file scope at two files, exactly as S47 R3
-// did for the four Joro pages before S47 R4 collected them into a module. The props
-// are passed explicitly either way, which is what UsPageLayout requires.
-//
-// THE CLUSTER IS ONE PAGE, AND IT CARRIES NO COMMERCE AT ALL. Its subject is a
-// service rather than a product, so it has no cards, no ASINs and nothing to
-// disclose. That is the design, not a gap waiting to be filled.
-const CHOOSINGSERVICE_HOME = '/us';
-
-const CHOOSINGSERVICE_NAV = [
-  { title: 'Choosing a Pest Control Service', href: '/us/choosing-a-pest-control-service' },
 ];
 
 export default function ChoosingAPestControlServicePage() {

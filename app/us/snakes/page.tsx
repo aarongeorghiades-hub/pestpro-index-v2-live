@@ -3,6 +3,7 @@ import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
+import { SNAKE_NAV, SNAKE_HOME } from '../components/snakeNav';
 
 const URL = 'https://pestproindex.com/us/snakes';
 const TITLE = 'Snakes: the Exclusion Specification, the Law by State, and What the Sources Disagree About';
@@ -273,13 +274,6 @@ const sources: Source[] = [
     href: 'https://myfwc.com/conservation/you-conserve/wildlife/snakes/',
   },
 ];
-
-// Nav constants are inline rather than in app/us/components, following the S47 R3
-// precedent: that round's scope was fixed at five files and the Joro pages carried
-// their nav inline until S47 R4 collected them into a module. This round's diff is
-// the page and the hub. A later collection round should move these. 2026-08-28.
-const SNAKE_HOME = '/us';
-const SNAKE_NAV = [{ title: 'Snakes', href: '/us/snakes' }];
 
 export default function SnakesPage() {
   return (

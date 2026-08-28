@@ -3,6 +3,7 @@ import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
+import { COYOTE_NAV, COYOTE_HOME } from '../components/coyoteNav';
 
 const URL = 'https://pestproindex.com/us/coyotes';
 const TITLE = 'Coyotes: the Exclusion Specification, the Disagreements, and Who Does the Removal';
@@ -234,15 +235,6 @@ const sources: Source[] = [
     href: 'https://ucanr.edu/county-office/san-diego-county/trapping-coyotes-urban-landscape',
   },
 ];
-
-// Nav constants are declared inline rather than in app/us/components, which is
-// where every other /us cluster keeps them. This follows the S47 R3 precedent:
-// that round's scope was fixed at five files and the four Joro pages carried
-// their nav inline until S47 R4 collected them into a module. The same applies
-// here — this round's diff is the page and the hub, and a module would make it
-// three files. A later collection round should move these. 2026-08-26.
-const COYOTE_HOME = '/us';
-const COYOTE_NAV = [{ title: 'Coyotes', href: '/us/coyotes' }];
 
 export default function CoyotesPage() {
   return (

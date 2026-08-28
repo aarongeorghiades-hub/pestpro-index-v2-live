@@ -3,6 +3,7 @@ import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
+import { MOLEVOLE_NAV, MOLEVOLE_HOME } from '../components/moleVoleControlNav';
 
 const URL = 'https://pestproindex.com/us/mole-and-vole-control';
 const TITLE = 'Mole and Vole Control: Traps, Castor Oil and Bait';
@@ -276,25 +277,6 @@ const tocItems = [
   { id: 'what-we-checked', title: 'What We Checked' },
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
-];
-
-// This cluster's header nav and home pointer. Every other /us cluster keeps these
-// in app/us/components/<cluster>Nav.ts and this one should too; they are declared
-// here because this round's file scope is fixed at two files, exactly as S47 R3
-// did for the four Joro pages before S47 R4 collected them into a module, and as
-// S48 R3 did for the pest-control-service page. The props are passed explicitly
-// either way, which is what UsPageLayout requires.
-//
-// THIS CLUSTER DOES NOT LINK INTO THE IDENTIFICATION CLUSTER FROM ITS HEADER.
-// app/us/components/moleVoleGopherNav.ts states the reason in its own comment:
-// that cluster answers one question and links nowhere else, because turning an
-// identification page into a funnel would invite a reader to carry a method
-// across to an animal the page has just told them they may not have. The link
-// runs one way — from this page's body to that page — and not back.
-const MOLEVOLE_HOME = '/us';
-
-const MOLEVOLE_NAV = [
-  { title: 'Mole and Vole Control', href: '/us/mole-and-vole-control' },
 ];
 
 export default function MoleAndVoleControlPage() {

@@ -3,6 +3,7 @@ import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
+import { CHIPMUNK_NAV, CHIPMUNK_HOME } from '../components/chipmunkNav';
 
 const URL = 'https://pestproindex.com/us/chipmunks';
 const TITLE = 'Chipmunks: When Control Is Warranted, and What the Sources Support';
@@ -257,21 +258,6 @@ const tocItems = [
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
 ];
-
-// This cluster's header nav and home pointer. Every other /us cluster keeps these
-// in app/us/components/<cluster>Nav.ts and this one should too; they are declared
-// here because this round's file scope is fixed at two files, exactly as S47 R3,
-// S48 R3, S48 R8d, S48 R11 and S49 R3 did before it. Declared 2026-08-26; a later
-// collection round should move all of them into modules together.
-//
-// THIS PAGE DOES NOT JOIN THE IDENTIFICATION CLUSTER. app/us/components/
-// moleVoleGopherNav.ts states that its cluster is one page that links nowhere
-// else, and /us/moles-voles-gophers is scoped to three animals by its own text.
-// The link runs one way, from this page's body to that page, and that page is
-// not edited.
-const CHIPMUNK_HOME = '/us';
-
-const CHIPMUNK_NAV = [{ title: 'Chipmunks', href: '/us/chipmunks' }];
 
 export default function ChipmunksPage() {
   return (

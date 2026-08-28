@@ -3,6 +3,7 @@ import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
+import { WIDOW_NAV, WIDOW_HOME } from '../components/blackWidowNav';
 
 const URL = 'https://pestproindex.com/us/black-widow-spiders';
 const TITLE = 'Black Widow Spiders: Species, Range and What the Sources Say';
@@ -322,19 +323,6 @@ const tocItems = [
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
 ];
-
-// This cluster's header nav and home pointer. Every other /us cluster keeps these
-// in app/us/components/<cluster>Nav.ts and this one should too; they are declared
-// here because this round's file scope is fixed at two files, exactly as S47 R3,
-// S48 R3, S48 R8d and S48 R11 did before it. Declared 2026-08-26; a later
-// collection round should move all of them into modules together.
-//
-// THIS PAGE IS NOT PART OF THE JORO CLUSTER and must never be added to it. That
-// cluster is four pages about one species. The same ruling was made for the
-// brown recluse page in S48 R11 and it holds for the same reason.
-const WIDOW_HOME = '/us';
-
-const WIDOW_NAV = [{ title: 'Black Widow Spiders', href: '/us/black-widow-spiders' }];
 
 export default function BlackWidowSpidersPage() {
   return (
