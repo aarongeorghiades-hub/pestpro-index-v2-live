@@ -178,8 +178,9 @@ export default function PalmettoBugsPage() {
       <p>
         University of Georgia Extension is direct about it:{' '}
         <strong>
-          &ldquo;&lsquo;Palmetto bug&rsquo; is a regional term for several winged species of
-          cockroach that can grow to more than an inch in length.&rdquo;
+          &ldquo;You&rsquo;ve probably also heard them referred to as palmetto bugs, a regional term
+          for several winged species of cockroach that can grow to more than an inch in
+          length.&rdquo;
         </strong>{' '}
         The same source calls it{' '}
         <strong>
@@ -203,7 +204,11 @@ export default function PalmettoBugsPage() {
           palmetto bugs.&rdquo;
         </strong>{' '}
         UF Entomology and Nematology says of the American cockroach specifically that it is
-        &ldquo;often called a &lsquo;palmetto bug&rsquo;&rdquo;.
+        &ldquo;often called a &ldquo;palmetto bug.&rdquo;&rdquo;{' '}
+        <em>
+          (the inner quotation marks around the name, and the period inside them, are UF Entomology
+          and Nematology&rsquo;s own and are left as published)
+        </em>
       </p>
       <p>
         On the smokybrown, University of Georgia Extension adds that{' '}
@@ -235,12 +240,12 @@ export default function PalmettoBugsPage() {
         </li>
         <li>
           It does not settle in. It &ldquo;has not been shown to commonly colonize inside
-          structures.&rdquo;
+          structures&rdquo;.
         </li>
         <li>
           It usually arrives by accident. &ldquo;It is also an occasional invader of the home, but
           lacks effective flight wings and is slow moving. Its presence in the home is typically a
-          result of being transported indoors on another item, such as firewood.&rdquo;
+          result of being transported indoors on another item, such as firewood&rdquo;.
         </li>
       </ul>
       <p>
@@ -250,7 +255,7 @@ export default function PalmettoBugsPage() {
         </strong>
         , with a body ranging &ldquo;in color from reddish brown to nearly black.&rdquo; Its
         recorded range is &ldquo;coastal Georgia, Alabama, and Mississippi, and throughout most of
-        Florida.&rdquo;
+        Florida&rdquo;.
       </p>
       <p>
         One handling note from the same source, because it is the sort of thing worth knowing
@@ -287,14 +292,13 @@ export default function PalmettoBugsPage() {
         &ldquo;commonly found in sewers, food preparation areas and basements&rdquo; and that it is
         &ldquo;more common in commercial buildings than in residences.&rdquo; University of Georgia
         Extension adds that it is &ldquo;Mainly found in sewers and other dark, damp hideaways such
-        as basements. Rarely, if ever, found in attics,&rdquo; and that it is &ldquo;Night
-        active.&rdquo;
+        as basements. Rarely, if ever, found in attics.&rdquo; It adds that it is &ldquo;Night active.&rdquo;
       </p>
       <p>
         That last detail separates it from the smokybrown, which University of Georgia Extension
         calls the &ldquo;Most common cockroach in suburban, Southern neighborhoods with mature
         hardwood trees present, where they commonly live in tree holes, attics, crawlspaces,
-        sheds.&rdquo; An insect in the attic and an insect in the basement are, on these sources,
+        sheds&rdquo;. An insect in the attic and an insect in the basement are, on these sources,
         likely to be two different species.
       </p>
       <p>
@@ -363,9 +367,9 @@ export default function PalmettoBugsPage() {
         <strong>63% of U.S. homes</strong>, with levels above 8.0 U/g on 3% of living room and
         bedroom floors and 10% of kitchen floors. The same paper reports that{' '}
         <strong>
-          &ldquo;Children with sensitivity to cockroach allergen who were exposed to bedroom levels
+          &ldquo;children with sensitivity to cockroach allergen who were exposed to bedroom levels
           &gt; 8.0 U/g had asthma hospitalization rates that were 3.7 times higher than sensitive
-          children with lower levels of exposure.&rdquo;
+          children with lower levels of exposure&rdquo;.
         </strong>{' '}
         <em>
           That survey was published in 2005 and its issue is dated 2006. It describes households as
@@ -388,7 +392,7 @@ export default function PalmettoBugsPage() {
       </p>
       <p>
         The reason is physical. The same source notes that &ldquo;Because of their flattened body
-        shape, even adult large roaches can easily crawl under poorly sealed doors,&rdquo; and
+        shape, even adult large roaches can easily crawl under poorly sealed doors.&rdquo; And
         UF/IFAS Extension gives a tolerance it states of cockroaches generally rather than of the
         large ones in particular, and the second half of its sentence is the more useful one:
         &ldquo;Adult cockroaches can fit into cracks only about 1/16 inch and prefer spaces of about
@@ -411,7 +415,7 @@ export default function PalmettoBugsPage() {
         </li>
         <li>
           Mississippi State University Extension: &ldquo;Check soffit vents and other attic vents to
-          be sure that they fit tightly and are properly screened.&rdquo;
+          be sure that they fit tightly and are properly screened&rdquo;.
         </li>
         <li>
           The National Pesticide Information Center: &ldquo;Use silicone caulking, screening, and/or
@@ -421,8 +425,7 @@ export default function PalmettoBugsPage() {
       <p>
         Because the large roaches live outdoors, the yard matters as much as the wall. Mississippi
         State University Extension states that &ldquo;sanitation efforts for large roaches should
-        also be concentrated outdoors, in the area immediately surrounding the home,&rdquo; and
-        gives one measurable figure:{' '}
+        also be concentrated outdoors, in the area immediately surrounding the home.&rdquo; It gives one measurable figure:{' '}
         <strong>
           &ldquo;Ideally, organic mulches should not be used within 3&ndash;4 feet of the
           foundation. Use inorganic mulches like lava rock or pea gravel in this zone.&rdquo;
@@ -443,14 +446,14 @@ export default function PalmettoBugsPage() {
       </p>
       <p>
         UF/IFAS Extension adds to the same list: &ldquo;Stack firewood off the ground and well away
-        from the house,&rdquo; &ldquo;Pull mulch away from the house,&rdquo; and &ldquo;Fill tree
+        from the house.&rdquo; &ldquo;Pull mulch away from the house.&rdquo; &ldquo;Fill tree
         holes with cement to remove this prime harborage area.&rdquo;
       </p>
       <p>
         Water is the other half. UF/IFAS Extension states that{' '}
         <strong>&ldquo;Water is the most important factor in cockroach survival&rdquo;</strong> and
         recommends repairing &ldquo;plumbing leaks by tightening connections or patching leaky
-        pipes,&rdquo; not letting &ldquo;water stand in sinks for long periods of time,&rdquo; and
+        pipes,&rdquo; not letting &ldquo;water stand in sinks for long periods of time.&rdquo; and
         emptying &ldquo;pans under refrigerators used to catch water from condensation.&rdquo;
       </p>
 
@@ -463,7 +466,7 @@ export default function PalmettoBugsPage() {
           operator.&rdquo;
         </strong>{' '}
         It adds that &ldquo;Professionals have the equipment and training to do a thorough job and
-        have access to products not available to homeowners,&rdquo; and that if you do hire one,
+        have access to products not available to homeowners.&rdquo; It adds that if you do hire one,
         &ldquo;get estimates from some reputable firms before you decide on one.&rdquo;
       </p>
       <p>
@@ -479,7 +482,7 @@ export default function PalmettoBugsPage() {
       <p>
         <strong>One. Sanitation outranks whatever you buy.</strong> Mississippi State University
         Extension states: &ldquo;Always keep in mind that sanitation is the most important part of
-        any roach control program,&rdquo; and, of a spray-and-clean treatment, that &ldquo;In most
+        any roach control program.&rdquo; It states, of a spray-and-clean treatment, that &ldquo;In most
         cases, the deep cleaning part of this treatment process provides greater benefit for roach
         control than the insecticide spray.&rdquo; The same source notes that &ldquo;An insecticide
         treatment is only as good as the care taken in applying it.&rdquo;
@@ -498,10 +501,13 @@ export default function PalmettoBugsPage() {
       <p>
         Two further notes worth having before buying anything. Mississippi State University
         Extension states that &ldquo;a single insecticide treatment, no matter how thoroughly
-        applied, will rarely be sufficient to totally eliminate a heavy infestation,&rdquo; and that
-        &ldquo;foggers are not very useful or effective for cockroach control&rdquo; because
-        &ldquo;Most of the insecticide aerosols do not penetrate well into the cracks, crevices, and
-        voids where roaches hide.&rdquo; The National Pesticide Information Center advises to
+        applied, will rarely be sufficient to totally eliminate a heavy infestation.&rdquo; It also
+        states that &ldquo;foggers are not very useful or effective for cockroach control&rdquo; and
+        gives two reasons in two consecutive sentences. The first is about where the insecticide
+        lands: &ldquo;Most of the insecticide ends up on exposed surfaces where it is more likely to
+        be contacted by humans and pets rather than roaches.&rdquo; The second is about where the
+        roaches are: &ldquo;Also, aerosols do not penetrate well into the cracks, crevices, and voids
+        where roaches hide.&rdquo; The National Pesticide Information Center advises to
         &ldquo;always read and follow the label directions carefully&rdquo; and to &ldquo;Try a
         lower toxicity product first.&rdquo;
       </p>
@@ -601,7 +607,7 @@ export default function PalmettoBugsPage() {
       <p>
         Five products appear above and there is no sixth. One class was deliberately left out:
         insect growth regulators are described by Mississippi State University Extension as
-        &ldquo;especially useful in control of German cockroaches,&rdquo; and no source consulted
+        &ldquo;especially useful in control of German cockroaches.&rdquo; and no source consulted
         for this page states that they are useful against the large roaches this page is about. Rather
         than stretch a German-cockroach finding to cover a different animal, that class is absent.
       </p>
@@ -615,9 +621,8 @@ export default function PalmettoBugsPage() {
         Mississippi State University Extension states that although the large roaches &ldquo;occur
         statewide, they are most common in the southern part of the state.&rdquo; University of
         Georgia Extension states that smokybrown cockroaches &ldquo;prefer warm weather (above 68
-        degrees Fahrenheit) and they require constant moisture to avoid drying out,&rdquo; and
-        describes the smokybrown as the most common cockroach in &ldquo;suburban, Southern
-        neighborhoods with mature hardwood trees present.&rdquo; UF/IFAS Extension records the
+        degrees Fahrenheit) and they require constant moisture to avoid drying out.&rdquo; It describes the smokybrown as the most common cockroach in &ldquo;suburban, Southern
+        neighborhoods with mature hardwood trees present&rdquo;. UF/IFAS Extension records the
         Florida woods cockroach in &ldquo;coastal Georgia, Alabama, and Mississippi, and throughout
         most of Florida&rdquo; &mdash; a Gulf and South Atlantic distribution rather than a national
         one.
