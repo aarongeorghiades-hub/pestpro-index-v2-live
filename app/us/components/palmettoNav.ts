@@ -19,7 +19,14 @@
 // Extension and UF/IFAS — and that is a fitness test, not an order of
 // preference. It lives inside this page's products section.
 //
-// A SECOND PAGE IS ANTICIPATED BUT NOT BUILT: the Florida and Gulf angle is
+// A SECOND PAGE NOW EXISTS AND IS LINKED: /us/german-cockroaches, built in S56 R2.
+// It covers Blattella germanica alone. This page keeps the four large outdoor
+// species and their identification material; that page keeps the small indoor one.
+// The link is reciprocal and was made in one pass, after this module was re-measured
+// at exactly ONE importer immediately before the edit (Law 29). Had it been shared,
+// the remedy would have been body prose, as S54 R5 did for cluster flies.
+//
+// A THIRD PAGE IS ANTICIPATED BUT NOT BUILT: the Florida and Gulf angle is
 // carried here as a short mention only, following the Formosan precedent on
 // /us/termites. When that page exists it joins this array.
 //
@@ -30,4 +37,7 @@
 
 export const PALMETTO_HOME = '/us';
 
-export const PALMETTO_NAV = [{ title: 'Palmetto Bugs', href: '/us/palmetto-bugs' }];
+export const PALMETTO_NAV = [
+  { title: 'Palmetto Bugs', href: '/us/palmetto-bugs' },
+  { title: 'German Cockroaches', href: '/us/german-cockroaches' },
+];
