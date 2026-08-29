@@ -149,12 +149,6 @@ const groups: HubGroup[] = [
         href: '/us/cluster-flies',
         covers: 'How they differ from house flies and where they overwinter.',
       },
-      {
-        title: 'House Flies',
-        href: '/us/flies',
-        covers:
-          'Why they cannot bite, what the sources say they carry instead, and the limits of sticky paper.',
-      },
     ],
   },
   {
@@ -309,6 +303,19 @@ const groups: HubGroup[] = [
         href: '/us/silverfish',
         covers:
           'Two species with different numbers, three sources that disagree on warm or cool, and the paper damage.',
+      },
+    ],
+  },
+  {
+    heading: 'Food & Waste Pests',
+    blurb:
+      'Insects that breed in waste and end up on food, where the problem is what they bring with them rather than a bite.',
+    items: [
+      {
+        title: 'House Flies',
+        href: '/us/flies',
+        covers:
+          'Why they cannot bite, what the sources say they carry instead, and the limits of sticky paper.',
       },
     ],
   },
