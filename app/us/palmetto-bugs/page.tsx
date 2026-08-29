@@ -434,10 +434,12 @@ export default function PalmettoBugsPage() {
           &ldquo;Avoid planting palm trees too near the house because they provide excellent shelter
           for large roaches.&rdquo;
         </strong>{' '}
-        It also states &ldquo;Do not allow ivy or other vines to grow on the side of the
-        house,&rdquo; advises against &ldquo;stacking firewood, lumber, boxes, or other refuse near
-        the house,&rdquo; and in favour of raking &ldquo;leaves and pine needles&rdquo; and keeping
-        &ldquo;trees and shrubs pruned away from the house.&rdquo;
+        It also states &ldquo;Do not allow ivy or other vines to grow on the side of the house
+        because roaches and other insects hide and breed in this heavy vegetation.&rdquo; It advises
+        against &ldquo;stacking firewood, lumber, boxes, or other refuse near the house,&rdquo; and
+        in favour of raking &ldquo;leaves and pine needles&rdquo; and keeping &ldquo;trees and
+        shrubs pruned away from the house to minimize hiding places and ensure good
+        ventilation.&rdquo;
       </p>
       <p>
         UF/IFAS Extension adds to the same list: &ldquo;Stack firewood off the ground and well away
