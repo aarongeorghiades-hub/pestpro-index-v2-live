@@ -301,6 +301,11 @@ export default function ClusterFliesPage() {
           chimney or a crawl space. A slow dull-gray fly does not carry that implication at all.
         </li>
       </ul>
+      <p>
+        If what you have is none of these, house flies are covered separately:{' '}
+        <Link href="/us/flies">our house flies page</Link> sets out what the sources say they carry
+        and what they support doing about it.
+      </p>
 
       <h2 id="control">What to Do</h2>
       <p>
