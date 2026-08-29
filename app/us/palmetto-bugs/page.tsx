@@ -390,8 +390,9 @@ export default function PalmettoBugsPage() {
         The reason is physical. The same source notes that &ldquo;Because of their flattened body
         shape, even adult large roaches can easily crawl under poorly sealed doors,&rdquo; and
         UF/IFAS Extension gives a tolerance it states of cockroaches generally rather than of the
-        large ones in particular: &ldquo;Adult cockroaches can fit into cracks only
-        about 1/16 inch.&rdquo;
+        large ones in particular, and the second half of its sentence is the more useful one:
+        &ldquo;Adult cockroaches can fit into cracks only about 1/16 inch and prefer spaces of about
+        3/8 inch (9.5 mm).&rdquo;
       </p>
       <p>What the sources say to seal, in their own words:</p>
       <ul>
