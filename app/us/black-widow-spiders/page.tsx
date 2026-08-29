@@ -462,7 +462,10 @@ export default function BlackWidowSpidersPage() {
         <strong>Penn State states it as fact:</strong>{' '}
         <em>
           &ldquo;Males are often killed and eaten by the females shortly after mating, thus the
-          origin of the name &lsquo;widow&rsquo;.&rdquo;
+          origin of the name &ldquo;widow.&rdquo;&rdquo;{' '}
+        <em>
+          (the inner quotation marks around the name, and the period inside them, are Penn State&rsquo;s own and are left as published)
+        </em>
         </em>
       </p>
       <p>
@@ -585,7 +588,7 @@ export default function BlackWidowSpidersPage() {
       </p>
       <p>
         <strong>
-          Colorado State&rsquo;s &ldquo;most often produces an immediate sharp pain&rdquo; is not UC
+          Colorado State&rsquo;s &ldquo;most often produces an immediate sharp, pin-prick pain&rdquo; is not UC
           IPM&rsquo;s &ldquo;painless&rdquo;.
         </strong>{' '}
         Both are published positions from extension services and neither is corrected here.

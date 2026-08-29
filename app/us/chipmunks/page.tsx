@@ -717,9 +717,12 @@ export default function ChipmunksPage() {
       <p>
         One related warning is worth carrying because people try it. <strong>UGA:</strong>{' '}
         <em>
-          &ldquo;Home remedies such as naphthalene or &lsquo;moth balls&rsquo; are not labeled for
+          &ldquo;Home remedies such as naphthalene or &ldquo;moth balls&rdquo; are not labeled for
           use on mammals and it is a violation of pesticide laws to use them in a manner that is not
-          consistent with their label.&rdquo;
+          consistent with their label.&rdquo;{' '}
+        <em>
+          (the inner quotation marks around the term moth balls are the University of Georgia&rsquo;s own and are left as published)
+        </em>
         </em>
       </p>
       <p>

@@ -408,9 +408,12 @@ export default function BrownRecluseSpidersPage() {
         is specific about who gets it wrong:{' '}
         <em>
           &ldquo;Non-arachnologists (including physicians, pest control operators, and even some
-          entomologists) have envisioned &lsquo;violins&rsquo; on various body surfaces of harmless
+          entomologists) have envisioned &ldquo;violins&rdquo; on various body surfaces of harmless
           spiders and incorrectly assume that they have properly identified a brown recluse
-          spider.&rdquo;
+          spider.&rdquo;{' '}
+        <em>
+          (the inner quotation marks around the word violins are UC Riverside&rsquo;s own and are left as published)
+        </em>
         </em>
       </p>
       <p>
@@ -422,8 +425,11 @@ export default function BrownRecluseSpidersPage() {
         </em>{' '}
         Iowa State agrees from a third direction:{' '}
         <em>
-          &ldquo;The touted &lsquo;violin-shaped marking&rsquo; on the top of the cephalothorax
-          varies in color and prominence.&rdquo;
+          &ldquo;The touted &ldquo;violin-shaped marking&rdquo; on the top of the cephalothorax
+          varies in color and prominence.&rdquo;{' '}
+        <em>
+          (the inner quotation marks around the phrase are Iowa State&rsquo;s own and are left as published)
+        </em>
         </em>
       </p>
       <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
@@ -608,7 +614,7 @@ export default function BrownRecluseSpidersPage() {
       <p>
         <strong>Penn State reports one household in detail:</strong> a study of a home in which more
         than 2,000 spiders were collected over six months,{' '}
-        <em>&ldquo;yet the residents hadn&rsquo;t been bitten in six years.&rdquo;</em> UC IPM
+        <em>&ldquo;yet the residents hadn&rsquo;t been bitten in six years&rdquo;</em>. UC IPM
         describes the same Kansas family from the other side &mdash; 2,055 spiders collected in six
         months in a 19th-century home, lived in for nearly a decade, and{' '}
         <em>
@@ -662,17 +668,23 @@ export default function BrownRecluseSpidersPage() {
       <p>
         <strong>Penn State:</strong>{' '}
         <em>
-          &ldquo;Multiple studies have found that &lsquo;brown recluse bites&rsquo; are
-          overdiagnosed and the majority of &lsquo;bites&rsquo; are misdiagnoses of other issues,
-          including poison ivy, chemical burns, and diabetic ulcers.&rdquo;
+          &ldquo;Multiple studies have found that &ldquo;brown recluse bites&rdquo; are
+          overdiagnosed and the majority of &ldquo;bites&rdquo; are misdiagnoses of other issues,
+          including poison ivy, chemical burns, and diabetic ulcers.&rdquo;{' '}
+        <em>
+          (the inner quotation marks around both quoted phrases are Penn State&rsquo;s own and are left as published)
+        </em>
         </em>
       </p>
       <p>
         <strong>UC IPM gives a figure:</strong>{' '}
         <em>
           &ldquo;In one national study involving 11 university-based medical facilities, 29% of the
-          patients presenting for &lsquo;spider bite&rsquo; had MRSA as the cause of their skin and
-          soft tissue injury.&rdquo;
+          patients presenting for &ldquo;spider bite&rdquo; had MRSA as the cause of their skin and
+          soft tissue injury.&rdquo;{' '}
+        <em>
+          (the inner quotation marks around the phrase spider bite are UC Riverside&rsquo;s own and are left as published)
+        </em>
         </em>{' '}
         UC IPM also publishes a rule based on the number and distribution of lesions for
         distinguishing a spider bite from other causes. <strong>That rule is a diagnostic test, it
