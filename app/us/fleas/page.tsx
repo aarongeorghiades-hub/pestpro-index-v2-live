@@ -572,6 +572,7 @@ export default function FleasPage() {
         on the places the pet rests, and to seal vacuum bags and discard them so fleas do not escape.
       </p>
 
+      <h2 id="faq">Questions</h2>
       <UsFaq faqs={faqs} />
 
       <h2 id="sources">Sources</h2>

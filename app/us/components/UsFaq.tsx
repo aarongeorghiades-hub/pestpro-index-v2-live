@@ -6,6 +6,20 @@
 // two views of a single `faqs` array, so a question can only appear in the
 // schema if it is also rendered as visible text. This is the convention later US
 // clusters should inherit.
+//
+// THIS COMPONENT RENDERS NO HEADING, AND THAT IS DELIBERATE — BUT IT IS A CONTRACT
+// THE CONSUMER HAS TO KEEP. Every consuming page renders its own
+// `<h2 id="faq">Questions</h2>` immediately before <UsFaq />. The id belongs on that
+// heading and not in here, because a page's own table of contents links to #faq and
+// two elements carrying one id is a defect.
+//
+// PUTTING THE ID IN HERE WOULD BE WRONG AND WAS MEASURED TO BE WRONG. In S55 R4 the
+// component had 42 consumers; 34 of them already rendered that heading. Adding an
+// id to this component would have given those 34 pages TWO elements with id="faq".
+// The eight that had drifted were repaired in their own files instead.
+//
+// IF YOU ADD A CONSUMER, ADD THE HEADING. Nothing here can enforce it, so the check
+// is a rendered sweep for an href="#faq" with no matching id.
 
 export interface Faq {
   question: string;

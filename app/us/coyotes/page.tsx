@@ -946,6 +946,7 @@ export default function CoyotesPage() {
         passage as things coyotes adapt to in the absence of any real threat.
       </p>
 
+      <h2 id="faq">Questions</h2>
       <UsFaq faqs={faqs} />
 
       <h2 id="sources">Sources</h2>

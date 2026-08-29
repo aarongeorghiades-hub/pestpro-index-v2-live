@@ -766,6 +766,7 @@ export default function AntsPage() {
         </p>
       </div>
 
+      <h2 id="faq">Questions</h2>
       <UsFaq faqs={faqs} />
 
       <h2 id="sources">Sources</h2>

@@ -452,6 +452,7 @@ export default function FliesPage() {
         <strong>No bug zapper and no swatter is named on this page.</strong>
       </p>
 
+      <h2 id="faq">Questions</h2>
       <UsFaq faqs={faqs} />
 
       <h2 id="sources">Sources</h2>
