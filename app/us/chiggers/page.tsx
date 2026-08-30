@@ -178,8 +178,12 @@ export default function ChiggersPage() {
         </strong>
         . Texas A&amp;M AgriLife Extension states that &ldquo;Chiggers are the immature
         stage of certain mites belonging to the family Trombiculidae,&rdquo; and that
-        &ldquo;In Texas, the term &lsquo;chigger&rsquo; commonly is used to describe the
-        parasitic larval stage of mites in the genus <em>Eutrombicula</em>.&rdquo;
+        &ldquo;In Texas, the term &ldquo;chigger&rdquo; commonly is used to describe the
+        parasitic larval stage of mites in the genus <em>Eutrombicula</em>.&rdquo;{' '}
+        <em>
+          (the inner quotation marks around the word are Texas A&amp;M AgriLife
+          Extension&rsquo;s own and are left as published)
+        </em>
       </p>
       <p>
         University of Maryland Extension gives the size, which explains why nobody ever
