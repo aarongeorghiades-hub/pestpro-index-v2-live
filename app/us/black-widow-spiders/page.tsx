@@ -464,7 +464,7 @@ export default function BlackWidowSpidersPage() {
           &ldquo;Males are often killed and eaten by the females shortly after mating, thus the
           origin of the name &ldquo;widow.&rdquo;&rdquo;{' '}
         <em>
-          (the inner quotation marks around the name, and the period inside them, are Penn State&rsquo;s own and are left as published)
+          (the inner quotation marks around the name, and the period inside rather than outside them, are Penn State&rsquo;s own; the glyphs follow this site&rsquo;s typography, as every quotation mark on this page does)
         </em>
         </em>
       </p>

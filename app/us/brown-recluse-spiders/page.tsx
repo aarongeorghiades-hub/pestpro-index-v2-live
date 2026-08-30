@@ -412,7 +412,7 @@ export default function BrownRecluseSpidersPage() {
           spiders and incorrectly assume that they have properly identified a brown recluse
           spider.&rdquo;{' '}
         <em>
-          (the inner quotation marks around the word violins are UC Riverside&rsquo;s own and are left as published)
+          (the inner quotation marks around the word violins, and their placement, are UC Riverside&rsquo;s own; the glyphs follow this site&rsquo;s typography, as every quotation mark on this page does)
         </em>
         </em>
       </p>
@@ -428,7 +428,7 @@ export default function BrownRecluseSpidersPage() {
           &ldquo;The touted &ldquo;violin-shaped marking&rdquo; on the top of the cephalothorax
           varies in color and prominence.&rdquo;{' '}
         <em>
-          (the inner quotation marks around the phrase are Iowa State&rsquo;s own and are left as published)
+          (the inner quotation marks around the phrase, and their placement, are Iowa State&rsquo;s own; the glyphs follow this site&rsquo;s typography, as every quotation mark on this page does)
         </em>
         </em>
       </p>
@@ -672,7 +672,7 @@ export default function BrownRecluseSpidersPage() {
           overdiagnosed and the majority of &ldquo;bites&rdquo; are misdiagnoses of other issues,
           including poison ivy, chemical burns, and diabetic ulcers.&rdquo;{' '}
         <em>
-          (the inner quotation marks around both quoted phrases are Penn State&rsquo;s own and are left as published)
+          (the inner quotation marks around both quoted phrases, and their placement, are Penn State&rsquo;s own; the glyphs follow this site&rsquo;s typography, as every quotation mark on this page does)
         </em>
         </em>
       </p>
@@ -683,7 +683,7 @@ export default function BrownRecluseSpidersPage() {
           patients presenting for &ldquo;spider bite&rdquo; had MRSA as the cause of their skin and
           soft tissue injury.&rdquo;{' '}
         <em>
-          (the inner quotation marks around the phrase spider bite are UC Riverside&rsquo;s own and are left as published)
+          (the inner quotation marks around the phrase spider bite, and their placement, are UC Riverside&rsquo;s own; the glyphs follow this site&rsquo;s typography, as every quotation mark on this page does)
         </em>
         </em>{' '}
         UC IPM also publishes a rule based on the number and distribution of lesions for

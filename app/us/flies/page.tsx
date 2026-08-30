@@ -429,8 +429,9 @@ export default function FliesPage() {
           be propelled over several feet from the device.&rdquo;
         </em>{' '}
         <em>
-          (the inner quotation marks around the product name are UC IPM&rsquo;s own and are left as
-          published)
+          (the inner quotation marks around the product name, and their placement, are UC IPM&rsquo;s
+          own; the glyphs follow this site&rsquo;s typography, as every quotation mark on this page
+          does)
         </em>
       </p>
       <p>
