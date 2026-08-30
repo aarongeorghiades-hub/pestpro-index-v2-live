@@ -206,8 +206,9 @@ export default function PalmettoBugsPage() {
         UF Entomology and Nematology says of the American cockroach specifically that it is
         &ldquo;often called a &ldquo;palmetto bug.&rdquo;&rdquo;{' '}
         <em>
-          (the inner quotation marks around the name, and the period inside them, are UF Entomology
-          and Nematology&rsquo;s own and are left as published)
+          (the inner quotation marks around the name, and the period inside rather than outside
+          them, are UF Entomology and Nematology&rsquo;s own; the glyphs follow this site&rsquo;s
+          typography, as every quotation mark on this page does)
         </em>
       </p>
       <p>

@@ -792,8 +792,9 @@ export default function SnakesPage() {
           but would be rather time consuming and expensive, and advertised &ldquo;snake
           repellents&rdquo; simply do not work.&rdquo;
         </em>{' '}
-        (the inner quotation marks around the phrase are UF/IFAS&rsquo;s own and are left as
-        published)
+        (the inner quotation marks around the phrase, and their placement, are UF/IFAS&rsquo;s
+        own; the glyphs follow this site&rsquo;s typography, as every quotation mark on this page
+        does)
       </p>
       <p>
         <strong>Utah State:</strong>{' '}
