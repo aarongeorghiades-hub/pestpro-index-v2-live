@@ -177,8 +177,8 @@ export default function ChiggersPage() {
           Trombiculidae)&rdquo;
         </strong>
         . Texas A&amp;M AgriLife Extension states that &ldquo;Chiggers are the immature
-        stage of certain mites belonging to the family Trombiculidae,&rdquo; and that
-        &ldquo;In Texas, the term &ldquo;chigger&rdquo; commonly is used to describe the
+        stage of certain mites belonging to the family Trombiculidae.&rdquo; It also states
+        that &ldquo;In Texas, the term &ldquo;chigger&rdquo; commonly is used to describe the
         parasitic larval stage of mites in the genus <em>Eutrombicula</em>.&rdquo;{' '}
         <em>
           (the inner quotation marks around the word are Texas A&amp;M AgriLife
@@ -250,7 +250,7 @@ export default function ChiggersPage() {
         A chigger feeds and leaves. Ohio State University Extension states that
         &ldquo;Chiggers can feed for 2&ndash;4 days on their animal hosts, then they drop
         off&rdquo;. Texas A&amp;M states that &ldquo;Once a larva finds a host, it
-        typically feeds for 3 days before dropping off.&rdquo; University of Maryland
+        typically feeds for 3 days before dropping off&rdquo;. University of Maryland
         states that &ldquo;After attaching to the host, the larvae feed for up to 3
         days.&rdquo;{' '}
         <em>
@@ -297,7 +297,7 @@ export default function ChiggersPage() {
         </strong>{' '}
         Texas A&amp;M agrees on onset and adds a peak: &ldquo;Itching usually begins within
         3 to 6 hours after an initial bite&rdquo; and &ldquo;Itching typically peaks at 24
-        to 48 hours after chigger bites occur.&rdquo;
+        to 48 hours after chigger bites occur&rdquo;.
       </p>
       <p>
         By the time there is anything to feel, the animal that caused it has generally
@@ -341,9 +341,9 @@ export default function ChiggersPage() {
         </em>
       </p>
       <p>
-        For the rest of the cycle, University of Maryland states that &ldquo;Adults
-        overwinter in the soil,&rdquo; that &ldquo;Eggs are laid in damp soil during the
-        first warm spring weather,&rdquo; and that{' '}
+        For the rest of the cycle, University of Maryland gives three sentences in
+        succession. &ldquo;Adults overwinter in the soil.&rdquo; Then &ldquo;Eggs are laid in
+        damp soil during the first warm spring weather.&rdquo; Then{' '}
         <strong>
           &ldquo;After hatching, the larvae crawl on the soil or up grass blades in search
           of a host.&rdquo;
@@ -395,7 +395,7 @@ export default function ChiggersPage() {
         chiggers&rdquo;, and to &ldquo;Make sure to wash clothing on the hot setting to
         kill any remaining mites&rdquo;. Texas A&amp;M advises to &ldquo;Take a warm, soapy
         shower or bath within a few hours after exposure to chiggers&rdquo; and to
-        &ldquo;Scrub your skin vigorously with a washcloth to dislodge any mites.&rdquo;
+        &ldquo;Scrub your skin vigorously with a washcloth to dislodge any mites&rdquo;.
         University of Maryland recommends lathering and rinsing several times in a hot
         shower to remove any remaining chiggers, and states that{' '}
         <strong>
@@ -405,9 +405,11 @@ export default function ChiggersPage() {
       </p>
       <p>
         <strong>Clothing.</strong> Texas A&amp;M advises to &ldquo;Wear protective
-        clothing, such as long pants, long-sleeved shirts and shoes or boots,&rdquo; and to{' '}
-        <strong>&ldquo;Tuck pants legs inside boots, and button your cuffs and
-        collar&rdquo;</strong>; it describes loose-fitting, tightly woven fabrics as
+        clothing, such as long pants, long-sleeved shirts and shoes or boots,&rdquo; and
+        gives the next step as a sentence of its own:{' '}
+        <strong>&ldquo;To keep chiggers on the outside of your clothing, tuck pants legs
+        inside boots, and button your cuffs and collar.&rdquo;</strong> It describes
+        loose-fitting, tightly woven fabrics as
         offering the strongest protection of the fabrics it discusses. University of
         Maryland states that &ldquo;Long sleeved shirts and long pants, tied at the ankles,
         are recommended.&rdquo; Two sources independently point at closing the ankle, which
@@ -424,7 +426,7 @@ export default function ChiggersPage() {
       <p>
         <strong>Permethrin, and only on fabric.</strong> Texas A&amp;M states:{' '}
         <strong>&ldquo;Apply products containing permethrin (such as Permanone&reg; Tick
-        Repellent) to clothing.&rdquo;</strong> No source consulted for this page gives a
+        Repellent) to clothing&rdquo;</strong>. No source consulted for this page gives a
         permethrin concentration for chiggers, so none is stated here.
       </p>
 
@@ -481,7 +483,7 @@ export default function ChiggersPage() {
         </li>
         <li>
           Texas A&amp;M AgriLife Extension: &ldquo;Keeping grass cut short and vegetation
-          well-trimmed can raise soil temperatures and lower humidity.&rdquo;
+          well-trimmed can raise soil temperatures and lower humidity&rdquo;.
         </li>
       </ul>
       <p>
@@ -493,9 +495,10 @@ export default function ChiggersPage() {
         </strong>
         , and Ohio State that &ldquo;Preferred egg-laying sites include the humid soils of
         grassy fields, scrubby weedy areas, and lawns&rdquo;. Texas A&amp;M separates two
-        species by habitat: &ldquo;<em>Eutrombicula alfreddugesi</em> inhabits disturbed
-        grassy and weedy upland areas&rdquo; while &ldquo;<em>Eutrombicula splendens</em>
-        prefers moist habitats such as swamps and bogs.&rdquo;
+        species by habitat, and takes them one at a time: &ldquo;One, <em>Eutrombicula
+        alfreddugesi</em>, inhabits disturbed grassy and weedy upland areas&rdquo;, and
+        &ldquo;The other, <em>Eutrombicula splendens</em>, prefers moist habitats such as
+        swamps and bogs&rdquo;.
       </p>
 
       <h2 id="products">Examples, by Sourced Ingredient</h2>
@@ -645,9 +648,9 @@ export default function ChiggersPage() {
         . Texas A&amp;M AgriLife Extension states that{' '}
         <strong>
           &ldquo;Chiggers are active from late spring to fall in most parts of Texas, but
-          they may remain active year-round in southern areas.&rdquo;
-        </strong>{' '}
-        The University of Maryland material is a Maryland fact sheet.
+          they may remain active year-round in southern areas&rdquo;
+        </strong>
+        . The University of Maryland material is a Maryland fact sheet.
       </p>
       <p>
         <strong>
