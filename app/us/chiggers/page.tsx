@@ -259,13 +259,14 @@ export default function ChiggersPage() {
         </em>
       </p>
       <p>
-        A tick does the opposite. CDC states that{' '}
-        <strong>
-          &ldquo;Ticks suck blood anywhere from minutes to days, depending on the tick
-          species,&rdquo;
-        </strong>{' '}
-        and that &ldquo;Many species also secrete a cement-like substance that keeps them
-        firmly attached during the meal.&rdquo; A tick is an animal you can generally see
+        A tick does the opposite. CDC states that ticks suck blood anywhere from minutes to
+        days, depending on the tick species, and that many species also secrete a cement-like
+        substance that keeps them firmly attached during the meal.{' '}
+        <em>
+          (CDC&rsquo;s pages could not be retrieved when this page was last checked, so what it
+          says is reported here in our words rather than quoted)
+        </em>{' '}
+        A tick is an animal you can generally see
         and have to remove; a chigger is usually gone before the itching starts. The
         removal procedure, and which tick carries what, are on{' '}
         <Link href="/us/ticks">our ticks page</Link>.
@@ -364,23 +365,20 @@ export default function ChiggersPage() {
         statement at all; both were checked for one.
       </p>
       <p>
-        Scrub typhus does involve chiggers, and it belongs in a different place. CDC
-        states that{' '}
-        <strong>
-          &ldquo;Scrub typhus is transmitted to humans through bites from infected larval
-          trombiculid mites, commonly known as chiggers,&rdquo;
-        </strong>{' '}
-        and that{' '}
-        <strong>
-          &ldquo;Scrub typhus is distributed throughout the Asia-Pacific region. It is
-          endemic to Korea, China, Taiwan, Japan, Pakistan, India, Bangladesh, Thailand,
-          Laos, Malaysia, Vietnam, Sri Lanka, and Australia.&rdquo;
-        </strong>
+        Scrub typhus does involve chiggers, and it belongs in a different place. CDC states
+        that scrub typhus is transmitted to humans through bites from infected larval
+        trombiculid mites, commonly known as chiggers, and that it is distributed throughout
+        the Asia-Pacific region, endemic to Korea, China, Taiwan, Japan, Pakistan, India,
+        Bangladesh, Thailand, Laos, Malaysia, Vietnam, Sri Lanka and Australia.{' '}
+        <em>
+          (CDC&rsquo;s pages could not be retrieved when this page was last checked, so what it
+          says is reported here in our words rather than quoted)
+        </em>
       </p>
       <p>
-        The species matter. CDC names the vectors as &ldquo;<em>Leptotrombidium
-        pallidum</em>, <em>L. fuji</em>, <em>L. scutellare</em>, and <em>L.
-        akamushi</em>&rdquo;. The chiggers the US extension services describe are{' '}
+        The species matter. CDC names the vectors as <em>Leptotrombidium pallidum</em>,{' '}
+        <em>L. fuji</em>, <em>L. scutellare</em> and <em>L. akamushi</em>. The chiggers the US
+        extension services describe are{' '}
         <em>Eutrombicula</em>. Different genus, different region &mdash; which is why the
         Maryland sentence above sits directly beside this one rather than anywhere else on
         the page.
