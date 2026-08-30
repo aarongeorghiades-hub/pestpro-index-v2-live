@@ -725,7 +725,7 @@ export default function SnakesPage() {
           <li>
             <strong>1/8 inch is the MESH that seals it.</strong> Colorado State names{' '}
             <em>&ldquo;1/8-inch hardware cloth&rdquo;</em>; ICWDM names{' '}
-            <em>&ldquo;&frac18;-inch mesh hardware cloth&rdquo;</em>.
+            <em>&ldquo;⅛-inch mesh hardware cloth&rdquo;</em>.
           </li>
           <li>
             <strong>1/4 inch is ALSO the fence mesh</strong>, in the section above &mdash; a
@@ -750,7 +750,7 @@ export default function SnakesPage() {
         <strong>ICWDM:</strong>{' '}
         <em>
           &ldquo;Holes in wooden buildings can be sealed with sheet metal, Copper Stuf-Fit,
-          Xcluder&trade;, or &frac18;-inch mesh hardware cloth.&rdquo;
+          Xcluder&trade;, or ⅛-inch mesh hardware cloth.&rdquo;
         </em>
       </p>
       <h3>Mesh for covering an opening</h3>
