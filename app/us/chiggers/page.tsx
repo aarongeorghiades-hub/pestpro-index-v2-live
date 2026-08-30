@@ -121,18 +121,6 @@ const sources: Source[] = [
     date: 'Accessed 23 August 2026',
     href: 'https://agrilifeextension.tamu.edu/library/landscaping/chiggers/',
   },
-  {
-    label: 'Clinical Overview of Scrub Typhus',
-    publisher: 'Centers for Disease Control and Prevention',
-    date: 'Accessed 23 August 2026',
-    href: 'https://www.cdc.gov/typhus/hcp/clinical-overview/clinical-overview-of-scrub-typhus.html',
-  },
-  {
-    label: 'About Ticks — used here only for the tick side of the comparison',
-    publisher: 'Centers for Disease Control and Prevention',
-    date: 'Accessed 23 August 2026',
-    href: 'https://www.cdc.gov/ticks/about/index.html',
-  },
 ];
 
 const tocItems = [
@@ -663,10 +651,12 @@ export default function ChiggersPage() {
 
       <h2 id="sources">Sources</h2>
       <p>
-        Every factual statement on this page traces to one of the five publications below:
-        three university extension services and two Centers for Disease Control and
-        Prevention pages, the second of which is used only for the tick side of the
-        comparison. Where two sources give different figures for the same thing, both are
+        Every factual statement on this page traces to one of the university extension
+        publications listed below. Two passages &mdash; scrub typhus, and how long a tick
+        stays attached &mdash; report what CDC publishes. CDC&rsquo;s pages could not be
+        retrieved when this page was checked, so CDC is named in those sentences and is
+        neither cited below nor linked: this page does not send a reader to a document it
+        has not been able to open. Where two sources give different figures for the same thing, both are
         quoted with their attributions rather than merged, and where a source declines to
         make a recommendation that refusal is reported rather than filled in. Two further
         extension fact sheets, from University of Missouri Extension and Oklahoma State
