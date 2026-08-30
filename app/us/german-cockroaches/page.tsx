@@ -97,7 +97,7 @@ const stationProducts: ProductRecord[] = [
     whatItDoes: [
       'A small bait station, which is the form UF/IFAS names for this species. Its own text describes eighteen ready-to-use stations needing no activation',
       'Its own feature text names the target: a blend of foods that German roaches and other small roaches find attractive',
-      'States its active ingredient as fipronil, and its duration as up to twelve months. Both figures are the seller&rsquo;s, not a source&rsquo;s',
+      'States its active ingredient as fipronil, and its duration as up to twelve months. Both figures are the seller’s, not a source’s',
       '⚠ Amazon search rendered this same ASIN under a second, longer title. The title printed here was read from the product page itself. Check the ASIN rather than the model wording',
     ],
   },
@@ -107,7 +107,7 @@ const stationProducts: ProductRecord[] = [
     whatItDoes: [
       'A small bait station in the same form as the card above, supplied as twelve stations by its own count',
       'Its own feature text uses the same phrase for the target: a blend of foods that German roaches and other small roaches find attractive',
-      'States a different active ingredient from the card above &mdash; hydramethylnon &mdash; and a different duration, up to three months',
+      'States a different active ingredient from the card above — hydramethylnon — and a different duration, up to three months',
       'It is not a repackaging of the card above. Different active ingredient, different stated duration, different count, and the two listings share only part of their text',
     ],
   },
@@ -206,14 +206,14 @@ const sources: Source[] = [
   },
   {
     label:
-      'German Cockroach: Biology, Identification, Control. The source of the insecticide-resistance caution, the homeowner integrated pest management position and the antibiotic-resistant bacteria statement. It is the older of this site&rsquo;s two NC State sources and the two do not agree with one another',
+      'German Cockroach: Biology, Identification, Control. The source of the insecticide-resistance caution, the homeowner integrated pest management position and the antibiotic-resistant bacteria statement. It is the older of this site’s two NC State sources and the two do not agree with one another',
     publisher: 'NC State Extension',
     date: 'Renders Updated: May 8, 2013, which is the oldest current revision in this set at thirteen years. Fetched 29 August 2026',
     href: 'https://entomology.ces.ncsu.edu/german-cockroach/',
   },
   {
     label:
-      'Biology and Behavior of the German Cockroach. A single-species document, and the source of the named allergen proteins, the daily allergen figure, the mean egg count, the development window and the professional-services position. It is the newer and fuller of this site&rsquo;s two NC State sources and it contradicts the older one on whether a householder should treat this insect',
+      'Biology and Behavior of the German Cockroach. A single-species document, and the source of the named allergen proteins, the daily allergen figure, the mean egg count, the development window and the professional-services position. It is the newer and fuller of this site’s two NC State sources and it contradicts the older one on whether a householder should treat this insect',
     publisher: 'NC State Extension Publications',
     date: 'NO DATE SURFACE OF ANY KIND EXISTS on this page — none rendered, none hidden in markup, none in structured data. The document carrying the strongest claims in this set is the one that cannot be dated. Fetched 29 August 2026',
     href: 'https://content.ces.ncsu.edu/biology-behavior-of-the-german-cockroach',

@@ -102,7 +102,7 @@ const products: ProductRecord[] = [
     whatItDoes: [
       'The only fabric container we checked whose own text uses the word airtight and pairs it with the mechanism: a gasketed seal plus hinged latch clips, which the listing says help block air, moisture, dust and pests',
       'A larger box than the one above, at 54 quarts, sold in a four-pack',
-      'Named on three other pages of this site for the same physical job. The reason here is UC IPM&rsquo;s clothes-moth storage sentence, not anything about the product',
+      'Named on three other pages of this site for the same physical job. The reason here is UC IPM’s clothes-moth storage sentence, not anything about the product',
       'The order in the source matters: clean and pest free first, then sealed. A container that seals will seal an infestation in as readily as it keeps one out',
     ],
   },
@@ -146,7 +146,7 @@ const products: ProductRecord[] = [
     whatItDoes: [
       'States an airtight seal in its own text and names the mechanism: side-locking lids with a black silicone gasket, which the listing says protect the containers from air and water',
       'A smaller set than the two 24-piece sets, at eight containers in four sizes',
-      '⚠ The listing describes &ldquo;4 side-locking lids&rdquo; for an eight-piece set. Whether that means four locking sides per lid or four lidded containers is not resolved by the listing&rsquo;s own text, so this card states no lid count',
+      '⚠ The listing describes “4 side-locking lids” for an eight-piece set. Whether that means four locking sides per lid or four lidded containers is not resolved by the listing’s own text, so this card states no lid count',
       'As with every container here, the claim is against air and moisture. No source consulted tested any container against a moth',
     ],
   },

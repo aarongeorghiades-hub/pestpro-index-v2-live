@@ -92,7 +92,7 @@ const products: ProductRecord[] = [
       'A paper ribbon roll coated on both sides, per its own text, and the largest pack count of the four named here',
       'Its own text states no baiting and no vapours, which matches what UC IPM describes as a plain sticky ribbon',
       '⚠ The listing contradicts itself: its title includes the words Fly Bait while a feature line states No Baiting. We make no bait claim for it, and neither should you rely on one',
-      'Two spelling errors sit in the seller&rsquo;s own text and are left as published rather than quietly corrected',
+      'Two spelling errors sit in the seller’s own text and are left as published rather than quietly corrected',
     ],
   },
   {

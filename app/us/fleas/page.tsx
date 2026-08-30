@@ -104,7 +104,7 @@ const products: ProductRecord[] = [
     whatItDoes: [
       'States the same light-and-heat mechanism in its own text, and adds colour to the list of what draws the insect in',
       'Two traps, four glue pads and six bulbs per pack, per the listing, with refills sold separately',
-      'The seller claims a fifty-foot attraction radius. No source consulted states any distance for a flea trap, so that figure is the seller&rsquo;s alone and is not repeated here as fact',
+      'The seller claims a fifty-foot attraction radius. No source consulted states any distance for a flea trap, so that figure is the seller’s alone and is not repeated here as fact',
       'Uses a physical trap rather than an insecticide, which is the reason UF/IFAS discusses this class at all',
     ],
   },

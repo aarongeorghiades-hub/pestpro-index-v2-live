@@ -114,7 +114,7 @@ const sources: Source[] = [
     href: 'https://extension.msstate.edu/insects/termites/common-questions-about-termites-and-termite-control',
   },
   {
-    label: 'Termite Bait Stations — Bug&rsquo;s Eye View, Vol 7 No 10',
+    label: 'Termite Bait Stations — Bug’s Eye View, Vol 7 No 10',
     publisher: 'Mississippi State University Extension',
     date: 'Accessed 23 August 2026',
     href: 'https://extension.msstate.edu/newsletters/bugs-eye-view/2021/termite-bait-stations-vol-7-no-10',

@@ -91,7 +91,7 @@ const products: ProductRecord[] = [
     whatItDoes: [
       'States an airtight seal in its own text and names the mechanism: side-locking lids with a black silicone gasket, which the listing says protect the containers from air and water',
       'The smallest of the three sets, at eight containers in four sizes',
-      '⚠ The listing describes four side-locking lids for an eight-piece set. Whether that means four locking sides per lid or four lidded containers is not resolved by the listing&rsquo;s own text, so this card states no lid count',
+      '⚠ The listing describes four side-locking lids for an eight-piece set. Whether that means four locking sides per lid or four lidded containers is not resolved by the listing’s own text, so this card states no lid count',
       'Utah State puts the same instruction in its shortest form: remove or store potential food sources in sealed containers',
     ],
   },
@@ -113,7 +113,7 @@ const products: ProductRecord[] = [
     whatItDoes: [
       'The only trap checked that names firebrats as well as silverfish in its own text, and it names silverfish to type: bristletail, common, four-lined, gray and firebrat silverfish',
       'States a scented attractant mixed into the glue rather than a separate lure wafer',
-      'UC IPM&rsquo;s instruction is to use a plain sticky trap for detection and monitoring. This one adds an attractant, which the source neither asks for nor rules out',
+      'UC IPM’s instruction is to use a plain sticky trap for detection and monitoring. This one adds an attractant, which the source neither asks for nor rules out',
       'Twelve traps. The same seller lists a twenty-pack under a different ASIN whose own listing states none of this, so that one is not named here',
     ],
   },
@@ -192,7 +192,7 @@ const faqs: Faq[] = [
   {
     question: 'What humidity should I aim for?',
     answer:
-      'No silverfish source we consulted publishes a number. Three of them recommend a dehumidifier — UC IPM says silverfish require a lot of moisture so using dehumidifiers in closed spaces can help discourage these pests, NPIC says to consider using a dehumidifier in closed spaces such as bathrooms, basements, garages and attics, and Penn State says to use dehumidifiers in damp basements. None of the three gives a target relative humidity, a capacity or a room size. There is a figure of less than 50 percent in one of these publications, but it sits in that document&rsquo;s booklice section and is given for slowing mould growth, so it is not a silverfish target and this page does not present it as one. That is why no dehumidifier is named here: there is no published specification to measure a product against.',
+      'No silverfish source we consulted publishes a number. Three of them recommend a dehumidifier — UC IPM says silverfish require a lot of moisture so using dehumidifiers in closed spaces can help discourage these pests, NPIC says to consider using a dehumidifier in closed spaces such as bathrooms, basements, garages and attics, and Penn State says to use dehumidifiers in damp basements. None of the three gives a target relative humidity, a capacity or a room size. There is a figure of less than 50 percent in one of these publications, but it sits in that document’s booklice section and is given for slowing mould growth, so it is not a silverfish target and this page does not present it as one. That is why no dehumidifier is named here: there is no published specification to measure a product against.',
   },
   {
     question: 'Will a moth or carpet beetle trap catch silverfish?',
