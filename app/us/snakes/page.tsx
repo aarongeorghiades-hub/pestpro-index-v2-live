@@ -789,9 +789,11 @@ export default function SnakesPage() {
         <strong>UF/IFAS:</strong>{' '}
         <em>
           &ldquo;Attempting to completely exclude snakes from your yard with fencing is possible,
-          but would be rather time consuming and expensive, and advertised &lsquo;snake
-          repellents&rsquo; simply do not work.&rdquo;
-        </em>
+          but would be rather time consuming and expensive, and advertised &ldquo;snake
+          repellents&rdquo; simply do not work.&rdquo;
+        </em>{' '}
+        (the inner quotation marks around the phrase are UF/IFAS&rsquo;s own and are left as
+        published)
       </p>
       <p>
         <strong>Utah State:</strong>{' '}
