@@ -5,7 +5,7 @@ import UsPageLayout from './components/UsPageLayout';
 const URL = 'https://pestproindex.com/us';
 const TITLE = 'US Pest Guides';
 const DESCRIPTION =
-  'Forty-three US pest pages, grouped by the problem you actually have rather than by insect order. Every claim on them is traced to a named university extension or public health source.';
+  'Forty-four US pest pages, grouped by the problem you actually have rather than by insect order. Every claim on them is traced to a named university extension or public health source.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -91,6 +91,12 @@ const groups: HubGroup[] = [
         href: '/us/fleas',
         covers:
           'Which flea carries which disease, two sources that disagree about it, and why the strongest treatments need a vet.',
+      },
+      {
+        title: 'Social Wasps',
+        href: '/us/social-wasps',
+        covers:
+          'Yellowjackets, paper wasps and the hornet that usually is not one, and why a wasp leaves no stinger to remove.',
       },
     ],
   },
