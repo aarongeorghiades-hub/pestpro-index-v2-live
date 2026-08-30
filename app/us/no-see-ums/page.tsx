@@ -148,12 +148,6 @@ const sources: Source[] = [
     href: 'https://extension.entm.purdue.edu/publichealth/insects/bitingmidge.html',
   },
   {
-    label: 'About Leishmaniasis',
-    publisher: 'Centers for Disease Control and Prevention',
-    date: 'Accessed 24 August 2026',
-    href: 'https://www.cdc.gov/leishmaniasis/about/index.html',
-  },
-  {
     label:
       'Diagnostic doses and times for Phlebotomus papatasi and Lutzomyia longipalpis sand flies — Denlinger, Creswell, Anderson, Reese and Bernhardt',
     publisher: 'Parasites and Vectors 2016;9:212',
@@ -297,17 +291,19 @@ export default function NoSeeUmsPage() {
         <strong>
           &ldquo;none are known to transmit disease agents to humans in the U.S.&rdquo;
         </strong>{' '}
-        And CDC places leishmaniasis elsewhere:{' '}
+        And CDC places leishmaniasis elsewhere.{' '}
         <strong>
-          &ldquo;Leishmaniasis occurs in parts of approximately 90 countries, usually in
-          tropical or subtropical climates.&rdquo;
+          CDC states that leishmaniasis occurs in parts of approximately 90 countries, usually in
+          tropical or subtropical climates. On the United States specifically, it states that people
+          have occasionally had locally acquired cutaneous leishmaniasis, especially in Texas and
+          rarely in other states, giving Oklahoma and Arizona as its examples, and that there have
+          been no known cases of acquired visceral leishmaniasis in the United States.
         </strong>{' '}
-        On the United States specifically, CDC states that{' '}
-        <strong>
-          &ldquo;Occasionally, people have had locally acquired CL, especially in Texas and
-          rarely other states (e.g., Oklahoma and Arizona). There have been no known cases
-          of acquired VL in the US.&rdquo;
-        </strong>
+        <em>
+          (CDC&rsquo;s pages could not be retrieved when this page was last checked, so what it says
+          is reported here in our own words rather than quoted; the two disease names are written out
+          where CDC abbreviates them)
+        </em>
       </p>
       <p>
         <strong>
