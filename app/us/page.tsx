@@ -4,8 +4,6 @@ import UsPageLayout from './components/UsPageLayout';
 
 const URL = 'https://pestproindex.com/us';
 const TITLE = 'US Pest Guides';
-const DESCRIPTION =
-  'Forty-four US pest pages, grouped by the problem you actually have rather than by insect order. Every claim on them is traced to a named university extension or public health source.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -36,7 +34,9 @@ const HUB_HOME = '/us';
 const HUB_NAV: { title: string; href: string }[] = [];
 
 // Every route under /us, grouped by the problem a reader arrives with rather than
-// by taxonomy. Each of the 43 routes appears exactly once. The `title` on each
+// by taxonomy. Each route appears exactly once, and the page count in the
+// description and the subtitle is DERIVED from this array rather than written
+// down, so the two cannot drift apart again. The `title` on each
 // entry is the page's own h1, read from the page, not a rewritten label. The
 // `covers` line is navigation copy: it says what the page is about and asserts
 // nothing about the pest itself, because no source pack governs this file.
@@ -346,6 +346,29 @@ const groups: HubGroup[] = [
   },
 ];
 
+// The page count is DERIVED from `groups`, never written down. It went stale once
+// already: when /us/social-wasps shipped, the metadata string was incremented and the
+// visible subtitle was not, so for two sessions the only number a reader could see was
+// wrong by one. Deriving both from the array that also generates hasPart and the group
+// links means they cannot disagree again.
+const PAGE_COUNT = groups.reduce((total, group) => total + group.items.length, 0);
+
+// Sentence-initial written-out form, matching the house style for numbers in prose.
+// Covers 20 to 99, which is the range this estate can plausibly occupy. Outside it the
+// numeral is returned rather than a wrong word, because a wrong word is worse than a digit.
+const TENS_WORDS = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+const ONES_WORDS = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+const PAGE_COUNT_WORD =
+  PAGE_COUNT >= 20 && PAGE_COUNT <= 99
+    ? `${TENS_WORDS[Math.floor(PAGE_COUNT / 10)]}${
+        PAGE_COUNT % 10 ? `-${ONES_WORDS[PAGE_COUNT % 10]}` : ''
+      }`
+    : String(PAGE_COUNT);
+
+const DESCRIPTION = `${PAGE_COUNT_WORD} US pest pages, grouped by the problem you actually have rather than by insect order. Every claim on them is traced to a named university extension or public health source.`;
+
+const SUBTITLE = `${PAGE_COUNT_WORD} pages on pests in the United States, grouped by the problem rather than by the taxonomy. Every page is written from university extension and public health sources, and cites them.`;
+
 const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
@@ -381,7 +404,7 @@ export default function UsHubPage() {
   return (
     <UsPageLayout
       title="US Pest Guides"
-      subtitle="Forty-three pages on pests in the United States, grouped by the problem rather than by the taxonomy. Every page is written from university extension and public health sources, and cites them."
+      subtitle={SUBTITLE}
       lastUpdated="August 2026"
       readingTime="3 min"
       tocItems={tocItems}
