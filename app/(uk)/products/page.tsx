@@ -3,12 +3,11 @@ export const dynamic = 'force-dynamic';
 
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
+import { UK_AMAZON_TAG } from '@/lib/externalUrl';
 
 export default function ProductsPage() {
-  const AMAZON_TRACKING_ID = 'pestproindex2-21';
-  
   function getAmazonLink(asin: string): string {
-    return `https://www.amazon.co.uk/dp/${asin}?tag=${AMAZON_TRACKING_ID}`;
+    return `https://www.amazon.co.uk/dp/${asin}?tag=${UK_AMAZON_TAG}`;
   }
 
 

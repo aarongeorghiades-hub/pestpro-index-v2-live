@@ -739,3 +739,17 @@ Current tier state, as measured in S60 R4 (Bash against `app/us/`):
 nine heads shipped — German cockroaches, ants, fleas, mice, moths,
 wasps/hornets, flies, silverfish, carpet beetles. Two heads unbuilt —
 bed bugs and rats.
+
+## S60 R6 — GSC QUEUE IS A FILE, NOT A MEMORY
+
+LAW 159 — THE GSC SUBMISSION QUEUE LIVES AT
+`~/pestpro-gsc-queue.md` AND IS MAINTAINED BY CC, NEVER BY THE PM
+FROM CHAT. The PM previously drove Search Console submissions from
+memory and chat history, which produced wrong and duplicated
+instructions. CC regenerates or updates this file at the end of any
+round that ships a new route or materially changes an existing one,
+listing full absolute URLs with each route's last-modified date, and
+naming any route that is a deliberate control and must never be
+submitted. A round that changes a route and does not update this file
+is not finished. The PM's job is to read the file and act on it, not
+to reconstruct it.

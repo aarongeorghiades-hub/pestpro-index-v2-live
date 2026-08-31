@@ -4,9 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
-
-// Amazon Associates Configuration
-const AMAZON_TRACKING_ID = 'pestproindex2-21';
+import { UK_AMAZON_TAG } from '@/lib/externalUrl';
 
 export interface Product {
   id: string;
@@ -27,7 +25,7 @@ interface Category {
 }
 
 const getAmazonLink = (asin: string): string => {
-  return `https://www.amazon.co.uk/dp/${asin}?tag=${AMAZON_TRACKING_ID}`;
+  return `https://www.amazon.co.uk/dp/${asin}?tag=${UK_AMAZON_TAG}`;
 };
 
 export default function CommercialProductsPage({ products }: { products: Product[] }) {

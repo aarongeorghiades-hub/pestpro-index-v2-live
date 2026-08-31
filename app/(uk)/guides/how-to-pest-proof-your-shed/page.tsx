@@ -4,6 +4,7 @@ import GuideLayout from '@/components/GuideLayout';
 import ProductCard from '@/components/ProductCard';
 import FindProviderCTA from '@/components/FindProviderCTA';
 import Callout, { StatCallout } from '@/components/Callout';
+import { UK_AMAZON_TAG } from '@/lib/externalUrl';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -431,28 +432,28 @@ export default function HowToPestProofYourShedPage() {
               <td className="py-3 px-4 text-gray-800">Steel wool (coarse grade)</td>
               <td className="py-3 px-4 text-gray-600">Packing into gaps before foam &mdash; rodents cannot chew through</td>
               <td className="py-3 px-4">
-                <a href="https://www.amazon.co.uk/dp/B006GQQVDW?tag=pestproindex2-21" target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href={`https://www.amazon.co.uk/dp/B006GQQVDW?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Expanding foam (exterior grade)</td>
               <td className="py-3 px-4 text-gray-600">Sealing gaps around door frame, walls, and windows</td>
               <td className="py-3 px-4">
-                <a href="https://www.amazon.co.uk/dp/B07YM5BY58?tag=pestproindex2-21" target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href={`https://www.amazon.co.uk/dp/B07YM5BY58?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Stainless steel insect mesh (fine aperture)</td>
               <td className="py-3 px-4 text-gray-600">Covering air vents to exclude mice, wasps, and flies</td>
               <td className="py-3 px-4">
-                <a href="https://www.amazon.co.uk/dp/B077XX6NKB?tag=pestproindex2-21" target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href={`https://www.amazon.co.uk/dp/B077XX6NKB?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
             <tr>
               <td className="py-3 px-4 text-gray-800">Brush strip draught excluder</td>
               <td className="py-3 px-4 text-gray-600">Sealing the gap under the shed door</td>
               <td className="py-3 px-4">
-                <a href="https://www.amazon.co.uk/dp/B002Q0ZB9M?tag=pestproindex2-21" target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href={`https://www.amazon.co.uk/dp/B002Q0ZB9M?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
             <tr>
@@ -487,7 +488,7 @@ export default function HowToPestProofYourShedPage() {
               <td className="py-3 px-4 text-gray-800">Exterior wood preservative</td>
               <td className="py-3 px-4 text-gray-600">Annual timber protection to prevent rot and decay</td>
               <td className="py-3 px-4">
-                <a href="https://www.amazon.co.uk/dp/B0024LNI8E?tag=pestproindex2-21" target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href={`https://www.amazon.co.uk/dp/B0024LNI8E?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
           </tbody>

@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import Navigation from '@/components/Navigation';
-import { isAffiliateUrl, SPONSORED_LINK_REL } from '@/lib/externalUrl';
+import { isAffiliateUrl, SPONSORED_LINK_REL, UK_AMAZON_TAG } from '@/lib/externalUrl';
 
 interface Resource {
   name: string;
@@ -124,7 +124,7 @@ export default function ResourcesPage() {
         {
           name: 'The Bed Bug Handbook',
           description: 'The complete reference book on bed bug biology, detection, and treatment. Available on Amazon.',
-          url: 'https://www.amazon.co.uk/dp/B09TZK7FYS?tag=pestproindex2-21'
+          url: `https://www.amazon.co.uk/dp/B09TZK7FYS?tag=${UK_AMAZON_TAG}`
         },
         {
           name: 'Urban Pest Management in Australia (CSIRO)',

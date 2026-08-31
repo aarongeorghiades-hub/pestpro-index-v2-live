@@ -20,8 +20,19 @@ export const EXTERNAL_LINK_REL = 'nofollow noopener noreferrer';
 // tracking tag). Google asks paid/affiliate links to be marked rel="sponsored".
 export const SPONSORED_LINK_REL = 'sponsored nofollow noopener noreferrer';
 
+// THE ONE PLACE THE UK AMAZON ASSOCIATES TAG IS EXPRESSED (S60 R6). Before this
+// round the string 'pestproindex2-21' was hardcoded in eleven separate places
+// across the UK estate — the ProductCard component, two local
+// AMAZON_TRACKING_ID declarations, seven raw ?tag= literals in page source, and
+// this file's own detection regex — each one a place a future edit could change
+// the value in ten places and miss the eleventh. This mirrors the pattern
+// UsToolCard.tsx already uses for the US tag: one exported constant, every
+// consumer imports it. This round changed WHERE the tag lives, never WHAT it
+// is — the value is unchanged, still 'pestproindex2-21'.
+export const UK_AMAZON_TAG = 'pestproindex2-21';
+
 // True when a URL is one of our affiliate links — used where a single link
 // element renders a mix of editorial and affiliate destinations.
 export function isAffiliateUrl(url: string | null | undefined): boolean {
-  return /tag=pestproindex2-21|amzn\.to/i.test(url || '');
+  return new RegExp(`tag=${UK_AMAZON_TAG}|amzn\\.to`, 'i').test(url || '');
 }

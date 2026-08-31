@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { UK_AMAZON_TAG } from "@/lib/externalUrl";
 
 // Deliberately has no rating or price prop. Every figure the site previously
 // showed for these was hand-typed rather than sourced from Amazon, so the
@@ -27,7 +28,7 @@ export default function ProductCard({
   // structurally unable to emit a search URL.
   const amazonUrl =
     asin && asin.startsWith("B0")
-      ? `https://www.amazon.co.uk/dp/${asin}?tag=pestproindex2-21`
+      ? `https://www.amazon.co.uk/dp/${asin}?tag=${UK_AMAZON_TAG}`
       : null;
 
   // Award badges are styled by KEYWORD FAMILY rather than by an exact-string
