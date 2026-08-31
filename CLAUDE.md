@@ -696,3 +696,21 @@ reproduces it exactly. There is no defect. The finding was made with
 the source body unread. ~/pestpro-s59-opening-carryover.txt carries
 the falsified statement and is under a no-edit rule anchored by its
 sha256; this note is the correction of record and governs over it.
+
+## S59 R6 — DISCLOSURE ATOMICITY
+
+S59-C — AFFILIATE TAG AND DISCLOSURE ARE ONE CHANGE
+The US estate currently renders, on every card-carrying route, the
+statement "The link below is not a paid affiliate link." That
+statement is TRUE only while affiliateTag is unset. The moment a tag
+is passed to UsToolCard, that statement becomes false on every route
+carrying it, and the estate simultaneously breaches Amazon's
+requirement that pages carrying affiliate links display the associate
+disclosure.
+Therefore: passing an affiliate tag and replacing the disclosure text
+are ONE change, in ONE commit. Neither may ship without the other.
+A round that adds a tag without the disclosure swap, or the reverse,
+must halt.
+This rule applies to any new route built before a tag exists: a new
+card-carrying route ships with the current no-affiliate disclosure,
+and is swept by the same atomic change when the tag lands.
