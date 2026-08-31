@@ -367,9 +367,9 @@ export default function BrownRecluseSpidersPage() {
       <p>
         Everything here comes from university extension services and one peer-reviewed paper.
         <strong> Where those sources disagree, all the positions are given with the service that
-        published each one.</strong> Ten products are named further down. Every link is a plain
-        product link and <strong>PestPro Index earns nothing if you buy any of them</strong>; each
-        card says so immediately above its own link.
+        published each one.</strong> Ten products are named further down.{' '}
+        <strong>As an Amazon Associate, PestPro Index earns from qualifying purchases</strong>;
+        each card discloses this immediately above its own link.
       </p>
 
       <h2 id="which-spider">Is It a Brown Recluse?</h2>

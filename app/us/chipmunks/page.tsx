@@ -283,9 +283,9 @@ export default function ChipmunksPage() {
       </p>
       <p>
         Five products are named further down, all of them for the one case the sources agree
-        warrants action. Every link is a plain product link and{' '}
-        <strong>PestPro Index earns nothing if you buy any of them</strong>; each card says so
-        immediately above its own link.
+        warrants action.{' '}
+        <strong>As an Amazon Associate, PestPro Index earns from qualifying purchases</strong>;
+        each card discloses this immediately above its own link.
       </p>
 
       <h2 id="which-animal">Making Sure It Is a Chipmunk</h2>

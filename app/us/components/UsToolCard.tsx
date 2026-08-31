@@ -15,12 +15,13 @@
 //    link, not buried in a footer and not set in small gray type below the fold.
 //    It is rendered here as a bordered block immediately before the button.
 //
-// NOTE ON THE CURRENT STATE: no US Amazon Associates tag exists anywhere in this
-// repository. The only tag present, pestproindex2-21, is an amazon.co.uk tag and
-// Associates tracking IDs are marketplace-specific, so it attributes nothing on
-// amazon.com. `affiliateTag` is therefore intentionally left unset here and the
-// link is a plain product link. When a US tag exists, passing it is the whole
-// change: the URL, the rel, and the disclosure all follow from it.
+// S60 R1: THE US AMAZON ASSOCIATES TAG IS LIVE. `pestproindex2-20` is the
+// amazon.com tag (marketplace-specific; the only tag that existed before this
+// round, pestproindex2-21, is amazon.co.uk and attributes nothing here).
+// Defaulted below rather than passed at each of the 115 call sites, per the
+// comment above: passing it is the whole change, and this is the one place
+// the type of the input lives. A route may still override with `affiliateTag=""`
+// or a different value if a future card is ever genuinely unpaid; none is today.
 
 interface UsToolCardProps {
   name: string;
@@ -29,7 +30,8 @@ interface UsToolCardProps {
   // Amazon US ASIN. Only a direct /dp/<ASIN> link is ever produced; there is no
   // search-URL fallback branch, matching the estate rule.
   asin: string;
-  // Absent = plain link, no commission, disclosure says so.
+  // Defaults to the live US Associates tag. Absent/empty = plain link, no
+  // commission, disclosure says so.
   affiliateTag?: string;
 }
 
@@ -37,7 +39,7 @@ export default function UsToolCard({
   name,
   whatItDoes,
   asin,
-  affiliateTag,
+  affiliateTag = 'pestproindex2-20',
 }: UsToolCardProps) {
   const url =
     asin && asin.startsWith('B0')
@@ -66,11 +68,7 @@ export default function UsToolCard({
         <p className="m-0 text-sm font-bold text-amber-900">Disclosure</p>
         <p className="m-0 mt-1 text-sm text-amber-900">
           {isAffiliate ? (
-            <>
-              The link below is a paid affiliate link. If you buy through it, PestPro Index
-              earns a commission from Amazon at no additional cost to you. That commission
-              does not affect what we write about this tool.
-            </>
+            <>As an Amazon Associate, PestPro Index earns from qualifying purchases.</>
           ) : (
             <>
               The link below is <strong>not</strong> a paid affiliate link. PestPro Index

@@ -347,9 +347,9 @@ export default function BlackWidowSpidersPage() {
       </p>
       <p>
         Eight products are named further down, all of them for keeping spiders out of a building or
-        for taking a web down from a distance. Every link is a plain product link and{' '}
-        <strong>PestPro Index earns nothing if you buy any of them</strong>; each card says so
-        immediately above its own link.
+        for taking a web down from a distance.{' '}
+        <strong>As an Amazon Associate, PestPro Index earns from qualifying purchases</strong>;
+        each card discloses this immediately above its own link.
       </p>
 
       <h2 id="which-widow">Which Widow, and the Hourglass</h2>

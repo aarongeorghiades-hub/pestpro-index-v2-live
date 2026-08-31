@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import UsFooterCommissionNotice from './components/UsFooterCommissionNotice';
 
 // THE /us ESTATE'S CHROME.
 //
@@ -16,6 +17,12 @@ import Link from 'next/link';
 // UsPageLayout renders its own footer inside the article shell. This is the
 // layout-level one, so it stays minimal: identity, the policy links, the
 // commercial disclosure the estate owes a reader, and a copyright line.
+//
+// S60 R1: the commercial disclosure line moved into UsFooterCommissionNotice,
+// a route-aware client component, because it is no longer one fixed sentence.
+// The US Amazon Associates tag went live this round; the sentence that used to
+// sit here unconditionally ("We earn nothing...") is now true on routes with
+// no product card and false on the 31 that carry one. See that file for why.
 export default function UsLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
@@ -33,11 +40,7 @@ export default function UsLayout({ children }: { children: React.ReactNode }) {
               Cookies
             </Link>
           </p>
-          <p className="m-0 mt-3 max-w-3xl">
-            We earn nothing if you buy through the links on this site. Products are named
-            because a cited source describes the type of product, never because anyone paid
-            for the placement.
-          </p>
+          <UsFooterCommissionNotice />
           <p className="m-0 mt-2">&copy; 2026 PestPro Index</p>
         </div>
       </footer>

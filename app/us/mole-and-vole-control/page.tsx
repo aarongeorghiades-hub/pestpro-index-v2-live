@@ -299,9 +299,9 @@ export default function MoleAndVoleControlPage() {
         the law puts a method out of a homeowner&rsquo;s reach, the page says so and names nothing.
       </p>
       <p>
-        Five products are named. Every link on this page is a plain product link:{' '}
-        <strong>PestPro Index earns nothing if you buy any of them</strong>, and each card says so
-        immediately above its own link.
+        Five products are named.{' '}
+        <strong>As an Amazon Associate, PestPro Index earns from qualifying purchases</strong>,
+        and each card discloses this immediately above its own link.
       </p>
 
       <h2 id="which-animal">Which Animal First</h2>
