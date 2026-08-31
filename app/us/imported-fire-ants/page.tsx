@@ -157,40 +157,40 @@ const sources: Source[] = [
     href: 'https://pamlico.ces.ncsu.edu/news/fire-ants-insect-note/',
   },
   {
-    label: '7 CFR 301.81-1 Definitions — the source of the federal definition of the term',
-    publisher: 'Office of the Federal Register / APHIS',
-    date: 'Title 7 current as of 21 August 2026',
-    href: 'https://www.ecfr.gov/current/title-7/section-301.81-1',
+    label: '7 CFR 301.81-1 Definitions — the source of the federal definition of the term — within the GPO 2025 annual edition of 7 CFR part 301',
+    publisher: 'U.S. Government Publishing Office (GPO), regulation issued by APHIS',
+    date: 'GPO 2025 annual edition, Title 7 revised as of 1 January 2025. Read 30 August 2026',
+    href: 'https://www.govinfo.gov/content/pkg/CFR-2025-title7-vol5/pdf/CFR-2025-title7-vol5-part301.pdf',
   },
   {
-    label: '7 CFR 301.81 Restrictions on interstate movement of regulated articles',
-    publisher: 'Office of the Federal Register / APHIS',
-    date: 'Title 7 current as of 21 August 2026',
-    href: 'https://www.ecfr.gov/current/title-7/section-301.81',
+    label: '7 CFR 301.81 Restrictions on interstate movement of regulated articles — within the GPO 2025 annual edition of 7 CFR part 301',
+    publisher: 'U.S. Government Publishing Office (GPO), regulation issued by APHIS',
+    date: 'GPO 2025 annual edition, Title 7 revised as of 1 January 2025. Read 30 August 2026',
+    href: 'https://www.govinfo.gov/content/pkg/CFR-2025-title7-vol5/pdf/CFR-2025-title7-vol5-part301.pdf',
   },
   {
-    label: '7 CFR 301.81-2 Regulated articles',
-    publisher: 'Office of the Federal Register / APHIS',
-    date: '87 FR 80012, 29 December 2022',
-    href: 'https://www.ecfr.gov/current/title-7/section-301.81-2',
+    label: '7 CFR 301.81-2 Regulated articles — within the GPO 2025 annual edition of 7 CFR part 301',
+    publisher: 'U.S. Government Publishing Office (GPO), regulation issued by APHIS',
+    date: 'GPO 2025 annual edition, Title 7 revised as of 1 January 2025. Read 30 August 2026',
+    href: 'https://www.govinfo.gov/content/pkg/CFR-2025-title7-vol5/pdf/CFR-2025-title7-vol5-part301.pdf',
   },
   {
-    label: '7 CFR 301.81-3 Quarantined areas',
-    publisher: 'Office of the Federal Register / APHIS',
-    date: 'Title 7 current as of 21 August 2026',
-    href: 'https://www.ecfr.gov/current/title-7/section-301.81-3',
+    label: '7 CFR 301.81-3 Quarantined areas — within the GPO 2025 annual edition of 7 CFR part 301',
+    publisher: 'U.S. Government Publishing Office (GPO), regulation issued by APHIS',
+    date: 'GPO 2025 annual edition, Title 7 revised as of 1 January 2025. Read 30 August 2026',
+    href: 'https://www.govinfo.gov/content/pkg/CFR-2025-title7-vol5/pdf/CFR-2025-title7-vol5-part301.pdf',
   },
   {
-    label: '7 CFR 301.81-4 Interstate movement of regulated articles from quarantined areas',
-    publisher: 'Office of the Federal Register / APHIS',
-    date: 'Title 7 current as of 21 August 2026',
-    href: 'https://www.ecfr.gov/current/title-7/section-301.81-4',
+    label: '7 CFR 301.81-4 Interstate movement of regulated articles from quarantined areas — within the GPO 2025 annual edition of 7 CFR part 301',
+    publisher: 'U.S. Government Publishing Office (GPO), regulation issued by APHIS',
+    date: 'GPO 2025 annual edition, Title 7 revised as of 1 January 2025. Read 30 August 2026',
+    href: 'https://www.govinfo.gov/content/pkg/CFR-2025-title7-vol5/pdf/CFR-2025-title7-vol5-part301.pdf',
   },
   {
-    label: '7 CFR 301.81-5 Issuance of a certificate or limited permit',
-    publisher: 'Office of the Federal Register / APHIS',
-    date: 'Title 7 current as of 21 August 2026',
-    href: 'https://www.ecfr.gov/current/title-7/section-301.81-5',
+    label: '7 CFR 301.81-5 Issuance of a certificate or limited permit — within the GPO 2025 annual edition of 7 CFR part 301',
+    publisher: 'U.S. Government Publishing Office (GPO), regulation issued by APHIS',
+    date: 'GPO 2025 annual edition, Title 7 revised as of 1 January 2025. Read 30 August 2026',
+    href: 'https://www.govinfo.gov/content/pkg/CFR-2025-title7-vol5/pdf/CFR-2025-title7-vol5-part301.pdf',
   },
 ];
 
@@ -431,10 +431,11 @@ export default function ImportedFireAntsPage() {
           &ldquo;severe allergic reactions (anaphylaxis) occur in less than 1% of people stung
           by fire ants.&rdquo;
         </em>{' '}
-        Citing deShazo and colleagues, the same document states that{' '}
+        The same document also states that{' '}
         <em>
           &ldquo;Anaphylaxis occurs in 0.6 to 6 percent of persons who are stung, and these
-          reactions have been reported to have caused more than 80 deaths.&rdquo;
+          reactions have been reported to have caused more than 80 deaths (deShazo et al.
+          1999).&rdquo;
         </em>{' '}
         And quoting a Texas Allergy, Asthma and Immunology Society leaflet, it states that{' '}
         <em>
@@ -495,7 +496,7 @@ export default function ImportedFireAntsPage() {
         <em>&ldquo;Ants in migrating colonies are highly defensive and should be avoided&rdquo;</em>
         , and during flooding, colonies{' '}
         <em>
-          &ldquo;are capable of floating in clusters or &lsquo;rafts,&rsquo; posing a threat to
+          &ldquo;are capable of floating in clusters or &ldquo;rafts,&rdquo; posing a threat to
           anything encountering them.&rdquo;
         </em>
       </p>
@@ -913,7 +914,7 @@ export default function ImportedFireAntsPage() {
         <em>
           &ldquo;Devices that do not use chemical insecticides or microorganisms are not
           required to be labeled as pesticides by the Environmental Protection Agency, and are
-          often marketed without scientific evaluation. The fact that a &lsquo;control&rsquo;
+          often marketed without scientific evaluation. The fact that a &ldquo;control&rdquo;
           device is on the market does not indicate that it is effective.&rdquo;
         </em>{' '}
         It says deceptive claims should be reported{' '}
@@ -964,12 +965,19 @@ export default function ImportedFireAntsPage() {
         regulation itself does not contain them.
       </p>
       <p>
-        7 CFR 301.81-4 gives the enforcement power:{' '}
+        7 CFR 301.81-4 gives the enforcement power, and the paragraph is quoted here to its
+        end rather than stopped at the inspection power:{' '}
         <em>
           &ldquo;Inspectors are authorized to stop any person or means of conveyance moving in
           interstate commerce they have probable cause to believe is moving regulated articles,
-          and to inspect the articles being moved and the means of conveyance.&rdquo;
-        </em>
+          and to inspect the articles being moved and the means of conveyance. Articles found to
+          be infested by an inspector, and articles not in compliance with the regulations in
+          this subpart, may be seized, quarantined, treated, subjected to other remedial
+          measures, destroyed, or otherwise disposed of. Any treatments will be in accordance
+          with part 305 of this chapter.&rdquo;
+        </em>{' '}
+        That is the whole of paragraph (b). It was read from the Government Publishing Office&rsquo;s
+        2025 annual edition of Title 7 on govinfo.gov, which is the text cited below.
       </p>
       <p>
         <strong>What it does not do is restrict what a householder can buy.</strong> The
@@ -983,8 +991,8 @@ export default function ImportedFireAntsPage() {
         <strong>It does not claim you can clear them.</strong> Clemson Extension forecloses that
         in its own voice:{' '}
         <em>
-          &ldquo;Notice that the words &lsquo;control&rsquo; and &lsquo;manage&rsquo; are used
-          when referring to fire ants, and no form of the word &lsquo;eradicate&rsquo; will
+          &ldquo;Notice that the words &ldquo;control&rdquo; and &ldquo;manage&rdquo; are used
+          when referring to fire ants, and no form of the word &ldquo;eradicate&rdquo; will
           appear here. The biology of fire ants and the constant reinfestation pressure from
           outside areas do not allow for complete eradication.&rdquo;
         </em>{' '}
@@ -1028,7 +1036,7 @@ export default function ImportedFireAntsPage() {
         <em>
           &ldquo;are solely for certified organic food and livestock production. There is no
           similar program that applies to nonagricultural pest management practices where
-          options termed &lsquo;organic&rsquo; may be based on personal judgment and disputed by
+          options termed &ldquo;organic&rdquo; may be based on personal judgment and disputed by
           others&rdquo;
         </em>
         . That is why the only organic criterion used on this page is an OMRI listing, which is
