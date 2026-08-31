@@ -753,3 +753,23 @@ naming any route that is a deliberate control and must never be
 submitted. A round that changes a route and does not update this file
 is not finished. The PM's job is to read the file and act on it, not
 to reconstruct it.
+
+## S60 R7 — TIER 4 IS CLOSED
+
+LAW 160 — TIER 4 IS CLOSED: ELEVEN HEADS, ALL SHIPPED. The eleventh
+and final head, rats, shipped this round at `/us/rats`. Combined with
+Law 158's ruling that the twelfth candidate head, "spiders (general),"
+is permanently dropped, Tier 4's full and final roster is:
+
+```
+1  German cockroaches   5  mice     9  flies
+2  bed bugs             6  rats    10  silverfish
+3  ants                 7  moths   11  carpet beetles
+4  fleas                8  wasps/hornets
+```
+
+Any round that finds an open "Tier 4" item in an older record —
+including this file's own S60 R5/R4 entries recording bed bugs and
+rats as unbuilt — must treat THIS rule as controlling. Tier 4 is not
+reopened by a future round without a new PM ruling naming a twelfth
+head and superseding Law 158.

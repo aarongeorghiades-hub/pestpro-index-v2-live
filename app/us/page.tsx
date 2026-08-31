@@ -287,6 +287,11 @@ const groups: HubGroup[] = [
         href: '/us/house-mice',
         covers: 'Identification against the deer mouse, the quarter-inch exclusion rule, and trapping.',
       },
+      {
+        title: 'Rats',
+        href: '/us/rats',
+        covers: 'Norway rat versus roof rat, the half-inch a rat can squeeze through against the quarter-inch sources say to seal to, and trapping.',
+      },
     ],
   },
   {
