@@ -272,6 +272,18 @@ const groups: HubGroup[] = [
     ],
   },
   {
+    heading: 'Rodents in the Home',
+    blurb:
+      'Commensal rodents that live inside the structure itself, not the lawn, and what the sources support against them.',
+    items: [
+      {
+        title: 'House Mice',
+        href: '/us/house-mice',
+        covers: 'Identification against the deer mouse, the quarter-inch exclusion rule, and trapping.',
+      },
+    ],
+  },
+  {
     heading: 'Rules & Regulations',
     blurb: 'Where the law, rather than the animal, decides what you may do.',
     items: [
