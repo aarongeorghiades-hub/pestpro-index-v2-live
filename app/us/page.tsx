@@ -93,6 +93,12 @@ const groups: HubGroup[] = [
           'Which flea carries which disease, two sources that disagree about it, and why the strongest treatments need a vet.',
       },
       {
+        title: 'Bed Bugs',
+        href: '/us/bed-bugs',
+        covers:
+          'Identification, where they hide and spread, the inspection methods nine sources measure by detection rate, and the heat and laundering figures that actually kill them.',
+      },
+      {
         title: 'Social Wasps',
         href: '/us/social-wasps',
         covers:

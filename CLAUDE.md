@@ -714,3 +714,28 @@ must halt.
 This rule applies to any new route built before a tag exists: a new
 card-carrying route ships with the current no-affiliate disclosure,
 and is swept by the same atomic change when the tag lands.
+
+## S60 R5 — TIER 4 DENOMINATOR
+
+LAW 158 — THE "SPIDERS (GENERAL)" HEAD IS PERMANENTLY DROPPED FROM
+TIER 4. Six live spider routes already exist on the estate
+(`/us/black-widow-spiders`, `/us/brown-recluse-spiders`, and the
+four-page Joro cluster — `/us/are-joro-spiders-dangerous`,
+`/us/joro-spider`, `/us/joro-spider-range`, `/us/joro-spider-webs`),
+each carrying an own-voice commitment against being folded into a
+general spiders grouping. A "spiders (general)" head would
+cannibalise all six. This was ruled in S59 but never written to disk,
+which is why S60 R4 surfaced it again as an open question. A count in
+an old record does not overturn a reason. THIS RULE IS THE WRITTEN
+RECORD: the head is dropped, permanently, not parked pending a
+further ruling.
+
+CONSEQUENCE: TIER 4 IS ELEVEN HEADS, NOT TWELVE. Any round that finds
+"twelve" in an older record (e.g.
+`~/pestpro-s52-r1-tier4-ascertainment.md`) must treat this rule as
+controlling and must not re-refer the question to the PM.
+
+Current tier state, as measured in S60 R4 (Bash against `app/us/`):
+nine heads shipped — German cockroaches, ants, fleas, mice, moths,
+wasps/hornets, flies, silverfish, carpet beetles. Two heads unbuilt —
+bed bugs and rats.
