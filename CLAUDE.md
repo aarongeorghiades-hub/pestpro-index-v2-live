@@ -601,3 +601,98 @@ zero occurrences in both visible HTML and flight payload, with a control route p
 WHY THIS ENTRY EXISTS: the bar was ruled in Session 26 and written down nowhere. That
 omission alone caused a live compliance breach to survive two consecutive sessions. A
 ruling that is not in this file does not exist.
+
+## S59 — RULE-SET INTEGRITY
+
+NOTE 1 — OPERATING MANDATE AUTHORITY
+The sole authoritative text of the operating mandate is
+~/pestpro-operating-mandate.txt (3,626 bytes, sha256
+1ee90f0cb8bca108347140df0222f6dc20432546a162dc8051f69331fd105858).
+The labelled reconstruction at the foot of
+~/pestpro-s59-opening-carryover.txt is SUPERSEDED and must not be
+relied on. The carryover file itself is NOT to be edited — its
+sha256 is its integrity anchor.
+
+NOTE 2 — LETTERED PRECEDENTS
+As of S59 R0, 75 of 102 lettered precedent labels have no definition
+on disk. A lettered label is not a citable authority unless its rule
+text is defined in a round report or in this file. Any round that
+needs an undefined label must halt and refer it to the PM for a
+ruling; it must not infer the rule from prior usage.
+
+## S59 — RATIFIED PRECEDENTS
+
+These definitions are RATIFIED by PM ruling at S59 R2 and are the
+authoritative text of each label. Where a round report's usage of a
+label conflicts with the text below, the text below governs.
+
+S52-E — A property stated only in a product's name is not a claim.
+A property may be asserted on a card only if it appears in the
+listing's own feature text.
+
+S45-C — A banked ASIN within its freshness window may be carded on a
+further route without a new fetch, a new identity verification, or a
+new register row.
+
+S49-L — A matcher must be fired on a known positive AND a known
+negative before any zero it produces is believed. Ratified in the
+two-directional form: the positive limb proves the matcher can find,
+the negative limb proves it can distinguish. A zero from a matcher
+fired on only one limb is not believed.
+
+S50-H — A search result title or snippet is not the listing's own
+text. Only the fetched product-page title is authoritative.
+
+S54-H — Route/hub-link parity is a standing closing gate. Three sets
+must be set-equal — routes, hub links, and hasPart entries — with
+zero UNLINKED and zero ORPHAN. The authoritative matcher is:
+routes taken from .next/app-path-routes-manifest.json keys; hub links
+taken from rendered anchors. The source-literal matcher
+(app/us/*/page.tsx directory names, source href: literals) is
+SUPERSEDED and must not be used for this gate.
+
+S45-F — An lsof count below baseline is a closed window and is not
+reportable. Only a count above baseline is reportable.
+
+S45-D — Every URL attempted is recorded with its outcome, failures
+included. A failure is recorded, never substituted.
+
+S47-F — Manufacturer self-praise in a product's own title or listing
+is never a ground for exclusion. It is trimmed from card copy and
+never restated.
+
+LAW 157 — A seed must be proven to change the artefact it is said to
+govern. A seed asserted without that proof is not a seed. Ratified
+prospectively from S59 R2; it does not retroactively validate any
+earlier round. The matcher-repr() reporting duty carried under this
+number in five references is NOT part of Law 157 and has no force.
+
+## S59 R3 — CORRECTIONS AND STANDING RULES
+
+S59-A — PRIMARY TEXT, ALTERNATE OFFICIAL PUBLISHER
+Fetching a primary legal or regulatory text from a different official
+publisher of that same text is NOT a substitution under S45-D. GPO
+govinfo.gov and eCFR are both official publishers of the CFR; the
+statute is the text, not the host. This permission is limited to
+primary texts published by an official government publisher. It does
+not extend to secondary summaries, mirrors, aggregators, or archives.
+BINDING CONDITION: the citation on the page must name the host
+actually read. A citation naming a host that was never successfully
+fetched is a poisoned citation regardless of whether the text is
+correct. Blocked attempts remain recorded under S45-D.
+
+S59-B — NON-LATIN CHARACTER SCAN YIELDS CANDIDATES, NOT FINDINGS
+A non-Latin or unexpected character on a page is a CANDIDATE defect
+only. It becomes a finding only when the source body has been read
+and the source is shown not to carry that character. No assertion may
+be made about what a publisher "would" or "would not" set. The class
+named at S58-I stands; its worked example is WITHDRAWN.
+
+CORRECTION — S58 R8, U+00BA ON /us/imported-fire-ants
+S58 R8 recorded a class-(vi) defect: the sequence "between 70º and
+85º °F" (U+00BA twice, U+00B0 once) on /us/imported-fire-ants. That
+finding is FALSE. Clemson publishes that sequence verbatim; our page
+reproduces it exactly. There is no defect. The finding was made with
+the source body unread. ~/pestpro-s59-opening-carryover.txt carries
+the falsified statement and is under a no-edit rule anchored by its
+sha256; this note is the correction of record and governs over it.
