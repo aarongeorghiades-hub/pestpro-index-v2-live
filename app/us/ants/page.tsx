@@ -7,9 +7,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { ANTS_NAV, ANTS_HOME } from '../components/antsNav';
 
 const URL = 'https://pestproindex.com/us/ants';
-const TITLE = 'Household Ants: Where the Nest Is, Which Baits Reach It, and Where the Sources Disagree';
+const TITLE = 'Household Ants: Which Bait Reaches the Nest';
 const DESCRIPTION =
-  'Odorous house, pavement, carpenter and pharaoh ants, kept separate. Five extension publications spanning 1996 to 2024 on where the nest sits, which baits reach which species, and four sources that take different positions on spraying.';
+  'Odorous house, pavement, carpenter and pharaoh ants, kept separate. Which bait reaches each species\' nest, from five extension publications, 1996 to 2024.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

@@ -6,9 +6,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { CHIPMUNK_NAV, CHIPMUNK_HOME } from '../components/chipmunkNav';
 
 const URL = 'https://pestproindex.com/us/chipmunks';
-const TITLE = 'Chipmunks: When Control Is Warranted, and What the Sources Support';
+const TITLE = 'Chipmunks: When Control Is Actually Warranted';
 const DESCRIPTION =
-  'Four of five extension sources make chipmunk control conditional on numbers or on burrowing against a structure. This page separates the structural case from the garden nuisance, and sets out every disagreement with the service that published it.';
+  'Four of five extension sources make control conditional on numbers or burrowing against a structure. The structural case, separated from the garden nuisance case.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

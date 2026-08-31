@@ -7,9 +7,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { OVERWINTERING_NAV, OVERWINTERING_HOME } from '../components/overwinteringNav';
 
 const URL = 'https://pestproindex.com/us/cluster-flies';
-const TITLE = 'Cluster Flies: What Those Slow Flies at the Window Actually Are';
+const TITLE = 'Cluster Flies: What Those Slow Window Flies Are';
 const DESCRIPTION =
-  'Slow dark flies at an upstairs window in fall are almost certainly cluster flies. What they are, why their larvae live in earthworms, why they are not a filth fly, and what to do.';
+  'Slow dark flies at an upstairs window in fall are almost certainly cluster flies — not house flies, not dirty. Why their larvae live in earthworms, and what to do.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

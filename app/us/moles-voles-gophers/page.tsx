@@ -5,9 +5,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { MVG_NAV, MVG_HOME } from '../components/moleVoleGopherNav';
 
 const URL = 'https://pestproindex.com/us/moles-voles-gophers';
-const TITLE = 'Mole, Vole or Pocket Gopher? Telling Them Apart From the Sign';
+const TITLE = 'Mole, Vole or Gopher? Tell Them Apart by the Sign';
 const DESCRIPTION =
-  'Three animals leave three different marks on a yard. Here is what university extension services say about the mound, the tunnel and the plant damage each one makes, including where the sources disagree.';
+  'Three animals leave three different marks on a lawn. What extension services say about the mound, the tunnel and the damage each makes, including where they disagree.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

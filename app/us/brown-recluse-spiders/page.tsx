@@ -6,9 +6,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { RECLUSE_NAV, RECLUSE_HOME } from '../components/brownRecluseNav';
 
 const URL = 'https://pestproindex.com/us/brown-recluse-spiders';
-const TITLE = 'Brown Recluse Spiders: Identification, Range and What the Sources Say';
+const TITLE = 'Brown Recluse Spiders: Where Sources Disagree';
 const DESCRIPTION =
-  'Extension services disagree about the violin marking, about how far the range runs, and about whether insecticides do anything. This page sets out all of it, and it does not pretend the disagreements are settled.';
+  'Extension services disagree about the violin marking, how far the range runs, and whether insecticides help. Every position is set out, not smoothed over.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

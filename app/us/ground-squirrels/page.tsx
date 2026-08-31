@@ -5,9 +5,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { GS_NAV, GS_HOME } from '../components/groundSquirrelNav';
 
 const URL = 'https://pestproindex.com/us/ground-squirrels';
-const TITLE = 'Ground Squirrels: What the Sources Support, and Why Nothing Is Recommended Here';
+const TITLE = 'Ground Squirrels: Why No Product Is Named Here';
 const DESCRIPTION =
-  'The extension sources name a trap specification and a fumigant a householder can buy. The product listings do not evidence either. This page sets out the methods, the California legal frame, and why it names no product.';
+  'Extension sources name a trap spec and a fumigant homeowners can buy — but the Amazon listings checked don\'t evidence either. The methods, and why nothing is carded.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

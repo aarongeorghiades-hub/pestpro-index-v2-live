@@ -6,9 +6,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { TICKS_NAV, TICKS_HOME } from '../components/ticksNav';
 
 const URL = 'https://pestproindex.com/us/ticks';
-const TITLE = 'Ticks: What Prevents Bites, What to Do About One Already Attached';
+const TITLE = 'Ticks: What Prevents Bites, and Removing One';
 const DESCRIPTION =
-  'The clothing treatment and repellent ingredients the sources name, the nine feet of lawn edge where most deer ticks are found, and the removal procedure the University of Maine Tick Lab publishes word for word.';
+  'The clothing treatment concentration and repellent ingredients sources name, the nine-foot lawn edge where most deer ticks live, and the removal steps.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

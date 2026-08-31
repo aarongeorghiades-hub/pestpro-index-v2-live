@@ -5,9 +5,9 @@ import { SourceList, AsOf, type Source } from '../components/UsSources';
 import { CALIFORNIA_NAV, CALIFORNIA_HOME } from '../components/californiaNav';
 
 const URL = 'https://pestproindex.com/us/california-trapping-rules';
-const TITLE = 'California Trapping Rules: What Title 14 Section 465.5 Actually Says';
+const TITLE = 'California Trapping Rules: Title 14 Section 465.5';
 const DESCRIPTION =
-  'The text of California Code of Regulations Title 14 Section 465.5 and Fish and Game Code Sections 3950, 4000, 4150 and 4152, quoted by subsection. A record of what the regulation says. Not legal advice.';
+  'The text of California Code of Regulations Title 14 Section 465.5 and the four Fish and Game Code sections it depends on, quoted by subsection. Not legal advice.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

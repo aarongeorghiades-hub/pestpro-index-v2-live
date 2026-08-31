@@ -6,9 +6,9 @@ import { SourceList, AsOf, type Source } from '../components/UsSources';
 import { OVERWINTERING_NAV, OVERWINTERING_HOME } from '../components/overwinteringNav';
 
 const URL = 'https://pestproindex.com/us/stink-bugs-in-house';
-const TITLE = 'Stink Bugs in the House: Why They Come In and What They Do';
+const TITLE = 'Stink Bugs in the House: Why, and What to Do';
 const DESCRIPTION =
-  'Why brown marmorated stink bugs appear indoors every fall, how to identify them, whether they bite, what the smell is, and whether they damage the house. Sourced to university extension research.';
+  'Why brown marmorated stink bugs appear indoors every fall, how to identify them, whether they bite, what the smell is, and whether they damage the house.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

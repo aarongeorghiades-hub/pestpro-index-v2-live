@@ -7,9 +7,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { JORO_NAV, JORO_HOME } from '../components/joroNav';
 
 const URL = 'https://pestproindex.com/us/joro-spider-webs';
-const TITLE = 'Joro Spider Webs: Why They Are So Big and How to Clear Them';
+const TITLE = 'Joro Spider Webs: Why So Big, and Removal';
 const DESCRIPTION =
-  'How large a Joro spider web really gets, where they get built, how to take one down without hurting yourself or the spider, and why extension entomologists advise against spraying.';
+  'How large a Joro spider web actually gets, where they\'re built, how to take one down without hurting yourself or the spider, and why not to spray it.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

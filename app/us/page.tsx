@@ -3,7 +3,6 @@ import Link from 'next/link';
 import UsPageLayout from './components/UsPageLayout';
 
 const URL = 'https://pestproindex.com/us';
-const TITLE = 'US Pest Guides';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -388,7 +387,14 @@ const PAGE_COUNT_WORD =
       }`
     : String(PAGE_COUNT);
 
-const DESCRIPTION = `${PAGE_COUNT_WORD} US pest pages, grouped by the problem you actually have rather than by insect order. Every claim on them is traced to a named university extension or public health source.`;
+// S60 R8: TITLE moved here from the top of the file, after PAGE_COUNT exists,
+// so the rendered <title> can carry the real page count instead of a bare
+// two-word label. It is still a module-scope const evaluated once, before
+// generateMetadata() is ever called, so nothing about its behavior changes —
+// only where it sits.
+const TITLE = `US Pest Guides: ${PAGE_COUNT} Pages, Sourced and Cited`;
+
+const DESCRIPTION = `${PAGE_COUNT_WORD} US pest pages, grouped by the problem you have rather than by insect order. Every claim traces to a named extension or public health source.`;
 
 const SUBTITLE = `${PAGE_COUNT_WORD} pages on pests in the United States, grouped by the problem rather than by the taxonomy. Every page is written from university extension and public health sources, and cites them.`;
 

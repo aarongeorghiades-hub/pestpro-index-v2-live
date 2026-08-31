@@ -5,9 +5,9 @@ import { SourceList, AsOf, type Source } from '../components/UsSources';
 import { SKUNK_NAV, SKUNK_HOME } from '../components/skunkNav';
 
 const URL = 'https://pestproindex.com/us/skunks';
-const TITLE = 'Skunks: Lawn Digging, Dens Under Structures, and What the Sources Say';
+const TITLE = 'Skunks: Lawn Digging, Dens and the Odor Question';
 const DESCRIPTION =
-  'How to tell skunk digging from raccoon damage, the hardware cloth specification extension services give, why you must test a den entrance before sealing it, and what university and state agency sources say about odor and rabies.';
+  'How to tell skunk digging from raccoon damage, the hardware cloth spec extension services give, and why you must test a den before sealing it.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

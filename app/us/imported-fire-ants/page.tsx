@@ -7,9 +7,9 @@ import { FIREANT_NAV, FIREANT_HOME } from '../components/fireAntNav';
 
 const URL = 'https://pestproindex.com/us/imported-fire-ants';
 const TITLE =
-  'Imported Fire Ants: Telling Them From Native Ants, and the Two-Step Method Texas A&M Publishes';
+  'Imported Fire Ants: ID and the Two-Step Method';
 const DESCRIPTION =
-  'A federal regulation defines which ants the name covers. Texas A&M AgriLife Extension publishes a two-step control method with rates, temperatures and timing. Here is that method, the criteria attributed to the sources that give them, and what the sources say about a sting.';
+  'A federal regulation defines which ants the name covers. Texas A&M\'s two-step control method, with its own rates, temperatures and timing, plus what a sting does.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

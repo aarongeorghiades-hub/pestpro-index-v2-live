@@ -6,9 +6,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { SOCIAL_WASP_NAV, SOCIAL_WASP_HOME } from '../components/socialWaspNav';
 
 const URL = 'https://pestproindex.com/us/social-wasps';
-const TITLE = 'Social Wasps: Yellowjackets, Paper Wasps and the Hornet That Usually Is Not One';
+const TITLE = 'Social Wasps: Yellowjackets, Wasps and Hornets';
 const DESCRIPTION =
-  'Nine extension publications on yellowjackets, paper wasps and hornets: why most American hornets are yellowjackets, why a wasp leaves no stinger to remove, and four positions on treating a sting that this page reports rather than settles.';
+  'Why most American \'hornets\' are yellowjackets, why a wasp leaves no stinger to remove, and four sting-treatment positions this page reports rather than settles.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

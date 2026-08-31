@@ -7,9 +7,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { MOTHS_NAV, MOTHS_HOME } from '../components/mothsNav';
 
 const URL = 'https://pestproindex.com/us/moths';
-const TITLE = 'Household Moths: the Two Kinds, and Why a Trap for One Will Not Catch the Other';
+const TITLE = 'Household Moths: Two Kinds, Two Different Traps';
 const DESCRIPTION =
-  'Household moths split into two groups that need different products: moths that eat fabric and moths that infest stored food. UC IPM states a pheromone trap for one will not attract the other. This page keeps them apart and names what the sources actually support.';
+  'Fabric moths and pantry moths need different products. UC IPM states a pheromone trap for one won\'t attract the other — what actually works for each.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

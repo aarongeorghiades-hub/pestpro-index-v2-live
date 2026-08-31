@@ -6,9 +6,9 @@ import { SourceList, AsOf, type Source } from '../components/UsSources';
 import { ARMADILLO_NAV, ARMADILLO_HOME } from '../components/armadilloNav';
 
 const URL = 'https://pestproindex.com/us/armadillos';
-const TITLE = 'Armadillos: Holes in the Lawn, Burrows, and What the Sources Support';
+const TITLE = 'Armadillos: Lawn Holes, Burrows and What Works';
 const DESCRIPTION =
-  'How to recognize armadillo digging, what the burrow system looks like, why baiting a trap does not help, the fence specification extension services agree on, and what the research says about Hansen disease.';
+  'How to recognize armadillo digging, why baiting a trap fails, the fence spec extension services agree on, and what the research says about Hansen disease risk.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

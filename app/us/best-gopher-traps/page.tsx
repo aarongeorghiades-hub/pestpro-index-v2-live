@@ -7,9 +7,9 @@ import { SourceList, AsOf, type Source } from '../components/UsSources';
 import { GOPHER_NAV, GOPHER_HOME } from '../components/gopherNav';
 
 const URL = 'https://pestproindex.com/us/best-gopher-traps';
-const TITLE = 'Gopher Traps: What the Evidence Actually Supports';
+const TITLE = 'Gopher Traps: What the Evidence Supports';
 const DESCRIPTION =
-  'Extension sources agree on two trap mechanisms and on where to set them. One extension trial compared three models. Here is what it measured, what it did not, and what you can buy.';
+  'Extension sources agree on two trap mechanisms and where to set them. One extension trial compared three models — what it measured, and what to buy.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

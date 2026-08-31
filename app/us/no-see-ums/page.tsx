@@ -7,9 +7,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { NOSEEUMS_NAV, NOSEEUMS_HOME } from '../components/noSeeUmsNav';
 
 const URL = 'https://pestproindex.com/us/no-see-ums';
-const TITLE = 'No-See-Ums: The Biting Fly That Walks Through Your Window Screen';
+const TITLE = 'No-See-Ums: The Fly That Beats Window Screens';
 const DESCRIPTION =
-  'Three extension services say ordinary window screening does not keep biting midges out. The University of Arizona publishes the mesh numbers. Here is what that means, and where the available product falls short of the figure.';
+  'Three extension services say ordinary window screening doesn\'t keep biting midges out. The mesh number that does, from the University of Arizona.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

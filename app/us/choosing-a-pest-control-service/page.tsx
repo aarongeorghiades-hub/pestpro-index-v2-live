@@ -6,9 +6,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { CHOOSINGSERVICE_NAV, CHOOSINGSERVICE_HOME } from '../components/choosingServiceNav';
 
 const URL = 'https://pestproindex.com/us/choosing-a-pest-control-service';
-const TITLE = 'Choosing a Pest Control Service: How to Check a Licence Before You Hire';
+const TITLE = 'Choosing a Pest Control Service: Check the License';
 const DESCRIPTION =
-  'University of Florida Extension warns that illegal pest control operators are increasingly common. Florida publishes a free database that tells you whether the person quoting you is licensed, and this page shows the exact route through it.';
+  'Illegal pest control operators are increasingly common, per University of Florida Extension. How to use Florida\'s free database to confirm a licensed operator.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

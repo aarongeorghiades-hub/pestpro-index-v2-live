@@ -6,9 +6,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { JORO_NAV, JORO_HOME } from '../components/joroNav';
 
 const URL = 'https://pestproindex.com/us/are-joro-spiders-dangerous';
-const TITLE = 'Are Joro Spiders Dangerous? What the Research Actually Says';
+const TITLE = 'Are Joro Spiders Dangerous? What Research Says';
 const DESCRIPTION =
-  'Joro spider bites, venom, risk to pets, and the open question about native spiders. What university researchers have established, and what is still uncertain.';
+  'Joro spider bites, venom and the risk to pets, from university research. What has been established, what is still uncertain, and the one honest caveat that remains.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

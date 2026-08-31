@@ -6,9 +6,9 @@ import { SourceList, AsOf, type Source } from '../components/UsSources';
 import { JORO_NAV, JORO_HOME } from '../components/joroNav';
 
 const URL = 'https://pestproindex.com/us/joro-spider-range';
-const TITLE = 'Joro Spider Range: Which States They Are In (2026)';
+const TITLE = 'Joro Spider Range: Which US States Have Them';
 const DESCRIPTION =
-  'Which US states have established Joro spider populations and which have isolated records, how ballooning drives the spread, and how to report a sighting to Joro Watch and EDDMapS.';
+  'Which states have established Joro spider populations, which have only isolated records, how ballooning drives the spread, and how to report a sighting.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

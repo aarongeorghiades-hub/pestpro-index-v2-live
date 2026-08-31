@@ -6,9 +6,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { BED_BUGS_NAV, BED_BUGS_HOME } from '../components/bedBugsNav';
 
 const URL = 'https://pestproindex.com/us/bed-bugs';
-const TITLE = 'Bed Bugs: Identification, Inspection and the Temperatures Nine Sources Support';
+const TITLE = 'Bed Bugs: Identification and What Kills Them';
 const DESCRIPTION =
-  'Nine EPA, Penn State and Purdue publications on bed bugs: how to identify one, where they hide and how they spread, the detection rates the sources measure for three inspection methods, and the heat, cold and laundering figures that actually kill them. Bed bugs are not known to spread disease to humans, stated once from the sources and not built out further.';
+  'How to identify bed bugs, where they hide, and the detection rates and kill temperatures nine EPA, Penn State and Purdue publications measure. Disease is out of scope.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

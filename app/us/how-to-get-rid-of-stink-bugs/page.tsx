@@ -6,9 +6,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { OVERWINTERING_NAV, OVERWINTERING_HOME } from '../components/overwinteringNav';
 
 const URL = 'https://pestproindex.com/us/how-to-get-rid-of-stink-bugs';
-const TITLE = 'How to Get Rid of Stink Bugs: Sealing, Vacuuming, and What Not to Do';
+const TITLE = 'How to Get Rid of Stink Bugs: Seal, Then Remove';
 const DESCRIPTION =
-  'Exclusion first, then removal. Where to seal, what screen mesh size to use, why the vacuum you choose matters, and why extension entomologists advise against spraying indoors.';
+  'Exclusion first, then removal. Where to seal, the screen mesh size that matters, why your vacuum choice matters, and why not to spray them indoors.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

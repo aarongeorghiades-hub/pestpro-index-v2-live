@@ -5,9 +5,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { RACCOON_NAV, RACCOON_HOME } from '../components/raccoonNav';
 
 const URL = 'https://pestproindex.com/us/raccoons';
-const TITLE = 'Raccoons: Rolled Turf, Attic Entry, and What the Sources Say';
+const TITLE = 'Raccoons: Rolled Turf, Attic Entry and Damage';
 const DESCRIPTION =
-  'How to tell raccoon lawn damage from a digging animal, the measured mesh and chimney specifications extension services give, and what university and state agency sources say about rabies and raccoon roundworm.';
+  'How to tell raccoon lawn damage from other diggers, the measured mesh and chimney specs extension services give, and what agencies say about rabies and roundworm.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

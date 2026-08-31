@@ -7,9 +7,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { OVERWINTERING_NAV, OVERWINTERING_HOME } from '../components/overwinteringNav';
 
 const URL = 'https://pestproindex.com/us/asian-lady-beetles';
-const TITLE = 'Asian Lady Beetles vs Ladybugs: How to Tell Them Apart';
+const TITLE = 'Asian Lady Beetles vs Ladybugs: What to Check';
 const DESCRIPTION =
-  'The multicolored Asian lady beetle is not the native ladybug. The M-shaped mark behind the head, the color variation, the staining fluid, the biting, and the documented allergy link.';
+  'The multicolored Asian lady beetle massing on siding in fall is not the native ladybug. The M-shaped mark, the staining fluid, the biting, and the allergy link.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

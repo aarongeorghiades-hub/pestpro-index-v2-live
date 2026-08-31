@@ -6,9 +6,9 @@ import { SourceList, AsOf, type Source } from '../components/UsSources';
 import { OPOSSUM_NAV, OPOSSUM_HOME } from '../components/opossumNav';
 
 const URL = 'https://pestproindex.com/us/opossums';
-const TITLE = 'Opossums: Why They Are Under Your Deck and What the Sources Say';
+const TITLE = 'Opossums: Why They\'re Under the Deck';
 const DESCRIPTION =
-  'The Virginia opossum does not dig its own burrow, which changes what works. Here are the measured hardware cloth specifications, how to tell its damage from a skunk or raccoon, and what university and state agency sources say about disease.';
+  'The Virginia opossum doesn\'t dig its own burrow, which changes what works. Hardware cloth specs, how to tell its damage from a skunk\'s or raccoon\'s, and disease notes.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

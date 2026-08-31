@@ -7,9 +7,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { FLIES_NAV, FLIES_HOME } from '../components/fliesNav';
 
 const URL = 'https://pestproindex.com/us/flies';
-const TITLE = 'House Flies: What They Carry, How They Carry It, and What the Sources Support';
+const TITLE = 'House Flies: What They Carry, and How';
 const DESCRIPTION =
-  'House flies cannot bite. What extension sources say they do instead is carry contamination from filth onto food, mechanically rather than by infection. Four publications spanning 1999 to 2025, and the narrow product set they actually support.';
+  'House flies cannot bite. Extension sources say they carry contamination from filth onto food mechanically. Four publications, 1999 to 2025, and the products that help.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

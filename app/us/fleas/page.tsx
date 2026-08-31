@@ -7,9 +7,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { FLEAS_NAV, FLEAS_HOME } from '../components/fleasNav';
 
 const URL = 'https://pestproindex.com/us/fleas';
-const TITLE = 'Fleas: Which Flea Carries What, and the Products the Sources Actually Support';
+const TITLE = 'Fleas: Species, Plague Risk, and What Treats It';
 const DESCRIPTION =
-  'Four extension publications on fleas, spanning 2010 to 2026. They disagree about which flea species carries plague, and the most effective treatments they name are prescription-only. Every figure here carries its species and its date.';
+  'Four extension publications, 2010 to 2026, disagree on which flea species carries plague and agree the most effective treatments are prescription-only.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

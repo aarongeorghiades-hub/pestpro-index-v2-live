@@ -7,9 +7,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { GERMAN_ROACH_NAV, GERMAN_ROACH_HOME } from '../components/germanCockroachNav';
 
 const URL = 'https://pestproindex.com/us/german-cockroaches';
-const TITLE = 'German Cockroaches: Why the Station Size Matters and Where the Sources Disagree';
+const TITLE = 'German Cockroaches: Why Bait Station Size Matters';
 const DESCRIPTION =
-  'The cockroach that lives indoors and cannot survive outdoors. Five extension publications on the allergens it produces, the small bait stations UF/IFAS says it needs, and four positions on whether a householder should treat it at all.';
+  'The cockroach that lives indoors and can\'t survive outside. The small bait stations UF/IFAS says it needs, and four positions on treating it yourself.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

@@ -7,9 +7,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { OVERWINTERING_NAV, OVERWINTERING_HOME } from '../components/overwinteringNav';
 
 const URL = 'https://pestproindex.com/us/boxelder-bugs';
-const TITLE = 'Boxelder Bugs: Identification, the Tree Connection, and Control';
+const TITLE = 'Boxelder Bugs: ID, the Tree Link, and Control';
 const DESCRIPTION =
-  'How to identify a boxelder bug, why female boxelder trees are the whole story, whether they bite or stain, and what extension services say about keeping them out.';
+  'How to identify a boxelder bug, why one tree species explains an infestation, whether they bite or stain, and what extension services say about keeping them out.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

@@ -6,9 +6,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { COYOTE_NAV, COYOTE_HOME } from '../components/coyoteNav';
 
 const URL = 'https://pestproindex.com/us/coyotes';
-const TITLE = 'Coyotes: the Exclusion Specification, the Disagreements, and Who Does the Removal';
+const TITLE = 'Coyotes: The Fence Spec and Who Handles Removal';
 const DESCRIPTION =
-  'What university extension services publish about urban and suburban coyotes: the fence specification given to the inch, the live disagreement about hazing, the nineteen-year-old California legal position we could not check against a state agency, and why removal is handed to agencies rather than to a householder.';
+  'The coyote-resistant fence spec given to the inch, the live disagreement over whether hazing works, and why removal is handed to agencies rather than a homeowner.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

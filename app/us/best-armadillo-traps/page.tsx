@@ -7,9 +7,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { ARMADILLO_NAV, ARMADILLO_HOME } from '../components/armadilloNav';
 
 const URL = 'https://pestproindex.com/us/best-armadillo-traps';
-const TITLE = 'Armadillo Traps: What the Field Study Found Changes the Outcome';
+const TITLE = 'Armadillo Traps: What a Field Study Found';
 const DESCRIPTION =
-  'A University of Georgia trapping study tested eleven baits and a commercial lure and found none improved capture. What did matter was wings, placement and trap size. Here is the specification, and the traps that meet it.';
+  'A University of Georgia study tested 11 baits and a lure and found none improved capture — placement, wings and trap size did. The spec, and the traps that meet it.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

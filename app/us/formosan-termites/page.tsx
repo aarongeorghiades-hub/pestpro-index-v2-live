@@ -7,9 +7,9 @@ import { FORMOSAN_NAV, FORMOSAN_HOME } from '../components/formosanTermitesNav';
 
 const URL = 'https://pestproindex.com/us/formosan-termites';
 const TITLE =
-  'Formosan Termites: Telling Them From Native Subterranean Termites, and Why It Is Not a DIY Job';
+  'Formosan Termites: Why This Isn\'t a DIY Job';
 const DESCRIPTION =
-  'University of Florida Extension states that control of this species requires professional pest control services. Here is how it differs from the native subterranean termite, where it has spread, and exactly what the sources say a householder can and cannot do.';
+  'University of Florida Extension says this introduced species requires professional control. How it differs from native termites, and where it has spread.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

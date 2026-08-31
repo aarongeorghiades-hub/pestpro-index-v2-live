@@ -6,9 +6,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { RATS_NAV, RATS_HOME } from '../components/ratsNav';
 
 const URL = 'https://pestproindex.com/us/rats';
-const TITLE = 'Rats: Identification, Exclusion and the Two Gap Figures Eight Sources Support';
+const TITLE = 'Rats: Identification and the Two Gap Figures';
 const DESCRIPTION =
-  'Eight EPA-adjacent, university extension and federal publications on Norway rats and roof rats: telling one species from the other and both from a mouse, where they nest and how they enter, the half-inch a rat can squeeze through against the quarter-inch three sources say to seal to, and the trapping methods that actually work. Rodent-borne disease is named once, pointing to the CDC, and not built out further.';
+  'Norway rat vs. roof rat, and both vs. a mouse. The half-inch a rat can squeeze through against the quarter-inch sources say to seal to, from eight sources.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

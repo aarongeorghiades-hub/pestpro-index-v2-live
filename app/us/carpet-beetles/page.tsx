@@ -6,9 +6,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { CARPETBEETLES_NAV, CARPETBEETLES_HOME } from '../components/carpetBeetlesNav';
 
 const URL = 'https://pestproindex.com/us/carpet-beetles';
-const TITLE = 'Carpet Beetles: What Damages Fabric, and What the Sources Say Stops It';
+const TITLE = 'Carpet Beetles: What Stops the Fabric Damage';
 const DESCRIPTION =
-  'Fourteen extension publications on carpet beetles: why cleaning and exclusion come first, four figures for killing them by freezing that do not agree, two UF/IFAS documents that disagree with each other, and the narrow set of products the sources actually support.';
+  'Fourteen extension publications on carpet beetles: why cleaning and exclusion come first, four freezing figures that disagree, and the narrow set of products supported.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

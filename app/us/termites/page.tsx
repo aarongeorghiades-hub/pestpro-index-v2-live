@@ -7,9 +7,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { TERMITES_NAV, TERMITES_HOME } from '../components/termitesNav';
 
 const URL = 'https://pestproindex.com/us/termites';
-const TITLE = 'Termites: The Signs, the Two Main Types, and What Consumer Products Cannot Do';
+const TITLE = 'Termites: Signs, the Two Main Types, and Limits';
 const DESCRIPTION =
-  'Mud tubes, hexagonal pellets and swarmers, the difference between subterranean and drywood termites, and the point five university extension services agree on: products sold to homeowners seldom eradicate an existing infestation.';
+  'Mud tubes, hexagonal pellets and swarmers, the difference between subterranean and drywood termites, and why sources agree consumer products rarely eradicate them.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

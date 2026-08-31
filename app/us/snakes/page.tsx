@@ -6,9 +6,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { SNAKE_NAV, SNAKE_HOME } from '../components/snakeNav';
 
 const URL = 'https://pestproindex.com/us/snakes';
-const TITLE = 'Snakes: the Exclusion Specification, the Law by State, and What the Sources Disagree About';
+const TITLE = 'Snakes: The Fence Spec, and Law by State';
 const DESCRIPTION =
-  'What university extension services publish about snakes around a home: a snake-proof fence four sources specify differently, a repellent class five of them say does not work, protection law that changes at the state line, and first-aid instructions that contradict each other on one step.';
+  'A snake-proof fence four sources specify differently, a repellent class five say doesn\'t work, protection law that changes at the state line, and conflicting first aid.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

@@ -6,9 +6,9 @@ import { SourceList, AsOf, type Source } from '../components/UsSources';
 import { JORO_NAV, JORO_HOME } from '../components/joroNav';
 
 const URL = 'https://pestproindex.com/us/joro-spider';
-const TITLE = 'Joro Spider: Identification, Origin, and How It Spreads';
+const TITLE = 'Joro Spider: Identification, Origin and Spread';
 const DESCRIPTION =
-  'What a Joro spider looks like, where Trichonephila clavata came from, how to tell it apart from lookalikes, and how it travels. Sourced to university extension research.';
+  'What a Joro spider looks like, where Trichonephila clavata came from, how to tell it from lookalikes, and how it travels — sourced to university research.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

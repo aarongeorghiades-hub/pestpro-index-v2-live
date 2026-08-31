@@ -6,9 +6,9 @@ import { SourceList, type Source } from '../components/UsSources';
 import { HOUSE_MICE_NAV, HOUSE_MICE_HOME } from '../components/houseMiceNav';
 
 const URL = 'https://pestproindex.com/us/house-mice';
-const TITLE = 'House Mice: Identification, Exclusion and the Traps Nine Sources Support';
+const TITLE = 'House Mice: ID, the Quarter-Inch Rule, and Traps';
 const DESCRIPTION =
-  'Nine university extension and federal publications on the house mouse: how to tell it from a deer mouse, the quarter-inch gap five sources name independently, and where the sources disagree about glue boards. Rodent-borne disease is out of scope here and named only in passing.';
+  'How to tell a house mouse from a deer mouse, the quarter-inch entry gap five sources name independently, and where sources disagree on glue boards.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

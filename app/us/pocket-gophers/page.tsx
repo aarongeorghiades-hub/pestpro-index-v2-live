@@ -6,9 +6,9 @@ import { SourceList, AsOf, type Source } from '../components/UsSources';
 import { GOPHER_NAV, GOPHER_HOME } from '../components/gopherNav';
 
 const URL = 'https://pestproindex.com/us/pocket-gophers';
-const TITLE = 'Pocket Gophers: Mounds, Damage, and What Actually Works';
+const TITLE = 'Pocket Gophers: Mounds, Damage and What Works';
 const DESCRIPTION =
-  'How to tell a pocket gopher mound from a mole hill, what the burrow system looks like, when they are active, and which control methods extension services support.';
+  'How to tell a pocket gopher mound from a mole hill, what the burrow looks like, when they\'re active, and which control methods extension services support.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
