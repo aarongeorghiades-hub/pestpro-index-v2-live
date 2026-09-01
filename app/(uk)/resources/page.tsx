@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import Navigation from '@/components/Navigation';
-import { isAffiliateUrl, SPONSORED_LINK_REL, UK_AMAZON_TAG } from '@/lib/externalUrl';
+import { isAffiliateUrl, SPONSORED_LINK_REL } from '@/lib/externalUrl';
 
 interface Resource {
   name: string;
@@ -122,11 +122,6 @@ export default function ResourcesPage() {
       description: 'In-depth reference material for pest control professionals and researchers.',
       resources: [
         {
-          name: 'The Bed Bug Handbook',
-          description: 'The complete reference book on bed bug biology, detection, and treatment. Available on Amazon.',
-          url: `https://www.amazon.co.uk/dp/B09TZK7FYS?tag=${UK_AMAZON_TAG}`
-        },
-        {
           name: 'Urban Pest Management in Australia (CSIRO)',
           description: 'Comprehensive academic text on urban pest biology and management practices.',
           url: 'https://www.publish.csiro.au/'
@@ -212,7 +207,7 @@ export default function ResourcesPage() {
           <div className="text-center">
             <p className="text-xs text-white/60 mb-4 uppercase tracking-widest font-semibold">Disclosure</p>
             <p className="text-sm text-white/70 mb-6">
-              Some links on this page are affiliate links. PestPro Index may earn a small commission at no extra cost to you. This does not influence which resources we recommend.
+              None of the resources on this page are currently affiliate links. PestPro Index earns no commission from any resource listed here.
             </p>
             <p className="text-sm text-white/70">
               Know a great pest control resource we've missed? <a href="mailto:pestproindex@zohomail.eu?subject=Resource%20Suggestion" className="text-blue-300 hover:text-blue-200 font-semibold transition-colors">Let us know — suggest a resource</a>

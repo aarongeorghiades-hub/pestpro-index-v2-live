@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { ChevronDown, CheckCircle, Users, TrendingUp, Lock, Target } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { UK_AMAZON_TAG } from '@/lib/externalUrl';
 
 // providerCount is counted server-side in page.tsx so the figure is present in
 // the initial HTML for crawlers and no-JS visitors. It is null only when that
@@ -509,10 +508,6 @@ export default function ProfessionalsClient({ providerCount }: { providerCount: 
               <a href="https://www.pctonline.com/" target="_blank" rel="noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                 <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">Pest Control Technology</h4>
                 <p className="text-xs text-gray-600">US monthly, industry trends and technology</p>
-              </a>
-              <a href={`https://www.amazon.co.uk/dp/B09TZK7FYS?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="group relative bg-white p-5 rounded-lg border-l-4 border-blue-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <h4 className="font-bold text-gray-900 mb-2 text-sm group-hover:text-blue-600 transition-colors">The Bed Bug Handbook</h4>
-                <p className="text-xs text-gray-600">The complete reference book, available on Amazon</p>
               </a>
             </div>
 

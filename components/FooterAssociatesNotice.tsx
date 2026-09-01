@@ -28,8 +28,24 @@
 // components are still rendered on the server for the initial HTML, so on every
 // non-/us/ route these two sentences remain in the served document exactly as
 // before. That is asserted here and is verified against the built output.
+//
+// S61 R2: THE SAME BUG RECURRED, ONE LEVEL DOWN. This component fixed the
+// claim at the /us/-vs-UK boundary, but never asked whether an individual UK
+// route actually carries an affiliate link either - it renders on all ~196
+// UK routes unconditionally. /professionals and /resources both carried
+// exactly one Amazon card (B09TZK7FYS, confirmed dead, removed this round)
+// and now carry zero. Rendering "All links are Amazon affiliate links" on a
+// page with none is the /us/opossums bug again, and on /resources it now
+// directly contradicts that page's own disclosure paragraph, which correctly
+// says it carries no affiliate links - two disclosures disagreeing on one
+// page, the exact failure this file exists to prevent. Excluded by exact
+// path below, the same way /us/ is excluded above. This is a two-route
+// exclusion, not a general per-page link-count check: the other ~194 UK
+// routes are unaffected and still receive this notice exactly as before.
 
 import { usePathname } from 'next/navigation';
+
+const NO_AFFILIATE_LINKS_ROUTES = new Set(['/professionals', '/resources']);
 
 export default function FooterAssociatesNotice() {
   const pathname = usePathname();
@@ -38,8 +54,9 @@ export default function FooterAssociatesNotice() {
   // non-US, so the failure mode is showing the UK notice on a UK route rather
   // than silently dropping a disclosure that a UK page is required to carry.
   const isUsRoute = pathname === '/us' || (pathname?.startsWith('/us/') ?? false);
+  const hasNoAffiliateLinks = pathname !== null && NO_AFFILIATE_LINKS_ROUTES.has(pathname);
 
-  if (isUsRoute) return null;
+  if (isUsRoute || hasNoAffiliateLinks) return null;
 
   return (
     <>

@@ -797,3 +797,31 @@ other `/us` route from this round forward. No other route carries a
 never-submit designation as a result of this rule — it retires the one
 designation that existed, and does not establish a new class of
 control routes.
+
+## S61 R2 — LAW 120 CLOSED STRUCTURALLY; LAW 137 BLOCKED-LIST HANDOFF
+
+LAW 162 — LAW 120 IS STRUCTURALLY SATISFIED, NOT MERELY MEASURED CLEAN.
+S61 R1 established that no card-rendering surface on the estate carries a
+price field at all: `UsToolCardProps`, `ProductCardProps`, the `PestProduct`
+data interface, and `app/(uk)/products/page.tsx`'s inline product object
+literals were each read at source and none declares a price. A component
+with no price field cannot render a price adjacent to its own card by
+construction — this is not a fact that can regress silently the way a
+grep-clean estate can. A round need not re-sweep every rendered page for
+Law 120; it need only confirm the structural fact still holds — i.e., that
+no card component has gained a price field since the last confirmation. If
+one ever does, Law 120 reopens as a live measurement question and the full
+estate-wide sweep applies again from that point.
+
+LAW 163 — A BLOCKED LIST IS A FIRST-CLASS HANDOFF, NOT A FOOTNOTE. Law 137
+permits exactly one fresh retry per blocked URL, in a subsequent round —
+S60 R9 proved the value of that retry concretely: 0 of 32 URLs succeeded on
+first attempt, 31 of 32 succeeded on the permitted retry. The gap this rule
+closes: a round's blocked list previously died inside that round's own
+report, unread by name in the next round's brief. From this rule forward,
+any round that closes with blocked product URLs MUST carry that list
+forward as a named, first-class item in its report — not buried in prose —
+and the NEXT round MUST exercise Law 137's permitted single retry on that
+exact list before starting any new candidate sourcing. A round that sources
+new candidates while a carried blocked list sits unretried has skipped a
+step.
