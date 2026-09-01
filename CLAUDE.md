@@ -773,3 +773,27 @@ including this file's own S60 R5/R4 entries recording bed bugs and
 rats as unbuilt — must treat THIS rule as controlling. Tier 4 is not
 reopened by a future round without a new PM ruling naming a twelfth
 head and superseding Law 158.
+
+## S61 R1 — /US/TICKS CONTROL RETIRED
+
+LAW 161 — /US/TICKS IS A NORMAL ROUTE. ITS "NEVER SUBMIT" GSC CONTROL
+DESIGNATION IS DEAD AND IS NOT RESTORED. This is a PM ruling made in
+chat at S60 R8 and never written to disk, which is why it surfaced
+again as an unresolved conflict at S60 R9 and was carried open into
+S61 R0 (Law 41/100 — a flag is a request for a ruling, not a failure,
+and it does not resolve itself). THIS RULE IS THE WRITTEN RECORD AND
+CLOSES IT.
+
+Reasons: the question the control existed to answer — whether manually
+pushing a page through GSC submission moves anything — is moot now the
+estate is confirmed fully indexed (S60 R6/R9); deliberately leaving one
+live page carrying worse, pre-rewrite metadata in order to preserve a
+defunct experiment costs real clicks on a real page for no offsetting
+benefit; and restoring superseded metadata specifically to repair a
+dead experiment is churn for its own sake, not a content improvement.
+
+CONSEQUENCE: `/us/ticks` is submitted and treated exactly like every
+other `/us` route from this round forward. No other route carries a
+never-submit designation as a result of this rule — it retires the one
+designation that existed, and does not establish a new class of
+control routes.
