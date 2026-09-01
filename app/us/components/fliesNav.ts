@@ -20,10 +20,18 @@
 //
 // THIS IS NOT A SHARED SOURCE AND MUST NEVER BECOME ONE (Law 104, S51-D). It holds
 // its own list, and would continue to even if another cluster's list matched it.
+//
+// A FRUIT FLIES ENTRY WAS ADDED, S61 R5. Its own page's source (Michael F. Potter,
+// University of Kentucky Extension) states plainly that a small fly seen in the
+// kitchen is probably a fruit fly, not a house fly, and the two pages describe
+// different biology and different control. /us/fruit-flies exists, so the link is
+// written here, in this file's own list, exactly as this file already links to
+// cluster flies. Reciprocal — fruitFliesNav.ts carries the other direction.
 
 export const FLIES_HOME = '/us';
 
 export const FLIES_NAV = [
   { title: 'House Flies', href: '/us/flies' },
   { title: 'Cluster Flies', href: '/us/cluster-flies' },
+  { title: 'Fruit Flies', href: '/us/fruit-flies' },
 ];

@@ -356,6 +356,12 @@ const groups: HubGroup[] = [
         covers:
           'Why they cannot bite, what the sources say they carry instead, and the limits of sticky paper.',
       },
+      {
+        title: 'Fruit Flies',
+        href: '/us/fruit-flies',
+        covers:
+          'Telling one from a drain fly or a fungus gnat, where they actually breed, and drain treatment that works.',
+      },
     ],
   },
   {

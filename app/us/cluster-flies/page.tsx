@@ -304,7 +304,10 @@ export default function ClusterFliesPage() {
       <p>
         If what you have is none of these, house flies are covered separately:{' '}
         <Link href="/us/flies">our house flies page</Link> sets out what the sources say they carry
-        and what they support doing about it.
+        and what they support doing about it. And a much smaller, red-eyed fly gathering around
+        ripening fruit, a trash can or a slow drain is a different insect again, not a cluster fly
+        at any stage of its life &mdash; see{' '}
+        <Link href="/us/fruit-flies">our fruit flies page</Link> for that one.
       </p>
 
       <h2 id="control">What to Do</h2>

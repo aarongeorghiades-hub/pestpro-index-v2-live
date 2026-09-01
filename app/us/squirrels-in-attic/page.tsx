@@ -351,11 +351,10 @@ export default function SquirrelsInAtticPage() {
         soiled insulation.
       </p>
       <p>
-        For general precautions when cleaning a space where a wild animal has been living &mdash;
-        avoiding direct contact with droppings or nesting material, and airing the space out before
-        cleaning &mdash; the CDC publishes general guidance for homeowners dealing with wildlife in
-        the home. This page does not go further than that: no disease is named or enumerated here, and
-        no claim about transmission is made.
+        As a general precaution when cleaning a space where a wild animal has been living, avoid
+        direct contact with droppings or nesting material, and air the space out before cleaning it.
+        This page does not go further than that: no disease is named or enumerated here, and no claim
+        about transmission is made.
       </p>
 
       <h2 id="professional">When to Call a Professional</h2>

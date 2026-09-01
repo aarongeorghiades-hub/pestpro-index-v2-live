@@ -825,3 +825,21 @@ and the NEXT round MUST exercise Law 137's permitted single retry on that
 exact list before starting any new candidate sourcing. A round that sources
 new candidates while a carried blocked list sits unretried has skipped a
 step.
+
+## S61 R5 — LAW 164
+
+LAW 164 — MECHANICAL QUOTATION EXTRACTION. Every quotation on every page is
+extracted mechanically from the fetched source text by copying the exact
+byte range. It is never retyped, never reconstructed from reading, never
+normalised for punctuation, capitalisation or spacing. Each quotation is
+verified against the fetched source by exact string match BEFORE it enters
+the draft, not after. A quotation failing exact match does not go in — it
+is paraphrased and cited instead. The self-audit remains in force as a
+backstop but is no longer the primary control.
+
+EVIDENCE. Quotation faults reaching audit ran 18 (house-mice), 9
+(bed-bugs), 21 (rats) under the old drafting step — retype-then-audit. Under
+mechanical extraction at S61 R4, 3 faults were caught during drafting and 0
+reached the shipped page. The control moved from the audit to the point of
+entry, and the fault count at the point that matters — what ships — moved
+from double digits to zero.
