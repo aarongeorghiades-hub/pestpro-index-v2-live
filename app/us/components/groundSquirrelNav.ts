@@ -17,10 +17,18 @@
 // reader nowhere to follow that. /us/fleas exists, so the link is written. All three
 // modules in this cross-link were changed in one pass so none sat asymmetric. This
 // module still holds its own value and is not shared (Law 104).
+//
+// A SQUIRRELS-IN-THE-ATTIC ENTRY WAS ADDED, S61 R4. This page's own FAQ ("Is it a
+// ground squirrel or a tree squirrel?") has always disambiguated tree squirrels
+// from the ground squirrel this page is actually about, without anywhere to send a
+// reader who has just learned theirs is the other animal. /us/squirrels-in-attic
+// now exists, so the link is written. Reciprocal — squirrelsInAtticNav.ts carries
+// the other direction, both edited in the same round.
 
 export const GS_HOME = '/us';
 
 export const GS_NAV = [
   { title: 'Ground Squirrels', href: '/us/ground-squirrels' },
   { title: 'Fleas', href: '/us/fleas' },
+  { title: 'Squirrels in the Attic', href: '/us/squirrels-in-attic' },
 ];

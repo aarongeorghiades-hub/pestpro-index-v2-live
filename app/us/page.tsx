@@ -219,6 +219,11 @@ const groups: HubGroup[] = [
         covers: 'Cages measured against one published minimum size.',
       },
       {
+        title: 'Squirrels in the Attic',
+        href: '/us/squirrels-in-attic',
+        covers: 'Entry signs, the exclusion and repair specs extension services publish, and matched live-trap dimensions.',
+      },
+      {
         title: 'Opossums',
         href: '/us/opossums',
         covers: 'What they do around a property and what the agencies advise.',

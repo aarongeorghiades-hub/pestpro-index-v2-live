@@ -171,6 +171,13 @@ const tocItems = [
   { id: 'sources', title: 'Sources' },
 ];
 
+const relatedPages = [
+  {
+    title: 'Squirrels in the Attic: Signs, Exclusion and Repair',
+    href: '/us/squirrels-in-attic',
+  },
+];
+
 export default function GroundSquirrelsPage() {
   return (
     <UsPageLayout
@@ -180,6 +187,7 @@ export default function GroundSquirrelsPage() {
       readingTime="16 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
       tocItems={tocItems}
+      relatedPages={relatedPages}
       homeHref={GS_HOME}
       clusterNav={GS_NAV}
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
