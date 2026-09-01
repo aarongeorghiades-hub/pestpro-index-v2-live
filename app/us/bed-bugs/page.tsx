@@ -79,20 +79,27 @@ const breadcrumbSchema = {
 // that with the same <sup>o</sup> markup rather than silently substituting a
 // degree sign for it.
 //
-// CARDS. Seventeen Amazon URLs were attempted across three product classes
-// the sources describe as purchasable: mattress/box-spring encasements,
-// interceptor traps, and steamers. Fifteen returned an anti-bot interstitial
-// on the first attempt; two returned a real product page. Of those two, one
-// (a portable steam cleaner, B0DSFHPY7X) rendered no readable "About this
-// item" feature-bullet text in this fetch, so under S50-H and S52-E its
-// title-only claim is not carded. The other (ClimbUp Insect Interceptor,
-// B0033SC0LI) has full, readable feature-bullet text naming bed bugs and the
-// furniture-leg placement the sources describe, and is the only product
-// named on this page. Encasements are recommended by every source that
-// discusses mattress treatment; none is named here because every fetch
-// attempted for that class was blocked. That is an honest sourcing
-// constraint, recorded rather than worked around, not a claim that
-// encasements do not matter.
+// CARDS. S60 R5: seventeen Amazon URLs were attempted across three product
+// classes the sources describe as purchasable — mattress/box-spring
+// encasements, interceptor traps, and steamers. Fifteen returned an
+// anti-bot interstitial on the first attempt; two returned a real product
+// page. Of those two, one (a portable steam cleaner, B0DSFHPY7X) rendered
+// no readable feature-bullet text in that fetch, so it was not carded. The
+// other (ClimbUp Insect Interceptor, B0033SC0LI) had full feature-bullet
+// text and was carded — the only product on the page at ship time.
+//
+// S60 R9: the diagnosis round (~/pestpro-s60-r9-report.md) found no shared,
+// fixable cause behind the interstitials — the evidence supports Amazon's
+// own automated-traffic detection, not a defect in this estate's fetch
+// method, and nothing in the rules permits pacing, retrying within a round,
+// or changing headers to raise the success rate. What IS within the rules,
+// per Law 137's own text ("the next round may try once more"), is a single
+// fresh attempt per URL in a new round. All fifteen previously-blocked
+// encasement/interceptor/steamer URLs were attempted again this round, and
+// all fifteen returned a real product page. One encasement (Guardmax,
+// B018USWJVQ) and one steamer (Polti Cimex Eradicator, B01B6W09R4, whose
+// own feature text states 356°F against the sources' 130°F criterion) pass
+// S52-E and are carded — the two classes that had nothing carded before.
 // ---------------------------------------------------------------------------
 
 const tocItems = [
@@ -119,6 +126,26 @@ const products = [
       'Its own text names the dual-well design that shows direction of travel: "Dual-well design: Shows you which direction bedbugs are crawling"',
       'Its own text states its fit: "Versatile design: Fits all furniture with posts/feet 375 In Diameter or less" (the listing\'s own text; no decimal point appears in it)',
       'A four-pack, made in the USA per the listing\'s own text, sized for placing one interceptor under each leg of a single bed, which is the placement Penn State\'s 89 percent detection figure and EPA\'s preparing-for-treatment page both describe',
+    ],
+  },
+  {
+    asin: 'B018USWJVQ',
+    cardName: 'Guardmax Twin XL Zippered Mattress Encasement, Bed Bug Cover',
+    whatItDoes: [
+      'Its own text names the target in its own bullet heading, not just the product title: "Bed Bug Mattress Encasement Sealed on All Six Sides"',
+      'Its own text states the sealed, secured zipper design Purdue\'s own criterion asks for: "The nylon zipper closure glides around three sides and tucks under a stitched guard flap, leaving no open corner or gap at the pull"',
+      'Its own text states the size: "This Twin XL mattress encasement fits a mattress measuring 39 by 80 inches and 10 inches deep, stretching up to 11"',
+      'Its own text states an independent textile certification, OEKO-TEX Standard 100 — named here because it is stated in the listing\'s own feature text, not because any source on this page asked for it',
+    ],
+  },
+  {
+    asin: 'B01B6W09R4',
+    cardName: 'Polti Cimex Eradicator, Professional Bed Bug Steamer',
+    whatItDoes: [
+      'Its own text states a temperature figure that exceeds the EPA\'s own 130°F steam criterion for this page by more than double: "superheats the steam up to 356°F"',
+      'Its own text names the target directly: "The steam eliminates bed bugs and their eggs through thermal shock right from the first pass"',
+      'Its own text states a no-license, broad-surface consumer-use claim: "Not special licenses required to operate and safe to treat in all environments and virtually any material"',
+      'The listing\'s own bullets open with "EXTREMELY EFFECTIVE" and describe the unit as "patented" — self-praise, trimmed from this card copy and not a ground for exclusion (S47-F). A closing bullet recommending a companion anti-limescale product is a cross-sell and is not carried here either',
     ],
   },
 ];
@@ -680,13 +707,16 @@ export default function BedBugsPage() {
           &ldquo;Interceptors will trap any bed bugs that try to climb the leg of the bed. In the
           beginning, you will inspect them daily.&rdquo;
         </em>{' '}
-        The criterion the product below is measured against is exactly this description — a
-        passive trap placed under a furniture leg — stated in the listing&rsquo;s own feature
-        text rather than only in its title. Seventeen Amazon URLs across three product classes
-        were attempted for this page; fifteen returned an anti-bot interstitial on the first
-        fetch and are not retried, and one other real fetch (a steam cleaner) did not render
-        readable feature-bullet text, so it is not carded. This is the only product named on this
-        page.
+        The interceptor below is measured against exactly this description — a passive trap
+        placed under a furniture leg — stated in the listing&rsquo;s own feature text rather
+        than only in its title. Seventeen Amazon URLs across three product classes were
+        attempted for this page in S60 R5; fifteen returned an anti-bot interstitial on the
+        first fetch and were not retried that round, per Law 137. Fifteen of those same URLs
+        were attempted again in S60 R9 &mdash; a fresh round, permitted under Law 137 &mdash;
+        and all fifteen returned a real product page this time. One mattress encasement and one
+        steamer, below, are carded from that second attempt; the diagnosis behind why the
+        second attempt succeeded is recorded in full in that round&rsquo;s own report and is not
+        repeated here.
       </p>
       {products.map((p) => (
         <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
@@ -807,19 +837,15 @@ export default function BedBugsPage() {
         stated once, sourced three ways, and not developed into anything further.
       </p>
       <p>
-        <strong>A mattress or box-spring encasement product.</strong> Ten distinct Amazon ASINs
-        across four brands were attempted for this class and every one returned an anti-bot
-        interstitial on the first fetch. Per Law 137, that is a terminal state for the round and
-        none was retried. Every source on this page that discusses mattress treatment recommends
-        an encasement; none is named here because the class could not be fetched this round, not
-        because the sources are silent on it.
-      </p>
-      <p>
-        <strong>A steamer product.</strong> One steam-cleaner listing was successfully fetched
-        (HTTP 200, a real product page), but its &ldquo;About this item&rdquo; feature-bullet
-        section did not render readable text in this fetch. Under S50-H only the fetched
-        product-page&rsquo;s own text is authoritative, and under S52-E a property named only in
-        the title is not a claim, so this listing is not carded.
+        <strong>A second encasement, a second interceptor brand, or a second steamer.</strong>{' '}
+        A later round successfully fetched all fifteen ASINs that had returned an anti-bot
+        interstitial when this page first shipped. Two of the nine encasement listings did not
+        name bed bugs anywhere in their own feature text, only in the title, and fail S52-E; the
+        rest repeated a near-identical zippered-encasement claim to the one card already on this
+        page, or were a different size of the same product line, and naming more of them was
+        judged padding rather than a genuine addition. The one general-purpose steam cleaner
+        fetched (a McCulloch unit) never names bed bugs or a temperature figure in its own
+        feature text and is not carded.
       </p>
       <p>
         <strong>A ranked list of insecticide brands.</strong> The EPA names a Bed Bug Product

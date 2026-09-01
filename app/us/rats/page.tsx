@@ -95,15 +95,26 @@ const breadcrumbSchema = {
 // UC IPM published. This matches the house-mice precedent of not presenting
 // a reconstructed span as a verbatim quotation.
 //
-// CARDS. Twenty product ASINs were attempted across three classes the
-// sources describe as purchasable: rat-sized snap traps, tamper-resistant
-// bait stations, and galvanized hardware cloth at the 1/4-inch or 1/2-inch
-// mesh the sources specify. Seventeen returned an anti-bot interstitial on
-// the first attempt and are not retried (Law 137); three returned a real
-// product page with readable feature-bullet text. All three pass S52-E and
-// S48-A and are carded: two snap traps and one tamper-resistant bait
-// station. No hardware cloth is named — every attempt in that class was
-// blocked.
+// CARDS. S60 R7: twenty product ASINs were attempted across three classes
+// the sources describe as purchasable — rat-sized snap traps, tamper-
+// resistant bait stations, and galvanized hardware cloth at the 1/4-inch or
+// 1/2-inch mesh the sources specify. Seventeen returned an anti-bot
+// interstitial on the first attempt and were not retried that round, per
+// Law 137. Three returned a real product page and were carded: two snap
+// traps and one bait station.
+//
+// S60 R9: the diagnosis round (~/pestpro-s60-r9-report.md) found no shared,
+// fixable cause behind the interstitials — the evidence supports Amazon's
+// own automated-traffic detection, not a defect in this estate's fetch
+// method, and nothing in the rules permits pacing, retrying within a round,
+// or changing headers to raise the success rate. What IS within the rules,
+// per Law 137's own text ("the next round may try once more"), is a single
+// fresh attempt per URL in a new round. All seventeen previously-blocked
+// URLs were attempted again this round: sixteen returned a real product
+// page, one (a bait station) had been delisted and returned a genuine HTTP
+// 404. Of the sixteen, one hardware cloth listing was carded — the one
+// class with nothing carded before. The rest repeated a mechanism or
+// criterion match already carded and were not added, to avoid padding.
 // ---------------------------------------------------------------------------
 
 const tocItems = [
@@ -150,6 +161,16 @@ const products = [
       'Its own text states weather resistance, matching Nebraska\'s and ICWDM\'s own instruction to protect bait from moisture: "Weather-resistant construction helps shield bait from rain, dirt, and outdoor exposure"',
       'Bait is not included. This is the station hardware only — the empty, lockable enclosure the sources describe, not a rodenticide, so S48-A\'s material-danger question is not reached',
       'A 2-pack, sized for placing stations at more than one location, which every source on this page recommends over a single station',
+    ],
+  },
+  {
+    asin: 'B009894CDU',
+    cardName: 'Fencer Wire 19 Gauge Galvanized Hardware Cloth, 1/2-Inch Mesh, 2 x 10 ft',
+    whatItDoes: [
+      'Its own text states the gauge and mesh size UC IPM\'s own exclusion checklist asks for, together in one sentence: "19 gauge, heavy duty hot dipped galvanized hardware cloth"',
+      'The same sentence continues, separated here only because two filler clauses about cutting the material sit between them in the listing\'s own text: "The 1/2-inch mesh roll is flexible and tight enough to leave out larger ground crawling arachnids"',
+      'Its own text names rats directly among the animals the mesh excludes, not just rodents in general: "very effective at keeping out critters like squirrels, rabbits, rats, hawks, raccoons, skunks"',
+      'Its own text states the finish the sources ask for over a soft or ungalvanized material: "galvanized After Welding," with "a double zinc coating for maximum rust resistance." A 2 ft. by 10 ft. roll, per the listing\'s own stated size — sized for sealing a small number of specific gaps, not a whole foundation',
     ],
   },
 ];
@@ -692,9 +713,13 @@ export default function RatsPage() {
         <p className="m-0 mt-3 text-base text-slate-800">
           Each listing below states, in its own feature text rather than only in a product
           title, the property the sources above ask for: an expanded-trigger, rat-sized snap
-          trap, and a tamper-resistant, weather-resistant bait station. Twenty product URLs
-          were attempted for this page; seventeen returned an anti-bot interstitial on the
-          first fetch and are not retried. No source consulted for this page ranks any two
+          trap, a tamper-resistant weather-resistant bait station, and galvanized hardware
+          cloth at the gauge and mesh size UC IPM&rsquo;s own checklist names. Twenty product
+          URLs were attempted in S60 R7; seventeen returned an anti-bot interstitial on the
+          first fetch and were not retried that round, per Law 137. Seventeen of those same
+          URLs were attempted again this round (S60 R9) &mdash; a fresh round, permitted under
+          Law 137 &mdash; and sixteen returned a real product page; one (a since-delisted bait
+          station) returned a genuine HTTP 404. No source consulted for this page ranks any two
           products against one another, so nothing here is called best, and no price appears
           beside a card.
         </p>
@@ -850,10 +875,14 @@ export default function RatsPage() {
         that holds one.
       </p>
       <p>
-        <strong>Hardware cloth.</strong> Every source above names it as an exclusion material
-        at a stated mesh size. Five distinct product listings were attempted for this page and
-        every one returned an anti-bot interstitial on the first fetch. That is an honest
-        sourcing gap, recorded rather than worked around.
+        <strong>A second snap trap brand or a second bait station.</strong> Sixteen more
+        product listings across the three classes this page already cards were fetched
+        successfully in S60 R9 (five more snap traps, six more bait stations, five hardware
+        cloth rolls). Most either repeated a mechanism this page already cards without adding a
+        distinct one, or a criterion match no stronger than a card already on this page, so
+        naming more of the same class was judged padding rather than a genuine addition and was
+        not done. The one class with nothing carded before this round &mdash; hardware cloth
+        &mdash; now has one card, below.
       </p>
 
       <h2 id="faq">Questions</h2>
