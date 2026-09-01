@@ -843,3 +843,20 @@ mechanical extraction at S61 R4, 3 faults were caught during drafting and 0
 reached the shipped page. The control moved from the audit to the point of
 entry, and the fault count at the point that matters — what ships — moved
 from double digits to zero.
+
+## S61 R6 — LAW 165
+
+LAW 165 — SEASONAL BUILD ORDER. In-season topics are built first, for
+immediate traffic. Out-of-season topics are built EARLY, never deferred to
+their season. A new route needs months to index and climb; a page shipped
+at the start of its season has no time to rank within it. THE S61 R4
+RULING PARKING CARPENTER BEES TO FEBRUARY AND MOSQUITOES TO SPRING IS
+REVERSED. Seasonality determines build ORDER, never build DELAY.
+
+REASONING. The estate averages position 23.3, so ranking lead time exceeds
+the length of most pest seasons — a page held back until its season opens
+would still be climbing out of the position-20s range when that season
+closes, having earned nothing from it. Building out-of-season candidates
+early, so they have months in the index before demand arrives, is the only
+sequencing that lets a new route actually catch its own season rather than
+permanently trailing it by one year.

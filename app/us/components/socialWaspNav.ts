@@ -29,7 +29,19 @@
 // were read for this page and not one compares any two wasp products on any
 // measure. A ranking page needs a published criterion to rank against; there is
 // none, so there is nothing to build.
+//
+// A CARPENTER BEES ENTRY WAS ADDED, S61 R6. This page's only "bee" material is a
+// honey-bee sting-comparison aside (see the file's own S60 sourcing) -- it carries
+// no carpenter bee biology or control, so a reader who lands here looking for the
+// large, solitary, wood-boring bee is at a dead end without this link.
+// /us/carpenter-bees exists now, so the link is written. Reciprocal --
+// carpenterBeesNav.ts carries the other direction. This file's own governing
+// comment above (two clusters must never share one list) still holds: this is one
+// added entry in this cluster's own list, not a shared source.
 
 export const SOCIAL_WASP_HOME = '/us';
 
-export const SOCIAL_WASP_NAV = [{ title: 'Social Wasps', href: '/us/social-wasps' }];
+export const SOCIAL_WASP_NAV = [
+  { title: 'Social Wasps', href: '/us/social-wasps' },
+  { title: 'Carpenter Bees', href: '/us/carpenter-bees' },
+];

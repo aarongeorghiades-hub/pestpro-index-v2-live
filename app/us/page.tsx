@@ -103,6 +103,12 @@ const groups: HubGroup[] = [
         covers:
           'Yellowjackets, paper wasps and the hornet that usually is not one, and why a wasp leaves no stinger to remove.',
       },
+      {
+        title: 'Carpenter Bees',
+        href: '/us/carpenter-bees',
+        covers:
+          'Telling one from a bumblebee, the timber damage, and why several sources ask you to think twice before killing them.',
+      },
     ],
   },
   {
