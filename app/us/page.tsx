@@ -64,6 +64,12 @@ const groups: HubGroup[] = [
         covers: 'Biting midges, window screen mesh sizes, and the sand fly naming problem.',
       },
       {
+        title: 'Mosquitoes',
+        href: '/us/mosquitoes',
+        covers:
+          'Standing water and source reduction, Bti and methoprene larvicides, and what several sources say does not work.',
+      },
+      {
         title: 'Arizona Bark Scorpions',
         href: '/us/arizona-bark-scorpions',
         covers:

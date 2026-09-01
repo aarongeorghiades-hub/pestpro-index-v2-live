@@ -29,10 +29,17 @@
 // any two named products, and the Arizona publication carries an explicit statement
 // that mentioning a product is not an endorsement.
 //
-// LINKED TO /us/chiggers ONLY. The pack sources a clean separation between a
-// blood-feeding fly and a mite that feeds on skin cells, so that comparison is
-// honest. It sources no comparison against a tick bite, so this page does not link
-// to /us/ticks and does not draw one.
+// LINKED TO /us/chiggers AND, AS OF S61 R7, /us/mosquitoes. The chiggers link
+// sources a clean separation between a blood-feeding fly and a mite that feeds on
+// skin cells, so that comparison is honest. It sources no comparison against a
+// tick bite, so this page does not link to /us/ticks and does not draw one.
+//
+// THE MOSQUITOES LINK IS A DIFFERENT KIND OF LINK, NOT A COMPARISON. This page's
+// own body text already states, correctly, that no source consulted compares a
+// no-see-um bite with a mosquito bite, and it still does not draw one here. What
+// changed at S61 R7 is that /us/mosquitoes now exists, and a reader who searched
+// for one biting insect and landed on the other benefits from a plain
+// cross-reference — not a claim that the two are alike, sourced or otherwise.
 //
 // FUTURE ROUTE ANTICIPATED BUT NOT BUILT: a coastal or Gulf page, where the salt
 // marsh and decaying seaweed habitat would carry weight. Not linked, because a link
@@ -45,4 +52,7 @@
 
 export const NOSEEUMS_HOME = '/us';
 
-export const NOSEEUMS_NAV = [{ title: 'No-See-Ums', href: '/us/no-see-ums' }];
+export const NOSEEUMS_NAV = [
+  { title: 'No-See-Ums', href: '/us/no-see-ums' },
+  { title: 'Mosquitoes', href: '/us/mosquitoes' },
+];
