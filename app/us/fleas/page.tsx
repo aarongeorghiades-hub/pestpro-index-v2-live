@@ -102,7 +102,7 @@ const products: ProductRecord[] = [
     group: 'FC2',
     cardName: 'Indoor Flea Trap with Sticky Pads and Bulb Replacements, 2-Pack',
     whatItDoes: [
-      'States the same light-and-heat mechanism in its own text, and adds colour to the list of what draws the insect in',
+      'States the same light-and-heat mechanism in its own text, and adds color to the list of what draws the insect in',
       'Two traps, four glue pads and six bulbs per pack, per the listing, with refills sold separately',
       'The seller claims a fifty-foot attraction radius. No source consulted states any distance for a flea trap, so that figure is the seller’s alone and is not repeated here as fact',
       'Uses a physical trap rather than an insecticide, which is the reason UF/IFAS discusses this class at all',
@@ -127,7 +127,7 @@ const products: ProductRecord[] = [
       'A power switch and a six-foot cord, per the listing, so it can be placed away from the socket',
       'Its title and its feature text agree on the counts — two traps, six bulbs, eight sticky pads — which is not true of every listing in this category',
       'The listing says to replace the glue pads every two to four weeks',
-      'The same seller lists a near-identical trap under a separate ASIN in another colour. Neither listing states that the difference is only the colour, so we treat them as two products and name only this one',
+      'The same seller lists a near-identical trap under a separate ASIN in another color. Neither listing states that the difference is only the color, so we treat them as two products and name only this one',
     ],
   },
 ];

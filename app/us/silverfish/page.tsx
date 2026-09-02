@@ -56,7 +56,7 @@ const breadcrumbSchema = {
 // FOUR SOURCES SUPPORT THE CONTAINER CRITERION, NOT FIVE. UF/IFAS IG094 carries a
 // container instruction and a "less than 50%" humidity figure, but BOTH sit in that
 // document's BOOKLICE control block, before the silverfish section begins, and the
-// humidity figure is for mould control. Neither is used here for silverfish.
+// humidity figure is for mold control. Neither is used here for silverfish.
 //
 // NO HUMIDITY SPECIFICATION IS GIVEN, BECAUSE NO SILVERFISH SOURCE PUBLISHES ONE.
 // Three sources recommend a dehumidifier and none states a target. The page says so
@@ -192,7 +192,7 @@ const faqs: Faq[] = [
   {
     question: 'What humidity should I aim for?',
     answer:
-      'No silverfish source we consulted publishes a number. Three of them recommend a dehumidifier — UC IPM says silverfish require a lot of moisture so using dehumidifiers in closed spaces can help discourage these pests, NPIC says to consider using a dehumidifier in closed spaces such as bathrooms, basements, garages and attics, and Penn State says to use dehumidifiers in damp basements. None of the three gives a target relative humidity, a capacity or a room size. There is a figure of less than 50 percent in one of these publications, but it sits in that document’s booklice section and is given for slowing mould growth, so it is not a silverfish target and this page does not present it as one. That is why no dehumidifier is named here: there is no published specification to measure a product against.',
+      'No silverfish source we consulted publishes a number. Three of them recommend a dehumidifier — UC IPM says silverfish require a lot of moisture so using dehumidifiers in closed spaces can help discourage these pests, NPIC says to consider using a dehumidifier in closed spaces such as bathrooms, basements, garages and attics, and Penn State says to use dehumidifiers in damp basements. None of the three gives a target relative humidity, a capacity or a room size. There is a figure of less than 50 percent in one of these publications, but it sits in that document’s booklice section and is given for slowing mold growth, so it is not a silverfish target and this page does not present it as one. That is why no dehumidifier is named here: there is no published specification to measure a product against.',
   },
   {
     question: 'Will a moth or carpet beetle trap catch silverfish?',
@@ -223,7 +223,7 @@ const sources: Source[] = [
   },
   {
     label:
-      'Booklice and Silverfish, ENY-225/IG094 — the source of the damp and cool statement, the silverfish egg and lifespan figures, the diatomaceous earth option and the granular bait statement. ITS BOOKLICE SECTION IS NOT USED HERE: that section carries a container instruction and a humidity figure which belong to booklice and mould, not to silverfish',
+      'Booklice and Silverfish, ENY-225/IG094 — the source of the damp and cool statement, the silverfish egg and lifespan figures, the diatomaceous earth option and the granular bait statement. ITS BOOKLICE SECTION IS NOT USED HERE: that section carries a container instruction and a humidity figure which belong to booklice and mold, not to silverfish',
     publisher: 'UF/IFAS Extension',
     date: 'Renders a copyright line of 2024. Revision dates exist in the page metadata but do not render as text, so they are not cited. Fetched 28 August 2026',
     href: 'https://edis.ifas.ufl.edu/ig094',
@@ -456,7 +456,7 @@ export default function SilverfishPage() {
             There is a figure of less than 50 percent in one of these publications, and it is not
             used here
           </strong>{' '}
-          — it appears in that document&rsquo;s booklice section, given for slowing mould growth
+          — it appears in that document&rsquo;s booklice section, given for slowing mold growth
           rather than for silverfish. Presenting it as a silverfish target would attribute one
           insect&rsquo;s instruction to another.
         </p>

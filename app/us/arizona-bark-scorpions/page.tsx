@@ -218,13 +218,13 @@ export default function ArizonaBarkScorpionsPage() {
         </em>
       </p>
       <p>
-        On size and colour, University of Arizona Cooperative Extension states:{' '}
+        On size and color, University of Arizona Cooperative Extension states:{' '}
         <em>
           &ldquo;Adults are 2-3 inches in length, have relatively slender appendages and a
           long, slender tail. Their coloration and markings are highly variable, some being
           pale in color, others darker with stripes or checkered patterning.&rdquo;
         </em>{' '}
-        Colour is therefore not a diagnostic character, and the same publication elsewhere
+        Color is therefore not a diagnostic character, and the same publication elsewhere
         gives the range as 0.25 to 3 inches for the animals encountered in and around
         houses.
       </p>
@@ -415,7 +415,7 @@ export default function ArizonaBarkScorpionsPage() {
         putting firewood straight onto the fire rather than stacking it indoors.
       </p>
       <p>
-        A 2025 study in <em>Toxins</em> observed defensive behaviour in wild{' '}
+        A 2025 study in <em>Toxins</em> observed defensive behavior in wild{' '}
         <em>Centruroides sculpturatus</em> and reported that its results{' '}
         <em>&ldquo;failed to show consistent support for any of our four hypotheses&rdquo;</em>{' '}
         about sex, body size, substrate orientation and threat type. It documented the

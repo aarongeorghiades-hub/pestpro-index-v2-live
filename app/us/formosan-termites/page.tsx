@@ -54,7 +54,7 @@ const faqs: Faq[] = [
   {
     question: 'How do I tell a Formosan termite from a native subterranean termite?',
     answer:
-      'Three characters, from two sources. University of Georgia Extension gives swarmer length — one-half of an inch against three-eighths for the native — and swarmer colour, caramel- to brownish-yellow against black. University of Florida IFAS Extension gives a behavioural one that needs no ruler: Formosan soldiers have an enlarged opening on the front of the head called a fontanelle, and "When threatened, they exude a white glue-like substance through their fontanelle." The same publication states that "This behavior and defensive secretion differentiate Coptotermes soldiers from native subterranean termites (Reticulitermes sp.)."',
+      'Three characters, from two sources. University of Georgia Extension gives swarmer length — one-half of an inch against three-eighths for the native — and swarmer color, caramel- to brownish-yellow against black. University of Florida IFAS Extension gives a behavioral one that needs no ruler: Formosan soldiers have an enlarged opening on the front of the head called a fontanelle, and "When threatened, they exude a white glue-like substance through their fontanelle." The same publication states that "This behavior and defensive secretion differentiate Coptotermes soldiers from native subterranean termites (Reticulitermes sp.)."',
   },
   {
     question: 'What proportion of the colony are soldiers?',
@@ -127,7 +127,7 @@ const sources: Source[] = [
   },
   {
     label:
-      'Subterranean Termites (C868) — the source of the swarmer length, swarmer colour and soldier-proportion figures given by this source',
+      'Subterranean Termites (C868) — the source of the swarmer length, swarmer color and soldier-proportion figures given by this source',
     publisher: 'University of Georgia Extension',
     date: 'Accessed 22 August 2026',
     href: 'https://fieldreport.caes.uga.edu/publications/C868/',
@@ -161,7 +161,7 @@ export default function FormosanTermitesPage() {
       <p>
         This page carries no product and nothing you can buy, because no source consulted for
         it describes a consumer product that works on this species. What it carries is
-        identification, range, behaviour, and the two things a householder can genuinely act
+        identification, range, behavior, and the two things a householder can genuinely act
         on: habitat, and choosing someone licensed to do the rest.
       </p>
 
@@ -197,7 +197,7 @@ export default function FormosanTermitesPage() {
         <Link href="/us/choosing-a-pest-control-service">
           choosing a pest control service
         </Link>{' '}
-        sets out how to check a licence against a state regulator&rsquo;s own database before
+        sets out how to check a license against a state regulator&rsquo;s own database before
         you hire anyone.
       </p>
 
@@ -229,7 +229,7 @@ export default function FormosanTermitesPage() {
         </em>
         . University of Georgia Extension gives the comparison against the native species
         instead: one-half of an inch against three-eighths of an inch for swarmer length, and
-        caramel- to brownish-yellow against black for colour.
+        caramel- to brownish-yellow against black for color.
       </p>
       <p>
         <strong>What they build that the native species does not.</strong> University of Florida
@@ -462,7 +462,7 @@ export default function FormosanTermitesPage() {
         <strong>It does not carry treatment methods.</strong> Trenching, drilling, soil
         injection and bait systems are described in the sources as professional applications,
         and describing them here would be describing work a reader cannot lawfully or safely
-        do. What a reader can do about that is check a licence, which is on our page about{' '}
+        do. What a reader can do about that is check a license, which is on our page about{' '}
         <Link href="/us/choosing-a-pest-control-service">
           choosing a pest control service
         </Link>

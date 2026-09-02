@@ -60,7 +60,7 @@ const faqs: Faq[] = [
   {
     question: 'Is it a ground squirrel or a tree squirrel?',
     answer:
-      'The test every source uses is behavioural rather than anatomical. UC IPM states that ground squirrels will always retreat to a burrow when frightened, while tree squirrels will climb a tree or other tall structure and never use a burrow. The California Department of Food and Agriculture states the same test in almost the same words. This matters legally as well as practically: UC IPM states that some species of tree squirrels are classified as game animals with a hunting season, that cannot be taken without a permit, while ground squirrels are nongame mammals.',
+      'The test every source uses is behavioral rather than anatomical. UC IPM states that ground squirrels will always retreat to a burrow when frightened, while tree squirrels will climb a tree or other tall structure and never use a burrow. The California Department of Food and Agriculture states the same test in almost the same words. This matters legally as well as practically: UC IPM states that some species of tree squirrels are classified as game animals with a hunting season, that cannot be taken without a permit, while ground squirrels are nongame mammals.',
   },
   {
     question: 'Is it a ground squirrel or a chipmunk?',
@@ -73,7 +73,7 @@ const faqs: Faq[] = [
       'Both sources this page uses say the same thing. UC IPM states that the California Fish and Game Code classifies ground squirrels as nongame mammals, and that an owner or tenant can control, in the Code\'s word take, in any legal manner, nongame mammals that are injuring growing crops or other property. The California Department of Food and Agriculture states independently that ground squirrels are classified as nongame mammals by the California Fish and Game Code. The statute those statements rest on is Fish and Game Code section 4152(a), and it carries a qualifying clause that belongs in the same sentence as the permission: mammals found to be injuring growing crops or other property may be taken at any time or in any manner in accordance with this code and regulations adopted pursuant to this code. Our California trapping rules page quotes that section and four others directly from the primary text.',
   },
   {
-    question: 'Do I need a trapping licence?',
+    question: 'Do I need a trapping license?',
     answer:
       'The two sources disagree and this page does not pick between them. UC IPM, updated June 2025, states that no license is required for the management of California ground squirrels if it is the owner or tenant who is taking damaging ground squirrels, and that a trapping license from the California Department of Fish and Wildlife is required for those who are trapping squirrels for hire or profit. The California Department of Food and Agriculture handbook states flatly that trapping ground squirrels requires a trapping license issued by the Department of Fish and Game. Those cannot both be operative as written. One piece of dating evidence is worth having: the CDFA document refers to the Department of Fish and Game six times and to the Department of Fish and Wildlife not at all, and the agency was renamed in 2013. That dates the text; it does not settle the question, and settling it would mean reading a licensing statute this page has not read. Check the current position with the Department directly.',
   },
@@ -127,14 +127,14 @@ const faqs: Faq[] = [
 const sources: Source[] = [
   {
     label:
-      'Pest Notes: Ground Squirrel — the source of the legal status, the licence position, the relocation prohibition, the Conibear specification, the fumigation and bait positions, the seasonal table and the plague material',
+      'Pest Notes: Ground Squirrel — the source of the legal status, the license position, the relocation prohibition, the Conibear specification, the fumigation and bait positions, the seasonal table and the plague material',
     publisher: 'UC Statewide IPM Program',
     date: 'Published 25 January 2022, updated June 2025; accessed 26 August 2026',
     href: 'https://ipm.ucanr.edu/home-and-landscape/ground-squirrel/',
   },
   {
     label:
-      'Vertebrate Pest Control Handbook — Mammals, California ground squirrel chapter — the source of the corroborating legal status, the contrary trapping-licence statement, the relocation prohibition and the repellent position',
+      'Vertebrate Pest Control Handbook — Mammals, California ground squirrel chapter — the source of the corroborating legal status, the contrary trapping-license statement, the relocation prohibition and the repellent position',
     publisher: 'California Department of Food and Agriculture, Integrated Pest Control Branch',
     date:
       'Document stamped 2009; refers throughout to the Department of Fish and Game, which was renamed in 2013; accessed 26 August 2026',
@@ -221,7 +221,7 @@ export default function GroundSquirrelsPage() {
 
       <h2 id="which-animal">Which Animal, and Which Species</h2>
       <p>
-        <strong>The identifying test is behavioural.</strong> UC IPM states that ground squirrels
+        <strong>The identifying test is behavioral.</strong> UC IPM states that ground squirrels
         will always retreat to a burrow when frightened, while tree squirrels will climb a tree or
         other tall structure and never use a burrow. CDFA gives the same test.
       </p>
@@ -347,7 +347,7 @@ export default function GroundSquirrelsPage() {
         where they do work.
       </p>
 
-      <h3>⚠ Whether a licence is needed: two sources, two answers, unresolved</h3>
+      <h3>⚠ Whether a license is needed: two sources, two answers, unresolved</h3>
       <div className="overflow-x-auto not-prose my-6">
         <table className="min-w-full border border-gray-300 text-sm">
           <thead className="bg-gray-100">
@@ -363,7 +363,7 @@ export default function GroundSquirrelsPage() {
               <td className="border border-gray-300 px-3 py-2">updated June 2025</td>
               <td className="border border-gray-300 px-3 py-2">
                 &ldquo;No license is required for the management of California ground squirrels if
-                it is the owner or tenant who is taking damaging ground squirrels.&rdquo; A licence
+                it is the owner or tenant who is taking damaging ground squirrels.&rdquo; A license
                 is required for those trapping for hire or profit
               </td>
             </tr>

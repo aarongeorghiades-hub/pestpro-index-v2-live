@@ -9,7 +9,7 @@ import { CARPENTER_BEES_HOME, CARPENTER_BEES_NAV } from '../components/carpenter
 const URL = 'https://pestproindex.com/us/carpenter-bees';
 const TITLE = 'Carpenter Bees: Timber Damage, and Why the Sources Say Wait';
 const DESCRIPTION =
-  'Identification against bumblebees, the boring behaviour that causes the damage, repair specs, and why several extension sources caution against killing them.';
+  'Identification against bumblebees, the boring behavior that causes the damage, repair specs, and why several extension sources caution against killing them.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -55,7 +55,7 @@ const faqs: Faq[] = [
   {
     question: 'How do I tell a carpenter bee from a bumblebee?',
     answer:
-      'By the abdomen. University of Maryland Extension states the bumble bee’s entire body is covered with hairs, and females have yellow patches of hair on the top of the abdomen, while carpenter bees have a shiny, largely bare black abdomen. Ohio State University Extension adds a second test: the bumble bee’s head is much narrower than the width of its thorax, while a carpenter bee’s head is almost as wide as its thorax. Behaviour differs too — Alabama Cooperative Extension states carpenter bees are solitary and less defensive of their nest sites, while bumble bees are social and extremely defensive when their nest site is disturbed.',
+      'By the abdomen. University of Maryland Extension states the bumble bee’s entire body is covered with hairs, and females have yellow patches of hair on the top of the abdomen, while carpenter bees have a shiny, largely bare black abdomen. Ohio State University Extension adds a second test: the bumble bee’s head is much narrower than the width of its thorax, while a carpenter bee’s head is almost as wide as its thorax. Behavior differs too — Alabama Cooperative Extension states carpenter bees are solitary and less defensive of their nest sites, while bumble bees are social and extremely defensive when their nest site is disturbed.',
   },
   {
     question: 'How is a carpenter bee different from a honeybee?',
@@ -65,7 +65,7 @@ const faqs: Faq[] = [
   {
     question: 'Do male carpenter bees sting?',
     answer:
-      'No source consulted for this page found otherwise. University of Maryland Extension, UC IPM and Ohio State University Extension all state that male carpenter bees have no stinger and are harmless, despite hovering and dive-bombing behaviour near a nest site that can look aggressive. Only females can sting, and every source describing it calls the female docile, stinging only when handled or provoked.',
+      'No source consulted for this page found otherwise. University of Maryland Extension, UC IPM and Ohio State University Extension all state that male carpenter bees have no stinger and are harmless, despite hovering and dive-bombing behavior near a nest site that can look aggressive. Only females can sting, and every source describing it calls the female docile, stinging only when handled or provoked.',
   },
   {
     question: 'Are carpenter bees actually good for anything?',
@@ -397,7 +397,7 @@ export default function CarpenterBeesPage() {
       <UsToolCard
         name="Carpenter Bee Hole Repair Kit, 3-Step Wood Plug Set"
         whatItDoes={[
-          'Its own listing describes a 3-step process — clean the tunnel, plug the hole with a tapered wood plug sized to fit, then finish with a colour-matched decal — matching the plug-and-seal sequence UC IPM and Ohio State University Extension both describe.',
+          'Its own listing describes a 3-step process — clean the tunnel, plug the hole with a tapered wood plug sized to fit, then finish with a color-matched decal — matching the plug-and-seal sequence UC IPM and Ohio State University Extension both describe.',
           'Its own listing states plugs come in three sizes (small, medium, large) to match different hole diameters, consistent with the roughly half-inch entry hole University of Maryland Extension measures, allowing for reused, enlarged galleries.',
           'This is a repair product, not a treatment for an active infestation — it is carded for the "plug the hole" step the sourced guidance describes after bees have emerged, not as a way to kill or exclude bees from an active gallery.',
         ]}

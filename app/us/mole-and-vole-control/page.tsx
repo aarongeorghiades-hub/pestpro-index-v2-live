@@ -159,7 +159,7 @@ const faqs: Faq[] = [
       'The sources disagree, and this page gives all of them rather than picking one. A 1995 Michigan State University conference study of a 65 percent castor oil product reported that mole activity ceased on eleven treated lawns while continuing on five of six control lawns, with the effect lasting 30 days on most treated sites and 65 days on one. Nebraska Extension, revised 2010, calls castor oil products "minor effectiveness" for the eastern mole. Purdue Extension, revised 2005, says "Some success has been reported with these products, but no scientific research has shown a consistent result." A WSU Extension educator in Snohomish County reported a granular castor product failing outright in a 2007 field test: "Throughout the test there was no change in activity." UC IPM, updated November 2024, adds that no published research has been done on moles in the western United States.',
   },
   {
-    question: 'Will a repellent just move the mole to my neighbour?',
+    question: 'Will a repellent just move the mole to my neighbor?',
     answer:
       'UC IPM says exactly that. Its words are that repellents work by moving animals from one location to another, and that they "may have limited utility in residential areas, as \'repelled\' moles will simply move to neighboring lawns and gardens and will continue to cause damage in these areas." That is a limitation of the whole approach rather than of any one product.',
   },

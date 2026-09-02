@@ -114,7 +114,7 @@ const products: ProductRecord[] = [
       'Names both clothes moth species in its own text, to scientific name: Tineola bisselliella and Tinea pellionella. Those are the two species UC IPM names as fabric pests',
       'States a pheromone lure in its own text, and describes it as luring male moths to disrupt breeding',
       'Its own text opens by stating what it is NOT for — pantry moths, food moths and gypsy moths. That exclusion is the same one UC IPM makes, written by the seller',
-      'Sold in two colours under two different ASINs. The listing itself says the only difference is how they look and that both carry the same pheromone and glue, so they are treated here as one product, not two',
+      'Sold in two colors under two different ASINs. The listing itself says the only difference is how they look and that both carry the same pheromone and glue, so they are treated here as one product, not two',
     ],
   },
   {
@@ -169,7 +169,7 @@ const products: ProductRecord[] = [
       'Names the pest in its own text and states the pheromone: a double-concentrated pheromone stripe intended to attract male Indianmeal moths',
       'Its own text points clothes-moth buyers away to a different product, which is the same division line this page draws',
       'Six traps per pack, which the listing says last up to three months each',
-      'The same brand sells a near-identical pantry trap under a different ASIN in another colour. We checked both and their feature text is materially different, so they are NOT treated as one product here — only this one is named',
+      'The same brand sells a near-identical pantry trap under a different ASIN in another color. We checked both and their feature text is materially different, so they are NOT treated as one product here — only this one is named',
     ],
   },
   {

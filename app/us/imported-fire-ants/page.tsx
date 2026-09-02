@@ -321,7 +321,7 @@ export default function ImportedFireAntsPage() {
           &ldquo;Fire ant nests will not have a single nest entry, but rather, several
           entrances under the mound.&rdquo;
         </em>{' '}
-        And the behaviour, from the Pamlico note:{' '}
+        And the behavior, from the Pamlico note:{' '}
         <em>
           &ldquo;If a mound is disturbed, usually hundreds of fire ant workers will swarm out
           and run up vertical surfaces to sting.&rdquo;

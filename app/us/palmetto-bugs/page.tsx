@@ -523,7 +523,7 @@ export default function PalmettoBugsPage() {
         Each card carries the scope and the limitation its own sources state.
       </p>
       <p>
-        There is, however, one selection rule the sources do give, and it is the organising
+        There is, however, one selection rule the sources do give, and it is the organizing
         principle of this section. Mississippi State University Extension states that{' '}
         <strong>
           &ldquo;Bait stations designed specifically for German cockroaches are too small.&rdquo;
@@ -644,7 +644,7 @@ export default function PalmettoBugsPage() {
       <h2 id="sources">Sources</h2>
       <p>
         Every factual statement on this page traces to one of the eight publications below, seven of
-        them university extension services or a federally supported information centre, and one a
+        them university extension services or a federally supported information center, and one a
         peer-reviewed journal paper used for the national allergen figures. Where a source qualified
         its own statement, the qualification is kept, and where two sources give different figures
         for the same thing, both are quoted with their attributions rather than merged. The product

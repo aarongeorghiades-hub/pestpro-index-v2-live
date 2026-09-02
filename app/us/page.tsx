@@ -328,7 +328,7 @@ const groups: HubGroup[] = [
       {
         title: 'Choosing a Pest Control Service',
         href: '/us/choosing-a-pest-control-service',
-        covers: 'Checking a licence against a state database before you hire anyone.',
+        covers: 'Checking a license against a state database before you hire anyone.',
       },
     ],
   },

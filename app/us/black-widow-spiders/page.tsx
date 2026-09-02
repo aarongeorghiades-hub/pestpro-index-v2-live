@@ -195,7 +195,7 @@ const faqs: Faq[] = [
   {
     question: 'Does the female really eat the male?',
     answer:
-      'Two sources say the folklore is wrong and one repeats it. Penn State Extension states that males are often killed and eaten by the females shortly after mating, and gives that as the origin of the name widow. Colorado State Extension states that although females of many spider species occasionally feed on males if the female is hungry, this cannibalistic behavior is not the norm despite the common misconception. Kansas State says of the same behaviour that although it has been observed, it is uncommon, and adds that males typically leave the female quickly after mating and often remain near the web feeding on prey she has caught. This page reports all three rather than choosing.',
+      'Two sources say the folklore is wrong and one repeats it. Penn State Extension states that males are often killed and eaten by the females shortly after mating, and gives that as the origin of the name widow. Colorado State Extension states that although females of many spider species occasionally feed on males if the female is hungry, this cannibalistic behavior is not the norm despite the common misconception. Kansas State says of the same behavior that although it has been observed, it is uncommon, and adds that males typically leave the female quickly after mating and often remain near the web feeding on prey she has caught. This page reports all three rather than choosing.',
   },
   {
     question: 'How likely is a bite?',
@@ -376,7 +376,7 @@ export default function BlackWidowSpidersPage() {
           &ldquo;may appear as two unconnected spots, as a roughly rectangular area, or be so faint
           as to be barely visible.&rdquo;
         </em>{' '}
-        It adds that the colour may fade or intensify during the life of any individual.
+        It adds that the color may fade or intensify during the life of any individual.
       </p>
       <p>
         <strong>UF/IFAS compares three species directly:</strong>{' '}
@@ -482,7 +482,7 @@ export default function BlackWidowSpidersPage() {
       </p>
       <p>
         Colorado State offers a different origin for the name altogether: that widow spiders are
-        called that because they are shiny black when full grown, and black is a traditional colour
+        called that because they are shiny black when full grown, and black is a traditional color
         of mourning. <strong>Two against one, and the disagreement stands rather than being
         settled.</strong>
       </p>
@@ -796,7 +796,7 @@ export default function BlackWidowSpidersPage() {
           </li>
           <li>
             <strong>Colorado State and Utah State publish no first-aid list at all.</strong> That is
-            recorded here as an absence rather than filled in from a neighbour.
+            recorded here as an absence rather than filled in from a neighbor.
           </li>
         </ul>
         <p className="m-0 mt-4 text-sm text-red-900">

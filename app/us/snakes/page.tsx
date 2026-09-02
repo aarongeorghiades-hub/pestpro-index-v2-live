@@ -194,7 +194,7 @@ const faqs: Faq[] = [
   {
     question: 'Is it legal to kill a snake?',
     answer:
-      'That depends entirely on the state and this page carries four rather than a general rule. UC IPM states, in a page whose text is stamped December 2014, that California residents can take most rattlesnake species on private lands in any legal manner without a licence or permit, although a bag limit of two still applies, and that the red diamond rattlesnake is prohibited from being taken or killed. Colorado State, attributing Colorado Parks and Wildlife, states it is legal to kill rattlesnakes when necessary to protect life or property provided the method is in accordance with city and county ordinances, and that the midget-faced rattlesnake, the massasauga and all nonpoisonous snakes are protected as nongame wildlife except as noted. Penn State states all snakes in Pennsylvania are protected by Fish and Boat Commission regulations. Florida FWC states some snakes, such as the Eastern indigo snake, are designated endangered or threatened and are protected. Four states, four positions, and no source consulted covers the other forty-six.',
+      'That depends entirely on the state and this page carries four rather than a general rule. UC IPM states, in a page whose text is stamped December 2014, that California residents can take most rattlesnake species on private lands in any legal manner without a license or permit, although a bag limit of two still applies, and that the red diamond rattlesnake is prohibited from being taken or killed. Colorado State, attributing Colorado Parks and Wildlife, states it is legal to kill rattlesnakes when necessary to protect life or property provided the method is in accordance with city and county ordinances, and that the midget-faced rattlesnake, the massasauga and all nonpoisonous snakes are protected as nongame wildlife except as noted. Penn State states all snakes in Pennsylvania are protected by Fish and Boat Commission regulations. Florida FWC states some snakes, such as the Eastern indigo snake, are designated endangered or threatened and are protected. Four states, four positions, and no source consulted covers the other forty-six.',
   },
   {
     question: 'What should I do if someone is bitten?',
@@ -385,7 +385,7 @@ export default function SnakesPage() {
           DON&rsquo;T use a snakebite kit as these do not work and can cause more damage.&rdquo;
         </em>
       </p>
-      <h3>Colorado State publishes its own, attributed to a poison centre</h3>
+      <h3>Colorado State publishes its own, attributed to a poison center</h3>
       <p>
         <strong>Colorado State:</strong>{' '}
         <em>
@@ -547,7 +547,7 @@ export default function SnakesPage() {
         </p>
         <p className="mt-3 mb-0 text-base text-amber-900">
           In California, on the 2014 text, a resident may take most rattlesnakes on private land
-          without a licence or permit, subject to a bag limit. In Pennsylvania,{' '}
+          without a license or permit, subject to a bag limit. In Pennsylvania,{' '}
           <strong>all</strong> snakes are protected by regulation and some may not be taken at all.
           <strong> Neither has been adjusted to fit the other</strong>, and a reader in a third
           state has neither rule.

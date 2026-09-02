@@ -55,15 +55,15 @@ const faqs: Faq[] = [
   {
     question: 'Why does it matter whether they are licensed?',
     answer:
-      'Because University of Florida Extension states that "Illegal pest control operators are increasingly common throughout Florida and other states, posing a threat to people and the environment." That is the source\'s own wording, and it is the reason the check exists. The same publication describes what a licence carries with it: each pest control business location must hold insurance, have a full-time Florida-certified operator in charge of pest control operations at that location, and meet statutory training and record-keeping requirements.',
+      'Because University of Florida Extension states that "Illegal pest control operators are increasingly common throughout Florida and other states, posing a threat to people and the environment." That is the source\'s own wording, and it is the reason the check exists. The same publication describes what a license carries with it: each pest control business location must hold insurance, have a full-time Florida-certified operator in charge of pest control operations at that location, and meet statutory training and record-keeping requirements.',
   },
   {
     question: 'How many companies should I approach?',
     answer:
-      'University of Florida Extension states: "Interview three to five pest control companies." The same publication describes where to look for supporting information — word of mouth, local referrals, internet research and online reviews, and the Better Business Bureau — and treats the licence check as the separate step that establishes whether the company is operating legally at all.',
+      'University of Florida Extension states: "Interview three to five pest control companies." The same publication describes where to look for supporting information — word of mouth, local referrals, internet research and online reviews, and the Better Business Bureau — and treats the license check as the separate step that establishes whether the company is operating legally at all.',
   },
   {
-    question: 'Are there different kinds of pest control licence?',
+    question: 'Are there different kinds of pest control license?',
     answer:
       'Yes, and the distinction decides who may do which job. University of Florida Extension names general household pest control, which it abbreviates GHP, and covers pests such as ants, cockroaches, fleas and rodents; and termites and wood-destroying organisms, abbreviated WDO, which covers beetles and wood-decay fungi as well as termites. The same publication states that if you own your home, termites and wood-destroying organisms should be handled using a service provided by pest management professionals.',
   },
@@ -82,7 +82,7 @@ const faqs: Faq[] = [
 const sources: Source[] = [
   {
     label:
-      "Homeowner's Guide to Selecting a Pest Control Service (ENY-2043/IN1269) — the source of the licence-checking route, the licence categories and the unlicensed-operator warning",
+      "Homeowner's Guide to Selecting a Pest Control Service (ENY-2043/IN1269) — the source of the license-checking route, the license categories and the unlicensed-operator warning",
     publisher:
       'University of Florida IFAS Extension (Faith Oi, James E. Davis, John M. Diaz, Sarah M. Ellis, Randall A. Cantrell, Nelly Nelson, Judy Corbus and Johnalyn Gordon)',
     date: 'Accessed 25 August 2026',
@@ -114,8 +114,8 @@ const sources: Source[] = [
 
 const tocItems = [
   { id: 'why-it-matters', title: 'Why the Choosing Matters' },
-  { id: 'check-the-licence', title: 'Check the Licence First' },
-  { id: 'categories', title: 'The Licence Categories' },
+  { id: 'check-the-licence', title: 'Check the License First' },
+  { id: 'categories', title: 'The License Categories' },
   { id: 'comparing', title: 'Comparing Operators' },
   { id: 'scope', title: 'What This Page Does Not Cover' },
   { id: 'faq', title: 'Questions' },
@@ -192,14 +192,14 @@ export default function ChoosingAPestControlServicePage() {
       </div>
 
       <p>
-        The same publication describes what a licence actually carries with it, which is the
+        The same publication describes what a license actually carries with it, which is the
         part a quotation on a doorstep does not tell you: each pest control business location
         must hold insurance, must have a full-time Florida-certified operator in charge of pest
         control operations at that location, and must meet statutory training and
         record-keeping requirements.
       </p>
 
-      <h2 id="check-the-licence">Check the Licence First</h2>
+      <h2 id="check-the-licence">Check the License First</h2>
       <p>
         Florida publishes a searchable public record of licensees, and the check is free.
         University of Florida IFAS Extension gives the navigation, and it is worth following
@@ -243,9 +243,9 @@ export default function ChoosingAPestControlServicePage() {
         one.
       </p>
 
-      <h2 id="categories">The Licence Categories</h2>
+      <h2 id="categories">The License Categories</h2>
       <p>
-        A licence is not a single thing, and the category decides who may do which job.
+        A license is not a single thing, and the category decides who may do which job.
         University of Florida IFAS Extension names the two a householder is most likely to
         meet:
       </p>
@@ -275,7 +275,7 @@ export default function ChoosingAPestControlServicePage() {
         On where to look for supporting information, the same publication names word of mouth,
         local referrals, internet research and online reviews, and the Better Business Bureau.
         It treats those as <em>supporting</em> information, which is the right order: they tell
-        you what other people thought of a company, and the licence database tells you whether
+        you what other people thought of a company, and the license database tells you whether
         the company is operating legally at all. The second question is the one that has an
         official answer.
       </p>
@@ -290,7 +290,7 @@ export default function ChoosingAPestControlServicePage() {
         for this page publishes a price, and this site does not publish prices.
       </p>
       <p>
-        <strong>It does not carry a licence lookup for any state other than Florida</strong>,
+        <strong>It does not carry a license lookup for any state other than Florida</strong>,
         for the reason given above: the source base for this page is a Florida publication and a
         Florida database.
       </p>

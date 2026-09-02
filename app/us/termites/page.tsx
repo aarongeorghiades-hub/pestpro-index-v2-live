@@ -251,7 +251,7 @@ export default function TermitesPage() {
       <p>
         Two signs are described as diagnostic, and they belong to different animals. UC IPM states
         that <strong>&ldquo;Shelter tubes (sometimes called mud tubes) are the most commonly seen
-        evidence&rdquo;</strong> of subterranean termites. These are the earth-coloured tubes run
+        evidence&rdquo;</strong> of subterranean termites. These are the earth-colored tubes run
         up a foundation wall, a pier or a joist, connecting soil to wood.
       </p>
       <p>
@@ -310,7 +310,7 @@ export default function TermitesPage() {
                 <td className="px-4 py-3 text-gray-700">Three-eighths of an inch</td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-semibold text-gray-900">Swarmer colour</td>
+                <td className="px-4 py-3 font-semibold text-gray-900">Swarmer color</td>
                 <td className="px-4 py-3 text-gray-700">Caramel- to brownish-yellow colored</td>
                 <td className="px-4 py-3 text-gray-700">Black</td>
               </tr>

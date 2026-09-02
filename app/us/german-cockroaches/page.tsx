@@ -573,7 +573,7 @@ export default function GermanCockroachesPage() {
           Four positions from three publishers, and two of the four are the same publisher
           contradicting itself. We do not adjust one to fit another, and we do not treat two sources
           leaning the same way as confirmation &mdash; particularly when they are the same
-          organisation. If you are deciding, the disagreement itself is the useful information.
+          organization. If you are deciding, the disagreement itself is the useful information.
         </p>
       </div>
       <p>

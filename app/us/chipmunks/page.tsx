@@ -231,7 +231,7 @@ const sources: Source[] = [
   },
   {
     label:
-      'Chipmunk Damage Prevention and Control Methods — the source of the cage trap specification, the under-$200 damage figure, the frightening-device finding and the fumigant position. This is a wildlife damage management centre rather than a university extension service, and it is the only source on this page that is not a .edu',
+      'Chipmunk Damage Prevention and Control Methods — the source of the cage trap specification, the under-$200 damage figure, the frightening-device finding and the fumigant position. This is a wildlife damage management center rather than a university extension service, and it is the only source on this page that is not a .edu',
     publisher: 'Internet Center for Wildlife Damage Management (ICWDM)',
     date: 'No publication date carried in the page; accessed 26 August 2026',
     href: 'https://icwdm.org/species/rodents/chipmunks/chipmunk-damage-prevention-and-control-methods/',
@@ -815,7 +815,7 @@ export default function ChipmunksPage() {
           <em>&ldquo;Burrow fumigants are effective for chipmunks in small areas.&rdquo;</em>{' '}
           <strong>
             That disagreement is not resolved on this page. It is worth knowing that ICWDM is a
-            wildlife damage management centre rather than a university extension service, and it is
+            wildlife damage management center rather than a university extension service, and it is
             the only source here that is not a .edu.
           </strong>
         </p>

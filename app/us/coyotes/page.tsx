@@ -190,7 +190,7 @@ const faqs: Faq[] = [
   {
     question: 'Can I trap a coyote myself?',
     answer:
-      'That depends entirely on the state, and this page carries two states rather than a general rule. UC IPM states, in text dated 2007, that since a November 1998 state ballot initiative leghold traps cannot be used to capture coyotes in California except where a human health and safety emergency has been declared by designated officials or in selected situations where an endangered species is threatened by predation. Colorado State University Extension, in a 2018 publication citing Statute 33-6-107(9) and Wildlife Commission Regulations, states that where wildlife is causing damage a person may take listed wildlife including coyotes on their own land without a licence, and that if trapping the only types of traps that may be used are live cage or box traps. A rule written for one state is not advice for another. Neither is presented here as national.',
+      'That depends entirely on the state, and this page carries two states rather than a general rule. UC IPM states, in text dated 2007, that since a November 1998 state ballot initiative leghold traps cannot be used to capture coyotes in California except where a human health and safety emergency has been declared by designated officials or in selected situations where an endangered species is threatened by predation. Colorado State University Extension, in a 2018 publication citing Statute 33-6-107(9) and Wildlife Commission Regulations, states that where wildlife is causing damage a person may take listed wildlife including coyotes on their own land without a license, and that if trapping the only types of traps that may be used are live cage or box traps. A rule written for one state is not advice for another. Neither is presented here as national.',
   },
   {
     question: 'Can a trapped coyote be relocated?',
@@ -251,7 +251,7 @@ export default function CoyotesPage() {
     >
       <p>
         This page is about the coyote as university extension services describe it: an animal that
-        was elusive, has adapted to residential neighbourhoods in some places, and is now the
+        was elusive, has adapted to residential neighborhoods in some places, and is now the
         subject of a body of published advice that is unusually precise in one half and unusually
         cautious in the other.
       </p>
@@ -334,7 +334,7 @@ export default function CoyotesPage() {
       <p>
         UC Cooperative Extension in San Diego County defines the term plainly:{' '}
         <em>&ldquo;Hazing is pretty much what it sounds like&rdquo;</em> &mdash; shouting, arm
-        waving and noise-making directed at coyotes to change their behaviour.
+        waving and noise-making directed at coyotes to change their behavior.
       </p>
       <h3>The 2007 position: devices habituate, and are impractical in suburbs</h3>
       <p>
@@ -386,7 +386,7 @@ export default function CoyotesPage() {
         <p className="mt-3 mb-0 text-base text-amber-900">
           The 71 percent is retreat <em>before an approach closed to 40 metres</em>, across 175
           observations. The 96 percent is immediate retreat <em>from an actual hazing event</em>,
-          and it rests on <strong>23 events</strong>. Different denominators, different behaviours,
+          and it rests on <strong>23 events</strong>. Different denominators, different behaviors,
           and the larger-sounding figure is the one built on the smaller number. They are given
           here separately for that reason.
         </p>
@@ -656,7 +656,7 @@ export default function CoyotesPage() {
         how many there have been by now.
       </p>
       <p>
-        UC IPM also publishes a staged behavioural progression &mdash; it describes{' '}
+        UC IPM also publishes a staged behavioral progression &mdash; it describes{' '}
         <em>
           &ldquo;a predictable pattern of change in coyote behavior in these environments&rdquo;
         </em>{' '}
@@ -673,7 +673,7 @@ export default function CoyotesPage() {
         <p className="mt-3 mb-0 text-base text-amber-900">
           The 2025 Edmonton study states that{' '}
           <em>&ldquo;Although coyote attacks on people remain rare&rdquo;</em>, and its abstract
-          emphasises the rarity of close encounters and the high frequency with which coyotes
+          emphasizes the rarity of close encounters and the high frequency with which coyotes
           retreat from human approaches. <strong>That is not a counter-figure to the one above.</strong>{' '}
           UC IPM&rsquo;s is a cumulative count of attacks in one US state since the 1970s; the
           study&rsquo;s is about rates of close encounter in one Canadian city over two field
@@ -832,7 +832,7 @@ export default function CoyotesPage() {
         <strong>Two states, two rules, and neither is a national rule.</strong> California&rsquo;s
         2007 source describes professionals using padded leghold traps and snares with leghold traps
         barred to the public since 1998; Colorado&rsquo;s 2018 source says a landowner may take a
-        coyote causing damage without a licence but may use live cage or box traps only. This page
+        coyote causing damage without a license but may use live cage or box traps only. This page
         has read two states. It has not read the other forty-eight and says nothing about them.
       </p>
       <h3>A tension between two texts, recorded and not resolved</h3>
@@ -902,7 +902,7 @@ export default function CoyotesPage() {
           Those two sentences are consecutive in the source, and they are given together here for
           that reason.
         </strong>{' '}
-        The first is about behaviour in one locality; the second is about population numbers. They
+        The first is about behavior in one locality; the second is about population numbers. They
         are routinely quoted against each other as though one refuted the other. This page renders
         both, says what each is measuring, and leaves the source&rsquo;s own framing intact.
       </p>

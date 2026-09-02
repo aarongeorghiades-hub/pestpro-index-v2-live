@@ -176,7 +176,7 @@ const sources: Source[] = [
   },
   {
     label:
-      'Yellowjackets — the source of the bald-faced hornet relationship statement, the nest-defence statement and one treatment-timing statement',
+      'Yellowjackets — the source of the bald-faced hornet relationship statement, the nest-defense statement and one treatment-timing statement',
     publisher: 'Oregon State University, Solve Pest Problems',
     date: 'Undated on the page; read 30 August 2026',
     href: 'https://solvepestproblems.oregonstate.edu/insects-spiders/yellowjackets-wasps',
