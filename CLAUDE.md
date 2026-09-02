@@ -860,3 +860,104 @@ closes, having earned nothing from it. Building out-of-season candidates
 early, so they have months in the index before demand arrives, is the only
 sequencing that lets a new route actually catch its own season rather than
 permanently trailing it by one year.
+
+## S61 R10 — LAWS 166 TO 169 (SESSION CLOSE RATIFICATION)
+
+LAW 166 — EVERY MATCHER IS CODIFIED. No matcher is retyped from memory in
+a round. Every matcher lives in `scripts/gates.mjs` with a `probePos` and a
+`probeNeg` that RUN ON EVERY INVOCATION, so a broken matcher fails loudly
+instead of returning a silent zero. A round that needs a new matcher
+CODIFIES IT BEFORE USING IT — it does not use it once and write it down
+afterwards.
+
+EVIDENCE. At S61 R8 an inventory found 15 matchers in use and only 8
+codified: 7 lived nowhere but in prose inside round reports and were
+retyped every round. That is precisely the drift by which the S60 R9
+`hasPart` matcher — typed as `"@type":"ListItem"` against a hub whose
+entries are `"@type":"WebPage"` — returned a false zero, was reported as a
+clean parity pass, and survived undetected into S61 R8. All 15 were
+codified at S61 R9. The wrong `ListItem` form is deliberately RETAINED in
+the self-test as assertion B and asserted DEAD on a known positive on every
+run, so it cannot be reintroduced by anyone retyping it out of the S60 R9
+report.
+
+LAW 167 — A CHECK THAT CANNOT FAIL IS NOT A GATE. A check that cannot fail
+by construction is declared `kind: 'inventory'` and prints `INV(n)`. IT
+NEVER PRINTS PASS. A structurally-passing check reported as PASS is a false
+assurance, and a reader of the report cannot tell it apart from a gate that
+was tested and held.
+
+EVIDENCE. M13, the S59-B non-Latin codepoint scan, and M14, the ASIN
+declaration extractor, were reclassified from gates to inventories at
+S61 R9. The estate legitimately carries 23 distinct non-ASCII codepoints
+and 144 declared ASINs; neither figure is a defect, and neither check has
+any failing state. This law extends Law 75 — a gate that tests a derived
+value against its source can only pass — from that one case to the general
+rule, and names the remedy: declare the kind, do not dress it as a gate.
+
+LAW 168 — G7 EXCLUSIONS. The cross-cluster link gate excludes THREE benign
+classes, and only these three:
+  (a) THE HUB LINKING TO ITS CHILDREN. Required by S54-H, which gates on
+      route/hub-link/hasPart set-equality. A gate that fails the hub for
+      satisfying another gate is two sources of truth in contradiction
+      (Law 41).
+  (b) A PAGE LINKING TO ITSELF. A normal in-page anchor.
+  (c) INTRA-CLUSTER SIBLING LINKS. Legitimate topic-cluster structure. An
+      intra-cluster link is not a CROSS-cluster link, which is the only
+      thing the gate is named for.
+
+(a) and (b) were ruled by the PM at S61 R9. (c) WAS APPLIED BY CC AT S61 R9
+BEYOND THAT RULING, FLAGGED IN THE ROUND REPORT RATHER THAN FOLDED IN
+SILENTLY, AND IS RATIFIED HERE. Implementing (a) and (b) requires giving the
+matcher cluster membership, and once it has that, (c) follows from the same
+fact; without (c) the gate would still have failed about eleven routes for
+links its own name says are fine. Estate effect across the three
+exclusions: 13 routes failing to 2.
+
+STILL OPEN, NOT CLOSED BY THIS LAW: the two residual failures are
+`/us/flies` and `/us/fruit-flies` linking to `/us/cluster-flies`.
+`cluster-flies` sits in two natural groupings — the overwintering invaders,
+and the fly family — and is currently held in `overwintering` only because
+that is where the pre-R9 matcher put it. WHICH GROUPING OWNS
+`cluster-flies` HAS NEVER BEEN RULED. Until it is, G7's zero is unavailable
+on those two routes and must not be claimed.
+
+LAW 169 — US ESTATE VOICE IS US ENGLISH. Every `/us` route uses US spelling
+in OUR OWN VOICE.
+
+EXEMPT WITHOUT EXCEPTION:
+  - QUOTATIONS. Reproduced exactly as sourced under Law 164. A UK source's
+    "licence" STAYS. This exemption is absolute and is never traded against
+    consistency.
+  - Proper nouns, organization names, publication titles, statute names.
+  - Fetched product titles (S50-H) — `cardName` and `titleAsFetched`.
+  - Any URL, slug, filename, id or code identifier.
+
+THE UK ESTATE IS UNAFFECTED. This law binds `/us` routes only.
+
+EVIDENCE. S61 R8 measured 67 UK spellings in the site's own voice across 19
+of 52 US routes — licence x25, colour x15, behaviour x13, centre x4,
+neighbour x3, mould x3, emphasise, defence, organisation, organising. The
+worst case, `/us/choosing-a-pest-control-service`, served "Check the Licence
+First" as an H2 while its own `<title>` already read "Check the License".
+Swept at S61 R9: 71 source occurrences, 69 converted, rendered G4 67 to 0.
+
+HOW THE EXEMPTIONS WERE PROVEN RATHER THAN ASSERTED, and the standard any
+future sweep must meet: 876 genuine quotation spans were compared before and
+after and ZERO were altered; 39 US spellings inside quotations were left
+exactly as sourced. The decisive case is the `/us/formosan-termites` FAQ,
+where a quoted "This behavior and defensive secretion differentiate
+Coptotermes soldiers" and our own "gives a behavioural one that needs no
+ruler" sit in THE SAME STRING and only the second changed. The two
+`check-the-licence` identifiers — a TOC entry and an `<h2 id>` — were held
+out of the substitution and restored byte-identically, so no fragment link
+broke; only the visible heading text changed. Token counts were identical
+before and after in all 19 files, and every one of the 69 differing tokens
+matched one of 18 declared UK-to-US pairs, with zero unexpected changes.
+
+A QUOTATION-SPAN MATCHER USED FOR THIS PURPOSE MUST USE GENUINE QUOTATION
+DELIMITERS ONLY — the HTML entities and the curly quotes. In a `.tsx` file
+the straight ASCII double quote is a JS STRING DELIMITER, not a quotation
+mark, and a matcher that treats it as one produces false positives. That
+happened at S61 R9 and is recorded under Law 166 as an uncodified matcher
+awaiting codification.
