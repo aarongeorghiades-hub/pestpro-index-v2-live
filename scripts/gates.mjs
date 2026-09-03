@@ -130,10 +130,22 @@ const ASIN_RX_SOURCE = String.raw`asin=["']([A-Z0-9]{10})["']|asin:\s*["']([A-Z0
 // the matcher fires on a page linking to its own siblings, and on a page
 // linking to itself.
 //
-// STANDING QUESTION, NOT RESOLVED HERE: `cluster-flies` sits in two natural
-// groupings — the overwintering invaders, and the fly family with /us/flies and
-// /us/fruit-flies. It is held in `overwintering` because that is where the
-// pre-R9 matcher put it. S61 R8 referred the question; no ruling has been made.
+// MEMBERSHIP IS A SET, NOT A SINGLE VALUE — S62 R4 PM RULING. `cluster-flies`
+// belongs to TWO clusters and always did: the overwintering invaders it shares a
+// header nav with, and the fly family headed by /us/flies. The old model let a
+// slug hold exactly one cluster, so whichever one it was put in, the links to
+// the other read as leaks. That is what left G7 stuck at two failures from
+// S61 R9 to S62 R3 with the question referred and unruled.
+//
+// MEASURED BEFORE CHOOSING THIS SHAPE (Law 44). /us/cluster-flies links to all
+// five overwintering siblings AND to /us/flies and /us/fruit-flies, and all five
+// overwintering pages link back to it. MOVING the slug into the fly cluster
+// would therefore not have fixed anything — it converts 2 failing routes into 6,
+// trading the fly leaks for ten overwintering ones. Only set membership closes it.
+//
+// THIS IS THE GENERAL MECHANISM, NOT A TWO-ROUTE EXCEPTION. Any slug may appear
+// in any number of cluster lists; two pages are siblings when their cluster sets
+// intersect. A future bridge page is defined the same way, by being listed twice.
 const CLUSTERS = {
   joro: ['joro-spider', 'joro-spider-webs', 'joro-spider-range', 'are-joro-spiders-dangerous'],
   overwintering: [
@@ -144,8 +156,12 @@ const CLUSTERS = {
     'asian-lady-beetles',
     'cluster-flies',
   ],
+  // /us/flies is the general head; cluster flies and fruit flies are the two
+  // specific children a reader arrives at having identified the wrong fly.
+  flies: ['flies', 'cluster-flies', 'fruit-flies'],
 };
-const clusterOf = (slug) => Object.keys(CLUSTERS).find((c) => CLUSTERS[c].includes(slug)) || null;
+const clustersOf = (slug) => Object.keys(CLUSTERS).filter((c) => CLUSTERS[c].includes(slug));
+const shareCluster = (a, b) => clustersOf(a).some((c) => clustersOf(b).includes(c));
 
 const all = (re, s) => [...s.matchAll(new RegExp(re.source, re.flags))];
 const hitStrings = (re, s) => all(re, s).map((m) => m[0]);
@@ -287,40 +303,53 @@ const MATCHERS = [
     scope: 'document',
     surface: 'full',
     name: 'No cross-cluster link leaking between US clusters',
-    // S61 R9 PM RULING, two benign classes excluded:
+    // Law 168, three benign classes excluded:
     //   (a) THE HUB LINKING TO ITS CHILDREN IS WHAT S54-H REQUIRES. Excluded.
     //   (b) A PAGE LINKING TO ITSELF IS A NORMAL IN-PAGE ANCHOR. Excluded.
-    // Implementing those two exclusions requires knowing which cluster the page
-    // being read belongs to, and once that is known, a page linking to its own
-    // siblings is excluded by the same fact — an intra-cluster link is not a
-    // CROSS-cluster link, which is the only thing this gate is named for. That
-    // third exclusion goes beyond the two the ruling named, so it is reported
-    // explicitly in the round record rather than folded in silently.
+    //   (c) INTRA-CLUSTER SIBLING LINKS. Legitimate topic-cluster structure, and
+    //       not CROSS-cluster, which is the only thing this gate is named for.
+    // Siblinghood is SET INTERSECTION, not equality — see CLUSTERS above. A page
+    // in two clusters is a sibling of both memberships, which is what makes
+    // /us/cluster-flies legal in both directions.
     test: (t, ctx = {}) => {
       const slug = ctx.slug ?? null;
       if (slug === 'us') return []; // (a) the hub
-      const home = clusterOf(slug);
       return all(/href="\/us\/([a-z0-9-]+)"/gi, t)
         .map((m) => m[1])
         .filter((target) => {
-          const c = clusterOf(target);
-          if (!c) return false; // target is in no cluster
+          if (!clustersOf(target).length) return false; // target is in no cluster
           if (target === slug) return false; // (b) self-link
-          if (c === home) return false; // intra-cluster sibling
+          if (shareCluster(slug, target)) return false; // (c) intra-cluster sibling
           return true;
         })
         .map((target) => `/us/${target}`);
     },
-    probePos: '<a href="/us/joro-spider">x</a>',
+    // POSITIVE LIMB (S49-L) — links the gate MUST still catch. The second is the
+    // one that matters after the S62 R4 ruling: /us/flies and the overwintering
+    // cluster share no membership, so a link between them is still a leak. If
+    // the fly ruling had been implemented as a blanket exception rather than as
+    // cluster membership, this probe would go dead and say so.
+    probePos: [
+      { text: '<a href="/us/joro-spider">x</a>', ctx: { slug: 'pocket-gophers' } },
+      { text: '<a href="/us/stink-bugs-in-house">x</a>', ctx: { slug: 'flies' } },
+    ],
     probeCtx: { slug: 'pocket-gophers' },
+    // NEGATIVE LIMB — links the gate MUST NOT catch.
     probeNeg: [
       { text: '<a href="/us/pocket-gophers">x</a>', ctx: { slug: 'pocket-gophers' } },
       // (a) the hub linking to a clustered child — required by S54-H
       { text: '<a href="/us/joro-spider">x</a>', ctx: { slug: 'us' } },
       // (b) a page linking to itself
       { text: '<a href="/us/joro-spider">x</a>', ctx: { slug: 'joro-spider' } },
-      // intra-cluster sibling
+      // (c) intra-cluster sibling
       { text: '<a href="/us/joro-spider-webs">x</a>', ctx: { slug: 'joro-spider' } },
+      // (c) THE S62 R4 RULING, both directions of the fly cluster
+      { text: '<a href="/us/cluster-flies">x</a>', ctx: { slug: 'flies' } },
+      { text: '<a href="/us/cluster-flies">x</a>', ctx: { slug: 'fruit-flies' } },
+      { text: '<a href="/us/fruit-flies">x</a>', ctx: { slug: 'flies' } },
+      // and the bridge page's OTHER membership, which the ruling must not break
+      { text: '<a href="/us/boxelder-bugs">x</a>', ctx: { slug: 'cluster-flies' } },
+      { text: '<a href="/us/flies">x</a>', ctx: { slug: 'cluster-flies' } },
     ],
   },
   {

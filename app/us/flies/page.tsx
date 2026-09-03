@@ -121,6 +121,7 @@ const tocItems = [
   { id: 'health', title: 'What the Sources Say They Carry' },
   { id: 'bite', title: 'House Flies Cannot Bite. Some Other Flies Can' },
   { id: 'not-cluster', title: 'If the Flies Are Slow and at a Window' },
+  { id: 'not-fruit', title: 'If the Flies Are Small and at the Fruit Bowl' },
   { id: 'lifecycle', title: 'Why They Appear So Fast' },
   { id: 'sanitation', title: 'What Every Source Puts First' },
   { id: 'traps', title: 'Sticky Paper and Ribbons' },
@@ -302,6 +303,20 @@ export default function FliesPage() {
           fall inside it, and where face flies and blow flies are covered. None of that is repeated
           here, so the two pages cannot drift apart.
         </strong>
+      </p>
+
+      <h2 id="not-fruit">If the Flies Are Small and at the Fruit Bowl</h2>
+      <p>
+        <strong>Then they are probably not the subject of this page either.</strong> The fly this
+        page covers is a large one that arrives from a breeding site elsewhere and carries
+        contamination in on its body. A small fly circling ripening produce, a recycling box or a
+        rarely used drain is a different insect, breeding where you are seeing it rather than
+        arriving from outside.
+      </p>
+      <p>
+        <Link href="/us/fruit-flies">Our fruit flies page</Link> covers the small red-eyed fly of
+        the kitchen, where it breeds, and the different control step that follows from that. It
+        also separates it from the fungus gnat of houseplant soil, which is a third insect again.
       </p>
 
       <h2 id="lifecycle">Why They Appear So Fast</h2>
