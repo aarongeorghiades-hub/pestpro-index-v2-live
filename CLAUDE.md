@@ -1268,3 +1268,74 @@ mole-and-vole-control, rats, skunks.
 THE ELEVEN, BY NAME (no outbound /us route link): arizona-bark-scorpions,
 bed-bugs, black-widow-spiders, brown-recluse-spiders, california-trapping-rules,
 chipmunks, house-mice, mole-and-vole-control, rats, snakes, ticks.
+
+## S62 R6 — LAW 164 AMENDED: THE CONTROL MOVES TO THE PAGE
+
+PM RULING, S62 R6. THE PRIMARY LAW 164 CONTROL IS THE SHIPPED-PAGE AUDIT.
+Every quotation span is extracted FROM THE DRAFTED PAGE and verified against
+its fetched source. Any pre-draft list is ADVISORY ONLY. A quotation present on
+the page and absent from every verified source is a FAILURE, never a silent
+pass.
+
+EVIDENCE. Five quotations reached live pages without ever entering the drafting
+list — two on /us/groundhogs (found at S62 R4), one on /us/earwigs and two on
+/us/fungus-gnats (both found at S62 R5, in the round that had just been told to
+reconcile the first two). All five happened to pass when audited afterwards.
+THE CONTROL WAS VERIFYING A HAND-MAINTAINED LIST THAT THE DRAFT THEN DIVERGED
+FROM, which is a control on the wrong artefact, not a drafting slip.
+
+M16 IS THE CODIFIED IMPLEMENTATION (Law 166), in scripts/gates.mjs, with
+`node scripts/gates.mjs --quotations` as the estate runner. Its POSITIVE probe
+is a page carrying a quotation that is in no source — the exact case that
+escaped five times and that M15 cannot see, because M15 only ever answers a
+question about a quotation it has already been handed. M15 IS RETAINED: it
+still catches an altered quotation that IS on the list, which is a different
+fault.
+
+TWO EXTRACTOR FACTS THAT ARE PART OF THE CONTROL, NOT DETAILS:
+  - Each &ldquo; pairs with the LAST &rdquo; BEFORE THE NEXT &ldquo;. A source's
+    own inches mark inside a quotation ("the top 12&rdquo; left loose" on
+    /us/groundhogs) makes a non-greedy match split the span in the wrong place.
+  - NESTED JSX TAGS ARE STRIPPED. Before that step the calibration run produced
+    false positives on four routes, all of them quotations carrying an <em>
+    around a binomial. Law 151: a false result from a stripper is a stripper bug
+    until a known positive re-proves it.
+
+A SCARE-QUOTED PHRASE IN OUR OWN VOICE IS NOT A QUOTATION. "top picks" on
+/us/joro-spider-webs describes a thing the site deliberately did NOT build.
+These are held out BY THE CALLER, named one by one, never by loosening the
+matcher — and the hold-out is itself probed on every run.
+
+## S62 R6 — LAW 175: A QUOTATION IS ONLY AUDITABLE WHILE ITS SOURCE BODY SURVIVES
+
+LAW 175 — THE FETCHED SOURCE BODY IS PART OF THE EVIDENCE, NOT SCRATCH. Law 164
+verification is reproducible only for as long as the fetched body is on disk.
+The corpora live in per-round working directories that were never treated as an
+archive, and most of the estate's have not survived.
+
+MEASURED AT S62 R6, the first estate-wide run of M16 over all 56 route files:
+
+    quotation spans on the estate            1,764
+    spans matching a reachable source          586
+    spans matching nothing                   1,178
+
+    ADJUDICATED CLEAN, every span matched       13 routes
+    NOT ADJUDICABLE, no corpus at all            5 routes
+    PARTIAL, some corpora present               30 routes
+    carrying no quotation at all                 8 routes
+
+THE 1,178 ARE NOT 1,178 DEFECTS AND MUST NEVER BE REPORTED AS SUCH. Every route
+whose sources are still on disk verifies at 100% — including all four built this
+session, and california-trapping-rules at 45/45 and palmetto-bugs at 71/89.
+The unmatched spans track CORPUS AVAILABILITY, not correctness. Reporting them
+as findings would manufacture a defect class out of a retention gap, which is
+exactly Law 94.
+
+CONSEQUENCE, AND IT IS A DUTY ON EVERY FUTURE ROUND: a round that fetches source
+bodies KEEPS THEM, and names the directory in its report so a later round can
+find them. A round that cannot verify a page's quotations says the page is NOT
+ADJUDICABLE rather than reporting either a pass or a failure it has not earned.
+
+WHAT IS STILL OPEN: whether to re-fetch the missing corpora for the 35 partial
+and unadjudicable routes. That is a large fetch against many publishers, several
+of which are blocked, and it was NOT undertaken this round. Referred.

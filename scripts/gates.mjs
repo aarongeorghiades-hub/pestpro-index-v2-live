@@ -52,6 +52,9 @@ import {
   QUOTE_SOURCE_FIXTURE,
   QUOTE_PRESENT,
   QUOTE_ALTERED,
+  PAGE_WITH_UNVERIFIED_QUOTE,
+  PAGE_WITH_VERIFIED_QUOTES,
+  PAGE_WITH_SCARE_QUOTE,
 } from './fixtures.mjs';
 import { UK_CLASSES, UK_SPELLING_RE } from './ukspelling.mjs';
 
@@ -177,6 +180,50 @@ const CLUSTERS = {
 };
 const clustersOf = (slug) => Object.keys(CLUSTERS).filter((c) => CLUSTERS[c].includes(slug));
 const shareCluster = (a, b) => clustersOf(a).some((c) => clustersOf(b).includes(c));
+
+// THE QUOTATION-SPAN EXTRACTOR — S62 R6, and it is shared so it cannot drift.
+//
+// Pairs each &ldquo; with the LAST &rdquo; before the next &ldquo;, because a
+// source's own inches mark inside a quotation ("the top 12&rdquo; left loose",
+// /us/groundhogs) makes a non-greedy match split the span in the wrong place.
+//
+// STRIPS NESTED JSX TAGS. Without that step a quotation carrying an <em> around
+// a binomial -- "slightly larger than the common house fly, <em>Musca
+// domestica</em>" -- can never match its source, and the S62 R6 calibration run
+// produced exactly that false positive on four routes before the strip was
+// added (Law 151: a false result from a stripper is a stripper bug until a
+// known positive re-proves it).
+function quoteSpans(text) {
+  const op = [...text.matchAll(/&ldquo;/g)].map((m) => m.index);
+  const cl = [...text.matchAll(/&rdquo;/g)].map((m) => m.index);
+  const out = [];
+  for (let k = 0; k < op.length; k++) {
+    const o = op[k];
+    const next = k + 1 < op.length ? op[k + 1] : text.length;
+    const inner = cl.filter((c) => c > o && c < next);
+    if (!inner.length) continue;
+    const raw = text
+      .slice(o + 7, Math.max(...inner))
+      .replace(/<[^>]+>/g, '')
+      .replace(/\{[^}]*\}/g, '');
+    const q = decodeEntities(raw).replace(/\s+/g, ' ').trim();
+    if (q) out.push(q);
+  }
+  return out;
+}
+const decodeEntities = (t) =>
+  t
+    .replace(/&ldquo;/g, '\u201c')
+    .replace(/&rdquo;/g, '\u201d')
+    .replace(/&rsquo;/g, '\u2019')
+    .replace(/&lsquo;/g, '\u2018')
+    .replace(/&mdash;/g, '\u2014')
+    .replace(/&ndash;/g, '\u2013')
+    .replace(/&deg;/g, '\u00b0')
+    .replace(/&frac12;/g, '\u00bd')
+    .replace(/&hellip;/g, '\u2026')
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, '&');
 
 const all = (re, s) => [...s.matchAll(new RegExp(re.source, re.flags))];
 const hitStrings = (re, s) => all(re, s).map((m) => m[0]);
@@ -521,6 +568,42 @@ const MATCHERS = [
     probePos: QUOTE_ALTERED,
     probeNeg: QUOTE_PRESENT,
   },
+  {
+    id: 'M16',
+    kind: 'gate',
+    scope: 'source',
+    surface: 'page-spans',
+    name: 'Law 164 RELOCATED: every quotation span ON THE PAGE must match a fetched source',
+    // WHY THIS EXISTS AND M15 IS NOT ENOUGH. M15 asks "does this quotation match
+    // its source" and is only ever as good as the list it is handed. Between
+    // S62 R3 and S62 R5 FIVE quotations reached live pages without ever entering
+    // that list -- two on /us/groundhogs, one on /us/earwigs, two on
+    // /us/fungus-gnats -- because the control verified a hand-maintained list
+    // that the draft then diverged from. All five happened to pass when audited
+    // afterwards; the next one need not.
+    //
+    // M16 ASKS IT THE OTHER WAY ROUND: extract every quotation span FROM THE
+    // PAGE and require each to match. A quotation the drafter forgot to list
+    // cannot escape, because the page is the input, not the list.
+    //
+    // A SPAN PRESENT ON THE PAGE AND ABSENT FROM EVERY SOURCE IS A FAILURE,
+    // never a silent pass.
+    test: (pageText, ctx = {}) => {
+      const corpus = ctx.corpus ?? QUOTE_SOURCE_FIXTURE;
+      const hay = corpus.replace(/\s+/g, ' ');
+      const held = new Set(ctx.ownVoice ?? []);
+      return quoteSpans(pageText).filter((q) => !held.has(q) && !hay.includes(q));
+    },
+    // POSITIVE LIMB: a page carrying a quotation that is in NO source. This is
+    // the exact case that escaped five times and that M15 cannot see.
+    probePos: PAGE_WITH_UNVERIFIED_QUOTE,
+    probeNeg: [
+      // every span on the page is in the corpus
+      PAGE_WITH_VERIFIED_QUOTES,
+      // a scare-quoted phrase in our own voice, held out by the caller
+      { text: PAGE_WITH_SCARE_QUOTE, ctx: { ownVoice: ['top picks'] } },
+    ],
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -719,6 +802,61 @@ async function runLinkGraph() {
   return { total: content.length, noInboundWithHub, noInboundNoHub, noOutbound };
 }
 
+// THE ESTATE QUOTATION AUDIT — S62 R6. Runs M16 over every /us route file.
+//
+// IT CAN ONLY ADJUDICATE A ROUTE WHOSE FETCHED SOURCE BODIES ARE STILL ON DISK.
+// The corpora live in ~/pp-s*/ and are per-round working directories, not a
+// retained archive; most of the estate's were never kept. A route whose sources
+// are gone produces unmatched spans that are NOT defects, and reporting them as
+// such would manufacture a defect class out of a retention gap (Law 94).
+//
+// So this reports a PARTITION, not a verdict: routes fully matched, routes with
+// no corpus at all, and routes in between. Only the first group is adjudicated.
+async function runQuotationAudit() {
+  const home = process.env.HOME ?? '';
+  const dirs = [];
+  try {
+    for (const d of await readdir(home)) if (/^pp-s\d+r/.test(d)) dirs.push(join(home, d));
+  } catch { /* no corpora reachable */ }
+  const texts = [];
+  for (const d of dirs) {
+    let entries = [];
+    try { entries = await readdir(d); } catch { continue; }
+    for (const f of entries) {
+      if (!f.endsWith('.txt')) continue;
+      try { texts.push(await readFile(join(d, f), 'utf8')); } catch { /* skip */ }
+    }
+  }
+  // Earlier sessions kept their fetched bodies in a single pack-and-fetch file
+  // in $HOME rather than in a per-round directory. Those are corpora too, and
+  // omitting them moved five routes from PARTIAL to NOT ADJUDICABLE on the
+  // first run of this audit -- a false negative in the corpus loader, not in
+  // the estate (Law 151).
+  try {
+    for (const f of await readdir(home)) {
+      if (/^pestpro-.*fetch.*\.md$/.test(f)) {
+        try { texts.push(await readFile(join(home, f), 'utf8')); } catch { /* skip */ }
+      }
+    }
+  } catch { /* unreachable */ }
+  const corpus = texts.join('\n\n');
+  const M16 = MATCHERS.find((m) => m.id === 'M16');
+  const dir = join(ROOT, 'app/us');
+  const slugs = (await readdir(dir, { withFileTypes: true }))
+    .filter((e) => e.isDirectory() && e.name !== 'components')
+    .map((e) => e.name)
+    .sort();
+  const rows = [];
+  for (const slug of slugs) {
+    let text;
+    try { text = await readFile(join(dir, slug, 'page.tsx'), 'utf8'); } catch { continue; }
+    const spans = quoteSpans(text);
+    const bad = M16.test(text, { corpus });
+    rows.push({ slug, total: spans.length, unmatched: bad.length, bad });
+  }
+  return { corpusFiles: texts.length, corpusChars: corpus.length, rows };
+}
+
 async function runParity() {
   const man = JSON.parse(await readFile(join(ROOT, '.next/app-path-routes-manifest.json'), 'utf8'));
   const routes = new Set(
@@ -741,6 +879,31 @@ async function runParity() {
     orphanAnchors: d(anchors, routes),
     orphanHasPart: d(hasPart, routes),
   };
+}
+
+async function runQuotationReport() {
+  const a = await runQuotationAudit();
+  const withQ = a.rows.filter((r) => r.total);
+  const full = withQ.filter((r) => !r.unmatched);
+  const zero = withQ.filter((r) => r.unmatched === r.total);
+  const part = withQ.filter((r) => r.unmatched && r.unmatched < r.total);
+  const noQ = a.rows.filter((r) => !r.total);
+  const spans = withQ.reduce((n, r) => n + r.total, 0);
+  const bad = withQ.reduce((n, r) => n + r.unmatched, 0);
+  console.log(`\nESTATE QUOTATION AUDIT (M16) — ${a.rows.length} route files`);
+  console.log(`  corpora reachable        ${a.corpusFiles} files, ${a.corpusChars.toLocaleString()} chars`);
+  console.log(`  quotation spans          ${spans}`);
+  console.log(`  spans matching a source  ${spans - bad}`);
+  console.log(`  spans matching nothing   ${bad}   <-- NOT all defects; see partition`);
+  console.log(`\n  ADJUDICATED CLEAN (every span matched): ${full.length}`);
+  for (const r of full) console.log(`     ${r.slug.padEnd(34)}${r.total}/${r.total}`);
+  console.log(`\n  NOT ADJUDICABLE — no span matched, corpus absent: ${zero.length}`);
+  console.log(`     ${zero.map((r) => r.slug).join(', ') || 'none'}`);
+  console.log(`\n  PARTIAL — some corpora present, some absent: ${part.length}`);
+  for (const r of part) console.log(`     ${r.slug.padEnd(34)}${r.total - r.unmatched}/${r.total}`);
+  console.log(`\n  NO QUOTATIONS AT ALL: ${noQ.length}`);
+  console.log(`     ${noQ.map((r) => r.slug).join(', ') || 'none'}`);
+  return 0;
 }
 
 async function runEstate() {
@@ -820,6 +983,7 @@ async function main() {
   }
 
   if (arg === '--estate') process.exit(await runEstate());
+  if (arg === '--quotations') process.exit(await runQuotationReport());
   if (arg === '--parity') {
     console.log(JSON.stringify(await runParity(), null, 2));
     process.exit(0);

@@ -44,3 +44,29 @@ export const QUOTE_PRESENT =
   'Their long legs give them a spider-like appearance.';
 export const QUOTE_ALTERED =
   'Their long legs give them a spider like appearance.'; // hyphen removed
+
+// ---- M16, the RELOCATED Law 164 control (S62 R6) --------------------------
+// M15 asks "does THIS quotation match its source" and is only as good as the
+// list it is handed. M16 asks the question the other way round: "does EVERY
+// quotation ON THE PAGE match a source" -- so a quotation that never reached
+// the drafting list cannot escape. Three did, across two rounds, which is the
+// evidence for the relocation.
+//
+// PAGE_WITH_UNVERIFIED_QUOTE reproduces that exact escape: two quotation spans,
+// one copied out of QUOTE_SOURCE_FIXTURE and one that was never in any source
+// at all. It is the POSITIVE probe, and it is the case M15 could not see.
+export const PAGE_WITH_UNVERIFIED_QUOTE =
+  '<p>The source states <em>&ldquo;Their long legs give them a spider-like ' +
+  'appearance.&rdquo;</em> and also <em>&ldquo;They hibernate through the ' +
+  'winter in dry cellars.&rdquo;</em></p>';
+// Same page with the second span removed: every remaining quotation is in the
+// fixture, so the matcher must be SILENT. The NEGATIVE probe.
+export const PAGE_WITH_VERIFIED_QUOTES =
+  '<p>The source states <em>&ldquo;Their long legs give them a spider-like ' +
+  'appearance.&rdquo;</em> and adds <em>&ldquo;They can damage stored items, ' +
+  'such as garments and linens packed in boxes.&rdquo;</em></p>';
+// A scare-quoted phrase in OUR OWN VOICE is not a quotation and must not be
+// reported as one. Held out by the caller, not by the matcher, and probed here
+// so the distinction is exercised on every run.
+export const PAGE_WITH_SCARE_QUOTE =
+  '<p>We have not built a &ldquo;top picks&rdquo; category around one item.</p>';
