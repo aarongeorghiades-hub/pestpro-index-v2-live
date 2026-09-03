@@ -1339,3 +1339,65 @@ ADJUDICABLE rather than reporting either a pass or a failure it has not earned.
 WHAT IS STILL OPEN: whether to re-fetch the missing corpora for the 35 partial
 and unadjudicable routes. That is a large fetch against many publishers, several
 of which are blocked, and it was NOT undertaken this round. Referred.
+
+## S62 R6 — G7 IS ARMED, AND ITS SUBJECT CHANGED
+
+PM RULING (a), S62 R6. A HUB LINK ALONE DOES NOT SATISFY "NOTHING LINKS TO IT".
+Two readings are RETIRED because neither can fail: "nothing links to it"
+COUNTING the hub, since S54-H already gates every route into the hub, and "no
+/us href of any kind", since the header nav always emits one. Law 75 and
+Law 167: a check that can only pass is theatre.
+
+THE TWO REAL READINGS, and they are now G7:
+    inbound links EXCLUDING the hub
+    outbound links to another content route
+
+G7'S SUBJECT HAS THEREFORE CHANGED, AND THIS SUPERSEDES LAW 174 ON ITS KIND.
+Law 174 declared G7 an inventory because the CROSS-CLUSTER LINK class was empty
+by construction after the S62 R5 directionality ruling. That remains true and
+the cross-cluster count survives as an informational line in runLinkGraph()
+that is never reported as a gate. What G7 now TESTS is the orphan question the
+S62 R5 ruling said it existed for, which CAN fail — so it is a GATE again.
+Law 172's directionality and set-membership mechanism are untouched.
+
+IT WAS NOT ARMED WHILE IT FAILED. At S62 R5 these readings returned 8 and 8 and
+the gate was left as an inventory rather than shipped red. It was armed only
+after S62 R6 Task 2 took both to zero.
+
+PROBED ON A FIXTURE, NOT ON A BROKEN ROUTE. The positive limb is three
+CONSTRUCTED graph rows — no inbound, no outbound, and isolated — so the gate is
+proved able to fail without leaving a real route broken to prove it. The
+negative limb is a properly linked row AND THE HUB, which is exempt by name
+because it legitimately has no non-hub inbound link.
+
+## S62 R6 — LAW 176: A LINK MATCHER MUST TAKE EVERY URL FORM THE ESTATE USES
+
+LAW 176 — THE S62 R5 ORPHAN FIGURES WERE WRONG AND THIS IS HOW. runLinkGraph()
+counted only `href="/us/..."`. The estate also carries EIGHT internal links
+written ABSOLUTE, as `href="https://pestproindex.com/us/..."` — two on
+/us/black-widow-spiders, one on /us/chipmunks, four on /us/ground-squirrels and
+one on /us/mole-and-vole-control.
+
+    REPORTED AT S62 R5    10 routes with no inbound, 11 with no outbound
+    ACTUALLY               8 routes with no inbound,  8 with no outbound
+
+FIVE ROUTE CLASSIFICATIONS WERE WRONG, EVERY ONE A FALSE POSITIVE.
+brown-recluse-spiders and chipmunks were never inbound-orphans;
+black-widow-spiders, chipmunks and mole-and-vole-control were never
+outbound-orphans. HAD THE FIX BEEN WRITTEN FROM THE R5 LIST, five links would
+have been manufactured into pages that already had them.
+
+IT WAS FOUND BY OPENING /us/black-widow-spiders TO SITE A LINK AND FINDING THE
+LINK ALREADY THERE — that is, by the instruction not to manufacture a link to
+satisfy a gate. A gate's own output is not evidence that the defect is real;
+the page is.
+
+THIS IS LAW 82 IN A NEW PLACE. Law 82 said a component-anchored extractor is
+blind to a surface that does not use the component. THIS EXTENDS IT: A MATCHER
+ANCHORED ON ONE URL FORM IS BLIND TO THE SAME FACT EXPRESSED ANOTHER WAY.
+Before believing any link count, state which URL forms the matcher can see.
+The matcher now uses a single named INTERNAL_LINK_RE covering both forms.
+
+STILL OPEN, NOT FIXED THIS ROUND: whether those eight absolute-form internal
+links should be rewritten site-relative for consistency. They work, they are
+now visible to the matcher, and rewriting them is a separate content decision.

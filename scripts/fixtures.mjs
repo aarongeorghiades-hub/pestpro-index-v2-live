@@ -70,3 +70,23 @@ export const PAGE_WITH_VERIFIED_QUOTES =
 // so the distinction is exercised on every run.
 export const PAGE_WITH_SCARE_QUOTE =
   '<p>We have not built a &ldquo;top picks&rdquo; category around one item.</p>';
+
+// ---- G7, ARMED S62 R6: the orphan gate ------------------------------------
+// The positive probe is a CONSTRUCTED route, not an estate one. The brief that
+// armed the gate required exactly that: a gate proved by a fixture rather than
+// by leaving a real route broken to prove it.
+//
+// A graph row is { slug, inbound, outbound } where `inbound` EXCLUDES the hub.
+// S54-H already guarantees every route is hub-linked, so counting the hub makes
+// the check unfailable -- that reading was retired by PM ruling at S62 R6.
+export const GRAPH_ROW_ORPHAN_IN = { slug: 'fixture-no-inbound', inbound: [], outbound: ['rats'] };
+export const GRAPH_ROW_ORPHAN_OUT = { slug: 'fixture-no-outbound', inbound: ['rats'], outbound: [] };
+export const GRAPH_ROW_ORPHAN_BOTH = { slug: 'fixture-isolated', inbound: [], outbound: [] };
+export const GRAPH_ROW_LINKED = {
+  slug: 'fixture-linked',
+  inbound: ['house-mice'],
+  outbound: ['house-mice'],
+};
+// The hub does not need a non-hub inbound link and is exempt by name.
+export const GRAPH_ROW_HUB = { slug: 'us', inbound: [], outbound: ['rats'] };
+
