@@ -55,6 +55,11 @@ const breadcrumbSchema = {
 //                    listings were attempted on 2026-09-03 and every one
 //                    returned Amazon's anti-bot interstitial, so this is the
 //                    only listing whose own title could be read (S50-H).
+//                    S62 R4, LATER THE SAME DAY: the Law 163 retry read six of
+//                    those seven. One (B08K4B5CJM) returned HTTP 404; one
+//                    (B00OZG5MU8) resolves to a guitar part, not a trap
+//                    (Law 86). The remaining five are unassessed against Penn
+//                    State's minimum and are carried, not carded.
 //
 //   REPELLENTS       NO card, and the reason is REGISTRATION, not efficacy.
 //                    Penn State: none are registered for use against
@@ -222,9 +227,11 @@ export default function GroundhogsPage() {
         </p>
         <p className="mt-3 mb-0 text-base text-amber-900">
           <strong>Seven further listings were attempted on 3 September 2026 and every one returned
-          an anti-bot interstitial instead of a product page.</strong> No product is described here
-          from a search result, so those seven are recorded and carried forward rather than guessed
-          at.
+          an anti-bot interstitial instead of a product page.</strong> A second attempt later that
+          day read six of the seven; the other no longer resolves to a product page at all, and one
+          of the six turns out not to be a trap. None of the remainder has yet been read against the
+          minimum size this page uses, so none is named here. No product is described on this page
+          from a search result.
         </p>
       </div>
 
