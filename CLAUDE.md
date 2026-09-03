@@ -1401,3 +1401,63 @@ The matcher now uses a single named INTERNAL_LINK_RE covering both forms.
 STILL OPEN, NOT FIXED THIS ROUND: whether those eight absolute-form internal
 links should be rewritten site-relative for consistency. They work, they are
 now visible to the matcher, and rewriting them is a separate content decision.
+
+## S63 R2 — LAWS 177 AND 178
+
+LAW 177 — AN HTTP 200 IS NOT A FETCH. A response carrying a bot-block or
+interstitial body is TERMINAL UNDER LAW 137 REGARDLESS OF STATUS CODE. It is
+recorded as BLOCKED, never as fetched-and-unusable, and IT CONSUMES THE ROUND'S
+SINGLE ATTEMPT exactly as a 403 does.
+
+EVIDENCE. At S63 R1 `https://www.canr.msu.edu/resources/house-centipede`
+returned HTTP 200 with a 959-byte body reading "Request unsuccessful. Incapsula
+incident ID". The status line said success and the body said otherwise. Its
+permitted retry at S63 R2 returned the same thing at 961 bytes, so the URL is
+now twice-blocked. Had the 200 been taken at face value the round would have
+recorded a source it never read.
+
+THE CHECK IS ON THE BODY, NOT THE STATUS. A block is identified by its content
+and its size, and the round's fetch log records the outcome that was MEASURED,
+not the code that was returned. Law 78 said check the live response rather than
+the documentation; THIS EXTENDS IT ONE STEP FURTHER — check the live BODY rather
+than the live STATUS LINE.
+
+A BLOCK DETECTOR IS ITSELF A MATCHER AND IS SWEPT FOR FALSE POSITIVES BEFORE ITS
+OUTPUT IS BELIEVED. At S63 R2 an ad-hoc detector keyed partly on the word
+"captcha" flagged the University of Arkansas drain-fly fact sheet — a complete,
+readable 53,939-byte page whose only offence was carrying a contact form. The
+reliable signature is the block vendor's own string TOGETHER WITH an
+implausibly small body. Law 151 applies to this matcher like any other.
+
+A TWICE-BLOCKED URL IS NOT A TWICE-BLOCKED PUBLISHER. At S63 R2
+`content.ces.ncsu.edu/controlling-millipedes-in-and-around-homes` reached its
+second 403 while OTHER URLs on the same host had been fetched successfully in
+S62 R4 and S62 R5. The block is recorded against the URL. A publisher is
+twice-blocked only when every attempt against that publisher has failed, which
+is the basis on which UMN and Oklahoma State are barred.
+
+LAW 178 — A COUNT A GATE REPORTS MUST BE DERIVED AT RUNTIME FROM THE THING IT
+COUNTS. A hardcoded literal, a hand-maintained header figure, or any number a
+self-test prints without measuring is NOT A RESULT. Where such a figure is
+found, the gate is REPORTING A FALSE ZERO BY CONSTRUCTION and is treated as a
+DEFECT, not as a pass.
+
+EVIDENCE. `scripts/gates.mjs` prints "N matchers codified and usable, 0
+uncodified" on every successful self-test. The matcher count is derived from
+`MATCHERS.length` and is real; THE ZERO IS A STRING LITERAL and measures
+nothing. It will print zero however many matchers are being retyped in prose
+that round — which is precisely the drift Law 166 exists to stop, announcing
+its own absence as a pass. A header comment in the same file still reads
+"Fifteen matchers, zero uncodified" against sixteen matchers, which is the same
+fault in a second place: a figure maintained by hand rather than measured.
+
+THIS IS LAW 75 AND LAW 167 IN THE REPORTING LAYER. Those laws govern a CHECK
+that cannot fail; this one governs a NUMBER that cannot be wrong because nothing
+computed it. Both are theatre and both are read by a person who cannot tell
+them from a measurement.
+
+DEFERRED, NOT FIXED. Both figures were found at S63 R1, reported, and left
+alone under an explicit no-matcher-edits instruction at S63 R2. They are carried
+to a dedicated machinery round together with the four uncodified ad-hoc matchers
+named in the S63 R1 report and the false positives recorded there and here.
+Recording the defect is not closing it.
