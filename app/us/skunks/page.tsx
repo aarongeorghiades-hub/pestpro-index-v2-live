@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import { SourceList, AsOf, type Source } from '../components/UsSources';
@@ -349,7 +350,9 @@ export default function SkunksPage() {
         <li>
           University of California IPM states that skunks often den in burrows, and will often use
           abandoned burrows dug by ground squirrels, foxes, or coyotes and enlarge them if necessary.
-          Penn State Extension adds that they may use old woodchuck burrows.
+          Penn State Extension adds that they may use old woodchuck burrows &mdash; the animal
+          that dug it is covered on our <Link href="/us/groundhogs">groundhogs page</Link>, and its
+          entrance is wider than a skunk would excavate for itself.
         </li>
         <li>
           Nebraska Extension states that they prefer to den in sheltered areas under stumps, fallen

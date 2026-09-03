@@ -262,6 +262,12 @@ const groups: HubGroup[] = [
     blurb: 'Animals blamed for the same lawn, and the tools the sources support.',
     items: [
       {
+        title: 'Groundhogs',
+        href: '/us/groundhogs',
+        covers:
+          'The 10-to-12-inch burrow entrance, four fence specs that disagree, and the state that bans relocating a trapped one.',
+      },
+      {
         title: 'Pocket Gophers',
         href: '/us/pocket-gophers',
         covers: 'Mounds, tunnels and the control methods extension services describe.',

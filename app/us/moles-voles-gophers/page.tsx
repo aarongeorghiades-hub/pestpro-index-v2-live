@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import { SourceList, type Source } from '../components/UsSources';
@@ -606,6 +607,15 @@ export default function MolesVolesGophersPage() {
 
       <h2 id="faq">Questions</h2>
       <UsFaq faqs={faqs} />
+
+      <p>
+        <strong>One animal is deliberately absent from every row above.</strong> A groundhog digs
+        an entrance Penn State Extension gives as 10 to 12 inches across, which is wider than
+        anything on this page, and it is the only burrowing animal in this estate that two sources
+        connect to a building foundation. If the hole is that big, the table above is the wrong
+        table &mdash; our <Link href="/us/groundhogs">groundhogs page</Link> covers it, including
+        the state-by-state legal position, which none of these three animals carries.
+      </p>
 
       <h2 id="sources">Sources</h2>
       <p>

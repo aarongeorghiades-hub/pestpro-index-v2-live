@@ -1072,3 +1072,44 @@ does not forbid finding a different publisher, and S59-A expressly permits
 an alternate official publisher provided the citation names the host
 actually read. BOTH TOPICS RETURN TO THE TIER 5 CANDIDATE POOL. No third
 retry is to be made against those two publishers.
+
+## S62 R3 — LAW 170 RATIFIED
+
+LAW 170 — A MATCHER'S NAME IS NOT ITS IMPLEMENTATION. A gate claiming to
+detect a CONCEPT must be built from the rule that defines the concept,
+never from an enumerated list of instances. A list-based gate passes on
+incomplete evidence and reports a false zero for everything outside the
+list.
+
+EVERY CLASS WITHIN SUCH A GATE CARRIES ITS OWN probePos AND probeNeg,
+RUNNING ON EVERY INVOCATION. An aggregate probe is insufficient, because
+a dead class hides behind a live one: G4's single old positive probe
+passed on every run while the gate could not see "harbour".
+
+EVIDENCE. G4 was named "no UK spellings on a US route" and implemented as
+eighteen literal words. It reported clean while "harbourage" sat twice in
+our own prose on /us/camel-crickets (S62 R1). Rebuilt at S62 R2 into
+morphological classes in scripts/ukspelling.mjs, it immediately found 91
+rendered occurrences the list form could not see, on 36 of 53 routes;
+105 source occurrences across 42 files were classified and converted.
+This is the same failure class as the M8b false zero that survived from
+S60 R9 into S61 R8 (Law 166).
+
+FIGURE CORRECTED ON RATIFICATION, PER LAW 2. The ruling that ordered this
+ratification described "10 morphological classes". THE MEASURED NUMBER IS
+NINE — our, ise, yse, re, ce, ogue, double, ae, misc — carrying 9 positive
+and 22 negative probes, counted from UK_CLASSES on the day of
+ratification. The count of negative probes (22), of conversions (105) and
+of routes (36) in that ruling are all confirmed correct. A law is not
+ratified with a figure its own evidence contradicts, and a future round
+that finds "ten" in an older record must treat NINE as controlling until
+a class is actually added.
+
+COROLLARY (S62 R2, and it is part of this law): A CLASS-BASED MATCHER IS
+NOT AUTOMATICALLY A CORRECT ONE. The mirror matcher built the same round
+to measure American spellings on the UK estate returned 141 hits on its
+first run and all 141 were false positives — `luster` inside "cluster"
+115 times, `labor` inside "laboratory", `rigor` inside "rigorous",
+`liter` inside "literally". Its own calibration probes had passed. ONLY
+THE SWEEP AGAINST THE REAL ESTATE EXPOSED IT. Sweep for false positives
+against real content before believing any count a new matcher produces.
