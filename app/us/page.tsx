@@ -358,6 +358,19 @@ const groups: HubGroup[] = [
     ],
   },
   {
+    heading: 'Damp-Space Invaders',
+    blurb:
+      'Insects that turn up in a basement, crawl space or garage because the space is damp, and leave when it is not.',
+    items: [
+      {
+        title: 'Camel Crickets',
+        href: '/us/camel-crickets',
+        covers:
+          'The chirp test that separates them from the crickets that do chirp, and four sources that disagree on spraying indoors.',
+      },
+    ],
+  },
+  {
     heading: 'Food & Waste Pests',
     blurb:
       'Insects that breed in waste and end up on food, where the problem is what they bring with them rather than a bite.',

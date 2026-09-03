@@ -961,3 +961,41 @@ the straight ASCII double quote is a JS STRING DELIMITER, not a quotation
 mark, and a matcher that treats it as one produces false positives. That
 happened at S61 R9 and is recorded under Law 166 as an uncodified matcher
 awaiting codification.
+
+## S62 R1 — LAW 159 EXTENDED: THE `pushed:` FIELD
+
+LAW 159 STANDS AS WRITTEN. This section records an addition to the file it
+governs, `~/pestpro-gsc-queue.md`, not a change to the law.
+
+EVERY QUEUE ENTRY CARRIES A `pushed:` LINE. It holds the ISO date the URL was
+actually submitted in Search Console, or nothing.
+
+AN EMPTY `pushed:` MEANS "NOT KNOWN TO HAVE BEEN PUSHED", AND THE URL IS
+THEREFORE OUTSTANDING. It does NOT mean "definitely not pushed" — it means the
+file holds no record. The distinction matters because the remedy differs: an
+unknown is resolved by asking or by checking Search Console, a known-not-pushed
+is resolved by pushing.
+
+CC MAINTAINS THE FIELD BUT NEVER FILLS IN A DATE ON INFERENCE. The PM enters a
+date after actually submitting. A round that ships or changes a route adds its
+entry with an EMPTY `pushed:` line.
+
+WHY THE FIELD EXISTS. The queue recorded changes and not submissions, so it
+could not say what had already been pushed. With 54 distinct URLs outstanding
+across a multi-day submission schedule, that is a list a person loses their
+place in. Recording the change without recording the action leaves the file
+authoritative about half the question.
+
+WHAT WAS DELIBERATELY NOT BACKFILLED. All 84 entries carried into S62 R1 were
+left empty, without exception. S62 R1 was expressly authorised to mark
+`/us/squirrels-in-attic`, `/us/fruit-flies`, `/us/carpenter-bees` and
+`/us/mosquitoes` as pushed on 2026-09-01 IF the queue or a round report
+evidenced it. Both were searched and NEITHER carries any submission record for
+any URL. All four were therefore left empty and remain outstanding. A guessed
+date is worse than no date: it silently retires a URL from the outstanding list
+on no evidence, which is the exact failure Law 159 was written to end.
+
+FORMAT CHANGE PROOF. The extension is purely additive and was proven so, not
+asserted: removing every inserted `pushed:` line from the new file returns the
+previous file BYTE-FOR-BYTE. 84 entries before, 84 after, 84 fields added; the
+round's own three new entries brought the file to 87.

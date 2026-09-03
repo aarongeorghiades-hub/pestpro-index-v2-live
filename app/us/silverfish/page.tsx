@@ -460,6 +460,13 @@ export default function SilverfishPage() {
           rather than for silverfish. Presenting it as a silverfish target would attribute one
           insect&rsquo;s instruction to another.
         </p>
+        <p className="mt-3 mb-0 text-base text-slate-800">
+          <strong>The same question arises on another page and gets the same answer.</strong> Our{' '}
+          <Link href="/us/camel-crickets">camel crickets page</Link> covers a different insect that
+          turns up in the same damp basements, and Rutgers Cooperative Extension tells that
+          page&rsquo;s reader to dehumidify too &mdash; also without a number. Two insects, two
+          source sets, one identical gap, and neither page fills it by guessing.
+        </p>
       </div>
 
       <h2 id="storage">Food Storage</h2>
