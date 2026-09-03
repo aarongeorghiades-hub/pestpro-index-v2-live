@@ -158,7 +158,10 @@ const CLUSTERS = {
   ],
   // /us/flies is the general head; cluster flies and fruit flies are the two
   // specific children a reader arrives at having identified the wrong fly.
-  flies: ['flies', 'cluster-flies', 'fruit-flies'],
+  // S62 R5: fungus gnats join the fly cluster. Readers arrive at it having
+  // decided they have fruit flies, which is the same wrong-fly path the cluster
+  // already exists to serve.
+  flies: ['flies', 'cluster-flies', 'fruit-flies', 'fungus-gnats'],
   // S62 R5. The three moisture-and-harborage pages. They share no subject — the
   // earwig page carries zero silverfish content and vice versa — but they share
   // a root cause and a remedy, and a reader who has misidentified one of them is

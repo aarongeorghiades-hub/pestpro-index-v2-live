@@ -61,7 +61,7 @@ const faqs: Faq[] = [
   {
     question: 'Is it a fruit fly, a drain fly, or a fungus gnat?',
     answer:
-      'Texas A&M AgriLife Extension gives a working test: fruit flies have stocky bodies and red eyes; drain flies (also called moth flies) are dark gray to black, densely hairy, and hold broad wings roof-like over the body; fungus gnats are slender with long legs and long segmented antennae, mosquito-like but much smaller, and do not bite. A separate insect, the phorid fly, is about the same size as a fruit fly but has a distinctive hump-backed appearance. If it is breeding in a houseplant\'s soil rather than a drain or a fruit bowl, the sources point to a fungus gnat, not a fruit fly.',
+      'Texas A&M AgriLife Extension gives a working test: fruit flies have stocky bodies and red eyes; drain flies (also called moth flies) are dark gray to black, densely hairy, and hold broad wings roof-like over the body; fungus gnats are slender with long legs and long segmented antennae, mosquito-like but much smaller, and do not bite. A separate insect, the phorid fly, is about the same size as a fruit fly but has a distinctive hump-backed appearance. If it is breeding in a houseplant\'s soil rather than a drain or a fruit bowl, the sources point to a fungus gnat, not a fruit fly — and this site covers that insect on its own fungus gnats page rather than here.',
   },
   {
     question: 'Why do I have fruit flies with no fruit out?',
@@ -222,7 +222,11 @@ export default function FruitFliesPage() {
       <p>
         If small flies are breeding in a houseplant&rsquo;s soil rather than a drain or ripening
         produce, the sources point to a fungus gnat, not a fruit fly, and the control step is
-        different &mdash; drying out the soil, not treating a drain. See also{' '}
+        different &mdash; drying out the soil, not treating a drain.{' '}
+        <Link href="/us/fungus-gnats">Our fungus gnats page</Link> is where that insect is actually
+        covered: how dry to let the soil get, what Bti does in the growing medium, what a yellow
+        trap is and is not for, and two sources that disagree about whether you can buy Bti at all.
+        This page identifies the fungus gnat so you can rule it out; it does not treat it. See also{' '}
         <Link href="/us/flies">our house flies page</Link> for the larger filth fly that mechanically
         transmits contamination rather than breeding in drains, and{' '}
         <Link href="/us/cluster-flies">our cluster flies page</Link> for the slow, dark, much larger

@@ -403,7 +403,13 @@ const groups: HubGroup[] = [
         title: 'Fruit Flies',
         href: '/us/fruit-flies',
         covers:
-          'Telling one from a drain fly or a fungus gnat, where they actually breed, and drain treatment that works.',
+          'Where they actually breed, drain treatment that works, and the test that separates them from drain flies and fungus gnats.',
+      },
+      {
+        title: 'Fungus Gnats',
+        href: '/us/fungus-gnats',
+        covers:
+          'The wet pot rather than the insect: how dry to let the soil get, what Bti does, and two sources that disagree about buying it.',
       },
     ],
   },
