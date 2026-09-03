@@ -1113,3 +1113,76 @@ first run and all 141 were false positives — `luster` inside "cluster"
 `liter` inside "literally". Its own calibration probes had passed. ONLY
 THE SWEEP AGAINST THE REAL ESTATE EXPOSED IT. Sweep for false positives
 against real content before believing any count a new matcher produces.
+
+## S62 R4 — LAW 171 IS OCCUPIED; THIS IS LAW 172
+
+LAW 172 — CLUSTER MEMBERSHIP IS A SET, AND THE FLY CLUSTER IS RULED.
+PM RULING, S62 R4: `/us/flies`, `/us/cluster-flies` and `/us/fruit-flies` ARE
+ONE TOPIC CLUSTER. `/us/flies` is the general head; the other two are the
+specific children a reader reaches having identified the wrong fly.
+Intra-cluster sibling links between them are legitimate under Law 168(c) and
+G7 must not flag them. THIS CLOSES THE ITEM LAW 168 LEFT EXPRESSLY OPEN.
+
+THE MECHANISM IS SET MEMBERSHIP, NOT AN EXCEPTION. `clusterOf()` returned one
+cluster per slug; it is now `clustersOf()` returning all of them, and two pages
+are siblings when their cluster sets INTERSECT. `cluster-flies` is listed in
+BOTH `overwintering` and `flies`, which is what it has always been. Any future
+bridge page is defined the same way — by being listed twice. There is no
+two-route exception anywhere in the matcher.
+
+WHY MOVING THE SLUG WOULD HAVE BEEN WRONG, MEASURED BEFORE EDITING (Law 44).
+`/us/cluster-flies` links to ALL FIVE overwintering siblings AND to both fly
+pages, and all five overwintering pages link back to it. Moving it into the fly
+cluster converts 2 failing routes into 6 — trading two fly leaks for ten
+overwintering ones. Only set membership closes it. G7: 6 hits / 2 failing -> 0 / 0.
+
+BOTH LIMBS FIRED (S49-L). The positive limb was STRENGTHENED rather than left
+as it was: `/us/flies -> /us/stink-bugs-in-house` must STILL be caught, because
+those two share no membership. Had the ruling been implemented as a blanket
+exception, that probe would have gone dead and said so on every run. Nine
+negative probes, all silent, including both fly directions and the bridge
+page's OTHER membership (`cluster-flies -> boxelder-bugs`).
+
+## S62 R4 — THE WOOD-DAMAGE GROUPING IS REFERRED, NOT DECLARED
+
+`/us/termites`, `/us/formosan-termites`, `/us/carpenter-bees` and the new
+`/us/powderpost-beetles` read as one wood-damage cluster for a reader. THEY ARE
+DELIBERATELY NOT DECLARED IN `scripts/gates.mjs`, AND A FUTURE ROUND MUST NOT
+DECLARE THEM WITHOUT FIRST RESOLVING THIS.
+
+G7 treats a link FROM AN UNCLUSTERED PAGE INTO A CLUSTERED ONE as a leak. Two
+such links exist today:
+    /us/choosing-a-pest-control-service -> /us/termites
+    /us/social-wasps                    -> /us/carpenter-bees
+Declaring the group would newly fail both. This was PROVEN against the matcher
+before the decision, not predicted from reading it.
+
+THE UNDERLYING GAP: a general utility page (choosing-a-pest-control-service)
+legitimately links into topic pages it is not a sibling of. The S62 R4 fly
+ruling did not reach that case and CC did not invent a rule for it. THE
+QUESTION FOR THE PM IS WHETHER AN UNCLUSTERED SOURCE PAGE SHOULD BE EXEMPT
+FROM G7 ENTIRELY, or whether utility pages need a cluster of their own.
+
+## S62 R4 — LAW 173: A COUNT IN A REPORT IS NOT A COUNT IN THE ARTEFACTS
+
+LAW 173 — WHEN A ROUND REPORT'S FIGURE AND ITS CARRIED LIST DISAGREE,
+RECONCILE AGAINST THE ROUND'S OWN ARTEFACTS, NEVER AGAINST EITHER NUMBER.
+S62 R3 reported "nine attempted, eight blocked" and carried a SEVEN-item
+once-blocked list. The reconciliation was not a matter of finding a missing
+eighth ASIN: `~/pp-s62r3/products/` holds sixteen fetch bodies in two batches
+separated by mtime — eight Law 163 retries at 08:16 and EIGHT new candidates at
+08:17, of which one succeeded and SEVEN returned the 3,781-byte interstitial.
+THE SEVEN-ITEM LIST WAS COMPLETE AND CORRECT ALL ALONG; THE PROSE FIGURE WAS
+THE DEFECT. Had the round trusted the report's "eight" it would have gone
+hunting for an ASIN that never existed.
+
+COROLLARY, AND IT IS THE REASON THIS IS A LAW. The wrong figure had ALREADY
+REACHED A LIVE PAGE, on two surfaces — the rendered products box on
+/us/groundhogs and its JSX comment twin. A report figure that is never
+reconciled becomes page copy.
+
+SECOND COROLLARY (Law 148). Correcting nine to seven was not enough. The Law
+163 retry read six of those seven listings LATER THE SAME DAY, so "every one
+returned an anti-bot interstitial" was accurate about an attempt and misleading
+about the estate. A standing status on a page becomes a DATED OBSERVATION
+RECORD the moment a second observation exists.
