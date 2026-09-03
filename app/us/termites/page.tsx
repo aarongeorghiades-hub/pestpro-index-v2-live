@@ -264,6 +264,15 @@ export default function TermitesPage() {
         diagnostic rather than suggestive.
       </p>
       <p>
+        <strong>And if the sign is powder rather than pellets or tubes, the animal may not be a
+        termite at all.</strong> Small round holes with a fine, flour-like powder beneath them are
+        the classic sign of a wood-boring beetle, and the two problems are routinely confused
+        because the damage looks similar from a distance.{' '}
+        <Link href="/us/powderpost-beetles">Our powderpost beetles page</Link> carries the frass
+        comparison that separates them, on its own sources, together with the separate question of
+        whether such an infestation is still active. None of that is repeated here.
+      </p>
+      <p>
         Swarmers are the third sign, and Mississippi State University Extension names them
         alongside visible damage as one of the two things that finally make an infestation
         evident.

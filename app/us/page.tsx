@@ -118,8 +118,8 @@ const groups: HubGroup[] = [
     ],
   },
   {
-    heading: 'Cockroaches & Termites',
-    blurb: 'Two subjects where naming and identification decide what to do next.',
+    heading: 'Cockroaches & Wood-Damaging Pests',
+    blurb: 'Subjects where naming and identification decide what to do next.',
     items: [
       {
         title: 'Palmetto Bugs',
@@ -141,6 +141,12 @@ const groups: HubGroup[] = [
         href: '/us/german-cockroaches',
         covers:
           'The small indoor species, the station size one source makes a fitness test, and four positions on doing it yourself.',
+      },
+      {
+        title: 'Powderpost Beetles',
+        href: '/us/powderpost-beetles',
+        covers:
+          'Whether the infestation is still active, whether the holes are beetles or termites, and three sources that disagree on the moisture floor.',
       },
     ],
   },
