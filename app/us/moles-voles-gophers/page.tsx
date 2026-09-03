@@ -354,6 +354,12 @@ export default function MolesVolesGophersPage() {
 
       <h2 id="mound">The Mound Test</h2>
       <p>
+        <strong>This page identifies; it does not treat.</strong> Once the sign has told you which
+        of the three you have, <Link href="/us/mole-and-vole-control">our mole and vole control
+        page</Link> is where the trapping, the baiting and the sourced limits on each live. The two
+        pages are kept apart on purpose so that neither repeats the other.
+      </p>
+      <p>
         <strong>Start with the vole, because the vole settles itself.</strong> The University of
         Wyoming states that voles do not create tunnels, but rather runways or tracks that are open.
         UC IPM draws the same line from the other direction, contrasting open burrow entrances with

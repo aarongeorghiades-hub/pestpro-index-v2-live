@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import { SourceList, AsOf, type Source } from '../components/UsSources';
@@ -489,6 +490,12 @@ export default function CaliforniaTrappingRulesPage() {
           &mdash; § 465.5(b)
         </li>
       </ul>
+      <p>
+        Each of those three animals has its own page on this site, and none of those pages restates
+        the statute: <Link href="/us/skunks">skunks</Link>,{' '}
+        <Link href="/us/opossums">opossums</Link> and{' '}
+        <Link href="/us/raccoons">raccoons</Link>. What follows is about the section itself.
+      </p>
       <p>
         Following that cross-reference, Fish and Game Code <strong>§ 4000</strong> reads in full:
       </p>

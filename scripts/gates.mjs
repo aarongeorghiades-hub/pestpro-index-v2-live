@@ -165,6 +165,16 @@ const CLUSTERS = {
   // decided they have fruit flies, which is the same wrong-fly path the cluster
   // already exists to serve.
   flies: ['flies', 'cluster-flies', 'fruit-flies', 'fungus-gnats'],
+  // S62 R6. The three arachnids whose venom the sources treat as a medical
+  // question. THIS IS NOT A "SPIDERS (GENERAL)" GROUPING AND DOES NOT REOPEN
+  // LAW 158: no general head is created or implied, the scorpion is not a
+  // spider, and the four Joro routes keep their own cluster untouched. What
+  // these three share is that every source routes a bite or sting to medical
+  // care rather than to a product.
+  venomous: ['black-widow-spiders', 'brown-recluse-spiders', 'arizona-bark-scorpions'],
+  // S62 R6. The two commensal rodents, which readers routinely mix up and whose
+  // trap sizes, bait quantities and exclusion gaps all differ.
+  rodents: ['house-mice', 'rats'],
   // S62 R5. The three moisture-and-harborage pages. They share no subject — the
   // earwig page carries zero silverfish content and vice versa — but they share
   // a root cause and a remedy, and a reader who has misidentified one of them is
@@ -224,6 +234,10 @@ const decodeEntities = (t) =>
     .replace(/&hellip;/g, '\u2026')
     .replace(/&quot;/g, '"')
     .replace(/&amp;/g, '&');
+
+// An internal /us link, in EITHER form the estate actually uses. Group 1 is the
+// site-relative form, group 2 the absolute one; callers read `m[1] ?? m[2]`.
+const INTERNAL_LINK_RE = /href="\/us\/([a-z0-9-]+)"|href="https:\/\/pestproindex\.com\/us\/([a-z0-9-]+)"/gi;
 
 const all = (re, s) => [...s.matchAll(new RegExp(re.source, re.flags))];
 const hitStrings = (re, s) => all(re, s).map((m) => m[0]);
@@ -784,8 +798,17 @@ async function runLinkGraph() {
   for (const f of files) {
     const me = slugOf(f);
     const raw = await readFile(f, 'utf8');
-    for (const m of all(/href="\/us\/([a-z0-9-]+)"/gi, raw)) {
-      const tgt = m[1];
+    // BOTH URL FORMS. S62 R6: the estate carries 8 internal links written as
+    // ABSOLUTE urls (href="https://pestproindex.com/us/...") rather than as
+    // site-relative paths. A matcher anchored on the relative form alone is
+    // BLIND to them, and the S62 R5 run of this function reported 10 routes
+    // with no inbound link and 11 with no outbound when the true figures were
+    // 8 and 8 -- five route classifications wrong, every one a FALSE POSITIVE
+    // that would have had a later round manufacture links the estate already
+    // had. Law 82 in a new place: a matcher anchored on one surface form is
+    // blind to the same fact expressed another way.
+    for (const m of all(INTERNAL_LINK_RE, raw)) {
+      const tgt = m[1] ?? m[2];
       if (!slugs.has(tgt) || tgt === me) continue;
       if (!out.has(me)) out.set(me, new Set());
       if (!inb.has(tgt)) inb.set(tgt, new Set());

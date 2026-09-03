@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
@@ -270,6 +271,15 @@ export default function ArizonaBarkScorpionsPage() {
       </p>
 
       <h2 id="the-sting">The Sting</h2>
+      <p>
+        <strong>
+          This is the only arachnid on this site whose sting the sources treat as a medical
+          question in its own right, with one exception.
+        </strong>{' '}
+        <Link href="/us/black-widow-spiders">Our black widow page</Link> covers the other
+        Southwestern arachnid whose venom acts on the nervous system rather than on tissue, and
+        which the sources there also route to medical care rather than to a product.
+      </p>
       <p>
         <strong>
           Everything in this section is what a named publication says. This site is not a

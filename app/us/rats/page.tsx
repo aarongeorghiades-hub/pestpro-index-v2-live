@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
@@ -327,6 +328,13 @@ export default function RatsPage() {
         </em>
       </p>
       <h3>Where a young rat gets confused with a mouse</h3>
+      <p>
+        <strong>If the tests below point to a mouse, this is the wrong page.</strong>{' '}
+        <Link href="/us/house-mice">Our house mice page</Link> covers that animal on its own
+        sources, including the quarter-inch entry gap five of them independently name. The trap
+        sizes, the bait quantities and the exclusion measurements are all different, so the
+        identification comes first.
+      </p>
       <p>
         <strong>UC IPM</strong> gives a live-animal test:{' '}
         <em>

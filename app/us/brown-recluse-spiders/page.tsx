@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
@@ -375,6 +376,14 @@ export default function BrownRecluseSpidersPage() {
       <h2 id="which-spider">Is It a Brown Recluse?</h2>
       <p>
         <strong>The sources agree on one character and disagree sharply on the famous one.</strong>
+      </p>
+      <p>
+        <strong>If the spider is glossy black with a red mark underneath, it is not this one.</strong>{' '}
+        That is the other spider people bring to a doctor, and its venom does something different:
+        the widow sources describe muscle pain and cramping without tissue damage, where the recluse
+        sources describe the opposite.{' '}
+        <Link href="/us/black-widow-spiders">Our black widow page</Link> sets out that contrast from
+        its own sources, and none of it is repeated here.
       </p>
 
       <h3>The violin: three positions, and they cannot all be right</h3>

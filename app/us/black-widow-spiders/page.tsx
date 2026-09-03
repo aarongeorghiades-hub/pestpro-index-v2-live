@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
@@ -997,6 +998,13 @@ export default function BlackWidowSpidersPage() {
       ))}
 
       <h2 id="exclusion">Keeping Them Out</h2>
+      <p>
+        <strong>The sealing work below is the same work another animal on this site needs.</strong>{' '}
+        <Link href="/us/arizona-bark-scorpions">Our Arizona bark scorpion page</Link> carries a
+        fuller exclusion section, because for that animal sealing is the whole control method rather
+        than one measure among several. If you are in the Southwest and doing this work anyway, that
+        page is worth reading alongside this one.
+      </p>
       <p>
         <strong>Kansas State:</strong> where possible, seal cracks around doors and windows and
         repair holes in screens, to prevent spiders from entering structures. It also notes that the

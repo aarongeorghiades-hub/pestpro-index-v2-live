@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
@@ -244,6 +245,14 @@ export default function HouseMicePage() {
       </p>
 
       <h2 id="which-mouse">Which Mouse? Telling It From a Deer Mouse</h2>
+      <p>
+        <strong>First, make sure it is a mouse at all.</strong> A young rat is routinely taken for
+        an adult mouse, and the tools differ: a trap sized for a mouse will not hold a rat, and the
+        gap a rat needs is larger than the quarter-inch this page is built around.{' '}
+        <Link href="/us/rats">Our rats page</Link> carries the head-and-foot proportion test and the
+        tooth-mark measurement its sources use to separate the two. If the animal is the wrong one,
+        nothing below will work.
+      </p>
       <p>
         <strong>UC Statewide IPM Program</strong> describes the animal this page is about as
         small, common indoors, and easy to confuse with a relative that this page does not cover:{' '}

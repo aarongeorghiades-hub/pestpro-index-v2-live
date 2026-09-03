@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
@@ -576,6 +577,11 @@ export default function SnakesPage() {
           &ldquo;They can reduce the number of disease carrying rodents and other pest
           species.&rdquo;
         </em>{' '}
+        That cuts both ways, and it is the most useful thing on this page: a yard that supports a
+        snake is usually a yard that supports its food.{' '}
+        <Link href="/us/rats">Our rats page</Link> covers the sanitation and harborage work that
+        removes the food supply, which is a slower answer than moving one snake and a more durable
+        one.{' '}
         and{' '}
         <em>
           &ldquo;In general, they should be left alone, whenever possible, especially in wildland

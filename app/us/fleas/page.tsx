@@ -290,6 +290,14 @@ export default function FleasPage() {
           </em>
         </p>
         <p className="mt-3 mb-0 text-sm text-red-900">
+          <strong>If the bites are in rows on skin that was covered in bed, consider another
+          insect.</strong>{' '}
+          <Link href="/us/bed-bugs">Our bed bugs page</Link> carries what its own sources say about
+          how often a bite pattern alone is a wrong diagnosis, and names the animals it is confused
+          with. A flea problem almost always has a pet or a wildlife host attached to it; a bed bug
+          problem does not.
+        </p>
+        <p className="mt-3 mb-0 text-sm text-red-900">
           <strong>Two effects that are not infections.</strong> UC IPM:{' '}
           <em>
             &ldquo;Some people and pets suffer from fleabite allergic dermatitis, characterized by

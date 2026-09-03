@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
@@ -388,6 +389,15 @@ export default function TicksPage() {
       </ul>
 
       <h2 id="the-yard">The Yard</h2>
+      <p>
+        <strong>
+          If the bites came from long grass but nothing was ever attached, the animal may not be a
+          tick.
+        </strong>{' '}
+        <Link href="/us/chiggers">Our chiggers page</Link> covers the other mite acquired the same
+        way in the same vegetation, which leaves an intensely itchy welt and no embedded animal to
+        remove. The yard work below reduces both.
+      </p>
       <p>
         There is one measured figure here that is worth more than any general advice. The
         Connecticut Agricultural Experiment Station reports:{' '}

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
@@ -309,6 +310,10 @@ export default function BedBugsPage() {
         </em>{' '}
         <strong>NPIC</strong> names the wider set of animals people confuse with bed bugs:{' '}
         <em>&ldquo;Carpet beetles, fleas, and bat bugs are often confused for bed bugs.&rdquo;</em>{' '}
+        Two of those three have their own pages here, each on its own sources:{' '}
+        <Link href="/us/fleas">fleas</Link>, which almost always have a pet or wildlife host
+        attached, and <Link href="/us/carpet-beetles">carpet beetles</Link>, whose damage is to
+        fabric rather than to skin.{' '}
         <strong>Penn State</strong> adds two more to that list and states why a bite alone is not
         a diagnosis:{' '}
         <em>

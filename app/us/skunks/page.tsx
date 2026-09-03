@@ -349,7 +349,9 @@ export default function SkunksPage() {
       <ul>
         <li>
           University of California IPM states that skunks often den in burrows, and will often use
-          abandoned burrows dug by ground squirrels, foxes, or coyotes and enlarge them if necessary.
+          abandoned burrows dug by ground squirrels, foxes, or coyotes and enlarge them if
+          necessary &mdash; and <Link href="/us/coyotes">our coyotes page</Link> covers the largest
+          of those diggers, which is also the one most likely to be the reason a skunk has moved on.
           Penn State Extension adds that they may use old woodchuck burrows &mdash; the animal
           that dug it is covered on our <Link href="/us/groundhogs">groundhogs page</Link>, and its
           entrance is wider than a skunk would excavate for itself.
