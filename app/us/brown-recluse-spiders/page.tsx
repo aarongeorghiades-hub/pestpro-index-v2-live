@@ -266,7 +266,7 @@ const faqs: Faq[] = [
 const sources: Source[] = [
   {
     label:
-      'Brown Recluse Spider (ENTFACT-631) — the source of the three-trap-free control programme quoted here: the eye-pattern character, the glue trap form and placement, the bite and misdiagnosis material, the entry points, and the bed and clothing measures',
+      'Brown Recluse Spider (ENTFACT-631) — the source of the three-trap-free control program quoted here: the eye-pattern character, the glue trap form and placement, the bite and misdiagnosis material, the entry points, and the bed and clothing measures',
     publisher: 'University of Kentucky College of Agriculture, Extension Entomology (Michael F. Potter)',
     date: 'Revised 9 July 2018; accessed 26 August 2026',
     href: 'https://entomology.ca.uky.edu/files/ef631.pdf',
@@ -1025,7 +1025,7 @@ export default function BrownRecluseSpidersPage() {
           spider. That is why this page names no product for the class.
         </strong>{' '}
         It is not a claim that they do not work. It is that the sources do not give a homeowner a
-        standard a product could be measured against, and naming one anyway would be our judgement
+        standard a product could be measured against, and naming one anyway would be our judgment
         dressed as theirs.
       </p>
       <ul>

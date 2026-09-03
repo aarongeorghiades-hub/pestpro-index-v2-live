@@ -13,7 +13,7 @@
 // itself carries the dividing line.
 //
 // IT NOW LINKS TO ITS TWO SIBLINGS. What stood here recorded that the carpet beetles
-// link was withheld until a round was authorised to change both modules at once. That
+// link was withheld until a round was authorized to change both modules at once. That
 // round has happened and all three were changed in one pass, so the modules stayed
 // symmetrical and this paragraph is corrected rather than left standing.
 //

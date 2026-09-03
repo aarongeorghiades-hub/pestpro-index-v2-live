@@ -23,7 +23,7 @@
 // category outright.
 //
 // THE ONE BOUNDARY THE SOURCES DRAW IS MEDICAL, NOT PEST-CONTROL. No source
-// consulted names a pest control operator, a licence, or a restricted-use product
+// consulted names a pest control operator, a license, or a restricted-use product
 // for chiggers. Two refer the bite to a pharmacist or physician and Ohio State
 // states outright that extension staff cannot diagnose skin ailments. The
 // anti-itch cards on this page sit under that referral language.

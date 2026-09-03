@@ -57,7 +57,7 @@ const breadcrumbSchema = {
 // FIVE CLASSES CARD NOTHING, EACH FOR ITS OWN REASON, AND THE REASONS ARE NOT
 // INTERCHANGEABLE: repellents (five sources say they do not work), glue boards
 // (a non-target welfare hazard stated by Utah State, which is a material danger
-// and NOT an efficacy judgement), the funnel trap and drift fence (a structure
+// and NOT an efficacy judgment), the funnel trap and drift fence (a structure
 // the reader builds, not a product), snake tongs (named once with no
 // specification at all), habitat modification (nothing the sources specify as a
 // purchasable thing).
@@ -184,7 +184,7 @@ const faqs: Faq[] = [
   {
     question: 'What does a snake-proof fence actually have to be?',
     answer:
-      'Four sources specify one and they do not agree, so this page gives all four rather than picking one. Colorado State: 36-inch galvanized hardware cloth, 1/4-inch mesh, buried 6 inches deep, slanted outward at 30 degrees. Penn State: the same 36 inches, the same 1/4-inch mesh, the same 6-inch burial and the same 30 degrees. ICWDM: 36 inches tall and 1/4-inch mesh again, but buried 4 to 6 inches rather than 6. UF/IFAS departs furthest: 2 to 3 feet high, buried 6 inches, permitting aluminium flashing or silt fencing as well as hardware cloth, and stating no angle at all. The one figure all four share is the 1/4-inch mesh, which is why the products named on this page are named on the mesh.',
+      'Four sources specify one and they do not agree, so this page gives all four rather than picking one. Colorado State: 36-inch galvanized hardware cloth, 1/4-inch mesh, buried 6 inches deep, slanted outward at 30 degrees. Penn State: the same 36 inches, the same 1/4-inch mesh, the same 6-inch burial and the same 30 degrees. ICWDM: 36 inches tall and 1/4-inch mesh again, but buried 4 to 6 inches rather than 6. UF/IFAS departs furthest: 2 to 3 feet high, buried 6 inches, permitting aluminum flashing or silt fencing as well as hardware cloth, and stating no angle at all. The one figure all four share is the 1/4-inch mesh, which is why the products named on this page are named on the mesh.',
   },
   {
     question: 'Do snake repellents work?',
@@ -438,7 +438,7 @@ export default function SnakesPage() {
           Colorado State both say not to pack the area in ice, which is a different act from a cold
           cloth, and UC IPM distinguishes the two within its own guidance. This page reports the
           disagreement rather than resolving it, because resolving it would mean making a clinical
-          judgement it has no standing to make.
+          judgment it has no standing to make.
         </p>
       </div>
       <p>
@@ -554,7 +554,7 @@ export default function SnakesPage() {
         </p>
       </div>
       <p>
-        <strong>One source generalises beyond a single state, and it is quoted with its own name
+        <strong>One source generalizes beyond a single state, and it is quoted with its own name
         and its own hedge attached.</strong> The Internet Center for Wildlife Damage Management
         states:{' '}
         <em>
@@ -642,7 +642,7 @@ export default function SnakesPage() {
           inches, UF/IFAS says 2 to 3 feet. <strong>Burial:</strong> three say 6 inches, ICWDM says
           4 to 6. <strong>Slant:</strong> three say 30 degrees outward, UF/IFAS states no angle at
           all. <strong>Material:</strong> three say galvanized hardware cloth, UF/IFAS also permits
-          aluminium flashing or silt fencing.{' '}
+          aluminum flashing or silt fencing.{' '}
           <strong>
             None of these is averaged here and none is presented as the specification. The products
             named below are named on the mesh, because the mesh is the figure the sources actually

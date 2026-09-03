@@ -110,7 +110,7 @@ const products: ProductRecord[] = [
     group: 'trap',
     whatItDoes: [
       'States a pheromone lure in its own text, describing target-specific attractants that draw beetles onto a sticky layer',
-      'The only listing checked that names the beetles to species: its own text says it is optimised for adult varied and black carpet beetles. Two of the three species UC IPM names for California are varied and black carpet beetles',
+      'The only listing checked that names the beetles to species: its own text says it is optimized for adult varied and black carpet beetles. Two of the three species UC IPM names for California are varied and black carpet beetles',
       'The listing states six traps and six sealed attractant pouches, and gives a monitoring duration of up to three months',
       'This is a monitoring tool. UC IPM recommends pheromone-baited monitoring for commercial warehouses and storage areas; for homes it says sticky traps can be used where an infestation is serious. Those are different statements and this card does not merge them',
     ],
@@ -161,7 +161,7 @@ const faqs: Faq[] = [
   {
     question: 'Will a pheromone trap solve an infestation?',
     answer:
-      'No source consulted says so, and the sources scope the tool carefully. UC IPM recommends a monitoring programme using pheromone-baited sticky traps when carpet beetles threaten products in commercial warehouses or storage areas. For homes it says sticky traps can also be used where infestations are serious, and separately that sticky traps without a pheromone can be placed on windowsills to catch adults that fly to windows. Those are three different statements about three different situations, and none of them licenses the others. What every source puts first is cleaning, laundering and keeping the adults out.',
+      'No source consulted says so, and the sources scope the tool carefully. UC IPM recommends a monitoring program using pheromone-baited sticky traps when carpet beetles threaten products in commercial warehouses or storage areas. For homes it says sticky traps can also be used where infestations are serious, and separately that sticky traps without a pheromone can be placed on windowsills to catch adults that fly to windows. Those are three different statements about three different situations, and none of them licenses the others. What every source puts first is cleaning, laundering and keeping the adults out.',
   },
   {
     question: 'Can carpet beetles hurt you?',
@@ -203,7 +203,7 @@ const sources: Source[] = [
     label:
       'Dermestid Beetles (Carpet Beetles), Fact Sheet 5.549 — the source of the freezing and heat figures, the annual life-cycle statement, the vacuum-bag disposal instruction, the condition it places on insecticide use and the over-the-counter active-ingredient list. Quoted from the HTML rendering: the PDF rendering of the same fact sheet interleaves its two columns and cannot be quoted safely',
     publisher: 'Colorado State University Extension',
-    date: 'Published January 2018, reviewed August 2025, labelled peer-reviewed by the publisher, by W.S. Cranshaw; re-fetched 28 August 2026',
+    date: 'Published January 2018, reviewed August 2025, labeled peer-reviewed by the publisher, by W.S. Cranshaw; re-fetched 28 August 2026',
     href: 'https://extension.colostate.edu/resource/dermestid-beetles-carpet-beetles/',
   },
   {
@@ -283,7 +283,7 @@ export default function CarpetBeetlesPage() {
     >
       <p>
         This page is about the beetles whose larvae eat wool, fur, feathers and other animal-based
-        fibres, and about what fourteen university extension publications say to do about them.
+        fibers, and about what fourteen university extension publications say to do about them.
       </p>
 
       <h2 id="what">What They Are, and What They Damage</h2>

@@ -368,7 +368,7 @@ export default function TermitesPage() {
       <p>
         <strong>Baiting.</strong> Mississippi State University Extension states that{' '}
         <strong>&ldquo;bait stations must be inspected and maintained on at least an annual
-        basis.&rdquo;</strong> Baiting is a programme with a maintenance schedule rather than a
+        basis.&rdquo;</strong> Baiting is a program with a maintenance schedule rather than a
         one-off application, and the same source states in the same place that do-it-yourself
         termite control is not a good idea.
       </p>
@@ -491,7 +491,7 @@ export default function TermitesPage() {
         whatItDoes={[
           'A foam applied into a crack, a void or a gallery, for treating one located spot.',
           'University of Florida IFAS Extension states that controlling existing infestations is generally not a do-it-yourself project, and UC IPM states that do-it-yourself treatments are not recommended. This treats one located spot; it is not a whole-structure remedy.',
-          'The Alabama Cooperative Extension System gives the only exception it recognises for consumer treatment as a mailbox, sandbox, or other small wooden object not attached to the house.',
+          'The Alabama Cooperative Extension System gives the only exception it recognizes for consumer treatment as a mailbox, sandbox, or other small wooden object not attached to the house.',
         ]}
         asin="B00B5WI5VI"
       />
@@ -517,7 +517,7 @@ export default function TermitesPage() {
         B01HDYAOY2 and B00B5WI5VI. Each is reachable from its own card above, where the disclosure
         sits directly beside the link, and they are named here rather than linked again so that
         every link to a product on this page carries its disclosure. Framing and ordering are our
-        own judgement and are not a finding of any source.
+        own judgment and are not a finding of any source.
       </p>
       <SourceList sources={sources} />
     </UsPageLayout>

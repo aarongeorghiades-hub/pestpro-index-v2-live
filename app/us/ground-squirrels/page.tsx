@@ -90,7 +90,7 @@ const faqs: Faq[] = [
   {
     question: 'Why is no trap named on this page?',
     answer:
-      'Because a product search did not surface a purchasable listing for the trap the sources specify. Three separate searches were run for a 110-size body-grip trap. Between them they returned one product page, and that page no longer resolves. Everything else returned was an accessory rather than a trap: setting tools, trap stabilisers, a safety tool, a wire kit. That is a statement about what a search surfaced, and it is not a statement that no such trap is sold. Trap covers made specifically for 110 and 120 sized body-grip traps are on sale, which is good evidence that the traps themselves exist somewhere.',
+      'Because a product search did not surface a purchasable listing for the trap the sources specify. Three separate searches were run for a 110-size body-grip trap. Between them they returned one product page, and that page no longer resolves. Everything else returned was an accessory rather than a trap: setting tools, trap stabilizers, a safety tool, a wire kit. That is a statement about what a search surfaced, and it is not a statement that no such trap is sold. Trap covers made specifically for 110 and 120 sized body-grip traps are on sale, which is good evidence that the traps themselves exist somewhere.',
   },
   {
     question: 'What does California law require of a trap once you set one?',
@@ -105,7 +105,7 @@ const faqs: Faq[] = [
   {
     question: 'Is there a toxic bait a California resident can use?',
     answer:
-      'Not for this animal, on the sources this page uses, and it takes three statements to get there. UC IPM states that anticoagulant rodenticide options for residential use are no longer available. It states that toxic grain baits containing zinc phosphide can only be applied by licensed pest management professionals and are not available for use by residential users for ground squirrel management. And it states that rodenticide products labeled for use against rats and house mice should never be used for the management of ground squirrels unless ground squirrels are specifically listed on the label as a target species. UC ANR, writing in July 2025, names the three actives now available to residents as bromethalin, cholecalciferol and zinc phosphide, and says in the same passage that products containing bromethalin and cholecalciferol can only be used to control rats and mice. Two of the three are labelled for other animals and the third is professional-only for this one.',
+      'Not for this animal, on the sources this page uses, and it takes three statements to get there. UC IPM states that anticoagulant rodenticide options for residential use are no longer available. It states that toxic grain baits containing zinc phosphide can only be applied by licensed pest management professionals and are not available for use by residential users for ground squirrel management. And it states that rodenticide products labeled for use against rats and house mice should never be used for the management of ground squirrels unless ground squirrels are specifically listed on the label as a target species. UC ANR, writing in July 2025, names the three actives now available to residents as bromethalin, cholecalciferol and zinc phosphide, and says in the same passage that products containing bromethalin and cholecalciferol can only be used to control rats and mice. Two of the three are labeled for other animals and the third is professional-only for this one.',
   },
   {
     question: 'Utah State Extension says to bait with anticoagulants. Which is right?',
@@ -115,7 +115,7 @@ const faqs: Faq[] = [
   {
     question: 'Do repellents or scaring devices work?',
     answer:
-      'Two sources say no, one a university extension programme and one a state agency. UC IPM states that there are no effective squirrel-frightening devices or repellents that will cause ground squirrels to leave their burrows or avoid an area or crop. CDFA states of repellents: none registered and not recommended as an effective method of control. UC IPM also states that burrow exploders, devices that inject ignitable gasses into burrow systems, are not generally recommended for urban use and have not proven to be effective.',
+      'Two sources say no, one a university extension program and one a state agency. UC IPM states that there are no effective squirrel-frightening devices or repellents that will cause ground squirrels to leave their burrows or avoid an area or crop. CDFA states of repellents: none registered and not recommended as an effective method of control. UC IPM also states that burrow exploders, devices that inject ignitable gasses into burrow systems, are not generally recommended for urban use and have not proven to be effective.',
   },
   {
     question: 'Is there a disease risk?',
@@ -142,7 +142,7 @@ const sources: Source[] = [
   },
   {
     label:
-      'Rodenticides: Further Restrictions in 2025 — the source of the three residentially available actives and of the statement that two of them are labelled for rats and mice only',
+      'Rodenticides: Further Restrictions in 2025 — the source of the three residentially available actives and of the statement that two of them are labeled for rats and mice only',
     publisher: 'UC Agriculture and Natural Resources, Pests in the Urban Landscape (Karey Windbiel-Rojas)',
     date: '14 July 2025; accessed 26 August 2026',
     href: 'https://ucanr.edu/blog/pests-urban-landscape/article/rodenticides-further-restrictions-2025',
@@ -307,7 +307,7 @@ export default function GroundSquirrelsPage() {
       <h2 id="legal">The Legal Frame in California</h2>
       <p>
         <strong>Yours may differ and this is not legal advice.</strong> The sources below are a
-        university extension programme and a state agency describing California law; where the
+        university extension program and a state agency describing California law; where the
         underlying statute is quoted, it is quoted as our own record of the primary text quotes it.
       </p>
 
@@ -482,7 +482,7 @@ export default function GroundSquirrelsPage() {
           <strong>Three separate product searches were run for a 110-size body-grip trap.</strong>{' '}
           Between them they returned <strong>one</strong> product page, and that page no longer
           resolves. Everything else returned was an accessory rather than a trap &mdash; setting
-          tools, trap stabilisers, a safety tool, a wire kit &mdash; and an accessory is not a trap,
+          tools, trap stabilizers, a safety tool, a wire kit &mdash; and an accessory is not a trap,
           so none was pursued.
         </p>
         <p className="m-0 mt-3 text-sm text-amber-900">
@@ -694,7 +694,7 @@ export default function GroundSquirrelsPage() {
           Three actives available to residents, and none of them for this animal
         </p>
         <p className="m-0 mt-2 text-sm text-blue-900">
-          <strong>Two of the three are labelled for rats and mice</strong>, and UC IPM says
+          <strong>Two of the three are labeled for rats and mice</strong>, and UC IPM says
           explicitly that rat and mouse products should not be used on ground squirrels unless the
           label lists them. <strong>The third, zinc phosphide, is professional-only for this
           species.</strong> That is the whole arithmetic, and it is why no bait is named here.
@@ -775,7 +775,7 @@ export default function GroundSquirrelsPage() {
       <h2 id="timing">When Each Method Works</h2>
       <p>
         UC IPM publishes a month-by-month efficacy table, and it is the clearest seasonal statement
-        in any source used here. Summarised from that table, with its own words for the ratings:
+        in any source used here. Summarized from that table, with its own words for the ratings:
       </p>
       <div className="overflow-x-auto not-prose my-6">
         <table className="min-w-full border border-gray-300 text-sm">
@@ -832,7 +832,7 @@ export default function GroundSquirrelsPage() {
       </p>
       <p>
         And on how long the job lasts: UC IPM says that for those living next to wildlands or other
-        areas where squirrels are common, an ongoing management programme will be necessary because
+        areas where squirrels are common, an ongoing management program will be necessary because
         squirrels reinvade over time.
       </p>
 

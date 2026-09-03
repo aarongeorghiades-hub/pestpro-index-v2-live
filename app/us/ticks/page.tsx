@@ -704,8 +704,8 @@ export default function TicksPage() {
       </p>
       <p>
         <strong>
-          CDC states that ticks find their hosts by detecting breath and body odours, or by sensing
-          body heat, moisture and vibration, that some species can even recognise a shadow, and that
+          CDC states that ticks find their hosts by detecting breath and body odors, or by sensing
+          body heat, moisture and vibration, that some species can even recognize a shadow, and that
           ticks choose where to wait by identifying well-used paths. They then wait on the tips of
           grasses and shrubs in a position CDC calls questing.
         </strong>
@@ -719,7 +719,7 @@ export default function TicksPage() {
       </p>
       <p>
         <strong>
-          Once attached, CDC states that ticks secrete small amounts of saliva with anaesthetic
+          Once attached, CDC states that ticks secrete small amounts of saliva with anesthetic
           properties so that the animal or person cannot feel that the tick has attached, and that
           many species also secrete a cement-like substance holding them firmly in place during the
           meal.
@@ -886,7 +886,7 @@ export default function TicksPage() {
         </strong>
       </p>
       <p>
-        Of the ingredients it lists as labelled for residential tick control, the ones it marks as
+        Of the ingredients it lists as labeled for residential tick control, the ones it marks as
         available to homeowners are permethrin &mdash; &ldquo;Some are concentrates and some are
         ready to spray products, mainly for homeowners&rdquo; &mdash; cyfluthrin, of which
         &ldquo;Some homeowner formulations available&rdquo;, and bifenthrin, which it lists as
@@ -1108,7 +1108,7 @@ export default function TicksPage() {
         B00BAYWOFY, B07D2GGYPF and B082LJK8K7. Each is reachable from its own card above, where the
         disclosure sits directly beside the link, and they are named here rather than linked again so
         that every link to a product on this page carries its disclosure. Framing and ordering are
-        our own judgement and are not a finding of any source.
+        our own judgment and are not a finding of any source.
       </p>
       <SourceList sources={sources} />
     </UsPageLayout>

@@ -66,7 +66,7 @@ const faqs: Faq[] = [
   {
     question: 'Do I really need wings on the trap?',
     answer:
-      'It is the part of the method with evidence behind it. UF/IFAS Extension states that this trap is most effective when wings, given as 1 by 6 inch by 6 feet boards or other material, are added to funnel the animal into the trap, and explains the underlying habit: armadillos follow barriers, so temporary garden fencing or wooden boards can be used to funnel armadillos travelling along such barriers into traps. University of Georgia built its wings from two 2 inch by 6 inch boards, 6 feet long, attached at one end of the trap, and states that traps should include wings or funnels to direct the animal into the trap.',
+      'It is the part of the method with evidence behind it. UF/IFAS Extension states that this trap is most effective when wings, given as 1 by 6 inch by 6 feet boards or other material, are added to funnel the animal into the trap, and explains the underlying habit: armadillos follow barriers, so temporary garden fencing or wooden boards can be used to funnel armadillos traveling along such barriers into traps. University of Georgia built its wings from two 2 inch by 6 inch boards, 6 feet long, attached at one end of the trap, and states that traps should include wings or funnels to direct the animal into the trap.',
   },
   {
     question: 'When should I set the trap?',
@@ -182,7 +182,7 @@ export default function BestArmadilloTrapsPage() {
       <p>
         What the same sources do say works is structural. UF/IFAS Extension explains the habit that
         makes it work: armadillos follow barriers, and temporary garden fencing or wooden boards can
-        be used to funnel armadillos travelling along such barriers into traps. University of Georgia
+        be used to funnel armadillos traveling along such barriers into traps. University of Georgia
         states that traps should include wings or funnels to direct the animal into the trap.
       </p>
 
@@ -349,7 +349,7 @@ export default function BestArmadilloTrapsPage() {
       <p>
         Every factual claim above names the source it rests on, in the sentence that makes it or in
         the text immediately adjacent to it, and every source named is listed below. Framing,
-        ordering and emphasis are our own judgement and are not a finding of any source. Trap
+        ordering and emphasis are our own judgment and are not a finding of any source. Trap
         availability and dimensions were read from each product listing on the date given above and
         are a snapshot of that date.
       </p>

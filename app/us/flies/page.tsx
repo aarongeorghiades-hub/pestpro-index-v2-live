@@ -51,7 +51,7 @@ const breadcrumbSchema = {
 // house flies, stable flies, face flies and blow flies in one file. The bite question
 // is the sharpest case: house flies cannot bite, stable flies give a painful bite,
 // and those two sentences sit under different species headings in the same document.
-// This is the S53-I labelling case, not the distance case — splitting a labelled pair
+// This is the S53-I labeling case, not the distance case — splitting a labeled pair
 // for distance would be a mid-quote elision.
 //
 // THIS PAGE HANDS OFF TO /us/cluster-flies AND DOES NOT RESTATE IT. That page already
@@ -90,7 +90,7 @@ const products: ProductRecord[] = [
     cardName: 'Sticky Fly Ribbons, 32 Pack',
     whatItDoes: [
       'A paper ribbon roll coated on both sides, per its own text, and the largest pack count of the four named here',
-      'Its own text states no baiting and no vapours, which matches what UC IPM describes as a plain sticky ribbon',
+      'Its own text states no baiting and no vapors, which matches what UC IPM describes as a plain sticky ribbon',
       '⚠ The listing contradicts itself: its title includes the words Fly Bait while a feature line states No Baiting. We make no bait claim for it, and neither should you rely on one',
       'Two spelling errors sit in the seller’s own text and are left as published rather than quietly corrected',
     ],

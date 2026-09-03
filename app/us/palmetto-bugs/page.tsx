@@ -441,7 +441,7 @@ export default function PalmettoBugsPage() {
         It also states &ldquo;Do not allow ivy or other vines to grow on the side of the house
         because roaches and other insects hide and breed in this heavy vegetation.&rdquo; It advises
         against &ldquo;stacking firewood, lumber, boxes, or other refuse near the house,&rdquo; and
-        in favour of raking &ldquo;leaves and pine needles&rdquo; and keeping &ldquo;trees and
+        in favor of raking &ldquo;leaves and pine needles&rdquo; and keeping &ldquo;trees and
         shrubs pruned away from the house to minimize hiding places and ensure good
         ventilation.&rdquo;
       </p>
@@ -653,7 +653,7 @@ export default function PalmettoBugsPage() {
         B01N0TGJHB and B0CFRN4CF3. Each is reachable from its own card above, where the disclosure
         sits directly beside the link, and they are named here rather than linked again so that
         every link to a product on this page carries its disclosure. Framing and ordering are our
-        own judgement and are not a finding of any source.
+        own judgment and are not a finding of any source.
       </p>
       <SourceList sources={sources} />
     </UsPageLayout>

@@ -628,7 +628,7 @@ export default function SkunksPage() {
       <p>
         Every factual claim above names the source it rests on, in the sentence that makes it or in
         the text immediately adjacent to it, and every source named is listed below. Framing,
-        ordering and emphasis are our own judgement and are not a finding of any source. Where
+        ordering and emphasis are our own judgment and are not a finding of any source. Where
         sources give different figures for the same measurement, all are reported and attributed
         rather than averaged.
       </p>

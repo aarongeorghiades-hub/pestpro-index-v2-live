@@ -441,7 +441,7 @@ export default function CarpenterBeesPage() {
       <p>
         Every factual claim above names the source it rests on, in the sentence that
         makes it or in the text immediately adjacent to it, and every source named is
-        listed below. Framing, ordering and emphasis are our own judgement and are
+        listed below. Framing, ordering and emphasis are our own judgment and are
         not a finding of any source. Where sources give different figures or take
         different positions on insecticide use, all are reported and attributed
         rather than resolved into one answer.

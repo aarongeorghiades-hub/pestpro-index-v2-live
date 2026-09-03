@@ -691,7 +691,7 @@ export default function NoSeeUmsPage() {
         reachable from its own card above, where the disclosure sits directly beside the
         link, and they are named here rather than linked again so that every link to a
         product on this page carries its disclosure. Framing and ordering are our own
-        judgement and are not a finding of any source.
+        judgment and are not a finding of any source.
       </p>
       <SourceList sources={sources} />
     </UsPageLayout>

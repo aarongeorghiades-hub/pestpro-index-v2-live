@@ -999,3 +999,76 @@ FORMAT CHANGE PROOF. The extension is purely additive and was proven so, not
 asserted: removing every inserted `pushed:` line from the new file returns the
 previous file BYTE-FOR-BYTE. 84 entries before, 84 after, 84 fields added; the
 round's own three new entries brought the file to 87.
+
+## S62 R2 — LAW 170: A MATCHER IS DEFINED BY ITS CLASSES, NOT ITS EXAMPLES
+
+LAW 170 — A MATCHER WHOSE NAME STATES A CONCEPT MUST BE BUILT FROM THAT
+CONCEPT'S CLASSES, NEVER FROM AN ENUMERATED LIST OF EXAMPLES. A list is a
+record of what somebody happened to think of. The next instance nobody
+thought of passes, and the gate reports a clean zero it did not earn.
+
+EVIDENCE. G4 was named "no UK spellings on a US route" and implemented as
+eighteen literal words. At S62 R1 CC wrote "harbourage" twice on a new
+route and G4 passed, because "harbour" was not on the list. Rebuilt at
+S62 R2 from nine morphological classes — -our/-or, -ise/-isation,
+-yse/-yze, -re/-er, -ce/-se, -ogue/-og, doubled consonant, -ae-/-oe-
+digraph, and miscellaneous British-only forms — it immediately found 91
+rendered occurrences on 36 of 53 routes that the list form could not see.
+The same failure had already been recorded once as the M8b false zero
+(Law 166): a matcher whose name is broader than its body.
+
+INFLECTIONS ARE DERIVED, NOT ENUMERATED. A class that catches `harbour`
+must catch harbours, harboured, harbouring and harbourage.
+
+EVERY CLASS CARRIES ITS OWN probePos AND probeNeg, AND BOTH RUN ON EVERY
+INVOCATION. An aggregate probe hides a dead class: G4's single old
+positive probe passed on every run while the gate could not see
+"harbour". The classes live in `scripts/ukspelling.mjs`.
+
+A STATED FALSE NEGATIVE BEATS AN UNSTATED FALSE POSITIVE. Where a class
+cannot be made precise, it is narrowed and the narrowing is written down.
+`analyses` is both the US plural of "analysis" and the British verb, so
+the -yse class excludes the -es suffix and says so. `burnt` and `spelt`
+have ordinary US uses and are omitted. `practice` is both noun and verb
+in US English and is NOT matched; only `practise` is. `-ogue` forms are
+matched but flagged REPORTING ONLY, because catalogue and dialogue are
+acceptable US variants. A false positive licenses an edit to correct
+prose; a false negative leaves a word for the next reader to find.
+
+COROLLARY, PROVEN THE SAME ROUND. The mirror matcher written to measure
+American spellings on the UK estate returned 141 hits on its first run.
+ALL 141 WERE FALSE POSITIVES: `labor`+\w* caught "laboratory", `rigor`
+caught "rigorous", `liter` caught "literally", and `luster` caught
+"cluster" 115 times — every one spelled identically in both dialects.
+Corrected with explicit suffixes and with those four wired in as negative
+probes, the true count is ZERO. Reporting the 141 would have manufactured
+a defect class out of a matcher fault (Law 94). A CLASS-BASED MATCHER IS
+NOT AUTOMATICALLY A CORRECT ONE — IT IS SWEPT FOR FALSE POSITIVES AGAINST
+THE REAL ESTATE BEFORE ANY COUNT IT PRODUCES IS BELIEVED.
+
+## S62 R2 — LAW 171: THE UK ESTATE IS BRITISH, AND THAT IS NOT A DEFECT
+
+LAW 171 — LAW 169 BINDS `/us` ROUTES ONLY. The UK estate is written in
+British English by design. A UK spelling on a UK page is correct and is
+never a finding.
+
+MEASURED S62 R2: the non-US estate carries 2,653 British spellings across
+177 of 179 pages — that is the estate working — and ZERO American
+spellings in its own voice, measured with the corrected mirror matcher
+described under Law 170.
+
+ANY FUTURE SWEEP STATES WHICH ESTATE IT IS SWEEPING AND IN WHICH
+DIRECTION BEFORE IT REPORTS A NUMBER. A count of British spellings that
+does not name its estate is meaningless: the same matcher returns 0 on
+`/us` and 2,653 on `/uk`, and both are correct.
+
+## S62 R2 — RULING RECORDED, NOT YET ACTED ON
+
+EARWIGS AND FUNGUS GNATS ARE NOT BLOCKED TOPICS; THEY WERE MIS-SOURCED.
+UMN (0 of 4 attempts across 2026-09-01 and 2026-09-03) and Oklahoma State
+(0 of 2) are not the only extension services in the United States. Law
+137's "never construct a URL by analogy" forbids inventing an address; it
+does not forbid finding a different publisher, and S59-A expressly permits
+an alternate official publisher provided the citation names the host
+actually read. BOTH TOPICS RETURN TO THE TIER 5 CANDIDATE POOL. No third
+retry is to be made against those two publishers.

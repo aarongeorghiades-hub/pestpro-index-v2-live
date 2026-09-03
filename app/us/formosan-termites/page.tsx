@@ -484,7 +484,7 @@ export default function FormosanTermitesPage() {
         in the text immediately adjacent to it, and every source named is listed below. Where
         two sources give different figures, both are given with the source that published each,
         rather than one being chosen or the two being averaged. Dated figures carry the date the
-        source attached to them. The wording, ordering and emphasis are our own judgement and
+        source attached to them. The wording, ordering and emphasis are our own judgment and
         are not a finding of any source. This page carries no product, no affiliate link and no
         commercial relationship of any kind, so there is nothing on it to disclose.
       </p>

@@ -98,7 +98,7 @@ const faqs: Faq[] = [
   {
     question: 'When and where are chiggers active?',
     answer:
-      'The sources answer this regionally rather than nationally, and this page does not generalise them. Ohio State University Extension states that the greatest numbers in Ohio are present in June through August. Texas A&M AgriLife Extension states that chiggers are active from late spring to fall in most parts of Texas, but may remain active year-round in southern areas. On habitat, University of Maryland Extension states that chiggers are most often found in vegetation transition zones such as along the junction of forest and grass, along margins of swamps, brush thickets and even home lawns or golf courses.',
+      'The sources answer this regionally rather than nationally, and this page does not generalize them. Ohio State University Extension states that the greatest numbers in Ohio are present in June through August. Texas A&M AgriLife Extension states that chiggers are active from late spring to fall in most parts of Texas, but may remain active year-round in southern areas. On habitat, University of Maryland Extension states that chiggers are most often found in vegetation transition zones such as along the junction of forest and grass, along margins of swamps, brush thickets and even home lawns or golf courses.',
   },
 ];
 
@@ -667,7 +667,7 @@ export default function ChiggersPage() {
         B0BJMDMDCX. Each is reachable from its own card above, where the disclosure sits
         directly beside the link, and they are named here rather than linked again so that
         every link to a product on this page carries its disclosure. Framing and ordering
-        are our own judgement and are not a finding of any source.
+        are our own judgment and are not a finding of any source.
       </p>
       <SourceList sources={sources} />
     </UsPageLayout>

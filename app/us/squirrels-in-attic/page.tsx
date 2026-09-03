@@ -380,9 +380,9 @@ export default function SquirrelsInAtticPage() {
       <p>
         Every factual claim above names the source it rests on, in the sentence that makes it or in
         the text immediately adjacent to it, and every source named is listed below. Framing, ordering
-        and emphasis are our own judgement and are not a finding of any source. Where sources
+        and emphasis are our own judgment and are not a finding of any source. Where sources
         describe different states&rsquo; laws, both are reported as their own state&rsquo;s rule,
-        never averaged or generalised into one nationwide claim.
+        never averaged or generalized into one nationwide claim.
       </p>
       <SourceList sources={sources} />
     </UsPageLayout>

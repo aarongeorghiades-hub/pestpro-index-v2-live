@@ -501,7 +501,7 @@ export default function FleasPage() {
       <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
         <p className="m-0 text-base font-bold text-slate-900">
           Only one comb is named here, and the reason is a gap in what the listings say rather than a
-          judgement about the products.
+          judgment about the products.
         </p>
         <p className="mt-3 mb-0 text-base text-slate-800">
           The source asks for two things at once: a metal comb, and one that removes fleas from a

@@ -12,7 +12,7 @@
 // changes here and nowhere else.
 //
 // THE THREE PAGES ARE SIBLINGS BY DAMAGE, NOT BY TAXONOMY. Carpet beetles and clothes
-// moths eat animal fibres; silverfish scrape paper and starch. They share the storage
+// moths eat animal fibers; silverfish scrape paper and starch. They share the storage
 // container advice and nothing else about their products: UC IPM states that a
 // pheromone lure attracts its own species and not others, so no trap on any one of
 // these three pages is a substitute for a trap on another.

@@ -249,7 +249,7 @@ export default function RaccoonCageTrapsPage() {
         listings read were B00004RAMT, B07KB2QCZZ, B0C865FXRH, B07KWYM922, B073P7865G and
         B0748JJL35. Each is reachable from its own card above, where the disclosure sits directly
         beside the link; they are named here rather than linked again so that every link to a
-        product on this page carries its disclosure. Framing and ordering are our own judgement
+        product on this page carries its disclosure. Framing and ordering are our own judgment
         and are not a finding of any source.
       </p>
       <SourceList sources={sources} />

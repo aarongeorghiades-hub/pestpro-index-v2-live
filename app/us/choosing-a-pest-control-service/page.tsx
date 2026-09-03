@@ -308,7 +308,7 @@ export default function ChoosingAPestControlServicePage() {
       <p>
         Every factual claim above names the source it rests on, in the sentence that makes it or
         in the text immediately adjacent to it, and every source named is listed below. The
-        wording, ordering and emphasis are our own judgement and are not a finding of any
+        wording, ordering and emphasis are our own judgment and are not a finding of any
         source. This page carries no product, no affiliate link and no commercial relationship
         of any kind, so there is nothing on it to disclose.
       </p>

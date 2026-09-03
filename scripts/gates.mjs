@@ -53,6 +53,7 @@ import {
   QUOTE_PRESENT,
   QUOTE_ALTERED,
 } from './fixtures.mjs';
+import { UK_CLASSES, UK_SPELLING_RE } from './ukspelling.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const US_TAG = 'pestproindex2-20';
@@ -225,17 +226,15 @@ const MATCHERS = [
     kind: 'gate',
     scope: 'document',
     surface: 'prose',
-    name: 'No UK spellings on a US route',
-    // `organis` carries a word boundary: "organism" and "organisms" are spelled
-    // identically in US and UK English and are not in this class. S61 R8 found
-    // 16 of 18 organis* hits were that word, three inside quotations from US
-    // extension sources. The probeNeg asserts the boundary so it cannot be
-    // quietly undone.
-    test: (t) =>
-      hitStrings(
-        /colour|behaviour|centre|licence|organis(?:e|es|ed|ing|ation|ations|ational)\b|emphasise|storey|\bgrey\b|mould|whilst|analyse|analysing|analysed|practise|neighbour|defence/gi,
-        t,
-      ),
+    name: 'No UK spellings on a US route (9 morphological classes)',
+    // S62 R2: G4 WAS AN ENUMERATED LIST AND IS NOW A SET OF CLASSES. The list
+    // form let "harbourage" ship on /us/camel-crickets at S62 R1 while G4
+    // reported zero — the M8b failure, a matcher whose name is broader than its
+    // body. The nine classes and every false-positive guard live in
+    // scripts/ukspelling.mjs; each carries its own probePos and probeNeg and
+    // ALL OF THEM RUN ON EVERY INVOCATION (see `classes` below and selfTest).
+    test: (t) => hitStrings(UK_SPELLING_RE, t),
+    classes: UK_CLASSES,
     probePos: 'the colour of the centre, and the licence behaviour of a neighbour',
     probeNeg: 'the color of the center, and every organism in it',
   },
@@ -488,6 +487,30 @@ async function selfTest() {
         `${(negHits.length ? `FIRES(${negHits.length})` : `silent/${negList.length}`).padEnd(13)}` +
         `${m.surface.padEnd(14)}${ok ? '' : 'UNUSABLE — '}${m.name}`,
     );
+  }
+
+  // --- per-class probes, for any matcher that declares classes (Law 166) -----
+  //
+  // A matcher built from morphological classes is only as good as its weakest
+  // class, and an aggregate probe hides a dead one: G4's old single probePos
+  // passed on every run while the gate could not see "harbour". Each class is
+  // therefore probed on its own, positively and negatively, on every run.
+  for (const m of MATCHERS.filter((x) => Array.isArray(x.classes))) {
+    console.log(`\n  ${m.id} CLASS PROBES — ${m.classes.length} classes, each fired both ways:`);
+    for (const c of m.classes) {
+      const re = new RegExp(c.source, 'gi');
+      const pos = c.pos.every((p) => new RegExp(c.source, 'gi').test(p));
+      const firing = c.neg.filter((n) => new RegExp(c.source, 'gi').test(n));
+      const ok = pos && firing.length === 0;
+      if (!ok) bad++;
+      console.log(
+        `    ${c.id.padEnd(8)}${(pos ? 'fires' : 'DEAD').padEnd(8)}` +
+          `${(firing.length ? `FIRES(${firing.length})` : `silent/${c.neg.length}`).padEnd(12)}` +
+          `${ok ? '' : 'UNUSABLE — '}${c.name}`,
+      );
+      if (firing.length) for (const f of firing) console.log(`        false positive on: ${JSON.stringify(f)}`);
+      void re;
+    }
   }
 
   // --- extra assertions, each guarding a defect that actually happened -------

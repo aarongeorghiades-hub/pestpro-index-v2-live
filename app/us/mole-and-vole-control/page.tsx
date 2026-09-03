@@ -171,7 +171,7 @@ const faqs: Faq[] = [
   {
     question: 'Could my dog be poisoned by eating a mole that ate the bait?',
     answer:
-      'Purdue Extension worked this through in 2020 and concluded it is very unlikely under label use. Each worm bait carries 1.25 mg of bromethalin, and on the published dog figures an 11 lb dog would need roughly 18 to 19 worms at the technical rate or 9 to 10 at the bait rate. Purdue writes: "It would be extremely unlikely that a dog could find, dig up, and consume the number of worms to reach or even approach the average lethal dose." Purdue pairs that with the conditions attached to it: applying the product in underground runways as the label directs helps minimise the risk of accidental ingestion, uneaten worms need at least two weeks to break down, and the label itself says pets should not be allowed in treated areas. Cats are 2 to 3 times more sensitive than dogs on the same published figures.',
+      'Purdue Extension worked this through in 2020 and concluded it is very unlikely under label use. Each worm bait carries 1.25 mg of bromethalin, and on the published dog figures an 11 lb dog would need roughly 18 to 19 worms at the technical rate or 9 to 10 at the bait rate. Purdue writes: "It would be extremely unlikely that a dog could find, dig up, and consume the number of worms to reach or even approach the average lethal dose." Purdue pairs that with the conditions attached to it: applying the product in underground runways as the label directs helps minimize the risk of accidental ingestion, uneaten worms need at least two weeks to break down, and the label itself says pets should not be allowed in treated areas. Cats are 2 to 3 times more sensitive than dogs on the same published figures.',
   },
   {
     question: 'Why is there no vole poison on this page?',
@@ -717,7 +717,7 @@ export default function MoleAndVoleControlPage() {
 
       <h3>Whether it works</h3>
       <p>
-        <strong>UC IPM, updated November 2024, is the most favourable and is still hedged:</strong>{' '}
+        <strong>UC IPM, updated November 2024, is the most favorable and is still hedged:</strong>{' '}
         <em>
           &ldquo;Although rigorous testing is still needed to better estimate its effectiveness,
           limited studies have indicated gel-type baits are more efficacious than grain baits and
@@ -763,7 +763,7 @@ export default function MoleAndVoleControlPage() {
       <h2 id="vole-bait">Why There Is No Vole Bait Here</h2>
       <p>
         <strong>Because a householder may not legally apply one.</strong> This is not a gap in our
-        sourcing and it is not a judgement about whether such products work. It is the law about who
+        sourcing and it is not a judgment about whether such products work. It is the law about who
         may hold them.
       </p>
       <p>

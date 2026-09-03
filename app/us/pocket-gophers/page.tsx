@@ -489,7 +489,7 @@ export default function PocketGophersPage() {
         Every factual claim above names the source it rests on, in the sentence that makes it or
         in the text immediately adjacent to it, and every source named is listed below. Framing,
         ordering, emphasis, and our reading of where the evidence is stronger are our own
-        judgement and are not a finding of any source. Where sources give different figures for
+        judgment and are not a finding of any source. Where sources give different figures for
         the same measurement, all are reported and attributed rather than averaged.
       </p>
       <SourceList sources={sources} />

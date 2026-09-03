@@ -384,7 +384,7 @@ export default function CoyotesPage() {
           Those two percentages measure different things and are not one statistic.
         </p>
         <p className="mt-3 mb-0 text-base text-amber-900">
-          The 71 percent is retreat <em>before an approach closed to 40 metres</em>, across 175
+          The 71 percent is retreat <em>before an approach closed to 40 meters</em>, across 175
           observations. The 96 percent is immediate retreat <em>from an actual hazing event</em>,
           and it rests on <strong>23 events</strong>. Different denominators, different behaviors,
           and the larger-sounding figure is the one built on the smaller number. They are given
@@ -406,7 +406,7 @@ export default function CoyotesPage() {
       </p>
       <p>
         <strong>These two sources are not simply opposed, and it is worth saying how.</strong> The
-        2007 source is about devices; the 2025 study is about people. Both are sceptical that the
+        2007 source is about devices; the 2025 study is about people. Both are skeptical that the
         effect lasts &mdash; one on principle, the other on its own measurements. Where they differ
         is on whether the practice is worth doing anyway. This page reports that difference and does
         not settle it.
@@ -684,7 +684,7 @@ export default function CoyotesPage() {
 
       <h2 id="rabies">Bites, Scratches and Rabies</h2>
       <p>
-        UC IPM gives one complete instruction, and it is quoted here in full rather than summarised:{' '}
+        UC IPM gives one complete instruction, and it is quoted here in full rather than summarized:{' '}
         <em>
           &ldquo;If you are bitten or scratched by a coyote, wash the affected area thoroughly with
           soap and water and then seek immediate medical attention.&rdquo;
@@ -705,7 +705,7 @@ export default function CoyotesPage() {
           a wild coyote during an attack. That material is clinical, and this page names it rather
           than repeating it.
         </strong>{' '}
-        What we will report is that UC IPM addresses post-exposure immunisation and attributes the
+        What we will report is that UC IPM addresses post-exposure immunization and attributes the
         recommendation to medical authorities. <strong>What treatment is appropriate, and when, is a
         matter for a clinician and not for this page.</strong> The instruction above &mdash; wash the
         area, seek immediate medical attention &mdash; is the source&rsquo;s own and is complete as
@@ -841,7 +841,7 @@ export default function CoyotesPage() {
         <a href="/us/california-trapping-rules">California trapping rules page</a> quotes Title 14
         section 465.5(e): it is unlawful for <strong>any person</strong> to use a steel-jawed
         leg-hold trap, padded or otherwise, to capture a nongame mammal, with an exception only for
-        government employees or their duly authorised agents in an extraordinary case.
+        government employees or their duly authorized agents in an extraordinary case.
       </p>
       <p>
         <strong>

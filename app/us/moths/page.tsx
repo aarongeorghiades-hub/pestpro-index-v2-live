@@ -66,7 +66,7 @@ const breadcrumbSchema = {
 //   B2 pantry-moth pheromone trap  3 cards
 //
 // CARDS NOTHING, EACH FOR ITS OWN REASON:
-//   mothballs / paradichlorobenzene  UC IPM's condition is that the vapour only
+//   mothballs / paradichlorobenzene  UC IPM's condition is that the vapor only
 //                                    reaches strength in an airtight container. That
 //                                    is a user practice, not a product property, so
 //                                    there is no criterion a listing can evidence.
@@ -231,7 +231,7 @@ const faqs: Faq[] = [
   {
     question: 'Are mothballs allowed, given what this site says elsewhere?',
     answer:
-      'Both things are true and they are about different uses. UC IPM records that moth balls, flakes or crystals containing 1,4-dichlorobenzene are available for protecting clothes in storage, and attaches a condition: the vapour only builds to the required concentration in an airtight container, and if the container is not airtight the chemicals only somewhat repel adults while larvae already on the clothes continue to feed. UC IPM also says these materials are toxic and to keep them away from children and pets. Separately, three other pages on this site quote extension services saying not to use mothballs against snakes, chipmunks and other wildlife, and that using them outdoors violates the product label. Those warnings are about outdoor and vertebrate use, which is not the use the product is labelled for. This page names no mothball product.',
+      'Both things are true and they are about different uses. UC IPM records that moth balls, flakes or crystals containing 1,4-dichlorobenzene are available for protecting clothes in storage, and attaches a condition: the vapor only builds to the required concentration in an airtight container, and if the container is not airtight the chemicals only somewhat repel adults while larvae already on the clothes continue to feed. UC IPM also says these materials are toxic and to keep them away from children and pets. Separately, three other pages on this site quote extension services saying not to use mothballs against snakes, chipmunks and other wildlife, and that using them outdoors violates the product label. Those warnings are about outdoor and vertebrate use, which is not the use the product is labeled for. This page names no mothball product.',
   },
   {
     question: 'Do I need an insecticide for pantry moths?',
@@ -489,10 +489,10 @@ export default function MothsPage() {
         <p className="mt-3 mb-0 text-base text-blue-900">
           Our pages on snakes, chipmunks and opossums quote extension services saying mothballs are
           not effective against those animals, that using them outdoors violates the product label,
-          and that they are not labelled for use on mammals.{' '}
+          and that they are not labeled for use on mammals.{' '}
           <strong>
             Those warnings are about outdoor and vertebrate use. This section is about the indoor
-            fabric storage the product is labelled for, which is a different matter entirely.
+            fabric storage the product is labeled for, which is a different matter entirely.
           </strong>{' '}
           Neither statement corrects the other, and no product is named for either.
         </p>

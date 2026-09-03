@@ -42,7 +42,7 @@ const breadcrumbSchema = {
 // ---------------------------------------------------------------------------
 // TWO SPECIES, AND EVERY FIGURE ON THIS PAGE CARRIES ITS SPECIES NAME.
 //
-// UC IPM states nearly every life-cycle figure as a LABELLED PAIR inside one
+// UC IPM states nearly every life-cycle figure as a LABELED PAIR inside one
 // sentence — "Firebrat eggs hatch in about 14 days and silverfish eggs in about 19 to
 // 32 days." Splitting such a sentence to put distance between the two halves would be
 // a mid-quote elision, which is a worse defect than proximity. So the pairs are quoted
@@ -165,7 +165,7 @@ const products: ProductRecord[] = [
 
 const tocItems = [
   { id: 'what', title: 'What They Are, and What They Do to Paper' },
-  { id: 'two-species', title: 'Two Species, and Every Figure Below Is Labelled' },
+  { id: 'two-species', title: 'Two Species, and Every Figure Below Is Labeled' },
   { id: 'warm-cool', title: 'Warm or Cool? Three Sources, Two Answers' },
   { id: 'lifecycle', title: 'How Long They Live: Three Ranges, Three Publishers' },
   { id: 'moisture', title: 'Moisture, and the Specification Nobody Publishes' },
@@ -300,7 +300,7 @@ export default function SilverfishPage() {
       <p>
         This is the third page in a group of three. The others cover{' '}
         <Link href="/us/carpet-beetles">carpet beetles</Link> and{' '}
-        <Link href="/us/moths">household moths</Link>, which eat animal fibres rather than paper and
+        <Link href="/us/moths">household moths</Link>, which eat animal fibers rather than paper and
         starch.{' '}
         <strong>
           The three share the food-storage advice below and share nothing else about their products
@@ -308,14 +308,14 @@ export default function SilverfishPage() {
         &mdash; a lure made for one insect does not attract another.
       </p>
 
-      <h2 id="two-species">Two Species, and Every Figure Below Is Labelled</h2>
+      <h2 id="two-species">Two Species, and Every Figure Below Is Labeled</h2>
       <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
         <p className="m-0 text-base font-bold text-blue-900">
           Silverfish and firebrats are not interchangeable, and almost every number differs between
           them.
         </p>
         <p className="mt-3 mb-0 text-base text-blue-900">
-          UC IPM states most of these figures as labelled pairs inside a single sentence, so they are
+          UC IPM states most of these figures as labeled pairs inside a single sentence, so they are
           quoted whole below rather than split apart.{' '}
           <strong>
             Every figure on this page carries the name of the species it counts. If a number here is

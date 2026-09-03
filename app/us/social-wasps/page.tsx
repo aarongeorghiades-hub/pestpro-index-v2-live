@@ -182,7 +182,7 @@ const sources: Source[] = [
     href: 'https://solvepestproblems.oregonstate.edu/insects-spiders/yellowjackets-wasps',
   },
   {
-    label: 'Social Wasps, Yellow Jackets and Hornets — the source of the labelled-insecticide statement',
+    label: 'Social Wasps, Yellow Jackets and Hornets — the source of the labeled-insecticide statement',
     publisher: 'Utah State University Extension',
     date: 'Undated on the document; read 30 August 2026',
     href: 'https://extension.usu.edu/planthealth/structural-and-nuisance/files/pest-press-fact-sheets/pdf/social-wasps_pestpress.pdf',
@@ -210,7 +210,7 @@ const sources: Source[] = [
   {
     label:
       'Help! I’ve Been Stung! — the source of the large-local-reaction statement, one first-aid position, and the place the AAAAI figure is reported',
-    publisher: 'Michigan State University pollinator programme',
+    publisher: 'Michigan State University pollinator program',
     date: 'Undated on the document; read 30 August 2026',
     href: 'https://pollinators.msu.edu/resources/resources/Help%20Ive%20Been%20Stung.pdf',
   },

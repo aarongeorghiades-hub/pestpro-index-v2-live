@@ -5,7 +5,7 @@
 // own here rather than inheriting another cluster's identity by omission.
 //
 // THIS IS A ONE-PAGE CLUSTER TODAY, AND THE NAV SAYS SO. It lists this page and
-// /us/silverfish, which is the nearest neighbour on the estate: both are insects
+// /us/silverfish, which is the nearest neighbor on the estate: both are insects
 // a reader finds in a damp basement, both are misidentified on sight, and both
 // pages arrive at the same conclusion about dehumidifiers for the same reason.
 // It is NOT a shared file and must not become one (Law 104): if a millipede,

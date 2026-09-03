@@ -114,7 +114,7 @@ const signRows: SignRow[] = [
   },
   {
     sign: 'Does it eat plants?',
-    mole: 'Seldom; damage is from tunnelling (S1, S10, S11)',
+    mole: 'Seldom; damage is from tunneling (S1, S10, S11)',
     vole: 'Yes, herbivore (S2, S7)',
     gopher: 'Yes, roots, bulbs and whole plants (S4, S9)',
   },
@@ -496,7 +496,7 @@ export default function MolesVolesGophersPage() {
       <p>
         <strong>The mole is the odd one out, and the reason is its diet.</strong> Iowa State
         University Extension states that the damage caused by moles is primarily the result of
-        tunnelling, not the direct consumption of plants. UC IPM states that by far the greatest
+        tunneling, not the direct consumption of plants. UC IPM states that by far the greatest
         damage from moles occurs through their burrowing activity, which dislodges plants and dries
         out their roots. UNL Extension states that mounds and surface burrows interfere with mowing
         and that the activities of moles may disturb root systems and kill grass.{' '}
@@ -613,7 +613,7 @@ export default function MolesVolesGophersPage() {
         the text immediately adjacent to it, and every source named is listed below. Where sources
         give different figures for the same measurement, or place the same feature differently, all
         are reported and attributed rather than reconciled. Framing and ordering are our own
-        judgement and are not a finding of any source.
+        judgment and are not a finding of any source.
       </p>
       <SourceList sources={sources} />
     </UsPageLayout>

@@ -75,7 +75,7 @@ const breadcrumbSchema = {
 // says outright that they are "not recommended for rodent control and should
 // be used with caution." All three are named; none is picked.
 //
-// TWO EXTRACTION ARTEFACTS WERE FOUND AND NOT QUOTED. UC IPM's PDF renders its
+// TWO EXTRACTION ARTIFACTS WERE FOUND AND NOT QUOTED. UC IPM's PDF renders its
 // opening sentence with a dropped-capital "H" that pdftotext separates from
 // the rest of the word by blank lines, and its snap-trap paragraph loses the
 // hyphen in "mouse-size" at a line wrap. Both facts are reported in this

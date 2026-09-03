@@ -48,7 +48,7 @@ const breadcrumbSchema = {
 // German cockroaches are too small" — but it sits INSIDE MSU's large-roach block,
 // where it means too small FOR LARGE ROACHES. Under S53-G that is not this page's
 // sentence and it is NOT cited here. UF/IFAS states the affirmative form, naming
-// both classes inside one sentence, which is the S53-I labelling case and safe.
+// both classes inside one sentence, which is the S53-I labeling case and safe.
 //
 // MSU IS A TWO-PART DOCUMENT AND EVERY CLAIM RECORDS ITS PART. Its German cockroach
 // block runs to roughly character 24,500 of the reading-order extraction; its large
@@ -618,7 +618,7 @@ export default function GermanCockroachesPage() {
         </p>
         <p className="mt-3 mb-0 text-base font-bold text-slate-800">
           A station sized for a palmetto bug is the wrong tool here, and a granular bait is the wrong
-          formulation. Neither is a judgement about quality.
+          formulation. Neither is a judgment about quality.
         </p>
       </div>
       <p>

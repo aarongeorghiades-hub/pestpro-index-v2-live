@@ -332,7 +332,7 @@ export default function ArmadillosPage() {
         Trapping is the method the extension sources describe in most detail, and the detail is not
         about which trap you buy. UF/IFAS Extension describes the habit that makes trapping work at
         all: armadillos follow barriers, and temporary garden fencing or wooden boards can be used to
-        funnel armadillos travelling along such barriers into traps.
+        funnel armadillos traveling along such barriers into traps.
       </p>
       <ul>
         <li>
@@ -512,7 +512,7 @@ export default function ArmadillosPage() {
       <p>
         Every factual claim above names the source it rests on, in the sentence that makes it or in
         the text immediately adjacent to it, and every source named is listed below. Framing, ordering
-        and emphasis are our own judgement and are not a finding of any source. Where sources give
+        and emphasis are our own judgment and are not a finding of any source. Where sources give
         different figures for the same measurement, all are reported and attributed rather than
         averaged.
       </p>

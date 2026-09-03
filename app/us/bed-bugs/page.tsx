@@ -66,7 +66,7 @@ const breadcrumbSchema = {
 // naming collision existed to resolve.
 //
 // THREE DEGREE-SIGN CONVENTIONS COEXIST ACROSS THESE SOURCES AND ARE EACH
-// REPRODUCED EXACTLY, NEVER NORMALISED (Law 14, S59-B). Penn State and
+// REPRODUCED EXACTLY, NEVER NORMALIZED (Law 14, S59-B). Penn State and
 // Purdue mostly use the true degree sign, U+00B0 (140°F, 45 °C). EPA's IPM
 // page uses the masculine ordinal indicator, U+00BA, throughout its own
 // temperature figures (120 ºF, 0 ºF) — not a typo introduced here, verified

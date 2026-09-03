@@ -278,7 +278,7 @@ export default function ChipmunksPage() {
           doing.
         </strong>{' '}
         There is no registered poison. There is no effective frightening device. The repellents are
-        labelled for a different animal. And four of the five sources here make control conditional
+        labeled for a different animal. And four of the five sources here make control conditional
         on numbers or on structural damage rather than on the animal being present.
       </p>
       <p>
@@ -707,10 +707,10 @@ export default function ChipmunksPage() {
       </p>
       <p>
         <strong>So no repellent is named here.</strong> The products the sources point to are
-        labelled for a different animal, the one source that lists them also says none is registered
+        labeled for a different animal, the one source that lists them also says none is registered
         for this one, and no source consulted says a repellent solves the problem.{' '}
         <strong>
-          Whether applying a squirrel-labelled product for chipmunks is a label-consistent use is a
+          Whether applying a squirrel-labeled product for chipmunks is a label-consistent use is a
           question none of these sources answers, and this page does not answer it either.
         </strong>
       </p>
@@ -769,7 +769,7 @@ export default function ChipmunksPage() {
         </em>
       </p>
 
-      <h3>Two: the baits that would work are not labelled for this animal</h3>
+      <h3>Two: the baits that would work are not labeled for this animal</h3>
       <p>
         <strong>Purdue:</strong>{' '}
         <em>
@@ -777,7 +777,7 @@ export default function ChipmunksPage() {
           chipmunks.&rdquo;
         </em>{' '}
         It goes on to say that baits used against rats and mice in and around homes will also kill
-        chipmunks, but that they are not labelled for that use and cannot be recommended{' '}
+        chipmunks, but that they are not labeled for that use and cannot be recommended{' '}
         <em>(paraphrased &mdash; that sentence is broken across a column in the source PDF)</em>.
       </p>
       <p>

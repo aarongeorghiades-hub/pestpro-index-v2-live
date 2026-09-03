@@ -884,7 +884,7 @@ export default function ArizonaBarkScorpionsPage() {
           &ldquo;Generally, applications of insecticides for scorpions should be restricted
           to outdoor areas.&rdquo;
         </em>{' '}
-        Its guidance is written for school pest management programmes run by licensed
+        Its guidance is written for school pest management programs run by licensed
         applicators. No chemical product is named on this page.
       </p>
       <p>
@@ -913,7 +913,7 @@ export default function ArizonaBarkScorpionsPage() {
       <p>
         Every factual claim above names the source it rests on, in the sentence that makes it
         or in the text immediately adjacent to it, and every source named is listed below.
-        The wording, ordering and emphasis are our own judgement and are not a finding of any
+        The wording, ordering and emphasis are our own judgment and are not a finding of any
         source. Where two sources disagree, both are given with the source that holds each
         position rather than one being chosen. The products named on this page were read from
         their own listings on 25 August 2026 and are recorded rather than assessed; the

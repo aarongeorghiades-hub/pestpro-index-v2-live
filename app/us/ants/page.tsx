@@ -52,11 +52,11 @@ const breadcrumbSchema = {
 //
 // EVERY CLAIM CARRIES ITS SPECIES, AND THE FOUR ARE NOT EQUALLY DOCUMENTED. Odorous
 // house ants and pavement ants each have a dedicated USU fact sheet. Carpenter ants
-// and pharaoh ants have labelled blocks inside multi-species documents and no
+// and pharaoh ants have labeled blocks inside multi-species documents and no
 // dedicated source in this pack. The page says so rather than letting depth of
 // coverage read as depth of evidence.
 //
-// CARPENTER ANTS ARE THE S53-I LABELLING CASE, NOT THE DISTANCE CASE. Colorado
+// CARPENTER ANTS ARE THE S53-I LABELING CASE, NOT THE DISTANCE CASE. Colorado
 // State's solid-bait sentence names carpenter ants inside the sentence and draws its
 // force from the contrast with other ants. Splitting it for distance would destroy
 // the criterion it states.
@@ -313,7 +313,7 @@ export default function AntsPage() {
         </p>
         <p className="mt-3 mb-0 text-base text-slate-800">
           Odorous house ants and pavement ants each have a dedicated Utah State University fact
-          sheet running to tens of thousands of words. Carpenter ants and pharaoh ants have labelled
+          sheet running to tens of thousands of words. Carpenter ants and pharaoh ants have labeled
           blocks inside multi-species documents and no dedicated source in this pack.{' '}
           <strong>
             More text is not more evidence, but less text does mean fewer specifics, and the two
@@ -721,7 +721,7 @@ export default function AntsPage() {
       </p>
       <p>
         <strong>
-          And two of the ants on this page have their own reasons for a bait programme going nowhere.
+          And two of the ants on this page have their own reasons for a bait program going nowhere.
         </strong>{' '}
         Utah State states that the varied odorous house ant diet can make management with baits
         difficult, and that the presence of multiple queens makes successful baiting and pesticide

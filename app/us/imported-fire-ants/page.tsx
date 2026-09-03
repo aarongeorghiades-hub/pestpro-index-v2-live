@@ -73,7 +73,7 @@ const faqs: Faq[] = [
   {
     question: 'Should I use bait if I have native ants in the yard?',
     answer:
-      'The sources disagree, and both positions belong to extension services. Texas A&M, AgriLife Extension and Clemson all put a broadcast bait first. UF/IFAS Extension qualifies it: "broadcast baiting may be counterproductive because it can also decrease native ant populations that slow fire ant spread", and "If there are native ants in your treatment area, try using only individual mound treatments to prevent affecting non-target ant populations." Texas A&M puts a number on where the whole programme stops being the right tool: it is "not suggested for previously untreated areas with large numbers of native ants and few fire ant mounds—15 to 20 mounds per acre or less". Texas A&M also states that "preserving and encouraging native ant species that compete with the fire ant for territory and resources is beneficial".',
+      'The sources disagree, and both positions belong to extension services. Texas A&M, AgriLife Extension and Clemson all put a broadcast bait first. UF/IFAS Extension qualifies it: "broadcast baiting may be counterproductive because it can also decrease native ant populations that slow fire ant spread", and "If there are native ants in your treatment area, try using only individual mound treatments to prevent affecting non-target ant populations." Texas A&M puts a number on where the whole program stops being the right tool: it is "not suggested for previously untreated areas with large numbers of native ants and few fire ant mounds—15 to 20 mounds per acre or less". Texas A&M also states that "preserving and encouraging native ant species that compete with the fire ant for territory and resources is beneficial".',
   },
   {
     question: 'Can I get rid of them completely?',
@@ -110,7 +110,7 @@ const sources: Source[] = [
     href: 'https://research.entomology.tamu.edu/wp-content/uploads/sites/28/2011/12/FAPFS023_2002rev_Medical.pdf',
   },
   {
-    label: 'Two-Step Method (programme page)',
+    label: 'Two-Step Method (program page)',
     publisher: 'Texas Imported Fire Ant Research and Management Project, Texas A&M',
     date: 'Accessed 25 August 2026',
     href: 'https://fireant.tamu.edu/controlmethods/twostep/',
@@ -546,7 +546,7 @@ export default function ImportedFireAntsPage() {
           </em>
         </p>
         <p className="m-0 mt-3 text-sm text-amber-900">
-          Texas A&amp;M puts a number on where the whole programme stops being the right tool.
+          Texas A&amp;M puts a number on where the whole program stops being the right tool.
           It is{' '}
           <em>
             &ldquo;not suggested for previously untreated areas with large numbers of native
@@ -842,7 +842,7 @@ export default function ImportedFireAntsPage() {
         </em>
       </p>
       <p>
-        <strong>Shovelling one mound onto another.</strong> UF/IFAS states:{' '}
+        <strong>Shoveling one mound onto another.</strong> UF/IFAS states:{' '}
         <em>
           &ldquo;Multi-queen colonies are not territorial and this method is not even effective
           for single-queen colonies. Florida has multi-queen populations, so by following this
@@ -1032,7 +1032,7 @@ export default function ImportedFireAntsPage() {
       </p>
       <p>
         <strong>One note on what &ldquo;organic&rdquo; means here.</strong> Texas A&amp;M is
-        careful about it: the organic certification programmes{' '}
+        careful about it: the organic certification programs{' '}
         <em>
           &ldquo;are solely for certified organic food and livestock production. There is no
           similar program that applies to nonagricultural pest management practices where
@@ -1051,7 +1051,7 @@ export default function ImportedFireAntsPage() {
         Every factual claim above names the source it rests on, in the sentence that makes it or
         in the text immediately adjacent to it, and every source named is listed below. Where two
         sources disagree, both are given with the source that holds each position rather than one
-        being chosen. The wording, ordering and emphasis are our own judgement and are not a
+        being chosen. The wording, ordering and emphasis are our own judgment and are not a
         finding of any source. The products named on this page were read from their own listings
         on 25 August 2026 and are recorded rather than assessed; the listings read were
         B00GRT5E18, B08YS87GR5, B015BSWVCU, B0DV9W259K, B08MB5VG9M, B072KL69L5, B0FDH2LTTN and

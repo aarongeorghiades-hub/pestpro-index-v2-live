@@ -803,7 +803,7 @@ export default function BlackWidowSpidersPage() {
           <strong>Two of those differ on the reason for the cold</strong> &mdash; K-State says to
           reduce swelling, UC IPM says to relieve pain &mdash; and UC IPM states elsewhere that
           these bites do not cause conspicuous swelling. <strong>K-State alone recommends
-          sanitising the site.</strong> The difference is left visible rather than tidied away.
+          sanitizing the site.</strong> The difference is left visible rather than tidied away.
         </p>
       </div>
 
@@ -1005,7 +1005,7 @@ export default function BlackWidowSpidersPage() {
       </p>
       <p>
         <strong>Utah State&rsquo;s IPM list</strong> gives the same measures as separate lines:
-        minimise nesting habitat, seal exterior cracks and crevices to reduce hiding places, reduce
+        minimize nesting habitat, seal exterior cracks and crevices to reduce hiding places, reduce
         clutter indoors and outdoors, <em>&ldquo;Install tight-fitting door sweeps.&rdquo;</em>,
         install tight-fitting screens in windows, and reduce the other insects that serve as food.
       </p>
@@ -1090,7 +1090,7 @@ export default function BlackWidowSpidersPage() {
           formulation at all.{' '}
           <strong>
             So none is named here. That is a finding about what is on sale measured against a
-            published criterion, not a judgement about whether insecticides work
+            published criterion, not a judgment about whether insecticides work
           </strong>{' '}
           &mdash; on that, the four positions above are the whole of what the sources say, and they
           disagree.
