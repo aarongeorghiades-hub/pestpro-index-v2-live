@@ -17,7 +17,13 @@
 // parity pair, the tag audit, the disclosure audit, the Law 120 price window,
 // the non-Latin scan and the quotation audit — are now here, alongside the
 // ASIN extractor that lives operationally in scripts/amazon-availability/
-// check.mjs. Fifteen matchers, zero uncodified.
+// check.mjs.
+//
+// S63 R3, LAW 178: THIS COMMENT CARRIES NO COUNT, DELIBERATELY. It used to read
+// "Fifteen matchers, zero uncodified" and was still saying fifteen against
+// sixteen. A figure maintained by hand in a comment is not a measurement and
+// drifts silently. Every count this file reports is now derived from MATCHERS
+// at runtime; run `--self-test` to see them.
 //
 // FOUR RULES THIS FILE ENFORCES ON ITSELF:
 //
@@ -1216,8 +1222,27 @@ async function runEstate() {
 async function main() {
   const arg = process.argv[2];
   const bad = await selfTest();
+  // LAW 178: every figure on this line is DERIVED FROM THE REGISTRY AT RUNTIME.
+  //
+  // The old line ended "0 uncodified" as a STRING LITERAL. Nothing computed it,
+  // so it printed zero however many matchers were being retyped in prose that
+  // round -- Law 166's exact failure mode announcing its own absence as a pass.
+  // IT IS GONE RATHER THAN RECOMPUTED, because nothing inside this file can
+  // measure what lives outside it, and a number that cannot be measured must
+  // not be printed at all. What IS derivable is printed instead: how many
+  // matchers are registered, how many are usable, and the kind breakdown --
+  // and `unusable` CAN be non-zero, which is what makes it a result.
+  const registered = MATCHERS.length;
+  const usable = registered - bad;
+  const kinds = MATCHERS.reduce((acc, m) => ({ ...acc, [m.kind]: (acc[m.kind] ?? 0) + 1 }), {});
+  const kindLine = Object.keys(kinds)
+    .sort()
+    .map((k) => `${kinds[k]} ${k}`)
+    .join(', ');
   console.log(
-    bad ? `\nSELF-TEST FAILED (${bad}).` : `\nSELF-TEST PASSED. ${MATCHERS.length} matchers codified and usable, 0 uncodified.`,
+    bad
+      ? `\nSELF-TEST FAILED (${bad}). ${registered} registered, ${usable} usable (${kindLine}).`
+      : `\nSELF-TEST PASSED. ${registered} matchers registered, ${usable} usable, 0 unusable (${kindLine}).`,
   );
   if (!arg || arg === '--self-test') process.exit(bad ? 1 : 0);
   if (bad) {
