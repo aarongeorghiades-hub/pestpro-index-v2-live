@@ -60,6 +60,23 @@ import {
   GRAPH_ROW_ORPHAN_BOTH,
   GRAPH_ROW_LINKED,
   GRAPH_ROW_HUB,
+  DIRENTS_WITH_ROUTES,
+  DIRENTS_NON_ROUTES,
+  ASIN_DECL_PRESENT,
+  ASIN_DECL_ABSENT,
+  US_SIDE_CLEAN,
+  US_SIDE_DIRTY,
+  UK_SIDE_CLEAN,
+  UK_SIDE_DIRTY,
+  LAW_HEADINGS_ALL_FORMS,
+  LAW_REFERENCES_ONLY,
+  QUOTE_SPAN_GENUINE,
+  QUOTE_SPAN_JS_DELIMITERS,
+  SET_PAIR_EQUAL,
+  SET_PAIR_DIFFERENT,
+  SET_PAIR_PREFIX_TRAP,
+  BLOCK_BODY_HTTP_200,
+  REAL_PAGE_WITH_TRIGGER_WORD,
 } from './fixtures.mjs';
 import { UK_CLASSES, UK_SPELLING_RE } from './ukspelling.mjs';
 
@@ -610,6 +627,191 @@ const MATCHERS = [
       // a scare-quoted phrase in our own voice, held out by the caller
       { text: PAGE_WITH_SCARE_QUOTE, ctx: { ownVoice: ['top picks'] } },
     ],
+  },
+  // =========================================================================
+  // S63 R3 — THE MACHINERY ROUND. Seven matchers codified: the four that
+  // S63 R1 Task 0 ran as ad-hoc shell, and the three named false positives.
+  // Every one is built from the RULE that defines what it detects, never from
+  // a list of instances (Law 170), and every one carries its OWN probes.
+  // =========================================================================
+  {
+    id: 'M17',
+    kind: 'inventory',
+    scope: 'source',
+    surface: 'route-dirs',
+    name: 'S54-H base 2: source-literal route derivation from app/us',
+    // THE RULE: /us/<dir> is a route IF AND ONLY IF app/us/<dir>/page.tsx
+    // exists. The ad-hoc shell form listed directories and subtracted
+    // `components` BY NAME, which is an exclusion list — Law 170 forbids it and
+    // it would silently admit any future non-route directory. Presence of the
+    // page file is the whole rule; `components` fails it without being named.
+    // Declared INVENTORY: it derives a set, it cannot fail (Law 167).
+    test: (entries) => (entries ?? []).filter((e) => e.hasPageTsx).map((e) => e.name).sort(),
+    probePos: [{ text: DIRENTS_WITH_ROUTES }],
+    probeNeg: [{ text: DIRENTS_NON_ROUTES }],
+  },
+  {
+    id: 'M18',
+    kind: 'inventory',
+    scope: 'source',
+    surface: 'asin-decls',
+    // Uses the SAME expression as M14 and check.mjs. Assertion C in selfTest()
+    // already asserts those two have not drifted; this one shares the constant
+    // rather than retyping it, so there is nothing new to drift.
+    name: 'Estate ASIN declarations, occurrences and distinct (shares M14 expression)',
+    test: (t) => all(new RegExp(ASIN_RX_SOURCE, 'g'), t ?? '').map((m) => m[1] ?? m[2]),
+    probePos: ASIN_DECL_PRESENT,
+    probeNeg: ASIN_DECL_ABSENT,
+  },
+  {
+    id: 'M19',
+    kind: 'gate',
+    scope: 'document',
+    surface: 'full',
+    name: 'Affiliate cross-contamination: neither estate carries the other marketplace',
+    // THE RULE: each side has ONE marketplace host and ONE tag. A defect is the
+    // OTHER side's host or the OTHER side's tag appearing here. Written as a
+    // rule over a side->(host,tag) map, so a third marketplace is covered by
+    // adding a row rather than by editing the matcher (Law 170).
+    //
+    // ITS RUNNER READS FILES THROUGH fs, NEVER THROUGH A SHELL. The ad-hoc form
+    // passed an unquoted file list to grep and the UK routes live under
+    // `.next/server/app/(uk)/`; the parentheses broke the word and the sweep
+    // returned a FALSE ZERO for the entire UK estate.
+    test: (t, ctx = {}) => {
+      const side = ctx.side ?? 'us';
+      const SIDES = {
+        us: { host: 'amazon.com', tag: 'pestproindex2-20' },
+        uk: { host: 'amazon.co.uk', tag: 'pestproindex2-21' },
+      };
+      const mine = SIDES[side];
+      if (!mine) return [`unknown estate side: ${side}`];
+      const out = [];
+      for (const [name, other] of Object.entries(SIDES)) {
+        if (name === side) continue;
+        // amazon.com is a substring of amazon.com.au etc; anchor on the /dp/ path
+        const hostRe = new RegExp(`${other.host.replace(/\./g, '\\.')}/dp/`, 'g');
+        if (side === 'us' ? /amazon\.co\.uk\/dp\//.test(t) : hostRe.test(t)) {
+          out.push(`${side} page carries ${other.host} card link`);
+        }
+        if (t.includes(other.tag)) out.push(`${side} page carries ${name} tag ${other.tag}`);
+      }
+      return out;
+    },
+    probePos: [
+      { text: US_SIDE_DIRTY, ctx: { side: 'us' } },
+      { text: UK_SIDE_DIRTY, ctx: { side: 'uk' } },
+    ],
+    probeNeg: [
+      { text: US_SIDE_CLEAN, ctx: { side: 'us' } },
+      { text: UK_SIDE_CLEAN, ctx: { side: 'uk' } },
+    ],
+  },
+  {
+    id: 'M20',
+    kind: 'inventory',
+    scope: 'source',
+    surface: 'claude-md',
+    name: 'Law enumeration in CLAUDE.md, all four heading forms',
+    // THE RULE, ESTABLISHED BY READING CLAUDE.md AT S63 R3 RATHER THAN ASSUMED.
+    // A law is DECLARED in one of four forms, all four of which are present in
+    // the file today:
+    //   1  numbered-list        "157. A SEARCH-ENGINE SNIPPET..."
+    //   2  bare at line start   "LAW 172 — CLUSTER MEMBERSHIP IS A SET."
+    //   3  heading-prefixed     "### LAW 174 — G7 IS AN INVENTORY..."
+    //   4  inside a section h2  "## S62 R2 — LAW 171: THE UK ESTATE IS BRITISH"
+    // A `LAW n` token MID-SENTENCE is a REFERENCE and is not a declaration.
+    // The S63 R1 scan anchored on form 2 alone and reported Law 174 ABSENT.
+    test: (t) => {
+      const found = new Set();
+      for (const line of (t ?? '').split('\n')) {
+        let m;
+        // forms 2 and 3: LAW n at line start, optionally behind # markers
+        if ((m = /^#{0,6}\s*LAW\s+(\d+)\b/.exec(line))) found.add(Number(m[1]));
+        // form 4: announced inside a markdown section heading
+        else if (/^#{1,6}\s/.test(line)) {
+          for (const h of line.matchAll(/\bLAW\s+(\d+)\b/g)) found.add(Number(h[1]));
+        }
+        // form 1: numbered-list declaration
+        else if ((m = /^\s{0,4}(\d{1,3})\.\s+\S/.exec(line))) found.add(Number(m[1]));
+      }
+      return [...found].sort((x, y) => x - y);
+    },
+    probePos: LAW_HEADINGS_ALL_FORMS,
+    probeNeg: LAW_REFERENCES_ONLY,
+  },
+  {
+    id: 'M21',
+    kind: 'inventory',
+    scope: 'source',
+    surface: 'quotation-delimiters',
+    name: 'FP-1: genuine quotation delimiters only; an ASCII quote is a JS delimiter',
+    // THE RULE: a quotation is delimited by a QUOTATION MARK — the HTML
+    // entities &ldquo;/&rdquo; or the curly characters themselves. In a .tsx
+    // file the ASCII straight double quote delimits a JS STRING and is never a
+    // quotation mark. Treating it as one was FP-1, recorded under Law 169 at
+    // S61 R9 and uncodified until now.
+    test: (t) => {
+      const out = [];
+      for (const m of (t ?? '').matchAll(/&ldquo;([\s\S]*?)&rdquo;|\u201c([\s\S]*?)\u201d/g)) {
+        out.push((m[1] ?? m[2]).replace(/\s+/g, ' ').trim());
+      }
+      return out.filter(Boolean);
+    },
+    probePos: QUOTE_SPAN_GENUINE,
+    probeNeg: QUOTE_SPAN_JS_DELIMITERS,
+  },
+  {
+    id: 'M22',
+    kind: 'gate',
+    scope: 'source',
+    surface: 'route-sets',
+    name: 'FP-2: two route sets compared by exact membership, never by prefix',
+    // THE RULE: symmetric difference over exact membership. A prefix or
+    // startsWith comparison treats `rats` and `rats-and-mice` as related, which
+    // was FP-2. The codified parity path never had this bug; the ad-hoc
+    // both-bases comparison did. A hit is a defect: the two bases must agree.
+    test: (pair) => {
+      const A = new Set(pair?.a ?? []);
+      const B = new Set(pair?.b ?? []);
+      return [
+        ...[...A].filter((x) => !B.has(x)).map((x) => `only in A: ${x}`),
+        ...[...B].filter((x) => !A.has(x)).map((x) => `only in B: ${x}`),
+      ].sort();
+    },
+    probePos: [
+      { text: SET_PAIR_DIFFERENT },
+      // THE FP-2 CASE: a prefix test calls this a match. Membership must not.
+      { text: SET_PAIR_PREFIX_TRAP },
+    ],
+    probeNeg: [{ text: SET_PAIR_EQUAL }],
+  },
+  {
+    id: 'M23',
+    kind: 'gate',
+    scope: 'external',
+    surface: 'fetched-body',
+    name: 'FP-3 / Law 177: a bot-block body is a block whatever the status code',
+    // THE RULE, and Law 177 rests on it: a response is BLOCKED when its body
+    // carries a block vendor's own signature or an explicit block phrase AND is
+    // far too small to be a content page. A block-related WORD inside a large,
+    // complete page is not a block — that was FP-3, which flagged a 53,939-byte
+    // University of Arkansas fact sheet because its contact form said "captcha".
+    //
+    // THE SIZE CONDITION IS PART OF THE RULE, not a tuning knob: every real
+    // block body measured on this estate has been under 8 KB (959, 961, 1,486,
+    // 3,781, 5,853, 7,086) and every real fact sheet over 30 KB.
+    test: (body, ctx = {}) => {
+      const b = body ?? '';
+      const SIG = /incapsula|request unsuccessful|access denied|attention required|cf-error/i;
+      const SMALL = 8000;
+      const out = [];
+      if (SIG.test(b) && b.length < SMALL) out.push(`block signature in a ${b.length}-byte body`);
+      if (ctx.status && ctx.status >= 400) out.push(`http ${ctx.status}`);
+      return out;
+    },
+    probePos: [{ text: BLOCK_BODY_HTTP_200, ctx: { status: 200 } }],
+    probeNeg: [{ text: REAL_PAGE_WITH_TRIGGER_WORD, ctx: { status: 200 } }],
   },
 ];
 
