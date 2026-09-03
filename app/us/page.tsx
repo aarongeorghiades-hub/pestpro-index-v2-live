@@ -398,6 +398,12 @@ const groups: HubGroup[] = [
         covers:
           'Why the autumn invasion ends by itself, and the one source that says not to pick one up.',
       },
+      {
+        title: 'Sowbugs and Pillbugs',
+        href: '/us/sowbugs-pillbugs',
+        covers:
+          'The roly-poly is a crustacean with gills, which is why it dies indoors and why the sources say to buy nothing.',
+      },
     ],
   },
   {

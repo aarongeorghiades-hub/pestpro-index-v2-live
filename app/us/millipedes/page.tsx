@@ -264,6 +264,14 @@ export default function MillipedesPage() {
         printing because it is exactly what a reader types into a search box: a common description
         is little black worms crawling in the basement windows.
       </p>
+      <p>
+        <strong>And if it is gray, oval and rolls into a ball, it is neither.</strong> Colorado State
+        publishes a third animal in the same fact sheet as these two &mdash; the sowbug and the
+        pillbug, which are not insects at all but crustaceans that breathe through gills.{' '}
+        <Link href="/us/sowbugs-pillbugs">Our sowbugs and pillbugs page</Link> covers the test that
+        separates those two from each other, and why the same source says control is generally
+        unnecessary for them.
+      </p>
 
       <h2 id="why-now">Why They Came, and Why It Will Stop</h2>
       <p>

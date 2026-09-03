@@ -195,7 +195,18 @@ const CLUSTERS = {
   // sheet as centipedes for the same reason — both are moisture-dependent and
   // both die indoors as the air dries. They are deliberately NOT in
   // `overwintering`, whose members winter indoors on purpose.
-  moisture: ['silverfish', 'camel-crickets', 'earwigs', 'house-centipedes', 'millipedes'],
+  // S63 R2: sowbugs and pillbugs join it. Colorado State publishes all three of
+  // millipedes, centipedes and sowbugs in ONE fact sheet, and states that the
+  // controls effective for the first two are also effective for these — which is
+  // a sourced intersection rather than a thematic one.
+  moisture: [
+    'silverfish',
+    'camel-crickets',
+    'earwigs',
+    'house-centipedes',
+    'millipedes',
+    'sowbugs-pillbugs',
+  ],
   // S62 R5. Declared once G7 became DIRECTIONAL — under the pre-R5 rule this
   // declaration would have newly failed two legitimate inbound links, which is
   // why S62 R4 measured it, declined to declare it, and referred the question.
