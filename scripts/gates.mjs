@@ -187,7 +187,11 @@ const CLUSTERS = {
   // the fabric-pest family it shares a header nav with, which is not declared as
   // a cluster; set membership (Law 172) means declaring this one does not
   // disturb that.
-  moisture: ['silverfish', 'camel-crickets', 'earwigs'],
+  // S63 R1: house centipedes join it. The intersection is not thematic but
+  // sourced — Penn State names silverfish and firebrats among the prey, so one
+  // member of this cluster eats another, and all four are found in the same
+  // damp basements for the same reason.
+  moisture: ['silverfish', 'camel-crickets', 'earwigs', 'house-centipedes'],
   // S62 R5. Declared once G7 became DIRECTIONAL — under the pre-R5 rule this
   // declaration would have newly failed two legitimate inbound links, which is
   // why S62 R4 measured it, declined to declare it, and referred the question.

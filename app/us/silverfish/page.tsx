@@ -468,6 +468,13 @@ export default function SilverfishPage() {
           source sets, one identical gap, and neither page fills it by guessing.
         </p>
         <p className="mt-3 mb-0 text-base text-slate-800">
+          <strong>And something may already be eating them.</strong> Penn State Extension names
+          silverfish and firebrats first in the house centipede&rsquo;s prey list, so a fast
+          many-legged arthropod in the same rooms is often a sign this page&rsquo;s subject is
+          present in numbers. Our <Link href="/us/house-centipedes">house centipedes page</Link>{' '}
+          covers that animal, including the bite question its own eight sources disagree about.
+        </p>
+        <p className="mt-3 mb-0 text-base text-slate-800">
           <strong>A third insect shares the root cause and not the habitat.</strong> Our{' '}
           <Link href="/us/earwigs">earwigs page</Link> covers the one that comes in from the mulch
           outside rather than from the damp inside &mdash; flattened, red-brown, with forceps at the

@@ -386,6 +386,12 @@ const groups: HubGroup[] = [
         covers:
           'Whether the pincers can hurt you, three sources that disagree about what they are for, and the strip of mulch beside the door.',
       },
+      {
+        title: 'House Centipedes',
+        href: '/us/house-centipedes',
+        covers:
+          'Eight sources on whether it can bite, and the reason a recurring one is a symptom rather than the problem.',
+      },
     ],
   },
   {
