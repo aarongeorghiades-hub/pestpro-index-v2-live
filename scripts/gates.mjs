@@ -191,7 +191,11 @@ const CLUSTERS = {
   // sourced — Penn State names silverfish and firebrats among the prey, so one
   // member of this cluster eats another, and all four are found in the same
   // damp basements for the same reason.
-  moisture: ['silverfish', 'camel-crickets', 'earwigs', 'house-centipedes'],
+  // S63 R1: millipedes join it. Colorado State publishes them in the SAME fact
+  // sheet as centipedes for the same reason — both are moisture-dependent and
+  // both die indoors as the air dries. They are deliberately NOT in
+  // `overwintering`, whose members winter indoors on purpose.
+  moisture: ['silverfish', 'camel-crickets', 'earwigs', 'house-centipedes', 'millipedes'],
   // S62 R5. Declared once G7 became DIRECTIONAL — under the pre-R5 rule this
   // declaration would have newly failed two legitimate inbound links, which is
   // why S62 R4 measured it, declined to declare it, and referred the question.

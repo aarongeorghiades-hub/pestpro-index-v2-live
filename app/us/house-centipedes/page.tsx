@@ -337,6 +337,15 @@ export default function HouseCentipedesPage() {
         on slabs; and any damp, cool unexcavated space under the house.
       </p>
       <p>
+        <strong>If the animal is slow, round and curls up, it is not this one.</strong> Colorado
+        State publishes the house centipede in the same fact sheet as the millipede for the same
+        reason &mdash; both need damp and both die as it dries &mdash; but they are told apart at a
+        glance: a millipede has two pairs of legs per body segment and curls into a coil when
+        disturbed, where a centipede has one pair per segment and runs.{' '}
+        <Link href="/us/millipedes">Our millipedes page</Link> covers the autumn invasion, why it
+        ends on its own, and the one source that advises against handling them.
+      </p>
+      <p>
         Three other pages on this site describe the same damp spaces for different animals. Our{' '}
         <Link href="/us/silverfish">silverfish and firebrats page</Link> covers two of the animals
         Penn State names as this one&rsquo;s prey; our{' '}

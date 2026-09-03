@@ -392,6 +392,12 @@ const groups: HubGroup[] = [
         covers:
           'Eight sources on whether it can bite, and the reason a recurring one is a symptom rather than the problem.',
       },
+      {
+        title: 'Millipedes',
+        href: '/us/millipedes',
+        covers:
+          'Why the autumn invasion ends by itself, and the one source that says not to pick one up.',
+      },
     ],
   },
   {
