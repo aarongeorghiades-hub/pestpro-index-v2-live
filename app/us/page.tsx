@@ -380,6 +380,12 @@ const groups: HubGroup[] = [
         covers:
           'The chirp test that separates them from the crickets that do chirp, and four sources that disagree on spraying indoors.',
       },
+      {
+        title: 'Earwigs',
+        href: '/us/earwigs',
+        covers:
+          'Whether the pincers can hurt you, three sources that disagree about what they are for, and the strip of mulch beside the door.',
+      },
     ],
   },
   {

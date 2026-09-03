@@ -159,6 +159,14 @@ const CLUSTERS = {
   // /us/flies is the general head; cluster flies and fruit flies are the two
   // specific children a reader arrives at having identified the wrong fly.
   flies: ['flies', 'cluster-flies', 'fruit-flies'],
+  // S62 R5. The three moisture-and-harborage pages. They share no subject — the
+  // earwig page carries zero silverfish content and vice versa — but they share
+  // a root cause and a remedy, and a reader who has misidentified one of them is
+  // looking for another. /us/silverfish also sits in a SECOND natural grouping,
+  // the fabric-pest family it shares a header nav with, which is not declared as
+  // a cluster; set membership (Law 172) means declaring this one does not
+  // disturb that.
+  moisture: ['silverfish', 'camel-crickets', 'earwigs'],
   // S62 R5. Declared once G7 became DIRECTIONAL — under the pre-R5 rule this
   // declaration would have newly failed two legitimate inbound links, which is
   // why S62 R4 measured it, declined to declare it, and referred the question.

@@ -209,7 +209,10 @@ export default function CamelCricketsPage() {
           to measure a machine against, so no dehumidifier would be named here even if every
           listing had loaded. Our{' '}
           <Link href="/us/silverfish">silverfish and firebrats page</Link> reached the identical
-          conclusion on the identical question, and for the same reason.
+          conclusion on the identical question, and for the same reason. Our{' '}
+          <Link href="/us/earwigs">earwigs page</Link> is the third of the three, and it reaches the
+          same place from outdoors: its sources put the mulch beside the wall first and publish no
+          humidity figure either.
         </p>
       </div>
 
