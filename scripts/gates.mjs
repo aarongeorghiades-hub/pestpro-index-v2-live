@@ -159,6 +159,10 @@ const CLUSTERS = {
   // /us/flies is the general head; cluster flies and fruit flies are the two
   // specific children a reader arrives at having identified the wrong fly.
   flies: ['flies', 'cluster-flies', 'fruit-flies'],
+  // S62 R5. Declared once G7 became DIRECTIONAL — under the pre-R5 rule this
+  // declaration would have newly failed two legitimate inbound links, which is
+  // why S62 R4 measured it, declined to declare it, and referred the question.
+  wood: ['termites', 'formosan-termites', 'carpenter-bees', 'powderpost-beetles'],
 };
 const clustersOf = (slug) => Object.keys(CLUSTERS).filter((c) => CLUSTERS[c].includes(slug));
 const shareCluster = (a, b) => clustersOf(a).some((c) => clustersOf(b).includes(c));
@@ -299,57 +303,74 @@ const MATCHERS = [
   },
   {
     id: 'G7',
-    kind: 'gate',
+    // RECLASSIFIED FROM gate TO inventory AT S62 R5, UNDER LAW 167.
+    //
+    // THE S62 R5 PM RULING MADE G7 DIRECTIONAL: cluster membership governs
+    // SIBLING links, not INBOUND links. Enumerating what the ruling leaves:
+    //
+    //   A unclustered -> B unclustered   never in scope
+    //   A unclustered -> B clustered     LEGITIMATE (the ruling: utility pages
+    //                                    exist to link into topic pages)
+    //   A clustered   -> B same cluster  LEGITIMATE (Law 168c, Law 172)
+    //   A clustered   -> B other cluster LEGITIMATE (the ruling, verbatim)
+    //   A clustered   -> B unclustered   ordinary outbound linking
+    //
+    // EVERY CASE IS LEGITIMATE. The cross-cluster-link defect class is now
+    // EMPTY BY CONSTRUCTION, so this matcher CANNOT FAIL, so under Law 167 it
+    // is an inventory and MUST NOT PRINT PASS. Leaving it declared as a gate
+    // would have printed a clean PASS every run that a reader could not tell
+    // apart from a gate that was tested and held. It reports the count because
+    // the count is still worth seeing; it makes no judgement about it.
+    //
+    // IT IS ALSO NO LONGER A LEAK DETECTOR AND ITS NAME SAYS SO (Law 170: a
+    // matcher's name must describe what it does).
+    //
+    // WHAT THE RULING SAID G7 EXISTS TO CATCH -- orphans, "a page nothing links
+    // to, or a page linking nowhere" -- IS NOT THIS MATCHER AND CANNOT BE. It
+    // is a property of the whole link graph, not of one document, so it lives
+    // in runLinkGraph() below, where the graph exists.
+    kind: 'inventory',
     scope: 'document',
     surface: 'full',
-    name: 'No cross-cluster link leaking between US clusters',
-    // Law 168, three benign classes excluded:
-    //   (a) THE HUB LINKING TO ITS CHILDREN IS WHAT S54-H REQUIRES. Excluded.
-    //   (b) A PAGE LINKING TO ITSELF IS A NORMAL IN-PAGE ANCHOR. Excluded.
-    //   (c) INTRA-CLUSTER SIBLING LINKS. Legitimate topic-cluster structure, and
-    //       not CROSS-cluster, which is the only thing this gate is named for.
-    // Siblinghood is SET INTERSECTION, not equality — see CLUSTERS above. A page
-    // in two clusters is a sibling of both memberships, which is what makes
-    // /us/cluster-flies legal in both directions.
+    name: 'Cross-cluster links (INVENTORY since S62 R5 — every case is legitimate)',
     test: (t, ctx = {}) => {
       const slug = ctx.slug ?? null;
-      if (slug === 'us') return []; // (a) the hub
+      if (slug === 'us') return [];
       return all(/href="\/us\/([a-z0-9-]+)"/gi, t)
         .map((m) => m[1])
         .filter((target) => {
-          if (!clustersOf(target).length) return false; // target is in no cluster
-          if (target === slug) return false; // (b) self-link
-          if (shareCluster(slug, target)) return false; // (c) intra-cluster sibling
+          if (!clustersOf(target).length) return false;
+          if (!clustersOf(slug).length) return false; // DIRECTIONAL: inbound from
+          //                        an unclustered page is ordinary internal linking
+          if (target === slug) return false;
+          if (shareCluster(slug, target)) return false;
           return true;
         })
         .map((target) => `/us/${target}`);
     },
-    // POSITIVE LIMB (S49-L) — links the gate MUST still catch. The second is the
-    // one that matters after the S62 R4 ruling: /us/flies and the overwintering
-    // cluster share no membership, so a link between them is still a leak. If
-    // the fly ruling had been implemented as a blanket exception rather than as
-    // cluster membership, this probe would go dead and say so.
-    probePos: [
-      { text: '<a href="/us/joro-spider">x</a>', ctx: { slug: 'pocket-gophers' } },
-      { text: '<a href="/us/stink-bugs-in-house">x</a>', ctx: { slug: 'flies' } },
-    ],
-    probeCtx: { slug: 'pocket-gophers' },
-    // NEGATIVE LIMB — links the gate MUST NOT catch.
+    // Probes still run on every invocation and still prove the matcher can
+    // FIND and can DISTINGUISH (S49-L). They no longer prove it can fail,
+    // because it cannot -- which is the whole reason for the reclassification.
+    probePos: [{ text: '<a href="/us/joro-spider">x</a>', ctx: { slug: 'flies' } }],
+    probeCtx: { slug: 'flies' },
     probeNeg: [
-      { text: '<a href="/us/pocket-gophers">x</a>', ctx: { slug: 'pocket-gophers' } },
-      // (a) the hub linking to a clustered child — required by S54-H
+      // THE TWO LINKS THE S62 R5 RULING IS ABOUT. Both were measured as failing
+      // under the old rule at S62 R4; both must now be silent.
+      { text: '<a href="/us/termites">x</a>', ctx: { slug: 'choosing-a-pest-control-service' } },
+      { text: '<a href="/us/carpenter-bees">x</a>', ctx: { slug: 'social-wasps' } },
+      // the hub linking to a clustered child -- required by S54-H
       { text: '<a href="/us/joro-spider">x</a>', ctx: { slug: 'us' } },
-      // (b) a page linking to itself
+      // a page linking to itself
       { text: '<a href="/us/joro-spider">x</a>', ctx: { slug: 'joro-spider' } },
-      // (c) intra-cluster sibling
+      // intra-cluster siblings: joro, the fly cluster (Law 172), and the wood
+      // cluster declared this round
       { text: '<a href="/us/joro-spider-webs">x</a>', ctx: { slug: 'joro-spider' } },
-      // (c) THE S62 R4 RULING, both directions of the fly cluster
       { text: '<a href="/us/cluster-flies">x</a>', ctx: { slug: 'flies' } },
-      { text: '<a href="/us/cluster-flies">x</a>', ctx: { slug: 'fruit-flies' } },
       { text: '<a href="/us/fruit-flies">x</a>', ctx: { slug: 'flies' } },
-      // and the bridge page's OTHER membership, which the ruling must not break
       { text: '<a href="/us/boxelder-bugs">x</a>', ctx: { slug: 'cluster-flies' } },
-      { text: '<a href="/us/flies">x</a>', ctx: { slug: 'cluster-flies' } },
+      { text: '<a href="/us/powderpost-beetles">x</a>', ctx: { slug: 'termites' } },
+      { text: '<a href="/us/termites">x</a>', ctx: { slug: 'powderpost-beetles' } },
+      { text: '<a href="/us/carpenter-bees">x</a>', ctx: { slug: 'formosan-termites' } },
     ],
   },
   {
@@ -634,6 +655,59 @@ function runDocument(raw, { slug = null, url = null, label = '' } = {}) {
   return { label, rows, failed, bytes: raw.length, prose: views.prose.length };
 }
 
+// THE ORPHAN MEASUREMENT — S62 R5, and it is an INVENTORY, not a gate.
+//
+// The S62 R5 ruling said what G7 exists to catch is "orphans: a page nothing
+// links to, or a page linking nowhere". That is a property of the LINK GRAPH,
+// not of one rendered document, so it lives here rather than in MATCHERS.
+//
+// IT IS DECLARED INVENTORY BECAUSE THE THRESHOLD HAS NOT BEEN RULED, AND
+// BECAUSE THE TWO READINGS GIVE OPPOSITE ANSWERS. Measured at S62 R5 over 54
+// content routes:
+//
+//   "nothing links to it", COUNTING the hub          0 routes
+//   "nothing links to it", EXCLUDING the hub        10 routes
+//   "links nowhere" (no outbound /us route link)    11 routes
+//   "no /us href of any kind on the page"            0 routes
+//
+// The two readings that return 0 CANNOT FAIL: S54-H already gates every route
+// into the hub, and the header nav always emits at least one /us href. Under
+// Law 75 and Law 167 a check that can only pass is theatre. The two readings
+// that CAN fail, fail on ten and eleven live routes RIGHT NOW -- so declaring
+// either as a gate would have marked a fifth of the estate defective on a
+// definition nobody has ruled.
+//
+// SO IT MEASURES AND NAMES, AND MAKES NO JUDGEMENT. Referred to the PM.
+async function runLinkGraph() {
+  const dir = join(ROOT, '.next/server/app/us');
+  const files = [
+    join(ROOT, '.next/server/app/us.html'),
+    ...(await readdir(dir)).filter((f) => f.endsWith('.html')).sort().map((f) => join(dir, f)),
+  ];
+  const slugs = new Set(files.map(slugOf));
+  const out = new Map();
+  const inb = new Map();
+  for (const f of files) {
+    const me = slugOf(f);
+    const raw = await readFile(f, 'utf8');
+    for (const m of all(/href="\/us\/([a-z0-9-]+)"/gi, raw)) {
+      const tgt = m[1];
+      if (!slugs.has(tgt) || tgt === me) continue;
+      if (!out.has(me)) out.set(me, new Set());
+      if (!inb.has(tgt)) inb.set(tgt, new Set());
+      out.get(me).add(tgt);
+      inb.get(tgt).add(me);
+    }
+  }
+  const content = [...slugs].filter((x) => x !== 'us').sort();
+  const noInboundWithHub = content.filter((r) => !(inb.get(r)?.size));
+  const noInboundNoHub = content.filter(
+    (r) => ![...(inb.get(r) ?? [])].some((x) => x !== 'us'),
+  );
+  const noOutbound = content.filter((r) => !(out.get(r)?.size));
+  return { total: content.length, noInboundWithHub, noInboundNoHub, noOutbound };
+}
+
 async function runParity() {
   const man = JSON.parse(await readFile(join(ROOT, '.next/app-path-routes-manifest.json'), 'utf8'));
   const routes = new Set(
@@ -704,6 +778,11 @@ async function runEstate() {
   console.log(`    UNLINKED (not in hasPart):       ${p.unlinkedHasPart.length ? p.unlinkedHasPart.join(', ') : 'none'}`);
   console.log(`    ORPHAN   (anchor, not a route):  ${p.orphanAnchors.length ? p.orphanAnchors.join(', ') : 'none'}`);
   console.log(`    ORPHAN   (hasPart, not a route): ${p.orphanHasPart.length ? p.orphanHasPart.join(', ') : 'none'}`);
+  const lg = await runLinkGraph();
+  console.log(`\n  LINK-GRAPH INVENTORY — ${lg.total} content routes (S62 R5, threshold UNRULED)`);
+  console.log(`    no inbound, counting the hub   : ${lg.noInboundWithHub.length}${lg.noInboundWithHub.length ? ' — ' + lg.noInboundWithHub.join(', ') : ' (cannot fail: S54-H gates it)'}`);
+  console.log(`    no inbound, EXCLUDING the hub  : ${lg.noInboundNoHub.length}${lg.noInboundNoHub.length ? ' — ' + lg.noInboundNoHub.join(', ') : ''}`);
+  console.log(`    no outbound /us route link     : ${lg.noOutbound.length}${lg.noOutbound.length ? ' — ' + lg.noOutbound.join(', ') : ''}`);
   const parityOk =
     !p.unlinkedAnchors.length && !p.unlinkedHasPart.length && !p.orphanAnchors.length && !p.orphanHasPart.length;
   const gateFails = Object.entries(failing).filter(

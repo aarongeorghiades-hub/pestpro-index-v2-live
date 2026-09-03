@@ -1186,3 +1186,85 @@ SECOND COROLLARY (Law 148). Correcting nine to seven was not enough. The Law
 returned an anti-bot interstitial" was accurate about an attempt and misleading
 about the estate. A standing status on a page becomes a DATED OBSERVATION
 RECORD the moment a second observation exists.
+
+## S62 R5 — LAW 172 AMENDED: G7 IS DIRECTIONAL
+
+PM RULING, S62 R5. CLUSTER MEMBERSHIP GOVERNS SIBLING LINKS, NOT INBOUND
+LINKS. This AMENDS Law 172 and governs over it where they differ. Law 172's
+set-membership mechanism stands unchanged; what changes is the direction in
+which membership is allowed to matter.
+
+  A link WITHIN a cluster                       LEGITIMATE (Law 168c, Law 172)
+  A link INTO a cluster from an UNCLUSTERED page LEGITIMATE — ordinary internal
+                                                 linking; utility pages exist to
+                                                 link into topic pages
+  A link INTO a cluster from a DIFFERENT cluster LEGITIMATE
+
+THE EVIDENCE THIS AMENDMENT RESTS ON. At S62 R4 the wood-damage grouping —
+`/us/termites`, `/us/formosan-termites`, `/us/carpenter-bees`,
+`/us/powderpost-beetles` — was measured against the matcher and DELIBERATELY NOT
+DECLARED, because declaring it under the old rule would have newly failed two
+plainly legitimate links:
+
+    /us/choosing-a-pest-control-service -> /us/termites
+    /us/social-wasps                    -> /us/carpenter-bees
+
+A gate that punishes a service-selection page for linking to the pest it
+discusses is the gate being wrong, not the pages. THE WOOD CLUSTER IS DECLARED
+AT S62 R5, under the amended rule, using the same set mechanism as the fly
+cluster and with no special case of any kind. Both links now pass; G7 reads 0.
+
+### LAW 174 — G7 IS AN INVENTORY, NOT A GATE, AND MUST NOT PRINT PASS
+
+Enumerating every case the amended ruling leaves:
+
+    A unclustered -> B unclustered      never in scope
+    A unclustered -> B clustered        LEGITIMATE (this amendment)
+    A clustered   -> B same cluster     LEGITIMATE (Law 168c)
+    A clustered   -> B other cluster    LEGITIMATE (this amendment)
+    A clustered   -> B unclustered      ordinary outbound linking
+
+EVERY CASE IS LEGITIMATE. THE CROSS-CLUSTER-LINK DEFECT CLASS IS NOW EMPTY BY
+CONSTRUCTION. Under Law 167 a check that cannot fail is declared `inventory` and
+never prints PASS, because a reader of the report cannot otherwise tell it apart
+from a gate that was tested and held. G7 was reclassified accordingly at S62 R5
+and renamed, because its old name described a defect that no longer exists
+(Law 170: a matcher's name must describe what it does).
+
+THE PROBES STILL RUN ON EVERY INVOCATION and still prove the matcher can FIND
+and can DISTINGUISH — including, as named negative probes, the two links above,
+so that a future round cannot silently reintroduce the old rule.
+
+### S62 R5 — THE ORPHAN DEFINITION IS REFERRED, NOT RULED
+
+The ruling said what G7 exists to catch is "orphans: a page nothing links to, or
+a page linking nowhere", and asked for a positive probe on a real orphan.
+CC COULD NOT SUPPLY ONE HONESTLY, AND HALTED RATHER THAN MANUFACTURE A ZERO.
+Measured at S62 R5 over 54 content routes, `runLinkGraph()` in scripts/gates.mjs:
+
+    "nothing links to it", COUNTING the hub          0 routes
+    "nothing links to it", EXCLUDING the hub        10 routes
+    "links nowhere" (no outbound /us route link)    11 routes
+    "no /us href of any kind on the page"            0 routes
+
+THE TWO READINGS THAT RETURN ZERO CANNOT FAIL: S54-H already gates every route
+into the hub, and the header nav always emits at least one /us href. Both are
+theatre under Law 75 and Law 167. THE TWO READINGS THAT CAN FAIL, FAIL ON TEN
+AND ELEVEN LIVE ROUTES TODAY — about a fifth of the estate — on a definition
+nobody has ruled.
+
+So orphan detection is CODIFIED (Law 166) and DECLARED INVENTORY. It measures,
+names every route in both failing readings, and makes no judgement.
+THE QUESTION FOR THE PM: does an inbound link from the hub alone satisfy "a page
+nothing links to"? If yes, that reading is theatre and the outbound reading is
+the real gate. If no, ten routes need inbound links written before the gate can
+be armed. Either answer is actionable; the gate must not be armed before one is
+given.
+
+THE TEN, BY NAME (no non-hub inbound link): arizona-bark-scorpions, bed-bugs,
+black-widow-spiders, brown-recluse-spiders, chipmunks, coyotes, house-mice,
+mole-and-vole-control, rats, skunks.
+
+THE ELEVEN, BY NAME (no outbound /us route link): arizona-bark-scorpions,
+bed-bugs, black-widow-spiders, brown-recluse-spiders, california-trapping-rules,
+chipmunks, house-mice, mole-and-vole-control, rats, snakes, ticks.
