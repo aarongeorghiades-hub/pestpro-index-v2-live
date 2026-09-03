@@ -51,7 +51,7 @@ const breadcrumbSchema = {
 // sections should be told which absences are ours and which are the sources'.
 //
 //   LIVE TRAP        ONE card. Penn State publishes a minimum size and the
-//                    listing's own detail block exceeds it. Nine further
+//                    listing's own detail block exceeds it. Seven further
 //                    listings were attempted on 2026-09-03 and every one
 //                    returned Amazon's anti-bot interstitial, so this is the
 //                    only listing whose own title could be read (S50-H).
@@ -221,9 +221,9 @@ export default function GroundhogsPage() {
           size and one listing&rsquo;s own page could be read against it.
         </p>
         <p className="mt-3 mb-0 text-base text-amber-900">
-          <strong>Nine further listings were attempted on 3 September 2026 and every one returned
+          <strong>Seven further listings were attempted on 3 September 2026 and every one returned
           an anti-bot interstitial instead of a product page.</strong> No product is described here
-          from a search result, so those nine are recorded and carried forward rather than guessed
+          from a search result, so those seven are recorded and carried forward rather than guessed
           at.
         </p>
       </div>
