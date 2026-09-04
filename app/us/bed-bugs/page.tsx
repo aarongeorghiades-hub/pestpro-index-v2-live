@@ -105,12 +105,12 @@ const breadcrumbSchema = {
 
 const tocItems = [
   { id: 'which-bed-bug', title: 'What a Bed Bug Looks Like, and What Gets Mistaken For One' },
+  { id: 'encasements-interceptors', title: 'Encasements and Interceptors' },
   { id: 'hiding-spread', title: 'Where They Hide and How They Spread' },
   { id: 'disease', title: 'Bed Bugs Are Not Known to Spread Disease' },
   { id: 'inspection', title: 'Inspection: Confirming an Infestation' },
   { id: 'mattress-furniture', title: 'Treating the Mattress and Furniture' },
   { id: 'heat-laundering', title: 'Heat and Laundering: The Figures That Actually Work' },
-  { id: 'encasements-interceptors', title: 'Encasements and Interceptors' },
   { id: 'not-work', title: 'What Does Not Work' },
   { id: 'professional', title: 'When the Sources Say to Call a Professional' },
   { id: 'not-here', title: 'What This Page Does Not Carry' },
@@ -323,6 +323,76 @@ export default function BedBugsPage() {
           people.&rdquo;
         </em>
       </p>
+
+      <h2 id="encasements-interceptors">Encasements and Interceptors</h2>
+      <p>
+        <strong>Purdue Extension Entomology</strong> distinguishes a good encasement from a cheap
+        plastic cover:{' '}
+        <em>
+          &ldquo;Good encasements consist of a tightly woven fabric that inhibits bed bug
+          movement, and include a secured zipper system that prevents bed bugs from getting in or
+          out. They are also more durable than plastic covers, and can be washed and
+          reused.&rdquo;
+        </em>{' '}
+        It also gives a minimum specification for the cheaper option:{' '}
+        <em>
+          &ldquo;Commercially available plastic mattress covers, at least 0.08 mm thick, usually
+          with a zippered edge, can completely enclose a mattress or box spring and prevent any
+          bed bugs harboring in them from accessing hosts.&rdquo;
+        </em>{' '}
+        And a minimum duration that four separate sources give independently — Purdue:{' '}
+        <em>
+          &ldquo;Covers must be left on the mattress for a minimum of one year unless otherwise
+          instructed by a pest control professional.&rdquo;
+        </em>{' '}
+        The EPA&rsquo;s top-ten-tips page reaches the same figure:{' '}
+        <em>
+          &ldquo;Leave the encasements on for a year. Be sure to buy a product that has been
+          tested for bed bugs and is strong enough to last for the full year without
+          tearing.&rdquo;
+        </em>{' '}
+        Its preparing-for-treatment page, on interceptors specifically:{' '}
+        <em>
+          &ldquo;Plan to use the interceptors for at least a year - they will be important to your
+          post-control monitoring efforts.&rdquo;
+        </em>{' '}
+        And when only one
+        piece can be afforded, <strong>NPIC</strong> gives a priority the other sources do not
+        state: <em>&ldquo;If only one encasement can be afforded, the box spring should be encased first.&rdquo;</em>
+      </p>
+      <p>
+        On interceptors specifically, the EPA&rsquo;s IPM page states the purpose:{' '}
+        <em>
+          &ldquo;Use monitoring devices such as bed bug interceptors to ensure that the bed bugs
+          have been truly eradicated.&rdquo;
+        </em>{' '}
+        Its preparing-for-treatment page adds the placement and inspection routine:{' '}
+        <em>
+          &ldquo;Place bed bug interceptors under each leg of the bed (available in home stores
+          or online).&rdquo;
+        </em>{' '}
+        <em>
+          &ldquo;Interceptors will trap any bed bugs that try to climb the leg of the bed. In the
+          beginning, you will inspect them daily.&rdquo;
+        </em>{' '}
+        The interceptor below is measured against exactly this description — a passive trap
+        placed under a furniture leg — stated in the listing&rsquo;s own feature text rather
+        than only in its title. Seventeen Amazon URLs across three product classes were
+        attempted for this page in S60 R5; fifteen returned an anti-bot interstitial on the
+        first fetch and were not retried that round, per Law 137. Fifteen of those same URLs
+        were attempted again in S60 R9 &mdash; a fresh round, permitted under Law 137 &mdash;
+        and all fifteen returned a real product page this time. One mattress encasement and one
+        steamer, below, are carded from that second attempt; the diagnosis behind why the
+        second attempt succeeded is recorded in full in that round&rsquo;s own report and is not
+        repeated here.
+      </p>
+      <p>
+        The two products below are a mattress encasement and a steamer, named because the sources on this page describe those two classes for bed bugs.
+      </p>
+
+      {products.map((p) => (
+        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+      ))}
 
       <h2 id="hiding-spread">Where They Hide and How They Spread</h2>
       <p>
@@ -660,72 +730,6 @@ export default function BedBugsPage() {
         It also names steam&rsquo;s one hard limit:{' '}
         <em>&ldquo;Steamers do not kill eggs, nymphs, or adults under leather sofa covers.&rdquo;</em>
       </p>
-
-      <h2 id="encasements-interceptors">Encasements and Interceptors</h2>
-      <p>
-        <strong>Purdue Extension Entomology</strong> distinguishes a good encasement from a cheap
-        plastic cover:{' '}
-        <em>
-          &ldquo;Good encasements consist of a tightly woven fabric that inhibits bed bug
-          movement, and include a secured zipper system that prevents bed bugs from getting in or
-          out. They are also more durable than plastic covers, and can be washed and
-          reused.&rdquo;
-        </em>{' '}
-        It also gives a minimum specification for the cheaper option:{' '}
-        <em>
-          &ldquo;Commercially available plastic mattress covers, at least 0.08 mm thick, usually
-          with a zippered edge, can completely enclose a mattress or box spring and prevent any
-          bed bugs harboring in them from accessing hosts.&rdquo;
-        </em>{' '}
-        And a minimum duration that four separate sources give independently — Purdue:{' '}
-        <em>
-          &ldquo;Covers must be left on the mattress for a minimum of one year unless otherwise
-          instructed by a pest control professional.&rdquo;
-        </em>{' '}
-        The EPA&rsquo;s top-ten-tips page reaches the same figure:{' '}
-        <em>
-          &ldquo;Leave the encasements on for a year. Be sure to buy a product that has been
-          tested for bed bugs and is strong enough to last for the full year without
-          tearing.&rdquo;
-        </em>{' '}
-        Its preparing-for-treatment page, on interceptors specifically:{' '}
-        <em>
-          &ldquo;Plan to use the interceptors for at least a year - they will be important to your
-          post-control monitoring efforts.&rdquo;
-        </em>{' '}
-        And when only one
-        piece can be afforded, <strong>NPIC</strong> gives a priority the other sources do not
-        state: <em>&ldquo;If only one encasement can be afforded, the box spring should be encased first.&rdquo;</em>
-      </p>
-      <p>
-        On interceptors specifically, the EPA&rsquo;s IPM page states the purpose:{' '}
-        <em>
-          &ldquo;Use monitoring devices such as bed bug interceptors to ensure that the bed bugs
-          have been truly eradicated.&rdquo;
-        </em>{' '}
-        Its preparing-for-treatment page adds the placement and inspection routine:{' '}
-        <em>
-          &ldquo;Place bed bug interceptors under each leg of the bed (available in home stores
-          or online).&rdquo;
-        </em>{' '}
-        <em>
-          &ldquo;Interceptors will trap any bed bugs that try to climb the leg of the bed. In the
-          beginning, you will inspect them daily.&rdquo;
-        </em>{' '}
-        The interceptor below is measured against exactly this description — a passive trap
-        placed under a furniture leg — stated in the listing&rsquo;s own feature text rather
-        than only in its title. Seventeen Amazon URLs across three product classes were
-        attempted for this page in S60 R5; fifteen returned an anti-bot interstitial on the
-        first fetch and were not retried that round, per Law 137. Fifteen of those same URLs
-        were attempted again in S60 R9 &mdash; a fresh round, permitted under Law 137 &mdash;
-        and all fifteen returned a real product page this time. One mattress encasement and one
-        steamer, below, are carded from that second attempt; the diagnosis behind why the
-        second attempt succeeded is recorded in full in that round&rsquo;s own report and is not
-        repeated here.
-      </p>
-      {products.map((p) => (
-        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-      ))}
 
       <h2 id="not-work">What Does Not Work</h2>
       <p>

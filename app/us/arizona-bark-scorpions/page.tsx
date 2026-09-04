@@ -164,9 +164,9 @@ const sources: Source[] = [
 
 const tocItems = [
   { id: 'identification', title: 'Which Scorpion Is It' },
+  { id: 'exclusion', title: 'Sealing the Building' },
   { id: 'the-sting', title: 'The Sting' },
   { id: 'where-they-live', title: 'Where They Live, and How They Get In' },
-  { id: 'exclusion', title: 'Sealing the Building' },
   { id: 'finding-them', title: 'Finding Them in the Dark' },
   { id: 'not-carried', title: 'What This Page Does Not Carry' },
   { id: 'faq', title: 'Questions' },
@@ -268,6 +268,142 @@ export default function ArizonaBarkScorpionsPage() {
         December 2011, uses the reverse convention and writes of{' '}
         <em>&ldquo;the bark scorpion, Centruroides exilicauda (formerly C.
         sculpturatus)&rdquo;</em>. Both names refer to the animal described here.
+      </p>
+
+      <h2 id="exclusion">Sealing the Building</h2>
+      <p>
+        <strong>Start at the bottom of the doors, and there is a test for it.</strong> Texas
+        A&amp;M AgriLife Extension, having said that most scorpions get in under exterior
+        doors, gives both the fix and the check:{' '}
+        <em>
+          &ldquo;This can be prevented by well-sealing door sweeps and weather-stripping.
+          One test of doorways is to check whether light can be seen under the doorway from
+          the inside.&rdquo;
+        </em>{' '}
+        The University of Arizona pest-proofing publication states the same test as a
+        standard:{' '}
+        <em>
+          &ldquo;Install door sweeps and repair thresholds at the base of all exterior entry
+          doors. No outside light should be visible underneath exterior doors when viewed
+          from the inside at floor level.&rdquo;
+        </em>{' '}
+        University of Arizona Cooperative Extension puts it in one line in its scorpion
+        publication: <em>&ldquo;Ensure door sweeps are tight fitting with no gaps.&rdquo;</em>{' '}
+        and <em>&ldquo;Install weather-stripping around doors and windows and ensure a snug
+        fit.&rdquo;</em>
+      </p>
+      <p>
+        That test is worth doing before buying anything, because it tells you whether you
+        have a problem at all, and it tells you when you have finished.
+      </p>
+      <p>
+        <strong>Two measurements, and they are not in conflict.</strong> UC IPM states of the
+        bark scorpion: <em>&ldquo;It needs only a crack of 1/16 inch to enter a home.&rdquo;</em>{' '}
+        Texas A&amp;M AgriLife Extension gives an instruction with a different number:{' '}
+        <em>
+          &ldquo;Seal gaps under flashing along roof lines and ledges that are an 1/8 inch or
+          larger, scorpions will chase their prey even at roof lines.&rdquo;
+        </em>{' '}
+        The first is a fact about the animal: the smallest opening it can pass through. The
+        second is an action threshold for one named location, telling you where to start
+        rather than where the animal stops. A building sealed only to one eighth of an inch
+        has not been sealed to the figure UC IPM gives.
+      </p>
+      <p>
+        On what to seal and with what, University of Arizona Cooperative Extension says to{' '}
+        <em>
+          &ldquo;Caulk around roof eaves, pipes and any other points and wall penetrations
+          into the building.&rdquo;
+        </em>{' '}
+        Texas A&amp;M AgriLife Extension names the material class:{' '}
+        <em>
+          &ldquo;Use weather-stripping, excluder mesh, or good quality elastomeric sealants
+          to seal windows, building cracks, or utility penetrations.&rdquo;
+        </em>{' '}
+        The University of Arizona pest-proofing publication is more specific about which
+        material lasts:{' '}
+        <em>
+          &ldquo;For small cracks, use good-quality silicone sealant (Fig. 6). Silicone lasts
+          longer than latex caulking materials, as it expands and contracts more effectively
+          with changing temperatures.&rdquo;
+        </em>
+      </p>
+
+      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
+        <p className="m-0 text-base font-bold text-amber-900">
+          One thing the sources tell you not to do
+        </p>
+        <p className="m-0 mt-3 text-sm text-amber-900">
+          University of Arizona Cooperative Extension states:{' '}
+          <em>
+            &ldquo;Screen weep holes in brick veneer or weep screed with coarse steel mesh
+            (the holes should not be plugged or sealed as they are important for the
+            ventilation of wall spaces).&rdquo;
+          </em>{' '}
+          Weep holes are a known entry route and they are also a drainage and ventilation
+          feature of the wall. Screening them is the published instruction. Filling them
+          with sealant is not.
+        </p>
+      </div>
+
+      <p>
+        Three silicone products are named below. They are named because they are silicone,
+        which is the material class both Texas A&amp;M AgriLife Extension and the University
+        of Arizona pest-proofing publication describe, and for no other reason. Neither
+        source names any product, and neither does this page rank these three against one
+        another.
+      </p>
+
+      <p>
+        The three products below are sealing materials, named only because they match the exclusion measures those two sources describe.
+      </p>
+
+      <UsToolCard
+        name="GE Advanced Silicone Caulk for Window &amp; Door, Clear, 10 fl oz Cartridge"
+        whatItDoes={[
+          'A silicone sealant, which is the material class Texas A&M AgriLife Extension names for scorpion work when it says to use good quality elastomeric sealants on windows, building cracks and utility penetrations.',
+          'University of Arizona Cooperative Extension names the locations for this work on a scorpion job: roof eaves, pipes, and any other points and wall penetrations into the building.',
+          'Its own listing states silicone and a 10 fl oz cartridge. Nothing further about it is claimed here, and no source names it or any other product.',
+        ]}
+        asin="B0BVGTM2XY"
+      />
+
+      <UsToolCard
+        name="GE Advanced Silicone Window &amp; Door Sealant, Clear, 10.1 oz Cartridge"
+        whatItDoes={[
+          'A second silicone option in the same cartridge size range, for the same wall penetrations.',
+          'The reason a silicone is named at all rather than a cheaper filler is the University of Arizona pest-proofing publication, which states that silicone lasts longer than latex caulking materials because it expands and contracts more effectively with changing temperatures.',
+          'Texas A&M AgriLife Extension gives the only gap figure attached to sealing on a scorpion job: seal gaps under flashing along roof lines and ledges that are an eighth of an inch or larger.',
+        ]}
+        asin="B0000CBJ7W"
+      />
+
+      <UsToolCard
+        name="GE All Purpose Silicone Caulk, Clear, 10 fl oz Cartridge"
+        whatItDoes={[
+          'Also a silicone sealant. Its listing describes it as all purpose rather than as a window and door product, which is the difference between this and the two above.',
+          'That distinction belongs to the listings and not to any source: neither Texas A&M AgriLife Extension nor the University of Arizona distinguishes between silicone formulations for this work.',
+          'Whichever is used, the University of Arizona instruction about weep holes still applies: those are screened, not sealed.',
+        ]}
+        asin="B0B8QPH3RW"
+      />
+
+      <p>
+        Two further measures from the sources need no product at all. University of Arizona
+        Cooperative Extension says to{' '}
+        <em>
+          &ldquo;Keep grass closely mowed near the home. Prune bushes and overhanging tree
+          branches away from the structure. Tree branches can provide a path to the roof for
+          scorpions. Minimize low growing ground cover vegetation.&rdquo;
+        </em>{' '}
+        And the University of Arizona pest-proofing publication gives one measure aimed
+        squarely at the group the sting material is about:{' '}
+        <em>
+          &ldquo;Protect an infant&rsquo;s crib by placing the legs of the crib in clean
+          wide-mouthed glass jars (scorpions cannot climb the clean glass). Pull cribs away
+          from walls; bark scorpions can climb vertical walls, but make little progress
+          across ceilings.&rdquo;
+        </em>
       </p>
 
       <h2 id="the-sting">The Sting</h2>
@@ -521,138 +657,6 @@ export default function ArizonaBarkScorpionsPage() {
           California.&rdquo;
         </em>{' '}
         Those three statements are not the same and no merged range is offered here.
-      </p>
-
-      <h2 id="exclusion">Sealing the Building</h2>
-      <p>
-        <strong>Start at the bottom of the doors, and there is a test for it.</strong> Texas
-        A&amp;M AgriLife Extension, having said that most scorpions get in under exterior
-        doors, gives both the fix and the check:{' '}
-        <em>
-          &ldquo;This can be prevented by well-sealing door sweeps and weather-stripping.
-          One test of doorways is to check whether light can be seen under the doorway from
-          the inside.&rdquo;
-        </em>{' '}
-        The University of Arizona pest-proofing publication states the same test as a
-        standard:{' '}
-        <em>
-          &ldquo;Install door sweeps and repair thresholds at the base of all exterior entry
-          doors. No outside light should be visible underneath exterior doors when viewed
-          from the inside at floor level.&rdquo;
-        </em>{' '}
-        University of Arizona Cooperative Extension puts it in one line in its scorpion
-        publication: <em>&ldquo;Ensure door sweeps are tight fitting with no gaps.&rdquo;</em>{' '}
-        and <em>&ldquo;Install weather-stripping around doors and windows and ensure a snug
-        fit.&rdquo;</em>
-      </p>
-      <p>
-        That test is worth doing before buying anything, because it tells you whether you
-        have a problem at all, and it tells you when you have finished.
-      </p>
-      <p>
-        <strong>Two measurements, and they are not in conflict.</strong> UC IPM states of the
-        bark scorpion: <em>&ldquo;It needs only a crack of 1/16 inch to enter a home.&rdquo;</em>{' '}
-        Texas A&amp;M AgriLife Extension gives an instruction with a different number:{' '}
-        <em>
-          &ldquo;Seal gaps under flashing along roof lines and ledges that are an 1/8 inch or
-          larger, scorpions will chase their prey even at roof lines.&rdquo;
-        </em>{' '}
-        The first is a fact about the animal: the smallest opening it can pass through. The
-        second is an action threshold for one named location, telling you where to start
-        rather than where the animal stops. A building sealed only to one eighth of an inch
-        has not been sealed to the figure UC IPM gives.
-      </p>
-      <p>
-        On what to seal and with what, University of Arizona Cooperative Extension says to{' '}
-        <em>
-          &ldquo;Caulk around roof eaves, pipes and any other points and wall penetrations
-          into the building.&rdquo;
-        </em>{' '}
-        Texas A&amp;M AgriLife Extension names the material class:{' '}
-        <em>
-          &ldquo;Use weather-stripping, excluder mesh, or good quality elastomeric sealants
-          to seal windows, building cracks, or utility penetrations.&rdquo;
-        </em>{' '}
-        The University of Arizona pest-proofing publication is more specific about which
-        material lasts:{' '}
-        <em>
-          &ldquo;For small cracks, use good-quality silicone sealant (Fig. 6). Silicone lasts
-          longer than latex caulking materials, as it expands and contracts more effectively
-          with changing temperatures.&rdquo;
-        </em>
-      </p>
-
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
-          One thing the sources tell you not to do
-        </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
-          University of Arizona Cooperative Extension states:{' '}
-          <em>
-            &ldquo;Screen weep holes in brick veneer or weep screed with coarse steel mesh
-            (the holes should not be plugged or sealed as they are important for the
-            ventilation of wall spaces).&rdquo;
-          </em>{' '}
-          Weep holes are a known entry route and they are also a drainage and ventilation
-          feature of the wall. Screening them is the published instruction. Filling them
-          with sealant is not.
-        </p>
-      </div>
-
-      <p>
-        Three silicone products are named below. They are named because they are silicone,
-        which is the material class both Texas A&amp;M AgriLife Extension and the University
-        of Arizona pest-proofing publication describe, and for no other reason. Neither
-        source names any product, and neither does this page rank these three against one
-        another.
-      </p>
-
-      <UsToolCard
-        name="GE Advanced Silicone Caulk for Window &amp; Door, Clear, 10 fl oz Cartridge"
-        whatItDoes={[
-          'A silicone sealant, which is the material class Texas A&M AgriLife Extension names for scorpion work when it says to use good quality elastomeric sealants on windows, building cracks and utility penetrations.',
-          'University of Arizona Cooperative Extension names the locations for this work on a scorpion job: roof eaves, pipes, and any other points and wall penetrations into the building.',
-          'Its own listing states silicone and a 10 fl oz cartridge. Nothing further about it is claimed here, and no source names it or any other product.',
-        ]}
-        asin="B0BVGTM2XY"
-      />
-
-      <UsToolCard
-        name="GE Advanced Silicone Window &amp; Door Sealant, Clear, 10.1 oz Cartridge"
-        whatItDoes={[
-          'A second silicone option in the same cartridge size range, for the same wall penetrations.',
-          'The reason a silicone is named at all rather than a cheaper filler is the University of Arizona pest-proofing publication, which states that silicone lasts longer than latex caulking materials because it expands and contracts more effectively with changing temperatures.',
-          'Texas A&M AgriLife Extension gives the only gap figure attached to sealing on a scorpion job: seal gaps under flashing along roof lines and ledges that are an eighth of an inch or larger.',
-        ]}
-        asin="B0000CBJ7W"
-      />
-
-      <UsToolCard
-        name="GE All Purpose Silicone Caulk, Clear, 10 fl oz Cartridge"
-        whatItDoes={[
-          'Also a silicone sealant. Its listing describes it as all purpose rather than as a window and door product, which is the difference between this and the two above.',
-          'That distinction belongs to the listings and not to any source: neither Texas A&M AgriLife Extension nor the University of Arizona distinguishes between silicone formulations for this work.',
-          'Whichever is used, the University of Arizona instruction about weep holes still applies: those are screened, not sealed.',
-        ]}
-        asin="B0B8QPH3RW"
-      />
-
-      <p>
-        Two further measures from the sources need no product at all. University of Arizona
-        Cooperative Extension says to{' '}
-        <em>
-          &ldquo;Keep grass closely mowed near the home. Prune bushes and overhanging tree
-          branches away from the structure. Tree branches can provide a path to the roof for
-          scorpions. Minimize low growing ground cover vegetation.&rdquo;
-        </em>{' '}
-        And the University of Arizona pest-proofing publication gives one measure aimed
-        squarely at the group the sting material is about:{' '}
-        <em>
-          &ldquo;Protect an infant&rsquo;s crib by placing the legs of the crib in clean
-          wide-mouthed glass jars (scorpions cannot climb the clean glass). Pull cribs away
-          from walls; bark scorpions can climb vertical walls, but make little progress
-          across ceilings.&rdquo;
-        </em>
       </p>
 
       <h2 id="finding-them">Finding Them in the Dark</h2>

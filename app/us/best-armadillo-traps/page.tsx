@@ -127,10 +127,10 @@ const sources: Source[] = [
 
 const tocItems = [
   { id: 'what-matters', title: 'What Changes the Outcome' },
+  { id: 'traps', title: 'Traps That Meet It' },
   { id: 'placement', title: 'Placement and Timing' },
   { id: 'diy', title: 'Start With What You Already Have' },
   { id: 'size', title: 'The Size Specification' },
-  { id: 'traps', title: 'Traps That Meet It' },
   { id: 'not-listed', title: 'What Is Not Listed, and Why' },
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
@@ -185,6 +185,54 @@ export default function BestArmadilloTrapsPage() {
         be used to funnel armadillos traveling along such barriers into traps. University of Georgia
         states that traps should include wings or funnels to direct the animal into the trap.
       </p>
+
+      <h2 id="traps">Traps That Meet It</h2>
+      <p>
+        Each of the three below was checked against the 10 by 12 by 32 inch figure before it was
+        listed, and each meets or exceeds it on all three axes. They are described by what they
+        mechanically are. No source compares one manufacturer against another, so none is ranked
+        here, and no bait, lure or repellent appears on this page at all.
+      </p>
+
+      <p>
+        The traps below are named because each listing&rsquo;s own text meets the published size specification set out above, on all three axes.
+      </p>
+
+      <UsToolCard
+        name="Tomahawk Live Trap Model 608SS — Professional Series, rear sliding door"
+        whatItDoes={[
+          SOURCED_MINIMUM,
+          'A single-entry wire cage trap with a treadle plate that releases a spring-loaded front door.',
+          'A rear sliding door lets the animal be released from behind the trap rather than from the entrance end.',
+          'Tomahawk is the manufacturer whose wire cage traps University of Georgia used in its field study.',
+          'Wings of 1 x 6 or 2 x 6 inch lumber, six feet long, are added separately and are not part of the trap.',
+        ]}
+        asin="B00ADSHU84"
+      />
+
+      <UsToolCard
+        name="Havahart 1085 Large 1-Door Easy Set live animal trap"
+        whatItDoes={[
+          SOURCED_MINIMUM,
+          'A single-door wire cage trap: the animal enters at one end and a treadle releases a gravity door behind it.',
+          'A one-handed set lever operates the door mechanism without reaching inside the cage.',
+          'Mesh sides with a solid handle guard, intended to be carried without contact with the animal.',
+          'Requires the wire floor to be covered with leaf litter or soil, as UF/IFAS Extension describes.',
+        ]}
+        asin="B000H6JJEA"
+      />
+
+      <UsToolCard
+        name="Havahart Large 1-Door live animal trap, model 1079SR"
+        whatItDoes={[
+          SOURCED_MINIMUM,
+          'A single-door wire cage trap of the same class as the 1085, with one entrance and a treadle-released door.',
+          'Galvanized wire mesh with steel reinforcement at the frame and door.',
+          'Sized for raccoon-class animals, which is the generic description UF/IFAS Extension gives for armadillo cage traps.',
+          'The product title does not name armadillos; it is listed on dimensions against the sourced minimum, not on its labeling.',
+        ]}
+        asin="B00004RAMT"
+      />
 
       <h2 id="placement">Placement and Timing</h2>
       <ul>
@@ -263,50 +311,6 @@ export default function BestArmadilloTrapsPage() {
           raccoon-sized, metal, cage live-traps available from local pest control and feed stores.
         </li>
       </ul>
-
-      <h2 id="traps">Traps That Meet It</h2>
-      <p>
-        Each of the three below was checked against the 10 by 12 by 32 inch figure before it was
-        listed, and each meets or exceeds it on all three axes. They are described by what they
-        mechanically are. No source compares one manufacturer against another, so none is ranked
-        here, and no bait, lure or repellent appears on this page at all.
-      </p>
-
-      <UsToolCard
-        name="Tomahawk Live Trap Model 608SS — Professional Series, rear sliding door"
-        whatItDoes={[
-          SOURCED_MINIMUM,
-          'A single-entry wire cage trap with a treadle plate that releases a spring-loaded front door.',
-          'A rear sliding door lets the animal be released from behind the trap rather than from the entrance end.',
-          'Tomahawk is the manufacturer whose wire cage traps University of Georgia used in its field study.',
-          'Wings of 1 x 6 or 2 x 6 inch lumber, six feet long, are added separately and are not part of the trap.',
-        ]}
-        asin="B00ADSHU84"
-      />
-
-      <UsToolCard
-        name="Havahart 1085 Large 1-Door Easy Set live animal trap"
-        whatItDoes={[
-          SOURCED_MINIMUM,
-          'A single-door wire cage trap: the animal enters at one end and a treadle releases a gravity door behind it.',
-          'A one-handed set lever operates the door mechanism without reaching inside the cage.',
-          'Mesh sides with a solid handle guard, intended to be carried without contact with the animal.',
-          'Requires the wire floor to be covered with leaf litter or soil, as UF/IFAS Extension describes.',
-        ]}
-        asin="B000H6JJEA"
-      />
-
-      <UsToolCard
-        name="Havahart Large 1-Door live animal trap, model 1079SR"
-        whatItDoes={[
-          SOURCED_MINIMUM,
-          'A single-door wire cage trap of the same class as the 1085, with one entrance and a treadle-released door.',
-          'Galvanized wire mesh with steel reinforcement at the frame and door.',
-          'Sized for raccoon-class animals, which is the generic description UF/IFAS Extension gives for armadillo cage traps.',
-          'The product title does not name armadillos; it is listed on dimensions against the sourced minimum, not on its labeling.',
-        ]}
-        asin="B00004RAMT"
-      />
 
       <h2 id="not-listed">What Is Not Listed, and Why</h2>
       <p>

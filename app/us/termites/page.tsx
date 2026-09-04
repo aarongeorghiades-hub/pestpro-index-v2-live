@@ -144,11 +144,11 @@ const tocItems = [
   { id: 'the-boundary', title: 'What Consumer Products Cannot Do' },
   { id: 'signs', title: 'The Signs' },
   { id: 'two-types', title: 'Subterranean or Drywood' },
+  { id: 'products', title: 'Prevention, Monitoring and Spot Treatment' },
   { id: 'formosan', title: 'The Formosan Termite' },
   { id: 'getting-rid', title: 'Getting Rid of Them' },
   { id: 'prevention', title: 'Prevention' },
   { id: 'cost', title: 'What Treatment Costs' },
-  { id: 'products', title: 'Prevention, Monitoring and Spot Treatment' },
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
 ];
@@ -297,6 +297,83 @@ export default function TermitesPage() {
         statement about the approach, not about any one product.
       </p>
 
+      <h2 id="products">Prevention, Monitoring and Spot Treatment</h2>
+      <p>
+        <strong>
+          These four products are for prevention, for monitoring, and for treating a spot. None of
+          them is a cure for an active infestation in a structure, and none is presented as one.
+        </strong>{' '}
+        The statement at the top of this page applies to every one of them: consumer products
+        seldom eradicate an existing termite problem, and a structural infestation is a
+        professional job.
+      </p>
+      <p>
+        They are in no order of preference and none is called better than another, because no
+        source consulted compares any two termite products on any measure. Each card carries the
+        limitation its own sources state. What is written under each product is what that class of
+        product is for, not an assessment of how well the product performs, which is not something
+        this page has a source for.
+      </p>
+
+      <h3>Monitoring and baiting</h3>
+
+      <p>
+        Each product below is named because a source cited on this page describes that class of
+        product for termites, and each card states the limitation its own source attaches to it.
+      </p>
+
+      <UsToolCard
+        name="Spectracide Terminate Termite Detection &amp; Killing Stakes, 15 Count"
+        whatItDoes={[
+          'Ground stakes, placed around a structure, of the detection-and-bait type.',
+          'Mississippi State University Extension states that bait stations must be inspected and maintained on at least an annual basis. Stakes left in the ground and forgotten are not doing what the source describes.',
+          'The same source states that do-it-yourself termite control is not a good idea. This is a monitoring aid, not a treatment for an active infestation.',
+        ]}
+        asin="B00AA8WVLI"
+      />
+
+      <UsToolCard
+        name="Spectracide Terminate Termite Detection &amp; Killing Replacement Stakes, 8 Pack"
+        whatItDoes={[
+          'Replacement stakes for the system above, listed separately by the manufacturer.',
+          'Listed here because the annual inspection and maintenance that Mississippi State University Extension describes is an ongoing requirement rather than a one-time purchase.',
+        ]}
+        asin="B00EORPBQI"
+      />
+
+      <h3>Borate treatment for bare interior wood</h3>
+
+      <UsToolCard
+        name="Bora-Care Termiticide Insecticide and Fungicide Concentrate, 1 Gallon"
+        whatItDoes={[
+          'A borate concentrate applied to bare wood.',
+          'University of Florida IFAS Extension states that borate treatments for termites are usually only done during the new construction phase.',
+          'The Alabama Cooperative Extension System states that all borate-based products are water soluble, thus borate-treated wood should be used only interiorly. Interior, bare wood, and not an exterior application.',
+        ]}
+        asin="B01HDYAOY2"
+      />
+
+      <h3>Spot treatment</h3>
+
+      <UsToolCard
+        name="BASF Termidor Foam, 20 oz"
+        whatItDoes={[
+          'A foam applied into a crack, a void or a gallery, for treating one located spot.',
+          'University of Florida IFAS Extension states that controlling existing infestations is generally not a do-it-yourself project, and UC IPM states that do-it-yourself treatments are not recommended. This treats one located spot; it is not a whole-structure remedy.',
+          'The Alabama Cooperative Extension System gives the only exception it recognizes for consumer treatment as a mailbox, sandbox, or other small wooden object not attached to the house.',
+        ]}
+        asin="B00B5WI5VI"
+      />
+
+      <p>
+        Four products appear above and there is no fifth. Two further classes were looked for and
+        are deliberately absent: no consumer liquid soil termiticide concentrate is listed, even
+        though University of Florida IFAS Extension calls that the most common method, and no
+        standalone monitoring-only device is listed because the detection function here belongs to
+        the stakes already shown. Where a product could not be listed honestly, nothing is listed
+        in its place.
+      </p>
+
       <h2 id="formosan">The Formosan Termite</h2>
       <p>
         University of Georgia Extension describes the Formosan subterranean termite separately from
@@ -440,78 +517,6 @@ export default function TermitesPage() {
         That is the only cost figure on this page. University of Florida IFAS Extension publication
         IN1277 was checked for cost figures specifically and publishes none, so none is quoted from
         it.
-      </p>
-
-      <h2 id="products">Prevention, Monitoring and Spot Treatment</h2>
-      <p>
-        <strong>
-          These four products are for prevention, for monitoring, and for treating a spot. None of
-          them is a cure for an active infestation in a structure, and none is presented as one.
-        </strong>{' '}
-        The statement at the top of this page applies to every one of them: consumer products
-        seldom eradicate an existing termite problem, and a structural infestation is a
-        professional job.
-      </p>
-      <p>
-        They are in no order of preference and none is called better than another, because no
-        source consulted compares any two termite products on any measure. Each card carries the
-        limitation its own sources state. What is written under each product is what that class of
-        product is for, not an assessment of how well the product performs, which is not something
-        this page has a source for.
-      </p>
-
-      <h3>Monitoring and baiting</h3>
-
-      <UsToolCard
-        name="Spectracide Terminate Termite Detection &amp; Killing Stakes, 15 Count"
-        whatItDoes={[
-          'Ground stakes, placed around a structure, of the detection-and-bait type.',
-          'Mississippi State University Extension states that bait stations must be inspected and maintained on at least an annual basis. Stakes left in the ground and forgotten are not doing what the source describes.',
-          'The same source states that do-it-yourself termite control is not a good idea. This is a monitoring aid, not a treatment for an active infestation.',
-        ]}
-        asin="B00AA8WVLI"
-      />
-
-      <UsToolCard
-        name="Spectracide Terminate Termite Detection &amp; Killing Replacement Stakes, 8 Pack"
-        whatItDoes={[
-          'Replacement stakes for the system above, listed separately by the manufacturer.',
-          'Listed here because the annual inspection and maintenance that Mississippi State University Extension describes is an ongoing requirement rather than a one-time purchase.',
-        ]}
-        asin="B00EORPBQI"
-      />
-
-      <h3>Borate treatment for bare interior wood</h3>
-
-      <UsToolCard
-        name="Bora-Care Termiticide Insecticide and Fungicide Concentrate, 1 Gallon"
-        whatItDoes={[
-          'A borate concentrate applied to bare wood.',
-          'University of Florida IFAS Extension states that borate treatments for termites are usually only done during the new construction phase.',
-          'The Alabama Cooperative Extension System states that all borate-based products are water soluble, thus borate-treated wood should be used only interiorly. Interior, bare wood, and not an exterior application.',
-        ]}
-        asin="B01HDYAOY2"
-      />
-
-      <h3>Spot treatment</h3>
-
-      <UsToolCard
-        name="BASF Termidor Foam, 20 oz"
-        whatItDoes={[
-          'A foam applied into a crack, a void or a gallery, for treating one located spot.',
-          'University of Florida IFAS Extension states that controlling existing infestations is generally not a do-it-yourself project, and UC IPM states that do-it-yourself treatments are not recommended. This treats one located spot; it is not a whole-structure remedy.',
-          'The Alabama Cooperative Extension System gives the only exception it recognizes for consumer treatment as a mailbox, sandbox, or other small wooden object not attached to the house.',
-        ]}
-        asin="B00B5WI5VI"
-      />
-
-      <p>
-        Four products appear above and there is no fifth. Two further classes were looked for and
-        are deliberately absent: no consumer liquid soil termiticide concentrate is listed, even
-        though University of Florida IFAS Extension calls that the most common method, and no
-        standalone monitoring-only device is listed because the detection function here belongs to
-        the stakes already shown. Where a product could not be listed honestly, nothing is listed
-        in its place.
       </p>
 
       <h2 id="faq">Questions</h2>

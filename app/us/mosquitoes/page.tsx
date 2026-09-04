@@ -117,9 +117,9 @@ const sources: Source[] = [
 
 const tocItems = [
   { id: 'what-it-is', title: 'What It Is' },
+  { id: 'larval-control', title: 'Larval Control' },
   { id: 'breeding', title: 'Breeding Sites and Standing Water' },
   { id: 'source-reduction', title: 'Source Reduction' },
-  { id: 'larval-control', title: 'Larval Control' },
   { id: 'adult-control', title: 'Adult Control' },
   { id: 'personal-protection', title: 'Personal and Property Protection' },
   { id: 'does-not-work', title: 'What the Sources Say Does Not Work' },
@@ -170,6 +170,50 @@ export default function MosquitoesPage() {
         in order to get the extra protein needed to lay eggs. With one blood meal, a
         female mosquito can lay up to 300 eggs.</em>
       </p>
+
+      <h2 id="larval-control">Larval Control</h2>
+      <p>
+        University of Kentucky Extension: <em>Most larvicides sold to homeowners
+        contain either the active ingredient methoprene or a toxin produced by the soil
+        bacterium Bacillus thuringiensis israelensis (Bti).</em> The same source states
+        methoprene prevents adult emergence by disrupting larval development, while Bti
+        toxin attacks the digestive tract and is lethal only to mosquito larvae and the
+        larvae of some aquatic gnats and black flies.
+      </p>
+      <p>
+        <strong>Safety to non-target animals is stated consistently across sources.</strong>{' '}
+        University of Kentucky Extension: <em>Neither methoprene nor Bti toxin is
+        harmful to fish, waterfowl, pets, or humans when used according to label
+        directions.</em> NC State Extension makes the same point about Bti specifically:{' '}
+        <em>There are several products formulated as &quot;dunks&quot; or as granules
+        that contain the bacterium Bacillus thuringiensis israelensis or
+        &quot;Bti&quot;. The bacteria kill mosquitoes, but does not harm fish, birds or
+        other wildlife.</em>
+      </p>
+      <p>
+        On how long a treatment lasts, Texas A&amp;M AgriLife Extension states Bti
+        formulations (donuts, briquettes, or granules) are effective for up to 30 days,
+        and methoprene, depending on the formulation, may last more than 30 days. NC
+        State Extension gives the same 30-day figure for a Bti &quot;dunk&quot; sized
+        for a small breeding site of 100 square feet or less, and adds a caution: know
+        whether a site is an actual mosquito source before treating it, since treating
+        every area of standing water on a property without that knowledge wastes both
+        time and product.
+      </p>
+
+      <p>
+        The products below are larval treatments for standing water, named because the sources on this page describe that class for a site that cannot be drained.
+      </p>
+
+      <UsToolCard
+        name="Bti Mosquito Dunks for Ponds and Standing Water, 2-Pack"
+        whatItDoes={[
+          'Its own listing states the formula releases Bti "for a period of 30 days or more," matching the 30-day figure Texas A&M AgriLife Extension and NC State Extension both give for a Bti dunk treating a contained breeding site.',
+          'Its own listing states it is safe for use in fish habitats and animal watering troughs — matching University of Kentucky Extension and NC State Extension\'s sourced finding that Bti does not harm fish, birds, pets or other wildlife when used per label directions.',
+          'This is a larval-stage treatment for standing water a property owner cannot drain or empty, not a treatment for adult mosquitoes already flying — see Adult Control below for that.',
+        ]}
+        asin="B0002ASQ4A"
+      />
 
       <h2 id="breeding">Breeding Sites and Standing Water</h2>
       <p>
@@ -234,46 +278,6 @@ export default function MosquitoesPage() {
           and keep the screening clear of debris.
         </li>
       </ul>
-
-      <h2 id="larval-control">Larval Control</h2>
-      <p>
-        University of Kentucky Extension: <em>Most larvicides sold to homeowners
-        contain either the active ingredient methoprene or a toxin produced by the soil
-        bacterium Bacillus thuringiensis israelensis (Bti).</em> The same source states
-        methoprene prevents adult emergence by disrupting larval development, while Bti
-        toxin attacks the digestive tract and is lethal only to mosquito larvae and the
-        larvae of some aquatic gnats and black flies.
-      </p>
-      <p>
-        <strong>Safety to non-target animals is stated consistently across sources.</strong>{' '}
-        University of Kentucky Extension: <em>Neither methoprene nor Bti toxin is
-        harmful to fish, waterfowl, pets, or humans when used according to label
-        directions.</em> NC State Extension makes the same point about Bti specifically:{' '}
-        <em>There are several products formulated as &quot;dunks&quot; or as granules
-        that contain the bacterium Bacillus thuringiensis israelensis or
-        &quot;Bti&quot;. The bacteria kill mosquitoes, but does not harm fish, birds or
-        other wildlife.</em>
-      </p>
-      <p>
-        On how long a treatment lasts, Texas A&amp;M AgriLife Extension states Bti
-        formulations (donuts, briquettes, or granules) are effective for up to 30 days,
-        and methoprene, depending on the formulation, may last more than 30 days. NC
-        State Extension gives the same 30-day figure for a Bti &quot;dunk&quot; sized
-        for a small breeding site of 100 square feet or less, and adds a caution: know
-        whether a site is an actual mosquito source before treating it, since treating
-        every area of standing water on a property without that knowledge wastes both
-        time and product.
-      </p>
-
-      <UsToolCard
-        name="Bti Mosquito Dunks for Ponds and Standing Water, 2-Pack"
-        whatItDoes={[
-          'Its own listing states the formula releases Bti "for a period of 30 days or more," matching the 30-day figure Texas A&M AgriLife Extension and NC State Extension both give for a Bti dunk treating a contained breeding site.',
-          'Its own listing states it is safe for use in fish habitats and animal watering troughs — matching University of Kentucky Extension and NC State Extension\'s sourced finding that Bti does not harm fish, birds, pets or other wildlife when used per label directions.',
-          'This is a larval-stage treatment for standing water a property owner cannot drain or empty, not a treatment for adult mosquitoes already flying — see Adult Control below for that.',
-        ]}
-        asin="B0002ASQ4A"
-      />
 
       <h2 id="adult-control">Adult Control</h2>
       <p>

@@ -131,10 +131,10 @@ const products: ProductRecord[] = [
 
 const tocItems = [
   { id: 'what', title: 'What They Are, and What They Damage' },
+  { id: 'storage', title: 'Storage Containers' },
   { id: 'first', title: 'Cleaning and Exclusion Come First' },
   { id: 'heat-cold', title: 'Heat and Cold: Four Sources, Four Prescriptions' },
   { id: 'lifecycle', title: 'How Long They Live: the Figures Do Not Agree' },
-  { id: 'storage', title: 'Storage Containers' },
   { id: 'traps', title: 'Traps, and the Three Different Things the Sources Say' },
   { id: 'insecticide', title: 'Insecticides: What the Sources Record' },
   { id: 'health', title: 'Skin and Allergy Reports' },
@@ -308,6 +308,62 @@ export default function CarpetBeetlesPage() {
           where they have been feeding.&rdquo;
         </em>
       </p>
+
+      <h2 id="storage">Storage Containers</h2>
+      <p>
+        <strong>Four sources ask for the same property, and they use the same word.</strong> UC
+        IPM: <em>&ldquo;Store pest-free items in airtight containers.&rdquo;</em> NPIC:{' '}
+        <em>
+          &ldquo;Store attractive items like opened foods, fur coats and leather in sealed, airtight
+          containers.&rdquo;
+        </em>{' '}
+        Illinois:{' '}
+        <em>&ldquo;Store insect-free fabrics in plastic bags or other air-tight containers.&rdquo;</em>
+      </p>
+      <p>
+        <strong>UC IPM sets out the whole procedure, and the order in it matters:</strong>{' '}
+        <em>
+          &ldquo;Protecting Items in Storage To properly store items that are susceptible to carpet
+          beetles, first make sure the items are pest-free then place them in an airtight container,
+          inserting a layer of paper every few inches.&rdquo;
+        </em>{' '}
+        <strong>
+          Pest-free first, then sealed. A container that seals will seal an infestation in as
+          readily as it keeps one out.
+        </strong>
+      </p>
+      <p>
+        <strong>Two things the sources say do NOT work for storage.</strong> UC IPM:{' '}
+        <em>
+          &ldquo;Generally, closets are not airtight and are opened too frequently to hold in
+          vapors.&rdquo;
+        </em>{' '}
+        And on cedar, where two sources disagree: UC IPM says{' '}
+        <em>
+          &ldquo;Cedar chests are not reliable or effective at repelling pests and the oil dissipates
+          ov[er time]&rdquo;
+        </em>{' '}
+        <em>(the source sentence is truncated in the fetched text; the completion is not quoted)</em>, while
+        Illinois says{' '}
+        <em>&ldquo;Cedar chests used for storage or woolens should be air-tight.&rdquo;</em>{' '}
+        <strong>
+          One treats the chest as unreliable, the other as usable provided it seals. Both are
+          extension services and neither is corrected here.
+        </strong>
+      </p>
+      <p>
+        The two containers below are named because their own listings state that they seal. They are
+        in no order of preference and neither is called better than the other, because no source
+        consulted for this page compares one product against another.
+      </p>
+      <p>
+        The containers below are named because their own listings state that they seal, which is the only property the sources on this page ask of them.
+      </p>
+      {products
+        .filter((p) => p.group === 'container')
+        .map((p) => (
+          <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+        ))}
 
       <h2 id="first">Cleaning and Exclusion Come First</h2>
       <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
@@ -545,59 +601,6 @@ export default function CarpetBeetlesPage() {
           </strong>
         </p>
       </div>
-
-      <h2 id="storage">Storage Containers</h2>
-      <p>
-        <strong>Four sources ask for the same property, and they use the same word.</strong> UC
-        IPM: <em>&ldquo;Store pest-free items in airtight containers.&rdquo;</em> NPIC:{' '}
-        <em>
-          &ldquo;Store attractive items like opened foods, fur coats and leather in sealed, airtight
-          containers.&rdquo;
-        </em>{' '}
-        Illinois:{' '}
-        <em>&ldquo;Store insect-free fabrics in plastic bags or other air-tight containers.&rdquo;</em>
-      </p>
-      <p>
-        <strong>UC IPM sets out the whole procedure, and the order in it matters:</strong>{' '}
-        <em>
-          &ldquo;Protecting Items in Storage To properly store items that are susceptible to carpet
-          beetles, first make sure the items are pest-free then place them in an airtight container,
-          inserting a layer of paper every few inches.&rdquo;
-        </em>{' '}
-        <strong>
-          Pest-free first, then sealed. A container that seals will seal an infestation in as
-          readily as it keeps one out.
-        </strong>
-      </p>
-      <p>
-        <strong>Two things the sources say do NOT work for storage.</strong> UC IPM:{' '}
-        <em>
-          &ldquo;Generally, closets are not airtight and are opened too frequently to hold in
-          vapors.&rdquo;
-        </em>{' '}
-        And on cedar, where two sources disagree: UC IPM says{' '}
-        <em>
-          &ldquo;Cedar chests are not reliable or effective at repelling pests and the oil dissipates
-          ov[er time]&rdquo;
-        </em>{' '}
-        <em>(the source sentence is truncated in the fetched text; the completion is not quoted)</em>, while
-        Illinois says{' '}
-        <em>&ldquo;Cedar chests used for storage or woolens should be air-tight.&rdquo;</em>{' '}
-        <strong>
-          One treats the chest as unreliable, the other as usable provided it seals. Both are
-          extension services and neither is corrected here.
-        </strong>
-      </p>
-      <p>
-        The two containers below are named because their own listings state that they seal. They are
-        in no order of preference and neither is called better than the other, because no source
-        consulted for this page compares one product against another.
-      </p>
-      {products
-        .filter((p) => p.group === 'container')
-        .map((p) => (
-          <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-        ))}
 
       <h2 id="traps">Traps, and the Three Different Things the Sources Say</h2>
       <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">

@@ -356,9 +356,9 @@ const sources: Source[] = [
 const tocItems = [
   { id: 'headline', title: 'The Short Answer' },
   { id: 'the-tunnel', title: 'Find the Main Tunnel First' },
+  { id: 'pincer', title: 'Pincer Traps' },
   { id: 'mechanisms', title: 'Trap Mechanisms Compared' },
   { id: 'the-trial', title: 'What One Trial Measured' },
-  { id: 'pincer', title: 'Pincer Traps' },
   { id: 'box', title: 'Cinch-Style Traps' },
   { id: 'exclusion', title: 'Fencing Instead of Trapping' },
   { id: 'no-work', title: 'What Does Not Work' },
@@ -433,6 +433,21 @@ export default function BestGopherTrapsPage() {
         not for the gopher.
       </p>
 
+      <h2 id="pincer">Pincer Traps</h2>
+      <p>
+        UC IPM describes these as 2-pronged pincer traps, and says the gopher triggers one when it
+        pushes against a flat, vertical pan or metal wire. This is the mechanism named first in
+        the extension literature and the one two of the three trial models belong to.
+      </p>
+
+      <p>
+        The traps below are the two-pronged pincer type described above, named because that is the mechanism the extension literature names first.
+      </p>
+
+      {pincerProducts.map((p) => (
+        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+      ))}
+
       <h2 id="mechanisms">Trap Mechanisms Compared</h2>
       <p>
         As on our other trap pages, the rows are <strong>mechanisms rather than brands</strong>.
@@ -490,17 +505,6 @@ export default function BestGopherTrapsPage() {
         evidence, and it is why the sections below are grouped by how a trap works rather than
         ordered first to last.
       </p>
-
-      <h2 id="pincer">Pincer Traps</h2>
-      <p>
-        UC IPM describes these as 2-pronged pincer traps, and says the gopher triggers one when it
-        pushes against a flat, vertical pan or metal wire. This is the mechanism named first in
-        the extension literature and the one two of the three trial models belong to.
-      </p>
-
-      {pincerProducts.map((p) => (
-        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-      ))}
 
       <h2 id="box">Cinch-Style Traps</h2>
       <p>

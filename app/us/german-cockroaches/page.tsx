@@ -141,11 +141,11 @@ const igrProducts: ProductRecord[] = [
 const tocItems = [
   { id: 'indoors', title: 'It Lives Indoors and Cannot Live Outside' },
   { id: 'identify', title: 'Half an Inch, and Two Stripes' },
+  { id: 'stations', title: 'Small Bait Stations' },
   { id: 'health', title: 'What the Sources Say About Health' },
   { id: 'numbers', title: 'Four Sources, Four Numbers' },
   { id: 'first', title: 'What Every Source Puts First' },
   { id: 'diy', title: 'Four Positions on Whether You Should Do This Yourself' },
-  { id: 'stations', title: 'Small Bait Stations' },
   { id: 'growth', title: 'Gel Bait and Growth Regulators' },
   { id: 'aversion', title: 'Why a Bait Stops Working' },
   { id: 'uncarded', title: 'Sourced, With No Product Named' },
@@ -318,6 +318,52 @@ export default function GermanCockroachesPage() {
           Half an inch, two stripes, and it does not fly. Longer than an inch is a different page.
         </p>
       </div>
+
+      <h2 id="stations">Small Bait Stations</h2>
+      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
+        <p className="m-0 text-base font-bold text-slate-900">
+          One sentence in one publication is the whole criterion for the two products below. It is a
+          fitness test, not a ranking.
+        </p>
+        <p className="mt-3 mb-0 text-base text-slate-800">
+          <strong>UF/IFAS Extension:</strong>{' '}
+          <em>
+            &ldquo;Get small stations for German cockroaches and large stations for the larger outdoor
+            cockroaches.&rdquo;
+          </em>
+        </p>
+        <p className="mt-3 mb-0 text-base text-slate-800">
+          <strong>And the form, from Mississippi State University Extension:</strong>{' '}
+          <em>
+            &ldquo;Baits are the most effective treatments for controlling German cockroaches.&rdquo;
+          </em>{' '}
+          <em>
+            &ldquo;Gels, pastes, or childproof bait stations are especially useful for
+            homeowners.&rdquo;
+          </em>{' '}
+          The same source rules a whole formulation out for this insect:{' '}
+          <em>
+            &ldquo;Some baits are also formulated as dusts or fine granules, but these products are
+            more useful for control of large roaches.&rdquo;
+          </em>
+        </p>
+        <p className="mt-3 mb-0 text-base font-bold text-slate-800">
+          A station sized for a palmetto bug is the wrong tool here, and a granular bait is the wrong
+          formulation. Neither is a judgment about quality.
+        </p>
+      </div>
+      <p>
+        The two below satisfy that one criterion and nothing else. They are in no order of preference
+        and neither is called better than the other, because no source consulted for this page compares
+        any two products against each other.
+      </p>
+      <p>
+        The two products below satisfy the single criterion set out above, and are named for that reason alone.
+      </p>
+
+      {stationProducts.map((p) => (
+        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+      ))}
 
       <h2 id="health">What the Sources Say About Health</h2>
       <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
@@ -587,48 +633,6 @@ export default function GermanCockroachesPage() {
         to control precisely because it develops resistance to insecticides and, in that
         source&rsquo;s own quotation marks, <em>&ldquo;aversion&rdquo;</em> to baits.
       </p>
-
-      <h2 id="stations">Small Bait Stations</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
-          One sentence in one publication is the whole criterion for the two products below. It is a
-          fitness test, not a ranking.
-        </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
-          <strong>UF/IFAS Extension:</strong>{' '}
-          <em>
-            &ldquo;Get small stations for German cockroaches and large stations for the larger outdoor
-            cockroaches.&rdquo;
-          </em>
-        </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
-          <strong>And the form, from Mississippi State University Extension:</strong>{' '}
-          <em>
-            &ldquo;Baits are the most effective treatments for controlling German cockroaches.&rdquo;
-          </em>{' '}
-          <em>
-            &ldquo;Gels, pastes, or childproof bait stations are especially useful for
-            homeowners.&rdquo;
-          </em>{' '}
-          The same source rules a whole formulation out for this insect:{' '}
-          <em>
-            &ldquo;Some baits are also formulated as dusts or fine granules, but these products are
-            more useful for control of large roaches.&rdquo;
-          </em>
-        </p>
-        <p className="mt-3 mb-0 text-base font-bold text-slate-800">
-          A station sized for a palmetto bug is the wrong tool here, and a granular bait is the wrong
-          formulation. Neither is a judgment about quality.
-        </p>
-      </div>
-      <p>
-        The two below satisfy that one criterion and nothing else. They are in no order of preference
-        and neither is called better than the other, because no source consulted for this page compares
-        any two products against each other.
-      </p>
-      {stationProducts.map((p) => (
-        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-      ))}
 
       <h2 id="growth">Gel Bait and Growth Regulators</h2>
       <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">

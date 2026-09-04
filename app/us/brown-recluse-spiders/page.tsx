@@ -333,10 +333,10 @@ const sources: Source[] = [
 
 const tocItems = [
   { id: 'which-spider', title: 'Is It a Brown Recluse?' },
+  { id: 'confirming', title: 'Confirming What You Have' },
   { id: 'range', title: 'Where They Actually Are' },
   { id: 'bites', title: 'What a Bite Does' },
   { id: 'medical', title: 'If You Think You Have Been Bitten' },
-  { id: 'confirming', title: 'Confirming What You Have' },
   { id: 'clutter', title: 'Clutter and Storage' },
   { id: 'sealing', title: 'Sealing the Way In' },
   { id: 'monitoring', title: 'Glue Traps: What They Do and Do Not Do' },
@@ -502,6 +502,27 @@ export default function BrownRecluseSpidersPage() {
           pest control professional.&rdquo;
         </em>
       </p>
+
+      <h2 id="confirming">Confirming What You Have</h2>
+      <p>
+        Everything below this line is about a building rather than a wound. It starts where the
+        identification section above ended: <strong>the six-eye character is the one all the sources
+        accept, and it is too small to see without help.</strong> Kentucky:{' '}
+        <em>&ldquo;Seeing this feature requires a good quality hand lens.&rdquo;</em>
+      </p>
+      <p>
+        A lens lets you rule a spider <strong>out</strong>, which is what most people actually need.
+        It does not let you rule one in &mdash; all three sources quoted above route confirmation to
+        an entomologist, an extension office or a pest control professional.
+      </p>
+
+      <p>
+        The magnifier below is named because every source quoted above puts the eye pattern rather than the violin as the identifying character, and reading it needs magnification.
+      </p>
+
+      {lens.map((p) => (
+        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+      ))}
 
       <h2 id="range">Where They Actually Are</h2>
       <p>
@@ -809,23 +830,6 @@ export default function BrownRecluseSpidersPage() {
         so nothing is said about one. That silence is recorded rather than left to look like an
         omission.
       </p>
-
-      <h2 id="confirming">Confirming What You Have</h2>
-      <p>
-        Everything below this line is about a building rather than a wound. It starts where the
-        identification section above ended: <strong>the six-eye character is the one all the sources
-        accept, and it is too small to see without help.</strong> Kentucky:{' '}
-        <em>&ldquo;Seeing this feature requires a good quality hand lens.&rdquo;</em>
-      </p>
-      <p>
-        A lens lets you rule a spider <strong>out</strong>, which is what most people actually need.
-        It does not let you rule one in &mdash; all three sources quoted above route confirmation to
-        an entomologist, an extension office or a pest control professional.
-      </p>
-
-      {lens.map((p) => (
-        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-      ))}
 
       <h2 id="clutter">Clutter and Storage</h2>
       <p>

@@ -166,10 +166,10 @@ const products: ProductRecord[] = [
 const tocItems = [
   { id: 'what', title: 'What They Are, and What They Do to Paper' },
   { id: 'two-species', title: 'Two Species, and Every Figure Below Is Labeled' },
+  { id: 'storage', title: 'Food Storage' },
   { id: 'warm-cool', title: 'Warm or Cool? Three Sources, Two Answers' },
   { id: 'lifecycle', title: 'How Long They Live: Three Ranges, Three Publishers' },
   { id: 'moisture', title: 'Moisture, and the Specification Nobody Publishes' },
-  { id: 'storage', title: 'Food Storage' },
   { id: 'traps', title: 'Sticky Traps, and a Free Alternative' },
   { id: 'bait', title: 'Boric Acid Bait, and the Disagreement About It' },
   { id: 'chemical', title: 'What the Sources Say About Sprays and Foggers' },
@@ -333,6 +333,35 @@ export default function SilverfishPage() {
         brown, and about 1/2 inch long.
       </p>
 
+      <h2 id="storage">Food Storage</h2>
+      <p>
+        <strong>Four sources ask for the same thing.</strong> UC IPM:{' '}
+        <em>&ldquo;Keep food in containers with tight lids, especially dry, processed items.&rdquo;</em>{' '}
+        NPIC:{' '}
+        <em>&ldquo;Keep cereals, flour, meal, pasta, and pet foods in airtight containers.&rdquo;</em>{' '}
+        Penn State:{' '}
+        <em>
+          &ldquo;Keep cereals, flour, meal, pastas, pet foods, and pet treats in airtight
+          containers.&rdquo;
+        </em>{' '}
+        Utah State:{' '}
+        <em>&ldquo;Remove or store potential food sources in sealed containers.&rdquo;</em>
+      </p>
+      <p>
+        UC IPM adds the part a container does not cover:{' '}
+        <em>
+          &ldquo;Because collections of magazines, papers, and books provide food and harborage,
+          occasionally move these items around in your bookcase.&rdquo;
+        </em>
+      </p>
+      <p>
+        The containers below are named because their own listings state that they are airtight, which is the single property the sources on this page ask of stored-food packaging.
+      </p>
+
+      {SF1.map((p) => (
+        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+      ))}
+
       <h2 id="warm-cool">Warm or Cool? Three Sources, Two Answers</h2>
       <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
         <p className="m-0 text-base font-bold text-amber-900">
@@ -482,31 +511,6 @@ export default function SilverfishPage() {
           for it.
         </p>
       </div>
-
-      <h2 id="storage">Food Storage</h2>
-      <p>
-        <strong>Four sources ask for the same thing.</strong> UC IPM:{' '}
-        <em>&ldquo;Keep food in containers with tight lids, especially dry, processed items.&rdquo;</em>{' '}
-        NPIC:{' '}
-        <em>&ldquo;Keep cereals, flour, meal, pasta, and pet foods in airtight containers.&rdquo;</em>{' '}
-        Penn State:{' '}
-        <em>
-          &ldquo;Keep cereals, flour, meal, pastas, pet foods, and pet treats in airtight
-          containers.&rdquo;
-        </em>{' '}
-        Utah State:{' '}
-        <em>&ldquo;Remove or store potential food sources in sealed containers.&rdquo;</em>
-      </p>
-      <p>
-        UC IPM adds the part a container does not cover:{' '}
-        <em>
-          &ldquo;Because collections of magazines, papers, and books provide food and harborage,
-          occasionally move these items around in your bookcase.&rdquo;
-        </em>
-      </p>
-      {SF1.map((p) => (
-        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-      ))}
 
       <h2 id="traps">Sticky Traps, and a Free Alternative</h2>
       <p>
