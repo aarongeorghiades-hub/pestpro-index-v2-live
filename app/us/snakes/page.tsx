@@ -773,7 +773,10 @@ export default function SnakesPage() {
         Colorado State names <em>&ldquo;mortar, caulking compound, expanding foam&rdquo;</em>{' '}
         alongside the mesh. Both products below are already named on other pages of this site for
         the same physical job; what is new here is the reason, which is Colorado State&rsquo;s
-        sentence rather than anything about the products.
+        sentence rather than anything about the products. The same is true of the mesh above,
+        and of several other exclusion materials on this site:{' '}
+        <Link href="/us/products">every product named on these pages</Link> is indexed in one
+        place, grouped by pest, which is the quickest way to find one of them again.
       </p>
       {products
         .filter((p) => p.group === 'sealant')

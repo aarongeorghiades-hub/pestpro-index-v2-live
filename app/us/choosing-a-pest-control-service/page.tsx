@@ -295,6 +295,14 @@ export default function ChoosingAPestControlServicePage() {
         Florida database.
       </p>
       <p>
+        <strong>It does not name a product, and nothing on this page is an affiliate link.</strong>{' '}
+        This page is about hiring somebody else to do the work. Where the sources do support a
+        tool, it is named on the page for that animal, and{' '}
+        <Link href="/us/products">every product named across these pages</Link> is indexed in one
+        place. Those product links do earn a commission, and each one says so beside it; this page
+        earns nothing either way.
+      </p>
+      <p>
         <strong>And it does not replace the pages that send you here.</strong> What the sources
         say about a particular animal, and about where a homeowner&rsquo;s own work ends, is on
         those pages &mdash; <Link href="/us/termites">termites</Link> in particular, where five

@@ -342,6 +342,12 @@ const groups: HubGroup[] = [
         href: '/us/choosing-a-pest-control-service',
         covers: 'Checking a license against a state database before you hire anyone.',
       },
+      {
+        title: 'Every Product Named on the US Pages',
+        href: '/us/products',
+        covers:
+          'An index of every tool named anywhere on these pages, grouped by pest, each under the page that explains it.',
+      },
     ],
   },
   {
