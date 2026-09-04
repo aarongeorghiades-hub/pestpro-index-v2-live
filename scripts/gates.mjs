@@ -83,6 +83,15 @@ import {
   SET_PAIR_PREFIX_TRAP,
   BLOCK_BODY_HTTP_200,
   REAL_PAGE_WITH_TRIGGER_WORD,
+  HTML_WITH_FLIGHT_PAYLOAD,
+  HTML_SCRIPT_ONLY,
+  HTML_CARD_AFTER_PROSE,
+  HTML_NO_CARD,
+  CARD_COUNT_MAP,
+  LINKS_TO_CARDING,
+  LINKS_TO_BARE,
+  CTA_PRESENT,
+  CTA_FALSE_POSITIVES,
 } from './fixtures.mjs';
 import { UK_CLASSES, UK_SPELLING_RE } from './ukspelling.mjs';
 
@@ -281,6 +290,20 @@ const decodeEntities = (t) =>
     .replace(/&hellip;/g, '\u2026')
     .replace(/&quot;/g, '"')
     .replace(/&amp;/g, '&');
+
+// VISIBLE BODY EXTRACTION — S63 R5, shared so M24 and M25 cannot drift apart.
+//
+// ORDER IS THE RULE, not an implementation detail. <script> goes FIRST because a
+// Next <script> block carries the RSC flight payload, which restates every
+// string on the page; stripping tags before scripts double-counts the whole
+// document. <style> and HTML comments go with it for the same reason.
+function visibleBody(t) {
+  const stripped = (t ?? '')
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<!--[\s\S]*?-->/g, ' ');
+  return decodeEntities(stripped.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+}
 
 // An internal /us link, in EITHER form the estate actually uses. Group 1 is the
 // site-relative form, group 2 the absolute one; callers read `m[1] ?? m[2]`.
@@ -818,6 +841,113 @@ const MATCHERS = [
     },
     probePos: [{ text: BLOCK_BODY_HTTP_200, ctx: { status: 200 } }],
     probeNeg: [{ text: REAL_PAGE_WITH_TRIGGER_WORD, ctx: { status: 200 } }],
+  },
+  // =========================================================================
+  // S63 R5 — the four measurement steps S63 R4's conversion diagnostic ran as
+  // ad-hoc code. The fifth, the card link, is CARD_HREF_RE and is REUSED rather
+  // than re-implemented (this file's own rule 4: no second copy).
+  // =========================================================================
+  {
+    id: 'M24',
+    kind: 'inventory',
+    scope: 'document',
+    surface: 'visible-body',
+    name: 'Visible body text: scripts, styles and comments removed BEFORE tags',
+    // Declared INVENTORY: it extracts, it does not judge (Law 167).
+    test: (t) => {
+      const v = visibleBody(t);
+      return v ? [v] : [];
+    },
+    // fires on a document with visible prose...
+    probePos: HTML_WITH_FLIGHT_PAYLOAD,
+    // ...and is EMPTY on a document that is only a flight payload. That is the
+    // whole rule: if the payload were counted this probe would return text.
+    probeNeg: HTML_SCRIPT_ONLY,
+  },
+  {
+    id: 'M25',
+    kind: 'inventory',
+    scope: 'document',
+    surface: 'card-offset',
+    name: 'First-card offset, measured in VISIBLE characters (the Law 66 measure)',
+    // THE RULE: the position of the first card link within the VISIBLE text,
+    // never within raw bytes. The positive fixture places a 5,000-byte script
+    // block ahead of the card so the two cannot agree; a raw-byte
+    // implementation moves the asserted value and the probe says so.
+    test: (t) => {
+      const m = CARD_HREF_RE.exec(t ?? '');
+      CARD_HREF_RE.lastIndex = 0;
+      if (!m) return [];
+      const before = visibleBody((t ?? '').slice(0, m.index));
+      const whole = visibleBody(t);
+      return [{ offset: before.length, pct: Math.round((100 * before.length) / Math.max(whole.length, 1)) }];
+    },
+    probePos: HTML_CARD_AFTER_PROSE,
+    probeNeg: HTML_NO_CARD,
+  },
+  {
+    id: 'M26',
+    kind: 'inventory',
+    scope: 'document',
+    surface: 'full',
+    name: 'Internal links to a route that carries at least one card',
+    // THE RULE: the TARGET ROUTE'S MEASURED CARD COUNT decides, not its slug. No
+    // `best-` prefix is consulted, so a topic route that gains a card is counted
+    // without any matcher edit, and a `best-` route that carries none is not.
+    test: (t, ctx = {}) => {
+      const counts = ctx.cardCounts ?? CARD_COUNT_MAP;
+      const self = ctx.slug ?? null;
+      const out = new Set();
+      for (const m of all(INTERNAL_LINK_RE, t ?? '')) {
+        const tgt = m[1] ?? m[2];
+        if (tgt === self) continue;
+        if ((counts[tgt] ?? 0) > 0) out.add(tgt);
+      }
+      return [...out].sort();
+    },
+    probePos: LINKS_TO_CARDING,
+    probeNeg: LINKS_TO_BARE,
+  },
+  {
+    id: 'M27',
+    kind: 'inventory',
+    scope: 'document',
+    surface: 'prose',
+    name: 'Call to action in body prose: an imperative commercial instruction',
+    // THE RULE: an imperative commercial instruction ADDRESSED TO THE READER.
+    // Declared INVENTORY, not a gate: a call to action is not a defect, and
+    // after S63 R5 every carding route is expected to carry one (Law 167).
+    //
+    // ITS NEGATIVE PROBE IS A RECORDED FAILURE. A looser first form flagged
+    // EIGHTEEN routes at S63 R4 and every one was a false positive -- "dealing
+    // with", "deals with", "a great deal", "shop against", "can buy one". All
+    // five forms are in probeNeg, so that failure cannot recur in silence
+    // (Law 170 corollary: sweep a class matcher against real prose first).
+    classes: [
+      { id: 'buy',    source: String.raw`(?:^|[.;!?]\s+)(?:Buy|Purchase|Order)\s+(?:it|one|yours|now|today)\b`, name: 'imperative purchase instruction',
+        pos: ['Buy it now on Amazon.'], neg: ['would rather buy one than assemble a pan'] },
+      { id: 'shop',   source: String.raw`\bshop\s+(?:for|now|our|the)\b`, name: 'imperative retail instruction',
+        pos: ['shop for the best price'], neg: ['specific enough to shop against'] },
+      { id: 'price',  source: String.raw`\b(?:check|see|compare)\s+(?:the\s+)?(?:current\s+|latest\s+|best\s+)?price`, name: 'go-and-check-the-price instruction',
+        pos: ['Check the current price'], neg: ['the price a source publishes'] },
+      { id: 'deal',   source: String.raw`\b(?:great\s+deal\s+on|deal\s+on\s+the|best\s+price\s+on|discount\s+code|save\s+\d+%)`, name: 'bargain or discount framing',
+        pos: ['the best price on the trap'], neg: ['varies a great deal', 'it deals with egg sacs'] },
+      { id: 'click',  source: String.raw`\b(?:click|tap)\s+(?:here|through|the\s+link|below)\b`, name: 'click/tap-through instruction',
+        pos: ['Click here to see more'], neg: ['the link below is not paid'] },
+      { id: 'pick',   source: String.raw`\bour\s+top\s+picks?\b`, name: '"our top picks" framing',
+        pos: ['see our top picks'], neg: ['our picks are described mechanically'] },
+      { id: 'yours',  source: String.raw`\bget\s+yours?\s+(?:here|now|today)\b`, name: '"get yours" framing',
+        pos: ['get yours today'], neg: ['get your soil tested'] },
+    ],
+    test: (t) => {
+      const out = [];
+      for (const c of MATCHERS.find((m) => m.id === 'M27').classes) {
+        for (const m of (t ?? '').matchAll(new RegExp(c.source, 'gim'))) out.push(`${c.id}: ${m[0].trim()}`);
+      }
+      return out;
+    },
+    probePos: CTA_PRESENT,
+    probeNeg: CTA_FALSE_POSITIVES,
   },
 ];
 

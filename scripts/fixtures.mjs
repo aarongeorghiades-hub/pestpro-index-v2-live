@@ -193,3 +193,59 @@ export const REAL_PAGE_WITH_TRIGGER_WORD =
   '<form id="contact"><label>captcha</label><input name="captcha"></form>' +
   'x'.repeat(20000) +
   '</body></html>';
+
+// ===========================================================================
+// S63 R5 — CONVERSION-SWEEP FIXTURES
+// S63 R4's conversion diagnostic named five measurement steps. FOUR needed
+// codifying; the fifth, the card link itself, is CARD_HREF_RE and is REUSED
+// rather than re-implemented — this file's standing rule against a second copy.
+// ===========================================================================
+
+// ---- M24, visible body extraction -----------------------------------------
+// THE RULE: rendered visible text is what remains after removing <script>,
+// <style> and HTML comments FIRST, then tags. The order matters and is the
+// whole point: a Next <script> block carries the RSC flight payload, which
+// restates every string on the page, so stripping tags before scripts
+// double-counts the entire document.
+export const HTML_WITH_FLIGHT_PAYLOAD =
+  '<html><body><p>Millipedes do not bite.</p>' +
+  '<script>self.__next_f.push([1,"Millipedes do not bite. Millipedes do not ' +
+  'bite. Millipedes do not bite."])</script>' +
+  '<!-- Millipedes do not bite. --></body></html>';
+// nothing visible at all: only a script block
+export const HTML_SCRIPT_ONLY =
+  '<script>self.__next_f.push([1,"Millipedes do not bite."])</script>';
+
+// ---- M25, first-card offset ------------------------------------------------
+// THE RULE: the offset of the first card link measured in VISIBLE characters,
+// never in raw bytes. The fixture puts a large script block AHEAD of the card
+// precisely so the raw offset and the visible offset cannot agree — if a future
+// implementation measures raw bytes the probe's asserted value moves.
+export const HTML_CARD_AFTER_PROSE =
+  '<p>Twelve characters.</p>' +
+  '<script>' + 'x'.repeat(5000) + '</script>' +
+  '<a href="https://www.amazon.com/dp/B07HCLTXFG?tag=pestproindex2-20">buy</a>';
+export const HTML_NO_CARD =
+  '<p>Twelve characters.</p><a href="/us/millipedes">millipedes</a>';
+
+// ---- M26, internal link to a carding route ---------------------------------
+// THE RULE: an internal /us link whose TARGET ROUTE CARRIES AT LEAST ONE CARD.
+// A rule over a measured card-count map, not a slug list — `best-` prefixes are
+// not consulted and a future carding route needs no matcher edit.
+export const CARD_COUNT_MAP = { ants: 4, millipedes: 0, 'best-gopher-traps': 7, earwigs: 0 };
+export const LINKS_TO_CARDING = '<a href="/us/ants">x</a> <a href="/us/best-gopher-traps">y</a>';
+export const LINKS_TO_BARE = '<a href="/us/millipedes">x</a> <a href="/us/earwigs">y</a>';
+
+// ---- M27, body-prose call to action ----------------------------------------
+// THE RULE: an imperative commercial instruction addressed to the reader.
+// ITS NEGATIVE PROBE IS THE FAILURE ITSELF. A looser first form of this matcher
+// flagged EIGHTEEN routes at S63 R4 and every one was a false positive: "dealing
+// with", "deals with", "a great deal", "shop against", "can buy one". Those five
+// forms are the negative probe, so the failure cannot recur silently.
+export const CTA_PRESENT =
+  'Buy it now on Amazon. Check the current price and shop for the best price on the trap. ' +
+  'Click here to see our top picks.';
+export const CTA_FALSE_POSITIVES =
+  'UC IPM publishes one finding specific enough to shop against, and it deals with egg sacs. ' +
+  'Dealing with the animal varies a great deal. No source consulted says a householder can ' +
+  'buy one, and most people would rather buy one than assemble a roasting pan.';
