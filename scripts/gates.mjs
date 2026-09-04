@@ -123,6 +123,10 @@ function decode(s) {
 // reader-facing proximity gate is possible at all.
 const CARD_MARK = ' CARDLINK ';
 const CARD_HREF_RE = /https:\/\/www\.amazon\.com\/dp\/([A-Z0-9]{10})\?tag=([a-z0-9-]+)/g;
+// The UK mirror. Written without a tag group deliberately: the UK estate carries
+// tagged and untagged /dp/ hrefs and M32 counts the links a reader can click,
+// not the ones carrying a tag. M19 is what rules on tags, on both sides.
+const UK_CARD_HREF_RE = /https:\/\/www\.amazon\.co\.uk\/dp\/([A-Z0-9]{10})/g;
 
 function toProse(raw, { markCards = false } = {}) {
   let b = raw;
@@ -138,11 +142,60 @@ function toProse(raw, { markCards = false } = {}) {
   return decode(b.replace(/<[^>]+>/g, ' ')).replace(/[ \t]+/g, ' ');
 }
 
+// THE SCRIPT STRIP IS ONE DEFINITION AND IT IS NAMED — S64 R1.
+//
+// A Next route ships every string on the page TWICE: once in the rendered HTML a
+// reader sees, and once restated inside a <script> block as the RSC flight
+// payload. Any COUNT taken over the raw file therefore counts a single rendered
+// occurrence more than once.
+//
+// PROVEN BY PROBE, NOT INFERRED (S64 R1). Four unique strings were inserted, one
+// each into an authored /us route's prose, an authored /us route's card name,
+// /us/products' own prose, and an authored UK route's prose. Every one of them
+// was counted TWICE on the raw file and ONCE with scripts stripped. The
+// suspicion under test was that the DERIVED index page /us/products was the
+// double-counter; it is not, and it is not special — the whole estate is, and so
+// is the UK side.
+//
+// AND THE DOUBLING IS NOT UNIFORM, WHICH IS WHY THE NUMBER CANNOT BE HALVED:
+//   US card links        752 raw = 2 x 376 rendered          (uniform)
+//   US disclosures       783 raw = 407 rendered + 376 script (NOT uniform: the
+//                        layout footer's disclosure is never restated)
+//   UK card links        711 raw = 2 x 333 + 45              (NOT uniform: the
+//                        UK /products page builds its hrefs from a local helper,
+//                        so the URL literal never enters the flight payload)
+// A hand-applied correction factor would have been wrong on two of those three.
+// THE SURFACE IS THE DEFECT, NOT THE NUMBER (Law 178 in the surface layer).
+const stripScripts = (raw) => raw.replace(/<script\b[\s\S]*?<\/script>/gi, '');
+
 const SURFACES = {
+  // SERVED BYTES. The right surface for a GATE, which asks "is this string
+  // served at all" — a tag, a price or a banned stem inside the flight payload
+  // IS served, and must still fail. Never the right surface for a count.
   full: (raw) => raw,
+  // WHAT A READER SEES, and nothing else removed. The right surface for a COUNT.
+  // Scripts only: <style> and comments are left alone deliberately, because this
+  // surface must keep href attributes intact for CARD_HREF_RE to read.
+  rendered: (raw) => stripScripts(raw),
   prose: (raw) => toProse(raw),
   proseCards: (raw) => toProse(raw, { markCards: true }),
 };
+
+// THE SINGLE PLACE A MATCHER'S DECLARED SURFACE IS APPLIED — S64 R1.
+//
+// It exists because selfTest() used to hand each probe fixture STRAIGHT to
+// m.test(), bypassing the surface lookup that runDocument() performs. A probe
+// that does not travel the production path proves nothing about production; that
+// is the S63 R8 lesson, and until this function existed the two call sites could
+// not be shown to agree because there was only one of them.
+//
+// It is not cosmetic. M30/M31/M32 each carry a negative probe consisting of the
+// string they count placed INSIDE a <script> block. Those probes pass only
+// because this function runs on the probe path too — revert it and the
+// self-test fails loudly rather than silently reporting a doubled count again.
+const surfaceOf = (m, text) => (SURFACES[m.surface] ? SURFACES[m.surface](text ?? '') : text);
+
+const escapeLiteral = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 // ---------------------------------------------------------------------------
 // SHARED DEFINITIONS
@@ -1057,6 +1110,70 @@ const MATCHERS = [
     probePos: [HEADING_IDENTIFICATION, HEADING_HARM, HEADING_EFFICACY, HEADING_LEGAL],
     probeNeg: [HEADING_NOT_PRECEDENCE, HEADING_PLAIN],
   },
+
+  // -------------------------------------------------------------------------
+  // THE THREE COUNTING MATCHERS — S64 R1.
+  //
+  // These three figures were REPORTED EVERY ROUND AND CODIFIED NOWHERE. They
+  // lived as inline expressions inside runEstate() AND, separately, inside
+  // runMachinery(), which is two retyped copies of the same matcher in the file
+  // written to stop matchers being retyped (Law 166). Both copies read the RAW
+  // file, so every one of them was doubled.
+  //
+  // THEY ARE INVENTORIES, NOT GATES (Law 167). "How many card links does the
+  // estate render" has no failing value. M10 and M19 own the verdicts about
+  // those links; these own the counts.
+  //
+  // EACH RETURNS ASINs RATHER THAN URLs so an occurrence count and a distinct
+  // count are both derivable from one matcher and cannot drift apart (Law 62 —
+  // two populations, one source).
+  //
+  // EVERY NEGATIVE PROBE INCLUDES THE STRING INSIDE A <script> BLOCK. That probe
+  // is the whole point: it fires under the old raw-file behaviour and is silent
+  // under the declared `rendered` surface, so the defect this round fixed cannot
+  // be reintroduced without the self-test saying so on the next invocation.
+  // -------------------------------------------------------------------------
+  {
+    id: 'M30',
+    kind: 'inventory',
+    scope: 'document',
+    surface: 'rendered',
+    name: 'US card links a reader can click (tagged amazon.com /dp/ anchors)',
+    test: (t) => all(CARD_HREF_RE, t).map((m) => m[1]),
+    report: (hits) => `${hits.length} occurrence(s), ${new Set(hits).size} distinct ASIN(s)`,
+    probePos: `<a href="${CARD_LINK}">buy</a>`,
+    probeNeg: [
+      '<a href="https://www.amazon.co.uk/dp/B00NFRTVY6?tag=pestproindex2-21">buy</a>',
+      `<script>self.__next_f.push([1,"${CARD_LINK}"])</script>`,
+    ],
+  },
+  {
+    id: 'M31',
+    kind: 'inventory',
+    scope: 'document',
+    surface: 'rendered',
+    name: 'Current Associates disclosure, counted as a reader meets it',
+    test: (t) => hitStrings(new RegExp(escapeLiteral(DISCLOSURE_CURRENT), 'g'), t),
+    probePos: `<p>${DISCLOSURE_CURRENT}</p>`,
+    probeNeg: [
+      `<p>${DISCLOSURE_SUPERSEDED}</p>`,
+      `<script>self.__next_f.push([1,"${DISCLOSURE_CURRENT}"])</script>`,
+    ],
+  },
+  {
+    id: 'M32',
+    kind: 'inventory',
+    scope: 'document',
+    surface: 'rendered',
+    name: 'UK card links a reader can click (amazon.co.uk /dp/ anchors)',
+    test: (t) => all(UK_CARD_HREF_RE, t).map((m) => m[1]),
+    report: (hits) => `${hits.length} occurrence(s), ${new Set(hits).size} distinct ASIN(s)`,
+    probePos: '<a href="https://www.amazon.co.uk/dp/B00NFRTVY6?tag=pestproindex2-21">buy</a>',
+    probeNeg: [
+      `<a href="${CARD_LINK}">buy</a>`,
+      '<script>self.__next_f.push([1,"https://www.amazon.co.uk/dp/B00NFRTVY6"])</script>',
+    ],
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -1075,8 +1192,14 @@ async function selfTest() {
   for (const m of MATCHERS) {
     const posList = asProbeList(m.probePos);
     const negList = asProbeList(m.probeNeg);
-    const pos = posList.every((p) => m.test(p.text, p.ctx ?? m.probeCtx).length > 0);
-    const negHits = negList.filter((p) => m.test(p.text, p.ctx ?? m.probeCtx).length > 0);
+    // S64 R1: THROUGH surfaceOf(), the same lookup runDocument() performs. A
+    // probe handed its fixture directly bypasses the surface and proves nothing
+    // about the production call — the S63 R8 lesson, closed here for every
+    // matcher at once rather than for the one being worked on.
+    const pos = posList.every((p) => m.test(surfaceOf(m, p.text), p.ctx ?? m.probeCtx).length > 0);
+    const negHits = negList.filter(
+      (p) => m.test(surfaceOf(m, p.text), p.ctx ?? m.probeCtx).length > 0,
+    );
     const ok = pos && negHits.length === 0;
     if (!ok) bad++;
     console.log(
@@ -1199,6 +1322,43 @@ async function selfTest() {
     bad++;
   }
 
+  // F. THE PROBE PATH IS THE PRODUCTION PATH — S64 R1, asserted at runtime.
+  //
+  // Every probe above now goes through surfaceOf(), the same lookup
+  // runDocument() performs. That claim is worth nothing unless it can be shown
+  // to MATTER, so this asserts the difference directly: the three counting
+  // matchers each carry a negative probe consisting of the string they count
+  // placed inside a <script> block, and this checks that each one FIRES when the
+  // fixture is handed to test() raw and is SILENT when it travels the surface.
+  //
+  // If someone reverts surfaceOf() out of the probe loop, this assertion fails
+  // AND those three negative probes start firing — the defect announces itself
+  // twice rather than quietly restoring a doubled count. A probe that cannot be
+  // shown to depend on the path it claims to travel is not evidence (S49-L, and
+  // the S63 R8 lesson).
+  const surfaceSensitive = ['M30', 'M31', 'M32'];
+  let fDiscriminated = 0;
+  console.log('\n  F. PROBE PATH = PRODUCTION PATH, on the script-block negatives:');
+  for (const id of surfaceSensitive) {
+    const m = MATCHERS.find((x) => x.id === id);
+    const scriptNeg = asProbeList(m.probeNeg).find((x) => /<script\b/i.test(x.text));
+    if (!scriptNeg) {
+      console.log(`     ${id}  NO SCRIPT-BLOCK NEGATIVE PROBE — assertion cannot be made`);
+      bad++;
+      continue;
+    }
+    const direct = m.test(scriptNeg.text, m.probeCtx).length;
+    const viaSurface = m.test(surfaceOf(m, scriptNeg.text), m.probeCtx).length;
+    const ok = direct > 0 && viaSurface === 0;
+    if (ok) fDiscriminated++;
+    else bad++;
+    console.log(
+      `     ${id}  direct=${direct}  via ${m.surface}=${viaSurface}  -> ` +
+        `${ok ? 'the surface is load-bearing' : 'ASSERTION FAILED — the surface changes nothing'}`,
+    );
+  }
+  console.log(`     ${fDiscriminated}/${surfaceSensitive.length} discriminated`);
+
   return bad;
 }
 
@@ -1209,21 +1369,24 @@ async function selfTest() {
 const slugOf = (p) => p.split('/').pop().replace(/\.html$/, '');
 
 function runDocument(raw, { slug = null, url = null, label = '' } = {}) {
-  const views = {
-    full: SURFACES.full(raw),
-    prose: SURFACES.prose(raw),
-    proseCards: SURFACES.proseCards(raw),
-  };
+  const views = Object.fromEntries(Object.entries(SURFACES).map(([k, f]) => [k, f(raw)]));
   const rows = [];
   let failed = 0;
   for (const m of MATCHERS.filter((x) => x.scope === 'document')) {
     const hits = m.test(views[m.surface], { slug, url });
+    // A GATE KEEPS ITS `full` SURFACE AND ITS VERDICT — a banned string inside
+    // the flight payload is still served and must still fail. What was wrong was
+    // never the verdict, it was the COUNT printed beside it. So for every
+    // full-surface matcher the rendered count is derived alongside and reported
+    // as its own population, and neither is reconciled into the other (Law 62).
+    const renderedHits =
+      m.surface === 'full' ? m.test(views.rendered, { slug, url }).length : null;
     let problem = null;
     if (m.kind === 'expect') problem = m.expect(hits, { url });
     else if (m.kind === 'gate' && hits.length)
       problem = `${hits.length} hit(s): ${[...new Set(hits)].slice(0, 6).join(', ')}`;
     if (problem) failed++;
-    rows.push({ id: m.id, kind: m.kind, surface: m.surface, name: m.name, hits, problem });
+    rows.push({ id: m.id, kind: m.kind, surface: m.surface, name: m.name, hits, renderedHits, problem });
   }
   return { label, rows, failed, bytes: raw.length, prose: views.prose.length };
 }
@@ -1459,23 +1622,37 @@ async function runMachinery() {
   const usHub = join(appDir, 'us.html');
   const isUs = (f) => f === usHub || f.startsWith(usPrefix + '/');
 
-  // --- M19, cross-contamination, both sides --------------------------------
+  // --- M19 cross-contamination, and the three counting matchers -------------
+  //
+  // S64 R1: the card and disclosure counts were THREE INLINE EXPRESSIONS HERE,
+  // duplicating three more inside runEstate(), all six reading the raw file. They
+  // are now M30/M31/M32, applied through surfaceOf() exactly as runDocument()
+  // applies them, so this runner and the estate runner cannot disagree and
+  // neither can drift from the probed definition.
+  //
+  // M19 KEEPS THE RAW FILE DELIBERATELY. It is a gate asking whether the other
+  // marketplace's host or tag is SERVED AT ALL, and a tag restated in the flight
+  // payload is served. Narrowing a gate to the rendered surface would weaken it;
+  // only counts move.
   const M19 = M('M19');
+  const M30 = M('M30'), M31 = M('M31'), M32 = M('M32');
   const contamination = [];
   let usCardLinks = 0, usDisclosures = 0, ukCardLinks = 0;
+  const usAsins = new Set();
   const ukAsins = new Set();
-  const escaped = DISCLOSURE_CURRENT.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   for (const f of html) {
     const raw = await readFile(f, 'utf8');
     const side = isUs(f) ? 'us' : 'uk';
     for (const hit of M19.test(raw, { side })) contamination.push(`${f.replace(ROOT + '/', '')}: ${hit}`);
     if (side === 'us') {
-      usCardLinks += all(CARD_HREF_RE, raw).length;
-      usDisclosures += (raw.match(new RegExp(escaped, 'g')) || []).length;
+      const cards = M30.test(surfaceOf(M30, raw));
+      usCardLinks += cards.length;
+      for (const a of cards) usAsins.add(a);
+      usDisclosures += M31.test(surfaceOf(M31, raw)).length;
     } else {
-      const uk = [...raw.matchAll(/amazon\.co\.uk\/dp\/([A-Z0-9]{10})/g)];
+      const uk = M32.test(surfaceOf(M32, raw));
       ukCardLinks += uk.length;
-      for (const m of uk) ukAsins.add(m[1]);
+      for (const a of uk) ukAsins.add(a);
     }
   }
 
@@ -1495,7 +1672,8 @@ async function runMachinery() {
   return {
     base1: base1.length, base2: base2.length, baseDiff,
     asinOccurrences: asins.length, asinDistinct: new Set(asins).size,
-    usCardLinks, usDisclosures, ukCardLinks, ukAsinsDistinct: ukAsins.size,
+    usCardLinks, usDisclosures, ukCardLinks,
+    usAsinsDistinct: usAsins.size, ukAsinsDistinct: ukAsins.size,
     contamination, laws,
     htmlTotal: html.length, htmlUs: html.filter(isUs).length,
   };
@@ -1512,34 +1690,59 @@ async function runEstate() {
   ];
   console.log(`\nESTATE RUN — ${files.length} rendered routes\n`);
   const perMatcher = {};
+  const perMatcherRendered = {};
   const failing = {};
-  let totalCards = 0;
-  let disclosures = 0;
   const nonAscii = new Map();
-  const escaped = DISCLOSURE_CURRENT.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const usAsins = [];
+  // S64 R1: the card and disclosure totals are NO LONGER COMPUTED HERE. They were
+  // inline expressions over the raw file, duplicated verbatim in runMachinery(),
+  // and both were doubled by the flight payload. They now come from M30 and M31,
+  // which declare the `rendered` surface and are probed on every invocation.
   for (const f of files) {
     const raw = await readFile(f, 'utf8');
     const slug = slugOf(f);
     const r = runDocument(raw, { slug, label: slug });
-    totalCards += all(CARD_HREF_RE, raw).length;
-    disclosures += (raw.match(new RegExp(escaped, 'g')) || []).length;
     for (const row of r.rows) {
       perMatcher[row.id] = (perMatcher[row.id] || 0) + row.hits.length;
+      if (row.renderedHits !== null && row.renderedHits !== undefined) {
+        perMatcherRendered[row.id] = (perMatcherRendered[row.id] || 0) + row.renderedHits;
+      }
       if (row.problem) (failing[row.id] ||= []).push(slug);
       if (row.id === 'M13') for (const c of row.hits) nonAscii.set(c, (nonAscii.get(c) || 0) + 1);
+      if (row.id === 'M30') usAsins.push(...row.hits);
     }
   }
-  console.log(`  ${'ID'.padEnd(5)}${'KIND'.padEnd(11)}${'HITS'.padEnd(8)}${'FAILING'.padEnd(10)}NAME`);
+  const totalCards = perMatcher.M30 ?? 0;
+  const disclosures = perMatcher.M31 ?? 0;
+  // TWO COUNTS PER FULL-SURFACE MATCHER, BOTH CORRECT, NEITHER RECONCILED.
+  // SERVED is the whole file including the RSC flight payload — the population a
+  // gate rules on. RENDERED is the same matcher with <script> stripped — the
+  // population a reader meets. Where they differ, the difference IS the flight
+  // payload restating the page, and printing only one of them is what let a
+  // doubled figure be reported as a measurement for several rounds (Law 62).
+  // EVERY COUNT NAMES ITS SURFACE IN THE ROW THAT PRINTS IT (Law 62). HITS is the
+  // matcher's own declared surface; ALSO-REND is the SAME matcher re-run with
+  // <script> stripped, and is printed only for the full-surface matchers, where
+  // it is the only place the flight payload's restatement becomes visible.
+  console.log(
+    `  ${'ID'.padEnd(5)}${'KIND'.padEnd(11)}${'SURFACE'.padEnd(11)}${'HITS'.padEnd(8)}` +
+      `${'ALSO-REND'.padEnd(11)}${'FAILING'.padEnd(10)}NAME`,
+  );
   for (const m of MATCHERS.filter((x) => x.scope === 'document')) {
     const fr = failing[m.id] || [];
+    const hits = perMatcher[m.id] ?? 0;
+    const rend = m.surface === 'full' ? String(perMatcherRendered[m.id] ?? 0) : '—';
     console.log(
-      `  ${m.id.padEnd(5)}${m.kind.padEnd(11)}${String(perMatcher[m.id] ?? 0).padEnd(8)}` +
-        `${String(m.kind === 'inventory' ? 'n/a' : fr.length).padEnd(10)}${m.name}`,
+      `  ${m.id.padEnd(5)}${m.kind.padEnd(11)}${m.surface.padEnd(11)}${String(hits).padEnd(8)}` +
+        `${rend.padEnd(11)}${String(m.kind === 'inventory' ? 'n/a' : fr.length).padEnd(10)}${m.name}`,
     );
     if (fr.length) console.log(`        ${fr.join(', ')}`);
   }
   console.log(
-    `\n  INVENTORY: ${totalCards} card links, ${disclosures} current disclosures, ${nonAscii.size} distinct non-ASCII codepoints`,
+    `\n  INVENTORY (rendered surface, one count per rendered occurrence):` +
+      `\n    M30 US card links        ${totalCards} occurrences, ${new Set(usAsins).size} distinct ASINs` +
+      `\n    M31 current disclosures  ${disclosures}` +
+      `\n    M13 non-ASCII codepoints ${nonAscii.size} distinct (served surface; M13 is a gate-side scan)`,
   );
   const p = await runParity();
   console.log(`\n  S54-H PARITY — routes ${p.routes} | hub anchors ${p.anchors} | hasPart ${p.hasPart}`);
@@ -1617,9 +1820,9 @@ async function main() {
     console.log(`      base 1 (manifest)          ${r.base1} content routes`);
     console.log(`  M22 both-bases set difference  ${r.baseDiff.length ? r.baseDiff.join('; ') : 'EMPTY — sets identical'}`);
     console.log(`  M18 ASIN declarations          ${r.asinOccurrences} occurrences, ${r.asinDistinct} distinct`);
-    console.log(`  US card links                  ${r.usCardLinks}`);
-    console.log(`  US current disclosures         ${r.usDisclosures}`);
-    console.log(`  UK card links                  ${r.ukCardLinks}, ${r.ukAsinsDistinct} distinct ASINs`);
+    console.log(`  M30 US card links  RENDERED    ${r.usCardLinks} occurrences, ${r.usAsinsDistinct} distinct ASINs`);
+    console.log(`  M31 US disclosures RENDERED    ${r.usDisclosures}`);
+    console.log(`  M32 UK card links  RENDERED    ${r.ukCardLinks} occurrences, ${r.ukAsinsDistinct} distinct ASINs`);
     console.log(`  M19 cross-contamination        ${r.contamination.length ? r.contamination.join('; ') : '0 in all four directions'}`);
     console.log(`  M20 laws declared              ${r.laws.length} (highest ${r.laws[r.laws.length - 1]})`);
     const missing = [];
