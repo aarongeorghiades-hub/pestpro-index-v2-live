@@ -92,6 +92,15 @@ import {
   LINKS_TO_BARE,
   CTA_PRESENT,
   CTA_FALSE_POSITIVES,
+  CARD_BEFORE_PRECEDENCE,
+  CARD_AFTER_PRECEDENCE,
+  NO_PRECEDENCE_CONTENT,
+  HEADING_IDENTIFICATION,
+  HEADING_HARM,
+  HEADING_EFFICACY,
+  HEADING_LEGAL,
+  HEADING_NOT_PRECEDENCE,
+  HEADING_PLAIN,
 } from './fixtures.mjs';
 import { UK_CLASSES, UK_SPELLING_RE } from './ukspelling.mjs';
 
@@ -948,6 +957,86 @@ const MATCHERS = [
     },
     probePos: CTA_PRESENT,
     probeNeg: CTA_FALSE_POSITIVES,
+  },
+  // =========================================================================
+  // S63 R6 — THE PRECEDENCE RULE, in two parts with two different kinds.
+  // =========================================================================
+  {
+    id: 'M28',
+    kind: 'gate',
+    scope: 'estate',
+    surface: 'card-precedence',
+    name: 'Precedence: a card never precedes identification, harm, efficacy-limit or legal content',
+    // THE RULE, and it is a real gate because it has a real failing state: given
+    // a route's first-card offset and the offset of the EARLIEST
+    // precedence-bearing content on that page, the card must not come first.
+    // A page carrying no such content cannot violate it.
+    //
+    // ITS INPUT IS AN ADJUDICATED OFFSET, NOT A GUESSED ONE. What counts as
+    // precedence-bearing is established by READING the route (see M29 and
+    // Law 115); this matcher checks the comparison, which is the half that can
+    // be mechanised honestly.
+    //
+    // THE THRESHOLD YIELDS TO THIS RULE. Where obeying it pushes a first card
+    // past the 28% placement threshold derived at S63 R5, the card goes late.
+    // A page whose safety content runs long is allowed a late card.
+    test: (row) => {
+      if (!row || row.precedencePct == null) return [];
+      return row.cardPct < row.precedencePct
+        ? [`${row.slug}: card at ${row.cardPct}% precedes ${row.category} content at ${row.precedencePct}%`]
+        : [];
+    },
+    probePos: [{ text: CARD_BEFORE_PRECEDENCE }],
+    probeNeg: [{ text: CARD_AFTER_PRECEDENCE }, { text: NO_PRECEDENCE_CONTENT }],
+  },
+  {
+    id: 'M29',
+    kind: 'inventory',
+    scope: 'source',
+    surface: 'headings',
+    name: 'Precedence-bearing section CANDIDATES, by category (CANDIDATES, never findings)',
+    // DECLARED INVENTORY UNDER LAW 167, AND THE REASON IS LAW 115: a class
+    // defined by MEANING cannot be settled by a string matcher. The
+    // distinguishing signal is what a sentence is ABOUT. "House Flies Cannot
+    // Bite" and "What Consumer Products Cannot Do" are the same construction in
+    // different categories, and no lexical rule separates them.
+    //
+    // MEASURED AGAINST THE REAL ESTATE BEFORE THIS KIND WAS CHOSEN (the Law 170
+    // corollary): identification 26 headings, harm 18, efficacy 38, legal 6 --
+    // and the efficacy class alone carries at least five demonstrable false
+    // positives, four of which are in its negative probes below. Adjudication is
+    // by reading; this surfaces what to read.
+    classes: [
+      { id: 'identification', name: 'which pest is this',
+        source: String.raw`\b(which|is it a|tell(?:ing)? .*apart|not a |identif\w*|what it is|species|lookalike)\b`,
+        pos: ['Which Widow, and the Hourglass', 'Is It a Brown Recluse?'],
+        neg: ['Where They Nest and How They Enter'] },
+      { id: 'harm', name: 'bite, sting, venom or medical',
+        source: String.raw`\b(bit(?:e|es|ing|ten)|stings?|stung|venom\w*|medical|rabies|allerg\w*|envenom\w*|first aid)\b`,
+        pos: ['If You Think You Have Been Bitten', 'The Sting'],
+        neg: ['Where They Nest and How They Enter'] },
+      { id: 'efficacy', name: 'a product class is limited, or a professional is required',
+        source: String.raw`\b(consumer products?|no product|nothing is named|call a professional|licensed applicator)\b`,
+        pos: ['What Consumer Products Cannot Do', 'Insecticides, and Why Nothing Is Named Here'],
+        // THE MEASURED FALSE POSITIVES. A broader "cannot|do not" form caught
+        // every one of these and is deliberately not used.
+        neg: ['They Do Not Dig', 'It Lives Indoors and Cannot Live Outside',
+              'House Flies Cannot Bite. Some Other Flies Can',
+              'How Long They Live: the Figures Do Not Agree'] },
+      { id: 'legal', name: 'statute, permit or trapping law',
+        source: String.raw`\b(legal|\blaw\b|permits?|statutes?|regulations?|protected species|quarantine|relocat\w*)\b`,
+        pos: ['The Law Changes at the State Line', 'The Legal Position: Three States'],
+        neg: ['Where They Nest and How They Enter'] },
+    ],
+    test: (t) => {
+      const out = [];
+      for (const c of MATCHERS.find((m) => m.id === 'M29').classes) {
+        if (new RegExp(c.source, 'i').test(t ?? '')) out.push(c.id);
+      }
+      return out;
+    },
+    probePos: [HEADING_IDENTIFICATION, HEADING_HARM, HEADING_EFFICACY, HEADING_LEGAL],
+    probeNeg: [HEADING_NOT_PRECEDENCE, HEADING_PLAIN],
   },
 ];
 

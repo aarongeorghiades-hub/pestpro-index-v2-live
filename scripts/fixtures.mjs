@@ -249,3 +249,40 @@ export const CTA_FALSE_POSITIVES =
   'UC IPM publishes one finding specific enough to shop against, and it deals with egg sacs. ' +
   'Dealing with the animal varies a great deal. No source consulted says a householder can ' +
   'buy one, and most people would rather buy one than assemble a roasting pan.';
+
+// ===========================================================================
+// S63 R6 — THE PRECEDENCE RULE
+// A card never precedes content a reader needs in order to identify the pest,
+// to avoid harm, to avoid being misled about what a product can do, or to
+// avoid breaking the law.
+//
+// IT SPLITS INTO TWO PARTS AND THEY HAVE DIFFERENT KINDS, deliberately:
+//   M28  the COMPARISON — a real gate, fires when a card precedes precedence
+//        content, silent when it follows.
+//   M29  the DETECTION — an INVENTORY. It cannot adjudicate, because the
+//        distinguishing signal is what a sentence is ABOUT, not any lexical
+//        feature of it. "House Flies Cannot Bite" and "What Consumer Products
+//        Cannot Do" are the same construction in different categories (Law 115).
+// ===========================================================================
+
+// ---- M28, the precedence comparison ---------------------------------------
+export const CARD_BEFORE_PRECEDENCE = { slug: 'fixture-bad', cardPct: 19, precedencePct: 40, category: 'harm' };
+export const CARD_AFTER_PRECEDENCE  = { slug: 'fixture-ok',  cardPct: 52, precedencePct: 31, category: 'harm' };
+// a page with no precedence-bearing content cannot violate the rule
+export const NO_PRECEDENCE_CONTENT  = { slug: 'fixture-none', cardPct: 12, precedencePct: null, category: null };
+
+// ---- M29, the precedence CANDIDATE scan ------------------------------------
+// CANDIDATES, NEVER FINDINGS — the S59-B pattern. Measured against the real
+// estate at S63 R6: identification 26 headings, harm 18, efficacy 38, legal 6,
+// and the efficacy class alone carries at least five demonstrable false
+// positives: "They Do Not Dig", "It Lives Indoors and Cannot Live Outside",
+// "How Long They Live: the Figures Do Not Agree", "House Flies Cannot Bite",
+// "What They Do and Do Not Do". Every hit is read before it counts.
+export const HEADING_IDENTIFICATION = 'Which Widow, and the Hourglass';
+export const HEADING_HARM = 'If You Think You Have Been Bitten';
+export const HEADING_EFFICACY = 'What Consumer Products Cannot Do';
+export const HEADING_LEGAL = 'The Law Changes at the State Line';
+// the measured false positives, kept as the negative probe so the class cannot
+// be quietly widened back to catching them
+export const HEADING_NOT_PRECEDENCE = 'They Do Not Dig';
+export const HEADING_PLAIN = 'Where They Nest and How They Enter';
