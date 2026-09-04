@@ -459,6 +459,10 @@ export default function NoSeeUmsPage() {
         the sources make checkable.
       </p>
 
+      <p>
+        The screening below is named because each listing states the mesh count the sources on this page publish for an insect that passes ordinary screen.
+      </p>
+
       <UsToolCard
         name="No-See-Um Small Insect Screen, 20 x 20 Mesh Roll, 36 inch x 25 feet"
         whatItDoes={[

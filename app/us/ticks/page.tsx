@@ -940,6 +940,10 @@ export default function TicksPage() {
 
       <h3>Clothing treatment, at the concentration both sources name</h3>
 
+      <p>
+        The repellents below are named because each listing states one of the active ingredients the sources on this page name, at a stated concentration.
+      </p>
+
       <UsToolCard
         name="Sawyer Premium Permethrin Insect Repellent for Clothing, Gear &amp; Tents"
         whatItDoes={[

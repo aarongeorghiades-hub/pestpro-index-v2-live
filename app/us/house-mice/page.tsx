@@ -86,10 +86,10 @@ const breadcrumbSchema = {
 
 const tocItems = [
   { id: 'which-mouse', title: 'Which Mouse? Telling It From a Deer Mouse' },
+  { id: 'trapping', title: 'Trapping and Control Methods' },
   { id: 'contamination', title: 'Contamination: What This Page Does Not Cover' },
   { id: 'signs', title: 'Signs of an Infestation' },
   { id: 'exclusion', title: 'Exclusion: The Quarter-Inch Rule' },
-  { id: 'trapping', title: 'Trapping and Control Methods' },
   { id: 'tools', title: 'Tools That Meet the Sources’ Own Criteria' },
   { id: 'chemical', title: 'Rodenticides: What Consumers May Buy' },
   { id: 'sanitation', title: 'Sanitation: Necessary, Not Sufficient' },
@@ -318,6 +318,130 @@ export default function HouseMicePage() {
         </em>
       </p>
 
+      <h2 id="trapping">Trapping and Control Methods</h2>
+      <p>
+        <strong>UC IPM</strong> describes the plain wooden snap trap, sized for a mouse rather
+        than a rat, as the least expensive option on the market, and the newer plastic mouse traps
+        as easier to set and clean — reported here in this page&rsquo;s own words rather than
+        UC IPM&rsquo;s exact wording, because the source PDF&rsquo;s extracted text renders the
+        word as one unhyphenated run &mdash; &ldquo;mousesize&rdquo; &mdash; consistent with a
+        hyphen dropped at a line wrap, and this page will not present a reconstructed spelling as
+        a verbatim quotation. On bait, UC IPM names peanut butter as a popular choice, easy to use
+        and very attractive to house mice, while noting in its own text that peanut butter can
+        pose an allergy risk to the person setting the trap rather than to the mouse.
+      </p>
+      <p>
+        On trap design, <strong>UC IPM</strong> states:{' '}
+        <em>
+          &ldquo;Mouse traps with a wide trigger plate (Figure 4) have higher catch rates, and
+          triggers should be set lightly so the traps spring easily.&rdquo;
+        </em>{' '}
+        On how many traps and where, UC IPM states:{' '}
+        <em>
+          &ldquo;House mice seldom venture more than 30 feet from their nest sites and food
+          supply, so space traps no more than about 10 feet apart in areas where house mice are
+          active.&rdquo;
+        </em>{' '}
+        <strong>Utah State Extension</strong> corroborates the placement independently:{' '}
+        <em>
+          &ldquo;Use snap-traps placed with triggers toward the baseboards, especially in dark
+          corners.&rdquo;
+        </em>{' '}
+        Utah State names the same range of baits UC IPM does, in the very next sentence of its own
+        checklist:{' '}
+        <em>&ldquo;Use multiple baits: peanut butter, hotdogs, floss, etc.&rdquo;</em>
+      </p>
+      <p>
+        <strong>Cornell CALS</strong> makes a point neither of the other sources states directly:
+        a rat trap and a mouse trap are not interchangeable.{' '}
+        <em>
+          &ldquo;Rat traps may be too slow to kill a mouse, whereas a mousetrap will not inflict
+          enough force to kill a rat. Identify your target pest to select the correct
+          trap.&rdquo;
+        </em>{' '}
+        Cornell names a failure mode neither UC IPM nor Penn State mentions, under its own
+        heading, &ldquo;Trap Fatigue&rdquo;:{' '}
+        <em>
+          &ldquo;This can occur when snap traps are left in the same place for a long period of
+          time. Rodents, especially mice, become accustomed to the trap and do not explore, or
+          actively avoid it.&rdquo;
+        </em>{' '}
+        Cornell recommends moving past it by relocating traps to new areas for a few days.
+      </p>
+      <h3>Glue boards: three sources, three positions, none picked</h3>
+      <p>
+        <strong>UC IPM</strong> lists them as a working option with a named limitation:{' '}
+        <em>
+          &ldquo;An alternative to traps are glue boards, which catch and hold house mice that
+          attempt to cross them, similar to the way that flypaper catches flies.&rdquo;
+        </em>{' '}
+        <em>
+          &ldquo;One drawback to glue boards is that adult rodents can often detect and avoid the
+          glue before getting stuck, resulting in capture of mostly juvenile individuals.&rdquo;
+        </em>{' '}
+        <strong>Cornell CALS</strong> is more cautious and gives its own mechanism, naming it
+        first of a few reasons:{' '}
+        <em>
+          &ldquo;First, adult rodents have specialized guard hairs that are used to detect changes
+          in ground texture.&rdquo;
+        </em>{' '}
+        Because of this, Cornell states,{' '}
+        <em>
+          &ldquo;glue traps primarily catch juvenile rodents that do not have fully formed guard
+          hairs.&rdquo;
+        </em>{' '}
+        And separately,{' '}
+        <em>
+          &ldquo;some rodents can escape by pulling off fur or urinating and making the glue less
+          tacky.&rdquo;
+        </em>{' '}
+        <strong>Penn State</strong> is the most direct of the three:{' '}
+        <em>
+          &ldquo;Glue boards are not recommended for rodent control and should be used with
+          caution.&rdquo;
+        </em>{' '}
+        <em>
+          &ldquo;They are nontoxic, but they do not kill the mouse leaving you to deal with a live
+          mouse.&rdquo;
+        </em>{' '}
+        <strong>
+          None of the three positions is picked here. A reader choosing a glue board is choosing
+          against Penn State&rsquo;s recommendation and inside UC IPM&rsquo;s and Cornell&rsquo;s
+          stated limitations, and should know that before buying one.
+        </strong>
+      </p>
+      <p>
+        On devices that do not work, <strong>UC IPM</strong> states:{' '}
+        <em>
+          &ldquo;There is little evidence that sound, or magnetic or vibrational devices of any
+          kind will drive established house mice or rats from buildings or provide any prevention
+          or control.&rdquo;
+        </em>{' '}
+        <strong>The ICWDM sheet</strong> agrees independently:{' '}
+        <em>&ldquo;Ultrasonic devices have not been proven to control mice.&rdquo;</em>{' '}
+        <strong>No ultrasonic or vibrational device is named on this page.</strong>
+      </p>
+
+      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
+        <p className="m-0 text-base font-bold text-slate-900">
+          The criteria the three tools below are measured against
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          Each listing below states, in its own text rather than only in a product title, the
+          property the sources above ask for: a mouse-sized snap trap, a glue board that names
+          mice as a target pest, and hardware cloth at the quarter-inch mesh five sources
+          independently name. No source consulted for this page ranks any two products against
+          one another, so nothing here is called best, and no price appears beside a card.
+        </p>
+      </div>
+      <p>
+        The traps below are named because the sources on this page describe snap traps and glue boards as the two indoor options, and each listing states which it is.
+      </p>
+
+      {products.map((p) => (
+        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+      ))}
+
       <h2 id="contamination">Contamination: What This Page Does Not Cover</h2>
       <p>
         <strong>
@@ -477,126 +601,6 @@ export default function HouseMicePage() {
           foam.&rdquo;
         </em>
       </p>
-
-      <h2 id="trapping">Trapping and Control Methods</h2>
-      <p>
-        <strong>UC IPM</strong> describes the plain wooden snap trap, sized for a mouse rather
-        than a rat, as the least expensive option on the market, and the newer plastic mouse traps
-        as easier to set and clean — reported here in this page&rsquo;s own words rather than
-        UC IPM&rsquo;s exact wording, because the source PDF&rsquo;s extracted text renders the
-        word as one unhyphenated run &mdash; &ldquo;mousesize&rdquo; &mdash; consistent with a
-        hyphen dropped at a line wrap, and this page will not present a reconstructed spelling as
-        a verbatim quotation. On bait, UC IPM names peanut butter as a popular choice, easy to use
-        and very attractive to house mice, while noting in its own text that peanut butter can
-        pose an allergy risk to the person setting the trap rather than to the mouse.
-      </p>
-      <p>
-        On trap design, <strong>UC IPM</strong> states:{' '}
-        <em>
-          &ldquo;Mouse traps with a wide trigger plate (Figure 4) have higher catch rates, and
-          triggers should be set lightly so the traps spring easily.&rdquo;
-        </em>{' '}
-        On how many traps and where, UC IPM states:{' '}
-        <em>
-          &ldquo;House mice seldom venture more than 30 feet from their nest sites and food
-          supply, so space traps no more than about 10 feet apart in areas where house mice are
-          active.&rdquo;
-        </em>{' '}
-        <strong>Utah State Extension</strong> corroborates the placement independently:{' '}
-        <em>
-          &ldquo;Use snap-traps placed with triggers toward the baseboards, especially in dark
-          corners.&rdquo;
-        </em>{' '}
-        Utah State names the same range of baits UC IPM does, in the very next sentence of its own
-        checklist:{' '}
-        <em>&ldquo;Use multiple baits: peanut butter, hotdogs, floss, etc.&rdquo;</em>
-      </p>
-      <p>
-        <strong>Cornell CALS</strong> makes a point neither of the other sources states directly:
-        a rat trap and a mouse trap are not interchangeable.{' '}
-        <em>
-          &ldquo;Rat traps may be too slow to kill a mouse, whereas a mousetrap will not inflict
-          enough force to kill a rat. Identify your target pest to select the correct
-          trap.&rdquo;
-        </em>{' '}
-        Cornell names a failure mode neither UC IPM nor Penn State mentions, under its own
-        heading, &ldquo;Trap Fatigue&rdquo;:{' '}
-        <em>
-          &ldquo;This can occur when snap traps are left in the same place for a long period of
-          time. Rodents, especially mice, become accustomed to the trap and do not explore, or
-          actively avoid it.&rdquo;
-        </em>{' '}
-        Cornell recommends moving past it by relocating traps to new areas for a few days.
-      </p>
-      <h3>Glue boards: three sources, three positions, none picked</h3>
-      <p>
-        <strong>UC IPM</strong> lists them as a working option with a named limitation:{' '}
-        <em>
-          &ldquo;An alternative to traps are glue boards, which catch and hold house mice that
-          attempt to cross them, similar to the way that flypaper catches flies.&rdquo;
-        </em>{' '}
-        <em>
-          &ldquo;One drawback to glue boards is that adult rodents can often detect and avoid the
-          glue before getting stuck, resulting in capture of mostly juvenile individuals.&rdquo;
-        </em>{' '}
-        <strong>Cornell CALS</strong> is more cautious and gives its own mechanism, naming it
-        first of a few reasons:{' '}
-        <em>
-          &ldquo;First, adult rodents have specialized guard hairs that are used to detect changes
-          in ground texture.&rdquo;
-        </em>{' '}
-        Because of this, Cornell states,{' '}
-        <em>
-          &ldquo;glue traps primarily catch juvenile rodents that do not have fully formed guard
-          hairs.&rdquo;
-        </em>{' '}
-        And separately,{' '}
-        <em>
-          &ldquo;some rodents can escape by pulling off fur or urinating and making the glue less
-          tacky.&rdquo;
-        </em>{' '}
-        <strong>Penn State</strong> is the most direct of the three:{' '}
-        <em>
-          &ldquo;Glue boards are not recommended for rodent control and should be used with
-          caution.&rdquo;
-        </em>{' '}
-        <em>
-          &ldquo;They are nontoxic, but they do not kill the mouse leaving you to deal with a live
-          mouse.&rdquo;
-        </em>{' '}
-        <strong>
-          None of the three positions is picked here. A reader choosing a glue board is choosing
-          against Penn State&rsquo;s recommendation and inside UC IPM&rsquo;s and Cornell&rsquo;s
-          stated limitations, and should know that before buying one.
-        </strong>
-      </p>
-      <p>
-        On devices that do not work, <strong>UC IPM</strong> states:{' '}
-        <em>
-          &ldquo;There is little evidence that sound, or magnetic or vibrational devices of any
-          kind will drive established house mice or rats from buildings or provide any prevention
-          or control.&rdquo;
-        </em>{' '}
-        <strong>The ICWDM sheet</strong> agrees independently:{' '}
-        <em>&ldquo;Ultrasonic devices have not been proven to control mice.&rdquo;</em>{' '}
-        <strong>No ultrasonic or vibrational device is named on this page.</strong>
-      </p>
-
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
-          The criteria the three tools below are measured against
-        </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
-          Each listing below states, in its own text rather than only in a product title, the
-          property the sources above ask for: a mouse-sized snap trap, a glue board that names
-          mice as a target pest, and hardware cloth at the quarter-inch mesh five sources
-          independently name. No source consulted for this page ranks any two products against
-          one another, so nothing here is called best, and no price appears beside a card.
-        </p>
-      </div>
-      {products.map((p) => (
-        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-      ))}
 
       <h2 id="chemical">Rodenticides: What Consumers May Buy</h2>
       <p>

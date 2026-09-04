@@ -488,6 +488,9 @@ export default function CoyotesPage() {
         because no source consulted for this page compares one product against another. What each
         entry records is which part of the specification the seller states, and which it does not.
       </p>
+      <p>
+        The rollers below are named because the sources on this page describe a rolling fence topper as the exclusion method, and each listing states the length it covers.
+      </p>
       {products
         .filter((p) => p.group === 'fencing')
         .map((p) => (

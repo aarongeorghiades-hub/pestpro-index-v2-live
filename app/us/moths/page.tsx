@@ -420,6 +420,9 @@ export default function MothsPage() {
         The two containers below are named because their own listings state that they seal. They are
         in no order of preference, and no source consulted compares one product against another.
       </p>
+      <p>
+        The containers below are named because the sources on this page ask for sealed storage, and each listing states that it has a gasket seal.
+      </p>
       {A1.map((p) => (
         <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
       ))}

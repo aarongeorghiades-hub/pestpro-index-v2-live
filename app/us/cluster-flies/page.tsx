@@ -113,12 +113,12 @@ const sources: Source[] = [
 const tocItems = [
   { id: 'what-they-are', title: 'What They Are' },
   { id: 'identification', title: 'Telling Them Apart' },
+  { id: 'control', title: 'What to Do' },
   { id: 'earthworms', title: 'The Earthworm Connection' },
   { id: 'not-filth', title: 'Not a Filth Fly' },
   { id: 'why-your-house', title: 'Why Your House' },
   { id: 'winter', title: 'Why They Reappear in Winter' },
   { id: 'other-flies', title: 'If It Is Not a Cluster Fly' },
-  { id: 'control', title: 'What to Do' },
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
 ];
@@ -196,6 +196,107 @@ export default function ClusterFliesPage() {
         Penn State also describes the larvae, if you ever see one: cream-colored maggots of an
         elongated wedge shape.
       </p>
+
+      <h2 id="control">What to Do</h2>
+      <p>
+        <strong>Seal, in summer.</strong> Penn State Extension puts mechanical exclusion ahead of
+        every other method it discusses and specifies sealing cracks around windows, doors, siding,
+        utility pipes, behind chimneys, and underneath the fascia. University of Kentucky Extension emphasizes exclusion
+        as time-consuming but necessary. The work has to be done before the flies arrive in the
+        fall, which means summer.
+      </p>
+      <p>
+        <strong>Vacuum or swat the ones inside.</strong> University of Kentucky Extension recommends
+        mechanical control — fly swatters and vacuums — for active flies indoors. Their sluggishness
+        makes this genuinely practical in a way it would not be for house flies.
+      </p>
+      <p>
+        <strong>Be careful with insecticidal dust indoors.</strong> Penn State Extension advises
+        avoiding insecticidal dust inside structures, to prevent carpet beetle problems. It is the
+        same failure mode that applies to every insect in this cluster: dead insects in a void become
+        food for a pest that damages fabric. University of Kentucky Extension does discuss insecticide
+        sprays and dusts for attics, basements and wall voids; we make no claim here about how well any
+        product performs, and the two sources differ in emphasis, which is worth knowing before you
+        choose.
+      </p>
+
+      <h3>Caulk for the summer sealing work</h3>
+      <p>
+        <strong>
+          These are examples of one material, for the sealing Penn State Extension puts first. They
+          are in no order of preference, none is called better than another, and nothing here is a
+          claim about how well any of them performs &mdash; the limit stated just above applies to
+          these cards too.
+        </strong>
+      </p>
+      <p>
+        <strong>Where the caulk specification comes from, stated plainly.</strong> Penn State
+        Extension names the places to seal on this page &mdash; cracks around windows, doors, siding,
+        utility pipes, behind chimneys and underneath the fascia &mdash; but the material itself,
+        good quality silicone or silicone-latex caulk, is a specification the same source gives for
+        the other fall invaders rather than for cluster flies. It is attributed here rather than
+        presented as a cluster fly finding. And the timing is the part that matters most: University
+        of Kentucky Extension calls exclusion time-consuming but necessary, and the work has to be
+        done before the flies arrive, which means summer.
+      </p>
+
+      <p>
+        The sealants below are named because every source on this page says the answer is closing the building rather than treating the insect.
+      </p>
+
+      <UsToolCard
+        name="GE Advanced Silicone Caulk for Window &amp; Door, Clear, 10 fl oz Cartridge"
+        whatItDoes={[
+          'A silicone caulk, for the cracks Penn State Extension names: around windows, doors, siding, utility pipes, behind chimneys and underneath the fascia.',
+          'Its own listing states silicone and a 10 fl oz cartridge. Nothing further about it is claimed here.',
+          'Penn State Extension puts this work ahead of every other method it discusses, and the work belongs in summer rather than autumn.',
+        ]}
+        asin="B0BVGTM2XY"
+      />
+
+      <UsToolCard
+        name="GE Advanced Silicone Window &amp; Door Sealant, Clear, 10.1 oz Cartridge"
+        whatItDoes={[
+          'A second silicone option in the same cartridge size range, for the same sealing work.',
+          'University of Kentucky Extension describes exclusion as time-consuming but necessary, which is a reason to have enough of it before starting.',
+        ]}
+        asin="B0000CBJ7W"
+      />
+
+      <UsToolCard
+        name="GE All Purpose Silicone Caulk, Clear, 10 fl oz Cartridge"
+        whatItDoes={[
+          'Also a silicone caulk. Its listing describes it as all purpose rather than as a window and door product, which is the difference between this and the two above.',
+          'That distinction is the listings\u2019, not the sources\u2019: neither source read for this page distinguishes between caulk formulations.',
+        ]}
+        asin="B0B8QPH3RW"
+      />
+
+      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
+        <p className="m-0 text-base font-bold text-slate-900">
+          What is not listed here, and why
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          <strong>Anything for the lawn.</strong> This is the one that matters most, and it follows
+          from the life cycle set out further up this page. University of Kentucky Extension states
+          that the larvae develop as parasites in the bodies of earthworms, and Penn State Extension
+          describes the maggots burrowing into earthworms on which they feed.{' '}
+          <strong>
+            The nursery is soil with earthworms in it, so there is nothing to buy that treats it.
+          </strong>{' '}
+          No lawn or larval product is listed here because the animal is not reachable by one.
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          <strong>Insecticidal dust indoors.</strong> Penn State Extension advises avoiding
+          insecticidal dust inside structures, to prevent carpet beetle problems, and that caution is
+          set out above.
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          <strong>Screening.</strong> Neither source read for this page gives a mesh size for cluster
+          flies. The screening figure used elsewhere on this site belongs to a different insect, so
+          it is not applied here.
+        </p>
+      </div>
 
       <h2 id="earthworms">The Earthworm Connection</h2>
       <p>
@@ -309,103 +410,6 @@ export default function ClusterFliesPage() {
         at any stage of its life &mdash; see{' '}
         <Link href="/us/fruit-flies">our fruit flies page</Link> for that one.
       </p>
-
-      <h2 id="control">What to Do</h2>
-      <p>
-        <strong>Seal, in summer.</strong> Penn State Extension puts mechanical exclusion ahead of
-        every other method it discusses and specifies sealing cracks around windows, doors, siding,
-        utility pipes, behind chimneys, and underneath the fascia. University of Kentucky Extension emphasizes exclusion
-        as time-consuming but necessary. The work has to be done before the flies arrive in the
-        fall, which means summer.
-      </p>
-      <p>
-        <strong>Vacuum or swat the ones inside.</strong> University of Kentucky Extension recommends
-        mechanical control — fly swatters and vacuums — for active flies indoors. Their sluggishness
-        makes this genuinely practical in a way it would not be for house flies.
-      </p>
-      <p>
-        <strong>Be careful with insecticidal dust indoors.</strong> Penn State Extension advises
-        avoiding insecticidal dust inside structures, to prevent carpet beetle problems. It is the
-        same failure mode that applies to every insect in this cluster: dead insects in a void become
-        food for a pest that damages fabric. University of Kentucky Extension does discuss insecticide
-        sprays and dusts for attics, basements and wall voids; we make no claim here about how well any
-        product performs, and the two sources differ in emphasis, which is worth knowing before you
-        choose.
-      </p>
-
-      <h3>Caulk for the summer sealing work</h3>
-      <p>
-        <strong>
-          These are examples of one material, for the sealing Penn State Extension puts first. They
-          are in no order of preference, none is called better than another, and nothing here is a
-          claim about how well any of them performs &mdash; the limit stated just above applies to
-          these cards too.
-        </strong>
-      </p>
-      <p>
-        <strong>Where the caulk specification comes from, stated plainly.</strong> Penn State
-        Extension names the places to seal on this page &mdash; cracks around windows, doors, siding,
-        utility pipes, behind chimneys and underneath the fascia &mdash; but the material itself,
-        good quality silicone or silicone-latex caulk, is a specification the same source gives for
-        the other fall invaders rather than for cluster flies. It is attributed here rather than
-        presented as a cluster fly finding. And the timing is the part that matters most: University
-        of Kentucky Extension calls exclusion time-consuming but necessary, and the work has to be
-        done before the flies arrive, which means summer.
-      </p>
-
-      <UsToolCard
-        name="GE Advanced Silicone Caulk for Window &amp; Door, Clear, 10 fl oz Cartridge"
-        whatItDoes={[
-          'A silicone caulk, for the cracks Penn State Extension names: around windows, doors, siding, utility pipes, behind chimneys and underneath the fascia.',
-          'Its own listing states silicone and a 10 fl oz cartridge. Nothing further about it is claimed here.',
-          'Penn State Extension puts this work ahead of every other method it discusses, and the work belongs in summer rather than autumn.',
-        ]}
-        asin="B0BVGTM2XY"
-      />
-
-      <UsToolCard
-        name="GE Advanced Silicone Window &amp; Door Sealant, Clear, 10.1 oz Cartridge"
-        whatItDoes={[
-          'A second silicone option in the same cartridge size range, for the same sealing work.',
-          'University of Kentucky Extension describes exclusion as time-consuming but necessary, which is a reason to have enough of it before starting.',
-        ]}
-        asin="B0000CBJ7W"
-      />
-
-      <UsToolCard
-        name="GE All Purpose Silicone Caulk, Clear, 10 fl oz Cartridge"
-        whatItDoes={[
-          'Also a silicone caulk. Its listing describes it as all purpose rather than as a window and door product, which is the difference between this and the two above.',
-          'That distinction is the listings\u2019, not the sources\u2019: neither source read for this page distinguishes between caulk formulations.',
-        ]}
-        asin="B0B8QPH3RW"
-      />
-
-      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
-        <p className="m-0 text-base font-bold text-slate-900">
-          What is not listed here, and why
-        </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
-          <strong>Anything for the lawn.</strong> This is the one that matters most, and it follows
-          from the life cycle set out further up this page. University of Kentucky Extension states
-          that the larvae develop as parasites in the bodies of earthworms, and Penn State Extension
-          describes the maggots burrowing into earthworms on which they feed.{' '}
-          <strong>
-            The nursery is soil with earthworms in it, so there is nothing to buy that treats it.
-          </strong>{' '}
-          No lawn or larval product is listed here because the animal is not reachable by one.
-        </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
-          <strong>Insecticidal dust indoors.</strong> Penn State Extension advises avoiding
-          insecticidal dust inside structures, to prevent carpet beetle problems, and that caution is
-          set out above.
-        </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
-          <strong>Screening.</strong> Neither source read for this page gives a mesh size for cluster
-          flies. The screening figure used elsewhere on this site belongs to a different insect, so
-          it is not applied here.
-        </p>
-      </div>
 
       <h2 id="faq">Questions</h2>
       <UsFaq faqs={faqs} />

@@ -290,6 +290,10 @@ export default function SquirrelsInAtticPage() {
         exclusion device rather than a repellent.
       </p>
 
+      <p>
+        The products below are named because the sources on this page put one-way exclusion ahead of trapping, and each listing states which job it does.
+      </p>
+
       <UsToolCard
         name="One-Way Squirrel Door Excluder for Attics and Chimneys"
         whatItDoes={[

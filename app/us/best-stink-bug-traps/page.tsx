@@ -299,6 +299,10 @@ export default function BestStinkBugTrapsPage() {
         repeating the manufacturer&rsquo;s own claims about range or capture rates.
       </p>
 
+      <p>
+        The trap below is named because it is the one commercial device matching the design the study above tested.
+      </p>
+
       <UsToolCard
         name="Bonide Bug Beater Stink Bug Trap"
         whatItDoes={[

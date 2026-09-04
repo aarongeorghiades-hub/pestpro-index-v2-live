@@ -308,6 +308,10 @@ export default function FruitFliesPage() {
         best results.
       </p>
 
+      <p>
+        The products below are named because each listing names the breeding site the sources on this page identify, a drain or ripening produce.
+      </p>
+
       <UsToolCard
         name="Enzyme-Based Fruit Fly and Drain Fly Drain Treatment, 1 Gallon"
         whatItDoes={[

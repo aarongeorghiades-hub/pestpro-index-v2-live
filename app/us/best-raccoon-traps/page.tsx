@@ -162,6 +162,10 @@ export default function RaccoonCageTrapsPage() {
         listing states one.
       </p>
 
+      <p>
+        The traps below are named because each listing states dimensions meeting or exceeding the published minimum set out above.
+      </p>
+
       <UsToolCard
         name="Havahart Large 1-Door Live Animal Trap"
         whatItDoes={[

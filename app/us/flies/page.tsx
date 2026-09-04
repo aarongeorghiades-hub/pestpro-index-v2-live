@@ -386,6 +386,10 @@ export default function FliesPage() {
         fly over another, and they are in no order of preference. No source consulted compares one
         product against another.
       </p>
+      <p>
+        The traps below are named because each listing states a sticky mechanism and no attractant, which is what the sources on this page describe.
+      </p>
+
       {products.map((p) => (
         <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
       ))}

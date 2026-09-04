@@ -142,10 +142,10 @@ const tocItems = [
   { id: 'what-it-is', title: 'What the Name Covers' },
   { id: 'the-different-one', title: 'The One That Is Different' },
   { id: 'american-cockroach', title: 'The American Cockroach' },
+  { id: 'products', title: 'Examples, Grouped by Purpose' },
   { id: 'health', title: 'Allergens and Health' },
   { id: 'keeping-them-out', title: 'Keeping Them Out' },
   { id: 'control', title: 'What the Sources Say About Control' },
-  { id: 'products', title: 'Examples, Grouped by Purpose' },
   { id: 'gulf', title: 'The Gulf and the Deep South' },
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
@@ -331,6 +331,110 @@ export default function PalmettoBugsPage() {
         That is why what follows leads with the outside of the building rather than the kitchen.
       </p>
 
+      <h2 id="products">Examples, Grouped by Purpose</h2>
+      <p>
+        <strong>
+          These are examples of each kind of product, grouped by what the sources say that kind is
+          for. They are in no order of preference and none is called better than another, because no
+          source consulted for this page compares any two products against each other.
+        </strong>{' '}
+        Each card carries the scope and the limitation its own sources state.
+      </p>
+      <p>
+        There is, however, one selection rule the sources do give, and it is the organizing
+        principle of this section. Mississippi State University Extension states that{' '}
+        <strong>
+          &ldquo;Bait stations designed specifically for German cockroaches are too small.&rdquo;
+        </strong>{' '}
+        UF/IFAS Extension states the same thing independently:{' '}
+        <strong>
+          &ldquo;Get small stations for German cockroaches and large stations for the larger outdoor
+          cockroaches.&rdquo;
+        </strong>{' '}
+        Palmetto bugs are the larger outdoor cockroaches. That is a fitness test a reader can check
+        on a label before buying, and it is not a ranking.
+      </p>
+      <p>
+        Mississippi State University Extension also notes that the products it lists are examples
+        rather than recommendations, and that no single one is meant to be the answer: &ldquo;If
+        they do not readily take the first bait you try, switch to another brand or type of
+        bait.&rdquo;
+      </p>
+
+      <h3>Bait stations sized for large roaches</h3>
+
+      <p>
+        The baits below are named because each listing states a gel or station bait and names the roach, which is the form the sources on this page describe.
+      </p>
+
+      <UsToolCard
+        name="Combat Max Roach Killing Bait, Large Roaches, 8 Count"
+        whatItDoes={[
+          'A ready-to-use bait station. Its own listing names large roaches, which is the distinction both sources draw.',
+          'Mississippi State University Extension states that bait stations designed specifically for German cockroaches are too small, and UF/IFAS Extension states to get large stations for the larger outdoor cockroaches.',
+          'Mississippi State University Extension states that in living areas you should use childproof bait stations specifically designed for large roaches, placed where they are inaccessible to children and pets.',
+        ]}
+        asin="B001ACMBJK"
+      />
+
+      <h3>Gel bait</h3>
+
+      <UsToolCard
+        name="Advion Cockroach Gel Bait, 4 Tubes of 30 Grams"
+        whatItDoes={[
+          'A syringe gel. UF/IFAS Extension states that baits come in granular formulations, plastic stations, or large syringes for gel applications.',
+          'Mississippi State University Extension states that gel baits can be especially effective but must be used correctly, using multiple placements of small amounts of bait, drops generally no larger than a pea.',
+          'The same source states that unconsumed bait dries out over time and becomes unpalatable to roaches, so placements need renewing.',
+          'UF/IFAS Extension states never to spray a liquid insecticide where baits have been applied.',
+        ]}
+        asin="B0148W0WOE"
+      />
+
+      <h3>Granular bait for the outside perimeter</h3>
+
+      <UsToolCard
+        name="Nisus Niban Granular Bait, 4 lbs"
+        whatItDoes={[
+          'A granular bait scattered rather than placed. Mississippi State University Extension states that granular baits are especially useful for controlling large roaches around exterior building perimeters.',
+          'The same source states granular baits are usually intended for outdoor use, or for application in basements, attics, storage rooms, wall voids and other non-living areas.',
+          'UF/IFAS Extension states to apply granular formulations outside in plants and mulched areas.',
+        ]}
+        asin="B005F5PRJE"
+      />
+
+      <h3>Residual spray, as a supplement</h3>
+
+      <UsToolCard
+        name="Ortho Home Defense Insect Killer for Indoor &amp; Perimeter2, 1.33 gal"
+        whatItDoes={[
+          'Mississippi State University Extension states that outdoor perimeter sprays are especially useful for control of large roaches.',
+          'The same source states that indoor insecticide sprays are not the most effective way to control large roaches, but are sometimes useful as supplemental treatments.',
+          'Both UF/IFAS Extension and Mississippi State University Extension state that sprays must not be applied where baits have been placed, because they repel roaches from the bait.',
+          'UF/IFAS Extension states never to spray around or into electrical outlets, to avoid food preparation surfaces, and not to touch treated surfaces until dry, at least four hours.',
+        ]}
+        asin="B01N0TGJHB"
+      />
+
+      <h3>Monitoring, which is not control</h3>
+
+      <UsToolCard
+        name="Catchmaster Roach Trap Glue Boards, 10 Pack"
+        whatItDoes={[
+          'Mississippi State University Extension states that traps are useful survey tools to determine if, or where, infestations exist, or to gauge the effectiveness of control efforts.',
+          'The same source states plainly that they are not control tools and will not provide effective stand-alone control. This is a monitoring tool and nothing on this page presents it as more than one.',
+          'The National Pesticide Information Center describes monitoring and assessing cockroach activity using sticky traps or glue boards.',
+        ]}
+        asin="B0CFRN4CF3"
+      />
+
+      <p>
+        Five products appear above and there is no sixth. One class was deliberately left out:
+        insect growth regulators are described by Mississippi State University Extension as
+        &ldquo;especially useful in control of German cockroaches.&rdquo; and no source consulted
+        for this page states that they are useful against the large roaches this page is about. Rather
+        than stretch a German-cockroach finding to cover a different animal, that class is absent.
+      </p>
+
       <h2 id="health">Allergens and Health</h2>
       <p>
         Mississippi State University Extension states that{' '}
@@ -511,106 +615,6 @@ export default function PalmettoBugsPage() {
         where roaches hide.&rdquo; The National Pesticide Information Center advises to
         &ldquo;always read and follow the label directions carefully&rdquo; and to &ldquo;Try a
         lower toxicity product first.&rdquo;
-      </p>
-
-      <h2 id="products">Examples, Grouped by Purpose</h2>
-      <p>
-        <strong>
-          These are examples of each kind of product, grouped by what the sources say that kind is
-          for. They are in no order of preference and none is called better than another, because no
-          source consulted for this page compares any two products against each other.
-        </strong>{' '}
-        Each card carries the scope and the limitation its own sources state.
-      </p>
-      <p>
-        There is, however, one selection rule the sources do give, and it is the organizing
-        principle of this section. Mississippi State University Extension states that{' '}
-        <strong>
-          &ldquo;Bait stations designed specifically for German cockroaches are too small.&rdquo;
-        </strong>{' '}
-        UF/IFAS Extension states the same thing independently:{' '}
-        <strong>
-          &ldquo;Get small stations for German cockroaches and large stations for the larger outdoor
-          cockroaches.&rdquo;
-        </strong>{' '}
-        Palmetto bugs are the larger outdoor cockroaches. That is a fitness test a reader can check
-        on a label before buying, and it is not a ranking.
-      </p>
-      <p>
-        Mississippi State University Extension also notes that the products it lists are examples
-        rather than recommendations, and that no single one is meant to be the answer: &ldquo;If
-        they do not readily take the first bait you try, switch to another brand or type of
-        bait.&rdquo;
-      </p>
-
-      <h3>Bait stations sized for large roaches</h3>
-
-      <UsToolCard
-        name="Combat Max Roach Killing Bait, Large Roaches, 8 Count"
-        whatItDoes={[
-          'A ready-to-use bait station. Its own listing names large roaches, which is the distinction both sources draw.',
-          'Mississippi State University Extension states that bait stations designed specifically for German cockroaches are too small, and UF/IFAS Extension states to get large stations for the larger outdoor cockroaches.',
-          'Mississippi State University Extension states that in living areas you should use childproof bait stations specifically designed for large roaches, placed where they are inaccessible to children and pets.',
-        ]}
-        asin="B001ACMBJK"
-      />
-
-      <h3>Gel bait</h3>
-
-      <UsToolCard
-        name="Advion Cockroach Gel Bait, 4 Tubes of 30 Grams"
-        whatItDoes={[
-          'A syringe gel. UF/IFAS Extension states that baits come in granular formulations, plastic stations, or large syringes for gel applications.',
-          'Mississippi State University Extension states that gel baits can be especially effective but must be used correctly, using multiple placements of small amounts of bait, drops generally no larger than a pea.',
-          'The same source states that unconsumed bait dries out over time and becomes unpalatable to roaches, so placements need renewing.',
-          'UF/IFAS Extension states never to spray a liquid insecticide where baits have been applied.',
-        ]}
-        asin="B0148W0WOE"
-      />
-
-      <h3>Granular bait for the outside perimeter</h3>
-
-      <UsToolCard
-        name="Nisus Niban Granular Bait, 4 lbs"
-        whatItDoes={[
-          'A granular bait scattered rather than placed. Mississippi State University Extension states that granular baits are especially useful for controlling large roaches around exterior building perimeters.',
-          'The same source states granular baits are usually intended for outdoor use, or for application in basements, attics, storage rooms, wall voids and other non-living areas.',
-          'UF/IFAS Extension states to apply granular formulations outside in plants and mulched areas.',
-        ]}
-        asin="B005F5PRJE"
-      />
-
-      <h3>Residual spray, as a supplement</h3>
-
-      <UsToolCard
-        name="Ortho Home Defense Insect Killer for Indoor &amp; Perimeter2, 1.33 gal"
-        whatItDoes={[
-          'Mississippi State University Extension states that outdoor perimeter sprays are especially useful for control of large roaches.',
-          'The same source states that indoor insecticide sprays are not the most effective way to control large roaches, but are sometimes useful as supplemental treatments.',
-          'Both UF/IFAS Extension and Mississippi State University Extension state that sprays must not be applied where baits have been placed, because they repel roaches from the bait.',
-          'UF/IFAS Extension states never to spray around or into electrical outlets, to avoid food preparation surfaces, and not to touch treated surfaces until dry, at least four hours.',
-        ]}
-        asin="B01N0TGJHB"
-      />
-
-      <h3>Monitoring, which is not control</h3>
-
-      <UsToolCard
-        name="Catchmaster Roach Trap Glue Boards, 10 Pack"
-        whatItDoes={[
-          'Mississippi State University Extension states that traps are useful survey tools to determine if, or where, infestations exist, or to gauge the effectiveness of control efforts.',
-          'The same source states plainly that they are not control tools and will not provide effective stand-alone control. This is a monitoring tool and nothing on this page presents it as more than one.',
-          'The National Pesticide Information Center describes monitoring and assessing cockroach activity using sticky traps or glue boards.',
-        ]}
-        asin="B0CFRN4CF3"
-      />
-
-      <p>
-        Five products appear above and there is no sixth. One class was deliberately left out:
-        insect growth regulators are described by Mississippi State University Extension as
-        &ldquo;especially useful in control of German cockroaches.&rdquo; and no source consulted
-        for this page states that they are useful against the large roaches this page is about. Rather
-        than stretch a German-cockroach finding to cover a different animal, that class is absent.
       </p>
 
       <h2 id="gulf">The Gulf and the Deep South</h2>

@@ -411,6 +411,10 @@ export default function FungusGnatsPage() {
         </p>
       </div>
 
+      <p>
+        The products below are named because each listing states either the Bti active ingredient or the yellow color the sources on this page specify.
+      </p>
+
       <UsToolCard
         name="Summit Responsible Solutions Mosquito Bits, 30 oz"
         whatItDoes={[

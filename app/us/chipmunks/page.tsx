@@ -489,6 +489,10 @@ export default function ChipmunksPage() {
         the ends.
       </p>
 
+      <p>
+        The traps below are named because the sources on this page publish a trap size for a chipmunk, and each listing states its own dimensions.
+      </p>
+
       {snapTraps.map((p) => (
         <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
       ))}

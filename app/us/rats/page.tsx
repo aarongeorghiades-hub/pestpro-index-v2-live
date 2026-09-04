@@ -120,10 +120,10 @@ const breadcrumbSchema = {
 
 const tocItems = [
   { id: 'which-rat', title: 'Which Rat? Norway, Roof, and Telling a Rat From a Mouse' },
+  { id: 'trapping', title: 'Trapping and Control Methods' },
   { id: 'signs', title: 'Signs of an Infestation' },
   { id: 'nesting-entry', title: 'Where They Nest and How They Enter' },
   { id: 'exclusion', title: 'Exclusion: Two Figures, Two Questions' },
-  { id: 'trapping', title: 'Trapping and Control Methods' },
   { id: 'tools', title: 'Tools That Meet the Sources’ Own Criteria' },
   { id: 'sanitation', title: 'Sanitation and Food Storage' },
   { id: 'professional', title: 'When the Sources Say to Call a Professional' },
@@ -376,6 +376,154 @@ export default function RatsPage() {
         </em>
       </p>
 
+      <h2 id="trapping">Trapping and Control Methods</h2>
+      <p>
+        <strong>UC IPM</strong> describes what is available and the tradeoff against poison
+        baiting:{' '}
+        <em>
+          &ldquo;Rat-sized snap traps are available in a variety of styles. They can be made
+          of plastic or wooden, have larger or expanded triggers, or have bait
+          reservoirs.&rdquo;
+        </em>{' '}
+        <em>
+          &ldquo;Because snap traps can be used over and over, the materials for trapping can
+          be less expensive than poison baiting but trapping will likely be more labor
+          intensive.&rdquo;
+        </em>{' '}
+        On bait: <em>&ldquo;Nuts, dried fruit, bacon, or a piece of dry pet food can be attractive bait for traps.&rdquo;</em>{' '}
+        On the amount:{' '}
+        <em>&ldquo;it is important to use just a pea-sized amount of bait.&rdquo;</em>
+      </p>
+      <p>
+        On placement, <strong>UC IPM</strong> states:{' '}
+        <em>
+          &ldquo;For Norway rats, install traps close to walls, behind objects, in dark
+          corners, and in places where rat signs (droppings, smudge marks, burrows, etc.) have
+          been seen. Position traps along a wall so that they extend from the wall at right
+          angles, with the trigger end nearly touching the wall (Figure 6).&rdquo;
+        </em>{' '}
+        For the climbing species:{' '}
+        <em>
+          &ldquo;For roof rats, traps often need to be installed both on the ground and
+          aboveground (e.g., ledges, shelves, branches, fences, pipes, or overhead beams) (see
+          Figures 7 and 8).&rdquo;
+        </em>{' '}
+        <strong>The UC ANR snap-trap article</strong> (by the same author) gives the specific
+        placement patterns:{' '}
+        <em>
+          &ldquo;Effective placement of snap traps for rodents. Clockwise from top left:
+          side-by-side, three in a row with alternating triggers, end-to-end.&rdquo;
+        </em>{' '}
+        It adds a caution about nontarget animals:{' '}
+        <em>
+          &ldquo;Set traps only during the night, but leave them where they are during the
+          day, making sure they are not set. This greatly reduces trapping animals that are
+          mostly active during daylight hours.&rdquo;
+        </em>
+      </p>
+      <h3>Neophobia: why rats ignore a trap for days</h3>
+      <p>
+        <strong>UC IPM</strong> names the behavior:{' '}
+        <em>
+          &ldquo;They quickly detect and tend to avoid new objects and new foods. Thus, they
+          often avoid traps and baits for the first several days (and maybe weeks) following
+          the initial placement. This neophobia (fear of new objects) is thought to be more
+          pronounced in roof rats than in Norway rats.&rdquo;
+        </em>{' '}
+        <strong>Cornell CALS</strong> states the same behavior in its own words and gives a
+        prebaiting protocol:{' '}
+        <em>
+          &ldquo;Rats exhibit this behavior, which is a &lsquo;fear of new.&rsquo; To overcome
+          this fear, put out traps with plenty of bait, but do not set the trap. Eventually,
+          most rats will approach the trap and take bait. This should be repeated until rats
+          have taken bait about three times.&rdquo;
+        </em>{' '}
+        <em>
+          (Cornell&rsquo;s own text sets &ldquo;fear of new.&rdquo; in double quotation marks;
+          rendered here in this site&rsquo;s own typography)
+        </em>{' '}
+        <strong>The UC ANR article</strong> states the same practice:{' '}
+        <em>
+          &ldquo;When using snap traps for rats, it is good practice to prebait your
+          traps.&rdquo;
+        </em>{' '}
+        It names the consequence of skipping the step:{' '}
+        <em>
+          &ldquo;Failure to prebait may result in the capture of juveniles only. The
+          breeding adults are the most important targets.&rdquo;
+        </em>{' '}
+        <strong>Nebraska Extension</strong> states the same finding as a timeframe:{' '}
+        <em>
+          &ldquo;It is common for rats to wait two weeks before interacting with traps and
+          toxicants.&rdquo;
+        </em>{' '}
+        <strong>Cornell</strong> names a related failure mode neither of the others states,
+        under its own heading, &ldquo;Trap Fatigue&rdquo;:{' '}
+        <em>
+          &ldquo;This can occur when snap traps are left in the same place for a long period
+          of time. Rodents, especially mice, become accustomed to the trap and do not
+          explore, or actively avoid it.&rdquo;
+        </em>
+      </p>
+      <h3>Glue boards and live traps: cautioned against for homeowners</h3>
+      <p>
+        <strong>UC IPM</strong> is direct about glue boards:{' '}
+        <em>
+          &ldquo;Glue traps are also available options for rat management. However, they are
+          difficult to use and are not generally recommended for nonprofessional use.&rdquo;
+        </em>{' '}
+        <strong>ICWDM</strong> states why they underperform on rats specifically, compared to
+        mice:{' '}
+        <em>
+          &ldquo;They are less effective for capturing rats than mice, as rats frequently
+          extricate themselves from the glue.&rdquo;
+        </em>{' '}
+        On live traps, <strong>UC IPM</strong> states a legal obligation most readers will not
+        expect:{' '}
+        <em>
+          &ldquo;Live trapping of rats is not recommended for nonprofessionals because,
+          legally, trapped rats must be humanely euthanized or released immediately in the
+          area where it was trapped&rdquo;
+        </em>
+        .{' '}
+        It adds why releasing elsewhere is not a solution:{' '}
+        <em>
+          &ldquo;Releasing rats is not recommended, as they will continue to pose health
+          concerns to the residents and their neighbors.&rdquo;
+        </em>
+      </p>
+      <p>
+        On devices that do not work, <strong>ICWDM</strong> states plainly:{' '}
+        <em>&ldquo;Ultrasonic devices do not control rats&rdquo;</em>.{' '}
+        <strong>No ultrasonic or vibrational device is named on this page.</strong>
+      </p>
+
+      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
+        <p className="m-0 text-base font-bold text-slate-900">
+          The criteria the tools below are measured against
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          Each listing below states, in its own feature text rather than only in a product
+          title, the property the sources above ask for: an expanded-trigger, rat-sized snap
+          trap, a tamper-resistant weather-resistant bait station, and galvanized hardware
+          cloth at the gauge and mesh size UC IPM&rsquo;s own checklist names. Twenty product
+          URLs were attempted in S60 R7; seventeen returned an anti-bot interstitial on the
+          first fetch and were not retried that round, per Law 137. Seventeen of those same
+          URLs were attempted again this round (S60 R9) &mdash; a fresh round, permitted under
+          Law 137 &mdash; and sixteen returned a real product page; one (a since-delisted bait
+          station) returned a genuine HTTP 404. No source consulted for this page ranks any two
+          products against one another, so nothing here is called best, and no price appears
+          beside a card.
+        </p>
+      </div>
+      <p>
+        The traps below are named because each listing states that it is sized for a rat rather than a mouse, which is the distinction this page opens with.
+      </p>
+
+      {products.map((p) => (
+        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+      ))}
+
       <h2 id="signs">Signs of an Infestation</h2>
       <p>
         <strong>UC IPM</strong> lists the physical evidence a yard or building inspection
@@ -591,150 +739,6 @@ export default function RatsPage() {
         For rats traveling utility lines specifically, UC IPM does not recommend a
         do-it-yourself fix — see the professional section below.
       </p>
-
-      <h2 id="trapping">Trapping and Control Methods</h2>
-      <p>
-        <strong>UC IPM</strong> describes what is available and the tradeoff against poison
-        baiting:{' '}
-        <em>
-          &ldquo;Rat-sized snap traps are available in a variety of styles. They can be made
-          of plastic or wooden, have larger or expanded triggers, or have bait
-          reservoirs.&rdquo;
-        </em>{' '}
-        <em>
-          &ldquo;Because snap traps can be used over and over, the materials for trapping can
-          be less expensive than poison baiting but trapping will likely be more labor
-          intensive.&rdquo;
-        </em>{' '}
-        On bait: <em>&ldquo;Nuts, dried fruit, bacon, or a piece of dry pet food can be attractive bait for traps.&rdquo;</em>{' '}
-        On the amount:{' '}
-        <em>&ldquo;it is important to use just a pea-sized amount of bait.&rdquo;</em>
-      </p>
-      <p>
-        On placement, <strong>UC IPM</strong> states:{' '}
-        <em>
-          &ldquo;For Norway rats, install traps close to walls, behind objects, in dark
-          corners, and in places where rat signs (droppings, smudge marks, burrows, etc.) have
-          been seen. Position traps along a wall so that they extend from the wall at right
-          angles, with the trigger end nearly touching the wall (Figure 6).&rdquo;
-        </em>{' '}
-        For the climbing species:{' '}
-        <em>
-          &ldquo;For roof rats, traps often need to be installed both on the ground and
-          aboveground (e.g., ledges, shelves, branches, fences, pipes, or overhead beams) (see
-          Figures 7 and 8).&rdquo;
-        </em>{' '}
-        <strong>The UC ANR snap-trap article</strong> (by the same author) gives the specific
-        placement patterns:{' '}
-        <em>
-          &ldquo;Effective placement of snap traps for rodents. Clockwise from top left:
-          side-by-side, three in a row with alternating triggers, end-to-end.&rdquo;
-        </em>{' '}
-        It adds a caution about nontarget animals:{' '}
-        <em>
-          &ldquo;Set traps only during the night, but leave them where they are during the
-          day, making sure they are not set. This greatly reduces trapping animals that are
-          mostly active during daylight hours.&rdquo;
-        </em>
-      </p>
-      <h3>Neophobia: why rats ignore a trap for days</h3>
-      <p>
-        <strong>UC IPM</strong> names the behavior:{' '}
-        <em>
-          &ldquo;They quickly detect and tend to avoid new objects and new foods. Thus, they
-          often avoid traps and baits for the first several days (and maybe weeks) following
-          the initial placement. This neophobia (fear of new objects) is thought to be more
-          pronounced in roof rats than in Norway rats.&rdquo;
-        </em>{' '}
-        <strong>Cornell CALS</strong> states the same behavior in its own words and gives a
-        prebaiting protocol:{' '}
-        <em>
-          &ldquo;Rats exhibit this behavior, which is a &lsquo;fear of new.&rsquo; To overcome
-          this fear, put out traps with plenty of bait, but do not set the trap. Eventually,
-          most rats will approach the trap and take bait. This should be repeated until rats
-          have taken bait about three times.&rdquo;
-        </em>{' '}
-        <em>
-          (Cornell&rsquo;s own text sets &ldquo;fear of new.&rdquo; in double quotation marks;
-          rendered here in this site&rsquo;s own typography)
-        </em>{' '}
-        <strong>The UC ANR article</strong> states the same practice:{' '}
-        <em>
-          &ldquo;When using snap traps for rats, it is good practice to prebait your
-          traps.&rdquo;
-        </em>{' '}
-        It names the consequence of skipping the step:{' '}
-        <em>
-          &ldquo;Failure to prebait may result in the capture of juveniles only. The
-          breeding adults are the most important targets.&rdquo;
-        </em>{' '}
-        <strong>Nebraska Extension</strong> states the same finding as a timeframe:{' '}
-        <em>
-          &ldquo;It is common for rats to wait two weeks before interacting with traps and
-          toxicants.&rdquo;
-        </em>{' '}
-        <strong>Cornell</strong> names a related failure mode neither of the others states,
-        under its own heading, &ldquo;Trap Fatigue&rdquo;:{' '}
-        <em>
-          &ldquo;This can occur when snap traps are left in the same place for a long period
-          of time. Rodents, especially mice, become accustomed to the trap and do not
-          explore, or actively avoid it.&rdquo;
-        </em>
-      </p>
-      <h3>Glue boards and live traps: cautioned against for homeowners</h3>
-      <p>
-        <strong>UC IPM</strong> is direct about glue boards:{' '}
-        <em>
-          &ldquo;Glue traps are also available options for rat management. However, they are
-          difficult to use and are not generally recommended for nonprofessional use.&rdquo;
-        </em>{' '}
-        <strong>ICWDM</strong> states why they underperform on rats specifically, compared to
-        mice:{' '}
-        <em>
-          &ldquo;They are less effective for capturing rats than mice, as rats frequently
-          extricate themselves from the glue.&rdquo;
-        </em>{' '}
-        On live traps, <strong>UC IPM</strong> states a legal obligation most readers will not
-        expect:{' '}
-        <em>
-          &ldquo;Live trapping of rats is not recommended for nonprofessionals because,
-          legally, trapped rats must be humanely euthanized or released immediately in the
-          area where it was trapped&rdquo;
-        </em>
-        .{' '}
-        It adds why releasing elsewhere is not a solution:{' '}
-        <em>
-          &ldquo;Releasing rats is not recommended, as they will continue to pose health
-          concerns to the residents and their neighbors.&rdquo;
-        </em>
-      </p>
-      <p>
-        On devices that do not work, <strong>ICWDM</strong> states plainly:{' '}
-        <em>&ldquo;Ultrasonic devices do not control rats&rdquo;</em>.{' '}
-        <strong>No ultrasonic or vibrational device is named on this page.</strong>
-      </p>
-
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
-          The criteria the tools below are measured against
-        </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
-          Each listing below states, in its own feature text rather than only in a product
-          title, the property the sources above ask for: an expanded-trigger, rat-sized snap
-          trap, a tamper-resistant weather-resistant bait station, and galvanized hardware
-          cloth at the gauge and mesh size UC IPM&rsquo;s own checklist names. Twenty product
-          URLs were attempted in S60 R7; seventeen returned an anti-bot interstitial on the
-          first fetch and were not retried that round, per Law 137. Seventeen of those same
-          URLs were attempted again this round (S60 R9) &mdash; a fresh round, permitted under
-          Law 137 &mdash; and sixteen returned a real product page; one (a since-delisted bait
-          station) returned a genuine HTTP 404. No source consulted for this page ranks any two
-          products against one another, so nothing here is called best, and no price appears
-          beside a card.
-        </p>
-      </div>
-      {products.map((p) => (
-        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-      ))}
 
       <h2 id="sanitation">Sanitation and Food Storage</h2>
       <p>

@@ -155,12 +155,12 @@ const sources: Source[] = [
 
 const tocItems = [
   { id: 'what-it-is', title: 'What It Is' },
+  { id: 'exclusion', title: 'Control: Exclusion First' },
   { id: 'range', title: 'Range' },
   { id: 'when-active', title: 'When They Are Active' },
   { id: 'what-they-eat', title: 'What They Eat' },
   { id: 'shelter', title: 'They Do Not Dig' },
   { id: 'signs', title: 'Whose Damage Is It' },
-  { id: 'exclusion', title: 'Control: Exclusion First' },
   { id: 'trapping', title: 'Control: Trapping' },
   { id: 'breeding', title: 'Breeding and Pouch Young' },
   { id: 'playing-dead', title: 'Playing Dead' },
@@ -227,6 +227,185 @@ export default function OpossumsPage() {
         UF/IFAS Extension gives the lifespan as 1 to 2 years in the wild and 3 to 4 years in
         captivity.
       </p>
+
+      <h2 id="exclusion">Control: Exclusion First</h2>
+      <p>
+        Because they do not dig their own way in, closing the openings is the method the sources
+        support most directly. <strong>The measured specifications and the check that has to precede
+        the last one are in this section together.</strong>
+      </p>
+      <h3>Before you close the last hole</h3>
+      <p>
+        Los Angeles County Department of Animal Care and Control states that{' '}
+        <strong>
+          before completing the final seal on the last entry point, it is wise to make sure no
+          animals are trapped inside
+        </strong>
+        . No source read for this page describes how to build a one-way door for an opossum, so none
+        is described here.
+      </p>
+      <h3>The mesh, and how deep</h3>
+      <ul>
+        <li>
+          <strong>Crawl spaces.</strong> Nebraska Extension states that crawl spaces below sheds,
+          porches and decks should be secured using 1 inch by half-inch galvanized hardware cloth.
+        </li>
+        <li>
+          <strong>Burial depth and skirt.</strong> Nebraska Extension states to bury the mesh at
+          least 4 inches below the soil and create a 12 to 18 inch skirt under the soil to discourage
+          digging.
+        </li>
+        <li>
+          <strong>Repair materials.</strong> Nebraska Extension names 10-gauge quarter-inch wire
+          mesh, aluminum flashing, and solid half-inch wood or plywood.
+        </li>
+        <li>
+          <strong>Vents and chimneys.</strong> Los Angeles County Department of Animal Care and
+          Control states that opossums can be excluded from buildings by covering foundation vents
+          with slotted metal vent covers, and by using quarter-inch grid screening to cover attic
+          vents and chimneys. It gives quarter-inch grid screening or solid metal flashing as the
+          general answer.
+        </li>
+        <li>
+          <strong>The whole list.</strong> Nebraska Extension states that homeowners should cap
+          chimneys, keep structures in good repair, install mesh over vents, trench-screen decks,
+          sheds and crawl spaces, and reduce potential food sources. Alabama Cooperative Extension
+          states to close any access points to potential denning areas such as attics, garages and
+          crawl spaces, and to remove any brushy areas or piles of wood and rocks around the yard.
+        </li>
+        <li>
+          <strong>Fences.</strong> Nebraska Extension states that a single strand of electrical wire
+          near the top of the fence protruding 3 inches outward on outrigger insulators will prevent
+          access, and cautions that gardens and crops are more difficult to protect because of the
+          climbing abilities of these two animals. It also states that{' '}
+          <em>&ldquo;Raccoons, being stronger, are more difficult to exclude than opossums&rdquo;</em>,
+          which is its comparison between the two animals, quoted as written.
+        </li>
+      </ul>
+      <h3>Taking away the reasons to stay</h3>
+      <ul>
+        <li>
+          Nebraska Extension states that trash cans, preferably metal, should have tight-fitting lids
+          that remain attached even if tipped over. The National Pesticide Information Center states
+          to keep garbage in a can with a tight-fitting lid that cannot be opened by animals.
+        </li>
+        <li>
+          Los Angeles County Department of Animal Care and Control states that tight fitting lids
+          should be kept on garbage cans, that pets should be fed during daylight hours with any
+          leftovers removed immediately, that water bowls should be emptied or taken in at night, and
+          that gardens should be frequently harvested and windfall fruit picked up.
+        </li>
+        <li>
+          UF/IFAS Extension states it in one line: secure your garbage bins and do not leave pet food
+          outside.
+        </li>
+      </ul>
+
+      <h3>Hardware for closing the openings</h3>
+      <p>
+        <strong>
+          These are examples of one thing: quarter-inch mesh hardware cloth. They are in no order of
+          preference and none is called better than another, because no source read for this page
+          compares one product against another.
+        </strong>{' '}
+        UC IPM states plainly what to close the gaps with: &ldquo;Close off all potential entrances
+        or openings under the house, garden tool shed, mobile home, deck, etc. with 1/4&ndash;inch
+        mesh hardware cloth.&rdquo; That quarter-inch figure is what every card below is selected
+        against, and it is printed on each product&rsquo;s own listing.
+      </p>
+      <p>
+        <strong>The sources do not give one set of numbers, and this page does not merge them.</strong>{' '}
+        UC IPM gives quarter-inch mesh, and says to &ldquo;bury the hardware cloth up to 6
+        inches.&rdquo; Nebraska Extension, quoted higher up this page, gives 1 inch by half-inch
+        galvanized hardware cloth for crawl spaces, names 10-gauge quarter-inch wire mesh among its
+        repair materials, and asks for the mesh to be buried at least 4 inches with a 12 to 18 inch
+        skirt. Los Angeles County Department of Animal Care and Control gives quarter-inch grid
+        screening for attic vents and chimneys. Two of the three converge on a quarter inch; the
+        burial depths genuinely differ, and each figure is quoted with the source that published it.
+      </p>
+      <p>
+        One thing the listings cannot settle: Nebraska Extension specifies <em>galvanized</em>
+        hardware cloth, and that word does not appear in the product titles below. Where a title
+        states a coating, the card repeats it; where it does not, this page says nothing about the
+        finish rather than guessing at it.
+      </p>
+
+      <p>
+        The mesh below is hardware cloth, named because each listing states the aperture the sources on this page ask for when closing an opening.
+      </p>
+
+      <UsToolCard
+        name="Hardware Cloth 1/4 inch, 48 x 50 ft Wire Fencing"
+        whatItDoes={[
+          'Its own title states a 1/4 inch mesh, which is the figure UC IPM gives for closing openings under a house, shed, mobile home or deck.',
+          'Its title states no coating, so this card claims none.',
+          'UC IPM states to bury the hardware cloth up to 6 inches; Nebraska Extension asks for at least 4 inches with a 12 to 18 inch skirt. The two figures differ and both are given here.',
+        ]}
+        asin="B0832YDD5B"
+      />
+
+      <UsToolCard
+        name="SEBOSS Hardware Cloth Wire Mesh 1/4 inch, 48 x 100 ft, 23 Gauge"
+        whatItDoes={[
+          'A longer roll at the same 1/4 inch mesh stated in its own title.',
+          'Its title states a 23 gauge and no coating.',
+          'Los Angeles County Department of Animal Care and Control gives quarter-inch grid screening as its answer for attic vents and chimneys.',
+        ]}
+        asin="B08PPYX999"
+      />
+
+      <UsToolCard
+        name="Black PVC Coated 1/4&quot; Hardware Cloth, 48&quot; x 100&#39;, 23 Gauge"
+        whatItDoes={[
+          'The same 1/4 inch mesh, in a roll its own title describes as PVC coated.',
+          'The coating is stated here only because the product title states it. No source read for this page expresses a preference between coated and uncoated mesh.',
+        ]}
+        asin="B0D1QXZFKJ"
+      />
+
+      <UsToolCard
+        name="FORIMO Hardware Cloth 1/4 inch, 24 in x 50 ft, 19 Gauge, Black Vinyl Coated"
+        whatItDoes={[
+          'A narrower roll at the same 1/4 inch mesh, described in its own title as 19 gauge and black vinyl coated.',
+          'A narrow roll suits the trench-and-skirt work Nebraska Extension describes rather than a large vent or wall panel.',
+        ]}
+        asin="B09W8XZDVS"
+      />
+
+      <UsToolCard
+        name="Hardware Cloth 1/4 inch, 19 Gauge, 8 in x 10 ft"
+        whatItDoes={[
+          'The smallest roll of the five, at the same 1/4 inch mesh stated in its own title.',
+          'Sized for a single vent or a patch rather than a run of decking. Los Angeles County Department of Animal Care and Control also names slotted metal vent covers for foundation vents, which this is not.',
+        ]}
+        asin="B0H75HHMDX"
+      />
+
+      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
+        <p className="m-0 text-base font-bold text-slate-900">
+          Two things this page does not sell, and why
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          <strong>
+            Repellents. UC IPM states: &ldquo;An array of chemical products is marketed for
+            repelling various wildlife species but, unfortunately, none offer significant results
+            for opossums.&rdquo;
+          </strong>{' '}
+          The same source notes that the odor of mothballs, naphthalene crystals, or household
+          ammonia has been used as a home remedy repellent, which is a report of what people do
+          rather than a finding that it works.
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          <strong>Motion-activated devices.</strong> UC IPM states that &ldquo;A motion-activated
+          sprinkler device sometimes induces a fright response in opossums, skunks, and raccoons. If
+          the animal has established the habit of visiting the yard or garden, such frightening
+          responses rarely last for more than a few days.&rdquo; The Virginia Department of Wildlife
+          Resources states that &ldquo;Reflective tape, lights, or noise sometimes works, but they
+          will eventually grow accustomed to these methods, so this is only a temporary
+          solution.&rdquo; Both sources that address these devices describe the effect as
+          short-lived, so none is listed here.
+        </p>
+      </div>
 
       <h2 id="range">Range</h2>
       <p>
@@ -371,181 +550,6 @@ export default function OpossumsPage() {
         significant source of damage, and that they will occasionally take advantage of gardens and
         crops, particularly corn.
       </p>
-
-      <h2 id="exclusion">Control: Exclusion First</h2>
-      <p>
-        Because they do not dig their own way in, closing the openings is the method the sources
-        support most directly. <strong>The measured specifications and the check that has to precede
-        the last one are in this section together.</strong>
-      </p>
-      <h3>Before you close the last hole</h3>
-      <p>
-        Los Angeles County Department of Animal Care and Control states that{' '}
-        <strong>
-          before completing the final seal on the last entry point, it is wise to make sure no
-          animals are trapped inside
-        </strong>
-        . No source read for this page describes how to build a one-way door for an opossum, so none
-        is described here.
-      </p>
-      <h3>The mesh, and how deep</h3>
-      <ul>
-        <li>
-          <strong>Crawl spaces.</strong> Nebraska Extension states that crawl spaces below sheds,
-          porches and decks should be secured using 1 inch by half-inch galvanized hardware cloth.
-        </li>
-        <li>
-          <strong>Burial depth and skirt.</strong> Nebraska Extension states to bury the mesh at
-          least 4 inches below the soil and create a 12 to 18 inch skirt under the soil to discourage
-          digging.
-        </li>
-        <li>
-          <strong>Repair materials.</strong> Nebraska Extension names 10-gauge quarter-inch wire
-          mesh, aluminum flashing, and solid half-inch wood or plywood.
-        </li>
-        <li>
-          <strong>Vents and chimneys.</strong> Los Angeles County Department of Animal Care and
-          Control states that opossums can be excluded from buildings by covering foundation vents
-          with slotted metal vent covers, and by using quarter-inch grid screening to cover attic
-          vents and chimneys. It gives quarter-inch grid screening or solid metal flashing as the
-          general answer.
-        </li>
-        <li>
-          <strong>The whole list.</strong> Nebraska Extension states that homeowners should cap
-          chimneys, keep structures in good repair, install mesh over vents, trench-screen decks,
-          sheds and crawl spaces, and reduce potential food sources. Alabama Cooperative Extension
-          states to close any access points to potential denning areas such as attics, garages and
-          crawl spaces, and to remove any brushy areas or piles of wood and rocks around the yard.
-        </li>
-        <li>
-          <strong>Fences.</strong> Nebraska Extension states that a single strand of electrical wire
-          near the top of the fence protruding 3 inches outward on outrigger insulators will prevent
-          access, and cautions that gardens and crops are more difficult to protect because of the
-          climbing abilities of these two animals. It also states that{' '}
-          <em>&ldquo;Raccoons, being stronger, are more difficult to exclude than opossums&rdquo;</em>,
-          which is its comparison between the two animals, quoted as written.
-        </li>
-      </ul>
-      <h3>Taking away the reasons to stay</h3>
-      <ul>
-        <li>
-          Nebraska Extension states that trash cans, preferably metal, should have tight-fitting lids
-          that remain attached even if tipped over. The National Pesticide Information Center states
-          to keep garbage in a can with a tight-fitting lid that cannot be opened by animals.
-        </li>
-        <li>
-          Los Angeles County Department of Animal Care and Control states that tight fitting lids
-          should be kept on garbage cans, that pets should be fed during daylight hours with any
-          leftovers removed immediately, that water bowls should be emptied or taken in at night, and
-          that gardens should be frequently harvested and windfall fruit picked up.
-        </li>
-        <li>
-          UF/IFAS Extension states it in one line: secure your garbage bins and do not leave pet food
-          outside.
-        </li>
-      </ul>
-
-      <h3>Hardware for closing the openings</h3>
-      <p>
-        <strong>
-          These are examples of one thing: quarter-inch mesh hardware cloth. They are in no order of
-          preference and none is called better than another, because no source read for this page
-          compares one product against another.
-        </strong>{' '}
-        UC IPM states plainly what to close the gaps with: &ldquo;Close off all potential entrances
-        or openings under the house, garden tool shed, mobile home, deck, etc. with 1/4&ndash;inch
-        mesh hardware cloth.&rdquo; That quarter-inch figure is what every card below is selected
-        against, and it is printed on each product&rsquo;s own listing.
-      </p>
-      <p>
-        <strong>The sources do not give one set of numbers, and this page does not merge them.</strong>{' '}
-        UC IPM gives quarter-inch mesh, and says to &ldquo;bury the hardware cloth up to 6
-        inches.&rdquo; Nebraska Extension, quoted higher up this page, gives 1 inch by half-inch
-        galvanized hardware cloth for crawl spaces, names 10-gauge quarter-inch wire mesh among its
-        repair materials, and asks for the mesh to be buried at least 4 inches with a 12 to 18 inch
-        skirt. Los Angeles County Department of Animal Care and Control gives quarter-inch grid
-        screening for attic vents and chimneys. Two of the three converge on a quarter inch; the
-        burial depths genuinely differ, and each figure is quoted with the source that published it.
-      </p>
-      <p>
-        One thing the listings cannot settle: Nebraska Extension specifies <em>galvanized</em>
-        hardware cloth, and that word does not appear in the product titles below. Where a title
-        states a coating, the card repeats it; where it does not, this page says nothing about the
-        finish rather than guessing at it.
-      </p>
-
-      <UsToolCard
-        name="Hardware Cloth 1/4 inch, 48 x 50 ft Wire Fencing"
-        whatItDoes={[
-          'Its own title states a 1/4 inch mesh, which is the figure UC IPM gives for closing openings under a house, shed, mobile home or deck.',
-          'Its title states no coating, so this card claims none.',
-          'UC IPM states to bury the hardware cloth up to 6 inches; Nebraska Extension asks for at least 4 inches with a 12 to 18 inch skirt. The two figures differ and both are given here.',
-        ]}
-        asin="B0832YDD5B"
-      />
-
-      <UsToolCard
-        name="SEBOSS Hardware Cloth Wire Mesh 1/4 inch, 48 x 100 ft, 23 Gauge"
-        whatItDoes={[
-          'A longer roll at the same 1/4 inch mesh stated in its own title.',
-          'Its title states a 23 gauge and no coating.',
-          'Los Angeles County Department of Animal Care and Control gives quarter-inch grid screening as its answer for attic vents and chimneys.',
-        ]}
-        asin="B08PPYX999"
-      />
-
-      <UsToolCard
-        name="Black PVC Coated 1/4&quot; Hardware Cloth, 48&quot; x 100&#39;, 23 Gauge"
-        whatItDoes={[
-          'The same 1/4 inch mesh, in a roll its own title describes as PVC coated.',
-          'The coating is stated here only because the product title states it. No source read for this page expresses a preference between coated and uncoated mesh.',
-        ]}
-        asin="B0D1QXZFKJ"
-      />
-
-      <UsToolCard
-        name="FORIMO Hardware Cloth 1/4 inch, 24 in x 50 ft, 19 Gauge, Black Vinyl Coated"
-        whatItDoes={[
-          'A narrower roll at the same 1/4 inch mesh, described in its own title as 19 gauge and black vinyl coated.',
-          'A narrow roll suits the trench-and-skirt work Nebraska Extension describes rather than a large vent or wall panel.',
-        ]}
-        asin="B09W8XZDVS"
-      />
-
-      <UsToolCard
-        name="Hardware Cloth 1/4 inch, 19 Gauge, 8 in x 10 ft"
-        whatItDoes={[
-          'The smallest roll of the five, at the same 1/4 inch mesh stated in its own title.',
-          'Sized for a single vent or a patch rather than a run of decking. Los Angeles County Department of Animal Care and Control also names slotted metal vent covers for foundation vents, which this is not.',
-        ]}
-        asin="B0H75HHMDX"
-      />
-
-      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
-        <p className="m-0 text-base font-bold text-slate-900">
-          Two things this page does not sell, and why
-        </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
-          <strong>
-            Repellents. UC IPM states: &ldquo;An array of chemical products is marketed for
-            repelling various wildlife species but, unfortunately, none offer significant results
-            for opossums.&rdquo;
-          </strong>{' '}
-          The same source notes that the odor of mothballs, naphthalene crystals, or household
-          ammonia has been used as a home remedy repellent, which is a report of what people do
-          rather than a finding that it works.
-        </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
-          <strong>Motion-activated devices.</strong> UC IPM states that &ldquo;A motion-activated
-          sprinkler device sometimes induces a fright response in opossums, skunks, and raccoons. If
-          the animal has established the habit of visiting the yard or garden, such frightening
-          responses rarely last for more than a few days.&rdquo; The Virginia Department of Wildlife
-          Resources states that &ldquo;Reflective tape, lights, or noise sometimes works, but they
-          will eventually grow accustomed to these methods, so this is only a temporary
-          solution.&rdquo; Both sources that address these devices describe the effect as
-          short-lived, so none is listed here.
-        </p>
-      </div>
 
       <h2 id="trapping">Control: Trapping</h2>
       <p>

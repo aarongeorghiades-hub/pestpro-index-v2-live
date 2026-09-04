@@ -502,6 +502,10 @@ export default function PowderpostBeetlesPage() {
         </p>
       </div>
 
+      <p>
+        The products below are named because they are the two borate formulations University of Kentucky names for this pest, and each is for bare wood only.
+      </p>
+
       <UsToolCard
         name="Bora-Care Termiticide Insecticide and Fungicide Concentrate, Wood Treatment for Termite and Wood-Boring Beetle Control, 1 Gallon"
         whatItDoes={[

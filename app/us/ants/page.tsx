@@ -135,11 +135,11 @@ const products: ProductRecord[] = [
 const tocItems = [
   { id: 'nest', title: 'The Ants You See Are Not the Colony' },
   { id: 'four', title: 'The Four Ants on This Page' },
+  { id: 'baits', title: 'Bait Stations and Stakes' },
   { id: 'carpenter', title: 'Carpenter Ants Need Different Tactics' },
   { id: 'fire', title: 'If the Ants Sting, This Is the Wrong Page' },
   { id: 'first', title: 'What Every Source Puts First' },
   { id: 'spread', title: 'Four Sources, Four Positions on Spraying' },
-  { id: 'baits', title: 'Bait Stations and Stakes' },
   { id: 'limits', title: 'What the Sources Say About Baits That Do Not Work' },
   { id: 'name', title: 'Two Sources, Two Scientific Names for One Ant' },
   { id: 'faq', title: 'Questions' },
@@ -457,6 +457,81 @@ export default function AntsPage() {
         </em>
       </p>
 
+      <h2 id="baits">Bait Stations and Stakes</h2>
+      <p>
+        <strong>One source names the two forms a household buyer will actually find</strong>, and
+        that sentence is the only criterion the four products below are measured against.
+      </p>
+      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
+        <p className="m-0 text-sm text-slate-800">
+          <strong>UC IPM, on what is available:</strong>{' '}
+          <em>
+            &ldquo;For residential users, the most readily available forms are solids or liquids that
+            are prepackaged into ant stakes or small plastic bait station containers.&rdquo;
+          </em>{' '}
+          <strong>And on which to reach for:</strong>{' '}
+          <em>
+            &ldquo;Prepackaged or refillable bait stations or stakes are the safest and easiest to
+            use.&rdquo;
+          </em>
+        </p>
+        <p className="mt-3 mb-0 text-sm text-slate-800">
+          <strong>On where they go, which is not where most people put them:</strong>{' '}
+          <em>
+            &ldquo;Use baits primarily outdoors. Use indoors only if there is a serious infestation
+            and you can&rsquo;t find the spot where ants are entering the building: otherwise you
+            could attract ants indoors.&rdquo;
+          </em>{' '}
+          The same source states that outdoor baits draw ants out of buildings, and asks that stations
+          be placed where ants can easily find them while avoiding areas accessible to pets and small
+          children.
+        </p>
+        <p className="mt-3 mb-0 text-sm text-slate-800">
+          <strong>On what is in them:</strong>{' '}
+          <em>
+            &ldquo;Ant baits contain carbohydrates (e.g., sugars), proteins, oils, or a combination of
+            these as attractants along with an active ingredient (toxicant).&rdquo;
+          </em>{' '}
+          <em>
+            &ldquo;Active ingredients in baits may include boric acid/borate, fipronil, avermectin, or
+            hydramethylnon.&rdquo;
+          </em>{' '}
+          <strong>Penn State names an overlapping but not identical list</strong>, asking a reader to
+          choose baits containing hydramethylnon, boric acid, fipronil, sulfluramid or abamectin, and
+          to use enclosed, tamper-resistant bait traps that have a premixed food with the pesticide.
+        </p>
+        <p className="mt-3 mb-0 text-sm text-slate-800">
+          <strong>And Utah State on placement, which no product can do for you:</strong>{' '}
+          <em>
+            &ldquo;If baits are used to manage ants, locate as many foraging trails as possible and
+            bait along trails.&rdquo;
+          </em>
+        </p>
+      </div>
+      <p>
+        The four below all satisfy that one criterion and nothing else. They are in no order of
+        preference, no source consulted compares any two products, and three of the four name no ant
+        that this page covers.{' '}
+        <strong>
+          All four are made by the same manufacturer, which is a fact about what a search for this
+          product class returns and not a recommendation of that manufacturer.
+        </strong>
+      </p>
+      <p>
+        The baits below are named because every source on this page puts a slow-acting bait ahead of a spray, and each listing states its own active ingredient.
+      </p>
+
+      {products.map((p) => (
+        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+      ))}
+      <p>
+        <strong>Two further products were fetched and are named nowhere on this page.</strong> Each
+        was a near-duplicate of one of the four above from the same manufacturer, differing in pack
+        quantity. Neither listing stated that the difference was only cosmetic, and a different number
+        of baits in the box is not a cosmetic difference, so they are treated as separate products and
+        one of each pair is named rather than the pair being merged into a single card.
+      </p>
+
       <h2 id="carpenter">Carpenter Ants Need Different Tactics</h2>
       <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
         <p className="m-0 text-base font-bold text-amber-900">
@@ -620,77 +695,6 @@ export default function AntsPage() {
           into one recommendation we would then have to defend.
         </p>
       </div>
-
-      <h2 id="baits">Bait Stations and Stakes</h2>
-      <p>
-        <strong>One source names the two forms a household buyer will actually find</strong>, and
-        that sentence is the only criterion the four products below are measured against.
-      </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-sm text-slate-800">
-          <strong>UC IPM, on what is available:</strong>{' '}
-          <em>
-            &ldquo;For residential users, the most readily available forms are solids or liquids that
-            are prepackaged into ant stakes or small plastic bait station containers.&rdquo;
-          </em>{' '}
-          <strong>And on which to reach for:</strong>{' '}
-          <em>
-            &ldquo;Prepackaged or refillable bait stations or stakes are the safest and easiest to
-            use.&rdquo;
-          </em>
-        </p>
-        <p className="mt-3 mb-0 text-sm text-slate-800">
-          <strong>On where they go, which is not where most people put them:</strong>{' '}
-          <em>
-            &ldquo;Use baits primarily outdoors. Use indoors only if there is a serious infestation
-            and you can&rsquo;t find the spot where ants are entering the building: otherwise you
-            could attract ants indoors.&rdquo;
-          </em>{' '}
-          The same source states that outdoor baits draw ants out of buildings, and asks that stations
-          be placed where ants can easily find them while avoiding areas accessible to pets and small
-          children.
-        </p>
-        <p className="mt-3 mb-0 text-sm text-slate-800">
-          <strong>On what is in them:</strong>{' '}
-          <em>
-            &ldquo;Ant baits contain carbohydrates (e.g., sugars), proteins, oils, or a combination of
-            these as attractants along with an active ingredient (toxicant).&rdquo;
-          </em>{' '}
-          <em>
-            &ldquo;Active ingredients in baits may include boric acid/borate, fipronil, avermectin, or
-            hydramethylnon.&rdquo;
-          </em>{' '}
-          <strong>Penn State names an overlapping but not identical list</strong>, asking a reader to
-          choose baits containing hydramethylnon, boric acid, fipronil, sulfluramid or abamectin, and
-          to use enclosed, tamper-resistant bait traps that have a premixed food with the pesticide.
-        </p>
-        <p className="mt-3 mb-0 text-sm text-slate-800">
-          <strong>And Utah State on placement, which no product can do for you:</strong>{' '}
-          <em>
-            &ldquo;If baits are used to manage ants, locate as many foraging trails as possible and
-            bait along trails.&rdquo;
-          </em>
-        </p>
-      </div>
-      <p>
-        The four below all satisfy that one criterion and nothing else. They are in no order of
-        preference, no source consulted compares any two products, and three of the four name no ant
-        that this page covers.{' '}
-        <strong>
-          All four are made by the same manufacturer, which is a fact about what a search for this
-          product class returns and not a recommendation of that manufacturer.
-        </strong>
-      </p>
-      {products.map((p) => (
-        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-      ))}
-      <p>
-        <strong>Two further products were fetched and are named nowhere on this page.</strong> Each
-        was a near-duplicate of one of the four above from the same manufacturer, differing in pack
-        quantity. Neither listing stated that the difference was only cosmetic, and a different number
-        of baits in the box is not a cosmetic difference, so they are treated as separate products and
-        one of each pair is named rather than the pair being merged into a single card.
-      </p>
 
       <h2 id="limits">What the Sources Say About Baits That Do Not Work</h2>
       <p>

@@ -118,11 +118,11 @@ const sources: Source[] = [
 
 const tocItems = [
   { id: 'identification', title: 'Identification' },
+  { id: 'control', title: 'Keeping Them Out' },
   { id: 'not-that-bug', title: 'What It Is Not' },
   { id: 'the-tree', title: 'The Tree Connection' },
   { id: 'year', title: 'The Year in a Boxelder Bug' },
   { id: 'harm', title: 'What They Do and Do Not Do' },
-  { id: 'control', title: 'Keeping Them Out' },
   { id: 'tree-removal', title: 'The Tree Question' },
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
@@ -184,6 +184,107 @@ export default function BoxelderBugsPage() {
         The shape is the fastest discriminator, because the insect people most often confuse
         it with is a completely different silhouette.
       </p>
+
+      <h2 id="control">Keeping Them Out</h2>
+      <p>
+        Wisconsin Horticulture is explicit that preventing entry into the home comes ahead of
+        every other measure it discusses for boxelder bugs: caulk all openings around windows and
+        doors and in walls, siding or foundations.
+      </p>
+      <p>
+        Two details worth knowing. They enter through small gaps around windows, doors and
+        pipes and through small cracks in the foundation or siding, and they often gather in
+        large congregations on walls or foundations while seeking entry — so the mass on the
+        wall is a map of where to seal. And they are attracted to buildings with a lot of
+        southern exposure regardless of the color of the building, which is a useful correction
+        to the widespread belief that painting the house differently would help.
+      </p>
+      <p>
+        For the ones already inside, Wisconsin Horticulture recommends sucking up the occasional
+        bug with a vacuum cleaner, and states that insecticide sprays are generally not
+        recommended for boxelder bugs that have already made their way indoors.
+      </p>
+      <p>
+        For clusters on the outside of the building, the same source notes they can be sprayed
+        with registered insecticides, insecticidal soap or hot soapy water, and that sprays may
+        need repeating as more bugs arrive, especially when using soapy water. We make no claim
+        here about how well any of those perform; that is the source&rsquo;s statement of what
+        is used, not ours about what works.
+      </p>
+
+      <h3>Caulk for the sealing work</h3>
+      <p>
+        <strong>
+          These are examples of one material, for the sealing Wisconsin Horticulture puts first.
+          They are in no order of preference, none is called better than another, and nothing here
+          is a claim about how well any of them performs &mdash; the limit stated just above applies
+          to these cards too.
+        </strong>
+      </p>
+      <p>
+        <strong>Where the caulk specification comes from, stated plainly.</strong> Wisconsin
+        Horticulture, the source this page uses for boxelder bugs, says to caulk all openings but
+        does not name a type of caulk. The type below comes from Penn State Extension, which
+        specifies good quality silicone or silicone-latex caulk for sealing cracks around windows,
+        doors, siding, utility pipes and behind chimneys. That is a specification written about the
+        other fall invaders, and it is attributed here rather than presented as a boxelder finding.
+      </p>
+
+      <p>
+        The sealants below are named because the sources on this page put sealing the building ahead of everything else, and each listing states that it seals a window or door gap.
+      </p>
+
+      <UsToolCard
+        name="GE Advanced Silicone Caulk for Window &amp; Door, Clear, 10 fl oz Cartridge"
+        whatItDoes={[
+          'A silicone caulk. Wisconsin Horticulture says to caulk all openings around windows and doors and in walls, siding or foundations.',
+          'Its own listing states silicone and a 10 fl oz cartridge. Nothing further about it is claimed here.',
+          'Wisconsin Horticulture notes the bugs often gather in large congregations on walls or foundations while seeking entry, which is where the sealing work is worth doing first.',
+        ]}
+        asin="B0BVGTM2XY"
+      />
+
+      <UsToolCard
+        name="GE Advanced Silicone Window &amp; Door Sealant, Clear, 10.1 oz Cartridge"
+        whatItDoes={[
+          'A second silicone option in the same cartridge size range, for the same sealing work.',
+          'Wisconsin Horticulture names the openings to close; it names no product, and neither does this page.',
+        ]}
+        asin="B0000CBJ7W"
+      />
+
+      <UsToolCard
+        name="GE All Purpose Silicone Caulk, Clear, 10 fl oz Cartridge"
+        whatItDoes={[
+          'Also a silicone caulk. Its listing describes it as all purpose rather than as a window and door product, which is the difference between this and the two above.',
+          'That distinction is the listings\u2019, not the source\u2019s: Wisconsin Horticulture does not distinguish between caulk formulations.',
+        ]}
+        asin="B0B8QPH3RW"
+      />
+
+      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
+        <p className="m-0 text-base font-bold text-slate-900">
+          What is not listed here, and why
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          <strong>Indoor insecticides.</strong> Wisconsin Horticulture states that insecticide
+          sprays are generally not recommended for boxelder bugs that have already made their way
+          indoors. Its answer for the ones inside is a vacuum cleaner, which most households already
+          own.
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          <strong>Sprays for the clusters outside.</strong> Wisconsin Horticulture does allow for
+          these, as set out above &mdash; registered insecticides, insecticidal soap or hot soapy
+          water, with repeat applications as more bugs arrive. No product is listed for it because
+          the source names categories rather than a specification a listing could be checked
+          against, and because this page makes no claim about how any of them performs.
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          <strong>Screening.</strong> No source read for this page gives a mesh size for boxelder
+          bugs, or names attics, chimneys or vents as entry points for them. The screening figure
+          used elsewhere on this site belongs to a different insect, so it is not applied here.
+        </p>
+      </div>
 
       <h2 id="not-that-bug">What It Is Not</h2>
       <ul>
@@ -296,103 +397,6 @@ export default function BoxelderBugsPage() {
         warmed by the furnace or the sun they become active and may crawl into the rooms. A
         warm spell in midwinter is not a new invasion.
       </p>
-
-      <h2 id="control">Keeping Them Out</h2>
-      <p>
-        Wisconsin Horticulture is explicit that preventing entry into the home comes ahead of
-        every other measure it discusses for boxelder bugs: caulk all openings around windows and
-        doors and in walls, siding or foundations.
-      </p>
-      <p>
-        Two details worth knowing. They enter through small gaps around windows, doors and
-        pipes and through small cracks in the foundation or siding, and they often gather in
-        large congregations on walls or foundations while seeking entry — so the mass on the
-        wall is a map of where to seal. And they are attracted to buildings with a lot of
-        southern exposure regardless of the color of the building, which is a useful correction
-        to the widespread belief that painting the house differently would help.
-      </p>
-      <p>
-        For the ones already inside, Wisconsin Horticulture recommends sucking up the occasional
-        bug with a vacuum cleaner, and states that insecticide sprays are generally not
-        recommended for boxelder bugs that have already made their way indoors.
-      </p>
-      <p>
-        For clusters on the outside of the building, the same source notes they can be sprayed
-        with registered insecticides, insecticidal soap or hot soapy water, and that sprays may
-        need repeating as more bugs arrive, especially when using soapy water. We make no claim
-        here about how well any of those perform; that is the source&rsquo;s statement of what
-        is used, not ours about what works.
-      </p>
-
-      <h3>Caulk for the sealing work</h3>
-      <p>
-        <strong>
-          These are examples of one material, for the sealing Wisconsin Horticulture puts first.
-          They are in no order of preference, none is called better than another, and nothing here
-          is a claim about how well any of them performs &mdash; the limit stated just above applies
-          to these cards too.
-        </strong>
-      </p>
-      <p>
-        <strong>Where the caulk specification comes from, stated plainly.</strong> Wisconsin
-        Horticulture, the source this page uses for boxelder bugs, says to caulk all openings but
-        does not name a type of caulk. The type below comes from Penn State Extension, which
-        specifies good quality silicone or silicone-latex caulk for sealing cracks around windows,
-        doors, siding, utility pipes and behind chimneys. That is a specification written about the
-        other fall invaders, and it is attributed here rather than presented as a boxelder finding.
-      </p>
-
-      <UsToolCard
-        name="GE Advanced Silicone Caulk for Window &amp; Door, Clear, 10 fl oz Cartridge"
-        whatItDoes={[
-          'A silicone caulk. Wisconsin Horticulture says to caulk all openings around windows and doors and in walls, siding or foundations.',
-          'Its own listing states silicone and a 10 fl oz cartridge. Nothing further about it is claimed here.',
-          'Wisconsin Horticulture notes the bugs often gather in large congregations on walls or foundations while seeking entry, which is where the sealing work is worth doing first.',
-        ]}
-        asin="B0BVGTM2XY"
-      />
-
-      <UsToolCard
-        name="GE Advanced Silicone Window &amp; Door Sealant, Clear, 10.1 oz Cartridge"
-        whatItDoes={[
-          'A second silicone option in the same cartridge size range, for the same sealing work.',
-          'Wisconsin Horticulture names the openings to close; it names no product, and neither does this page.',
-        ]}
-        asin="B0000CBJ7W"
-      />
-
-      <UsToolCard
-        name="GE All Purpose Silicone Caulk, Clear, 10 fl oz Cartridge"
-        whatItDoes={[
-          'Also a silicone caulk. Its listing describes it as all purpose rather than as a window and door product, which is the difference between this and the two above.',
-          'That distinction is the listings\u2019, not the source\u2019s: Wisconsin Horticulture does not distinguish between caulk formulations.',
-        ]}
-        asin="B0B8QPH3RW"
-      />
-
-      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
-        <p className="m-0 text-base font-bold text-slate-900">
-          What is not listed here, and why
-        </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
-          <strong>Indoor insecticides.</strong> Wisconsin Horticulture states that insecticide
-          sprays are generally not recommended for boxelder bugs that have already made their way
-          indoors. Its answer for the ones inside is a vacuum cleaner, which most households already
-          own.
-        </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
-          <strong>Sprays for the clusters outside.</strong> Wisconsin Horticulture does allow for
-          these, as set out above &mdash; registered insecticides, insecticidal soap or hot soapy
-          water, with repeat applications as more bugs arrive. No product is listed for it because
-          the source names categories rather than a specification a listing could be checked
-          against, and because this page makes no claim about how any of them performs.
-        </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
-          <strong>Screening.</strong> No source read for this page gives a mesh size for boxelder
-          bugs, or names attics, chimneys or vents as entry points for them. The screening figure
-          used elsewhere on this site belongs to a different insect, so it is not applied here.
-        </p>
-      </div>
 
       <h2 id="tree-removal">The Tree Question</h2>
       <p>

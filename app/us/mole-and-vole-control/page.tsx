@@ -359,6 +359,10 @@ export default function MoleAndVoleControlPage() {
         <em>&ldquo;If they are not successful in two to three days, move traps to a new location.&rdquo;</em>
       </p>
 
+      <p>
+        The traps below are named because the sources on this page describe a mouse-sized snap trap set in the runway, and each listing states its size.
+      </p>
+
       {moleTraps.map((p) => (
         <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
       ))}

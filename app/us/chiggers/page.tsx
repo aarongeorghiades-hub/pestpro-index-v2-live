@@ -126,12 +126,12 @@ const sources: Source[] = [
 const tocItems = [
   { id: 'what-they-are', title: 'What They Actually Are' },
   { id: 'not-a-tick', title: 'Chigger Bite or Tick Bite' },
+  { id: 'products', title: 'Examples, by Sourced Ingredient' },
   { id: 'the-itch', title: 'Why the Itch Comes Late' },
   { id: 'biology', title: 'Only the Larva Bites' },
   { id: 'disease', title: 'Disease, and Scrub Typhus' },
   { id: 'prevention', title: 'Not Being Bitten' },
   { id: 'yard', title: 'The Yard, and What Not to Buy' },
-  { id: 'products', title: 'Examples, by Sourced Ingredient' },
   { id: 'where', title: 'Where and When' },
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
@@ -266,6 +266,144 @@ export default function ChiggersPage() {
         areas where clothing is tight-fitting, such as the ankles, waist, and
         armpits&rdquo;. A line of bites
         following a sock top or a waistband is a chigger signature.
+      </p>
+
+      <h2 id="products">Examples, by Sourced Ingredient</h2>
+      <p>
+        <strong>
+          These are examples of the ingredient classes the sources name, grouped by what
+          each is for. They are in no order of preference and none is called better than
+          another, because no source consulted for this page compares any two named
+          products.
+        </strong>{' '}
+        What is selected is selected against an ingredient a source actually named, not
+        against a brand.
+      </p>
+      <p>
+        Two categories a reader might expect are deliberately absent, and both absences are
+        stated rather than filled.{' '}
+        <strong>There is no yard treatment</strong>, for the reason set out above.{' '}
+        <strong>There is no DEET product</strong>, even though Ohio State lists DEET first
+        and Texas A&amp;M names it explicitly &mdash; no DEET listing could be sourced and
+        confirmed available when the products on this page were checked on 23 August 2026,
+        and nothing was substituted into the gap.
+      </p>
+
+      <h3>Repellents and clothing treatment</h3>
+      <p>
+        These three also appear on <Link href="/us/ticks">our ticks page</Link>. They are
+        listed here because the ingredient classes are independently named for chiggers by
+        Ohio State and Texas A&amp;M, and because each product&rsquo;s own listing states
+        chigger use.
+      </p>
+
+      <p>
+        The repellents below are named because each listing states one of the active ingredients the sources on this page name, at a stated concentration.
+      </p>
+
+      <UsToolCard
+        name="Sawyer Premium Permethrin Insect Repellent for Clothing, Gear &amp; Tents"
+        whatItDoes={[
+          'A permethrin treatment for fabric, not for skin. Texas A&M AgriLife Extension states to apply products containing permethrin to clothing.',
+          'No source consulted for this page gives a permethrin concentration for chiggers, so none is claimed here.',
+          'Texas A&M advises tucking pants legs inside boots and buttoning cuffs and collars, which is where treated fabric matters most.',
+        ]}
+        asin="B001ANQVYU"
+      />
+
+      <UsToolCard
+        name="Sawyer Products SP543 Premium Insect Repellent with 20% Picaridin, Pump Spray"
+        whatItDoes={[
+          'Picaridin is one of the repellent ingredients Ohio State University Extension names for chiggers, alongside DEET and lemon-oil-of-eucalyptus products.',
+          'Texas A&M AgriLife Extension states to apply repellents according to label directions.',
+        ]}
+        asin="B002CMQJYU"
+      />
+
+      <UsToolCard
+        name="OFF! Deep Woods Max Insect Repellent, Mosquito &amp; Tick Aerosol with 20% Picaridin"
+        whatItDoes={[
+          'A second example of the same ingredient Ohio State University Extension names, in an aerosol rather than a pump spray.',
+          'Ohio State University Extension pairs repellent use with protective clothing rather than presenting it as sufficient on its own.',
+        ]}
+        asin="B0G5VN3GB3"
+      />
+
+      <h3>After a bite</h3>
+
+      <div className="not-prose my-8 rounded-lg border-l-4 border-red-500 bg-red-50 px-6 py-5">
+        <p className="m-0 text-base font-bold text-red-900">
+          Read this before the four cards below
+        </p>
+        <p className="m-0 mt-3 text-base text-red-900">
+          <strong>
+            Ohio State University Extension: &ldquo;Extension Staff are not medical
+            professionals and cannot diagnose bites or other skin ailments.&rdquo;
+          </strong>{' '}
+          The same source advises to &ldquo;speak with a pharmacist or medical professional
+          for recommendations on reducing itchy symptoms&rdquo;.
+        </p>
+        <p className="m-0 mt-3 text-base text-red-900">
+          <strong>
+            University of Maryland Extension: &ldquo;Topical creams or ointments help to
+            relieve itching. Ask your physician for a recommendation.&rdquo;
+          </strong>
+        </p>
+        <p className="m-0 mt-3 text-base text-red-900">
+          One source of the three names ingredients. Texas A&amp;M AgriLife Extension names
+          oral antihistamines, anti-itch creams containing camphor and menthol, calamine or
+          pramoxine, and hydrocortisone ointments, and advises applying an antiseptic
+          ointment to prevent infection. The four products below are examples of the
+          ingredients Texas A&amp;M named.{' '}
+          <strong>
+            They are not a recommendation from us, and nothing on this page is medical
+            advice. Two of the three sources tell you to ask a pharmacist or a physician,
+            and that instruction is theirs, not ours.
+          </strong>
+        </p>
+      </div>
+
+      <UsToolCard
+        name="Amazon Basics Medicated Calamine Anti-Itch Lotion, 6 Fluid Ounce"
+        whatItDoes={[
+          'Calamine is one of the anti-itch cream ingredients Texas A&M AgriLife Extension names.',
+          'University of Maryland Extension states that topical creams or ointments help to relieve itching, and to ask your physician for a recommendation.',
+          'Ohio State University Extension states that extension staff are not medical professionals and cannot diagnose bites or other skin ailments.',
+        ]}
+        asin="B0BJRS2F8H"
+      />
+
+      <UsToolCard
+        name="Leader Medicated Calamine Clear Lotion, Anti-Itch, External Analgesic Skin Protectant"
+        whatItDoes={[
+          'A second example of calamine, the ingredient Texas A&M AgriLife Extension names.',
+          'University of Maryland Extension states that scratching often removes the mite but can result in a secondary infection.',
+        ]}
+        asin="B08TKJY4R8"
+      />
+
+      <UsToolCard
+        name="Cortizone-10 Soothing Aloe Itch Relief Cream, 1% Hydrocortisone"
+        whatItDoes={[
+          'Hydrocortisone ointments are among the approaches Texas A&M AgriLife Extension names for relief.',
+          'Ohio State University Extension advises speaking with a pharmacist or medical professional for recommendations on reducing itchy symptoms.',
+        ]}
+        asin="B0BJMQBSKJ"
+      />
+
+      <UsToolCard
+        name="Cortizone-10 Water Resistant Itch Relief Ointment, 1% Hydrocortisone"
+        whatItDoes={[
+          'A second example of hydrocortisone, the ingredient Texas A&M AgriLife Extension names.',
+          'Texas A&M AgriLife Extension separately advises applying an antiseptic ointment to prevent infection.',
+        ]}
+        asin="B0BJMDMDCX"
+      />
+
+      <p>
+        Seven products appear above and there is no eighth. No monitoring or detection
+        product is listed either: no source consulted describes any way of monitoring for
+        chiggers, so that category does not exist on this page.
       </p>
 
       <h2 id="the-itch">Why the Itch Comes Late</h2>
@@ -485,140 +623,6 @@ export default function ChiggersPage() {
         alfreddugesi</em>, inhabits disturbed grassy and weedy upland areas&rdquo;, and
         &ldquo;The other, <em>Eutrombicula splendens</em>, prefers moist habitats such as
         swamps and bogs&rdquo;.
-      </p>
-
-      <h2 id="products">Examples, by Sourced Ingredient</h2>
-      <p>
-        <strong>
-          These are examples of the ingredient classes the sources name, grouped by what
-          each is for. They are in no order of preference and none is called better than
-          another, because no source consulted for this page compares any two named
-          products.
-        </strong>{' '}
-        What is selected is selected against an ingredient a source actually named, not
-        against a brand.
-      </p>
-      <p>
-        Two categories a reader might expect are deliberately absent, and both absences are
-        stated rather than filled.{' '}
-        <strong>There is no yard treatment</strong>, for the reason set out above.{' '}
-        <strong>There is no DEET product</strong>, even though Ohio State lists DEET first
-        and Texas A&amp;M names it explicitly &mdash; no DEET listing could be sourced and
-        confirmed available when the products on this page were checked on 23 August 2026,
-        and nothing was substituted into the gap.
-      </p>
-
-      <h3>Repellents and clothing treatment</h3>
-      <p>
-        These three also appear on <Link href="/us/ticks">our ticks page</Link>. They are
-        listed here because the ingredient classes are independently named for chiggers by
-        Ohio State and Texas A&amp;M, and because each product&rsquo;s own listing states
-        chigger use.
-      </p>
-
-      <UsToolCard
-        name="Sawyer Premium Permethrin Insect Repellent for Clothing, Gear &amp; Tents"
-        whatItDoes={[
-          'A permethrin treatment for fabric, not for skin. Texas A&M AgriLife Extension states to apply products containing permethrin to clothing.',
-          'No source consulted for this page gives a permethrin concentration for chiggers, so none is claimed here.',
-          'Texas A&M advises tucking pants legs inside boots and buttoning cuffs and collars, which is where treated fabric matters most.',
-        ]}
-        asin="B001ANQVYU"
-      />
-
-      <UsToolCard
-        name="Sawyer Products SP543 Premium Insect Repellent with 20% Picaridin, Pump Spray"
-        whatItDoes={[
-          'Picaridin is one of the repellent ingredients Ohio State University Extension names for chiggers, alongside DEET and lemon-oil-of-eucalyptus products.',
-          'Texas A&M AgriLife Extension states to apply repellents according to label directions.',
-        ]}
-        asin="B002CMQJYU"
-      />
-
-      <UsToolCard
-        name="OFF! Deep Woods Max Insect Repellent, Mosquito &amp; Tick Aerosol with 20% Picaridin"
-        whatItDoes={[
-          'A second example of the same ingredient Ohio State University Extension names, in an aerosol rather than a pump spray.',
-          'Ohio State University Extension pairs repellent use with protective clothing rather than presenting it as sufficient on its own.',
-        ]}
-        asin="B0G5VN3GB3"
-      />
-
-      <h3>After a bite</h3>
-
-      <div className="not-prose my-8 rounded-lg border-l-4 border-red-500 bg-red-50 px-6 py-5">
-        <p className="m-0 text-base font-bold text-red-900">
-          Read this before the four cards below
-        </p>
-        <p className="m-0 mt-3 text-base text-red-900">
-          <strong>
-            Ohio State University Extension: &ldquo;Extension Staff are not medical
-            professionals and cannot diagnose bites or other skin ailments.&rdquo;
-          </strong>{' '}
-          The same source advises to &ldquo;speak with a pharmacist or medical professional
-          for recommendations on reducing itchy symptoms&rdquo;.
-        </p>
-        <p className="m-0 mt-3 text-base text-red-900">
-          <strong>
-            University of Maryland Extension: &ldquo;Topical creams or ointments help to
-            relieve itching. Ask your physician for a recommendation.&rdquo;
-          </strong>
-        </p>
-        <p className="m-0 mt-3 text-base text-red-900">
-          One source of the three names ingredients. Texas A&amp;M AgriLife Extension names
-          oral antihistamines, anti-itch creams containing camphor and menthol, calamine or
-          pramoxine, and hydrocortisone ointments, and advises applying an antiseptic
-          ointment to prevent infection. The four products below are examples of the
-          ingredients Texas A&amp;M named.{' '}
-          <strong>
-            They are not a recommendation from us, and nothing on this page is medical
-            advice. Two of the three sources tell you to ask a pharmacist or a physician,
-            and that instruction is theirs, not ours.
-          </strong>
-        </p>
-      </div>
-
-      <UsToolCard
-        name="Amazon Basics Medicated Calamine Anti-Itch Lotion, 6 Fluid Ounce"
-        whatItDoes={[
-          'Calamine is one of the anti-itch cream ingredients Texas A&M AgriLife Extension names.',
-          'University of Maryland Extension states that topical creams or ointments help to relieve itching, and to ask your physician for a recommendation.',
-          'Ohio State University Extension states that extension staff are not medical professionals and cannot diagnose bites or other skin ailments.',
-        ]}
-        asin="B0BJRS2F8H"
-      />
-
-      <UsToolCard
-        name="Leader Medicated Calamine Clear Lotion, Anti-Itch, External Analgesic Skin Protectant"
-        whatItDoes={[
-          'A second example of calamine, the ingredient Texas A&M AgriLife Extension names.',
-          'University of Maryland Extension states that scratching often removes the mite but can result in a secondary infection.',
-        ]}
-        asin="B08TKJY4R8"
-      />
-
-      <UsToolCard
-        name="Cortizone-10 Soothing Aloe Itch Relief Cream, 1% Hydrocortisone"
-        whatItDoes={[
-          'Hydrocortisone ointments are among the approaches Texas A&M AgriLife Extension names for relief.',
-          'Ohio State University Extension advises speaking with a pharmacist or medical professional for recommendations on reducing itchy symptoms.',
-        ]}
-        asin="B0BJMQBSKJ"
-      />
-
-      <UsToolCard
-        name="Cortizone-10 Water Resistant Itch Relief Ointment, 1% Hydrocortisone"
-        whatItDoes={[
-          'A second example of hydrocortisone, the ingredient Texas A&M AgriLife Extension names.',
-          'Texas A&M AgriLife Extension separately advises applying an antiseptic ointment to prevent infection.',
-        ]}
-        asin="B0BJMDMDCX"
-      />
-
-      <p>
-        Seven products appear above and there is no eighth. No monitoring or detection
-        product is listed either: no source consulted describes any way of monitoring for
-        chiggers, so that category does not exist on this page.
       </p>
 
       <h2 id="where">Where and When</h2>

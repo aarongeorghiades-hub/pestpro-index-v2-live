@@ -135,10 +135,10 @@ const products: ProductRecord[] = [
 const tocItems = [
   { id: 'health', title: 'What the Sources Say About Disease' },
   { id: 'species', title: 'Four Flea Species, and Only One Carries the Plague Claim' },
+  { id: 'comb', title: 'Combing the Animal' },
   { id: 'lifecycle', title: 'The Life Cycle, and Two Numbers That Must Not Be Merged' },
   { id: 'pets', title: 'Warnings the Sources Give About Treating the Animal' },
   { id: 'prescription', title: 'The Most Effective Products Are Prescription-Only' },
-  { id: 'comb', title: 'Combing the Animal' },
   { id: 'traps', title: 'Light Traps, and What One Source Says They Will Not Do' },
   { id: 'notwork', title: 'What the Sources Say Does Not Work' },
   { id: 'faq', title: 'Questions' },
@@ -371,6 +371,44 @@ export default function FleasPage() {
         Extension states opossums carry murine typhus.
       </p>
 
+      <h2 id="comb">Combing the Animal</h2>
+      <p>
+        <strong>UC IPM:</strong>{' '}
+        <em>
+          &ldquo;Special metal flea combs are available that help effectively remove adult fleas from
+          the coat of pets.&rdquo;
+        </em>{' '}
+        The same source says combing at regular intervals is also a good way to monitor the flea
+        population and help you decide when other control measures might be necessary.
+      </p>
+      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
+        <p className="m-0 text-base font-bold text-slate-900">
+          Only one comb is named here, and the reason is a gap in what the listings say rather than a
+          judgment about the products.
+        </p>
+        <p className="mt-3 mb-0 text-base text-slate-800">
+          The source asks for two things at once: a metal comb, and one that removes fleas from a
+          pet. <strong>We checked four combs. One listing is gone entirely.</strong> Two more state
+          the metal and then describe removing dandruff flakes, small items and dander &mdash;{' '}
+          <strong>
+            their own feature text never says the comb removes fleas, and the word flea appears only
+            in the product name.
+          </strong>{' '}
+          A property stated only in a product name is not a claim, so those two are not named here.
+          <strong>
+            {' '}
+            That is a gap in the evidence available, and this page reports it as one rather than
+            filling it with a claim the seller did not make.
+          </strong>
+        </p>
+      </div>
+      <p>
+        The comb below is named because the sources on this page describe combing as the first step on the animal, before anything is applied to the house.
+      </p>
+      {FC1.map((p) => (
+        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+      ))}
+
       <h2 id="lifecycle">The Life Cycle, and Two Numbers That Must Not Be Merged</h2>
       <p>
         <strong>All the figures in this section are cat flea figures</strong>, from UC IPM&rsquo;s
@@ -495,41 +533,6 @@ export default function FleasPage() {
         UC IPM also states that there is no literature concerning the effectiveness of
         over-the-counter spot-on formulations.
       </p>
-
-      <h2 id="comb">Combing the Animal</h2>
-      <p>
-        <strong>UC IPM:</strong>{' '}
-        <em>
-          &ldquo;Special metal flea combs are available that help effectively remove adult fleas from
-          the coat of pets.&rdquo;
-        </em>{' '}
-        The same source says combing at regular intervals is also a good way to monitor the flea
-        population and help you decide when other control measures might be necessary.
-      </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
-          Only one comb is named here, and the reason is a gap in what the listings say rather than a
-          judgment about the products.
-        </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
-          The source asks for two things at once: a metal comb, and one that removes fleas from a
-          pet. <strong>We checked four combs. One listing is gone entirely.</strong> Two more state
-          the metal and then describe removing dandruff flakes, small items and dander &mdash;{' '}
-          <strong>
-            their own feature text never says the comb removes fleas, and the word flea appears only
-            in the product name.
-          </strong>{' '}
-          A property stated only in a product name is not a claim, so those two are not named here.
-          <strong>
-            {' '}
-            That is a gap in the evidence available, and this page reports it as one rather than
-            filling it with a claim the seller did not make.
-          </strong>
-        </p>
-      </div>
-      {FC1.map((p) => (
-        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-      ))}
 
       <h2 id="traps">Light Traps, and What One Source Says They Will Not Do</h2>
       <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">

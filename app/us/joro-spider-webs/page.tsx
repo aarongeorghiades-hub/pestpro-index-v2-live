@@ -150,10 +150,10 @@ const sources: Source[] = [
 
 const tocItems = [
   { id: 'how-big', title: 'How Big They Get' },
+  { id: 'the-tool', title: 'The Tool for the Job' },
   { id: 'why-so-big', title: 'Why So Big' },
   { id: 'where', title: 'Where They Get Built' },
   { id: 'removing', title: 'Clearing a Web Safely' },
-  { id: 'the-tool', title: 'The Tool for the Job' },
   { id: 'why-not-spray', title: 'Why Not to Spray' },
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
@@ -216,6 +216,59 @@ export default function JoroSpiderWebsPage() {
         it as very strong and sticky. It does not brush off the way an old cobweb does.
       </p>
 
+      <h2 id="the-tool">The Tool for the Job</h2>
+      <p>
+        The only equipment this actually needs is reach. A telescoping cobweb duster is a lightweight
+        pole with a bristled head on the end: you extend the pole, hook the head through the web, and
+        twist so the silk winds onto the bristles instead of onto your arm. It is a physical tool and
+        nothing else &mdash; no chemistry, no bait, no active ingredient. It removes silk from a
+        surface, and that is the entire mechanism.
+      </p>
+      <p>
+        The reason to prefer one over a broom is the second-story anchor line. A broom gives you about
+        nine feet of reach standing on the ground; a three-stage pole roughly doubles that, which is
+        the difference between clearing a gutter-line web from the lawn and getting a ladder out.
+      </p>
+      <p>
+        University of Georgia Extension names the same manual approach and the same everyday tools in
+        Circular 1289: <strong>&ldquo;A rake, a broom, or a stick can be used for wrapping up the
+        spiders.&rdquo;</strong> The same publication gives the reason reach matters, and it puts it
+        more bluntly than most sources would:{' '}
+        <strong>
+          &ldquo;The higher up the spider is, however, the better the chance it will end up on your
+          head.&rdquo;
+        </strong>{' '}
+        That is the argument for a pole rather than a broom in one sentence, from the extension
+        service closest to this animal. It also explains why the work is worth doing once and
+        properly: University of Georgia states in the same circular that{' '}
+        <strong>
+          &ldquo;Simply destroying the web is not effective, as they can rebuild it in short
+          order.&rdquo;
+        </strong>
+      </p>
+
+      <p>
+        The tool below is a telescoping duster, named because taking a web down by hand is the only removal method the sources on this page describe.
+      </p>
+
+      <UsToolCard
+        name="EVERSPROUT 5-to-12 Foot Cobweb Duster & Pole Combo"
+        whatItDoes={[
+          'Three-stage aluminum pole, listed as extending from 5 feet to 12 feet',
+          'Listed reach of about 20 feet when held overhead from the ground',
+          'Bristled head that winds silk onto itself rather than smearing it',
+          'A physical removal tool only — it contains no pesticide and makes no chemical claim',
+        ]}
+        asin="B075L7QWP4"
+      />
+
+      <p>
+        One tool, named plainly. We have not built a ranking, a comparison table, or a
+        &ldquo;top picks&rdquo; category around a single item, because a table of one is not a
+        comparison. Any telescoping duster of similar length does the same job; this one is named
+        so the description points at something specific rather than at a shopping category.
+      </p>
+
       <h2 id="why-so-big">Why So Big</h2>
       <p>
         A web is a fishing net, and the size of the net follows from what it is fishing for. A
@@ -273,55 +326,6 @@ export default function JoroSpiderWebsPage() {
         If the spider itself worries you, the relevant research is on{' '}
         <Link href="/us/are-joro-spiders-dangerous">the dangerous-or-not page</Link>: a disturbed
         Joro&rsquo;s documented response is to freeze for over an hour, not to advance on you.
-      </p>
-
-      <h2 id="the-tool">The Tool for the Job</h2>
-      <p>
-        The only equipment this actually needs is reach. A telescoping cobweb duster is a lightweight
-        pole with a bristled head on the end: you extend the pole, hook the head through the web, and
-        twist so the silk winds onto the bristles instead of onto your arm. It is a physical tool and
-        nothing else &mdash; no chemistry, no bait, no active ingredient. It removes silk from a
-        surface, and that is the entire mechanism.
-      </p>
-      <p>
-        The reason to prefer one over a broom is the second-story anchor line. A broom gives you about
-        nine feet of reach standing on the ground; a three-stage pole roughly doubles that, which is
-        the difference between clearing a gutter-line web from the lawn and getting a ladder out.
-      </p>
-      <p>
-        University of Georgia Extension names the same manual approach and the same everyday tools in
-        Circular 1289: <strong>&ldquo;A rake, a broom, or a stick can be used for wrapping up the
-        spiders.&rdquo;</strong> The same publication gives the reason reach matters, and it puts it
-        more bluntly than most sources would:{' '}
-        <strong>
-          &ldquo;The higher up the spider is, however, the better the chance it will end up on your
-          head.&rdquo;
-        </strong>{' '}
-        That is the argument for a pole rather than a broom in one sentence, from the extension
-        service closest to this animal. It also explains why the work is worth doing once and
-        properly: University of Georgia states in the same circular that{' '}
-        <strong>
-          &ldquo;Simply destroying the web is not effective, as they can rebuild it in short
-          order.&rdquo;
-        </strong>
-      </p>
-
-      <UsToolCard
-        name="EVERSPROUT 5-to-12 Foot Cobweb Duster & Pole Combo"
-        whatItDoes={[
-          'Three-stage aluminum pole, listed as extending from 5 feet to 12 feet',
-          'Listed reach of about 20 feet when held overhead from the ground',
-          'Bristled head that winds silk onto itself rather than smearing it',
-          'A physical removal tool only — it contains no pesticide and makes no chemical claim',
-        ]}
-        asin="B075L7QWP4"
-      />
-
-      <p>
-        One tool, named plainly. We have not built a ranking, a comparison table, or a
-        &ldquo;top picks&rdquo; category around a single item, because a table of one is not a
-        comparison. Any telescoping duster of similar length does the same job; this one is named
-        so the description points at something specific rather than at a shopping category.
       </p>
 
       <h2 id="why-not-spray">Why Not to Spray</h2>

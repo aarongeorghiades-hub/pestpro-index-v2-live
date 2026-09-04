@@ -197,8 +197,8 @@ const sources: Source[] = [
 const tocItems = [
   { id: 'which-ants', title: 'Which Ants the Name Covers' },
   { id: 'identification', title: 'Telling Them From Native Ants' },
-  { id: 'the-sting', title: 'The Sting' },
   { id: 'two-step', title: 'The Two-Step Method' },
+  { id: 'the-sting', title: 'The Sting' },
   { id: 'spreaders', title: 'The Spreader Matters' },
   { id: 'mound-treatment', title: 'Step Two: Treating a Mound' },
   { id: 'gloves', title: 'Handling Liquid Concentrates' },
@@ -340,6 +340,182 @@ export default function ImportedFireAntsPage() {
           venom.&rdquo;
         </em>
       </p>
+
+      <h2 id="two-step">The Two-Step Method</h2>
+      <p>
+        This is the method Texas A&amp;M AgriLife Extension publishes and the one every Texas
+        source on this page points at. AgriLife Extension describes it as{' '}
+        <em>
+          &ldquo;less labor-intensive, less toxic and more environmentally friendly than most
+          other means of do-it-yourself fire ant control.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>Step one, in the source&rsquo;s words:</strong>{' '}
+        <em>
+          &ldquo;The first step is to broadcast a fire ant bait&mdash;a product containing a
+          food plus an insecticide&mdash;over the whole yard, usually in the fall and
+          spring.&rdquo;
+        </em>{' '}
+        The mechanism is why a bait works where a spray does not. UF/IFAS Extension states:{' '}
+        <em>
+          &ldquo;Fire ants are omnivorous. They eat plants, insects, oils, and sugars, but they
+          are only able to ingest liquids.&rdquo;
+        </em>{' '}
+        And the target:{' '}
+        <em>
+          &ldquo;To eliminate a colony, the queen must be killed; in multi-queen colonies, all
+          queens must be killed.&rdquo;
+        </em>
+      </p>
+
+      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
+        <p className="m-0 text-base font-bold text-amber-900">
+          Before you broadcast anything: two sources say it can be the wrong move
+        </p>
+        <p className="m-0 mt-3 text-sm text-amber-900">
+          UF/IFAS Extension states that{' '}
+          <em>
+            &ldquo;broadcast baiting may be counterproductive because it can also decrease
+            native ant populations that slow fire ant spread&rdquo;
+          </em>
+          , and gives the alternative:{' '}
+          <em>
+            &ldquo;If there are native ants in your treatment area, try using only individual
+            mound treatments to prevent affecting non-target ant populations.&rdquo;
+          </em>
+        </p>
+        <p className="m-0 mt-3 text-sm text-amber-900">
+          Texas A&amp;M puts a number on where the whole program stops being the right tool.
+          It is{' '}
+          <em>
+            &ldquo;not suggested for previously untreated areas with large numbers of native
+            ants and few fire ant mounds&mdash;15 to 20 mounds per acre or less&rdquo;
+          </em>
+          . The same publication states that{' '}
+          <em>
+            &ldquo;preserving and encouraging native ant species that compete with the fire ant
+            for territory and resources is beneficial&rdquo;
+          </em>
+          .
+        </p>
+        <p className="m-0 mt-3 text-sm text-amber-900">
+          <strong>
+            Texas A&amp;M, AgriLife Extension and Clemson Extension all put a broadcast bait
+            first. UF/IFAS qualifies it and Texas A&amp;M names a density below which it is not
+            suggested at all. Both positions come from extension services and both are given
+            here.
+          </strong>
+        </p>
+      </div>
+
+      <p>
+        <strong>The rate.</strong> AgriLife Extension states:{' '}
+        <em>
+          &ldquo;Follow the label. The typical application is 1 to 1.5 pounds per acre. Using
+          more is wasteful and doesn&rsquo;t improve results.&rdquo;
+        </em>{' '}
+        Clemson Extension gives the same figure and adds:{' '}
+        <em>&ldquo;DO NOT APPLY MORE BAIT THAN WHAT THE LABEL SPECIFIES.&rdquo;</em>
+      </p>
+      <p>
+        <strong>The temperature, where three sources give three answers.</strong> Clemson
+        Extension states:{' '}
+        <em>&ldquo;Ideally, soil surface temperatures should be between 70&ordm; and 85&ordm; &deg;F.&rdquo;</em>{' '}
+        The 2003 Texas A&amp;M publication gives 70 to 90 degrees F, and puts the season at May
+        to September in most of Texas &mdash; that sentence is broken across a column by a
+        table in the original, so it is paraphrased here rather than quoted. AgriLife Extension
+        in 2026 gives a looser figure:{' '}
+        <em>
+          &ldquo;Apply bait when temperatures are about 70 degrees or above, when ants are
+          actively foraging.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>Rather than pick a temperature, use the test.</strong> Texas A&amp;M says to put
+        a small amount of bait or suitable food &mdash; a hot dog or potato chip &mdash; next to
+        a mound, and:{' '}
+        <em>
+          &ldquo;If ants begin removing the food within 30 minutes, it&rsquo;s a good time to
+          treat.&rdquo;
+        </em>{' '}
+        Clemson checks its potato chips after 20 to 30 minutes. On the season, Clemson states:{' '}
+        <em>
+          &ldquo;Make two annual bait applications; one in the spring and one in the fall. Apply
+          baits in late May/early June and again in late September/early October.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>Rain, and the two sources give different windows.</strong> Texas A&amp;M in 2003:{' '}
+        <em>&ldquo;Apply baits when no rain is expected for at least 8 hours.&rdquo;</em>{' '}
+        AgriLife Extension in 2026:{' '}
+        <em>&ldquo;Check the forecast and avoid applying bait within 48 hours of rain.&rdquo;</em>
+      </p>
+      <p>
+        <strong>Where to put it.</strong> AgriLife Extension states:{' '}
+        <em>
+          &ldquo;Sprinkle bait around the mound&rsquo;s perimeter rather than directly on the
+          mound. When disturbed, ants go into defense mode and won&rsquo;t collect bait.&rdquo;
+        </em>{' '}
+        NC State Extension gives the distance:{' '}
+        <em>
+          &ldquo;Do not place on top of mound. Foraging ants exit the nest along the outside
+          base of the mound. Place product within a 2 ft radius around mound.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>Freshness, where the two sources are irreconcilable.</strong> Texas A&amp;M
+        states:{' '}
+        <em>&ldquo;Unopened containers stay fresh for up to 2 years.&rdquo;</em> NC State
+        Extension states that baits function as attractants and so{' '}
+        <em>&ldquo;the product must be fresh (1-3 month shelf life)&rdquo;</em>. Two years
+        against one to three months. The practical route through it is Texas A&amp;M&rsquo;s own
+        test:{' '}
+        <em>
+          &ldquo;Sprinkle a small amount next to an active mound. If the bait is fresh, ants
+          will begin removing it within 30 minutes.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>Three baits are named below, and they are named for one reason: the active
+        ingredient each listing publishes is one a source names for fire ants.</strong> They are
+        not ranked. No speed claim is made for any of them, because the sources disagree with
+        each other on how fast these actives work and this page has no basis for choosing.
+      </p>
+
+      <p>
+        The baits below are named because the two-step method above begins with a broadcast bait, and each listing states its own active ingredient.
+      </p>
+
+      <UsToolCard
+        name="Amdro Fire Ant Bait, Granular, 1 lb"
+        whatItDoes={[
+          'Its listing publishes hydramethylnon as the active ingredient. Texas A&M names hydramethylnon among the actives used in fire ant baits, and UF/IFAS Extension describes hydramethylnon as killing ants by preventing them from converting food into energy.',
+          'A granular bait — a product containing a food plus an insecticide, which is what Texas A&M describes step one as using.',
+          'Sold as 1 lb, which is roughly the 1 to 1.5 pounds per acre AgriLife Extension gives as the typical application. Read the label rate for your product and area, which is the instruction every source gives.',
+        ]}
+        asin="B00GRT5E18"
+      />
+
+      <UsToolCard
+        name="Fertilome Come and Get It Fire Ant Killer Bait, 1 lb"
+        whatItDoes={[
+          'Its listing publishes spinosad as the active ingredient and carries an OMRI listing. AgriLife Extension in 2026 recommends products containing spinosad for a vegetable bed or where an organic approach is preferred.',
+          'Texas A&M describes the natural-products route as broadcasting a spinosad bait first, and states that the Organic Materials Review Institute certifies several spinosad-containing products for fire ant control.',
+          'UF/IFAS Extension advises looking for products certified by OMRI, which is the one organic criterion any source here gives that a listing can be checked against.',
+        ]}
+        asin="B08YS87GR5"
+      />
+
+      <UsToolCard
+        name="Extinguish Plus Fire Ant Bait, 1.5 lb"
+        whatItDoes={[
+          'Its listing publishes two actives, hydramethylnon and methoprene. Texas A&M names both: hydramethylnon among the faster actives, and methoprene among the insect growth regulator baits.',
+          'UF/IFAS Extension describes insect growth regulators including methoprene as reducing egg production and preventing worker development, and notes that they do not kill adult ants, so a treated colony persists until its workers die naturally.',
+          'Named here because its published actives are ones the sources name. No comparison against the other two baits on this page is offered or implied.',
+        ]}
+        asin="B015BSWVCU"
+      />
 
       <h2 id="the-sting">The Sting</h2>
       <p>
@@ -500,178 +676,6 @@ export default function ImportedFireAntsPage() {
           anything encountering them.&rdquo;
         </em>
       </p>
-
-      <h2 id="two-step">The Two-Step Method</h2>
-      <p>
-        This is the method Texas A&amp;M AgriLife Extension publishes and the one every Texas
-        source on this page points at. AgriLife Extension describes it as{' '}
-        <em>
-          &ldquo;less labor-intensive, less toxic and more environmentally friendly than most
-          other means of do-it-yourself fire ant control.&rdquo;
-        </em>
-      </p>
-      <p>
-        <strong>Step one, in the source&rsquo;s words:</strong>{' '}
-        <em>
-          &ldquo;The first step is to broadcast a fire ant bait&mdash;a product containing a
-          food plus an insecticide&mdash;over the whole yard, usually in the fall and
-          spring.&rdquo;
-        </em>{' '}
-        The mechanism is why a bait works where a spray does not. UF/IFAS Extension states:{' '}
-        <em>
-          &ldquo;Fire ants are omnivorous. They eat plants, insects, oils, and sugars, but they
-          are only able to ingest liquids.&rdquo;
-        </em>{' '}
-        And the target:{' '}
-        <em>
-          &ldquo;To eliminate a colony, the queen must be killed; in multi-queen colonies, all
-          queens must be killed.&rdquo;
-        </em>
-      </p>
-
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
-          Before you broadcast anything: two sources say it can be the wrong move
-        </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
-          UF/IFAS Extension states that{' '}
-          <em>
-            &ldquo;broadcast baiting may be counterproductive because it can also decrease
-            native ant populations that slow fire ant spread&rdquo;
-          </em>
-          , and gives the alternative:{' '}
-          <em>
-            &ldquo;If there are native ants in your treatment area, try using only individual
-            mound treatments to prevent affecting non-target ant populations.&rdquo;
-          </em>
-        </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
-          Texas A&amp;M puts a number on where the whole program stops being the right tool.
-          It is{' '}
-          <em>
-            &ldquo;not suggested for previously untreated areas with large numbers of native
-            ants and few fire ant mounds&mdash;15 to 20 mounds per acre or less&rdquo;
-          </em>
-          . The same publication states that{' '}
-          <em>
-            &ldquo;preserving and encouraging native ant species that compete with the fire ant
-            for territory and resources is beneficial&rdquo;
-          </em>
-          .
-        </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
-          <strong>
-            Texas A&amp;M, AgriLife Extension and Clemson Extension all put a broadcast bait
-            first. UF/IFAS qualifies it and Texas A&amp;M names a density below which it is not
-            suggested at all. Both positions come from extension services and both are given
-            here.
-          </strong>
-        </p>
-      </div>
-
-      <p>
-        <strong>The rate.</strong> AgriLife Extension states:{' '}
-        <em>
-          &ldquo;Follow the label. The typical application is 1 to 1.5 pounds per acre. Using
-          more is wasteful and doesn&rsquo;t improve results.&rdquo;
-        </em>{' '}
-        Clemson Extension gives the same figure and adds:{' '}
-        <em>&ldquo;DO NOT APPLY MORE BAIT THAN WHAT THE LABEL SPECIFIES.&rdquo;</em>
-      </p>
-      <p>
-        <strong>The temperature, where three sources give three answers.</strong> Clemson
-        Extension states:{' '}
-        <em>&ldquo;Ideally, soil surface temperatures should be between 70&ordm; and 85&ordm; &deg;F.&rdquo;</em>{' '}
-        The 2003 Texas A&amp;M publication gives 70 to 90 degrees F, and puts the season at May
-        to September in most of Texas &mdash; that sentence is broken across a column by a
-        table in the original, so it is paraphrased here rather than quoted. AgriLife Extension
-        in 2026 gives a looser figure:{' '}
-        <em>
-          &ldquo;Apply bait when temperatures are about 70 degrees or above, when ants are
-          actively foraging.&rdquo;
-        </em>
-      </p>
-      <p>
-        <strong>Rather than pick a temperature, use the test.</strong> Texas A&amp;M says to put
-        a small amount of bait or suitable food &mdash; a hot dog or potato chip &mdash; next to
-        a mound, and:{' '}
-        <em>
-          &ldquo;If ants begin removing the food within 30 minutes, it&rsquo;s a good time to
-          treat.&rdquo;
-        </em>{' '}
-        Clemson checks its potato chips after 20 to 30 minutes. On the season, Clemson states:{' '}
-        <em>
-          &ldquo;Make two annual bait applications; one in the spring and one in the fall. Apply
-          baits in late May/early June and again in late September/early October.&rdquo;
-        </em>
-      </p>
-      <p>
-        <strong>Rain, and the two sources give different windows.</strong> Texas A&amp;M in 2003:{' '}
-        <em>&ldquo;Apply baits when no rain is expected for at least 8 hours.&rdquo;</em>{' '}
-        AgriLife Extension in 2026:{' '}
-        <em>&ldquo;Check the forecast and avoid applying bait within 48 hours of rain.&rdquo;</em>
-      </p>
-      <p>
-        <strong>Where to put it.</strong> AgriLife Extension states:{' '}
-        <em>
-          &ldquo;Sprinkle bait around the mound&rsquo;s perimeter rather than directly on the
-          mound. When disturbed, ants go into defense mode and won&rsquo;t collect bait.&rdquo;
-        </em>{' '}
-        NC State Extension gives the distance:{' '}
-        <em>
-          &ldquo;Do not place on top of mound. Foraging ants exit the nest along the outside
-          base of the mound. Place product within a 2 ft radius around mound.&rdquo;
-        </em>
-      </p>
-      <p>
-        <strong>Freshness, where the two sources are irreconcilable.</strong> Texas A&amp;M
-        states:{' '}
-        <em>&ldquo;Unopened containers stay fresh for up to 2 years.&rdquo;</em> NC State
-        Extension states that baits function as attractants and so{' '}
-        <em>&ldquo;the product must be fresh (1-3 month shelf life)&rdquo;</em>. Two years
-        against one to three months. The practical route through it is Texas A&amp;M&rsquo;s own
-        test:{' '}
-        <em>
-          &ldquo;Sprinkle a small amount next to an active mound. If the bait is fresh, ants
-          will begin removing it within 30 minutes.&rdquo;
-        </em>
-      </p>
-      <p>
-        <strong>Three baits are named below, and they are named for one reason: the active
-        ingredient each listing publishes is one a source names for fire ants.</strong> They are
-        not ranked. No speed claim is made for any of them, because the sources disagree with
-        each other on how fast these actives work and this page has no basis for choosing.
-      </p>
-
-      <UsToolCard
-        name="Amdro Fire Ant Bait, Granular, 1 lb"
-        whatItDoes={[
-          'Its listing publishes hydramethylnon as the active ingredient. Texas A&M names hydramethylnon among the actives used in fire ant baits, and UF/IFAS Extension describes hydramethylnon as killing ants by preventing them from converting food into energy.',
-          'A granular bait — a product containing a food plus an insecticide, which is what Texas A&M describes step one as using.',
-          'Sold as 1 lb, which is roughly the 1 to 1.5 pounds per acre AgriLife Extension gives as the typical application. Read the label rate for your product and area, which is the instruction every source gives.',
-        ]}
-        asin="B00GRT5E18"
-      />
-
-      <UsToolCard
-        name="Fertilome Come and Get It Fire Ant Killer Bait, 1 lb"
-        whatItDoes={[
-          'Its listing publishes spinosad as the active ingredient and carries an OMRI listing. AgriLife Extension in 2026 recommends products containing spinosad for a vegetable bed or where an organic approach is preferred.',
-          'Texas A&M describes the natural-products route as broadcasting a spinosad bait first, and states that the Organic Materials Review Institute certifies several spinosad-containing products for fire ant control.',
-          'UF/IFAS Extension advises looking for products certified by OMRI, which is the one organic criterion any source here gives that a listing can be checked against.',
-        ]}
-        asin="B08YS87GR5"
-      />
-
-      <UsToolCard
-        name="Extinguish Plus Fire Ant Bait, 1.5 lb"
-        whatItDoes={[
-          'Its listing publishes two actives, hydramethylnon and methoprene. Texas A&M names both: hydramethylnon among the faster actives, and methoprene among the insect growth regulator baits.',
-          'UF/IFAS Extension describes insect growth regulators including methoprene as reducing egg production and preventing worker development, and notes that they do not kill adult ants, so a treated colony persists until its workers die naturally.',
-          'Named here because its published actives are ones the sources name. No comparison against the other two baits on this page is offered or implied.',
-        ]}
-        asin="B015BSWVCU"
-      />
 
       <h2 id="spreaders">The Spreader Matters</h2>
       <p>

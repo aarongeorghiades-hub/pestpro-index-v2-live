@@ -119,10 +119,10 @@ const sources: Source[] = [
 
 const tocItems = [
   { id: 'what-it-is', title: 'What It Is' },
+  { id: 'prevention', title: 'Prevention' },
   { id: 'nesting', title: 'Nesting and Boring Behavior' },
   { id: 'damage', title: 'The Damage' },
   { id: 'pollinator-status', title: 'Pollinator Status' },
-  { id: 'prevention', title: 'Prevention' },
   { id: 'treatment-repair', title: 'Treatment and Repair' },
   { id: 'stings', title: 'Stings' },
   { id: 'professional', title: 'When to Call a Professional' },
@@ -212,6 +212,53 @@ export default function CarpenterBeesPage() {
         on <Link href="/us/social-wasps">our social wasps page</Link>) leaves a barbed
         stinger in the skin, which no source here attributes to the carpenter bee.
       </p>
+
+      <h2 id="prevention">Prevention</h2>
+      <p>
+        UC IPM: prevention is the main approach to managing carpenter bees, and
+        susceptible exterior parts of a building should be constructed out of
+        hardwoods where possible, since carpenter bees avoid most hardwoods and
+        prefer softwoods. Ohio State University Extension names cedar, redwood,
+        cypress, pine and fir specifically as woods the eastern species prefers.
+      </p>
+      <ul>
+        <li>
+          <strong>Paint, not stain.</strong> Ohio State University Extension states
+          plainly that wood stains will not prevent damage from carpenter bees, while
+          keeping exposed wood well painted with a polyurethane or oil-based paint
+          deters attack. University of Maryland Extension agrees that painted
+          surfaces are unattractive to nesting bees, and that nail holes and cracks
+          should be filled with caulk or putty before painting.
+        </li>
+        <li>
+          <strong>Non-wood alternatives.</strong> UC IPM and Ohio State University
+          Extension both note that carpenter bees do not damage non-wood materials
+          such as aluminum, asbestos, asphalt and vinyl siding, which can substitute
+          for wood on vulnerable, exposed parts of a structure.
+        </li>
+        <li>
+          <strong>Repellents.</strong> Alabama Cooperative Extension: <em>The best
+          time is before the female lays eggs in the tunnel. Products with essential
+          oil components can repel carpenter bees from carving tunnels or abandoning
+          the excavated nest.</em> Penn State Extension names almond oil specifically,
+          applied annually in spring, as an effective deterrent for those who prefer
+          an unpainted, natural wood finish.
+        </li>
+      </ul>
+
+      <p>
+        The products below are named because the sources on this page describe repelling and then plugging the gallery, and each listing states which of those two jobs it does.
+      </p>
+
+      <UsToolCard
+        name="Citrus and Almond Oil Carpenter Bee Repellent Spray, 8 oz"
+        whatItDoes={[
+          'Its own listing states a formula of citrus, peppermint and almond oils intended to discourage carpenter bees from boring into wooden surfaces — matching the essential-oil deterrent both Alabama Cooperative Extension and Penn State Extension describe (Penn State names almond oil specifically).',
+          'Its own listing states it is intended for repeated seasonal application to decks, fences and garden furniture, and directs applying it to visible drill holes — matching the prevention window (before or around nest-building season) the sourced guidance above describes.',
+          'S48-A note: the listing itself hedges its own effectiveness ("Results may vary") — that weak-effectiveness admission is reported here, not a reason to exclude the product, since no material danger or legal restriction attaches to it.',
+        ]}
+        asin="B09VYHTLJG"
+      />
 
       <h2 id="nesting">Nesting and Boring Behavior</h2>
       <p>
@@ -331,49 +378,6 @@ export default function CarpenterBeesPage() {
         products</strong> &mdash; a trap, a repellent, and repair materials &mdash;
         rather than an insecticide, further down this page.
       </p>
-
-      <h2 id="prevention">Prevention</h2>
-      <p>
-        UC IPM: prevention is the main approach to managing carpenter bees, and
-        susceptible exterior parts of a building should be constructed out of
-        hardwoods where possible, since carpenter bees avoid most hardwoods and
-        prefer softwoods. Ohio State University Extension names cedar, redwood,
-        cypress, pine and fir specifically as woods the eastern species prefers.
-      </p>
-      <ul>
-        <li>
-          <strong>Paint, not stain.</strong> Ohio State University Extension states
-          plainly that wood stains will not prevent damage from carpenter bees, while
-          keeping exposed wood well painted with a polyurethane or oil-based paint
-          deters attack. University of Maryland Extension agrees that painted
-          surfaces are unattractive to nesting bees, and that nail holes and cracks
-          should be filled with caulk or putty before painting.
-        </li>
-        <li>
-          <strong>Non-wood alternatives.</strong> UC IPM and Ohio State University
-          Extension both note that carpenter bees do not damage non-wood materials
-          such as aluminum, asbestos, asphalt and vinyl siding, which can substitute
-          for wood on vulnerable, exposed parts of a structure.
-        </li>
-        <li>
-          <strong>Repellents.</strong> Alabama Cooperative Extension: <em>The best
-          time is before the female lays eggs in the tunnel. Products with essential
-          oil components can repel carpenter bees from carving tunnels or abandoning
-          the excavated nest.</em> Penn State Extension names almond oil specifically,
-          applied annually in spring, as an effective deterrent for those who prefer
-          an unpainted, natural wood finish.
-        </li>
-      </ul>
-
-      <UsToolCard
-        name="Citrus and Almond Oil Carpenter Bee Repellent Spray, 8 oz"
-        whatItDoes={[
-          'Its own listing states a formula of citrus, peppermint and almond oils intended to discourage carpenter bees from boring into wooden surfaces — matching the essential-oil deterrent both Alabama Cooperative Extension and Penn State Extension describe (Penn State names almond oil specifically).',
-          'Its own listing states it is intended for repeated seasonal application to decks, fences and garden furniture, and directs applying it to visible drill holes — matching the prevention window (before or around nest-building season) the sourced guidance above describes.',
-          'S48-A note: the listing itself hedges its own effectiveness ("Results may vary") — that weak-effectiveness admission is reported here, not a reason to exclude the product, since no material danger or legal restriction attaches to it.',
-        ]}
-        asin="B09VYHTLJG"
-      />
 
       <h2 id="treatment-repair">Treatment and Repair</h2>
       <p>
