@@ -1461,3 +1461,34 @@ alone under an explicit no-matcher-edits instruction at S63 R2. They are carried
 to a dedicated machinery round together with the four uncodified ad-hoc matchers
 named in the S63 R1 report and the false positives recorded there and here.
 Recording the defect is not closing it.
+
+## S63 R3 — LAW 179: ONE TASK, ONE PUSH, ONE CONFIRMATION
+
+LAW 179 — A TASK'S PUSH IS CONFIRMED AGAINST ITS OWN COMMIT HASH ON RAILWAY
+BEFORE THE NEXT TASK PUSHES. Deployment confirmation is PER TASK and is NEVER
+inferred from a later green build.
+
+A LATER PUSH THAT SUPERSEDES A BUILD IN FLIGHT DESTROYS THE EARLIER TASK'S
+CONFIRMATION, EVEN WHERE THE CONTENT SHIPS CORRECTLY. Railway marks the
+superseded deployment REMOVED. The commit is then an ancestor of something that
+did go green, so the content is live and verifiable — but no deployment ever
+succeeded on that hash, and "its content is in a later successful build" is a
+different and weaker claim than "it deployed".
+
+EVIDENCE. At S63 R2 commit `2283200`, the route /us/sowbugs-pillbugs, was pushed
+and then superseded by the Task 3 push while still building. Its own poll
+recorded the whole life: BUILDING x5, DEPLOYING x3, then REMOVED for the
+remaining thirty checks. The page is live and passes every matcher on the live
+URL, and the round still could not report SUCCESS on that hash, because there
+was none. The failure was ordering, not content.
+
+THE PRACTICE, DEMONSTRATED THE SAME SESSION. S63 R3 pushed four times and waited
+for SUCCESS on each hash before the next push: `6a618a6` (9 polls), `6198cfb`
+(10 polls), `df70775` (15 polls), and this commit. Waiting cost about twelve
+minutes across the round and bought four confirmations instead of one.
+
+THIS BINDS THE REPORT AS WELL AS THE PUSH. A round reports, per task, the hash
+and the status that hash actually reached. Where a task's hash reached REMOVED,
+the round says REMOVED and says why, and does not launder it into the round's
+final green build. Law 5 already forbids confirming a hash supplied to you;
+this forbids confirming a deployment that belongs to a different commit.
