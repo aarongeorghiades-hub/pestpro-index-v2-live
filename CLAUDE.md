@@ -1550,3 +1550,36 @@ two. The route was reverted BYTE-IDENTICAL to its pre-move state and M12
 returned to 0/0. Two rules in contradiction is a defect, not a tie (Law 41), and
 no sourced prose was edited to make a gate pass. THE RULING NEEDED IS WHICH RULE
 GIVES WAY, or whether the FAQ's damage figure should move.
+
+## S63 R7 — LAW 181: THE CHIPMUNKS RULING, AND COMPLIANCE OVER QUALITY
+
+LAW 181 — WHERE AN AFFILIATE-PROGRAMME COMPLIANCE RULE AND AN INTERNAL QUALITY
+RULE CANNOT BOTH BE SATISFIED, THE COMPLIANCE RULE WINS. Law 120 is a condition
+of participation in a third party's programme and its breach is a breach on a
+live page. Law 180 is a rule this project wrote for itself about where a card
+sits on that page. A contradiction between the two is resolved in favour of the
+one whose breach is not ours to forgive.
+
+PM RULING, S63 R7. THIS CLOSES THE ITEM S63 R6 EXPRESSLY REFERRED. That section
+above stands as the record of the measurement; it is not re-litigated here, and
+under this file's append-only rule it is not edited.
+
+/us/chipmunks IS A STANDING LAW 180 EXCEPTION. Its cards stay exactly where they
+are — above "The Legal Position" — and the route remains byte-identical to its
+pre-S63-R6 state. THE SOURCED FAQ FIGURE IS NOT MOVED, RE-WORDED OR RELOCATED.
+Sourced content is never edited to make a gate pass; that principle is not
+traded against a placement preference.
+
+THE EXCEPTION IS NAMED, NOT INFERRED (Law 119, Law 61). It covers ONE route,
+/us/chipmunks, and one contradiction, Law 180 against Law 120. It does not
+license a late card, an early card, or a moved figure anywhere else, and no
+other route acquires an exception by resembling this one. A second route hitting
+the same contradiction is a fresh referral to the PM.
+
+CONSEQUENCE FOR THE GATES. M28 is expected to report /us/chipmunks as a
+precedence violation, and that report is CORRECT — the violation is real and is
+knowingly held. It is a NAMED KNOWN EXCEPTION under Law 138: it is named, it is
+attributed to this rule, and it is carried as a flag. A round that subtracts it
+silently and prints a clean M28 is hiding it, which Law 138 forbids. M12 remains
+at 0/0 on that route and that is the reason the exception exists.
+
