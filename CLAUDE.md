@@ -1492,3 +1492,61 @@ and the status that hash actually reached. Where a task's hash reached REMOVED,
 the round says REMOVED and says why, and does not launder it into the round's
 final green build. Law 5 already forbids confirming a hash supplied to you;
 this forbids confirming a deployment that belongs to a different commit.
+
+## S63 R6 — LAW 180: THE PRECEDENCE RULE
+
+LAW 180 — A CARD NEVER PRECEDES CONTENT A READER NEEDS IN ORDER TO IDENTIFY THE
+PEST, TO AVOID HARM, TO AVOID BEING MISLED ABOUT WHAT A PRODUCT CAN DO, OR TO
+AVOID BREAKING THE LAW.
+
+THE THRESHOLD YIELDS TO THIS RULE. Where obeying precedence pushes a first card
+past the 28% placement threshold derived at S63 R5 from the UK /best/* maximum,
+THE CARD GOES LATE. A page whose safety, legal or identification content runs
+long is allowed a late card, and that is a correct outcome rather than a
+regression. At S63 R6 the threshold yielded on all twelve routes moved.
+
+THE DISCRIMINATOR, because the rule is otherwise too broad to apply. A section
+is precedence-bearing FOR A GIVEN PAGE'S CARDS if, without it, a reader could be
+HARMED BY USING THE CARDED PRODUCT, BUY THE WRONG PRODUCT FOR THEIR PEST, or
+BREAK THE LAW BY USING IT. Escalation advice, and statements about a class the
+page does NOT card, are NOT precedence-bearing for the cards it does card.
+Worked examples, all measured at S63 R6:
+  - "When to Call a Professional" is escalation. Excluded on six routes.
+  - "Insecticides, and Why Nothing Is Named Here" qualifies a class the page
+    does not card. Excluded on three routes.
+  - A harm section describing what the PEST does to you, beside a PASSIVE
+    product — caulk, a container, screening, a fence roller — is not a safety
+    precondition for that product. Excluded on six routes.
+  - "Handling a bee, or reaching directly into an active hole" IS a precondition
+    for a hole repair kit. /us/carpenter-bees, included.
+
+### LAW 180 IS ADJUDICATED BY READING. THE CODIFIED PART IS THE COMPARISON ONLY.
+
+M28 IS A GATE and checks the comparison: given a route's first-card offset and
+the offset of the earliest precedence-bearing content, the card must not come
+first. It has a real failing state in both directions and a page carrying no
+such content cannot violate it.
+
+M29 IS AN INVENTORY UNDER LAW 167 and reports CANDIDATES, NEVER FINDINGS. A
+class defined by MEANING cannot be settled by a string matcher (Law 115): the
+distinguishing signal is what a sentence is ABOUT, and "House Flies Cannot Bite"
+and "What Consumer Products Cannot Do" ARE THE SAME CONSTRUCTION IN DIFFERENT
+CATEGORIES. Measured over all 415 h2 headings on the 40 carding routes before
+the kind was chosen: identification 26, harm 18, efficacy 38, legal 6 — and the
+efficacy class carried at least five demonstrable false positives, four of which
+are now its negative probes. THE SCAN SURFACES WHAT TO READ; IT DOES NOT RULE.
+
+EVIDENCE THAT READING IS NOT OPTIONAL: at S63 R6 the candidate scan flagged 26
+routes and reading reduced that to 13 real violations. Half the flagged set was
+noise.
+
+### S63 R6 — /us/chipmunks IS REFERRED, NOT FIXED
+
+LAW 180 AND LAW 120 CANNOT BOTH BE SATISFIED ON /us/chipmunks AS IT STANDS.
+Precedence puts its cards after "The Legal Position", which is its LAST content
+section; doing so placed the final card 753 served bytes from the FAQ's sourced
+"minimal economic loss, under $200" and M12 fired. No section exists between the
+two. The route was reverted BYTE-IDENTICAL to its pre-move state and M12
+returned to 0/0. Two rules in contradiction is a defect, not a tie (Law 41), and
+no sourced prose was edited to make a gate pass. THE RULING NEEDED IS WHICH RULE
+GIVES WAY, or whether the FAQ's damage figure should move.
