@@ -181,6 +181,22 @@ export const LAW_REFERENCES_ONLY = [
   '## S64 R1 — PROPOSED LAW 999: NOT RATIFIED',
 ].join('\n');
 
+// ---- M33 (S64 R2), the /us layout footer's two earnings statements ---------
+// These are the strings the layout footer actually emits, anchored on the
+// paragraph element that emits them so a card-level disclosure — which is a
+// DIFFERENT element saying the same sentence — cannot be mistaken for one.
+export const US_FOOTER_AFFIRM =
+  '<p class="m-0 mt-3 max-w-3xl">As an Amazon Associate, PestPro Index earns from qualifying purchases.</p>';
+export const US_FOOTER_DENY =
+  '<p class="m-0 mt-3 max-w-3xl">We earn nothing if you buy through the links on this site.';
+export const US_CARD_ANCHOR =
+  '<a href="https://www.amazon.com/dp/B00NFRTVY6?tag=pestproindex2-20">buy</a>';
+// A page carrying the card-level disclosure but NOT the footer one. This is the
+// shape that made the S64 R1 breach invisible: the route looked disclosed
+// because the sentence was present, and the sentence present was the CARD's.
+export const US_CARD_DISCLOSURE_ONLY =
+  '<p class="m-0 mt-1 text-sm text-amber-900">As an Amazon Associate, PestPro Index earns from qualifying purchases.</p>';
+
 // ---- M21 (FP-1), genuine quotation delimiters -----------------------------
 // THE RULE: a quotation is delimited by a QUOTATION MARK — the HTML entities
 // &ldquo;/&rdquo; or the curly characters themselves. In a .tsx file the ASCII

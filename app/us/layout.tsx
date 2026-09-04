@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import UsFooterCommissionNotice from './components/UsFooterCommissionNotice';
+import { cardCarryingSlugs } from './lib/cardIndex';
 
 // THE /us ESTATE'S CHROME.
 //
@@ -22,8 +23,18 @@ import UsFooterCommissionNotice from './components/UsFooterCommissionNotice';
 // a route-aware client component, because it is no longer one fixed sentence.
 // The US Amazon Associates tag went live this round; the sentence that used to
 // sit here unconditionally ("We earn nothing...") is now true on routes with
-// no product card and false on the 31 that carry one. See that file for why.
+// no product card and false on those that carry one. See that file for why.
+//
+// S64 R2: WHICH ROUTES THOSE ARE IS MEASURED HERE, NOT REMEMBERED THERE. This is
+// a server component, so it can read the route sources; the notice is a client
+// component, so it can read the pathname; neither can do both. The set is
+// therefore computed here at build time and passed across that seam as a prop.
+// It replaces a hand-maintained list of 31 slugs that had fallen ten routes
+// behind the estate, leaving ten live pages serving affiliate links under a
+// footer saying the site earns nothing (Law 178 — a list maintained by hand is
+// not a measurement).
 export default function UsLayout({ children }: { children: React.ReactNode }) {
+  const cardCarryingRoutes = [...cardCarryingSlugs()].sort();
   return (
     <>
       {children}
@@ -40,7 +51,7 @@ export default function UsLayout({ children }: { children: React.ReactNode }) {
               Cookies
             </Link>
           </p>
-          <UsFooterCommissionNotice />
+          <UsFooterCommissionNotice cardCarryingRoutes={cardCarryingRoutes} />
           <p className="m-0 mt-2">&copy; 2026 PestPro Index</p>
         </div>
       </footer>

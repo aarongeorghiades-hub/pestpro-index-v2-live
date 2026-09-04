@@ -237,6 +237,44 @@ function hubGroups(): { heading: string; blurb: string; items: { title: string; 
   return groups as { heading: string; blurb: string; items: { title: string; href: string; covers: string }[] }[];
 }
 
+// THE SET OF /us ROUTES THAT ACTUALLY RENDER AN AFFILIATE CARD — S64 R2.
+//
+// PM RULING, S64 R2: the earnings statement in the /us layout footer is DERIVED
+// AT BUILD TIME from whether the route actually renders a card. A hand-maintained
+// route list is never the source of truth for this.
+//
+// WHAT IT REPLACES, AND WHY THAT LIST HAD TO GO. app/us/components/
+// UsFooterCommissionNotice.tsx held CARD_CARRYING_ROUTES, 31 slugs measured by
+// hand at S60 R1, and its own comment called the set "the mechanism and also the
+// maintenance obligation". By S64 R1 the estate carded on 41 routes. Zero stale
+// entries and TEN MISSING, so ten live routes served affiliate links under a
+// footer telling the reader the site earns nothing. A list maintained by hand is
+// not a measurement (Law 178), and the routes it omitted were simply the ones
+// built after somebody last remembered to edit it.
+//
+// THE INDEX PAGE IS DERIVED, NOT SPECIAL-CASED. `products` is excluded from
+// extraction by name because it renders the index it is building and reading
+// itself would either recurse or halt the build. It nonetheless renders EVERY
+// card in that index, so it carries cards exactly when the index is non-empty —
+// which is what the line below computes. That is a derivation from the index's
+// own contents, not an entry in a list.
+//
+// IT HALTS RATHER THAN UNDER-REPORTING, on the same principle as the rest of this
+// module: extractRoute throws on a card it cannot read, so a card declared in a
+// shape the extractor does not understand FAILS THE BUILD rather than silently
+// dropping its route out of this set and taking the disclosure with it.
+export function cardCarryingSlugs(): Set<string> {
+  const out = new Set<string>();
+  for (const e of readdirSync(US_DIR, { withFileTypes: true })) {
+    if (!e.isDirectory() || NOT_ROUTES.has(e.name)) continue;
+    const f = join(US_DIR, e.name, 'page.tsx');
+    if (!existsSync(f)) continue;
+    if (extractRoute(e.name, readFileSync(f, 'utf8')).length) out.add(e.name);
+  }
+  if (out.size) out.add(SELF);
+  return out;
+}
+
 export function buildCardIndex(): IndexedGroup[] {
   const cardsBySlug = new Map<string, IndexedCard[]>();
   for (const e of readdirSync(US_DIR, { withFileTypes: true })) {

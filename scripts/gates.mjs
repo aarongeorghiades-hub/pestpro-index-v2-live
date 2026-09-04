@@ -76,6 +76,10 @@ import {
   UK_SIDE_DIRTY,
   LAW_HEADINGS_ALL_FORMS,
   LAW_REFERENCES_ONLY,
+  US_FOOTER_AFFIRM,
+  US_FOOTER_DENY,
+  US_CARD_ANCHOR,
+  US_CARD_DISCLOSURE_ONLY,
   QUOTE_SPAN_GENUINE,
   QUOTE_SPAN_JS_DELIMITERS,
   SET_PAIR_EQUAL,
@@ -1383,6 +1387,80 @@ const MATCHERS = [
     probeNeg: [
       `<a href="${CARD_LINK}">buy</a>`,
       '<script>self.__next_f.push([1,"https://www.amazon.co.uk/dp/B00NFRTVY6"])</script>',
+    ],
+  },
+
+  // -------------------------------------------------------------------------
+  // M33 — THE FOOTER STATEMENT MUST AGREE WITH WHAT THE ROUTE ACTUALLY RENDERS.
+  //
+  // S64 R2 RULED that the /us footer's earnings statement is DERIVED AT BUILD
+  // TIME from whether the route renders an affiliate card. It is derived from
+  // `cardCarryingSlugs()` in app/us/lib/cardIndex.ts — which reads the ROUTE
+  // SOURCES, because a build cannot read the HTML it has not yet produced.
+  //
+  // SOURCE DECLARATION AND RENDERED OUTPUT ARE TWO POPULATIONS (Law 62/63), AND
+  // THIS GATE IS WHERE THEY ARE RECONCILED. THAT THEY CAN DIVERGE WAS MEASURED,
+  // NOT SUPPOSED: a control that wrapped /us/groundhogs' only card in a
+  // `{false && ...}` guard took the RENDERED card count to zero while the
+  // extractor still read the declaration, and the footer went on claiming the
+  // affiliate relationship on a page with no affiliate link. The derivation
+  // could not see it. This gate can, because it reads the built document.
+  //
+  // THE FAILING DIRECTION THAT MATTERS IS ALREADY GUARDED ELSEWHERE, and saying
+  // so is part of the honesty of this gate: a card the extractor CANNOT read
+  // halts the build in cardIndex rather than dropping its route out of the set,
+  // so "renders cards, footer denies" — the S59-C breach itself — cannot arise
+  // from an extractor miss. What this gate adds is the OTHER direction, the
+  // Law 130 over-claim, plus the self-contradiction case.
+  //
+  // IT IS ANCHORED ON THE FOOTER PARAGRAPH, NOT ON THE SENTENCE. The card-level
+  // disclosure is the SAME SENTENCE in a different element, and counting it as
+  // the footer's is exactly what made the S64 R1 breach invisible: every one of
+  // the ten breaching routes DID carry that sentence, once per card, while the
+  // footer denied it. US_CARD_DISCLOSURE_ONLY is a negative probe for that.
+  // -------------------------------------------------------------------------
+  {
+    id: 'M33',
+    kind: 'gate',
+    scope: 'document',
+    surface: 'rendered',
+    name: 'S59-C: the footer earnings statement agrees with the rendered card count',
+    test: (t) => {
+      const affirm = t.includes(US_FOOTER_AFFIRM);
+      const deny = t.includes(US_FOOTER_DENY);
+      // Not a /us route, or a surface carrying neither statement: out of scope.
+      if (!affirm && !deny) return [];
+      const cards = all(CARD_HREF_RE, t).length;
+      const out = [];
+      if (affirm && deny) out.push('two contradictory footer statements on one page');
+      if (cards > 0 && !affirm) out.push(`${cards} rendered card link(s) and no affiliate footer`);
+      if (cards === 0 && affirm) out.push('affiliate footer on a page rendering no card link');
+      return out;
+    },
+    probePos: [
+      // renders a card, footer denies — the S64 R1 breach itself
+      US_CARD_ANCHOR + US_FOOTER_DENY,
+      // THE EXACT S64 R1 SHAPE, AND THE MOST IMPORTANT PROBE HERE. The route
+      // carries the card-level disclosure — the same sentence, one per card —
+      // and the footer still denies. That combination is what let ten live
+      // routes read as "disclosed" while contradicting themselves, so the gate
+      // must fire on it and must not be rescued by the card's sentence.
+      US_CARD_ANCHOR + US_CARD_DISCLOSURE_ONLY + US_FOOTER_DENY,
+      // renders no card, footer affirms — the Law 130 over-claim, and the exact
+      // state the groundhogs control produced
+      US_FOOTER_AFFIRM,
+      // both statements on one page
+      US_CARD_ANCHOR + US_FOOTER_AFFIRM + US_FOOTER_DENY,
+    ],
+    probeNeg: [
+      US_CARD_ANCHOR + US_FOOTER_AFFIRM,
+      US_FOOTER_DENY,
+      // Anchored on the FOOTER element: a document carrying only the card-level
+      // sentence, with no footer statement at all, is out of this gate's scope
+      // and must be silent rather than counted either way.
+      US_CARD_ANCHOR + US_CARD_DISCLOSURE_ONLY,
+      // a non-/us document, carrying neither footer statement
+      '<p>Free product recommendations for pest control across the UK.</p>',
     ],
   },
 ];
