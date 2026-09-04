@@ -213,6 +213,112 @@ const BANNED_STEMS = ['verif', 'trust', 'vett'];
 // selfTest() asserts exactly that difference so the removal cannot be undone.
 const bannedRe = new RegExp(String.raw`\w*(?:${BANNED_STEMS.join('|')})\w*`, 'gi');
 
+// ---------------------------------------------------------------------------
+// G3 IS NEGATION-AWARE — S64 R1, on the standing PM ruling carried from S63 R8.
+// ---------------------------------------------------------------------------
+//
+// THE RULING: on the G3 hits as they stood, the prose was correct and the
+// matcher was inverted. The flagged sentences exist to WITHHOLD a claim — "this
+// page cannot independently verify the manufacturer's effectiveness claims",
+// "an unverifiable population-reduction percentage". A gate that flags a REFUSAL
+// to make a claim is backwards. Fix the matcher, never the prose.
+//
+// THE RULE IS BUILT FROM WHAT G3 EXISTS TO DETECT, NOT FROM THE HITS IT HAPPENS
+// TO HAVE (Law 170). What CLAUDE.md bans is an ASSERTION, in this site's own
+// voice, that something has been verified, vetted, or is trusted. Three things
+// are not that, and each is its own class with its own probes:
+//
+//   NEGATED    a negator or a privative prefix puts the stem under negation.
+//              "could not verify", "cannot independently verify", "unverifiable",
+//              "unvetted", "mistrust". The sentence asserts the ABSENCE of the
+//              very thing the ban exists to stop being asserted.
+//   PRIVATIVE  the prefix is ON the token: un-, non-, dis-, mis-.
+//   PROPER     a proper noun that happens to carry the stem. Already ratified as
+//              Law 153: "Trustpilot", "TrustMark" and "wildlife trust" are names;
+//              "our trusted picks" is a claim.
+//
+// EVERYTHING ELSE IS AN ASSERTION AND STILL FAILS. The gate did not get weaker in
+// the general case; it got correct in three named ones.
+//
+// WHY A NEGATOR LIST IS NOT THE LAW 170 FAILURE. Law 170 forbids building a
+// matcher from an enumerated list of INSTANCES OF THE THING IT DETECTS — G4's
+// eighteen UK words could never enumerate English. Negation in English is a
+// CLOSED GRAMMATICAL CLASS: the negators are function words and there are not
+// more of them next month. The privative prefixes are likewise closed. The
+// PROPER-NOUN set is the one place a list is genuinely a list, and it is
+// therefore NAMED AND ATTRIBUTED rather than folded in silently (Law 138), one
+// entry per name with the route it appears on.
+//
+// THE WINDOW IS BOUNDED AND STOPS AT THE SENTENCE (Law 7 — classify at token
+// level with a bounded window, never at sentence level). A negator counts only
+// if it falls within G3_NEG_WINDOW tokens BEFORE the stem AND after the last
+// sentence terminator. Without the sentence stop, "We do not sell services.
+// Every provider is verified." would exempt itself.
+const G3_NEGATORS = new Set([
+  'not', "n't", 'no', 'never', 'cannot', 'cant', 'without', 'nothing', 'none',
+  'neither', 'nor', 'unable', 'fails', 'fail', 'failed', 'lacks', 'lack',
+  'rather', 'instead', 'declines', 'declined', 'refuses', 'refused',
+]);
+const G3_NEG_WINDOW = 5;
+const G3_PRIVATIVE_RE = /^(?:un|non|dis|mis)(?=verif|trust|vett)/i;
+
+// NAMED PROPER NOUNS, EACH ATTRIBUTED. Case-sensitive and exact: "Vetter" is a
+// name, "vetter" would not be. Adding one is a content decision and must be
+// justified here, because this is the only part of G3 that is a list.
+//   Vetter      R. S. Vetter / Rick Vetter, the UC Riverside entomologist cited
+//               by name on /us/black-widow-spiders and /us/brown-recluse-spiders.
+//   Trustpilot  Law 153, ratified.
+//   TrustMark   Law 153, ratified.
+const G3_PROPER_NOUNS = new Set(['Vetter', 'Vetters', 'Trustpilot', 'TrustMark']);
+
+// The text G3 classifies over. Tags are removed INSIDE test() rather than by
+// declaring a different surface, because the gate must keep reading SERVED bytes
+// (Law 62): a banned assertion restated in the flight payload is still served.
+// Removing tags is not the same as removing scripts — a tag between "not" and
+// "verify" would otherwise break the token window.
+const g3Tokens = (t) =>
+  decode(String(t ?? '').replace(/<[^>]+>/g, ' '))
+    .replace(/[’‘]/g, "'")
+    .replace(/\s+/g, ' ');
+
+// Returns ONLY the asserted hits. Each excluded hit is returned separately by
+// g3Classify so the report can name what was excluded and why, rather than
+// printing a zero that hides three exclusions (Law 138).
+//
+// THE `strip` FLAG EXISTS ONLY SO ASSERTION G CAN PROVE THE TAG STRIP MATTERS.
+// It is never passed false in production. One definition, one flag — the
+// alternative was a second copy of the window logic inside the assertion, which
+// is exactly what Law 166 forbids.
+function g3Classify(t, { strip = true } = {}) {
+  const text = strip ? g3Tokens(t) : String(t ?? '');
+  const asserted = [];
+  const excluded = [];
+  for (const m of all(bannedRe, text)) {
+    const tok = m[0];
+    if (G3_PROPER_NOUNS.has(tok)) {
+      excluded.push({ tok, why: 'PROPER', ctx: null });
+      continue;
+    }
+    if (G3_PRIVATIVE_RE.test(tok)) {
+      excluded.push({ tok, why: 'PRIVATIVE', ctx: null });
+      continue;
+    }
+    // The bounded, sentence-stopped window before the stem.
+    const before = text.slice(Math.max(0, m.index - 160), m.index);
+    const sentence = before.split(/(?<=[.!?])\s+/).pop() ?? before;
+    const words = sentence.toLowerCase().replace(/[^a-z' ]+/g, ' ').split(/\s+/).filter(Boolean);
+    const window = words.slice(-G3_NEG_WINDOW);
+    const neg = window.find((w) => G3_NEGATORS.has(w) || w.endsWith("n't"));
+    if (neg) {
+      excluded.push({ tok, why: `NEGATED(${neg})`, ctx: null });
+      continue;
+    }
+    asserted.push(tok);
+  }
+  return { asserted, excluded };
+}
+
+
 // Any codepoint outside ASCII. Written with \u escapes deliberately: a literal
 // control-byte character class makes this whole file register as binary, which
 // silently breaks plain `grep` over it — found the hard way this round.
@@ -460,10 +566,35 @@ const MATCHERS = [
     kind: 'gate',
     scope: 'document',
     surface: 'full',
-    name: 'No verif/trust/vett stem in our own voice',
-    test: (t) => hitStrings(bannedRe, t),
-    probePos: 'a verifiable and tru' + 'sted listing',
-    probeNeg: 'a confirmed and reliable listing',
+    name: 'No ASSERTED verif/trust/vett claim in our own voice (negation-aware, S64 R1)',
+    test: (t) => g3Classify(t).asserted,
+    report: (hits) => `asserted: ${[...new Set(hits)].join(', ')}`,
+    // THE POSITIVE LIMB IS UNCHANGED IN SUBSTANCE AND MUST STAY THAT WAY: the
+    // gate still has to catch a plain assertion, and the stem form still has to
+    // beat the exact-word form (assertion A). The added positives are the two
+    // shapes a careless negation-aware rewrite would lose — a negator EARLIER IN
+    // A DIFFERENT SENTENCE, and a negator further away than the window.
+    probePos: [
+      'a verifiable and tru' + 'sted listing',
+      'We do not sell services. Every provider is veri' + 'fied.',
+      'no part of the following claim is ours, and the supplier is nevertheless veri' + 'fied',
+    ],
+    probeNeg: [
+      'a confirmed and reliable listing',
+      // the three exclusion classes, one probe each
+      'this page cannot independently veri' + 'fy the claim',
+      'the listing carries an unveri' + 'fiable percentage',
+      'R. S. Vetter, UC Riverside',
+      // THE PRODUCTION SHAPE, AND THE R8 LESSON APPLIED TO THIS GATE. A page
+      // does not arrive as prose; it arrives as HTML with markup between the
+      // negator and the stem. A plain-text fixture never exercises the tag
+      // strip inside test(), so it would pass whether or not the strip is
+      // there. Here the anchor's attribute words alone are more tokens than the
+      // window, so this probe is SILENT only if the strip is really running.
+      // Assertion G asserts precisely that, both ways, on every invocation.
+      'this page could not <a class="text-blue-700 underline hover:no-underline" ' +
+        'href="https://example.com/x">veri' + 'fy</a> the claim',
+    ],
   },
   {
     id: 'G4',
@@ -1359,6 +1490,36 @@ async function selfTest() {
   }
   console.log(`     ${fDiscriminated}/${surfaceSensitive.length} discriminated`);
 
+  // G. G3'S OWN TRANSFORM IS ON THE PROBE PATH — S64 R1.
+  //
+  // WHY F IS NOT ENOUGH FOR G3, SAID PLAINLY: G3 declares surface `full`, and
+  // SURFACES.full is the identity function. surfaceOf() therefore changes
+  // nothing for G3, and citing F as proof for G3 would be citing a no-op. The
+  // transform that matters for G3 is INTERNAL — g3Tokens() strips the markup
+  // that sits between a negator and the stem in real served HTML.
+  //
+  // So this asserts the internal transform the same way F asserts the external
+  // one: the production-shaped negative probe must be classified as ASSERTED
+  // with the strip off and as NEGATED with it on. If someone removes the strip,
+  // this fails AND that probe starts firing.
+  const g3Probe = asProbeList(MATCHERS.find((x) => x.id === 'G3').probeNeg).find((x) =>
+    /<a\b/i.test(x.text),
+  );
+  console.log('\n  G. G3 tag strip, on a production-shaped negative probe:');
+  if (!g3Probe) {
+    console.log('     NO HTML-SHAPED NEGATIVE PROBE — assertion cannot be made');
+    bad++;
+  } else {
+    const off = g3Classify(g3Probe.text, { strip: false }).asserted.length;
+    const on = g3Classify(g3Probe.text).asserted.length;
+    const ok = off > 0 && on === 0;
+    if (!ok) bad++;
+    console.log(
+      `     strip OFF asserted=${off}  strip ON asserted=${on}  -> ` +
+        `${ok ? 'the tag strip is load-bearing' : 'ASSERTION FAILED — the strip changes nothing'}`,
+    );
+  }
+
   return bad;
 }
 
@@ -1679,6 +1840,67 @@ async function runMachinery() {
   };
 }
 
+// THE G3 FALSE-POSITIVE SWEEP — S64 R1, and it is required, not optional.
+//
+// Law 170's corollary: a class-based matcher is not automatically a correct one.
+// The mirror matcher built at S62 R2 passed its own calibration probes and then
+// returned 141 hits of which ALL 141 were false positives; only the sweep against
+// real content exposed it. A negation-aware G3 has the mirror risk — it can now
+// SUPPRESS a real claim — so the exclusions must be read against the whole estate,
+// BOTH SIDES, not only the /us routes runEstate() walks.
+//
+// It prints asserted hits and every exclusion with its route, so a suppression
+// that should not have happened is visible rather than absorbed into a zero.
+async function runG3Sweep() {
+  const walk = async (dir) => {
+    let out = [];
+    let ents = [];
+    try { ents = await readdir(dir, { withFileTypes: true }); } catch { return out; }
+    for (const e of ents) {
+      const full = join(dir, e.name);
+      if (e.isDirectory()) out = out.concat(await walk(full));
+      else if (e.name.endsWith('.html')) out.push(full);
+    }
+    return out;
+  };
+  const appDir = join(ROOT, '.next/server/app');
+  const files = (await walk(appDir)).sort();
+  const usPrefix = join(appDir, 'us');
+  const isUs = (f) => f === join(appDir, 'us.html') || f.startsWith(usPrefix + '/');
+  const rows = [];
+  let asserted = 0, excluded = 0;
+  for (const f of files) {
+    const raw = await readFile(f, 'utf8');
+    const c = g3Classify(raw);
+    if (!c.asserted.length && !c.excluded.length) continue;
+    asserted += c.asserted.length;
+    excluded += c.excluded.length;
+    rows.push({
+      route: f.replace(appDir + '/', '').replace(/\.html$/, ''),
+      side: isUs(f) ? 'us' : 'uk',
+      asserted: c.asserted,
+      excluded: c.excluded,
+    });
+  }
+  console.log(`\nG3 SWEEP — both estates, ${files.length} built documents, SERVED surface\n`);
+  console.log(`  ${'ROUTE'.padEnd(46)}${'SIDE'.padEnd(6)}${'ASSERTED'.padEnd(10)}EXCLUDED`);
+  for (const r of rows) {
+    console.log(
+      `  ${r.route.slice(0, 45).padEnd(46)}${r.side.padEnd(6)}${String(r.asserted.length).padEnd(10)}` +
+        `${r.excluded.length}`,
+    );
+    if (r.asserted.length) console.log(`      ASSERTED: ${[...new Set(r.asserted)].join(', ')}`);
+    if (r.excluded.length) {
+      const by = new Map();
+      for (const e of r.excluded) by.set(`${e.why}:${e.tok}`, (by.get(`${e.why}:${e.tok}`) || 0) + 1);
+      console.log(`      excluded: ${[...by].map(([k, n]) => `${k} x${n}`).join('; ')}`);
+    }
+  }
+  console.log(`\n  TOTAL asserted ${asserted}, excluded ${excluded}, over ${rows.length} documents carrying a stem`);
+  console.log(`  EVERY EXCLUSION IS PRINTED ABOVE. A zero here is only readable beside them (Law 138).`);
+  return 0;
+}
+
 async function runEstate() {
   const dir = join(ROOT, '.next/server/app/us');
   const files = [
@@ -1694,6 +1916,8 @@ async function runEstate() {
   const failing = {};
   const nonAscii = new Map();
   const usAsins = [];
+  const g3Excluded = new Map();
+  const g3ExcludedRoutes = new Map();
   // S64 R1: the card and disclosure totals are NO LONGER COMPUTED HERE. They were
   // inline expressions over the raw file, duplicated verbatim in runMachinery(),
   // and both were doubled by the flight payload. They now come from M30 and M31,
@@ -1710,6 +1934,16 @@ async function runEstate() {
       if (row.problem) (failing[row.id] ||= []).push(slug);
       if (row.id === 'M13') for (const c of row.hits) nonAscii.set(c, (nonAscii.get(c) || 0) + 1);
       if (row.id === 'M30') usAsins.push(...row.hits);
+    }
+    // LAW 138: A GATE THAT PASSES BY SUBTRACTING AN EXCEPTION MUST NAME THE
+    // EXCEPTION. G3 now excludes three classes, so its zero on seven routes is
+    // only readable beside what it stopped counting. Tallied here, printed below,
+    // never silently dropped.
+    for (const e of g3Classify(raw).excluded) {
+      const k = `${e.why}:${e.tok}`;
+      g3Excluded.set(k, (g3Excluded.get(k) || 0) + 1);
+      if (!g3ExcludedRoutes.has(k)) g3ExcludedRoutes.set(k, new Set());
+      g3ExcludedRoutes.get(k).add(slug);
     }
   }
   const totalCards = perMatcher.M30 ?? 0;
@@ -1744,6 +1978,13 @@ async function runEstate() {
       `\n    M31 current disclosures  ${disclosures}` +
       `\n    M13 non-ASCII codepoints ${nonAscii.size} distinct (served surface; M13 is a gate-side scan)`,
   );
+  console.log(
+    `\n  G3 EXCLUSIONS — named, not subtracted in silence (Law 138). Served surface.`,
+  );
+  if (!g3Excluded.size) console.log('    none');
+  for (const [k, n] of [...g3Excluded].sort()) {
+    console.log(`    ${k.padEnd(26)}${String(n).padStart(4)}  on ${[...g3ExcludedRoutes.get(k)].sort().join(', ')}`);
+  }
   const p = await runParity();
   console.log(`\n  S54-H PARITY — routes ${p.routes} | hub anchors ${p.anchors} | hasPart ${p.hasPart}`);
   console.log(`    UNLINKED (not in anchors):       ${p.unlinkedAnchors.length ? p.unlinkedAnchors.join(', ') : 'none'}`);
@@ -1830,6 +2071,7 @@ async function main() {
     console.log(`      gaps in 1..highest         ${missing.length ? missing.join(', ') : 'none'}`);
     process.exit(0);
   }
+  if (arg === '--g3') process.exit(await runG3Sweep());
   if (arg === '--quotations') process.exit(await runQuotationReport());
   if (arg === '--parity') {
     console.log(JSON.stringify(await runParity(), null, 2));
