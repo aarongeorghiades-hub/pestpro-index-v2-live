@@ -1930,3 +1930,144 @@ item. A matcher over PROSE is exposed to whatever prose a future round writes.
 Law 170's corollary said a class-based matcher must be swept against real content
 before its count is believed; this adds that THE REAL CONTENT KEEPS ARRIVING, so
 a matcher's clean history is not a proof of its rule.
+
+## S64 R2/R3 — LAW 183: AN EARNINGS STATEMENT IS DERIVED, NEVER LISTED
+
+LAW 183 — AN AFFILIATE OR EARNINGS STATEMENT IS DERIVED AT BUILD TIME FROM
+WHETHER THE DOCUMENT ACTUALLY RENDERS A CARD. A HAND-MAINTAINED ROUTE LIST IS
+NEVER THE SOURCE OF TRUTH FOR IT, ON EITHER ESTATE. This is the PM ruling made at
+S64 R2 for `/us` and extended to the UK estate at S64 R3. Where such a list is
+found it is REMOVED, not extended: extending it is what produced the defect both
+times.
+
+A document that renders one or more cards states the affiliate relationship. A
+document that renders none does not claim one — on `/us` that means the
+earns-nothing sentence, on the UK estate it means SILENCE, because the UK estate
+carries no earns-nothing sentence anywhere and never has.
+
+WORDING IS REUSED, NEVER DRAFTED. Before any such change, the correctly-stating
+documents are checked for agreement. If they disagree the round STOPS and refers
+it to the PM rather than choosing. Both rounds checked and both found unanimity
+in the population being derived — one US affirm string, one US deny string, one
+UK footer string.
+
+### THE EVIDENCE, BOTH ESTATES
+
+US, S64 R2. `CARD_CARRYING_ROUTES` in
+`app/us/components/UsFooterCommissionNotice.tsx` held 31 slugs measured by hand at
+S60 R1, and its own comment called the set "the mechanism and also the maintenance
+obligation". The estate carded on 41 routes. Zero stale entries, TEN MISSING:
+bed-bugs, carpenter-bees, fruit-flies, fungus-gnats, groundhogs, mosquitoes,
+powderpost-beetles, products, rats, squirrels-in-attic. **212 of 376 rendered card
+links — 56% — sat on a page serving affiliate links under a footer saying the site
+earns nothing.** A live S59-C breach.
+
+UK, S64 R3. `NO_AFFILIATE_LINKS_ROUTES` in `components/FooterAssociatesNotice.tsx`
+held TWO exact paths, `/professionals` and `/resources`, added at S61 R2. Measured:
+179 documents, 76 carding, 176 carrying "All links are Amazon affiliate links."
+**100 DOCUMENTS CLAIMED THE RELATIONSHIP WHILE RENDERING NO CARD.** The list named
+two of them.
+
+### THE TWO DEFECTS ARE MIRRORS AND MUST NOT BE CONFLATED
+
+The US one is a page carrying affiliate links under a DENIAL: an Amazon programme
+breach on a page a reader can buy from. The UK one is a page claiming a
+relationship it does not have: no programme term is breached and no reader is
+misled about a purchase, because there is nothing on the page to buy. It is a
+false statement in the site's own voice on a hundred routes (Law 130), which is
+reason enough to fix but is a different severity, and a round that reports them as
+the same thing is reporting wrongly.
+
+### WHY THE LIST KEEPS COMING BACK, WHICH IS THE POINT OF THIS LAW
+
+`FooterAssociatesNotice.tsx`'s own comment records the `/us/opossums` bug, then
+records THE SAME BUG RECURRING one level down at S61 R2 — and fixes it by naming
+two routes. Each time the remedy was another entry rather than a measurement, so
+the defect returned larger. A list is a record of what somebody happened to
+remember on the day they wrote it (Law 170, Law 178).
+
+### THE MECHANISM, AND THE SEAM THAT FORCES IT
+
+Deciding the statement needs the PATHNAME, which only a client component can read.
+Deriving the set needs the filesystem, which only a server component can read.
+NEITHER CAN DO BOTH. The set is therefore measured in the server component and
+crosses that seam as a prop — `cardCarryingSlugs()` in `app/us/lib/cardIndex.ts`
+into `UsFooterCommissionNotice`, and `ukCardCarryingRoutes()` in
+`lib/ukCardRoutes.ts` into `FooterAssociatesNotice` via `components/Footer.tsx`.
+
+A DERIVED INDEX PAGE IS DERIVED, NOT SPECIAL-CASED. `/us/products` is excluded
+from extraction by name because it renders the index it is building; it therefore
+carries cards exactly when that index is non-empty, which is computed rather than
+listed.
+
+## S64 R2/R3 — LAW 184: SOURCE DECLARATION IS NOT RENDER, AND M33 IS WHY
+
+LAW 184 — A BUILD-TIME DERIVATION READS SOURCE DECLARATIONS AND CANNOT SEE A CARD
+THAT RENDER SUPPRESSES. A BUILD CANNOT READ HTML IT HAS NOT YET PRODUCED. Any rule
+whose correctness depends on what a page RENDERS must therefore be closed by a
+POST-BUILD GATE over the built document, and the derivation must never be reported
+as though it measured rendering.
+
+M33 IS THAT GATE, ON BOTH ESTATES. It reads the built document and fails when the
+footer statement disagrees with the RENDERED card count, in both directions, plus
+the self-contradiction case.
+
+### IT WAS MEASURED, NOT SUPPOSED
+
+At S64 R2 a control wrapped `/us/groundhogs`' only card in `{false && ...}`. The
+rendered card count went to zero; the extractor still read the declaration; the
+footer went on claiming the affiliate relationship on a page with no affiliate
+link. THE CONTROL FAILED TO FLIP AND WAS REPORTED AS A FAILURE, not filed as a
+pass. At S64 R3 the same control on `/guides/carpet-beetle-control` produced the
+same result on the UK side. Both routes were reverted BYTE-IDENTICAL afterwards.
+
+### THE KNOWN POSITIVE IS A REAL ROUTE, NOT A FIXTURE
+
+M33's positive limb was proven on those two live routes and only then on fixtures
+(Law 117, S49-L): US 1/groundhogs then 0 after revert; UK FAIL 1
+"affiliate footer on a page rendering no card link" then PASS 0 over 240
+documents. A gate proven only against constructed fixtures has not been shown to
+fire on the estate it guards.
+
+### WHAT IS GUARDED ELSEWHERE, STATED SO THE GATE IS NOT OVERSOLD
+
+The failing direction that matters most — RENDERS CARDS, FOOTER DENIES, the S59-C
+breach itself — cannot arise from an extractor miss on `/us`, because a card the
+extractor cannot read HALTS THE BUILD in `cardIndex` rather than dropping its
+route and taking the disclosure with it. What M33 adds is the Law 130 over-claim
+direction and the contradiction case.
+
+### TWO ESTATES, TWO CORRECT STATES, AND THE GATE MUST NOT CONFLATE THEM
+
+    US   renders no card  ->  the earns-nothing sentence. SILENCE WOULD BE A DEFECT.
+    UK   renders no card  ->  SILENCE. There is no UK earns-nothing sentence.
+
+Each limb tests its own estate's rule and is silent on the other.
+
+### IT IS ANCHORED ON THE FOOTER PARAGRAPH, NEVER ON THE SENTENCE
+
+The card-level disclosure is THE SAME SENTENCE in a different element, and
+counting it as the footer's is exactly what made the S64 R1 breach invisible:
+every one of the ten breaching routes carried that sentence, once per card, while
+the footer denied it. On the UK side the equivalent trap is a page-level authored
+disclosure — there are FOUR distinct wordings of those on the estate, they are
+hand-written rather than derived, and one must not stand in for the derived
+statement. Both are named negative probes.
+
+### A MATCHER WITH NO RUNNER THAT REACHES ITS SUBJECT IS UNTESTED
+
+`runEstate()` walks `/us` only. M33's UK limb would have been codified and never
+fired on real content — the Law 167/178 failure in a new place. `runMachinery()`
+now runs M33 over all 240 built documents, both estates. BEFORE ADDING A LIMB TO A
+MATCHER, CHECK THAT SOME RUNNER ACTUALLY REACHES WHAT IT IS FOR.
+
+### THE SOURCE SCAN IS JUSTIFIED PER ESTATE, BEFORE IT IS WRITTEN (Law 44)
+
+Measured at S64 R3 over the UK estate: every Amazon URL is one shape,
+`www.amazon.co.uk/dp`, 378 of them in exactly 76 documents — no short links, no
+`/gp/product`, no other host — so "renders no card" cannot be a false negative;
+all 76 carding documents are static routes with their own `page.tsx`; zero of the
+68 dynamic routes card; and across all 111 static routes source declaration and
+rendered output agree on every one, with the derived set and the rendered set
+IDENTICAL in both directions. A future estate whose links take a second shape
+invalidates that argument and must re-measure it rather than inherit it.
