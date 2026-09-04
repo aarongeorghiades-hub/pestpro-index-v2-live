@@ -1143,6 +1143,100 @@ async function runQuotationReport() {
   return 0;
 }
 
+// THE MACHINERY RE-MEASUREMENT — S63 R3.
+//
+// Runs the seven matchers codified this round against the real estate, so that
+// every figure S63 R1 Task 0 produced by ad-hoc shell is reproducible from the
+// registry. IT READS FILES THROUGH fs THROUGHOUT AND NEVER THROUGH A SHELL:
+// the UK routes live under `.next/server/app/(uk)/` and passing that path
+// unquoted to a shell word was the mechanism of the false zero.
+async function runMachinery() {
+  const M = (id) => MATCHERS.find((m) => m.id === id);
+
+  // --- M17, source-literal route derivation --------------------------------
+  const usDir = join(ROOT, 'app/us');
+  const dirents = (await readdir(usDir, { withFileTypes: true })).filter((e) => e.isDirectory());
+  const entries = [];
+  for (const e of dirents) {
+    let hasPageTsx = false;
+    try {
+      await readFile(join(usDir, e.name, 'page.tsx'), 'utf8');
+      hasPageTsx = true;
+    } catch { hasPageTsx = false; }
+    entries.push({ name: e.name, hasPageTsx });
+  }
+  const base2 = M('M17').test(entries);
+
+  // --- base 1, from the manifest (the S54-H authoritative matcher) ----------
+  const man = JSON.parse(await readFile(join(ROOT, '.next/app-path-routes-manifest.json'), 'utf8'));
+  const base1 = Object.entries(man)
+    .filter(([k, v]) => k.endsWith('/page') && v.startsWith('/us/'))
+    .map(([, v]) => v.replace('/us/', ''))
+    .sort();
+
+  // --- M22, compare the two bases by MEMBERSHIP ----------------------------
+  const baseDiff = M('M22').test({ a: base1, b: base2 });
+
+  // --- collect every rendered html, split by estate side -------------------
+  const walk = async (dir) => {
+    let out = [];
+    let ents = [];
+    try { ents = await readdir(dir, { withFileTypes: true }); } catch { return out; }
+    for (const e of ents) {
+      const full = join(dir, e.name);
+      if (e.isDirectory()) out = out.concat(await walk(full));
+      else if (e.name.endsWith('.html')) out.push(full);
+    }
+    return out;
+  };
+  const appDir = join(ROOT, '.next/server/app');
+  const html = await walk(appDir);
+  const usPrefix = join(appDir, 'us');
+  const usHub = join(appDir, 'us.html');
+  const isUs = (f) => f === usHub || f.startsWith(usPrefix + '/');
+
+  // --- M19, cross-contamination, both sides --------------------------------
+  const M19 = M('M19');
+  const contamination = [];
+  let usCardLinks = 0, usDisclosures = 0, ukCardLinks = 0;
+  const ukAsins = new Set();
+  const escaped = DISCLOSURE_CURRENT.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  for (const f of html) {
+    const raw = await readFile(f, 'utf8');
+    const side = isUs(f) ? 'us' : 'uk';
+    for (const hit of M19.test(raw, { side })) contamination.push(`${f.replace(ROOT + '/', '')}: ${hit}`);
+    if (side === 'us') {
+      usCardLinks += all(CARD_HREF_RE, raw).length;
+      usDisclosures += (raw.match(new RegExp(escaped, 'g')) || []).length;
+    } else {
+      const uk = [...raw.matchAll(/amazon\.co\.uk\/dp\/([A-Z0-9]{10})/g)];
+      ukCardLinks += uk.length;
+      for (const m of uk) ukAsins.add(m[1]);
+    }
+  }
+
+  // --- M18, ASIN declarations across app/us source -------------------------
+  const M18 = M('M18');
+  const asins = [];
+  for (const e of entries.filter((x) => x.hasPageTsx)) {
+    asins.push(...M18.test(await readFile(join(usDir, e.name, 'page.tsx'), 'utf8')));
+  }
+  for (const f of (await readdir(join(usDir, 'components'))).filter((x) => /\.tsx?$/.test(x))) {
+    asins.push(...M18.test(await readFile(join(usDir, 'components', f), 'utf8')));
+  }
+
+  // --- M20, law enumeration ------------------------------------------------
+  const laws = M('M20').test(await readFile(join(ROOT, 'CLAUDE.md'), 'utf8'));
+
+  return {
+    base1: base1.length, base2: base2.length, baseDiff,
+    asinOccurrences: asins.length, asinDistinct: new Set(asins).size,
+    usCardLinks, usDisclosures, ukCardLinks, ukAsinsDistinct: ukAsins.size,
+    contamination, laws,
+    htmlTotal: html.length, htmlUs: html.filter(isUs).length,
+  };
+}
+
 async function runEstate() {
   const dir = join(ROOT, '.next/server/app/us');
   const files = [
@@ -1251,6 +1345,24 @@ async function main() {
   }
 
   if (arg === '--estate') process.exit(await runEstate());
+  if (arg === '--machinery') {
+    const r = await runMachinery();
+    console.log('\nMACHINERY RE-MEASUREMENT (S63 R3) — every figure from a codified matcher\n');
+    console.log(`  html files                     ${r.htmlTotal} total, ${r.htmlUs} on /us, ${r.htmlTotal - r.htmlUs} elsewhere`);
+    console.log(`  M17 base 2 (source-literal)    ${r.base2} content routes`);
+    console.log(`      base 1 (manifest)          ${r.base1} content routes`);
+    console.log(`  M22 both-bases set difference  ${r.baseDiff.length ? r.baseDiff.join('; ') : 'EMPTY — sets identical'}`);
+    console.log(`  M18 ASIN declarations          ${r.asinOccurrences} occurrences, ${r.asinDistinct} distinct`);
+    console.log(`  US card links                  ${r.usCardLinks}`);
+    console.log(`  US current disclosures         ${r.usDisclosures}`);
+    console.log(`  UK card links                  ${r.ukCardLinks}, ${r.ukAsinsDistinct} distinct ASINs`);
+    console.log(`  M19 cross-contamination        ${r.contamination.length ? r.contamination.join('; ') : '0 in all four directions'}`);
+    console.log(`  M20 laws declared              ${r.laws.length} (highest ${r.laws[r.laws.length - 1]})`);
+    const missing = [];
+    for (let i = 1; i <= r.laws[r.laws.length - 1]; i++) if (!r.laws.includes(i)) missing.push(i);
+    console.log(`      gaps in 1..highest         ${missing.length ? missing.join(', ') : 'none'}`);
+    process.exit(0);
+  }
   if (arg === '--quotations') process.exit(await runQuotationReport());
   if (arg === '--parity') {
     console.log(JSON.stringify(await runParity(), null, 2));
