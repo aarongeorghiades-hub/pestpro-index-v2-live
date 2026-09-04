@@ -5,12 +5,9 @@
 // WHY IT MOVED OUT OF THE FOOTER. The two sentences it renders are UK-scoped:
 // they describe product recommendations "across the UK" and claim a commission
 // under the amazon.co.uk Associates tag. Every /us/ route rendered them too, and
-// on those routes both halves are wrong. The links on the US product pages are
-// untagged amazon.com URLs earning nothing, and UsToolCard says so on the same
-// page in its own words - "The link below is not a paid affiliate link. PestPro
-// Index earns nothing if you buy this tool". Two disclosures contradicting each
-// other on one page is worse than either alone, and the card is the accurate one.
-// /us/opossums carried the commission claim while rendering zero product links.
+// on those routes both halves are wrong. Two disclosures contradicting each
+// other on one page is worse than either alone. /us/opossums carried the
+// commission claim while rendering zero product links.
 //
 // WHY A CLIENT COMPONENT, AND WHAT THAT COSTS. Footer.tsx is a server component
 // by explicit design and its own comment says so: "No 'use client', no state, no
@@ -26,37 +23,50 @@
 // the footer static was that "the markup ships in the initial HTML on every
 // route", so a crawler that does not run JavaScript still sees it. Client
 // components are still rendered on the server for the initial HTML, so on every
-// non-/us/ route these two sentences remain in the served document exactly as
-// before. That is asserted here and is verified against the built output.
+// route that keeps this notice the sentences remain in the served document
+// exactly as before.
 //
-// S61 R2: THE SAME BUG RECURRED, ONE LEVEL DOWN. This component fixed the
-// claim at the /us/-vs-UK boundary, but never asked whether an individual UK
-// route actually carries an affiliate link either - it renders on all ~196
-// UK routes unconditionally. /professionals and /resources both carried
-// exactly one Amazon card (B09TZK7FYS, confirmed dead, removed this round)
-// and now carry zero. Rendering "All links are Amazon affiliate links" on a
-// page with none is the /us/opossums bug again, and on /resources it now
-// directly contradicts that page's own disclosure paragraph, which correctly
-// says it carries no affiliate links - two disclosures disagreeing on one
-// page, the exact failure this file exists to prevent. Excluded by exact
-// path below, the same way /us/ is excluded above. This is a two-route
-// exclusion, not a general per-page link-count check: the other ~194 UK
-// routes are unaffected and still receive this notice exactly as before.
+// THE ROUTE SET IS DERIVED AT BUILD TIME AND IS NOT MAINTAINED HERE — S64 R3.
+//
+// PM RULING, S64 R2, EXTENDED TO THIS ESTATE AT S64 R3: the statement is derived
+// from whether the document ACTUALLY RENDERS a card. A document rendering none
+// does not claim an affiliate relationship.
+//
+// WHAT WAS HERE BEFORE, AND WHY IT HAD TO GO. This file held
+// NO_AFFILIATE_LINKS_ROUTES, an exact-path exclusion list holding exactly two
+// entries, /professionals and /resources, added at S61 R2. The comment above it
+// recorded the /us/opossums bug, recorded the SAME BUG RECURRING one level down,
+// and then fixed it for two routes by naming them. MEASURED AT S64 R3: 100 UK
+// DOCUMENTS RENDERED NO CARD AND STILL SAID "All links are Amazon affiliate
+// links." The list named two of them. Each time the remedy was another entry
+// rather than a measurement, so the defect came back bigger.
+//
+// The set now comes from `ukCardCarryingRoutes()` in lib/ukCardRoutes.ts,
+// computed by the SERVER Footer from the route sources themselves and passed in
+// as a prop. Adding or removing a card moves this notice on the next build with
+// no file hand-edited anywhere. This mirrors exactly what S64 R2 did to
+// app/us/components/UsFooterCommissionNotice.tsx.
+//
+// THE FAILURE MODE IS DELIBERATE AND IS THE SAFE ONE. A null pathname renders
+// nothing. Silence on a page that carries links is a missing disclosure, which
+// M33 gates; a claim on a page that carries none is the false statement this
+// change exists to end.
 
 import { usePathname } from 'next/navigation';
 
-const NO_AFFILIATE_LINKS_ROUTES = new Set(['/professionals', '/resources']);
-
-export default function FooterAssociatesNotice() {
+export default function FooterAssociatesNotice({
+  cardCarryingRoutes,
+}: {
+  cardCarryingRoutes: string[];
+}) {
   const pathname = usePathname();
 
-  // Matches /us and every route beneath it. A null pathname is treated as
-  // non-US, so the failure mode is showing the UK notice on a UK route rather
-  // than silently dropping a disclosure that a UK page is required to carry.
-  const isUsRoute = pathname === '/us' || (pathname?.startsWith('/us/') ?? false);
-  const hasNoAffiliateLinks = pathname !== null && NO_AFFILIATE_LINKS_ROUTES.has(pathname);
+  // Matches /us and every route beneath it. A null pathname is treated as US, so
+  // the failure mode is silence rather than a claim.
+  const isUsRoute = pathname === '/us' || (pathname?.startsWith('/us/') ?? true);
+  const hasCards = pathname !== null && cardCarryingRoutes.includes(pathname);
 
-  if (isUsRoute || hasNoAffiliateLinks) return null;
+  if (isUsRoute || !hasCards) return null;
 
   return (
     <>

@@ -19,8 +19,16 @@
 // it renders identically regardless of the page background above it.
 import Link from 'next/link';
 import FooterAssociatesNotice from './FooterAssociatesNotice';
+import { ukCardCarryingRoutes } from '@/lib/ukCardRoutes';
 
+// S64 R3: THIS SERVER COMPONENT MEASURES WHICH ROUTES CARRY A CARD. The notice
+// below is a client component because deciding which route it is on needs the
+// pathname; the measurement needs the filesystem, which only a server component
+// can read. Neither can do both, so the set is computed here and crosses that
+// seam as a prop. It replaces a two-entry exclusion list that had fallen 98
+// routes behind the estate (Law 178).
 export default function Footer() {
+  const cardCarryingRoutes = ukCardCarryingRoutes();
   return (
     <footer className="bg-gray-900 text-gray-400 py-16">
       <div className="max-w-7xl mx-auto px-4">
@@ -168,7 +176,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-white font-bold mb-2">Products</h4>
-            <FooterAssociatesNotice />
+            <FooterAssociatesNotice cardCarryingRoutes={cardCarryingRoutes} />
           </div>
         </div>
 

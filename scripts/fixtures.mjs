@@ -197,6 +197,21 @@ export const US_CARD_ANCHOR =
 export const US_CARD_DISCLOSURE_ONLY =
   '<p class="m-0 mt-1 text-sm text-amber-900">As an Amazon Associate, PestPro Index earns from qualifying purchases.</p>';
 
+// ---- M33 (S64 R3), the UK footer's affiliate statement ---------------------
+// Emitted by components/FooterAssociatesNotice.tsx through the server Footer.
+// THE UK "NO CARDS" STATE IS SILENCE, NOT A DENIAL: the UK estate carries no
+// earns-nothing sentence anywhere (measured S64 R3, zero occurrences), so a
+// UK document with no card correctly says nothing at all.
+export const UK_FOOTER_AFFIRM =
+  '<p>Free product recommendations for pest control across the UK. All links are Amazon affiliate links.</p>';
+export const UK_CARD_ANCHOR = '<a href="https://www.amazon.co.uk/dp/B00NFRTVY6">buy</a>';
+// A UK page-level authored disclosure. There are FOUR distinct wordings of these
+// on the estate and they are NOT the derived statement — they are hand-authored
+// per page. One must not satisfy the gate in place of the footer, or the derived
+// mechanism could be broken on a page while the gate stayed green.
+export const UK_PAGE_DISCLOSURE =
+  '<p class="text-sm text-amber-800"><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported.</p>';
+
 // ---- M21 (FP-1), genuine quotation delimiters -----------------------------
 // THE RULE: a quotation is delimited by a QUOTATION MARK — the HTML entities
 // &ldquo;/&rdquo; or the curly characters themselves. In a .tsx file the ASCII

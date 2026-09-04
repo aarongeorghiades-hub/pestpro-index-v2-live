@@ -80,6 +80,9 @@ import {
   US_FOOTER_DENY,
   US_CARD_ANCHOR,
   US_CARD_DISCLOSURE_ONLY,
+  UK_FOOTER_AFFIRM,
+  UK_CARD_ANCHOR,
+  UK_PAGE_DISCLOSURE,
   QUOTE_SPAN_GENUINE,
   QUOTE_SPAN_JS_DELIMITERS,
   SET_PAIR_EQUAL,
@@ -1424,17 +1427,44 @@ const MATCHERS = [
     kind: 'gate',
     scope: 'document',
     surface: 'rendered',
-    name: 'S59-C: the footer earnings statement agrees with the rendered card count',
+    name: 'S59-C: the footer earnings statement agrees with the rendered card count, both estates',
+    // BOTH ESTATES — S64 R3. The hazard this gate exists for is estate-agnostic:
+    // a build-time derivation reads SOURCE DECLARATIONS and cannot see a card
+    // that render suppresses, on either side. S64 R3 extended the derived-set fix
+    // to the UK footer, so the UK needs the same post-build proof the US has.
+    //
+    // THE TWO ESTATES HAVE DIFFERENT CORRECT STATES FOR A NON-CARDING PAGE, and
+    // conflating them would make the gate wrong on one of them:
+    //   US   no cards  ->  the earns-nothing sentence.  Silence would be a defect.
+    //   UK   no cards  ->  SILENCE. The UK estate carries no earns-nothing
+    //                      sentence anywhere (measured S64 R3: zero occurrences),
+    //                      so there is nothing for it to say.
+    // Each limb therefore tests its own estate's rule and is silent on the other.
     test: (t) => {
-      const affirm = t.includes(US_FOOTER_AFFIRM);
-      const deny = t.includes(US_FOOTER_DENY);
-      // Not a /us route, or a surface carrying neither statement: out of scope.
-      if (!affirm && !deny) return [];
-      const cards = all(CARD_HREF_RE, t).length;
       const out = [];
-      if (affirm && deny) out.push('two contradictory footer statements on one page');
-      if (cards > 0 && !affirm) out.push(`${cards} rendered card link(s) and no affiliate footer`);
-      if (cards === 0 && affirm) out.push('affiliate footer on a page rendering no card link');
+
+      // ---- US limb -------------------------------------------------------
+      const usAffirm = t.includes(US_FOOTER_AFFIRM);
+      const usDeny = t.includes(US_FOOTER_DENY);
+      if (usAffirm || usDeny) {
+        const cards = all(CARD_HREF_RE, t).length;
+        if (usAffirm && usDeny) out.push('US: two contradictory footer statements on one page');
+        if (cards > 0 && !usAffirm) out.push(`US: ${cards} rendered card link(s) and no affiliate footer`);
+        if (cards === 0 && usAffirm) out.push('US: affiliate footer on a page rendering no card link');
+      }
+
+      // ---- UK limb -------------------------------------------------------
+      // Scoped by the presence of EITHER a UK card or the UK footer statement,
+      // so a document that legitimately has neither is out of scope and silent.
+      // It is anchored on the FOOTER paragraph, never on a page-level authored
+      // disclosure: those carry four different wordings, are not derived, and
+      // must not stand in for the statement this gate governs.
+      const ukAffirm = t.includes(UK_FOOTER_AFFIRM);
+      const ukCards = all(UK_CARD_HREF_RE, t).length;
+      if (ukAffirm || ukCards) {
+        if (ukCards > 0 && !ukAffirm) out.push(`UK: ${ukCards} rendered card link(s) and no affiliate footer`);
+        if (ukCards === 0 && ukAffirm) out.push('UK: affiliate footer on a page rendering no card link');
+      }
       return out;
     },
     probePos: [
@@ -1451,6 +1481,16 @@ const MATCHERS = [
       US_FOOTER_AFFIRM,
       // both statements on one page
       US_CARD_ANCHOR + US_FOOTER_AFFIRM + US_FOOTER_DENY,
+      // --- UK positives ---
+      // the UK over-claim: the statement on a page rendering no card. This is
+      // the exact state 100 UK documents were in before S64 R3.
+      UK_FOOTER_AFFIRM,
+      // a UK card with no footer statement — the direction that would drop a
+      // required disclosure, and the one a suppressed-render card produces
+      UK_CARD_ANCHOR,
+      // AND IT MUST NOT BE RESCUED BY A PAGE-LEVEL AUTHORED DISCLOSURE, which is
+      // a different, hand-written surface with four wordings on the estate.
+      UK_CARD_ANCHOR + UK_PAGE_DISCLOSURE,
     ],
     probeNeg: [
       US_CARD_ANCHOR + US_FOOTER_AFFIRM,
@@ -1459,8 +1499,12 @@ const MATCHERS = [
       // sentence, with no footer statement at all, is out of this gate's scope
       // and must be silent rather than counted either way.
       US_CARD_ANCHOR + US_CARD_DISCLOSURE_ONLY,
-      // a non-/us document, carrying neither footer statement
-      '<p>Free product recommendations for pest control across the UK.</p>',
+      // --- UK negatives ---
+      UK_CARD_ANCHOR + UK_FOOTER_AFFIRM,
+      // A UK document with neither a card nor the statement. This is the CORRECT
+      // state for a non-carding UK page — silence, not a denial — and it is what
+      // 100 documents moved to at S64 R3.
+      '<p>The UK&rsquo;s neutral pest control directory</p>',
     ],
   },
 ];
@@ -2015,6 +2059,21 @@ async function runMachinery() {
     asins.push(...M18.test(await readFile(join(usDir, 'components', f), 'utf8')));
   }
 
+  // --- M33 ACROSS BOTH ESTATES — S64 R3 -----------------------------------
+  //
+  // runEstate() walks /us only, so until this round M33 had no runner that could
+  // reach a UK document at all. Its UK limb would have been a matcher nothing
+  // ever fired on the estate — codified and untested, which is the Law 167/178
+  // failure in a new place. This runner walks all 240 built documents.
+  const M33 = M('M33');
+  const disclosure = [];
+  for (const f of html) {
+    const raw = await readFile(f, 'utf8');
+    for (const hit of M33.test(surfaceOf(M33, raw))) {
+      disclosure.push(`${f.replace(ROOT + '/', '')}: ${hit}`);
+    }
+  }
+
   // --- M20, law enumeration ------------------------------------------------
   const laws = M('M20').test(await readFile(join(ROOT, 'CLAUDE.md'), 'utf8'));
 
@@ -2023,7 +2082,7 @@ async function runMachinery() {
     asinOccurrences: asins.length, asinDistinct: new Set(asins).size,
     usCardLinks, usDisclosures, ukCardLinks,
     usAsinsDistinct: usAsins.size, ukAsinsDistinct: ukAsins.size,
-    contamination, laws,
+    contamination, disclosure, laws,
     htmlTotal: html.length, htmlUs: html.filter(isUs).length,
   };
 }
@@ -2289,6 +2348,8 @@ async function main() {
     console.log(`  M31 US disclosures RENDERED    ${r.usDisclosures}`);
     console.log(`  M32 UK card links  RENDERED    ${r.ukCardLinks} occurrences, ${r.ukAsinsDistinct} distinct ASINs`);
     console.log(`  M19 cross-contamination        ${r.contamination.length ? r.contamination.join('; ') : '0 in all four directions'}`);
+    console.log(`  M33 disclosure agreement       ${r.disclosure.length ? `FAIL — ${r.disclosure.length}` : 'PASS — 0'} over ${r.htmlTotal} documents, BOTH estates`);
+    for (const d of r.disclosure.slice(0, 40)) console.log(`      ${d}`);
     console.log(`  M20 laws declared              ${r.laws.length} (highest ${r.laws[r.laws.length - 1]})`);
     const missing = [];
     for (let i = 1; i <= r.laws[r.laws.length - 1]; i++) if (!r.laws.includes(i)) missing.push(i);
