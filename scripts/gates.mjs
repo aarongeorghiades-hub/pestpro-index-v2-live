@@ -83,8 +83,6 @@ import {
   SET_PAIR_PREFIX_TRAP,
   BLOCK_BODY_HTTP_200,
   REAL_PAGE_WITH_TRIGGER_WORD,
-  HTML_WITH_FLIGHT_PAYLOAD,
-  HTML_SCRIPT_ONLY,
   HTML_CARD_AFTER_PROSE,
   HTML_NO_CARD,
   CARD_COUNT_MAP,
@@ -300,12 +298,34 @@ const decodeEntities = (t) =>
     .replace(/&quot;/g, '"')
     .replace(/&amp;/g, '&');
 
-// VISIBLE BODY EXTRACTION — S63 R5, shared so M24 and M25 cannot drift apart.
+// VISIBLE BODY EXTRACTION — S63 R5. A FUNCTION, NOT A MATCHER (S63 R8).
 //
 // ORDER IS THE RULE, not an implementation detail. <script> goes FIRST because a
 // Next <script> block carries the RSC flight payload, which restates every
 // string on the page; stripping tags before scripts double-counts the whole
 // document. <style> and HTML comments go with it for the same reason.
+//
+// M24 IS RETIRED AND MUST NOT BE RE-REGISTERED. It wrapped this function in a
+// registry entry named "Visible body text: scripts, styles and comments removed
+// BEFORE tags" and returned the extracted text as a one-element array. It was
+// structurally dead -- it declared surface `visible-body`, which runDocument()
+// never builds -- and MEASURED AT S63 R8 IT WAS DEAD IN BOTH DIRECTIONS:
+//
+//   as shipped   INV(0) on all 61 built routes, 62 of 62 calls given `undefined`
+//   as repaired  INV(1) on all 61 built routes, and no live negative exists
+//
+// A one-element array is a count that can only be 1 on any page carrying prose,
+// and every route on the estate carries prose. That is a check that cannot fail
+// (Law 167) reporting a number nothing computed against (Law 178), and its
+// INV(0) read as a clean result for two rounds. IT IS AN EXTRACTOR, AND AN
+// EXTRACTOR IS A HELPER. It stays codified here under Law 166 -- one definition,
+// no second copy -- and M25 calls it for both limbs of its percentage so the
+// numerator and denominator cannot drift apart.
+//
+// IT IS NOT A DUPLICATE OF SURFACES.prose, and that was measured before the
+// retirement rather than assumed: the two disagree on all 61 routes, by 28 to
+// 2,456 characters (toProse strips <head> and keeps hard line breaks; this does
+// neither). Deleting it would have left M25 with no extractor.
 function visibleBody(t) {
   const stripped = (t ?? '')
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
@@ -857,27 +877,18 @@ const MATCHERS = [
   // than re-implemented (this file's own rule 4: no second copy).
   // =========================================================================
   {
-    id: 'M24',
-    kind: 'inventory',
-    scope: 'document',
-    surface: 'visible-body',
-    name: 'Visible body text: scripts, styles and comments removed BEFORE tags',
-    // Declared INVENTORY: it extracts, it does not judge (Law 167).
-    test: (t) => {
-      const v = visibleBody(t);
-      return v ? [v] : [];
-    },
-    // fires on a document with visible prose...
-    probePos: HTML_WITH_FLIGHT_PAYLOAD,
-    // ...and is EMPTY on a document that is only a flight payload. That is the
-    // whole rule: if the payload were counted this probe would return text.
-    probeNeg: HTML_SCRIPT_ONLY,
-  },
-  {
     id: 'M25',
     kind: 'inventory',
     scope: 'document',
-    surface: 'card-offset',
+    // SURFACE REPAIRED S63 R8. It declared `card-offset`, which runDocument()
+    // never builds, so `views[m.surface]` was `undefined` on every call and this
+    // matcher printed INV(0) on every route from the day it was codified --
+    // measured at 62 of 62 invocations receiving `undefined`. It reads RAW HTML
+    // because CARD_HREF_RE matches an href attribute, which does not survive
+    // into the prose surface; the visible-character conversion is done inside
+    // test() by visibleBody(). On the live estate it now fires on 41 routes and
+    // is silent on 20.
+    surface: 'full',
     name: 'First-card offset, measured in VISIBLE characters (the Law 66 measure)',
     // THE RULE: the position of the first card link within the VISIBLE text,
     // never within raw bytes. The positive fixture places a 5,000-byte script
@@ -891,6 +902,14 @@ const MATCHERS = [
       const whole = visibleBody(t);
       return [{ offset: before.length, pct: Math.round((100 * before.length) / Math.max(whole.length, 1)) }];
     },
+    // MEASURED ARTEFACT, DELIBERATELY NOT CHANGED THIS ROUND (Law 22). The slice
+    // ends inside the anchor's own `<a href="` , which is an UNTERMINATED tag, so
+    // the tag-strip regex leaves those 9 characters in the visible text and every
+    // offset carries a constant +9. It is 0.02% of a typical offset and does not
+    // move a percentage point, but it is a real overcount and it is named here
+    // rather than silently corrected, because correcting it shifts every reported
+    // offset and any figure compared against the S63 R5 threshold with it.
+    report: (hits) => `first card at visible character ${hits[0].offset}, ${hits[0].pct}% through the visible body`,
     probePos: HTML_CARD_AFTER_PROSE,
     probeNeg: HTML_NO_CARD,
   },
@@ -1150,6 +1169,32 @@ async function selfTest() {
   }
   console.log(`  D. G1 expect() probes: ${g1.expectProbes.length - g1bad}/${g1.expectProbes.length} behaved`);
   if (g1bad) {
+    console.log('     ASSERTION FAILED.');
+    bad++;
+  }
+
+  // E. M25 MEASURES VISIBLE CHARACTERS, NOT RAW BYTES — asserted, not commented.
+  //
+  // The M25 fixture places a 5,000-byte script block AHEAD of the card precisely
+  // so a raw-byte measure and a visible-character measure cannot agree, and
+  // until S63 R8 NOTHING ASSERTED IT. The probe loop above only checks that a
+  // matcher fires; M25 returns one object either way, so a raw-byte
+  // reimplementation would fire exactly as the correct one does and the probe
+  // would pass. A fixture built to discriminate proves nothing until something
+  // reads the value it discriminates on. Every figure below is derived at
+  // runtime from the fixture and the matcher (Law 178).
+  const m25 = MATCHERS.find((x) => x.id === 'M25');
+  const rawIdx = new RegExp(CARD_HREF_RE.source, 'g').exec(HTML_CARD_AFTER_PROSE).index;
+  const visIdx = m25.test(HTML_CARD_AFTER_PROSE)[0].offset;
+  const skipped = (HTML_CARD_AFTER_PROSE.match(/<script>([\s\S]*?)<\/script>/) ?? [, ''])[1].length;
+  const visibleMeasure = visIdx <= rawIdx - skipped;
+  console.log('\n  E. M25 offset measure, against a fixture carrying a script block before the card:');
+  console.log(`     raw byte offset of the card:  ${rawIdx}`);
+  console.log(`     M25 reported offset:          ${visIdx}`);
+  console.log(
+    `     script bytes to be skipped:   ${skipped}  -> ${visibleMeasure ? 'VISIBLE measure confirmed' : 'RAW-BYTE measure — the Law 66 measure has been lost'}`,
+  );
+  if (!visibleMeasure) {
     console.log('     ASSERTION FAILED.');
     bad++;
   }
@@ -1608,6 +1653,13 @@ async function main() {
     const verdict = row.kind === 'inventory' ? `INV(${row.hits.length})` : row.problem ? 'FAIL' : 'PASS';
     console.log(`  ${row.id.padEnd(5)}${verdict.padEnd(10)}${row.surface.padEnd(13)}${row.name}`);
     if (row.problem) console.log(`        ${row.problem}`);
+    // AN INVENTORY WHOSE RESULT IS A MEASUREMENT MUST PRINT THE MEASUREMENT.
+    // S63 R8: M25 returns one object carrying the offset and the percentage, so
+    // its count is 0 or 1 and INV(1) alone says nothing. A matcher may declare
+    // report() to render its hits; without this the M25 repair would have been
+    // invisible in the very report it exists to feed.
+    const m = MATCHERS.find((x) => x.id === row.id);
+    if (m?.report && row.hits.length) console.log(`        ${m.report(row.hits)}`);
   }
   console.log(`\n${res.failed ? `${res.failed} MATCHER(S) FAILED` : 'ALL MATCHERS PASSED'}`);
   process.exit(res.failed ? 1 : 0);

@@ -201,26 +201,25 @@ export const REAL_PAGE_WITH_TRIGGER_WORD =
 // rather than re-implemented — this file's standing rule against a second copy.
 // ===========================================================================
 
-// ---- M24, visible body extraction -----------------------------------------
-// THE RULE: rendered visible text is what remains after removing <script>,
-// <style> and HTML comments FIRST, then tags. The order matters and is the
-// whole point: a Next <script> block carries the RSC flight payload, which
-// restates every string on the page, so stripping tags before scripts
-// double-counts the entire document.
-export const HTML_WITH_FLIGHT_PAYLOAD =
-  '<html><body><p>Millipedes do not bite.</p>' +
-  '<script>self.__next_f.push([1,"Millipedes do not bite. Millipedes do not ' +
-  'bite. Millipedes do not bite."])</script>' +
-  '<!-- Millipedes do not bite. --></body></html>';
-// nothing visible at all: only a script block
-export const HTML_SCRIPT_ONLY =
-  '<script>self.__next_f.push([1,"Millipedes do not bite."])</script>';
+// ---- M24, RETIRED S63 R8 ---------------------------------------------------
+// HTML_WITH_FLIGHT_PAYLOAD and HTML_SCRIPT_ONLY ARE REMOVED — S63 R8. They were
+// M24's two probes, and M24 is retired (see the visibleBody() comment in
+// gates.mjs for the measurement that retired it). They are deleted rather than
+// left in place: an exported fixture nothing imports is dead code that reads as
+// live coverage, which is the same fault as a dead matcher's INV(0) reading as a
+// clean result. Enumerated before deleting (Law 40) — gates.mjs was the only
+// importer of either.
 
 // ---- M25, first-card offset ------------------------------------------------
 // THE RULE: the offset of the first card link measured in VISIBLE characters,
 // never in raw bytes. The fixture puts a large script block AHEAD of the card
 // precisely so the raw offset and the visible offset cannot agree — if a future
 // implementation measures raw bytes the probe's asserted value moves.
+// THAT VALUE IS NOW ACTUALLY READ. Until S63 R8 nothing asserted it: the probe
+// loop checks only that a matcher fires, and M25 returns one object whichever
+// measure it uses, so this fixture discriminated against a reader that never
+// looked. Assertion E in gates.mjs selfTest() compares the reported offset with
+// the raw byte offset and fails loudly if they agree.
 export const HTML_CARD_AFTER_PROSE =
   '<p>Twelve characters.</p>' +
   '<script>' + 'x'.repeat(5000) + '</script>' +
