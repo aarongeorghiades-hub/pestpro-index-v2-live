@@ -276,10 +276,11 @@ const G3_PROPER_NOUNS = new Set(['Vetter', 'Vetters', 'Trustpilot', 'TrustMark']
 // (Law 62): a banned assertion restated in the flight payload is still served.
 // Removing tags is not the same as removing scripts — a tag between "not" and
 // "verify" would otherwise break the token window.
-const g3Tokens = (t) =>
+const plainText = (t) =>
   decode(String(t ?? '').replace(/<[^>]+>/g, ' '))
     .replace(/[’‘]/g, "'")
     .replace(/\s+/g, ' ');
+const g3Tokens = plainText;
 
 // Returns ONLY the asserted hits. Each excluded hit is returned separately by
 // g3Classify so the report can name what was excluded and why, rather than
@@ -749,20 +750,75 @@ const MATCHERS = [
     kind: 'gate',
     scope: 'document',
     surface: 'full',
-    name: 'S59-C: no superseded no-affiliate disclosure on a page carrying a tagged link',
+    name: 'S59-C: no denial of earning on a page carrying a tagged card link',
     // The atomicity rule as a gate rather than as a count. Passing an affiliate
     // tag and replacing the disclosure are ONE change; a page carrying a tagged
-    // link that still says the link is not a paid affiliate link is the exact
-    // breach S59-C forbids. A page with NEITHER is not a breach, which is why
-    // the probeNeg carries a bare superseded sentence with no card.
+    // link that also tells the reader the site earns nothing is the exact breach
+    // S59-C forbids. A page with NEITHER is not a breach, which is why one
+    // probeNeg is a bare denial with no card on the page.
+    //
+    // REBUILT FROM THE CONCEPT AT S64 R1, AND IT WAS REPORTING A FALSE ZERO.
+    // It used to test `t.includes(DISCLOSURE_SUPERSEDED)` — ONE LITERAL
+    // SENTENCE, "The link below is not a paid affiliate link." The estate serves
+    // a SECOND, different denial from app/us/components/UsFooterCommissionNotice
+    // .tsx — "We earn nothing if you buy through the links on this site." — and
+    // the literal form could not see it. Law 170 exactly: a matcher whose NAME
+    // states a concept, implemented as an enumerated instance.
+    //
+    // THE CLASS IS A DENIAL THAT THE PAGE EARNS. The shapes below are the
+    // GRAMMATICAL forms such a denial takes — a negator bound to an earning
+    // verb, to the noun "commission", or to "affiliate"/"paid" — not the
+    // sentences this site happens to use today.
+    //
+    // THE DECISIVE NEGATIVE PROBE IS THE UK DISCLOSURE, "we may earn a small
+    // commission at no extra cost to you." It carries "earn", "commission" and a
+    // negator within four tokens, and it is NOT a denial: the negation attaches
+    // to the cost, not to the earning. Any looser shape fires on it, which is
+    // why each class is bound to the earning term rather than to proximity
+    // (Law 115 — a class defined by meaning is not settled by nearby words).
+    classes: [
+      { id: 'earn-nothing', name: 'an earning verb negated directly',
+        source: String.raw`\bearn(?:s|ed|ing)?\s+(?:nothing|no\b)`,
+        pos: ['We earn nothing if you buy through the links on this site.',
+              'this site earns no commission'],
+        neg: ['we may earn a small commission at no extra cost to you',
+              'PestPro Index earns from qualifying purchases'] },
+      { id: 'no-commission', name: 'the commission itself negated',
+        source: String.raw`\b(?:no|zero)\s+commission\b`,
+        pos: ['there is no commission on this link'],
+        neg: ['we may earn a small commission at no extra cost to you'] },
+      { id: 'not-affiliate', name: 'the link denied as affiliate or paid',
+        source: String.raw`\b(?:not|no)\s+(?:an?\s+)?(?:paid\s+)?(?:affiliate|sponsored)\b`,
+        pos: ['The link below is not a paid affiliate link.',
+              'no affiliate relationship exists'],
+        neg: ['this is an affiliate link', 'we may earn a small commission at no extra cost to you'] },
+      { id: 'do-not-earn', name: 'an auxiliary negation of earning',
+        source: String.raw`\b(?:do(?:es)? not|don't|doesn't|cannot|can't|will not|won't|never)\s+(?:\w+\s+){0,2}earn`,
+        pos: ['we do not earn anything from these links', 'this page will never earn a fee'],
+        neg: ['we may earn a small commission at no extra cost to you'] },
+    ],
     test: (t) => {
       if (all(CARD_HREF_RE, t).length === 0) return [];
-      return t.includes(DISCLOSURE_SUPERSEDED) ? [DISCLOSURE_SUPERSEDED] : [];
+      const text = plainText(t);
+      const out = [];
+      for (const c of MATCHERS.find((m) => m.id === 'M11').classes) {
+        for (const m of all(new RegExp(c.source, 'gi'), text)) out.push(`${c.id}: ${m[0]}`);
+      }
+      return out;
     },
-    probePos: CARD_LINK + ' ' + DISCLOSURE_SUPERSEDED,
+    probePos: [
+      CARD_LINK + ' ' + DISCLOSURE_SUPERSEDED,
+      // THE SHAPE THE OLD LITERAL COULD NOT SEE. This probe is the regression
+      // test for the false zero itself.
+      CARD_LINK + ' <p>We earn nothing if you buy through the links on this site.</p>',
+    ],
     probeNeg: [
       CARD_LINK + ' ' + DISCLOSURE_CURRENT,
       DISCLOSURE_SUPERSEDED, // no card on the page: not a breach
+      'We earn nothing if you buy through the links on this site.', // ditto
+      CARD_LINK +
+        ' <p>we may earn a small commission at no extra cost to you. As an Amazon ' +
+        'Associate, PestPro Index earns from qualifying purchases.</p>',
     ],
   },
   {
@@ -964,9 +1020,29 @@ const MATCHERS = [
     //   4  inside a section h2  "## S62 R2 — LAW 171: THE UK ESTATE IS BRITISH"
     // A `LAW n` token MID-SENTENCE is a REFERENCE and is not a declaration.
     // The S63 R1 scan anchored on form 2 alone and reported Law 174 ABSENT.
+    //
+    // TWO FALSE POSITIVES CLOSED AT S64 R1, BOTH FOUND BY THIS MATCHER'S OWN
+    // OUTPUT RATHER THAN BY REVIEW.
+    //
+    // FP-4, A DIGIT-DOT-SPACE AT LINE START IS NOT A LIST ITEM. A paragraph in
+    // which the figure 783 wrapped to the start of a line, followed by a full
+    // stop, made M20 report 183 laws with a HIGHEST OF 783 and six hundred gaps.
+    // Markdown renders such a line as part of the running paragraph unless it
+    // follows a blank line, another item, or an item's indented continuation.
+    // THAT IS THE DISCRIMINATOR AND IT IS MARKDOWN'S OWN SEMANTICS, not an
+    // arbitrary narrowing. Measured over all 157 form-1 matches in CLAUDE.md at
+    // the time it was written: 156 kept, exactly the one false positive rejected.
+    //
+    // FP-5, A PROPOSAL IS NOT A DECLARATION. "PROPOSED LAW 182 — NOT RATIFIED"
+    // announces a law the PM has not made. Counting it inflates the enumeration
+    // and silently closes a number that is still open.
     test: (t) => {
       const found = new Set();
-      for (const line of (t ?? '').split('\n')) {
+      const lines = (t ?? '').split('\n');
+      const isItem = (l) => /^\s{0,4}\d{1,3}\.\s+\S/.test(l);
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        if (/\bPROPOSED\b|\bNOT RATIFIED\b/i.test(line)) continue;
         let m;
         // forms 2 and 3: LAW n at line start, optionally behind # markers
         if ((m = /^#{0,6}\s*LAW\s+(\d+)\b/.exec(line))) found.add(Number(m[1]));
@@ -974,8 +1050,12 @@ const MATCHERS = [
         else if (/^#{1,6}\s/.test(line)) {
           for (const h of line.matchAll(/\bLAW\s+(\d+)\b/g)) found.add(Number(h[1]));
         }
-        // form 1: numbered-list declaration
-        else if ((m = /^\s{0,4}(\d{1,3})\.\s+\S/.exec(line))) found.add(Number(m[1]));
+        // form 1: numbered-list declaration, only where markdown would render one
+        else if ((m = /^\s{0,4}(\d{1,3})\.\s+\S/.exec(line))) {
+          const prev = i ? lines[i - 1] : '';
+          const rendersAsItem = !prev.trim() || isItem(prev) || /^\s+\S/.test(prev);
+          if (rendersAsItem) found.add(Number(m[1]));
+        }
       }
       return [...found].sort((x, y) => x - y);
     },
@@ -1314,8 +1394,25 @@ const MATCHERS = [
 const asProbeList = (p) =>
   (Array.isArray(p) ? p : [p]).map((x) => (typeof x === 'string' ? { text: x, ctx: undefined } : x));
 
+// RETURNS A DERIVED BREAKDOWN, NOT A SINGLE NUMBER — S64 R1, Law 178.
+//
+// The passing branch of the printed line used to end "0 unusable" as a STRING
+// LITERAL. S63 R8 found it, proved it branch-guaranteed correct, and left it,
+// which is the right call for a round whose remit was elsewhere. It is closed
+// here. Branch-guaranteed is not derived: a reader cannot tell a typed figure
+// from a measured one, and that is the whole of Law 178.
+//
+// AND THE FIGURE BESIDE IT WAS ACTUALLY WRONG, WHICH THE LITERAL HID. `usable`
+// was computed as `registered - bad`, but `bad` also counts CLASS-probe failures
+// and ASSERTION failures, neither of which makes a matcher unusable — one broken
+// class inside G4 would have been reported as one fewer usable matcher. Probe
+// failures, class failures and assertion failures are now counted separately and
+// each is derived from what it counts.
 async function selfTest() {
   let bad = 0;
+  const unusableIds = [];
+  let classFailures = 0;
+  let assertionFailures = 0;
   console.log('MATCHER PROBES — a matcher is not usable until both limbs behave.\n');
   console.log(
     `  ${'ID'.padEnd(5)}${'KIND'.padEnd(11)}${'POSITIVE'.padEnd(10)}${'NEGATIVE'.padEnd(13)}${'SURFACE'.padEnd(14)}NAME`,
@@ -1332,7 +1429,10 @@ async function selfTest() {
       (p) => m.test(surfaceOf(m, p.text), p.ctx ?? m.probeCtx).length > 0,
     );
     const ok = pos && negHits.length === 0;
-    if (!ok) bad++;
+    if (!ok) {
+      bad++;
+      unusableIds.push(m.id);
+    }
     console.log(
       `  ${m.id.padEnd(5)}${m.kind.padEnd(11)}${(pos ? 'fires' : 'DEAD').padEnd(10)}` +
         `${(negHits.length ? `FIRES(${negHits.length})` : `silent/${negList.length}`).padEnd(13)}` +
@@ -1353,7 +1453,10 @@ async function selfTest() {
       const pos = c.pos.every((p) => new RegExp(c.source, 'gi').test(p));
       const firing = c.neg.filter((n) => new RegExp(c.source, 'gi').test(n));
       const ok = pos && firing.length === 0;
-      if (!ok) bad++;
+      if (!ok) {
+        bad++;
+        classFailures++;
+      }
       console.log(
         `    ${c.id.padEnd(8)}${(pos ? 'fires' : 'DEAD').padEnd(8)}` +
           `${(firing.length ? `FIRES(${firing.length})` : `silent/${c.neg.length}`).padEnd(12)}` +
@@ -1378,6 +1481,7 @@ async function selfTest() {
   if (stemHits < 2 || wordHits !== 0) {
     console.log('     ASSERTION FAILED.');
     bad++;
+    assertionFailures++;
   }
 
   // B. The S60 R9 false zero cannot be reintroduced: the wrong matcher must be
@@ -1396,6 +1500,7 @@ async function selfTest() {
   if (rightN !== 1 || wrongN !== 0) {
     console.log('     ASSERTION FAILED.');
     bad++;
+    assertionFailures++;
   }
 
   // C. No second copy: check.mjs must still carry this exact ASIN expression.
@@ -1412,6 +1517,7 @@ async function selfTest() {
   if (drifted || !cm) {
     console.log('     ASSERTION FAILED: two copies of one matcher have diverged, or cannot be compared (Law 41).');
     bad++;
+    assertionFailures++;
   }
 
   // D. G1's expect() is probed directly, not only its regex (S61 R8 flag 5).
@@ -1425,6 +1531,7 @@ async function selfTest() {
   if (g1bad) {
     console.log('     ASSERTION FAILED.');
     bad++;
+    assertionFailures++;
   }
 
   // E. M25 MEASURES VISIBLE CHARACTERS, NOT RAW BYTES — asserted, not commented.
@@ -1451,6 +1558,7 @@ async function selfTest() {
   if (!visibleMeasure) {
     console.log('     ASSERTION FAILED.');
     bad++;
+    assertionFailures++;
   }
 
   // F. THE PROBE PATH IS THE PRODUCTION PATH — S64 R1, asserted at runtime.
@@ -1476,13 +1584,14 @@ async function selfTest() {
     if (!scriptNeg) {
       console.log(`     ${id}  NO SCRIPT-BLOCK NEGATIVE PROBE — assertion cannot be made`);
       bad++;
+      assertionFailures++;
       continue;
     }
     const direct = m.test(scriptNeg.text, m.probeCtx).length;
     const viaSurface = m.test(surfaceOf(m, scriptNeg.text), m.probeCtx).length;
     const ok = direct > 0 && viaSurface === 0;
     if (ok) fDiscriminated++;
-    else bad++;
+    else { bad++; assertionFailures++; }
     console.log(
       `     ${id}  direct=${direct}  via ${m.surface}=${viaSurface}  -> ` +
         `${ok ? 'the surface is load-bearing' : 'ASSERTION FAILED — the surface changes nothing'}`,
@@ -1509,18 +1618,19 @@ async function selfTest() {
   if (!g3Probe) {
     console.log('     NO HTML-SHAPED NEGATIVE PROBE — assertion cannot be made');
     bad++;
+    assertionFailures++;
   } else {
     const off = g3Classify(g3Probe.text, { strip: false }).asserted.length;
     const on = g3Classify(g3Probe.text).asserted.length;
     const ok = off > 0 && on === 0;
-    if (!ok) bad++;
+    if (!ok) { bad++; assertionFailures++; }
     console.log(
       `     strip OFF asserted=${off}  strip ON asserted=${on}  -> ` +
         `${ok ? 'the tag strip is load-bearing' : 'ASSERTION FAILED — the strip changes nothing'}`,
     );
   }
 
-  return bad;
+  return { bad, registered: MATCHERS.length, unusableIds, classFailures, assertionFailures };
 }
 
 // ---------------------------------------------------------------------------
@@ -1869,9 +1979,22 @@ async function runG3Sweep() {
   const isUs = (f) => f === join(appDir, 'us.html') || f.startsWith(usPrefix + '/');
   const rows = [];
   let asserted = 0, excluded = 0;
+  // THROUGH THE REGISTRY ENTRY AND ITS DECLARED SURFACE, not through g3Classify
+  // directly. G3's surface is `full` and SURFACES.full is the identity, so this
+  // changes no number today — it is written this way so the sweep cannot drift
+  // from the production call if G3's surface ever changes (Law 166).
+  const G3 = MATCHERS.find((m) => m.id === 'G3');
   for (const f of files) {
     const raw = await readFile(f, 'utf8');
-    const c = g3Classify(raw);
+    const view = surfaceOf(G3, raw);
+    const c = g3Classify(view);
+    // The asserted limb is taken from the registry entry itself, and the two are
+    // asserted equal rather than assumed: a divergence means the sweep and the
+    // gate have stopped answering the same question.
+    const viaGate = G3.test(view).length;
+    if (viaGate !== c.asserted.length) {
+      throw new Error(`G3 sweep diverges from the gate on ${f}: ${viaGate} vs ${c.asserted.length}`);
+    }
     if (!c.asserted.length && !c.excluded.length) continue;
     asserted += c.asserted.length;
     excluded += c.excluded.length;
@@ -2023,7 +2146,8 @@ async function runEstate() {
 
 async function main() {
   const arg = process.argv[2];
-  const bad = await selfTest();
+  const st = await selfTest();
+  const bad = st.bad;
   // LAW 178: every figure on this line is DERIVED FROM THE REGISTRY AT RUNTIME.
   //
   // The old line ended "0 uncodified" as a STRING LITERAL. Nothing computed it,
@@ -2034,17 +2158,39 @@ async function main() {
   // not be printed at all. What IS derivable is printed instead: how many
   // matchers are registered, how many are usable, and the kind breakdown --
   // and `unusable` CAN be non-zero, which is what makes it a result.
-  const registered = MATCHERS.length;
-  const usable = registered - bad;
+  //
+  // S64 R1, LAW 178 — EVERY FIGURE ON THE LINES BELOW IS DERIVED FROM WHAT IT
+  // COUNTS, INCLUDING THE ZEROES. The passing branch used to end "0 unusable" as
+  // a string literal. It was branch-guaranteed correct and it was still a figure
+  // nothing computed, printed beside three that were, in a line a reader cannot
+  // disambiguate. `unusable` is now the length of the list selfTest() builds from
+  // the probe loop, and it prints in BOTH branches with the same expression, so
+  // the passing branch is not a special case that could drift from the failing
+  // one. It CAN be non-zero, which is what makes it a result.
+  //
+  // AND THE FIGURE BESIDE IT WAS WRONG. `usable` was `registered - bad`, but
+  // `bad` also counts class-probe and assertion failures, neither of which makes
+  // a matcher unusable. Under the old expression one broken morphological class
+  // inside G4 would have printed one fewer USABLE MATCHER, which is a false
+  // statement about the registry. The three failure kinds are now counted apart
+  // and each is reported as itself.
+  const registered = st.registered;
+  const unusable = st.unusableIds.length;
+  const usable = registered - unusable;
   const kinds = MATCHERS.reduce((acc, m) => ({ ...acc, [m.kind]: (acc[m.kind] ?? 0) + 1 }), {});
   const kindLine = Object.keys(kinds)
     .sort()
     .map((k) => `${kinds[k]} ${k}`)
     .join(', ');
+  const stem = `${registered} matchers registered, ${usable} usable, ${unusable} unusable (${kindLine})`;
   console.log(
     bad
-      ? `\nSELF-TEST FAILED (${bad}). ${registered} registered, ${usable} usable (${kindLine}).`
-      : `\nSELF-TEST PASSED. ${registered} matchers registered, ${usable} usable, 0 unusable (${kindLine}).`,
+      ? `\nSELF-TEST FAILED. ${stem}.` +
+          `\n  probe failures     ${unusable}${unusable ? ` — ${st.unusableIds.join(', ')}` : ''}` +
+          `\n  class failures     ${st.classFailures}` +
+          `\n  assertion failures ${st.assertionFailures}`
+      : `\nSELF-TEST PASSED. ${stem}; ` +
+          `${st.classFailures} class failures, ${st.assertionFailures} assertion failures.`,
   );
   if (!arg || arg === '--self-test') process.exit(bad ? 1 : 0);
   if (bad) {

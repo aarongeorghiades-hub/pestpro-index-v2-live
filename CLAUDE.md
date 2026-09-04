@@ -1583,3 +1583,350 @@ attributed to this rule, and it is carried as a flag. A round that subtracts it
 silently and prints a clean M28 is hiding it, which Law 138 forbids. M12 remains
 at 0/0 on that route and that is the reason the exception exists.
 
+## S64 R1 — RATIFYING THE S63 R8 MATCHER WORK (LAW 106)
+
+Law 106: a ruling that is not written into this file will be silently reversed.
+The M24 retirement and the M25 repair were shipped at S63 R8 and recorded ONLY in
+a code comment and a commit message. S63 R8's own report said so and asked for
+ratification. This section is that ratification. Both were re-measured this round
+against the live registry rather than inherited (Law 102).
+
+**M24 IS RETIRED AND MUST NOT BE RE-REGISTERED.** It wrapped `visibleBody()` in a
+registry entry and returned the extracted text as a ONE-ELEMENT ARRAY. It declared
+surface `visible-body`, which `runDocument()` never builds, so `views[m.surface]`
+was `undefined` on all 62 of its invocations and it printed INV(0) on every route
+from the day it was codified. Measured dead in BOTH directions: as shipped INV(0)
+everywhere; as repaired INV(1) on all 61 built routes, with no live negative
+possible because every route carries prose. A check that cannot fail (Law 167)
+reporting a number nothing computed against (Law 178), whose INV(0) read as a clean
+result for two rounds.
+
+**AN EXTRACTOR IS NOT A MATCHER.** `visibleBody()` stays as the single shared
+implementation under Law 166 and M25 calls it for both limbs of its percentage so
+numerator and denominator cannot drift. It is NOT a duplicate of `SURFACES.prose`
+— measured before the retirement, not assumed: the two disagree on all 61 routes,
+by 28 to 2,456 characters.
+
+**M25 IS REPAIRED.** It declared `card-offset`, another surface `runDocument()`
+never builds. Corrected to `full`, because `CARD_HREF_RE` matches an href
+attribute which does not survive into the prose surface; the visible-character
+conversion happens inside `test()`. Its estate count moved 0 to 41 and it is
+silent on 20 routes, both limbs proven on real routes rather than on fixtures
+alone. ASSERTION E guards it: M25's fixture places a 5,000-byte script ahead of
+the card so a raw-byte measure and a visible-character measure cannot agree, and E
+derives both at runtime and fails loudly if they do.
+
+## S64 R1 — THE COUNTING SURFACE DOUBLE-COUNTED EVERY ROUTE
+
+**A NEXT ROUTE SHIPS EVERY STRING TWICE** — once in the rendered HTML a reader
+sees, once restated inside a `<script>` block as the RSC flight payload. The card
+and disclosure counts were taken over the RAW FILE and were therefore doubled.
+
+**THE SUSPICION UNDER TEST WAS THAT `/us/products`, BEING DERIVED, WAS THE
+DOUBLE-COUNTER. IT IS NOT, AND IT IS NOT SPECIAL.** Proven by probe, not inferred:
+four unique strings were inserted, one each into an authored `/us` route's prose,
+an authored `/us` route's card name, `/us/products`' own prose, and an authored UK
+route's prose; the estate was built; each was counted on both surfaces; the probes
+were removed and all three files restored byte-identically from backups (Law 43).
+
+    probe                             raw   rendered
+    /us/products own prose              2          1
+    /us/ants own prose                  2          1
+    /us/ants card name                  4          2   two routes, ants + products
+    /(uk)/best/mole-traps prose         2          1
+
+The whole estate doubles, and so does the UK side.
+
+**THE DOUBLING IS NOT UNIFORM, SO NO CORRECTION FACTOR EXISTS AND THE NUMBER
+COULD NOT HAVE BEEN HALVED BY HAND:**
+
+    US card links     752 raw = 2 x 376                      uniform
+    US disclosures    783 raw = 407 rendered + 376 restated   NOT uniform — the
+                      layout footer's disclosure is never restated
+    UK card links     711 raw = 2 x 333 + 45                  NOT uniform — the UK
+                      /products page builds hrefs from a local helper, so the URL
+                      literal never enters the payload
+
+**THE MOVEMENT IS ACCOUNTED FOR, AND IT IS A LAW 62 TRAP WORTH REMEMBERING.**
+S63 R1 to R6 reported "376 card links, 407 disclosures"; S63 R8 reported 752 and
+783. Measured this round: the estate MINUS `/us/products` carries 188 rendered
+cards / 376 raw and 219 rendered disclosures / 407 raw. **376 and 407 were the
+DOUBLED pre-products figures, and they are ALSO the TRUE rendered post-products
+figures.** The same two numerals carry two entirely different meanings in
+consecutive rounds. Nothing in any report could have separated them, because no
+count named its surface.
+
+**THE FIX IS THE SURFACE, NOT THE NUMBER. NO FIGURE WAS ADJUSTED BY HAND.**
+`SURFACES.rendered` is added (scripts stripped, nothing else, so href attributes
+survive). `surfaceOf()` is now the single place a declared surface is applied, and
+`selfTest()` uses it — probes previously went straight to `test()`, bypassing the
+lookup `runDocument()` performs. M30, M31 and M32 codify the three counts, which
+had existed as SIX inline expressions, three in `runEstate()` and three retyped in
+`runMachinery()`, inside the very file written to stop matchers being retyped.
+
+    FIGURE                    BEFORE (raw)   AFTER (rendered)
+    US card links                      752    376  (143 distinct ASINs)
+    US current disclosures             783    407
+    UK card links                      711    378  (292 distinct, unchanged)
+    G3 reported count                   38     15  now reported both ways
+    M13 reported count               15286   7154  now reported both ways
+
+**GATES WERE NOT NARROWED AND MUST NOT BE.** A gate asks whether a string is
+SERVED, and a tag or a price inside the flight payload IS served. Only counts
+moved. Law 19 set-diff: all 14 pre-existing matchers' verdicts identical before
+and after, id for id.
+
+### PROPOSED LAW 182 — NOT RATIFIED, AWAITING A PM RULING
+
+Proposed, not declared, because this file's own rule is that a law is the PM's to
+make. It binds nothing until ratified.
+
+> **LAW 182 — A GATE READS THE SERVED BYTES; A COUNT READS THE RENDERED SURFACE.**
+> A gate asks whether a string is served at all, and a string restated in the RSC
+> flight payload is served — narrowing a gate to the rendered surface weakens it.
+> A count asks how many times a reader meets the thing, and the flight payload
+> answers that question more than once. THE TWO QUESTIONS TAKE TWO SURFACES, AND
+> EVERY REPORTED FIGURE NAMES WHICH ONE PRODUCED IT. Where a matcher's own surface
+> is the served bytes, the rendered count is derived alongside and printed beside
+> it; the two are never reconciled into one number (Law 62).
+
+## S64 R1 — G3 IS NEGATION-AWARE; THE MATCHER WAS INVERTED, THE PROSE WAS NOT
+
+**STANDING PM RULING, CARRIED FROM S63 R8 AND IMPLEMENTED THIS ROUND.** On the G3
+hits as they stood the prose was correct and the matcher was backwards: the
+flagged sentences exist to WITHHOLD a claim — "this page cannot independently
+verify the manufacturer's effectiveness claims", "an unverifiable
+population-reduction percentage attributed to an unnamed 2025 survey". A gate that
+flags a refusal to make a claim is inverted. **NO PROSE WAS EDITED.**
+
+**BUILT FROM THE DEFINITION, NOT FROM THE HITS (Law 170).** What is banned is an
+ASSERTION, in this site's own voice, that something is verified, vetted or
+trusted. Three things are definitionally not that:
+
+    NEGATED    a negator within a BOUNDED, SENTENCE-STOPPED window before the stem
+    PRIVATIVE  un- / non- / dis- / mis- carried on the token itself
+    PROPER     a proper noun carrying the stem — Law 153, already ratified
+
+**A NEGATOR LIST IS NOT LAW 170's FAILURE.** Law 170 forbids enumerating INSTANCES
+OF THE THING DETECTED — G4's eighteen UK words could never enumerate English.
+Negation is a CLOSED grammatical class of function words, and so are the privative
+prefixes. The PROPER-NOUN set is the one genuine list and is therefore named and
+attributed entry by entry, not folded in silently (Law 138). Its entries today are
+`Vetter`/`Vetters` — R. S. Vetter, the UC Riverside entomologist cited by name on
+`/us/black-widow-spiders` and `/us/brown-recluse-spiders` — plus `Trustpilot` and
+`TrustMark` from Law 153.
+
+**THE WINDOW STOPS AT THE SENTENCE (Law 7).** Without that stop, "We do not sell
+services. Every provider is verified." would exempt itself. That sentence is a
+positive probe, as is a negator placed further away than the window.
+
+    G3            BEFORE   AFTER
+    served hits       38       6
+    rendered hits     15       2
+    failing routes     8       1
+
+**EVERY DROPPED HIT IS NAMED, AND THE ESTATE RUN PRINTS THEM (Law 138).** 32
+exclusions plus 6 asserted equals the old 38, with no unexplained residue:
+`PROPER:Vetter` 12 on black-widow-spiders and brown-recluse-spiders;
+`NEGATED(not):verify` 8 on house-mice and rats; `NEGATED(cannot):verify` 6 on
+fruit-flies and products; `PRIVATIVE:unverifiable` 6 on products and
+squirrels-in-attic.
+
+**CALIBRATED AGAINST THE ESTATE'S OWN NAMED KNOWN POSITIVE (Law 117, S49-L).** The
+successor control recorded in this file is "/products G3 = 3". The new rule returns
+exactly 3 on `/products`. The control holds.
+
+**FALSE-POSITIVE SWEPT AGAINST REAL CONTENT, BOTH ESTATES.** New runner
+`node scripts/gates.mjs --g3` sweeps all 240 built documents and prints every
+exclusion with its route. 165 asserted hits survive estate-wide across 39 UK
+documents; total exclusions are 38, and reading all 38 finds no suppressed claim.
+**THE 165 ARE NOT A NEW DEFECT CLASS (Law 94)** — G3 gates `/us` and `runEstate()`
+walks `/us`; the UK figures are informational.
+
+**HOW THE PROBE PATH WAS PROVED, AND WHERE THE PROOF DOES NOT REACH.** Routing
+probes through `surfaceOf()` proves nothing for G3: G3 declares surface `full`,
+`SURFACES.full` is the identity function, and citing that routing as proof for G3
+would be citing a no-op. G3's load-bearing transform is INTERNAL — it strips the
+markup that sits between a negator and the stem in served HTML. ASSERTION G
+asserts exactly that, on a PRODUCTION-SHAPED negative probe whose anchor
+attributes alone outnumber the window, classifying ASSERTED with the strip off and
+NEGATED with it on.
+
+### REFERRED, NOT FIXED — /us/ticks
+
+The one surviving route, 6 served / 2 rendered hits:
+
+    page.tsx:565  "quoted from Cornell, which is where this page can verify them"
+    page.tsx:66   "This page quotes Cornell, which it can open and verify"
+
+Both are ASSERTED verification statements by the letter of the rule, and both are
+about THIS PAGE'S OWN SOURCING rather than about a provider or a product. The
+prose is untouched pending a ruling.
+
+## S64 R1 — THE LAST HAND-TYPED FIGURE IN THE SELF-TEST IS CLOSED
+
+S63 R8 found `"0 unusable"` standing as a STRING LITERAL in the passing branch of
+the self-test line, proved it branch-guaranteed correct, and left it because that
+round's remit was elsewhere. It is closed. **BRANCH-GUARANTEED IS NOT DERIVED: a
+reader cannot tell a typed figure from a measured one, and that is the whole of
+Law 178.** `unusable` is now the length of the list `selfTest()` builds from the
+probe loop, printed in BOTH branches by one expression so the passing branch
+cannot drift from the failing one.
+
+**AND THE FIGURE BESIDE IT WAS ACTUALLY WRONG, WHICH THE LITERAL HID.** `usable`
+was `registered - bad`, but `bad` also counts CLASS-probe failures and ASSERTION
+failures, neither of which makes a matcher unusable. Under the old expression one
+broken morphological class inside G4 would have printed ONE FEWER USABLE MATCHER —
+a false statement about the registry. Probe failures, class failures and assertion
+failures are now counted apart, each derived from what it counts, each reported as
+itself. Every `bad++` site in the file is attributed to one of the three.
+
+**PROVED BY THREE NEGATIVE CONTROLS, EACH RUN IN A SHADOW COPY SO THE REPOSITORY
+WAS NEVER LEFT BROKEN:**
+
+    break one matcher's negative probe   30 usable, 1 unusable (M31 named), 0 class, 0 assertion
+    break one morphological class probe  31 usable, 0 unusable, 1 class,     0 assertion
+    break one runtime assertion          31 usable, 0 unusable, 0 class,     1 assertion
+
+The second and third are the proof that the old expression was wrong: both would
+have printed "30 usable" under it.
+
+## S64 R1 — M11 WAS REPORTING A FALSE ZERO OVER A LIVE S59-C BREACH
+
+**THIS IS A FINDING, NOT A RULING, AND THE CONTENT REMEDY IS REFERRED.**
+
+M11 is named "S59-C: no superseded no-affiliate disclosure on a page carrying a
+tagged link" and was implemented as `t.includes(DISCLOSURE_SUPERSEDED)` — ONE
+LITERAL SENTENCE, "The link below is not a paid affiliate link." **THE ESTATE
+SERVES A SECOND, DIFFERENT DENIAL** from `app/us/components/UsFooterCommissionNotice.tsx`:
+"We earn nothing if you buy through the links on this site." The literal form
+could not see it, and M11 printed a clean zero for as long as it has existed.
+Law 170 exactly: a matcher whose NAME states a concept, implemented as an
+enumerated instance.
+
+**MEASURED, ON THE BUILT ESTATE, AT S64 R1: TEN ROUTES CARRY TAGGED AFFILIATE CARD
+LINKS AND ALSO TELL THE READER THE SITE EARNS NOTHING.**
+
+    /us/bed-bugs               3      /us/mosquitoes            3
+    /us/carpenter-bees         3      /us/powderpost-beetles    3
+    /us/fruit-flies            2      /us/products            188
+    /us/fungus-gnats           2      /us/rats                  4
+    /us/groundhogs             1      /us/squirrels-in-attic    3
+
+212 of the estate's 376 rendered tagged card links — 56% of them — sit on a page
+carrying that denial.
+
+**THE MECHANISM IS A HAND-MAINTAINED LIST, AND ITS OWN COMMENT PREDICTED THIS.**
+`UsFooterCommissionNotice.tsx` holds `CARD_CARRYING_ROUTES`, a set of 31 slugs
+measured at S60 R1, and its comment calls the set "the mechanism and also the
+maintenance obligation". The estate now renders cards on 41 routes. **Zero stale
+entries; ten missing.** A list maintained by hand is not a measurement (Law 178),
+and `/us/products` — which is itself derived from the card estate — could never
+have been on a list written before it existed.
+
+**THE MATCHER IS REPAIRED THIS ROUND; THE PROSE AND THE ROUTE SET ARE NOT.** M11 is
+rebuilt from the concept — a DENIAL THAT THE PAGE EARNS — over four grammatical
+shapes, each with its own probes. The decisive negative probe is the UK
+disclosure, "we may earn a small commission at no extra cost to you", which
+carries "earn", "commission" and a negator within four tokens and is NOT a denial
+because the negation attaches to the cost. M11 now reports FAIL on exactly those
+ten routes, and that report is CORRECT.
+
+**M11 IS THEREFORE EXPECTED RED UNTIL THE REMEDY IS RULED.** Under Law 24 a push
+is not gated on the absence of flags, and under Law 138 a round that subtracts
+this silently and prints a clean M11 is hiding it.
+
+**THE RULING NEEDED**, and CC did not choose between these:
+  (a) add the ten slugs to `CARD_CARRYING_ROUTES` — smallest change, and it
+      reinstates exactly the drift that caused this;
+  (b) derive the set at build time from the same extractor `/us/products` uses, so
+      it cannot drift again. `app/us/lib/cardIndex.ts` reads the route sources with
+      `node:fs`, so it cannot be imported by a `'use client'` component; the set
+      would have to be computed in the server layout and passed as a prop;
+  (c) something else.
+The brief for this round said NO BUILDS, and every one of these is a content
+change requiring a build. Referred.
+
+## S64 R1 — OPEN, MEASURED, AND NOT RULED
+
+Recorded here so they cannot die inside a round report (Law 163 generalised).
+Each was re-measured this round rather than inherited (Law 102).
+
+**SIX REGISTERED MATCHERS ARE NEVER INVOKED BY ANY RUNNER.** Measured by
+instrumenting the registry in a shadow copy and counting calls with the probe
+phase excluded, across all five runner modes:
+
+    M28  gate       estate   card-precedence   NEVER CALLED
+    M14  inventory  source   source            NEVER CALLED
+    M21  inventory  source   quotation-delims  NEVER CALLED
+    M29  inventory  source   headings          NEVER CALLED
+    M15  gate       external fetched-body      NEVER CALLED — needs a fetch
+    M23  gate       external fetched-body      NEVER CALLED — needs a fetch
+
+M15 and M23 are `external` and legitimately have no standing runner, since no
+runner can manufacture a fetched source body. The other four could have one.
+
+**M28 IS THE SERIOUS ONE, AND IT PUTS TWO SOURCES OF TRUTH IN CONTRADICTION
+(Law 41).** This file, at S63 R7, states: "M28 is expected to report /us/chipmunks
+as a precedence violation, and that report is CORRECT... A round that subtracts it
+silently and prints a clean M28 is hiding it." **M28 reports nothing, about any
+route, because no runner constructs the row its `test()` consumes.** Its probes
+pass against fixtures on every run, so it reads as usable. The named known
+exception is carried by this file's text alone, not by the gate. First reported at
+S63 R8; still true at S64 R1.
+
+**M14's EXPRESSION SURVIVES VIA M18**, which shares it and does run. M21 and M29
+have no such backstop and should either gain a runner or be retired on the M24
+reasoning.
+
+**THE M25 `+9` OFFSET ARTEFACT** was named in the code at S63 R8 and NOT corrected,
+and was NOT re-measured this round — it is recorded here as S63 R8's assertion,
+not as a fact of this round's measurement.
+
+**UNCHANGED CARRYOVER, not touched at S64 R1:** drain flies referred; 35 routes
+unadjudicable under Law 175 for want of a source corpus; eight absolute-form
+internal links not rewritten site-relative; Tier 5 exhausted and needing a fresh
+ascertainment; `-ogue` REPORTING ONLY in G4; `ground-squirrels` and `skunks`
+parked on a PM ruling outstanding since S60 R2.
+
+## S64 R1 — M20 REPORTED A LAW NUMBER 783, AND CAUGHT ITSELF DOING IT
+
+While this very section's sibling was being appended, M20 — the law enumeration
+inventory — reported **183 laws declared, highest 783, six hundred gaps.** It was
+found by running the matcher after the append, not by reading the text.
+
+**THE CAUSE, FP-4: A DIGIT-DOT-SPACE AT LINE START IS NOT A LIST ITEM.** A
+paragraph above wraps so that the figure 783 lands at the start of a line followed
+by a full stop and a space — "783. Measured this round: the estate MINUS
+`/us/products` carries 188 rendered..." — and M20's form-1 matcher read it as a
+numbered-list law declaration. **Markdown does not render it as one:** a numbered
+line becomes a list item only after a blank line, another item, or an item's own
+indented continuation. Anywhere else it is part of the running paragraph.
+
+**THE DISCRIMINATOR IS MARKDOWN'S OWN SEMANTICS, NOT AN ARBITRARY NARROWING, AND
+IT WAS MEASURED BEFORE IT WAS WRITTEN (Law 44).** Over all 157 form-1 matches in
+this file: 96 follow an indented continuation, 43 follow another item, 17 follow a
+blank line, and exactly ONE follows an unindented paragraph line — the false
+positive. 156 kept, 1 rejected, no judgement call anywhere in it.
+
+**FP-5: A PROPOSAL IS NOT A DECLARATION.** M20 also counted the proposed Law 182
+from a heading reading "PROPOSED LAW 182 — NOT RATIFIED". Counting a proposal
+inflates the enumeration and silently closes a number the PM has not yet ruled on.
+A line announcing PROPOSED or NOT RATIFIED is now excluded.
+
+**BOTH GUARDS ARE PROVEN LOAD-BEARING, EACH INDEPENDENTLY.** The false-positive
+lines are now negative probes. Reverting either guard on its own makes M20's
+negative probe FIRE and the self-test report M20 UNUSABLE — demonstrated by
+reverting each in a shadow copy. The false zero cannot come back quietly, in the
+same way assertion B keeps the S60 R9 `ListItem` form dead.
+
+**AFTER THE REPAIR: 181 laws declared, highest 181, no gaps** — which is what
+every round before this one reported, and which was correct.
+
+**THE GENERAL POINT, AND IT IS WHY THIS IS WRITTEN DOWN.** M20 had been reporting
+"181, no gaps" for rounds, and that clean result was not evidence the matcher was
+sound — it was evidence that nobody had yet written a sentence shaped like a list
+item. A matcher over PROSE is exposed to whatever prose a future round writes.
+Law 170's corollary said a class-based matcher must be swept against real content
+before its count is believed; this adds that THE REAL CONTENT KEEPS ARRIVING, so
+a matcher's clean history is not a proof of its rule.

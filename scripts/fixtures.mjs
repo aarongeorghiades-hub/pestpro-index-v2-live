@@ -144,16 +144,41 @@ export const UK_SIDE_DIRTY =
 // A `LAW n` token MID-SENTENCE is a REFERENCE, not a declaration, and must not
 // be counted. The R1 scan anchored on form 2 alone and reported Law 174 absent.
 export const LAW_HEADINGS_ALL_FORMS = [
+  '',
   '157. A SEARCH-ENGINE SNIPPET OF OUR OWN SITE IS A STALE ASSERTION.',
+  '158. A LAW MAY FOLLOW ANOTHER LAW WITH NO BLANK LINE BETWEEN THEM.',
+  '     and may carry an indented continuation line,',
+  '159. WHICH THE NEXT LAW MAY FOLLOW.',
   'LAW 172 — CLUSTER MEMBERSHIP IS A SET.',
   '### LAW 174 — G7 IS AN INVENTORY, NOT A GATE.',
   '## S62 R2 — LAW 171: THE UK ESTATE IS BRITISH.',
 ].join('\n');
+// The positive probe's form-1 item must sit where markdown would actually
+// render a list: after a blank line. See FP-4 below for why that matters.
 // references, not declarations — none of these defines a law
+//
+// FP-4, MEASURED AT S64 R1 AND CAUGHT BY THE MATCHER'S OWN OUTPUT. A round wrote
+// a paragraph in which the figure 783 wrapped to the start of a line and was
+// followed by a full stop and a space — "783. Measured this round: the estate
+// MINUS /us/products carries 188 rendered..." — and M20 reported 183 laws
+// declared with a HIGHEST OF 783 and six hundred gaps. A DIGIT-DOT-SPACE AT LINE
+// START IS NOT A LIST ITEM: markdown renders it as part of the running paragraph
+// unless it follows a blank line, another item, or an item's own indented
+// continuation. That is the discriminator, and it is markdown's own semantics
+// rather than an arbitrary narrowing. Measured over all 157 form-1 matches in
+// CLAUDE.md: 156 real declarations kept, exactly the one false positive rejected.
+//
+// FP-5. A PROPOSAL IS NOT A DECLARATION. A section headed
+// "PROPOSED LAW 182 — NOT RATIFIED" announces a law the PM has not made, and
+// counting it inflates the enumeration and closes a number that is still open.
 export const LAW_REFERENCES_ONLY = [
   'interstitial body is TERMINAL UNDER LAW 137 REGARDLESS OF STATUS CODE.',
   'This closes the item LAW 168 left expressly open.',
   'see Law 139 for the criterion rule, and law 42 on unsatisfiable gates',
+  'S63 R8 reported 752 and',
+  '783. Measured this round: the estate MINUS /us/products carries 188 rendered',
+  '### PROPOSED LAW 182 — NOT RATIFIED, AWAITING A PM RULING',
+  '## S64 R1 — PROPOSED LAW 999: NOT RATIFIED',
 ].join('\n');
 
 // ---- M21 (FP-1), genuine quotation delimiters -----------------------------
