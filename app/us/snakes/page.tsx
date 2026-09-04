@@ -170,9 +170,9 @@ const products: ProductRecord[] = [
 
 const tocItems = [
   { id: 'which-snake', title: 'Which Snake, and the Lookalike Problem' },
-  { id: 'fence', title: 'The Snake-Proof Fence, and a Four-Way Disagreement' },
   { id: 'bites', title: 'Bites: What the Sources Say, Including Where They Disagree' },
   { id: 'legal', title: 'The Law Changes at the State Line' },
+  { id: 'fence', title: 'The Snake-Proof Fence, and a Four-Way Disagreement' },
   { id: 'habitat', title: 'Habitat: Where Every Source Starts' },
   { id: 'sealing', title: 'Sealing Openings: a Different Mesh Entirely' },
   { id: 'not-work', title: 'What the Sources Say Does Not Work' },
@@ -346,129 +346,6 @@ export default function SnakesPage() {
           been reported to consume ticks in their native ranges.&rdquo;
         </em>
       </p>
-
-      <h2 id="fence">The Snake-Proof Fence, and a Four-Way Disagreement</h2>
-      <p>
-        <strong>
-          Four sources specify a snake-proof fence. They agree on one figure out of four.
-        </strong>
-      </p>
-      <p>
-        <strong>Colorado State:</strong>{' '}
-        <em>
-          &ldquo;In rattlesnake-infested areas, construct a snake-proof fence around the backyard or
-          play area. Use 36-inch high galvanized hardware cloth with a 1/4-inch mesh and bury it 6
-          inches deep, slanted outward at a 30-degree angle. Make certain the gate fits tightly and
-          swings into the play area. Keep all vegetation away from the fence to prevent snakes from
-          climbing over it.&rdquo;
-        </em>
-      </p>
-      <p>
-        <strong>Penn State:</strong>{' '}
-        <em>
-          &ldquo;The fence should be made of heavy galvanized hardware cloth, 36 inches wide with a
-          &frac14;-inch mesh. The lower edge should be buried 6 inches in the ground, and the fence
-          should be slanted outward from the bottom to the top at a 30-degree angle. Place
-          supporting stakes inside the fence and make sure any gates are fitted tightly. Gates
-          should be hinged to swing inward because of the slope of the fence.&rdquo;
-        </em>
-      </p>
-      <p>
-        <strong>ICWDM:</strong>{' '}
-        <em>
-          &ldquo;A snake-proof fence should be made of heavy galvanized &frac14;-inch mesh hardware
-          cloth that is 36 inches tall. Bury the lower edge 4 to 6 inches in the ground. The fence
-          should be slanted outward from the bottom to the top at a 30 o angle.&rdquo;
-        </em>
-      </p>
-      <p>
-        <strong>UF/IFAS, which departs from the other three on three of the four figures:</strong>{' '}
-        <em>
-          &ldquo;Fencing of aluminum flashing, hardware cloth (1/4&quot;), or silt fencing 2&ndash;3
-          feet high buried 6 inches in the ground should deter most snakes from gaining access to
-          certain areas of your yard (Figure 7).&rdquo;
-        </em>
-      </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
-          One figure is common to all four. The other three are not.
-        </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
-          <strong>Mesh:</strong> all four say 1/4 inch. <strong>Height:</strong> three say 36
-          inches, UF/IFAS says 2 to 3 feet. <strong>Burial:</strong> three say 6 inches, ICWDM says
-          4 to 6. <strong>Slant:</strong> three say 30 degrees outward, UF/IFAS states no angle at
-          all. <strong>Material:</strong> three say galvanized hardware cloth, UF/IFAS also permits
-          aluminum flashing or silt fencing.{' '}
-          <strong>
-            None of these is averaged here and none is presented as the specification. The products
-            named below are named on the mesh, because the mesh is the figure the sources actually
-            share.
-          </strong>
-        </p>
-      </div>
-      <h3>And the same four sources disagree about whether it works</h3>
-      <p>
-        <strong>ICWDM:</strong>{' '}
-        <em>
-          &ldquo;A properly constructed, snake-proof fence will keep out all venomous snakes and
-          most non-venomous snakes (some non-venomous snakes are good climbers).&rdquo;
-        </em>
-      </p>
-      <p>
-        <strong>UF/IFAS, in the caption to its own figure:</strong>{' '}
-        <em>
-          &ldquo;Snake fences, such as this one made of silt fencing, can prevent some snakes from
-          entering your yard when used correctly, but can be costly and time consuming to install
-          and do not prevent all species of snakes from entering. Such measures should only be used
-          as a last resort.&rdquo;
-        </em>
-      </p>
-      <p>
-        <strong>UC IPM sits between them:</strong>{' '}
-        <em>
-          &ldquo;Snakes can be excluded from an area by installing a snake-proof fence. While
-          expensive, fences are often necessary for children&rsquo;s play areas.&rdquo;
-        </em>{' '}
-        It adds a maintenance instruction:{' '}
-        <em>
-          &ldquo;If you have a snake-proof fence, be sure to check its integrity prior to the time
-          when snakes become active in the late winter or early spring.&rdquo;
-        </em>
-      </p>
-      <p>
-        <strong>
-          One source says such a fence keeps out all venomous snakes. Another says it should only be
-          used as a last resort. Both are extension-grade sources and this page renders both.
-        </strong>
-      </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
-          The 36 inches is an instruction to whoever builds the fence, not a property of anything
-          sold.
-        </p>
-        <p className="mt-3 mb-0 text-base text-slate-900">
-          A roll of wire has a width. A fence has a height. They are not the same measurement, and
-          how much of the roll ends up above ground depends on how deep the buried edge goes and how
-          the slant is set.{' '}
-          <strong>
-            No product below is described here as being 36 inches tall or as meeting a height
-            specification.
-          </strong>{' '}
-          What each card records is the mesh, the finish and the roll size its own listing states.
-        </p>
-      </div>
-      <p>
-        The three rolls below are in no order of preference and none is called better than another,
-        because no source consulted for this page compares one product against another.
-      </p>
-      <p>
-        The rolls below are hardware cloth, named because each listing states the mesh size and the height the fence specification above requires.
-      </p>
-      {products
-        .filter((p) => p.group === 'fence')
-        .map((p) => (
-          <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-        ))}
 
       <h2 id="bites">Bites: What the Sources Say, Including Where They Disagree</h2>
       <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
@@ -691,6 +568,129 @@ export default function SnakesPage() {
           as ICWDM&rsquo;s statement and is not adopted as ours.
         </strong>
       </p>
+
+      <h2 id="fence">The Snake-Proof Fence, and a Four-Way Disagreement</h2>
+      <p>
+        <strong>
+          Four sources specify a snake-proof fence. They agree on one figure out of four.
+        </strong>
+      </p>
+      <p>
+        <strong>Colorado State:</strong>{' '}
+        <em>
+          &ldquo;In rattlesnake-infested areas, construct a snake-proof fence around the backyard or
+          play area. Use 36-inch high galvanized hardware cloth with a 1/4-inch mesh and bury it 6
+          inches deep, slanted outward at a 30-degree angle. Make certain the gate fits tightly and
+          swings into the play area. Keep all vegetation away from the fence to prevent snakes from
+          climbing over it.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>Penn State:</strong>{' '}
+        <em>
+          &ldquo;The fence should be made of heavy galvanized hardware cloth, 36 inches wide with a
+          &frac14;-inch mesh. The lower edge should be buried 6 inches in the ground, and the fence
+          should be slanted outward from the bottom to the top at a 30-degree angle. Place
+          supporting stakes inside the fence and make sure any gates are fitted tightly. Gates
+          should be hinged to swing inward because of the slope of the fence.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>ICWDM:</strong>{' '}
+        <em>
+          &ldquo;A snake-proof fence should be made of heavy galvanized &frac14;-inch mesh hardware
+          cloth that is 36 inches tall. Bury the lower edge 4 to 6 inches in the ground. The fence
+          should be slanted outward from the bottom to the top at a 30 o angle.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>UF/IFAS, which departs from the other three on three of the four figures:</strong>{' '}
+        <em>
+          &ldquo;Fencing of aluminum flashing, hardware cloth (1/4&quot;), or silt fencing 2&ndash;3
+          feet high buried 6 inches in the ground should deter most snakes from gaining access to
+          certain areas of your yard (Figure 7).&rdquo;
+        </em>
+      </p>
+      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
+        <p className="m-0 text-base font-bold text-amber-900">
+          One figure is common to all four. The other three are not.
+        </p>
+        <p className="mt-3 mb-0 text-base text-amber-900">
+          <strong>Mesh:</strong> all four say 1/4 inch. <strong>Height:</strong> three say 36
+          inches, UF/IFAS says 2 to 3 feet. <strong>Burial:</strong> three say 6 inches, ICWDM says
+          4 to 6. <strong>Slant:</strong> three say 30 degrees outward, UF/IFAS states no angle at
+          all. <strong>Material:</strong> three say galvanized hardware cloth, UF/IFAS also permits
+          aluminum flashing or silt fencing.{' '}
+          <strong>
+            None of these is averaged here and none is presented as the specification. The products
+            named below are named on the mesh, because the mesh is the figure the sources actually
+            share.
+          </strong>
+        </p>
+      </div>
+      <h3>And the same four sources disagree about whether it works</h3>
+      <p>
+        <strong>ICWDM:</strong>{' '}
+        <em>
+          &ldquo;A properly constructed, snake-proof fence will keep out all venomous snakes and
+          most non-venomous snakes (some non-venomous snakes are good climbers).&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>UF/IFAS, in the caption to its own figure:</strong>{' '}
+        <em>
+          &ldquo;Snake fences, such as this one made of silt fencing, can prevent some snakes from
+          entering your yard when used correctly, but can be costly and time consuming to install
+          and do not prevent all species of snakes from entering. Such measures should only be used
+          as a last resort.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>UC IPM sits between them:</strong>{' '}
+        <em>
+          &ldquo;Snakes can be excluded from an area by installing a snake-proof fence. While
+          expensive, fences are often necessary for children&rsquo;s play areas.&rdquo;
+        </em>{' '}
+        It adds a maintenance instruction:{' '}
+        <em>
+          &ldquo;If you have a snake-proof fence, be sure to check its integrity prior to the time
+          when snakes become active in the late winter or early spring.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>
+          One source says such a fence keeps out all venomous snakes. Another says it should only be
+          used as a last resort. Both are extension-grade sources and this page renders both.
+        </strong>
+      </p>
+      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
+        <p className="m-0 text-base font-bold text-slate-900">
+          The 36 inches is an instruction to whoever builds the fence, not a property of anything
+          sold.
+        </p>
+        <p className="mt-3 mb-0 text-base text-slate-900">
+          A roll of wire has a width. A fence has a height. They are not the same measurement, and
+          how much of the roll ends up above ground depends on how deep the buried edge goes and how
+          the slant is set.{' '}
+          <strong>
+            No product below is described here as being 36 inches tall or as meeting a height
+            specification.
+          </strong>{' '}
+          What each card records is the mesh, the finish and the roll size its own listing states.
+        </p>
+      </div>
+      <p>
+        The three rolls below are in no order of preference and none is called better than another,
+        because no source consulted for this page compares one product against another.
+      </p>
+      <p>
+        The rolls below are hardware cloth, named because each listing states the mesh size and the height the fence specification above requires.
+      </p>
+      {products
+        .filter((p) => p.group === 'fence')
+        .map((p) => (
+          <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+        ))}
 
       <h2 id="habitat">Habitat: Where Every Source Starts</h2>
       <p>

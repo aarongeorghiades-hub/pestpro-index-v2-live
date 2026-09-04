@@ -197,8 +197,8 @@ const sources: Source[] = [
 const tocItems = [
   { id: 'which-ants', title: 'Which Ants the Name Covers' },
   { id: 'identification', title: 'Telling Them From Native Ants' },
-  { id: 'two-step', title: 'The Two-Step Method' },
   { id: 'the-sting', title: 'The Sting' },
+  { id: 'two-step', title: 'The Two-Step Method' },
   { id: 'spreaders', title: 'The Spreader Matters' },
   { id: 'mound-treatment', title: 'Step Two: Treating a Mound' },
   { id: 'gloves', title: 'Handling Liquid Concentrates' },
@@ -338,6 +338,166 @@ export default function ImportedFireAntsPage() {
         <em>
           &ldquo;No other Texas&rsquo; ants are known to cause this type of reaction to the
           venom.&rdquo;
+        </em>
+      </p>
+
+      <h2 id="the-sting">The Sting</h2>
+      <p>
+        <strong>
+          Everything in this section is what one named publication says. This site is not a
+          medical source and does not assess anyone&rsquo;s symptoms.
+        </strong>{' '}
+        The publication it comes from opens by disclaiming exactly that, and the disclaimer is
+        worth reading in full:
+      </p>
+
+      <div className="not-prose my-8 rounded-xl border-2 border-gray-300 bg-gray-50 p-6">
+        <p className="m-0 text-sm text-gray-800">
+          <em>
+            &ldquo;DISCLAIMER: This fact sheet provides a review of information gathered
+            regarding medical aspects of the red imported fire ant. As such, this fact sheet is
+            not intended to provide treatment recommendations for fire ant stings or reactions
+            that may develop as a result of a stinging incident. Readers are encouraged to seek
+            health-related advice and recommendations from their medical doctors, allergists or
+            other appropriate specialists.&rdquo;
+          </em>
+        </p>
+        <p className="m-0 mt-3 text-sm font-bold text-gray-900">
+          Texas A&amp;M, Fire Ant Plan Fact Sheet #023
+        </p>
+      </div>
+
+      <p>
+        <strong>Scale.</strong> Texas A&amp;M states:{' '}
+        <em>
+          &ldquo;Over 40 million people live in areas infested by the red imported fire ant in
+          the southeastern United States. An estimated 14 million people are stung
+          annually.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>How fast.</strong>{' '}
+        <em>
+          &ldquo;Generally, these ants can begin to sting within 10 to 20 seconds after
+          climbing upon victims.&rdquo;
+        </em>{' '}
+        The same publication notes that response slows when temperatures are cooler than 55
+        degrees F, because the ants move more slowly, and when they are above 95 degrees F,
+        because the workers sit deeper in the soil.
+      </p>
+      <p>
+        <strong>What a normal sting does.</strong>{' '}
+        <em>
+          &ldquo;The site of the sting hurts for a few minutes and then reddens; then it swells
+          into a bump or hive within 20 minutes.&rdquo;
+        </em>{' '}
+        Then the pustule described in the section above. Texas A&amp;M adds one instruction
+        about it:{' '}
+        <em>
+          &ldquo;Care must be taken not to rupture the sterile pustules, because resulting
+          lesions occasionally become infected.&rdquo;
+        </em>
+      </p>
+
+      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
+        <p className="m-0 text-base font-bold text-red-900">
+          The emergency instruction, as Texas A&amp;M gives it
+        </p>
+        <p className="m-0 mt-3 text-sm text-red-900">
+          <em>
+            &ldquo;If a sting causes severe chest pain, nausea, severe sweating, loss of breath,
+            serious swelling or slurred speech, the person should be taken to an emergency
+            medical facility immediately.&rdquo;
+          </em>
+        </p>
+        <p className="m-0 mt-3 text-sm text-red-900">
+          On the symptoms themselves, the same publication states:{' '}
+          <em>
+            &ldquo;The symptoms of anaphylaxis can include dizziness, nausea, sweating, low
+            blood pressure, headache and shortness of breath. If any of these symptoms occur,
+            the person requires immediate medical attention. Anaphylactic shock can lead to
+            death.&rdquo;
+          </em>
+        </p>
+      </div>
+
+      <p>
+        <strong>
+          On how often that happens, one document carries three different figures, and this
+          page gives all three rather than choosing.
+        </strong>{' '}
+        In its own body text, Texas A&amp;M states that{' '}
+        <em>
+          &ldquo;severe allergic reactions (anaphylaxis) occur in less than 1% of people stung
+          by fire ants.&rdquo;
+        </em>{' '}
+        The same document also states that{' '}
+        <em>
+          &ldquo;Anaphylaxis occurs in 0.6 to 6 percent of persons who are stung, and these
+          reactions have been reported to have caused more than 80 deaths (deShazo et al.
+          1999).&rdquo;
+        </em>{' '}
+        And quoting a Texas Allergy, Asthma and Immunology Society leaflet, it states that{' '}
+        <em>
+          &ldquo;Severe allergic reactions (anaphylaxis) occur in 1 - 6 % of people stung by
+          fire ants and occasionally these reactions may be fatal&rdquo;
+        </em>
+        . Under one per cent, 0.6 to 6 per cent, and 1 to 6 per cent &mdash; in a single
+        source. Any page that picked one of those would be misrepresenting it.
+      </p>
+      <p>
+        Texas A&amp;M also states:{' '}
+        <em>
+          &ldquo;People who show symptoms indicating anaphylactic shock should seek advice from
+          an allergist before entering known fire ant infested areas.&rdquo;
+        </em>{' '}
+        And, quoting Solley and colleagues:{' '}
+        <em>
+          &ldquo;Anyone who has had stinging-insect-induced anaphylaxis should carry an EpiPen
+          (or EpiPen Jr for children; CSL) for immediate first-aid use, if hypotension or
+          dyspnoea occurs.&rdquo;
+        </em>
+      </p>
+      <p>
+        That publication also contains a block of treatment guidance addressed explicitly to
+        medical doctors, naming drugs and formulations. It is named here so a reader knows it
+        exists and who it is written for. None of it is reproduced on this page.
+      </p>
+      <p>
+        <strong>Who is most at risk, and where.</strong> Texas A&amp;M names people{' '}
+        <em>
+          &ldquo;hypersensitive to venom or may have other medical conditions (e.g., heart
+          condition, diabetes) that can result in serious medical problems or even death from a
+          single sting&rdquo;
+        </em>
+        . It records that{' '}
+        <em>&ldquo;Fire ants move into beds of children or immobile people during the
+        night&rdquo;</em>{' '}
+        and that a number of serious multiple stinging incidents have occurred indoors in
+        Texas, and, citing deShazo and colleagues, in health care facilities.
+      </p>
+      <p>
+        <strong>Avoiding a sting in the first place</strong>, in the same publication&rsquo;s
+        words:{' '}
+        <em>
+          &ldquo;Be aware of fire ants and take care not to stand on ant nests or resources on
+          which they are foraging.&rdquo;
+        </em>
+        ;{' '}
+        <em>
+          &ldquo;Wear protective clothing during outdoor activities, such as boots and/or tuck
+          pant legs into socks.&rdquo;
+        </em>
+        ; and{' '}
+        <em>
+          &ldquo;Teach children and visitors about fire ants and their hazard.&rdquo;
+        </em>{' '}
+        Two situations it singles out:{' '}
+        <em>&ldquo;Ants in migrating colonies are highly defensive and should be avoided&rdquo;</em>
+        , and during flooding, colonies{' '}
+        <em>
+          &ldquo;are capable of floating in clusters or &ldquo;rafts,&rdquo; posing a threat to
+          anything encountering them.&rdquo;
         </em>
       </p>
 
@@ -516,166 +676,6 @@ export default function ImportedFireAntsPage() {
         ]}
         asin="B015BSWVCU"
       />
-
-      <h2 id="the-sting">The Sting</h2>
-      <p>
-        <strong>
-          Everything in this section is what one named publication says. This site is not a
-          medical source and does not assess anyone&rsquo;s symptoms.
-        </strong>{' '}
-        The publication it comes from opens by disclaiming exactly that, and the disclaimer is
-        worth reading in full:
-      </p>
-
-      <div className="not-prose my-8 rounded-xl border-2 border-gray-300 bg-gray-50 p-6">
-        <p className="m-0 text-sm text-gray-800">
-          <em>
-            &ldquo;DISCLAIMER: This fact sheet provides a review of information gathered
-            regarding medical aspects of the red imported fire ant. As such, this fact sheet is
-            not intended to provide treatment recommendations for fire ant stings or reactions
-            that may develop as a result of a stinging incident. Readers are encouraged to seek
-            health-related advice and recommendations from their medical doctors, allergists or
-            other appropriate specialists.&rdquo;
-          </em>
-        </p>
-        <p className="m-0 mt-3 text-sm font-bold text-gray-900">
-          Texas A&amp;M, Fire Ant Plan Fact Sheet #023
-        </p>
-      </div>
-
-      <p>
-        <strong>Scale.</strong> Texas A&amp;M states:{' '}
-        <em>
-          &ldquo;Over 40 million people live in areas infested by the red imported fire ant in
-          the southeastern United States. An estimated 14 million people are stung
-          annually.&rdquo;
-        </em>
-      </p>
-      <p>
-        <strong>How fast.</strong>{' '}
-        <em>
-          &ldquo;Generally, these ants can begin to sting within 10 to 20 seconds after
-          climbing upon victims.&rdquo;
-        </em>{' '}
-        The same publication notes that response slows when temperatures are cooler than 55
-        degrees F, because the ants move more slowly, and when they are above 95 degrees F,
-        because the workers sit deeper in the soil.
-      </p>
-      <p>
-        <strong>What a normal sting does.</strong>{' '}
-        <em>
-          &ldquo;The site of the sting hurts for a few minutes and then reddens; then it swells
-          into a bump or hive within 20 minutes.&rdquo;
-        </em>{' '}
-        Then the pustule described in the section above. Texas A&amp;M adds one instruction
-        about it:{' '}
-        <em>
-          &ldquo;Care must be taken not to rupture the sterile pustules, because resulting
-          lesions occasionally become infected.&rdquo;
-        </em>
-      </p>
-
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
-          The emergency instruction, as Texas A&amp;M gives it
-        </p>
-        <p className="m-0 mt-3 text-sm text-red-900">
-          <em>
-            &ldquo;If a sting causes severe chest pain, nausea, severe sweating, loss of breath,
-            serious swelling or slurred speech, the person should be taken to an emergency
-            medical facility immediately.&rdquo;
-          </em>
-        </p>
-        <p className="m-0 mt-3 text-sm text-red-900">
-          On the symptoms themselves, the same publication states:{' '}
-          <em>
-            &ldquo;The symptoms of anaphylaxis can include dizziness, nausea, sweating, low
-            blood pressure, headache and shortness of breath. If any of these symptoms occur,
-            the person requires immediate medical attention. Anaphylactic shock can lead to
-            death.&rdquo;
-          </em>
-        </p>
-      </div>
-
-      <p>
-        <strong>
-          On how often that happens, one document carries three different figures, and this
-          page gives all three rather than choosing.
-        </strong>{' '}
-        In its own body text, Texas A&amp;M states that{' '}
-        <em>
-          &ldquo;severe allergic reactions (anaphylaxis) occur in less than 1% of people stung
-          by fire ants.&rdquo;
-        </em>{' '}
-        The same document also states that{' '}
-        <em>
-          &ldquo;Anaphylaxis occurs in 0.6 to 6 percent of persons who are stung, and these
-          reactions have been reported to have caused more than 80 deaths (deShazo et al.
-          1999).&rdquo;
-        </em>{' '}
-        And quoting a Texas Allergy, Asthma and Immunology Society leaflet, it states that{' '}
-        <em>
-          &ldquo;Severe allergic reactions (anaphylaxis) occur in 1 - 6 % of people stung by
-          fire ants and occasionally these reactions may be fatal&rdquo;
-        </em>
-        . Under one per cent, 0.6 to 6 per cent, and 1 to 6 per cent &mdash; in a single
-        source. Any page that picked one of those would be misrepresenting it.
-      </p>
-      <p>
-        Texas A&amp;M also states:{' '}
-        <em>
-          &ldquo;People who show symptoms indicating anaphylactic shock should seek advice from
-          an allergist before entering known fire ant infested areas.&rdquo;
-        </em>{' '}
-        And, quoting Solley and colleagues:{' '}
-        <em>
-          &ldquo;Anyone who has had stinging-insect-induced anaphylaxis should carry an EpiPen
-          (or EpiPen Jr for children; CSL) for immediate first-aid use, if hypotension or
-          dyspnoea occurs.&rdquo;
-        </em>
-      </p>
-      <p>
-        That publication also contains a block of treatment guidance addressed explicitly to
-        medical doctors, naming drugs and formulations. It is named here so a reader knows it
-        exists and who it is written for. None of it is reproduced on this page.
-      </p>
-      <p>
-        <strong>Who is most at risk, and where.</strong> Texas A&amp;M names people{' '}
-        <em>
-          &ldquo;hypersensitive to venom or may have other medical conditions (e.g., heart
-          condition, diabetes) that can result in serious medical problems or even death from a
-          single sting&rdquo;
-        </em>
-        . It records that{' '}
-        <em>&ldquo;Fire ants move into beds of children or immobile people during the
-        night&rdquo;</em>{' '}
-        and that a number of serious multiple stinging incidents have occurred indoors in
-        Texas, and, citing deShazo and colleagues, in health care facilities.
-      </p>
-      <p>
-        <strong>Avoiding a sting in the first place</strong>, in the same publication&rsquo;s
-        words:{' '}
-        <em>
-          &ldquo;Be aware of fire ants and take care not to stand on ant nests or resources on
-          which they are foraging.&rdquo;
-        </em>
-        ;{' '}
-        <em>
-          &ldquo;Wear protective clothing during outdoor activities, such as boots and/or tuck
-          pant legs into socks.&rdquo;
-        </em>
-        ; and{' '}
-        <em>
-          &ldquo;Teach children and visitors about fire ants and their hazard.&rdquo;
-        </em>{' '}
-        Two situations it singles out:{' '}
-        <em>&ldquo;Ants in migrating colonies are highly defensive and should be avoided&rdquo;</em>
-        , and during flooding, colonies{' '}
-        <em>
-          &ldquo;are capable of floating in clusters or &ldquo;rafts,&rdquo; posing a threat to
-          anything encountering them.&rdquo;
-        </em>
-      </p>
 
       <h2 id="spreaders">The Spreader Matters</h2>
       <p>

@@ -78,9 +78,9 @@ const breadcrumbSchema = {
 
 const tocItems = [
   { id: 'which-wasp', title: 'Which Wasp, and the Hornet Problem' },
-  { id: 'aerosols', title: 'Aerosols That Meet the Twenty-Foot Figure' },
   { id: 'stinger', title: 'A Wasp Leaves No Stinger' },
   { id: 'sting', title: 'The Sting: Four Classes, Kept Apart' },
+  { id: 'aerosols', title: 'Aerosols That Meet the Twenty-Foot Figure' },
   { id: 'first-aid', title: 'What to Put On It: Four Positions, None Picked' },
   { id: 'nests', title: 'Nests, and When the Sources Say to Treat One' },
   { id: 'not-here', title: 'What This Page Does Not Carry' },
@@ -295,48 +295,6 @@ export default function SocialWaspsPage() {
         </strong>
       </p>
 
-      <h2 id="aerosols">Aerosols That Meet the Twenty-Foot Figure</h2>
-      <p>
-        <strong>University of Kentucky</strong> gives both the method and the number the products
-        below are measured against:{' '}
-        <em>
-          &ldquo;If the nest is accessible, it can be eliminated fairly easily with a wasp and hornet
-          spray sold at most retail stores.&rdquo;
-        </em>{' '}
-        and{' '}
-        <strong>
-          <em>
-            &ldquo;One advantage of these formulations is that they can be sprayed as far as 20
-            feet.&rdquo;
-          </em>
-        </strong>{' '}
-        <strong>University of Maryland Extension</strong> gives the circumstance:{' '}
-        <em>
-          &ldquo;When a nest cannot be avoided until its natural demise (first hard frost), the use
-          of a dust or an aerosol wasp spray may be needed.&rdquo;
-        </em>
-      </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
-          The criterion these three products are measured against
-        </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
-          Each listing below states, in its own feature text rather than only in its product name, a
-          jet distance of at least the twenty feet University of Kentucky names, and each names a
-          wasp, hornet or yellowjacket in that same feature text. Eleven products were checked
-          against that criterion and six failed it, most of them because the distance or the insect
-          appeared only in the product title. No source consulted for this page compares any two of
-          these products on any measure, so they are not ranked here and no best is named.
-        </p>
-      </div>
-      <p>
-        The products below are named because each listing states the spray distance the sources on this page ask for.
-      </p>
-
-      {products.map((p) => (
-        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-      ))}
-
       <h2 id="stinger">A Wasp Leaves No Stinger</h2>
       <p>
         Nearly every piece of sting first aid in circulation opens by telling you to get the stinger
@@ -460,6 +418,48 @@ export default function SocialWaspsPage() {
           from, and this page keeps that distinction because the two are not the same claim.
         </strong>
       </p>
+
+      <h2 id="aerosols">Aerosols That Meet the Twenty-Foot Figure</h2>
+      <p>
+        <strong>University of Kentucky</strong> gives both the method and the number the products
+        below are measured against:{' '}
+        <em>
+          &ldquo;If the nest is accessible, it can be eliminated fairly easily with a wasp and hornet
+          spray sold at most retail stores.&rdquo;
+        </em>{' '}
+        and{' '}
+        <strong>
+          <em>
+            &ldquo;One advantage of these formulations is that they can be sprayed as far as 20
+            feet.&rdquo;
+          </em>
+        </strong>{' '}
+        <strong>University of Maryland Extension</strong> gives the circumstance:{' '}
+        <em>
+          &ldquo;When a nest cannot be avoided until its natural demise (first hard frost), the use
+          of a dust or an aerosol wasp spray may be needed.&rdquo;
+        </em>
+      </p>
+      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
+        <p className="m-0 text-base font-bold text-slate-900">
+          The criterion these three products are measured against
+        </p>
+        <p className="m-0 mt-3 text-base text-slate-800">
+          Each listing below states, in its own feature text rather than only in its product name, a
+          jet distance of at least the twenty feet University of Kentucky names, and each names a
+          wasp, hornet or yellowjacket in that same feature text. Eleven products were checked
+          against that criterion and six failed it, most of them because the distance or the insect
+          appeared only in the product title. No source consulted for this page compares any two of
+          these products on any measure, so they are not ranked here and no best is named.
+        </p>
+      </div>
+      <p>
+        The products below are named because each listing states the spray distance the sources on this page ask for.
+      </p>
+
+      {products.map((p) => (
+        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+      ))}
 
       <h2 id="first-aid">What to Put On It: Four Positions, None Picked</h2>
       <p>

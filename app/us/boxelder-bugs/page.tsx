@@ -118,8 +118,8 @@ const sources: Source[] = [
 
 const tocItems = [
   { id: 'identification', title: 'Identification' },
-  { id: 'control', title: 'Keeping Them Out' },
   { id: 'not-that-bug', title: 'What It Is Not' },
+  { id: 'control', title: 'Keeping Them Out' },
   { id: 'the-tree', title: 'The Tree Connection' },
   { id: 'year', title: 'The Year in a Boxelder Bug' },
   { id: 'harm', title: 'What They Do and Do Not Do' },
@@ -184,6 +184,29 @@ export default function BoxelderBugsPage() {
         The shape is the fastest discriminator, because the insect people most often confuse
         it with is a completely different silhouette.
       </p>
+
+      <h2 id="not-that-bug">What It Is Not</h2>
+      <ul>
+        <li>
+          <strong>Not a stink bug.</strong>{' '}
+          <Link href="/us/stink-bugs-in-house">The brown marmorated stink bug</Link> is a
+          broad brown shield, almost as wide as it is long. A boxelder bug is a narrow black
+          oval. Nothing about them looks alike once you have seen both.
+        </li>
+        <li>
+          <strong>Not a milkweed bug.</strong> University of Kentucky Extension flags this as
+          the real lookalike: the large milkweed bug, <em>Oncopeltus fasciatus</em>, is
+          roughly the same size and shares the colors, but the pattern differs. Boxelder bugs
+          are mostly black with thin red stripes; milkweed bugs are mostly orangish-red
+          separated by large patches or belt-like stripes of black. Read the ratio of black to
+          red and you have it.
+        </li>
+        <li>
+          <strong>Not a lady beetle or a cluster fly.</strong> Those are{' '}
+          <Link href="/us/asian-lady-beetles">round and spotted</Link> and{' '}
+          <Link href="/us/cluster-flies">a slow dark fly</Link> respectively.
+        </li>
+      </ul>
 
       <h2 id="control">Keeping Them Out</h2>
       <p>
@@ -285,29 +308,6 @@ export default function BoxelderBugsPage() {
           used elsewhere on this site belongs to a different insect, so it is not applied here.
         </p>
       </div>
-
-      <h2 id="not-that-bug">What It Is Not</h2>
-      <ul>
-        <li>
-          <strong>Not a stink bug.</strong>{' '}
-          <Link href="/us/stink-bugs-in-house">The brown marmorated stink bug</Link> is a
-          broad brown shield, almost as wide as it is long. A boxelder bug is a narrow black
-          oval. Nothing about them looks alike once you have seen both.
-        </li>
-        <li>
-          <strong>Not a milkweed bug.</strong> University of Kentucky Extension flags this as
-          the real lookalike: the large milkweed bug, <em>Oncopeltus fasciatus</em>, is
-          roughly the same size and shares the colors, but the pattern differs. Boxelder bugs
-          are mostly black with thin red stripes; milkweed bugs are mostly orangish-red
-          separated by large patches or belt-like stripes of black. Read the ratio of black to
-          red and you have it.
-        </li>
-        <li>
-          <strong>Not a lady beetle or a cluster fly.</strong> Those are{' '}
-          <Link href="/us/asian-lady-beetles">round and spotted</Link> and{' '}
-          <Link href="/us/cluster-flies">a slow dark fly</Link> respectively.
-        </li>
-      </ul>
 
       <h2 id="the-tree">The Tree Connection</h2>
       <p>

@@ -179,10 +179,10 @@ const sources: Source[] = [
 const tocItems = [
   { id: 'scope', title: 'What This Page Carries' },
   { id: 'identification', title: 'Which Animal Is Digging' },
-  { id: 'trapping', title: 'Trapping' },
   { id: 'damage', title: 'The Burrow, and the Structural Damage' },
   { id: 'legal', title: 'The Legal Position: Three States' },
   { id: 'relocation', title: 'Relocation: The Sharpest Disagreement' },
+  { id: 'trapping', title: 'Trapping' },
   { id: 'fence', title: 'The Fence, and Four Specifications' },
   { id: 'not-named', title: 'What Is Not Named Here, and Why' },
   { id: 'faq', title: 'Questions' },
@@ -256,56 +256,6 @@ export default function GroundhogsPage() {
         Purdue Extension gives the species as{' '}
         <em>Marmota monax</em>, a member of the squirrel family.
       </p>
-
-      <h2 id="trapping">Trapping</h2>
-      <p>
-        <strong>Placement matters more than bait, on the sources that address it.</strong> UNH:{' '}
-        <em>
-          &ldquo;The most effective technique is to place the trap directly at the burrow entrance,
-          and use a barrier of boards or other material to direct the animal into the trap.&rdquo;
-        </em>{' '}
-        UNH adds that no bait is needed in that situation, because the animal walks out of its
-        burrow into the trap. Penn State states that{' '}
-        <em>
-          &ldquo;A live trap may be placed either at the burrow entrance, in major travel lanes, or
-          at the site of damage.&rdquo;
-        </em>{' '}
-        Purdue describes setting the trap{' '}
-        <em>&ldquo;Set the live trap in the trail immediately in&rdquo;</em>{' '}
-        <em>&ldquo;front of the main burrow entrance&rdquo;</em> &mdash; its own sentence, broken
-        where the source PDF breaks it.
-      </p>
-      <div className="not-prose my-6 rounded-lg border border-blue-300 bg-blue-50 p-5">
-        <p className="m-0 text-base text-blue-900">
-          <strong>The size criterion, and the two figures that state it.</strong> Penn State:{' '}
-          <em>&ldquo;Live traps should be at least 10 x 10 x 24 inches in size.&rdquo;</em> ICWDM
-          gives a larger cage or box trap at{' '}
-          <em>&ldquo;10 x 12 x 32-inch, single-door&rdquo;</em> and{' '}
-          <em>&ldquo;9 x 9 x 32-inch, 2-door&rdquo;</em>. The card below is measured against Penn
-          State&rsquo;s minimum, which is the lower of the two, and it also exceeds ICWDM&rsquo;s.
-        </p>
-      </div>
-      <p>
-        Purdue names specific models rather than dimensions, listing{' '}
-        <em>&ldquo;Tomahawk No. 108, 108.5, 608, 608.5, or the Havahart Nos.&rdquo;</em> 3, 3A or
-        1079. None of those was among the listings this page could read.
-      </p>
-
-      <p>
-        The trap below is named because its own detail block states a size that exceeds the minimum Penn State publishes.
-      </p>
-
-      <UsToolCard
-        name="HomGarden Live Animal Cage Trap 32'' Steel Humane Release Rodent Cage for Rabbits, Stray Cat, Squirrel, Raccoon, Mole, Gopher, Chicken, Opossum, Skunk, Chipmunks, Groundhog Squire"
-        whatItDoes={[
-          'Its own product detail block gives the dimensions as 32 inches long by 12 inches wide by 12.5 inches high, which exceeds Penn State Extension’s 10 x 10 x 24 inch minimum and also exceeds ICWDM’s larger 10 x 12 x 32 inch figure',
-          'Its own feature text names groundhogs among the animals it is intended for, so the claim rests on the listing’s text and not only on its title',
-          'Its own text describes a spring-loaded door, a trigger rod sited outside the cage, and solid doors with handle guards',
-          '⚠ Its own feature text describes the trap as being for relocating wild animals. In at least one state on this page that is prohibited — read the relocation section above before using it that way. No source consulted endorses relocation as a general practice',
-          'Availability was not established. Its title and dimensions were read from its own page on 3 September 2026; no claim about stock, price or delivery is made anywhere on this page',
-        ]}
-        asin="B07KWYM922"
-      />
 
       <h2 id="damage">The Burrow, and the Structural Damage</h2>
       <p>
@@ -449,6 +399,56 @@ export default function GroundhogsPage() {
         page says on the health question, and anything further belongs to a state wildlife agency or
         a veterinarian rather than to this page.
       </p>
+
+      <h2 id="trapping">Trapping</h2>
+      <p>
+        <strong>Placement matters more than bait, on the sources that address it.</strong> UNH:{' '}
+        <em>
+          &ldquo;The most effective technique is to place the trap directly at the burrow entrance,
+          and use a barrier of boards or other material to direct the animal into the trap.&rdquo;
+        </em>{' '}
+        UNH adds that no bait is needed in that situation, because the animal walks out of its
+        burrow into the trap. Penn State states that{' '}
+        <em>
+          &ldquo;A live trap may be placed either at the burrow entrance, in major travel lanes, or
+          at the site of damage.&rdquo;
+        </em>{' '}
+        Purdue describes setting the trap{' '}
+        <em>&ldquo;Set the live trap in the trail immediately in&rdquo;</em>{' '}
+        <em>&ldquo;front of the main burrow entrance&rdquo;</em> &mdash; its own sentence, broken
+        where the source PDF breaks it.
+      </p>
+      <div className="not-prose my-6 rounded-lg border border-blue-300 bg-blue-50 p-5">
+        <p className="m-0 text-base text-blue-900">
+          <strong>The size criterion, and the two figures that state it.</strong> Penn State:{' '}
+          <em>&ldquo;Live traps should be at least 10 x 10 x 24 inches in size.&rdquo;</em> ICWDM
+          gives a larger cage or box trap at{' '}
+          <em>&ldquo;10 x 12 x 32-inch, single-door&rdquo;</em> and{' '}
+          <em>&ldquo;9 x 9 x 32-inch, 2-door&rdquo;</em>. The card below is measured against Penn
+          State&rsquo;s minimum, which is the lower of the two, and it also exceeds ICWDM&rsquo;s.
+        </p>
+      </div>
+      <p>
+        Purdue names specific models rather than dimensions, listing{' '}
+        <em>&ldquo;Tomahawk No. 108, 108.5, 608, 608.5, or the Havahart Nos.&rdquo;</em> 3, 3A or
+        1079. None of those was among the listings this page could read.
+      </p>
+
+      <p>
+        The trap below is named because its own detail block states a size that exceeds the minimum Penn State publishes.
+      </p>
+
+      <UsToolCard
+        name="HomGarden Live Animal Cage Trap 32'' Steel Humane Release Rodent Cage for Rabbits, Stray Cat, Squirrel, Raccoon, Mole, Gopher, Chicken, Opossum, Skunk, Chipmunks, Groundhog Squire"
+        whatItDoes={[
+          'Its own product detail block gives the dimensions as 32 inches long by 12 inches wide by 12.5 inches high, which exceeds Penn State Extension’s 10 x 10 x 24 inch minimum and also exceeds ICWDM’s larger 10 x 12 x 32 inch figure',
+          'Its own feature text names groundhogs among the animals it is intended for, so the claim rests on the listing’s text and not only on its title',
+          'Its own text describes a spring-loaded door, a trigger rod sited outside the cage, and solid doors with handle guards',
+          '⚠ Its own feature text describes the trap as being for relocating wild animals. In at least one state on this page that is prohibited — read the relocation section above before using it that way. No source consulted endorses relocation as a general practice',
+          'Availability was not established. Its title and dimensions were read from its own page on 3 September 2026; no claim about stock, price or delivery is made anywhere on this page',
+        ]}
+        asin="B07KWYM922"
+      />
 
       <h2 id="fence">The Fence, and Four Specifications</h2>
       <p>

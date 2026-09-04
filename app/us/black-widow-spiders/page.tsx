@@ -314,10 +314,10 @@ const sources: Source[] = [
 
 const tocItems = [
   { id: 'which-widow', title: 'Which Widow, and the Hourglass' },
-  { id: 'habitat', title: 'Where They Live, and Taking Webs Down' },
   { id: 'range', title: 'Where Each Species Is' },
   { id: 'bites', title: 'What a Bite Does' },
   { id: 'medical', title: 'If You Think You Have Been Bitten' },
+  { id: 'habitat', title: 'Where They Live, and Taking Webs Down' },
   { id: 'handling', title: 'Handling Stored Things and Woodpiles' },
   { id: 'exclusion', title: 'Keeping Them Out' },
   { id: 'insecticides', title: 'Insecticides, and Why Nothing Is Named Here' },
@@ -486,87 +486,6 @@ export default function BlackWidowSpidersPage() {
         called that because they are shiny black when full grown, and black is a traditional color
         of mourning. <strong>Two against one, and the disagreement stands rather than being
         settled.</strong>
-      </p>
-
-      <h2 id="habitat">Where They Live, and Taking Webs Down</h2>
-      <p>
-        <strong>The sources describe the same habitat.</strong> Colorado State: widow spiders{' '}
-        <em>
-          &ldquo;often live in ready-made holes in dark, undisturbed sites&rdquo;
-        </em>{' '}
-        and are most often found in abandoned rodent burrows, loose stone or wood piles, or the
-        corners of rooms, garages and outbuildings. K-State adds electrical and water meter boxes,
-        old cars, unused farm equipment and infrequently used lawn furniture. Utah State lists
-        building foundations, rock piles, wood piles, outbuildings, water meter and irrigation boxes
-        and the area around exterior lighting.
-      </p>
-      <p>
-        <strong>UC IPM on why lighting matters:</strong>{' '}
-        <em>
-          &ldquo;Outdoor lighting attracts insects, which in turn attract spiders. If possible, keep
-          lighting fixtures pointed off structures and away from windows and doorways.&rdquo;
-        </em>{' '}
-        Utah State&rsquo;s version of the same measure is to change exterior lighting to sodium
-        vapor bulbs.
-      </p>
-      <p>
-        <strong>Physical removal is what the sources put first.</strong> Colorado State describes
-        searching for them and destroying them by crushing or vacuuming the web and the spider, using
-        protective methods, and elsewhere ranks physical search and removal ahead of the other
-        treatments it discusses. <em>That ranking is a paraphrase</em>: the publication states it
-        with a superlative this site does not print, and the instruction rather than the wording is
-        what is carried here. UC IPM:{' '}
-        <em>
-          &ldquo;Vacuuming spiders can be an effective control technique because their soft bodies
-          usually don&rsquo;t survive this process.&rdquo;
-        </em>
-      </p>
-      <p>
-        <strong>Kansas State names the tool:</strong>{' '}
-        <em>
-          &ldquo;If black widows are found, carefully remove and destroy spiders, webbing, and all
-          egg sacs. This can be done with a broom or other long-handled device, or a vacuum
-          cleaner.&rdquo;
-        </em>
-      </p>
-
-      <p>
-        The tool below is a long-handled duster, named because Kansas State asks for a broom or other long-handled device to take down webbing and egg sacs.
-      </p>
-
-      {duster.map((p) => (
-        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-      ))}
-
-      <p>
-        <strong>Colorado State adds an egg-sac method that costs nothing:</strong> crushing them, or
-        freezing them &mdash; it says to leave them in the freezer for several weeks.
-      </p>
-      <p>
-        <strong>And the honest ceiling, from UC IPM:</strong>{' '}
-        <em>
-          &ldquo;However, it is not practical to eliminate these spiders completely. Both widow
-          species will continue to re-infest treated areas.&rdquo;
-        </em>{' '}
-        The reason is ballooning: spiderlings climb up, release a filament of silk and are carried
-        off on updrafts, so{' '}
-        <em>
-          &ldquo;Because spiderlings will be dropping down on your property continually, eliminating
-          them will be a task that needs to be done repeatedly throughout the year.&rdquo;
-        </em>{' '}
-        Kansas State puts the same limit differently:{' '}
-        <em>
-          &ldquo;It is difficult to locate and destroy all spiders without thoroughly cleaning the
-          area.&rdquo;
-        </em>
-      </p>
-      <p>
-        <strong>
-          Worth noticing: not one source consulted for this page routes this job to a professional.
-        </strong>{' '}
-        That is a real difference from what the same kind of sources say about the brown recluse,
-        where two of them do. The widow sources describe a job a householder does &mdash; bounded by
-        permanence, not by competence.
       </p>
 
       <h2 id="range">Where Each Species Is</h2>
@@ -927,6 +846,87 @@ export default function BlackWidowSpidersPage() {
         material about bites during pregnancy beyond the single instruction quoted above.{' '}
         <strong>All of it is clinician material. It is named as existing and none of it is set out
         here.</strong>
+      </p>
+
+      <h2 id="habitat">Where They Live, and Taking Webs Down</h2>
+      <p>
+        <strong>The sources describe the same habitat.</strong> Colorado State: widow spiders{' '}
+        <em>
+          &ldquo;often live in ready-made holes in dark, undisturbed sites&rdquo;
+        </em>{' '}
+        and are most often found in abandoned rodent burrows, loose stone or wood piles, or the
+        corners of rooms, garages and outbuildings. K-State adds electrical and water meter boxes,
+        old cars, unused farm equipment and infrequently used lawn furniture. Utah State lists
+        building foundations, rock piles, wood piles, outbuildings, water meter and irrigation boxes
+        and the area around exterior lighting.
+      </p>
+      <p>
+        <strong>UC IPM on why lighting matters:</strong>{' '}
+        <em>
+          &ldquo;Outdoor lighting attracts insects, which in turn attract spiders. If possible, keep
+          lighting fixtures pointed off structures and away from windows and doorways.&rdquo;
+        </em>{' '}
+        Utah State&rsquo;s version of the same measure is to change exterior lighting to sodium
+        vapor bulbs.
+      </p>
+      <p>
+        <strong>Physical removal is what the sources put first.</strong> Colorado State describes
+        searching for them and destroying them by crushing or vacuuming the web and the spider, using
+        protective methods, and elsewhere ranks physical search and removal ahead of the other
+        treatments it discusses. <em>That ranking is a paraphrase</em>: the publication states it
+        with a superlative this site does not print, and the instruction rather than the wording is
+        what is carried here. UC IPM:{' '}
+        <em>
+          &ldquo;Vacuuming spiders can be an effective control technique because their soft bodies
+          usually don&rsquo;t survive this process.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>Kansas State names the tool:</strong>{' '}
+        <em>
+          &ldquo;If black widows are found, carefully remove and destroy spiders, webbing, and all
+          egg sacs. This can be done with a broom or other long-handled device, or a vacuum
+          cleaner.&rdquo;
+        </em>
+      </p>
+
+      <p>
+        The tool below is a long-handled duster, named because Kansas State asks for a broom or other long-handled device to take down webbing and egg sacs.
+      </p>
+
+      {duster.map((p) => (
+        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+      ))}
+
+      <p>
+        <strong>Colorado State adds an egg-sac method that costs nothing:</strong> crushing them, or
+        freezing them &mdash; it says to leave them in the freezer for several weeks.
+      </p>
+      <p>
+        <strong>And the honest ceiling, from UC IPM:</strong>{' '}
+        <em>
+          &ldquo;However, it is not practical to eliminate these spiders completely. Both widow
+          species will continue to re-infest treated areas.&rdquo;
+        </em>{' '}
+        The reason is ballooning: spiderlings climb up, release a filament of silk and are carried
+        off on updrafts, so{' '}
+        <em>
+          &ldquo;Because spiderlings will be dropping down on your property continually, eliminating
+          them will be a task that needs to be done repeatedly throughout the year.&rdquo;
+        </em>{' '}
+        Kansas State puts the same limit differently:{' '}
+        <em>
+          &ldquo;It is difficult to locate and destroy all spiders without thoroughly cleaning the
+          area.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>
+          Worth noticing: not one source consulted for this page routes this job to a professional.
+        </strong>{' '}
+        That is a real difference from what the same kind of sources say about the brown recluse,
+        where two of them do. The widow sources describe a job a householder does &mdash; bounded by
+        permanence, not by competence.
       </p>
 
       <h2 id="handling">Handling Stored Things and Woodpiles</h2>

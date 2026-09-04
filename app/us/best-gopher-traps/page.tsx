@@ -356,13 +356,13 @@ const sources: Source[] = [
 const tocItems = [
   { id: 'headline', title: 'The Short Answer' },
   { id: 'the-tunnel', title: 'Find the Main Tunnel First' },
-  { id: 'pincer', title: 'Pincer Traps' },
   { id: 'mechanisms', title: 'Trap Mechanisms Compared' },
   { id: 'the-trial', title: 'What One Trial Measured' },
-  { id: 'box', title: 'Cinch-Style Traps' },
   { id: 'exclusion', title: 'Fencing Instead of Trapping' },
   { id: 'no-work', title: 'What Does Not Work' },
   { id: 'legal', title: 'The Legal Position' },
+  { id: 'pincer', title: 'Pincer Traps' },
+  { id: 'box', title: 'Cinch-Style Traps' },
   { id: 'faq', title: 'Questions' },
   { id: 'sources', title: 'Sources' },
 ];
@@ -433,21 +433,6 @@ export default function BestGopherTrapsPage() {
         not for the gopher.
       </p>
 
-      <h2 id="pincer">Pincer Traps</h2>
-      <p>
-        UC IPM describes these as 2-pronged pincer traps, and says the gopher triggers one when it
-        pushes against a flat, vertical pan or metal wire. This is the mechanism named first in
-        the extension literature and the one two of the three trial models belong to.
-      </p>
-
-      <p>
-        The traps below are the two-pronged pincer type described above, named because that is the mechanism the extension literature names first.
-      </p>
-
-      {pincerProducts.map((p) => (
-        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-      ))}
-
       <h2 id="mechanisms">Trap Mechanisms Compared</h2>
       <p>
         As on our other trap pages, the rows are <strong>mechanisms rather than brands</strong>.
@@ -504,24 +489,6 @@ export default function BestGopherTrapsPage() {
         no contradiction between them, and we are not going to crown one. That is the honest state of the
         evidence, and it is why the sections below are grouped by how a trap works rather than
         ordered first to last.
-      </p>
-
-      <h2 id="box">Cinch-Style Traps</h2>
-      <p>
-        The other mechanism sits in the tunnel and closes across it. UC IPM names the choker-style
-        box trap as the other common type, and notes box traps require more surface excavation to
-        install than pincer traps &mdash; which matters in a lawn. The Cinch was the third model in
-        the Utah trial.
-      </p>
-
-      {boxProducts.map((p) => (
-        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
-      ))}
-
-      <p>
-        <strong>What we checked and did not include.</strong> Five further listings were fetched
-        while writing this page and none is named here. Four were dead pages and one was marked
-        currently unavailable. A trap you cannot buy is not an option.
       </p>
 
       <h2 id="exclusion">Fencing Instead of Trapping</h2>
@@ -608,6 +575,39 @@ export default function BestGopherTrapsPage() {
         trapped is the step that needs a permit there. That is one state, and it is the opposite of
         what many people assume is the kind option. It is not a general rule, and this page has
         checked two states.
+      </p>
+
+      <h2 id="pincer">Pincer Traps</h2>
+      <p>
+        UC IPM describes these as 2-pronged pincer traps, and says the gopher triggers one when it
+        pushes against a flat, vertical pan or metal wire. This is the mechanism named first in
+        the extension literature and the one two of the three trial models belong to.
+      </p>
+
+      <p>
+        The traps below are the two-pronged pincer type described above, named because that is the mechanism the extension literature names first.
+      </p>
+
+      {pincerProducts.map((p) => (
+        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+      ))}
+
+      <h2 id="box">Cinch-Style Traps</h2>
+      <p>
+        The other mechanism sits in the tunnel and closes across it. UC IPM names the choker-style
+        box trap as the other common type, and notes box traps require more surface excavation to
+        install than pincer traps &mdash; which matters in a lawn. The Cinch was the third model in
+        the Utah trial.
+      </p>
+
+      {boxProducts.map((p) => (
+        <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
+      ))}
+
+      <p>
+        <strong>What we checked and did not include.</strong> Five further listings were fetched
+        while writing this page and none is named here. Four were dead pages and one was marked
+        currently unavailable. A trap you cannot buy is not an option.
       </p>
 
       <h2 id="faq">Questions</h2>

@@ -135,9 +135,9 @@ const products: ProductRecord[] = [
 const tocItems = [
   { id: 'nest', title: 'The Ants You See Are Not the Colony' },
   { id: 'four', title: 'The Four Ants on This Page' },
-  { id: 'baits', title: 'Bait Stations and Stakes' },
   { id: 'carpenter', title: 'Carpenter Ants Need Different Tactics' },
   { id: 'fire', title: 'If the Ants Sting, This Is the Wrong Page' },
+  { id: 'baits', title: 'Bait Stations and Stakes' },
   { id: 'first', title: 'What Every Source Puts First' },
   { id: 'spread', title: 'Four Sources, Four Positions on Spraying' },
   { id: 'limits', title: 'What the Sources Say About Baits That Do Not Work' },
@@ -457,6 +457,57 @@ export default function AntsPage() {
         </em>
       </p>
 
+      <h2 id="carpenter">Carpenter Ants Need Different Tactics</h2>
+      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
+        <p className="m-0 text-base font-bold text-amber-900">
+          One source states a product limit that is not about strength. It is about whether the ant
+          goes to the product at all.
+        </p>
+        <p className="mt-3 mb-0 text-base text-amber-900">
+          <strong>
+            Colorado State University Extension, published November 1996 and reviewed August 2025:
+          </strong>{' '}
+          <em>
+            &ldquo;Carpenter ants are one group of ants that will not visit most solid ant baits but
+            will feed at some liquid or gel sugar-based baits.&rdquo;
+          </em>
+        </p>
+        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
+          Read as written, a solid bait is not a weaker choice against a carpenter ant. It is one the
+          ant does not visit. Every product named further down this page is a liquid, so none of them
+          is caught by that sentence &mdash; but not one of those listings names carpenter ants
+          either, so nothing here is evidence that any particular product works on this ant.
+        </p>
+      </div>
+      <p>
+        <strong>The structural question is separate, and this page does not answer it.</strong> Penn
+        State states that the carpenter ant can be destructive to homes. Colorado State states that
+        they nest in wood and that a nest inside a building is typically at a point of previous water
+        damage. No source in this pack tells a homeowner how to assess damage to a structure, and no
+        product named here is presented as an answer to it.
+      </p>
+
+      <h2 id="fire">If the Ants Sting, This Is the Wrong Page</h2>
+      <p>
+        <strong>None of the four ants on this page is described by any source here as a stinging
+        pest of people.</strong> UC IPM names the ones that are, and they are not these:{' '}
+        <em>
+          &ldquo;A few ants sting, including native fire ants and harvester ants, which are primarily
+          outdoor species and are the most common stinging ants in California.&rdquo;
+        </em>{' '}
+        The same source describes the red imported fire ant separately as an aggressive stinging ant.
+      </p>
+      <p>
+        <Link href="/us/imported-fire-ants">Our imported fire ants page</Link> covers that insect,
+        including which ants the federal term takes in, how to tell them from native ants using a
+        published two-step character, and the sting.{' '}
+        <strong>
+          None of that identification material is repeated here, so the two pages cannot drift apart.
+        </strong>{' '}
+        If what you are looking at is a mound in a lawn and the ants swarm out and sting when it is
+        disturbed, that page is the one you want, not this one.
+      </p>
+
       <h2 id="baits">Bait Stations and Stakes</h2>
       <p>
         <strong>One source names the two forms a household buyer will actually find</strong>, and
@@ -530,57 +581,6 @@ export default function AntsPage() {
         quantity. Neither listing stated that the difference was only cosmetic, and a different number
         of baits in the box is not a cosmetic difference, so they are treated as separate products and
         one of each pair is named rather than the pair being merged into a single card.
-      </p>
-
-      <h2 id="carpenter">Carpenter Ants Need Different Tactics</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
-          One source states a product limit that is not about strength. It is about whether the ant
-          goes to the product at all.
-        </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
-          <strong>
-            Colorado State University Extension, published November 1996 and reviewed August 2025:
-          </strong>{' '}
-          <em>
-            &ldquo;Carpenter ants are one group of ants that will not visit most solid ant baits but
-            will feed at some liquid or gel sugar-based baits.&rdquo;
-          </em>
-        </p>
-        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
-          Read as written, a solid bait is not a weaker choice against a carpenter ant. It is one the
-          ant does not visit. Every product named further down this page is a liquid, so none of them
-          is caught by that sentence &mdash; but not one of those listings names carpenter ants
-          either, so nothing here is evidence that any particular product works on this ant.
-        </p>
-      </div>
-      <p>
-        <strong>The structural question is separate, and this page does not answer it.</strong> Penn
-        State states that the carpenter ant can be destructive to homes. Colorado State states that
-        they nest in wood and that a nest inside a building is typically at a point of previous water
-        damage. No source in this pack tells a homeowner how to assess damage to a structure, and no
-        product named here is presented as an answer to it.
-      </p>
-
-      <h2 id="fire">If the Ants Sting, This Is the Wrong Page</h2>
-      <p>
-        <strong>None of the four ants on this page is described by any source here as a stinging
-        pest of people.</strong> UC IPM names the ones that are, and they are not these:{' '}
-        <em>
-          &ldquo;A few ants sting, including native fire ants and harvester ants, which are primarily
-          outdoor species and are the most common stinging ants in California.&rdquo;
-        </em>{' '}
-        The same source describes the red imported fire ant separately as an aggressive stinging ant.
-      </p>
-      <p>
-        <Link href="/us/imported-fire-ants">Our imported fire ants page</Link> covers that insect,
-        including which ants the federal term takes in, how to tell them from native ants using a
-        published two-step character, and the sting.{' '}
-        <strong>
-          None of that identification material is repeated here, so the two pages cannot drift apart.
-        </strong>{' '}
-        If what you are looking at is a mound in a lawn and the ants swarm out and sting when it is
-        disturbed, that page is the one you want, not this one.
       </p>
 
       <h2 id="first">What Every Source Puts First</h2>
