@@ -111,6 +111,7 @@ import { UK_CLASSES, UK_SPELLING_RE } from './ukspelling.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const US_TAG = 'pestproindex2-20';
+const UK_TAG = 'pestproindex2-21';
 
 // ---------------------------------------------------------------------------
 // SURFACES
@@ -129,20 +130,49 @@ function decode(s) {
 // href is an attribute and is gone by the time prose text exists, and no
 // reader-facing proximity gate is possible at all.
 const CARD_MARK = ' CARDLINK ';
-const CARD_HREF_RE = /https:\/\/www\.amazon\.com\/dp\/([A-Z0-9]{10})\?tag=([a-z0-9-]+)/g;
+// A CARD IS AN AMAZON PRODUCT LINK. ITS TAG IS AN ATTRIBUTE OF IT, NOT PART OF
+// ITS DEFINITION — S64 R7.
+//
+// These three constants used to REQUIRE `?tag=`, which made an untagged card
+// invisible to every matcher built on them. DETECTION MUST NOT DEPEND ON AN
+// OPTIONAL ATTRIBUTE OF THE THING BEING DETECTED: a card missing its tag is a
+// DEFECT, and a defect that makes the thing vanish from its own detector cannot
+// be caught by anything downstream.
+//
+// MEASURED AT S64 R7 by rendering a real untagged card on /us/groundhogs
+// (`affiliateTag=""`), which is a supported prop, and running every consumer:
+//   G6   PASS   the price-proximity mark was never placed
+//   M10  PASS   THE TAG GATE ITSELF SAW NO CARD TO CHECK
+//   M11  PASS   the page read as non-carding, so the S59-C denial gate went
+//               silent — this is the R2/R3 breach reconstructed as a trap
+//   M12  PASS   price-proximity blind
+//   M25  INV(0) the placement measure lost the page
+//   M30  INV(0) the card vanished from the count; estate 376 -> 375
+//   M33  FAIL   but with the WRONG MESSAGE, "affiliate footer on a page
+//               rendering no card link". The footer was correct and the matcher
+//               was wrong, and acting on that message would have removed a
+//               required disclosure from a page carrying a live Amazon link.
+//
+// THE TAG IS NOW VERIFIED SEPARATELY, BY M10, WHICH FAILS ON AN UNTAGGED CARD.
+// Detection finds the thing; verification rules on it. Group 1 is the ASIN and
+// group 2 is the tag OR undefined.
+const US_CARD_RE = /https:\/\/www\.amazon\.com\/dp\/([A-Z0-9]{10})(?:\?tag=([a-z0-9-]+))?/g;
 // The UK mirror. Written without a tag group deliberately: the UK estate carries
 // tagged and untagged /dp/ hrefs and M32 counts the links a reader can click,
 // not the ones carrying a tag. M19 is what rules on tags, on both sides.
-const UK_CARD_HREF_RE = /https:\/\/www\.amazon\.co\.uk\/dp\/([A-Z0-9]{10})/g;
+// The UK mirror. It never captured a tag at all, so nothing verified the UK tag
+// on 378 rendered links; the tag is now group 2 here too and M10 rules on both
+// estates. Measured at S64 R7: all 378 carry pestproindex2-21 correctly.
+const UK_CARD_RE = /https:\/\/www\.amazon\.co\.uk\/dp\/([A-Z0-9]{10})(?:\?tag=([a-z0-9-]+))?/g;
 // Either marketplace's card link, for the estate-agnostic measures. Declared as
 // its own constant rather than composed at the call site so the two forms cannot
 // drift apart from the two matchers that own them.
 const EITHER_CARD_RE =
-  /https:\/\/www\.amazon\.com\/dp\/[A-Z0-9]{10}\?tag=[a-z0-9-]+|https:\/\/www\.amazon\.co\.uk\/dp\/[A-Z0-9]{10}/g;
+  /https:\/\/www\.amazon\.(?:com|co\.uk)\/dp\/[A-Z0-9]{10}(?:\?tag=[a-z0-9-]+)?/g;
 
 function toProse(raw, { markCards = false } = {}) {
   let b = raw;
-  if (markCards) b = b.replace(new RegExp(CARD_HREF_RE.source, 'g'), CARD_MARK);
+  if (markCards) b = b.replace(new RegExp(EITHER_CARD_RE.source, 'g'), CARD_MARK);
   b = b
     .replace(/<head\b[\s\S]*?<\/head>/gi, '')
     .replace(/<script\b[\s\S]*?<\/script>/gi, '')
@@ -187,7 +217,7 @@ const SURFACES = {
   full: (raw) => raw,
   // WHAT A READER SEES, and nothing else removed. The right surface for a COUNT.
   // Scripts only: <style> and comments are left alone deliberately, because this
-  // surface must keep href attributes intact for CARD_HREF_RE to read.
+  // surface must keep href attributes intact for the card pattern to read.
   rendered: (raw) => stripScripts(raw),
   prose: (raw) => toProse(raw),
   proseCards: (raw) => toProse(raw, { markCards: true }),
@@ -745,17 +775,52 @@ const MATCHERS = [
     kind: 'gate',
     scope: 'document',
     surface: 'full',
-    name: `No amazon.com card link carrying a tag other than ${US_TAG}`,
-    // Codified as a ZERO-GATE, not as the inventory matcher it used to be. A
-    // count of 364 tagged links proves nothing on its own; what matters is that
-    // none carries a different tag. The total is still printed beside it as
-    // context, but the VERDICT is the zero.
-    test: (t) =>
-      all(CARD_HREF_RE, t)
-        .filter((m) => m[2] !== US_TAG)
-        .map((m) => m[0]),
-    probePos: 'https://www.amazon.com/dp/B00NFRTVY6?tag=someoneelse-20',
-    probeNeg: CARD_LINK,
+    name: 'Every Amazon product link carries its own estate\'s affiliate tag',
+    // THIS IS THE VERIFICATION HALF OF THE S64 R7 SPLIT. Detection finds an
+    // Amazon product link whether or not it carries a tag; this rules on the tag.
+    //
+    // IT NOW FAILS ON AN UNTAGGED CARD, WHICH IS THE WHOLE POINT. Before S64 R7
+    // it was built on a tag-REQUIRING pattern, so a card with no tag produced no
+    // match and THE TAG GATE ITSELF SAW NOTHING TO CHECK. An untagged card
+    // earns nothing, is indistinguishable from an ordinary outbound link, and
+    // made five other matchers go silent. A missing tag is now a VISIBLE
+    // FAILURE rather than an absence.
+    //
+    // BOTH ESTATES, BY RULE RATHER THAN BY LIST. Each host has exactly one
+    // correct tag; the pair is the rule and a third marketplace is covered by
+    // adding a row (Law 170). M19 rules on the OTHER direction — the wrong
+    // host or tag appearing on the wrong estate — and the two do not overlap.
+    //
+    // MEASURED AT S64 R7 ACROSS BOTH ESTATES AND BOTH STORE IDS: 375 US links
+    // carrying pestproindex2-20, 378 UK links carrying pestproindex2-21, zero
+    // wrong-estate tags, zero wrong hosts, and ONE untagged link which was the
+    // control this round injected and then reverted.
+    test: (t) => {
+      const out = [];
+      for (const [re, tag, host] of [
+        [US_CARD_RE, US_TAG, 'amazon.com'],
+        [UK_CARD_RE, UK_TAG, 'amazon.co.uk'],
+      ]) {
+        for (const m of all(re, t)) {
+          if (m[2] === undefined) out.push(`UNTAGGED ${host} card: ${m[0]}`);
+          else if (m[2] !== tag) out.push(`WRONG TAG on ${host}: ${m[0]}`);
+        }
+      }
+      return out;
+    },
+    probePos: [
+      'https://www.amazon.com/dp/B00NFRTVY6?tag=someoneelse-20',
+      // THE UNTAGGED CARD — the case that used to vanish from this gate.
+      '<a href="https://www.amazon.com/dp/B00NFRTVY6">buy</a>',
+      '<a href="https://www.amazon.co.uk/dp/B00NFRTVY6">buy</a>',
+      'https://www.amazon.co.uk/dp/B00NFRTVY6?tag=someoneelse-21',
+    ],
+    probeNeg: [
+      CARD_LINK,
+      `<a href="https://www.amazon.co.uk/dp/B00NFRTVY6?tag=${UK_TAG}">buy</a>`,
+      // not a product link at all
+      '<a href="https://www.amazon.com/gp/help">help</a>',
+    ],
   },
   {
     id: 'M11',
@@ -810,7 +875,21 @@ const MATCHERS = [
         neg: ['we may earn a small commission at no extra cost to you'] },
     ],
     test: (t) => {
-      if (all(CARD_HREF_RE, t).length === 0) return [];
+      // THE PREDICATE IS A *TAGGED* CARD, AND THAT IS NOT A RELAPSE INTO
+      // TAG-DEPENDENT DETECTION — S64 R7. M11 asks whether the page EARNS, which
+      // is a question about the tag, so filtering to tagged cards is this gate's
+      // RULE rather than its detector. Detection stays tag-independent in
+      // US_CARD_RE/UK_CARD_RE; M10 owns the untagged card as a defect.
+      //
+      // MEASURED, NOT ASSUMED: when the S64 R7 control rendered an untagged card,
+      // UsToolCard correctly switched to its no-affiliate branch and the page
+      // truthfully said it earns nothing. An unfiltered predicate fired there —
+      // a FALSE POSITIVE on an honest page. An untagged card earns nothing, so a
+      // denial beside it is true and is not an S59-C breach.
+      const tagged = [...all(US_CARD_RE, t), ...all(UK_CARD_RE, t)].filter(
+        (m) => m[2] !== undefined,
+      );
+      if (tagged.length === 0) return [];
       const text = plainText(t);
       const out = [];
       for (const c of MATCHERS.find((m) => m.id === 'M11').classes) {
@@ -843,7 +922,7 @@ const MATCHERS = [
     // price rendered into an attribute or into the RSC flight payload that the
     // prose surface strips and no reader ever sees. Window and surface are both
     // stated, because the count is meaningless without them (Law 62).
-    test: (t) => near(t, CARD_HREF_RE, MONEY_RE, 800),
+    test: (t) => near(t, EITHER_CARD_RE, MONEY_RE, 800),
     probePos: '<p>Only $19.99</p>' + 'x'.repeat(700) + `<a href="${CARD_LINK}">buy</a>`,
     probeNeg: [
       '<p>a snap trap</p>' + `<a href="${CARD_LINK}">buy</a>`,
@@ -1154,7 +1233,7 @@ const MATCHERS = [
   },
   // =========================================================================
   // S63 R5 — the four measurement steps S63 R4's conversion diagnostic ran as
-  // ad-hoc code. The fifth, the card link, is CARD_HREF_RE and is REUSED rather
+  // ad-hoc code. The fifth, the card link, is US_CARD_RE and is REUSED rather
   // than re-implemented (this file's own rule 4: no second copy).
   // =========================================================================
   {
@@ -1165,7 +1244,7 @@ const MATCHERS = [
     // never builds, so `views[m.surface]` was `undefined` on every call and this
     // matcher printed INV(0) on every route from the day it was codified --
     // measured at 62 of 62 invocations receiving `undefined`. It reads RAW HTML
-    // because CARD_HREF_RE matches an href attribute, which does not survive
+    // because the card pattern matches an href attribute, which does not survive
     // into the prose surface; the visible-character conversion is done inside
     // test() by visibleBody(). On the live estate it now fires on 41 routes and
     // is silent on 20.
@@ -1175,7 +1254,7 @@ const MATCHERS = [
     // never within raw bytes. The positive fixture places a 5,000-byte script
     // block ahead of the card so the two cannot agree; a raw-byte
     // implementation moves the asserted value and the probe says so.
-    // BOTH ESTATES — S64 R5. It read CARD_HREF_RE only, which is the amazon.com
+    // BOTH ESTATES — S64 R5. It read the US pattern only, which is the amazon.com
     // form, so it was silent on every UK document: a matcher whose NAME is
     // general and whose BODY is one estate's (Law 170). The measure itself —
     // visible characters before the first card, corrected for the unterminated
@@ -1399,7 +1478,7 @@ const MATCHERS = [
     scope: 'document',
     surface: 'rendered',
     name: 'US card links a reader can click (tagged amazon.com /dp/ anchors)',
-    test: (t) => all(CARD_HREF_RE, t).map((m) => m[1]),
+    test: (t) => all(US_CARD_RE, t).map((m) => m[1]),
     report: (hits) => `${hits.length} occurrence(s), ${new Set(hits).size} distinct ASIN(s)`,
     probePos: `<a href="${CARD_LINK}">buy</a>`,
     probeNeg: [
@@ -1426,7 +1505,7 @@ const MATCHERS = [
     scope: 'document',
     surface: 'rendered',
     name: 'UK card links a reader can click (amazon.co.uk /dp/ anchors)',
-    test: (t) => all(UK_CARD_HREF_RE, t).map((m) => m[1]),
+    test: (t) => all(UK_CARD_RE, t).map((m) => m[1]),
     report: (hits) => `${hits.length} occurrence(s), ${new Set(hits).size} distinct ASIN(s)`,
     probePos: '<a href="https://www.amazon.co.uk/dp/B00NFRTVY6?tag=pestproindex2-21">buy</a>',
     probeNeg: [
@@ -1489,7 +1568,7 @@ const MATCHERS = [
       const usAffirm = t.includes(US_FOOTER_AFFIRM);
       const usDeny = t.includes(US_FOOTER_DENY);
       if (usAffirm || usDeny) {
-        const cards = all(CARD_HREF_RE, t).length;
+        const cards = all(US_CARD_RE, t).length;
         if (usAffirm && usDeny) out.push('US: two contradictory footer statements on one page');
         if (cards > 0 && !usAffirm) out.push(`US: ${cards} rendered card link(s) and no affiliate footer`);
         if (cards === 0 && usAffirm) out.push('US: affiliate footer on a page rendering no card link');
@@ -1502,7 +1581,7 @@ const MATCHERS = [
       // disclosure: those carry four different wordings, are not derived, and
       // must not stand in for the statement this gate governs.
       const ukAffirm = t.includes(UK_FOOTER_AFFIRM);
-      const ukCards = all(UK_CARD_HREF_RE, t).length;
+      const ukCards = all(UK_CARD_RE, t).length;
       if (ukAffirm || ukCards) {
         if (ukCards > 0 && !ukAffirm) out.push(`UK: ${ukCards} rendered card link(s) and no affiliate footer`);
         if (ukCards === 0 && ukAffirm) out.push('UK: affiliate footer on a page rendering no card link');
@@ -1709,7 +1788,7 @@ async function selfTest() {
   // reads the value it discriminates on. Every figure below is derived at
   // runtime from the fixture and the matcher (Law 178).
   const m25 = MATCHERS.find((x) => x.id === 'M25');
-  const rawIdx = new RegExp(CARD_HREF_RE.source, 'g').exec(HTML_CARD_AFTER_PROSE).index;
+  const rawIdx = new RegExp(US_CARD_RE.source, 'g').exec(HTML_CARD_AFTER_PROSE).index;
   const visIdx = m25.test(HTML_CARD_AFTER_PROSE)[0].offset;
   const skipped = (HTML_CARD_AFTER_PROSE.match(/<script>([\s\S]*?)<\/script>/) ?? [, ''])[1].length;
   const visibleMeasure = visIdx <= rawIdx - skipped;
@@ -1803,9 +1882,9 @@ async function selfTest() {
   const m25h = MATCHERS.find((x) => x.id === 'M25');
   const hFix = m25h.test(HTML_CARD_AFTER_PROSE)[0]?.offset ?? -1;
   const hRaw = visibleBody(
-    HTML_CARD_AFTER_PROSE.slice(0, CARD_HREF_RE.exec(HTML_CARD_AFTER_PROSE)?.index ?? 0),
+    HTML_CARD_AFTER_PROSE.slice(0, US_CARD_RE.exec(HTML_CARD_AFTER_PROSE)?.index ?? 0),
   ).length;
-  CARD_HREF_RE.lastIndex = 0;
+  US_CARD_RE.lastIndex = 0;
   const hOk = hFix >= 0 && hRaw > hFix;
   if (!hOk) {
     bad++;
@@ -1815,6 +1894,28 @@ async function selfTest() {
   console.log(
     `     uncorrected offset ${hRaw}  corrected ${hFix}  delta ${hRaw - hFix}  -> ` +
       `${hOk ? 'the correction is load-bearing' : 'ASSERTION FAILED — the correction changes nothing'}`,
+  );
+
+  // I. DETECTION IS TAG-INDEPENDENT AND VERIFICATION IS SEPARATE — S64 R7.
+  //
+  // Asserted rather than commented, because the whole defect was that a card
+  // missing its tag disappeared from its own detector. Three things must hold
+  // together on one untagged fixture: the US pattern DETECTS it, the
+  // either-estate pattern DETECTS it, and M10 FAILS on it. If a future round
+  // reinstates a tag-requiring pattern, all three drop at once and say so.
+  const untagged = '<a href="https://www.amazon.com/dp/B00NFRTVY6">buy</a>';
+  const iDetectUs = all(US_CARD_RE, untagged).length;
+  const iDetectEither = all(EITHER_CARD_RE, untagged).length;
+  const iVerify = MATCHERS.find((x) => x.id === 'M10').test(untagged).length;
+  const iOk = iDetectUs === 1 && iDetectEither === 1 && iVerify === 1;
+  if (!iOk) {
+    bad++;
+    assertionFailures++;
+  }
+  console.log('\n  I. untagged card — detection vs verification (S64 R7):');
+  console.log(
+    `     detected by US_CARD_RE ${iDetectUs}  by EITHER_CARD_RE ${iDetectEither}  ` +
+      `M10 failures ${iVerify}  -> ${iOk ? 'detected AND failed, not vanished' : 'ASSERTION FAILED'}`,
   );
 
   return { bad, registered: MATCHERS.length, unusableIds, classFailures, assertionFailures };
