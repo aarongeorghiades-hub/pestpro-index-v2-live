@@ -134,6 +134,11 @@ const CARD_HREF_RE = /https:\/\/www\.amazon\.com\/dp\/([A-Z0-9]{10})\?tag=([a-z0
 // tagged and untagged /dp/ hrefs and M32 counts the links a reader can click,
 // not the ones carrying a tag. M19 is what rules on tags, on both sides.
 const UK_CARD_HREF_RE = /https:\/\/www\.amazon\.co\.uk\/dp\/([A-Z0-9]{10})/g;
+// Either marketplace's card link, for the estate-agnostic measures. Declared as
+// its own constant rather than composed at the call site so the two forms cannot
+// drift apart from the two matchers that own them.
+const EITHER_CARD_RE =
+  /https:\/\/www\.amazon\.com\/dp\/[A-Z0-9]{10}\?tag=[a-z0-9-]+|https:\/\/www\.amazon\.co\.uk\/dp\/[A-Z0-9]{10}/g;
 
 function toProse(raw, { markCards = false } = {}) {
   let b = raw;
@@ -1170,9 +1175,17 @@ const MATCHERS = [
     // never within raw bytes. The positive fixture places a 5,000-byte script
     // block ahead of the card so the two cannot agree; a raw-byte
     // implementation moves the asserted value and the probe says so.
+    // BOTH ESTATES — S64 R5. It read CARD_HREF_RE only, which is the amazon.com
+    // form, so it was silent on every UK document: a matcher whose NAME is
+    // general and whose BODY is one estate's (Law 170). The measure itself —
+    // visible characters before the first card, corrected for the unterminated
+    // tag — is estate-agnostic, and S64 R5 needs it on the UK side to derive the
+    // placement threshold from the population it was originally taken from.
+    // EITHER_CARD_RE is the two forms as one alternation; whichever appears
+    // FIRST in the document is the first card, which is the question being asked.
     test: (t) => {
-      const m = CARD_HREF_RE.exec(t ?? '');
-      CARD_HREF_RE.lastIndex = 0;
+      const m = EITHER_CARD_RE.exec(t ?? '');
+      EITHER_CARD_RE.lastIndex = 0;
       if (!m) return [];
       // R8-3 CLOSED AT S64 R4. The slice ends INSIDE the anchor's own
       // `<a href="`, which is an UNTERMINATED tag, so the tag-strip regex left
@@ -1204,7 +1217,13 @@ const MATCHERS = [
     // threshold is Law 50 — prove the two count the same population before
     // ruling on either. Referred; nothing in the estate consumes it today.
     report: (hits) => `first card at visible character ${hits[0].offset}, ${hits[0].pct}% through the visible body`,
-    probePos: HTML_CARD_AFTER_PROSE,
+    probePos: [
+      HTML_CARD_AFTER_PROSE,
+      // THE UK LIMB, PROVEN RATHER THAN ASSUMED. Without EITHER_CARD_RE this
+      // fixture returns nothing and the matcher reports a silent zero on all 76
+      // carding UK documents.
+      '<p>Some prose about moths.</p><a href="https://www.amazon.co.uk/dp/B00NFRTVY6">buy</a>',
+    ],
     probeNeg: HTML_NO_CARD,
   },
   {
@@ -2230,6 +2249,52 @@ async function runG3Sweep() {
   return 0;
 }
 
+// FIRST-CARD PLACEMENT ACROSS BOTH ESTATES — S64 R5.
+//
+// M25 measures one document. This walks every built document, applies M25 through
+// its declared surface, and partitions by estate and by route family, so the
+// placement threshold can be DERIVED from a named population rather than carried
+// as a numeral (Law 53).
+//
+// IT PRINTS THE POPULATION ITS MAXIMUM COMES FROM, because a threshold defined as
+// "the maximum of set X" cannot fail on any member of X. That is Law 75 and it is
+// the single most important thing about this figure.
+async function runPlacement() {
+  const walk = async (dir) => {
+    let out = [];
+    let ents = [];
+    try { ents = await readdir(dir, { withFileTypes: true }); } catch { return out; }
+    for (const e of ents) {
+      const full = join(dir, e.name);
+      if (e.isDirectory()) out = out.concat(await walk(full));
+      else if (e.name.endsWith('.html')) out.push(full);
+    }
+    return out;
+  };
+  const appDir = join(ROOT, '.next/server/app');
+  const files = (await walk(appDir)).sort();
+  const usPrefix = join(appDir, 'us');
+  const isUs = (f) => f === join(appDir, 'us.html') || f.startsWith(usPrefix + '/');
+  const M25 = MATCHERS.find((m) => m.id === 'M25');
+  const M27 = MATCHERS.find((m) => m.id === 'M27');
+  const rows = [];
+  for (const f of files) {
+    const raw = await readFile(f, 'utf8');
+    const hit = M25.test(surfaceOf(M25, raw))[0];
+    if (!hit) continue;
+    const route = f.replace(appDir + '/', '').replace(/\.html$/, '');
+    rows.push({
+      route,
+      side: isUs(f) ? 'us' : 'uk',
+      family: isUs(f) ? 'us' : route.split('/')[0],
+      offset: hit.offset,
+      pct: hit.pct,
+      cta: M27.test(surfaceOf(M27, raw)).length,
+    });
+  }
+  return rows;
+}
+
 async function runEstate() {
   const dir = join(ROOT, '.next/server/app/us');
   const files = [
@@ -2432,6 +2497,35 @@ async function main() {
     const missing = [];
     for (let i = 1; i <= r.laws[r.laws.length - 1]; i++) if (!r.laws.includes(i)) missing.push(i);
     console.log(`      gaps in 1..highest         ${missing.length ? missing.join(', ') : 'none'}`);
+    process.exit(0);
+  }
+  if (arg === '--placement') {
+    const rows = await runPlacement();
+    const uk = rows.filter((r) => r.side === 'uk');
+    const us = rows.filter((r) => r.side === 'us');
+    const best = uk.filter((r) => r.family === 'best');
+    const mx = (a) => (a.length ? Math.max(...a.map((r) => r.pct)) : null);
+    const med = (a) => {
+      if (!a.length) return null;
+      const v = a.map((r) => r.pct).sort((x, y) => x - y);
+      return v[Math.floor(v.length / 2)];
+    };
+    console.log(`\nFIRST-CARD PLACEMENT — M25, corrected measure, both estates\n`);
+    console.log(`  ${'POPULATION'.padEnd(28)}${'DOCS'.padEnd(7)}${'MAX%'.padEnd(7)}${'MEDIAN%'.padEnd(9)}WITH A CTA`);
+    const line = (n, a) =>
+      console.log(`  ${n.padEnd(28)}${String(a.length).padEnd(7)}${String(mx(a) ?? '-').padEnd(7)}${String(med(a) ?? '-').padEnd(9)}${a.filter((r) => r.cta).length}`);
+    line('UK /best/* (threshold pop.)', best);
+    line('UK, all carding documents', uk);
+    line('US, all carding routes', us);
+    console.log(`\n  THE THRESHOLD IS THE UK /best/* MAXIMUM: ${mx(best)}%`);
+    console.log(`  It CANNOT FAIL on any /best page, by construction (Law 75). It can`);
+    console.log(`  fail only outside that population.`);
+    const overUk = uk.filter((r) => r.pct > mx(best)).sort((a, b) => b.pct - a.pct);
+    const overUs = us.filter((r) => r.pct > mx(best)).sort((a, b) => b.pct - a.pct);
+    console.log(`\n  UK documents OVER the threshold: ${overUk.length}`);
+    for (const r of overUk) console.log(`    ${r.route.padEnd(46)}${String(r.pct).padStart(3)}%  cta=${r.cta}`);
+    console.log(`\n  US routes OVER the threshold: ${overUs.length}`);
+    for (const r of overUs) console.log(`    ${r.route.padEnd(46)}${String(r.pct).padStart(3)}%  cta=${r.cta}`);
     process.exit(0);
   }
   if (arg === '--g3') process.exit(await runG3Sweep());
