@@ -7,16 +7,16 @@ import Callout, { StatCallout } from "@/components/Callout";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Rat Poison for Gardens UK 2026 | Outdoor Rodenticides",
+    title: "Best Rat Poison for Gardens UK",
     description:
-      "Eliminate garden rats safely with the best outdoor rat poisons for UK gardens. Weather-proof bait stations and rodenticides.",
+      "What may lawfully be used against rats outdoors, the risk to hedgehogs and other non-target wildlife, and where bait has to be placed in a garden.",
     alternates: {
       canonical: "https://pestproindex.com/best/rat-poison-for-gardens",
     },
     openGraph: {
-      title: "Best Rat Poison for Gardens UK 2026 | Outdoor Rodenticides",
+      title: "Best Rat Poison for Gardens UK",
       description:
-        "Eliminate garden rats safely with the best outdoor rat poisons for UK gardens. Weather-proof bait stations and rodenticides.",
+        "What may lawfully be used against rats outdoors, the risk to hedgehogs and other non-target wildlife, and where bait has to be placed in a garden.",
       url: "https://pestproindex.com/best/rat-poison-for-gardens",
       type: "article",
       siteName: "PestPro Index",
@@ -27,9 +27,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Rat Poison for Gardens UK 2026 | Outdoor Rodenticides",
+  headline: "Best Rat Poison for Gardens UK",
   description:
-    "Eliminate garden rats safely with the best outdoor rat poisons for UK gardens. Weather-proof bait stations and rodenticides.",
+    "What may lawfully be used against rats outdoors, the risk to hedgehogs and other non-target wildlife, and where bait has to be placed in a garden.",
   datePublished: "2026-03-31",
   dateModified: "2026-03-31",
   author: {

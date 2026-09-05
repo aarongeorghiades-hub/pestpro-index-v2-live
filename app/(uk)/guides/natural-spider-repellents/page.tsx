@@ -7,16 +7,16 @@ import ProductCard from '@/components/ProductCard';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Natural Spider Repellents UK: Conkers, Peppermint & More',
+    title: 'Natural Spider Repellents UK: Do They Work?',
     description:
-      'Keep spiders out of your house naturally. Do conkers really work? We rate every natural spider repellent from peppermint oil to citrus peels.',
+      'Conkers, peppermint oil, citrus peel and vinegar, each weighed against the evidence for it and against what actually keeps spiders out in autumn.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/natural-spider-repellents',
     },
     openGraph: {
-      title: 'Natural Spider Repellents UK: Conkers, Peppermint & More',
+      title: 'Natural Spider Repellents UK: Do They Work?',
       description:
-        'Keep spiders out of your house naturally. Do conkers really work? We rate every natural spider repellent from peppermint oil to citrus peels.',
+        'Conkers, peppermint oil, citrus peel and vinegar, each weighed against the evidence for it and against what actually keeps spiders out in autumn.',
       url: 'https://pestproindex.com/guides/natural-spider-repellents',
       type: 'article',
       siteName: 'PestPro Index',
@@ -27,9 +27,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Natural Spider Repellents UK: Conkers, Peppermint & More',
+  headline: 'Natural Spider Repellents UK: Do They Work?',
   description:
-    'Keep spiders out of your house naturally. Do conkers really work? We rate every natural spider repellent from peppermint oil to citrus peels.',
+    'Conkers, peppermint oil, citrus peel and vinegar, each weighed against the evidence for it and against what actually keeps spiders out in autumn.',
   datePublished: '2026-04-02',
   dateModified: '2026-04-02',
   author: { '@type': 'Organization', name: 'PestPro Index' },

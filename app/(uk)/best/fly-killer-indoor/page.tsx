@@ -6,16 +6,16 @@ import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout, { StatCallout } from "@/components/Callout";
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Indoor Fly Killer UK 2026 | Electric & Sticky",
+    title: "Best Indoor Fly Zapper & Killer UK",
     description:
-      "Keep your home fly-free with the best indoor fly killers for 2026. Electric zappers, UV traps and sticky fly catchers compared.",
+      "Indoor fly zappers, UV units and sticky traps compared on room size, what each one actually catches, and the cleaning each needs.",
     alternates: {
       canonical: "https://pestproindex.com/best/fly-killer-indoor",
     },
     openGraph: {
-      title: "Best Indoor Fly Killer UK 2026 | Electric & Sticky",
+      title: "Best Indoor Fly Zapper & Killer UK",
       description:
-        "Keep your home fly-free with the best indoor fly killers for 2026. Electric zappers, UV traps and sticky fly catchers compared.",
+        "Indoor fly zappers, UV units and sticky traps compared on room size, what each one actually catches, and the cleaning each needs.",
       url: "https://pestproindex.com/best/fly-killer-indoor",
       type: "article",
       siteName: "PestPro Index",
@@ -27,7 +27,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Indoor Fly Killer UK 2026: Electric & Sticky Traps for Home",
   description:
-    "Keep your home fly-free with the best indoor fly killers for 2026. Electric zappers, UV traps and sticky fly catchers compared.",
+    "Indoor fly zappers, UV units and sticky traps compared on room size, what each one actually catches, and the cleaning each needs.",
   datePublished: "2026-03-31",
   dateModified: "2026-03-31",
   author: {

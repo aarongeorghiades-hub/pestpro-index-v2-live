@@ -6,14 +6,14 @@ import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout, { StatCallout } from "@/components/Callout";
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Rat Poison UK 2026: Strongest & Most Effective",
+    title: "Best Rat Poison UK: What You Can Legally Buy",
     description:
-      "Our pick of the best rat poison available in the UK for 2026. Brodifacoum blocks, bromadiolone grain bait and pastes, with safety advice.",
+      "Which rat poisons a UK householder may legally buy, how the active ingredients differ in speed and in risk to wildlife, and when a bait station is required.",
     alternates: { canonical: "https://pestproindex.com/best/rat-poison" },
     openGraph: {
-      title: "Best Rat Poison UK 2026: Strongest & Most Effective",
+      title: "Best Rat Poison UK: What You Can Legally Buy",
       description:
-        "Our pick of the best rat poison available in the UK for 2026. Brodifacoum blocks, bromadiolone grain bait and pastes, with safety advice.",
+        "Which rat poisons a UK householder may legally buy, how the active ingredients differ in speed and in risk to wildlife, and when a bait station is required.",
       url: "https://pestproindex.com/best/rat-poison",
       type: "article",
       siteName: "PestPro Index",
@@ -23,9 +23,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Rat Poison UK 2026: Strongest & Most Effective",
+  headline: "Best Rat Poison UK: What You Can Legally Buy",
   description:
-    "Our pick of the best rat poison available in the UK for 2026. Brodifacoum blocks, bromadiolone grain bait and pastes, with safety advice.",
+    "Which rat poisons a UK householder may legally buy, how the active ingredients differ in speed and in risk to wildlife, and when a bait station is required.",
   datePublished: "2026-03-30",
   dateModified: "2026-03-30",
   author: {

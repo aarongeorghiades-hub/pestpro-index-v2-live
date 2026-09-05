@@ -6,14 +6,14 @@ import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout, { StatCallout } from "@/components/Callout";
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Spider Repellent UK 2026 | Sprays & Traps",
+    title: "Best Spider Repellent UK: Sprays & Plug-Ins",
     description:
-      "Keep spiders out of your home with the best spider repellents in the UK. Sprays, plug-ins and natural deterrents for 2026.",
+      "What the evidence shows about spider repellents. Sprays, plug-ins and natural deterrents, each set against the claims made for it.",
     alternates: { canonical: "https://pestproindex.com/best/spider-repellent" },
     openGraph: {
-      title: "Best Spider Repellent UK 2026 | Sprays & Traps",
+      title: "Best Spider Repellent UK: Sprays & Plug-Ins",
       description:
-        "Keep spiders out of your home with the best spider repellents in the UK. Sprays, plug-ins and natural deterrents for 2026.",
+        "What the evidence shows about spider repellents. Sprays, plug-ins and natural deterrents, each set against the claims made for it.",
       url: "https://pestproindex.com/best/spider-repellent",
       type: "article",
       siteName: "PestPro Index",
@@ -25,7 +25,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Spider Repellent UK 2026: Sprays, Traps & Natural Options",
   description:
-    "Keep spiders out of your home with the best spider repellents in the UK. Sprays, plug-ins and natural deterrents for 2026.",
+    "What the evidence shows about spider repellents. Sprays, plug-ins and natural deterrents, each set against the claims made for it.",
   datePublished: "2026-03-31",
   dateModified: "2026-03-31",
   author: {
