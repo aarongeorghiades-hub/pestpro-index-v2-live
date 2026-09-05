@@ -2369,6 +2369,75 @@ async function runG3Sweep() {
   return 0;
 }
 
+// THE SNIPPET BASELINE VERIFIER — S64 R8.
+//
+// scripts/snippet-baseline.json records every document's rendered <title>,
+// meta description, og:title and og:description with a fingerprint, dated and
+// stamped with the commit and BUILD_ID it was taken from.
+//
+// A RECORD OF THE PAST IS AN ASSERTION UNTIL IT CAN BE REPRODUCED. This
+// recomputes every fingerprint from the CURRENT build and reports drift, so a
+// later round can check out the recorded commit, rebuild, and prove the record
+// is what that commit actually served. That is what makes the baseline honest
+// rather than merely written down (Law 178 in the record layer).
+//
+// EXPECTED DRIFT IS NOT A FAULT: run against a LATER commit it will report every
+// route the rewrite round changed, which is the experiment's own result. Run
+// against the RECORDED commit it must report zero, and a non-zero there means the
+// record is corrupt.
+function snippetOf(raw) {
+  const t = /<title>([\s\S]*?)<\/title>/i.exec(raw);
+  const meta = (attr, val) => {
+    const a = new RegExp(`<meta[^>]*\\b${attr}="${val}"[^>]*content="([^"]*)"`, 'i').exec(raw);
+    const b = new RegExp(`<meta[^>]*content="([^"]*)"[^>]*\\b${attr}="${val}"`, 'i').exec(raw);
+    const m = a || b;
+    return m ? decode(m[1]) : null;
+  };
+  const title = t ? decode(t[1].replace(/\s+/g, ' ').trim()) : null;
+  const description = meta('name', 'description');
+  const ogTitle = meta('property', 'og:title');
+  const ogDescription = meta('property', 'og:description');
+  const joined = [title ?? '', description ?? '', ogTitle ?? '', ogDescription ?? ''].join(' ');
+  return {
+    title,
+    description,
+    ogTitle,
+    ogDescription,
+    fingerprint: createHash('sha256').update(joined).digest('hex').slice(0, 16),
+  };
+}
+
+async function runSnippetBaseline() {
+  const walk = async (dir) => {
+    let out = [];
+    let ents = [];
+    try { ents = await readdir(dir, { withFileTypes: true }); } catch { return out; }
+    for (const e of ents) {
+      const full = join(dir, e.name);
+      if (e.isDirectory()) out = out.concat(await walk(full));
+      else if (e.name.endsWith('.html')) out.push(full);
+    }
+    return out;
+  };
+  const appDir = join(ROOT, '.next/server/app');
+  const record = JSON.parse(await readFile(join(ROOT, 'scripts/snippet-baseline.json'), 'utf8'));
+  const files = (await walk(appDir)).sort();
+  const drift = [];
+  const missing = [];
+  const added = [];
+  const seen = new Set();
+  for (const f of files) {
+    const r = '/' + f.replace(appDir + '/', '').replace(/\.html$/, '');
+    seen.add(r);
+    const rec = record.routes[r];
+    if (!rec) { added.push(r); continue; }
+    const now = snippetOf(await readFile(f, 'utf8'));
+    if (now.fingerprint !== rec.fingerprint) drift.push({ route: r, was: rec, now });
+  }
+  for (const r of Object.keys(record.routes)) if (!seen.has(r)) missing.push(r);
+  return { record, total: files.length, drift, missing, added };
+}
+
 // THE CARD-ORDERING FINGERPRINT — S64 R7, and it is ONE definition.
 //
 // It is the sequence, in document order, of every <h2> heading text with a CARD
@@ -2729,6 +2798,31 @@ async function main() {
     const missing = [];
     for (let i = 1; i <= r.laws[r.laws.length - 1]; i++) if (!r.laws.includes(i)) missing.push(i);
     console.log(`      gaps in 1..highest         ${missing.length ? missing.join(', ') : 'none'}`);
+    process.exit(0);
+  }
+  if (arg === '--snippet-baseline') {
+    const b = await runSnippetBaseline();
+    console.log(`\nSNIPPET BASELINE VERIFY\n`);
+    console.log(`  record captured on   ${b.record.capturedOn}`);
+    console.log(`  recorded commit      ${b.record.commit}`);
+    console.log(`  recorded buildId     ${b.record.buildId}`);
+    console.log(`  documents recorded   ${Object.keys(b.record.routes).length}`);
+    console.log(`  documents built now  ${b.total}`);
+    console.log(`  DRIFTED              ${b.drift.length}`);
+    for (const d of b.drift.slice(0, 40)) {
+      console.log(`    ${d.route}`);
+      if (d.was.title !== d.now.title) {
+        console.log(`      title  WAS ${JSON.stringify(d.was.title)}`);
+        console.log(`             NOW ${JSON.stringify(d.now.title)}`);
+      }
+      if (d.was.description !== d.now.description) {
+        console.log(`      desc   WAS ${JSON.stringify(d.was.description)}`);
+        console.log(`             NOW ${JSON.stringify(d.now.description)}`);
+      }
+    }
+    console.log(`  in record, not built ${b.missing.length}${b.missing.length ? ' — ' + b.missing.join(', ') : ''}`);
+    console.log(`  built, not in record ${b.added.length}${b.added.length ? ' — ' + b.added.join(', ') : ''}`);
+    console.log(`\n  ${b.record.verification}`);
     process.exit(0);
   }
   if (arg === '--adjudicate' || arg === '--seed-adjudications') {

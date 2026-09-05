@@ -1,0 +1,1933 @@
+{
+ "capturedOn": "2026-09-05",
+ "buildId": "q9I5o88mFjwY1Fbwk9f8g",
+ "commit": "ee5bec092f838ad6210dd82955626e525f8c8aea",
+ "source": "LOCAL BUILD of the commit named above; .next/server/app/**/*.html; title and meta as RENDERED, not as authored.",
+ "verification": "A later round checks out the recorded commit, runs npm run build, and recomputes every fingerprint from that build. Any route whose recorded values do not reproduce is a corrupted record. The baseline is therefore not a claim about the past - it is REPRODUCIBLE FROM A COMMIT ANYONE CAN CHECK OUT, which is what makes it honest rather than merely asserted. The baseline is captured ONCE per experiment; a round that rewrites a snippet and then re-captures the baseline has destroyed the before state it was meant to preserve.",
+ "estates": {
+  "us": 61,
+  "uk": 179
+ },
+ "routes": {
+  "/_global-error": {
+   "estate": "uk",
+   "title": "500: Internal Server Error.",
+   "description": null,
+   "ogTitle": null,
+   "ogDescription": null,
+   "fingerprint": "c93760ac82fdbc2e"
+  },
+  "/_not-found": {
+   "estate": "uk",
+   "title": "Page Not Found | PestPro Index",
+   "description": "Compare pest control providers with transparent, provider-stated information. No lead fees, no commissions. Find pest control in London, Birmingham and beyond.",
+   "ogTitle": "Page Not Found | PestPro Index",
+   "ogDescription": "Compare pest control providers with transparent, provider-stated information. No lead fees, no commissions. Find pest control in London, Birmingham and beyond.",
+   "fingerprint": "7b4d3fedf0407b86"
+  },
+  "/about": {
+   "estate": "uk",
+   "title": "About PestPro Index — Neutral UK Pest Control Directory | PestPro Index",
+   "description": "PestPro Index is a neutral UK pest control directory. Every provider is listed free — no lead fees, no commissions, no paid rankings. Read who we are, how we stay independent, and our affiliate disclosure.",
+   "ogTitle": "About PestPro Index",
+   "ogDescription": "A neutral UK pest control directory — no lead fees, no commissions, no paid rankings. How we operate and stay independent.",
+   "fingerprint": "393bc341d01af029"
+  },
+  "/best": {
+   "estate": "uk",
+   "title": "Best Pest Control Products UK 2026 | PestPro Index",
+   "description": "Our pick of pest control products — sprays, traps, baits and professional equipment. Find the best products for every pest.",
+   "ogTitle": "Best Pest Control Products UK 2026",
+   "ogDescription": "Our pick of pest control products — sprays, traps, baits and professional equipment. Find the best products for every pest.",
+   "fingerprint": "f2727bd16a5bd196"
+  },
+  "/best/ant-gel-bait": {
+   "estate": "uk",
+   "title": "Best Ant Killer Gel UK 2026: Kill the Whole Colony | PestPro Index",
+   "description": "Our pick of the best ant killer gels available in the UK for 2026. Borax gels, fipronil baits and indoxacarb, with application advice.",
+   "ogTitle": "Best Ant Killer Gel UK 2026: Kill the Whole Colony",
+   "ogDescription": "Our pick of the best ant killer gels available in the UK for 2026. Borax gels, fipronil baits and indoxacarb, with application advice.",
+   "fingerprint": "b152ecff00b0b40a"
+  },
+  "/best/ant-killers": {
+   "estate": "uk",
+   "title": "Best Ant Killer Products UK 2026: Baits, Gels & Sprays | PestPro Index",
+   "description": "The best ant killer products for UK homes in 2026. Bait stations, gel baits, powders and sprays compared, with pros, cons and buying advice.",
+   "ogTitle": "Best Ant Killer Products UK 2026: Baits, Gels & Sprays",
+   "ogDescription": "The best ant killer products for UK homes in 2026. Bait stations, gel baits, powders and sprays compared, with pros, cons and buying advice.",
+   "fingerprint": "0d967fc63ef2dbcd"
+  },
+  "/best/awaabs-law-damp-mould-equipment": {
+   "estate": "uk",
+   "title": "Best Damp & Mould Equipment for Landlords — Awaab's Law 2026 | PestPro Index",
+   "description": "PIV units, dehumidifiers and damp meters for landlords complying with Awaab's Law. Equipment to eliminate mould and condensation in rental properties.",
+   "ogTitle": "Best Damp & Mould Equipment for Landlords — Awaab's Law 2026",
+   "ogDescription": "PIV units, dehumidifiers and damp meters for landlords complying with Awaab's Law. Equipment to eliminate mould and condensation in rental properties.",
+   "fingerprint": "56672851008f2d23"
+  },
+  "/best/bed-bug-mattress-encasement": {
+   "estate": "uk",
+   "title": "Best Bed Bug Mattress Encasement UK 2026 | PestPro Index",
+   "description": "Our pick of the best bed bug mattress encasements available in the UK for 2026. Zippered protectors for bed bug protection, comfort, and durability.",
+   "ogTitle": "Best Bed Bug Mattress Encasement UK 2026",
+   "ogDescription": "Our pick of the best bed bug mattress encasements available in the UK for 2026. Zippered protectors for bed bug protection, comfort, and durability.",
+   "fingerprint": "bd45cc15a55a3a01"
+  },
+  "/best/bed-bug-spray": {
+   "estate": "uk",
+   "title": "Best Bed Bug Spray UK 2026: Kill Bed Bugs Fast | PestPro Index",
+   "description": "Our pick of the best bed bug sprays available in the UK for 2026. Contact killers, residual sprays and natural options, with buying advice.",
+   "ogTitle": "Best Bed Bug Spray UK 2026: Kill Bed Bugs Fast",
+   "ogDescription": "Our pick of the best bed bug sprays available in the UK for 2026. Contact killers, residual sprays and natural options, with buying advice.",
+   "fingerprint": "0cf91d57e2c79f18"
+  },
+  "/best/bed-bug-treatments": {
+   "estate": "uk",
+   "title": "Best Bed Bug Treatments UK 2026: Sprays & Powders | PestPro Index",
+   "description": "The best bed bug treatment products in the UK for 2026. Sprays, powders, mattress encasements and monitoring traps, with buying advice.",
+   "ogTitle": "Best Bed Bug Treatments UK 2026: Sprays & Powders",
+   "ogDescription": "The best bed bug treatment products in the UK for 2026. Sprays, powders, mattress encasements and monitoring traps, with buying advice.",
+   "fingerprint": "e96707ba6011c540"
+  },
+  "/best/bird-deterrents": {
+   "estate": "uk",
+   "title": "Best Bird Deterrents UK 2026 | Top 5 | PestPro Index",
+   "description": "Our pick of the best bird and pigeon deterrents for UK homes and businesses. Spikes, netting, optical gel, and more — with honest pros and cons.",
+   "ogTitle": "Best Bird Deterrents UK 2026 | Top 5",
+   "ogDescription": "Our pick of the best bird and pigeon deterrents for UK homes and businesses. Spikes, netting, optical gel, and more — with honest pros and cons.",
+   "fingerprint": "b5f95ea7ef9621aa"
+  },
+  "/best/carpet-beetle-treatments": {
+   "estate": "uk",
+   "title": "Best Carpet Beetle Treatments UK 2026 — Sprays & Traps | PestPro Index",
+   "description": "Our pick of the best carpet beetle treatments in the UK: insecticidal sprays, pheromone traps, powders and prevention products.",
+   "ogTitle": "Best Carpet Beetle Treatments UK 2026 — Sprays & Traps",
+   "ogDescription": "Our pick of the best carpet beetle treatments in the UK: insecticidal sprays, pheromone traps, powders and prevention products.",
+   "fingerprint": "934ee2d4b100207d"
+  },
+  "/best/cat-deterrents": {
+   "estate": "uk",
+   "title": "Best Cat Deterrents UK 2026 — Ultrasonic & Scent | PestPro Index",
+   "description": "Our pick of the best cat deterrents for UK gardens: motion-activated sprinklers, ultrasonic repellers, scent deterrents and prickle strips.",
+   "ogTitle": "Best Cat Deterrents UK 2026 — Ultrasonic & Scent",
+   "ogDescription": "Our pick of the best cat deterrents for UK gardens. Compare motion-activated sprinklers, ultrasonic repellers, scent deterrents and prickle strips.",
+   "fingerprint": "0db929adfb9272d3"
+  },
+  "/best/cockroach-gel-bait": {
+   "estate": "uk",
+   "title": "Best Cockroach Gel Bait UK 2026: Kill the Nest | PestPro Index",
+   "description": "Our pick of the best cockroach gel baits in the UK for 2026. Professional-grade gels, bait stations and IGR products, with application advice.",
+   "ogTitle": "Best Cockroach Gel Bait UK 2026: Kill the Nest",
+   "ogDescription": "Our pick of the best cockroach gel baits in the UK for 2026. Professional-grade gels, bait stations and IGR products, with application advice.",
+   "fingerprint": "9b3889f358705d1a"
+  },
+  "/best/cockroach-killers": {
+   "estate": "uk",
+   "title": "Best Cockroach Killer Products UK 2026: Gels, Sprays & Traps | PestPro Index",
+   "description": "The best cockroach killer products in the UK for 2026. Gel baits, sprays, powders and monitoring traps, with buying advice.",
+   "ogTitle": "Best Cockroach Killer Products UK 2026: Gels, Sprays & Traps",
+   "ogDescription": "The best cockroach killer products in the UK for 2026. Gel baits, sprays, powders and monitoring traps, with buying advice.",
+   "fingerprint": "0fdceb237f5577b8"
+  },
+  "/best/commercial-bird-proofing": {
+   "estate": "uk",
+   "title": "Best Commercial Bird Proofing UK 2026 | Netting & Spikes | PestPro Index",
+   "description": "Commercial bird proofing for UK businesses: heavy-duty netting, stainless steel spikes, bird wire systems, optical gel and solar panel mesh.",
+   "ogTitle": "Best Commercial Bird Proofing UK 2026 | Netting & Spikes",
+   "ogDescription": "Commercial bird proofing for UK businesses: heavy-duty netting, stainless steel spikes, bird wire systems, optical gel and solar panel mesh.",
+   "fingerprint": "ad178d7416cf38c8"
+  },
+  "/best/commercial-dehumidifiers": {
+   "estate": "uk",
+   "title": "Best Commercial Dehumidifiers for Landlords UK (2026) | PestPro Index",
+   "description": "High-capacity dehumidifiers for landlords, property managers & damp remediation. Industrial-grade units for HMOs, basements & commercial spaces.",
+   "ogTitle": "Best Commercial Dehumidifiers for Landlords UK (2026)",
+   "ogDescription": "High-capacity dehumidifiers for landlords, property managers & damp remediation. Industrial-grade units for HMOs, basements & commercial spaces.",
+   "fingerprint": "7dbe2b953887d8a9"
+  },
+  "/best/commercial-fly-killers": {
+   "estate": "uk",
+   "title": "Best Commercial Fly Killers UK 2026 | Kitchen Units | PestPro Index",
+   "description": "Our pick of commercial electric fly killers for UK restaurants, kitchens, and food businesses. UV zappers, glue board units, and LED models compared.",
+   "ogTitle": "Best Commercial Fly Killers UK 2026 | Kitchen Units",
+   "ogDescription": "Our pick of commercial electric fly killers for UK restaurants, kitchens, and food businesses. UV zappers, glue board units, and LED models compared.",
+   "fingerprint": "0d90af5a3c8336a6"
+  },
+  "/best/commercial-insect-monitors": {
+   "estate": "uk",
+   "title": "Commercial Bed Bug Treatment UK 2026 | Sprays & Monitors | PestPro Index",
+   "description": "Professional-grade bed bug treatment for UK hotels, B&Bs and commercial premises. Concentrate kits, sprays, bulk treatments and monitoring traps.",
+   "ogTitle": "Commercial Bed Bug Treatment UK 2026 | Sprays & Monitors",
+   "ogDescription": "Professional-grade bed bug treatment for UK hotels, B&Bs and commercial premises. Concentrate kits, sprays, bulk treatments and monitoring traps.",
+   "fingerprint": "4669e01901803e32"
+  },
+  "/best/commercial-rodent-bait-stations": {
+   "estate": "uk",
+   "title": "Best Commercial Rodent Bait Stations UK 2026 | PestPro Index",
+   "description": "Our pick of tamper-resistant rodent bait stations for UK businesses and warehouses. Lockable, BRC-compliant bait boxes for professional pest control.",
+   "ogTitle": "Best Commercial Rodent Bait Stations UK 2026",
+   "ogDescription": "Our pick of tamper-resistant rodent bait stations for UK businesses and warehouses. Lockable, BRC-compliant bait boxes for professional pest control.",
+   "fingerprint": "f340f3ed67c96539"
+  },
+  "/best/damp-proof-paint-mould-treatment": {
+   "estate": "uk",
+   "title": "Best Damp-Proof Paint & Mould Treatment UK 2026 | PestPro Index",
+   "description": "Anti-mould paint, damp sealers and mould killers for landlords remediating condensation damp and mould in rental properties.",
+   "ogTitle": "Best Damp-Proof Paint & Mould Treatment UK 2026",
+   "ogDescription": "Anti-mould paint, damp sealers and mould killers for landlords remediating condensation damp and mould in rental properties.",
+   "fingerprint": "8b0ad1187c5bba25"
+  },
+  "/best/drain-fly-killer": {
+   "estate": "uk",
+   "title": "Best Drain Fly Killer UK 2026 | Get Rid of Drain Flies Fast | PestPro Index",
+   "description": "Eliminate drain flies from your kitchen and bathroom. The best drain fly killers, gels and treatments for UK homes in 2026.",
+   "ogTitle": "Best Drain Fly Killer UK 2026 | Get Rid of Drain Flies Fast",
+   "ogDescription": "Eliminate drain flies from your kitchen and bathroom. The best drain fly killers, gels and treatments for UK homes in 2026.",
+   "fingerprint": "831d4f369d61f489"
+  },
+  "/best/flea-fogger": {
+   "estate": "uk",
+   "title": "Best Flea Fogger UK 2026: Flea Bombs That Actually Work | PestPro Index",
+   "description": "Our pick of the best flea foggers (flea bombs) in the UK for 2026. Smoke bombs, aerosol foggers and IGR foggers, with application advice.",
+   "ogTitle": "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
+   "ogDescription": "Our pick of the best flea foggers (flea bombs) in the UK for 2026. Smoke bombs, aerosol foggers and IGR foggers, with application advice.",
+   "fingerprint": "83bf6ade9af34b0c"
+  },
+  "/best/flea-spray-for-home": {
+   "estate": "uk",
+   "title": "Best Flea Spray for Home UK 2026: Kill Fleas Fast | PestPro Index",
+   "description": "Our pick of the best flea sprays for the home in the UK for 2026. IGR sprays, aerosols and natural options, with application tips.",
+   "ogTitle": "Best Flea Spray for Home UK 2026: Kill Fleas Fast",
+   "ogDescription": "Our pick of the best flea sprays for the home in the UK for 2026. IGR sprays, aerosols and natural options, with application tips.",
+   "fingerprint": "1c059b27ef4b8b81"
+  },
+  "/best/flea-treatments": {
+   "estate": "uk",
+   "title": "Best Flea Treatments UK 2026: Sprays, Powders & Foggers | PestPro Index",
+   "description": "The best flea treatment products for UK homes in 2026. Household sprays, powders and foggers, with buying advice to help you clear fleas fast.",
+   "ogTitle": "Best Flea Treatments UK 2026: Sprays, Powders & Foggers",
+   "ogDescription": "The best flea treatment products for UK homes in 2026. Household sprays, powders and foggers, with buying advice to help you clear fleas fast.",
+   "fingerprint": "e2eb02a8281d03a9"
+  },
+  "/best/fly-killer-indoor": {
+   "estate": "uk",
+   "title": "Best Indoor Fly Killer UK 2026 | Electric & Sticky | PestPro Index",
+   "description": "Keep your home fly-free with the best indoor fly killers for 2026. Electric zappers, UV traps and sticky fly catchers compared.",
+   "ogTitle": "Best Indoor Fly Killer UK 2026 | Electric & Sticky",
+   "ogDescription": "Keep your home fly-free with the best indoor fly killers for 2026. Electric zappers, UV traps and sticky fly catchers compared.",
+   "fingerprint": "6c949f1518acb28b"
+  },
+  "/best/fox-deterrents": {
+   "estate": "uk",
+   "title": "Best Fox Deterrents UK 2026 — Ultrasonic & Scent | PestPro Index",
+   "description": "Our pick of the best fox deterrents in the UK: ultrasonic devices, scent repellents, motion-activated sprinklers and garden fox-proofing.",
+   "ogTitle": "Best Fox Deterrents UK 2026 — Ultrasonic & Scent",
+   "ogDescription": "Our pick of the best fox deterrents in the UK: ultrasonic devices, scent repellents, motion-activated sprinklers and garden fox-proofing.",
+   "fingerprint": "2e502ca7a8cfc6b1"
+  },
+  "/best/mole-traps": {
+   "estate": "uk",
+   "title": "Best Mole Traps UK 2026 | PestPro Index",
+   "description": "Our pick of the best mole traps available in the UK for 2026. Duffus, scissor, tunnel, and humane options compared, with buying advice and placement tips.",
+   "ogTitle": "Best Mole Traps UK 2026",
+   "ogDescription": "Our pick of the best mole traps available in the UK for 2026. Duffus, scissor, tunnel, and humane options compared, with buying advice and placement tips.",
+   "fingerprint": "b2acd008209691d3"
+  },
+  "/best/moth-killers": {
+   "estate": "uk",
+   "title": "Best Moth Killers UK 2026 — Top 5 | PestPro Index",
+   "description": "The best moth killers for UK homes in 2026. Hanging killers, pheromone traps, carpet sprays and sachets compared, with pros, cons and buying advice.",
+   "ogTitle": "Best Moth Killers UK 2026 — Top 5",
+   "ogDescription": "The best moth killers for UK homes in 2026. Hanging killers, pheromone traps, carpet sprays and sachets compared, with pros, cons and buying advice.",
+   "fingerprint": "2d551fd720f0e8d7"
+  },
+  "/best/moth-traps": {
+   "estate": "uk",
+   "title": "Best Moth Traps UK 2026 | Clothes Moth & Pantry Moth Traps | PestPro Index",
+   "description": "Stop moths ruining your clothes and food with the best moth traps in the UK. Pheromone traps for wardrobes, drawers and kitchens.",
+   "ogTitle": "Best Moth Traps UK 2026 | Clothes Moth & Pantry Moth Traps",
+   "ogDescription": "Stop moths ruining your clothes and food with the best moth traps in the UK. Pheromone traps for wardrobes, drawers and kitchens.",
+   "fingerprint": "4c6e58b8b4f07319"
+  },
+  "/best/mouse-bait-stations": {
+   "estate": "uk",
+   "title": "Best Mouse Bait Stations UK 2026 | Tamper-Proof & Pet-Safe | PestPro Index",
+   "description": "Compare the best mouse bait stations for UK homes. Tamper-proof, pet-safe and child-safe bait boxes for 2026.",
+   "ogTitle": "Best Mouse Bait Stations UK 2026 | Tamper-Proof & Pet-Safe",
+   "ogDescription": "Compare the best mouse bait stations for UK homes. Tamper-proof, pet-safe and child-safe bait boxes for 2026.",
+   "fingerprint": "b5a5a933d797b613"
+  },
+  "/best/mouse-poison": {
+   "estate": "uk",
+   "title": "Best Mouse Poison UK 2026: Strongest & Most Effective | PestPro Index",
+   "description": "Our pick of the best mouse poison available in the UK for 2026. Brodifacoum blocks, grain bait and paste formulations, with safety advice.",
+   "ogTitle": "Best Mouse Poison UK 2026: Strongest & Most Effective",
+   "ogDescription": "Our pick of the best mouse poison available in the UK for 2026. Brodifacoum blocks, grain bait and paste formulations, with safety advice.",
+   "fingerprint": "31fbbdde4658f283"
+  },
+  "/best/mouse-repellent": {
+   "estate": "uk",
+   "title": "Best Mouse Repellent UK 2026 | Prevention Products That Work | PestPro Index",
+   "description": "Keep mice out of your home with the best mouse repellents and proofing products. Steel wool, peppermint sprays and sealants.",
+   "ogTitle": "Best Mouse Repellent UK 2026 | Prevention Products That Work",
+   "ogDescription": "Keep mice out of your home with the best mouse repellents and proofing products. Steel wool, peppermint sprays and sealants.",
+   "fingerprint": "68fd7e0539f8c143"
+  },
+  "/best/mouse-traps": {
+   "estate": "uk",
+   "title": "Best Mouse Traps UK 2026 | PestPro Index",
+   "description": "The best mouse traps you can buy in the UK for 2026. Snap traps, electronic traps, humane live-catch options and bait stations.",
+   "ogTitle": "Best Mouse Traps UK 2026",
+   "ogDescription": "The best mouse traps you can buy in the UK for 2026. Snap traps, electronic traps, humane live-catch options and bait stations.",
+   "fingerprint": "7b9a83ae9bd409de"
+  },
+  "/best/pigeon-spikes": {
+   "estate": "uk",
+   "title": "Best Pigeon Spikes UK 2026 | PestPro Index",
+   "description": "Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, plastic and netting options for ledges, gutters and open areas.",
+   "ogTitle": "Best Pigeon Spikes UK 2026",
+   "ogDescription": "Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, plastic and netting options for ledges, gutters and open areas.",
+   "fingerprint": "6757a2f0202bb2f7"
+  },
+  "/best/professional-bait-station-kits": {
+   "estate": "uk",
+   "title": "Best Professional Bait Station Kits UK (2026) | PestPro Index",
+   "description": "Trade-grade rat & mouse bait station kits for landlords, facilities managers & HMO operators. Tamper-resistant, UK regulation compliant.",
+   "ogTitle": "Best Professional Bait Station Kits UK (2026)",
+   "ogDescription": "Trade-grade rat & mouse bait station kits for landlords, facilities managers & HMO operators. Tamper-resistant, UK regulation compliant.",
+   "fingerprint": "83c6e85360bebb02"
+  },
+  "/best/professional-bed-bug-steamers": {
+   "estate": "uk",
+   "title": "Best Professional Bed Bug Steamers UK (2026) | PestPro Index",
+   "description": "Top bed bug steamers for landlords, facilities managers & property investors. Commercial-grade heat treatment that kills on contact.",
+   "ogTitle": "Best Professional Bed Bug Steamers UK (2026)",
+   "ogDescription": "Top bed bug steamers for landlords, facilities managers & property investors. Commercial-grade heat treatment that kills on contact.",
+   "fingerprint": "8945a6a7cb2a3bb0"
+  },
+  "/best/professional-bird-netting-kits": {
+   "estate": "uk",
+   "title": "Best Professional Bird Netting UK (2026) | PestPro Index",
+   "description": "Professional bird netting for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.",
+   "ogTitle": "Best Professional Bird Netting UK (2026)",
+   "ogDescription": "Professional bird netting for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.",
+   "fingerprint": "f9cff91e8d269c17"
+  },
+  "/best/professional-insect-light-traps": {
+   "estate": "uk",
+   "title": "Best Commercial Insect Light Traps UK (2026) | PestPro Index",
+   "description": "Professional UV insect light traps for restaurants, warehouses and offices. Institutional-grade fly killers from Insect-O-Cutor & Aspectek.",
+   "ogTitle": "Best Commercial Insect Light Traps UK (2026)",
+   "ogDescription": "Professional UV insect light traps for restaurants, warehouses and offices. Institutional-grade fly killers from Insect-O-Cutor & Aspectek.",
+   "fingerprint": "d81f4299424134aa"
+  },
+  "/best/professional-mattress-encasements": {
+   "estate": "uk",
+   "title": "Best Professional Mattress Encasements UK (2026) | PestPro Index",
+   "description": "Bed bug proof mattress encasements for landlords & HMO operators. Six-sided zip protection for professional property management.",
+   "ogTitle": "Best Professional Mattress Encasements UK (2026)",
+   "ogDescription": "Bed bug proof mattress encasements for landlords & HMO operators. Six-sided zip protection for professional property management.",
+   "fingerprint": "3350da251185a649"
+  },
+  "/best/professional-pressure-sprayers": {
+   "estate": "uk",
+   "title": "Best Professional Pressure Sprayers UK 2026 | PestPro Index",
+   "description": "Professional knapsack sprayers for landlords & pest prevention. Solo & Matabi backpack sprayers for insecticide & pesticide application.",
+   "ogTitle": "Best Professional Pressure Sprayers UK 2026",
+   "ogDescription": "Professional knapsack sprayers for landlords & pest prevention. Solo & Matabi backpack sprayers for insecticide & pesticide application.",
+   "fingerprint": "d86db659bea6176c"
+  },
+  "/best/professional-ulv-foggers": {
+   "estate": "uk",
+   "title": "Best Professional ULV Foggers UK (2026) | PestPro Index",
+   "description": "Professional ULV cold foggers for landlords, facilities managers & pest prevention. VectorFog machines for large-space insecticide application.",
+   "ogTitle": "Best Professional ULV Foggers UK (2026)",
+   "ogDescription": "Professional ULV cold foggers for landlords, facilities managers & pest prevention. VectorFog machines for large-space insecticide application.",
+   "fingerprint": "7600b27a97e60c50"
+  },
+  "/best/rat-bait-stations": {
+   "estate": "uk",
+   "title": "Best Rat Bait Stations UK 2026: Tamper-Resistant & Lockable | PestPro Index",
+   "description": "Our pick of the best rat bait stations in the UK for 2026. Lockable, tamper-resistant stations for poison and snap traps, with placement advice.",
+   "ogTitle": "Best Rat Bait Stations UK 2026: Tamper-Resistant & Lockable",
+   "ogDescription": "Our pick of the best rat bait stations in the UK for 2026. Lockable, tamper-resistant stations for poison and snap traps, with placement advice.",
+   "fingerprint": "4ab596220600d550"
+  },
+  "/best/rat-poison-for-gardens": {
+   "estate": "uk",
+   "title": "Best Rat Poison for Gardens UK 2026 | Outdoor Rodenticides | PestPro Index",
+   "description": "Eliminate garden rats safely with the best outdoor rat poisons for UK gardens. Weather-proof bait stations and rodenticides.",
+   "ogTitle": "Best Rat Poison for Gardens UK 2026 | Outdoor Rodenticides",
+   "ogDescription": "Eliminate garden rats safely with the best outdoor rat poisons for UK gardens. Weather-proof bait stations and rodenticides.",
+   "fingerprint": "94c6eb38f682cbea"
+  },
+  "/best/rat-poison": {
+   "estate": "uk",
+   "title": "Best Rat Poison UK 2026: Strongest & Most Effective | PestPro Index",
+   "description": "Our pick of the best rat poison available in the UK for 2026. Brodifacoum blocks, bromadiolone grain bait and pastes, with safety advice.",
+   "ogTitle": "Best Rat Poison UK 2026: Strongest & Most Effective",
+   "ogDescription": "Our pick of the best rat poison available in the UK for 2026. Brodifacoum blocks, bromadiolone grain bait and pastes, with safety advice.",
+   "fingerprint": "81a8a118aca87882"
+  },
+  "/best/rat-traps": {
+   "estate": "uk",
+   "title": "Best Rat Traps UK 2026: Snap Traps & Bait Stations | PestPro Index",
+   "description": "Our pick of the best rat traps available in the UK for 2026. Snap traps and bait stations compared, with pros, cons and buying advice.",
+   "ogTitle": "Best Rat Traps UK 2026: Snap Traps & Bait Stations",
+   "ogDescription": "Our pick of the best rat traps available in the UK for 2026. Snap traps and bait stations compared, with pros, cons and buying advice.",
+   "fingerprint": "62178a317eb21168"
+  },
+  "/best/rodent-proofing": {
+   "estate": "uk",
+   "title": "Best Rodent Proofing Products UK 2026 | Mesh, Wool & Drain Guards | PestPro Index",
+   "description": "Rodent proofing materials for UK homes: galvanised wire mesh, stainless steel wool fill fabric, drain guards, door brush strips and proofing paste compared.",
+   "ogTitle": "Best Rodent Proofing Products UK 2026 | Mesh, Wool & Drain Guards",
+   "ogDescription": "Rodent proofing materials for UK homes: galvanised wire mesh, stainless steel wool fill fabric, drain guards, door brush strips and proofing paste compared.",
+   "fingerprint": "5ac33da2f70487ab"
+  },
+  "/best/silverfish-treatments": {
+   "estate": "uk",
+   "title": "Best Silverfish Treatments UK 2026 — Sprays & Traps | PestPro Index",
+   "description": "Our pick of the best silverfish treatments available in the UK. Compare insecticidal sprays, diatomaceous earth, sticky traps, and prevention products.",
+   "ogTitle": "Best Silverfish Treatments UK 2026 — Sprays & Traps",
+   "ogDescription": "Our pick of the best silverfish treatments available in the UK. Compare insecticidal sprays, diatomaceous earth, sticky traps, and prevention products.",
+   "fingerprint": "4077a61cc6ed70f4"
+  },
+  "/best/spider-repellent": {
+   "estate": "uk",
+   "title": "Best Spider Repellent UK 2026 | Sprays & Traps | PestPro Index",
+   "description": "Keep spiders out of your home with the best spider repellents in the UK. Sprays, plug-ins and natural deterrents for 2026.",
+   "ogTitle": "Best Spider Repellent UK 2026 | Sprays & Traps",
+   "ogDescription": "Keep spiders out of your home with the best spider repellents in the UK. Sprays, plug-ins and natural deterrents for 2026.",
+   "fingerprint": "eb04e6bdcab2a6b3"
+  },
+  "/best/squirrel-deterrents": {
+   "estate": "uk",
+   "title": "Best Squirrel Deterrents UK 2026: Top 5 | PestPro Index",
+   "description": "Our pick of the best squirrel deterrents for UK homes and gardens. From repellent sprays to squirrel-proof bird feeders and humane traps.",
+   "ogTitle": "Best Squirrel Deterrents UK 2026: Top 5",
+   "ogDescription": "Our pick of the best squirrel deterrents for UK homes and gardens. From repellent sprays to squirrel-proof bird feeders and humane traps.",
+   "fingerprint": "db9b3659a1723efe"
+  },
+  "/best/ultrasonic-pest-repellers": {
+   "estate": "uk",
+   "title": "Best Ultrasonic Pest Repellers UK 2026 | Do They Work? | PestPro Index",
+   "description": "Our pick of the ultrasonic pest repellers sold in the UK, with the evidence on effectiveness and a buyer's guide.",
+   "ogTitle": "Best Ultrasonic Pest Repellers UK 2026 | Do They Work?",
+   "ogDescription": "Our pick of the ultrasonic pest repellers sold in the UK, with the evidence on effectiveness and a buyer's guide.",
+   "fingerprint": "b0fab510d09b6cf5"
+  },
+  "/best/wasp-killers": {
+   "estate": "uk",
+   "title": "Best Wasp Killer Products UK 2026: Sprays, Powders & Traps | PestPro Index",
+   "description": "The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders and wasp traps, with buying advice.",
+   "ogTitle": "Best Wasp Killer Products UK 2026: Sprays, Powders & Traps",
+   "ogDescription": "The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders and wasp traps, with buying advice.",
+   "fingerprint": "8d21615f86a663a3"
+  },
+  "/best/wasp-nest-foam": {
+   "estate": "uk",
+   "title": "Best Wasp Nest Killer Foam UK 2026 | PestPro Index",
+   "description": "Our pick of the best wasp nest killer foams and sprays in the UK for 2026. Long-range foams, powders and aerosols, with safety advice.",
+   "ogTitle": "Best Wasp Nest Killer Foam UK 2026",
+   "ogDescription": "Our pick of the best wasp nest killer foams and sprays in the UK for 2026. Long-range foams, powders and aerosols, with safety advice.",
+   "fingerprint": "1525617291cca24c"
+  },
+  "/best/woodworm-treatments": {
+   "estate": "uk",
+   "title": "Best Woodworm Treatments UK 2026 — Sprays & Gels | PestPro Index",
+   "description": "Our pick of the best woodworm treatment products in the UK: permethrin sprays, boron gels, injection kits and timber preservers.",
+   "ogTitle": "Best Woodworm Treatments UK 2026 — Sprays & Gels",
+   "ogDescription": "Our pick of the best woodworm treatment products in the UK: permethrin sprays, boron gels, injection kits and timber preservers.",
+   "fingerprint": "325bab26c6087e44"
+  },
+  "/blog": {
+   "estate": "uk",
+   "title": "PestPro Index | Compare Pest Control Providers Across the UK",
+   "description": "Compare pest control providers with transparent, provider-stated information. No lead fees, no commissions. Find pest control in London, Birmingham and beyond.",
+   "ogTitle": "PestPro Index | Compare Pest Control Providers Across the UK",
+   "ogDescription": "Compare pest control providers with transparent, provider-stated information. No lead fees, no commissions. Find pest control in London, Birmingham and beyond.",
+   "fingerprint": "c8d7f4b19beb9a28"
+  },
+  "/blog/awaabs-law-landlord-equipment-guide": {
+   "estate": "uk",
+   "title": "Awaab’s Law Landlord Equipment Guide: PIV Units, Dehumidifiers &amp; Damp Meters | PestPro Index",
+   "description": "PIV units, dehumidifiers and damp meters explained — the practical equipment guide for landlords responding to Awaab’s Law damp and mould requirements.",
+   "ogTitle": "Awaab’s Law Landlord Equipment Guide: PIV Units, Dehumidifiers &amp; Damp Meters | PestPro Index",
+   "ogDescription": "PIV units, dehumidifiers and damp meters explained — the practical equipment guide for landlords responding to Awaab’s Law damp and mould requirements.",
+   "fingerprint": "edc611ce850caa5a"
+  },
+  "/blog/awaabs-law-pest-control-landlords": {
+   "estate": "uk",
+   "title": "Awaab's Law & Pest Control: What Landlords Need to Know | PestPro Index",
+   "description": "Awaab's Law means landlords must act on pest complaints. What are your obligations, timelines and penalties? UK landlord guide.",
+   "ogTitle": "Awaab's Law & Pest Control: What Landlords Need to Know | PestPro Index",
+   "ogDescription": "Awaab's Law means landlords must act on pest complaints. What are your obligations, timelines and penalties? UK landlord guide.",
+   "fingerprint": "93728b6b28b90228"
+  },
+  "/blog/bed-bug-epidemic-birmingham-2026": {
+   "estate": "uk",
+   "title": "Bed Bug Epidemic Warning: Birmingham and UK Cities at Risk | PestPro Index",
+   "description": "Pest experts warn of a bed bug epidemic hitting Birmingham and other UK cities. Why infestations are surging and how to protect your home.",
+   "ogTitle": "Bed Bug Epidemic Warning: Birmingham and UK Cities at Risk | PestPro Index",
+   "ogDescription": "Pest experts warn of a bed bug epidemic hitting Birmingham and other UK cities. Why infestations are surging and how to protect your home.",
+   "fingerprint": "4171132d9f651cb6"
+  },
+  "/blog/bed-bug-warning-uk-homes-2026": {
+   "estate": "uk",
+   "title": "Bed Bug Warning for UK Homes: How to Check and Protect Yourself | PestPro Index",
+   "description": "UK homeowners are being warned about bed bugs as cases continue to rise. How to spot the signs and what treatment actually works.",
+   "ogTitle": "Bed Bug Warning for UK Homes: How to Check and Protect Yourself | PestPro Index",
+   "ogDescription": "UK homeowners are being warned about bed bugs as cases continue to rise. How to spot the signs and what treatment actually works.",
+   "fingerprint": "cf9fb2705b7e0ac8"
+  },
+  "/blog/bed-bugs-uk-on-the-rise": {
+   "estate": "uk",
+   "title": "Bed Bugs in the UK: Why Cases Are Rising in 2026 | PestPro Index",
+   "description": "Bed bug cases are surging across the UK. What's causing the rise, how to check for them, and what treatment works best.",
+   "ogTitle": "Bed Bugs in the UK: Why Cases Are Rising in 2026 | PestPro Index",
+   "ogDescription": "Bed bug cases are surging across the UK. What's causing the rise, how to check for them, and what treatment works best.",
+   "fingerprint": "362694a5cae52664"
+  },
+  "/blog/bpca-vs-npta-pest-control-certifications": {
+   "estate": "uk",
+   "title": "BPCA vs NPTA: Pest Control Certifications Explained | PestPro Index",
+   "description": "BPCA or NPTA — what do pest control certifications actually mean and does it matter? A plain-language guide for London homeowners and commercial operators.",
+   "ogTitle": "BPCA vs NPTA: Pest Control Certifications Explained | PestPro Index",
+   "ogDescription": "BPCA or NPTA — what do pest control certifications actually mean and does it matter? A plain-language guide for London homeowners and commercial operators.",
+   "fingerprint": "2c4578d6ed194af2"
+  },
+  "/blog/bradford-seasonal-pest-calendar": {
+   "estate": "uk",
+   "title": "Bradford Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index",
+   "description": "Month-by-month guide to pest activity in Bradford and West Yorkshire. Know when rats, wasps, moths, and other pests are most active and how to prepare.",
+   "ogTitle": "Bradford Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index",
+   "ogDescription": "Month-by-month guide to pest activity in Bradford and West Yorkshire. Know when rats, wasps, moths, and other pests are most active and how to prepare.",
+   "fingerprint": "c7dda98bf19a943d"
+  },
+  "/blog/brighton-seasonal-pest-calendar": {
+   "estate": "uk",
+   "title": "Brighton & Sussex Seasonal Pest Calendar: Month-by-Month Guide | PestPro Index",
+   "description": "A month-by-month guide to pest activity across Brighton, Hove, and Sussex. Know when seagulls, wasps, rats, moths, and bed bugs are most active so you can prevent infestations before they start.",
+   "ogTitle": "Brighton & Sussex Seasonal Pest Calendar: Month-by-Month Guide | PestPro Index",
+   "ogDescription": "A month-by-month guide to pest activity across Brighton, Hove, and Sussex. Know when seagulls, wasps, rats, moths, and bed bugs are most active so you can prevent infestations before they start.",
+   "fingerprint": "b6469c3d0d9d449d"
+  },
+  "/blog/bristol-seasonal-pest-calendar": {
+   "estate": "uk",
+   "title": "Bristol Seasonal Pest Calendar: Month-by-Month Guide | PestPro Index",
+   "description": "Month-by-month guide to pest activity in Bristol and the South West. Know what pests to watch for each season and when to arrange professional treatment.",
+   "ogTitle": "Bristol Seasonal Pest Calendar: Month-by-Month Guide | PestPro Index",
+   "ogDescription": "Month-by-month guide to pest activity in Bristol and the South West. Know what pests to watch for each season and when to arrange professional treatment.",
+   "fingerprint": "0186f4d3c0da60af"
+  },
+  "/blog/diy-pest-control-vs-professional": {
+   "estate": "uk",
+   "title": "DIY Pest Control vs Professional: When to Call in London | PestPro Index",
+   "description": "For some pests DIY works fine. For others it wastes time and money. A clear guide to when professional pest removal is worth it — and when it isn't.",
+   "ogTitle": "DIY Pest Control vs Professional: When to Call in London | PestPro Index",
+   "ogDescription": "For some pests DIY works fine. For others it wastes time and money. A clear guide to when professional pest removal is worth it — and when it isn't.",
+   "fingerprint": "5aecccf89f35bb04"
+  },
+  "/blog/do-conkers-keep-spiders-away": {
+   "estate": "uk",
+   "title": "Do Conkers Keep Spiders Away? The British Myth Explained | PestPro Index",
+   "description": "Every autumn, people scatter conkers to repel spiders. But does it actually work? We look at the science behind the folklore.",
+   "ogTitle": "Do Conkers Keep Spiders Away? The British Myth Explained | PestPro Index",
+   "ogDescription": "Every autumn, people scatter conkers to repel spiders. But does it actually work? We look at the science behind the folklore.",
+   "fingerprint": "a24ca77f2882b9a3"
+  },
+  "/blog/do-ultrasonic-pest-repellers-actually-work": {
+   "estate": "uk",
+   "title": "Do Ultrasonic Pest Repellers Actually Work? Honest Answer | PestPro Index",
+   "description": "Ultrasonic pest repellers are widely sold as a chemical-free fix. But do they actually repel mice, rats or insects? We review the evidence.",
+   "ogTitle": "Do Ultrasonic Pest Repellers Actually Work? Honest Answer | PestPro Index",
+   "ogDescription": "Ultrasonic pest repellers are widely sold as a chemical-free fix. But do they actually repel mice, rats or insects? We review the evidence.",
+   "fingerprint": "138598b9f90e7767"
+  },
+  "/blog/does-irish-spring-soap-repel-pests": {
+   "estate": "uk",
+   "title": "Does Irish Spring Soap Repel Pests? The Truth | PestPro Index",
+   "description": "TikTok says Irish Spring soap keeps rats, mice and bugs away. We look at the evidence and tell you what actually works.",
+   "ogTitle": "Does Irish Spring Soap Repel Pests? The Truth | PestPro Index",
+   "ogDescription": "TikTok says Irish Spring soap keeps rats, mice and bugs away. We look at the evidence and tell you what actually works.",
+   "fingerprint": "f8d0b3c532b8cb6b"
+  },
+  "/blog/eco-friendly-pest-control-london": {
+   "estate": "uk",
+   "title": "Eco-Friendly Pest Control London: What Actually Works | PestPro Index",
+   "description": "From IPM to heat treatment to natural sprays — an honest guide to eco-friendly pest removal in London. What works, what doesn't, and what to ask a pest controller.",
+   "ogTitle": "Eco-Friendly Pest Control London: What Actually Works | PestPro Index",
+   "ogDescription": "From IPM to heat treatment to natural sprays — an honest guide to eco-friendly pest removal in London. What works, what doesn't, and what to ask a pest controller.",
+   "fingerprint": "30f694b85fd83a1d"
+  },
+  "/blog/glasgow-seasonal-pest-calendar": {
+   "estate": "uk",
+   "title": "Glasgow Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index",
+   "description": "Month-by-month guide to pest activity in Glasgow and Scotland. Know what pests to expect each season and when to arrange professional treatment.",
+   "ogTitle": "Glasgow Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index",
+   "ogDescription": "Month-by-month guide to pest activity in Glasgow and Scotland. Know what pests to expect each season and when to arrange professional treatment.",
+   "fingerprint": "16282383f5a63023"
+  },
+  "/blog/higher-standards-bed-bug-control-london": {
+   "estate": "uk",
+   "title": "London Pest Controller Calls for Higher Standards in Bed Bug Treatment | PestPro Index",
+   "description": "A London pest control firm is calling for higher industry standards for bed bug treatment. Why qualifications matter when choosing a bed bug specialist.",
+   "ogTitle": "London Pest Controller Calls for Higher Standards in Bed Bug Treatment | PestPro Index",
+   "ogDescription": "A London pest control firm is calling for higher industry standards for bed bug treatment. Why qualifications matter when choosing a bed bug specialist.",
+   "fingerprint": "9e35e45323093f33"
+  },
+  "/blog/how-much-does-pest-control-cost-uk": {
+   "estate": "uk",
+   "title": "How Much Does Pest Control Cost in the UK? 2026 Prices | PestPro Index",
+   "description": "UK pest control costs for rats, mice, wasps, bed bugs, fleas and more. Full 2026 price breakdown with DIY alternatives.",
+   "ogTitle": "How Much Does Pest Control Cost in the UK? 2026 Prices | PestPro Index",
+   "ogDescription": "UK pest control costs for rats, mice, wasps, bed bugs, fleas and more. Full 2026 price breakdown with DIY alternatives.",
+   "fingerprint": "a37320895fffaddc"
+  },
+  "/blog/landlord-pest-control-legal-obligation-uk": {
+   "estate": "uk",
+   "title": "Landlord Pest Control Legal Obligation UK | PestPro Index",
+   "description": "Who is responsible for pest control in a rented property — landlord or tenant? What UK law actually says and what landlords should do in practice.",
+   "ogTitle": "Landlord Pest Control Legal Obligation UK | PestPro Index",
+   "ogDescription": "Who is responsible for pest control in a rented property — landlord or tenant? What UK law actually says and what landlords should do in practice.",
+   "fingerprint": "cc9457f4a558e478"
+  },
+  "/blog/leeds-seasonal-pest-calendar": {
+   "estate": "uk",
+   "title": "Leeds Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index",
+   "description": "Month-by-month guide to pest activity in Leeds and West Yorkshire. Know when rats, wasps, moths, and other pests are most active so you can prevent infestations before they start.",
+   "ogTitle": "Leeds Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index",
+   "ogDescription": "Month-by-month guide to pest activity in Leeds and West Yorkshire. Know when rats, wasps, moths, and other pests are most active so you can prevent infestations before they start.",
+   "fingerprint": "fc4fcd2fa2ed7c36"
+  },
+  "/blog/liverpool-seasonal-pest-calendar": {
+   "estate": "uk",
+   "title": "Liverpool Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index",
+   "description": "Month-by-month guide to pest activity in Liverpool and Merseyside. Know when rats, wasps, bed bugs, and other pests are most active so you can prevent infestations before they start.",
+   "ogTitle": "Liverpool Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index",
+   "ogDescription": "Month-by-month guide to pest activity in Liverpool and Merseyside. Know when rats, wasps, bed bugs, and other pests are most active so you can prevent infestations before they start.",
+   "fingerprint": "6ac38f948dfd6979"
+  },
+  "/blog/manchester-seasonal-pest-calendar": {
+   "estate": "uk",
+   "title": "Manchester Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index",
+   "description": "Month-by-month guide to pest pressure in Manchester — when rats move indoors, when wasps peak, and when to act. Plan your pest prevention with this seasonal calendar.",
+   "ogTitle": "Manchester Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index",
+   "ogDescription": "Month-by-month guide to pest pressure in Manchester — when rats move indoors, when wasps peak, and when to act. Plan your pest prevention with this seasonal calendar.",
+   "fingerprint": "8c6e4225e0316738"
+  },
+  "/blog/most-common-pests-uk-by-season": {
+   "estate": "uk",
+   "title": "Most Common UK Pests by Season: What to Watch For | PestPro Index",
+   "description": "Mice in autumn, wasps in summer, moths in spring — a complete seasonal guide to the UK's most common household pests.",
+   "ogTitle": "Most Common UK Pests by Season: What to Watch For | PestPro Index",
+   "ogDescription": "Mice in autumn, wasps in summer, moths in spring — a complete seasonal guide to the UK's most common household pests.",
+   "fingerprint": "f10949a19370734e"
+  },
+  "/blog/northern-ireland-rat-spike-2026": {
+   "estate": "uk",
+   "title": "Northern Ireland Has Highest Rat Spike in the UK — Here's Why | PestPro Index",
+   "description": "Northern Ireland recorded a 20% spike in rat activity — the highest in the UK. Climate change and mild winters are driving rodent numbers up.",
+   "ogTitle": "Northern Ireland Has Highest Rat Spike in the UK — Here's Why | PestPro Index",
+   "ogDescription": "Northern Ireland recorded a 20% spike in rat activity — the highest in the UK. Climate change and mild winters are driving rodent numbers up.",
+   "fingerprint": "822eccccbc8b8030"
+  },
+  "/blog/nottingham-seasonal-pest-calendar": {
+   "estate": "uk",
+   "title": "Nottingham Seasonal Pest Calendar: Month-by-Month Guide | PestPro Index",
+   "description": "A month-by-month guide to the pests most likely to affect homes and businesses across Nottingham, Derby, and the East Midlands — and when to call a professional.",
+   "ogTitle": "Nottingham Seasonal Pest Calendar: Month-by-Month Guide | PestPro Index",
+   "ogDescription": "A month-by-month guide to the pests most likely to affect homes and businesses across Nottingham, Derby, and the East Midlands — and when to call a professional.",
+   "fingerprint": "3d5e9b275a8ccfdb"
+  },
+  "/blog/pest-control-after-kitchen-flood-fire-damage": {
+   "estate": "uk",
+   "title": "Pest Control After Kitchen Flood or Fire Damage | PestPro Index",
+   "description": "Flood and fire damage to kitchens frequently exposes pest infestations. Here's why pest control should be part of your restoration plan — and when to call a specialist.",
+   "ogTitle": "Pest Control After Kitchen Flood or Fire Damage | PestPro Index",
+   "ogDescription": "Flood and fire damage to kitchens frequently exposes pest infestations. Here's why pest control should be part of your restoration plan — and when to call a specialist.",
+   "fingerprint": "043f8adf7e7f7009"
+  },
+  "/blog/pest-control-bradford-west-yorkshire-guide": {
+   "estate": "uk",
+   "title": "Pest Control Bradford & West Yorkshire | Complete Local Guide | PestPro Index",
+   "description": "Everything you need to know about pest control in Bradford, Shipley, Keighley, Halifax, Huddersfield and across West Yorkshire — common pests, costs, and choosing a provider.",
+   "ogTitle": "Pest Control Bradford & West Yorkshire | Complete Local Guide | PestPro Index",
+   "ogDescription": "Everything you need to know about pest control in Bradford, Shipley, Keighley, Halifax, Huddersfield and across West Yorkshire — common pests, costs, and choosing a provider.",
+   "fingerprint": "ebd4e30ae8775e3d"
+  },
+  "/blog/pest-control-brighton-complete-guide": {
+   "estate": "uk",
+   "title": "Pest Control in Brighton & Sussex: Complete Guide | PestPro Index",
+   "description": "A practical guide to common pests in Brighton, Hove, Worthing, and across Sussex. Covers seagulls, rats, mice, wasps, bed bugs and how to choose a local provider.",
+   "ogTitle": "Pest Control in Brighton & Sussex: Complete Guide | PestPro Index",
+   "ogDescription": "A practical guide to common pests in Brighton, Hove, Worthing, and across Sussex. Covers seagulls, rats, mice, wasps, bed bugs and how to choose a local provider.",
+   "fingerprint": "d8b6dcedbee3e0bb"
+  },
+  "/blog/pest-control-bristol-complete-guide": {
+   "estate": "uk",
+   "title": "Pest Control in Bristol: Complete Guide | PestPro Index",
+   "description": "A complete guide to pest control in Bristol and the South West. Learn about common pests, costs, prevention tips, and how to find local pest controllers.",
+   "ogTitle": "Pest Control in Bristol: Complete Guide | PestPro Index",
+   "ogDescription": "A complete guide to pest control in Bristol and the South West. Learn about common pests, costs, prevention tips, and how to find local pest controllers.",
+   "fingerprint": "95c6c551d0d1d1e6"
+  },
+  "/blog/pest-control-cost-london": {
+   "estate": "uk",
+   "title": "Pest Control & Pest Removal Cost London 2026 | PestPro Index",
+   "description": "Realistic price ranges for pest control and pest removal in London — rats, mice, bed bugs, wasps, cockroaches. What drives prices and what to watch out for.",
+   "ogTitle": "Pest Control & Pest Removal Cost London 2026 | PestPro Index",
+   "ogDescription": "Realistic price ranges for pest control and pest removal in London — rats, mice, bed bugs, wasps, cockroaches. What drives prices and what to watch out for.",
+   "fingerprint": "aedb99b8d14e4db9"
+  },
+  "/blog/pest-control-glasgow-complete-guide": {
+   "estate": "uk",
+   "title": "Pest Control in Glasgow: Complete Guide for 2026 | PestPro Index",
+   "description": "Everything you need to know about pest control in Glasgow. Common pests, costs, when to call a professional, and how to find providers across Scotland.",
+   "ogTitle": "Pest Control in Glasgow: Complete Guide for 2026 | PestPro Index",
+   "ogDescription": "Everything you need to know about pest control in Glasgow. Common pests, costs, when to call a professional, and how to find providers across Scotland.",
+   "fingerprint": "c6b8d82de40e9520"
+  },
+  "/blog/pest-control-leeds-complete-guide": {
+   "estate": "uk",
+   "title": "Pest Control Leeds: Complete Guide for 2026 | PestPro Index",
+   "description": "Everything you need to know about pest control in Leeds and West Yorkshire. Common pests, seasonal patterns, costs, and how to find a local provider.",
+   "ogTitle": "Pest Control Leeds: Complete Guide for 2026 | PestPro Index",
+   "ogDescription": "Everything you need to know about pest control in Leeds and West Yorkshire. Common pests, seasonal patterns, costs, and how to find a local provider.",
+   "fingerprint": "83eb408f0f080deb"
+  },
+  "/blog/pest-control-liverpool-complete-guide": {
+   "estate": "uk",
+   "title": "Pest Control Liverpool: Complete Guide for Homeowners | PestPro Index",
+   "description": "A complete guide to pest control in Liverpool and Merseyside. Learn about common pests, costs, prevention tips, and how to find local pest controllers.",
+   "ogTitle": "Pest Control Liverpool: Complete Guide for Homeowners | PestPro Index",
+   "ogDescription": "A complete guide to pest control in Liverpool and Merseyside. Learn about common pests, costs, prevention tips, and how to find local pest controllers.",
+   "fingerprint": "851633c68151e387"
+  },
+  "/blog/pest-control-manchester-complete-guide": {
+   "estate": "uk",
+   "title": "Pest Control Manchester: Complete Guide for Homeowners | PestPro Index",
+   "description": "Everything Manchester homeowners need to know about pest control — common pests, costs, when to call a professional, and how to find a local provider.",
+   "ogTitle": "Pest Control Manchester: Complete Guide for Homeowners | PestPro Index",
+   "ogDescription": "Everything Manchester homeowners need to know about pest control — common pests, costs, when to call a professional, and how to find a local provider.",
+   "fingerprint": "d874b0750a57ae0e"
+  },
+  "/blog/pest-control-nottingham-east-midlands-guide": {
+   "estate": "uk",
+   "title": "Pest Control Nottingham & East Midlands: Complete Local Guide | PestPro Index",
+   "description": "Everything you need to know about finding pest control in Nottingham, Derby, and surrounding East Midlands areas — from common pests to choosing a provider.",
+   "ogTitle": "Pest Control Nottingham & East Midlands: Complete Local Guide | PestPro Index",
+   "ogDescription": "Everything you need to know about finding pest control in Nottingham, Derby, and surrounding East Midlands areas — from common pests to choosing a provider.",
+   "fingerprint": "1e9a1dcc95e2fd1b"
+  },
+  "/blog/pest-control-sheffield-complete-guide": {
+   "estate": "uk",
+   "title": "Pest Control Sheffield: Complete 2026 Guide | PestPro Index",
+   "description": "Comprehensive guide to pest control in Sheffield. Learn about common pests, prevention tips, and find local pest controllers across South Yorkshire.",
+   "ogTitle": "Pest Control Sheffield: Complete 2026 Guide | PestPro Index",
+   "ogDescription": "Comprehensive guide to pest control in Sheffield. Learn about common pests, prevention tips, and find local pest controllers across South Yorkshire.",
+   "fingerprint": "ca2f724f58e8dd3d"
+  },
+  "/blog/private-vs-council-pest-control-london": {
+   "estate": "uk",
+   "title": "Private vs Council Pest Control London | PestPro Index",
+   "description": "Is council pest control still worth it in London? An honest comparison of council and private pest removal services — speed, cost, scope and when to use each.",
+   "ogTitle": "Private vs Council Pest Control London | PestPro Index",
+   "ogDescription": "Is council pest control still worth it in London? An honest comparison of council and private pest removal services — speed, cost, scope and when to use each.",
+   "fingerprint": "48a32ef6f957ba06"
+  },
+  "/blog/rats-in-garden-what-to-do": {
+   "estate": "uk",
+   "title": "Rats in Your Garden? Here's What to Do | PestPro Index",
+   "description": "Found rats in your garden? Don't panic. Our step-by-step guide covers what attracts them, how to get rid of them, and when to call a pro.",
+   "ogTitle": "Rats in Your Garden? Here's What to Do | PestPro Index",
+   "ogDescription": "Found rats in your garden? Don't panic. Our step-by-step guide covers what attracts them, how to get rid of them, and when to call a pro.",
+   "fingerprint": "ce17512532f89c79"
+  },
+  "/blog/seasonal-pest-calendar-london": {
+   "estate": "uk",
+   "title": "London Seasonal Pest Calendar 2026 | Pest Control & Removal Guide | PestPro Index",
+   "description": "Month-by-month guide to pest pressure in London — rats in winter, wasps in summer, spiders in September. What to expect and when to act.",
+   "ogTitle": "London Seasonal Pest Calendar 2026 | Pest Control & Removal Guide | PestPro Index",
+   "ogDescription": "Month-by-month guide to pest pressure in London — rats in winter, wasps in summer, spiders in September. What to expect and when to act.",
+   "fingerprint": "75f2ff6b7a0c9c3f"
+  },
+  "/blog/sheffield-seasonal-pest-calendar": {
+   "estate": "uk",
+   "title": "Sheffield Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index",
+   "description": "Month-by-month guide to pest activity in Sheffield. Know when rats, wasps, moths, and other pests are most active in South Yorkshire and how to prepare.",
+   "ogTitle": "Sheffield Seasonal Pest Calendar 2026 | Month-by-Month Guide | PestPro Index",
+   "ogDescription": "Month-by-month guide to pest activity in Sheffield. Know when rats, wasps, moths, and other pests are most active in South Yorkshire and how to prepare.",
+   "fingerprint": "2d8d3d5df7a2ac07"
+  },
+  "/blog/signs-of-rat-problem-london": {
+   "estate": "uk",
+   "title": "Signs of a Rat Problem in Your Home | Pest Removal London | PestPro Index",
+   "description": "Droppings, gnaw marks, scratching sounds — how to identify a rat infestation early and when to call a pest removal specialist in London.",
+   "ogTitle": "Signs of a Rat Problem in Your Home | Pest Removal London | PestPro Index",
+   "ogDescription": "Droppings, gnaw marks, scratching sounds — how to identify a rat infestation early and when to call a pest removal specialist in London.",
+   "fingerprint": "7a5605e80ca04998"
+  },
+  "/blog/signs-you-have-mice-in-your-house": {
+   "estate": "uk",
+   "title": "8 Signs You Have Mice in Your House | PestPro Index",
+   "description": "Droppings, scratching noises, gnaw marks — learn the 8 telltale signs of mice in your home and what to do about them.",
+   "ogTitle": "8 Signs You Have Mice in Your House | PestPro Index",
+   "ogDescription": "Droppings, scratching noises, gnaw marks — learn the 8 telltale signs of mice in your home and what to do about them.",
+   "fingerprint": "333ecc086977d45d"
+  },
+  "/blog/uk-rat-activity-rising-2026": {
+   "estate": "uk",
+   "title": "UK Rat Activity Rising: What Homeowners Need to Know in 2026 | PestPro Index",
+   "description": "Rat sightings across UK homes are up significantly in 2026. Why it's happening, which regions are worst hit, and what to do about it.",
+   "ogTitle": "UK Rat Activity Rising: What Homeowners Need to Know in 2026 | PestPro Index",
+   "ogDescription": "Rat sightings across UK homes are up significantly in 2026. Why it's happening, which regions are worst hit, and what to do about it.",
+   "fingerprint": "f587014025e9f540"
+  },
+  "/blog/wasp-season-london": {
+   "estate": "uk",
+   "title": "Wasp Season London: When It Peaks and What to Do | PestPro Index",
+   "description": "When does wasp season peak in London, where do wasps nest, and should you treat a nest yourself? Everything London residents need to know.",
+   "ogTitle": "Wasp Season London: When It Peaks and What to Do | PestPro Index",
+   "ogDescription": "When does wasp season peak in London, where do wasps nest, and should you treat a nest yourself? Everything London residents need to know.",
+   "fingerprint": "522f3f80e8026e1f"
+  },
+  "/blog/wasp-season-uk-2026-what-to-expect": {
+   "estate": "uk",
+   "title": "Wasp Season UK 2026: When It Starts & What to Expect | PestPro Index",
+   "description": "Wasp season 2026 is here. When do wasps appear, when are they most aggressive, and what can you do to prepare? Expert UK guide.",
+   "ogTitle": "Wasp Season UK 2026: When It Starts & What to Expect | PestPro Index",
+   "ogDescription": "Wasp season 2026 is here. When do wasps appear, when are they most aggressive, and what can you do to prepare? Expert UK guide.",
+   "fingerprint": "2222cb5a6e1af7f6"
+  },
+  "/contact": {
+   "estate": "uk",
+   "title": "Contact Us | PestPro Index",
+   "description": "Get in touch with PestPro Index. Report issues, provider enquiries, or general questions. We're here to help.",
+   "ogTitle": "Contact Us",
+   "ogDescription": "Get in touch with PestPro Index. Report issues, provider enquiries, or general questions. We're here to help.",
+   "fingerprint": "15d917e226a94fc8"
+  },
+  "/cookies": {
+   "estate": "uk",
+   "title": "Cookie Policy | PestPro Index",
+   "description": "What cookies PestPro Index uses, who sets them, and how to change your choice. Nothing non-essential loads until you consent.",
+   "ogTitle": "Cookie Policy",
+   "ogDescription": "What cookies PestPro Index uses, who sets them, and how to change your choice. Nothing non-essential loads until you consent.",
+   "fingerprint": "127e69cb82eaac9b"
+  },
+  "/frequently-asked-questions": {
+   "estate": "uk",
+   "title": "Pest Control FAQ | Frequently Asked Questions | PestPro Index",
+   "description": "Common questions about finding pest control in the UK. Learn how PestPro Index works, what areas we cover, how providers are selected, and how we differ from lead-generation platforms.",
+   "ogTitle": "Pest Control FAQ | Frequently Asked Questions",
+   "ogDescription": "Common questions about finding pest control in the UK. Learn how PestPro Index works, what areas we cover, and how we differ from lead-generation platforms.",
+   "fingerprint": "7e77b51738a65aa2"
+  },
+  "/get-help": {
+   "estate": "uk",
+   "title": "PestPro Index | Compare Pest Control Providers Across the UK",
+   "description": "Compare pest control providers with transparent, provider-stated information. No lead fees, no commissions. Find pest control in London, Birmingham and beyond.",
+   "ogTitle": "PestPro Index | Compare Pest Control Providers Across the UK",
+   "ogDescription": "Compare pest control providers with transparent, provider-stated information. No lead fees, no commissions. Find pest control in London, Birmingham and beyond.",
+   "fingerprint": "c8d7f4b19beb9a28"
+  },
+  "/guides": {
+   "estate": "uk",
+   "title": "Pest Control Guides & Expert Advice | PestPro Index",
+   "description": "Free, comprehensive UK pest control guides. How to identify, treat, and prevent rats, mice, wasps, bed bugs, cockroaches and more. Plus honest product guides and cost breakdowns.",
+   "ogTitle": "Pest Control Guides & Expert Advice",
+   "ogDescription": "Free, comprehensive UK pest control guides. How to identify, treat, and prevent rats, mice, wasps, bed bugs, cockroaches and more. Plus honest product guides and cost breakdowns.",
+   "fingerprint": "2e408d5b7e5948ce"
+  },
+  "/guides/autumn-pest-proofing": {
+   "estate": "uk",
+   "title": "Autumn Pest Proofing: Stop Mice, Rats & Spiders Getting In | UK Guide | PestPro Index",
+   "description": "Autumn is when pests move indoors. Our UK guide covers how to pest-proof your home before winter with a room-by-room checklist.",
+   "ogTitle": "Autumn Pest Proofing: Stop Mice, Rats & Spiders Getting In | UK Guide",
+   "ogDescription": "Autumn is when pests move indoors. Our UK guide covers how to pest-proof your home before winter with a room-by-room checklist.",
+   "fingerprint": "4675f6f623113228"
+  },
+  "/guides/carpet-beetle-control": {
+   "estate": "uk",
+   "title": "Carpet Beetle Control UK — Identification, Prevention & Treatment | PestPro Index",
+   "description": "Complete guide to carpet beetle control in the UK. Learn how to identify carpet beetles and their larvae, prevent infestations, effective treatments, and when to call a professional.",
+   "ogTitle": "Carpet Beetle Control UK — Identification, Prevention & Treatment",
+   "ogDescription": "Complete guide to carpet beetle control in the UK. Learn how to identify carpet beetles and their larvae, prevent infestations, effective treatments, and when to call a professional.",
+   "fingerprint": "92c57c5f926bb265"
+  },
+  "/guides/commercial-pest-control": {
+   "estate": "uk",
+   "title": "Commercial Pest Control UK | Guides for Businesses 2026 | PestPro Index",
+   "description": "Essential pest control guides for UK businesses. Restaurant compliance, warehouse pest management, EHO inspections, HACCP requirements, and commercial pest control equipment.",
+   "ogTitle": "Commercial Pest Control UK | Guides for Businesses 2026",
+   "ogDescription": "Essential pest control guides for UK businesses. Restaurant compliance, warehouse pest management, EHO inspections, HACCP requirements, and commercial pest control equipment.",
+   "fingerprint": "4ff402b91115e02f"
+  },
+  "/guides/electric-fly-killers-vs-sticky-traps": {
+   "estate": "uk",
+   "title": "Electric Fly Killers vs Sticky Traps: Which Is Better? (UK 2026) | PestPro Index",
+   "description": "A side-by-side comparison of UV electric fly killers and sticky fly traps for UK homes and businesses. Effectiveness, hygiene, cost, and our top product picks.",
+   "ogTitle": "Electric Fly Killers vs Sticky Traps: Which Is Better? (UK 2026)",
+   "ogDescription": "A side-by-side comparison of UV electric fly killers and sticky fly traps for UK homes and businesses. Effectiveness, hygiene, cost, and our top product picks.",
+   "fingerprint": "931944563c0c915d"
+  },
+  "/guides/essential-oils-for-pest-control": {
+   "estate": "uk",
+   "title": "Essential Oils for Pest Control UK: Which Oils Repel Which Pests | PestPro Index",
+   "description": "Peppermint, eucalyptus, tea tree, lavender — which essential oils actually repel pests? Complete UK guide with dilution ratios and application methods.",
+   "ogTitle": "Essential Oils for Pest Control UK: Which Oils Repel Which Pests",
+   "ogDescription": "Peppermint, eucalyptus, tea tree, lavender — which essential oils actually repel pests? Complete UK guide with dilution ratios and application methods.",
+   "fingerprint": "f364cea7806e4d79"
+  },
+  "/guides/hotel-pest-control": {
+   "estate": "uk",
+   "title": "Hotel Pest Control UK | Bed Bug Management & Compliance Guide 2026 | PestPro Index",
+   "description": "Essential pest control guide for UK hotels, B&Bs and hospitality businesses. Bed bug prevention, guest complaint handling, reputation protection, and ongoing monitoring.",
+   "ogTitle": "Hotel Pest Control UK | Bed Bug Management & Compliance Guide 2026",
+   "ogDescription": "Essential pest control guide for UK hotels, B&Bs and hospitality businesses. Bed bug prevention, guest complaint handling, reputation protection, and ongoing monitoring.",
+   "fingerprint": "9cfb54b591ca28ba"
+  },
+  "/guides/how-to-get-rid-of-ants": {
+   "estate": "uk",
+   "title": "How to Get Rid of Ants: The Complete UK Guide (2026) | PestPro Index",
+   "description": "A comprehensive UK guide to getting rid of ants in your home and garden. Species identification, DIY treatments, the best ant killers, flying ants, and when to call a professional.",
+   "ogTitle": "How to Get Rid of Ants: The Complete UK Guide (2026)",
+   "ogDescription": "A comprehensive UK guide to getting rid of ants in your home and garden. Species identification, DIY treatments, the best ant killers, flying ants, and when to call a professional.",
+   "fingerprint": "125b3e5beb6058ae"
+  },
+  "/guides/how-to-get-rid-of-bed-bugs": {
+   "estate": "uk",
+   "title": "How to Get Rid of Bed Bugs: The Complete UK Guide (2026) | PestPro Index",
+   "description": "A comprehensive UK guide to identifying and eliminating bed bugs. Signs of infestation, DIY treatment options, professional heat treatment, costs, and prevention tips.",
+   "ogTitle": "How to Get Rid of Bed Bugs: The Complete UK Guide (2026)",
+   "ogDescription": "A comprehensive UK guide to identifying and eliminating bed bugs. Signs of infestation, DIY treatment options, professional heat treatment, costs, and prevention tips.",
+   "fingerprint": "e346df10f8bd5fd0"
+  },
+  "/guides/how-to-get-rid-of-cockroaches": {
+   "estate": "uk",
+   "title": "How to Get Rid of Cockroaches: The Complete UK Guide (2026) | PestPro Index",
+   "description": "A comprehensive UK guide to identifying and eliminating cockroaches. Species identification, signs of infestation, DIY treatments, professional solutions, and how to keep them out for good.",
+   "ogTitle": "How to Get Rid of Cockroaches: The Complete UK Guide (2026)",
+   "ogDescription": "A comprehensive UK guide to identifying and eliminating cockroaches. Species identification, signs of infestation, DIY treatments, professional solutions, and how to keep them out for good.",
+   "fingerprint": "6a8798a25617bd96"
+  },
+  "/guides/how-to-get-rid-of-fleas": {
+   "estate": "uk",
+   "title": "How to Get Rid of Fleas: The Complete UK Guide (2026) | PestPro Index",
+   "description": "A comprehensive UK guide to identifying, treating, and preventing fleas in your home and on your pets. DIY methods, professional treatment options, costs, and prevention advice.",
+   "ogTitle": "How to Get Rid of Fleas: The Complete UK Guide (2026)",
+   "ogDescription": "A comprehensive UK guide to identifying, treating, and preventing fleas in your home and on your pets. DIY methods, professional treatment options, costs, and prevention advice.",
+   "fingerprint": "9494fa13b9bfb421"
+  },
+  "/guides/how-to-get-rid-of-foxes": {
+   "estate": "uk",
+   "title": "How to Get Rid of Foxes UK — Humane Deterrents, Prevention & Expert Help | PestPro Index",
+   "description": "Complete guide to fox control in the UK. Learn humane deterrent methods, garden proofing, legal protections, and when to call a professional pest controller.",
+   "ogTitle": "How to Get Rid of Foxes UK — Humane Deterrents, Prevention & Expert Help",
+   "ogDescription": "Complete guide to fox control in the UK. Learn humane deterrent methods, garden proofing, legal protections, and when to call a professional pest controller.",
+   "fingerprint": "6a2919eec89803d9"
+  },
+  "/guides/how-to-get-rid-of-mice": {
+   "estate": "uk",
+   "title": "How to Get Rid of Mice: The Complete UK Guide (2026) | PestPro Index",
+   "description": "A comprehensive UK guide to getting rid of mice in your home. How to spot them, DIY control methods, the best mouse traps, when to call a professional, and how to keep them out for good.",
+   "ogTitle": "How to Get Rid of Mice: The Complete UK Guide (2026)",
+   "ogDescription": "A comprehensive UK guide to getting rid of mice in your home. How to spot them, DIY control methods, the best mouse traps, when to call a professional, and how to keep them out for good.",
+   "fingerprint": "72e44b31a4c0f1ea"
+  },
+  "/guides/how-to-get-rid-of-moths": {
+   "estate": "uk",
+   "title": "How to Get Rid of Moths: The Complete UK Guide (2026) | PestPro Index",
+   "description": "A comprehensive UK guide to getting rid of clothes moths, carpet moths, and pantry moths. Identification, DIY treatments, pheromone traps, professional fumigation, prevention tips, and costs.",
+   "ogTitle": "How to Get Rid of Moths: The Complete UK Guide (2026)",
+   "ogDescription": "A comprehensive UK guide to getting rid of clothes moths, carpet moths, and pantry moths. Identification, DIY treatments, pheromone traps, professional fumigation, prevention tips, and costs.",
+   "fingerprint": "c7099562091dc38f"
+  },
+  "/guides/how-to-get-rid-of-rats": {
+   "estate": "uk",
+   "title": "How to Get Rid of Rats: The Complete UK Guide (2026) | PestPro Index",
+   "description": "Everything you need to know about getting rid of rats in your home and garden. Signs of infestation, DIY methods, when to call a professional, and the best products to use.",
+   "ogTitle": "How to Get Rid of Rats: The Complete UK Guide (2026)",
+   "ogDescription": "Everything you need to know about getting rid of rats in your home and garden. Signs of infestation, DIY methods, when to call a professional, and the best products to use.",
+   "fingerprint": "7cd03d8f2bcab7b9"
+  },
+  "/guides/how-to-get-rid-of-silverfish": {
+   "estate": "uk",
+   "title": "How to Get Rid of Silverfish UK — Causes, Prevention & Treatment | PestPro Index",
+   "description": "Complete guide to silverfish control in the UK. Learn what causes silverfish, how to prevent infestations, effective treatments, and when to call a professional pest controller.",
+   "ogTitle": "How to Get Rid of Silverfish UK — Causes, Prevention & Treatment",
+   "ogDescription": "Complete guide to silverfish control in the UK. Learn what causes silverfish, how to prevent infestations, effective treatments, and when to call a professional pest controller.",
+   "fingerprint": "9da465f405693912"
+  },
+  "/guides/how-to-get-rid-of-squirrels": {
+   "estate": "uk",
+   "title": "How to Get Rid of Squirrels: The Complete UK Guide (2026) | PestPro Index",
+   "description": "Expert guide to squirrel control in UK homes and gardens. Learn about grey squirrel problems, humane deterrents, loft proofing, and when to call a professional.",
+   "ogTitle": "How to Get Rid of Squirrels: The Complete UK Guide (2026)",
+   "ogDescription": "Expert guide to squirrel control in UK homes and gardens. Learn about grey squirrel problems, humane deterrents, loft proofing, and when to call a professional.",
+   "fingerprint": "06a8ac10c1062b4e"
+  },
+  "/guides/how-to-pest-proof-your-loft": {
+   "estate": "uk",
+   "title": "How to Pest Proof Your Loft UK: Stop Mice, Squirrels & Wasps | PestPro Index",
+   "description": "Mice, squirrels, wasps and cluster flies love lofts. Our UK guide covers how to proof your loft space and remove existing pests.",
+   "ogTitle": "How to Pest Proof Your Loft UK: Stop Mice, Squirrels & Wasps",
+   "ogDescription": "Mice, squirrels, wasps and cluster flies love lofts. Our UK guide covers how to proof your loft space and remove existing pests.",
+   "fingerprint": "d26bf4e6c4777337"
+  },
+  "/guides/how-to-pest-proof-your-shed": {
+   "estate": "uk",
+   "title": "How to Pest Proof Your Shed UK: Stop Rats, Mice & Insects | PestPro Index",
+   "description": "Keep rats, mice, wasps and spiders out of your garden shed. Step-by-step UK proofing guide with product recommendations.",
+   "ogTitle": "How to Pest Proof Your Shed UK: Stop Rats, Mice & Insects",
+   "ogDescription": "Keep rats, mice, wasps and spiders out of your garden shed. Step-by-step UK proofing guide with product recommendations.",
+   "fingerprint": "1ae91827d4d31e59"
+  },
+  "/guides/humane-mouse-traps-vs-kill-traps": {
+   "estate": "uk",
+   "title": "Humane Mouse Traps vs Kill Traps: Which Is Better? (UK 2026) | PestPro Index",
+   "description": "A detailed comparison of humane live-catch mouse traps and kill traps for UK homes. Effectiveness, ethics, practicality, and our top product picks for each method.",
+   "ogTitle": "Humane Mouse Traps vs Kill Traps: Which Is Better? (UK 2026)",
+   "ogDescription": "A detailed comparison of humane live-catch mouse traps and kill traps for UK homes. Effectiveness, ethics, practicality, and our top product picks for each method.",
+   "fingerprint": "f248579f40cb4fbe"
+  },
+  "/guides/landlord-pest-control-responsibilities": {
+   "estate": "uk",
+   "title": "Landlord Pest Control Responsibilities UK — Who Pays & What the Law Says (2026) | PestPro Index",
+   "description": "UK landlords' legal obligations for pest control under the Landlord and Tenant Act, HHSRS and Awaab's Law. Who is responsible — landlord or tenant — and what you must do.",
+   "ogTitle": "Landlord Pest Control Responsibilities UK — Who Pays & What the Law Says (2026)",
+   "ogDescription": "UK landlords' legal obligations for pest control under the Landlord and Tenant Act, HHSRS and Awaab's Law. Who is responsible — landlord or tenant — and what you must do.",
+   "fingerprint": "9b8f0d2a5192de91"
+  },
+  "/guides/landlord-pest-control": {
+   "estate": "uk",
+   "title": "Landlord Pest Control UK — Legal Duties, Responsibilities & Solutions | PestPro Index",
+   "description": "Complete guide to landlord pest control responsibilities in the UK. Understand your legal obligations, tenant vs landlord duties, prevention strategies, and how to find reliable pest management.",
+   "ogTitle": "Landlord Pest Control UK — Legal Duties, Responsibilities & Solutions",
+   "ogDescription": "Complete guide to landlord pest control responsibilities in the UK. Understand your legal obligations, tenant vs landlord duties, prevention strategies, and how to find reliable pest management.",
+   "fingerprint": "b588c5df884bfc9e"
+  },
+  "/guides/moving-house-pest-checklist": {
+   "estate": "uk",
+   "title": "Moving House Pest Checklist UK: What to Check Before You Move In | PestPro Index",
+   "description": "Don't inherit someone else's pest problem. Our UK moving house pest checklist covers what to inspect, treat and proof before moving day.",
+   "ogTitle": "Moving House Pest Checklist UK: What to Check Before You Move In",
+   "ogDescription": "Don't inherit someone else's pest problem. Our UK moving house pest checklist covers what to inspect, treat and proof before moving day.",
+   "fingerprint": "e8fd5f2bd97fbac3"
+  },
+  "/guides/natural-ant-repellents": {
+   "estate": "uk",
+   "title": "Natural Ant Repellents That Actually Work | UK Guide 2026 | PestPro Index",
+   "description": "Keep ants out of your home naturally with cinnamon, vinegar, peppermint oil and more. Honest UK guide on which home remedies work and which don't.",
+   "ogTitle": "Natural Ant Repellents That Actually Work | UK Guide 2026",
+   "ogDescription": "Keep ants out of your home naturally with cinnamon, vinegar, peppermint oil and more. Honest UK guide on which home remedies work and which don't.",
+   "fingerprint": "d7ae4b3dcf000348"
+  },
+  "/guides/natural-flea-remedies": {
+   "estate": "uk",
+   "title": "Natural Flea Remedies UK: Home Treatments Without Harsh Chemicals | PestPro Index",
+   "description": "Treat fleas naturally with diatomaceous earth, salt, rosemary and more. Honest guide on which natural flea remedies work in UK homes.",
+   "ogTitle": "Natural Flea Remedies UK: Home Treatments Without Harsh Chemicals",
+   "ogDescription": "Treat fleas naturally with diatomaceous earth, salt, rosemary and more. Honest guide on which natural flea remedies work in UK homes.",
+   "fingerprint": "b9caf3ecf7c9e484"
+  },
+  "/guides/natural-fox-deterrents": {
+   "estate": "uk",
+   "title": "Natural Fox Deterrents UK: Keep Foxes Out of Your Garden | PestPro Index",
+   "description": "Stop foxes digging up your garden, raiding bins and fouling your lawn. Natural and humane fox deterrents rated for UK gardens.",
+   "ogTitle": "Natural Fox Deterrents UK: Keep Foxes Out of Your Garden",
+   "ogDescription": "Stop foxes digging up your garden, raiding bins and fouling your lawn. Natural and humane fox deterrents rated for UK gardens.",
+   "fingerprint": "c04a4039fec15155"
+  },
+  "/guides/natural-moth-repellents": {
+   "estate": "uk",
+   "title": "Natural Moth Repellents UK: Protect Clothes Without Chemicals | PestPro Index",
+   "description": "Keep moths away from your wardrobe naturally. Cedar, lavender, cloves and more traditional moth deterrents rated for effectiveness.",
+   "ogTitle": "Natural Moth Repellents UK: Protect Clothes Without Chemicals",
+   "ogDescription": "Keep moths away from your wardrobe naturally. Cedar, lavender, cloves and more traditional moth deterrents rated for effectiveness.",
+   "fingerprint": "f342f910db17847b"
+  },
+  "/guides/natural-mouse-deterrents": {
+   "estate": "uk",
+   "title": "Natural Mouse Deterrents UK: Keep Mice Away Without Poison | PestPro Index",
+   "description": "Deter mice from your home without poison or kill traps. Peppermint oil, steel wool, ultrasonic devices and more natural methods.",
+   "ogTitle": "Natural Mouse Deterrents UK: Keep Mice Away Without Poison",
+   "ogDescription": "Deter mice from your home without poison or kill traps. Peppermint oil, steel wool, ultrasonic devices and more natural methods.",
+   "fingerprint": "f2e9c06efec7d2a6"
+  },
+  "/guides/natural-rat-deterrents": {
+   "estate": "uk",
+   "title": "Natural Rat Deterrents UK: Keep Rats Away Without Poison | PestPro Index",
+   "description": "Deter rats from your garden and home naturally. Peppermint oil, ammonia, chilli and more natural methods — honest effectiveness ratings.",
+   "ogTitle": "Natural Rat Deterrents UK: Keep Rats Away Without Poison",
+   "ogDescription": "Deter rats from your garden and home naturally. Peppermint oil, ammonia, chilli and more natural methods — honest effectiveness ratings.",
+   "fingerprint": "0adc32b924bcd3a9"
+  },
+  "/guides/natural-spider-repellents": {
+   "estate": "uk",
+   "title": "Natural Spider Repellents UK: Conkers, Peppermint & More | PestPro Index",
+   "description": "Keep spiders out of your house naturally. Do conkers really work? We rate every natural spider repellent from peppermint oil to citrus peels.",
+   "ogTitle": "Natural Spider Repellents UK: Conkers, Peppermint & More",
+   "ogDescription": "Keep spiders out of your house naturally. Do conkers really work? We rate every natural spider repellent from peppermint oil to citrus peels.",
+   "fingerprint": "ff3ae15250f2d572"
+  },
+  "/guides/natural-wasp-deterrents": {
+   "estate": "uk",
+   "title": "Natural Wasp Deterrents UK: Keep Wasps Away From Your Garden | PestPro Index",
+   "description": "Enjoy your garden without wasps. Natural deterrents including fake nests, peppermint spray, clove oil and more. Rated for effectiveness.",
+   "ogTitle": "Natural Wasp Deterrents UK: Keep Wasps Away From Your Garden",
+   "ogDescription": "Enjoy your garden without wasps. Natural deterrents including fake nests, peppermint spray, clove oil and more. Rated for effectiveness.",
+   "fingerprint": "ed7b8b42ec66888f"
+  },
+  "/guides/office-pest-control": {
+   "estate": "uk",
+   "title": "Office Pest Control UK | Prevention, Compliance & Expert Solutions 2026 | PestPro Index",
+   "description": "Complete guide to pest control for UK offices and commercial buildings. Legal obligations for employers, common office pests, prevention strategies, cost-effective solutions, and finding accredited providers.",
+   "ogTitle": "Office Pest Control UK | Prevention, Compliance & Expert Solutions 2026",
+   "ogDescription": "Complete guide to pest control for UK offices and commercial buildings. Legal obligations for employers, common office pests, prevention strategies, cost-effective solutions, and finding accredited providers.",
+   "fingerprint": "df3f2fc873d5d54a"
+  },
+  "/guides/pest-control-costs": {
+   "estate": "uk",
+   "title": "How Much Does Pest Control Cost in the UK? Complete Price Guide (2026) | PestPro Index",
+   "description": "A comprehensive breakdown of pest control costs across the UK in 2026. Rats, mice, wasps, bed bugs, cockroaches and more — typical prices, what affects cost, and how to get the best value.",
+   "ogTitle": "How Much Does Pest Control Cost in the UK? Complete Price Guide (2026)",
+   "ogDescription": "A comprehensive breakdown of pest control costs across the UK in 2026. Rats, mice, wasps, bed bugs, cockroaches and more — typical prices, what affects cost, and how to get the best value.",
+   "fingerprint": "755b539d9dc335d0"
+  },
+  "/guides/pigeon-control": {
+   "estate": "uk",
+   "title": "Pigeon Control: Complete UK Guide | PestPro Index",
+   "description": "Expert guide to pigeon deterrence and control in the UK. Learn about pigeon problems, health risks, DIY deterrent methods, bird-proofing, legal considerations, and when to call a professional.",
+   "ogTitle": "Pigeon Control: Complete UK Guide",
+   "ogDescription": "Expert guide to pigeon deterrence and control in the UK. Learn about pigeon problems, health risks, DIY deterrent methods, bird-proofing, legal considerations, and when to call a professional.",
+   "fingerprint": "a08583be1edcc1cf"
+  },
+  "/guides/plants-that-repel-pests": {
+   "estate": "uk",
+   "title": "Plants That Repel Pests UK: Grow a Natural Pest-Free Garden | PestPro Index",
+   "description": "Plant lavender, mint, citronella and more to naturally deter pests from your garden and home. Complete UK planting guide for pest control.",
+   "ogTitle": "Plants That Repel Pests UK: Grow a Natural Pest-Free Garden",
+   "ogDescription": "Plant lavender, mint, citronella and more to naturally deter pests from your garden and home. Complete UK planting guide for pest control.",
+   "fingerprint": "67ed54bbf96f7dab"
+  },
+  "/guides/professional-pest-control-vs-diy": {
+   "estate": "uk",
+   "title": "Professional Pest Control vs DIY: Which Is Worth It? (UK 2026) | PestPro Index",
+   "description": "Should you hire a professional pest controller or tackle the problem yourself? A detailed UK comparison covering cost, effectiveness, safety, and when to call in the experts.",
+   "ogTitle": "Professional Pest Control vs DIY: Which Is Worth It? (UK 2026)",
+   "ogDescription": "Should you hire a professional pest controller or tackle the problem yourself? A detailed UK comparison covering cost, effectiveness, safety, and when to call in the experts.",
+   "fingerprint": "d3ffd6b2d62a3270"
+  },
+  "/guides/rat-poison-vs-rat-traps": {
+   "estate": "uk",
+   "title": "Rat Poison vs Rat Traps: Which Is Better? (UK Guide 2026) | PestPro Index",
+   "description": "An honest comparison of rat poison and rat traps for UK homes. Pros, cons, safety, effectiveness, legal considerations, and our product picks for each method.",
+   "ogTitle": "Rat Poison vs Rat Traps: Which Is Better? (UK Guide 2026)",
+   "ogDescription": "An honest comparison of rat poison and rat traps for UK homes. Pros, cons, safety, effectiveness, legal considerations, and our product picks for each method.",
+   "fingerprint": "49495e252d2f7bcf"
+  },
+  "/guides/restaurant-pest-control": {
+   "estate": "uk",
+   "title": "Restaurant Pest Control UK | Complete Compliance Guide 2026 | PestPro Index",
+   "description": "Essential guide to pest control for UK restaurants, cafés and food businesses. EHO inspections, HACCP compliance, legal obligations, and how to protect your food hygiene rating.",
+   "ogTitle": "Restaurant Pest Control UK | Complete Compliance Guide 2026",
+   "ogDescription": "Essential guide to pest control for UK restaurants, cafés and food businesses. EHO inspections, HACCP compliance, legal obligations, and how to protect your food hygiene rating.",
+   "fingerprint": "1bfd65df8b72699f"
+  },
+  "/guides/spring-pest-prevention": {
+   "estate": "uk",
+   "title": "Spring Pest Prevention UK 2026: Get Ahead Before Pests Arrive | PestPro Index",
+   "description": "Spring is when ants, wasps, moths and flies emerge. Our UK guide covers what to do now to prevent infestations this year.",
+   "ogTitle": "Spring Pest Prevention UK 2026: Get Ahead Before Pests Arrive",
+   "ogDescription": "Spring is when ants, wasps, moths and flies emerge. Our UK guide covers what to do now to prevent infestations this year.",
+   "fingerprint": "f0cf95c3e0fec22f"
+  },
+  "/guides/student-house-pest-guide": {
+   "estate": "uk",
+   "title": "Student House Pest Guide UK: Dealing with Mice, Bugs & Landlord Responsibilities | PestPro Index",
+   "description": "Found pests in your student house? Know your rights, what to buy and when your landlord must act. Essential UK guide for students.",
+   "ogTitle": "Student House Pest Guide UK: Dealing with Mice, Bugs & Landlord Responsibilities",
+   "ogDescription": "Found pests in your student house? Know your rights, what to buy and when your landlord must act. Essential UK guide for students.",
+   "fingerprint": "b41340288dc14159"
+  },
+  "/guides/ultrasonic-pest-repellers-do-they-work": {
+   "estate": "uk",
+   "title": "Ultrasonic Pest Repellers: Do They Actually Work? (UK 2026) | PestPro Index",
+   "description": "An evidence-based review of ultrasonic pest repellers. We examine the science, test results, advertising claims, and whether these devices are worth buying for UK homes.",
+   "ogTitle": "Ultrasonic Pest Repellers: Do They Actually Work? (UK 2026)",
+   "ogDescription": "An evidence-based review of ultrasonic pest repellers. We examine the science, advertising claims, and whether these devices are worth buying for UK homes.",
+   "fingerprint": "3f31a2215931ce2a"
+  },
+  "/guides/warehouse-pest-management": {
+   "estate": "uk",
+   "title": "Warehouse Pest Management UK | BRC Compliance Guide 2026 | PestPro Index",
+   "description": "Essential guide to pest management for UK warehouses and distribution centres. BRC compliance, stock protection, monitoring systems, IPM strategies, and audit preparation.",
+   "ogTitle": "Warehouse Pest Management UK | BRC Compliance Guide 2026",
+   "ogDescription": "Essential guide to pest management for UK warehouses and distribution centres. BRC compliance, stock protection, monitoring systems, IPM strategies, and audit preparation.",
+   "fingerprint": "0656d22462f97910"
+  },
+  "/guides/wasp-nest-removal": {
+   "estate": "uk",
+   "title": "Wasp Nest Removal: The Complete UK Guide (2026) | PestPro Index",
+   "description": "Everything you need to know about wasp nests in the UK. How to identify them, whether to remove them yourself or call a professional, costs, and the best wasp control products.",
+   "ogTitle": "Wasp Nest Removal: The Complete UK Guide (2026)",
+   "ogDescription": "Everything you need to know about wasp nests in the UK. How to identify them, whether to remove them yourself or call a professional, costs, and the best wasp control products.",
+   "fingerprint": "3c82ff337c6bd30a"
+  },
+  "/guides/wasp-season-preparation": {
+   "estate": "uk",
+   "title": "Wasp Season UK 2026: When It Starts & How to Prepare | PestPro Index",
+   "description": "Wasp season in the UK runs April to October. Learn when to act, what to buy and how to prevent nests before they become a problem.",
+   "ogTitle": "Wasp Season UK 2026: When It Starts & How to Prepare",
+   "ogDescription": "Wasp season in the UK runs April to October. Learn when to act, what to buy and how to prevent nests before they become a problem.",
+   "fingerprint": "443fd3a950585e98"
+  },
+  "/guides/woodworm-treatment": {
+   "estate": "uk",
+   "title": "Woodworm Treatment UK — Identification, Causes & How to Treat | PestPro Index",
+   "description": "Complete guide to woodworm treatment in the UK. Learn how to identify woodworm, understand the causes, DIY and professional treatment options, and how to protect your property.",
+   "ogTitle": "Woodworm Treatment UK — Identification, Causes & How to Treat",
+   "ogDescription": "Complete guide to woodworm treatment in the UK. Learn how to identify woodworm, understand the causes, DIY and professional treatment options, and how to protect your property.",
+   "fingerprint": "462537b5f2e74d61"
+  },
+  "/pest-control": {
+   "estate": "uk",
+   "title": "Pest Control by London Borough | PestPro Index",
+   "description": "Find pest control providers across all 33 London boroughs. Compare 390 residential and 241 commercial providers. No lead fees, no commissions.",
+   "ogTitle": "Pest Control by London Borough",
+   "ogDescription": "Find pest control providers across all 33 London boroughs. Compare 390 residential and 241 commercial providers. No lead fees, no commissions.",
+   "fingerprint": "b6004c08eeb513e0"
+  },
+  "/pest-control/east-midlands": {
+   "estate": "uk",
+   "title": "Pest Control in the East Midlands | Nottingham, Leicester & Surrounding Areas | PestPro Index",
+   "description": "Compare 221 pest control and pest removal providers across the East Midlands. Covering Nottingham and Leicester with 221 providers. No lead fees, no commissions.",
+   "ogTitle": "Pest Control in the East Midlands | Nottingham, Leicester & Surrounding Areas | PestPro Index",
+   "ogDescription": "Compare 221 pest control and pest removal providers across the East Midlands. Covering Nottingham and Leicester with 221 providers. No lead fees, no commissions.",
+   "fingerprint": "c5a11b8119673143"
+  },
+  "/pest-control/greater-london": {
+   "estate": "uk",
+   "title": "Pest Control in Greater London | 392 Providers | PestPro Index",
+   "description": "Compare 392 pest control and pest removal providers across Greater London. Google ratings, no lead fees, no commissions. Find pest control in your borough.",
+   "ogTitle": "Pest Control in Greater London | 392 Providers | PestPro Index",
+   "ogDescription": "Compare 392 pest control and pest removal providers across Greater London. Google ratings, no lead fees, no commissions. Find pest control in your borough.",
+   "fingerprint": "5cf30e0344ed26da"
+  },
+  "/pest-control/london": {
+   "estate": "uk",
+   "title": "Pest Control London | 390 Providers Across 33 Boroughs | PestPro Index",
+   "description": "Find pest control in London. Compare 390 residential and 241 commercial providers across all 33 boroughs. Google ratings, no lead fees, no commissions.",
+   "ogTitle": "Pest Control London | 390 Providers Across 33 Boroughs",
+   "ogDescription": "Find pest control in London. Compare 390 residential and 241 commercial providers across all 33 boroughs. Google ratings, no lead fees, no commissions.",
+   "fingerprint": "95c523880face369"
+  },
+  "/pest-control/north-east": {
+   "estate": "uk",
+   "title": "Pest Control in the North East | Newcastle & Surrounding Areas | PestPro Index",
+   "description": "Compare 52 pest control and pest removal providers across the North East. Currently covering Newcastle with 52 providers. No lead fees, no commissions.",
+   "ogTitle": "Pest Control in the North East | Newcastle & Surrounding Areas | PestPro Index",
+   "ogDescription": "Compare 52 pest control and pest removal providers across the North East. Currently covering Newcastle with 52 providers. No lead fees, no commissions.",
+   "fingerprint": "f9159f6c73e79466"
+  },
+  "/pest-control/north-west": {
+   "estate": "uk",
+   "title": "Pest Control in the North West | Manchester, Liverpool & Surrounding Areas | PestPro Index",
+   "description": "Compare 203 pest control and pest removal providers across the North West. Covering Manchester and Liverpool with 203 providers. No lead fees, no commissions.",
+   "ogTitle": "Pest Control in the North West | Manchester, Liverpool & Surrounding Areas | PestPro Index",
+   "ogDescription": "Compare 203 pest control and pest removal providers across the North West. Covering Manchester and Liverpool with 203 providers. No lead fees, no commissions.",
+   "fingerprint": "5c31de0048d73288"
+  },
+  "/pest-control/northern-ireland": {
+   "estate": "uk",
+   "title": "Pest Control in Northern Ireland | Belfast & Surrounding Areas | PestPro Index",
+   "description": "Compare 23 pest control and pest removal providers across Northern Ireland. Currently covering Belfast with 23 providers. No lead fees, no commissions.",
+   "ogTitle": "Pest Control in Northern Ireland | Belfast & Surrounding Areas | PestPro Index",
+   "ogDescription": "Compare 23 pest control and pest removal providers across Northern Ireland. Currently covering Belfast with 23 providers. No lead fees, no commissions.",
+   "fingerprint": "552aa59fca4d6abf"
+  },
+  "/pest-control/regions": {
+   "estate": "uk",
+   "title": "UK Pest Control Directory by Region | PestPro Index",
+   "description": "Browse pest control providers across all UK regions. Currently covering Greater London and West Midlands with more regions launching soon. No lead fees, no commissions.",
+   "ogTitle": "UK Pest Control Directory by Region | PestPro Index",
+   "ogDescription": "Browse pest control providers across all UK regions. Currently covering Greater London and West Midlands with more regions launching soon. No lead fees, no commissions.",
+   "fingerprint": "8084ad4505fef4a7"
+  },
+  "/pest-control/scotland": {
+   "estate": "uk",
+   "title": "Pest Control in Scotland | Glasgow, Edinburgh & Surrounding Areas | PestPro Index",
+   "description": "Compare pest control and pest removal providers across Scotland. Covering Glasgow and Edinburgh with 100 providers. No lead fees, no commissions.",
+   "ogTitle": "Pest Control in Scotland | Glasgow, Edinburgh & Surrounding Areas | PestPro Index",
+   "ogDescription": "Compare pest control and pest removal providers across Scotland. Covering Glasgow and Edinburgh with 100 providers. No lead fees, no commissions.",
+   "fingerprint": "cf282488d34aae0d"
+  },
+  "/pest-control/south-east": {
+   "estate": "uk",
+   "title": "Pest Control in the South East | Brighton, Hampshire & Surrounding Areas | PestPro Index",
+   "description": "Compare 172 pest control and pest removal providers across the South East. Covering Brighton and Hampshire with 172 providers. No lead fees, no commissions.",
+   "ogTitle": "Pest Control in the South East | Brighton, Hampshire & Surrounding Areas | PestPro Index",
+   "ogDescription": "Compare 172 pest control and pest removal providers across the South East. Covering Brighton and Hampshire with 172 providers. No lead fees, no commissions.",
+   "fingerprint": "9ec57836810fdf1b"
+  },
+  "/pest-control/south-west": {
+   "estate": "uk",
+   "title": "Pest Control in the South West | 43 Providers | PestPro Index",
+   "description": "Compare 43 pest control providers across Bristol, Bath, and the South West. Google ratings, no lead fees, no commissions. Find pest control near you.",
+   "ogTitle": "Pest Control in the South West | 43 Providers | PestPro Index",
+   "ogDescription": "Compare 43 pest control providers across Bristol, Bath, and the South West. Google ratings, no lead fees, no commissions. Find pest control near you.",
+   "fingerprint": "2bc349b3a08dfdb7"
+  },
+  "/pest-control/wales": {
+   "estate": "uk",
+   "title": "Pest Control in Wales | Cardiff & Surrounding Areas | PestPro Index",
+   "description": "Compare 34 pest control and pest removal providers across Wales. Currently covering Cardiff with 34 providers. No lead fees, no commissions.",
+   "ogTitle": "Pest Control in Wales | Cardiff & Surrounding Areas | PestPro Index",
+   "ogDescription": "Compare 34 pest control and pest removal providers across Wales. Currently covering Cardiff with 34 providers. No lead fees, no commissions.",
+   "fingerprint": "e781e614d121b4e2"
+  },
+  "/pest-control/west-midlands": {
+   "estate": "uk",
+   "title": "Pest Control in the West Midlands | Birmingham, Coventry & Surrounding Areas | PestPro Index",
+   "description": "Compare pest control and pest removal providers across the West Midlands. Currently covering Birmingham and Coventry with 54 providers. No lead fees, no commissions.",
+   "ogTitle": "Pest Control in the West Midlands | Birmingham, Coventry & Surrounding Areas | PestPro Index",
+   "ogDescription": "Compare pest control and pest removal providers across the West Midlands. Currently covering Birmingham and Coventry with 54 providers. No lead fees, no commissions.",
+   "fingerprint": "15b8fdf3423b07d8"
+  },
+  "/pest-control/yorkshire-and-the-humber": {
+   "estate": "uk",
+   "title": "Pest Control in Yorkshire & the Humber | Leeds & Surrounding Areas | PestPro Index",
+   "description": "Compare 208 pest control and pest removal providers across Yorkshire. Currently covering Leeds with 208 providers. No lead fees, no commissions.",
+   "ogTitle": "Pest Control in Yorkshire & the Humber | Leeds & Surrounding Areas | PestPro Index",
+   "ogDescription": "Compare 208 pest control and pest removal providers across Yorkshire. Currently covering Leeds with 208 providers. No lead fees, no commissions.",
+   "fingerprint": "907a11d45eba6c4a"
+  },
+  "/pest-library": {
+   "estate": "uk",
+   "title": "Pest Library — UK Pest Identification & Treatment Guides | PestPro Index",
+   "description": "Browse our comprehensive pest library. Identification guides, treatment options, costs and prevention tips for mice, rats, bed bugs, wasps, ants, cockroaches and more.",
+   "ogTitle": "Pest Library — UK Pest Identification & Treatment Guides",
+   "ogDescription": "Browse our comprehensive pest library. Identification guides, treatment options, costs and prevention tips for common UK pests.",
+   "fingerprint": "b15dad8383c3f4d8"
+  },
+  "/pest/ants": {
+   "estate": "uk",
+   "title": "Ant Pest Control UK | Treatment, Costs & Removal | PestPro Index",
+   "description": "UK ant pest control guide covering the most common species, signs of infestation, removal costs from £60–£120, and effective treatment and prevention advice.",
+   "ogTitle": "Ant Pest Control UK | Treatment, Costs & Removal",
+   "ogDescription": "UK ant pest control guide covering the most common species, signs of infestation, removal costs from £60–£120, and effective treatment and prevention advice.",
+   "fingerprint": "065199502b51f87d"
+  },
+  "/pest/bed-bugs": {
+   "estate": "uk",
+   "title": "Bed Bug Pest Control UK | Treatment, Costs & Removal | PestPro Index",
+   "description": "Complete UK guide to bed bug control. Identify bed bug infestations, understand treatment options, and find professional removal from £150–£300 per treatment.",
+   "ogTitle": "Bed Bug Pest Control UK | Treatment, Costs & Removal",
+   "ogDescription": "Complete UK guide to bed bug control. Identify bed bug infestations, understand treatment options, and find professional removal from £150–£300 per treatment.",
+   "fingerprint": "402d820536d23242"
+  },
+  "/pest/cockroaches": {
+   "estate": "uk",
+   "title": "Cockroach Pest Control UK | Treatment, Costs & Removal | PestPro Index",
+   "description": "Professional cockroach control for UK homes and businesses. Identify infestations, understand health risks, and find treatment from £100–£250 with BPCA experts.",
+   "ogTitle": "Cockroach Pest Control UK | Treatment, Costs & Removal",
+   "ogDescription": "Professional cockroach control for UK homes and businesses. Identify infestations, understand health risks, and find treatment from £100–£250 with BPCA experts.",
+   "fingerprint": "151ad183991b2326"
+  },
+  "/pest/fleas": {
+   "estate": "uk",
+   "title": "Flea Pest Control UK | Treatment, Costs & Removal | PestPro Index",
+   "description": "Expert UK flea control advice for homes with pets. Identify flea infestations, treatment costs from £80–£150, and find professional pest controllers near you.",
+   "ogTitle": "Flea Pest Control UK | Treatment, Costs & Removal",
+   "ogDescription": "Expert UK flea control advice for homes with pets. Identify flea infestations, treatment costs from £80–£150, and find professional pest controllers near you.",
+   "fingerprint": "1678743c9d4d51c0"
+  },
+  "/pest/mice": {
+   "estate": "uk",
+   "title": "Mice Pest Control UK | Treatment, Costs & Removal | PestPro Index",
+   "description": "Expert mice pest control advice for UK homes and businesses. Learn the signs of a mouse infestation, removal costs from £80–£150, and when to call a professional.",
+   "ogTitle": "Mice Pest Control UK | Treatment, Costs & Removal",
+   "ogDescription": "Expert mice pest control advice for UK homes and businesses. Learn the signs of a mouse infestation, removal costs from £80–£150, and when to call a professional.",
+   "fingerprint": "2bf511eeab918446"
+  },
+  "/pest/moths": {
+   "estate": "uk",
+   "title": "Moth Pest Control UK | Treatment, Costs & Removal | PestPro Index",
+   "description": "UK moth pest control guide for clothes moths and pantry moths. Learn signs of infestation, treatment costs from £80–£200, and how to protect your home.",
+   "ogTitle": "Moth Pest Control UK | Treatment, Costs & Removal",
+   "ogDescription": "UK moth pest control guide for clothes moths and pantry moths. Learn signs of infestation, treatment costs from £80–£200, and how to protect your home.",
+   "fingerprint": "7ae9b2968ca67836"
+  },
+  "/pest/rats": {
+   "estate": "uk",
+   "title": "Rat Pest Control UK | Treatment, Costs & Removal | PestPro Index",
+   "description": "Professional rat control advice for UK properties. Identify signs of a rat infestation, typical removal costs of £100–£200, and find BPCA-certified pest controllers.",
+   "ogTitle": "Rat Pest Control UK | Treatment, Costs & Removal",
+   "ogDescription": "Professional rat control advice for UK properties. Identify signs of a rat infestation, typical removal costs of £100–£200, and find BPCA-certified pest controllers.",
+   "fingerprint": "999769ab160f27a3"
+  },
+  "/pest/silverfish": {
+   "estate": "uk",
+   "title": "Silverfish Pest Control UK | Treatment, Costs & Removal | PestPro Index",
+   "description": "UK silverfish control guide with treatment costs from £60–£120. Learn how to identify silverfish, reduce humidity, and eliminate infestations professionally.",
+   "ogTitle": "Silverfish Pest Control UK | Treatment, Costs & Removal",
+   "ogDescription": "UK silverfish control guide with treatment costs from £60–£120. Learn how to identify silverfish, reduce humidity, and eliminate infestations professionally.",
+   "fingerprint": "8a377b4b1880b6f6"
+  },
+  "/pest/spiders": {
+   "estate": "uk",
+   "title": "Spiders in UK Homes | Species, Autumn Season & Control | PestPro Index",
+   "description": "UK house spider guide. Why spiders come indoors in September, how to identify the noble false widow, and how to keep spiders out without chemicals.",
+   "ogTitle": "Spiders in UK Homes | Species, Autumn Season & Control",
+   "ogDescription": "UK house spider guide. Why spiders come indoors in September, how to identify the noble false widow, and how to keep spiders out without chemicals.",
+   "fingerprint": "d1db30f6d0ebb5ed"
+  },
+  "/pest/squirrels": {
+   "estate": "uk",
+   "title": "Squirrel Pest Control UK | Treatment, Costs & Removal | PestPro Index",
+   "description": "UK squirrel pest control guide covering grey squirrel removal, legal requirements, costs from £100–£250, and how to protect your loft and property.",
+   "ogTitle": "Squirrel Pest Control UK | Treatment, Costs & Removal",
+   "ogDescription": "UK squirrel pest control guide covering grey squirrel removal, legal requirements, costs from £100–£250, and how to protect your loft and property.",
+   "fingerprint": "a156634ec6c38d1f"
+  },
+  "/pest/wasps": {
+   "estate": "uk",
+   "title": "Wasp Nest Removal UK | Treatment, Costs & Pest Control | PestPro Index",
+   "description": "UK wasp nest removal guide with costs from £50–£100. Learn how to identify wasp nests, understand the risks, and find qualified pest controllers near you.",
+   "ogTitle": "Wasp Nest Removal UK | Treatment, Costs & Pest Control",
+   "ogDescription": "UK wasp nest removal guide with costs from £50–£100. Learn how to identify wasp nests, understand the risks, and find qualified pest controllers near you.",
+   "fingerprint": "9c4a06fa94ae4350"
+  },
+  "/privacy": {
+   "estate": "uk",
+   "title": "Privacy Notice | PestPro Index",
+   "description": "How PestPro Index collects, uses and protects personal data. Operated by ENA Enterprises Ltd, ICO registration ZC164333.",
+   "ogTitle": "Privacy Notice",
+   "ogDescription": "How PestPro Index collects, uses and protects personal data. Operated by ENA Enterprises Ltd, ICO registration ZC164333.",
+   "fingerprint": "b6c73f2561f3e626"
+  },
+  "/products": {
+   "estate": "uk",
+   "title": "Pest Control Products for Your Home | PestPro Index",
+   "description": "Home pest control products organised by pest type, with a direct link to each item on Amazon UK. Chosen for UK households tackling pests themselves.",
+   "ogTitle": "Pest Control Products for Your Home | PestPro Index",
+   "ogDescription": "Home pest control products organised by pest type, with a direct link to each item on Amazon UK. Chosen for UK households tackling pests themselves.",
+   "fingerprint": "a82ebfc8b3f5b0ce"
+  },
+  "/professionals/submit": {
+   "estate": "uk",
+   "title": "For Pest Control Professionals | PestPro Index",
+   "description": "Join PestPro Index. No lead fees, no commissions. Get listed, get found, grow your pest control business.",
+   "ogTitle": "For Pest Control Professionals",
+   "ogDescription": "Join PestPro Index. No lead fees, no commissions. Get listed, get found, grow your pest control business.",
+   "fingerprint": "a088269b42cb27b4"
+  },
+  "/resources": {
+   "estate": "uk",
+   "title": "Pest Control Resources & Guides | PestPro Index",
+   "description": "Curated pest control publications, regulatory guidance, compliance resources, and reference material for professionals and commercial businesses across the UK.",
+   "ogTitle": "Pest Control Resources & Guides | PestPro Index",
+   "ogDescription": "Curated pest control publications, regulatory guidance, compliance resources, and reference material for professionals and commercial businesses across the UK.",
+   "fingerprint": "760f1809d3170c71"
+  },
+  "/us": {
+   "estate": "us",
+   "title": "US Pest Guides: 60 Pages, Sourced and Cited | PestPro Index",
+   "description": "Sixty US pest pages, grouped by the problem you have rather than by insect order. Every claim traces to a named extension or public health source.",
+   "ogTitle": "US Pest Guides: 60 Pages, Sourced and Cited",
+   "ogDescription": "Sixty US pest pages, grouped by the problem you have rather than by insect order. Every claim traces to a named extension or public health source.",
+   "fingerprint": "76feeff7c4aba2ed"
+  },
+  "/us/ants": {
+   "estate": "us",
+   "title": "Household Ants: Which Bait Reaches the Nest | PestPro Index",
+   "description": "Odorous house, pavement, carpenter and pharaoh ants, kept separate. Which bait reaches each species' nest, from five extension publications, 1996 to 2024.",
+   "ogTitle": "Household Ants: Which Bait Reaches the Nest",
+   "ogDescription": "Odorous house, pavement, carpenter and pharaoh ants, kept separate. Which bait reaches each species' nest, from five extension publications, 1996 to 2024.",
+   "fingerprint": "5fc08ec4c69e6ad8"
+  },
+  "/us/are-joro-spiders-dangerous": {
+   "estate": "us",
+   "title": "Are Joro Spiders Dangerous? What Research Says | PestPro Index",
+   "description": "Joro spider bites, venom and the risk to pets, from university research. What has been established, what is still uncertain, and the one honest caveat that remains.",
+   "ogTitle": "Are Joro Spiders Dangerous? What Research Says",
+   "ogDescription": "Joro spider bites, venom and the risk to pets, from university research. What has been established, what is still uncertain, and the one honest caveat that remains.",
+   "fingerprint": "eafc2c52cb1a5aaa"
+  },
+  "/us/arizona-bark-scorpions": {
+   "estate": "us",
+   "title": "Arizona Bark Scorpions: ID and the Sting | PestPro Index",
+   "description": "The only scorpion of medical concern in the US, per the University of Arizona. How to tell it from harmless desert species, and what a sting actually does.",
+   "ogTitle": "Arizona Bark Scorpions: ID and the Sting",
+   "ogDescription": "The only scorpion of medical concern in the US, per the University of Arizona. How to tell it from harmless desert species, and what a sting actually does.",
+   "fingerprint": "d87d2d9e662694da"
+  },
+  "/us/armadillos": {
+   "estate": "us",
+   "title": "Armadillos: Lawn Holes, Burrows and What Works | PestPro Index",
+   "description": "How to recognize armadillo digging, why baiting a trap fails, the fence spec extension services agree on, and what the research says about Hansen disease risk.",
+   "ogTitle": "Armadillos: Lawn Holes, Burrows and What Works",
+   "ogDescription": "How to recognize armadillo digging, why baiting a trap fails, the fence spec extension services agree on, and what the research says about Hansen disease risk.",
+   "fingerprint": "8920a18937fc6540"
+  },
+  "/us/asian-lady-beetles": {
+   "estate": "us",
+   "title": "Asian Lady Beetles vs Ladybugs: What to Check | PestPro Index",
+   "description": "The multicolored Asian lady beetle massing on siding in fall is not the native ladybug. The M-shaped mark, the staining fluid, the biting, and the allergy link.",
+   "ogTitle": "Asian Lady Beetles vs Ladybugs: What to Check",
+   "ogDescription": "The multicolored Asian lady beetle massing on siding in fall is not the native ladybug. The M-shaped mark, the staining fluid, the biting, and the allergy link.",
+   "fingerprint": "d83de720067848e5"
+  },
+  "/us/bed-bugs": {
+   "estate": "us",
+   "title": "Bed Bugs: Identification and What Kills Them | PestPro Index",
+   "description": "How to identify bed bugs, where they hide, and the detection rates and kill temperatures nine EPA, Penn State and Purdue publications measure. Disease is out of scope.",
+   "ogTitle": "Bed Bugs: Identification and What Kills Them",
+   "ogDescription": "How to identify bed bugs, where they hide, and the detection rates and kill temperatures nine EPA, Penn State and Purdue publications measure. Disease is out of scope.",
+   "fingerprint": "15cfd1c614e248d3"
+  },
+  "/us/best-armadillo-traps": {
+   "estate": "us",
+   "title": "Armadillo Traps: What a Field Study Found | PestPro Index",
+   "description": "A University of Georgia study tested 11 baits and a lure and found none improved capture — placement, wings and trap size did. The spec, and the traps that meet it.",
+   "ogTitle": "Armadillo Traps: What a Field Study Found",
+   "ogDescription": "A University of Georgia study tested 11 baits and a lure and found none improved capture — placement, wings and trap size did. The spec, and the traps that meet it.",
+   "fingerprint": "3bac504f4511d5cd"
+  },
+  "/us/best-gopher-traps": {
+   "estate": "us",
+   "title": "Gopher Traps: What the Evidence Supports | PestPro Index",
+   "description": "Extension sources agree on two trap mechanisms and where to set them. One extension trial compared three models — what it measured, and what to buy.",
+   "ogTitle": "Gopher Traps: What the Evidence Supports",
+   "ogDescription": "Extension sources agree on two trap mechanisms and where to set them. One extension trial compared three models — what it measured, and what to buy.",
+   "fingerprint": "f520d6a0ce88fa58"
+  },
+  "/us/best-raccoon-traps": {
+   "estate": "us",
+   "title": "Raccoon Cage Traps: Which Meet the Minimum Size | PestPro Index",
+   "description": "Iowa State Extension publishes a minimum cage size for raccoons. Six listed cage traps measured against that one figure, and nothing else claimed about them.",
+   "ogTitle": "Raccoon Cage Traps: Which Meet the Minimum Size",
+   "ogDescription": "Iowa State Extension publishes a minimum cage size for raccoons. Six listed cage traps measured against that one figure, and nothing else claimed about them.",
+   "fingerprint": "50977f51c221a66a"
+  },
+  "/us/best-stink-bug-traps": {
+   "estate": "us",
+   "title": "Stink Bug Traps: What the Research Found | PestPro Index",
+   "description": "The only controlled test found compared a homemade light-and-water trap to store-bought models. What it measured, how to build the trap, and commercial options.",
+   "ogTitle": "Stink Bug Traps: What the Research Found",
+   "ogDescription": "The only controlled test found compared a homemade light-and-water trap to store-bought models. What it measured, how to build the trap, and commercial options.",
+   "fingerprint": "246334b324c726af"
+  },
+  "/us/black-widow-spiders": {
+   "estate": "us",
+   "title": "Black Widow Spiders: Where Sources Disagree | PestPro Index",
+   "description": "Nine points where extension services disagree — whether the hourglass is reliable, how long a bite lasts, whether insecticides help. Every position, with its source.",
+   "ogTitle": "Black Widow Spiders: Where Sources Disagree",
+   "ogDescription": "Nine points where extension services disagree — whether the hourglass is reliable, how long a bite lasts, whether insecticides help. Every position, with its source.",
+   "fingerprint": "395e08e1cf25da92"
+  },
+  "/us/boxelder-bugs": {
+   "estate": "us",
+   "title": "Boxelder Bugs: ID, the Tree Link, and Control | PestPro Index",
+   "description": "How to identify a boxelder bug, why one tree species explains an infestation, whether they bite or stain, and what extension services say about keeping them out.",
+   "ogTitle": "Boxelder Bugs: ID, the Tree Link, and Control",
+   "ogDescription": "How to identify a boxelder bug, why one tree species explains an infestation, whether they bite or stain, and what extension services say about keeping them out.",
+   "fingerprint": "8235e4dadd4ea4f9"
+  },
+  "/us/brown-recluse-spiders": {
+   "estate": "us",
+   "title": "Brown Recluse Spiders: Where Sources Disagree | PestPro Index",
+   "description": "Extension services disagree about the violin marking, how far the range runs, and whether insecticides help. Every position is set out, not smoothed over.",
+   "ogTitle": "Brown Recluse Spiders: Where Sources Disagree",
+   "ogDescription": "Extension services disagree about the violin marking, how far the range runs, and whether insecticides help. Every position is set out, not smoothed over.",
+   "fingerprint": "e49394429835d3a5"
+  },
+  "/us/california-trapping-rules": {
+   "estate": "us",
+   "title": "California Trapping Rules: Title 14 Section 465.5 | PestPro Index",
+   "description": "The text of California Code of Regulations Title 14 Section 465.5 and the four Fish and Game Code sections it depends on, quoted by subsection. Not legal advice.",
+   "ogTitle": "California Trapping Rules: Title 14 Section 465.5",
+   "ogDescription": "The text of California Code of Regulations Title 14 Section 465.5 and the four Fish and Game Code sections it depends on, quoted by subsection. Not legal advice.",
+   "fingerprint": "723f1530b08348f1"
+  },
+  "/us/camel-crickets": {
+   "estate": "us",
+   "title": "Camel Crickets: The Chirp Test, and the Damp Basement | PestPro Index",
+   "description": "Camel crickets do not chirp, so a chirping basement is a different insect. Identification, why they come in, and where four extension sources disagree.",
+   "ogTitle": "Camel Crickets: The Chirp Test, and the Damp Basement",
+   "ogDescription": "Camel crickets do not chirp, so a chirping basement is a different insect. Identification, why they come in, and where four extension sources disagree.",
+   "fingerprint": "6d212f8c7c916e86"
+  },
+  "/us/carpenter-bees": {
+   "estate": "us",
+   "title": "Carpenter Bees: Timber Damage, and Why the Sources Say Wait | PestPro Index",
+   "description": "Identification against bumblebees, the boring behavior that causes the damage, repair specs, and why several extension sources caution against killing them.",
+   "ogTitle": "Carpenter Bees: Timber Damage, and Why the Sources Say Wait",
+   "ogDescription": "Identification against bumblebees, the boring behavior that causes the damage, repair specs, and why several extension sources caution against killing them.",
+   "fingerprint": "0976f808525011a4"
+  },
+  "/us/carpet-beetles": {
+   "estate": "us",
+   "title": "Carpet Beetles: What Stops the Fabric Damage | PestPro Index",
+   "description": "Fourteen extension publications on carpet beetles: why cleaning and exclusion come first, four freezing figures that disagree, and the narrow set of products supported.",
+   "ogTitle": "Carpet Beetles: What Stops the Fabric Damage",
+   "ogDescription": "Fourteen extension publications on carpet beetles: why cleaning and exclusion come first, four freezing figures that disagree, and the narrow set of products supported.",
+   "fingerprint": "019af872519ad90f"
+  },
+  "/us/chiggers": {
+   "estate": "us",
+   "title": "Chiggers: They Don't Burrow and Don't Drink Blood | PestPro Index",
+   "description": "Three university extension services correct the same two myths. What chiggers actually are, why the itch starts hours after the mite is gone, and what treats it.",
+   "ogTitle": "Chiggers: They Don't Burrow and Don't Drink Blood",
+   "ogDescription": "Three university extension services correct the same two myths. What chiggers actually are, why the itch starts hours after the mite is gone, and what treats it.",
+   "fingerprint": "a3525c08fce533ce"
+  },
+  "/us/chipmunks": {
+   "estate": "us",
+   "title": "Chipmunks: When Control Is Actually Warranted | PestPro Index",
+   "description": "Four of five extension sources make control conditional on numbers or burrowing against a structure. The structural case, separated from the garden nuisance case.",
+   "ogTitle": "Chipmunks: When Control Is Actually Warranted",
+   "ogDescription": "Four of five extension sources make control conditional on numbers or burrowing against a structure. The structural case, separated from the garden nuisance case.",
+   "fingerprint": "8d0cda20d3842c52"
+  },
+  "/us/choosing-a-pest-control-service": {
+   "estate": "us",
+   "title": "Choosing a Pest Control Service: Check the License | PestPro Index",
+   "description": "Illegal pest control operators are increasingly common, per University of Florida Extension. How to use Florida's free database to confirm a licensed operator.",
+   "ogTitle": "Choosing a Pest Control Service: Check the License",
+   "ogDescription": "Illegal pest control operators are increasingly common, per University of Florida Extension. How to use Florida's free database to confirm a licensed operator.",
+   "fingerprint": "6132ab0a03c754c4"
+  },
+  "/us/cluster-flies": {
+   "estate": "us",
+   "title": "Cluster Flies: What Those Slow Window Flies Are | PestPro Index",
+   "description": "Slow dark flies at an upstairs window in fall are almost certainly cluster flies — not house flies, not dirty. Why their larvae live in earthworms, and what to do.",
+   "ogTitle": "Cluster Flies: What Those Slow Window Flies Are",
+   "ogDescription": "Slow dark flies at an upstairs window in fall are almost certainly cluster flies — not house flies, not dirty. Why their larvae live in earthworms, and what to do.",
+   "fingerprint": "ee56610b6436d0d9"
+  },
+  "/us/coyotes": {
+   "estate": "us",
+   "title": "Coyotes: The Fence Spec and Who Handles Removal | PestPro Index",
+   "description": "The coyote-resistant fence spec given to the inch, the live disagreement over whether hazing works, and why removal is handed to agencies rather than a homeowner.",
+   "ogTitle": "Coyotes: The Fence Spec and Who Handles Removal",
+   "ogDescription": "The coyote-resistant fence spec given to the inch, the live disagreement over whether hazing works, and why removal is handed to agencies rather than a homeowner.",
+   "fingerprint": "00e76d691ca98fb8"
+  },
+  "/us/earwigs": {
+   "estate": "us",
+   "title": "Earwigs: Can Those Pincers Actually Hurt You? | PestPro Index",
+   "description": "Six sources answer the pincer question, and three disagree about what the pincers are for. Then the mulch and the door sill that put earwigs indoors.",
+   "ogTitle": "Earwigs: Can Those Pincers Actually Hurt You?",
+   "ogDescription": "Six sources answer the pincer question, and three disagree about what the pincers are for. Then the mulch and the door sill that put earwigs indoors.",
+   "fingerprint": "40f9ed33875be0c8"
+  },
+  "/us/fleas": {
+   "estate": "us",
+   "title": "Fleas: Species, Plague Risk, and What Treats It | PestPro Index",
+   "description": "Four extension publications, 2010 to 2026, disagree on which flea species carries plague and agree the most effective treatments are prescription-only.",
+   "ogTitle": "Fleas: Species, Plague Risk, and What Treats It",
+   "ogDescription": "Four extension publications, 2010 to 2026, disagree on which flea species carries plague and agree the most effective treatments are prescription-only.",
+   "fingerprint": "23a17f996440ba07"
+  },
+  "/us/flies": {
+   "estate": "us",
+   "title": "House Flies: What They Carry, and How | PestPro Index",
+   "description": "House flies cannot bite. Extension sources say they carry contamination from filth onto food mechanically. Four publications, 1999 to 2025, and the products that help.",
+   "ogTitle": "House Flies: What They Carry, and How",
+   "ogDescription": "House flies cannot bite. Extension sources say they carry contamination from filth onto food mechanically. Four publications, 1999 to 2025, and the products that help.",
+   "fingerprint": "40f5a7202b0c4232"
+  },
+  "/us/formosan-termites": {
+   "estate": "us",
+   "title": "Formosan Termites: Why This Isn't a DIY Job | PestPro Index",
+   "description": "University of Florida Extension says this introduced species requires professional control. How it differs from native termites, and where it has spread.",
+   "ogTitle": "Formosan Termites: Why This Isn't a DIY Job",
+   "ogDescription": "University of Florida Extension says this introduced species requires professional control. How it differs from native termites, and where it has spread.",
+   "fingerprint": "6a36802171bee174"
+  },
+  "/us/fruit-flies": {
+   "estate": "us",
+   "title": "Fruit Flies: Where They Breed, and How to Stop Them | PestPro Index",
+   "description": "Identification against drain flies and fungus gnats, breeding sites extension services name, drain treatment that actually works, and two trap designs.",
+   "ogTitle": "Fruit Flies: Where They Breed, and How to Stop Them",
+   "ogDescription": "Identification against drain flies and fungus gnats, breeding sites extension services name, drain treatment that actually works, and two trap designs.",
+   "fingerprint": "d2fbacbf3c6bae75"
+  },
+  "/us/fungus-gnats": {
+   "estate": "us",
+   "title": "Fungus Gnats: The Problem Is the Watering Can | PestPro Index",
+   "description": "The adults are the symptom and the wet soil is the cause. Six sources on drying the top inch, Bti in the soil, yellow traps, and one flat disagreement.",
+   "ogTitle": "Fungus Gnats: The Problem Is the Watering Can",
+   "ogDescription": "The adults are the symptom and the wet soil is the cause. Six sources on drying the top inch, Bti in the soil, yellow traps, and one flat disagreement.",
+   "fingerprint": "5a9b28a7edccd13d"
+  },
+  "/us/german-cockroaches": {
+   "estate": "us",
+   "title": "German Cockroaches: Why Bait Station Size Matters | PestPro Index",
+   "description": "The cockroach that lives indoors and can't survive outside. The small bait stations UF/IFAS says it needs, and four positions on treating it yourself.",
+   "ogTitle": "German Cockroaches: Why Bait Station Size Matters",
+   "ogDescription": "The cockroach that lives indoors and can't survive outside. The small bait stations UF/IFAS says it needs, and four positions on treating it yourself.",
+   "fingerprint": "3950420141742715"
+  },
+  "/us/ground-squirrels": {
+   "estate": "us",
+   "title": "Ground Squirrels: Why No Product Is Named Here | PestPro Index",
+   "description": "Extension sources name a trap spec and a fumigant homeowners can buy — but the Amazon listings checked don't evidence either. The methods, and why nothing is carded.",
+   "ogTitle": "Ground Squirrels: Why No Product Is Named Here",
+   "ogDescription": "Extension sources name a trap spec and a fumigant homeowners can buy — but the Amazon listings checked don't evidence either. The methods, and why nothing is carded.",
+   "fingerprint": "fbaab0f3a4b4142b"
+  },
+  "/us/groundhogs": {
+   "estate": "us",
+   "title": "Groundhogs: The Fence Spec, and What State Law Says | PestPro Index",
+   "description": "Three states classify the groundhog three ways, and one bans relocating a trapped one. The burrow, the structural damage, and four fence specs that disagree.",
+   "ogTitle": "Groundhogs: The Fence Spec, and What State Law Says",
+   "ogDescription": "Three states classify the groundhog three ways, and one bans relocating a trapped one. The burrow, the structural damage, and four fence specs that disagree.",
+   "fingerprint": "ae3d8f0592b5e92d"
+  },
+  "/us/house-centipedes": {
+   "estate": "us",
+   "title": "House Centipedes: Can They Bite, and Why Are They Here? | PestPro Index",
+   "description": "Eight sources on whether it can bite, and they do not agree. The part that matters more: a recurring centipede is eating something, and that is the problem.",
+   "ogTitle": "House Centipedes: Can They Bite, and Why Are They Here?",
+   "ogDescription": "Eight sources on whether it can bite, and they do not agree. The part that matters more: a recurring centipede is eating something, and that is the problem.",
+   "fingerprint": "b4c6ee952b3146cf"
+  },
+  "/us/house-mice": {
+   "estate": "us",
+   "title": "House Mice: ID, the Quarter-Inch Rule, and Traps | PestPro Index",
+   "description": "How to tell a house mouse from a deer mouse, the quarter-inch entry gap five sources name independently, and where sources disagree on glue boards.",
+   "ogTitle": "House Mice: ID, the Quarter-Inch Rule, and Traps",
+   "ogDescription": "How to tell a house mouse from a deer mouse, the quarter-inch entry gap five sources name independently, and where sources disagree on glue boards.",
+   "fingerprint": "11596b79d85f5c3f"
+  },
+  "/us/how-to-get-rid-of-stink-bugs": {
+   "estate": "us",
+   "title": "How to Get Rid of Stink Bugs: Seal, Then Remove | PestPro Index",
+   "description": "Exclusion first, then removal. Where to seal, the screen mesh size that matters, why your vacuum choice matters, and why not to spray them indoors.",
+   "ogTitle": "How to Get Rid of Stink Bugs: Seal, Then Remove",
+   "ogDescription": "Exclusion first, then removal. Where to seal, the screen mesh size that matters, why your vacuum choice matters, and why not to spray them indoors.",
+   "fingerprint": "d49a1e013a386dd5"
+  },
+  "/us/imported-fire-ants": {
+   "estate": "us",
+   "title": "Imported Fire Ants: ID and the Two-Step Method | PestPro Index",
+   "description": "A federal regulation defines which ants the name covers. Texas A&M's two-step control method, with its own rates, temperatures and timing, plus what a sting does.",
+   "ogTitle": "Imported Fire Ants: ID and the Two-Step Method",
+   "ogDescription": "A federal regulation defines which ants the name covers. Texas A&M's two-step control method, with its own rates, temperatures and timing, plus what a sting does.",
+   "fingerprint": "a1e72eca771b3819"
+  },
+  "/us/joro-spider-range": {
+   "estate": "us",
+   "title": "Joro Spider Range: Which US States Have Them | PestPro Index",
+   "description": "Which states have established Joro spider populations, which have only isolated records, how ballooning drives the spread, and how to report a sighting.",
+   "ogTitle": "Joro Spider Range: Which US States Have Them",
+   "ogDescription": "Which states have established Joro spider populations, which have only isolated records, how ballooning drives the spread, and how to report a sighting.",
+   "fingerprint": "c6fca53f8062304f"
+  },
+  "/us/joro-spider-webs": {
+   "estate": "us",
+   "title": "Joro Spider Webs: Why So Big, and Removal | PestPro Index",
+   "description": "How large a Joro spider web actually gets, where they're built, how to take one down without hurting yourself or the spider, and why not to spray it.",
+   "ogTitle": "Joro Spider Webs: Why So Big, and Removal",
+   "ogDescription": "How large a Joro spider web actually gets, where they're built, how to take one down without hurting yourself or the spider, and why not to spray it.",
+   "fingerprint": "4b04083256f15a74"
+  },
+  "/us/joro-spider": {
+   "estate": "us",
+   "title": "Joro Spider: Identification, Origin and Spread | PestPro Index",
+   "description": "What a Joro spider looks like, where Trichonephila clavata came from, how to tell it from lookalikes, and how it travels — sourced to university research.",
+   "ogTitle": "Joro Spider: Identification, Origin and Spread",
+   "ogDescription": "What a Joro spider looks like, where Trichonephila clavata came from, how to tell it from lookalikes, and how it travels — sourced to university research.",
+   "fingerprint": "901fff31212358e3"
+  },
+  "/us/millipedes": {
+   "estate": "us",
+   "title": "Millipedes in the House: Why the Invasion Ends by Itself | PestPro Index",
+   "description": "They arrive after wet weather and die within a day or two. Two sources call them harmless, a third says do not pick one up, and this page carries both.",
+   "ogTitle": "Millipedes in the House: Why the Invasion Ends by Itself",
+   "ogDescription": "They arrive after wet weather and die within a day or two. Two sources call them harmless, a third says do not pick one up, and this page carries both.",
+   "fingerprint": "d371de39c7c5811f"
+  },
+  "/us/mole-and-vole-control": {
+   "estate": "us",
+   "title": "Mole and Vole Control: Traps, Oil and Bait | PestPro Index",
+   "description": "What extension services publish on moles and voles: a countable trapping criterion, a disputed castor-oil repellent, one general-use bait, and one class you can't apply.",
+   "ogTitle": "Mole and Vole Control: Traps, Oil and Bait",
+   "ogDescription": "What extension services publish on moles and voles: a countable trapping criterion, a disputed castor-oil repellent, one general-use bait, and one class you can't apply.",
+   "fingerprint": "cc71c909f4017dcd"
+  },
+  "/us/moles-voles-gophers": {
+   "estate": "us",
+   "title": "Mole, Vole or Gopher? Tell Them Apart by the Sign | PestPro Index",
+   "description": "Three animals leave three different marks on a lawn. What extension services say about the mound, the tunnel and the damage each makes, including where they disagree.",
+   "ogTitle": "Mole, Vole or Gopher? Tell Them Apart by the Sign",
+   "ogDescription": "Three animals leave three different marks on a lawn. What extension services say about the mound, the tunnel and the damage each makes, including where they disagree.",
+   "fingerprint": "144e88eb70e43427"
+  },
+  "/us/mosquitoes": {
+   "estate": "us",
+   "title": "Mosquitoes: Standing Water, Larvicide and Yard Control | PestPro Index",
+   "description": "Breeding sites and source reduction, Bti and methoprene larvicides, adult control options, repellents, and what several sources say does not work.",
+   "ogTitle": "Mosquitoes: Standing Water, Larvicide and Yard Control",
+   "ogDescription": "Breeding sites and source reduction, Bti and methoprene larvicides, adult control options, repellents, and what several sources say does not work.",
+   "fingerprint": "ec04c2999fb962a5"
+  },
+  "/us/moths": {
+   "estate": "us",
+   "title": "Household Moths: Two Kinds, Two Different Traps | PestPro Index",
+   "description": "Fabric moths and pantry moths need different products. UC IPM states a pheromone trap for one won't attract the other — what actually works for each.",
+   "ogTitle": "Household Moths: Two Kinds, Two Different Traps",
+   "ogDescription": "Fabric moths and pantry moths need different products. UC IPM states a pheromone trap for one won't attract the other — what actually works for each.",
+   "fingerprint": "0ea55b808b07e8eb"
+  },
+  "/us/no-see-ums": {
+   "estate": "us",
+   "title": "No-See-Ums: The Fly That Beats Window Screens | PestPro Index",
+   "description": "Three extension services say ordinary window screening doesn't keep biting midges out. The mesh number that does, from the University of Arizona.",
+   "ogTitle": "No-See-Ums: The Fly That Beats Window Screens",
+   "ogDescription": "Three extension services say ordinary window screening doesn't keep biting midges out. The mesh number that does, from the University of Arizona.",
+   "fingerprint": "325602c55e366cf5"
+  },
+  "/us/opossums": {
+   "estate": "us",
+   "title": "Opossums: Why They're Under the Deck | PestPro Index",
+   "description": "The Virginia opossum doesn't dig its own burrow, which changes what works. Hardware cloth specs, how to tell its damage from a skunk's or raccoon's, and disease notes.",
+   "ogTitle": "Opossums: Why They're Under the Deck",
+   "ogDescription": "The Virginia opossum doesn't dig its own burrow, which changes what works. Hardware cloth specs, how to tell its damage from a skunk's or raccoon's, and disease notes.",
+   "fingerprint": "e351ce0624df6d2f"
+  },
+  "/us/palmetto-bugs": {
+   "estate": "us",
+   "title": "Palmetto Bugs: One Name, Several Insects | PestPro Index",
+   "description": "University of Georgia Extension calls it a catch-all term. One insect it covers is flightless and can't breed indoors — which one you have changes what to do.",
+   "ogTitle": "Palmetto Bugs: One Name, Several Insects",
+   "ogDescription": "University of Georgia Extension calls it a catch-all term. One insect it covers is flightless and can't breed indoors — which one you have changes what to do.",
+   "fingerprint": "f4083cb1b3cc2959"
+  },
+  "/us/pocket-gophers": {
+   "estate": "us",
+   "title": "Pocket Gophers: Mounds, Damage and What Works | PestPro Index",
+   "description": "How to tell a pocket gopher mound from a mole hill, what the burrow looks like, when they're active, and which control methods extension services support.",
+   "ogTitle": "Pocket Gophers: Mounds, Damage and What Works",
+   "ogDescription": "How to tell a pocket gopher mound from a mole hill, what the burrow looks like, when they're active, and which control methods extension services support.",
+   "fingerprint": "9aaa723392e24328"
+  },
+  "/us/powderpost-beetles": {
+   "estate": "us",
+   "title": "Powderpost Beetles: Is It Active, and Is It Termites? | PestPro Index",
+   "description": "Two questions decide everything: is the infestation active, and is it termites? The fresh-powder test, the stain test, and the frass that separates them.",
+   "ogTitle": "Powderpost Beetles: Is It Active, and Is It Termites?",
+   "ogDescription": "Two questions decide everything: is the infestation active, and is it termites? The fresh-powder test, the stain test, and the frass that separates them.",
+   "fingerprint": "00ffe652493aaf2f"
+  },
+  "/us/products": {
+   "estate": "us",
+   "title": "US Pest Control Products: 143 Tools, Grouped by Pest | PestPro Index",
+   "description": "Every product named across the US pest pages, grouped by the pest it is for, with a link to the page that explains why it is there. 143 distinct products across 40 pages.",
+   "ogTitle": "US Pest Control Products: 143 Tools, Grouped by Pest",
+   "ogDescription": "Every product named across the US pest pages, grouped by the pest it is for, with a link to the page that explains why it is there. 143 distinct products across 40 pages.",
+   "fingerprint": "46ab515d2789a12f"
+  },
+  "/us/raccoons": {
+   "estate": "us",
+   "title": "Raccoons: Rolled Turf, Attic Entry and Damage | PestPro Index",
+   "description": "How to tell raccoon lawn damage from other diggers, the measured mesh and chimney specs extension services give, and what agencies say about rabies and roundworm.",
+   "ogTitle": "Raccoons: Rolled Turf, Attic Entry and Damage",
+   "ogDescription": "How to tell raccoon lawn damage from other diggers, the measured mesh and chimney specs extension services give, and what agencies say about rabies and roundworm.",
+   "fingerprint": "2bdd625699b16324"
+  },
+  "/us/rats": {
+   "estate": "us",
+   "title": "Rats: Identification and the Two Gap Figures | PestPro Index",
+   "description": "Norway rat vs. roof rat, and both vs. a mouse. The half-inch a rat can squeeze through against the quarter-inch sources say to seal to, from eight sources.",
+   "ogTitle": "Rats: Identification and the Two Gap Figures",
+   "ogDescription": "Norway rat vs. roof rat, and both vs. a mouse. The half-inch a rat can squeeze through against the quarter-inch sources say to seal to, from eight sources.",
+   "fingerprint": "ee9065a13d102b96"
+  },
+  "/us/silverfish": {
+   "estate": "us",
+   "title": "Silverfish vs Firebrats: Different Needs | PestPro Index",
+   "description": "Silverfish scrape paper rather than biting; firebrats look similar but want opposite conditions. Six extension publications, three disagreeing on warm-or-cool.",
+   "ogTitle": "Silverfish vs Firebrats: Different Needs",
+   "ogDescription": "Silverfish scrape paper rather than biting; firebrats look similar but want opposite conditions. Six extension publications, three disagreeing on warm-or-cool.",
+   "fingerprint": "947b3c967d6c6268"
+  },
+  "/us/skunks": {
+   "estate": "us",
+   "title": "Skunks: Lawn Digging, Dens and the Odor Question | PestPro Index",
+   "description": "How to tell skunk digging from raccoon damage, the hardware cloth spec extension services give, and why you must test a den before sealing it.",
+   "ogTitle": "Skunks: Lawn Digging, Dens and the Odor Question",
+   "ogDescription": "How to tell skunk digging from raccoon damage, the hardware cloth spec extension services give, and why you must test a den before sealing it.",
+   "fingerprint": "3f05f0553881999c"
+  },
+  "/us/snakes": {
+   "estate": "us",
+   "title": "Snakes: The Fence Spec, and Law by State | PestPro Index",
+   "description": "A snake-proof fence four sources specify differently, a repellent class five say doesn't work, protection law that changes at the state line, and conflicting first aid.",
+   "ogTitle": "Snakes: The Fence Spec, and Law by State",
+   "ogDescription": "A snake-proof fence four sources specify differently, a repellent class five say doesn't work, protection law that changes at the state line, and conflicting first aid.",
+   "fingerprint": "07457d94198ce59a"
+  },
+  "/us/social-wasps": {
+   "estate": "us",
+   "title": "Social Wasps: Yellowjackets, Wasps and Hornets | PestPro Index",
+   "description": "Why most American 'hornets' are yellowjackets, why a wasp leaves no stinger to remove, and four sting-treatment positions this page reports rather than settles.",
+   "ogTitle": "Social Wasps: Yellowjackets, Wasps and Hornets",
+   "ogDescription": "Why most American 'hornets' are yellowjackets, why a wasp leaves no stinger to remove, and four sting-treatment positions this page reports rather than settles.",
+   "fingerprint": "8bac8759ca026802"
+  },
+  "/us/sowbugs-pillbugs": {
+   "estate": "us",
+   "title": "Sowbugs and Pillbugs: The Roly-Poly Is Not an Insect | PestPro Index",
+   "description": "It breathes through gills, which is why it dies in your basement. The one test that tells the two apart, and why seven sources say control is unnecessary.",
+   "ogTitle": "Sowbugs and Pillbugs: The Roly-Poly Is Not an Insect",
+   "ogDescription": "It breathes through gills, which is why it dies in your basement. The one test that tells the two apart, and why seven sources say control is unnecessary.",
+   "fingerprint": "2e4032f9ee23b958"
+  },
+  "/us/squirrels-in-attic": {
+   "estate": "us",
+   "title": "Squirrels in the Attic: Signs, Exclusion and Repair | PestPro Index",
+   "description": "How tree squirrels enter an attic, the exclusion and repair specs extension services publish, matched live-trap dimensions, and when to call a professional.",
+   "ogTitle": "Squirrels in the Attic: Signs, Exclusion and Repair",
+   "ogDescription": "How tree squirrels enter an attic, the exclusion and repair specs extension services publish, matched live-trap dimensions, and when to call a professional.",
+   "fingerprint": "c687a34a323e2cc0"
+  },
+  "/us/stink-bugs-in-house": {
+   "estate": "us",
+   "title": "Stink Bugs in the House: Why, and What to Do | PestPro Index",
+   "description": "Why brown marmorated stink bugs appear indoors every fall, how to identify them, whether they bite, what the smell is, and whether they damage the house.",
+   "ogTitle": "Stink Bugs in the House: Why, and What to Do",
+   "ogDescription": "Why brown marmorated stink bugs appear indoors every fall, how to identify them, whether they bite, what the smell is, and whether they damage the house.",
+   "fingerprint": "ffc880e17d926c7b"
+  },
+  "/us/termites": {
+   "estate": "us",
+   "title": "Termites: Signs, the Two Main Types, and Limits | PestPro Index",
+   "description": "Mud tubes, hexagonal pellets and swarmers, the difference between subterranean and drywood termites, and why sources agree consumer products rarely eradicate them.",
+   "ogTitle": "Termites: Signs, the Two Main Types, and Limits",
+   "ogDescription": "Mud tubes, hexagonal pellets and swarmers, the difference between subterranean and drywood termites, and why sources agree consumer products rarely eradicate them.",
+   "fingerprint": "f847fb7a8864b2e6"
+  },
+  "/us/ticks": {
+   "estate": "us",
+   "title": "Ticks: What Prevents Bites, and Removing One | PestPro Index",
+   "description": "The clothing treatment concentration and repellent ingredients sources name, the nine-foot lawn edge where most deer ticks live, and the removal steps.",
+   "ogTitle": "Ticks: What Prevents Bites, and Removing One",
+   "ogDescription": "The clothing treatment concentration and repellent ingredients sources name, the nine-foot lawn edge where most deer ticks live, and the removal steps.",
+   "fingerprint": "460b1b7f19635ea8"
+  },
+  "/useful-links": {
+   "estate": "uk",
+   "title": "UK Homeowner & Property Resources | PestPro Index",
+   "description": "Useful links and resources for UK homeowners — council tax, housing advice, energy efficiency, property prices, and pest control guidance.",
+   "ogTitle": "UK Homeowner & Property Resources | PestPro Index",
+   "ogDescription": "Useful links and resources for UK homeowners — council tax, housing advice, energy efficiency, property prices, and pest control guidance.",
+   "fingerprint": "d0f040be1d82aec5"
+  }
+ }
+}
