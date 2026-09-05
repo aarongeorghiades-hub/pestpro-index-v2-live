@@ -2207,3 +2207,115 @@ FOUR OF THE 25 ARE ALSO NEVER TOUCH BY NAME — `natural-fox-deterrents`,
 `natural-moth-repellents`, `natural-wasp-deterrents` and
 `essential-oils-for-pest-control` — and Law 61/119 means a broad class
 authorisation never reaches them.
+
+## S64 R7 — LAW 187: DETECTION NEVER DEPENDS ON AN OPTIONAL ATTRIBUTE
+
+LAW 187 — DETECTION OF A THING NEVER DEPENDS ON AN OPTIONAL ATTRIBUTE OF THAT
+THING. An affiliate card is DETECTED as an Amazon product link; its tag is
+VERIFIED separately; and an untagged card FAILS VISIBLY rather than vanishing.
+
+THE GENERAL FORM, WHICH IS WHY THIS IS A LAW AND NOT A NOTE. A defect that
+consists of a MISSING ATTRIBUTE will erase the thing from any detector built on
+that attribute — and once the thing is invisible, every check downstream of the
+detector goes silent at once. The absence propagates as a clean pass.
+
+MEASURED AT S64 R7, NOT ARGUED. `affiliateTag=""` is a supported prop on
+UsToolCard, so a real untagged card was rendered on `/us/groundhogs` and every
+consumer of the tag-requiring pattern was run:
+
+    G6   PASS     the price-proximity mark was never placed
+    M10  PASS     THE TAG GATE ITSELF SAW NO CARD TO CHECK
+    M11  PASS     the page read as non-carding, so the S59-C denial gate went
+                  silent — the R2/R3 breach rebuilt as an automatic trap
+    M12  PASS     price-proximity blind
+    M25  INV(0)   the placement measure lost the page
+    M30  INV(0)   the card vanished; estate 376 -> 375
+    M33  FAIL     with the WRONG MESSAGE — "affiliate footer on a page rendering
+                  no card link". The footer was correct and the matcher was
+                  wrong, and ACTING ON THAT MESSAGE REMOVES A REQUIRED DISCLOSURE
+                  FROM A PAGE CARRYING A LIVE AMAZON LINK.
+
+Five matchers silent, one undercounting, and the one that did fire pointed at the
+innocent party. AFTER THE SPLIT, on the same card: M30 back to 376, M25 measures
+the page again, M33 PASS, and M10 FAILS with "UNTAGGED amazon.com card".
+
+THE VERIFYING GATE COVERS BOTH ESTATES BY RULE, NOT BY LIST — one host, one
+correct tag, a third marketplace covered by adding a row (Law 170). Measured
+across all 240 built documents: 375 US links carrying `pestproindex2-20`, 378 UK
+links carrying `pestproindex2-21`, ZERO wrong-estate tags, ZERO wrong hosts. The
+UK pattern had never captured a tag at all, so nothing had ever verified the UK
+tag on 378 rendered links.
+
+A PREDICATE MAY STILL BE ABOUT THE ATTRIBUTE, AND THAT IS NOT A RELAPSE. M11 asks
+whether the page EARNS, which is a question about the tag, so its predicate is "a
+card carrying a tag". The first attempt at this round moved M11 to tag-independent
+detection and it FAILED ON THE CONTROL — because UsToolCard correctly switches to
+its no-affiliate branch when the tag is empty, so the page truthfully said it
+earns nothing. That was a FALSE POSITIVE ON AN HONEST PAGE. DETECTION IS
+TAG-INDEPENDENT; A RULE MAY STILL BE TAG-DEPENDENT WHEN THE RULE IS ABOUT THE TAG.
+
+ASSERTION I holds the three facts together on one untagged fixture — the US
+pattern detects it, the either-estate pattern detects it, and M10 fails on it — so
+reinstating a tag-requiring pattern drops all three at once and says so.
+
+## S64 R7 — M28'S ADJUDICATION DESIGN, AND ITS SEEDING GROUND
+
+PM RULING, S64 R7. THIS CLOSES REFERRAL R8-1, OPEN SINCE S63 R8.
+
+M28's SUBJECT IS THE ADJUDICATION, NOT THE MEANING. Each route carries a recorded
+adjudication of its card ordering: THE JUDGEMENT, THE DATE IT WAS MADE, AND A
+FINGERPRINT OF THE ORDERING AS IT STOOD WHEN JUDGED. M28 FAILS when a route's
+current ordering does not match the fingerprint it was last adjudicated against.
+
+THE MACHINE DETECTS THAT THE ORDERING MOVED. IT NEVER JUDGES MEANING. That is the
+whole purpose of the S63 split that made M29 the inventory and M28 the gate: a
+string matcher cannot decide precedence (Law 115), so it is not asked to. What it
+can do honestly is notice that the arrangement a human ruled on is no longer the
+arrangement being served, and ask for re-adjudication. IT DOES NOT ACCUSE.
+
+WHY THE OLD FORM COULD NEVER RUN. It compared a card offset against "the offset of
+the earliest precedence-bearing content" — a figure no runner can produce without
+a machine deciding what counts as precedence-bearing. That is why M28 sat at ZERO
+INVOCATIONS from S63 R5 to S64 R6 while this file asserted it reported
+`/us/chipmunks`.
+
+THE FINGERPRINT IS THE HEADING/CARD SEQUENCE, NOT THE OFFSET. A percentage moves
+whenever ANY prose on the page is edited, so a fingerprint built on it would fail
+on every innocent typo fix and train its readers to ignore it. The h2/CARD
+sequence moves only when a card moves relative to a section, or a section is
+added, removed or renamed — exactly the changes that alter what a reader meets
+before a product. A heading rename counts, deliberately.
+
+KNOWN CONSEQUENCE, RECORDED RATHER THAN LEFT TO BE DISCOVERED: the layout's own
+h2s are part of the sequence, so a change to `UsPageLayout` or `GuideLayout` moves
+EVERY fingerprint on that estate at once and calls for a re-seed. The arrangement
+really did change on every route, so that is honest; it is a one-round job, not a
+per-route defect.
+
+THE SEEDING GROUND. `scripts/adjudications.json` was seeded on 2026-09-05 across
+117 carding documents on both estates. Its recorded ground is the S64 R5 and
+S64 R6 measurement and the PM ruling that followed it: the placement threshold
+does not govern `/guides/*`, Law 180 does not yield, and the 25 referred documents
+are closed as CORRECT-AS-BUILT rather than as exceptions.
+
+SEEDING IS A SEPARATE, EXPLICIT COMMAND, `--seed-adjudications`, so it can never
+happen as a side effect of running the gate. A SEED WRITES THE CURRENT ORDERING AS
+THE ADJUDICATED ONE, WHICH IS ONLY HONEST WHEN A HUMAN HAS JUST RULED ON IT. A
+round that re-seeds to make M28 green has erased the ruling rather than met it.
+
+TWO REAL FAILING STATES, BOTH EXERCISED ON REAL ROUTES:
+  UNADJUDICATED   before seeding, M28 failed on all 117 carding documents.
+  ORDERING MOVED  lifting the UsToolCard on `/us/groundhogs` above its "Trapping"
+                  heading — an ordering move with no text edited — produced
+                  exactly one failure and exit code 1. Reverted byte-identical;
+                  PASS, exit code 0.
+
+M29 IS NOW INVOKED, CLOSING ITS HALF OF R8-2. The runner runs it over each route's
+own headings and prints the tally as CONTEXT for whoever re-adjudicates —
+CANDIDATES, NEVER FINDINGS, and M28 does not read them. Estate-wide at seeding:
+54 of 117 documents carry a heading in a precedence class — identification 27,
+efficacy 22, harm 17, legal 12.
+
+INVOCATION COVERAGE AFTER THIS ROUND: only `M15` and `M23` are unreached by any
+runner, both `external` scope, both needing a fetched source body no runner can
+manufacture. That is structural and is printed on every `--machinery` run.
