@@ -861,25 +861,30 @@ const MATCHERS = [
     probePos: 'between 70º and 85°F',
     probeNeg: 'between 70 and 85 F',
   },
-  {
-    id: 'M14',
-    kind: 'inventory',
-    scope: 'source',
-    surface: 'source',
-    name: 'ASIN declarations in .ts/.tsx source (mirror of check.mjs ASIN_RX)',
-    // TWO STATED BLIND SPOTS, asserted rather than assumed:
-    //  - Law 82: it is silent on a surface that BUILDS its own /dp/ URL rather
-    //    than passing an asin prop. The probeNeg asserts that silence so the
-    //    limitation is visible instead of being met later as a false zero.
-    //  - Law 141: check.mjs, where this expression operates, is hardcoded to
-    //    amazon.co.uk and pestproindex2-21. Its verdicts rule on NO /us ASIN.
-    test: (t) => all(new RegExp(ASIN_RX_SOURCE, 'g'), t).map((m) => m[1] || m[2]),
-    probePos: `asin="B00NFRTVY6"  asin: 'B0BW9C4D3J'`,
-    probeNeg: [
-      `href="${CARD_LINK}"`, // Law 82 blind spot, asserted
-      'the ASIN is B00NFRTVY6 on Amazon',
-    ],
-  },
+  // M14 IS RETIRED AT S64 R4 ON THE M24 PRECEDENT, AND MUST NOT BE RE-REGISTERED.
+  //
+  // It declared `scope: 'source'` with `surface: 'source'` and NO RUNNER EVER
+  // CALLED IT — measured across all five runner modes with the probe phase
+  // excluded, 0 invocations, carried open as referral R8-2 since S63 R8.
+  //
+  // AND IT WAS A STRICT DUPLICATE OF M18, WHICH DOES RUN. Both are built from the
+  // same ASIN_RX_SOURCE constant with identical logic; M18's own name already
+  // said "shares M14 expression". PROVEN ON REAL CONTENT BEFORE RETIRING, not
+  // assumed (Law 117): over all 467 .ts/.tsx files in app/, components/, lib/ and
+  // data/, M14 and M18 each returned 595 occurrences with ZERO files disagreeing.
+  //
+  // NOTHING IS LOST. The expression survives in one place, M18 runs it in
+  // runMachinery(), and assertion C still asserts it has not drifted from
+  // scripts/amazon-availability/check.mjs. A second registry entry holding a copy
+  // of an expression another entry already runs is the M24 case exactly: a
+  // matcher that cannot report anything, reporting nothing, and reading as clean.
+  //
+  // ITS TWO STATED BLIND SPOTS MOVE WITH THE EXPRESSION, not with the entry:
+  // Law 82 — it is silent on a surface that BUILDS its own /dp/ URL rather than
+  // passing an asin prop; Law 141 — check.mjs is hardcoded to amazon.co.uk and
+  // rules on no /us ASIN. Both remain true of M18 and are asserted by M18's own
+  // probes.
+
   {
     id: 'M15',
     kind: 'gate',
@@ -1169,17 +1174,35 @@ const MATCHERS = [
       const m = CARD_HREF_RE.exec(t ?? '');
       CARD_HREF_RE.lastIndex = 0;
       if (!m) return [];
-      const before = visibleBody((t ?? '').slice(0, m.index));
+      // R8-3 CLOSED AT S64 R4. The slice ends INSIDE the anchor's own
+      // `<a href="`, which is an UNTERMINATED tag, so the tag-strip regex left
+      // those characters in the visible text and every offset carried a constant
+      // overcount. Dropping a trailing unterminated tag before measuring is the
+      // whole fix; `whole` needs no such treatment because a complete document
+      // has no unterminated tag at its end.
+      const before = visibleBody((t ?? '').slice(0, m.index).replace(/<[^>]*$/, ''));
       const whole = visibleBody(t);
       return [{ offset: before.length, pct: Math.round((100 * before.length) / Math.max(whole.length, 1)) }];
     },
-    // MEASURED ARTEFACT, DELIBERATELY NOT CHANGED THIS ROUND (Law 22). The slice
-    // ends inside the anchor's own `<a href="` , which is an UNTERMINATED tag, so
-    // the tag-strip regex leaves those 9 characters in the visible text and every
-    // offset carries a constant +9. It is 0.02% of a typical offset and does not
-    // move a percentage point, but it is a real overcount and it is named here
-    // rather than silently corrected, because correcting it shifts every reported
-    // offset and any figure compared against the S63 R5 threshold with it.
+    // THE ARTEFACT IS CORRECTED AT S64 R4, AND THE CARRIED FIGURE WAS WRONG.
+    // S63 R8 named it "+9" and said it "does not move a percentage point". BOTH
+    // CLAIMS WERE ASSERTIONS AND BOTH WERE RE-MEASURED BEFORE ACTING (Law 102):
+    //   the overcount is a CONSTANT 10, not 9, uniform across all 41 carding
+    //   routes — `<a href="` is nine characters plus the space that a correct
+    //   strip then trims;
+    //   and it DOES move a rounded percentage on THREE routes — chiggers 22->21,
+    //   fruit-flies 60->59, opossums 25->24.
+    // What it does NOT do is cross the S63 R5 28% placement threshold on any
+    // route: zero routes change side. Blast radius measured before the edit
+    // (Law 44): visibleBody has exactly ONE consumer, this matcher, and the 28%
+    // figure exists nowhere in code but a comment, so nothing computes against
+    // it. Assertion H asserts the correction is load-bearing on every run.
+    //
+    // STILL OPEN AND NOT CLOSED BY THIS: the 28% threshold was itself derived at
+    // S63 R5, and if that derivation used the uncorrected measure it carries the
+    // same overcount. Comparing a corrected offset against an uncorrected
+    // threshold is Law 50 — prove the two count the same population before
+    // ruling on either. Referred; nothing in the estate consumes it today.
     report: (hits) => `first card at visible character ${hits[0].offset}, ${hits[0].pct}% through the visible body`,
     probePos: HTML_CARD_AFTER_PROSE,
     probeNeg: HTML_NO_CARD,
@@ -1752,6 +1775,29 @@ async function selfTest() {
     );
   }
 
+  // H. THE M25 UNTERMINATED-TAG CORRECTION IS LOAD-BEARING — S64 R4, R8-3.
+  //
+  // The fixture ends its pre-card text with a real anchor opening, so the
+  // uncorrected slice keeps `<a href="` in the visible text and the corrected one
+  // does not. Asserting the DIFFERENCE rather than the value, because the value
+  // is fixture-specific and the difference is the bug.
+  const m25h = MATCHERS.find((x) => x.id === 'M25');
+  const hFix = m25h.test(HTML_CARD_AFTER_PROSE)[0]?.offset ?? -1;
+  const hRaw = visibleBody(
+    HTML_CARD_AFTER_PROSE.slice(0, CARD_HREF_RE.exec(HTML_CARD_AFTER_PROSE)?.index ?? 0),
+  ).length;
+  CARD_HREF_RE.lastIndex = 0;
+  const hOk = hFix >= 0 && hRaw > hFix;
+  if (!hOk) {
+    bad++;
+    assertionFailures++;
+  }
+  console.log('\n  H. M25 unterminated-tag correction (R8-3):');
+  console.log(
+    `     uncorrected offset ${hRaw}  corrected ${hFix}  delta ${hRaw - hFix}  -> ` +
+      `${hOk ? 'the correction is load-bearing' : 'ASSERTION FAILED — the correction changes nothing'}`,
+  );
+
   return { bad, registered: MATCHERS.length, unusableIds, classFailures, assertionFailures };
 }
 
@@ -2074,6 +2120,28 @@ async function runMachinery() {
     }
   }
 
+  // --- M21, genuine quotation delimiters — GIVEN A RUNNER AT S64 R4 --------
+  //
+  // Referral R8-2: M21 was registered at S61 R9 and NO RUNNER EVER CALLED IT.
+  // A matcher nothing fires on real content is codified but untested, which is
+  // Law 167/178 in a new place — and it is exactly how the M8b false zero
+  // survived. It now runs over every /us route source.
+  //
+  // WHAT IT MEASURES, AND WHY IT IS NOT A DUPLICATE OF quoteSpans(). quoteSpans
+  // pairs each &ldquo; with the LAST &rdquo; before the next &ldquo;, because a
+  // source's own inches mark inside a quotation would otherwise split the span.
+  // M21 answers a narrower question — FP-1 — which is that the ASCII straight
+  // double quote is a JS STRING DELIMITER in a .tsx file and is never a quotation
+  // mark. It accepts the entities and the curly characters and nothing else.
+  const M21 = M('M21');
+  let quoteSpansM21 = 0;
+  const m21Routes = [];
+  for (const e of entries.filter((x) => x.hasPageTsx)) {
+    const n = M21.test(await readFile(join(usDir, e.name, 'page.tsx'), 'utf8')).length;
+    quoteSpansM21 += n;
+    if (n) m21Routes.push(e.name);
+  }
+
   // --- M20, law enumeration ------------------------------------------------
   const laws = M('M20').test(await readFile(join(ROOT, 'CLAUDE.md'), 'utf8'));
 
@@ -2083,6 +2151,7 @@ async function runMachinery() {
     usCardLinks, usDisclosures, ukCardLinks,
     usAsinsDistinct: usAsins.size, ukAsinsDistinct: ukAsins.size,
     contamination, disclosure, laws,
+    quoteSpansM21, m21Routes: m21Routes.length,
     htmlTotal: html.length, htmlUs: html.filter(isUs).length,
   };
 }
@@ -2350,6 +2419,15 @@ async function main() {
     console.log(`  M19 cross-contamination        ${r.contamination.length ? r.contamination.join('; ') : '0 in all four directions'}`);
     console.log(`  M33 disclosure agreement       ${r.disclosure.length ? `FAIL — ${r.disclosure.length}` : 'PASS — 0'} over ${r.htmlTotal} documents, BOTH estates`);
     for (const d of r.disclosure.slice(0, 40)) console.log(`      ${d}`);
+    console.log(`  M21 genuine quotation spans    ${r.quoteSpansM21} across ${r.m21Routes} /us route sources`);
+    // S64 R4, REFERRAL R8-2. An `external`-scope matcher consumes a FETCHED
+    // SOURCE BODY, which no runner can manufacture — it exists only in a round
+    // that actually fetched one. Their absence from every runner is structural,
+    // not a defect, and it is PRINTED so a future round measuring invocation
+    // coverage finds the reason beside the fact instead of rediscovering it as a
+    // finding for a third time. It is derived from the registry, not typed.
+    const ext = MATCHERS.filter((m) => m.scope === 'external').map((m) => m.id);
+    console.log(`  externally-scoped matchers     ${ext.join(', ')} — no standing runner by construction; each needs a fetched source body`);
     console.log(`  M20 laws declared              ${r.laws.length} (highest ${r.laws[r.laws.length - 1]})`);
     const missing = [];
     for (let i = 1; i <= r.laws[r.laws.length - 1]; i++) if (!r.laws.includes(i)) missing.push(i);

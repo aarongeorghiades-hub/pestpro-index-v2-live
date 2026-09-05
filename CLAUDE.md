@@ -2071,3 +2071,47 @@ all 76 carding documents are static routes with their own `page.tsx`; zero of th
 rendered output agree on every one, with the derived set and the rendered set
 IDENTICAL in both directions. A future estate whose links take a second shape
 invalidates that argument and must re-measure it rather than inherit it.
+
+## S64 R4 — LAW 185: A CHANGE THAT MOVES NO INDEXABLE CONTENT SPENDS NO QUOTA
+
+LAW 185 — A CHANGE THAT ALTERS NO INDEXABLE CONTENT DOES NOT CONSUME GSC QUOTA.
+IT IS RECORDED IN THE QUEUE AND MARKED NOT-FOR-PUSH, WITH THE REASON RECORDED
+AGAINST IT. PM ruling, S64 R4.
+
+THE QUEUE RECORDS EVERY CHANGE; IT DOES NOT OBLIGE EVERY CHANGE. Law 159 made
+`~/pestpro-gsc-queue.md` the authoritative record of what changed on the estate,
+and that duty is unaltered — a round that changes a route still adds its entry.
+What this law separates out is the SUBMISSION obligation, which is a different
+question with a different answer and a real cost attached.
+
+THE COST IS THE REASON THIS IS A LAW. Submission is rate-limited and finite.
+Spending it on a page whose indexable content did not move buys nothing and
+displaces a page where it would.
+
+THE WORKED CASE, AND THE FIGURES THAT PROVOKED THE RULING. S64 R3 removed the
+shared-footer affiliate sentence from 100 UK documents that render no card. No
+title, no meta description, no heading, no body copy and no schema moved on any of
+them; two sentences of footer chrome left pages that should never have carried
+them. S64 R3 recorded all 100 in the queue, FLAGGED THE CRAWL-BUDGET TENSION FOR
+THE PM AND MADE NO DECISION — which is the correct division: CC records and
+measures, the PM rules on spend. S64 R4 is that ruling. The 100 are marked
+not-for-push; the TEN US routes from S64 R2 remain outstanding and pushable,
+because those changed a page-level commercial claim in indexed body text.
+
+CC NEVER APPLIES THIS ON ITS OWN JUDGEMENT OF MATERIALITY. "Alters no indexable
+content" is a finding CC may MEASURE and REPORT; whether it justifies withholding
+a submission is a PM ruling, entry by entry or section by section. A round that
+marks entries not-for-push without a ruling has decided the PM's question for
+them.
+
+THE MECHANISM IS A SEPARATE FIELD, NOT A REUSED ONE. The queue gained
+`not-for-push:`, carrying the reason and the ruling date. `pushed:` STAYS EMPTY
+BESIDE IT, because `pushed:` means "the date this URL was actually submitted" and
+none of them was; writing a date there to retire it from the outstanding list
+would be exactly the false record Law 159 and its S62 R1 extension exist to
+prevent. Two questions, two fields, neither overloaded to do the other's job. The
+entry itself is never deleted: the queue must still be able to answer when a
+document last changed.
+
+QUEUE COMPOSITION AFTER THE RULING, derived at runtime: 276 entries, 176
+outstanding and pushable, 100 recorded not-for-push, 0 carrying a submission date.
