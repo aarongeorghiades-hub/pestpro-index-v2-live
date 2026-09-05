@@ -2115,3 +2115,95 @@ document last changed.
 
 QUEUE COMPOSITION AFTER THE RULING, derived at runtime: 276 entries, 176
 outstanding and pushable, 100 recorded not-for-push, 0 carrying a submission date.
+
+## S64 R6 — LAW 186: A LIMIT IS DERIVED FROM A RULE, NEVER FROM ITS OWN POPULATION
+
+LAW 186 — A THRESHOLD OR LIMIT IS DERIVED FROM A RULE ABOUT WHAT IS CORRECT,
+NEVER FROM THE OBSERVED DISTRIBUTION OF THE THING IT MEASURES. A LIMIT READ OFF
+ITS OWN POPULATION CANNOT FAIL AND IS NOT A GATE.
+
+Where such a limit is found it is RETIRED, not re-based on a different number.
+Choosing a new constant off the same distribution repeats the defect.
+
+THE PROPERTY IS WORSE THAN UNFALSIFIABILITY, AND THIS IS THE PART TO REMEMBER.
+A maximum-of-population limit does not merely fail to catch regressions — IT
+ABSORBS THEM. When a member of the population gets worse, the limit rises to meet
+it, and every other member is silently exonerated.
+
+PROVEN BY EXERCISING IT ON A REAL DOCUMENT AT S64 R6, not argued from the
+definition. Suppressing the first four cards on `/best/wasp-nest-foam` pushed its
+first card from about 21% to 47%, a genuinely worse page:
+
+    the threshold FOLLOWED IT                     28%  ->  47%
+    the degraded page was still not "over"        it WAS the maximum
+    documents reported over the threshold          25  ->  20
+
+Five documents were exonerated by degrading a sixth, none of them touched:
+`guides/moving-house-pest-checklist`, `guides/natural-wasp-deterrents`,
+`guides/spring-pest-prevention`, `guides/student-house-pest-guide`,
+`guides/wasp-season-preparation`. The page was then reverted BYTE-IDENTICAL and
+the figures returned to 25.
+
+WHY NO REPLACEMENT NUMBER WAS FOUND, MEASURED RATHER THAN ASSERTED. Every
+structural proxy for "where a card belongs" collapses the same way, because THE
+LAYOUT WRAPS THE CONTENT and fixes the card's position relative to every landmark
+the page does not own:
+
+    "a card must follow the page's <h1>"   UsPageLayout and GuideLayout both emit
+        the h1 before {children}. 0 of 60 US pages and 1 of 44 UK guides declare
+        their own h1. UNFAILABLE.
+    "a card must follow some <h2>"         UsPageLayout emits TWO h2s before
+        {children} — Contents and Related Pages. UNFAILABLE on all 61 US
+        documents, failable on UK guides. HALF-DEAD, which is worse than dead
+        because it reads as live.
+
+AND NO RATIFIED LAW SAYS A CARD CAN BE TOO LATE. Law 180 governs too EARLY. A
+percentage-through-a-document is a summary statistic, not a rule about where a
+card belongs. THE GENUINE RULE ALREADY EXISTS AND IS ALREADY CODIFIED: Law 180 as
+M28, comparing the first-card offset against adjudicated precedence-bearing
+content, which has a real failing state in both directions. What M28 lacks is a
+runner, which is referral R8-1 and remains the PM's to rule on.
+
+CONSEQUENCE. `node scripts/gates.mjs --placement` is an INVENTORY (Law 167). It
+prints a distribution — min, quartiles, median, max, per population — and issues
+no verdict and no "over" list. A distribution describes the estate; it does not
+rule on it.
+
+## S64 R6 — THE PLACEMENT THRESHOLD DOES NOT GOVERN /guides/*, AND THE 25 ARE CLOSED
+
+PM RULING, S64 R6. THE PLACEMENT THRESHOLD DOES NOT APPLY TO `/guides/*`. It was
+derived from the `/best/*` population and does not govern a different content
+type. LAW 180 DOES NOT YIELD: its own ratified text already settles this — where
+precedence and the threshold conflict, precedence wins.
+
+THE 25 REFERRED DOCUMENTS ARE CLOSED AS CORRECT-AS-BUILT, NOT AS EXCEPTIONS. No
+card moves on any of them. They are not a standing exception list, they acquire no
+flag, and no future round is to re-open them on the threshold. A guide that
+teaches first and names products last is the correct shape for a guide.
+
+THE DISTRIBUTION SHOWS THE TWO POPULATIONS DO NOT OVERLAP AT ALL, measured at
+S64 R6 after the threshold was retired:
+
+    UK /best/*     50 docs   min 14   p25 17   median 19   p75 21   max 28
+    UK /guides/*   25 docs   min 36   p25 49   median 55   p75 61   max 74
+
+There is no value between 28 and 36 that both populations occupy. Treating the
+maximum of one as a target for the other was Law 50 — the numeral and the figure
+did not count the same population.
+
+PRECEDENCE CONTENT SITS AHEAD OF THE CARDS ON AT LEAST EIGHT OF THE 25, BY NAME,
+established by reading as Law 180 requires: `natural-fox-deterrents` ("Legal
+Context: Foxes Are Protected"), `how-to-get-rid-of-foxes` ("Legal Position: Foxes
+in the UK", "When to Call a Professional"), `rat-poison-vs-rat-traps` ("Safety:
+Pets, Children, and Wildlife", "UK Legal Considerations"),
+`essential-oils-for-pest-control` ("Safety Warnings"), `landlord-pest-control`
+("Legal Framework for Landlords"), `how-to-get-rid-of-silverfish` ("When to Call a
+Professional"), `carpet-beetle-control`, and
+`electric-fly-killers-vs-sticky-traps` ("Hygiene and Food Safety Compliance").
+Moving those cards earlier would have put a product ahead of the safety or legal
+content — the exact thing Law 180 forbids.
+
+FOUR OF THE 25 ARE ALSO NEVER TOUCH BY NAME — `natural-fox-deterrents`,
+`natural-moth-repellents`, `natural-wasp-deterrents` and
+`essential-oils-for-pest-control` — and Law 61/119 means a broad class
+authorisation never reaches them.

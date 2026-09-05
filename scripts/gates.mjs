@@ -2256,9 +2256,48 @@ async function runG3Sweep() {
 // placement threshold can be DERIVED from a named population rather than carried
 // as a numeral (Law 53).
 //
-// IT PRINTS THE POPULATION ITS MAXIMUM COMES FROM, because a threshold defined as
-// "the maximum of set X" cannot fail on any member of X. That is Law 75 and it is
-// the single most important thing about this figure.
+// IT IS AN INVENTORY AND IT PRINTS NO VERDICT — S64 R6, PM ruling.
+//
+// IT USED TO COMPUTE A "PLACEMENT THRESHOLD" AS THE MAXIMUM OF THE UK /best/*
+// POPULATION AND LIST THE DOCUMENTS "OVER" IT. That check could not fail on the
+// population it was taken from, and it was WORSE THAN MERELY UNFALSIFIABLE.
+//
+// PROVEN BY EXERCISING IT ON A REAL DOCUMENT (S64 R6), not argued: suppressing
+// the first four cards on /best/wasp-nest-foam pushed its first card from ~21%
+// to 47% — a genuinely worse page. The threshold FOLLOWED IT, 28% -> 47%. The
+// degraded page was still not "over", because it WAS the maximum. And the list
+// of documents over the threshold FELL FROM 25 TO 20: degrading one page
+// silently exonerated five others —
+//   guides/moving-house-pest-checklist   guides/natural-wasp-deterrents
+//   guides/spring-pest-prevention        guides/student-house-pest-guide
+//   guides/wasp-season-preparation
+// The document was then reverted BYTE-IDENTICAL and the figures returned to 25.
+//
+// A CHECK THAT BECOMES MORE PERMISSIVE AS THE ESTATE GETS WORSE IS NOT A GATE.
+// It is an anti-gate: it launders a regression into a pass.
+//
+// WHY IT WAS NOT RE-FOUNDED ON A DIFFERENT NUMBER. Every structural proxy for
+// "where a card belongs" was measured at S64 R6 and each collapses the same way,
+// because the LAYOUT wraps the content and fixes the card's position relative to
+// every landmark a page does not own:
+//   "card must follow the page's <h1>"  — UsPageLayout and GuideLayout both emit
+//      the h1 before {children}. 0 of 60 US pages and 1 of 44 UK guides declare
+//      their own h1. UNFAILABLE.
+//   "card must follow some <h2>"        — UsPageLayout emits TWO h2s before
+//      {children}, the Contents and Related Pages headings. UNFAILABLE on all 61
+//      US documents, though failable on UK guides. HALF-DEAD, which is worse
+//      than dead because it reads as live.
+// And no ratified law in CLAUDE.md says a card can be TOO LATE. Law 180 governs
+// too EARLY. A percentage-through-a-document is a summary statistic, not a rule
+// about where a card belongs, and choosing a different constant would repeat the
+// defect rather than fix it.
+//
+// THE GENUINE RULE ALREADY EXISTS AND IS ALREADY CODIFIED: Law 180, as M28,
+// comparing the first-card offset against the offset of adjudicated
+// precedence-bearing content. It has a real failing state in both directions.
+// What it lacks is a runner, which is referral R8-1 and is the PM's to rule on.
+//
+// SO THIS PRINTS A DISTRIBUTION AND MAKES NO JUDGEMENT (Law 167).
 async function runPlacement() {
   const walk = async (dir) => {
     let out = [];
@@ -2503,29 +2542,31 @@ async function main() {
     const rows = await runPlacement();
     const uk = rows.filter((r) => r.side === 'uk');
     const us = rows.filter((r) => r.side === 'us');
-    const best = uk.filter((r) => r.family === 'best');
-    const mx = (a) => (a.length ? Math.max(...a.map((r) => r.pct)) : null);
-    const med = (a) => {
-      if (!a.length) return null;
+    const q = (a, f) => {
+      if (!a.length) return '-';
       const v = a.map((r) => r.pct).sort((x, y) => x - y);
-      return v[Math.floor(v.length / 2)];
+      return String(v[Math.min(v.length - 1, Math.floor(f * v.length))]);
     };
-    console.log(`\nFIRST-CARD PLACEMENT — M25, corrected measure, both estates\n`);
-    console.log(`  ${'POPULATION'.padEnd(28)}${'DOCS'.padEnd(7)}${'MAX%'.padEnd(7)}${'MEDIAN%'.padEnd(9)}WITH A CTA`);
+    console.log(`\nFIRST-CARD PLACEMENT — INVENTORY, NOT A GATE (Law 167)\n`);
+    console.log(`  M25, corrected measure, both estates. NO THRESHOLD, NO VERDICT, NO`);
+    console.log(`  "over" list. The former threshold was the MAXIMUM of the population it`);
+    console.log(`  judged, so no member could exceed it, and degrading one page RAISED it`);
+    console.log(`  and exonerated others. Retired at S64 R6; see runPlacement() for the`);
+    console.log(`  measured proof. The real placement rule is Law 180, gated by M28.\n`);
+    console.log(
+      `  ${'POPULATION'.padEnd(30)}${'DOCS'.padEnd(7)}${'MIN'.padEnd(6)}${'P25'.padEnd(6)}${'MEDIAN'.padEnd(8)}${'P75'.padEnd(6)}MAX`,
+    );
     const line = (n, a) =>
-      console.log(`  ${n.padEnd(28)}${String(a.length).padEnd(7)}${String(mx(a) ?? '-').padEnd(7)}${String(med(a) ?? '-').padEnd(9)}${a.filter((r) => r.cta).length}`);
-    line('UK /best/* (threshold pop.)', best);
+      console.log(
+        `  ${n.padEnd(30)}${String(a.length).padEnd(7)}${q(a, 0).padEnd(6)}${q(a, 0.25).padEnd(6)}` +
+          `${q(a, 0.5).padEnd(8)}${q(a, 0.75).padEnd(6)}${q(a, 1)}`,
+      );
+    line('UK /best/*', uk.filter((r) => r.family === 'best'));
+    line('UK /guides/*', uk.filter((r) => r.family === 'guides'));
     line('UK, all carding documents', uk);
     line('US, all carding routes', us);
-    console.log(`\n  THE THRESHOLD IS THE UK /best/* MAXIMUM: ${mx(best)}%`);
-    console.log(`  It CANNOT FAIL on any /best page, by construction (Law 75). It can`);
-    console.log(`  fail only outside that population.`);
-    const overUk = uk.filter((r) => r.pct > mx(best)).sort((a, b) => b.pct - a.pct);
-    const overUs = us.filter((r) => r.pct > mx(best)).sort((a, b) => b.pct - a.pct);
-    console.log(`\n  UK documents OVER the threshold: ${overUk.length}`);
-    for (const r of overUk) console.log(`    ${r.route.padEnd(46)}${String(r.pct).padStart(3)}%  cta=${r.cta}`);
-    console.log(`\n  US routes OVER the threshold: ${overUs.length}`);
-    for (const r of overUs) console.log(`    ${r.route.padEnd(46)}${String(r.pct).padStart(3)}%  cta=${r.cta}`);
+    console.log(`\n  All figures are percentages through the visible body. A distribution`);
+    console.log(`  describes the estate; it does not rule on it.`);
     process.exit(0);
   }
   if (arg === '--g3') process.exit(await runG3Sweep());
