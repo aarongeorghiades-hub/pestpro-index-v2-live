@@ -47,7 +47,8 @@
 //    asserts the two are still identical rather than trusting them to be.
 //    See the check.mjs divergence assertion in selfTest().
 
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve, join } from 'node:path';
 import {
@@ -97,6 +98,9 @@ import {
   LINKS_TO_BARE,
   CTA_PRESENT,
   CTA_FALSE_POSITIVES,
+  ORDERING_MOVED,
+  ORDERING_UNADJUDICATED,
+  ORDERING_UNCHANGED,
   CARD_BEFORE_PRECEDENCE,
   CARD_AFTER_PRECEDENCE,
   NO_PRECEDENCE_CONTENT,
@@ -1377,28 +1381,43 @@ const MATCHERS = [
     kind: 'gate',
     scope: 'estate',
     surface: 'card-precedence',
-    name: 'Precedence: a card never precedes identification, harm, efficacy-limit or legal content',
-    // THE RULE, and it is a real gate because it has a real failing state: given
-    // a route's first-card offset and the offset of the EARLIEST
-    // precedence-bearing content on that page, the card must not come first.
-    // A page carrying no such content cannot violate it.
+    name: 'Card ordering has not moved since the route was last adjudicated',
+    // PM RULING, S64 R7. M28's SUBJECT IS THE ADJUDICATION, NOT THE MEANING.
     //
-    // ITS INPUT IS AN ADJUDICATED OFFSET, NOT A GUESSED ONE. What counts as
-    // precedence-bearing is established by READING the route (see M29 and
-    // Law 115); this matcher checks the comparison, which is the half that can
-    // be mechanised honestly.
+    // Each route carries a recorded adjudication of its card ordering: the
+    // judgement, the date it was made, and a FINGERPRINT of the ordering as it
+    // stood when judged. M28 FAILS when the route's current ordering does not
+    // match the fingerprint it was last adjudicated against.
     //
-    // THE THRESHOLD YIELDS TO THIS RULE. Where obeying it pushes a first card
-    // past the 28% placement threshold derived at S63 R5, the card goes late.
-    // A page whose safety content runs long is allowed a late card.
+    // THE MACHINE DETECTS THAT THE ORDERING MOVED. IT NEVER JUDGES MEANING.
+    // That is the whole point of the S63 split that made M29 the inventory and
+    // M28 the gate: a string matcher cannot decide precedence (Law 115), so it
+    // is not asked to. What it CAN do honestly is notice that the arrangement a
+    // human ruled on is no longer the arrangement being served, and say so.
+    //
+    // WHY IT WAS NOT BUILT ON THE OLD ROW. Its previous form compared a card
+    // offset against "the offset of the earliest precedence-bearing content" —
+    // a figure no runner could produce without a machine deciding what counts as
+    // precedence-bearing. That is why NO RUNNER EVER CONSTRUCTED IT and M28 sat
+    // at 0 invocations from S63 R5 to S64 R6, referral R8-1.
+    //
+    // TWO REAL FAILING STATES, both exercised on real routes at S64 R7:
+    //   the ordering moved since it was adjudicated
+    //   a carding route has NO recorded adjudication at all
     test: (row) => {
-      if (!row || row.precedencePct == null) return [];
-      return row.cardPct < row.precedencePct
-        ? [`${row.slug}: card at ${row.cardPct}% precedes ${row.category} content at ${row.precedencePct}%`]
+      if (!row) return [];
+      if (!row.adjudication) {
+        return [`${row.slug}: carries cards but has NO recorded adjudication`];
+      }
+      return row.fingerprint !== row.adjudication.fingerprint
+        ? [
+            `${row.slug}: card ordering has moved since it was adjudicated on ` +
+              `${row.adjudication.date} as "${row.adjudication.judgement}" — re-adjudicate`,
+          ]
         : [];
     },
-    probePos: [{ text: CARD_BEFORE_PRECEDENCE }],
-    probeNeg: [{ text: CARD_AFTER_PRECEDENCE }, { text: NO_PRECEDENCE_CONTENT }],
+    probePos: [{ text: ORDERING_MOVED }, { text: ORDERING_UNADJUDICATED }],
+    probeNeg: [{ text: ORDERING_UNCHANGED }],
   },
   {
     id: 'M29',
@@ -2350,6 +2369,79 @@ async function runG3Sweep() {
   return 0;
 }
 
+// THE CARD-ORDERING FINGERPRINT — S64 R7, and it is ONE definition.
+//
+// It is the sequence, in document order, of every <h2> heading text with a CARD
+// marker at each Amazon product link. That is "the ordering": which sections a
+// reader passes before, between and after the cards.
+//
+// WHY NOT THE OFFSET. A percentage moves whenever ANY prose on the page is
+// edited, so a fingerprint built on it would fail on every innocent typo fix and
+// train its readers to ignore it. The heading/card sequence moves only when a
+// card moves relative to a section, or a section is added, removed or renamed —
+// which are exactly the changes that alter what a reader meets before a product.
+//
+// A HEADING RENAME COUNTS, AND THAT IS DELIBERATE. Renaming a section changes
+// what precedes the card, so the arrangement a human ruled on is no longer the
+// arrangement being served. M28 asks for re-adjudication; it does not accuse.
+//
+// KNOWN CONSEQUENCE, STATED RATHER THAN DISCOVERED LATER: the layout's own h2s
+// are part of the sequence, so a change to UsPageLayout or GuideLayout moves
+// EVERY fingerprint on that estate at once and calls for a re-seed. That is
+// honest — the arrangement really did change on every route — but it is a
+// one-round job, not a per-route defect.
+function orderingFingerprint(rendered) {
+  const seq = [];
+  const re = /<h2[^>]*>([\s\S]*?)<\/h2>|https:\/\/www\.amazon\.(?:com|co\.uk)\/dp\/[A-Z0-9]{10}/gi;
+  for (const m of rendered.matchAll(re)) {
+    if (m[1] === undefined) seq.push('CARD');
+    else seq.push('H2:' + decode(m[1].replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim());
+  }
+  return { seq, hash: createHash('sha256').update(seq.join('\u0000')).digest('hex').slice(0, 12) };
+}
+
+const ADJUDICATIONS = join(ROOT, 'scripts/adjudications.json');
+
+// THE ADJUDICATION RUNNER — S64 R7, and it is what closes referral R8-1.
+//
+// It builds one row per carding document and feeds M28. It also invokes M29 over
+// the same headings, which is how M29 finally reaches real content (R8-2): M29
+// reports CANDIDATE precedence classes, never findings, and they are printed as
+// CONTEXT for whoever re-adjudicates — never as a verdict.
+async function runAdjudication() {
+  const walk = async (dir) => {
+    let out = [];
+    let ents = [];
+    try { ents = await readdir(dir, { withFileTypes: true }); } catch { return out; }
+    for (const e of ents) {
+      const full = join(dir, e.name);
+      if (e.isDirectory()) out = out.concat(await walk(full));
+      else if (e.name.endsWith('.html')) out.push(full);
+    }
+    return out;
+  };
+  const appDir = join(ROOT, '.next/server/app');
+  const files = (await walk(appDir)).sort();
+  let record = { routes: {} };
+  try { record = JSON.parse(await readFile(ADJUDICATIONS, 'utf8')); } catch { /* unseeded */ }
+  const M28 = MATCHERS.find((m) => m.id === 'M28');
+  const M29 = MATCHERS.find((m) => m.id === 'M29');
+  const rows = [];
+  for (const f of files) {
+    const raw = await readFile(f, 'utf8');
+    const rendered = SURFACES.rendered(raw);
+    if (!all(EITHER_CARD_RE, rendered).length) continue;
+    const slug = f.replace(appDir + '/', '').replace(/\.html$/, '');
+    const { seq, hash } = orderingFingerprint(rendered);
+    // M29 over this route's own headings — candidates, never findings.
+    const cand = new Set();
+    for (const h of seq) if (h.startsWith('H2:')) for (const c of M29.test(h.slice(3))) cand.add(c);
+    const row = { slug, fingerprint: hash, adjudication: record.routes[slug] ?? null };
+    rows.push({ ...row, seqLen: seq.length, candidates: [...cand].sort(), problems: M28.test(row) });
+  }
+  return { record, rows };
+}
+
 // FIRST-CARD PLACEMENT ACROSS BOTH ESTATES — S64 R5.
 //
 // M25 measures one document. This walks every built document, applies M25 through
@@ -2638,6 +2730,50 @@ async function main() {
     for (let i = 1; i <= r.laws[r.laws.length - 1]; i++) if (!r.laws.includes(i)) missing.push(i);
     console.log(`      gaps in 1..highest         ${missing.length ? missing.join(', ') : 'none'}`);
     process.exit(0);
+  }
+  if (arg === '--adjudicate' || arg === '--seed-adjudications') {
+    const { record, rows } = await runAdjudication();
+    if (arg === '--seed-adjudications') {
+      // SEEDING IS A SEPARATE, EXPLICIT COMMAND so it can never happen as a side
+      // effect of running the gate. A seed writes the CURRENT ordering as the
+      // adjudicated one, which is only honest when a human has just ruled on it.
+      const today = new Date().toISOString().slice(0, 10);
+      const out = {
+        seededOn: today,
+        ground:
+          'S64 R5 and S64 R6 measured the card ordering across both estates and the PM ruled ' +
+          'the arrangement correct-as-built: the placement threshold does not govern /guides/*, ' +
+          'Law 180 does not yield, and the 25 referred documents are closed as correct-as-built ' +
+          'rather than as exceptions. This file records that ruling per route.',
+        routes: Object.fromEntries(
+          rows.map((r) => [
+            r.slug,
+            { judgement: 'correct-as-built', date: today, fingerprint: r.fingerprint },
+          ]),
+        ),
+      };
+      await writeFile(ADJUDICATIONS, JSON.stringify(out, null, 2) + '\n', 'utf8');
+      console.log(`\nSEEDED ${rows.length} adjudications into scripts/adjudications.json on ${today}.`);
+      console.log(`  ground: ${out.ground}`);
+      process.exit(0);
+    }
+    const bad = rows.filter((r) => r.problems.length);
+    console.log(`\nCARD-ORDERING ADJUDICATION — M28, both estates\n`);
+    console.log(`  record seeded on   ${record.seededOn ?? 'NEVER — run --seed-adjudications'}`);
+    console.log(`  carding documents  ${rows.length}`);
+    console.log(`  adjudicated        ${rows.filter((r) => r.adjudication).length}`);
+    console.log(`  M28                ${bad.length ? `FAIL — ${bad.length}` : 'PASS — 0'}`);
+    for (const r of bad) console.log(`    ${r.problems.join('; ')}`);
+    const withCand = rows.filter((r) => r.candidates.length);
+    console.log(
+      `\n  M29 CANDIDATES, NEVER FINDINGS (Law 115): ${withCand.length} of ${rows.length} documents ` +
+        `carry a heading in a precedence class. They are CONTEXT for a human re-adjudicating,\n` +
+        `  not a verdict, and M28 does not read them.`,
+    );
+    const tally = {};
+    for (const r of withCand) for (const c of r.candidates) tally[c] = (tally[c] ?? 0) + 1;
+    for (const k of Object.keys(tally).sort()) console.log(`    ${k.padEnd(18)}${tally[k]} documents`);
+    process.exit(bad.length ? 1 : 0);
   }
   if (arg === '--placement') {
     const rows = await runPlacement();

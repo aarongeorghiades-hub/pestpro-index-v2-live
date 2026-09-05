@@ -1,0 +1,591 @@
+{
+  "seededOn": "2026-09-05",
+  "ground": "S64 R5 and S64 R6 measured the card ordering across both estates and the PM ruled the arrangement correct-as-built: the placement threshold does not govern /guides/*, Law 180 does not yield, and the 25 referred documents are closed as correct-as-built rather than as exceptions. This file records that ruling per route.",
+  "routes": {
+    "best/ant-gel-bait": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "83b0360c235c"
+    },
+    "best/ant-killers": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "7c9d5d86aaf1"
+    },
+    "best/awaabs-law-damp-mould-equipment": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "fefbdfcccd29"
+    },
+    "best/bed-bug-mattress-encasement": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "720285d011a0"
+    },
+    "best/bed-bug-spray": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "07f2a2bb7e68"
+    },
+    "best/bed-bug-treatments": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "66201f314807"
+    },
+    "best/bird-deterrents": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "467740f3a102"
+    },
+    "best/carpet-beetle-treatments": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "cea4288abf80"
+    },
+    "best/cat-deterrents": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "e954b56ce2e1"
+    },
+    "best/cockroach-gel-bait": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "c8ef7bf2cb5f"
+    },
+    "best/cockroach-killers": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "72ef56d62794"
+    },
+    "best/commercial-bird-proofing": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "e092fc81df0e"
+    },
+    "best/commercial-dehumidifiers": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "1453946df60c"
+    },
+    "best/commercial-fly-killers": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "b285b9b7bb2a"
+    },
+    "best/commercial-insect-monitors": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "e66cd7aef67e"
+    },
+    "best/commercial-rodent-bait-stations": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "761f0575c4fd"
+    },
+    "best/damp-proof-paint-mould-treatment": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "dab5a74f530d"
+    },
+    "best/drain-fly-killer": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "8a1f62eaeb98"
+    },
+    "best/flea-fogger": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "b078534317c6"
+    },
+    "best/flea-spray-for-home": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "12ff51f3ad76"
+    },
+    "best/flea-treatments": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "37a8f43474b1"
+    },
+    "best/fly-killer-indoor": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "fb9cc145714a"
+    },
+    "best/fox-deterrents": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "0cc42d43cd21"
+    },
+    "best/mole-traps": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "3301aaeea9be"
+    },
+    "best/moth-killers": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "4b69225c13d6"
+    },
+    "best/moth-traps": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "c3c82409361e"
+    },
+    "best/mouse-bait-stations": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "26719180b418"
+    },
+    "best/mouse-poison": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "ee72d1d2dddd"
+    },
+    "best/mouse-repellent": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "fd66a26203dd"
+    },
+    "best/mouse-traps": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "5402caa8b9da"
+    },
+    "best/pigeon-spikes": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "b1b4613a58c3"
+    },
+    "best/professional-bait-station-kits": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "254f3f5d78f4"
+    },
+    "best/professional-bed-bug-steamers": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "0c83d87b1da0"
+    },
+    "best/professional-bird-netting-kits": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "cef46710bdb2"
+    },
+    "best/professional-insect-light-traps": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "c43abf136761"
+    },
+    "best/professional-mattress-encasements": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "6bf503152945"
+    },
+    "best/professional-pressure-sprayers": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "3668de417a64"
+    },
+    "best/professional-ulv-foggers": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "374e97a6e935"
+    },
+    "best/rat-bait-stations": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "c1436662bd80"
+    },
+    "best/rat-poison-for-gardens": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "6bf8a08cb166"
+    },
+    "best/rat-poison": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "b90880c9c73a"
+    },
+    "best/rat-traps": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "b77477bf2f16"
+    },
+    "best/rodent-proofing": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "31ade289d667"
+    },
+    "best/silverfish-treatments": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "ccca21161ca7"
+    },
+    "best/spider-repellent": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "f3cb2251b9d5"
+    },
+    "best/squirrel-deterrents": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "a0e4b9a3ea2e"
+    },
+    "best/ultrasonic-pest-repellers": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "e537c0828586"
+    },
+    "best/wasp-killers": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "c256695a4ef7"
+    },
+    "best/wasp-nest-foam": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "9433a14958f6"
+    },
+    "best/woodworm-treatments": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "712b19e81ad8"
+    },
+    "guides/autumn-pest-proofing": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "2cfe7d63eb20"
+    },
+    "guides/carpet-beetle-control": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "b8ef120b6874"
+    },
+    "guides/electric-fly-killers-vs-sticky-traps": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "146ace85acab"
+    },
+    "guides/essential-oils-for-pest-control": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "f58234a18eba"
+    },
+    "guides/how-to-get-rid-of-foxes": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "bb6512552153"
+    },
+    "guides/how-to-get-rid-of-silverfish": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "b6fd49d8466e"
+    },
+    "guides/how-to-pest-proof-your-loft": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "4cb105019589"
+    },
+    "guides/how-to-pest-proof-your-shed": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "84139ff5d87a"
+    },
+    "guides/humane-mouse-traps-vs-kill-traps": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "7100106f257d"
+    },
+    "guides/landlord-pest-control": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "d8863f985b00"
+    },
+    "guides/moving-house-pest-checklist": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "41c43dbe5b50"
+    },
+    "guides/natural-ant-repellents": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "89c30f8e8f8f"
+    },
+    "guides/natural-flea-remedies": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "0cc8b0acfe85"
+    },
+    "guides/natural-fox-deterrents": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "fa951f3270f3"
+    },
+    "guides/natural-moth-repellents": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "e957f4a9670e"
+    },
+    "guides/natural-mouse-deterrents": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "6dfdb981114d"
+    },
+    "guides/natural-rat-deterrents": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "25560c1178af"
+    },
+    "guides/natural-spider-repellents": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "7327b8b15275"
+    },
+    "guides/natural-wasp-deterrents": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "e5652d392bc4"
+    },
+    "guides/plants-that-repel-pests": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "0e0c3076d922"
+    },
+    "guides/rat-poison-vs-rat-traps": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "7aba3f13f09d"
+    },
+    "guides/spring-pest-prevention": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "94c26fe3bb65"
+    },
+    "guides/student-house-pest-guide": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "932aecf42ef2"
+    },
+    "guides/wasp-season-preparation": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "99241eaaf13f"
+    },
+    "guides/woodworm-treatment": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "11cf3b1b5a0e"
+    },
+    "products": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "4f6e51e5ca83"
+    },
+    "us/ants": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "168b0b5c1506"
+    },
+    "us/arizona-bark-scorpions": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "fe06b501b09f"
+    },
+    "us/asian-lady-beetles": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "684977f62600"
+    },
+    "us/bed-bugs": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "a5d77aa00387"
+    },
+    "us/best-armadillo-traps": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "63dd0540830b"
+    },
+    "us/best-gopher-traps": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "4fe2a31223d0"
+    },
+    "us/best-raccoon-traps": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "073e312502ef"
+    },
+    "us/best-stink-bug-traps": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "af5ebb5d1f00"
+    },
+    "us/black-widow-spiders": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "5732ea128d5a"
+    },
+    "us/boxelder-bugs": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "8d88788608a1"
+    },
+    "us/brown-recluse-spiders": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "c3e112040aaa"
+    },
+    "us/carpenter-bees": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "5429474e51ac"
+    },
+    "us/carpet-beetles": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "308ce4bd66c2"
+    },
+    "us/chiggers": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "28d1fa47cac5"
+    },
+    "us/chipmunks": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "ef2a06041afb"
+    },
+    "us/cluster-flies": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "75b39aa21e55"
+    },
+    "us/coyotes": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "fb17a6ba6928"
+    },
+    "us/fleas": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "8291bbb835b7"
+    },
+    "us/flies": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "b1bd3eb21792"
+    },
+    "us/fruit-flies": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "aefdc52fd08d"
+    },
+    "us/fungus-gnats": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "39c107f882b4"
+    },
+    "us/german-cockroaches": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "550bfeb885c9"
+    },
+    "us/groundhogs": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "ef7c740eb4d7"
+    },
+    "us/house-mice": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "86a99d0cc7e4"
+    },
+    "us/imported-fire-ants": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "2eb9e29cb302"
+    },
+    "us/joro-spider-webs": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "19e17ad74347"
+    },
+    "us/mole-and-vole-control": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "71268c32bcc1"
+    },
+    "us/mosquitoes": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "8cc5dc637be9"
+    },
+    "us/moths": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "b7fcc98aa4b0"
+    },
+    "us/no-see-ums": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "bf7920c7ba3a"
+    },
+    "us/opossums": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "8cde8baf0232"
+    },
+    "us/palmetto-bugs": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "671ba4beeb14"
+    },
+    "us/powderpost-beetles": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "312adf2fd0cd"
+    },
+    "us/products": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "4caa27baee76"
+    },
+    "us/rats": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "96c696246640"
+    },
+    "us/silverfish": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "d69a09c6fe1a"
+    },
+    "us/snakes": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "6bbbb3d7a169"
+    },
+    "us/social-wasps": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "64f9597a8aa4"
+    },
+    "us/squirrels-in-attic": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "6b08ff495947"
+    },
+    "us/termites": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "2baf0b4a1112"
+    },
+    "us/ticks": {
+      "judgement": "correct-as-built",
+      "date": "2026-09-05",
+      "fingerprint": "eb8bc99dbadd"
+    }
+  }
+}

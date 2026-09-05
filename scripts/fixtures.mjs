@@ -321,6 +321,24 @@ export const CTA_FALSE_POSITIVES =
 // ===========================================================================
 
 // ---- M28, the precedence comparison ---------------------------------------
+// ---- M28 (S64 R7), the card-ordering adjudication row ---------------------
+// M28's subject changed at S64 R7 by PM ruling. It no longer compares two
+// percentages; it compares the route's CURRENT ordering fingerprint against the
+// fingerprint recorded when the route was last adjudicated. The machine detects
+// that the ordering MOVED and never judges meaning — that split is why M29 is
+// the inventory and M28 the gate.
+export const ORDERING_MOVED = {
+  slug: 'fixture-moved',
+  fingerprint: 'aaaaaaaaaaaa',
+  adjudication: { judgement: 'correct-as-built', date: '2026-09-05', fingerprint: 'bbbbbbbbbbbb' },
+};
+export const ORDERING_UNADJUDICATED = { slug: 'fixture-new', fingerprint: 'cccccccccccc', adjudication: null };
+export const ORDERING_UNCHANGED = {
+  slug: 'fixture-ok',
+  fingerprint: 'dddddddddddd',
+  adjudication: { judgement: 'correct-as-built', date: '2026-09-05', fingerprint: 'dddddddddddd' },
+};
+
 export const CARD_BEFORE_PRECEDENCE = { slug: 'fixture-bad', cardPct: 19, precedencePct: 40, category: 'harm' };
 export const CARD_AFTER_PRECEDENCE  = { slug: 'fixture-ok',  cardPct: 52, precedencePct: 31, category: 'harm' };
 // a page with no precedence-bearing content cannot violate the rule
