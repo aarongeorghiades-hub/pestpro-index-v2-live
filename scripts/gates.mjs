@@ -335,18 +335,60 @@ const G3_PROPER_NOUNS = new Set(['Vetter', 'Vetters', 'Trustpilot', 'TrustMark',
 // EACH ENTRY IS NAMED AND ATTRIBUTED, and the check is on the IMMEDIATELY PRECEDING
 // WORD only, so it cannot swallow a claim that merely happens to sit near the word.
 //   National Trust  — cited as a source on /best/moth-traps (S66 R8) and elsewhere.
-const G3_PROPER_PRECEDERS = new Map([
-  ['Trust', new Set(['National'])],
-  //   wildlife trust — RATIFIED BY NAME IN LAW 153: "'Trustpilot', 'TrustMark' and
-  //   'wildlife trust' are names." It is lower-case and two words, so neither the
-  //   single-token set nor the capitalised National Trust rule could see it, and it
-  //   was reported as four asserted claims on /pest/squirrels and two each on
-  //   /guides/how-to-get-rid-of-squirrels and /guides/pest-control-costs — every one
-  //   of them the sentence "contact your local wildlife trust for advice". Excluding
-  //   it is applying a ratified law, not a judgement call (Law 94: do not remediate a
-  //   defect class that is an artefact of the question).
-  ['trust', new Set(['wildlife'])],
-]);
+// S67 R8 — THE TWO-WORD GAP, GENERALISED RATHER THAN NAMED A THIRD TIME.
+//
+// "Trustpilot" and "TrustMark" are single tokens and exclude themselves. A name whose
+// stem is a SEPARATE WORD — "National Trust", "wildlife trust" — is two tokens, and
+// the token bannedRe matches is the bare stem. That gap was patched by name at S67 R6
+// and again at S67 R7, which is the shape of a list rebuilding itself one entry at a
+// time (Law 170). It is now a RULE about what precedes the stem.
+//
+// THE RULE, and it is deliberately narrow: the immediately preceding word makes the
+// pair a NAMED BODY — an organisation, a charity, a scheme, a register. Two closed
+// classes, both from Law 153's own reasoning that a proper noun carrying the stem is
+// a name and not a claim:
+//
+//   (a) A CAPITALISED ORGANISATION NAME ending in the stem. "National Trust", "Woodland
+//       Trust", "Wildlife Trust", "Canal and River Trust". Both words capitalised, so a
+//       mid-sentence claim cannot reach it.
+//   (b) A SMALL, NAMED SET OF LOWER-CASE COMMON NAMES for the same bodies, because
+//       British usage writes them lower-case as often as not — "wildlife trust",
+//       "woodland trust", "local trust". Law 153 names "wildlife trust" in terms; the
+//       other two are the same body written the same way and are listed, not inferred
+//       from a pattern, so the set stays auditable.
+//
+// WHAT THIS DELIBERATELY DOES NOT DO: it never excludes a bare stem, and it never
+// looks further back than one word. "Our providers are trusted" has no preceder and
+// still fires, which is the whole point of the gate.
+const G3_ORG_PRECEDERS = new Set(['wildlife', 'woodland', 'local', 'national', 'river', 'heritage']);
+function g3ProperPair(text, index, tok) {
+  if (!/^(?:trust|Trust)$/.test(tok)) return null;
+  const before = text.slice(Math.max(0, index - 40), index);
+  const prev = (before.match(/([A-Za-z']+)\s*$/) || [, ''])[1];
+  if (!prev) return null;
+  // (a) both words capitalised — a proper name in running text
+  if (/^[A-Z][a-z]+$/.test(prev) && /^[A-Z]/.test(tok)) return prev + ' ' + tok;
+  // (b) the named lower-case forms of the same bodies
+  if (G3_ORG_PRECEDERS.has(prev.toLowerCase()) && tok === 'trust') return prev + ' ' + tok;
+  return null;
+}
+
+// S67 R8 — TWO RATIFIED PHRASE EXCLUSIONS. Both were reported at S67 R7 as hits that
+// are not claims about a provider or a product, and both are ruled exclusions now.
+// The match is on the PHRASE, so the stem alone is never excused by them.
+//
+//   "post-treatment verification"  — /guides/how-to-get-rid-of-bed-bugs. A description
+//       of what a detection-dog survey is FOR. It asserts nothing about a provider.
+//   "rebuilding customer trust"    — /guides/warehouse-pest-management. About the
+//       READER'S OWN business after a failed BRC audit, not about anyone we list.
+const G3_RATIFIED_PHRASES = [
+  /post-treatment\s+verification/i,
+  /rebuilding\s+customer\s+trust/i,
+];
+function g3RatifiedPhrase(text, index) {
+  const window = text.slice(Math.max(0, index - 30), index + 30);
+  return G3_RATIFIED_PHRASES.find((re) => re.test(window)) ? true : false;
+}
 
 // The text G3 classifies over. Tags are removed INSIDE test() rather than by
 // declaring a different surface, because the gate must keep reading SERVED bytes
@@ -377,14 +419,14 @@ function g3Classify(t, { strip = true } = {}) {
       excluded.push({ tok, why: 'PROPER', ctx: null });
       continue;
     }
-    const preceders = G3_PROPER_PRECEDERS.get(tok);
-    if (preceders) {
-      const before = text.slice(Math.max(0, m.index - 40), m.index);
-      const prev = (before.match(/([A-Za-z']+)\s*$/) || [, ''])[1];
-      if (preceders.has(prev)) {
-        excluded.push({ tok: prev + ' ' + tok, why: 'PROPER', ctx: null });
-        continue;
-      }
+    const pair = g3ProperPair(text, m.index, tok);
+    if (pair) {
+      excluded.push({ tok: pair, why: 'PROPER', ctx: null });
+      continue;
+    }
+    if (g3RatifiedPhrase(text, m.index)) {
+      excluded.push({ tok, why: 'RATIFIED-PHRASE', ctx: null });
+      continue;
     }
     if (G3_PRIVATIVE_RE.test(tok)) {
       excluded.push({ tok, why: 'PRIVATIVE', ctx: null });
@@ -663,6 +705,9 @@ const MATCHERS = [
     // A DIFFERENT SENTENCE, and a negator further away than the window.
     probePos: [
       'every provider here is a trusted local firm',
+      // the preceder rule must not excuse a claim merely because a capitalised
+      // word sits in front of the stem
+      'Every Manchester provider is trusted by our team',
       'a verifiable and tru' + 'sted listing',
       'We do not sell services. Every provider is veri' + 'fied.',
       'no part of the following claim is ours, and the supplier is nevertheless veri' + 'fied',
@@ -679,6 +724,11 @@ const MATCHERS = [
       // quietly widen into an excuse for the claim itself.
       'The National Trust describes the damage',
       'consult a professional pest controller or your local wildlife trust',
+      // S67 R8 — the generalised two-word rule and the two ratified phrases,
+      // each probed on the shape it exists for.
+      'donated to the Woodland Trust and the Canal and River Trust',
+      'used for post-treatment verification after a heat treatment',
+      'the cost of rebuilding customer trust after a failed audit',
       'see https://www.nationaltrust.org.uk/discover for the guidance',
       // THE PRODUCTION SHAPE, AND THE R8 LESSON APPLIED TO THIS GATE. A page
       // does not arrive as prose; it arrives as HTML with markup between the

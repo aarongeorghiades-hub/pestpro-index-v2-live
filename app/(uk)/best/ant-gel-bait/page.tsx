@@ -1,64 +1,57 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S67 R8 — ROLLOUT REBUILD. Title and H1 byte-unchanged. Award labels, rank numerals
+// and card order UNCHANGED as ruled.
+//
+// THE B000BQT5IG STANDING BAR DOES NOT REACH THIS ROUTE. It binds /best/ant-killers,
+// which is a different page; that ASIN is not carded here. Checked before editing.
+//
+// AND THE PAGE IS NOT WHAT ITS TITLE SAYS. The route is /best/ant-gel-bait and the H1
+// reads "Best Ant Killer Gel". Of the five products, ONE is a bait — the Nippon liquid,
+// item form Liquid — and one is pre-baited stations. The other three are a powder and
+// two sprays, which kill on contact and do not go back to the nest. The old description
+// promised "Borax gels, fipronil baits and indoxacarb"; not one of those three actives
+// is named on any listing here. Description and subtitle corrected; title and H1 held.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Ant Killer Gel UK 2026: Kill the Whole Colony",
     description:
-      "Our pick of the best ant killer gels available in the UK for 2026. Borax gels, fipronil baits and indoxacarb, with application advice.",
+      "Only a bait reaches the nest. Five ant products compared on their own listings — which are baits, which kill on contact, and why the difference decides it.",
     alternates: { canonical: "https://pestproindex.com/best/ant-gel-bait" },
     openGraph: {
       title: "Best Ant Killer Gel UK 2026: Kill the Whole Colony",
       description:
-        "Our pick of the best ant killer gels available in the UK for 2026. Borax gels, fipronil baits and indoxacarb, with application advice.",
+        "Only a bait reaches the nest. Five ant products compared on their own listings — which are baits, which kill on contact, and why the difference decides it.",
       url: "https://pestproindex.com/best/ant-gel-bait",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Best Ant Killer Gel UK 2026: Kill the Whole Colony",
   description:
-    "Our pick of the best ant killer gels available in the UK for 2026. Borax gels, fipronil baits and indoxacarb, with application advice.",
+    "Only a bait reaches the nest. Five ant products compared on their own listings — which are baits, which kill on contact, and why the difference decides it.",
   datePublished: "2026-03-30",
-  dateModified: "2026-03-30",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://pestproindex.com/best/ant-gel-bait",
-  },
+  dateModified: "2026-09-06",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/ant-gel-bait" },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -67,45 +60,17 @@ const breadcrumbSchema = {
     },
   ],
 };
-// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
-// from this and only this, so the two surfaces cannot disagree again. The visible
-// block was authoritative where they did disagree.
-const faqs = [
-  {
-    q: "How does ant gel bait work?",
-    a: "Worker ants find the gel, consume it, and carry it back to the nest where they share it with other workers, larvae, and the queen through trophallaxis (mouth-to-mouth feeding). The poison kills slowly (24-72 hours), allowing it to spread through the entire colony before ants die. Once the queen dies, the colony collapses.",
-  },
-  {
-    q: "How long does ant gel take to kill a colony?",
-    a: "Most ant gel baits eliminate a colony within 1-2 weeks. You may initially see more ants around the bait — this is normal. Activity should decrease within 3-5 days, with full elimination in 7-14 days.",
-  },
-  {
-    q: "Is ant gel bait safe around pets and children?",
-    a: "Ant gels use low concentrations designed to be lethal to ants but minimal risk to larger animals. Still, place gel where children and pets cannot easily access it. For homes with very young children, enclosed bait stations are the safer choice.",
-  },
-  {
-    q: "Why am I seeing more ants after applying gel bait?",
-    a: "This means the bait is working. Worker ants recruit more foragers to collect the poisoned bait and carry it back to the nest. Do not disturb them or apply spray near the gel. Activity should decrease within 3-5 days.",
-  },
-  {
-    q: "Should I use gel bait or spray for ants?",
-    a: "Gel bait is far more effective. Spray kills only visible workers and does not reach the queen. Gel is carried back to the nest and kills the entire colony. Spray can actually worsen problems by causing colonies to split (budding).",
-  },
-  {
-    q: "Where should I place ant gel bait?",
-    a: "Along ant trails, near entry points, behind kitchen units, along skirting boards, and near food sources. Place small pea-sized dots every 30-50cm. Position dots slightly to the side of the trail, not directly on it.",
-  },
-];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
+// S67 R8 — THE FAQ IS REMOVED, BLOCK AND SCHEMA TOGETHER (Law 190). The body now answers
+// the same questions from a source, and the "how long does it take" answer in particular
+// is better made by NC State's own words than by an unsourced figure.
+
+// SOURCES. Quotations extracted by byte range and exact-matched before drafting
+// (Law 164); the citation names the host actually read (S59-A).
+const SRC = {
+  ncsu: "https://content.ces.ncsu.edu/tips-for-effective-ant-baiting",
 };
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -120,6 +85,8 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Feature text and comparison cells rebuilt from the banked listings' own titles, detail
+// tables and feature bullets (S52-E), fetched 2026-09-01, inside the S45-C window.
 const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
@@ -128,12 +95,13 @@ const products: ProductRecord[] = [
     cardName: "Nippon Ant Killer Gel 25g — Liquid Bait, Colony Elimination",
     cardLabel: "Best Overall",
     features: [
-      "UK market leader for ant gel bait",
-      "Sugary liquid bait carried back to the queen",
-      "Eliminates entire colony — not just surface ants",
-      "25g tube treats multiple ant runs",
+      "Active substance stated on the listing: spinosad",
+      "Item form listed as Liquid; 25g",
+      "Listed as carried back to the nest by worker ants",
+      "Listed as usable in a bait station or standalone",
+      "Target species listed as Ant",
     ],
-    tableCells: ["Nippon Ant Killer Gel 25g", "Gel", "Best Overall"],
+    tableCells: ["Nippon Ant Killer 25g", "Bait — spinosad", "Best Overall"],
     h2Label: "Best Overall",
     h2Name: "Nippon Ant Killer Gel 25g",
     tocLabel: "Best Overall",
@@ -146,12 +114,13 @@ const products: ProductRecord[] = [
     cardName: "Nippon Ant Killer Powder 500g",
     cardLabel: "Best Powder",
     features: [
-      "Permethrin-based powder for direct nest treatment",
-      "Apply along ant runs, cracks and garden nest sites",
-      "Long-lasting outdoor control",
-      "6-month effective residual",
+      "Item form listed as Powder; 500g",
+      "Listed as killing on contact — not a bait",
+      "The maker claims up to 6 months of control",
+      "Listed for indoor and outdoor use",
+      "Listed for cockroaches, beetles, earwigs, silverfish and woodlice as well",
     ],
-    tableCells: ["Nippon Ant Killer Powder 500g", "Powder", "Best Powder"],
+    tableCells: ["Nippon Ant Killer Powder 500g", "Contact powder — active not stated", "Best Powder"],
     h2Label: "Best Powder",
     h2Name: "Nippon Ant Killer Powder 500g",
     tocLabel: "Best Powder",
@@ -164,16 +133,13 @@ const products: ProductRecord[] = [
     cardName: "Nippon Ant & Crawling Insect Killer Spray 750ml",
     cardLabel: "Best Spray",
     features: [
-      "Ready-to-use residual spray for indoor and outdoor",
-      "Kills ants on contact with invisible barrier",
-      "Apply around doorframes, skirting boards, paths",
-      "750ml treats a full property perimeter",
+      "Item form listed as Spray; 750ml, ready to use",
+      "A contact spray — not a bait",
+      "Listed as suitable for use on soft furnishings",
+      "Target species field on the listing reads Flea",
+      "Directions text states it contains cypermethrin",
     ],
-    tableCells: [
-      "Nippon Ant & Crawling Insect Spray 750ml",
-      "Spray",
-      "Best Spray",
-    ],
+    tableCells: ["Nippon Ant & Crawling Insect Spray 750ml", "Contact spray — cypermethrin", "Best Spray"],
     h2Label: "Best Spray",
     h2Name: "Nippon Ant & Crawling Insect Killer Spray 750ml",
     tocLabel: "Best Spray",
@@ -183,16 +149,20 @@ const products: ProductRecord[] = [
     anchorId: "best-indoor",
     asin: "B0B71D3QS1",
     rank: 4,
-    cardName:
-      "Zero In Ant & Cockroach Killer 1.5L — Ready-to-Use Pressure Sprayer",
+    cardName: "Zero In Ant & Cockroach Killer 1.5L Ready-to-Use",
     cardLabel: "Best Indoor",
     features: [
-      "Large 1.5L ready-to-use pressure sprayer",
-      "Cypermethrin with antibacterial agent",
-      "Adjustable nozzle for cracks, crevices and surfaces",
-      "Treats a full property perimeter in one application",
+      "Active substances stated on the listing: cypermethrin and benzalkonium chloride",
+      "1.5L pressurised pump spray — a contact treatment, not a bait",
+      "Listed for fan spray or crack-and-crevice application",
+      "Listed for indoor and outdoor use",
+      "Target species listed as Insects",
     ],
-    tableCells: ["Zero In Ant & Cockroach Killer 1.5L", "Spray", "Best Indoor"],
+    tableCells: [
+      "Zero In Ant & Cockroach Killer 1.5L",
+      "Contact spray — cypermethrin",
+      "Best Indoor",
+    ],
     h2Label: "Best Indoor",
     h2Name: "Zero In Ant & Cockroach Killer 1.5L",
     tocLabel: "Best Indoor",
@@ -205,16 +175,13 @@ const products: ProductRecord[] = [
     cardName: "Doff 2-in-1 Ant & Nest Bait Killer Stations",
     cardLabel: "Best Bait Stations",
     features: [
-      "Pre-baited ant bait stations from UK manufacturer Doff",
-      "Workers carry bait back to nest — eliminates the queen",
-      "Safe indoors and outdoors around children and pets",
-      "Up to 3 months protection per station",
+      "Pre-baited stations — the second bait product here",
+      "Listed for indoor and outdoor use",
+      "Listed as safe around children and pets when used as instructed",
+      "Target species listed as Ant",
+      "Active substance not stated on the listing",
     ],
-    tableCells: [
-      "Doff 2-in-1 Ant & Nest Bait Killer Stations",
-      "Bait Stations",
-      "Best Bait Stations",
-    ],
+    tableCells: ["Doff 2-in-1 Ant & Nest Bait Stations", "Bait — active not stated", "Best Bait Stations"],
     h2Label: "Best Bait Stations",
     h2Name: "Doff 2-in-1 Ant & Nest Bait Killer Stations",
     tocLabel: "Best Bait Stations",
@@ -223,574 +190,306 @@ const products: ProductRecord[] = [
 ];
 
 const tocItems = [
-  { id: "at-a-glance", title: "Best Ant Gels at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
-  })),
-  { id: "buying-guide", title: "How to Choose the Right Ant Gel" },
-  { id: "application", title: "How to Apply Ant Gel for Best Results" },
-  { id: "faq", title: "Frequently Asked Questions" },
+  { id: "situation", title: "Bait or Spray — the Whole Decision" },
+  { id: "legal", title: "What the Listings Tell You" },
+  { id: "limits", title: "Where a Bait Does Not Help" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Bait Is Not the Answer" },
+  { id: "using", title: "Baiting Properly" },
+  { id: "compared", title: "The Five Products Compared" },
 ];
+
 export default function BestAntGelBaitPage() {
   return (
     <GuideLayout
       title="Best Ant Killer Gel UK 2026: Kill the Whole Colony"
-      subtitle="Our pick of the most effective ant killer gels available in the UK — gel baits that eliminate the entire colony including the queen"
-      lastUpdated="March 2026"
-      readingTime="9 min"
+      subtitle="Two baits and three contact treatments, described by what their own listings state — and why only one of those two kinds reaches the nest"
+      lastUpdated="September 2026"
+      readingTime="6 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "How to Get Rid of Ants: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-ants",
-        },
-        {
-          title: "How to Get Rid of Cockroaches: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-cockroaches",
-        },
-        {
-          title: "Wasp Nest Removal: Complete UK Guide",
-          href: "/guides/wasp-nest-removal",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
-        {
-          title: "How to Get Rid of Fleas: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-fleas",
-        },
-        {
-          title: "How to Get Rid of Bed Bugs: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-bed-bugs",
-        },
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
-        {
-          title: "Restaurant Pest Control: UK Compliance Guide",
-          href: "/guides/restaurant-pest-control",
-        },
-        {
-          title: "How to Get Rid of Moths",
-          href: "/guides/how-to-get-rid-of-moths",
-        },
-        {
-          title: "Carpet Beetle Control: Complete UK Guide",
-          href: "/guides/carpet-beetle-control",
-        },
-        {
-          title: "Pigeon Control: Complete UK Guide",
-          href: "/guides/pigeon-control",
-        },
-        {
-          title: "How to Get Rid of Squirrels: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-squirrels",
-        },
+        { title: "How to Get Rid of Ants: Complete UK Guide", href: "/guides/how-to-get-rid-of-ants" },
+        { title: "How to Get Rid of Cockroaches: Complete UK Guide", href: "/guides/how-to-get-rid-of-cockroaches" },
+        { title: "Wasp Nest Removal: Complete UK Guide", href: "/guides/wasp-nest-removal" },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
+        { title: "How to Get Rid of Fleas: Complete UK Guide", href: "/guides/how-to-get-rid-of-fleas" },
+        { title: "How to Get Rid of Bed Bugs: Complete UK Guide", href: "/guides/how-to-get-rid-of-bed-bugs" },
+        { title: "How to Get Rid of Rats: Complete UK Guide", href: "/guides/how-to-get-rid-of-rats" },
+        { title: "How to Get Rid of Mice: Complete UK Guide", href: "/guides/how-to-get-rid-of-mice" },
+        { title: "Restaurant Pest Control: UK Compliance Guide", href: "/guides/restaurant-pest-control" },
+        { title: "How to Get Rid of Moths", href: "/guides/how-to-get-rid-of-moths" },
+        { title: "Carpet Beetle Control: Complete UK Guide", href: "/guides/carpet-beetle-control" },
+        { title: "Pigeon Control: Complete UK Guide", href: "/guides/pigeon-control" },
       ]}
       relatedProducts={[
         { title: "Best Ant Killers UK 2026", href: "/best/ant-killers" },
-        {
-          title: "Best Cockroach Gel Bait UK 2026",
-          href: "/best/cockroach-gel-bait",
-        },
+        { title: "Best Cockroach Gel Bait UK 2026", href: "/best/cockroach-gel-bait" },
+        { title: "Best Cockroach Killers UK 2026", href: "/best/cockroach-killers" },
         { title: "Best Wasp Killers UK 2026", href: "/best/wasp-killers" },
-        { title: "Best Wasp Nest Foam UK 2026", href: "/best/wasp-nest-foam" },
-        {
-          title: "Best Flea Treatments UK 2026",
-          href: "/best/flea-treatments",
-        },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
-        { title: "Best Rat Traps UK 2026", href: "/best/rat-traps" },
-        { title: "Best Mouse Traps UK 2026", href: "/best/mouse-traps" },
+        { title: "Best Indoor Fly Killers UK 2026", href: "/best/fly-killer-indoor" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />{" "}
-      {/* Affiliate disclosure */}{" "}
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
           site running and free for everyone. As an Amazon Associate, PestPro
-          Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        If you have ever sprayed a line of ants in your kitchen only to see them
-        return the next day, you already know the problem with contact sprays:
-        they kill the workers you can see, but the queen keeps producing more
-        from the safety of the nest. The colony is barely affected. Gel bait
-        takes the opposite approach — it exploits the ant colony's food-sharing
-        behaviour (trophallaxis) to deliver poison directly to the queen and the
-        entire nest, eliminating the colony from the inside out.{" "}
-      </p>{" "}
+        The ants you can see are a fraction of the colony, and they are the part
+        that does not matter. Everything on this page comes down to whether a
+        product goes back to the nest or kills what it touches.
+      </p>
+
+      {/* DECISION BLOCK — situation first. The what-the-listings-say line and the
+          does-not-help line sit ABOVE the product lines. No Amazon link, no price,
+          no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You want the colony gone, not the trail.</strong> Only a
+            bait travels back to the nest —{" "}
+            <a href="#situation" className="underline">
+              bait or spray
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want to know what you are actually buying.</strong>{" "}
+            Three of these five name an active substance &mdash;{" "}
+            <a href="#legal" className="underline">
+              what the listings tell you
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You baited and the ants are still there after a week.</strong>{" "}
+            NC State says that is expected (
+            <a href={SRC.ncsu} rel="nofollow" className="underline">
+              NC State Extension
+            </a>
+            ) —{" "}
+            <a href="#limits" className="underline">
+              where a bait does not help
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want a bait.</strong> Two here are —{" "}
+            <a href="#best-overall" className="underline">
+              the 25g liquid
+            </a>{" "}
+            and{" "}
+            <a href="#best-stations" className="underline">
+              the pre-baited stations
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">Bait or Spray — the Whole Decision</h2>
       <p>
-        {" "}
-        Ant gel bait works slowly and deliberately. Worker ants discover the
-        gel, feed on it, and carry it back to the nest where they share it with
-        other workers, larvae, and the queen through mouth-to-mouth feeding. The
-        active ingredient kills over 24-72 hours — long enough for the poison to
-        spread throughout the colony before any ants die. Once the queen dies,
-        the colony cannot reproduce and collapses completely within 1-2 weeks.
-        This is the same method used by professional pest controllers for ant
-        colony elimination.{" "}
-      </p>{" "}
+        A bait is food with an insecticide in it. Foragers carry it home and feed
+        it to the rest, which is the only mechanism on this page that reaches a
+        queen. NC State Extension is direct about the trade-off that makes it
+        work:{" "}
+        <em>
+          &ldquo;Most ant baits are slow-acting and do not kill the ants quickly.
+          Therefore, you may continue to see ants for a week or more after
+          baiting.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.ncsu} rel="nofollow">
+          NC State Extension
+        </a>
+        ).
+      </p>
       <p>
-        {" "}
-        We selected these ant gel baits on published specifications and
-        manufacturer information, looking at{" "}
-        <strong>active ingredient effectiveness</strong>,{" "}
-        <strong>palatability to UK ant species</strong>, and{" "}
-        <strong>ease of application</strong>. We also consulted entomological
-        research on bait acceptance by the Black Garden Ant (
-        <em>Lasius niger</em>), which is responsible for the vast majority of
-        ant problems in UK homes. Every product listed is available on Amazon UK
-        at the time of writing.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
+        A contact spray or powder does the opposite. It kills the ant it lands
+        on, immediately, and that ant never goes home. Three of the five products
+        below work that way, and the Nippon liquid&rsquo;s own listing states the
+        alternative: worker ants carry the bait back to the nest.
+      </p>
+
+      {/* [1] What the listings say */}
+      <h2 id="legal">What the Listings Tell You</h2>
+      <p>
+        Three of the five name an active substance. The Nippon liquid states
+        spinosad; the Nippon 750ml spray states cypermethrin; the Zero In spray
+        states cypermethrin with benzalkonium chloride. The powder and the Doff
+        stations name none, so what is in them is on the pack and not on the page
+        you buy from.
+      </p>
+      <p>
+        One listing field is worth reading before you buy: the Nippon 750ml
+        spray&rsquo;s target species reads <em>Flea</em>, not Ant, even though it
+        is sold as an ant and crawling insect killer. That is what the listing
+        says, recorded rather than tidied.
+      </p>
+
+      {/* [2] Where it does not help */}
+      <h2 id="limits">Where a Bait Does Not Help</h2>
+      <p>
+        <strong>It is not quick, and impatience is what breaks it.</strong> The
+        slow action is the point; spraying the trail while a bait is down kills
+        the couriers.
+      </p>
+      <p>
+        <strong>It has to be eaten.</strong> NC State:{" "}
+        <em>
+          &ldquo;baits are effective only if they are eaten by the ants and not
+          all baits are equally attractive to different ant species.&rdquo;
+        </em>{" "}
+        An untouched bait is not a failed product so much as the wrong bait, or
+        the wrong place.
+      </p>
+      <p>
+        <strong>It has to keep being there.</strong>{" "}
+        <em>
+          &ldquo;Make sure you provide enough bait and check it daily to make
+          sure that it isn&rsquo;t depleted.&rdquo;
+        </em>{" "}
+        A bait point that runs dry mid-treatment stops the process partway.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Bait or contact — read the item form</h3>
+      <p>
+        The listing&rsquo;s own item form settles it: Liquid and pre-baited
+        stations are baits; Powder and Spray are contact treatments. The table
+        states which each is.
+      </p>
+      <h3>2. Whether the active substance is named</h3>
+      <p>
+        Three of five name one, and two of the three state it in the description
+        rather than in a detail field. If you need to know what you are putting
+        near food preparation or pets, that is what to read.
+      </p>
+      <h3>3. Where it is going</h3>
+      <p>
+        Three of these are listed for indoor and outdoor use. One is listed as
+        suitable for soft furnishings. That decides more in practice than any
+        ranking would.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
           <p>
-            Do not spray insecticide near gel bait or disturb ants that are
-            feeding on it. You want as many ants as possible to consume the gel
-            and carry it back to the nest. More ants at the bait station =
-            faster colony elimination.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* At a Glance */} <h2 id="at-a-glance">Best Ant Gels at a Glance</h2>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Product</th> <th>Format</th> <th>Best For</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      <div className="not-prose">
-        {" "}
-        <StatCallout
-          value="1–2 weeks"
-          label="Typical time for gel bait to eliminate an entire ant colony"
-        />{" "}
-      </div>{" "}
-      {/* Product 1 */}{" "}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Nippon Ant Killer Gel is the UK market leader for ant gel bait, and it
-        has earned that position through sheer effectiveness. The sugary liquid
-        bait is irresistible to Black Garden Ants — worker ants feed on the gel,
-        carry it back to the nest, and share it with the colony through
-        trophallaxis. The poison reaches the queen, and once she dies the colony
-        cannot reproduce. You are not just killing the ants you can see; you are
-        eliminating the entire colony from the inside out.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The 25g tube treats multiple ant runs. Apply pea-sized dots along ant
-        trails, near entry points, and behind kitchen units. The gel remains
-        moist and attractive for days, ensuring continued uptake. For most UK
-        homeowners dealing with a summer ant invasion, this is the first product
-        to reach for — affordable, effective, and safe for indoor use.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Long-established UK ant gel bait</li>{" "}
-        <li>Eliminates the entire colony including the queen</li>{" "}
-        <li>25g tube covers multiple ant runs</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Gel can dry out in very warm conditions</li>{" "}
-        <li>Tube nozzle makes precise placement slightly tricky</li>{" "}
-        <li>Less effective on tropical ant species like Pharaoh Ants</li>{" "}
-      </ul>{" "}
-      {/* Product 2 */}{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Nippon Ant Killer Powder is a permethrin-based powder designed for
-        direct nest treatment and perimeter barriers. Where gel bait works
-        through colony food-sharing, powder works through direct contact — ants
-        walk through the treated area, pick up the powder on their bodies, and
-        die within hours. It is particularly effective when you can identify the
-        nest location and apply powder directly into the entrance.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Apply along ant runs, into cracks and crevices, and around garden nest
-        sites for long-lasting outdoor control. The 500g container provides
-        generous coverage, and the permethrin residual remains effective for up
-        to six months — meaning treated areas stay protected well beyond the
-        initial application. This is the ideal complement to gel bait: use gel
-        indoors for colony elimination, and powder outdoors to create a barrier
-        and treat visible nests.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Permethrin-based — kills on contact</li>{" "}
-        <li>6-month effective residual for long-term protection</li>{" "}
-        <li>500g treats a large area — excellent value</li>{" "}
-        <li>Ideal for outdoor nests, paths and perimeter barriers</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Not suitable for indoor use on kitchen surfaces</li>{" "}
-        <li>Rain can wash powder away from outdoor treatment areas</li>{" "}
-        <li>
-          Does not exploit trophallaxis — kills workers, not the queen directly
-        </li>{" "}
-      </ul>{" "}
-      {/* Product 3 */}{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Nippon Ant and Crawling Insect Killer Spray is a ready-to-use residual
-        spray for both indoor and outdoor surfaces. It kills ants on contact and
-        leaves an invisible protective barrier that continues to kill ants
-        crossing the treated surface for weeks after application. Apply around
-        doorframes, windowsills, skirting boards, and garden paths to create a
-        chemical perimeter that ants cannot cross without being poisoned.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The 750ml bottle treats a full property perimeter, making it a practical
-        choice for preventing ants from entering your home in the first place.
-        While spray does not offer the colony-killing power of gel bait (it
-        kills workers on contact rather than reaching the queen), it is an
-        excellent defensive measure when used alongside gel. Deploy gel bait at
-        active trails for colony elimination, and spray around entry points to
-        stop new ants getting in while the gel does its work.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Ready-to-use — no mixing or diluting required</li>{" "}
-        <li>Residual barrier keeps killing for weeks after application</li>{" "}
-        <li>750ml covers a full property perimeter</li>{" "}
-        <li>Works on all crawling insects, not just ants</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Does not kill the colony — kills workers on contact only</li>{" "}
-        <li>Can disrupt gel bait if sprayed near bait placements</li>{" "}
-        <li>Needs reapplication after rain on outdoor surfaces</li>{" "}
-      </ul>{" "}
-      {/* Product 4 */}{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Zero In Ant and Cockroach Killer is a large 1.5-litre ready-to-use
-        pressure sprayer that targets ants and cockroaches both indoors and
-        outdoors. The active ingredient is cypermethrin combined with an
-        antibacterial agent, giving you a dual-action formula that kills
-        crawling insects on contact and leaves a residual barrier on treated
-        surfaces. The adjustable nozzle lets you switch between a fine mist for
-        surface treatment and a targeted stream for cracks, crevices and
-        hard-to-reach harbourage points.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The generous 1.5-litre volume means you can treat a full property
-        perimeter in a single application — around doorframes, windowsills,
-        skirting boards, patio edges and garden paths. While this is a contact
-        killer rather than a colony-eliminating bait, it is an excellent
-        complement to gel bait: use the Zero In spray to create a defensive
-        barrier around your home while gel bait works on eliminating the nest
-        from the inside. For homeowners dealing with both ants and cockroaches,
-        this one product covers both pests.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Large 1.5L volume — treats a full property perimeter</li>{" "}
-        <li>Adjustable nozzle for precision and broad surface application</li>{" "}
-        <li>Dual ant and cockroach formula with antibacterial agent</li>{" "}
-        <li>Ready-to-use pressure sprayer — no mixing required</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Contact killer only — does not eliminate the colony or queen
-        </li>{" "}
-        <li>Can disrupt gel bait if sprayed near bait placements</li>{" "}
-        <li>Needs reapplication after rain on outdoor surfaces</li>{" "}
-      </ul>{" "}
-      {/* Product 5 */}{" "}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Doff 2-in-1 Ant and Nest Bait Killer Stations are pre-baited bait
-        stations from the established UK manufacturer Doff. Each station is
-        ready to use straight out of the box — simply place them along ant
-        trails and near entry points. Worker ants enter the station, feed on the
-        bait, and carry it back to the nest where they share it with other
-        workers, larvae, and the queen. The colony is eliminated from the inside
-        out, including the queen, so the problem does not return.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The enclosed bait station design makes Doff a particularly practical
-        choice for homes with children and pets. The bait is contained inside
-        the station where it cannot be easily accessed, and the stations can be
-        used both indoors and outdoors. Each station provides up to three months
-        of protection, making them a genuine set-and-forget solution. As a UK
-        brand, Doff products are widely available and competitively priced —
-        excellent value for reliable colony elimination.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          UK manufacturer — widely available and competitively priced
-        </li>{" "}
-        <li>Pre-baited stations — no handling of bait required</li>{" "}
-        <li>Eliminates the entire colony including the queen</li>{" "}
-        <li>
-          Enclosed design — safe around children and pets when used as directed
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Fixed station placement — less flexible than gel syringe</li>{" "}
-        <li>Stations are visible when placed in living areas</li>{" "}
-        <li>May take 1-2 weeks for full colony elimination</li>{" "}
-      </ul>{" "}
-      {/* Buying Guide */}{" "}
-      <h2 id="buying-guide">How to Choose the Right Ant Gel</h2>{" "}
-      <h3>Gel vs Spray</h3>{" "}
-      <p>
-        {" "}
-        Always choose gel over spray for ant problems. Spray kills only the ants
-        you hit directly and does not reach the queen or nest. Worse, spray can
-        cause ant colonies to "bud" (split into multiple colonies), making the
-        problem worse. Gel bait is carried back to the nest and kills the entire
-        colony including the queen — the only approach that provides a permanent
-        solution.{" "}
-      </p>{" "}
-      <h3>Active Ingredient</h3>{" "}
-      <p>
-        {" "}
-        <strong>Indoxacarb</strong> (Advion): broad-spectrum and highly
-        palatable, but professional-only in the UK and not sold to the general
-        public. <strong>Imidacloprid</strong> (Maxforce Quantum): excellent for
-        Pharaoh Ants and resistant populations. <strong>Borax</strong> (Terro):
-        naturally occurring, proven effective, slightly slower acting.{" "}
-        <strong>Spinosad</strong> (Nippon): effective for Black Garden Ants,
-        widely available. For most UK ant problems (Black Garden Ants), the
-        borax and spinosad gels on this page will work. Pharaoh Ants are a
-        different matter: the indoxacarb and imidacloprid gels that deal with
-        them reliably are authorised for professional use only in the UK and are
-        not sold to the general public, so a confirmed Pharaoh Ant infestation
-        is a job for a pest controller rather than a shop-bought gel.{" "}
-      </p>{" "}
-      <h3>Gel Syringe vs Bait Station</h3>{" "}
-      <p>
-        {" "}
-        <strong>Gel syringes</strong> allow precise placement in cracks,
-        crevices, and along specific trails — maximum flexibility and
-        effectiveness. <strong>Bait stations</strong> are enclosed, cleaner, and
-        safer around children and pets, but less flexible in placement. For
-        kitchens and bathrooms, gel syringes placed behind units give the best
-        results. For living spaces with children, enclosed stations are
-        safer.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="info">
-          {" "}
-          <p>
-            If you see more ants after placing gel bait, do not panic — this
-            means it is working. Worker ants are recruiting more foragers to
-            collect the bait and take it back to the nest. Activity should
-            decrease significantly within 3-5 days.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* Application Guide */}{" "}
-      <h2 id="application">How to Apply Ant Gel for Best Results</h2>{" "}
-      <h3>Step 1: Identify the Ant Trail</h3>{" "}
-      <p>
-        {" "}
-        Watch where ants are coming from and going to. Follow the trail in both
-        directions if possible — one direction leads to the nest, the other to
-        their food source. Place gel bait along the trail, near entry points,
-        and close to where the trail disappears into a crack or behind a
-        unit.{" "}
-      </p>{" "}
-      <h3>Step 2: Place Small Dots</h3>{" "}
-      <p>
-        {" "}
-        Apply pea-sized dots of gel every 30-50cm along the ant trail. Place
-        dots slightly to the side of the trail, not directly on it. This allows
-        ants to discover the bait without the trail being disrupted. Behind
-        kitchen units, along skirting boards, and near entry points are the most
-        effective locations.{" "}
-      </p>{" "}
-      <h3>Step 3: Do Not Disturb</h3>{" "}
-      <p>
-        {" "}
-        Do not spray insecticide, clean the ant trail, or disturb ants that are
-        feeding on the gel. You want maximum ant traffic to and from the bait.
-        Every ant that feeds and returns to the nest is carrying poison that
-        will spread to more colony members.{" "}
-      </p>{" "}
-      <h3>Step 4: Be Patient</h3>{" "}
-      <p>
-        {" "}
-        Full colony elimination takes 7-14 days. You will likely see increased
-        ant activity in the first 2-3 days as workers recruit more foragers.
-        Activity should decrease noticeably from day 3-5, with the trail
-        stopping completely within 1-2 weeks. If the gel has been completely
-        consumed, apply more.{" "}
-      </p>{" "}
-      {/* FAQ */} <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      {faqs.map((f) => (
-        <div key={f.q}>
-          <h3>{f.q}</h3>
-          <p>{f.a}</p>
+            {
+              [
+                "The clearest bait on the page and the only product here naming spinosad. Its listing states that worker ants carry it back to the nest and that it is useful where the nest site is unknown, which is the case a bait exists for.",
+                "A 500g contact powder rather than a bait, listed as killing on contact and as covering cockroaches, beetles, earwigs, silverfish and woodlice as well as ants. The maker claims up to six months of control; no active substance is named.",
+                "A 750ml ready-to-use contact spray listed as suitable for soft furnishings. Its target species field reads Flea, and its directions text states it contains cypermethrin.",
+                "The largest container here at 1.5 litres, naming cypermethrin with a benzalkonium chloride antibacterial agent. Fan spray or crack-and-crevice.",
+                "Pre-baited stations, so the second product on the page that works by being carried home rather than by contact. Listed for indoor and outdoor use and as safe around children and pets when used as instructed; the active substance is not named.",
+              ][i]
+            }
+          </p>
         </div>
       ))}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Ants Keep Coming Back?"
-          subtext="A professional pest controller can identify species, locate hidden nests, and apply commercial-grade gel bait for permanent colony elimination"
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-3">
-          Want the full picture on ant control?
-        </p>{" "}
-        <a
-          href="/guides/how-to-get-rid-of-ants"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          {" "}
-          How to Get Rid of Ants — Complete UK Guide →{" "}
-        </a>{" "}
-      </div>{" "}
+
+      {/* [14] Alternatives */}
+      <h2 id="alternatives">If a Bait Is Not the Answer</h2>
+      <p>
+        <strong>Take the food away first.</strong> A bait competes with whatever
+        is already on the worktop, and it loses.
+      </p>
+      <p>
+        <strong>Follow the trail to where they come in.</strong> Sealing the entry
+        is the only step here that stops the next colony as well as this one.
+      </p>
+      <p>
+        <strong>For a nest under a slab or in a wall,</strong> a surface product
+        is treating the symptom — that is the point to get someone in.
+      </p>
+
+      {/* [15] Using them */}
+      <h2 id="using">Baiting Properly</h2>
+      <ol>
+        <li>
+          <strong>Put bait on the trail, not where you saw one ant.</strong> The
+          trail is the supply line to the nest.
+        </li>
+        <li>
+          <strong>Do not spray a trail you are baiting.</strong> Killing the
+          couriers is the most common way a bait treatment fails.
+        </li>
+        <li>
+          <strong>Check the bait daily and top it up.</strong> That is NC
+          State&rsquo;s instruction above, and it is the step most often skipped.
+        </li>
+        <li>
+          <strong>Expect a week or more of visible ants.</strong> Slow action is
+          the mechanism working, not failing.
+        </li>
+        <li>
+          <strong>If nothing is taken in a few days, move it or change it.</strong>{" "}
+          Not all baits suit all species.
+        </li>
+      </ol>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Five Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Bait or contact, and active substance
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <FindProviderCTA
+        heading="Ants coming back every summer?"
+        subtext="A nest in a cavity or under a slab is not a worktop problem. Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

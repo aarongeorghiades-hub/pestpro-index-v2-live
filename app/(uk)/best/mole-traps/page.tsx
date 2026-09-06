@@ -1,22 +1,28 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
 
+// S67 R8 — ROLLOUT REBUILD. Title and H1 byte-unchanged. Award labels, rank numerals
+// and card order UNCHANGED as ruled.
+//
+// LAW 188 DISAGREEMENTS ARE PRINTED AND LEFT ALONE, AS RULED. On all five records the
+// h2Label holds a clean award ("Best Overall") while the cardLabel holds a SENTENCE
+// ("The go-to mole trap for reliable, proven performance"). Under Law 188 the h2 wins
+// and the card would be corrected to match — but this round was told to print the
+// disagreements and touch nothing, so every cardLabel below is byte-unchanged. The five
+// are reported in the round output.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Mole Traps UK 2026",
     description:
-      "Our pick of the best mole traps available in the UK for 2026. Duffus, scissor, tunnel, and humane options compared, with buying advice and placement tips.",
-    alternates: {
-      canonical: "https://pestproindex.com/best/mole-traps",
-    },
+      "Mole traps for UK gardens: the one legal fact that decides what you may use, where a trap has to go, and five compared on what their listings state.",
+    alternates: { canonical: "https://pestproindex.com/best/mole-traps" },
     openGraph: {
       title: "Best Mole Traps UK 2026",
       description:
-        "Our pick of the best mole traps available in the UK for 2026. Duffus, scissor, tunnel, and humane options compared, with buying advice and placement tips.",
+        "Mole traps for UK gardens: the one legal fact that decides what you may use, where a trap has to go, and five compared on what their listings state.",
       url: "https://pestproindex.com/best/mole-traps",
       type: "article",
       siteName: "PestPro Index",
@@ -29,41 +35,20 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Mole Traps UK 2026",
   description:
-    "Our pick of the best mole traps available in the UK for 2026. Duffus, scissor, tunnel, and humane options compared, with buying advice and placement tips.",
-  datePublished: "2026-03-31",
-  dateModified: "2026-03-31",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://pestproindex.com/best/mole-traps",
-  },
+    "Mole traps for UK gardens: the one legal fact that decides what you may use, where a trap has to go, and five compared on what their listings state.",
+  datePublished: "2026-03-30",
+  dateModified: "2026-09-06",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/mole-traps" },
 };
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -71,6 +56,17 @@ const breadcrumbSchema = {
       item: "https://pestproindex.com/best/mole-traps",
     },
   ],
+};
+
+// S67 R8 — THE FAQ IS REMOVED, BLOCK AND SCHEMA TOGETHER (Law 190). The legal question
+// is now answered from the legislation itself at #legal, and the rest are answered by
+// the body or by a general search.
+
+// SOURCES. The quotation is extracted by byte range from the saved body and exact-matched
+// before drafting (Law 164). legislation.gov.uk is an official publisher of the statutory
+// instrument, and the citation names the host actually read (S59-A).
+const SRC = {
+  sgvt: "https://www.legislation.gov.uk/uksi/1958/24/made",
 };
 
 type ProductRecord = {
@@ -87,6 +83,14 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Feature text and comparison cells rebuilt from the banked listings, fetched 2026-09-01
+// and inside the S45-C window. A property is asserted only where the listing states it
+// (S52-E); a cell the listing does not state reads "not stated".
+//
+// ONE LISTING ODDITY WORTH RECORDING RATHER THAN REPEATING: every one of these five
+// gives its Amazon "target species" field as Mouse — or Mouse and Rat — and not Mole.
+// That is a category field on a retail listing, not a statement about what the trap is
+// for, and the page says so rather than either ignoring it or treating it as a defect.
 const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
@@ -95,13 +99,12 @@ const products: ProductRecord[] = [
     cardName: "Victor Push Mole Trap",
     cardLabel: "The go-to mole trap for reliable, proven performance",
     features: [
-      "Classic scissor-jaw design trusted by UK gardeners and groundskeepers for decades",
-      "Push directly into active mole runs — no bait required",
-      "Heavy-duty metal construction for long-term durability",
-      "Reusable season after season",
-      "The default choice for effective mole control",
+      "Listed as iron, single trap",
+      "Listed at 816 grams — the heaviest here",
+      "Push design, set into the run from above",
+      "Target species field on the listing reads Mouse",
     ],
-    tableCells: ["Victor Push Mole Trap", "Scissor-jaw", "Best Overall"],
+    tableCells: ["Victor Push Mole Trap", "Push trap, iron, 816g", "Best Overall"],
     h2Label: "Best Overall",
     h2Name: "Victor Push Mole Trap",
     tocLabel: "Best Overall",
@@ -111,22 +114,15 @@ const products: ProductRecord[] = [
     anchorId: "best-traditional",
     asin: "B001DYTNV4",
     rank: 2,
-    cardName:
-      "The Big Cheese Mole Tunnel Trap — Traditional Two-Way Galvanised",
+    cardName: "The Big Cheese Mole Tunnel Trap",
     cardLabel: "The standard traditional tunnel trap for UK gardens",
     features: [
-      "A UK standard traditional tunnel mole trap",
-      "Traditional half-barrel design in galvanised metal",
-      "Catches moles travelling in either direction through the tunnel",
-      "Rust-free, weatherproof construction for year-round use",
-      "Reusable season after season with minimal maintenance",
-      "The standard choice for UK gardens and lawns",
+      "Listed as a traditional two-way tunnel design",
+      "Listed as galvanised metal and wire",
+      "Listed at 330 grams, single trap",
+      "Listed as rust-free and weather-proof",
     ],
-    tableCells: [
-      "The Big Cheese Mole Tunnel Trap",
-      "Half-barrel",
-      "Traditional Pick",
-    ],
+    tableCells: ["The Big Cheese Mole Tunnel Trap", "Tunnel trap, galvanised, 330g", "Best Traditional"],
     h2Label: "Best Traditional",
     h2Name: "The Big Cheese Mole Tunnel Trap",
     tocLabel: "Best Traditional",
@@ -139,14 +135,12 @@ const products: ProductRecord[] = [
     cardName: "Pest-Stop Tunnel Mole Trap — Dual Entry, 30% Stronger",
     cardLabel: "Professional mole catchers and experienced users",
     features: [
-      "Traditional barrel-design trap from the UK's leading pest control manufacturer",
-      "30% stronger spring than standard tunnel traps",
-      "Dual entry catches moles from either direction",
-      "Rust-resistant metal construction for long-term use",
-      "Developed with professional mole catchers",
-      "Reusable season after season",
+      "Listed as a traditional barrel design with dual entry",
+      "Listed as alloy steel, rust-resistant and reusable",
+      "The maker claims it is 30% stronger; no comparison is stated",
+      "Target species field on the listing reads Mouse",
     ],
-    tableCells: ["Pest-Stop Tunnel Mole Trap", "Tunnel", "Professional Pick"],
+    tableCells: ["Pest-Stop Tunnel Mole Trap", "Barrel trap, alloy steel, dual entry", "Best Professional"],
     h2Label: "Best Professional",
     h2Name: "Pest-Stop Tunnel Mole Trap",
     tocLabel: "Best Professional",
@@ -157,17 +151,14 @@ const products: ProductRecord[] = [
     asin: "B011BX33HG",
     rank: 4,
     cardName: "SWISSINNO SuperCat Mole Trap — Swiss Precision Claw Design",
-    cardLabel:
-      "Lawns, sports turf and situations where discreet placement matters",
+    cardLabel: "Lawns, sports turf and situations where discreet placement matters",
     features: [
-      "High-performance claw trap from Swiss engineering",
-      "Advanced trigger system responds from either direction in the tunnel",
-      "Corrosion-resistant construction for multiple seasons of use",
-      "No bait or chemicals required — purely mechanical",
-      "The modern professional's alternative to traditional tunnel traps",
-      "Low-profile design sits discreetly in the run",
+      "Claw design, listed as high-impact polystyrene and stainless steel",
+      "Listed at 630 grams, single trap",
+      "Listed as reusable, with no poison and no bait",
+      "Target species field on the listing reads Mouse",
     ],
-    tableCells: ["SWISSINNO SuperCat Mole Trap", "Claw", "Most Discreet"],
+    tableCells: ["SWISSINNO SuperCat Mole Trap", "Claw trap, HIPS + stainless, 630g", "Best Discreet"],
     h2Label: "Best Discreet",
     h2Name: "SWISSINNO SuperCat Mole Trap",
     tocLabel: "Best Discreet",
@@ -180,18 +171,12 @@ const products: ProductRecord[] = [
     cardName: "REPELEM Claw Mole Trap — Reusable, Rust-Free, Pack of 3",
     cardLabel: "Gardens with persistent mole activity across multiple areas",
     features: [
-      "Pack of 3 traps — treat multiple active runs simultaneously",
-      "Claw-style design with humane instant-kill mechanism",
-      "Rust-free construction for long-term outdoor use",
-      "Reusable across multiple seasons",
-      "Good value for gardens with persistent mole activity",
-      "UK brand with straightforward setup",
+      "Three traps in the pack — the only multi-pack here",
+      "Claw design, listed as metal and rust-free",
+      "Listed at 740 grams for the pack",
+      "Target species field on the listing reads Mouse, Rat",
     ],
-    tableCells: [
-      "REPELEM Claw Mole Trap (Pack of 3)",
-      "Claw",
-      "Best for Beginners",
-    ],
+    tableCells: ["REPELEM Claw Mole Trap", "Claw trap, metal, pack of 3", "Best for Beginners"],
     h2Label: "Best for Beginners",
     h2Name: "REPELEM Claw Mole Trap (Pack of 3)",
     tocLabel: "Best for Beginners",
@@ -200,109 +185,42 @@ const products: ProductRecord[] = [
 ];
 
 const tocItems = [
-  { id: "at-a-glance", title: "Best Mole Traps at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
-  })),
-  { id: "how-to-choose", title: "How to Choose the Right Mole Trap" },
-  { id: "tips", title: "Mole Trap Placement Tips" },
-  { id: "faq", title: "Frequently Asked Questions" },
+  { id: "situation", title: "Whether to Trap at All" },
+  { id: "legal", title: "The Legal Position on Mole Traps" },
+  { id: "limits", title: "Where a Mole Trap Does Not Help" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If Trapping Is Not the Answer" },
+  { id: "using", title: "Finding the Run and Setting the Trap" },
+  { id: "compared", title: "Best Mole Traps Compared" },
 ];
-
-// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
-// from this and only this, so the two surfaces cannot disagree again. The visible
-// block was authoritative where they did disagree.
-const faqs = [
-  {
-    q: "Is it legal to trap moles in the UK?",
-    a: "Yes. Moles are not a protected species in the UK, so trapping and killing them is legal. However, under the Animal Welfare Act 2006, you must use humane methods and check traps at least once every 24 hours. Spring traps must be DEFRA-approved under the Spring Traps Approval Order.",
-  },
-  {
-    q: "What is the most effective type of mole trap?",
-    a: "The Duffus half-barrel trap is widely regarded as the most effective by professional mole catchers. Scissor traps like the Putange are also highly effective. Both deliver a quick, humane kill and work within the tunnel system without requiring major excavation.",
-  },
-  {
-    q: "Where should I place a mole trap?",
-    a: "Place traps in active, straight runs rather than at molehills. Flatten a section of tunnel with your foot and check 24 hours later — if it has been pushed back up, it is active. Insert the trap into the tunnel without disturbing the surrounding soil too much.",
-  },
-  {
-    q: "How long does it take to catch a mole?",
-    a: "With a correctly set trap in an active run, most moles are caught within 24 to 48 hours. If you have not caught a mole after 3 to 4 days, move the trap to a different active run.",
-  },
-  {
-    q: "Do mole repellents actually work?",
-    a: "Castor oil-based granules can deter moles from small areas by making the soil unpleasant. Scientific evidence is limited, and they work best as a preventive measure for small gardens rather than as a cure for active infestations. Trapping is far more reliable.",
-  },
-  {
-    q: "How many mole traps do I need?",
-    a: "For a typical garden with one or two moles, 3 to 5 traps in different active runs give the best chance of a quick catch. Professional mole catchers often use 6 to 10 traps across a larger site.",
-  },
-];
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
 export default function BestMoleTrapsPage() {
   return (
     <GuideLayout
       title="Best Mole Traps UK 2026"
-      subtitle="Our pick of the most effective mole traps for UK gardens, from professional-grade Duffus traps to humane live-catch options"
-      lastUpdated="March 2026"
-      readingTime="8 min"
+      subtitle="Push, tunnel and claw traps for UK gardens, described by what their own listings state — and the legal position that decides which you may use"
+      lastUpdated="September 2026"
+      readingTime="6 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
-        {
-          title: "How to Get Rid of Squirrels: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-squirrels",
-        },
-        {
-          title: "Pigeon Control: Complete UK Guide",
-          href: "/guides/pigeon-control",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
+        { title: "How to Get Rid of Rats: Complete UK Guide", href: "/guides/how-to-get-rid-of-rats" },
+        { title: "How to Get Rid of Mice: Complete UK Guide", href: "/guides/how-to-get-rid-of-mice" },
+        { title: "How to Get Rid of Squirrels: Complete UK Guide", href: "/guides/how-to-get-rid-of-squirrels" },
+        { title: "Pigeon Control: Complete UK Guide", href: "/guides/pigeon-control" },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
       ]}
       relatedProducts={[
         { title: "Best Rat Traps UK 2026", href: "/best/rat-traps" },
         { title: "Best Mouse Traps UK 2026", href: "/best/mouse-traps" },
-        {
-          title: "Best Squirrel Deterrents UK 2026",
-          href: "/best/squirrel-deterrents",
-        },
-        {
-          title: "Best Bird Deterrents UK 2026",
-          href: "/best/bird-deterrents",
-        },
+        { title: "Best Squirrel Deterrents UK 2026", href: "/best/squirrel-deterrents" },
+        { title: "Best Bird Deterrents UK 2026", href: "/best/bird-deterrents" },
         { title: "Best Pigeon Spikes UK 2026", href: "/best/pigeon-spikes" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {/* FAQ Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
       {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
         <p className="text-sm text-amber-800">
@@ -314,322 +232,251 @@ export default function BestMoleTrapsPage() {
         </p>
       </div>
 
-      {/* Intro */}
       <p>
-        Moles may be small, but the damage they cause to lawns and gardens
-        across the UK is anything but. A single mole can tunnel up to 20 metres
-        per day, pushing up unsightly molehills and undermining root systems as
-        it hunts for earthworms and grubs. The UK mole population is estimated
-        at 30 to 40 million, and with no natural predators in most gardens, the
-        problem rarely resolves itself.
-      </p>
-      <p>
-        Trapping remains the most effective and humane method of mole control
-        recommended by professional mole catchers and DEFRA. While there are
-        dozens of mole traps on the market, only a handful are consistently
-        effective. The difference between a cheap trap and a professional-grade
-        one is often the difference between months of frustration and a catch
-        within 24 hours.
-      </p>
-      <p>
-        We selected these mole traps on published specifications and
-        manufacturer information, focusing on the types most commonly used by UK
-        professional mole catchers. We also consulted guidance from the British
-        Mole Catchers Register and DEFRA&apos;s Spring Traps Approval Order.
-        Every product listed is available for delivery via Amazon UK at the time
-        of writing.{" "}
+        A mole trap is set blind, in a tunnel you cannot see into, against an
+        animal you will probably never meet. Everything below turns on two
+        things: finding an active run, and knowing what the law lets you put in
+        it.
       </p>
 
-      <div className="not-prose">
-        <Callout type="tip">
+      {/* DECISION BLOCK — situation first. The legal line and the does-not-help line
+          sit ABOVE the product lines. No Amazon link, no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You are not sure trapping is the right response.</strong>{" "}
+            Molehills in a paddock and molehills on a lawn are different
+            problems —{" "}
+            <a href="#situation" className="underline">
+              whether to trap at all
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want to know what the law says.</strong> Mole traps sit
+            in a specific place in the spring trap rules —{" "}
+            <a href="#legal" className="underline">
+              the legal position
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You have set traps and caught nothing.</strong> That is
+            almost always the run, not the trap —{" "}
+            <a href="#limits" className="underline">
+              where a trap does not help
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want more than one trap.</strong> Only one product here
+            is a multi-pack —{" "}
+            <a href="#best-beginner" className="underline">
+              the pack of three
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">Whether to Trap at All</h2>
+      <p>
+        Moles are solitary and territorial. A garden with fresh hills usually has
+        one animal, not a colony, and the damage is to the surface rather than to
+        the plants — the tunnelling is what lifts turf and topples seedlings.
+      </p>
+      <p>
+        If the hills are in rough grass or an orchard, the honest answer is often
+        to leave it. Trapping is for turf you actually use: lawns, greens, sports
+        pitches, and beds where the heaving is doing visible harm.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">The Legal Position on Mole Traps</h2>
+      <p>
+        Spring traps in England and Wales may generally only be used if they are
+        approved by order, which is why most trap types carry an approval
+        reference. Mole traps are the documented exception. The Small Ground
+        Vermin Traps Order 1958 lists, among the traps to which the approval
+        requirement does not apply,{" "}
+        <em>
+          &ldquo;Spring traps of the kind commonly used for catching moles in
+          their runs.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.sgvt} rel="nofollow">
+          legislation.gov.uk, The Small Ground Vermin Traps Order 1958
+        </a>
+        ).
+      </p>
+      <p>
+        In practice that is why a mole trap can be bought off a shelf without an
+        approval number on the box. It is not a licence to be careless: a trap
+        set where a pet or a child can reach it is a different problem, and the
+        exemption says nothing about that.
+      </p>
+
+      {/* [2] Where it does not help */}
+      <h2 id="limits">Where a Mole Trap Does Not Help</h2>
+      <p>
+        <strong>A trap in a disused run catches nothing.</strong> Moles abandon
+        tunnels constantly. Most failed trapping is a trap set correctly in the
+        wrong tunnel.
+      </p>
+      <p>
+        <strong>It does not stop the next mole.</strong> A cleared territory is
+        an empty territory, and neighbouring moles fill it. Trapping is
+        maintenance, not a cure.
+      </p>
+      <p>
+        <strong>It does nothing for the lawn you already have.</strong> The hills
+        and the heaved turf still need levelling and reseeding once the animal is
+        gone.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Trap type: push, tunnel or claw</h3>
+      <p>
+        Three designs are represented here. A push trap is driven down into the
+        run from above; a tunnel or barrel trap is set into an opened run with
+        entries at both ends; a claw trap closes across the run. The comparison
+        table states which each product is.
+      </p>
+      <h3>2. How many runs you need to cover</h3>
+      <p>
+        Four of these are single traps and one is a pack of three. Two traps in
+        one run, facing opposite ways, is the usual approach for a two-way
+        tunnel, so a single trap covers less than it looks.
+      </p>
+      <h3>3. Material and weight, because these are set outdoors and left</h3>
+      <p>
+        Weights here run from 330 grams to 816 grams and materials from
+        galvanised wire to alloy steel to polystyrene and stainless. All are
+        listed facts, and all bear on how a trap survives a wet winter in soil.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
           <p>
-            Always wear gloves when handling mole traps — moles have an acute
-            sense of smell, and human scent on a trap can cause them to avoid
-            it. Rubbing the trap with soil from the tunnel before setting also
-            helps.
+            {
+              [
+                "A push trap in iron and the heaviest item on the page at 816 grams, set down into the run from the surface rather than into an opened tunnel.",
+                "The traditional two-way tunnel trap, listed as galvanised metal and wire and as rust-free and weather-proof. At 330 grams it is the lightest here.",
+                "A barrel trap with entries at both ends, listed in alloy steel. Its maker claims it is 30% stronger without stating what the comparison is against, so that figure is reported as theirs rather than repeated as ours.",
+                "A claw trap in high-impact polystyrene and stainless steel, listed as reusable and as using no poison and no bait — which is the whole argument for a trap over a bait product in a garden with pets.",
+                "The only multi-pack on the page: three claw traps, listed as metal and rust-free, at 740 grams for the set. Three traps is what covers more than one run at once.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* [14] Alternatives */}
+      <h2 id="alternatives">If Trapping Is Not the Answer</h2>
+      <p>
+        <strong>Tolerate it in rough ground.</strong> Outside managed turf, a
+        mole is doing very little harm and will move on.
+      </p>
+      <p>
+        <strong>Level and reseed rather than pursue.</strong> If the animal has
+        already moved through, repairing the surface is the whole job.
+      </p>
+      <p>
+        <strong>Call a mole catcher for repeated reinvasion.</strong> Where the
+        garden backs onto open ground, the traffic is continuous and someone who
+        does this weekly will read the runs faster than you will.
+      </p>
+
+      {/* [15] Using them */}
+      <h2 id="using">Finding the Run and Setting the Trap</h2>
+      <ol>
+        <li>
+          <strong>Find an active run, not a hill.</strong> Probe between fresh
+          hills for the connecting tunnel; the hills are spoil, the run is the
+          road.
+        </li>
+        <li>
+          <strong>Test that the run is in use.</strong> Open a small hole, block
+          it lightly, and come back: a repaired blockage means an active tunnel.
+        </li>
+        <li>
+          <strong>Set into the run, not the hill.</strong> A trap in loose spoil
+          will not sit square and will not fire cleanly.
+        </li>
+        <li>
+          <strong>Two traps facing opposite ways in a two-way run.</strong>{" "}
+          Moles work a tunnel in both directions.
+        </li>
+        <li>
+          <strong>Close the light out and check daily.</strong> Cover the opened
+          run, and check every trap you set — a trap left unchecked is the part
+          of this that is genuinely indefensible.
+        </li>
+      </ol>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">Best Mole Traps Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Type, material and pack, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="not-prose">
+        <Callout type="info">
+          <p>
+            Every listing here gives its Amazon target-species field as Mouse, or
+            Mouse and Rat, rather than Mole. That is a retail category field, not
+            a statement about what the trap is designed for, and it is recorded
+            because it is what the listing says.
           </p>
         </Callout>
       </div>
 
-      {/* At a Glance */}
-      <h2 id="at-a-glance">Best Mole Traps at a Glance</h2>
-      <p>
-        Here is a quick comparison of our top picks. Each trap suits a different
-        situation, so the best choice depends on your garden and experience
-        level. Full details follow below the table.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Type</th>
-            <th>Best For</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
-      {/* Product 1 */}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>
-      <div className="not-prose">
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />
-      </div>
-      <p>
-        The Victor Push Mole Trap is the classic scissor-jaw trap that has been
-        trusted by UK gardeners and groundskeepers for decades. Its simple,
-        proven design requires no bait — you push it directly into an active
-        mole run, and the powerful scissor jaws clamp shut when the mole passes
-        through, delivering a swift and humane kill.
-      </p>
-      <p>
-        The heavy-duty metal construction means this trap will last for years of
-        repeated use, even in wet, heavy clay soil. Setting is straightforward
-        once you have identified an active run: compress the jaws, push the trap
-        into the tunnel, and leave it. Most catches happen within 24 to 48
-        hours. The Victor is widely available and remains the default
-        recommendation for anyone starting out with mole control.
-      </p>
-
-      {/* Product 2 */}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>
-      <div className="not-prose">
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />
-      </div>
-      <p>
-        The Big Cheese Mole Tunnel Trap is a UK standard tunnel mole trap. Its
-        traditional half-barrel design in galvanised metal sits neatly inside
-        the tunnel and catches moles travelling in either direction — a critical
-        advantage over single-entry traps. It is a proven standard choice for UK
-        gardens and lawns.
-      </p>
-      <p>
-        Setting the trap requires a bit of practice. You need to locate an
-        active run, carefully open it, and position the trap so it sits flush at
-        tunnel level. The galvanised metal construction is rust-free and
-        weatherproof, so the trap lasts for years even in damp, heavy soil. The
-        Big Cheese is a reliable, reusable trap that professional mole catchers
-        and homeowners alike trust.
-      </p>
-
-      {/* Product 3 */}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>
-      <div className="not-prose">
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />
-      </div>
-      <p>
-        The Pest-Stop Tunnel Mole Trap comes from the UK's leading pest control
-        manufacturer and is designed in collaboration with professional mole
-        catchers. Its traditional barrel design features a 30% stronger spring
-        than standard models, delivering a faster, more reliable kill. The
-        dual-entry design catches moles travelling in either direction through
-        the tunnel, so there is no need to guess which way the mole is heading.
-      </p>
-      <p>
-        Setting the Pest-Stop requires some experience — you need to carefully
-        open an active run, position the trap so it sits flush at tunnel level,
-        and ensure the trigger mechanism is properly engaged. The rust-resistant
-        metal construction holds up well in wet, heavy soil and lasts for years
-        of repeated use. For gardeners who want a step up from basic tunnel
-        traps, the Pest-Stop offers professional-grade performance at a
-        reasonable price.
-      </p>
-
-      {/* Product 4 */}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>
-      <div className="not-prose">
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />
-      </div>
-      <p>
-        The SWISSINNO SuperCat Mole Trap brings Swiss precision engineering to
-        mole control. Its advanced claw design and trigger system responds to
-        mole movement from either direction in the tunnel, so there is no need
-        to determine the direction of travel. It is a modern alternative to
-        traditional barrel-style tunnel traps — no bait, no chemicals, just
-        reliable mechanical trapping.
-      </p>
-      <p>
-        The low-profile claw design sits discreetly in the run, making it far
-        less conspicuous above ground than plunger traps — ideal for
-        well-maintained lawns and sports turf. The corrosion-resistant
-        construction holds up across multiple seasons of use without
-        degradation. Installation is straightforward: locate an active run, set
-        the trigger mechanism, and place the trap into the tunnel. For gardeners
-        who want a modern, proven trap with a high catch rate, the SWISSINNO
-        SuperCat is an excellent choice.
-      </p>
-
-      {/* Product 5 */}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>
-      <div className="not-prose">
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />
-      </div>
-      <p>
-        The REPELEM Claw Mole Trap is a UK brand claw-style trap sold in a pack
-        of three, making it ideal for gardens with persistent mole activity
-        across multiple areas. The 3-pack lets you treat several active runs
-        simultaneously, which significantly increases your chance of a quick
-        catch — professional mole catchers always recommend setting multiple
-        traps rather than relying on a single one.
-      </p>
-      <p>
-        Each trap features a humane instant-kill mechanism and rust-free
-        construction that holds up to repeated outdoor use across multiple
-        seasons. The claw design is straightforward to set and does not require
-        special tools. For homeowners dealing with moles in several parts of the
-        garden, the REPELEM 3-pack lets you cover three runs at once. It is a
-        practical starting point for anyone new to mole control who wants
-        coverage across a larger area.
-      </p>
-
-      {/* How to Choose */}
-      <h2 id="how-to-choose">How to Choose the Right Mole Trap</h2>
-      <p>
-        Selecting the right mole trap depends on your experience level, garden
-        size, and ethical preferences. Here are the key factors to consider:
-      </p>
-      <h3>Experience Level</h3>
-      <p>
-        If you have never trapped a mole before, the{" "}
-        <strong>Beagle Easyset</strong> is the most forgiving option — it does
-        not require you to open the tunnel or position a trigger by hand. For
-        more experienced gardeners, the <strong>Duffus</strong> or{" "}
-        <strong>Putange</strong> will deliver higher catch rates.
-      </p>
-      <h3>Garden Size and Tunnel Depth</h3>
-      <p>
-        Small gardens with shallow surface runs are well suited to Duffus or
-        Beagle traps. Larger gardens with established, deeper tunnel networks
-        benefit from the <strong>Trapline tunnel trap</strong>, which catches
-        moles in both directions and works well in deeper main runs.
-      </p>
-      <h3>Kill vs Humane</h3>
-      <p>
-        Lethal traps (Duffus, Putange, Beagle, Trapline) are more effective and,
-        if set correctly, deliver an instant death. Live-catch traps require a
-        commitment to checking twice daily and relocating the mole at least a
-        mile away. Professional mole catchers overwhelmingly recommend lethal
-        traps as the most humane and effective option.
-      </p>
-      <h3>Budget</h3>
-      <p>
-        Mole traps are inexpensive compared to other pest control tools. Buying
-        3 to 5 traps gives you the best chance of a quick catch.
-      </p>
-
-      {/* Tips */}
-      <h2 id="tips">Mole Trap Placement Tips</h2>
-      <ol>
-        <li>
-          <strong>Find an active run:</strong> Press down a section of tunnel
-          with your foot. Check 24 hours later — if it has been pushed back up,
-          the run is active. Do not set traps in inactive runs.
-        </li>
-        <li>
-          <strong>Set traps in straight sections:</strong> Avoid bends,
-          junctions, or areas near molehills. Moles travel fastest in straight
-          runs, which improves your catch rate.
-        </li>
-        <li>
-          <strong>Wear gloves:</strong> Moles have an excellent sense of smell.
-          Always handle traps with gloves and rub them with soil from the tunnel
-          to mask your scent.
-        </li>
-        <li>
-          <strong>Minimise disturbance:</strong> Open the tunnel carefully and
-          replace soil around the trap so no light enters. Moles avoid areas
-          where tunnels have been damaged.
-        </li>
-        <li>
-          <strong>Cover the trap:</strong> Place a bucket or board over the trap
-          site to block light and rain. This prevents the mole from detecting a
-          disturbance and avoids water logging the mechanism.
-        </li>
-        <li>
-          <strong>Check daily:</strong> UK law requires you to check traps at
-          least once every 24 hours. This also allows you to quickly reposition
-          traps that are not producing results.
-        </li>
-        <li>
-          <strong>Use multiple traps:</strong> Set 3 to 5 traps across different
-          active runs. This maximises your chance of intercepting the mole
-          within its patrol route.
-        </li>
-        <li>
-          <strong>Be patient:</strong> Most catches happen within 24 to 48 hours
-          of setting. If nothing after 3 to 4 days, move traps to different
-          runs.
-        </li>
-      </ol>
-
-      <div className="not-prose">
-        <StatCallout
-          value="20m"
-          label="distance a single mole can tunnel per day through UK garden soil"
-        />
-      </div>
-
       <FindProviderCTA
-        heading="Need professional mole control?"
-        subtext="If DIY trapping has not worked after 2 weeks, a professional mole catcher can usually resolve the problem in 1 to 3 visits. Find BPCA-certified pest controllers near you."
+        heading="Moles returning as fast as you trap them?"
+        subtext="Where a garden backs onto open ground the traffic never really stops. Compare pest control providers near you — no fees, no commissions."
       />
-
-      {/* FAQ */}
-      <h2 id="faq">Frequently Asked Questions</h2>
-
-      {faqs.map((f) => (
-        <div key={f.q}>
-          <h3>{f.q}</h3>
-          <p>{f.a}</p>
-        </div>
-      ))}
     </GuideLayout>
   );
 }

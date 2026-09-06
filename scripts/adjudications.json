@@ -5,8 +5,8 @@
     "best/ant-gel-bait": {
       "judgement": "correct-as-built",
       "date": "2026-09-06",
-      "fingerprint": "5499c7be64cc",
-      "note": "Re-adjudicated by PM ruling at S65 R7. The fingerprint moved because a LOST AWARD LABEL was restored: record 4 (B0B71D3QS1) carried cardLabel, h2Label, tocLabel and tableCells all reading Best Spray, duplicating record 3 (B000TAP1R8), while its own anchorId read best-indoor. The anchor is the evidence the label was lost rather than chosen. All four surfaces restored to Best Indoor. Card ordering and card count unchanged; one H2 token renamed."
+      "fingerprint": "5f92eff5ea29",
+      "note": "S67 R8 rollout rebuild, six routes, card sequences unchanged"
     },
     "best/ant-killers": {
       "judgement": "correct-as-built",
@@ -53,8 +53,9 @@
     },
     "best/cockroach-gel-bait": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "c8ef7bf2cb5f"
+      "date": "2026-09-06",
+      "fingerprint": "dda64e710e7a",
+      "note": "S67 R8 rollout rebuild, six routes, card sequences unchanged"
     },
     "best/cockroach-killers": {
       "judgement": "correct-as-built",
@@ -93,8 +94,9 @@
     },
     "best/drain-fly-killer": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "8a1f62eaeb98"
+      "date": "2026-09-06",
+      "fingerprint": "f17500ed4506",
+      "note": "S67 R8 rollout rebuild, six routes, card sequences unchanged"
     },
     "best/flea-fogger": {
       "judgement": "correct-as-built",
@@ -124,8 +126,9 @@
     },
     "best/mole-traps": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "3301aaeea9be"
+      "date": "2026-09-06",
+      "fingerprint": "a5493ac6c873",
+      "note": "S67 R8 rollout rebuild, six routes, card sequences unchanged"
     },
     "best/moth-killers": {
       "judgement": "correct-as-built",
@@ -204,8 +207,9 @@
     },
     "best/rat-bait-stations": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "c1436662bd80"
+      "date": "2026-09-06",
+      "fingerprint": "d740eaebdadb",
+      "note": "S67 R8 rollout rebuild, six routes, card sequences unchanged"
     },
     "best/rat-poison-for-gardens": {
       "judgement": "correct-as-built",
@@ -219,8 +223,9 @@
     },
     "best/rat-traps": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "b77477bf2f16"
+      "date": "2026-09-06",
+      "fingerprint": "0820c6acc9b7",
+      "note": "S67 R8 rollout rebuild, six routes, card sequences unchanged"
     },
     "best/rodent-proofing": {
       "judgement": "correct-as-built",

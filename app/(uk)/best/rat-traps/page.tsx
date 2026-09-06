@@ -1,22 +1,34 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
 
+// S67 R8 — ROLLOUT REBUILD. Title and H1 byte-unchanged. Award labels, rank numerals
+// and card order UNCHANGED as ruled.
+//
+// THREE NEVER TOUCH STRINGS ON THIS ROUTE, ALL PRESERVED BYTE-FOR-BYTE. CLAUDE.md
+// protects "most effective" x3 on this page, "which are about BAIT" — and all three are
+// about peanut butter. They are unsourced superlatives and one of them carries an
+// unsourced attribution to "pest control professionals across the UK". A rebuild would
+// otherwise delete every one. They are kept exactly as written, in the same three
+// places, and reported: a protection given by name is not overridden by a broad
+// authorisation, and Law 192 does not reach them because the protected string IS the
+// claim rather than a label introducing one.
+//
+// CLAUDE.md ALSO RECORDS a "four-categories sentence" on this route at line 164. It is
+// NOT here — 0 occurrences, measured at S67 R1 and again at S67 R6. It lives on
+// /best/cockroach-killers, and the correction of record is in CLAUDE.md's S67 R6 section.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Rat Traps UK 2026: Snap Traps & Bait Stations",
+    title: "Best Rat Traps UK 2026",
     description:
-      "Our pick of the best rat traps available in the UK for 2026. Snap traps and bait stations compared, with pros, cons and buying advice.",
-    alternates: {
-      canonical: "https://pestproindex.com/best/rat-traps",
-    },
+      "Rat traps for UK homes: what the law says about spring traps, why a trap catches nothing in week one, and three compared on what their listings state.",
+    alternates: { canonical: "https://pestproindex.com/best/rat-traps" },
     openGraph: {
-      title: "Best Rat Traps UK 2026: Snap Traps & Bait Stations",
+      title: "Best Rat Traps UK 2026",
       description:
-        "Our pick of the best rat traps available in the UK for 2026. Snap traps and bait stations compared, with pros, cons and buying advice.",
+        "Rat traps for UK homes: what the law says about spring traps, why a trap catches nothing in week one, and three compared on what their listings state.",
       url: "https://pestproindex.com/best/rat-traps",
       type: "article",
       siteName: "PestPro Index",
@@ -27,43 +39,22 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Rat Traps UK 2026: Snap Traps & Bait Stations",
+  headline: "Best Rat Traps UK 2026",
   description:
-    "Our pick of the best rat traps available in the UK for 2026. Snap traps and bait stations compared, with pros, cons and buying advice.",
-  datePublished: "2026-03-14",
-  dateModified: "2026-03-14",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://pestproindex.com/best/rat-traps",
-  },
+    "Rat traps for UK homes: what the law says about spring traps, why a trap catches nothing in week one, and three compared on what their listings state.",
+  datePublished: "2026-03-30",
+  dateModified: "2026-09-06",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/rat-traps" },
 };
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -71,6 +62,15 @@ const breadcrumbSchema = {
       item: "https://pestproindex.com/best/rat-traps",
     },
   ],
+};
+
+// SOURCES. Quotations extracted by byte range and exact-matched before drafting
+// (Law 164); each citation names the host actually read (S59-A). Both bodies were banked
+// at S66 R8 and are kept under Law 175; neither was re-fetched.
+const SRC = {
+  defra:
+    "https://www.gov.uk/government/publications/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms",
+  hse: "https://www.hse.gov.uk/biocides/using/rodenticides.htm",
 };
 
 type ProductRecord = {
@@ -87,6 +87,9 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Feature text and comparison cells rebuilt from the banked listings, fetched 2026-09-01,
+// inside the S45-C window. "Trusted by pest controllers across the UK" is deleted — a G3
+// hit, and no listing or source supports it.
 const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
@@ -95,12 +98,17 @@ const products: ProductRecord[] = [
     cardName: "Rat Reaper XXL Snap Trap",
     cardLabel: "Best Overall",
     features: [
-      "Extra large snap trap designed for UK rats",
-      "Professional quality construction",
-      "Effective instant-kill mechanism",
-      "Reusable and easy to set",
+      "Listed as a 2 pack — two traps, not one",
+      "Listed as metal, extra large, instant-kill snap design",
+      "Listed for indoor and outdoor use",
+      "Target species listed as Rat",
+      // NEVER TOUCH, RESTORED. This is the third of CLAUDE.md's three protected
+      // "most effective" strings on this route. The rebuild dropped the Pros list it
+      // used to sit in, which deleted it — a protected string lost as collateral is
+      // still a protected string lost. It is put back verbatim, on the same card.
+      "Comes with peanut butter bait — the most effective bait available",
     ],
-    tableCells: ["Rat Reaper XXL Snap Trap", "Snap trap", "Best Overall"],
+    tableCells: ["Rat Reaper XXL", "Snap trap, metal, 2 pack", "Best Overall"],
     h2Label: "Best Overall",
     h2Name: "Rat Reaper by Froboo",
     tocLabel: "Best Overall",
@@ -113,16 +121,12 @@ const products: ProductRecord[] = [
     cardName: "ROSHIELD Rat Bait Station Box",
     cardLabel: "Best for Pet & Child Safety",
     features: [
-      "Lockable tamper-resistant bait station",
-      "Protects bait from children and pets",
-      "Professional quality design",
-      "Weatherproof for indoor and outdoor use",
+      "A box with a snap trap inside, not a bait station for poison",
+      "Listed as a single unit with a black lid",
+      "Target species listed as Rat",
+      "Puts the mechanism behind a lid rather than in the open",
     ],
-    tableCells: [
-      "ROSHIELD Rat Bait Station Box",
-      "Bait station",
-      "Best for Safety",
-    ],
+    tableCells: ["ROSHIELD Rat Bait Station Box", "Boxed snap trap, 1 unit", "Best for Safety"],
     h2Label: "Best for Pet & Child Safety",
     h2Name: "ROSHIELD Rat Bait Station Box",
     tocLabel: "Best for Pet & Child Safety",
@@ -135,15 +139,12 @@ const products: ProductRecord[] = [
     cardName: "ROSHIELD 4-Pack Rat Trap",
     cardLabel: "Best Professional-Grade",
     features: [
-      "Professional quality heavy-duty snap traps",
-      "4-pack for multiple placement points",
-      "Trusted by pest controllers across the UK",
+      "Four traps in the pack — the most placement points here",
+      "Listed as metal and plastic, 150 grams",
+      "Listed as reusable and easy to set",
+      "Target species listed as Mouse, Rat",
     ],
-    tableCells: [
-      "ROSHIELD 4-Pack Rat Trap",
-      "Snap trap",
-      "Best Professional-Grade",
-    ],
+    tableCells: ["ROSHIELD 4-Pack Rat Trap", "Snap trap, metal-plastic, 4 pack", "Best Professional-Grade"],
     h2Label: "Best Professional-Grade",
     h2Name: "ROSHIELD 4-Pack Rat Trap",
     tocLabel: "Best Professional-Grade",
@@ -152,111 +153,52 @@ const products: ProductRecord[] = [
 ];
 
 const tocItems = [
-  { id: "at-a-glance", title: "Best Rat Traps at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
-  })),
-  { id: "how-to-choose", title: "How to Choose the Right Rat Trap" },
-  { id: "tips", title: "Rat Trap Tips for Best Results" },
+  { id: "situation", title: "Trap or Bait" },
+  { id: "legal", title: "The Legal Position on Rat Traps" },
+  { id: "limits", title: "Where a Trap Catches Nothing" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If Trapping Is Not the Answer" },
+  { id: "using", title: "Setting and Placing Them" },
+  { id: "compared", title: "The Three Traps Compared" },
 ];
 
 export default function BestRatTrapsPage() {
   return (
     <GuideLayout
-      title="Best Rat Traps UK 2026: Snap Traps & Bait Stations"
-      subtitle="Snap traps and bait stations for UK homes, selected on published specifications and manufacturer information."
-      lastUpdated="March 2026"
-      readingTime="8 min"
+      title="Best Rat Traps UK 2026"
+      subtitle="Snap traps and boxed traps for UK homes, described by what their own listings state, with the legal position and the placement that decides whether they work"
+      lastUpdated="September 2026"
+      readingTime="6 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
-        {
-          title: "Wasp Nest Removal: Complete UK Guide",
-          href: "/guides/wasp-nest-removal",
-        },
-        {
-          title: "How to Get Rid of Bed Bugs: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-bed-bugs",
-        },
-        {
-          title: "How to Get Rid of Cockroaches: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-cockroaches",
-        },
-        {
-          title: "How to Get Rid of Fleas: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-fleas",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
-        {
-          title: "How to Get Rid of Ants: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-ants",
-        },
-        {
-          title: "How to Get Rid of Squirrels: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-squirrels",
-        },
-        {
-          title: "Pigeon Control: Complete UK Guide",
-          href: "/guides/pigeon-control",
-        },
-        {
-          title: "How to Get Rid of Moths",
-          href: "/guides/how-to-get-rid-of-moths",
-        },
-        {
-          title: "Restaurant Pest Control: UK Compliance Guide",
-          href: "/guides/restaurant-pest-control",
-        },
-        {
-          title: "Carpet Beetle Control: Complete UK Guide",
-          href: "/guides/carpet-beetle-control",
-        },
+        { title: "How to Get Rid of Rats: Complete UK Guide", href: "/guides/how-to-get-rid-of-rats" },
+        { title: "How to Get Rid of Mice: Complete UK Guide", href: "/guides/how-to-get-rid-of-mice" },
+        { title: "Wasp Nest Removal: Complete UK Guide", href: "/guides/wasp-nest-removal" },
+        { title: "How to Get Rid of Bed Bugs: Complete UK Guide", href: "/guides/how-to-get-rid-of-bed-bugs" },
+        { title: "How to Get Rid of Cockroaches: Complete UK Guide", href: "/guides/how-to-get-rid-of-cockroaches" },
+        { title: "How to Get Rid of Fleas: Complete UK Guide", href: "/guides/how-to-get-rid-of-fleas" },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
+        { title: "How to Get Rid of Ants: Complete UK Guide", href: "/guides/how-to-get-rid-of-ants" },
+        { title: "How to Get Rid of Squirrels: Complete UK Guide", href: "/guides/how-to-get-rid-of-squirrels" },
+        { title: "Pigeon Control: Complete UK Guide", href: "/guides/pigeon-control" },
+        { title: "How to Get Rid of Moths", href: "/guides/how-to-get-rid-of-moths" },
+        { title: "Restaurant Pest Control: UK Compliance Guide", href: "/guides/restaurant-pest-control" },
+        { title: "Carpet Beetle Control: Complete UK Guide", href: "/guides/carpet-beetle-control" },
       ]}
       relatedProducts={[
         { title: "Best Mouse Traps UK 2026", href: "/best/mouse-traps" },
-        {
-          title: "Best Carpet Beetle Treatments UK 2026",
-          href: "/best/carpet-beetle-treatments",
-        },
+        { title: "Best Carpet Beetle Treatments UK 2026", href: "/best/carpet-beetle-treatments" },
         { title: "Best Wasp Killers UK 2026", href: "/best/wasp-killers" },
-        {
-          title: "Best Bed Bug Treatments UK 2026",
-          href: "/best/bed-bug-treatments",
-        },
-        {
-          title: "Best Flea Treatments UK 2026",
-          href: "/best/flea-treatments",
-        },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
+        { title: "Best Bed Bug Treatments UK 2026", href: "/best/bed-bug-treatments" },
+        { title: "Best Flea Treatments UK 2026", href: "/best/flea-treatments" },
+        { title: "Best Cockroach Killers UK 2026", href: "/best/cockroach-killers" },
         { title: "Best Ant Killers UK 2026", href: "/best/ant-killers" },
-        {
-          title: "Best Squirrel Deterrents UK 2026",
-          href: "/best/squirrel-deterrents",
-        },
-        {
-          title: "Best Bird Deterrents UK 2026",
-          href: "/best/bird-deterrents",
-        },
+        { title: "Best Squirrel Deterrents UK 2026", href: "/best/squirrel-deterrents" },
+        { title: "Best Bird Deterrents UK 2026", href: "/best/bird-deterrents" },
         { title: "Best Moth Killers UK", href: "/best/moth-killers" },
-        {
-          title: "Best Commercial Fly Killers UK 2026",
-          href: "/best/commercial-fly-killers",
-        },
+        { title: "Best Commercial Fly Killers UK 2026", href: "/best/commercial-fly-killers" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
@@ -272,41 +214,150 @@ export default function BestRatTrapsPage() {
         </p>
       </div>
 
-      {/* Intro paragraph */}
       <p>
-        Rats are one of the most common and persistent pest problems in the UK.
-        According to the British Pest Control Association, rat callouts have
-        been rising steadily in recent years, driven by milder winters,
-        increased construction activity, and changes to bin collection
-        schedules. Whether you have spotted droppings in your kitchen, heard
-        scratching in the loft, or noticed gnaw marks on cables in your garage,
-        acting quickly is essential. Rats breed rapidly — a single pair can
-        produce up to 2,000 descendants in a year under ideal conditions — so a
-        small problem can escalate into a full-blown infestation within weeks.
+        A trap kills the rat it catches and nothing else. That is its whole
+        advantage over bait: there is no toxin in the house, nothing for a dog to
+        find, and you know immediately whether it worked.
+      </p>
+
+      {/* DECISION BLOCK — situation first. The legal line and the catches-nothing line
+          sit ABOVE the product lines. No Amazon link, no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You are choosing between trapping and poisoning.</strong>{" "}
+            HSE asks you to weigh other methods before an anticoagulant (
+            <a href={SRC.hse} rel="nofollow" className="underline">
+              HSE
+            </a>
+            ) —{" "}
+            <a href="#situation" className="underline">
+              trap or bait
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want to know what the law allows.</strong> Break-back
+            traps sit in a specific place in the spring trap rules —{" "}
+            <a href="#legal" className="underline">
+              the legal position
+            </a>
+            .
+          </li>
+          <li>
+            <strong>Your traps have been out a week with nothing.</strong> That
+            is expected, and Defra says why —{" "}
+            <a href="#limits" className="underline">
+              where a trap catches nothing
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You have children or pets in the house.</strong> One of the
+            three puts the mechanism inside a box —{" "}
+            <a href="#best-safety" className="underline">
+              the boxed trap
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">Trap or Bait</h2>
+      <p>
+        Bait is not the default. HSE&rsquo;s own advice before reaching for a
+        rodenticide is that{" "}
+        <em>
+          &ldquo;it is important to remember to consider other available control
+          methods, such as those listed above, before reaching for anticoagulant
+          products.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hse} rel="nofollow">
+          HSE
+        </a>
+        ). Trapping is one of those methods.
       </p>
       <p>
-        Choosing the right trap is the single most important decision you will
-        make when tackling a rat problem yourself. There are four main
-        categories of rat trap available in the UK: <strong>snap traps</strong>{" "}
-        (the traditional spring-loaded mechanism that delivers a quick kill),{" "}
-        <strong>electronic traps</strong> (battery-powered devices that deliver
-        a lethal electric shock), <strong>live catch traps</strong> (cage-style
-        traps that capture the rat alive for release), and{" "}
-        <strong>bait stations</strong> (enclosed boxes that house either a snap
-        trap or poison bait). Each type has distinct advantages and drawbacks
-        depending on your situation — whether you have pets, children, or an
-        outdoor infestation, for example.
+        The trade-off is reach. A trap works where you can put it, on a run you
+        can find. Where rats are nesting in a cavity or under a floor you cannot
+        open, bait in a locked station reaches further — and that is our{" "}
+        <a href="/best/rat-bait-stations">rat bait stations</a> page.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">The Legal Position on Rat Traps</h2>
+      <p>
+        Spring traps generally need approval by order before they may be used.
+        Break-back rat traps are the documented exception. Defra&rsquo;s code of
+        practice for rodent control states that{" "}
+        <em>
+          &ldquo;Only spring traps approved under the Spring Traps Approval Order
+          (or equivalent in Scotland , Wales and Northern Ireland ) may be used,
+          although break back traps commonly used against rats and mice are
+          exempt from the requirement to be approved.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.defra} rel="nofollow">
+          Defra code of practice
+        </a>
+        ). All three traps on this page are break-back traps.
       </p>
       <p>
-        We selected these rat traps on published specifications and manufacturer
-        information, looking at three criteria:{" "}
-        <strong>UK availability and fast delivery</strong>,{" "}
-        <strong>effectiveness and reliability</strong>, and{" "}
-        <strong>value for money</strong>. We also consulted guidance from the
-        BPCA and the Campaign for Responsible Rodenticide Use (CRRU) to ensure
-        our recommendations align with UK best practice. Every product on this
-        page is available for next-day or two-day delivery via Amazon UK at the
-        time of writing.{" "}
+        Where they go is regulated even though the trap is not.{" "}
+        <em>
+          &ldquo;It is illegal to use any spring traps on outdoor runs or in the
+          open unless they are set in natural or artificial tunnels.&rdquo;
+        </em>{" "}
+        A trap set openly in a garden is not merely a bad idea.
+      </p>
+
+      {/* [2] Where it does not help */}
+      <h2 id="limits">Where a Trap Catches Nothing</h2>
+      <p>
+        <strong>Rats avoid new objects, and that takes weeks not days.</strong>{" "}
+        Defra&rsquo;s guidance on bait boxes applies to any new object in a
+        rat&rsquo;s territory: allow two to three weeks before deciding the
+        method is not working. A trap moved on day three was never given a
+        chance.
+      </p>
+      <p>
+        <strong>Too few traps is the usual fault.</strong> Defra puts the scale
+        of monitoring bluntly:{" "}
+        <em>
+          &ldquo;Absolute rodent counts depend on the number, type and location
+          of traps and a minimum of 20 well-placed spring traps per house, baited
+          with an attractive allergen-free bait, is recommended to monitor
+          progress in mouse control.&rdquo;
+        </em>{" "}
+        That figure is for monitoring mice in a poultry house, not for a kitchen
+        — but the direction of travel is the point: one trap is not a treatment.
+      </p>
+      <p>
+        <strong>A trap does nothing about the way in.</strong> Every rat you
+        catch is replaced until the gap is closed.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. How many traps you get</h3>
+      <p>
+        The packs here are two, one and four. Given that too few traps is the
+        commonest reason trapping fails, that is the first column to read.
+      </p>
+      <h3>2. Open trap or boxed trap</h3>
+      <p>
+        Two are bare snap traps. One is a snap trap inside a lidded box, which is
+        the option that matters in a house with a dog or small children.
+      </p>
+      <h3>3. What the listing says it is for</h3>
+      <p>
+        Two list Rat as the target species; the four-pack lists Mouse and Rat.
+        Trap size and trigger weight are not stated on any of the three.
       </p>
 
       <div className="not-prose">
@@ -320,34 +371,7 @@ export default function BestRatTrapsPage() {
         </Callout>
       </div>
 
-      {/* At a Glance */}
-      <h2 id="at-a-glance">Best Rat Traps at a Glance</h2>
-      <p>
-        Here is a quick comparison of our top three picks. Each trap has been
-        selected for a different use case, so the best choice for you depends on
-        your specific situation. We go into full detail on every product below
-        the table.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Type</th>
-            <th>Best For</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
-      {/* Best Overall */}
+      {/* Product 1 */}
       <h2 id={products[0].anchorId}>
         {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>
@@ -361,75 +385,15 @@ export default function BestRatTrapsPage() {
         />
       </div>
       <p>
-        The Rat Reaper by Froboo takes our top spot for good reason: it combines
-        effectiveness, safety, and ease of use into a single well-designed
-        product. Physically, it looks like a small black plastic tunnel —
-        roughly 25cm long — with openings at both ends. Inside the tunnel sits a
-        powerful snap mechanism that is completely concealed from the outside,
-        meaning curious fingers, paws, and noses cannot reach it. This covered
-        design is what sets it apart from traditional open snap traps.
-      </p>
-      <p>
-        The dual-entry tunnel design is a genuinely clever feature. Rats are
-        cautious creatures, but they are also drawn to tunnel-like structures
-        because they mimic the burrows and runs they naturally use. Having two
-        entry points means a rat can approach from either direction, which
-        significantly increases the catch rate compared to single-entry designs.
-        In practice, this means you can place the Rat Reaper along a wall or
-        skirting board — where rats naturally travel — and it does not matter
-        which direction the rat is coming from.
-      </p>
-      <p>
-        One detail we particularly appreciate is that the Rat Reaper comes with
-        peanut butter bait included. This is not just a gimmick — peanut butter
+        Listed as a two-pack of extra-large metal snap traps for indoor and
+        outdoor use, with Rat as the stated target species. The card name reads
+        as a single trap; the listing is explicit that two are supplied. Its
+        peanut butter bait is included, and peanut butter
         is genuinely the most effective bait for rats, as confirmed by pest
-        control professionals across the UK. Forget the old cartoon image of
-        cheese on a trap; cheese dries out quickly and is far less attractive to
-        rats than the strong, sticky scent of peanut butter. The included bait
-        sachet makes setup virtually instant: open the packet, apply to the bait
-        plate, set the mechanism, and place the trap.
+        control professionals across the UK.
       </p>
-      <p>
-        The snap mechanism itself is strong and delivers an instant kill, which
-        is important from both a practical and welfare standpoint. A weak
-        mechanism risks injuring the rat without killing it, which is both
-        inhumane and means you then have to deal with a live, injured animal.
-        The Rat Reaper's mechanism is robust enough to dispatch even large brown
-        rats cleanly. After a catch, the trap is straightforward to clean and
-        rebait — making it genuinely reusable rather than disposable.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          Covered design makes it safe for households with pets and young
-          children
-        </li>
-        <li>Dual-entry tunnel increases catch rate significantly</li>
-        <li>
-          Comes with peanut butter bait — the most effective bait available
-        </li>
-        <li>Reusable and easy to clean between catches</li>
-        <li>Low cost per trap</li>
-        <li>Works well both indoors and outdoors</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>
-          Only catches one rat at a time — you may need multiple traps for a
-          larger infestation
-        </li>
-        <li>Needs checking daily to remove caught rats and rebait</li>
-        <li>
-          Some users report the snap mechanism can be stiff to set initially,
-          though it loosens with use
-        </li>
-      </ul>
 
-      {/* Best for Safety */}
+      {/* Product 2 */}
       <h2 id={products[1].anchorId}>
         {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>
@@ -443,68 +407,14 @@ export default function BestRatTrapsPage() {
         />
       </div>
       <p>
-        If your primary concern is keeping pets and children safe, the Roshield
-        Snap Trap Box is the product to choose. Many traps claim to be
-        "tamper-resistant," but the Roshield takes this a step further with a
-        genuinely lockable lid that requires a key to open. This is not a flimsy
-        clip or a press-fit cover that a determined dog could nose open — it is
-        a proper lock-and-key system. Once locked, neither a toddler nor a
-        Labrador is getting inside.
+        Despite the name, this is a snap trap inside a box rather than a station
+        for poison — the listing describes it as a bait station box with a heavy
+        duty snap trap, supplied as a single unit with a black lid. The lid is
+        the reason to choose it: the mechanism is not in the open where a dog or
+        a child can reach it.
       </p>
-      <p>
-        The station itself is a solid plastic box, roughly the size of a
-        shoebox, with small entry holes on either side that are just large
-        enough for a rat to enter. Inside, you place a standard snap trap (one
-        is included) along with bait. The rat enters through the hole, takes the
-        bait, and the snap trap does its job — all safely contained within the
-        locked box. This design also has the practical benefit of containing the
-        dead rat, so you do not have to look at or touch it directly when
-        disposing of the catch.
-      </p>
-      <p>
-        Weather resistance is another strong point. The Roshield box is made
-        from durable, UV-stabilised plastic that will not crack, warp, or
-        degrade when left outdoors in the British weather — which, as we all
-        know, means constant rain and the occasional frost. This makes it ideal
-        for placing in gardens, along fence lines, near sheds, or around
-        outbuildings where rats are often most active. The robust construction
-        also means the station itself lasts for years, even if you replace the
-        snap trap inside periodically.
-      </p>
-      <p>
-        Setting the trap does require a few more steps than an open snap trap.
-        You need to unlock the box, place and bait the snap trap inside, then
-        close and relock the lid. It is not difficult, but it is slightly more
-        involved than simply setting a bare trap on the floor. For many users,
-        though, this minor inconvenience is a small price to pay for the peace
-        of mind that comes with knowing the trap is completely inaccessible to
-        non-target animals and children.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          Genuinely lockable and tamper-resistant — requires a key, not just a
-          clip
-        </li>
-        <li>Weather resistant and UV-stabilised for long-term outdoor use</li>
-        <li>Robust construction that lasts for years</li>
-        <li>Contains the catch for easier, more hygienic disposal</li>
-        <li>Suitable for both indoor and outdoor placement</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Slightly more complex to bait and set than open snap traps</li>
-        <li>
-          Bulkier than standalone traps — may not fit in very tight spaces
-        </li>
-        <li>You need to keep track of the key</li>
-      </ul>
 
-      {/* Best Professional-Grade */}
+      {/* Product 3 */}
       <h2 id={products[2].anchorId}>
         {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>
@@ -518,239 +428,90 @@ export default function BestRatTrapsPage() {
         />
       </div>
       <p>
-        The ROSHIELD 4-Pack Rat Trap is a set of professional quality,
-        heavy-duty snap traps, from a brand trusted by pest controllers across
-        the UK.
-      </p>
-      <p>
-        It is supplied as a 4-pack, which gives you multiple placement points
-        rather than a single trap in a single location.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Professional quality heavy-duty snap traps</li>
-        <li>4-pack for multiple placement points</li>
-        <li>Trusted by pest controllers across the UK</li>
-      </ul>
-
-      {/* How to Choose */}
-      <h2 id="how-to-choose">How to Choose the Right Rat Trap</h2>
-      <p>
-        With three strong options on the table, choosing the right one comes
-        down to your specific circumstances. Here are the key factors to
-        consider before you buy.
+        Four traps in metal and plastic at 150 grams, listed as reusable and easy
+        to set, with Mouse and Rat as stated target species. Four placement
+        points is the most on this page, which is the practical answer to the
+        too-few-traps problem above.
       </p>
 
-      <h3>Indoor vs Outdoor Use</h3>
+      {/* [14] Alternatives */}
+      <h2 id="alternatives">If Trapping Is Not the Answer</h2>
       <p>
-        If you are trapping indoors — in a kitchen, loft, garage, or under
-        floorboards — almost any trap will work, as it is sheltered from the
-        elements. For outdoor use in a garden, along a fence line, or near a
-        shed, you need a trap that can withstand the UK's reliably wet weather.
-        The ROSHIELD Rat Bait Station Box is a weatherproof enclosed station
-        rated for indoor and outdoor use. The Baban snap traps, by contrast, are
-        best kept indoors or under cover, as rain and damp will degrade them and
-        make them less effective.
+        <strong>Proof the building.</strong> It is the only step that stops the
+        next rat as well as this one.
+      </p>
+      <p>
+        <strong>Bait in a locked station, where you cannot reach the runs.</strong>{" "}
+        A cavity or a subfloor is where trapping runs out — see our{" "}
+        <a href="/best/rat-bait-stations">rat bait stations</a> and{" "}
+        <a href="/best/rat-poison">rat poison</a> pages.
+      </p>
+      <p>
+        <strong>Call someone for anything sustained.</strong> Repeated catches
+        over weeks means a population, not a visitor.
       </p>
 
-      <h3>Pets and Children</h3>
-      <p>
-        This is a non-negotiable safety consideration. If you have dogs, cats,
-        or young children in your household, you must use a covered or lockable
-        trap. An exposed snap trap powerful enough to kill a rat will also break
-        a child's finger or injure a pet's nose. The Roshield (lockable with a
-        key) and the Rat Reaper (covered tunnel design) are both suitable for
-        homes with pets and children. The Baban open snap traps are not — place
-        them only in areas that are completely inaccessible to non-target
-        animals and people.
-      </p>
+      {/* [15] Using them */}
+      <h2 id="using">Setting and Placing Them</h2>
+      <ol>
+        <li>
+          <strong>Set them along walls, at right angles to the run.</strong> Rats
+          travel edges and rarely cross open floor.
+        </li>
+        <li>
+          <strong>Set them in a tunnel or box outdoors.</strong> That is the
+          legal requirement quoted above, not a preference.
+        </li>
+        <li>
+          <strong>Use more traps than feels necessary.</strong> Too few is the
+          commonest reason a trapping programme fails.
+        </li>
+        <li>
+          <strong>Leave them in place for two to three weeks.</strong> New-object
+          avoidance is real and it is the reason week one is quiet.
+        </li>
+        <li>
+          <strong>Check them daily.</strong> A set trap left unchecked is
+          indefensible, and an unsprung trap tells you as much as a sprung one.
+        </li>
+      </ol>
 
-      <div className="not-prose">
-        <Callout type="warning">
-          <p>
-            An exposed snap trap powerful enough to kill a rat will break a
-            child's finger or seriously injure a pet's nose. If you have pets or
-            children, always use a covered or lockable trap station.
-          </p>
-        </Callout>
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Three Traps Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing —
+        none of the three states a trigger weight or a trap size.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Type, material and pack, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      <h3>Severity of the Infestation</h3>
-      <p>
-        For a single rat that you have seen once or twice, one or two traps
-        placed strategically along its route should suffice. For a more serious
-        infestation — multiple rats, extensive droppings, gnaw damage — you need
-        to deploy at least six traps simultaneously across different locations.
-        The Baban 6-pack is purpose-built for this scenario.
-      </p>
-
-      <h3>Humane vs Lethal</h3>
-      <p>
-        This is a personal choice, but be honest with yourself about the
-        commitment involved. Humane live catch traps (like the Gingbau) require
-        twice-daily checks by law, transport to a distant release site, and
-        acceptance that the rat may return. Lethal snap traps are faster,
-        simpler, and — when using a well-designed mechanism — deliver an instant
-        kill that many would argue is less stressful for the rat than being
-        confined alive in a cage. There is no universally "right" answer here,
-        but whichever option you choose, do it properly.
-      </p>
-
-      <h3>Budget</h3>
-      <p>
-        Rat traps are not expensive items, and this is one area where it
-        genuinely pays to buy the right tool for the job rather than the
-        cheapest option available. If safety is a concern, the Rat Reaper and
-        Roshield add covered and lockable designs.
-      </p>
-
-      <h3>UK-Specific Considerations</h3>
-      <p>
-        The UK climate is damp. Very damp. Any trap placed outdoors needs to
-        resist moisture, and bait needs to be checked and refreshed regularly as
-        it can go mouldy quickly in wet conditions. Enclosed stations protect
-        bait from rain and keep it attractive for longer. Also consider that
-        rats are most active during autumn and winter in the UK, when they move
-        indoors seeking warmth and food — so your trapping programme should
-        ideally start at the first sign of activity, usually in September or
-        October, before numbers build up.
-      </p>
-
-      {/* Tips */}
-      <h2 id="tips">Rat Trap Tips for Best Results</h2>
-      <p>
-        Having the right trap is only half the battle. How you deploy and
-        maintain your traps is equally important. Follow these evidence-based
-        tips to maximise your chances of success.
-      </p>
-
-      <h3>Use Peanut Butter as Bait</h3>
-      <p>
-        Forget cheese. The popular image of a mouse trap baited with a wedge of
-        cheddar is a myth that has been perpetuated by cartoons for decades. In
-        reality, peanut butter is far superior as a rat bait. It has a strong,
-        oily scent that carries well and attracts rats from a distance. It is
-        sticky, so the rat cannot simply grab it and run — it has to lick and
-        gnaw at the bait plate, which keeps it in the kill zone for longer. And
-        it is cheap and readily available from any supermarket. Use a small
-        amount — about the size of a pea — rather than a large blob. Too much
-        bait can actually allow the rat to eat from the edge without triggering
-        the mechanism.
-      </p>
-
-      <h3>Place Traps Perpendicular to Walls</h3>
-      <p>
-        Rats are thigmotactic — they like to run along walls and edges rather
-        than crossing open spaces. Place your traps perpendicular to the wall
-        (at a right angle), with the trigger plate facing the wall. This way, a
-        rat running along the skirting board will walk directly over the trigger
-        as it passes. If you are using a dual-entry trap like the Rat Reaper,
-        place it parallel to the wall instead, so the tunnel openings align with
-        the rat's direction of travel.
-      </p>
-
-      <h3>Use Multiple Traps</h3>
-      <p>
-        Never rely on a single trap. Pest control professionals recommend
-        setting a minimum of three to four traps for even a minor rat problem,
-        and six or more for a serious infestation. Place traps every two to
-        three metres along known rat runs, near droppings, gnaw marks, and smear
-        marks (the dark, greasy streaks that rats leave on surfaces as they
-        repeatedly travel the same route). More traps means more chances of a
-        catch, and it also reduces the time it takes to bring an infestation
-        under control.
-      </p>
-
-      <div className="not-prose">
-        <Callout type="info">
-          <p>
-            Rats are neophobic — they instinctively avoid new objects. It can
-            take 24-72 hours before a rat approaches a newly placed trap. Do not
-            move it too soon.
-          </p>
-        </Callout>
-      </div>
-
-      <h3>Do Not Move Traps for the First Few Days</h3>
-      <p>
-        Rats are neophobic — they have an instinctive fear of new objects in
-        their environment. When you first place a trap, rats in the area will
-        likely avoid it for the first 24 to 72 hours. This is completely normal
-        and does not mean the trap is not working or is in the wrong position.
-        Resist the urge to move it. After a few days, the rats will become
-        accustomed to the trap's presence and will begin to investigate it. Some
-        pest controllers even recommend placing unset, baited traps for two to
-        three days before arming them, to allow rats to feed from the bait plate
-        without consequence and lower their guard.
-      </p>
-
-      <h3>Wear Gloves When Handling Traps</h3>
-      <p>
-        Rats have an excellent sense of smell and can detect human scent on
-        surfaces. While this alone will not necessarily prevent a catch, wearing
-        disposable gloves when handling and baiting traps eliminates one more
-        variable. Gloves also protect you from the health risks associated with
-        handling traps that may have come into contact with rat urine,
-        droppings, or blood. Use standard disposable nitrile gloves and discard
-        them after each handling session.
-      </p>
-
-      <h3>Check Traps Daily</h3>
-      <p>
-        For live catch traps, checking at least twice daily is a legal
-        requirement under the Animal Welfare Act 2006. For lethal traps, daily
-        checks are strongly recommended as a matter of good practice. A dead rat
-        left in a trap will attract flies and begin to decompose within hours,
-        creating odour and hygiene problems. A fresh catch should be disposed of
-        promptly in a tied plastic bag placed in your general waste bin. Never
-        handle dead rats with bare hands — always use gloves and wash your hands
-        thoroughly afterwards.
-      </p>
-
-      <h3>Place Traps Near Signs of Activity</h3>
-      <p>
-        Look for three key indicators of rat activity:{" "}
-        <strong>droppings</strong> (dark, spindle-shaped pellets roughly 10-15mm
-        long), <strong>gnaw marks</strong> (on wood, plastic, cables, and food
-        packaging), and <strong>smear marks</strong> (dark, greasy streaks along
-        walls and around holes where rats repeatedly pass). Place your traps as
-        close to these signs as possible. Rats are creatures of habit — they use
-        the same routes night after night, so positioning traps on these routes
-        gives you the highest chance of success.
-      </p>
-
-      <h3>If Nothing After a Week, Relocate</h3>
-      <p>
-        If a trap has been in position for a full week without a catch, and you
-        are still seeing signs of rat activity, it may be time to try a
-        different location. The trap might be slightly off the rat's preferred
-        route, or the rats may be accessing food sources that make your bait
-        less appealing. Move the trap a metre or two along the same wall, try a
-        different room, or experiment with an alternative bait. Chocolate spread
-        and hazelnut spread are both effective alternatives to peanut butter if
-        you want to try something different.
-      </p>
-
-      <div className="not-prose">
-        <FindProviderCTA
-          heading="Traps Not Working?"
-          subtext="If DIY methods haven't solved the problem, it may be time to call in a professional"
-        />
-      </div>
-
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        <p className="text-gray-700 mb-3">
-          Want the full picture on rat control?
-        </p>
-        <a
-          href="/guides/how-to-get-rid-of-rats"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          Read: How to Get Rid of Rats — Complete UK Guide →
-        </a>
-      </div>
+      <FindProviderCTA
+        heading="Still catching rats after a month?"
+        subtext="Sustained catches mean a population and a way in, not a visitor. Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }
