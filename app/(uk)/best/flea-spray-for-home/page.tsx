@@ -223,7 +223,7 @@ const products: ProductRecord[] = [
     asin: "B0CMPY8ZXP",
     rank: 5,
     cardName: "Bob Martin Clear Plus Flea Spray 500ml Twin Pack",
-    cardLabel: "Best Budget",
+    cardLabel: "Best Value",
     features: [
       "Twin-pack from one of the UK's most trusted pet care brands",
       "Kills fleas, ticks and dust mites on contact",

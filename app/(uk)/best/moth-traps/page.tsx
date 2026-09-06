@@ -141,7 +141,7 @@ const products: ProductRecord[] = [
     asin: "B0B21S966L",
     rank: 1,
     cardName: "Moth Prevention Clothes Moth Pheromone Traps",
-    cardLabel: "Best Overall",
+    cardLabel: "Best Clothes Moth Trap",
     features: [
       "Premium pheromone lure — strongest attractant available",
       "Targets Common Clothes Moth (Tineola bisselliella)",
@@ -185,7 +185,7 @@ const products: ProductRecord[] = [
     asin: "B07SS5DDWH",
     rank: 3,
     cardName: "Zero In Clothes Moth Traps",
-    cardLabel: "Best Budget",
+    cardLabel: "Best Value",
     features: [
       "Affordable pheromone traps for clothes moths",
       "Ready-to-use — peel and place",

@@ -177,7 +177,7 @@ const products: ProductRecord[] = [
     asin: "B00THGEB5S",
     rank: 3,
     cardName: "Get Off My Garden Cat & Dog Repellent Crystals 240g",
-    cardLabel: "Best Scent Deterrent",
+    cardLabel: "Best Scent Crystals",
     features: [
       "Jelly-crystal scent deterrent for beds and borders",
       "Conditions cats to avoid treated areas",
@@ -221,7 +221,7 @@ const products: ProductRecord[] = [
     asin: "B0002B7OT2",
     rank: 5,
     cardName: "Silent Roar Lion Manure Cat Repellent Pellets 500g",
-    cardLabel: "Best Natural Deterrent",
+    cardLabel: "Best Natural Scent",
     features: [
       "Pellets infused with lion-dung essence",
       "Exploits cats’ instinct to avoid a larger predator’s territory",

@@ -147,7 +147,7 @@ const products: ProductRecord[] = [
     asin: "B00XL382T4",
     rank: 3,
     cardName: "Roshield External Rat Bait Station Box",
-    cardLabel: "Best Budget",
+    cardLabel: "Best Value",
     features: [
       "Lockable tamper-resistant design",
       "Compact size ideal for gardens and small spaces",

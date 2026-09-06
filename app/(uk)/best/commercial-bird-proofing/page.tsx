@@ -162,7 +162,7 @@ const products: ProductRecord[] = [
     asin: "B01MQSRJQ6",
     rank: 4,
     cardName: "Bird Barrier Optical Gel (24 Pack)",
-    cardLabel: "Best Discreet Option",
+    cardLabel: "Best Discreet Deterrent",
     features: [
       "Multi-sensory deterrent — visual, olfactory, and tactile",
       "Appears as flames to birds through UV vision — immediate avoidance response",

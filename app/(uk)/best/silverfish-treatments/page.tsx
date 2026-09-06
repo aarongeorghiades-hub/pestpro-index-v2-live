@@ -177,7 +177,7 @@ const products: ProductRecord[] = [
     asin: "B013EIB87I",
     rank: 5,
     cardName: "Pest Expert Formula 'P' Silverfish Killer Powder 300g",
-    cardLabel: "Best Insecticidal Dust",
+    cardLabel: "Best Powder",
     features: [
       "Professional-strength permethrin formula",
       "HSE approved for amateur use",

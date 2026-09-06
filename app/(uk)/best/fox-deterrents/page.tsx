@@ -131,7 +131,7 @@ const products: ProductRecord[] = [
     asin: "B0153BJ7NQ",
     rank: 3,
     cardName: "PestBye Jet Spray Motion-Activated Sprinkler",
-    cardLabel: "Best Overall Deterrent",
+    cardLabel: "Best Motion Sprinkler",
     features: [
       "120-degree detection arc",
       "Covers up to 100 sqm",
@@ -174,7 +174,7 @@ const products: ProductRecord[] = [
     asin: "B08MWB89CB",
     rank: 5,
     cardName: "Galvanised Welded Steel Mesh 25mm x 25mm",
-    cardLabel: "Best for Chicken Runs",
+    cardLabel: "Best Mesh",
     features: [
       "25mm hole size — fox-proof",
       "Hot-dip galvanised for rust resistance",

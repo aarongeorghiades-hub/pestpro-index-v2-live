@@ -152,7 +152,7 @@ const products: ProductRecord[] = [
     asin: "B0CD7QDM1L",
     rank: 4,
     cardName: "Roshield Pro Quality Tamper-Resistant Bait Station",
-    cardLabel: "Best Overall",
+    cardLabel: "Best Professional Grade",
     features: [
       "UK-made from recycled car plastics — heavy-duty and durable",
       "Tamper-resistant lockable design with key included",

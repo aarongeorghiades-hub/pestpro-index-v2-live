@@ -134,7 +134,7 @@ const products: ProductRecord[] = [
     rank: 3,
     cardName:
       "Pest Expert Formula 'P' Carpet Beetle Killer Powder XL (2 × 300g)",
-    cardLabel: "Best Professional-Grade",
+    cardLabel: "Best Powder",
     features: [
       "Maximum-strength permethrin formula — HSE approved",
       "Puffer pack format for easy application into crevices",

@@ -125,7 +125,7 @@ const products: ProductRecord[] = [
     asin: "B00MRH58V0",
     rank: 2,
     cardName: "Utopia Bedding Zippered Mattress Encasement",
-    cardLabel: "Best Budget",
+    cardLabel: "Best Value",
     features: [
       "Micro-zipper bed bug protection at a budget price",
       "Knitted polyester — smooth and quiet",

@@ -173,7 +173,7 @@ const products: ProductRecord[] = [
     asin: "B003ASOBG8",
     rank: 5,
     cardName: "Stanley 0-77-030 Moisture Meter",
-    cardLabel: "Best Diagnostic Tool",
+    cardLabel: "Best Moisture Meter",
     features: [
       "Pin-type timber moisture measurement",
       "LCD screen with clear readout",
