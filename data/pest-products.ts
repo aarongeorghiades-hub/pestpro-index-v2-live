@@ -86,7 +86,7 @@ export const topProductsByPest: Record<string, PestProduct[]> = {
   ],
   'bed-bugs': [
     {
-      name: 'Pest Expert Formula C+ Bed Bug Killer Spray 1L',
+      name: 'Pest Expert Formula C+ Bed Bug Killer Spray 2 x 1L',
       asin: 'B076KQQT8F',
       bestFor: 'Best Overall',
       features: ['Professional strength spray with 12-week residual protection', 'HSE-approved formula used by pest controllers'],

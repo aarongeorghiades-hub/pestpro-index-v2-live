@@ -307,7 +307,7 @@ export default function ProductsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: 'Pest Expert Formula C+ Spray 1L', asin: 'B076KQQT8F', note: 'Professional', desc: 'Professional strength spray. 12-week protection.' },
+              { name: 'Pest Expert Formula C+ Spray 2 x 1L', asin: 'B076KQQT8F', note: 'Professional', desc: 'Professional strength spray. 12-week protection.' },
               { name: 'Pest Expert Formula P Powder 300g', asin: 'B010E2H2N6', note: 'Permethrin', desc: 'Permethrin powder. Puffer pack application.' },
               { name: 'Zero In Bed Bug & Dust Mite Killer 300ml', asin: 'B00B2KP7U0', note: 'Fast-acting', desc: 'Fast-acting aerosol spray. Kills on contact.' },
                 { name: 'Utopia Bedding Mattress Encasement Double', asin: 'B07ZHF4FVK', desc: 'Waterproof mattress encasement. Traps bed bugs inside.' }

@@ -88,21 +88,21 @@ const products: ProductRecord[] = [
     anchorId: "best-overall",
     asin: "B076KQQT8F",
     rank: 1,
-    cardName: "Pest Expert Formula C+ Bed Bug Killer Spray 1L",
+    cardName: "Pest Expert Formula C+ Bed Bug Killer Spray 2 x 1L",
     cardLabel: "Best Overall",
     features: [
       "Professional strength spray with 12-week residual protection",
       "HSE-approved formula used by pest controllers",
-      "Ready-to-use 1-litre trigger spray",
+      "Ready-to-use water-based spray, 2 x 1 litre",
       "Kills bed bugs on contact and provides lasting barrier",
     ],
     tableCells: [
-      "Pest Expert Formula C+ Spray 1L",
+      "Pest Expert Formula C+ Spray 2 x 1L",
       "Contact spray",
       "Best Overall",
     ],
     h2Label: "Best Overall",
-    h2Name: "Pest Expert Formula C+ Bed Bug Killer Spray 1L",
+    h2Name: "Pest Expert Formula C+ Bed Bug Killer Spray 2 x 1L",
     tocLabel: "Best Overall",
     tocName: "Pest Expert Formula C+",
   },
@@ -399,13 +399,13 @@ export default function BestBedBugTreatmentsPage() {
       </p>{" "}
       <p>
         {" "}
-        The 1-litre trigger spray bottle is ready to use straight from the box
+        The two 1-litre bottles are ready to use straight from the box
         with no mixing or dilution required. Apply it directly to mattress
         seams, bed frame joints, headboard fixings, skirting board edges, and
         any cracks or crevices where bed bugs are likely to harbour. The
         water-based formula does not leave oily residues or strong chemical
         odours, making it suitable for use on fabrics, wood, and hard surfaces
-        around the bedroom. One litre provides generous coverage for a thorough
+        around the bedroom. Two litres provide generous coverage for a thorough
         treatment of a single room, with enough left over for a follow-up
         application two weeks later.{" "}
       </p>{" "}
@@ -433,7 +433,7 @@ export default function BestBedBugTreatmentsPage() {
         <li>
           HSE-approved and used by professional pest controllers across the UK
         </li>{" "}
-        <li>Ready-to-use 1-litre trigger spray &mdash; no mixing required</li>{" "}
+        <li>Ready-to-use water-based spray, 2 x 1 litre &mdash; no mixing required</li>{" "}
         <li>
           Water-based formula suitable for fabrics, wood, and hard surfaces
         </li>{" "}
