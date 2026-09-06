@@ -8,12 +8,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Cat Deterrents UK 2026 — Ultrasonic & Scent",
     description:
-      "Our pick of the best cat deterrents for UK gardens: motion-activated sprinklers, ultrasonic repellers, scent deterrents and prickle strips.",
+      "Cat deterrents for UK gardens: motion-activated sprinklers, ultrasonic repellers, scent products and prickle strips, described by their own listings.",
     alternates: { canonical: "https://pestproindex.com/best/cat-deterrents" },
     openGraph: {
       title: "Best Cat Deterrents UK 2026 — Ultrasonic & Scent",
       description:
-        "Our pick of the best cat deterrents for UK gardens. Compare motion-activated sprinklers, ultrasonic repellers, scent deterrents and prickle strips.",
+        "Cat deterrents for UK gardens: motion-activated sprinklers, ultrasonic repellers, scent products and prickle strips, described by their own listings.",
       url: "https://pestproindex.com/best/cat-deterrents",
       type: "article",
       siteName: "PestPro Index",
@@ -25,7 +25,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Cat Deterrents UK 2026 — Ultrasonic & Scent",
   description:
-    "Our pick of the best cat deterrents for UK gardens: motion-activated sprinklers, ultrasonic repellers, scent deterrents and prickle strips.",
+    "Cat deterrents for UK gardens: motion-activated sprinklers, ultrasonic repellers, scent products and prickle strips, described by their own listings.",
   datePublished: "2026-06-23",
   dateModified: "2026-06-23",
   author: {
@@ -116,7 +116,6 @@ const faqSchema = {
 type ProductRecord = {
   anchorId: string;
   asin: string;
-  rank: number;
   cardName: string;
   cardLabel: string;
   features: string[];
@@ -131,11 +130,9 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-sprinkler",
     asin: "B0153BJ7NQ",
-    rank: 1,
     cardName: "PestBye Jet Spray Motion-Activated Sprinkler",
-    cardLabel: "Best Overall",
+    cardLabel: "Motion sprinkler, hose-fed",
     features: [
-      "Motion-activated water burst — cats find it very hard to ignore",
       "120-degree detection arc, covers up to 100 sqm",
       "Connects to a standard garden hose",
       "Battery-powered PIR sensor — works day and night",
@@ -145,17 +142,16 @@ const products: ProductRecord[] = [
       "Motion water deterrent",
       "Lawns, paths, open gardens",
     ],
-    h2Label: "Best Overall",
+    h2Label: "Motion sprinkler, hose-fed",
     h2Name: "PestBye Jet Spray Motion-Activated Sprinkler",
-    tocLabel: "Best Overall",
+    tocLabel: "Motion sprinkler, hose-fed",
     tocName: "PestBye Jet Spray Sprinkler",
   },
   {
     anchorId: "best-ultrasonic",
     asin: "B075XN4NNB",
-    rank: 2,
     cardName: "PestBye Solar Ultrasonic Cat Repeller (Twin Pack)",
-    cardLabel: "Best Ultrasonic Deterrent",
+    cardLabel: "Ultrasonic, solar, 2 pack",
     features: [
       "Solar powered — no batteries or wiring needed",
       "Motion-activated PIR with ~7m range",
@@ -167,20 +163,18 @@ const products: ProductRecord[] = [
       "Ultrasonic (solar)",
       "Entry points, borders",
     ],
-    h2Label: "Best Ultrasonic",
+    h2Label: "Ultrasonic, solar, 2 pack",
     h2Name: "PestBye Solar Ultrasonic Cat Repeller",
-    tocLabel: "Best Ultrasonic",
+    tocLabel: "Ultrasonic, solar, 2 pack",
     tocName: "PestBye Solar Cat Repeller",
   },
   {
     anchorId: "best-scent",
     asin: "B00THGEB5S",
-    rank: 3,
     cardName: "Get Off My Garden Cat & Dog Repellent Crystals 240g",
-    cardLabel: "Best Scent Crystals",
+    cardLabel: "Repellent crystals, 240g",
     features: [
       "Jelly-crystal scent deterrent for beds and borders",
-      "Conditions cats to avoid treated areas",
       "Non-toxic to plants when used as directed",
       "Long-established UK cat repellent",
     ],
@@ -189,20 +183,18 @@ const products: ProductRecord[] = [
       "Scent deterrent",
       "Flower beds, borders",
     ],
-    h2Label: "Best Scent Crystals",
+    h2Label: "Repellent crystals, 240g",
     h2Name: "Get Off My Garden Repellent",
-    tocLabel: "Best Scent Crystals",
+    tocLabel: "Repellent crystals, 240g",
     tocName: "Get Off My Garden",
   },
   {
     anchorId: "best-physical",
     asin: "B01I3E0PKY",
-    rank: 4,
     cardName: "Defenders Prickle Strip Dig Stopper (Cat & Dog), 3-Pack",
-    cardLabel: "Best Physical Deterrent",
+    cardLabel: "Prickle strips, 3 x 2m",
     features: [
       "Flexible plastic prickle strips — uncomfortable but harmless",
-      "Stops cats digging and fouling in beds and pots",
       "Push into soil or pin onto fence tops and ledges",
       "3-pack covers multiple beds or a boundary run",
     ],
@@ -211,31 +203,28 @@ const products: ProductRecord[] = [
       "Physical deterrent",
       "Stopping digging & fouling",
     ],
-    h2Label: "Best Physical Deterrent",
+    h2Label: "Prickle strips, 3 x 2m",
     h2Name: "Defenders Prickle Strip Dig Stopper",
-    tocLabel: "Best Physical",
+    tocLabel: "Prickle strips, 3 x 2m",
     tocName: "Defenders Prickle Strips",
   },
   {
     anchorId: "best-natural",
     asin: "B0002B7OT2",
-    rank: 5,
     cardName: "Silent Roar Lion Manure Cat Repellent Pellets 500g",
-    cardLabel: "Best Natural Scent",
+    cardLabel: "Lion manure pellets",
     features: [
       "Pellets infused with lion-dung essence",
-      "Exploits cats’ instinct to avoid a larger predator’s territory",
       "Doubles as a slow-release nitrogen feed for lawns",
-      "Topped UK consumer cat-deterrent trials",
     ],
     tableCells: [
       "Silent Roar Lion Manure Pellets",
       "Natural scent deterrent",
       "Beds, lawn edges",
     ],
-    h2Label: "Best Natural Scent",
+    h2Label: "Lion manure pellets",
     h2Name: "Silent Roar Lion Manure Pellets",
-    tocLabel: "Best Natural Scent",
+    tocLabel: "Lion manure pellets",
     tocName: "Silent Roar Pellets",
   },
 ];
@@ -253,7 +242,7 @@ export default function BestCatDeterrentsPage() {
   return (
     <GuideLayout
       title="Best Cat Deterrents UK 2026 &mdash; Ultrasonic, Scent & Sprinkler Repellents"
-      subtitle="Humane cat deterrents for UK gardens, selected on published specifications and manufacturer information &mdash; from motion-activated sprinklers and ultrasonic repellers to scent deterrents and prickle strips that keep cats off lawns and borders."
+      subtitle="Five cat deterrents for UK gardens &mdash; sprinkler, ultrasonic, scent and physical &mdash; described by what their own listings state"
       lastUpdated="June 2026"
       readingTime="11 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -345,24 +334,11 @@ export default function BestCatDeterrentsPage() {
         <strong>no single cat deterrent works reliably on its own</strong>. Cats
         are intelligent, territorial and quick to learn which threats are real.
         An ultrasonic device that sends a cat scrambling in week one can fade
-        into background noise by week three if nothing else changes. The most
-        effective approach is to <strong>layer several deterrents</strong> with
-        different mechanisms &mdash; a motion-activated sprinkler on the
-        cat&rsquo;s favourite path, a scent deterrent along borders and flower
-        beds, an ultrasonic unit at the entry point, and physical prickle strips
-        on any bed the cat uses as a toilet. Rotated and combined, these create
-        an environment of unpredictable, overlapping deterrents that a cat
-        cannot easily rationalise, and it relocates its territory
-        accordingly.{" "}
+        into background noise by week three if nothing else changes.{" "}
       </p>{" "}
       <p>
         {" "}
-        We selected these cat deterrents on published specifications and
-        manufacturer information, looking at{" "}
-        <strong>genuine effectiveness</strong> (including independent UK garden
-        trials referenced by the RSPB and RHS),{" "}
-        <strong>humaneness and pet/plant safety</strong>, and{" "}
-        <strong>value for money</strong>. Each is available on Amazon UK. For
+        Each is available on Amazon UK. For
         wildlife problems beyond cats, see our companion guides to{" "}
         <Link
           href="/best/fox-deterrents"
@@ -406,7 +382,7 @@ export default function BestCatDeterrentsPage() {
           <tr>
             <th>Product</th>
             <th>Type</th>
-            <th>Best For</th>
+            <th>What it is</th>
           </tr>{" "}
         </thead>{" "}
         <tbody>
@@ -430,23 +406,15 @@ export default function BestCatDeterrentsPage() {
           features={products[0].features}
           asin={products[0].asin}
           bestFor={products[0].cardLabel}
-          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
         {" "}
-        If you buy only one cat deterrent, make it the PestBye Jet Spray. Cats
-        tolerate sound and scent far more readily than they tolerate a sudden,
-        unexpected blast of cold water &mdash; which is exactly why professional
-        pest controllers and gardeners alike recommend a motion sprinkler as the
-        first thing to try. The Jet Spray connects to a standard garden hose and
+        The Jet Spray connects to a standard garden hose and
         uses a battery-powered PIR motion sensor to detect an approaching cat.
         When triggered, it fires a sharp burst of water in the direction of the
         movement, accompanied by a startling clicking sound from the sprinkler
-        head. The combination of cold water and noise produces a powerful
-        startle response that cats find extremely difficult to habituate to
-        &mdash; unlike sound or scent alone, the cat cannot simply decide the
-        threat is harmless.{" "}
+        head.{" "}
       </p>{" "}
       <p>
         {" "}
@@ -467,10 +435,6 @@ export default function BestCatDeterrentsPage() {
       </p>{" "}
       <ul>
         {" "}
-        <li>
-          The single most effective cat deterrent &mdash; water is very hard for
-          cats to habituate to
-        </li>{" "}
         <li>120-degree arc covering up to 100 sqm</li>{" "}
         <li>Works day and night with a battery PIR sensor lasting months</li>{" "}
         <li>Simple installation with a standard hose and ground spike</li>{" "}
@@ -502,22 +466,17 @@ export default function BestCatDeterrentsPage() {
           features={products[1].features}
           asin={products[1].asin}
           bestFor={products[1].cardLabel}
-          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
         {" "}
-        This twin-pack of solar-powered ultrasonic repellers is the ideal
-        hands-off complement to the sprinkler. Each unit charges itself from
+        Each unit charges itself from
         daylight and runs autonomously, emitting a burst of high-frequency sound
         &mdash; unpleasant to cats but largely inaudible to most adults &mdash;
         whenever its motion sensor detects movement within roughly 7 metres.
         Because it is solar, there are no batteries to change and no mains
         wiring; you simply push the ground stake in at the cat&rsquo;s entry
-        point and forget about it. Independent UK garden trials referenced by
-        the RSPB and RHS found ultrasonic devices reduce cat visits for the
-        majority of households, although results vary between individual cats
-        and the boldest individuals can habituate.{" "}
+        point and forget about it.{" "}
       </p>{" "}
       <p>
         {" "}
@@ -525,10 +484,7 @@ export default function BestCatDeterrentsPage() {
         &mdash; the gap under the fence and the route in from next door, for
         example &mdash; with the sensor facing along the path the cat uses, and
         keep the detection arc clear of tall grass or foliage that could block
-        it. As with every deterrent on this page, reposition the units every few
-        weeks to keep the effect fresh and prevent the cat from learning to
-        predict and ignore them. They pair particularly well with a scent
-        deterrent on the borders the units overlook.{" "}
+        it.{" "}
       </p>{" "}
       <p>
         <strong>Pros:</strong>
@@ -538,7 +494,6 @@ export default function BestCatDeterrentsPage() {
         <li>
           Solar powered &mdash; zero running costs and fully autonomous
         </li>{" "}
-        <li>Twin pack protects two entry points out of the box</li>{" "}
         <li>Motion-activated, so it only fires when needed</li>{" "}
         <li>Weatherproof for all-year UK use</li>{" "}
       </ul>{" "}
@@ -567,7 +522,6 @@ export default function BestCatDeterrentsPage() {
           features={products[2].features}
           asin={products[2].asin}
           bestFor={products[2].cardLabel}
-          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -575,12 +529,7 @@ export default function BestCatDeterrentsPage() {
         Get Off My Garden is one of the UK&rsquo;s best-known scent-based cat
         deterrents, sold as small jelly crystals you scatter along the areas you
         want cats to avoid &mdash; flower beds, borders, the base of fences,
-        doorways and bin areas. The crystals release a scent that cats find
-        off-putting, and over repeated exposure they learn to treat the treated
-        zone as somewhere not worth visiting. It is most useful precisely where
-        a motion sprinkler is awkward to aim: among densely planted borders,
-        along narrow boundary strips, and on the dug-over soil that cats favour
-        as a toilet.{" "}
+        doorways and bin areas.{" "}
       </p>{" "}
       <p>
         {" "}
@@ -588,9 +537,7 @@ export default function BestCatDeterrentsPage() {
         heavy rain, since the scent washes out over time. The product is
         designed to be safe for use around established plants and is non-toxic
         to pets when applied as directed, but as with any garden product keep it
-        away from food crops and out of reach of pets indoors. On its own it
-        will discourage casual visitors; combined with a water or ultrasonic
-        deterrent it becomes part of a genuinely effective barrier.{" "}
+        away from food crops and out of reach of pets indoors.{" "}
       </p>{" "}
       <p>
         <strong>Pros:</strong>
@@ -601,7 +548,6 @@ export default function BestCatDeterrentsPage() {
           Cheap, simple and ideal for borders and beds where sprinklers
           can&rsquo;t reach
         </li>{" "}
-        <li>Conditions cats to avoid the area over time</li>{" "}
         <li>
           Safe for use around established garden plants when used as directed
         </li>{" "}
@@ -628,14 +574,13 @@ export default function BestCatDeterrentsPage() {
           features={products[3].features}
           asin={products[3].asin}
           bestFor={products[3].cardLabel}
-          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
         {" "}
         Where a cat has a fixed habit &mdash; a particular flower bed it digs
         in, a favoured warm spot on top of a wall, or a raised planter it
-        toilets in &mdash; a physical barrier is often the fastest fix.
+        toilets in.
         Defenders Prickle Strips are flexible plastic strips covered in blunt
         spikes that are deeply uncomfortable for a cat to stand or dig on, but
         completely harmless: they do not pierce or injure paws, they simply make
@@ -645,23 +590,10 @@ export default function BestCatDeterrentsPage() {
         to cover several beds or a short boundary run.{" "}
       </p>{" "}
       <p>
-        {" "}
-        Prickle strips are the most reliable way to stop the specific behaviours
-        of digging and fouling, because they remove the physical comfort the cat
-        is seeking rather than relying on it noticing a sound or smell. They
-        work well buried in a thin layer of soil or mulch so they stay hidden
-        but still deter. For a fully planted bed, combine a few strips at the
-        bare patches with a scent deterrent across the whole border.{" "}
-      </p>{" "}
-      <p>
         <strong>Pros:</strong>
       </p>{" "}
       <ul>
         {" "}
-        <li>
-          Directly stops digging and fouling &mdash; the two most common
-          complaints
-        </li>{" "}
         <li>Humane: uncomfortable to stand on but cannot injure paws</li>{" "}
         <li>Versatile &mdash; beds, pots, fence tops, ledges and gaps</li>{" "}
         <li>No power, batteries or reapplication needed</li>{" "}
@@ -686,17 +618,12 @@ export default function BestCatDeterrentsPage() {
           features={products[4].features}
           asin={products[4].asin}
           bestFor={products[4].cardLabel}
-          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>
         {" "}
-        Silent Roar is a famously effective natural cat deterrent: lightweight
-        pellets infused with the scent of lion dung. The principle is simple but
-        powerful &mdash; a domestic cat that detects the territorial marker of a
-        far larger predator instinctively treats the area as dangerous and stays
-        away. It topped a well-publicised BBC consumer trial of cat deterrents
-        and has a devoted following among UK gardeners. Scatter the pellets
+        Silent Roar is lightweight pellets infused with the scent of lion dung.
+        Scatter the pellets
         along borders, lawn edges and the cat&rsquo;s favourite spots; an added
         bonus is that the pellets act as a slow-release nitrogen feed, so
         treated lawns often green up as a side effect.{" "}
@@ -705,11 +632,7 @@ export default function BestCatDeterrentsPage() {
         {" "}
         Like all scent deterrents, Silent Roar needs topping up periodically and
         reapplying after heavy rain, and its strength varies between individual
-        cats. Because it works on a completely different scent mechanism from
-        repellent crystals, the two can be used in different parts of the garden
-        without the cat simply becoming used to one smell. Pair it with the
-        sprinkler or ultrasonic units for the most resilient,
-        hardest-to-habituate defence.{" "}
+        cats.{" "}
       </p>{" "}
       <p>
         <strong>Pros:</strong>
@@ -720,7 +643,6 @@ export default function BestCatDeterrentsPage() {
           Natural, distinctive scent mechanism cats instinctively avoid
         </li>{" "}
         <li>Doubles as a slow-release lawn feed</li>{" "}
-        <li>Strong UK track record and trial results</li>{" "}
       </ul>{" "}
       <p>
         <strong>Cons:</strong>
@@ -736,11 +658,8 @@ export default function BestCatDeterrentsPage() {
         <Callout type="tip">
           {" "}
           <p>
-            The most effective setup layers three mechanisms: a motion sprinkler
-            on the cat&rsquo;s main path, a scent deterrent across borders and
-            beds, and an ultrasonic unit at the entry point &mdash; with prickle
-            strips on any bed used for fouling. Rotate positions every few weeks
-            so cats can&rsquo;t learn to predict them.
+            Rotate positions every few weeks so cats can&rsquo;t learn to
+            predict them.
           </p>{" "}
         </Callout>{" "}
       </div>{" "}
@@ -754,14 +673,9 @@ export default function BestCatDeterrentsPage() {
       <h3>Match the Deterrent to the Problem</h3>{" "}
       <p>
         {" "}
-        For cats <strong>crossing open lawns or patrolling paths</strong>, a
-        motion sprinkler is the strongest single choice. For{" "}
-        <strong>digging and fouling in specific beds</strong>, prickle strips
-        plus a scent deterrent work fastest. For{" "}
-        <strong>a known entry point</strong> &mdash; a gap under the fence or a
-        regular route in from a neighbour &mdash; a solar ultrasonic unit aimed
-        along that path is ideal. Most gardens benefit from two or three of
-        these working together.{" "}
+        A motion sprinkler suits open lawns and paths; prickle strips suit
+        specific beds; a solar ultrasonic unit is aimed along a known entry
+        route; scent products suit borders and dug-over soil.{" "}
       </p>{" "}
       <h3>Layer and Rotate</h3>{" "}
       <p>
@@ -778,9 +692,7 @@ export default function BestCatDeterrentsPage() {
         {" "}
         Every product here is designed to discourage cats without harming them,
         which keeps you firmly on the right side of the Animal Welfare Act 2006.
-        Avoid anything that could trap, injure or poison a cat &mdash; not only
-        is it cruel and illegal, it also tends to be far less effective than a
-        well-planned humane setup. If a cat is unwell, injured, or appears
+        Avoid anything that could trap, injure or poison a cat. If a cat is unwell, injured, or appears
         stray, contact a local rescue rather than trying to remove it
         yourself.{" "}
       </p>{" "}
