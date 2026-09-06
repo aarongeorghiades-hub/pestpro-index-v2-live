@@ -67,59 +67,44 @@ const breadcrumbSchema = {
     },
   ],
 };
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "What is the most effective bed bug spray in the UK?",
+    a: "The most effective bed bug spray available in the UK is a professional-strength product containing cypermethrin or permethrin with residual action. Pest Expert Formula C is our top pick — it combines a fast-acting contact kill with long-lasting residual protection that continues to kill bed bugs for weeks after application.",
+  },
+  {
+    q: "How long does bed bug spray take to work?",
+    a: "Contact-kill bed bug sprays work within minutes when applied directly to bed bugs. However, eliminating an entire infestation typically takes 2-4 weeks because you need the residual action to kill bugs that emerge from hiding after the initial treatment. Multiple applications, spaced 7-10 days apart, are usually required.",
+  },
+  {
+    q: "Is bed bug spray safe to use on mattresses?",
+    a: "Most bed bug sprays should be applied to the bed frame, headboard, and surrounding area rather than directly onto the mattress sleeping surface. Some natural products are specifically labelled as safe for mattress use. For mattress protection, consider using a bed bug mattress encasement in combination with spray treatment.",
+  },
+  {
+    q: "Can I get rid of bed bugs with spray alone?",
+    a: "Spray alone can eliminate a minor infestation if caught early and applied thoroughly with multiple treatments. For moderate to severe infestations, spray is most effective as part of a combined approach: hot-washing bedding at 60°C, using a mattress encasement, spraying the bed frame and room, and using diatomaceous earth in cracks and crevices.",
+  },
+  {
+    q: "How often should I reapply bed bug spray?",
+    a: "Reapply every 7-10 days for a minimum of 3 applications. This interval targets the bed bug breeding cycle — eggs hatch every 6-10 days, and newly hatched nymphs must walk through the residual spray to be killed. Stopping treatment too early is the most common reason for infestations returning.",
+  },
+  {
+    q: "Are natural bed bug sprays effective?",
+    a: "Natural bed bug sprays can kill bugs on direct contact but lack the residual action of synthetic pyrethroids. They are best used as a supplement to chemical treatments — for example, spraying directly on mattresses and bedding where chemical sprays should not be applied — not as a standalone solution for an established infestation.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is the most effective bed bug spray in the UK?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The most effective bed bug spray available in the UK is a professional-strength product containing cypermethrin or permethrin with residual action. Pest Expert Formula C is our top pick — it combines a fast-acting contact kill with long-lasting residual protection that continues to kill bed bugs for weeks after application.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does bed bug spray take to work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Contact-kill bed bug sprays work within minutes when applied directly to bed bugs. However, eliminating an entire infestation typically takes 2-4 weeks because you need the residual action to kill bugs that emerge from hiding after the initial treatment. Multiple applications, spaced 7-10 days apart, are usually required.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is bed bug spray safe to use on mattresses?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most bed bug sprays should be applied to the bed frame, headboard, and surrounding area rather than directly onto the mattress sleeping surface. Some natural products are specifically labelled as safe for mattress use. For mattress protection, consider using a bed bug mattress encasement in combination with spray treatment.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I get rid of bed bugs with spray alone?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Spray alone can eliminate a minor infestation if caught early and applied thoroughly with multiple treatments. For moderate to severe infestations, spray is most effective as part of a combined approach: hot-washing bedding at 60°C, using a mattress encasement, spraying the bed frame and room, and using diatomaceous earth in cracks and crevices.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How often should I reapply bed bug spray?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Reapply every 7-10 days for a minimum of 3 applications. This interval targets the bed bug breeding cycle — eggs hatch every 6-10 days, and newly hatched nymphs must walk through the residual spray to be killed. Stopping treatment too early is the most common reason for infestations returning.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Are natural bed bug sprays effective?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Natural bed bug sprays can kill bugs on direct contact but lack the residual action of synthetic pyrethroids. They are best used as a supplement to chemical treatments — for example, spraying directly on mattresses and bedding where chemical sprays should not be applied — not as a standalone solution for an established infestation.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 type ProductRecord = {
   anchorId: string;
@@ -799,61 +784,12 @@ export default function BestBedBugSprayPage() {
         infestations.{" "}
       </p>{" "}
       {/* FAQ */} <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>What is the most effective bed bug spray in the UK?</h3>{" "}
-      <p>
-        {" "}
-        The most effective bed bug spray available in the UK is a
-        professional-strength product containing cypermethrin or permethrin with
-        residual action. Pest Expert Formula C is our top pick — it combines a
-        fast-acting contact kill with long-lasting residual protection that
-        continues to kill bed bugs for weeks after application.{" "}
-      </p>{" "}
-      <h3>How long does bed bug spray take to work?</h3>{" "}
-      <p>
-        {" "}
-        Contact-kill bed bug sprays work within minutes when applied directly to
-        bed bugs. However, eliminating an entire infestation typically takes 2-4
-        weeks because you need the residual action to kill bugs that emerge from
-        hiding after the initial treatment. Multiple applications, spaced 7-10
-        days apart, are usually required.{" "}
-      </p>{" "}
-      <h3>Is bed bug spray safe to use on mattresses?</h3>{" "}
-      <p>
-        {" "}
-        Most bed bug sprays should be applied to the bed frame, headboard, and
-        surrounding area rather than directly onto the mattress sleeping
-        surface. Some natural products are specifically labelled as safe for
-        mattress use. For mattress protection, consider using a bed bug mattress
-        encasement in combination with spray treatment.{" "}
-      </p>{" "}
-      <h3>Can I get rid of bed bugs with spray alone?</h3>{" "}
-      <p>
-        {" "}
-        Spray alone can eliminate a minor infestation if caught early and
-        applied thoroughly with multiple treatments. For moderate to severe
-        infestations, spray is most effective as part of a combined approach:
-        hot-washing bedding at 60°C, using a mattress encasement, spraying the
-        bed frame and room, and using diatomaceous earth in cracks and
-        crevices.{" "}
-      </p>{" "}
-      <h3>How often should I reapply bed bug spray?</h3>{" "}
-      <p>
-        {" "}
-        Reapply every 7-10 days for a minimum of 3 applications. This interval
-        targets the bed bug breeding cycle — eggs hatch every 6-10 days, and
-        newly hatched nymphs must walk through the residual spray to be killed.
-        Stopping treatment too early is the most common reason for infestations
-        returning.{" "}
-      </p>{" "}
-      <h3>Are natural bed bug sprays effective?</h3>{" "}
-      <p>
-        {" "}
-        Natural bed bug sprays can kill bugs on direct contact but lack the
-        residual action of synthetic pyrethroids. They are best used as a
-        supplement to chemical treatments — for example, spraying directly on
-        mattresses and bedding where chemical sprays should not be applied — not
-        as a standalone solution for an established infestation.{" "}
-      </p>{" "}
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
       <p>
         For serious or recurring infestations, combine spray treatment with{" "}
         <a

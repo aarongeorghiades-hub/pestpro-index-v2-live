@@ -71,59 +71,44 @@ const breadcrumbSchema = {
   ],
 };
 
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "What are drain flies and where do they come from?",
+    a: "Drain flies (also called moth flies or sewer gnats) are small, fuzzy, moth-like flies approximately 2-5mm long. They breed in the organic buildup — known as biofilm — that accumulates inside drains, U-bends, and waste pipes. This slimy layer of decomposing organic matter provides both food and a breeding site for drain fly larvae. They are most commonly found in bathroom and kitchen drains that are not regularly cleaned or flushed.",
+  },
+  {
+    q: "Why do I keep getting drain flies?",
+    a: "Persistent drain fly problems indicate an ongoing source of organic buildup inside your drains. Even if you kill the adult flies, more will emerge unless you remove the biofilm where they breed. Common causes include infrequently used drains, slow-draining sinks with grease buildup, leaking pipes creating damp areas, or cracked drains underground. The solution is to remove the organic matter with an enzyme-based drain treatment, not just kill the visible adults.",
+  },
+  {
+    q: "Will bleach kill drain flies?",
+    a: "Bleach will temporarily kill adult drain flies on contact, but it does not remove the biofilm coating the inside of the pipes where drain fly larvae live and feed. The biofilm quickly re-establishes itself, and a new generation of drain flies emerges within days. Enzyme-based drain treatments are far more effective because they actively digest and remove the organic buildup that drain flies depend on.",
+  },
+  {
+    q: "Are drain flies harmful?",
+    a: "Drain flies do not bite, sting, or transmit diseases. However, they are a hygiene concern because their presence indicates decomposing organic matter inside your drainage system. In large numbers, their shed body fragments can become airborne and may aggravate asthma in sensitive individuals. The underlying cause — dirty or damaged drains — should be addressed for both pest control and general hygiene reasons.",
+  },
+  {
+    q: "How long does it take to get rid of drain flies?",
+    a: "With consistent enzyme-based drain treatment, it typically takes 2-3 weeks to fully eliminate a drain fly infestation. This accounts for the complete drain fly lifecycle from egg to adult. You may see a reduction in adult flies within a few days, but continuing treatment for the full cycle ensures all eggs and larvae are eliminated and the biofilm breeding ground is removed.",
+  },
+  {
+    q: "Should I call a plumber or pest controller?",
+    a: "Call a pest controller if you need the adult fly population managed quickly while treating the drain source. Call a plumber if drain flies persist after 3-4 weeks of treatment, or if they appear in unusual locations such as coming up through the floor or from behind walls — this can indicate a cracked or broken drain that is creating a breeding site outside the normal drainage system and requires structural repair.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What are drain flies and where do they come from?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Drain flies (also called moth flies or sewer gnats) are small, fuzzy, moth-like flies approximately 2-5mm long. They breed in the organic buildup — known as biofilm — that accumulates inside drains, U-bends, and waste pipes. This slimy layer of decomposing organic matter provides both food and a breeding site for drain fly larvae. They are most commonly found in bathroom and kitchen drains that are not regularly cleaned or flushed.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why do I keep getting drain flies?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Persistent drain fly problems indicate an ongoing source of organic buildup inside your drains. Even if you kill the adult flies, more will emerge unless you remove the biofilm where they breed. Common causes include infrequently used drains, slow-draining sinks with grease buildup, leaking pipes creating damp areas, or cracked drains underground. The solution is to remove the organic matter with an enzyme-based drain treatment, not just kill the visible adults.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Will bleach kill drain flies?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Bleach will temporarily kill adult drain flies on contact, but it does not remove the biofilm coating the inside of the pipes where drain fly larvae live and feed. The biofilm quickly re-establishes itself, and a new generation of drain flies emerges within days. Enzyme-based drain treatments are far more effective because they actively digest and remove the organic buildup that drain flies depend on.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Are drain flies harmful?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Drain flies do not bite, sting, or transmit diseases. However, they are a hygiene concern because their presence indicates decomposing organic matter inside your drainage system. In large numbers, their shed body fragments can become airborne and may aggravate asthma in sensitive individuals. The underlying cause — dirty or damaged drains — should be addressed for both pest control and general hygiene reasons.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does it take to get rid of drain flies?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "With consistent enzyme-based drain treatment, it typically takes 2-3 weeks to fully eliminate a drain fly infestation. This accounts for the complete drain fly lifecycle from egg to adult. You may see a reduction in adult flies within a few days, but continuing treatment for the full cycle ensures all eggs and larvae are eliminated and the biofilm breeding ground is removed.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Should I call a plumber or pest controller?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Call a pest controller if you need the adult fly population managed quickly while treating the drain source. Call a plumber if drain flies persist after 3-4 weeks of treatment, or if they appear in unusual locations such as coming up through the floor or from behind walls — this can indicate a cracked or broken drain that is creating a breeding site outside the normal drainage system and requires structural repair.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 type ProductRecord = {
@@ -755,67 +740,12 @@ export default function BestDrainFlyKillerPage() {
 
       <h2 id="faq">Frequently Asked Questions</h2>
 
-      <h3>What are drain flies and where do they come from?</h3>
-      <p>
-        Drain flies (also called moth flies or sewer gnats) are small, fuzzy,
-        moth-like flies approximately 2-5mm long. They breed in the organic
-        buildup — known as biofilm — that accumulates inside drains, U-bends,
-        and waste pipes. This slimy layer of decomposing organic matter provides
-        both food and a breeding site for drain fly larvae. They are most
-        commonly found in bathroom and kitchen drains that are not regularly
-        cleaned or flushed.
-      </p>
-
-      <h3>Why do I keep getting drain flies?</h3>
-      <p>
-        Persistent drain fly problems indicate an ongoing source of organic
-        buildup inside your drains. Even if you kill the adult flies, more will
-        emerge unless you remove the biofilm where they breed. Common causes
-        include infrequently used drains, slow-draining sinks with grease
-        buildup, leaking pipes creating damp areas, or cracked drains
-        underground. The solution is to remove the organic matter with an
-        enzyme-based drain treatment, not just kill the visible adults.
-      </p>
-
-      <h3>Will bleach kill drain flies?</h3>
-      <p>
-        Bleach will temporarily kill adult drain flies on contact, but it does
-        not remove the biofilm coating the inside of the pipes where drain fly
-        larvae live and feed. The biofilm quickly re-establishes itself, and a
-        new generation of drain flies emerges within days. Enzyme-based drain
-        treatments are far more effective because they actively digest and
-        remove the organic buildup that drain flies depend on.
-      </p>
-
-      <h3>Are drain flies harmful?</h3>
-      <p>
-        Drain flies do not bite, sting, or transmit diseases. However, they are
-        a hygiene concern because their presence indicates decomposing organic
-        matter inside your drainage system. In large numbers, their shed body
-        fragments can become airborne and may aggravate asthma in sensitive
-        individuals. The underlying cause — dirty or damaged drains — should be
-        addressed for both pest control and general hygiene reasons.
-      </p>
-
-      <h3>How long does it take to get rid of drain flies?</h3>
-      <p>
-        With consistent enzyme-based drain treatment, it typically takes 2-3
-        weeks to fully eliminate a drain fly infestation. This accounts for the
-        complete drain fly lifecycle from egg to adult. You may see a reduction
-        in adult flies within a few days, but continuing treatment for the full
-        cycle ensures all eggs and larvae are eliminated and the biofilm
-        breeding ground is removed.
-      </p>
-
-      <h3>Should I call a plumber or pest controller?</h3>
-      <p>
-        Call a pest controller if you need the adult fly population managed
-        quickly while treating the drain source. Call a plumber if drain flies
-        persist after 3-4 weeks of treatment, or if they appear in unusual
-        locations such as coming up through the floor or from behind walls —
-        this can indicate a cracked or broken drain that is creating a breeding
-        site outside the normal drainage system and requires structural repair.
-      </p>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
 
       <div className="not-prose">
         <FindProviderCTA

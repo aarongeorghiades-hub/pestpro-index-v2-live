@@ -73,19 +73,36 @@ const breadcrumbSchema = {
   ],
 };
 
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "Do I need planning permission to install bird netting?",
+    a: "In most cases, no. Bird netting is considered a maintenance or pest control measure rather than a structural alteration, so planning permission is not required. The exception is listed buildings and properties in conservation areas, where Listed Building Consent may be needed before any external modifications — including netting fixings — are carried out. Always check with your local planning authority if you are unsure about your building's status.",
+  },
+  {
+    q: "How long does bird netting last?",
+    a: "UV-stabilised knotted bird netting typically lasts 5 to 10 years when correctly installed and maintained. The main factors affecting lifespan are UV exposure (south-facing installations degrade faster), wind loading, and the quality of the fixing system. Regular inspection and prompt repair of any damaged sections or failed fixings will maximise the life of the installation.",
+  },
+  {
+    q: "Can I install bird netting myself?",
+    a: "For small, low-level areas such as ground-floor loading bays, covered walkways, or single-storey structures, DIY installation is feasible with the right kit and fixings. However, for any work at height on multi-storey buildings, professional installation is strongly recommended. Installers will have the necessary access equipment (scaffolding, cherry pickers, or rope access), PASMA or IPAF certification, and the experience to tension netting correctly — the single most important factor in a long-lasting installation.",
+  },
+  {
+    q: "What about seagulls — does bird netting work against them?",
+    a: "Yes. Heavy-duty knotted netting with 50mm mesh is effective against herring gulls and lesser black-backed gulls, the two species most commonly responsible for gull problems on UK commercial buildings. Seagulls are larger and more aggressive than pigeons, so the netting must be correctly tensioned and securely fixed to withstand the additional force. For gull exclusion, professional installation with heavy-gauge perimeter wire is particularly important.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What about seagulls — does bird netting work against them?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Heavy-duty knotted netting with 50mm mesh is effective against herring gulls and lesser black-backed gulls, the two species most commonly responsible for gull problems on UK commercial buildings. Seagulls are larger and more aggressive than pigeons, so the netting must be correctly tensioned and securely fixed to withstand the additional force. For gull exclusion, professional installation with heavy-gauge perimeter wire is particularly important.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 type ProductRecord = {
@@ -674,49 +691,12 @@ export default function BestProfessionalBirdNettingKitsPage() {
 
       {/* FAQ */}
       <h2 id="faq">Frequently Asked Questions</h2>
-      <h3>Do I need planning permission to install bird netting?</h3>
-      <p>
-        In most cases, no. Bird netting is considered a maintenance or pest
-        control measure rather than a structural alteration, so planning
-        permission is not required. The exception is listed buildings and
-        properties in conservation areas, where Listed Building Consent may be
-        needed before any external modifications &mdash; including netting
-        fixings &mdash; are carried out. Always check with your local planning
-        authority if you are unsure about your building&apos;s status.
-      </p>
-
-      <h3>How long does bird netting last?</h3>
-      <p>
-        UV-stabilised knotted bird netting typically lasts 5 to 10 years when
-        correctly installed and maintained. The main factors affecting lifespan
-        are UV exposure (south-facing installations degrade faster), wind
-        loading, and the quality of the fixing system. Regular inspection and
-        prompt repair of any damaged sections or failed fixings will maximise
-        the life of the installation.
-      </p>
-
-      <h3>Can I install bird netting myself?</h3>
-      <p>
-        For small, low-level areas such as ground-floor loading bays, covered
-        walkways, or single-storey structures, DIY installation is feasible with
-        the right kit and fixings. However, for any work at height on
-        multi-storey buildings, professional installation is strongly
-        recommended. Installers will have the necessary access equipment
-        (scaffolding, cherry pickers, or rope access), PASMA or IPAF
-        certification, and the experience to tension netting correctly &mdash;
-        the single most important factor in a long-lasting installation.
-      </p>
-
-      <h3>What about seagulls &mdash; does bird netting work against them?</h3>
-      <p>
-        Yes. Heavy-duty knotted netting with 50mm mesh is effective against
-        herring gulls and lesser black-backed gulls, the two species most
-        commonly responsible for gull problems on UK commercial buildings.
-        Seagulls are larger and more aggressive than pigeons, so the netting
-        must be correctly tensioned and securely fixed to withstand the
-        additional force. For gull exclusion, professional installation with
-        heavy-gauge perimeter wire is particularly important.
-      </p>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
 
       <p>
         For smaller ledges and sills where netting is not practical, see our

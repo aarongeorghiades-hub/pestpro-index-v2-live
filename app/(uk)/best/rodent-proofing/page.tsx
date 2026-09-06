@@ -74,43 +74,36 @@ const breadcrumbSchema = {
   ],
 };
 
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "How small a gap can a mouse get through?",
+    a: "About 6mm. That is why proofing work is measured in millimetres rather than in obvious holes: the openings that matter are usually the ones nobody notices, around pipework, under doors and behind air bricks. It is also why mesh aperture is the single specification worth checking before you buy anything.",
+  },
+  {
+    q: "Why use steel wool or wire mesh rather than filler on its own?",
+    a: "Rodents gnaw. A soft filler used on its own can be worked through, so the usual approach is to pack the gap with a material that resists gnawing and then finish over it. Stainless steel wool fill fabric packs into irregular holes, welded wire mesh covers larger openings, and proofing paste can be applied over wire wool or mesh for extra strength.",
+  },
+  {
+    q: "Do rats really come up through drains?",
+    a: "Drains are a recognised route into a property, which is why one-way drain flaps exist. A stainless steel flap fitted to a 4 inch or 110mm pipe lets waste flow out and stops rats moving back up. The bolt on the Roshield guard reverses so the flap can be set to match the direction of flow.",
+  },
+  {
+    q: "Is proofing a replacement for traps or bait?",
+    a: "No. Proofing stops new rodents getting in; it does nothing about the ones already inside. The usual order is to deal with the current activity first and then close the entry points so the problem does not simply repeat. Proofing is what stops you buying bait again next winter.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How small a gap can a mouse get through?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "About 6mm. That is why proofing work is measured in millimetres rather than in obvious holes: the openings that matter are usually the ones nobody notices, around pipework, under doors and behind air bricks. It is also why mesh aperture is the single specification worth checking before you buy anything.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why use steel wool or wire mesh rather than filler on its own?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Rodents gnaw. A soft filler used on its own can be worked through, so the usual approach is to pack the gap with a material that resists gnawing and then finish over it. Stainless steel wool fill fabric packs into irregular holes, welded wire mesh covers larger openings, and proofing paste can be applied over wire wool or mesh for extra strength.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do rats really come up through drains?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Drains are a recognised route into a property, which is why one-way drain flaps exist. A stainless steel flap fitted to a 4 inch or 110mm pipe lets waste flow out and stops rats moving back up. The bolt on the Roshield guard reverses so the flap can be set to match the direction of flow.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is proofing a replacement for traps or bait?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. Proofing stops new rodents getting in; it does nothing about the ones already inside. The usual order is to deal with the current activity first and then close the entry points so the problem does not simply repeat. Proofing is what stops you buying bait again next winter.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 type ProductRecord = {
@@ -812,40 +805,12 @@ export default function BestRodentProofingPage() {
       {/* FAQ */}
       <h2 id="faq">Rodent Proofing FAQ</h2>
 
-      <h3>How small a gap can a mouse get through?</h3>
-      <p>
-        About 6mm. That is why proofing work is measured in millimetres rather
-        than in obvious holes: the openings that matter are usually the ones
-        nobody notices, around pipework, under doors and behind air bricks. It
-        is also why mesh aperture is the single specification worth checking
-        before you buy anything.
-      </p>
-
-      <h3>Why use steel wool or wire mesh rather than filler on its own?</h3>
-      <p>
-        Rodents gnaw. A soft filler used on its own can be worked through, so
-        the usual approach is to pack the gap with a material that resists
-        gnawing and then finish over it. Stainless steel wool fill fabric packs
-        into irregular holes, welded wire mesh covers larger openings, and
-        proofing paste can be applied over wire wool or mesh for extra strength.
-      </p>
-
-      <h3>Do rats really come up through drains?</h3>
-      <p>
-        Drains are a recognised route into a property, which is why one-way
-        drain flaps exist. A stainless steel flap fitted to a 4 inch or 110mm
-        pipe lets waste flow out and stops rats moving back up. The bolt on the
-        Roshield guard reverses so the flap can be set to match the direction of
-        flow.
-      </p>
-
-      <h3>Is proofing a replacement for traps or bait?</h3>
-      <p>
-        No. Proofing stops new rodents getting in; it does nothing about the
-        ones already inside. The usual order is to deal with the current
-        activity first and then close the entry points so the problem does not
-        simply repeat. Proofing is what stops you buying bait again next winter.
-      </p>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
 
       {/* When to Contact */}
       <h2 id="when-to-call">When to Contact a Pest Control Professional</h2>

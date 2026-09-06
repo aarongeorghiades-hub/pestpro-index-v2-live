@@ -67,59 +67,44 @@ const breadcrumbSchema = {
     },
   ],
 };
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "What is the best wasp nest killer foam in the UK?",
+    a: "Rentokil Wasp Nest Killer Foam is the best overall option. It delivers expanding foam that seals the nest entrance and kills wasps through contact with the insecticide, reducing the number of escaping wasps.",
+  },
+  {
+    q: "Is it safe to remove a wasp nest yourself?",
+    a: "Small, accessible nests can be treated safely with the right products and protective clothing. However, nests at height, in enclosed roof spaces, very large nests, and situations where you have a wasp allergy should always be handled by a professional. Professional treatment typically costs £50-£80.",
+  },
+  {
+    q: "When is the best time to treat a wasp nest?",
+    a: "Treat at dusk or dawn when wasps are least active and most of the colony is inside the nest. Never attempt treatment during the middle of the day.",
+  },
+  {
+    q: "How long does wasp nest foam take to work?",
+    a: "Foam kills wasps within minutes on contact. However, it takes 24-48 hours for the entire colony to die. Do not approach the nest for at least 24 hours after treatment.",
+  },
+  {
+    q: "Do I need to remove the nest after treating it?",
+    a: "No. A treated, dead nest is harmless and will not be reused. Remove it only if you want to for aesthetic reasons, and wait at least 48 hours after treatment before doing so.",
+  },
+  {
+    q: "Is wasp nest foam or powder better?",
+    a: "Foam is better for visible nests with clear entrances. Powder is better for cavity nests, wall voids, and underground nests where the transfer effect carries the insecticide deep inside the hidden nest.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is the best wasp nest killer foam in the UK?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Rentokil Wasp Nest Killer Foam is the best overall option. It delivers expanding foam that seals the nest entrance and kills wasps through contact with the insecticide, reducing the number of escaping wasps.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is it safe to remove a wasp nest yourself?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Small, accessible nests can be treated safely with the right products and protective clothing. However, nests at height, in enclosed roof spaces, very large nests, and situations where you have a wasp allergy should always be handled by a professional. Professional treatment typically costs £50-£80.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "When is the best time to treat a wasp nest?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Treat at dusk or dawn when wasps are least active and most of the colony is inside the nest. Never attempt treatment during the middle of the day.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does wasp nest foam take to work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Foam kills wasps within minutes on contact. However, it takes 24-48 hours for the entire colony to die. Do not approach the nest for at least 24 hours after treatment.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do I need to remove the nest after treating it?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. A treated, dead nest is harmless and will not be reused. Remove it only if you want to for aesthetic reasons, and wait at least 48 hours after treatment before doing so.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is wasp nest foam or powder better?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Foam is better for visible nests with clear entrances. Powder is better for cavity nests, wall voids, and underground nests where the transfer effect carries the insecticide deep inside the hidden nest.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 type ProductRecord = {
   anchorId: string;
@@ -766,51 +751,12 @@ export default function BestWaspNestFoamPage() {
         aesthetic reasons.{" "}
       </p>{" "}
       {/* FAQ */} <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>What is the best wasp nest killer foam in the UK?</h3>{" "}
-      <p>
-        {" "}
-        Rentokil Wasp Nest Killer Foam is the best overall option. It delivers
-        expanding foam that seals the nest entrance and kills wasps through
-        contact with the insecticide, reducing the number of escaping
-        wasps.{" "}
-      </p>{" "}
-      <h3>Is it safe to remove a wasp nest yourself?</h3>{" "}
-      <p>
-        {" "}
-        Small, accessible nests can be treated safely with the right products
-        and protective clothing. However, nests at height, in enclosed roof
-        spaces, very large nests, and situations where you have a wasp allergy
-        should always be handled by a professional. Professional treatment
-        typically costs £50-£80.{" "}
-      </p>{" "}
-      <h3>When is the best time to treat a wasp nest?</h3>{" "}
-      <p>
-        {" "}
-        Treat at dusk or dawn when wasps are least active and most of the colony
-        is inside the nest. Never attempt treatment during the middle of the
-        day.{" "}
-      </p>{" "}
-      <h3>How long does wasp nest foam take to work?</h3>{" "}
-      <p>
-        {" "}
-        Foam kills wasps within minutes on contact. However, it takes 24-48
-        hours for the entire colony to die. Do not approach the nest for at
-        least 24 hours after treatment.{" "}
-      </p>{" "}
-      <h3>Do I need to remove the nest after treating it?</h3>{" "}
-      <p>
-        {" "}
-        No. A treated, dead nest is harmless and will not be reused. Remove it
-        only if you want to for aesthetic reasons, and wait at least 48 hours
-        after treatment before doing so.{" "}
-      </p>{" "}
-      <h3>Is wasp nest foam or powder better?</h3>{" "}
-      <p>
-        {" "}
-        Foam is better for visible nests with clear entrances. Powder is better
-        for cavity nests, wall voids, and underground nests where the transfer
-        effect carries the insecticide deep inside the hidden nest.{" "}
-      </p>{" "}
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
       <div className="not-prose">
         {" "}
         <FindProviderCTA

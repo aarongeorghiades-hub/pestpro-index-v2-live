@@ -179,6 +179,12 @@ export const LAW_REFERENCES_ONLY = [
   '783. Measured this round: the estate MINUS /us/products carries 188 rendered',
   '### PROPOSED LAW 182 — NOT RATIFIED, AWAITING A PM RULING',
   '## S64 R1 — PROPOSED LAW 999: NOT RATIFIED',
+  // S67 R6 — the wording that slipped past the two literal phrasings above and
+  // made M20 print "no gaps" over an enumeration missing two laws. A heading that
+  // says a law is NOT IN FORCE is not a declaration, whichever way it says it.
+  '## S67 R6 — LAW 189 AND LAW 190 COULD NOT BE RATIFIED',
+  '## LAW 777 IS ABSENT FROM THIS FILE',
+  '## LAW 778 WITHDRAWN, SEE BELOW',
 ].join('\n');
 
 // ---- M33 (S64 R2), the /us layout footer's two earnings statements ---------
@@ -291,21 +297,34 @@ export const CHALLENGE_BODY_HTTP_200 =
   '}());</script></body></html>';
 
 // The NEGATIVE limb the brief asks for: a body S66 R2 ACCEPTED and quoted from.
-// Verbatim from ~/pp-s66r2/sources/westlothian.txt. It is small, so it exercises
-// the size limb alone and proves the size limb cannot block on its own.
+// The quoted text is verbatim from ~/pp-s66r2/sources/westlothian.txt.
+//
+// S67 R6 — PADDED TO THE SIZE OF THE PAGE IT STANDS FOR, AND THIS IS A CORRECTION
+// TO THE FIXTURE, NOT A CONCESSION BY THE RULE. As written it was 164 bytes, a
+// miniature of a real council page of tens of kilobytes. That was harmless while
+// every M23 rule was lexical. It stopped being harmless the moment a rule keyed on
+// SIZE: the new empty-body limb correctly called a 164-byte body unusable, and the
+// probe fired. A stand-in that is three orders of magnitude smaller than the thing
+// it stands for is not a valid stand-in for a size-sensitive test, so the fixture
+// is brought up to a realistic size and the distinguishing text is untouched.
 export const ACCEPTED_SOURCE_BODY_S66R2 =
-  'Spikes are useful but only for birds roosting on ledges.  If they are ' +
+  '<html><head><title>Bird proofing advice</title></head><body>' +
+  '<p>Spikes are useful but only for birds roosting on ledges.  If they are ' +
   'nesting they will not provide any protection.  These areas are known as ' +
-  'medium pressure areas.';
+  'medium pressure areas.</p>' +
+  '<p>' + 'Guidance on proofing, nesting seasons and licensing follows. '.repeat(400) + '</p>' +
+  '</body></html>';
 
 // A REAL page that TALKS ABOUT Cloudflare challenges without being one. This is
 // FP-3's lesson applied to the new class: a challenge-related word inside real
 // content is not a challenge. Without the structural markers it must stay silent.
+// S67 R6 — likewise padded to a realistic page size, for the same reason.
 export const REAL_PAGE_ABOUT_CHALLENGES =
   '<html><head><title>Why our site shows a Cloudflare challenge</title></head>' +
   '<body><h1>Bot protection</h1><p>Visitors occasionally see a challenge page ' +
   'asking them to enable JavaScript and cookies before they can continue. This ' +
   'happens when Cloudflare is not confident the request came from a person.</p>' +
+  '<p>' + 'The rest of this article explains the settings involved. '.repeat(400) + '</p>' +
   '</body></html>';
 
 export const REAL_PAGE_WITH_TRIGGER_WORD =
@@ -426,3 +445,22 @@ export const HEADING_LEGAL = 'The Law Changes at the State Line';
 // be quietly widened back to catching them
 export const HEADING_NOT_PRECEDENCE = 'They Do Not Dig';
 export const HEADING_PLAIN = 'Where They Nest and How They Enter';
+
+// S67 R6 — THE TWO M23 FAULTS, AS PERMANENT PROBES. Both are real bodies this
+// programme actually fetched, not constructed cases.
+//
+// EMPTY_BODY_HTTP_202 — ~/pp-s66r8/sources/walthamforest-moth.pdf and its S66 R8
+// retry were each 0 bytes at HTTP 202. M23 returned [] on both and the round read
+// that silence as acceptance.
+export const EMPTY_BODY_HTTP_202 = '';
+//
+// LARGE_CHALLENGE_BODY — the shape of the 151,140-byte Cloudflare challenge served
+// by digitalcommons.unl.edu at S67 R2 and again on its S67 R3 retry. It carries the
+// structural challenge signature and NO announced phrase, and it is nineteen times
+// the old 8,000-byte size limb, so under the previous rule a 200 would have been
+// accepted as a source. Padded past 16,000 so it also proves the ANNOUNCED bound
+// does not gate the CHALLENGE class.
+export const LARGE_CHALLENGE_BODY =
+  '<!doctype html><html lang="en"><head><meta charset="utf-8">' +
+  '<script src="/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1"></script>' +
+  '</head><body>' + 'x'.repeat(40000) + '</body></html>';

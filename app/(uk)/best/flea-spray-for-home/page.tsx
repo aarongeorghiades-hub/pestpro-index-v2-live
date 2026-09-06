@@ -69,51 +69,44 @@ const breadcrumbSchema = {
     },
   ],
 };
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "What is the best flea spray for the home in the UK?",
+    a: "Indorex Defence is widely regarded as the best flea spray for UK homes. It combines permethrin with pyriproxyfen (an IGR) that prevents flea eggs and larvae from developing for up to 12 months. This dual-action formula is the same product used by many professional pest controllers.",
+  },
+  {
+    q: "How long does flea spray take to work?",
+    a: "Flea spray kills adult fleas on contact within minutes. However, you may continue to see fleas for 2-4 weeks because flea pupae are resistant to all insecticides. When new adults emerge, they are killed by the residual spray. The IGR prevents surviving eggs or larvae from developing into new adults.",
+  },
+  {
+    q: "Is flea spray safe for pets?",
+    a: "Household flea sprays are for carpets and furnishings, not direct pet application. Remove pets from the room before spraying and do not allow them back until the spray has fully dried (1-2 hours). Once dry, the residual layer is safe for pets to walk on.",
+  },
+  {
+    q: "How often should I spray my house for fleas?",
+    a: "With a quality IGR spray like Indorex, a single application provides up to 12 months of protection. You may need to reapply after 2-3 weeks if you are still seeing significant numbers. Regular vacuuming is essential alongside spraying.",
+  },
+  {
+    q: "Should I vacuum before or after flea spraying?",
+    a: "Both. Vacuum thoroughly before spraying to remove debris and help the spray penetrate. After spraying, vacuum daily for at least 2 weeks to stimulate pupae to hatch and expose emerging adults to the residual spray.",
+  },
+  {
+    q: "Do I need to treat my whole house?",
+    a: "Yes — treat every carpeted room and any room your pet has access to. Flea eggs fall off pets as they move through the house, and larvae can crawl into adjacent rooms. Focus particularly on areas where your pet sleeps and rests.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is the best flea spray for the home in the UK?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Indorex Defence is widely regarded as the best flea spray for UK homes. It combines permethrin with pyriproxyfen (an IGR) that prevents flea eggs and larvae from developing for up to 12 months. This dual-action formula is the same product used by many professional pest controllers.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does flea spray take to work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Flea spray kills adult fleas on contact within minutes. However, you may continue to see fleas for 2-4 weeks because flea pupae are resistant to all insecticides. When new adults emerge, they are killed by the residual spray. The IGR prevents surviving eggs or larvae from developing into new adults.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is flea spray safe for pets?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Household flea sprays are for carpets and furnishings, not direct pet application. Remove pets from the room before spraying and do not allow them back until the spray has fully dried (1-2 hours). Once dry, the residual layer is safe for pets to walk on.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How often should I spray my house for fleas?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "With a quality IGR spray like Indorex, a single application provides up to 12 months of protection. You may need to reapply after 2-3 weeks if you are still seeing significant numbers. Regular vacuuming is essential alongside spraying.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Should I vacuum before or after flea spraying?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Both. Vacuum thoroughly before spraying to remove debris and help the spray penetrate. After spraying, vacuum daily for at least 2 weeks to stimulate pupae to hatch and expose emerging adults to the residual spray.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 type ProductRecord = {
   anchorId: string;
@@ -834,56 +827,12 @@ export default function BestFleaSprayPage() {
         long after your spray treatment has worn off.{" "}
       </p>{" "}
       {/* FAQ */} <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>What is the best flea spray for the home in the UK?</h3>{" "}
-      <p>
-        {" "}
-        Indorex Defence is widely regarded as the best flea spray for UK homes.
-        It combines permethrin with pyriproxyfen (an IGR) that prevents flea
-        eggs and larvae from developing for up to 12 months. This dual-action
-        formula is the same product used by many professional pest
-        controllers.{" "}
-      </p>{" "}
-      <h3>How long does flea spray take to work?</h3>{" "}
-      <p>
-        {" "}
-        Flea spray kills adult fleas on contact within minutes. However, you may
-        continue to see fleas for 2-4 weeks because flea pupae are resistant to
-        all insecticides. When new adults emerge, they are killed by the
-        residual spray. The IGR prevents surviving eggs or larvae from
-        developing into new adults.{" "}
-      </p>{" "}
-      <h3>Is flea spray safe for pets?</h3>{" "}
-      <p>
-        {" "}
-        Household flea sprays are for carpets and furnishings, not direct pet
-        application. Remove pets from the room before spraying and do not allow
-        them back until the spray has fully dried (1-2 hours). Once dry, the
-        residual layer is safe for pets to walk on.{" "}
-      </p>{" "}
-      <h3>How often should I spray my house for fleas?</h3>{" "}
-      <p>
-        {" "}
-        With a quality IGR spray like Indorex, a single application provides up
-        to 12 months of protection. You may need to reapply after 2-3 weeks if
-        you are still seeing significant numbers. Regular vacuuming is essential
-        alongside spraying.{" "}
-      </p>{" "}
-      <h3>Should I vacuum before or after flea spraying?</h3>{" "}
-      <p>
-        {" "}
-        Both. Vacuum thoroughly before spraying to remove debris and help the
-        spray penetrate. After spraying, vacuum daily for at least 2 weeks to
-        stimulate pupae to hatch and expose emerging adults to the residual
-        spray.{" "}
-      </p>{" "}
-      <h3>Do I need to treat my whole house?</h3>{" "}
-      <p>
-        {" "}
-        Yes — treat every carpeted room and any room your pet has access to.
-        Flea eggs fall off pets as they move through the house, and larvae can
-        crawl into adjacent rooms. Focus particularly on areas where your pet
-        sleeps and rests.{" "}
-      </p>{" "}
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
       <div className="not-prose">
         {" "}
         <FindProviderCTA

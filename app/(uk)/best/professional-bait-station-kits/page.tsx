@@ -74,43 +74,36 @@ const breadcrumbSchema = {
   ],
 };
 
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "Do professional bait stations work for mice as well as rats?",
+    a: "Yes. All of the stations on this page accept both rat and mouse bait blocks. The entry holes are sized to allow mice and rats in while keeping children, pets, and non-target wildlife out. For mice-only infestations, a smaller dedicated mouse bait station may be more discreet, but professional-grade boxes handle both species effectively.",
+  },
+  {
+    q: "Where should I place bait stations around a rental property?",
+    a: "Place stations flush against external walls, along fence lines, near bin stores, beside drain covers, and at any confirmed rodent entry points. Rats and mice are thigmotactic — they follow edges and avoid crossing open spaces. Space stations 5-10 metres apart for perimeter coverage. For HMOs, prioritise communal kitchen areas, refuse storage, and the building perimeter.",
+  },
+  {
+    q: "How often should I check bait stations?",
+    a: "During active baiting, check every 5-7 days. Replace consumed bait, remove dead rodents, and note which stations show activity. For ongoing monitoring with no active infestation, monthly inspections are sufficient. Keep a written log of every inspection — this is essential evidence for Environmental Health if a complaint is made against your property.",
+  },
+  {
+    q: "Do I need to use poison or can I use traps inside bait stations?",
+    a: "Most professional bait stations accept both poison blocks (mounted on the internal bait rod) and snap traps. Using snap traps inside a tamper-resistant station gives you a poison-free option that is still safe around tenants, children, and pets. This is particularly useful in food preparation areas or properties with vulnerable occupants where chemical rodenticides are less appropriate.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Do professional bait stations work for mice as well as rats?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. All of the stations on this page accept both rat and mouse bait blocks. The entry holes are sized to allow mice and rats in while keeping children, pets, and non-target wildlife out. For mice-only infestations, a smaller dedicated mouse bait station may be more discreet, but professional-grade boxes handle both species effectively.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Where should I place bait stations around a rental property?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Place stations flush against external walls, along fence lines, near bin stores, beside drain covers, and at any confirmed rodent entry points. Rats and mice are thigmotactic — they follow edges and avoid crossing open spaces. Space stations 5-10 metres apart for perimeter coverage. For HMOs, prioritise communal kitchen areas, refuse storage, and the building perimeter.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How often should I check bait stations?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "During active baiting, check every 5-7 days. Replace consumed bait, remove dead rodents, and note which stations show activity. For ongoing monitoring with no active infestation, monthly inspections are sufficient. Keep a written log of every inspection — this is essential evidence for Environmental Health if a complaint is made against your property.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do I need to use poison or can I use traps inside bait stations?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most professional bait stations accept both poison blocks (mounted on the internal bait rod) and snap traps. Using snap traps inside a tamper-resistant station gives you a poison-free option that is still safe around tenants, children, and pets. This is particularly useful in food preparation areas or properties with vulnerable occupants where chemical rodenticides are less appropriate.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 type ProductRecord = {
@@ -769,44 +762,12 @@ export default function ProfessionalBaitStationKitsPage() {
       {/* --- FAQ --- */}
       <h2 id="faq">Frequently Asked Questions</h2>
 
-      <h3>Do professional bait stations work for mice as well as rats?</h3>
-      <p>
-        Yes. All of the stations on this page accept both rat and mouse bait
-        blocks. The entry holes are sized to allow mice and rats in while
-        keeping children, pets, and non-target wildlife out. For mice-only
-        infestations, a smaller dedicated mouse bait station may be more
-        discreet, but professional-grade boxes handle both species effectively.
-      </p>
-
-      <h3>Where should I place bait stations around a rental property?</h3>
-      <p>
-        Place stations flush against external walls, along fence lines, near bin
-        stores, beside drain covers, and at any confirmed rodent entry points.
-        Rats and mice are thigmotactic — they follow edges and avoid crossing
-        open spaces. Space stations 5-10 metres apart for perimeter coverage.
-        For HMOs, prioritise communal kitchen areas, refuse storage, and the
-        building perimeter.
-      </p>
-
-      <h3>How often should I check bait stations?</h3>
-      <p>
-        During active baiting, check every 5-7 days. Replace consumed bait,
-        remove dead rodents, and note which stations show activity. For ongoing
-        monitoring with no active infestation, monthly inspections are
-        sufficient. Keep a written log of every inspection — this is essential
-        evidence for Environmental Health if a complaint is made against your
-        property.
-      </p>
-
-      <h3>Do I need to use poison or can I use traps inside bait stations?</h3>
-      <p>
-        Most professional bait stations accept both poison blocks (mounted on
-        the internal bait rod) and snap traps. Using snap traps inside a
-        tamper-resistant station gives you a poison-free option that is still
-        safe around tenants, children, and pets. This is particularly useful in
-        food preparation areas or properties with vulnerable occupants where
-        chemical rodenticides are less appropriate.
-      </p>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
 
       <p>
         Use bait stations with the right{" "}

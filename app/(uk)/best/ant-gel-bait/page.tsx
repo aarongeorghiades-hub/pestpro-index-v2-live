@@ -67,59 +67,44 @@ const breadcrumbSchema = {
     },
   ],
 };
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "How does ant gel bait work?",
+    a: "Worker ants find the gel, consume it, and carry it back to the nest where they share it with other workers, larvae, and the queen through trophallaxis (mouth-to-mouth feeding). The poison kills slowly (24-72 hours), allowing it to spread through the entire colony before ants die. Once the queen dies, the colony collapses.",
+  },
+  {
+    q: "How long does ant gel take to kill a colony?",
+    a: "Most ant gel baits eliminate a colony within 1-2 weeks. You may initially see more ants around the bait — this is normal. Activity should decrease within 3-5 days, with full elimination in 7-14 days.",
+  },
+  {
+    q: "Is ant gel bait safe around pets and children?",
+    a: "Ant gels use low concentrations designed to be lethal to ants but minimal risk to larger animals. Still, place gel where children and pets cannot easily access it. For homes with very young children, enclosed bait stations are the safer choice.",
+  },
+  {
+    q: "Why am I seeing more ants after applying gel bait?",
+    a: "This means the bait is working. Worker ants recruit more foragers to collect the poisoned bait and carry it back to the nest. Do not disturb them or apply spray near the gel. Activity should decrease within 3-5 days.",
+  },
+  {
+    q: "Should I use gel bait or spray for ants?",
+    a: "Gel bait is far more effective. Spray kills only visible workers and does not reach the queen. Gel is carried back to the nest and kills the entire colony. Spray can actually worsen problems by causing colonies to split (budding).",
+  },
+  {
+    q: "Where should I place ant gel bait?",
+    a: "Along ant trails, near entry points, behind kitchen units, along skirting boards, and near food sources. Place small pea-sized dots every 30-50cm. Position dots slightly to the side of the trail, not directly on it.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How does ant gel bait work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Worker ants find the gel, consume it, and carry it back to the nest where they share it with other workers, larvae, and the queen through trophallaxis (mouth-to-mouth feeding). The poison kills slowly (24-72 hours), allowing it to spread through the entire colony before ants die. Once the queen dies, the colony collapses.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does ant gel take to kill a colony?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most ant gel baits eliminate a colony within 1-2 weeks. You may initially see more ants around the bait — this is normal. Activity should decrease within 3-5 days, with full elimination in 7-14 days.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is ant gel bait safe around pets and children?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Ant gels use low concentrations designed to be lethal to ants but minimal risk to larger animals. Still, place gel where children and pets cannot easily access it. For homes with very young children, enclosed bait stations are the safer choice.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why am I seeing more ants after applying gel bait?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "This means the bait is working. Worker ants recruit more foragers to collect the poisoned bait and carry it back to the nest. Do not disturb them or apply spray near the gel. Activity should decrease within 3-5 days.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Should I use gel bait or spray for ants?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Gel bait is far more effective. Spray kills only visible workers and does not reach the queen. Gel is carried back to the nest and kills the entire colony. Spray can actually worsen problems by causing colonies to split (budding).",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Where should I place ant gel bait?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Along ant trails, near entry points, behind kitchen units, along skirting boards, and near food sources. Place small pea-sized dots every 30-50cm. Position dots slightly to the side of the trail, not directly on it.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 type ProductRecord = {
   anchorId: string;
@@ -780,55 +765,12 @@ export default function BestAntGelBaitPage() {
         consumed, apply more.{" "}
       </p>{" "}
       {/* FAQ */} <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>How does ant gel bait work?</h3>{" "}
-      <p>
-        {" "}
-        Worker ants find the gel, consume it, and carry it back to the nest
-        where they share it with other workers, larvae, and the queen through
-        trophallaxis (mouth-to-mouth feeding). The poison kills slowly (24-72
-        hours), allowing it to spread through the entire colony before ants die.
-        Once the queen dies, the colony collapses.{" "}
-      </p>{" "}
-      <h3>How long does ant gel take to kill a colony?</h3>{" "}
-      <p>
-        {" "}
-        Most ant gel baits eliminate a colony within 1-2 weeks. You may
-        initially see more ants around the bait — this is normal. Activity
-        should decrease within 3-5 days, with full elimination in 7-14
-        days.{" "}
-      </p>{" "}
-      <h3>Is ant gel bait safe around pets and children?</h3>{" "}
-      <p>
-        {" "}
-        Ant gels use low concentrations designed to be lethal to ants but
-        minimal risk to larger animals. Still, place gel where children and pets
-        cannot easily access it. For homes with very young children, enclosed
-        bait stations are the safer choice.{" "}
-      </p>{" "}
-      <h3>Why am I seeing more ants after applying gel bait?</h3>{" "}
-      <p>
-        {" "}
-        This means the bait is working. Worker ants recruit more foragers to
-        collect the poisoned bait and carry it back to the nest. Do not disturb
-        them or apply spray near the gel. Activity should decrease within 3-5
-        days.{" "}
-      </p>{" "}
-      <h3>Should I use gel bait or spray for ants?</h3>{" "}
-      <p>
-        {" "}
-        Gel bait is far more effective. Spray kills only visible workers and
-        does not reach the queen. Gel is carried back to the nest and kills the
-        entire colony. Spray can actually worsen problems by causing colonies to
-        split (budding).{" "}
-      </p>{" "}
-      <h3>Where should I place ant gel bait?</h3>{" "}
-      <p>
-        {" "}
-        Along ant trails, near entry points, behind kitchen units, along
-        skirting boards, and near food sources. Place small pea-sized dots every
-        30-50cm. Position dots slightly to the side of the trail, not directly
-        on it.{" "}
-      </p>{" "}
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
       <div className="not-prose">
         {" "}
         <FindProviderCTA

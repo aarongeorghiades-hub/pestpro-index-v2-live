@@ -69,19 +69,40 @@ const breadcrumbSchema = {
     },
   ],
 };
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "Do bed bug mattress encasements actually work?",
+    a: "Yes. They trap existing bed bugs inside (where they starve over ~12 months) and prevent new bugs from colonising the mattress. They must be used alongside room treatment — not as a standalone solution.",
+  },
+  {
+    q: "How long should I leave an encasement on?",
+    a: "At least 12-18 months to ensure all trapped bugs are dead. Most professionals recommend leaving encasements on permanently for ongoing protection.",
+  },
+  {
+    q: "What size do I need?",
+    a: "Measure your mattress depth (thickness) and match it to the encasement's depth rating. Standard UK sizes: Single (90x190cm), Double (135x190cm), King (150x200cm), Super King (180x200cm).",
+  },
+  {
+    q: "Can bed bugs get through an encasement?",
+    a: "Not through a quality encasement with a micro-zipper and reinforced seams. The micro-zipper teeth are too small for bed bugs to pass through, and the fabric density prevents biting through.",
+  },
+  {
+    q: "Do I still need to treat my room?",
+    a: "Yes. Bed bugs also hide in bed frames, headboards, skirting boards, and furniture. The encasement protects the mattress; you must treat the rest of the room with spray or professional treatment.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Do bed bug mattress encasements actually work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. They trap existing bed bugs inside (where they starve over ~12 months) and prevent new bugs from colonising the mattress. They must be used alongside room treatment — not as a standalone solution.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 type ProductRecord = {
   anchorId: string;
@@ -597,36 +618,12 @@ export default function BestMattressEncasementPage() {
         bug protection — the choice is personal preference.{" "}
       </p>{" "}
       <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>Do bed bug mattress encasements actually work?</h3>{" "}
-      <p>
-        Yes. They trap existing bed bugs inside (where they starve over ~12
-        months) and prevent new bugs from colonising the mattress. They must be
-        used alongside room treatment — not as a standalone solution.
-      </p>{" "}
-      <h3>How long should I leave an encasement on?</h3>{" "}
-      <p>
-        At least 12-18 months to ensure all trapped bugs are dead. Most
-        professionals recommend leaving encasements on permanently for ongoing
-        protection.
-      </p>{" "}
-      <h3>What size do I need?</h3>{" "}
-      <p>
-        Measure your mattress depth (thickness) and match it to the encasement's
-        depth rating. Standard UK sizes: Single (90x190cm), Double (135x190cm),
-        King (150x200cm), Super King (180x200cm).
-      </p>{" "}
-      <h3>Can bed bugs get through an encasement?</h3>{" "}
-      <p>
-        Not through a quality encasement with a micro-zipper and reinforced
-        seams. The micro-zipper teeth are too small for bed bugs to pass
-        through, and the fabric density prevents biting through.
-      </p>{" "}
-      <h3>Do I still need to treat my room?</h3>{" "}
-      <p>
-        Yes. Bed bugs also hide in bed frames, headboards, skirting boards, and
-        furniture. The encasement protects the mattress; you must treat the rest
-        of the room with spray or professional treatment.
-      </p>{" "}
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
       <p>
         Running a rental property or HMO? See our dedicated guide to{" "}
         <a

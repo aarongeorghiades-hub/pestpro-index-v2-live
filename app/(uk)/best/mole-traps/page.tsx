@@ -210,59 +210,44 @@ const tocItems = [
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "Is it legal to trap moles in the UK?",
+    a: "Yes. Moles are not a protected species in the UK, so trapping and killing them is legal. However, under the Animal Welfare Act 2006, you must use humane methods and check traps at least once every 24 hours. Spring traps must be DEFRA-approved under the Spring Traps Approval Order.",
+  },
+  {
+    q: "What is the most effective type of mole trap?",
+    a: "The Duffus half-barrel trap is widely regarded as the most effective by professional mole catchers. Scissor traps like the Putange are also highly effective. Both deliver a quick, humane kill and work within the tunnel system without requiring major excavation.",
+  },
+  {
+    q: "Where should I place a mole trap?",
+    a: "Place traps in active, straight runs rather than at molehills. Flatten a section of tunnel with your foot and check 24 hours later — if it has been pushed back up, it is active. Insert the trap into the tunnel without disturbing the surrounding soil too much.",
+  },
+  {
+    q: "How long does it take to catch a mole?",
+    a: "With a correctly set trap in an active run, most moles are caught within 24 to 48 hours. If you have not caught a mole after 3 to 4 days, move the trap to a different active run.",
+  },
+  {
+    q: "Do mole repellents actually work?",
+    a: "Castor oil-based granules can deter moles from small areas by making the soil unpleasant. Scientific evidence is limited, and they work best as a preventive measure for small gardens rather than as a cure for active infestations. Trapping is far more reliable.",
+  },
+  {
+    q: "How many mole traps do I need?",
+    a: "For a typical garden with one or two moles, 3 to 5 traps in different active runs give the best chance of a quick catch. Professional mole catchers often use 6 to 10 traps across a larger site.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Is it legal to trap moles in the UK?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Moles are not a protected species in the UK, so trapping and killing them is legal. However, under the Animal Welfare Act 2006, you must use humane methods and check traps at least once every 24 hours. Spring traps must be DEFRA-approved under the Spring Traps Approval Order.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the most effective type of mole trap?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The Duffus half-barrel trap is widely regarded as the most effective by professional mole catchers. Scissor traps like the Putange are also highly effective. Both deliver a quick, humane kill and work within the tunnel system without requiring major excavation.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Where should I place a mole trap?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Place traps in active, straight runs rather than at molehills. Flatten a section of tunnel with your foot and check 24 hours later — if it has been pushed back up, it is active. Insert the trap into the tunnel without disturbing the surrounding soil too much.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does it take to catch a mole?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "With a correctly set trap in an active run, most moles are caught within 24 to 48 hours. If you have not caught a mole after 3 to 4 days, move the trap to a different active run.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do mole repellents actually work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Castor oil-based granules can deter moles from small areas by making the soil unpleasant. Scientific evidence is limited, and they work best as a preventive measure for small gardens rather than as a cure for active infestations. Trapping is far more reliable.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How many mole traps do I need?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "For a typical garden with one or two moles, 3 to 5 traps in different active runs give the best chance of a quick catch. Professional mole catchers often use 6 to 10 traps across a larger site.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 export default function BestMoleTrapsPage() {
@@ -639,52 +624,12 @@ export default function BestMoleTrapsPage() {
       {/* FAQ */}
       <h2 id="faq">Frequently Asked Questions</h2>
 
-      <h3>Is it legal to trap moles in the UK?</h3>
-      <p>
-        Yes. Moles are not a protected species in the UK, so trapping and
-        killing them is legal. However, under the Animal Welfare Act 2006, you
-        must use humane methods and check traps at least once every 24 hours.
-        Spring traps must be DEFRA-approved under the Spring Traps Approval
-        Order.
-      </p>
-
-      <h3>What is the most effective type of mole trap?</h3>
-      <p>
-        The Duffus half-barrel trap is widely regarded as the most effective by
-        professional mole catchers. Scissor traps like the Putange are also
-        highly effective. Both deliver a quick, humane kill and work within the
-        tunnel system without requiring major excavation.
-      </p>
-
-      <h3>Where should I place a mole trap?</h3>
-      <p>
-        Place traps in active, straight runs rather than at molehills. Flatten a
-        section of tunnel with your foot and check 24 hours later — if it has
-        been pushed back up, it is active. Insert the trap into the tunnel
-        without disturbing the surrounding soil too much.
-      </p>
-
-      <h3>How long does it take to catch a mole?</h3>
-      <p>
-        With a correctly set trap in an active run, most moles are caught within
-        24 to 48 hours. If you have not caught a mole after 3 to 4 days, move
-        the trap to a different active run.
-      </p>
-
-      <h3>Do mole repellents actually work?</h3>
-      <p>
-        Castor oil-based granules can deter moles from small areas by making the
-        soil unpleasant. Scientific evidence is limited, and they work best as a
-        preventive measure for small gardens rather than as a cure for active
-        infestations. Trapping is far more reliable.
-      </p>
-
-      <h3>How many mole traps do I need?</h3>
-      <p>
-        For a typical garden with one or two moles, 3 to 5 traps in different
-        active runs give the best chance of a quick catch. Professional mole
-        catchers often use 6 to 10 traps across a larger site.
-      </p>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
     </GuideLayout>
   );
 }

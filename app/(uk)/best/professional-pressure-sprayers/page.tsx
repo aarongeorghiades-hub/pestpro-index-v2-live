@@ -69,27 +69,36 @@ const breadcrumbSchema = {
     },
   ],
 };
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "Can I use any pesticide in a knapsack sprayer?",
+    a: "No — always check the product label before loading any pesticide into a sprayer. Some formulations, particularly oil-based concentrates, may damage seals or gaskets in certain pump types. Wettable powders and abrasive formulations require a diaphragm pump. Only use products labelled for sprayer application, and confirm compatibility with your specific pump type.",
+  },
+  {
+    q: "How do I clean the tank after use?",
+    a: "Triple rinse. Fill the tank one-third full with clean water, pressurise, and spray through the lance and nozzle. Repeat three times. This flushes chemical residue from every component — tank, hose, lance, and nozzle. Store with the pressure valve open and the lid loosened. Never leave chemical solution sitting in the tank overnight.",
+  },
+  {
+    q: "What nozzle should I use for fine vs coarse spray?",
+    a: "A flat fan nozzle at 30–40psi produces an even, wide pattern for surface residual treatments and perimeter spraying. A hollow cone nozzle at higher pressure produces a finer mist for crack and crevice work where precise targeting is needed. For most perimeter pest control work, start with the flat fan nozzle — it gives the most consistent coverage over large areas.",
+  },
+  {
+    q: "What is the difference between flat fan and cone nozzles?",
+    a: "A flat fan nozzle produces a wide, flat spray pattern — best for covering walls, floors, and perimeters evenly. A hollow cone nozzle produces a circular ring pattern with finer droplets, ideal for penetrating into cracks and crevices. A full cone nozzle produces a solid circle of spray for heavy-duty coverage. For standard pest control, use the flat fan as your default and switch to the hollow cone for targeted applications around harbourage points.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Can I use any pesticide in a knapsack sprayer?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No — always check the product label before loading any pesticide into a sprayer. Some formulations, particularly oil-based concentrates, may damage seals or gaskets in certain pump types. Wettable powders and abrasive formulations require a diaphragm pump. Only use products labelled for sprayer application, and confirm compatibility with your specific pump type.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What nozzle should I use for fine vs coarse spray?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A flat fan nozzle at 30–40psi produces an even, wide pattern for surface residual treatments and perimeter spraying. A hollow cone nozzle at higher pressure produces a finer mist for crack and crevice work where precise targeting is needed. For most perimeter pest control work, start with the flat fan nozzle — it gives the most consistent coverage over large areas.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 type ProductRecord = {
   anchorId: string;
@@ -674,46 +683,12 @@ export default function ProfessionalPressureSprayersPage() {
         blockages from undissolved concentrate.{" "}
       </p>{" "}
       <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>Can I use any pesticide in a knapsack sprayer?</h3>{" "}
-      <p>
-        {" "}
-        No — always check the product label before loading any pesticide into a
-        sprayer. Some formulations, particularly oil-based concentrates, may
-        damage seals or gaskets in certain pump types. Wettable powders and
-        abrasive formulations require a diaphragm pump. Only use products
-        labelled for sprayer application, and confirm compatibility with your
-        specific pump type.{" "}
-      </p>{" "}
-      <h3>How do I clean the tank after use?</h3>{" "}
-      <p>
-        {" "}
-        Triple rinse. Fill the tank one-third full with clean water, pressurise,
-        and spray through the lance and nozzle. Repeat three times. This flushes
-        chemical residue from every component — tank, hose, lance, and nozzle.
-        Store with the pressure valve open and the lid loosened. Never leave
-        chemical solution sitting in the tank overnight.{" "}
-      </p>{" "}
-      <h3>What nozzle should I use for fine vs coarse spray?</h3>{" "}
-      <p>
-        {" "}
-        A flat fan nozzle at 30–40psi produces an even, wide pattern for surface
-        residual treatments and perimeter spraying. A hollow cone nozzle at
-        higher pressure produces a finer mist for crack and crevice work where
-        precise targeting is needed. For most perimeter pest control work, start
-        with the flat fan nozzle — it gives the most consistent coverage over
-        large areas.{" "}
-      </p>{" "}
-      <h3>What is the difference between flat fan and cone nozzles?</h3>{" "}
-      <p>
-        {" "}
-        A flat fan nozzle produces a wide, flat spray pattern — best for
-        covering walls, floors, and perimeters evenly. A hollow cone nozzle
-        produces a circular ring pattern with finer droplets, ideal for
-        penetrating into cracks and crevices. A full cone nozzle produces a
-        solid circle of spray for heavy-duty coverage. For standard pest
-        control, use the flat fan as your default and switch to the hollow cone
-        for targeted applications around harbourage points.{" "}
-      </p>{" "}
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
       <p>
         {" "}
         For treating large open spaces where a sprayer cannot reach, pair with a{" "}

@@ -69,43 +69,40 @@ const breadcrumbSchema = {
     },
   ],
 };
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "What is the best cockroach gel bait a UK consumer can buy?",
+    a: "The strongest cockroach gels are authorised for professional use only and are not sold to the public. Of the products on general sale, a treatment kit combining gel, spray and powder gives the widest coverage for a household infestation. For an established infestation, a professional pest controller is the reliable answer.",
+  },
+  {
+    q: "How does cockroach gel bait work?",
+    a: "Cockroaches eat the gel and die 24-72 hours later. Other cockroaches consume contaminated droppings and dead bodies, spreading the poison through the population. This cascade effect can kill dozens of cockroaches from a single gel dot.",
+  },
+  {
+    q: "How long does cockroach gel take to work?",
+    a: "You should see reduced activity within 3-5 days. Complete elimination of a moderate infestation takes 2-4 weeks. Severe German cockroach infestations may take 4-6 weeks with multiple applications.",
+  },
+  {
+    q: "Is cockroach gel safe in kitchens?",
+    a: "Yes. Gel is applied in tiny dots in concealed locations — behind units, inside hinges, under appliances. The amounts used and concealed placement mean it does not contaminate food or surfaces.",
+  },
+  {
+    q: "How do I know if I have German or Oriental cockroaches?",
+    a: "German cockroaches: small (10-15mm), light brown, two dark stripes, found in warm/humid indoor areas. Oriental cockroaches: larger (20-25mm), very dark brown/black, found in cooler areas near drains and basements.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is the best cockroach gel bait a UK consumer can buy?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The strongest cockroach gels are authorised for professional use only and are not sold to the public. Of the products on general sale, a treatment kit combining gel, spray and powder gives the widest coverage for a household infestation. For an established infestation, a professional pest controller is the reliable answer.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does cockroach gel bait work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Cockroaches eat the gel and die 24-72 hours later. Other cockroaches consume contaminated droppings and dead bodies, spreading the poison through the population. This cascade effect can kill dozens of cockroaches from a single gel dot.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does cockroach gel take to work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "You should see reduced activity within 3-5 days. Complete elimination of a moderate infestation takes 2-4 weeks. Severe German cockroach infestations may take 4-6 weeks with multiple applications.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I know if I have German or Oriental cockroaches?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "German cockroaches: small (10-15mm), light brown, two dark stripes, found in warm/humid indoor areas. Oriental cockroaches: larger (20-25mm), very dark brown/black, found in cooler areas near drains and basements.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 type ProductRecord = {
   anchorId: string;
@@ -738,45 +735,12 @@ export default function BestCockroachGelBaitPage() {
         appliances).{" "}
       </p>{" "}
       <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>What is the best cockroach gel bait a UK consumer can buy?</h3>{" "}
-      <p>
-        {" "}
-        The strongest cockroach gels are authorised for professional use only
-        and are not sold to the public. Of the products on general sale, a
-        treatment kit combining gel, spray and powder gives the widest coverage
-        for a household infestation. For an established infestation, a
-        professional pest controller is the reliable answer.{" "}
-      </p>{" "}
-      <h3>How does cockroach gel bait work?</h3>{" "}
-      <p>
-        {" "}
-        Cockroaches eat the gel and die 24-72 hours later. Other cockroaches
-        consume contaminated droppings and dead bodies, spreading the poison
-        through the population. This cascade effect can kill dozens of
-        cockroaches from a single gel dot.{" "}
-      </p>{" "}
-      <h3>How long does cockroach gel take to work?</h3>{" "}
-      <p>
-        {" "}
-        You should see reduced activity within 3-5 days. Complete elimination of
-        a moderate infestation takes 2-4 weeks. Severe German cockroach
-        infestations may take 4-6 weeks with multiple applications.{" "}
-      </p>{" "}
-      <h3>Is cockroach gel safe in kitchens?</h3>{" "}
-      <p>
-        {" "}
-        Yes. Gel is applied in tiny dots in concealed locations — behind units,
-        inside hinges, under appliances. The amounts used and concealed
-        placement mean it does not contaminate food or surfaces.{" "}
-      </p>{" "}
-      <h3>How do I know if I have German or Oriental cockroaches?</h3>{" "}
-      <p>
-        {" "}
-        German cockroaches: small (10-15mm), light brown, two dark stripes,
-        found in warm/humid indoor areas. Oriental cockroaches: larger
-        (20-25mm), very dark brown/black, found in cooler areas near drains and
-        basements.{" "}
-      </p>{" "}
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
       <div className="not-prose">
         {" "}
         <FindProviderCTA

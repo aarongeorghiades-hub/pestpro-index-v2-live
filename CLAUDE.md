@@ -2463,3 +2463,142 @@ and B071K8WQZB. The `/best/rat-poison` pair was NOT named as out of scope by the
 S65 R5 brief; CC held them anyway because the route is one of the seven, and a
 narrow exclusion is not narrowed further by inference (Law 110). This law does not
 reach them and no future round may apply it to them before the hold lifts.
+
+## S67 R6 — LAW 156 CORRECTIONS OF RECORD, AND THE REAL PATHS
+
+This file is APPEND ONLY, so the entries corrected below are NOT edited in place.
+They stand where they are as the record of what was written and when, and THIS
+SECTION GOVERNS OVER THEM where the two differ. That is the same mechanism used for
+the S58 R8 correction at S59 R3 and for the Law 182 ratification at S65 R2.
+
+### (a) THE FOUR-CATEGORIES SENTENCE IS NOT ON rat-traps
+
+The NEVER TOUCH list records:
+
+    - app/best/rat-traps/page.tsx line 164, the four-categories sentence.
+
+MEASURED AT S67 R1 AND RE-MEASURED AT S67 R6, both times against the working tree:
+
+    grep -c "four categories" app/(uk)/best/rat-traps/page.tsx          -> 0
+    grep -c "four categories" app/(uk)/best/cockroach-killers/page.tsx  -> 2, lines 287 and 295
+
+THE PROTECTED SENTENCE LIVES ON /best/cockroach-killers, at lines 287 and 295. It is
+the sentence dividing cockroach control into four categories and then naming gel bait
+as the most effective of them. It is protected exactly as written, wherever its line
+number drifts to: A PROTECTION BINDS BY TEXT, NOT BY LINE NUMBER, and a line number in
+this file is a convenience that decays with every edit above it.
+
+rat-traps's OTHER protection is real and stays: "most effective" x3, which are about
+BAIT, measured at 3 occurrences on app/(uk)/best/rat-traps/page.tsx at S67 R6.
+
+THIS IS THE SECOND TIME LAW 156 HAS FIRED ON THIS FILE'S OWN CONTENTS. Law 156 was
+written because "Best Trusted Brand" was carried as living on /best/mouse-poison for
+three sessions when it lives on /best/rat-poison. The same class of error was sitting
+four lines below it.
+
+### (b) EVERY `app/best/...` PATH IN THIS FILE IS REALLY `app/(uk)/best/...`
+
+`app/best` DOES NOT EXIST. Measured at S67 R6: the directory is absent, and the real
+location is `app/(uk)/best`, holding 50 route directories.
+
+SEVEN LINES IN THIS FILE NAME THE WRONG PATH — the NEVER TOUCH entries for
+rat-traps, cockroach-killers and ultrasonic-pest-repellers, the B000BQT5IG bar's
+reference to ant-killers, the R40-1 lift's reference to rat-poison, and Law 122's
+reference to the pre-commit hook's glob. EVERY ONE OF THEM MEANS `app/(uk)/best/...`.
+
+WHY THIS MATTERS MORE THAN A TYPO. A round that scripts against the recorded paths
+finds nothing and may read that silence as "already clean" — a false zero produced by
+the rule set rather than by the estate (Law 151 in the governance layer). S67 R4's
+brief had to carry the correction inline to stop exactly that.
+
+THE PROTECTIONS THEMSELVES ARE UNAFFECTED AND UNDIMINISHED. They bind by the text
+they name, on the route they name, at whatever path that route actually occupies.
+
+## S67 R6 — LAW 189 AND LAW 190 COULD NOT BE RATIFIED
+
+S67 R6 was instructed to ratify LAW 189 and LAW 190 "verbatim from the S66 carryover
+text". THAT TEXT DOES NOT EXIST ANYWHERE ON DISK, and the instruction was not carried
+out rather than being satisfied with invented wording.
+
+MEASURED, not assumed:
+
+    "LAW 189" / "Law 189" in CLAUDE.md                     0
+    "LAW 190" / "Law 190" in CLAUDE.md                     0
+    in ~/pestpro-s59-opening-carryover.txt                 0
+    in any ~/pestpro-s66-r*.md report (R1 through R8)      0
+    any file on disk carrying the text                     none
+      (the only hits anywhere are this round's own brief and the S67 R1 and R4
+       reports, each of which says the laws are ABSENT)
+
+There is no S66 carryover file; the S66 reports end at R8 and S66 R9 never ran.
+
+CONSEQUENCE, STATED PLAINLY RATHER THAN WORKED AROUND (Law 42). Laws 191 and 192
+below are declared at the numbers the ruling gave them, because a ruling that is not
+written into this file will be silently reversed (Law 106) and these two are the
+governing rules of the round that produced them. THE ENUMERATION THEREFORE CARRIES
+GAPS AT 189 AND 190, and M20 reports them. That is a true report of a real hole, not
+a defect in M20, and it closes the moment either the missing text is supplied or the
+PM rules that these two be renumbered. RENUMBERING IS NOT CC's CALL and was not made.
+
+## S67 R6 — LAW 191: NO EFFICACY CLAIM IN OUR OWN VOICE FOR REPELLENT, DETERRENT OR SCENT PRODUCTS
+
+LAW 191 — NO EFFICACY CLAIM IN OUR OWN VOICE FOR REPELLENT, DETERRENT OR SCENT
+PRODUCTS. The ASA/CAP position is that no efficacy claim for this class has been
+accepted and marketers without UK-based trial evidence must not state or imply
+efficacy. On any such route: no our-voice claim that a product works, repels, deters,
+protects or is effective; no superlative or ranking award labels; no rank numerals;
+no species-efficacy labels. Card labels are neutral factual descriptors from the
+listing. Maker claims appear only framed as the maker's own and listing-traceable.
+Caveats and evidence-is-weak passages are kept. The ASA position is reported, never
+restated as a finding that the products do not work.
+
+THE SOURCE, FETCHED AND BYTE-VERIFIED AT S67 R2 (Law 164), is the ASA/CAP AdviceOnline
+entry "Pest repellents", https://www.asa.org.uk/advice-online/pest-repellents.html:
+
+    "In past years, the ASA, together with independent experts, has closely examined
+    the evidence for claims for those devices, which can range from cat-shaped metal
+    sheets with glowing eyes to ultrasonic and electromagnetic equipment. It has yet
+    to accept any claim of efficacy."
+
+    "Marketers who do not hold evidence in the form of UK-based trials should not
+    state or imply efficacy for the products, through either claims, visuals or
+    product names."
+
+THE LAST SENTENCE OF THE LAW IS THE ONE MOST EASILY GOT WRONG. "No claim of efficacy
+has been accepted" and "these products do not work" are different statements, and the
+second is not ours to make. A page that reports the first is accurate; a page that
+slides into the second has replaced one unevidenced claim with its mirror image.
+
+## S67 R6 — LAW 192: A PROTECTED STRING PROTECTS THE STRING, NOT THE CLAIM ATTACHED TO IT
+
+LAW 192 — A PROTECTED STRING PROTECTS THE STRING, NOT THE CLAIM ATTACHED TO IT. Where
+a NEVER TOUCH label such as "Verdict:" introduces claim content, the label survives
+byte-unchanged and its content may be replaced with a neutral factual line. The label
+is never deleted; the claim is never preserved on the label's authority.
+
+WHAT THIS COST BEFORE IT EXISTED. At S67 R4 three routes — /best/fox-deterrents,
+/best/squirrel-deterrents and /best/bird-deterrents — were STOPPED UNTOUCHED because
+fourteen "Verdict:" paragraphs consisted entirely of ranking and efficacy claims, so
+deleting the claim meant deleting a NEVER TOUCH string. That was the correct call
+under the rules as they stood, and it left fourteen award labels and fourteen verdicts
+live for a further round. This law is what makes the same collision resolvable in
+place: the label is furniture, the sentence after it is content, and only the content
+was ever the compliance problem.
+
+## S67 R6 — THE S67 R4/R5 REPELLENT SWEEP, RECORDED
+
+The S67 R4 and S67 R5 sweep of /best/spider-repellent, /best/cat-deterrents,
+/best/ultrasonic-pest-repellers, /best/fox-deterrents, /best/squirrel-deterrents and
+/best/bird-deterrents WAS A PM-RULED SCOPED SWEEP ON LIVE ADVERTISING-STANDARDS
+EXPOSURE. It was NOT a Law 189 label sweep, it did not amend Law 189, and — as
+recorded above — there is no Law 189 for it to have amended.
+
+WHAT IT DID, so a later round does not re-open it as an open question: on all six
+routes every award label was replaced with a neutral factual descriptor drawn from
+the product's own banked listing, the same string on card, h2, contents and comparison
+table; every rank numeral was removed, field and props; every efficacy claim made in
+this site's own voice was deleted rather than softened; every caveat, Cons bullet and
+evidence-is-weak passage was kept. Titles and H1s are byte-unchanged throughout.
+B0072H60MG was removed from /best/mouse-repellent at S67 R3 and B0153BJ7NQ from
+/best/cat-deterrents at S67 R5, each because the product's own listing named a
+different target species; both remain carded on the route their listing fits.

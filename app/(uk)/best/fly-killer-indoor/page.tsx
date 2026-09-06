@@ -69,59 +69,44 @@ const breadcrumbSchema = {
     },
   ],
 };
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "What is the best indoor fly killer for a home kitchen?",
+    a: "A UV sticky trap like the Katchy or Raid plug-in. Unlike electric zappers, sticky traps capture flies hygienically with zero debris — important near food preparation areas.",
+  },
+  {
+    q: "Do electric fly killers use a lot of electricity?",
+    a: "No — most use 4-20W, costing 1-3 pence per day to run continuously. UV tubes last approximately 2 years before replacement.",
+  },
+  {
+    q: "Where should I place an indoor fly killer?",
+    a: "Away from competing light sources, at fly height (1-2m from floor), near bins, fruit bowls, or windows where flies enter. The UV light needs to be the dominant light source nearby.",
+  },
+  {
+    q: "Are UV fly killers safe for pets?",
+    a: "Yes — the UV levels are safe, and protective grilles prevent contact with electrified grids. Wall-mounting prevents pets from knocking over freestanding units.",
+  },
+  {
+    q: "What about cluster flies in the loft?",
+    a: "Cluster flies need different treatment — a smoke bomb fumigator in the loft during autumn. Standard indoor fly killers are not designed for cluster fly infestations.",
+  },
+  {
+    q: "Electric zapper vs sticky trap — which is better?",
+    a: "Sticky traps for kitchens and dining areas (hygienic, silent). Electric zappers for garages, conservatories, and utility rooms (more effective, no consumables).",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is the best indoor fly killer for a home kitchen?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A UV sticky trap like the Katchy or Raid plug-in. Unlike electric zappers, sticky traps capture flies hygienically with zero debris — important near food preparation areas.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do electric fly killers use a lot of electricity?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No — most use 4-20W, costing 1-3 pence per day to run continuously. UV tubes last approximately 2 years before replacement.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Where should I place an indoor fly killer?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Away from competing light sources, at fly height (1-2m from floor), near bins, fruit bowls, or windows where flies enter. The UV light needs to be the dominant light source nearby.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Are UV fly killers safe for pets?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes — the UV levels are safe, and protective grilles prevent contact with electrified grids. Wall-mounting prevents pets from knocking over freestanding units.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What about cluster flies in the loft?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Cluster flies need different treatment — a smoke bomb fumigator in the loft during autumn. Standard indoor fly killers are not designed for cluster fly infestations.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Electric zapper vs sticky trap — which is better?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sticky traps for kitchens and dining areas (hygienic, silent). Electric zappers for garages, conservatories, and utility rooms (more effective, no consumables).",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 type ProductRecord = {
   anchorId: string;
@@ -668,41 +653,12 @@ export default function BestFlyKillerIndoorPage() {
         zappers directly above food preparation surfaces.
       </p>{" "}
       <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>What is the best indoor fly killer for a home kitchen?</h3>{" "}
-      <p>
-        A UV sticky trap like the Katchy or Raid plug-in. Unlike electric
-        zappers, sticky traps capture flies hygienically with zero debris —
-        important near food preparation areas.
-      </p>{" "}
-      <h3>Do electric fly killers use a lot of electricity?</h3>{" "}
-      <p>
-        No — most use 4-20W, costing 1-3 pence per day to run continuously. UV
-        tubes last approximately 2 years before replacement.
-      </p>{" "}
-      <h3>Where should I place an indoor fly killer?</h3>{" "}
-      <p>
-        Away from competing light sources, at fly height (1-2m from floor), near
-        bins, fruit bowls, or windows where flies enter. The UV light needs to
-        be the dominant light source nearby.
-      </p>{" "}
-      <h3>Are UV fly killers safe for pets?</h3>{" "}
-      <p>
-        Yes — the UV levels are safe, and protective grilles prevent contact
-        with electrified grids. Wall-mounting prevents pets from knocking over
-        freestanding units.
-      </p>{" "}
-      <h3>What about cluster flies in the loft?</h3>{" "}
-      <p>
-        Cluster flies need different treatment — a smoke bomb fumigator in the
-        loft during autumn. Standard indoor fly killers are not designed for
-        cluster fly infestations.
-      </p>{" "}
-      <h3>Electric zapper vs sticky trap — which is better?</h3>{" "}
-      <p>
-        Sticky traps for kitchens and dining areas (hygienic, silent). Electric
-        zappers for garages, conservatories, and utility rooms (more effective,
-        no consumables).
-      </p>{" "}
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
       <p>
         For businesses, restaurants or commercial premises, see our guide to{" "}
         <a

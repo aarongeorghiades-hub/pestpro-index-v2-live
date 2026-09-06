@@ -114,6 +114,8 @@ import {
   HEADING_LEGAL,
   HEADING_NOT_PRECEDENCE,
   HEADING_PLAIN,
+  EMPTY_BODY_HTTP_202,
+  LARGE_CHALLENGE_BODY,
 } from './fixtures.mjs';
 import { UK_CLASSES, UK_SPELLING_RE } from './ukspelling.mjs';
 
@@ -319,7 +321,21 @@ const G3_PRIVATIVE_RE = /^(?:un|non|dis|mis)(?=verif|trust|vett)/i;
 //               by name on /us/black-widow-spiders and /us/brown-recluse-spiders.
 //   Trustpilot  Law 153, ratified.
 //   TrustMark   Law 153, ratified.
-const G3_PROPER_NOUNS = new Set(['Vetter', 'Vetters', 'Trustpilot', 'TrustMark']);
+const G3_PROPER_NOUNS = new Set(['Vetter', 'Vetters', 'Trustpilot', 'TrustMark', 'nationaltrust']);
+
+// S67 R6 — A PROPER NOUN WHOSE STEM IS A SEPARATE WORD NEEDS THE WORD BEFORE IT.
+// "Trustpilot" is one token and excludes itself; "National Trust" is two, and the
+// token bannedRe matches is the bare "Trust". Extending G3 to the UK surface made
+// this visible immediately: /best/moth-traps cites the National Trust as a source
+// and reported TEN asserted trust claims, every one of them the organisation's
+// name or its URL. Law 153 already settles what to do — a proper noun carrying the
+// stem is a NAME, not a claim — and Law 94 says reporting those ten would have
+// manufactured a defect class out of a matcher fault.
+//
+// EACH ENTRY IS NAMED AND ATTRIBUTED, and the check is on the IMMEDIATELY PRECEDING
+// WORD only, so it cannot swallow a claim that merely happens to sit near the word.
+//   National Trust  — cited as a source on /best/moth-traps (S66 R8) and elsewhere.
+const G3_PROPER_PRECEDERS = new Map([['Trust', new Set(['National'])]]);
 
 // The text G3 classifies over. Tags are removed INSIDE test() rather than by
 // declaring a different surface, because the gate must keep reading SERVED bytes
@@ -349,6 +365,15 @@ function g3Classify(t, { strip = true } = {}) {
     if (G3_PROPER_NOUNS.has(tok)) {
       excluded.push({ tok, why: 'PROPER', ctx: null });
       continue;
+    }
+    const preceders = G3_PROPER_PRECEDERS.get(tok);
+    if (preceders) {
+      const before = text.slice(Math.max(0, m.index - 40), m.index);
+      const prev = (before.match(/([A-Za-z']+)\s*$/) || [, ''])[1];
+      if (preceders.has(prev)) {
+        excluded.push({ tok: prev + ' ' + tok, why: 'PROPER', ctx: null });
+        continue;
+      }
     }
     if (G3_PRIVATIVE_RE.test(tok)) {
       excluded.push({ tok, why: 'PRIVATIVE', ctx: null });
@@ -626,6 +651,7 @@ const MATCHERS = [
     // shapes a careless negation-aware rewrite would lose — a negator EARLIER IN
     // A DIFFERENT SENTENCE, and a negator further away than the window.
     probePos: [
+      'every provider here is a trusted local firm',
       'a verifiable and tru' + 'sted listing',
       'We do not sell services. Every provider is veri' + 'fied.',
       'no part of the following claim is ours, and the supplier is nevertheless veri' + 'fied',
@@ -636,6 +662,12 @@ const MATCHERS = [
       'this page cannot independently veri' + 'fy the claim',
       'the listing carries an unveri' + 'fiable percentage',
       'R. S. Vetter, UC Riverside',
+      // S67 R6 — the two-word proper noun, both limbs. The NEGATIVE is the
+      // organisation's name and its URL, which must stay silent; the POSITIVE
+      // limb below keeps a bare "trusted" firing, so the preceder rule cannot
+      // quietly widen into an excuse for the claim itself.
+      'The National Trust describes the damage',
+      'see https://www.nationaltrust.org.uk/discover for the guidance',
       // THE PRODUCTION SHAPE, AND THE R8 LESSON APPLIED TO THIS GATE. A page
       // does not arrive as prose; it arrives as HTML with markup between the
       // negator and the stem. A plain-text fixture never exercises the tag
@@ -1146,7 +1178,17 @@ const MATCHERS = [
       const isItem = (l) => /^\s{0,4}\d{1,3}\.\s+\S/.test(l);
       for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
-        if (/\bPROPOSED\b|\bNOT RATIFIED\b/i.test(line)) continue;
+        // FP-5, WIDENED AT S67 R6 FROM THE CONCEPT RATHER THAN THE INSTANCE
+        // (Law 170). The guard tested two literal phrasings, and a third slipped
+        // straight past it: S67 R6 appended a section headed "LAW 189 AND LAW 190
+        // COULD NOT BE RATIFIED", recording that no text for either exists. Form 4
+        // read that heading as a DECLARATION of both, and M20 printed "192 declared,
+        // highest 192, no gaps" over an enumeration with two real holes in it — a
+        // false clean produced by the rule set, which is the exact failure this
+        // matcher exists to catch. What is being excluded is a line ANNOUNCING THAT
+        // A LAW IS NOT IN FORCE, in any of its wordings.
+        if (/\bPROPOSED\b|\bNOT\b[^.]{0,12}\bRATIF/i.test(line)) continue;
+        if (/\bLAW\s+\d+\b[^.]{0,60}\b(ABSENT|WITHDRAWN|SUPERSEDED|DOES NOT EXIST)\b/i.test(line)) continue;
         let m;
         // forms 2 and 3: LAW n at line start, optionally behind # markers
         if ((m = /^#{0,6}\s*LAW\s+(\d+)\b/.exec(line))) found.add(Number(m[1]));
@@ -1245,6 +1287,35 @@ const MATCHERS = [
     // THE SIZE CONDITION GOVERNS BOTH CLASSES and is part of the rule, not a tuning
     // knob: every real block body measured on this estate has been under 8 KB (959,
     // 961, 1,486, 3,781, 5,853, 6,094, 7,086) and every real fact sheet over 30 KB.
+    // S67 R6 — TWO PROVEN FAULTS FIXED, BOTH MEASURED BEFORE THEY WERE CHANGED.
+    //
+    // FAULT 1: AN EMPTY BODY SERVED 2xx READ AS ACCEPTED. ~/pp-s66r8/sources/
+    // walthamforest-moth.pdf and its retry are both 0 bytes at HTTP 202, and this
+    // matcher returned [] on each — silence that a reader cannot tell from a pass.
+    // A body with nothing in it is not a block page, which is why the block classes
+    // never fired, but it is certainly not a usable source. UNUSABLE is now its own
+    // finding, independent of status and of both block classes.
+    //
+    // FAULT 2: THE SIZE LIMB WAS FALSIFIED. Its stated ground was that "every real
+    // block body measured on this estate has been under 8 KB". S67 R2 fetched a
+    // Cloudflare challenge of 151,140 bytes, and S67 R3's permitted retry fetched
+    // the same thing again — so at HTTP 200 that body would have been accepted as a
+    // source. THE SIZE LIMB IS REMOVED FROM THE CHALLENGE CLASS ENTIRELY: a vendor's
+    // own challenge endpoint is a challenge at any size, and the signature is
+    // structural rather than lexical, so it carries no false-positive risk that a
+    // size bound was needed to contain.
+    //
+    // THE ANNOUNCED CLASS KEEPS A SIZE BOUND, RE-DERIVED FROM THE FILES ON DISK
+    // rather than inherited. It exists to contain FP-3 — a complete 53,939-byte
+    // fact sheet whose contact form said "captcha" — so it is guarding against a
+    // real, observed false positive and cannot simply be dropped.
+    //   announced block bodies on disk:  199, 5,507      -> max 5,507
+    //   real source bodies on disk:      34,052 … 607,416 -> min 34,052
+    // Any bound in (5,507, 34,052] separates them. 16,000 is used: 2.9x above the
+    // largest observed block and 2.1x below the smallest observed real page, so it
+    // has margin in both directions instead of sitting on the edge of the evidence.
+    // A future body between those figures re-opens this derivation (Law 186 — a
+    // limit is derived from a rule and its evidence, and is re-derived, not nudged).
     test: (body, ctx = {}) => {
       const b = body ?? '';
       // ANNOUNCED, by the THREE REASONS a body states a refusal rather than by the
@@ -1252,7 +1323,6 @@ const MATCHERS = [
       //   (i)   a named vendor incident,
       //   (ii)  a refusal in plain words,
       //   (iii) a statement that the request was treated as automated.
-      // (iii) is the one that was missing, and it is the estate's most common block.
       const VENDOR_INCIDENT = /incapsula|cf-error/i;
       const PLAIN_REFUSAL = /access denied|request unsuccessful|attention required|forbidden/i;
       const TREATED_AS_BOT = /automated access|unusual traffic|not a robot|are you a human/i;
@@ -1261,11 +1331,22 @@ const MATCHERS = [
         'i',
       );
       const CHALLENGE = /\/cdn-cgi\/challenge-platform|_cf_chl_opt|id="challenge-error-text"/i;
-      const SMALL = 8000;
+      const ANNOUNCED_MAX = 16000;
+      // Below this there is no document, whatever the status line says. 512 bytes is
+      // far under the smallest real body on disk (34,052) and under every announced
+      // block too (199 is caught by ANNOUNCED as well), so it can only catch a body
+      // that carries nothing.
+      const EMPTY_MAX = 512;
       const out = [];
-      if (b.length < SMALL) {
-        if (ANNOUNCED.test(b)) out.push(`block signature in a ${b.length}-byte body`);
-        if (CHALLENGE.test(b)) out.push(`interactive challenge runtime in a ${b.length}-byte body`);
+      const substantive = b.replace(/\s+/g, '').length;
+      if (substantive < EMPTY_MAX) {
+        out.push(`empty or near-empty body (${b.length} bytes) — unusable whatever the status`);
+      }
+      if (b.length < ANNOUNCED_MAX && ANNOUNCED.test(b)) {
+        out.push(`block signature in a ${b.length}-byte body`);
+      }
+      if (CHALLENGE.test(b)) {
+        out.push(`interactive challenge runtime in a ${b.length}-byte body`);
       }
       if (ctx.status && ctx.status >= 400) out.push(`http ${ctx.status}`);
       return out;
@@ -1273,10 +1354,17 @@ const MATCHERS = [
     // BOTH LIMBS, BOTH CLASSES, ON EVERY INVOCATION (S49-L). Each positive is served
     // at HTTP 200 deliberately: the status must contribute nothing, or the probe
     // would pass on the status alone and prove nothing about the body.
+    // BOTH LIMBS, EVERY CLASS, ON EVERY INVOCATION (S49-L). Each positive is served
+    // at HTTP 200 deliberately: the status must contribute nothing, or the probe
+    // would pass on the status alone and prove nothing about the body. The last two
+    // are the S67 R6 faults, kept here so neither can come back quietly.
     probePos: [
       { text: BLOCK_BODY_HTTP_200, ctx: { status: 200 } },
       { text: CHALLENGE_BODY_HTTP_200, ctx: { status: 200 } },
       { text: AMAZON_BOT_WALL_BODY, ctx: { status: 200 } },
+      { text: EMPTY_BODY_HTTP_202, ctx: { status: 202 } },
+      { text: EMPTY_BODY_HTTP_202, ctx: { status: 200 } },
+      { text: LARGE_CHALLENGE_BODY, ctx: { status: 200 } },
     ],
     // FP-3's original negative, plus the two S66 R3 adds: a page that TALKS ABOUT
     // challenges without being one, and a body S66 R2 actually accepted and quoted.
@@ -2704,6 +2792,61 @@ async function runEstate() {
   // matcher's own declared surface; ALSO-REND is the SAME matcher re-run with
   // <script> stripped, and is printed only for the full-surface matchers, where
   // it is the only place the flight payload's restatement becomes visible.
+  // ---- G3 ON THE UK SURFACE — S67 R6 ------------------------------------------
+  //
+  // THE HOLE THIS CLOSES. runEstate() walks /us only, so G3's PASS/FAIL verdict was
+  // a verdict about /us and nothing else. At S67 R1 eight asserted trust claims sat
+  // live on /best/mouse-poison while this run printed "G3 PASS 0" — a clean gate
+  // over a population that did not include them. The `--g3` sweep already walked
+  // both estates, but a sweep nobody gates on is an inventory (Law 167).
+  //
+  // ONLY G3 IS EXTENDED, DELIBERATELY. Walking every matcher over the UK surface
+  // would move M30, M31, M13, M25 and the rest onto a different population in the
+  // same change, and every one of those figures is reported and compared round to
+  // round (Law 62). G3's ban — no verification or trust claim in this site's own
+  // voice — is estate-wide by its own terms, so it is the one that was under-scoped.
+  //
+  // The UK failures join G3's failing list, so the gate fails on them exactly as it
+  // does on a /us route. The two counts are kept apart in the print because they
+  // are two populations and reconciling them into one number is what Law 62 forbids.
+  const g3UkFailing = [];
+  let g3UkAsserted = 0;
+  {
+    const G3 = MATCHERS.find((m) => m.id === 'G3');
+    const walkAll = async (dir) => {
+      let out = [];
+      let ents = [];
+      try { ents = await readdir(dir, { withFileTypes: true }); } catch { return out; }
+      for (const e of ents) {
+        const full = join(dir, e.name);
+        if (e.isDirectory()) out = out.concat(await walkAll(full));
+        else if (e.name.endsWith('.html')) out.push(full);
+      }
+      return out;
+    };
+    const appDir = join(ROOT, '.next/server/app');
+    const usPrefix = join(appDir, 'us');
+    const ukFiles = (await walkAll(appDir))
+      .filter((f) => f !== join(appDir, 'us.html') && !f.startsWith(usPrefix + '/'))
+      .sort();
+    for (const f of ukFiles) {
+      const raw = await readFile(f, 'utf8');
+      const hits = G3.test(surfaceOf(G3, raw));
+      if (!hits.length) continue;
+      g3UkAsserted += hits.length;
+      const slug = f.replace(appDir + '/', '').replace(/\.html$/, '');
+      g3UkFailing.push({ slug, n: hits.length, hits: [...new Set(hits)] });
+    }
+    // A ZERO FROM A WALK THAT FOUND NO FILES IS VACUOUS (Law 109). Assert the
+    // population is non-empty before any conclusion rests on its count.
+    if (!ukFiles.length) throw new Error('G3 UK pass walked zero documents — the zero would be vacuous');
+    if (g3UkFailing.length) (failing.G3 ||= []).push(...g3UkFailing.map((r) => r.slug));
+    console.log(`\n  G3 ON THE UK SURFACE — ${ukFiles.length} documents (served bytes, Law 182)`);
+    console.log(`    asserted hits: ${g3UkAsserted} on ${g3UkFailing.length} document(s)`);
+    if (!g3UkFailing.length) console.log('    none');
+    for (const r of g3UkFailing) console.log(`    ${r.slug.padEnd(46)}${String(r.n).padStart(3)}  ${r.hits.join(', ')}`);
+  }
+
   console.log(
     `  ${'ID'.padEnd(5)}${'KIND'.padEnd(11)}${'SURFACE'.padEnd(11)}${'HITS'.padEnd(8)}` +
       `${'ALSO-REND'.padEnd(11)}${'FAILING'.padEnd(10)}NAME`,

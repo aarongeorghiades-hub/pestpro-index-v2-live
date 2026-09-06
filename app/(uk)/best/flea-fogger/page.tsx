@@ -67,27 +67,40 @@ const breadcrumbSchema = {
     },
   ],
 };
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "Do flea foggers actually work?",
+    a: "Yes, when used as part of a comprehensive plan including spray treatment, vacuuming, and pet treatment. Foggers alone are rarely sufficient but significantly accelerate infestation elimination.",
+  },
+  {
+    q: "How long do I need to leave the house?",
+    a: "A minimum of 2-4 hours depending on the product, followed by 30 minutes of ventilation with all windows open.",
+  },
+  {
+    q: "How many foggers do I need?",
+    a: "One per room, based on the product's cubic metre coverage. For a three-bedroom house, expect to use 4-6 foggers.",
+  },
+  {
+    q: "Should I vacuum before or after fogging?",
+    a: "Before: to remove debris and help insecticide penetrate. After: wait 24 hours, then vacuum daily for 2 weeks to stimulate pupae to hatch.",
+  },
+  {
+    q: "Are flea foggers safe for pets?",
+    a: "All pets must be removed during fogging. Once the room has been ventilated and surfaces are dry, treated areas are safe for pets.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Do flea foggers actually work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, when used as part of a comprehensive plan including spray treatment, vacuuming, and pet treatment. Foggers alone are rarely sufficient but significantly accelerate infestation elimination.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Are flea foggers safe for pets?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "All pets must be removed during fogging. Once the room has been ventilated and surfaces are dry, treated areas are safe for pets.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 type ProductRecord = {
   anchorId: string;
@@ -721,32 +734,12 @@ export default function BestFleaFoggerPage() {
         <li>Re-enable smoke detectors</li>{" "}
       </ul>{" "}
       <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>Do flea foggers actually work?</h3>{" "}
-      <p>
-        Yes, when used as part of a comprehensive plan including spray
-        treatment, vacuuming, and pet treatment. Foggers alone are rarely
-        sufficient but significantly accelerate infestation elimination.
-      </p>{" "}
-      <h3>How long do I need to leave the house?</h3>{" "}
-      <p>
-        A minimum of 2-4 hours depending on the product, followed by 30 minutes
-        of ventilation with all windows open.
-      </p>{" "}
-      <h3>How many foggers do I need?</h3>{" "}
-      <p>
-        One per room, based on the product's cubic metre coverage. For a
-        three-bedroom house, expect to use 4-6 foggers.
-      </p>{" "}
-      <h3>Should I vacuum before or after fogging?</h3>{" "}
-      <p>
-        Before: to remove debris and help insecticide penetrate. After: wait 24
-        hours, then vacuum daily for 2 weeks to stimulate pupae to hatch.
-      </p>{" "}
-      <h3>Are flea foggers safe for pets?</h3>{" "}
-      <p>
-        All pets must be removed during fogging. Once the room has been
-        ventilated and surfaces are dry, treated areas are safe for pets.
-      </p>{" "}
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
       <div className="not-prose">
         {" "}
         <FindProviderCTA

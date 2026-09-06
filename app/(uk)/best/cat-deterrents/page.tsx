@@ -67,19 +67,24 @@ const breadcrumbSchema = {
     },
   ],
 };
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "Is it legal to deter cats from my garden in the UK?",
+    a: "Yes. Humane deterrents — sprinklers, ultrasonic devices, scent repellents and prickle strips — are entirely legal. Trapping, poisoning or harming a cat is an offence under the Animal Welfare Act 2006.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Is it legal to deter cats from my garden in the UK?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Humane deterrents — sprinklers, ultrasonic devices, scent repellents and prickle strips — are entirely legal. Trapping, poisoning or harming a cat is an offence under the Animal Welfare Act 2006.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 type ProductRecord = {
   anchorId: string;
@@ -594,13 +599,12 @@ export default function BestCatDeterrentsPage() {
         important as deterring the cat.{" "}
       </p>{" "}
       <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>Is it legal to deter cats from my garden in the UK?</h3>{" "}
-      <p>
-        Yes. Humane deterrents &mdash; sprinklers, ultrasonic devices, scent
-        repellents and prickle strips &mdash; are entirely legal. Trapping,
-        poisoning or harming a cat is an offence under the Animal Welfare Act
-        2006.
-      </p>{" "}
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
       <div className="not-prose">
         {" "}
         <FindProviderCTA

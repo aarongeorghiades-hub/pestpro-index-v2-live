@@ -69,19 +69,44 @@ const breadcrumbSchema = {
     },
   ],
 };
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "Do I need a bait station for rat poison?",
+    a: "Yes. Under CRRU guidelines, all SGARs must be used inside tamper-resistant bait stations. This is both a safety and compliance requirement.",
+  },
+  {
+    q: "What is the best rat bait station?",
+    a: "The Rentokil Advanced is our top pick for its combination of tamper-resistance, versatility, and value. For professional-grade durability, choose the Pest Expert station.",
+  },
+  {
+    q: "Where should I place bait stations?",
+    a: "Against walls, along fences, near burrow entrances, and close to signs of rat activity. Space 5-10 metres apart for perimeter coverage.",
+  },
+  {
+    q: "How often should I check stations?",
+    a: "Every 2-3 days during active baiting. Replace consumed bait and remove dead rats found inside or nearby.",
+  },
+  {
+    q: "Can I use snap traps in a bait station?",
+    a: "Yes, many stations accept snap traps. This provides tamper-resistant trap housing that is safe for households with pets and children.",
+  },
+  {
+    q: "Are bait stations safe for pets?",
+    a: "A properly designed tamper-resistant station with a key lock prevents pet access. The entry holes are sized for rats and the internal baffles prevent larger animals from reaching the bait.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Do I need a bait station for rat poison?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Under CRRU guidelines, all SGARs must be used inside tamper-resistant bait stations. This is both a safety and compliance requirement.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 type ProductRecord = {
   anchorId: string;
@@ -709,39 +734,12 @@ export default function BestRatBaitStationsPage() {
         and potentially dangerous if it opens during displacement.{" "}
       </p>{" "}
       <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>Do I need a bait station for rat poison?</h3>{" "}
-      <p>
-        Yes. Under CRRU guidelines, all SGARs must be used inside
-        tamper-resistant bait stations. This is both a safety and compliance
-        requirement.
-      </p>{" "}
-      <h3>What is the best rat bait station?</h3>{" "}
-      <p>
-        The Rentokil Advanced is our top pick for its combination of
-        tamper-resistance, versatility, and value. For professional-grade
-        durability, choose the Pest Expert station.
-      </p>{" "}
-      <h3>Where should I place bait stations?</h3>{" "}
-      <p>
-        Against walls, along fences, near burrow entrances, and close to signs
-        of rat activity. Space 5-10 metres apart for perimeter coverage.
-      </p>{" "}
-      <h3>How often should I check stations?</h3>{" "}
-      <p>
-        Every 2-3 days during active baiting. Replace consumed bait and remove
-        dead rats found inside or nearby.
-      </p>{" "}
-      <h3>Can I use snap traps in a bait station?</h3>{" "}
-      <p>
-        Yes, many stations accept snap traps. This provides tamper-resistant
-        trap housing that is safe for households with pets and children.
-      </p>{" "}
-      <h3>Are bait stations safe for pets?</h3>{" "}
-      <p>
-        A properly designed tamper-resistant station with a key lock prevents
-        pet access. The entry holes are sized for rats and the internal baffles
-        prevent larger animals from reaching the bait.
-      </p>{" "}
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
       <p>
         Managing multiple properties? See our guide to{" "}
         <a

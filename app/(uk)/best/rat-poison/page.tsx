@@ -67,67 +67,48 @@ const breadcrumbSchema = {
     },
   ],
 };
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "Is it legal to buy rat poison in the UK?",
+    a: "Yes, you can legally buy rat poison in the UK for use on your own property. However, since 2018, the Campaign for Responsible Rodenticide Use (CRRU) requires that all second-generation anticoagulant rodenticides (SGARs) such as brodifacoum and bromadiolone are used inside tamper-resistant bait stations. You must also follow the label instructions carefully and take reasonable steps to prevent access by children, pets, and non-target wildlife.",
+  },
+  {
+    q: "What is the strongest rat poison available in the UK?",
+    a: "Brodifacoum is an anticoagulant rodenticide available to UK consumers. It is a second-generation anticoagulant that typically delivers a lethal dose in a single feed. Products containing brodifacoum, such as Roshield blocks, can be bought without a professional licence.",
+  },
+  {
+    q: "How long does rat poison take to work?",
+    a: "Most anticoagulant rat poisons take 3 to 7 days to kill a rat after ingestion. This delayed action is intentional — it prevents bait shyness, as rats cannot associate the bait with the illness. Brodifacoum-based products tend to work faster (3-5 days), while bromadiolone and difenacoum may take up to 7 days.",
+  },
+  {
+    q: "Is rat poison safe around pets and children?",
+    a: "Rat poison is toxic to all mammals, including dogs, cats, and humans. You must always use rat poison inside a locked, tamper-resistant bait station to prevent access by children and pets. If you suspect a pet or child has ingested rat poison, seek immediate medical or veterinary attention. The antidote for anticoagulant poisoning is Vitamin K1.",
+  },
+  {
+    q: "Do I need a bait station for rat poison?",
+    a: "Yes. Under CRRU guidelines, all second-generation anticoagulant rodenticides must be used inside tamper-resistant bait stations in the UK. This applies to both indoor and outdoor use. Using loose poison without a bait station is not only dangerous but also non-compliant with UK best practice.",
+  },
+  {
+    q: "Where should I place rat poison bait stations?",
+    a: "Place bait stations along known rat runs — typically against walls, along fence lines, near burrow entrances, and close to signs of activity such as droppings and gnaw marks. Rats are thigmotactic (they like to travel along edges), so positioning stations flush against a wall or structure maximises the chance of rats finding and entering them. Check stations every 2-3 days and replace consumed bait.",
+  },
+  {
+    q: "When should I call a professional instead of using rat poison?",
+    a: "You should call a professional pest controller if: the infestation persists after 2-3 weeks of baiting, you are seeing rats during the daytime (a sign of a large population), the rats are in a location that is difficult to access (such as inside wall cavities or under floorboards), or you are uncomfortable handling rodenticides. A BPCA-certified technician has access to professional-strength products and can implement a comprehensive treatment plan.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Is it legal to buy rat poison in the UK?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, you can legally buy rat poison in the UK for use on your own property. However, since 2018, the Campaign for Responsible Rodenticide Use (CRRU) requires that all second-generation anticoagulant rodenticides (SGARs) such as brodifacoum and bromadiolone are used inside tamper-resistant bait stations. You must also follow the label instructions carefully and take reasonable steps to prevent access by children, pets, and non-target wildlife.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the strongest rat poison available in the UK?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Brodifacoum is an anticoagulant rodenticide available to UK consumers. It is a second-generation anticoagulant that typically delivers a lethal dose in a single feed. Products containing brodifacoum, such as Roshield blocks, can be bought without a professional licence.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does rat poison take to work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most anticoagulant rat poisons take 3 to 7 days to kill a rat after ingestion. This delayed action is intentional — it prevents bait shyness, as rats cannot associate the bait with the illness. Brodifacoum-based products tend to work faster (3-5 days), while bromadiolone and difenacoum may take up to 7 days.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is rat poison safe around pets and children?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Rat poison is toxic to all mammals, including dogs, cats, and humans. You must always use rat poison inside a locked, tamper-resistant bait station to prevent access by children and pets. If you suspect a pet or child has ingested rat poison, seek immediate medical or veterinary attention. The antidote for anticoagulant poisoning is Vitamin K1.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do I need a bait station for rat poison?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Under CRRU guidelines, all second-generation anticoagulant rodenticides must be used inside tamper-resistant bait stations in the UK. This applies to both indoor and outdoor use. Using loose poison without a bait station is not only dangerous but also non-compliant with UK best practice.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Where should I place rat poison bait stations?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Place bait stations along known rat runs — typically against walls, along fence lines, near burrow entrances, and close to signs of activity such as droppings and gnaw marks. Rats are thigmotactic (they like to travel along edges), so positioning stations flush against a wall or structure maximises the chance of rats finding and entering them. Check stations every 2-3 days and replace consumed bait.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "When should I call a professional instead of using rat poison?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "You should call a professional pest controller if: the infestation persists after 2-3 weeks of baiting, you are seeing rats during the daytime (a sign of a large population), the rats are in a location that is difficult to access (such as inside wall cavities or under floorboards), or you are uncomfortable handling rodenticides. A BPCA-certified technician has access to professional-strength products and can implement a comprehensive treatment plan.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 type ProductRecord = {
   anchorId: string;
@@ -977,75 +958,12 @@ export default function BestRatPoisonPage() {
         highly effective when administered promptly.{" "}
       </p>{" "}
       {/* FAQ */} <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>Is it legal to buy rat poison in the UK?</h3>{" "}
-      <p>
-        {" "}
-        Yes, you can legally buy rat poison in the UK for use on your own
-        property. However, since 2018, the Campaign for Responsible Rodenticide
-        Use (CRRU) requires that all second-generation anticoagulant
-        rodenticides (SGARs) such as brodifacoum and bromadiolone are used
-        inside tamper-resistant bait stations. You must also follow the label
-        instructions carefully and take reasonable steps to prevent access by
-        children, pets, and non-target wildlife.{" "}
-      </p>{" "}
-      <h3>What is the strongest rat poison available in the UK?</h3>{" "}
-      <p>
-        {" "}
-        Brodifacoum is an anticoagulant rodenticide available to UK consumers.
-        It is a second-generation anticoagulant that typically delivers a lethal
-        dose in a single feed. Products containing brodifacoum, such as Roshield
-        blocks, can be bought without a professional licence.{" "}
-      </p>{" "}
-      <h3>How long does rat poison take to work?</h3>{" "}
-      <p>
-        {" "}
-        Most anticoagulant rat poisons take 3 to 7 days to kill a rat after
-        ingestion. This delayed action is intentional — it prevents bait
-        shyness, as rats cannot associate the bait with the illness.
-        Brodifacoum-based products tend to work faster (3-5 days), while
-        bromadiolone and difenacoum may take up to 7 days.{" "}
-      </p>{" "}
-      <h3>Is rat poison safe around pets and children?</h3>{" "}
-      <p>
-        {" "}
-        Rat poison is toxic to all mammals, including dogs, cats, and humans.
-        You must always use rat poison inside a locked, tamper-resistant bait
-        station to prevent access by children and pets. If you suspect a pet or
-        child has ingested rat poison, seek immediate medical or veterinary
-        attention. The antidote for anticoagulant poisoning is Vitamin K1.{" "}
-      </p>{" "}
-      <h3>Do I need a bait station for rat poison?</h3>{" "}
-      <p>
-        {" "}
-        Yes. Under CRRU guidelines, all second-generation anticoagulant
-        rodenticides must be used inside tamper-resistant bait stations in the
-        UK. This applies to both indoor and outdoor use. Using loose poison
-        without a bait station is not only dangerous but also non-compliant with
-        UK best practice.{" "}
-      </p>{" "}
-      <h3>Where should I place rat poison bait stations?</h3>{" "}
-      <p>
-        {" "}
-        Place bait stations along known rat runs — typically against walls,
-        along fence lines, near burrow entrances, and close to signs of activity
-        such as droppings and gnaw marks. Rats are thigmotactic (they like to
-        travel along edges), so positioning stations flush against a wall or
-        structure maximises the chance of rats finding and entering them. Check
-        stations every 2-3 days and replace consumed bait.{" "}
-      </p>{" "}
-      <h3>
-        When should I call a professional instead of using rat poison?
-      </h3>{" "}
-      <p>
-        {" "}
-        You should call a professional pest controller if: the infestation
-        persists after 2-3 weeks of baiting, you are seeing rats during the
-        daytime (a sign of a large population), the rats are in a location that
-        is difficult to access (such as inside wall cavities or under
-        floorboards), or you are uncomfortable handling rodenticides. A
-        BPCA-certified technician has access to professional-strength products
-        and can implement a comprehensive treatment plan.{" "}
-      </p>{" "}
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
       <p>
         Remember: UK regulations require all rodenticide to be used inside a
         tamper-resistant bait station. See our guide to{" "}

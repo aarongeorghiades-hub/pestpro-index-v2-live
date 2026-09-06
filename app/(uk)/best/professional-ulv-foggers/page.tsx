@@ -73,35 +73,36 @@ const breadcrumbSchema = {
   ],
 };
 
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "Do I need a licence to use a ULV fogger?",
+    a: "No. You do not need a pest control licence to use a ULV fogger with amateur-approved insecticides in the UK. Products labelled for amateur use — such as most permethrin-based ready-to-use solutions — can be purchased and applied by anyone. However, professional-use-only biocides (requiring BASIS PROMPT qualification) must only be applied by trained operatives. Always check the product label before purchase.",
+  },
+  {
+    q: "How often should I fog a property?",
+    a: "For active infestations, fog every 7-14 days for 2-3 cycles to break the pest breeding cycle. For preventive maintenance in rental properties, quarterly fogging is common — particularly before new tenancies and at the start of flea and fly season (May-September). Commercial premises typically fog monthly as part of an integrated pest management programme.",
+  },
+  {
+    q: "Is ULV fogging safe around pets?",
+    a: "All animals must be removed from the treatment area before fogging. Fish tanks should be covered and air pumps switched off. After fogging, ventilate the space thoroughly for at least 30 minutes. The typical re-entry time is 2-4 hours after treatment — always follow the specific insecticide product instructions. Once surfaces are dry and the room is ventilated, it is safe for animals to return.",
+  },
+  {
+    q: "What is the difference between a ULV fogger and a thermal fogger?",
+    a: "A ULV cold fogger uses a high-powered motor to break liquid into ultra-fine droplets without heat. A thermal fogger heats the solution to create visible smoke. ULV foggers are preferred for indoor use because they produce no heat, no smoke, and minimal residue. Thermal foggers are mainly used outdoors for mosquito control where visible coverage confirmation is useful.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How often should I fog a property?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "For active infestations, fog every 7-14 days for 2-3 cycles to break the pest breeding cycle. For preventive maintenance in rental properties, quarterly fogging is common — particularly before new tenancies and at the start of flea and fly season (May-September). Commercial premises typically fog monthly as part of an integrated pest management programme.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is ULV fogging safe around pets?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "All animals must be removed from the treatment area before fogging. Fish tanks should be covered and air pumps switched off. After fogging, ventilate the space thoroughly for at least 30 minutes. The typical re-entry time is 2-4 hours after treatment — always follow the specific insecticide product instructions. Once surfaces are dry and the room is ventilated, it is safe for animals to return.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the difference between a ULV fogger and a thermal fogger?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A ULV cold fogger uses a high-powered motor to break liquid into ultra-fine droplets without heat. A thermal fogger heats the solution to create visible smoke. ULV foggers are preferred for indoor use because they produce no heat, no smoke, and minimal residue. Thermal foggers are mainly used outdoors for mosquito control where visible coverage confirmation is useful.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 type ProductRecord = {
@@ -681,45 +682,12 @@ export default function ProfessionalULVFoggersPage() {
 
       <h2 id="faq">Frequently Asked Questions</h2>
 
-      <h3>Do I need a licence to use a ULV fogger?</h3>
-      <p>
-        No. You do not need a pest control licence to use a ULV fogger with
-        amateur-approved insecticides in the UK. Products labelled for amateur
-        use — such as most permethrin-based ready-to-use solutions — can be
-        purchased and applied by anyone. However, professional-use-only biocides
-        (requiring BASIS PROMPT qualification) must only be applied by trained
-        operatives. Always check the product label before purchase.
-      </p>
-
-      <h3>How often should I fog a property?</h3>
-      <p>
-        For active infestations, fog every 7-14 days for 2-3 cycles to break the
-        pest breeding cycle. For preventive maintenance in rental properties,
-        quarterly fogging is common — particularly before new tenancies and at
-        the start of flea and fly season (May-September). Commercial premises
-        typically fog monthly as part of an integrated pest management
-        programme.
-      </p>
-
-      <h3>Is ULV fogging safe around pets?</h3>
-      <p>
-        All animals must be removed from the treatment area before fogging. Fish
-        tanks should be covered and air pumps switched off. After fogging,
-        ventilate the space thoroughly for at least 30 minutes. The typical
-        re-entry time is 2-4 hours after treatment — always follow the specific
-        insecticide product instructions. Once surfaces are dry and the room is
-        ventilated, it is safe for animals to return.
-      </p>
-
-      <h3>What is the difference between a ULV fogger and a thermal fogger?</h3>
-      <p>
-        A ULV cold fogger uses a high-powered motor to break liquid into
-        ultra-fine droplets without heat. A thermal fogger heats the solution to
-        create visible smoke. ULV foggers are preferred for indoor use because
-        they produce no heat, no smoke, and minimal residue. Thermal foggers are
-        mainly used outdoors for mosquito control where visible coverage
-        confirmation is useful.
-      </p>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
 
       <p>
         For targeted surface treatment, pair ULV fogging with{" "}

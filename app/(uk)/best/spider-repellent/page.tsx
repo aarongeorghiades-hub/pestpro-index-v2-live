@@ -67,59 +67,44 @@ const breadcrumbSchema = {
     },
   ],
 };
+// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
+// from this and only this, so the two surfaces cannot disagree again. The visible
+// block was authoritative where they did disagree.
+const faqs = [
+  {
+    q: "Are any UK spiders dangerous?",
+    a: "No. The false widow spider can deliver a bite similar to a bee sting, but bites are extremely rare and almost never require medical treatment. There are no medically significant spider species in the UK. If you experience unusual swelling or an allergic reaction after any bite, seek medical advice as a precaution.",
+  },
+  {
+    q: "Why do I get so many spiders in September?",
+    a: "September is mating season for the giant house spider. Males leave their webs and wander indoors looking for females, which is why you suddenly see large spiders running across floors. The influx usually subsides by late October once mating is complete.",
+  },
+  {
+    q: "Does peppermint oil really repel spiders?",
+    a: "There is some anecdotal evidence and limited laboratory research suggesting spiders avoid surfaces treated with strong peppermint oil. However, real-world results are inconsistent. It is worth trying as part of a broader prevention approach — it smells pleasant, is non-toxic, and may help — but do not rely on it as your sole spider deterrent.",
+  },
+  {
+    q: "How do I stop spiders coming through my air bricks?",
+    a: "Fit fine mesh covers (2mm or smaller gaps) over air bricks to keep spiders and other crawling insects out. Crucially, do not block the air brick entirely — they provide essential ventilation to prevent damp. Stainless steel or plastic mesh covers are inexpensive and widely available at DIY stores.",
+  },
+  {
+    q: "Should I kill spiders or remove them?",
+    a: "Remove them humanely if possible. Spiders are beneficial predators that eat flies, mosquitoes, moths, and other household pests. Use a spider catcher tool or the glass-and-card method to trap and release them outside. Repellent sprays and sealing entry points are better long-term solutions than killing individual spiders.",
+  },
+  {
+    q: "Do spider repellent plug-ins work?",
+    a: "There is very limited scientific evidence that ultrasonic plug-in devices repel spiders. Independent testing has consistently failed to demonstrate reliable effectiveness. If you want to try one, treat it as a supplementary measure alongside proven methods like sealing entry points and using repellent sprays — but do not rely on it as your only defence.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Are any UK spiders dangerous?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. The false widow spider can deliver a bite similar to a bee sting, but bites are extremely rare and almost never require medical treatment. There are no medically significant spider species in the UK. If you experience unusual swelling or an allergic reaction after any bite, seek medical advice as a precaution.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why do I get so many spiders in September?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "September is mating season for the giant house spider. Males leave their webs and wander indoors looking for females, which is why you suddenly see large spiders running across floors. The influx usually subsides by late October once mating is complete.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does peppermint oil really repel spiders?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "There is some anecdotal evidence and limited laboratory research suggesting spiders avoid surfaces treated with strong peppermint oil. However, real-world results are inconsistent. It is worth trying as part of a broader prevention approach — it smells pleasant, is non-toxic, and may help — but do not rely on it as your sole spider deterrent.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I stop spiders coming through my air bricks?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Fit fine mesh covers (2mm or smaller gaps) over air bricks to keep spiders and other crawling insects out. Crucially, do not block the air brick entirely — they provide essential ventilation to prevent damp. Stainless steel or plastic mesh covers are inexpensive and widely available at DIY stores.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Should I kill spiders or remove them?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Remove them humanely if possible. Spiders are beneficial predators that eat flies, mosquitoes, moths, and other household pests. Use a spider catcher tool or the glass-and-card method to trap and release them outside. Repellent sprays and sealing entry points are better long-term solutions than killing individual spiders.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do spider repellent plug-ins work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "There is very limited scientific evidence that ultrasonic plug-in devices repel spiders. Independent testing has consistently failed to demonstrate reliable effectiveness. If you want to try one, treat it as a supplementary measure alongside proven methods like sealing entry points and using repellent sprays — but do not rely on it as your only defence.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 // S67 R4 — REPELLENT DEFENSIVE SWEEP, PM-ruled on live advertising-standards exposure.
 // DELETION AND RELABELLING ONLY. No card removed, no ASIN changed, no card reordered.
@@ -663,54 +648,12 @@ export default function BestSpiderRepellentPage() {
         </Callout>{" "}
       </div>{" "}
       <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>Are any UK spiders dangerous?</h3>{" "}
-      <p>
-        No. The false widow spider can deliver a bite similar to a bee sting,
-        but bites are extremely rare and almost never require medical treatment.
-        There are no medically significant spider species in the UK. If you
-        experience unusual swelling or an allergic reaction after any bite, seek
-        medical advice as a precaution.
-      </p>{" "}
-      <h3>Why do I get so many spiders in September?</h3>{" "}
-      <p>
-        September is mating season for the giant house spider. Males leave their
-        webs and wander indoors looking for females, which is why you suddenly
-        see large spiders running across floors. The influx usually subsides by
-        late October once mating is complete.
-      </p>{" "}
-      <h3>Does peppermint oil really repel spiders?</h3>{" "}
-      <p>
-        There is some anecdotal evidence and limited laboratory research
-        suggesting spiders avoid surfaces treated with strong peppermint oil.
-        However, real-world results are inconsistent. It is worth trying as part
-        of a broader prevention approach — it smells pleasant, is non-toxic, and
-        may help — but do not rely on it as your sole spider deterrent.
-      </p>{" "}
-      <h3>How do I stop spiders coming through my air bricks?</h3>{" "}
-      <p>
-        Fit fine mesh covers (2mm or smaller gaps) over air bricks to keep
-        spiders and other crawling insects out. Crucially, do not block the air
-        brick entirely — they provide essential ventilation to prevent damp.
-        Stainless steel or plastic mesh covers are inexpensive and widely
-        available at DIY stores.
-      </p>{" "}
-      <h3>Should I kill spiders or remove them?</h3>{" "}
-      <p>
-        Remove them humanely if possible. Spiders are beneficial predators that
-        eat flies, mosquitoes, moths, and other household pests. Use a spider
-        catcher tool or the glass-and-card method to trap and release them
-        outside. Repellent sprays and sealing entry points are better long-term
-        solutions than killing individual spiders.
-      </p>{" "}
-      <h3>Do spider repellent plug-ins work?</h3>{" "}
-      <p>
-        There is very limited scientific evidence that ultrasonic plug-in
-        devices repel spiders. Independent testing has consistently failed to
-        demonstrate reliable effectiveness. If you want to try one, treat it as
-        a supplementary measure alongside proven methods like sealing entry
-        points and using repellent sprays — but do not rely on it as your only
-        defence.
-      </p>{" "}
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
       <div className="not-prose">
         {" "}
         <FindProviderCTA
