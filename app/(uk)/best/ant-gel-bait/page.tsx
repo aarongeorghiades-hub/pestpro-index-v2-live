@@ -200,17 +200,17 @@ const products: ProductRecord[] = [
     rank: 4,
     cardName:
       "Zero In Ant & Cockroach Killer 1.5L — Ready-to-Use Pressure Sprayer",
-    cardLabel: "Best Spray",
+    cardLabel: "Best Indoor",
     features: [
       "Large 1.5L ready-to-use pressure sprayer",
       "Cypermethrin with antibacterial agent",
       "Adjustable nozzle for cracks, crevices and surfaces",
       "Treats a full property perimeter in one application",
     ],
-    tableCells: ["Zero In Ant & Cockroach Killer 1.5L", "Spray", "Best Spray"],
-    h2Label: "Best Spray",
+    tableCells: ["Zero In Ant & Cockroach Killer 1.5L", "Spray", "Best Indoor"],
+    h2Label: "Best Indoor",
     h2Name: "Zero In Ant & Cockroach Killer 1.5L",
-    tocLabel: "Best Spray",
+    tocLabel: "Best Indoor",
     tocName: "Zero In Ant & Cockroach Killer",
   },
   {

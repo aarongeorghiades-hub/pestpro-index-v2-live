@@ -4,8 +4,9 @@
   "routes": {
     "best/ant-gel-bait": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "83b0360c235c"
+      "date": "2026-09-06",
+      "fingerprint": "5499c7be64cc",
+      "note": "Re-adjudicated by PM ruling at S65 R7. The fingerprint moved because a LOST AWARD LABEL was restored: record 4 (B0B71D3QS1) carried cardLabel, h2Label, tocLabel and tableCells all reading Best Spray, duplicating record 3 (B000TAP1R8), while its own anchorId read best-indoor. The anchor is the evidence the label was lost rather than chosen. All four surfaces restored to Best Indoor. Card ordering and card count unchanged; one H2 token renamed."
     },
     "best/ant-killers": {
       "judgement": "correct-as-built",
