@@ -1,33 +1,45 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S67 R3 — REBUILD UNDER THE EVIDENCE RULING.
+//
+// TITLE AND H1 ARE BYTE-UNCHANGED (D-7), including "Prevention Products That Work".
+// The page's honest answer to that promise is the proofing section: sealing gaps is the
+// one thing on this page that a source actually supports. The body asserts no efficacy
+// for any carded product in our own voice.
+//
+// THE SUBTITLE WAS REWRITTEN AND IT IS A THIRD SURFACE, NEITHER TITLE NOR H1 — the same
+// trap R2 found on mouse-poison. It read "Our pick of the most effective mouse repellents
+// and proofing products to keep mice out of your home for good": an unsourced superlative,
+// a claim to card "proofing products" when NONE is carded, and "for good".
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Mouse Repellent UK 2026 | Prevention Products That Work",
     description:
-      "Keep mice out of your home with the best mouse repellents and proofing products. Steel wool, peppermint sprays and sealants.",
+      "What the UK advertising regulator says about mouse repellent devices, the 6mm gap that lets mice in, and four products as their own listings describe them.",
     alternates: { canonical: "https://pestproindex.com/best/mouse-repellent" },
     openGraph: {
       title: "Best Mouse Repellent UK 2026 | Prevention Products That Work",
       description:
-        "Keep mice out of your home with the best mouse repellents and proofing products. Steel wool, peppermint sprays and sealants.",
+        "What the UK advertising regulator says about mouse repellent devices, the 6mm gap that lets mice in, and four products as their own listings describe them.",
       url: "https://pestproindex.com/best/mouse-repellent",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Best Mouse Repellent UK 2026 | Prevention Products That Work",
   description:
-    "Keep mice out of your home with the best mouse repellents and proofing products. Steel wool, peppermint sprays and sealants.",
+    "What the UK advertising regulator says about mouse repellent devices, the 6mm gap that lets mice in, and four products as their own listings describe them.",
   datePublished: "2026-03-31",
-  dateModified: "2026-03-31",
+  dateModified: "2026-09-06",
   author: {
     "@type": "Organization",
     name: "PestPro Index",
@@ -43,6 +55,7 @@ const articleSchema = {
     "@id": "https://pestproindex.com/best/mouse-repellent",
   },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -67,60 +80,33 @@ const breadcrumbSchema = {
     },
   ],
 };
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is the best way to stop mice getting into my house?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Physical proofing is the most effective method by far. Use steel wool, copper mesh, or expanding foam to seal every gap 6mm or larger around your property. Focus on air bricks, pipe entry points, door bottoms, cable gaps, and garage door seals. A thorough proofing job prevents mice from entering in the first place, which is far more reliable than relying on repellents, sprays, or ultrasonic devices alone.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does peppermint oil repel mice?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "There is limited scientific evidence that peppermint oil repels mice. Some homeowners report temporary success, and the strong menthol scent may deter mice from specific areas in the short term. However, the effect fades within 24 to 48 hours, and peppermint oil is not a reliable solution for an active infestation. It should never be used as a standalone treatment — physical proofing with steel wool and copper mesh is far more effective.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What gaps should I seal to keep mice out?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Seal all gaps 6mm or larger. The most common mouse entry points are air bricks, gaps around pipes where they enter the building, the space under exterior doors, gaps around cables and wiring, garage door seals, cracks in brickwork or deteriorating mortar, and where roof tiles meet the wall. Walk around your entire property with a pencil — if the pencil fits into a gap, a mouse can fit through it.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is steel wool or copper mesh better for mouse proofing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Both are highly effective — mice cannot chew through either material. Steel wool is cheaper and widely available, making it excellent value for interior gaps. However, steel wool can rust over time when exposed to persistent moisture. Copper mesh will not rust, holds its shape better, and is the superior choice for exterior gaps exposed to rain and damp. For most homes, use steel wool inside and copper mesh outside. Pack either material tightly into the gap for best results.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "When should I mouse-proof my house?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The ideal time is before autumn. Mice begin seeking warmth indoors from October as temperatures drop, so completing your proofing in September or early October gives you the best chance of preventing an infestation before it starts. Spring and summer are actually the most practical time to do the work — better weather makes outdoor inspection and sealing much easier. However, proofing is worthwhile at any time of year, including during an active winter infestation.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Should I use repellents alongside traps?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes — the best approach combines prevention and treatment. Proof your home first by sealing all entry points with steel wool, copper mesh, or expanding foam. Then place snap traps or humane traps as a backup to catch any mice that are already inside the property. Physical proofing stops new mice from getting in, while traps deal with those already present. Repellent sprays such as peppermint oil can be used as an additional layer of deterrence but should not replace physical barriers or trapping.",
-      },
-    },
-  ],
+
+// S67 R3 — THE FAQ IS REMOVED, VISIBLE BLOCK AND STRUCTURED DATA TOGETHER. All six are
+// answered by the body above or by a general search, and two could not have survived
+// ruling D-5 in any case:
+//   "best way to stop mice getting in"     -> #proofing, on Oxford's and Defra's words
+//   "does peppermint oil repel mice"       -> NO ACCEPTABLE SOURCE EXISTS ON DISK. The old
+//                                             answer asserted an efficacy position with
+//                                             nothing behind it. D-5 deletes it rather
+//                                             than letting it stand as a question
+//   "what gaps should I seal"              -> #proofing, the 6mm figure, cited to Oxford
+//   "steel wool or copper mesh"            -> the page cards NEITHER, and the comparison
+//                                             was unsourced
+//   "when should I mouse-proof"            -> a general search answers it
+//   "repellents alongside traps"           -> #alternatives
+
+// SOURCES. Every quotation was extracted by byte range out of a saved body and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually read (S59-A). All four bodies were fetched in earlier rounds and are kept
+// on disk under Law 175 — ~/pp-s67r2/sources/ — so none was re-fetched this round.
+const SRC = {
+  asa: "https://www.asa.org.uk/advice-online/pest-repellents.html",
+  oxford: "https://www.oxford.gov.uk/pest-control-advice/pest-control-advice-mice",
+  defra:
+    "https://www.gov.uk/government/publications/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms",
+  hse: "https://www.hse.gov.uk/biocides/using/rodenticides.htm",
 };
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -131,140 +117,156 @@ type ProductRecord = {
   tableCells: string[];
   h2Label: string;
   h2Name: string;
-  tocLabel: string;
-  tocName: string;
 };
 
+// D-1 — B0072H60MG IS REMOVED, CARD AND h2 TOGETHER. It was carded at rank 4 as "Best
+// Battery-Powered" mouse repellent. Its listing is a SPIDER product: the fetched title
+// reads "Spider Repellent & Deterrent - Ultrasonic Spider & Crawling Insect Repeller",
+// all five feature bullets are about spiders, and the detail table gives
+// "Target species :: Spider". Its only rodent word is "safe for pets, wildlife (except
+// rodents)" — a safety statement, not an efficacy one. The four survivors keep their
+// relative order and the numerals close up 1-2-3-4.
+//
+// D-2 — EVERY AWARD LABEL IS REPLACED BY A NEUTRAL FACTUAL DESCRIPTOR taken from the
+// listing itself: form factor, type, size. No superlative, no ranking word, no implied
+// efficacy. The SAME string is used for cardLabel, h2Label and the comparison table, so
+// the three surfaces cannot disagree and Law 188 has nothing to adjudicate.
+//   Best Overall         -> Ultrasonic, mains powered
+//   Best Spray           -> Peppermint oil spray, 250ml
+//   Best Premium Spray   -> Peppermint and geraniol spray, 250ml
+//   Best Natural         -> Paper and corn cob sachets, 6 pack
+//
+// THE anchorId VALUES ARE DELIBERATELY UNCHANGED and still read "best-*". An anchor id
+// is a URL fragment identifier, not a label a reader is shown: D-2 names card labels, h2
+// labels and the comparison table, and CLAUDE.md treats an anchor id as a distinct
+// protected thing in its own right (the NEVER TOUCH entry for id="best-seller" on
+// commercial-rodent-bait-stations). Renaming them would break every existing fragment
+// link into this page to change a string no reader reads.
+//
+// D-5 — A MANUFACTURER'S EFFICACY CLAIM APPEARS ONLY AS THE MAKER'S OWN CLAIM, marked as
+// such in the feature text. Nothing here is asserted in this site's voice.
 const products: ProductRecord[] = [
   {
     anchorId: "best-ultrasonic",
     asin: "B0B8VQ6C76",
     rank: 1,
     cardName: "EcoMyLife Ultrasonic Pest Repeller 2 Pack",
-    cardLabel: "Best Overall",
+    cardLabel: "Ultrasonic, mains powered",
     features: [
-      "Plug-in ultrasonic repeller — no chemicals, no traps",
-      "2-pack for treating two rooms simultaneously",
-      "Covers up to 80-120m² per unit",
-      "Safe around children and pets",
+      "Electric plug-in unit; power source listed as AC/DC",
+      "Sold as a 2 pack; listed at 6 x 7 x 14 cm",
+      "Target species listed as eleven, from ants and bed bugs to mice, rats and wasps",
+      "The maker claims coverage of 1200 sq ft per unit; the detail table gives a maximum range of 93 centimetres",
+      "Listed for indoor use; country of origin listed as China",
     ],
     tableCells: [
-      "EcoMyLife Ultrasonic Pest Repeller 2 Pack",
-      "Ultrasonic plug-in",
-      "Best Overall",
+      "EcoMyLife Ultrasonic Repeller",
+      "Ultrasonic, mains powered",
+      "Electric plug-in",
+      "2 units",
+      "Ant, Bed Bug, Cockroach, Flea, Fly, Mosquito, Moth, Mouse, Rat, Spider, Wasp",
+      "Indoor",
     ],
-    h2Label: "Best Overall",
+    h2Label: "Ultrasonic, mains powered",
     h2Name: "EcoMyLife Ultrasonic Pest Repeller 2 Pack",
-    tocLabel: "Best Overall",
-    tocName: "EcoMyLife Ultrasonic Repeller",
   },
   {
     anchorId: "best-spray",
     asin: "B08DKSX32W",
     rank: 2,
-    cardName:
-      "RepellShield Rat & Mouse Repellent Spray 250ml — Made in Germany",
-    cardLabel: "Best Spray",
+    cardName: "RepellShield Rat & Mouse Repellent Spray 250ml",
+    cardLabel: "Peppermint oil spray, 250ml",
     features: [
-      "A widely sold German peppermint oil mouse repellent spray",
-      "Non-staining formula — safe for kitchens, lofts and skirting boards",
-      "Peppermint and geraniol formula irritates rodents' sensitive noses",
-      "Family and pet safe",
+      "Item form listed as Oil; scent listed as Peppermint",
+      "250 ml, listed as a pack of one",
+      "Target species listed as Mouse, Rat",
+      "Listed for indoor use; manufacturer Vivere GmbH, country of origin Germany",
+      "The maker's directions: reapply every 2-3 days, with persistent use over 2-3 weeks",
     ],
     tableCells: [
-      "RepellShield Rat & Mouse Repellent Spray 250ml — Made in Germany",
-      "Peppermint spray",
-      "Best Spray",
+      "RepellShield Spray",
+      "Peppermint oil spray, 250ml",
+      "Oil",
+      "250 ml",
+      "Mouse, Rat",
+      "Indoor",
     ],
-    h2Label: "Best Spray",
-    h2Name: "RepellShield Rat & Mouse Repellent Spray 250ml — Made in Germany",
-    tocLabel: "Best Spray",
-    tocName: "RepellShield Made in Germany",
+    h2Label: "Peppermint oil spray, 250ml",
+    h2Name: "RepellShield Rat & Mouse Repellent Spray",
   },
   {
     anchorId: "best-premium-spray",
     asin: "B0CRRSTHNG",
     rank: 3,
     cardName: "REPELEM Rat & Mouse Repellent Spray 250ml — Peppermint Oil",
-    cardLabel: "Best Premium Spray",
+    cardLabel: "Peppermint and geraniol spray, 250ml",
     features: [
-      "UK brand peppermint oil rodent deterrent",
-      "Fast-acting, non-toxic and safe around pets",
-      "Mist and squirt modes for different surfaces",
-      "Effective in kitchens, lofts, garages and car engines",
+      "The maker describes the formula as peppermint oil and geraniol",
+      "Item form listed as Oil; scent listed as Peppermint",
+      "250 ml, listed as a pack of one",
+      "No target species stated in the listing's detail table",
+      "The maker's directions: apply daily to entry points for the first week, then once or twice weekly",
     ],
     tableCells: [
-      "REPELEM Rat & Mouse Repellent Spray 250ml — Peppermint Oil",
-      "Peppermint spray",
-      "Best Premium Spray",
+      "REPELEM Spray",
+      "Peppermint and geraniol spray, 250ml",
+      "Oil",
+      "250 ml",
+      "not stated",
+      "not stated",
     ],
-    h2Label: "Best Premium Spray",
-    h2Name: "REPELEM Rat & Mouse Repellent Spray 250ml — Peppermint Oil",
-    tocLabel: "Best Premium Spray",
-    tocName: "REPELEM Peppermint Oil Spray",
-  },
-  {
-    anchorId: "best-battery",
-    asin: "B0072H60MG",
-    rank: 4,
-    cardName: "Pestbye Battery Operated Spider & Mouse Repeller",
-    cardLabel: "Best Battery-Powered",
-    features: [
-      "Battery-powered ultrasonic repeller from UK-based Pestbye",
-      "Ideal for garages, sheds and loft spaces without mains power",
-      "Repels mice and spiders",
-      "Hang from ceiling or fix to wall for maximum coverage",
-    ],
-    tableCells: [
-      "Pestbye Battery Operated Spider & Mouse Repeller",
-      "Ultrasonic battery-powered",
-      "Best Battery-Powered",
-    ],
-    h2Label: "Best Battery-Powered",
-    h2Name: "Pestbye Battery Operated Spider & Mouse Repeller",
-    tocLabel: "Best Battery-Powered",
-    tocName: "Pestbye Repeller",
+    h2Label: "Peppermint and geraniol spray, 250ml",
+    h2Name: "REPELEM Rat & Mouse Repellent Spray",
   },
   {
     anchorId: "best-natural",
     asin: "B0CNV2CWQS",
-    rank: 5,
+    rank: 4,
     cardName: "REPELEM Rat & Mouse Repellent Peppermint Oil Sachets — 6 Pack",
-    cardLabel: "Best Natural",
+    cardLabel: "Paper and corn cob sachets, 6 pack",
     features: [
-      "Long-lasting peppermint oil sachets — just place and leave",
-      "Ideal for enclosed spaces where spray cannot reach",
-      "Each sachet lasts months with no mess or reapplication",
-      "6-pack covers multiple locations around the home",
+      "The maker describes each sachet as paper, corn cobs and peppermint oil",
+      "Size listed as 6 sachets; scent listed as Peppermint",
+      "No target species stated in the listing's detail table",
+      "The maker claims each sachet retains its scent for up to 90 days",
+      "The maker suggests confined spaces such as cars, caravans, lofts and sheds",
     ],
     tableCells: [
-      "REPELEM Rat & Mouse Repellent Peppermint Oil Sachets — 6 Pack",
-      "Peppermint oil sachets",
-      "Best Natural",
+      "REPELEM Sachets",
+      "Paper and corn cob sachets, 6 pack",
+      "Sachet",
+      "6 sachets",
+      "not stated",
+      "not stated",
     ],
-    h2Label: "Best Natural",
-    h2Name: "REPELEM Rat & Mouse Repellent Peppermint Oil Sachets — 6 Pack",
-    tocLabel: "Best Natural",
-    tocName: "REPELEM Peppermint Oil Sachets",
+    h2Label: "Paper and corn cob sachets, 6 pack",
+    h2Name: "REPELEM Rat & Mouse Repellent Peppermint Oil Sachets",
   },
 ];
 
+// The contents entry is DERIVED from the same fields the h2 renders, so an entry cannot
+// say something the heading does not (the S66 R4 pattern).
 const tocItems = [
-  { id: "at-a-glance", title: "Mouse Repellents at a Glance" },
+  { id: "situation", title: "What You Are Actually Dealing With" },
+  { id: "asa", title: "What the Advertising Regulator Says" },
+  { id: "limits", title: "Where These Products Do Not Help" },
+  { id: "proofing", title: "What Actually Reduces Mouse Entry" },
   ...products.map((p) => ({
     id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
+    title: `${p.h2Label} — ${p.h2Name}`,
   })),
-  { id: "buying-guide", title: "Mouse Proofing Buying Guide" },
-  { id: "faq", title: "Frequently Asked Questions" },
+  { id: "alternatives", title: "If This Is Not the Answer" },
+  { id: "using", title: "Using Them, If You Use Them" },
+  { id: "compared", title: "The Four Products Compared" },
 ];
+
 export default function BestMouseRepellentPage() {
   return (
     <GuideLayout
       title="Best Mouse Repellent UK 2026 | Prevention Products That Work"
-      subtitle="Our pick of the most effective mouse repellents and proofing products to keep mice out of your home for good"
-      lastUpdated="March 2026"
-      readingTime="9 min"
+      subtitle="What the UK advertising regulator has said about repellent devices, the gap size that actually lets mice in, and four products described as their own listings describe them"
+      lastUpdated="September 2026"
+      readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
@@ -306,740 +308,453 @@ export default function BestMouseRepellentPage() {
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />{" "}
-      {/* Affiliate disclosure */}{" "}
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
           site running and free for everyone. As an Amazon Associate, PestPro
-          Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
-      {/* Intro paragraphs */}{" "}
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        Mice are the most common pest in UK homes, and every autumn the problem
-        intensifies as temperatures drop and house mice seek warmth, shelter,
-        and food indoors. The British Pest Control Association estimates that
-        mice infest close to a million UK properties each year, with the
-        majority of new infestations beginning between October and December.
-        Once inside, mice breed rapidly &mdash; a single pair can produce up to
-        eighty offspring in a year &mdash; which means that a small problem in
-        November can become a serious infestation by January if nothing is done.
-        The most effective long-term solution is not traps, not poison, and not
-        ultrasonic devices. It is <strong>physical proofing</strong>: sealing
-        every gap, crack, and hole that a mouse could use to enter your home in
-        the first place.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The reason proofing works so well is simple biology. A house mouse can
-        squeeze through any gap it can fit its skull through &mdash; and a
-        mouse&apos;s skull is remarkably small. The critical measurement is{" "}
-        <strong>6mm</strong>, roughly the width of a standard pencil. That means
-        gaps around pipes where they enter the building, the space under a
-        poorly fitted exterior door, uncovered air bricks, cracks in mortar, and
-        openings around cables and wiring are all potential entry points. Most
-        UK homes, particularly older properties, have dozens of these small gaps
-        that homeowners never notice but mice exploit readily. A thorough
-        proofing job &mdash; systematically inspecting and sealing every one of
-        these entry points &mdash; is the single most cost-effective step you
-        can take to prevent a mouse problem before it starts.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        We selected these mouse repellent and proofing products on published
-        specifications and manufacturer information, looking at{" "}
-        <strong>proven effectiveness</strong> at preventing mouse entry,{" "}
-        <strong>durability and longevity</strong> in real-world conditions, and{" "}
-        <strong>value for money</strong>. We also consulted BPCA guidance and
-        spoke to professional pest controllers who carry out mouse proofing work
-        daily. Every product listed is available on Amazon UK at the time of
-        writing.{" "}
-      </p>{" "}
+        This page used to rank five mouse repellents and tell you which worked
+        best. It no longer does, and the reason is worth reading before the
+        products: the UK advertising regulator has looked at the evidence behind
+        claims for this class of product and has not accepted one.
+      </p>
+
+      {/* DECISION BLOCK — the evidence position and the proofing answer sit ABOVE any
+          product line. NOT a card: no Amazon link, no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>
+              You want to know whether these products are proven to work.
+            </strong>{" "}
+            The ASA has examined the evidence for pest repellent devices with
+            independent experts and has yet to accept a claim of efficacy (
+            <a href={SRC.asa} rel="nofollow" className="underline">
+              ASA/CAP
+            </a>
+            ) —{" "}
+            <a href="#asa" className="underline">
+              what the regulator says
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want mice to stop getting in.</strong> Sealing gaps is
+            the one thing on this page a source supports, and the number that
+            matters is 6mm (
+            <a href={SRC.oxford} rel="nofollow" className="underline">
+              Oxford City Council
+            </a>
+            ) —{" "}
+            <a href="#proofing" className="underline">
+              what actually reduces mouse entry
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You already have mice inside.</strong> A deterrent is not a
+            treatment —{" "}
+            <a href="#alternatives" className="underline">
+              traps, bait stations and poison
+            </a>{" "}
+            are different pages and a different decision.
+          </li>
+          <li>
+            <strong>You want to see the products anyway.</strong> Four are
+            listed below with{" "}
+            <a href="#compared" className="underline">
+              what their listings state and nothing more
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+
       <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
+        <Callout type="warning">
           <p>
-            The most effective mouse prevention is physical proofing. A mouse
-            can fit through any gap it can get its skull through &mdash; just
-            6mm wide. Before spending money on sprays or repellents, walk your
-            property and seal every gap you find with steel wool or copper mesh.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* At a Glance */} <h2 id="at-a-glance">Mouse Repellents at a Glance</h2>{" "}
+            Nothing on this page is described as proven to repel mice, because
+            no source we hold supports that for any of it. Where a product makes
+            a claim, it is reported as the manufacturer&rsquo;s claim and
+            attributed to them.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">What You Are Actually Dealing With</h2>
       <p>
-        {" "}
-        Below is a quick comparison of our five recommended mouse repellent
-        products. Each takes a different approach to deterring mice, and for the
-        best results you should combine repellents with physical proofing to
-        cover every potential entry point around your property.{" "}
-      </p>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Product</th> <th>Type</th> <th>Best For</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      <div className="not-prose">
-        {" "}
-        <StatCallout
-          value="6mm"
-          label="the size of gap a mouse can squeeze through — roughly the width of a pencil"
-        />{" "}
-      </div>{" "}
-      <Callout type="tip">
-        {" "}
+        A house mouse gets in through an opening far smaller than most people
+        picture, and then lives somewhere you cannot see. Oxford City
+        Council&rsquo;s pest advice notes that{" "}
+        <em>
+          &ldquo;Mice often nest in hard-to-detect places, such as under
+          floorboards or in wall cavities.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.oxford} rel="nofollow">
+          Oxford City Council
+        </a>
+        ). That is the fact every product on this page is up against: a scent or
+        a sound in the room is not reaching the space the animal is living in.
+      </p>
+      <p>
+        The same advice gives the reason mice matter indoors beyond the nuisance
+        —{" "}
+        <em>
+          &ldquo;Mice are a concern in buildings due to their need to gnaw on
+          hard materials to maintain their teeth, which poses a fire risk from
+          damaged cables.&rdquo;
+        </em>{" "}
+        A deterrent that a mouse ignores leaves that risk exactly where it was.
+      </p>
+
+      {/* [1] The ASA position */}
+      <h2 id="asa">What the Advertising Regulator Says</h2>
+      <p>
+        The Committee of Advertising Practice publishes guidance on how pest
+        repellents may be advertised in the UK, and it is unusually direct:
+      </p>
+      <blockquote>
         <p>
-          Sealing the entry points matters more than anything you put down. Our
-          guide to the{" "}
-          <Link href="/best/rodent-proofing">
-            best rodent proofing products
-          </Link>{" "}
-          covers the mesh, steel wool, drain guards and door strips that keep
-          them out for good.
-        </p>{" "}
-      </Callout>{" "}
-      {/* Product 1 */}{" "}
+          &ldquo;In past years, the ASA, together with independent experts, has
+          closely examined the evidence for claims for those devices, which can
+          range from cat-shaped metal sheets with glowing eyes to ultrasonic and
+          electromagnetic equipment. It has yet to accept any claim of
+          efficacy.&rdquo;
+        </p>
+      </blockquote>
+      <p>
+        And on what a seller may therefore say:{" "}
+        <em>
+          &ldquo;Marketers who do not hold evidence in the form of UK-based
+          trials should not state or imply efficacy for the products, through
+          either claims, visuals or product names.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.asa} rel="nofollow">
+          ASA/CAP, Pest repellents
+        </a>
+        ).
+      </p>
+      <p>
+        <strong>
+          Read that carefully, because it does not say these products do not
+          work.
+        </strong>{" "}
+        It says no claim of efficacy has been accepted, and that a seller
+        without UK trial evidence should not imply one. Those are different
+        statements and this page is not going to blur them. The same guidance
+        notes that{" "}
+        <em>
+          &ldquo;No set rules exist for testing the efficacy of repellent
+          devices under UK conditions.&rdquo;
+        </em>{" "}
+        — so the absence of accepted evidence is partly an absence of any agreed
+        way to produce it.
+      </p>
+      <p>
+        It is also why the reviews are not the answer here. The guidance is
+        explicit that{" "}
+        <em>
+          &ldquo;Marketers should remember that customer testimonials do not by
+          themselves constitute evidence of efficacy and claims.&rdquo;
+        </em>{" "}
+        A long run of five-star reviews is not a trial.
+      </p>
+
+      {/* [2] Where they do not help */}
+      <h2 id="limits">Where These Products Do Not Help</h2>
+      <p>
+        Three limits follow from the listings themselves rather than from any
+        judgement of ours.
+      </p>
+      <p>
+        <strong>An ultrasonic unit is bounded by the room it is in.</strong> The
+        EcoMyLife listing states coverage of 1200 square feet per unit in a
+        feature bullet, while its own detail table gives a maximum range of 93
+        centimetres. We are not going to reconcile those two figures for the
+        manufacturer; we report that the listing carries both.
+      </p>
+      <p>
+        <strong>A scent product has to be re-applied to keep existing.</strong>{" "}
+        The RepellShield listing directs reapplication every two to three days,
+        and the REPELEM spray directs daily application to entry points for the
+        first week. Those are the makers&rsquo; own instructions, and they
+        describe an ongoing job rather than a fix.
+      </p>
+      <p>
+        <strong>None of them closes the hole.</strong> Two of the four listings
+        do not state a target species at all, and none of the four is a physical
+        barrier. Whatever a mouse thinks of the smell or the sound, the gap it
+        came through is still there in the morning.
+      </p>
+
+      {/* [3] What actually works */}
+      <h2 id="proofing">What Actually Reduces Mouse Entry</h2>
+      <p>
+        This is the part of the page with a source behind it. Oxford City
+        Council gives the measurement that decides everything else:{" "}
+        <em>
+          &ldquo;Even gaps as small as 6mm, like those around pipes, can allow
+          entry, so sealing these is crucial.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.oxford} rel="nofollow">
+          Oxford City Council
+        </a>
+        ). Six millimetres is smaller than most people search for, which is why
+        a proofing job that looks thorough often is not.
+      </p>
+      <p>
+        Defra&rsquo;s rodent control code of practice puts prevention ahead of
+        everything else —{" "}
+        <em>
+          &ldquo;The overall aim should be to prevent rodent infestations
+          becoming established in the first place.&rdquo;
+        </em>{" "}
+        — and is blunt about the alternative:{" "}
+        <em>
+          &ldquo;It is unacceptable to repeatedly make remedial applications of
+          rodenticides on premises where insufficient attention is paid to
+          preventing the ingress of rodents&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.defra} rel="nofollow">
+          Defra code of practice
+        </a>
+        ). That code is written for poultry units; the animal and the gap are
+        the same in a house.
+      </p>
+      <p>
+        It also does not pretend proofing is easy:{" "}
+        <em>
+          &ldquo;Effective proofing of buildings or other structures against
+          mouse entry is often extremely difficult due to their ability to get
+          through very small gaps, but efforts to limit entry will have some
+          beneficial effect.&rdquo;
+        </em>{" "}
+        That is a fair description of the work — not a guarantee, and better
+        than anything claimed for the products below.
+      </p>
+      <p>
+        <strong>
+          We do not currently card any proofing material, and this page&rsquo;s
+          description used to say we did.
+        </strong>{" "}
+        It offered &ldquo;Steel wool, peppermint sprays and sealants&rdquo;; no
+        steel wool and no sealant has ever been carded here. The description has
+        been corrected rather than the gap quietly left open.
+      </p>
+
+      {/* Product 1 */}
       <h2 id={products[0].anchorId}>
         {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>{" "}
+      </h2>
       <div className="not-prose my-6">
-        {" "}
         <ProductCard
           name={products[0].cardName}
           features={products[0].features}
           asin={products[0].asin}
           bestFor={products[0].cardLabel}
           rank={products[0].rank}
-        />{" "}
-      </div>{" "}
+        />
+      </div>
       <p>
-        {" "}
-        Plug-in ultrasonic repeller emitting frequencies that disorient rodents
-        without harm to humans or pets. The EcoMyLife 2-pack allows you to treat
-        two rooms simultaneously &mdash; kitchen and utility room, or loft
-        conversion and garage &mdash; providing broader coverage from a single
-        purchase. Each unit covers up to 80-120m&sup2;, which is sufficient for
-        most standard UK rooms. No chemicals, no traps, and no ongoing bait
-        costs make this a genuinely low-maintenance approach to mouse
-        deterrence.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Simply plug each unit into a mains socket and it begins emitting
-        high-frequency sound waves that are inaudible to humans but deeply
-        unpleasant for rodents. The frequencies cycle through different patterns
-        to reduce the risk of mice becoming habituated to a single tone.
-        Position the units in rooms where you have seen signs of mouse activity
-        &mdash; droppings, gnaw marks, or scratching sounds &mdash; and ensure
-        the sound path is not blocked by large furniture, as ultrasonic waves do
-        not penetrate solid objects or travel around corners effectively.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        An important caveat: the scientific evidence for ultrasonic pest
-        repellers remains mixed. Some users report noticeable reductions in
-        mouse activity, while independent studies have found limited long-term
-        effectiveness. We recommend using ultrasonic repellers as one layer in a
-        broader prevention strategy &mdash; alongside physical proofing and
-        traps &mdash; rather than relying on them as a standalone solution. That
-        said, for a chemical-free, set-and-forget deterrent that requires zero
-        maintenance, the EcoMyLife 2-pack is the best option in the
-        category.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Chemical-free and completely safe around children and pets</li>{" "}
-        <li>2-pack covers two rooms from a single purchase</li>{" "}
-        <li>No ongoing costs &mdash; plug in and leave</li>{" "}
-        <li>Covers up to 80-120m&sup2; per unit</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Mixed scientific evidence for ultrasonic repellers</li>{" "}
-        <li>Ultrasonic waves do not pass through walls or solid furniture</li>{" "}
-        <li>Mice may habituate to the frequencies over time</li>{" "}
-        <li>
-          Not recommended as a standalone solution for active infestations
-        </li>{" "}
-      </ul>{" "}
-      {/* Product 2 */}{" "}
+        A mains plug-in unit sold in twos. Its detail table lists eleven target
+        species, from ants and bed bugs through to mice, rats and wasps — which
+        is a wide claim for one device, and it is the manufacturer&rsquo;s, not
+        ours. The coverage figure and the maximum range figure on the same
+        listing do not agree with each other.
+      </p>
+
+      {/* Product 2 */}
       <h2 id={products[1].anchorId}>
         {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
+      </h2>
       <div className="not-prose my-6">
-        {" "}
         <ProductCard
           name={products[1].cardName}
           features={products[1].features}
           asin={products[1].asin}
           bestFor={products[1].cardLabel}
           rank={products[1].rank}
-        />{" "}
-      </div>{" "}
+        />
+      </div>
       <p>
-        {" "}
-        A widely sold German peppermint oil mouse repellent spray, and for good
-        reason. RepellShield combines peppermint oil with geraniol to create a
-        dual-action formula that irritates rodents' sensitive noses far more
-        effectively than peppermint alone. The 250ml bottle is ready to use
-        straight out of the box &mdash; simply spray at entry points, under
-        sinks, along skirting boards, in loft spaces, and anywhere else you have
-        seen signs of mouse activity. The formula is non-staining, so you can
-        apply it directly to kitchen units, carpets, and soft furnishings
-        without worrying about marks or residue.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        RepellShield has built a strong following among UK homeowners looking
-        for a chemical-free mouse deterrent. The spray is completely family and
-        pet safe, making it a practical choice for homes with young children,
-        cats, and dogs. Apply generously to known entry points and refresh every
-        3-5 days to maintain scent strength. The geraniol component adds a
-        secondary layer of deterrence that pure peppermint sprays lack, which
-        may explain the consistently positive customer feedback compared to
-        cheaper alternatives.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        As with all scent-based repellents, RepellShield works best as a
-        supporting measure alongside physical proofing. Seal entry points with
-        steel wool or copper mesh first, then apply the spray as an additional
-        deterrent layer. On its own, no peppermint spray is likely to resolve an
-        established mouse infestation &mdash; but as part of a combined
-        approach, RepellShield adds a genuine extra barrier. The German
-        manufacturing quality and the peppermint-geraniol formulation set it
-        apart from generic peppermint sprays in the category.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Peppermint and geraniol dual-action formula</li>{" "}
-        <li>
-          Non-staining &mdash; safe for kitchens, carpets, and soft furnishings
-        </li>{" "}
-        <li>Family and pet safe</li>{" "}
-        <li>
-          German-made with higher quality formulation than most competitors
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Limited scientific evidence for peppermint oil as a mouse repellent
-        </li>{" "}
-        <li>Scent fades within 3-5 days &mdash; needs regular reapplication</li>{" "}
-        <li>
-          Not effective as a standalone solution for active infestations
-        </li>{" "}
-      </ul>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="info">
-          {" "}
-          <p>
-            Peppermint oil may provide some short-term deterrence, but it is not
-            a substitute for physical proofing. If you have an active mouse
-            problem, seal the entry points first with steel wool or copper mesh,
-            then use peppermint spray as an additional layer of prevention.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* Product 3 */}{" "}
+        A 250ml peppermint oil spray for indoor use, and the only one of the
+        four whose detail table names mice and rats and nothing else. The
+        ultrasonic unit above also lists them, but inside a roster of eleven
+        species; the other two spray and sachet listings state no target species
+        at all. The maker directs reapplication every two to three days and
+        persistent use over two to three weeks.
+      </p>
+
+      {/* Product 3 */}
       <h2 id={products[2].anchorId}>
         {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>{" "}
+      </h2>
       <div className="not-prose my-6">
-        {" "}
         <ProductCard
           name={products[2].cardName}
           features={products[2].features}
           asin={products[2].asin}
           bestFor={products[2].cardLabel}
           rank={products[2].rank}
-        />{" "}
-      </div>{" "}
+        />
+      </div>
       <p>
-        {" "}
-        UK brand peppermint oil rodent deterrent with a practical dual-mode
-        spray nozzle. REPELEM offers both mist and squirt settings, letting you
-        switch between a fine mist for broad coverage on open surfaces and a
-        targeted squirt for getting into tight gaps, crevices, and hard-to-reach
-        areas behind appliances. The 250ml bottle is non-toxic and completely
-        safe around pets, making it suitable for kitchens, utility rooms, lofts,
-        garages, and even inside car engine bays where mice commonly nest.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The recommended application method is straightforward: spray generously
-        at entry points and along known mouse routes twice daily for the first
-        3-7 days to build up scent saturation and drive mice out of treated
-        areas. Once the initial treatment period is complete, switch to monthly
-        reapplication for ongoing prevention. This two-phase approach &mdash;
-        intensive treatment followed by maintenance &mdash; is more structured
-        than most competing sprays, which simply recommend reapplication "as
-        needed" without clear guidance.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        REPELEM is a fast-acting formula designed for immediate deterrence. The
-        peppermint oil concentration is strong enough that you will notice the
-        scent immediately upon application, and rodents find it intensely
-        unpleasant. The spray is effective across a wide range of locations
-        &mdash; kitchens, lofts, garages, sheds, caravans, and car engines are
-        all suitable. As with all peppermint-based products, combine with
-        physical proofing for the best results. The spray adds a scent barrier,
-        but steel wool and copper mesh provide the permanent physical barrier
-        that actually prevents entry.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Dual mist and squirt modes for versatile application</li>{" "}
-        <li>
-          Clear two-phase treatment plan &mdash; intensive then monthly
-          maintenance
-        </li>{" "}
-        <li>Non-toxic and safe around pets and children</li>{" "}
-        <li>UK brand with responsive customer support</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Requires twice-daily application during the initial 3-7 day phase
-        </li>{" "}
-        <li>
-          Limited scientific evidence for peppermint oil as a long-term
-          repellent
-        </li>{" "}
-        <li>
-          Not a standalone solution &mdash; combine with physical proofing
-        </li>{" "}
-      </ul>{" "}
-      {/* Product 4 */}{" "}
+        Also 250ml, and the maker describes the formula as peppermint oil with
+        geraniol rather than peppermint alone. Its detail table states no target
+        species. The directions are the most demanding of the four: daily
+        application to entry points for the first week, reducing to once or
+        twice weekly.
+      </p>
+
+      {/* Product 4 */}
       <h2 id={products[3].anchorId}>
         {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>{" "}
+      </h2>
       <div className="not-prose my-6">
-        {" "}
         <ProductCard
           name={products[3].cardName}
           features={products[3].features}
           asin={products[3].asin}
           bestFor={products[3].cardLabel}
           rank={products[3].rank}
-        />{" "}
-      </div>{" "}
+        />
+      </div>
       <p>
-        {" "}
-        Battery-powered ultrasonic repeller from UK-based Pestbye. The key
-        advantage of this unit over mains-powered alternatives is that it works
-        anywhere &mdash; including garages, sheds, loft spaces, and outbuildings
-        where mains power is not available. These are exactly the locations
-        where mice are most likely to nest undisturbed, and where a plug-in
-        repeller simply cannot reach. The Pestbye unit runs on standard
-        batteries and can be hung from a ceiling joist or fixed to a wall for
-        maximum coverage.{" "}
-      </p>{" "}
+        Six sachets, described by the maker as paper, corn cobs and peppermint
+        oil, with a claimed scent life of up to 90 days per sachet. Its detail
+        table states no target species. The maker suggests confined spaces —
+        cars, caravans, lofts, sheds — which is the one setting where a scent
+        has least room to disperse.
+      </p>
+
+      {/* [4] Alternatives */}
+      <h2 id="alternatives">If This Is Not the Answer</h2>
       <p>
-        {" "}
-        The device repels both mice and spiders, which is a useful dual function
-        for loft spaces and garden sheds where both pests are commonly found.
-        The ultrasonic frequencies emitted are inaudible to humans and safe
-        around pets (though it is worth noting that hamsters, gerbils, and other
-        small rodent pets may be affected &mdash; do not use in the same room as
-        pet rodents). The Pestbye brand is UK-based with a responsive customer
-        service team, which provides added confidence compared to unbranded
-        imports.{" "}
-      </p>{" "}
+        <strong>Seal the building first.</strong> It is the only step on this
+        page with a source behind it, and it is the one that stops the next
+        mouse as well as this one.
+      </p>
       <p>
-        {" "}
-        Battery life varies depending on the brand and type of batteries used,
-        but expect around 3-6 months of continuous operation from a set of
-        quality alkaline batteries. This makes the running cost very low. For
-        best results in a loft space, position the unit centrally and ensure it
-        has a clear line of sight to the main roof void area &mdash; ultrasonic
-        waves are directional and will not travel around corners or through
-        solid partitions. In sheds and garages, mount it on the wall opposite
-        the main entry point.{" "}
-      </p>{" "}
+        <strong>If mice are already inside, a deterrent is the wrong tool.</strong>{" "}
+        Trapping is the lower-risk way to remove them — see our{" "}
+        <a href="/best/mouse-traps">mouse traps</a> page.
+      </p>
       <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
+        <strong>If you are considering bait, read the conditions first.</strong>{" "}
+        Rodenticide has to sit in a lockable station as a condition of its own
+        label, which is our{" "}
+        <a href="/best/mouse-bait-stations">mouse bait stations</a> page, and
+        which substance is in the pack decides whether it works on mice at all,
+        which is our <a href="/best/mouse-poison">mouse poison</a> page. HSE asks
+        you to weigh that step rather than take it first:{" "}
+        <em>
+          &ldquo;it is important to remember to consider other available control
+          methods, such as those listed above, before reaching for anticoagulant
+          products.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hse} rel="nofollow">
+          HSE
+        </a>
+        ).
+      </p>
+
+      {/* [5] Using them */}
+      <h2 id="using">Using Them, If You Use Them</h2>
+      <p>
+        Every instruction below is the manufacturer&rsquo;s own, taken from the
+        listing. We are not adding a method of our own to products whose
+        efficacy no source we hold establishes.
+      </p>
+      <ol>
         <li>
-          Battery-powered &mdash; works in spaces without mains electricity
-        </li>{" "}
-        <li>Ideal for lofts, sheds, garages, and outbuildings</li>{" "}
-        <li>Dual function &mdash; repels mice and spiders</li>{" "}
-        <li>UK-based brand with good customer support</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Batteries need replacing every 3-6 months</li>{" "}
-        <li>Mixed evidence for ultrasonic repeller effectiveness</li>{" "}
+          <strong>Follow the reapplication interval on the pack.</strong> Two to
+          three days for one spray, daily for the first week for the other. A
+          scent product that is not maintained is not doing whatever it does.
+        </li>
         <li>
-          Not suitable for rooms with pet hamsters, gerbils, or other rodents
-        </li>{" "}
-        <li>Directional output &mdash; does not cover around corners</li>{" "}
-      </ul>{" "}
-      {/* Product 5 */}{" "}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Long-lasting peppermint oil sachets that you simply place in enclosed
-        spaces and leave. The REPELEM 6-pack solves a genuine problem with
-        spray-based repellents: they cannot reach the enclosed, hidden voids
-        where mice actually nest and travel. These sachets are designed to be
-        placed behind appliances, in loft voids, under floorboards, inside car
-        engines, in caravans, and in any other tight, enclosed space where a
-        spray bottle simply cannot reach or where liquid application is
-        impractical. No mess, no dripping, no application skill required &mdash;
-        just place the sachet and let the peppermint oil do the work.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Each sachet lasts for months, which is a significant advantage over
-        sprays that need reapplication every few days. The slow-release design
-        means the peppermint oil diffuses gradually over time, maintaining a
-        consistent scent level in the surrounding area without the peaks and
-        troughs you get with spray application. The 6-pack provides enough
-        sachets to cover the most common problem areas in a typical UK home
-        &mdash; one behind the washing machine, one under the kitchen sink, one
-        in the loft hatch area, one in the garage, and two more for wherever you
-        have seen signs of activity.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The sachets are particularly effective in combination with the REPELEM
-        spray (above). Use the spray for open, accessible areas like skirting
-        boards, kitchen worktops, and visible entry points, then place sachets
-        in the hidden, enclosed spaces that spray cannot reach. This combination
-        gives you scent-based coverage across both visible and concealed areas
-        of your home. As always, combine with physical proofing for the most
-        effective mouse prevention &mdash; sachets and sprays add a deterrent
-        layer, but steel wool and copper mesh provide the permanent physical
-        barrier.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
+          <strong>Put sachets where air is still.</strong> The maker&rsquo;s own
+          suggestion is confined spaces such as cars, caravans, lofts and sheds.
+        </li>
         <li>
-          Place and leave &mdash; no application, no mess, no respraying
-        </li>{" "}
-        <li>Each sachet lasts months, far longer than any spray</li>{" "}
-        <li>Ideal for enclosed spaces spray cannot reach</li>{" "}
-        <li>6-pack covers multiple locations around the home</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
+          <strong>Give an ultrasonic unit line of sight.</strong> Its own
+          listing says the sound does not pass through walls and solid objects,
+          so a unit behind furniture is covering less than the room.
+        </li>
         <li>
-          Less effective in open, well-ventilated areas where scent disperses
-        </li>{" "}
-        <li>Same limited evidence base as all peppermint repellents</li>{" "}
-        <li>Cannot target specific narrow gaps like a spray can</li>{" "}
+          <strong>Do not treat any of it as the proofing job.</strong> None of
+          these products closes a 6mm gap, and the gap is what let the mouse in.
+        </li>
         <li>
-          Not a standalone solution &mdash; combine with proofing and spray
-        </li>{" "}
-      </ul>{" "}
-      {/* Buying Guide */}{" "}
-      <h2 id="buying-guide">Mouse Proofing Buying Guide</h2>{" "}
+          <strong>Judge it on whether activity actually stops.</strong>{" "}
+          Droppings, gnaw marks and noise are the measure; the absence of a
+          smell you have grown used to is not.
+        </li>
+      </ol>
+
+      {/* [6] Comparison table */}
+      <h2 id="compared">The Four Products Compared</h2>
       <p>
-        {" "}
-        With six effective products covering different aspects of mouse
-        prevention, the most important thing to understand is that no single
-        product will solve the problem on its own. The best results come from
-        combining several of these products to create a comprehensive barrier
-        around your property. Here is the guidance you need to plan and execute
-        your proofing strategy.{" "}
-      </p>{" "}
-      <h3>Why Prevention Beats Treatment</h3>{" "}
-      <p>
-        {" "}
-        There is a reason every professional pest controller will tell you that
-        proofing is the most important part of mouse control: it is the only
-        approach that addresses the root cause. Traps and poison deal with mice
-        that are already inside your home, but unless you seal the entry points,
-        new mice will simply replace the ones you have removed. This is the
-        cycle that traps millions of UK homeowners every autumn &mdash; catch a
-        few mice, think the problem is solved, then find droppings in the
-        kitchen again two weeks later when the next wave arrives. Proofing
-        breaks this cycle. Seal the gaps, and the mice simply cannot get in. It
-        is the only permanent solution.{" "}
-      </p>{" "}
-      <h3>Common Mouse Entry Points</h3>{" "}
-      <p>
-        {" "}
-        To proof your home effectively, you need to know where to look. The most
-        common mouse entry points in UK homes are: <strong>
-          air bricks
-        </strong>{" "}
-        (the number one culprit &mdash; uncovered air bricks are an open
-        invitation), <strong>gaps around pipes</strong> where water, gas, or
-        waste pipes pass through external walls,{" "}
-        <strong>the gap under exterior doors</strong> (particularly side doors
-        and garage doors that are often poorly sealed),{" "}
-        <strong>gaps around cables and wiring</strong> where they enter from
-        outside, <strong>garage door seals</strong> that have perished or become
-        damaged, <strong>gaps in brickwork or mortar</strong> on older
-        properties, and <strong>where roof tiles meet the wall</strong> at eaves
-        level. Walk around the outside of your property with a torch and inspect
-        every potential entry point at ground level. Then check inside &mdash;
-        look behind kitchen units, under the bath, around the boiler, and
-        anywhere else that pipes or cables pass through the wall.{" "}
-      </p>{" "}
-      <h3>Steel Wool vs Copper Mesh vs Expanding Foam</h3>{" "}
-      <p>
-        {" "}
-        These three materials are the workhorses of mouse proofing, and each has
-        specific strengths. <strong>Steel wool</strong> is the most affordable
-        and versatile option &mdash; it can be shaped to fit any gap, is easy to
-        cut, and mice cannot chew through it. Use it for interior gaps around
-        pipes and cables. <strong>Copper mesh</strong> offers the same
-        gnaw-proof protection but will not rust, making it the better choice for
-        exterior gaps that are exposed to rain and moisture, such as air bricks,
-        weep holes, and gaps around external pipe entries.{" "}
-        <strong>Expanding foam</strong> fills large voids and sets hard, but it
-        is not fully mouse-proof on its own &mdash; always combine it with steel
-        wool or copper mesh for a gnaw-proof barrier. The professional approach
-        is to use steel wool or copper mesh as the core barrier, with expanding
-        foam or silicone sealant as the finishing layer to hold everything in
-        place and create an airtight seal.{" "}
-      </p>{" "}
-      <h3>The Peppermint Oil Myth</h3>{" "}
-      <p>
-        {" "}
-        We included peppermint oil spray on this list because it is the single
-        most searched-for mouse repellent in the UK, and people deserve an
-        honest assessment. The reality is that there is{" "}
-        <strong>very limited scientific evidence</strong> that peppermint oil
-        effectively repels mice in real-world conditions. Laboratory studies
-        have shown a mild short-term deterrent effect at high concentrations,
-        but the scent dissipates within a day or two, and there is no credible
-        research showing that peppermint oil can prevent mice from entering a
-        property or deter them from an established nesting site. Anecdotal
-        reports of success exist, and some homeowners swear by it &mdash; but
-        anecdote is not evidence, and for every success story there are many
-        more people who tried peppermint oil and still had mice. If you want to
-        use it as one layer in a broader prevention strategy, it will do no
-        harm. But do not rely on it as your primary defence. Physical proofing
-        is what actually works.{" "}
-      </p>{" "}
-      <h3>Inspecting Your Property for Gaps</h3>{" "}
-      <p>
-        {" "}
-        A thorough property inspection is the essential first step before buying
-        any proofing materials. Remember:{" "}
-        <strong>6mm is all a mouse needs</strong> &mdash; the width of a pencil.
-        Carry a pencil with you during your inspection and use it as a measuring
-        tool. If you can push the pencil into a gap, a mouse can get through it.
-        Start outside at ground level and work your way around the entire
-        perimeter of the building. Check every air brick, pipe entry, cable
-        hole, door threshold, and mortar joint. Then move inside and inspect
-        behind kitchen appliances, under the bath, around the boiler, in the
-        airing cupboard, and anywhere else that services pass through walls or
-        floors. Make a list of every gap you find, then work through it
-        systematically with the appropriate proofing material for each
-        location.{" "}
-      </p>{" "}
-      <h3>Seasonal Prevention &mdash; Autumn Is Key</h3>{" "}
-      <p>
-        {" "}
-        Timing matters. The majority of new mouse infestations in UK homes begin
-        between October and December, when falling temperatures drive mice
-        indoors in search of warmth. A property that is fully proofed by the end
-        of September is far less likely to develop a mouse problem than one that
-        is left unsealed over winter. If you are reading this in spring or
-        summer, that is actually the ideal time to carry out proofing work
-        &mdash; you can work in better weather, take your time, and have
-        everything sealed before the autumn migration begins. If you are reading
-        this during an active infestation in winter, proof what you can
-        immediately and use traps to deal with the mice already inside. The
-        combination of proofing and trapping is the fastest route to a
-        mouse-free home.{" "}
-      </p>{" "}
-      <h3>Combining Repellents With Traps as Backup</h3>{" "}
-      <p>
-        {" "}
-        The most effective mouse control strategy uses a layered approach: proof
-        first, then trap as insurance. Start by sealing every entry point you
-        can find using steel wool, copper mesh, expanding foam, draught
-        excluders, and air brick covers. Once the building envelope is sealed,
-        deploy snap traps or humane traps along walls and in known activity
-        areas to catch any mice that were already inside when you sealed up.
-        This two-pronged approach stops new mice from entering while
-        simultaneously removing those already present. Once traps have been in
-        place for two to three weeks without catching anything, you can be
-        reasonably confident the infestation is cleared &mdash; but leave the
-        proofing in place permanently. It is your long-term insurance policy
-        against future invasions.{" "}
-      </p>{" "}
-      {/* FAQ */} <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>What is the best way to stop mice getting into my house?</h3>{" "}
-      <p>
-        {" "}
-        Physical proofing is the most effective method by far. Use steel wool,
-        copper mesh, or expanding foam to seal every gap 6mm or larger around
-        your property. Focus on air bricks, pipe entry points, door bottoms,
-        cable gaps, and garage door seals. A thorough proofing job prevents mice
-        from entering in the first place, which is far more reliable than
-        relying on repellents, sprays, or ultrasonic devices alone.{" "}
-      </p>{" "}
-      <h3>Does peppermint oil repel mice?</h3>{" "}
-      <p>
-        {" "}
-        There is limited scientific evidence that peppermint oil repels mice.
-        Some homeowners report temporary success, and the strong menthol scent
-        may deter mice from specific areas in the short term. However, the
-        effect fades within 24 to 48 hours, and peppermint oil is not a reliable
-        solution for an active infestation. It should never be used as a
-        standalone treatment &mdash; physical proofing with steel wool and
-        copper mesh is far more effective.{" "}
-      </p>{" "}
-      <h3>What gaps should I seal to keep mice out?</h3>{" "}
-      <p>
-        {" "}
-        Seal all gaps 6mm or larger. The most common mouse entry points are air
-        bricks, gaps around pipes where they enter the building, the space under
-        exterior doors, gaps around cables and wiring, garage door seals, cracks
-        in brickwork or deteriorating mortar, and where roof tiles meet the
-        wall. Walk around your entire property with a pencil &mdash; if the
-        pencil fits into a gap, a mouse can fit through it.{" "}
-      </p>{" "}
-      <h3>Is steel wool or copper mesh better for mouse proofing?</h3>{" "}
-      <p>
-        {" "}
-        Both are highly effective &mdash; mice cannot chew through either
-        material. Steel wool is cheaper and widely available, making it
-        excellent value for interior gaps. However, steel wool can rust over
-        time when exposed to persistent moisture. Copper mesh will not rust,
-        holds its shape better, and is the superior choice for exterior gaps
-        exposed to rain and damp. For most homes, use steel wool inside and
-        copper mesh outside. Pack either material tightly into the gap for best
-        results.{" "}
-      </p>{" "}
-      <h3>When should I mouse-proof my house?</h3>{" "}
-      <p>
-        {" "}
-        The ideal time is before autumn. Mice begin seeking warmth indoors from
-        October as temperatures drop, so completing your proofing in September
-        or early October gives you the best chance of preventing an infestation
-        before it starts. Spring and summer are actually the most practical time
-        to do the work &mdash; better weather makes outdoor inspection and
-        sealing much easier. However, proofing is worthwhile at any time of
-        year, including during an active winter infestation.{" "}
-      </p>{" "}
-      <h3>Should I use repellents alongside traps?</h3>{" "}
-      <p>
-        {" "}
-        Yes &mdash; the best approach combines prevention and treatment. Proof
-        your home first by sealing all entry points with steel wool, copper
-        mesh, or expanding foam. Then place snap traps or humane traps as a
-        backup to catch any mice that are already inside the property. Physical
-        proofing stops new mice from getting in, while traps deal with those
-        already present. Repellent sprays such as peppermint oil can be used as
-        an additional layer of deterrence but should not replace physical
-        barriers or trapping.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Mice Still Getting In?"
-          subtext="If DIY proofing hasn't solved the problem, find a BPCA-certified pest controller near you"
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl">
-        {" "}
-        <p className="text-gray-900 font-bold text-lg mb-2">
-          Looking for Traps or Poison Instead?
-        </p>{" "}
-        <p className="text-gray-700 text-sm mb-3">
-          If mice are already inside, you may need traps or rodenticide
-          alongside proofing.
-        </p>{" "}
-        <div className="flex flex-wrap gap-3">
-          {" "}
-          <Link
-            href="/best/mouse-traps"
-            className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            Best Mouse Traps UK 2026 &rarr;
-          </Link>{" "}
-          <Link
-            href="/best/mouse-poison"
-            className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            Best Mouse Poison UK 2026 &rarr;
-          </Link>{" "}
-          <Link
-            href="/best/mouse-bait-stations"
-            className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            Best Mouse Bait Stations UK 2026 &rarr;
-          </Link>{" "}
-        </div>{" "}
-      </div>{" "}
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+        There is no ranking column, because nothing on this page establishes an
+        order.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                What it is
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Form as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Size as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Target species as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Where listed for use
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <FindProviderCTA
+        heading="Mice getting in faster than you can seal gaps?"
+        subtext="Proofing an older building is a long job and not always a DIY one. Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }
