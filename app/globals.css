@@ -143,6 +143,38 @@ body {
     border-top: 1px solid #e5e7eb;
     margin: 2.5rem 0;
   }
+  /* S66 R7 — THE COLLAPSIBLE CONTENTS NAV.
+     <details> is used so the nav collapses to one line and expands on tap with no
+     client JavaScript, because GuideLayout is a server component. At the layout's
+     own desktop breakpoint (lg, 1024px — read off `lg:flex-row` in GuideLayout,
+     not assumed) the summary is hidden and the panel is forced open, so the
+     desktop sidebar renders exactly as it did before this round.
+     The UA rule that hides a closed <details>' non-summary children is
+     user-agent origin, so these author rules win without !important. */
+  details.toc-collapsible > summary {
+    list-style: none;
+  }
+  details.toc-collapsible > summary::-webkit-details-marker {
+    display: none;
+  }
+  details.toc-collapsible[open] > summary .toc-chevron {
+    transform: rotate(180deg);
+  }
+  details.toc-collapsible > summary .toc-chevron {
+    transition: transform 150ms ease;
+  }
+  @media (min-width: 1024px) {
+    details.toc-collapsible > summary {
+      display: none;
+    }
+    details.toc-collapsible > h3 {
+      display: block;
+    }
+    details.toc-collapsible > nav {
+      display: block;
+    }
+  }
+
 }
 
 @layer base {

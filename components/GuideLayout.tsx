@@ -77,55 +77,90 @@ export default function GuideLayout({
 
       {/* Main content with sidebar */}
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="flex flex-col lg:flex-row gap-12">
-          {/* Table of contents — sidebar on desktop */}
-          <aside className="lg:w-64 flex-shrink-0">
-            <div className="lg:sticky lg:top-24">
-              <h3 className="font-bold text-gray-900 mb-3 text-sm uppercase tracking-wider">Contents</h3>
-              <nav className="space-y-1">
-                {tocItems.map((item) => (
-                  <a
-                    key={item.id}
-                    href={`#${item.id}`}
-                    className="block text-sm text-gray-600 hover:text-blue-600 py-1 border-l-2 border-transparent hover:border-blue-600 pl-3 transition-colors"
-                  >
-                    {item.title}
-                  </a>
-                ))}
-              </nav>
+        {/*
+          S66 R7 — MOBILE ORDER. Below lg (1024px) the reader met, before any
+          article content: the subtitle, a cookie notice, a 786px contents nav, a
+          provider CTA and a related-guides list. Measured at S66 R6 on
+          /best/pigeon-spikes at 390x844: h1 at 328px, first article content at
+          1,518px. This container fixes that for all 93 consumers at once.
 
-              {/* Need a Professional? CTA */}
-              <div className="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-100">
-                <h4 className="font-bold text-gray-900 mb-2 text-sm">Need a Professional?</h4>
-                <p className="text-xs text-gray-600 mb-3">Compare pest control providers near you — no fees, no commissions.</p>
-                <Link
-                  href="/pest-control/regions"
-                  className="block text-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
-                >
-                  Find Providers →
-                </Link>
+          THE MECHANISM IS `display: contents` PLUS FLEX `order`, AND IT IS CHOSEN
+          SO THE DESKTOP TREE IS UNCHANGED. On mobile the <aside> and its sticky
+          wrapper are `display: contents`, so their children become direct flex
+          items of this column and can be ordered independently: contents (1),
+          article (2), CTA and related guides (3). At lg both revert to normal
+          boxes and the nesting — aside > sticky wrapper > toc + CTA + related —
+          is exactly what it was, so the desktop sidebar is untouched.
+
+          NOTHING IS DUPLICATED. Every link keeps its href and its text; the
+          anchors move in the DOM and nothing else. A second copy would have been
+          the easy way to do this and would have broken rendered-anchor parity.
+        */}
+        <div className="flex flex-col lg:flex-row gap-12">
+          {/* Table of contents — sidebar on desktop, one tappable line on mobile */}
+          <aside className="contents lg:block lg:w-64 lg:flex-shrink-0">
+            <div className="contents lg:block lg:sticky lg:top-24">
+              <div className="order-1 lg:order-none">
+                {/* <details> is used deliberately: it collapses to one line and
+                    expands on tap with NO client JavaScript, which matters because
+                    GuideLayout is a server component. globals.css forces the panel
+                    open and hides the summary at lg, so desktop is unaffected. */}
+                <details className="toc-collapsible border-b border-gray-200 lg:border-0">
+                  <summary className="flex items-center justify-between cursor-pointer py-3 font-bold text-gray-900 text-sm uppercase tracking-wider lg:hidden">
+                    <span>Contents</span>
+                    <span aria-hidden="true" className="toc-chevron text-gray-400">&#9662;</span>
+                  </summary>
+                  <h3 className="hidden lg:block font-bold text-gray-900 mb-3 text-sm uppercase tracking-wider">Contents</h3>
+                  <nav className="space-y-1 pb-3 lg:pb-0">
+                    {tocItems.map((item) => (
+                      <a
+                        key={item.id}
+                        href={`#${item.id}`}
+                        className="block text-sm text-gray-600 hover:text-blue-600 py-1 border-l-2 border-transparent hover:border-blue-600 pl-3 transition-colors"
+                      >
+                        {item.title}
+                      </a>
+                    ))}
+                  </nav>
+                </details>
               </div>
 
-              {/* Related Guides */}
-              {relatedGuides.length > 0 && (
-                <div className="mt-6">
-                  <h4 className="font-bold text-gray-900 mb-2 text-sm">Related Guides</h4>
-                  <ul className="space-y-1">
-                    {relatedGuides.map((guide) => (
-                      <li key={guide.href}>
-                        <Link href={guide.href} className="text-sm text-blue-600 hover:underline">
-                          {guide.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+              {/* Provider CTA and related guides — sidebar on desktop, BELOW the
+                  article on mobile. order-3 puts them after <main>. */}
+              <div className="order-3 lg:order-none">
+                {/* Need a Professional? CTA */}
+                <div className="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-100">
+                  <h4 className="font-bold text-gray-900 mb-2 text-sm">Need a Professional?</h4>
+                  <p className="text-xs text-gray-600 mb-3">Compare pest control providers near you — no fees, no commissions.</p>
+                  <Link
+                    href="/pest-control/regions"
+                    className="block text-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+                  >
+                    Find Providers →
+                  </Link>
                 </div>
-              )}
+
+                {/* Related Guides */}
+                {relatedGuides.length > 0 && (
+                  <div className="mt-6">
+                    <h4 className="font-bold text-gray-900 mb-2 text-sm">Related Guides</h4>
+                    <ul className="space-y-1">
+                      {relatedGuides.map((guide) => (
+                        <li key={guide.href}>
+                          <Link href={guide.href} className="text-sm text-blue-600 hover:underline">
+                            {guide.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           </aside>
 
           {/* Main article content */}
-          <main className="flex-1 min-w-0">
+          <main className="order-2 lg:order-none flex-1 min-w-0">
             <article className="guide-content">
               {children}
             </article>
