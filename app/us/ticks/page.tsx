@@ -63,7 +63,7 @@ const faqs: Faq[] = [
   {
     question: 'Should I get the tick tested?',
     answer:
-      'Cornell University Integrated Pest Management advises against it and says whose position it is following. It states that though tick testing services are available from some organizations, it follows the CDC recommendation of not having the tick tested for disease diagnosis. The reasons it prints are introduced on its own page with the words From the CDC website, and they are that laboratories conducting tick testing are not required to have the high standards of quality control used by clinical diagnostic laboratories, that results of tick testing should not be used for treatment decisions, that a positive result does not necessarily mean you have been infected, that negative results can lead to false assurance, and that if you do become ill you should not wait for tick testing results before beginning appropriate treatment. This page quotes Cornell, which it can open and verify, and states that Cornell attributes the reasoning to CDC rather than presenting CDC as a source it checked itself.',
+      'Cornell University Integrated Pest Management advises against it and says whose position it is following. It states that though tick testing services are available from some organizations, it follows the CDC recommendation of not having the tick tested for disease diagnosis. The reasons it prints are introduced on its own page with the words From the CDC website, and they are that laboratories conducting tick testing are not required to have the high standards of quality control used by clinical diagnostic laboratories, that results of tick testing should not be used for treatment decisions, that a positive result does not necessarily mean you have been infected, that negative results can lead to false assurance, and that if you do become ill you should not wait for tick testing results before beginning appropriate treatment. This page quotes Cornell directly, and states that Cornell attributes the reasoning to CDC rather than presenting CDC as a source it checked itself.',
   },
   {
     question: 'What should I put on my clothes?',
@@ -562,7 +562,7 @@ export default function TicksPage() {
           appropriate treatment.&rdquo;
         </em>{' '}
         <strong>
-          Those four sentences are quoted from Cornell, which is where this page can verify them.
+          Those four sentences are quoted directly from Cornell&rsquo;s page.
           Cornell says they came from CDC, and that is stated here rather than hidden. This page
           does not cite CDC directly for them, because CDC&rsquo;s pages could not be retrieved.
         </strong>
