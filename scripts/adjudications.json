@@ -29,8 +29,9 @@
     },
     "best/bed-bug-treatments": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "66201f314807"
+      "date": "2026-09-06",
+      "fingerprint": "7bc0c23343ab",
+      "note": "Re-adjudicated by PM ruling at S65 R7. The fingerprint moved because S65 R6 corrected a FALSE PACK SIZE inside an h2 — Spray 1L became Spray 2 x 1L against the authoritative Amazon product-page title. The card ordering did not change: 13 tokens before and after, identical CARD positions, exactly one H2 token differing. The truth of a heading changed, not the arrangement."
     },
     "best/bird-deterrents": {
       "judgement": "correct-as-built",

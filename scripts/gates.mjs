@@ -2832,6 +2832,55 @@ async function main() {
       // effect of running the gate. A seed writes the CURRENT ordering as the
       // adjudicated one, which is only honest when a human has just ruled on it.
       const today = new Date().toISOString().slice(0, 10);
+
+      // ---- SINGLE-ROUTE RE-ADJUDICATION — S65 R7 -------------------------------
+      //
+      // WHY THIS EXISTS. Until S65 R7 the only seed was a BLANKET one: it rewrote
+      // every route's fingerprint AND every route's date, and replaced the whole
+      // `ground` text. When a PM re-adjudicates ONE route — because one heading's
+      // wording changed for a true reason — the blanket seed is the wrong tool
+      // twice over. It would stamp today's date onto 116 routes nobody looked at,
+      // recording a human judgement that was never made. That is the same false
+      // record as writing a guessed `pushed:` date into the GSC queue, and Law 159
+      // and its S62 R1 extension exist because that class of lie is corrosive.
+      //
+      // So a named route updates ONLY its own entry. Every other entry is carried
+      // through untouched — same fingerprint, same date, same note — and the
+      // top-level `seededOn` and `ground` are preserved, because the ground of the
+      // original seeding is still the ground for the 116 routes it covered.
+      //
+      // The per-route `note` records WHY this one was re-adjudicated, so a later
+      // reader can tell a considered re-ruling from a seed run to make a gate go
+      // green. A seed with no reason is exactly what S64 R7 warned about.
+      if (process.argv[3]) {
+        const slug = process.argv[3];
+        const note = process.argv[4] ?? '';
+        const row = rows.find((r) => r.slug === slug);
+        if (!row) {
+          console.log(`\nNO SUCH CARDING ROUTE: ${slug}`);
+          console.log('  Nothing was written. Run --adjudicate to list the routes that exist.');
+          process.exit(1);
+        }
+        const prior = JSON.parse(await readFile(ADJUDICATIONS, 'utf8'));
+        const before = prior.routes[slug] ?? null;
+        const countBefore = Object.keys(prior.routes).length;
+        prior.routes[slug] = {
+          judgement: 'correct-as-built',
+          date: today,
+          fingerprint: row.fingerprint,
+          ...(note ? { note } : {}),
+        };
+        const countAfter = Object.keys(prior.routes).length;
+        await writeFile(ADJUDICATIONS, JSON.stringify(prior, null, 2) + '\n', 'utf8');
+        console.log(`\nRE-ADJUDICATED ONE ROUTE: ${slug}`);
+        console.log(`  fingerprint  ${before ? before.fingerprint : '(none)'} -> ${row.fingerprint}`);
+        console.log(`  date         ${before ? before.date : '(none)'} -> ${today}`);
+        if (note) console.log(`  note         ${note}`);
+        console.log(`  routes in record  ${countBefore} -> ${countAfter}`);
+        console.log('  every other route carried through untouched.');
+        process.exit(0);
+      }
+      // ---- blanket seed, unchanged ------------------------------------------
       const out = {
         seededOn: today,
         ground:
