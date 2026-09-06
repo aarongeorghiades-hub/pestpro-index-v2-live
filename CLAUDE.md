@@ -2319,3 +2319,51 @@ efficacy 22, harm 17, legal 12.
 INVOCATION COVERAGE AFTER THIS ROUND: only `M15` and `M23` are unreached by any
 runner, both `external` scope, both needing a fetched source body no runner can
 manufacture. That is structural and is printed on every `--machinery` run.
+
+## S65 R2 — LAW 182 RATIFIED
+
+Ratified by PM ruling at S65 R2, dated 2026-09-05. The text below is the text of
+the declaration as it was put, VERBATIM AND WITH NO WORDING CHANGE. Only two
+markup characters were dropped — the blockquote marker that made it a quotation
+of something not yet law, and the emphasis on its first line. Word-for-word
+identity against the earlier block was asserted mechanically before this section
+was written, not checked by reading (Law 164's principle applied to our own text).
+
+LAW 182 — A GATE READS THE SERVED BYTES; A COUNT READS THE RENDERED SURFACE.
+A gate asks whether a string is served at all, and a string restated in the RSC
+flight payload is served — narrowing a gate to the rendered surface weakens it.
+A count asks how many times a reader meets the thing, and the flight payload
+answers that question more than once. THE TWO QUESTIONS TAKE TWO SURFACES, AND
+EVERY REPORTED FIGURE NAMES WHICH ONE PRODUCED IT. Where a matcher's own surface
+is the served bytes, the rendered count is derived alongside and printed beside
+it; the two are never reconciled into one number (Law 62).
+
+### WHAT THIS SUPERSEDES, AND WHAT IS DELIBERATELY LEFT STANDING
+
+The block headed `### PROPOSED LAW 182 — NOT RATIFIED, AWAITING A PM RULING`,
+appended at S64 R1 by commit 99394fc and sitting at lines 1679 to 1690 of this
+file, IS SUPERSEDED BY THIS SECTION. Its text is NOT edited and NOT removed. This
+file is APPEND ONLY by its own standing rule, and that rule is not set aside to
+tidy a heading; the earlier block is the record of what was put and when, and this
+section is the record of the ruling on it. A reader arriving at the earlier block
+is directed here. WHERE THE TWO DIFFER IN STATUS, THIS SECTION GOVERNS — the words
+themselves do not differ at all.
+
+THE PROPOSAL STOOD UNRULED FROM S64 R1 THROUGH S64 R7, and was carried as an open
+item by S64 R2, R3, R4, R6 and R7 and again at S65 R1. That is the cost this
+ratification closes.
+
+### THE ENUMERATION CLOSES BY DECLARATION, NOT BY ADJUSTING THE MATCHER
+
+M20 read 186 laws declared, highest 187, with a single gap at 182, because its
+FP-5 guard correctly refuses to count a line announcing PROPOSED or NOT RATIFIED.
+NOTHING IN scripts/gates.mjs WAS CHANGED TO CLOSE THAT GAP, and nothing should
+have been: the gap list is derived at runtime from the laws actually found, and a
+matcher edited to expect a particular answer is the defect Law 178 names. The gap
+closed because the law is now declared. Measured after this append: 187 declared,
+highest 187, zero gaps.
+
+FP-5 IS STILL LOAD-BEARING AND IS NOT WEAKENED BY THIS RATIFICATION. The heading
+of the superseded block still reads PROPOSED and still must not be counted, and
+the synthetic `PROPOSED LAW 999: NOT RATIFIED` negative probe in
+scripts/fixtures.mjs still fires. Both were re-run on this file after the append.
