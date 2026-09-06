@@ -8,12 +8,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Spider Repellent UK: Sprays & Plug-Ins",
     description:
-      "What the evidence shows about spider repellents. Sprays, plug-ins and natural deterrents, each set against the claims made for it.",
+      "What the evidence shows about spider repellents, and five sprays described by what their own listings state rather than by how well they work.",
     alternates: { canonical: "https://pestproindex.com/best/spider-repellent" },
     openGraph: {
       title: "Best Spider Repellent UK: Sprays & Plug-Ins",
       description:
-        "What the evidence shows about spider repellents. Sprays, plug-ins and natural deterrents, each set against the claims made for it.",
+        "What the evidence shows about spider repellents, and five sprays described by what their own listings state rather than by how well they work.",
       url: "https://pestproindex.com/best/spider-repellent",
       type: "article",
       siteName: "PestPro Index",
@@ -25,7 +25,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Spider Repellent UK 2026: Sprays, Traps & Natural Options",
   description:
-    "What the evidence shows about spider repellents. Sprays, plug-ins and natural deterrents, each set against the claims made for it.",
+    "What the evidence shows about spider repellents, and five sprays described by what their own listings state rather than by how well they work.",
   datePublished: "2026-03-31",
   dateModified: "2026-03-31",
   author: {
@@ -121,10 +121,33 @@ const faqSchema = {
     },
   ],
 };
+// S67 R4 — REPELLENT DEFENSIVE SWEEP, PM-ruled on live advertising-standards exposure.
+// DELETION AND RELABELLING ONLY. No card removed, no ASIN changed, no card reordered.
+//
+// S-3 — AWARD LABELS OFF, replaced by a neutral factual descriptor drawn from the
+// product's own banked listing (form, type, size). The SAME string goes on the card, the
+// h2 and the comparison table, so the three surfaces cannot disagree and Law 188 has
+// nothing to adjudicate.
+//     Best Overall       -> Peppermint aerosol, 500ml            (Item form :: Aerosol)
+//     Best Value         -> Peppermint spray, 2 x 500ml          (Number of Items :: 2)
+//     Best Long-Lasting  -> Peppermint and clove spray, 500ml    (clove is in the listing)
+//     Best Barrier Spray -> Unscented spray, 500ml               (Scent :: Unscented)
+//     Best Kill & Repel  -> Residual spray, 500ml                (title: "Residual Action")
+//
+// S-4 — RANK NUMERALS REMOVED. The `rank` field is deleted rather than left unrendered,
+// so no dead ranking data survives, and the "1. " … "5. " prefixes come off h2Label and
+// tocTitle. NOTE THIS ROUTE'S FIELD SEMANTICS ARE INVERTED relative to the pilot:
+// h2Label holds the PRODUCT NAME and h2Name holds the AWARD. Assuming the pilot's layout
+// here would have written a descriptor into the product-name slot.
+//
+// S-2 — FEATURE BULLETS ASSERTING EFFICACY ARE DELETED, not softened. A bullet stating
+// composition, safety, format or pack size stays; one stating that the product repels,
+// stops, protects, kills or lasts-as-protection goes, because it reads as this site's
+// claim rather than the maker's. "Same trusted Zero In formula" went for two reasons —
+// it is an efficacy claim and "trusted" is banned in our own voice.
 type ProductRecord = {
   anchorId: string;
   asin: string;
-  rank: number;
   cardName: string;
   cardLabel: string;
   features: string[];
@@ -138,107 +161,93 @@ const products: ProductRecord[] = [
   {
     anchorId: "zero-in",
     asin: "B00IIOR7NS",
-    rank: 1,
     cardName: "Zero In Spider Repellent Peppermint Oil Spray 500ml",
-    cardLabel: "Best Overall",
+    cardLabel: "Peppermint aerosol, 500ml",
     features: [
       "Established UK spider repellent",
       "Natural peppermint oil formula — non-toxic",
       "Safe around children and pets",
-      "Lasts up to 3 weeks per application",
     ],
     tableCells: [
       "Zero In Spider Repellent Peppermint Oil Spray 500ml",
       "Natural spray",
-      "Best Overall",
+      "Peppermint aerosol, 500ml",
     ],
-    h2Label: "1. Zero In Spider Repellent Peppermint Oil Spray 500ml",
-    h2Name: "Best Overall",
-    tocTitle: "1. Zero In Spider Repellent Peppermint Oil Spray",
+    h2Label: "Zero In Spider Repellent Peppermint Oil Spray 500ml",
+    h2Name: "Peppermint aerosol, 500ml",
+    tocTitle: "Zero In Spider Repellent Peppermint Oil Spray",
   },
   {
     anchorId: "zero-in-twin",
     asin: "B0DBZXWGLG",
-    rank: 2,
     cardName: "Zero In Spider Repellent 500ml Twin Pack",
-    cardLabel: "Best Value",
+    cardLabel: "Peppermint spray, 2 x 500ml",
     features: [
       "Two full 500ml bottles of peppermint repellent",
       "Second bottle on hand for the next reapplication",
-      "Ideal for whole-home autumn treatment",
-      "Same trusted Zero In formula",
     ],
     tableCells: [
       "Zero In Spider Repellent 500ml Twin Pack",
       "Natural spray",
-      "Best Value",
+      "Peppermint spray, 2 x 500ml",
     ],
-    h2Label: "2. Zero In Spider Repellent 500ml Twin Pack",
-    h2Name: "Best Value",
-    tocTitle: "2. Zero In Spider Repellent Twin Pack",
+    h2Label: "Zero In Spider Repellent 500ml Twin Pack",
+    h2Name: "Peppermint spray, 2 x 500ml",
+    tocTitle: "Zero In Spider Repellent Twin Pack",
   },
   {
     anchorId: "acana",
     asin: "B0DFMLDNPT",
-    rank: 3,
     cardName: "Acana Natural Spider Stopper 500ml",
-    cardLabel: "Best Long-Lasting",
+    cardLabel: "Peppermint and clove spray, 500ml",
     features: [
       "Peppermint and clove oil formula",
-      "Lasts up to 12 weeks per application",
       "Non-staining on surfaces",
-      "No dead spiders — just keeps them away",
     ],
     tableCells: [
       "Acana Natural Spider Stopper 500ml",
       "Natural spray",
-      "Best Long-Lasting",
+      "Peppermint and clove spray, 500ml",
     ],
-    h2Label: "3. Acana Natural Spider Stopper 500ml",
-    h2Name: "Best Long-Lasting",
-    tocTitle: "3. Acana Natural Spider Stopper",
+    h2Label: "Acana Natural Spider Stopper 500ml",
+    h2Name: "Peppermint and clove spray, 500ml",
+    tocTitle: "Acana Natural Spider Stopper",
   },
   {
     anchorId: "pestbye",
     asin: "B00FJ4LWWW",
-    rank: 4,
     cardName: "Pestbye Spider Repellent Spray",
-    cardLabel: "Best Barrier Spray",
+    cardLabel: "Unscented spray, 500ml",
     features: [
       "UK-developed natural barrier spray",
-      "Stops cobweb building on treated areas",
-      "Protection lasts up to 4 weeks",
       "From a specialist UK pest control brand",
     ],
     tableCells: [
       "Pestbye Spider Repellent Spray",
       "Natural spray",
-      "Best Barrier Spray",
+      "Unscented spray, 500ml",
     ],
-    h2Label: "4. Pestbye Spider Repellent Spray",
-    h2Name: "Best Barrier Spray",
-    tocTitle: "4. Pestbye Spider Repellent Spray",
+    h2Label: "Pestbye Spider Repellent Spray",
+    h2Name: "Unscented spray, 500ml",
+    tocTitle: "Pestbye Spider Repellent Spray",
   },
   {
     anchorId: "nope",
     asin: "B09FB4QX9H",
-    rank: 5,
     cardName: "NOPE! Spider Killer Spray 500ml",
-    cardLabel: "Best Kill & Repel",
+    cardLabel: "Residual spray, 500ml",
     features: [
-      "Kills spiders on contact",
-      "Odourless, non-staining residual barrier",
+      "Odourless, non-staining residue on treated surfaces",
       "Suitable for indoor and outdoor use",
-      "3-month residual protection",
     ],
     tableCells: [
       "NOPE! Spider Killer Spray 500ml",
       "Contact killer",
-      "Best Kill & Repel",
+      "Residual spray, 500ml",
     ],
-    h2Label: "5. NOPE! Spider Killer Spray 500ml",
-    h2Name: "Best Kill & Repel",
-    tocTitle: "5. NOPE! Spider Killer Spray",
+    h2Label: "NOPE! Spider Killer Spray 500ml",
+    h2Name: "Residual spray, 500ml",
+    tocTitle: "NOPE! Spider Killer Spray",
   },
 ];
 
@@ -252,7 +261,7 @@ export default function BestSpiderRepellentPage() {
   return (
     <GuideLayout
       title="Best Spider Repellent UK 2026: Sprays, Traps & Natural Options"
-      subtitle="Our pick of the most effective spider repellents, sprays and deterrents for UK homes — from chemical barriers to humane catchers and natural remedies"
+      subtitle="Five spider sprays, described by what their listings state, alongside what the evidence for repellents actually shows"
       lastUpdated="March 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -313,28 +322,11 @@ export default function BestSpiderRepellentPage() {
         eating flies, mosquitoes, and other household pests — many people find
         them deeply unsettling. Arachnophobia is one of the most common phobias
         in the UK, and even those who are not afraid of spiders may not want
-        them sharing their living room. The good news is that a range of
-        effective spider repellents, sprays, and deterrents can significantly
-        reduce the number of spiders entering your home.{" "}
+        them sharing their living room.{" "}
       </p>{" "}
       <p>
         {" "}
-        Spider repellents fall into several categories: chemical barrier sprays
-        that kill or deter spiders on contact and leave a residual coating,
-        natural peppermint-based sprays that spiders find unpleasant, humane
-        catcher tools for removing spiders without killing them, and traditional
-        remedies like conkers. The right choice depends on how serious your
-        spider problem is, whether you want to kill or simply deter spiders, and
-        whether you have children or pets in the household.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        We selected these spider repellent products on published specifications
-        and manufacturer information, looking at <strong>
-          effectiveness
-        </strong>, <strong>duration of protection</strong>, and{" "}
-        <strong>safety around children and pets</strong>. Every product listed
-        is available on Amazon UK.{" "}
+        Every product listed is available on Amazon UK.{" "}
       </p>{" "}
       <div className="not-prose">
         {" "}
@@ -356,7 +348,7 @@ export default function BestSpiderRepellentPage() {
           <tr>
             <th>Product</th>
             <th>Type</th>
-            <th>Best For</th>
+            <th>What it is</th>
           </tr>{" "}
         </thead>{" "}
         <tbody>
@@ -386,32 +378,25 @@ export default function BestSpiderRepellentPage() {
           features={products[0].features}
           asin={products[0].asin}
           bestFor={products[0].cardLabel}
-          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
         {" "}
         Zero In is a long-established UK spider repellent. Its natural
         peppermint oil formula is non-toxic and completely safe around children
-        and pets, making it suitable for use in every room of the house. It is a
-        long-standing go-to spider deterrent for UK households.{" "}
+        and pets, making it suitable for use in every room of the house.{" "}
       </p>{" "}
       <p>
         {" "}
         Application is simple: spray generously around windowsills, doorframes,
         skirting boards and loft hatches — anywhere spiders are likely to enter
-        or build webs. The peppermint scent is pleasant for humans but spiders
-        find it deeply unpleasant, encouraging them to stay away from treated
-        areas. Each application lasts up to 3 weeks, so a regular reapplication
-        schedule throughout the autumn spider season keeps your home
-        spider-free.{" "}
+        or build webs.{" "}
       </p>{" "}
       <p>
         {" "}
         For whole-home treatment, combine the spray with physical exclusion
         measures like draught excluders on external doors and mesh covers on air
-        bricks. The spray deters spiders from treated surfaces, while sealing
-        entry points stops them getting inside in the first place.{" "}
+        bricks.{" "}
       </p>{" "}
       <p>
         <strong>Pros:</strong>
@@ -442,26 +427,13 @@ export default function BestSpiderRepellentPage() {
           features={products[1].features}
           asin={products[1].asin}
           bestFor={products[1].cardLabel}
-          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
         {" "}
-        If you know you need to treat your entire home — and most people dealing
-        with autumn spiders do — the Zero In twin pack offers the market-leading
-        peppermint spider repellent. Two full 500ml bottles give you enough
-        product to treat every room thoroughly, including windowsills,
-        doorframes, skirting boards and loft hatches throughout the house.{" "}
-      </p>{" "}
-      <p>
-        {" "}
         The twin pack is particularly well-timed for the autumn spider season
         when spiders are most active. September and October are peak months for
-        large house spiders entering UK homes during mating season, and having
-        two bottles on hand means you can do a comprehensive initial treatment
-        and still have plenty left for the reapplication that will be needed 3
-        weeks later. It is the same trusted Zero In formula — just better
-        value.{" "}
+        large house spiders entering UK homes during mating season,.{" "}
       </p>{" "}
       <p>
         {" "}
@@ -475,8 +447,6 @@ export default function BestSpiderRepellentPage() {
       </p>{" "}
       <ul>
         {" "}
-        <li>Enough for whole-home treatment plus reapplication</li>{" "}
-        <li>Same trusted Zero In peppermint formula</li>{" "}
         <li>Ideal for stocking up before autumn spider season</li>{" "}
       </ul>{" "}
       <p>
@@ -498,47 +468,26 @@ export default function BestSpiderRepellentPage() {
           features={products[2].features}
           asin={products[2].asin}
           bestFor={products[2].cardLabel}
-          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
         {" "}
-        The Acana Natural Spider Stopper stands out from other natural
-        repellents with its significantly longer-lasting protection. While most
-        peppermint sprays need reapplying every 3-4 weeks, Acana's British
-        formula combines peppermint and clove oils to create a barrier that
-        lasts up to 12 weeks — roughly three times longer than the competition.
-        That means a single application in early September can last through the
-        entire autumn spider season.{" "}
-      </p>{" "}
-      <p>
-        {" "}
         The formula is non-staining, so it can be used safely on windowsills,
         door frames, skirting boards and other surfaces without leaving marks.
-        It works by creating a scent barrier that spiders find unpleasant, so
-        there are no dead spiders to deal with — they simply avoid treated areas
-        entirely. This makes it an ideal choice for anyone who wants to deter
-        spiders humanely rather than kill them.{" "}
+       {" "}
       </p>{" "}
       <p>
         {" "}
         Sold directly by Acana, a British brand that specialises in natural pest
-        deterrents, the Spider Stopper represents a well-formulated alternative
-        for those who want long-lasting natural protection without resorting to
-        chemical sprays. For anyone tired of reapplying peppermint spray every
-        few weeks, this is the natural option to try.{" "}
+        deterrents.{" "}
       </p>{" "}
       <p>
         <strong>Pros:</strong>
       </p>{" "}
       <ul>
         {" "}
-        <li>
-          Up to 12 weeks protection — far longer than most natural sprays
-        </li>{" "}
         <li>Dual peppermint and clove oil formula</li>{" "}
         <li>Non-staining on all surfaces</li>{" "}
-        <li>Humane — deters without killing</li>{" "}
       </ul>{" "}
       <p>
         <strong>Cons:</strong>
@@ -561,45 +510,27 @@ export default function BestSpiderRepellentPage() {
           features={products[3].features}
           asin={products[3].asin}
           bestFor={products[3].cardLabel}
-          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
         {" "}
         Pestbye is a UK-based specialist pest control brand with over 10 years
-        of experience, and their spider repellent spray is designed specifically
-        to stop spiders building cobwebs on treated areas. The natural barrier
-        formula works for up to 4 weeks per application, making it a practical
-        choice for ongoing spider prevention in areas where cobwebs are a
-        persistent problem — corners, ceilings, window frames, and behind
-        furniture.{" "}
+        of experience.{" "}
       </p>{" "}
       <p>
         {" "}
         The spray is suitable for indoor use in all rooms, including bedrooms,
         living rooms, kitchens and bathrooms. Unlike some chemical sprays that
         are best limited to exterior use, the Pestbye formula is gentle enough
-        for regular use inside the home. Apply it to areas where you regularly
-        find cobwebs or where spiders tend to congregate, and the barrier
-        discourages them from setting up residence.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        For those who find cobwebs as annoying as the spiders themselves, this
-        product tackles both problems at once. By preventing spiders from
-        building webs on treated surfaces, it reduces both the visible signs of
-        spider activity and the spider population in those areas. Reapply every
-        4 weeks for continuous protection through the autumn months.{" "}
+        for regular use inside the home.{" "}
       </p>{" "}
       <p>
         <strong>Pros:</strong>
       </p>{" "}
       <ul>
         {" "}
-        <li>Specifically prevents cobweb building on treated surfaces</li>{" "}
         <li>UK-developed by a specialist pest control brand</li>{" "}
         <li>Suitable for indoor use in all rooms</li>{" "}
-        <li>4-week protection per application</li>{" "}
       </ul>{" "}
       <p>
         <strong>Cons:</strong>
@@ -620,45 +551,19 @@ export default function BestSpiderRepellentPage() {
           features={products[4].features}
           asin={products[4].asin}
           bestFor={products[4].cardLabel}
-          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>
         {" "}
-        For anyone who wants a product that both kills spiders on contact and
-        prevents them from returning, the NOPE! Spider Killer Spray delivers on
-        both fronts. It works as a contact killer — spray it directly on a
-        spider and it dies quickly — but also leaves an odourless, non-staining
-        residue on treated surfaces that deters spiders from re-entering the
-        area for up to 3 months.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The dual-action formula makes it the most versatile product on our list.
-        Use it reactively when you spot a spider, and proactively by spraying
-        along entry points, windowsills, doorframes and skirting boards to
-        create a lasting barrier. The 3-month residual protection means far
-        fewer reapplications compared to natural peppermint sprays, and the
-        odourless, non-staining formula means it can be used throughout the home
-        without leaving marks or unpleasant smells.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        NOPE! is suitable for both indoor and outdoor use, making it effective
-        for treating exterior entry points as well as interior problem areas.
-        For those who want the reassurance of a product that kills spiders
-        rather than simply deterring them, combined with long-lasting residual
-        protection, this is the strongest option on our list.{" "}
+        NOPE! is suitable for both indoor and outdoor use.{" "}
       </p>{" "}
       <p>
         <strong>Pros:</strong>
       </p>{" "}
       <ul>
         {" "}
-        <li>Kills on contact plus 3-month residual protection</li>{" "}
         <li>Odourless and non-staining</li>{" "}
         <li>Suitable for indoor and outdoor use</li>{" "}
-        <li>Fewer reapplications needed than natural sprays</li>{" "}
       </ul>{" "}
       <p>
         <strong>Cons:</strong>
@@ -692,16 +597,10 @@ export default function BestSpiderRepellentPage() {
       <h3>Chemical Sprays vs Natural Deterrents</h3>{" "}
       <p>
         {" "}
-        Chemical sprays like Pest Expert Formula C and Miss Muffet&apos;s
-        Revenge contain active ingredients that kill spiders on contact and
-        leave a residual barrier. They are the most effective option for serious
-        spider problems and offer the longest-lasting protection. However, they
-        require caution around children and pets, and some people prefer to
-        avoid chemical products in their home. Natural deterrents like
-        peppermint sprays and conkers are safer and gentler, but their
-        effectiveness is less well-established. For most households, a
-        combination approach works best: chemical spray around the exterior
-        perimeter and entry points, natural deterrents inside.{" "}
+        Chemical sprays require caution around children and pets, and some
+        people prefer to avoid chemical products in their home. Natural
+        deterrents like peppermint sprays and conkers are safer and gentler, but
+        their effectiveness is less well-established.{" "}
       </p>{" "}
       <h3>Does Peppermint Oil Actually Work?</h3>{" "}
       <p>
@@ -711,9 +610,7 @@ export default function BestSpiderRepellentPage() {
         essential oils, including peppermint, showed some repellent activity
         against spiders in laboratory conditions. However, real-world
         effectiveness in a draughty UK home is likely to be lower than in a
-        controlled lab setting. Peppermint oil is certainly better than nothing
-        — it smells pleasant, is completely safe, and may provide some deterrent
-        effect. But it should be part of a broader strategy, not your only line
+        controlled lab setting. It should be part of a broader strategy, not your only line
         of defence.{" "}
       </p>{" "}
       <h3>Sealing Entry Points</h3>{" "}
@@ -735,9 +632,8 @@ export default function BestSpiderRepellentPage() {
         September is the peak month for spiders in UK homes. This is mating
         season for the giant house spider — males abandon their webs and wander
         in search of females, often ending up indoors in the process. To prepare
-        for the autumn influx, apply spider repellent sprays around your
-        home&apos;s exterior in late August, seal any gaps you have identified
-        during the summer, and reduce clutter in garages, sheds, and spare rooms
+        for the autumn influx, seal any gaps you have identified during the
+        summer, and reduce clutter in garages, sheds, and spare rooms
         where spiders like to hide. By the time October arrives, the mating
         season subsides and spider sightings drop significantly.{" "}
       </p>{" "}
