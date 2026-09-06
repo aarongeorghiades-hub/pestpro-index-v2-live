@@ -1,5 +1,6 @@
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Footer from '@/components/Footer';
+import { awaabBannerRoutes } from '@/lib/awaabBannerRoutes';
 
 // THE UK ESTATE'S CHROME, AND NOTHING ELSE.
 //
@@ -15,10 +16,16 @@ import Footer from '@/components/Footer';
 // into this group. Moving the file with them keeps every import valid without
 // editing a single byte of it. Its URL is still /sitemap.xml. app/robots.txt
 // stayed at the app root, because it is site-global and imports nothing.
+// S66 R7 — THE BANNER IS SCOPED, AND THE SET CROSSES THE SERVER/CLIENT SEAM AS A
+// PROP. Deciding whether to show it needs the PATHNAME, which only a client
+// component can read; deriving the set needs the filesystem and the blog data,
+// which only the server can read. Neither can do both, so the set is measured
+// here and handed over — the same seam and the same remedy as the footer
+// earnings statement at S64 R2/R3.
 export default function UkLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <AnnouncementBar />
+      <AnnouncementBar routes={awaabBannerRoutes()} />
       {children}
       <Footer />
     </>

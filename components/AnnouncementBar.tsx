@@ -1,11 +1,27 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
-export default function AnnouncementBar() {
+// S66 R7 — SCOPED BY ROUTE. This banner used to render on 177 of 179 UK
+// documents. It is a landlord damp-and-mould notice, and on /best/mole-traps it
+// is a claim made to a reader who is not its audience (Law 130 — shared chrome is
+// a page-level claim on every route it renders on).
+//
+// `routes` IS DERIVED AT BUILD TIME from rendered titles by
+// lib/awaabBannerRoutes.ts and passed in by app/(uk)/layout.tsx. It is NEVER a
+// list maintained here: a hand-kept route list is the exact mechanism that failed
+// twice on the footer disclosure before S64 R2/R3 replaced it with a measurement
+// (Law 183).
+export default function AnnouncementBar({ routes }: { routes: string[] }) {
   const [dismissed, setDismissed] = useState(false);
+  const pathname = usePathname();
 
+  // Out of scope for this route: render nothing, on the server as well as the
+  // client, so the banner is absent from the SERVED HTML rather than hidden after
+  // hydration. A CSS or post-hydration hide would leave the claim in the bytes.
+  if (!routes.includes(pathname)) return null;
   if (dismissed) return null;
 
   return (
