@@ -8,14 +8,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Squirrel Deterrents UK 2026: Top 5",
     description:
-      "Our pick of the best squirrel deterrents for UK homes and gardens. From repellent sprays to squirrel-proof bird feeders and humane traps.",
+      "Squirrel deterrents for UK gardens: feeder, baffle, two sprays and a cage trap, each described by what its own listing states.",
     alternates: {
       canonical: "https://pestproindex.com/best/squirrel-deterrents",
     },
     openGraph: {
       title: "Best Squirrel Deterrents UK 2026: Top 5",
       description:
-        "Our pick of the best squirrel deterrents for UK homes and gardens. From repellent sprays to squirrel-proof bird feeders and humane traps.",
+        "Squirrel deterrents for UK gardens: feeder, baffle, two sprays and a cage trap, each described by what its own listing states.",
       url: "https://pestproindex.com/best/squirrel-deterrents",
       type: "article",
       siteName: "PestPro Index",
@@ -27,7 +27,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Squirrel Deterrents UK 2026: Top 5",
   description:
-    "Our pick of the best squirrel deterrents for UK homes and gardens. From repellent sprays to squirrel-proof bird feeders and humane traps.",
+    "Squirrel deterrents for UK gardens: feeder, baffle, two sprays and a cage trap, each described by what its own listing states.",
   datePublished: "2026-03-17",
   dateModified: "2026-03-17",
   author: {
@@ -72,7 +72,6 @@ const breadcrumbSchema = {
 type ProductRecord = {
   anchorId: string;
   asin: string;
-  rank: number;
   cardName: string;
   cardLabel: string;
   features: string[];
@@ -87,31 +86,28 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
     asin: "B00BXLF3WU",
-    rank: 1,
     cardName: "Jacobi Jayne Squirrel Buster Bird Feeder",
-    cardLabel: "Best Overall",
+    cardLabel: "Metal hanging feeder",
     features: [
       "Weight-activated closing mechanism",
       "All-metal construction",
       "5-year manufacturer warranty",
-      "Also deters pigeons",
     ],
     tableCells: [
       "Jacobi Jayne Squirrel Buster Bird Feeder",
       "Squirrel-proof feeder",
-      "Best Overall",
+      "Metal hanging feeder",
     ],
-    h2Label: "Best Overall",
+    h2Label: "Metal hanging feeder",
     h2Name: "Jacobi Jayne Squirrel Buster Bird Feeder",
-    tocLabel: "Best Overall",
+    tocLabel: "Metal hanging feeder",
     tocName: "Jacobi Jayne Squirrel Buster",
   },
   {
     anchorId: "best-spray",
     asin: "B08DDCJJ1N",
-    rank: 2,
     cardName: "RepellShield Squirrel Repellent Spray 250ml",
-    cardLabel: "Best Repellent Spray",
+    cardLabel: "Essential oil spray, 250ml",
     features: [
       "Natural essential oils",
       "Safe around pets and children",
@@ -121,19 +117,18 @@ const products: ProductRecord[] = [
     tableCells: [
       "RepellShield Squirrel Repellent Spray 250ml",
       "Repellent spray",
-      "Best Repellent Spray",
+      "Essential oil spray, 250ml",
     ],
-    h2Label: "Best Repellent Spray",
+    h2Label: "Essential oil spray, 250ml",
     h2Name: "RepellShield Squirrel Repellent Spray",
-    tocLabel: "Best Repellent Spray",
+    tocLabel: "Essential oil spray, 250ml",
     tocName: "RepellShield",
   },
   {
     anchorId: "best-baffle",
     asin: "B07KQJM334",
-    rank: 3,
     cardName: "Selections Squirrel Proof Bird Feeder Baffle (Pack of 2)",
-    cardLabel: "Best Baffle",
+    cardLabel: "Clear plastic baffle, 2 pack",
     features: [
       "40cm smooth dome design",
       "Fits feeding station poles",
@@ -143,41 +138,38 @@ const products: ProductRecord[] = [
     tableCells: [
       "Selections Squirrel Proof Bird Feeder Baffle (Pack of 2)",
       "Pole baffle",
-      "Best Baffle",
+      "Clear plastic baffle, 2 pack",
     ],
-    h2Label: "Best Baffle",
+    h2Label: "Clear plastic baffle, 2 pack",
     h2Name: "Selections Squirrel Proof Baffle (Pack of 2)",
-    tocLabel: "Best Baffle",
+    tocLabel: "Clear plastic baffle, 2 pack",
     tocName: "Selections Squirrel Proof Baffle",
   },
   {
     anchorId: "best-food-treatment",
     asin: "B007EAH6K6",
-    rank: 4,
     cardName: "The Big Cheese Hot Nuts Deterrent Spray 1L",
-    cardLabel: "Best Bird Food Treatment",
+    cardLabel: "Capsicum spray, 1 litre",
     features: [
       "1 litre ready-to-use",
       "Natural capsicum chilli formula",
-      "Harmless to birds — they cannot taste capsaicin",
       "Well-known UK pest brand",
     ],
     tableCells: [
       "The Big Cheese Hot Nuts Deterrent Spray 1L",
       "Bird food treatment",
-      "Best Bird Food Treatment",
+      "Capsicum spray, 1 litre",
     ],
-    h2Label: "Best Bird Food Treatment",
+    h2Label: "Capsicum spray, 1 litre",
     h2Name: "The Big Cheese Hot Nuts Deterrent Spray",
-    tocLabel: "Best Bird Food Treatment",
+    tocLabel: "Capsicum spray, 1 litre",
     tocName: "The Big Cheese Hot Nuts",
   },
   {
     anchorId: "best-trap",
     asin: "B082J2YLDY",
-    rank: 5,
     cardName: "Kabalo Humane Squirrel Cage Trap",
-    cardLabel: "Best Humane Trap",
+    cardLabel: "Metal cage trap, single",
     features: [
       "Heavy-duty metal construction",
       "Spring-loaded door mechanism",
@@ -187,11 +179,11 @@ const products: ProductRecord[] = [
     tableCells: [
       "Kabalo Humane Squirrel Cage Trap",
       "Humane cage trap",
-      "Best Humane Trap",
+      "Metal cage trap, single",
     ],
-    h2Label: "Best Humane Trap",
+    h2Label: "Metal cage trap, single",
     h2Name: "Kabalo Humane Squirrel Cage Trap",
-    tocLabel: "Best Humane Trap",
+    tocLabel: "Metal cage trap, single",
     tocName: "Kabalo Cage Trap",
   },
 ];
@@ -394,7 +386,7 @@ export default function BestSquirrelDeterrentsPage() {
           {" "}
           <tr>
             {" "}
-            <th>Product</th> <th>Category</th> <th>Best For</th>{" "}
+            <th>Product</th> <th>Category</th> <th>What it is</th>{" "}
           </tr>{" "}
         </thead>{" "}
         <tbody>
@@ -418,7 +410,6 @@ export default function BestSquirrelDeterrentsPage() {
           features={products[0].features}
           asin={products[0].asin}
           bestFor={products[0].cardLabel}
-          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -435,8 +426,7 @@ export default function BestSquirrelDeterrentsPage() {
         a grey squirrel &mdash; which typically weighs between 400g and 600g
         &mdash; immediately triggers the closure the moment it attempts to cling
         to the feeder. There are no batteries, no electronics, and nothing to go
-        wrong. The mechanism is purely mechanical and it works every single
-        time.{" "}
+        wrong.{" "}
       </p>{" "}
       <p>
         {" "}
@@ -451,11 +441,7 @@ export default function BestSquirrelDeterrentsPage() {
         The Squirrel Buster&apos;s all-metal ports and robust construction have
         been specifically engineered to resist squirrel damage, and the product
         comes with an impressive five-year manufacturer&apos;s warranty that
-        speaks to Jacobi Jayne&apos;s confidence in its durability. The feeder
-        also has the added benefit of deterring pigeons and other large birds
-        that would otherwise monopolise feeding stations, ensuring that your
-        bird food reaches the small garden birds it is intended for. It is
-        easily disassembled for cleaning, and replacement parts are readily
+        speaks to Jacobi Jayne&apos;s confidence in its durability. It is easily disassembled for cleaning, and replacement parts are readily
         available should any component eventually wear out after years of
         use.{" "}
       </p>{" "}
@@ -476,7 +462,6 @@ export default function BestSquirrelDeterrentsPage() {
           Five-year manufacturer&apos;s warranty demonstrates exceptional build
           quality
         </li>{" "}
-        <li>Also deters pigeons and large birds from monopolising bird food</li>{" "}
         <li>
           Easy to disassemble for cleaning with readily available replacement
           parts
@@ -507,12 +492,8 @@ export default function BestSquirrelDeterrentsPage() {
       </ul>{" "}
       <p>
         {" "}
-        <strong>Verdict:</strong> The Jacobi Jayne Squirrel Buster is the gold
-        standard of squirrel-proof bird feeders in the UK. Its mechanical
-        simplicity, robust metal construction, and five-year warranty make it a
-        product you buy once and rely on for years. If your primary squirrel
-        problem is raided bird feeders and wasted bird food, this is the
-        solution that actually works.{" "}
+        <strong>Verdict:</strong> A hanging metal and resin feeder, listed in
+        green, supplied as a single unit.{" "}
       </p>{" "}
       {/* Best Repellent Spray */}{" "}
       <h2 id={products[1].anchorId}>
@@ -525,7 +506,6 @@ export default function BestSquirrelDeterrentsPage() {
           features={products[1].features}
           asin={products[1].asin}
           bestFor={products[1].cardLabel}
-          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -548,10 +528,8 @@ export default function BestSquirrelDeterrentsPage() {
         {" "}
         The 250ml bottle is a ready-to-use spray that requires no dilution
         &mdash; simply point and spray directly onto the surfaces you wish to
-        protect. It works best on porous surfaces such as wood, brick, and
-        fabric, where the essential oils are absorbed and released gradually
-        over time. On smooth, non-porous surfaces such as metal or plastic, the
-        spray will still provide deterrence but will need to be reapplied more
+        protect. On smooth, non-porous surfaces such as metal or plastic, the
+        spray will need to be reapplied more
         frequently as it evaporates faster. One bottle is typically sufficient
         to treat multiple areas around a medium-sized garden, though regular
         reapplication is necessary &mdash; particularly after rainfall, which
@@ -608,13 +586,8 @@ export default function BestSquirrelDeterrentsPage() {
       </ul>{" "}
       <p>
         {" "}
-        <strong>Verdict:</strong> RepellShield is the best repellent spray
-        option for gardeners who want a natural, chemical-free way to discourage
-        squirrels from specific areas. It works well as part of a layered
-        deterrence strategy &mdash; combine it with a squirrel-proof feeder and
-        a baffle for comprehensive protection. On its own, it is effective for
-        light to moderate squirrel activity, but persistent squirrels may
-        require a physical deterrent as well.{" "}
+        <strong>Verdict:</strong> An essential oil spray, listed at 250ml as a
+        pack of one.{" "}
       </p>{" "}
       {/* Best Baffle */}{" "}
       <h2 id={products[2].anchorId}>
@@ -627,19 +600,14 @@ export default function BestSquirrelDeterrentsPage() {
           features={products[2].features}
           asin={products[2].asin}
           bestFor={products[2].cardLabel}
-          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
         {" "}
-        If you already own bird feeders that you are happy with and do not want
-        to replace them with squirrel-proof models, a baffle is an excellent and
-        cost-effective alternative. The Selections Squirrel Proof Baffle is a
-        smooth, dome-shaped shield that mounts on a feeding station pole{" "}
-        <strong>below</strong> the feeder, creating a physical barrier that
-        prevents squirrels from climbing up the pole to reach the food above.
-        The design is disarmingly simple: the 40cm-diameter dome is made from
-        smooth, slippery material that squirrels cannot grip or climb over. When
+        The Selections Squirrel Proof Baffle is a smooth, dome-shaped shield
+        that mounts on a feeding station pole{" "}
+        <strong>below</strong> the feeder. The 40cm-diameter dome is made from
+        smooth, slippery material. When
         a squirrel climbs the pole and reaches the baffle, it encounters the
         underside of the dome and cannot get past it &mdash; there are no edges
         to grip, no texture to cling to, and the dome is too wide to reach
@@ -648,9 +616,7 @@ export default function BestSquirrelDeterrentsPage() {
       </p>{" "}
       <p>
         {" "}
-        This pack of two baffles represents outstanding value, as it allows you
-        to protect two separate feeding station poles simultaneously. The
-        baffles are designed to fit standard feeding station poles with a
+        The baffles are designed to fit standard feeding station poles with a
         diameter of approximately 16mm to 25mm, which covers the vast majority
         of garden feeding stations sold in the UK. Installation is
         straightforward &mdash; simply loosen the fixing clamp, slide the baffle
@@ -673,10 +639,6 @@ export default function BestSquirrelDeterrentsPage() {
       </p>{" "}
       <ul>
         {" "}
-        <li>
-          Pack of two provides excellent value &mdash; protect two feeding
-          stations at once
-        </li>{" "}
         <li>40cm smooth dome is impossible for squirrels to climb or grip</li>{" "}
         <li>
           No need to replace existing bird feeders &mdash; simply add the baffle
@@ -711,24 +673,16 @@ export default function BestSquirrelDeterrentsPage() {
       </ul>{" "}
       <p>
         {" "}
-        <strong>Verdict:</strong> The Selections Squirrel Proof Baffle is the
-        most cost-effective solution for protecting existing bird feeders from
-        climbing squirrels. A pack of two provides a genuinely effective
-        physical barrier. Just remember to position your feeding station well
-        away from trees, fences, and walls to prevent squirrels from bypassing
-        the baffle entirely with a horizontal leap.{" "}
+        <strong>Verdict:</strong> A clear plastic baffle, listed as a pack of two.
+        Position the feeding station well away from trees, fences and walls.{" "}
       </p>{" "}
       <div className="not-prose">
         {" "}
         <Callout type="tip">
           {" "}
           <p>
-            For maximum protection, combine a squirrel-proof feeder like the
-            Jacobi Jayne Squirrel Buster with a pole baffle. The baffle prevents
-            climbing access from below, while the feeder&apos;s weight-activated
-            mechanism defeats any squirrel that manages to leap onto the feeder
-            from a nearby surface. This layered approach covers both attack
-            vectors and gives squirrels virtually no route to your bird food.
+            A pole baffle and a weight-activated feeder cover two different
+            approach routes: up the pole, and a leap from a nearby surface.
           </p>{" "}
         </Callout>{" "}
       </div>{" "}
@@ -743,7 +697,6 @@ export default function BestSquirrelDeterrentsPage() {
           features={products[3].features}
           asin={products[3].asin}
           bestFor={products[3].cardLabel}
-          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -772,8 +725,7 @@ export default function BestSquirrelDeterrentsPage() {
         of the feeder itself. Reapply every few days or after rainfall for
         continued effectiveness. The natural capsicum formula is non-toxic and
         food-safe, containing no synthetic pesticides or harmful chemicals. It
-        is worth noting that while the spray is very effective at deterring
-        casual squirrel feeding, extremely persistent or hungry squirrels may
+        is worth noting that extremely persistent or hungry squirrels may
         eventually learn to tolerate the heat &mdash; capsaicin tolerance can
         develop with repeated exposure, just as it does in humans who regularly
         eat spicy food. For this reason, we recommend using Hot Nuts as part of
@@ -790,10 +742,7 @@ export default function BestSquirrelDeterrentsPage() {
           Exploits a genuine biological difference &mdash; mammals taste
           capsaicin, birds do not
         </li>{" "}
-        <li>
-          Generous one-litre bottle offers excellent value and long-lasting
-          supply
-        </li>{" "}
+        <li>One-litre bottle, ready to use</li>{" "}
         <li>
           Completely natural, non-toxic, and safe for all garden bird species
         </li>{" "}
@@ -821,11 +770,8 @@ export default function BestSquirrelDeterrentsPage() {
       </ul>{" "}
       <p>
         {" "}
-        <strong>Verdict:</strong> The Big Cheese Hot Nuts is a budget-friendly
-        and scientifically sound deterrent that works well for casual squirrel
-        feeding at bird stations. Supplied as a full litre, it is a worthwhile
-        first line of defence. Combine it with a physical deterrent such as a
-        baffle or squirrel-proof feeder for best results.{" "}
+        <strong>Verdict:</strong> A ready-to-use spray listed at one litre,
+        containing capsicum chilli.{" "}
       </p>{" "}
       {/* Best Humane Trap */}{" "}
       <h2 id={products[4].anchorId}>
@@ -838,7 +784,6 @@ export default function BestSquirrelDeterrentsPage() {
           features={products[4].features}
           asin={products[4].asin}
           bestFor={products[4].cardLabel}
-          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -931,15 +876,11 @@ export default function BestSquirrelDeterrentsPage() {
       </ul>{" "}
       <p>
         {" "}
-        <strong>Verdict:</strong> The Kabalo Cage Trap is the right tool for
-        situations where a grey squirrel has already gained access to your
-        property and needs to be physically removed. It is well-built,
-        effective, and reusable. However, trapping should always be accompanied
-        by thorough proofing of entry points &mdash; otherwise you will simply
-        catch an endless succession of new squirrels moving into the vacated
-        territory. If you are uncomfortable with the legal requirement to
-        dispatch captured grey squirrels, call a professional pest controller
-        who will handle the process humanely and lawfully.{" "}
+        <strong>Verdict:</strong> A metal live-catch cage trap, listed in silver as
+        a single unit. Trapping should always be accompanied by thorough
+        proofing of entry points. If you are uncomfortable with the legal
+        requirement to dispatch captured grey squirrels, call a professional
+        pest controller who will handle the process humanely and lawfully.{" "}
       </p>{" "}
       {/* Buying Guide */}{" "}
       <h2 id="buying-guide">Squirrel Deterrent Buying Guide</h2>{" "}
@@ -972,10 +913,8 @@ export default function BestSquirrelDeterrentsPage() {
       <p>
         {" "}
         Most of the products in this guide are designed for outdoor garden use.
-        The Jacobi Jayne feeder, Selections baffle, Hot Nuts spray, and
-        RepellShield spray are all outdoor products intended to protect garden
-        bird feeding stations and deter squirrels from specific areas of your
-        garden. The Kabalo cage trap can be used both outdoors and in enclosed
+        The Jacobi Jayne feeder, Selections baffle, Hot Nuts spray and
+        RepellShield spray are all outdoor products. The Kabalo cage trap can be used both outdoors and in enclosed
         spaces such as loft cavities, garages, and outbuildings. If you have
         squirrels inside your loft, the RepellShield spray can be applied to
         entry points and surrounding woodwork to discourage re-entry, but it
@@ -1012,8 +951,7 @@ export default function BestSquirrelDeterrentsPage() {
       <h3>Why Professional Help May Be Better for Loft Infestations</h3>{" "}
       <p>
         {" "}
-        While the products on this page are effective for garden-level squirrel
-        problems, loft infestations are a different matter entirely. A squirrel
+        Loft infestations are a different matter entirely. A squirrel
         that has gained access to your roof space can cause thousands of pounds
         worth of damage in a matter of weeks &mdash; gnawing through electrical
         cables, shredding loft insulation for nesting material, chewing through

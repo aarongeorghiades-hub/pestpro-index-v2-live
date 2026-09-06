@@ -36,8 +36,9 @@
     },
     "best/bird-deterrents": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "467740f3a102"
+      "date": "2026-09-06",
+      "fingerprint": "a1bcbe0e2e1f",
+      "note": "S67 R5 repellent sweep completion, PM-ruled; cat-deterrents card removed, other sequences unchanged"
     },
     "best/carpet-beetle-treatments": {
       "judgement": "correct-as-built",
@@ -47,8 +48,8 @@
     "best/cat-deterrents": {
       "judgement": "correct-as-built",
       "date": "2026-09-06",
-      "fingerprint": "10fa4b176648",
-      "note": "S67 R4 repellent sweep, PM-ruled on live claim exposure, card sequence unchanged"
+      "fingerprint": "da49bba996f3",
+      "note": "S67 R5 repellent sweep completion, PM-ruled; cat-deterrents card removed, other sequences unchanged"
     },
     "best/cockroach-gel-bait": {
       "judgement": "correct-as-built",
@@ -117,8 +118,9 @@
     },
     "best/fox-deterrents": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "0cc42d43cd21"
+      "date": "2026-09-06",
+      "fingerprint": "9721d426da7b",
+      "note": "S67 R5 repellent sweep completion, PM-ruled; cat-deterrents card removed, other sequences unchanged"
     },
     "best/mole-traps": {
       "judgement": "correct-as-built",
@@ -238,8 +240,9 @@
     },
     "best/squirrel-deterrents": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "a0e4b9a3ea2e"
+      "date": "2026-09-06",
+      "fingerprint": "3f7454d98007",
+      "note": "S67 R5 repellent sweep completion, PM-ruled; cat-deterrents card removed, other sequences unchanged"
     },
     "best/ultrasonic-pest-repellers": {
       "judgement": "correct-as-built",

@@ -8,12 +8,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Cat Deterrents UK 2026 — Ultrasonic & Scent",
     description:
-      "Cat deterrents for UK gardens: motion-activated sprinklers, ultrasonic repellers, scent products and prickle strips, described by their own listings.",
+      "Cat deterrents for UK gardens: ultrasonic repellers, scent crystals, lion manure pellets and prickle strips, described by their own listings.",
     alternates: { canonical: "https://pestproindex.com/best/cat-deterrents" },
     openGraph: {
       title: "Best Cat Deterrents UK 2026 — Ultrasonic & Scent",
       description:
-        "Cat deterrents for UK gardens: motion-activated sprinklers, ultrasonic repellers, scent products and prickle strips, described by their own listings.",
+        "Cat deterrents for UK gardens: ultrasonic repellers, scent crystals, lion manure pellets and prickle strips, described by their own listings.",
       url: "https://pestproindex.com/best/cat-deterrents",
       type: "article",
       siteName: "PestPro Index",
@@ -25,7 +25,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Cat Deterrents UK 2026 — Ultrasonic & Scent",
   description:
-    "Cat deterrents for UK gardens: motion-activated sprinklers, ultrasonic repellers, scent products and prickle strips, described by their own listings.",
+    "Cat deterrents for UK gardens: ultrasonic repellers, scent crystals, lion manure pellets and prickle strips, described by their own listings.",
   datePublished: "2026-06-23",
   dateModified: "2026-06-23",
   author: {
@@ -73,42 +73,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is the most effective cat deterrent for a garden?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Motion-activated water sprinklers like the PestBye Jet Spray are the most effective single deterrent for open gardens, because cats find sudden water very hard to habituate to. Combine with scent on borders and an ultrasonic unit at the entry point for the best results.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do ultrasonic cat repellers actually work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes for many cats — UK garden trials referenced by the RSPB and RHS found ultrasonic devices reduce cat visits for most households, though effectiveness varies between individual cats and some habituate. Position them at the entry point and pair with another deterrent.",
-      },
-    },
-    {
-      "@type": "Question",
       name: "Is it legal to deter cats from my garden in the UK?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Yes. Humane deterrents — sprinklers, ultrasonic devices, scent repellents and prickle strips — are entirely legal. Trapping, poisoning or harming a cat is an offence under the Animal Welfare Act 2006.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I stop cats fouling in my flower beds?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Make the soil uncomfortable with prickle strips, sharp gravel or dense mulch, apply a scent deterrent along the border, and keep beds moist and densely planted. A motion sprinkler aimed at the spot usually breaks the habit within a couple of weeks.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do scent deterrents like lion manure and repellent crystals work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes — repellent crystals and lion-manure pellets such as Silent Roar both topped UK consumer trials. They work best on borders and beds, are non-toxic to plants and pets when used as directed, and need reapplying after rain. Use them alongside a water or physical deterrent.",
       },
     },
   ],
@@ -127,26 +95,6 @@ type ProductRecord = {
 };
 
 const products: ProductRecord[] = [
-  {
-    anchorId: "best-sprinkler",
-    asin: "B0153BJ7NQ",
-    cardName: "PestBye Jet Spray Motion-Activated Sprinkler",
-    cardLabel: "Motion sprinkler, hose-fed",
-    features: [
-      "120-degree detection arc, covers up to 100 sqm",
-      "Connects to a standard garden hose",
-      "Battery-powered PIR sensor — works day and night",
-    ],
-    tableCells: [
-      "PestBye Jet Spray Sprinkler",
-      "Motion water deterrent",
-      "Lawns, paths, open gardens",
-    ],
-    h2Label: "Motion sprinkler, hose-fed",
-    h2Name: "PestBye Jet Spray Motion-Activated Sprinkler",
-    tocLabel: "Motion sprinkler, hose-fed",
-    tocName: "PestBye Jet Spray Sprinkler",
-  },
   {
     anchorId: "best-ultrasonic",
     asin: "B075XN4NNB",
@@ -395,7 +343,7 @@ export default function BestCatDeterrentsPage() {
           ))}
         </tbody>{" "}
       </table>{" "}
-      {/* Best Overall — Sprinkler (HERO) */}{" "}
+      {/* Best Ultrasonic */}{" "}
       <h2 id={products[0].anchorId}>
         {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
@@ -406,66 +354,6 @@ export default function BestCatDeterrentsPage() {
           features={products[0].features}
           asin={products[0].asin}
           bestFor={products[0].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Jet Spray connects to a standard garden hose and
-        uses a battery-powered PIR motion sensor to detect an approaching cat.
-        When triggered, it fires a sharp burst of water in the direction of the
-        movement, accompanied by a startling clicking sound from the sprinkler
-        head.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The PIR sensor has a 120-degree detection arc and covers roughly 100
-        square metres, ample for most gardens. Install it by screwing the head
-        onto a hose connector, pushing the ground spike into the lawn or border,
-        and switching on the water. Position it along the cat&rsquo;s known
-        route &mdash; the gap under the fence, the top of a favoured wall, or
-        directly facing the flower bed being used as a toilet. It operates day
-        and night, though it earns its keep most at dawn and dusk when cats are
-        most active. The one seasonal caveat: drain the hose and sprinkler
-        before the first hard frost to prevent freeze damage, and store it
-        indoors over the coldest months, switching to scent and ultrasonic
-        deterrents in the interim.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>120-degree arc covering up to 100 sqm</li>{" "}
-        <li>Works day and night with a battery PIR sensor lasting months</li>{" "}
-        <li>Simple installation with a standard hose and ground spike</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Must be drained and stored over winter to prevent frost damage
-        </li>{" "}
-        <li>
-          Needs an outdoor tap and a hose long enough to reach the target area
-        </li>{" "}
-        <li>
-          Will also spray foxes, other cats, wildlife and any person who
-          triggers it
-        </li>{" "}
-      </ul>{" "}
-      {/* Best Ultrasonic */}{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
         />{" "}
       </div>{" "}
       <p>
@@ -512,16 +400,16 @@ export default function BestCatDeterrentsPage() {
         <li>Best as part of a layered approach, not a standalone fix</li>{" "}
       </ul>{" "}
       {/* Best Scent Crystals */}{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
         />{" "}
       </div>{" "}
       <p>
@@ -564,16 +452,16 @@ export default function BestCatDeterrentsPage() {
         </li>{" "}
       </ul>{" "}
       {/* Best Physical */}{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
         />{" "}
       </div>{" "}
       <p>
@@ -608,16 +496,16 @@ export default function BestCatDeterrentsPage() {
         <li>Does not deter cats from the wider garden</li>{" "}
       </ul>{" "}
       {/* Best Natural Scent */}{" "}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
         />{" "}
       </div>{" "}
       <p>
@@ -706,40 +594,12 @@ export default function BestCatDeterrentsPage() {
         important as deterring the cat.{" "}
       </p>{" "}
       <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>What is the most effective cat deterrent for a garden?</h3>{" "}
-      <p>
-        Motion-activated water sprinklers like the PestBye Jet Spray are the
-        most effective single deterrent for open gardens, because cats find
-        sudden water very hard to habituate to. Combine with scent on borders
-        and an ultrasonic unit at the entry point for the best results.
-      </p>{" "}
-      <h3>Do ultrasonic cat repellers actually work?</h3>{" "}
-      <p>
-        Yes for many cats &mdash; UK garden trials referenced by the RSPB and
-        RHS found ultrasonic devices reduce cat visits for most households,
-        though effectiveness varies between individual cats and some habituate.
-        Position them at the entry point and pair with another deterrent.
-      </p>{" "}
       <h3>Is it legal to deter cats from my garden in the UK?</h3>{" "}
       <p>
         Yes. Humane deterrents &mdash; sprinklers, ultrasonic devices, scent
         repellents and prickle strips &mdash; are entirely legal. Trapping,
         poisoning or harming a cat is an offence under the Animal Welfare Act
         2006.
-      </p>{" "}
-      <h3>How do I stop cats fouling in my flower beds?</h3>{" "}
-      <p>
-        Make the soil uncomfortable with prickle strips, sharp gravel or dense
-        mulch, apply a scent deterrent along the border, and keep beds moist and
-        densely planted. A motion sprinkler aimed at the spot usually breaks the
-        habit within a couple of weeks.
-      </p>{" "}
-      <h3>Do scent deterrents like lion manure and repellent crystals work?</h3>{" "}
-      <p>
-        Yes &mdash; repellent crystals and lion-manure pellets such as Silent
-        Roar both topped UK consumer trials. They work best on borders and beds,
-        are non-toxic to plants and pets when used as directed, and need
-        reapplying after rain. Use them alongside a water or physical deterrent.
       </p>{" "}
       <div className="not-prose">
         {" "}
