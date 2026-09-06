@@ -2367,3 +2367,99 @@ FP-5 IS STILL LOAD-BEARING AND IS NOT WEAKENED BY THIS RATIFICATION. The heading
 of the superseded block still reads PROPOSED and still must not be counted, and
 the synthetic `PROPOSED LAW 999: NOT RATIFIED` negative probe in
 scripts/fixtures.mjs still fires. Both were re-run on this file after the append.
+
+## S65 R6 — LAW 188: THE H2 WINS
+
+LAW 188 — A CARD LABEL AND THE h2 LABEL ABOVE IT ARE TWO CLAIMS ABOUT THE SAME
+PRODUCT, AND WHEN THEY DISAGREE THE PAGE CONTRADICTS ITSELF IN FRONT OF THE
+READER. THE h2 WINS. The card label is corrected to match the heading, never the
+heading to match the card.
+
+Ratified by PM ruling at S65 R6, dated 2026-09-06.
+
+WHY THE h2 AND NOT THE CARD, AND IT IS NOT A PREFERENCE. The h2 carries the
+heading id that the contents list and every in-page anchor resolve to, and its
+text is what `orderingFingerprint()` reads to build M28's ordering sequence. The
+card label carries neither: it renders inside the card body, it is in no `h2` and
+in no Amazon URL, so it is not in the sequence at all. Correcting the card is
+therefore the smaller edit AND the only one of the two that does not move a
+fingerprint a human has already adjudicated. Correcting the heading instead would
+have moved fourteen fingerprints at S65 R5 and demanded a re-adjudication to fix
+a defect the card could fix on its own.
+
+### THIS IS A STANDING EXCEPTION TO THE NEVER TOUCH PROTECTION ON AWARD LABELS, AND IT IS THE ONLY ONE
+
+The NEVER TOUCH section of this file protects ALL award labels and rank numerals
+site-wide. That protection stands, unedited, and this law does not weaken it
+anywhere except in the single case it names. It cannot be cross-referenced from
+inside that section because this file is APPEND ONLY and the section sits ahead of
+this append point, so the cross-reference is made HERE and the two are read
+together.
+
+OUTSIDE THIS LAW A LABEL IS NEVER CHANGED. In particular, A LABEL IS NEVER CHANGED
+TO MAKE A GATE PASS. The only thing that licenses touching one is a measured
+disagreement with its own h2, and the correction is then FULLY DETERMINED by that
+h2 rather than chosen — there is no judgement left in it, which is precisely what
+makes the exception safe to grant.
+
+A RANK NUMERAL IS NOT AN AWARD LABEL AND IS NOT REACHED BY THIS LAW AT ALL.
+
+### AN h2Label THAT IS NOT A CLEAN AWARD DOES NOT TRIGGER THIS LAW
+
+Where `h2Label` holds a product name, a rank numeral or a descriptive sentence
+rather than an award, the two fields are not both labels and nothing contradicts
+anything. Such a record is MISCLASSIFIED. It is left exactly as it stands and
+referred for a ruling; it is never forced into agreement, and its `h2Label` is
+never copied onto a card. Measured at S65 R4 across all 255 `page.tsx` files, 31
+of the 66 raw `cardLabel != h2Label` records were this case, on seven routes —
+nearly half. A sweep that skipped this test would have written product names and
+rank numerals onto cards as if they were awards.
+
+### TWO CARDS ON ONE ROUTE CLAIMING THE SAME AWARD IS A DIFFERENT DEFECT AND IS NOT SETTLED HERE
+
+This law makes a card agree with its own heading. It says nothing about whether
+two DIFFERENT products on the same route end up claiming the same award as each
+other, which is a separate defect with its own remedy and its own ruling.
+
+BUT EVERY APPLICATION OF THIS LAW MUST PROVE IT DID NOT CREATE ONE. Copying an h2
+label onto a card can collide with another card on the same page. After any
+correction under this law the route is re-measured on BOTH label surfaces and the
+absence of a duplicate is reported as a measurement, never assumed. S65 R5 did
+this across all 61 records on the eleven routes it touched and found zero.
+
+### WHAT THIS RETROSPECTIVELY AUTHORISES, BY ROUTE AND ASIN
+
+Fifteen corrections were made at S65 R4 and S65 R5 on PM rulings that lived only
+in round briefs. Law 106 means nothing in this file authorised them until now.
+They are named here, in full, so the authorisation is auditable rather than
+implied:
+
+```
+S65 R4, one correction
+  /best/commercial-insect-monitors        B098XMZM6M  Best Overall             -> Best Professional Treatment Kit
+
+S65 R5, fourteen corrections
+  /best/bed-bug-mattress-encasement       B00MRH58V0  Best Budget              -> Best Value
+  /best/carpet-beetle-treatments          B011UTS3VW  Best Professional-Grade  -> Best Powder
+  /best/cat-deterrents                    B00THGEB5S  Best Scent Deterrent     -> Best Scent Crystals
+  /best/cat-deterrents                    B0002B7OT2  Best Natural Deterrent   -> Best Natural Scent
+  /best/commercial-bird-proofing          B01MQSRJQ6  Best Discreet Option     -> Best Discreet Deterrent
+  /best/commercial-rodent-bait-stations   B0CD7QDM1L  Best Overall             -> Best Professional Grade
+  /best/flea-spray-for-home               B0CMPY8ZXP  Best Budget              -> Best Value
+  /best/fox-deterrents                    B0153BJ7NQ  Best Overall Deterrent   -> Best Motion Sprinkler
+  /best/fox-deterrents                    B08MWB89CB  Best for Chicken Runs    -> Best Mesh
+  /best/moth-traps                        B0B21S966L  Best Overall             -> Best Clothes Moth Trap
+  /best/moth-traps                        B07SS5DDWH  Best Budget              -> Best Value
+  /best/rat-bait-stations                 B00XL382T4  Best Budget              -> Best Value
+  /best/silverfish-treatments             B013EIB87I  Best Insecticidal Dust   -> Best Powder
+  /best/woodworm-treatments               B003ASOBG8  Best Diagnostic Tool     -> Best Moisture Meter
+```
+
+STILL HELD, NOT AUTHORISED, AND NOT CORRECTED. Five records remain in
+disagreement and every one sits on an R9 snippet-experiment document under a
+standing hold until 19 September: three on `/best/commercial-fly-killers` —
+B07CKP6XL5, B07RPT58C3, B08P5X6T1P — and two on `/best/rat-poison` — B010E2GCIM
+and B071K8WQZB. The `/best/rat-poison` pair was NOT named as out of scope by the
+S65 R5 brief; CC held them anyway because the route is one of the seven, and a
+narrow exclusion is not narrowed further by inference (Law 110). This law does not
+reach them and no future round may apply it to them before the hold lifts.
