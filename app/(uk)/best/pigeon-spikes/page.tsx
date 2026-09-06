@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
@@ -8,14 +9,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Pigeon Spikes UK 2026",
     description:
-      "Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, plastic and netting options for ledges, gutters and open areas.",
+      "Bird spikes for UK ledges, sills and gutters. Whether spikes suit your problem, the law on nests, where spikes fail, and five products compared.",
     alternates: {
       canonical: "https://pestproindex.com/best/pigeon-spikes",
     },
     openGraph: {
       title: "Best Pigeon Spikes UK 2026",
       description:
-        "Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, plastic and netting options for ledges, gutters and open areas.",
+        "Bird spikes for UK ledges, sills and gutters. Whether spikes suit your problem, the law on nests, where spikes fail, and five products compared.",
       url: "https://pestproindex.com/best/pigeon-spikes",
       type: "article",
       siteName: "PestPro Index",
@@ -28,7 +29,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Pigeon Spikes UK 2026",
   description:
-    "Our pick of the best pigeon spikes and bird deterrent strips for the UK in 2026. Stainless steel, plastic and netting options for ledges, gutters and open areas.",
+    "Bird spikes for UK ledges, sills and gutters. Whether spikes suit your problem, the law on nests, where spikes fail, and five products compared.",
   datePublished: "2026-03-31",
   dateModified: "2026-09-06",
   author: {
@@ -94,7 +95,6 @@ type ProductRecord = {
   features: string[];
   tableCells: string[];
   h2Text: string;
-  tocTitle: string;
 };
 
 // S66 R3. Card ORDER, RANK NUMERALS and AWARD LABELS are unchanged from the
@@ -123,7 +123,7 @@ const products: ProductRecord[] = [
       "Pre-drilled base; zip ties, screws or nails",
       "60 screws supplied in the pack",
       "Listed for window ledges, fences, rooftops and patios",
-      "Listing shows in stock at Amazon UK",
+      "Spike wire listed at 1.3mm",
     ],
     tableCells: [
       "S4U Stainless Steel Spikes (12 Strips, 3m)",
@@ -131,7 +131,6 @@ const products: ProductRecord[] = [
       "Best Overall",
     ],
     h2Text: "Best Overall — S4U Stainless Steel Bird Spikes",
-    tocTitle: "Best Overall — S4U Stainless Steel Spikes",
   },
   {
     anchorId: "best-wide-ledges",
@@ -153,7 +152,6 @@ const products: ProductRecord[] = [
       "Best for Wide Ledges",
     ],
     h2Text: "Best for Wide Ledges — Defender Wide Plastic Bird Spikes",
-    tocTitle: "Best for Wide Ledges — Defender Wide Plastic",
   },
   {
     anchorId: "steel-3m-strip",
@@ -167,15 +165,14 @@ const products: ProductRecord[] = [
       "Sold under the Anytime Garden brand",
       "Listed for rooftops, ledges and fences",
       "Sections can be divided for tight spaces",
-      "Listing shows in stock at Amazon UK",
+      "Listed as made in Europe",
     ],
     tableCells: [
       "Stainless Steel Spikes (3m)",
       "Stainless steel",
-      "A plain unbranded steel strip",
+      "A plain steel strip",
     ],
     h2Text: "Stainless Steel Bird Spikes (3m)",
-    tocTitle: "Stainless Steel Spikes (3m)",
   },
   {
     anchorId: "best-for-gutters",
@@ -188,8 +185,6 @@ const products: ProductRecord[] = [
       "Listed as 150mm x 112mm x 1m",
       "Stainless steel, per the listing's detail table",
       "Fits a curve a flat base cannot sit against",
-      "The listing carries no feature text beyond its title",
-      "Listing shows in stock at Amazon UK",
     ],
     tableCells: [
       "Half Round Gutter Kit (1m)",
@@ -197,7 +192,6 @@ const products: ProductRecord[] = [
       "Best for Gutters",
     ],
     h2Text: "Best for Gutters — Stainless Steel Half Round Gutter Kit",
-    tocTitle: "Best for Gutters — Half Round Gutter Kit",
   },
   {
     anchorId: "offo-steel-spikes",
@@ -219,7 +213,6 @@ const products: ProductRecord[] = [
       "A named-brand steel alternative",
     ],
     h2Text: "OFFO Stainless Steel Bird Spikes",
-    tocTitle: "OFFO Stainless Steel Spikes",
   },
 ];
 
@@ -240,68 +233,136 @@ const tocItems = [
   { id: "legal", title: "The Legal Position on Nests" },
   { id: "where-spikes-fail", title: "Where Spikes Do Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
+  // Derived from h2Text so a contents entry cannot say something the heading does
+  // not (Task 3e). Award-label text is carried through untouched; it is the same
+  // string the h2 renders.
+  ...products.map((p) => ({ id: p.anchorId, title: p.h2Text })),
   { id: "alternatives", title: "If Spikes Are Not the Answer" },
   { id: "installation", title: "Installation" },
   { id: "compared", title: "Best Pigeon Spikes Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
-// FAQ ANSWERS ARE UNCHANGED, BY PM RULING E, AND THAT IS A KNOWN HELD EXCEPTION.
-// Five of these six answers carry claims that PM ruling B orders deleted or
-// corrected elsewhere on this page — the RSPB recommendation, "one of the most
-// effective", "15 to 25 years", "5 to 15 metres", the flat "no planning permission",
-// and a statement of the Wildlife and Countryside Act 1981 that omits the statute's
-// own word "intentionally". Rulings B and E are in direct contradiction here.
-// Ruling E is the narrower, named protection and it governs (Law 61, Law 119), so
-// nothing below is edited. The contradiction is carried as a flag, not subtracted
-// in silence (Law 138), and the resulting disagreement between these answers and
-// the corrected body prose above them is reported in full (Law 132).
+// THE FAQ IS ONE DATA STRUCTURE AND BOTH SURFACES RENDER FROM IT.
+//
+// It used to be two hand-maintained copies -- a `faqSchema` literal and a separate
+// block of visible <h3>/<p> -- and they had ALREADY DIVERGED: the schema carried
+// five questions while the page showed six. Two copies of one fact is the defect
+// Law 183 names, and editing both is not the remedy; deriving one from the other is.
+// The schema now maps over `faqs`, so the structured data cannot say something the
+// visible answer does not.
+//
+// PM RULING E IS WITHDRAWN AT S66 R4 AND RULING B GOVERNS THE FAQ. Every answer
+// below is LISTING, sourced from a byte-verified S66 R2 quotation, or REASONING.
+// Deleted from these answers, as unsourced: the RSPB recommendation, "one of the
+// most effective pigeon deterrents available", "lasts 15 to 25 years", "5 to 15
+// metres", the 10 cm gap figure, and the flat "do not require planning permission"
+// that the council source contradicts. All six questions survive; none needed
+// deleting, because each has a sourced answer.
+//
+// A `quote` part is reproduced EXACTLY as extracted from the saved source body
+// (Law 164). None contains a newline, a double space or a non-breaking space, so
+// neither JSX whitespace collapsing nor the schema's own join can alter one.
+type FaqPart =
+  | { text: string }
+  | { quote: string }
+  | { cite: keyof typeof SRC; who: string };
+
+const faqs: { q: string; parts: FaqPart[] }[] = [
+  {
+    q: "Are pigeon spikes legal in the UK?",
+    parts: [
+      { text: "Yes. What the law restricts is what you do to the birds, not the spikes. Section 1(1) of the Wildlife and Countryside Act 1981 makes it an offence if a person intentionally " },
+      { quote: "(a) kills, injures or takes any wild bird;" },
+      { text: " or " },
+      { quote: "(b) takes, damages or destroys the nest of any wild bird while that nest is in use or being built;" },
+      { text: " (" },
+      { cite: "wca", who: "legislation.gov.uk" },
+      { text: "). Spikes do neither. Fixing them over a nest that is in use can." },
+    ],
+  },
+  {
+    q: "Do pigeon spikes actually work?",
+    parts: [
+      { text: "On a ledge where birds are roosting, yes. " },
+      { cite: "westlothian", who: "West Lothian Council" },
+      { text: " says " },
+      { quote: "Spikes are useful but only for birds roosting on ledges." },
+      { text: " and that " },
+      { quote: "If they are nesting they will not provide any protection." },
+      { text: " Defra's review of non-lethal methods finds exclusion methods " },
+      { quote: "generally considered to be extremely effective" },
+      { text: ", with the result that " },
+      { quote: "depends on the extent to which birds are excluded" },
+      { text: " (" },
+      { cite: "defra", who: "Defra" },
+      { text: "). Coverage decides the outcome more than the product does." },
+    ],
+  },
+  {
+    q: "Stainless steel or plastic — which should I buy?",
+    parts: [
+      { text: "Choose by surface, not by bird. On masonry, " },
+      { cite: "bathnes", who: "Bath & NES Council" },
+      { text: " warns that standard ferrous fixings are " },
+      { quote: "prone to corrosion that can cause stone decay." },
+      { text: " so stainless is the safer choice there. Plastic cannot rust or stain, and the wide plastic strip on this page is the only one whose listing states a ledge depth. We hold no sourced figure for how long either lasts, so this page does not give one." },
+    ],
+  },
+  {
+    q: "How do you attach pigeon spikes?",
+    parts: [
+      { text: "The listings on this page state zip ties, screws, nails or glue; fixings are not always included. On stone, " },
+      { cite: "bathnes", who: "Bath & NES Council" },
+      { text: " advises that where glue is used, " },
+      { quote: "flexible mastic rather than a hard setting type should be" },
+      { text: " used, to avoid stone decay. Clean the surface first — adhesive will not bond to a dirty ledge." },
+    ],
+  },
+  {
+    q: "How many metres of pigeon spikes do I need?",
+    parts: [
+      { text: "Measure every ledge, sill and ridge where birds land, and measure the depth as well as the length. We hold no sourced figure for a typical house, so this page does not give one. Defra's review reports that " },
+      { quote: "restricting openings and ledges to a maximum width of 4cm" },
+      { text: " would prevent feral pigeons using them (" },
+      { cite: "defra", who: "Defra" },
+      { text: "), so what matters is leaving no usable strip beside the spikes." },
+    ],
+  },
+  {
+    q: "Do I need planning permission for pigeon spikes?",
+    parts: [
+      { text: "Do not assume not. " },
+      { cite: "bathnes", who: "Bath & NES Council" },
+      { text: " asks " },
+      { quote: "Is the building listed? If so listed building consent may be a requirement for bird protection" },
+      { text: " measures and interventions, and adds that " },
+      { quote: "Planning permission may also be required" },
+      { text: ". If the building is listed or in a conservation area, ask the council before fixing anything to the outside of it." },
+    ],
+  },
+];
+
+// The plain-text form the structured data uses. Derived from the same parts the
+// page renders, so the two cannot drift.
+function faqPlainText(parts: FaqPart[]): string {
+  return parts
+    .map((p) =>
+      "quote" in p ? `“${p.quote}”` : "cite" in p ? p.who : p.text,
+    )
+    .join("")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Are pigeon spikes legal in the UK?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Pigeon spikes are legal and recommended by the RSPB and local councils as a humane deterrent. They prevent landing without injuring birds. However, you must not use any method that injures or kills pigeons without a general licence, as all wild birds are protected under the Wildlife and Countryside Act 1981.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do pigeon spikes actually work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Pigeon spikes are one of the most effective pigeon deterrents available. They physically prevent landing on ledges, sills, gutters, and ridges. Stainless steel spikes are more effective than plastic for larger birds like pigeons.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do you attach pigeon spikes?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most spikes attach with outdoor silicone adhesive, screws, or cable ties. Adhesive works best on smooth surfaces like PVC and painted wood. Screws are more secure for brick, concrete, and exposed locations. Always clean the surface thoroughly before applying adhesive.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How many metres of pigeon spikes do I need?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Measure every ledge, sill, and ridge where pigeons land. Cover the entire length — gaps of even 10 cm allow pigeons to land beside the spikes. Most homes need 5 to 15 metres depending on the property.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do I need planning permission for pigeon spikes?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. Pigeon spikes are a minor home improvement and do not require planning permission. The exception is listed buildings — check with your local conservation officer before modifying the exterior.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: faqPlainText(f.parts) },
+  })),
 };
 
 export default function BestPigeonSpikesPage() {
@@ -528,8 +589,7 @@ export default function BestPigeonSpikesPage() {
         For a couple of sills and a length of coping. Twelve separate strips
         making up ten feet is the useful part: you cut nothing and you place
         strips only where birds actually stand. The spikes are 304 stainless
-        steel and the base is plastic — both the listing and the product title
-        say so, which is worth knowing before judging it as an all-steel strip.
+        steel and the base is plastic, not steel throughout.
       </p>
 
       {/* Product 2 */}
@@ -546,7 +606,7 @@ export default function BestPigeonSpikesPage() {
         />
       </div>
       <p>
-        For deep sills, parapets and copings — the case criterion 2 is about.
+        For deep sills, parapets and copings, which is what criterion 2 is about.
         This is the only listing here that states a ledge depth: up to 20 cm. It
         is plastic, so it cannot rust into a stain down the brickwork, and it is
         fifteen strips of 33.4 cm that snap into shorter sections. The listing
@@ -710,55 +770,27 @@ export default function BestPigeonSpikesPage() {
         subtext="For multi-storey buildings or severe infestations, professional installation ensures complete coverage and compliance. Find BPCA-certified bird control specialists near you."
       />
 
-      {/* [17] FAQ — answers UNCHANGED by PM ruling E. See the note above faqSchema. */}
+      {/* [17] FAQ — rendered from `faqs`, the same data the structured data uses. */}
       <h2 id="faq">Frequently Asked Questions</h2>
 
-      <h3>Are pigeon spikes legal in the UK?</h3>
-      <p>
-        Yes. Pigeon spikes are legal and recommended by the RSPB and local
-        councils as a humane deterrent. They prevent landing without injuring
-        birds. However, you must not use any method that injures or kills
-        pigeons without a general licence, as all wild birds are protected under
-        the Wildlife and Countryside Act 1981.
-      </p>
-
-      <h3>Do pigeon spikes actually work?</h3>
-      <p>
-        Yes. Pigeon spikes are one of the most effective pigeon deterrents
-        available. They physically prevent landing on ledges, sills, gutters,
-        and ridges. Stainless steel spikes are more effective than plastic for
-        larger birds like pigeons.
-      </p>
-
-      <h3>Stainless steel or polycarbonate — which is better?</h3>
-      <p>
-        Stainless steel is more effective against pigeons and lasts 15 to 25
-        years. Polycarbonate is cheaper, nearly invisible, and adequate for
-        smaller birds. For pigeon control specifically, stainless steel is the
-        better choice.
-      </p>
-
-      <h3>How do you attach pigeon spikes?</h3>
-      <p>
-        Most spikes attach with outdoor silicone adhesive, screws, or cable
-        ties. Adhesive works best on smooth surfaces like PVC and painted wood.
-        Screws are more secure for brick, concrete, and exposed locations.
-        Always clean the surface thoroughly before applying adhesive.
-      </p>
-
-      <h3>How many metres of pigeon spikes do I need?</h3>
-      <p>
-        Measure every ledge, sill, and ridge where pigeons land. Cover the
-        entire length — gaps of even 10 cm allow pigeons to land beside the
-        spikes. Most homes need 5 to 15 metres depending on the property.
-      </p>
-
-      <h3>Do I need planning permission for pigeon spikes?</h3>
-      <p>
-        No. Pigeon spikes are a minor home improvement and do not require
-        planning permission. The exception is listed buildings — check with your
-        local conservation officer before modifying the exterior.
-      </p>
+      {faqs.map((f) => (
+        <Fragment key={f.q}>
+          <h3>{f.q}</h3>
+          <p>
+            {f.parts.map((part, i) =>
+              "quote" in part ? (
+                <em key={i}>{`\u201C${part.quote}\u201D`}</em>
+              ) : "cite" in part ? (
+                <a key={i} href={SRC[part.cite]} rel="nofollow">
+                  {part.who}
+                </a>
+              ) : (
+                <Fragment key={i}>{part.text}</Fragment>
+              ),
+            )}
+          </p>
+        </Fragment>
+      ))}
 
       <p>
         For large commercial properties or full building exclusion, see our
