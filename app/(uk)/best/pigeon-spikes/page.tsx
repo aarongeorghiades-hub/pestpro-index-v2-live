@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Fragment } from "react";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
@@ -84,6 +83,13 @@ const SRC = {
     "https://www.bathnes.gov.uk/sites/default/files/2020-02/Gull%20and%20pigeon%20control%20for%20listed%20and%20historic%20buildings.pdf",
   defra:
     "https://assets.publishing.service.gov.uk/media/6048ed94d3bf7f1d12811526/annex-2-non-lethal-alternatives-report.pdf",
+  // S66 R6. NOTE FOR ANY LATER ROUND: Worcestershire and Bath & NES publish the
+  // SAME sentence about spikes being ineffectual at low densities, word for word.
+  // They are not independent corroboration of that point and are not cited as
+  // though they were. The consent sentence quoted from Worcestershire is its own.
+  worcs:
+    "https://www.worcsregservices.gov.uk/all-services/pest-control/gull-control/protecting-your-property/",
+  hse: "https://www.hse.gov.uk/work-at-height/ladders/when-how-to-use-ladders-safely.htm",
 };
 
 type ProductRecord = {
@@ -127,8 +133,11 @@ const products: ProductRecord[] = [
     ],
     tableCells: [
       "S4U Stainless Steel Spikes (12 Strips, 3m)",
-      "Stainless steel",
       "Best Overall",
+      "3 m, listed as 10 feet",
+      "not stated",
+      "304 stainless steel spikes, plastic base",
+      "Zip ties, screws or nails; pre-drilled base",
     ],
     h2Text: "Best Overall — S4U Stainless Steel Bird Spikes",
   },
@@ -148,8 +157,11 @@ const products: ProductRecord[] = [
     ],
     tableCells: [
       "Defender Wide Plastic Spikes (5m)",
-      "Plastic",
       "Best for Wide Ledges",
+      "5 m, 15 strips of 33.4 cm",
+      "Up to 20 cm",
+      "Plastic",
+      "Glue, screw or cable tie; not included",
     ],
     h2Text: "Best for Wide Ledges — Defender Wide Plastic Bird Spikes",
   },
@@ -169,8 +181,11 @@ const products: ProductRecord[] = [
     ],
     tableCells: [
       "Stainless Steel Spikes (3m)",
-      "Stainless steel",
       "A plain steel strip",
+      "3 m, 12 sections of 25 cm",
+      "not stated",
+      "Stainless steel",
+      "not stated",
     ],
     h2Text: "Stainless Steel Bird Spikes (3m)",
   },
@@ -188,8 +203,11 @@ const products: ProductRecord[] = [
     ],
     tableCells: [
       "Half Round Gutter Kit (1m)",
-      "Stainless steel",
       "Best for Gutters",
+      "1 m, listed 150mm x 112mm x 1m",
+      "not stated",
+      "Stainless steel",
+      "not stated",
     ],
     h2Text: "Best for Gutters — Stainless Steel Half Round Gutter Kit",
   },
@@ -209,8 +227,11 @@ const products: ProductRecord[] = [
     ],
     tableCells: [
       "OFFO Stainless Steel Spikes",
-      "Stainless steel",
       "A named-brand steel alternative",
+      "78 cm, three pieces",
+      "not stated",
+      "304 stainless steel, steel base",
+      "not stated",
     ],
     h2Text: "OFFO Stainless Steel Bird Spikes",
   },
@@ -240,130 +261,21 @@ const tocItems = [
   { id: "alternatives", title: "If Spikes Are Not the Answer" },
   { id: "installation", title: "Installation" },
   { id: "compared", title: "Best Pigeon Spikes Compared" },
-  { id: "faq", title: "Frequently Asked Questions" },
 ];
 
-// THE FAQ IS ONE DATA STRUCTURE AND BOTH SURFACES RENDER FROM IT.
+// S66 R6 — THE FAQ IS REMOVED, AND ITS STRUCTURED DATA WITH IT.
+// Every one of the six answers was either given by the body above it (legality
+// and nests at [1], whether spikes work at [0] and [2], coverage at [3],
+// attachment at [15] and in the comparison table's Fixing column) or answerable
+// by a general search without this page's products. FAQPage structured data that
+// restates the body is not an asset; it is a second copy to keep in step.
+// The visible block and the schema were removed TOGETHER, in one edit, because
+// they were one data structure after S66 R4 -- which is the whole reason that
+// conversion was worth doing.
 //
-// It used to be two hand-maintained copies -- a `faqSchema` literal and a separate
-// block of visible <h3>/<p> -- and they had ALREADY DIVERGED: the schema carried
-// five questions while the page showed six. Two copies of one fact is the defect
-// Law 183 names, and editing both is not the remedy; deriving one from the other is.
-// The schema now maps over `faqs`, so the structured data cannot say something the
-// visible answer does not.
-//
-// PM RULING E IS WITHDRAWN AT S66 R4 AND RULING B GOVERNS THE FAQ. Every answer
-// below is LISTING, sourced from a byte-verified S66 R2 quotation, or REASONING.
-// Deleted from these answers, as unsourced: the RSPB recommendation, "one of the
-// most effective pigeon deterrents available", "lasts 15 to 25 years", "5 to 15
-// metres", the 10 cm gap figure, and the flat "do not require planning permission"
-// that the council source contradicts. All six questions survive; none needed
-// deleting, because each has a sourced answer.
-//
-// A `quote` part is reproduced EXACTLY as extracted from the saved source body
-// (Law 164). None contains a newline, a double space or a non-breaking space, so
-// neither JSX whitespace collapsing nor the schema's own join can alter one.
-type FaqPart =
-  | { text: string }
-  | { quote: string }
-  | { cite: keyof typeof SRC; who: string };
-
-const faqs: { q: string; parts: FaqPart[] }[] = [
-  {
-    q: "Are pigeon spikes legal in the UK?",
-    parts: [
-      { text: "Yes. What the law restricts is what you do to the birds, not the spikes. Section 1(1) of the Wildlife and Countryside Act 1981 makes it an offence if a person intentionally " },
-      { quote: "(a) kills, injures or takes any wild bird;" },
-      { text: " or " },
-      { quote: "(b) takes, damages or destroys the nest of any wild bird while that nest is in use or being built;" },
-      { text: " (" },
-      { cite: "wca", who: "legislation.gov.uk" },
-      { text: "). Spikes do neither. Fixing them over a nest that is in use can." },
-    ],
-  },
-  {
-    q: "Do pigeon spikes actually work?",
-    parts: [
-      { text: "On a ledge where birds are roosting, yes. " },
-      { cite: "westlothian", who: "West Lothian Council" },
-      { text: " says " },
-      { quote: "Spikes are useful but only for birds roosting on ledges." },
-      { text: " and that " },
-      { quote: "If they are nesting they will not provide any protection." },
-      { text: " Defra's review of non-lethal methods finds exclusion methods " },
-      { quote: "generally considered to be extremely effective" },
-      { text: ", with the result that " },
-      { quote: "depends on the extent to which birds are excluded" },
-      { text: " (" },
-      { cite: "defra", who: "Defra" },
-      { text: "). Coverage decides the outcome more than the product does." },
-    ],
-  },
-  {
-    q: "Stainless steel or plastic — which should I buy?",
-    parts: [
-      { text: "Choose by surface, not by bird. On masonry, " },
-      { cite: "bathnes", who: "Bath & NES Council" },
-      { text: " warns that standard ferrous fixings are " },
-      { quote: "prone to corrosion that can cause stone decay." },
-      { text: " so stainless is the safer choice there. Plastic cannot rust or stain, and the wide plastic strip on this page is the only one whose listing states a ledge depth. We hold no sourced figure for how long either lasts, so this page does not give one." },
-    ],
-  },
-  {
-    q: "How do you attach pigeon spikes?",
-    parts: [
-      { text: "The listings on this page state zip ties, screws, nails or glue; fixings are not always included. On stone, " },
-      { cite: "bathnes", who: "Bath & NES Council" },
-      { text: " advises that where glue is used, " },
-      { quote: "flexible mastic rather than a hard setting type should be" },
-      { text: " used, to avoid stone decay. Clean the surface first — adhesive will not bond to a dirty ledge." },
-    ],
-  },
-  {
-    q: "How many metres of pigeon spikes do I need?",
-    parts: [
-      { text: "Measure every ledge, sill and ridge where birds land, and measure the depth as well as the length. We hold no sourced figure for a typical house, so this page does not give one. Defra's review reports that " },
-      { quote: "restricting openings and ledges to a maximum width of 4cm" },
-      { text: " would prevent feral pigeons using them (" },
-      { cite: "defra", who: "Defra" },
-      { text: "), so what matters is leaving no usable strip beside the spikes." },
-    ],
-  },
-  {
-    q: "Do I need planning permission for pigeon spikes?",
-    parts: [
-      { text: "Do not assume not. " },
-      { cite: "bathnes", who: "Bath & NES Council" },
-      { text: " asks " },
-      { quote: "Is the building listed? If so listed building consent may be a requirement for bird protection" },
-      { text: " measures and interventions, and adds that " },
-      { quote: "Planning permission may also be required" },
-      { text: ". If the building is listed or in a conservation area, ask the council before fixing anything to the outside of it." },
-    ],
-  },
-];
-
-// The plain-text form the structured data uses. Derived from the same parts the
-// page renders, so the two cannot drift.
-function faqPlainText(parts: FaqPart[]): string {
-  return parts
-    .map((p) =>
-      "quote" in p ? `“${p.quote}”` : "cite" in p ? p.who : p.text,
-    )
-    .join("")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: faqPlainText(f.parts) },
-  })),
-};
+// CONSEQUENCE, REPORTED AND NOT PAPERED OVER: removing the FAQ h2 changes the
+// h2/CARD sequence, so M28's fingerprint moves and M28 will FAIL on this route.
+// It is NOT re-seeded this round, by instruction.
 
 export default function BestPigeonSpikesPage() {
   return (
@@ -407,12 +319,6 @@ export default function BestPigeonSpikesPage() {
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {/* FAQ Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
       {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
         <p className="text-sm text-amber-800">
@@ -430,44 +336,95 @@ export default function BestPigeonSpikesPage() {
         work — but they only fix one of the two situations people buy them for.
       </p>
 
+      {/* DECISION BLOCK — situation first, product second, every line.
+          NOT a card: no Amazon link, no price, no image, no award. It sits above
+          the first h2 so a reader on a phone meets their own situation before
+          they meet anything for sale. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>They are nesting, not roosting.</strong> Spikes give no
+            protection at all —{" "}
+            <a href={SRC.westlothian} rel="nofollow" className="underline">
+              West Lothian Council
+            </a>{" "}
+            puts netting as the only answer where birds are nesting.
+          </li>
+          <li>
+            <strong>Listed building or conservation area.</strong> Consent may be
+            needed before you fix anything to the outside —{" "}
+            <a href={SRC.worcs} rel="nofollow" className="underline">
+              Worcestershire Regulatory Services
+            </a>{" "}
+            and{" "}
+            <a href={SRC.bathnes} rel="nofollow" className="underline">
+              Bath &amp; NES Council
+            </a>
+            . Ask the council first.
+          </li>
+          <li>
+            <strong>Roosting on ordinary sills.</strong> A standard steel strip
+            covers it —{" "}
+            <a href="#best-overall" className="underline">
+              the 3 m twelve-strip kit
+            </a>
+            .
+          </li>
+          <li>
+            <strong>Sills deeper than a standard strip.</strong> One listing here
+            states a ledge depth, up to 20 cm —{" "}
+            <a href="#best-wide-ledges" className="underline">
+              the wide plastic strip
+            </a>
+            .
+          </li>
+          <li>
+            <strong>Gutters as well as sills.</strong> A flat base will not sit on
+            a curve —{" "}
+            <a href="#best-for-gutters" className="underline">
+              the half round gutter kit
+            </a>
+            .
+          </li>
+          <li>
+            <strong>A single short sill or balustrade.</strong> The shortest run
+            here is 78 cm —{" "}
+            <a href="#offo-steel-spikes" className="underline">
+              the three-piece steel set
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+
       {/* [0] Situation */}
       <h2 id="roosting-or-nesting">Are They Roosting, or Nesting?</h2>
       <p>
-        Bath &amp; North East Somerset Council puts this near the top of its
-        assessment list for bird deterrents on buildings:{" "}
-        <em>&ldquo;Are the birds roosting or nesting?&rdquo;</em> (
+        It is the first question{" "}
         <a href={SRC.bathnes} rel="nofollow">
           Bath &amp; NES Council
-        </a>
-        ). It decides whether anything here is worth buying.
-      </p>
-      <p>
-        West Lothian Council is blunt about what spikes cover:{" "}
-        <em>
-          &ldquo;Spikes are useful but only for birds roosting on ledges.&rdquo;
-        </em>{" "}
-        And in the same paragraph:{" "}
+        </a>{" "}
+        asks first, and{" "}
+        <a href={SRC.westlothian} rel="nofollow">
+          West Lothian Council
+        </a>{" "}
+        is blunt about why:{" "}
         <em>
           &ldquo;If they are nesting they will not provide any protection.&rdquo;
         </em>{" "}
-        (
-        <a href={SRC.westlothian} rel="nofollow">
-          West Lothian Council
-        </a>
-        ). If there is a nest, spikes are the wrong purchase — the same guidance
-        says{" "}
-        <em>&ldquo;Netting is the only solution where birds are nesting&rdquo;</em>
-        . So look before you measure: a bird on a sill in the evening and gone by
-        morning is roosting; nest material building up in a corner is not.
+        Its answer for a nest is netting. A bird on a sill in the evening and
+        gone by morning is roosting; nest material building up in a corner is
+        not.
       </p>
 
       {/* [1] Legal */}
       <h2 id="legal">The Legal Position on Nests</h2>
       <p>
-        This is why the distinction matters beyond wasted money. Section 1(1) of
-        the Wildlife and Countryside Act 1981 provides that an offence is
-        committed where a person <strong>intentionally</strong>{" "}
-        <em>&ldquo;(a) kills, injures or takes any wild bird;&rdquo;</em> or{" "}
+        Section 1(1) of the Wildlife and Countryside Act 1981 makes it an offence
+        to do the following <strong>intentionally</strong>:{" "}
         <em>
           &ldquo;(b) takes, damages or destroys the nest of any wild bird while
           that nest is in use or being built;&rdquo;
@@ -476,66 +433,46 @@ export default function BestPigeonSpikesPage() {
         <a href={SRC.wca} rel="nofollow">
           legislation.gov.uk
         </a>
-        ). Fixing spikes over a nest in use is capable of being the second of
-        those. Wait until the nest is finished with.
+        ). Fixing spikes over a nest in use is capable of being that offence, so
+        wait until the nest is finished with.
       </p>
       <p>
-        Consent is not automatic either. The Bath &amp; NES guidance asks{" "}
+        Consent is a separate question.{" "}
+        <a href={SRC.worcs} rel="nofollow">
+          Worcestershire Regulatory Services
+        </a>{" "}
+        states that{" "}
         <em>
-          &ldquo;Is the building listed? If so listed building consent may be a
-          requirement for bird protection&rdquo;
+          &ldquo;In most cases Listed Building Consent or planning permission will
+          be required.&rdquo;
         </em>{" "}
-        measures and interventions, and adds that{" "}
-        <em>&ldquo;Planning permission may also be required&rdquo;</em> (
-        <a href={SRC.bathnes} rel="nofollow">
-          Bath &amp; NES Council
-        </a>
-        ). If the building is listed or in a conservation area, ask the council
-        first.
+        Ask the council first.
       </p>
 
       {/* [2] Failure modes */}
       <h2 id="where-spikes-fail">Where Spikes Do Not Work</h2>
       <p>
-        Spikes fail in ways that have nothing to do with the spikes. The same{" "}
         <a href={SRC.bathnes} rel="nofollow">
-          Bath &amp; NES guidance
+          Bath &amp; NES
         </a>{" "}
-        records that they{" "}
+        records that spikes{" "}
         <em>
           &ldquo;are generally ineffectual if placed around parapet walls or
           installed at low densities.&rdquo;
         </em>{" "}
-        Density is the part people get wrong: a thin single row on a wide
-        ledge leaves standing room beside it. The same source notes the other
-        failure — debris collects between the pins until the deterrent stops
-        deterring. That is a reason to check them once a year, not to skip them.
-      </p>
-      <p>
-        And spikes do not reduce the number of birds.{" "}
+        A thin row on a wide ledge leaves standing room beside it, and debris
+        collects between the pins until the deterrent stops deterring — check
+        them once a year. Nor do spikes reduce bird numbers:{" "}
         <a href={SRC.westlothian} rel="nofollow">
           West Lothian Council
-        </a>
-        :{" "}
-        <em>
-          &ldquo;Killing or physically removing the birds is not an effective way
-          of dealing with the problem as new birds will move into preferred sites
-          within a very short space of time.&rdquo;
-        </em>{" "}
-        Spikes make one surface unusable. They do not make the birds leave the
-        street.
+        </a>{" "}
+        records that new birds move into preferred sites quickly.
       </p>
 
       {/* [3] Criteria */}
       <h2 id="what-decides">What Decides the Choice</h2>
       <h3>1. Whether they are roosting</h3>
-      <p>
-        Roosting on a ledge: spikes. Nesting: netting, per{" "}
-        <a href={SRC.westlothian} rel="nofollow">
-          West Lothian Council
-        </a>
-        .
-      </p>
+      <p>Covered above. It decides everything else.</p>
       <h3>2. Covering the whole ledge, not most of it</h3>
       <p>
         Defra&rsquo;s review of non-lethal bird methods reports work finding that{" "}
@@ -546,14 +483,10 @@ export default function BestPigeonSpikesPage() {
         <a href={SRC.defra} rel="nofollow">
           Defra
         </a>
-        ). That is a figure about usable ledge width rather than about spikes,
-        but it is the right way to think about the gap you leave. The same review
-        finds exclusion methods{" "}
-        <em>&ldquo;generally considered to be extremely effective&rdquo;</em>,
-        and that effectiveness{" "}
-        <em>&ldquo;depends on the extent to which birds are excluded&rdquo;</em>.
-        Measure the depth of the ledge as well as its length, and buy a strip
-        wide enough to cover it — or run two.
+        ) — a figure about ledge width, not about spikes, but the right way to
+        think about the gap you leave. The same review finds exclusion works in
+        proportion to how completely birds are shut out. Measure the ledge&rsquo;s
+        depth as well as its length.
       </p>
       <h3>3. The fixing, chosen for the surface</h3>
       <p>
@@ -561,15 +494,10 @@ export default function BestPigeonSpikesPage() {
         <a href={SRC.bathnes} rel="nofollow">
           Bath &amp; NES
         </a>{" "}
-        warns that standard ferrous fixings are{" "}
-        <em>&ldquo;prone to corrosion that can cause stone decay.&rdquo;</em>,
-        and that where glue is used,{" "}
-        <em>
-          &ldquo;flexible mastic rather than a hard setting type should be&rdquo;
-        </em>{" "}
-        used, to avoid the same damage. On brick and stone: stainless fixings and
-        a flexible sealant. On PVC and painted wood, adhesive alone is usually
-        enough.
+        warns that plain ferrous fixings corrode and cause stone decay, and that
+        a flexible mastic beats a hard-setting adhesive. Stainless fixings and
+        flexible sealant on brick and stone; adhesive alone on PVC and painted
+        wood.
       </p>
 
       {/* Product 1 */}
@@ -706,16 +634,50 @@ export default function BestPigeonSpikesPage() {
         slope needs nothing bolted to it.
       </p>
 
-      {/* [15] Installation */}
+      {/* [15] Installation — S66 R6. Every instruction here is either quoted from
+          a fetched source, taken from a banked listing, or a plain observation
+          stated as such. NOTHING was written about adhesive cure time, because no
+          source fetched this round states one. */}
       <h2 id="installation">Installation</h2>
       <ol>
         <li>
-          <strong>Clean the surface first.</strong> Adhesive will not bond to a
-          dirty ledge.
+          <strong>Clear the ledge before you fix anything.</strong> The S4U
+          listing is explicit about the order of work:{" "}
+          <em>
+            &ldquo;The spike should not be installed until the waste and debris is
+            properly removed.&rdquo;
+          </em>{" "}
+          Adhesive will not bond to a fouled surface, and a strip bedded on
+          debris lifts.
         </li>
         <li>
-          <strong>Cover the full depth.</strong> Two rows side by side on
-          anything wider than one strip — the low-density failure above.
+          <strong>Working at a first-floor sill is work at height.</strong> HSE
+          guidance on ladders says you should only use one{" "}
+          <em>
+            &ldquo;where the ladder will be level and stable, and can be
+            secured&rdquo;
+          </em>{" "}
+          (
+          <a href={SRC.hse} rel="nofollow">
+            HSE
+          </a>
+          ). A sill you can only reach by stretching sideways off a ladder is a
+          job for a professional, not a longer reach.
+        </li>
+        <li>
+          <strong>If it is going to take a while, get off the ladder.</strong>{" "}
+          HSE&rsquo;s own guide is that{" "}
+          <em>
+            &ldquo;if your task would require staying up a leaning ladder or
+            stepladder for more than 30 minutes at a time, it is recommended you
+            use alternative equipment.&rdquo;
+          </em>{" "}
+          Cutting, cleaning and bedding a run of strips takes longer than people
+          expect.
+        </li>
+        <li>
+          <strong>Cover the full depth.</strong> Two rows side by side on anything
+          wider than one strip — the low-density failure above.
         </li>
         <li>
           <strong>Butt the strips together.</strong> A gap is somewhere to stand.
@@ -725,11 +687,19 @@ export default function BestPigeonSpikesPage() {
           — not a hard-setting adhesive, and not plain steel screws.
         </li>
         <li>
-          <strong>Check after a gale.</strong> Adhesive-mounted strips can lift.
+          <strong>Check the fixings for the product you actually bought.</strong>{" "}
+          Two of the five listings here state a fixing method and three do not;
+          the comparison table below says which. The Defender listing notes that{" "}
+          <em>&ldquo;Glue, screws and cable ties not included.&rdquo;</em>
         </li>
         <li>
-          <strong>Do the whole elevation.</strong> Spike only the sills and they
-          move to the gutter, the aerial or the chimney.
+          <strong>Look at it from inside first.</strong> Spikes on a sill are
+          visible from the room behind it, and on a front elevation they are
+          visible from the street. That is an observation, not advice from a
+          source — but it is the part people regret.
+        </li>
+        <li>
+          <strong>Check after a gale.</strong> Adhesive-mounted strips can lift.
         </li>
       </ol>
 
@@ -746,51 +716,40 @@ export default function BestPigeonSpikesPage() {
 
       {/* [16] Comparison table */}
       <h2 id="compared">Best Pigeon Spikes Compared</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Material</th>
-            <th>Best For</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+              <th className="text-left p-2 border-b font-semibold">Length as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Ledge depth as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Material</th>
+              <th className="text-left p-2 border-b font-semibold">Fixing as listed</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       <FindProviderCTA
         heading="Need professional pigeon proofing?"
         subtext="For multi-storey buildings or severe infestations, professional installation ensures complete coverage and compliance. Find BPCA-certified bird control specialists near you."
       />
-
-      {/* [17] FAQ — rendered from `faqs`, the same data the structured data uses. */}
-      <h2 id="faq">Frequently Asked Questions</h2>
-
-      {faqs.map((f) => (
-        <Fragment key={f.q}>
-          <h3>{f.q}</h3>
-          <p>
-            {f.parts.map((part, i) =>
-              "quote" in part ? (
-                <em key={i}>{`\u201C${part.quote}\u201D`}</em>
-              ) : "cite" in part ? (
-                <a key={i} href={SRC[part.cite]} rel="nofollow">
-                  {part.who}
-                </a>
-              ) : (
-                <Fragment key={i}>{part.text}</Fragment>
-              ),
-            )}
-          </p>
-        </Fragment>
-      ))}
 
       <p>
         For large commercial properties or full building exclusion, see our
