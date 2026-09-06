@@ -143,8 +143,9 @@
     },
     "best/mouse-poison": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "ee72d1d2dddd"
+      "date": "2026-09-06",
+      "fingerprint": "b031a777cd5e",
+      "note": "S67 R2 rollout rebuild, card sequence unchanged"
     },
     "best/mouse-repellent": {
       "judgement": "correct-as-built",
