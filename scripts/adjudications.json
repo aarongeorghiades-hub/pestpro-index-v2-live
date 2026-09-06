@@ -131,8 +131,9 @@
     },
     "best/moth-traps": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "c3c82409361e"
+      "date": "2026-09-06",
+      "fingerprint": "7f3b1b17b865",
+      "note": "S66 R8 rollout rebuild, PM re-adjudicated, card sequence unchanged"
     },
     "best/mouse-bait-stations": {
       "judgement": "correct-as-built",
