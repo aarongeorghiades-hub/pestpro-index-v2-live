@@ -90,6 +90,10 @@ import {
   SET_PAIR_DIFFERENT,
   SET_PAIR_PREFIX_TRAP,
   BLOCK_BODY_HTTP_200,
+  CHALLENGE_BODY_HTTP_200,
+  AMAZON_BOT_WALL_BODY,
+  REAL_PAGE_ABOUT_CHALLENGES,
+  ACCEPTED_SOURCE_BODY_S66R2,
   REAL_PAGE_WITH_TRIGGER_WORD,
   HTML_CARD_AFTER_PROSE,
   HTML_NO_CARD,
@@ -1223,17 +1227,64 @@ const MATCHERS = [
     // THE SIZE CONDITION IS PART OF THE RULE, not a tuning knob: every real
     // block body measured on this estate has been under 8 KB (959, 961, 1,486,
     // 3,781, 5,853, 7,086) and every real fact sheet over 30 KB.
+    // S66 R3 — A SECOND CLASS, BECAUSE THE FIRST ONE MISSED A LIVE BLOCK.
+    //
+    // ANNOUNCED covers the block that says so in prose. CHALLENGE covers the block
+    // that says nothing and instead SHIPS A BOT-CHALLENGE RUNTIME IN PLACE OF THE
+    // CONTENT. S66 R2's Cloudflare managed challenge on historicengland.org.uk
+    // carried NOT ONE of the ANNOUNCED words; only its 403 caught it, and a
+    // challenge served with HTTP 200 -- the ordinary case -- would have been
+    // accepted as a source.
+    //
+    // THE CHALLENGE SIGNATURE IS STRUCTURAL, NOT LEXICAL (Law 170). It is the
+    // vendor's own challenge endpoint and the challenge options object that drives
+    // it. The visible string "Just a moment..." is NOT used: it is localised and it
+    // changes between releases, so keying on it would rebuild the enumerated-
+    // instance defect one release later.
+    //
+    // THE SIZE CONDITION GOVERNS BOTH CLASSES and is part of the rule, not a tuning
+    // knob: every real block body measured on this estate has been under 8 KB (959,
+    // 961, 1,486, 3,781, 5,853, 6,094, 7,086) and every real fact sheet over 30 KB.
     test: (body, ctx = {}) => {
       const b = body ?? '';
-      const SIG = /incapsula|request unsuccessful|access denied|attention required|cf-error/i;
+      // ANNOUNCED, by the THREE REASONS a body states a refusal rather than by the
+      // wordings anyone happened to have in front of them:
+      //   (i)   a named vendor incident,
+      //   (ii)  a refusal in plain words,
+      //   (iii) a statement that the request was treated as automated.
+      // (iii) is the one that was missing, and it is the estate's most common block.
+      const VENDOR_INCIDENT = /incapsula|cf-error/i;
+      const PLAIN_REFUSAL = /access denied|request unsuccessful|attention required|forbidden/i;
+      const TREATED_AS_BOT = /automated access|unusual traffic|not a robot|are you a human/i;
+      const ANNOUNCED = new RegExp(
+        [VENDOR_INCIDENT.source, PLAIN_REFUSAL.source, TREATED_AS_BOT.source].join('|'),
+        'i',
+      );
+      const CHALLENGE = /\/cdn-cgi\/challenge-platform|_cf_chl_opt|id="challenge-error-text"/i;
       const SMALL = 8000;
       const out = [];
-      if (SIG.test(b) && b.length < SMALL) out.push(`block signature in a ${b.length}-byte body`);
+      if (b.length < SMALL) {
+        if (ANNOUNCED.test(b)) out.push(`block signature in a ${b.length}-byte body`);
+        if (CHALLENGE.test(b)) out.push(`interactive challenge runtime in a ${b.length}-byte body`);
+      }
       if (ctx.status && ctx.status >= 400) out.push(`http ${ctx.status}`);
       return out;
     },
-    probePos: [{ text: BLOCK_BODY_HTTP_200, ctx: { status: 200 } }],
-    probeNeg: [{ text: REAL_PAGE_WITH_TRIGGER_WORD, ctx: { status: 200 } }],
+    // BOTH LIMBS, BOTH CLASSES, ON EVERY INVOCATION (S49-L). Each positive is served
+    // at HTTP 200 deliberately: the status must contribute nothing, or the probe
+    // would pass on the status alone and prove nothing about the body.
+    probePos: [
+      { text: BLOCK_BODY_HTTP_200, ctx: { status: 200 } },
+      { text: CHALLENGE_BODY_HTTP_200, ctx: { status: 200 } },
+      { text: AMAZON_BOT_WALL_BODY, ctx: { status: 200 } },
+    ],
+    // FP-3's original negative, plus the two S66 R3 adds: a page that TALKS ABOUT
+    // challenges without being one, and a body S66 R2 actually accepted and quoted.
+    probeNeg: [
+      { text: REAL_PAGE_WITH_TRIGGER_WORD, ctx: { status: 200 } },
+      { text: REAL_PAGE_ABOUT_CHALLENGES, ctx: { status: 200 } },
+      { text: ACCEPTED_SOURCE_BODY_S66R2, ctx: { status: 200 } },
+    ],
   },
   // =========================================================================
   // S63 R5 — the four measurement steps S63 R4's conversion diagnostic ran as

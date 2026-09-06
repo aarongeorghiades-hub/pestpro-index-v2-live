@@ -241,6 +241,73 @@ export const SET_PAIR_PREFIX_TRAP = { a: ['rats'], b: ['rats-and-mice'] };
 export const BLOCK_BODY_HTTP_200 =
   '<html><body>Request unsuccessful. Incapsula incident ID: ' +
   '1660000330289531695-695108751517812816</body></html>';
+// S66 R3 — THE AMAZON BOT WALL, AND IT IS THE MORE ALARMING OF THE TWO GAPS.
+//
+// M23's list was built at S63 R2 from the MSU/Incapsula body. This estate's most
+// frequently met block is not that one: it is Amazon's, and S62 R3 recorded SEVEN
+// of them in a single round at 3,781 bytes each. That body contains NEITHER
+// "Incapsula" NOR "Request unsuccessful". M23 could not see it either.
+//
+// So the announced class was never really "a block that says so" -- it was two
+// wordings someone had in front of them. Rebuilt as three reasons a body announces
+// a refusal: a named vendor incident, a refusal in plain words, and a statement
+// that the request has been treated as automated. VERBATIM EXCERPT from
+// ~/pp-s62r3/products/B00004RAMT.html.
+export const AMAZON_BOT_WALL_BODY =
+  '<!DOCTYPE html><html><head><title>Amazon.com</title></head><body>\n<!--\n' +
+  '        To discuss automated access to Amazon data please contact ' +
+  'api-services-support@amazon.com.\n-->\n' +
+  '<h4>Sorry, we just need to make sure you\'re not a robot.</h4></body></html>';
+
+// S66 R3 — THE INTERACTIVE-CHALLENGE BODY, A SECOND CLASS OF BLOCK.
+//
+// S66 R2 fetched historicengland.org.uk and got a 6,094-byte Cloudflare managed
+// challenge. M23's signature list did not contain one word that body carries, so
+// M23 saw a clean body; only the 403 caught it. Had Cloudflare served the same
+// challenge with HTTP 200 -- the ordinary case, and the exact case Law 177 exists
+// for -- a 6 KB challenge page would have been accepted as a source.
+//
+// THE RULE, NOT THE INSTANCE (Law 170). The first class of block ANNOUNCES a
+// refusal in prose: "Access Denied", "Request unsuccessful". A CHALLENGE refuses
+// nothing in words -- it SHIPS A BOT-CHALLENGE RUNTIME IN PLACE OF THE CONTENT and
+// asks the client to execute it. So it is detected by the runtime, not by the
+// wording: the vendor's own challenge-platform endpoint, and the challenge options
+// object the endpoint is driven by. Those are what the page IS.
+//
+// "Just a moment..." IS DELIBERATELY NOT THE SIGNATURE. It is a display string:
+// it is localised, and it changes between Cloudflare releases. Keying on it would
+// rebuild the same enumerated-instance defect one release later.
+//
+// VERBATIM EXCERPTS from ~/pp-s66r2/sources/historicengland.html, the body saved
+// by the round that found the gap, so the probe is the real thing rather than a
+// reconstruction of it.
+export const CHALLENGE_BODY_HTTP_200 =
+  '<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title>' +
+  '<meta name="robots" content="noindex,nofollow"></head><body>' +
+  '<span id="challenge-error-text">Enable JavaScript and cookies to continue</span>' +
+  '<script>(function(){window._cf_chl_opt = {cFPWv: \'g\',cType: \'managed\'};' +
+  'var a = document.createElement(\'script\');' +
+  "a.src = '/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=a36d311efdfcbd7d';" +
+  '}());</script></body></html>';
+
+// The NEGATIVE limb the brief asks for: a body S66 R2 ACCEPTED and quoted from.
+// Verbatim from ~/pp-s66r2/sources/westlothian.txt. It is small, so it exercises
+// the size limb alone and proves the size limb cannot block on its own.
+export const ACCEPTED_SOURCE_BODY_S66R2 =
+  'Spikes are useful but only for birds roosting on ledges.  If they are ' +
+  'nesting they will not provide any protection.  These areas are known as ' +
+  'medium pressure areas.';
+
+// A REAL page that TALKS ABOUT Cloudflare challenges without being one. This is
+// FP-3's lesson applied to the new class: a challenge-related word inside real
+// content is not a challenge. Without the structural markers it must stay silent.
+export const REAL_PAGE_ABOUT_CHALLENGES =
+  '<html><head><title>Why our site shows a Cloudflare challenge</title></head>' +
+  '<body><h1>Bot protection</h1><p>Visitors occasionally see a challenge page ' +
+  'asking them to enable JavaScript and cookies before they can continue. This ' +
+  'happens when Cloudflare is not confident the request came from a person.</p>' +
+  '</body></html>';
+
 export const REAL_PAGE_WITH_TRIGGER_WORD =
   '<html><head><title>Drain Flies - What are they?</title></head><body>' +
   '<h1>Drain Flies</h1><p>Drain flies breed in the gelatinous film that ' +
