@@ -8,14 +8,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Ultrasonic Pest Repellers UK 2026 | Do They Work?",
     description:
-      "Our pick of the ultrasonic pest repellers sold in the UK, with the evidence on effectiveness and a buyer's guide.",
+      "Six ultrasonic pest repellers sold in the UK, described by their own listings, with what the evidence on effectiveness actually shows.",
     alternates: {
       canonical: "https://pestproindex.com/best/ultrasonic-pest-repellers",
     },
     openGraph: {
       title: "Best Ultrasonic Pest Repellers UK 2026 | Do They Work?",
       description:
-        "Our pick of the ultrasonic pest repellers sold in the UK, with the evidence on effectiveness and a buyer's guide.",
+        "Six ultrasonic pest repellers sold in the UK, described by their own listings, with what the evidence on effectiveness actually shows.",
       url: "https://pestproindex.com/best/ultrasonic-pest-repellers",
       type: "article",
       siteName: "PestPro Index",
@@ -27,7 +27,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Ultrasonic Pest Repellers UK 2026 | Do They Work?",
   description:
-    "Our pick of the ultrasonic pest repellers sold in the UK, with the evidence on effectiveness and a buyer's guide.",
+    "Six ultrasonic pest repellers sold in the UK, described by their own listings, with what the evidence on effectiveness actually shows.",
   datePublished: "2026-03-31",
   dateModified: "2026-03-31",
   author: {
@@ -126,7 +126,6 @@ const faqSchema = {
 type ProductRecord = {
   anchorId: string;
   asin: string;
-  rank: number;
   cardName: string;
   cardLabel: string;
   features: string[];
@@ -139,9 +138,8 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
     asin: "B000LP64K4",
-    rank: 1,
     cardName: "The Big Cheese Sonic Mouse & Rat Repeller Plug-In",
-    cardLabel: "Best Overall",
+    cardLabel: "Mains plug-in, 140g",
     features: [
       "Long-established UK pest control brand",
       "Plugs straight into a standard UK socket, no wiring or batteries",
@@ -151,17 +149,16 @@ const products: ProductRecord[] = [
     tableCells: [
       "The Big Cheese Sonic Mouse & Rat Repeller",
       "Mains plug-in, single unit",
-      "Best Overall",
+      "Mains plug-in, 140g",
     ],
-    h2Text: "Best Overall — The Big Cheese Sonic Mouse & Rat Repeller",
-    tocTitle: "Best Overall — The Big Cheese Sonic",
+    h2Text: "Mains plug-in, 140g — The Big Cheese Sonic Mouse & Rat Repeller",
+    tocTitle: "Mains plug-in, 140g — The Big Cheese Sonic",
   },
   {
     anchorId: "vneed-plug-in",
     asin: "B08CGW5M9X",
-    rank: 2,
     cardName: "VNEED Ultrasonic Pest Repeller Plug-In",
-    cardLabel: "Best Plug-In",
+    cardLabel: "Mains plug-in, 180g",
     features: [
       "Simple mains plug-in with nothing to set up",
       "No batteries to buy or replace",
@@ -171,38 +168,35 @@ const products: ProductRecord[] = [
     tableCells: [
       "VNEED Ultrasonic Pest Repeller",
       "Mains plug-in, single unit",
-      "Trying the technology in one room",
+      "Mains plug-in, 180g",
     ],
-    h2Text: "VNEED Ultrasonic Pest Repeller (Plug-In)",
-    tocTitle: "VNEED Plug-In",
+    h2Text: "Mains plug-in, 180g — VNEED Ultrasonic Pest Repeller",
+    tocTitle: "Mains plug-in, 180g — VNEED",
   },
   {
     anchorId: "best-multiple-rooms",
     asin: "B0B8VQ6C76",
-    rank: 3,
     cardName: "EcoMyLife Ultrasonic Pest Repeller (2 Pack)",
-    cardLabel: "Best for Multiple Rooms",
+    cardLabel: "Mains plug-in, 2 pack",
     features: [
       "Two units rather than one",
       "Mains plug-in, no batteries required",
-      "Covers two rooms instead of one",
       "Lets you try the technology in two places at once",
     ],
     tableCells: [
       "EcoMyLife Ultrasonic Pest Repeller (2 Pack)",
       "Mains plug-in, 2 units",
-      "Best for Multiple Rooms",
+      "Mains plug-in, 2 pack",
     ],
     h2Text:
-      "Best for Multiple Rooms — EcoMyLife Ultrasonic Pest Repeller (2 Pack)",
-    tocTitle: "Best for Multiple Rooms — EcoMyLife 2 Pack",
+      "Mains plug-in, 2 pack — EcoMyLife Ultrasonic Pest Repeller (2 Pack)",
+    tocTitle: "Mains plug-in, 2 pack — EcoMyLife",
   },
   {
     anchorId: "best-cordless",
     asin: "B0D984JR8Z",
-    rank: 4,
     cardName: "PestBye 360 Ultrasonic Rechargeable Rodent Repeller",
-    cardLabel: "Best Cordless",
+    cardLabel: "Rechargeable battery unit",
     features: [
       "Rechargeable, so it works where there is no socket",
       "Suits lofts, garages, sheds and outbuildings",
@@ -212,18 +206,17 @@ const products: ProductRecord[] = [
     tableCells: [
       "PestBye 360 Ultrasonic Rechargeable Rodent Repeller",
       "Rechargeable, cordless",
-      "Best Cordless",
+      "Rechargeable battery unit",
     ],
     h2Text:
-      "Best Cordless — PestBye 360 Ultrasonic Rechargeable Rodent Repeller",
-    tocTitle: "Best Cordless — PestBye 360",
+      "Rechargeable battery unit — PestBye 360 Ultrasonic Rodent Repeller",
+    tocTitle: "Rechargeable battery unit — PestBye 360",
   },
   {
     anchorId: "best-for-spiders",
     asin: "B0072H60MG",
-    rank: 5,
     cardName: "PestBye Battery Operated Spider & Mouse Repeller",
-    cardLabel: "Best for Spiders",
+    cardLabel: "Battery unit, 2 x PP3",
     features: [
       "Battery powered, no socket required",
       "Marketed for spiders as well as mice",
@@ -233,19 +226,18 @@ const products: ProductRecord[] = [
     tableCells: [
       "PestBye Battery Operated Spider & Mouse Repeller",
       "Battery powered, cordless",
-      "Best for Spiders",
+      "Battery unit, 2 x PP3",
     ],
     h2Text:
-      "Best for Spiders — PestBye Battery Operated Spider & Mouse Repeller",
-    tocTitle: "Best for Spiders — PestBye Battery",
+      "Battery unit, 2 x PP3 — PestBye Battery Operated Spider & Mouse Repeller",
+    tocTitle: "Battery unit, 2 x PP3 — PestBye Battery",
   },
   {
     anchorId: "pestbye-long-life",
     asin: "B003ZIV9Y0",
-    rank: 6,
     cardName:
       "PestBye Long Life Battery Operated Sonic Rat and Mouse Repellent",
-    cardLabel: "Best for Rodents",
+    cardLabel: "Battery unit, long-life",
     features: [
       "Battery powered, no socket required",
       "Aimed at rats and mice rather than a broad pest list",
@@ -255,10 +247,11 @@ const products: ProductRecord[] = [
     tableCells: [
       "PestBye Long Life Battery Operated Sonic Rat and Mouse Repellent",
       "Battery powered, cordless",
-      "Unpowered spaces such as lofts and sheds",
+      "Battery unit, long-life",
     ],
-    h2Text: "PestBye Long Life Battery Operated Sonic Rat and Mouse Repellent",
-    tocTitle: "PestBye Long Life Battery",
+    h2Text:
+      "Battery unit, long-life — PestBye Sonic Rat and Mouse Repellent",
+    tocTitle: "Battery unit, long-life — PestBye Long Life",
   },
 ];
 
@@ -400,7 +393,7 @@ export default function BestUltrasonicPestRepellersPage() {
           {" "}
           <tr>
             {" "}
-            <th>Product</th> <th>Power & Format</th> <th>Best For</th>{" "}
+            <th>Product</th> <th>Power & Format</th> <th>What it is</th>{" "}
           </tr>{" "}
         </thead>{" "}
         <tbody>
@@ -428,7 +421,6 @@ export default function BestUltrasonicPestRepellersPage() {
           features={products[0].features}
           asin={products[0].asin}
           bestFor={products[0].cardLabel}
-          rank={products[0].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -486,7 +478,6 @@ export default function BestUltrasonicPestRepellersPage() {
           features={products[1].features}
           asin={products[1].asin}
           bestFor={products[1].cardLabel}
-          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -531,7 +522,6 @@ export default function BestUltrasonicPestRepellersPage() {
           features={products[2].features}
           asin={products[2].asin}
           bestFor={products[2].cardLabel}
-          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -577,7 +567,6 @@ export default function BestUltrasonicPestRepellersPage() {
           features={products[3].features}
           asin={products[3].asin}
           bestFor={products[3].cardLabel}
-          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -621,7 +610,6 @@ export default function BestUltrasonicPestRepellersPage() {
           features={products[4].features}
           asin={products[4].asin}
           bestFor={products[4].cardLabel}
-          rank={products[4].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -668,7 +656,6 @@ export default function BestUltrasonicPestRepellersPage() {
           features={products[5].features}
           asin={products[5].asin}
           bestFor={products[5].cardLabel}
-          rank={products[5].rank}
         />{" "}
       </div>{" "}
       <p>
