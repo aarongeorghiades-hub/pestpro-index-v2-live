@@ -137,8 +137,9 @@
     },
     "best/mouse-bait-stations": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "26719180b418"
+      "date": "2026-09-06",
+      "fingerprint": "05d1511790bc",
+      "note": "S66 R8 rollout rebuild, PM re-adjudicated, card sequence unchanged"
     },
     "best/mouse-poison": {
       "judgement": "correct-as-built",

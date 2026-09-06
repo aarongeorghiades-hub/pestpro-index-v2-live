@@ -1,35 +1,35 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Mouse Bait Stations UK 2026 | Tamper-Proof & Pet-Safe",
     description:
-      "Compare the best mouse bait stations for UK homes. Tamper-proof, pet-safe and child-safe bait boxes for 2026.",
+      "Mouse bait stations for UK homes. When a station is the right answer, the standard one has to meet, and five compared on what the listings state.",
     alternates: {
       canonical: "https://pestproindex.com/best/mouse-bait-stations",
     },
     openGraph: {
       title: "Best Mouse Bait Stations UK 2026 | Tamper-Proof & Pet-Safe",
       description:
-        "Compare the best mouse bait stations for UK homes. Tamper-proof, pet-safe and child-safe bait boxes for 2026.",
+        "Mouse bait stations for UK homes. When a station is the right answer, the standard one has to meet, and five compared on what the listings state.",
       url: "https://pestproindex.com/best/mouse-bait-stations",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Best Mouse Bait Stations UK 2026: Tamper-Proof & Pet-Safe",
   description:
-    "Compare the best mouse bait stations for UK homes. Tamper-proof, pet-safe and child-safe bait boxes for 2026.",
+    "Mouse bait stations for UK homes. When a station is the right answer, the standard one has to meet, and five compared on what the listings state.",
   datePublished: "2026-03-31",
-  dateModified: "2026-03-31",
+  dateModified: "2026-09-06",
   author: {
     "@type": "Organization",
     name: "PestPro Index",
@@ -45,6 +45,7 @@ const articleSchema = {
     "@id": "https://pestproindex.com/best/mouse-bait-stations",
   },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -69,60 +70,24 @@ const breadcrumbSchema = {
     },
   ],
 };
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Are mouse bait stations safe for pets and children?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: 'Yes — a properly designed tamper-resistant station prevents access by children and pets. The entry holes are sized for mice only, and lockable stations require a key. Always choose a station labelled "tamper-resistant" and place it where pets and children do not play.',
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Where should I place mouse bait stations?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Along walls, behind kitchen units, under appliances, near entry points, and close to signs of mouse activity. Mice travel along edges, so position stations flush against walls for best results.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How often should I check mouse bait stations?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Every 2-3 days during active baiting. Replace consumed bait promptly. Once consumption stops for a full week, the infestation is likely controlled.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What bait should I use in a mouse bait station?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Use purpose-made rodenticide — grain bait (most palatable), wax blocks (most durable), or paste sachets. Choose brodifacoum for maximum potency or difenacoum for lower secondary poisoning risk.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How many mouse bait stations do I need?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "For a typical UK home, 3-5 stations provide adequate coverage. Place one in each room with mouse activity, plus one at each entry point. Space stations every 2-3 metres along known routes.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I use a mouse bait station with snap traps?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Some stations accept small snap traps, giving you tamper-resistant trap housing safe for homes with pets and children. The Pest Expert station is the best option for this dual-purpose use.",
-      },
-    },
-  ],
+
+// S66 R8 — THE FAQ IS REMOVED, BLOCK AND STRUCTURED DATA TOGETHER. All six answers
+// were either given by the body above them — safety around children and pets at
+// #standard, placement and how many at #what-decides and #using, what bait at
+// #legal, how often to check at #using — or answerable by a general search without
+// this page's products.
+
+// SOURCES. Every quotation on this page is extracted by byte range from a body saved
+// under ~/pp-s66r8/sources/, or from a banked Amazon listing, and verified by exact
+// string match before it was written here (Law 164). Each citation names the host
+// actually read (S59-A).
+const SRC = {
+  hse: "https://www.hse.gov.uk/biocides/using/rodenticides.htm",
+  crru: "https://thinkwildlife.org/implications-for-rodenticide-users-of-new-label-text-specifying-bait-station-standards/",
+  defra:
+    "https://www.gov.uk/government/publications/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms",
 };
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -133,10 +98,20 @@ type ProductRecord = {
   tableCells: string[];
   h2Label: string;
   h2Name: string;
-  tocLabel: string;
-  tocName: string;
 };
 
+// S66 R8. AWARD LABELS, RANK NUMERALS AND CARD ORDER ARE UNCHANGED on every surface.
+// FEATURE text is rebuilt from the banked Amazon bodies fetched 2026-09-01 and
+// re-read this round, inside the S45-C freshness window. A property is asserted only
+// where the listing's own feature text, detail table or fetched title states it
+// (S52-E, S50-H); a comparison cell the listing does not state reads "not stated".
+//
+// TWO CLAIMS WERE REMOVED FROM EVERY CARD AND ARE WORTH NAMING HERE. The page used
+// to assert an entry-hole diameter of "approximately 25mm" and that a hole that size
+// is too small for "a cat's paw or a toddler's fingers". NOT ONE of the five
+// listings states an entry-hole size, and no source fetched this round states one.
+// Those were unsourced SAFETY assurances, which is the worst kind to carry, and they
+// are replaced by the actual published standard a station must meet.
 const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
@@ -145,19 +120,22 @@ const products: ProductRecord[] = [
     cardName: "Roshield 5x Pre-Baited Mouse Bait Box Kit",
     cardLabel: "Best Overall",
     features: [
-      "5 tamper-resistant boxes pre-baited with Brodifacoum single-feed poison",
-      "Just place and leave — no separate bait purchase needed",
-      "UK-made from recycled plastics",
+      "5 lockable tamper-resistant stations, supplied pre-baited",
+      "Blocks listed as containing brodifacoum",
+      "Includes an access key for re-baiting",
+      "Designed to take a range of rodenticide formats",
+      "Listed as manufactured in the UK",
     ],
     tableCells: [
       "Roshield 5x Pre-Baited Kit",
-      "Pre-baited with Brodifacoum",
       "Best Overall",
+      "5 stations",
+      "Supplied pre-baited",
+      "Lockable, tamper-resistant",
+      "not stated",
     ],
     h2Label: "Best Overall",
     h2Name: "Roshield 5x Pre-Baited Mouse Bait Box Kit",
-    tocLabel: "Best Overall",
-    tocName: "Roshield 5x Pre-Baited Kit",
   },
   {
     anchorId: "best-bulk",
@@ -166,20 +144,22 @@ const products: ProductRecord[] = [
     cardName: "Roshield 10x Mouse Bait Boxes (Empty, No Bait)",
     cardLabel: "Best Bulk",
     features: [
-      "Bulk pack of 10 lockable tamper-resistant boxes",
-      "Use with your own choice of rodenticide",
-      "UK-made from recycled plastic",
-      "Complies with UK and EU regulations — key included",
+      "10 boxes and 2 keys; no bait included",
+      "Rear chambers listed to hold 2 x 20g blocks or 2-3 x 10g pasta sachets",
+      "Listed as used within the professional pest control industry",
+      "Listed as manufactured in the UK",
+      "Black plastic",
     ],
     tableCells: [
       "Roshield 10x Empty Boxes",
-      "Bulk pack for landlords",
       "Best Bulk",
+      "10 stations",
+      "Empty — bait bought separately",
+      "Tamper-resistant",
+      "not stated",
     ],
     h2Label: "Best Bulk",
     h2Name: "Roshield 10x Mouse Bait Boxes (Empty, No Bait)",
-    tocLabel: "Best Bulk",
-    tocName: "Roshield 10x Empty Bait Boxes",
   },
   {
     anchorId: "best-compact",
@@ -188,20 +168,22 @@ const products: ProductRecord[] = [
     cardName: "Roshield 5x Black Tamper-Resistant Mouse Bait Boxes",
     cardLabel: "Best Compact",
     features: [
-      "Compact design for tight spaces and enclosed areas",
-      "Fits under kitchen units, in loft voids and cupboards",
-      "Holds wax blocks and pasta sachets",
-      "5-pack of empty lockable stations — bait sold separately",
+      "5 boxes and 1 key; no bait included",
+      "Rear chambers listed to hold 2 x 20g blocks or 2-3 x 10g pasta sachets",
+      "Listed at 150 grams per the detail table",
+      "Listed as used within the professional pest control industry",
+      "Black plastic",
     ],
     tableCells: [
       "Roshield 5x Black Boxes",
-      "Compact for tight spaces",
       "Best Compact",
+      "5 stations",
+      "Empty — bait bought separately",
+      "Tamper-resistant",
+      "not stated",
     ],
     h2Label: "Best Compact",
     h2Name: "Roshield 5x Black Tamper-Resistant Mouse Bait Boxes",
-    tocLabel: "Best Compact",
-    tocName: "Roshield 5x Black Bait Boxes",
   },
   {
     anchorId: "best-brand",
@@ -210,19 +192,22 @@ const products: ProductRecord[] = [
     cardName: "The Big Cheese Rat & Mouse Bait Station Compact",
     cardLabel: "Best Brand",
     features: [
-      "Compact tamper-resistant station from the UK's top rodent brand",
-      "Lockable lid for indoor and outdoor use",
-      "Compatible with The Big Cheese bait blocks and pasta sachets",
+      "Single station with a lockable lid",
+      "Listed as damp-proof and all-weather",
+      "Listed as taking blocks, pasta and sachets",
+      "Bait sold separately",
+      "For indoor or outdoor use",
     ],
     tableCells: [
       "The Big Cheese Bait Station",
-      "Lockable lid, indoor and outdoor use",
       "Best Brand",
+      "1 station",
+      "Empty — bait bought separately",
+      "Lockable lid, all-weather",
+      "not stated",
     ],
     h2Label: "Best Brand",
     h2Name: "The Big Cheese Rat & Mouse Bait Station Compact",
-    tocLabel: "Best Brand",
-    tocName: "The Big Cheese Bait Station",
   },
   {
     anchorId: "best-budget",
@@ -231,40 +216,48 @@ const products: ProductRecord[] = [
     cardName: "Pest-Stop Lockable Mouse Bait Station",
     cardLabel: "Best Budget",
     features: [
-      "All-weather lockable mouse bait station",
-      "Low-profile design for discreet wall placement",
-      "Suitable for home, office and garden use",
-      "Affordable option for budget-conscious buyers",
+      "Single lockable station",
+      "Bait bars listed as holding the bait so it cannot be shaken out",
+      "Listed for indoor and outdoor use",
+      "Listed as weather-proof plastic, in frost or high heat",
+      "Bait bought separately",
     ],
     tableCells: [
       "Pest-Stop Lockable Station",
-      "Low-profile discreet design",
       "Best Budget",
+      "1 station",
+      "Empty — bait bought separately",
+      "Lockable, weather-proof",
+      "not stated",
     ],
     h2Label: "Best Budget",
     h2Name: "Pest-Stop Lockable Mouse Bait Station",
-    tocLabel: "Best Budget",
-    tocName: "Pest-Stop Lockable Station",
   },
 ];
 
+// The contents entry is DERIVED from the same fields the h2 renders, so an entry
+// cannot say something the heading does not (the S66 R4 pattern).
 const tocItems = [
-  { id: "at-a-glance", title: "Best Mouse Bait Stations at a Glance" },
+  { id: "do-you-need-one", title: "Do You Need a Station at All?" },
+  { id: "legal", title: "What a Householder May Use" },
+  { id: "standard", title: "The Standard a Station Has to Meet" },
+  { id: "what-decides", title: "What Decides the Choice" },
   ...products.map((p) => ({
     id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
+    title: `${p.h2Label} — ${p.h2Name}`,
   })),
-  { id: "buying-guide", title: "How to Choose the Right Mouse Bait Station" },
-  { id: "placement", title: "Placement Guide for Best Results" },
-  { id: "faq", title: "Frequently Asked Questions" },
+  { id: "alternatives", title: "If Bait Is Not the Answer" },
+  { id: "using", title: "Placing Them" },
+  { id: "compared", title: "Best Mouse Bait Stations Compared" },
 ];
+
 export default function BestMouseBaitStationsPage() {
   return (
     <GuideLayout
       title="Best Mouse Bait Stations UK 2026: Tamper-Proof & Pet-Safe"
-      subtitle="Our pick of the safest and most effective mouse bait stations for UK homes — lockable, tamper-resistant boxes that protect children and pets"
-      lastUpdated="March 2026"
-      readingTime="9 min"
+      subtitle="Lockable, tamper-resistant boxes that hold rodenticide bait away from children and pets"
+      lastUpdated="September 2026"
+      readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
@@ -327,529 +320,378 @@ export default function BestMouseBaitStationsPage() {
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />{" "}
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
-          a small commission at no extra cost to you. As an Amazon Associate,
-          PestPro Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
+          a small commission at no extra cost to you. This helps us keep the
+          site running and free for everyone. As an Amazon Associate, PestPro
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        If you are using mouse poison in your home, a tamper-resistant bait
-        station is not optional — it is a safety essential. Under CRRU (Campaign
-        for Responsible Rodenticide Use) guidelines, all second-generation
-        anticoagulant rodenticides should be used inside tamper-resistant bait
-        stations to prevent access by children, pets, and non-target wildlife.
-        But beyond compliance, a good bait station actually makes your mouse
-        control more effective: the enclosed, tunnel-like design encourages mice
-        to enter and feed, while protecting the bait from moisture and
-        contamination.{" "}
-      </p>{" "}
+        A bait station is a lockable box that holds rodenticide where a mouse can
+        reach it and a child or a dog cannot. It is a container, not a treatment
+        — four of the five here are sold empty.
+      </p>
+
+      {/* DECISION BLOCK — situation first, product second, every line.
+          NOT a card: no Amazon link, no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You are not sure poison is the right answer.</strong> HSE is
+            plain that rodenticides carry real risk to people, pets and wildlife
+            —{" "}
+            <a href={SRC.hse} rel="nofollow" className="underline">
+              HSE
+            </a>
+            . Read{" "}
+            <a href="#do-you-need-one" className="underline">
+              whether you need a station at all
+            </a>{" "}
+            first.
+          </li>
+          <li>
+            <strong>You do not know what you are allowed to buy.</strong> Amateur
+            and professional rodenticides are authorised differently —{" "}
+            <a href="#legal" className="underline">
+              what a householder may use
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want one box that arrives ready to use.</strong> Only one
+            here is supplied pre-baited —{" "}
+            <a href="#best-overall" className="underline">
+              the five-station kit
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You are covering a whole property or several lets.</strong>{" "}
+            The largest pack here is ten —{" "}
+            <a href="#best-bulk" className="underline">
+              the ten empty boxes
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You need one box for one spot, outdoors.</strong> Two are
+            single stations listed as all-weather —{" "}
+            <a href="#best-brand" className="underline">
+              the lockable-lid station
+            </a>{" "}
+            and{" "}
+            <a href="#best-budget" className="underline">
+              the weather-proof one
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="do-you-need-one">Do You Need a Station at All?</h2>
       <p>
-        {" "}
-        Mouse bait stations are smaller than rat stations, with entry holes
-        sized specifically for mice (approximately 25mm diameter). This means
-        even a small dog or cat's paw cannot reach the bait inside. The best
-        stations are lockable with a key, constructed from durable UV-stabilised
-        plastic, and designed to accept multiple bait formats — blocks, grain
-        sachets, and in some cases snap traps. Whether you are dealing with a
-        few mice in the kitchen or a more serious infestation across multiple
-        rooms, the right bait station makes your treatment safer and more
-        effective.{" "}
-      </p>{" "}
+        A station does not kill anything. It holds bait, keeps it dry, and keeps
+        it away from anyone it is not meant for. If you are not putting
+        rodenticide down, you do not need one — traps and proofing are a
+        different page.
+      </p>
       <p>
-        {" "}
-        We selected these mouse bait stations on published specifications and
-        manufacturer information, looking at{" "}
-        <strong>tamper-resistance and safety</strong>,{" "}
-        <strong>build quality</strong>, and <strong>bait compatibility</strong>.
-        Every product listed is available on Amazon UK at the time of
-        writing.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="warning">
-          {" "}
-          <p>
-            Never place loose mouse poison where children or pets can reach it.
-            Always use a tamper-resistant bait station — even indoors. A curious
-            toddler or dog can find poison behind a kitchen unit in seconds.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      <h2 id="at-a-glance">Best Mouse Bait Stations at a Glance</h2>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            <th>Product</th>
-            <th>Key Feature</th>
-            <th>Best For</th>
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      <div className="not-prose">
-        {" "}
-        <StatCallout
-          value="3–5 stations"
-          label="Recommended number of mouse bait stations for a typical UK home"
-        />{" "}
-      </div>{" "}
+        And bait alone rarely settles it. Defra&rsquo;s code of practice for
+        rodent control notes that{" "}
+        <em>
+          &ldquo;Mice live in small social groups and their erratic feeding
+          behaviour results in them visiting several different food
+          sources&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.defra} rel="nofollow">
+          Defra code of practice
+        </a>
+        ) — written for poultry units, but it is the same animal in a kitchen.
+        One box in one corner is not a plan.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">What a Householder May Use</h2>
+      <p>
+        Rodenticides are authorised separately for amateur and professional use,
+        and the stewardship rules that govern professional users do not reach
+        products sold to the public. HSE is direct about why the controls exist:
+        rodenticides can carry higher risk than other biocides because of how
+        they are used and how they look and smell, which makes children, pets and
+        other non-target animals more likely to be harmed by them (
+        <a href={SRC.hse} rel="nofollow">
+          HSE
+        </a>
+        ).
+      </p>
+      <p>
+        In practice: buy an amateur-authorised product, read its label, and use it
+        only as the label says. The pre-baited kit on this page states brodifacoum
+        in its blocks; the other four are empty boxes, and what you put in them is
+        your decision and the label&rsquo;s.
+      </p>
+
+      {/* [2] The standard */}
+      <h2 id="standard">The Standard a Station Has to Meet</h2>
+      <p>
+        There is a published standard, and it is more useful than any
+        manufacturer&rsquo;s description. The label text specified for
+        rodenticide products requires a bait station to be{" "}
+        <em>
+          &ldquo;Strong enough to prevent entry or destruction by dogs.&rdquo;
+        </em>{" "}
+        and{" "}
+        <em>
+          &ldquo;Lockable or sealable so that children and dogs cannot gain access
+          through the opening or mechanisms used to fill the bait
+          compartments.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.crru} rel="nofollow">
+          CRRU UK
+        </a>
+        ). For use outdoors around buildings it must also be{" "}
+        <em>
+          &ldquo;Resistant to destruction or weakening from exposure to typical
+          non-catastrophic weather&rdquo;
+        </em>
+        .
+      </p>
+      <p>
+        That is the test to apply to a box: lockable, strong, and weather-resistant
+        if it is going outside. This page previously gave an entry-hole size and
+        said it was too small for a cat&rsquo;s paw. No listing here states an
+        entry-hole size and no source we hold states one, so that claim is gone.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Pre-baited or empty</h3>
+      <p>
+        One of the five arrives with bait in it; the other four are containers
+        only. That is the single biggest difference on this page, and the
+        comparison table at the bottom states it for every row.
+      </p>
+      <h3>2. How many you need, not how many you want</h3>
+      <p>
+        Because mice work several food sources, Defra&rsquo;s guidance is that{" "}
+        <em>
+          &ldquo;it is necessary to provide an adequate number of bait points in
+          places where rodents are living or moving&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.defra} rel="nofollow">
+          Defra code of practice
+        </a>
+        ). Packs here run from one station to ten. Count the places you have seen
+        activity, then buy for that number.
+      </p>
+      <h3>3. Indoors or out</h3>
+      <p>
+        The weather clause in the standard above only bites outdoors. Two of the
+        five are listed as all-weather; the others do not say. Under the counter
+        in a kitchen, it does not matter.
+      </p>
+
+      {/* Product 1 */}
       <h2 id={products[0].anchorId}>
         {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>{" "}
+      </h2>
       <div className="not-prose my-6">
-        {" "}
         <ProductCard
           name={products[0].cardName}
           features={products[0].features}
           asin={products[0].asin}
           bestFor={products[0].cardLabel}
           rank={products[0].rank}
-        />{" "}
-      </div>{" "}
+        />
+      </div>
       <p>
-        {" "}
-        The Roshield 5x Pre-Baited Mouse Bait Box Kit earns its place through
-        sheer convenience and effectiveness. Each of the five tamper-resistant
-        boxes comes pre-baited with Brodifacoum single-feed poison, so there is
-        nothing else to buy. Open the box, place the stations, and leave them to
-        work.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Brodifacoum is a single-feed anticoagulant, meaning a mouse only needs
-        to consume one dose for a lethal result. The tamper-resistant boxes
-        comply with all UK rodenticide regulations and prevent access by
-        children, pets, and non-target wildlife. The boxes are UK-made from
-        recycled plastics, and the entry holes are sized specifically for mice —
-        too small for a cat's paw or a toddler's fingers.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        With five stations included, you have enough for whole-house coverage in
-        a typical UK home. Place them along walls, behind kitchen units, under
-        appliances, and near any identified entry points. This kit is the
-        simplest and most effective way to start mouse control immediately.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Pre-baited — nothing else to buy or prepare</li>{" "}
-        <li>Brodifacoum single-feed for maximum potency</li>{" "}
-        <li>5 stations for whole-house coverage</li>{" "}
-        <li>UK-made from recycled plastics</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Fixed bait type — cannot swap to a different poison</li>{" "}
-        <li>Bait cannot be topped up once consumed</li>{" "}
-        <li>
-          Not suitable for use where non-target rodenticides are required
-        </li>{" "}
-      </ul>{" "}
+        The only one here that arrives ready to use. Five lockable
+        tamper-resistant stations supplied pre-baited, with blocks the listing
+        states contain brodifacoum, and an access key so they can be re-baited.
+        If you would rather not choose a rodenticide separately, this is the one
+        that removes that decision — which also means the choice has been made
+        for you.
+      </p>
+
+      {/* Product 2 */}
       <h2 id={products[1].anchorId}>
         {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
+      </h2>
       <div className="not-prose my-6">
-        {" "}
         <ProductCard
           name={products[1].cardName}
           features={products[1].features}
           asin={products[1].asin}
           bestFor={products[1].cardLabel}
           rank={products[1].rank}
-        />{" "}
-      </div>{" "}
+        />
+      </div>
       <p>
-        {" "}
-        For landlords, property managers, and anyone managing multiple
-        properties or a larger infestation, the Roshield 10x pack provides the
-        best value per station. These are empty, lockable tamper-resistant boxes
-        — you supply your own rodenticide, giving you full control over which
-        bait you use and how much you load into each station.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The lockable design requires a key (included) to open, providing genuine
-        tamper resistance that meets UK and EU rodenticide regulations. The
-        boxes are UK-made from recycled plastic and are robust enough for both
-        indoor and sheltered outdoor use. Each box holds standard wax blocks and
-        pasta sachets, giving you flexibility to use whichever bait format suits
-        your situation.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        At ten stations per pack, you have enough to cover a large property,
-        multiple flats, or a commercial premises. For landlords conducting
-        routine rodent monitoring across a portfolio, this is the most
-        cost-effective option.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Best value per station — 10 in one pack</li>{" "}
-        <li>Choose your own bait for maximum flexibility</li>{" "}
-        <li>Lockable with key — complies with UK and EU regulations</li>{" "}
-        <li>Ideal for landlords and property managers</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Bait not included — must be purchased separately</li>{" "}
-        <li>Overkill for a single small property</li>{" "}
-        <li>Requires knowledge of which bait to use</li>{" "}
-      </ul>{" "}
+        Ten boxes and two keys, no bait. This is the pack for a whole property or
+        several lets, and the listing is specific about capacity: the rear
+        chambers are stated to hold two 20g blocks or two to three 10g pasta
+        sachets, which tells you what bait format to buy.
+      </p>
+
+      {/* Product 3 */}
       <h2 id={products[2].anchorId}>
         {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>{" "}
+      </h2>
       <div className="not-prose my-6">
-        {" "}
         <ProductCard
           name={products[2].cardName}
           features={products[2].features}
           asin={products[2].asin}
           bestFor={products[2].cardLabel}
           rank={products[2].rank}
-        />{" "}
-      </div>{" "}
+        />
+      </div>
       <p>
-        {" "}
-        Mice excel at squeezing into the tightest spaces — under kitchen units,
-        inside loft voids, behind bathroom panels — and your bait station needs
-        to follow them there. The Roshield 5x Black Bait Boxes are specifically
-        designed for these compact placements, with a smaller footprint than
-        standard stations that allows them to fit in spaces where larger boxes
-        simply will not go.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Despite the compact size, these are genuine lockable tamper-resistant
-        stations that hold standard wax blocks and pasta sachets. The black
-        colour makes them discreet when placed in visible areas — far less
-        conspicuous than the bright green or grey stations used by some brands.
-        Bait must be purchased separately, giving you the flexibility to choose
-        the rodenticide that best suits your needs.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        For kitchens with limited space behind units, loft conversions, utility
-        cupboards, and other tight spots, these compact stations are the
-        practical choice. The five-pack provides enough for whole-house coverage
-        in most properties.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Compact design fits in the tightest spaces</li>{" "}
-        <li>Discreet black colour</li> <li>Lockable and tamper-resistant</li>{" "}
-        <li>Accepts wax blocks and pasta sachets</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Bait not included — must be purchased separately</li>{" "}
-        <li>Smaller bait capacity than full-size stations</li>{" "}
-        <li>Too small for snap traps</li>{" "}
-      </ul>{" "}
+        The same box as above in a pack of five with one key, listed at 150 grams
+        each. For a single house where ten would be waste.
+      </p>
+
+      {/* Product 4 */}
       <h2 id={products[3].anchorId}>
         {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>{" "}
+      </h2>
       <div className="not-prose my-6">
-        {" "}
         <ProductCard
           name={products[3].cardName}
           features={products[3].features}
           asin={products[3].asin}
           bestFor={products[3].cardLabel}
           rank={products[3].rank}
-        />{" "}
-      </div>{" "}
+        />
+      </div>
       <p>
-        {" "}
-        The Big Cheese is a long-established UK rodent control brand, and their
-        compact bait station is built for everyday household use.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The station features a lockable lid and tamper-resistant design suitable
-        for both indoor and outdoor use. It is compatible with The Big Cheese's
-        own range of bait blocks and pasta sachets, though it also accepts
-        standard bait formats from other brands. The compact design fits behind
-        kitchen units, alongside skirting boards, and in the sheltered spots
-        where mice travel.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        For anyone who wants a reliable bait station from a brand they recognise
-        and trust, The Big Cheese is the obvious choice.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Proven track record</li> <li>Lockable and tamper-resistant</li>{" "}
-        <li>Suitable for indoor and outdoor use</li>{" "}
-        <li>Compatible with multiple bait formats</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Bait not included — must be purchased separately</li>{" "}
-        <li>Lighter construction than professional-grade stations</li>{" "}
-        <li>Compact size limits bait capacity</li>{" "}
-      </ul>{" "}
+        A single station with a lockable lid, listed as damp-proof and
+        all-weather, and stated to take blocks, pasta or sachets. Bait is sold
+        separately. This is the one to buy one of, for one place outside.
+      </p>
+
+      {/* Product 5 */}
       <h2 id={products[4].anchorId}>
         {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>{" "}
+      </h2>
       <div className="not-prose my-6">
-        {" "}
         <ProductCard
           name={products[4].cardName}
           features={products[4].features}
           asin={products[4].asin}
           bestFor={products[4].cardLabel}
           rank={products[4].rank}
-        />{" "}
-      </div>{" "}
+        />
+      </div>
       <p>
-        {" "}
-        The Pest-Stop Lockable Mouse Bait Station offers genuine
-        tamper-resistant protection at a budget-friendly price point. The
-        all-weather design makes it suitable for indoor, office, and garden use,
-        and the lockable mechanism prevents access by children, pets, and
-        non-target wildlife. It is a straightforward, no-frills station that
-        does exactly what it needs to do.{" "}
-      </p>{" "}
+        Another single lockable station, listed as weather-proof in frost or high
+        heat, with bait bars that the listing says hold the bait so it cannot be
+        shaken out. That last detail is the one that matters if the box is
+        somewhere it can be knocked.
+      </p>
+
+      {/* [14] Alternatives */}
+      <h2 id="alternatives">If Bait Is Not the Answer</h2>
       <p>
-        {" "}
-        The low-profile design is a particular strength — the station sits close
-        to the ground and can be placed flush against walls and skirting boards
-        for discreet placement. Mice are thigmotactic (they travel along edges),
-        so a station that sits tight against the wall is in the perfect position
-        to intercept them on their natural travel routes. The station fits in
-        voids under kitchen units, behind appliances, and in other sheltered
-        spots.{" "}
-      </p>{" "}
+        <strong>Proof the building first.</strong> Defra&rsquo;s guidance puts
+        prevention ahead of control: keeping rodents out and denying them food is
+        what stops an infestation returning after the bait is gone.
+      </p>
       <p>
-        {" "}
-        For budget-conscious buyers who need multiple stations to cover a
-        property, the Pest-Stop offers reliable tamper-resistant protection
-        without the premium price tag of branded alternatives.{" "}
-      </p>{" "}
+        <strong>Traps instead of poison.</strong> If there are children, pets or
+        non-target animals about and you would rather not have rodenticide in the
+        house at all, a trap is a different trade-off — see our{" "}
+        <a href="/best/mouse-traps">mouse traps</a> page.
+      </p>
+
+      {/* [15] Using them */}
+      <h2 id="using">Placing Them</h2>
+      <ol>
+        <li>
+          <strong>Put them where the mice are, not where it is tidy.</strong>{" "}
+          Defra&rsquo;s guidance is that bait should be{" "}
+          <em>
+            &ldquo;placed where the rodents are nesting and travelling&rdquo;
+          </em>
+          , not only in set baiting points.
+        </li>
+        <li>
+          <strong>Use enough of them.</strong> Several food sources means several
+          stations.
+        </li>
+        <li>
+          <strong>Lock them.</strong> A station that is not locked is a bowl.
+        </li>
+        <li>
+          <strong>Keep the bait fresh and dry.</strong> The same guidance asks
+          for bait kept fresh and free from dust and dampness.
+        </li>
+        <li>
+          <strong>Check them, and keep the key.</strong> You cannot tell whether
+          bait is being taken without opening the box.
+        </li>
+        <li>
+          <strong>Follow the bait&rsquo;s own label.</strong> The station does not
+          change what the label on the rodenticide requires.
+        </li>
+      </ol>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">Best Mouse Bait Stations Compared</h2>
       <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Budget-friendly price point</li> <li>Low-profile and discreet</li>{" "}
-        <li>All-weather — suitable indoors and outdoors</li>{" "}
-        <li>Lockable for genuine tamper resistance</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Bait not included — must be purchased separately</li>{" "}
-        <li>Less well-known brand than competitors</li>{" "}
-        <li>Basic construction compared to premium stations</li>{" "}
-      </ul>{" "}
-      <h2 id="buying-guide">How to Choose the Right Mouse Bait Station</h2>{" "}
-      <h3>Why Bait Stations Are Safer Than Loose Poison</h3>{" "}
-      <p>
-        {" "}
-        Loose mouse poison placed behind a kitchen unit or under a floorboard is
-        an accident waiting to happen. Children explore, pets investigate, and
-        loose grain bait can be scattered, tracked, or dragged to unexpected
-        locations. A tamper-resistant bait station keeps the poison completely
-        enclosed — accessible to mice through small entry holes but inaccessible
-        to children, dogs, cats, and non-target wildlife. It is the single most
-        important safety measure you can take when using rodenticide.{" "}
-      </p>{" "}
-      <h3>Indoor vs Outdoor Stations</h3>{" "}
-      <p>
-        {" "}
-        Indoor stations can be lighter and more compact — they do not need
-        weather resistance. Outdoor stations must be weatherproof (UV-stabilised
-        plastic with drainage holes) and lockable to protect non-target
-        wildlife. If you are baiting both indoors and outdoors, you may want
-        different station types for each environment.{" "}
-      </p>{" "}
-      <h3>Bait Compatibility</h3>{" "}
-      <p>
-        {" "}
-        Most stations accept standard bait blocks on an internal rod. If you
-        prefer grain bait (more palatable to mice), check that the station has a
-        bait tray or floor area for loose grain. If you want to use snap traps
-        instead of poison, choose a station that accepts traps — the Pest Expert
-        station is the best option for this.{" "}
-      </p>{" "}
-      <h3>Pet-Safe Features</h3>{" "}
-      <p>
-        {" "}
-        Key-lockable lids provide the highest level of tamper resistance. Entry
-        holes sized for mice (25mm) prevent larger animals from accessing the
-        bait. Internal baffles add an extra layer of protection by creating a
-        maze-like path that mice can navigate but larger snouts cannot. For
-        homes with pets, always choose a lockable station with internal
-        baffles.{" "}
-      </p>{" "}
-      <h2 id="placement">Placement Guide for Best Results</h2>{" "}
-      <h3>Along Walls and Edges</h3>{" "}
-      <p>
-        {" "}
-        Mice are thigmotactic — they travel along walls and edges, rarely
-        crossing open spaces. Place stations flush against skirting boards with
-        the entry holes aligned with the wall. This puts the station directly in
-        the mouse's natural path of travel.{" "}
-      </p>{" "}
-      <h3>Behind Kitchen Units and Appliances</h3>{" "}
-      <p>
-        {" "}
-        The space behind your cooker, fridge, dishwasher, and washing machine is
-        prime mouse territory — warm, dark, and close to food. Place compact
-        stations in these gaps, as close to the wall as possible.{" "}
-      </p>{" "}
-      <h3>Near Entry Points</h3>{" "}
-      <p>
-        {" "}
-        Mice enter homes through gaps as small as 6mm — around pipes, under
-        doors, through air bricks, and alongside cable entries. Place a station
-        at each identified entry point to intercept mice as they enter the
-        building.{" "}
-      </p>{" "}
-      <h3>Spacing</h3>{" "}
-      <p>
-        {" "}
-        Mice have small territories (typically 3-5 metres from the nest). Place
-        stations every 2-3 metres along known mouse routes for comprehensive
-        coverage. For an average three-bedroom house, 3-5 stations provide
-        adequate coverage.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
-          <p>
-            Check stations every 2-3 days and replace consumed bait promptly.
-            Once bait consumption stops for a full week, the mouse population is
-            likely controlled — but leave stations in place as a monitoring tool
-            to catch any new arrivals early.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>Are mouse bait stations safe for pets and children?</h3>{" "}
-      <p>
-        Yes — a properly designed tamper-resistant station prevents access by
-        children and pets. The entry holes are sized for mice only, and lockable
-        stations require a key. Always choose a station labelled
-        "tamper-resistant" and place it where pets and children do not play.
-      </p>{" "}
-      <h3>Where should I place mouse bait stations?</h3>{" "}
-      <p>
-        Along walls, behind kitchen units, under appliances, near entry points,
-        and close to signs of mouse activity. Mice travel along edges, so
-        position stations flush against walls for best results.
-      </p>{" "}
-      <h3>How often should I check mouse bait stations?</h3>{" "}
-      <p>
-        Every 2-3 days during active baiting. Replace consumed bait promptly.
-        Once consumption stops for a full week, the infestation is likely
-        controlled.
-      </p>{" "}
-      <h3>What bait should I use in a mouse bait station?</h3>{" "}
-      <p>
-        Use purpose-made rodenticide — grain bait (most palatable), wax blocks
-        (most durable), or paste sachets. Choose brodifacoum for maximum potency
-        or difenacoum for lower secondary poisoning risk.
-      </p>{" "}
-      <h3>How many mouse bait stations do I need?</h3>{" "}
-      <p>
-        For a typical UK home, 3-5 stations provide adequate coverage. Place one
-        in each room with mouse activity, plus one at each entry point. Space
-        stations every 2-3 metres along known routes.
-      </p>{" "}
-      <h3>Can I use a mouse bait station with snap traps?</h3>{" "}
-      <p>
-        Some stations accept small snap traps, giving you tamper-resistant trap
-        housing safe for homes with pets and children. The Pest Expert station
-        is the best option for this dual-purpose use.
-      </p>{" "}
-      <p>
-        Managing multiple properties? See our guide to{" "}
-        <a
-          href="/best/professional-bait-station-kits"
-          className="text-green-600 hover:underline"
-        >
-          professional bait station kits
-        </a>
-        .
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Mice Keep Coming Back?"
-          subtext="A professional pest controller can identify entry points, seal gaps, and implement a comprehensive baiting programme for permanent mouse control"
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-3">
-          Looking for traps or poison to go with your station?
-        </p>{" "}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          {" "}
-          <a
-            href="/best/mouse-traps"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            Best Mouse Traps UK 2026 →
-          </a>{" "}
-          <a
-            href="/best/mouse-poison"
-            className="inline-block px-6 py-2.5 bg-gray-700 hover:bg-gray-800 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            Best Mouse Poison UK 2026 →
-          </a>{" "}
-        </div>{" "}
-      </div>{" "}
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Pack as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Bait included
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Security as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Entry hole size
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <FindProviderCTA
+        heading="Mice you cannot get on top of?"
+        subtext="For a persistent infestation, or one you would rather not treat with rodenticide yourself, compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }
