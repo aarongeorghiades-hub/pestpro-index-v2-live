@@ -90,7 +90,7 @@ const products: ProductRecord[] = [
     rank: 1,
     cardName:
       "Pest Expert Formula 'P+' Ultimate Bed Bug Killer Concentrate + 5L Pressure Sprayer",
-    cardLabel: "Best Overall",
+    cardLabel: "Best Professional Treatment Kit",
     features: [
       "Makes 10 litres of professional-strength insecticide — treats approx. 100 sqm",
       "Three active ingredients: Tetramethrin + Permethrin + PBO (piperonyl butoxide)",
