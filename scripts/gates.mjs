@@ -335,7 +335,18 @@ const G3_PROPER_NOUNS = new Set(['Vetter', 'Vetters', 'Trustpilot', 'TrustMark',
 // EACH ENTRY IS NAMED AND ATTRIBUTED, and the check is on the IMMEDIATELY PRECEDING
 // WORD only, so it cannot swallow a claim that merely happens to sit near the word.
 //   National Trust  — cited as a source on /best/moth-traps (S66 R8) and elsewhere.
-const G3_PROPER_PRECEDERS = new Map([['Trust', new Set(['National'])]]);
+const G3_PROPER_PRECEDERS = new Map([
+  ['Trust', new Set(['National'])],
+  //   wildlife trust — RATIFIED BY NAME IN LAW 153: "'Trustpilot', 'TrustMark' and
+  //   'wildlife trust' are names." It is lower-case and two words, so neither the
+  //   single-token set nor the capitalised National Trust rule could see it, and it
+  //   was reported as four asserted claims on /pest/squirrels and two each on
+  //   /guides/how-to-get-rid-of-squirrels and /guides/pest-control-costs — every one
+  //   of them the sentence "contact your local wildlife trust for advice". Excluding
+  //   it is applying a ratified law, not a judgement call (Law 94: do not remediate a
+  //   defect class that is an artefact of the question).
+  ['trust', new Set(['wildlife'])],
+]);
 
 // The text G3 classifies over. Tags are removed INSIDE test() rather than by
 // declaring a different surface, because the gate must keep reading SERVED bytes
@@ -667,6 +678,7 @@ const MATCHERS = [
       // limb below keeps a bare "trusted" firing, so the preceder rule cannot
       // quietly widen into an excuse for the claim itself.
       'The National Trust describes the damage',
+      'consult a professional pest controller or your local wildlife trust',
       'see https://www.nationaltrust.org.uk/discover for the guidance',
       // THE PRODUCTION SHAPE, AND THE R8 LESSON APPLIED TO THIS GATE. A page
       // does not arrive as prose; it arrives as HTML with markup between the

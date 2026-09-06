@@ -179,12 +179,15 @@ export const LAW_REFERENCES_ONLY = [
   '783. Measured this round: the estate MINUS /us/products carries 188 rendered',
   '### PROPOSED LAW 182 — NOT RATIFIED, AWAITING A PM RULING',
   '## S64 R1 — PROPOSED LAW 999: NOT RATIFIED',
-  // S67 R6 — the wording that slipped past the two literal phrasings above and
-  // made M20 print "no gaps" over an enumeration missing two laws. A heading that
-  // says a law is NOT IN FORCE is not a declaration, whichever way it says it.
-  '## S67 R6 — LAW 189 AND LAW 190 COULD NOT BE RATIFIED',
+  // S67 R6 — a heading that says a law is NOT IN FORCE is not a declaration,
+  // whichever way it says it. The wording that first slipped past the two literal
+  // phrasings above ("COULD NOT BE RATIFIED") is gone from CLAUDE.md now that
+  // Laws 189 and 190 are ratified, so it is no longer probed against a live
+  // string — but the CLASS it exposed is real and stays covered, because the next
+  // round to record an unratified law will phrase it its own way.
   '## LAW 777 IS ABSENT FROM THIS FILE',
   '## LAW 778 WITHDRAWN, SEE BELOW',
+  '## LAW 779 WAS NOT RATIFIED AT THIS ROUND',
 ].join('\n');
 
 // ---- M33 (S64 R2), the /us layout footer's two earnings statements ---------

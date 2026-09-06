@@ -32,7 +32,7 @@ export const posts: BlogPost[] = [
 <p>What BPCA membership actually means in practice:</p>
 
 <ul>
-<li>The company has been vetted against minimum standards before joining</li>
+
 <li>Technicians are expected to hold recognised qualifications (such as the RSPH Level 2 Award in Pest Management)</li>
 <li>Members must use pesticides legally and responsibly under the Control of Pesticides Regulations</li>
 <li>The company has agreed to follow BPCA's code of best practice</li>
@@ -80,7 +80,7 @@ export const posts: BlogPost[] = [
 
 <ul>
 <li>Holds relevant qualifications</li>
-<li>Has verifiable reviews from customers with similar problems</li>
+
 <li>Responds promptly and communicates clearly</li>
 <li>Offers a guarantee on their work</li>
 <li>Is transparent about what treatment they're using and why</li>
@@ -822,7 +822,7 @@ export const posts: BlogPost[] = [
 <ul>
 <li><strong>BPCA or NPTA membership</strong> — indicates professional standards and accountability</li>
 <li><strong>Local knowledge</strong> — a provider based in Greater Manchester will understand local pest patterns and property types</li>
-<li><strong>Verified reviews</strong> — genuine Google reviews from Manchester customers are the best quality signal</li>
+
 <li><strong>Clear pricing</strong> — a written quote before work begins, with total programme costs stated</li>
 <li><strong>Proofing advice</strong> — any good pest controller should assess entry points, not just treat symptoms</li>
 </ul>
@@ -845,7 +845,7 @@ export const posts: BlogPost[] = [
 
 <h2>Summary</h2>
 
-<p>Manchester's pest landscape is shaped by its Victorian housing stock, canal network, and urban density. Rats, mice, wasps, bed bugs, and cockroaches are the most common issues. Prices are competitive, but always compare total programme costs. Act early, choose a provider with verified local reviews, and prioritise proofing alongside treatment for lasting results.</p>
+<p>Manchester's pest landscape is shaped by its Victorian housing stock, canal network, and urban density. Rats, mice, wasps, bed bugs, and cockroaches are the most common issues. Prices are competitive, but always compare total programme costs. Act early, choose a provider, and prioritise proofing alongside treatment for lasting results.</p>
 `
   },
   {
@@ -1043,7 +1043,7 @@ export const posts: BlogPost[] = [
 
 <h2>Summary</h2>
 
-<p>Liverpool's pest landscape is shaped by its waterfront location, Victorian housing stock, and maritime climate. Rats, mice, wasps, bed bugs, cockroaches, and seagulls are the most common issues across Merseyside. Prices are competitive, but always compare total programme costs. Act early, choose a provider with verified local reviews, and prioritise proofing alongside treatment for lasting results.</p>
+<p>Liverpool's pest landscape is shaped by its waterfront location, Victorian housing stock, and maritime climate. Rats, mice, wasps, bed bugs, cockroaches, and seagulls are the most common issues across Merseyside. Prices are competitive, but always compare total programme costs. Act early, choose a provider, and prioritise proofing alongside treatment for lasting results.</p>
 `
   },
   {
@@ -1212,7 +1212,7 @@ export const posts: BlogPost[] = [
 <ul>
 <li><strong>BPCA or NPTA membership</strong> — demonstrates professional standards and accountability</li>
 <li><strong>Local presence</strong> — a provider based in West Yorkshire understands local pest patterns, property types, and seasonal timing</li>
-<li><strong>Verified reviews</strong> — genuine Google reviews from Leeds and West Yorkshire customers are the most reliable quality signal</li>
+
 <li><strong>Clear pricing</strong> — a written quote before work begins, with total programme costs stated upfront</li>
 <li><strong>Proofing recommendations</strong> — any competent pest controller should assess and advise on entry points, not just treat visible pests</li>
 <li><strong>Guarantee</strong> — a written guarantee on treatment effectiveness demonstrates confidence in the work</li>
@@ -1248,7 +1248,7 @@ export const posts: BlogPost[] = [
 
 <h2>Summary</h2>
 
-<p>Leeds' pest landscape is shaped by its river and canal corridors, Victorian housing stock, textile heritage, large student population, and position at the urban-rural boundary. Rats, mice, wasps, bed bugs, textile moths, and cockroaches are the most common issues. Prices are competitive with other northern cities. Act early, choose a provider with verified local reviews, and prioritise proofing alongside treatment for lasting results.</p>
+<p>Leeds' pest landscape is shaped by its river and canal corridors, Victorian housing stock, textile heritage, large student population, and position at the urban-rural boundary. Rats, mice, wasps, bed bugs, textile moths, and cockroaches are the most common issues. Prices are competitive with other northern cities. Act early, choose a provider, and prioritise proofing alongside treatment for lasting results.</p>
 `
   },
   {

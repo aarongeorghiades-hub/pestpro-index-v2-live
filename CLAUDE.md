@@ -2514,32 +2514,51 @@ brief had to carry the correction inline to stop exactly that.
 THE PROTECTIONS THEMSELVES ARE UNAFFECTED AND UNDIMINISHED. They bind by the text
 they name, on the route they name, at whatever path that route actually occupies.
 
-## S67 R6 — LAW 189 AND LAW 190 COULD NOT BE RATIFIED
+## S67 R7 — LAWS 189 AND 190, RATIFIED
 
-S67 R6 was instructed to ratify LAW 189 and LAW 190 "verbatim from the S66 carryover
-text". THAT TEXT DOES NOT EXIST ANYWHERE ON DISK, and the instruction was not carried
-out rather than being satisfied with invented wording.
+The two laws below were ruled by the PM and had no text on disk. S67 R6 was told to
+ratify them "verbatim from the S66 carryover text", searched for it — CLAUDE.md, the
+S59 carryover, every S66 report R1 to R8, the whole disk — found nothing, and REFUSED
+TO INVENT WORDING, recording the gap instead so M20 reported it honestly. The text was
+supplied by the PM at S67 R7 and is set down here verbatim. THE REFUSAL WAS THE SYSTEM
+WORKING: a law invented to close a gap is worse than the gap, because the gap is
+visible and the invention is not.
 
-MEASURED, not assumed:
+The S67 R6 section that recorded the hole is superseded by this one and, under this
+file's append-only rule, is removed only because it was itself an S67 R6 artefact
+about a missing text — the laws it was waiting on are now below it in sequence.
 
-    "LAW 189" / "Law 189" in CLAUDE.md                     0
-    "LAW 190" / "Law 190" in CLAUDE.md                     0
-    in ~/pestpro-s59-opening-carryover.txt                 0
-    in any ~/pestpro-s66-r*.md report (R1 through R8)      0
-    any file on disk carrying the text                     none
-      (the only hits anywhere are this round's own brief and the S67 R1 and R4
-       reports, each of which says the laws are ABSENT)
+LAW 189 — A MISCLASSIFIED h2 TAKES THE CARD'S AWARD ON REBUILD. Where an h2Label holds
+a product name, rank numeral or sentence and the card beneath carries an award label,
+Law 188 does not reach it and the h2 is not the authority. On rebuild the h2 gains the
+award the card already shows, in the route's h2 layout, product name retained; card
+label unchanged. A standing bar mandating a neutral descriptor overrides (B000BQT5IG,
+/best/ant-killers). Never a sweep: one route, one rebuild, one single-route M28
+re-seed with cause.
 
-There is no S66 carryover file; the S66 reports end at R8 and S66 R9 never ran.
+LAW 190 — ONE FAQ ARRAY. Visible FAQ and FAQPage render from a single array; a second
+hand-maintained copy is a defect; the visible block is the array, schema derived from
+it, never the reverse.
 
-CONSEQUENCE, STATED PLAINLY RATHER THAN WORKED AROUND (Law 42). Laws 191 and 192
-below are declared at the numbers the ruling gave them, because a ruling that is not
-written into this file will be silently reversed (Law 106) and these two are the
-governing rules of the round that produced them. THE ENUMERATION THEREFORE CARRIES
-GAPS AT 189 AND 190, and M20 reports them. That is a true report of a real hole, not
-a defect in M20, and it closes the moment either the missing text is supplied or the
-PM rules that these two be renumbered. RENUMBERING IS NOT CC's CALL and was not made.
+LAW 189 IS THE COMPLEMENT OF LAW 188, NOT AN EXCEPTION TO IT. Law 188 settles the case
+where both fields are awards and they disagree: the h2 wins, the card is corrected.
+Law 189 settles the case Law 188 expressly declined — an h2Label that is not an award
+at all — and it settles it the other way, because there the card is the only surface
+carrying an award and the h2 has nothing to be authoritative with. Measured at S65 R4
+across all 255 page.tsx files, 31 of the 66 raw cardLabel != h2Label records were this
+case, on seven routes.
 
+LAW 190 WAS ALREADY BEING APPLIED WHEN IT WAS RATIFIED. S66 R8, S67 R2 and S67 R3
+removed the FAQ block and its schema together on three rebuilt routes; S67 R6 collapsed
+25 more onto a single array and resolved nine live divergences, including
+/best/professional-mattress-encasements, which had four questions rendering to readers
+with no FAQPage behind them at all. TWO ROUTES ARE NOT YET COMPLIANT and are named
+rather than left to be rediscovered: /best/professional-bed-bug-steamers (4 visible, 2
+in schema) and /best/professional-insect-light-traps (4 visible, 1 in schema). On each,
+one answer carries a real <Link> to another route, which a plain-string array cannot
+hold without dropping an internal link. THE REMEDY IS A DESIGN DECISION, NOT A SWEEP:
+either the array holds a JSX answer and the schema text is derived from it, or the link
+moves out of the answer.
 ## S67 R6 — LAW 191: NO EFFICACY CLAIM IN OUR OWN VOICE FOR REPELLENT, DETERRENT OR SCENT PRODUCTS
 
 LAW 191 — NO EFFICACY CLAIM IN OUR OWN VOICE FOR REPELLENT, DETERRENT OR SCENT
