@@ -1,66 +1,71 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S68 R6 — ROLLOUT REBUILD to the R8 pattern, on sources. LAW 191 GOVERNS THIS ROUTE:
+// every product is a repeller, so there is no efficacy claim in our own voice, no
+// superlative or ranking label and no rank numeral. Card labels are neutral factual
+// descriptors from the listings; every maker claim is framed as the maker's own.
+//
+// THREE NEVER TOUCH ITEMS LIVE ON THIS ROUTE AND ALL THREE SURVIVE BYTE-UNCHANGED:
+//   1. the mixed-reviews FAQ question and answer, verbatim, in the faqs array below;
+//   2. its FAQPage twin, which is DERIVED from that same array (Law 190), so it cannot
+//      drift from the visible copy;
+//   3. the "full evidence review" link label in the warning callout.
+// Law 192 applies to the callout around item 3: the label is furniture and survives; the
+// unsourced FTC sentence that sat beside it is replaced with sourced material.
+//
+// THE <title> AND H1 ARE BYTE-UNCHANGED. "Do They Work?" is a question, not a claim, and
+// the standing title ruling does not reach it. The SUBTITLE is rewritten: it promised
+// "the truth about what the science actually says", which is our voice ruling on the
+// evidence rather than reporting it.
+//
+// ONE CARD NAME IS CORRECTED TO ITS FETCHED TITLE (S50-H): B0072H60MG is a spider and
+// crawling insect repeller whose listed target species is Spider. It was carded as a
+// "Spider & Mouse Repeller" with a feature claiming it is marketed for mice. It is not.
+// This is the same product that was removed from /best/mouse-repellent at S67 R3 for
+// exactly this reason; here it stays, because this route cards repellers generally.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Ultrasonic Pest Repellers UK 2026 | Do They Work?",
     description:
-      "Six ultrasonic pest repellers sold in the UK, described by their own listings, with what the evidence on effectiveness actually shows.",
-    alternates: {
-      canonical: "https://pestproindex.com/best/ultrasonic-pest-repellers",
-    },
+      "Ultrasonic pest repellers in the UK: the ASA has accepted no efficacy claim, what the wildlife-damage literature reports, and six units as their listings state.",
+    alternates: { canonical: "https://pestproindex.com/best/ultrasonic-pest-repellers" },
     openGraph: {
       title: "Best Ultrasonic Pest Repellers UK 2026 | Do They Work?",
       description:
-        "Six ultrasonic pest repellers sold in the UK, described by their own listings, with what the evidence on effectiveness actually shows.",
+        "Ultrasonic pest repellers in the UK: the ASA has accepted no efficacy claim, what the wildlife-damage literature reports, and six units as their listings state.",
       url: "https://pestproindex.com/best/ultrasonic-pest-repellers",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Best Ultrasonic Pest Repellers UK 2026 | Do They Work?",
   description:
-    "Six ultrasonic pest repellers sold in the UK, described by their own listings, with what the evidence on effectiveness actually shows.",
+    "Ultrasonic pest repellers in the UK: the ASA has accepted no efficacy claim, what the wildlife-damage literature reports, and six units as their listings state.",
   datePublished: "2026-03-31",
-  dateModified: "2026-03-31",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
+  dateModified: "2026-09-07",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://pestproindex.com/best/ultrasonic-pest-repellers",
   },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -69,29 +74,177 @@ const breadcrumbSchema = {
     },
   ],
 };
-// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
-// from this and only this, so the two surfaces cannot disagree again. The visible
-// block was authoritative where they did disagree.
-const faqs = [
+
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194). Bodies kept under Law 175: asa-pest-repellents at
+// ~/pp-s67r2/sources (banked S67 R2); icwdm-ultrasound at ~/pp-s68r6/sources, fetched
+// 2026-09-07.
+const SRC = {
+  asa: "https://www.asa.org.uk/advice-online/pest-repellents.html",
+  icwdm: "https://icwdm.org/management/repellents/ultrasound/",
+};
+
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
+// the S45-C window. A property is asserted only where the listing states it (S52-E,
+// S50-H); a cell the listing does not state reads "not stated".
+//
+// GONE, BY NAME: "Long-established UK pest control brand", "Established UK brand in this
+// category" (x3), "Lets you try the technology in two places at once", "Goes where it is
+// needed rather than where the sockets are" and "Marketed for spiders as well as mice" —
+// the first four are our voice vouching for a repeller, the last is contradicted by its
+// own listing.
+//
+// TWO LISTINGS CONTRADICT THEMSELVES AND BOTH READINGS ARE RENDERED (Law 146): the
+// EcoMyLife pack lists 2 units and 4 pieces, and the VNEED unit lists "Is electric: No"
+// while being a mains plug-in. The Big Cheese detail table also carries an unrelated
+// bait-block product's rows, which are not asserted here.
+const products: ProductRecord[] = [
   {
-    q: "Do ultrasonic pest repellers really work?",
-    a: "The honest answer is: the scientific evidence is weak and inconsistent. Some laboratory studies have shown short-term behavioural changes in rodents exposed to ultrasonic frequencies, but there is very little peer-reviewed evidence that these devices reliably repel pests in real-world conditions. The US Federal Trade Commission (FTC) has taken action against manufacturers for making unsubstantiated claims. We recommend treating ultrasonic repellers as a mild supplementary deterrent at best, and always combining them with proven methods such as traps and poison.",
+    anchorId: "best-overall",
+    asin: "B000LP64K4",
+    cardName: "The Big Cheese Sonic Mouse & Rat Repeller Plug-In",
+    cardLabel: "Mains plug-in, 140g",
+    features: [
+      "Mains plug-in; target species listed as Mouse, Rat",
+      "The maker states it protects areas of up to 37m²",
+      "Halo-red LED and a TEST button for an in-situ check, as listed",
+      "The listing's own scope: recommended for use once infestations in the home are under control",
+      "The maker describes it as suitable to use around children and pets such as cats and dogs",
+    ],
+    tableCells: ["The Big Cheese Sonic Repeller", "Mains plug-in", "Mouse, Rat", "Up to 37m², per the maker"],
+    h2Label: "Mains plug-in, 140g",
+    h2Name: "The Big Cheese Sonic Mouse & Rat Repeller Plug-In",
+    tocLabel: "Mains plug-in, 140g",
+    tocName: "The Big Cheese Sonic",
+  },
+  {
+    anchorId: "vneed-plug-in",
+    asin: "B08CGW5M9X",
+    cardName: "VNEED Ultrasonic Pest Repeller Plug-In",
+    cardLabel: "Mains plug-in, 180g",
+    features: [
+      "Mains plug-in; the listing describes combined electromagnetic and ultrasonic operation",
+      "Target species listed as Ant, Cockroach, Flea, Fly, Mosquito, Moth, Mouse, Rat, Spider",
+      "The maker states an effective area of up to 1,200 sq ft",
+      "Detail row states \"Is electric: No\" on a product that plugs into a socket",
+      "Listed at 0.18 kg; country of origin listed as China",
+    ],
+    tableCells: ["VNEED Ultrasonic Pest Repeller", "Mains plug-in", "Nine species listed", "Up to 1,200 sq ft, per the maker"],
+    h2Label: "Mains plug-in, 180g",
+    h2Name: "VNEED Ultrasonic Pest Repeller Plug-In",
+    tocLabel: "Mains plug-in, 180g",
+    tocName: "VNEED Plug-In",
+  },
+  {
+    anchorId: "best-multiple-rooms",
+    asin: "B0B8VQ6C76",
+    cardName: "EcoMyLife Ultrasonic Pest Repeller (2 Pack)",
+    cardLabel: "Mains plug-in, 2 pack",
+    features: [
+      "Pack size stated two ways on the listing: unit count 2, number of pieces 4",
+      "The maker states 1,200 sq ft per repeller",
+      "The listing's own limitation: ultrasound cannot pass through walls and solid objects, so it recommends one unit per room",
+      "Target species listed as eleven, from ant and bed bug to wasp",
+      "Mains plug-in; listed at 0.13 kg; country of origin listed as China",
+    ],
+    tableCells: ["EcoMyLife Ultrasonic Pest Repeller", "Mains plug-in, 2 units", "Eleven species listed", "1,200 sq ft each, per the maker"],
+    h2Label: "Mains plug-in, 2 pack",
+    h2Name: "EcoMyLife Ultrasonic Pest Repeller (2 Pack)",
+    tocLabel: "Mains plug-in, 2 pack",
+    tocName: "EcoMyLife 2 Pack",
+  },
+  {
+    anchorId: "best-cordless",
+    asin: "B0D984JR8Z",
+    cardName: "Pestbye 360 Ultrasonic Rechargeable Rodent Repeller",
+    cardLabel: "Rechargeable, USB-C",
+    features: [
+      "USB-C rechargeable; the maker states up to 170 hours on a charge",
+      "Fixed and variable frequency settings listed as 20–80 kHz",
+      "The maker says the variable setting is there to stop rodents becoming accustomed to the sound",
+      "Listed for lofts, barns, caravans and homes — places without a power source",
+      "Power source listed as Battery Powered; target species not stated in the detail table",
+    ],
+    tableCells: ["Pestbye 360 Rechargeable", "Rechargeable, cordless", "Rodents, per the title", "Up to 170 hours a charge, per the maker"],
+    h2Label: "Rechargeable, USB-C",
+    h2Name: "Pestbye 360 Ultrasonic Rechargeable Rodent Repeller",
+    tocLabel: "Rechargeable, USB-C",
+    tocName: "Pestbye 360",
+  },
+  {
+    anchorId: "best-for-spiders",
+    asin: "B0072H60MG",
+    cardName: "Pestbye Battery Operated Spider Repellent & Deterrent — Ultrasonic Spider & Crawling Insect Repeller",
+    cardLabel: "Battery unit, 2 x PP3",
+    features: [
+      "Target species listed as Spider — the listing does not name mice",
+      "Takes two 9V PP3 batteries, not supplied; the maker states up to 12 months of continuous use",
+      "The maker states a signal every 8 seconds covering an unobstructed area of up to 2,500 sq ft",
+      "Listed for garages, lofts, outbuildings, sheds, greenhouses and river boats",
+      "The maker describes it as safe for pets, wildlife (except rodents) and humans",
+    ],
+    tableCells: ["Pestbye Spider & Crawling Insect Repeller", "Battery, 2 x PP3", "Spider", "Up to 2,500 sq ft unobstructed, per the maker"],
+    h2Label: "Battery unit, 2 x PP3",
+    h2Name: "Pestbye Battery Operated Spider & Crawling Insect Repeller",
+    tocLabel: "Battery unit, 2 x PP3",
+    tocName: "Pestbye Spider Repeller",
+  },
+  {
+    anchorId: "pestbye-long-life",
+    asin: "B003ZIV9Y0",
+    cardName: "Pestbye Long Life Battery Operated Sonic Rat and Mouse Repellent",
+    cardLabel: "Battery unit, long-life",
+    features: [
+      "Target species listed as Mouse, Rat",
+      "Takes two 9V PP3 batteries, not supplied; the maker states 8 to 12 months of continuous use",
+      "The maker states a signal every 8 seconds covering an unobstructed area of up to 2,500 sq ft",
+      "Listed for homes, garages, lofts, outbuildings, sheds and greenhouses",
+      "Listed at 9.7 x 9.7 x 2.5 cm with a 2 year warranty",
+    ],
+    tableCells: ["Pestbye Long Life Sonic Repellent", "Battery, 2 x PP3", "Mouse, Rat", "Up to 2,500 sq ft unobstructed, per the maker"],
+    h2Label: "Battery unit, long-life",
+    h2Name: "Pestbye Long Life Battery Operated Sonic Rat and Mouse Repellent",
+    tocLabel: "Battery unit, long-life",
+    tocName: "Pestbye Long Life",
+  },
+];
+
+// ONE FAQ ARRAY (Law 190). The visible block and the FAQPage schema both read it.
+// THE FINAL ENTRY IS NEVER TOUCH AND IS REPRODUCED BYTE-FOR-BYTE.
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "Do ultrasonic pest repellers work?",
+    a: "This page does not answer that in its own voice, and no product page should. The ASA reports that it has yet to accept any claim of efficacy for pest repellent devices, ultrasonic equipment among them. The Internet Center for Wildlife Damage Management goes further for rodents specifically, listing references it says show ultrasound devices are not effective in controlling them, while also reporting a 2011 finding of some evidence that ultrasound kept bats and mice out of an open area. Both are quoted in full above.",
   },
   {
     q: "Are ultrasonic pest repellers safe for pets (dogs, cats)?",
-    a: "Most manufacturers claim their devices are safe for dogs and cats, but some pets may be able to hear frequencies in the ultrasonic range — particularly dogs, which can hear sounds up to around 65 kHz. Cats can hear up to approximately 64 kHz. If your pet seems distressed, agitated, or is avoiding certain rooms after you plug in an ultrasonic repeller, remove the device immediately. Smaller pets such as hamsters, guinea pigs, and rabbits are more likely to be affected and should not be kept in the same room as an ultrasonic device.",
+    a: "The makers' own claims differ and are on each card: one says its unit is suitable around children and pets such as cats and dogs, another that it is safe for pets and wildlife except rodents. No fetched source on this page tests those claims. A pet that can hear into the ultrasonic range — rabbits, hamsters, guinea pigs and rodents kept as pets — is the case to think about, because these devices are aimed at rodent hearing.",
   },
   {
-    q: "How many ultrasonic repellers do I need per room?",
-    a: "Most manufacturers recommend one unit per room, as ultrasonic sound waves do not pass through walls, furniture, or other solid objects. For larger rooms or open-plan spaces, you may need two or more units. Coverage claims on packaging (e.g. \"covers 200 sq m\") should be treated with scepticism — in practice, any furniture, curtains, or obstacles between the device and the pest will significantly reduce the effective range. A realistic effective range in a furnished room is around 3-5 metres from the device.",
+    q: "How many units do I need?",
+    a: "The EcoMyLife listing answers this against its own product: it states that ultrasound cannot pass through walls and solid objects and recommends installing one unit per room. The stated coverage figures on this page range from 37m² to 1,200 sq ft to 2,500 sq ft unobstructed, and every one of them is the maker's own.",
   },
   {
-    q: "Do ultrasonic repellers work on rats, mice, spiders, and insects?",
-    a: "Manufacturers claim their devices work on a wide range of pests including rats, mice, spiders, cockroaches, ants, and mosquitoes. However, the limited scientific evidence that does exist relates primarily to rodents, and even that evidence is inconsistent. There is almost no credible scientific evidence that ultrasonic devices have any meaningful effect on insects or spiders. Rats and mice may show initial avoidance behaviour but often habituate to the sound within days or weeks.",
+    q: "Do they work on rats, mice, spiders and insects?",
+    a: "The listings disagree about which species they address, and that is a fact about the listings rather than about the devices: one names mouse and rat only, one names spider only, one names nine species and one names eleven. The comparison table below carries each listing's own target species.",
   },
   {
-    q: "Can I use ultrasonic repellers alongside traps and poison?",
-    a: "Yes, and in fact we strongly recommend it. If you choose to use an ultrasonic repeller, treat it as one component of an integrated pest management approach. Combine it with snap traps, bait stations, sealing entry points, and removing food sources. Using an ultrasonic device as your sole method of pest control is unlikely to resolve an active infestation. Think of it as a belt alongside braces — not a replacement for them.",
+    q: "Can I use one alongside traps and poison?",
+    a: "Nothing on these listings says otherwise, and one of them — The Big Cheese unit — states its own scope as being for use once an infestation in the home is under control. Our rat trap, mouse trap, rat poison and mouse poison pages cover the methods that act on the animal directly.",
   },
   {
     q: "Why are reviews so mixed for ultrasonic pest repellers?",
@@ -108,168 +261,37 @@ const faqSchema = {
     acceptedAnswer: { "@type": "Answer", text: f.a },
   })),
 };
-type ProductRecord = {
-  anchorId: string;
-  asin: string;
-  cardName: string;
-  cardLabel: string;
-  features: string[];
-  tableCells: string[];
-  h2Text: string;
-  tocTitle: string;
-};
-
-const products: ProductRecord[] = [
-  {
-    anchorId: "best-overall",
-    asin: "B000LP64K4",
-    cardName: "The Big Cheese Sonic Mouse & Rat Repeller Plug-In",
-    cardLabel: "Mains plug-in, 140g",
-    features: [
-      "Long-established UK pest control brand",
-      "Plugs straight into a standard UK socket, no wiring or batteries",
-      "Targets mice and rats specifically rather than every pest",
-      "Nothing to assemble or configure",
-    ],
-    tableCells: [
-      "The Big Cheese Sonic Mouse & Rat Repeller",
-      "Mains plug-in, single unit",
-      "Mains plug-in, 140g",
-    ],
-    h2Text: "Mains plug-in, 140g — The Big Cheese Sonic Mouse & Rat Repeller",
-    tocTitle: "Mains plug-in, 140g — The Big Cheese Sonic",
-  },
-  {
-    anchorId: "vneed-plug-in",
-    asin: "B08CGW5M9X",
-    cardName: "VNEED Ultrasonic Pest Repeller Plug-In",
-    cardLabel: "Mains plug-in, 180g",
-    features: [
-      "Simple mains plug-in with nothing to set up",
-      "No batteries to buy or replace",
-      "Occupies one standard UK wall socket",
-      "Runs continuously while plugged in",
-    ],
-    tableCells: [
-      "VNEED Ultrasonic Pest Repeller",
-      "Mains plug-in, single unit",
-      "Mains plug-in, 180g",
-    ],
-    h2Text: "Mains plug-in, 180g — VNEED Ultrasonic Pest Repeller",
-    tocTitle: "Mains plug-in, 180g — VNEED",
-  },
-  {
-    anchorId: "best-multiple-rooms",
-    asin: "B0B8VQ6C76",
-    cardName: "EcoMyLife Ultrasonic Pest Repeller (2 Pack)",
-    cardLabel: "Mains plug-in, 2 pack",
-    features: [
-      "Two units rather than one",
-      "Mains plug-in, no batteries required",
-      "Lets you try the technology in two places at once",
-    ],
-    tableCells: [
-      "EcoMyLife Ultrasonic Pest Repeller (2 Pack)",
-      "Mains plug-in, 2 units",
-      "Mains plug-in, 2 pack",
-    ],
-    h2Text:
-      "Mains plug-in, 2 pack — EcoMyLife Ultrasonic Pest Repeller (2 Pack)",
-    tocTitle: "Mains plug-in, 2 pack — EcoMyLife",
-  },
-  {
-    anchorId: "best-cordless",
-    asin: "B0D984JR8Z",
-    cardName: "PestBye 360 Ultrasonic Rechargeable Rodent Repeller",
-    cardLabel: "Rechargeable battery unit",
-    features: [
-      "Rechargeable, so it works where there is no socket",
-      "Suits lofts, garages, sheds and outbuildings",
-      "Established UK brand in this category",
-      "Aimed at rodents rather than a broad pest list",
-    ],
-    tableCells: [
-      "PestBye 360 Ultrasonic Rechargeable Rodent Repeller",
-      "Rechargeable, cordless",
-      "Rechargeable battery unit",
-    ],
-    h2Text:
-      "Rechargeable battery unit — PestBye 360 Ultrasonic Rodent Repeller",
-    tocTitle: "Rechargeable battery unit — PestBye 360",
-  },
-  {
-    anchorId: "best-for-spiders",
-    asin: "B0072H60MG",
-    cardName: "PestBye Battery Operated Spider & Mouse Repeller",
-    cardLabel: "Battery unit, 2 x PP3",
-    features: [
-      "Battery powered, no socket required",
-      "Marketed for spiders as well as mice",
-      "Suits lofts, garages and sheds",
-      "Established UK brand in this category",
-    ],
-    tableCells: [
-      "PestBye Battery Operated Spider & Mouse Repeller",
-      "Battery powered, cordless",
-      "Battery unit, 2 x PP3",
-    ],
-    h2Text:
-      "Battery unit, 2 x PP3 — PestBye Battery Operated Spider & Mouse Repeller",
-    tocTitle: "Battery unit, 2 x PP3 — PestBye Battery",
-  },
-  {
-    anchorId: "pestbye-long-life",
-    asin: "B003ZIV9Y0",
-    cardName:
-      "PestBye Long Life Battery Operated Sonic Rat and Mouse Repellent",
-    cardLabel: "Battery unit, long-life",
-    features: [
-      "Battery powered, no socket required",
-      "Aimed at rats and mice rather than a broad pest list",
-      "Established UK brand in this category",
-      "Goes where it is needed rather than where the sockets are",
-    ],
-    tableCells: [
-      "PestBye Long Life Battery Operated Sonic Rat and Mouse Repellent",
-      "Battery powered, cordless",
-      "Battery unit, long-life",
-    ],
-    h2Text:
-      "Battery unit, long-life — PestBye Sonic Rat and Mouse Repellent",
-    tocTitle: "Battery unit, long-life — PestBye Long Life",
-  },
-];
 
 const tocItems = [
-  { id: "at-a-glance", title: "Ultrasonic Pest Repellers at a Glance" },
-  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
-  { id: "buying-guide", title: "Buying Guide" },
+  { id: "situation", title: "What These Devices Are" },
+  { id: "evidence", title: "What the Regulator and the Literature Say" },
+  { id: "limits", title: "Where They Do Not Work" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If This Is Not the Answer" },
+  { id: "using", title: "Placing One" },
+  { id: "compared", title: "The Six Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
+
 export default function BestUltrasonicPestRepellersPage() {
   return (
     <GuideLayout
       title="Best Ultrasonic Pest Repellers UK 2026 | Do They Work?"
-      subtitle="An honest look at the plug-in ultrasonic pest repellers sold in the UK, with the truth about what the science actually says"
-      lastUpdated="March 2026"
-      readingTime="9 min"
+      subtitle="Six plug-in and battery ultrasonic repellers described by what their own listings state, beside the ASA's position on repellent claims and what the wildlife-damage literature reports"
+      lastUpdated="September 2026"
+      readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
         {
-          title: "Do Ultrasonic Pest Repellers Work? The Evidence",
+          title: "Ultrasonic Pest Repellers: Do They Work?",
           href: "/guides/ultrasonic-pest-repellers-do-they-work",
         },
+        { title: "How to Get Rid of Rats", href: "/guides/how-to-get-rid-of-rats" },
+        { title: "How to Get Rid of Mice", href: "/guides/how-to-get-rid-of-mice" },
         {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
-        {
-          title: "Professional Pest Control vs DIY",
+          title: "Professional vs DIY Pest Control",
           href: "/guides/professional-pest-control-vs-diy",
         },
       ]}
@@ -278,81 +300,102 @@ export default function BestUltrasonicPestRepellersPage() {
         { title: "Best Mouse Traps UK 2026", href: "/best/mouse-traps" },
         { title: "Best Rat Poison UK 2026", href: "/best/rat-poison" },
         { title: "Best Mouse Poison UK 2026", href: "/best/mouse-poison" },
-        { title: "Best Ant Killers UK 2026", href: "/best/ant-killers" },
+        { title: "Best Rodent Proofing Products UK 2026", href: "/best/rodent-proofing" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />{" "}
-      {/* Affiliate disclosure */}{" "}
+      />
+
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
           site running and free for everyone. As an Amazon Associate, PestPro
-          Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        Ultrasonic pest repellers are one of the most searched-for pest control
-        products in the UK. The appeal is obvious: plug a small device into a
-        wall socket, and it emits high-frequency sound waves that claim to drive
-        rats, mice, spiders, insects, and other pests out of your home — no
-        traps, no poison, no mess. They are sold in large numbers across UK
-        retailers, and the marketing promises are bold. But do they actually
-        work?{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The short answer is: the evidence is weak, and you should manage your
-        expectations accordingly. While ultrasonic repellers are not a complete
-        scam — some laboratory studies have observed short-term behavioural
-        changes in rodents exposed to ultrasonic frequencies — the real-world
-        evidence for their effectiveness is thin, inconsistent, and heavily
-        disputed by pest control professionals. The US Federal Trade Commission
-        (FTC) has taken enforcement action against multiple manufacturers for
-        making unsubstantiated pest control claims, and no major UK pest control
-        body, including the BPCA, endorses ultrasonic devices as a primary
-        treatment method.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        That said, we recognise that many people want to try ultrasonic
-        repellers as part of a broader pest management strategy — particularly
-        in homes with children or pets. If
-        you are going to buy one, you should at least buy the best-reviewed and
-        most credible options available. We selected these ultrasonic repellers
-        on published specifications and manufacturer information, noted the
-        build quality and coverage claims they advertise, and applied a healthy
-        dose of scepticism to every product. We present them fairly below, but
-        we urge you to{" "}
-        <Link
-          href="/guides/ultrasonic-pest-repellers-do-they-work"
-          className="text-blue-600 hover:underline font-semibold"
-        >
-          read our full evidence guide
-        </Link>{" "}
-        before purchasing.{" "}
-      </p>{" "}
+        Six devices that emit sound above human hearing: four mains plug-ins and
+        two battery units. This page sets out what the advertising regulator has
+        accepted about that class, what the wildlife-damage literature reports,
+        and then what each listing states — in that order, because the first two
+        are what a reader needs before the third.
+      </p>
+
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You want to know whether these work before you buy.</strong>{" "}
+            Read the regulator and the literature first —{" "}
+            <a href="#evidence" className="underline">
+              what the regulator and the literature say
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You have an active infestation right now.</strong> One
+            listing here scopes itself to after that is under control —{" "}
+            <a href="#limits" className="underline">
+              where they do not work
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want one for a loft, shed or caravan.</strong> Three run
+            without a socket —{" "}
+            <a href="#best-cordless" className="underline">
+              the rechargeable
+            </a>
+            ,{" "}
+            <a href="#best-for-spiders" className="underline">
+              the spider unit
+            </a>{" "}
+            and{" "}
+            <a href="#pestbye-long-life" className="underline">
+              the long-life rodent unit
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You have more than one room.</strong> One maker states its
+            own sound will not pass through a wall —{" "}
+            <a href="#best-multiple-rooms" className="underline">
+              the two-pack
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want the species the listing actually names.</strong>{" "}
+            They range from one to eleven —{" "}
+            <a href="#compared" className="underline">
+              the comparison table
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+
       <div className="not-prose">
-        {" "}
         <Callout type="warning">
-          {" "}
           <p>
-            The scientific evidence for ultrasonic pest repellers is limited and
-            inconsistent. The FTC has taken action against manufacturers for
-            unsubstantiated claims. We strongly recommend using these devices{" "}
-            <strong>only</strong> alongside proven methods such as traps,
-            poison, and sealing entry points — never as your sole pest control
-            measure. Read our{" "}
+            The ASA reports that it has yet to accept any claim of efficacy for
+            pest repellent devices, and the Internet Center for Wildlife Damage
+            Management lists references it says show ultrasound devices are not
+            effective in controlling rodents. Treat these as a supplement to
+            traps, proofing and sanitation rather than a substitute for them,
+            and read our{" "}
             <a
               href="/guides/ultrasonic-pest-repellers-do-they-work"
               className="underline font-semibold"
@@ -360,502 +403,250 @@ export default function BestUltrasonicPestRepellersPage() {
               full evidence review
             </a>{" "}
             before buying.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* At a Glance */}{" "}
-      <h2 id="at-a-glance">Ultrasonic Pest Repellers at a Glance</h2>{" "}
+          </p>
+        </Callout>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">What These Devices Are</h2>
       <p>
-        {" "}
-        Here is a quick comparison of the six ultrasonic repellers on this page.
-        The comparison reflects manufacturer specifications and build quality —
-        not proven pest control effectiveness, which remains unproven for all
-        devices in this category.{" "}
-      </p>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Product</th> <th>Power & Format</th> <th>What it is</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      <div className="not-prose">
-        {" "}
-        <StatCallout
-          value="Limited"
-          label="Scientific evidence supporting ultrasonic pest repeller effectiveness in real-world conditions"
-        />{" "}
-      </div>{" "}
-      {/* Product 1 */} <h2 id={products[0].anchorId}>{products[0].h2Text}</h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-        />{" "}
-      </div>{" "}
+        Ultrasound is defined by the Internet Center for Wildlife Damage
+        Management as sound above the upper limit of human hearing, about 20
+        kilohertz. Every unit here emits it: four from a wall socket, two from
+        9V batteries, and one of the six from a rechargeable cell. Their own
+        listings state coverage figures from 37m² to 2,500 sq ft, and those
+        figures are the makers&rsquo;.
+      </p>
       <p>
-        {" "}
-        The Big Cheese takes our top spot, with the important caveat that "best
-        overall" in this category means "least unproven" rather than
-        "scientifically validated". The Big Cheese is a long-established UK home
-        pest control brand, and this is its mains plug-in sonic unit. It goes
-        into a standard UK socket, needs no wiring, batteries or setup, and is
-        marketed specifically at mice and rats rather than claiming to deter
-        every household pest at once.{" "}
-      </p>{" "}
+        What none of them does is touch the animal. There is no trap, no bait
+        and no barrier on this page — which is why the evidence question below
+        is not academic, and why every alternative named at the end of the page
+        acts on something physical.
+      </p>
+
+      {/* [1] Evidence */}
+      <h2 id="evidence">What the Regulator and the Literature Say</h2>
       <p>
-        {" "}
-        That narrower claim is the reason it heads the list. A device that says
-        it targets rodents is making a smaller promise than one that says it
-        repels rodents, insects, spiders and mosquitoes simultaneously, and a
-        smaller promise is easier to take seriously. It remains a single plug-in
-        unit, so it treats the room it is plugged into and nothing beyond it,
-        because ultrasonic sound does not travel through walls, doors or
-        furniture. Treat it as something you try alongside traps and proofing,
-        never instead of them.{" "}
-      </p>{" "}
+        The ASA&rsquo;s AdviceOnline entry on pest repellents sets out the
+        advertising position:{" "}
+        <em>
+          &ldquo;In past years, the ASA, together with independent experts, has
+          closely examined the evidence for claims for those devices, which can
+          range from cat-shaped metal sheets with glowing eyes to ultrasonic and
+          electromagnetic equipment. It has yet to accept any claim of
+          efficacy.&rdquo;
+        </em>{" "}
+        and{" "}
+        <em>
+          &ldquo;Marketers who do not hold evidence in the form of UK-based
+          trials should not state or imply efficacy for the products, through
+          either claims, visuals or product names.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.asa} rel="nofollow">
+          ASA
+        </a>
+        ). That is a statement about what evidence has been accepted. It is not
+        a finding that these devices do nothing, and this page does not restate
+        it as one.
+      </p>
       <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Long-established UK pest control brand</li>{" "}
-        <li>
-          Plugs straight into a standard UK socket, no wiring or batteries
-        </li>{" "}
-        <li>
-          Targets mice and rats specifically rather than claiming every pest
-        </li>{" "}
-      </ul>{" "}
+        The wildlife-damage literature is more specific about rodents. The
+        Internet Center for Wildlife Damage Management writes:{" "}
+        <em>
+          &ldquo;Here are several references that show that ultrasound devices
+          are not effective in controlling rodents.&rdquo;
+        </em>{" "}
+        and quotes a researcher on that work:{" "}
+        <em>
+          &ldquo;I think we demonstrated that the success of a rodent control
+          program with ultrasonics was just as successful if the units were not
+          turned on.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.icwdm} rel="nofollow">
+          ICWDM
+        </a>
+        ).
+      </p>
       <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          No peer-reviewed evidence that ultrasonic deterrence works as claimed
-        </li>{" "}
-        <li>Treats one room only, because sound does not pass through walls</li>{" "}
-        <li>
-          Should never be your only measure against an active infestation
-        </li>{" "}
-      </ul>{" "}
-      {/* Product 2 */} <h2 id={products[1].anchorId}>{products[1].h2Text}</h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-        />{" "}
-      </div>{" "}
+        The same page reports the other side of it, and so does this one:{" "}
+        <em>
+          &ldquo;In 2011, one researcher found some evidence that ultrasound did
+          keep bats and mice out of an open area (e.g. empty floor, open
+          rafters).&rdquo;
+        </em>{" "}
+        An open loft with no clutter is the setting that finding describes, and
+        it is not the setting most of these products are bought for.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where They Do Not Work</h2>
       <p>
-        {" "}
-        The VNEED is a straightforward mains plug-in ultrasonic unit. It
-        occupies a standard UK wall socket and runs continuously while plugged
-        in, with nothing to assemble, wire or replace.{" "}
-      </p>{" "}
+        <strong>Through a wall.</strong> This is not our claim about the class;
+        it is a maker&rsquo;s claim about its own product. The EcoMyLife listing
+        states that ultrasound cannot pass through walls and solid objects and
+        recommends one unit per room. Furniture, boxes and doors are in the same
+        category as walls.
+      </p>
       <p>
-        {" "}
-        There is nothing unusual to report about it, and that is worth saying
-        plainly rather than dressing up. It is a single-room plug-in like most
-        of this category, and the same limits apply: ultrasonic output is
-        blocked by walls, doors and soft furnishings, so one unit treats one
-        room. We list it because it is a currently available UK plug-in, not
-        because we have any evidence that it outperforms anything else
-        here.{" "}
-      </p>{" "}
+        <strong>On an infestation already under way.</strong> The Big Cheese
+        listing scopes itself: recommended for use once infestations in the home
+        are under control. That is the maker of one of these six drawing the
+        line, not us.
+      </p>
       <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Simple mains plug-in with nothing to set up</li>{" "}
-        <li>No batteries to buy or replace</li>{" "}
-        <li>Currently available in the UK</li>{" "}
-      </ul>{" "}
+        <strong>As the whole of a control programme.</strong> ICWDM&rsquo;s
+        references are quoted above. Whatever weight a reader gives them, a
+        device that emits sound does not block a gap, remove a food source or
+        catch anything.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Power, and where the unit has to go</h3>
       <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Nothing distinguishes it from other single-unit plug-ins</li>{" "}
-        <li>Treats one room only</li>{" "}
-        <li>Same unproven technology as every product on this page</li>{" "}
-      </ul>{" "}
-      {/* Product 3 */} <h2 id={products[2].anchorId}>{products[2].h2Text}</h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-        />{" "}
-      </div>{" "}
+        Four are mains plug-ins and go where the sockets are. Two run on 9V PP3
+        batteries the listings say are not supplied, and one recharges over
+        USB-C with up to 170 hours claimed. A loft with no socket rules out four
+        of the six.
+      </p>
+      <h3>2. The species the listing actually names</h3>
       <p>
-        {" "}
-        The EcoMyLife comes as a pair of mains plug-in units rather than a
-        single device, which is the only meaningful way to extend ultrasonic
-        coverage beyond one room. Because sound at these frequencies does not
-        pass through walls, two units mean two rooms, no more but no less
-        either.{" "}
-      </p>{" "}
+        Mouse and rat on two of them; spider only on one; nine species on one;
+        eleven on another; and one names none in its detail table. A listing
+        naming eleven species is making a broader claim than a listing naming
+        two, and the table records which is which.
+      </p>
+      <h3>3. The coverage figure, and whose figure it is</h3>
       <p>
-        {" "}
-        That makes it the sensible choice if you want to try the technology in a
-        kitchen and a hallway at the same time rather than moving one unit
-        around and guessing at the result. It does not make the underlying
-        technology any more likely to work; it simply means that if it does
-        work, it is working in two places. The evidence warning at the top of
-        this page applies to both units equally.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Two units cover two rooms rather than one</li>{" "}
-        <li>Mains plug-in, no batteries required</li>{" "}
-        <li>Lets you try the technology in two places at once</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Two units still cover only two rooms</li>{" "}
-        <li>Doubling the hardware does not improve the evidence</li>{" "}
-        <li>Occupies two wall sockets</li>{" "}
-      </ul>{" "}
-      {/* Product 4 */} <h2 id={products[3].anchorId}>{products[3].h2Text}</h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The PestBye 360 is the only rechargeable unit on this list. Rather than
-        occupying a wall socket, it is charged and then placed where it is
-        needed, which matters in the places rodents actually favour: a loft, a
-        garage, a shed, or a cupboard with no socket in it.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The trade-off is that it has to be recharged, and a unit that has gone
-        flat is doing nothing at all. If you buy one, set yourself a reminder.
-        PestBye is an established UK brand in this category and the 360 is its
-        cordless option, but as with everything else here, the evidence that
-        ultrasonic output actually moves rodents on remains weak.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Rechargeable, so it works where there is no socket</li>{" "}
-        <li>Suits lofts, garages, sheds and outbuildings</li>{" "}
-        <li>Established UK brand in this category</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Needs recharging, and a flat unit does nothing</li>{" "}
-        <li>No mains option if you want it running permanently</li>{" "}
-        <li>Same unproven technology as the plug-in units</li>{" "}
-      </ul>{" "}
-      {/* Product 5 */} <h2 id={products[4].anchorId}>{products[4].h2Text}</h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        This is a battery-powered unit that PestBye markets specifically at
-        spiders as well as mice, which is unusual, since most of this category
-        either claims rodents only or claims practically everything. Running on
-        batteries rather than mains power means it can go in a loft, a garage or
-        a shed where there is no socket.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Batteries are the obvious drawback: they run down, and unlike a plug-in
-        there is nothing to tell you at a glance that the unit has stopped.
-        Evidence for ultrasonic deterrence of spiders is no stronger than for
-        rodents, and arguably weaker, since far less has been published on it.
-        Physical exclusion, meaning sealing gaps, brushing down webs and
-        reducing outdoor lighting near doors, remains the approach with actual
-        support behind it.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Battery powered, no socket required</li>{" "}
-        <li>Marketed for spiders as well as mice</li>{" "}
-        <li>Suits lofts, garages and sheds</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Batteries run down with no obvious indication</li>{" "}
-        <li>Evidence for ultrasonic spider deterrence is especially thin</li>{" "}
-        <li>Physical exclusion works better than any repeller</li>{" "}
-      </ul>{" "}
-      {/* Product 6 */} <h2 id={products[5].anchorId}>{products[5].h2Text}</h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[5].cardName}
-          features={products[5].features}
-          asin={products[5].asin}
-          bestFor={products[5].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The PestBye long-life battery model is the other cordless option here,
-        aimed at rats and mice rather than a broad pest list. Like the spider
-        and mouse unit above, it goes wherever you need it rather than wherever
-        the sockets are, which is usually the point of a battery model.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        We have placed it last not because of any measured shortcoming but
-        because it does nothing the units above it do not, and this page ranks
-        on how narrow and checkable a claim is rather than on any performance we
-        can demonstrate. If you have already decided to try ultrasonic
-        deterrence in an unpowered space, it is a reasonable option. If you have
-        an active rat problem, go to traps first.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Battery powered, no socket required</li>{" "}
-        <li>Aimed at rats and mice rather than a broad pest list</li>{" "}
-        <li>Established UK brand in this category</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Batteries need replacing</li>{" "}
-        <li>Offers nothing the cordless units above do not</li>{" "}
-        <li>Same unproven technology as every product here</li>{" "}
-      </ul>{" "}
-      {/* Buying Guide */}{" "}
-      <h2 id="buying-guide">
-        Buying Guide: How to Choose an Ultrasonic Pest Repeller
-      </h2>{" "}
-      <p>
-        {" "}
-        If you have decided to try an ultrasonic pest repeller despite the
-        uncertain evidence, here is what to consider when choosing between the
-        available options.{" "}
-      </p>{" "}
-      <h3>How Ultrasonic Repellers Claim to Work</h3>{" "}
-      <p>
-        {" "}
-        Ultrasonic pest repellers emit sound waves at frequencies above the
-        range of human hearing — typically between 20 kHz and 65 kHz. The theory
-        is that these high-frequency sounds are unpleasant or disorienting to
-        pests such as rodents and insects, causing them to leave the area. Some
-        devices also claim to emit electromagnetic waves through your home's
-        wiring. The concept is not entirely without scientific basis — rodents
-        do communicate and navigate using ultrasonic frequencies — but the leap
-        from "rodents can hear ultrasound" to "a plug-in device will drive them
-        out of your home" is a large one that the evidence does not strongly
-        support.{" "}
-      </p>{" "}
-      <h3>Coverage Area Per Unit</h3>{" "}
-      <p>
-        {" "}
-        Manufacturers routinely claim coverage areas of 80 to 200 square metres
-        per unit. These figures are almost certainly measured in ideal
-        laboratory conditions — an empty room with hard, reflective surfaces. In
-        a real home, ultrasonic waves are absorbed by soft furnishings (sofas,
-        curtains, carpets) and blocked entirely by walls, doors, and large
-        furniture. A realistic effective range in a furnished room is likely no
-        more than 3-5 metres in a direct line from the device. You will need one
-        unit per room at minimum, and larger rooms may require two.{" "}
-      </p>{" "}
-      <h3>Plug-In vs Battery</h3>{" "}
-      <p>
-        {" "}
-        The vast majority of ultrasonic repellers sold in the UK are plug-in
-        models that draw power directly from a wall socket. This is the
-        practical choice for home use — they provide continuous operation
-        without the need to replace batteries. Battery-powered models do exist
-        and are occasionally marketed for use in sheds, lofts, and outbuildings
-        without power sockets, but their output tends to be weaker and batteries
-        need regular replacement. For any indoor application, plug-in is the way
-        to go.{" "}
-      </p>{" "}
-      <h3>What the Science Actually Says</h3>{" "}
-      <p>
-        {" "}
-        We believe in being honest with our readers. The scientific evidence for
-        ultrasonic pest repellers is, at best, inconclusive. A number of
-        laboratory studies have demonstrated that rodents exhibit short-term
-        avoidance behaviour when exposed to intense ultrasonic sound in
-        controlled settings. However, these effects are inconsistent, often
-        disappear within days as the animals habituate, and have not been
-        reliably replicated in real-world domestic environments.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The US Federal Trade Commission (FTC) has taken enforcement action
-        against several ultrasonic repeller manufacturers for making deceptive
-        advertising claims, including claims that their products effectively
-        eliminate pest infestations. In the UK, Trading Standards has similarly
-        scrutinised manufacturers who make overly bold claims. No major pest
-        control professional body — including the BPCA (British Pest Control
-        Association) — endorses ultrasonic devices as an effective primary pest
-        control method.{" "}
-      </p>{" "}
-      <h3>Why We Recommend Combining With Traps and Poison</h3>{" "}
-      <p>
-        {" "}
-        If you choose to use an ultrasonic repeller, please treat it as one
-        small component of a comprehensive pest management strategy — not as a
-        standalone solution. For rodent problems, snap traps and bait stations
-        with proven rodenticides remain the most effective methods available to
-        UK consumers. For insect problems, targeted insecticides, gel baits, and
-        physical exclusion (sealing entry points) are far more reliable. An
-        ultrasonic repeller might, at best, provide a mild supplementary
-        deterrent — but it should never be the only measure you take against an
-        active infestation.{" "}
-      </p>{" "}
-      <h3>Best For: Mild Deterrence Only</h3>{" "}
-      <p>
-        {" "}
-        Ultrasonic pest repellers are best thought of as a mild, supplementary
-        deterrent — similar to a door draft excluder rather than a deadlock.
-        They may offer some marginal benefit as part of a layered pest
-        prevention strategy in a home that does not currently have an active
-        infestation. For example, you might plug one in alongside sealing gaps,
-        keeping food stored in airtight containers, and maintaining good general
-        hygiene. But if you have rats in your loft, mice in your kitchen, or
-        cockroaches in your bathroom, an ultrasonic device is not going to solve
-        the problem. You need traps, poison, or a professional pest
-        controller.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
+        37m², 1,200 sq ft, 2,500 sq ft unobstructed. Every one of those is
+        stated by the maker, and the word &ldquo;unobstructed&rdquo; is doing
+        real work in the two that use it, given what the EcoMyLife listing says
+        about walls.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+            />
+          </div>
           <p>
-            If you are dealing with an active rodent infestation, skip the
-            ultrasonic repeller and go straight to proven solutions. Our guides
-            to{" "}
-            <a href="/best/rat-traps" className="underline font-semibold">
-              rat traps
-            </a>
-            ,{" "}
-            <a href="/best/mouse-traps" className="underline font-semibold">
-              mouse traps
-            </a>
-            , and{" "}
-            <a href="/best/rat-poison" className="underline font-semibold">
-              rat poison
-            </a>{" "}
-            cover products with a solid track record of actually working.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* FAQ */} <h2 id="faq">Frequently Asked Questions</h2>{" "}
+            {
+              [
+                "A mains plug-in listed for mice and rats with a TEST button and an indicator LED, which the maker rates at up to 37m². Its listing is the one here that scopes itself, recommending use once an infestation in the home is under control; its detail table also carries an unrelated bait-block product's rows, which are not read here.",
+                "A mains plug-in whose listing describes combined electromagnetic and ultrasonic operation and names nine target species, with up to 1,200 sq ft claimed. Its detail table says \"Is electric: No\" of a device that plugs into a socket.",
+                "Two mains units, listed as unit count 2 and number of pieces 4, each rated by the maker at 1,200 sq ft. This is the listing that states its own limitation plainly: ultrasound does not pass through walls and solid objects, so it recommends one per room.",
+                "A USB-C rechargeable unit for places without a socket — lofts, barns, caravans — with up to 170 hours a charge claimed and fixed or variable frequency between 20 and 80 kHz, which the maker says is there to stop rodents becoming accustomed to the sound.",
+                "A battery unit taking two 9V PP3 cells, not supplied, which the maker rates at up to 12 months and an unobstructed 2,500 sq ft with a pulse every 8 seconds. Its listed target species is Spider; the card previously said it was marketed for mice, and the listing does not say that.",
+                "The rodent counterpart of the unit above: two 9V PP3 cells, not supplied, 8 to 12 months claimed, the same 8-second pulse and unobstructed 2,500 sq ft, with mouse and rat as the listed target species and a two-year warranty.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If This Is Not the Answer</h2>
+      <p>
+        <strong>Close the way in.</strong> Our{" "}
+        <a href="/best/rodent-proofing">rodent proofing</a> page covers mesh,
+        wire wool and brush strips — the things that stop an animal entering
+        rather than asking it to leave.
+      </p>
+      <p>
+        <strong>Trap.</strong> Our <a href="/best/rat-traps">rat traps</a> and{" "}
+        <a href="/best/mouse-traps">mouse traps</a> pages cover the methods that
+        act on the animal directly.
+      </p>
+      <p>
+        <strong>Read the evidence in full.</strong> Our{" "}
+        <a href="/guides/ultrasonic-pest-repellers-do-they-work">
+          guide to whether ultrasonic repellers work
+        </a>{" "}
+        goes further into the studies than a product page should.
+      </p>
+
+      {/* Using them */}
+      <h2 id="using">Placing One</h2>
+      <ol>
+        <li>
+          <strong>One per room, if you follow the makers&rsquo; own advice.</strong>{" "}
+          The EcoMyLife listing says the sound does not cross a wall.
+        </li>
+        <li>
+          <strong>Keep the line of sight clear.</strong> Two listings state
+          their coverage figure for an unobstructed area, which a furnished room
+          is not.
+        </li>
+        <li>
+          <strong>Buy the batteries.</strong> Both PP3 units state that cells
+          are not supplied.
+        </li>
+        <li>
+          <strong>Do the other things at the same time.</strong> Proofing,
+          cleaning and trapping are what the ICWDM references above are
+          measuring these against.
+        </li>
+        <li>
+          <strong>Judge it against what you also changed.</strong> If gaps were
+          sealed in the same week, the device is not the only variable — which
+          is the point the last question below makes.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Six Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        coverage figure attributed to the maker who claims it. Where a listing
+        does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Power</th>
+              <th className="text-left p-2 border-b font-semibold">Target species, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Coverage claimed by the maker</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* FAQ — rendered from the same array the schema above is derived from */}
+      <h2 id="faq">Frequently Asked Questions</h2>
       {faqs.map((f) => (
         <div key={f.q}>
           <h3>{f.q}</h3>
           <p>{f.a}</p>
         </div>
       ))}
-      <p>
-        For facilities managers needing active chemical treatment across large
-        spaces, see our guide to{" "}
-        <a
-          href="/best/professional-ulv-foggers"
-          className="text-green-600 hover:underline"
-        >
-          professional ULV foggers
-        </a>
-        .
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Want a Solution That Actually Works?"
-          subtext="If you have an active pest problem, a certified pest controller can resolve it quickly using proven methods — no guesswork involved"
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-1 font-bold text-lg">
-          Looking for proven alternatives?
-        </p>{" "}
-        <p className="text-gray-600 mb-4 text-sm">
-          Traps and rodenticides have decades of evidence behind them.
-          Ultrasonic devices do not.
-        </p>{" "}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          {" "}
-          <a
-            href="/best/rat-traps"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            {" "}
-            Best Rat Traps UK 2026 →{" "}
-          </a>{" "}
-          <a
-            href="/best/mouse-traps"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            {" "}
-            Best Mouse Traps UK 2026 →{" "}
-          </a>{" "}
-          <a
-            href="/guides/ultrasonic-pest-repellers-do-they-work"
-            className="inline-block px-6 py-2.5 bg-gray-700 hover:bg-gray-800 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            {" "}
-            Read the Evidence Guide →{" "}
-          </a>{" "}
-        </div>{" "}
-      </div>{" "}
+
+      <FindProviderCTA
+        heading="A rodent problem that needs dealing with?"
+        subtext="Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

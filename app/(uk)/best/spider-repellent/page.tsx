@@ -1,64 +1,55 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S68 R6 — ROLLOUT REBUILD to the R8 pattern, on sources. LAW 191 GOVERNS THIS ROUTE:
+// four of the five products are repellents, so there is no efficacy claim in our own
+// voice anywhere on the page, no superlative or ranking label, and no rank numeral.
+// Card labels are neutral factual descriptors taken from the listings.
+//
+// THE TITLE AND H1 PROMISED PRODUCT TYPES THE PAGE DOES NOT CARD. The <title> said
+// "Sprays & Plug-Ins" and the H1 said "Sprays, Traps & Natural Options"; all five cards
+// are sprays. Both now say what is here. The head keyword is unchanged.
+//
+// THE FAQ IS ONE ARRAY (Law 190), schema derived from it.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Spider Repellent UK: Sprays & Plug-Ins",
+    title: "Best Spider Repellent UK: Five Sprays Compared",
     description:
-      "What the evidence shows about spider repellents, and five sprays described by what their own listings state rather than by how well they work.",
+      "Spider sprays for UK homes: what extension guidance says actually reduces spiders indoors, the ASA position on repellent claims, and five sprays as listed.",
     alternates: { canonical: "https://pestproindex.com/best/spider-repellent" },
     openGraph: {
-      title: "Best Spider Repellent UK: Sprays & Plug-Ins",
+      title: "Best Spider Repellent UK: Five Sprays Compared",
       description:
-        "What the evidence shows about spider repellents, and five sprays described by what their own listings state rather than by how well they work.",
+        "Spider sprays for UK homes: what extension guidance says actually reduces spiders indoors, the ASA position on repellent claims, and five sprays as listed.",
       url: "https://pestproindex.com/best/spider-repellent",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Spider Repellent UK 2026: Sprays, Traps & Natural Options",
+  headline: "Best Spider Repellent UK 2026: Five Sprays Compared",
   description:
-    "What the evidence shows about spider repellents, and five sprays described by what their own listings state rather than by how well they work.",
+    "Spider sprays for UK homes: what extension guidance says actually reduces spiders indoors, the ASA position on repellent claims, and five sprays as listed.",
   datePublished: "2026-03-31",
-  dateModified: "2026-03-31",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://pestproindex.com/best/spider-repellent",
-  },
+  dateModified: "2026-09-07",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/spider-repellent" },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -67,33 +58,160 @@ const breadcrumbSchema = {
     },
   ],
 };
-// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
-// from this and only this, so the two surfaces cannot disagree again. The visible
-// block was authoritative where they did disagree.
-const faqs = [
+
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194). Bodies kept under Law 175: asa-pest-repellents at
+// ~/pp-s67r2/sources (banked S67 R2); ucipm-spiders and purdue-spiders at
+// ~/pp-s68r6/sources, fetched 2026-09-07.
+//
+// BOTH EXTENSION SOURCES ARE AMERICAN AND ARE ATTRIBUTED AS SUCH (Law 135). What is
+// taken from them is general control practice — webs, clutter, gaps, what a spray does
+// and does not do. Their statements about which local species can injure a person are
+// about California and Indiana and are NOT repeated here as UK facts.
+const SRC = {
+  asa: "https://www.asa.org.uk/advice-online/pest-repellents.html",
+  ucipm: "https://ipm.ucanr.edu/home-and-landscape/spiders/",
+  purdue: "https://extension.entm.purdue.edu/publications/E-72/E-72.html",
+};
+
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
+// the S45-C window. A property is asserted only where the listing states it (S52-E,
+// S50-H); a cell the listing does not state reads "not stated". Every maker claim about
+// what a product does to spiders is framed as the maker's own (Law 191).
+//
+// GONE, BY NAME: "Established UK spider repellent", "UK-developed natural barrier
+// spray", "From a specialist UK pest control brand", "Non-staining on surfaces" as an
+// assertion, and "Second bottle on hand for the next reapplication" — none was on the
+// listing it sat under, and the first three are our voice vouching for a repellent.
+//
+// ONE LISTING'S DETAIL TABLE BELONGS TO A DIFFERENT PRODUCT. B00FJ4LWWW's rows carry
+// "Powered by: Mains", "Ultrasonic Technology", "Effective on Rodents" and a £30.98
+// price — an ultrasonic plug-in's specification table attached to a 500ml spray. Nothing
+// from those rows is asserted; the card reads the title and the feature bullets only.
+const products: ProductRecord[] = [
   {
-    q: "Are any UK spiders dangerous?",
-    a: "No. The false widow spider can deliver a bite similar to a bee sting, but bites are extremely rare and almost never require medical treatment. There are no medically significant spider species in the UK. If you experience unusual swelling or an allergic reaction after any bite, seek medical advice as a precaution.",
+    anchorId: "zero-in",
+    asin: "B00IIOR7NS",
+    cardName: "Zero In Spider Repellent Peppermint Oil Spray 500ml",
+    cardLabel: "Peppermint spray, 500ml",
+    features: [
+      "500ml, listed as ready to use; mint scent",
+      "The maker describes it as a non-toxic peppermint oil barrier that repels spiders without harming them",
+      "The maker states protection for up to 3 weeks",
+      "Item form stated two ways on the listing: Aerosol in the detail table, a trigger bottle with an on/off nozzle in the feature text",
+      "Listing directions: shake, twist the nozzle open, spray around entry points and skirting",
+    ],
+    tableCells: ["Zero In Spider Repellent 500ml", "Peppermint oil, as listed", "Up to 3 weeks, per the maker", "Peppermint spray, 500ml"],
+    h2Label: "Peppermint spray, 500ml",
+    h2Name: "Zero In Spider Repellent Peppermint Oil Spray 500ml",
+    tocLabel: "Peppermint spray, 500ml",
+    tocName: "Zero In Spider Repellent",
   },
   {
-    q: "Why do I get so many spiders in September?",
-    a: "September is mating season for the giant house spider. Males leave their webs and wander indoors looking for females, which is why you suddenly see large spiders running across floors. The influx usually subsides by late October once mating is complete.",
+    anchorId: "zero-in-twin",
+    asin: "B0DBZXWGLG",
+    cardName: "Zero In Spider Repellent 500ml Twin Pack",
+    cardLabel: "Peppermint spray, 2 x 500ml",
+    features: [
+      "Two 500ml bottles, as listed; mint scent",
+      "The maker describes it as a non-hazardous mint oil spray that repels spiders without harming them",
+      "The maker states the barrier lasts 2 to 3 weeks",
+      "Listed as stain-free and low-odour, for living areas",
+      "Item form listed as Liquid; the same maker's single pack lists Aerosol",
+    ],
+    tableCells: ["Zero In Spider Repellent twin pack", "Peppermint oil, as listed", "2–3 weeks, per the maker", "Peppermint spray, 2 x 500ml"],
+    h2Label: "Peppermint spray, 2 x 500ml",
+    h2Name: "Zero In Spider Repellent 500ml Twin Pack",
+    tocLabel: "Peppermint spray, 2 x 500ml",
+    tocName: "Zero In Twin Pack",
   },
   {
-    q: "Does peppermint oil really repel spiders?",
-    a: "There is some anecdotal evidence and limited laboratory research suggesting spiders avoid surfaces treated with strong peppermint oil. However, real-world results are inconsistent. It is worth trying as part of a broader prevention approach — it smells pleasant, its maker describes it as non-toxic, and it may help — but do not rely on it as your sole spider deterrent.",
+    anchorId: "acana",
+    asin: "B0DFMLDNPT",
+    cardName: "Acana Natural Spider Stopper 500ml",
+    cardLabel: "Peppermint and clove spray, 500ml",
+    features: [
+      "500ml, listed as a water-based spray with peppermint and clove oils",
+      "The maker states protection lasting up to 12 weeks",
+      "Listed as usable on any surface and as not staining",
+      "Listed for homes, garages and sheds",
+      "Country of origin listed as United Kingdom",
+    ],
+    tableCells: ["Acana Natural Spider Stopper 500ml", "Peppermint and clove oils, as listed", "Up to 12 weeks, per the maker", "Peppermint and clove spray, 500ml"],
+    h2Label: "Peppermint and clove spray, 500ml",
+    h2Name: "Acana Natural Spider Stopper 500ml",
+    tocLabel: "Peppermint and clove spray, 500ml",
+    tocName: "Acana Spider Stopper",
   },
   {
-    q: "How do I stop spiders coming through my air bricks?",
-    a: "Fit fine mesh covers (2mm or smaller gaps) over air bricks to keep spiders and other crawling insects out. Crucially, do not block the air brick entirely — they provide essential ventilation to prevent damp. Stainless steel or plastic mesh covers are inexpensive and widely available at DIY stores.",
+    anchorId: "pestbye",
+    asin: "B00FJ4LWWW",
+    cardName: "Pestbye Get Rid of Spiders Spray Repellent & Deterrent 500ml",
+    cardLabel: "Unscented spray, 500ml",
+    features: [
+      "500ml single bottle; scent listed as unscented",
+      "The maker describes it as creating a barrier and says it will not directly harm spiders",
+      "The maker states it stops cobwebs forming on treated areas for up to 4 weeks",
+      "Listed as cruelty free; country of origin listed as China",
+      "Active substance not stated on the listing",
+    ],
+    tableCells: ["Pestbye Spider Repellent 500ml", "not stated", "Up to 4 weeks, per the maker", "Unscented spray, 500ml"],
+    h2Label: "Unscented spray, 500ml",
+    h2Name: "Pestbye Get Rid of Spiders Spray Repellent & Deterrent 500ml",
+    tocLabel: "Unscented spray, 500ml",
+    tocName: "Pestbye Spider Spray",
   },
   {
-    q: "Should I kill spiders or remove them?",
-    a: "Remove them humanely if possible. Spiders are beneficial predators that eat flies, mosquitoes, moths, and other household pests. Use a spider catcher tool or the glass-and-card method to trap and release them outside. Repellent sprays and sealing entry points are better long-term solutions than killing individual spiders.",
+    anchorId: "nope",
+    asin: "B09FB4QX9H",
+    cardName: "NOPE! Spider Killer Spray 500ml",
+    cardLabel: "Pyrethroid contact spray, 500ml",
+    features: [
+      "500ml; the one insecticide here — the listing calls it a contact killer with synthetic pyrethroid technology",
+      "Target species listed as Spider",
+      "Listed as water-based, odourless and non-staining, for indoor and outdoor use",
+      "The maker states a residual barrier giving up to 6 weeks of protection",
+      "Manufacturer listed as Safeguard Europe; country of origin United Kingdom",
+    ],
+    tableCells: ["NOPE! Spider Killer Spray 500ml", "Synthetic pyrethroid, as listed", "Up to 6 weeks, per the maker", "Pyrethroid contact spray, 500ml"],
+    h2Label: "Pyrethroid contact spray, 500ml",
+    h2Name: "NOPE! Spider Killer Spray 500ml",
+    tocLabel: "Pyrethroid contact spray, 500ml",
+    tocName: "NOPE! Spider Killer Spray",
+  },
+];
+
+// ONE FAQ ARRAY (Law 190). The visible block and the FAQPage schema both read it.
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "Does peppermint oil repel spiders?",
+    a: "This page cannot tell you that it does. Four of the five products here are repellents, and the ASA reports that it has yet to accept any claim of efficacy for pest repellent devices, and that marketers without UK-based trial evidence should not state or imply efficacy. What the makers claim is on each card, framed as theirs. What the extension guidance quoted above recommends instead is removing webs and hiding places, and sealing the gaps insects come in through.",
   },
   {
-    q: "Do spider repellent plug-ins work?",
-    a: "There is very limited scientific evidence that ultrasonic plug-in devices repel spiders. Independent testing has consistently failed to demonstrate reliable effectiveness. If you want to try one, treat it as a supplementary measure alongside proven methods like sealing entry points and using repellent sprays — but do not rely on it as your only defence.",
+    q: "Why do I see more spiders in September?",
+    a: "Adult house spiders are more visible in late summer and early autumn as males move about looking for mates. No listing here mentions a season, and this page holds no UK source on the timing, so it does not put a date range on it.",
+  },
+  {
+    q: "Will a spray clear an infestation?",
+    a: "UC IPM's guidance is that insecticides will not provide long-term control and should not generally be used against spiders outdoors, and that control by spraying is only temporary unless accompanied by housekeeping. Only one product here is an insecticide at all; the other four are repellents.",
+  },
+  {
+    q: "What about the gaps they come in through?",
+    a: "Purdue Extension's guidance is that many spiders may be excluded by caulking or otherwise eliminating cracks and crevices around the foundation and around windows and doors, and UC IPM says to inspect window and door screens for good seals. That is a sealant-and-screen job, and nothing on this page does it.",
   },
 ];
 
@@ -106,578 +224,381 @@ const faqSchema = {
     acceptedAnswer: { "@type": "Answer", text: f.a },
   })),
 };
-// S67 R4 — REPELLENT DEFENSIVE SWEEP, PM-ruled on live advertising-standards exposure.
-// DELETION AND RELABELLING ONLY. No card removed, no ASIN changed, no card reordered.
-//
-// S-3 — AWARD LABELS OFF, replaced by a neutral factual descriptor drawn from the
-// product's own banked listing (form, type, size). The SAME string goes on the card, the
-// h2 and the comparison table, so the three surfaces cannot disagree and Law 188 has
-// nothing to adjudicate.
-//     Best Overall       -> Peppermint aerosol, 500ml            (Item form :: Aerosol)
-//     Best Value         -> Peppermint spray, 2 x 500ml          (Number of Items :: 2)
-//     Best Long-Lasting  -> Peppermint and clove spray, 500ml    (clove is in the listing)
-//     Best Barrier Spray -> Unscented spray, 500ml               (Scent :: Unscented)
-//     Best Kill & Repel  -> Residual spray, 500ml                (title: "Residual Action")
-//
-// S-4 — RANK NUMERALS REMOVED. The `rank` field is deleted rather than left unrendered,
-// so no dead ranking data survives, and the "1. " … "5. " prefixes come off h2Label and
-// tocTitle. NOTE THIS ROUTE'S FIELD SEMANTICS ARE INVERTED relative to the pilot:
-// h2Label holds the PRODUCT NAME and h2Name holds the AWARD. Assuming the pilot's layout
-// here would have written a descriptor into the product-name slot.
-//
-// S-2 — FEATURE BULLETS ASSERTING EFFICACY ARE DELETED, not softened. A bullet stating
-// composition, safety, format or pack size stays; one stating that the product repels,
-// stops, protects, kills or lasts-as-protection goes, because it reads as this site's
-// claim rather than the maker's. "Same trusted Zero In formula" went for two reasons —
-// it is an efficacy claim and "trusted" is banned in our own voice.
-type ProductRecord = {
-  anchorId: string;
-  asin: string;
-  cardName: string;
-  cardLabel: string;
-  features: string[];
-  tableCells: string[];
-  h2Label: string;
-  h2Name: string;
-  tocTitle: string;
-};
-
-const products: ProductRecord[] = [
-  {
-    anchorId: "zero-in",
-    asin: "B00IIOR7NS",
-    cardName: "Zero In Spider Repellent Peppermint Oil Spray 500ml",
-    cardLabel: "Peppermint aerosol, 500ml",
-    features: [
-      "Established UK spider repellent",
-      "Peppermint oil formula; the maker describes it as non-toxic",
-    ],
-    tableCells: [
-      "Zero In Spider Repellent Peppermint Oil Spray 500ml",
-      "Natural spray",
-      "Peppermint aerosol, 500ml",
-    ],
-    h2Label: "Zero In Spider Repellent Peppermint Oil Spray 500ml",
-    h2Name: "Peppermint aerosol, 500ml",
-    tocTitle: "Zero In Spider Repellent Peppermint Oil Spray",
-  },
-  {
-    anchorId: "zero-in-twin",
-    asin: "B0DBZXWGLG",
-    cardName: "Zero In Spider Repellent 500ml Twin Pack",
-    cardLabel: "Peppermint spray, 2 x 500ml",
-    features: [
-      "Two full 500ml bottles of peppermint repellent",
-      "Second bottle on hand for the next reapplication",
-    ],
-    tableCells: [
-      "Zero In Spider Repellent 500ml Twin Pack",
-      "Natural spray",
-      "Peppermint spray, 2 x 500ml",
-    ],
-    h2Label: "Zero In Spider Repellent 500ml Twin Pack",
-    h2Name: "Peppermint spray, 2 x 500ml",
-    tocTitle: "Zero In Spider Repellent Twin Pack",
-  },
-  {
-    anchorId: "acana",
-    asin: "B0DFMLDNPT",
-    cardName: "Acana Natural Spider Stopper 500ml",
-    cardLabel: "Peppermint and clove spray, 500ml",
-    features: [
-      "Peppermint and clove oil formula",
-      "Non-staining on surfaces",
-    ],
-    tableCells: [
-      "Acana Natural Spider Stopper 500ml",
-      "Natural spray",
-      "Peppermint and clove spray, 500ml",
-    ],
-    h2Label: "Acana Natural Spider Stopper 500ml",
-    h2Name: "Peppermint and clove spray, 500ml",
-    tocTitle: "Acana Natural Spider Stopper",
-  },
-  {
-    anchorId: "pestbye",
-    asin: "B00FJ4LWWW",
-    cardName: "Pestbye Spider Repellent Spray",
-    cardLabel: "Unscented spray, 500ml",
-    features: [
-      "UK-developed natural barrier spray",
-      "From a specialist UK pest control brand",
-    ],
-    tableCells: [
-      "Pestbye Spider Repellent Spray",
-      "Natural spray",
-      "Unscented spray, 500ml",
-    ],
-    h2Label: "Pestbye Spider Repellent Spray",
-    h2Name: "Unscented spray, 500ml",
-    tocTitle: "Pestbye Spider Repellent Spray",
-  },
-  {
-    anchorId: "nope",
-    asin: "B09FB4QX9H",
-    cardName: "NOPE! Spider Killer Spray 500ml",
-    cardLabel: "Residual spray, 500ml",
-    features: [
-      "Odourless, non-staining residue on treated surfaces",
-      "Suitable for indoor and outdoor use",
-    ],
-    tableCells: [
-      "NOPE! Spider Killer Spray 500ml",
-      "Contact killer",
-      "Residual spray, 500ml",
-    ],
-    h2Label: "NOPE! Spider Killer Spray 500ml",
-    h2Name: "Residual spray, 500ml",
-    tocTitle: "NOPE! Spider Killer Spray",
-  },
-];
 
 const tocItems = [
-  { id: "at-a-glance", title: "Best Spider Repellents at a Glance" },
-  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
-  { id: "buying-guide", title: "How to Choose Spider Repellent" },
+  { id: "situation", title: "What Is Actually in the House" },
+  { id: "regulator", title: "What the Regulator Has Accepted" },
+  { id: "limits", title: "Where a Spray Does Not Work" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Spray Is Not the Answer" },
+  { id: "using", title: "Using One" },
+  { id: "compared", title: "The Five Sprays Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
+
 export default function BestSpiderRepellentPage() {
   return (
     <GuideLayout
-      title="Best Spider Repellent UK 2026: Sprays, Traps & Natural Options"
-      subtitle="Five spider sprays, described by what their listings state, alongside what the evidence for repellents actually shows"
-      lastUpdated="March 2026"
-      readingTime="8 min"
+      title="Best Spider Repellent UK 2026: Five Sprays Compared"
+      subtitle="Four repellent sprays and one insecticide, described by what their own listings state — beside the ASA position on repellent claims and what extension guidance says reduces spiders indoors"
+      lastUpdated="September 2026"
+      readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
+        { title: "How to Get Rid of Spiders", href: "/guides/how-to-get-rid-of-spiders" },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
         {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
-        {
-          title: "Professional Pest Control vs DIY",
-          href: "/guides/professional-pest-control-vs-diy",
-        },
-        {
-          title: "Autumn Pest-Proofing Guide",
-          href: "/guides/autumn-pest-proofing",
-        },
-        {
-          title: "How to Get Rid of Foxes",
-          href: "/guides/how-to-get-rid-of-foxes",
+          title: "Ultrasonic Pest Repellers: Do They Work?",
+          href: "/guides/ultrasonic-pest-repellers-do-they-work",
         },
       ]}
       relatedProducts={[
-        {
-          title: "Best Indoor Fly Killers UK 2026",
-          href: "/best/fly-killer-indoor",
-        },
-        { title: "Best Moth Traps UK 2026", href: "/best/moth-traps" },
+        { title: "Best Ultrasonic Pest Repellers UK 2026", href: "/best/ultrasonic-pest-repellers" },
+        { title: "Best Cockroach Killers UK 2026", href: "/best/cockroach-killers" },
         { title: "Best Ant Killers UK 2026", href: "/best/ant-killers" },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />{" "}
+      />
+
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
-          a small commission at no extra cost to you. As an Amazon Associate,
-          PestPro Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
+          a small commission at no extra cost to you. This helps us keep the
+          site running and free for everyone. As an Amazon Associate, PestPro
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        Every autumn, UK homes experience a familiar invasion: large house
-        spiders scuttling across floors, lurking in bath tubs, and building webs
-        in every corner. While spiders are harmless and genuinely beneficial —
-        eating flies, mosquitoes, and other household pests — many people find
-        them deeply unsettling. Arachnophobia is one of the most common phobias
-        in the UK, and even those who are not afraid of spiders may not want
-        them sharing their living room.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Every product listed is available on Amazon UK.{" "}
-      </p>{" "}
+        Five 500ml sprays. Four are sold as repellents — peppermint, or
+        peppermint and clove — and one is an insecticide whose listing names a
+        synthetic pyrethroid. The difference between those two things is the
+        whole of this page, and the regulator&rsquo;s position on the first
+        group is set out below before any of them.
+      </p>
+
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You want to know whether a repellent spray works.</strong>{" "}
+            The ASA reports it has accepted no efficacy claim for this class —{" "}
+            <a href="#regulator" className="underline">
+              what the regulator has accepted
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You have webs and want fewer of them.</strong> The extension
+            guidance puts a vacuum cleaner ahead of a bottle —{" "}
+            <a href="#situation" className="underline">
+              what is actually in the house
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You have sprayed before and they came back.</strong> That is
+            what the guidance predicts —{" "}
+            <a href="#limits" className="underline">
+              where a spray does not work
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want the one product here that is an insecticide.</strong>{" "}
+            <a href="#nope" className="underline">
+              The NOPE! contact spray
+            </a>{" "}
+            names a synthetic pyrethroid; the other four do not name an active
+            at all.
+          </li>
+          <li>
+            <strong>You want a scented barrier and nothing stronger.</strong>{" "}
+            <a href="#zero-in" className="underline">
+              Peppermint
+            </a>
+            ,{" "}
+            <a href="#acana" className="underline">
+              peppermint and clove
+            </a>{" "}
+            or{" "}
+            <a href="#pestbye" className="underline">
+              unscented
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+
       <div className="not-prose">
-        {" "}
-        <Callout type="info">
-          {" "}
+        <Callout type="warning">
           <p>
-            No UK spider is medically dangerous. False widow spiders can deliver
-            a mild bite, but serious reactions are extremely rare. Most spiders
-            in UK homes are completely harmless and actually help control flies
-            and other pests.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      <h2 id="at-a-glance">Best Spider Repellents at a Glance</h2>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            <th>Product</th>
-            <th>Type</th>
-            <th>What it is</th>
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
+            One product on this page is an insecticide and four are not. Read
+            the label on whichever you buy: the repellents name no active
+            substance at all, and the insecticide names a synthetic pyrethroid.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">What Is Actually in the House</h2>
+      <p>
+        Before anything is sprayed, it is worth knowing what the published
+        guidance treats spiders as. UC IPM&rsquo;s pest note says{" "}
+        <em>
+          &ldquo;spiders are mostly beneficial because they feed on pest
+          insects&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ). Its advice on what to do about them is not a product:{" "}
+        <em>
+          &ldquo;Focus spider control efforts on removing webs and hiding
+          places. Pesticides are not generally needed.&rdquo;
+        </em>
+      </p>
+      <p>
+        Purdue Extension puts the same point in one line —{" "}
+        <em>&ldquo;Sanitation is the most practical method of spider control.&rdquo;</em>{" "}
+        — and is specific about the method:{" "}
+        <em>
+          &ldquo;Clean away all webbing with a vacuum cleaner so that eggs and
+          spiders are picked up and destroyed.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.purdue} rel="nofollow">
+          Purdue Extension
+        </a>
+        ). Both are American services writing about their own states; what is
+        taken from them here is method, not a claim about which species live in
+        a British house.
+      </p>
+
+      {/* [1] Regulator */}
+      <h2 id="regulator">What the Regulator Has Accepted</h2>
+      <p>
+        Four of the five products here are repellents, and the advertising
+        regulator has a settled position on that class. The ASA&rsquo;s
+        AdviceOnline entry on pest repellents states:{" "}
+        <em>
+          &ldquo;In past years, the ASA, together with independent experts, has
+          closely examined the evidence for claims for those devices, which can
+          range from cat-shaped metal sheets with glowing eyes to ultrasonic and
+          electromagnetic equipment. It has yet to accept any claim of
+          efficacy.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.asa} rel="nofollow">
+          ASA
+        </a>
+        ).
+      </p>
+      <p>
+        And it is direct about what a seller may say:{" "}
+        <em>
+          &ldquo;Marketers who do not hold evidence in the form of UK-based
+          trials should not state or imply efficacy for the products, through
+          either claims, visuals or product names.&rdquo;
+        </em>{" "}
+        That is why every claim on the cards below is attributed to the maker
+        who made it. &ldquo;No claim of efficacy has been accepted&rdquo; is not
+        the same statement as &ldquo;these products do not work&rdquo;, and this
+        page does not make the second one.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where a Spray Does Not Work</h2>
+      <p>
+        <strong>As a lasting answer, on the published evidence.</strong> UC IPM
+        is plain about insecticides:{" "}
+        <em>
+          &ldquo;Insecticides will not provide long-term control and should not
+          generally be used against spiders outdoors.&rdquo;
+        </em>{" "}
+        and{" "}
+        <em>
+          &ldquo;Control by spraying is only temporary unless accompanied by
+          housekeeping.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ). That is written about the strongest thing on this page, not the
+        weakest.
+      </p>
+      <p>
+        <strong>Against a spider that is not there yet.</strong> Purdue notes
+        that{" "}
+        <em>&ldquo;Most spiders can live for several months without food.&rdquo;</em>{" "}
+        A treated skirting board is not a sealed one, and a spider that walks in
+        under a door has not met the treated surface.
+      </p>
+      <p>
+        <strong>On the gap itself.</strong> The two things the guidance names —
+        caulking cracks and crevices, and screens that seal — are jobs for
+        sealant and mesh. No spray on this page does either, and the comparison
+        table says how long each maker claims its film lasts rather than what it
+        achieves.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Whether it is a repellent or an insecticide</h3>
+      <p>
+        One listing names an active substance — a synthetic pyrethroid — and
+        gives spider as its target species. The other four name no active at
+        all. That is the largest single difference on the page and the table
+        states it for every row.
+      </p>
+      <h3>2. What the maker claims about duration</h3>
+      <p>
+        The stated figures run from up to 3 weeks to up to 12, and one product
+        states 4 weeks for cobwebs specifically. Every one of those is the
+        maker&rsquo;s own figure, listing-traceable, and none has been tested by
+        this page.
+      </p>
+      <h3>3. Scent, and where it is going</h3>
+      <p>
+        Three of the five are mint or mint-and-clove; one is listed as
+        unscented; the insecticide is listed as odourless. In a bedroom or a
+        living room that is a real difference between products, and it is one
+        the listings do state.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+            />
+          </div>
+          <p>
+            {
+              [
+                "A 500ml peppermint oil spray for use around entry points and skirting, with the maker claiming a barrier lasting up to three weeks. Its own listing describes the form two ways — an aerosol in the detail table, a trigger bottle with an on/off nozzle in the text — and the card carries both.",
+                "The same product in two bottles, listed as mint scent, stain-free and low-odour, with the maker claiming two to three weeks per application. Its detail table lists the item form as Liquid where the single pack says Aerosol.",
+                "A water-based peppermint and clove spray listed for any surface and for homes, garages and sheds, made in the United Kingdom. Its maker claims the longest duration here, up to twelve weeks; that figure is the maker's and is not tested by this page.",
+                "An unscented 500ml spray whose maker says it will not directly harm spiders and claims cobwebs are stopped on treated areas for up to four weeks. Its detail table belongs to a different product — mains power, ultrasonic technology, a £30.98 price — so nothing in that table is stated here.",
+                "The one insecticide on the page: a 500ml contact spray whose listing names synthetic pyrethroid technology and gives spider as the target species, water-based, odourless and for indoor or outdoor use. The maker claims a residual barrier of up to six weeks.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If a Spray Is Not the Answer</h2>
+      <p>
+        <strong>The vacuum cleaner.</strong> It is the first method both
+        extension services name, and it removes the eggs as well as the web.
+      </p>
+      <p>
+        <strong>Sealant and screens.</strong> Caulking cracks around the
+        foundation, windows and doors is what Purdue names as exclusion; UC IPM
+        adds{" "}
+        <em>
+          &ldquo;Inspect window and door screens for good seals to keep out
+          spiders and the insects they prey on.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>The light by the door.</strong> UC IPM notes that outdoor
+        lighting attracts the insects spiders feed on. Moving a light is free
+        and it addresses the food supply rather than the spider.
+      </p>
+
+      {/* Using them */}
+      <h2 id="using">Using One</h2>
+      <ol>
+        <li>
+          <strong>Clear the webs first.</strong> That is the step the guidance
+          puts ahead of everything else, and a spray does not do it.
+        </li>
+        <li>
+          <strong>Read the label.</strong> One of these is an insecticide; four
+          are not. The label, not the card, governs where it may be used.
+        </li>
+        <li>
+          <strong>Treat the edges, not the room.</strong> Every listing here
+          describes entry points, skirting and frames rather than open floor.
+        </li>
+        <li>
+          <strong>Test the surface.</strong> Two listings claim not to stain;
+          none of them claims that for every surface in a house.
+        </li>
+        <li>
+          <strong>Expect to reapply.</strong> The makers&rsquo; own figures run
+          from three to twelve weeks, and UC IPM&rsquo;s line about spraying
+          being temporary applies whichever bottle you bought.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Five Sprays Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with a
+        duration figure attributed to the maker who claims it. Where a listing
+        does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Active or base, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Duration claimed by the maker</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
             </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      <div className="not-prose">
-        {" "}
-        <StatCallout
-          value="650+"
-          label="spider species found in the UK — but only a handful commonly enter homes"
-        />{" "}
-      </div>{" "}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Zero In is a long-established UK spider repellent. The maker describes its
-        peppermint oil formula as non-toxic.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Application is simple: spray generously around windowsills, doorframes,
-        skirting boards and loft hatches — anywhere spiders are likely to enter
-        or build webs.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        For whole-home treatment, combine the spray with physical exclusion
-        measures like draught excluders on external doors and mesh covers on air
-        bricks.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Established UK spider repellent</li>{" "}
-        <li>Peppermint oil formula, described by the maker as non-toxic</li>{" "}
-        <li>Pleasant scent that freshens the room</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Needs reapplication every 3 weeks</li>{" "}
-        <li>Does not kill spiders — deterrent only</li>{" "}
-        <li>Limited scientific evidence for peppermint effectiveness</li>{" "}
-      </ul>{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The twin pack is particularly well-timed for the autumn spider season
-        when spiders are most active. September and October are peak months for
-        large house spiders entering UK homes during mating season,.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        For households that go through spider repellent quickly, or for anyone
-        who wants to be fully stocked for the autumn, the twin pack is the
-        sensible choice.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Ideal for stocking up before autumn spider season</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Same formula as the single bottle — no additional strength</li>{" "}
-        <li>Still needs reapplication every 3 weeks</li>{" "}
-        <li>Deterrent only — does not kill spiders</li>{" "}
-      </ul>{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The formula is non-staining, so it can be used safely on windowsills,
-        door frames, skirting boards and other surfaces without leaving marks.
-       {" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Sold directly by Acana, a British brand that specialises in natural pest
-        deterrents.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Dual peppermint and clove oil formula</li>{" "}
-        <li>Non-staining on all surfaces</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Single 500ml bottle — a large home will need more than one</li>{" "}
-        <li>Clove scent may not appeal to everyone</li>{" "}
-        <li>
-          Limited scientific evidence for essential oil effectiveness
-        </li>{" "}
-      </ul>{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Pestbye is a UK-based specialist pest control brand with over 10 years
-        of experience.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The spray is suitable for indoor use in all rooms, including bedrooms,
-        living rooms, kitchens and bathrooms. Unlike some chemical sprays that
-        are best limited to exterior use, the Pestbye formula is gentle enough
-        for regular use inside the home.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>UK-developed by a specialist pest control brand</li>{" "}
-        <li>Suitable for indoor use in all rooms</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Needs reapplication monthly</li>{" "}
-        <li>Deterrent only — does not kill spiders</li>{" "}
-        <li>Less well-known brand than Zero In</li>{" "}
-      </ul>{" "}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        NOPE! is suitable for both indoor and outdoor use.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Odourless and non-staining</li>{" "}
-        <li>Suitable for indoor and outdoor use</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Chemical formula — less suitable for those wanting fully natural
-          options
-        </li>{" "}
-        <li>Kills spiders rather than deterring humanely</li>{" "}
-        <li>
-          Requires reapplication every three months to maintain the barrier
-        </li>{" "}
-      </ul>{" "}
-      <h2 id="buying-guide">How to Choose Spider Repellent</h2>{" "}
-      <h3>Common UK House Spiders</h3>{" "}
-      <p>
-        {" "}
-        The spider you are most likely to encounter in your home is the giant
-        house spider (Eratigena atrica) — a large, fast-moving spider with a leg
-        span of up to 75mm. It is completely harmless but its size and speed
-        make it startling. The daddy long-legs spider (Pholcus phalangioides) is
-        another common resident, often found in the corners of rooms and
-        cellars, recognised by its extremely long, thin legs and small body. The
-        false widow spider (Steatoda nobilis) has received considerable media
-        attention, but bites are extremely rare and typically no worse than a
-        bee sting. None of the spiders commonly found in UK homes are dangerous
-        to health.{" "}
-      </p>{" "}
-      <h3>Chemical Sprays vs Natural Deterrents</h3>{" "}
-      <p>
-        {" "}
-        Chemical sprays require caution around children and pets, and some
-        people prefer to avoid chemical products in their home. Natural
-        deterrents like peppermint sprays and conkers are safer and gentler, but
-        their effectiveness is less well-established.{" "}
-      </p>{" "}
-      <h3>Does Peppermint Oil Actually Work?</h3>{" "}
-      <p>
-        {" "}
-        The honest answer is: possibly, but the evidence is limited. A 2018
-        study published in the Journal of Economic Entomology found that certain
-        essential oils, including peppermint, showed some repellent activity
-        against spiders in laboratory conditions. However, real-world
-        effectiveness in a draughty UK home is likely to be lower than in a
-        controlled lab setting. It should be part of a broader strategy, not your only line
-        of defence.{" "}
-      </p>{" "}
-      <h3>Sealing Entry Points</h3>{" "}
-      <p>
-        {" "}
-        The single most effective way to reduce spiders in your home is to
-        prevent them from getting inside in the first place. Fit draught
-        excluders on external doors, use gap filler or caulk around pipe entries
-        and cracks in brickwork, and place fine mesh covers over air bricks
-        (without blocking ventilation). Check window seals and replace any
-        damaged or missing weatherstripping. Spiders can squeeze through
-        surprisingly small gaps, so be thorough. Pay particular attention to
-        ground-floor windows, garage doors, and any openings where utilities
-        enter the building.{" "}
-      </p>{" "}
-      <h3>Seasonal Spider Prevention</h3>{" "}
-      <p>
-        {" "}
-        September is the peak month for spiders in UK homes. This is mating
-        season for the giant house spider — males abandon their webs and wander
-        in search of females, often ending up indoors in the process. To prepare
-        for the autumn influx, seal any gaps you have identified during the
-        summer, and reduce clutter in garages, sheds, and spare rooms
-        where spiders like to hide. By the time October arrives, the mating
-        season subsides and spider sightings drop significantly.{" "}
-      </p>{" "}
-      <h3>When Spiders Are Actually Beneficial</h3>{" "}
-      <p>
-        {" "}
-        Before declaring war on every spider in your home, consider the benefits
-        they provide. A single house spider can consume dozens of flies,
-        mosquitoes, moths, and other pest insects per year. In ecological terms,
-        spiders are one of the most effective natural pest controllers
-        available. If your spider problem is modest — the occasional spider in
-        the bath or one web in a corner — you may find that tolerating a few
-        spiders actually reduces other pest problems. For those who simply
-        cannot share their home with spiders, humane removal with a spider
-        catcher is the most environmentally responsible approach.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
-          <p>
-            Reduce outdoor lighting near doors and windows in September. Lights
-            attract flies and moths, which in turn attract the spiders that feed
-            on them. Switching to yellow-tinted bulbs or motion-sensor lights
-            can reduce the insects — and spiders — around your home.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      <h2 id="faq">Frequently Asked Questions</h2>{" "}
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* FAQ — rendered from the same array the schema above is derived from */}
+      <h2 id="faq">Frequently Asked Questions</h2>
       {faqs.map((f) => (
         <div key={f.q}>
           <h3>{f.q}</h3>
           <p>{f.a}</p>
         </div>
       ))}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Spider Problem You Can't Solve?"
-          subtext="Find BPCA-certified pest control professionals near you who can identify species and seal entry points"
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-3">
-          Want to understand the cost of professional pest control?
-        </p>{" "}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          {" "}
-          <a
-            href="/guides/pest-control-costs"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            Pest Control Costs UK 2026 →
-          </a>{" "}
-          <a
-            href="/guides/professional-pest-control-vs-diy"
-            className="inline-block px-6 py-2.5 bg-gray-700 hover:bg-gray-800 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            Professional vs DIY — Complete Guide →
-          </a>{" "}
-        </div>{" "}
-      </div>{" "}
+
+      <FindProviderCTA
+        heading="Spiders you would rather not deal with yourself?"
+        subtext="Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

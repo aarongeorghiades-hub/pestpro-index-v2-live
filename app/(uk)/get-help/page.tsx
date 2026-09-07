@@ -5,7 +5,6 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import { CheckCircle, Search, Loader2 } from 'lucide-react';
-import { createClient } from '@/utils/supabase';
 
 const reasonOptions = [
   'The checker flagged my band as potentially too high',
@@ -117,27 +116,50 @@ function GetHelpForm() {
     setSubmitting(true);
 
     try {
-      const supabase = createClient();
-      const { error } = await supabase.from('leads').insert({
-        name,
-        email,
-        phone,
-        property_address: buildPropertyAddress(),
-        postcode: postcode.trim(),
-        reason,
-        description,
-        checked_band: paramBand || null,
-        anomaly_flagged: paramAnomaly,
+      // S68 R6 — posts to our own server route, which writes with the service-role
+      // client. The browser no longer talks to Supabase from this page at all.
+      const response = await fetch('/api/get-help', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          property_address: buildPropertyAddress(),
+          postcode: postcode.trim(),
+          reason,
+          description: description.trim(),
+          checked_band: paramBand || null,
+          anomaly_flagged: paramAnomaly,
+        }),
       });
 
-      if (error) {
-        setSubmitError('Something went wrong. Please try again or contact us directly.');
-        console.error('Supabase insert error:', error);
-      } else {
+      const result = await response.json().catch(() => null);
+
+      // The success screen renders only on a confirmed insert.
+      if (response.ok && result?.ok) {
         setSubmitted(true);
+        return;
       }
+
+      if (result?.fieldErrors) {
+        const first = Object.values(result.fieldErrors)[0];
+        setSubmitError(
+          typeof first === 'string'
+            ? first
+            : 'Please check the details above and try again.'
+        );
+        return;
+      }
+
+      setSubmitError(
+        result?.error ||
+          'We could not save your request. Please try again, or email pestproindex@zohomail.eu and we will pick it up from there.'
+      );
     } catch {
-      setSubmitError('Something went wrong. Please try again or contact us directly.');
+      setSubmitError(
+        'We could not reach the server. Please check your connection and try again, or email pestproindex@zohomail.eu.'
+      );
     } finally {
       setSubmitting(false);
     }
