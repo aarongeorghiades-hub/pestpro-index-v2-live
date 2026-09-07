@@ -20,12 +20,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Wasp Killer Products UK 2026: Sprays, Powders & Traps",
     description:
-      "Wasp nest treatment for UK homes: when a council says leave it to a professional, why a nest dies off in winter anyway, and three products on their own listings.",
+      "Wasp nest treatment for UK homes: when a council says leave it to a professional, why a nest dies off in winter anyway, and four products on their own listings.",
     alternates: { canonical: "https://pestproindex.com/best/wasp-killers" },
     openGraph: {
       title: "Best Wasp Killer Products UK 2026: Sprays, Powders & Traps",
       description:
-        "Wasp nest treatment for UK homes: when a council says leave it to a professional, why a nest dies off in winter anyway, and three products on their own listings.",
+        "Wasp nest treatment for UK homes: when a council says leave it to a professional, why a nest dies off in winter anyway, and four products on their own listings.",
       url: "https://pestproindex.com/best/wasp-killers",
       type: "article",
       siteName: "PestPro Index",
@@ -38,7 +38,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Wasp Killer Products UK 2026: Sprays, Powders & Traps",
   description:
-    "Wasp nest treatment for UK homes: when a council says leave it to a professional, why a nest dies off in winter anyway, and three products on their own listings.",
+    "Wasp nest treatment for UK homes: when a council says leave it to a professional, why a nest dies off in winter anyway, and four products on their own listings.",
   datePublished: "2026-03-16",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
@@ -141,6 +141,27 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Wasp Killer 300ml",
     tocLabel: "Best Spray",
     tocName: "Zero In Killer",
+  },
+  // S68 R5 — the powder the title promises. Banked body (S45-C), fetched 2026-09-01;
+  // neutral factual label.
+  {
+    anchorId: "nest-powder",
+    asin: "B00AC1IM6Q",
+    rank: 4,
+    cardName: "Rentokil PSW99P Wasp Killer Powder 300g",
+    cardLabel: "Nest Powder, 300g",
+    features: [
+      "300g powder; active listed as permethrin",
+      "Listed for use on inaccessible nests",
+      "Listed for the home and garden",
+      "Target species listed as Insects",
+      "No application rate or nest count is stated on the listing",
+    ],
+    tableCells: ["Rentokil PSW99P Powder 300g", "Powder; permethrin; for inaccessible nests, as listed", "Nest Powder, 300g"],
+    h2Label: "Nest Powder, 300g",
+    h2Name: "Rentokil PSW99P Wasp Killer Powder 300g",
+    tocLabel: "Nest Powder",
+    tocName: "Rentokil PSW99P",
   },
 ];
 
@@ -352,6 +373,7 @@ export default function BestWaspKillersPage() {
                 "A 300ml Rentokil aerosol foam whose listing states d-phenothrin and tetramethrin and which the maker says kills wasps in the nest. The listing states no reach and no number of treatments per can, so those cells read not stated.",
                 "A reusable outdoor trap listed as poison-free and supplied with two sachets of attractant, with a refill available and a twist-off base. The listing's own emptying direction is to bag the trap and freeze it for two hours first. Its target species field reads Wasp. The maker's claim about how far the bait draws wasps from is the maker's and is not repeated here.",
                 "A 300ml foam whose fetched title reads Zero In Wasp Nest Killer, listed with permethrin and tetramethrin, for indoor and outdoor nests, reaching from up to 2 metres, with 2-3 treatments per can. The listing directs application in late evening or early morning when wasps are less active.",
+                "A 300g powder, the form the title promises, whose listing names permethrin and states use on inaccessible nests in the home and garden. The listing gives no application rate and no nest count; the puffer format is what its form-factor row says, and the rest is on the pack.",
               ][i]
             }
           </p>

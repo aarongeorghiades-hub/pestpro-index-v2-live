@@ -128,7 +128,6 @@ const products: ProductRecord[] = [
     cardLabel: "Repellent crystals, 240g",
     features: [
       "Jelly-crystal scent deterrent for beds and borders",
-      "Non-toxic to plants when used as directed",
       "Long-established UK cat repellent",
     ],
     tableCells: [
@@ -147,7 +146,7 @@ const products: ProductRecord[] = [
     cardName: "Defenders Prickle Strip Dig Stopper (Cat & Dog), 3-Pack",
     cardLabel: "Prickle strips, 3 x 2m",
     features: [
-      "Flexible plastic prickle strips — uncomfortable but harmless",
+      "Flexible plastic prickle strips; the maker describes them as safe for pets",
       "Push into soil or pin onto fence tops and ledges",
       "3-pack covers multiple beds or a boundary run",
     ],
@@ -425,9 +424,7 @@ export default function BestCatDeterrentsPage() {
       <p>
         {" "}
         Scatter the crystals thinly and reapply roughly weekly, and always after
-        heavy rain, since the scent washes out over time. The product is
-        designed to be safe for use around established plants and is non-toxic
-        to pets when applied as directed, but as with any garden product keep it
+        heavy rain, since the scent washes out over time. As with any garden product, keep it
         away from food crops and out of reach of pets indoors.{" "}
       </p>{" "}
       <p>
@@ -473,9 +470,8 @@ export default function BestCatDeterrentsPage() {
         in, a favoured warm spot on top of a wall, or a raised planter it
         toilets in.
         Defenders Prickle Strips are flexible plastic strips covered in blunt
-        spikes that are deeply uncomfortable for a cat to stand or dig on, but
-        completely harmless: they do not pierce or injure paws, they simply make
-        the surface unpleasant. Push them into the soil of a bed (spikes up,
+        spikes that are uncomfortable for a cat to stand or dig on; the maker
+        describes them as safe for pets. Push them into the soil of a bed (spikes up,
         just below the surface), pin them along fence tops and ledges, or lay
         them around the base of plants you want to protect. The 3-pack is enough
         to cover several beds or a short boundary run.{" "}

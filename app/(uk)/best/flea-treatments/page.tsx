@@ -21,12 +21,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Flea Treatments UK 2026: Sprays, Powders & Foggers",
     description:
-      "Flea treatments for UK homes: why the pet is treated first, what a spray or powder can and cannot reach, and three products compared on their own listings.",
+      "Flea treatments for UK homes: why the pet is treated first, what a spray, powder or aerosol can reach, and four products compared on their own listings.",
     alternates: { canonical: "https://pestproindex.com/best/flea-treatments" },
     openGraph: {
       title: "Best Flea Treatments UK 2026: Sprays, Powders & Foggers",
       description:
-        "Flea treatments for UK homes: why the pet is treated first, what a spray or powder can and cannot reach, and three products compared on their own listings.",
+        "Flea treatments for UK homes: why the pet is treated first, what a spray, powder or aerosol can reach, and four products compared on their own listings.",
       url: "https://pestproindex.com/best/flea-treatments",
       type: "article",
       siteName: "PestPro Index",
@@ -39,7 +39,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Flea Treatments UK 2026: Sprays, Powders & Foggers",
   description:
-    "Flea treatments for UK homes: why the pet is treated first, what a spray or powder can and cannot reach, and three products compared on their own listings.",
+    "Flea treatments for UK homes: why the pet is treated first, what a spray, powder or aerosol can reach, and four products compared on their own listings.",
   datePublished: "2026-03-16",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
@@ -145,6 +145,28 @@ const products: ProductRecord[] = [
     h2Name: "Beaphar Household Flea Powder 300g",
     tocLabel: "Best Pet Brand",
     tocName: "Beaphar Household Flea Powder",
+  },
+  // S68 R5 — the fogger the title promises. Banked body (S45-C), fetched 2026-09-01;
+  // neutral factual label; the listing's "cleaner, safer alternative" is the maker's
+  // own comparison and is not restated (S47-F).
+  {
+    anchorId: "one-shot-aerosol",
+    asin: "B077M5TTHL",
+    rank: 4,
+    cardName: "Zero In Natural Flea Bomb 150ml — One-Shot Aerosol",
+    cardLabel: "One-Shot Aerosol, 150ml",
+    features: [
+      "150ml one-shot aerosol; the listing says it treats a room of up to 40 m³",
+      "Active listed as pyrethrins",
+      "Listing directions: press the trigger to lock it, then leave the room while the can discharges",
+      "Listed for carpets, rugs and bedding; target species listed as fleas",
+      "Country of origin listed as United Kingdom",
+    ],
+    tableCells: ["Zero In Natural Flea Bomb 150ml", "One-shot aerosol; pyrethrins; up to 40 m³, as listed", "One-Shot Aerosol, 150ml"],
+    h2Label: "One-Shot Aerosol, 150ml",
+    h2Name: "Zero In Natural Flea Bomb 150ml",
+    tocLabel: "One-Shot Aerosol",
+    tocName: "Zero In Natural Flea Bomb",
   },
 ];
 
@@ -383,6 +405,7 @@ export default function BestFleaTreatmentsPage() {
                 "A 500ml Virbac spray whose listing states four ingredients, one of them the growth regulator pyriproxyfen, and which the maker says treats approximately a 3-4 bedroom house. The listing also claims a magazine readers' award over 10+ years; that is the maker's claim, carried as such. Its directions are specific: remove pets, birds and fish aquaria, spray from about 50cm, and ventilate afterwards.",
                 "A 300g puffer-pack powder whose listing states permethrin and no growth regulator, listed as treating up to 10 sq m of carpet, rugs, pet bedding and soft furnishings. Shake on and vacuum off. The smallest stated coverage on the page.",
                 "A 300g powder listed as covering up to 30 m² in an active infestation, with a stated 30-minute minimum before vacuuming. The listing says it contains an insecticide and names none. Its target species field reads Cat, and its safety warning is that it is not for use on animals, clothing or human bedding.",
+                "A 150ml one-shot aerosol, the fogger the title promises, whose listing names pyrethrins and a room of up to 40 cubic metres, with the maker's instruction to lock the trigger and leave the room while it discharges. Whether it reaches under furniture is not stated; a fog settles where the air carries it.",
               ][i]
             }
           </p>

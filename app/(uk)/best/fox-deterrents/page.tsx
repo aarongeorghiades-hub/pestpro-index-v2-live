@@ -6,12 +6,12 @@ import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout, { StatCallout } from "@/components/Callout";
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Fox Deterrents UK 2026 — Ultrasonic & Scent",
+    title: "Best Fox Deterrents UK 2026 — Scent, Sprinkler & Mesh",
     description:
       "Fox deterrents for UK gardens: scent repellent, motion sprinkler, fence-top roller and galvanised mesh, described by their own listings.",
     alternates: { canonical: "https://pestproindex.com/best/fox-deterrents" },
     openGraph: {
-      title: "Best Fox Deterrents UK 2026 — Ultrasonic & Scent",
+      title: "Best Fox Deterrents UK 2026 — Scent, Sprinkler & Mesh",
       description:
         "Fox deterrents for UK gardens: scent repellent, motion sprinkler, fence-top roller and galvanised mesh, described by their own listings.",
       url: "https://pestproindex.com/best/fox-deterrents",
@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Fox Deterrents UK 2026 — Ultrasonic & Scent",
+  headline: "Best Fox Deterrents UK 2026 — Scent, Sprinkler & Mesh",
   description:
     "Fox deterrents for UK gardens: scent repellent, motion sprinkler, fence-top roller and galvanised mesh, described by their own listings.",
   datePublished: "2026-03-18",
@@ -87,7 +87,6 @@ const products: ProductRecord[] = [
     cardName: "Scoot Fox Repellent Concentrate 100g",
     cardLabel: "Scent concentrate, 100g",
     features: [
-      "Non-toxic to pets and plants",
       "Covers up to 34 sqm per pack",
       "Established UK fox repellent",
     ],
@@ -174,7 +173,7 @@ const tocItems = [
 export default function BestFoxDeterrentsPage() {
   return (
     <GuideLayout
-      title="Best Fox Deterrents UK 2026 &mdash; Ultrasonic, Scent & Sprinkler Repellents"
+      title="Best Fox Deterrents UK 2026 &mdash; Scent, Sprinkler, Fence &amp; Mesh"
       subtitle="Fox deterrents for UK gardens and properties, selected on published specifications and manufacturer information &mdash; from scent deterrents and motion-activated sprinklers to physical exclusion."
       lastUpdated="March 2026"
       readingTime="14 min"
@@ -414,10 +413,7 @@ export default function BestFoxDeterrentsPage() {
         To use Scoot, dissolve the 100g sachet in water according to the packet
         instructions and apply to the affected areas using a watering can or
         garden sprayer. Each sachet covers approximately 34 square metres, which
-        is sufficient for a small to medium-sized garden. The product is
-        entirely non-toxic to pets, children, and plants &mdash; it will not
-        harm your lawn, flower beds, or vegetable patch, and dogs and cats can
-        safely walk on treated areas. The main limitation is that Scoot needs to
+        is sufficient for a small to medium-sized garden. The main limitation is that Scoot needs to
         be reapplied after heavy rain, as the active compounds are water-soluble
         and will wash into the soil. During the British autumn and winter, when
         rainfall is frequent and fox activity is at its highest (mating season
@@ -431,10 +427,6 @@ export default function BestFoxDeterrentsPage() {
       </p>{" "}
       <ul>
         {" "}
-        <li>
-          Completely non-toxic and safe for pets, children, and all garden
-          plants
-        </li>{" "}
         <li>Easy application via watering can or garden sprayer</li>{" "}
         <li>Established UK fox repellent with a long track record</li>{" "}
         <li>One sachet covers 34 sqm</li>{" "}

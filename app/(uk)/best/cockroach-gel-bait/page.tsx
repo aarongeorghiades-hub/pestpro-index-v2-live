@@ -29,12 +29,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Cockroach Gel Bait UK 2026: Sprays and Kits Compared",
     description:
-      "What is actually sold for cockroaches in the UK: four contact sprays compared on their own listings, and why baiting and sanitation do the real work.",
+      "What is sold for cockroaches in the UK: four contact sprays and one gel bait compared on their own listings, and why baiting and sanitation do the real work.",
     alternates: { canonical: "https://pestproindex.com/best/cockroach-gel-bait" },
     openGraph: {
       title: "Best Cockroach Gel Bait UK 2026: Sprays and Kits Compared",
       description:
-        "What is actually sold for cockroaches in the UK: four contact sprays compared on their own listings, and why baiting and sanitation do the real work.",
+        "What is sold for cockroaches in the UK: four contact sprays and one gel bait compared on their own listings, and why baiting and sanitation do the real work.",
       url: "https://pestproindex.com/best/cockroach-gel-bait",
       type: "article",
       siteName: "PestPro Index",
@@ -47,7 +47,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Cockroach Gel Bait UK 2026: Sprays and Kits Compared",
   description:
-    "What is actually sold for cockroaches in the UK: four contact sprays compared on their own listings, and why baiting and sanitation do the real work.",
+    "What is sold for cockroaches in the UK: four contact sprays and one gel bait compared on their own listings, and why baiting and sanitation do the real work.",
   datePublished: "2026-03-30",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
@@ -189,6 +189,29 @@ const products: ProductRecord[] = [
     tocLabel: "Pump Spray, 1.5L",
     tocName: "Zero In Ant & Cockroach Killer",
   },
+  // S68 R5 — the gel the title promises. Banked body (S45-C), fetched 2026-09-01. Its
+  // detail table carries ASIN B07ZZCZRXG while the page fetched, and its canonical link,
+  // are B07ZZGKQ55 — a variant listing; the card links the ASIN fetched. "Strongest gel on
+  // the market" and "total eradication" are the maker's own words and are not restated.
+  {
+    anchorId: "gel-bait",
+    asin: "B07ZZGKQ55",
+    rank: 5,
+    cardName: "Pest Expert Formula IC Cockroach Killer Gel 6 x 10g",
+    cardLabel: "Gel Bait, 6 x 10g",
+    features: [
+      "Six 10g syringes of gel, as listed",
+      "Active listed as imidacloprid",
+      "Supplied with a ready-to-use syringe applicator, as listed",
+      "Target species listed as Cockroach",
+      "The listing's detail table shows a different ASIN (B07ZZCZRXG) from the page fetched — a variant listing",
+    ],
+    tableCells: ["Pest Expert Formula IC Gel 6 x 10g", "Imidacloprid; 6 x 10g", "Gel Bait, 6 x 10g"],
+    h2Label: "Gel Bait, 6 x 10g",
+    h2Name: "Pest Expert Formula IC Cockroach Killer Gel 6 x 10g",
+    tocLabel: "Gel Bait, 6 x 10g",
+    tocName: "Pest Expert Formula IC Gel",
+  },
 ];
 
 const tocItems = [
@@ -251,10 +274,10 @@ export default function BestCockroachGelBaitPage() {
       </div>
 
       <p>
-        This page is titled for gel bait and it does not card any. All four
-        products below are contact sprays, on their own listings. That matters,
-        because a spray and a bait do different things to a cockroach
-        infestation.
+        This page is titled for gel bait and, since S68 R5, cards one. The
+        other four products below are contact sprays, on their own listings.
+        That matters, because a spray and a bait do different things to a
+        cockroach infestation.
       </p>
 
       {/* DECISION BLOCK — situation first. The what-you-can-buy line and the
@@ -266,12 +289,11 @@ export default function BestCockroachGelBaitPage() {
         </p>
         <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
           <li>
-            <strong>You came here for gel bait. There is none on this page.</strong>{" "}
-            What is carded here is four contact sprays &mdash; a spray kit, a
+            <strong>You came here for gel bait. There is one on this page.</strong>{" "}
+            The other four cards are contact sprays &mdash; a spray kit, a
             5-litre trigger spray sold in a pack of two, a 250ml aerosol and a
-            1.5-litre pump spray. Not one of them is a gel, a bait or a bait
-            station, and the published guidance rates baiting above spraying
-            &mdash;{" "}
+            1.5-litre pump spray &mdash; and the published guidance rates
+            baiting above spraying &mdash;{" "}
             <a href="#situation" className="underline">
               what this page actually cards
             </a>
@@ -317,10 +339,11 @@ export default function BestCockroachGelBaitPage() {
       {/* [0] Situation */}
       <h2 id="situation">What This Page Actually Cards</h2>
       <p>
-        Four contact sprays. Read from their own listings: a treatment kit whose
-        item form is Spray, a five-litre trigger spray sold in a pack of two, a
-        250ml aerosol, and a 1.5-litre pump spray. No gel, no bait station, no
-        insect growth regulator.
+        Four contact sprays and one gel. Read from their own listings: a
+        treatment kit whose item form is Spray, a five-litre trigger spray sold
+        in a pack of two, a 250ml aerosol, a 1.5-litre pump spray, and six 10g
+        syringes of imidacloprid gel. No bait station, no insect growth
+        regulator.
       </p>
       <p>
         The University of Florida&rsquo;s extension guidance on assessment-based
@@ -425,6 +448,7 @@ export default function BestCockroachGelBaitPage() {
                 "Carded as 500ml; the listing reads 5 litres, pack of two, with a unit count of 10,000 millilitres. Cypermethrin is named on the listing, and disinfectant properties are claimed by the maker.",
                 "A 250ml aerosol whose listing names permethrin and D-allethrin, lists a range of crawling insects including cockroaches, and states it is intended for indoor use.",
                 "The largest single container here at 1.5 litres, with cypermethrin and benzalkonium chloride named on the listing and both a fan spray and a crack-and-crevice setting.",
+                "The one gel on the page, added at S68 R5: six 10g syringes whose listing names imidacloprid and cockroach as the target species. The listing's own claims about strength and eradication are the maker's and are not restated; the detail table's ASIN differs from the page fetched, which the card says.",
               ][i]
             }
           </p>
@@ -434,9 +458,10 @@ export default function BestCockroachGelBaitPage() {
       {/* [14] Alternatives */}
       <h2 id="alternatives">If a Spray Is Not the Answer</h2>
       <p>
-        <strong>Bait, not spray, is what the guidance rates first.</strong> This
-        page does not card a gel bait; that is a gap in what we list, stated
-        plainly rather than papered over.
+        <strong>Bait, not spray, is what the guidance rates first.</strong> One
+        gel bait is carded above; the listing it is read from names its active
+        and its target species and nothing about where to place it, which is a
+        label matter.
       </p>
       <p>
         <strong>Monitor before you treat again.</strong> Sticky traps tell you

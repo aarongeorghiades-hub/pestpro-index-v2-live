@@ -5,14 +5,14 @@ import FindProviderCTA from "@/components/FindProviderCTA";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Mouse Bait Stations UK 2026 | Tamper-Proof & Pet-Safe",
+    title: "Best Mouse Bait Stations UK 2026 | Tamper-Proof & Lockable",
     description:
       "Mouse bait stations for UK homes. When a station is the right answer, the standard one has to meet, and five compared on what the listings state.",
     alternates: {
       canonical: "https://pestproindex.com/best/mouse-bait-stations",
     },
     openGraph: {
-      title: "Best Mouse Bait Stations UK 2026 | Tamper-Proof & Pet-Safe",
+      title: "Best Mouse Bait Stations UK 2026 | Tamper-Proof & Lockable",
       description:
         "Mouse bait stations for UK homes. When a station is the right answer, the standard one has to meet, and five compared on what the listings state.",
       url: "https://pestproindex.com/best/mouse-bait-stations",
@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Mouse Bait Stations UK 2026: Tamper-Proof & Pet-Safe",
+  headline: "Best Mouse Bait Stations UK 2026: Tamper-Proof & Lockable",
   description:
     "Mouse bait stations for UK homes. When a station is the right answer, the standard one has to meet, and five compared on what the listings state.",
   datePublished: "2026-03-31",
@@ -254,7 +254,7 @@ const tocItems = [
 export default function BestMouseBaitStationsPage() {
   return (
     <GuideLayout
-      title="Best Mouse Bait Stations UK 2026: Tamper-Proof & Pet-Safe"
+      title="Best Mouse Bait Stations UK 2026: Tamper-Proof & Lockable"
       subtitle="Lockable, tamper-resistant boxes that hold rodenticide bait away from children and pets"
       lastUpdated="September 2026"
       readingTime="7 min"

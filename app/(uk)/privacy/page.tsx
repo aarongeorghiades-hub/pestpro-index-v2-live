@@ -131,7 +131,7 @@ export default async function PrivacyPage() {
           decline, or ignore the banner, neither script is created at all.
         </p>
         <p className={P}>
-          The only thing stored without consent is nothing. When you answer, a single cookie named pp_consent records
+          Nothing is stored on your device before you make a cookie choice. When you answer, a single cookie named pp_consent records
           your choice for 180 days, after which we ask again. Details are in our{' '}
           <Link href="/cookies" className={A}>cookie policy</Link>.
         </p>

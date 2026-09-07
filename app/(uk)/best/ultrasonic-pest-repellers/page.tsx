@@ -327,7 +327,7 @@ export default function BestUltrasonicPestRepellersPage() {
         {" "}
         That said, we recognise that many people want to try ultrasonic
         repellers as part of a broader pest management strategy — particularly
-        as a non-toxic, chemical-free option in homes with children or pets. If
+        in homes with children or pets. If
         you are going to buy one, you should at least buy the best-reviewed and
         most credible options available. We selected these ultrasonic repellers
         on published specifications and manufacturer information, noted the

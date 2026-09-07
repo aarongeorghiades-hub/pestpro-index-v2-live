@@ -110,7 +110,7 @@ const products: ProductRecord[] = [
     cardLabel: "Essential oil spray, 250ml",
     features: [
       "Natural essential oils",
-      "Safe around pets and children",
+      "Described by the maker as non-toxic",
       "Made in Germany",
       "250ml bottle",
     ],
@@ -551,9 +551,7 @@ export default function BestSquirrelDeterrentsPage() {
           Natural essential oil formula &mdash; no synthetic pesticides or
           harmful chemicals
         </li>{" "}
-        <li>
-          Completely safe around children, cats, dogs, and garden wildlife
-        </li>{" "}
+        <li>Described by the maker as non-toxic</li>{" "}
         <li>
           Versatile application &mdash; bird feeders, fences, loft entry points,
           sheds, and garden furniture
@@ -715,8 +713,8 @@ export default function BestSquirrelDeterrentsPage() {
         spray a light coating directly onto bird seed, peanuts, suet, or fat
         balls before placing them in your feeder, or spray the exterior surfaces
         of the feeder itself. Reapply every few days or after rainfall for
-        continued effectiveness. The natural capsicum formula is non-toxic and
-        food-safe, containing no synthetic pesticides or harmful chemicals. It
+        continued effectiveness. The maker describes the capsicum formula as harmless
+        and palatable to wild birds. It
         is worth noting that extremely persistent or hungry squirrels may
         eventually learn to tolerate the heat &mdash; capsaicin tolerance can
         develop with repeated exposure, just as it does in humans who regularly
@@ -735,9 +733,7 @@ export default function BestSquirrelDeterrentsPage() {
           capsaicin, birds do not
         </li>{" "}
         <li>One-litre bottle, ready to use</li>{" "}
-        <li>
-          Completely natural, non-toxic, and safe for all garden bird species
-        </li>{" "}
+        <li>Described by the maker as harmless and palatable to wild birds</li>{" "}
         <li>Well-known UK pest brand with decades of market presence</li>{" "}
         <li>Ready-to-use spray requires no dilution or preparation</li>{" "}
       </ul>{" "}

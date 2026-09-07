@@ -20,12 +20,12 @@ import Callout from "@/components/Callout";
 // claims are gone with it: 31 unsourced sentences, all deleted.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Woodworm Treatments UK 2026 — Sprays & Gels",
+    title: "Best Woodworm Treatments UK 2026 — Sprays & Fluids",
     description:
       "Woodworm treatment for UK homes: telling an active outbreak from old holes, why dampness is dealt with first, and five products compared on their own listings.",
     alternates: { canonical: "https://pestproindex.com/best/woodworm-treatments" },
     openGraph: {
-      title: "Best Woodworm Treatments UK 2026 — Sprays & Gels",
+      title: "Best Woodworm Treatments UK 2026 — Sprays & Fluids",
       description:
         "Woodworm treatment for UK homes: telling an active outbreak from old holes, why dampness is dealt with first, and five products compared on their own listings.",
       url: "https://pestproindex.com/best/woodworm-treatments",
@@ -38,7 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Woodworm Treatments UK 2026 — Sprays & Gels",
+  headline: "Best Woodworm Treatments UK 2026 — Sprays & Fluids",
   description:
     "Woodworm treatment for UK homes: telling an active outbreak from old holes, why dampness is dealt with first, and five products compared on their own listings.",
   datePublished: "2026-03-18",
@@ -57,7 +57,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Best Woodworm Treatments UK 2026 — Sprays & Gels",
+      name: "Best Woodworm Treatments UK 2026 — Sprays & Fluids",
       item: "https://pestproindex.com/best/woodworm-treatments",
     },
   ],
@@ -198,7 +198,7 @@ const tocItems = [
 export default function BestWoodwormTreatmentsPage() {
   return (
     <GuideLayout
-      title="Best Woodworm Treatments UK 2026 &mdash; Sprays, Gels &amp; Professional Products"
+      title="Best Woodworm Treatments UK 2026 &mdash; Sprays, Fluids &amp; Injectors"
       subtitle="Four treatments and one moisture meter for UK homes, described by what their own listings state — and what SPAB says has to be established before any of them is used"
       lastUpdated="September 2026"
       readingTime="8 min"

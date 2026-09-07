@@ -81,7 +81,7 @@ const faqs = [
   },
   {
     q: "Does peppermint oil really repel spiders?",
-    a: "There is some anecdotal evidence and limited laboratory research suggesting spiders avoid surfaces treated with strong peppermint oil. However, real-world results are inconsistent. It is worth trying as part of a broader prevention approach — it smells pleasant, is non-toxic, and may help — but do not rely on it as your sole spider deterrent.",
+    a: "There is some anecdotal evidence and limited laboratory research suggesting spiders avoid surfaces treated with strong peppermint oil. However, real-world results are inconsistent. It is worth trying as part of a broader prevention approach — it smells pleasant, its maker describes it as non-toxic, and it may help — but do not rely on it as your sole spider deterrent.",
   },
   {
     q: "How do I stop spiders coming through my air bricks?",
@@ -150,8 +150,7 @@ const products: ProductRecord[] = [
     cardLabel: "Peppermint aerosol, 500ml",
     features: [
       "Established UK spider repellent",
-      "Natural peppermint oil formula — non-toxic",
-      "Safe around children and pets",
+      "Peppermint oil formula; the maker describes it as non-toxic",
     ],
     tableCells: [
       "Zero In Spider Repellent Peppermint Oil Spray 500ml",
@@ -367,9 +366,8 @@ export default function BestSpiderRepellentPage() {
       </div>{" "}
       <p>
         {" "}
-        Zero In is a long-established UK spider repellent. Its natural
-        peppermint oil formula is non-toxic and completely safe around children
-        and pets, making it suitable for use in every room of the house.{" "}
+        Zero In is a long-established UK spider repellent. The maker describes its
+        peppermint oil formula as non-toxic.{" "}
       </p>{" "}
       <p>
         {" "}
@@ -389,8 +387,7 @@ export default function BestSpiderRepellentPage() {
       <ul>
         {" "}
         <li>Established UK spider repellent</li>{" "}
-        <li>Natural, non-toxic peppermint oil formula</li>{" "}
-        <li>Safe around children and pets</li>{" "}
+        <li>Peppermint oil formula, described by the maker as non-toxic</li>{" "}
         <li>Pleasant scent that freshens the room</li>{" "}
       </ul>{" "}
       <p>
@@ -424,8 +421,7 @@ export default function BestSpiderRepellentPage() {
         {" "}
         For households that go through spider repellent quickly, or for anyone
         who wants to be fully stocked for the autumn, the twin pack is the
-        sensible choice. The natural peppermint formula remains non-toxic and
-        safe around children and pets.{" "}
+        sensible choice.{" "}
       </p>{" "}
       <p>
         <strong>Pros:</strong>
