@@ -179,7 +179,7 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
                 { name: 'ROSHIELD 6-Pack Mouse Trap', asin: 'B01NB0QNPI', note: 'Professional', desc: 'Professional quality snap traps. trusted by pest controllers.' },
-              { name: 'Trisiki 6-Pack Mouse Trap', asin: 'B08ML78RC5', note: 'Heavy duty', desc: 'Heavy duty, high sensitivity snap traps. Effective for persistent problems.' },
+              { name: 'Trisiki 4-Pack Mouse Trap', asin: 'B08ML78RC5', note: 'Heavy duty', desc: 'Heavy duty, high sensitivity snap traps. Effective for persistent problems.' },
                 { name: 'ASPECTEK 6-Pack Mouse Trap', asin: 'B00HDVUTZA', desc: 'Reusable snap traps with professional design. Reliable and durable.' },
               { name: 'ROSHIELD Humane Mouse Trap 2-Pack', asin: 'B07L8JNPF2', note: 'Humane', desc: 'Live catch and release option. Safe for household use.' },
               { name: 'Motel Mouse Humane Trap', asin: 'B09PKWXRGK', note: 'Easy clean', desc: 'Reusable humane trap. Easy to clean and reset.' },

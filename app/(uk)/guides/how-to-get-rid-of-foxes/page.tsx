@@ -437,18 +437,6 @@ export default function HowToGetRidOfFoxesPage() {
 
       <div className="not-prose">
         <ProductCard
-          name="PestBye Solar Ultrasonic Fox Repeller"
-          features={[
-            'Solar powered — no batteries needed',
-            'Motion-activated PIR sensor',
-            'Adjustable frequency range',
-            'Weatherproof for year-round use',
-          ]}
-          asin="B075XMS835"
-          bestFor="Best Ultrasonic Deterrent"
-          rank={1}
-        />
-        <ProductCard
           name="PestBye Jet Spray Motion-Activated Sprinkler"
           features={[
             '120-degree detection arc',
@@ -458,7 +446,7 @@ export default function HowToGetRidOfFoxesPage() {
           ]}
           asin="B0153BJ7NQ"
           bestFor="Best Overall Deterrent"
-          rank={2}
+          rank={1}
         />
       </div>
 

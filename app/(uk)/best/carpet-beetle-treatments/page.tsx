@@ -152,31 +152,9 @@ const products: ProductRecord[] = [
     tocName: "Pest Expert Formula P",
   },
   {
-    anchorId: "best-kit",
-    asin: "B010E2HEWU",
-    rank: 4,
-    cardName: "Pest Expert Carpet Moth Killer Kit (Standard — 1 Room)",
-    cardLabel: "Best Complete Kit",
-    features: [
-      "4-piece kit: spray + fogger + killer powder + pheromone trap",
-      "Treats one average-sized room comprehensively",
-      "Fast knockdown plus long-lasting control for up to 12 weeks",
-      "Works on carpet beetles, carpet moths, and their larvae",
-    ],
-    tableCells: [
-      "Pest Expert Carpet Moth Killer Kit (1 Room)",
-      "Complete kit",
-      "Whole-room treatment",
-    ],
-    h2Label: "Best Kit",
-    h2Name: "Pest Expert Carpet Moth Killer Kit",
-    tocLabel: "Best Kit",
-    tocName: "Pest Expert Carpet Moth Killer Kit",
-  },
-  {
     anchorId: "best-natural",
     asin: "B09F31QSQB",
-    rank: 5,
+    rank: 4,
     cardName: "Cedarwood Moth Repellent for Wardrobes (28 Pieces)",
     cardLabel: "Best Natural Prevention",
     features: [
@@ -619,68 +597,6 @@ export default function BestCarpetBeetleTreatmentsPage() {
         surface while the powder provides long-lasting protection deep in the
         crevices and gaps.{" "}
       </p>{" "}
-      {/* Best Kit */}{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Pest Expert Carpet Moth Killer Kit is a comprehensive all-in-one
-        treatment package that bundles four separate products into a single
-        convenient purchase: Formula C carpet spray (1 litre), Formula P
-        insecticidal fogger (150ml), Formula P killer powder (300g), and a Demi
-        Diamond pheromone monitoring trap. Together, these four components
-        provide a multi-layered attack on carpet beetle infestations that
-        mirrors the approach used by professional pest controllers. The Formula
-        C spray is applied directly to carpet surfaces, edges, and skirting
-        boards for fast contact kill and medium-term residual protection. The
-        fogger is deployed in the centre of the room and releases a fine
-        insecticidal mist that penetrates into every corner, crack, and crevice
-        &mdash; reaching areas that manual spraying would miss. The killer
-        powder is puffed into gaps, crevices, and under carpet grippers for
-        long-lasting deep treatment. And the pheromone trap monitors adult
-        beetle activity so you can track whether the treatment is working.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Despite being marketed as a &ldquo;carpet moth&rdquo; killer kit, this
-        product is <strong>equally effective against carpet beetles</strong>.
-        The active ingredient in all the chemical components is permethrin,
-        which is a broad-spectrum insecticide that kills all keratin-feeding
-        textile pests including carpet beetles (<em>Anthrenus</em> species),
-        carpet moths (<em>Trichophaga tapetzella</em>), and clothes moths (
-        <em>Tineola bisselliella</em>). The larvae of all these species are
-        vulnerable to the same permethrin-based treatments, so there is no need
-        to seek out a product specifically labelled for carpet beetles &mdash;
-        any permethrin-based textile pest treatment will be effective. The
-        pheromone trap included in the kit is designed to attract both carpet
-        beetles and cloth moths, making it a versatile monitoring tool.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The standard kit treats one average-sized room (approximately
-        12&ndash;16m&sup2;) comprehensively. For homes with carpet beetles in
-        multiple rooms, Pest Expert also offer medium and large kit sizes that
-        cover correspondingly larger areas. The standard kit spares you sourcing
-        the individual components separately, and the convenience of a single
-        purchase means you have everything you need to begin treatment
-        immediately without having to source and assemble products from
-        different suppliers. The combined treatment provides fast knockdown
-        (within hours via the fogger), medium-term residual protection (up to 12
-        weeks via the spray), and long-term deep treatment (months via the
-        powder) &mdash; a truly comprehensive approach that addresses every
-        aspect of the infestation.{" "}
-      </p>{" "}
       <div className="not-prose">
         {" "}
         <Callout type="tip">
@@ -695,17 +611,17 @@ export default function BestCarpetBeetleTreatmentsPage() {
         </Callout>{" "}
       </div>{" "}
       {/* Best Natural */}{" "}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>

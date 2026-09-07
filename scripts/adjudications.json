@@ -42,8 +42,9 @@
     },
     "best/carpet-beetle-treatments": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "cea4288abf80"
+      "date": "2026-09-07",
+      "fingerprint": "f035602528d9",
+      "note": "S67 R10 standing product-fit ruling; mismatched cards removed, remaining order and ASINs unchanged"
     },
     "best/cat-deterrents": {
       "judgement": "correct-as-built",
@@ -121,9 +122,9 @@
     },
     "best/fox-deterrents": {
       "judgement": "correct-as-built",
-      "date": "2026-09-06",
-      "fingerprint": "9721d426da7b",
-      "note": "S67 R5 repellent sweep completion, PM-ruled; cat-deterrents card removed, other sequences unchanged"
+      "date": "2026-09-07",
+      "fingerprint": "5abc66d38ec7",
+      "note": "S67 R10 standing product-fit ruling; mismatched cards removed, remaining order and ASINs unchanged"
     },
     "best/mole-traps": {
       "judgement": "correct-as-built",
@@ -162,8 +163,9 @@
     },
     "best/mouse-traps": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "5402caa8b9da"
+      "date": "2026-09-07",
+      "fingerprint": "ea43fc3ad97f",
+      "note": "S67 R10 standing product-fit ruling; mismatched cards removed, remaining order and ASINs unchanged"
     },
     "best/pigeon-spikes": {
       "judgement": "correct-as-built",
@@ -235,8 +237,9 @@
     },
     "best/silverfish-treatments": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "ccca21161ca7"
+      "date": "2026-09-07",
+      "fingerprint": "29db2f26abfe",
+      "note": "S67 R10 standing product-fit ruling; mismatched cards removed, remaining order and ASINs unchanged"
     },
     "best/spider-repellent": {
       "judgement": "correct-as-built",
@@ -293,13 +296,15 @@
     },
     "guides/how-to-get-rid-of-foxes": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "bb6512552153"
+      "date": "2026-09-07",
+      "fingerprint": "a3a962956bbf",
+      "note": "S67 R10 standing product-fit ruling; mismatched cards removed, remaining order and ASINs unchanged"
     },
     "guides/how-to-get-rid-of-silverfish": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "b6fd49d8466e"
+      "date": "2026-09-07",
+      "fingerprint": "4028efa0e5a9",
+      "note": "S67 R10 standing product-fit ruling; mismatched cards removed, remaining order and ASINs unchanged"
     },
     "guides/how-to-pest-proof-your-loft": {
       "judgement": "correct-as-built",
@@ -333,13 +338,15 @@
     },
     "guides/natural-flea-remedies": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "0cc8b0acfe85"
+      "date": "2026-09-07",
+      "fingerprint": "15df4267f1c0",
+      "note": "S67 R10 standing product-fit ruling; mismatched cards removed, remaining order and ASINs unchanged"
     },
     "guides/natural-fox-deterrents": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "fa951f3270f3"
+      "date": "2026-09-07",
+      "fingerprint": "f1488386d401",
+      "note": "S67 R10 standing product-fit ruling; mismatched cards removed, remaining order and ASINs unchanged"
     },
     "guides/natural-moth-repellents": {
       "judgement": "correct-as-built",

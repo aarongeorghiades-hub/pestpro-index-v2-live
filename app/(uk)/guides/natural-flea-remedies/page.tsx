@@ -261,18 +261,6 @@ export default function NaturalFleaRemediesPage() {
 
       <div className="not-prose space-y-6 my-8">
         <ProductCard
-          name="Diatomaceous Earth Food Grade (1kg Tub)"
-          features={[
-            'Food-grade DE — safe around humans and pets',
-            'Kills fleas through natural dehydration within 24-48 hours',
-            'Also effective against ants, bed bugs, and crawling insects',
-            '1kg tub — enough to treat a whole house multiple times',
-          ]}
-          asin="B0083H1B3W"
-          bestFor="Best Natural Treatment"
-        />
-
-        <ProductCard
           name="Petforia Natural Flea Spray for Home (500ml)"
           features={[
             'Fast-acting plant-based formula',

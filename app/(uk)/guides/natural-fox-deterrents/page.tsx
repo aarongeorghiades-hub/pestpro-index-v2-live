@@ -270,18 +270,6 @@ export default function NaturalFoxDeterrentsPage() {
 
       <div className="not-prose space-y-6 my-8">
         <ProductCard
-          name="Silent Roar Lion Dung Pellets (500g)"
-          features={[
-            'Infused with genuine lion manure — predator scent',
-            'Scatter around garden borders and fox entry points',
-            'Safe for plants, soil, and wildlife',
-            'Reapply every 3-4 weeks for continued effectiveness',
-          ]}
-          asin="B0002B7OT2"
-          bestFor="Best Scent Deterrent"
-        />
-
-        <ProductCard
           name="PestBye Jet Spray Motion-Activated Fox Deterrent"
           features={[
             'Motion-activated water jet startles foxes immediately',

@@ -154,12 +154,6 @@ export const topProductsByPest: Record<string, PestProduct[]> = {
   ],
   'foxes': [
     {
-      name: 'PestBye Solar Ultrasonic Fox Repeller',
-      asin: 'B075XMS835',
-      bestFor: 'Best Ultrasonic Deterrent',
-      features: ['Solar powered — no batteries needed', 'Motion-activated PIR sensor'],
-    },
-    {
       name: 'Scoot Fox Repellent Concentrate 100g',
       asin: 'B00FAMLXAE',
       bestFor: 'Best Scent Repellent',

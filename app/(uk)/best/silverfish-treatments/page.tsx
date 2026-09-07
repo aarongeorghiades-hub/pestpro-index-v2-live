@@ -8,14 +8,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Silverfish Treatments UK 2026 — Sprays & Traps",
     description:
-      "Our pick of the best silverfish treatments available in the UK. Compare insecticidal sprays, diatomaceous earth, sticky traps, and prevention products.",
+      "Silverfish treatments for UK homes compared on their own listings: an insecticidal spray, sticky traps, a dehumidifier and a killer powder.",
     alternates: {
       canonical: "https://pestproindex.com/best/silverfish-treatments",
     },
     openGraph: {
       title: "Best Silverfish Treatments UK 2026 — Sprays & Traps",
       description:
-        "Our pick of the best silverfish treatments available in the UK. Compare insecticidal sprays, diatomaceous earth, sticky traps, and prevention products.",
+        "Silverfish treatments for UK homes compared on their own listings: an insecticidal spray, sticky traps, a dehumidifier and a killer powder.",
       url: "https://pestproindex.com/best/silverfish-treatments",
       type: "article",
       siteName: "PestPro Index",
@@ -27,7 +27,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Silverfish Treatments UK 2026 — Sprays & Traps",
   description:
-    "Our pick of the best silverfish treatments available in the UK. Compare insecticidal sprays, diatomaceous earth, sticky traps, and prevention products.",
+    "Silverfish treatments for UK homes compared on their own listings: an insecticidal spray, sticky traps, a dehumidifier and a killer powder.",
   datePublished: "2026-03-18",
   dateModified: "2026-03-18",
   author: {
@@ -85,31 +85,9 @@ type ProductRecord = {
 
 const products: ProductRecord[] = [
   {
-    anchorId: "best-natural",
-    asin: "B0083H1B3W",
-    rank: 1,
-    cardName: "Diatomaceous Earth Food Grade 1kg",
-    cardLabel: "Best Natural Treatment",
-    features: [
-      "100% natural fossilised diatom powder",
-      "Food-grade safe for homes with children and pets",
-      "Damages silverfish waxy exoskeleton causing dehydration",
-      "Long-lasting in dry conditions — no expiry",
-    ],
-    tableCells: [
-      "Diatomaceous Earth Food Grade 1kg",
-      "Natural powder",
-      "Cracks, crevices, dry areas",
-    ],
-    h2Label: "Best Natural Treatment",
-    h2Name: "Diatomaceous Earth Food Grade 1kg",
-    tocLabel: "Best Natural Treatment",
-    tocName: "Diatomaceous Earth",
-  },
-  {
     anchorId: "best-spray",
     asin: "B0BGY8196B",
-    rank: 2,
+    rank: 1,
     cardName: "Ready Steady Defend Silverfish Killer Spray 1L",
     cardLabel: "Best Chemical Spray",
     features: [
@@ -131,7 +109,7 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-trap",
     asin: "B0BJKY8MB3",
-    rank: 3,
+    rank: 2,
     cardName: "Super Ninja Silverfish Trap (3-Pack)",
     cardLabel: "Best Monitoring Trap",
     features: [
@@ -153,7 +131,7 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-dehumidifier",
     asin: "B073XNK45P",
-    rank: 4,
+    rank: 3,
     cardName: "Pro Breeze 12L/Day Dehumidifier",
     cardLabel: "Best Long-Term Solution",
     features: [
@@ -175,7 +153,7 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-powder",
     asin: "B013EIB87I",
-    rank: 5,
+    rank: 4,
     cardName: "Pest Expert Formula 'P' Silverfish Killer Powder 300g",
     cardLabel: "Best Powder",
     features: [
@@ -209,7 +187,7 @@ export default function BestSilverfishTreatmentsPage() {
   return (
     <GuideLayout
       title="Best Silverfish Treatments UK 2026 &mdash; Sprays, Traps &amp; Natural Remedies"
-      subtitle="Silverfish treatments for UK homes, selected on published specifications and manufacturer information &mdash; from diatomaceous earth and insecticidal sprays to sticky traps and dehumidifiers."
+      subtitle="Silverfish treatments for UK homes, selected on published specifications and manufacturer information &mdash; from insecticidal sprays and sticky traps to dehumidifiers and killer powder."
       lastUpdated="March 2026"
       readingTime="14 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -417,7 +395,7 @@ export default function BestSilverfishTreatmentsPage() {
           ))}
         </tbody>{" "}
       </table>{" "}
-      {/* Best Natural Treatment */}{" "}
+      {/* Best Spray */}{" "}
       <h2 id={products[0].anchorId}>
         {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
@@ -429,117 +407,6 @@ export default function BestSilverfishTreatmentsPage() {
           asin={products[0].asin}
           bestFor={products[0].cardLabel}
           rank={products[0].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Diatomaceous earth (DE) is the most widely recommended natural
-        silverfish treatment by UK pest controllers, and its mechanism of action
-        is both elegant and brutally effective. The powder is composed of
-        microscopic fossilised diatoms &mdash; single-celled algae whose shells
-        are made of silica. To the naked eye, DE looks and feels like a fine,
-        soft flour, but at a microscopic level, each particle has razor-sharp
-        edges that are devastating to insects. When a silverfish crawls through
-        diatomaceous earth, the microscopic particles abrade and damage the waxy
-        lipid layer that covers the insect&apos;s exoskeleton. This waxy layer
-        is the silverfish&apos;s primary defence against water loss, and once it
-        is compromised, the insect begins to dehydrate rapidly. Death follows
-        within 24 to 72 hours, depending on the severity of the damage and the
-        ambient humidity. Crucially, silverfish cannot develop resistance to DE
-        because the killing mechanism is entirely physical, not chemical &mdash;
-        there is no active ingredient for the insect to evolve tolerance
-        against.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        To apply diatomaceous earth effectively against silverfish, use a puffer
-        bottle or bulb duster to blow a thin layer of powder into every crack,
-        crevice, and gap where silverfish are likely to travel or harbour. Key
-        application points include behind skirting boards (use the gap between
-        the skirting and the wall), inside the cavity behind bath panels, around
-        pipe entry points where plumbing penetrates walls, along the back edge
-        of kitchen kickboards, inside airing cupboards, and behind loose
-        wallpaper where silverfish feed on the paste. The powder must remain dry
-        to be effective &mdash; wet diatomaceous earth loses its abrasive
-        properties entirely because the sharp edges become smoothed and clogged.
-        This is the main limitation in bathrooms, where splashing and steam can
-        dampen the powder. Apply DE in dry areas adjacent to wet rooms rather
-        than directly onto surfaces that regularly get wet. In dry conditions,
-        DE lasts indefinitely with no expiry date, continuing to kill silverfish
-        for months or years until it is physically removed or becomes wet and
-        compacted. Always use <strong>food-grade</strong> diatomaceous earth,
-        not the pool-grade version, which is heat-treated and can pose
-        respiratory risks.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          100% natural and chemical-free &mdash; safe around children, pets, and
-          food preparation areas
-        </li>{" "}
-        <li>
-          Physical killing mechanism means silverfish cannot develop resistance
-        </li>{" "}
-        <li>
-          Long-lasting in dry conditions with no expiry date &mdash; apply once
-          and forget
-        </li>{" "}
-        <li>A 1kg bag will treat an entire house</li>{" "}
-        <li>
-          Most recommended natural treatment by UK pest control professionals
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Loses effectiveness completely when damp &mdash; not suitable for wet
-          bathroom surfaces
-        </li>{" "}
-        <li>
-          Avoid inhaling the fine dust during application &mdash; wear a dust
-          mask
-        </li>{" "}
-        <li>
-          Can be messy to apply and leaves visible white residue on dark
-          surfaces
-        </li>{" "}
-        <li>
-          Not effective on surfaces that are regularly wet or subject to
-          condensation
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> Diatomaceous earth is the best natural
-        silverfish treatment available and should be a core component of any
-        silverfish elimination strategy. Its combination of safety,
-        effectiveness, longevity, and affordability makes it an outstanding
-        choice. Apply it into dry cracks and crevices throughout the affected
-        rooms, and combine it with a dehumidifier to address the root cause of
-        your silverfish problem. The only scenario where DE is unsuitable is in
-        persistently damp areas where the powder will absorb moisture and lose
-        its abrasive killing properties.{" "}
-      </p>{" "}
-      {/* Best Spray */}{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -629,17 +496,17 @@ export default function BestSilverfishTreatmentsPage() {
         three-pronged silverfish elimination strategy.{" "}
       </p>{" "}
       {/* Best Trap */}{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
+          rank={products[1].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -750,17 +617,17 @@ export default function BestSilverfishTreatmentsPage() {
         </Callout>{" "}
       </div>{" "}
       {/* Best Dehumidifier */}{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
+          rank={products[2].rank}
         />{" "}
       </div>{" "}
       <p>
@@ -876,17 +743,17 @@ export default function BestSilverfishTreatmentsPage() {
         here.{" "}
       </p>{" "}
       {/* Best Powder */}{" "}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
+          rank={products[3].rank}
         />{" "}
       </div>{" "}
       <p>

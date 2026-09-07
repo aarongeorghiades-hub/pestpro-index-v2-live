@@ -8,12 +8,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Fox Deterrents UK 2026 — Ultrasonic & Scent",
     description:
-      "Fox deterrents for UK gardens: ultrasonic, scent, motion sprinkler, fence kit and galvanised mesh, described by their own listings.",
+      "Fox deterrents for UK gardens: scent repellent, motion sprinkler, fence-top roller and galvanised mesh, described by their own listings.",
     alternates: { canonical: "https://pestproindex.com/best/fox-deterrents" },
     openGraph: {
       title: "Best Fox Deterrents UK 2026 — Ultrasonic & Scent",
       description:
-        "Fox deterrents for UK gardens: ultrasonic, scent, motion sprinkler, fence kit and galvanised mesh, described by their own listings.",
+        "Fox deterrents for UK gardens: scent repellent, motion sprinkler, fence-top roller and galvanised mesh, described by their own listings.",
       url: "https://pestproindex.com/best/fox-deterrents",
       type: "article",
       siteName: "PestPro Index",
@@ -25,7 +25,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Fox Deterrents UK 2026 — Ultrasonic & Scent",
   description:
-    "Fox deterrents for UK gardens: ultrasonic, scent, motion sprinkler, fence kit and galvanised mesh, described by their own listings.",
+    "Fox deterrents for UK gardens: scent repellent, motion sprinkler, fence-top roller and galvanised mesh, described by their own listings.",
   datePublished: "2026-03-18",
   dateModified: "2026-08-28",
   author: {
@@ -81,27 +81,6 @@ type ProductRecord = {
 };
 
 const products: ProductRecord[] = [
-  {
-    anchorId: "best-ultrasonic",
-    asin: "B075XMS835",
-    cardName: "PestBye Solar Ultrasonic Fox Repeller",
-    cardLabel: "Ultrasonic, solar, single unit",
-    features: [
-      "Solar powered — no batteries needed",
-      "Motion-activated PIR sensor",
-      "Adjustable frequency range",
-      "Weatherproof IP44 rating",
-    ],
-    tableCells: [
-      "PestBye Solar Ultrasonic Fox Repeller",
-      "Electronic deterrent",
-      "Ultrasonic, solar, single unit",
-    ],
-    h2Label: "Ultrasonic, solar, single unit",
-    h2Name: "PestBye Solar Ultrasonic Fox Repeller",
-    tocLabel: "Ultrasonic, solar",
-    tocName: "PestBye Solar Repeller",
-  },
   {
     anchorId: "best-scent",
     asin: "B00FAMLXAE",
@@ -196,7 +175,7 @@ export default function BestFoxDeterrentsPage() {
   return (
     <GuideLayout
       title="Best Fox Deterrents UK 2026 &mdash; Ultrasonic, Scent & Sprinkler Repellents"
-      subtitle="Fox deterrents for UK gardens and properties, selected on published specifications and manufacturer information &mdash; from ultrasonic repellers and scent deterrents to motion-activated sprinklers and physical exclusion."
+      subtitle="Fox deterrents for UK gardens and properties, selected on published specifications and manufacturer information &mdash; from scent deterrents and motion-activated sprinklers to physical exclusion."
       lastUpdated="March 2026"
       readingTime="14 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -414,7 +393,7 @@ export default function BestFoxDeterrentsPage() {
           ))}
         </tbody>{" "}
       </table>{" "}
-      {/* Best Ultrasonic */}{" "}
+      {/* Best Scent Repellent */}{" "}
       <h2 id={products[0].anchorId}>
         {products[0].h2Label} &mdash; {products[0].h2Name}
       </h2>{" "}
@@ -425,89 +404,6 @@ export default function BestFoxDeterrentsPage() {
           features={products[0].features}
           asin={products[0].asin}
           bestFor={products[0].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The PestBye Solar Ultrasonic Fox Repeller is a widely used electronic
-        fox deterrent, and it combines solar-powered convenience with a
-        motion-activated PIR sensor that emits a burst of high-frequency sound
-        whenever a fox (or other animal) enters its detection zone. The device
-        requires no mains wiring and no battery replacements, charging itself
-        during daylight hours via the built-in solar panel and operating
-        autonomously through the night when fox activity is at its peak. The PIR
-        sensor detects motion at a range of approximately 8&ndash;10 metres
-        across a 110-degree arc, and when triggered, the unit emits an
-        ultrasonic frequency in the 13.5kHz to 23.5kHz range.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The frequency is adjustable via a dial on the back of the unit. The IP44
-        weatherproof rating means the device is designed to withstand rain,
-        frost, and UV exposure throughout the British seasons without
-        deterioration. The most important thing to understand about ultrasonic
-        fox deterrents is that foxes <strong>can and do habituate</strong> to
-        them over time.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Solar powered &mdash; zero ongoing battery costs and fully autonomous
-          operation
-        </li>{" "}
-        <li>
-          Motion-activated PIR sensor with 8&ndash;10m range and 110-degree
-          detection arc
-        </li>{" "}
-        <li>
-          IP44 weatherproof rating for year-round outdoor use in all UK
-          conditions
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Foxes habituate over time &mdash; must be repositioned every 2&ndash;3
-          weeks to remain effective
-        </li>{" "}
-        <li>
-          Solar panel requires reasonable daylight exposure &mdash; may struggle
-          in heavily shaded gardens during winter
-        </li>{" "}
-        <li>
-          Some younger people and children can hear the ultrasonic frequencies,
-          which may cause discomfort
-        </li>{" "}
-        <li>
-          Not effective as a standalone solution &mdash; best combined with
-          scent and water deterrents
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> A single solar-powered unit supplied with a
-        ground stake, listed as waterproof, in metal and plastic, and weighing
-        350 grams.{" "}
-      </p>{" "}
-      {/* Best Scent Repellent */}{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
         />{" "}
       </div>{" "}
       <p>
@@ -574,16 +470,16 @@ export default function BestFoxDeterrentsPage() {
         diluted in water before application.{" "}
       </p>{" "}
       {/* Best Sprinkler */}{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
+      <h2 id={products[1].anchorId}>
+        {products[1].h2Label} &mdash; {products[1].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
+          name={products[1].cardName}
+          features={products[1].features}
+          asin={products[1].asin}
+          bestFor={products[1].cardLabel}
         />{" "}
       </div>{" "}
       <p>
@@ -668,16 +564,16 @@ export default function BestFoxDeterrentsPage() {
         </Callout>{" "}
       </div>{" "}
       {/* Best Fence Exclusion */}{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
+      <h2 id={products[2].anchorId}>
+        {products[2].h2Label} &mdash; {products[2].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
+          name={products[2].cardName}
+          features={products[2].features}
+          asin={products[2].asin}
+          bestFor={products[2].cardLabel}
         />{" "}
       </div>{" "}
       <p>
@@ -753,16 +649,16 @@ export default function BestFoxDeterrentsPage() {
         weighing 2.77 kilograms.{" "}
       </p>{" "}
       {/* Best Mesh */}{" "}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
+      <h2 id={products[3].anchorId}>
+        {products[3].h2Label} &mdash; {products[3].h2Name}
       </h2>{" "}
       <div className="not-prose my-6">
         {" "}
         <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
+          name={products[3].cardName}
+          features={products[3].features}
+          asin={products[3].asin}
+          bestFor={products[3].cardLabel}
         />{" "}
       </div>{" "}
       <p>
