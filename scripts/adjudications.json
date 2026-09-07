@@ -53,9 +53,9 @@
     },
     "best/cockroach-gel-bait": {
       "judgement": "correct-as-built",
-      "date": "2026-09-06",
-      "fingerprint": "dda64e710e7a",
-      "note": "S67 R8 rollout rebuild, six routes, card sequences unchanged"
+      "date": "2026-09-07",
+      "fingerprint": "260c4e9801c6",
+      "note": "S67 R9 product-fit corrections; drain-fly-killer card removed, other sequences unchanged"
     },
     "best/cockroach-killers": {
       "judgement": "correct-as-built",
@@ -94,9 +94,9 @@
     },
     "best/drain-fly-killer": {
       "judgement": "correct-as-built",
-      "date": "2026-09-06",
-      "fingerprint": "f17500ed4506",
-      "note": "S67 R8 rollout rebuild, six routes, card sequences unchanged"
+      "date": "2026-09-07",
+      "fingerprint": "3c89ad2ca2bf",
+      "note": "S67 R9 product-fit corrections; drain-fly-killer card removed, other sequences unchanged"
     },
     "best/flea-fogger": {
       "judgement": "correct-as-built",
@@ -126,9 +126,9 @@
     },
     "best/mole-traps": {
       "judgement": "correct-as-built",
-      "date": "2026-09-06",
+      "date": "2026-09-07",
       "fingerprint": "a5493ac6c873",
-      "note": "S67 R8 rollout rebuild, six routes, card sequences unchanged"
+      "note": "S67 R9 product-fit corrections; drain-fly-killer card removed, other sequences unchanged"
     },
     "best/moth-killers": {
       "judgement": "correct-as-built",

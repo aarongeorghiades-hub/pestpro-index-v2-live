@@ -7,12 +7,19 @@ import Callout from "@/components/Callout";
 // S67 R8 — ROLLOUT REBUILD. Title and H1 byte-unchanged. Award labels, rank numerals
 // and card order UNCHANGED as ruled.
 //
-// LAW 188 DISAGREEMENTS ARE PRINTED AND LEFT ALONE, AS RULED. On all five records the
-// h2Label holds a clean award ("Best Overall") while the cardLabel holds a SENTENCE
-// ("The go-to mole trap for reliable, proven performance"). Under Law 188 the h2 wins
-// and the card would be corrected to match — but this round was told to print the
-// disagreements and touch nothing, so every cardLabel below is byte-unchanged. The five
-// are reported in the round output.
+// S67 R9 — THE FIVE LAW 188 DISAGREEMENTS ARE RESOLVED, AS RULED. On all five records
+// the h2Label held a clean award ("Best Overall") and the cardLabel held a SENTENCE
+// ("The go-to mole trap for reliable, proven performance"). Law 188 says the h2 wins and
+// the card is corrected to match it, never the reverse; S67 R8 printed the five and
+// touched nothing because that round's brief said to. Each cardLabel below is now the
+// award string from its own h2Label, byte-identical to it and to the comparison-table
+// cell that already carried it. The five awards are distinct, so no card acquired
+// another card's award — measured after the edit, not assumed.
+//
+// THIS ALSO REMOVES TWO UNSOURCED OWN-VOICE CLAIMS AS A CONSEQUENCE, NOT AS ITS PURPOSE:
+// "reliable, proven performance" and "Professional mole catchers and experienced users"
+// were assertions no listing carries. The award strings replacing them are editorial
+// labels under Law 31, which is a different thing from a claim about performance.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Mole Traps UK 2026",
@@ -37,7 +44,7 @@ const articleSchema = {
   description:
     "Mole traps for UK gardens: the one legal fact that decides what you may use, where a trap has to go, and five compared on what their listings state.",
   datePublished: "2026-03-30",
-  dateModified: "2026-09-06",
+  dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/mole-traps" },
@@ -97,7 +104,7 @@ const products: ProductRecord[] = [
     asin: "B00004RAMS",
     rank: 1,
     cardName: "Victor Push Mole Trap",
-    cardLabel: "The go-to mole trap for reliable, proven performance",
+    cardLabel: "Best Overall",
     features: [
       "Listed as iron, single trap",
       "Listed at 816 grams — the heaviest here",
@@ -115,7 +122,7 @@ const products: ProductRecord[] = [
     asin: "B001DYTNV4",
     rank: 2,
     cardName: "The Big Cheese Mole Tunnel Trap",
-    cardLabel: "The standard traditional tunnel trap for UK gardens",
+    cardLabel: "Best Traditional",
     features: [
       "Listed as a traditional two-way tunnel design",
       "Listed as galvanised metal and wire",
@@ -133,7 +140,7 @@ const products: ProductRecord[] = [
     asin: "B000YPXJG8",
     rank: 3,
     cardName: "Pest-Stop Tunnel Mole Trap — Dual Entry, 30% Stronger",
-    cardLabel: "Professional mole catchers and experienced users",
+    cardLabel: "Best Professional",
     features: [
       "Listed as a traditional barrel design with dual entry",
       "Listed as alloy steel, rust-resistant and reusable",
@@ -151,7 +158,7 @@ const products: ProductRecord[] = [
     asin: "B011BX33HG",
     rank: 4,
     cardName: "SWISSINNO SuperCat Mole Trap — Swiss Precision Claw Design",
-    cardLabel: "Lawns, sports turf and situations where discreet placement matters",
+    cardLabel: "Best Discreet",
     features: [
       "Claw design, listed as high-impact polystyrene and stainless steel",
       "Listed at 630 grams, single trap",
@@ -169,7 +176,7 @@ const products: ProductRecord[] = [
     asin: "B0CZTRKZFD",
     rank: 5,
     cardName: "REPELEM Claw Mole Trap — Reusable, Rust-Free, Pack of 3",
-    cardLabel: "Gardens with persistent mole activity across multiple areas",
+    cardLabel: "Best for Beginners",
     features: [
       "Three traps in the pack — the only multi-pack here",
       "Claw design, listed as metal and rust-free",

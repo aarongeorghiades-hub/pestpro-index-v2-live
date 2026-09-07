@@ -4,8 +4,19 @@ import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 
-// S67 R8 — ROLLOUT REBUILD. Title and H1 byte-unchanged. Award labels, rank numerals
-// (the "1." to "5." prefixes) and card order are UNCHANGED as ruled.
+// S67 R9 — PRODUCT-FIT CORRECTION. Title and H1 still byte-unchanged.
+//
+// CARD 5 IS REMOVED. B085S1KX82, Pest Expert Formula C+ 5L, listed Cockroach as its
+// target species on a drain fly page. It was reported at S67 R8 and carded anyway
+// because that round's ruling held the card set; this round's ruling removes it. The
+// remaining four keep their order, their ASINs and their numerals 1 to 4, so nothing
+// renumbers.
+//
+// CARD LABELS NOW NAME FORM AND APPLICATION SITE, on the PM ruling for this route.
+// The page turns on one fact — whether the thing goes down the drain or into the room —
+// and a label reading "Best for Prevention" hid that fact behind an award. The award
+// survives only on card 1, where the listing supports it: it is the one product poured
+// into the drain. The same string is carried on the card, the h2 and the table.
 //
 // A NEVER TOUCH COLLISION, HANDLED IN PLACE RATHER THAN BY STOPPING THE ROUTE.
 // CLAUDE.md protects the string "The most effective drain fly killers" BY NAME. It sits
@@ -19,12 +30,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Drain Fly Killer UK 2026 | Get Rid of Drain Flies Fast",
     description:
-      "Drain flies breed in the film of organic matter inside the pipe. One product here treats the drain; four treat the room. Compared on their own listings.",
+      "Drain flies breed in the film of organic matter inside the pipe. One product here treats the drain; three treat the room. Compared on their own listings.",
     alternates: { canonical: "https://pestproindex.com/best/drain-fly-killer" },
     openGraph: {
       title: "Best Drain Fly Killer UK 2026 | Get Rid of Drain Flies Fast",
       description:
-        "Drain flies breed in the film of organic matter inside the pipe. One product here treats the drain; four treat the room. Compared on their own listings.",
+        "Drain flies breed in the film of organic matter inside the pipe. One product here treats the drain; three treat the room. Compared on their own listings.",
       url: "https://pestproindex.com/best/drain-fly-killer",
       type: "article",
       siteName: "PestPro Index",
@@ -37,9 +48,9 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Drain Fly Killer UK 2026: Get Rid of Drain Flies Fast",
   description:
-    "Drain flies breed in the film of organic matter inside the pipe. One product here treats the drain; four treat the room. Compared on their own listings.",
+    "Drain flies breed in the film of organic matter inside the pipe. One product here treats the drain; three treat the room. Compared on their own listings.",
   datePublished: "2026-03-30",
-  dateModified: "2026-09-06",
+  dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/drain-fly-killer" },
@@ -85,16 +96,16 @@ type ProductRecord = {
 // NOTE THE FIELD SEMANTICS ON THIS ROUTE: h2Label holds the NUMBERED PRODUCT NAME and
 // h2Name holds the AWARD — the inverse of the pilot. Read before editing, not assumed.
 //
-// THE FINDING THAT SHAPES THIS PAGE: only ONE of the five products treats a drain. The
-// other four are room and surface sprays on their own listings, and the fifth names
-// Cockroach as its target species on a drain fly page.
+// THE FINDING THAT SHAPES THIS PAGE: only ONE of the four products treats a drain. The
+// other three are room and surface sprays on their own listings, and the page says so
+// on every surface a reader meets — the label, the heading, the table and the body.
 const products: ProductRecord[] = [
   {
     anchorId: "fruit-fly-drain-gel",
     asin: "B0BCP3VT97",
     rank: 1,
     cardName: "Fruit Fly & Drain Fly Gel Treatment 1 Gallon",
-    cardLabel: "Best Overall",
+    cardLabel: "Best Overall: Gel, Poured Into the Drain",
     features: [
       "The only product here poured into the drain itself",
       "Listed at 1 gallon — 3,785 millilitres",
@@ -105,10 +116,10 @@ const products: ProductRecord[] = [
     tableCells: [
       "Fruit Fly & Drain Fly Gel Treatment",
       "Poured into the drain; 3,785ml",
-      "Best Overall",
+      "Best Overall: Gel, Poured Into the Drain",
     ],
     h2Label: "1. Fruit Fly & Drain Fly Gel Treatment 1 Gallon",
-    h2Name: "Best Overall",
+    h2Name: "Best Overall: Gel, Poured Into the Drain",
     tocTitle: "1. Fruit Fly & Drain Fly Gel Treatment",
   },
   {
@@ -116,7 +127,7 @@ const products: ProductRecord[] = [
     asin: "B00EE3C1IS",
     rank: 2,
     cardName: "Zero In Total Insect Killer 300ml",
-    cardLabel: "Best UK Brand",
+    cardLabel: "300ml Aerosol, Sprayed Into the Room",
     features: [
       "A 300ml room aerosol, not a drain treatment",
       "Active substances stated on the listing: permethrin and tetramethrin",
@@ -124,9 +135,9 @@ const products: ProductRecord[] = [
       "The maker's directions: a 5-second burst, room sealed 10 minutes, then ventilate",
       "Listed for indoor use",
     ],
-    tableCells: ["Zero In Total Insect Killer 300ml", "Room aerosol; permethrin + tetramethrin", "Best UK Brand"],
+    tableCells: ["Zero In Total Insect Killer 300ml", "Room aerosol; permethrin + tetramethrin", "300ml Aerosol, Sprayed Into the Room"],
     h2Label: "2. Zero In Total Insect Killer 300ml",
-    h2Name: "Best UK Brand",
+    h2Name: "300ml Aerosol, Sprayed Into the Room",
     tocTitle: "2. Zero In Total Insect Killer 300ml",
   },
   {
@@ -134,7 +145,7 @@ const products: ProductRecord[] = [
     asin: "B000TARC7A",
     rank: 3,
     cardName: "Rentokil Insectrol Insect Killer Spray 250ml",
-    cardLabel: "Best Professional-Strength",
+    cardLabel: "250ml Aerosol, Sprayed Into the Room",
     features: [
       "A 250ml aerosol, not a drain treatment",
       "Active substances stated on the listing: permethrin and D-allethrin",
@@ -142,9 +153,9 @@ const products: ProductRecord[] = [
       "Listed for fleas, ants, cockroaches, earwigs and bed bugs",
       "Target species listed as Insects",
     ],
-    tableCells: ["Rentokil Insectrol 250ml", "Room aerosol; permethrin + D-allethrin", "Best Professional-Strength"],
+    tableCells: ["Rentokil Insectrol 250ml", "Room aerosol; permethrin + D-allethrin", "250ml Aerosol, Sprayed Into the Room"],
     h2Label: "3. Rentokil Insectrol Insect Killer Spray 250ml",
-    h2Name: "Best Professional-Strength",
+    h2Name: "250ml Aerosol, Sprayed Into the Room",
     tocTitle: "3. Rentokil Insectrol Insect Killer Spray 250ml",
   },
   {
@@ -152,7 +163,7 @@ const products: ProductRecord[] = [
     asin: "B007XD60C4",
     rank: 4,
     cardName: "Doff Ant & Crawling Insect Killer Spray 1L",
-    cardLabel: "Best for Prevention",
+    cardLabel: "1L Pump Spray, Hard Surfaces",
     features: [
       "A 1-litre surface pump spray, not a drain treatment",
       "Target species listed as Insect, Ant",
@@ -160,28 +171,10 @@ const products: ProductRecord[] = [
       "Active substance not stated on the listing",
       "Ready to use; no mixing",
     ],
-    tableCells: ["Doff Ant & Crawling Insect Killer 1L", "Surface spray; active not stated", "Best for Prevention"],
+    tableCells: ["Doff Ant & Crawling Insect Killer 1L", "Surface spray; active not stated", "1L Pump Spray, Hard Surfaces"],
     h2Label: "4. Doff Ant & Crawling Insect Killer Spray 1L",
-    h2Name: "Best for Prevention",
+    h2Name: "1L Pump Spray, Hard Surfaces",
     tocTitle: "4. Doff Ant & Crawling Insect Killer Spray 1L",
-  },
-  {
-    anchorId: "pest-expert",
-    asin: "B085S1KX82",
-    rank: 5,
-    cardName: "Pest Expert Formula C+ Cockroach & Insect Killer Spray 5L",
-    cardLabel: "Best Targeted Treatment",
-    features: [
-      "Target species listed as Cockroach — not drain flies",
-      "A 5-litre surface spray supplied with a trigger hose sprayer",
-      "The maker states three active ingredients including an insect growth regulator",
-      "The maker claims coverage of 250 square metres per application",
-      "Description names cypermethrin and pyriproxyfen",
-    ],
-    tableCells: ["Pest Expert Formula C+ 5L", "Surface spray; target species Cockroach", "Best Targeted Treatment"],
-    h2Label: "5. Pest Expert Formula C+ Cockroach & Insect Killer Spray 5L",
-    h2Name: "Best Targeted Treatment",
-    tocTitle: "5. Pest Expert Formula C+ Cockroach & Insect Killer Spray 5L",
   },
 ];
 
@@ -193,7 +186,7 @@ const tocItems = [
   ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
   { id: "alternatives", title: "If a Product Is Not the Answer" },
   { id: "using", title: "Clearing the Drain" },
-  { id: "compared", title: "The Five Products Compared" },
+  { id: "compared", title: "The Four Products Compared" },
 ];
 
 export default function BestDrainFlyKillerPage() {
@@ -275,11 +268,11 @@ export default function BestDrainFlyKillerPage() {
           </li>
           <li>
             <strong>You want the product that goes down the drain.</strong> One
-            of the five does —{" "}
+            of the four does &mdash;{" "}
             <a href="#fruit-fly-drain-gel" className="underline">
               the gel drain treatment
             </a>
-            . The other four are room and surface sprays.
+            . The other three are aerosols and a surface spray, for the room.
           </li>
         </ul>
       </div>
@@ -340,7 +333,7 @@ export default function BestDrainFlyKillerPage() {
       {/* [2] Where it does not help */}
       <h2 id="limits">Where a Spray Does Not Help</h2>
       <p>
-        <strong>Four of the five products here are room or surface sprays.</strong>{" "}
+        <strong>Three of the four products here are room or surface sprays.</strong>{" "}
         They kill adult insects they land on. They do not reach the film inside
         the pipe, and the next generation is already in it.
       </p>
@@ -360,9 +353,13 @@ export default function BestDrainFlyKillerPage() {
         .
       </p>
       <p>
-        <strong>One card is not a drain fly product at all.</strong> The Pest
-        Expert Formula C+ spray lists Cockroach as its target species. It is on
-        this page and it is worth knowing that before you buy it.
+        <strong>Which of these reaches a drain, stated plainly.</strong> The
+        Fruit Fly &amp; Drain Fly Gel is poured into the drain and is the only
+        one that goes there. The Zero In 300ml aerosol, the Rentokil Insectrol
+        250ml aerosol and the Doff 1-litre pump spray are all applied to the
+        room or to a hard surface, and none of them reaches the film inside the
+        pipe. That is a statement about where each product is applied, taken
+        from its own listing, not about how well any of them works.
       </p>
 
       {/* [3] Criteria */}
@@ -370,18 +367,18 @@ export default function BestDrainFlyKillerPage() {
       <h3>1. Does it go down the drain, or into the room?</h3>
       <p>
         This is the only question that matters here, and it splits the page one
-        against four. The comparison table states it for every row.
+        against three. The comparison table states it for every row.
       </p>
       <h3>2. Does the listing name an active substance?</h3>
       <p>
-        Three of the five name theirs. The one-litre surface spray states
-        nothing. The drain gel is described by its maker as all-natural and names
-        no active substance either.
+        Two of the four name theirs. The one-litre surface spray states nothing.
+        The drain gel is described by its maker as all-natural and names no
+        active substance either.
       </p>
       <h3>3. Is it for the species you have?</h3>
       <p>
         Target species is a field on the listing, and on this page it ranges from
-        flies to ants to cockroaches. Read it before buying.
+        flies to ants to insects in general. Read it before buying.
       </p>
 
       {products.map((p, i) => (
@@ -405,7 +402,6 @@ export default function BestDrainFlyKillerPage() {
                 "A 300ml room aerosol naming permethrin and tetramethrin, with its target species listed as ants, mosquitoes, flies and bugs. It treats the air and the surfaces, not the pipe.",
                 "A 250ml aerosol naming permethrin and D-allethrin, listed as intended for indoor use and for a range of crawling insects. Again a room product rather than a drain one.",
                 "A one-litre surface pump spray for indoor and outdoor hard surfaces, with ant and insect as its listed target species and no active substance stated.",
-                "Listed with Cockroach as its target species. It is a five-litre surface spray whose description names cypermethrin and pyriproxyfen, the insect growth regulator, alongside a pyrethrum extract.",
               ][i]
             }
           </p>
@@ -456,7 +452,7 @@ export default function BestDrainFlyKillerPage() {
       </ol>
 
       {/* [16] Comparison table */}
-      <h2 id="compared">The Five Products Compared</h2>
+      <h2 id="compared">The Four Products Compared</h2>
       <p>
         Every column below is what the Amazon listing itself states. Where a
         listing does not state something, the cell says so rather than guessing.
@@ -469,7 +465,7 @@ export default function BestDrainFlyKillerPage() {
               <th className="text-left p-2 border-b font-semibold">
                 What it treats, as listed
               </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
+              <th className="text-left p-2 border-b font-semibold">Label</th>
             </tr>
           </thead>
           <tbody>

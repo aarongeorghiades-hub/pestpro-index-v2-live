@@ -4,7 +4,18 @@ import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 
-// S67 R8 — ROLLOUT REBUILD. Title and H1 byte-unchanged, as ruled.
+// S67 R9 — PRODUCT-FIT CORRECTION. Title and H1 STILL byte-unchanged, held for the
+// search traffic they carry, and the mismatch between them and the shelf is now stated
+// on every other surface instead of being left for the reader to discover.
+//
+// EVERY CARD LABEL NAMES THE PRODUCT'S TRUE FORM, on the PM ruling for this route. The
+// four labels used to read Best Overall, Best Alternative, Best Spray and Best Budget,
+// which told a reader who came for gel bait nothing about what was in the box.
+//
+// THE 500ml CARD NAME IS CORRECTED. B0B1QNQ7Y1 was carded as "500ml"; its own listing
+// reads 5 L, pack of two, unit count 10,000 millilitres. S67 R8 put the listing figure
+// in the features and the table and flagged the name rather than changing it; this
+// round's ruling changes it.
 //
 // AND THE TITLE IS THE PAGE'S BIGGEST PROBLEM, WHICH THIS ROUND REPORTS RATHER THAN
 // HIDES. The route is /best/cockroach-gel-bait and the H1 reads "Best Cockroach Gel
@@ -38,7 +49,7 @@ const articleSchema = {
   description:
     "What is actually sold for cockroaches in the UK: four contact sprays compared on their own listings, and why baiting and sanitation do the real work.",
   datePublished: "2026-03-30",
-  dateModified: "2026-09-06",
+  dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/cockroach-gel-bait" },
@@ -83,7 +94,8 @@ type ProductRecord = {
   tocName: string;
 };
 
-// AWARD LABELS, RANK NUMERALS, ANCHOR IDS AND CARD ORDER UNCHANGED. Feature text and
+// RANK NUMERALS, ANCHOR IDS AND CARD ORDER UNCHANGED; the award labels are replaced by
+// form descriptors under this round's ruling. Feature text and
 // comparison cells rebuilt from the banked listings' OWN FEATURE BULLETS (S52-E), not
 // from a body-wide search: a raw grep over the saved page returns "cypermethrin" on all
 // four, because Amazon's recommendation carousels are in the same file.
@@ -94,16 +106,15 @@ type ProductRecord = {
 // kitchens and bathrooms" — the listing says "Disinfectant properties", which is not the
 // same claim; "Trusted Rentokil formulation" — trusted is banned in our own voice.
 //
-// ONE CARD NAME CONTRADICTS ITS OWN LISTING AND IS FLAGGED, NOT SILENTLY CHANGED: the
-// NOPE! product is carded as "500ml" and its listing reads "(5L) … (Pack of 2)", unit
-// count 10,000 millilitres. The listing figure is in the features and the table.
+// THE NOPE! CARD NAME NOW MATCHES ITS LISTING: "(5L) … (Pack of 2)", unit count 10,000
+// millilitres. Card name, h2 and contents all carry the corrected figure.
 const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
     asin: "B071K8X44X",
     rank: 1,
     cardName: "Pest Expert Cockroach Killer Kit (Advanced)",
-    cardLabel: "Best Overall",
+    cardLabel: "Spray Kit",
     features: [
       "Item form listed as Spray; target species listed as Cockroach",
       "Listed as covering 3-4 rooms",
@@ -111,18 +122,18 @@ const products: ProductRecord[] = [
       "Listed as low-odour and non-staining",
       "Supplied with a step-by-step advice sheet",
     ],
-    tableCells: ["Pest Expert Cockroach Killer Kit (Advanced)", "Spray; cypermethrin with pyriproxyfen", "Best Overall"],
-    h2Label: "Best Overall",
+    tableCells: ["Pest Expert Cockroach Killer Kit (Advanced)", "Spray; cypermethrin with pyriproxyfen", "Spray Kit"],
+    h2Label: "Spray Kit",
     h2Name: "Pest Expert Cockroach Killer Kit (Advanced)",
-    tocLabel: "Best Overall",
+    tocLabel: "Spray Kit",
     tocName: "Pest Expert Cockroach Killer Kit",
   },
   {
     anchorId: "best-alternative",
     asin: "B0B1QNQ7Y1",
     rank: 2,
-    cardName: "NOPE! CP Cockroach Killer Spray 500ml",
-    cardLabel: "Best Alternative",
+    cardName: "NOPE! CP Cockroach Killer Spray 5L (Pack of 2)",
+    cardLabel: "Trigger Spray, 5L x 2",
     features: [
       "Listed as 5 litres, pack of two — 10 litres in total",
       "Active substance stated on the listing: cypermethrin",
@@ -130,10 +141,10 @@ const products: ProductRecord[] = [
       "Listed as having disinfectant properties",
       "Target species listed as Cockroach",
     ],
-    tableCells: ["NOPE! CP Cockroach Killer Spray", "Cypermethrin; 5L x 2 as listed", "Best Alternative"],
-    h2Label: "Best Alternative",
-    h2Name: "NOPE! CP Cockroach Killer Spray 500ml",
-    tocLabel: "Best Alternative",
+    tableCells: ["NOPE! CP Cockroach Killer Spray", "Cypermethrin; 5L x 2 as listed", "Trigger Spray, 5L x 2"],
+    h2Label: "Trigger Spray, 5L x 2",
+    h2Name: "NOPE! CP Cockroach Killer Spray 5L (Pack of 2)",
+    tocLabel: "Trigger Spray, 5L x 2",
     tocName: "NOPE! CP Cockroach Killer Spray",
   },
   {
@@ -141,7 +152,7 @@ const products: ProductRecord[] = [
     asin: "B000TARC7A",
     rank: 3,
     cardName: "Rentokil Insectrol Insect Killer Spray 250ml",
-    cardLabel: "Best Spray",
+    cardLabel: "Aerosol, 250ml",
     features: [
       "Active substances stated on the listing: permethrin and D-allethrin",
       "250ml aerosol, listed at 3.53 ounces",
@@ -149,10 +160,10 @@ const products: ProductRecord[] = [
       "Listed for fleas, ants, cockroaches, earwigs and bed bugs",
       "Target species listed as Insects",
     ],
-    tableCells: ["Rentokil Insectrol 250ml", "Permethrin + D-allethrin", "Best Spray"],
-    h2Label: "Best Spray",
+    tableCells: ["Rentokil Insectrol 250ml", "Permethrin + D-allethrin", "Aerosol, 250ml"],
+    h2Label: "Aerosol, 250ml",
     h2Name: "Rentokil Insectrol Insect Killer Spray 250ml",
-    tocLabel: "Best Spray",
+    tocLabel: "Aerosol, 250ml",
     tocName: "Rentokil Insectrol Insect Killer Spray",
   },
   {
@@ -160,7 +171,7 @@ const products: ProductRecord[] = [
     asin: "B0B71D3QS1",
     rank: 4,
     cardName: "Zero In Ant & Cockroach Killer 1.5L Ready-to-Use",
-    cardLabel: "Best Budget",
+    cardLabel: "Pump Spray, 1.5L",
     features: [
       "Active substances stated on the listing: cypermethrin and benzalkonium chloride",
       "1.5L pressurised pump spray with an adjustable nozzle",
@@ -171,11 +182,11 @@ const products: ProductRecord[] = [
     tableCells: [
       "Zero In Ant & Cockroach Killer 1.5L",
       "Cypermethrin + benzalkonium chloride",
-      "Best Budget",
+      "Pump Spray, 1.5L",
     ],
-    h2Label: "Best Budget",
+    h2Label: "Pump Spray, 1.5L",
     h2Name: "Zero In Ant & Cockroach Killer 1.5L Ready-to-Use",
-    tocLabel: "Best Budget",
+    tocLabel: "Pump Spray, 1.5L",
     tocName: "Zero In Ant & Cockroach Killer",
   },
 ];
@@ -255,8 +266,12 @@ export default function BestCockroachGelBaitPage() {
         </p>
         <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
           <li>
-            <strong>You came here for gel bait.</strong> There is none on this
-            page, and the published guidance rates baiting above spraying —{" "}
+            <strong>You came here for gel bait. There is none on this page.</strong>{" "}
+            What is carded here is four contact sprays &mdash; a spray kit, a
+            5-litre trigger spray sold in a pack of two, a 250ml aerosol and a
+            1.5-litre pump spray. Not one of them is a gel, a bait or a bait
+            station, and the published guidance rates baiting above spraying
+            &mdash;{" "}
             <a href="#situation" className="underline">
               what this page actually cards
             </a>
