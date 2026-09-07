@@ -28,12 +28,12 @@ import Callout from "@/components/Callout";
 // does not card. A protection given by name is not overridden by a broad authorisation.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Drain Fly Killer UK 2026 | Get Rid of Drain Flies Fast",
+    title: "Best Drain Fly Killer UK 2026 | Gel, Aerosols and Sprays Compared",
     description:
       "Drain flies breed in the film of organic matter inside the pipe. One product here treats the drain; three treat the room. Compared on their own listings.",
     alternates: { canonical: "https://pestproindex.com/best/drain-fly-killer" },
     openGraph: {
-      title: "Best Drain Fly Killer UK 2026 | Get Rid of Drain Flies Fast",
+      title: "Best Drain Fly Killer UK 2026 | Gel, Aerosols and Sprays Compared",
       description:
         "Drain flies breed in the film of organic matter inside the pipe. One product here treats the drain; three treat the room. Compared on their own listings.",
       url: "https://pestproindex.com/best/drain-fly-killer",
@@ -46,7 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Drain Fly Killer UK 2026: Get Rid of Drain Flies Fast",
+  headline: "Best Drain Fly Killer UK 2026: Gel, Aerosols and Sprays Compared",
   description:
     "Drain flies breed in the film of organic matter inside the pipe. One product here treats the drain; three treat the room. Compared on their own listings.",
   datePublished: "2026-03-30",
@@ -192,7 +192,7 @@ const tocItems = [
 export default function BestDrainFlyKillerPage() {
   return (
     <GuideLayout
-      title="Best Drain Fly Killer UK 2026: Get Rid of Drain Flies Fast"
+      title="Best Drain Fly Killer UK 2026: Gel, Aerosols and Sprays Compared"
       subtitle="Drain fly killers, gels and sprays for UK kitchens and bathrooms — and which of them reaches the drain the flies are breeding in"
       lastUpdated="September 2026"
       readingTime="7 min"

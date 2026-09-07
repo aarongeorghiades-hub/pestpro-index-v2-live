@@ -27,12 +27,12 @@ import Callout from "@/components/Callout";
 // ruling and the mismatch is referred.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Cockroach Gel Bait UK 2026: Kill the Nest",
+    title: "Best Cockroach Gel Bait UK 2026: Sprays and Kits Compared",
     description:
       "What is actually sold for cockroaches in the UK: four contact sprays compared on their own listings, and why baiting and sanitation do the real work.",
     alternates: { canonical: "https://pestproindex.com/best/cockroach-gel-bait" },
     openGraph: {
-      title: "Best Cockroach Gel Bait UK 2026: Kill the Nest",
+      title: "Best Cockroach Gel Bait UK 2026: Sprays and Kits Compared",
       description:
         "What is actually sold for cockroaches in the UK: four contact sprays compared on their own listings, and why baiting and sanitation do the real work.",
       url: "https://pestproindex.com/best/cockroach-gel-bait",
@@ -45,7 +45,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Cockroach Gel Bait UK 2026: Kill the Nest",
+  headline: "Best Cockroach Gel Bait UK 2026: Sprays and Kits Compared",
   description:
     "What is actually sold for cockroaches in the UK: four contact sprays compared on their own listings, and why baiting and sanitation do the real work.",
   datePublished: "2026-03-30",
@@ -205,7 +205,7 @@ const tocItems = [
 export default function BestCockroachGelBaitPage() {
   return (
     <GuideLayout
-      title="Best Cockroach Gel Bait UK 2026: Kill the Nest"
+      title="Best Cockroach Gel Bait UK 2026: Sprays and Kits Compared"
       subtitle="Four cockroach sprays described by what their own listings state, and what the published guidance says actually suppresses an infestation"
       lastUpdated="September 2026"
       readingTime="7 min"

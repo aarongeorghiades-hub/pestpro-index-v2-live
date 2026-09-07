@@ -18,12 +18,12 @@ import Callout from "@/components/Callout";
 // them divergent; the body now answers what they answered, from a source.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Flea Spray for Home UK 2026: Kill Fleas Fast",
+    title: "Best Flea Spray for Home UK 2026: Five Sprays Compared",
     description:
       "Five household flea sprays compared on their own listings — which name an insect growth regulator, what each says it covers, and why the pet is treated first.",
     alternates: { canonical: "https://pestproindex.com/best/flea-spray-for-home" },
     openGraph: {
-      title: "Best Flea Spray for Home UK 2026: Kill Fleas Fast",
+      title: "Best Flea Spray for Home UK 2026: Five Sprays Compared",
       description:
         "Five household flea sprays compared on their own listings — which name an insect growth regulator, what each says it covers, and why the pet is treated first.",
       url: "https://pestproindex.com/best/flea-spray-for-home",
@@ -36,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Flea Spray for Home UK 2026: Kill Fleas Fast",
+  headline: "Best Flea Spray for Home UK 2026: Five Sprays Compared",
   description:
     "Five household flea sprays compared on their own listings — which name an insect growth regulator, what each says it covers, and why the pet is treated first.",
   datePublished: "2026-03-30",
@@ -55,7 +55,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Best Flea Spray for Home UK 2026: Kill Fleas Fast",
+      name: "Best Flea Spray for Home UK 2026: Five Sprays Compared",
       item: "https://pestproindex.com/best/flea-spray-for-home",
     },
   ],
@@ -197,7 +197,7 @@ const tocItems = [
 export default function BestFleaSprayForHomePage() {
   return (
     <GuideLayout
-      title="Best Flea Spray for Home UK 2026: Kill Fleas Fast"
+      title="Best Flea Spray for Home UK 2026: Five Sprays Compared"
       subtitle="Five household flea sprays for UK homes, described by what their own listings state — which name a growth regulator, what each says it covers, and what the guidance says a spray cannot do"
       lastUpdated="September 2026"
       readingTime="8 min"

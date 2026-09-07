@@ -394,6 +394,12 @@ function GetHelpForm() {
           )}
 
           {/* Submit */}
+          <p className="text-sm text-gray-600">
+            What happens to this data: what you enter is stored in our database and used only to
+            respond to your council tax band enquiry; the postcode you look up is
+            sent to the postcodes.io lookup service. See our{' '}
+            <Link href="/privacy" className="text-blue-600 underline">privacy notice</Link>.
+          </p>
           <button
             type="submit"
             disabled={submitting}

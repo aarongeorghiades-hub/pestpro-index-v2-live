@@ -6,12 +6,12 @@ import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout, { StatCallout } from "@/components/Callout";
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Bed Bug Spray UK 2026: Kill Bed Bugs Fast",
+    title: "Best Bed Bug Spray UK 2026: Sprays and Kits Compared",
     description:
       "Our pick of the best bed bug sprays available in the UK for 2026. Contact killers, residual sprays and natural options, with buying advice.",
     alternates: { canonical: "https://pestproindex.com/best/bed-bug-spray" },
     openGraph: {
-      title: "Best Bed Bug Spray UK 2026: Kill Bed Bugs Fast",
+      title: "Best Bed Bug Spray UK 2026: Sprays and Kits Compared",
       description:
         "Our pick of the best bed bug sprays available in the UK for 2026. Contact killers, residual sprays and natural options, with buying advice.",
       url: "https://pestproindex.com/best/bed-bug-spray",
@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Bed Bug Spray UK 2026: Kill Bed Bugs Fast",
+  headline: "Best Bed Bug Spray UK 2026: Sprays and Kits Compared",
   description:
     "Our pick of the best bed bug sprays available in the UK for 2026. Contact killers, residual sprays and natural options, with buying advice.",
   datePublished: "2026-03-30",
@@ -247,7 +247,7 @@ const tocItems = [
 export default function BestBedBugSprayPage() {
   return (
     <GuideLayout
-      title="Best Bed Bug Spray UK 2026: Kill Bed Bugs Fast"
+      title="Best Bed Bug Spray UK 2026: Sprays and Kits Compared"
       subtitle="Our pick of the most effective bed bug sprays available in the UK, from professional-strength residual killers to natural options"
       lastUpdated="March 2026"
       readingTime="10 min"

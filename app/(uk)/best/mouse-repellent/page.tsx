@@ -17,12 +17,12 @@ import Callout from "@/components/Callout";
 // a claim to card "proofing products" when NONE is carded, and "for good".
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Mouse Repellent UK 2026 | Prevention Products That Work",
+    title: "Best Mouse Repellent UK 2026 | Sprays, Sachets and Ultrasonic Compared",
     description:
       "What the UK advertising regulator says about mouse repellent devices, the 6mm gap that lets mice in, and four products as their own listings describe them.",
     alternates: { canonical: "https://pestproindex.com/best/mouse-repellent" },
     openGraph: {
-      title: "Best Mouse Repellent UK 2026 | Prevention Products That Work",
+      title: "Best Mouse Repellent UK 2026 | Sprays, Sachets and Ultrasonic Compared",
       description:
         "What the UK advertising regulator says about mouse repellent devices, the 6mm gap that lets mice in, and four products as their own listings describe them.",
       url: "https://pestproindex.com/best/mouse-repellent",
@@ -35,7 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Mouse Repellent UK 2026 | Prevention Products That Work",
+  headline: "Best Mouse Repellent UK 2026 | Sprays, Sachets and Ultrasonic Compared",
   description:
     "What the UK advertising regulator says about mouse repellent devices, the 6mm gap that lets mice in, and four products as their own listings describe them.",
   datePublished: "2026-03-31",
@@ -263,7 +263,7 @@ const tocItems = [
 export default function BestMouseRepellentPage() {
   return (
     <GuideLayout
-      title="Best Mouse Repellent UK 2026 | Prevention Products That Work"
+      title="Best Mouse Repellent UK 2026 | Sprays, Sachets and Ultrasonic Compared"
       subtitle="What the UK advertising regulator has said about repellent devices, the gap size that actually lets mice in, and four products described as their own listings describe them"
       lastUpdated="September 2026"
       readingTime="7 min"

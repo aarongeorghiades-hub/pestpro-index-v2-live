@@ -1,22 +1,40 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
 
+// S68 R4 — ROLLOUT REBUILD to the R8 pattern, the last Group A route. Title and H1
+// carry no claim clause and are unchanged. Award labels, rank numerals, anchor ids and
+// card order are UNCHANGED. Two h2s held descriptors rather than awards — "Wi-Fi
+// Control" on the Arete Two and "WiFi Control" on the VonHaus — and under Law 189 each
+// takes the award its card already shows, in this route's mixed layout (product name
+// first on those two records, award first on the other three), product name retained.
+//
+// THE LISTINGS DISAGREE WITH THEMSELVES IN THREE PLACES AND ALL THREE ARE RENDERED
+// (Law 146). The MeacoDry Arete One is titled "25L" and its listing states 14 litres a
+// day. The Arete Two is titled 20L, its feature text says 20 litres a day, its detail
+// table says 25. The electriQ's feature text says a 7-litre tank; its detail table says
+// 30 litres, which is the extraction figure.
+//
+// GONE, BY NAME: "the UK's most trusted dehumidifier brand" (a G3 hit), "first choice
+// for serious property managers", the 15°C / 5°C compressor claims, the running-cost
+// arithmetic, the pest-humidity thresholds and the whole ROI section — none was on a
+// listing or a fetched source.
+//
+// THE FAQ IS ONE ARRAY (Law 190): three questions, schema derived from the same array.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Commercial Dehumidifiers for Landlords UK (2026)",
     description:
-      "High-capacity dehumidifiers for landlords, property managers & damp remediation. Industrial-grade units for HMOs, basements & commercial spaces.",
+      "Dehumidifiers for landlords: what the government's damp and mould guidance puts before any appliance, and five compared on extraction, tank and area as listed.",
     alternates: {
       canonical: "https://pestproindex.com/best/commercial-dehumidifiers",
     },
     openGraph: {
       title: "Best Commercial Dehumidifiers for Landlords UK (2026)",
       description:
-        "High-capacity dehumidifiers for landlords, property managers & damp remediation. Industrial-grade units for HMOs, basements & commercial spaces.",
+        "Dehumidifiers for landlords: what the government's damp and mould guidance puts before any appliance, and five compared on extraction, tank and area as listed.",
       url: "https://pestproindex.com/best/commercial-dehumidifiers",
       type: "article",
       siteName: "PestPro Index",
@@ -29,19 +47,11 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Commercial Dehumidifiers for Landlords UK (2026)",
   description:
-    "High-capacity dehumidifiers for landlords, property managers & damp remediation. Industrial-grade units for HMOs, basements & commercial spaces.",
+    "Dehumidifiers for landlords: what the government's damp and mould guidance puts before any appliance, and five compared on extraction, tank and area as listed.",
   datePublished: "2026-04-06",
-  dateModified: "2026-04-06",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
+  dateModified: "2026-09-07",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://pestproindex.com/best/commercial-dehumidifiers",
@@ -52,72 +62,28 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
-      name: "Best Commercial Dehumidifiers for Landlords UK (2026)",
+      name: "Commercial Dehumidifiers",
       item: "https://pestproindex.com/best/commercial-dehumidifiers",
     },
   ],
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Can I leave a commercial dehumidifier running unattended in a rental property?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, all five dehumidifiers on this page are designed for continuous, unattended operation. Models with continuous drainage allow you to connect a hose directly to a drain or sink, eliminating the need to empty the water tank. Units with built-in humidistats will cycle on and off automatically to maintain your target humidity level. For landlords managing remote properties, Wi-Fi-enabled models like the VonHaus 30L and Meaco Arete Two 20L allow you to monitor humidity and control the unit from your phone.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What humidity level should I target in a rental property?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Aim for 45-55% relative humidity. This range is comfortable for occupants, prevents mould growth (which requires 60%+ RH), and creates an environment hostile to moisture-dependent pests such as silverfish, cockroaches, and mould mites. Below 40% can cause dry skin and irritated airways, so avoid over-dehumidifying. A built-in humidistat will maintain your target level automatically.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does a compressor dehumidifier work in a cold garage or basement?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Standard compressor dehumidifiers lose efficiency below 15°C and may stop working entirely below 5°C because the evaporator coils ice up. For cold, unheated spaces such as garages, outbuildings, and unheated basements, you need a desiccant dehumidifier which uses a chemical absorbent rather than refrigeration and works effectively down to 1°C. None of the compressor models on this page are suitable for consistently sub-10°C environments.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How much does it cost to run a commercial dehumidifier?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A typical 20–25L compressor dehumidifier draws 400–500W, costing approximately 12–15p per hour at current UK electricity prices (around 30p/kWh). In practice, once humidity reaches the target level, the humidistat cycles the unit on and off, so actual daily running costs are typically £1–£2 per day. Energy-efficient models like the Meaco 25L Ultra Low Energy can reduce this further.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Will a dehumidifier actually prevent pest infestations?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Many common UK pests are directly dependent on high moisture levels. Silverfish require 75-90% relative humidity to breed. Cockroaches thrive in damp conditions and are rarely found in dry properties. Mould mites feed exclusively on mould, which only grows above 60% RH. Woodlice, booklice, and plaster beetles are all moisture-dependent. By maintaining humidity below 55%, you eliminate the environmental conditions these pests need to survive and reproduce, making a dehumidifier one of the most effective long-term pest prevention investments a landlord can make.",
-      },
-    },
-  ],
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194). Bodies kept under Law 175: gov-damp-mould at
+// ~/pp-s68r4/sources (fetched 2026-09-07); awaabs-landlords at ~/pp-s68r3/sources.
+// The Energy Saving Trust damp page was attempted once and returned HTTP 403 — blocked,
+// recorded, not cited.
+const SRC = {
+  govDamp:
+    "https://www.gov.uk/government/publications/damp-and-mould-understanding-and-addressing-the-health-risks-for-rented-housing-providers/understanding-and-addressing-the-health-risks-of-damp-and-mould-in-the-home--2",
+  awaabs:
+    "https://www.gov.uk/government/publications/awaabs-law-guidance-for-social-landlords/awaabs-law-guidance-for-social-landlords-timeframes-for-repairs-in-the-social-rented-sector",
 };
 
 type ProductRecord = {
@@ -130,31 +96,34 @@ type ProductRecord = {
   tableCells: string[];
   h2Label: string;
   h2Name: string;
-  tocTitle: string;
+  tocLabel: string;
+  tocName: string;
 };
 
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies, fetched
+// 2026-09-01 and inside the S45-C window. A property is asserted only where the listing
+// states it (S52-E, S50-H); a cell the listing does not state reads "not stated".
+// "Multi-award winning" and "best large low energy dehumidifier" are the makers' own
+// words and are not restated (S47-F).
 const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
     asin: "B08TRT57ZP",
     rank: 1,
-    cardName:
-      "electriQ ECD30 Industrial 30L Dehumidifier — Metal Body, Large Wheels",
+    cardName: "electriQ ECD30 Industrial 30L Dehumidifier — Metal Body, Large Wheels",
     cardLabel: "Best Overall",
     features: [
-      "Genuinely industrial — metal casing, large wheels",
-      "30L/day extraction for restoration and commercial use",
-      "Built for 24/7 continuous operation",
-      "First choice for serious property managers",
+      "Extraction listed as up to 30 litres a day; 650 watts",
+      "Tank stated two ways on the listing: 7 litres in the feature text, 30 litres in the detail table",
+      "Permanent drainage option, humidistat and 24-hour timer, as listed",
+      "Metal body on wheels, listed at 26 kilograms and 65.5 x 45 x 65.5 cm",
+      "Listed for warehouses, garages, basements and offices; automatic defrost",
     ],
-    tableCells: [
-      "electriQ ECD30 Industrial 30L",
-      "30L/day",
-      "Restoration & commercial sites",
-    ],
+    tableCells: ["electriQ ECD30", "30 L/day, 650 W", "7 L (text) / 30 L (table); drain option", "not stated", "Best Overall"],
     h2Label: "Best Overall",
     h2Name: "electriQ ECD30 Industrial 30L Dehumidifier",
-    tocTitle: "Best Overall — electriQ ECD30",
+    tocLabel: "Best Overall",
+    tocName: "electriQ ECD30",
   },
   {
     anchorId: "best-professional",
@@ -163,19 +132,17 @@ const products: ProductRecord[] = [
     cardName: "MeacoDry Arete One 25L Dehumidifier & HEPA Air Purifier",
     cardLabel: "Best Professional-Grade",
     features: [
-      "Multi-award winning from the UK leading dehumidifier brand",
-      "25L/day extraction + HEPA H13 air purification",
-      "Smart humidity mode, 5-year warranty",
-      "Handles multiple rooms from a single unit",
+      "Extraction listed as up to 14 litres a day — 25L is the model name, not the daily figure",
+      "4.8 litre front-loading tank, as listed; 267 watts",
+      "H13 HEPA filter, laundry mode, night mode and smart humidity mode, as listed",
+      "Floor area listed as 86 square metres; sound level listed as 40 dB",
+      "Listed at 16 kilograms; warranty stated two ways, 5 years in the title and 2 in the table",
     ],
-    tableCells: [
-      "MeacoDry Arete One 25L",
-      "25L/day",
-      "Professional multi-room coverage",
-    ],
+    tableCells: ["MeacoDry Arete One", "14 L/day, 267 W", "4.8 L", "86 m²", "Best Professional-Grade"],
     h2Label: "Best Professional-Grade",
     h2Name: "MeacoDry Arete One 25L Dehumidifier & HEPA Air Purifier",
-    tocTitle: "Best Professional-Grade — MeacoDry Arete One 25L",
+    tocLabel: "Best Professional-Grade",
+    tocName: "MeacoDry Arete One",
   },
   {
     anchorId: "arete-two",
@@ -184,19 +151,17 @@ const products: ProductRecord[] = [
     cardName: "Meaco MeacoDry Arete Two 20L Dehumidifier & HEPA Air Purifier",
     cardLabel: "Best 20L Unit",
     features: [
-      "Latest generation with Wi-Fi app control",
-      "HEPA H13 filtration + smart humidity mode",
-      "38dB operation — ideal for occupied rental properties",
-      "Remote monitoring for landlords",
+      "Extraction stated two ways on the listing: up to 20 litres a day in the text, 25 in the detail table",
+      "204 watts; noise listed as 38, 40 and 50 dB across three fan speeds",
+      "Meaco app with Alexa and Google control, as listed",
+      "Floor area listed as 80 square metres; suitable for 3 to 4 bedroom houses, as listed",
+      "H13 HEPA filter and laundry mode, as listed; 15.1 kilograms",
     ],
-    tableCells: [
-      "Meaco Arete Two 20L",
-      "20L/day",
-      "Occupied rental properties",
-    ],
+    tableCells: ["Meaco Arete Two", "20 L/day (text) / 25 (table), 204 W", "not stated", "80 m²", "Best 20L Unit"],
     h2Label: "Meaco Arete Two 20L Dehumidifier & HEPA Air Purifier",
-    h2Name: "Wi-Fi Control",
-    tocTitle: "Meaco Arete Two 20L — Wi-Fi Control",
+    h2Name: "Best 20L Unit",
+    tocLabel: "Meaco Arete Two 20L",
+    tocName: "Best 20L Unit",
   },
   {
     anchorId: "best-budget",
@@ -205,19 +170,17 @@ const products: ProductRecord[] = [
     cardName: "Meaco 25L Ultra Low Energy Dehumidifier",
     cardLabel: "Best Budget",
     features: [
-      "Award-winning 25L model for UK climate",
-      "Lowest energy cost per litre of any Meaco unit",
-      "Continuous drainage for set-and-forget operation",
-      "Ideal for basements and cellars",
+      "Extraction listed as 25 litres a day; 330 watts",
+      "Digital display, variable humidistat, 24-hour timer and child lock, as listed",
+      "Laundry mode, quiet mode and auto mode, as listed; four fan speeds",
+      "The listing says it switches to fan-only once the target humidity is reached and re-tests after 30 minutes",
+      "Listed at 15 kilograms; tank size and floor area not stated",
     ],
-    tableCells: [
-      "Meaco 25L Ultra Low Energy",
-      "25L/day",
-      "Budget-conscious landlords",
-    ],
+    tableCells: ["Meaco 25L Ultra Low Energy", "25 L/day, 330 W", "not stated", "not stated", "Best Budget"],
     h2Label: "Best Budget",
     h2Name: "Meaco 25L Ultra Low Energy Dehumidifier",
-    tocTitle: "Best Budget — Meaco 25L Ultra Low Energy",
+    tocLabel: "Best Budget",
+    tocName: "Meaco 25L Ultra Low Energy",
   },
   {
     anchorId: "vonhaus-30l",
@@ -226,28 +189,55 @@ const products: ProductRecord[] = [
     cardName: "VonHaus 30L Smart Dehumidifier — WiFi Control",
     cardLabel: "Best Smart Control",
     features: [
-      "30L/day high-capacity extraction",
-      "WiFi app for remote humidity monitoring",
-      "Continuous drainage + 24-hour timer",
-      "Essential for landlords managing remote properties",
+      "Extraction listed as 30 litres a day; 430 watts",
+      "5.3 litre tank with a drain hose for continuous drainage, as listed",
+      "TUYA Smart app with Alexa and Google Home, as listed",
+      "Room size listed as 30 to 40 square metres; noise 44 dB",
+      "24-hour timer, auto defrost and child lock, as listed; 14.1 kilograms",
     ],
-    tableCells: [
-      "VonHaus 30L Smart WiFi",
-      "30L/day",
-      "Remote property management",
-    ],
+    tableCells: ["VonHaus 30L Smart", "30 L/day, 430 W", "5.3 L; drain hose", "30–40 m²", "Best Smart Control"],
     h2Label: "VonHaus 30L Smart Dehumidifier",
-    h2Name: "WiFi Control",
-    tocTitle: "VonHaus 30L Smart Dehumidifier",
+    h2Name: "Best Smart Control",
+    tocLabel: "VonHaus 30L Smart",
+    tocName: "Best Smart Control",
   },
 ];
 
+// ONE FAQ ARRAY (Law 190). The visible block and the FAQPage schema both read it.
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "Can I leave a dehumidifier running unattended in a rental property?",
+    a: "Two listings here state a continuous-drainage option — the electriQ's permanent drainage and the VonHaus's drain hose — and four state a humidistat or target-humidity mode that switches the unit off when the setting is reached. Whether a given unit is left running is a decision for the person responsible for the property; no listing here states a rule about it, and this page does not add one.",
+  },
+  {
+    q: "What humidity level should I set?",
+    a: "No listing on this page states a target figure, and no fetched source gives one, so this page does not. The government's guidance names consistently high relative humidity, assessed with a moisture meter or environmental monitors, as one of the internal checks a landlord should make — which is a reason to measure before and after, whatever the setting.",
+  },
+  {
+    q: "Will a dehumidifier stop the damp?",
+    a: "The government's guidance is that tenant management of condensation should not be a substitute for addressing the underlying issue, and that simply removing surface mould will not stop it reappearing. A dehumidifier removes moisture from the air in the room it is in; it does not find or fix a leak, a bridged damp-proof course or a missing extractor fan.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 const tocItems = [
-  { id: "at-a-glance", title: "At a Glance" },
-  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
-  { id: "sizing-guide", title: "What Size Dehumidifier Do I Need?" },
-  { id: "buying-guide", title: "Buying Guide" },
-  { id: "roi", title: "ROI: Dehumidifier vs Damp Remediation" },
+  { id: "situation", title: "Is the Air the Problem?" },
+  { id: "legal", title: "What the Guidance Asks of a Landlord" },
+  { id: "limits", title: "Where a Dehumidifier Does Not Help" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Dehumidifier Is Not the Answer" },
+  { id: "using", title: "Siting and Running One" },
+  { id: "compared", title: "Dehumidifiers Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -255,16 +245,13 @@ export default function BestCommercialDehumidifiersPage() {
   return (
     <GuideLayout
       title="Best Commercial Dehumidifiers for Landlords &amp; Property Managers (2026)"
-      subtitle="High-capacity dehumidifiers for HMOs, basements &amp; commercial spaces &mdash; industrial-grade damp control that prevents pest infestations and protects your property investment."
-      lastUpdated="April 2026"
-      readingTime="9 min"
+      subtitle="Compressor dehumidifiers for rented and commercial property — five compared on extraction, tank and floor area as their listings state them, beside what the government's damp and mould guidance asks of a landlord first"
+      lastUpdated="September 2026"
+      readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "Landlord Pest Control Responsibilities",
-          href: "/guides/landlord-pest-control",
-        },
+        { title: "Landlord Pest Control Responsibilities", href: "/guides/landlord-pest-control" },
         {
           title: "How to Get Rid of Silverfish: Complete UK Guide",
           href: "/guides/how-to-get-rid-of-silverfish",
@@ -273,24 +260,12 @@ export default function BestCommercialDehumidifiersPage() {
           title: "How to Get Rid of Cockroaches: Complete UK Guide",
           href: "/guides/how-to-get-rid-of-cockroaches",
         },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
       ]}
       relatedProducts={[
-        {
-          title: "Best Silverfish Treatments UK 2026",
-          href: "/best/silverfish-treatments",
-        },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
-        {
-          title: "Best Carpet Beetle Treatments UK 2026",
-          href: "/best/carpet-beetle-treatments",
-        },
+        { title: "Best Silverfish Treatments UK 2026", href: "/best/silverfish-treatments" },
+        { title: "Best Cockroach Killers UK 2026", href: "/best/cockroach-killers" },
+        { title: "Best Carpet Beetle Treatments UK 2026", href: "/best/carpet-beetle-treatments" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
@@ -311,801 +286,324 @@ export default function BestCommercialDehumidifiersPage() {
         </p>
       </div>
 
-      {/* Intro */}
       <p>
-        Damp is the gateway pest problem. If you manage rental properties, HMOs,
-        or commercial buildings in the UK, you already know that excess moisture
-        leads to mould, structural decay, and tenant complaints. What many
-        landlords overlook is that high humidity is also the single biggest
-        driver of pest infestations in residential and commercial premises.
-        Cockroaches, silverfish, mould mites, booklice, woodlice, and plaster
-        beetles are all <strong>moisture-dependent pests</strong> that cannot
-        survive or reproduce in dry conditions. A building with relative
-        humidity consistently above 65% is not just a damp problem &mdash; it is
-        a pest problem waiting to happen.
-      </p>
-      <p>
-        Investing in a high-capacity commercial dehumidifier is one of the most
-        cost-effective decisions a landlord or property manager can make. A
-        single unit can prevent thousands of pounds in damp remediation, mould
-        removal, pest control callouts, and tenant void periods. For HMO
-        landlords managing multi-occupancy properties with heavy moisture loads
-        from cooking, showering, and laundry, a commercial-grade dehumidifier is
-        not a luxury &mdash; it is essential equipment. In this guide, we cover
-        the five best high-capacity dehumidifiers available in the UK for
-        landlords and property managers, focusing on extraction rate, running
-        costs, remote monitoring capability, and long-term reliability for
-        commercial use.
+        A dehumidifier takes water out of the air in the room it stands in. All
+        five here are compressor units with a tank or a drain, and their
+        listings rate them from 14 to 30 litres a day. What none of them does
+        is find out where the water is coming from — and the government&rsquo;s
+        guidance to landlords starts there.
       </p>
 
-      <div className="not-prose">
-        <Callout type="info">
-          <p>
-            Cockroaches, silverfish, and mould mites all need moisture to
-            survive. Maintaining relative humidity below 55% eliminates the
-            environmental conditions these pests depend on &mdash; making a
-            dehumidifier one of the most effective long-term pest prevention
-            tools a landlord can invest in.
-          </p>
-        </Callout>
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>A tenant has reported damp or mould.</strong> The guidance
+            puts the underlying cause first and rules out blaming lifestyle —{" "}
+            <a href="#legal" className="underline">
+              what the guidance asks of a landlord
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You do not know whether it is condensation, a leak or rising damp.</strong>{" "}
+            A dehumidifier addresses only the first —{" "}
+            <a href="#situation" className="underline">
+              is the air the problem
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You have run one before and the mould came back.</strong>{" "}
+            That is the case the guidance describes —{" "}
+            <a href="#limits" className="underline">
+              where a dehumidifier does not help
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You need a unit that drains itself.</strong> Two listings
+            state a drain option —{" "}
+            <a href="#best-overall" className="underline">
+              the electriQ
+            </a>{" "}
+            and{" "}
+            <a href="#vonhaus-30l" className="underline">
+              the VonHaus
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want to see the humidity from your phone.</strong> Two
+            listings state an app —{" "}
+            <a href="#arete-two" className="underline">
+              the Arete Two
+            </a>{" "}
+            and{" "}
+            <a href="#vonhaus-30l" className="underline">
+              the VonHaus
+            </a>
+            .
+          </li>
+        </ul>
       </div>
-
-      <div className="not-prose">
-        <StatCallout
-          value="&pound;1 &ndash; &pound;2"
-          label="Daily electricity cost of running a commercial dehumidifier"
-        />
-      </div>
-
-      <p>
-        We selected these commercial dehumidifiers on published specifications
-        and manufacturer information, weighing stated extraction rate, tank or
-        drainage arrangement, and suitability for the room sizes and duty cycles
-        they are marketed for.
-      </p>
-
-      {/* At a Glance */}
-      <h2 id="at-a-glance">Best Commercial Dehumidifiers at a Glance</h2>
-      <p>
-        A quick comparison of our five recommended units. Each is suitable for
-        landlord and property management use, but they differ in extraction
-        rate, features, and price point. Full details follow below.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Extraction</th>
-            <th>Best For</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
-      {/* Product 1: electriQ ECD30 */}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />
-      </div>
-      <p>
-        The electriQ ECD30 is the only genuinely industrial dehumidifier on this
-        list, and it is our top pick for landlords and property managers who
-        need raw extraction power for serious damp situations. Unlike the
-        consumer-grade plastic-bodied units that dominate the market, the ECD30
-        features a full <strong>metal casing</strong> and heavy-duty large
-        wheels designed for commercial environments &mdash; building sites,
-        flood restoration, warehouse drying, and severe residential damp
-        remediation. This is the unit you deploy when a property has been empty
-        over winter and the walls are running with condensation, when a burst
-        pipe has soaked through multiple rooms, or when a basement conversion
-        needs to be dried out before tenants can move in.
-      </p>
-      <p>
-        With a <strong>30-litre daily extraction capacity</strong>, the ECD30
-        pulls significantly more moisture from the air than typical 12&ndash;20L
-        domestic units. It is designed for continuous 24/7 operation with a
-        built-in pump and continuous drainage capability, meaning you can leave
-        it running for days or weeks without intervention &mdash; connect the
-        drain hose to a floor drain or bucket and let it work. The metal
-        construction means it withstands knocks, site conditions, and the kind
-        of rough handling that would crack a plastic-bodied unit. For property
-        managers running a portfolio, this is the unit you keep in your van for
-        emergency deployments and planned turnaround drying between tenancies.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          Genuinely commercial-grade with metal body and large transport wheels
-        </li>
-        <li>
-          30L/day extraction handles severe damp, flood damage, and large spaces
-        </li>
-        <li>
-          Built-in pump and continuous drainage for unattended, long-duration
-          operation
-        </li>
-        <li>
-          Robust enough for repeated deployment across multiple properties
-        </li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>
-          Louder than domestic units &mdash; not ideal for occupied bedrooms
-        </li>
-        <li>Heavier than plastic-bodied alternatives at approximately 22kg</li>
-        <li>
-          Industrial appearance may not suit tenant-occupied living spaces
-        </li>
-        <li>Higher energy consumption than smaller-capacity units</li>
-      </ul>
-      <p>
-        <strong>Verdict:</strong> The electriQ ECD30 is the best commercial
-        dehumidifier for landlords who need a workhorse unit for property
-        turnarounds, damp remediation, and emergency deployments. It is not the
-        quietest or most attractive option, but it delivers unmatched extraction
-        power and durability. If you manage more than a handful of properties,
-        this is essential equipment.
-      </p>
-
-      {/* Product 2: MeacoDry Arete One 25L */}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />
-      </div>
-      <p>
-        Meaco is the UK&apos;s leading specialist dehumidifier brand, and the
-        MeacoDry Arete One 25L represents the pinnacle of their range. This is
-        not a basic moisture extractor &mdash; it is a{" "}
-        <strong>combined dehumidifier and HEPA H13 air purifier</strong> that
-        simultaneously removes excess moisture and filters airborne particles
-        including mould spores, dust mite allergens, and fine particulates down
-        to 0.1 microns. For landlords dealing with properties that have existing
-        mould problems, this dual functionality is exceptionally valuable: the
-        dehumidifier reduces humidity to prevent new mould growth while the HEPA
-        filter actively removes mould spores already circulating in the air.
-      </p>
-      <p>
-        The Arete One extracts up to <strong>25 litres per day</strong> and
-        features Meaco&apos;s proprietary <strong>smart humidity mode</strong>,
-        which automatically adjusts fan speed and compressor cycling to maintain
-        optimal humidity with minimum energy consumption. The unit is powerful
-        enough to handle multiple rooms from a single position &mdash; place it
-        in a hallway or landing and it will pull moisture from adjacent rooms
-        through open doorways. Meaco backs this unit with a{" "}
-        <strong>5-year warranty</strong>, which is significantly longer than the
-        1&ndash;2 year warranty offered by most competitors, reflecting genuine
-        confidence in the build quality and longevity of the product. For
-        landlords who want a premium, set-and-forget solution that they can
-        leave permanently installed in a rental property, the Arete One is the
-        best option available.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          HEPA H13 air purification removes mould spores and allergens alongside
-          dehumidification
-        </li>
-        <li>
-          25L/day extraction handles large properties and multi-room coverage
-        </li>
-        <li>
-          5-year manufacturer warranty &mdash; exceptional for a dehumidifier
-        </li>
-        <li>Smart humidity mode optimises energy consumption automatically</li>
-        <li>
-          Award-winning design from the UK&apos;s most trusted dehumidifier
-          brand
-        </li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Premium price for the build quality and HEPA filtration</li>
-        <li>No Wi-Fi connectivity &mdash; cannot be monitored remotely</li>
-        <li>
-          HEPA filter requires periodic replacement (approximately annually)
-        </li>
-      </ul>
-      <p>
-        <strong>Verdict:</strong> The MeacoDry Arete One 25L is the best
-        professional-grade dehumidifier for landlords who want a premium,
-        reliable unit with air purification capability. The combination of high
-        extraction, HEPA filtration, smart humidity control, and a 5-year
-        warranty makes it an outstanding long-term investment. If you are
-        leaving a dehumidifier permanently installed in a high-value rental
-        property, this is the unit to choose.
-      </p>
-
-      <div className="not-prose">
-        <Callout type="tip">
-          <p>
-            For landlords managing multiple properties, consider keeping one
-            industrial unit (like the electriQ ECD30) for turnarounds and
-            emergencies, and installing permanent mid-range units (like the
-            Meaco 25L Ultra Low Energy) in properties with chronic damp issues.
-            This two-tier approach gives you both rapid response capability and
-            ongoing protection.
-          </p>
-        </Callout>
-      </div>
-
-      {/* Product 3: Meaco Arete Two 20L */}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />
-      </div>
-      <p>
-        The Meaco Arete Two 20L is the latest generation in Meaco&apos;s
-        award-winning range, and its headline feature for landlords is{" "}
-        <strong>Wi-Fi app control</strong>. This means you can monitor the
-        humidity level in your rental property, adjust settings, and confirm the
-        unit is operating correctly &mdash; all from your phone, without
-        visiting the property. For landlords managing a portfolio of properties
-        across a city or region, this remote monitoring capability transforms
-        damp management from a reactive, inspection-based process into a
-        proactive, data-driven one. You can see at a glance which properties are
-        maintaining healthy humidity levels and which need attention.
-      </p>
-      <p>
-        Like its bigger sibling, the Arete Two includes{" "}
-        <strong>HEPA H13 air filtration</strong> and Meaco&apos;s smart humidity
-        mode for energy-efficient operation. Where it differs is in its{" "}
-        <strong>20L/day extraction rate</strong> (vs 25L for the Arete One) and
-        its exceptionally low <strong>38dB noise level</strong>, which makes it
-        genuinely suitable for occupied bedrooms and living rooms. For
-        tenant-occupied properties where noise complaints are a concern, the
-        Arete Two strikes the ideal balance between effective dehumidification
-        and quiet operation. The slightly lower extraction rate is more than
-        adequate for individual rooms and small-to-medium sized flats.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          Wi-Fi app control allows remote humidity monitoring and unit
-          management
-        </li>
-        <li>
-          38dB operation &mdash; quiet enough for bedrooms in occupied rental
-          properties
-        </li>
-        <li>HEPA H13 filtration removes mould spores and airborne allergens</li>
-        <li>Smart humidity mode for energy-efficient automatic operation</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>
-          20L/day extraction is lower than the Arete One &mdash; not ideal for
-          very large spaces
-        </li>
-        <li>
-          Requires tenant to maintain Wi-Fi connection for remote monitoring
-        </li>
-        <li>HEPA filter requires periodic replacement</li>
-      </ul>
-      <p>
-        <strong>Verdict:</strong> The Meaco Arete Two 20L is the best
-        dehumidifier for landlords who want remote monitoring of occupied rental
-        properties. The Wi-Fi app control is a genuine game-changer for
-        portfolio management, and the 38dB noise level means tenants will not
-        complain about it running overnight. Choose this over the Arete One if
-        remote monitoring and quiet operation matter more than maximum
-        extraction power.
-      </p>
-
-      {/* Product 4: Meaco 25L Ultra Low Energy */}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />
-      </div>
-      <p>
-        The Meaco 25L Ultra Low Energy is the most energy-efficient
-        large-capacity dehumidifier Meaco produces, and it is our top
-        recommendation for budget-conscious landlords who need to keep running
-        costs to a minimum across multiple properties. The &ldquo;ultra low
-        energy&rdquo; designation is not marketing fluff &mdash; this unit
-        genuinely delivers the{" "}
-        <strong>lowest energy cost per litre of moisture extracted</strong> of
-        any Meaco dehumidifier, making it the cheapest to operate over months
-        and years of continuous use. For landlords who are either paying the
-        electricity bill themselves (common in HMOs with inclusive bills) or who
-        need to reassure tenants that the unit will not significantly impact
-        their energy costs, this is the model to install.
-      </p>
-      <p>
-        With a <strong>25L/day extraction capacity</strong>, it matches the
-        Arete One for raw dehumidification power. The unit includes{" "}
-        <strong>continuous drainage capability</strong> via a rear hose
-        connection, allowing you to run a hose to a drain or sink for completely
-        unattended, set-and-forget operation &mdash; essential for basements,
-        cellars, and properties where regular tank emptying is not practical.
-        The built-in humidistat maintains your target humidity level
-        automatically, and the unit features a laundry mode that boosts fan
-        speed for faster clothes drying &mdash; a useful feature in rental
-        properties where tenants drying laundry indoors is often the primary
-        source of excess moisture.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          Lowest running cost per litre &mdash; the most economical choice for
-          continuous operation
-        </li>
-        <li>
-          Continuous drainage for basements, cellars, and unattended operation
-        </li>
-        <li>
-          Laundry mode helps address the most common source of indoor moisture
-          in rentals
-        </li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>No HEPA air filtration &mdash; dehumidification only</li>
-        <li>No Wi-Fi or app control &mdash; cannot be monitored remotely</li>
-        <li>Slightly louder than the Arete Two at higher fan speeds</li>
-      </ul>
-      <p>
-        <strong>Verdict:</strong> The Meaco 25L Ultra Low Energy is the best
-        value commercial dehumidifier for landlords who need effective,
-        affordable damp control without premium features. It delivers the same
-        25L extraction as the Arete One, and its ultra-low running costs suit
-        continuous operation across multiple properties. If you are installing
-        dehumidifiers in three or four rental properties and want to minimise
-        both upfront and ongoing costs, this is the unit to buy.
-      </p>
-
-      {/* Product 5: VonHaus 30L Smart */}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />
-      </div>
-      <p>
-        The VonHaus 30L Smart Dehumidifier offers the highest extraction rate on
-        this list, making it a compelling option for landlords who need maximum
-        dehumidification on a tight budget. It delivers a{" "}
-        <strong>30L/day extraction capacity</strong> that matches the industrial
-        electriQ ECD30. The headline feature is{" "}
-        <strong>Wi-Fi app control</strong>, which gives landlords remote access
-        to monitor humidity levels, adjust settings, and confirm the unit is
-        operating &mdash; essential functionality for anyone managing properties
-        that they do not visit daily.
-      </p>
-      <p>
-        The unit includes <strong>continuous drainage</strong> via a rear hose
-        connection and a <strong>24-hour timer</strong> that allows you to
-        schedule operation during off-peak electricity hours to reduce running
-        costs. The built-in humidistat maintains your target humidity level
-        automatically, and the large water tank means the unit can operate for
-        extended periods even without continuous drainage connected. For
-        landlords who need a high-capacity unit at the lowest possible cost
-        &mdash; particularly for properties where the dehumidifier needs to work
-        hard but aesthetics and noise levels are secondary considerations
-        &mdash; the VonHaus 30L offers outstanding value for money.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>30L/day extraction in an entry-level unit</li>
-        <li>Wi-Fi app control for remote monitoring and management</li>
-        <li>
-          Continuous drainage + 24-hour timer for flexible, unattended operation
-        </li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>
-          Plastic body is less durable than the electriQ&apos;s metal
-          construction
-        </li>
-        <li>Shorter warranty than Meaco units &mdash; typically 2 years</li>
-        <li>Higher noise level than the Meaco Arete Two</li>
-        <li>Less established brand than Meaco in the UK dehumidifier market</li>
-      </ul>
-      <p>
-        <strong>Verdict:</strong> The VonHaus 30L is the best budget option for
-        landlords who want high extraction and Wi-Fi monitoring. It does not
-        match the build quality of the electriQ or the refinement of the Meaco
-        units, but with 30L extraction and app control, the value proposition is
-        difficult to ignore. Ideal for landlords managing remote properties on a
-        budget.
-      </p>
-
-      {/* Sizing Guide */}
-      <h2 id="sizing-guide">What Size Dehumidifier Do I Need?</h2>
-      <p>
-        Choosing the right extraction capacity is critical &mdash; an undersized
-        unit will run constantly without adequately controlling humidity, while
-        an oversized unit wastes money on purchase price and energy consumption.
-        Use the following guidance based on room size and severity of the damp
-        problem.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Room Size</th>
-            <th>Recommended Extraction</th>
-            <th>Typical Use</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Small room (&lt;20m&sup2;)</td>
-            <td>10&ndash;12L/day</td>
-            <td>Single bedroom, bathroom, small kitchen</td>
-          </tr>
-          <tr>
-            <td>Medium room (20&ndash;40m&sup2;)</td>
-            <td>20L/day</td>
-            <td>Large living room, open-plan flat, HMO common area</td>
-          </tr>
-          <tr>
-            <td>Large room (40m&sup2;+)</td>
-            <td>25&ndash;30L/day</td>
-            <td>Basement, cellar, warehouse, multi-room coverage</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        <strong>Important:</strong> these figures assume a moderate damp
-        problem. If you are dealing with severe damp &mdash; visible water on
-        walls, standing water after a flood, or a property that has been
-        unoccupied and unheated over winter &mdash; choose a unit one size up
-        from the table above. For ongoing maintenance drying in a property that
-        is already reasonably dry, you can often get away with a unit one size
-        down.
-      </p>
-      <p>
-        For <strong>HMOs and multi-occupancy properties</strong>, factor in the
-        additional moisture load from multiple occupants. Each person generates
-        approximately 1.5 litres of moisture per day through breathing, cooking,
-        and showering. A five-bedroom HMO with five tenants therefore generates
-        an additional 7.5 litres of moisture daily above what the building
-        itself produces. This is why HMOs are particularly prone to
-        condensation, mould, and moisture-dependent pest problems, and why a
-        high-capacity dehumidifier is often essential rather than optional.
-      </p>
-
-      <div className="not-prose">
-        <Callout type="cost">
-          <p>
-            A five-bedroom HMO with five tenants generates approximately 7.5
-            litres of additional moisture daily from occupant activity alone.
-            For properties with inclusive utility bills, a 25&ndash;30L
-            dehumidifier can pay for itself within months by preventing mould
-            remediation callouts that typically cost
-            &pound;500&ndash;&pound;2,000 per incident.
-          </p>
-        </Callout>
-      </div>
-
-      {/* Buying Guide */}
-      <h2 id="buying-guide">Commercial Dehumidifier Buying Guide</h2>
-      <p>
-        When selecting a dehumidifier for landlord or commercial use, the
-        decision criteria differ from domestic purchasing. Here are the key
-        factors to evaluate.
-      </p>
-
-      <h3>Extraction Rate</h3>
-      <p>
-        The extraction rate (measured in litres per day) is the single most
-        important specification. For landlord use, we recommend a minimum of{" "}
-        <strong>20L/day</strong> for individual rooms and{" "}
-        <strong>25&ndash;30L/day</strong> for basements, multi-room coverage, or
-        properties with severe damp. Manufacturer-quoted extraction rates are
-        measured under laboratory conditions (typically 30&deg;C, 80% RH), so
-        real-world extraction will be lower &mdash; expect roughly 60&ndash;70%
-        of the quoted figure under typical UK indoor conditions of 20&deg;C and
-        60% RH.
-      </p>
-
-      <h3>Continuous Drainage</h3>
-      <p>
-        For landlord use, <strong>continuous drainage is essential</strong>. A
-        dehumidifier that stops when its water tank is full is useless in an
-        empty property where nobody is present to empty it. All five units on
-        this page support continuous drainage via a rear hose connection. Route
-        the hose to a floor drain, sink, or large container and the unit will
-        run indefinitely without intervention. This is particularly important
-        for basement and cellar installations where the dehumidifier may need to
-        run 24/7 for weeks or months.
-      </p>
-
-      <h3>Coverage Area</h3>
-      <p>
-        A single high-capacity dehumidifier placed in a central hallway or
-        landing with open doors can effectively dehumidify an entire
-        small-to-medium flat. For larger properties, HMOs, or buildings with
-        rooms that are routinely closed off, you may need multiple units. As a
-        rule of thumb, a 25L unit can cover approximately 50&ndash;70m&sup2; of
-        open-plan space, but significantly less if walls and closed doors
-        restrict airflow.
-      </p>
-
-      <h3>Running Cost</h3>
-      <p>
-        At current UK electricity prices (approximately 30p/kWh), a typical
-        20&ndash;25L compressor dehumidifier costs{" "}
-        <strong>12&ndash;15p per hour</strong> to run, or roughly{" "}
-        <strong>&pound;1&ndash;&pound;2 per day</strong> in practice (less once
-        the humidistat cycles the unit off at the target level). Over a year,
-        this amounts to &pound;350&ndash;&pound;700 in electricity.
-        Energy-efficient models like the Meaco 25L Ultra Low Energy reduce this
-        significantly. For HMOs with inclusive bills, factor this into your
-        utility cost calculations.
-      </p>
-
-      <h3>Noise Level</h3>
-      <p>
-        Noise matters in occupied properties. A unit running at 45dB+ in a
-        bedroom will generate tenant complaints. The Meaco Arete Two at 38dB is
-        the quietest unit on this page and is suitable for bedrooms. Industrial
-        units like the electriQ ECD30 are louder and best suited for empty
-        properties, basements, or during turnaround periods between tenancies.
-      </p>
-
-      <h3>Warranty</h3>
-      <p>
-        For equipment that may run continuously for months at a time, warranty
-        length matters. Meaco offers <strong>5-year warranties</strong> on the
-        Arete range, which is exceptional. Most competitors offer 1&ndash;2
-        years. A longer warranty reduces the effective annual cost of ownership
-        and provides peace of mind for landlords investing across multiple
-        properties.
-      </p>
-
-      {/* ROI Section */}
-      <h2 id="roi">ROI: Dehumidifier vs Damp Remediation</h2>
-      <p>
-        The financial case for commercial dehumidifiers is overwhelming when you
-        compare the upfront cost against the alternative: professional damp
-        remediation, mould removal, pest control, and tenant compensation.
-      </p>
-
-      <div className="not-prose">
-        <StatCallout
-          value="&pound;5,000+"
-          label="Average cost of professional damp remediation for a UK property"
-        />
-      </div>
-
-      <p>Consider the real costs of uncontrolled damp in a rental property:</p>
-      <ul>
-        <li>
-          <strong>Professional mould remediation:</strong>{" "}
-          &pound;500&ndash;&pound;2,000 per incident, depending on severity and
-          number of rooms affected
-        </li>
-        <li>
-          <strong>Full damp-proof course (DPC) installation:</strong>{" "}
-          &pound;3,000&ndash;&pound;7,000 for a typical terraced house
-        </li>
-        <li>
-          <strong>Pest control callouts:</strong> &pound;100&ndash;&pound;250
-          per visit for cockroaches, silverfish, or mould mites triggered by
-          damp conditions
-        </li>
-        <li>
-          <strong>Tenant void periods:</strong> &pound;500&ndash;&pound;2,000+
-          per month of lost rent if tenants leave due to damp and mould problems
-        </li>
-        <li>
-          <strong>Disrepair claims:</strong> Tenants can claim compensation for
-          damp and mould under the Homes (Fitness for Human Habitation) Act
-          2018, with settlements regularly exceeding &pound;5,000
-        </li>
-        <li>
-          <strong>Structural damage:</strong> Untreated damp causes plaster
-          degradation, timber rot, and structural decay that can cost tens of
-          thousands to remediate
-        </li>
-      </ul>
-      <p>
-        Against these costs, a dehumidifier running at &pound;1&ndash;&pound;2
-        per day is a trivial investment. Even accounting for electricity costs
-        over several years, the total cost of ownership for a commercial
-        dehumidifier is a fraction of a single mould remediation callout. For
-        landlords managing portfolios, the ROI calculation is even more
-        compelling: preventing one damp-related disrepair claim pays for
-        dehumidifiers in every property you own.
-      </p>
 
       <div className="not-prose">
         <Callout type="warning">
           <p>
-            Under the Homes (Fitness for Human Habitation) Act 2018, landlords
-            in England have a legal obligation to ensure rental properties are
-            free from damp and mould that renders them unfit for habitation.
-            Failing to address damp problems can result in tenant compensation
-            claims, local authority enforcement action, and rent repayment
-            orders. A commercial dehumidifier is not just a pest prevention tool
-            &mdash; it is a legal compliance investment.
+            Two of the five listings state a different extraction figure in
+            their title or feature text from the one in their detail table. The
+            cards and the table below carry both figures where that happens,
+            and this page does not pick one.
           </p>
         </Callout>
       </div>
 
-      {/* FAQ */}
+      {/* [0] Situation */}
+      <h2 id="situation">Is the Air the Problem?</h2>
+      <p>
+        A dehumidifier lowers the moisture in the air. It helps where the water
+        on the walls came out of the air — condensation — and does nothing
+        where it came through them. The government&rsquo;s guidance for rented
+        housing lists what to check for, and the list is mostly about the
+        building: it names{" "}
+        <em>
+          &ldquo;consistently high relative humidity, as assessed using a
+          moisture meter or environmental monitors&rdquo;
+        </em>{" "}
+        alongside peeling wallpaper, defective plaster, low insulation and
+        blocked or absent mechanical ventilation (
+        <a href={SRC.govDamp} rel="nofollow">
+          GOV.UK
+        </a>
+        ). Measure before you buy; a reading is the only way to know whether
+        the air is the fault.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">What the Guidance Asks of a Landlord</h2>
+      <p>
+        The government&rsquo;s guidance treats damp and mould as a hazard to
+        health and this page goes no further into that than the guidance does.
+        What it asks of a landlord is to{" "}
+        <em>
+          &ldquo;identify and tackle the underlying causes of damp and mould,
+          including building deficiencies, inadequate ventilation and
+          condensation.&rdquo;
+        </em>{" "}
+        And it is direct about who is not to blame:{" "}
+        <em>
+          &ldquo;We are absolutely clear that it is totally unreasonable to
+          blame damp and mould in the home on ‘lifestyle choices’.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.govDamp} rel="nofollow">
+          GOV.UK
+        </a>
+        ). Buying a tenant a dehumidifier is not the same as finding out why
+        the room is wet.
+      </p>
+      <p>
+        For social landlords in England the timeframes are now fixed. The
+        Awaab&rsquo;s Law guidance says a social landlord must{" "}
+        <em>
+          &ldquo;Investigate any potential significant hazards within 10
+          working days of becoming aware of them&rdquo;
+        </em>{" "}
+        and{" "}
+        <em>
+          &ldquo;Undertake relevant safety work within 5 working days of the
+          investigation concluding, if the investigation identifies a
+          significant hazard.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.awaabs} rel="nofollow">
+          GOV.UK
+        </a>
+        ). This page holds no fetched source on how those timeframes reach
+        private tenancies, so it does not say.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where a Dehumidifier Does Not Help</h2>
+      <p>
+        <strong>As a substitute for fixing the cause.</strong> The guidance is
+        explicit:{" "}
+        <em>
+          &ldquo;Tenant management of condensation and small amounts of mould
+          should not be a substitute for assessing and addressing the
+          underlying issue, which should always be the priority.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.govDamp} rel="nofollow">
+          GOV.UK
+        </a>
+        ). A unit running in a room with a leak is drying the symptom.
+      </p>
+      <p>
+        <strong>Where the mould has already been wiped off.</strong> The same
+        guidance:{" "}
+        <em>
+          &ldquo;Simply removing surface mould will not prevent the damp and
+          mould from reappearing&rdquo;
+        </em>
+        . Cleaning and drying are two steps; neither is the repair.
+      </p>
+      <p>
+        <strong>Where the listing cannot say how much it extracts.</strong> The
+        Arete One is titled 25L and listed at 14 litres a day. The Arete Two is
+        listed at 20 litres a day in its text and 25 in its table. Both are on
+        the cards as the listings state them.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Extraction rate, as listed</h3>
+      <p>
+        From 14 litres a day on the Arete One to 30 on the electriQ and the
+        VonHaus. Litres a day is the maker&rsquo;s test figure; the guidance
+        names a humidity reading, not a litre figure, as the check that matters
+        in the room.
+      </p>
+      <h3>2. Tank size and whether it drains, as listed</h3>
+      <p>
+        Tanks stated run from 4.8 litres to 7; two listings state a drain
+        option. A unit rated at 30 litres a day with a 5.3 litre tank is a unit
+        emptied five or six times a day unless the hose is fitted.
+      </p>
+      <h3>3. Floor area, as listed</h3>
+      <p>
+        Three listings give an area — 86 m², 80 m² and 30 to 40 m² — and two
+        give none. The comparison table says &ldquo;not stated&rdquo; where a
+        listing is silent, and this page does not convert a litre figure into
+        a room size.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>
+            {
+              [
+                "A 650 watt metal-bodied unit on wheels, listed at up to 30 litres a day with a humidistat, a 24-hour timer and a permanent drainage option. Its listing says a 7 litre tank in one place and 30 in another; the card carries both. Listed for warehouses, garages, basements and offices, and at 26 kilograms.",
+                "A 267 watt unit with a 4.8 litre front-loading tank and an H13 HEPA filter, listed for a floor area of 86 square metres at 40 dB. Its listing rates it at up to 14 litres a day; the 25L in its name is the model, not the figure, and the card says so.",
+                "A 204 watt unit listed at up to 20 litres a day in its text and 25 in its detail table, with the Meaco app, three fan speeds from 38 dB and an 80 square metre floor area. The h2 above now carries the card's award under Law 189.",
+                "A 330 watt unit listed at 25 litres a day, with a variable humidistat, laundry, quiet and auto modes, a 24-hour timer and a child lock. Its listing says it drops to fan-only at the target humidity and re-tests after 30 minutes. Tank size and floor area are not stated.",
+                "A 430 watt unit listed at 30 litres a day, a 5.3 litre tank with a drain hose, the TUYA Smart app, a 24-hour timer, auto defrost and a child lock, for a room of 30 to 40 square metres at 44 dB. The h2 above now carries the card's award under Law 189.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If a Dehumidifier Is Not the Answer</h2>
+      <p>
+        <strong>Find the water.</strong> Our{" "}
+        <a href="/best/awaabs-law-damp-mould-equipment">damp and mould equipment</a>{" "}
+        page covers meters and monitors — the reading the guidance names.
+      </p>
+      <p>
+        <strong>Fix the ventilation.</strong> The guidance names blocked,
+        absent or switched-off mechanical ventilation among the checks, and
+        humidity-controlled fans among the remedies. That is a building job,
+        not an appliance.
+      </p>
+      <p>
+        <strong>Treat the surface after the cause.</strong> Our{" "}
+        <a href="/best/damp-proof-paint-mould-treatment">mould treatment</a>{" "}
+        page covers sprays, primers and paints, and says the same thing about
+        order of work.
+      </p>
+
+      {/* Using them */}
+      <h2 id="using">Siting and Running One</h2>
+      <ol>
+        <li>
+          <strong>Take a reading first.</strong> A moisture meter or monitor is
+          the check the guidance names.
+        </li>
+        <li>
+          <strong>Put it in the room that is wet.</strong> A unit removes
+          moisture from the air it can reach; a closed door is the edge of its
+          reach.
+        </li>
+        <li>
+          <strong>Fit the hose if the listing has one.</strong> Two do. The
+          others are emptied by hand.
+        </li>
+        <li>
+          <strong>Use the humidistat, where listed.</strong> Four listings state
+          one; a unit that stops at its target is not drying the air past the
+          point the reading asked for.
+        </li>
+        <li>
+          <strong>Take the reading again.</strong> If it does not fall, the water
+          is not coming out of the air, and the guidance&rsquo;s underlying-cause
+          list is where to look next.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">Dehumidifiers Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing gives two figures, both are shown; where it gives none, the
+        cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Extraction and power, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Tank, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Floor area, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
 
-      <h3>
-        Can I leave a commercial dehumidifier running unattended in a rental
-        property?
-      </h3>
-      <p>
-        Yes, all five dehumidifiers on this page are designed for continuous,
-        unattended operation. Models with continuous drainage allow you to
-        connect a hose directly to a drain or sink, eliminating the need to
-        empty the water tank. Units with built-in humidistats will cycle on and
-        off automatically to maintain your target humidity level. For landlords
-        managing remote properties, Wi-Fi-enabled models like the VonHaus 30L
-        and Meaco Arete Two 20L allow you to monitor humidity and control the
-        unit from your phone.
-      </p>
-
-      <h3>What humidity level should I target in a rental property?</h3>
-      <p>
-        Aim for <strong>45&ndash;55% relative humidity</strong>. This range is
-        comfortable for occupants, prevents mould growth (which requires 60%+
-        RH), and creates an environment hostile to moisture-dependent pests such
-        as silverfish, cockroaches, and mould mites. Below 40% can cause dry
-        skin and irritated airways, so avoid over-dehumidifying. A built-in
-        humidistat will maintain your target level automatically.
-      </p>
-
-      <h3>Does a compressor dehumidifier work in a cold garage or basement?</h3>
-      <p>
-        Standard compressor dehumidifiers lose efficiency below 15&deg;C and may
-        stop working entirely below 5&deg;C because the evaporator coils ice up.
-        For cold, unheated spaces such as garages, outbuildings, and unheated
-        basements, you need a <strong>desiccant dehumidifier</strong> which uses
-        a chemical absorbent rather than refrigeration and works effectively
-        down to 1&deg;C. None of the compressor models on this page are suitable
-        for consistently sub-10&deg;C environments.
-      </p>
-
-      <h3>How much does it cost to run a commercial dehumidifier?</h3>
-      <p>
-        A typical 20&ndash;25L compressor dehumidifier draws 400&ndash;500W,
-        costing approximately 12&ndash;15p per hour at current UK electricity
-        prices (around 30p/kWh). In practice, once humidity reaches the target
-        level, the humidistat cycles the unit on and off, so actual daily
-        running costs are typically{" "}
-        <strong>&pound;1&ndash;&pound;2 per day</strong>. Energy-efficient
-        models like the Meaco 25L Ultra Low Energy can reduce this further.
-      </p>
-
-      <h3>Will a dehumidifier actually prevent pest infestations?</h3>
-      <p>
-        Yes. Many common UK pests are directly dependent on high moisture
-        levels. Silverfish require 75&ndash;90% relative humidity to breed.
-        Cockroaches thrive in damp conditions and are rarely found in dry
-        properties. Mould mites feed exclusively on mould, which only grows
-        above 60% RH. Woodlice, booklice, and plaster beetles are all
-        moisture-dependent. By maintaining humidity below 55%, you eliminate the
-        environmental conditions these pests need to survive and reproduce,
-        making a dehumidifier one of the most effective long-term pest
-        prevention investments a landlord can make.
-      </p>
-
-      <p>
-        Controlling damp removes the habitat conditions that attract
-        cockroaches, silverfish and mould mites. Pair with{" "}
-        <a
-          href="/best/professional-bait-station-kits"
-          className="text-green-600 hover:underline"
-        >
-          professional bait station kits
-        </a>{" "}
-        for complete rodent prevention.
-      </p>
-
-      <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-6 my-8">
-        <p className="font-bold text-amber-900 mb-2">
-          Landlord compliance guide
-        </p>
-        <p className="text-amber-800 mb-3">
-          If you&apos;re a landlord dealing with damp or mould, see our complete
-          guide to Awaab&apos;s Law compliance equipment &mdash; covering PIV
-          units, dehumidifiers and compliance documentation tools.
-        </p>
-        <Link
-          href="/best/awaabs-law-damp-mould-equipment"
-          className="inline-block px-5 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          View Awaab&apos;s Law equipment guide &rarr;
-        </Link>
-      </div>
-
-      {/* FindProviderCTA */}
-      <div className="not-prose">
-        <FindProviderCTA
-          heading="Damp or Pest Problem Beyond DIY?"
-          subtext="Compare pest control and damp remediation specialists near you — free, no-obligation quotes"
-        />
-      </div>
-
-      {/* Link buttons */}
-      <div className="not-prose mt-8 flex flex-col sm:flex-row gap-4">
-        <Link
-          href="/best/silverfish-treatments"
-          className="inline-block text-center px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          Best Silverfish Treatments UK 2026 &rarr;
-        </Link>
-        <Link
-          href="/guides/how-to-get-rid-of-cockroaches"
-          className="inline-block text-center px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          How to Get Rid of Cockroaches &rarr;
-        </Link>
-      </div>
+      <FindProviderCTA
+        heading="Damp you cannot trace to a cause?"
+        subtext="Where the reading does not fall, compare damp and pest specialists near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

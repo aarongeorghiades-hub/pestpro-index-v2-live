@@ -18,12 +18,12 @@ import Callout from "@/components/Callout";
 // is named on any listing here. Description and subtitle corrected; title and H1 held.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Ant Killer Gel UK 2026: Kill the Whole Colony",
+    title: "Best Ant Killer Gel UK 2026: Gel, Powder, Spray and Baits Compared",
     description:
       "Only a bait reaches the nest. Five ant products compared on their own listings — which are baits, which kill on contact, and why the difference decides it.",
     alternates: { canonical: "https://pestproindex.com/best/ant-gel-bait" },
     openGraph: {
-      title: "Best Ant Killer Gel UK 2026: Kill the Whole Colony",
+      title: "Best Ant Killer Gel UK 2026: Gel, Powder, Spray and Baits Compared",
       description:
         "Only a bait reaches the nest. Five ant products compared on their own listings — which are baits, which kill on contact, and why the difference decides it.",
       url: "https://pestproindex.com/best/ant-gel-bait",
@@ -36,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Ant Killer Gel UK 2026: Kill the Whole Colony",
+  headline: "Best Ant Killer Gel UK 2026: Gel, Powder, Spray and Baits Compared",
   description:
     "Only a bait reaches the nest. Five ant products compared on their own listings — which are baits, which kill on contact, and why the difference decides it.",
   datePublished: "2026-03-30",
@@ -203,7 +203,7 @@ const tocItems = [
 export default function BestAntGelBaitPage() {
   return (
     <GuideLayout
-      title="Best Ant Killer Gel UK 2026: Kill the Whole Colony"
+      title="Best Ant Killer Gel UK 2026: Gel, Powder, Spray and Baits Compared"
       subtitle="Two baits and three contact treatments, described by what their own listings state — and why only one of those two kinds reaches the nest"
       lastUpdated="September 2026"
       readingTime="6 min"

@@ -19,12 +19,12 @@ import Callout from "@/components/Callout";
 // products are the ones that are not stated brodifacoum.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Mouse Poison UK 2026: Strongest & Most Effective",
+    title: "Best Mouse Poison UK 2026: What You Can Legally Buy",
     description:
       "Mouse poison for UK homes: which active substance official guidance names for house mice, what the label requires, and five compared on what the listings state.",
     alternates: { canonical: "https://pestproindex.com/best/mouse-poison" },
     openGraph: {
-      title: "Best Mouse Poison UK 2026: Strongest & Most Effective",
+      title: "Best Mouse Poison UK 2026: What You Can Legally Buy",
       description:
         "Mouse poison for UK homes: which active substance official guidance names for house mice, what the label requires, and five compared on what the listings state.",
       url: "https://pestproindex.com/best/mouse-poison",
@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Mouse Poison UK 2026: Strongest & Most Effective",
+  headline: "Best Mouse Poison UK 2026: What You Can Legally Buy",
   description:
     "Mouse poison for UK homes: which active substance official guidance names for house mice, what the label requires, and five compared on what the listings state.",
   datePublished: "2026-03-30",
@@ -283,7 +283,7 @@ const tocItems = [
 export default function BestMousePoisonPage() {
   return (
     <GuideLayout
-      title="Best Mouse Poison UK 2026: Strongest & Most Effective"
+      title="Best Mouse Poison UK 2026: What You Can Legally Buy"
       subtitle="Which active substance official guidance names for house mice, what the label legally requires of you, and five products compared on what their listings actually state"
       lastUpdated="September 2026"
       readingTime="8 min"
