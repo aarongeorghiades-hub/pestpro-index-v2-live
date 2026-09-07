@@ -125,27 +125,6 @@ const products: ProductRecord[] = [
     h2Name: "Cockroach Sticky Traps 12-Pack",
     tocTitle: "Best for Monitoring",
   },
-  {
-    anchorId: "best-spray",
-    asin: "B074CDY9T4",
-    rank: 3,
-    cardName: "NOPE! CP Cockroach Killer Spray 500ml",
-    cardLabel: "Best Quick-Kill Spray",
-    features: [
-      "Odourless contact killer spray",
-      "Fast-acting formula kills cockroaches on contact",
-      "500ml bottle covers a large area",
-      "Suitable for kitchens, bathrooms, and utility rooms",
-    ],
-    tableCells: [
-      "NOPE! CP Cockroach Killer Spray 500ml",
-      "Contact spray",
-      "Best Quick-Kill",
-    ],
-    h2Label: "Best Quick-Kill Spray",
-    h2Name: "NOPE! CP Cockroach Killer Spray 500ml",
-    tocTitle: "Best Quick-Kill Spray",
-  },
 ];
 
 const tocItems = [
@@ -558,82 +537,6 @@ export default function BestCockroachKillersPage() {
         </li>
         <li>Can catch non-target insects such as spiders and silverfish</li>
         <li>Requires regular inspection to provide useful monitoring data</li>
-      </ul>
-
-      {/* Best Quick-Kill Spray — NOPE! CP */}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />
-      </div>
-      <p>
-        Contact sprays occupy a specific and limited role in cockroach control,
-        and it is important to be upfront about what they can and cannot do. The
-        NOPE! CP Cockroach Killer Spray is a 500ml contact spray that delivers
-        immediate knockdown &mdash; any cockroach hit directly with the spray
-        will die within seconds. What sets this product apart from many
-        competitors is its <strong>odourless formulation</strong>, which makes
-        it far more practical for use in kitchens, bathrooms, and other enclosed
-        spaces where a strong chemical smell would be unpleasant or
-        unacceptable. The 500ml bottle is generously sized and covers a large
-        area.
-      </p>
-      <p>
-        The NOPE! CP spray is particularly useful around{" "}
-        <strong>drain entry points</strong>, which are the primary route by
-        which Oriental cockroaches enter UK homes. Oriental cockroaches live in
-        sewer systems and damp underground environments, and they frequently
-        enter properties through floor drains, waste pipes, and gaps around
-        plumbing. Spraying around these entry points can help intercept
-        cockroaches as they emerge, especially during the warmer months when
-        Oriental cockroaches are most active. The spray is also suitable for use
-        in bathrooms and utility rooms where cockroaches may harbour.
-      </p>
-      <p>
-        However, it is essential to understand that a contact spray is{" "}
-        <strong>not a standalone solution</strong> for a cockroach infestation.
-        Sprays kill only the individual cockroaches they touch directly. They do
-        nothing to address the colony hiding behind walls, under appliances, and
-        in other inaccessible harbourage points. For this reason, we recommend
-        using a contact spray only as a supplement to gel bait &mdash; never as
-        your primary treatment method. When used in combination with the gel
-        bait above, the NOPE! CP spray provides a useful way to deal with
-        visible cockroaches while the gel bait works its way through the colony
-        over one to two weeks.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          Odourless formula makes it practical for use in kitchens and enclosed
-          spaces
-        </li>
-        <li>Fast-acting &mdash; kills cockroaches on contact within seconds</li>
-        <li>500ml bottle provides generous coverage at an affordable price</li>
-        <li>Suitable for kitchens, bathrooms, and utility rooms</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>
-          Does not reach the colony &mdash; kills only individual cockroaches on
-          direct contact
-        </li>
-        <li>Limited residual effect once the spray dries</li>
-        <li>
-          Not effective as a standalone treatment for any established
-          infestation
-        </li>
-        <li>Best used as a supplement to gel bait, not a replacement</li>
       </ul>
 
       {/* Buying Guide */}

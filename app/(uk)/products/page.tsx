@@ -278,7 +278,6 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { name: 'Sticky Traps 12-Pack', asin: 'B075FM7TST', note: 'Toxin-free', desc: 'Toxin-free sticky traps with food attractant.' },
-              { name: 'NOPE! CP Cockroach Killer Spray 500ml', asin: 'B074CDY9T4', note: 'Odourless', desc: 'Odourless contact killer. Fast-acting spray formula.' },
               { name: 'Pest Expert Cockroach Gel 10g', asin: 'B07ZZGKQ55', note: 'Formula IC', desc: 'Formula IC gel. Domino effect bait for cockroaches.' }
             ].map((product, idx) => (
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">

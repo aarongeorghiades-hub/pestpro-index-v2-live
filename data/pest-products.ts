@@ -111,12 +111,6 @@ export const topProductsByPest: Record<string, PestProduct[]> = {
       bestFor: 'Best for Monitoring',
       features: ['Toxin-free sticky traps', 'Food attractant lures cockroaches to the trap'],
     },
-    {
-      name: 'NOPE! CP Cockroach Killer Spray 500ml',
-      asin: 'B074CDY9T4',
-      bestFor: 'Best Quick-Kill Spray',
-      features: ['Odourless contact killer spray', 'Fast-acting formula kills cockroaches on contact'],
-    },
   ],
   'ants': [
     {

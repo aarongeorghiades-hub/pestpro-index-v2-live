@@ -59,8 +59,9 @@
     },
     "best/cockroach-killers": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "72ef56d62794"
+      "date": "2026-09-07",
+      "fingerprint": "6246f3351fc7",
+      "note": "S67 R10 product-fit and Law 193; cockroach-killers card removed, rat-traps text only"
     },
     "best/commercial-bird-proofing": {
       "judgement": "correct-as-built",
@@ -223,9 +224,9 @@
     },
     "best/rat-traps": {
       "judgement": "correct-as-built",
-      "date": "2026-09-06",
+      "date": "2026-09-07",
       "fingerprint": "0820c6acc9b7",
-      "note": "S67 R8 rollout rebuild, six routes, card sequences unchanged"
+      "note": "S67 R10 product-fit and Law 193; cockroach-killers card removed, rat-traps text only"
     },
     "best/rodent-proofing": {
       "judgement": "correct-as-built",
@@ -397,8 +398,9 @@
     },
     "products": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "4f6e51e5ca83"
+      "date": "2026-09-07",
+      "fingerprint": "e34df62ae078",
+      "note": "S67 R10 product-fit; B074CDY9T4 entry removed from the cockroach section"
     },
     "us/ants": {
       "judgement": "correct-as-built",

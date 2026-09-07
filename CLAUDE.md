@@ -2621,3 +2621,128 @@ evidence-is-weak passage was kept. Titles and H1s are byte-unchanged throughout.
 B0072H60MG was removed from /best/mouse-repellent at S67 R3 and B0153BJ7NQ from
 /best/cat-deterrents at S67 R5, each because the product's own listing named a
 different target species; both remain carded on the route their listing fits.
+
+## S67 R10 — LAW 193: A CONTENT-ONLY PROTECTION DOES NOT SHIELD AN UNSOURCED CLAIM
+
+LAW 193 — A CONTENT-ONLY PROTECTION DOES NOT SHIELD AN UNSOURCED OWN-VOICE CLAIM.
+Where a NEVER TOUCH entry protects page text and no machinery depends on that text — no
+gate fixture, probe, test input or registry entry anywhere in scripts/ — the entry
+records why a past sweep skipped the text, not that the text is true. Such text is
+subject to the claim rules like any other: sourced, LISTING-traceable, or deleted. A
+protection with machinery attached remains absolute; before relying on this law, PROVE
+the string appears zero times outside the page file and print that proof.
+
+### THE PROOF THIS LAW DEMANDS IS A PRINTED MEASUREMENT, NOT AN ASSERTION
+
+Exercised for the first time at S67 R10 on the three `/best/rat-traps` bait strings.
+Each was searched across the whole repository, excluding only `.next`, `node_modules`
+and `.git`, and each returned EXACTLY ONE occurrence — its own line in
+`app/(uk)/best/rat-traps/page.tsx`:
+
+```
+109  "Comes with peanut butter bait — the most effective bait available"
+366  "Peanut butter is the single most effective bait for rat traps."
+392  "is genuinely the most effective bait for rats, as confirmed by pest ..."
+```
+
+`scripts/gates.mjs`, `scripts/fixtures.mjs`, `scripts/ukspelling.mjs`,
+`scripts/adjudications.json` and `scripts/snippet-baseline.json` were each counted
+separately for "most effective bait" and for "peanut butter": ZERO in all ten counts.
+
+THE ONE NEAR MISS IS RECORDED BECAUSE IT IS THE EASY MISTAKE. `scripts/adjudications.json`
+DOES hold an entry keyed `best/rat-traps`. It stores a judgement, a date, an h2/CARD
+ordering fingerprint and a cause note — and NONE of the three strings is an h2 or a card
+link, so the entry does not consume any of them. A registry entry FOR THE ROUTE is not a
+registry entry FOR THE TEXT, and the difference is the whole of this law's test. It was
+confirmed empirically as well as by reading: the fingerprint is unchanged after the three
+edits.
+
+### WHY THIS IS NOT A WEAKENING OF THE NEVER TOUCH SECTION
+
+Law 61 and Law 119 stand: a class authorisation does not pierce a named protection, and
+an exception must name the file and the sentence. This law does not authorise editing a
+protected string. IT DISTINGUISHES TWO KINDS OF ENTRY THAT THE SECTION NEVER
+DISTINGUISHED. An entry such as the `/products` G3 known-positive control, or a string a
+fixture asserts on, is load-bearing machinery and remains absolute — deleting it blinds a
+gate. An entry that merely records "a sweep did not touch this" is a note about history,
+and history is not evidence. Law 106 says a ruling not written down will be reversed;
+this is the converse — a NOTE written into the protection list should not be read as a
+ruling that never existed.
+
+### THE FIRST APPLICATION FOUND THE PROTECTED TEXT WAS FALSE, NOT MERELY UNSOURCED
+
+The round was permitted to source the claim rather than delete it, and did: two fetch
+attempts, `extension.missouri.edu` blocked at HTTP 403 with a 451-byte body (recorded
+under S45-D and Law 177, which counts a block as a spent attempt whatever the status
+line), then `extensionpubs.unl.edu` G1737 "Controlling Rats" fetched at 22,548 bytes and
+banked at `~/pp-s67r10/sources/`.
+
+WHAT THE SOURCE SAYS, extracted by byte range and exact-matched before drafting
+(Law 164):
+
+    "Peanut butter, nutmeat, marshmallow, hot dog, bacon and pepperoni are
+     attractive baits."
+
+    "For baited traps, secure bait to the trigger with string or common glue."
+
+PEANUT BUTTER IS ONE OF SIX, AND THE PUBLICATION RANKS NONE OF THEM. "The single most
+effective bait for rat traps" was not an unsourced true thing awaiting a citation; it was
+contradicted by the first authority the round read. A protection that had stood for
+multiple sessions was protecting a false statement.
+
+AND THE SOURCING TURNED UP A SECOND, INDEPENDENT FAULT IN THE SAME STRINGS. Two of the
+three asserted that peanut butter bait SHIPS WITH the trap. B08V918HNB's own listing says
+"Bait Pods: 1" and "Simple to Bait with Peanut Butter" — the pod arrives empty. The card
+feature and the card prose both stated a supplied bait that is not supplied.
+
+### THE `/best/rat-traps` NEVER TOUCH ENTRY IS SUPERSEDED, AND THIS IS THE RECORD
+
+This file is APPEND ONLY, so the entry in the NEVER TOUCH section reading
+
+    - app/best/rat-traps/page.tsx, "most effective" x3, which are about BAIT.
+
+is NOT edited and NOT removed. It stands as the record of what was written and when.
+THIS SECTION GOVERNS OVER IT. As of S67 R10 that entry protects nothing, because the
+three strings it named no longer exist on the route:
+
+```
+109  now  "Listed with one bait pod; the listing says simple to bait with peanut butter"
+366  now  the Nebraska Extension G1737 quotations, attributed to the host actually read
+392  now  "No bait is supplied with it: the listing states one bait pod ..."
+```
+
+A future round that finds the old entry must treat this section as controlling and must
+NOT restore the deleted strings. The route's OTHER recorded protection — the
+"four-categories sentence" — was already established at S67 R6 to live on
+`/best/cockroach-killers` and not here, and is unaffected either way.
+
+## S67 R10 — B074CDY9T4 IS NOT THE PRODUCT THE ESTATE SAID IT WAS
+
+RECORDED HERE BECAUSE IT IS THE FOURTH OF ITS KIND AND THE FIRST TO BE COUNTED.
+`B074CDY9T4` was carded across the estate as "NOPE! CP Cockroach Killer Spray 500ml".
+Its banked body, canonical `https://www.amazon.co.uk/CritterKill-Professional-Guaranteed-Results-Professionals/dp/B074CDY9T4`,
+titles it **CritterKill Professional Bed Bug Killer Spray, 5 Litre Bulk Pack + 1 Litre
+Bottle with Trigger Spray**, target species Bed Bug, item weight 6 kg. A different brand,
+a different pest and a different size, under our own award label.
+
+THE BLAST RADIUS WAS MEASURED BEFORE THE EDIT, NOT AFTER (Law 44), AND A STATIC SCAN
+UNDERCOUNTED IT BY AN ORDER OF MAGNITUDE (Law 59, Law 108). Two built HTML documents
+carried the ASIN, `/best/cockroach-killers` and `/products`. But `data/pest-products.ts`
+feeds `components/PestCityPageClient.tsx`, and all nineteen city routes that render it
+declare `export const dynamic = 'force-dynamic'`, so they are absent from the build
+output entirely. `/pest-control/birmingham/cockroaches` was fetched live and served the
+card. TWENTY-ONE ROUTES, not two.
+
+REMOVED AT S67 R10 from `/best/cockroach-killers` (record and its `products[2]` render
+block together, Law 107), from `data/pest-products.ts`, and from `/products`. The record
+was REMOVED rather than corrected in place because its category was the defect: a bed bug
+spray corrected to its true title while still sitting under `'cockroaches'` recommends a
+bed bug product to a reader with cockroaches, which is worse than the wrong name. Whether
+it should be re-placed under `'bed-bugs'` is a sourcing decision and is REFERRED.
+
+NO NEVER TOUCH STRING BLOCKED ANY PART OF IT, established by reading before the edit
+rather than by assuming: `/best/cockroach-killers` carries two protected passages — the
+four-categories sentence at lines 287 and 295, and the sentence arguing against relying
+on the highest-rated product on Amazon at line 643. Both sit OUTSIDE the removed record
+and outside its render block, which ran from the JSX comment at line 563 to the closing
+`</ul>` at line 637. Law 193's test was therefore never reached on this route.

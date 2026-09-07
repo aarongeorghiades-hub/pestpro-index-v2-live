@@ -7,14 +7,22 @@ import Callout from "@/components/Callout";
 // S67 R8 — ROLLOUT REBUILD. Title and H1 byte-unchanged. Award labels, rank numerals
 // and card order UNCHANGED as ruled.
 //
-// THREE NEVER TOUCH STRINGS ON THIS ROUTE, ALL PRESERVED BYTE-FOR-BYTE. CLAUDE.md
-// protects "most effective" x3 on this page, "which are about BAIT" — and all three are
-// about peanut butter. They are unsourced superlatives and one of them carries an
-// unsourced attribution to "pest control professionals across the UK". A rebuild would
-// otherwise delete every one. They are kept exactly as written, in the same three
-// places, and reported: a protection given by name is not overridden by a broad
-// authorisation, and Law 192 does not reach them because the protected string IS the
-// claim rather than a label introducing one.
+// S67 R10 — THE THREE "most effective" BAIT STRINGS ARE GONE, UNDER LAW 193.
+// They were NEVER TOUCH by a CONTENT-ONLY entry: CLAUDE.md protected "most effective"
+// x3 on this page, "which are about BAIT", and nothing anywhere in scripts/ depended on
+// any of them — proved twice, at S67 R9 and again before this edit, at zero occurrences
+// outside this file. Law 193 says such an entry records why a past sweep skipped the
+// text, not that the text is true, so the three fell to the ordinary claim rules.
+//
+// A SOURCE WAS FOUND AND IT CONTRADICTED THE PAGE. Nebraska Extension G1737 lists
+// peanut butter as ONE OF SIX attractive baits and ranks none of them. So the claim was
+// not deletable-or-keepable — it was WRONG, and it is replaced by what the source
+// actually says, quoted and attributed to the host actually read (S59-A).
+//
+// AND THE SOURCING TURNED UP A SECOND FAULT IN THE SAME STRING. "Comes with peanut
+// butter bait" is false against the listing: the trap ships with an EMPTY bait pod and
+// the listing's own words are "Simple to Bait with Peanut Butter". Two of the three
+// strings asserted that bait was included. Neither now does.
 //
 // CLAUDE.md ALSO RECORDS a "four-categories sentence" on this route at line 164. It is
 // NOT here — 0 occurrences, measured at S67 R1 and again at S67 R6. It lives on
@@ -68,6 +76,11 @@ const breadcrumbSchema = {
 // (Law 164); each citation names the host actually read (S59-A). Both bodies were banked
 // at S66 R8 and are kept under Law 175; neither was re-fetched.
 const SRC = {
+  // S67 R10 — added under Law 193. The three "most effective" bait claims were
+  // NEVER TOUCH by a CONTENT-ONLY entry with no machinery behind it, so they were
+  // subject to the claim rules like any other text: sourced, or deleted. A source was
+  // found, and it does not say what the page said.
+  unl: "https://extensionpubs.unl.edu/publication/g1737/2007/html/view",
   defra:
     "https://www.gov.uk/government/publications/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms",
   hse: "https://www.hse.gov.uk/biocides/using/rodenticides.htm",
@@ -102,11 +115,12 @@ const products: ProductRecord[] = [
       "Listed as metal, extra large, instant-kill snap design",
       "Listed for indoor and outdoor use",
       "Target species listed as Rat",
-      // NEVER TOUCH, RESTORED. This is the third of CLAUDE.md's three protected
-      // "most effective" strings on this route. The rebuild dropped the Pros list it
-      // used to sit in, which deleted it — a protected string lost as collateral is
-      // still a protected string lost. It is put back verbatim, on the same card.
-      "Comes with peanut butter bait — the most effective bait available",
+      // S67 R10 — WAS "Comes with peanut butter bait — the most effective bait
+      // available". Two faults in one string. The superlative was unsourced own-voice
+      // (Law 193 put it in scope), and "comes with" was FALSE against the listing:
+      // this trap ships with a bait pod you fill yourself. The listing's own words are
+      // "Simple to Bait with Peanut Butter" and "Bait Pods: 1".
+      "Listed with one bait pod; the listing says simple to bait with peanut butter",
     ],
     tableCells: ["Rat Reaper XXL", "Snap trap, metal, 2 pack", "Best Overall"],
     h2Label: "Best Overall",
@@ -363,10 +377,26 @@ export default function BestRatTrapsPage() {
       <div className="not-prose">
         <Callout type="tip">
           <p>
-            Peanut butter is the single most effective bait for rat traps. It is
-            sticky, has a strong scent, and forces the rat to interact with the
-            trigger plate. Forget cheese — it dries out and is easy for rats to
-            steal.
+            Peanut butter is one of several baits an extension service names for
+            rat traps &mdash; not a ranked best, and not the only one. Nebraska
+            Extension&rsquo;s G1737 lists them:{" "}
+            <em>
+              &ldquo;Peanut butter, nutmeat, marshmallow, hot dog, bacon and
+              pepperoni are attractive baits.&rdquo;
+            </em>{" "}
+            The same publication is specific about fixing whatever you use in
+            place:{" "}
+            <em>
+              &ldquo;For baited traps, secure bait to the trigger with string or
+              common glue.&rdquo;
+            </em>{" "}
+            (
+            <a href={SRC.unl} rel="nofollow">
+              University of Nebraska&ndash;Lincoln Extension, G1737 Controlling
+              Rats
+            </a>
+            ). Cheese is not mentioned either way, so nothing is said here about
+            it.
           </p>
         </Callout>
       </div>
@@ -387,10 +417,10 @@ export default function BestRatTrapsPage() {
       <p>
         Listed as a two-pack of extra-large metal snap traps for indoor and
         outdoor use, with Rat as the stated target species. The card name reads
-        as a single trap; the listing is explicit that two are supplied. Its
-        peanut butter bait is included, and peanut butter
-        is genuinely the most effective bait for rats, as confirmed by pest
-        control professionals across the UK.
+        as a single trap; the listing is explicit that two are supplied. No bait
+        is supplied with it: the listing states one bait pod and describes the
+        trap as simple to bait with peanut butter, which is one of the baits
+        Nebraska Extension names above rather than a best one.
       </p>
 
       {/* Product 2 */}
