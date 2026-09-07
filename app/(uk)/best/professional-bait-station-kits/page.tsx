@@ -1,22 +1,34 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
 
+// S68 R3 — ROLLOUT REBUILD to the R8 pattern. Title and H1 byte-unchanged. Award
+// labels, rank numerals, anchor ids and card order are UNCHANGED. Three card NAMES are
+// corrected under the S68 R3 ride-along ruling, each to what its own listing states:
+// the Roshield 4-pack's listing does not say "PRO BOX" or "Extra Large"; the 2-pack's
+// listing states a secure solid lid, not an inspection window; and the "(Single)" box's
+// listing states two pieces. The pre-baited kit's ASIN resolves on Amazon to canonical
+// B0DK254FLC, the same two-box pre-baited kit; the card keeps the ASIN it links.
+//
+// THE DESCRIPTION IS REWRITTEN. It said "UK regulation compliant"; that is the reader's
+// test to apply against the standard quoted at #legal, not this page's certificate.
+//
+// THE FAQ IS REMOVED, BLOCK AND SCHEMA TOGETHER (Law 190). It had one visible question
+// and no schema entry; the question, how many stations, is answered at #what-decides.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Professional Bait Station Kits UK (2026)",
     description:
-      "Trade-grade rat & mouse bait station kits for landlords, facilities managers & HMO operators. Tamper-resistant, UK regulation compliant.",
+      "Bait station kits for landlords: the station standard the label requires, who may use the bait inside, and five compared on what the listings state.",
     alternates: {
       canonical: "https://pestproindex.com/best/professional-bait-station-kits",
     },
     openGraph: {
       title: "Best Professional Bait Station Kits UK (2026)",
       description:
-        "Trade-grade rat & mouse bait station kits for landlords, facilities managers & HMO operators. Tamper-resistant, UK regulation compliant.",
+        "Bait station kits for landlords: the station standard the label requires, who may use the bait inside, and five compared on what the listings state.",
       url: "https://pestproindex.com/best/professional-bait-station-kits",
       type: "article",
       siteName: "PestPro Index",
@@ -27,22 +39,13 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline:
-    "Best Professional Rat & Mouse Bait Station Kits for Landlords (2026)",
+  headline: "Best Professional Bait Station Kits UK (2026)",
   description:
-    "Trade-grade rat & mouse bait station kits for landlords, facilities managers & HMO operators. Tamper-resistant, UK regulation compliant.",
+    "Bait station kits for landlords: the station standard the label requires, who may use the bait inside, and five compared on what the listings state.",
   datePublished: "2026-04-06",
-  dateModified: "2026-04-06",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
+  dateModified: "2026-09-07",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://pestproindex.com/best/professional-bait-station-kits",
@@ -53,18 +56,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -74,36 +67,18 @@ const breadcrumbSchema = {
   ],
 };
 
-// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
-// from this and only this, so the two surfaces cannot disagree again. The visible
-// block was authoritative where they did disagree.
-const faqs = [
-  {
-    q: "Do professional bait stations work for mice as well as rats?",
-    a: "Yes. All of the stations on this page accept both rat and mouse bait blocks. The entry holes are sized to allow mice and rats in while keeping children, pets, and non-target wildlife out. For mice-only infestations, a smaller dedicated mouse bait station may be more discreet, but professional-grade boxes handle both species effectively.",
-  },
-  {
-    q: "Where should I place bait stations around a rental property?",
-    a: "Place stations flush against external walls, along fence lines, near bin stores, beside drain covers, and at any confirmed rodent entry points. Rats and mice are thigmotactic — they follow edges and avoid crossing open spaces. Space stations 5-10 metres apart for perimeter coverage. For HMOs, prioritise communal kitchen areas, refuse storage, and the building perimeter.",
-  },
-  {
-    q: "How often should I check bait stations?",
-    a: "During active baiting, check every 5-7 days. Replace consumed bait, remove dead rodents, and note which stations show activity. For ongoing monitoring with no active infestation, monthly inspections are sufficient. Keep a written log of every inspection — this is essential evidence for Environmental Health if a complaint is made against your property.",
-  },
-  {
-    q: "Do I need to use poison or can I use traps inside bait stations?",
-    a: "Most professional bait stations accept both poison blocks (mounted on the internal bait rod) and snap traps. Using snap traps inside a tamper-resistant station gives you a poison-free option that is still safe around tenants, children, and pets. This is particularly useful in food preparation areas or properties with vulnerable occupants where chemical rodenticides are less appropriate.",
-  },
-];
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194). Bodies kept under Law 175: hse-biocides-using at
+// ~/pp-s68r1/sources; hse-rodenticides, crru-baitstation and gov-poultry-rodent-cop at
+// ~/pp-s66r8 (banked S66 R8, copied to ~/pp-s67r2/sources).
+const SRC = {
+  hseBiocides: "https://www.hse.gov.uk/biocides/using/overview.htm",
+  hse: "https://www.hse.gov.uk/biocides/using/rodenticides.htm",
+  crruStation:
+    "https://thinkwildlife.org/implications-for-rodenticide-users-of-new-label-text-specifying-bait-station-standards/",
+  defra:
+    "https://www.gov.uk/government/publications/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms",
 };
 
 type ProductRecord = {
@@ -120,48 +95,50 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
+// the S45-C window. A property is asserted only where the listing states it (S52-E,
+// S50-H); a cell the listing does not state reads "not stated".
+//
+// GONE, BY NAME: "4-pack covers a standard residential HMO property", "reduces servicing
+// time across multiple properties", "from the UK leading professional pest control
+// brand", and the pre-baited kit's "Brodifacoum single-feed bait included" — the fetched
+// listing for that kit names no active substance at all.
 const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
     asin: "B00XL3CENO",
     rank: 1,
-    cardName: "Roshield PRO BOX 4-Pack Extra Large Bait Stations",
+    cardName: "Roshield Tamper Proof Rat Poison Box, 4 Pack",
     cardLabel: "Best Overall",
     features: [
-      "Professional-grade — designed for the pest control industry",
-      "Extra-large capacity with transparent inspection lid",
-      "UK-made from recycled plastics, all UK/EU regulation compliant",
-      "4-pack covers a standard residential HMO property",
+      "Four boxes, as listed; the listing says traps and bait are not included",
+      "Listed as holding blocks and grain bait on a metal rod",
+      "Listed at 3 kilograms for the pack",
+      "Target species listed as Mouse, Rat",
+      "Listed as designed and made in the UK from recycled materials",
     ],
-    tableCells: [
-      "Roshield PRO BOX 4-Pack",
-      "Extra-large with inspection lid",
-      "Best Overall",
-    ],
+    tableCells: ["Roshield 4-pack", "4 boxes, no bait", "not stated", "Best Overall"],
     h2Label: "Best Overall",
-    h2Name: "Roshield PRO BOX 4-Pack Extra Large Bait Stations",
+    h2Name: "Roshield Tamper Proof Rat Poison Box, 4 Pack",
     tocLabel: "Best Overall",
-    tocName: "Roshield PRO BOX 4-Pack",
+    tocName: "Roshield 4-Pack",
   },
   {
     anchorId: "runner-up",
     asin: "B00XL382T4",
     rank: 2,
-    cardName: "Roshield PRO BOX 2-Pack Extra Large with Inspection Window",
+    cardName: "Roshield PRO BOX 2 Extra Large Bait Stations — Solid Lid",
     cardLabel: "Runner-Up",
     features: [
-      "Transparent lid for checking bait without opening",
-      "Reduces servicing time across multiple properties",
-      "Holds both poison blocks and snap traps",
-      "Professional construction, wall-mounting capability",
+      "Two extra-large stations; the listing says bait is not included",
+      "Listed with a secure solid lid for easy inspection",
+      "Listed at 26 x 19 x 12 cm and 500 grams",
+      "Target species listed as Mouse, Rat",
+      "Listed for indoor and outdoor use, and for rodenticide or traps",
     ],
-    tableCells: [
-      "Roshield PRO BOX 2-Pack",
-      "Transparent inspection window",
-      "Runner-Up",
-    ],
+    tableCells: ["Roshield PRO BOX 2-pack", "2 boxes, no bait", "26 x 19 x 12 cm", "Runner-Up"],
     h2Label: "Runner-Up",
-    h2Name: "Roshield PRO BOX 2-Pack with Inspection Window",
+    h2Name: "Roshield PRO BOX 2 Extra Large Bait Stations",
     tocLabel: "Runner-Up",
     tocName: "Roshield PRO BOX 2-Pack",
   },
@@ -169,23 +146,20 @@ const products: ProductRecord[] = [
     anchorId: "best-budget",
     asin: "B0CD7QDM1L",
     rank: 3,
-    cardName: "Roshield Pro Quality Tamper-Resistant Bait Box (Single)",
+    cardName: "Roshield Pro Quality Tamper-Resistant Bait Box, 2 Pack",
     cardLabel: "Best Budget",
     features: [
-      "UK-made compact bait station",
-      "Lockable, key-operated tamper-resistant design",
-      "Complies with latest amateur rodenticide regulations",
-      "Suitable for indoor and external wall placement",
+      "Two boxes, as listed; no bait included",
+      "Listed with an inspection window and key-only access",
+      "Listed as holding wax blocks, wheat bait, pasta sachets and traps",
+      "Target species listed as Mouse, Rat",
+      "Listed for indoor and outdoor use",
     ],
-    tableCells: [
-      "Roshield Tamper-Resistant Single",
-      "Compact, key-operated lock",
-      "Best Budget",
-    ],
+    tableCells: ["Roshield Pro Quality 2-pack", "2 boxes, no bait", "not stated", "Best Budget"],
     h2Label: "Best Budget",
-    h2Name: "Roshield Pro Quality Tamper-Resistant Bait Box",
+    h2Name: "Roshield Pro Quality Tamper-Resistant Bait Box, 2 Pack",
     tocLabel: "Best Budget",
-    tocName: "Roshield Tamper-Resistant Single",
+    tocName: "Roshield Tamper-Resistant 2 Pack",
   },
   {
     anchorId: "best-professional",
@@ -194,16 +168,13 @@ const products: ProductRecord[] = [
     cardName: "Pest Expert Heavy Duty Outdoor Bait Boxes — Pack of 4",
     cardLabel: "Best Professional-Grade",
     features: [
-      "Industrial-strength lockable bait stations",
-      "From the UK leading professional pest control brand",
-      "Large, secure, and key-operated",
-      "Designed for outdoor placement around buildings",
+      "Four boxes, as listed; no bait included",
+      "Listed as fully lockable and weather resistant",
+      "Listed as taking grain, blocks and paste",
+      "Target species listed as Mouse, Rat",
+      "Listed for indoor and outdoor use",
     ],
-    tableCells: [
-      "Pest Expert Heavy Duty 4-Pack",
-      "Industrial-strength outdoor",
-      "Best Professional-Grade",
-    ],
+    tableCells: ["Pest Expert 4-pack", "4 boxes, no bait", "not stated", "Best Professional-Grade"],
     h2Label: "Best Professional-Grade",
     h2Name: "Pest Expert Heavy Duty Outdoor Bait Boxes",
     tocLabel: "Best Professional-Grade",
@@ -216,16 +187,13 @@ const products: ProductRecord[] = [
     cardName: "Roshield 2x Pre-Baited Rat Kit — Ready to Deploy",
     cardLabel: "Best Ready to Deploy",
     features: [
-      "Ready-to-use with pre-baited tamper-resistant boxes",
-      "Zero setup — just place and monitor",
-      "UK-made, Brodifacoum single-feed bait included",
-      "Ideal for landlords wanting immediate deployment",
+      "Two pre-baited lockable stations with an access key, as listed",
+      "Active substance not named on the listing",
+      "Listed as refillable and reusable",
+      "Target species listed as Rat",
+      "Listed as made in the UK",
     ],
-    tableCells: [
-      "Roshield Pre-Baited 2x Kit",
-      "Ready-to-deploy, bait included",
-      "Best Convenience",
-    ],
+    tableCells: ["Roshield pre-baited 2x kit", "2 boxes, bait included", "not stated", "Best Ready to Deploy"],
     h2Label: "Best Ready to Deploy",
     h2Name: "Roshield 2x Pre-Baited Rat Kit",
     tocLabel: "Best Ready to Deploy",
@@ -234,43 +202,33 @@ const products: ProductRecord[] = [
 ];
 
 const tocItems = [
-  { id: "at-a-glance", title: "At a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
-  })),
-  { id: "how-many", title: "How Many Bait Stations Do I Need?" },
-  { id: "buying-guide", title: "Buying Guide" },
-  { id: "roi", title: "ROI: DIY Kit vs Professional Call-Out" },
-  { id: "faq", title: "Frequently Asked Questions" },
+  { id: "situation", title: "Do You Need Bait at All?" },
+  { id: "legal", title: "Who May Use the Bait, and What the Box Must Be" },
+  { id: "limits", title: "Where a Bait Station Kit Does Not Help" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If Bait Is Not the Answer" },
+  { id: "using", title: "Placing and Checking Them" },
+  { id: "compared", title: "Best Professional Bait Station Kits Compared" },
 ];
 
-export default function ProfessionalBaitStationKitsPage() {
+export default function BestProfessionalBaitStationKitsPage() {
   return (
     <GuideLayout
       title="Best Professional Rat & Mouse Bait Station Kits for Landlords (2026)"
-      subtitle="Trade-grade tamper-resistant bait station kits that keep you legally compliant and your properties rodent-free — without the cost of professional call-outs"
-      lastUpdated="April 2026"
-      readingTime="9 min"
+      subtitle="Tamper-resistant bait station kits for landlords — five compared on what their listings state, with the label standard the box must meet and HSE's line on who may use professional products"
+      lastUpdated="September 2026"
+      readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
+        { title: "How to Get Rid of Rats: Complete UK Guide", href: "/guides/how-to-get-rid-of-rats" },
+        { title: "How to Get Rid of Mice: Complete UK Guide", href: "/guides/how-to-get-rid-of-mice" },
         {
           title: "Landlord Pest Control: Responsibilities & Legal Guide",
           href: "/guides/landlord-pest-control",
         },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
       ]}
       relatedProducts={[
         { title: "Best Rat Poison UK 2026", href: "/best/rat-poison" },
@@ -285,550 +243,310 @@ export default function ProfessionalBaitStationKitsPage() {
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
         <p className="text-sm text-amber-800">
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
-          a small commission at no extra cost to you. As an Amazon Associate,
-          PestPro Index earns from qualifying purchases.
+          a small commission at no extra cost to you. This helps us keep the
+          site running and free for everyone. As an Amazon Associate, PestPro
+          Index earns from qualifying purchases.
         </p>
       </div>
 
       <p>
-        If you manage rental properties in the UK, rodent control is not
-        optional — it is a legal obligation. Under the Prevention of Damage by
-        Pests Act 1949 and the Housing Health and Safety Rating System (HHSRS),
-        landlords must take reasonable steps to keep properties free from rat
-        and mouse infestations. And if you choose to use rodenticide, the law is
-        unambiguous: all amateur-use rodenticide <strong>must</strong> be
-        deployed inside a tamper-resistant bait station. Non-compliance is a
-        criminal offence under the Control of Pesticides Regulations 1986.
+        Four of the five kits here are empty boxes sold in packs of two or four.
+        One arrives pre-baited. For a landlord the question is not which box,
+        but whether the bait that goes in it is one you are allowed to use
+        yourself.
       </p>
-      <p>
-        For portfolio landlords managing multiple properties, investing in
-        professional-grade bait station kits is significantly more
-        cost-effective than calling out pest control contractors every time a
-        tenant reports activity. A single professional call-out for rats
-        typically costs £150-300. A proper bait station kit can be reused across
-        properties for years.
-      </p>
-      <p>
-        We selected these professional bait station kits on published
-        specifications and manufacturer information, looking at{" "}
-        <strong>tamper-resistance and regulatory compliance</strong>,{" "}
-        <strong>build quality and durability</strong>,{" "}
-        <strong>capacity and versatility</strong>, and{" "}
-        <strong>value for multi-property landlords</strong>.
-      </p>
+
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You are not sure you should be putting poison down.</strong>{" "}
+            HSE lists anticoagulants after the other methods —{" "}
+            <a href="#situation" className="underline">
+              whether you need bait at all
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You have bought bait marked for professional use.</strong>{" "}
+            HSE is plain that the general public must not use it —{" "}
+            <a href="#legal" className="underline">
+              who may use the bait
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You put boxes out before and saw nothing for a week.</strong>{" "}
+            Defra&rsquo;s code says to allow two to three weeks —{" "}
+            <a href="#limits" className="underline">
+              where a kit does not help
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want boxes only, for bait you already hold.</strong>{" "}
+            Four kits here are empty —{" "}
+            <a href="#best-overall" className="underline">
+              four boxes
+            </a>
+            ,{" "}
+            <a href="#best-professional" className="underline">
+              four heavy-duty
+            </a>
+            ,{" "}
+            <a href="#runner-up" className="underline">
+              two extra-large
+            </a>{" "}
+            and{" "}
+            <a href="#best-budget" className="underline">
+              two with a window
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want a kit that arrives with bait in it.</strong> One
+            does —{" "}
+            <a href="#best-ready-to-deploy" className="underline">
+              the pre-baited pair
+            </a>
+            , whose listing does not name the active.
+          </li>
+        </ul>
+      </div>
 
       <div className="not-prose">
         <Callout type="warning">
           <p>
-            All amateur-use rodenticide in the UK must be placed inside a
-            tamper-resistant bait station. Using loose poison — in gardens, loft
-            spaces, or anywhere accessible to children, pets, or non-target
-            wildlife — is a criminal offence. Landlords who fail to comply risk
-            prosecution, council enforcement action, and civil liability if a
-            tenant or their pet is harmed.
+            Rodenticide is toxic to mammals generally, not only to rats and
+            mice. Every bait that goes into these boxes must be used inside a
+            tamper-resistant station, and that is a condition of the
+            bait&rsquo;s label rather than a recommendation.
           </p>
         </Callout>
       </div>
 
-      <h2 id="at-a-glance">Professional Bait Station Kits at a Glance</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Key Feature</th>
-            <th>Best For</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
-      <div className="not-prose">
-        <StatCallout
-          value="&pound;150&ndash;300"
-          label="Cost of a single professional call-out for rats &mdash; a reusable bait station kit costs a fraction of it"
-        />
-      </div>
-
-      {/* --- Product 1 --- */}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />
-      </div>
+      {/* [0] Situation */}
+      <h2 id="situation">Do You Need Bait at All?</h2>
       <p>
-        The Roshield PRO BOX 4-Pack is the standout choice for landlords because
-        it gives you everything you need for a standard residential or HMO
-        property in a single purchase. Four extra-large stations in one pack,
-        genuinely designed for the pest control trade rather than repackaged
-        consumer-grade plastic.
-      </p>
-      <p>
-        The transparent inspection lid is the feature that sets this apart for
-        multi-property management. You can check bait consumption levels without
-        unlocking and opening every station — saving significant time when you
-        are servicing 10+ stations across a portfolio. The extra-large capacity
-        means you can load more bait per station, extending the interval between
-        refills.
-      </p>
-      <p>
-        UK-made from recycled plastics, these stations are built to withstand
-        years of outdoor use in British weather. They accept both poison blocks
-        and snap traps, giving you the flexibility to choose your control method
-        based on each property's circumstances.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>4-pack covers a typical HMO perimeter</li>
-        <li>Transparent lid reduces servicing time</li>
-        <li>Extra-large bait capacity</li>
-        <li>UK-made, regulation compliant</li>
-        <li>Low cost per station</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Bait not included — must purchase separately</li>
-        <li>Extra-large size may be too bulky for tight indoor spaces</li>
-        <li>Transparent lid may be less discreet in tenant-facing locations</li>
-      </ul>
-
-      {/* --- Product 2 --- */}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />
-      </div>
-      <p>
-        The 2-pack version of the Roshield PRO BOX is ideal if you need to top
-        up your existing stock or only require coverage for a smaller property.
-        Two stations per pack suits a smaller deployment, and this remains a
-        professional-grade product.
-      </p>
-      <p>
-        The inspection window is the same transparent lid design as the 4-pack —
-        allowing you to assess bait take without opening the station. The
-        wall-mounting capability is particularly useful for indoor deployment in
-        garages, utility rooms, and loft spaces where you want the station
-        secured off the floor and out of sight.
-      </p>
-      <p>
-        Both poison blocks (mounted on the internal bait rod) and snap traps fit
-        comfortably inside, giving you flexibility to switch between chemical
-        and mechanical control depending on the situation. The professional
-        construction is robust enough for permanent outdoor placement.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Inspection window for quick bait checks</li>
-        <li>Wall-mounting option for indoor use</li>
-        <li>Accepts poison blocks and snap traps</li>
-        <li>Professional-grade build quality</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>
-          Only 2 stations — may need additional units for larger properties
-        </li>
-        <li>Bait not included</li>
-      </ul>
-
-      {/* --- Product 3 --- */}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />
-      </div>
-      <p>
-        A single station is the simplest way to get a genuinely compliant,
-        key-operated bait station. For landlords dealing with a single-property
-        issue or needing to add one extra station to an existing setup, this is
-        the practical choice. It does not compromise on the essentials: the
-        key-operated lock meets all current amateur rodenticide regulations, and
-        the tamper-resistant design keeps children and pets out.
-      </p>
-      <p>
-        The compact size makes it suitable for indoor deployment — inside
-        kitchen units, behind appliances, in utility cupboards — where larger
-        stations would not fit. It also works well as an external wall-mounted
-        station for small garden areas. The UK-made construction is solid for
-        the price, though it is lighter than the PRO BOX range and lacks the
-        inspection window.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Compact — fits in tight indoor spaces</li>
-        <li>Key-operated lock meets all regulations</li>
-        <li>UK-made</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Single station — will need multiples for perimeter coverage</li>
-        <li>No inspection window</li>
-        <li>Lighter construction than professional multi-packs</li>
-      </ul>
-
-      {/* --- Product 4 --- */}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />
-      </div>
-      <p>
-        Pest Expert is the brand you will find in the vans of BPCA-certified
-        pest controllers across the UK. These heavy-duty outdoor bait boxes are
-        built to a different standard than consumer products — thicker walls,
-        reinforced entry tunnels, and an industrial-strength locking mechanism
-        that will not degrade after years of repeated use.
-      </p>
-      <p>
-        The build quality justifies choosing these for landlords who need
-        stations that will last for years of continuous outdoor deployment. The
-        UV-stabilised construction will not crack or become brittle in sunlight,
-        and the heavy weight means they stay in place without additional
-        anchoring in most situations.
-      </p>
-      <p>
-        For commercial landlords, facilities managers, and anyone deploying
-        stations around larger buildings, these are the stations the
-        professionals use — and for good reason.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Professional pest control brand</li>
-        <li>Industrial-strength construction</li>
-        <li>UV-stabilised for multi-year outdoor use</li>
-        <li>Heavy-duty locking mechanism</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Bulkier than compact models</li>
-        <li>Bait not included</li>
-      </ul>
-
-      {/* --- Product 5 --- */}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />
-      </div>
-      <p>
-        When a tenant calls to report rodent activity and you need to respond
-        the same day, the Roshield Pre-Baited Kit is the fastest path from
-        delivery to deployment. The two tamper-resistant stations come
-        pre-loaded with Brodifacoum bait blocks — a single-feed rodenticide
-        available to amateur users. Open the box, place the stations against
-        walls near the reported activity, and you are done.
-      </p>
-      <p>
-        Brodifacoum is a single-feed anticoagulant, meaning a rat or mouse only
-        needs to consume one dose for a lethal effect. This makes the pre-baited
-        kit particularly effective because even a brief visit to the station can
-        deliver a lethal dose — you do not need the rodent to return multiple
-        times as with some weaker active ingredients.
-      </p>
-      <p>
-        The trade-off is flexibility: once the bait is consumed, you will need
-        to purchase replacement blocks separately. But for the initial response
-        to a tenant complaint, the zero-setup convenience is hard to beat.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Zero setup — pre-baited and ready to place</li>
-        <li>Brodifacoum single-feed bait included</li>
-        <li>Fastest response to a rodent complaint</li>
-        <li>Tamper-resistant, regulation compliant</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Only 2 stations included</li>
-        <li>Bait will need replacing once consumed</li>
-        <li>Less flexible than buying stations and bait separately</li>
-      </ul>
-
-      {/* --- How Many --- */}
-      <h2 id="how-many">How Many Bait Stations Do I Need?</h2>
-      <p>
-        The number of stations depends on the property type and the severity of
-        the problem. As a guideline based on professional pest control practice:
-      </p>
-      <ul>
-        <li>
-          <strong>Standard house (2-3 bed):</strong> 2-3 stations, placed at key
-          entry points and along the building perimeter where activity is
-          confirmed
-        </li>
-        <li>
-          <strong>HMO or multi-unit property:</strong> 4-6 stations, covering
-          the full perimeter plus communal areas, bin stores, and any internal
-          hotspots
-        </li>
-        <li>
-          <strong>Commercial premises:</strong> 1 station per 50m² of perimeter,
-          with additional stations at loading bays, bin areas, and service
-          entrances
-        </li>
-      </ul>
-      <p>
-        For ongoing monitoring (no active infestation), maintain at least 2
-        stations per property at the most vulnerable entry points. This provides
-        early-warning detection if rodent activity returns — allowing you to act
-        before tenants file a complaint or Environmental Health gets involved.
+        A box holds bait; it does not decide whether bait is the answer. HSE
+        puts anticoagulants last:{" "}
+        <em>
+          &ldquo;If you need to deal with a rodent problem, it is important to
+          remember to consider other available control methods, such as those
+          listed above, before reaching for anticoagulant products.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hse} rel="nofollow">
+          HSE
+        </a>
+        ). For a landlord that means proofing the property and trapping come
+        before any of the kits below.
       </p>
 
-      <div className="not-prose">
-        <StatCallout
-          value="4–6 stations"
-          label="Recommended for a standard HMO property — perimeter coverage plus communal areas"
-        />
-      </div>
-
-      {/* --- Buying Guide --- */}
-      <h2 id="buying-guide">
-        Buying Guide: What to Look for in a Professional Bait Station
-      </h2>
-
-      <h3>Tamper Resistance</h3>
+      {/* [1] Legal */}
+      <h2 id="legal">Who May Use the Bait, and What the Box Must Be</h2>
       <p>
-        Non-negotiable. The station must feature a key-operated or tool-operated
-        lock that prevents access by children, pets, and non-target wildlife.
-        Clip-on lids and simple latches are not compliant with amateur
-        rodenticide regulations. Every station on our list meets this
-        requirement.
-      </p>
-
-      <h3>Bait Rod</h3>
-      <p>
-        A fixed internal bait rod holds poison blocks securely in position. This
-        prevents rodents from dragging bait out of the station — a common
-        problem with stations that rely on loose bait placement. The rod also
-        ensures the bait stays in the optimal position for consumption.
-      </p>
-
-      <h3>Key Locking</h3>
-      <p>
-        All stations should come with a key. For portfolio landlords, check
-        whether stations from the same manufacturer use a universal key — this
-        means one key opens all your stations across all properties, saving time
-        during servicing rounds.
-      </p>
-
-      <h3>Indoor vs Outdoor Rating</h3>
-      <p>
-        Outdoor stations need UV-stabilised plastic, drainage holes, and
-        weatherproof construction. Indoor stations can be lighter and more
-        compact. If you buy only one type, choose outdoor-rated — they work
-        perfectly indoors, but indoor-only stations will degrade quickly
-        outside.
-      </p>
-
-      <h3>Capacity</h3>
-      <p>
-        Extra-large stations hold more bait and require less frequent refilling
-        — critical when you are managing multiple properties and want to
-        minimise site visits. Smaller stations are better for tight indoor
-        spaces but need more frequent servicing.
-      </p>
-
-      <h3>Regulation Compliance</h3>
-      <p>
-        Ensure the station is explicitly labelled as compliant with CRRU
-        (Campaign for Responsible Rodenticide Use) guidelines and current UK
-        amateur rodenticide regulations. All products on our list meet these
-        requirements, but be cautious with cheaper unbranded stations found on
-        marketplace sellers.
-      </p>
-
-      {/* --- ROI --- */}
-      <h2 id="roi">ROI: DIY Kit vs Professional Call-Out</h2>
-      <p>
-        The economics are straightforward. A single professional pest control
-        call-out for a rat problem in the UK typically costs{" "}
-        <strong>£150-300</strong>, depending on the severity and location. That
-        covers an initial visit and one or two follow-up inspections. If the
-        problem recurs — and with rodents, it frequently does — you are paying
-        again.
+        The boxes are sold freely and to anyone. The bait is not, and this is
+        the honest position for a landlord who is not a pest control
+        professional. HSE states that{" "}
+        <em>
+          &ldquo;members of the general public must not use professional or
+          industrial use products&rdquo;
+        </em>{" "}
+        and that{" "}
+        <em>
+          &ldquo;If you are a member of the public, you should only use biocidal
+          products that are intended for the general public&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hseBiocides} rel="nofollow">
+          HSE
+        </a>
+        ) — the label may say amateur or non-professional instead. The one
+        pre-baited kit here does not name its active or its
+        authorisation on the fetched listing; read the pack before you use it.
       </p>
       <p>
-        A professional bait station kit costs <strong>£30-80</strong> depending
-        on the number of stations and whether bait is included. The stations are
-        reusable for years. Replacement bait blocks cost £10-20 per property per
-        treatment cycle. Over the course of a year managing even a small
-        portfolio, the savings are substantial.
+        The box has a standard of its own. CRRU UK sets out the label text HSE
+        requires of a tamper-resistant station: it must be{" "}
+        <em>&ldquo;Strong enough to prevent entry or destruction by dogs.&rdquo;</em>{" "}
+        and{" "}
+        <em>
+          &ldquo;Lockable or sealable so that children and dogs cannot gain
+          access through the opening or mechanisms used to fill the bait
+          compartments.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.crruStation} rel="nofollow">
+          CRRU UK, thinkwildlife.org
+        </a>
+        ). Every box below is listed as lockable; whether it meets the rest is
+        the reader&rsquo;s test to apply, not this page&rsquo;s certificate.
       </p>
 
-      <div className="not-prose">
-        <Callout type="cost">
+      {/* [2] Limits */}
+      <h2 id="limits">Where a Bait Station Kit Does Not Help</h2>
+      <p>
+        <strong>In the first fortnight.</strong> Defra&rsquo;s code of practice
+        for rodent control notes that{" "}
+        <em>
+          &ldquo;it is best to allow at least two to three weeks for rats to get
+          used to feeding in bait boxes placed in their environment, before
+          deciding on whether the method being used is working.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.defra} rel="nofollow">
+          GOV.UK
+        </a>
+        ). A box ignored in week one is normal.
+      </p>
+      <p>
+        <strong>Against the way in.</strong> A station reduces the rodents that
+        are here; the gap they came through is still there.
+      </p>
+      <p>
+        <strong>As a compliance certificate.</strong> A box listed as complying
+        with the regulations is the maker&rsquo;s statement. The standard is
+        quoted above; apply it to the box in your hand.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. How many boxes the property needs</h3>
+      <p>
+        Packs here are two or four. Count the runs and entry points you have
+        seen — along walls, behind appliances, at the base of an external door
+        — and buy for that number, not for the number of bedrooms.
+      </p>
+      <h3>2. Whether you can check it without opening it</h3>
+      <p>
+        One listing here states an inspection window. The others are opened
+        with a key, and the Defra code&rsquo;s point is that the key is what
+        makes a check possible at all.
+      </p>
+      <h3>3. Empty, or pre-baited</h3>
+      <p>
+        Four kits are empty and leave the choice of bait to you, with its own
+        label conditions. One arrives baited and its fetched listing names no
+        active; the comparison table says so.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
           <p>
-            <strong>Cost comparison:</strong> A 4-pack bait station kit plus a
-            supply of bait blocks gives you a complete, reusable rodent control
-            setup for less than half the cost of a single professional call-out.
-            For a landlord managing 5+ properties, this approach saves hundreds
-            of pounds annually while maintaining full legal compliance.
+            {
+              [
+                "Four black boxes listed at 3 kilograms for the pack, each with a metal rod for blocks or grain, supplied empty. The card previously called this a PRO BOX Extra Large pack; the listing does not, and the name now follows the listing.",
+                "Two extra-large stations at 26 x 19 x 12 cm with what the listing calls a secure solid lid for easy inspection, supplied empty. The card previously said inspection window; the listing does not, and it now says solid lid.",
+                "Two Roshield boxes with an inspection window and key-only access, listed as holding wax blocks, wheat bait, pasta sachets and traps. The card previously said single; the listing states two pieces, and the name now says so.",
+                "Four heavy-duty boxes listed as fully lockable and weather resistant, taking grain, blocks and paste, supplied empty. Target species listed as mouse and rat.",
+                "Two pre-baited lockable stations with an access key, listed as refillable and reusable and made in the UK. The listing names rat as the target species and does not name the active substance; the card previously said brodifacoum, and no longer does.",
+              ][i]
+            }
           </p>
-        </Callout>
-      </div>
-
-      <p>
-        Beyond direct cost savings, having your own bait station kit means you
-        can respond to tenant complaints immediately rather than waiting for a
-        pest controller to become available. Rapid response demonstrates duty of
-        care and reduces the risk of Environmental Health involvement — which
-        can lead to formal Improvement Notices and the associated reputational
-        damage.
-      </p>
-
-      <div className="not-prose">
-        <Callout type="tip">
-          <p>
-            Keep a written log of every bait station inspection — date,
-            location, bait consumption, and action taken. This is your evidence
-            of reasonable pest control measures if Environmental Health or a
-            tenant ever challenges your compliance.
-          </p>
-        </Callout>
-      </div>
-
-      {/* --- FAQ --- */}
-      <h2 id="faq">Frequently Asked Questions</h2>
-
-      {faqs.map((f) => (
-        <div key={f.q}>
-          <h3>{f.q}</h3>
-          <p>{f.a}</p>
         </div>
       ))}
 
+      {/* Alternatives */}
+      <h2 id="alternatives">If Bait Is Not the Answer</h2>
       <p>
-        Use bait stations with the right{" "}
-        <a href="/best/rat-poison" className="text-green-600 hover:underline">
-          rat poison
-        </a>{" "}
-        for maximum effectiveness. For insect infestations alongside rodent
-        problems, see our guide to{" "}
-        <a
-          href="/best/professional-ulv-foggers"
-          className="text-green-600 hover:underline"
-        >
-          professional ULV foggers
-        </a>
-        .
+        <strong>Proof the property first.</strong> Bait removes the rodents
+        that are here; our <a href="/best/rodent-proofing">rodent proofing</a>{" "}
+        page covers the way in.
+      </p>
+      <p>
+        <strong>Trap instead.</strong> Two boxes here are listed as taking
+        traps as well as bait — see our <a href="/best/rat-traps">rat traps</a>{" "}
+        and <a href="/best/mouse-traps">mouse traps</a> pages.
+      </p>
+      <p>
+        <strong>Read the bait question separately.</strong> Which rodenticide
+        goes in the box, and whether you may use it, is covered on our{" "}
+        <a href="/best/rat-poison">rat poison</a> and{" "}
+        <a href="/best/mouse-poison">mouse poison</a> pages.
       </p>
 
+      {/* Using them */}
+      <h2 id="using">Placing and Checking Them</h2>
+      <ol>
+        <li>
+          <strong>Put them on the runs.</strong> Rodents travel along walls and
+          fixed edges; a box in open floor is a box in the wrong place.
+        </li>
+        <li>
+          <strong>Lock them and keep the key.</strong> A station that is not
+          locked is a bowl.
+        </li>
+        <li>
+          <strong>Give it two to three weeks.</strong> That is Defra&rsquo;s own
+          figure above.
+        </li>
+        <li>
+          <strong>Check consumption, not the calendar.</strong> You cannot tell
+          whether bait is being taken without looking.
+        </li>
+        <li>
+          <strong>Follow the bait&rsquo;s own label.</strong> The box does not
+          change what the label on the rodenticide requires, or who it says may
+          use it.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">Best Professional Bait Station Kits Compared</h2>
       <p>
-        Also relevant for landlords and property managers: our guide to{" "}
-        <Link
-          href="/best/awaabs-law-damp-mould-equipment"
-          className="text-green-600 hover:underline"
-        >
-          Awaab&apos;s Law damp and mould compliance equipment
-        </Link>
-        . Landlords &mdash; understand your legal obligations with our guide to{" "}
-        <Link
-          href="/guides/landlord-pest-control-responsibilities"
-          className="text-green-600 hover:underline"
-        >
-          landlord pest control responsibilities
-        </Link>
-        .
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
       </p>
-
-      <div className="not-prose">
-        <FindProviderCTA
-          heading="Need Professional Rodent Control?"
-          subtext="Compare BPCA-certified pest controllers near you for severe infestations that require professional intervention"
-        />
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Pack and bait, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Size or active, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        <p className="text-gray-700 mb-3">
-          Need poison or traps for your bait stations?
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a
-            href="/best/rat-poison"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            Best Rat Poison UK 2026 →
-          </a>
-          <a
-            href="/best/rat-traps"
-            className="inline-block px-6 py-2.5 bg-gray-700 hover:bg-gray-800 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            Best Rat Traps UK 2026 →
-          </a>
-        </div>
-      </div>
+      <FindProviderCTA
+        heading="A property you would rather not bait yourself?"
+        subtext="Where the bait you need is professional-use only, compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

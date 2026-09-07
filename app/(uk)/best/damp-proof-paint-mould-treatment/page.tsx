@@ -1,174 +1,280 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
+
+// S68 R3 — ROLLOUT REBUILD to the R8 pattern. Title and H1 byte-unchanged. Award
+// labels, rank numerals, anchor ids and card order are UNCHANGED, with ONE correction
+// under the S68 R3 ride-along ruling: "Best for Full Rooms" on the Johnstone's 750ml tin
+// misstated its own listing, which rates the paint at 3 m² per litre — about 2.25 m² per
+// tin — so the label is now the neutral descriptor "Paint to Cover Damp, 750ml".
+//
+// THE DESCRIPTION IS REWRITTEN. It said "remediating condensation damp and mould"; no
+// product here diagnoses the cause, and the listings themselves say the cause must be
+// fixed first.
+//
+// THE FAQ IS REMOVED, BLOCK AND SCHEMA TOGETHER (Law 190). Its four questions are
+// answered in the body: painting over untreated mould at #limits, the Awaab's Law
+// question at #legal, the primer question at #what-decides.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Damp-Proof Paint & Mould Treatment UK 2026",
     description:
-      "Anti-mould paint, damp sealers and mould killers for landlords remediating condensation damp and mould in rental properties.",
+      "Mould killer sprays, stain-blocking primers and anti-mould paints for landlords, with what the Awaab's Law guidance requires and what the listings state.",
     alternates: {
-      canonical:
-        "https://pestproindex.com/best/damp-proof-paint-mould-treatment",
+      canonical: "https://pestproindex.com/best/damp-proof-paint-mould-treatment",
     },
     openGraph: {
       title: "Best Damp-Proof Paint & Mould Treatment UK 2026",
       description:
-        "Anti-mould paint, damp sealers and mould killers for landlords remediating condensation damp and mould in rental properties.",
+        "Mould killer sprays, stain-blocking primers and anti-mould paints for landlords, with what the Awaab's Law guidance requires and what the listings state.",
       url: "https://pestproindex.com/best/damp-proof-paint-mould-treatment",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline:
-    "Best Damp-Proof Paint & Mould Treatment Products for Landlords (2026)",
+  headline: "Best Damp-Proof Paint & Mould Treatment UK 2026",
   description:
-    "Anti-mould paint, damp sealers and mould killers for landlords remediating condensation damp and mould in rental properties.",
+    "Mould killer sprays, stain-blocking primers and anti-mould paints for landlords, with what the Awaab's Law guidance requires and what the listings state.",
   datePublished: "2026-04-07",
-  dateModified: "2026-04-07",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
+  dateModified: "2026-09-07",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://pestproindex.com/best/damp-proof-paint-mould-treatment",
   },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
-      name: "Best Damp-Proof Paint & Mould Treatment for Landlords (2026)",
+      name: "Best Damp-Proof Paint & Mould Treatment UK 2026",
       item: "https://pestproindex.com/best/damp-proof-paint-mould-treatment",
     },
   ],
 };
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Can I paint over mould without treating it first?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. Painting over live mould is the single most common mistake landlords make during remediation. The mould will continue to grow beneath the paint film, eventually pushing through and staining the new surface within weeks or months. You must kill the mould first with a biocidal spray, allow the surface to dry completely, then seal any staining with a stain-blocking primer before applying anti-mould paint.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does anti-mould paint last?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Quality anti-mould paints such as Ronseal and Johnstone's provide 3-5 years of active mould resistance when applied correctly over a properly treated and primed surface. However, if the underlying cause of damp (poor ventilation, condensation, structural moisture) is not addressed, even the best anti-mould paint will eventually be overwhelmed. Anti-mould paint is a surface treatment, not a substitute for fixing ventilation.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is Zinsser BIN necessary or can I use a standard primer?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Standard water-based primers will not block mould staining. The dark stains left by mould growth bleed through standard primers and emulsion paints, reappearing within days or weeks. Zinsser BIN is a shellac-based primer that permanently seals staining — nothing bleeds through it. If there is any visible staining after killing the mould, Zinsser BIN or an equivalent solvent-based stain blocker is essential for a lasting finish.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does Awaab's Law require landlords to use specific products?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. Awaab's Law (Section 42, Social Housing Regulation Act 2023) does not mandate specific products or brands. It requires landlords to investigate damp and mould hazards within 14 days and remediate within prescribed timeframes. The choice of products is left to the landlord, but using professional-grade treatments and documenting the remediation process (products used, dates, before/after photos) demonstrates due diligence and compliance with the spirit of the legislation.",
-      },
-    },
-  ],
+
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). The citation names the
+// host actually fetched (Law 194): one GOV.UK body, fetched 2026-09-07 and kept at
+// ~/pp-s68r3/sources/awaabs-landlords under Law 175.
+const SRC = {
+  awaabs:
+    "https://www.gov.uk/government/publications/awaabs-law-guidance-for-social-landlords/awaabs-law-guidance-for-social-landlords-timeframes-for-repairs-in-the-social-rented-sector",
 };
-const tocItems = [
-  { id: "at-a-glance", title: "At a Glance" },
-  { id: "mould-killers", title: "Mould Killer Sprays" },
-  { id: "hg-mould-spray", title: "Best Mould Killer — HG Mould Spray" },
+
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
+// the S45-C window. A property is asserted only where the listing's own title, detail
+// table or feature text states it (S52-E, S50-H); a cell the listing does not state reads
+// "not stated". Manufacturer self-praise — "effortlessly eliminates all moulds",
+// "unparalleled adhesion" — is trimmed and not restated (S47-F).
+const products: ProductRecord[] = [
   {
-    id: "hg-remover",
-    title: "Best for Porous Surfaces — HG Mould Remover Foam Spray 500ml",
+    anchorId: "hg-mould-spray",
+    asin: "B000IU40HQ",
+    rank: 1,
+    cardName: "HG Mould Spray 500ml",
+    cardLabel: "Best Overall",
+    features: [
+      "500ml trigger spray",
+      "Listed with a bleaching effect; the listing says to test first in an inconspicuous place",
+      "Listed for plastered walls, tiles, bathroom seals, grout and windows",
+      "Listed for indoor or outdoor use",
+      "Listing does not name the active substance",
+    ],
+    tableCells: ["HG Mould Spray", "500ml spray", "not stated", "Best Overall"],
+    h2Label: "Best Overall",
+    h2Name: "HG Mould Spray 500ml",
+    tocLabel: "Best Overall",
+    tocName: "HG Mould Spray 500ml",
   },
   {
-    id: "hg-mould-killer",
-    title: "Best Pre-Paint — HG Mould Spray 500ml, Pack of 2",
+    anchorId: "hg-remover",
+    asin: "B01CRBEUVO",
+    rank: 2,
+    cardName: "HG Mould Remover Foam Spray 500ml",
+    cardLabel: "Best for Porous Surfaces",
+    features: [
+      "500ml foam spray; the listing says the foam stays on the surface longer than a liquid",
+      "Listed as containing sodium hypochlorite, with a bleaching effect",
+      "Listed for plastered walls, tiles, bathroom seals, grout and windows",
+      "Listed as low odour; test first in an inconspicuous place",
+    ],
+    tableCells: [
+      "HG Mould Remover Foam",
+      "500ml foam spray",
+      "sodium hypochlorite",
+      "Best for Porous Surfaces",
+    ],
+    h2Label: "Best for Porous Surfaces",
+    h2Name: "HG Mould Remover Foam Spray 500ml",
+    tocLabel: "Best for Porous Surfaces",
+    tocName: "HG Mould Remover Foam Spray",
   },
-  { id: "primers", title: "Damp-Seal Primers & Stain Blockers" },
   {
-    id: "zinsser-bin",
-    title: "Best Primer — Zinsser B-I-N Primer-Sealer & Stain Killer 1L",
+    anchorId: "hg-mould-killer",
+    asin: "B0DDKX1GKY",
+    rank: 3,
+    cardName: "HG Mould Spray 500ml — Pack of 2",
+    cardLabel: "Best Pre-Paint Preparation",
+    features: [
+      "Two 500ml sprays; listed at 1,000 millilitres in total",
+      "Listed with a bleaching effect; test first in an inconspicuous place",
+      "The listing says to check the label for surfaces it is not recommended on, naming wood and plastic",
+      "Listing does not name the active substance",
+    ],
+    tableCells: ["HG Mould Spray x2", "2 x 500ml spray", "not stated", "Best Pre-Paint"],
+    h2Label: "Best Pre-Paint Preparation",
+    h2Name: "HG Mould Spray 500ml, Pack of 2",
+    tocLabel: "Best Pre-Paint Preparation",
+    tocName: "HG Mould Spray, Pack of 2",
   },
   {
-    id: "ronseal-damp-seal",
-    title: "Best Damp Sealer — Ronseal One Coat Damp Seal 500ml",
+    anchorId: "zinsser-bin",
+    asin: "B00A4975FU",
+    rank: 4,
+    cardName: "Zinsser B-I-N Primer-Sealer & Stain Killer 1L",
+    cardLabel: "Best Stain Blocker",
+    features: [
+      "1 litre shellac-based stain-blocking primer",
+      "Coverage listed as 12.5 m² per litre",
+      "Listed for interior ceilings, walls and doors, and spot priming outside",
+      "Listed as blocking water, smoke and tannin stains and odours",
+    ],
+    tableCells: ["Zinsser B-I-N", "1 litre primer, 12.5 m²/litre", "shellac primer", "Best Stain Blocker"],
+    h2Label: "Best Stain Blocker",
+    h2Name: "Zinsser B-I-N Primer-Sealer & Stain Killer 1L",
+    tocLabel: "Best Stain Blocker",
+    tocName: "Zinsser B-I-N 1L",
   },
-  { id: "anti-mould-paints", title: "Anti-Mould Paints" },
-  { id: "ronseal", title: "Best All-Rounder — Ronseal Mould Killer Paint" },
   {
-    id: "rapide",
-    title: "Best for Small Areas — Rapide Anti Mould Spray Paint 400ml",
+    anchorId: "ronseal-damp-seal",
+    asin: "B008W4CP04",
+    rank: 5,
+    cardName: "Ronseal One Coat Damp Seal 500ml",
+    cardLabel: "Best Damp Sealer",
+    features: [
+      "500ml one-coat damp seal, white",
+      "The listing says it can be applied to damp walls and painted or papered over when dry",
+      "The listing's own instruction: make sure the cause of damp has been fixed first",
+      "Coverage not stated on the listing",
+    ],
+    tableCells: ["Ronseal Damp Seal", "500ml sealer", "polyurethane, synthetic rubber", "Best Damp Sealer"],
+    h2Label: "Best Damp Sealer",
+    h2Name: "Ronseal One Coat Damp Seal 500ml",
+    tocLabel: "Best Damp Sealer",
+    tocName: "Ronseal One Coat Damp Seal",
   },
   {
-    id: "johnstones",
-    title: "Best for Full Rooms — Johnstone's Paint to Cover Damp 750ml, White",
+    anchorId: "ronseal",
+    asin: "B007UXTUT2",
+    rank: 6,
+    cardName: "Ronseal Anti Mould Paint 750ml — White Matt",
+    cardLabel: "Best All-Rounder",
+    features: [
+      "750ml white matt paint",
+      "Coverage listed as 13 m² per litre",
+      "Listed as washable; brush listed as included",
+      "The listing carries a detail table and no feature text — how it acts on mould is not stated",
+    ],
+    tableCells: ["Ronseal Anti Mould Paint", "750ml paint, 13 m²/litre", "not stated", "Best All-Rounder"],
+    h2Label: "Best All-Rounder",
+    h2Name: "Ronseal Anti Mould Paint 750ml",
+    tocLabel: "Best All-Rounder",
+    tocName: "Ronseal Anti Mould Paint 750ml",
   },
-  { id: "three-step", title: "The Three-Step Remediation System" },
   {
-    id: "ventilation",
-    title: "Will Anti-Mould Paint Work Without Ventilation?",
+    anchorId: "rapide",
+    asin: "B07NJFLYNW",
+    rank: 7,
+    cardName: "Rapide Anti Mould Spray Paint 400ml",
+    cardLabel: "Best for Small Areas",
+    features: [
+      "400ml aerosol, white",
+      "The listing's only feature line: protects walls and ceilings from mould growth",
+      "Coverage in square metres not stated",
+      "Active substance not stated",
+    ],
+    tableCells: ["Rapide Spray Paint", "400ml aerosol", "not stated", "Best for Small Areas"],
+    h2Label: "Best for Small Areas",
+    h2Name: "Rapide Anti Mould Spray Paint 400ml",
+    tocLabel: "Best for Small Areas",
+    tocName: "Rapide Anti Mould Spray Paint",
   },
-  { id: "faq", title: "Frequently Asked Questions" },
+  {
+    anchorId: "johnstones",
+    asin: "B00OUULC4Y",
+    rank: 8,
+    cardName: "Johnstone's Paint to Cover Damp 750ml — White",
+    cardLabel: "Paint to Cover Damp, 750ml",
+    features: [
+      "750ml white paint for plaster, brickwork, cement and stone, as listed",
+      "Coverage listed as 3 m² per litre — about 2.25 m² from one tin",
+      "The listing says it can be over-coated with the maker's emulsion",
+      "The listing's own note: ensure the reason for the damp is fixed",
+    ],
+    tableCells: ["Johnstone's Cover Damp", "750ml paint, 3 m²/litre", "not stated", "Paint to Cover Damp, 750ml"],
+    h2Label: "Paint to Cover Damp, 750ml",
+    h2Name: "Johnstone's Paint to Cover Damp 750ml",
+    tocLabel: "Paint to Cover Damp, 750ml",
+    tocName: "Johnstone's Paint to Cover Damp",
+  },
 ];
-export default function DampProofPaintMouldTreatmentPage() {
+
+const tocItems = [
+  { id: "situation", title: "Start With the Cause, Not the Tin" },
+  { id: "legal", title: "What Awaab's Law Guidance Requires" },
+  { id: "limits", title: "Where These Products Do Not Work" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If Paint Is Not the Answer" },
+  { id: "using", title: "Order of Work" },
+  { id: "compared", title: "Products Compared" },
+];
+
+export default function BestDampProofPaintMouldTreatmentPage() {
   return (
     <GuideLayout
       title="Best Damp-Proof Paint &amp; Mould Treatment Products for Landlords (2026)"
-      subtitle="Mould killer sprays, stain-blocking primers and anti-mould paints for landlords remediating condensation damp and mould in rental properties."
-      lastUpdated="April 2026"
-      readingTime="9 min"
+      subtitle="Mould killer sprays, stain-blocking primers and anti-mould paints for landlords — eight compared on what their listings state, beside what the Awaab's Law guidance asks of a landlord"
+      lastUpdated="September 2026"
+      readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "Landlord Pest Control Responsibilities",
-          href: "/guides/landlord-pest-control",
-        },
+        { title: "Landlord Pest Control Responsibilities", href: "/guides/landlord-pest-control" },
         {
           title: "Awaab's Law & Pest Control: What Landlords Need to Know",
           href: "/blog/awaabs-law-pest-control-landlords",
         },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
         {
           title: "How to Get Rid of Silverfish: Complete UK Guide",
           href: "/guides/how-to-get-rid-of-silverfish",
@@ -179,864 +285,319 @@ export default function DampProofPaintMouldTreatmentPage() {
           title: "Best Damp & Mould Equipment for Landlords (Awaab's Law)",
           href: "/best/awaabs-law-damp-mould-equipment",
         },
-        {
-          title: "Best Commercial Dehumidifiers UK 2026",
-          href: "/best/commercial-dehumidifiers",
-        },
-        {
-          title: "Best Silverfish Treatments UK 2026",
-          href: "/best/silverfish-treatments",
-        },
+        { title: "Best Commercial Dehumidifiers UK 2026", href: "/best/commercial-dehumidifiers" },
+        { title: "Best Silverfish Treatments UK 2026", href: "/best/silverfish-treatments" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />{" "}
-      {/* Affiliate disclosure */}{" "}
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
           site running and free for everyone. As an Amazon Associate, PestPro
-          Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
-      {/* Intro */}{" "}
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        <Link
-          href="/best/awaabs-law-damp-mould-equipment"
-          className="text-green-600 hover:underline"
-        >
-          PIV units and dehumidifiers
-        </Link>{" "}
-        address the root cause of condensation damp. But when mould is already
-        established on walls, ceilings and skirting boards, landlords also need
-        to treat the surface &mdash; both to kill the existing spores and to
-        prevent regrowth.{" "}
-      </p>{" "}
-      <p> Three product categories are needed for a full mould remediation: </p>{" "}
-      <ol>
-        {" "}
-        <li>
-          <strong>Mould killer spray</strong> &mdash; kills existing mould
-          spores on contact
-        </li>{" "}
-        <li>
-          <strong>Mould-resistant primer/sealer</strong> &mdash; seals stained
-          surfaces before repainting
-        </li>{" "}
-        <li>
-          <strong>Anti-mould paint</strong> &mdash; long-lasting mould inhibitor
-          for walls and ceilings
-        </li>{" "}
-      </ol>{" "}
-      <p>
-        {" "}
-        Used together as a system, these products deliver a finish that actively
-        resists mould regrowth for years rather than months &mdash; and provide
-        landlords with a documented remediation record if a complaint is raised
-        under Awaab&apos;s Law or HHSRS.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        We selected these damp proofing paints and mould treatments on published
-        specifications and manufacturer information, weighing the surfaces each
-        product is formulated for, stated coverage, and ease of application for
-        non-specialist users.{" "}
-      </p>{" "}
-      {/* At a Glance */}{" "}
-      <h2 id="at-a-glance">
-        Best Damp-Proof Paint &amp; Mould Treatment at a Glance
-      </h2>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Product</th> <th>Category</th> <th>Best For</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>HG Mould Spray</td> <td>Mould killer spray</td>{" "}
-            <td>Best overall mould killer</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>HG Mould Remover Foam Spray</td> <td>Mould killer spray</td>{" "}
-            <td>Best for porous surfaces</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>HG Mould Spray (Pack of 2)</td> <td>Mould killer spray</td>{" "}
-            <td>Best for multiple rooms</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Zinsser B-I-N Primer-Sealer</td> <td>Stain-blocking primer</td>{" "}
-            <td>Best stain blocker</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Ronseal One Coat Damp Seal</td> <td>Damp sealer</td>{" "}
-            <td>Best for residual moisture</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Ronseal Anti Mould Paint</td> <td>Anti-mould paint</td>{" "}
-            <td>Best all-rounder</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Rapide Anti Mould Spray Paint</td> <td>Anti-mould paint</td>{" "}
-            <td>Best for small areas</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Johnstone&apos;s Paint to Cover Damp</td>{" "}
-            <td>Anti-mould paint</td> <td>Best for damp staining</td>{" "}
-          </tr>{" "}
-        </tbody>{" "}
-      </table>{" "}
-      {/* Section 1: Mould Killer Sprays */}{" "}
-      <h2 id="mould-killers">
-        Mould Killer Sprays &mdash; The Essential First Step
-      </h2>{" "}
-      <p>
-        {" "}
-        Mould killer sprays contain biocides &mdash; typically bleach-based
-        (sodium hypochlorite) or benzalkonium chloride &mdash; that kill mould
-        and mildew spores on contact. This is the essential first step in any
-        mould remediation: <strong>never paint over live mould</strong>. The
-        spores will continue to grow beneath the paint film, eventually pushing
-        through and staining the new surface within weeks.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The correct process is straightforward: spray the affected area
-        generously, leave the product to work for the time specified on the
-        label (typically 15&ndash;30 minutes), then wipe the dead mould away
-        with a damp cloth. Allow the surface to dry fully &mdash; at least 24
-        hours in a well-ventilated room &mdash; before applying any primer or
-        paint. Professional-grade products have a longer residual biocidal
-        action than supermarket alternatives, which means they continue to kill
-        spores that emerge from deeper within the substrate over the following
-        days.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="warning">
-          {" "}
-          <p>
-            Always wear gloves and a mask when applying mould killer sprays, and
-            ensure good ventilation. Bleach-based products release fumes that
-            can irritate airways. Open windows and use extraction if available.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* Product 1: HG Mould Spray */}{" "}
-      <h2 id="hg-mould-spray">
-        Best Mould Killer &mdash; HG Mould Spray 500ml
-      </h2>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
-          <p>
-            Landlord or housing provider? Awaab&apos;s Law sets legal deadlines
-            for investigating and repairing damp and mould in social housing.
-            Our Compliance Pack sets out the statutory timescales, the records
-            you need to keep, and template letters for each stage. Awaab&apos;s
-            Law Guide is run by ENA Enterprises Ltd, the same company as PestPro
-            Index.{" "}
-            <a
-              href="https://awaabslawguide.co.uk/compliance-pack"
-              rel="noopener noreferrer"
-            >
-              Awaab&apos;s Law Compliance Pack
+        Three kinds of product are on this page: sprays that clean mould off a
+        surface, primers that stop a stain coming back through paint, and paints
+        sold as resisting mould. None of them finds out why the wall was wet. Two
+        of the listings say so themselves.
+      </p>
+
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You are a social landlord with a report of damp or mould.</strong>{" "}
+            The guidance sets fixed timeframes for investigation and work —{" "}
+            <a href="#legal" className="underline">
+              what the guidance requires
             </a>
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name="HG Mould Spray 500ml"
-          rank={1}
-          asin="B000IU40HQ"
-          bestFor="Best Overall"
-          features={[
-            "Bleach-based mould killer for walls, ceilings, tiles and grout",
-            "Spray on, leave to work, then wipe off — no scrubbing",
-            "Suitable for silicone seals, painted surfaces and hard walls",
-            "The standard first step before any priming or painting",
-          ]}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        HG Mould Spray is a long-established UK mould killer. The bleach-based
-        formula kills <strong>99.9% of mould and mildew spores</strong> on
-        contact, and the spray-and-leave application means no scrubbing is
-        required. Apply generously, leave for 30 minutes, and wipe away the dead
-        mould with a damp cloth. It works on tiles, grout, silicone sealant,
-        painted walls, ceilings and window frames &mdash; essentially every
-        surface you encounter in a mould-affected rental property.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        It is a straightforward choice for landlords dealing with bathroom and
-        kitchen mould. It is also the most cost-effective option for large-area
-        treatment. For landlords who want a single, proven mould killer that
-        works on every surface, HG Mould Spray is the one to keep in the
-        van.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Kills 99.9% of mould spores on contact &mdash; proven formula
-        </li>{" "}
-        <li>No scrubbing required &mdash; spray-and-leave application</li>{" "}
-        <li>Works on all common surfaces including silicone sealant</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Bleach-based &mdash; strong fumes, requires good ventilation
-        </li>{" "}
-        <li>Can discolour coloured grout and fabrics</li>{" "}
-        <li>Less effective on deeply embedded mould in porous masonry</li>{" "}
-      </ul>{" "}
-      <h2 id="hg-remover">
-        Best for Porous Surfaces &mdash; HG Mould Remover Foam Spray 500ml
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name="HG Mould Remover Foam Spray 500ml"
-          rank={2}
-          asin="B01CRBEUVO"
-          bestFor="Best for Porous Surfaces"
-          features={[
-            "Foam clings to vertical and porous surfaces instead of running off",
-            "Designed for plaster, render, grout and bathroom seals",
-            "Low-odour formula with a bleaching action",
-            "Longer contact time on walls than a liquid spray",
-          ]}
-        />{" "}
-      </div>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Penetrates porous surfaces where other sprays cannot reach</li>{" "}
-        <li>Effective on plaster, render, masonry and concrete</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Not the best choice for smooth, non-porous surfaces like tiles
-        </li>{" "}
-      </ul>{" "}
-      {/* Product 3: Zinsser Mould Killer */}{" "}
-      <h2 id="hg-mould-killer">
-        Best Pre-Paint Preparation &mdash; HG Mould Spray 500ml, Pack of 2
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name="HG Mould Spray 500ml — Pack of 2"
-          rank={3}
-          asin="B0DDKX1GKY"
-          bestFor="Best Pre-Paint Preparation"
-          features={[
-            "Two 500ml bottles for larger or repeat jobs",
-            "Same formula as the single bottle",
-            "Covers multiple rooms or multiple properties",
-            "Reduces repeat ordering between tenancies",
-          ]}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Zinsser Mould Killer is specifically formulated as the{" "}
-        <strong>first step in the Zinsser three-step remediation system</strong>
-        : kill with Zinsser Mould Killer, seal with Zinsser BIN Shellac Primer,
-        then finish with anti-mould paint. If you are planning to use Zinsser
-        BIN as your stain-blocking primer (and for serious mould staining, you
-        should), using the matching Zinsser mould killer ensures optimal
-        compatibility between layers.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Zinsser is the professional decorators&apos; brand &mdash; the products
-        are formulated for tradespeople who need reliable, predictable results
-        job after job. The mould killer is no exception: it kills mould and
-        mildew effectively and leaves a clean surface ready for primer
-        application without any additional preparation. For landlords who want a
-        complete, matched system from one brand, the Zinsser three-step approach
-        is the professional standard.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Part of a matched three-step system with Zinsser BIN</li>{" "}
-        <li>
-          Professional decorators&apos; brand &mdash; used by tradespeople
-        </li>{" "}
-        <li>Optimised for pre-paint surface preparation</li>{" "}
-        <li>Leaves a clean surface ready for immediate priming</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Smaller 500ml bottle &mdash; may need multiples for large areas
-        </li>{" "}
-        <li>
-          Full benefit only realised when used with Zinsser BIN primer
-        </li>{" "}
-      </ul>{" "}
-      {/* Section 2: Primers & Stain Blockers */}{" "}
-      <h2 id="primers">Damp-Seal Primers &amp; Stain Blockers</h2>{" "}
-      <p>
-        {" "}
-        After killing mould, dark staining almost always remains on the wall or
-        ceiling. This is where many landlords make their second mistake:
-        painting standard emulsion directly over mould staining. The stains
-        bleed through within days or weeks, even through multiple coats of
-        emulsion &mdash; and even through mould-resistant paint. The only
-        reliable solution is a{" "}
-        <strong>shellac or solvent-based stain-blocking primer</strong> that
-        chemically seals the stain before you apply your topcoat.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        A stain-blocking primer serves two functions. First, it permanently
-        seals mould staining, water marks and discolouration so they cannot
-        bleed through the finished paint. Second, it seals any residual moisture
-        in the substrate, preventing it from pushing through and lifting the
-        topcoat. On previously damp walls, this moisture-sealing function is
-        just as important as the stain-blocking &mdash; it prevents the new
-        paint from blistering or peeling as the wall continues to dry out over
-        the following weeks.{" "}
-      </p>{" "}
-      {/* Product 4: Zinsser BIN */}{" "}
-      <h2 id="zinsser-bin">
-        Best Stain Blocker &mdash; Zinsser B-I-N Primer-Sealer &amp; Stain
-        Killer 1L
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name="Zinsser B-I-N Primer-Sealer & Stain Killer 1L"
-          rank={4}
-          asin="B00A4975FU"
-          bestFor="Best Stain Blocker"
-          features={[
-            "Shellac-based primer that seals mould staining and water marks",
-            "Blocks stains from bleeding through the topcoat",
-            "Adheres to most surfaces without sanding",
-            "Fast-drying — prime and paint the same day",
-          ]}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Zinsser BIN is the{" "}
-        <strong>industry-standard stain-blocking primer</strong> used by
-        professional decorators and property remediators across the UK. It is
-        shellac-based &mdash; not water-based &mdash; which means it creates a
-        permanent, impermeable seal over mould staining, water marks, smoke
-        damage and virtually any other discolouration. Nothing bleeds through
-        Zinsser BIN. This is not marketing &mdash; it is the reason every
-        professional decorator keeps a tin in the van.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The primer adheres to all surfaces without sanding, including glossy
-        paint, bare plaster, timber and previously painted surfaces. It dries in
-        just <strong>45 minutes</strong>, which means you can kill mould in the
-        morning, prime with BIN after lunch, and apply your anti-mould topcoat
-        the same afternoon. For landlords who need to turn around a
-        mould-affected property quickly between tenancies, this speed is
-        invaluable. If you buy one product at the priming stage, make it the
-        Zinsser B-I-N.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Permanently seals all staining &mdash; the definitive stain blocker
-        </li>{" "}
-        <li>Shellac-based for true impermeable sealing</li>{" "}
-        <li>45-minute drying time &mdash; prime and paint same day</li>{" "}
-        <li>No sanding or surface preparation required</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Strong solvent smell &mdash; requires excellent ventilation during
-          application
-        </li>{" "}
-        <li>
-          Shellac-based &mdash; brushes must be cleaned with methylated spirits,
-          not water
-        </li>{" "}
-        <li>Premium price per litre</li>{" "}
-      </ul>{" "}
-      {/* Product 5: Zinsser Damp Seal */}{" "}
-      <h2 id="ronseal-damp-seal">
-        Best Damp Sealer &mdash; Ronseal One Coat Damp Seal 500ml
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name="Ronseal One Coat Damp Seal 500ml"
-          rank={5}
-          asin="B008W4CP04"
-          bestFor="Best Damp Sealer"
-          features={[
-            "Water-based sealer for walls with residual moisture",
-            "One coat seals the surface against moisture bleed-through",
-            "White finish — can be overcoated with emulsion",
-            "Use when the wall is damp but not actively wet",
-          ]}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Zinsser Damp Seal is a <strong>water-based damp sealer</strong> designed
-        for walls that show signs of residual moisture ingress. Where Zinsser
-        BIN excels at blocking stains, Damp Seal excels at sealing surfaces
-        where moisture is still present in the substrate. It penetrates the
-        surface and creates a barrier that prevents residual dampness from
-        pushing through your topcoat, which would otherwise cause blistering,
-        peeling and premature paint failure.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The white finish can be overcoated with any standard emulsion or
-        anti-mould paint once dry. Use Damp Seal when the wall is damp but not
-        actively wet &mdash; if moisture is visibly running down the surface,
-        you need to dry the wall first with a{" "}
-        <Link
-          href="/best/commercial-dehumidifiers"
-          className="text-green-600 hover:underline"
-        >
-          dehumidifier
-        </Link>{" "}
-        before applying any sealer. For walls that have been dried out but
-        retain some residual moisture (common after a damp complaint has been
-        addressed), Damp Seal provides the moisture barrier your topcoat needs
-        to last.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Seals residual moisture in the substrate</li>{" "}
-        <li>Water-based &mdash; low odour, easy brush cleanup</li>{" "}
-        <li>Can be overcoated with any emulsion or anti-mould paint</li>{" "}
-        <li>From Zinsser &mdash; the professional decorating brand</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Not a stain blocker &mdash; use Zinsser BIN for staining</li>{" "}
-        <li>Cannot be applied to actively wet surfaces</li>{" "}
-        <li>Less effective than BIN for severe discolouration</li>{" "}
-      </ul>{" "}
-      {/* Section 3: Anti-Mould Paints */}{" "}
-      <h2 id="anti-mould-paints">
-        Anti-Mould Paints &mdash; Long-Term Protection
-      </h2>{" "}
-      <p>
-        {" "}
-        Anti-mould paints contain fungicide additives that actively inhibit
-        mould regrowth on the painted surface. They are{" "}
-        <strong>not a substitute for killing mould first</strong> &mdash; the
-        spores must be dead and the staining sealed before any paint is applied.
-        Think of anti-mould paint as the final layer of defence: it protects the
-        treated, sealed surface from recolonisation by airborne spores over the
-        following years.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Applied over a properly treated and primed surface, a quality anti-mould
-        paint provides{" "}
-        <strong>3&ndash;5 years of active mould resistance</strong>. Most
-        products have a matt or silk white finish, though some can be tinted to
-        pale colours. For rental properties, white or magnolia are the standard
-        choices. The key difference between anti-mould paint and standard
-        emulsion is the fungicide content &mdash; standard emulsion provides
-        zero mould resistance, while anti-mould formulations actively prevent
-        spore germination on the paint surface.{" "}
-      </p>{" "}
-      {/* Product 6: Ronseal */}{" "}
-      <h2 id="ronseal">
-        Best All-Rounder &mdash; Ronseal Mould Killer Paint 750ml (White)
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name="Ronseal Anti Mould Paint 750ml — White Matt"
-          rank={6}
-          asin="B007UXTUT2"
-          bestFor="Best All-Rounder"
-          features={[
-            "Kills existing mould and helps prevent regrowth",
-            "White matt finish for walls and ceilings",
-            "Use as a standalone treatment or as a base coat",
-            "Suited to bathrooms, kitchens and bedrooms",
-          ]}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Ronseal Mould Killer Paint is the most versatile product on this
-        page. It contains a <strong>fungicidal wash</strong> that can be used as
-        a standalone mould-killing treatment on lightly affected surfaces, or as
-        a primer coat under standard emulsion on more severely affected areas.
-        The <strong>5-year guarantee</strong> against mould regrowth is the
-        longest on this list, and Ronseal backs it with the brand credibility
-        that comes from decades in the UK DIY market.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        For landlords who want a single product that kills existing mould and
-        prevents regrowth in one application, this is the most practical choice.
-        It is particularly useful for touch-up work on small areas of recurring
-        mould &mdash; bathroom ceilings, window reveals, and behind furniture
-        &mdash; where deploying the full three-step kill/prime/paint system
-        would be excessive. If you buy one product at the painting stage, make
-        it the Ronseal.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Dual function &mdash; kills mould and prevents regrowth</li>{" "}
-        <li>5-year guarantee against mould regrowth</li>{" "}
-        <li>Versatile &mdash; standalone treatment or primer coat</li>{" "}
-        <li>Ronseal brand, widely available</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          750ml only covers approximately 6m&sup2; &mdash; not enough for full
-          rooms
-        </li>{" "}
-        <li>White only &mdash; cannot be tinted</li>{" "}
-        <li>
-          Not a substitute for Zinsser BIN on heavily stained surfaces
-        </li>{" "}
-      </ul>{" "}
-      <h2 id="rapide">
-        Best for Small Areas &mdash; Rapide Anti Mould Spray Paint 400ml
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name="Rapide Anti Mould Spray Paint 400ml"
-          rank={7}
-          asin="B07NJFLYNW"
-          bestFor="Best for Small Areas"
-          features={[
-            "Aerosol format for small patches and awkward corners",
-            "Matt finish for interior walls and ceilings",
-            "No brushes or rollers to clean afterwards",
-            "Suited to spot treatment rather than whole walls",
-          ]}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Rapide Anti Mould Spray Paint 400ml is a spray-applied anti-mould
-        paint intended for small areas rather than whole rooms.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Seals minor damp patches and light staining</li>{" "}
-        <li>Widely available in UK DIY stores</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Not as effective as Zinsser BIN for severe staining</li>{" "}
-        <li>
-          Limited mould-killing capability compared to dedicated mould killers
-        </li>{" "}
-      </ul>{" "}
-      {/* Product 8: Johnstone's */}{" "}
-      <h2 id="johnstones">
-        Best for Full Rooms &mdash; Johnstone&apos;s Paint to Cover Damp 750ml,
-        White
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name="Johnstone's Paint to Cover Damp 750ml — White"
-          rank={8}
-          asin="B00OUULC4Y"
-          bestFor="Best for Full Rooms"
-          features={[
-            "Covers and seals damp patches and staining",
-            "White finish for interior walls and ceilings",
-            "Can be overcoated once fully dry",
-            "750ml tin sized for patch repair and small rooms",
-          ]}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        When you need to repaint an <strong>entire room</strong> after mould
-        remediation, Johnstone&apos;s Anti Mould Paint is the right-sized
-        product. The 2.5L tin covers approximately <strong>35m&sup2;</strong>{" "}
-        &mdash; enough for a standard bedroom or bathroom in two coats. It
-        contains <strong>Microban antimicrobial technology</strong>, which
-        provides continuous mould and bacteria resistance that is built into the
-        paint film rather than applied as a surface coating. This means the
-        antimicrobial protection does not wash off or wear away over time.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Johnstone&apos;s is a well-established UK paint brand used by
-        professional decorators, and the anti-mould formulation is suitable for
-        bathrooms, kitchens, bedrooms and any room previously affected by
-        condensation mould.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>2.5L &mdash; enough for a full room in two coats</li>{" "}
-        <li>Microban antimicrobial technology for lasting protection</li>{" "}
-        <li>Cost-effective per square metre for large areas</li>{" "}
-        <li>Professional decorators&apos; brand</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Brilliant white only &mdash; limited colour options</li>{" "}
-        <li>Still requires mould killing and priming beforehand</li>{" "}
-        <li>2.5L tin is larger than needed for small touch-ups</li>{" "}
-      </ul>{" "}
-      {/* Three-Step System */}{" "}
-      <h2 id="three-step">The Three-Step Mould Remediation System</h2>{" "}
-      <p>
-        {" "}
-        For a lasting mould remediation that stands up to both future mould
-        pressure and regulatory scrutiny, follow this three-step system:{" "}
-      </p>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Step</th> <th>Product Type</th> <th>Purpose</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>1</td> <td>Mould killer spray</td>{" "}
-            <td>
-              Kill all existing spores &mdash; never paint over live mould
-            </td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>2</td> <td>Stain-blocking primer</td>{" "}
-            <td>Seal staining permanently, prevent bleed-through</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>3</td> <td>Anti-mould paint</td>{" "}
-            <td>Prevent regrowth for 3&ndash;5 years</td>{" "}
-          </tr>{" "}
-        </tbody>{" "}
-      </table>{" "}
-      <p>
-        {" "}
-        <strong>Timing matters.</strong> Allow the mould killer to work for the
-        full contact time (typically 30 minutes), then wipe and allow at least
-        24 hours for the surface to dry. Apply stain-blocking primer and allow
-        it to dry (45 minutes for Zinsser BIN). Then apply anti-mould paint in
-        two coats with the manufacturer&apos;s recommended drying time between
-        coats. A single room can typically be completed in two days.{" "}
-      </p>{" "}
+            .
+          </li>
+          <li>
+            <strong>You do not yet know what is causing it.</strong> Ronseal and
+            Johnstone&rsquo;s both tell you to fix the cause before you open the
+            tin —{" "}
+            <a href="#situation" className="underline">
+              start with the cause
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You have painted over it before and it came back.</strong>{" "}
+            That is the case these products are not for —{" "}
+            <a href="#limits" className="underline">
+              where they do not work
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You need to clean an existing patch.</strong> Three HG sprays
+            here, one of them a foam —{" "}
+            <a href="#hg-mould-spray" className="underline">
+              the 500ml spray
+            </a>
+            ,{" "}
+            <a href="#hg-remover" className="underline">
+              the foam
+            </a>{" "}
+            and{" "}
+            <a href="#hg-mould-killer" className="underline">
+              the two-pack
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You need to redecorate a stained but dry wall.</strong> A
+            primer first —{" "}
+            <a href="#zinsser-bin" className="underline">
+              Zinsser B-I-N
+            </a>{" "}
+            or{" "}
+            <a href="#ronseal-damp-seal" className="underline">
+              Ronseal Damp Seal
+            </a>{" "}
+            — then a paint.
+          </li>
+        </ul>
+      </div>
+
       <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
+        <Callout type="warning">
           <p>
-            Document every step with dated photographs: before treatment, after
-            mould killing, after priming, and after the finished paint. This
-            documentation is essential evidence of due diligence if a complaint
-            is escalated under Awaab&apos;s Law or HHSRS.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* Ventilation Section */}{" "}
-      <h2 id="ventilation">
-        Will Anti-Mould Paint Work if I Don&apos;t Fix the Ventilation?
-      </h2>{" "}
+            The HG foam is listed as containing sodium hypochlorite, and all
+            three HG sprays are listed with a bleaching effect. Each listing says
+            to test on an inconspicuous area first and to keep the spray off
+            clothing and gloss paint.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">Start With the Cause, Not the Tin</h2>
       <p>
-        {" "}
-        <strong>No.</strong> Anti-mould paint slows regrowth but does not fix
-        the underlying cause of mould. If humidity in the property stays above
-        70%, even the best anti-mould paint will eventually be overwhelmed
-        &mdash; typically within 6&ndash;12 months rather than the 3&ndash;5
-        years you would get in a properly ventilated property. The fungicide in
-        the paint can only resist a certain level of moisture pressure before
-        mould finds a way to colonise the surface.{" "}
-      </p>{" "}
+        Two products on this page carry the instruction on their own listings.
+        Ronseal&rsquo;s One Coat Damp Seal says, before you start, make sure the
+        cause of damp has been fixed. Johnstone&rsquo;s Paint to Cover Damp says
+        to ensure the reason for the damp is fixed. Neither product claims to do
+        that for you.
+      </p>
       <p>
-        {" "}
-        For lasting results, mould treatment products must be combined with
-        ventilation improvements. This means{" "}
-        <Link
-          href="/best/awaabs-law-damp-mould-equipment"
-          className="text-green-600 hover:underline"
-        >
-          fixing the ventilation first with a PIV unit
-        </Link>
-        , upgrading extractor fans in kitchens and bathrooms, ensuring trickle
-        vents are open, or deploying a dehumidifier. Treat the surface{" "}
-        <em>and</em> the cause &mdash; one without the other is a temporary fix
-        at best.{" "}
-      </p>{" "}
-      {/* FAQ */} <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>Can I paint over mould without treating it first?</h3>{" "}
+        The government&rsquo;s guidance for social landlords puts the same point
+        the other way round. Where a hazard comes from the building, the
+        landlord owns the cause:{" "}
+        <em>
+          &ldquo;Where a hazard is caused by a structural defect or deficiency,
+          such as poor design or missing components, the landlord is responsible
+          for addressing the root cause under Awaab’s Law.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.awaabs} rel="nofollow">
+          GOV.UK
+        </a>
+        ). A tin of paint does not discharge that.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">What Awaab&rsquo;s Law Guidance Requires</h2>
       <p>
-        {" "}
-        No. Painting over live mould is the single most common mistake landlords
-        make during remediation. The mould will continue to grow beneath the
-        paint film, eventually pushing through and staining the new surface
-        within weeks or months. You must kill the mould first with a biocidal
-        spray, allow the surface to dry completely, then seal any staining with
-        a stain-blocking primer before applying anti-mould paint.{" "}
-      </p>{" "}
-      <h3>How long does anti-mould paint last?</h3>{" "}
+        The guidance fetched for this page is the one written for social
+        landlords in England. It sets timeframes rather than products. A social
+        landlord must{" "}
+        <em>
+          &ldquo;Investigate any potential significant hazards within 10 working
+          days of becoming aware of them&rdquo;
+        </em>{" "}
+        and{" "}
+        <em>
+          &ldquo;Undertake relevant safety work within 5 working days of the
+          investigation concluding, if the investigation identifies a
+          significant hazard.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.awaabs} rel="nofollow">
+          GOV.UK
+        </a>
+        ). The guidance treats damp and mould as a hazard to health, and this
+        page goes no further into that than the guidance does.
+      </p>
       <p>
-        {" "}
-        Quality anti-mould paints such as Ronseal and Johnstone&apos;s provide{" "}
-        <strong>3&ndash;5 years</strong> of active mould resistance when applied
-        correctly over a properly treated and primed surface. However, if the
-        underlying cause of damp (poor ventilation, condensation, structural
-        moisture) is not addressed, even the best anti-mould paint will
-        eventually be overwhelmed. Anti-mould paint is a surface treatment, not
-        a substitute for fixing ventilation.{" "}
-      </p>{" "}
-      <h3>Is Zinsser BIN necessary or can I use a standard primer?</h3>{" "}
+        It also closes off one explanation:{" "}
+        <em>
+          &ldquo;It is unacceptable for social landlords to assume that the
+          cause of a hazard, such as damp and mould, is due to the tenant’s
+          ‘lifestyle’.&rdquo;
+        </em>{" "}
+        Nothing on this page holds a fetched source on how or when these
+        timeframes reach private tenancies, so this page does not say.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where These Products Do Not Work</h2>
       <p>
-        {" "}
-        Standard water-based primers will not block mould staining. The dark
-        stains left by mould growth bleed through standard primers and emulsion
-        paints, reappearing within days or weeks.{" "}
-        <strong>Zinsser BIN is a shellac-based primer</strong> that permanently
-        seals staining &mdash; nothing bleeds through it. If there is any
-        visible staining after killing the mould, Zinsser BIN or an equivalent
-        solvent-based stain blocker is essential for a lasting finish.{" "}
-      </p>{" "}
-      <h3>Does Awaab&apos;s Law require landlords to use specific products?</h3>{" "}
+        <strong>On a wall that is still wet.</strong> The sealer and the damp
+        paint both say the cause must be fixed first. A stain blocked while the
+        water is still arriving is a stain that will return through the new
+        coat, because nothing about the wall has changed.
+      </p>
       <p>
-        {" "}
-        No. Awaab&apos;s Law (Section 42, Social Housing Regulation Act 2023)
-        does not mandate specific products or brands. It requires landlords to
-        investigate damp and mould hazards within 14 days and remediate within
-        prescribed timeframes. The choice of products is left to the landlord,
-        but using professional-grade treatments and documenting the remediation
-        process (products used, dates, before/after photos) demonstrates due
-        diligence and compliance with the spirit of the legislation.{" "}
-      </p>{" "}
-      {/* Closing CTA */}{" "}
+        <strong>As a mould killer, if the listing does not say what is in it.</strong>{" "}
+        Of the three HG sprays, only the foam names its active substance.
+        The two anti-mould paints and the aerosol name none at all. The
+        comparison table says &ldquo;not stated&rdquo; where that is the case,
+        and this page does not fill the gap.
+      </p>
       <p>
-        {" "}
-        For the full picture on damp remediation &mdash; including PIV units,
-        dehumidifiers and compliance documentation tools &mdash; see our{" "}
-        <Link
-          href="/best/awaabs-law-damp-mould-equipment"
-          className="text-green-600 hover:underline"
-        >
-          Awaab&apos;s Law landlord equipment guide
-        </Link>
-        .{" "}
-      </p>{" "}
-      {/* FindProviderCTA */}{" "}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Damp or Mould Problem Beyond DIY?"
-          subtext="Compare damp remediation and pest control specialists near you — free, no-obligation quotes"
-        />{" "}
-      </div>{" "}
-      {/* Link buttons */}{" "}
-      <div className="not-prose mt-8 flex flex-col sm:flex-row gap-4">
-        {" "}
-        <Link
-          href="/best/awaabs-law-damp-mould-equipment"
-          className="inline-block text-center px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          {" "}
-          Awaab&apos;s Law Equipment Guide &rarr;{" "}
-        </Link>{" "}
-        <Link
-          href="/best/commercial-dehumidifiers"
-          className="inline-block text-center px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          {" "}
-          Best Commercial Dehumidifiers &rarr;{" "}
-        </Link>{" "}
-      </div>{" "}
+        <strong>As a full-room paint, from a 750ml tin.</strong> Johnstone&rsquo;s
+        listing rates its damp paint at 3 m² per litre, which is about 2.25 m²
+        from the tin on this page. That covers a patch, not a room, and the
+        label on its card now says only what it is.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Clean, block or coat</h3>
+      <p>
+        The sprays remove what is on the surface. The primers stop a mark from
+        coming through a new coat. The paints are the finish. They are not
+        substitutes for one another, and the order of work below is the reason
+        eight products sit on one page.
+      </p>
+      <h3>2. Whether the listing states coverage</h3>
+      <p>
+        Three listings give a figure: Zinsser at 12.5 m² per litre, Ronseal
+        Anti Mould at 13 m² per litre, Johnstone&rsquo;s at 3 m² per litre.
+        The other paints and the sealer state none. Buy by the stated figure
+        and the area you have measured, not by the size of the tin.
+      </p>
+      <h3>3. Whether the listing names the active substance</h3>
+      <p>
+        One does — the HG foam, sodium hypochlorite. For a landlord recording
+        what was used in a property, that is the difference between a product
+        you can name on a job sheet and one you cannot.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>
+            {
+              [
+                "A 500ml trigger spray listed for plastered walls, tiles, bathroom seals, grout and windows, indoors or out. The listing gives it a bleaching effect and says to test first; it does not name the active substance.",
+                "The same maker's foam, and the one product here whose listing names its active substance: sodium hypochlorite. The listing says the foam stays on the surface longer than a liquid and reduces splashing, which is the reason for its label.",
+                "Two of the 500ml sprays, listed at 1,000 millilitres together. The listing adds one line the single spray's does not: check the label for surfaces it is not recommended on, naming wood and plastic.",
+                "A 1 litre shellac primer listed at 12.5 m² per litre and for interior ceilings, walls and doors. The listing describes it as blocking water, smoke and tannin stains and odours; it says nothing about mould, and neither does this page.",
+                "A 500ml sealer the listing says can go onto damp walls and be painted or papered over when dry. Its own instruction — fix the cause of damp first — is the instruction this whole page turns on. Coverage is not stated.",
+                "A 750ml white matt paint listed at 13 m² per litre and as washable, with a brush included. The listing is a detail table with no feature text, so how it acts on mould is not stated and this page does not say.",
+                "A 400ml aerosol whose listing carries one feature line, that it protects walls and ceilings from mould growth. No coverage figure and no active substance are stated.",
+                "A 750ml paint listed for plaster, brickwork, cement and stone at 3 m² per litre — about 2.25 m² a tin — and over-coatable with the maker's emulsion. The listing says to ensure the reason for the damp is fixed.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If Paint Is Not the Answer</h2>
+      <p>
+        <strong>Find the water.</strong> Condensation, a leak and rising damp
+        are different faults with different fixes, and nothing on this page
+        tells them apart. Our{" "}
+        <a href="/best/awaabs-law-damp-mould-equipment">damp and mould equipment</a>{" "}
+        page covers meters and monitoring.
+      </p>
+      <p>
+        <strong>Reduce the moisture in the air.</strong> Where the cause is
+        condensation, a <a href="/best/commercial-dehumidifiers">dehumidifier</a>{" "}
+        addresses the air rather than the paint.
+      </p>
+      <p>
+        <strong>Get the investigation done.</strong> For a social landlord the
+        guidance above fixes the timeframe, and a survey is a different job from
+        a spray.
+      </p>
+
+      {/* Using them */}
+      <h2 id="using">Order of Work</h2>
+      <ol>
+        <li>
+          <strong>Fix the cause.</strong> Both the sealer and the damp paint say
+          so on their listings.
+        </li>
+        <li>
+          <strong>Clean the surface.</strong> A spray or foam, tested first on an
+          inconspicuous area as each HG listing says, and kept off clothing and
+          gloss paint.
+        </li>
+        <li>
+          <strong>Let it dry.</strong> The sealer is the one product here listed
+          for application to a wall that is still damp; the others are not.
+        </li>
+        <li>
+          <strong>Prime the stain.</strong> Zinsser B-I-N or Ronseal Damp Seal,
+          by the coverage figure where one is stated.
+        </li>
+        <li>
+          <strong>Coat.</strong> Then the finish paint, again by the stated
+          coverage and the area you measured.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Size and coverage, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Active or base, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Label</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <FindProviderCTA
+        heading="Damp or mould you cannot trace?"
+        subtext="Where the cause is not obvious, compare damp and pest specialists near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

@@ -181,7 +181,7 @@ export default function BestRatTrapsPage() {
   return (
     <GuideLayout
       title="Best Rat Traps UK 2026"
-      subtitle="Snap traps and boxed traps for UK homes, described by what their own listings state, with the legal position and the placement that decides whether they work"
+      subtitle="Snap traps and boxed traps for UK homes, described by what their own listings state, with the legal position and the placement the guidance turns on"
       lastUpdated="September 2026"
       readingTime="6 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}

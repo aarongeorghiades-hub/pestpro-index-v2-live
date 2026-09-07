@@ -1,22 +1,39 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
 
+// S68 R3 — ROLLOUT REBUILD to the R8 pattern. Title and H1 byte-unchanged. Rank
+// numerals, anchor ids and card order are UNCHANGED. Labels on this route were settled
+// by three rules, each applied to the record it names:
+//   Law 188 (both fields awards, they disagree, the h2 wins): card 2's label "Best 4L
+//     Fogger" becomes the h2's "Best for Flats & HMOs".
+//   S68 R3 ride-along ruling (a label that misstates its listing): card 3's "Best 6L
+//     Fogger" — the listing states Tank Capacity 5 Litres — becomes "Best 5L Fogger",
+//     and its name's "6L Tank" becomes "5L Tank".
+//   Law 189 (h2 holds a descriptor, not an award): cards 3, 4 and 5's h2s — "Proven
+//     Large-Tank Design", "Battery Powered Freedom", "Large-Area Specialist" — take the
+//     award the card shows, in this route's layout.
+// Card 1's name dropped "5L Tank": its listing says 6 liter in one line and 5-liter in
+// another, and both are rendered on the card instead (Law 146).
+//
+// THE DESCRIPTION IS REWRITTEN. It said "VectorFog machines"; one of five is an Ewbank.
+//
+// THE FAQ IS REMOVED, BLOCK AND SCHEMA TOGETHER (Law 190). Its questions — what can
+// be fogged, PPE, re-entry — are answered at #legal, #limits and #using.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Professional ULV Foggers UK (2026)",
     description:
-      "Professional ULV cold foggers for landlords, facilities managers & pest prevention. VectorFog machines for large-space insecticide application.",
+      "ULV cold foggers for large-space application: HSE's position on fogging risk and re-entry, and five compared on tank, motor and droplet size as listed.",
     alternates: {
       canonical: "https://pestproindex.com/best/professional-ulv-foggers",
     },
     openGraph: {
       title: "Best Professional ULV Foggers UK (2026)",
       description:
-        "Professional ULV cold foggers for landlords, facilities managers & pest prevention. VectorFog machines for large-space insecticide application.",
+        "ULV cold foggers for large-space application: HSE's position on fogging risk and re-entry, and five compared on tank, motor and droplet size as listed.",
       url: "https://pestproindex.com/best/professional-ulv-foggers",
       type: "article",
       siteName: "PestPro Index",
@@ -29,19 +46,11 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Professional ULV Foggers UK (2026)",
   description:
-    "Professional ULV cold foggers for landlords, facilities managers & pest prevention. VectorFog machines for large-space insecticide application.",
+    "ULV cold foggers for large-space application: HSE's position on fogging risk and re-entry, and five compared on tank, motor and droplet size as listed.",
   datePublished: "2026-04-06",
-  dateModified: "2026-04-06",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
+  dateModified: "2026-09-07",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://pestproindex.com/best/professional-ulv-foggers",
@@ -52,18 +61,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -73,36 +72,17 @@ const breadcrumbSchema = {
   ],
 };
 
-// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
-// from this and only this, so the two surfaces cannot disagree again. The visible
-// block was authoritative where they did disagree.
-const faqs = [
-  {
-    q: "Do I need a licence to use a ULV fogger?",
-    a: "No. You do not need a pest control licence to use a ULV fogger with amateur-approved insecticides in the UK. Products labelled for amateur use — such as most permethrin-based ready-to-use solutions — can be purchased and applied by anyone. However, professional-use-only biocides (requiring BASIS PROMPT qualification) must only be applied by trained operatives. Always check the product label before purchase.",
-  },
-  {
-    q: "How often should I fog a property?",
-    a: "For active infestations, fog every 7-14 days for 2-3 cycles to break the pest breeding cycle. For preventive maintenance in rental properties, quarterly fogging is common — particularly before new tenancies and at the start of flea and fly season (May-September). Commercial premises typically fog monthly as part of an integrated pest management programme.",
-  },
-  {
-    q: "Is ULV fogging safe around pets?",
-    a: "All animals must be removed from the treatment area before fogging. Fish tanks should be covered and air pumps switched off. After fogging, ventilate the space thoroughly for at least 30 minutes. The typical re-entry time is 2-4 hours after treatment — always follow the specific insecticide product instructions. Once surfaces are dry and the room is ventilated, it is safe for animals to return.",
-  },
-  {
-    q: "What is the difference between a ULV fogger and a thermal fogger?",
-    a: "A ULV cold fogger uses a high-powered motor to break liquid into ultra-fine droplets without heat. A thermal fogger heats the solution to create visible smoke. ULV foggers are preferred for indoor use because they produce no heat, no smoke, and minimal residue. Thermal foggers are mainly used outdoors for mosquito control where visible coverage confirmation is useful.",
-  },
-];
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194). Bodies kept under Law 175: hse-disinfectants and
+// hse-sr03 (a PDF, reached from HSE's SR series index and converted with pdftotext) at
+// ~/pp-s68r3/sources, fetched 2026-09-07; hse-biocides-using at ~/pp-s68r1/sources;
+// purdue-fly-control at ~/pp-s68r2/sources.
+const SRC = {
+  hseDisinfectants: "https://www.hse.gov.uk/food/occupational-health/disinfectants.htm",
+  hseSr03: "https://www.hse.gov.uk/pubns/guidance/sr03.pdf",
+  hseBiocides: "https://www.hse.gov.uk/biocides/using/overview.htm",
+  purdue: "https://extension.entm.purdue.edu/publications/E-7/E-7.html",
 };
 
 type ProductRecord = {
@@ -115,65 +95,72 @@ type ProductRecord = {
   tableCells: string[];
   h2Label: string;
   h2Name: string;
-  tocTitle: string;
+  tocLabel: string;
+  tocName: string;
 };
 
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
+// the S45-C window. A property is asserted only where the listing states it (S52-E,
+// S50-H); a cell the listing does not state reads "not stated". "The world's most
+// trusted fogger brand", "proven by pest controllers worldwide" and "100m² per minute"
+// are gone: the first two are self-praise and a G3 hit, the third is on no listing.
 const products: ProductRecord[] = [
   {
     anchorId: "vectorfog-c150-plus",
     asin: "B08FH8HV24",
     rank: 1,
-    cardName: "VectorFog C150+ Cold ULV Fogger — 5L Tank, 1250W Samsung Motor",
+    cardName: "VectorFog C150+ Cold ULV Fogger — 1250W Samsung Motor",
     cardLabel: "Best Overall",
     features: [
-      "Flagship from the world's most trusted fogger brand",
-      "5L tank, 1250W Samsung motor, 8m spray distance",
-      "Adjustable 5-50 micron droplet size",
-      "Covers 100m² per minute — designed for large-space treatment",
+      "Tank stated two ways on the listing: 6 liter in one line, 5-liter in another",
+      "1250W Samsung motor, as listed",
+      "Droplet size listed as adjustable, 5 to 50 microns",
+      "Listed for indoor and outdoor use, and for disinfectants, biocides and insecticides",
+      "Net weight listed as 4.7 kg; 62 x 31 x 17 cm",
     ],
-    tableCells: ["VectorFog C150+", "5L", "1250W (corded)", "Best overall"],
+    tableCells: ["VectorFog C150+", "6 litre / 5 litre (both stated)", "1250W, 5–50 microns", "Best Overall"],
     h2Label: "#1 VectorFog C150+ Cold ULV Fogger",
     h2Name: "Best Overall",
-    tocTitle: "#1 VectorFog C150+",
+    tocLabel: "#1 VectorFog C150+",
+    tocName: "Best Overall",
   },
   {
     anchorId: "vectorfog-c100-plus",
     asin: "B00MMWPK6S",
     rank: 2,
     cardName: "VectorFog C100 Plus Cold ULV Fogger — 4L Tank",
-    cardLabel: "Best 4L Fogger",
+    cardLabel: "Best for Flats & HMOs",
     features: [
-      "Compact yet powerful — 4L tank, 1250W motor",
-      "Covers 100m² in under a minute",
-      "5-50 micron adjustable droplet for versatile use",
-      "Ideal for flats, houses and HMO common areas",
+      "4 litre tank, 220V, 1250W Samsung motor, as listed",
+      "Droplet size listed as adjustable, 5 to 50 microns; flow rate 60 litres per hour",
+      "The listing's own instruction: indoors, use only the 5 micron setting to prevent a wet mist",
+      "Listed as spraying up to 8 metres, with a 10 metre cable",
+      "Listed for disinfectants; boxed weight 4.5 kg",
     ],
-    tableCells: ["VectorFog C100 Plus", "4L", "1250W (corded)", "Flats & HMOs"],
+    tableCells: ["VectorFog C100 Plus", "4 litre", "1250W, 5–50 microns", "Best for Flats & HMOs"],
     h2Label: "#2 VectorFog C100 Plus Cold ULV Fogger",
     h2Name: "Best for Flats & HMOs",
-    tocTitle: "#2 VectorFog C100 Plus",
+    tocLabel: "#2 VectorFog C100 Plus",
+    tocName: "Best for Flats & HMOs",
   },
   {
     anchorId: "vectorfog-c150",
     asin: "B00MMX1T94",
     rank: 3,
-    cardName: "VectorFog C150 Cold Fogger — 6L Tank",
-    cardLabel: "Best 6L Fogger",
+    cardName: "VectorFog C150 Cold Fogger — 5L Tank",
+    cardLabel: "Best 5L Fogger",
     features: [
-      "Original VectorFog flagship, 6L large tank",
-      "8-metre spray distance, proven by pest controllers worldwide",
-      "Adjustable droplet: fine for flying insects, coarse for surfaces",
-      "Robust construction for years of professional use",
+      "Tank capacity listed as 5 litres",
+      "Samsung 1250W motor, 220V, as listed",
+      "Droplet size listed as 5 to 30 microns",
+      "Listed at 5.35 kg; boxed weight 6.5 kg",
+      "The listing carries three feature lines and no use instructions",
     ],
-    tableCells: [
-      "VectorFog C150",
-      "6L",
-      "1250W (corded)",
-      "Large tanks & proven design",
-    ],
+    tableCells: ["VectorFog C150", "5 litre", "1250W, 5–30 microns", "Best 5L Fogger"],
     h2Label: "#3 VectorFog C150 Cold Fogger",
-    h2Name: "Proven Large-Tank Design",
-    tocTitle: "#3 VectorFog C150",
+    h2Name: "Best 5L Fogger",
+    tocLabel: "#3 VectorFog C150",
+    tocName: "Best 5L Fogger",
   },
   {
     anchorId: "vectorfog-dc20-plus",
@@ -182,15 +169,17 @@ const products: ProductRecord[] = [
     cardName: "VectorFog DC20+ Cordless ULV Fogger — Battery Powered",
     cardLabel: "Best Cordless Fogger",
     features: [
-      "Battery powered — no power socket needed",
-      "Ideal for lofts, outbuildings and garages",
-      "Same professional atomisation as corded VectorFog models",
-      "Complete freedom of movement during treatment",
+      "2 litre tank, as listed",
+      "Mabuchi 170W 12V DC motor; flow listed as 20 litres per hour",
+      "Droplet size listed as adjustable, 5 to 50 microns",
+      "Listed as up to 40 minutes of continuous fogging from a 3 hour charge",
+      "Net weight listed as 3.1 kg; 48 x 19 x 22 cm",
     ],
-    tableCells: ["VectorFog DC20+", "2L", "Battery", "No-socket locations"],
+    tableCells: ["VectorFog DC20+", "2 litre", "170W battery, 5–50 microns", "Best Cordless Fogger"],
     h2Label: "#4 VectorFog DC20+ Cordless ULV Fogger",
-    h2Name: "Battery Powered Freedom",
-    tocTitle: "#4 VectorFog DC20+ Cordless",
+    h2Name: "Best Cordless Fogger",
+    tocLabel: "#4 VectorFog DC20+ Cordless",
+    tocName: "Best Cordless Fogger",
   },
   {
     anchorId: "ewbank-ew5000",
@@ -199,56 +188,44 @@ const products: ProductRecord[] = [
     cardName: "Ewbank EW5000 Commercial Backpack Fogger — 10L, 1400W",
     cardLabel: "Best Backpack Fogger",
     features: [
-      "10L backpack for hands-free large-area treatment",
-      "1400W motor for powerful atomisation",
-      "Suitable for warehouses, schools, offices",
-      "Ergonomic backpack design for extended sessions",
+      "Maximum capacity listed as 10 litres",
+      "1400W motor, as listed",
+      "Mist diameter listed as adjustable, 20 to 60 microns",
+      "Horizontal reach listed as 5 to 7 metres, vertical 1.5 to 2 metres; 1 metre flexible hose",
+      "Listed for disinfecting surfaces, and for greenhouse and garden pest control",
     ],
-    tableCells: [
-      "Ewbank EW5000",
-      "10L",
-      "1400W (corded)",
-      "Warehouses & large spaces",
-    ],
+    tableCells: ["Ewbank EW5000", "10 litre", "1400W, 20–60 microns", "Best Backpack Fogger"],
     h2Label: "#5 Ewbank EW5000 Commercial Backpack Fogger",
-    h2Name: "Large-Area Specialist",
-    tocTitle: "#5 Ewbank EW5000 Backpack",
+    h2Name: "Best Backpack Fogger",
+    tocLabel: "#5 Ewbank EW5000 Backpack",
+    tocName: "Best Backpack Fogger",
   },
 ];
 
 const tocItems = [
-  { id: "intro", title: "Why Use a ULV Fogger?" },
-  { id: "at-a-glance", title: "At a Glance" },
-  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
-  { id: "chemicals", title: "What Chemicals Can I Use?" },
-  { id: "safety", title: "Safety & PPE Requirements" },
-  { id: "buying-guide", title: "Buying Guide" },
-  { id: "roi", title: "ROI: Fogger vs Professional Treatment" },
-  { id: "faq", title: "Frequently Asked Questions" },
+  { id: "situation", title: "Is Fogging the Right Job?" },
+  { id: "legal", title: "Who May Fog, and With What" },
+  { id: "limits", title: "Where a Fogger Does Not Help" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If Fogging Is Not the Answer" },
+  { id: "using", title: "Before, During and After" },
+  { id: "compared", title: "Foggers Compared" },
 ];
 
-export default function ProfessionalULVFoggersPage() {
+export default function BestProfessionalUlvFoggersPage() {
   return (
     <GuideLayout
       title="Best Professional ULV Cold Foggers for Facilities Managers & Landlords (2026)"
-      subtitle="Professional ULV cold foggers for large-space insecticide application — treat entire properties in minutes, not hours"
-      lastUpdated="April 2026"
-      readingTime="9 min"
+      subtitle="ULV cold foggers for large-space application — five compared on tank, motor and droplet size as their listings state them, with HSE's position on the respiratory risk of fogging and on re-entry"
+      lastUpdated="September 2026"
+      readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "Landlord Pest Control Guide",
-          href: "/guides/landlord-pest-control",
-        },
-        {
-          title: "How to Get Rid of Fleas",
-          href: "/guides/how-to-get-rid-of-fleas",
-        },
-        {
-          title: "How to Get Rid of Cockroaches",
-          href: "/guides/how-to-get-rid-of-cockroaches",
-        },
+        { title: "Landlord Pest Control Guide", href: "/guides/landlord-pest-control" },
+        { title: "How to Get Rid of Fleas", href: "/guides/how-to-get-rid-of-fleas" },
+        { title: "How to Get Rid of Cockroaches", href: "/guides/how-to-get-rid-of-cockroaches" },
         {
           title: "Professional vs DIY Pest Control",
           href: "/guides/professional-pest-control-vs-diy",
@@ -256,492 +233,344 @@ export default function ProfessionalULVFoggersPage() {
       ]}
       relatedProducts={[
         { title: "Best Flea Foggers UK 2026", href: "/best/flea-fogger" },
-        {
-          title: "Best Flea Spray for Home",
-          href: "/best/flea-spray-for-home",
-        },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
+        { title: "Best Flea Spray for Home", href: "/best/flea-spray-for-home" },
+        { title: "Best Cockroach Killers UK 2026", href: "/best/cockroach-killers" },
         { title: "Best Bed Bug Spray UK 2026", href: "/best/bed-bug-spray" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
         <p className="text-sm text-amber-800">
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
-          a small commission at no extra cost to you. As an Amazon Associate,
-          PestPro Index earns from qualifying purchases.
+          a small commission at no extra cost to you. This helps us keep the
+          site running and free for everyone. As an Amazon Associate, PestPro
+          Index earns from qualifying purchases.
         </p>
       </div>
 
       <p>
-        We selected these ULV foggers on published specifications and
-        manufacturer information, weighing stated droplet size, tank capacity,
-        flow rate control, and suitability for the treatment areas they are
-        marketed for.
+        A ULV cold fogger turns a liquid into droplets small enough to hang in
+        the air. Four of the five listings here sell that for disinfectant;
+        one names insecticides as well. The machine is sold freely. The
+        droplets are the part HSE has something to say about.
       </p>
 
-      <h2 id="intro">Why Use a ULV Fogger?</h2>
-      <p>
-        If you manage rental properties, warehouses, or commercial premises, a
-        ULV (Ultra Low Volume) cold fogger is one of the most cost-effective
-        pest control investments you can make. Unlike aerosol spray cans that
-        treat one surface at a time, a ULV fogger converts liquid insecticide
-        into an ultra-fine mist of 5-50 micron droplets that suspends in the air
-        and penetrates every crack, crevice, and hidden harbourage point in a
-        room — all in under a minute.
-      </p>
-      <p>
-        The economics are straightforward. A single professional fog treatment
-        costs £80-150 per visit. A ULV fogger treats unlimited rooms across
-        unlimited properties, with insecticide concentrate costing just a few
-        pounds per treatment. For portfolio landlords, HMO operators, and
-        facilities managers dealing with fleas, cockroaches, flies, or general
-        insect prevention, owning a ULV fogger eliminates the recurring cost of
-        call-outs entirely.
-      </p>
-      <p>
-        Coverage is the key advantage. A good ULV fogger covers 100m² per minute
-        — an entire flat treated in the time it takes to walk through it. The
-        fine droplets reach behind skirting boards, under furniture, inside wall
-        cavities, and into carpet fibres where pests harbour. No amount of
-        hand-spraying matches this level of penetration.
-      </p>
-
-      <div className="not-prose">
-        <Callout type="warning">
-          <p>
-            <strong>PPE is mandatory.</strong> ULV foggers atomise insecticide
-            into breathable droplets. You must wear a half-face respirator with
-            P3 filters, chemical-splash goggles, and nitrile gloves during
-            application. Remove all people and animals from the treatment area.
-            See the{" "}
-            <a href="#safety" className="underline font-semibold">
-              full safety section
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You have not read HSE&rsquo;s line on fogging.</strong> It
+            names the respiratory risk and how long droplets stay up —{" "}
+            <a href="#situation" className="underline">
+              is fogging the right job
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You are a landlord, not a pest control business.</strong>{" "}
+            HSE says the general public must not use professional-use products
+            —{" "}
+            <a href="#legal" className="underline">
+              who may fog, and with what
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You expect one treatment to end a fly problem.</strong>{" "}
+            Purdue Extension&rsquo;s line is that insecticides alone will not —{" "}
+            <a href="#limits" className="underline">
+              where a fogger does not help
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You need mains power and a large tank.</strong> Three corded
+            VectorFogs and a 10 litre backpack —{" "}
+            <a href="#vectorfog-c150-plus" className="underline">
+              C150+
+            </a>
+            ,{" "}
+            <a href="#vectorfog-c100-plus" className="underline">
+              C100 Plus
+            </a>
+            ,{" "}
+            <a href="#vectorfog-c150" className="underline">
+              C150
             </a>{" "}
-            below.
-          </p>
-        </Callout>
+            and{" "}
+            <a href="#ewbank-ew5000" className="underline">
+              the Ewbank
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You have no socket where you need to work.</strong>{" "}
+            <a href="#vectorfog-dc20-plus" className="underline">
+              The DC20+
+            </a>{" "}
+            is listed at 40 minutes on a charge, from a 2 litre tank.
+          </li>
+        </ul>
       </div>
-
-      <div className="not-prose">
-        <StatCallout
-          value="100m²/min"
-          label="Typical coverage rate of a professional ULV fogger — an entire flat treated in under 60 seconds"
-        />
-      </div>
-
-      <h2 id="at-a-glance">Professional ULV Foggers at a Glance</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Tank</th>
-            <th>Power</th>
-            <th>Best For</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-              <td>{p.tableCells[3]}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />
-      </div>
-      <p>
-        The VectorFog C150+ is the flagship ULV fogger from the brand used by
-        pest control professionals worldwide. The 1250W Samsung motor generates
-        an 8-metre spray distance and adjustable droplet size from 5 to 50
-        microns — fine enough to suspend in air for flying insect knockdown, or
-        coarse enough to settle on surfaces for residual crawling insect
-        control.
-      </p>
-      <p>
-        The 5L tank is large enough to treat a multi-room property without
-        refilling, and the build quality is designed for daily commercial use.
-        For landlords and facilities managers who need a single fogger that
-        handles every scenario — from flea treatment in a bedsit to preventive
-        fogging in a warehouse — the C150+ is the professional standard.
-      </p>
-
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />
-      </div>
-      <p>
-        The C100 Plus is the compact workhorse of the VectorFog range. It shares
-        the same 1250W motor and adjustable droplet technology as the C150+, but
-        with a slightly smaller 4L tank that makes it lighter and easier to
-        handle in tight spaces. For landlords treating individual flats,
-        terraced houses, and HMO common areas, this is the sweet spot between
-        power and portability.
-      </p>
-      <p>
-        The 4L capacity is still sufficient for a full house treatment without
-        refilling. If your portfolio consists mainly of residential properties
-        rather than commercial or industrial spaces, the C100 Plus offers the
-        same professional-grade atomisation at a lower price point.
-      </p>
-
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />
-      </div>
-      <p>
-        The original VectorFog C150 remains a trusted choice among pest control
-        operators. The 6L tank is the largest in the corded range, making it
-        ideal for treating multiple rooms or large open spaces without stopping
-        to refill. The 8-metre spray distance and adjustable droplet size
-        deliver the same professional coverage that made VectorFog the industry
-        standard.
-      </p>
-      <p>
-        Build quality is robust — this is a machine designed for years of daily
-        use in commercial pest control. If you prefer the reliability of a
-        proven design and want the largest tank capacity in a handheld corded
-        unit, the C150 is the dependable choice.
-      </p>
-
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />
-      </div>
-      <p>
-        The DC20+ solves the biggest practical problem with corded foggers:
-        power access. Lofts, outbuildings, garages, garden sheds, and properties
-        without mains electricity are all treatable with the battery-powered
-        DC20+. It delivers the same professional-grade atomisation as VectorFog
-        corded models, with complete freedom of movement and no trailing cables.
-      </p>
-      <p>
-        The trade-off is a smaller 2L tank and a premium price. For landlords
-        who frequently treat properties without convenient socket access — rural
-        lets, storage units, outbuildings — the cordless convenience justifies
-        the investment. Battery life covers multiple room treatments on a single
-        charge.
-      </p>
-
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />
-      </div>
-      <p>
-        The Ewbank EW5000 takes a different approach: a 10L backpack design with
-        a 1400W motor for hands-free operation across large commercial spaces.
-        Warehouses, school halls, office buildings, and multi-storey properties
-        can be treated in a single session without stopping to refill. The
-        ergonomic backpack distributes weight evenly for extended treatment
-        sessions.
-      </p>
-      <p>
-        It offers the largest tank capacity by far. The trade-off versus
-        VectorFog models is less precise droplet control and a less established
-        reputation in the professional pest control market. For facilities
-        managers covering large floor areas on a budget, the Ewbank delivers
-        excellent value.
-      </p>
-
-      <h2 id="chemicals">What Chemicals Can I Use in a ULV Fogger?</h2>
-      <p>
-        ULV foggers are designed for water-based and oil-based insecticide
-        solutions. The most common chemicals used in UK pest control fogging
-        include:
-      </p>
-      <ul>
-        <li>
-          <strong>Permethrin-based insecticides:</strong> The industry standard
-          for general insect control. Effective against fleas, cockroaches,
-          flies, moths, ants, and most crawling and flying insects. Available in
-          amateur-approved ready-to-use concentrations.
-        </li>
-        <li>
-          <strong>Pyrethroid sprays:</strong> Synthetic pyrethroids such as
-          cypermethrin and deltamethrin are widely used in professional fogging.
-          These provide rapid knockdown of flying insects and residual surface
-          activity against crawling pests.
-        </li>
-        <li>
-          <strong>IGR (Insect Growth Regulators):</strong> Products containing
-          methoprene or pyriproxyfen disrupt insect development cycles.
-          Particularly effective for flea control when combined with a knockdown
-          insecticide.
-        </li>
-      </ul>
 
       <div className="not-prose">
         <Callout type="warning">
           <p>
-            <strong>
-              Never use corrosive or flammable liquids in a ULV fogger.
-            </strong>{" "}
-            Only use insecticides specifically labelled as compatible with ULV
-            application. Check the product label for ULV compatibility before
-            use. Bleach, ammonia, alcohol-based solutions, and other
-            non-insecticide chemicals can damage the fogger motor and create
-            dangerous fumes.
+            HSE states that fogging produces smaller droplets than spraying and
+            presents a particular risk to the respiratory system, and that
+            respiratory protective equipment is normally needed for space
+            spraying. The machine&rsquo;s listing does not tell you what to put
+            in it or what to wear; the product label does.
           </p>
         </Callout>
       </div>
 
-      <h2 id="safety">Safety & PPE Requirements</h2>
+      {/* [0] Situation */}
+      <h2 id="situation">Is Fogging the Right Job?</h2>
       <p>
-        ULV fogging atomises insecticide into ultra-fine breathable droplets.
-        Without proper PPE, you will inhale the treatment chemical. This is
-        non-negotiable — even amateur-approved insecticides are harmful when
-        inhaled in concentrated aerosol form.
+        HSE&rsquo;s guidance on disinfectants at work is the clearest fetched
+        statement of what a fogger does that a sprayer does not:{" "}
+        <em>
+          &ldquo;However, fogging presents a particular risk to the respiratory
+          system as it produces smaller droplets than spraying.&rdquo;
+        </em>{" "}
+        and{" "}
+        <em>
+          &ldquo;These can remain suspended in air for 45-60 minutes or longer,
+          depending upon the droplet size.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hseDisinfectants} rel="nofollow">
+          HSE
+        </a>
+        ). Every listing here gives a droplet range that starts at 5 microns.
+        That is the property being bought, and it is also the hazard.
       </p>
-      <h3>Required PPE</h3>
-      <ul>
-        <li>
-          <strong>Half-face respirator with P3 particulate filters:</strong> A
-          standard dust mask is not sufficient. You need a proper half-face
-          respirator rated for organic vapour and particulate filtration. 3M
-          6000 series with A2P3 cartridges is the industry standard.
-        </li>
-        <li>
-          <strong>Chemical-splash goggles:</strong> Sealed goggles that prevent
-          mist entering the eyes. Standard safety glasses are not adequate — you
-          need a sealed frame.
-        </li>
-        <li>
-          <strong>Nitrile gloves:</strong> Disposable nitrile gloves to prevent
-          skin absorption when handling concentrate and operating the fogger.
-        </li>
-        <li>
-          <strong>Long sleeves and trousers:</strong> Minimise skin exposure
-          during application. Disposable coveralls are ideal for regular use.
-        </li>
-      </ul>
-      <h3>Ventilation and Re-entry</h3>
-      <ul>
-        <li>
-          Remove all people and animals from the treatment area before fogging.
-        </li>
-        <li>Cover or remove fish tanks and turn off air pumps.</li>
-        <li>
-          Close all windows and doors during treatment to contain the fog.
-        </li>
-        <li>
-          After the recommended contact time (typically 1-2 hours), open all
-          windows and doors to ventilate thoroughly for at least 30 minutes.
-        </li>
-        <li>
-          <strong>Re-entry time is typically 2-4 hours</strong> after treatment
-          begins — always follow the specific insecticide product instructions.
-        </li>
-        <li>
-          Cover or remove food, cooking utensils, and pet bowls before
-          treatment.
-        </li>
-      </ul>
-
-      <h2 id="buying-guide">Buying Guide: What to Look For</h2>
-
-      <h3>Motor Wattage</h3>
       <p>
-        Higher wattage means more powerful atomisation and longer spray
-        distance. All VectorFog models run at 1250W, delivering an 8-metre spray
-        distance. The Ewbank runs at 1400W. For effective room treatment, 1000W+
-        is the minimum — anything less will not generate sufficient airflow to
-        atomise droplets finely enough for proper ULV application.
+        So the first question is whether a space treatment is needed at all.
+        A flea problem in one flat, a cockroach problem in one kitchen, is a
+        bait or a residual spray on our{" "}
+        <a href="/best/flea-fogger">flea fogger</a> and{" "}
+        <a href="/best/cockroach-killers">cockroach killer</a> pages, not a 6
+        litre tank.
       </p>
 
-      <h3>Tank Capacity</h3>
+      {/* [1] Legal */}
+      <h2 id="legal">Who May Fog, and With What</h2>
       <p>
-        Tank size determines how many rooms you can treat without refilling. The
-        4-6L range (VectorFog corded models) covers a full house. The 10L Ewbank
-        backpack handles large commercial spaces. The 2L cordless VectorFog is
-        fine for individual rooms but requires refilling for whole-property
-        treatments.
+        The foggers are sold to anyone. What goes in them is not, and that is
+        the honest position for a landlord or facilities manager reading this
+        page. HSE states that{" "}
+        <em>
+          &ldquo;members of the general public must not use professional or
+          industrial use products&rdquo;
+        </em>{" "}
+        and gives the reason:{" "}
+        <em>
+          &ldquo;This is because professional users are required to have had
+          the appropriate information, instruction and training to be able to
+          use such products.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hseBiocides} rel="nofollow">
+          HSE
+        </a>
+        ). A fogger that can atomise a professional-use insecticide does not
+        make its owner a professional user, and no listing here claims
+        otherwise.
+      </p>
+      <p>
+        For the fogging itself, HSE&rsquo;s COSHH Essentials sheet for space
+        sprayers in service and retail premises states that{" "}
+        <em>&ldquo;RPE is normally needed.&rdquo;</em> (
+        <a href={SRC.hseSr03} rel="nofollow">
+          HSE, SR3
+        </a>
+        ). Which respirator and which filter is set by the product label and
+        the risk assessment, not by this page.
       </p>
 
-      <h3>Spray Distance</h3>
+      {/* [2] Limits */}
+      <h2 id="limits">Where a Fogger Does Not Help</h2>
       <p>
-        Spray distance determines how far the fog reaches from the nozzle. An
-        8-metre range (VectorFog C150+ and C150) means you can stand at the door
-        and fog an entire room from the entrance. Shorter range models require
-        you to enter the room and move through it during treatment — less
-        convenient and increases your exposure.
+        <strong>Against the source of a fly problem.</strong> Purdue
+        Extension&rsquo;s fly control guidance is blunt:{" "}
+        <em>
+          &ldquo;Insecticides alone cannot be expected to rid premises of
+          flies.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.purdue} rel="nofollow">
+          Purdue Extension
+        </a>
+        ). A fog reaches what is in the air when the fog is; it does not reach
+        the drain, the bin or the gap the flies are breeding in or coming
+        through.
+      </p>
+      <p>
+        <strong>Before the space can be re-entered.</strong> HSE states that{" "}
+        <em>
+          &ldquo;Initially, air sampling may be required to check re-entry is
+          safe into areas where fogging has been carried out, particularly when
+          high-hazard disinfectants are used, such as aldehydes.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hseDisinfectants} rel="nofollow">
+          HSE
+        </a>
+        ). A space that is fogged is a space that is out of use afterwards, for
+        a period the label and the assessment set.
+      </p>
+      <p>
+        <strong>Where the listing cannot say how big the tank is.</strong> The
+        C150+ listing says 6 liter in one line and 5-liter in another. The card
+        reports both.
       </p>
 
-      <h3>Droplet Size Range</h3>
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Tank capacity as listed</h3>
       <p>
-        Adjustable droplet size is critical for versatile use. Fine droplets
-        (5-15 microns) remain airborne longer and are ideal for flying insect
-        knockdown and air treatment. Coarser droplets (20-50 microns) settle
-        onto surfaces faster and are better for residual crawling insect
-        control. A machine with 5-50 micron range covers both scenarios.
+        From 2 litres on the cordless unit to 10 on the backpack. The tank
+        decides how much floor area one fill reaches; the product label decides
+        the dose per cubic metre, and the two together decide how many fills
+        a space takes.
+      </p>
+      <h3>2. Droplet range as listed</h3>
+      <p>
+        Four listings state 5 to 50 microns, the C150 states 5 to 30, the
+        Ewbank 20 to 60. The C100 Plus listing adds the instruction that
+        indoors it should only be used on the 5 micron setting, to prevent a
+        wet mist — and 5 microns is the end of the range HSE is describing
+        when it says droplets stay suspended.
+      </p>
+      <h3>3. Power source as listed</h3>
+      <p>
+        Four are corded and listed at 1250W or 1400W; one is battery, listed
+        at 170W and 40 minutes a charge. Where you can work is set by where the
+        socket is.
       </p>
 
-      <h3>Corded vs Cordless</h3>
-      <p>
-        Corded models offer unlimited runtime and consistent power. Cordless
-        models offer freedom of movement and access to spaces without mains
-        electricity. For most landlords treating standard residential
-        properties, a corded model is more practical and cheaper. Add a cordless
-        unit only if you regularly treat spaces without power access.
-      </p>
-
-      <h2 id="roi">ROI: Fogger vs Professional Treatment</h2>
-      <p>
-        The financial case for owning a ULV fogger is compelling for anyone
-        managing multiple properties or treating regularly:
-      </p>
-      <ul>
-        <li>
-          <strong>Professional fog treatment:</strong> £80-150 per visit, per
-          property. A three-bedroom house with a flea infestation requiring two
-          treatments costs £160-300 in call-out fees alone.
-        </li>
-        <li>
-          <strong>ULV fogger purchase:</strong> a one-off cost. Treats unlimited
-          rooms across unlimited properties. Insecticide concentrate costs
-          £10-20 per litre, and a typical room treatment uses 50-100ml of
-          diluted solution.
-        </li>
-        <li>
-          <strong>Break-even:</strong> A fogger pays for itself after 2-3
-          professional call-outs. For a landlord with 10+ properties, the annual
-          saving runs into thousands of pounds.
-        </li>
-      </ul>
-
-      <div className="not-prose">
-        <StatCallout
-          value="2-3 treatments"
-          label="Break-even point — a professional ULV fogger pays for itself after just 2-3 uses versus hiring a pest controller"
-        />
-      </div>
-
-      <p>
-        Beyond direct cost savings, owning a fogger gives you scheduling
-        flexibility. You can treat between tenancies on your own timetable
-        rather than waiting for a pest controller booking. For HMO operators
-        dealing with recurring flea or cockroach issues, the ability to fog
-        immediately rather than scheduling a visit days or weeks out can prevent
-        infestations from establishing.
-      </p>
-
-      <h2 id="faq">Frequently Asked Questions</h2>
-
-      {faqs.map((f) => (
-        <div key={f.q}>
-          <h3>{f.q}</h3>
-          <p>{f.a}</p>
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>
+            {
+              [
+                "The one listing here that names insecticides alongside disinfectants and biocides, with a 1250W Samsung motor, 5 to 50 micron droplets and indoor or outdoor use. Its tank is listed as 6 liter in one line and 5-liter in another; the card carries both and this page picks neither.",
+                "A 4 litre, 1250W unit listed with a 60 litre per hour flow rate and an 8 metre throw. Its listing is the only one here with a use instruction: indoors, only the 5 micron setting. The card label follows the h2 under Law 188.",
+                "A 5 litre, 1250W unit with a 5 to 30 micron droplet range and no use instructions on the listing. The card previously said 6L; the listing states 5 litres, and the label and name now say so.",
+                "A cordless 2 litre unit with a 170W 12V motor, listed at up to 40 minutes of continuous fogging from a 3 hour charge and 3.1 kg net. The one fogger here for a space with no socket.",
+                "A 10 litre backpack with a 1400W motor and a 20 to 60 micron mist, listed at 5 to 7 metres horizontal reach. Its listing sells it for disinfecting surfaces and for greenhouse and garden pest control; it does not mention indoor insecticide use.",
+              ][i]
+            }
+          </p>
         </div>
       ))}
 
+      {/* Alternatives */}
+      <h2 id="alternatives">If Fogging Is Not the Answer</h2>
       <p>
-        For targeted surface treatment, pair ULV fogging with{" "}
-        <a
-          href="/best/professional-pressure-sprayers"
-          className="text-green-600 hover:underline"
-        >
-          professional pressure sprayers
-        </a>
-        . For ongoing passive monitoring, add{" "}
-        <a
-          href="/best/professional-insect-light-traps"
-          className="text-green-600 hover:underline"
-        >
-          commercial insect light traps
-        </a>
-        .
+        <strong>Find the source.</strong> For flies that is the breeding site;
+        for fleas it is the host; for cockroaches it is the harbourage. None of
+        them is in the air.
+      </p>
+      <p>
+        <strong>Use a targeted product.</strong> Our{" "}
+        <a href="/best/bed-bug-spray">bed bug spray</a>,{" "}
+        <a href="/best/flea-spray-for-home">flea spray</a> and{" "}
+        <a href="/best/cockroach-killers">cockroach killer</a> pages compare
+        products that go where the pest is.
+      </p>
+      <p>
+        <strong>Have it done under contract.</strong> Where the product you
+        need is professional-use only, that is the arrangement HSE&rsquo;s rule
+        describes.
       </p>
 
+      {/* Using them */}
+      <h2 id="using">Before, During and After</h2>
+      <ol>
+        <li>
+          <strong>Read the product label first.</strong> Whether it may be
+          fogged at all, at what dose, and by whom, is there and nowhere else.
+        </li>
+        <li>
+          <strong>Close the space.</strong> HSE&rsquo;s SR3 sheet says to{" "}
+          <em>
+            &ldquo;Close doors and windows, and turn off ventilation systems
+            before starting the treatment.&rdquo;
+          </em>
+        </li>
+        <li>
+          <strong>Wear the RPE the label and assessment call for.</strong>{" "}
+          HSE&rsquo;s sheet says it is normally needed.
+        </li>
+        <li>
+          <strong>Set the droplet size the label calls for.</strong> The C100
+          Plus listing&rsquo;s own instruction is 5 microns indoors; the label
+          on the product governs.
+        </li>
+        <li>
+          <strong>Keep people out until re-entry is safe.</strong> HSE&rsquo;s
+          figure for suspended droplets is 45 to 60 minutes or longer, and it
+          says air sampling may initially be required.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">Foggers Compared</h2>
       <p>
-        Also relevant for landlords and property managers: our guide to{" "}
-        <Link
-          href="/best/awaabs-law-damp-mould-equipment"
-          className="text-green-600 hover:underline"
-        >
-          Awaab&apos;s Law damp and mould compliance equipment
-        </Link>
-        .
+        Every column below is what the Amazon listing itself states. Where a
+        listing gives two figures, both are shown; where it gives none, the
+        cell says so rather than guessing.
       </p>
-
-      <div className="not-prose">
-        <FindProviderCTA
-          heading="Need Professional Pest Treatment?"
-          subtext="For severe infestations requiring specialist chemicals or integrated pest management, find a BPCA-certified provider near you"
-        />
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Tank, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Motor and droplet, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        <p className="text-gray-700 mb-3">Related product guides</p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a
-            href="/best/flea-fogger"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            Best Flea Foggers →
-          </a>
-          <a
-            href="/best/flea-spray-for-home"
-            className="inline-block px-6 py-2.5 bg-gray-700 hover:bg-gray-800 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            Best Flea Spray for Home →
-          </a>
-        </div>
-      </div>
+      <FindProviderCTA
+        heading="A space you would rather have treated under contract?"
+        subtext="Where the product is professional-use only, compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

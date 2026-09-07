@@ -2746,3 +2746,26 @@ four-categories sentence at lines 287 and 295, and the sentence arguing against 
 on the highest-rated product on Amazon at line 643. Both sit OUTSIDE the removed record
 and outside its render block, which ran from the JSX comment at line 563 to the closing
 `</ul>` at line 637. Law 193's test was therefore never reached on this route.
+
+## S68 R3 — LAW 194: A CITATION NAMES THE HOST ACTUALLY FETCHED
+
+LAW 194 — A citation names the host actually fetched. Before commit, every cited URL on a
+changed page is checked against the round's fetch log and the banked body's recorded
+source; a citation with no matching fetch is corrected to the fetched host or the
+sentence carrying it is deleted. Two sources sharing verbatim text remain one source.
+
+Ratified by PM ruling at S68 R3, dated 2026-09-07, verbatim as put.
+
+WHAT PROVOKED IT. At S68 R2 a rebuilt page cited the RRAG house-mouse guideline at a
+thinkwildlife.org PDF path that no round had ever fetched. The banked body — quoted on
+the page, byte-verified — had been read from static1.squarespace.com, and only the S67 R2
+fetch log said so. The quotation was true; the citation was a poisoned one under S59-A's
+binding condition, caught by reading the log before commit. This law makes that check a
+gate on every changed page rather than a habit.
+
+THE CHECK, AS IT IS TO BE RUN. For each changed page, every URL in its SRC map and every
+href in its body that is not a route on this site is looked up in (a) the current
+round's fetch-log.tsv and (b) every earlier round's fetch-log.tsv whose sources/ directory
+still holds a body for it. A URL found in neither is not cited. The fix is the fetched
+host, verbatim from the log, or deletion of the sentence — never a URL constructed by
+analogy (Law 137), and never a second host that happens to publish the same text.

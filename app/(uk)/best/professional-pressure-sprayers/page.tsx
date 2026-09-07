@@ -1,66 +1,63 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S68 R3 — ROLLOUT REBUILD to the R8 pattern. Title and H1 byte-unchanged. Award
+// labels, rank numerals, anchor ids and card order are UNCHANGED. The h2s carried a
+// product name and no award (h2Text); under Law 189 each h2 now gains the award its
+// card already shows, in this route's layout — rank numeral and product name first,
+// award after the dash. Card NAMES follow the fetched titles (S50-H): "European Made"
+// is not on the Matabi listing and is gone; the Solo 425 is listed as 4-gallon, not
+// 15L, and its name now says so while its award label is unchanged.
+//
+// THE DESCRIPTION IS REWRITTEN. It said "for landlords & pest prevention"; what
+// decides who may spray is HSE's certificate rule, which the page now carries.
+//
+// THE FAQ IS REMOVED, BLOCK AND SCHEMA TOGETHER (Law 190). Its questions — who may
+// spray, what can be treated, PPE — are answered at #legal, #limits and #using.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Professional Pressure Sprayers UK 2026",
     description:
-      "Professional knapsack sprayers for landlords & pest prevention. Solo & Matabi backpack sprayers for insecticide & pesticide application.",
+      "Knapsack sprayers for pesticide application: who may spray under HSE's certificate rules, and five compared on tank, pump and pressure as listed.",
     alternates: {
       canonical: "https://pestproindex.com/best/professional-pressure-sprayers",
     },
     openGraph: {
       title: "Best Professional Pressure Sprayers UK 2026",
       description:
-        "Professional knapsack sprayers for landlords & pest prevention. Solo & Matabi backpack sprayers for insecticide & pesticide application.",
+        "Knapsack sprayers for pesticide application: who may spray under HSE's certificate rules, and five compared on tank, pump and pressure as listed.",
       url: "https://pestproindex.com/best/professional-pressure-sprayers",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Best Professional Pressure Sprayers UK 2026",
   description:
-    "Professional knapsack sprayers for landlords & pest prevention. Solo & Matabi backpack sprayers for insecticide & pesticide application.",
+    "Knapsack sprayers for pesticide application: who may spray under HSE's certificate rules, and five compared on tank, pump and pressure as listed.",
   datePublished: "2026-04-06",
-  dateModified: "2026-04-06",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
+  dateModified: "2026-09-07",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://pestproindex.com/best/professional-pressure-sprayers",
   },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -69,37 +66,18 @@ const breadcrumbSchema = {
     },
   ],
 };
-// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
-// from this and only this, so the two surfaces cannot disagree again. The visible
-// block was authoritative where they did disagree.
-const faqs = [
-  {
-    q: "Can I use any pesticide in a knapsack sprayer?",
-    a: "No — always check the product label before loading any pesticide into a sprayer. Some formulations, particularly oil-based concentrates, may damage seals or gaskets in certain pump types. Wettable powders and abrasive formulations require a diaphragm pump. Only use products labelled for sprayer application, and confirm compatibility with your specific pump type.",
-  },
-  {
-    q: "How do I clean the tank after use?",
-    a: "Triple rinse. Fill the tank one-third full with clean water, pressurise, and spray through the lance and nozzle. Repeat three times. This flushes chemical residue from every component — tank, hose, lance, and nozzle. Store with the pressure valve open and the lid loosened. Never leave chemical solution sitting in the tank overnight.",
-  },
-  {
-    q: "What nozzle should I use for fine vs coarse spray?",
-    a: "A flat fan nozzle at 30–40psi produces an even, wide pattern for surface residual treatments and perimeter spraying. A hollow cone nozzle at higher pressure produces a finer mist for crack and crevice work where precise targeting is needed. For most perimeter pest control work, start with the flat fan nozzle — it gives the most consistent coverage over large areas.",
-  },
-  {
-    q: "What is the difference between flat fan and cone nozzles?",
-    a: "A flat fan nozzle produces a wide, flat spray pattern — best for covering walls, floors, and perimeters evenly. A hollow cone nozzle produces a circular ring pattern with finer droplets, ideal for penetrating into cracks and crevices. A full cone nozzle produces a solid circle of spray for heavy-duty coverage. For standard pest control, use the flat fan as your default and switch to the hollow cone for targeted applications around harbourage points.",
-  },
-];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194). Bodies kept under Law 175: hse-sprayer and
+// hse-pesticides at ~/pp-s68r3/sources (fetched 2026-09-07); hse-biocides-using at
+// ~/pp-s68r1/sources.
+const SRC = {
+  hseSprayer: "https://www.hse.gov.uk/treework/areyou/sprayer.htm",
+  hsePesticides: "https://www.hse.gov.uk/agriculture/topics/pesticides.htm",
+  hseBiocides: "https://www.hse.gov.uk/biocides/using/overview.htm",
 };
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -108,26 +86,43 @@ type ProductRecord = {
   cardLabel: string;
   features: string[];
   tableCells: string[];
-  h2Text: string;
-  tocTitle: string;
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
 };
 
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
+// the S45-C window. A property is asserted only where the listing states it (S52-E,
+// S50-H); a cell the listing does not state reads "not stated".
+//
+// TWO LISTINGS DISAGREE WITH THEMSELVES AND BOTH ARE RENDERED (Law 146). The Solo 473D
+// title says 10 litre; its feature text says 12 litre and 4 bar. The Matabi title says
+// 12L; its detail table says 16 L. Neither is resolved here.
+//
+// GONE, BY NAME: "the professional default for pest control", "industry standard for
+// residual insecticide application", "preferred by grounds and facilities teams",
+// "chemical-resistant seals" on the Matabi, and "Piston" on the Oregon, whose listing
+// does not state a pump type.
 const products: ProductRecord[] = [
   {
     anchorId: "solo-473d",
     asin: "B00ESW2YDM",
     rank: 1,
-    cardName: "Solo 473D Classic Knapsack Sprayer — 10L Diaphragm Pump",
+    cardName: "Solo 473D Classic Backpack Sprayer — 10 Litre, Diaphragm Pump",
     cardLabel: "Best Overall",
     features: [
-      "German-engineered — the professional default for pest control",
-      "10L capacity, diaphragm pump for chemical resistance",
-      "Consistent pressure for even insecticide distribution",
-      "Industry standard for residual insecticide application",
+      "Capacity stated two ways on the listing: 10 litre in the title, 12 litre in the feature text",
+      "Diaphragm (membrane) pump, as listed",
+      "Maximum spraying pressure listed as 4 bar, with a pressure gauge",
+      "50 cm spray tube, as listed",
+      "Empty weight listed as 3.9 kg",
     ],
-    tableCells: ["Solo 473D Classic", "10L", "Diaphragm", "Best Overall"],
-    h2Text: "#1 Solo 473D Classic Knapsack Sprayer — 10L Diaphragm Pump",
-    tocTitle: "#1 Solo 473D Classic 10L",
+    tableCells: ["Solo 473D Classic", "10 litre (title) / 12 litre (text)", "diaphragm, 4 bar", "Best Overall"],
+    h2Label: "#1 Solo 473D Classic Backpack Sprayer",
+    h2Name: "Best Overall",
+    tocLabel: "#1 Solo 473D Classic",
+    tocName: "Best Overall",
   },
   {
     anchorId: "solo-90psi",
@@ -136,96 +131,101 @@ const products: ProductRecord[] = [
     cardName: "Solo 10L 90psi Diaphragm Pump Backpack Sprayer",
     cardLabel: "Best Professional-Grade",
     features: [
-      "High-pressure 90psi for maximum penetration",
-      "Diaphragm pump handles abrasive and emulsifiable concentrates",
-      "Ideal for perimeter treatments and crack/crevice work",
-      "Professional-grade pressure for deep application",
+      "10 litre, as listed",
+      "Diaphragm pump, as listed",
+      "Maximum working pressure listed as 4 bar / 90 psi",
+      "50 cm lance, as listed",
+      "Listed at 4.2 kilograms; container listed as UV-resistant plastic",
     ],
-    tableCells: ["Solo 10L 90psi", "10L", "Diaphragm", "Professional-Grade"],
-    h2Text: "#2 Solo 10L 90psi Diaphragm Pump Backpack Sprayer",
-    tocTitle: "#2 Solo 10L 90psi",
+    tableCells: ["Solo 10L 90psi", "10 litre", "diaphragm, 4 bar / 90 psi", "Best Professional-Grade"],
+    h2Label: "#2 Solo 10L 90psi Diaphragm Pump Backpack Sprayer",
+    h2Name: "Best Professional-Grade",
+    tocLabel: "#2 Solo 10L 90psi",
+    tocName: "Best Professional-Grade",
   },
   {
     anchorId: "solo-425",
     asin: "B00002N6BW",
     rank: 3,
-    cardName: "Solo 425 Professional Piston Backpack Sprayer — 15L",
+    cardName: "Solo 425 4-Gallon Professional Piston Backpack Sprayer",
     cardLabel: "Best 15L Backpack",
     features: [
-      "Larger 15L capacity for extended treatments",
-      "Piston pump up to 90psi pressure",
-      "Preferred by grounds and facilities teams",
-      "Treats large external areas without refilling",
+      "Capacity listed as 4 gallons; the listing gives no figure in litres",
+      "Piston pump with a pressure range up to 90 psi, as listed",
+      "Four nozzles listed: adjustable, fan, hollow cone and jet stream",
+      "20-inch wand and 48-inch hose, as listed; Viton seals",
+      "Listed at 4.49 kg; made in the USA, as listed",
     ],
-    tableCells: ["Solo 425 Professional", "15L", "Piston", "Large Area Work"],
-    h2Text: "#3 Solo 425 Professional Piston Backpack Sprayer — 15L",
-    tocTitle: "#3 Solo 425 Professional 15L",
+    tableCells: ["Solo 425", "4 gallon (no litre figure listed)", "piston, up to 90 psi", "Best 15L Backpack"],
+    h2Label: "#3 Solo 425 4-Gallon Professional Piston Backpack Sprayer",
+    h2Name: "Best 15L Backpack",
+    tocLabel: "#3 Solo 425 Professional",
+    tocName: "Best 15L Backpack",
   },
   {
     anchorId: "matabi",
     asin: "B0001P0GHG",
     rank: 4,
-    cardName: "Matabi Super Green 12L Backpack Sprayer — European Made",
+    cardName: "Matabi Super Green 12 Garden Sprayer 12L",
     cardLabel: "Best Budget",
     features: [
-      "European-manufactured with fibreglass lance",
-      "3-position pressure regulator, padded straps",
-      "— proven chemical-resistant seals",
-      "Durable construction for professional pesticide use",
+      "Capacity stated two ways on the listing: 12 litre in the title and text, 16 L in the detail table",
+      "3-position pressure regulator, as listed",
+      "Fibreglass lance and four nozzles, as listed",
+      "Padded, adjustable straps and a lateral liquid indicator, as listed",
+      "Listed at 3.2 kilograms; pump type not stated",
     ],
-    tableCells: ["Matabi Super Green", "12L", "Piston", "Best Budget"],
-    h2Text: "#4 Matabi Super Green 12L Backpack Sprayer — European Made",
-    tocTitle: "#4 Matabi Super Green 12L",
+    tableCells: ["Matabi Super Green 12", "12 litre (title) / 16 L (table)", "not stated; 3-position regulator", "Best Budget"],
+    h2Label: "#4 Matabi Super Green 12 Garden Sprayer",
+    h2Name: "Best Budget",
+    tocLabel: "#4 Matabi Super Green 12",
+    tocName: "Best Budget",
   },
   {
     anchorId: "oregon",
     asin: "B0D6YPYFRX",
     rank: 5,
-    cardName: "Oregon 20L Backpack Pressure Sprayer — 20L Capacity",
+    cardName: "Oregon Backpack Sprayer, 20 Litre",
     cardLabel: "Best 20L Backpack",
     features: [
-      "High-capacity 20L for large outdoor treatments",
-      "Suitable for commercial property perimeters",
-      "Cost-effective for warehouse and garden treatment",
-      "Comfortable backpack design for extended use",
+      "20 litre tank, as listed",
+      "Lance and hose of about 2 metres, four nozzles, as listed",
+      "Spare seal kit listed as included",
+      "Listed for pesticide, lawn feed, weed and moss killer",
+      "Listed at 3.93 kilograms; pump type and pressure not stated",
     ],
-    tableCells: ["Oregon 20L", "20L", "Piston", "Maximum Capacity"],
-    h2Text: "#5 Oregon 20L Backpack Pressure Sprayer — 20L Capacity",
-    tocTitle: "#5 Oregon 20L Backpack",
+    tableCells: ["Oregon 20L", "20 litre", "not stated", "Best 20L Backpack"],
+    h2Label: "#5 Oregon Backpack Sprayer, 20 Litre",
+    h2Name: "Best 20L Backpack",
+    tocLabel: "#5 Oregon 20L",
+    tocName: "Best 20L Backpack",
   },
 ];
 
 const tocItems = [
-  { id: "at-a-glance", title: "Sprayers at a Glance" },
-  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
-  { id: "piston-vs-diaphragm", title: "Piston vs Diaphragm Pumps" },
-  { id: "what-can-you-treat", title: "What Can You Treat?" },
-  { id: "safety", title: "Safety & PPE" },
-  { id: "buying-guide", title: "Buying Guide" },
-  { id: "faq", title: "Frequently Asked Questions" },
+  { id: "situation", title: "Is a Knapsack the Right Tool?" },
+  { id: "legal", title: "Who May Spray" },
+  { id: "limits", title: "Where a Sprayer Does Not Help" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Sprayer Is Not the Answer" },
+  { id: "using", title: "Using One" },
+  { id: "compared", title: "Sprayers Compared" },
 ];
-export default function ProfessionalPressureSprayersPage() {
+
+export default function BestProfessionalPressureSprayersPage() {
   return (
     <GuideLayout
       title="Best Professional Pressure Sprayers for Pest Control Applications (2026)"
-      subtitle="Knapsack and backpack sprayers for professional insecticide and pesticide application — the tools landlords and pest controllers rely on"
-      lastUpdated="April 2026"
-      readingTime="8 min"
+      subtitle="Knapsack and backpack sprayers for applying pesticide — five compared on tank, pump and pressure as their listings state them, with HSE's rule on who may do the spraying"
+      lastUpdated="September 2026"
+      readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "How to Get Rid of Rats",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Ants",
-          href: "/guides/how-to-get-rid-of-ants",
-        },
-        {
-          title: "Landlord Pest Control Guide",
-          href: "/guides/landlord-pest-control",
-        },
+        { title: "How to Get Rid of Rats", href: "/guides/how-to-get-rid-of-rats" },
+        { title: "How to Get Rid of Ants", href: "/guides/how-to-get-rid-of-ants" },
+        { title: "Landlord Pest Control Guide", href: "/guides/landlord-pest-control" },
         {
           title: "Professional vs DIY Pest Control",
           href: "/guides/professional-pest-control-vs-diy",
@@ -234,513 +234,319 @@ export default function ProfessionalPressureSprayersPage() {
       relatedProducts={[
         { title: "Best Rat Poison UK 2026", href: "/best/rat-poison" },
         { title: "Best Ant Killers UK 2026", href: "/best/ant-killers" },
-        {
-          title: "Best Flea Spray for Home",
-          href: "/best/flea-spray-for-home",
-        },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
+        { title: "Best Flea Spray for Home", href: "/best/flea-spray-for-home" },
+        { title: "Best Cockroach Killers UK 2026", href: "/best/cockroach-killers" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />{" "}
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
-          a small commission at no extra cost to you. As an Amazon Associate,
-          PestPro Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
+          a small commission at no extra cost to you. This helps us keep the
+          site running and free for everyone. As an Amazon Associate, PestPro
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        If you are applying insecticide around a rental property with a trigger
-        spray bottle, you are wasting product, wasting time, and getting
-        inconsistent coverage. A professional knapsack sprayer delivers even,
-        controlled application at a fraction of the cost per treatment — and it
-        is the method every BPCA-certified pest controller uses for residual
-        insecticide work.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        For landlords doing perimeter treatments, surface residual applications,
-        or crack and crevice work, a proper pressure sprayer is the difference
-        between a professional result and a half-measure. The cost per treatment
-        drops dramatically: a 10L backpack sprayer covers an entire building
-        perimeter in minutes, using the exact dilution rate specified on the
-        product label.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        We selected these knapsack sprayers on published specifications,
-        manufacturer information and UK availability. Every product below is
-        suitable for professional pesticide and insecticide application — the
-        same units used by commercial pest control operators.{" "}
-      </p>{" "}
-      <Callout type="tip">
-        {" "}
-        <p>
-          A diaphragm pump sprayer is the professional default for chemical
-          application. Unlike piston pumps, diaphragm pumps isolate the chemical
-          from the pump mechanism, which means longer seal life and
-          compatibility with wettable powders and emulsifiable concentrates.
-        </p>{" "}
-      </Callout>{" "}
-      <h2 id="at-a-glance">Professional Pressure Sprayers at a Glance</h2>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            <th>Product</th>
-            <th>Capacity</th>
-            <th>Pump Type</th>
-            <th>Best For</th>
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-              <td>{p.tableCells[3]}</td>
-            </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      <h2 id={products[0].anchorId}>{products[0].h2Text}</h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Solo 473D is the sprayer you will find in the back of most
-        professional pest control vans across the UK and Europe.
-        German-engineered with a chemical-resistant diaphragm pump, it delivers
-        consistent pressure throughout the entire tank — no fading spray pattern
-        as the tank empties. The 10L capacity is the sweet spot for most
-        treatments: large enough to cover a full building perimeter without
-        refilling, light enough to carry comfortably for extended periods.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The diaphragm pump is the critical advantage. Unlike piston pumps, the
-        diaphragm isolates the pesticide from the pump mechanism entirely. This
-        means you can run wettable powders, emulsifiable concentrates, and
-        abrasive formulations without degrading the seals. For landlords
-        applying residual insecticides such as Demand CS or K-Othrine, this is
-        the sprayer that will last years of regular use without seal
-        failure.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Build quality is excellent — the tank is translucent for easy fill-level
-        monitoring, the padded straps distribute weight evenly, and the lance
-        features a pressure lock to maintain consistent output. If you buy one
-        sprayer and want it to last, this is the one.{" "}
-      </p>{" "}
-      <h2 id={products[1].anchorId}>{products[1].h2Text}</h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The upgraded Solo with 90psi maximum pressure — significantly higher
-        than standard knapsack sprayers — for applications where penetration
-        matters. The higher pressure forces insecticide deeper into cracks,
-        crevices, weep holes, and rough masonry surfaces where pests harbour.
-        For crack and crevice work around skirting boards, pipe entry points,
-        and external wall junctions, the additional pressure delivers chemical
-        exactly where it needs to go.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Like the 473D, it uses a diaphragm pump for full chemical isolation. The
-        higher pressure rating makes it particularly effective for perimeter
-        treatments on rough surfaces — rendered walls, brick, and concrete —
-        where lower-pressure sprayers leave patchy coverage. The build quality
-        matches the 473D, with the added benefit of a pressure gauge so you can
-        dial in exactly the right output for each application.{" "}
-      </p>{" "}
-      <h2 id={products[2].anchorId}>{products[2].h2Text}</h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Solo 425 steps up to 15L capacity for operators who need to cover
-        large external areas without refilling. The larger tank is ideal for
-        perimeter treatments on commercial properties, car parks, warehouse
-        exteriors, and large garden boundaries. The piston pump delivers up to
-        90psi — more than sufficient for most external applications.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The trade-off versus the diaphragm models is seal longevity with harsh
-        chemicals. Piston pump seals make direct contact with the chemical
-        solution, so they degrade faster when used with abrasive formulations or
-        wettable powders. For water-based ready-to-use solutions and standard
-        emulsifiable concentrates, the piston pump is perfectly adequate and the
-        425 represents excellent value. If you are primarily treating external
-        perimeters with standard insecticide, the extra 5L capacity saves time
-        on larger properties.{" "}
-      </p>{" "}
-      <h2 id={products[3].anchorId}>{products[3].h2Text}</h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Matabi Super Green is the budget pick with genuine professional
-        credentials. European-manufactured (not a generic import), it features a
-        fibreglass lance that resists corrosion from acidic and alkaline
-        formulations, a 3-position pressure regulator for coarse, medium, and
-        fine spray patterns, and padded shoulder straps for comfortable extended
-        use.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        With a strong reputation among grounds maintenance teams, the Matabi has
-        proven its durability with chemical-resistant seals that hold up to
-        regular pesticide use. The 12L capacity sits between the Solo 10L and
-        15L models, offering a good balance of capacity and weight.{" "}
-      </p>{" "}
-      <h2 id={products[4].anchorId}>{products[4].h2Text}</h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Oregon 20L is the maximum-capacity option for operators covering
-        very large areas. At 20L, a single fill treats extensive commercial
-        perimeters, warehouse exteriors, garden boundaries, and open-air storage
-        areas without stopping to refill. The backpack design distributes the
-        significant weight (20kg when full) across the shoulders and lower
-        back.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The trade-off is weight and precision. At 20kg fully loaded, this
-        sprayer is noticeably heavier than the 10L models, and the larger tank
-        makes it less manoeuvrable for indoor or tight-space work. It excels at
-        high-volume external applications — if you are treating a large
-        commercial property boundary or a multi-building site, the Oregon saves
-        significant refill time. For standard residential perimeter work, the
-        10–12L models above are more practical.{" "}
-      </p>{" "}
+        A knapsack sprayer is a tank, a pump and a lance. It is sold freely and
+        does nothing on its own. What goes in it is where the law sits, and two
+        of the five listings here cannot agree with themselves on how much it
+        holds.
+      </p>
+
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You will be spraying for someone else, or were born after 1964.</strong>{" "}
+            HSE&rsquo;s certificate rule for pesticides —{" "}
+            <a href="#legal" className="underline">
+              who may spray
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You have a product marked for professional use.</strong>{" "}
+            HSE says the general public must not use it, in any sprayer —{" "}
+            <a href="#legal" className="underline">
+              who may spray
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You are treating one room or one nest.</strong> A 10 to 20
+            litre tank on your back is the wrong tool —{" "}
+            <a href="#situation" className="underline">
+              is a knapsack right
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want a diaphragm pump and a pressure figure the listing states.</strong>{" "}
+            Two here —{" "}
+            <a href="#solo-473d" className="underline">
+              the Solo 473D
+            </a>{" "}
+            and{" "}
+            <a href="#solo-90psi" className="underline">
+              the Solo 90psi
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want the largest tank.</strong>{" "}
+            <a href="#oregon" className="underline">
+              The Oregon
+            </a>{" "}
+            is listed at 20 litres, with no pump type or pressure stated.
+          </li>
+        </ul>
+      </div>
+
       <div className="not-prose">
-        {" "}
-        <StatCallout
-          value="10x"
-          label="More coverage per hour compared to trigger spray bottles — a 10L knapsack treats an entire building perimeter in minutes"
-        />{" "}
-      </div>{" "}
-      <h2 id="piston-vs-diaphragm">
-        Piston vs Diaphragm Pump: Which Do You Need?
-      </h2>{" "}
+        <Callout type="warning">
+          <p>
+            A sprayer bought freely does not change what its contents allow.
+            The label on the product you put in the tank decides who may apply
+            it, where, and with what protection — the sprayer&rsquo;s listing
+            says nothing about that and neither does this page.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">Is a Knapsack the Right Tool?</h2>
       <p>
-        {" "}
-        This is the most important decision when choosing a professional sprayer
-        for pest control. The pump type determines what chemicals you can safely
-        use and how long the sprayer will last.{" "}
-      </p>{" "}
-      <h3>Diaphragm Pumps (Solo 473D, Solo 90psi)</h3>{" "}
+        These are 10 to 20 litre tanks worn on the back, and every listing here
+        sells them for gardens, allotments, orchards and grounds. The Matabi
+        listing scopes its own tank to gardens of up to 400 square metres. A
+        single room, a wasp nest or a skirting run is a hand sprayer&rsquo;s
+        job, and the products on our{" "}
+        <a href="/best/flea-spray-for-home">flea spray</a> and{" "}
+        <a href="/best/ant-killers">ant killer</a> pages arrive in their own
+        containers.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">Who May Spray</h2>
       <p>
-        {" "}
-        A diaphragm pump uses a flexible membrane to create pressure. The
-        chemical solution never contacts the pump mechanism — it sits entirely
-        within the tank and hose. This means:{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          <strong>Full chemical compatibility:</strong> Wettable powders,
-          emulsifiable concentrates, suspension concentrates, and abrasive
-          formulations can all be used without damaging the pump.
-        </li>{" "}
-        <li>
-          <strong>Longer seal life:</strong> Because the seals never contact the
-          chemical, they last significantly longer — often years of regular
-          professional use.
-        </li>{" "}
-        <li>
-          <strong>Lower maintenance:</strong> Fewer seal replacements, less
-          downtime.
-        </li>{" "}
-        <li>
-          <strong>Professional standard:</strong> Every BPCA-certified pest
-          controller uses diaphragm pump sprayers for insecticide application.
-        </li>{" "}
-      </ul>{" "}
-      <h3>Piston Pumps (Solo 425, Matabi, Oregon)</h3>{" "}
+        HSE&rsquo;s rule for pesticide sprayers turns on birth date and on
+        whether the spraying is a service:{" "}
+        <em>
+          &ldquo;If you were born after 31 December 1964 or you will be spraying
+          as a commercial service, you must hold the appropriate Certificate of
+          Competence National Proficiency Tests Council (NPTC) or Scottish
+          Skills Testing Service (SSTS), unless you are under the direct and
+          personal supervision of a person who holds such a
+          certificate.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hseSprayer} rel="nofollow">
+          HSE
+        </a>
+        ). For those born before that date and working on their own land, HSE
+        says you{" "}
+        <em>
+          &ldquo;need to be able to demonstrate competence and show proof of
+          appropriate training.&rdquo;
+        </em>
+      </p>
       <p>
-        {" "}
-        A piston pump draws the chemical solution directly through the pump
-        mechanism. This makes them:{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          <strong>Simpler and cheaper:</strong> Fewer moving parts, lower
-          manufacturing cost, lower purchase price.
-        </li>{" "}
-        <li>
-          <strong>Adequate for standard formulations:</strong> Water-based
-          ready-to-use solutions and standard emulsifiable concentrates are fine
-          for piston pumps.
-        </li>{" "}
-        <li>
-          <strong>Seal degradation:</strong> Harsh chemicals, wettable powders,
-          and abrasive formulations will degrade piston seals faster, requiring
-          more frequent replacement.
-        </li>{" "}
-        <li>
-          <strong>Higher maintenance:</strong> Expect to replace seals every 1–2
-          years with regular chemical use, versus 3–5+ years for diaphragm
-          pumps.
-        </li>{" "}
-      </ul>{" "}
-      <Callout type="info">
-        {" "}
-        <p>
-          If you are using professional insecticides such as Demand CS,
-          K-Othrine, or any wettable powder formulation, invest in a diaphragm
-          pump sprayer. The seal replacement costs on a piston pump will exceed
-          the price difference within the first year of regular use.
-        </p>{" "}
-      </Callout>{" "}
-      <h2 id="what-can-you-treat">
-        What Can You Treat with a Pressure Sprayer?
-      </h2>{" "}
+        The rule reaches the sale as well as the spraying. HSE&rsquo;s
+        agriculture guidance states that{" "}
+        <em>
+          &ldquo;Anyone who purchases a pesticide product must ensure that the
+          end user holds a specified certificate.&rdquo;
+        </em>{" "}
+        and tells buyers to{" "}
+        <em>
+          &ldquo;Look for the MAFF, MAPP or HSE approval number on the label on
+          the container.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hsePesticides} rel="nofollow">
+          HSE
+        </a>
+        ). The sprayers on this page are sold to anyone; the pesticides that
+        go in them are not, and a landlord buying both should read that as the
+        honest position.
+      </p>
       <p>
-        {" "}
-        A professional knapsack sprayer is the delivery tool for a wide range of
-        pest control applications:{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          <strong>Perimeter applications:</strong> Spraying a residual
-          insecticide band around the external base of a building to create a
-          chemical barrier against crawling insects — ants, cockroaches,
-          spiders, and other ground-level pests.
-        </li>{" "}
-        <li>
-          <strong>Surface residual treatments:</strong> Applying insecticide to
-          walls, floors, skirting boards, and other surfaces where pests travel.
-          The sprayer delivers an even, measured dose that dries to leave a
-          residual active ingredient on the surface.
-        </li>{" "}
-        <li>
-          <strong>Crack and crevice work:</strong> Using a fine nozzle at higher
-          pressure to inject insecticide into gaps around pipes, cable entry
-          points, weep holes, expansion joints, and other harbourage points.
-        </li>{" "}
-        <li>
-          <strong>External wall treatments:</strong> Treating rendered, brick,
-          or concrete walls to deter climbing insects and spiders. The pressure
-          sprayer ensures even coverage across rough, porous surfaces.
-        </li>{" "}
-      </ul>{" "}
-      <h2 id="safety">Safety and PPE Requirements</h2>{" "}
-      <Callout type="warning">
-        {" "}
-        <p>
-          All pesticide application requires appropriate personal protective
-          equipment. This is a legal requirement under COSHH regulations, not
-          optional guidance.
-        </p>{" "}
-      </Callout>{" "}
-      <h3>Required PPE for Sprayer Application</h3>{" "}
-      <ul>
-        {" "}
-        <li>
-          <strong>Respiratory protection:</strong> A half-face respirator with
-          P3 or A2P3 filters when spraying any insecticide. A standard dust mask
-          is not sufficient for chemical spray applications.
-        </li>{" "}
-        <li>
-          <strong>Eye protection:</strong> Chemical-resistant goggles (not
-          safety glasses) that seal around the eyes to prevent spray drift
-          contact.
-        </li>{" "}
-        <li>
-          <strong>Hand protection:</strong> Chemical-resistant nitrile or butyl
-          rubber gloves. Standard latex or vinyl gloves are not adequate for
-          prolonged pesticide handling.
-        </li>{" "}
-        <li>
-          <strong>Body protection:</strong> Disposable coveralls or a dedicated
-          chemical-resistant suit. Do not spray in everyday clothing —
-          insecticide residue on clothing poses a dermal exposure risk.
-        </li>{" "}
-      </ul>{" "}
-      <h3>Chemical Storage and Handling</h3>{" "}
+        Insecticides used against pests in buildings are biocides rather than
+        plant protection products, and HSE&rsquo;s rule there is the product
+        split:{" "}
+        <em>
+          &ldquo;members of the general public must not use professional or
+          industrial use products&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hseBiocides} rel="nofollow">
+          HSE
+        </a>
+        ). A sprayer that can take a professional-use concentrate does not
+        make its owner a professional user.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where a Sprayer Does Not Help</h2>
       <p>
-        {" "}
-        Store all pesticide products in their original containers in a locked,
-        ventilated area away from food, children, and pets. Never decant
-        pesticide into unmarked containers. Keep Safety Data Sheets (SDS) for
-        every product on site and accessible.{" "}
-      </p>{" "}
-      <h3>Post-Treatment Sprayer Care</h3>{" "}
+        <strong>When the listing cannot tell you what you are buying.</strong>{" "}
+        The Solo 473D is listed as 10 litre in its title and 12 litre in its
+        feature text. The Matabi is listed as 12L in its title and 16 L in its
+        detail table. This page reports both figures for each and resolves
+        neither; buy on the basis that the listing is uncertain.
+      </p>
       <p>
-        {" "}
-        Triple rinse the sprayer after every use. Fill the tank one-third full
-        with clean water, pressurise, and spray through the lance and nozzle to
-        flush the entire system. Repeat three times. This removes chemical
-        residue from the tank, hose, lance, and nozzle — preventing corrosion,
-        blockages, and cross-contamination between treatments. Store with the
-        pressure valve open and the lid loosened to allow ventilation.{" "}
-      </p>{" "}
-      <h2 id="buying-guide">Buying Guide: Choosing the Right Sprayer</h2>{" "}
-      <h3>Pump Type</h3>{" "}
+        <strong>Where the listing states no pump or no pressure.</strong> The
+        Oregon lists neither; the Matabi lists a three-position regulator and no
+        pump type. A pressure a listing does not state is a pressure this page
+        does not state.
+      </p>
       <p>
-        {" "}
-        Diaphragm for professional insecticide work, piston for general-purpose
-        and water-based solutions. See the{" "}
-        <a href="#piston-vs-diaphragm">comparison above</a> for the full
-        breakdown.{" "}
-      </p>{" "}
-      <h3>Tank Material</h3>{" "}
+        <strong>As a substitute for the product label.</strong> Nothing about
+        the tank changes what the pesticide label permits — the area, the dose,
+        the protection, or who may apply it.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Tank capacity as listed</h3>
       <p>
-        {" "}
-        The tank must be chemical-resistant — typically high-density
-        polyethylene (HDPE). Cheap sprayers use thinner plastics that can become
-        brittle and crack after repeated exposure to solvents and concentrates.
-        All five products above use chemical-grade tank materials, but be
-        cautious with unbranded budget alternatives.{" "}
-      </p>{" "}
-      <h3>Pressure Rating</h3>{" "}
+        From 10 litres to 20. A larger tank is more weight on your back for
+        longer; the Solo 425 is listed at 4.49 kg empty and the Oregon at 3.93
+        kg. Buy for the area you actually treat in one session.
+      </p>
+      <h3>2. Pump type as listed</h3>
       <p>
-        {" "}
-        For standard surface residual work, 40–60psi is sufficient. For crack
-        and crevice applications on rough surfaces, 60–90psi delivers better
-        penetration. The Solo 90psi model is the top choice for operators who
-        need both fine surface work and high-pressure penetration from a single
-        unit.{" "}
-      </p>{" "}
-      <h3>Nozzle Options</h3>{" "}
+        Three listings state a pump type: diaphragm on both 10 litre Solos,
+        piston on the Solo 425. Two state none. The comparison table says which,
+        and says &ldquo;not stated&rdquo; where the listing is silent.
+      </p>
+      <h3>3. Pressure as listed</h3>
       <p>
-        {" "}
-        A good sprayer ships with multiple nozzle types. At minimum, you need a
-        flat fan nozzle for surface treatments and a cone nozzle for targeted
-        applications. Adjustable nozzles that switch between patterns are
-        convenient but often compromise spray quality — dedicated nozzles for
-        each application give better results.{" "}
-      </p>{" "}
-      <h3>Ease of Cleaning</h3>{" "}
-      <p>
-        {" "}
-        Wide tank openings make filling and rinsing easier. Translucent tanks
-        allow you to see the fill level and confirm the tank is clean after
-        rinsing. Removable filters at the tank inlet and nozzle prevent
-        blockages from undissolved concentrate.{" "}
-      </p>{" "}
-      <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      {faqs.map((f) => (
-        <div key={f.q}>
-          <h3>{f.q}</h3>
-          <p>{f.a}</p>
+        4 bar on the Solo 473D, 4 bar / 90 psi on the Solo 90psi, up to 90 psi
+        on the Solo 425. The pesticide label, not the sprayer, decides what
+        pressure the product should be applied at.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>
+            {
+              [
+                "A diaphragm-pump knapsack listed at 4 bar with a pressure gauge, a 50 cm tube and 3.9 kg empty. The listing's title says 10 litre and its feature text says 12 litre; both are on the card because both are on the listing.",
+                "A 10 litre diaphragm-pump sprayer listed at 4 bar / 90 psi with a 50 cm lance and a UV-resistant plastic container, at 4.2 kilograms. The one listing here whose capacity, pump and pressure all agree with each other.",
+                "A piston-pump sprayer listed at 4 gallons, up to 90 psi, with four nozzles, a 20-inch wand and a 48-inch hose, made in the USA. The listing gives no litre figure; the award label is the site's and is unchanged.",
+                "A 12 litre sprayer, by its title and text, with a fibreglass lance, four nozzles and a three-position regulator; its detail table says 16 L. Pump type is not stated. The listing scopes it to gardens of up to 400 square metres.",
+                "A 20 litre sprayer with a lance and hose of about two metres, four nozzles and a spare seal kit, listed for pesticide, lawn feed, weed and moss killer. The listing states no pump type and no pressure.",
+              ][i]
+            }
+          </p>
         </div>
       ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If a Sprayer Is Not the Answer</h2>
       <p>
-        {" "}
-        For treating large open spaces where a sprayer cannot reach, pair with a{" "}
-        <a
-          href="/best/professional-ulv-foggers"
-          className="text-green-600 hover:underline"
-        >
-          professional ULV fogger
-        </a>
-        .{" "}
-      </p>{" "}
+        <strong>Use the product&rsquo;s own container.</strong> Most consumer
+        insecticides arrive ready to use. Our{" "}
+        <a href="/best/cockroach-killers">cockroach killers</a> and{" "}
+        <a href="/best/flea-spray-for-home">flea spray</a> pages compare them.
+      </p>
       <p>
-        {" "}
-        Also relevant for landlords and property managers: our guide to{" "}
-        <Link
-          href="/best/awaabs-law-damp-mould-equipment"
-          className="text-green-600 hover:underline"
-        >
-          Awaab&apos;s Law damp and mould compliance equipment
-        </Link>
-        .{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Need Professional Pest Control?"
-          subtext="For large-scale infestations or restricted-use pesticides, find a BPCA-certified pest control professional near you"
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-3">
-          Related product guides for pest control
-        </p>{" "}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          {" "}
-          <a
-            href="/best/rat-poison"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            {" "}
-            Best Rat Poison UK →{" "}
-          </a>{" "}
-          <a
-            href="/guides/how-to-get-rid-of-rats"
-            className="inline-block px-6 py-2.5 bg-gray-700 hover:bg-gray-800 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            {" "}
-            How to Get Rid of Rats →{" "}
-          </a>{" "}
-        </div>{" "}
-      </div>{" "}
+        <strong>Bait instead of spraying.</strong> For ants and cockroaches the
+        product class is different — see our{" "}
+        <a href="/best/ant-killers">ant killers</a> page.
+      </p>
+      <p>
+        <strong>Have it applied by a certificate holder.</strong> Where the
+        product you need is professional-use only, that is the arrangement
+        HSE&rsquo;s rule describes.
+      </p>
+
+      {/* Using them */}
+      <h2 id="using">Using One</h2>
+      <ol>
+        <li>
+          <strong>Read the label on the product, not the sprayer.</strong> Dose,
+          area, protection and who may apply it are all there and nowhere else.
+        </li>
+        <li>
+          <strong>Check the approval number.</strong> HSE&rsquo;s own
+          instruction is to look for the MAFF, MAPP or HSE number on the
+          container.
+        </li>
+        <li>
+          <strong>Fill by the listing figure you have least reason to doubt.</strong>{" "}
+          Where a listing gives two capacities, the smaller one is the safer
+          basis for a dose calculation.
+        </li>
+        <li>
+          <strong>Set pressure by the product label.</strong> The sprayer&rsquo;s
+          maximum is not a recommendation.
+        </li>
+        <li>
+          <strong>Rinse and store as the label says.</strong> HSE tells users
+          to keep pesticides in their original containers with the approved
+          product labels; a sprayer left full is a container without one.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">Sprayers Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing gives two figures, both are shown; where it gives none, the
+        cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Capacity, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Pump and pressure, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <FindProviderCTA
+        heading="A job that needs a certificate holder?"
+        subtext="Where the product is professional-use only, compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

@@ -113,17 +113,17 @@ const products: ProductRecord[] = [
     asin: "B017TETOE2",
     rank: 2,
     cardName: "Aspectek Professional 30W Electronic Insect Killer",
-    cardLabel: "Best Value",
+    cardLabel: "30W Grid Zapper, Mesh Screen",
     features: [
       "Listed as 30W with two UV bulbs and a high-voltage metal grid behind a mesh screen",
       "Target species listed as Fly, Mosquito, Wasp; metal body; 28 x 10 x 39.5 cm",
       "Listed as hung by chain or stood on a surface",
       "The maker's own caveat: not every mosquito will be caught",
     ],
-    tableCells: ["Aspectek Professional 30W", "Grid zapper; 30W; 2 UV bulbs; mesh screen, as listed", "Best Value"],
-    h2Label: "Best Value",
+    tableCells: ["Aspectek Professional 30W", "Grid zapper; 30W; 2 UV bulbs; mesh screen, as listed", "30W Grid Zapper, Mesh Screen"],
+    h2Label: "30W Grid Zapper, Mesh Screen",
     h2Name: "Aspectek Professional 30W",
-    tocLabel: "Best Value",
+    tocLabel: "30W Grid Zapper, Mesh Screen",
     tocName: "Aspectek Professional 30W",
   },
   {
@@ -149,17 +149,17 @@ const products: ProductRecord[] = [
     asin: "B086DK71VX",
     rank: 4,
     cardName: "Aspectek Upgraded 20W Bug Zapper",
-    cardLabel: "Best Value",
+    cardLabel: "20W Grid Zapper, Indoor and Covered Outdoor",
     features: [
       "Listed as 20W, dual-sided, with 2 bonus UV bulbs",
       "Listed for indoor and covered outdoor use — garages, basements, patios",
       "Target species listed as Fly, Mosquito, Moth, Wasp; plastic; 1.82kg",
       "Same listed dimensions as the 30W Aspectek: 28 x 10 x 39.5 cm",
     ],
-    tableCells: ["Aspectek Upgraded 20W", "Grid zapper; 20W; dual-sided; indoor and covered outdoor, as listed", "Best Value"],
-    h2Label: "Best Value",
+    tableCells: ["Aspectek Upgraded 20W", "Grid zapper; 20W; dual-sided; indoor and covered outdoor, as listed", "20W Grid Zapper, Indoor and Covered Outdoor"],
+    h2Label: "20W Grid Zapper, Indoor and Covered Outdoor",
     h2Name: "Aspectek Upgraded 20W Bug Zapper",
-    tocLabel: "Best Value",
+    tocLabel: "20W Grid Zapper, Indoor and Covered Outdoor",
     tocName: "Aspectek Upgraded 20W Bug Zapper",
   },
 ];
@@ -179,7 +179,7 @@ export default function BestFlyKillerIndoorPage() {
   return (
     <GuideLayout
       title="Best Indoor Fly Killer UK 2026: Electric & Sticky Traps for Home"
-      subtitle="Our pick of the most effective indoor fly killers — electric UV zappers, sticky traps, and window catchers compared"
+      subtitle="Indoor fly killers — electric UV zappers, sticky traps, and window catchers compared"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}

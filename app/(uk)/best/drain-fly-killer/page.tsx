@@ -193,7 +193,7 @@ export default function BestDrainFlyKillerPage() {
   return (
     <GuideLayout
       title="Best Drain Fly Killer UK 2026: Get Rid of Drain Flies Fast"
-      subtitle="The most effective drain fly killers, gels and sprays for UK kitchens and bathrooms — and which of them reaches the drain the flies are breeding in"
+      subtitle="Drain fly killers, gels and sprays for UK kitchens and bathrooms — and which of them reaches the drain the flies are breeding in"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}

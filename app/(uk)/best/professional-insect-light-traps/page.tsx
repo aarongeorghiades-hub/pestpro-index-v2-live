@@ -3,65 +3,64 @@ import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S68 R3 — ROLLOUT REBUILD to the R8 pattern. Title and H1 byte-unchanged. Award
+// labels, rank numerals, anchor ids and card order are UNCHANGED. The h2s held
+// descriptors — "Aluminium Grid", "Compact Commercial Unit", "30W UV", "Commercial &
+// Residential" — not awards; under Law 189 each takes the award its card already
+// shows, in this route's layout. Card 4's NAME follows its fetched title (S50-H):
+// "Upgraded" and "Commercial & Residential" are not on the listing, "Heavy Duty" and
+// "Indoor and Covered Outdoor" are.
+//
+// THE FAQ IS ONE ARRAY (Law 190). It had four visible questions and one schema entry.
+// Each answer is a list of segments — text, or an internal link — so the visible block
+// renders a real <Link> and the FAQPage text is DERIVED from the same segments by
+// joining them. There is no second copy of any answer.
+//
+// THE DESCRIPTION IS REWRITTEN. It said "institutional-grade"; that is nobody's
+// listing and nobody's source.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Commercial Insect Light Traps UK (2026)",
     description:
-      "Professional UV insect light traps for restaurants, warehouses and offices. Institutional-grade fly killers from Insect-O-Cutor & Aspectek.",
+      "Electric grid insect light traps for commercial premises: what extension guidance says about placement and fragments, and four compared as listed.",
     alternates: {
-      canonical:
-        "https://pestproindex.com/best/professional-insect-light-traps",
+      canonical: "https://pestproindex.com/best/professional-insect-light-traps",
     },
     openGraph: {
       title: "Best Commercial Insect Light Traps UK (2026)",
       description:
-        "Professional UV insect light traps for restaurants, warehouses and offices. Institutional-grade fly killers from Insect-O-Cutor & Aspectek.",
+        "Electric grid insect light traps for commercial premises: what extension guidance says about placement and fragments, and four compared as listed.",
       url: "https://pestproindex.com/best/professional-insect-light-traps",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Best Commercial Insect Light Traps UK (2026)",
   description:
-    "Professional UV insect light traps for restaurants, warehouses and offices. Institutional-grade fly killers from Insect-O-Cutor & Aspectek.",
+    "Electric grid insect light traps for commercial premises: what extension guidance says about placement and fragments, and four compared as listed.",
   datePublished: "2026-04-06",
-  dateModified: "2026-04-06",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
+  dateModified: "2026-09-07",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://pestproindex.com/best/professional-insect-light-traps",
   },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -70,20 +69,16 @@ const breadcrumbSchema = {
     },
   ],
 };
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Where should I position an insect light trap?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Position ILTs near entrances, doorways, and loading bays where flying insects are most likely to enter the building. Mount at approximately two metres height and perpendicular to windows and external doors — never directly opposite a window, as natural light will overpower the UV. Crucially, the UV light should not be visible from outside the building, as this can attract more insects towards the premises rather than intercepting those already inside. In larger premises, create a perimeter of ILTs around the building entrance points, with additional units covering interior corridors and transition zones.",
-      },
-    },
-  ],
+
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194). Both bodies are kept under Law 175 at
+// ~/pp-s68r2/sources: tamu-indoor-flies and purdue-fly-control.
+const SRC = {
+  tamu: "https://agrilifeextension.tamu.edu/library/insects/indoor-flies-and-their-control/",
+  purdue: "https://extension.entm.purdue.edu/publications/E-7/E-7.html",
 };
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -94,9 +89,18 @@ type ProductRecord = {
   tableCells: string[];
   h2Label: string;
   h2Name: string;
-  tocTitle: string;
+  tocLabel: string;
+  tocName: string;
 };
 
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
+// the S45-C window. A property is asserted only where the listing states it (S52-E,
+// S50-H); a cell the listing does not state reads "not stated". "THE FLY KILLER YOU CAN
+// TRUST" is Insect-O-Cutor's own line and is not restated (S47-F, Law 152). Gone with
+// it: "the world's leading flying insect control brand (est. 1962)", "365nm UVA",
+// "2800V killing grid", "detachable grid" — none is on the listing it was attached to.
+// BOTH PlusZap LISTINGS STATE THE SAME DIMENSIONS, 18 x 12 x 8 cm, for the 16W and the
+// 30W; the cards report what the listings say and the table shows the two weights.
 const products: ProductRecord[] = [
   {
     anchorId: "pluszap-30w",
@@ -105,15 +109,17 @@ const products: ProductRecord[] = [
     cardName: "Insect-O-Cutor PlusZap 30W Indoor Fly Killer — Aluminium Grid",
     cardLabel: "Best Overall",
     features: [
-      "From the world's leading flying insect control brand (est. 1962)",
-      "30W professional killing grid, aluminium casing",
-      "Pre-installed UV lamps, deep catch tray",
-      "Suitable for commercial kitchens, warehouses and retail",
+      "30W, two UV bulbs pre-installed, aluminium grid, as listed",
+      "Listed for indoor use: homes, commercial workplaces, kitchens, warehouses and retail",
+      "Deep removable catch tray, as listed; hardwired cable",
+      "Target species listed as Fly, Mosquito",
+      "Listed at 18 x 12 x 8 cm and 2.1 kilograms",
     ],
-    tableCells: ["Insect-O-Cutor PlusZap 30W", "30W", "Best Overall"],
+    tableCells: ["PlusZap 30W", "30W; fly, mosquito", "18 x 12 x 8 cm, 2.1 kg", "Best Overall"],
     h2Label: "#1 Insect-O-Cutor PlusZap 30W Indoor Fly Killer",
-    h2Name: "Aluminium Grid",
-    tocTitle: "#1 Insect-O-Cutor PlusZap 30W",
+    h2Name: "Best Overall",
+    tocLabel: "#1 Insect-O-Cutor PlusZap 30W",
+    tocName: "Best Overall",
   },
   {
     anchorId: "pluszap-16w",
@@ -122,98 +128,130 @@ const products: ProductRecord[] = [
     cardName: "Insect-O-Cutor PlusZap 16W — Compact Commercial Unit",
     cardLabel: "Best Compact Unit",
     features: [
-      "Compact version for offices and smaller food areas",
-      "Same professional aluminium construction as 30W",
-      "Ideal for food preparation areas and service counters",
-      "16W — lower running costs for smaller spaces",
+      "16W, two UV bulbs pre-installed, aluminium grid, as listed",
+      "Listed for indoor use: homes, commercial workplaces, kitchens, warehouses and retail",
+      "Deep removable catch tray, as listed; hardwired cable",
+      "Target species listed as Fly, Mosquito",
+      "Listed at 18 x 12 x 8 cm and 1.6 kilograms — the same dimensions the 30W lists",
     ],
-    tableCells: ["Insect-O-Cutor PlusZap 16W", "16W", "Compact Commercial"],
+    tableCells: ["PlusZap 16W", "16W; fly, mosquito", "18 x 12 x 8 cm, 1.6 kg", "Best Compact Unit"],
     h2Label: "#2 Insect-O-Cutor PlusZap 16W",
-    h2Name: "Compact Commercial Unit",
-    tocTitle: "#2 Insect-O-Cutor PlusZap 16W",
+    h2Name: "Best Compact Unit",
+    tocLabel: "#2 Insect-O-Cutor PlusZap 16W",
+    tocName: "Best Compact Unit",
   },
   {
     anchorId: "aspectek-30w",
     asin: "B017TETOE2",
     rank: 3,
-    cardName:
-      "Aspectek Professional Electronic Insect Killer — 30W UV (UK Plug)",
+    cardName: "Aspectek Professional Electronic Insect Killer — 30W UV (UK Plug)",
     cardLabel: "Best Budget",
     features: [
-      "Long-established indoor electronic insect killer",
-      "30W UV bulbs, powerful killing grid, washable tray",
-      "— proven commercial and home use",
-      "Strong value proposition for cost-conscious facilities managers",
+      "30W, two UV bulbs, metal casing, as listed",
+      "Mesh screen over the grid, as listed",
+      "Listed for home and commercial use, indoors; hangs by chain or stands",
+      "Target species listed as Fly, Mosquito, Wasp",
+      "Listed at 28 x 10 x 39.5 cm; the listing itself notes that not every mosquito reaches the grid",
     ],
-    tableCells: ["Aspectek 30W Electronic Insect Killer", "30W", "Best Budget"],
+    tableCells: ["Aspectek 30W", "30W; fly, mosquito, wasp", "28 x 10 x 39.5 cm", "Best Budget"],
     h2Label: "#3 Aspectek Professional Electronic Insect Killer",
-    h2Name: "30W UV",
-    tocTitle: "#3 Aspectek 30W Electronic Insect Killer",
+    h2Name: "Best Budget",
+    tocLabel: "#3 Aspectek 30W Electronic Insect Killer",
+    tocName: "Best Budget",
   },
   {
     anchorId: "aspectek-20w",
     asin: "B086DK71VX",
     rank: 4,
-    cardName:
-      "Aspectek Upgraded 20W Electronic Bug Zapper — Commercial & Residential",
+    cardName: "Aspectek 20W Heavy Duty Bug Zapper — Indoor and Covered Outdoor",
     cardLabel: "Best Dual-Use Unit",
     features: [
-      "365nm UVA bulbs for optimal insect attraction",
-      "2800V killing grid, protective cage design",
-      "Detachable grid for easy bulb replacement",
-      "Suitable for restaurants, offices, warehouses and garages",
+      "20W, plastic casing, two spare UV bulbs included, as listed",
+      "Open dual-sided design, as listed",
+      "Listed for garages, basements, patios, BBQ areas and covered outdoor spaces — no commercial setting named",
+      "Target species listed as Fly, Mosquito, Moth, Wasp",
+      "Listed at 28 x 10 x 39.5 cm and 1.82 kilograms",
     ],
-    tableCells: ["Aspectek 20W Bug Zapper", "20W", "Budget Multi-Site"],
-    h2Label: "#4 Aspectek Upgraded 20W Electronic Bug Zapper",
-    h2Name: "Commercial & Residential",
-    tocTitle: "#4 Aspectek 20W Bug Zapper",
+    tableCells: ["Aspectek 20W", "20W; fly, mosquito, moth, wasp", "28 x 10 x 39.5 cm, 1.82 kg", "Best Dual-Use Unit"],
+    h2Label: "#4 Aspectek 20W Heavy Duty Bug Zapper",
+    h2Name: "Best Dual-Use Unit",
+    tocLabel: "#4 Aspectek 20W Bug Zapper",
+    tocName: "Best Dual-Use Unit",
   },
 ];
 
+// ONE FAQ ARRAY (Law 190). An answer is a list of segments; a segment is text or an
+// internal link. The visible block maps the segments to text nodes and <Link>s; the
+// FAQPage schema maps the same segments to their text. Neither is hand-maintained
+// separately from the other.
+type Segment = string | { href: string; label: string };
+type Faq = { q: string; a: Segment[] };
+
+const faqs: Faq[] = [
+  {
+    q: "How often do UV tubes need replacing?",
+    a: [
+      "No listing on this page states a replacement interval. Texas A&M AgriLife Extension, quoted above, reports annual replacement as the usual manufacturer advice, because the UV output of a fluorescent tube falls over time. The Aspectek 20W listing includes two spare bulbs; the others do not say.",
+    ],
+  },
+  {
+    q: "Where should I position an insect light trap?",
+    a: [
+      "Texas A&M AgriLife Extension, quoted above, puts a light trap 4 to 6 feet above the floor, the typical flying height for house flies. No listing here gives a mounting height. Purdue Extension, also quoted above, puts screens and closed doors ahead of any trap: a trap by an open door is competing with the door.",
+    ],
+  },
+  {
+    q: "Can I use an electric grid ILT in a food preparation area?",
+    a: [
+      "This page holds no fetched UK source stating where a grid unit may or may not be used, so it does not say. What it can say: all four units here kill by electrocution on a grid, and Texas A&M AgriLife Extension, quoted above, cautions that high-voltage outdoor zappers scatter insect fragments indoors. Glue-board units, which hold the insect intact, are compared on our ",
+      { href: "/best/commercial-fly-killers", label: "Commercial Fly Killers" },
+      " page.",
+    ],
+  },
+];
+
+const faqText = (a: Segment[]) => a.map((s) => (typeof s === "string" ? s : s.label)).join("");
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: faqText(f.a) },
+  })),
+};
+
 const tocItems = [
-  { id: "at-a-glance", title: "At a Glance: Top 4 Commercial ILTs" },
-  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
-  { id: "grid-vs-glue", title: "Electric Grid vs Glue Board" },
-  { id: "buying-guide", title: "Buying Guide" },
-  { id: "roi", title: "ROI: ILT vs EHO Fines" },
+  { id: "situation", title: "Is a Light Trap the Right Job?" },
+  { id: "legal", title: "What This Page Can and Cannot Say" },
+  { id: "limits", title: "Where a Light Trap Does Not Help" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Light Trap Is Not the Answer" },
+  { id: "using", title: "Siting and Servicing" },
+  { id: "compared", title: "Light Traps Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
-export default function ProfessionalInsectLightTrapsPage() {
+
+export default function BestProfessionalInsectLightTrapsPage() {
   return (
     <GuideLayout
       title="Best Commercial Insect Light Traps for Businesses & Facilities Managers (2026)"
-      subtitle="Professional UV insect light traps for restaurants, warehouses, offices and commercial properties — institutional-grade fly killers from Insect-O-Cutor and Aspectek"
-      lastUpdated="April 2026"
-      readingTime="9 min"
+      subtitle="Electric grid insect light traps for commercial premises — four compared on wattage, target species and size as their listings state them, with what extension guidance says about where a trap goes"
+      lastUpdated="September 2026"
+      readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "Restaurant Pest Control: Complete UK Guide",
-          href: "/guides/restaurant-pest-control",
-        },
-        {
-          title: "Office Pest Control: Complete UK Guide",
-          href: "/guides/office-pest-control",
-        },
-        {
-          title: "Warehouse Pest Management",
-          href: "/guides/warehouse-pest-management",
-        },
-        {
-          title: "Commercial Pest Control",
-          href: "/guides/commercial-pest-control",
-        },
+        { title: "Restaurant Pest Control: Complete UK Guide", href: "/guides/restaurant-pest-control" },
+        { title: "Office Pest Control: Complete UK Guide", href: "/guides/office-pest-control" },
+        { title: "Warehouse Pest Management", href: "/guides/warehouse-pest-management" },
+        { title: "Commercial Pest Control", href: "/guides/commercial-pest-control" },
       ]}
       relatedProducts={[
-        {
-          title: "Best Commercial Fly Killers UK 2026",
-          href: "/best/commercial-fly-killers",
-        },
-        {
-          title: "Best Fly Killers Indoor UK 2026",
-          href: "/best/fly-killer-indoor",
-        },
+        { title: "Best Commercial Fly Killers UK 2026", href: "/best/commercial-fly-killers" },
+        { title: "Best Fly Killers Indoor UK 2026", href: "/best/fly-killer-indoor" },
         {
           title: "Best Commercial Insect Monitors UK 2026",
           href: "/best/commercial-insect-monitors",
@@ -222,794 +260,324 @@ export default function ProfessionalInsectLightTrapsPage() {
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />{" "}
-      {/* Affiliate disclosure */}{" "}
+      />
+
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
-          a small commission at no extra cost to you. As an Amazon Associate,
-          PestPro Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
-      {/* Intro */}{" "}
+          a small commission at no extra cost to you. This helps us keep the
+          site running and free for everyone. As an Amazon Associate, PestPro
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        If you manage a restaurant, warehouse, office building, or any
-        commercial property in the United Kingdom, an insect light trap (ILT) is
-        one of the most cost-effective pest control investments you can make.
-        Unlike chemical sprays that require staff to vacate, leave residues on
-        surfaces, and need periodic reapplication, a UV insect light trap runs
-        passively 24 hours a day, seven days a week, with no chemical contact,
-        no downtime, and no risk to food products or employees. For food
-        businesses in particular, ILTs are not a nice-to-have &mdash; they are a
-        compliance expectation. Environmental Health Officers (EHOs) routinely
-        check for functioning fly control units during inspections, and the
-        absence of adequate insect management can contribute to a reduced food
-        hygiene rating, an improvement notice, or in serious cases, prosecution
-        under the Food Safety Act 1990.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The principle behind every ILT is simple: ultraviolet light in the
-        365&ndash;368nm wavelength range is irresistible to houseflies, fruit
-        flies, drain flies, and most other flying insects commonly found in UK
-        commercial premises. The UV tubes draw insects towards the unit, where
-        they are either killed on a high-voltage electrified grid (electric grid
-        units) or captured intact on a replaceable adhesive board (glue board
-        units). Both approaches are effective, but they serve different purposes
-        &mdash; a distinction we cover in detail in the{" "}
-        <a
-          href="#grid-vs-glue"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          Electric Grid vs Glue Board
-        </a>{" "}
-        section below.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        We selected these professional-grade ILTs on published specifications
-        and manufacturer information, focusing on units that are genuinely
-        suitable for commercial kitchens, warehouses, offices, retail premises,
-        and food production facilities. Each product is described by its UV
-        output, build quality, coverage area, ease of maintenance, and value for
-        facilities managers operating on a budget. For a broader overview of
-        commercial pest management, see our companion guide:{" "}
-        <Link
-          href="/guides/commercial-pest-control"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          Commercial Pest Control
-        </Link>
-        .{" "}
-      </p>{" "}
+        An insect light trap draws a flying insect to ultraviolet light and
+        kills or holds it there. All four units on this page are the electric
+        grid kind. Two are listed for commercial workplaces; one for home and
+        commercial use; one for garages, patios and covered outdoor spaces.
+      </p>
+
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You have flies and do not know where from.</strong> The
+            extension guidance puts the source first —{" "}
+            <a href="#situation" className="underline">
+              is a light trap the right job
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You are siting one in a food area.</strong> Read what this
+            page can and cannot say before you buy —{" "}
+            <a href="#legal" className="underline">
+              what this page can and cannot say
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want a unit whose listing names commercial premises.</strong>{" "}
+            Two do —{" "}
+            <a href="#pluszap-30w" className="underline">
+              the PlusZap 30W
+            </a>{" "}
+            and{" "}
+            <a href="#pluszap-16w" className="underline">
+              the PlusZap 16W
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want the widest listed target range.</strong>{" "}
+            <a href="#aspectek-20w" className="underline">
+              The Aspectek 20W
+            </a>{" "}
+            lists fly, mosquito, moth and wasp — and no commercial setting.
+          </li>
+          <li>
+            <strong>You want a mesh screen over the grid.</strong>{" "}
+            <a href="#aspectek-30w" className="underline">
+              The Aspectek 30W
+            </a>{" "}
+            is the one listing here that states one.
+          </li>
+        </ul>
+      </div>
+
       <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
-          <p>
-            All four products on this page are{" "}
-            <strong>electric grid (zapper) units</strong>. They are ideal for
-            back-of-house areas, warehouses, corridors, loading bays, and
-            offices. If you need a unit for a food preparation or food storage
-            area, you must use a <strong>glue board ILT</strong> instead &mdash;
-            see our{" "}
-            <Link
-              href="/best/commercial-fly-killers"
-              className="text-blue-600 hover:text-blue-800 underline"
-            >
-              Commercial Fly Killers
-            </Link>{" "}
-            guide for glue board recommendations.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* At a Glance */}{" "}
-      <h2 id="at-a-glance">At a Glance: Top 4 Commercial Insect Light Traps</h2>{" "}
-      <p>
-        {" "}
-        Below is a quick comparison of our four recommended commercial ILTs.
-        Each unit has been selected for a different use case and budget, so the
-        best choice depends on your premises size, where the unit will be
-        installed, and how much you want to spend. Full details of every product
-        follow below.{" "}
-      </p>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Product</th> <th>Wattage</th> <th>Best For</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      {/* Product 1 — PlusZap 30W */}{" "}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Insect-O-Cutor PlusZap 30W is our top recommendation for any
-        business that wants a proven, institutional-grade insect light trap from
-        the brand that essentially invented the category. Insect-O-Cutor has
-        been manufacturing professional flying insect control equipment in the
-        UK since 1962, and their units are the standard specification in
-        thousands of commercial kitchens, food production facilities,
-        pharmaceutical plants, and warehouses across Britain. When an EHO walks
-        into your premises and sees an Insect-O-Cutor on the wall, they know you
-        are taking flying insect control seriously &mdash; and that recognition
-        carries weight during an inspection.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The PlusZap 30W uses two 15W UV tubes to produce a powerful ultraviolet
-        attractant output, drawing houseflies, fruit flies, and other flying
-        insects towards a high-voltage aluminium killing grid. The aluminium
-        construction is a significant advantage over the plastic-cased budget
-        units lower on this list: aluminium is corrosion-resistant, easy to
-        clean to food-safe standards, and robust enough to withstand the daily
-        rigours of a commercial kitchen or warehouse environment. The deep catch
-        tray collects dead insects below the grid, making it easy to monitor
-        catch volumes and clean the unit during routine maintenance. UV lamps
-        come pre-installed, so the unit is ready to mount and switch on
-        immediately.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Coverage is rated for rooms up to approximately 80 square metres, making
-        the PlusZap 30W suitable for medium to large commercial kitchens,
-        warehouse goods-in areas, corridors, and retail back-of-house spaces.
-        For very large warehouses or factory floors, multiple units can be
-        deployed to provide overlapping coverage. The unit is designed for wall
-        mounting and includes the necessary fixings.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The premium is justified by the build quality, the brand pedigree, and
-        the peace of mind that comes with using a unit that is specifically
-        designed and certified for professional pest management. For food
-        businesses where EHO compliance is non-negotiable, the PlusZap 30W is
-        the safest choice.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Industry-leading brand with over 60 years of professional pest control
-          heritage
-        </li>{" "}
-        <li>
-          Aluminium construction &mdash; corrosion-resistant, easy to clean,
-          built to last
-        </li>{" "}
-        <li>30W UV output with effective coverage up to 80 square metres</li>{" "}
-        <li>
-          Pre-installed lamps and deep catch tray for straightforward setup and
-          maintenance
-        </li>{" "}
-        <li>Recognised by EHOs as a professional-grade unit</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Sits at the premium end of the ILT range</li>{" "}
-        <li>
-          Electric grid type &mdash; not suitable for food preparation areas
-          (use glue board units in those zones)
-        </li>{" "}
-        <li>
-          UV tubes still require annual replacement despite high initial quality
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> The Insect-O-Cutor PlusZap 30W is the gold
-        standard for commercial insect light traps. If your business needs a
-        unit that will satisfy EHOs, last for years, and deliver reliable fly
-        control in demanding environments, this is the one to buy.{" "}
-      </p>{" "}
-      {/* Product 2 — PlusZap 16W */}{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The PlusZap 16W is the compact sibling of our Best Overall 30W model,
-        offering the same Insect-O-Cutor build quality and aluminium
-        construction in a smaller, lower-wattage package. At 16W, this unit is
-        designed for offices, smaller food preparation areas, service counters,
-        reception areas, and any commercial space where a full 30W unit would be
-        overkill. The lower wattage also translates directly to lower running
-        costs &mdash; an important consideration for businesses deploying
-        multiple units across a site.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The aluminium casing is identical in quality to the 30W model:
-        corrosion-resistant, easy to wipe clean, and designed to meet the
-        hygiene standards expected in commercial food environments. The unit
-        includes a removable catch tray and pre-installed UV lamps, keeping
-        installation simple and quick. Coverage is rated for rooms up to
-        approximately 40 square metres, which is ample for most individual
-        offices, small cafes, sandwich shops, and food preparation rooms.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The PlusZap 16W is the compact sibling of the 30W model. For facilities
-        managers equipping a multi-room site &mdash; say, a hotel with kitchens,
-        corridors, and dining areas &mdash; the 16W is the logical choice for
-        smaller rooms and office spaces, reserving the more powerful 30W units
-        for larger back-of-house areas. Deploying a mix of both models gives you
-        comprehensive coverage without overspending on wattage in rooms that do
-        not need it.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Same Insect-O-Cutor quality and aluminium construction as the 30W
-          model
-        </li>{" "}
-        <li>
-          Compact dimensions suit offices, small kitchens, and service counters
-        </li>{" "}
-        <li>16W draw &mdash; efficient for smaller spaces</li>{" "}
-        <li>Pre-installed lamps and removable catch tray</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          16W coverage (approximately 40 sqm) insufficient for large warehouses
-          or factory floors
-        </li>{" "}
-        <li>A step up in price from budget alternatives</li>{" "}
-        <li>
-          Electric grid type &mdash; not suitable for food prep areas without
-          switching to a glue board variant
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> The PlusZap 16W is the right choice when you
-        need Insect-O-Cutor quality in a smaller space. It pairs perfectly with
-        the 30W model in multi-room deployments, covering offices, service
-        areas, and smaller back-of-house rooms at a lower wattage and running
-        cost.{" "}
-      </p>{" "}
-      {/* Product 3 — Aspectek 30W */}{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Aspectek 30W Electronic Insect Killer is a long-established indoor
-        insect killer with a track record stretching back years. It delivers the
-        same 30W UV output as the Insect-O-Cutor PlusZap, making it an extremely
-        compelling option for cost-conscious facilities managers who need to
-        equip multiple rooms or locations without breaking the budget.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The unit uses two 15W UV bulbs to attract flying insects towards a
-        high-voltage killing grid. A washable collection tray sits below the
-        grid, catching dead insects and making routine maintenance
-        straightforward. The tray simply slides out, empties into a bin, and
-        rinses clean under a tap &mdash; a practical design that encourages the
-        weekly cleaning routine that all commercial ILTs require during the fly
-        season. A protective cage surrounds the grid to prevent accidental
-        contact, which is an important safety feature in busy commercial
-        environments where staff are moving quickly around the unit.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Build quality is functional rather than premium. The casing is plastic
-        rather than the aluminium construction of the Insect-O-Cutor units,
-        which means it is lighter, less corrosion-resistant, and less robust
-        under heavy commercial use. That said, for offices, small warehouses,
-        staff canteens, and other commercial spaces where the unit will be
-        wall-mounted and left to run passively, the plastic construction is
-        perfectly adequate. The unit comes with a UK plug and a hanging chain
-        for wall or ceiling mounting.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Where the Aspectek 30W truly excels is in value per watt. You could
-        equip an entire small warehouse or multi-room office with these units.
-        For businesses that need coverage across many rooms &mdash; hotels, care
-        homes, office buildings, and retail premises &mdash; this
-        volume-friendly pricing makes the Aspectek a practical choice that does
-        not compromise on UV output.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Full-size UV output in an entry-level unit</li>{" "}
-        <li>Proven in commercial and residential use</li>{" "}
-        <li>Washable collection tray simplifies weekly maintenance</li>{" "}
-        <li>Matches the UV output of the premium units</li>{" "}
-        <li>Protective cage prevents accidental grid contact</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Plastic casing &mdash; less durable than aluminium alternatives
-        </li>{" "}
-        <li>Less discreet appearance than premium commercial units</li>{" "}
-        <li>
-          No brand recognition with EHOs (functional rather than institutional)
-        </li>{" "}
-        <li>
-          Electric grid type &mdash; not suitable for food preparation areas
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> The Aspectek 30W is the best budget commercial
-        ILT on the market. It delivers genuine 30W UV performance at a price
-        that allows multi-room deployment without a significant capital outlay.
-        Ideal for offices, warehouses, care homes, and any business that
-        prioritises coverage breadth over brand prestige.{" "}
-      </p>{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Aspectek 20W Bug Zapper represents a practical option for businesses
-        that need to deploy insect light traps across multiple locations at
-        minimal cost. You could equip five rooms with these units &mdash; a
-        calculation that resonates strongly with facilities managers responsible
-        for multi-site portfolios, franchised food businesses, or large
-        warehouse complexes with numerous entry points.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The unit uses 365nm UVA bulbs, which sit within the optimal wavelength
-        range for attracting houseflies and fruit flies. The 2800V killing grid
-        is powerful enough to dispatch insects on contact, and a protective cage
-        surrounds the grid to prevent accidental contact in busy commercial
-        environments. A notable design feature is the detachable grid, which
-        simplifies UV bulb replacement &mdash; a task that must be performed
-        annually and which can be frustratingly difficult on units where the
-        grid is fixed in place.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        At 20W, the UV output is lower than the 30W units higher on this list,
-        which means a slightly reduced attractant range. For smaller rooms
-        &mdash; individual offices, garage workshops, small storage areas, and
-        loading bay corridors &mdash; the 20W output is sufficient. For larger
-        open-plan spaces, you will want to deploy multiple units or step up to a
-        30W model. The lower wattage also means lower running costs, which adds
-        up when you are operating several units across a site.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Compact and inexpensive &mdash; ideal for multi-room deployment
-        </li>{" "}
-        <li>365nm UVA bulbs in the optimal attractant wavelength range</li>{" "}
-        <li>2800V grid with protective cage for commercial safety</li>{" "}
-        <li>Detachable grid makes annual bulb replacement easy</li>{" "}
-        <li>Lower wattage draw</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>20W output &mdash; reduced coverage compared to 30W units</li>{" "}
-        <li>Plastic construction &mdash; less durable than aluminium models</li>{" "}
-        <li>Not a recognised professional brand for EHO purposes</li>{" "}
-        <li>
-          Electric grid type &mdash; not suitable for food preparation areas
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> The Aspectek 20W is the right choice when
-        budget is the primary constraint and you need broad coverage across
-        multiple rooms. It delivers genuine UV insect attraction in a practical
-        commercial package. Best suited for offices, garages, small warehouses,
-        and supplementary coverage in larger premises.{" "}
-      </p>{" "}
-      {/* Electric Grid vs Glue Board */}{" "}
-      <h2 id="grid-vs-glue">
-        Electric Grid vs Glue Board: Which Type Do You Need?
-      </h2>{" "}
-      <p>
-        {" "}
-        Understanding the difference between electric grid and glue board insect
-        light traps is critical for EHO compliance, and getting it wrong is one
-        of the most common pest control mistakes food businesses make. Here is
-        the essential distinction:{" "}
-      </p>{" "}
-      <h3>Electric Grid (Zapper) Units</h3>{" "}
-      <p>
-        {" "}
-        Electric grid ILTs attract insects with UV light and kill them on a
-        high-voltage electrified grid. The kill is instant and highly effective,
-        making these units excellent for high-volume areas where large numbers
-        of flying insects need to be eliminated quickly &mdash; warehouses,
-        loading bays, corridors, bin stores, and back-of-house spaces. However,
-        the electrocution process causes the insect body to fragment, expelling
-        bacteria, body parts, and microorganisms up to two metres from the unit.
-        For this reason,{" "}
-        <strong>
-          electric grid units must never be used in food preparation or food
-          storage areas
-        </strong>
-        .{" "}
-      </p>{" "}
-      <h3>Glue Board (Sticky Trap) Units</h3>{" "}
-      <p>
-        {" "}
-        Glue board ILTs use the same UV attractant principle, but instead of
-        electrocuting the insect, they capture it intact on a replaceable
-        adhesive board. There is no fragmentation, no bacterial dispersal, and
-        no contamination risk. Glue board units are the{" "}
-        <strong>only type that should be used in food preparation areas</strong>
-        , food storage rooms, customer-facing dining areas, and any location
-        where food is handled or consumed. They are more expensive to run
-        (boards need monthly replacement) but are essential for compliance in
-        food-facing environments.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
         <Callout type="warning">
-          {" "}
           <p>
-            <strong>Key compliance rule:</strong> All four products on this page
-            are electric grid (zapper) units. They are suitable for
-            back-of-house areas, warehouses, corridors, and offices. If you need
-            an ILT for a food preparation or food storage area, you must use a
-            glue board unit. See our{" "}
-            <Link
-              href="/best/commercial-fly-killers"
-              className="text-blue-600 hover:text-blue-800 underline"
-            >
-              Commercial Fly Killers
-            </Link>{" "}
-            guide for glue board recommendations.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      <h3>Summary: Where to Use Each Type</h3>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Location</th> <th>Electric Grid</th> <th>Glue Board</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {" "}
-          <tr>
-            {" "}
-            <td>Commercial kitchen (food prep)</td> <td>No</td>{" "}
-            <td>Yes</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Food storage room</td> <td>No</td> <td>Yes</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Restaurant dining area</td> <td>No</td> <td>Yes</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Warehouse / loading bay</td> <td>Yes</td> <td>Yes</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Back-of-house corridor</td> <td>Yes</td> <td>Yes</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Office / reception</td> <td>Yes</td> <td>Yes</td>{" "}
-          </tr>{" "}
-          <tr>
-            {" "}
-            <td>Bin store / waste area</td> <td>Yes</td> <td>Yes</td>{" "}
-          </tr>{" "}
-        </tbody>{" "}
-      </table>{" "}
-      {/* Buying Guide */}{" "}
-      <h2 id="buying-guide">
-        Buying Guide: What to Look For in a Commercial Insect Light Trap
-      </h2>{" "}
+            Every unit on this page is a mains electrical appliance with a
+            high-voltage grid. The Aspectek 30W listing states a mesh screen
+            over its grid; the other three listings do not state one.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">Is a Light Trap the Right Job?</h2>
       <p>
-        {" "}
-        Choosing the right ILT for your premises requires balancing several
-        factors. Here are the key considerations for facilities managers and
-        business owners.{" "}
-      </p>{" "}
-      <h3>UV Wavelength (365&ndash;368nm Is Optimal)</h3>{" "}
-      <p>
-        {" "}
-        The effectiveness of any insect light trap is determined primarily by
-        the wavelength of its UV output. Research into insect phototaxis has
-        established that wavelengths between 365nm and 368nm are the most
-        attractive to common UK flying pests including houseflies (
-        <em>Musca domestica</em>), fruit flies (<em>Drosophila</em>), and drain
-        flies. Budget units with UV tubes rated at 350nm or lower will have a
-        measurably shorter attractant range than units operating at
-        365&ndash;368nm. When comparing products, check the UV tube
-        specification &mdash; it is one of the most reliable indicators of
-        real-world performance.{" "}
-      </p>{" "}
-      <h3>Wattage and Coverage Area</h3>{" "}
-      <p>
-        {" "}
-        Higher wattage generally means a wider attractant range. As a rough
-        guide: 16W units cover approximately 40 square metres (suitable for
-        offices and small kitchens), 20W units cover approximately 50 square
-        metres, and 30W units cover approximately 60&ndash;80 square metres
-        (suitable for warehouses, large kitchens, and open-plan commercial
-        spaces). For very large facilities, deploy multiple units to create
-        overlapping coverage zones rather than relying on a single high-wattage
-        unit.{" "}
-      </p>{" "}
-      <h3>Aluminium vs Plastic Casing</h3>{" "}
-      <p>
-        {" "}
-        Aluminium-cased units (such as the Insect-O-Cutor PlusZap) are more
-        durable, corrosion-resistant, and easier to clean to food-safe
-        standards.{" "}
-      </p>{" "}
-      <h3>Ease of Bulb Replacement</h3>{" "}
-      <p>
-        {" "}
-        UV tubes must be replaced annually, so ease of access matters. Units
-        with detachable grids or hinged front panels make bulb replacement a
-        five-minute job. Units with fixed grids may require partial disassembly,
-        which is more time-consuming and increases the risk of damage during
-        maintenance. If you are managing a portfolio of units across a large
-        site, prioritise models that make annual tube changes quick and
-        simple.{" "}
-      </p>{" "}
-      <h3>IP Rating</h3>{" "}
-      <p>
-        {" "}
-        If the ILT will be installed in a damp environment &mdash; near kitchen
-        wash-down areas, in unheated warehouses, or close to loading bay doors
-        that are frequently open to the elements &mdash; check the IP (Ingress
-        Protection) rating. A unit rated IP44 or above provides adequate
-        protection against splashing water and is suitable for most commercial
-        kitchen and warehouse environments. Standard indoor units without an IP
-        rating should be kept in dry, sheltered locations.{" "}
-      </p>{" "}
-      {/* ROI Section */}{" "}
-      <h2 id="roi">ROI: The Cost of an ILT vs the Cost of an EHO Fine</h2>{" "}
-      <p>
-        {" "}
-        For facilities managers evaluating the business case for insect light
-        traps, the numbers make the decision straightforward. A commercial ILT
-        costs approximately 3&ndash;8 pence per day to run in electricity
-        (depending on wattage). Annual UV tube replacement adds
-        &pound;10&ndash;20 per unit. Over a 10-year period, the total cost of
-        ownership for a single commercial ILT &mdash; including purchase,
-        electricity, and annual tube replacements &mdash; is approximately
-        &pound;200&ndash;400.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <StatCallout
-          value="&pound;200 &ndash; &pound;400"
-          label="Total 10-year cost of ownership for a single commercial ILT (purchase + electricity + tube replacements)"
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Now compare that with the cost of inadequate flying insect control. A
-        single EHO improvement notice typically requires immediate remedial
-        action, which may include emergency pest control callouts
-        (&pound;150&ndash;500), equipment purchases under time pressure (premium
-        pricing), staff time for compliance documentation, and potential
-        temporary closure. A food hygiene rating drop from 5 to 3 has been shown
-        to reduce footfall by 10&ndash;20% in the months following publication
-        &mdash; a revenue impact that dwarfs the cost of a fly killer many times
-        over. In the most serious cases, prosecution under the Food Safety Act
-        can result in fines of up to &pound;20,000 per offence in the
-        Magistrates Court.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="cost">
-          {" "}
-          <p>
-            <strong>The maths is simple:</strong> A single EHO improvement
-            notice costs more in remedial action, lost revenue, and management
-            time than 10 years of operating a commercial insect light trap. For
-            food businesses, ILTs are not discretionary spending &mdash; they
-            are one of the cheapest forms of compliance insurance available.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* FAQ */} <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      <h3>How often do UV tubes need replacing?</h3>{" "}
-      <p>
-        {" "}
-        UV tubes should be replaced annually, ideally at the start of the fly
-        season in March or April. Even though the tubes still appear to glow, UV
-        output degrades by 30&ndash;50% after approximately 8,000 hours of
-        continuous use. This degradation significantly reduces the attractant
-        range of the unit, meaning flies pass by without being drawn in. Most
-        commercial pest control contracts include annual tube replacement as
-        part of the service. Replacement tubes for the units on this page
-        typically cost &pound;10&ndash;20 per pair.{" "}
-      </p>{" "}
-      <h3>Where should I position an insect light trap?</h3>{" "}
-      <p>
-        {" "}
-        Position ILTs near entrances, doorways, and loading bays where flying
-        insects are most likely to enter the building. Mount at approximately
-        two metres height and perpendicular to windows and external doors
-        &mdash; never directly opposite a window, as natural light will
-        overpower the UV. Crucially, the UV light should not be visible from
-        outside the building, as this can attract more insects towards the
-        premises rather than intercepting those already inside. In larger
-        premises, create a perimeter of ILTs around the building entrance
-        points, with additional units covering interior corridors and transition
-        zones.{" "}
-      </p>{" "}
-      <h3>Can I use an electric grid ILT in a food preparation area?</h3>{" "}
-      <p>
-        {" "}
-        No. Electric grid (zapper) ILTs must not be used in food preparation or
-        food storage areas. The electrocution process causes insect fragments
-        and bacteria to be expelled up to two metres from the unit, creating a
-        contamination risk that EHOs specifically check for. In food-facing
-        areas, you must use a glue board ILT, which captures insects intact on a
-        replaceable adhesive board with no fragmentation. See our{" "}
-        <Link
-          href="/best/commercial-fly-killers"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          Commercial Fly Killers
-        </Link>{" "}
-        guide for recommended glue board units.{" "}
-      </p>{" "}
-      <h3>What about glue board alternatives?</h3>{" "}
-      <p>
-        {" "}
-        Glue board ILTs are essential for food preparation and food storage
-        areas where electric grid units are prohibited. They capture insects
-        intact on adhesive boards, eliminating any risk of fragmentation or
-        bacterial dispersal. The main drawback is ongoing cost: glue boards need
-        replacing at least monthly (&pound;3&ndash;8 per board), adding
-        approximately &pound;36&ndash;96 per year in consumables per unit.
-        However, this cost is trivial compared to the compliance risk of using
-        an electric grid unit in a food area. For most food businesses, the
-        optimal setup is a combination of electric grid units in back-of-house
-        areas and glue board units in food-facing zones.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        For active chemical treatment alongside passive UV trapping, see our
-        guide to{" "}
-        <a
-          href="/best/professional-ulv-foggers"
-          className="text-green-600 hover:underline"
-        >
-          professional ULV foggers
+        Texas A&amp;M AgriLife Extension describes what these units do:{" "}
+        <em>
+          &ldquo;Light traps take advantage of a fly’s attraction to short
+          wavelength light (ultraviolet, or UV) to draw them to a glue board or
+          low voltage electric grid.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.tamu} rel="nofollow">
+          Texas A&amp;M AgriLife Extension
         </a>
-        .{" "}
-      </p>{" "}
+        ). And it puts the trap second to the source:{" "}
+        <em>
+          &ldquo;The key any indoor fly problem is to find and eliminate the
+          source, that is, anywhere excess moisture and organic debris may have
+          accumulated.&rdquo;
+        </em>{" "}
+        A trap catches flies that are already inside. It does not stop them
+        breeding or arriving.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">What This Page Can and Cannot Say</h2>
       <p>
-        {" "}
-        Also relevant for landlords and property managers: our guide to{" "}
-        <Link
-          href="/best/awaabs-law-damp-mould-equipment"
-          className="text-green-600 hover:underline"
-        >
-          Awaab&apos;s Law damp and mould compliance equipment
-        </Link>
-        .{" "}
-      </p>{" "}
-      {/* FindProviderCTA */}{" "}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Need Professional Flying Insect Control?"
-          subtext="Compare commercial pest control providers near you — free, no-obligation quotes"
-        />{" "}
-      </div>{" "}
-      {/* Link buttons */}{" "}
-      <div className="not-prose mt-8 flex flex-col sm:flex-row gap-4">
-        {" "}
-        <Link
-          href="/best/commercial-fly-killers"
-          className="inline-block text-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          {" "}
-          Best Commercial Fly Killers UK 2026 &rarr;{" "}
-        </Link>{" "}
-        <Link
-          href="/guides/restaurant-pest-control"
-          className="inline-block text-center px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          {" "}
-          Restaurant Pest Control Guide &rarr;{" "}
-        </Link>{" "}
-      </div>{" "}
+        This page holds no fetched UK source on where an electric grid unit may
+        or may not be installed, on food hygiene inspection, or on any
+        certification a commercial unit must carry. An earlier version of this
+        page said grid units must not be used in food preparation areas and
+        that inspectors check for it; no source was fetched for either
+        statement, and both are gone.
+      </p>
+      <p>
+        What the fetched guidance does say is about fragments. Texas A&amp;M
+        AgriLife Extension says of high-voltage outdoor zappers that they{" "}
+        <em>
+          &ldquo;should not be used indoors because they tend to scatter insect
+          fragments and can contaminate the indoors.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.tamu} rel="nofollow">
+          Texas A&amp;M AgriLife Extension
+        </a>
+        ). The units here are sold as indoor units, and this page holds no
+        source stating whether they scatter fragments; the reader siting one
+        near open food should weigh that gap rather than this page&rsquo;s
+        silence.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where a Light Trap Does Not Help</h2>
+      <p>
+        <strong>Against the source.</strong> The Texas A&amp;M line above: the
+        key is the source. A drain, a bin store or a damp void keeps producing
+        flies however many the grid takes.
+      </p>
+      <p>
+        <strong>Beside an open door.</strong> Purdue Extension states that{" "}
+        <em>
+          &ldquo;Keeping flies from entering homes involves using tight-fitting
+          window screens and closing windows and doors.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.purdue} rel="nofollow">
+          Purdue Extension
+        </a>
+        ). A trap competing with daylight through an open door is a trap losing.
+      </p>
+      <p>
+        <strong>With tired tubes.</strong> Texas A&amp;M reports that{" "}
+        <em>
+          &ldquo;Most light trap manufacturers recommend that the bulbs be
+          replaced annually because UV output of fluorescent tubes degrades over
+          time.&rdquo;
+        </em>{" "}
+        No listing here states an interval; one includes two spare bulbs.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. What setting the listing names</h3>
+      <p>
+        Both PlusZap listings name commercial workplaces, kitchens, warehouses
+        and retail. The Aspectek 30W names home and commercial use. The
+        Aspectek 20W names garages, basements, patios and covered outdoor
+        spaces, and no commercial setting at all. For a business, that is the
+        first sort.
+      </p>
+      <h3>2. Mounting height, from the guidance</h3>
+      <p>
+        Texas A&amp;M states that{" "}
+        <em>
+          &ldquo;Light traps should be installed 4 to 6 feet above the floor,
+          which is the typical flying height for house flies.&rdquo;
+        </em>{" "}
+        No listing here gives a height, so that figure is the only one on the
+        page.
+      </p>
+      <h3>3. Wattage and target species, as listed</h3>
+      <p>
+        16W, 20W and 30W, with target species from two on the PlusZaps to four
+        on the Aspectek 20W. No listing states a coverage area, and this page
+        does not invent one.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>
+            {
+              [
+                "A 30W aluminium-grid unit with two pre-installed UV bulbs and a deep removable catch tray, listed for indoor use in homes, commercial workplaces, kitchens, warehouses and retail. Target species fly and mosquito; 2.1 kilograms.",
+                "The 16W version of the same unit, with the same listed dimensions — 18 x 12 x 8 cm — and 1.6 kilograms. Same listed settings, same two target species. What the listing states as different is the wattage and the weight.",
+                "A 30W metal-cased unit with two UV bulbs and a mesh screen over the grid, listed for home and commercial use and hung by chain or stood on a surface. Its own listing notes that not every mosquito reaches the grid; it names fly, mosquito and wasp.",
+                "A 20W plastic-cased unit with an open dual-sided design and two spare bulbs, listed for garages, basements, patios, BBQ areas and covered outdoor spaces. It names fly, mosquito, moth and wasp, and no commercial setting; the name now follows the fetched title.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If a Light Trap Is Not the Answer</h2>
+      <p>
+        <strong>Hold the insect intact.</strong> Glue-board units are compared
+        on our <a href="/best/commercial-fly-killers">commercial fly killers</a>{" "}
+        page.
+      </p>
+      <p>
+        <strong>Find where they are coming from.</strong> Our{" "}
+        <a href="/best/commercial-insect-monitors">commercial insect monitors</a>{" "}
+        page covers monitoring rather than killing.
+      </p>
+      <p>
+        <strong>Screen the openings.</strong> Purdue&rsquo;s line above is
+        screens and closed doors; a trap is what you add after that.
+      </p>
+
+      {/* Using them */}
+      <h2 id="using">Siting and Servicing</h2>
+      <ol>
+        <li>
+          <strong>Deal with the source first.</strong> That is Texas
+          A&amp;M&rsquo;s key, and no unit here does it.
+        </li>
+        <li>
+          <strong>Mount at 4 to 6 feet.</strong> Texas A&amp;M&rsquo;s figure,
+          in the absence of one from any listing.
+        </li>
+        <li>
+          <strong>Keep it away from open doors and windows.</strong> Purdue puts
+          screens and closed doors ahead of any trap.
+        </li>
+        <li>
+          <strong>Empty the tray.</strong> Three listings state a removable
+          tray or washable tray.
+        </li>
+        <li>
+          <strong>Replace the tubes on a schedule.</strong> Texas A&amp;M
+          reports annual replacement as the manufacturers&rsquo; usual advice;
+          no listing here gives its own.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">Light Traps Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Wattage and target species, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Size and weight, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* FAQ — rendered from the same array the schema above is derived from */}
+      <h2 id="faq">Frequently Asked Questions</h2>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>
+            {f.a.map((s, j) =>
+              typeof s === "string" ? (
+                <span key={j}>{s}</span>
+              ) : (
+                <Link
+                  key={j}
+                  href={s.href}
+                  className="text-blue-600 hover:text-blue-800 underline"
+                >
+                  {s.label}
+                </Link>
+              ),
+            )}
+          </p>
+        </div>
+      ))}
+
+      <FindProviderCTA
+        heading="Flies you cannot trace to a source?"
+        subtext="Where the source is not obvious, compare commercial pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

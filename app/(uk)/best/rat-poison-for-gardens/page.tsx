@@ -69,7 +69,7 @@ const SRC = {
   crruPermanent:
     "https://www.thinkwildlife.org/pest-controllers-alerted-to-end-of-routine-permanent-rat-baiting-around-rural-buildings/",
   crruStations:
-    "https://www.thinkwildlife.org/implications-for-rodenticide-users-of-new-label-text-specifying-bait-station-standards/",
+    "https://thinkwildlife.org/implications-for-rodenticide-users-of-new-label-text-specifying-bait-station-standards/",
   defra:
     "https://www.gov.uk/government/publications/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms",
 };
@@ -198,7 +198,7 @@ export default function BestRatPoisonForGardensPage() {
   return (
     <GuideLayout
       title="Best Rat Poison for Gardens UK 2026"
-      subtitle="Outdoor rodenticides and weather-proof bait stations for safe, effective garden rat control"
+      subtitle="Outdoor rodenticides and weather-proof bait stations for garden rat control"
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}

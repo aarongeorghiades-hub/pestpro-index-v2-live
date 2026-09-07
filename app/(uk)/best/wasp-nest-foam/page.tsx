@@ -163,17 +163,17 @@ const products: ProductRecord[] = [
     asin: "B01FSDM1E6",
     rank: 5,
     cardName: "Zero In Wasp Nest Control Powder 300g",
-    cardLabel: "Best Twin Pack",
+    cardLabel: "Permethrin Powder Puffer, 300g",
     features: [
-      "Fetched title is a single 300g puffer; unit count listed as 1 — not a twin pack, whatever the label above says",
+      "Fetched title is a single 300g puffer; unit count listed as 1",
       "Contains permethrin, per the listing; child-resistant cap",
       "Listed with a dip tube and applicator nozzle for nest entrances, cracks and crevices",
       "Listed for roof spaces, wall cavities, sheds, garages and garden areas; best applied early morning or late evening, per the maker",
     ],
-    tableCells: ["Zero In Wasp Nest Control Powder 300g", "Powder puffer; permethrin; single 300g, as listed", "Best Twin Pack"],
-    h2Label: "Best Twin Pack",
+    tableCells: ["Zero In Wasp Nest Control Powder 300g", "Powder puffer; permethrin; single 300g, as listed", "Permethrin Powder Puffer, 300g"],
+    h2Label: "Permethrin Powder Puffer, 300g",
     h2Name: "Zero In Powder 300g",
-    tocLabel: "Best Twin Pack",
+    tocLabel: "Permethrin Powder Puffer, 300g",
     tocName: "Zero In Powder 300g",
   },
 ];
@@ -193,7 +193,7 @@ export default function BestWaspNestFoamPage() {
   return (
     <GuideLayout
       title="Best Wasp Nest Killer Foam UK 2026"
-      subtitle="Our pick of the most effective wasp nest killer foams and sprays available in the UK, with safety advice and application tips"
+      subtitle="Wasp nest killer foams and sprays available in the UK, with safety advice and application tips"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -391,7 +391,7 @@ export default function BestWaspNestFoamPage() {
                 "A 600ml trigger foam listed as reaching up to 4 metres and, per the maker, treating 4 to 7 nests, for indoor and outdoor use, with directions to apply in the late evening, wear protective clothing and mind the wind. No active substance is named on the listing; the maker's comparisons with professionals are the maker's.",
                 "A 300ml foam listed with permethrin and tetramethrin, reaching up to 2 metres, with 2-3 treatments per can, for indoor and outdoor nests, applied late evening or early morning per the maker. The same product is carded on our wasp killers page.",
                 "A 150g permethrin powder listed for use in and around the home. The brand row on the listing belongs to a reseller; the title carries the Rentokil name, and the title is what the card reads.",
-                "A single 300g permethrin puffer with a dip tube and applicator nozzle, listed for nest entrances, cracks and crevices in roof spaces, wall cavities, sheds and garages, with a child-resistant cap and early-morning or late-evening timing per the maker. The card said twin pack until this round; the listing's unit count is 1. The award label is held and referred.",
+                "A single 300g permethrin puffer with a dip tube and applicator nozzle, listed for nest entrances, cracks and crevices in roof spaces, wall cavities, sheds and garages, with a child-resistant cap and early-morning or late-evening timing per the maker. The card and its label said twin pack until S68 R2 and R3; the listing's unit count is 1.",
               ][i]
             }
           </p>

@@ -103,7 +103,7 @@ const breadcrumbSchema = {
 // RRAG guideline was fetched this round; the HSE, CRRU and Defra bodies were banked
 // at S66 R8 and are kept under Law 175.
 const SRC = {
-  rrag: "https://rrag.squarespace.com/s/2022_RRAG_RRAG-Mouse-Guideline-2022-PROOF.pdf",
+  rrag: "https://static1.squarespace.com/static/5f158ba75e2c117be4a3fc00/t/638637a4cfbdfc639f3829c3/1669740456569/2022_RRAG_RRAG+Mouse+Guideline+2022+PROOF.pdf",
   hse: "https://www.hse.gov.uk/biocides/using/rodenticides.htm",
   crru:
     "https://thinkwildlife.org/implications-for-rodenticide-users-of-new-label-text-specifying-bait-station-standards/",
@@ -284,7 +284,7 @@ export default function BestMousePoisonPage() {
   return (
     <GuideLayout
       title="Best Mouse Poison UK 2026: Strongest & Most Effective"
-      subtitle="Which active substance works against house mice, what the label legally requires of you, and five products compared on what their listings actually state"
+      subtitle="Which active substance official guidance names for house mice, what the label legally requires of you, and five products compared on what their listings actually state"
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}

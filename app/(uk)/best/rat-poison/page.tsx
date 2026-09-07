@@ -13,9 +13,9 @@ import Callout from "@/components/Callout";
 // substitution for "Best Trusted Brand", is confirmed in place; the old label appears
 // nowhere on this route.
 //
-// THE H1 READS "Strongest & Most Effective" AND THE <title> DOES NOT. Both are held by the
-// standing rule and reported. The subtitle's "Our pick of the most effective" is held
-// and reported likewise. The old page's "strongest SGAR available", "grain bait of
+// S68 R3 — THE H1's "Strongest & Most Effective" CLAUSE IS REPLACED on the PM's ruling with
+// the <title>'s own neutral clause; head keyword and every other byte kept. The subtitle's
+// "Our pick of the most effective" is deleted under the same ruling. The old page's "strongest SGAR available", "grain bait of
 // choice for many professional pest controllers", "proven, effective combination" and
 // "Trusted brand" are gone: 23 unsourced sentences deleted, none softened.
 //
@@ -76,7 +76,7 @@ const SRC = {
   crruPermanent:
     "https://www.thinkwildlife.org/pest-controllers-alerted-to-end-of-routine-permanent-rat-baiting-around-rural-buildings/",
   crruStations:
-    "https://www.thinkwildlife.org/implications-for-rodenticide-users-of-new-label-text-specifying-bait-station-standards/",
+    "https://thinkwildlife.org/implications-for-rodenticide-users-of-new-label-text-specifying-bait-station-standards/",
   defra:
     "https://www.gov.uk/government/publications/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms",
 };
@@ -160,17 +160,17 @@ const products: ProductRecord[] = [
     asin: "B07BFQ1V5L",
     rank: 4,
     cardName: "Rentokil Rodine Mouse & Rat Killer Grain Bait",
-    cardLabel: "Best Difenacoum Bait",
+    cardLabel: "Brodifacoum Grain Bait, 200g",
     features: [
-      "Active listed as brodifacoum, 0.0025% w/w — not difenacoum, whatever the label above says",
+      "Active listed as brodifacoum, 0.0025% w/w",
       "Listed as 200g of grain bait in sachets designed for lockable, tamper-resistant bait stations",
       "The maker claims a lethal dose in one feed",
       "Listing dimensions 4 x 10.5 x 18.5 cm",
     ],
-    tableCells: ["Rentokil Rodine 200g", "Grain sachets; brodifacoum 0.0025%, as listed", "Best Difenacoum Bait"],
-    h2Label: "Best Difenacoum Bait",
+    tableCells: ["Rentokil Rodine 200g", "Grain sachets; brodifacoum 0.0025%, as listed", "Brodifacoum Grain Bait, 200g"],
+    h2Label: "Brodifacoum Grain Bait, 200g",
     h2Name: "Rentokil Rodine Grain Bait",
-    tocLabel: "Best Difenacoum Bait",
+    tocLabel: "Brodifacoum Grain Bait, 200g",
     tocName: "Rentokil Rodine Grain Bait",
   },
   {
@@ -225,8 +225,8 @@ const tocItems = [
 export default function BestRatPoisonPage() {
   return (
     <GuideLayout
-      title="Best Rat Poison UK 2026: Strongest & Most Effective"
-      subtitle="Our pick of the most effective rat poisons available in the UK, from brodifacoum blocks to grain bait and paste formulations"
+      title="Best Rat Poison UK 2026: What You Can Legally Buy"
+      subtitle="Rat poisons available in the UK, from brodifacoum blocks to grain bait and paste formulations"
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -496,7 +496,7 @@ export default function BestRatPoisonPage() {
                 "Fifteen 20g wax blocks with brodifacoum at 0.0025% and an HSE registration number stated on the listing, described as ready to use in tamper-resistant bait stations in and around buildings. The maker's own advice is not to start with brodifacoum unless resistance is known or other baits have failed — carried here because it is the listing's, and it is unusual to see.",
                 "A kilogram of wholewheat grain in ten sachets, with brodifacoum stated at 0.0029%, for use indoors and outdoors per the maker. The listing's comparisons with other brands are the maker's and are not repeated. Its item form field reads Capsules; the title and bullets say grain.",
                 "A kilogram of whole-wheat sachets whose listing names no active substance, so what is in it is on the pack and not on the page you buy from. The maker says a red dye marks droppings so uptake can be seen without opening the box. The listing's own warning — an anticoagulant; if ingested call 111 — is the one health line on this page.",
-                "Two hundred grams of grain bait in sachets the listing says are designed for lockable, tamper-resistant stations, with brodifacoum at 0.0025% w/w. The award label above names difenacoum; the listing names brodifacoum. The label is held by the standing rule and the listing governs the fact.",
+                "Two hundred grams of grain bait in sachets the listing says are designed for lockable, tamper-resistant stations, with brodifacoum at 0.0025% w/w. The label carried difenacoum until S68 R3; the listing names brodifacoum, and the label now says so.",
                 "Six 10g paste sachets whose listing names no active substance and whose description refers to mice throughout, with the maker's instruction that they go in its tamper-proof stations. The claim that it was previously professional-only is the maker's history of its own product.",
                 "The one product here that arrives with somewhere to put it: 75 blocks of 20g at brodifacoum 0.0025%, listed with two lockable, tamper-resistant boxes that carry a metal rod the blocks are pre-formed to sit on, for indoor and exterior use.",
               ][i]

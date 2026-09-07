@@ -195,7 +195,7 @@ export default function BestRodentProofingPage() {
   return (
     <GuideLayout
       title="Best Rodent Proofing Products UK 2026: Mesh, Steel Wool &amp; Drain Guards"
-      subtitle="Our pick of physical rodent proofing materials for UK homes — galvanised wire mesh, stainless steel wool fill fabric, drain guards, door brush strips and proofing paste compared."
+      subtitle="Physical rodent proofing materials for UK homes — galvanised wire mesh, stainless steel wool fill fabric, drain guards, door brush strips and proofing paste compared."
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}

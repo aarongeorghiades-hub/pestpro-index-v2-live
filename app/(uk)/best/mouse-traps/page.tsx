@@ -194,7 +194,7 @@ export default function BestMouseTrapsPage() {
   return (
     <GuideLayout
       title="Best Mouse Traps UK 2026"
-      subtitle="Our pick of the most effective mouse traps available in the UK, from snap traps to humane live-catch options"
+      subtitle="Mouse traps available in the UK, from snap traps to humane live-catch options"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
