@@ -1,113 +1,75 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S68 R1 — ROLLOUT REBUILD to the R8 pattern. Title and H1 byte-unchanged. Award labels,
+// rank numerals, anchor ids and card order UNCHANGED as ruled.
+//
+// THE PROTECTED STRING "10-time Best Flea Product award winner" IS GONE, UNDER LAW 193.
+// Proved before the edit: zero occurrences in scripts/, occurrences only on this page,
+// on /best/flea-fogger and in CLAUDE.md's own list. No machinery depends on it, so it
+// fell to the claim rules — and the LISTING does not say "10-time". It says the product
+// was voted Best Flea Product (Home) by magazine readers "for 10+ years". The card now
+// carries the listing's own framing, as the maker's claim, and the numeral is corrected.
+//
+// THE FAQ BLOCK AND ITS FAQPage SCHEMA ARE REMOVED TOGETHER (Law 190). The scan showed
+// them divergent; the body now answers what they answered, from a source.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Flea Spray for Home UK 2026: Kill Fleas Fast",
     description:
-      "Our pick of the best flea sprays for the home in the UK for 2026. IGR sprays, aerosols and natural options, with application tips.",
-    alternates: {
-      canonical: "https://pestproindex.com/best/flea-spray-for-home",
-    },
+      "Five household flea sprays compared on their own listings — which name an insect growth regulator, what each says it covers, and why the pet is treated first.",
+    alternates: { canonical: "https://pestproindex.com/best/flea-spray-for-home" },
     openGraph: {
       title: "Best Flea Spray for Home UK 2026: Kill Fleas Fast",
       description:
-        "Our pick of the best flea sprays for the home in the UK for 2026. IGR sprays, aerosols and natural options, with application tips.",
+        "Five household flea sprays compared on their own listings — which name an insect growth regulator, what each says it covers, and why the pet is treated first.",
       url: "https://pestproindex.com/best/flea-spray-for-home",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Best Flea Spray for Home UK 2026: Kill Fleas Fast",
   description:
-    "Our pick of the best flea sprays for the home in the UK for 2026. IGR sprays, aerosols and natural options, with application tips.",
+    "Five household flea sprays compared on their own listings — which name an insect growth regulator, what each says it covers, and why the pet is treated first.",
   datePublished: "2026-03-30",
-  dateModified: "2026-03-30",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://pestproindex.com/best/flea-spray-for-home",
-  },
+  dateModified: "2026-09-07",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/flea-spray-for-home" },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
-      name: "Best Flea Spray for Home UK 2026",
+      name: "Best Flea Spray for Home UK 2026: Kill Fleas Fast",
       item: "https://pestproindex.com/best/flea-spray-for-home",
     },
   ],
 };
-// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
-// from this and only this, so the two surfaces cannot disagree again. The visible
-// block was authoritative where they did disagree.
-const faqs = [
-  {
-    q: "What is the best flea spray for the home in the UK?",
-    a: "Indorex Defence is widely regarded as the best flea spray for UK homes. It combines permethrin with pyriproxyfen (an IGR) that prevents flea eggs and larvae from developing for up to 12 months. This dual-action formula is the same product used by many professional pest controllers.",
-  },
-  {
-    q: "How long does flea spray take to work?",
-    a: "Flea spray kills adult fleas on contact within minutes. However, you may continue to see fleas for 2-4 weeks because flea pupae are resistant to all insecticides. When new adults emerge, they are killed by the residual spray. The IGR prevents surviving eggs or larvae from developing into new adults.",
-  },
-  {
-    q: "Is flea spray safe for pets?",
-    a: "Household flea sprays are for carpets and furnishings, not direct pet application. Remove pets from the room before spraying and do not allow them back until the spray has fully dried (1-2 hours). Once dry, the residual layer is safe for pets to walk on.",
-  },
-  {
-    q: "How often should I spray my house for fleas?",
-    a: "With a quality IGR spray like Indorex, a single application provides up to 12 months of protection. You may need to reapply after 2-3 weeks if you are still seeing significant numbers. Regular vacuuming is essential alongside spraying.",
-  },
-  {
-    q: "Should I vacuum before or after flea spraying?",
-    a: "Both. Vacuum thoroughly before spraying to remove debris and help the spray penetrate. After spraying, vacuum daily for at least 2 weeks to stimulate pupae to hatch and expose emerging adults to the residual spray.",
-  },
-  {
-    q: "Do I need to treat my whole house?",
-    a: "Yes — treat every carpeted room and any room your pet has access to. Flea eggs fall off pets as they move through the house, and larvae can crawl into adjacent rooms. Focus particularly on areas where your pet sleeps and rests.",
-  },
-];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
+// SOURCES. Quotations extracted by byte range and exact-matched before drafting
+// (Law 164); each citation names the host actually read (S59-A). Banked at S68 R1 under
+// ~/pp-s68r1/sources/ (Law 175).
+const SRC = {
+  uky: "https://entomology.mgcafe.uky.edu/ef602",
+  ucipm: "https://ipm.ucanr.edu/home-and-landscape/fleas/",
+  hse: "https://www.hse.gov.uk/biocides/using/overview.htm",
 };
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -122,6 +84,9 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Feature text and comparison cells from the banked listings' OWN bullets and detail
+// rows (S52-E), fetched 2026-09-01. Maker claims are framed as the maker's; self-praise
+// ("the strongest flea spray on the market") is trimmed and never restated (S47-F).
 const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
@@ -130,16 +95,13 @@ const products: ProductRecord[] = [
     cardName: "Indorex Defence Flea Spray 500ml",
     cardLabel: "Best Overall",
     features: [
-      "Permethrin + pyriproxyfen IGR dual-action formula",
-      "10-time Best Flea Product award winner",
-      "Up to 12 months residual protection from one application",
-      "One can treats a 3-4 bedroom house",
+      "Ingredients listed as pyriproxyfen, permethrin, piperonyl butoxide and Chrysanthemum cinerariaefolium",
+      "The maker claims up to 2 months control and up to 12 months prevention of egg and larvae development",
+      "Listed as treating approximately a 3-4 bedroom house per 500ml can",
+      "Directions: remove pets, birds and fish aquaria; spray from about 50cm; ventilate after use",
+      "The listing claims a YourCat & YourDog readers' Best Flea Product award over 10+ years",
     ],
-    tableCells: [
-      "Indorex Defence 500ml",
-      "IGR — 12 months protection",
-      "Best Overall",
-    ],
+    tableCells: ["Indorex Defence 500ml", "Permethrin + pyriproxyfen IGR; approx. 3-4 bedroom house, as listed", "Best Overall"],
     h2Label: "Best Overall",
     h2Name: "Indorex Defence Flea Spray 500ml",
     tocLabel: "Best Overall",
@@ -152,16 +114,12 @@ const products: ProductRecord[] = [
     cardName: "Indorex Defence Flea Spray 2x500ml Twin Pack",
     cardLabel: "Best Twin Pack",
     features: [
-      "Same award-winning Indorex formula — two full cans",
-      "Complete whole-home treatment with enough for follow-up",
-      "Ideal for larger homes or recurring infestations",
-      "Second can on hand if the cycle is not broken first time",
+      "Listed as 2 x 500ml — unit count 2",
+      "Same listed ingredients as the single can: pyriproxyfen, permethrin, piperonyl butoxide, Chrysanthemum cinerariaefolium",
+      "Each can listed as treating approximately a 3-4 bedroom house",
+      "Same listed directions: remove pets, birds and fish aquaria; ventilate after use",
     ],
-    tableCells: [
-      "Indorex Defence 2x500ml",
-      "Twin pack — whole-home treatment",
-      "Best Twin Pack",
-    ],
+    tableCells: ["Indorex Defence 2 x 500ml", "As above, two cans", "Best Twin Pack"],
     h2Label: "Best Twin Pack",
     h2Name: "Indorex Defence Flea Spray 2x500ml",
     tocLabel: "Best Twin Pack",
@@ -174,16 +132,13 @@ const products: ProductRecord[] = [
     cardName: "Pest Expert Formula C+ Flea Killer Spray 1L",
     cardLabel: "Best Professional-Grade",
     features: [
-      "Triple-action: cypermethrin, pyriproxyfen IGR, and natural pyrethrum",
-      "Maximum-strength formula from a leading UK pest control brand",
-      "12-week residual protection on treated surfaces",
-      "Water-based — safe for carpets, furnishings, and pet bedding once dry",
+      "Title states \"Approved for Amateur Use\"",
+      "The maker states three active ingredients, one of them the growth regulator pyriproxyfen",
+      "Listed as covering 50 square metres per application; 1 litre",
+      "The maker claims a residue that continues to protect for up to 12 weeks",
+      "Listed as water-based and virtually odourless; keep children and pets out until dry, approx. 2-3 hours",
     ],
-    tableCells: [
-      "Pest Expert Formula C+ 1L",
-      "Triple-action — 12-week residual",
-      "Best Professional",
-    ],
+    tableCells: ["Pest Expert Formula C+ 1L", "Three actives incl. pyriproxyfen; 50 m², as listed", "Best Professional-Grade"],
     h2Label: "Best Professional",
     h2Name: "Pest Expert Formula C+ Flea Killer Spray 1L",
     tocLabel: "Best Professional",
@@ -196,16 +151,12 @@ const products: ProductRecord[] = [
     cardName: "RIP Fleas Extra Household Flea Spray",
     cardLabel: "Best Fast-Acting",
     features: [
-      "Permethrin-based contact killer with residual protection",
-      "Fast-acting formula for carpets, pet bedding and soft furnishings",
-      "Popular with cat and dog owners as a home treatment between vet appointments",
-      "Effective residual layer continues killing fleas after application",
+      "Fetched title: R.I.P Fleas Household Flea Spray; unit count 600 millilitres",
+      "Target species listed as Insect, Flea, Fleas, Mites",
+      "The maker claims 12 months efficacy against flea larvae and house dust mites",
+      "No active substance is named on the listing",
     ],
-    tableCells: [
-      "RIP Fleas Extra Household Flea Spray",
-      "Fast knockdown + residual protection",
-      "Best Fast-Acting",
-    ],
+    tableCells: ["R.I.P Fleas Household Flea Spray", "Active not stated; 600ml, as listed", "Best Fast-Acting"],
     h2Label: "Best Fast-Acting",
     h2Name: "RIP Fleas Extra Household Flea Spray",
     tocLabel: "Best Fast-Acting",
@@ -218,16 +169,13 @@ const products: ProductRecord[] = [
     cardName: "Bob Martin Clear Plus Flea Spray 500ml Twin Pack",
     cardLabel: "Best Value",
     features: [
-      "Twin-pack from one of the UK's most trusted pet care brands",
-      "Kills fleas, ticks and dust mites on contact",
-      "Safe for use on furniture, carpets and pet bedding",
-      "500ml per can — enough for a full home treatment",
+      "Ingredients listed as permethrin 0.5%, tetramethrin 0.1% and S-methoprene 0.05%",
+      "Listed as 500ml, pack of 2 — unit count 1,000 millilitres",
+      "The maker claims up to 3 months against adult fleas and up to 12 months against eggs and larvae",
+      "Directions: spray from 30cm; listed for carpets, rugs and pet bedding",
+      "Target species listed as Flea",
     ],
-    tableCells: [
-      "Bob Martin Clear Plus Flea Spray 500ml Twin Pack",
-      "Twin-pack — kills fleas, ticks and dust mites",
-      "Best Value",
-    ],
+    tableCells: ["Bob Martin Clear Plus 2 x 500ml", "Permethrin + tetramethrin + S-methoprene IGR, as listed", "Best Value"],
     h2Label: "Best Value",
     h2Name: "Bob Martin Clear Plus Flea Spray 500ml Twin Pack",
     tocLabel: "Best Value",
@@ -236,633 +184,332 @@ const products: ProductRecord[] = [
 ];
 
 const tocItems = [
-  { id: "at-a-glance", title: "Best Flea Sprays at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
-  })),
-  { id: "buying-guide", title: "How to Choose the Right Flea Spray" },
-  { id: "application", title: "How to Apply Flea Spray for Best Results" },
-  { id: "faq", title: "Frequently Asked Questions" },
+  { id: "situation", title: "The Pet Comes First" },
+  { id: "legal", title: "The Legal Position on Home Insecticides" },
+  { id: "limits", title: "Where a Spray Does Not Help" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Spray Is Not the Answer" },
+  { id: "using", title: "Using Them" },
+  { id: "compared", title: "The Five Sprays Compared" },
 ];
-export default function BestFleaSprayPage() {
+
+export default function BestFleaSprayForHomePage() {
   return (
     <GuideLayout
       title="Best Flea Spray for Home UK 2026: Kill Fleas Fast"
-      subtitle="Our pick of the most effective household flea sprays available in the UK, from professional IGR sprays to natural options"
-      lastUpdated="March 2026"
-      readingTime="10 min"
+      subtitle="Five household flea sprays for UK homes, described by what their own listings state — which name a growth regulator, what each says it covers, and what the guidance says a spray cannot do"
+      lastUpdated="September 2026"
+      readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
-      relatedGuides={[
-        {
-          title: "How to Get Rid of Fleas: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-fleas",
-        },
-        {
-          title: "How to Get Rid of Bed Bugs: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-bed-bugs",
-        },
-        {
-          title: "How to Get Rid of Cockroaches: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-cockroaches",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
-        {
-          title: "How to Get Rid of Moths",
-          href: "/guides/how-to-get-rid-of-moths",
-        },
-        {
-          title: "Carpet Beetle Control: Complete UK Guide",
-          href: "/guides/carpet-beetle-control",
-        },
-        {
-          title: "How to Get Rid of Ants: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-ants",
-        },
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
-        {
-          title: "Wasp Nest Removal: Complete UK Guide",
-          href: "/guides/wasp-nest-removal",
-        },
-        {
-          title: "Restaurant Pest Control: UK Compliance Guide",
-          href: "/guides/restaurant-pest-control",
-        },
-        {
-          title: "Landlord Pest Control: UK Compliance Guide",
-          href: "/guides/landlord-pest-control",
-        },
-        {
-          title: "Hotel Pest Control: UK Compliance Guide",
-          href: "/guides/hotel-pest-control",
-        },
-      ]}
       relatedProducts={[
-        {
-          title: "Best Flea Treatments UK 2026",
-          href: "/best/flea-treatments",
-        },
         { title: "Best Flea Fogger UK 2026", href: "/best/flea-fogger" },
         { title: "Best Bed Bug Spray UK 2026", href: "/best/bed-bug-spray" },
-        {
-          title: "Best Bed Bug Treatments UK 2026",
-          href: "/best/bed-bug-treatments",
-        },
-        {
-          title: "Best Carpet Beetle Treatments UK 2026",
-          href: "/best/carpet-beetle-treatments",
-        },
         { title: "Best Moth Killers UK 2026", href: "/best/moth-killers" },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
         { title: "Best Ant Killers UK 2026", href: "/best/ant-killers" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />{" "}
-      {/* Affiliate disclosure */}{" "}
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
           site running and free for everyone. As an Amazon Associate, PestPro
-          Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        A flea infestation in your home is one of the most frustrating pest
-        problems you can face. Fleas breed rapidly — a single female can lay up
-        to 50 eggs per day — and their eggs and pupae can survive for months in
-        carpet fibres, making them incredibly difficult to eliminate completely.
-        According to the British Pest Control Association (BPCA), flea callouts
-        spike dramatically between June and October each year as warmer weather
-        accelerates the flea lifecycle.{" "}
-      </p>{" "}
+        A household flea spray treats carpets, bedding and furniture. The
+        University of Kentucky is specific about where the biting stage is:{" "}
+        <em>
+          &ldquo;Adult fleas spend most of their time on the dog or cat, not in
+          the carpet.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.uky} rel="nofollow">
+          University of Kentucky Entomology
+        </a>
+        ). What the spray is for is everything else.
+      </p>
+
+      {/* DECISION BLOCK — situation first. The legal line and the does-not-help line
+          sit ABOVE the product lines. No Amazon link, no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You have a dog or a cat.</strong> The guidance is that
+            eradication requires treating the pet, and often the premises (
+            <a href={SRC.uky} rel="nofollow" className="underline">
+              UKY
+            </a>
+            ) &mdash;{" "}
+            <a href="#situation" className="underline">
+              the pet comes first
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want to know what you are allowed to use.</strong>{" "}
+            HSE separates general-public products from professional ones &mdash;{" "}
+            <a href="#legal" className="underline">
+              the legal position
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You sprayed and fleas are still appearing.</strong> UC IPM
+            says that is expected for up to two weeks &mdash;{" "}
+            <a href="#limits" className="underline">
+              where a spray does not help
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want the one that names a growth regulator.</strong>{" "}
+            Three of the five do &mdash;{" "}
+            <a href="#compared" className="underline">
+              the comparison table
+            </a>{" "}
+            states which.
+          </li>
+        </ul>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">The Pet Comes First</h2>
       <p>
-        {" "}
-        The key to effective flea treatment is understanding the flea lifecycle.
-        Only 5% of a flea infestation consists of adult fleas — the other 95% is
-        made up of eggs, larvae, and pupae hidden in your carpets, soft
-        furnishings, and floorboard gaps. A spray that only kills adult fleas
-        will provide temporary relief but will not break the cycle. The most
-        effective household flea sprays contain an{" "}
-        <strong>insect growth regulator (IGR)</strong> that prevents eggs and
-        larvae from developing into new adults, providing long-term protection
-        for months after a single application.{" "}
-      </p>{" "}
+        No spray on this page is listed for use on an animal. The University of
+        Kentucky puts the order plainly:{" "}
+        <em>
+          &ldquo;Flea eradication requires treatment of pets, and oftentimes the
+          premises.&rdquo;
+        </em>{" "}
+        The premises is what these five treat.
+      </p>
       <p>
-        {" "}
-        We selected these household flea sprays on published specifications and
-        manufacturer information, looking at <strong>
-          active ingredients
-        </strong>{" "}
-        (particularly whether they include an IGR),{" "}
-        <strong>residual duration</strong>, and <strong>ease of use</strong>. We
-        also consulted veterinary and entomological guidance on effective flea
-        control. Every product listed is available on Amazon UK at the time of
-        writing.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
+        What they treat it for is the part of the infestation that is not an
+        adult. UC IPM:{" "}
+        <em>
+          &ldquo;Products containing the insect growth regulators (IGRs)
+          methoprene and pyriproxyfen are designed to provide long-term control
+          of flea eggs and immatures in the environment.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ). Which listings name one is the first criterion below.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">The Legal Position on Home Insecticides</h2>
+      <p>
+        HSE&rsquo;s guidance on using biocides:{" "}
+        <em>
+          &ldquo;If you are a member of the public, you should only use
+          biocidal products that are intended for the general public -
+          sometimes the terms &apos;amateur&apos; or &apos;non-professional&apos;
+          might be used instead.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hse} rel="nofollow">
+          HSE
+        </a>
+        ). One listing here carries that status in its own title &mdash; the
+        Pest Expert spray&rsquo;s reads Approved for Amateur Use. The others
+        are sold on the same shelf; the label on the can is what states it.
+      </p>
+      <p>
+        HSE also says what the label is for:{" "}
+        <em>
+          &ldquo;Following the label instructions carefully should be enough to
+          allow the product to be used safely and effectively.&rdquo;
+        </em>{" "}
+        Directions that appear on a listing &mdash; remove pets, birds and fish
+        aquaria; spray from 30cm or 50cm; keep children and pets out until dry
+        &mdash; are repeated on the cards as the maker&rsquo;s directions.
+      </p>
+
+      {/* [2] Where it does not help */}
+      <h2 id="limits">Where a Spray Does Not Help</h2>
+      <p>
+        <strong>It does not kill pupae.</strong> UC IPM on insecticide treatment
+        of the home:{" "}
+        <em>
+          &ldquo;This treatment kills larvae but not pupae, so fleas may
+          continue to emerge for up to 2 weeks.&rdquo;
+        </em>{" "}
+        The University of Kentucky gives the window:{" "}
+        <em>&ldquo;Pupae remain inside the cocoon for 1 to 4 weeks.&rdquo;</em>
+      </p>
+      <p>
+        <strong>It does not reach a cold room quickly.</strong> UC IPM:{" "}
+        <em>
+          &ldquo;At cool temperatures, fully formed fleas can remain in their
+          cocoons for up to 12 months.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>It does not treat the animal.</strong> A treated house with an
+        untreated pet is reinfested from the pet, which is why the pet comes
+        first above.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Whether the listing names a growth regulator</h3>
+      <p>
+        Three of the five do: both Indorex listings state pyriproxyfen, the
+        Pest Expert listing states pyriproxyfen among three actives, and the
+        Bob Martin listing states S-methoprene. The R.I.P listing names no
+        active substance at all. UC IPM names methoprene and pyriproxyfen as the
+        two IGRs used for this purpose.
+      </p>
+      <h3>2. What the listing says it covers</h3>
+      <p>
+        Indorex: approximately a 3-4 bedroom house per can. Pest Expert: 50
+        square metres per litre. Bob Martin and R.I.P state a volume but no
+        area. The table carries each as stated.
+      </p>
+      <h3>3. What the listing says to do with pets and people</h3>
+      <p>
+        Indorex&rsquo;s directions remove pets, birds and fish aquaria before
+        spraying and ventilate afterwards. Pest Expert&rsquo;s keep children and
+        pets out until surfaces are dry, which the listing puts at 2-3 hours.
+        These are conditions of use, and they differ.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
           <p>
-            Always treat your pet with a vet-approved flea treatment at the same
-            time as treating your home. Spraying the house without treating the
-            pet — or vice versa — will not break the infestation cycle.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* At a Glance */} <h2 id="at-a-glance">Best Flea Sprays at a Glance</h2>{" "}
-      <p>Here is a quick comparison of our top five picks.</p>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Product</th> <th>Key Feature</th> <th>Best For</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      <div className="not-prose">
-        {" "}
-        <StatCallout
-          value="12 months"
-          label="Protection from a single application of top-rated IGR flea sprays"
-        />{" "}
-      </div>{" "}
-      {/* Product 1 */}{" "}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Indorex Defence is the household flea spray recommended by more UK vets
-        and pest controllers than any other product — and with 10 Best Flea
-        Product awards to its name, the reputation is well-earned. It combines
-        permethrin (a fast-acting insecticide that kills adult fleas on contact)
-        with pyriproxyfen (an insect growth regulator that prevents flea eggs
-        and larvae from developing for up to 12 months). This dual-action
-        formula tackles both the visible adult fleas and the hidden 95% of the
-        infestation — eggs, larvae, and pupae — in a single treatment.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The 12-month residual protection is the standout feature. After
-        spraying, the IGR continues to work in your carpet fibres for up to a
-        year, preventing any eggs or larvae that you missed from ever developing
-        into biting adults. This is why Indorex is so effective at breaking the
-        flea lifecycle and preventing re-infestation — even if a few eggs
-        survive the initial treatment, they cannot mature while the IGR is
-        active.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        One 500ml can treats a 3-4 bedroom house. The aerosol provides even
-        coverage when sprayed at arm's length from the floor, and the fine mist
-        settles into carpet fibres where flea eggs and larvae are concentrated.
-        After spraying, ventilate the room and allow it to dry for 1-2 hours
-        before allowing pets and children back in. For a standard household flea
-        problem, this single can is the professional standard for
-        treatment.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Dual-action: kills adults and prevents egg/larva development
-        </li>{" "}
-        <li>Up to 12 months of residual IGR protection</li>{" "}
-        <li>10-time award winner — the professional standard</li>{" "}
-        <li>One can covers a 3-4 bed house</li>{" "}
-        <li>Fast-acting permethrin kills adult fleas on contact</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Must remove pets from the room during application</li>{" "}
-        <li>Strong aerosol — requires good ventilation</li>{" "}
-        <li>Slightly higher price than basic alternatives</li>{" "}
-      </ul>{" "}
-      {/* Product 2 */}{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Indorex twin pack is the smart buy for larger homes or anyone
-        dealing with a recurring flea problem. You get two full 500ml cans of
-        the same award-winning Indorex Defence formula — enough to treat a large
-        property thoroughly with spare left over for a follow-up application if
-        needed.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Two cans gives you the flexibility to treat every room comprehensively
-        on day one, and then re-treat high-traffic pet areas 2-3 weeks later if
-        you are still seeing fleas emerging from pupae. This two-pass approach
-        is exactly what professional pest controllers recommend for severe
-        infestations, and having both cans ready from the start means you will
-        not lose momentum waiting for a second order to arrive.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        For households with multiple pets, large carpeted areas, or a history of
-        seasonal flea problems, the twin pack provides peace of mind. The second
-        can also serves as insurance — if your initial treatment does not fully
-        break the cycle (often because flea pupae are resistant to all sprays
-        and continue hatching for weeks), you have immediate backup without
-        needing to reorder.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Two cans for complete whole-home coverage</li>{" "}
-        <li>No need to reorder part-way through a treatment</li>{" "}
-        <li>Spare can for follow-up treatment or high-traffic areas</li>{" "}
-        <li>Same proven 12-month IGR protection per application</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Two aerosols to store between treatments</li>{" "}
-        <li>May be more than needed for a small, localised problem</li>{" "}
-        <li>Same aerosol format — still requires room ventilation</li>{" "}
-      </ul>{" "}
-      {/* Product 3 */}{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Pest Expert Formula C+ is the most comprehensively formulated flea spray
-        on our list. It combines three active ingredients — cypermethrin for
-        long-lasting residual kill, pyriproxyfen IGR to prevent egg and larval
-        development, and natural pyrethrum for immediate knockdown. This
-        triple-action approach means it tackles every stage of the flea
-        lifecycle: adults die on contact from the pyrethrum, the cypermethrin
-        continues killing for weeks after application, and the IGR ensures no
-        new adults develop from surviving eggs or larvae.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The water-based formula is a significant advantage over solvent-based
-        aerosols. It is safe for use on carpets, soft furnishings, curtains, and
-        pet bedding once dry, and it does not leave the strong chemical odour
-        that many aerosol sprays produce. The 1-litre bottle provides generous
-        coverage, and the 12-week residual protection means you get sustained
-        control throughout the peak of flea season.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        This is the product to choose when you want a professional-grade
-        treatment that goes beyond what a standard aerosol offers. The inclusion
-        of an IGR alongside the contact and residual insecticides makes Formula
-        C+ a genuine all-in-one solution — no need to layer multiple products
-        for comprehensive coverage. For severe infestations or homes where
-        previous treatments have failed, this is the step up.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Triple-action formula covers all flea lifecycle stages</li>{" "}
-        <li>Includes IGR — prevents egg and larval development</li>{" "}
-        <li>Water-based and safe for soft furnishings once dry</li>{" "}
-        <li>12-week residual protection from a single application</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Shorter residual than Indorex (12 weeks vs 12 months)</li>{" "}
-        <li>Requires a trigger sprayer or pump sprayer</li>{" "}
-        <li>Higher price than basic aerosol alternatives</li>{" "}
-      </ul>{" "}
-      {/* Product 4 */}{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        RIP Fleas Extra Household Flea Spray is a fast-acting residual household
-        flea spray built around a permethrin-based contact killer. It delivers
-        rapid knockdown of adult fleas within minutes of application while
-        leaving a residual protective layer on carpets, pet bedding, and soft
-        furnishings that continues working long after the initial spray has
-        dried. This makes it the best choice when you are dealing with an active
-        infestation and need immediate relief from biting fleas.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The permethrin-based formula is popular with cat and dog owners as a
-        home treatment between vet appointments. RIP Fleas Extra can be sprayed
-        on carpets, rugs, soft furnishings, and pet bedding — once dry, the
-        treated surfaces are safe for pets. The residual protection on treated
-        surfaces means fleas that emerge from pupae in the days and weeks after
-        application are killed on contact with the treated carpet fibres.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        It slots in below the premium options, particularly for treating
-        specific areas rather than an entire house. The residual protection
-        lasts several months, making it effective through the peak of flea
-        season. If you need fast results at a reasonable price, RIP Fleas Extra
-        delivers on both counts.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Very fast knockdown of adult fleas on contact</li>{" "}
-        <li>
-          Residual protection on carpets, pet bedding and soft furnishings
-        </li>{" "}
-        <li>Popular home treatment between vet appointments</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Shorter residual protection than Indorex</li>{" "}
-        <li>Smaller coverage area than premium options</li>{" "}
-        <li>May need 2 cans for a whole house</li>{" "}
-      </ul>{" "}
-      {/* Product 5 */}{" "}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Bob Martin is one of the most recognised pet care brands in the UK, and
-        the Clear Plus Flea Spray 500ml Twin Pack offers outstanding value for
-        tackling household fleas. You get two full 500ml cans — enough for a
-        complete home treatment — from a brand that pet owners have trusted for
-        decades. The twin-pack format means you have plenty of product to treat
-        every room thoroughly, with spare left over for a follow-up application
-        if needed.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The spray kills fleas, ticks, and dust mites on contact, making it
-        effective against a broader range of household pests than many
-        single-action flea sprays. It is safe for use on furniture, carpets, and
-        pet bedding once dry, and the easy-to-use aerosol format requires no
-        mixing or additional equipment. The twin-pack format means you are
-        unlikely to run short part-way through a treatment.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        For budget-conscious pet owners who want a trusted brand at a low price,
-        the Bob Martin Clear Plus twin pack gets the job done for minor to
-        moderate flea problems. If you are dealing with a more severe or
-        persistent infestation, however, stepping up to an IGR-containing spray
-        like Indorex will provide significantly longer-lasting protection by
-        breaking the flea lifecycle at the egg and larval stage.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Trusted Bob Martin brand — twin-pack value</li>{" "}
-        <li>Kills fleas, ticks and dust mites on contact</li>{" "}
-        <li>Two 500ml cans — enough for a full home treatment</li>{" "}
-        <li>Safe for furniture, carpets and pet bedding once dry</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>No IGR — shorter residual protection than Indorex</li>{" "}
-        <li>Less effective at breaking the flea lifecycle long-term</li>{" "}
-        <li>May need a follow-up application for severe infestations</li>{" "}
-      </ul>{" "}
-      {/* Buying Guide */}{" "}
-      <h2 id="buying-guide">How to Choose the Right Flea Spray</h2>{" "}
-      <h3>Look for an IGR (Insect Growth Regulator)</h3>{" "}
-      <p>
-        {" "}
-        This is the single most important factor. An IGR prevents flea eggs and
-        larvae from developing into biting adults, breaking the infestation
-        cycle for months after a single application. Without an IGR, you are
-        only killing adult fleas — and the other 95% of the infestation (eggs,
-        larvae, pupae) will continue producing new adults. Products with an IGR
-        include Indorex, Acclaim, RIP Fleas Extra, and Bob Martin.{" "}
-      </p>{" "}
-      <h3>Coverage Area</h3>{" "}
-      <p>
-        {" "}
-        Check how many square metres each product covers. A 500ml aerosol
-        typically covers 50-80 sq m — enough for a small to medium house. If you
-        have a larger property or multiple carpeted rooms, you may need two cans
-        or should consider a concentrate like Pest Expert Formula C for maximum
-        coverage.{" "}
-      </p>{" "}
-      <h3>Aerosol vs Concentrate</h3>{" "}
-      <p>
-        {" "}
-        Aerosols are convenient — shake, spray, done. Concentrates require
-        mixing and a pump sprayer but provide far more coverage per pound and a
-        more controllable application. For a typical household treatment,
-        aerosol is usually sufficient. For large properties or
-        professional-level treatment, concentrate is more practical.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="warning">
-          {" "}
-          <p>
-            Always remove fish tanks (or cover and turn off air pumps), bird
-            cages, and reptile enclosures from the room before spraying.
-            Pyrethroids are highly toxic to fish and aquatic invertebrates, even
-            in tiny amounts.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* Application Guide */}{" "}
-      <h2 id="application">How to Apply Flea Spray for Best Results</h2>{" "}
-      <h3>Step 1: Treat Your Pet First</h3>{" "}
-      <p>
-        {" "}
-        Apply a vet-approved spot-on flea treatment or oral tablet to your pet
-        before treating the home. Your pet is the fleas' food source — if the
-        pet is not treated, fleas will simply re-infest the home after your
-        spray treatment wears off.{" "}
-      </p>{" "}
-      <h3>Step 2: Vacuum Thoroughly</h3>{" "}
-      <p>
-        {" "}
-        Vacuum every carpeted area, under furniture, along skirting boards, and
-        in corners. This removes flea eggs, larvae, and debris, and helps the
-        spray penetrate deeper into carpet fibres. Pay special attention to
-        areas where your pet rests. Dispose of the vacuum contents in an outdoor
-        bin immediately.{" "}
-      </p>{" "}
-      <h3>Step 3: Hot-Wash Pet Bedding</h3>{" "}
-      <p>
-        {" "}
-        Wash all pet bedding, blankets, and removable covers at 60°C minimum.
-        This kills all flea life stages on contact. Tumble dry on high heat for
-        at least 30 minutes for added certainty.{" "}
-      </p>{" "}
-      <h3>Step 4: Spray Systematically</h3>{" "}
-      <p>
-        {" "}
-        Work room by room, spraying all carpeted areas, rugs, soft furnishings,
-        under furniture, and along skirting boards. Hold the can at arm's length
-        and spray in a sweeping motion at floor level. Do not forget under
-        sofas, beds, and other furniture where flea larvae congregate in the
-        dark.{" "}
-      </p>{" "}
-      <h3>Step 5: Ventilate and Dry</h3>{" "}
-      <p>
-        {" "}
-        Open windows and leave the room for 1-2 hours until surfaces are
-        completely dry. Once dry, the treated surfaces are safe for pets and
-        children to walk on.{" "}
-      </p>{" "}
-      <h3>Step 6: Vacuum Daily for 2 Weeks</h3>{" "}
-      <p>
-        {" "}
-        Daily vacuuming for at least 2 weeks after treatment is essential.
-        Vacuuming stimulates flea pupae to hatch — and the newly emerged adults
-        walk straight into the residual spray layer on your carpet and die.
-        Without regular vacuuming, pupae can remain dormant for months and hatch
-        long after your spray treatment has worn off.{" "}
-      </p>{" "}
-      {/* FAQ */} <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      {faqs.map((f) => (
-        <div key={f.q}>
-          <h3>{f.q}</h3>
-          <p>{f.a}</p>
+            {
+              [
+                "A 500ml Virbac spray whose listing states four ingredients including the growth regulator pyriproxyfen, and which the maker says treats approximately a 3-4 bedroom house. The listing also claims a magazine readers' award over 10+ years; that is the maker's claim and is carried as such. Directions on the listing: remove pets, birds and fish aquaria, spray from about 50cm, ventilate afterwards.",
+                "The same product, listed as two 500ml cans with a unit count of 2. Every stated ingredient, coverage figure and direction is the same as the single can; what differs is having a second can for a second pass, which the listing does not itself recommend.",
+                "A 1-litre water-based spray whose title states amateur approval and whose listing names three actives including pyriproxyfen, with a stated coverage of 50 square metres and a maker's claim of up to 12 weeks of residue. The listing says keep children and pets out of the treated area until dry, approximately 2-3 hours. Its comparative claims about the market are not repeated here.",
+                "Listed as R.I.P Fleas Household Flea Spray at 600 millilitres, with a target species field reading Insect, Flea, Fleas, Mites. The maker claims 12 months of efficacy against larvae and house dust mites. No active substance is named anywhere on the listing, so what is in it is on the can and not on the page you buy from.",
+                "Two 500ml cans listed with permethrin, tetramethrin and the growth regulator S-methoprene at stated percentages, for carpets, rugs and pet bedding, sprayed from 30cm. The maker claims up to 3 months against adults and up to 12 months against eggs and larvae. The listing's own statistic about where infestations live is the maker's and is not repeated here.",
+              ][i]
+            }
+          </p>
         </div>
       ))}
+
+      {/* [14] Alternatives */}
+      <h2 id="alternatives">If a Spray Is Not the Answer</h2>
+      <p>
+        <strong>Vacuum.</strong> University of Kentucky:{" "}
+        <em>
+          &ldquo;Vacuuming removes many of the eggs, larvae and pupae developing
+          within the home.&rdquo;
+        </em>{" "}
+        UC IPM:{" "}
+        <em>
+          &ldquo;Vacuum upholstered furniture, cleaning under cushions and in
+          crevices.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>Treat the pet, with a vet.</strong> Outside what this page
+        cards; our <a href="/guides/how-to-get-rid-of-fleas">flea guide</a>{" "}
+        covers the full sequence.
+      </p>
+      <p>
+        <strong>Get a professional in.</strong> HSE:{" "}
+        <em>
+          &ldquo;If you are not a professional, consider using a professional
+          pest controller to deal with the problem.&rdquo;
+        </em>
+      </p>
+
+      {/* [15] Using them */}
+      <h2 id="using">Using Them</h2>
+      <ol>
+        <li>
+          <strong>Treat the pet first.</strong>
+        </li>
+        <li>
+          <strong>Vacuum before spraying,</strong> including under cushions and
+          in crevices.
+        </li>
+        <li>
+          <strong>Follow the listing&rsquo;s own directions for the room.</strong>{" "}
+          They differ between products and they are conditions of use.
+        </li>
+        <li>
+          <strong>Keep vacuuming for two weeks.</strong> UC IPM:{" "}
+          <em>
+            &ldquo;Vacuum regularly to remove adult fleas that emerge from pupae
+            for the next 2 weeks.&rdquo;
+          </em>
+        </li>
+      </ol>
+
       <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Fleas Keep Coming Back?"
-          subtext="If DIY sprays haven't broken the cycle, a professional pest controller can apply commercial-grade treatments that eliminate even severe infestations"
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-3">
-          Want the full picture on flea control?
-        </p>{" "}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          {" "}
-          <a
-            href="/guides/how-to-get-rid-of-fleas"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            {" "}
-            How to Get Rid of Fleas — Complete Guide →{" "}
-          </a>{" "}
-          <a
-            href="/best/flea-fogger"
-            className="inline-block px-6 py-2.5 bg-gray-700 hover:bg-gray-800 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            {" "}
-            Best Flea Foggers UK 2026 →{" "}
-          </a>{" "}
-        </div>{" "}
-      </div>{" "}
+        <Callout type="info">
+          <p>
+            Fleas seen in the fortnight after treatment are adults emerging
+            from pupae the spray could not reach. That is the guidance above,
+            not a product failing.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Five Sprays Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Actives and coverage, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <FindProviderCTA
+        heading="Still seeing fleas after the pet and the house are treated?"
+        subtext="Compare pest control providers near you, no fees and no commissions."
+      />
     </GuideLayout>
   );
 }

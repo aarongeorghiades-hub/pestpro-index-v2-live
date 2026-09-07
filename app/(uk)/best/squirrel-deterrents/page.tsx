@@ -705,15 +705,7 @@ export default function BestSquirrelDeterrentsPage() {
         deterrence that exploits a fascinating difference between mammals and
         birds. The spray is formulated with capsaicin &mdash; the active
         compound found in chilli peppers that produces a burning sensation on
-        contact with mammalian mucous membranes. When you spray bird food,
-        hanging baskets, or feeder surfaces with this product, squirrels that
-        attempt to eat the treated food or lick the treated surface experience
-        an intense and deeply unpleasant burning sensation in their mouths.
-        Birds, however, are completely unaffected because avian species lack the
-        TRPV1 receptor that detects capsaicin in mammals. This means that the
-        spray makes your bird food effectively invisible to squirrels while
-        remaining perfectly palatable and safe for every garden bird species. It
-        is a remarkably elegant solution rooted in genuine science.{" "}
+        contact with mammalian mucous membranes.{" "}
       </p>{" "}
       <p>
         {" "}

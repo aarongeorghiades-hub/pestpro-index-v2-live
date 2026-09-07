@@ -102,18 +102,21 @@
     },
     "best/flea-fogger": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "b078534317c6"
+      "date": "2026-09-07",
+      "fingerprint": "39ebe0f24fc4",
+      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
     },
     "best/flea-spray-for-home": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "12ff51f3ad76"
+      "date": "2026-09-07",
+      "fingerprint": "3307b1d8ce84",
+      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
     },
     "best/flea-treatments": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "37a8f43474b1"
+      "date": "2026-09-07",
+      "fingerprint": "41cf3aacf787",
+      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
     },
     "best/fly-killer-indoor": {
       "judgement": "correct-as-built",
@@ -134,8 +137,9 @@
     },
     "best/moth-killers": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "4b69225c13d6"
+      "date": "2026-09-07",
+      "fingerprint": "808be92925bb",
+      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
     },
     "best/moth-traps": {
       "judgement": "correct-as-built",
@@ -164,8 +168,8 @@
     "best/mouse-traps": {
       "judgement": "correct-as-built",
       "date": "2026-09-07",
-      "fingerprint": "ea43fc3ad97f",
-      "note": "S67 R10 standing product-fit ruling; mismatched cards removed, remaining order and ASINs unchanged"
+      "fingerprint": "320342638391",
+      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
     },
     "best/pigeon-spikes": {
       "judgement": "correct-as-built",
@@ -227,8 +231,8 @@
     "best/rat-traps": {
       "judgement": "correct-as-built",
       "date": "2026-09-07",
-      "fingerprint": "0820c6acc9b7",
-      "note": "S67 R10 product-fit and Law 193; cockroach-killers card removed, rat-traps text only"
+      "fingerprint": "724bad4ce5d0",
+      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
     },
     "best/rodent-proofing": {
       "judgement": "correct-as-built",
@@ -261,8 +265,9 @@
     },
     "best/wasp-killers": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "c256695a4ef7"
+      "date": "2026-09-07",
+      "fingerprint": "e1d5f74103c6",
+      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
     },
     "best/wasp-nest-foam": {
       "judgement": "correct-as-built",
@@ -271,8 +276,9 @@
     },
     "best/woodworm-treatments": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "712b19e81ad8"
+      "date": "2026-09-07",
+      "fingerprint": "0eb8633c68fa",
+      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
     },
     "guides/autumn-pest-proofing": {
       "judgement": "correct-as-built",
@@ -339,8 +345,8 @@
     "guides/natural-flea-remedies": {
       "judgement": "correct-as-built",
       "date": "2026-09-07",
-      "fingerprint": "15df4267f1c0",
-      "note": "S67 R10 standing product-fit ruling; mismatched cards removed, remaining order and ASINs unchanged"
+      "fingerprint": "e20aa1adebe4",
+      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
     },
     "guides/natural-fox-deterrents": {
       "judgement": "correct-as-built",
@@ -360,8 +366,9 @@
     },
     "guides/natural-rat-deterrents": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "25560c1178af"
+      "date": "2026-09-07",
+      "fingerprint": "97df12b9579c",
+      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
     },
     "guides/natural-spider-repellents": {
       "judgement": "correct-as-built",
@@ -390,13 +397,15 @@
     },
     "guides/student-house-pest-guide": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "932aecf42ef2"
+      "date": "2026-09-07",
+      "fingerprint": "932aecf42ef2",
+      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
     },
     "guides/wasp-season-preparation": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "99241eaaf13f"
+      "date": "2026-09-07",
+      "fingerprint": "99241eaaf13f",
+      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
     },
     "guides/woodworm-treatment": {
       "judgement": "correct-as-built",

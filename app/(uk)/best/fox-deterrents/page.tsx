@@ -310,14 +310,10 @@ export default function BestFoxDeterrentsPage() {
         {" "}
         The key to successful fox deterrence is understanding that no single
         product works reliably on its own. Foxes are highly intelligent,
-        adaptable animals that habituate quickly to any single stimulus &mdash;
-        an ultrasonic device that startles a fox on Monday will barely register
-        by Friday if nothing else changes. This is why professional pest
-        controllers universally recommend a <strong>layered approach</strong>:
-        combine a scent repellent to confuse territorial markers, an ultrasonic
-        device to create an uncomfortable sound environment, and a
-        motion-activated sprinkler to deliver an unpredictable physical
-        deterrent. When these three methods operate together, and are rotated
+        adaptable animals that habituate quickly to any single stimulus. This
+        page therefore describes a <strong>layered approach</strong>: a scent
+        repellent, a motion-activated sprinkler and physical exclusion,
+        rotated and repositioned. When these methods operate together, and are rotated
         and repositioned regularly, the fox perceives the garden as a genuinely
         hostile and unpredictable territory rather than one with a single,
         predictable annoyance it can learn to ignore. For properties keeping
@@ -736,8 +732,8 @@ export default function BestFoxDeterrentsPage() {
         and it bears repeating:{" "}
         <strong>no single fox deterrent works reliably on its own</strong>.
         Foxes are highly intelligent mammals with excellent memory and rapid
-        learning ability. A single-method approach &mdash; whether it is an
-        ultrasonic device, a scent repellent, or a sprinkler &mdash; will
+        learning ability. A single-method approach &mdash; whether it is a
+        scent repellent or a sprinkler &mdash; will
         produce initial results as the fox encounters something new and
         unfamiliar, but within one to three weeks the fox will have assessed the
         threat, determined it is not genuinely dangerous, and resumed its normal
@@ -747,8 +743,7 @@ export default function BestFoxDeterrentsPage() {
       <p>
         {" "}
         Even with a layered strategy, habituation remains the enemy of fox
-        deterrence. Move the ultrasonic device to a different position every
-        two to three weeks and change its frequency setting. Reapply Scoot after
+        deterrence. Reapply Scoot after
         every significant rainfall, and vary the areas you treat &mdash; do not
         always apply it to exactly the same spots. If possible, move the
         sprinkler to a different location every few weeks so the fox cannot
@@ -764,8 +759,8 @@ export default function BestFoxDeterrentsPage() {
       <h3>When Deterrents Fail</h3>{" "}
       <p>
         {" "}
-        If you have implemented a layered deterrent strategy (scent + ultrasonic
-        + sprinkler) consistently for four to six weeks and foxes are still
+        If you have implemented a layered deterrent strategy (scent +
+        sprinkler + exclusion) consistently for four to six weeks and foxes are still
         visiting your garden regularly, there may be a specific reason that
         standard deterrents are insufficient. The most common cause is a{" "}
         <strong>
@@ -787,10 +782,7 @@ export default function BestFoxDeterrentsPage() {
         {" "}
         The garden deterrents on this page will resolve the majority of fox
         nuisance problems &mdash; fouling on lawns, digging in flower beds,
-        raiding bins, and general nocturnal disturbance. A layered combination
-        of scent repellent, ultrasonic device, and motion-activated sprinkler,
-        applied consistently and rotated regularly, will make most foxes decide
-        that your garden is not worth the hassle. However, there are several
+        raiding bins, and general nocturnal disturbance. However, there are several
         situations where DIY deterrents are insufficient and professional help
         is strongly recommended. If a fox has{" "}
         <strong>denned under your property</strong> &mdash; beneath a shed,

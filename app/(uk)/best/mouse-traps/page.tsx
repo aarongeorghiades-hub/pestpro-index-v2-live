@@ -148,7 +148,7 @@ const products: ProductRecord[] = [
     anchorId: "best-humane",
     asin: "B07L8JNPF2",
     rank: 4,
-    cardName: "ROSHIELD Humane Mouse Trap 2-Pack",
+    cardName: "AKCHY Humane Mouse Trap 2-Pack",
     cardLabel: "Best Humane Option",
     features: [
       "Live catch and release design",
@@ -157,12 +157,12 @@ const products: ProductRecord[] = [
       "Reusable — simply release and reset",
     ],
     tableCells: [
-      "ROSHIELD Humane Mouse Trap 2-Pack",
+      "AKCHY Humane Mouse Trap 2-Pack",
       "Live catch",
       "Best Humane",
     ],
     h2Label: "Best Humane",
-    h2Name: "ROSHIELD Humane Mouse Trap 2-Pack",
+    h2Name: "AKCHY Humane Mouse Trap 2-Pack",
     tocLabel: "Best Humane",
     tocName: "ROSHIELD Humane 2-Pack",
   },
@@ -170,7 +170,7 @@ const products: ProductRecord[] = [
     anchorId: "best-easy-clean",
     asin: "B09PKWXRGK",
     rank: 5,
-    cardName: "Motel Mouse Humane Trap",
+    cardName: "UNIQU 2-Pack Humane Mouse Trap",
     cardLabel: "Best Easy-Clean Humane",
     features: [
       "Reusable humane mouse trap",
@@ -178,11 +178,11 @@ const products: ProductRecord[] = [
       "No-kill design for ethical pest control",
       "Compact size fits in tight spaces",
     ],
-    tableCells: ["Motel Mouse Humane Trap", "Live catch", "Best Easy-Clean"],
+    tableCells: ["UNIQU 2-Pack Humane Mouse Trap", "Live catch", "Best Easy-Clean"],
     h2Label: "Best Easy-Clean",
-    h2Name: "Motel Mouse Humane Trap",
+    h2Name: "UNIQU 2-Pack Humane Mouse Trap",
     tocLabel: "Best Easy-Clean",
-    tocName: "Motel Mouse",
+    tocName: "UNIQU 2-Pack",
   },
 ];
 

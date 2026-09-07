@@ -368,18 +368,6 @@ export default function NaturalRatDeterrentsPage() {
         />
 
         <ProductCard
-          name="Solar Ultrasonic Animal Repeller (2 Pack)"
-          features={[
-            'Motion-activated ultrasonic and flashing LED deterrent',
-            'Solar powered — no batteries or wiring needed',
-            'IP65 waterproof for year-round outdoor use',
-            'Deters rats, foxes, cats and other garden pests',
-          ]}
-          asin="B0C4F578DF"
-          bestFor="Best Garden Deterrent"
-        />
-
-        <ProductCard
           name="Tomcat Rodent Block Expanding Foam (340g)"
           features={[
             'Expanding foam with embedded rodent-resistant fibres',

@@ -132,7 +132,7 @@ const products: ProductRecord[] = [
     anchorId: "best-safety",
     asin: "B07W9FMLWF",
     rank: 2,
-    cardName: "ROSHIELD Rat Bait Station Box",
+    cardName: "Mastertrap Rat Bait Station Box",
     cardLabel: "Best for Pet & Child Safety",
     features: [
       "A box with a snap trap inside, not a bait station for poison",
@@ -140,11 +140,11 @@ const products: ProductRecord[] = [
       "Target species listed as Rat",
       "Puts the mechanism behind a lid rather than in the open",
     ],
-    tableCells: ["ROSHIELD Rat Bait Station Box", "Boxed snap trap, 1 unit", "Best for Safety"],
+    tableCells: ["Mastertrap Rat Bait Station Box", "Boxed snap trap, 1 unit", "Best for Safety"],
     h2Label: "Best for Pet & Child Safety",
-    h2Name: "ROSHIELD Rat Bait Station Box",
+    h2Name: "Mastertrap Rat Bait Station Box",
     tocLabel: "Best for Pet & Child Safety",
-    tocName: "ROSHIELD Rat Bait Station Box",
+    tocName: "Mastertrap Rat Bait Station Box",
   },
   {
     anchorId: "best-professional",

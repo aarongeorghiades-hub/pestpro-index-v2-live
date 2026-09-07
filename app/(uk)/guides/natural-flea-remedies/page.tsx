@@ -273,18 +273,6 @@ export default function NaturalFleaRemediesPage() {
         />
 
         <ProductCard
-          name="Cedar Wood Chip Sachets (30 Pack)"
-          features={[
-            'Natural cedar scent deters fleas and moths',
-            'Place inside pet bedding, wardrobes, drawers',
-            'Long-lasting — scent lasts months per sachet',
-            'Also freshens stored clothing and linens',
-          ]}
-          asin="B0839L33DW"
-          bestFor="Best Prevention"
-        />
-
-        <ProductCard
           name="Fine-Toothed Flea Comb — Stainless Steel (2 Pack)"
           features={[
             'Stainless steel teeth catch fleas, eggs, and flea dirt',

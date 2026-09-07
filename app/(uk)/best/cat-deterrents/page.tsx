@@ -285,9 +285,7 @@ export default function BestCatDeterrentsPage() {
         {" "}
         As with foxes, the secret to success is that{" "}
         <strong>no single cat deterrent works reliably on its own</strong>. Cats
-        are intelligent, territorial and quick to learn which threats are real.
-        An ultrasonic device that sends a cat scrambling in week one can fade
-        into background noise by week three if nothing else changes.{" "}
+        are intelligent, territorial and quick to learn which threats are real.{" "}
       </p>{" "}
       <p>
         {" "}

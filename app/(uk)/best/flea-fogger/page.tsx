@@ -1,107 +1,82 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S68 R1 — ROLLOUT REBUILD to the R8 pattern. Title and H1 byte-unchanged. Award labels,
+// rank numerals, anchor ids and card order UNCHANGED as ruled.
+//
+// ONLY ONE OF THE FIVE IS A FOGGER. Read from the banked listings: the Zero In product
+// is a one-shot aerosol that empties the can into the room; the other four are trigger
+// or hand sprays. The H1 reads "Flea Bombs That Actually Work" and is held by the
+// standing rule; the page says on every other surface what the products are, and what
+// two university sources say a total-release fogger cannot reach.
+//
+// THE PROTECTED STRING "10-time Best Flea Product award winner" IS GONE, UNDER LAW 193
+// — see /best/flea-spray-for-home for the proof. The listing says "10+ years", not
+// "10-time", so the numeral was also wrong.
+//
+// "Best Twin Pack" ON THE STRIKEBACK CARD IS AN AWARD LABEL AND IS HELD BY THE STANDING
+// RULE. The listing is a single 1-litre bottle; the card says so. Referred.
+//
+// FAQ block and FAQPage schema removed together (Law 190).
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
     description:
-      "Our pick of the best flea foggers (flea bombs) in the UK for 2026. Smoke bombs, aerosol foggers and IGR foggers, with application advice.",
+      "Only one of the five is a fogger. What a total-release fogger cannot reach, the fire risk the guidance warns about, and five flea products on their own listings.",
     alternates: { canonical: "https://pestproindex.com/best/flea-fogger" },
     openGraph: {
       title: "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
       description:
-        "Our pick of the best flea foggers (flea bombs) in the UK for 2026. Smoke bombs, aerosol foggers and IGR foggers, with application advice.",
+        "Only one of the five is a fogger. What a total-release fogger cannot reach, the fire risk the guidance warns about, and five flea products on their own listings.",
       url: "https://pestproindex.com/best/flea-fogger",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
   description:
-    "Our pick of the best flea foggers (flea bombs) in the UK for 2026. Smoke bombs, aerosol foggers and IGR foggers, with application advice.",
+    "Only one of the five is a fogger. What a total-release fogger cannot reach, the fire risk the guidance warns about, and five flea products on their own listings.",
   datePublished: "2026-03-30",
-  dateModified: "2026-03-30",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://pestproindex.com/best/flea-fogger",
-  },
+  dateModified: "2026-09-07",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/flea-fogger" },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
-      name: "Best Flea Fogger UK 2026",
+      name: "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
       item: "https://pestproindex.com/best/flea-fogger",
     },
   ],
 };
-// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
-// from this and only this, so the two surfaces cannot disagree again. The visible
-// block was authoritative where they did disagree.
-const faqs = [
-  {
-    q: "Do flea foggers actually work?",
-    a: "Yes, when used as part of a comprehensive plan including spray treatment, vacuuming, and pet treatment. Foggers alone are rarely sufficient but significantly accelerate infestation elimination.",
-  },
-  {
-    q: "How long do I need to leave the house?",
-    a: "A minimum of 2-4 hours depending on the product, followed by 30 minutes of ventilation with all windows open.",
-  },
-  {
-    q: "How many foggers do I need?",
-    a: "One per room, based on the product's cubic metre coverage. For a three-bedroom house, expect to use 4-6 foggers.",
-  },
-  {
-    q: "Should I vacuum before or after fogging?",
-    a: "Before: to remove debris and help insecticide penetrate. After: wait 24 hours, then vacuum daily for 2 weeks to stimulate pupae to hatch.",
-  },
-  {
-    q: "Are flea foggers safe for pets?",
-    a: "All pets must be removed during fogging. Once the room has been ventilated and surfaces are dry, treated areas are safe for pets.",
-  },
-];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
+// SOURCES. Quotations extracted by byte range and exact-matched before drafting
+// (Law 164); each citation names the host actually read (S59-A). Banked at S68 R1 under
+// ~/pp-s68r1/sources/ (Law 175).
+const SRC = {
+  ukyFog: "https://entomology.mgcafe.uky.edu/ef643",
+  npic: "https://npic.orst.edu/ingred/ptype/fogger.html",
+  ucipm: "https://ipm.ucanr.edu/home-and-landscape/fleas/",
+  uky: "https://entomology.mgcafe.uky.edu/ef602",
+  hse: "https://www.hse.gov.uk/biocides/using/overview.htm",
 };
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -124,16 +99,13 @@ const products: ProductRecord[] = [
     cardName: "Indorex Defence Household Flea Spray 500ml",
     cardLabel: "Best Overall",
     features: [
-      "10-time Best Flea Product award winner",
-      "Permethrin kills adults + pyriproxyfen IGR prevents eggs for 12 months",
-      "One 500ml can treats a 3-4 bedroom house",
-      "The professional standard for UK flea control",
+      "A hand spray, not a fogger — sprayed from about 50cm onto surfaces, per the listing",
+      "Ingredients listed as pyriproxyfen, permethrin, piperonyl butoxide and Chrysanthemum cinerariaefolium",
+      "Listed as treating approximately a 3-4 bedroom house per 500ml can",
+      "Directions: remove pets, birds and fish aquaria; ventilate after use",
+      "The listing claims a YourCat & YourDog readers' Best Flea Product award over 10+ years",
     ],
-    tableCells: [
-      "Indorex Defence Household Flea Spray 500ml",
-      "IGR spray",
-      "Best Overall",
-    ],
+    tableCells: ["Indorex Defence 500ml", "Hand spray; permethrin + pyriproxyfen IGR, as listed", "Best Overall"],
     h2Label: "Best Overall",
     h2Name: "Indorex Defence Household Flea Spray 500ml",
     tocLabel: "Best Overall",
@@ -146,16 +118,13 @@ const products: ProductRecord[] = [
     cardName: "Zero In Natural Flea Bomb 150ml — One-Shot Aerosol",
     cardLabel: "Best Natural",
     features: [
-      "Fire-free, chemical-free whole-room flea bomb",
-      "Natural pyrethrin formula — no smoke or residue",
-      "Treats up to 40m³ per unit",
-      "Safe near carpets, soft furnishings and bedding",
+      "The only fogger on this page: a one-shot aerosol locked on and left to empty into the room",
+      "Contains pyrethrins, per the listing",
+      "Listed as a whole-room treatment covering up to 40 m³",
+      "Target species listed as Insect, Flea, Fleas",
+      "Directions: press the trigger to lock, then leave the room while the can disperses",
     ],
-    tableCells: [
-      "Zero In Natural Flea Bomb 150ml",
-      "Natural aerosol",
-      "Best Natural",
-    ],
+    tableCells: ["Zero In Natural Flea Bomb 150ml", "One-shot aerosol fogger; pyrethrins; up to 40 m³, as listed", "Best Natural"],
     h2Label: "Best Natural",
     h2Name: "Zero In Natural Flea Bomb 150ml",
     tocLabel: "Best Natural",
@@ -168,16 +137,13 @@ const products: ProductRecord[] = [
     cardName: "NOPE! CP Flea Spray 500ml for the Home",
     cardLabel: "Best Large Room",
     features: [
-      "Fast-acting odourless cypermethrin formula",
-      "3-month residual action on treated surfaces",
-      "Non-staining — safe for carpets, soft furnishings, mattresses",
-      "Ideal complement to a flea fogger treatment",
+      "A spot-treatment spray, not a fogger, per the listing",
+      "Ingredient listed as cypermethrin",
+      "The maker claims ongoing protection for up to 3 months after application",
+      "Listed for indoor and outdoor use; water-based, solvent-free, non-staining",
+      "Listing states it is not to be used directly on pets",
     ],
-    tableCells: [
-      "NOPE! CP Flea Spray 500ml for the Home",
-      "Cypermethrin spray",
-      "Best Large Room",
-    ],
+    tableCells: ["NOPE! Flea Killer Spray 500ml", "Spot spray; cypermethrin; indoor and outdoor, as listed", "Best Large Room"],
     h2Label: "Best Large Room",
     h2Name: "NOPE! CP Flea Spray 500ml for the Home",
     tocLabel: "Best Large Room",
@@ -190,16 +156,13 @@ const products: ProductRecord[] = [
     cardName: "Strikeback Super Strength Triple Action Flea Spray 1L",
     cardLabel: "Best Twin Pack",
     features: [
-      "Triple-action: cypermethrin, chrysanthemum extract + pyriproxyfen IGR",
-      "Kills adults on contact, stops eggs hatching",
-      "1L trigger spray for precise, targeted application",
-      "Trusted UK brand since 2007",
+      "Listed as a single 1-litre bottle — not a twin pack; unit count 1,000 millilitres",
+      "A hand spray applied from about 30cm, not a fogger, per the listing",
+      "Title states triple insecticides and a growth regulator; none is named on the listing",
+      "Target species listed as Insects",
+      "Listing safety text: avoid naked flames; let it dry before pets or children return",
     ],
-    tableCells: [
-      "Strikeback Super Strength Triple Action Flea Spray 1L",
-      "Triple-action spray",
-      "Best Twin Pack",
-    ],
+    tableCells: ["Strikeback Triple Action 1L", "Hand spray; actives not named; single 1L bottle, as listed", "Best Twin Pack"],
     h2Label: "Best Twin Pack",
     h2Name: "Strikeback Super Strength Triple Action Flea Spray 1L",
     tocLabel: "Best Twin Pack",
@@ -212,16 +175,13 @@ const products: ProductRecord[] = [
     cardName: "Pest Expert Formula C+ Flea Killer Spray 1L",
     cardLabel: "Best Professional",
     features: [
-      "Maximum-strength spray from the UK's leading pest control brand",
-      "Three active ingredients including pyriproxyfen IGR",
-      "12-week residual protection on treated surfaces",
-      "Water-based — safe for carpets and fabrics once dry",
+      "A hand spray, not a fogger; title states \"Approved for Amateur Use\"",
+      "The maker states three active ingredients, one of them the growth regulator pyriproxyfen",
+      "Listed as covering 50 square metres per application",
+      "The maker claims a residue that continues to protect for up to 12 weeks",
+      "Listed as water-based; keep children and pets out until dry, approx. 2-3 hours",
     ],
-    tableCells: [
-      "Pest Expert Formula C+ Flea Killer Spray 1L",
-      "Professional spray",
-      "Best Professional",
-    ],
+    tableCells: ["Pest Expert Formula C+ 1L", "Hand spray; three actives incl. pyriproxyfen; 50 m², as listed", "Best Professional"],
     h2Label: "Best Professional",
     h2Name: "Pest Expert Formula C+ Flea Killer Spray 1L",
     tocLabel: "Best Professional",
@@ -230,546 +190,340 @@ const products: ProductRecord[] = [
 ];
 
 const tocItems = [
-  { id: "at-a-glance", title: "Best Flea Foggers at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
-  })),
-  { id: "buying-guide", title: "How to Choose the Right Flea Fogger" },
-  { id: "how-to-use", title: "How to Use a Flea Fogger Safely" },
-  { id: "faq", title: "Frequently Asked Questions" },
+  { id: "situation", title: "What a Fogger Is, and Which of These Is One" },
+  { id: "legal", title: "The Legal Position and the Fire Warning" },
+  { id: "limits", title: "Where a Fogger Does Not Reach" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Fogger Is Not the Answer" },
+  { id: "using", title: "Using Them" },
+  { id: "compared", title: "The Five Products Compared" },
 ];
+
 export default function BestFleaFoggerPage() {
   return (
     <GuideLayout
       title="Best Flea Fogger UK 2026: Flea Bombs That Actually Work"
-      subtitle="Our pick of the most effective flea foggers and smoke bombs available in the UK, with safety advice and application guidance"
-      lastUpdated="March 2026"
-      readingTime="9 min"
+      subtitle="One fogger and four sprays for UK homes, described by what their own listings state — and what two universities say a total-release fogger cannot reach"
+      lastUpdated="September 2026"
+      readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
-      relatedGuides={[
-        {
-          title: "How to Get Rid of Fleas: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-fleas",
-        },
-        {
-          title: "How to Get Rid of Bed Bugs: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-bed-bugs",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
-        {
-          title: "How to Get Rid of Cockroaches: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-cockroaches",
-        },
-        {
-          title: "How to Get Rid of Moths",
-          href: "/guides/how-to-get-rid-of-moths",
-        },
-        {
-          title: "Carpet Beetle Control: Complete UK Guide",
-          href: "/guides/carpet-beetle-control",
-        },
-        {
-          title: "Landlord Pest Control: UK Compliance Guide",
-          href: "/guides/landlord-pest-control",
-        },
-        {
-          title: "Hotel Pest Control: UK Compliance Guide",
-          href: "/guides/hotel-pest-control",
-        },
-        {
-          title: "How to Get Rid of Ants: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-ants",
-        },
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
-        {
-          title: "Wasp Nest Removal: Complete UK Guide",
-          href: "/guides/wasp-nest-removal",
-        },
-        {
-          title: "Restaurant Pest Control: UK Compliance Guide",
-          href: "/guides/restaurant-pest-control",
-        },
-      ]}
       relatedProducts={[
-        {
-          title: "Best Flea Spray for Home UK 2026",
-          href: "/best/flea-spray-for-home",
-        },
-        {
-          title: "Best Flea Treatments UK 2026",
-          href: "/best/flea-treatments",
-        },
         { title: "Best Bed Bug Spray UK 2026", href: "/best/bed-bug-spray" },
-        {
-          title: "Best Bed Bug Treatments UK 2026",
-          href: "/best/bed-bug-treatments",
-        },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
-        {
-          title: "Best Carpet Beetle Treatments UK 2026",
-          href: "/best/carpet-beetle-treatments",
-        },
         { title: "Best Moth Killers UK 2026", href: "/best/moth-killers" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />{" "}
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
-          a small commission at no extra cost to you. As an Amazon Associate,
-          PestPro Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
+          a small commission at no extra cost to you. This helps us keep the
+          site running and free for everyone. As an Amazon Associate, PestPro
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        Flea foggers — commonly called "flea bombs" — are one of the most
-        popular DIY flea treatments in the UK. They work by filling a room with
-        insecticidal mist or smoke that settles on carpets, soft furnishings,
-        and surfaces, killing adult fleas and (with better products) disrupting
-        the development of eggs and larvae. When used correctly alongside other
-        treatments, foggers can dramatically accelerate the elimination of a
-        flea infestation.{" "}
-      </p>{" "}
+        A fogger empties itself into the air of a room and settles. The
+        National Pesticide Information Center describes the limit of that in
+        one sentence:{" "}
+        <em>
+          &ldquo;They do not spray out gas and do not reach into unexposed
+          voids, cracks and crevices, where pests may hide.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.npic} rel="nofollow">
+          NPIC
+        </a>
+        ). Four of the five products here are not foggers at all.
+      </p>
+
+      {/* DECISION BLOCK — situation first. The legal/fire line and the does-not-reach
+          line sit ABOVE the product lines. No Amazon link, no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You came here for a flea bomb.</strong> One of the five is
+            one; the other four are sprays &mdash;{" "}
+            <a href="#situation" className="underline">
+              which of these is a fogger
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You have a gas hob, a boiler or a pilot light.</strong> Two
+            sources warn about foggers and flames &mdash;{" "}
+            <a href="#legal" className="underline">
+              the legal position and the fire warning
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want it to reach under the furniture.</strong> A fogger
+            does not, and the University of Kentucky says what does &mdash;{" "}
+            <a href="#limits" className="underline">
+              where a fogger does not reach
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You have a dog or a cat.</strong> The pet is treated first,
+            and no product here is listed for use on an animal &mdash;{" "}
+            <a href="#alternatives" className="underline">
+              if a fogger is not the answer
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">What a Fogger Is, and Which of These Is One</h2>
       <p>
-        {" "}
-        However, foggers have important limitations. The mist or smoke settles
-        from above, meaning it coats horizontal surfaces well but struggles to
-        penetrate deep into carpet pile where flea eggs and larvae are
-        concentrated. Foggers also cannot reach under heavy furniture or inside
-        upholstered cushions as effectively as a targeted spray. For this
-        reason, foggers work best as a supplement to manual spray treatment —
-        not as a replacement for it.{" "}
-      </p>{" "}
+        Read from their own listings, the five products are one one-shot
+        aerosol &mdash; the Zero In can, locked on and left to empty into a room
+        of up to 40 m³ &mdash; and four sprays applied by hand from 30cm or 50cm
+        onto surfaces. Only the first is what the word fogger, or flea bomb,
+        means. The comparison table states the form for every row.
+      </p>
       <p>
-        {" "}
-        We selected these flea foggers on published specifications and
-        manufacturer information, looking at{" "}
-        <strong>active ingredient effectiveness</strong>,{" "}
-        <strong>coverage area</strong>, and <strong>ease of use</strong>. Every
-        product listed is available on Amazon UK at the time of writing.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="warning">
-          {" "}
+        That matters because the two questions a reader has about a fogger
+        &mdash; what it reaches and what it can set alight &mdash; do not apply
+        to a hand spray in the same way.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">The Legal Position and the Fire Warning</h2>
+      <p>
+        HSE&rsquo;s guidance on using biocides:{" "}
+        <em>
+          &ldquo;If you are a member of the public, you should only use
+          biocidal products that are intended for the general public -
+          sometimes the terms &apos;amateur&apos; or &apos;non-professional&apos;
+          might be used instead.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hse} rel="nofollow">
+          HSE
+        </a>
+        ). One listing here carries that status in its title; the label on the
+        others is where it is stated.
+      </p>
+      <p>
+        The fire warning is specific to foggers. NPIC:{" "}
+        <em>
+          &ldquo;Keep foggers away from open flames, turn off pilot lights, and
+          unplug electrical appliances before use.&rdquo;
+        </em>{" "}
+        The University of Kentucky records why:{" "}
+        <em>
+          &ldquo;There have been several house fires involving insect foggers
+          when users neglected to extinguish pilot lights on stoves, furnaces,
+          and other household appliances&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.ukyFog} rel="nofollow">
+          University of Kentucky Entomology
+        </a>
+        ). The Strikeback listing carries its own line on naked flames.
+      </p>
+
+      {/* [2] Where it does not help */}
+      <h2 id="limits">Where a Fogger Does Not Reach</h2>
+      <p>
+        <strong>Not into the places fleas develop.</strong> University of
+        Kentucky on foggers:{" "}
+        <em>
+          &ldquo;very little insecticide actually penetrates into cracks, voids,
+          and other secluded locations where cockroaches, ants, bed bugs, and
+          most other household pests congregate and spend most of their
+          time.&rdquo;
+        </em>{" "}
+        And on what does:{" "}
+        <em>
+          &ldquo;Flea control products that can be dispensed by hand can be
+          directed under beds, behind furniture, and into other hidden
+          locations less accessible to foggers.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>It can scatter what it does not kill.</strong>{" "}
+        <em>
+          &ldquo;The ingredients within &lsquo;bug bombs&rsquo; also tend to be
+          repellent, causing insects to scatter and move deeper into walls,
+          crevices, and other hard-to-reach areas.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>Nothing here reaches pupae.</strong> UC IPM on any home
+        insecticide:{" "}
+        <em>
+          &ldquo;This treatment kills larvae but not pupae, so fleas may
+          continue to emerge for up to 2 weeks.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ).
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Fogger or hand spray</h3>
+      <p>
+        The only question the sources above turn on. One product empties into
+        the air; four are pointed at a surface. The table states it for every
+        row.
+      </p>
+      <h3>2. Whether the listing names a growth regulator</h3>
+      <p>
+        UC IPM names methoprene and pyriproxyfen as the IGRs aimed at eggs and
+        immatures. Indorex and Pest Expert state pyriproxyfen. Zero In states
+        pyrethrins. NOPE! states cypermethrin. Strikeback&rsquo;s title claims a
+        growth regulator and its listing names none.
+      </p>
+      <h3>3. What the listing says it covers</h3>
+      <p>
+        Zero In: up to 40 m³ of room. Indorex: approximately a 3-4 bedroom
+        house per can. Pest Expert: 50 square metres. NOPE! and Strikeback state
+        a volume and no area.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
           <p>
-            Remove ALL people, pets (including fish tanks — cover and turn off
-            air pumps), birds, and reptiles before activating a flea fogger. Do
-            not re-enter the property until the recommended time has elapsed and
-            all rooms have been ventilated for at least 30 minutes.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      <h2 id="at-a-glance">Best Flea Foggers at a Glance</h2>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            <th>Product</th>
-            <th>Type</th>
-            <th>Best For</th>
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Indorex Defence is the undisputed gold standard for household flea
-        treatment in the UK, winning the Best Flea Product award ten times. It
-        combines permethrin — which kills adult fleas on contact — with
-        pyriproxyfen, an insect growth regulator (IGR) that prevents flea eggs
-        and larvae from developing for up to 12 months. This dual-action formula
-        means a single application tackles the entire flea lifecycle, not just
-        the adults you can see.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        One 500ml can is enough to treat a 3-4 bedroom house. Spray along
-        skirting boards, under furniture, and across carpets and soft
-        furnishings. The IGR component is what sets Indorex apart from basic
-        knockdown sprays — it breaks the breeding cycle, dramatically reducing
-        the chance of re-infestation. This is the product that professional pest
-        controllers reach for first, and for good reason.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>10-time award-winning flea treatment</li>{" "}
-        <li>Dual-action: permethrin contact kill + IGR lifecycle disruption</li>{" "}
-        <li>12 months of residual protection from a single application</li>{" "}
-        <li>Professional standard trusted by UK pest controllers</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Higher price than basic foggers</li>{" "}
-        <li>Must vacate the room during application and allow to dry</li>{" "}
-        <li>Manual spray requires more effort than a one-shot fogger</li>{" "}
-      </ul>{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        If you prefer to avoid synthetic chemicals, the Zero In Natural Flea
-        Bomb uses a natural pyrethrin formula derived from chrysanthemum
-        flowers. It is fire-free, produces no smoke, and leaves no visible
-        residue — making it a much cleaner option than traditional smoke bombs.
-        Simply press the nozzle to lock, place the can in the centre of the
-        room, leave, and close the door. The aerosol fills the space and settles
-        over 2-3 hours.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Each 150ml unit treats up to 40 cubic metres, which covers an
-        average-sized room comfortably. It kills adult fleas, ticks, and larvae
-        on contact and is safe for use near carpets, soft furnishings, and
-        bedding once the room has been ventilated. For households with young
-        children or those who prefer a more natural approach, this is an
-        excellent choice.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Natural pyrethrin formula — no synthetic chemicals</li>{" "}
-        <li>Fire-free with no smoke or visible residue</li>{" "}
-        <li>Generous 40m³ coverage per unit</li>{" "}
-        <li>Safe near soft furnishings and bedding after ventilation</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          No IGR — kills on contact only, no long-term lifecycle disruption
-        </li>{" "}
-        <li>Less residual protection than synthetic alternatives</li>{" "}
-        <li>May require repeat applications for heavy infestations</li>{" "}
-      </ul>{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The NOPE! CP Flea Spray is a fast-acting odourless cypermethrin spray
-        with 3-month residual action, designed for targeted treatment of
-        carpets, soft furnishings, skirting boards, and mattresses. Its
-        non-staining formula makes it safe to use across the home without
-        worrying about marks on fabrics or flooring. Use it as part of a
-        complete flea treatment programme alongside a fogger for the most
-        thorough results.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The 500ml bottle provides generous coverage for multiple rooms. Spray
-        along skirting boards, under furniture, across carpets, and around pet
-        bedding areas. The 3-month residual means the cypermethrin continues
-        killing fleas that emerge from pupae long after the initial application
-        — an important feature given that flea pupae can remain dormant for
-        weeks before hatching.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Odourless cypermethrin formula for discreet treatment</li>{" "}
-        <li>3-month residual action for ongoing protection</li>{" "}
-        <li>Non-staining — suitable for carpets, fabrics, and mattresses</li>{" "}
-        <li>Excellent complement to a fogger for complete coverage</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>No IGR component for lifecycle disruption</li>{" "}
-        <li>Manual spray requires more effort than a one-shot fogger</li>{" "}
-        <li>
-          Best used alongside a fogger rather than as a standalone treatment
-        </li>{" "}
-      </ul>{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Strikeback Super Strength Triple Action Flea Spray combines three
-        active ingredients — cypermethrin, chrysanthemum extract, and
-        pyriproxyfen IGR — in a single 1L trigger spray. This triple-action
-        formula kills adult fleas on contact while the IGR component stops eggs
-        from hatching, providing long-term control that breaks the flea breeding
-        cycle. It is one of only two products on our list that includes an
-        IGR.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The 1L trigger spray format allows precise application to carpets,
-        furniture, door thresholds, and skirting boards — exactly the areas
-        where fleas and their eggs concentrate. Strikeback has been a trusted UK
-        pest control brand since 2007, and this product represents their most
-        comprehensive flea treatment formula. For homeowners who want IGR
-        protection, this is an excellent alternative.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Triple-action formula with IGR for lifecycle disruption</li>{" "}
-        <li>1L trigger spray for precise, targeted application</li>{" "}
-        <li>Kills adults on contact and prevents eggs from hatching</li>{" "}
-        <li>Trusted UK brand with nearly two decades of experience</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Manual spray requires room-by-room application</li>{" "}
-        <li>Does not penetrate hidden voids like a fumigation device</li>{" "}
-        <li>Best results require thorough coverage of all floor areas</li>{" "}
-      </ul>{" "}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Pest Expert Formula C+ is a maximum-strength flea killer spray from the
-        UK's leading pest control brand. It contains three active ingredients
-        including pyriproxyfen IGR for complete lifecycle disruption — killing
-        adult fleas on contact while preventing eggs and larvae from developing.
-        The 12-week residual protection means treated surfaces continue working
-        long after the initial application, catching newly emerged fleas as
-        dormant pupae hatch over the following weeks.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The water-based formula is safe for carpets and fabrics once dry,
-        leaving no staining or visible residue. Apply to carpets, skirting
-        boards, under furniture, and around pet bedding areas for comprehensive
-        coverage. For the most thorough DIY flea treatment, pair this spray with
-        a Pest Expert fogger to reach hidden voids that surface sprays cannot
-        access — a combination that matches what a professional pest controller
-        would deliver.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Maximum-strength professional formula with three active ingredients
-        </li>{" "}
-        <li>IGR pyriproxyfen disrupts the entire flea lifecycle</li>{" "}
-        <li>12-week residual protection from a single application</li>{" "}
-        <li>Water-based — no staining on carpets or fabrics</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Best results require pairing with a fogger for hidden areas
-        </li>{" "}
-        <li>Manual spray requires thorough room-by-room application</li>{" "}
-        <li>
-          Must allow surfaces to dry before pets and children re-enter
-        </li>{" "}
-      </ul>{" "}
-      <h2 id="buying-guide">How to Choose the Right Flea Fogger</h2>{" "}
-      <h3>Look for an IGR</h3>{" "}
-      <p>
-        {" "}
-        An IGR (insect growth regulator) prevents flea eggs and larvae from
-        developing, providing months of protection. Only the Indorex fogger on
-        our list includes an IGR. If long-term protection is your priority, the
-        Indorex fogger combined with Indorex spray provides the most
-        comprehensive treatment.{" "}
-      </p>{" "}
-      <h3>Coverage Area</h3>{" "}
-      <p>
-        {" "}
-        Check the cubic metre coverage per unit and calculate how many foggers
-        you need. An average UK room is approximately 30 cubic metres (3m x 4m x
-        2.5m ceiling). One fogger per room is the standard approach.{" "}
-      </p>{" "}
-      <h3>Smoke Bomb vs Aerosol</h3>{" "}
-      <p>
-        {" "}
-        Smoke bombs penetrate hidden spaces better (ceiling voids, wall
-        cavities, behind skirting). Aerosol foggers are cleaner, less smoky, and
-        less likely to trigger smoke detectors. For standard rooms, aerosol is
-        usually fine. For rooms with lots of hidden crevices, smoke bombs
-        provide better penetration.{" "}
-      </p>{" "}
-      <h2 id="how-to-use">How to Use a Flea Fogger Safely</h2>{" "}
-      <h3>Before Fogging</h3>{" "}
-      <ul>
-        {" "}
-        <li>
-          Remove all people, pets (including fish, birds, reptiles), and
-          uncovered food
-        </li>{" "}
-        <li>Cover or disconnect fish tanks and turn off air pumps</li>{" "}
-        <li>Vacuum thoroughly to remove debris and flea eggs</li>{" "}
-        <li>Close all windows and external doors</li>{" "}
-        <li>Open internal doors and cupboards to maximise coverage</li>{" "}
-        <li>Turn off smoke detectors temporarily</li>{" "}
-      </ul>{" "}
-      <h3>During Fogging</h3>{" "}
-      <ul>
-        {" "}
-        <li>
-          Activate the fogger, leave the room immediately, and close the door
-        </li>{" "}
-        <li>
-          Do not re-enter until the recommended time has elapsed (typically 2-4
-          hours)
-        </li>{" "}
-      </ul>{" "}
-      <h3>After Fogging</h3>{" "}
-      <ul>
-        {" "}
-        <li>
-          Open all windows and doors to ventilate for at least 30 minutes
-        </li>{" "}
-        <li>Wipe down kitchen surfaces and food preparation areas</li>{" "}
-        <li>Wait 24 hours before vacuuming treated floors</li>{" "}
-        <li>Vacuum daily for 2 weeks to stimulate remaining pupae to hatch</li>{" "}
-        <li>Re-enable smoke detectors</li>{" "}
-      </ul>{" "}
-      <h2 id="faq">Frequently Asked Questions</h2>{" "}
-      {faqs.map((f) => (
-        <div key={f.q}>
-          <h3>{f.q}</h3>
-          <p>{f.a}</p>
+            {
+              [
+                "Not a fogger. A 500ml Virbac hand spray whose listing states four ingredients including the growth regulator pyriproxyfen, sprayed from about 50cm onto and under carpets, rugs, tiles and skirting, and which the maker says treats approximately a 3-4 bedroom house. The listing's readers' award claim over 10+ years is the maker's and is carried as such.",
+                "The one fogger on the page. A 150ml one-shot aerosol containing pyrethrins, listed as a whole-room treatment for up to 40 m³: press the trigger to lock it and leave the room while it empties. The listing describes it as an alternative to smoke bombs; what NPIC and Kentucky say about what any fogger reaches applies to it.",
+                "Not a fogger. A 500ml spot-treatment spray naming cypermethrin, listed for indoor and outdoor use, water-based and non-staining, with a maker's claim of up to 3 months of protection. The listing says it is not to be used directly on pets and is to be used alongside a vet's flea product for the animal.",
+                "Not a fogger, and not a twin pack: the listing is one 1-litre bottle, applied from about 30cm. Its title states triple insecticides and a growth regulator, and the listing names none of them. The safety text warns against naked flames and says to let surfaces dry before pets or children return. The award label above is held by the standing rule and is referred.",
+                "Not a fogger. A 1-litre water-based hand spray whose title states amateur approval, naming three actives including pyriproxyfen, with a stated coverage of 50 square metres and a maker's claim of up to 12 weeks of residue. Children and pets out until dry, which the listing puts at 2-3 hours.",
+              ][i]
+            }
+          </p>
         </div>
       ))}
+
+      {/* [14] Alternatives */}
+      <h2 id="alternatives">If a Fogger Is Not the Answer</h2>
+      <p>
+        <strong>A hand spray reaches what a fogger does not.</strong> That is
+        Kentucky&rsquo;s point above, and four of the five products here are
+        hand sprays.
+      </p>
+      <p>
+        <strong>Treat the pet first, with a vet.</strong> University of
+        Kentucky:{" "}
+        <em>
+          &ldquo;Flea eradication requires treatment of pets, and oftentimes the
+          premises.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.uky} rel="nofollow">
+          University of Kentucky Entomology
+        </a>
+        ). No product on this page is listed for use on an animal.
+      </p>
+      <p>
+        <strong>Vacuum.</strong>{" "}
+        <em>
+          &ldquo;Vacuuming removes many of the eggs, larvae and pupae developing
+          within the home.&rdquo;
+        </em>{" "}
+        Our <a href="/guides/how-to-get-rid-of-fleas">flea guide</a> covers the
+        whole sequence.
+      </p>
+
+      {/* [15] Using them */}
+      <h2 id="using">Using Them</h2>
+      <ol>
+        <li>
+          <strong>Check the label lists your pest.</strong> NPIC:{" "}
+          <em>&ldquo;Check the product label to see if your pest is listed.&rdquo;</em>
+        </li>
+        <li>
+          <strong>For the fogger, deal with flames first.</strong> Pilot lights
+          off, appliances unplugged, then leave the room as the listing directs.
+        </li>
+        <li>
+          <strong>For the sprays, point them where fleas develop.</strong> Under
+          beds and behind furniture, at the distance each listing states.
+        </li>
+        <li>
+          <strong>Keep vacuuming for two weeks.</strong> UC IPM:{" "}
+          <em>
+            &ldquo;Vacuum regularly to remove adult fleas that emerge from pupae
+            for the next 2 weeks.&rdquo;
+          </em>
+        </li>
+      </ol>
+
       <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Severe Flea Infestation?"
-          subtext="A professional pest controller can apply commercial-grade treatments that eliminate even the most stubborn flea infestations"
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-3">
-          Looking for spray treatment instead?
-        </p>{" "}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          {" "}
-          <a
-            href="/best/flea-spray-for-home"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            {" "}
-            Best Flea Spray for Home UK 2026 →{" "}
-          </a>{" "}
-          <a
-            href="/guides/how-to-get-rid-of-fleas"
-            className="inline-block px-6 py-2.5 bg-gray-700 hover:bg-gray-800 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            {" "}
-            How to Get Rid of Fleas — Complete Guide →{" "}
-          </a>{" "}
-        </div>{" "}
-      </div>{" "}
+        <Callout type="warning">
+          <p>
+            A fogger and a pilot light in the same house is the combination the
+            University of Kentucky records fires from. Turn every flame off
+            before the can is set off.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Five Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Form, actives and coverage, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <FindProviderCTA
+        heading="Fleas still emerging after the house and the pet are treated?"
+        subtext="Compare pest control providers near you, no fees and no commissions."
+      />
     </GuideLayout>
   );
 }

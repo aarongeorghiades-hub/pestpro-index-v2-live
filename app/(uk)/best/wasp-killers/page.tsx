@@ -2,20 +2,30 @@ import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
 
+// S68 R1 — ROLLOUT REBUILD to the R8 pattern. Title and H1 byte-unchanged. Award labels,
+// rank numerals, anchor ids and card order UNCHANGED as ruled.
+//
+// THE H1 PROMISES POWDERS AND THE PAGE CARDS NONE. It reads "Sprays, Powders & Traps";
+// the three products are two foams and a trap. Held by the standing rule and reported;
+// the subtitle and description no longer promise a powder.
+//
+// HEALTH: one general sentence, quoted from Oxford City Council, naming no illness.
+//
+// BPCA's wasp page was attempted and returned HTTP 403 with a 5,509-byte body — recorded
+// as BLOCKED (Law 177), the round's single attempt on that URL spent. Oxford City
+// Council's pest advice page is the source read.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Wasp Killer Products UK 2026: Sprays, Powders & Traps",
     description:
-      "The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders and wasp traps, with buying advice.",
-    alternates: {
-      canonical: "https://pestproindex.com/best/wasp-killers",
-    },
+      "Wasp nest treatment for UK homes: when a council says leave it to a professional, why a nest dies off in winter anyway, and three products on their own listings.",
+    alternates: { canonical: "https://pestproindex.com/best/wasp-killers" },
     openGraph: {
       title: "Best Wasp Killer Products UK 2026: Sprays, Powders & Traps",
       description:
-        "The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders and wasp traps, with buying advice.",
+        "Wasp nest treatment for UK homes: when a council says leave it to a professional, why a nest dies off in winter anyway, and three products on their own listings.",
       url: "https://pestproindex.com/best/wasp-killers",
       type: "article",
       siteName: "PestPro Index",
@@ -28,48 +38,35 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Wasp Killer Products UK 2026: Sprays, Powders & Traps",
   description:
-    "The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders and wasp traps, with buying advice.",
+    "Wasp nest treatment for UK homes: when a council says leave it to a professional, why a nest dies off in winter anyway, and three products on their own listings.",
   datePublished: "2026-03-16",
-  dateModified: "2026-03-16",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://pestproindex.com/best/wasp-killers",
-  },
+  dateModified: "2026-09-07",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/wasp-killers" },
 };
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
-      name: "Best Wasp Killer Products UK 2026",
+      name: "Best Wasp Killer Products UK 2026: Sprays, Powders & Traps",
       item: "https://pestproindex.com/best/wasp-killers",
     },
   ],
+};
+
+// SOURCES. Quotations extracted by byte range and exact-matched before drafting
+// (Law 164); each citation names the host actually read (S59-A). Banked at S68 R1 under
+// ~/pp-s68r1/sources/ (Law 175).
+const SRC = {
+  oxford: "https://www.oxford.gov.uk/pest-control-advice/pest-control-advice-wasps",
+  hse: "https://www.hse.gov.uk/biocides/using/overview.htm",
 };
 
 type ProductRecord = {
@@ -86,6 +83,8 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Feature text and comparison cells from the banked listings' OWN bullets and detail
+// rows (S52-E), fetched 2026-09-01. Maker claims are framed as the maker's.
 const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
@@ -94,12 +93,12 @@ const products: ProductRecord[] = [
     cardName: "Rentokil Wasp Foam 300ml",
     cardLabel: "Best Overall",
     features: [
-      "4-meter jet spray for safe distance application",
-      "Professional strength formula",
-      "Kills wasps on contact and destroys nests",
-      "From the UK's most trusted pest control brand",
+      "Fetched title: Rentokil PSW97 Wasp Destroy Foam Aerosol 300ml",
+      "Contains d-phenothrin and tetramethrin, per the listing",
+      "The maker claims it kills wasps in the nest",
+      "Aerosol; target species listed as Insects",
     ],
-    tableCells: ["Rentokil Wasp Foam 300ml", "Foam spray", "Best Overall"],
+    tableCells: ["Rentokil PSW97 Foam 300ml", "Nest foam; d-phenothrin + tetramethrin, as listed", "Best Overall"],
     h2Label: "Best Overall",
     h2Name: "Rentokil Wasp Foam 300ml",
     tocLabel: "Best Overall",
@@ -112,16 +111,13 @@ const products: ProductRecord[] = [
     cardName: "Zero In Ultra Power XL Wasp Trap",
     cardLabel: "Best Wasp Trap",
     features: [
-      "Dual chamber reusable design",
-      "Ready-baited — just add water",
-      "Chemical-free outdoor protection",
-      "Effective for gardens, patios, and BBQ areas",
+      "Listed as poison-free, supplied with 2 sachets of attractant bait",
+      "Listed for outdoor use: gardens, smallholdings, refuse areas, stables and barns",
+      "Listed as reusable, with a refill available and a twist-off base for emptying",
+      "Listing directions: put the trap in a bag in a freezer for 2 hours before emptying",
+      "Target species listed as Wasp",
     ],
-    tableCells: [
-      "Zero In Ultra Power XL Wasp Trap",
-      "Reusable trap",
-      "Best Trap",
-    ],
+    tableCells: ["Zero In XL Wasp Trap", "Baited trap; poison-free; outdoor, as listed", "Best Wasp Trap"],
     h2Label: "Best Wasp Trap",
     h2Name: "Zero In Ultra Power XL Wasp Trap",
     tocLabel: "Best Trap",
@@ -134,16 +130,13 @@ const products: ProductRecord[] = [
     cardName: "Zero In Wasp Killer 300ml",
     cardLabel: "Best Quick-Kill Spray",
     features: [
-      "Expanding foam reaches deep into nests",
-      "Fast-acting contact killer",
-      "Suitable for indoor and outdoor use",
-      "Easy-to-use aerosol application",
+      "Fetched title: Zero In Wasp Nest Killer — foam spray for indoor and outdoor nest removal",
+      "Contains permethrin and tetramethrin, per the listing",
+      "Listed as reaching a nest from up to 2 metres away",
+      "Listed as 2-3 treatments per 300ml can",
+      "Listing directions: apply late evening or early morning when wasps are less active",
     ],
-    tableCells: [
-      "Zero In Wasp Killer 300ml",
-      "Aerosol spray",
-      "Best Quick-Kill",
-    ],
+    tableCells: ["Zero In Wasp Nest Killer 300ml", "Nest foam; permethrin + tetramethrin; 2-3 treatments per can, as listed", "Best Quick-Kill Spray"],
     h2Label: "Best Quick-Kill Spray",
     h2Name: "Zero In Wasp Killer 300ml",
     tocLabel: "Best Spray",
@@ -152,107 +145,30 @@ const products: ProductRecord[] = [
 ];
 
 const tocItems = [
-  { id: "at-a-glance", title: "Best Wasp Killers at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
-  })),
-  { id: "buying-guide", title: "Wasp Killer Buying Guide" },
-  { id: "safety", title: "Safety Tips" },
+  { id: "situation", title: "Where the Nest Is, and When It Ends" },
+  { id: "legal", title: "The Legal Position on Wasp Products" },
+  { id: "limits", title: "Where a Foam Does Not Help" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Product Is Not the Answer" },
+  { id: "using", title: "Using Them" },
+  { id: "compared", title: "The Three Products Compared" },
 ];
 
 export default function BestWaspKillersPage() {
   return (
     <GuideLayout
       title="Best Wasp Killer Products UK 2026: Sprays, Powders & Traps"
-      subtitle="Our pick of the most effective wasp control products available in the UK, from nest killer sprays to outdoor traps"
-      lastUpdated="March 2026"
-      readingTime="7 min"
+      subtitle="Two nest foams and one baited trap for UK homes, described by what their own listings state — and what a council's pest advice says about which nests to leave to a professional"
+      lastUpdated="September 2026"
+      readingTime="6 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
-      relatedGuides={[
-        {
-          title: "Wasp Nest Removal: Complete UK Guide",
-          href: "/guides/wasp-nest-removal",
-        },
-        {
-          title: "How to Get Rid of Bed Bugs: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-bed-bugs",
-        },
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Cockroaches: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-cockroaches",
-        },
-        {
-          title: "How to Get Rid of Fleas: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-fleas",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
-        {
-          title: "How to Get Rid of Ants: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-ants",
-        },
-        {
-          title: "How to Get Rid of Squirrels: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-squirrels",
-        },
-        {
-          title: "Pigeon Control: Complete UK Guide",
-          href: "/guides/pigeon-control",
-        },
-        {
-          title: "How to Get Rid of Moths",
-          href: "/guides/how-to-get-rid-of-moths",
-        },
-        {
-          title: "Restaurant Pest Control: UK Compliance Guide",
-          href: "/guides/restaurant-pest-control",
-        },
-        {
-          title: "Carpet Beetle Control: Complete UK Guide",
-          href: "/guides/carpet-beetle-control",
-        },
-      ]}
       relatedProducts={[
         { title: "Best Rat Traps UK 2026", href: "/best/rat-traps" },
-        {
-          title: "Best Carpet Beetle Treatments UK 2026",
-          href: "/best/carpet-beetle-treatments",
-        },
         { title: "Best Mouse Traps UK 2026", href: "/best/mouse-traps" },
-        {
-          title: "Best Bed Bug Treatments UK 2026",
-          href: "/best/bed-bug-treatments",
-        },
-        {
-          title: "Best Flea Treatments UK 2026",
-          href: "/best/flea-treatments",
-        },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
         { title: "Best Ant Killers UK 2026", href: "/best/ant-killers" },
-        {
-          title: "Best Squirrel Deterrents UK 2026",
-          href: "/best/squirrel-deterrents",
-        },
-        {
-          title: "Best Bird Deterrents UK 2026",
-          href: "/best/bird-deterrents",
-        },
         { title: "Best Moth Killers UK", href: "/best/moth-killers" },
-        {
-          title: "Best Commercial Fly Killers UK 2026",
-          href: "/best/commercial-fly-killers",
-        },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
@@ -268,500 +184,266 @@ export default function BestWaspKillersPage() {
         </p>
       </div>
 
-      {/* Intro paragraphs */}
       <p>
-        Wasps are one of the most feared pests in the UK, and for good reason.
-        Every summer, from roughly July through to late September, wasp colonies
-        reach their peak size &mdash; with a single nest housing anywhere from
-        5,000 to 10,000 individual wasps. During these months, workers become
-        increasingly aggressive as the colony&apos;s food supply shifts from
-        protein-rich insects to sugary substances, which is why wasps become
-        such a nuisance at barbecues, outdoor dining areas, and around bins.
-        Unlike bees, wasps can sting repeatedly without dying, and for the
-        estimated 1&ndash;3% of the UK population with a venom allergy, a sting
-        can trigger a life-threatening anaphylactic reaction. Whether you have
-        spotted a nest under your eaves, noticed wasps entering a hole in your
-        garden, or simply want to keep them away from your patio, choosing the
-        right wasp control product is essential.
-      </p>
-      <p>
-        There are three main categories of wasp killer product available in the
-        UK. <strong>Nest killer sprays and foams</strong> are designed to be
-        applied directly to or into a nest entrance, delivering insecticide that
-        kills wasps on contact and continues to work as returning foragers pass
-        through the treated area. <strong>Insecticidal powders</strong> work on
-        a similar principle but use a dust formulation that wasps track deeper
-        into the colony on their legs and bodies, making them particularly
-        effective for nests hidden in wall cavities, under decking, or in the
-        ground. Finally, <strong>wasp traps</strong> are non-insecticidal
-        devices that lure individual wasps into a container from which they
-        cannot escape &mdash; useful for reducing the number of wasps bothering
-        you outdoors, though they will not eliminate a nest.
-      </p>
-      <p>
-        We selected these wasp killer products on published specifications and
-        manufacturer information, looking at{" "}
-        <strong>UK availability and fast delivery</strong>,{" "}
-        <strong>effectiveness and reliability</strong>, and{" "}
-        <strong>value for money</strong>. We also consulted guidance from the
-        British Pest Control Association (BPCA) and HSE-approved product labels
-        to ensure our recommendations are safe and legal for consumer use in the
-        UK. Every product on this page is available for next-day or two-day
-        delivery via Amazon UK at the time of writing.{" "}
+        A wasp nest is a summer structure. Oxford City Council&rsquo;s pest
+        advice:{" "}
+        <em>
+          &ldquo;Fertilized queens leave to hibernate, while the rest of the
+          colony dies off with the onset of cold weather.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.oxford} rel="nofollow">
+          Oxford City Council
+        </a>
+        ). Whether to treat one at all is the first question, and it is not
+        always yes.
       </p>
 
-      <div className="not-prose">
-        <Callout type="tip">
+      {/* DECISION BLOCK — situation first. The professional line, the legal line and
+          the does-not-help line sit ABOVE the product lines. No Amazon link, no price,
+          no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>The nest is large, or somewhere you cannot reach.</strong>{" "}
+            The council&rsquo;s advice is that larger nests may need a
+            professional &mdash;{" "}
+            <a href="#alternatives" className="underline">
+              if a product is not the answer
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want to know what you are allowed to use.</strong>{" "}
+            HSE separates general-public products from professional ones &mdash;{" "}
+            <a href="#legal" className="underline">
+              the legal position
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want to know where the nest is likely to be.</strong>{" "}
+            The council lists the places &mdash;{" "}
+            <a href="#situation" className="underline">
+              where the nest is, and when it ends
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want wasps away from a table, not a nest treated.</strong>{" "}
+            One of the three is a baited outdoor trap with no insecticide &mdash;{" "}
+            <a href="#best-trap" className="underline">
+              the trap
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">Where the Nest Is, and When It Ends</h2>
+      <p>
+        Oxford City Council:{" "}
+        <em>
+          &ldquo;Wasps build colonies inside nests made from wood pulp,
+          commonly found in buildings&rsquo; roof spaces, airbricks, wall
+          cavities, garden sheds, tree holes, and soil banks.&rdquo;
+        </em>{" "}
+        And on size:{" "}
+        <em>&ldquo;By early autumn, nests can contain thousands of wasps.&rdquo;</em>
+      </p>
+      <p>
+        The council&rsquo;s reason for controlling them at all is the one
+        health sentence on this page:{" "}
+        <em>
+          &ldquo;Wasps can carry germs and attack when disturbed, posing a risk
+          to hypersensitive individuals.&rdquo;
+        </em>{" "}
+        A nest that is not near people and not being disturbed will end on its
+        own with the first frosts.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">The Legal Position on Wasp Products</h2>
+      <p>
+        Two of the three products are insecticides; the trap is poison-free by
+        its listing. HSE&rsquo;s guidance on using biocides:{" "}
+        <em>
+          &ldquo;If you are a member of the public, you should only use
+          biocidal products that are intended for the general public -
+          sometimes the terms &apos;amateur&apos; or &apos;non-professional&apos;
+          might be used instead.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hse} rel="nofollow">
+          HSE
+        </a>
+        ). The label on the can states which a product is.
+      </p>
+      <p>
+        HSE on the label:{" "}
+        <em>
+          &ldquo;Following the label instructions carefully should be enough to
+          allow the product to be used safely and effectively.&rdquo;
+        </em>{" "}
+        The Zero In foam listing carries a direction of its own &mdash; apply
+        late evening or early morning &mdash; which is repeated on its card as
+        the maker&rsquo;s.
+      </p>
+
+      {/* [2] Where it does not help */}
+      <h2 id="limits">Where a Foam Does Not Help</h2>
+      <p>
+        <strong>A nest you cannot reach.</strong> The Zero In foam is listed as
+        reaching from up to 2 metres. A nest in a wall cavity, a roof void or
+        under a soil bank &mdash; three of the council&rsquo;s six locations
+        &mdash; may be beyond it. The council&rsquo;s line:{" "}
+        <em>&ldquo;However, larger nests may require professional treatment.&rdquo;</em>
+      </p>
+      <p>
+        <strong>A trap does not treat a nest.</strong> The Zero In trap is
+        listed for outdoor use with a bait attractant. It is for wasps in the
+        garden, not the colony they came from.
+      </p>
+      <p>
+        <strong>A foam does not treat next year.</strong> Per the council, the
+        colony dies with the cold and only the queens overwinter.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Nest or no nest</h3>
+      <p>
+        Two products are nest foams and one is a baited trap. If you have not
+        found a nest, the foams have nothing to be pointed at.
+      </p>
+      <h3>2. Reach and how many goes, as listed</h3>
+      <p>
+        Zero In foam: up to 2 metres, 2-3 treatments per can. Rentokil foam:
+        neither figure is stated on its listing. The table carries both as
+        stated.
+      </p>
+      <h3>3. Which active the listing names</h3>
+      <p>
+        Rentokil: d-phenothrin and tetramethrin. Zero In foam: permethrin and
+        tetramethrin. The trap: none, by design.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
           <p>
-            Always apply wasp nest treatments at dusk when wasps are less active
-            and most have returned to the nest. Wear long sleeves, gloves, and
-            eye protection even when using long-range spray products.
+            {
+              [
+                "A 300ml Rentokil aerosol foam whose listing states d-phenothrin and tetramethrin and which the maker says kills wasps in the nest. The listing states no reach and no number of treatments per can, so those cells read not stated.",
+                "A reusable outdoor trap listed as poison-free and supplied with two sachets of attractant, with a refill available and a twist-off base. The listing's own emptying direction is to bag the trap and freeze it for two hours first. Its target species field reads Wasp. The maker's claim about how far the bait draws wasps from is the maker's and is not repeated here.",
+                "A 300ml foam whose fetched title reads Zero In Wasp Nest Killer, listed with permethrin and tetramethrin, for indoor and outdoor nests, reaching from up to 2 metres, with 2-3 treatments per can. The listing directs application in late evening or early morning when wasps are less active.",
+              ][i]
+            }
           </p>
-        </Callout>
-      </div>
+        </div>
+      ))}
 
-      {/* At a Glance */}
-      <h2 id="at-a-glance">Best Wasp Killers at a Glance</h2>
+      {/* [14] Alternatives */}
+      <h2 id="alternatives">If a Product Is Not the Answer</h2>
       <p>
-        Here is a quick comparison of our top three picks. Each product has been
-        selected for a different use case, so the best choice for you depends on
-        your specific situation &mdash; whether you need to destroy a nest or
-        simply keep wasps away from your outdoor living space. We go into full
-        detail on every product below the table.
+        <strong>Leave it, if it is leaving you alone.</strong> The colony dies
+        off with the cold, per the council. A nest that is not near people
+        needs nothing.
       </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Type</th>
-            <th>Best For</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <p>
+        <strong>A professional, for a large or unreachable nest.</strong>{" "}
+        Oxford City Council:{" "}
+        <em>&ldquo;However, larger nests may require professional treatment.&rdquo;</em>{" "}
+        HSE:{" "}
+        <em>
+          &ldquo;If you are not a professional, consider using a professional
+          pest controller to deal with the problem.&rdquo;
+        </em>{" "}
+        Our <a href="/guides/wasp-nest-removal">wasp nest guide</a> covers what
+        a treatment visit involves.
+      </p>
 
-      {/* Best Overall */}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />
-      </div>
-      <p>
-        The Rentokil Wasp Foam 300ml takes our top spot because it combines
-        proven effectiveness with the reassurance of a brand that has been a
-        household name in UK pest control for decades. The professional strength
-        formula delivers expanding foam that physically blocks the nest entrance
-        while simultaneously delivering a powerful contact insecticide. This
-        dual action &mdash; sealing the entrance and poisoning wasps that touch
-        the foam &mdash; is what makes it so effective. Wasps inside the nest
-        that attempt to leave are forced through the treated foam, picking up a
-        lethal dose as they go. Returning foragers that land on the foam meet
-        the same fate.
-      </p>
-      <p>
-        The 4-metre jet spray range is a crucial safety feature. Wasp nests
-        under eaves, in loft soffits, or tucked into the angle of a roof are
-        notoriously difficult and dangerous to treat up close. With a reach of
-        four metres, you can stand at ground level and apply the foam directly
-        into the nest entrance from a safe distance, without needing a ladder or
-        getting within arm&apos;s length of the colony. The foam begins
-        expanding on contact, creating a visible seal over the entrance that you
-        can clearly see has been successfully applied, even from a distance.
-        This is a significant advantage over liquid sprays, where it can be
-        difficult to tell exactly how much product has reached the target.
-      </p>
-      <p>
-        Timing is everything when using this product. Apply it at dusk &mdash;
-        ideally between 8pm and 10pm on a warm summer evening &mdash; when the
-        vast majority of the colony has returned to the nest for the night and
-        activity levels are at their lowest. Aim the nozzle directly at the nest
-        entrance, apply a two-to-three second burst, and then retreat. Do not
-        attempt to knock the nest down immediately. Leave it for at least 48
-        hours to allow the insecticide to work its way through the entire
-        colony. After two days, if you see no further wasp activity around the
-        nest, it is safe to remove.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
+      {/* [15] Using them */}
+      <h2 id="using">Using Them</h2>
+      <ol>
         <li>
-          Expanding foam physically seals the nest entrance for maximum
-          effectiveness
-        </li>
-        <li>4-metre jet range allows safe application from ground level</li>
-        <li>Kills wasps on contact and destroys nests</li>
-        <li>
-          Trusted Rentokil brand with decades of UK pest control expertise
-        </li>
-        <li>Easy to see where the product has been applied</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>
-          Single-use can &mdash; one can is typically enough for one nest only
+          <strong>Decide whether the nest needs treating at all.</strong> Near
+          people and being disturbed, or not.
         </li>
         <li>
-          Foam residue can be difficult to remove from brickwork and painted
-          surfaces
+          <strong>Check you can reach it from the listed distance.</strong> Two
+          metres for the Zero In foam; not stated for the Rentokil.
         </li>
-        <li>Not effective if you cannot locate the nest entrance</li>
         <li>
-          Must be applied at dusk for best results, which limits your window of
-          opportunity
+          <strong>Follow the listing&rsquo;s timing.</strong> Zero In directs
+          late evening or early morning.
         </li>
-      </ul>
-
-      {/* Best Trap */}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />
-      </div>
-      <p>
-        The Zero In Ultra Power XL Wasp Trap takes a fundamentally different
-        approach to wasp control. Rather than destroying a nest, it catches
-        individual wasps that are foraging in your garden, drawing them away
-        from areas where you eat, relax, and entertain. The innovative dual
-        chamber design increases the trap&apos;s catching capacity, while the
-        ready-baited system means you simply add water and hang it up &mdash; no
-        mixing or preparation required. This makes it the most convenient wasp
-        trap on the market for homeowners who want quick, chemical-free
-        protection for their outdoor spaces.
-      </p>
-      <p>
-        It is important to set realistic expectations with any wasp trap. These
-        devices will not eliminate a wasp nest, and they will not make your
-        garden completely wasp-free. What they will do is significantly reduce
-        the number of wasps bothering you during outdoor meals, barbecues, and
-        garden parties. On a warm afternoon in August, a well-positioned trap
-        can catch dozens of wasps over the course of a few hours, making the
-        difference between an enjoyable lunch and an unbearable one. For many
-        households, this nuisance reduction is exactly what they need &mdash;
-        they are not trying to destroy a colony, they just want to eat outside
-        in peace.
-      </p>
-      <p>
-        The reusable design means you can clean out the trap and re-bait it
-        throughout the season. Being entirely chemical-free, there is no risk to
-        children, pets, or beneficial insects like bees provided you use sweet
-        rather than floral bait. Position the trap 3&ndash;5 metres away from
-        your seating area for best results &mdash; close enough to intercept
-        wasps heading your way, but far enough that it draws them away rather
-        than attracting them towards you.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Chemical-free operation &mdash; safe around children and pets</li>
-        <li>Dual chamber design increases catching capacity</li>
-        <li>Ready-baited for instant setup &mdash; just add water</li>
-        <li>Reusable season after season</li>
-        <li>Effective for gardens, patios, and BBQ areas</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
         <li>
-          Will not eliminate a wasp nest &mdash; only catches individual
-          foragers
+          <strong>Empty the trap the way its listing says.</strong> Bagged and
+          frozen for two hours first.
         </li>
-        <li>Needs emptying and refilling every few days during peak season</li>
-        <li>Can also catch beneficial hoverflies if positioned carelessly</li>
-        <li>
-          Less effective in windy conditions when bait scent disperses quickly
-        </li>
-      </ul>
-
-      <div className="not-prose">
-        <Callout type="info">
-          <p>
-            Wasp traps are most effective when placed 3&ndash;5 metres away from
-            your seating area rather than right next to it. Positioning them too
-            close can actually attract more wasps towards you rather than
-            drawing them away.
-          </p>
-        </Callout>
-      </div>
-
-      {/* Best Quick-Kill Spray */}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />
-      </div>
-      <p>
-        The Zero In Wasp Killer 300ml is a fast-acting aerosol spray that
-        delivers expanding foam directly into wasp nests, killing wasps on
-        contact. If you need a quick, affordable solution for dealing with a
-        wasp nest and want a product that works both indoors and outdoors, the
-        Zero In is an excellent choice. The expanding foam formula reaches deep
-        into nest structures, ensuring the insecticide makes contact with wasps
-        throughout the colony rather than just those near the entrance.
-      </p>
-      <p>
-        The fast-acting contact formula is the standout feature here. Wasps hit
-        by the spray are immobilised within seconds, falling to the ground
-        before they can mount any kind of defensive response. This is
-        particularly important when dealing with nests in enclosed spaces such
-        as sheds, garages, or loft areas where a slow-acting product would leave
-        you sharing a confined space with agitated wasps. The indoor and outdoor
-        versatility makes this a genuinely useful product to have on hand
-        throughout the summer months.
-      </p>
-      <p>
-        The easy-to-use aerosol application means there is no complicated setup
-        or mixing required. Simply point the nozzle at the nest entrance and
-        spray. The expanding foam does the rest, working its way into the nest
-        structure and coating the internal surfaces with insecticide. For best
-        results, apply at dusk when the majority of the colony has returned to
-        the nest. Leave the nest undisturbed for at least 48 hours after
-        treatment before attempting to remove it.
-      </p>
-      <p>
-        The Zero In Wasp Killer is an excellent choice for households that want
-        straightforward, effective wasp control. It is also a good product to
-        keep in reserve during the summer months, so you can act quickly if a
-        nest appears.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Fast-acting contact killer immobilises wasps within seconds</li>
-        <li>Expanding foam reaches deep into nest structures</li>
-        <li>Suitable for both indoor and outdoor use</li>
-        <li>Easy aerosol application with no mixing required</li>
-        <li>Straightforward ready-to-use aerosol</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>
-          Shorter range than the Rentokil foam &mdash; requires closer
-          application
-        </li>
-        <li>May require a second application for larger nests</li>
-        <li>Foam residue can be messy on surfaces</li>
-        <li>Single can may not be sufficient for very large nests</li>
-      </ul>
-
-      {/* Buying Guide */}
-      <h2 id="buying-guide">Wasp Killer Buying Guide</h2>
-      <p>
-        With three strong options covering different situations, choosing the
-        right wasp killer product comes down to understanding your specific
-        problem and matching it with the appropriate solution. Here are the key
-        factors to consider before you buy.
-      </p>
-
-      <h3>Spray vs Trap</h3>
-      <p>
-        The choice between a spray and a trap depends on the nature of your wasp
-        problem. <strong>Sprays and foams</strong> (like the Rentokil Wasp Foam
-        and Zero In Wasp Killer) are best for visible, accessible nests &mdash;
-        those you can see hanging from eaves, soffits, shed ceilings, or tree
-        branches. The fast knockdown means fewer agitated wasps in the immediate
-        area, and expanding foam formulas can reach deep into the nest
-        structure. <strong>Traps</strong> (like the Zero In Ultra Power XL) are
-        the right choice when you do not have a nest on your property but want
-        to reduce the number of nuisance wasps in your garden, patio, or BBQ
-        area. Traps catch individual foraging wasps and are chemical-free,
-        making them safe for use around children and pets.
-      </p>
-
-      <h3>Timing</h3>
-      <p>
-        Regardless of which product you choose, the single most important factor
-        in successful wasp nest treatment is timing.{" "}
-        <strong>Always treat at dusk</strong> &mdash; ideally between 8pm and
-        10pm during the summer months. At this time, the vast majority of the
-        colony&apos;s workers have returned to the nest for the night, wasp
-        activity is at its lowest, and the ambient light is low enough that
-        wasps are less likely to mount an aggressive defensive response.
-        Treating during the day when thousands of foragers are out and about not
-        only reduces the treatment&apos;s effectiveness but dramatically
-        increases the risk of multiple stings. Never treat a nest in direct
-        sunlight on a warm day &mdash; wasps are at their most alert and
-        aggressive under these conditions.
-      </p>
-
-      <h3>Safety Equipment</h3>
-      <p>
-        Even when using products with a 4-metre jet range, you should always
-        wear protective clothing when treating a wasp nest. At minimum, wear{" "}
-        <strong>long sleeves</strong>,{" "}
-        <strong>long trousers tucked into socks</strong>,{" "}
-        <strong>sturdy gloves</strong>, and <strong>eye protection</strong>{" "}
-        (safety goggles or glasses). Light-coloured clothing is preferable, as
-        wasps are more likely to investigate dark colours. If you are treating a
-        nest at close range, consider wearing a hat or hood to protect your head
-        and neck. Ensure all clothing is close-fitting rather than loose, as
-        wasps can crawl inside baggy garments. Most importantly, plan your
-        escape route before you begin &mdash; know which direction you will walk
-        (never run) if wasps become agitated.
-      </p>
-
-      <h3>Traps vs Killers</h3>
-      <p>
-        Traps and nest killers solve fundamentally different problems, and it is
-        important to understand the distinction before buying.{" "}
-        <strong>Nest killers</strong> (sprays and foams like the Rentokil Wasp
-        Foam and Zero In Wasp Killer) are designed to destroy an entire colony
-        by delivering insecticide to the nest. If you have a wasp nest on or
-        near your property and want it eliminated, you need a nest killer
-        product. <strong>Traps</strong> (like the Zero In Ultra Power XL Wasp
-        Trap) catch individual foraging wasps and will not affect the nest
-        itself. They are designed for nuisance reduction &mdash; keeping wasps
-        away from your patio, barbecue area, or outdoor dining table. Many
-        households benefit from using both: a nest killer to deal with any nests
-        on the property, and a trap positioned around outdoor living areas for
-        ongoing nuisance control throughout the summer.
-      </p>
-
-      <h3>When DIY Isn&apos;t Enough</h3>
-      <p>
-        There are several situations where you should not attempt DIY wasp nest
-        removal and should instead call a professional pest controller.{" "}
-        <strong>Large nests</strong> (bigger than a football) contain thousands
-        of wasps and pose a serious stinging risk that consumer-grade products
-        may not fully mitigate. <strong>Nests in confined spaces</strong>{" "}
-        &mdash; inside loft spaces, behind fascia boards, or within chimney
-        breasts &mdash; require specialist equipment and protective gear to
-        treat safely. If{" "}
-        <strong>
-          anyone in your household has a known allergy to wasp stings
-        </strong>
-        , the risk of anaphylaxis from even a single sting makes professional
-        treatment the only responsible option. Finally, if you have already
-        attempted treatment and the nest is still active after 48 hours, the
-        colony may have developed resistance or the product may not have reached
-        the queen &mdash; in either case, a qualified technician with access to
-        professional-strength insecticides is your best next step.
-      </p>
+      </ol>
 
       <div className="not-prose">
         <Callout type="warning">
           <p>
-            Always read the product label before use. Most wasp killer sprays
-            contain pyrethroids which are toxic to aquatic life &mdash; never
-            spray near ponds, streams, or water features.
+            The council&rsquo;s advice that larger nests may require professional
+            treatment is the line this page defers to. Nothing here is a
+            substitute for it.
           </p>
         </Callout>
       </div>
 
-      {/* Safety Tips */}
-      <h2 id="safety">Safety Tips</h2>
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Three Products Compared</h2>
       <p>
-        Treating a wasp nest, even with the best products available, carries
-        inherent risk. Wasps will defend their colony aggressively, and a
-        disturbed nest can release dozens or even hundreds of angry wasps in a
-        matter of seconds. Follow these safety guidelines to protect yourself
-        and your family.
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
       </p>
-      <ul>
-        <li>
-          <strong>Wear protective clothing:</strong> Long sleeves, long
-          trousers, gloves, and eye protection are the bare minimum. Tuck
-          trousers into socks and secure cuffs to prevent wasps from crawling
-          inside clothing. Light-coloured, smooth fabrics are best &mdash; avoid
-          dark or fluffy materials that wasps may perceive as threats.
-        </li>
-        <li>
-          <strong>Plan your escape route:</strong> Before applying any
-          treatment, identify a clear path you can take to move away from the
-          nest quickly. Walk &mdash; do not run &mdash; as running and swatting
-          can provoke a more aggressive response. Move calmly and steadily
-          towards a building where you can close a door behind you.
-        </li>
-        <li>
-          <strong>Carry antihistamines:</strong> If you or anyone assisting you
-          is prone to allergic reactions or has sensitive skin, have
-          antihistamine tablets (such as cetirizine or loratadine) readily
-          available. For individuals with a known mild allergy, an oral
-          antihistamine taken 30 minutes before treatment can reduce the
-          severity of any reaction to a sting.
-        </li>
-        <li>
-          <strong>Know the signs of anaphylaxis:</strong> Difficulty breathing,
-          wheezing, swelling of the face, lips, or throat, rapid heartbeat,
-          dizziness, and a feeling of impending doom are all warning signs of a
-          severe allergic reaction. These symptoms can develop within minutes of
-          a sting and constitute a medical emergency.
-        </li>
-        <li>
-          <strong>Call 999 if someone has a severe reaction:</strong>{" "}
-          Anaphylaxis is life-threatening and requires immediate emergency
-          medical treatment. If anyone shows signs of a severe reaction after
-          being stung, call 999 immediately. If the person carries an adrenaline
-          auto-injector (EpiPen), help them administer it while waiting for the
-          ambulance. Lay them flat with their legs raised unless they are having
-          difficulty breathing, in which case sit them upright.
-        </li>
-      </ul>
-
-      <div className="not-prose">
-        <Callout type="info">
-          <p>
-            If anyone in your household has a known allergy to wasp stings, do
-            not attempt DIY treatment. The risk of anaphylaxis from multiple
-            stings is too high. Always call a professional pest controller.
-          </p>
-        </Callout>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Form and actives, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      <div className="not-prose">
-        <FindProviderCTA
-          heading="Nest Too Big or Too Risky?"
-          subtext="Find a qualified pest control professional near you to safely remove wasp nests"
-        />
-      </div>
-
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        <p className="text-gray-700 mb-3">
-          Want the full picture on wasp nest removal?
-        </p>
-        <a
-          href="/guides/wasp-nest-removal"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          Read: Wasp Nest Removal &mdash; Complete UK Guide &rarr;
-        </a>
-      </div>
+      <FindProviderCTA
+        heading="Nest in a wall, a roof or somewhere you cannot reach?"
+        subtext="Compare pest control providers near you, no fees and no commissions."
+      />
     </GuideLayout>
   );
 }

@@ -404,7 +404,7 @@ export default function StudentHousePestGuidePage() {
 
       <div className="not-prose space-y-6 my-8">
         <ProductCard
-          name="Ant Gel Bait Stations (3 Pack)"
+          name="NOPE! Ant Killer Bait Station (12 x 5g)"
           features={[
             'Gel bait attracts ants who carry poison back to the colony',
             'Kills the queen — collapses the entire nest within 7 to 14 days',

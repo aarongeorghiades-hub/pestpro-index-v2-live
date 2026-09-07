@@ -346,7 +346,7 @@ export default function WaspSeasonPreparationPage() {
           rank={2}
         />
         <ProductCard
-          name="Pest Expert Wasp Killer Powder 300g"
+          name="Rentokil PSW99P Wasp Killer Powder 300g"
           features={[
             'Permethrin-based dust for treating concealed nests',
             'Apply into nest entrance with puffer bottle',
