@@ -1,22 +1,30 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
 
+// S68 R2 — ROLLOUT REBUILD to the R8 pattern. Title and H1 byte-unchanged. Award labels,
+// rank numerals, anchor ids and card order UNCHANGED as ruled. The subtitle's "safe,
+// effective" is held by the standing rule and reported.
+//
+// THE OLD PAGE'S WILDLIFE FIGURES ARE GONE. "Over 80% of barn owls", "200 offspring per
+// year", "6-9 cm burrow holes" and every sentence about hedgehog entry sizes had no
+// source. What CRRU and HSE actually say about non-target animals is quoted instead:
+// 34 unsourced sentences deleted, none softened. FAQ block and FAQPage schema removed
+// together (Law 190).
+//
+// HEALTH: one sentence, the Elixir listing's own warning, carried as the maker's.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Rat Poison for Gardens UK",
     description:
-      "What may lawfully be used against rats outdoors, the risk to hedgehogs and other non-target wildlife, and where bait has to be placed in a garden.",
-    alternates: {
-      canonical: "https://pestproindex.com/best/rat-poison-for-gardens",
-    },
+      "Rat poison for gardens: what amateur rodenticide may go outdoors, what CRRU says about protecting bait from wildlife, and five products on their own listings.",
+    alternates: { canonical: "https://pestproindex.com/best/rat-poison-for-gardens" },
     openGraph: {
       title: "Best Rat Poison for Gardens UK",
       description:
-        "What may lawfully be used against rats outdoors, the risk to hedgehogs and other non-target wildlife, and where bait has to be placed in a garden.",
+        "Rat poison for gardens: what amateur rodenticide may go outdoors, what CRRU says about protecting bait from wildlife, and five products on their own listings.",
       url: "https://pestproindex.com/best/rat-poison-for-gardens",
       type: "article",
       siteName: "PestPro Index",
@@ -29,88 +37,41 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Rat Poison for Gardens UK",
   description:
-    "What may lawfully be used against rats outdoors, the risk to hedgehogs and other non-target wildlife, and where bait has to be placed in a garden.",
+    "Rat poison for gardens: what amateur rodenticide may go outdoors, what CRRU says about protecting bait from wildlife, and five products on their own listings.",
   datePublished: "2026-03-31",
-  dateModified: "2026-03-31",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://pestproindex.com/best/rat-poison-for-gardens",
-  },
+  dateModified: "2026-09-07",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/rat-poison-for-gardens" },
 };
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
-      name: "Best Rat Poison for Gardens UK 2026",
+      name: "Best Rat Poison for Gardens UK",
       item: "https://pestproindex.com/best/rat-poison-for-gardens",
     },
   ],
 };
 
-// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
-// from this and only this, so the two surfaces cannot disagree again. The visible
-// block was authoritative where they did disagree.
-const faqs = [
-  {
-    q: "Is it legal to put rat poison in my garden?",
-    a: "Yes, it is legal to use rat poison in your garden in the UK. However, under CRRU (Campaign for Responsible Rodenticide Use) guidelines, all second-generation anticoagulant rodenticides (SGARs) must be placed inside tamper-resistant bait stations when used outdoors. Placing loose poison in a garden is non-compliant and poses a serious risk to wildlife, pets, and children. You must also follow the product label instructions and take steps to minimise harm to non-target animals.",
-  },
-  {
-    q: "Will rat poison harm hedgehogs?",
-    a: "Yes — secondary poisoning is a real and well-documented risk to hedgehogs. A hedgehog that eats a poisoned rat or mouse, or that directly accesses loose rodenticide, can suffer fatal internal bleeding. This is why tamper-resistant bait stations are essential for outdoor use. A properly designed station has entry holes sized for rats but too small for hedgehogs. Always anchor stations to prevent them being tipped over, and check regularly for dead rodents nearby to remove them before they are scavenged.",
-  },
-  {
-    q: "How do I stop rats coming from my compost bin?",
-    a: "Rats are attracted to compost bins because they provide food, warmth, and shelter. To deter them: turn your compost regularly to disturb nesting, never add cooked food, meat, or dairy, use a fully enclosed tumbler composter rather than an open heap, and line the base of open bins with wire mesh (6 mm gauge) to prevent burrowing. Place bait stations nearby along the rat runs leading to the compost area for active infestations.",
-  },
-  {
-    q: "Where should I place bait stations in my garden?",
-    a: "Place bait stations along known rat runs and near signs of activity. The best locations are: along fence lines (rats travel along edges), near burrow entrances, beside compost bins, against shed or garage walls, and along the base of boundary walls. Rats are thigmotactic — they prefer to move along edges rather than across open ground — so always position stations flush against a wall, fence, or structure with entry holes facing along the run.",
-  },
-  {
-    q: "How long does outdoor rat poison take to work?",
-    a: "Anticoagulant rat poisons typically take 3 to 7 days to kill a rat after ingestion. Brodifacoum-based products tend to act faster (3-5 days) as they deliver a lethal dose in a single feed. Bromadiolone may take slightly longer if multiple feeds are required. Full colony control in a garden setting usually takes 2 to 4 weeks, as not all rats will feed from the station on the first night. Check and replenish bait every 2-3 days for best results.",
-  },
-  {
-    q: "Can I use rat poison near a pond or stream?",
-    a: "Extreme caution is required near water. Rodenticide can contaminate water sources and harm aquatic life if it enters the water. Place bait stations well away from ponds, streams, ditches, and any other water features — a minimum of 10 metres is advisable. Ensure stations are securely anchored so they cannot be knocked or washed into water during heavy rain. If rats are active near water, consider snap traps as a non-toxic alternative in that specific area and restrict rodenticide use to locations further from the water source.",
-  },
-];
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
+// SOURCES. Quotations extracted by byte range and exact-matched before drafting
+// (Law 164); each citation names the host actually read (S59-A). Banked at S67 R2 and
+// S68 R2 and kept under Law 175.
+const SRC = {
+  hse: "https://www.hse.gov.uk/biocides/using/rodenticides.htm",
+  crruCode: "https://www.thinkwildlife.org/code-of-best-practice/crru-code/",
+  crruPermanent:
+    "https://www.thinkwildlife.org/pest-controllers-alerted-to-end-of-routine-permanent-rat-baiting-around-rural-buildings/",
+  crruStations:
+    "https://www.thinkwildlife.org/implications-for-rodenticide-users-of-new-label-text-specifying-bait-station-standards/",
+  defra:
+    "https://www.gov.uk/government/publications/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms/code-of-practice-prevention-and-control-of-rodent-infestations-on-poultry-farms",
 };
 
 type ProductRecord = {
@@ -127,6 +88,8 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Feature text and comparison cells from the banked listings' OWN bullets and detail
+// rows (S52-E), fetched 2026-09-01. Comparative self-praise is trimmed (S47-F).
 const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
@@ -135,16 +98,12 @@ const products: ProductRecord[] = [
     cardName: "Pest Expert Formula B+ + Outdoor Bait Box Combo 900g",
     cardLabel: "Best Overall",
     features: [
-      "Maximum-strength Brodifacoum sachets + professional lockable bait box",
-      "Everything needed for outdoor rat control in one kit",
-      "CRRU-compliant tamper-resistant station included",
-      "Single-feed lethal dose for rapid results",
+      "Active concentration listed as brodifacoum 0.0029%",
+      "Listed as 900g in 15 x 60g sachets, wholewheat grain, with one rat bait box",
+      "The maker names garden sheds, lofts and kitchens as places of use",
+      "The listing's comparisons with other brands are the maker's and are not repeated here",
     ],
-    tableCells: [
-      "Pest Expert Formula B+ + Outdoor Bait Box Combo 900g",
-      "Brodifacoum sachets + bait box",
-      "Best Overall",
-    ],
+    tableCells: ["Pest Expert Formula B+ 900g + box", "Grain sachets + 1 station; brodifacoum 0.0029%, as listed", "Best Overall"],
     h2Label: "Best Overall",
     h2Name: "Pest Expert Formula B+ + Outdoor Bait Box Combo 900g",
     tocLabel: "Best Overall",
@@ -157,16 +116,12 @@ const products: ProductRecord[] = [
     cardName: "Pest Expert Formula B+ Rat Poison 1.5kg (15x100g)",
     cardLabel: "Best Bulk Pack",
     features: [
-      "Large 1.5kg pack — 15 x 100g Brodifacoum sachets",
-      "Single-feed Brodifacoum formulation",
-      "Enough for multiple bait stations over several weeks",
-      "Ideal for treating external rat populations around buildings",
+      "Active concentration listed as brodifacoum 0.0029%",
+      "Listed as 1.5kg in 15 x 100g sachets, wholewheat grain, wax-free",
+      "Target species listed as Rodents",
+      "No station is included; the maker names sheds, lofts and kitchens as places of use",
     ],
-    tableCells: [
-      "Pest Expert Formula B+ Rat Poison 1.5kg",
-      "Brodifacoum sachets",
-      "Best Bulk Pack",
-    ],
+    tableCells: ["Pest Expert Formula B+ 1.5kg", "Grain sachets; brodifacoum 0.0029%, as listed", "Best Bulk Pack"],
     h2Label: "Best Bulk Pack",
     h2Name: "Pest Expert Formula B+ Rat Poison 1.5kg (15x100g)",
     tocLabel: "Best Bulk Pack",
@@ -179,16 +134,12 @@ const products: ProductRecord[] = [
     cardName: "Roshield External Bait Box + 300g Block Kit",
     cardLabel: "Best Starter Kit",
     features: [
-      "UK-made tamper-resistant external bait station included",
-      "Bromadiolone wax blocks included — ready to deploy",
-      "Weatherproof design for fences, walls and under decking",
-      "Lockable and compliant with UK rodenticide regulations",
+      "Blocks listed as bromadiolone 0.0025%; HSE registration UK-2016-0986-0007 stated",
+      "Listed as one tamper-resistant bait station with 300g of wax blocks, a metal rod and a bait divider",
+      "The maker's own line: all amateur-approved rodenticide must be used within tamper-resistant bait boxes",
+      "Target species listed as Mouse, Rat; box 30.5 x 22.9 x 22.9 cm",
     ],
-    tableCells: [
-      "Roshield External Bait Box + 300g Block Kit",
-      "Bromadiolone wax blocks + bait box",
-      "Best Starter Kit",
-    ],
+    tableCells: ["Roshield box + 300g blocks", "Wax blocks + 1 station; bromadiolone 0.0025%, as listed", "Best Starter Kit"],
     h2Label: "Best Starter Kit",
     h2Name: "Roshield External Bait Box + 300g Block Kit",
     tocLabel: "Best Starter Kit",
@@ -201,16 +152,12 @@ const products: ProductRecord[] = [
     cardName: "Roshield 2x External Tamper-Proof Bait Box + Wax Blocks Kit",
     cardLabel: "Best Multi-Station",
     features: [
-      "Two lockable external bait stations included",
-      "Wax blocks included — ready to deploy immediately",
-      "Ideal for larger gardens or multi-property coverage",
-      "Place 10+ metres apart along rat runs for maximum effectiveness",
+      "Same blocks as the single-box kit: bromadiolone 0.0025%, UK-2016-0986-0007",
+      "Listed as two tamper-resistant bait stations with 300g of blocks between them",
+      "The maker describes it as suited to a small to medium infestation",
+      "Unit count listed as 2 box kit",
     ],
-    tableCells: [
-      "Roshield 2x External Tamper-Proof Bait Box + Wax Blocks Kit",
-      "Wax blocks + 2 bait boxes",
-      "Best Multi-Station",
-    ],
+    tableCells: ["Roshield 2 boxes + 300g blocks", "Wax blocks + 2 stations; bromadiolone 0.0025%, as listed", "Best Multi-Station"],
     h2Label: "Best Multi-Station",
     h2Name: "Roshield 2x External Tamper-Proof Bait Box + Wax Blocks Kit",
     tocLabel: "Best Multi-Station",
@@ -223,16 +170,12 @@ const products: ProductRecord[] = [
     cardName: "Elixir Gardens Rat Poison 1kg Outdoor Sachets",
     cardLabel: "Best Value",
     features: [
-      "Difenacoum-based grain bait in chew-through sachets",
-      "10 x 100g sachets — no need to handle the bait directly",
-      "Must be used inside a tamper-resistant bait station",
-      "Affordable option for sustained outdoor baiting",
+      "Active ingredient listed as bromadiolone",
+      "Listed as 1kg in 10 x 100g ready-to-use sachets; target species Rodents",
+      "The maker says a red dye colours droppings so uptake can be seen",
+      "Listing warning: contains an anticoagulant; if ingested call a poison centre, UK 111",
     ],
-    tableCells: [
-      "Elixir Gardens Rat Poison 1kg Outdoor Sachets",
-      "Difenacoum grain sachets",
-      "Best Value",
-    ],
+    tableCells: ["Elixir Gardens 1kg sachets", "Grain sachets; bromadiolone, as listed", "Best Value"],
     h2Label: "Best Value",
     h2Name: "Elixir Gardens Rat Poison 1kg Outdoor Sachets",
     tocLabel: "Best Value",
@@ -241,13 +184,14 @@ const products: ProductRecord[] = [
 ];
 
 const tocItems = [
-  { id: "at-a-glance", title: "Garden Rat Poisons at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
-  })),
-  { id: "buying-guide", title: "Buying Guide: Outdoor Rat Poison" },
-  { id: "faq", title: "Frequently Asked Questions" },
+  { id: "situation", title: "A Garden Is Outdoors Around a Building" },
+  { id: "legal", title: "The Legal Position on Rat Poison Outdoors" },
+  { id: "limits", title: "Where Poison Does Not Help" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If Poison Is Not the Answer" },
+  { id: "using", title: "Using It" },
+  { id: "compared", title: "The Five Products Compared" },
 ];
 
 export default function BestRatPoisonForGardensPage() {
@@ -255,34 +199,12 @@ export default function BestRatPoisonForGardensPage() {
     <GuideLayout
       title="Best Rat Poison for Gardens UK 2026"
       subtitle="Outdoor rodenticides and weather-proof bait stations for safe, effective garden rat control"
-      lastUpdated="March 2026"
-      readingTime="9 min"
+      lastUpdated="September 2026"
+      readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
-      relatedGuides={[
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "Rat Poison vs Rat Traps: Which Is Better?",
-          href: "/guides/rat-poison-vs-rat-traps",
-        },
-        {
-          title: "Professional Pest Control vs DIY",
-          href: "/guides/professional-pest-control-vs-diy",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
-      ]}
       relatedProducts={[
         { title: "Best Rat Poison UK 2026", href: "/best/rat-poison" },
-        {
-          title: "Best Rat Bait Stations UK 2026",
-          href: "/best/rat-bait-stations",
-        },
         { title: "Best Rat Traps UK 2026", href: "/best/rat-traps" },
         { title: "Best Mouse Poison UK 2026", href: "/best/mouse-poison" },
         { title: "Best Mouse Traps UK 2026", href: "/best/mouse-traps" },
@@ -290,11 +212,6 @@ export default function BestRatPoisonForGardensPage() {
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
       {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
         <p className="text-sm text-amber-800">
@@ -307,552 +224,315 @@ export default function BestRatPoisonForGardensPage() {
       </div>
 
       <p>
-        Garden rats are a growing problem across the UK. Whether they are
-        burrowing under your shed, raiding the compost bin, or tunnelling along
-        fence lines, brown rats (<em>Rattus norvegicus</em>) thrive in gardens
-        that provide food, water, and shelter. Bird tables, compost heaps,
-        fallen fruit, and pet food left outdoors all act as magnets for rats —
-        and once they establish themselves, a single pair can produce up to 200
-        offspring per year. If you have seen droppings, burrow holes, or gnaw
-        marks in your garden, the problem will not resolve itself without
-        intervention.
+        A garden is where the animals HSE is worried about actually are. Its
+        own sentence:{" "}
+        <em>
+          &ldquo;Rodenticides can often carry a higher risk than some other
+          biocidal products because the way that they are used and how they
+          look and smell, might mean that children, pets and other non-target
+          animals are more likely to be harmed by them.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hse} rel="nofollow">
+          HSE
+        </a>
+        ). Everything below is about putting bait outside without putting it
+        in front of them.
+      </p>
+
+      {/* DECISION BLOCK — situation first. The legal line and the does-not-help line
+          sit ABOVE the product lines. No Amazon link, no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You have not tried anything else yet.</strong> HSE asks
+            you to consider other methods before an anticoagulant &mdash;{" "}
+            <a href="#alternatives" className="underline">
+              if poison is not the answer
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want to know what may go outside, and in what.</strong>{" "}
+            <a href="#legal" className="underline">
+              The legal position on rat poison outdoors
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You have pets, hedgehogs or birds in the garden.</strong>{" "}
+            CRRU&rsquo;s Code has a line for exactly that &mdash;{" "}
+            <a href="#limits" className="underline">
+              where poison does not help
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want a station with the bait.</strong> Three of the five
+            include one &mdash;{" "}
+            <a href="#what-decides" className="underline">
+              what decides the choice
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">A Garden Is Outdoors Around a Building</h2>
+      <p>
+        That phrase is the label category, and CRRU records what a station has
+        to withstand there. For use &ldquo;outdoors around buildings&rdquo;, a
+        tamper-resistant station must be{" "}
+        <em>
+          &ldquo;Resistant to destruction or weakening from exposure to typical
+          non-catastrophic weather&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.crruStations} rel="nofollow">
+          CRRU UK
+        </a>
+        ). Two of the five products here arrive with a station the maker
+        describes as external; two arrive with none.
       </p>
       <p>
-        Using rat poison outdoors presents unique challenges compared to indoor
-        use. You must protect hedgehogs, birds, pets, and children from
-        accidental exposure. Weather resistance is critical — rain, frost, and
-        UV light can degrade bait that is not properly formulated or housed. And
-        under CRRU (Campaign for Responsible Rodenticide Use) guidelines, all
-        second-generation anticoagulant rodenticides must be placed inside
-        tamper-resistant bait stations when used outside. Loose poison scattered
-        in a garden is both dangerous and non-compliant.
+        Defra&rsquo;s code puts the station before the bait in one sentence:{" "}
+        <em>
+          &ldquo;Commercially available tamper-resistant bait boxes should
+          normally be used to secure baits from non-target animals.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.defra} rel="nofollow">
+          Defra
+        </a>
+        ).
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">The Legal Position on Rat Poison Outdoors</h2>
+      <p>
+        <strong>The public&rsquo;s products are restricted in three named ways.</strong>{" "}
+        HSE:{" "}
+        <em>
+          &ldquo;In order to ensure rodenticides are used as safely as possible
+          by the general public, rodenticide products may be restricted in ways
+          such as: the amount of active substance they contain where they can be
+          used (for example only within a bait box) the maximum pack size that
+          can be sold&rdquo;
+        </em>
+        . Every product here is sold to the public and every listing that
+        mentions placement says a tamper-resistant box. One maker states the
+        rule itself on its listing: all amateur-approved rodenticide must be
+        used within tamper-resistant bait boxes.
       </p>
       <p>
-        We selected these outdoor rat poisons and bait stations on published
-        specifications and manufacturer information, looking at{" "}
-        <strong>effectiveness of the active ingredient</strong>,{" "}
-        <strong>weather resistance</strong>,{" "}
-        <strong>safety for non-target wildlife and pets</strong>, and{" "}
-        <strong>value for money</strong>. Every recommendation on this page is
-        designed specifically for — or proven to work well in — outdoor garden
-        environments.
+        <strong>Permanent baiting is ruled out.</strong> CRRU:{" "}
+        <em>
+          &ldquo;Except as a justifiable last resort against clear long-term
+          threats to human or animal health, the UK Rodenticide Stewardship
+          Regime now rules out permanent rodenticide baiting around the outside
+          of rural buildings.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.crruPermanent} rel="nofollow">
+          CRRU UK
+        </a>
+        ). Its Code, for every user:{" "}
+        <em>
+          &ldquo;Rodenticide baits should only be used for as long as is
+          necessary to achieve satisfactory control.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.crruCode} rel="nofollow">
+          CRRU UK Code of Best Practice
+        </a>
+        ). A garden station kept topped up through the year is the practice
+        the regime ended.
       </p>
+      <p>
+        <strong>What a station must be.</strong> CRRU records the label text:{" "}
+        <em>&ldquo;Strong enough to prevent entry or destruction by dogs.&rdquo;</em>{" "}
+        and{" "}
+        <em>
+          &ldquo;Lockable or sealable so that children and dogs cannot gain
+          access through the opening or mechanisms used to fill the bait
+          compartments.&rdquo;
+        </em>
+      </p>
+
+      {/* [2] Where it does not help */}
+      <h2 id="limits">Where Poison Does Not Help</h2>
+      <p>
+        <strong>Exposed, anywhere.</strong> CRRU&rsquo;s Code:{" "}
+        <em>
+          &ldquo;Care should be taken to ensure that bait is sufficiently
+          protected to avoid accidentally poisoning other mammals and
+          birds.&rdquo;
+        </em>{" "}
+        A sachet under a shed is exposed. Two of the five listings are bait
+        with no station at all.
+      </p>
+      <p>
+        <strong>In the first fortnight.</strong> Defra:{" "}
+        <em>
+          &ldquo;it is best to allow at least two to three weeks for rats to
+          get used to feeding in bait boxes placed in their environment, before
+          deciding on whether the method being used is working.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>Left down after it has worked.</strong> CRRU:{" "}
+        <em>
+          &ldquo;In most cases, any anticoagulant bait should have achieved
+          control within 35 days.&rdquo;
+        </em>{" "}
+        After that the bait is a hazard, not a treatment.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Whether a station comes with it</h3>
+      <p>
+        Three of the five do: the Pest Expert combo with one box, and the two
+        Roshield kits with one and two. The Pest Expert 1.5kg and the Elixir
+        sachets are bait alone, for a station you already own.
+      </p>
+      <h3>2. Which active the listing names, and at what strength</h3>
+      <p>
+        Pest Expert states brodifacoum at 0.0029% on both listings. Roshield
+        states bromadiolone at 0.0025% with an HSE registration number. Elixir
+        states bromadiolone and no percentage. All five name one, which is
+        more than the indoor page can say.
+      </p>
+      <h3>3. Block or grain, as listed</h3>
+      <p>
+        Roshield&rsquo;s blocks sit on a metal rod inside its boxes; the three
+        grain products are sachets. Which suits a station is a fact about the
+        station, and both Roshield listings state the rod.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>
+            {
+              [
+                "Fifteen 60g sachets of wholewheat grain with brodifacoum stated at 0.0029%, and one bait box in the same listing. The maker names sheds, lofts and kitchens; the listing's claims about being stronger than every other brand are the maker's and stop here.",
+                "The same grain at the same stated strength, 1.5kg in fifteen 100g sachets, with no station included. Target species listed as Rodents. Bait alone is for a box you already have, and that is the only difference between this and the card above.",
+                "One tamper-resistant station with 300g of wax blocks stated as bromadiolone 0.0025% under an HSE registration number, a metal rod and a divider. The listing itself states that amateur-approved rodenticide must be used within a tamper-resistant box, which is what CRRU and HSE say above.",
+                "The same blocks and the same rod, with two stations instead of one and 300g of bait between them. The maker describes it as suited to a small to medium infestation; that is the listing's sizing, not ours.",
+                "Ten 100g ready-to-use sachets whose listing names bromadiolone and no percentage, with a red dye the maker says marks droppings. No station. The listing's own warning — an anticoagulant; if ingested call 111 — is the one health line on this page.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* [14] Alternatives */}
+      <h2 id="alternatives">If Poison Is Not the Answer</h2>
+      <p>
+        <strong>Consider the other methods first.</strong> HSE:{" "}
+        <em>
+          &ldquo;If you need to deal with a rodent problem, it is important to
+          remember to consider other available control methods, such as those
+          listed above, before reaching for anticoagulant products.&rdquo;
+        </em>{" "}
+        Traps are on our <a href="/best/rat-traps">rat traps</a> page.
+      </p>
+      <p>
+        <strong>Take away what brings them.</strong> Defra&rsquo;s code:{" "}
+        <em>
+          &ldquo;Buildings should be proofed as far as possible against rodent
+          ingress&rdquo;
+        </em>{" "}
+        &mdash; our <a href="/best/rodent-proofing">rodent proofing</a> page
+        covers the materials.
+      </p>
+      <p>
+        <strong>A professional, where you cannot find the harbourage.</strong>{" "}
+        CRRU puts a survey first; a burrow under a neighbour&rsquo;s shed is not
+        yours to survey.
+      </p>
+
+      {/* [15] Using them */}
+      <h2 id="using">Using It</h2>
+      <ol>
+        <li>
+          <strong>Survey the garden first.</strong> Runs along fences, burrow
+          entrances, the route to a bin.
+        </li>
+        <li>
+          <strong>Use a station listed for outdoors.</strong> Weather-resistant,
+          dog-proof, lockable, per the label text CRRU records.
+        </li>
+        <li>
+          <strong>Give it two to three weeks.</strong> Defra&rsquo;s figure.
+        </li>
+        <li>
+          <strong>Take it up when it has worked.</strong> CRRU&rsquo;s 35 days
+          is a ceiling, not a schedule.
+        </li>
+      </ol>
 
       <div className="not-prose">
         <Callout type="warning">
           <p>
-            Outdoor rat poison must always be placed inside a tamper-resistant
-            bait station. Loose poison in gardens poses a serious risk to
-            hedgehogs, birds, pets, and children. Under CRRU guidelines, using
-            SGARs without a bait station outdoors is non-compliant.
+            Bait outside a tamper-resistant station is the exposure CRRU and
+            HSE both describe. Two of the five products here are bait with no
+            station; the station is not optional.
           </p>
         </Callout>
       </div>
 
-      {/* At a Glance */}
-      <h2 id="at-a-glance">Garden Rat Poisons at a Glance</h2>
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Five Products Compared</h2>
       <p>
-        Here is a quick comparison of our five picks for garden rat control.
-        Each product serves a different purpose, so the right choice depends on
-        whether you need a complete bait station kit, standalone bait, or
-        multi-station coverage.
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
       </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Active Ingredient / Type</th>
-            <th>Best For</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Form, station and active, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-
-      <div className="not-prose">
-        <StatCallout
-          value="150m"
-          label="Estimated range a single rat travels from its burrow each night when foraging in gardens"
-        />
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      {/* Product 1 */}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />
-      </div>
-      <p>
-        Everything needed for outdoor rat control in one kit. The Pest Expert
-        Formula B+ Combo includes maximum-strength Brodifacoum sachets with a
-        professional lockable bait box, giving you a complete, ready-to-deploy
-        solution straight out of the box. This is the correct way to bait
-        outdoors — the product label and its authorisation conditions require
-        outdoor rodenticide to be used inside a tamper-resistant station, and
-        this kit ensures full compliance from day one.
-      </p>
-      <p>
-        The included bait box is a professional-grade lockable station designed
-        specifically for outdoor placement. It is weatherproof,
-        tamper-resistant, and sized to admit rats while restricting access by
-        larger non-target animals such as cats, hedgehogs, and squirrels. The
-        lockable lid requires a key to open, keeping children and pets safe.
-        Position the station along a fence line, beside a shed wall, or near a
-        compost bin — anywhere you have seen rat activity — and the enclosed
-        bait does the rest.
-      </p>
-      <p>
-        The 900g of Brodifacoum sachets included use an active ingredient
-        available to UK consumers. Brodifacoum delivers a lethal dose in a
-        single feed, so once a rat enters the station and consumes bait, the
-        outcome is typically fatal within 3 to 5 days. This single-feed action
-        is particularly important outdoors, where rats have multiple food
-        sources and you cannot guarantee they will return to the station
-        repeatedly. For anyone dealing with garden rats for the first time, this
-        combo kit removes all the guesswork.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          Complete kit — Brodifacoum sachets and lockable bait box included
-        </li>
-        <li>CRRU-compliant tamper-resistant station for outdoor use</li>
-        <li>Brodifacoum — single-feed lethal dose</li>
-        <li>
-          Professional-grade station keeps children, pets, and wildlife safe
-        </li>
-        <li>900g of bait is generous for a single-station kit</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Only one station included — larger gardens may need 2-3</li>
-        <li>
-          Brodifacoum carries higher secondary poisoning risk than weaker SGARs
-        </li>
-        <li>Takes 3-5 days to work — not instant</li>
-      </ul>
-
-      {/* Product 2 */}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />
-      </div>
-      <p>
-        Large pack for treating external rat populations around buildings,
-        compost heaps, and outbuildings. The Pest Expert Formula B+ 1.5kg pack
-        contains 15 x 100g sachets of single-feed Brodifacoum — enough bait for
-        multiple bait stations over several weeks of treatment. If you already
-        own one or more outdoor bait stations and need a reliable,
-        professional-strength refill supply, this is the product to buy.
-      </p>
-      <p>
-        Each 100g sachet is individually wrapped, making deployment clean and
-        straightforward. Place one or two sachets inside each tamper-resistant
-        bait station positioned along rat runs, beside sheds, near compost bins,
-        or against boundary walls. Check every 2-3 days and replace consumed
-        bait until activity ceases. The single-feed Brodifacoum formulation
-        means that a lethal dose is delivered in one sitting — critical in
-        outdoor environments where rats have access to multiple competing food
-        sources and may not return to the station repeatedly.
-      </p>
-      <p>
-        The 1.5kg quantity represents excellent value compared to smaller packs,
-        and gives you the flexibility to treat a large garden perimeter with
-        several stations simultaneously. For established rat populations that
-        have been active for weeks or months, this bulk approach — multiple
-        stations, generously stocked, checked regularly — is the most effective
-        strategy for bringing the colony under control within 2 to 4 weeks.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Generous 1.5kg quantity for sustained outdoor baiting campaigns</li>
-        <li>Brodifacoum — single-feed lethal dose</li>
-        <li>15 individually wrapped sachets for clean, easy deployment</li>
-        <li>Trusted professional-grade product from Pest Expert</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>No bait station included — must be purchased separately</li>
-        <li>Brodifacoum carries higher secondary poisoning risk</li>
-        <li>Higher price point than weaker active ingredients</li>
-      </ul>
-
-      {/* Product 3 */}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />
-      </div>
-      <p>
-        UK-made tamper-resistant external bait station with Bromadiolone wax
-        blocks included. The Roshield kit provides a complete, ready-to-use
-        outdoor baiting solution at a very competitive price point. The
-        weatherproof bait box is designed for outdoor placement along fences,
-        walls, and under decking — exactly the locations where garden rats are
-        most active. It is lockable and fully compliant with UK rodenticide
-        regulations, so you can deploy with confidence.
-      </p>
-      <p>
-        The 300g of Bromadiolone wax blocks included are formulated to resist
-        moisture and weathering, maintaining their palatability in typical UK
-        garden conditions. Thread the blocks onto the internal bait rod inside
-        the station, lock the lid, and position the box flush against a wall or
-        fence along a known rat run. Bromadiolone is a second-generation
-        anticoagulant that is effective against common UK brown rats — slightly
-        less potent than Brodifacoum but with a lower secondary poisoning risk,
-        making it a more balanced choice for gardens where hedgehogs and other
-        wildlife are present.
-      </p>
-      <p>
-        For a single-station setup in a smaller garden, or as a first purchase
-        for someone who has never dealt with outdoor rats before, this Roshield
-        kit is an excellent entry point. The included quantity of bait is
-        sufficient for initial treatment, and refill blocks can be purchased
-        separately when needed. The station itself is robust enough to last
-        several seasons of outdoor use.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Complete kit — bait station and Bromadiolone blocks included</li>
-        <li>UK-made, weatherproof, and lockable</li>
-        <li>Compliant with UK rodenticide regulations out of the box</li>
-        <li>Lower secondary poisoning risk than Brodifacoum products</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Only one station included — larger gardens need multiples</li>
-        <li>300g of bait may not be enough for severe infestations</li>
-        <li>Bromadiolone may require multiple feeds for large rats</li>
-      </ul>
-
-      {/* Product 4 */}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />
-      </div>
-      <p>
-        Two-box kit for treating larger garden areas or multi-property coverage.
-        The Roshield 2x kit includes wax blocks and two lockable external bait
-        stations, giving you the ability to cover more ground from day one.
-        Professional pest controllers routinely place multiple stations along a
-        garden perimeter — spacing them 10 or more metres apart along rat runs —
-        to maximise the chance of interception. This kit lets you do the same
-        without buying each component separately.
-      </p>
-      <p>
-        Each station is identical to the single Roshield kit above:
-        tamper-resistant, lockable, weatherproof, and compliant with UK
-        rodenticide regulations. Position one station near the primary activity
-        area (burrow entrance, compost bin, or shed wall) and the second further
-        along the rat run or at a secondary activity point. Rats are
-        thigmotactic — they travel along edges — so place both stations flush
-        against a fence, wall, or structure with entry holes facing along the
-        run for maximum effectiveness.
-      </p>
-      <p>
-        For anyone with a medium to large garden, or multiple outbuildings that
-        need protecting simultaneously, the two-station kit covers both
-        placements in a single purchase. It also ensures consistent station
-        design across your garden, which simplifies checking and refilling. Once
-        the initial infestation is under control, keep the stations in place and
-        check monthly as a preventive measure — particularly from autumn through
-        spring when rat activity peaks.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Two stations for broader garden coverage</li>
-        <li>Wax blocks included — complete kit, ready to use</li>
-        <li>Two matching stations in a single purchase</li>
-        <li>Both stations are lockable and CRRU-compliant</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>
-          Included bait quantity may need topping up for severe infestations
-        </li>
-        <li>Two stations may still not be enough for very large properties</li>
-        <li>Bromadiolone may require multiple feeds for large rats</li>
-      </ul>
-
-      {/* Product 5 */}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />
-      </div>
-      <p>
-        Grain bait sachets in convenient chew-through packets — no need to
-        handle the bait. The Elixir Gardens 1kg pack contains 10 x 100g
-        Difenacoum-based sachets, providing a generous quantity of outdoor rat
-        poison at a price point that undercuts most competitors. Difenacoum is a
-        second-generation anticoagulant that is effective against common UK
-        brown rats, and the sachet format makes deployment clean and
-        straightforward. As required by UK law, these sachets must be used
-        inside a tamper-resistant bait station.
-      </p>
-      <p>
-        The chew-through sachet design is a practical advantage for garden use.
-        Place one or two sachets directly inside your bait station without
-        needing to pour loose grain or handle blocks. Rats gnaw through the
-        packet to reach the grain inside, which reduces mess and minimises your
-        contact with the rodenticide. The individual wrapping also helps protect
-        the bait from moisture between station checks, maintaining palatability
-        for longer in outdoor conditions.
-      </p>
-      <p>
-        For gardeners who already own a bait station and need an affordable
-        refill supply, or for those running multiple stations across a large
-        garden, the Elixir Gardens sachets are a practical choice. Place two
-        sachets per station, check every 2-3 days, and replace consumed bait
-        until rat activity ceases. At this price, you can afford to maintain a
-        sustained baiting campaign without breaking the budget.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Excellent value — 1kg of bait at a competitive price</li>
-        <li>Chew-through sachets are clean and easy to deploy</li>
-        <li>10 individually wrapped sachets for flexible station stocking</li>
-        <li>Difenacoum is effective against common UK rat populations</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Less potent than Brodifacoum — may require multiple feeds</li>
-        <li>No bait station included — must be purchased separately</li>
-        <li>Sachets can absorb moisture in poorly sealed stations</li>
-      </ul>
-
-      {/* Buying Guide */}
-      <h2 id="buying-guide">Buying Guide: Outdoor Rat Poison for UK Gardens</h2>
-      <p>
-        Choosing the right outdoor rodenticide involves more than just picking
-        the strongest poison. Garden environments present specific challenges
-        around wildlife safety, weather exposure, and placement strategy. Here
-        is everything you need to consider.
-      </p>
-
-      <h3>Legal Requirements for Outdoor Rodenticide Use in the UK</h3>
-      <p>
-        The Campaign for Responsible Rodenticide Use (CRRU) sets the legally
-        enforced standards for rodenticide use in the UK. The key requirements
-        for garden use are: all second-generation anticoagulant rodenticides
-        (SGARs) — including brodifacoum, bromadiolone, and difenacoum — must be
-        placed inside tamper-resistant bait stations when used outdoors.
-        Rodenticides sold to the general public are authorised for use indoors
-        and outdoors around buildings, and are not authorised for use in open
-        areas away from buildings. You must not leave bait down permanently —
-        remove it once the infestation is controlled. And you must search for
-        and dispose of dead rodents during and after treatment to minimise
-        secondary poisoning risk. These are not optional best practices;
-        non-compliance can result in prosecution under the Wildlife and
-        Countryside Act 1981 or the Environmental Protection Act 1990 if
-        non-target animals are harmed.
-      </p>
-
-      <h3>Protecting Wildlife — Bait Stations Are ESSENTIAL Outdoors</h3>
-      <p>
-        Secondary poisoning is the single biggest environmental concern with
-        outdoor rodenticide use. When a poisoned rat is eaten by a predator —
-        barn owls, kestrels, red kites, hedgehogs, foxes, and even domestic cats
-        — the anticoagulant transfers up the food chain. Research by the
-        Predatory Bird Monitoring Scheme has found rodenticide residues in over
-        80% of barn owls tested in the UK. Using a tamper-resistant bait station
-        does not eliminate this risk entirely (a poisoned rat can still be
-        caught in the open), but it dramatically reduces direct exposure to
-        non-target species. Always collect dead rodents promptly and dispose of
-        them in sealed bags in your general waste.
-      </p>
-
-      <h3>Weather-Proof Bait Stations Explained</h3>
-      <p>
-        A bait station used in a garden must withstand the UK&apos;s rain,
-        frost, and variable temperatures. Look for stations with: drainage holes
-        at the base to prevent water pooling inside, UV-resistant plastic that
-        will not crack or become brittle in sunlight, a heavy or weighted base
-        to prevent wind or animals tipping it over, and the option to anchor it
-        to the ground with pegs or stakes. The Roshield stations on our list
-        both meet these criteria. Avoid cheap, lightweight stations that can be
-        knocked over by foxes or badgers — a compromised station becomes a
-        hazard rather than a safety measure.
-      </p>
-
-      <h3>Placement in Gardens</h3>
-      <p>
-        Rats are creatures of habit and follow the same routes (runs) each
-        night. The best bait station locations in a garden are: along fence
-        lines where rats travel between properties, near burrow entrances (look
-        for 6-9 cm diameter holes with smooth, well-worn edges), beside compost
-        bins which provide food and nesting material, against shed and garage
-        walls where rats navigate along edges, and at the base of boundary walls
-        or hedges. Position the station flush against a wall or fence with the
-        entry holes facing along the rat run, not pointing into open ground.
-        This maximises the chance of a rat walking straight into the station as
-        it follows its usual path.
-      </p>
-
-      <h3>Risks to Pets and Hedgehogs</h3>
-      <p>
-        Dogs are the most common victims of accidental rodenticide exposure in
-        UK gardens. If your dog has access to the garden, ensure bait stations
-        are positioned in areas the dog cannot reach — behind fencing, inside
-        locked outbuildings, or wedged into gaps too narrow for the dog to
-        access. Hedgehogs are also vulnerable: they are nocturnal foragers that
-        follow garden edges, just like rats. Place stations slightly elevated if
-        possible (on a low wall or shelf inside a station housing) or ensure the
-        entry holes are genuinely too small for a hedgehog to enter. If you
-        suspect your pet has ingested rodenticide, contact your vet immediately
-        — Vitamin K1 is the antidote and is effective when administered
-        promptly.
-      </p>
-
-      <h3>Compost Bin Rat Prevention</h3>
-      <p>
-        Compost bins are one of the most common attractants for garden rats. To
-        reduce the risk: never add cooked food, meat, fish, or dairy products to
-        your compost. Turn the compost regularly — at least every two weeks — to
-        disturb nesting and raise the internal temperature. Line the base of
-        open compost bins with galvanised wire mesh (6 mm gauge) to prevent rats
-        burrowing in from below. Consider switching to a fully enclosed tumbler
-        composter, which eliminates rat access entirely. If rats are already
-        established around the compost, place bait stations along the runs
-        leading to and from the compost area.
-      </p>
-
-      <h3>Bird Table Rat Prevention</h3>
-      <p>
-        Bird feeders and bird tables are a major attractant for garden rats.
-        Spilled seed on the ground is an easy meal, and rats quickly learn to
-        visit feeding stations at dusk. To reduce the problem: use
-        squirrel-proof feeders with caged designs that restrict access to small
-        birds, sweep up spilled seed daily, bring feeders in at night when rats
-        are most active, and avoid ground-feeding if you have a rat problem. The
-        food source is the problem, so deal with that first: clear spilled seed
-        from the ground daily and fit a seed tray beneath the feeder to catch
-        the rest. If you do bait, site the station against a nearby wall, fence
-        or shed along the route the rats are using, never out in the open by the
-        feeder.
-      </p>
-
-      <h3>When to Call a Professional</h3>
-      <p>
-        DIY garden rat control with bait stations is effective for moderate
-        infestations, but there are situations where a professional pest
-        controller is the better option. Call a BPCA-certified technician if:
-        the infestation persists after 3-4 weeks of baiting, you are seeing rats
-        during the daytime (this indicates a large, established colony), you
-        have found multiple burrow systems across the garden, rats have entered
-        your house or the structure of an outbuilding, or you are uncomfortable
-        handling rodenticide. A professional has access to stronger products,
-        CCTV drain surveys to identify entry points, and the expertise to
-        implement a comprehensive treatment plan that addresses the root cause
-        rather than just the symptoms.
-      </p>
-
-      {/* FAQ */}
-      <h2 id="faq">Frequently Asked Questions</h2>
-
-      {faqs.map((f) => (
-        <div key={f.q}>
-          <h3>{f.q}</h3>
-          <p>{f.a}</p>
-        </div>
-      ))}
-
-      <div className="not-prose">
-        <FindProviderCTA
-          heading="Garden Rat Problem Too Big for DIY?"
-          subtext="Find BPCA-certified pest control professionals near you who specialise in outdoor rodent control"
-        />
-      </div>
-
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        <p className="text-gray-700 mb-3">
-          Looking for indoor rat poison or traps instead?
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a
-            href="/best/rat-poison"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            Best Rat Poison UK 2026 →
-          </a>
-          <a
-            href="/best/rat-bait-stations"
-            className="inline-block px-6 py-2.5 bg-gray-700 hover:bg-gray-800 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            Best Rat Bait Stations UK 2026 →
-          </a>
-          <a
-            href="/best/rat-traps"
-            className="inline-block px-6 py-2.5 bg-gray-700 hover:bg-gray-800 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            Best Rat Traps UK 2026 →
-          </a>
-        </div>
-      </div>
+      <FindProviderCTA
+        heading="Burrows you cannot find, or a garden next to a watercourse?"
+        subtext="Compare pest control providers near you, no fees and no commissions."
+      />
     </GuideLayout>
   );
 }

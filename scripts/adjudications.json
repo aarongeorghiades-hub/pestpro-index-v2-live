@@ -103,8 +103,8 @@
     "best/flea-fogger": {
       "judgement": "correct-as-built",
       "date": "2026-09-07",
-      "fingerprint": "39ebe0f24fc4",
-      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
+      "fingerprint": "5529f08e979a",
+      "note": "S68 R2 rollout rebuild, six consumer routes, card sequences unchanged; flea-fogger label and title corrected on ruling"
     },
     "best/flea-spray-for-home": {
       "judgement": "correct-as-built",
@@ -120,8 +120,9 @@
     },
     "best/fly-killer-indoor": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "fb9cc145714a"
+      "date": "2026-09-07",
+      "fingerprint": "9ffdcfae64e6",
+      "note": "S68 R2 rollout rebuild, six consumer routes, card sequences unchanged; flea-fogger label and title corrected on ruling"
     },
     "best/fox-deterrents": {
       "judgement": "correct-as-built",
@@ -168,8 +169,8 @@
     "best/mouse-traps": {
       "judgement": "correct-as-built",
       "date": "2026-09-07",
-      "fingerprint": "320342638391",
-      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
+      "fingerprint": "871ecbbe66da",
+      "note": "S68 R2 rollout rebuild, six consumer routes, card sequences unchanged; flea-fogger label and title corrected on ruling"
     },
     "best/pigeon-spikes": {
       "judgement": "correct-as-built",
@@ -220,13 +221,15 @@
     },
     "best/rat-poison-for-gardens": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "6bf8a08cb166"
+      "date": "2026-09-07",
+      "fingerprint": "2bfa744f7d3c",
+      "note": "S68 R2 rollout rebuild, six consumer routes, card sequences unchanged; flea-fogger label and title corrected on ruling"
     },
     "best/rat-poison": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "b90880c9c73a"
+      "date": "2026-09-07",
+      "fingerprint": "29bc4422a63a",
+      "note": "S68 R2 rollout rebuild, six consumer routes, card sequences unchanged; flea-fogger label and title corrected on ruling"
     },
     "best/rat-traps": {
       "judgement": "correct-as-built",
@@ -236,8 +239,9 @@
     },
     "best/rodent-proofing": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "31ade289d667"
+      "date": "2026-09-07",
+      "fingerprint": "84de1a10279c",
+      "note": "S68 R2 rollout rebuild, six consumer routes, card sequences unchanged; flea-fogger label and title corrected on ruling"
     },
     "best/silverfish-treatments": {
       "judgement": "correct-as-built",
@@ -271,8 +275,9 @@
     },
     "best/wasp-nest-foam": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "9433a14958f6"
+      "date": "2026-09-07",
+      "fingerprint": "3eec32c38b2c",
+      "note": "S68 R2 rollout rebuild, six consumer routes, card sequences unchanged; flea-fogger label and title corrected on ruling"
     },
     "best/woodworm-treatments": {
       "judgement": "correct-as-built",

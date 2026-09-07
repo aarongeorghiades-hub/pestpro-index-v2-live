@@ -17,18 +17,19 @@ import Callout from "@/components/Callout";
 // — see /best/flea-spray-for-home for the proof. The listing says "10+ years", not
 // "10-time", so the numeral was also wrong.
 //
-// "Best Twin Pack" ON THE STRIKEBACK CARD IS AN AWARD LABEL AND IS HELD BY THE STANDING
-// RULE. The listing is a single 1-litre bottle; the card says so. Referred.
+// S68 R2 — THE STRIKEBACK LABEL WAS "Best Twin Pack" ON A SINGLE 1-LITRE LISTING. Held
+// and referred at S68 R1; corrected on the PM's ruling at S68 R2 to the listing's own
+// facts, the same string on card, h2, contents and table. Anchor id unchanged.
 //
 // FAQ block and FAQPage schema removed together (Law 190).
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
+    title: "Best Flea Fogger UK 2026: Flea Bombs and Sprays Compared",
     description:
       "Only one of the five is a fogger. What a total-release fogger cannot reach, the fire risk the guidance warns about, and five flea products on their own listings.",
     alternates: { canonical: "https://pestproindex.com/best/flea-fogger" },
     openGraph: {
-      title: "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
+      title: "Best Flea Fogger UK 2026: Flea Bombs and Sprays Compared",
       description:
         "Only one of the five is a fogger. What a total-release fogger cannot reach, the fire risk the guidance warns about, and five flea products on their own listings.",
       url: "https://pestproindex.com/best/flea-fogger",
@@ -41,7 +42,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
+  headline: "Best Flea Fogger UK 2026: Flea Bombs and Sprays Compared",
   description:
     "Only one of the five is a fogger. What a total-release fogger cannot reach, the fire risk the guidance warns about, and five flea products on their own listings.",
   datePublished: "2026-03-30",
@@ -60,7 +61,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
+      name: "Best Flea Fogger UK 2026: Flea Bombs and Sprays Compared",
       item: "https://pestproindex.com/best/flea-fogger",
     },
   ],
@@ -154,18 +155,18 @@ const products: ProductRecord[] = [
     asin: "B0D7WFDYD2",
     rank: 4,
     cardName: "Strikeback Super Strength Triple Action Flea Spray 1L",
-    cardLabel: "Best Twin Pack",
+    cardLabel: "Triple Action 1L Bottle",
     features: [
-      "Listed as a single 1-litre bottle — not a twin pack; unit count 1,000 millilitres",
+      "Listed as a single 1-litre bottle; unit count 1,000 millilitres",
       "A hand spray applied from about 30cm, not a fogger, per the listing",
       "Title states triple insecticides and a growth regulator; none is named on the listing",
       "Target species listed as Insects",
       "Listing safety text: avoid naked flames; let it dry before pets or children return",
     ],
-    tableCells: ["Strikeback Triple Action 1L", "Hand spray; actives not named; single 1L bottle, as listed", "Best Twin Pack"],
-    h2Label: "Best Twin Pack",
+    tableCells: ["Strikeback Triple Action 1L", "Hand spray; actives not named; single 1L bottle, as listed", "Triple Action 1L Bottle"],
+    h2Label: "Triple Action 1L Bottle",
     h2Name: "Strikeback Super Strength Triple Action Flea Spray 1L",
-    tocLabel: "Best Twin Pack",
+    tocLabel: "Triple Action 1L Bottle",
     tocName: "Strikeback Triple Action Flea Spray",
   },
   {
@@ -203,7 +204,7 @@ const tocItems = [
 export default function BestFleaFoggerPage() {
   return (
     <GuideLayout
-      title="Best Flea Fogger UK 2026: Flea Bombs That Actually Work"
+      title="Best Flea Fogger UK 2026: Flea Bombs and Sprays Compared"
       subtitle="One fogger and four sprays for UK homes, described by what their own listings state — and what two universities say a total-release fogger cannot reach"
       lastUpdated="September 2026"
       readingTime="8 min"
@@ -417,7 +418,7 @@ export default function BestFleaFoggerPage() {
                 "Not a fogger. A 500ml Virbac hand spray whose listing states four ingredients including the growth regulator pyriproxyfen, sprayed from about 50cm onto and under carpets, rugs, tiles and skirting, and which the maker says treats approximately a 3-4 bedroom house. The listing's readers' award claim over 10+ years is the maker's and is carried as such.",
                 "The one fogger on the page. A 150ml one-shot aerosol containing pyrethrins, listed as a whole-room treatment for up to 40 m³: press the trigger to lock it and leave the room while it empties. The listing describes it as an alternative to smoke bombs; what NPIC and Kentucky say about what any fogger reaches applies to it.",
                 "Not a fogger. A 500ml spot-treatment spray naming cypermethrin, listed for indoor and outdoor use, water-based and non-staining, with a maker's claim of up to 3 months of protection. The listing says it is not to be used directly on pets and is to be used alongside a vet's flea product for the animal.",
-                "Not a fogger, and not a twin pack: the listing is one 1-litre bottle, applied from about 30cm. Its title states triple insecticides and a growth regulator, and the listing names none of them. The safety text warns against naked flames and says to let surfaces dry before pets or children return. The award label above is held by the standing rule and is referred.",
+                "Not a fogger, and not a twin pack: the listing is one 1-litre bottle, applied from about 30cm. Its title states triple insecticides and a growth regulator, and the listing names none of them. The safety text warns against naked flames and says to let surfaces dry before pets or children return. The label above now states what the listing states.",
                 "Not a fogger. A 1-litre water-based hand spray whose title states amateur approval, naming three actives including pyriproxyfen, with a stated coverage of 50 square metres and a maker's claim of up to 12 weeks of residue. Children and pets out until dry, which the listing puts at 2-3 hours.",
               ][i]
             }
