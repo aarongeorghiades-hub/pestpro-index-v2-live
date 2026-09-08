@@ -1,66 +1,63 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S68 R7 — ROLLOUT REBUILD to the R8 pattern, on sources. LAW 191 GOVERNS THIS ROUTE:
+// no efficacy claim in our own voice, no superlative or ranking label, no rank numeral.
+// Card labels are neutral factual descriptors from the listings; maker claims are framed
+// as the maker's own and are listing-traceable.
+//
+// THE TITLE AND H1 SAID "Top 5" — a ranking claim in our own voice, which the standing
+// title ruling replaces with a factual clause. The head keyword is unchanged and the
+// count was correct; what goes is the ranking, not the number.
+//
+// THE LEGAL SECTION CARRIES THE WEIGHT ON THIS ROUTE, and it contradicts one carded
+// product's own instruction. B082J2YLDY is listed as "designed for for live release";
+// GOV.UK states it is an offence to release grey squirrels and that a squirrel caught
+// alive must be killed humanely. The card is kept and the conflict is stated on it and in
+// the body, sourced both ways — a reader who buys that trap needs to meet that fact
+// before they use it, not after.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Squirrel Deterrents UK 2026: Top 5",
+    title: "Best Squirrel Deterrents UK 2026: Feeders, Baffles, Sprays & Traps",
     description:
-      "Squirrel deterrents for UK gardens: feeder, baffle, two sprays and a cage trap, each described by what its own listing states.",
-    alternates: {
-      canonical: "https://pestproindex.com/best/squirrel-deterrents",
-    },
+      "Squirrel deterrents for UK gardens: what the law says about trapping and release, and five products described by what their own listings state.",
+    alternates: { canonical: "https://pestproindex.com/best/squirrel-deterrents" },
     openGraph: {
-      title: "Best Squirrel Deterrents UK 2026: Top 5",
+      title: "Best Squirrel Deterrents UK 2026: Feeders, Baffles, Sprays & Traps",
       description:
-        "Squirrel deterrents for UK gardens: feeder, baffle, two sprays and a cage trap, each described by what its own listing states.",
+        "Squirrel deterrents for UK gardens: what the law says about trapping and release, and five products described by what their own listings state.",
       url: "https://pestproindex.com/best/squirrel-deterrents",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Squirrel Deterrents UK 2026: Top 5",
+  headline: "Best Squirrel Deterrents UK 2026: Feeders, Baffles, Sprays & Traps",
   description:
-    "Squirrel deterrents for UK gardens: feeder, baffle, two sprays and a cage trap, each described by what its own listing states.",
+    "Squirrel deterrents for UK gardens: what the law says about trapping and release, and five products described by what their own listings state.",
   datePublished: "2026-03-17",
-  dateModified: "2026-03-17",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
+  dateModified: "2026-09-08",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://pestproindex.com/best/squirrel-deterrents",
   },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -69,6 +66,18 @@ const breadcrumbSchema = {
     },
   ],
 };
+
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194). Bodies kept under Law 175: asa-pest-repellents at
+// ~/pp-s67r2/sources (banked S67 R2); rspca-squirrels-garden and
+// gov-pest-control-property at ~/pp-s68r7/sources, fetched 2026-09-08.
+const SRC = {
+  asa: "https://www.asa.org.uk/advice-online/pest-repellents.html",
+  rspca: "https://www.rspca.org.uk/adviceandwelfare/wildlife/squirrels/garden",
+  gov: "https://www.gov.uk/pest-control-on-your-property",
+};
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -82,23 +91,25 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
+// the S45-C window. A property is asserted only where the listing states it (S52-E,
+// S50-H); a cell the listing does not state reads "not stated". Every maker claim about
+// what a product does to a squirrel is framed as the maker's own (Law 191).
 const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
     asin: "B00BXLF3WU",
     cardName: "Jacobi Jayne Squirrel Buster Bird Feeder",
-    cardLabel: "Metal hanging feeder",
+    cardLabel: "Metal hanging feeder, 0.75 litre",
     features: [
-      "Weight-activated closing mechanism",
-      "All-metal construction",
-      "5-year manufacturer warranty",
+      "Seed capacity listed as 0.75 litre; metal and resin construction",
+      "The maker describes patented spring-loaded ports that close under the weight of a squirrel",
+      "Its detail table carries the maker's own claims: 100% Squirrel Proof and adjustable to bar bigger birds",
+      "Listed for seed blends and mixes; supplied with perches and mounting hardware",
+      "Target species listed as bird; country of origin listed as China",
     ],
-    tableCells: [
-      "Jacobi Jayne Squirrel Buster Bird Feeder",
-      "Squirrel-proof feeder",
-      "Metal hanging feeder",
-    ],
-    h2Label: "Metal hanging feeder",
+    tableCells: ["Jacobi Jayne Squirrel Buster", "Feeder", "0.75 litre, as listed", "Weight-closing ports, per the maker"],
+    h2Label: "Metal hanging feeder, 0.75 litre",
     h2Name: "Jacobi Jayne Squirrel Buster Bird Feeder",
     tocLabel: "Metal hanging feeder",
     tocName: "Jacobi Jayne Squirrel Buster",
@@ -109,20 +120,17 @@ const products: ProductRecord[] = [
     cardName: "RepellShield Squirrel Repellent Spray 250ml",
     cardLabel: "Essential oil spray, 250ml",
     features: [
-      "Natural essential oils",
-      "Described by the maker as non-toxic",
-      "Made in Germany",
-      "250ml bottle",
+      "250ml; the listing names peppermint and geraniol among its essential oils",
+      "Listing directions: shake, spray generously, and reapply every 3 to 5 days or as needed",
+      "Listed for gardens, lofts, patios and around bird feeders",
+      "The maker describes it as plant-based and safe to use around children, pets and other wildlife",
+      "Manufactured in Germany, as listed",
     ],
-    tableCells: [
-      "RepellShield Squirrel Repellent Spray 250ml",
-      "Repellent spray",
-      "Essential oil spray, 250ml",
-    ],
+    tableCells: ["RepellShield Squirrel Spray 250ml", "Scent spray", "Peppermint and geraniol, as listed", "Every 3–5 days, per the maker"],
     h2Label: "Essential oil spray, 250ml",
     h2Name: "RepellShield Squirrel Repellent Spray",
     tocLabel: "Essential oil spray, 250ml",
-    tocName: "RepellShield",
+    tocName: "RepellShield Squirrel Spray",
   },
   {
     anchorId: "best-baffle",
@@ -130,902 +138,458 @@ const products: ProductRecord[] = [
     cardName: "Selections Squirrel Proof Bird Feeder Baffle (Pack of 2)",
     cardLabel: "Clear plastic baffle, 2 pack",
     features: [
-      "40cm smooth dome design",
-      "Fits feeding station poles",
-      "Pack of 2 included",
-      "Also keeps food dry in rain",
+      "Two baffles, as listed; each 40cm wide and 22cm high",
+      "Supplied with a hanging hook and a pole attachment, as listed",
+      "The maker describes a slippery surface that denies a squirrel grip",
+      "The listing also states that at 40cm wide it keeps the food beneath it dry",
+      "Target species listed as Bird",
     ],
-    tableCells: [
-      "Selections Squirrel Proof Bird Feeder Baffle (Pack of 2)",
-      "Pole baffle",
-      "Clear plastic baffle, 2 pack",
-    ],
+    tableCells: ["Selections Baffle, 2 pack", "Physical barrier", "40cm wide x 22cm high, as listed", "Blocks the route to a feeder"],
     h2Label: "Clear plastic baffle, 2 pack",
-    h2Name: "Selections Squirrel Proof Baffle (Pack of 2)",
+    h2Name: "Selections Squirrel Proof Bird Feeder Baffle",
     tocLabel: "Clear plastic baffle, 2 pack",
-    tocName: "Selections Squirrel Proof Baffle",
+    tocName: "Selections Baffle",
   },
   {
     anchorId: "best-food-treatment",
     asin: "B007EAH6K6",
-    cardName: "The Big Cheese Hot Nuts Deterrent Spray 1L",
+    cardName: "The Big Cheese Hot Nuts Grey Squirrel Deterrent Spray 1L",
     cardLabel: "Capsicum spray, 1 litre",
     features: [
-      "1 litre ready-to-use",
-      "Natural capsicum chilli formula",
-      "Well-known UK pest brand",
+      "1 litre, ready to use; ingredients listed as natural orange oil and capsicum chilli extract",
+      "Listing directions: apply directly to bird food and feeders, repeating on each refill or at least every 48 hours",
+      "Listed as poison-free",
+      "The maker describes the capsicum as harmless and palatable to wild birds while deterring squirrels",
+      "Listed at 6 x 10 x 29 cm and 1 kg",
     ],
-    tableCells: [
-      "The Big Cheese Hot Nuts Deterrent Spray 1L",
-      "Bird food treatment",
-      "Capsicum spray, 1 litre",
-    ],
+    tableCells: ["The Big Cheese Hot Nuts 1L", "Taste treatment for food", "Capsicum chilli extract, orange oil", "Every 48 hours or on refill, per the maker"],
     h2Label: "Capsicum spray, 1 litre",
     h2Name: "The Big Cheese Hot Nuts Deterrent Spray",
     tocLabel: "Capsicum spray, 1 litre",
-    tocName: "The Big Cheese Hot Nuts",
+    tocName: "Hot Nuts Deterrent Spray",
   },
   {
     anchorId: "best-trap",
     asin: "B082J2YLDY",
-    cardName: "Kabalo Humane Squirrel Cage Trap",
+    cardName: "Kabalo Metal Live-Catch Cage Trap",
     cardLabel: "Metal cage trap, single",
     features: [
-      "Heavy-duty metal construction",
-      "Spring-loaded door mechanism",
-      "Suitable for squirrels and large rats",
-      "Durable outdoor use",
+      "650mm x 190mm x 190mm metal cage; target species listed as Rat, Squirrel",
+      "Metal finger guard on the carrying handle, as listed; no poison required",
+      "The listing describes it as designed for live release — which the law does not permit for a grey squirrel",
+      "GOV.UK: it is an offence to release a grey squirrel, and one caught alive must be killed humanely",
+      "The RSPCA says a live-catch trap must be checked several times a day",
     ],
-    tableCells: [
-      "Kabalo Humane Squirrel Cage Trap",
-      "Humane cage trap",
-      "Metal cage trap, single",
-    ],
+    tableCells: ["Kabalo live-catch cage trap", "Live-catch trap", "650 x 190 x 190 mm, as listed", "Release is unlawful for grey squirrels"],
     h2Label: "Metal cage trap, single",
-    h2Name: "Kabalo Humane Squirrel Cage Trap",
+    h2Name: "Kabalo Metal Live-Catch Cage Trap",
     tocLabel: "Metal cage trap, single",
     tocName: "Kabalo Cage Trap",
   },
 ];
 
-const tocItems = [
-  { id: "at-a-glance", title: "Best Squirrel Deterrents at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
-  })),
-  { id: "buying-guide", title: "Squirrel Deterrent Buying Guide" },
-  { id: "when-to-call", title: "When to Call a Professional" },
+// ONE FAQ ARRAY (Law 190). The visible block and the FAQPage schema both read it.
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "Can I catch a grey squirrel and release it somewhere else?",
+    a: "No. GOV.UK states that it is an offence to keep or release some wild animals, grey squirrels among them, and that you must kill them humanely if you catch them alive. The cage trap on this page is listed by its maker as designed for live release; that instruction cannot lawfully be followed for a grey squirrel in the UK, which is why it is stated on the card as well as here.",
+  },
+  {
+    q: "Is trapping a grey squirrel legal at all?",
+    a: "The RSPCA states that it is not against the law for grey squirrels to be caught and killed, including with live-catch cage traps or approved spring traps, that a live-catch trap must be checked several times a day and any captured squirrel killed humanely, and that it is against the law under the Animal Welfare Act 2006 to cause unnecessary suffering to a wild animal under human control, such as one caught in a trap.",
+  },
+  {
+    q: "Does killing them solve the problem?",
+    a: "The RSPCA's position is that it is unlikely to be a long-term solution, because other squirrels may replace them within as little as a month, and that addressing what attracts them — food and shelter — is the alternative approach. That is its view, quoted, and it is the reason the first four products on this page are about food and access rather than about the animal.",
+  },
+  {
+    q: "Do repellent sprays work?",
+    a: "This page does not say so in its own voice. The ASA reports that it has yet to accept any claim of efficacy for pest repellent devices, and that marketers without UK-based trial evidence should not state or imply efficacy. Both sprays here carry their makers' claims on their cards, attributed and traceable to the listing.",
+  },
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const tocItems = [
+  { id: "situation", title: "What Is Bringing Them In" },
+  { id: "legal", title: "The Legal Position: Trapping and Release" },
+  { id: "limits", title: "Where a Deterrent Does Not Work" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Product Is Not the Answer" },
+  { id: "using", title: "Placing Them" },
+  { id: "compared", title: "The Five Compared" },
+  { id: "faq", title: "Frequently Asked Questions" },
+];
+
 export default function BestSquirrelDeterrentsPage() {
   return (
     <GuideLayout
-      title="Best Squirrel Deterrents UK 2026: Top 5"
-      subtitle="Squirrel deterrents for UK homes and gardens, selected on published specifications and manufacturer information — from squirrel-proof bird feeders and repellent sprays to humane traps."
-      lastUpdated="March 2026"
-      readingTime="12 min"
+      title="Best Squirrel Deterrents UK 2026: Feeders, Baffles, Sprays & Traps"
+      subtitle="A weight-closing feeder, a baffle, two sprays and a cage trap, described by what their own listings state — beside what the law actually requires of anyone who traps a grey squirrel"
+      lastUpdated="September 2026"
+      readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "How to Get Rid of Squirrels: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-squirrels",
-        },
-        {
-          title: "How to Get Rid of Foxes: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-foxes",
-        },
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
-        {
-          title: "How to Get Rid of Cockroaches: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-cockroaches",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
-        {
-          title: "Pigeon Control: Complete UK Guide",
-          href: "/guides/pigeon-control",
-        },
-        {
-          title: "How to Get Rid of Moths",
-          href: "/guides/how-to-get-rid-of-moths",
-        },
-        {
-          title: "Restaurant Pest Control: UK Compliance Guide",
-          href: "/guides/restaurant-pest-control",
-        },
-        {
-          title: "Carpet Beetle Control: Complete UK Guide",
-          href: "/guides/carpet-beetle-control",
-        },
+        { title: "How to Get Rid of Squirrels: Complete UK Guide", href: "/guides/how-to-get-rid-of-squirrels" },
+        { title: "How to Get Rid of Foxes: Complete UK Guide", href: "/guides/how-to-get-rid-of-foxes" },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
+        { title: "Landlord Pest Control Responsibilities", href: "/guides/landlord-pest-control" },
       ]}
       relatedProducts={[
-        { title: "Best Rat Traps UK 2026", href: "/best/rat-traps" },
-        {
-          title: "Best Carpet Beetle Treatments UK 2026",
-          href: "/best/carpet-beetle-treatments",
-        },
-        { title: "Best Mouse Traps UK 2026", href: "/best/mouse-traps" },
-        { title: "Best Wasp Killers UK 2026", href: "/best/wasp-killers" },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
-        {
-          title: "Best Flea Treatments UK 2026",
-          href: "/best/flea-treatments",
-        },
-        { title: "Best Ant Killers UK 2026", href: "/best/ant-killers" },
-        {
-          title: "Best Bed Bug Treatments UK 2026",
-          href: "/best/bed-bug-treatments",
-        },
         { title: "Best Fox Deterrents UK 2026", href: "/best/fox-deterrents" },
-        {
-          title: "Best Bird Deterrents UK 2026",
-          href: "/best/bird-deterrents",
-        },
-        { title: "Best Moth Killers UK", href: "/best/moth-killers" },
-        {
-          title: "Best Commercial Fly Killers UK 2026",
-          href: "/best/commercial-fly-killers",
-        },
+        { title: "Best Cat Deterrents UK 2026", href: "/best/cat-deterrents" },
+        { title: "Best Bird Deterrents UK 2026", href: "/best/bird-deterrents" },
+        { title: "Best Rat Traps UK 2026", href: "/best/rat-traps" },
+        { title: "Best Rodent Proofing Products UK 2026", href: "/best/rodent-proofing" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
-      {/* Affiliate disclosure */}{" "}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
           site running and free for everyone. As an Amazon Associate, PestPro
-          Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
-      {/* Intro paragraphs */}{" "}
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        Grey squirrels (<em>Sciurus carolinensis</em>) are one of the most
-        persistent and destructive garden pests in the United Kingdom, and their
-        impact extends far beyond raiding bird feeders. Originally introduced
-        from North America in the 1870s, the grey squirrel population in Britain
-        has exploded to an estimated 2.7 million &mdash; vastly outnumbering the
-        native red squirrel, which has been pushed to the brink of extinction
-        across England and Wales. For homeowners, grey squirrels cause three
-        categories of serious damage: they strip bark from trees, killing mature
-        specimens worth thousands of pounds; they raid bird feeders with
-        extraordinary persistence, consuming expensive bird food and deterring
-        garden birds; and &mdash; most alarmingly &mdash; they gnaw their way
-        into loft spaces where they chew through electrical wiring, insulation,
-        water pipes, and roof timbers. The British Pest Control Association
-        (BPCA) reports that squirrel-related call-outs spike dramatically
-        between autumn and spring, when squirrels seek warm nesting sites in
-        residential roof spaces. Damage to electrical wiring by gnawing
-        squirrels is a genuine fire hazard and is responsible for a significant
-        number of unexplained loft fires each year in UK properties.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The challenge with squirrel control is that grey squirrels are
-        remarkably intelligent, agile, and adaptable. They can leap up to three
-        metres horizontally and more than a metre vertically, they learn to
-        defeat poorly designed &ldquo;squirrel-proof&rdquo; products within
-        hours, and they remember the location of food sources with astonishing
-        precision. This means that cheap, gimmicky deterrents are a waste of
-        money &mdash; you need products that are genuinely engineered to
-        outsmart a highly motivated and physically capable animal. The good news
-        is that several well-designed products on the UK market do exactly that.
-        From weight-activated bird feeders that mechanically deny squirrels
-        access, to repellent sprays that exploit squirrels&apos; sensitive
-        noses, to humane cage traps for situations where deterrence alone is not
-        enough, there are effective solutions for every type of squirrel
-        problem.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        We selected these squirrel deterrent products on published
-        specifications and manufacturer information, looking at three criteria:{" "}
-        <strong>UK availability and fast Prime delivery</strong>,{" "}
-        <strong>proven design and mechanism</strong> with demonstrated
-        effectiveness against grey squirrels, and{" "}
-        <strong>value for money</strong>. We also consulted guidance from the
-        BPCA and professional pest control technicians to ensure our
-        recommendations reflect real-world best practice. For a complete
-        step-by-step squirrel removal strategy &mdash; including loft proofing,
-        tree management, and legal obligations &mdash; see our companion guide:{" "}
-        <Link
-          href="/guides/how-to-get-rid-of-squirrels"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          How to Get Rid of Squirrels: Complete UK Guide
-        </Link>
-        .{" "}
-      </p>{" "}
+        Four of these five products are about food and access: a feeder that
+        closes under weight, a baffle that blocks the pole, and two sprays —
+        one for surfaces, one applied to the bird food itself. The fifth is a
+        cage trap, and it comes with a legal obligation its own listing gets
+        wrong.
+      </p>
+
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You are considering a trap.</strong> Read what the law
+            requires of you once something is in it —{" "}
+            <a href="#legal" className="underline">
+              trapping and release
+            </a>
+            .
+          </li>
+          <li>
+            <strong>They are emptying the bird feeder.</strong> Three products
+            here address that directly —{" "}
+            <a href="#best-overall" className="underline">
+              the weight-closing feeder
+            </a>
+            ,{" "}
+            <a href="#best-baffle" className="underline">
+              the baffle
+            </a>{" "}
+            and{" "}
+            <a href="#best-food-treatment" className="underline">
+              the capsicum treatment
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want to know whether a repellent spray works.</strong>{" "}
+            The ASA has accepted no efficacy claim for the class —{" "}
+            <a href="#limits" className="underline">
+              where a deterrent does not work
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You are hoping removal will settle it.</strong> The RSPCA
+            says others may replace them within a month —{" "}
+            <a href="#situation" className="underline">
+              what is bringing them in
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want the one physical barrier here.</strong>{" "}
+            <a href="#best-baffle" className="underline">
+              The 40cm baffle
+            </a>{" "}
+            is the item that does not depend on a squirrel changing its mind.
+          </li>
+        </ul>
+      </div>
+
       <div className="not-prose">
-        {" "}
-        <Callout type="info">
-          {" "}
-          <p>
-            Grey squirrels are classified as an invasive non-native species
-            under the Wildlife and Countryside Act 1981. It is illegal to
-            release a captured grey squirrel back into the wild in the UK. If
-            you trap one, you are legally obligated to humanely dispatch it. Red
-            squirrels, by contrast, are a protected species and must never be
-            harmed or disturbed.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* At a Glance */}{" "}
-      <h2 id="at-a-glance">Best Squirrel Deterrents at a Glance</h2>{" "}
-      <p>
-        {" "}
-        Below is a quick comparison of our five squirrel deterrent products.
-        Each has been selected for a different use case, so the best option for
-        you depends on whether you are primarily protecting bird feeders,
-        treating garden areas with repellent, or dealing with a squirrel that
-        has already entered your loft. We go into full detail on every product
-        further down the page.{" "}
-      </p>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Product</th> <th>Category</th> <th>What it is</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      {/* Best Overall */}{" "}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Jacobi Jayne Squirrel Buster is, in our view, the single best
-        investment any bird-feeding gardener in the UK can make if squirrels are
-        a problem &mdash; and for most British gardens, they absolutely are. The
-        feeder operates on a beautifully simple mechanical principle: a
-        weight-calibrated shroud surrounds the feeding ports, and when an animal
-        heavier than a typical garden bird lands on the perch, the shroud drops
-        down under the weight and physically closes off access to the seed
-        ports. Small birds such as blue tits, great tits, robins, and finches
-        are light enough to perch and feed without triggering the mechanism, but
-        a grey squirrel &mdash; which typically weighs between 400g and 600g
-        &mdash; immediately triggers the closure the moment it attempts to cling
-        to the feeder. There are no batteries, no electronics, and nothing to go
-        wrong.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        What sets the Squirrel Buster apart from cheaper
-        &ldquo;squirrel-proof&rdquo; feeders is the quality of its construction.
-        The entire feeder is built from powder-coated metal and durable
-        polycarbonate &mdash; there are no flimsy plastic parts for squirrels to
-        chew through, which is the fatal flaw of most budget alternatives. Grey
-        squirrels have incredibly powerful incisors that grow continuously
-        throughout their lives, and they will gnaw through thin plastic, soft
-        aluminium, and even some wire meshes given enough time and motivation.
-        The Squirrel Buster&apos;s all-metal ports and robust construction have
-        been specifically engineered to resist squirrel damage, and the product
-        comes with an impressive five-year manufacturer&apos;s warranty that
-        speaks to Jacobi Jayne&apos;s confidence in its durability. It is easily disassembled for cleaning, and replacement parts are readily
-        available should any component eventually wear out after years of
-        use.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Weight-activated mechanism is 100% mechanical &mdash; no batteries or
-          electronics to fail
-        </li>{" "}
-        <li>
-          All-metal construction resists squirrel gnawing and chewing damage
-        </li>{" "}
-        <li>
-          Five-year manufacturer&apos;s warranty demonstrates exceptional build
-          quality
-        </li>{" "}
-        <li>
-          Easy to disassemble for cleaning with readily available replacement
-          parts
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Higher upfront cost than standard bird feeders &mdash; but saves money
-          long-term on wasted bird food
-        </li>{" "}
-        <li>
-          Only protects the feeder itself &mdash; does not deter squirrels from
-          other garden areas
-        </li>{" "}
-        <li>
-          Some particularly small or juvenile squirrels may occasionally feed
-          briefly before the mechanism fully engages
-        </li>{" "}
-        <li>
-          Heavier than standard feeders, so requires a sturdy hanging point or
-          feeding station pole
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> A hanging metal and resin feeder, listed in
-        green, supplied as a single unit.{" "}
-      </p>{" "}
-      {/* Best Repellent Spray */}{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The RepellShield Squirrel Repellent Spray takes a different approach to
-        squirrel deterrence &mdash; rather than mechanically blocking access, it
-        exploits grey squirrels&apos; highly sensitive sense of smell to make
-        treated areas deeply unpleasant and unappealing. The spray is formulated
-        with a blend of natural essential oils, including peppermint and other
-        plant-derived compounds that squirrels find intensely aversive. When
-        applied to surfaces around bird feeders, garden furniture, fence tops,
-        loft entry points, shed walls, and other areas where squirrels are
-        active, it creates an invisible olfactory barrier that discourages
-        squirrels from approaching, climbing, or nesting. The formula is
-        manufactured in Germany to high quality standards and is entirely free
-        from synthetic pesticides, making it safe to use in gardens where
-        children play and pets roam.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The 250ml bottle is a ready-to-use spray that requires no dilution
-        &mdash; simply point and spray directly onto the surfaces you wish to
-        protect. On smooth, non-porous surfaces such as metal or plastic, the
-        spray will need to be reapplied more
-        frequently as it evaporates faster. One bottle is typically sufficient
-        to treat multiple areas around a medium-sized garden, though regular
-        reapplication is necessary &mdash; particularly after rainfall, which
-        will wash away the active compounds. For best results, spray treated
-        areas every five to seven days during dry weather, and reapply after
-        every significant rainfall. The spray is also useful for treating loft
-        entry points, soffit gaps, and fascia boards where squirrels may be
-        attempting to gain access to your roof space, though it should be
-        considered a deterrent rather than a physical barrier in these
-        situations.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Natural essential oil formula &mdash; no synthetic pesticides or
-          harmful chemicals
-        </li>{" "}
-        <li>Described by the maker as non-toxic</li>{" "}
-        <li>
-          Versatile application &mdash; bird feeders, fences, loft entry points,
-          sheds, and garden furniture
-        </li>{" "}
-        <li>Ready-to-use spray requires no dilution or mixing</li>{" "}
-        <li>Made in Germany to high quality manufacturing standards</li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Must be reapplied regularly, especially after rain &mdash; not a
-          one-time solution
-        </li>{" "}
-        <li>
-          Less effective on smooth, non-porous surfaces where the oils evaporate
-          quickly
-        </li>{" "}
-        <li>
-          250ml bottle may not last long if treating large areas or reapplying
-          frequently
-        </li>{" "}
-        <li>
-          Highly determined or habituated squirrels may eventually ignore the
-          scent if not combined with other deterrent methods
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> An essential oil spray, listed at 250ml as a
-        pack of one.{" "}
-      </p>{" "}
-      {/* Best Baffle */}{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Selections Squirrel Proof Baffle is a smooth, dome-shaped shield
-        that mounts on a feeding station pole{" "}
-        <strong>below</strong> the feeder. The 40cm-diameter dome is made from
-        smooth, slippery material. When
-        a squirrel climbs the pole and reaches the baffle, it encounters the
-        underside of the dome and cannot get past it &mdash; there are no edges
-        to grip, no texture to cling to, and the dome is too wide to reach
-        around. The squirrel slides off and drops to the ground, unable to
-        access the feeders above.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The baffles are designed to fit standard feeding station poles with a
-        diameter of approximately 16mm to 25mm, which covers the vast majority
-        of garden feeding stations sold in the UK. Installation is
-        straightforward &mdash; simply loosen the fixing clamp, slide the baffle
-        onto the pole at the desired height (ideally at least 1.2 metres from
-        the ground), and tighten the clamp to secure it in position. The baffle
-        must be positioned high enough that squirrels cannot simply jump over it
-        from ground level, which is why a minimum height of 1.2 metres is
-        recommended. An additional benefit of the dome design is that it acts as
-        a rain shield for the feeders below, keeping seed and suet dry during
-        wet weather and reducing waste from water-damaged food. However, it is
-        essential to understand that a baffle only protects the pole it is
-        mounted on &mdash; if squirrels can leap to your feeders from a nearby
-        tree branch, fence, or wall, the baffle will not help. Ensure your
-        feeding station is positioned at least two metres away from any surface
-        a squirrel could launch from.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>40cm smooth dome is impossible for squirrels to climb or grip</li>{" "}
-        <li>
-          No need to replace existing bird feeders &mdash; simply add the baffle
-          to the pole
-        </li>{" "}
-        <li>
-          Double-duty as a rain shield, keeping bird food dry in wet weather
-        </li>{" "}
-        <li>Simple clamp installation with no tools required</li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Only prevents climbing access &mdash; does not stop squirrels that
-          leap from nearby trees, fences, or walls
-        </li>{" "}
-        <li>
-          Feeding station must be positioned at least two metres from any launch
-          point for the baffle to work
-        </li>{" "}
-        <li>
-          Will not fit very thick or unusually shaped feeding station poles
-        </li>{" "}
-        <li>
-          Squirrels may still dig up bulbs and cause other garden damage
-          elsewhere
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> A clear plastic baffle, listed as a pack of two.
-        Position the feeding station well away from trees, fences and walls.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
-          <p>
-            A pole baffle and a weight-activated feeder cover two different
-            approach routes: up the pole, and a leap from a nearby surface.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* Best Bird Food Treatment */}{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Big Cheese Hot Nuts takes a clever biological approach to squirrel
-        deterrence that exploits a fascinating difference between mammals and
-        birds. The spray is formulated with capsaicin &mdash; the active
-        compound found in chilli peppers that produces a burning sensation on
-        contact with mammalian mucous membranes.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The product is manufactured by STV International, one of the UK&apos;s
-        most established pest control brands, and it comes in a generous
-        one-litre ready-to-use spray bottle. Application is straightforward:
-        spray a light coating directly onto bird seed, peanuts, suet, or fat
-        balls before placing them in your feeder, or spray the exterior surfaces
-        of the feeder itself. Reapply every few days or after rainfall for
-        continued effectiveness. The maker describes the capsicum formula as harmless
-        and palatable to wild birds. It
-        is worth noting that extremely persistent or hungry squirrels may
-        eventually learn to tolerate the heat &mdash; capsaicin tolerance can
-        develop with repeated exposure, just as it does in humans who regularly
-        eat spicy food. For this reason, we recommend using Hot Nuts as part of
-        a broader deterrence strategy rather than relying on it as your sole
-        line of defence.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Exploits a genuine biological difference &mdash; mammals taste
-          capsaicin, birds do not
-        </li>{" "}
-        <li>One-litre bottle, ready to use</li>{" "}
-        <li>Described by the maker as harmless and palatable to wild birds</li>{" "}
-        <li>Well-known UK pest brand with decades of market presence</li>{" "}
-        <li>Ready-to-use spray requires no dilution or preparation</li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Must be reapplied regularly, especially after rain</li>{" "}
-        <li>
-          Very persistent squirrels may develop tolerance to capsaicin over time
-        </li>{" "}
-        <li>
-          The spray has a noticeable chilli smell that some people may find
-          unpleasant during application
-        </li>{" "}
-        <li>
-          Does not deter squirrels from non-food-related damage such as loft
-          entry or bark stripping
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> A ready-to-use spray listed at one litre,
-        containing capsicum chilli.{" "}
-      </p>{" "}
-      {/* Best Humane Trap */}{" "}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        When deterrence and exclusion have failed &mdash; or when a grey
-        squirrel has already established itself inside your loft, shed, or
-        outbuilding &mdash; trapping becomes the most practical solution. The
-        Kabalo Humane Squirrel Cage Trap is a heavy-duty wire mesh cage with a
-        spring-loaded door mechanism that captures squirrels alive and unharmed.
-        The trap works on a simple trigger-plate principle: bait is placed at
-        the far end of the cage (peanut butter, whole hazelnuts, or sunflower
-        seeds work well), and when the squirrel steps onto the
-        pressure-sensitive trigger plate inside the cage to reach the bait, the
-        spring-loaded door snaps shut behind it. The squirrel is confined inside
-        the cage, alive and uninjured, allowing you to deal with it in
-        accordance with UK law.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The cage is constructed from galvanised steel wire mesh that is strong
-        enough to resist gnawing and clawing from a trapped and agitated
-        squirrel. The mesh gauge is fine enough to prevent the squirrel from
-        reaching through the bars, and the door mechanism is robust enough to
-        withstand repeated use over many trapping sessions. The trap measures
-        approximately 60cm in length and is large enough to comfortably hold an
-        adult grey squirrel without causing undue distress. It is also suitable
-        for trapping large rats, making it a versatile tool for rural and
-        semi-rural properties where multiple pest species are present. For best
-        results, place the trap along a wall, fence line, or established
-        squirrel run, and bait it for several days with the door mechanism
-        disabled (propped open) so that squirrels become accustomed to entering
-        the trap and feeding inside it before you arm the trigger. This
-        &ldquo;pre-baiting&rdquo; technique dramatically increases your capture
-        success rate compared to simply setting a baited trap cold.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
         <Callout type="warning">
-          {" "}
           <p>
-            Remember: under UK law, captured grey squirrels cannot be released
-            back into the wild. They must be humanely dispatched. If you&apos;re
-            uncomfortable with this, contact a professional pest controller
-            instead.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
+            One product here is a live-catch cage trap. GOV.UK states that it is
+            an offence to release a grey squirrel and that one caught alive must
+            be killed humanely; the RSPCA adds that a live-catch trap must be
+            checked several times a day and that causing unnecessary suffering
+            to a trapped animal is an offence under the Animal Welfare Act 2006.
+            Read both before buying it, not after.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">What Is Bringing Them In</h2>
       <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Heavy-duty galvanised steel construction resists gnawing and weather
-          damage
-        </li>{" "}
-        <li>Spring-loaded door captures squirrels alive and uninjured</li>{" "}
-        <li>
-          Versatile &mdash; also suitable for trapping large rats and
-          similar-sized pests
-        </li>{" "}
-        <li>Reusable indefinitely with no consumable parts to replace</li>{" "}
-        <li>
-          Pre-baiting technique dramatically improves capture success rate
-        </li>{" "}
-      </ul>{" "}
+        The RSPCA&rsquo;s garden page starts with the food supply rather than
+        the animal:{" "}
+        <em>&ldquo;Use squirrel-resistant bird feeders rather than putting out loose food.&rdquo;</em>{" "}
+        (
+        <a href={SRC.rspca} rel="nofollow">
+          RSPCA
+        </a>
+        ). Covering bulbs with wire mesh so plants can grow through is on the
+        same list.
+      </p>
       <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          UK law requires captured grey squirrels to be humanely dispatched
-          &mdash; release is illegal
-        </li>{" "}
-        <li>
-          Trap must be checked at least twice daily to prevent distress and
-          dehydration in captured animals
-        </li>{" "}
-        <li>
-          Does not address the root cause &mdash; other squirrels will move in
-          unless entry points are sealed
-        </li>{" "}
-        <li>
-          Not suitable for use where red squirrels are present, as they are a
-          protected species
-        </li>{" "}
-      </ul>{" "}
+        It also sets out why removal alone tends not to settle the question:{" "}
+        <em>
+          &ldquo;Killing squirrels is unlikely to be a long-term solution, as
+          other squirrels may quickly replace them - perhaps within as little as
+          a month.&rdquo;
+        </em>{" "}
+        That is the RSPCA&rsquo;s position, quoted, and it is why four of the
+        five products below are about food and access.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">The Legal Position: Trapping and Release</h2>
       <p>
-        {" "}
-        <strong>Verdict:</strong> A metal live-catch cage trap, listed in silver as
-        a single unit. Trapping should always be accompanied by thorough
-        proofing of entry points. If you are uncomfortable with the legal
-        requirement to dispatch captured grey squirrels, call a professional
-        pest controller who will handle the process humanely and lawfully.{" "}
-      </p>{" "}
-      {/* Buying Guide */}{" "}
-      <h2 id="buying-guide">Squirrel Deterrent Buying Guide</h2>{" "}
+        Trapping a grey squirrel is lawful. What you may do next is where
+        people go wrong. GOV.UK states:{" "}
+        <em>
+          &ldquo;It’s an offence to keep or release some wild animals, for
+          example grey squirrels - you must kill them humanely if you catch them
+          alive.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.gov} rel="nofollow">
+          GOV.UK
+        </a>
+        ).
+      </p>
       <p>
-        {" "}
-        With five strong products to choose from, selecting the right squirrel
-        deterrent &mdash; or combination of products &mdash; depends on the
-        nature of your squirrel problem and where the damage is occurring. Here
-        are the key factors to consider.{" "}
-      </p>{" "}
-      <h3>Protecting Bird Feeders vs Protecting Your Home</h3>{" "}
+        The RSPCA sets out the same position from the welfare side:{" "}
+        <em>
+          &ldquo;It's not against the law for grey squirrels to be caught and
+          killed, including live-catch cage traps or approved spring traps.&rdquo;
+        </em>{" "}
+        and{" "}
+        <em>
+          &ldquo;If you're using a live-catch trap, check it several times a day
+          and kill any captured grey squirrels humanely.&rdquo;
+        </em>{" "}
+        It adds the boundary:{" "}
+        <em>
+          &ldquo;It is against the law under the Animal Welfare Act 2006 to
+          cause any unnecessary suffering to wild animals that are under human
+          control, e.g. while caught in a trap.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.rspca} rel="nofollow">
+          RSPCA
+        </a>
+        ).
+      </p>
       <p>
-        {" "}
-        These are two fundamentally different problems that require different
-        solutions. If your issue is squirrels raiding bird feeders and consuming
-        expensive bird food, the Jacobi Jayne Squirrel Buster feeder and the
-        Selections baffle are your best options &mdash; they physically deny
-        squirrels access to the food using mechanical means that do not wear out
-        or need reapplication. The Hot Nuts capsaicin spray and RepellShield
-        repellent spray can supplement these physical defences for lighter
-        squirrel pressure. However, if your problem is squirrels entering your
-        loft, chewing wiring, or nesting in your roof space, feeder-level
-        deterrents are irrelevant &mdash; you need professional-grade exclusion
-        work (sealing entry points with galvanised steel mesh), trapping with
-        the Kabalo cage trap, or a call to a qualified pest controller. Loft
-        squirrel problems are serious and should not be ignored, as the risk of
-        electrical fire from gnawed wiring is real and well-documented.{" "}
-      </p>{" "}
-      <h3>Indoor vs Outdoor Solutions</h3>{" "}
+        The cage trap carded below is listed by its maker as designed for live
+        release. For a grey squirrel in the UK that instruction cannot lawfully
+        be followed, and buying the trap commits you to the obligations in the
+        two sources above. This page states that on the card as well as here.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where a Deterrent Does Not Work</h2>
       <p>
-        {" "}
-        Most of the products in this guide are designed for outdoor garden use.
-        The Jacobi Jayne feeder, Selections baffle, Hot Nuts spray and
-        RepellShield spray are all outdoor products. The Kabalo cage trap can be used both outdoors and in enclosed
-        spaces such as loft cavities, garages, and outbuildings. If you have
-        squirrels inside your loft, the RepellShield spray can be applied to
-        entry points and surrounding woodwork to discourage re-entry, but it
-        should not be considered a substitute for physical proofing. The only
-        reliable way to keep squirrels out of a loft permanently is to seal
-        every entry point with materials they cannot gnaw through &mdash;
-        typically 16-gauge galvanised steel mesh screwed firmly over holes, gaps
-        around soffit boards, and any opening larger than 25mm.{" "}
-      </p>{" "}
-      <h3>Legal Obligations in the UK</h3>{" "}
+        <strong>As a claim you can lean on.</strong> The ASA&rsquo;s
+        AdviceOnline entry on pest repellents states that{" "}
+        <em>
+          &ldquo;In past years, the ASA, together with independent experts, has
+          closely examined the evidence for claims for those devices, which can
+          range from cat-shaped metal sheets with glowing eyes to ultrasonic and
+          electromagnetic equipment. It has yet to accept any claim of
+          efficacy.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.asa} rel="nofollow">
+          ASA
+        </a>
+        ). That is about evidence a regulator has accepted, not a finding that
+        these products do nothing, and this page does not turn it into one.
+      </p>
       <p>
-        {" "}
-        UK law places specific obligations on anyone dealing with grey
-        squirrels. Under the Wildlife and Countryside Act 1981 and the Invasive
-        Alien Species (Enforcement and Permitting) Order 2019, it is{" "}
-        <strong>
-          illegal to release a captured grey squirrel back into the wild
-        </strong>
-        . If you trap a grey squirrel using a cage trap, you are legally
-        required to humanely dispatch it. Acceptable methods of humane dispatch
-        include a swift blow to the back of the head or shooting with an air
-        rifle at close range &mdash; drowning is not considered humane and may
-        constitute an offence under the Animal Welfare Act 2006. If you are not
-        confident or comfortable performing humane dispatch yourself, do not set
-        a cage trap. Instead, contact a professional pest controller who is
-        trained and experienced in handling trapped animals lawfully and
-        humanely. It is also worth noting that red squirrels are fully protected
-        under Schedule 5 of the Wildlife and Countryside Act &mdash; if you live
-        in an area where red squirrels are present (parts of Scotland,
-        Northumberland, Cumbria, and the Isle of Wight), you must take extreme
-        care to ensure that any deterrent or trapping measures do not harm red
-        squirrels.{" "}
-      </p>{" "}
-      <h3>Why Professional Help May Be Better for Loft Infestations</h3>{" "}
+        <strong>Between applications.</strong> Both sprays are consumables on
+        their makers&rsquo; own terms: every 3 to 5 days for the essential oil
+        spray, and on each refill or at least every 48 hours for the capsicum
+        treatment. A treated feeder is treated until it is not.
+      </p>
       <p>
-        {" "}
-        Loft infestations are a different matter entirely. A squirrel
-        that has gained access to your roof space can cause thousands of pounds
-        worth of damage in a matter of weeks &mdash; gnawing through electrical
-        cables, shredding loft insulation for nesting material, chewing through
-        water pipes (causing leaks and water damage to ceilings below), and
-        contaminating the loft with droppings and urine. Professional pest
-        controllers have the equipment, training, and legal authority to trap
-        and dispatch squirrels in confined loft spaces safely, and &mdash;
-        crucially &mdash; they will identify and seal every entry point to
-        prevent future incursions. DIY loft proofing is difficult and risky, as
-        working in cramped roof spaces with exposed wiring and insulation
-        presents genuine safety hazards, and missing even a single entry point
-        means the problem will return within weeks as a new squirrel discovers
-        the same access route.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
+        <strong>Against everything except the feeder.</strong> Three of the five
+        products protect bird food specifically. A squirrel in a loft, digging
+        bulbs, or stripping bark is not the problem any of them addresses, and
+        the RSPCA&rsquo;s wire-mesh suggestion for bulbs is not sold here at all.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Physical, taste, scent or trap</h3>
+      <p>
+        The feeder and the baffle work whether or not the squirrel cares. The
+        two sprays ask it to go elsewhere. The trap is a different decision
+        entirely and carries the obligations set out above.
+      </p>
+      <h3>2. What has to be renewed, and how often</h3>
+      <p>
+        Every 3 to 5 days for the essential oil spray; every 48 hours or every
+        refill for the capsicum. The feeder and the baffle state no consumable.
+      </p>
+      <h3>3. What the listing actually states</h3>
+      <p>
+        Capacity 0.75 litre; a 40cm baffle 22cm high; a 1 litre spray with its
+        ingredients named; a 250ml spray naming peppermint and geraniol; a
+        650mm cage. Those are the listings&rsquo; own figures, and the
+        comparison table carries them without adding anything.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+            />
+          </div>
           <p>
-            If you can hear scratching, scurrying, or gnawing sounds coming from
-            your loft &mdash; particularly in the early morning or late
-            afternoon &mdash; act immediately. Squirrels are diurnal (active
-            during the day), unlike rats and mice which are nocturnal. Daytime
-            loft noises are a strong indicator of squirrel activity. The longer
-            you wait, the more damage they will cause to your wiring,
-            insulation, and roof timbers.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* When to Call a Professional */}{" "}
-      <h2 id="when-to-call">When to Call a Professional</h2>{" "}
+            {
+              [
+                "A metal and resin hanging feeder holding 0.75 litres of seed, whose maker describes patented spring-loaded ports closing under a squirrel's weight and whose detail table carries its own \"100% Squirrel Proof\" claim. Supplied with perches and mounting hardware; the target species on the listing is bird.",
+                "A 250ml spray naming peppermint and geraniol, made in Germany, with the maker's instruction to reapply every three to five days. The maker describes it as plant-based and safe around children, pets and other wildlife; those are its words, and the listing is where they come from.",
+                "Two clear baffles, each 40cm wide and 22cm high, with a hook and a pole attachment. The maker describes a slippery surface that denies grip, and notes that at 40cm across it also keeps the food below it dry. The one item here that is purely physical.",
+                "A one-litre ready-to-use treatment applied to the bird food itself, with natural orange oil and capsicum chilli extract named as the ingredients and a listing instruction to repeat on every refill or at least every 48 hours. Listed as poison-free; the maker describes the capsicum as harmless and palatable to wild birds.",
+                "A 650mm metal cage trap listed for rats and squirrels, with a finger guard on the handle and no poison required. Its listing describes it as designed for live release; for a grey squirrel that is not lawful in the UK, and the legal section above sets out what is required of anyone who catches one alive.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If a Product Is Not the Answer</h2>
       <p>
-        {" "}
-        Garden-level squirrel problems &mdash; raided bird feeders, dug-up
-        bulbs, stripped bark on young trees &mdash; can usually be managed
-        effectively with the consumer products on this page. A squirrel-proof
-        feeder, a pole baffle, and a repellent spray will resolve the vast
-        majority of garden squirrel nuisance issues without professional
-        intervention. However, there are several situations where calling a
-        professional pest control company is strongly recommended. If squirrels
-        have gained access to your loft, attic, or roof space, professional help
-        is essential &mdash; the risk of fire from gnawed electrical wiring is
-        too serious to ignore, and thorough proofing of entry points requires
-        specialist knowledge and equipment. A professional technician will
-        inspect your entire roofline, identify all current and potential entry
-        points, trap and remove any squirrels already inside, and install
-        permanent proofing materials to prevent re-entry.{" "}
-      </p>{" "}
+        <strong>Change what is on offer.</strong> The RSPCA&rsquo;s first
+        suggestion is squirrel-resistant feeders rather than loose food, and
+        wire mesh over bulbs so plants grow through it.
+      </p>
       <p>
-        {" "}
-        You should also contact a professional if you have trapped a grey
-        squirrel but are unable or unwilling to humanely dispatch it yourself,
-        as the animal cannot legally be released and leaving it in the trap for
-        extended periods would constitute an animal welfare offence.
-        Professional pest controllers are trained in humane dispatch methods and
-        will handle the process quickly, lawfully, and with minimal distress to
-        the animal. Finally, if your property is in an area where both grey and
-        red squirrels are present, professional advice is essential to ensure
-        that your control measures target only the invasive grey species and do
-        not inadvertently harm protected red squirrels. The cost of a
-        professional squirrel removal and proofing service in the UK typically
-        ranges from &pound;150 to &pound;300 depending on the extent of the
-        infestation and the amount of proofing work required &mdash; a
-        worthwhile investment compared to the potential cost of rewiring a
-        fire-damaged loft.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Squirrel Problem Too Big for DIY?"
-          subtext="Compare pest control providers near you — free, no-obligation quotes."
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-3">
-          Want the complete squirrel removal strategy?
-        </p>{" "}
-        <a
-          href="/guides/how-to-get-rid-of-squirrels"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          {" "}
-          Read our full guide: How to Get Rid of Squirrels &rarr;{" "}
-        </a>{" "}
-      </div>{" "}
+        <strong>Deal with the way in, not the garden.</strong> A squirrel in a
+        loft is a proofing problem — see our{" "}
+        <a href="/best/rodent-proofing">rodent proofing</a> page for mesh and
+        brush strips.
+      </p>
+      <p>
+        <strong>Use a professional if control is really needed.</strong> The
+        RSPCA&rsquo;s position is that where lethal control is decided on, it
+        should be carried out by someone competent to do it legally and
+        humanely.
+      </p>
+
+      {/* Using them */}
+      <h2 id="using">Placing Them</h2>
+      <ol>
+        <li>
+          <strong>Read the legal section before buying the trap.</strong> The
+          obligation begins the moment something is inside it.
+        </li>
+        <li>
+          <strong>Put the baffle above the feeder, on the pole.</strong> Its
+          40cm width is what makes it a barrier; it is supplied with a hook and
+          a pole attachment for the two mountings.
+        </li>
+        <li>
+          <strong>Treat the food, not the ground, with the capsicum spray.</strong>{" "}
+          Its listing says to apply it directly to bird food and feeders.
+        </li>
+        <li>
+          <strong>Keep to the reapplication interval.</strong> Three to five
+          days, or every 48 hours, depending on which spray.
+        </li>
+        <li>
+          <strong>Check a set trap several times a day.</strong> That is the
+          RSPCA&rsquo;s instruction, quoted above, and it is a welfare
+          requirement rather than advice.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Five Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        interval attributed to the maker who claims it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Ingredients or size, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">What it turns on</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* FAQ — rendered from the same array the schema above is derived from */}
+      <h2 id="faq">Frequently Asked Questions</h2>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+
+      <FindProviderCTA
+        heading="A squirrel in the loft rather than the garden?"
+        subtext="Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

@@ -1,64 +1,61 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S68 R7 — ROLLOUT REBUILD to the R8 pattern, on sources. LAW 191 GOVERNS THIS ROUTE:
+// no efficacy claim in our own voice, no superlative or ranking label, no rank numeral.
+// Card labels are neutral factual descriptors from the listings; maker claims are framed
+// as the maker's own.
+//
+// THE TITLE AND H1 SAID "Top 5" OVER FOUR CARDS — a ranking claim in our own voice and a
+// numeral that misstated the page. Both are replaced with a factual clause naming what is
+// actually here; the head keyword is unchanged.
+//
+// THE LEGAL SECTION IS THE LOAD-BEARING ONE. Every wild bird is protected, and the
+// government's own guidance says to try to avoid harming birds and to use measures that
+// do not kill or injure them before considering anything harmful. That is the frame a
+// spike belongs in, and it is why the gel product's position on the page is not an
+// afterthought.
+//
+// HISTORIC ENGLAND IS TWICE-BLOCKED AND TERMINAL under Law 137; no attempt was made.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Bird Deterrents UK 2026 | Top 5",
+    title: "Best Bird Deterrents UK 2026 | Spikes & Optical Gel",
     description:
-      "Bird and pigeon deterrents for UK homes: plastic and stainless steel spikes and optical gel dishes, described by their own listings.",
+      "Bird deterrents for UK homes: every wild bird is protected by law, what that means for spikes, and four products described by their own listings.",
     alternates: { canonical: "https://pestproindex.com/best/bird-deterrents" },
     openGraph: {
-      title: "Best Bird Deterrents UK 2026 | Top 5",
+      title: "Best Bird Deterrents UK 2026 | Spikes & Optical Gel",
       description:
-        "Bird and pigeon deterrents for UK homes: plastic and stainless steel spikes and optical gel dishes, described by their own listings.",
+        "Bird deterrents for UK homes: every wild bird is protected by law, what that means for spikes, and four products described by their own listings.",
       url: "https://pestproindex.com/best/bird-deterrents",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Bird Deterrents UK 2026: Top 5",
+  headline: "Best Bird Deterrents UK 2026: Spikes & Optical Gel",
   description:
-    "Bird and pigeon deterrents for UK homes: plastic and stainless steel spikes and optical gel dishes, described by their own listings.",
+    "Bird deterrents for UK homes: every wild bird is protected by law, what that means for spikes, and four products described by their own listings.",
   datePublished: "2026-03-17",
-  dateModified: "2026-03-17",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://pestproindex.com/best/bird-deterrents",
-  },
+  dateModified: "2026-09-08",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/bird-deterrents" },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -67,6 +64,16 @@ const breadcrumbSchema = {
     },
   ],
 };
+
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194). Bodies kept under Law 175 at ~/pp-s68r7/sources,
+// fetched 2026-09-08: gov-wild-birds (Natural England and Defra guidance) and rspb-wca.
+const SRC = {
+  gov: "https://www.gov.uk/guidance/wild-birds-protection-surveys-and-licences",
+  rspb: "https://www.rspb.org.uk/birds-and-wildlife/wildlife-and-countryside-act",
+};
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -80,26 +87,32 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
+// the S45-C window. A property is asserted only where the listing states it (S52-E,
+// S50-H); a cell the listing does not state reads "not stated".
+//
+// THREE LISTINGS CONTRADICT THEMSELVES AND EVERY READING IS RENDERED (Law 146): the
+// Defender pack says ledges up to 20cm in its feature text and 100 mm in its detail row;
+// the optical gel is a 24 pack in its title and "Number of pieces: 1" in its rows; the
+// Fly-Bye pack is 15 pieces in its text and 16 in its rows.
 const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
     asin: "B006Y9L57S",
-    cardName: "Defender Wide Plastic Bird Spikes (5m)",
+    cardName: "Defender Wide Plastic Bird Spikes — 5 Metre Pack",
     cardLabel: "Wide plastic spikes, 5m",
     features: [
-      "Made in Devon by Defender (25+ years)",
-      "Wide design for ledges up to 20cm",
-      "15 strips covering 5 metres",
+      "15 strips of 33.4 cm, as listed, covering a 5 metre run",
+      "Ledge depth stated two ways on the listing: up to 20 cm in the feature text, 100 mm in the detail row",
+      "Polycarbonate plastic; pin height listed as 112 mm",
+      "The detail rows state suitable for pigeons and not suitable for seagulls",
+      "Listed as snappable into smaller sections; fixings are not included",
     ],
-    tableCells: [
-      "Defender Wide Plastic Bird Spikes (5m)",
-      "Plastic spikes",
-      "Wide plastic spikes, 5m",
-    ],
+    tableCells: ["Defender Wide Plastic Spikes", "Plastic spikes", "5 m; 15 x 33.4 cm strips", "20 cm (text) / 100 mm (row)"],
     h2Label: "Wide plastic spikes, 5m",
-    h2Name: "Defender Wide Plastic Bird Spikes (5m)",
+    h2Name: "Defender Wide Plastic Bird Spikes",
     tocLabel: "Wide plastic spikes, 5m",
-    tocName: "Defender Wide Plastic Bird Spikes",
+    tocName: "Defender Wide Plastic Spikes",
   },
   {
     anchorId: "best-discreet",
@@ -107,870 +120,420 @@ const products: ProductRecord[] = [
     cardName: "Bird Barrier Optical Gel (24 Pack)",
     cardLabel: "Gel dishes, 24 pack",
     features: [
-      "Discreet dishes only 2.5 inches wide",
-      "No tools required",
-      "Ideal for heritage buildings",
+      "Pack size stated two ways on the listing: 24 pack in the title, number of pieces 1 in the detail row",
+      "Each dish listed at 6.4 x 6.4 x 0.6 cm",
+      "Ingredients listed as citronella, mint oil, agar and beeswax",
+      "The maker describes it as a humane alternative to bird spikes, installed without tools",
+      "Target species listed as Birds; the maker names roofs, balconies and railings among the surfaces",
     ],
-    tableCells: [
-      "Bird Barrier Optical Gel (24 Pack)",
-      "Sensory gel dishes",
-      "Gel dishes, 24 pack",
-    ],
+    tableCells: ["Bird Barrier Optical Gel", "Gel dishes", "24 (title) / 1 piece (row)", "6.4 x 6.4 x 0.6 cm per dish"],
     h2Label: "Gel dishes, 24 pack",
-    h2Name: "Bird Barrier Optical Gel (24 Pack)",
+    h2Name: "Bird Barrier Optical Gel",
     tocLabel: "Gel dishes, 24 pack",
     tocName: "Bird Barrier Optical Gel",
   },
   {
     anchorId: "best-budget",
     asin: "B07L19T8L4",
-    cardName: "Stainless Steel Bird Spikes (3m)",
+    cardName: "Stainless Steel Bird Spikes — 3 Metre Pack",
     cardLabel: "Stainless steel spikes, 12 pieces",
     features: [
-      "Stainless steel construction",
-      "3 metre coverage",
+      "12 sections of 25 cm, as listed, covering 3 metres",
+      "Stainless steel; listed at 660 grams",
+      "The maker describes it as corrosion and weather resistant",
+      "Listed as made in Europe; the maker states installation in 2 to 3 minutes",
+      "The colour row reads \"20 Ft\", which does not match the 3 metre unit count",
     ],
-    tableCells: [
-      "Stainless Steel Bird Spikes (3m)",
-      "Steel spikes",
-      "Stainless steel spikes, 12 pieces",
-    ],
+    tableCells: ["Stainless Steel Bird Spikes", "Stainless steel spikes", "3 m; 12 x 25 cm sections", "Not stated"],
     h2Label: "Stainless steel spikes, 12 pieces",
-    h2Name: "Stainless Steel Bird Spikes (3m)",
-    tocLabel: "Stainless steel spikes, 12 pieces",
+    h2Name: "Stainless Steel Bird Spikes, 3 Metre",
+    tocLabel: "Stainless steel spikes",
     tocName: "Stainless Steel Bird Spikes",
   },
   {
     anchorId: "best-coverage",
     asin: "B0C4Y7LSL6",
-    cardName: "Fly-Bye Anti Bird Spikes (6m)",
-    cardLabel: "Plastic spikes, 16 pieces",
+    cardName: "Fly-Bye Anti Bird Spikes — 6 Metre Coverage",
+    cardLabel: "Plastic spikes, 6m coverage",
     features: [
-      "6 metre coverage",
-      "2,500+ spikes irregular pattern",
-      "15 strips, glue/screw/cable-tie",
+      "6 metres of coverage, as listed",
+      "Pack size stated two ways on the listing: a 15-pack in the feature text, 16 pieces in the detail row",
+      "The maker states 2,500 spikes and an irregular pattern",
+      "Listed as fixable with screws, cable ties, glue or double-sided tape",
+      "The listing also names cats, foxes and squirrels among what it is sold against",
     ],
-    tableCells: [
-      "Fly-Bye Anti Bird Spikes (6m)",
-      "Plastic spikes",
-      "Plastic spikes, 16 pieces",
-    ],
-    h2Label: "Plastic spikes, 16 pieces",
-    h2Name: "Fly-Bye Anti Bird Spikes (6m)",
-    tocLabel: "Plastic spikes, 16 pieces",
+    tableCells: ["Fly-Bye Anti Bird Spikes", "Plastic spikes", "6 m; 15 (text) / 16 (row) pieces", "Not stated"],
+    h2Label: "Plastic spikes, 6m coverage",
+    h2Name: "Fly-Bye Anti Bird Spikes",
+    tocLabel: "Plastic spikes, 6m",
     tocName: "Fly-Bye Anti Bird Spikes",
   },
 ];
 
-// Records are addressed BY IDENTITY, never by position. A positional lookup
-// silently rebinds every later product when a record is added, removed or
-// reordered; this cannot. A missing anchorId throws, so the build fails loudly
-// rather than rendering undefined.
-function product(anchorId: string): ProductRecord {
-  const found = products.find((p) => p.anchorId === anchorId);
-  if (!found) {
-    throw new Error(`No product record with anchorId "${anchorId}"`);
-  }
-  return found;
-}
+// ONE FAQ ARRAY (Law 190). The visible block and the FAQPage schema both read it.
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "Are bird spikes legal in the UK?",
+    a: "Nothing on this page is unlawful to buy, but the frame around it matters. GOV.UK states that all wild bird species, their eggs and nests are protected by law, and that you must always try to avoid harming birds or to use measures which do not kill or injure them before considering taking harmful action. A deterrent that excludes a bird from a ledge is one thing; anything that injures one is another.",
+  },
+  {
+    q: "Can I put spikes up where birds are nesting?",
+    a: "The RSPB's summary of the Wildlife and Countryside Act 1981 is that it is generally illegal to intentionally take, damage or destroy the nest of any wild bird while it is in use or being built, and GOV.UK words the same offence as taking, damaging or destroying a nest while it is being used or built. Work that would do that is not a product question.",
+  },
+  {
+    q: "Which product is not a spike?",
+    a: "The optical gel. Its maker describes it as a humane alternative to bird spikes, installed without tools on roofs, balconies and railings, with citronella, mint oil, agar and beeswax listed as its ingredients. Whether it suits a given ledge is a question of the surface; whether it works is a claim this page attributes to its maker rather than making itself.",
+  },
+  {
+    q: "How much ledge will one pack cover?",
+    a: "5 metres in 15 strips, 3 metres in 12 sections, or 6 metres of coverage, on the three spike listings' own figures. The Defender listing is the only one that states a ledge depth, and it states two different ones — up to 20 cm in its feature text and 100 mm in its detail row — so both are on its card.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 
 const tocItems = [
-  { id: "at-a-glance", title: "Best Bird Deterrents at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
-  })),
-  { id: "buying-guide", title: "Bird Deterrent Buying Guide" },
-  { id: "when-to-call", title: "When to Call a Professional" },
+  { id: "situation", title: "What You Are Trying to Stop" },
+  { id: "legal", title: "The Legal Position: Every Wild Bird Is Protected" },
+  { id: "limits", title: "Where a Deterrent Does Not Work" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Product Is Not the Answer" },
+  { id: "using", title: "Fitting Them" },
+  { id: "compared", title: "The Four Compared" },
+  { id: "faq", title: "Frequently Asked Questions" },
 ];
+
 export default function BestBirdDeterrentsPage() {
   return (
     <GuideLayout
-      title="Best Bird Deterrents UK 2026: Top 5"
-      subtitle="Bird and pigeon deterrents for UK homes and businesses, selected on published specifications and manufacturer information — from plastic spikes and stainless steel strips to anti-bird netting and discreet optical gel."
-      lastUpdated="March 2026"
-      readingTime="12 min"
+      title="Best Bird Deterrents UK 2026: Spikes & Optical Gel"
+      subtitle="Three spike systems and one optical gel, described by what their own listings state — beside the protection every wild bird has in law and what the government's guidance asks you to try first"
+      lastUpdated="September 2026"
+      readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "How to Get Rid of Pigeons: Complete UK Guide",
-          href: "/guides/pigeon-control",
-        },
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
-        {
-          title: "How to Get Rid of Squirrels: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-squirrels",
-        },
-        {
-          title: "How to Get Rid of Foxes: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-foxes",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
-        {
-          title: "How to Get Rid of Moths",
-          href: "/guides/how-to-get-rid-of-moths",
-        },
-        {
-          title: "Restaurant Pest Control: UK Compliance Guide",
-          href: "/guides/restaurant-pest-control",
-        },
-        {
-          title: "Carpet Beetle Control: Complete UK Guide",
-          href: "/guides/carpet-beetle-control",
-        },
+        { title: "Pigeon Control: Complete UK Guide", href: "/guides/pigeon-control" },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
+        { title: "Landlord Pest Control Responsibilities", href: "/guides/landlord-pest-control" },
       ]}
       relatedProducts={[
-        { title: "Best Rat Traps UK 2026", href: "/best/rat-traps" },
-        {
-          title: "Best Carpet Beetle Treatments UK 2026",
-          href: "/best/carpet-beetle-treatments",
-        },
-        { title: "Best Mouse Traps UK 2026", href: "/best/mouse-traps" },
-        { title: "Best Wasp Killers UK 2026", href: "/best/wasp-killers" },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
-        {
-          title: "Best Flea Treatments UK 2026",
-          href: "/best/flea-treatments",
-        },
-        { title: "Best Ant Killers UK 2026", href: "/best/ant-killers" },
-        {
-          title: "Best Squirrel Deterrents UK 2026",
-          href: "/best/squirrel-deterrents",
-        },
+        { title: "Best Pigeon Spikes UK 2026", href: "/best/pigeon-spikes" },
+        { title: "Best Commercial Bird Proofing UK 2026", href: "/best/commercial-bird-proofing" },
         { title: "Best Fox Deterrents UK 2026", href: "/best/fox-deterrents" },
-        {
-          title: "Best Bed Bug Treatments UK 2026",
-          href: "/best/bed-bug-treatments",
-        },
-        { title: "Best Moth Killers UK", href: "/best/moth-killers" },
-        {
-          title: "Best Commercial Fly Killers UK 2026",
-          href: "/best/commercial-fly-killers",
-        },
-        {
-          title: "Best Commercial Bird Proofing UK 2026",
-          href: "/best/commercial-bird-proofing",
-        },
+        { title: "Best Cat Deterrents UK 2026", href: "/best/cat-deterrents" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
-      {/* Affiliate disclosure */}{" "}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
           site running and free for everyone. As an Amazon Associate, PestPro
-          Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
-      {/* Intro paragraphs */}{" "}
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        Pest birds are one of the most persistent and costly nuisance problems
-        facing UK property owners, and the issue is growing worse every year.
-        Feral pigeons, herring gulls, house sparrows, and starlings cause
-        millions of pounds&apos; worth of damage annually to residential and
-        commercial buildings across Britain &mdash; fouling rooftops, balconies,
-        and facades with acidic droppings that corrode stonework, brickwork, and
-        metalwork; blocking gutters and downpipes with nesting material; and
-        creating noise disturbances that can make outdoor spaces unusable. The
-        British Pest Control Association (BPCA) consistently ranks birds among
-        the top pest categories reported by its members, and local councils
-        across England, Scotland, and Wales receive thousands of complaints each
-        year about pigeons roosting on residential properties. Beyond the
-        cosmetic and structural damage, bird droppings pose genuine health
-        risks: they can harbour <em>Salmonella</em>, <em>E. coli</em>,{" "}
-        <em>Cryptococcus</em>, and the fungal pathogen{" "}
-        <em>Histoplasma capsulatum</em>, while dried pigeon guano produces
-        airborne dust particles that can trigger respiratory problems in
-        sensitive individuals.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The key principle behind all legitimate bird deterrents is{" "}
-        <strong>exclusion and discomfort, not harm</strong>. This humane
-        approach is not just
-        ethically preferable &mdash; it is a legal requirement. Under the
-        Wildlife and Countryside Act 1981, all wild birds in the UK are
-        protected, and it is an offence to intentionally kill, injure, or take
-        any wild bird, or to damage or destroy an active nest. Feral pigeons are
-        covered by a general licence that permits certain control measures, but
-        lethal methods must always be a last resort used by licensed
-        professionals. For the vast majority of domestic and commercial bird
-        problems, physical deterrents are the correct first-line solution.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        We selected these bird deterrent products on published specifications
-        and manufacturer information, looking at three criteria:{" "}
-        <strong>
-          proven effectiveness against common UK pest bird species
-        </strong>{" "}
-        (pigeons, gulls, starlings, and sparrows),{" "}
-        <strong>durability and weather resistance in British conditions</strong>
-        , and <strong>ease of DIY installation</strong>. We also consulted
-        guidance from the BPCA and professional bird control specialists to
-        ensure our recommendations reflect industry best practice. For a
-        comprehensive guide to pigeon problems specifically &mdash; including
-        roosting behaviour, health risks, and when to involve a professional
-        &mdash; see our companion article:{" "}
-        <Link
-          href="/guides/pigeon-control"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          How to Get Rid of Pigeons: Complete UK Guide
-        </Link>
-        .{" "}
-      </p>{" "}
+        Four products: three sets of spikes and one tray of gel dishes. All four
+        are exclusion products — they are sold to stop a bird landing or
+        roosting on a surface, not to do anything to the bird. In this country
+        that distinction is the law, and it comes before the specifications.
+      </p>
+
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>There is a nest, or one being built.</strong> Stop and read
+            this first —{" "}
+            <a href="#legal" className="underline">
+              every wild bird is protected
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You do not want spikes on the front of the house.</strong>{" "}
+            <a href="#best-discreet" className="underline">
+              The gel dishes
+            </a>{" "}
+            are the one non-spike product here.
+          </li>
+          <li>
+            <strong>You need to know the ledge depth.</strong> Only one listing
+            states one, and it states two different figures —{" "}
+            <a href="#best-overall" className="underline">
+              the Defender pack
+            </a>
+            .
+          </li>
+          <li>
+            <strong>It is seagulls, not pigeons.</strong> One listing rules
+            itself out for gulls —{" "}
+            <a href="#limits" className="underline">
+              where a deterrent does not work
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want metal rather than plastic.</strong>{" "}
+            <a href="#best-budget" className="underline">
+              The stainless steel set
+            </a>{" "}
+            covers 3 metres in twelve sections.
+          </li>
+        </ul>
+      </div>
+
       <div className="not-prose">
-        {" "}
         <Callout type="warning">
-          {" "}
           <p>
-            All wild birds in the UK are protected under the Wildlife and
-            Countryside Act 1981. It is illegal to intentionally kill or injure
-            any wild bird, or to damage or destroy an active nest containing
-            eggs or chicks. The deterrent products on this page are designed to
-            prevent birds from landing and roosting &mdash; they do not cause
-            harm. Always check for active nests before installing any deterrent,
-            and never block access to a nest that is in use.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* At a Glance */}{" "}
-      <h2 id="at-a-glance">Best Bird Deterrents at a Glance</h2>{" "}
+            GOV.UK states that all wild bird species, their eggs and nests are
+            protected by law, and that you must always try to avoid harming
+            birds or use measures which do not kill or injure them before
+            considering harmful action. Fitting anything to a ledge that is in
+            use as a nest site is not a product decision.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">What You Are Trying to Stop</h2>
       <p>
-        {" "}
-        Below is a quick comparison of our five bird deterrent products. Each covers a different use case. We go into full detail on
-        every product further down the page.{" "}
-      </p>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Product</th> <th>Type</th> <th>What it is</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
+        A bird landing on a ledge, a bird roosting there overnight, and a bird
+        nesting there are three different situations, and only the first two are
+        addressed by anything on this page. The third is governed by the law
+        set out below and by timing, not by a purchase.
+      </p>
+      <p>
+        The products themselves are narrow. One listing states the ledge depth
+        it is for and the bird it is for — pigeons, not seagulls. The others
+        state a length of coverage and leave the depth unstated, which the
+        comparison table records as &ldquo;not stated&rdquo; rather than filling
+        in.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">The Legal Position: Every Wild Bird Is Protected</h2>
+      <p>
+        The government&rsquo;s guidance opens with the general rule:{" "}
+        <em>&ldquo;All wild bird species, their eggs and nests are protected by law.&rdquo;</em>{" "}
+        and sets out the order of operations:{" "}
+        <em>
+          &ldquo;You must always try to avoid harming birds or to use measures
+          which do not kill or injure them before considering taking harmful
+          action.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.gov} rel="nofollow">
+          GOV.UK
+        </a>
+        ). Exclusion — which is what everything here is — sits on the
+        do-not-harm side of that line, provided it is fitted where a bird is not
+        already nesting.
+      </p>
+      <p>
+        On nests specifically, the same guidance lists among the things that
+        break the law to{" "}
+        <em>
+          &ldquo;intentionally take, damage or destroy a wild bird’s nest while
+          it’s being used or built&rdquo;
+        </em>
+        . The RSPB&rsquo;s summary of the Wildlife and Countryside Act 1981 puts
+        the same two offences as{" "}
+        <em>&ldquo;Intentionally kill, injure or take any wild bird.&rdquo;</em>{" "}
+        and{" "}
+        <em>
+          &ldquo;Intentionally take, damage or destroy the nest of any wild bird
+          while it is in use or being built.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.rspb} rel="nofollow">
+          RSPB
+        </a>
+        ). This page reports those; it does not advise on any particular
+        situation.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where a Deterrent Does Not Work</h2>
+      <p>
+        <strong>On a species the listing excludes.</strong> The Defender
+        pack&rsquo;s own detail rows mark it suitable for pigeons and not
+        suitable for seagulls. A gull problem is not a smaller version of a
+        pigeon problem, and the listing is the one saying so.
+      </p>
+      <p>
+        <strong>On a ledge deeper than the strip.</strong> Only one listing
+        gives a ledge figure at all, and it gives two — up to 20 cm in its
+        feature text, 100 mm in its detail row. A ledge deeper than the run of
+        spikes leaves a landing strip behind them, and three of the four
+        listings say nothing about depth.
+      </p>
+      <p>
+        <strong>Where a nest is already in use.</strong> Nothing on this page
+        addresses that, and the guidance above is why. Exclusion is fitted
+        before a site is in use, or after it has been vacated.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. The run of ledge you need to cover</h3>
+      <p>
+        5 metres in 15 strips, 3 metres in 12 sections, or 6 metres of coverage.
+        Those are the three spike listings&rsquo; own figures, and they are the
+        first thing to measure against.
+      </p>
+      <h3>2. Spike or gel, and what the surface will take</h3>
+      <p>
+        The spikes are glued, screwed or cable-tied — the Defender listing notes
+        that fixings are not included. The gel dishes are described by their
+        maker as installing without tools, which is a different proposition on a
+        listed frontage or a rented flat.
+      </p>
+      <h3>3. Material, where the weather gets at it</h3>
+      <p>
+        Polycarbonate on one, stainless steel on another, unstated on the third.
+        The stainless listing is the one that makes a corrosion claim, and it is
+        its maker&rsquo;s.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+            />
+          </div>
+          <p>
+            {
+              [
+                "Fifteen polycarbonate strips of 33.4 cm covering five metres, with a pin height of 112 mm and a listing that marks it suitable for pigeons and not for seagulls. It is the only product here that states a ledge depth, and it states two: up to 20 cm in the text and 100 mm in the rows. Fixings are not included.",
+                "The one product here that is not a spike: dishes of gel listed at 6.4 x 6.4 x 0.6 cm, with citronella, mint oil, agar and beeswax as the ingredients, which the maker describes as a humane alternative to spikes needing no tools to fit. Its title says 24 pack while its detail row says one piece, and the card carries both.",
+                "Twelve stainless steel sections of 25 cm covering three metres at 660 grams, listed as made in Europe with a corrosion and weather resistance claim from its maker. Its colour row reads \"20 Ft\", which does not match the three-metre unit count on the same listing.",
+                "Six metres of coverage from what the text calls a 15-pack and the rows call 16 pieces, with 2,500 spikes in an irregular pattern and a choice of screws, cable ties, glue or tape for fixing. Its listing also names cats, foxes and squirrels among what it is sold against.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If a Product Is Not the Answer</h2>
+      <p>
+        <strong>Remove what they are landing for.</strong> Food and standing
+        water on a flat roof or a balcony are the reason a ledge is worth
+        returning to.
+      </p>
+      <p>
+        <strong>Look at proofing rather than a strip.</strong> Our{" "}
+        <a href="/best/commercial-bird-proofing">commercial bird proofing</a>{" "}
+        page covers netting and wire systems for larger structures, and our{" "}
+        <a href="/best/pigeon-spikes">pigeon spikes</a> page covers that
+        category on its own.
+      </p>
+      <p>
+        <strong>Get a licence question answered properly.</strong> Where a
+        situation cannot be resolved without affecting a bird, a nest or an egg,
+        the guidance above points to Natural England rather than to a shop.
+      </p>
+
+      {/* Using them */}
+      <h2 id="using">Fitting Them</h2>
+      <ol>
+        <li>
+          <strong>Check the site is not in use first.</strong> That is the legal
+          step, and it comes before the drill.
+        </li>
+        <li>
+          <strong>Measure the ledge, both ways.</strong> Length decides how many
+          packs; depth decides whether spikes leave a gap behind them.
+        </li>
+        <li>
+          <strong>Buy the fixings.</strong> The Defender listing states plainly
+          that glue, screws and cable ties are not included.
+        </li>
+        <li>
+          <strong>Clean the surface for gel.</strong> The dishes are described as
+          securing to the surface, which a soiled ledge will not do well.
+        </li>
+        <li>
+          <strong>Check it after weather.</strong> Only one of these listings
+          makes a corrosion claim, and it is the maker&rsquo;s.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Four Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing states two different figures, both are shown; where it states
+        nothing, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Coverage and pack, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Ledge depth, as listed</th>
             </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      {/* Best Overall */}{" "}
-      <h2 id={product("best-overall").anchorId}>
-        {product("best-overall").h2Label} &mdash;{" "}
-        {product("best-overall").h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={product("best-overall").cardName}
-          features={product("best-overall").features}
-          asin={product("best-overall").asin}
-          bestFor={product("best-overall").cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Defender Wide Plastic Bird Spikes are manufactured in Devon by
-        Defender Bird Spikes, a British company with over 25 years of experience
-        in the bird control industry. This pedigree shows in the product&apos;s
-        quality, thoughtful design, and long-term durability. The pack contains
-        15 individual strips that together provide 5 metres of continuous
-        coverage &mdash; enough to protect a typical window ledge run, a section
-        of parapet wall, or several metres of gutter edge. Each strip features
-        multiple rows of polycarbonate spikes arranged in a fan pattern that
-        creates a wide deterrent zone up to 20 centimetres across, making them
-        suitable for broader ledges, flat rooftops, wall copings, and other wide
-        surfaces where narrower spike strips would leave gaps that pigeons could
-        exploit.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The polycarbonate construction is a significant advantage over cheaper
-        plastic alternatives. Polycarbonate is UV-stabilised, meaning it will
-        not become brittle, yellow, or snap after prolonged exposure to sunlight
-        &mdash; a common failure mode for budget bird spikes made from standard
-        plastics. The material is also resistant to temperature extremes, rain,
-        frost, and salt air, making it suitable for coastal properties where
-        seagull problems are most acute. Installation is straightforward: the
-        strips have a flat base that can be attached using silicone adhesive
-        (included in some packs or available separately), screws, or cable ties
-        depending on the surface. For most residential applications, a bead of
-        clear silicone along the base of each strip is sufficient. The spikes
-        are blunted at the tips &mdash; they are designed to make the surface
-        uncomfortable for birds to land on, not to impale them. This humane
-        approach complies fully with UK wildlife legislation and is endorsed by
-        the BPCA as an appropriate first-line deterrent.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The transparent polycarbonate is also far less visually intrusive than
-        stainless steel spikes, making Defender strips an excellent choice for
-        residential properties where aesthetics matter &mdash; from a distance,
-        they are virtually invisible against most building surfaces.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Made in the UK by an established specialist manufacturer with 25+
-          years&apos; experience
-        </li>{" "}
-        <li>
-          UV-stabilised polycarbonate construction resists yellowing,
-          brittleness, and weather damage
-        </li>{" "}
-        <li>
-          Wide 20cm coverage suitable for broad ledges, copings, and flat roof
-          edges
-        </li>{" "}
-        <li>Transparent material is virtually invisible from ground level</li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Polycarbonate spikes are less rigid than stainless steel &mdash; very
-          determined large gulls may occasionally flatten them
-        </li>{" "}
-        <li>
-          5 metres of coverage may not be sufficient for larger commercial
-          properties
-        </li>{" "}
-        <li>
-          Adhesive is not always included &mdash; you may need to purchase
-          silicone separately
-        </li>{" "}
-        <li>
-          Requires clean, dry surfaces for adhesive bonding &mdash;
-          pressure-wash ledges before installation
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> Wide plastic spikes, listed as a 5 metre pack.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="info">
-          {" "}
-          <p>
-            The mesh size of bird netting determines which species it will
-            exclude. The industry standard sizes are: 19mm for sparrows, 28mm
-            for starlings, 50mm for pigeons, and 75mm for gulls. Always select
-            the mesh size appropriate to the species causing your problem
-            &mdash; using a mesh that is too large will allow smaller birds to
-            pass straight through.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* Best Discreet */}{" "}
-      <h2 id={product("best-discreet").anchorId}>
-        {product("best-discreet").h2Label} &mdash;{" "}
-        {product("best-discreet").h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={product("best-discreet").cardName}
-          features={product("best-discreet").features}
-          asin={product("best-discreet").asin}
-          bestFor={product("best-discreet").cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Bird Barrier Optical Gel represents a fundamentally different approach
-        to bird deterrence. Rather than creating a physical barrier that
-        prevents landing, this product uses a{" "}
-        <strong>multi-sensory deterrent</strong>. Each pack contains
-        24 small, low-profile dishes (just 2.5 inches in diameter) filled with a
-        specially formulated gel. First, the gel reflects ultraviolet light in a pattern
-        that appears to birds as flames or fire &mdash; birds can see well into
-        the UV spectrum, so this visual effect is vivid and alarming to them
-        even though it is completely invisible to humans. Second, the gel emits
-        a scent derived from peppermint oil that birds find deeply unpleasant.
-        Third, the gel has a sticky, tacky texture that birds dislike touching
-        with their feet.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The result is a deterrent that is virtually invisible to the human eye
-        but intensely off-putting to pigeons, starlings, gulls, and other pest
-        birds. This makes Optical Gel the ideal solution for heritage buildings,
-        listed properties, and architecturally sensitive structures where
-        conventional spikes or netting would be visually unacceptable or might
-        not receive planning consent. It is also excellent for signage,
-        shopfronts, ornamental stonework, and any surface where aesthetics are a
-        priority. Installation could not be simpler: each pre-filled dish has an
-        adhesive base that sticks directly to a clean, dry surface. No drilling,
-        no screws, no silicone &mdash; simply peel the backing and press the
-        dish firmly onto the ledge. The dishes are spaced approximately 15
-        centimetres apart along the surface to be protected, creating a
-        continuous deterrent zone.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The gel is weather-resistant and the listing gives a service life of up
-        to two years before replacement. It is worth noting that Optical Gel is
-        most effective against light-to-moderate bird pressure &mdash; where
-        birds are landing and loafing rather than heavily nesting. For severe
-        infestations with established nesting sites, physical exclusion (spikes
-        or netting) remains the more reliable approach.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Virtually invisible from ground level &mdash; perfect for heritage and
-          listed buildings
-        </li>{" "}
-        <li>
-          Multi-sensory deterrent uses UV visual, scent, and tactile signals
-          simultaneously
-        </li>{" "}
-        <li>
-          No tools, drilling, or specialist equipment required for installation
-        </li>{" "}
-        <li>Gel lasts up to two years before replacement is needed</li>{" "}
-        <li>No risk of trapping or injuring birds</li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Covers less linear distance per pack than spike strips</li>{" "}
-        <li>
-          Less effective against severe infestations with established nesting
-          sites
-        </li>{" "}
-        <li>
-          Dishes may collect dirt and debris over time, reducing UV reflectivity
-        </li>{" "}
-        <li>
-          Not suitable for vertical surfaces &mdash; dishes must be placed on
-          horizontal or near-horizontal ledges
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> Plastic gel dishes, listed as a 24 pack weighing
-        1.3 pounds.{" "}
-      </p>{" "}
-      {/* Best Budget */}{" "}
-      <h2 id={product("best-budget").anchorId}>
-        {product("best-budget").h2Label} &mdash; {product("best-budget").h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={product("best-budget").cardName}
-          features={product("best-budget").features}
-          asin={product("best-budget").asin}
-          bestFor={product("best-budget").cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        If your budget is tight but you need a reliable, long-lasting bird
-        deterrent, these stainless steel bird spikes offer outstanding value.
-        Supplied in 3-metre runs, they have a substantial track record of
-        real-world performance. Stainless steel spikes have one significant
-        advantage over polycarbonate alternatives: rigidity. The steel pins are
-        extremely difficult for even the largest birds to bend or flatten.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The 3-metre coverage makes these spikes ideal for targeted protection of
-        specific problem areas &mdash; a favourite pigeon roosting ledge above a
-        front door, a window sill that seagulls use as a vantage point, or a
-        section of parapet wall where birds congregate. The strips are supplied
-        in sections that can be easily cut to length with tin snips or strong
-        scissors, allowing you to fit them precisely to irregular ledge widths
-        and around obstacles such as downpipes and brackets. Installation
-        follows the same approach as other spike strips: clean the surface
-        thoroughly, apply a generous bead of silicone adhesive or outdoor
-        construction adhesive along the base, and press the strip firmly into
-        place. For exposed or windy locations, you can supplement the adhesive
-        with small screws or cable ties for additional security.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The stainless steel construction ensures these spikes will not rust,
-        corrode, or degrade over time, even in the harshest coastal environments
-        where salt spray would rapidly destroy ordinary steel or untreated
-        metal. This makes them an excellent choice for seaside properties
-        dealing with persistent gull problems. The main trade-off for the budget
-        price is coverage: 3 metres is enough for one or two average window
-        ledges, but if you need to protect a longer run of ledge, parapet, or
-        roofline, you will need to purchase multiple packs or consider the
-        Fly-Bye 6-metre option below.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Exceptional value &mdash; stainless steel construction at a budget
-          price point
-        </li>{" "}
-        <li>Rigid steel pins cannot be bent or flattened by large birds</li>{" "}
-        <li>
-          Rust-proof and corrosion-resistant &mdash; ideal for coastal
-          properties
-        </li>{" "}
-        <li>demonstrate proven real-world effectiveness</li>{" "}
-        <li>Can be cut to length for precise fitting around obstacles</li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Only 3 metres of coverage &mdash; larger areas will require multiple
-          packs
-        </li>{" "}
-        <li>
-          Steel spikes are more visually conspicuous than transparent
-          polycarbonate
-        </li>{" "}
-        <li>
-          Narrow base may not cover the full width of broader ledges without
-          double rows
-        </li>{" "}
-        <li>
-          Sharp pin tips require careful handling during installation &mdash;
-          wear gloves
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> Stainless steel spikes, listed as 3 metres in 12
-        pieces, weighing 660 grams. Measure your ledges carefully before
-        ordering.{" "}
-      </p>{" "}
-      {/* Best Coverage */}{" "}
-      <h2 id={product("best-coverage").anchorId}>
-        {product("best-coverage").h2Label} &mdash;{" "}
-        {product("best-coverage").h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={product("best-coverage").cardName}
-          features={product("best-coverage").features}
-          asin={product("best-coverage").asin}
-          bestFor={product("best-coverage").cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The listing gives 6 metres of coverage in 16 pieces. The pins are
-        arranged in an irregular rather than a uniform pattern.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The strips can be
-        attached using any combination of silicone adhesive, screws, or cable
-        ties, giving you maximum flexibility depending on the surface material.
-        Cable ties are particularly useful for attaching spikes to the top of
-        chain-link fencing, metal railings, and pipe runs where adhesive bonding
-        is impractical.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Supplied in 6-metre runs, the Fly-Bye spikes cover more linear distance
-        per pack than any other product in this guide. This makes them the
-        practical choice for larger properties, commercial buildings, or any
-        situation where you need to cover a significant linear distance. The
-        strips are made from durable polycarbonate plastic with UV
-        stabilisation, so they will resist weather degradation over multiple
-        seasons. The main trade-off is that polycarbonate is inherently more
-        flexible than stainless steel, so these spikes may be less effective
-        against particularly large and heavy gulls that can occasionally flatten
-        plastic pins through brute force. For pigeon, starling, and sparrow
-        deterrence, however, they are more than sufficient.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          6 metres of coverage &mdash; the most generous in our top five
-        </li>{" "}
-        <li>
-          2,500+ spikes in an irregular pattern that birds cannot learn to
-          navigate
-        </li>{" "}
-        <li>Flexible installation with adhesive, screws, or cable ties</li>{" "}
-        <li>Covers long ledges with fewer joins</li>{" "}
-        <li>
-          UV-stabilised polycarbonate for long-term outdoor durability
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Polycarbonate is less rigid than stainless steel &mdash; may be
-          overcome by very heavy gulls
-        </li>{" "}
-        <li>
-          15 strips require careful alignment for a neat, professional-looking
-          installation
-        </li>{" "}
-        <li>Narrow base width may need double rows on broader ledges</li>{" "}
-        <li>
-          Plastic construction is more visible than transparent Defender spikes
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> Plastic spikes, listed at 6 metres in 16 pieces,
-        weighing 930 grams, in black.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
-          <p>
-            Before installing any bird deterrent, thoroughly clean the surface
-            with a pressure washer or stiff brush and detergent to remove
-            existing bird droppings and nesting material. Adhesive will not bond
-            properly to surfaces contaminated with guano, and the presence of
-            old nesting material can encourage birds to persist despite the
-            deterrent. Wear gloves and a dust mask when cleaning heavy
-            accumulations of pigeon droppings, as dried guano can release
-            harmful fungal spores when disturbed.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* Buying Guide */}{" "}
-      <h2 id="buying-guide">Bird Deterrent Buying Guide</h2>{" "}
-      <p>
-        {" "}
-        Choosing the right bird deterrent depends on a number of factors,
-        including the species you are dealing with, the type of surface you need
-        to protect, and the level of bird pressure you are experiencing. Here
-        are the key considerations to help you make the right decision.{" "}
-      </p>{" "}
-      <h3>Physical vs Sensory Deterrents</h3>{" "}
-      <p>
-        {" "}
-        Bird deterrents fall into two broad categories:{" "}
-        <strong>physical deterrents</strong> (spikes and netting) and{" "}
-        <strong>sensory deterrents</strong> (optical gel, ultrasonic devices,
-        predator decoys). Sensory deterrents carry a greater risk of habituation over time. Birds are intelligent
-        creatures, and some individuals will eventually learn that a visual or
-        auditory stimulus poses no real threat. For this reason, professional
-        bird controllers almost always recommend physical deterrents as the
-        primary line of defence, with sensory products used as a supplement in
-        areas where physical options are impractical.{" "}
-      </p>{" "}
-      <h3>Mesh Sizes: Matching Your Net to the Bird</h3>{" "}
-      <p>
-        {" "}
-        If you are installing bird netting, selecting the correct mesh size is
-        critical. A net with mesh that is too large will allow smaller species
-        to pass straight through, rendering it useless. The industry-standard
-        mesh sizes for UK pest bird species are:{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          <strong>19mm mesh</strong> &mdash; excludes sparrows and all larger
-          species. The smallest standard mesh, used in food factories,
-          warehouses, and buildings with small-bird problems.
-        </li>{" "}
-        <li>
-          <strong>28mm mesh</strong> &mdash; excludes starlings and all larger
-          species. A good all-round choice for buildings with mixed starling and
-          pigeon problems.
-        </li>{" "}
-        <li>
-          <strong>50mm mesh</strong> &mdash; excludes pigeons and all larger
-          species. The most commonly used mesh for domestic and commercial
-          pigeon exclusion.
-        </li>{" "}
-        <li>
-          <strong>75mm mesh</strong> &mdash; excludes gulls and other large
-          birds. Used primarily on coastal commercial buildings, landfill sites,
-          and agricultural structures.
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        When in doubt, go one size smaller than you think you need. It is better
-        to install 28mm mesh and exclude both starlings and pigeons than to
-        install 50mm mesh and discover that starlings are now exploiting the gap
-        left by the displaced pigeons. The cost difference between mesh sizes is
-        minimal, but the difference in effectiveness can be significant.{" "}
-      </p>{" "}
-      <h3>DIY vs Professional Installation</h3>{" "}
-      <p>
-        {" "}
-        Most bird spike installations on ground-floor and first-floor window
-        ledges, garden walls, and fence tops can be completed as straightforward
-        DIY projects with nothing more than silicone adhesive, a caulking gun,
-        and a ladder. Netting installations are more complex and may require
-        perimeter fixings, tensioning wire, and a degree of structural
-        knowledge, but smaller projects (a single balcony, for example) are well
-        within the capabilities of a competent DIYer. However, there are
-        situations where professional installation is strongly recommended: any
-        work at height above two storeys, installations on listed buildings or
-        in conservation areas (which may require planning consent), large-scale
-        commercial netting projects, and situations involving gulls nesting on
-        rooftops (where the birds may aggressively defend their nest and young).
-        Professional bird control companies carry public liability insurance,
-        use appropriate access equipment, and can survey the building to develop
-        a comprehensive deterrent strategy tailored to the specific species and
-        pressure level.{" "}
-      </p>{" "}
-      <h3>Legal Considerations</h3>{" "}
-      <p>
-        {" "}
-        It is essential to understand the legal framework surrounding bird
-        control in the UK. Under the{" "}
-        <strong>Wildlife and Countryside Act 1981</strong>, all wild birds,
-        their nests, and their eggs are protected. It is a criminal offence to
-        intentionally kill, injure, or take any wild bird, or to intentionally
-        damage or destroy the nest of any wild bird while it is in use or being
-        built. Certain species &mdash; including feral pigeons, carrion crows,
-        magpies, and some gull species &mdash; may be controlled under General
-        Licences issued by Natural England (England), NatureScot (Scotland), or
-        Natural Resources Wales (Wales), but these licences come with strict
-        conditions and are intended primarily for use by professional pest
-        controllers. For homeowners, the safest and most legally straightforward
-        approach is always to use{" "}
-        <strong>humane deterrent and exclusion methods</strong> &mdash; spikes,
-        netting, and sensory products. Always inspect ledges and potential
-        nesting sites before installing deterrents, and never block access to an
-        active nest containing eggs or chicks.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="info">
-          {" "}
-          <p>
-            Planning ahead makes a big difference. The best time to install bird
-            deterrents is in autumn or winter, before the nesting season begins
-            in spring. Once birds have established an active nest with eggs or
-            chicks, you are legally prohibited from disturbing it until the
-            young have fledged &mdash; which can delay your installation by
-            several months. Act early to avoid this problem.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* When to Call a Professional */}{" "}
-      <h2 id="when-to-call">When to Call a Professional</h2>{" "}
-      <p>
-        {" "}
-        There are several situations where engaging a professional bird control
-        company is the safer and more legally prudent option. If you are dealing with birds
-        nesting inside the building fabric &mdash; within roof voids, soffits,
-        or cavity walls &mdash; professional access and removal (outside of
-        nesting season) is required, as consumer deterrents cannot address birds
-        that are already inside the structure. Large-scale infestations
-        involving dozens of nesting pairs, particularly on commercial properties
-        such as warehouses, car parks, or food processing facilities, require a
-        comprehensive survey and a multi-method approach that typically combines
-        netting, spikes, and post-and-wire systems across the entire building
-        envelope.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Gull problems on residential rooftops are another situation where
-        professional help is advisable. Herring gulls and lesser black-backed
-        gulls are large, aggressive, and legally protected (they can only be
-        controlled under specific General Licence conditions), and they will
-        actively defend their nest and chicks against anyone who approaches
-        &mdash; including swooping at people&apos;s heads. Working at roof
-        height with aggressive gulls overhead is genuinely dangerous, and
-        professional bird controllers have the training, protective equipment,
-        and legal knowledge to handle these situations safely and lawfully.
-        Similarly, any deterrent installation on a listed building or within a
-        conservation area should be discussed with your local planning authority
-        and ideally carried out by a specialist contractor who understands the
-        heritage constraints.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Professional bird control treatments in the UK typically cost between
-        &pound;150 and &pound;500 for a standard domestic property, depending on
-        the species, the access requirements, and the deterrent methods used.
-        For commercial buildings, costs can run into thousands of pounds but are
-        almost always justified by the savings in ongoing cleaning, maintenance,
-        and potential health and safety liabilities. A BPCA-registered pest
-        control company will provide a written survey, a detailed quotation, and
-        a guarantee on their workmanship.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Bird Problem Beyond DIY?"
-          subtext="Compare pest control providers near you — free, no-obligation quotes for professional bird deterrent installation."
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-3">
-          Want the complete guide to dealing with pigeon problems?
-        </p>{" "}
-        <a
-          href="/guides/pigeon-control"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          {" "}
-          Read our full guide: How to Get Rid of Pigeons &rarr;{" "}
-        </a>{" "}
-      </div>{" "}
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* FAQ — rendered from the same array the schema above is derived from */}
+      <h2 id="faq">Frequently Asked Questions</h2>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+
+      <FindProviderCTA
+        heading="A bird problem on a building rather than a ledge?"
+        subtext="Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

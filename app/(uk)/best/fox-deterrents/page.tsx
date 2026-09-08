@@ -1,64 +1,64 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S68 R7 — ROLLOUT REBUILD to the R8 pattern, on sources. LAW 191 GOVERNS THIS ROUTE:
+// no efficacy claim in our own voice, no superlative or ranking label, no rank numeral.
+// Card labels are neutral factual descriptors from the listings; maker claims are framed
+// as the maker's own.
+//
+// ONE CARD IS REMOVED UNDER THE S67 R10 STANDING RULING: B0BMNP26FP, carded here as a
+// "Coyote Roller Fence Top Spinning Bar". Its fetched title is "Coyote Roller 8 Foot Kit
+// - Keep Pets Contained, Coyotes Out - Cats, Dogs, Coyotes, Bird Repellent - Chain Link"
+// and its description is about coyotes, made and assembled in the USA, "Effective for
+// coyotes, dogs, cats, and even keep birds from landing on your fence". IT NAMES NO FOX
+// ANYWHERE. The page previously kept it with a disclosure that "our view that it works on
+// a fox rests on the climbing mechanism its maker describes rather than on anything its
+// maker says about foxes" — which is exactly the own-voice efficacy inference Law 191
+// forbids on this route. The product stays carded on /us/coyotes, where its listing fits.
+// Its supporting prose — the aluminium construction, the fox dropping back to the ground,
+// the afternoon's DIY — was on no listing and goes with it.
+//
+// THE <title> IS UNCHANGED and now matches the cards exactly: scent, sprinkler and mesh.
+// The H1 and the meta description named the roller and no longer do.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Fox Deterrents UK 2026 — Scent, Sprinkler & Mesh",
     description:
-      "Fox deterrents for UK gardens: scent repellent, motion sprinkler, fence-top roller and galvanised mesh, described by their own listings.",
+      "Fox deterrents for UK gardens: what the law allows, what the RSPCA advises before any product, and three items described by what their own listings state.",
     alternates: { canonical: "https://pestproindex.com/best/fox-deterrents" },
     openGraph: {
       title: "Best Fox Deterrents UK 2026 — Scent, Sprinkler & Mesh",
       description:
-        "Fox deterrents for UK gardens: scent repellent, motion sprinkler, fence-top roller and galvanised mesh, described by their own listings.",
+        "Fox deterrents for UK gardens: what the law allows, what the RSPCA advises before any product, and three items described by what their own listings state.",
       url: "https://pestproindex.com/best/fox-deterrents",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Best Fox Deterrents UK 2026 — Scent, Sprinkler & Mesh",
   description:
-    "Fox deterrents for UK gardens: scent repellent, motion sprinkler, fence-top roller and galvanised mesh, described by their own listings.",
+    "Fox deterrents for UK gardens: what the law allows, what the RSPCA advises before any product, and three items described by what their own listings state.",
   datePublished: "2026-03-18",
-  dateModified: "2026-08-28",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://pestproindex.com/best/fox-deterrents",
-  },
+  dateModified: "2026-09-08",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/fox-deterrents" },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -67,6 +67,17 @@ const breadcrumbSchema = {
     },
   ],
 };
+
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194). Bodies kept under Law 175: asa-pest-repellents at
+// ~/pp-s67r2/sources (banked S67 R2); rspca-foxes-garden at ~/pp-s68r7/sources, fetched
+// 2026-09-08.
+const SRC = {
+  asa: "https://www.asa.org.uk/advice-online/pest-repellents.html",
+  rspca: "https://www.rspca.org.uk/adviceandwelfare/wildlife/foxes/garden",
+};
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -80,6 +91,14 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
+// the S45-C window. A property is asserted only where the listing states it (S52-E,
+// S50-H); a cell the listing does not state reads "not stated".
+//
+// THE MESH LISTING CONTRADICTS ITSELF ON ONE POINT AND BOTH READINGS ARE RENDERED
+// (Law 146): its title says "Welded Mesh Wire ... Hexagonal Wire" and its description
+// calls it a "Hexagonal Welded Wire Mesh Roll". Its detail table also carries a different
+// ASIN, B0C8NLCKJK — a variant listing — which is stated on the card rather than hidden.
 const products: ProductRecord[] = [
   {
     anchorId: "best-scent",
@@ -87,749 +106,432 @@ const products: ProductRecord[] = [
     cardName: "Scoot Fox Repellent Concentrate 100g",
     cardLabel: "Scent concentrate, 100g",
     features: [
-      "Covers up to 34 sqm per pack",
-      "Established UK fox repellent",
+      "100g of concentrate, listed as two sachets treating up to 34 sqm",
+      "Active listed as aluminium ammonium sulphate",
+      "The maker describes it as working by creating an artificial scentmark in the problem fox's territory",
+      "Listed for lawns, trees, shrubs, seeds, bulbs and hard surfaces; outdoor use",
+      "The listing also names badgers, cats, deer, mink and rabbits",
     ],
-    tableCells: [
-      "Scoot Fox Repellent 100g",
-      "Scent deterrent",
-      "Scent concentrate, 100g",
-    ],
+    tableCells: ["Scoot Fox Repellent 100g", "Scent, applied to ground", "Aluminium ammonium sulphate", "Up to 34 sqm, per the maker"],
     h2Label: "Scent concentrate, 100g",
-    h2Name: "Scoot Fox Repellent",
+    h2Name: "Scoot Fox Repellent Concentrate",
     tocLabel: "Scent concentrate, 100g",
     tocName: "Scoot Fox Repellent",
   },
   {
     anchorId: "best-sprinkler",
     asin: "B0153BJ7NQ",
-    cardName: "PestBye Jet Spray Motion-Activated Sprinkler",
+    cardName: "PestBye Jet Spray Repeller — Motion Activated, Hose-Fed",
     cardLabel: "Motion sprinkler, hose-fed",
     features: [
-      "120-degree detection arc",
-      "Covers up to 100 sqm",
-      "Connects to standard garden hose",
-      "Battery-powered PIR sensor",
+      "Connects to a garden hose; battery powered, as listed",
+      "The maker states a range of up to 10m across a 120-degree arc, covering at least 100 sqm",
+      "The maker states a 5-second burst of water on each trigger, and that it resets itself",
+      "Adjustable sensitivity, as listed; 2 year warranty",
+      "Listed at 20 x 7 x 71 cm and 0.7 kg",
     ],
-    tableCells: [
-      "PestBye Jet Spray Motion Sprinkler",
-      "Water deterrent",
-      "Motion sprinkler, hose-fed",
-    ],
+    tableCells: ["PestBye Jet Spray Repeller", "Water, motion-triggered", "None — water only", "At least 100 sqm, per the maker"],
     h2Label: "Motion sprinkler, hose-fed",
-    h2Name: "PestBye Jet Spray",
+    h2Name: "PestBye Jet Spray Motion-Activated Repeller",
     tocLabel: "Motion sprinkler",
     tocName: "PestBye Jet Spray",
   },
   {
-    anchorId: "best-fence",
-    asin: "B0BMNP26FP",
-    cardName: "Coyote Roller Fence Top Spinning Bar",
-    cardLabel: "Fence top kit, 8 ft",
-    features: [
-      "Spinning aluminium tube",
-    ],
-    tableCells: [
-      "Fence Top Roller Bar",
-      "Physical exclusion",
-      "Fence top kit, 8 ft",
-    ],
-    h2Label: "Fence top kit, 8 ft",
-    h2Name: "Fence Top Roller Bar",
-    tocLabel: "Fence top kit, 8 ft",
-    tocName: "Fence Top Roller Bar",
-  },
-  {
     anchorId: "best-mesh",
     asin: "B08MWB89CB",
-    cardName: "Galvanised Welded Steel Mesh 25mm x 25mm",
+    cardName: "Galvanised Welded Wire Mesh 0.6m x 5m, 25mm Holes",
     cardLabel: "Galvanised mesh, 0.6 x 5m",
     features: [
-      "Hot-dip galvanised for rust resistance",
-      "0.6m x 5m roll, per the listing",
-      "Suitable for burial around perimeters",
+      "0.6m high by 5m long, as listed; 25mm x 25mm holes",
+      "Galvanised steel, wire diameter listed as 0.7mm",
+      "Listed as cuttable and bendable with wire cutters, for indoor or outdoor use",
+      "The listing calls it both welded and hexagonal — its title says welded, its description says Hexagonal Welded Wire Mesh Roll",
+      "The detail table carries a different ASIN, B0C8NLCKJK — a variant listing",
     ],
-    tableCells: [
-      "Galvanised Welded Mesh 25mm",
-      "Physical exclusion",
-      "Galvanised mesh, 0.6 x 5m",
-    ],
+    tableCells: ["Galvanised welded mesh 0.6 x 5m", "Physical barrier", "None", "0.6m x 5m, 25mm holes, as listed"],
     h2Label: "Galvanised mesh, 0.6 x 5m",
-    h2Name: "Galvanised Welded Mesh",
+    h2Name: "Galvanised Welded Wire Mesh, 25mm Holes",
     tocLabel: "Galvanised mesh",
     tocName: "Galvanised Welded Mesh",
   },
 ];
 
-const tocItems = [
-  { id: "at-a-glance", title: "Best Fox Deterrents at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
-  })),
-  { id: "buying-guide", title: "Fox Deterrent Buying Guide" },
-  { id: "when-to-call", title: "When to Call a Professional" },
+// ONE FAQ ARRAY (Law 190). The visible block and the FAQPage schema both read it.
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "Is it legal to deter foxes from my garden?",
+    a: "Deterring is not the problem; harming is. The RSPCA states that foxes are protected by the Wild Mammals (Protection) Act 1996, that it is illegal to cruelly mistreat or get rid of a fox by harming it in any way, and — the line that matters most on a page selling deterrents — that it is also against the law to use any substance as a deterrent that has not been approved for such use.",
+  },
+  {
+    q: "Do fox repellents work?",
+    a: "This page does not say so in its own voice. The ASA reports that it has yet to accept any claim of efficacy for pest repellent devices, and that marketers without UK-based trial evidence should not state or imply efficacy. What each maker claims for its own product is on its card, framed as the maker's.",
+  },
+  {
+    q: "What does the RSPCA suggest before any product?",
+    a: "Removing the food. Its garden page lists using bird feeders that stop food spilling onto the ground, sealing bins and composters securely, clearing fallen fruit and pet food, and keeping rabbits and other pets in a secure enclosure at night. None of that is a purchase.",
+  },
+  {
+    q: "Will 25mm mesh keep a fox out?",
+    a: "The mesh here is 0.6m high with 25mm holes, and the RSPCA's own suggestion for protecting crops is fences or solid weld-mesh with holes at least 4cm wide, avoiding flexible netting because wildlife can become tangled in it. The mesh on this page has smaller holes than that figure and is a 0.6m roll rather than a fence; it is stated here as what it is.",
+  },
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const tocItems = [
+  { id: "situation", title: "Start With the Food" },
+  { id: "legal", title: "The Legal Position" },
+  { id: "limits", title: "Where a Deterrent Does Not Work" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Product Is Not the Answer" },
+  { id: "using", title: "Placing Them" },
+  { id: "compared", title: "The Three Compared" },
+  { id: "faq", title: "Frequently Asked Questions" },
+];
+
 export default function BestFoxDeterrentsPage() {
   return (
     <GuideLayout
-      title="Best Fox Deterrents UK 2026 &mdash; Scent, Sprinkler, Fence &amp; Mesh"
-      subtitle="Fox deterrents for UK gardens and properties, selected on published specifications and manufacturer information &mdash; from scent deterrents and motion-activated sprinklers to physical exclusion."
-      lastUpdated="March 2026"
-      readingTime="14 min"
+      title="Best Fox Deterrents UK 2026 &mdash; Scent, Sprinkler & Mesh"
+      subtitle="A scent concentrate, a motion-activated sprinkler and a roll of galvanised mesh, described by what their own listings state — beside what the law allows and what the RSPCA suggests doing first"
+      lastUpdated="September 2026"
+      readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "How to Get Rid of Foxes: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-foxes",
-        },
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
-        {
-          title: "How to Get Rid of Squirrels: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-squirrels",
-        },
-        {
-          title: "How to Get Rid of Cockroaches: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-cockroaches",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
-        {
-          title: "Pigeon Control: Complete UK Guide",
-          href: "/guides/pigeon-control",
-        },
-        {
-          title: "Landlord Pest Control Responsibilities",
-          href: "/guides/landlord-pest-control",
-        },
-        {
-          title: "How to Get Rid of Moths",
-          href: "/guides/how-to-get-rid-of-moths",
-        },
-        {
-          title: "How to Get Rid of Silverfish: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-silverfish",
-        },
-        {
-          title: "Woodworm Treatment: Complete UK Guide",
-          href: "/guides/woodworm-treatment",
-        },
-        {
-          title: "Carpet Beetle Control: Complete UK Guide",
-          href: "/guides/carpet-beetle-control",
-        },
+        { title: "How to Get Rid of Foxes: Complete UK Guide", href: "/guides/how-to-get-rid-of-foxes" },
+        { title: "How to Get Rid of Rats: Complete UK Guide", href: "/guides/how-to-get-rid-of-rats" },
+        { title: "How to Get Rid of Squirrels: Complete UK Guide", href: "/guides/how-to-get-rid-of-squirrels" },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
+        { title: "Pigeon Control: Complete UK Guide", href: "/guides/pigeon-control" },
       ]}
       relatedProducts={[
         { title: "Best Cat Deterrents UK 2026", href: "/best/cat-deterrents" },
-        {
-          title: "Best Carpet Beetle Treatments UK 2026",
-          href: "/best/carpet-beetle-treatments",
-        },
-        {
-          title: "Best Woodworm Treatments UK 2026",
-          href: "/best/woodworm-treatments",
-        },
-        {
-          title: "Best Silverfish Treatments UK 2026",
-          href: "/best/silverfish-treatments",
-        },
+        { title: "Best Squirrel Deterrents UK 2026", href: "/best/squirrel-deterrents" },
+        { title: "Best Bird Deterrents UK 2026", href: "/best/bird-deterrents" },
         { title: "Best Rat Traps UK 2026", href: "/best/rat-traps" },
-        { title: "Best Mouse Traps UK 2026", href: "/best/mouse-traps" },
-        { title: "Best Wasp Killers UK 2026", href: "/best/wasp-killers" },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
-        {
-          title: "Best Flea Treatments UK 2026",
-          href: "/best/flea-treatments",
-        },
-        { title: "Best Ant Killers UK 2026", href: "/best/ant-killers" },
-        {
-          title: "Best Squirrel Deterrents UK 2026",
-          href: "/best/squirrel-deterrents",
-        },
-        {
-          title: "Best Bird Deterrents UK 2026",
-          href: "/best/bird-deterrents",
-        },
-        { title: "Best Moth Killers UK", href: "/best/moth-killers" },
-        {
-          title: "Best Bed Bug Treatments UK 2026",
-          href: "/best/bed-bug-treatments",
-        },
-        {
-          title: "Best Commercial Fly Killers UK 2026",
-          href: "/best/commercial-fly-killers",
-        },
+        { title: "Best Rodent Proofing Products UK 2026", href: "/best/rodent-proofing" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
-      {/* Affiliate disclosure */}{" "}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
           site running and free for everyone. As an Amazon Associate, PestPro
-          Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
-      {/* Intro paragraphs */}{" "}
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        Urban foxes (<em>Vulpes vulpes</em>) are one of the most common wildlife
-        complaints in UK gardens, and the problem has been growing steadily
-        worse for decades. The UK&apos;s urban fox population is estimated at
-        around 150,000 animals, with the highest densities found in London,
-        Bristol, Brighton, and other major cities where food waste, compost
-        bins, and unsecured rubbish bags provide a reliable food supply. Unlike
-        most pest control problems, foxes cannot simply be poisoned or trapped
-        and removed &mdash; UK law prohibits the use of poison against foxes
-        entirely, and while cage trapping is legal, it is tightly regulated,
-        rarely effective as a standalone measure, and simply creates a territory
-        vacuum that another fox fills within days. The approach this page covers is{" "}
-        <strong>deterrence and exclusion</strong>.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The key to successful fox deterrence is understanding that no single
-        product works reliably on its own. Foxes are highly intelligent,
-        adaptable animals that habituate quickly to any single stimulus. This
-        page therefore describes a <strong>layered approach</strong>: a scent
-        repellent, a motion-activated sprinkler and physical exclusion,
-        rotated and repositioned. When these methods operate together, and are rotated
-        and repositioned regularly, the fox perceives the garden as a genuinely
-        hostile and unpredictable territory rather than one with a single,
-        predictable annoyance it can learn to ignore. For properties keeping
-        chickens, rabbits, or other small pets, physical exclusion with
-        fox-proof mesh is non-negotiable &mdash; deterrents alone are never
-        sufficient when a fox is motivated by the prospect of live prey.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        We selected these fox deterrent products on published specifications and
-        manufacturer information, looking at three criteria:{" "}
-        <strong>UK availability and fast Prime delivery</strong>,{" "}
-        <strong>proven design and mechanism</strong>, and{" "}
-        <strong>value for money</strong>. Judgements about how each product
-        performs against urban and rural foxes are ours. Not every manufacturer
-        makes a claim about foxes at all &mdash; the fence top roller bar is
-        sold against coyotes, dogs, cats and birds, and our view that it works
-        on a fox rests on the climbing mechanism its maker describes rather
-        than on anything its maker says about foxes. We also consulted guidance
-        from the
-        BPCA, the National Fox Welfare Society, and professional pest control
-        technicians to ensure our recommendations reflect real-world best
-        practice. For a complete step-by-step fox management strategy &mdash;
-        including garden hygiene, deterrent placement, and when to involve a
-        professional &mdash; see our companion guide:{" "}
-        <Link
-          href="/guides/how-to-get-rid-of-foxes"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          How to Get Rid of Foxes: Complete UK Guide
-        </Link>
-        .{" "}
-      </p>{" "}
+        Three things: a scent concentrate applied to the ground, a sprinkler
+        that fires when something moves, and a roll of galvanised mesh. Two ask
+        a fox to go elsewhere and one is a physical barrier. Before any of
+        them, there is a legal line and a piece of RSPCA advice that costs
+        nothing.
+      </p>
+
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You want to know what you may lawfully use.</strong> An
+            unapproved substance used as a deterrent is against the law —{" "}
+            <a href="#legal" className="underline">
+              the legal position
+            </a>
+            .
+          </li>
+          <li>
+            <strong>Something is drawing them in.</strong> The RSPCA puts food
+            first, and it is free —{" "}
+            <a href="#situation" className="underline">
+              start with the food
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want a scent product with a named active.</strong>{" "}
+            <a href="#best-scent" className="underline">
+              The Scoot concentrate
+            </a>{" "}
+            names aluminium ammonium sulphate and a treated area.
+          </li>
+          <li>
+            <strong>You have a hose and a run they use.</strong>{" "}
+            <a href="#best-sprinkler" className="underline">
+              The motion sprinkler
+            </a>{" "}
+            claims 10m across a 120-degree arc.
+          </li>
+          <li>
+            <strong>You need to protect a specific bed or run.</strong>{" "}
+            <a href="#best-mesh" className="underline">
+              The mesh
+            </a>{" "}
+            is the only physical item here — and read the RSPCA&rsquo;s own
+            figure on hole size before you buy it.
+          </li>
+        </ul>
+      </div>
+
       <div className="not-prose">
-        {" "}
-        <Callout type="info">
-          {" "}
+        <Callout type="warning">
           <p>
-            Foxes are not classified as vermin in the UK. It is{" "}
-            <strong>illegal</strong> to poison foxes under the Wildlife and
-            Countryside Act 1981 and the Animal Welfare Act 2006. Poisoning
-            carries severe criminal penalties including fines and imprisonment.
-            The only lawful approaches are deterrence, exclusion, and &mdash;
-            where absolutely necessary &mdash; professional cage trapping and
-            humane dispatch.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* At a Glance */}{" "}
-      <h2 id="at-a-glance">Best Fox Deterrents at a Glance</h2>{" "}
+            The RSPCA states that foxes are protected by the Wild Mammals
+            (Protection) Act 1996, and that it is against the law to use any
+            substance as a deterrent that has not been approved for such use.
+            That applies to anything you might mix yourself as much as to
+            anything sold for the purpose.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">Start With the Food</h2>
       <p>
-        {" "}
-        Below is a quick comparison of our five fox deterrent products. Each covers
-        a different use case. We go into full detail on every product further
-        down the page.{" "}
-      </p>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Product</th> <th>Type</th> <th>What it is</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
+        The RSPCA&rsquo;s garden page puts removing the food source ahead of
+        any purchase, and its list is specific:{" "}
+        <em>&ldquo;Use bird feeders that stop food from spilling onto the ground.&rdquo;</em>{" "}
+        and{" "}
+        <em>&ldquo;Seal bins and composters securely, to prevent access to scraps.&rdquo;</em>{" "}
+        (
+        <a href={SRC.rspca} rel="nofollow">
+          RSPCA
+        </a>
+        ). Fallen fruit and pet food left out are on the same list.
+      </p>
+      <p>
+        None of that is a product, and none of it is on this page to sell. It
+        is first because a garden that still offers food is a garden a fox has
+        a reason to return to, whatever else is in it.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">The Legal Position</h2>
+      <p>
+        <em>&ldquo;Foxes are protected by the Wild Mammals (Protection) Act 1996&rdquo;</em>,
+        the RSPCA states, and it is illegal to cruelly mistreat one or to get
+        rid of a fox from a garden by harming it in any way (
+        <a href={SRC.rspca} rel="nofollow">
+          RSPCA
+        </a>
+        ).
+      </p>
+      <p>
+        The sentence that bears directly on this page is the next one:{" "}
+        <em>
+          &ldquo;It’s also against the law to use any substance as a deterrent
+          that hasn’t been approved for such use.&rdquo;
+        </em>{" "}
+        A repellent bought for the purpose is one thing; a homemade mixture,
+        or a product sold for something else and repurposed, is another. The
+        one scent product here names its active substance on its listing, which
+        is the minimum a reader needs to check that question at all.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where a Deterrent Does Not Work</h2>
+      <p>
+        <strong>As a claim you can lean on.</strong> The ASA&rsquo;s
+        AdviceOnline entry on pest repellents states that{" "}
+        <em>
+          &ldquo;In past years, the ASA, together with independent experts, has
+          closely examined the evidence for claims for those devices, which can
+          range from cat-shaped metal sheets with glowing eyes to ultrasonic and
+          electromagnetic equipment. It has yet to accept any claim of
+          efficacy.&rdquo;
+        </em>{" "}
+        and that{" "}
+        <em>
+          &ldquo;Marketers who do not hold evidence in the form of UK-based
+          trials should not state or imply efficacy for the products, through
+          either claims, visuals or product names.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.asa} rel="nofollow">
+          ASA
+        </a>
+        ). That is about evidence accepted by a regulator; it is not a finding
+        that these products do nothing, and this page does not make that
+        finding.
+      </p>
+      <p>
+        <strong>On mesh, at this hole size.</strong> The RSPCA&rsquo;s own
+        suggestion for protecting crops is{" "}
+        <em>
+          &ldquo;Protect fruit or vegetable crops using fences or solid
+          weld-mesh, with holes at least 4cm wide (don’t use flexible netting as
+          there’s a risk of wildlife getting tangled or caught in it).&rdquo;
+        </em>{" "}
+        The mesh carded here has 25mm holes — smaller than that figure — and
+        stands 0.6m high. It is a roll for protecting a bed or a run, not a
+        fence, and the card says so.
+      </p>
+      <p>
+        <strong>Beyond the area it covers.</strong> Two sachets treating up to
+        34 sqm, and a sprinkler arc of at least 100 sqm, are the makers&rsquo;
+        own figures for their own products. A fox entering somewhere else has
+        not defeated the product; it never met it.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Scent, water or barrier</h3>
+      <p>
+        Only one of the three is physical. The other two depend on a fox
+        choosing to go elsewhere, which is the question the ASA&rsquo;s position
+        above is about.
+      </p>
+      <h3>2. What has to be renewed</h3>
+      <p>
+        The scent concentrate is applied and reapplied; the sprinkler needs a
+        hose connection and batteries; the mesh needs nothing once it is up.
+        That is a running-cost difference the listings state plainly.
+      </p>
+      <h3>3. The area each listing claims</h3>
+      <p>
+        Up to 34 sqm from two sachets, at least 100 sqm for the sprinkler, and
+        0.6m by 5m of mesh. Those are three different kinds of figure and the
+        comparison table keeps them apart rather than adding them up.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+            />
+          </div>
+          <p>
+            {
+              [
+                "A 100g concentrate in two sachets, listed as treating up to 34 sqm of lawn, trees, shrubs, seeds, bulbs or hard surfaces, with aluminium ammonium sulphate named as the active. Its maker describes the mechanism as an artificial scentmark placed in the problem fox's territory; the listing also names badgers, cats, deer, mink and rabbits.",
+                "A battery-powered sprinkler that connects to a garden hose and fires a five-second burst when its sensor triggers, which the maker rates at up to 10m across a 120-degree arc and at least 100 sqm. Sensitivity is adjustable and the unit resets itself, per the listing; it is 71cm tall and carries a two-year warranty.",
+                "A 0.6m by 5m roll of galvanised steel mesh with 25mm holes and 0.7mm wire, listed as cuttable to size for indoor or outdoor use. The listing calls it welded in its title and hexagonal in its description, and its detail table carries a different ASIN; both are stated on the card rather than resolved here.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If a Product Is Not the Answer</h2>
+      <p>
+        <strong>Take the food away first.</strong> Feeders that do not spill,
+        sealed bins and composters, fallen fruit cleared — the RSPCA&rsquo;s own
+        list, quoted above.
+      </p>
+      <p>
+        <strong>Secure what you are protecting.</strong> The RSPCA advises
+        keeping pets such as rabbits indoors or in a secure enclosure with a
+        solid roof at night. That is a stronger measure than any scent.
+      </p>
+      <p>
+        <strong>Deal with an earth properly.</strong> The RSPCA describes
+        checking a hole is unoccupied before blocking it — loose soil or sticks
+        first, and only packing it once undisturbed for several days. Our{" "}
+        <a href="/guides/how-to-get-rid-of-foxes">fox guide</a> covers that
+        sequence.
+      </p>
+
+      {/* Using them */}
+      <h2 id="using">Placing Them</h2>
+      <ol>
+        <li>
+          <strong>Check the product is approved for the use.</strong> That is
+          the RSPCA&rsquo;s legal line and it comes before placement.
+        </li>
+        <li>
+          <strong>Treat the run, not the lawn.</strong> The scent listing names
+          the fox&rsquo;s territory and the surfaces it may go on; the sprinkler
+          covers an arc from where it stands.
+        </li>
+        <li>
+          <strong>Connect the sprinkler to a live hose.</strong> It has no
+          reservoir; without water it does nothing at all.
+        </li>
+        <li>
+          <strong>Fix the mesh to something.</strong> A 0.6m roll protects a bed
+          or a run when it is fixed to a frame, and does nothing loose.
+        </li>
+        <li>
+          <strong>Reapply the scent.</strong> Both sachets treat up to 34 sqm
+          once; rain and time are why this is a consumable.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Three Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        coverage figure attributed to the maker who claims it. Where a listing
+        does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Area or size, as listed</th>
             </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      {/* Best Scent Repellent */}{" "}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Foxes are intensely territorial animals &mdash; a dog fox (male) will
-        patrol and scent-mark the boundaries of his territory every single
-        night, urinating and defecating at strategic points to warn rival foxes
-        that the area is claimed.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        To use Scoot, dissolve the 100g sachet in water according to the packet
-        instructions and apply to the affected areas using a watering can or
-        garden sprayer. Each sachet covers approximately 34 square metres, which
-        is sufficient for a small to medium-sized garden. The main limitation is that Scoot needs to
-        be reapplied after heavy rain, as the active compounds are water-soluble
-        and will wash into the soil. During the British autumn and winter, when
-        rainfall is frequent and fox activity is at its highest (mating season
-        runs from December to February), you may need to reapply weekly. In dry
-        weather during summer, a single application can last two weeks or more.
-       {" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Easy application via watering can or garden sprayer</li>{" "}
-        <li>Established UK fox repellent with a long track record</li>{" "}
-        <li>One sachet covers 34 sqm</li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Must be reapplied after heavy rain &mdash; not a permanent solution
-        </li>{" "}
-        <li>
-          Less effective on hard surfaces such as patios and driveways where
-          scent does not absorb
-        </li>{" "}
-        <li>
-          Dominant or particularly bold foxes may investigate rather than
-          retreat
-        </li>{" "}
-        <li>
-          Requires consistent, repeated application for ongoing effectiveness
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> A 100 gram concentrate, listed as a single pack,
-        diluted in water before application.{" "}
-      </p>{" "}
-      {/* Best Sprinkler */}{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Jet Spray works by connecting to a standard garden
-        hose and using a battery-powered PIR motion sensor to detect approaching
-        animals. When the sensor is triggered, the sprinkler fires a sharp
-        five-second burst of water in the direction of the detected movement,
-        accompanied by a loud clicking sound from the sprinkler head as it
-        activates.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The PIR sensor has a 120-degree detection arc and covers an area of
-        approximately 100 square metres, which is sufficient for most
-        medium-sized gardens. The sensor is powered by four AA batteries (not
-        included) and draws minimal power in standby mode, meaning a single set
-        of batteries typically lasts three to four months of regular triggering.
-        To install, simply screw the sprinkler onto a standard garden hose
-        connector, push the spike into the lawn or soil at the desired location,
-        connect the hose, and switch on the water supply. Position the sprinkler
-        along the fox&apos;s known entry path &mdash; the gap under the fence,
-        the route from the neighbour&apos;s garden, or the path the fox takes to
-        reach your chicken coop or bin area. The only significant limitation is
-        winter weather: you must drain the hose and sprinkler before the first
-        hard frost to prevent water freezing inside the mechanism and causing
-        damage. During the coldest months of the year (typically December
-        through February), the sprinkler should be stored indoors and
-        alternative deterrents used.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>120-degree detection arc covering up to 100 sqm</li>{" "}
-        <li>
-          Works day and night with battery-powered PIR sensor lasting 3&ndash;4
-          months
-        </li>{" "}
-        <li>
-          Easy installation with standard garden hose connection and ground
-          spike
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Must be drained and stored during freezing winter weather to prevent
-          frost damage
-        </li>{" "}
-        <li>
-          Requires access to an outdoor tap and a garden hose long enough to
-          reach the target area
-        </li>{" "}
-        <li>
-          Will also spray cats, hedgehogs, and any other animal (or person) that
-          triggers the sensor
-        </li>{" "}
-        <li>
-          Water usage adds a small amount to your water bill during extended use
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> Battery powered, connects to a standard garden
-        hose, listed at 700 grams as a set of one.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
-          <p>
-            Single-method approaches rarely work long-term &mdash; foxes are
-            intelligent and habituate quickly.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* Best Fence Exclusion */}{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Many homeowners are surprised to learn just how athletic foxes are. An
-        adult fox can scale a standard 6-foot (1.8m) garden fence with ease,
-        using its claws to grip the wood and hauling itself over the top in a
-        matter of seconds. This means that even a tall, well-maintained fence is
-        not, by itself, a barrier to fox entry. The Fence Top Roller Bar solves
-        this problem with elegant simplicity: it is a smooth aluminium tube that
-        mounts along the top of your fence on rotating brackets. When a fox
-        climbs to the top of the fence and attempts to pull itself over by
-        gripping the top edge, its paws instead land on the roller, which spins
-        freely under the fox&apos;s weight. Unable to gain purchase, the fox
-        loses its grip and drops back to the ground on the side it came from.
-       {" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The roller bar is constructed from lightweight aluminium that will not
-        corrode or degrade when exposed to years of British weather. The
-        mounting brackets are designed to be screwed
-        directly into the top of standard wooden fence posts, and the aluminium
-        tube slides onto the brackets and spins freely without any moving parts
-        that could jam, seize, or wear out. Installation is a straightforward
-        DIY job requiring only a drill, screws, and a spirit level &mdash; most
-        homeowners can fit a full fence run in an afternoon. One limitation to note is that roller
-        bars are designed for flat-topped fences &mdash; they are less effective
-        on fences with pointed or shaped tops, and may require adapter brackets
-        for non-standard fence post profiles.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Aluminium construction built to last for years in outdoor
-          conditions
-        </li>{" "}
-        <li>
-          No batteries, no chemicals, no ongoing costs after initial
-          installation
-        </li>{" "}
-        <li>
-          Straightforward DIY installation with basic tools in an afternoon
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Must cover the entire fence line with no gaps &mdash; foxes will
-          exploit any unprotected section
-        </li>{" "}
-        <li>
-          Less effective on fences with pointed, shaped, or non-standard top
-          profiles
-        </li>{" "}
-        <li>
-          Does not prevent foxes from digging under fences &mdash; only prevents
-          climbing over
-        </li>{" "}
-        <li>Upfront cost can be significant for long fence runs</li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> Listed as an 8 foot kit for chain link fencing,
-        weighing 2.77 kilograms.{" "}
-      </p>{" "}
-      {/* Best Mesh */}{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        <strong>Standard chicken wire is not welded mesh.</strong> The welded
-        construction means that each wire junction is fused together, and the
-        galvanised coating provides rust resistance in damp soil.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The listing gives this roll as 0.6m wide by 5m long. Foxes are
-        proficient diggers,
-        and a motivated fox will excavate under a fence, coop wall, or run side
-        in less than an hour. The standard defence against digging is to bury
-        mesh around the entire perimeter of the enclosure &mdash; dig a trench
-        approximately 30cm deep along the base of the run, then lay the mesh in
-        an &ldquo;L-shape&rdquo; so that it extends 30cm downward and then 30cm
-        outward (away from the run) along the bottom of the trench. When the fox
-        digs down next to the run wall, it hits the mesh. When it tries to dig
-        further away to go under the mesh, it hits the horizontal portion. For the roof of the run, attach the mesh securely to
-        the timber frame using galvanised staples or fencing clips every
-        15&ndash;20cm &mdash; foxes can and will pull poorly secured mesh away
-        from a frame.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>25mm hole size, per the listing</li>{" "}
-        <li>
-          Hot-dip galvanised coating provides excellent rust resistance for
-          years of outdoor use
-        </li>{" "}
-        <li>0.6m x 5m roll, per the listing</li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Heavier and harder to work with than standard chicken wire &mdash; tin
-          snips required for cutting
-        </li>{" "}
-        <li>
-          Digging a 30cm trench for the buried apron is physically demanding
-          work
-        </li>{" "}
-        <li>
-          Sharp cut edges can cause injury during installation &mdash; wear
-          thick gloves
-        </li>{" "}
-        <li>
-          Only protects the specific enclosure it is fitted to &mdash; does not
-          deter foxes from the wider garden
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> Galvanised steel welded mesh, listed at 0.6m by
-        5m with a 25mm hole size.{" "}
-      </p>{" "}
-      {/* Buying Guide */} <h2 id="buying-guide">Fox Deterrent Buying Guide</h2>{" "}
-      <p>
-        {" "}
-        Here are the key factors to consider.{" "}
-      </p>{" "}
-      <h3>Layer Your Deterrents</h3>{" "}
-      <p>
-        {" "}
-        This is the single most important piece of advice in the entire guide,
-        and it bears repeating:{" "}
-        <strong>no single fox deterrent works reliably on its own</strong>.
-        Foxes are highly intelligent mammals with excellent memory and rapid
-        learning ability. A single-method approach &mdash; whether it is a
-        scent repellent or a sprinkler &mdash; will
-        produce initial results as the fox encounters something new and
-        unfamiliar, but within one to three weeks the fox will have assessed the
-        threat, determined it is not genuinely dangerous, and resumed its normal
-        behaviour in your garden.{" "}
-      </p>{" "}
-      <h3>Rotate and Reposition</h3>{" "}
-      <p>
-        {" "}
-        Even with a layered strategy, habituation remains the enemy of fox
-        deterrence. Reapply Scoot after
-        every significant rainfall, and vary the areas you treat &mdash; do not
-        always apply it to exactly the same spots. If possible, move the
-        sprinkler to a different location every few weeks so the fox cannot
-        predict where the water burst will come from.{" "}
-      </p>{" "}
-      <h3>Physical Exclusion is King</h3>{" "}
-      <p>
-        {" "}
-        Deterrents cannot guarantee prevention on any given night. A determined,
-        hungry fox that has identified prey animals in your garden will tolerate
-        a remarkable amount of discomfort to reach them.{" "}
-      </p>{" "}
-      <h3>When Deterrents Fail</h3>{" "}
-      <p>
-        {" "}
-        If you have implemented a layered deterrent strategy (scent +
-        sprinkler + exclusion) consistently for four to six weeks and foxes are still
-        visiting your garden regularly, there may be a specific reason that
-        standard deterrents are insufficient. The most common cause is a{" "}
-        <strong>
-          fox den (earth) located under or very close to your property
-        </strong>{" "}
-        &mdash; a vixen with cubs under your shed, decking, or outbuilding will
-        not abandon the site regardless of how many deterrents you deploy. In
-        this situation, you need a professional pest controller who can assess
-        the situation, determine whether cubs are present (it is an offence to
-        block a den containing dependent cubs), and develop a management plan
-        that complies with animal welfare legislation. Similarly, if a fox has
-        become habituated to human activity to the point where it enters your
-        home through cat flaps or open doors, professional intervention is
-        warranted.{" "}
-      </p>{" "}
-      {/* When to Call a Professional */}{" "}
-      <h2 id="when-to-call">When to Call a Professional</h2>{" "}
-      <p>
-        {" "}
-        The garden deterrents on this page will resolve the majority of fox
-        nuisance problems &mdash; fouling on lawns, digging in flower beds,
-        raiding bins, and general nocturnal disturbance. However, there are several
-        situations where DIY deterrents are insufficient and professional help
-        is strongly recommended. If a fox has{" "}
-        <strong>denned under your property</strong> &mdash; beneath a shed,
-        decking, extension, or outbuilding &mdash; you are dealing with a
-        resident animal that will not be deterred by garden-level products. A
-        vixen with cubs will defend her den site aggressively and will tolerate
-        extreme levels of disturbance rather than abandon dependent young.
-        Professional pest controllers have the expertise to assess whether cubs
-        are present, wait for the appropriate time to act (once cubs are mobile
-        and independent), and then implement permanent exclusion to prevent
-        re-denning in future years.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        You should also call a professional if you have a dog and are concerned
-        about <strong>sarcoptic mange transmission</strong>. Foxes commonly
-        carry sarcoptic mange, which is caused by the mite{" "}
-        <em>Sarcoptes scabiei</em> and is highly transmissible to domestic dogs
-        through direct contact or shared environment. A mangy fox visiting your
-        garden poses a genuine veterinary risk to your dog. Other situations
-        requiring professional help include{" "}
-        <strong>repeated livestock attacks</strong> where deterrents and mesh
-        have failed, a <strong>fox entering your house</strong> through a cat
-        flap or open door (this is more common than people realise in urban
-        areas), and any situation where you have{" "}
-        <strong>
-          deployed a full layered deterrent strategy for four or more weeks
-          without success
-        </strong>
-        . The cost of professional fox management typically ranges from
-        &pound;150 to &pound;400, depending on the complexity of the situation,
-        whether den exclusion work is required, and the number of site visits
-        needed. This is a worthwhile investment when DIY methods have been
-        exhausted and the problem persists.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Fox Problem Too Big for DIY?"
-          subtext="Compare pest control providers near you — free, no-obligation quotes."
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-3">
-          Want the complete fox management strategy?
-        </p>{" "}
-        <a
-          href="/guides/how-to-get-rid-of-foxes"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          {" "}
-          Read our full guide: How to Get Rid of Foxes &rarr;{" "}
-        </a>{" "}
-      </div>{" "}
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* FAQ — rendered from the same array the schema above is derived from */}
+      <h2 id="faq">Frequently Asked Questions</h2>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+
+      <FindProviderCTA
+        heading="A fox problem you cannot resolve yourself?"
+        subtext="Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

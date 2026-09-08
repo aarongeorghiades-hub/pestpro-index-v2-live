@@ -110,7 +110,6 @@ const SRC = {
 type ProductRecord = {
   anchorId: string;
   asin: string;
-  rank: number;
   cardName: string;
   cardLabel: string;
   features: string[];
@@ -149,7 +148,6 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-ultrasonic",
     asin: "B0B8VQ6C76",
-    rank: 1,
     cardName: "EcoMyLife Ultrasonic Pest Repeller 2 Pack",
     cardLabel: "Ultrasonic, mains powered",
     features: [
@@ -173,7 +171,6 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-spray",
     asin: "B08DKSX32W",
-    rank: 2,
     cardName: "RepellShield Rat & Mouse Repellent Spray 250ml",
     cardLabel: "Peppermint oil spray, 250ml",
     features: [
@@ -197,7 +194,6 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-premium-spray",
     asin: "B0CRRSTHNG",
-    rank: 3,
     cardName: "REPELEM Rat & Mouse Repellent Spray 250ml — Peppermint Oil",
     cardLabel: "Peppermint and geraniol spray, 250ml",
     features: [
@@ -221,7 +217,6 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-natural",
     asin: "B0CNV2CWQS",
-    rank: 4,
     cardName: "REPELEM Rat & Mouse Repellent Peppermint Oil Sachets — 6 Pack",
     cardLabel: "Paper and corn cob sachets, 6 pack",
     features: [
@@ -567,7 +562,6 @@ export default function BestMouseRepellentPage() {
           features={products[0].features}
           asin={products[0].asin}
           bestFor={products[0].cardLabel}
-          rank={products[0].rank}
         />
       </div>
       <p>
@@ -588,7 +582,6 @@ export default function BestMouseRepellentPage() {
           features={products[1].features}
           asin={products[1].asin}
           bestFor={products[1].cardLabel}
-          rank={products[1].rank}
         />
       </div>
       <p>
@@ -610,7 +603,6 @@ export default function BestMouseRepellentPage() {
           features={products[2].features}
           asin={products[2].asin}
           bestFor={products[2].cardLabel}
-          rank={products[2].rank}
         />
       </div>
       <p>
@@ -631,7 +623,6 @@ export default function BestMouseRepellentPage() {
           features={products[3].features}
           asin={products[3].asin}
           bestFor={products[3].cardLabel}
-          rank={products[3].rank}
         />
       </div>
       <p>
