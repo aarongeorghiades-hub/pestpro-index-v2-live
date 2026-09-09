@@ -1,75 +1,107 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S69 R2 — ROLLOUT REBUILD to the R8/R69R1 pattern, on sources. GROUP B.
+//
+// HEALTH STATEMENTS ON THIS PAGE: TWO, one NHS and one UC IPM, both quoted and both
+// attributed. Neither is in this site's own voice. No diagnosis, no treatment
+// recommendation, no symptom checklist offered as guidance; a skin question is sent to a
+// pharmacist or a GP and nothing clinical is linked.
+//
+// G3 CLEARED — THIS ROUTE WAS THE ESTATE'S WORST OUTSIDE THE PROTECTED /products
+// CONTROL, at 4 asserted hits on the served surface from 2 source strings:
+//   feature "UK sizing (Double 135x190cm, 30cm deep) — Silentnight trusted brand"
+//   prose   "Silentnight is a name tenants recognise and trust, which matters when ..."
+// Both are this site's own voice about a brand, which Law 153 does not excuse — that
+// rule protects proper nouns carrying the stem, not a claim we make about a maker. The
+// feature now states the listing's own size facts and nothing else; the prose sentence
+// is deleted rather than softened, because there is no source for it.
+//
+// LAW 189 — THE h2s WERE MISCLASSIFIED AND ARE REBUILT. `h2Label` held a rank numeral
+// and a product name ("#1 Silentnight Complete Encasement") while `h2Name` held the
+// award ("Best Overall for Landlords"), and on one record `h2Name` held an unsourced
+// popularity claim ("Popular in the Rental Market"). Law 188 does not reach that shape.
+// On rebuild the h2 gains the award the card already shows, product name retained, card
+// label unchanged. The popularity claim has no source and does not survive.
+//
+// AWARD LABELS, RANK NUMERALS AND CARD ORDER ARE UNCHANGED. Nothing was removed under
+// the mismatch ruling on this route: all five listings support what their cards claim.
+//
+// FLAGGED FOR A PM RULING, NOT ACTED ON. The rank-4 award reads "Best Cotton
+// Encasement". Its listing's fabric row reads "80% Cotton / 20% Polyester ; Other Sides
+// : 100% Polyester" and its material type row reads Polycotton, while the rank-2 card's
+// listing states a 100% cotton terry top. The award may sit on the less cotton product.
+// Award labels are NEVER TOUCH and neither Law 188 nor Law 189 reaches this, so it is
+// reported and left. The cards state both fabrics exactly.
+//
+// THE SUBTITLE AND DESCRIPTION carried own-voice claims — "saves mattresses, prevents
+// infestations, and pays for itself after one avoided replacement", and "Bed bug proof
+// mattress encasements". Replaced with what the listings and the sources state.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Professional Mattress Encasements UK (2026)",
     description:
-      "Bed bug proof mattress encasements for landlords & HMO operators. Six-sided zip protection for professional property management.",
+      "Five products for landlords and HMO operators: four zipped encasements and a set of interceptors, compared on their own listings.",
     alternates: {
-      canonical:
-        "https://pestproindex.com/best/professional-mattress-encasements",
+      canonical: "https://pestproindex.com/best/professional-mattress-encasements",
     },
     openGraph: {
       title: "Best Professional Mattress Encasements UK (2026)",
       description:
-        "Bed bug proof mattress encasements for landlords & HMO operators. Six-sided zip protection for professional property management.",
+        "Five products for landlords and HMO operators: four zipped encasements and a set of interceptors, compared on their own listings.",
       url: "https://pestproindex.com/best/professional-mattress-encasements",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Best Professional Mattress Encasements UK (2026)",
   description:
-    "Bed bug proof mattress encasements for landlords & HMO operators. Six-sided zip protection for professional property management.",
+    "Five products for landlords and HMO operators: four zipped encasements and a set of interceptors, compared on their own listings.",
   datePublished: "2026-04-06",
-  dateModified: "2026-04-06",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
+  dateModified: "2026-09-09",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://pestproindex.com/best/professional-mattress-encasements",
   },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
-      name: "Professional Mattress Encasements",
+      name: "Best Professional Mattress Encasements UK 2026",
       item: "https://pestproindex.com/best/professional-mattress-encasements",
     },
   ],
 };
+
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194). ipm.ucanr.edu fetched 2026-09-09, kept at
+// ~/pp-s69r1/sources/ucipm-bedbugs.src.txt; www.nhs.uk fetched 2026-09-09, kept at
+// ~/pp-s68r8/sources/nhs-bedbugs.src.txt; www.gov.uk fetched 2026-09-09, kept at
+// ~/pp-s69r2/sources/gov-private-renting-repairs.src.txt. All under Law 175.
+const SRC = {
+  ucipm: "https://ipm.ucanr.edu/PMG/PESTNOTES/pn7454.html",
+  nhs: "https://www.nhs.uk/conditions/bedbugs/",
+  gov: "https://www.gov.uk/private-renting/repairs",
+};
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -80,28 +112,167 @@ type ProductRecord = {
   tableCells: string[];
   h2Label: string;
   h2Name: string;
-  tocTitle: string;
+  tocLabel: string;
+  tocName: string;
 };
 
-// S67 R6 — ONE ARRAY, AND A FAQPage THIS ROUTE NEVER HAD. Four questions were
-// rendering to readers with no structured data behind them at all. The visible
-// block and the schema now both derive from this array.
+// Records are addressed BY IDENTITY, never by position (Law 107).
+//
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies at
+// ~/pp-s61r1/uk/, inside the S45-C window. A property is asserted only where the
+// listing's own text states it (S52-E); a cell the listing does not state reads
+// "not stated". Maker self-praise is trimmed and never restated (S47-F).
+//
+// FOUR OF THE FIVE ARE SIX-SIDED ZIPPED ENCASEMENTS. THE FIFTH IS NOT AN ENCASEMENT AT
+// ALL — it is a set of under-leg interceptor traps, and its card and the page's opening
+// paragraph both say so rather than letting the route's title carry the implication.
+const products: ProductRecord[] = [
+  {
+    anchorId: "silentnight",
+    asin: "B0FHRPBZGR",
+    rank: 1,
+    cardName: "Silentnight Complete Encasement Waterproof Mattress Protector",
+    cardLabel: "Best Overall",
+    features: [
+      "Six-sided encasement with a secure zip, per the listing",
+      "The maker states protection against bed bugs and dust mites",
+      "Listed as fitting mattress depths up to 30cm; size row reads Double",
+      "Waterproof top and sides over a polypropylene backing, as listed",
+      "Listed as fully machine washable",
+    ],
+    tableCells: [
+      "Silentnight Complete Encasement",
+      "Six-sided, zipped",
+      "Bed bugs and dust mites, per the maker",
+      "Double; up to 30cm depth, as listed",
+    ],
+    h2Label: "Best Overall",
+    h2Name: "Silentnight Complete Encasement",
+    tocLabel: "Best Overall",
+    tocName: "Silentnight Complete Encasement",
+  },
+  {
+    anchorId: "sureguard",
+    asin: "B00WI09NM6",
+    rank: 2,
+    cardName: "SureGuard Mattress Encasement — Queen, 13-16 in. Deep",
+    cardLabel: "Best Professional-Grade",
+    features: [
+      "The maker states the mattress is sealed from bed bugs only when used with its own box spring encasement",
+      "100% cotton terry top, described by the maker as noiseless and moisture-wicking",
+      "The maker states it is free from vinyl, PVC, phthalates and fire retardants",
+      "The maker states independent lab testing and GREENGUARD Gold certification",
+      "Listed in US sizing: Queen, 60 by 80 inches, fits 13 to 16 inches deep",
+    ],
+    tableCells: [
+      "SureGuard Mattress Encasement",
+      "Six-sided, zipped",
+      "Bed bug proof with the matching box spring cover, per the maker",
+      "Queen 60\" x 80\"; fits 13–16 in. deep, as listed",
+    ],
+    h2Label: "Best Professional-Grade",
+    h2Name: "SureGuard Mattress Encasement",
+    tocLabel: "Best Professional-Grade",
+    tocName: "SureGuard Encasement",
+  },
+  {
+    anchorId: "utopia",
+    asin: "B077STRSZ7",
+    rank: 3,
+    cardName: "Utopia Bedding Premium Waterproof Mattress Encasement — Double 135x190x30 cm",
+    cardLabel: "Best Budget",
+    features: [
+      "The only card here listed in UK sizing: Double, 135 x 190 x 30 cm",
+      "The maker describes a mini-zipper securing all 360 degrees",
+      "Thick knitted polyester with a TPU backing on all six sides, as listed",
+      "The maker states it repels dust mites and bacteria",
+      "Listed as machine washable and tumble dryable",
+    ],
+    tableCells: [
+      "Utopia Bedding Premium Encasement",
+      "Six-sided, zipped",
+      "Bed bugs and dust mites, per the maker",
+      "Double 135 x 190 x 30 cm, as listed",
+    ],
+    h2Label: "Best Budget",
+    h2Name: "Utopia Bedding Premium Encasement",
+    tocLabel: "Best Budget",
+    tocName: "Utopia Bedding Encasement",
+  },
+  {
+    anchorId: "wrappybag",
+    asin: "B0C5XFD8X5",
+    rank: 4,
+    cardName: "Wrappybag Bed Bug Mattress Protector — Waterproof Encasement 135x190x20",
+    cardLabel: "Best Cotton Encasement",
+    features: [
+      "Fabric row reads 80% cotton and 20% polyester on top, 100% polyester on the other sides",
+      "The maker states laboratory testing and certification by Laboratoire T.E.C.",
+      "The maker states OEKO-TEX 100 certification and dermatological testing by Dermatest",
+      "Listed as a full encasement, described by the maker as airtight",
+      "Listed at 135 x 190 x 20 cm, with other sizes stated as available",
+    ],
+    tableCells: [
+      "Wrappybag Bed Bug Mattress Protector",
+      "Six-sided, zipped",
+      "Lab tested and certified against bed bugs and mites, per the maker",
+      "135 x 190 x 20 cm, as listed",
+    ],
+    h2Label: "Best Cotton Encasement",
+    h2Name: "Wrappybag Bed Bug Mattress Protector",
+    tocLabel: "Best Cotton Encasement",
+    tocName: "Wrappybag Mattress Protector",
+  },
+  {
+    anchorId: "interceptors",
+    asin: "B07MG8BD7X",
+    rank: 5,
+    cardName: "Bed Bug Blocker (Pro) Interceptor Traps — 8 Pack",
+    cardLabel: "Best Interceptor Traps",
+    features: [
+      "Not an encasement: eight cups that sit under bed and furniture legs",
+      "Target species row reads Bed Bug; the listing states no chemicals or pesticides",
+      "The maker describes bed bugs climbing the textured exterior and being unable to escape the inner reservoir",
+      "The maker states eight traps cover two beds or other pieces of furniture",
+      "Listed for homes, hotels, hostels, dormitories, hospitals and nursing homes",
+    ],
+    tableCells: [
+      "Bed Bug Blocker (Pro) Interceptor Traps",
+      "Under-leg traps, not an encasement",
+      "Detection and trapping, per the maker; no pesticide",
+      "8 traps, stated as covering two beds",
+    ],
+    h2Label: "Best Interceptor Traps",
+    h2Name: "Bed Bug Blocker (Pro) Interceptor Traps",
+    tocLabel: "Best Interceptor Traps",
+    tocName: "Bed Bug Blocker Interceptors",
+  },
+];
+
 const faqs = [
   {
-    q: "Do encasements really stop bed bugs?",
-    a: "Yes. A quality six-sided zippered encasement with a micro-zipper creates a complete barrier. Bed bugs already inside are trapped and starve within 12–18 months. New bugs cannot colonise the mattress because there are no seams or crevices to hide in. Encasements must be combined with room treatment — they protect the mattress, not the entire room.",
+    q: "Do encasements work?",
+    a: "UC IPM says mattress encasements specifically designed to prevent bed bugs from establishing harbourages on mattresses are commercially available and have been shown to be effective through laboratory research, and that bugs trapped inside encasements will eventually die due to starvation. It adds that encasements are particularly useful for hotels or other facilities with many beds, which is the situation most readers of this page are in. Those are the source's findings about the product class, not claims by this page about any of the five items below.",
   },
   {
-    q: "How long do encasements last?",
-    a: "A quality encasement lasts 3–5 years with proper care. Machine wash on a gentle cycle every few months, inspect the zipper at every tenancy changeover, and replace immediately if you find any tears, holes, or zipper damage. The SureGuard offers a 10-year guarantee, which is exceptional in this category.",
+    q: "How long do I leave one on?",
+    a: "No source read for this page states a figure and no listing here states one either. UC IPM says trapped bugs die of starvation without giving a period. A number invented here would look exactly like a number that had been measured, so there is none.",
   },
   {
-    q: "Can you put a topper over an encasement?",
-    a: "Yes. Place the encasement on the mattress, add a topper on top, then cover both with a fitted sheet. Be aware that the topper itself can harbour bed bugs in its seams — consider using a separate topper encasement or replacing toppers between tenancies in rental properties.",
+    q: "Why is a trap on a page about encasements?",
+    a: "Because it answers the question an encasement cannot. UC IPM writes that several kinds of bed bug detection traps are available to help determine if there is an infestation, and describes commercially available double-cupped monitors installed under bed legs as a temporary exclusion measure. The rank-5 card is that product, it is not an encasement, and its card says so in its first line.",
   },
   {
-    q: "When should you replace an encasement?",
-    a: "Replace immediately if: the zipper is damaged or does not close fully, there are tears or holes in the fabric, seams are fraying, or the waterproof layer has degraded. For rental properties, inspect at every tenancy changeover. As a precaution, replace every 3–5 years even without visible damage — zipper mechanisms and fabric integrity degrade with use over time.",
+    q: "What are my duties as a landlord here?",
+    a: "GOV.UK states that a landlord is always responsible for repairs to the property's structure and exterior, and that where repairs are not done a tenant should contact the environmental health department at their local council, who must take action if they think the problems could harm the tenant or cause a nuisance to others. It also describes the Housing Health and Safety Rating System assessment a council will carry out. This page is not legal advice and none of that is displaced by buying a mattress cover.",
+  },
+  {
+    q: "Will a cover on its own clear an infestation?",
+    a: "No source read here says so. The NHS says it is very difficult to get rid of bedbugs yourself because they can be hard to find and may be resistant to some insecticides, and that you should contact your local council or pest control service. UC IPM lists bed frames, headboards, baseboards and furniture among the hiding places. A mattress cover covers a mattress.",
+  },
+  {
+    q: "Are the bites a health risk?",
+    a: "The NHS says bedbug bites can be itchy but do not usually cause other health problems, and UC IPM says bed bugs are not known to spread diseases although scratching bites can lead to infections. Anything about a tenant's own skin, or your own, is a question for a pharmacist or a GP rather than for a product page.",
   },
 ];
 
@@ -115,671 +286,421 @@ const faqSchema = {
   })),
 };
 
-const products: ProductRecord[] = [
-  {
-    anchorId: "silentnight",
-    asin: "B0FHRPBZGR",
-    rank: 1,
-    cardName:
-      "Silentnight Complete Encasement Waterproof Mattress Protector — Double",
-    cardLabel: "Best Overall",
-    features: [
-      "Full six-sided zip encasement — complete bed bug barrier",
-      "Waterproof polypropylene backing, hypoallergenic",
-      "Machine washable, quiet and rustle-free",
-      "UK sizing (Double 135x190cm, 30cm deep) — Silentnight trusted brand",
-    ],
-    tableCells: [
-      "Silentnight Complete Encasement",
-      "Six-sided zip + waterproof",
-      "Best Overall",
-    ],
-    h2Label: "#1 Silentnight Complete Encasement",
-    h2Name: "Best Overall for Landlords",
-    tocTitle: "#1 Silentnight Complete Encasement",
-  },
-  {
-    anchorId: "sureguard",
-    asin: "B00WI09NM6",
-    rank: 2,
-    cardName: "SureGuard Mattress Encasement — 100% Waterproof, Bed Bug Proof",
-    cardLabel: "Best Professional-Grade",
-    features: [
-      "Invisi-Zip with SureSeal technology — zero gap",
-      "100% cotton terry top for comfort",
-      "GREENGUARD Gold certified, 10-year quality guarantee",
-      "US hospitality standard — used in hotels worldwide",
-    ],
-    tableCells: [
-      "SureGuard Mattress Encasement",
-      "Invisi-Zip SureSeal, cotton terry",
-      "Best Professional-Grade",
-    ],
-    h2Label: "#2 SureGuard Mattress Encasement",
-    h2Name: "Best Professional-Grade",
-    tocTitle: "#2 SureGuard Mattress Encasement",
-  },
-  {
-    anchorId: "utopia",
-    asin: "B077STRSZ7",
-    rank: 3,
-    cardName: "Utopia Bedding Waterproof Zippered Mattress Encasement — Double",
-    cardLabel: "Best Budget",
-    features: [
-      "Six-sided zippered protection, waterproof",
-      "Dust mite and bed bug proof",
-      "Excellent value for equipping multiple rooms",
-    ],
-    tableCells: [
-      "Utopia Bedding Encasement",
-      "Six-sided zip, budget price",
-      "Best Budget",
-    ],
-    h2Label: "#3 Utopia Bedding Encasement",
-    h2Name: "Best Budget for Bulk Buy",
-    tocTitle: "#3 Utopia Bedding Encasement",
-  },
-  {
-    anchorId: "wrappybag",
-    asin: "B0C5XFD8X5",
-    rank: 4,
-    cardName:
-      "WRAPPYBAG Bed Bug Mattress Protector — Zipped, Waterproof, Cotton",
-    cardLabel: "Best Cotton Encasement",
-    features: [
-      "Full zippered encasement with cotton surface",
-      "Designed specifically for bed bug prevention",
-      "Available in UK sizes",
-      "Popular in the HMO and rental market",
-    ],
-    tableCells: [
-      "WRAPPYBAG Bed Bug Protector",
-      "Cotton surface, UK rental market",
-      "HMO & Rental",
-    ],
-    h2Label: "#4 WRAPPYBAG Bed Bug Protector",
-    h2Name: "Popular in the Rental Market",
-    tocTitle: "#4 WRAPPYBAG Bed Bug Protector",
-  },
-  {
-    anchorId: "interceptors",
-    asin: "B07MG8BD7X",
-    rank: 5,
-    cardName: "Bed Bug Blocker Pro Interceptor Traps — 8 Pack",
-    cardLabel: "Best Interceptor Traps",
-    features: [
-      "Place under bed legs to monitor and trap bed bugs",
-      "No chemicals — passive detection system",
-      "Essential monitoring tool alongside encasements",
-      "Use for early detection in previously infested properties",
-    ],
-    tableCells: [
-      "Bed Bug Blocker Pro Interceptors",
-      "Passive monitoring traps",
-      "Detection & Monitoring",
-    ],
-    h2Label: "#5 Bed Bug Blocker Pro Interceptor Traps",
-    h2Name: "Essential Monitoring",
-    tocTitle: "#5 Bed Bug Blocker Pro Interceptors",
-  },
+const tocItems = [
+  { id: "situation", title: "What an Encasement Does, According to UC IPM" },
+  { id: "health", title: "What the NHS and UC IPM Say About the Bites" },
+  { id: "legal", title: "The Landlord Position, According to GOV.UK" },
+  { id: "limits", title: "Where an Encasement Does Not Work" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Cover Is Not the Answer" },
+  { id: "using", title: "Use and Placement" },
+  { id: "compared", title: "The Five Compared" },
 ];
 
-const tocItems = [
-  { id: "at-a-glance", title: "Encasements at a Glance" },
-  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
-  { id: "encasement-vs-protector", title: "Encasement vs Mattress Protector" },
-  { id: "buying-guide", title: "Buying Guide" },
-  { id: "roi", title: "ROI: The Numbers" },
-  { id: "faq", title: "Frequently Asked Questions" },
-];
-export default function ProfessionalMattressEncasementsPage() {
+export default function BestProfessionalMattressEncasementsPage() {
   return (
     <GuideLayout
-      title="Best Professional Mattress Encasements for Landlords & HMO Operators (2026)"
-      subtitle="Six-sided zip protection that saves mattresses, prevents infestations, and pays for itself after one avoided replacement"
-      lastUpdated="April 2026"
+      title="Best Professional Mattress Encasements for Landlords &amp; HMO Operators (2026)"
+      subtitle="Four six-sided zipped covers and one set of under-leg interceptor traps, described by what their own listings state — beside the University of California on what an encasement does and GOV.UK on where a tenant goes next"
+      lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "How to Get Rid of Bed Bugs: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-bed-bugs",
-        },
-        {
-          title: "Landlord Pest Control: UK Compliance Guide",
-          href: "/guides/landlord-pest-control",
-        },
-        {
-          title: "Student House Pest Guide",
-          href: "/guides/student-house-pest-guide",
-        },
-        {
-          title: "Moving House Pest Checklist",
-          href: "/guides/moving-house-pest-checklist",
-        },
+        { title: "How to Get Rid of Bed Bugs: Complete UK Guide", href: "/guides/how-to-get-rid-of-bed-bugs" },
+        { title: "Landlord Pest Control Responsibilities", href: "/guides/landlord-pest-control" },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
       ]}
       relatedProducts={[
-        {
-          title: "Best Professional Bed Bug Steamers",
-          href: "/best/professional-bed-bug-steamers",
-        },
-        { title: "Best Bed Bug Sprays UK 2026", href: "/best/bed-bug-spray" },
-        {
-          title: "Best Bed Bug Treatments UK 2026",
-          href: "/best/bed-bug-treatments",
-        },
+        { title: "Best Bed Bug Mattress Encasement UK 2026", href: "/best/bed-bug-mattress-encasement" },
+        { title: "Best Professional Bed Bug Steamers UK 2026", href: "/best/professional-bed-bug-steamers" },
+        { title: "Best Bed Bug Treatments UK 2026", href: "/best/bed-bug-treatments" },
+        { title: "Best Commercial Insect Monitors UK 2026", href: "/best/commercial-insect-monitors" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />{" "}
+      />
+
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
-          a small commission at no extra cost to you. As an Amazon Associate,
-          PestPro Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
+          a small commission at no extra cost to you. This helps us keep the
+          site running and free for everyone. As an Amazon Associate, PestPro
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        If you manage rental properties, mattress encasements are not optional —
-        they are essential infrastructure. A single bed bug infestation can cost
-        you the mattress (£200–600 to replace), a professional treatment
-        (£200–400 per room), lost rental income during treatment, and a
-        seriously unhappy tenant. An encasement eliminates the mattress as a
-        harbourage point entirely, making treatment faster, cheaper, and more
-        effective if bed bugs do appear.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        For portfolio landlords and HMO operators, the maths is straightforward.
-        Encasing every mattress across your portfolio costs a fraction of
-        replacing even one infested mattress. Combined with{" "}
-        <Link href="/best/professional-bed-bug-steamers">
-          professional steam treatment
-        </Link>{" "}
-        and regular monitoring, encasements form the backbone of a
-        cost-effective bed bug prevention programme.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        This guide is written specifically for landlords, facilities managers,
-        and property investors who need to protect multiple beds across multiple
-        properties. We have selected products based on{" "}
-        <strong>durability</strong>, <strong>zipper quality</strong>,{" "}
-        <strong>UK size availability</strong>,{" "}
-        <strong>machine washability</strong>, and{" "}
-        <strong>value at scale</strong> — because when you are buying ten or
-        twenty at a time, unit cost matters.{" "}
-      </p>{" "}
+        Five items, and only four of them are encasements. The fifth is a set of
+        cups that go under the bed legs, and it is here because it answers a
+        question no cover can: whether there is anything in the room at all.
+      </p>
+
+      {/* DECISION BLOCK — situation first, product second. The legal line and the
+          does-not-work line sit ABOVE every product line. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>A tenant has reported bites and you are the landlord.</strong>{" "}
+            <a href="#legal" className="underline">
+              What GOV.UK says about repairs and the council
+            </a>{" "}
+            comes before any purchase.
+          </li>
+          <li>
+            <strong>You are hoping a cover ends the infestation.</strong>{" "}
+            <a href="#limits" className="underline">
+              Where an encasement does not work
+            </a>{" "}
+            — the NHS answers this and the answer is no.
+          </li>
+          <li>
+            <strong>You do not know whether there is an infestation yet.</strong>{" "}
+            <a href="#interceptors" className="underline">
+              The interceptor traps
+            </a>{" "}
+            are the item that tells you, and they are not a cover.
+          </li>
+          <li>
+            <strong>You are buying for UK beds in quantity.</strong>{" "}
+            <a href="#utopia" className="underline">
+              The 135 x 190 x 30 cm cover
+            </a>{" "}
+            is the only one here listed in UK sizes.
+          </li>
+          <li>
+            <strong>You need the strongest claim on the listing.</strong>{" "}
+            <a href="#wrappybag" className="underline">
+              The lab-certified cover
+            </a>{" "}
+            names its testing house; the others do not.
+          </li>
+        </ul>
+      </div>
+
       <div className="not-prose">
-        {" "}
-        <StatCallout
-          value="&pound;200&ndash;600"
-          label="Cost of replacing an infested mattress &mdash; an encasement prevents the problem entirely for a small fraction of that"
-        />{" "}
-      </div>{" "}
-      <h2 id="at-a-glance">Encasements at a Glance</h2>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            <th>Product</th>
-            <th>Key Feature</th>
-            <th>Best For</th>
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Silentnight Complete Encasement is our top pick for landlords
-        because it combines everything you need at a price that makes sense at
-        scale. Full six-sided zip closure seals the mattress completely — no
-        gaps, no access points for bed bugs. The waterproof polypropylene
-        backing protects against spills and bodily fluids (a real consideration
-        in rental properties), while the hypoallergenic surface keeps tenants
-        comfortable.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Silentnight is a name tenants recognise and trust, which matters when
-        you are explaining why their mattress is encased. The quiet, rustle-free
-        fabric means no complaints about noise when turning over at night.
-        Machine washable at standard temperatures, so you can refresh
-        encasements between tenancies without replacing them. Available in all
-        standard UK sizes with a 30cm depth rating that accommodates most
-        mattresses.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The Silentnight hits the sweet spot between quality and cost when you
-        are equipping multiple properties. Buy in bulk and your per-unit cost is
-        negligible compared to the potential cost of a single infestation.{" "}
-      </p>{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The SureGuard is the encasement you find in professionally managed
-        hotels and serviced accommodation worldwide. The Invisi-Zip with
-        SureSeal technology creates a truly zero-gap closure — the zipper
-        mechanism is concealed and the seal point is reinforced so there is
-        literally no entry point for bed bugs at any life stage. This is the
-        closest thing to a laboratory-grade seal you can get in a consumer
-        product.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The 100% cotton terry top surface is soft, breathable, and comfortable
-        for long-term use. GREENGUARD Gold certification means the product has
-        been independently tested for chemical emissions — relevant if you
-        manage properties housing vulnerable tenants or families with young
-        children. The 10-year quality guarantee is exceptional and reflects
-        genuine confidence in durability.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The professional-grade construction and decade-long guarantee justify
-        the premium for high-value properties or properties with a history of
-        bed bug issues. For serviced accommodation, Airbnb properties, and
-        premium HMOs, this is the professional choice.{" "}
-      </p>{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        When you need to encase every mattress across a large portfolio and
-        budget is a real constraint, the Utopia Bedding encasement delivers
-        genuine six-sided protection.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The zippered closure fully encloses the mattress and provides an
-        effective barrier against bed bugs and dust mites. The waterproof
-        backing protects against spills and stains. This is the obvious choice
-        for landlords managing large student HMOs, hostels, or budget rental
-        portfolios.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The trade-off is a thinner fabric and a less sophisticated zipper
-        mechanism than the Silentnight or SureGuard. For standard rental
-        properties where the encasement sits under a fitted sheet and is checked
-        at each tenancy changeover, the Utopia provides more than adequate
-        protection at a price that makes universal deployment practical.{" "}
-      </p>{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The WRAPPYBAG has built a following specifically in the UK rental and
-        HMO market. The full zippered encasement with a cotton surface provides
-        a comfortable sleeping experience while maintaining an effective bed bug
-        barrier. Designed with landlords in mind, it is available in standard UK
-        sizes and priced to make bulk purchasing practical.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The cotton surface is a genuine advantage over polyester alternatives —
-        it feels more natural, breathes better, and is less likely to generate
-        tenant complaints about comfort. For landlords who want to provide a
-        good tenant experience while maintaining professional-grade pest
-        prevention, the WRAPPYBAG strikes a sensible balance between cost and
-        quality.{" "}
-      </p>{" "}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Interceptor traps are not encasements, but they are an essential
-        companion product for any professional bed bug prevention programme.
-        Place one under each bed leg — bed bugs climbing up from the floor to
-        reach the bed fall into the trap and cannot escape. This gives you an
-        early warning system: if you find bugs in the interceptors during a
-        routine inspection, you know there is an active issue before it becomes
-        a full-blown infestation.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        For previously infested properties, interceptors provide ongoing peace
-        of mind. They require no chemicals, no maintenance (other than periodic
-        inspection), and an 8-pack is enough for two beds. Combined with
-        encasements and regular steam treatment, interceptors complete the
-        three-layer professional prevention system: protect (encasement), detect
-        (interceptors), and treat (steam).{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
+        <Callout type="warning">
           <p>
-            The professional approach: encasements protect the mattress,
-            interceptor traps detect activity early, and{" "}
-            <Link
-              href="/best/professional-bed-bug-steamers"
-              className="underline font-semibold"
-            >
-              steam treatment
-            </Link>{" "}
-            eliminates infestations without chemicals. Deploy all three across
-            your portfolio for comprehensive, cost-effective bed bug management.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      <h2 id="encasement-vs-protector">
-        Encasement vs Mattress Protector — Know the Difference
-      </h2>{" "}
+            The NHS says it is very difficult to get rid of bedbugs yourself and
+            that you should contact your local council or pest control service.
+            A mattress cover does not change that, and nothing on this page
+            treats a room.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">What an Encasement Does, According to UC IPM</h2>
       <p>
-        {" "}
-        This is the most common misunderstanding in bed bug prevention, and it
-        costs landlords money. A <strong>mattress protector</strong> covers only
-        the top and sides of the mattress — it is held in place by elastic or
-        straps and leaves the entire underside exposed. Bed bugs can freely
-        access the mattress from below, rendering the protector useless for pest
-        prevention.{" "}
-      </p>{" "}
+        The University of California&rsquo;s Statewide IPM Program describes the
+        product class rather than any particular cover:{" "}
+        <em>
+          &ldquo;Mattress encasements specifically designed to prevent bed bugs
+          from establishing harborages on mattresses are commercially available
+          and have been shown to be effective through laboratory research.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ).
+      </p>
       <p>
-        {" "}
-        A <strong>mattress encasement</strong> wraps all six sides of the
-        mattress and zips shut, creating a complete sealed barrier. There is no
-        exposed surface, no gap, and no access point. This is the only type of
-        product that provides genuine bed bug protection.{" "}
-      </p>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            <th>Feature</th>
-            <th>Mattress Protector</th>
-            <th>Mattress Encasement</th>
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {" "}
-          <tr>
-            <td>Coverage</td>
-            <td>Top and sides only</td>
-            <td>All six sides — complete seal</td>
-          </tr>{" "}
-          <tr>
-            <td>Closure</td>
-            <td>Elastic or straps</td>
-            <td>Full zip closure</td>
-          </tr>{" "}
-          <tr>
-            <td>Bed bug protection</td>
-            <td>None — underside exposed</td>
-            <td>Complete barrier</td>
-          </tr>{" "}
-          <tr>
-            <td>Traps existing bugs</td>
-            <td>No</td>
-            <td>Yes — bugs inside cannot escape</td>
-          </tr>{" "}
-          <tr>
-            <td>Prevents colonisation</td>
-            <td>No</td>
-            <td>Yes — no harbourage points</td>
-          </tr>{" "}
-          <tr>
-            <td>Price</td>
-            <td>£5–15</td>
-            <td>See current price</td>
-          </tr>{" "}
-        </tbody>{" "}
-      </table>{" "}
+        For the readers of this page in particular:{" "}
+        <em>&ldquo;Encasements are particularly useful for hotels or other facilities with many beds.&rdquo;</em>{" "}
+        And the mechanism, in one sentence:{" "}
+        <em>&ldquo;Bugs trapped inside encasements will eventually die due to starvation.&rdquo;</em>{" "}
+        No period is given for that, by UC IPM or by any listing here, so none
+        appears on this page.
+      </p>
       <p>
-        {" "}
-        If you are buying mattress protectors thinking they provide bed bug
-        protection, you are wasting money. Only a full six-sided zippered
-        encasement provides a genuine barrier. Every product in this guide is a
-        true encasement — not a protector.{" "}
-      </p>{" "}
-      <h2 id="buying-guide">Buying Guide: What to Look For</h2>{" "}
-      <h3>Zipper Quality</h3>{" "}
+        On the fifth item, the same source:{" "}
+        <em>&ldquo;Several kinds of bed bug detection traps are available to help determine if there is an infestation.&rdquo;</em>{" "}
+        Detection is a different job from containment, and it usually comes
+        first.
+      </p>
+
+      {/* [1] Health — attributed, quoted, no diagnosis, no treatment advice */}
+      <h2 id="health">What the NHS and UC IPM Say About the Bites</h2>
       <p>
-        {" "}
-        The zipper is the weakest point of any encasement and the most critical
-        feature to evaluate. Look for micro-zippers with teeth too small for bed
-        bugs to pass through, and a sealed closure point (SureSeal, Invisi-Zip,
-        or Velcro flap). Standard zippers have gaps wide enough for nymphs to
-        squeeze through — they are not bed bug proof regardless of what the
-        packaging claims. Test the zipper before deployment: it should close
-        smoothly, sit flush, and leave no visible gap at the end point.{" "}
-      </p>{" "}
-      <h3>Waterproofing</h3>{" "}
+        The NHS:{" "}
+        <em>
+          &ldquo;Bedbugs are small insects that often live on furniture or
+          bedding. Their bites can be itchy but do not usually cause other
+          health problems.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.nhs} rel="nofollow">
+          NHS
+        </a>
+        ).
+      </p>
       <p>
-        {" "}
-        Waterproof encasements protect against spills, sweat, and bodily fluids
-        — extending the life of the mattress and maintaining hygiene standards
-        between tenancies. For rental properties, waterproofing is not optional.
-        Look for a waterproof membrane or polypropylene backing that does not
-        compromise breathability or create a noisy, plasticky sleeping
-        surface.{" "}
-      </p>{" "}
-      <h3>UK Sizing Compatibility</h3>{" "}
+        UC IPM, with the one qualification it attaches:{" "}
+        <em>
+          &ldquo;Bed bugs aren&rsquo;t known to spread diseases, but scratching
+          bites can lead to infections.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ).
+      </p>
       <p>
-        {" "}
-        UK mattress sizes differ from US and EU standards. Ensure the encasement
-        is designed for UK dimensions: Single (90x190cm), Double (135x190cm),
-        King (150x200cm), Super King (180x200cm). Measure mattress depth
-        (typically 20–30cm) and match to the encasement depth rating. An
-        encasement that is too shallow will strain the zipper; one that is too
-        deep creates uncomfortable fabric bunching.{" "}
-      </p>{" "}
-      <h3>Machine Washability</h3>{" "}
+        That is the whole of it. There is no symptom list here for anyone to
+        check themselves or a tenant against. A skin question goes to a
+        pharmacist or a GP, not to a page about mattress covers.
+      </p>
+
+      {/* [2] Legal */}
+      <h2 id="legal">The Landlord Position, According to GOV.UK</h2>
       <p>
-        {" "}
-        For rental properties, encasements must be machine washable. Check the
-        maximum wash temperature — higher is better for killing any surface
-        contaminants. Tumble-dry compatibility is a bonus. Avoid encasements
-        that require specialist cleaning, as this makes tenancy turnaround more
-        expensive and time-consuming.{" "}
-      </p>{" "}
-      <h3>Noise and Rustling</h3>{" "}
+        Almost everyone buying from this page is buying for a property someone
+        else lives in. GOV.UK sets out the baseline:{" "}
+        <em>&ldquo;Your landlord is always responsible for repairs to: the property’s structure and exterior&rdquo;</em>{" "}
+        (
+        <a href={SRC.gov} rel="nofollow">
+          GOV.UK
+        </a>
+        ), among the other items on its list.
+      </p>
       <p>
-        {" "}
-        Cheap waterproof encasements can crinkle and rustle when the sleeper
-        moves, generating tenant complaints. Quality products use multi-layer
-        construction that maintains waterproofing without the plasticky feel.
-        The Silentnight and SureGuard products in this guide are specifically
-        designed to be quiet and rustle-free. If you are buying an unfamiliar
-        brand, check reviews specifically for noise complaints.{" "}
-      </p>{" "}
-      <h2 id="roi">ROI: Why Encasements Pay for Themselves</h2>{" "}
-      <div className="not-prose">
-        {" "}
-        <StatCallout
-          value="10x&ndash;30x"
-          label="Return on investment &mdash; an encasement vs &pound;200&ndash;600 mattress replacement plus &pound;200&ndash;400 treatment costs"
-        />{" "}
-      </div>{" "}
+        And where that does not happen:{" "}
+        <em>
+          &ldquo;Contact the environmental health department at your local
+          council for help. They must take action if they think the problems
+          could harm you or cause a nuisance to others.&rdquo;
+        </em>{" "}
+        The same page describes what follows if a home is not fit to live in:{" "}
+        <em>
+          &ldquo;They’ll do a Housing Health and Safety Rating System (HHSRS)
+          assessment and must take action if they think your home has serious
+          health and safety hazards.&rdquo;
+        </em>
+      </p>
       <p>
-        {" "}
-        The financial case for mattress encasements is overwhelming when you
-        look at the numbers:{" "}
-      </p>{" "}
-      <ul>
-        {" "}
+        This site reports what GOV.UK publishes and does not rule on how it
+        applies to your tenancy. A mattress cover is a purchase, not a discharge
+        of a duty.
+      </p>
+
+      {/* [3] Limits */}
+      <h2 id="limits">Where an Encasement Does Not Work</h2>
+      <p>
+        <strong>Everywhere that is not the mattress.</strong> The NHS:{" "}
+        <em>
+          &ldquo;Bedbugs can hide in many places, including on bed frames,
+          mattresses, clothing, furniture, behind pictures and under loose
+          wallpaper.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.nhs} rel="nofollow">
+          NHS
+        </a>
+        ). A cover addresses exactly one item on that list.
+      </p>
+      <p>
+        <strong>As a whole treatment.</strong> UC IPM states that insecticide
+        applications alone will not control a bed bug infestation, and requires
+        them to be combined with cleaning, non-chemical tactics and ongoing
+        detection (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ). If that is true of the insecticides, it is true of a barrier that
+        carries none.
+      </p>
+      <p>
+        <strong>On a bed you have not measured.</strong> Four covers, four depth
+        ranges, and three of the four are stated in inches for US bed sizes.
+        A cover that will not close is not a cover.
+      </p>
+      <p>
+        <strong>Once it is opened.</strong> Containment is the mechanism UC IPM
+        describes, and it stops the moment the zip does.
+      </p>
+      <p>
+        <strong>Where the mattress itself is the wrong target.</strong> UC IPM
+        also notes that pesticides are not generally applied to mattresses or
+        bedding, because of the potential risk to people (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ). A cover is what fills that gap — but only that gap.
+      </p>
+
+      {/* [4] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. What the listing claims, and how strongly</h3>
+      <p>
+        All four covers make a bed bug claim; they are not the same claim. One
+        names a testing laboratory. One states independent lab testing and a
+        third-party certification. One states the seal only in combination with
+        the same maker&rsquo;s box spring cover. One states protection without
+        naming a test. The cards keep those four apart rather than flattening
+        them into a single tick.
+      </p>
+      <h3>2. Sizing, which is where a bulk order goes wrong</h3>
+      <p>
+        Only one of the four is listed in UK dimensions. The others are Queen 60
+        by 80 inches, Double 135 x 190 x 30 cm and 135 x 190 x 20 cm, and a
+        30cm-depth Double. For a landlord ordering for several beds, the depth
+        row is the specification that decides whether the delivery is usable.
+      </p>
+      <h3>3. Whether you are containing or still detecting</h3>
+      <p>
+        UC IPM puts detection traps and encasements in different paragraphs
+        because they do different jobs. If nobody has confirmed there are bed
+        bugs, the interceptors answer that and a cover does not.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>
+            {
+              [
+                "A six-sided zipped cover from a mattress maker rather than a pest brand, listed as fitting depths up to 30cm with a size row of Double. Its maker states protection against bed bugs and dust mites, a waterproof top and sides over a polypropylene backing, and full machine washability. It names no test and no certification, which is a difference from two of the others rather than a fault.",
+                "The only listing here that makes its bed bug claim conditional: its maker states the mattress is sealed from bed bugs when used together with its own box spring encasement. It also states a 100% cotton terry top, independent lab testing and GREENGUARD Gold certification, and a list of what the fabric is free from. Listed in US sizing at Queen, 60 by 80 inches, for a 13 to 16 inch mattress.",
+                "The one card on this page sized for a UK bed: Double, 135 x 190 x 30 cm, with a mini-zipper the maker describes as securing all 360 degrees and a TPU backing on all six sides. Its maker states it repels dust mites and bacteria and describes the fabric as thick knitted polyester. For a landlord buying several, this is the listing whose dimensions need no conversion.",
+                "The listing that names its testing house: its maker states laboratory testing and certification by Laboratoire T.E.C., OEKO-TEX 100 certification and dermatological testing by Dermatest. Its fabric row reads 80% cotton and 20% polyester on top with 100% polyester on the other sides, and its material type row reads Polycotton. Listed at 135 x 190 x 20 cm with other sizes stated as available.",
+                "Not an encasement, and the card says so first. Eight cups that sit under bed and furniture legs, with a target species row of Bed Bug and a listing that states no chemicals or pesticides. Its maker describes bed bugs climbing the textured exterior and being unable to escape the inner reservoir, and states that eight traps cover two beds. UC IPM describes this class as a detection tool and as a temporary exclusion measure.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If a Cover Is Not the Answer</h2>
+      <p>
+        <strong>Replacing the mattress at turnover.</strong> UC IPM names
+        regularly replacing beds, mattresses and bedding materials as a
+        proactive step a manager can take (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ). For an HMO operator that is a scheduling decision rather than a
+        purchase from this page.
+      </p>
+      <p>
+        <strong>Heat.</strong> Our{" "}
+        <a href="/best/professional-bed-bug-steamers">
+          professional bed bug steamers
+        </a>{" "}
+        page covers the steam route, with UC IPM&rsquo;s penetration caveat
+        attached to it.
+      </p>
+      <p>
+        <strong>Treating the room.</strong> Our{" "}
+        <a href="/best/commercial-insect-monitors">
+          commercial bed bug treatment
+        </a>{" "}
+        page covers the sprays and kits, and our{" "}
+        <a href="/best/bed-bug-treatments">bed bug treatments</a> page the
+        consumer versions.
+      </p>
+      <p>
+        <strong>The council or a professional.</strong> The NHS&rsquo;s first
+        instruction, and GOV.UK&rsquo;s route when a repair is not done. Our{" "}
+        <a href="/guides/landlord-pest-control">landlord guide</a> covers the
+        duty side.
+      </p>
+
+      {/* Use and placement */}
+      <h2 id="using">Use and Placement</h2>
+      <ol>
         <li>
-          <strong>Mattress replacement cost:</strong> £200–600 per mattress,
-          depending on quality and size. A king-size mattress in an HMO can
-          easily cost £400 to replace including disposal of the infested one.
-        </li>{" "}
+          <strong>Measure the depth before you order anything.</strong> Every
+          cover here states a depth range and three of the four state it in
+          inches.
+        </li>
         <li>
-          <strong>Professional bed bug treatment:</strong> £200–400 per room for
-          chemical treatment, £300–600 for heat treatment. Multiple rooms
-          multiply the cost proportionally.
-        </li>{" "}
+          <strong>Detect first if nobody has confirmed it.</strong> The
+          interceptors go under all four legs of the bed, per the listing.
+        </li>
         <li>
-          <strong>Lost rental income:</strong> 1–2 weeks of vacancy during
-          treatment and re-inspection. For a room generating £600/month, that is
-          £150–300 in lost income.
-        </li>{" "}
+          <strong>Launder before you seal.</strong> The NHS names a 60C wash and
+          at least 30 minutes in a hot tumble dryer.
+        </li>
         <li>
-          <strong>Encasement cost:</strong> a small fraction of a mattress, per
-          bed. Even at the premium end, encasing ten mattresses costs less than
-          replacing a single infested one.
-        </li>{" "}
-      </ul>{" "}
+          <strong>Close it fully and leave it closed.</strong> Containment ends
+          when the zip opens.
+        </li>
+        <li>
+          <strong>Treat the frame and the room separately.</strong> Bed frames
+          and headboards are on the NHS&rsquo;s own list of hiding places and no
+          mattress cover reaches them.
+        </li>
+      </ol>
+
+      {/* Comparison table — LISTING facts only, "not stated" where absent */}
+      <h2 id="compared">The Five Compared</h2>
       <p>
-        {" "}
-        For a portfolio of 20 rooms, universal encasement is a modest one-off
-        outlay. A single bed bug incident without encasements can cost
-        £1,000–2,000 in mattress replacement, treatment, and lost income. The
-        encasements pay for themselves the first time they prevent — or contain
-        — an infestation.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Beyond the direct cost savings, encasements dramatically simplify
-        treatment if bed bugs do appear. With the mattress sealed, pest
-        controllers can focus on bed frames, skirting boards, and furniture —
-        reducing treatment time and cost by eliminating the need to treat or
-        replace the mattress itself.{" "}
-      </p>{" "}
-      <h2 id="faq">Frequently Asked Questions</h2>{" "}
+        Every column below is what the Amazon listing itself states, with each
+        claim attributed to the maker who makes it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">What it is</th>
+              <th className="text-left p-2 border-b font-semibold">Bed bug claim, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Size and depth, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* FAQ — rendered from the same array the schema above is derived from */}
+      <h2 id="faq">Frequently Asked Questions</h2>
       {faqs.map((f) => (
         <div key={f.q}>
           <h3>{f.q}</h3>
           <p>{f.a}</p>
         </div>
       ))}
-      <p>
-        {" "}
-        For the most effective bed bug prevention, combine encasements with{" "}
-        <a
-          href="/best/professional-bed-bug-steamers"
-          className="text-green-600 hover:underline"
-        >
-          professional bed bug steamers
-        </a>{" "}
-        and a residual{" "}
-        <a
-          href="/best/bed-bug-spray"
-          className="text-green-600 hover:underline"
-        >
-          bed bug spray treatment
-        </a>
-        .{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Also relevant for landlords and property managers: our guide to{" "}
-        <Link
-          href="/best/awaabs-law-damp-mould-equipment"
-          className="text-green-600 hover:underline"
-        >
-          Awaab&apos;s Law damp and mould compliance equipment
-        </Link>
-        .{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Need Professional Bed Bug Treatment?"
-          subtext="For active infestations requiring chemical or heat treatment alongside encasements, find a BPCA-certified bed bug specialist near you"
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-3">
-          Complete your bed bug prevention toolkit
-        </p>{" "}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          {" "}
-          <a
-            href="/best/professional-bed-bug-steamers"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            {" "}
-            Best Bed Bug Steamers →{" "}
-          </a>{" "}
-          <a
-            href="/best/bed-bug-spray"
-            className="inline-block px-6 py-2.5 bg-gray-700 hover:bg-gray-800 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            {" "}
-            Best Bed Bug Sprays →{" "}
-          </a>{" "}
-        </div>{" "}
-      </div>{" "}
+
+      <FindProviderCTA
+        heading="Bed bugs in a let property are the pest the NHS says to get help with"
+        subtext="Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

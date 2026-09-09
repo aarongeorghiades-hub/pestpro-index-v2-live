@@ -1,22 +1,55 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
 
+// S69 R2 — ROLLOUT REBUILD to the R8/R69R1 pattern, on sources. GROUP B.
+//
+// HEALTH STATEMENTS ON THIS PAGE: ZERO, and that is a deliberate outcome rather than an
+// omission. The page previously carried an own-voice paragraph naming Chlamydia
+// psittaci, Cryptococcus neoformans and Histoplasma capsulatum as pathogens in pigeon
+// droppings, plus an own-voice statement of employer duties under COSHH. Neither was
+// sourced. Two CDC pages were attempted this round to source the first properly and BOTH
+// WERE BLOCKED — HTTP 403 with bodies of 424 and 409 bytes, recorded in
+// ~/pp-s69r2/sources/fetch-log.tsv under S45-D and Law 177, each consuming its single
+// permitted attempt. With no body on disk the passage is unsourced, so it is DELETED
+// rather than softened, and no health claim replaces it. A later round may exercise
+// Law 137's one permitted retry on those two URLs.
+//
+// LAW 188 — ONE CARD LABEL DISAGREED WITH ITS OWN h2 AND THE h2 WINS: cardLabel
+// "Best Repair Kit" -> "Best Netting Repair Kit" (h2Label). After the correction the
+// seven labels are all distinct, measured on both label surfaces.
+//
+// AWARD LABELS, RANK NUMERALS AND CARD ORDER ARE OTHERWISE UNCHANGED. Nothing was
+// removed under the mismatch ruling: every listing supports its card's product type.
+//
+// FLAGGED FOR A PM RULING, NOT ACTED ON — LAW 191. Two of the seven cards are deterrent
+// products rather than physical exclusion: the optical gel, whose own title calls it a
+// "Multi-Sensory Bird Repellent", and the ultrasonic repeller. Law 191 says a route
+// carrying such products takes neutral factual card labels and no rank numerals, and the
+// S67 R4/R5 sweep that applied it to six routes was a PM-ruled scoped sweep, route by
+// route. This route was not named in this round's brief and award labels are NEVER TOUCH
+// outside a naming authority, so both labels stand and the question is referred. What
+// this rebuild DOES do without needing that ruling is delete every own-voice claim that
+// either product works, and report the ASA position where it bears.
+//
+// LAW 146 — THE ULTRASONIC LISTING CONTRADICTS ITSELF. Its title reads "Ultrasonic Bird
+// Repeller ... Ultrasonic Dog Repeller" and its target species row reads "Mouse, Rat".
+// Both readings are on the card. S50-H makes the fetched title authoritative for the
+// product's name; it does not resolve the species row, so the row is reported as it is.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Commercial Bird Proofing UK 2026 | Netting & Spikes",
     description:
-      "Commercial bird proofing for UK businesses: heavy-duty netting, stainless steel spikes, bird wire systems, optical gel and solar panel mesh.",
+      "Seven bird proofing products compared on their own listings, with the law on wild birds and the exclusion specs two extensions publish.",
     alternates: {
       canonical: "https://pestproindex.com/best/commercial-bird-proofing",
     },
     openGraph: {
       title: "Best Commercial Bird Proofing UK 2026 | Netting & Spikes",
       description:
-        "Commercial bird proofing for UK businesses: heavy-duty netting, stainless steel spikes, bird wire systems, optical gel and solar panel mesh.",
+        "Seven bird proofing products compared on their own listings, with the law on wild birds and the exclusion specs two extensions publish.",
       url: "https://pestproindex.com/best/commercial-bird-proofing",
       type: "article",
       siteName: "PestPro Index",
@@ -29,19 +62,11 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Commercial Bird Proofing UK 2026 | Netting & Spikes",
   description:
-    "Commercial bird proofing for UK businesses: heavy-duty netting, stainless steel spikes, bird wire systems, optical gel and solar panel mesh.",
+    "Seven bird proofing products compared on their own listings, with the law on wild birds and the exclusion specs two extensions publish.",
   datePublished: "2026-03-18",
-  dateModified: "2026-03-18",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
+  dateModified: "2026-09-09",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://pestproindex.com/best/commercial-bird-proofing",
@@ -52,18 +77,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -71,6 +86,30 @@ const breadcrumbSchema = {
       item: "https://pestproindex.com/best/commercial-bird-proofing",
     },
   ],
+};
+
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194).
+//   www.gov.uk        fetched 2026-09-08, kept at ~/pp-s68r7/sources/gov-wild-birds.src.txt
+//   www.rspb.org.uk   fetched 2026-09-08, kept at ~/pp-s68r7/sources/rspb-wca.src.txt
+//   icwdm.org         fetched 2026-09-09, kept at ~/pp-s69r2/sources/icwdm-pigeons.src.txt
+//   extension.psu.edu fetched 2026-09-09, kept at ~/pp-s69r2/sources/psu-birds-farm-buildings.src.txt
+// All under Law 175.
+//
+// THE TWO US SOURCES ARE US SOURCES (Law 135). Their exclusion specifications are
+// statements about method and are quoted as such. Nothing in either of them about
+// shooting, trapping or toxicants is restated here, because UK law on those points is
+// what the two UK sources above set out, and it is different.
+const SRC = {
+  gov: "https://www.gov.uk/guidance/wild-birds-protection-surveys-and-licences",
+  rspb: "https://www.rspb.org.uk/birds-and-wildlife/wildlife-and-countryside-act",
+  icwdm: "https://icwdm.org/species/birds/pigeons/pigeon-damage-control-and-prevention-methods/",
+  psu: "https://extension.psu.edu/controlling-birds-around-farm-buildings",
+  // Banked at S67 R2, carried forward under Law 175 and NOT re-fetched this round. Its
+  // body and its response headers (HTTP 200, 48,573 bytes, 6 September 2026) are at
+  // ~/pp-s67r2/sources/, and CLAUDE.md records the same URL under Law 191.
+  asa: "https://www.asa.org.uk/advice-online/pest-repellents.html",
 };
 
 type ProductRecord = {
@@ -87,6 +126,12 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Records are addressed BY IDENTITY, never by position (Law 107).
+//
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies at
+// ~/pp-s61r1/uk/, inside the S45-C window. A property is asserted only where the
+// listing's own text states it (S52-E); a cell the listing does not state reads
+// "not stated". Maker self-praise is trimmed and never restated (S47-F).
 const products: ProductRecord[] = [
   {
     anchorId: "best-netting",
@@ -95,85 +140,89 @@ const products: ProductRecord[] = [
     cardName: "Heavy Duty Anti-Pigeon Bird Netting 10m × 20m",
     cardLabel: "Best for Large Areas",
     features: [
-      "Heavy-duty knotted mesh — far stronger than extruded netting",
-      "50mm mesh size — excludes pigeons, gulls, and most pest species",
-      "200 square metres of coverage per roll (10m × 20m)",
-      "UV-stabilised black polyethylene — resists degradation in direct sunlight",
-      "Suitable for warehouses, loading bays, courtyards, and roof voids",
+      "10m by 20m at a 50mm mesh, as listed",
+      "Six-strand knotted polyethylene, UV stabilised, per the maker",
+      "The maker states it will not rot, fade or stretch",
+      "The maker states it is made in Cornwall",
+      "Fixings are not listed as included",
     ],
     tableCells: [
-      "Heavy Duty Anti-Pigeon Bird Netting 10m × 20m",
-      "Knotted mesh netting",
-      "Large Area Exclusion",
+      "Heavy Duty Anti-Pigeon Bird Netting",
+      "Netting",
+      "10m × 20m, 50mm mesh",
+      "Physical exclusion",
     ],
     h2Label: "Best for Large Areas",
     h2Name: "Heavy Duty Anti-Pigeon Bird Netting 10m × 20m",
     tocLabel: "Best for Large Areas",
-    tocName: "Heavy Duty Anti-Pigeon Bird Netting",
+    tocName: "Anti-Pigeon Bird Netting",
   },
   {
-    anchorId: "best-spikes",
+    anchorId: "best-ledges",
     asin: "B0BL7PF3WG",
     rank: 2,
-    cardName: "OFFO Stainless Steel Bird Spikes",
+    cardName: "OFFO Stainless Steel Bird Spikes — 78cm Coverage",
     cardLabel: "Best for Ledges",
     features: [
-      "Stainless steel pins on a stainless steel base — fully corrosion-resistant",
-      "Covers 78cm per strip — link multiple strips for continuous coverage",
-      "Effective against pigeons, seagulls, and crows",
-      "Flexible base conforms to curved surfaces and irregular ledges",
-      "Humane deterrent — prevents landing without harming birds",
+      "78cm of coverage per set, as listed",
+      "The maker gives each spike as 100mm long and each group as 76mm wide",
+      "304 grade stainless steel base and needles, per the maker",
+      "Target species row reads Pigeon",
+      "Listed for window sills, balustrades, roof edges, cornices and air conditioning units",
     ],
     tableCells: [
       "OFFO Stainless Steel Bird Spikes",
-      "Spike strip",
-      "Ledges & Sills",
+      "Ledge spikes",
+      "78cm coverage; 100mm spikes, 76mm wide",
+      "Physical exclusion",
     ],
     h2Label: "Best for Ledges",
     h2Name: "OFFO Stainless Steel Bird Spikes",
     tocLabel: "Best for Ledges",
-    tocName: "OFFO Stainless Steel Bird Spikes",
+    tocName: "OFFO Bird Spikes",
   },
   {
     anchorId: "best-wire",
     asin: "B07L435L3F",
     rank: 3,
-    cardName: "Birdgo Pigeon Post & Pad Kit (10 × 90mm)",
+    cardName: "10 x 90mm Pigeon Post & Pad Kit for Bird Wire",
     cardLabel: "Best Wire System",
     features: [
-      "10 stainless steel posts with adhesive pads — no drilling required",
-      "90mm post height — standard specification for pigeon deterrence",
-      "Designed for post-and-wire bird deterrent installations",
-      "Suitable for fencing, parapets, ledges, and non-drill surfaces",
-      "Used by professional pest controllers as part of wire systems",
+      "Ten 90mm posts with pads, for bird wire where drilling is not possible",
+      "The maker states fixings are NOT included in the kit",
+      "The maker states the system is designed for light perching of pigeons only",
+      "The maker states it should not be used where pigeons are active overnight",
+      "The maker recommends 90mm at the front leading edge and 130mm for intermediary rows",
     ],
     tableCells: [
-      "Birdgo Pigeon Post & Pad Kit",
-      "Wire system posts",
-      "Architectural Applications",
+      "10 x 90mm Pigeon Post & Pad Kit",
+      "Bird wire support posts",
+      "10 posts at 90mm; wire, fixings not included",
+      "Physical exclusion, light perching only per the maker",
     ],
     h2Label: "Best Wire System",
-    h2Name: "Birdgo Pigeon Post & Pad Kit",
+    h2Name: "10 x 90mm Pigeon Post & Pad Kit",
     tocLabel: "Best Wire System",
-    tocName: "Birdgo Pigeon Post & Pad Kit",
+    tocName: "Pigeon Post & Pad Kit",
   },
   {
-    anchorId: "best-gel",
+    anchorId: "best-discreet",
     asin: "B01MQSRJQ6",
     rank: 4,
     cardName: "Bird Barrier Optical Gel (24 Pack)",
     cardLabel: "Best Discreet Deterrent",
     features: [
-      "Multi-sensory deterrent — visual, olfactory, and tactile",
-      "Appears as flames to birds through UV vision — immediate avoidance response",
-      "Contains peppermint and citronella oils — scent-based secondary deterrent",
-      "24 pre-filled dishes for rapid installation on ledges and flat surfaces",
-      "Virtually invisible to humans — ideal for heritage and customer-facing buildings",
+      "24 gel discs, mounted with an adhesive dab, no tools per the maker",
+      "The maker gives the ingredients as citronella, mint oil, agar and beeswax",
+      "Target species row reads Birds",
+      "Listed for roofs, balconies, railings and HVAC units",
+      "A deterrent rather than a barrier: it does not physically exclude anything",
     ],
     tableCells: [
       "Bird Barrier Optical Gel (24 Pack)",
-      "Multi-sensory gel",
-      "Listed & Heritage Buildings",
+      "Deterrent gel discs",
+      "24 discs; citronella, mint oil, agar, beeswax",
+      "Deterrent — see the ASA position below",
     ],
     h2Label: "Best Discreet Deterrent",
     h2Name: "Bird Barrier Optical Gel (24 Pack)",
@@ -184,155 +233,152 @@ const products: ProductRecord[] = [
     anchorId: "best-solar",
     asin: "B081CXWXQH",
     rank: 5,
-    cardName: "Birdgo Bird Proofing Mesh & 60 Fixing Clip Kit",
+    cardName: "Bird Proofing Mesh & 60 Fixing Clip Kit for Solar Panels (30m)",
     cardLabel: "Best for Solar Panels",
     features: [
-      "Complete kit: 30m PVC-coated galvanised mesh + 60 nylon clips",
-      "No-drill nylon clips attach to solar panel frame lip (min 20mm)",
-      "PVC coating prevents corrosion and protects panel frames from scratching",
-      "Prevents pigeons nesting under solar panels — a major UK problem",
-      "Cable ties included for joining corners and securing mesh edges",
+      "One roll of PVC-coated galvanised mesh, 0.2m high by 30m long, as listed",
+      "60 nylon solar clips included, per the listing",
+      "The maker states it is fitted around the perimeter of the panel system",
+      "Listed for domestic and commercial roofs",
+      "The maker describes it as a heavy-duty exclusion barrier",
     ],
     tableCells: [
-      "Birdgo Bird Proofing Mesh & 60 Clip Kit",
-      "PVC-coated mesh",
-      "Solar Panel Protection",
+      "Bird Proofing Mesh & 60 Clip Kit",
+      "Solar panel perimeter mesh",
+      "0.2m × 30m mesh, 60 clips",
+      "Physical exclusion",
     ],
     h2Label: "Best for Solar Panels",
-    h2Name: "Birdgo Bird Proofing Mesh & 60 Fixing Clip Kit",
+    h2Name: "Bird Proofing Mesh & 60 Fixing Clip Kit",
     tocLabel: "Best for Solar Panels",
-    tocName: "Birdgo Bird Proofing Mesh Kit",
+    tocName: "Solar Panel Bird Mesh Kit",
   },
   {
     anchorId: "best-repair",
     asin: "B07KX4CX4J",
     rank: 6,
-    cardName: "Birdgo 100 Nylon Plastic Net Hooks",
-    cardLabel: "Best Repair Kit",
+    cardName: "100 Nylon Net Hooks for Bird Netting Access & Repair",
+    cardLabel: "Best Netting Repair Kit",
     features: [
-      "100 nylon net hooks for bird control netting fixing and repair",
-      "Compatible with standard 50mm and 75mm commercial bird netting",
-      "UV-stabilised nylon construction for long outdoor life",
-      "Essential for maintaining existing netting installations",
-      "Can also be used for initial netting installations on wire rope",
+      "100 hooks per pack, as listed",
+      "UV-stabilised nylon plastic, listed as suitable for external installation",
+      "The maker states they suit all net sizes including 19mm, 28mm and 50mm",
+      "Listed for creating access into netting and for temporary repair",
+      "Not a standalone product: it is a fitting for netting you already have",
     ],
     tableCells: [
-      "Birdgo 100 Nylon Net Hooks",
-      "Repair kit",
-      "Netting Maintenance",
+      "100 Nylon Net Hooks",
+      "Netting access and repair fitting",
+      "100 hooks; 19mm, 28mm and 50mm nets, per the maker",
+      "Physical exclusion accessory",
     ],
     h2Label: "Best Netting Repair Kit",
-    h2Name: "Birdgo 100 Nylon Net Hooks",
+    h2Name: "100 Nylon Net Hooks",
     tocLabel: "Best Netting Repair Kit",
-    tocName: "Birdgo 100 Nylon Net Hooks",
+    tocName: "Nylon Net Hooks",
   },
   {
-    anchorId: "best-ultrasonic",
+    anchorId: "best-electronic",
     asin: "B0157D7CXW",
     rank: 7,
-    cardName: "Ultrasonic Bird Repeller — 4 Speaker, UK Made",
+    cardName: "BCT Ultrasonic Bird Repeller — 4 Speaker, Multi Frequency",
     cardLabel: "Best Electronic Deterrent",
     features: [
-      "Multi-frequency ultrasonic output from 4 speakers",
-      "Waterproof construction for indoor and outdoor use",
-      "UK manufactured with UK plug and safety certification",
-      "Supplementary deterrent for use alongside physical barriers",
-      "Adjustable frequency settings for different bird species",
+      "Four speakers, frequency listed as adjustable from 8kHz to 40kHz",
+      "Waterproof, listed for indoor and outdoor use, with a 12VDC adaptor and 10m lead",
+      "Its title names birds and dogs; its target species row reads Mouse, Rat",
+      "The maker states it can be used for a variety of animal repelling",
+      "A deterrent rather than a barrier: it does not physically exclude anything",
     ],
     tableCells: [
-      "Ultrasonic Bird Repeller (UK Made)",
-      "Electronic deterrent",
-      "Supplementary Coverage",
+      "BCT Ultrasonic Bird Repeller",
+      "Ultrasonic deterrent",
+      "4 speakers, 8kHz–40kHz, 12VDC",
+      "Deterrent — see the ASA position below",
     ],
     h2Label: "Best Electronic Deterrent",
-    h2Name: "Ultrasonic Bird Repeller (UK Made)",
+    h2Name: "BCT Ultrasonic Bird Repeller",
     tocLabel: "Best Electronic Deterrent",
-    tocName: "Ultrasonic Bird Repeller",
+    tocName: "BCT Ultrasonic Bird Repeller",
   },
 ];
 
-const tocItems = [
-  { id: "at-a-glance", title: "Best Commercial Bird Proofing at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
+const faqs = [
+  {
+    q: "Is it legal to proof a building against birds?",
+    a: "GOV.UK states that all wild bird species, their eggs and nests are protected by law, and that you must always try to avoid harming birds or use measures which do not kill or injure them before considering taking harmful action. Physical exclusion fitted outside the breeding season is the ordinary way of doing that. This site reports what GOV.UK and the RSPB publish and does not rule on your particular building.",
+  },
+  {
+    q: "What if there is already a nest?",
+    a: "The RSPB states that the Wildlife and Countryside Act 1981 makes it illegal, subject to certain exceptions, to intentionally take, damage or destroy the nest of any wild bird while it is in use or being built. That is a reason to survey before installation, not after.",
+  },
+  {
+    q: "Does this page carry a health warning about droppings?",
+    a: "No, and the reason is worth stating. An earlier version of this page named three pathogens and asserted an employer duty, with no source behind either. Two attempts were made this round to source the health question properly from the CDC and both were blocked. With nothing on disk to quote, the passage was deleted rather than reworded. Anything about your own health belongs with a pharmacist or a GP, and any duty question with a competent adviser.",
+  },
+  {
+    q: "How big should the mesh be?",
+    a: "The Internet Center for Wildlife Damage Management writes that openings to lofts, steeples, vents and eaves should be blocked with wood, metal, glass, masonry, quarter-inch rust-proofed wire mesh, or plastic or nylon netting, and that ornamental architecture can be screened with 1-inch mesh polypropylene UV-stabilised netting to prevent roosting, loafing and nesting. The netting carded here is a 50mm mesh, which is roughly 2 inches — sized for pigeons rather than for smaller birds.",
+  },
+  {
+    q: "Do spikes work on every bird?",
+    a: "Penn State Extension says not: these materials are not effective against smaller birds, such as house sparrows, because the birds can fit between the points and use the site for nesting. If the birds on your ledge are small, spikes may give you a nesting site with a frame around it.",
+  },
+  {
+    q: "Is there a cheaper alternative to any of this?",
+    a: "Penn State Extension names one that costs nothing to specify: change the angle of the roosting ledge to at least 45 degrees, fitting slanted metal or wooden boards. It is a fabrication job rather than a purchase, and on a ledge you are already scaffolding for it may be the cheaper answer.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
   })),
-  { id: "buying-guide", title: "Commercial Bird Proofing Buying Guide" },
-  { id: "when-to-call", title: "When to Contact a Bird Control Specialist" },
+};
+
+const tocItems = [
+  { id: "situation", title: "Exclusion Is the Method" },
+  { id: "legal", title: "The Legal Position on Wild Birds" },
+  { id: "limits", title: "Where Bird Proofing Does Not Work" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Product Is Not the Answer" },
+  { id: "using", title: "Use and Placement" },
+  { id: "compared", title: "The Seven Compared" },
 ];
 
 export default function BestCommercialBirdProofingPage() {
   return (
     <GuideLayout
-      title="Best Commercial Bird Proofing UK 2026: Netting, Spikes & Wire Systems"
-      subtitle="Our pick of commercial bird proofing products for UK businesses — heavy-duty netting, stainless steel spikes, bird wire systems, optical gel, and solar panel mesh compared."
-      lastUpdated="March 2026"
-      readingTime="14 min"
+      title="Best Commercial Bird Proofing UK 2026: Netting, Spikes &amp; Wire Systems"
+      subtitle="Five physical exclusion products and two deterrents, described by what their own listings state — beside GOV.UK and the RSPB on what the law protects and two extension services on how exclusion is specified"
+      lastUpdated="September 2026"
+      readingTime="9 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "Pigeon Control: Complete UK Guide",
-          href: "/guides/pigeon-control",
-        },
-        {
-          title: "Restaurant Pest Control: Complete UK Guide",
-          href: "/guides/restaurant-pest-control",
-        },
-        {
-          title: "Warehouse Pest Management",
-          href: "/guides/warehouse-pest-management",
-        },
-        { title: "Hotel Pest Control", href: "/guides/hotel-pest-control" },
-        { title: "Office Pest Control", href: "/guides/office-pest-control" },
-        {
-          title: "Landlord Pest Control",
-          href: "/guides/landlord-pest-control",
-        },
-        {
-          title: "Commercial Pest Control Hub",
-          href: "/guides/commercial-pest-control",
-        },
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
+        { title: "Pigeon Control: Complete UK Guide", href: "/guides/pigeon-control" },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
+        { title: "Landlord Pest Control Responsibilities", href: "/guides/landlord-pest-control" },
       ]}
       relatedProducts={[
-        {
-          title: "Best Bird Deterrents UK 2026",
-          href: "/best/bird-deterrents",
-        },
-        {
-          title: "Best Commercial Fly Killers UK 2026",
-          href: "/best/commercial-fly-killers",
-        },
-        {
-          title: "Best Commercial Rodent Bait Stations",
-          href: "/best/commercial-rodent-bait-stations",
-        },
-        {
-          title: "Best Commercial Insect Monitors",
-          href: "/best/commercial-insect-monitors",
-        },
-        { title: "Best Rat Traps UK 2026", href: "/best/rat-traps" },
-        { title: "Best Mouse Traps UK 2026", href: "/best/mouse-traps" },
-        {
-          title: "Best Squirrel Deterrents UK 2026",
-          href: "/best/squirrel-deterrents",
-        },
+        { title: "Best Professional Bird Netting UK 2026", href: "/best/professional-bird-netting-kits" },
+        { title: "Best Pigeon Spikes UK 2026", href: "/best/pigeon-spikes" },
+        { title: "Best Bird Deterrents UK 2026", href: "/best/bird-deterrents" },
+        { title: "Best Ultrasonic Pest Repellers UK 2026", href: "/best/ultrasonic-pest-repellers" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
         <p className="text-sm text-amber-800">
@@ -344,717 +390,372 @@ export default function BestCommercialBirdProofingPage() {
         </p>
       </div>
 
-      {/* Back to Commercial Hub */}
-      <div className="not-prose my-8 p-6 bg-purple-50 border border-purple-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">
-          Part of our Commercial Pest Control series
-        </p>
-        <p className="text-gray-700 mb-3">
-          This is one of our commercial pest control equipment guides. Visit the
-          hub for all commercial guides, sector-specific compliance resources,
-          and more product guides.
-        </p>
-        <a
-          href="/guides/commercial-pest-control"
-          className="inline-block px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          Commercial Pest Control Hub &rarr;
-        </a>
-      </div>
+      <p>
+        Seven products, and the important division is not price. Five are
+        physical barriers that stop a bird landing or entering. Two are
+        deterrents that ask a bird to go somewhere else. The law that governs
+        all of this is the same either way, and it comes first.
+      </p>
 
-      {/* Intro paragraphs */}
-      <p>
-        Bird infestations on commercial premises are one of the most common and
-        costly pest problems faced by UK businesses. Pigeons, gulls, starlings,
-        and house sparrows cause millions of pounds in damage annually through
-        fouling, nesting debris, blocked gutters, corroded building materials,
-        and contamination of stock and food preparation areas. For food
-        businesses subject to Environmental Health Officer (EHO) inspections,
-        evidence of bird fouling in or near food handling areas is a serious
-        compliance failure that can result in enforcement action, reduced food
-        hygiene ratings, and prosecution under the Food Safety Act 1990.
-        Warehouses and distribution centres face additional risks: bird
-        droppings on stored goods render stock unsaleable and create slip
-        hazards for staff, while nesting material in roof voids and guttering
-        causes drainage blockages that lead to water damage and structural
-        deterioration.
-      </p>
-      <p>
-        Beyond the direct physical damage, bird infestations carry significant
-        health risks. Pigeon droppings harbour <em>Chlamydia psittaci</em>{" "}
-        (psittacosis), <em>Cryptococcus neoformans</em> (cryptococcosis), and{" "}
-        <em>Histoplasma capsulatum</em> (histoplasmosis) &mdash; respiratory
-        pathogens that pose a genuine occupational health risk to employees who
-        work in or near areas with accumulated guano. Under the Health and
-        Safety at Work Act 1974 and the Control of Substances Hazardous to
-        Health (COSHH) Regulations 2002, employers have a legal duty to assess
-        and control these biological hazards. The cost of professional guano
-        removal from a commercial roof or loading bay typically runs into
-        thousands of pounds, making proactive bird proofing the far more
-        cost-effective strategy.
-      </p>
-      <p>
-        The products on this page represent the main categories of commercial
-        bird proofing equipment available to UK businesses: heavy-duty netting
-        for complete area exclusion, stainless steel spike systems for ledge and
-        sill protection, post-and-wire deterrent systems for architectural
-        applications, optical gel for discreet placement on historic or listed
-        buildings, solar panel mesh kits for an increasingly common bird
-        harbourage issue, and netting repair components for maintaining existing
-        installations. We have also included an ultrasonic deterrent for
-        supplementary coverage. Each product is described by its suitability for
-        different commercial environments, durability under UK weather
-        conditions, compliance with the Wildlife and Countryside Act 1981, and
-        overall value for money. For residential bird deterrent options, see our
-        companion guide:{" "}
-        <Link
-          href="/best/bird-deterrents"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          Best Bird Deterrents UK 2026
-        </Link>
-        . For a broader guide to pigeon control methods, read our{" "}
-        <Link
-          href="/guides/pigeon-control"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          Pigeon Control: Complete UK Guide
-        </Link>
-        .
-      </p>
+      {/* DECISION BLOCK — situation first, product second. The legal line and the
+          does-not-work line sit ABOVE every product line. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>There may be a nest.</strong>{" "}
+            <a href="#legal" className="underline">
+              The legal position
+            </a>{" "}
+            decides whether you can start at all, and it comes before any
+            product.
+          </li>
+          <li>
+            <strong>The birds on your ledge are small.</strong>{" "}
+            <a href="#limits" className="underline">
+              Where bird proofing does not work
+            </a>{" "}
+            — Penn State Extension is explicit that spikes are not for them.
+          </li>
+          <li>
+            <strong>You are closing a large open area.</strong>{" "}
+            <a href="#best-netting" className="underline">
+              The 10m by 20m netting
+            </a>{" "}
+            at a 50mm mesh.
+          </li>
+          <li>
+            <strong>You are proofing a ledge or a parapet.</strong>{" "}
+            <a href="#best-ledges" className="underline">
+              The spikes
+            </a>{" "}
+            or{" "}
+            <a href="#best-wire" className="underline">
+              the post and wire kit
+            </a>
+            , with the wire kit's own light-perching caveat.
+          </li>
+          <li>
+            <strong>Pigeons are nesting under solar panels.</strong>{" "}
+            <a href="#best-solar" className="underline">
+              The perimeter mesh kit
+            </a>{" "}
+            is built for exactly that.
+          </li>
+        </ul>
+      </div>
 
       <div className="not-prose">
         <Callout type="warning">
           <p>
-            <strong>Wildlife and Countryside Act 1981:</strong> All wild birds,
-            their nests, and eggs are protected by law in the UK. It is a
-            criminal offence to kill or injure any wild bird, or to damage or
-            destroy an active nest, without a specific licence from Natural
-            England (or equivalent devolved body). Bird proofing must be
-            installed <strong>before</strong> birds begin nesting &mdash;
-            typically before March &mdash; or after nests are confirmed
-            inactive. Always check for active nests before installing any
-            deterrent system. Penalties include unlimited fines and up to six
-            months&apos; imprisonment.
+            GOV.UK states that all wild bird species, their eggs and nests are
+            protected by law. Survey before you fit anything, and read the legal
+            section below before ordering.
           </p>
         </Callout>
       </div>
 
+      {/* [0] Situation */}
+      <h2 id="situation">Exclusion Is the Method</h2>
       <p>
-        We selected these commercial bird proofing products on published
-        specifications and manufacturer information, weighing durability in UK
-        weather, coverage per unit, and suitability for the building surfaces
-        they are most often fitted to.
+        Both extension services read for this page put physical exclusion first
+        and the specification in numbers. The Internet Center for Wildlife
+        Damage Management:{" "}
+        <em>
+          &ldquo;Openings to lofts, steeples, vents, and eaves should be blocked
+          with wood, metal, glass, masonry, 1/4-inch (0.6-cm) rust-proofed wire
+          mesh, or plastic or nylon netting.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.icwdm} rel="nofollow">
+          ICWDM
+        </a>
+        ).
+      </p>
+      <p>
+        And for open architecture rather than a hole:{" "}
+        <em>
+          &ldquo;Ornamental architecture can be screened with 1-inch (2.5-cm)
+          mesh polypropylene u.v.-stabilized netting to prevent roosting,
+          loafing, and nesting.&rdquo;
+        </em>{" "}
+        The netting carded here is 50mm, which is about two inches — a pigeon
+        mesh, not a small-bird mesh, and the comparison table states it.
+      </p>
+      <p>
+        Penn State Extension states the same order of operations:{" "}
+        <em>&ldquo;Exclude birds from roosting sites by covering the undersides of the rafters with netting.&rdquo;</em>{" "}
+        (
+        <a href={SRC.psu} rel="nofollow">
+          Penn State Extension
+        </a>
+        ). Both are US publications and their specifications are quoted as
+        statements about method, not about UK law.
       </p>
 
-      {/* At a Glance */}
-      <h2 id="at-a-glance">Best Commercial Bird Proofing at a Glance</h2>
+      {/* [1] Legal */}
+      <h2 id="legal">The Legal Position on Wild Birds</h2>
       <p>
-        Below is a quick comparison of our seven recommended commercial bird
-        proofing products. Each serves a different purpose, so the best option
-        for your premises depends on the species causing the problem, the areas
-        affected, and whether you need total exclusion or visual deterrence.
-        Full details of every product follow below.
+        GOV.UK states the protection in one sentence:{" "}
+        <em>&ldquo;All wild bird species, their eggs and nests are protected by law.&rdquo;</em>{" "}
+        (
+        <a href={SRC.gov} rel="nofollow">
+          GOV.UK
+        </a>
+        ). And the order it expects:{" "}
+        <em>
+          &ldquo;You must always try to avoid harming birds or to use measures
+          which do not kill or injure them before considering taking harmful
+          action.&rdquo;
+        </em>{" "}
+        Every physical barrier on this page is a measure of that kind.
       </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Type</th>
-            <th>Best For</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
+      <p>
+        The RSPB sets out the statute:{" "}
+        <em>&ldquo;This act offers protection to wild birds, their eggs and nests in England, Scotland and Wales.&rdquo;</em>{" "}
+        (
+        <a href={SRC.rspb} rel="nofollow">
+          RSPB
+        </a>
+        ). Among the things it says the Wildlife and Countryside Act 1981 makes
+        illegal, subject to certain exceptions:{" "}
+        <em>&ldquo;Intentionally take, damage or destroy the nest of any wild bird while it is in use or being built.&rdquo;</em>{" "}
+        and{" "}
+        <em>&ldquo;Use traps, poison or similar items to kill, injure or take wild birds.&rdquo;</em>
+      </p>
+      <p>
+        The practical consequence for a building owner is a survey before
+        installation rather than after. Netting fitted over an active nest is
+        not a proofing job; it is the thing the statute names. This site reports
+        what GOV.UK and the RSPB publish and does not rule on any particular
+        building.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where Bird Proofing Does Not Work</h2>
+      <p>
+        <strong>Spikes, against small birds.</strong> Penn State Extension:{" "}
+        <em>
+          &ldquo;These materials are not effective against smaller birds, such
+          as house sparrows, because the birds can fit between the points and
+          use the site for nesting.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.psu} rel="nofollow">
+          Penn State Extension
+        </a>
+        ). A spike strip fitted against sparrows can end up holding the nest.
+      </p>
+      <p>
+        <strong>Bird wire, where the pressure is heavy.</strong> The post and
+        pad kit&rsquo;s own maker states the system is designed for light
+        perching of pigeons only and should not be used in areas where pigeons
+        are active overnight. That is the maker limiting its own product, and it
+        is on the card.
+      </p>
+      <p>
+        <strong>Wire and spikes, once they silt up.</strong> ICWDM:{" "}
+        <em>
+          &ldquo;Sometimes pigeons and sparrows cover the wires with nesting
+          material or droppings, which requires occasional removal.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.icwdm} rel="nofollow">
+          ICWDM
+        </a>
+        ). A proofing installation is a maintenance item, not a one-off.
+      </p>
+      <p>
+        <strong>The two deterrents, on the evidence.</strong> The ASA, writing
+        about pest repellent devices it has examined with independent experts:{" "}
+        <em>&ldquo;It has yet to accept any claim of efficacy.&rdquo;</em> (
+        <a href={SRC.asa} rel="nofollow">
+          ASA
+        </a>
+        ). And on what a seller may say:{" "}
+        <em>
+          &ldquo;Marketers who do not hold evidence in the form of UK-based
+          trials should not state or imply efficacy for the products, through
+          either claims, visuals or product names.&rdquo;
+        </em>{" "}
+        Two products here are deterrents rather than barriers — the optical gel
+        and the ultrasonic unit — and this page makes no claim that either
+        works. Reporting that position is not the same as saying the products do
+        not work, which is equally not ours to say.
+      </p>
+      <p>
+        <strong>A mesh sized for the wrong bird.</strong> ICWDM specifies
+        quarter-inch mesh for closing openings and 1-inch netting for screening
+        architecture. A 50mm mesh excludes a pigeon and admits a sparrow.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Barrier or deterrent</h3>
+      <p>
+        Five of these seven physically prevent a bird landing or entering. Two
+        ask it not to. GOV.UK&rsquo;s instruction to use measures which do not
+        kill or injure covers both, but only one kind has a specification you
+        can check against a source.
+      </p>
+      <h3>2. Mesh and spacing, against the bird you actually have</h3>
+      <p>
+        ICWDM gives quarter-inch mesh for openings and 1-inch netting for
+        ornamental architecture; Penn State gives at least 45 degrees for a
+        modified ledge. The netting here is 50mm and the spikes are 100mm long
+        in 76mm groups. Those are the numbers to hold against the two sources
+        before ordering.
+      </p>
+      <h3>3. What the kit does not include</h3>
+      <p>
+        The netting listing does not list fixings. The post and pad kit states
+        explicitly that fixings are not included, and it is posts and pads
+        rather than wire. The net hooks are a fitting for netting you already
+        own. Three of the seven are components rather than complete
+        installations, and the cards say which.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>
+            {
+              [
+                "Two hundred square metres of six-strand knotted polyethylene at a 50mm mesh, UV stabilised, with the maker stating it will not rot, fade or stretch and that it is made in Cornwall. Held against ICWDM's specifications this is a pigeon mesh: it is roughly twice the 1-inch netting that source gives for screening architecture, and eight times the quarter-inch mesh it gives for closing an opening. No fixings are listed as included.",
+                "A 78cm run per set in 304 grade stainless steel, with each spike listed at 100mm long and each group at 76mm wide, and a target species row of Pigeon. Its maker lists window sills, balustrades, roof edges, cornices and air conditioning units. Penn State Extension's caveat about smaller birds applies to this class of product and is quoted in full above.",
+                "Ten 90mm posts with pads for installing bird wire where drilling is not an option. Read the maker's own three limits before ordering: fixings are not included, the system is designed for light perching of pigeons only, and it should not be used in areas where pigeons are active overnight. The maker recommends 90mm at the front leading edge with 130mm for intermediary rows.",
+                "Twenty-four gel discs mounted with an adhesive dab, with the ingredients given by the maker as citronella, mint oil, agar and beeswax and a target species row of Birds. It is a deterrent, not a barrier: nothing about it physically prevents a bird landing. The ASA and CAP position on efficacy claims for pest repellent devices is set out in the limits section above and this page makes no claim about this product's effect.",
+                "A 30 metre roll of PVC-coated galvanised mesh, 0.2m high, with 60 nylon clips, made for the one gap that is hard to close any other way: the perimeter under a roof solar array. The maker describes fitting it around the panel edge with the supplied clips, on domestic and commercial roofs. It is a barrier and its specification is a stated height and length rather than a claim.",
+                "Not a product on its own: 100 UV-stabilised nylon hooks used to create access into netting already installed, or to attach netting to a wireframe, with the maker stating they suit 19mm, 28mm and 50mm nets. It is on this page because a netting installation that cannot be opened is a netting installation that gets cut, and the card says plainly what it is.",
+                "Four speakers with a frequency the maker gives as adjustable from 8kHz to 40kHz, waterproof, supplied with a 12VDC adaptor and a 10 metre lead. Its listing cannot agree with itself on the target: the title names birds and dogs while the target species row reads Mouse, Rat. It is a deterrent rather than a barrier, and the ASA and CAP position quoted above bears on it directly; this page makes no claim that it works.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If a Product Is Not the Answer</h2>
+      <p>
+        <strong>Change the ledge instead of arming it.</strong> Penn State
+        Extension:{" "}
+        <em>&ldquo;Change the angle of the roosting ledge to at least 45 degrees.&rdquo;</em>{" "}
+        (
+        <a href={SRC.psu} rel="nofollow">
+          Penn State Extension
+        </a>
+        ). Slanted metal or wooden boards at that angle, which is fabrication
+        rather than a purchase.
+      </p>
+      <p>
+        <strong>Close the opening rather than screen the face.</strong> ICWDM
+        puts blocking lofts, steeples, vents and eaves ahead of everything else,
+        with a quarter-inch rust-proofed mesh.
+      </p>
+      <p>
+        <strong>Remove what is attracting them.</strong> ICWDM&rsquo;s own list
+        starts with removing bird feeders, discouraging public feeding and
+        eliminating standing water. On a commercial site that is a bin and
+        catering question before it is a hardware one.
+      </p>
+      <p>
+        <strong>Other routes on this site.</strong> Our{" "}
+        <a href="/best/professional-bird-netting-kits">
+          professional bird netting
+        </a>{" "}
+        page covers netting systems in more depth, our{" "}
+        <a href="/best/pigeon-spikes">pigeon spikes</a> page covers spikes, and
+        our <a href="/guides/pigeon-control">pigeon control guide</a> covers the
+        building rather than the product.
+      </p>
+
+      {/* Use and placement */}
+      <h2 id="using">Use and Placement</h2>
+      <ol>
+        <li>
+          <strong>Survey for nests first.</strong> The RSPB names an active or
+          part-built nest as protected, and that governs whether the job can
+          start at all.
+        </li>
+        <li>
+          <strong>Identify the bird before you pick the mesh.</strong>{" "}
+          Quarter-inch for openings, 1-inch for architecture, per ICWDM; the
+          50mm netting here is for pigeons.
+        </li>
+        <li>
+          <strong>Buy the fixings separately.</strong> Two of these seven state
+          or imply that fixings are not in the box.
+        </li>
+        <li>
+          <strong>Prepare the surface for anything adhesive.</strong> The post
+          and pad maker recommends a surface cleaner to remove grease and oils
+          before bonding.
+        </li>
+        <li>
+          <strong>Put it on the maintenance schedule.</strong> ICWDM notes that
+          wires silt up with nesting material and droppings and need occasional
+          clearing.
+        </li>
+      </ol>
+
+      {/* Comparison table — LISTING facts only, "not stated" where absent */}
+      <h2 id="compared">The Seven Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        claim attributed to the maker who makes it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Size and specification, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Barrier or deterrent</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-
-      {/* Product 1: Bird Netting */}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />
-      </div>
-      <p>
-        When you need to exclude birds from a large open area &mdash; a
-        warehouse loading bay, an internal courtyard, a car park canopy, or a
-        covered walkway &mdash; heavy-duty knotted mesh netting is the industry
-        standard solution used by professional pest control companies across the
-        UK. This 10m &times; 20m roll provides 200 square metres of coverage,
-        which is enough to net a substantial commercial space in a single
-        installation. The 50mm mesh size is the standard specification
-        recommended by the British Pest Control Association (BPCA) for pigeon
-        exclusion: large enough to allow rainwater, light, and airflow through
-        the mesh, but too small for pigeons, feral pigeons, and most gulls to
-        pass through. For smaller species such as starlings or sparrows, 28mm
-        mesh would be required.
-      </p>
-      <p>
-        The knotted construction is a critical quality indicator. Cheaper
-        extruded (non-knotted) netting stretches and sags under its own weight
-        over time, creating gaps that birds quickly exploit. Knotted mesh
-        maintains its structural integrity far longer, resists tearing at fixing
-        points, and withstands the wind loading that is inevitable on exposed
-        commercial buildings. The UV-stabilised black polyethylene material is
-        designed to resist degradation from direct sunlight &mdash; a common
-        failure point for cheaper netting that becomes brittle and disintegrates
-        within two to three years of outdoor installation. A quality knotted net
-        installed correctly should last five to ten years before requiring
-        replacement.
-      </p>
-      <p>
-        Installation requires a perimeter fixing system &mdash; typically
-        stainless steel wire rope tensioned between eye bolts or masonry fixings
-        around the area to be protected. The netting is then attached to the
-        wire rope using hog rings or cable ties at regular intervals. While it
-        is possible to install netting as a DIY project on smaller areas,
-        professional installation is strongly recommended for large commercial
-        spaces: incorrect tensioning is the most common cause of premature
-        netting failure, and a poorly installed net that sags or develops gaps
-        provides zero bird exclusion while still costing money to install.
-      </p>
-      <p>
-        <strong>Pros:</strong> 200 sqm coverage per roll; knotted construction
-        resists sagging and tearing; 50mm mesh is the BPCA standard for pigeon
-        exclusion; UV-stabilised for long outdoor life; excellent value per
-        square metre.
-      </p>
-      <p>
-        <strong>Cons:</strong> Requires a perimeter wire fixing system (not
-        included); professional installation recommended for large areas; 50mm
-        mesh will not exclude starlings or sparrows; black colour may be visible
-        against light-coloured facades.
-      </p>
-
-      {/* Product 2: Stainless Steel Spikes */}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />
-      </div>
-      <p>
-        Bird spikes are the most widely used ledge deterrent in the UK
-        commercial pest control industry, and for good reason: they are
-        effective, durable, relatively simple to install, and provide a visible,
-        long-term deterrent that requires virtually no maintenance once fitted.
-        The OFFO Stainless Steel Bird Spikes represent a significant upgrade
-        over the polycarbonate-based spike strips that dominate the budget end
-        of the market. The pins and base are both manufactured from stainless
-        steel, which provides complete corrosion resistance &mdash; essential
-        for UK commercial buildings exposed to rain, coastal salt air, and the
-        acidic compounds in bird droppings that rapidly degrade plastic and mild
-        steel alternatives.
-      </p>
-      <p>
-        Each strip covers 78cm of ledge, and multiple strips can be linked
-        end-to-end for continuous coverage along parapets, window sills,
-        signage, pipework, and other horizontal surfaces where birds perch and
-        roost. The flexible base design allows the strips to conform to curved
-        surfaces, guttering profiles, and irregular architectural features that
-        rigid spike systems cannot accommodate. The pin configuration is
-        designed to prevent pigeons, seagulls, and crows from landing &mdash;
-        the spikes do not harm the birds but make it physically impossible for
-        them to find a stable landing position on the protected surface. For
-        commercial buildings with extensive ledge areas, multiple packs can be
-        ordered and installed in a continuous run. Per linear metre these strips
-        are competitive with professional-grade spike systems, which typically
-        cost &pound;15 to &pound;25 per metre installed.
-      </p>
-      <p>
-        <strong>Pros:</strong> Full stainless steel construction for maximum
-        durability; flexible base conforms to curved surfaces; humane deterrent
-        method; low maintenance once installed; competitive per-metre pricing.
-      </p>
-      <p>
-        <strong>Cons:</strong> Not effective against very small birds (sparrows
-        can nest between pins); visible on the building facade; requires
-        adhesive or screw fixing to the ledge; multiple packs needed for long
-        runs.
-      </p>
-
-      {/* Product 3: Bird Wire System */}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />
-      </div>
-      <p>
-        Post-and-wire bird deterrent systems are the preferred solution for
-        commercial buildings where the visual impact of spikes or netting would
-        be unacceptable &mdash; particularly listed buildings, heritage
-        properties, hotels, corporate headquarters, and retail premises where
-        the building&apos;s appearance matters. The system works by tensioning
-        thin stainless steel wire between upright posts at a height of
-        approximately 90mm above the ledge surface. When a pigeon or gull
-        attempts to land, the wire creates an unstable, uncomfortable surface
-        that prevents the bird from gaining a foothold, causing it to move on to
-        an unprotected area. The result is effective bird deterrence with a
-        profile so low that it is virtually invisible from ground level.
-      </p>
-      <p>
-        The Birdgo Pigeon Post &amp; Pad Kit provides ten 90mm stainless steel
-        posts, each with an adhesive pad for fixing to the substrate without
-        drilling. This no-drill approach is essential for listed buildings and
-        heritage properties where conservation officers will not permit
-        mechanical fixings into historic masonry or stonework. For non-listed
-        buildings, the pads can be supplemented with silicone adhesive or
-        mechanical fixings for additional security in high-wind locations. The
-        90mm post height is the industry standard specification for pigeon
-        deterrence &mdash; high enough to create effective wire tension, low
-        enough to remain visually discreet. Wire (not included) is tensioned
-        between the posts using a simple crimping system, and additional packs
-        can be purchased to extend the system along longer ledge runs.
-      </p>
-      <p>
-        A complete post-and-wire installation requires posts, wire, crimps, and
-        end fixings. This kit provides the posts and pads; you will need to
-        source stainless steel wire (typically 0.8mm to 1.0mm diameter) and
-        crimp fittings separately. For businesses with extensive ledge areas,
-        consulting a professional bird control installer is recommended to
-        ensure correct wire tensioning and post spacing.
-      </p>
-      <p>
-        <strong>Pros:</strong> Near-invisible from ground level; no drilling
-        required; suitable for listed and heritage buildings; standard
-        professional specification; stainless steel construction.
-      </p>
-      <p>
-        <strong>Cons:</strong> Wire and crimps not included; multiple kits
-        needed for long runs; not effective against small birds; professional
-        installation recommended for multi-storey buildings; adhesive pads may
-        need reinforcement on very exposed facades.
-      </p>
-
-      {/* Product 4: Optical Gel */}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />
-      </div>
-      <p>
-        Bird Barrier Optical Gel represents a fundamentally different approach
-        to bird deterrence. Rather than creating a physical barrier (netting,
-        spikes, or wire), the gel exploits the way birds perceive ultraviolet
-        light to create a powerful visual deterrent that is almost completely
-        invisible to the human eye. Birds see into the ultraviolet spectrum, and
-        the gel&apos;s optical properties cause it to appear as flickering
-        flames or fire to avian eyes &mdash; triggering an immediate flight
-        response. The gel also contains peppermint and citronella essential oils
-        that create a secondary olfactory deterrent, and its sticky, tactile
-        surface provides a third layer of discomfort for any bird that does
-        approach closely enough to make contact.
-      </p>
-      <p>
-        The 24-pack format provides pre-filled magnetic dishes that can be
-        placed on any flat ledge, sill, or parapet surface. Each dish is
-        approximately 6cm in diameter and 1cm tall &mdash; small enough to be
-        virtually invisible from ground level, even on light-coloured stone or
-        concrete. This makes Optical Gel the product of choice for heritage
-        buildings, listed properties, hotels, corporate offices, and any
-        commercial premises where the visual impact of spikes, wire, or netting
-        would be unacceptable or where planning restrictions prevent physical
-        modifications to the building&apos;s exterior. Installation is
-        straightforward: clean the surface, place the dishes at approximately
-        15cm intervals along the affected ledge, and the system is operational
-        immediately.
-      </p>
-      <p>
-        The gel dishes have a lifespan of approximately two to three years
-        before they need replacing, depending on exposure to weather and UV
-        degradation. Optical Gel is a specialist rather than a general-purpose
-        deterrent, but for specific applications where discretion is paramount,
-        it offers a solution that no other product category can match. It is
-        approved by the Humane Society of the United States and causes no harm
-        to birds &mdash; it simply makes the treated area appear dangerous,
-        prompting birds to roost elsewhere.
-      </p>
-      <p>
-        <strong>Pros:</strong> Virtually invisible to humans; multi-sensory
-        deterrent mechanism; no drilling or physical modification to the
-        building; ideal for listed and heritage buildings; humane and non-toxic.
-      </p>
-      <p>
-        <strong>Cons:</strong> Requires a dish every 15cm, so long runs are
-        labour-intensive; dishes need replacing every two to three years; not
-        effective for total area exclusion (use netting for that); may be less
-        effective against heavily habituated feral pigeons in extreme pressure
-        situations; weather exposure reduces lifespan.
-      </p>
-
-      {/* Product 5: Solar Panel Mesh */}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />
-      </div>
-      <p>
-        Solar panel bird proofing has become one of the fastest-growing areas of
-        commercial pest control in the UK. Pigeons are strongly attracted to the
-        sheltered void beneath rooftop solar panel arrays, which provides an
-        ideal nesting site: warm, dry, protected from predators, and with
-        convenient landing surfaces on the panels themselves. The result is
-        rapid colonisation, heavy fouling on the panels (reducing energy output
-        by up to 30 per cent), accumulation of nesting material that creates
-        fire risks, blocked gutters, and a persistent pigeon population that is
-        extremely difficult to dislodge once established. For commercial
-        buildings with solar installations, bird proofing should be considered a
-        mandatory maintenance item.
-      </p>
-      <p>
-        The Birdgo Bird Proofing Mesh &amp; 60 Fixing Clip Kit is a complete
-        installation package that includes 30 metres of PVC-coated galvanised
-        steel mesh and 60 no-drill nylon clips. The clips are designed to attach
-        directly to the lip of the solar panel frame (minimum 20mm lip required)
-        without drilling into the panel frame or the roof substrate &mdash; a
-        critical requirement, as drilling into solar panel frames voids most
-        manufacturer warranties and creating roof penetrations can cause leaks.
-        The PVC coating on the mesh prevents corrosion from rainwater and the
-        acidic compounds in bird droppings, and protects the anodised aluminium
-        panel frames from scratching during installation.
-      </p>
-      <p>
-        Installation involves clipping the mesh around the full perimeter of the
-        solar panel array, creating a physical barrier that prevents pigeons
-        from accessing the void beneath the panels. The mesh is cut to size
-        using the included wire cutters, and cable ties are provided for
-        securing joins at corners and junctions. For larger commercial solar
-        installations, multiple kits can be combined. The mesh is available in
-        black PVC coating, which blends with most solar panel frames and is
-        visually discreet from ground level.
-      </p>
-      <p>
-        <strong>Pros:</strong> Complete kit with mesh and clips; no drilling
-        into panels or roof; PVC coating prevents corrosion and scratching;
-        addresses one of the most common commercial bird problems;
-        straightforward installation for roofers and facilities teams.
-      </p>
-      <p>
-        <strong>Cons:</strong> Requires minimum 20mm panel frame lip for clip
-        attachment; 30m may not be sufficient for very large commercial arrays;
-        mesh may need trimming with wire cutters for neat finish; some panel
-        configurations may need additional clips.
-      </p>
-
-      {/* Product 6: Netting Repair Kit */}
-      <h2 id={products[5].anchorId}>
-        {products[5].h2Label} &mdash; {products[5].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[5].cardName}
-          features={products[5].features}
-          asin={products[5].asin}
-          bestFor={products[5].cardLabel}
-          rank={products[5].rank}
-        />
-      </div>
-      <p>
-        Bird netting installations are only effective for as long as the netting
-        remains intact and properly tensioned. Over time, wind loading, UV
-        degradation, and physical wear at fixing points cause hooks to fail,
-        netting to detach from the perimeter wire, and gaps to develop that
-        pigeons quickly discover and exploit. A single gap of 100mm or more in
-        an otherwise sound netting installation is enough for pigeons to enter
-        the protected space, and once they find an access point they will return
-        to it repeatedly. Regular inspection and prompt repair of damaged fixing
-        points is essential for maintaining the integrity of any commercial
-        netting system.
-      </p>
-      <p>
-        The Birdgo 100 Nylon Net Hooks provide a bulk supply of replacement
-        hooks for commercial netting maintenance. Each hook is designed to clip
-        onto the perimeter wire rope and hold the netting edge securely in
-        place. The UV-stabilised nylon construction ensures the hooks resist
-        degradation from sunlight exposure, which is the primary failure mode
-        for netting fixings on south-facing and west-facing elevations. A bulk
-        pack of 100 hooks is an essential stock item for facilities management
-        teams responsible for maintaining bird netting on commercial premises.
-        The hooks are compatible with standard 50mm and 75mm knotted mesh
-        netting and standard gauge perimeter wire rope.
-      </p>
-      <p>
-        <strong>Pros:</strong> Bulk pack of 100 hooks at an excellent price;
-        UV-stabilised nylon; compatible with standard commercial netting;
-        essential maintenance item for existing installations.
-      </p>
-      <p>
-        <strong>Cons:</strong> Hooks only &mdash; no wire rope or netting
-        included; nylon hooks will eventually degrade in extreme UV exposure;
-        may need stainless steel alternatives for very long-term coastal
-        installations.
-      </p>
-
-      {/* Product 7: Ultrasonic Deterrent */}
-      <h2 id={products[6].anchorId}>
-        {products[6].h2Label} &mdash; {products[6].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[6].cardName}
-          features={products[6].features}
-          asin={products[6].asin}
-          bestFor={products[6].cardLabel}
-          rank={products[6].rank}
-        />
-      </div>
-      <p>
-        Ultrasonic bird deterrents occupy a specific and limited niche in
-        commercial bird control. It is important to state clearly that{" "}
-        <strong>
-          no ultrasonic device should be relied upon as a primary bird deterrent
-          for a commercial premises
-        </strong>{" "}
-        &mdash; the scientific evidence for their effectiveness as a standalone
-        solution is mixed at best, and professional pest controllers do not
-        recommend them as a substitute for physical exclusion systems such as
-        netting, spikes, or wire. However, as a <strong>supplementary</strong>{" "}
-        deterrent used alongside physical barriers, ultrasonic devices can add
-        an additional layer of discomfort that discourages birds from testing or
-        probing physical installations for weaknesses.
-      </p>
-      <p>
-        This UK-manufactured unit features four speakers that emit
-        multi-frequency ultrasonic output across a range designed to cause
-        discomfort to pigeons, gulls, starlings, and other common pest birds.
-        The waterproof construction allows both indoor and outdoor installation,
-        and the unit comes with a standard UK plug and appropriate safety
-        certification. The adjustable frequency settings allow the output to be
-        tuned for different species &mdash; pigeons respond to different
-        frequency ranges than gulls or starlings. The four-speaker configuration
-        provides broader directional coverage than single-speaker units, making
-        it more suitable for commercial spaces such as loading bays, covered car
-        parks, and semi-enclosed areas where physical barriers may have gaps or
-        openings that cannot be fully sealed.
-      </p>
-      <p>
-        <strong>Pros:</strong> UK manufactured with safety certification;
-        waterproof for indoor and outdoor use; adjustable frequency settings;
-        useful supplementary deterrent alongside physical barriers.
-      </p>
-      <p>
-        <strong>Cons:</strong> Should not be used as a standalone solution;
-        effectiveness as a primary deterrent is not well-evidenced; birds may
-        habituate to constant ultrasonic output over time; higher-pitched
-        frequencies may be audible to some humans, particularly younger people
-        and those with sensitive hearing.
-      </p>
-
-      {/* Multi-Buy Messaging */}
-      <div className="not-prose">
-        <Callout type="info">
-          <p>
-            <strong>Equipping a commercial building?</strong> Most commercial
-            bird proofing installations require a combination of products
-            &mdash; netting for large open areas, spikes for ledges, and wire
-            systems for architectural features. A typical warehouse or office
-            building may need &pound;200&ndash;&pound;800 in materials, plus
-            professional installation costs of &pound;500&ndash;&pound;3,000
-            depending on the building height, area, and access requirements.
-            Ordering multiple products together often qualifies for free
-            delivery.
-          </p>
-        </Callout>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      {/* Buying Guide */}
-      <h2 id="buying-guide">Commercial Bird Proofing Buying Guide</h2>
-      <p>
-        Selecting the right bird proofing system for your commercial premises
-        requires an understanding of the bird species involved, the pressure
-        level they are exerting, the building type and any planning
-        restrictions, and the legal framework that governs bird control in the
-        UK. Here are the key considerations.
-      </p>
+      {/* FAQ — rendered from the same array the schema above is derived from */}
+      <h2 id="faq">Frequently Asked Questions</h2>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
 
-      <h3>Assessing Bird Pressure</h3>
-      <p>
-        Bird pressure is categorised as light, medium, or heavy, and the
-        appropriate proofing system depends directly on the pressure level:
-      </p>
-      <ul>
-        <li>
-          <strong>Light pressure</strong> &mdash; birds land on ledges
-          occasionally but do not roost or nest. Spikes, wire systems, or
-          optical gel are usually sufficient.
-        </li>
-        <li>
-          <strong>Medium pressure</strong> &mdash; birds roost regularly
-          (returning daily to the same spots) but have not established nesting
-          sites. Spikes, wire systems, and netting over specific areas are
-          appropriate.
-        </li>
-        <li>
-          <strong>Heavy pressure</strong> &mdash; birds are nesting, there is
-          accumulated guano, and the population is established. Only complete
-          netting exclusion or professional intervention will resolve the
-          problem. Spikes and wire alone will not work against heavily
-          established colonies &mdash; the birds simply move to unprotected
-          sections of the same building.
-        </li>
-      </ul>
-
-      <h3>Building Type and Planning Considerations</h3>
-      <p>
-        The choice of bird proofing system is often constrained by the building
-        itself. Listed buildings and properties in conservation areas may
-        require planning permission or Listed Building Consent before any
-        physical modifications (including spike and netting installations) can
-        be carried out. Optical gel and post-and-wire systems are generally the
-        most acceptable to conservation officers due to their minimal visual
-        impact. For modern commercial buildings without planning restrictions,
-        netting and spikes provide the most cost-effective solutions.
-      </p>
-
-      <h3>Legal Requirements &mdash; Wildlife and Countryside Act 1981</h3>
-      <p>
-        The Wildlife and Countryside Act 1981 protects all wild birds, their
-        nests, and their eggs. Under Section 1, it is an offence to
-        intentionally kill, injure, or take any wild bird, or to intentionally
-        take, damage, or destroy the nest of any wild bird while it is in use or
-        being built. This means bird proofing installations must be timed to
-        avoid the nesting season (typically March to August for most species).
-        If an active nest is discovered during installation, work must stop
-        immediately and the nest left undisturbed until the young have fledged.
-        Certain species &mdash; including herring gulls, house sparrows, and
-        starlings &mdash; can only be controlled under a General Licence issued
-        by Natural England (or the devolved equivalents), and only for specific
-        purposes such as preserving public health or preventing serious damage
-        to property. Always consult a BPCA-accredited bird control specialist
-        before removing or disturbing any bird species on your premises.
-      </p>
-
-      <div className="not-prose">
-        <Callout type="cost">
-          <p>
-            <strong>Professional installation costs:</strong> Bird netting
-            installation on commercial buildings typically costs
-            &pound;15&ndash;&pound;35 per square metre including materials and
-            labour. Spike systems cost &pound;15&ndash;&pound;25 per linear
-            metre installed. Post-and-wire systems cost
-            &pound;20&ndash;&pound;40 per linear metre. For a typical 3-storey
-            office building with pigeon problems on ledges and a loading bay,
-            expect total costs of &pound;2,000&ndash;&pound;8,000 for a
-            comprehensive bird proofing programme installed by a BPCA-accredited
-            contractor.
-          </p>
-        </Callout>
-      </div>
-
-      <h3>DIY vs Professional Installation</h3>
-      <p>
-        Ground-level and single-storey installations (solar panel mesh,
-        low-level spike runs, netting on small covered areas) are feasible as
-        DIY projects for facilities teams with appropriate equipment. However,
-        any work at height on multi-storey commercial buildings requires
-        professional installation by a team with appropriate access equipment
-        (cherry pickers, scaffolding, or rope access), PASMA or IPAF
-        certification, and insurance. The cost of professional installation is
-        justified by the safety considerations, the quality of the finished
-        installation, and the warranty that reputable bird control contractors
-        provide on their work. Poorly installed bird proofing that fails within
-        months is worse than no installation at all, because it has cost money
-        without delivering any lasting benefit.
-      </p>
-
-      {/* When to Contact */}
-      <h2 id="when-to-call">When to Contact a Bird Control Specialist</h2>
-      <p>
-        While the products on this page can address many common commercial bird
-        problems, you should contact a professional BPCA or NPTA-accredited bird
-        control specialist if your building is listed or in a conservation area,
-        if you need work at height on a multi-storey building, if you have an
-        established nesting colony with accumulated guano, if you are unsure
-        about the species involved or the legal implications of control
-        measures, or if your premises are subject to BRC, SALSA, or other audit
-        standards that require documented pest management. A professional survey
-        will identify the species, assess the pressure level, recommend the most
-        appropriate proofing system, and ensure the installation complies with
-        the Wildlife and Countryside Act 1981 and any relevant planning
-        requirements.
-      </p>
-
-      {/* Professional Contract CTA */}
-      <div className="not-prose my-8 p-8 bg-gradient-to-br from-teal-50 to-emerald-50 border-2 border-teal-300 rounded-2xl">
-        <h3 className="text-2xl font-bold text-teal-900 mb-3">
-          Need Professional Bird Proofing for Your Building?
-        </h3>
-        <p className="text-teal-800 mb-6 leading-relaxed">
-          Commercial bird proofing often requires work at height, specialist
-          access equipment, and expert knowledge of species behaviour and legal
-          requirements. For multi-storey buildings, listed properties, and
-          established bird colonies, a professional installation is the most
-          cost-effective approach. Commercial bird control contracts typically
-          cost &pound;2,000&ndash;&pound;10,000 depending on the building size
-          and complexity.
-        </p>
-        <a
-          href="/guides/commercial-pest-control"
-          className="inline-block px-8 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg transition-colors"
-        >
-          Find Commercial Bird Control Specialists &rarr;
-        </a>
-      </div>
-
-      <div className="not-prose">
-        <FindProviderCTA
-          heading="Need Professional Bird Proofing for Your Business?"
-          subtext="Compare commercial pest control providers near you — free, no-obligation quotes."
-        />
-      </div>
-
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        <p className="text-gray-700 mb-3">
-          Looking for residential bird deterrent options? Read our companion
-          guide.
-        </p>
-        <a
-          href="/best/bird-deterrents"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          Best Bird Deterrents UK 2026 &rarr;
-        </a>
-      </div>
+      <FindProviderCTA
+        heading="Bird proofing a commercial building is a survey job before it is a purchase"
+        subtext="Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

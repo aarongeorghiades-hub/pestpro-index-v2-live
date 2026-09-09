@@ -1,74 +1,97 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S69 R2 — ROLLOUT REBUILD to the R8/R69R1 pattern, on sources. GROUP B.
+//
+// HEALTH STATEMENTS ON THIS PAGE: TWO, one NHS and one UC IPM, both quoted and both
+// attributed. Neither is in this site's own voice. No diagnosis, no treatment
+// recommendation, no symptom checklist offered as guidance; a skin question is sent to a
+// pharmacist or a GP and nothing clinical is linked.
+//
+// G3 CLEARED. One source string, two served hits: "Professional-strength products from a
+// trusted UK pest control brand". That is this site's own voice about a maker, which
+// Law 153 does not excuse. Deleted rather than softened; there is no source for it.
+//
+// THE ROUTE SLUG AND THE PAGE SUBJECT DIVERGE, AND THAT IS REPORTED, NOT FIXED. The
+// route is /best/commercial-insect-monitors; the page is about commercial bed bug
+// treatment and has been since before this rebuild, carding three insecticides, a room
+// kit and one monitoring product. The title and H1 describe the page accurately, so the
+// standing title ruling has no false clause to replace. Changing the slug would break a
+// live URL and is a PM decision, not a rebuild's.
+//
+// UC IPM CONTRADICTS ONE OF THE CARDED PRODUCTS AND THE PAGE SAYS SO. The rank-4 kit
+// includes a fogger bomb. UC IPM states that over-the-counter total-release aerosol
+// foggers have been shown to be ineffective for bed bug control and potentially harmful
+// to residents. The card is kept — its label describes what is in the box accurately and
+// nothing in the listing is misstated — but the source's position is quoted in the
+// limits section and again on the card itself. A page that carded it silently would be
+// hiding the one thing a reader most needs.
+//
+// AWARD LABELS, RANK NUMERALS AND CARD ORDER ARE UNCHANGED. Nothing was removed under
+// the mismatch ruling: all five listings support what their cards claim.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Commercial Bed Bug Treatment UK 2026 | Sprays & Monitors",
     description:
-      "Professional-grade bed bug treatment for UK hotels, B&Bs and commercial premises. Concentrate kits, sprays, bulk treatments and monitoring traps.",
+      "Commercial bed bug products compared on their own listings: three sprays, a room kit and interceptor traps, with UC IPM and the NHS.",
     alternates: {
       canonical: "https://pestproindex.com/best/commercial-insect-monitors",
     },
     openGraph: {
       title: "Commercial Bed Bug Treatment UK 2026 | Sprays & Monitors",
       description:
-        "Professional-grade bed bug treatment for UK hotels, B&Bs and commercial premises. Concentrate kits, sprays, bulk treatments and monitoring traps.",
+        "Commercial bed bug products compared on their own listings: three sprays, a room kit and interceptor traps, with UC IPM and the NHS.",
       url: "https://pestproindex.com/best/commercial-insect-monitors",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Commercial Bed Bug Treatment UK 2026 | Sprays & Monitors",
   description:
-    "Professional-grade bed bug treatment for UK hotels, B&Bs and commercial premises. Concentrate kits, sprays, bulk treatments and monitoring traps.",
+    "Commercial bed bug products compared on their own listings: three sprays, a room kit and interceptor traps, with UC IPM and the NHS.",
   datePublished: "2026-03-18",
-  dateModified: "2026-03-18",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
+  dateModified: "2026-09-09",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://pestproindex.com/best/commercial-insect-monitors",
   },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
-      name: "Best Commercial Bed Bug Treatment UK 2026",
+      name: "Commercial Bed Bug Treatment UK 2026",
       item: "https://pestproindex.com/best/commercial-insect-monitors",
     },
   ],
 };
+
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194). ipm.ucanr.edu fetched 2026-09-09, kept at
+// ~/pp-s69r1/sources/ucipm-bedbugs.src.txt; www.nhs.uk fetched 2026-09-09, kept at
+// ~/pp-s68r8/sources/nhs-bedbugs.src.txt. Both under Law 175.
+const SRC = {
+  ucipm: "https://ipm.ucanr.edu/PMG/PESTNOTES/pn7454.html",
+  nhs: "https://www.nhs.uk/conditions/bedbugs/",
+};
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -83,31 +106,43 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Records are addressed BY IDENTITY, never by position (Law 107).
+//
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies at
+// ~/pp-s61r1/uk/, inside the S45-C window. A property is asserted only where the
+// listing's own text states it (S52-E); a cell the listing does not state reads
+// "not stated". Four of these five listings open with a superlative about themselves —
+// the most powerful, the strongest, the most cost-effective — and not one of those lines
+// is restated below (S47-F).
+//
+// LAW 146 — TWO LISTINGS CONTRADICT THEMSELVES AND BOTH READINGS ARE RENDERED. The
+// concentrate lists its item form as Aerosol and its unit count as 100 millilitres while
+// its own text says it makes 10 litres. The room kit lists its item form as Aerosol and
+// its unit count as 2,000 grams.
 const products: ProductRecord[] = [
   {
     anchorId: "best-professional-kit",
     asin: "B098XMZM6M",
     rank: 1,
-    cardName:
-      "Pest Expert Formula 'P+' Ultimate Bed Bug Killer Concentrate + 5L Pressure Sprayer",
+    cardName: "Pest Expert Ultimate Bed Bug Killer Spray Concentrate + 5L Pressure Sprayer",
     cardLabel: "Best Professional Treatment Kit",
     features: [
-      "Makes 10 litres of professional-strength insecticide — treats approx. 100 sqm",
-      "Three active ingredients: Tetramethrin + Permethrin + PBO (piperonyl butoxide)",
-      "Includes 5L pressure sprayer for professional application",
-      "Bed bug insecticide available on the UK amateur market",
-      "Fast knockdown + long residual kill — continues working for weeks",
+      "A concentrate, not a ready-to-use spray: the maker states it makes 10 litres",
+      "The maker names three actives and gives tetramethrin at 0.9%",
+      "Supplied with a 5 litre pressure sprayer, per the listing",
+      "The maker states the formulation was recently approved for amateur use",
+      "Its item form row reads Aerosol and its unit count row reads 100 millilitres",
     ],
     tableCells: [
-      "Pest Expert Formula 'P+' Concentrate + 5L Sprayer",
-      "Professional Treatment Kit",
-      "Best Professional Kit",
+      "Pest Expert Ultimate Concentrate + 5L Sprayer",
+      "Concentrate + sprayer",
+      "Three actives, tetramethrin 0.9% named",
+      "Makes 10 L, per the maker",
     ],
     h2Label: "Best Professional Treatment Kit",
-    h2Name:
-      "Pest Expert Formula 'P+' Ultimate Bed Bug Killer Concentrate + 5L Pressure Sprayer",
+    h2Name: "Pest Expert Ultimate Concentrate + 5L Sprayer",
     tocLabel: "Best Professional Treatment Kit",
-    tocName: "Pest Expert Formula P+ Concentrate + 5L Sprayer",
+    tocName: "Pest Expert Ultimate Concentrate",
   },
   {
     anchorId: "best-professional-spray",
@@ -116,19 +151,20 @@ const products: ProductRecord[] = [
     cardName: "Pest Expert Bed Bug Killer Spray 2 x 1L Formula 'C+'",
     cardLabel: "Best Professional Spray",
     features: [
-      "2 x 1 litre bottles — professional strength approved for amateur use",
-      "Three active ingredients including insect growth regulator (pyriproxyfen)",
-      "Fast knockdown + long residual + prevents egg development",
-      "Water-based formula — safe for mattresses, carpets, and upholstery",
-      "Suitable for hotels, hospitals, care homes, and B&Bs",
+      "Two 1 litre bottles, ready to use; unit count row reads 2,000 millilitres",
+      "The maker states three actives including an insect growth regulator",
+      "The maker states coverage of 50 square metres in a single application",
+      "Listed as water-based, non-staining and low-odour, for bed frames and mattresses",
+      "No active substance is named in the listing's detail rows",
     ],
     tableCells: [
-      "Pest Expert Formula 'C+' 2 x 1L Spray",
-      "Professional Spray",
-      "Best Professional Spray",
+      "Pest Expert Formula 'C+' 2 x 1L",
+      "Ready-to-use spray",
+      "Three actives incl. an IGR, per the maker; none named in the rows",
+      "2 L; 50 m² per application, per the maker",
     ],
     h2Label: "Best Professional Spray",
-    h2Name: "Pest Expert Bed Bug Killer Spray 2 x 1L Formula 'C+'",
+    h2Name: "Pest Expert Formula 'C+' 2 x 1L",
     tocLabel: "Best Professional Spray",
     tocName: "Pest Expert Formula C+ 2 x 1L",
   },
@@ -139,15 +175,17 @@ const products: ProductRecord[] = [
     cardName: "NOPE! CP Bed Bug Killer Spray 5L + Pressure Sprayer",
     cardLabel: "Best Bulk Treatment",
     features: [
-      "5 litres of professional cypermethrin spray + pressure sprayer included",
-      "Extended residual kill — continues working for up to 3 months",
-      "Odourless and non-staining — suitable for hotel rooms and guest areas",
-      "HSE-registered insecticide — compliant for commercial use",
+      "5 litres with a pressure sprayer, as listed",
+      "Actives row names cypermethrin and tetramethrin; the maker gives cypermethrin at 0.1% w/w",
+      "The maker states residual action continuing for up to 3 months",
+      "The maker describes it as HSE registered and approved for household environments",
+      "Listed as solvent-free, water-based, odourless and non-staining",
     ],
     tableCells: [
-      "NOPE! CP Bed Bug Killer 5L + Sprayer",
-      "Bulk Treatment",
-      "Best Bulk Treatment",
+      "NOPE! CP 5L + Sprayer",
+      "Ready-to-use spray in bulk",
+      "Cypermethrin and tetramethrin, named in the rows",
+      "5 L; up to 3 months residual, per the maker",
     ],
     h2Label: "Best Bulk Treatment",
     h2Name: "NOPE! CP Bed Bug Killer 5L + Sprayer",
@@ -161,16 +199,17 @@ const products: ProductRecord[] = [
     cardName: "Pest Expert Bed Bug Treatment Kit (Standard)",
     cardLabel: "Best Complete Room Kit",
     features: [
-      "Complete kit for one room — everything included for a thorough treatment",
-      "1L Formula C+ spray + fogger bomb + insecticidal powder + aerosol spray",
-      "Multiple application methods attack bed bugs in every harbourage",
-      "Step-by-step treatment guide included for non-specialist staff",
-      "Professional strength — the same products pest controllers use",
+      "Three items in the box: 1 litre of Formula 'C+', 300g of powder and a fogger bomb",
+      "READ THE LIMITS SECTION: UC IPM does not recommend total-release aerosol foggers for bed bugs",
+      "The maker states the kit provides a treatment in one room",
+      "The maker states a residue that continues to protect for up to 12 weeks",
+      "Its item form row reads Aerosol and its unit count row reads 2,000 grams",
     ],
     tableCells: [
-      "Pest Expert Treatment Kit (Standard)",
-      "Complete Room Kit",
-      "Best Complete Room Kit",
+      "Pest Expert Bed Bug Treatment Kit (Standard)",
+      "Spray + powder + fogger bomb",
+      "not stated",
+      "One room, per the maker; up to 12 weeks residue",
     ],
     h2Label: "Best Complete Room Kit",
     h2Name: "Pest Expert Bed Bug Treatment Kit (Standard)",
@@ -184,957 +223,468 @@ const products: ProductRecord[] = [
     cardName: "Bed Bug Blocker (Pro) Interceptor Traps 8-Pack",
     cardLabel: "Best Monitoring Add-On",
     features: [
-      "Pack of 8 heavy-duty interceptor traps — covers 2 hotel beds",
-      "Textured exterior + slippery interior = proven capture mechanism",
-      "Chemical-free, reusable, eco-friendly passive monitoring",
-      "Fits bed and furniture legs up to 3 inches diameter",
-      "Essential for post-treatment monitoring and early detection",
+      "The only item here that carries no insecticide at all",
+      "Eight cups for under bed and furniture legs; target species row reads Bed Bug",
+      "The maker describes bed bugs climbing the textured exterior and being unable to escape",
+      "The maker states eight traps cover two beds or other pieces of furniture",
+      "Listed for hotels, hostels, dormitories, hospitals and nursing homes",
     ],
     tableCells: [
-      "Bed Bug Blocker (Pro) 8-Pack",
-      "Monitoring Traps",
-      "Best Monitoring Add-On",
+      "Bed Bug Blocker (Pro) Interceptor Traps",
+      "Under-leg detection traps",
+      "None — no chemicals or pesticides, per the listing",
+      "8 traps, stated as covering two beds",
     ],
     h2Label: "Best Monitoring Add-On",
-    h2Name: "Bed Bug Blocker (Pro) Interceptor Traps 8-Pack",
+    h2Name: "Bed Bug Blocker (Pro) Interceptor Traps",
     tocLabel: "Best Monitoring Add-On",
-    tocName: "Bed Bug Blocker (Pro) Interceptor Traps 8-Pack",
+    tocName: "Bed Bug Blocker Interceptors",
   },
 ];
 
-const tocItems = [
-  { id: "at-a-glance", title: "Best Commercial Bed Bug Treatment at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
-  })),
-  { id: "buying-guide", title: "Buying Guide" },
-  { id: "find-provider", title: "Find a Commercial Pest Controller" },
+const faqs = [
+  {
+    q: "Will these clear an infestation on their own?",
+    a: "UC IPM says insecticide applications alone will not control bed bug infestations, and that they must be combined with removing and cleaning infested beds and bedding, non-chemical tactics such as steam or heat, and ongoing detection. Four of the five products here are insecticides. The fifth tells you whether they are working.",
+  },
+  {
+    q: "Why does one of the kits contain something the source advises against?",
+    a: "Because it does, and hiding that would be worse than carding it. The rank-4 kit includes a fogger bomb. UC IPM writes that using over-the-counter total-release aerosol foggers has been shown to be ineffective for bed bug control and potentially harmful to residents, and that they are therefore not recommended. The kit is listed accurately by its maker; the source's position is on the card and in the limits section so a reader meets it before buying.",
+  },
+  {
+    q: "Are these the same products a professional would use?",
+    a: "UC IPM says the most effective bed bug pesticides are available to commercial pesticide applicators only, and that professionals also have the equipment and expertise for a more precise application. Two of these listings state they were approved for amateur use, which is the maker telling you the same thing from the other direction.",
+  },
+  {
+    q: "What do the interceptor traps actually do?",
+    a: "They tell you where you are. UC IPM describes commercially available double-cupped monitors installed under bed legs as a temporary exclusion measure, and separately says several kinds of bed bug detection traps are available to help determine if there is an infestation. On a commercial site with many rooms, that is how you find out whether a treatment worked without stripping every bed again.",
+  },
+  {
+    q: "What should a hotel or landlord do first?",
+    a: "The NHS says that if you think you have bedbugs you should contact your local council or pest control service, and that it is very difficult to get rid of bedbugs yourself because they can be hard to find and may be resistant to some insecticides. Nothing on this page displaces that, and on a commercial premises the reputational cost of a half-treatment is usually larger than the cost of the treatment.",
+  },
+  {
+    q: "Are bed bug bites a health risk to guests or tenants?",
+    a: "The NHS says bedbug bites can be itchy but do not usually cause other health problems, and UC IPM says bed bugs are not known to spread diseases although scratching bites can lead to infections. Anyone worried about their own skin should be pointed to a pharmacist or a GP rather than to a product page.",
+  },
 ];
-export default function BestCommercialInsectMonitorsPage() {
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const tocItems = [
+  { id: "situation", title: "What UC IPM Says a Treatment Has to Include" },
+  { id: "health", title: "What the NHS and UC IPM Say About the Bites" },
+  { id: "legal", title: "What the Label Governs" },
+  { id: "limits", title: "Where These Products Do Not Work" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Spray Is Not the Answer" },
+  { id: "using", title: "Use and Placement" },
+  { id: "compared", title: "The Five Compared" },
+];
+
+export default function CommercialBedBugTreatmentPage() {
   return (
     <GuideLayout
-      title="Best Commercial Bed Bug Treatment UK 2026: Professional Sprays, Kits & Monitors"
-      subtitle="Our pick of professional-grade bed bug treatment products for UK hotels, B&Bs, and commercial premises — concentrate kits, sprays, bulk treatments, and monitoring traps compared"
-      lastUpdated="March 2026"
-      readingTime="12 min"
+      title="Best Commercial Bed Bug Treatment UK 2026: Professional Sprays, Kits &amp; Monitors"
+      subtitle="Three sprays, a three-part room kit and a set of interceptor traps, described by what their own listings state — beside the University of California on what a bed bug treatment has to include and what it must not rely on"
+      lastUpdated="September 2026"
+      readingTime="9 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
-        {
-          title: "Wasp Nest Removal: Complete UK Guide",
-          href: "/guides/wasp-nest-removal",
-        },
-        {
-          title: "How to Get Rid of Bed Bugs: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-bed-bugs",
-        },
-        {
-          title: "How to Get Rid of Cockroaches: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-cockroaches",
-        },
-        {
-          title: "How to Get Rid of Fleas: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-fleas",
-        },
-        {
-          title: "How to Get Rid of Ants: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-ants",
-        },
-        {
-          title: "How to Get Rid of Squirrels: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-squirrels",
-        },
-        {
-          title: "Pigeon Control: Complete UK Guide",
-          href: "/guides/pigeon-control",
-        },
-        {
-          title: "How to Get Rid of Moths",
-          href: "/guides/how-to-get-rid-of-moths",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
-        {
-          title: "Restaurant Pest Control: Complete UK Guide",
-          href: "/guides/restaurant-pest-control",
-        },
-        {
-          title: "Warehouse Pest Management",
-          href: "/guides/warehouse-pest-management",
-        },
-        {
-          title: "Hotel Pest Control: Complete UK Guide",
-          href: "/guides/hotel-pest-control",
-        },
+        { title: "How to Get Rid of Bed Bugs: Complete UK Guide", href: "/guides/how-to-get-rid-of-bed-bugs" },
+        { title: "Landlord Pest Control Responsibilities", href: "/guides/landlord-pest-control" },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
       ]}
       relatedProducts={[
-        { title: "Best Rat Traps UK 2026", href: "/best/rat-traps" },
-        { title: "Best Mouse Traps UK 2026", href: "/best/mouse-traps" },
-        { title: "Best Wasp Killers UK 2026", href: "/best/wasp-killers" },
-        {
-          title: "Best Bed Bug Treatments UK 2026",
-          href: "/best/bed-bug-treatments",
-        },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
-        {
-          title: "Best Flea Treatments UK 2026",
-          href: "/best/flea-treatments",
-        },
-        { title: "Best Ant Killers UK 2026", href: "/best/ant-killers" },
-        {
-          title: "Best Squirrel Deterrents UK 2026",
-          href: "/best/squirrel-deterrents",
-        },
-        {
-          title: "Best Bird Deterrents UK 2026",
-          href: "/best/bird-deterrents",
-        },
-        { title: "Best Moth Killers UK", href: "/best/moth-killers" },
-        {
-          title: "Best Commercial Fly Killers",
-          href: "/best/commercial-fly-killers",
-        },
-        {
-          title: "Best Commercial Rodent Bait Stations",
-          href: "/best/commercial-rodent-bait-stations",
-        },
-        {
-          title: "Best Commercial Bird Proofing UK 2026",
-          href: "/best/commercial-bird-proofing",
-        },
+        { title: "Best Bed Bug Treatments UK 2026", href: "/best/bed-bug-treatments" },
+        { title: "Best Bed Bug Spray UK 2026", href: "/best/bed-bug-spray" },
+        { title: "Best Professional Mattress Encasements UK 2026", href: "/best/professional-mattress-encasements" },
+        { title: "Best Professional Bed Bug Steamers UK 2026", href: "/best/professional-bed-bug-steamers" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
-      {/* Affiliate disclosure */}{" "}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
           site running and free for everyone. As an Amazon Associate, PestPro
-          Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
-      {/* Back to Commercial Hub */}{" "}
-      <div className="not-prose my-8 p-6 bg-purple-50 border border-purple-200 rounded-xl">
-        {" "}
-        <p className="font-bold text-gray-900 mb-2">
-          Part of our Commercial Pest Control series
-        </p>{" "}
-        <p className="text-gray-700 mb-3">
-          This is one of our commercial pest control equipment guides. Visit the
-          hub for all commercial guides, sector-specific compliance resources,
-          and more product guides.
-        </p>{" "}
-        <a
-          href="/guides/commercial-pest-control"
-          className="inline-block px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          {" "}
-          Commercial Pest Control Hub &rarr;{" "}
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
+      <p>
+        Five products for premises with more than one bed: a concentrate, two
+        ready-to-use sprays, a three-part room kit and a set of interceptor
+        traps. One of the five contains an item the source this page reads
+        advises against, and that is on its card rather than buried.
+      </p>
+
+      {/* DECISION BLOCK — situation first, product second. The legal line and the
+          does-not-work line sit ABOVE every product line. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>A guest or tenant has reported bites.</strong>{" "}
+            <a href="#limits" className="underline">
+              What the NHS and UC IPM say to do
+            </a>{" "}
+            comes before any purchase.
+          </li>
+          <li>
+            <strong>Every one of these is an insecticide but one.</strong>{" "}
+            <a href="#legal" className="underline">
+              The label governs
+            </a>{" "}
+            where each may be applied and at what rate.
+          </li>
+          <li>
+            <strong>You are treating several rooms.</strong>{" "}
+            <a href="#best-professional-kit" className="underline">
+              The concentrate
+            </a>{" "}
+            makes ten litres;{" "}
+            <a href="#best-bulk" className="underline">
+              the 5 litre
+            </a>{" "}
+            arrives ready to use.
+          </li>
+          <li>
+            <strong>You are treating one room and want it in a box.</strong>{" "}
+            <a href="#best-room-kit" className="underline">
+              The three-part kit
+            </a>{" "}
+            — read what UC IPM says about the fogger in it first.
+          </li>
+          <li>
+            <strong>You need to know whether it worked.</strong>{" "}
+            <a href="#best-monitoring" className="underline">
+              The interceptor traps
+            </a>{" "}
+            are the only item here that answers that.
+          </li>
+        </ul>
+      </div>
+
+      <div className="not-prose">
+        <Callout type="warning">
+          <p>
+            Four of the five products here are insecticides. Where each may be
+            applied, at what rate and with what ventilation is set by its own
+            label, and one of them contains a fumigation device with separate
+            instructions about leaving and re-entering the room.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">What UC IPM Says a Treatment Has to Include</h2>
+      <p>
+        The University of California&rsquo;s Statewide IPM Program starts from
+        the limit rather than the product:{" "}
+        <em>&ldquo;Insecticide applications alone won&rsquo;t control bed bug infestations.&rdquo;</em>{" "}
+        (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ). It goes on to require insecticides be combined with removing and
+        cleaning infested beds and bedding, with non-chemical tactics such as
+        steam or heat, and with ongoing detection.
+      </p>
+      <p>
+        It is also candid about what is on sale:{" "}
+        <em>&ldquo;The most effective bed bug pesticides are available to commercial pesticide applicators only.&rdquo;</em>{" "}
+        Two of the listings below tell you the same thing from the other side,
+        by stating that their formulation was approved for amateur use.
+      </p>
+      <p>
+        And on the fifth product here:{" "}
+        <em>&ldquo;Several kinds of bed bug detection traps are available to help determine if there is an infestation.&rdquo;</em>{" "}
+        On a premises with many rooms that is not an add-on, it is how you find
+        out whether any of the rest worked.
+      </p>
+
+      {/* [1] Health — attributed, quoted, no diagnosis, no treatment advice */}
+      <h2 id="health">What the NHS and UC IPM Say About the Bites</h2>
+      <p>
+        The NHS:{" "}
+        <em>
+          &ldquo;Bedbugs are small insects that often live on furniture or
+          bedding. Their bites can be itchy but do not usually cause other
+          health problems.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.nhs} rel="nofollow">
+          NHS
+        </a>
+        ).
+      </p>
+      <p>
+        UC IPM, with the qualification it attaches:{" "}
+        <em>
+          &ldquo;Bed bugs aren&rsquo;t known to spread diseases, but scratching
+          bites can lead to infections.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ).
+      </p>
+      <p>
+        That is the whole of what this page says about health, and there is no
+        symptom list here to check a guest or a tenant against. Anyone worried
+        about their own skin should be pointed to a pharmacist or a GP.
+      </p>
+
+      {/* [2] Legal */}
+      <h2 id="legal">What the Label Governs</h2>
+      <p>
+        Four of these five are insecticides, and each is sold with a label
+        stating where it may be applied, at what rate, at what dilution, and
+        what must be kept away from it. One is a concentrate, which means the
+        dilution instruction on its label is load-bearing rather than advisory.
+      </p>
+      <p>
+        One kit includes a fumigation device. That device carries its own
+        separate instructions about vacating and re-entering a room, and on a
+        commercial premises those instructions govern who may be in the building
+        and when.
+      </p>
+      <p>
+        One listing describes itself as HSE registered and approved for use in
+        household environments by the Health and Safety Executive. That is the
+        maker&rsquo;s description of its own product; what any such registration
+        covers is set out in the registration and on the label, not here.
+      </p>
+
+      {/* [3] Limits */}
+      <h2 id="limits">Where These Products Do Not Work</h2>
+      <p>
+        <strong>The fogger, according to the source.</strong> UC IPM:{" "}
+        <em>
+          &ldquo;Using over-the-counter total-release aerosol foggers has been
+          shown to be ineffective for bed bug control and potentially harmful to
+          residents; therefore, they aren&rsquo;t recommended.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ). The rank-4 kit on this page contains one. Its maker lists it
+        accurately and this page cards it accurately; a reader who buys that kit
+        should know what the source says about one of the three items in it.
+      </p>
+      <p>
+        <strong>As the whole treatment.</strong> The same source&rsquo;s first
+        sentence on insecticides is that applications alone will not control an
+        infestation. Cleaning, laundering, heat and monitoring are all outside
+        the box.
+      </p>
+      <p>
+        <strong>Against a population you have not found.</strong> The NHS says
+        it is{" "}
+        <em>
+          &ldquo;very difficult to get rid of bedbugs yourself because they can
+          be hard to find and may be resistant to some insecticides.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.nhs} rel="nofollow">
+          NHS
+        </a>
+        ). Its instruction is:{" "}
+        <em>
+          &ldquo;If you think you have bedbugs, you should contact your local
+          council or pest control service.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>On the mattress itself.</strong> UC IPM notes that pesticides
+        are not generally applied to mattresses or bedding because of potential
+        risk to people. That is the gap a zipped cover fills, and none of these
+        five is one.
+      </p>
+
+      {/* [4] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Concentrate or ready to use</h3>
+      <p>
+        One product here is a concentrate its maker states makes ten litres; two
+        arrive ready to use at two and five litres. For a premises with several
+        rooms the concentrate is the cheaper litre and the greater chance of a
+        dilution error. The label decides, not the listing.
+      </p>
+      <h3>2. Whether the listing names an active substance</h3>
+      <p>
+        Only two of the four insecticides do. The 5 litre names cypermethrin and
+        tetramethrin in its detail rows; the concentrate names tetramethrin at
+        0.9% in its text. The 2 x 1 litre describes three actives including a
+        growth regulator without naming them, and the room kit names none. The
+        comparison table says so rather than guessing.
+      </p>
+      <h3>3. Whether anything here tells you it worked</h3>
+      <p>
+        One item does. UC IPM puts detection in its own paragraph precisely
+        because a treatment you cannot measure is a treatment you will repeat
+        blind.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>
+            {
+              [
+                "The only concentrate on the page, supplied with a 5 litre pressure sprayer. Its maker states three active ingredients with tetramethrin given at 0.9%, states the formulation was recently approved for amateur use, and states that the bottle makes ten litres of diluted spray. Its own detail rows then read Aerosol for item form and 100 millilitres for unit count, neither of which describes a concentrate; both readings are on the card.",
+                "Two litres of ready-to-use spray in two bottles, with the maker stating three actives including an insect growth regulator and coverage of 50 square metres in a single application. Listed as water-based, non-staining and low-odour, and for application directly to bed frames and mattresses. No active substance appears in its detail rows, so the comparison cell records the maker's description rather than a name.",
+                "The bulk option: five litres ready to use with a pressure sprayer, and the only listing here whose detail rows actually name the actives — cypermethrin and tetramethrin, with the maker giving cypermethrin at 0.1% w/w. Its maker states residual action continuing up to three months and describes the product as HSE registered for household environments.",
+                "Three items in one box: a litre of spray, 300g of powder and a fogger bomb, with the maker stating a treatment for one room and a residue lasting up to twelve weeks. UC IPM does not recommend over-the-counter total-release aerosol foggers for bed bugs and calls them potentially harmful to residents; that is the source's position on one of the three items, it is quoted in full above, and it is on this card because a reader deciding here needs it here.",
+                "The only item on the page with no insecticide in it. Eight cups that sit under bed and furniture legs, with a target species row of Bed Bug and a listing stating no chemicals or pesticides. Its maker describes bed bugs climbing the textured exterior and being unable to escape the inner reservoir, and states that eight traps cover two beds. Listed for hotels, hostels, dormitories, hospitals and nursing homes.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If a Spray Is Not the Answer</h2>
+      <p>
+        <strong>Steam and heat.</strong> UC IPM names steam and heat treatment
+        among the non-chemical methods a treatment has to include. Our{" "}
+        <a href="/best/professional-bed-bug-steamers">
+          professional bed bug steamers
         </a>{" "}
-      </div>{" "}
-      {/* Intro paragraphs */}{" "}
+        page covers that class, with the source&rsquo;s penetration caveat
+        attached.
+      </p>
       <p>
-        {" "}
-        Bed bugs (<em>Cimex lectularius</em>) are the most feared pest in the UK
-        hospitality industry. A single confirmed sighting can trigger
-        devastating online reviews, refund demands, room closures, and &mdash;
-        in the worst cases &mdash; enforcement action from Environmental Health
-        Officers. The British Pest Control Association (BPCA) reports that bed
-        bug callouts across the United Kingdom have risen sharply over the past
-        decade, driven by increased international travel, insecticide
-        resistance, and the rapid spread of infestations through luggage and
-        soft furnishings. For hotels, bed and breakfasts, hostels, care homes,
-        and university halls of residence, the question is not <em>if</em> bed
-        bugs will arrive, but <em>when</em> &mdash; and whether your team has
-        the right professional-grade products to treat the problem quickly and
-        decisively before it becomes a property-wide crisis.{" "}
-      </p>{" "}
+        <strong>A barrier on the mattress.</strong> Our{" "}
+        <a href="/best/professional-mattress-encasements">
+          professional mattress encasements
+        </a>{" "}
+        page covers the zipped covers, which is where a pesticide is not meant
+        to go.
+      </p>
       <p>
-        {" "}
-        Effective commercial bed bug management requires two things:{" "}
-        <strong>professional-strength treatment products</strong> capable of
-        eliminating active infestations across multiple rooms, and{" "}
-        <strong>ongoing monitoring</strong> to detect new introductions before
-        they take hold. Consumer-grade sprays and cheap interceptor cups are not
-        sufficient for hotels managing dozens or hundreds of rooms &mdash; you
-        need concentrated insecticides that treat large areas efficiently,
-        residual formulations that continue killing for weeks after application,
-        and a systematic monitoring programme to catch re-infestations early.
-        The products in this guide have been selected specifically for
-        commercial-scale deployment: concentrate kits that make 5 to 10 litres
-        of professional-strength treatment, multi-litre bulk sprays, complete
-        room treatment kits, and heavy-duty interceptor traps for ongoing
-        monitoring.{" "}
-      </p>{" "}
+        <strong>Laundering and hot drying.</strong> The NHS names a 60C wash and
+        at least 30 minutes in a hot tumble dryer. On a commercial premises that
+        is a linen process, not a purchase.
+      </p>
       <p>
-        {" "}
-        We selected these commercial insect monitoring and treatment products on
-        published specifications and manufacturer information, focusing
-        specifically on items that are suitable for commercial deployment in
-        hotels, B&amp;Bs, hostels, care homes, and other multi-room premises.
-        Each product is described by its active ingredient strength, coverage
-        area, residual effectiveness, value at commercial scale, and ease of use
-        for facilities management teams. For a comprehensive overview of pest
-        management obligations for the hospitality sector, see our companion
-        guide:{" "}
-        <Link
-          href="/guides/hotel-pest-control"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          Hotel Pest Control: Complete UK Guide
-        </Link>
-        .{" "}
-      </p>{" "}
-      {/* At a Glance */}{" "}
-      <h2 id="at-a-glance">Best Commercial Bed Bug Treatment at a Glance</h2>{" "}
+        <strong>A professional.</strong> UC IPM says the most effective
+        pesticides are available to commercial applicators only. Our{" "}
+        <a href="/guides/how-to-get-rid-of-bed-bugs">bed bug guide</a> sets out
+        what engaging one involves.
+      </p>
+
+      {/* Use and placement */}
+      <h2 id="using">Use and Placement</h2>
+      <ol>
+        <li>
+          <strong>Find them before you treat.</strong> Put the interceptors
+          under the legs first; a treatment you cannot measure is one you will
+          repeat blind.
+        </li>
+        <li>
+          <strong>Strip and launder.</strong> The NHS&rsquo;s 60C wash and hot
+          tumble dry come before any spray, not instead of it.
+        </li>
+        <li>
+          <strong>Treat frames, seams and joints.</strong> Every spray listing
+          here describes bed frames and mattresses rather than open floor.
+        </li>
+        <li>
+          <strong>Dilute by the label, not by the listing.</strong> The
+          concentrate is the one product where getting this wrong changes what
+          you have applied.
+        </li>
+        <li>
+          <strong>Follow the fumigation device&rsquo;s own instructions.</strong>{" "}
+          One kit contains one, and on a commercial premises that governs who
+          may be in the building.
+        </li>
+        <li>
+          <strong>Check the traps again afterwards.</strong> That is the only
+          measurement on this page.
+        </li>
+      </ol>
+
+      {/* Comparison table — LISTING facts only, "not stated" where absent */}
+      <h2 id="compared">The Five Compared</h2>
       <p>
-        {" "}
-        Below is a quick comparison of our five recommended commercial bed bug
-        treatment products. Each has been selected for a different use case and
-        scale, from a complete concentrate-and-sprayer kit for treating entire
-        hotel floors to interceptor traps for ongoing room-by-room monitoring.
-        We cover every product in full further down the page.{" "}
-      </p>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Product</th> <th>Type</th> <th>Best For</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
+        Every column below is what the Amazon listing itself states, with each
+        claim attributed to the maker who makes it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">What is in the box</th>
+              <th className="text-left p-2 border-b font-semibold">Actives, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Quantity or coverage, as listed</th>
             </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      {/* Product 1: Pest Expert Formula P+ Concentrate + 5L Sprayer */}{" "}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Pest Expert Formula &apos;P+&apos; Ultimate Bed Bug Killer
-        Concentrate is a bed bug treatment product available to amateur users on
-        the UK market, and it is our top recommendation for hotels, hostels, and
-        any commercial accommodation provider that needs to treat multiple rooms
-        efficiently and cost-effectively. The formula contains{" "}
-        <strong>three active ingredients</strong> &mdash; Tetramethrin for fast
-        knockdown, Permethrin for residual kill, and Piperonyl Butoxide (PBO) as
-        a synergist that enhances the effectiveness of both pyrethroids &mdash;
-        making it significantly more potent than single-ingredient consumer
-        sprays. This triple-action formula was recently approved for amateur use
-        in the UK, bringing professional-grade chemistry within reach of hotel
-        managers and facilities teams without the need for a pest control
-        operator licence.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The kit includes a <strong>5-litre pressure sprayer</strong>, which is
-        essential for professional-quality application. Trigger-spray bottles
-        cannot deliver the fine, even mist needed to penetrate mattress seams,
-        bed frame joints, skirting board gaps, and headboard crevices where bed
-        bugs harbourage during the day. A pressure sprayer delivers consistent
-        coverage at the correct droplet size, ensuring the insecticide reaches
-        every crack and crevice where bed bugs hide. The concentrate makes{" "}
-        <strong>10 litres of ready-to-use spray</strong>, which is enough to
-        treat approximately 100 square metres &mdash; equivalent to five to
-        seven standard hotel rooms depending on room size and furniture density.
-        For a 30-room hotel dealing with a multi-room infestation, two kits
-        provide enough treatment solution to cover every room on the affected
-        floor with treatment left over for follow-up applications.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The cost economics are compelling. A kit treats 100 square metres, so
-        the per-room cost is a small fraction of the &pound;200 to &pound;500
-        that a professional pest controller charges for a single room treatment.
-        While we always recommend professional treatment for severe or
-        widespread infestations, this kit enables hotel managers to respond
-        immediately to confirmed sightings while waiting for the pest
-        controller&apos;s next visit, and to carry out follow-up treatments
-        between professional service calls to maintain pressure on the
-        infestation. The residual action continues killing bed bugs for weeks
-        after application, providing ongoing protection between treatments.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Bed bug insecticide available to amateur users in the UK</li>{" "}
-        <li>
-          Three active ingredients provide fast knockdown + long residual +
-          synergist enhancement
-        </li>{" "}
-        <li>
-          Makes 10L &mdash; treats approx. 100 sqm (5&ndash;7 hotel rooms per
-          kit)
-        </li>{" "}
-        <li>
-          Includes professional 5L pressure sprayer for proper application
-        </li>{" "}
-        <li>
-          Dramatically lower per-room cost than professional treatment callouts
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Requires dilution and sprayer setup &mdash; not as quick as
-          ready-to-use sprays
-        </li>{" "}
-        <li>
-          Must follow label instructions carefully &mdash; three active
-          ingredients require responsible use
-        </li>{" "}
-        <li>
-          Not a substitute for professional treatment in severe infestations
-        </li>{" "}
-        <li>
-          Treated rooms need adequate ventilation before guest re-entry
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> The Pest Expert Formula &apos;P+&apos; kit is
-        the single best bed bug treatment product for UK hotels and commercial
-        accommodation. Its triple-active formula, commercial-scale coverage, and
-        included pressure sprayer make it the most cost-effective way to treat
-        multiple rooms at professional strength. If you can only buy one
-        treatment product for your hotel, this is it.{" "}
-      </p>{" "}
-      {/* Product 2: Pest Expert Formula C+ 2x1L */}{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Pest Expert Formula &apos;C+&apos; is a professional-strength bed
-        bug spray that comes ready to use in two 1-litre bottles, making it
-        ideal for hotel housekeeping teams that need to treat individual rooms
-        quickly without the dilution and sprayer setup required by concentrate
-        products. The formula contains <strong>three active ingredients</strong>
-        , including an insect growth regulator (IGR) &mdash; pyriproxyfen
-        &mdash; which prevents bed bug eggs and nymphs from developing into
-        reproducing adults. This IGR action is what distinguishes Formula
-        &apos;C+&apos; from most competitor sprays: while standard pyrethroids
-        kill adult bed bugs on contact, they do nothing to prevent eggs that
-        have already been laid from hatching and restarting the infestation
-        cycle. The pyriproxyfen in Formula &apos;C+&apos; breaks this cycle by
-        sterilising the next generation, which is critical for achieving genuine
-        long-term control rather than temporary knockdown followed by
-        re-infestation.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The <strong>water-based formula</strong> is an important feature for
-        commercial accommodation providers. Oil-based and solvent-based
-        insecticides can stain mattresses, discolour carpets, and leave oily
-        residues on soft furnishings &mdash; creating exactly the kind of room
-        damage that hotels cannot afford. Formula &apos;C+&apos; is specifically
-        formulated to be non-staining and safe for application to mattresses,
-        bed frames, headboards, carpets, curtains, and upholstered furniture.
-        This means housekeeping staff can apply the spray directly to the most
-        common bed bug harbourage sites without worrying about damaging hotel
-        property or leaving visible residues that guests might notice.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        At 2 litres of ready-to-use spray, this product sits between the bulk
-        concentrate kits and the smaller consumer sprays. Two litres is enough
-        to treat two to three rooms thoroughly, making it cost-effective for
-        targeted treatment of individual rooms where bed bug activity has been
-        confirmed by housekeeping inspections or interceptor trap monitoring.
-        Hotels with a proactive pest management programme will find this product
-        invaluable as a rapid-response treatment that can be applied by
-        housekeeping staff within minutes of a confirmed sighting, before the
-        infestation has a chance to spread to adjacent rooms.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Ready-to-use &mdash; no dilution required, ideal for rapid-response
-          treatment
-        </li>{" "}
-        <li>
-          Insect growth regulator (pyriproxyfen) breaks the bed bug reproduction
-          cycle
-        </li>{" "}
-        <li>
-          Water-based and non-staining &mdash; safe for mattresses, carpets, and
-          upholstery
-        </li>{" "}
-        <li>2 x 1L bottles treat 2&ndash;3 rooms thoroughly</li>{" "}
-        <li>Professional strength recently approved for amateur use</li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Smaller volume than concentrate kits &mdash; less cost-effective for
-          treating many rooms at once
-        </li>{" "}
-        <li>
-          Trigger spray mechanism may not achieve the same penetration as a
-          pressure sprayer
-        </li>{" "}
-        <li>
-          Not suitable for severe infestations that require professional heat
-          treatment
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> Pest Expert Formula &apos;C+&apos; is the best
-        ready-to-use bed bug spray for UK hotels and B&amp;Bs. The IGR action
-        sets it apart from cheaper sprays by genuinely breaking the infestation
-        cycle, and the water-based formula is safe for direct application to
-        hotel mattresses and soft furnishings. Keep a supply in the housekeeping
-        store for immediate response to confirmed sightings.{" "}
-      </p>{" "}
-      {/* Product 3: NOPE! CP 5L + Sprayer */}{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The NOPE! CP Bed Bug Killer is a bulk treatment solution designed for
-        commercial premises that need a large volume of ready-to-use insecticide
-        at a competitive price. The kit includes{" "}
-        <strong>5 litres of professional cypermethrin-based spray</strong> and a{" "}
-        <strong>pressure sprayer</strong> for even application across
-        mattresses, bed frames, headboards, skirting boards, and other
-        harbourage areas. NOPE! CP is widely used in the UK hospitality and
-        accommodation sector.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The standout feature is the <strong>extended residual kill</strong>.
-        Unlike contact-only sprays that must land directly on a bed bug to be
-        effective, NOPE! CP leaves a residual insecticidal barrier that
-        continues killing bed bugs for up to three months after application. Any
-        bed bug that crosses a treated surface &mdash; whether it is emerging
-        from a crack in the headboard, crawling along a skirting board, or
-        travelling between the mattress and bed frame &mdash; picks up a lethal
-        dose of cypermethrin from the residual deposit and dies within hours.
-        This residual action is what transforms a single treatment from a
-        temporary fix into a lasting solution, providing ongoing protection
-        during the weeks between professional pest controller visits. For hotels
-        operating a monthly pest control contract, the three-month residual
-        means that treated rooms remain protected well beyond the next scheduled
-        visit.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The <strong>odourless and non-staining</strong> formulation is important
-        for any product that will be used in guest-facing rooms. Hotels cannot
-        afford to leave treated rooms smelling of insecticide or bearing visible
-        spray marks on mattresses and soft furnishings. NOPE! CP is specifically
-        formulated to leave no detectable odour and no visible residue on
-        fabrics, making it practical for use in rooms that need to be returned
-        to service quickly after treatment. The <strong>HSE-registered</strong>{" "}
-        status confirms that the product has been assessed and approved by the
-        UK Health and Safety Executive for use as an insecticide, providing
-        regulatory assurance for commercial operators who need to demonstrate
-        due diligence in their pest management documentation.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          5L of ready-to-use spray &mdash; enough to treat 8&ndash;12 hotel
-          rooms from a single kit
-        </li>{" "}
-        <li>
-          Three-month residual kill provides ongoing protection between
-          treatments
-        </li>{" "}
-        <li>
-          Odourless and non-staining &mdash; rooms can return to service quickly
-        </li>{" "}
-        <li>
-          HSE-registered &mdash; compliant for commercial use with documented
-          approval
-        </li>{" "}
-        <li>
-          Pressure sprayer included for professional-quality application
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Single active ingredient (cypermethrin) &mdash; less potent than
-          multi-ingredient formulas
-        </li>{" "}
-        <li>
-          No insect growth regulator &mdash; does not prevent egg development
-        </li>{" "}
-        <li>
-          5L is a large volume &mdash; may be more than small B&amp;Bs need for
-          a single treatment cycle
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> NOPE! CP is the best bulk-buy bed bug
-        treatment for UK hotels and B&amp;Bs that need to treat large numbers of
-        rooms cost-effectively. The 5L volume, included pressure sprayer,
-        three-month residual, and HSE registration make it a solid choice for
-        any commercial accommodation provider managing bed bug risk at scale.
-        Pair it with Formula &apos;C+&apos; for IGR action and you have a
-        comprehensive two-product treatment programme.{" "}
-      </p>{" "}
-      {/* Product 4: Pest Expert Treatment Kit (Standard) */}{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Pest Expert Bed Bug Treatment Kit (Standard) takes a different
-        approach to the concentrate and bulk spray products above. Instead of
-        providing a single treatment method in large volume, this kit provides{" "}
-        <strong>multiple complementary treatment methods</strong> packaged
-        together as a complete solution for one room. The kit includes{" "}
-        <strong>1 litre of Formula &apos;C+&apos; spray</strong> for direct
-        application to mattresses, bed frames, and headboards; a{" "}
-        <strong>fogger bomb</strong> that fills the entire room with
-        insecticidal mist to reach areas that spray cannot penetrate (wall
-        cavities, behind skirting boards, inside electrical sockets);{" "}
-        <strong>insecticidal powder</strong> for application to cracks,
-        crevices, and voids where bed bugs harbourage deep inside furniture
-        joints and floor gaps; and an <strong>aerosol spray</strong> for quick
-        spot-treatment of visible bed bugs and harbourage areas.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        This multi-method approach is the same strategy that professional pest
-        controllers use when treating a hotel room. Bed bugs are cryptic insects
-        that hide in a wide variety of locations &mdash; mattress seams,
-        headboard joints, bedside table drawers, skirting board gaps, electrical
-        socket casings, curtain folds, and even behind loose wallpaper. No
-        single treatment method can reach every harbourage. By combining a
-        liquid spray (for surfaces), a fogger (for airborne penetration into
-        voids), a powder (for deep crevice treatment), and an aerosol (for spot
-        treatment), the kit attacks bed bugs on multiple fronts simultaneously,
-        dramatically increasing the likelihood of achieving complete elimination
-        in a single treatment cycle.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The included <strong>step-by-step treatment guide</strong> is
-        particularly valuable for hotels where pest management is handled by
-        facilities managers or housekeeping supervisors rather than dedicated
-        pest control technicians. The guide walks users through the correct
-        application sequence, explains where and how to apply each product, and
-        provides advice on room preparation and post-treatment procedures. The
-        kit is well suited to treating individual confirmed infestations, and
-        compact enough to keep several in stock for immediate deployment.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Complete multi-method treatment for one room &mdash; nothing else to
-          buy
-        </li>{" "}
-        <li>
-          Four application methods attack bed bugs in every harbourage type
-        </li>{" "}
-        <li>
-          Step-by-step guide enables non-specialist staff to apply correctly
-        </li>{" "}
-        <li>
-          Professional-strength products from a trusted UK pest control brand
-        </li>{" "}
-        <li>
-          Ideal for immediate response to confirmed individual room infestations
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Only covers one room per kit &mdash; not cost-effective for treating
-          entire hotel floors
-        </li>{" "}
-        <li>
-          Fogger bomb requires the room to be sealed and vacated for several
-          hours
-        </li>{" "}
-        <li>
-          Multiple products mean a more complex application process than a
-          single spray
-        </li>{" "}
-        <li>Covers fewer rooms per pack than the bulk concentrate kits</li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> The Pest Expert Treatment Kit is the best
-        option for hotels that need a complete, all-in-one solution for treating
-        individual room infestations. Its multi-method approach mirrors
-        professional pest control practice, and the step-by-step guide makes it
-        accessible for non-specialist staff. Keep two or three kits in the
-        housekeeping store for immediate deployment when a room is confirmed
-        positive.{" "}
-      </p>{" "}
-      {/* Product 5: Bed Bug Blocker (Pro) 8-Pack */}{" "}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Treatment without monitoring is incomplete. Even the most thorough
-        insecticide application cannot guarantee 100 per cent elimination in a
-        single treatment cycle &mdash; bed bugs are notoriously resilient, and
-        eggs laid in deep crevices may survive initial treatment and hatch days
-        or weeks later. The Bed Bug Blocker (Pro) Interceptor Traps are the
-        essential complement to every treatment product on this page: placed
-        under all four legs of every treated bed, they provide continuous,
-        passive monitoring that will detect any surviving bed bugs that emerge
-        after treatment, as well as any new bed bugs introduced by subsequent
-        guests. A single trapped bug during a routine housekeeping inspection
-        triggers an immediate follow-up treatment before the re-infestation can
-        take hold &mdash; turning what could have been a multi-room crisis into
-        a contained, manageable incident.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The 8-pack format is designed for hotel-scale deployment: each pack
-        covers two beds (four interceptors per bed). For a 30-room hotel,
-        fifteen 8-packs provide full coverage of every bed in the property for a
-        fraction of the cost of a single professional heat treatment. The traps
-        are heavy-duty, supporting the weight of fully loaded hotel beds without
-        cracking, and the dual-texture design (rough exterior for bed bug
-        climbing, slippery interior to prevent escape) has been validated by
-        entomological research. The traps are chemical-free, eco-friendly, and
-        fully reusable &mdash; simply inspect, clean, and replace during routine
-        room turnover.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Essential post-treatment monitoring &mdash; detects survivors and new
-          introductions
-        </li>{" "}
-        <li>
-          8-pack covers two beds &mdash; designed for hotel-scale deployment
-        </li>{" "}
-        <li>Heavy-duty construction supports fully loaded hotel beds</li>{" "}
-        <li>
-          Chemical-free and eco-friendly &mdash; complements insecticidal
-          treatments
-        </li>{" "}
-        <li>
-          Simple to inspect during routine housekeeping room turnover
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Monitoring only &mdash; does not kill or treat bed bugs</li>{" "}
-        <li>Will not fit oversized furniture legs wider than 3 inches</li>{" "}
-        <li>
-          Requires periodic cleaning to maintain the slippery interior surface
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> Every hotel using the treatment products above
-        should also deploy Bed Bug Blocker interceptors under every bed on the
-        premises. Treatment without monitoring is flying blind. These traps
-        provide the early-warning system that turns reactive crisis management
-        into proactive pest control.{" "}
-      </p>{" "}
-      {/* Multi-Buy Messaging */}{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="info">
-          {" "}
-          <p>
-            <strong>Buying for a hotel or large property?</strong> A 20-room
-            hotel needs approximately 80 bed bug interceptors (4 per bed) plus
-            treatment supplies for immediate response. At current prices,
-            equipping an entire hotel costs &pound;200&ndash;&pound;500 in
-            monitoring products alone &mdash; but catching an infestation early
-            saves thousands in treatment costs, lost revenue, and reputation
-            damage. Many hotels buy in bulk quarterly.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* Buying Guide */} <h2 id="buying-guide">Buying Guide</h2>{" "}
-      <p>
-        {" "}
-        Choosing the right bed bug treatment products for your commercial
-        premises requires understanding the difference between treatment,
-        prevention, and monitoring &mdash; and how these three elements work
-        together in a comprehensive pest management programme. Here are the key
-        considerations for hotel managers, B&amp;B proprietors, and facilities
-        managers.{" "}
-      </p>{" "}
-      <h3>Treatment vs Monitoring</h3>{" "}
-      <p>
-        {" "}
-        The products on this page fall into two categories:{" "}
-        <strong>treatment products</strong> (the concentrate kit, sprays, bulk
-        treatment, and room kit) that actively kill bed bugs through
-        insecticidal chemistry, and <strong>monitoring products</strong> (the
-        interceptor traps) that passively detect bed bug activity without
-        killing. Both are essential components of a commercial bed bug
-        management programme. Treatment without monitoring means you cannot
-        confirm whether the treatment was successful or detect new
-        introductions. Monitoring without treatment means you can see the
-        problem but cannot solve it. For hotels, the recommended approach is to
-        treat confirmed rooms with one or more of the insecticidal products
-        above, then deploy interceptor traps under every bed in the property for
-        ongoing detection.{" "}
-      </p>{" "}
-      <h3>Choosing the Right Treatment Product</h3>{" "}
-      <p>
-        {" "}
-        The best product depends on the scale of your problem and the number of
-        rooms you need to treat:{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          <strong>Multi-room infestations (5+ rooms):</strong> Use the Pest
-          Expert Formula &apos;P+&apos; Concentrate + Sprayer kit. The 10L yield
-          treats approximately 100 sqm at the lowest per-room cost.
-        </li>{" "}
-        <li>
-          <strong>Individual room treatment (1&ndash;3 rooms):</strong> Use the
-          Pest Expert Formula &apos;C+&apos; 2 x 1L spray for rapid, no-dilution
-          response with IGR action.
-        </li>{" "}
-        <li>
-          <strong>Large-scale preventive treatment:</strong> Use the NOPE! CP 5L
-          for broad coverage with three-month residual protection across many
-          rooms.
-        </li>{" "}
-        <li>
-          <strong>Single room emergency response:</strong> Use the Pest Expert
-          Treatment Kit (Standard) for a complete multi-method treatment of one
-          confirmed room.
-        </li>{" "}
-        <li>
-          <strong>Ongoing monitoring:</strong> Deploy Bed Bug Blocker
-          interceptors under every bed in the property.
-        </li>{" "}
-      </ul>{" "}
-      <h3>Professional Treatment vs Self-Treatment</h3>{" "}
-      <p>
-        {" "}
-        The products on this page enable hotel managers to respond quickly to
-        confirmed bed bug sightings and maintain treatment pressure between
-        professional pest controller visits. However, they are{" "}
-        <strong>not a replacement for professional pest control</strong> in the
-        following situations: severe infestations affecting multiple rooms
-        simultaneously, infestations that have not responded to two or more
-        self-treatment cycles, situations where heat treatment (typically
-        &pound;500 to &pound;1,500 per room) is required for
-        insecticide-resistant populations, and any scenario where Environmental
-        Health Officers have issued an improvement notice requiring professional
-        documentation. For these situations, a BPCA or NPTA accredited
-        commercial pest controller is essential.{" "}
-      </p>{" "}
-      <h3>Treatment Protocol for Hotels</h3>{" "}
-      <p>
-        {" "}
-        A recommended commercial bed bug treatment protocol combines products on
-        this page as follows: <strong>first</strong>, confirm the infestation
-        through interceptor trap monitoring or visual inspection.{" "}
-        <strong>Second</strong>, isolate the affected room and adjacent rooms.{" "}
-        <strong>Third</strong>, treat the confirmed room using the Pest Expert
-        Treatment Kit or Formula &apos;C+&apos; spray. <strong>Fourth</strong>,
-        treat adjacent rooms with NOPE! CP or Formula &apos;P+&apos; concentrate
-        as a precaution. <strong>Fifth</strong>, deploy interceptor traps under
-        all beds in the treated zone. <strong>Sixth</strong>, inspect
-        interceptors daily for seven days, then weekly for four weeks.{" "}
-        <strong>Seventh</strong>, schedule a professional pest controller visit
-        to confirm elimination and document the outcome for your pest management
-        records.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
-          <p>
-            For maximum protection, combine treatment products with monitoring
-            traps. Treat confirmed rooms immediately with sprays or kits, then
-            deploy interceptors under every bed in the property for early
-            detection of new introductions.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* Find a Provider */}{" "}
-      <h2 id="find-provider">Find a Commercial Pest Controller</h2>{" "}
-      <p>
-        {" "}
-        The treatment products on this page enable hotel managers to respond
-        rapidly to bed bug sightings and maintain treatment pressure between
-        professional visits. However, for severe infestations,
-        insecticide-resistant populations, or situations requiring documented
-        professional treatment reports for EHO compliance, a commercial pest
-        controller is essential. Professional providers offer heat treatment
-        (the gold standard for resistant infestations), canine bed bug
-        detection, comprehensive monitoring programmes, and the documented
-        service reports that regulators and industry auditors expect to
-        see.{" "}
-      </p>{" "}
-      {/* Professional Contract CTA */}{" "}
-      <div className="not-prose my-8 p-8 bg-gradient-to-br from-teal-50 to-emerald-50 border-2 border-teal-300 rounded-2xl">
-        {" "}
-        <h3 className="text-2xl font-bold text-teal-900 mb-3">
-          Need a Professional Pest Management Contract?
-        </h3>{" "}
-        <p className="text-teal-800 mb-6 leading-relaxed">
-          {" "}
-          DIY monitoring is a good first step, but hotels and commercial
-          premises with ongoing pest risk need a professional pest management
-          contract. A BPCA or NPTA accredited pest controller will supply,
-          install, and maintain professional-grade monitoring systems as part of
-          a documented pest management programme &mdash; essential for
-          compliance and guest protection. Commercial contracts typically cost
-          &pound;1,500&ndash;&pound;12,000 per year depending on property
-          size.{" "}
-        </p>{" "}
-        <a
-          href="/guides/commercial-pest-control"
-          className="inline-block px-8 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg transition-colors"
-        >
-          {" "}
-          Find Commercial Pest Controllers &rarr;{" "}
-        </a>{" "}
-      </div>{" "}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Need Professional Bed Bug Treatment?"
-          subtext="Compare commercial pest control providers specialising in hotel and hospitality pest management."
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-3">
-          Running a hotel or B&amp;B? Read our full pest management guide.
-        </p>{" "}
-        <a
-          href="/guides/hotel-pest-control"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          {" "}
-          Hotel Pest Control: Complete UK Guide &rarr;{" "}
-        </a>{" "}
-      </div>{" "}
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* FAQ — rendered from the same array the schema above is derived from */}
+      <h2 id="faq">Frequently Asked Questions</h2>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+
+      <FindProviderCTA
+        heading="Bed bugs on a commercial premises are the pest the NHS says to get help with"
+        subtext="Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }
