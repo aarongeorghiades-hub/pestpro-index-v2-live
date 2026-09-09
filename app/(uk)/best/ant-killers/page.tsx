@@ -1,64 +1,64 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S69 R1 — ROLLOUT REBUILD to the R8 pattern, on sources. GROUP B.
+//
+// HEALTH STATEMENTS ON THIS PAGE: ZERO. Neither source read for this route makes a
+// statement about human health, and none is manufactured to fill the gap. Ants are a
+// nuisance and a food-hygiene question here, not a clinical one.
+//
+// TITLE AND H1: the claim clause was "Baits, Gels & Sprays" and this page cards no
+// spray. Replaced with "Bait Stations and Gel", which is what it cards. Head keyword
+// "Best Ant Killer Products UK 2026" kept byte-identical (standing title ruling).
+//
+// STANDING BAR — B000BQT5IG. Permanently barred from carrying any award anywhere on the
+// estate. Its compliant neutral descriptor "Gel Bait" is preserved byte-identical on
+// cardLabel, h2Label, tocLabel and its comparison cell. No string beginning "Best" is
+// applied to it on any surface.
+//
+// AWARD LABELS, RANK NUMERALS AND CARD ORDER ARE UNCHANGED. Two own-voice claims were
+// cleared from the rank-1 feature list: "UK's #1 ant bait station", a superlative this
+// listing does not make, and "Discreet, low-profile design safe around children and
+// pets", an own-voice safety claim (standing safety ruling, S68 R5).
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Ant Killer Products UK 2026: Baits, Gels & Sprays",
+    title: "Best Ant Killer Products UK 2026: Bait Stations and Gel",
     description:
-      "The best ant killer products for UK homes in 2026. Bait stations, gel baits, powders and sprays compared, with pros, cons and buying advice.",
+      "Two ant bait stations and a gel bait compared on their own listings, beside what UC IPM says about baits against foundation sprays.",
     alternates: { canonical: "https://pestproindex.com/best/ant-killers" },
     openGraph: {
-      title: "Best Ant Killer Products UK 2026: Baits, Gels & Sprays",
+      title: "Best Ant Killer Products UK 2026: Bait Stations and Gel",
       description:
-        "The best ant killer products for UK homes in 2026. Bait stations, gel baits, powders and sprays compared, with pros, cons and buying advice.",
+        "Two ant bait stations and a gel bait compared on their own listings, beside what UC IPM says about baits against foundation sprays.",
       url: "https://pestproindex.com/best/ant-killers",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Ant Killer Products UK 2026: Baits, Gels & Sprays",
+  headline: "Best Ant Killer Products UK 2026: Bait Stations and Gel",
   description:
-    "The best ant killer products for UK homes in 2026. Bait stations, gel baits, powders and sprays compared, with pros, cons and buying advice.",
+    "Two ant bait stations and a gel bait compared on their own listings, beside what UC IPM says about baits against foundation sprays.",
   datePublished: "2026-03-17",
-  dateModified: "2026-03-17",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://pestproindex.com/best/ant-killers",
-  },
+  dateModified: "2026-09-09",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/ant-killers" },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -67,6 +67,20 @@ const breadcrumbSchema = {
     },
   ],
 };
+
+// SOURCES. Every quotation below was extracted by byte range from a body on disk and
+// verified by exact string match before it was written here (Law 164). The citation
+// names the host actually fetched (Law 194): ipm.ucanr.edu, fetched 2026-09-09, body
+// kept at ~/pp-s69r1/sources/ucipm-ants.src.txt under Law 175.
+//
+// IT IS A CALIFORNIAN SOURCE AND THE PAGE SAYS SO. Its species list is Californian and
+// none of it is restated here as a UK fact (Law 135). What is quoted is its account of
+// how a bait works and what a perimeter spray does, which is a statement about the
+// method rather than about a place.
+const SRC = {
+  ucipm: "https://ipm.ucanr.edu/home-and-landscape/ants/",
+};
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -81,22 +95,35 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Records are addressed BY IDENTITY, never by position (Law 107).
+//
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies at
+// ~/pp-s61r1/uk/, inside the S45-C window. A property is asserted only where the
+// listing's own text states it (S52-E); a cell the listing does not state reads
+// "not stated". Maker self-praise is trimmed and never restated (S47-F) — the rank-1
+// listing's title carries a fifty-years trust line and it appears nowhere below.
 const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
     asin: "B001CJ11ZQ",
     rank: 1,
-    cardName: "Nippon Ant Bait Station",
+    cardName: "Nippon Ant Bait Station Twin Pack",
     cardLabel: "Best Overall",
     features: [
-      "UK's #1 ant bait station",
-      "Eliminates entire colonies including the queen",
-      "Discreet, low-profile design safe around children and pets",
-      "Simple peel-and-place activation — no mess",
+      "Two pre-baited stations per pack, listed as a twin pack",
+      "The maker names the active ingredient as spinosad",
+      "Listed as fully enclosed and for both indoor and outdoor use",
+      "Item form listed as Liquid; target species Ant",
+      "The maker states it acts on the nest, not only on the ants you see",
     ],
-    tableCells: ["Nippon Ant Bait Station", "Bait station", "Best Overall"],
+    tableCells: [
+      "Nippon Ant Bait Station Twin Pack",
+      "Pre-baited enclosed station",
+      "Spinosad, named by the maker",
+      "Two stations; indoor and outdoor, as listed",
+    ],
     h2Label: "Best Overall",
-    h2Name: "Nippon Ant Bait Station",
+    h2Name: "Nippon Ant Bait Station Twin Pack",
     tocLabel: "Best Overall",
     tocName: "Nippon Ant Bait Station",
   },
@@ -104,22 +131,25 @@ const products: ProductRecord[] = [
     anchorId: "best-multi-pack",
     asin: "B08YFJWGX2",
     rank: 2,
-    cardName: "NOPE! Ant Killer Bait Station 6-Pack",
+    cardName: "NOPE! Ant Killer Bait Station (6 x 5g)",
     cardLabel: "Best Multi-Pack",
     features: [
-      "Six bait stations for whole-house coverage",
-      "Suitable for both indoor and outdoor use",
-      "Pre-filled and ready to use — no preparation needed",
+      "Six stations of 5g each, listed as 6 x 5g",
+      "The maker states a systemic insecticide with an insect growth regulator",
+      "The maker describes the gel being spread through the colony by trophallaxis",
+      "Listed for indoor and outdoor use; target species Ant",
+      "No active substance is named in the listing's detail rows",
     ],
     tableCells: [
-      "NOPE! Ant Killer Bait Station 6-Pack",
-      "Bait station (multi-pack)",
-      "Best Multi-Pack",
+      "NOPE! Ant Killer Bait Station (6 x 5g)",
+      "Gel-baited enclosed station",
+      "not stated",
+      "Six stations, 5g each; indoor and outdoor, as listed",
     ],
     h2Label: "Best Multi-Pack",
-    h2Name: "NOPE! Ant Killer Bait Station 6-Pack",
+    h2Name: "NOPE! Ant Killer Bait Station (6 x 5g)",
     tocLabel: "Best Multi-Pack",
-    tocName: "NOPE! Ant Killer Bait Station 6-Pack",
+    tocName: "NOPE! Ant Killer Bait Station",
   },
   {
     anchorId: "best-gel",
@@ -128,12 +158,18 @@ const products: ProductRecord[] = [
     cardName: "Combat Ant Killing Gel 27g",
     cardLabel: "Gel Bait",
     features: [
-      "Professional-strength fipronil gel bait",
-      "Syringe applicator for precise placement in cracks and crevices",
-      "Kills the entire colony including the queen",
-      "Ideal for kitchens, bathrooms, and hard-to-reach areas",
+      "A 27 gram syringe, listed for placement in cracks and crevices",
+      "Active ingredient listed as fipronil",
+      "Item form listed as Gel; target species Ant",
+      "A US-market product: the maker's own text gives the size as 0.95 ounce",
+      "The maker states it eliminates the colony rather than the foragers alone",
     ],
-    tableCells: ["Combat Ant Killing Gel 27g", "Gel bait", "Gel Bait"],
+    tableCells: [
+      "Combat Ant Killing Gel 27g",
+      "Gel bait in a syringe",
+      "Fipronil, named in the listing",
+      "27 grams; cracks and crevices, as listed",
+    ],
     h2Label: "Gel Bait",
     h2Name: "Combat Ant Killing Gel 27g",
     tocLabel: "Gel Bait",
@@ -141,682 +177,385 @@ const products: ProductRecord[] = [
   },
 ];
 
-// Records are addressed BY IDENTITY, never by position. A positional lookup
-// silently rebinds every later product when a record is added, removed or
-// reordered; this cannot. A missing anchorId throws, so the build fails loudly
-// rather than rendering undefined.
-function product(anchorId: string): ProductRecord {
-  const found = products.find((p) => p.anchorId === anchorId);
-  if (!found) {
-    throw new Error(`No product record with anchorId "${anchorId}"`);
-  }
-  return found;
-}
+const faqs = [
+  {
+    q: "Why is there no spray on this page?",
+    a: "Because the source this page reads says a perimeter spray does not fix the problem. UC IPM writes that spraying around the foundation will not provide permanent control, because it kills only foraging ants without killing the colony and the queens, and that baits are the only type of insecticide it recommends in most situations. Adding a spray to satisfy a title would have been the wrong way round; the title was changed instead.",
+  },
+  {
+    q: "How long should a bait take?",
+    a: "UC IPM says control with baits is not immediate and may take several weeks or more to be complete. None of the three listings here states a UK-tested timescale, and the fastest claim any of them makes is the gel maker's three to five days, which is the maker's own figure and not a finding of this page.",
+  },
+  {
+    q: "Is a gel or a station better?",
+    a: "They are two placements of the same idea rather than two levels of quality. UC IPM describes gel formulations as being applied in small cracks and crevices where ants are entering, and describes prepackaged stations as the readily available form for residential users. The gel goes where a station will not fit; the station is enclosed.",
+  },
+  {
+    q: "Can I use a bait and a spray together?",
+    a: "UC IPM's instruction is not to use insecticide sprays while you are using baits. Nothing on this page is a spray, so the question only arises if you already have one in the cupboard.",
+  },
+  {
+    q: "The bait station is empty and the ants are still coming. What now?",
+    a: "UC IPM's own advice is to check and refresh bait stations regularly, and it notes that baits can dry up or become rancid and unattractive over time. Beyond that, it says the persistent case is one for a professional trained in integrated pest management, who has access to materials and equipment a consumer does not.",
+  },
+  {
+    q: "Is UC IPM a UK source?",
+    a: "No. It is the University of California's Statewide IPM Program and its species list is Californian, which is why no ant species on it is named as a UK fact on this page. What is quoted from it is its account of how a bait reaches a colony and what a perimeter spray does, which is a statement about the method rather than about a country.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 
 const tocItems = [
-  { id: "at-a-glance", title: "Best Ant Killers at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
-  })),
-  { id: "buying-guide", title: "Ant Killer Buying Guide" },
-  { id: "when-to-call", title: "When to Call a Professional" },
+  { id: "situation", title: "Why the Nest Is the Target" },
+  { id: "legal", title: "What the Label Governs" },
+  { id: "limits", title: "Where a Bait Does Not Work" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Bait Is Not the Answer" },
+  { id: "using", title: "Using Them" },
+  { id: "compared", title: "The Three Compared" },
+  { id: "faq", title: "Frequently Asked Questions" },
 ];
+
 export default function BestAntKillersPage() {
   return (
     <GuideLayout
-      title="Best Ant Killer Products UK 2026: Baits, Gels & Sprays"
-      subtitle="Ant killer products for UK homes, selected on published specifications and manufacturer information — from bait stations and gel baits to outdoor powders and contact sprays."
-      lastUpdated="March 2026"
-      readingTime="10 min"
+      title="Best Ant Killer Products UK 2026: Bait Stations and Gel"
+      subtitle="Two enclosed bait stations and one gel, described by what their own listings state — beside the University of California's account of why a bait reaches a nest and a perimeter spray does not"
+      lastUpdated="September 2026"
+      readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "How to Get Rid of Ants: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-ants",
-        },
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
-        {
-          title: "How to Get Rid of Cockroaches: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-cockroaches",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
-        {
-          title: "How to Get Rid of Squirrels: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-squirrels",
-        },
-        {
-          title: "Pigeon Control: Complete UK Guide",
-          href: "/guides/pigeon-control",
-        },
-        {
-          title: "How to Get Rid of Moths",
-          href: "/guides/how-to-get-rid-of-moths",
-        },
-        {
-          title: "Restaurant Pest Control: UK Compliance Guide",
-          href: "/guides/restaurant-pest-control",
-        },
-        {
-          title: "Carpet Beetle Control: Complete UK Guide",
-          href: "/guides/carpet-beetle-control",
-        },
+        { title: "How to Get Rid of Ants: Complete UK Guide", href: "/guides/how-to-get-rid-of-ants" },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
+        { title: "Landlord Pest Control Responsibilities", href: "/guides/landlord-pest-control" },
       ]}
       relatedProducts={[
-        { title: "Best Rat Traps UK 2026", href: "/best/rat-traps" },
-        {
-          title: "Best Carpet Beetle Treatments UK 2026",
-          href: "/best/carpet-beetle-treatments",
-        },
-        { title: "Best Mouse Traps UK 2026", href: "/best/mouse-traps" },
-        { title: "Best Wasp Killers UK 2026", href: "/best/wasp-killers" },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
-        {
-          title: "Best Flea Treatments UK 2026",
-          href: "/best/flea-treatments",
-        },
-        {
-          title: "Best Bed Bug Treatments UK 2026",
-          href: "/best/bed-bug-treatments",
-        },
-        {
-          title: "Best Squirrel Deterrents UK 2026",
-          href: "/best/squirrel-deterrents",
-        },
-        {
-          title: "Best Bird Deterrents UK 2026",
-          href: "/best/bird-deterrents",
-        },
-        { title: "Best Moth Killers UK", href: "/best/moth-killers" },
-        {
-          title: "Best Commercial Fly Killers UK 2026",
-          href: "/best/commercial-fly-killers",
-        },
+        { title: "Best Ant Gel Bait UK 2026", href: "/best/ant-gel-bait" },
+        { title: "Best Carpet Beetle Treatments UK 2026", href: "/best/carpet-beetle-treatments" },
+        { title: "Best Silverfish Treatments UK 2026", href: "/best/silverfish-treatments" },
+        { title: "Best Cockroach Killers UK 2026", href: "/best/cockroach-killers" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
-      {/* Affiliate disclosure */}{" "}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
           site running and free for everyone. As an Amazon Associate, PestPro
-          Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
-      {/* Intro paragraphs */}{" "}
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        Ants are the most common household pest in the United Kingdom, and every
-        spring and summer millions of British homeowners find themselves dealing
-        with trails of tiny black or brown insects marching across kitchen
-        worktops, bathroom floors, and patio slabs. The species responsible for
-        the vast majority of domestic ant problems in Britain is the black
-        garden ant (<em>Lasius niger</em>), a highly social insect that forms
-        underground colonies containing anywhere from 5,000 to 15,000 workers
-        ruled by a single queen. While individual ants are harmless &mdash; they
-        do not bite, sting, or carry diseases in the way that cockroaches or
-        rats do &mdash; a full-blown ant invasion is deeply unpleasant,
-        unhygienic in food preparation areas, and remarkably difficult to
-        resolve if you only kill the foraging workers that you can see on the
-        surface. The British Pest Control Association (BPCA) consistently ranks
-        ants among the top five most-reported pests in their annual survey, and
-        pest control call-outs for ants typically surge between April and
-        September when rising temperatures trigger the colony&apos;s annual
-        expansion of foraging activity.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The reason so many people struggle with ant infestations despite
-        spraying visible trails with household surface cleaner or insecticide is
-        simple: the queen and the colony remain safely underground, unaffected
-        by anything you do on the surface. Kill a hundred foraging workers and
-        the colony simply sends out a hundred more. The only reliable way to
-        eliminate an ant problem permanently is to get insecticide{" "}
-        <strong>into the nest itself</strong>, and that means using a product
-        that the worker ants will carry back to the colony and feed to the queen
-        and brood. This is the principle behind <strong>bait stations</strong>{" "}
-        and <strong>gel baits</strong> &mdash; they contain a slow-acting
-        insecticide mixed with a food attractant that worker ants mistake for a
-        food source. The workers carry the poisoned bait back to the nest, share
-        it through a process called trophallaxis (mouth-to-mouth feeding), and
-        over the course of several days the active ingredient spreads through
-        the colony until the queen and the remaining workers are dead. This
-        colony-kill approach is far more effective than contact sprays and
-        powders used alone, although powders do have a valuable role as a
-        barrier treatment around entry points and outdoor nests.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        We selected these ant killer products on published specifications and
-        manufacturer information, looking at three criteria:{" "}
-        <strong>UK availability</strong>,{" "}
-        <strong>proven active ingredients</strong> with established efficacy
-        against <em>Lasius niger</em> and other common UK ant species, and{" "}
-        <strong>value for money</strong>. We also consulted guidance from the
-        BPCA and professional pest control technicians to ensure our
-        recommendations reflect real-world best practice. For a complete
-        step-by-step ant removal strategy &mdash; including prevention tips,
-        sealing entry points, and garden management &mdash; see our companion
-        guide:{" "}
-        <Link
-          href="/guides/how-to-get-rid-of-ants"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          How to Get Rid of Ants: Complete UK Guide
-        </Link>
-        .{" "}
-      </p>{" "}
+        Three products, all of them baits: two enclosed stations and one gel in
+        a syringe. That there is no spray here is deliberate, and it is the
+        reason this page&rsquo;s title changed.
+      </p>
+
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>One trail, one room.</strong>{" "}
+            <a href="#best-overall" className="underline">
+              The twin pack
+            </a>{" "}
+            is two stations, which is what a single trail needs.
+          </li>
+          <li>
+            <strong>Trails in several rooms at once.</strong>{" "}
+            <a href="#best-multi-pack" className="underline">
+              The six-pack
+            </a>{" "}
+            is the same idea at six placements.
+          </li>
+          <li>
+            <strong>The ants enter through a crack a station cannot sit at.</strong>{" "}
+            <a href="#best-gel" className="underline">
+              The gel
+            </a>{" "}
+            is applied into the crack itself.
+          </li>
+          <li>
+            <strong>You were about to buy a spray.</strong>{" "}
+            <a href="#limits" className="underline">
+              Read what a perimeter spray does
+            </a>{" "}
+            first.
+          </li>
+          <li>
+            <strong>You have baited for weeks and nothing has changed.</strong>{" "}
+            <a href="#alternatives" className="underline">
+              What is left after a bait
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+
       <div className="not-prose">
-        {" "}
         <Callout type="warning">
-          {" "}
           <p>
-            Never spray insecticide directly onto ant trails if you are also
-            using bait stations or gel bait. The repellent effect of the spray
-            will deter ants from approaching the bait, preventing them from
-            carrying the slow-acting poison back to the colony. Let the bait do
-            its work &mdash; you need the ants alive long enough to return to
-            the nest and share the toxicant with the queen.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* At a Glance */} <h2 id="at-a-glance">Best Ant Killers at a Glance</h2>{" "}
+            All three products are insecticides. Where each may be placed, at
+            what rate and with what precautions is set by its own label, and the
+            label on the bottle governs over anything written here.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">Why the Nest Is the Target</h2>
       <p>
-        {" "}
-        Below is a quick comparison of our four ant killer products. Each has
-        been selected for a different use case, so the best option for you
-        depends on whether you are dealing with an indoor invasion, an outdoor
-        nest, or both. We go into full detail on every product further down the
-        page.{" "}
-      </p>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Product</th> <th>Type</th> <th>Best For</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
+        The ants on the worktop are foragers. The colony that sent them is
+        somewhere else, and it is the part that has to be reached. The
+        University of California&rsquo;s Statewide IPM Program describes the
+        mechanism plainly:{" "}
+        <em>
+          &ldquo;Workers carry small portions of the bait back to the nest where
+          it is transferred mouth to mouth to other workers, larvae, and queens
+          to kill the entire colony.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ).
+      </p>
+      <p>
+        That is also why it rates the method above the alternatives:{" "}
+        <em>
+          &ldquo;Baits are a key tool for managing ants and the only type of
+          insecticide recommended in most situations.&rdquo;
+        </em>{" "}
+        Every product on this page is a bait, and that is not a coincidence of
+        sourcing.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">What the Label Governs</h2>
+      <p>
+        Each of the three is sold with a label that states where it may be
+        placed, at what rate, and what has to be kept away from it. That
+        document governs; nothing on this page changes it.
+      </p>
+      <p>
+        One of the three is a US-market product. The Combat gel&rsquo;s own text
+        gives its size in ounces as well as grams, and its instructions are
+        written for a different market&rsquo;s conventions. Read its label
+        rather than assuming a UK equivalent.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where a Bait Does Not Work</h2>
+      <p>
+        <strong>When you reach for a spray instead.</strong> UC IPM:{" "}
+        <em>
+          &ldquo;Spraying around the foundation won&rsquo;t provide permanent
+          control, because it kills only foraging ants without killing the
+          colony and the queens.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ). This page cards no spray, and that sentence is the whole reason.
+      </p>
+      <p>
+        <strong>On the timescale you were hoping for.</strong> The same source:{" "}
+        <em>
+          &ldquo;Control with baits isn&rsquo;t immediate and may take several
+          weeks or more to be complete.&rdquo;
+        </em>{" "}
+        A bait that appears to be doing nothing on day three is not necessarily
+        failing.
+      </p>
+      <p>
+        <strong>Where the food is better than the bait.</strong> UC IPM&rsquo;s
+        instruction before baiting is to remove particles of food and residues
+        of sweet liquids from cracks around sinks and pantries. A station
+        competing with a spill loses.
+      </p>
+      <p>
+        <strong>When the bait no longer attracts.</strong> It notes that baits
+        can dry up or become rancid and unattractive over time, and that
+        stations should be checked and refreshed regularly. None of the three
+        listings here states a replacement interval in its detail rows.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Whether the listing names an active substance</h3>
+      <p>
+        Two of the three do. Nippon names spinosad and Combat names fipronil.
+        The NOPE! six-pack describes a systemic insecticide with an insect
+        growth regulator in its text but names neither in its detail rows, and
+        the comparison table below says so rather than guessing.
+      </p>
+      <h3>2. Enclosed station or open gel</h3>
+      <p>
+        UC IPM describes the two forms differently:{" "}
+        <em>
+          &ldquo;Gel formulations of pesticide baits are packaged in small
+          tubes. They are applied in small cracks and crevices where ants are
+          entering.&rdquo;
+        </em>{" "}
+        A station is a container you place; a gel is a bead you put into the
+        gap. Which one fits your entry point is the question, not which is
+        better.
+      </p>
+      <h3>3. How many placements you actually need</h3>
+      <p>
+        Two, six, or one syringe. UC IPM&rsquo;s outdoor spacing guidance is
+        every ten to twenty feet around a foundation, which is a Californian
+        figure for a Californian garden and is quoted here only to show that the
+        answer is a number of placements rather than a quantity of product.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>
+            {
+              [
+                "Two enclosed stations, pre-baited, with the active named on the listing as spinosad and the item form given as Liquid. Its maker describes it as ready to use indoors and outdoors and states that it acts on the nest rather than only the ants in front of you. Nothing on the listing states how long a station stays attractive.",
+                "The same enclosed idea at six placements, listed as six stations of five grams. Its maker describes a systemic insecticide paired with an insect growth regulator and delayed action, and describes the gel spreading through the colony by trophallaxis — but no active substance appears in the listing's detail rows, so the table cell reads \"not stated\".",
+                "A gel rather than a station: a 27 gram syringe listed for placement into the cracks and crevices ants enter by, with fipronil named as the active ingredient. It is a US-market product and its own text gives the size as 0.95 ounce alongside the grams. This record carries a neutral descriptor rather than an award, by a standing ruling of this site that predates the page.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If a Bait Is Not the Answer</h2>
+      <p>
+        <strong>Take the food away first.</strong> UC IPM&rsquo;s exclusion and
+        sanitation advice — closed containers, cleaned spills, daily refuse — is
+        the step that makes a bait competitive rather than an alternative to it.
+      </p>
+      <p>
+        <strong>Close the entry.</strong> Its advice is to follow a trail back
+        to where it enters the building and to caulk cracks and crevices around
+        foundations. That is a tube of sealant, not an insecticide.
+      </p>
+      <p>
+        <strong>A gel for the gap a station cannot reach.</strong> Our{" "}
+        <a href="/best/ant-gel-bait">ant gel bait</a> page covers that form on
+        its own.
+      </p>
+      <p>
+        <strong>A professional.</strong> UC IPM&rsquo;s answer to a persistent
+        problem is a pest management professional trained in integrated pest
+        management, on the ground that they have access to more effective
+        materials and to application equipment. Our{" "}
+        <a href="/guides/how-to-get-rid-of-ants">ant guide</a> sets out what
+        that involves in the UK.
+      </p>
+
+      {/* Using them */}
+      <h2 id="using">Using Them</h2>
+      <ol>
+        <li>
+          <strong>Clean up first.</strong> Sweet residues around sinks and
+          worktops compete directly with whatever you put down.
+        </li>
+        <li>
+          <strong>Follow the trail before you place anything.</strong> The point
+          of placement is where the ants already walk, not where you would
+          rather they did.
+        </li>
+        <li>
+          <strong>Place, then leave it alone.</strong> Disturbing a trail while
+          a bait is working interrupts the journey back to the nest.
+        </li>
+        <li>
+          <strong>Do not add a spray.</strong> UC IPM&rsquo;s instruction is not
+          to use insecticide sprays while you are using baits.
+        </li>
+        <li>
+          <strong>Check and refresh.</strong> A dried or spent bait is an empty
+          container, and none of these listings states how long that takes.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Three Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        claim attributed to the maker who makes it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Form</th>
+              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Quantity and use, as listed</th>
             </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      {/* Best Overall */}{" "}
-      <h2 id={product("best-overall").anchorId}>
-        {product("best-overall").h2Label} &mdash;{" "}
-        {product("best-overall").h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={product("best-overall").cardName}
-          features={product("best-overall").features}
-          asin={product("best-overall").asin}
-          bestFor={product("best-overall").cardLabel}
-          rank={product("best-overall").rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The Nippon Ant Bait Station has been a staple of UK ant control for
-        decades. Its longevity is no accident &mdash; the product is
-        manufactured by Vitax, a British company based in Leicestershire, and it
-        has been continuously refined over the years to maintain its
-        effectiveness against <em>Lasius niger</em>, the black garden ant that
-        causes the overwhelming majority of household ant problems across
-        Britain. The bait station works on a simple but devastatingly effective
-        principle: inside the enclosed plastic station is a reservoir of sweet,
-        sugary bait laced with a slow-acting insecticide. Worker ants enter the
-        station through small access holes, feed on the bait, and then return to
-        the nest to share the poisoned food with the queen, larvae, and other
-        workers through trophallaxis. Because the insecticide acts slowly
-        &mdash; typically over 24 to 48 hours &mdash; the foraging workers have
-        ample time to distribute it throughout the colony before they themselves
-        succumb. Within three to seven days, the entire colony is destroyed from
-        the inside out.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The enclosed station design is one of Nippon&apos;s greatest strengths.
-        Unlike loose bait or gel, the insecticide is safely contained inside a
-        sealed plastic housing with entry holes sized specifically for ants.
-        This makes the product significantly safer to use in homes with young
-        children, cats, dogs, and other pets, as the bait is inaccessible to
-        anything larger than an ant. Activation could not be simpler: you peel
-        off the adhesive backing to open the bait reservoir and place the
-        station flat on the floor along a known ant trail or close to where ants
-        are entering the house &mdash; common spots include the junction between
-        skirting boards and the floor, behind kitchen appliances, near external
-        door thresholds, and along window sills. A single station is capable of
-        eliminating an entire colony.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Destroys the entire colony including the queen, not just visible
-          foragers
-        </li>{" "}
-        <li>Enclosed design is safe for use around children and pets</li>{" "}
-        <li>
-          Extremely easy to use &mdash; simply peel and place on an ant trail
-        </li>{" "}
-        <li>UK brand manufactured by Vitax in Leicestershire</li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Contains only one bait station per pack &mdash; larger infestations
-          may require multiple packs
-        </li>{" "}
-        <li>
-          Takes three to seven days to eliminate the colony &mdash; not an
-          instant fix
-        </li>{" "}
-        <li>
-          Less effective against protein-feeding ant species (rare in UK homes)
-        </li>{" "}
-        <li>
-          Must be placed directly on an active ant trail for best results
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> The Nippon Ant Bait Station is our top
-        recommendation for the vast majority of UK ant problems. Its colony-kill
-        mechanism addresses the root cause of the infestation rather than merely
-        the symptoms, and its enclosed design makes it one of the safest ant
-        killers available for family homes. If you are dealing with a typical
-        black garden ant invasion in your kitchen or bathroom, start here.{" "}
-      </p>{" "}
-      {/* Best Multi-Pack */}{" "}
-      <h2 id={product("best-multi-pack").anchorId}>
-        {product("best-multi-pack").h2Label} &mdash;{" "}
-        {product("best-multi-pack").h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={product("best-multi-pack").cardName}
-          features={product("best-multi-pack").features}
-          asin={product("best-multi-pack").asin}
-          bestFor={product("best-multi-pack").cardLabel}
-          rank={product("best-multi-pack").rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Where the Nippon bait station is sold individually, the NOPE! Ant Killer
-        Bait Station comes in a pack of six &mdash; making it the ideal choice
-        for households dealing with multiple ant entry points, larger
-        properties, or infestations that span several rooms. This product has
-        earned a loyal following among British homeowners who appreciate the
-        convenience and value of having enough bait stations to cover an entire
-        home in a single purchase. Each station is pre-filled with a sweet bait
-        containing a slow-acting insecticide, and they are designed for both
-        indoor and outdoor use, which is a significant advantage over products
-        that are limited to indoor deployment only.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The NOPE! brand has built a strong reputation in the UK pest control
-        market for producing effective, no-nonsense products at competitive
-        prices. The bait stations operate on the same colony-kill principle as
-        the Nippon station: foraging ants enter the station, feed on the bait,
-        and carry the poisoned food back to the nest where it is shared with the
-        queen and brood. Having six stations means you can deploy them
-        strategically across multiple ant trails and entry points
-        simultaneously, dramatically increasing the speed and completeness of
-        colony elimination. Place stations along active trails in the kitchen,
-        bathroom, conservatory, and near external doorways and patio doors. For
-        outdoor use, position them next to visible ant nest entrances in paving
-        cracks, at the base of external walls, and along paths where ant
-        activity is concentrated. The stations are robust and weather-resistant
-        enough to withstand light rain, though they should ideally be sheltered
-        from heavy downpours.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Six bait stations per pack &mdash; enough for whole-house coverage or
-          multiple nests
-        </li>{" "}
-        <li>Suitable for both indoor and outdoor deployment</li>{" "}
-        <li>Pre-filled and ready to use with no preparation required</li>{" "}
-        <li>Six pre-filled stations cover several entry points at once</li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Individual stations are smaller than the Nippon bait station
-        </li>{" "}
-        <li>May take up to seven days for full colony elimination</li>{" "}
-        <li>
-          Outdoor stations should be sheltered from heavy rain for best
-          longevity
-        </li>{" "}
-        <li>
-          Stations are not refillable &mdash; must purchase new pack once bait
-          is consumed
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> The NOPE! 6-Pack is the smartest buy for
-        anyone dealing with ants entering through multiple points, or for larger
-        homes where a single bait station would leave gaps in coverage. For many
-        households, this pack alone will be sufficient to resolve a typical
-        spring or summer ant invasion.{" "}
-      </p>{" "}
-      {/* Gel Bait */}{" "}
-      <h2 id={product("best-gel").anchorId}>
-        {product("best-gel").h2Label} &mdash; {product("best-gel").h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={product("best-gel").cardName}
-          features={product("best-gel").features}
-          asin={product("best-gel").asin}
-          bestFor={product("best-gel").cardLabel}
-          rank={product("best-gel").rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        The active ingredient is fipronil, a broad-spectrum insecticide that is
-        widely used by professional pest control technicians for ant, cockroach,
-        and termite control around the world. Fipronil works by disrupting the
-        central nervous system of insects, and it has the critical property of
-        being non-repellent &mdash; meaning that ants cannot detect it in the
-        bait, so they feed on it freely and carry it back to the colony without
-        any avoidance behaviour. The gel is packaged in a syringe-style
-        applicator that allows you to dispense precise dots and lines of bait
-        into cracks, crevices, and tight spaces where ants travel but where bait
-        stations cannot physically fit.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        This precision application capability is the gel&apos;s greatest
-        advantage. Kitchen cabinets, the gap behind cookers and refrigerators,
-        the space under sinks, the junction between skirting boards and the
-        floor, cracks in tiling, and the inside of electrical conduit boxes are
-        all prime ant highways that are virtually impossible to treat with a
-        bulky bait station. A small bead of Combat gel placed directly in the
-        ants&apos; path is irresistible to foraging workers, who feed on it and
-        then return to the nest to share the fipronil-laced food with the queen
-        and brood through trophallaxis. Colony elimination typically occurs
-        within three to five days of first contact with the bait, though you
-        should leave the gel in place for at least two weeks to ensure complete
-        eradication. The 27g syringe contains enough gel to treat multiple
-        locations throughout a typical home, and the cap seals tightly to keep
-        the remaining gel fresh for future use.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Professional-strength fipronil active ingredient used by pest control
-          technicians
-        </li>{" "}
-        <li>
-          Syringe applicator allows precise placement in cracks, crevices, and
-          tight spaces
-        </li>{" "}
-        <li>
-          Non-repellent formula &mdash; ants feed freely without detecting the
-          insecticide
-        </li>{" "}
-        <li>
-          Eliminates the entire colony including the queen within three to five
-          days
-        </li>{" "}
-        <li>
-          Sealable syringe preserves remaining gel for future treatments
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Gel is exposed when applied &mdash; keep out of reach of children and
-          pets
-        </li>{" "}
-        <li>
-          Not suitable for outdoor use in exposed locations as rain will wash it
-          away
-        </li>{" "}
-        <li>
-          Requires careful, targeted application rather than simple
-          place-and-forget deployment
-        </li>{" "}
-        <li>
-          Small 27g tube may not be sufficient for very large or multi-nest
-          infestations
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> Use it alongside bait stations for a thorough,
-        multi-point attack on ant colonies.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="info">
-          {" "}
-          <p>
-            Fipronil, the active ingredient in the Combat gel, is the same
-            insecticide used by many professional pest control companies for ant
-            treatments. It is classified as non-repellent, which means ants
-            cannot detect it and will feed on treated bait without hesitation
-            &mdash; this is what makes it so effective at reaching the queen
-            deep inside the nest.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* Buying Guide */} <h2 id="buying-guide">Ant Killer Buying Guide</h2>{" "}
-      <p>
-        {" "}
-        With four strong products to choose from, selecting the right ant killer
-        &mdash; or combination of products &mdash; depends on the nature and
-        location of your infestation. Here are the key factors to consider.{" "}
-      </p>{" "}
-      <h3>Bait vs Spray: Why Colony Kill Matters</h3>{" "}
-      <p>
-        {" "}
-        The single most important decision when choosing an ant killer is
-        whether to use a <strong>bait-based product</strong> (bait stations, gel
-        baits) or a <strong>contact killer</strong> (sprays, powders). Contact
-        killers work fast and are satisfying to use &mdash; you spray an ant
-        trail and watch the ants die within minutes. However, they only kill the
-        workers you can see, which represent a tiny fraction of the colony. The
-        queen remains safely underground, continuing to lay eggs, and the colony
-        replaces its losses within days. Bait-based products take longer to show
-        results (typically three to seven days), but they achieve something that
-        contact killers cannot: they get the insecticide into the nest and kill
-        the queen. Once the queen is dead, the colony cannot reproduce and it
-        collapses entirely. For any indoor ant problem, bait should always be
-        your primary weapon. Use contact killers only as a supplement &mdash;
-        for example, dusting outdoor nest entrances with powder while bait
-        stations work indoors.{" "}
-      </p>{" "}
-      <h3>Indoor vs Outdoor Treatment</h3>{" "}
-      <p>
-        {" "}
-        Indoor ant problems are almost always caused by outdoor nests. The
-        colony lives under your patio, beneath a path, or in the soil at the
-        base of an external wall, and the workers enter your home through tiny
-        gaps in search of food and water. For this reason, the most effective
-        approach is to treat <strong>both indoors and outdoors</strong>{" "}
-        simultaneously. Place bait stations along ant trails inside the house
-        and use an outdoor powder to treat nest entrances and create a barrier
-        around external entry points. Treating only indoors may kill one wave of
-        foragers, but the outdoor nest will simply send more. Treating only
-        outdoors may reduce the colony but not eliminate the trail into your
-        kitchen. A combined approach addresses both the source and the
-        symptom.{" "}
-      </p>{" "}
-      <h3>Kitchen Safety</h3>{" "}
-      <p>
-        {" "}
-        Kitchens are the most common room for ant activity because they offer
-        abundant food and water. When treating kitchens, safety is paramount.
-        Always use enclosed bait stations rather than exposed gel or powder on
-        kitchen worktops and near food preparation areas. Place bait stations on
-        the floor behind the bin, under the fridge, and along skirting boards
-        rather than on surfaces where food is prepared. If using gel bait in the
-        kitchen, apply it inside cabinets and in cracks that are inaccessible to
-        children and pets, never on open surfaces. Store all food in sealed
-        containers during and after treatment to remove the ants&apos; food
-        source and force them to feed exclusively on the bait.{" "}
-      </p>{" "}
-      <h3>Timing: Start Early in Spring</h3>{" "}
-      <p>
-        {" "}
-        Ant colonies in the UK begin sending out foraging workers as
-        temperatures rise in March and April. The earlier you deploy bait
-        stations, the smaller and weaker the foraging force will be, and the
-        faster the bait will reach the queen. Waiting until June or July when
-        trails are well-established and the colony is at full strength means you
-        are fighting a much larger population. If you experienced ant problems
-        last year, place bait stations proactively in March before the first
-        ants appear. Prevention is always easier than cure.{" "}
-      </p>{" "}
-      <h3>Pharaoh Ants: A Special Warning</h3>{" "}
-      <p>
-        {" "}
-        While the vast majority of UK household ant problems involve the black
-        garden ant (<em>Lasius niger</em>), there is one species that requires a
-        very different approach: the Pharaoh ant (<em>Monomorium pharaonis</em>
-        ). Pharaoh ants are tiny (approximately 2mm long), yellow-brown in
-        colour, and they nest <strong>inside</strong> heated buildings rather
-        than outdoors. They are most commonly found in hospitals, care homes,
-        large apartment blocks, and commercial kitchens, but they can
-        occasionally infest domestic properties. The critical difference is that
-        Pharaoh ant colonies practise &ldquo;budding&rdquo; &mdash; when they
-        detect a threat such as an insecticide spray, the colony splits into
-        multiple smaller colonies that scatter to new locations within the
-        building. Using a contact spray or repellent product on Pharaoh ants
-        will make the problem dramatically worse. If you suspect you have
-        Pharaoh ants (very small, yellowish ants found indoors year-round,
-        particularly in kitchens and bathrooms), do not attempt DIY treatment.
-        Contact a professional pest controller immediately, as Pharaoh ants
-        require a specialist baiting programme that is not available in consumer
-        products.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
-          <p>
-            Place bait stations directly on active ant trails, not just anywhere
-            near the ants. Ants follow pheromone trails laid down by scouts, and
-            they will walk straight past a bait station that is even a few
-            centimetres away from their established route. Watch the trail
-            carefully, identify the exact line the ants are following, and
-            position the station directly in their path for the fastest uptake.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* When to Call a Professional */}{" "}
-      <h2 id="when-to-call">When to Call a Professional</h2>{" "}
-      <p>
-        {" "}
-        Most black garden ant infestations in UK homes can be successfully
-        resolved with the consumer products on this page, provided you use
-        bait-based products and give them sufficient time to work. However,
-        there are several situations where calling a professional pest control
-        company is the wise choice. If you have been using bait stations for two
-        weeks or more with no reduction in ant activity, the colony may be
-        unusually large, there may be multiple nests, or the species may be one
-        that does not respond well to the bait formulation you are using. A
-        professional technician can identify the ant species, locate nest sites,
-        and deploy commercial-grade treatments that are not available to
-        consumers.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        You should also call a professional immediately if you suspect the ants
-        are Pharaoh ants (small, yellowish, found indoors year-round), if the
-        infestation is in a commercial food premises where regulatory standards
-        apply, or if the nest is located within the fabric of the building
-        &mdash; inside cavity walls, under floorboards, or within the roof space
-        &mdash; where it is inaccessible to consumer treatments. Professional
-        pest controllers have access to insecticides, application equipment, and
-        diagnostic expertise that go far beyond what is available on the
-        consumer market, and the cost of a professional ant treatment in the UK
-        typically ranges from &pound;80 to &pound;150 for a standard domestic
-        property &mdash; a worthwhile investment when DIY methods have
-        failed.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Ant Problem Too Big for DIY?"
-          subtext="Compare pest control providers near you — free, no-obligation quotes."
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-3">
-          Want the complete ant removal strategy?
-        </p>{" "}
-        <a
-          href="/guides/how-to-get-rid-of-ants"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          {" "}
-          Read our full guide: How to Get Rid of Ants &rarr;{" "}
-        </a>{" "}
-      </div>{" "}
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* FAQ — rendered from the same array the schema above is derived from */}
+      <h2 id="faq">Frequently Asked Questions</h2>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+
+      <FindProviderCTA
+        heading="An ant problem that outlasts the baits"
+        subtext="Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

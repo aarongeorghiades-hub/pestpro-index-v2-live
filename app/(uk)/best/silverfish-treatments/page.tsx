@@ -1,66 +1,80 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S69 R1 — ROLLOUT REBUILD to the R8 pattern, on sources. GROUP B.
+//
+// HEALTH STATEMENTS ON THIS PAGE: ZERO. The UC IPM Pest Note read for this route
+// describes damage to paper and fabric and makes no statement about human health. None
+// is manufactured to fill the gap, and the FAQ says plainly that the source is silent
+// rather than answering the question from anywhere else.
+//
+// THE THREE OWN-VOICE SAFETY CLAIMS FOUND AT S68 R5 ARE CLEARED HERE, under the standing
+// safety ruling: an own-voice "non-toxic", "safe for" or "harmless" is attributed to the
+// maker where the listing states it, and deleted where it does not.
+//   1. feature "Non-toxic and odourless"  -> attributed to the maker's own listing text
+//   2. prose "The traps are entirely non-toxic and odourless ... safe for use in any
+//      room including kitchens, bathrooms, bedrooms, and children's ..." -> DELETED. The
+//      listing says "Free from chemicals and smells" and "Family-friendly and
+//      pet-considerate"; it does not say any of the rest.
+//   3. Pros bullet "Non-toxic and odourless — safe for all rooms including kitchens and
+//      children's bedrooms" -> DELETED with the Pros block.
+// A FOURTH was found beside them and is cleared on the same ground: "is HSE approved for
+// amateur use, meaning it has been formally assessed as safe for non-professional
+// application when used according to the label". "HSE approved and tested" is in the
+// powder's own listing title and is reported as the maker's words; the gloss about what
+// that approval means was ours and is gone.
+//
+// LAW 188 — TWO CARD LABELS DISAGREED WITH THEIR OWN h2 AND THE h2 WINS. cardLabel
+// "Best Chemical Spray" -> "Best Spray" (h2Label) and "Best Monitoring Trap" ->
+// "Best Trap" (h2Label). No duplicate award is created: the four labels after the
+// correction are Best Spray, Best Trap, Best Long-Term Solution, Best Powder.
+//
+// TITLE AND H1: the H1's claim clause promised "Natural Remedies", which this page cards
+// none of. Replaced with what it does card. Head keyword kept byte-identical.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Silverfish Treatments UK 2026 — Sprays & Traps",
+    title: "Best Silverfish Treatments UK 2026 — Sprays, Traps & Powder",
     description:
-      "Silverfish treatments for UK homes compared on their own listings: an insecticidal spray, sticky traps, a dehumidifier and a killer powder.",
+      "Silverfish treatments for UK homes compared on their own listings: a spray, sticky traps, a dehumidifier and an insecticidal powder.",
     alternates: {
       canonical: "https://pestproindex.com/best/silverfish-treatments",
     },
     openGraph: {
-      title: "Best Silverfish Treatments UK 2026 — Sprays & Traps",
+      title: "Best Silverfish Treatments UK 2026 — Sprays, Traps & Powder",
       description:
-        "Silverfish treatments for UK homes compared on their own listings: an insecticidal spray, sticky traps, a dehumidifier and a killer powder.",
+        "Silverfish treatments for UK homes compared on their own listings: a spray, sticky traps, a dehumidifier and an insecticidal powder.",
       url: "https://pestproindex.com/best/silverfish-treatments",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Silverfish Treatments UK 2026 — Sprays & Traps",
+  headline: "Best Silverfish Treatments UK 2026 — Sprays, Traps & Powder",
   description:
-    "Silverfish treatments for UK homes compared on their own listings: an insecticidal spray, sticky traps, a dehumidifier and a killer powder.",
+    "Silverfish treatments for UK homes compared on their own listings: a spray, sticky traps, a dehumidifier and an insecticidal powder.",
   datePublished: "2026-03-18",
-  dateModified: "2026-03-18",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
+  dateModified: "2026-09-09",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://pestproindex.com/best/silverfish-treatments",
   },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -69,6 +83,15 @@ const breadcrumbSchema = {
     },
   ],
 };
+
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). The citation names the
+// host actually fetched (Law 194): ipm.ucanr.edu, fetched 2026-09-09, body kept at
+// ~/pp-s69r1/sources/ucipm-silverfish.src.txt under Law 175.
+const SRC = {
+  ucipm: "https://ipm.ucanr.edu/home-and-landscape/silverfish-and-firebrats/",
+};
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -83,23 +106,36 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Records are addressed BY IDENTITY, never by position (Law 107).
+//
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies at
+// ~/pp-s61r1/uk/, inside the S45-C window. A property is asserted only where the
+// listing's own text states it (S52-E); a cell the listing does not state reads
+// "not stated". Maker self-praise is trimmed and never restated (S47-F): the trap's
+// listing calls itself the best silverfish killer you can find, and the powder's calls
+// itself the strongest on the market. Neither line appears below.
+//
+// LAW 146 — THE SPRAY'S LISTING PUTS A SENTENCE IN ITS TARGET SPECIES ROW rather than a
+// species. The row is reported as what it says, not resolved into a species name.
 const products: ProductRecord[] = [
   {
     anchorId: "best-spray",
     asin: "B0BGY8196B",
     rank: 1,
     cardName: "Ready Steady Defend Silverfish Killer Spray 1L",
-    cardLabel: "Best Chemical Spray",
+    cardLabel: "Best Spray",
     features: [
-      "Dual-action contact and residual formula",
-      "HSE registered for amateur use",
-      "12-week residual protection",
-      "Non-staining, low odour, water-based",
+      "One litre, listed as ready to use; item form given as Spray",
+      "The maker names the active as cypermethrin at 0.1% w/w",
+      "The maker states up to 12 weeks of residual action per application",
+      "Described by the maker as water-based, low-odour and non-staining",
+      "Its target species row carries a sentence, not a species: adult silverfish and their eggs",
     ],
     tableCells: [
-      "Ready Steady Defend Silverfish Spray 1L",
-      "Chemical spray",
-      "Skirting boards, harbourage",
+      "Ready Steady Defend Silverfish Killer Spray 1L",
+      "Residual spray",
+      "Cypermethrin 0.1% w/w, named by the maker",
+      "1 litre; up to 12 weeks residual, per the maker",
     ],
     h2Label: "Best Spray",
     h2Name: "Ready Steady Defend Silverfish Killer Spray 1L",
@@ -111,17 +147,19 @@ const products: ProductRecord[] = [
     asin: "B0BJKY8MB3",
     rank: 2,
     cardName: "Super Ninja Silverfish Trap (3-Pack)",
-    cardLabel: "Best Monitoring Trap",
+    cardLabel: "Best Trap",
     features: [
-      "Pre-baited with food-based attractant",
-      "Non-toxic and odourless",
-      "Each trap lasts up to 3 months",
-      "Recycled cardboard construction",
+      "Three glue traps per pack; target species listed as Silverfish",
+      "The maker states a food-based attractant in the glue",
+      "The maker states up to 90 days of coverage per trap",
+      "Listed by its maker as odourless and free from chemicals and smells",
+      "Its listing states the recommended use as trapping and monitoring an infestation",
     ],
     tableCells: [
-      "Super Ninja Silverfish Trap 3-Pack",
-      "Sticky trap",
-      "Monitoring, bathrooms",
+      "Super Ninja Silverfish Trap (3-Pack)",
+      "Glue trap, no insecticide",
+      "None — a glue trap, per the listing",
+      "Three traps; up to 90 days each, per the maker",
     ],
     h2Label: "Best Trap",
     h2Name: "Super Ninja Silverfish Trap (3-Pack)",
@@ -135,15 +173,17 @@ const products: ProductRecord[] = [
     cardName: "Pro Breeze 12L/Day Dehumidifier",
     cardLabel: "Best Long-Term Solution",
     features: [
-      "12L/day extraction capacity",
-      "Automatic humidity sensor (30-80% range)",
-      "Sleep mode under 38dB",
-      "Continuous drainage hose option",
+      "Extraction listed at 12 litres per day; 1.8 litre tank with a hose option",
+      "Automatic humidity sensor with a settable target, per the maker",
+      "The maker states sound levels of less than 38dB",
+      "24-hour timer and auto shut-off, as listed",
+      "Its listing title carries a Which? Best Buy award for dehumidifiers, dated 2025 by the maker",
     ],
     tableCells: [
       "Pro Breeze 12L/Day Dehumidifier",
-      "Environmental",
-      "Root cause treatment",
+      "Compressor dehumidifier",
+      "None — it removes moisture, not insects",
+      "12 L/day; 1.8 L tank, as listed",
     ],
     h2Label: "Best Long-Term Solution",
     h2Name: "Pro Breeze 12L/Day Dehumidifier",
@@ -157,15 +197,17 @@ const products: ProductRecord[] = [
     cardName: "Pest Expert Formula 'P' Silverfish Killer Powder 300g",
     cardLabel: "Best Powder",
     features: [
-      "Professional-strength permethrin formula",
-      "HSE approved for amateur use",
-      "12-week residual killing power",
-      "300g pack — twice the size of competitors",
+      "300 grams in a puffer pack; item form listed as Powder",
+      "The maker names permethrin as the active",
+      "The maker's own title describes it as HSE approved and tested",
+      "Listed for application indoors or externally, including around power points",
+      "Target species row reads Insects rather than Silverfish",
     ],
     tableCells: [
-      "Pest Expert Killer Powder 300g",
+      "Pest Expert Formula 'P' Silverfish Killer Powder 300g",
       "Insecticidal dust",
-      "Wall cavities, under floors",
+      "Permethrin, named by the maker",
+      "300 g; puffer pack, as listed",
     ],
     h2Label: "Best Powder",
     h2Name: "Pest Expert Formula 'P' Silverfish Killer Powder 300g",
@@ -174,867 +216,389 @@ const products: ProductRecord[] = [
   },
 ];
 
-const tocItems = [
-  { id: "at-a-glance", title: "Best Silverfish Treatments at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
-  })),
-  { id: "buying-guide", title: "Silverfish Treatment Buying Guide" },
-  { id: "when-to-call", title: "When to Call a Professional" },
+const faqs = [
+  {
+    q: "Are silverfish a health risk?",
+    a: "The source this page reads does not say, and this page will not answer a health question from anywhere else. The UC IPM Pest Note on silverfish and firebrats describes what they eat, where they live and the damage they do to paper and fabric; it makes no statement about human health at all. If something about your own health is worrying you, that is a question for a pharmacist or a GP rather than for a product page.",
+  },
+  {
+    q: "Why is a dehumidifier on a page about silverfish treatments?",
+    a: "Because the source names moisture as the condition the insect depends on. UC IPM writes that silverfish require a lot of moisture, so using dehumidifiers in closed spaces can help discourage these pests, and that ventilation from fans can reduce relative humidity to a point that is intolerable to silverfish. It is the one item here that changes the room rather than treating an insect.",
+  },
+  {
+    q: "Do bait products work on silverfish?",
+    a: "UC IPM says not: baits are not very successful in treating silverfish and firebrats, because they tend not to feed on them. That is why there is no bait on this page and why the trap here is a glue trap rather than a baited one.",
+  },
+  {
+    q: "The spray did not fix it. What did I miss?",
+    a: "Probably the moisture. UC IPM's position is that insecticides will not be effective unless you also remove the moisture, food and hiding places that allow these pests to thrive, and that it is almost impossible to control large populations unless dripping water and moist surfaces have gone. It also notes that if control does not occur in two or three weeks the insects are probably coming from untreated areas.",
+  },
+  {
+    q: "What does the trap actually tell me?",
+    a: "Where they are walking. UC IPM's monitoring advice is to use sticky traps placed in corners and along edges where foraging is likely, and it notes that because these insects travel long distances looking for food it can be difficult to pinpoint the source. The trap's own listing gives its recommended use as trapping and monitoring an infestation, which is the same job.",
+  },
+  {
+    q: "Are foggers worth trying?",
+    a: "UC IPM says foggers are not recommended to treat silverfish and firebrat infestations. Nothing on this page is a fogger.",
+  },
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const tocItems = [
+  { id: "situation", title: "The Damp Is the Infestation" },
+  { id: "legal", title: "What the Label Governs" },
+  { id: "limits", title: "Where a Treatment Does Not Work" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Product Is Not the Answer" },
+  { id: "using", title: "Using Them" },
+  { id: "compared", title: "The Four Compared" },
+  { id: "faq", title: "Frequently Asked Questions" },
+];
+
 export default function BestSilverfishTreatmentsPage() {
   return (
     <GuideLayout
-      title="Best Silverfish Treatments UK 2026 &mdash; Sprays, Traps &amp; Natural Remedies"
-      subtitle="Silverfish treatments for UK homes, selected on published specifications and manufacturer information &mdash; from insecticidal sprays and sticky traps to dehumidifiers and killer powder."
-      lastUpdated="March 2026"
-      readingTime="14 min"
+      title="Best Silverfish Treatments UK 2026 &mdash; Sprays, Traps, Powder &amp; Dehumidifiers"
+      subtitle="A residual spray, glue traps, a dehumidifier and an insecticidal powder, described by what their own listings state — beside the University of California's account of why the damp matters more than the insecticide"
+      lastUpdated="September 2026"
+      readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "How to Get Rid of Silverfish: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-silverfish",
-        },
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
-        {
-          title: "How to Get Rid of Cockroaches: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-cockroaches",
-        },
-        {
-          title: "How to Get Rid of Fleas: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-fleas",
-        },
-        {
-          title: "How to Get Rid of Moths",
-          href: "/guides/how-to-get-rid-of-moths",
-        },
-        {
-          title: "How to Get Rid of Foxes: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-foxes",
-        },
-        {
-          title: "How to Get Rid of Squirrels: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-squirrels",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
-        {
-          title: "Landlord Pest Control Responsibilities",
-          href: "/guides/landlord-pest-control",
-        },
-        {
-          title: "Woodworm Treatment: Complete UK Guide",
-          href: "/guides/woodworm-treatment",
-        },
-        {
-          title: "Carpet Beetle Control: Complete UK Guide",
-          href: "/guides/carpet-beetle-control",
-        },
+        { title: "How to Get Rid of Silverfish", href: "/guides/how-to-get-rid-of-silverfish" },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
+        { title: "Landlord Pest Control Responsibilities", href: "/guides/landlord-pest-control" },
       ]}
       relatedProducts={[
-        {
-          title: "Best Carpet Beetle Treatments UK 2026",
-          href: "/best/carpet-beetle-treatments",
-        },
-        {
-          title: "Best Woodworm Treatments UK 2026",
-          href: "/best/woodworm-treatments",
-        },
-        { title: "Best Rat Traps UK 2026", href: "/best/rat-traps" },
-        { title: "Best Mouse Traps UK 2026", href: "/best/mouse-traps" },
-        { title: "Best Wasp Killers UK 2026", href: "/best/wasp-killers" },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
-        {
-          title: "Best Flea Treatments UK 2026",
-          href: "/best/flea-treatments",
-        },
-        { title: "Best Ant Killers UK 2026", href: "/best/ant-killers" },
-        { title: "Best Moth Killers UK", href: "/best/moth-killers" },
-        {
-          title: "Best Bed Bug Treatments UK 2026",
-          href: "/best/bed-bug-treatments",
-        },
-        { title: "Best Fox Deterrents UK 2026", href: "/best/fox-deterrents" },
-        {
-          title: "Best Squirrel Deterrents UK 2026",
-          href: "/best/squirrel-deterrents",
-        },
-        {
-          title: "Best Bird Deterrents UK 2026",
-          href: "/best/bird-deterrents",
-        },
+        { title: "Best Carpet Beetle Treatments UK 2026", href: "/best/carpet-beetle-treatments" },
+        { title: "Best Commercial Dehumidifiers UK 2026", href: "/best/commercial-dehumidifiers" },
+        { title: "Best Woodworm Treatments UK 2026", href: "/best/woodworm-treatments" },
+        { title: "Best Moth Killers UK 2026", href: "/best/moth-killers" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
-      {/* Affiliate disclosure */}{" "}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
           site running and free for everyone. As an Amazon Associate, PestPro
-          Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
-      {/* Intro paragraphs */}{" "}
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        Silverfish (<em>Lepisma saccharina</em>) are one of the most common
-        household pests in UK homes, and yet they remain one of the least
-        understood. These small, wingless, silver-scaled insects thrive in warm,
-        humid environments &mdash; bathrooms, kitchens, utility rooms, airing
-        cupboards, and any space where moisture levels regularly exceed 75%
-        relative humidity. You will most often spot them at night when you
-        switch on the bathroom light and see a fast-moving, torpedo-shaped
-        insect darting behind the toilet pedestal or under the bath panel.
-        Despite their alarming appearance and disconcerting speed, silverfish
-        are not dangerous to humans. They do not bite, they do not transmit
-        diseases, and they pose no direct health risk. However, they are a
-        significant nuisance pest and &mdash; importantly &mdash; their presence
-        is a reliable indicator that your home has an underlying damp or
-        ventilation problem that needs addressing.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Unlike many household pests where chemical treatment is the primary
-        solution, silverfish control is fundamentally about{" "}
-        <strong>environmental management</strong>. Silverfish require high
-        humidity to survive and reproduce &mdash; they cannot complete their
-        life cycle in conditions below 50% relative humidity. This means that
-        the single most effective silverfish &ldquo;treatment&rdquo; is not a
-        spray, powder, or trap &mdash; it is a dehumidifier or improved
-        ventilation that reduces your home&apos;s moisture levels to a point
-        where silverfish simply cannot thrive. Chemical treatments and
-        insecticidal powders certainly have their place and can deliver rapid
-        knockdown of existing populations, but without addressing the root cause
-        of high humidity, silverfish will inevitably return within weeks or
-        months of any chemical application. The most effective long-term
-        approach combines humidity control with targeted insecticidal treatment
-        in harbourage areas and ongoing monitoring with sticky traps to measure
-        whether your interventions are working.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        We selected these silverfish treatment products on published
-        specifications and manufacturer information, looking at three criteria:{" "}
-        <strong>proven effectiveness</strong> against{" "}
-        <em>Lepisma saccharina</em> and the closely related firebrat (
-        <em>Thermobia domestica</em>), <strong>safety for UK households</strong>{" "}
-        including homes with children and pets, and{" "}
-        <strong>value for money</strong>. We also consulted BPCA guidance and
-        spoke to professional pest controllers to ensure our recommendations
-        reflect real-world best practice. For a complete step-by-step silverfish
-        elimination strategy &mdash; including identification, prevention, and
-        long-term environmental management &mdash; see our companion guide:{" "}
-        <Link
-          href="/guides/how-to-get-rid-of-silverfish"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          How to Get Rid of Silverfish: Complete UK Guide
-        </Link>
-        .{" "}
-      </p>{" "}
+        Four products, and only two of them are insecticides. The other two are a
+        glue trap that tells you where the insects are and a dehumidifier that
+        removes the thing they need. That split is the argument of this page.
+      </p>
+
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You have seen one or two and want to know how bad it is.</strong>{" "}
+            <a href="#best-trap" className="underline">
+              The glue traps
+            </a>{" "}
+            answer that before anything is sprayed.
+          </li>
+          <li>
+            <strong>The bathroom or the utility room is permanently damp.</strong>{" "}
+            <a href="#best-dehumidifier" className="underline">
+              The dehumidifier
+            </a>{" "}
+            is the item that changes the condition.
+          </li>
+          <li>
+            <strong>You need a surface treatment now.</strong>{" "}
+            <a href="#best-spray" className="underline">
+              The one litre spray
+            </a>{" "}
+            names its active on the listing.
+          </li>
+          <li>
+            <strong>They are behind a skirting or around a socket.</strong>{" "}
+            <a href="#best-powder" className="underline">
+              The puffer powder
+            </a>{" "}
+            is listed for exactly those places.
+          </li>
+          <li>
+            <strong>You have treated twice and they came back.</strong>{" "}
+            <a href="#limits" className="underline">
+              Where a treatment does not work
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+
       <div className="not-prose">
-        {" "}
-        <Callout type="info">
-          {" "}
+        <Callout type="warning">
           <p>
-            Silverfish need 75&ndash;90% relative humidity to thrive. The single
-            most effective silverfish treatment is reducing your home&apos;s
-            humidity below 50% with a dehumidifier or improved ventilation.
-            Without fixing the moisture problem, chemical treatments will only
-            provide temporary relief.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* At a Glance */}{" "}
-      <h2 id="at-a-glance">Best Silverfish Treatments at a Glance</h2>{" "}
+            Two of the four products here are insecticides. Where each may be
+            applied, at what rate and with what ventilation is set by its own
+            label, and that label governs over anything on this page.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">The Damp Is the Infestation</h2>
       <p>
-        {" "}
-        Below is a quick comparison of our five silverfish treatment products.
-        Each targets the problem from a different angle &mdash; natural powder,
-        chemical spray, monitoring trap, environmental control, and insecticidal
-        dust &mdash; and the most effective strategy combines several of these
-        approaches. We go into full detail on every product further down the
-        page.{" "}
-      </p>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Product</th> <th>Type</th> <th>Best For</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
+        The University of California&rsquo;s Statewide IPM Program puts the
+        condition ahead of the insect:{" "}
+        <em>
+          &ldquo;Silverfish require a lot of moisture, so using dehumidifiers in
+          closed spaces can help discourage these pests.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ). That is why a dehumidifier sits on a page of treatments and is not an
+        odd inclusion.
+      </p>
+      <p>
+        Before any of it, the same source says to find out where they actually
+        are:{" "}
+        <em>&ldquo;To detect and monitor infestations, use cockroach sticky traps.&rdquo;</em>{" "}
+        A trap is not a lesser purchase than a spray; it is the step that tells
+        you where the spray should go.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">What the Label Governs</h2>
+      <p>
+        The spray and the powder are insecticides and each carries a label
+        setting out where it may be applied, at what rate, and what has to be
+        kept away from it. The powder&rsquo;s own listing title describes it as
+        HSE approved and tested. That is the maker&rsquo;s description of its
+        product, and what any such approval covers is set out in the approval
+        itself and on the label, not here.
+      </p>
+      <p>
+        The glue trap carries no insecticide, and the dehumidifier is an
+        appliance rather than a pesticide. Their instructions are still worth
+        reading, but they are not governed by a pesticide label.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where a Treatment Does Not Work</h2>
+      <p>
+        <strong>While the moisture is still there.</strong> UC IPM:{" "}
+        <em>
+          &ldquo;Insecticides won&rsquo;t be effective unless you also remove
+          the moisture, food, and hiding places that allow these pests to
+          thrive.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ). A treated skirting in a room that is still wet is a treated skirting
+        in a room that is still wet.
+      </p>
+      <p>
+        <strong>At scale, at all, without the damp fixed.</strong> The same
+        source is blunter about a large population:{" "}
+        <em>
+          &ldquo;It is almost impossible to control large populations of
+          silverfish and firebrats unless you have removed dripping water and
+          moist surfaces.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>As a bait.</strong>{" "}
+        <em>
+          &ldquo;However, baits aren&rsquo;t very successful in treating
+          silverfish and firebrats, because they tend not to feed on them.&rdquo;
+        </em>{" "}
+        There is no bait on this page for that reason, and the trap here catches
+        by glue rather than by attracting with a poison.
+      </p>
+      <p>
+        <strong>Where the insects are not.</strong> UC IPM notes that these
+        insects travel long distances while looking for food, so it can be
+        difficult to pinpoint the source of an infestation. A treated area they
+        never cross has done nothing.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Whether you know where they are yet</h3>
+      <p>
+        UC IPM&rsquo;s first instruction is monitoring, not treatment. If you
+        have seen two silverfish in six months, the traps are the honest first
+        purchase and the spray is premature.
+      </p>
+      <h3>2. Whether the room can be dried</h3>
+      <p>
+        A bathroom that ventilates properly and a cellar that does not are
+        different problems. The dehumidifier is the only item here that acts on
+        the condition rather than on the insect, and it is also the only one
+        that will still be doing something in a year.
+      </p>
+      <h3>3. Where the treatment has to go</h3>
+      <p>
+        The spray is listed for surfaces — walls, floors, carpets, furnishings.
+        The powder is listed in a puffer pack for cracks, wall voids and the
+        area around power points. A liquid and a dust are not competing
+        products; they reach different places.
+      </p>
+      <h3>4. Whether the listing names an active</h3>
+      <p>
+        Both insecticides here do: cypermethrin on the spray at 0.1% w/w, and
+        permethrin on the powder. The trap and the dehumidifier name none,
+        because neither contains one.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>
+            {
+              [
+                "A litre of ready-to-use residual spray with the active named on the listing as cypermethrin at 0.1% w/w, and a maker's claim of up to twelve weeks of residual action per application. Its maker describes it as water-based, low-odour and suitable for walls, floors, carpets and furnishings. Its target species row carries a sentence rather than a species name, and the card reports the row as it stands.",
+                "Three glue traps with a food-based attractant in the glue, listed for indoor use with a target species of Silverfish and up to ninety days of coverage each. Its maker describes the traps as odourless and free from chemicals and smells; that is the maker's description of its own product and this page adds nothing to it. The listing gives the recommended use as trapping and monitoring an infestation, which is what a trap is for.",
+                "Not an insecticide at all: a compressor dehumidifier listed at twelve litres a day into a 1.8 litre tank, with a humidity sensor, a 24-hour timer and a hose option for continuous drainage. Its maker states sound levels below 38dB, and its listing title carries a Which? Best Buy award for dehumidifiers dated 2025. It is on this page because the source names moisture as the condition the insect depends on.",
+                "Three hundred grams of permethrin dust in a puffer pack, listed for indoor and external application and specifically for the area around power points and other hard-to-reach places. Its own listing title describes it as HSE approved and tested, which is the maker's wording. Its target species row reads Insects rather than Silverfish, and the card says so.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If a Product Is Not the Answer</h2>
+      <p>
+        <strong>Ventilation.</strong> UC IPM notes that ventilation from fans
+        can reduce relative humidity to a point that is intolerable to
+        silverfish. An extractor fan that actually runs is a treatment.
+      </p>
+      <p>
+        <strong>Cleaning and repair.</strong> Its prevention list is keeping
+        basements, laundry rooms and bathrooms clean and dry, patching holes and
+        spaces around pipes and conduits, and repairing leaks and drips in
+        plumbing. None of that is sold here.
+      </p>
+      <p>
+        <strong>Moving the books.</strong> It notes that collections of
+        magazines, papers and books provide both food and harbourage, and
+        suggests moving them around in the bookcase occasionally.
+      </p>
+      <p>
+        <strong>A damp problem rather than an insect one.</strong> Our{" "}
+        <a href="/best/commercial-dehumidifiers">commercial dehumidifiers</a>{" "}
+        page covers the larger machines, and our{" "}
+        <a href="/guides/how-to-get-rid-of-silverfish">silverfish guide</a>{" "}
+        covers the house rather than the product.
+      </p>
+
+      {/* Using them */}
+      <h2 id="using">Using Them</h2>
+      <ol>
+        <li>
+          <strong>Trap before you treat.</strong> Corners and edges where
+          foraging is likely, per UC IPM, and a week of watching before
+          anything else is bought.
+        </li>
+        <li>
+          <strong>Fix the water.</strong> A drip under a sink outlasts every
+          insecticide on this page.
+        </li>
+        <li>
+          <strong>Match the form to the place.</strong> Spray for surfaces, dust
+          for voids and crevices; each listing states which it is for.
+        </li>
+        <li>
+          <strong>Keep dust dry.</strong> UC IPM notes that if dust deposits get
+          wet and then dry they cake, and that moist areas may need re-treating.
+        </li>
+        <li>
+          <strong>Give it two to three weeks.</strong> UC IPM says a properly
+          applied insecticide shows results in a few weeks, and that no result
+          by then points at untreated areas rather than at the product.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Four Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        claim attributed to the maker who makes it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Quantity or duration, as listed</th>
             </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      {/* Best Spray */}{" "}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        For homeowners dealing with a heavy silverfish infestation who need
-        fast, visible results, the Ready Steady Defend Silverfish Killer Spray
-        delivers the rapid knockdown that natural treatments cannot match. This
-        dual-action approach means the spray does not merely kill the silverfish
-        you can see &mdash; it also breaks the breeding cycle by ensuring that
-        any eggs laid in treated areas will fail to produce viable offspring.
-        The product is HSE registered for amateur use in UK domestic properties,
-        and the water-based formula is non-staining and low-odour, making it
-        suitable for use on skirting boards, behind furniture, and in other
-        visible areas without leaving marks or producing unpleasant fumes.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        Apply the spray directly to harbourage areas where silverfish are known
-        to hide and travel. The most productive application points are along the
-        junction between skirting boards and floor, around pipe entry points
-        where plumbing passes through walls, under the bath and around the base
-        of the toilet, along the back edges of kitchen units, inside airing
-        cupboards, and in any cracks or crevices in plasterwork. Once applied,
-        the spray dries to form an invisible residual film that continues to
-        kill silverfish for up to <strong>12 weeks</strong> after application.
-        Any silverfish that crosses the treated surface picks up a lethal dose
-        of the residue on its legs and body, which is absorbed through the
-        exoskeleton. Allow the spray to dry completely (approximately 2 hours)
-        before allowing children or pets to access treated areas. While the
-        spray is highly effective at eliminating existing silverfish
-        populations, it is essential to understand that it addresses the{" "}
-        <strong>symptom</strong> (the silverfish themselves) rather than the{" "}
-        <strong>cause</strong> (high humidity). If you spray and do nothing
-        about the underlying moisture problem, the silverfish will return once
-        the residual protection wears off after 12 weeks.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Fast contact kill plus 12-week residual protection for ongoing control
-        </li>{" "}
-        <li>
-          Dual-action formula targets all life stages &mdash; adults, nymphs,
-          and eggs
-        </li>{" "}
-        <li>HSE registered for amateur use in UK domestic properties</li>{" "}
-        <li>
-          Non-staining, low-odour, water-based formula suitable for visible
-          surfaces
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Chemical treatment &mdash; not suitable for those seeking a purely
-          natural approach
-        </li>{" "}
-        <li>
-          Keep away from food preparation areas and surfaces where food is
-          stored
-        </li>{" "}
-        <li>
-          Allow 2 hours drying time before children or pets access treated areas
-        </li>{" "}
-        <li>
-          Only provides temporary relief if the underlying humidity problem is
-          not addressed
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> The Ready Steady Defend spray is the best
-        chemical silverfish treatment for rapid knockdown and medium-term
-        control. Its 12-week residual makes it far more effective than standard
-        household insect sprays, and its insect growth regulator gives it a
-        genuine lifecycle-breaking capability that contact-kill-only sprays
-        lack. Use it alongside diatomaceous earth in dry harbourage areas and a
-        dehumidifier for root cause treatment, and you have a comprehensive
-        three-pronged silverfish elimination strategy.{" "}
-      </p>{" "}
-      {/* Best Trap */}{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Silverfish traps serve a dual purpose that many homeowners overlook:
-        they are both a <strong>catching device</strong> and a{" "}
-        <strong>monitoring tool</strong>, and in many ways the monitoring
-        function is even more valuable than the catching. The Super Ninja
-        Silverfish Trap is a pre-baited sticky trap that uses a food-based
-        attractant to lure silverfish inside a discreet cardboard housing where
-        they become trapped on an adhesive surface. Each trap is designed to lie
-        flat against a wall, under a bath, inside a cupboard, or behind
-        furniture &mdash; exactly the places where silverfish travel at night.
-        The traps are entirely non-toxic and odourless, containing no pesticides
-        or chemicals whatsoever, which makes them safe for use in any room
-        including kitchens, bathrooms, bedrooms, and children&apos;s rooms. The
-        recycled cardboard construction is environmentally friendly, and each
-        trap remains active for up to three months before the adhesive and
-        attractant lose effectiveness.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The real value of silverfish traps lies in their ability to give you{" "}
-        <strong>objective data</strong> about the severity of your infestation
-        and whether your treatments are working. Place four to six traps in the
-        rooms where you have seen silverfish &mdash; one behind the toilet, one
-        under the bath, one inside the bathroom vanity unit, one in the kitchen
-        under the sink, and one in the airing cupboard. Check each trap weekly
-        and count the number of silverfish caught. This gives you a baseline
-        measure of infestation severity. After implementing your treatment
-        strategy (dehumidifier, diatomaceous earth, and/or spray), continue
-        checking the traps weekly. If catches decline steadily over two to four
-        weeks, your treatments are working. If catches remain static or
-        increase, something is not working and you need to reassess &mdash;
-        perhaps humidity is still too high, or there is a harbourage area you
-        have missed. Without traps providing this feedback, you are flying blind
-        and have no way to measure whether your interventions are actually
-        making a difference. It is important to understand that traps alone will
-        not eliminate a silverfish infestation &mdash; they only catch the
-        individuals that happen to walk onto the adhesive surface, which is a
-        fraction of the total population.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Non-toxic and odourless &mdash; safe for all rooms including kitchens
-          and children&apos;s bedrooms
-        </li>{" "}
-        <li>
-          Pre-baited with food-based attractant &mdash; no setup required, place
-          and forget
-        </li>{" "}
-        <li>
-          Each trap lasts up to 3 months, providing long-term monitoring
-          capability
-        </li>{" "}
-        <li>
-          Essential monitoring tool that measures infestation severity and
-          treatment effectiveness
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Not a standalone solution &mdash; traps alone will not eliminate a
-          silverfish infestation
-        </li>{" "}
-        <li>
-          Only catches silverfish that physically walk onto the adhesive surface
-        </li>{" "}
-        <li>
-          Need 4&ndash;6 traps for proper monitoring coverage of a typical home
-        </li>{" "}
-        <li>
-          3-pack may not be sufficient &mdash; consider buying two packs for
-          whole-house monitoring
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> The Super Ninja Silverfish Trap is an
-        essential component of any silverfish treatment strategy, not because it
-        will eliminate the infestation on its own, but because it provides the
-        monitoring data you need to assess whether your other treatments are
-        working. Place traps throughout the affected rooms, check them weekly,
-        and use the catch data to guide your treatment decisions. Supplied in
-        three-packs, they are a genuinely useful investment.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
-          <p>
-            The most effective silverfish treatment strategy combines three
-            methods: a dehumidifier to cut humidity below 50%, diatomaceous
-            earth dusted into every crack and crevice, and sticky traps to
-            monitor progress. If you address humidity first, the silverfish
-            population will crash within 2&ndash;4 weeks.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* Best Dehumidifier */}{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        If you could buy only one product from this entire page, this is the one
-        we would recommend without hesitation &mdash; and every professional
-        pest controller we consulted agreed. The Pro Breeze 12L/Day Dehumidifier
-        is not a conventional &ldquo;pest control product,&rdquo; but it is by
-        far the <strong>
-          most effective long-term silverfish treatment
-        </strong>{" "}
-        available because it addresses the root cause of every silverfish
-        infestation: excessive humidity. Silverfish require relative humidity of
-        75&ndash;90% to thrive, breed, and complete their life cycle. Below 50%
-        RH, they become stressed, stop reproducing, and their population begins
-        to collapse. A dehumidifier that maintains room humidity at or below 50%
-        creates an environment that is fundamentally hostile to silverfish, and
-        this effect is permanent for as long as the dehumidifier runs. No
-        chemical spray, powder, or trap can match the long-term effectiveness of
-        simply making your home too dry for silverfish to survive.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The Pro Breeze 12L/Day model extracts up to 12 litres of moisture from
-        the air every 24 hours, which is more than sufficient for a bathroom,
-        bedroom, kitchen, or utility room. The built-in automatic humidity
-        sensor (humidistat) allows you to set your target humidity level
-        anywhere from 30% to 80%, and the unit will cycle on and off
-        automatically to maintain that level. Set it to 45&ndash;50% and leave
-        it running &mdash; the dehumidifier does the rest. The sleep mode
-        operates at under 38dB, which is quieter than a library, making it
-        suitable for bedroom use overnight. For bathrooms and utility rooms, the
-        continuous drainage hose option allows you to run a hose from the unit
-        to a drain or sink, eliminating the need to empty the water tank
-        manually. Running costs are approximately 7p per hour based on current
-        UK electricity prices, which works out to roughly &pound;1.70 per day if
-        running continuously &mdash; though in practice the humidistat means it
-        runs intermittently and actual costs are typically lower.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The impact on silverfish populations is dramatic and well-documented.
-        Within one to two weeks of maintaining below-50% humidity, silverfish
-        become noticeably less active. Within two to four weeks, the population
-        begins to decline measurably (you will see this reflected in your sticky
-        trap catches). Within six to eight weeks, most silverfish infestations
-        are either eliminated or reduced to negligible levels. The dehumidifier
-        also provides secondary benefits: it reduces the risk of mould growth,
-        eliminates musty odours, helps dry laundry faster, and creates a
-        generally more comfortable living environment. For homes with persistent
-        silverfish problems, a dehumidifier is not an expense &mdash; it is an
-        investment that solves the silverfish problem permanently while
-        improving your home&apos;s overall air quality.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Treats the root cause of silverfish infestations &mdash; the only
-          truly permanent solution
-        </li>{" "}
-        <li>
-          Automatic humidity sensor maintains target RH with no manual
-          intervention
-        </li>{" "}
-        <li>
-          Sleep mode at under 38dB for quiet overnight operation in bedrooms
-        </li>{" "}
-        <li>
-          Continuous drainage hose option eliminates the need to empty the water
-          tank
-        </li>{" "}
-        <li>
-          Secondary benefits: reduces mould, eliminates musty odours, improves
-          air quality
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Requires an upfront equipment purchase rather than a consumable
-        </li>{" "}
-        <li>
-          Requires electricity to operate &mdash; running costs of approximately
-          7p per hour
-        </li>{" "}
-        <li>
-          Takes 2&ndash;4 weeks before silverfish population decline becomes
-          measurable
-        </li>{" "}
-        <li>
-          Addresses one room at a time &mdash; may need multiple units for
-          larger properties
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> The Pro Breeze 12L/Day Dehumidifier is the
-        single most effective silverfish treatment available because it
-        addresses the root cause rather than the symptom. Every UK pest
-        controller we consulted recommended humidity reduction as the foundation
-        of any silverfish management plan. The upfront cost is higher than
-        chemical treatments, but the results are permanent, the secondary
-        benefits are substantial, and the running costs are modest. If you are
-        serious about eliminating silverfish from your home for good, start
-        here.{" "}
-      </p>{" "}
-      {/* Best Powder */}{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        Pest Expert Formula &apos;P&apos; Silverfish Killer Powder is a
-        professional-strength insecticidal dust based on{" "}
-        <strong>permethrin</strong>, a synthetic pyrethroid that is the active
-        ingredient used by the majority of professional pest control companies
-        for crawling insect treatments in the UK. The powder is designed to be
-        applied in thin layers to hidden, concealed areas where silverfish
-        harbour and breed &mdash; places that sprays cannot easily reach and
-        where diatomaceous earth may not be practical. The key application areas
-        for this product are <strong>inside wall cavities</strong> (accessed by
-        drilling small 6mm holes in plasterboard and puffing powder through the
-        hole), <strong>under floorboards</strong> (lift one or two boards at the
-        edge of the room and puff powder along the joist channels),{" "}
-        <strong>behind permanently fixed kitchen units</strong> where silverfish
-        harbour in the warm, dark voids, and <strong>inside loft spaces</strong>{" "}
-        along the eaves where silverfish sometimes establish secondary
-        populations. The powder provides{" "}
-        <strong>12 weeks of residual killing power</strong> &mdash; any
-        silverfish that crosses the treated surface over the following three
-        months picks up a lethal dose of permethrin on its legs and body.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        The 300g pack is generous &mdash; approximately twice the size of
-        competing products &mdash; and is sufficient to treat multiple rooms and
-        harbourage areas throughout a typical three-bedroom home. The powder is
-        HSE approved for amateur use, meaning it has been formally assessed as
-        safe for non-professional application when used according to the label
-        instructions. However, permethrin is a chemical insecticide and
-        appropriate precautions must be taken: wear a dust mask during
-        application, wash hands thoroughly afterwards, and ensure the powder is
-        applied only in concealed areas that children and pets cannot access. Do
-        not use this product on exposed surfaces in kitchens or food preparation
-        areas. For accessible surfaces like skirting boards and bathroom floors,
-        use the Ready Steady Defend spray instead &mdash; the Pest Expert powder
-        is specifically designed for deep, hidden harbourage areas that other
-        products cannot reach.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <strong>Pros:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Professional-strength permethrin formula &mdash; the same active
-          ingredient used by pest control companies
-        </li>{" "}
-        <li>
-          12-week residual killing power for sustained control in hidden areas
-        </li>{" "}
-        <li>HSE approved for amateur use with clear label instructions</li>{" "}
-        <li>
-          Generous 300g pack size &mdash; sufficient for a full house treatment
-        </li>{" "}
-        <li>
-          Reaches deep harbourage areas that sprays and diatomaceous earth
-          cannot
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Cons:</strong>{" "}
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>
-          Keep away from children and pets &mdash; apply in concealed areas only
-        </li>{" "}
-        <li>
-          Not suitable for food preparation areas or exposed kitchen surfaces
-        </li>{" "}
-        <li>
-          Less natural than diatomaceous earth &mdash; contains synthetic
-          chemical insecticide
-        </li>{" "}
-        <li>
-          Apply only in hidden harbourage areas &mdash; not for general surface
-          treatment
-        </li>{" "}
-      </ul>{" "}
-      <p>
-        {" "}
-        <strong>Verdict:</strong> Pest Expert Formula &apos;P&apos; is the
-        product to use when you need to reach the deep, concealed harbourage
-        areas that other products cannot access. Wall cavities, under-floor
-        voids, and fixed kitchen unit voids are where silverfish populations
-        often establish their main colonies, and this powder delivers
-        professional-grade treatment to those hidden spaces. Use it as a
-        complement to diatomaceous earth (for dry, accessible crevices), spray
-        (for visible surfaces), and a dehumidifier (for root cause treatment) to
-        create a truly comprehensive silverfish elimination strategy.{" "}
-      </p>{" "}
-      {/* Buying Guide */}{" "}
-      <h2 id="buying-guide">Silverfish Treatment Buying Guide</h2>{" "}
-      <p>
-        {" "}
-        With five effective products to choose from, selecting the right
-        combination depends on the severity of your infestation, the layout of
-        your home, and whether you prefer natural or chemical treatment methods.
-        Here are the key principles to guide your decisions.{" "}
-      </p>{" "}
-      <h3>Fix the Humidity First</h3>{" "}
-      <p>
-        {" "}
-        This is the single most important piece of advice in this entire guide:{" "}
-        <strong>
-          no silverfish treatment will work long-term if your home&apos;s
-          relative humidity remains above 75%
-        </strong>
-        . Silverfish infestations are fundamentally a humidity problem, and
-        every other treatment &mdash; sprays, powders, traps, and natural
-        remedies &mdash; is addressing the symptom rather than the cause. Invest
-        in a dehumidifier or improve your home&apos;s ventilation as the first
-        step. Check for obvious moisture sources: leaking pipes, poor bathroom
-        extraction, blocked air bricks, condensation on windows, and drying
-        laundry indoors without ventilation. A &pound;10 digital hygrometer from
-        Amazon will tell you exactly what your room humidity levels are and
-        whether they are within the silverfish-friendly zone of 75%+ RH.{" "}
-      </p>{" "}
-      <h3>Combine Approaches</h3>{" "}
-      <p>
-        {" "}
-        The most effective silverfish treatment strategy uses three
-        complementary methods working together: a <strong>
-          dehumidifier
-        </strong>{" "}
-        to address the root cause,{" "}
-        <strong>diatomaceous earth or insecticidal powder</strong> in harbourage
-        areas to kill existing populations, and <strong>sticky traps</strong> to
-        monitor progress and identify remaining hotspots. This three-pronged
-        approach attacks the problem from every angle &mdash; environmental
-        control removes the conditions silverfish need, physical or chemical
-        treatment kills the population that is already established, and traps
-        provide the data you need to assess whether your interventions are
-        working.{" "}
-      </p>{" "}
-      <h3>Use Traps to Measure Progress</h3>{" "}
-      <p>
-        {" "}
-        Place four to six sticky traps in the rooms where silverfish have been
-        seen. Check them weekly and record the number of catches. This is your
-        baseline. After implementing treatment, continue weekly checks. If trap
-        catches decline steadily over two to four weeks, your strategy is
-        working. If catches remain stable or increase, reassess your approach
-        &mdash; humidity may still be too high, or you may have missed a key
-        harbourage area. Without monitoring data, you have no objective way to
-        know whether your treatments are effective.{" "}
-      </p>{" "}
-      <h3>Older Properties Need Extra Attention</h3>{" "}
-      <p>
-        {" "}
-        Victorian and Edwardian terraced houses with solid walls, single-glazed
-        windows, and poor sub-floor ventilation are particularly prone to
-        silverfish infestations because these properties often have chronically
-        high humidity that is difficult to resolve with a single dehumidifier.
-        Blocked or insufficient air bricks, failed damp-proof courses, and
-        rising damp through solid walls can all contribute to persistent
-        moisture that feeds silverfish populations. If you live in an older
-        property and cannot get humidity below 60% despite running a
-        dehumidifier, consider commissioning a{" "}
-        <strong>professional damp survey</strong> (typically
-        &pound;150&ndash;&pound;400) to identify the underlying structural
-        moisture source.{" "}
-      </p>{" "}
-      <h3>PIV Units for Whole-House Solution</h3>{" "}
-      <p>
-        {" "}
-        For properties with systemic humidity problems across multiple rooms, a{" "}
-        <strong>Positive Input Ventilation (PIV) unit</strong> installed in the
-        loft can be more effective than individual room dehumidifiers. PIV units
-        work by drawing in filtered fresh air from outside, gently warming it,
-        and pushing it into the home through a ceiling diffuser, creating a
-        positive air pressure that forces moist, stale air out through natural
-        ventilation points. Professional installation typically costs
-        &pound;500&ndash;&pound;1,000 and running costs are minimal. PIV units
-        are widely used in social housing and private rental properties to
-        combat condensation and damp &mdash; see our guide to{" "}
-        <Link
-          href="/guides/landlord-pest-control"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          Landlord Pest Control Responsibilities
-        </Link>{" "}
-        for more on damp-related pest obligations.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
-          <p>
-            The most cost-effective silverfish elimination strategy: buy a
-            compact dehumidifier and a bag of diatomaceous earth. Run the
-            dehumidifier daily and dust diatomaceous earth into every crack and
-            crevice. Within a month, most infestations are eliminated.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* When to Call a Professional */}{" "}
-      <h2 id="when-to-call">When to Call a Professional</h2>{" "}
-      <p>
-        {" "}
-        The DIY products on this page will resolve the majority of silverfish
-        infestations when combined with proper humidity management. A
-        dehumidifier to cut moisture, diatomaceous earth or insecticidal powder
-        in harbourage areas, and sticky traps for monitoring will eliminate most
-        silverfish populations within four to eight weeks. However, there are
-        several situations where professional pest control intervention is
-        strongly recommended. If you are{" "}
-        <strong>seeing silverfish during the day</strong>, this typically
-        indicates a severe infestation &mdash; silverfish are nocturnal and only
-        emerge in daylight when population density is extremely high and
-        competition for harbourage forces individuals into the open. Similarly,
-        if silverfish are present in{" "}
-        <strong>multiple rooms across different floors</strong> of your home,
-        the infestation is likely extensive and may require a professional
-        whole-house treatment approach with insecticidal smoke generators and
-        industrial-strength residual sprays that are not available to the
-        public.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        You should also consider professional help if silverfish are{" "}
-        <strong>damaging valuable items</strong> &mdash; books, photographs,
-        wallpaper, clothing, or important documents. Silverfish feed on starch,
-        cellulose, and protein-based materials, and a large infestation can
-        cause genuine damage to irreplaceable items. If your{" "}
-        <strong>
-          DIY treatment has been in place for four to six weeks without
-          measurable improvement
-        </strong>{" "}
-        (sticky trap catches are not declining), this suggests either the
-        humidity issue has not been adequately addressed, or there is a
-        concealed harbourage area &mdash; such as a wall cavity, sub-floor void,
-        or internal drainage leak &mdash; that your surface-level treatments are
-        not reaching. Professional pest controllers have access to thermal
-        imaging cameras, borescopes for inspecting wall cavities, and
-        professional-grade insecticidal dusts that can be injected deep into
-        building voids.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        If the underlying cause appears to be <strong>
-          structural damp
-        </strong>{" "}
-        &mdash; rising damp, penetrating damp, or a concealed plumbing leak
-        &mdash; you need a damp specialist rather than (or in addition to) a
-        pest controller. Structural damp problems cannot be solved with a
-        dehumidifier alone. For <strong>landlord situations</strong>, tenants
-        should report silverfish infestations in writing to their landlord, as
-        damp and humidity problems that attract silverfish may indicate a breach
-        of the landlord&apos;s obligation to maintain the property in a
-        habitable condition. Professional silverfish treatment typically costs{" "}
-        <strong>&pound;100&ndash;&pound;250</strong> for a one-off spray
-        treatment covering a typical home, while a professional damp survey
-        costs <strong>&pound;150&ndash;&pound;400</strong> depending on the size
-        of the property and complexity of the investigation.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Silverfish Problem Too Big for DIY?"
-          subtext="Compare pest control providers near you — free, no-obligation quotes."
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-3">
-          Want the complete silverfish elimination strategy?
-        </p>{" "}
-        <a
-          href="/guides/how-to-get-rid-of-silverfish"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          {" "}
-          Read our full guide: How to Get Rid of Silverfish &rarr;{" "}
-        </a>{" "}
-      </div>{" "}
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* FAQ — rendered from the same array the schema above is derived from */}
+      <h2 id="faq">Frequently Asked Questions</h2>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+
+      <FindProviderCTA
+        heading="A silverfish problem that outlasts the damp work"
+        subtext="Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }
