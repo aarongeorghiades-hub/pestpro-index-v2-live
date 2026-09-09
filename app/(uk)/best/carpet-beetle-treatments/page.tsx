@@ -42,14 +42,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Carpet Beetle Treatments UK 2026 — Sprays, Traps & Powder",
     description:
-      "Carpet beetle treatments compared on their own listings: a spray, a pheromone trap and a powder, with UC IPM and Penn State on the pest.",
+      "Carpet beetle treatments compared on their own listings: a spray, a two-trap pack and a powder, with UC IPM and Penn State on the pest.",
     alternates: {
       canonical: "https://pestproindex.com/best/carpet-beetle-treatments",
     },
     openGraph: {
       title: "Best Carpet Beetle Treatments UK 2026 — Sprays, Traps & Powder",
       description:
-        "Carpet beetle treatments compared on their own listings: a spray, a pheromone trap and a powder, with UC IPM and Penn State on the pest.",
+        "Carpet beetle treatments compared on their own listings: a spray, a two-trap pack and a powder, with UC IPM and Penn State on the pest.",
       url: "https://pestproindex.com/best/carpet-beetle-treatments",
       type: "article",
       siteName: "PestPro Index",
@@ -62,7 +62,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Carpet Beetle Treatments UK 2026 — Sprays, Traps & Powder",
   description:
-    "Carpet beetle treatments compared on their own listings: a spray, a pheromone trap and a powder, with UC IPM and Penn State on the pest.",
+    "Carpet beetle treatments compared on their own listings: a spray, a two-trap pack and a powder, with UC IPM and Penn State on the pest.",
   datePublished: "2026-03-18",
   dateModified: "2026-09-09",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
