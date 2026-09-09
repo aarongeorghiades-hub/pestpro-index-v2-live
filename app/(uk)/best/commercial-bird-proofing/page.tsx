@@ -24,15 +24,22 @@ import Callout from "@/components/Callout";
 // AWARD LABELS, RANK NUMERALS AND CARD ORDER ARE OTHERWISE UNCHANGED. Nothing was
 // removed under the mismatch ruling: every listing supports its card's product type.
 //
-// FLAGGED FOR A PM RULING, NOT ACTED ON — LAW 191. Two of the seven cards are deterrent
-// products rather than physical exclusion: the optical gel, whose own title calls it a
-// "Multi-Sensory Bird Repellent", and the ultrasonic repeller. Law 191 says a route
-// carrying such products takes neutral factual card labels and no rank numerals, and the
-// S67 R4/R5 sweep that applied it to six routes was a PM-ruled scoped sweep, route by
-// route. This route was not named in this round's brief and award labels are NEVER TOUCH
-// outside a naming authority, so both labels stand and the question is referred. What
-// this rebuild DOES do without needing that ruling is delete every own-voice claim that
-// either product works, and report the ASA position where it bears.
+// PM RULING, S69 R3 — THE LAW 191 STANDARD EXTENDED TO TWO CARDS BY NAME. Referred at
+// S69 R2 and ruled this round. This route's slug is not a repellent route, but two of its
+// seven cards are functionally deterrent devices — the optical gel, whose own title calls
+// it a "Multi-Sensory Bird Repellent", and the ultrasonic unit — and the no-efficacy
+// standard applies to them in substance. Both superlative award labels are replaced with
+// neutral descriptors of the product type, in the form the S67 R4/R5 repellent routes
+// use ("Ultrasonic, mains powered", "Peppermint oil spray, 250ml"):
+//   B01MQSRJQ6  "Best Discreet Deterrent"   ->  "Optical gel discs"
+//   B0157D7CXW  "Best Electronic Deterrent" ->  "Ultrasonic unit, 4 speakers"
+// Applied to cardLabel, h2Label and tocLabel together so no card disagrees with its own
+// h2 (Law 188), and written by file and ASIN rather than globally (Law 98). THE RULING
+// NAMED THE LABELS AND NOT THE NUMERALS, so the rank numerals stand; Law 191's own text
+// also removes numerals, and that difference is reported rather than inferred away. The
+// five physical exclusion cards are untouched: a net and a spike are barriers, not
+// efficacy claims. The own-voice claims that either deterrent works were already deleted
+// at S69 R2 and the ASA position is quoted in the limits section.
 //
 // LAW 146 — THE ULTRASONIC LISTING CONTRADICTS ITSELF. Its title reads "Ultrasonic Bird
 // Repeller ... Ultrasonic Dog Repeller" and its target species row reads "Mouse, Rat".
@@ -210,7 +217,7 @@ const products: ProductRecord[] = [
     asin: "B01MQSRJQ6",
     rank: 4,
     cardName: "Bird Barrier Optical Gel (24 Pack)",
-    cardLabel: "Best Discreet Deterrent",
+    cardLabel: "Optical gel discs",
     features: [
       "24 gel discs, mounted with an adhesive dab, no tools per the maker",
       "The maker gives the ingredients as citronella, mint oil, agar and beeswax",
@@ -224,9 +231,9 @@ const products: ProductRecord[] = [
       "24 discs; citronella, mint oil, agar, beeswax",
       "Deterrent — see the ASA position below",
     ],
-    h2Label: "Best Discreet Deterrent",
+    h2Label: "Optical gel discs",
     h2Name: "Bird Barrier Optical Gel (24 Pack)",
-    tocLabel: "Best Discreet Deterrent",
+    tocLabel: "Optical gel discs",
     tocName: "Bird Barrier Optical Gel",
   },
   {
@@ -282,7 +289,7 @@ const products: ProductRecord[] = [
     asin: "B0157D7CXW",
     rank: 7,
     cardName: "BCT Ultrasonic Bird Repeller — 4 Speaker, Multi Frequency",
-    cardLabel: "Best Electronic Deterrent",
+    cardLabel: "Ultrasonic unit, 4 speakers",
     features: [
       "Four speakers, frequency listed as adjustable from 8kHz to 40kHz",
       "Waterproof, listed for indoor and outdoor use, with a 12VDC adaptor and 10m lead",
@@ -296,9 +303,9 @@ const products: ProductRecord[] = [
       "4 speakers, 8kHz–40kHz, 12VDC",
       "Deterrent — see the ASA position below",
     ],
-    h2Label: "Best Electronic Deterrent",
+    h2Label: "Ultrasonic unit, 4 speakers",
     h2Name: "BCT Ultrasonic Bird Repeller",
-    tocLabel: "Best Electronic Deterrent",
+    tocLabel: "Ultrasonic unit, 4 speakers",
     tocName: "BCT Ultrasonic Bird Repeller",
   },
 ];

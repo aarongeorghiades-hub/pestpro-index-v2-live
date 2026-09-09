@@ -30,12 +30,21 @@ import Callout from "@/components/Callout";
 // AWARD LABELS, RANK NUMERALS AND CARD ORDER ARE UNCHANGED. Nothing was removed under
 // the mismatch ruling on this route: all five listings support what their cards claim.
 //
-// FLAGGED FOR A PM RULING, NOT ACTED ON. The rank-4 award reads "Best Cotton
-// Encasement". Its listing's fabric row reads "80% Cotton / 20% Polyester ; Other Sides
-// : 100% Polyester" and its material type row reads Polycotton, while the rank-2 card's
-// listing states a 100% cotton terry top. The award may sit on the less cotton product.
-// Award labels are NEVER TOUCH and neither Law 188 nor Law 189 reaches this, so it is
-// reported and left. The cards state both fabrics exactly.
+// PM RULING, S69 R3 — THE COTTON AWARD MOVED. Referred at S69 R2 and ruled this round.
+// "Best Cotton Encasement" sat on the rank-4 card, whose listing's fabric row reads
+// "80% Cotton / 20% Polyester ; Other Sides : 100% Polyester" and whose material type row
+// reads Polycotton — while the rank-2 card's listing states a 100% cotton terry top. The
+// award now sits on the product the listings support:
+//   rank 2  B00WI09NM6  "Best Professional-Grade"  ->  "Best Cotton Encasement"
+//   rank 4  B0C5XFD8X5  "Best Cotton Encasement"   ->  "Best Lab-Certified Cover"
+// The replacement label is drawn from the rank-4 listing's own words: its second bullet
+// reads "LAB-CERTIFIED PROTECTION AGAINST BED BUGS & MITES ... tested and certified in a
+// laboratory (Laboratoire T.E.C.)". Nothing about cotton survives on that card's label.
+// Rank numerals and card order do not move; only the two labels changed, on cardLabel,
+// h2Label and tocLabel together so no card disagrees with its own h2 (Law 188). Written
+// by file and ASIN, never globally (Law 98): "Best Professional-Grade" appears on ten
+// other routes and none of them was touched. No duplicate award on this route after the
+// swap, measured on both label surfaces.
 //
 // THE SUBTITLE AND DESCRIPTION carried own-voice claims — "saves mattresses, prevents
 // infestations, and pays for itself after one avoided replacement", and "Bed bug proof
@@ -156,7 +165,7 @@ const products: ProductRecord[] = [
     asin: "B00WI09NM6",
     rank: 2,
     cardName: "SureGuard Mattress Encasement — Queen, 13-16 in. Deep",
-    cardLabel: "Best Professional-Grade",
+    cardLabel: "Best Cotton Encasement",
     features: [
       "The maker states the mattress is sealed from bed bugs only when used with its own box spring encasement",
       "100% cotton terry top, described by the maker as noiseless and moisture-wicking",
@@ -170,9 +179,9 @@ const products: ProductRecord[] = [
       "Bed bug proof with the matching box spring cover, per the maker",
       "Queen 60\" x 80\"; fits 13–16 in. deep, as listed",
     ],
-    h2Label: "Best Professional-Grade",
+    h2Label: "Best Cotton Encasement",
     h2Name: "SureGuard Mattress Encasement",
-    tocLabel: "Best Professional-Grade",
+    tocLabel: "Best Cotton Encasement",
     tocName: "SureGuard Encasement",
   },
   {
@@ -204,7 +213,7 @@ const products: ProductRecord[] = [
     asin: "B0C5XFD8X5",
     rank: 4,
     cardName: "Wrappybag Bed Bug Mattress Protector — Waterproof Encasement 135x190x20",
-    cardLabel: "Best Cotton Encasement",
+    cardLabel: "Best Lab-Certified Cover",
     features: [
       "Fabric row reads 80% cotton and 20% polyester on top, 100% polyester on the other sides",
       "The maker states laboratory testing and certification by Laboratoire T.E.C.",
@@ -218,9 +227,9 @@ const products: ProductRecord[] = [
       "Lab tested and certified against bed bugs and mites, per the maker",
       "135 x 190 x 20 cm, as listed",
     ],
-    h2Label: "Best Cotton Encasement",
+    h2Label: "Best Lab-Certified Cover",
     h2Name: "Wrappybag Bed Bug Mattress Protector",
-    tocLabel: "Best Cotton Encasement",
+    tocLabel: "Best Lab-Certified Cover",
     tocName: "Wrappybag Mattress Protector",
   },
   {
@@ -584,9 +593,9 @@ export default function BestProfessionalMattressEncasementsPage() {
             {
               [
                 "A six-sided zipped cover from a mattress maker rather than a pest brand, listed as fitting depths up to 30cm with a size row of Double. Its maker states protection against bed bugs and dust mites, a waterproof top and sides over a polypropylene backing, and full machine washability. It names no test and no certification, which is a difference from two of the others rather than a fault.",
-                "The only listing here that makes its bed bug claim conditional: its maker states the mattress is sealed from bed bugs when used together with its own box spring encasement. It also states a 100% cotton terry top, independent lab testing and GREENGUARD Gold certification, and a list of what the fabric is free from. Listed in US sizing at Queen, 60 by 80 inches, for a 13 to 16 inch mattress.",
+                "The only cover here whose listing states a 100% cotton terry top, which is what the award on it now names — the one other card that mentioned cotton gives 80% on the top panel and 100% polyester on every other side. It is also the only listing that makes its bed bug claim conditional: its maker states the mattress is sealed from bed bugs when used together with its own box spring encasement. It states independent lab testing and GREENGUARD Gold certification, and lists what the fabric is free from. Listed in US sizing at Queen, 60 by 80 inches, for a 13 to 16 inch mattress.",
                 "The one card on this page sized for a UK bed: Double, 135 x 190 x 30 cm, with a mini-zipper the maker describes as securing all 360 degrees and a TPU backing on all six sides. Its maker states it repels dust mites and bacteria and describes the fabric as thick knitted polyester. For a landlord buying several, this is the listing whose dimensions need no conversion.",
-                "The listing that names its testing house: its maker states laboratory testing and certification by Laboratoire T.E.C., OEKO-TEX 100 certification and dermatological testing by Dermatest. Its fabric row reads 80% cotton and 20% polyester on top with 100% polyester on the other sides, and its material type row reads Polycotton. Listed at 135 x 190 x 20 cm with other sizes stated as available.",
+                "The listing that names its testing house, which is what the award on it names: its maker states laboratory testing and certification by Laboratoire T.E.C., plus OEKO-TEX 100 certification and dermatological testing by Dermatest. Its fabric row reads 80% cotton and 20% polyester on top with 100% polyester on the other sides, and its material type row reads Polycotton — so it is a part-cotton cover rather than a cotton one, and its label no longer says otherwise. Listed at 135 x 190 x 20 cm with other sizes stated as available.",
                 "Not an encasement, and the card says so first. Eight cups that sit under bed and furniture legs, with a target species row of Bed Bug and a listing that states no chemicals or pesticides. Its maker describes bed bugs climbing the textured exterior and being unable to escape the inner reservoir, and states that eight traps cover two beds. UC IPM describes this class as a detection tool and as a temporary exclusion measure.",
               ][i]
             }

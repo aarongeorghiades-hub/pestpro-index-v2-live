@@ -1,22 +1,60 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
 
+// S69 R3 — ROLLOUT REBUILD to the R69R1/R69R2 pattern, on sources. GROUP B.
+// THE LAST UNREBUILT ROUTE IN THE /best BACKLOG apart from /best/commercial-fly-killers,
+// which is held to 19 September under the S65 R6 snippet experiment.
+//
+// HEALTH STATEMENTS ON THIS PAGE: ZERO, deliberately. The page previously carried an
+// own-voice paragraph asserting that pigeon guano harbours Chlamydia psittaci and
+// Histoplasma capsulatum and that this is an occupational hazard under COSHH 2002, with
+// no source behind any of it. The same passage was deleted from
+// /best/commercial-bird-proofing at S69 R2 for the same reason. Two CDC pages were
+// attempted at S69 R2 and BOTH WERE BLOCKED; this round exercised Law 137's single
+// permitted retry on that exact list, as Law 163 requires, and both returned HTTP 403
+// again at 424 and 409 bytes. THEY ARE NOW TWICE-BLOCKED AND TERMINAL. With no body on
+// disk the passage is deleted rather than reworded and nothing replaces it.
+//
+// ALSO DELETED AS UNSOURCED: a £2,000–£8,000 guano-cleaning range, an assertion about
+// property values and regulatory exposure under the Health and Safety at Work Act, and
+// two "most effective" claims in this site's own voice.
+//
+// LAW 189 — THE h2s WERE MISCLASSIFIED. `h2Text` held a rank numeral, a product name and
+// in one case a parenthesised award ("#1 Birdgo Anti-Pigeon Netting — 5m x 10m (Best
+// Value)"). On rebuild the h2 gains the award the card already shows, product name
+// retained, card label unchanged.
+//
+// CARD NAMES CORRECTED TOWARDS THEIR FETCHED TITLES (S50-H). The rank-3 record was named
+// "Birdgo Bird Netting & Mesh Fixing Clips" and is neither Birdgo nor general netting
+// clips: its fetched title is "Solar Panel Roof Mesh Fixing Clips", every one of its
+// bullets is about solar panel installations, and its manufacturer row reads Seahaven
+// Limited. NOT a removal under the mismatch ruling — its label "Best No-Drill Fixings" is
+// supported by its own "NO DRILL SOLUTION" bullet and its target is pigeons — but the
+// name and the scope are corrected and the card says what it is actually for.
+//
+// LAW 146 — THE RANK-4 LISTING CONTRADICTS ITSELF. Its title reads "Pest-Stop
+// Professional Bird Spikes" and its target species row reads Fly. Both readings are on
+// the card; S50-H makes the fetched title authoritative for the name and does not resolve
+// the row.
+//
+// TITLE AND H1: the claim clause promised netting alone while the page cards one net, one
+// pack of fixings and two spike strips. Both now name what is carded; the head keyword
+// "Best Professional Bird Netting" is kept byte-identical at the front of each.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Professional Bird Netting UK (2026)",
+    title: "Best Professional Bird Netting, Spikes & Fixings UK (2026)",
     description:
-      "Professional bird netting for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.",
+      "One net, two spike strips and a pack of no-drill clips, compared on their own listings, with the law on wild birds and two extension specs.",
     alternates: {
       canonical: "https://pestproindex.com/best/professional-bird-netting-kits",
     },
     openGraph: {
-      title: "Best Professional Bird Netting UK (2026)",
+      title: "Best Professional Bird Netting, Spikes & Fixings UK (2026)",
       description:
-        "Professional bird netting for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.",
+        "One net, two spike strips and a pack of no-drill clips, compared on their own listings, with the law on wild birds and two extension specs.",
       url: "https://pestproindex.com/best/professional-bird-netting-kits",
       type: "article",
       siteName: "PestPro Index",
@@ -27,21 +65,13 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Professional Bird Netting UK (2026)",
+  headline: "Best Professional Bird Netting, Spikes & Fixings UK (2026)",
   description:
-    "Professional bird netting for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.",
+    "One net, two spike strips and a pack of no-drill clips, compared on their own listings, with the law on wild birds and two extension specs.",
   datePublished: "2026-04-06",
-  dateModified: "2026-04-06",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
+  dateModified: "2026-09-09",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://pestproindex.com/best/professional-bird-netting-kits",
@@ -52,46 +82,182 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
-      name: "Best Professional Bird Netting UK (2026)",
+      name: "Best Professional Bird Netting UK 2026",
       item: "https://pestproindex.com/best/professional-bird-netting-kits",
     },
   ],
 };
 
-// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
-// from this and only this, so the two surfaces cannot disagree again. The visible
-// block was authoritative where they did disagree.
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194). All four bodies were fetched in earlier rounds and are
+// carried forward under Law 175 rather than re-fetched:
+//   www.gov.uk        fetched 2026-09-08, ~/pp-s68r7/sources/gov-wild-birds.src.txt
+//   www.rspb.org.uk   fetched 2026-09-08, ~/pp-s68r7/sources/rspb-wca.src.txt
+//   icwdm.org         fetched 2026-09-09, ~/pp-s69r2/sources/icwdm-pigeons.src.txt
+//   extension.psu.edu fetched 2026-09-09, ~/pp-s69r2/sources/psu-birds-farm-buildings.src.txt
+//
+// THE TWO US SOURCES ARE US SOURCES (Law 135). Their exclusion specifications are
+// statements about method and are quoted as such. Nothing in either of them about
+// shooting, trapping or toxicants is restated here: UK law on those points is what the
+// two UK sources set out, and it is different.
+const SRC = {
+  gov: "https://www.gov.uk/guidance/wild-birds-protection-surveys-and-licences",
+  rspb: "https://www.rspb.org.uk/birds-and-wildlife/wildlife-and-countryside-act",
+  icwdm: "https://icwdm.org/species/birds/pigeons/pigeon-damage-control-and-prevention-methods/",
+  psu: "https://extension.psu.edu/controlling-birds-around-farm-buildings",
+};
+
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+// Records are addressed BY IDENTITY, never by position (Law 107).
+//
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies at
+// ~/pp-s61r1/uk/, inside the S45-C window. A property is asserted only where the
+// listing's own text states it (S52-E); a cell the listing does not state reads
+// "not stated". Two of these four listings are close to empty — one has no feature
+// bullets at all and one has a single bullet reading "Professional" — and the cards say
+// so rather than filling the gap with our own writing.
+const products: ProductRecord[] = [
+  {
+    anchorId: "product-2",
+    asin: "B07KB29QTF",
+    rank: 1,
+    cardName: "Birdgo White 50mm Anti-Pigeon Netting 5m x 10m (Knotted, UV-Stabilised)",
+    cardLabel: "Best Value Net",
+    features: [
+      "50 square metres at a 50mm mesh, listed as 5m x 10m",
+      "Polyethylene, described in the title as knotted and UV-stabilised",
+      "Listed as white, which is unusual: most pigeon netting is sold black",
+      "The listing carries no feature bullets at all — the title is nearly the whole of it",
+      "Fixings are not listed as included",
+    ],
+    tableCells: [
+      "Birdgo White 50mm Anti-Pigeon Netting",
+      "Netting",
+      "5m × 10m, 50mm mesh, polyethylene",
+      "not stated",
+    ],
+    h2Label: "Best Value Net",
+    h2Name: "Birdgo White 50mm Anti-Pigeon Netting 5m x 10m",
+    tocLabel: "Best Value Net",
+    tocName: "Birdgo Anti-Pigeon Netting",
+  },
+  {
+    anchorId: "product-3",
+    asin: "B006Y9L57S",
+    rank: 2,
+    cardName: "Defender Wide Plastic Bird Spikes — 5 Metre Pack",
+    cardLabel: "Best for Ledges",
+    features: [
+      "15 strips of 33.4cm, listed as a 5 metre pack",
+      "The maker states they suit ledges with a depth of up to 20cm",
+      "The maker states each strip can be snapped into smaller sections",
+      "Its own bullet: glue, screws and cable ties are not included",
+      "The maker states a 15 year warranty and includes a 40-page pigeon guide",
+    ],
+    tableCells: [
+      "Defender Wide Plastic Bird Spikes",
+      "Ledge spikes, plastic",
+      "5m pack; 15 strips of 33.4cm; ledges to 20cm",
+      "15 years, per the maker",
+    ],
+    h2Label: "Best for Ledges",
+    h2Name: "Defender Wide Plastic Bird Spikes",
+    tocLabel: "Best for Ledges",
+    tocName: "Defender Wide Plastic Bird Spikes",
+  },
+  {
+    anchorId: "product-4",
+    asin: "B0823ZVZSN",
+    rank: 3,
+    cardName: "Solar Panel Roof Mesh Fixing Clips — No Drill (Nylon, Pack of 60)",
+    cardLabel: "Best No-Drill Fixings",
+    features: [
+      "60 nylon clips, made specifically for attaching mesh to solar panel edges",
+      "The maker states no drilling and no adhesive is needed",
+      "The maker states drilling into solar panels risks damage to the panel system",
+      "The maker recommends clip spacing of 450mm, about 18 inches",
+      "Not a general netting fixing: every bullet on the listing is about solar panels",
+    ],
+    tableCells: [
+      "Solar Panel Roof Mesh Fixing Clips",
+      "Fixing clips, nylon",
+      "Pack of 60; 450mm spacing recommended by the maker",
+      "not stated",
+    ],
+    h2Label: "Best No-Drill Fixings",
+    h2Name: "Solar Panel Roof Mesh Fixing Clips (60-Pack)",
+    tocLabel: "Best No-Drill Fixings",
+    tocName: "Solar Panel Mesh Fixing Clips",
+  },
+  {
+    anchorId: "product-5",
+    asin: "B0024NL0OQ",
+    rank: 4,
+    cardName: "Pest-Stop Professional Bird Spikes",
+    cardLabel: "Best Spikes Option",
+    features: [
+      "Described in the title as stainless steel and UV-resistant",
+      "Material row reads Metal, Plastic; colour row reads Yellow; weight 680g",
+      "Its target species row reads Fly, which its own title contradicts",
+      "The listing has one feature bullet and it is the single word Professional",
+      "No length, coverage or strip count is stated anywhere in the listing",
+    ],
+    tableCells: [
+      "Pest-Stop Professional Bird Spikes",
+      "Ledge spikes, steel and plastic",
+      "not stated",
+      "not stated",
+    ],
+    h2Label: "Best Spikes Option",
+    h2Name: "Pest-Stop Professional Bird Spikes",
+    tocLabel: "Best Spikes Option",
+    tocName: "Pest-Stop Bird Spikes",
+  },
+];
+
 const faqs = [
   {
-    q: "Do I need planning permission to install bird netting?",
-    a: "In most cases, no. Bird netting is considered a maintenance or pest control measure rather than a structural alteration, so planning permission is not required. The exception is listed buildings and properties in conservation areas, where Listed Building Consent may be needed before any external modifications — including netting fixings — are carried out. Always check with your local planning authority if you are unsure about your building's status.",
+    q: "Can I net a building against birds?",
+    a: "GOV.UK states that all wild bird species, their eggs and nests are protected by law, and that you must always try to avoid harming birds or use measures which do not kill or injure them before considering taking harmful action. Exclusion fitted when nothing is nesting is a measure of that kind. This site reports what GOV.UK and the RSPB publish and does not rule on your particular building.",
   },
   {
-    q: "How long does bird netting last?",
-    a: "UV-stabilised knotted bird netting typically lasts 5 to 10 years when correctly installed and maintained. The main factors affecting lifespan are UV exposure (south-facing installations degrade faster), wind loading, and the quality of the fixing system. Regular inspection and prompt repair of any damaged sections or failed fixings will maximise the life of the installation.",
+    q: "When should the work be done?",
+    a: "The RSPB writes that maintenance works, such as hedge trimming, and building work should ideally be completed outside of the main nesting season during autumn and winter to avoid disturbance. It also states that the Wildlife and Countryside Act 1981 makes it illegal, subject to certain exceptions, to intentionally take, damage or destroy the nest of any wild bird while it is in use or being built.",
   },
   {
-    q: "Can I install bird netting myself?",
-    a: "For small, low-level areas such as ground-floor loading bays, covered walkways, or single-storey structures, DIY installation is feasible with the right kit and fixings. However, for any work at height on multi-storey buildings, professional installation is strongly recommended. Installers will have the necessary access equipment (scaffolding, cherry pickers, or rope access), PASMA or IPAF certification, and the experience to tension netting correctly — the single most important factor in a long-lasting installation.",
+    q: "Is a 50mm mesh the right size?",
+    a: "It depends entirely on the bird. ICWDM writes that ornamental architecture can be screened with 1-inch mesh polypropylene UV-stabilised netting, and that openings should be closed with quarter-inch mesh; Penn State Extension says to close all openings more than 0.5 inch. The net on this page is 50mm, roughly two inches. That excludes a pigeon and admits anything smaller.",
   },
   {
-    q: "What about seagulls — does bird netting work against them?",
-    a: "Yes. Heavy-duty knotted netting with 50mm mesh is effective against herring gulls and lesser black-backed gulls, the two species most commonly responsible for gull problems on UK commercial buildings. Seagulls are larger and more aggressive than pigeons, so the netting must be correctly tensioned and securely fixed to withstand the additional force. For gull exclusion, professional installation with heavy-gauge perimeter wire is particularly important.",
+    q: "How long does netting last?",
+    a: "ICWDM writes that the life span of this netting can be as long as 10 years, of the 1-inch UV-stabilised polypropylene it describes. The listing on this page states polyethylene and UV-stabilised and gives no life figure at all, so no figure appears in its comparison cell.",
+  },
+  {
+    q: "Do spikes work on every bird?",
+    a: "Penn State Extension is explicit that they do not: these materials are not effective against smaller birds, such as house sparrows, because the birds can fit between the points and use the site for nesting. Two of the four products here are spikes, and if the birds on your ledge are small they may end up holding the nest rather than preventing it.",
+  },
+  {
+    q: "Does this page carry a health warning about droppings?",
+    a: "No, and the reason is worth stating. An earlier version of this page named two pathogens and asserted a duty under COSHH, with no source behind either. Two CDC pages were attempted at the previous round and blocked; the single permitted retry was exercised this round and both were blocked again, so they are terminal. With nothing on disk to quote, the passage was deleted rather than reworded. Anything about your own health belongs with a pharmacist or a GP, and any duty question with a competent adviser.",
   },
 ];
 
@@ -105,161 +271,40 @@ const faqSchema = {
   })),
 };
 
-type ProductRecord = {
-  anchorId: string;
-  asin: string;
-  rank: number;
-  cardName: string;
-  cardLabel: string;
-  features: string[];
-  tableCells: string[];
-  h2Text: string;
-  tocTitle: string;
-};
-
-const products: ProductRecord[] = [
-  {
-    anchorId: "product-2",
-    asin: "B07KB29QTF",
-    rank: 1,
-    cardName:
-      "Birdgo Anti-Pigeon Netting 5m x 10m (50mm, Knotted, UV-Stabilised)",
-    cardLabel: "Best Value Net",
-    features: [
-      "5m x 10m net — 50 sq m, ideal for smaller areas",
-      "50mm knotted mesh for pigeon and gull exclusion",
-      "UV-stabilised knotted polyethylene from a specialist brand",
-    ],
-    tableCells: [
-      "Birdgo Anti-Pigeon Netting — 5m x 10m",
-      "50mm knotted netting",
-      "Best Value Net",
-    ],
-    h2Text: "#1 Birdgo Anti-Pigeon Netting — 5m x 10m (Best Value)",
-    tocTitle: "#1 Birdgo Anti-Pigeon Netting — 5m x 10m",
-  },
-  {
-    anchorId: "product-3",
-    asin: "B006Y9L57S",
-    rank: 2,
-    cardName: "Defender Wide Plastic Bird Spikes — 5m Professional Pack",
-    cardLabel: "Best for Ledges",
-    features: [
-      "UK-manufactured, patented design (25+ year track record)",
-      "Stainless steel spikes on UV-resistant plastic base",
-      "Covers ledges up to 20cm wide",
-      "Professional standard for ledge exclusion alongside netting",
-    ],
-    tableCells: [
-      "Defender Wide Plastic Bird Spikes — 5m Pack",
-      "Spike strip",
-      "Best Ledge Exclusion",
-    ],
-    h2Text: "#2 Defender Wide Plastic Bird Spikes — 5m Professional Pack",
-    tocTitle: "#2 Defender Wide Plastic Bird Spikes",
-  },
-  {
-    anchorId: "product-4",
-    asin: "B0823ZVZSN",
-    rank: 3,
-    cardName: "Birdgo Bird Netting & Mesh Fixing Clips — No-Drill (60-Pack)",
-    cardLabel: "Best No-Drill Fixings",
-    features: [
-      "Pack of 60 UV-stabilised nylon fixing clips",
-      "No-drill installation for netting and proofing mesh",
-      "Originally designed for solar-panel and roof mesh fixing",
-      "Quick way to attach netting without specialist tools",
-    ],
-    tableCells: [
-      "Birdgo Bird Netting Fixing Clips (60-Pack)",
-      "No-drill fixing clips",
-      "Essential Accessory",
-    ],
-    h2Text: "#3 Birdgo Bird Netting Fixing Clips (60-Pack)",
-    tocTitle: "#3 Birdgo Bird Netting Fixing Clips (60-Pack)",
-  },
-  {
-    anchorId: "product-5",
-    asin: "B0024NL0OQ",
-    rank: 4,
-    cardName: "Pest-Stop Professional Stainless Steel Bird Spikes",
-    cardLabel: "Best Spikes Option",
-    features: [
-      "304 stainless steel spikes, UV-resistant base",
-      "Flexible base for curved surfaces like ridge tiles",
-      "Pigeon and seagull exclusion for rooflines and sills",
-      "Complements netting on buildings with complex geometry",
-    ],
-    tableCells: [
-      "Pest-Stop Professional Stainless Steel Bird Spikes",
-      "Stainless steel spike strip",
-      "Complex Geometry",
-    ],
-    h2Text: "#4 Pest-Stop Professional Stainless Steel Bird Spikes",
-    tocTitle: "#4 Pest-Stop Stainless Steel Bird Spikes",
-  },
-];
-
-// Records are addressed BY IDENTITY, never by position. A positional lookup
-// silently rebinds every later product when a record is added, removed or
-// reordered; this cannot. A missing anchorId throws, so the build fails loudly
-// rather than rendering undefined.
-function product(anchorId: string): ProductRecord {
-  const found = products.find((p) => p.anchorId === anchorId);
-  if (!found) {
-    throw new Error(`No product record with anchorId "${anchorId}"`);
-  }
-  return found;
-}
-
 const tocItems = [
-  { id: "at-a-glance", title: "At a Glance" },
-  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
-  { id: "netting-vs-spikes", title: "Netting vs Spikes" },
-  { id: "buying-guide", title: "Buying Guide" },
-  { id: "roi", title: "ROI: Why Exclusion Pays for Itself" },
-  { id: "faq", title: "Frequently Asked Questions" },
+  { id: "situation", title: "Exclusion Is the Method" },
+  { id: "legal", title: "The Legal Position on Wild Birds" },
+  { id: "limits", title: "Where These Products Do Not Work" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Product Is Not the Answer" },
+  { id: "using", title: "Use and Placement" },
+  { id: "compared", title: "The Four Compared" },
 ];
 
 export default function BestProfessionalBirdNettingKitsPage() {
   return (
     <GuideLayout
-      title="Best Professional Bird Netting for Commercial Properties & Landlords (2026)"
-      subtitle="Professional bird netting for commercial properties, landlords and facilities managers. Large-scale pigeon and bird exclusion systems compared."
-      lastUpdated="April 2026"
-      readingTime="9 min"
+      title="Best Professional Bird Netting, Spikes &amp; Fixings for Commercial Properties (2026)"
+      subtitle="One net, two spike strips and a pack of no-drill clips, described by what their own listings state — beside GOV.UK and the RSPB on what the law protects and two extension services on how exclusion is specified"
+      lastUpdated="September 2026"
+      readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "Pigeon Control: Complete UK Guide",
-          href: "/guides/pigeon-control",
-        },
-        {
-          title: "Commercial Pest Control Hub",
-          href: "/guides/commercial-pest-control",
-        },
-        {
-          title: "Warehouse Pest Management",
-          href: "/guides/warehouse-pest-management",
-        },
-        { title: "Office Pest Control", href: "/guides/office-pest-control" },
+        { title: "Pigeon Control: Complete UK Guide", href: "/guides/pigeon-control" },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
+        { title: "Landlord Pest Control Responsibilities", href: "/guides/landlord-pest-control" },
       ]}
       relatedProducts={[
-        {
-          title: "Best Bird Deterrents UK 2026",
-          href: "/best/bird-deterrents",
-        },
+        { title: "Best Commercial Bird Proofing UK 2026", href: "/best/commercial-bird-proofing" },
         { title: "Best Pigeon Spikes UK 2026", href: "/best/pigeon-spikes" },
-        {
-          title: "Best Commercial Bird Proofing",
-          href: "/best/commercial-bird-proofing",
-        },
+        { title: "Best Bird Deterrents UK 2026", href: "/best/bird-deterrents" },
+        { title: "Best Commercial Insect Monitors UK 2026", href: "/best/commercial-insect-monitors" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {/* FAQ Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -276,420 +321,351 @@ export default function BestProfessionalBirdNettingKitsPage() {
         </p>
       </div>
 
-      {/* Intro */}
       <p>
-        Bird exclusion is one of the highest-priority maintenance tasks for
-        facilities managers, commercial landlords, and property management
-        companies across the UK. Pigeons, gulls, starlings, and house sparrows
-        cause tens of thousands of pounds in damage to commercial buildings
-        every year through accumulated fouling, blocked drainage, corroded
-        steelwork, contaminated stock, and deterioration of building facades.
-        The health risks are equally serious: pigeon guano harbours{" "}
-        <em>Chlamydia psittaci</em> (psittacosis),{" "}
-        <em>Histoplasma capsulatum</em> (histoplasmosis), and{" "}
-        <em>Cryptococcus neoformans</em> (cryptococcosis) &mdash; respiratory
-        pathogens that represent a genuine occupational health hazard under the
-        Control of Substances Hazardous to Health (COSHH) Regulations 2002.
-      </p>
-      <p>
-        Beyond health and structural damage, uncontrolled bird infestations
-        create public liability risks (slip hazards from fouling on walkways and
-        car parks), aesthetic deterioration that affects tenant retention and
-        property values, and regulatory exposure under the Health and Safety at
-        Work Act 1974. For food businesses, evidence of bird fouling near food
-        handling areas is a serious compliance failure that can result in
-        enforcement action from Environmental Health Officers. Professional bird
-        netting is the most effective method of total bird exclusion from large
-        commercial areas, and the products on this page are designed for exactly
-        that purpose.
+        Four products, and only one of them is a net. The others are two sets of
+        ledge spikes and a pack of clips for fixing mesh to solar panels. This
+        page is the components of a proofing job rather than four competing
+        nets, and the cards say which is which.
       </p>
 
+      {/* DECISION BLOCK — situation first, product second. The legal line and the
+          does-not-work line sit ABOVE every product line. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>There may be a nest.</strong>{" "}
+            <a href="#legal" className="underline">
+              The legal position
+            </a>{" "}
+            decides whether the job can start at all, and it comes before any
+            product.
+          </li>
+          <li>
+            <strong>The birds are smaller than pigeons.</strong>{" "}
+            <a href="#limits" className="underline">
+              Where these products do not work
+            </a>{" "}
+            — the mesh here is 50mm and Penn State is explicit about spikes and
+            sparrows.
+          </li>
+          <li>
+            <strong>You are closing an open span.</strong>{" "}
+            <a href="#product-2" className="underline">
+              The 5m by 10m net
+            </a>{" "}
+            is the only netting on this page.
+          </li>
+          <li>
+            <strong>You are proofing a ledge up to 20cm deep.</strong>{" "}
+            <a href="#product-3" className="underline">
+              The 5 metre spike pack
+            </a>{" "}
+            states that depth; the other spike listing states nothing at all.
+          </li>
+          <li>
+            <strong>Pigeons are under a solar array.</strong>{" "}
+            <a href="#product-4" className="underline">
+              The no-drill clips
+            </a>{" "}
+            are for that specific job and no other.
+          </li>
+        </ul>
+      </div>
+
       <div className="not-prose">
-        <Callout type="info">
+        <Callout type="warning">
           <p>
-            <strong>Wildlife &amp; Countryside Act 1981:</strong> All wild birds
-            are protected by law in the UK. It is a criminal offence to kill or
-            injure any wild bird, or to damage or destroy an active nest,
-            without a specific licence. Bird proofing must use exclusion methods
-            only &mdash; no harm or disturbance to active nests is permitted.
-            Always install netting <strong>before</strong> the nesting season
-            (typically March&ndash;August) or confirm nests are inactive before
-            commencing work. Penalties include unlimited fines and up to six
-            months&apos; imprisonment.
+            GOV.UK states that all wild bird species, their eggs and nests are
+            protected by law. Survey before you fit anything, and read the legal
+            section below before ordering.
           </p>
         </Callout>
       </div>
 
+      {/* [0] Situation */}
+      <h2 id="situation">Exclusion Is the Method</h2>
       <p>
-        We selected these bird netting kits on published specifications and
-        manufacturer information, weighing mesh size against the species each
-        kit is intended to exclude, net material and strength, and the
-        completeness of the fixings supplied.
+        The Internet Center for Wildlife Damage Management puts blocking access
+        ahead of everything else:{" "}
+        <em>
+          &ldquo;Pigeons can be excluded from buildings (in some cases very
+          easily) by blocking access to indoor roosts and nesting areas.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.icwdm} rel="nofollow">
+          ICWDM
+        </a>
+        ).
+      </p>
+      <p>
+        For an open span rather than a hole, it gives a specification:{" "}
+        <em>
+          &ldquo;Ornamental architecture can be screened with 1-inch (2.5-cm)
+          mesh polypropylene u.v.-stabilized netting to prevent roosting,
+          loafing, and nesting.&rdquo;
+        </em>{" "}
+        And a service life for it:{" "}
+        <em>&ldquo;The life span of this netting can be as long as 10 years.&rdquo;</em>
+      </p>
+      <p>
+        Penn State Extension states the same order of operations in a farm
+        setting:{" "}
+        <em>&ldquo;Exclude birds from roosting sites by covering the undersides of the rafters with netting.&rdquo;</em>{" "}
+        (
+        <a href={SRC.psu} rel="nofollow">
+          Penn State Extension
+        </a>
+        ). Both are US publications and their figures are quoted as statements
+        about method, not about UK law.
       </p>
 
-      {/* At a Glance */}
-      <h2 id="at-a-glance">At a Glance</h2>
+      {/* [1] Legal */}
+      <h2 id="legal">The Legal Position on Wild Birds</h2>
       <p>
-        Below is a quick comparison of our four recommended professional bird
-        netting and exclusion products. Most commercial installations require a
-        combination of netting for large open areas and spikes for ledges and
-        linear surfaces, so we have included the best of both categories.
+        GOV.UK states the protection in one sentence:{" "}
+        <em>&ldquo;All wild bird species, their eggs and nests are protected by law.&rdquo;</em>{" "}
+        (
+        <a href={SRC.gov} rel="nofollow">
+          GOV.UK
+        </a>
+        ). And the order it expects:{" "}
+        <em>
+          &ldquo;You must always try to avoid harming birds or to use measures
+          which do not kill or injure them before considering taking harmful
+          action.&rdquo;
+        </em>{" "}
+        Every product on this page is a physical barrier, which is a measure of
+        that kind.
       </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Type</th>
-            <th>Best For</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
+      <p>
+        The RSPB names the statutory prohibition that most often catches a
+        proofing job:{" "}
+        <em>&ldquo;Intentionally take, damage or destroy the nest of any wild bird while it is in use or being built.&rdquo;</em>{" "}
+        (
+        <a href={SRC.rspb} rel="nofollow">
+          RSPB
+        </a>
+        ).
+      </p>
+      <p>
+        And it gives the practical consequence for scheduling:{" "}
+        <em>
+          &ldquo;Maintenance works, such as hedge trimming, and building work
+          should ideally be completed outside of the main nesting season during
+          autumn and winter to avoid disturbance.&rdquo;
+        </em>{" "}
+        Netting fitted over an active nest is not a proofing job. This site
+        reports what GOV.UK and the RSPB publish and does not rule on any
+        particular building.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where These Products Do Not Work</h2>
+      <p>
+        <strong>A 50mm mesh, against anything smaller than a pigeon.</strong>{" "}
+        ICWDM specifies 1-inch netting for screening architecture and
+        quarter-inch mesh for closing openings; Penn State Extension says{" "}
+        <em>&ldquo;Close all openings more than 0.5 inch.&rdquo;</em> (
+        <a href={SRC.psu} rel="nofollow">
+          Penn State Extension
+        </a>
+        ). The net here is 50mm, about two inches. It is a pigeon net.
+      </p>
+      <p>
+        <strong>Spikes, against small birds.</strong>{" "}
+        <em>
+          &ldquo;These materials are not effective against smaller birds, such
+          as house sparrows, because the birds can fit between the points and
+          use the site for nesting.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.psu} rel="nofollow">
+          Penn State Extension
+        </a>
+        ). Half the cards on this page are spikes.
+      </p>
+      <p>
+        <strong>Once the installation silts up.</strong> ICWDM:{" "}
+        <em>
+          &ldquo;Sometimes pigeons and sparrows cover the wires with nesting
+          material or droppings, which requires occasional removal.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.icwdm} rel="nofollow">
+          ICWDM
+        </a>
+        ). Proofing is a maintenance item, not a one-off.
+      </p>
+      <p>
+        <strong>On a budget that assumed it was cheap.</strong> Penn State
+        Extension, on the non-lethal methods generally:{" "}
+        <em>
+          &ldquo;These nonlethal methods are safe for people, livestock, and
+          nontarget wildlife, but they are often time-consuming to install and
+          expensive.&rdquo;
+        </em>
+      </p>
+      <p>
+        <strong>Where the listing tells you nothing.</strong> One of the four
+        products here has a single feature bullet, and that bullet is the one
+        word Professional. It states no length, no coverage and no strip count
+        anywhere. Its comparison cells say &ldquo;not stated&rdquo; because that
+        is the honest answer, not because nothing was checked.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Mesh and spacing, against the bird you actually have</h3>
+      <p>
+        ICWDM gives 1-inch netting for architecture and quarter-inch mesh for
+        openings; Penn State gives half an inch as the threshold for closing an
+        opening at all. The net carded here is 50mm. Hold that number against
+        the bird before you order, because no fixing or spike choice recovers a
+        mesh that is too coarse.
+      </p>
+      <h3>2. Whether the listing states a dimension at all</h3>
+      <p>
+        Two of these four do. The net gives 5m by 10m at 50mm; the plastic
+        spikes give 15 strips of 33.4cm covering ledges to 20cm deep. The clips
+        give a pack count and a recommended spacing. The steel spikes give
+        nothing — no length, no coverage, no strip count — and that is a real
+        difference between two otherwise similar products.
+      </p>
+      <h3>3. What the kit does not include</h3>
+      <p>
+        The netting listing does not list fixings. The plastic spike listing
+        states in its own words that glue, screws and cable ties are not
+        included. The clips attach mesh to solar panels and are not a general
+        netting fixing. Three of the four are components, and a first order that
+        assumes otherwise arrives incomplete.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>
+            {
+              [
+                "Fifty square metres of knotted, UV-stabilised polyethylene at a 50mm mesh, and the only netting on this page. Held against ICWDM's specification it is about twice the 1-inch mesh that source gives for screening architecture, so it is sized for pigeons and not for anything smaller. It is listed as white, where most pigeon netting is sold black, and ICWDM notes that black is often the best choice on a building. The listing carries no feature bullets at all, so its title is very nearly the whole of what its maker says about it.",
+                "The better documented of the two spike products: 15 strips of 33.4cm making a 5 metre pack, with the maker stating they suit ledges up to 20cm deep and that each strip can be snapped into smaller sections. Its own bullet says glue, screws and cable ties are not included, which is the kind of thing worth knowing before the scaffold goes up. The maker states a 15 year warranty and includes a 40-page pigeon guide.",
+                "Not a general netting fixing, and the card leads with that: 60 nylon clips made specifically to attach bird-proofing mesh to the edges of a solar panel array without drilling. Its maker states that drilling into solar panels risks damage to the panel system, and recommends clip spacing of 450mm. Every bullet on the listing is about solar installations, and it was previously carded here under a brand and a description that were not its own.",
+                "The thinnest listing on this page, and the card reports that rather than dressing it up. Its title says stainless steel and UV-resistant; its material row says Metal, Plastic; its colour row says Yellow; its weight is 680g. Its single feature bullet is the word Professional. Its target species row reads Fly, which its own title contradicts. No length, coverage or strip count is stated anywhere, so three of its four comparison cells read not stated.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If a Product Is Not the Answer</h2>
+      <p>
+        <strong>Change the ledge instead of arming it.</strong> Penn State
+        Extension:{" "}
+        <em>&ldquo;Change the angle of the roosting ledge to at least 45 degrees.&rdquo;</em>{" "}
+        (
+        <a href={SRC.psu} rel="nofollow">
+          Penn State Extension
+        </a>
+        ). Slanted metal or wooden boards at that angle — a fabrication job
+        rather than a purchase, and one that cannot silt up.
+      </p>
+      <p>
+        <strong>Close the opening rather than screen the face.</strong> ICWDM
+        puts blocking access to indoor roosts and nesting areas ahead of
+        everything else, with a quarter-inch rust-proofed mesh.
+      </p>
+      <p>
+        <strong>Remove what is attracting them.</strong> ICWDM&rsquo;s own list
+        starts with removing bird feeders, discouraging public feeding and
+        eliminating standing water. On a commercial site that is a bin and
+        catering question before it is a hardware one.
+      </p>
+      <p>
+        <strong>Other routes on this site.</strong> Our{" "}
+        <a href="/best/commercial-bird-proofing">commercial bird proofing</a>{" "}
+        page covers the wider set including bird wire and solar mesh, our{" "}
+        <a href="/best/pigeon-spikes">pigeon spikes</a> page covers spikes on
+        their own, and our{" "}
+        <a href="/guides/pigeon-control">pigeon control guide</a> covers the
+        building rather than the product.
+      </p>
+
+      {/* Use and placement */}
+      <h2 id="using">Use and Placement</h2>
+      <ol>
+        <li>
+          <strong>Survey for nests first.</strong> The RSPB names an active or
+          part-built nest as protected, and that governs whether the job can
+          start.
+        </li>
+        <li>
+          <strong>Schedule it for autumn or winter.</strong> The RSPB&rsquo;s
+          own recommendation for building work, to avoid disturbance.
+        </li>
+        <li>
+          <strong>Match the mesh to the bird.</strong> 50mm excludes a pigeon
+          and admits a sparrow; ICWDM and Penn State both give tighter figures
+          for smaller birds.
+        </li>
+        <li>
+          <strong>Order the fixings separately.</strong> The net lists none and
+          the plastic spikes state in their own words that none are included.
+        </li>
+        <li>
+          <strong>Put it on the maintenance schedule.</strong> ICWDM notes that
+          installations silt up with nesting material and droppings and need
+          occasional clearing.
+        </li>
+      </ol>
+
+      {/* Comparison table — LISTING facts only, "not stated" where absent */}
+      <h2 id="compared">The Four Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        claim attributed to the maker who makes it. Where a listing does not
+        state something, the cell says so rather than guessing — and on this
+        page four cells do.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Size and specification, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Warranty or life, as listed</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-
-      {/* Product 2 */}
-      <h2 id={product("product-2").anchorId}>{product("product-2").h2Text}</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={product("product-2").cardName}
-          features={product("product-2").features}
-          asin={product("product-2").asin}
-          bestFor={product("product-2").cardLabel}
-          rank={product("product-2").rank}
-        />
-      </div>
-      <p>
-        For smaller installations &mdash; a single loading bay, a covered
-        walkway, a courtyard corner &mdash; the 5m x 10m Birdgo net delivers
-        professional-quality, UV-stabilised knotted construction. At 50 square
-        metres it is the sensible choice.
-      </p>
-      <p>
-        It uses a 50mm knotted mesh, the right aperture for pigeon and gull
-        exclusion. UV stabilisation is essential for anything installed in
-        direct sunlight: non-stabilised netting becomes brittle and
-        disintegrates within two to three years, particularly on south-facing
-        and west-facing elevations. Fixings and tensioning wire are not included
-        &mdash; pair it with the fixing clips below.
-      </p>
-      <p>
-        <strong>Pros:</strong> 50 sq m of coverage; 50mm knotted mesh for pigeon
-        and gull exclusion; UV-stabilised for outdoor durability; right-sized
-        for smaller jobs.
-      </p>
-      <p>
-        <strong>Cons:</strong> Fixings not included; 50mm mesh will not exclude
-        starlings or sparrows.
-      </p>
-
-      {/* Product 3 */}
-      <h2 id={product("product-3").anchorId}>{product("product-3").h2Text}</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={product("product-3").cardName}
-          features={product("product-3").features}
-          asin={product("product-3").asin}
-          bestFor={product("product-3").cardLabel}
-          rank={product("product-3").rank}
-        />
-      </div>
-      <p>
-        While netting is the primary solution for large open areas, ledges,
-        window sills, parapets, and other linear surfaces require a different
-        approach. The Defender Wide Plastic Bird Spikes are the UK industry
-        standard for ledge exclusion, with a patented design backed by over 25
-        years of proven performance on commercial buildings across the country.
-        The combination of stainless steel spikes on a UV-resistant
-        polycarbonate base delivers the durability needed for permanent outdoor
-        installation, and the wide base covers ledges up to 20cm &mdash;
-        significantly broader than standard spike strips that only protect
-        narrow sills.
-      </p>
-      <p>
-        On most commercial buildings, netting and spikes are used together as
-        part of a comprehensive bird exclusion programme. Netting covers the
-        large open areas (loading bays, car park canopies, courtyards), while
-        spikes protect the ledges, sills, signage, and architectural features
-        where birds would otherwise land and roost. The Defender spikes are the
-        professional installer&apos;s choice for this complementary role, and
-        their UK manufacture ensures consistent quality and availability.
-      </p>
-      <p>
-        <strong>Pros:</strong> UK-manufactured with 25+ year track record;
-        stainless steel spikes resist corrosion; wide base covers up to 20cm
-        ledges; professional standard used by pest control companies; 5m pack
-        provides good coverage per purchase.
-      </p>
-      <p>
-        <strong>Cons:</strong> Spikes alone do not exclude birds from large open
-        areas (use netting for that); visible on the building facade; requires
-        adhesive or screw fixing to the ledge surface; not effective against
-        very small birds that can perch between pins.
-      </p>
-
-      {/* Product 4 */}
-      <h2 id={product("product-4").anchorId}>{product("product-4").h2Text}</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={product("product-4").cardName}
-          features={product("product-4").features}
-          asin={product("product-4").asin}
-          bestFor={product("product-4").cardLabel}
-          rank={product("product-4").rank}
-        />
-      </div>
-      <p>
-        Netting is only as good as the way it is fixed. These Birdgo nylon clips
-        are a no-drill way to attach bird netting or proofing mesh to a frame or
-        surface &mdash; they were designed for fixing mesh around solar panels
-        and roof edges, and work just as well for holding netting in place over
-        smaller openings, vents and gaps. At 60 clips per pack they cover a
-        substantial run of net edge.
-      </p>
-      <p>
-        For larger spans on commercial buildings you will still want a tensioned
-        perimeter-wire system (stainless wire between masonry anchors, with the
-        net attached using hog rings or net clips) &mdash; incorrect tensioning
-        is the most common cause of netting failure. But for the small-to-medium
-        jobs most facilities teams tackle in-house, these clips are an
-        inexpensive, tool-light way to fix the net securely.
-      </p>
-      <p>
-        <strong>Pros:</strong> 60 clips per pack; no-drill, no specialist tools;
-        UV-stabilised nylon for outdoor use; inexpensive companion to the net
-        above.
-      </p>
-      <p>
-        <strong>Cons:</strong> Clips only &mdash; perimeter wire and masonry
-        anchors not included; for large high-tension spans a full wire system is
-        still recommended; not a substitute for professional fixing at height.
-      </p>
-
-      {/* Product 5 */}
-      <h2 id={product("product-5").anchorId}>{product("product-5").h2Text}</h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={product("product-5").cardName}
-          features={product("product-5").features}
-          asin={product("product-5").asin}
-          bestFor={product("product-5").cardLabel}
-          rank={product("product-5").rank}
-        />
-      </div>
-      <p>
-        The Pest-Stop Professional Stainless Steel Bird Spikes fill a specific
-        role in commercial bird exclusion: protecting curved surfaces, ridge
-        tiles, pipework, and other architectural features with complex geometry
-        that flat-base spikes cannot accommodate. The 304 stainless steel spikes
-        provide complete corrosion resistance &mdash; essential for roofline
-        installations exposed to rain, coastal salt air, and the highly acidic
-        compounds in bird guano. The flexible base conforms to curved profiles
-        without requiring custom cutting or bending, making installation on
-        ridge tiles, rounded copings, and circular pipework straightforward.
-      </p>
-      <p>
-        On commercial buildings where netting covers the main open areas but the
-        roofline, ridge tiles, and upper-storey architectural features remain
-        exposed, the Pest-Stop spikes provide the complementary protection
-        needed to close off these secondary roosting and nesting sites. Pigeons
-        and seagulls that are excluded from their primary roosting area by
-        netting will immediately seek alternative perching points on the same
-        building, and without spike protection on these secondary locations, the
-        bird problem simply relocates rather than being resolved.
-      </p>
-      <p>
-        <strong>Pros:</strong> 304 stainless steel for maximum corrosion
-        resistance; flexible base for curved surfaces and ridge tiles; pigeon
-        and seagull rated; complements netting on complex buildings; competitive
-        pricing.
-      </p>
-      <p>
-        <strong>Cons:</strong> Not a substitute for netting on large open areas;
-        multiple packs needed for extensive rooflines; requires adhesive or
-        screw fixing; visible on the building profile.
-      </p>
-
-      {/* Netting vs Spikes */}
-      <h2 id="netting-vs-spikes">Netting vs Spikes: When to Use Each</h2>
-      <p>
-        Understanding when to use netting and when to use spikes is fundamental
-        to designing an effective bird exclusion programme for any commercial
-        building. The two systems serve different purposes and are almost always
-        used together on the same property.
-      </p>
-      <h3>Bird Netting</h3>
-      <p>
-        Netting is the correct solution for large open areas where total bird
-        exclusion is required. Loading bays, multi-storey car parks,
-        underpasses, courtyards, covered walkways, warehouse openings, and any
-        space where birds can fly into and roost or nest should be netted.
-        Netting creates a complete physical barrier that prevents birds from
-        entering the protected space entirely. It is the only method that
-        provides 100% exclusion when correctly installed and maintained.
-      </p>
-      <h3>Bird Spikes</h3>
-      <p>
-        Spikes are the correct solution for ledges, window sills, parapets,
-        signage, pipework, ridge tiles, and other linear or narrow surfaces
-        where birds perch and roost. Spikes prevent birds from landing on the
-        protected surface but do not exclude them from the wider area. They are
-        most effective as a complementary measure alongside netting, protecting
-        the secondary perching sites that birds would otherwise relocate to once
-        excluded from their primary roosting area.
-      </p>
-      <h3>Combined Approach</h3>
-      <p>
-        On most commercial buildings, a combined approach delivers the best
-        results. Net the large open areas (loading bays, car parks, roof voids)
-        and spike the ledges, sills, and roofline features. This combination
-        closes off both the primary habitat areas and the secondary perching
-        points, forcing birds to leave the building entirely rather than simply
-        relocating to an unprotected section. Professional bird control
-        contractors design their installations on exactly this principle.
-      </p>
-
-      {/* Buying Guide */}
-      <h2 id="buying-guide">Buying Guide: Choosing the Right Bird Netting</h2>
-      <p>
-        Selecting the correct bird netting specification for your commercial
-        property requires attention to several key factors. Getting these right
-        ensures an effective, long-lasting installation; getting them wrong
-        results in premature failure, wasted expenditure, and ongoing bird
-        problems.
-      </p>
-
-      <h3>Mesh Size</h3>
-      <p>
-        Mesh size is the most critical specification. The correct mesh aperture
-        depends on the target species:
-      </p>
-      <ul>
-        <li>
-          <strong>19mm mesh</strong> &mdash; the standard for pigeon exclusion.
-          Prevents adult and juvenile pigeons from passing through. Also
-          effective against gulls, crows, and jackdaws.
-        </li>
-        <li>
-          <strong>28mm mesh</strong> &mdash; suitable for starlings, mynahs, and
-          medium-sized birds. Will not exclude pigeons.
-        </li>
-        <li>
-          <strong>50mm mesh</strong> &mdash; larger aperture suitable for pigeon
-          and gull exclusion on less critical applications. More cost-effective
-          per square metre but less effective against smaller species.
-        </li>
-      </ul>
-      <p>
-        For most commercial pigeon exclusion applications, 19mm mesh is the
-        recommended specification. If your building also has starling or sparrow
-        problems, you will need the tighter 28mm mesh in those areas.
-      </p>
-
-      <h3>UV Stability</h3>
-      <p>
-        Any netting installed outdoors must be UV-stabilised. Non-stabilised
-        netting becomes brittle and disintegrates within two to three years of
-        sunlight exposure, particularly on south-facing and west-facing
-        elevations. Look for a minimum 5-year UV life rating. Quality
-        professional-grade netting from brands like Defender is rated for
-        5&ndash;10 years of outdoor use.
-      </p>
-
-      <h3>Knotted vs Knotless</h3>
-      <p>
-        Knotted netting is significantly stronger and more durable than knotless
-        (extruded) netting. Knotted mesh maintains its shape under tension,
-        resists tearing at fixing points, and withstands wind loading without
-        stretching or sagging. Knotless netting is cheaper but stretches over
-        time, developing sags and gaps that birds quickly exploit. For any
-        commercial installation, knotted netting is the professional choice.
-      </p>
-
-      <h3>Fixing Type</h3>
-      <p>
-        The fixing system is as important as the netting itself. A professional
-        installation uses stainless steel perimeter wire tensioned between
-        masonry anchors, with the netting attached to the wire using hog rings
-        or net clips at regular intervals. The wire must be correctly tensioned
-        to support the netting without excessive sag. Incorrectly tensioned
-        perimeter wire is the single most common cause of netting failure on
-        commercial buildings.
-      </p>
-
-      <h3>Professional Installation vs DIY</h3>
-      <p>
-        For small, ground-level areas (single-storey loading bays, covered
-        walkways, small courtyards), a competent facilities team can install
-        netting using the kits on this page. For any work at height on
-        multi-storey buildings, professional installation is essential.
-        Professional installers bring the correct access equipment (scaffolding,
-        cherry pickers, or rope access), PASMA or IPAF certification, specialist
-        tensioning tools, and the experience to ensure the netting is correctly
-        installed first time. A poorly installed net that fails within months
-        costs more in the long run than a professional installation with a
-        warranty.
-      </p>
-
-      {/* ROI */}
-      <h2 id="roi">ROI: Why Bird Exclusion Pays for Itself</h2>
-      <p>
-        The financial case for professional bird exclusion on commercial
-        buildings is overwhelming. Pigeon damage to commercial properties costs
-        tens of thousands of pounds annually in cleaning, repair, stock
-        contamination, and health-related remediation. A typical commercial
-        building with an established pigeon colony can expect the following
-        annual costs if left untreated:
-      </p>
-      <ul>
-        <li>
-          <strong>Guano cleaning:</strong> &pound;2,000&ndash;&pound;8,000 per
-          year for regular professional cleaning of affected areas, including
-          specialist biohazard removal where droppings have accumulated to
-          hazardous levels.
-        </li>
-        <li>
-          <strong>Building repair:</strong> &pound;3,000&ndash;&pound;15,000 for
-          corrosion damage to steelwork, stonework erosion from acidic guano,
-          and drainage repairs from blocked gutters and downpipes.
-        </li>
-        <li>
-          <strong>Stock contamination:</strong> Variable but potentially
-          &pound;10,000+ for warehouses and distribution centres where bird
-          fouling renders stored goods unsaleable.
-        </li>
-        <li>
-          <strong>Health and compliance:</strong> COSHH assessments,
-          occupational health monitoring, EHO enforcement action, and potential
-          prosecution under the Food Safety Act for food businesses.
-        </li>
-      </ul>
-
-      <div className="not-prose">
-        <StatCallout
-          value="Year 1"
-          label="Typical payback period for professional bird netting on commercial buildings"
-        />
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      <p>
-        Against these ongoing costs, a comprehensive bird netting and spike
-        installation costing &pound;2,000&ndash;&pound;10,000 (including
-        professional installation) typically pays for itself within the first
-        year. The netting lasts 5&ndash;10 years, meaning the return on
-        investment over the life of the installation is substantial. For
-        landlords and property managers, bird exclusion also protects property
-        values, supports tenant retention, and reduces public liability exposure
-        from slip hazards caused by fouling on walkways and car parks.
-      </p>
-
-      {/* FAQ */}
+      {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>
       {faqs.map((f) => (
         <div key={f.q}>
@@ -698,52 +674,10 @@ export default function BestProfessionalBirdNettingKitsPage() {
         </div>
       ))}
 
-      <p>
-        For smaller ledges and sills where netting is not practical, see our
-        guide to{" "}
-        <a
-          href="/best/pigeon-spikes"
-          className="text-green-600 hover:underline"
-        >
-          pigeon spikes
-        </a>
-        .
-      </p>
-
-      <p>
-        Also relevant for landlords and property managers: our guide to{" "}
-        <Link
-          href="/best/awaabs-law-damp-mould-equipment"
-          className="text-green-600 hover:underline"
-        >
-          Awaab&apos;s Law damp and mould compliance equipment
-        </Link>
-        .
-      </p>
-
-      {/* FindProviderCTA */}
-      <div className="not-prose">
-        <FindProviderCTA
-          heading="Need Professional Bird Netting Installation?"
-          subtext="Compare commercial pest control providers near you — free, no-obligation quotes."
-        />
-      </div>
-
-      {/* Link buttons */}
-      <div className="not-prose mt-8 flex flex-col sm:flex-row gap-4">
-        <Link
-          href="/best/bird-deterrents"
-          className="inline-block text-center px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          Best Bird Deterrents UK 2026 &rarr;
-        </Link>
-        <Link
-          href="/guides/pigeon-control"
-          className="inline-block text-center px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          Pigeon Control: Complete UK Guide &rarr;
-        </Link>
-      </div>
+      <FindProviderCTA
+        heading="Bird proofing a commercial building is a survey job before it is a purchase"
+        subtext="Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }
