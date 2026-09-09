@@ -15,8 +15,9 @@
     },
     "best/awaabs-law-damp-mould-equipment": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "fefbdfcccd29"
+      "date": "2026-09-09",
+      "fingerprint": "f19b4175e3de",
+      "note": "S68 R8 — Group B first four rebuilt to the R8 pattern on named health sources (UC IPM, NHS, GOV.UK); sections added and renamed, awaabs converted from JSX-prop cards to one array; bed-bug-treatments also loses B00B2KP7U0, a clothes-moth spray whose listing names no bed bug, under the S67 R10 mismatch ruling; remaining card order, labels and numerals unmoved"
     },
     "best/bed-bug-mattress-encasement": {
       "judgement": "correct-as-built",
@@ -25,14 +26,15 @@
     },
     "best/bed-bug-spray": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "07f2a2bb7e68"
+      "date": "2026-09-09",
+      "fingerprint": "1de493458134",
+      "note": "S68 R8 — Group B first four rebuilt to the R8 pattern on named health sources (UC IPM, NHS, GOV.UK); sections added and renamed, awaabs converted from JSX-prop cards to one array; bed-bug-treatments also loses B00B2KP7U0, a clothes-moth spray whose listing names no bed bug, under the S67 R10 mismatch ruling; remaining card order, labels and numerals unmoved"
     },
     "best/bed-bug-treatments": {
       "judgement": "correct-as-built",
-      "date": "2026-09-06",
-      "fingerprint": "7bc0c23343ab",
-      "note": "Re-adjudicated by PM ruling at S65 R7. The fingerprint moved because S65 R6 corrected a FALSE PACK SIZE inside an h2 — Spray 1L became Spray 2 x 1L against the authoritative Amazon product-page title. The card ordering did not change: 13 tokens before and after, identical CARD positions, exactly one H2 token differing. The truth of a heading changed, not the arrangement."
+      "date": "2026-09-09",
+      "fingerprint": "cf5d5f028a18",
+      "note": "S68 R8 — Group B first four rebuilt to the R8 pattern on named health sources (UC IPM, NHS, GOV.UK); sections added and renamed, awaabs converted from JSX-prop cards to one array; bed-bug-treatments also loses B00B2KP7U0, a clothes-moth spray whose listing names no bed bug, under the S67 R10 mismatch ruling; remaining card order, labels and numerals unmoved"
     },
     "best/bird-deterrents": {
       "judgement": "correct-as-built",
@@ -60,9 +62,9 @@
     },
     "best/cockroach-killers": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "6246f3351fc7",
-      "note": "S67 R10 product-fit and Law 193; cockroach-killers card removed, rat-traps text only"
+      "date": "2026-09-09",
+      "fingerprint": "2de4c1c3fe96",
+      "note": "S68 R8 — Group B first four rebuilt to the R8 pattern on named health sources (UC IPM, NHS, GOV.UK); sections added and renamed, awaabs converted from JSX-prop cards to one array; bed-bug-treatments also loses B00B2KP7U0, a clothes-moth spray whose listing names no bed bug, under the S67 R10 mismatch ruling; remaining card order, labels and numerals unmoved"
     },
     "best/commercial-bird-proofing": {
       "judgement": "correct-as-built",
@@ -426,9 +428,9 @@
     },
     "products": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "e34df62ae078",
-      "note": "S67 R10 product-fit; B074CDY9T4 entry removed from the cockroach section"
+      "date": "2026-09-09",
+      "fingerprint": "3c7f1e4c1a07",
+      "note": "S68 R8 — /products loses B00B2KP7U0 under the S67 R10 mismatch ruling (a clothes-moth spray listed under bed bugs) and the Utopia encasement name is corrected to its listed size; no other card moved"
     },
     "us/ants": {
       "judgement": "correct-as-built",

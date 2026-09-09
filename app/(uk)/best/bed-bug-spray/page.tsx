@@ -1,64 +1,56 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
+
+// S68 R8 — ROLLOUT REBUILD to the R8 pattern, on sources. GROUP B: the subject carries a
+// health question, so health statements are permitted — but only quoted from a named
+// public health body, never in our own voice, never as diagnosis or treatment. THIS PAGE
+// CARRIES THREE, ALL NHS, all quoted, at #situation and #limits.
+//
+// THE TITLE AND H1 ARE UNCHANGED. They were corrected at S68 R4 to "Sprays and Kits
+// Compared", which is what this page cards: one spray on its own and four kits.
+//
+// AWARD LABELS, RANK NUMERALS AND CARD ORDER ARE UNCHANGED — this is not a Law 191 route.
+// FOUR CARD NAMES ARE CORRECTED TOWARDS THEIR FETCHED TITLES (S50-H), because three of
+// the five products are kits rather than sprays and the old names did not always say so.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Bed Bug Spray UK 2026: Sprays and Kits Compared",
     description:
-      "Our pick of the best bed bug sprays available in the UK for 2026. Contact killers, residual sprays and natural options, with buying advice.",
+      "Bed bug sprays and kits for UK homes: what the NHS says about treating an infestation yourself, and five compared on what the listings state.",
     alternates: { canonical: "https://pestproindex.com/best/bed-bug-spray" },
     openGraph: {
       title: "Best Bed Bug Spray UK 2026: Sprays and Kits Compared",
       description:
-        "Our pick of the best bed bug sprays available in the UK for 2026. Contact killers, residual sprays and natural options, with buying advice.",
+        "Bed bug sprays and kits for UK homes: what the NHS says about treating an infestation yourself, and five compared on what the listings state.",
       url: "https://pestproindex.com/best/bed-bug-spray",
       type: "article",
       siteName: "PestPro Index",
     },
   };
 }
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Best Bed Bug Spray UK 2026: Sprays and Kits Compared",
   description:
-    "Our pick of the best bed bug sprays available in the UK for 2026. Contact killers, residual sprays and natural options, with buying advice.",
+    "Bed bug sprays and kits for UK homes: what the NHS says about treating an infestation yourself, and five compared on what the listings state.",
   datePublished: "2026-03-30",
-  dateModified: "2026-03-30",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://pestproindex.com/best/bed-bug-spray",
-  },
+  dateModified: "2026-09-09",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://pestproindex.com/best/bed-bug-spray" },
 };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
@@ -67,45 +59,15 @@ const breadcrumbSchema = {
     },
   ],
 };
-// S67 R6 — ONE ARRAY. The visible block below and the FAQPage schema both render
-// from this and only this, so the two surfaces cannot disagree again. The visible
-// block was authoritative where they did disagree.
-const faqs = [
-  {
-    q: "What is the most effective bed bug spray in the UK?",
-    a: "The most effective bed bug spray available in the UK is a professional-strength product containing cypermethrin or permethrin with residual action. Pest Expert Formula C is our top pick — it combines a fast-acting contact kill with long-lasting residual protection that continues to kill bed bugs for weeks after application.",
-  },
-  {
-    q: "How long does bed bug spray take to work?",
-    a: "Contact-kill bed bug sprays work within minutes when applied directly to bed bugs. However, eliminating an entire infestation typically takes 2-4 weeks because you need the residual action to kill bugs that emerge from hiding after the initial treatment. Multiple applications, spaced 7-10 days apart, are usually required.",
-  },
-  {
-    q: "Is bed bug spray safe to use on mattresses?",
-    a: "Most bed bug sprays should be applied to the bed frame, headboard, and surrounding area rather than directly onto the mattress sleeping surface. Some natural products are specifically labelled as safe for mattress use. For mattress protection, consider using a bed bug mattress encasement in combination with spray treatment.",
-  },
-  {
-    q: "Can I get rid of bed bugs with spray alone?",
-    a: "Spray alone can eliminate a minor infestation if caught early and applied thoroughly with multiple treatments. For moderate to severe infestations, spray is most effective as part of a combined approach: hot-washing bedding at 60°C, using a mattress encasement, spraying the bed frame and room, and using diatomaceous earth in cracks and crevices.",
-  },
-  {
-    q: "How often should I reapply bed bug spray?",
-    a: "Reapply every 7-10 days for a minimum of 3 applications. This interval targets the bed bug breeding cycle — eggs hatch every 6-10 days, and newly hatched nymphs must walk through the residual spray to be killed. Stopping treatment too early is the most common reason for infestations returning.",
-  },
-  {
-    q: "Are natural bed bug sprays effective?",
-    a: "Natural bed bug sprays can kill bugs on direct contact but lack the residual action of synthetic pyrethroids. They are best used as a supplement to chemical treatments — for example, spraying directly on mattresses and bedding where chemical sprays should not be applied — not as a standalone solution for an established infestation.",
-  },
-];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). The citation names the host
+// actually fetched (Law 194). Body kept under Law 175: nhs-bedbugs at ~/pp-s68r8/sources,
+// fetched 2026-09-09.
+const SRC = {
+  nhs: "https://www.nhs.uk/conditions/bedbugs/",
 };
+
 type ProductRecord = {
   anchorId: string;
   asin: string;
@@ -120,29 +82,34 @@ type ProductRecord = {
   tocName: string;
 };
 
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
+// the S45-C window. A property is asserted only where the listing states it (S52-E,
+// S50-H); a cell the listing does not state reads "not stated". Every one of these
+// listings opens with "THE STRONGEST BED BUG SPRAY ON THE MARKET"; that is the maker's
+// own line on all five and it is restated on none of them (S47-F).
+//
+// TWO LISTINGS CONTRADICT THEMSELVES ON ITEM FORM AND BOTH READINGS ARE RENDERED
+// (Law 146): the 2 x 1L kit lists its item form as Powder, and the 5 litre spray lists
+// its item form as Aerosol.
 const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
     asin: "B013K87W4A",
     rank: 1,
-    cardName:
-      "Pest Expert Formula C+ Bed Bug Killer Spray 1L + Powder 300g Kit",
+    cardName: "Pest Expert Formula C+ Bed Bug Spray 1L + Killer Powder 300g",
     cardLabel: "Best Overall",
     features: [
-      "Triple-action: cypermethrin + pyriproxyfen IGR + pyrethrum",
-      "Kills adults, larvae and eggs on contact",
-      "Covers 50m² per 1L — includes 300g powder",
-      "HSE approved — safe for mattresses once dry",
+      "A kit, not a spray alone: 1 litre of spray with a 300g XL powder, as listed",
+      "The maker states three active ingredients including an insect growth regulator",
+      "The maker states coverage of 50 square metres in a single application",
+      "Listed as ready-to-use, water-based, non-staining and low-odour",
+      "Unit count listed as 1,300 grams; target species Bed Bugs",
     ],
-    tableCells: [
-      "Pest Expert Formula C+ 1L Kit",
-      "Spray + powder kit",
-      "Best Overall",
-    ],
+    tableCells: ["Formula C+ 1L + powder 300g", "Spray + powder kit", "Three actives incl. an IGR, per the maker", "50 m² per application, per the maker"],
     h2Label: "Best Overall",
-    h2Name: "Pest Expert Formula C+ Bed Bug Killer Kit",
+    h2Name: "Pest Expert Formula C+ Spray 1L + Powder 300g",
     tocLabel: "Best Overall",
-    tocName: "Pest Expert Formula C+ Kit",
+    tocName: "Formula C+ Spray + Powder",
   },
   {
     anchorId: "best-multi-room",
@@ -151,43 +118,36 @@ const products: ProductRecord[] = [
     cardName: "Pest Expert Formula C+ Bed Bug Spray 2 x 1L + Powder 2 x 300g",
     cardLabel: "Best Multi-Room",
     features: [
-      "Twin-pack of maximum-strength Formula C+",
-      "Two full-size 1L sprays + two 300g powder packs",
-      "Treats a whole property — multi-room coverage",
-      "Best value for larger infestations",
+      "Two litres of spray with two 300g powders, as listed",
+      "Item form stated two ways on the listing: Powder in the detail row, spray throughout the text",
+      "The maker states three active ingredients including an insect growth regulator",
+      "Unit count listed as 2,600 grams — the largest kit here by weight",
+      "Listed for application to any surface, furniture and carpets",
     ],
-    tableCells: [
-      "Pest Expert Formula C+ Twin Pack",
-      "Spray + powder twin pack",
-      "Best Multi-Room",
-    ],
+    tableCells: ["Formula C+ 2 x 1L + 2 x 300g", "Spray + powder kit", "Three actives incl. an IGR, per the maker", "2,600 g total, as listed"],
     h2Label: "Best Multi-Room",
-    h2Name: "Pest Expert Formula C+ Twin Pack",
+    h2Name: "Pest Expert Formula C+ Spray 2 x 1L + Powder 2 x 300g",
     tocLabel: "Best Multi-Room",
-    tocName: "Formula C+ Twin Pack",
+    tocName: "Formula C+ Twin Kit",
   },
   {
     anchorId: "best-kit",
     asin: "B01E724WFK",
     rank: 3,
-    cardName:
-      "Pest Expert Bed Bug Treatment Kit — Spray, Powder, Fogger & Rentokil Spray",
+    cardName: "Pest Expert Bed Bug Killer Treatment Kit — Spray 1L, Powder 300g, Fogger",
     cardLabel: "Best Treatment Kit",
     features: [
-      "Complete treatment kit for a standard bedroom",
-      "Formula C+ spray + Formula P powder + fogger",
-      "Includes Rentokil Insectrol for cracks and crevices",
-      "Everything needed in one purchase",
+      "1 litre of spray, 300g of powder and one fogger bomb, as listed",
+      "The maker states the kit will treat one room",
+      "Item form listed as Aerosol; a step-by-step advice sheet is listed as included",
+      "Listed as low-odour and non-staining",
+      "Unit count listed as 2,000 grams; target species Bed Bug",
     ],
-    tableCells: [
-      "Pest Expert Complete Kit",
-      "Treatment kit",
-      "Best Treatment Kit",
-    ],
+    tableCells: ["Treatment kit: spray, powder, fogger", "Three-part kit", "Not named in the detail rows", "One room, per the maker"],
     h2Label: "Best Treatment Kit",
-    h2Name: "Pest Expert Complete Kit",
+    h2Name: "Pest Expert Bed Bug Killer Treatment Kit",
     tocLabel: "Best Treatment Kit",
-    tocName: "Pest Expert Complete Kit",
+    tocName: "Pest Expert Treatment Kit",
   },
   {
     anchorId: "best-combo",
@@ -196,640 +156,403 @@ const products: ProductRecord[] = [
     cardName: "Pest Expert Formula C Bed Bug Spray 1L + Smoke Bomb 11g",
     cardLabel: "Best Spray + Fumigator Combo",
     features: [
-      "Formula C+ residual spray + smoke bomb combo",
-      "Smoke reaches behind headboards and inside frames",
-      "Surface treatment plus deep penetration in one kit",
-      "Professional-strength cypermethrin formula",
+      "1 litre of spray with an 11g smoke bomb, as listed",
+      "Active listed as permethrin",
+      "The maker describes the smoke bomb as a fumigation device for rapid knockdown",
+      "Listed as ready-to-use and water-based, for bed frames and mattresses",
+      "Target species listed as Bed Bugs; country of origin United Kingdom",
     ],
-    tableCells: [
-      "Pest Expert Spray + Smoke Bomb",
-      "Spray + fumigator",
-      "Best Combo",
-    ],
+    tableCells: ["Formula C 1L + smoke bomb 11g", "Spray + fumigator", "Permethrin, as listed", "Not stated"],
     h2Label: "Best Spray + Fumigator Combo",
-    h2Name: "Pest Expert Spray + Smoke Bomb",
+    h2Name: "Pest Expert Formula C Spray 1L + Smoke Bomb",
     tocLabel: "Best Combo",
-    tocName: "Spray + Smoke Bomb",
+    tocName: "Formula C + Smoke Bomb",
   },
   {
     anchorId: "best-trade",
     asin: "B010E2GQ6K",
     rank: 5,
-    cardName: "Pest Expert Formula C+ Bed Bug Spray 5L with Trigger Sprayer",
+    cardName: "Pest Expert Formula C+ Bed Bug Killer Spray 5L",
     cardLabel: "Best Trade-Size",
     features: [
-      "Trade-size 5L refill with trigger hose sprayer",
-      "Covers 250m² — enough for an entire HMO",
-      "Ideal for landlords treating multiple properties",
+      "5 litres, as listed — the largest single container here",
+      "Item form listed as Aerosol on a five-litre container; the text describes a ready-to-use spray",
+      "The maker states three active ingredients including an insect growth regulator",
+      "The maker states coverage of 50 square metres in a single application",
+      "Target species listed as Bed Bugs; country of origin United Kingdom",
     ],
-    tableCells: [
-      "Pest Expert Formula C+ 5L",
-      "Trade-size spray",
-      "Best Trade-Size",
-    ],
+    tableCells: ["Formula C+ 5 litre", "Spray", "Three actives incl. an IGR, per the maker", "50 m² per application, per the maker"],
     h2Label: "Best Trade-Size",
-    h2Name: "Pest Expert Formula C+ 5L",
+    h2Name: "Pest Expert Formula C+ Bed Bug Killer Spray 5L",
     tocLabel: "Best Trade-Size",
-    tocName: "Formula C+ 5L",
+    tocName: "Formula C+ 5 Litre",
   },
 ];
 
-const tocItems = [
-  { id: "at-a-glance", title: "Best Bed Bug Sprays at a Glance" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.tocLabel} — ${p.tocName}`,
+// ONE FAQ ARRAY (Law 190). The visible block and the FAQPage schema both read it.
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "Will a spray on its own clear an infestation?",
+    a: "The NHS states that there are some things you can try yourself, but these are unlikely to get rid of bedbugs completely, and that it is very difficult to get rid of bedbugs yourself because they can be hard to find and may be resistant to some insecticides. Four of the five products here are kits rather than single sprays, which is the makers' own answer to the same question.",
+  },
+  {
+    q: "Should I call someone instead?",
+    a: "The NHS says that if you think you have bedbugs you should contact your local council or pest control service. That is its first instruction, not its last resort, and nothing on this page displaces it.",
+  },
+  {
+    q: "What is the difference between a smoke bomb and a fogger?",
+    a: "On these listings, one kit includes an 11g smoke bomb described by its maker as a fumigation device for rapid knockdown, and another includes a fogger bomb as the third item alongside a spray and a powder. Neither listing states a room size for the device itself; the fogger kit's maker states that the kit as a whole treats one room.",
+  },
+  {
+    q: "What should I do about the bedding?",
+    a: "The NHS lists washing affected bedding and clothing on a hot wash (60C) and tumble drying on a hot setting for at least 30 minutes, putting what cannot be washed into a plastic bag in the freezer for two to three weeks, and cleaning and vacuuming regularly. None of that is sold on this page.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
   })),
-  { id: "buying-guide", title: "How to Choose the Right Bed Bug Spray" },
-  { id: "application", title: "How to Apply Bed Bug Spray Effectively" },
+};
+
+const tocItems = [
+  { id: "situation", title: "What the NHS Says to Do First" },
+  { id: "legal", title: "What the Label Governs" },
+  { id: "limits", title: "Where a Spray Does Not Work" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If a Spray Is Not the Answer" },
+  { id: "using", title: "Using Them" },
+  { id: "compared", title: "The Five Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
+
 export default function BestBedBugSprayPage() {
   return (
     <GuideLayout
       title="Best Bed Bug Spray UK 2026: Sprays and Kits Compared"
-      subtitle="Our pick of the most effective bed bug sprays available in the UK, from professional-strength residual killers to natural options"
-      lastUpdated="March 2026"
-      readingTime="10 min"
+      subtitle="One spray on its own and four kits that pair it with a powder, a fogger or a smoke bomb, described by what their own listings state — beside the NHS position on treating bedbugs yourself"
+      lastUpdated="September 2026"
+      readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "How to Get Rid of Bed Bugs: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-bed-bugs",
-        },
-        {
-          title: "How to Get Rid of Fleas: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-fleas",
-        },
-        {
-          title: "How to Get Rid of Cockroaches: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-cockroaches",
-        },
-        {
-          title: "How to Get Rid of Moths",
-          href: "/guides/how-to-get-rid-of-moths",
-        },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
-        {
-          title: "How to Get Rid of Mice: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-mice",
-        },
-        {
-          title: "How to Get Rid of Rats: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-rats",
-        },
-        {
-          title: "How to Get Rid of Ants: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-ants",
-        },
-        {
-          title: "Wasp Nest Removal: Complete UK Guide",
-          href: "/guides/wasp-nest-removal",
-        },
-        {
-          title: "Restaurant Pest Control: UK Compliance Guide",
-          href: "/guides/restaurant-pest-control",
-        },
-        {
-          title: "Carpet Beetle Control: Complete UK Guide",
-          href: "/guides/carpet-beetle-control",
-        },
-        {
-          title: "Hotel Pest Control: UK Compliance Guide",
-          href: "/guides/hotel-pest-control",
-        },
-        {
-          title: "Landlord Pest Control: UK Compliance Guide",
-          href: "/guides/landlord-pest-control",
-        },
+        { title: "How to Get Rid of Bed Bugs: Complete UK Guide", href: "/guides/how-to-get-rid-of-bed-bugs" },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
+        { title: "Landlord Pest Control Responsibilities", href: "/guides/landlord-pest-control" },
       ]}
       relatedProducts={[
-        {
-          title: "Best Bed Bug Treatments UK 2026",
-          href: "/best/bed-bug-treatments",
-        },
-        {
-          title: "Best Bed Bug Mattress Encasements UK 2026",
-          href: "/best/bed-bug-mattress-encasement",
-        },
-        {
-          title: "Best Flea Treatments UK 2026",
-          href: "/best/flea-treatments",
-        },
-        {
-          title: "Best Flea Spray for Home UK 2026",
-          href: "/best/flea-spray-for-home",
-        },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
-        { title: "Best Moth Killers UK 2026", href: "/best/moth-killers" },
-        {
-          title: "Best Carpet Beetle Treatments UK 2026",
-          href: "/best/carpet-beetle-treatments",
-        },
-        { title: "Best Ant Killers UK 2026", href: "/best/ant-killers" },
+        { title: "Best Bed Bug Treatments UK 2026", href: "/best/bed-bug-treatments" },
+        { title: "Best Bed Bug Mattress Encasement UK 2026", href: "/best/bed-bug-mattress-encasement" },
+        { title: "Best Professional Bed Bug Steamers UK 2026", href: "/best/professional-bed-bug-steamers" },
+        { title: "Best Commercial Insect Monitors UK 2026", href: "/best/commercial-insect-monitors" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
     >
-      {" "}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />{" "}
-      {/* Affiliate disclosure */}{" "}
+      />
+
+      {/* Affiliate disclosure */}
       <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        {" "}
         <p className="text-sm text-amber-800">
-          {" "}
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
           site running and free for everyone. As an Amazon Associate, PestPro
-          Index earns from qualifying purchases.{" "}
-        </p>{" "}
-      </div>{" "}
+          Index earns from qualifying purchases.
+        </p>
+      </div>
+
       <p>
-        {" "}
-        Bed bugs are one of the most psychologically distressing pest problems
-        you can face. These tiny, nocturnal parasites feed on human blood while
-        you sleep, leaving itchy, red welts that can take days to heal. Worse
-        still, bed bugs are notoriously difficult to eliminate — they hide in
-        the narrowest cracks and crevices during the day, they can survive for
-        months without feeding, and their eggs are resistant to many standard
-        insecticides. According to the British Pest Control Association (BPCA),
-        bed bug callouts in the UK have increased by over 200% in the past
-        decade.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        A good bed bug spray is the cornerstone of any DIY treatment plan. The
-        most effective sprays combine a{" "}
-        <strong>fast-acting contact kill</strong> (killing bugs you spray
-        directly) with <strong>residual action</strong> (leaving an invisible
-        layer that continues to kill bugs for weeks as they walk across treated
-        surfaces). This residual action is critical because you will never be
-        able to spray every hidden bug directly — you need the residual barrier
-        to catch them as they emerge to feed.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        We selected these bed bug sprays on published specifications and
-        manufacturer information, looking at{" "}
-        <strong>active ingredient effectiveness</strong>,{" "}
-        <strong>residual duration</strong>, and{" "}
-        <strong>ease of application</strong>. We also consulted guidance from
-        the BPCA on bed bug resistance. Every product on this page is available
-        on Amazon UK at the time of writing.{" "}
-      </p>{" "}
+        Five products from one maker: a single 5 litre spray and four kits that
+        pair a spray with a powder, a fogger or a smoke bomb. That so many are
+        kits is itself the answer to the question most readers arrive with —
+        whether a spray on its own is enough.
+      </p>
+
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
+        </p>
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>You have just found them.</strong> The NHS's first
+            instruction is not a purchase —{" "}
+            <a href="#situation" className="underline">
+              what the NHS says to do first
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You are treating one room.</strong>{" "}
+            <a href="#best-kit" className="underline">
+              The three-part kit
+            </a>{" "}
+            is the one whose maker states a room count.
+          </li>
+          <li>
+            <strong>You have more than one room to do.</strong>{" "}
+            <a href="#best-multi-room" className="underline">
+              The twin kit
+            </a>{" "}
+            at 2,600 grams, or{" "}
+            <a href="#best-trade" className="underline">
+              the 5 litre
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want the active named on the listing.</strong> Only{" "}
+            <a href="#best-combo" className="underline">
+              the smoke bomb combo
+            </a>{" "}
+            names one: permethrin.
+          </li>
+          <li>
+            <strong>You have treated once already and they are back.</strong>{" "}
+            The NHS notes resistance to some insecticides —{" "}
+            <a href="#limits" className="underline">
+              where a spray does not work
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+
       <div className="not-prose">
-        {" "}
-        <Callout type="info">
-          {" "}
+        <Callout type="warning">
           <p>
-            Bed bug treatment requires patience and persistence. A single spray
-            application will not eliminate an infestation. Plan for a minimum of
-            3 treatments, spaced 7-10 days apart, to break the breeding cycle
-            and kill newly hatched nymphs.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* At a Glance */}{" "}
-      <h2 id="at-a-glance">Best Bed Bug Sprays at a Glance</h2>{" "}
+            The NHS states that it is very difficult to get rid of bedbugs
+            yourself, that they may be resistant to some insecticides, and that
+            you should contact your local council or pest control service.
+            Everything on this page is an insecticide whose label governs where
+            and how it may be used.
+          </p>
+        </Callout>
+      </div>
+
+      {/* [0] Situation */}
+      <h2 id="situation">What the NHS Says to Do First</h2>
       <p>
-        {" "}
-        Here is a quick comparison of our top five picks. Each product has been
-        selected for a different use case.{" "}
-      </p>{" "}
-      <table>
-        {" "}
-        <thead>
-          {" "}
-          <tr>
-            {" "}
-            <th>Product</th> <th>Type</th> <th>Best For</th>{" "}
-          </tr>{" "}
-        </thead>{" "}
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.asin}>
-              <td>{p.tableCells[0]}</td>
-              <td>{p.tableCells[1]}</td>
-              <td>{p.tableCells[2]}</td>
-            </tr>
-          ))}
-        </tbody>{" "}
-      </table>{" "}
-      <div className="not-prose">
-        {" "}
-        <StatCallout
-          value="200%+"
-          label="Increase in UK bed bug callouts over the past decade (BPCA)"
-        />{" "}
-      </div>{" "}
-      {/* Product 1 */}{" "}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />{" "}
-      </div>{" "}
+        The NHS describes the pest in one sentence and this page repeats no more
+        of it than that:{" "}
+        <em>
+          &ldquo;Bedbugs are small insects that often live on furniture or
+          bedding. Their bites can be itchy but do not usually cause other
+          health problems.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.nhs} rel="nofollow">
+          NHS
+        </a>
+        ). Anything about your own skin belongs with a pharmacist or a GP, and
+        the NHS page is where to read it.
+      </p>
       <p>
-        {" "}
-        The Pest Expert Formula C+ Kit is the UK market leader for bed bug
-        treatment, and it earns our top spot with a triple-action formula that
-        sets it apart from single-active-ingredient competitors. The combination
-        of cypermethrin, pyriproxyfen (an insect growth regulator) and natural
-        pyrethrum delivers three modes of attack: cypermethrin kills adults on
-        contact and provides long-lasting residual protection, pyriproxyfen
-        disrupts the development of larvae and sterilises eggs, and pyrethrum
-        delivers a rapid knockdown effect that flushes bugs from hiding.{" "}
-      </p>{" "}
+        On the infestation, its instruction is plain:{" "}
+        <em>
+          &ldquo;If you think you have bedbugs, you should contact your local
+          council or pest control service.&rdquo;
+        </em>{" "}
+        A page comparing five insecticide products leads with that sentence
+        because a reader deciding what to buy deserves to know the health
+        service's answer before they decide.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">What the Label Governs</h2>
       <p>
-        {" "}
-        Each kit includes a 1-litre spray and a 300g powder pack. The spray
-        covers approximately 50 square metres when applied as directed, which is
-        enough for a thorough treatment of a standard double bedroom and
-        surrounding areas. The powder is designed for cracks, crevices and voids
-        where the spray cannot reach. This dual-format approach mirrors what
-        professional pest controllers use. The product is HSE approved for
-        amateur use and is safe for mattresses, bedding and carpets once
-        dry.{" "}
-      </p>{" "}
+        All five products here are insecticides. Where each may be applied, on
+        what surfaces, at what rate and with what ventilation is set by its own
+        label — and two of them include a fumigation device, which carries its
+        own separate instructions about leaving and re-entering the room.
+      </p>
       <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Triple-action formula targets all life stages</li>{" "}
-        <li>IGR component breaks the breeding cycle</li>{" "}
-        <li>Spray plus powder covers surfaces and voids</li>{" "}
-        <li>HSE approved and safe for mattresses once dry</li>{" "}
-        <li>Covers 50m&#178; per litre</li>{" "}
-      </ul>{" "}
+        Two listings also disagree with themselves about what they are: the twin
+        kit lists its item form as Powder, and the five-litre lists its item
+        form as Aerosol. Neither reading changes the label on the bottle, which
+        is the document that governs.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where a Spray Does Not Work</h2>
       <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Requires a pump sprayer (not included)</li>{" "}
-        <li>Strong chemical odour during application</li>{" "}
-        <li>Single kit may not be enough for multi-room infestations</li>{" "}
-      </ul>{" "}
-      {/* Product 2 */}{" "}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />{" "}
-      </div>{" "}
+        <strong>Against a resistant population.</strong> The NHS states it is{" "}
+        <em>
+          &ldquo;very difficult to get rid of bedbugs yourself because they can
+          be hard to find and may be resistant to some insecticides.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.nhs} rel="nofollow">
+          NHS
+        </a>
+        ). No listing on this page addresses resistance, and none could.
+      </p>
       <p>
-        {" "}
-        If your infestation has spread beyond a single bedroom, the twin-pack
-        version of Formula C+ is the most practical choice. You get two
-        full-size 1-litre sprays and two 300g powder packs, giving you enough
-        product to treat multiple rooms in a single purchase. This is the same
-        maximum-strength Formula C+ formula that tops our list, just doubled in
-        quantity for whole-property coverage.{" "}
-      </p>{" "}
+        <strong>As a complete treatment on its own.</strong> The same page:{" "}
+        <em>
+          &ldquo;There are some things you can try yourself, but these are
+          unlikely to get rid of bedbugs completely.&rdquo;
+        </em>{" "}
+        Four of the five products here are kits precisely because one product
+        type is not the whole job.
+      </p>
       <p>
-        {" "}
-        The twin pack is also the best value option if you plan to carry out the
-        recommended repeat treatments. With 2 litres of spray and 600g of
-        powder, you have enough product for a thorough initial treatment of two
-        to three rooms plus a follow-up application 7 to 10 days later. For
-        landlords dealing with a tenant-reported infestation, or for anyone
-        living in a flat where bed bugs may have moved between rooms, this pack
-        avoids the frustration of running out mid-treatment.{" "}
-      </p>{" "}
+        <strong>Where the bugs are not.</strong> Coverage figures of 50 square
+        metres describe area treated, not area searched. The NHS's phrase is
+        "hard to find", and a treated surface a bed bug never crosses has done
+        nothing.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Spray alone, or a kit</h3>
       <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Enough product for a whole-property treatment</li>{" "}
-        <li>Same maximum-strength triple-action formula</li>{" "}
-        <li>Two full 1L sprays and two 300g powders supplied together</li>{" "}
-        <li>Covers repeat treatments without reordering</li>{" "}
-      </ul>{" "}
+        One product here is a spray on its own. The other four add a powder, a
+        fogger or a smoke bomb, which is the makers' own view of what a single
+        spray leaves undone.
+      </p>
+      <h3>2. How much you actually need</h3>
       <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>More product to store and handle than a single kit</li>{" "}
-        <li>Pump sprayer still required (not included)</li>{" "}
-        <li>Overkill for a minor, single-room infestation</li>{" "}
-      </ul>{" "}
-      {/* Product 3 */}{" "}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />{" "}
-      </div>{" "}
+        1,300 grams, 2,600 grams, 2,000 grams, a 1 litre plus a smoke bomb, or 5
+        litres. The one room-count on the page belongs to the three-part kit;
+        everything else is stated by weight, volume or a maker's coverage
+        figure.
+      </p>
+      <h3>3. Whether the listing names an active</h3>
       <p>
-        {" "}
-        For people who want a single purchase that covers every angle of bed bug
-        treatment, this complete kit is the answer. It bundles the Formula C+
-        spray for surface and residual treatment, Formula P insecticidal powder
-        for cracks and voids, a fumigating fogger bomb that fills the room with
-        insecticide vapour, and a Rentokil Insectrol spray for targeted
-        crack-and-crevice work. Together, these four products replicate the
-        multi-method approach used by professional pest controllers.{" "}
-      </p>{" "}
+        Only one of the five names an active substance in its detail rows —
+        permethrin, on the smoke bomb combo. The others describe three actives
+        including a growth regulator in their text without naming them, and the
+        cards say exactly that.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>
+            {
+              [
+                "A kit rather than a bottle: one litre of ready-to-use spray with a 300g XL powder, listed at 1,300 grams in total. Its maker states three actives including a growth regulator and 50 square metres per application, and describes it as water-based, non-staining and low-odour.",
+                "The same pairing doubled — two litres of spray and two 300g powders, 2,600 grams in total, the largest kit here by weight and listed for any surface, furniture and carpets. Its detail row calls the item form Powder while its text describes a spray; the card carries both.",
+                "The one product whose maker states a room count: a litre of spray, 300g of powder and a fogger bomb, described as providing an effective treatment in one room, with a step-by-step advice sheet included. Its item form is listed as Aerosol and no active is named in its detail rows.",
+                "A litre of spray with an 11g smoke bomb, and the only listing here that names an active substance in its detail rows: permethrin. Its maker describes the smoke bomb as a fumigation device for rapid knockdown; the spray is listed for bed frames and mattresses.",
+                "The largest single container on the page at five litres, with the maker's 50 square metre coverage claim and the same three-actives description as the kits. Its detail row lists the item form as Aerosol, which a five-litre container is not; both readings are on the card.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If a Spray Is Not the Answer</h2>
       <p>
-        {" "}
-        The fogger bomb is the standout inclusion. It reaches places that manual
-        spraying simply cannot: inside hollow bed frames, behind fitted
-        headboards, underneath floorboards, and into wall cavities through gaps
-        in skirting boards. Combined with the surface spray, powder and
-        crack-and-crevice treatment, you are attacking the infestation from
-        every possible direction. The kit costs less than buying each component
-        separately and saves you the guesswork of assembling your own treatment
-        programme.{" "}
-      </p>{" "}
+        <strong>Heat and cold.</strong> The NHS names a 60C wash with 30 minutes
+        in a hot tumble dryer, and two to three weeks in a freezer for what
+        cannot be washed.
+      </p>
       <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Four different treatment methods in one box</li>{" "}
-        <li>Fogger reaches hidden areas that spray cannot</li>{" "}
-        <li>Includes crack-and-crevice spray for precision work</li>{" "}
-        <li>No separate purchases needed</li>{" "}
-        <li>Mirrors professional multi-method treatment</li>{" "}
-      </ul>{" "}
+        <strong>A barrier over the mattress.</strong> Our{" "}
+        <a href="/best/bed-bug-mattress-encasement">mattress encasement</a> page
+        covers the zipped covers, which carry no insecticide at all.
+      </p>
       <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Fogger requires the room to be vacated and sealed</li>{" "}
-        <li>More effort and time to apply all four products</li>{" "}
-        <li>Designed for a single bedroom; larger properties need more</li>{" "}
-      </ul>{" "}
-      {/* Product 4 */}{" "}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        This combo pairs the Formula C+ residual spray with an 11g smoke bomb,
-        giving you both surface treatment and deep penetration at a competitive
-        price. The spray handles the areas you can see and reach: bed frame
-        joints, headboard, skirting boards, and carpet edges. The smoke bomb
-        then fills the room with insecticidal vapour that drifts behind
-        headboards, inside hollow bed frames, through gaps in floorboards, and
-        into other harbourages that a contact spray simply cannot
-        penetrate.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        This is the most affordable way to get a two-pronged
-        surface-plus-fumigation treatment. It is particularly well suited to
-        rooms with heavy or built-in furniture that cannot be easily moved to
-        spray behind. The smoke bomb does the hard-to-reach work for you. Light
-        the smoke bomb, leave the room sealed for two hours, ventilate, and then
-        apply the residual spray to all accessible surfaces for ongoing
-        protection.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Two-pronged attack: surface spray plus fumigation</li>{" "}
-        <li>Smoke reaches hidden areas behind furniture</li>{" "}
-        <li>Professional-strength cypermethrin residual spray</li>{" "}
-        <li>Affordable entry point for combined treatment</li>{" "}
-      </ul>{" "}
-      <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Smoke bomb requires sealing and vacating the room</li>{" "}
-        <li>No powder included for crack-and-crevice treatment</li>{" "}
-        <li>Single 1L spray may need a top-up for larger rooms</li>{" "}
-      </ul>{" "}
-      {/* Product 5 */}{" "}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>{" "}
-      <div className="not-prose my-6">
-        {" "}
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />{" "}
-      </div>{" "}
-      <p>
-        {" "}
-        For landlords, letting agents, or anyone managing multiple properties,
-        the 5-litre trade-size Formula C+ is by far the most cost-effective
-        option. The included trigger hose sprayer means you can apply directly
-        from the container without needing a separate pump sprayer. With
-        coverage of approximately 250 square metres, a single container is
-        enough to treat an entire HMO or a large multi-bedroom property.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        This format is also practical for repeat treatments. With 5 litres on
-        hand, you can carry out the recommended 3-4 treatment cycles across
-        multiple rooms without running out or reordering. The trigger sprayer
-        attaches directly to the container for immediate use. If you are a
-        landlord who has dealt with bed bug callouts before — or if you manage
-        student lets, hostels or short-term rentals where the risk is higher —
-        keeping a 5L container in stock is a sensible investment.{" "}
-      </p>{" "}
-      <p>
-        <strong>Pros:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
+        <strong>The council or a professional.</strong> The NHS's first
+        instruction; our{" "}
+        <a href="/guides/how-to-get-rid-of-bed-bugs">bed bug guide</a> sets out
+        what that involves.
+      </p>
+
+      {/* Using them */}
+      <h2 id="using">Using Them</h2>
+      <ol>
         <li>
-          Covers 250m&#178; — enough for large or multiple properties
-        </li>{" "}
-        <li>Trigger hose sprayer included</li>{" "}
-        <li>Practical for repeat treatments without reordering</li>{" "}
-        <li>Same professional-strength Formula C+ formula</li>{" "}
-      </ul>{" "}
+          <strong>Read the label, then the NHS page.</strong> One governs the
+          bottle; the other sets a realistic expectation of the outcome.
+        </li>
+        <li>
+          <strong>Launder first.</strong> The 60C wash and the hot tumble dry
+          come before any treatment, not instead of it.
+        </li>
+        <li>
+          <strong>Treat frames and seams.</strong> Every spray listing here
+          describes bed frames and mattresses rather than open floor.
+        </li>
+        <li>
+          <strong>Follow the fumigator's own instructions.</strong> Two kits
+          include one, and leaving and re-entering the room is governed by that
+          device's label, not by the spray's.
+        </li>
+        <li>
+          <strong>Expect to repeat, and to check.</strong> The NHS's "unlikely
+          to get rid of bedbugs completely" is about exactly this.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Five Compared</h2>
       <p>
-        <strong>Cons:</strong>
-      </p>{" "}
-      <ul>
-        {" "}
-        <li>Bulky container — not practical for a single room</li>{" "}
-        <li>No powder or fumigator included</li>{" "}
-      </ul>{" "}
-      {/* Buying Guide */}{" "}
-      <h2 id="buying-guide">How to Choose the Right Bed Bug Spray</h2>{" "}
-      <h3>Contact Kill vs Residual Action</h3>{" "}
-      <p>
-        {" "}
-        <strong>Contact kill</strong> sprays kill bugs you hit directly — useful
-        for immediate elimination but ineffective against hidden bugs.{" "}
-        <strong>Residual sprays</strong> leave an invisible barrier that
-        continues killing for weeks as bugs walk across treated surfaces. For
-        bed bug treatment, residual action is far more important than contact
-        kill. Most of the bed bugs in an infestation are hidden and will only
-        emerge after you have finished spraying.{" "}
-      </p>{" "}
-      <h3>Active Ingredient</h3>{" "}
-      <p>
-        {" "}
-        <strong>Cypermethrin</strong> and <strong>permethrin</strong> are the
-        two most effective synthetic pyrethroids for bed bugs. Cypermethrin
-        generally provides longer residual protection. Natural alternatives
-        (essential oils) kill on contact but offer no residual protection. For
-        serious infestations, synthetic pyrethroids are significantly more
-        effective.{" "}
-      </p>{" "}
-      <h3>Format: Concentrate vs Aerosol</h3>{" "}
-      <p>
-        {" "}
-        <strong>Concentrate</strong> (dilute with water, apply with pump
-        sprayer) provides far more coverage per pound and typically stronger
-        formulations. <strong>Aerosol</strong> sprays are more convenient but
-        run out quickly and are more expensive per treatment area. For a single
-        room, aerosol is fine. For multiple rooms or severe infestations,
-        concentrate is more practical and cost-effective.{" "}
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <Callout type="tip">
-          {" "}
-          <p>
-            Before spraying, strip all bedding and wash at 60°C or above — this
-            temperature kills bed bugs and their eggs. Tumble dry on high heat
-            for at least 30 minutes. Seal the clean bedding in plastic bags
-            until the room treatment is complete.
-          </p>{" "}
-        </Callout>{" "}
-      </div>{" "}
-      {/* Application Guide */}{" "}
-      <h2 id="application">How to Apply Bed Bug Spray Effectively</h2>{" "}
-      <h3>Step 1: Prepare the Room</h3>{" "}
-      <p>
-        {" "}
-        Strip all bedding and wash at 60°C minimum. Remove clutter from around
-        the bed — bed bugs hide in anything close to their food source (you).
-        Vacuum the mattress, bed frame, and surrounding carpet thoroughly, then
-        empty the vacuum bag into an outdoor bin immediately.{" "}
-      </p>{" "}
-      <h3>Step 2: Target Key Areas</h3>{" "}
-      <p>
-        {" "}
-        Focus your spray on the bed frame joints, headboard (front and back),
-        skirting boards within 2 metres of the bed, cracks in plasterwork,
-        behind picture frames, and the edges of fitted carpet. Bed bugs rarely
-        travel far from the bed — 80% of an infestation is typically within 1.5
-        metres of the sleeping area.{" "}
-      </p>{" "}
-      <h3>Step 3: Apply Thoroughly but Sparingly</h3>{" "}
-      <p>
-        {" "}
-        Spray surfaces until they are lightly damp, not dripping wet. An even,
-        thin layer provides the best residual coverage. Over-spraying wastes
-        product and increases drying time without improving effectiveness.{" "}
-      </p>{" "}
-      <h3>Step 4: Repeat Every 7-10 Days</h3>{" "}
-      <p>
-        {" "}
-        Bed bug eggs are resistant to most insecticides and hatch every 6-10
-        days. By reapplying spray at 7-10 day intervals, you ensure that newly
-        hatched nymphs encounter the residual barrier before they can feed and
-        reproduce. A minimum of 3 treatments is recommended — 4-5 for severe
-        infestations.{" "}
-      </p>{" "}
-      {/* FAQ */} <h2 id="faq">Frequently Asked Questions</h2>{" "}
+        Every column below is what the Amazon listing itself states, with each
+        coverage figure attributed to the maker who claims it. Where a listing
+        does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">What is in the box</th>
+              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Coverage or size, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* FAQ — rendered from the same array the schema above is derived from */}
+      <h2 id="faq">Frequently Asked Questions</h2>
       {faqs.map((f) => (
         <div key={f.q}>
           <h3>{f.q}</h3>
           <p>{f.a}</p>
         </div>
       ))}
-      <p>
-        For serious or recurring infestations, combine spray treatment with{" "}
-        <a
-          href="/best/professional-bed-bug-steamers"
-          className="text-green-600 hover:underline"
-        >
-          professional bed bug steamers
-        </a>{" "}
-        for heat treatment that kills all life stages on contact.
-      </p>{" "}
-      <div className="not-prose">
-        {" "}
-        <FindProviderCTA
-          heading="Bed Bugs Keep Coming Back?"
-          subtext="Professional heat treatment is the most effective way to eliminate bed bugs completely — a single treatment kills all life stages including eggs"
-        />{" "}
-      </div>{" "}
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        {" "}
-        <p className="text-gray-700 mb-3">
-          Want the full picture on bed bug control?
-        </p>{" "}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          {" "}
-          <a
-            href="/guides/how-to-get-rid-of-bed-bugs"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            {" "}
-            How to Get Rid of Bed Bugs — Complete Guide →{" "}
-          </a>{" "}
-          <a
-            href="/best/bed-bug-mattress-encasement"
-            className="inline-block px-6 py-2.5 bg-gray-700 hover:bg-gray-800 text-white font-bold rounded-lg transition-colors text-sm"
-          >
-            {" "}
-            Best Mattress Encasements UK 2026 →{" "}
-          </a>{" "}
-        </div>{" "}
-      </div>{" "}
+
+      <FindProviderCTA
+        heading="Bed bugs are the pest the NHS says to get help with"
+        subtext="Compare pest control providers near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

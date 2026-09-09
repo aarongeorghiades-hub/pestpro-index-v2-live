@@ -1,23 +1,38 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
-import Callout, { StatCallout } from "@/components/Callout";
+import Callout from "@/components/Callout";
 
+// S68 R8 — ROLLOUT REBUILD to the R8 pattern, on sources. GROUP B: the subject is a
+// hazard to health, so health statements are permitted — but only quoted from or closely
+// attributed to a named government body, never in our own voice, never as diagnosis or
+// treatment. THIS PAGE CARRIES TWO, BOTH GOV.UK, quoted at #situation and #legal.
+//
+// THE EIGHT JSX-PROP CARDS BECOME ONE ARRAY addressed by identity (Law 107), so a record
+// can be removed in future without shifting an index. Award labels, rank numerals, anchor
+// ids and card order are UNCHANGED.
+//
+// THE SUBTITLE AND DESCRIPTION SAID THE EQUIPMENT WOULD "eliminate mould and
+// condensation" — an efficacy claim in our own voice about eight appliances, and one the
+// government's own guidance contradicts, since it puts the underlying cause ahead of any
+// appliance. Both now say what the page is.
+//
+// THE OUTBOUND LINK TO awaabslawguide.co.uk IS REMOVED. It was presented inside the legal
+// section as "our sister site", nothing on this page is quoted from it, and it appears in
+// no fetch log (Law 194). The legal section now cites GOV.UK, which is where the duty is.
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Damp & Mould Equipment for Landlords — Awaab's Law 2026",
     description:
-      "PIV units, dehumidifiers and damp meters for landlords complying with Awaab's Law. Equipment to eliminate mould and condensation in rental properties.",
+      "Damp and mould equipment for landlords: the Awaab's Law timeframes, what the guidance puts before any appliance, and eight products as listed.",
     alternates: {
-      canonical:
-        "https://pestproindex.com/best/awaabs-law-damp-mould-equipment",
+      canonical: "https://pestproindex.com/best/awaabs-law-damp-mould-equipment",
     },
     openGraph: {
       title: "Best Damp & Mould Equipment for Landlords — Awaab's Law 2026",
       description:
-        "PIV units, dehumidifiers and damp meters for landlords complying with Awaab's Law. Equipment to eliminate mould and condensation in rental properties.",
+        "Damp and mould equipment for landlords: the Awaab's Law timeframes, what the guidance puts before any appliance, and eight products as listed.",
       url: "https://pestproindex.com/best/awaabs-law-damp-mould-equipment",
       type: "article",
       siteName: "PestPro Index",
@@ -28,22 +43,13 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline:
-    "Best Damp & Mould Control Equipment for Landlords (Awaab's Law 2026)",
+  headline: "Best Damp & Mould Control Equipment for Landlords (Awaab's Law 2026)",
   description:
-    "PIV units, dehumidifiers and damp meters for landlords complying with Awaab's Law. Equipment to eliminate mould and condensation in rental properties.",
+    "Damp and mould equipment for landlords: the Awaab's Law timeframes, what the guidance puts before any appliance, and eight products as listed.",
   datePublished: "2026-04-07",
-  dateModified: "2026-04-07",
-  author: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PestPro Index",
-    url: "https://pestproindex.com",
-  },
+  dateModified: "2026-09-09",
+  author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
+  publisher: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://pestproindex.com/best/awaabs-law-damp-mould-equipment",
@@ -54,138 +60,272 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://pestproindex.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Best",
-      item: "https://pestproindex.com/best",
-    },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://pestproindex.com" },
+    { "@type": "ListItem", position: 2, name: "Best", item: "https://pestproindex.com/best" },
     {
       "@type": "ListItem",
       position: 3,
-      name: "Best Damp & Mould Equipment for Landlords — Awaab's Law (2026)",
+      name: "Best Damp & Mould Equipment for Landlords",
       item: "https://pestproindex.com/best/awaabs-law-damp-mould-equipment",
     },
   ],
 };
 
+// SOURCES. Every quotation was extracted by byte range from a body on disk and verified
+// by exact string match before it was written here (Law 164). Each citation names the
+// host actually fetched (Law 194). Bodies kept under Law 175: gov-damp-mould at
+// ~/pp-s68r4/sources and awaabs-landlords at ~/pp-s68r3/sources, both GOV.UK.
+const SRC = {
+  govDamp:
+    "https://www.gov.uk/government/publications/damp-and-mould-understanding-and-addressing-the-health-risks-for-rented-housing-providers/understanding-and-addressing-the-health-risks-of-damp-and-mould-in-the-home--2",
+  awaabs:
+    "https://www.gov.uk/government/publications/awaabs-law-guidance-for-social-landlords/awaabs-law-guidance-for-social-landlords-timeframes-for-repairs-in-the-social-rented-sector",
+};
+
+type ProductRecord = {
+  anchorId: string;
+  asin: string;
+  rank: number;
+  cardName: string;
+  cardLabel: string;
+  features: string[];
+  tableCells: string[];
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+};
+
+// Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
+// the S45-C window. A property is asserted only where the listing states it (S52-E,
+// S50-H); a cell the listing does not state reads "not stated".
+//
+// THREE LISTINGS CONTRADICT THEMSELVES AND EVERY READING IS RENDERED (Law 146): the
+// electriQ states a 7 litre tank in its text and 30 litres in its detail row; the Arete
+// One is titled 25L and rated at 14 litres a day; the Vent-Axia bundle is sold by i-sells
+// as two items with a five-year warranty row and no wattage row of its own.
+const products: ProductRecord[] = [
+  {
+    anchorId: "nuaire-drimaster",
+    asin: "B00NIV51RU",
+    rank: 1,
+    cardName: "Nuaire Drimaster Eco Heat DRI-ECO-HEAT-HCS — Heated PIV with Hall Controls",
+    cardLabel: "Best Overall",
+    features: [
+      "Loft-mounted positive input ventilation with an integral heater behind the diffuser, as listed",
+      "Heat output listed as 400 watts; hardwiring required; ceiling mounted",
+      "The maker says the system goes into standby in warmer months when there is no evidence of condensation",
+      "The listing's own warning: the 4-way heater and boost control switch is not compatible with this model",
+      "Room type listed as Loft; the unit is mounted in the loft space",
+    ],
+    tableCells: ["Nuaire Drimaster Eco Heat", "PIV, heated", "400 W heater, as listed", "Airflow not stated"],
+    h2Label: "Best Overall",
+    h2Name: "Nuaire Drimaster Eco Heat — Heated PIV",
+    tocLabel: "Best Overall",
+    tocName: "Nuaire Drimaster Eco Heat",
+  },
+  {
+    anchorId: "dryzone-piv",
+    asin: "B0FF4XV6LV",
+    rank: 2,
+    cardName: "Dryzone PIV Unit with Heater — Loft Whole-House Ventilation Kit",
+    cardLabel: "Best Budget",
+    features: [
+      "Listed for 1 to 5 bedroom properties, with four selectable fan speeds",
+      "Airflow listed as up to 49 litres per second",
+      "The maker states the heater tempers loft air when it falls below 10 °C",
+      "Noise listed as 25 dB(A) at 1 metre; three-year warranty per the listing",
+      "Supplied with 1 m of 200 mm flexible duct, a 200 mm ceiling diffuser and fixings, as listed",
+    ],
+    tableCells: ["Dryzone PIV with heater", "PIV, heated", "Heater wattage not stated", "Up to 49 L/s, as listed"],
+    h2Label: "Best Budget",
+    h2Name: "Dryzone PIV Unit with Heater",
+    tocLabel: "Best Budget",
+    tocName: "Dryzone PIV with Heater",
+  },
+  {
+    anchorId: "kair-kalahari",
+    asin: "B0914Q4SP5",
+    rank: 3,
+    cardName: "Kair Kalahari ECO PIV Unit for Condensation Control",
+    cardLabel: "Best Budget PIV",
+    features: [
+      "Loft-mounted PIV supplying filtered air through a ceiling diffuser, as listed",
+      "The maker describes very low noise because the unit sits in the loft cavity",
+      "No heater is listed on this model",
+      "Listed at 33 x 33 x 34 cm and 6.84 kg",
+      "The listing carries no airflow, coverage or wattage figure",
+    ],
+    tableCells: ["Kair Kalahari ECO PIV", "PIV, unheated", "No heater listed", "Airflow not stated"],
+    h2Label: "Best Budget PIV",
+    h2Name: "Kair Kalahari ECO PIV Unit",
+    tocLabel: "Best Budget PIV",
+    tocName: "Kair Kalahari ECO PIV",
+  },
+  {
+    anchorId: "vent-axia",
+    asin: "B0BTB1VSMP",
+    rank: 4,
+    cardName: "Vent-Axia PureAir PIV with 500W Heater + Digital Hygrometer Bundle",
+    cardLabel: "Premium PIV",
+    features: [
+      "Sold as two items: the Vent-Axia PureAir Home 479091 unit and an i-sells digital hygrometer",
+      "The maker states a 500W heater that removes the chill from incoming air",
+      "Hygrometer temperature accuracy listed as 0.1 degrees Celsius",
+      "Warranty listed as 5 years; spare part availability listed as 5 years",
+      "Brand row reads i-sells rather than Vent-Axia — the bundle is assembled by the seller",
+    ],
+    tableCells: ["Vent-Axia PureAir + hygrometer", "PIV, heated, with meter", "500 W heater, per the maker", "Airflow not stated"],
+    h2Label: "Premium PIV",
+    h2Name: "Vent-Axia PureAir PIV with 500W Heater",
+    tocLabel: "Premium PIV",
+    tocName: "Vent-Axia PureAir PIV",
+  },
+  {
+    anchorId: "electriq-30l",
+    asin: "B08TRT57ZP",
+    rank: 5,
+    cardName: "electriQ ECD30 Industrial 30L Dehumidifier — Metal Body, Large Wheels",
+    cardLabel: "Best Professional-Grade",
+    features: [
+      "Extraction listed as up to 30 litres a day; 650 watts",
+      "Tank stated two ways on the listing: 7 litres in the feature text, 30 litres in the detail row",
+      "Permanent drainage option, humidistat and 24-hour timer, as listed",
+      "Metal body on wheels, listed at 26 kilograms and 65.5 x 45 x 65.5 cm",
+      "Listed for warehouses, garages, basements and offices; automatic defrost",
+    ],
+    tableCells: ["electriQ ECD30", "Dehumidifier", "650 W", "30 L/day, as listed"],
+    h2Label: "Best Professional-Grade",
+    h2Name: "electriQ ECD30 Industrial 30L Dehumidifier",
+    tocLabel: "Best Professional-Grade",
+    tocName: "electriQ ECD30",
+  },
+  {
+    anchorId: "meaco-25l",
+    asin: "B093TLCDVC",
+    rank: 6,
+    cardName: "MeacoDry Arete One 25L Dehumidifier & HEPA Air Purifier",
+    cardLabel: "Best for Occupied Properties",
+    features: [
+      "Extraction listed as up to 14 litres a day — 25L is the model name, not the daily figure",
+      "4.8 litre front-loading tank, as listed; 267 watts",
+      "H13 HEPA filter, laundry mode, night mode and smart humidity mode, as listed",
+      "Floor area listed as 86 square metres; sound level listed as 40 dB",
+      "Warranty stated two ways on the listing: 5 years in the title, 2 in the detail row",
+    ],
+    tableCells: ["MeacoDry Arete One", "Dehumidifier", "267 W", "14 L/day; 86 m², as listed"],
+    h2Label: "Best for Occupied Properties",
+    h2Name: "MeacoDry Arete One 25L Dehumidifier",
+    tocLabel: "Best for Occupied Properties",
+    tocName: "MeacoDry Arete One",
+  },
+  {
+    anchorId: "dryzone-meter",
+    asin: "B099FBZWHJ",
+    rank: 7,
+    cardName: "Dryzone Moisture Meter — Damp Meter for Wood, Masonry and Building Materials",
+    cardLabel: "Best Damp Meter",
+    features: [
+      "Dual-purpose meter for wood and building materials, with a backlit LCD, as listed",
+      "Eight calibration scales for different timbers, as listed",
+      "The maker states an audio alert for moisture above 20% in building materials",
+      "Listed at 130 g with batteries; batteries required and not included",
+      "Manufacturer listed as Safeguard Europe Ltd",
+    ],
+    tableCells: ["Dryzone Moisture Meter", "Damp meter", "Battery powered", "Audio alert above 20%, per the maker"],
+    h2Label: "Best Damp Meter",
+    h2Name: "Dryzone Moisture Meter",
+    tocLabel: "Best Damp Meter",
+    tocName: "Dryzone Moisture Meter",
+  },
+  {
+    anchorId: "hygrometer",
+    asin: "B0CZRWVNRJ",
+    rank: 8,
+    cardName: "Govee WiFi Thermometer Hygrometer — Digital Temperature and Humidity Meter",
+    cardLabel: "Best Hygrometer",
+    features: [
+      "WiFi and Bluetooth, listed at 50 m and 30 m range respectively",
+      "The maker states a Swiss-made sensor and temperature accuracy of ±0.3 °C",
+      "App alerts when readings fall outside a preset range, as listed",
+      "20 days of online data storage with export, per the listing",
+      "Battery powered; supplied with a lanyard loop",
+    ],
+    tableCells: ["Govee WiFi Hygrometer", "Hygrometer", "Battery powered", "±0.3 °C, per the maker"],
+    h2Label: "Best Hygrometer",
+    h2Name: "Govee WiFi Thermometer Hygrometer",
+    tocLabel: "Best Hygrometer",
+    tocName: "Govee WiFi Hygrometer",
+  },
+];
+
+// ONE FAQ ARRAY (Law 190). The visible block and the FAQPage schema both read it.
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "Does buying this equipment satisfy Awaab's Law?",
+    a: "No, and nothing on this page should be read as saying it does. The guidance for social landlords sets timeframes for investigating and acting on a hazard, and the health-risks guidance says to identify and tackle the underlying causes of damp and mould, including building deficiencies, inadequate ventilation and condensation. Equipment can be part of the answer to the third of those; it is not a substitute for the investigation.",
+  },
+  {
+    q: "What are the timeframes?",
+    a: "The guidance for social landlords in England states that a landlord must investigate any potential significant hazards within 10 working days of becoming aware of them, and undertake relevant safety work within 5 working days of the investigation concluding if it identifies a significant hazard. For an emergency hazard it states that the landlord must investigate the issue within 24 hours. This page holds no fetched source on how those timeframes reach private tenancies, so it does not say.",
+  },
+  {
+    q: "PIV or a dehumidifier?",
+    a: "They do different things and the listings say so. A PIV unit sits in the loft and pushes filtered air into the property continuously; a dehumidifier takes moisture out of the air in the room it stands in. Four of the products here are PIV units, two are dehumidifiers, and two measure rather than treat. Which is appropriate is a question about the building, which is what the meters are for.",
+  },
+  {
+    q: "Is it fair to blame how a tenant lives?",
+    a: "The government's guidance answers this directly: it says it is totally unreasonable to blame damp and mould in the home on 'lifestyle choices'. It also says tenant management of condensation and small amounts of mould should not be a substitute for assessing and addressing the underlying issue, which should always be the priority.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Does Awaab's Law apply to private landlords?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Not directly — Awaab's Law (Section 42 of the Social Housing (Regulation) Act 2023) currently applies to registered providers of social housing. However, private landlords are already subject to the Homes (Fitness for Human Habitation) Act 2018 and HHSRS, both of which cover damp and mould. The direction of travel is clear: the government has signalled that similar requirements may be extended to the private sector. Treating Awaab's Law standards as best practice now demonstrates due diligence and puts you ahead of likely future regulation.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Will a PIV unit definitely fix my mould problem?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "PIV is highly effective against condensation damp, which accounts for an estimated 80–90% of damp complaints in UK rental properties. By continuously ventilating the property and keeping humidity below 60%, PIV prevents mould growth at the source. However, PIV will not fix rising damp (moisture wicking up through masonry) or penetrating damp (water entering through structural defects). If your property has structural damp issues, these must be repaired before or alongside PIV installation. Use a damp meter to diagnose the type of damp before choosing your treatment approach.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does a PIV unit take to work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most landlords and tenants notice a significant improvement within 2–4 weeks of installation. Humidity levels typically drop to the target 45–55% range within the first week. Existing mould stops spreading almost immediately once humidity falls below 60%. However, established mould staining on walls and ceilings needs to be physically cleaned — the PIV unit prevents new growth but does not remove existing staining. For severely damp properties, allow 4–8 weeks for the building fabric to dry out fully.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What humidity level should a rental property be at?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Aim for 45–55% relative humidity. Below 40% causes dry skin, irritated airways and static electricity. Above 60% creates conditions for mould growth and attracts moisture-dependent pests such as silverfish, mould mites and booklice. Above 70% is a serious concern — mould will actively grow on most surfaces. A digital hygrometer placed in the most affected room provides continuous monitoring evidence.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do I need an electrician to install a PIV unit?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. PIV units require a permanent electrical connection, which must be installed by a Part P registered electrician under Building Regulations in England and Wales. The unit is mounted in the loft with a diffuser cut into the ceiling. A competent electrician can typically complete the installation in 2–3 hours. Total installation cost including the electrician is typically £150–£300 on top of the unit price. Some manufacturers offer kits with detailed instructions specifically for the electrician.",
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 const tocItems = [
-  { id: "at-a-glance", title: "At a Glance" },
-  { id: "piv-units", title: "PIV Units — The Permanent Solution" },
-  { id: "nuaire-drimaster", title: "Best PIV — Nuaire Drimaster Eco Heat" },
-  { id: "dryzone-piv", title: "Best Value PIV — Dryzone PIV Kit" },
-  { id: "kair-kalahari", title: "Best Budget PIV — Kair Kalahari ECO" },
-  { id: "vent-axia", title: "Premium PIV — Vent-Axia PureAir" },
-  { id: "dehumidifiers", title: "Dehumidifiers — Fast Remediation" },
-  { id: "electriq-30l", title: "Best Industrial — electriQ 30L" },
-  { id: "meaco-25l", title: "Best Occupied Property — MeacoDry Arete One 25L" },
-  { id: "damp-meters", title: "Damp Meters & Hygrometers" },
-  { id: "dryzone-meter", title: "Best Damp Meter — Dryzone Moisture Meter" },
-  {
-    id: "hygrometer",
-    title: "Best Hygrometer — Govee WiFi Thermometer Hygrometer",
-  },
-  {
-    id: "piv-vs-dehumidifier",
-    title: "PIV vs Dehumidifier: Which Do You Need?",
-  },
-  { id: "awaabs-law", title: "What Does Awaab's Law Actually Require?" },
+  { id: "situation", title: "Measure Before You Buy" },
+  { id: "legal", title: "What Awaab's Law Guidance Requires" },
+  { id: "limits", title: "Where Equipment Does Not Work" },
+  { id: "what-decides", title: "What Decides the Choice" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
+  { id: "alternatives", title: "If Equipment Is Not the Answer" },
+  { id: "using", title: "Order of Work" },
+  { id: "compared", title: "The Eight Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
-export default function AwaabsLawDampMouldEquipmentPage() {
+export default function BestAwaabsLawDampMouldEquipmentPage() {
   return (
     <GuideLayout
       title="Best Damp &amp; Mould Control Equipment for Landlords (Awaab's Law 2026)"
-      subtitle="PIV units, commercial dehumidifiers and damp meters for landlords complying with Awaab's Law &mdash; equipment to eliminate mould and condensation in rental properties."
-      lastUpdated="April 2026"
-      readingTime="11 min"
+      subtitle="Four PIV units, two dehumidifiers and two meters, described by what their own listings state — beside the timeframes Awaab's Law guidance sets and the cause the government's guidance says to tackle first"
+      lastUpdated="September 2026"
+      readingTime="9 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
       tocItems={tocItems}
       relatedGuides={[
-        {
-          title: "Landlord Pest Control Responsibilities",
-          href: "/guides/landlord-pest-control",
-        },
-        {
-          title: "How to Get Rid of Silverfish: Complete UK Guide",
-          href: "/guides/how-to-get-rid-of-silverfish",
-        },
+        { title: "Landlord Pest Control Responsibilities", href: "/guides/landlord-pest-control" },
         {
           title: "Awaab's Law & Pest Control: What Landlords Need to Know",
           href: "/blog/awaabs-law-pest-control-landlords",
         },
-        {
-          title: "Pest Control Costs UK 2026",
-          href: "/guides/pest-control-costs",
-        },
+        { title: "Pest Control Costs UK 2026", href: "/guides/pest-control-costs" },
+        { title: "How to Get Rid of Silverfish: Complete UK Guide", href: "/guides/how-to-get-rid-of-silverfish" },
       ]}
       relatedProducts={[
+        { title: "Best Commercial Dehumidifiers UK 2026", href: "/best/commercial-dehumidifiers" },
         {
-          title: "Best Commercial Dehumidifiers UK 2026",
-          href: "/best/commercial-dehumidifiers",
+          title: "Best Damp-Proof Paint & Mould Treatment UK 2026",
+          href: "/best/damp-proof-paint-mould-treatment",
         },
-        {
-          title: "Best Silverfish Treatments UK 2026",
-          href: "/best/silverfish-treatments",
-        },
-        {
-          title: "Best Cockroach Killers UK 2026",
-          href: "/best/cockroach-killers",
-        },
+        { title: "Best Silverfish Treatments UK 2026", href: "/best/silverfish-treatments" },
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
@@ -206,989 +346,336 @@ export default function AwaabsLawDampMouldEquipmentPage() {
         </p>
       </div>
 
-      {/* Intro */}
       <p>
-        Awaab&apos;s Law &mdash; Section 42 of the Social Housing (Regulation)
-        Act 2023 &mdash; requires social housing landlords to investigate and
-        fix damp and mould hazards within strict timeframes. Named after Awaab
-        Ishak, a two-year-old who died in 2020 from a respiratory condition
-        caused by prolonged mould exposure in his family&apos;s housing
-        association flat in Rochdale, the legislation represents the most
-        significant regulatory change in UK housing standards in a generation.
-        While originally targeting registered providers of social housing, the
-        legislation signals a broader regulatory direction that is already
-        affecting the private rented sector &mdash; councils and tenants are
-        increasingly holding all landlords to the same standards.
-      </p>
-      <p>
-        For landlords who want to get ahead of enforcement action and genuinely
-        protect their tenants and properties, the equipment falls into three
-        categories. <strong>PIV units (Positive Input Ventilation)</strong>{" "}
-        treat the root cause of condensation damp by continuously ventilating
-        the whole property &mdash; they are the permanent, set-and-forget
-        solution. <strong>Commercial dehumidifiers</strong> remove moisture from
-        the air for faster results when PIV is not practical or when immediate
-        remediation is needed. <strong>Damp meters and hygrometers</strong> are
-        the compliance documentation tools &mdash; they let you record baseline
-        humidity readings before and after treatment, which is essential
-        evidence if a complaint is made to the local authority or Housing
-        Ombudsman.
+        Eight items: four positive input ventilation units, two dehumidifiers
+        and two meters. Six of them move or remove moisture and two of them only
+        measure it — and the measuring is where the government&rsquo;s own
+        guidance starts, which is why the meters are not an afterthought here.
       </p>
 
-      <div className="not-prose">
-        <StatCallout
-          value="14 days"
-          label="Maximum time to investigate a damp/mould hazard report under Awaab's Law"
-        />
-      </div>
-
-      <p>
-        We selected this damp and mould monitoring equipment on published
-        specifications and manufacturer information, weighing measurement
-        accuracy, ease of daily use by tenants and housing staff, and
-        suitability for evidencing conditions in UK rented homes.
-      </p>
-
-      {/* At a Glance */}
-      <h2 id="at-a-glance">Best Damp &amp; Mould Equipment at a Glance</h2>
-      <p>
-        A quick comparison of our eight recommended products across PIV units,
-        dehumidifiers and compliance tools. Full details follow below.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Category</th>
-            <th>Best For</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Nuaire Drimaster Eco Heat</td>
-            <td>PIV unit (heated)</td>
-            <td>Best overall PIV</td>
-          </tr>
-          <tr>
-            <td>Dryzone PIV Kit with Heater</td>
-            <td>PIV unit (heated)</td>
-            <td>Best value PIV kit</td>
-          </tr>
-          <tr>
-            <td>Kair Kalahari ECO PIV</td>
-            <td>PIV unit (unheated)</td>
-            <td>Best budget PIV</td>
-          </tr>
-          <tr>
-            <td>Vent-Axia PureAir PIV + Hygrometer</td>
-            <td>PIV unit (heated)</td>
-            <td>Premium PIV + compliance</td>
-          </tr>
-          <tr>
-            <td>electriQ 30L Industrial</td>
-            <td>Dehumidifier</td>
-            <td>Best for remediation</td>
-          </tr>
-          <tr>
-            <td>MeacoDry Arete One 25L</td>
-            <td>Dehumidifier + HEPA</td>
-            <td>Best for occupied properties</td>
-          </tr>
-          <tr>
-            <td>Dryzone Moisture Meter</td>
-            <td>Damp meter</td>
-            <td>Wall &amp; timber readings</td>
-          </tr>
-          <tr>
-            <td>Govee WiFi Thermometer Hygrometer</td>
-            <td>Hygrometer</td>
-            <td>Humidity audit trail</td>
-          </tr>
-        </tbody>
-      </table>
-
-      {/* Section 1: PIV Units */}
-      <h2 id="piv-units">PIV Units &mdash; The Permanent Solution</h2>
-      <p>
-        Positive Input Ventilation is the single most effective long-term
-        solution for condensation damp in UK rental properties. A PIV unit sits
-        in the loft space and continuously draws in fresh air from outside,
-        filters it, and gently pushes it down into the property through a
-        ceiling-mounted diffuser &mdash; typically in the hallway or landing.
-        This creates a slight positive pressure inside the property, which
-        forces humid, stale air out through natural gaps around windows, doors,
-        trickle vents and extractor fans. The result is a continuous, gentle
-        whole-house ventilation cycle that replaces moisture-laden indoor air
-        with drier air from outside.
-      </p>
-      <p>
-        The reason PIV is so effective against condensation damp specifically is
-        that it addresses the <strong>root cause</strong> rather than just the
-        symptoms. Condensation forms when warm, humid indoor air meets cold
-        surfaces &mdash; typically external walls, windows and corners with poor
-        air circulation. By continuously replacing humid air with drier air, PIV
-        keeps indoor humidity below the critical 60% threshold at which mould
-        begins to grow. Unlike dehumidifiers, which treat the symptoms by
-        mechanically extracting moisture, a PIV unit prevents the moisture from
-        building up in the first place. It runs 24/7, uses minimal electricity
-        (typically 5&ndash;20W &mdash; less than a light bulb), and requires
-        virtually no maintenance beyond an annual filter change.
-      </p>
-      <p>
-        PIV units come in two main types. <strong>Loft-mounted units</strong>{" "}
-        are the standard choice for houses, bungalows and maisonettes with
-        accessible loft space &mdash; these are the most common and
-        cost-effective option.{" "}
-        <strong>Wall-mounted or flat-mounted units</strong> are designed for
-        properties without loft access, such as ground-floor flats and
-        apartments, and draw air directly from outside through an external wall
-        vent. All PIV units require a permanent electrical connection, which
-        must be installed by a qualified electrician &mdash; typically a
-        2&ndash;3 hour job costing &pound;150&ndash;&pound;300 on top of the
-        unit price.
-      </p>
-
-      <div className="not-prose">
-        <Callout type="info">
-          <p>
-            An estimated 80&ndash;90% of damp complaints in UK rental properties
-            are caused by condensation, not rising or penetrating damp. PIV
-            directly addresses condensation by continuously ventilating the
-            property &mdash; making it the single most cost-effective investment
-            a landlord can make to prevent mould and comply with damp
-            regulations.
-          </p>
-        </Callout>
-      </div>
-
-      <Callout type="info">
-        <p>
-          Damp and condensation are what drive mould growth, and the same
-          moisture sustains silverfish, booklice and mould mites. If you rent
-          out the property, damp and mould also carry statutory duties under
-          Awaab&apos;s Law with fixed response deadlines. Our sister site{" "}
-          <a
-            href="https://awaabslawguide.co.uk/compliance-pack"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Awaab&apos;s Law Guide
-          </a>
-          , also published by ENA Enterprises Ltd, has a Phase 1 compliance
-          toolkit for landlords.
+      {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
+          no price, no image, no award. */}
+      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
+        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
+          Start with your situation
         </p>
-      </Callout>
-
-      {/* Product 1: Nuaire Drimaster */}
-      <h2 id="nuaire-drimaster">
-        Best PIV &mdash; Nuaire Drimaster Eco Heat with Hall Controls
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Nuaire Drimaster Eco Heat — With Hall Controls (Heated PIV)"
-          rank={1}
-          asin="B00NIV51RU"
-          bestFor="Best Overall"
-          features={[
-            "Nuaire invented PIV over 40 years ago — the market leader",
-            "400W heater tempers cold loft air in winter",
-            "Loft-mounted, treats entire property from one unit",
-            "Hall-controlled diffuser for tenant convenience",
-          ]}
-        />
+        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+          <li>
+            <strong>A tenant has reported damp or mould.</strong> The clock and
+            the duty are set out in guidance, not on a product page —{" "}
+            <a href="#legal" className="underline">
+              what the guidance requires
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You do not yet have a reading.</strong> The guidance names
+            moisture meters and environmental monitors among its checks —{" "}
+            <a href="#situation" className="underline">
+              measure before you buy
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You are about to buy a dehumidifier for a leak.</strong>{" "}
+            That is the case the guidance rules out —{" "}
+            <a href="#limits" className="underline">
+              where equipment does not work
+            </a>
+            .
+          </li>
+          <li>
+            <strong>You want continuous whole-property ventilation.</strong>{" "}
+            Four PIV units here, three with a heater —{" "}
+            <a href="#nuaire-drimaster" className="underline">
+              Nuaire
+            </a>
+            ,{" "}
+            <a href="#dryzone-piv" className="underline">
+              Dryzone
+            </a>
+            ,{" "}
+            <a href="#vent-axia" className="underline">
+              Vent-Axia
+            </a>
+            , and{" "}
+            <a href="#kair-kalahari" className="underline">
+              Kair without one
+            </a>
+            .
+          </li>
+          <li>
+            <strong>The property is occupied and noise matters.</strong> Two
+            listings state a decibel figure —{" "}
+            <a href="#dryzone-piv" className="underline">
+              25 dB(A)
+            </a>{" "}
+            and{" "}
+            <a href="#meaco-25l" className="underline">
+              40 dB
+            </a>
+            .
+          </li>
+        </ul>
       </div>
-      <p>
-        Nuaire is the company that invented Positive Input Ventilation over 40
-        years ago, and the Drimaster Eco Heat remains the industry standard that
-        every other PIV unit is measured against. The DRI-ECO-HEAT-HCS model
-        includes a <strong>400W integral heater</strong> that tempers cold loft
-        air before it enters the living space &mdash; this is critical for the
-        UK climate, where loft air temperatures can drop to near-freezing in
-        winter. Without a heater, a PIV unit can introduce uncomfortably cold
-        draughts that lead tenants to block the diffuser or turn the unit off,
-        defeating the entire purpose of the installation. The Drimaster Eco Heat
-        eliminates this problem by delivering air at a comfortable temperature
-        year-round.
-      </p>
-      <p>
-        The unit is loft-mounted with a single ceiling diffuser controlled from
-        a hall panel, giving tenants the ability to boost ventilation when
-        cooking or showering. It treats the entire property from one
-        installation point &mdash; the positive pressure it creates ensures air
-        movement through every room. For landlords who want a proven,
-        set-and-forget solution from the brand that defined the category, the
-        Nuaire Drimaster Eco Heat is the definitive choice. It is the PIV unit
-        most commonly specified by professional damp surveyors and housing
-        officers across the UK.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          Market leader from the inventor of PIV &mdash; 40+ years of proven
-          performance
-        </li>
-        <li>
-          400W heater prevents cold draughts in winter &mdash; critical for
-          tenant acceptance
-        </li>
-        <li>
-          Single unit treats entire property &mdash; no multiple installations
-          needed
-        </li>
-        <li>Hall controls give tenants easy boost access</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>
-          Requires loft access &mdash; not suitable for flats without loft space
-        </li>
-        <li>Electrician required for installation (Part P compliant)</li>
-      </ul>
-
-      {/* Product 2: Dryzone PIV */}
-      <h2 id="dryzone-piv">
-        Best Value PIV Kit &mdash; Dryzone PIV Unit with Heater
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Dryzone PIV Unit with Heater — Complete Home Ventilation Kit"
-          rank={2}
-          asin="B0FF4XV6LV"
-          bestFor="Best Budget"
-          features={[
-            "Complete kit: PIV cube, 1m flexible duct, ceiling diffuser",
-            "Whisper-quiet at 25dB — tenants won't notice it",
-            "Four selectable fan speeds for 1-5 bedroom properties",
-            "3-year warranty, excellent value entry point",
-          ]}
-        />
-      </div>
-      <p>
-        The Dryzone PIV Kit is the best value entry point for landlords
-        installing their first PIV unit. It arrives as a{" "}
-        <strong>complete kit</strong> including the loft-mounted PIV cube, 1
-        metre of flexible ducting, and a ceiling diffuser &mdash; everything an
-        electrician needs to complete the installation without sourcing
-        additional components. This all-in-one approach significantly reduces
-        installation time and cost, making it an excellent choice for landlords
-        who want to move quickly on a damp complaint.
-      </p>
-      <p>
-        At just <strong>25dB</strong>, the Dryzone unit is exceptionally quiet
-        &mdash; tenants in the rooms below will barely be aware it is running.
-        Four selectable fan speeds allow you to match the ventilation rate to
-        the property size, from a small one-bedroom flat up to a five-bedroom
-        family home. Dryzone is a well-respected UK damp-proofing brand, and the
-        unit comes with a <strong>3-year warranty</strong> for peace of mind.
-        For landlords on a budget who need a heated PIV unit that works well and
-        installs easily, this is the one to buy.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Complete kit &mdash; no additional parts to source</li>
-        <li>25dB operation is virtually silent</li>
-        <li>Four fan speeds suit properties from 1 to 5 bedrooms</li>
-        <li>3-year warranty from a trusted UK damp-proofing brand</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Less established than Nuaire in the PIV market</li>
-        <li>
-          1m duct may not reach all ceiling diffuser positions in larger lofts
-        </li>
-        <li>Requires loft access</li>
-      </ul>
-
-      {/* Product 3: Kair Kalahari */}
-      <h2 id="kair-kalahari">
-        Best Budget PIV &mdash; Kair Kalahari ECO PIV Unit (No Heater)
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Kair Kalahari ECO PIV Unit — Standard (No Heater)"
-          rank={3}
-          asin="B0914Q4SP5"
-          bestFor="Best Budget PIV"
-          features={[
-            "Budget-friendly loft-mounted PIV unit",
-            "G4 filters for clean air delivery",
-            "Single unit treats a whole house",
-            "Good for milder climates and well-insulated properties",
-          ]}
-        />
-      </div>
-      <p>
-        The Kair Kalahari ECO is the entry-level loft-mounted PIV unit in this
-        guide, making it an attractive option for landlords managing multiple
-        properties on a tight budget. It delivers the core PIV functionality
-        &mdash; continuous filtered ventilation that reduces condensation and
-        prevents mould. The unit includes <strong>G4 filters</strong> that
-        remove dust, pollen and coarse particulates from incoming loft air.
-      </p>
-      <p>
-        The key trade-off is the <strong>absence of an integral heater</strong>.
-        In milder parts of the UK (the south and south-west) or in
-        well-insulated modern properties where loft temperatures remain
-        reasonable in winter, this is rarely a problem. However, in colder
-        regions or older properties with poor loft insulation, the air delivered
-        by an unheated PIV unit can feel noticeably cool in winter, which may
-        lead tenants to block or disable the unit. If your properties are in the
-        north of England, Scotland or Wales, or if you have experienced tenant
-        complaints about cold draughts, invest in a heated model instead. For
-        the right property, the Kair Kalahari offers genuine whole-house
-        condensation control from a standard unheated unit.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Entry-level loft-mounted PIV</li>
-        <li>G4 filtration for clean air delivery</li>
-        <li>Straightforward installation with supplied fixings</li>
-        <li>Effective for well-insulated properties in milder climates</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>
-          No heater &mdash; cold draughts possible in winter in poorly insulated
-          properties
-        </li>
-        <li>Tenants may disable in cold weather, defeating the purpose</li>
-        <li>Not recommended for northern or exposed locations</li>
-      </ul>
-
-      <div className="not-prose">
-        <Callout type="tip">
-          <p>
-            For most UK landlords, a heated PIV unit is the safer choice. The
-            small additional cost over an unheated model is far outweighed by
-            the risk of tenants disabling an unheated unit in winter &mdash;
-            which leaves you back at square one with condensation and mould. The
-            Nuaire Drimaster Eco Heat and Dryzone PIV Kit both include integral
-            heaters.
-          </p>
-        </Callout>
-      </div>
-
-      {/* Product 4: Vent-Axia */}
-      <h2 id="vent-axia">
-        Premium PIV &mdash; Vent-Axia PureAir PIV Unit with 500W Heater &amp;
-        Hygrometer Bundle
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Vent-Axia PureAir PIV Unit with 500W Heater + Hygrometer Bundle"
-          rank={4}
-          asin="B0BTB1VSMP"
-          bestFor="Premium PIV"
-          features={[
-            "F7 filtration — filters fine particulates and allergens",
-            "500W heater for maximum comfort in cold climates",
-            "Includes digital hygrometer for compliance documentation",
-            "Smart Sense control, suitable for properties up to 150m\u00B2",
-          ]}
-        />
-      </div>
-      <p>
-        The Vent-Axia PureAir is the premium PIV option for landlords who want
-        the best filtration available and a compliance documentation tool
-        included in the box. Vent-Axia is one of the UK&apos;s most established
-        ventilation manufacturers, and the PureAir unit features{" "}
-        <strong>F7-grade filtration</strong> &mdash; significantly finer than
-        the G4 filters used in most PIV units. F7 filters capture fine
-        particulates, pollen, and airborne allergens, making this unit
-        particularly suitable for properties where tenants have respiratory
-        conditions or allergies that are being exacerbated by mould spore
-        exposure.
-      </p>
-      <p>
-        The <strong>500W heater</strong> is the most powerful on this page,
-        ensuring comfortable air delivery even in the coldest UK winter
-        conditions. The bundle includes a <strong>digital hygrometer</strong>,
-        which is essential for documenting humidity levels before and after PIV
-        installation &mdash; this is exactly the kind of evidence you need to
-        demonstrate compliance if a complaint is escalated to the Housing
-        Ombudsman or local authority. Smart Sense control automatically adjusts
-        ventilation based on ambient conditions, and the unit is suitable for
-        properties up to <strong>150m&sup2;</strong>. This is the PIV to choose
-        when you need both the best air quality and built-in compliance
-        evidence.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          F7 filtration removes fine particulates and allergens &mdash; the best
-          air quality
-        </li>
-        <li>500W heater for maximum comfort in all UK climates</li>
-        <li>Hygrometer included for immediate compliance documentation</li>
-        <li>
-          Smart Sense auto-adjusts to conditions &mdash; true set-and-forget
-        </li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Premium price for the heated specification</li>
-        <li>F7 filters cost more to replace than G4 filters</li>
-        <li>500W heater uses more electricity than 400W alternatives</li>
-      </ul>
-
-      {/* Section 2: Dehumidifiers */}
-      <h2 id="dehumidifiers">
-        Commercial Dehumidifiers &mdash; Fast Remediation
-      </h2>
-      <p>
-        When PIV is not practical &mdash; the property has no loft space, the
-        tenant is already in situ and you need fast results, or you are dealing
-        with acute damp from a leak or flood rather than chronic condensation
-        &mdash; a commercial dehumidifier tackles the moisture directly.
-        Dehumidifiers work by drawing humid air over cold coils, condensing the
-        moisture into a water tank, and returning drier air to the room. They
-        provide <strong>immediate, measurable results</strong>: you can see the
-        water collecting in the tank and watch the hygrometer readings drop
-        within hours.
-      </p>
-      <p>
-        The key specification is the{" "}
-        <strong>extraction rate in litres per day (L/day)</strong>. For rental
-        property remediation, a minimum of 20L/day is recommended for individual
-        rooms, and 25&ndash;30L/day for whole-property treatment or severe damp.
-        Look for <strong>continuous drainage</strong> capability &mdash; this
-        allows you to connect a hose to a drain or sink so the unit runs
-        indefinitely without anyone needing to empty the tank. This is essential
-        for unattended operation in empty properties between tenancies.
-      </p>
-      <p>
-        It is important to understand that dehumidifiers{" "}
-        <strong>treat symptoms, not causes</strong>. They remove moisture from
-        the air, but if the source of moisture (condensation from poor
-        ventilation, a structural leak, or rising damp) is not addressed,
-        humidity will rise again as soon as the dehumidifier is turned off. For
-        lasting results, combine a dehumidifier with ventilation improvements
-        such as PIV, trickle vents, or extractor fan upgrades.
-      </p>
-
-      {/* Product 5: electriQ 30L */}
-      <h2 id="electriq-30l">
-        Best Industrial Dehumidifier &mdash; electriQ 30L Metal Body
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="electriQ ECD30 Industrial 30L Dehumidifier — Metal Body, Large Wheels"
-          rank={5}
-          asin="B08TRT57ZP"
-          bestFor="Best Professional-Grade"
-          features={[
-            "Genuinely industrial — metal casing, large wheels",
-            "30L/day extraction for severe damp remediation",
-            "Built for 24/7 continuous operation between tenancies",
-            "The first choice for serious property managers",
-          ]}
-        />
-      </div>
-      <p>
-        The electriQ ECD30 is the unit you deploy when a property needs serious
-        damp remediation &mdash; after a flood, a burst pipe, or when a vacant
-        property has been left unheated over winter and the walls are running
-        with condensation. Unlike consumer-grade plastic-bodied dehumidifiers,
-        the ECD30 has a <strong>full metal casing</strong> and heavy-duty wheels
-        designed for rough handling on building sites and in commercial
-        environments. At <strong>30L/day extraction</strong>, it removes
-        moisture faster than any domestic unit, and it is built for{" "}
-        <strong>continuous 24/7 operation</strong> with a built-in pump and
-        drainage hose for unattended running.
-      </p>
-      <p>
-        For landlords managing a portfolio, this is the unit you keep in your
-        van for emergency deployments. Connect the drainage hose to a floor
-        drain, set the target humidity, and leave it running for days or weeks
-        until the property is dry. The metal construction withstands the kind of
-        rough treatment that would crack a plastic unit. It is louder and
-        heavier than domestic alternatives, which makes it less suitable for
-        occupied properties &mdash; but for turnarounds and remediation
-        projects, nothing else matches it for raw extraction power and
-        durability.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>30L/day extraction handles severe damp and flood damage</li>
-        <li>Metal body for commercial durability</li>
-        <li>Continuous drainage for unattended 24/7 operation</li>
-        <li>Ideal for turnarounds between tenancies</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Too loud for occupied bedrooms</li>
-        <li>Heavy at approximately 22kg</li>
-        <li>
-          Industrial appearance &mdash; not suitable for tenant-occupied living
-          spaces
-        </li>
-      </ul>
-
-      {/* Product 6: MeacoDry */}
-      <h2 id="meaco-25l">
-        Best for Occupied Properties &mdash; MeacoDry Arete One 25L &amp; HEPA
-        Air Purifier
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="MeacoDry Arete One 25L Dehumidifier & HEPA Air Purifier"
-          rank={6}
-          asin="B093TLCDVC"
-          bestFor="Best for Occupied Properties"
-          features={[
-            "25L/day extraction + HEPA H13 air purification",
-            "Removes mould spores and allergens while dehumidifying",
-            "Smart humidity mode, 5-year warranty",
-            "Quiet enough for occupied rental properties",
-          ]}
-        />
-      </div>
-      <p>
-        When you need a dehumidifier that can run permanently in a
-        tenant-occupied property, the MeacoDry Arete One 25L is the best option
-        available. Meaco is the UK&apos;s leading specialist dehumidifier brand,
-        and the Arete One combines <strong>25L/day extraction</strong> with a{" "}
-        <strong>HEPA H13 air purifier</strong> that removes mould spores, dust
-        mite allergens and fine particulates from the air. For properties with
-        existing mould problems, this dual functionality is exceptionally
-        valuable: the dehumidifier reduces humidity to prevent new growth while
-        the HEPA filter actively removes spores already circulating.
-      </p>
-      <p>
-        The Arete One features Meaco&apos;s <strong>smart humidity mode</strong>
-        , which automatically adjusts fan speed and compressor cycling to
-        maintain optimal humidity with minimum energy consumption. Meaco backs
-        it with a <strong>5-year warranty</strong> &mdash; far longer than most
-        competitors. For landlords who want a premium, quiet, set-and-forget
-        dehumidifier that can be left permanently installed in a high-value
-        rental property, this is the unit to choose.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>HEPA H13 removes mould spores alongside dehumidification</li>
-        <li>5-year warranty &mdash; exceptional for a dehumidifier</li>
-        <li>Smart humidity mode minimises energy consumption</li>
-        <li>Continuous drainage for unattended operation</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>No Wi-Fi connectivity for remote monitoring</li>
-        <li>HEPA filter requires annual replacement</li>
-      </ul>
-
-      {/* Section 3: Damp Meters */}
-      <h2 id="damp-meters">
-        Damp Meters &amp; Hygrometers &mdash; Compliance Documentation
-      </h2>
-      <p>
-        Awaab&apos;s Law creates a compliance paper trail requirement that
-        landlords cannot afford to ignore. When a tenant reports damp or mould,
-        you need to demonstrate that you investigated promptly and that your
-        remediation was effective. The two tools that provide this evidence are
-        a <strong>damp meter</strong> (measures moisture content in walls,
-        timber and building fabric) and a <strong>hygrometer</strong> (measures
-        airborne relative humidity). Together, they let you document the
-        baseline condition before treatment and prove the improvement
-        afterwards.
-      </p>
-      <p>
-        A damp meter is essential for distinguishing between condensation damp
-        (which PIV or dehumidifiers will fix) and structural damp (which
-        requires building repairs). If walls read high on a damp meter but the
-        air humidity is normal, you likely have rising or penetrating damp
-        rather than condensation. If the air humidity is high but walls are dry,
-        condensation is the culprit. Getting this diagnosis right is critical
-        &mdash; installing a PIV unit will not fix a leaking roof, and
-        repointing brickwork will not solve a condensation problem caused by
-        poor ventilation.
-      </p>
-
-      {/* Product 7: Dryzone Meter */}
-      <h2 id="dryzone-meter">
-        Best Damp Meter &mdash; Dryzone Moisture Meter Detector
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Dryzone Moisture Meter Detector — Damp Meter for Walls & Wood"
-          rank={7}
-          asin="B099FBZWHJ"
-          bestFor="Best Damp Meter"
-          features={[
-            "Pre-calibrated for wood and building materials",
-            "Measures moisture in brickwork, masonry, render and timber",
-            "Essential for documenting baseline damp readings",
-            "From the UK's leading damp-proofing brand",
-          ]}
-        />
-      </div>
-      <p>
-        The Dryzone Moisture Meter is a professional-grade damp meter from the
-        UK&apos;s leading damp-proofing brand. It is{" "}
-        <strong>pre-calibrated for both wood and building materials</strong>,
-        which means it gives accurate readings on timber (joists, skirting
-        boards, window frames) and masonry (brickwork, render, plaster) without
-        the user needing to adjust settings. For landlords, this simplicity is
-        important &mdash; you need a tool that gives reliable, defensible
-        readings without specialist training.
-      </p>
-      <p>
-        Use it to <strong>document baseline moisture readings</strong> in
-        affected walls before installing a PIV unit or dehumidifier, then take
-        follow-up readings at 2, 4 and 8 weeks to demonstrate improvement. These
-        dated records are exactly the evidence a housing officer or ombudsman
-        will ask for when assessing whether you have met your obligations. Every
-        landlord managing properties with any history of damp complaints should
-        own one.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          Pre-calibrated for wood and masonry &mdash; no specialist setup needed
-        </li>
-        <li>Professional-grade accuracy from a trusted UK brand</li>
-        <li>Essential compliance documentation tool</li>
-        <li>Compact and portable for multi-property use</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Pin-type meter &mdash; leaves tiny holes in surfaces</li>
-        <li>
-          Cannot distinguish between condensation and structural damp on its own
-          &mdash; use with hygrometer
-        </li>
-      </ul>
-
-      {/* Product 8: Hygrometer */}
-      <h2 id="hygrometer">
-        Best Hygrometer &mdash; Govee WiFi Thermometer Hygrometer
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name="Govee WiFi Thermometer Hygrometer"
-          rank={8}
-          asin="B0CZRWVNRJ"
-          bestFor="Best Hygrometer"
-          features={[
-            "WiFi & Bluetooth connectivity, Swiss-made sensor",
-            "App alerts, 2-year data storage and export — monitor damp levels remotely from any property",
-            "Place in affected rooms before and after treatment",
-            "Essential if a complaint or enforcement action is raised",
-          ]}
-        />
-      </div>
-      <p>
-        A digital hygrometer with data logging capability records humidity and
-        temperature readings over time, providing the{" "}
-        <strong>audit trail</strong> needed to demonstrate that your remediation
-        has been effective. Place it in the most affected room before installing
-        a PIV unit or dehumidifier, and leave it running throughout the
-        treatment period. The logged data shows the humidity curve dropping from
-        problematic levels (60%+) down to the target range (45&ndash;55%),
-        providing clear, dated evidence of improvement.
-      </p>
-      <p>
-        This is the kind of evidence that makes the difference between a housing
-        officer closing a case and escalating it to enforcement action. If a
-        tenant complains to the local authority or Housing Ombudsman, a
-        continuous humidity log showing that you identified the problem,
-        installed treatment, and documented the improvement is the strongest
-        possible defence. Combined with a damp meter for wall readings, it gives
-        you a complete compliance documentation toolkit.
-      </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          Data logging provides continuous evidence over days, weeks or months
-        </li>
-        <li>
-          Essential compliance documentation for Awaab&apos;s Law and HHSRS
-        </li>
-        <li>Inexpensive compared to PIV and dehumidifier equipment</li>
-        <li>Portable &mdash; move between properties as needed</li>
-      </ul>
-      <p>
-        <strong>Cons:</strong>
-      </p>
-      <ul>
-        <li>Requires manual data download on most models</li>
-        <li>Tenants may move or unplug the device</li>
-      </ul>
-
-      {/* PIV vs Dehumidifier */}
-      <h2 id="piv-vs-dehumidifier">
-        PIV vs Dehumidifier: Which Does My Rental Property Need?
-      </h2>
-      <p>
-        The choice between PIV and a dehumidifier depends on the type of damp,
-        the property layout, and how quickly you need results.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Factor</th>
-            <th>PIV Unit</th>
-            <th>Dehumidifier</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Treats root cause?</td>
-            <td>Yes &mdash; prevents condensation forming</td>
-            <td>No &mdash; removes moisture after it forms</td>
-          </tr>
-          <tr>
-            <td>Best for</td>
-            <td>Long-term prevention, condensation damp</td>
-            <td>Active damp problems, fast results</td>
-          </tr>
-          <tr>
-            <td>Coverage</td>
-            <td>Whole house from one unit</td>
-            <td>One room / open-plan area</td>
-          </tr>
-          <tr>
-            <td>Installation</td>
-            <td>Requires loft access + electrician</td>
-            <td>Plug in and go &mdash; no installation</td>
-          </tr>
-          <tr>
-            <td>Running cost</td>
-            <td>5&ndash;20W (pennies per day)</td>
-            <td>400&ndash;500W (&pound;1&ndash;&pound;2 per day)</td>
-          </tr>
-          <tr>
-            <td>Portability</td>
-            <td>Fixed installation</td>
-            <td>Portable between properties</td>
-          </tr>
-          <tr>
-            <td>Speed of results</td>
-            <td>2&ndash;4 weeks for full effect</td>
-            <td>Hours &mdash; visible results immediately</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        <strong>Our recommendation:</strong> Install a PIV unit as the permanent
-        long-term solution for every rental property with a history of
-        condensation damp. Use a dehumidifier for immediate remediation when a
-        complaint is received, during turnarounds between tenancies, or in
-        properties where PIV is not practical (no loft space, flats without
-        external wall access). The ideal approach is to deploy a dehumidifier
-        immediately to show the tenant you are acting, then install a PIV unit
-        within the Awaab&apos;s Law timeframe for a permanent fix.
-      </p>
-
-      {/* Awaab's Law Summary */}
-      <h2 id="awaabs-law">What Does Awaab&apos;s Law Actually Require?</h2>
-      <p>
-        Awaab&apos;s Law is the informal name for{" "}
-        <strong>Section 42 of the Social Housing (Regulation) Act 2023</strong>.
-        It amends the regulatory framework for registered providers of social
-        housing in England, introducing mandatory timeframes for responding to
-        damp and mould hazards reported by tenants.
-      </p>
-      <ul>
-        <li>
-          <strong>Investigation:</strong> Within 14 calendar days of a hazard
-          being reported, the landlord must investigate and assess the problem.
-        </li>
-        <li>
-          <strong>Written report:</strong> Within 7 calendar days of completing
-          the investigation, the landlord must provide the tenant with a written
-          report of findings and proposed remediation.
-        </li>
-        <li>
-          <strong>Emergency remediation:</strong> If the hazard poses an
-          imminent risk to health, remediation must begin within 7 calendar
-          days.
-        </li>
-        <li>
-          <strong>Standard remediation:</strong> For non-emergency hazards,
-          remediation must be completed within a &ldquo;reasonable
-          timeframe&rdquo; as defined by the Secretary of State.
-        </li>
-      </ul>
-      <p>
-        The legislation currently applies to{" "}
-        <strong>registered providers of social housing</strong> only &mdash;
-        housing associations, local authorities, and other registered landlords.
-        Private landlords are not directly covered. However, private landlords
-        are already subject to the{" "}
-        <strong>Homes (Fitness for Human Habitation) Act 2018</strong> and the{" "}
-        <strong>Housing Health and Safety Rating System (HHSRS)</strong>, both
-        of which cover damp and mould as a Category 1 hazard. The government has
-        signalled that similar timeframe requirements may be extended to the
-        private rented sector in future legislation. Treating Awaab&apos;s Law
-        standards as best practice now puts private landlords ahead of likely
-        future regulation and demonstrates due diligence in the event of a
-        complaint.
-      </p>
 
       <div className="not-prose">
         <Callout type="warning">
           <p>
-            Even without Awaab&apos;s Law applying directly to private
-            landlords, the Homes (Fitness for Human Habitation) Act 2018 already
-            gives tenants the right to take legal action against landlords who
-            fail to address damp and mould. Compensation claims for damp-related
-            disrepair regularly exceed &pound;5,000. The equipment on this page
-            is a fraction of that cost.
+            Three of these products require electrical installation in a loft
+            and one states that hardwiring is required. Fitting them is
+            controlled work; the government&rsquo;s guidance notes that works to
+            heating and ventilation systems must comply with the Building
+            Regulations 2010.
           </p>
         </Callout>
       </div>
 
-      {/* FAQ */}
+      {/* [0] Situation */}
+      <h2 id="situation">Measure Before You Buy</h2>
+      <p>
+        The government&rsquo;s guidance for rented housing lists what to check,
+        and most of it is about the building rather than the air. Among its
+        internal checks it names{" "}
+        <em>
+          &ldquo;consistently high relative humidity, as assessed using a
+          moisture meter or environmental monitors&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.govDamp} rel="nofollow">
+          GOV.UK
+        </a>
+        ), alongside peeling wallpaper, defective plaster, low insulation and
+        ventilation that is damaged, blocked or switched off.
+      </p>
+      <p>
+        Two of the eight products here are the instruments for that check. A
+        reading taken before anything is installed is also the only way to show
+        afterwards whether the installation changed anything, which matters on a
+        property where the work may have to be evidenced.
+      </p>
+
+      {/* [1] Legal */}
+      <h2 id="legal">What Awaab&rsquo;s Law Guidance Requires</h2>
+      <p>
+        For social landlords in England the timeframes are fixed. The guidance
+        states that a landlord must{" "}
+        <em>
+          &ldquo;Investigate any potential significant hazards within 10 working
+          days of becoming aware of them&rdquo;
+        </em>{" "}
+        and{" "}
+        <em>
+          &ldquo;Undertake relevant safety work within 5 working days of the
+          investigation concluding, if the investigation identifies a
+          significant hazard.&rdquo;
+        </em>{" "}
+        For an emergency hazard,{" "}
+        <em>&ldquo;The landlord must investigate the issue within 24 hours.&rdquo;</em>{" "}
+        (
+        <a href={SRC.awaabs} rel="nofollow">
+          GOV.UK
+        </a>
+        ). This page holds no fetched source on how those timeframes reach
+        private tenancies, so it does not say.
+      </p>
+      <p>
+        The health-risks guidance sets out what the work has to reach. It asks
+        landlords to{" "}
+        <em>
+          &ldquo;identify and tackle the underlying causes of damp and mould,
+          including building deficiencies, inadequate ventilation and
+          condensation.&rdquo;
+        </em>{" "}
+        and is unambiguous about where responsibility does not lie:{" "}
+        <em>
+          &ldquo;We are absolutely clear that it is totally unreasonable to
+          blame damp and mould in the home on ‘lifestyle choices’.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.govDamp} rel="nofollow">
+          GOV.UK
+        </a>
+        ). Ventilation is one of the three causes it names, which is what the
+        PIV units below address; the other two are building work.
+      </p>
+
+      {/* [2] Limits */}
+      <h2 id="limits">Where Equipment Does Not Work</h2>
+      <p>
+        <strong>As a substitute for the investigation.</strong> The guidance is
+        explicit:{" "}
+        <em>
+          &ldquo;Tenant management of condensation and small amounts of mould
+          should not be a substitute for assessing and addressing the underlying
+          issue, which should always be the priority.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.govDamp} rel="nofollow">
+          GOV.UK
+        </a>
+        ). A unit installed instead of an inspection is treating the symptom.
+      </p>
+      <p>
+        <strong>After the mould has been wiped away.</strong> The same guidance:{" "}
+        <em>
+          &ldquo;Simply removing surface mould will not prevent the damp and
+          mould from reappearing&rdquo;
+        </em>
+        . Cleaning, ventilating and repairing are three steps and only the last
+        one ends it.
+      </p>
+      <p>
+        <strong>On a leak, a bridged damp course or missing insulation.</strong>{" "}
+        None of the eight products here finds or fixes any of those. Two of them
+        will show you a number that suggests one is present, which is a
+        different and more useful thing than drying the air around it.
+      </p>
+
+      {/* [3] Criteria */}
+      <h2 id="what-decides">What Decides the Choice</h2>
+      <h3>1. Ventilate, dehumidify or measure</h3>
+      <p>
+        PIV pushes filtered air in continuously from the loft; a dehumidifier
+        removes water from the air in one room; a meter tells you whether either
+        is warranted. The guidance names inadequate ventilation as a cause in
+        its own right, which is the case the four PIV units answer.
+      </p>
+      <h3>2. Whether the listing states a figure at all</h3>
+      <p>
+        One PIV states an airflow (49 litres per second) and two state a heater
+        wattage (400 W and 500 W). One states none of those. The comparison
+        table records &ldquo;not stated&rdquo; four times, and that is a real
+        difference between these products rather than an omission here.
+      </p>
+      <h3>3. Noise, in an occupied property</h3>
+      <p>
+        Two listings give a decibel figure — 25 dB(A) at one metre for the
+        Dryzone PIV and 40 dB for the Arete One. In a tenanted flat that is
+        often what decides whether equipment stays switched on.
+      </p>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>
+            {
+              [
+                "A loft-mounted PIV unit with the heater sited behind the diffuser, listed at 400 watts of heat output and requiring hardwiring. Its maker says it drops into standby in warmer months when there is no evidence of condensation. Its own listing carries a compatibility warning: the 4-way heater and boost control switch does not work with this model.",
+                "A PIV kit listed for one to five bedroom properties with four fan speeds and up to 49 litres per second of airflow — the only airflow figure on this page. Its maker states the heater tempers loft air below 10 °C and quotes 25 dB(A) at a metre, and the kit is listed with duct, diffuser and fixings included.",
+                "The one PIV here without a heater: a loft-mounted unit supplying filtered air through a ceiling diffuser, listed at 33 x 33 x 34 cm and 6.84 kg. Its listing states no airflow, coverage or wattage figure at all, which the comparison table records rather than fills in.",
+                "A bundle rather than a single product: the Vent-Axia PureAir Home unit with a 500W heater, sold with an i-sells digital hygrometer accurate to 0.1 °C, under a five-year warranty. The brand row reads i-sells rather than Vent-Axia, because the seller assembles the pairing.",
+                "A 650 watt metal-bodied dehumidifier on wheels, listed at up to 30 litres a day with a humidistat, a 24-hour timer and a permanent drainage option, for warehouses, garages, basements and offices. Its listing says a 7 litre tank in one place and 30 in another; the card carries both.",
+                "A 267 watt unit with a 4.8 litre tank and an H13 HEPA filter, listed for 86 square metres at 40 dB — the quieter of the two dehumidifiers and the one aimed at occupied rooms. Its listing rates it at up to 14 litres a day; the 25L in its name is the model, not the figure.",
+                "A dual-purpose damp meter for wood and building materials with a backlit display and eight timber calibration scales, which its maker says gives an audio alert above 20% moisture in building materials. At 130 grams it is the instrument the guidance's moisture-meter check describes.",
+                "A WiFi and Bluetooth hygrometer with a Swiss-made sensor, ±0.3 °C accuracy per its maker, app alerts when a preset range is exceeded, and 20 days of online data storage with export. Where a meter gives a spot reading, this is the environmental monitor the guidance names alongside it.",
+              ][i]
+            }
+          </p>
+        </div>
+      ))}
+
+      {/* Alternatives */}
+      <h2 id="alternatives">If Equipment Is Not the Answer</h2>
+      <p>
+        <strong>Find the defect.</strong> The guidance&rsquo;s check list — damp
+        proof course, plaster, insulation, wall temperature, blocked or
+        switched-off ventilation — is a survey, not a shopping list.
+      </p>
+      <p>
+        <strong>Fix the extractor before adding a unit.</strong> The guidance
+        names damaged, blocked, absent or switched-off mechanical ventilation
+        among its internal checks, and humidity-controlled fans among the
+        remedies.
+      </p>
+      <p>
+        <strong>Treat the surface after the cause.</strong> Our{" "}
+        <a href="/best/damp-proof-paint-mould-treatment">mould treatment</a>{" "}
+        page covers sprays, primers and paints, and says the same thing about
+        order of work.
+      </p>
+
+      {/* Using them */}
+      <h2 id="using">Order of Work</h2>
+      <ol>
+        <li>
+          <strong>Take a reading first.</strong> A moisture meter or an
+          environmental monitor is the check the guidance names.
+        </li>
+        <li>
+          <strong>Investigate the cause within the timeframe.</strong> Ten
+          working days for a potential significant hazard, and 24 hours for an
+          emergency, on the guidance quoted above.
+        </li>
+        <li>
+          <strong>Fix the building fault.</strong> Ventilation, insulation and
+          defects come before an appliance, in the order the guidance sets out.
+        </li>
+        <li>
+          <strong>Install by the regulations.</strong> Loft PIV work is
+          controlled work; one listing here states hardwiring is required.
+        </li>
+        <li>
+          <strong>Read again afterwards.</strong> The same instrument that
+          justified the work is what shows whether it did anything.
+        </li>
+      </ol>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Eight Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        figure attributed to the maker where it is a claim. Where a listing does
+        not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Power, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Rated output, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>
+      {faqs.map((f) => (
+        <div key={f.q}>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
 
-      <h3>Does Awaab&apos;s Law apply to private landlords?</h3>
-      <p>
-        Not directly &mdash; Awaab&apos;s Law (Section 42 of the Social Housing
-        (Regulation) Act 2023) currently applies to registered providers of
-        social housing. However, private landlords are already subject to the
-        Homes (Fitness for Human Habitation) Act 2018 and HHSRS, both of which
-        cover damp and mould. The direction of travel is clear: the government
-        has signalled that similar requirements may be extended to the private
-        sector. Treating Awaab&apos;s Law standards as best practice now
-        demonstrates due diligence and puts you ahead of likely future
-        regulation.
-      </p>
-
-      <h3>Will a PIV unit definitely fix my mould problem?</h3>
-      <p>
-        PIV is highly effective against <strong>condensation damp</strong>,
-        which accounts for an estimated 80&ndash;90% of damp complaints in UK
-        rental properties. By continuously ventilating the property and keeping
-        humidity below 60%, PIV prevents mould growth at the source. However,
-        PIV will not fix rising damp (moisture wicking up through masonry) or
-        penetrating damp (water entering through structural defects). If your
-        property has structural damp issues, these must be repaired before or
-        alongside PIV installation. Use a damp meter to diagnose the type of
-        damp before choosing your treatment approach.
-      </p>
-
-      <h3>How long does a PIV unit take to work?</h3>
-      <p>
-        Most landlords and tenants notice a significant improvement within{" "}
-        <strong>2&ndash;4 weeks</strong> of installation. Humidity levels
-        typically drop to the target 45&ndash;55% range within the first week.
-        Existing mould stops spreading almost immediately once humidity falls
-        below 60%. However, established mould staining on walls and ceilings
-        needs to be physically cleaned &mdash; the PIV unit prevents new growth
-        but does not remove existing staining. For severely damp properties,
-        allow 4&ndash;8 weeks for the building fabric to dry out fully.
-      </p>
-
-      <h3>What humidity level should a rental property be at?</h3>
-      <p>
-        Aim for <strong>45&ndash;55% relative humidity</strong>. Below 40%
-        causes dry skin, irritated airways and static electricity. Above 60%
-        creates conditions for mould growth and attracts moisture-dependent
-        pests such as silverfish, mould mites and booklice. Above 70% is a
-        serious concern &mdash; mould will actively grow on most surfaces. A
-        digital hygrometer placed in the most affected room provides continuous
-        monitoring evidence.
-      </p>
-
-      <h3>Do I need an electrician to install a PIV unit?</h3>
-      <p>
-        Yes. PIV units require a permanent electrical connection, which must be
-        installed by a <strong>Part P registered electrician</strong> under
-        Building Regulations in England and Wales. The unit is mounted in the
-        loft with a diffuser cut into the ceiling. A competent electrician can
-        typically complete the installation in 2&ndash;3 hours. Total
-        installation cost including the electrician is typically
-        &pound;150&ndash;&pound;300 on top of the unit price. Some manufacturers
-        offer kits with detailed instructions specifically for the electrician.
-      </p>
-
-      {/* Closing CTA links */}
-      <p>
-        For more high-capacity dehumidifier options, see our full guide to{" "}
-        <Link
-          href="/best/commercial-dehumidifiers"
-          className="text-green-600 hover:underline"
-        >
-          commercial dehumidifiers
-        </Link>
-        . For the regulatory context behind this equipment, read our{" "}
-        <Link
-          href="/blog/awaabs-law-pest-control-landlords"
-          className="text-green-600 hover:underline"
-        >
-          full Awaab&apos;s Law guide for landlords
-        </Link>
-        . Also see our guide to{" "}
-        <Link
-          href="/best/damp-proof-paint-mould-treatment"
-          className="text-green-600 hover:underline"
-        >
-          damp-proof paint and mould treatment products
-        </Link>{" "}
-        for surface remediation once ventilation is in place. Understand your
-        full legal position with our guide to{" "}
-        <Link
-          href="/guides/landlord-pest-control-responsibilities"
-          className="text-green-600 hover:underline"
-        >
-          landlord pest control responsibilities in the UK
-        </Link>
-        .
-      </p>
-
-      {/* FindProviderCTA */}
-      <div className="not-prose">
-        <FindProviderCTA
-          heading="Damp or Mould Problem Beyond DIY?"
-          subtext="Compare damp remediation and pest control specialists near you — free, no-obligation quotes"
-        />
-      </div>
-
-      {/* Link buttons */}
-      <div className="not-prose mt-8 flex flex-col sm:flex-row gap-4">
-        <Link
-          href="/best/commercial-dehumidifiers"
-          className="inline-block text-center px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          Best Commercial Dehumidifiers UK 2026 &rarr;
-        </Link>
-        <Link
-          href="/guides/landlord-pest-control"
-          className="inline-block text-center px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-        >
-          Landlord Pest Control Responsibilities &rarr;
-        </Link>
-      </div>
+      <FindProviderCTA
+        heading="Damp you cannot trace to a cause?"
+        subtext="Compare damp and pest specialists near you — no fees, no commissions."
+      />
     </GuideLayout>
   );
 }

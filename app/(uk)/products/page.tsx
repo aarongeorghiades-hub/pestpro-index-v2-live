@@ -308,8 +308,7 @@ export default function ProductsPage() {
             {[
               { name: 'Pest Expert Formula C+ Spray 2 x 1L', asin: 'B076KQQT8F', note: 'Professional', desc: 'Professional strength spray. 12-week protection.' },
               { name: 'Pest Expert Formula P Powder 300g', asin: 'B010E2H2N6', note: 'Permethrin', desc: 'Permethrin powder. Puffer pack application.' },
-              { name: 'Zero In Bed Bug & Dust Mite Killer 300ml', asin: 'B00B2KP7U0', note: 'Fast-acting', desc: 'Fast-acting aerosol spray. Kills on contact.' },
-                { name: 'Utopia Bedding Mattress Encasement Double', asin: 'B07ZHF4FVK', desc: 'Waterproof mattress encasement. Traps bed bugs inside.' }
+                { name: 'Utopia Bedding Mattress Encasement, Single 90 x 190 cm', asin: 'B07ZHF4FVK', desc: 'Waterproof mattress encasement. Traps bed bugs inside.' }
             ].map((product, idx) => (
               <div key={idx} className="bg-white rounded-xl shadow-lg border-2 border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 p-6">
                 <h3 className="font-bold text-lg text-gray-900 mb-2">{product.name}</h3>

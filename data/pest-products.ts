@@ -97,12 +97,6 @@ export const topProductsByPest: Record<string, PestProduct[]> = {
       bestFor: 'Best Powder',
       features: ['Permethrin-based insecticidal powder', 'Puffer pack for precise application into cracks and crevices'],
     },
-    {
-      name: 'Zero In Bed Bug & Dust Mite Killer 300ml',
-      asin: 'B00B2KP7U0',
-      bestFor: 'Best Quick-Kill Spray',
-      features: ['Fast-acting aerosol spray kills on contact', 'Also effective against dust mites'],
-    },
   ],
   'cockroaches': [
     {
