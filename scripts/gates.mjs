@@ -180,6 +180,18 @@ const UK_CARD_RE = /https:\/\/www\.amazon\.co\.uk\/dp\/([A-Z0-9]{10})(?:\?tag=([
 const EITHER_CARD_RE =
   /https:\/\/www\.amazon\.(?:com|co\.uk)\/dp\/[A-Z0-9]{10}(?:\?tag=[a-z0-9-]+)?/g;
 
+// M34's THREE PATTERNS — S69 R4. DETECTION IS BY HOST, deliberately, because every
+// pattern above requires "/dp/" and therefore cannot see a link whose defect is that it
+// has no product path at all (Law 187).
+const AMAZON_ANY_LINK_RE = /https?:\/\/(?:[a-z0-9-]+\.)*amazon\.[a-z.]{2,8}\/[^"'\s<>)]*/g;
+// A product path: /dp/ or /gp/product/ or /gp/aw/d/, optionally behind a slug segment,
+// followed by a well-formed 10-character ASIN that does not run on into more characters.
+const AMAZON_PRODUCT_PATH_RE =
+  /amazon\.[a-z.]{2,8}\/(?:[^/"'\s?]+\/)?(?:dp|gp\/product|gp\/aw\/d)\/[A-Z0-9]{10}(?![A-Z0-9])/;
+// Search shapes, checked ONLY after product has been ruled out.
+const AMAZON_SEARCH_SHAPE_RE =
+  /amazon\.[a-z.]{2,8}\/(?:s[/?]|gp\/search|exec\/obidos\/search)|[?&](?:k|field-keywords|keywords)=/i;
+
 function toProse(raw, { markCards = false } = {}) {
   let b = raw;
   if (markCards) b = b.replace(new RegExp(EITHER_CARD_RE.source, 'g'), CARD_MARK);
@@ -1845,6 +1857,80 @@ const MATCHERS = [
       // A UK document with neither a card nor the statement. This is the CORRECT
       // state for a non-carding UK page — silence, not a denial — and it is what
       // 100 documents moved to at S64 R3.
+      '<p>The UK&rsquo;s neutral pest control directory</p>',
+    ],
+  },
+  {
+    id: 'M34',
+    kind: 'gate',
+    scope: 'document',
+    surface: 'full',
+    name: 'Every Amazon link is a direct product URL: no search, category or bare-host link',
+    // S69 R4. CLAUDE.md's content-honesty section has always said "Amazon affiliate
+    // links must be direct /dp/<ASIN>. A /s?k= search link is never permitted." NOTHING
+    // IN THIS FILE CHECKED IT until now, and the reason is a blind spot worth naming.
+    //
+    // EVERY OTHER AMAZON MATCHER IS ANCHORED ON "/dp/". US_CARD_RE, UK_CARD_RE and
+    // EITHER_CARD_RE all require that segment, so a search-shaped Amazon link matches
+    // NONE of them: it is invisible to M10 (tag), M19 (cross-contamination), M30 and
+    // M32 (counts) and M33 (disclosure agreement). A page could ship a bare
+    // /s?k=mouse+trap link carrying a perfectly valid affiliate tag and every existing
+    // check would report clean, because to all of them the link does not exist.
+    //
+    // THIS IS LAW 187 ONE LEVEL UP. That law says detection of a thing must never
+    // depend on an optional attribute of that thing, because a defect consisting of a
+    // missing attribute erases the thing from any detector built on it. Here the
+    // "attribute" is the product path itself. M34 therefore DETECTS BY HOST and
+    // classifies afterwards, which is the only ordering that can see the defect.
+    //
+    // CLASSIFICATION ORDER IS LOAD-BEARING, NOT INCIDENTAL. Product is decided FIRST:
+    // a URL carrying a /dp/ or /gp/product/ segment with a well-formed ASIN is a
+    // product link whatever query parameters follow it. Testing the search shapes
+    // first would flag any product URL that happened to carry a k= parameter, which is
+    // the false-positive class Law 170's corollary warns about.
+    //
+    // MEASURED BEFORE IT WAS WRITTEN (Law 44), over all 242 built documents on both
+    // estates: 738 amazon-host hrefs, 738 PRODUCT, 0 SEARCH, 0 OTHER, across exactly
+    // two hosts. The gate ships green and its failing state is proved by probe rather
+    // than by leaving a real route broken.
+    //
+    // WHY A GATE AND NOT AN INVENTORY (Law 167). A search link is a stated breach of a
+    // standing repo rule, so a real failing state exists and the check can fail. It is
+    // not a distribution to describe.
+    test: (t) => {
+      const out = [];
+      for (const m of all(AMAZON_ANY_LINK_RE, t)) {
+        const url = m[0];
+        if (AMAZON_PRODUCT_PATH_RE.test(url)) continue;
+        const kind = AMAZON_SEARCH_SHAPE_RE.test(url) ? 'SEARCH' : 'OTHER';
+        out.push(`${kind} Amazon link, not a product URL: ${url.slice(0, 120)}`);
+      }
+      return out;
+    },
+    probePos: [
+      // the defect named in CLAUDE.md, tagged so it would pass every tag check
+      '<a href="https://www.amazon.com/s?k=mouse+trap&tag=pestproindex2-20">buy</a>',
+      // the older search shape, and the UK host
+      '<a href="https://www.amazon.co.uk/s/ref=nb_sb_noss?field-keywords=rat+bait">buy</a>',
+      // a category or landing page rather than a product
+      '<a href="https://www.amazon.com/b/?node=3760901&tag=pestproindex2-20">shop</a>',
+      // bare host
+      '<a href="https://www.amazon.com/?tag=pestproindex2-20">Amazon</a>',
+      // A /dp/ SEGMENT WITH A MALFORMED ASIN IS NOT A PRODUCT LINK. This is the case
+      // a naive "contains /dp/" test would wave through.
+      '<a href="https://www.amazon.com/dp/NOTANASIN?tag=pestproindex2-20">buy</a>',
+    ],
+    probeNeg: [
+      // both estates' correct card links
+      '<a href="https://www.amazon.com/dp/B0BMNPPN65?tag=pestproindex2-20">buy</a>',
+      '<a href="https://www.amazon.co.uk/dp/B001CJ11ZQ?tag=pestproindex2-21">buy</a>',
+      // A PRODUCT URL CARRYING A k= PARAMETER IS STILL A PRODUCT URL. Without the
+      // product-first ordering this probe fires and the gate reports a false positive
+      // on a perfectly good link.
+      '<a href="https://www.amazon.com/dp/B0BMNPPN65?tag=pestproindex2-20&k=coyote">buy</a>',
+      // the long product form Amazon also serves
+      '<a href="https://www.amazon.com/Some-Product-Name/dp/B0BMNPPN65?tag=pestproindex2-20">buy</a>',
+      // a page with no Amazon link at all must be silent, not counted either way
       '<p>The UK&rsquo;s neutral pest control directory</p>',
     ],
   },
