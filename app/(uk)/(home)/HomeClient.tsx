@@ -88,12 +88,51 @@ export default function Home({
     animate();
   };
 
+  // EVERY VALUE BELOW IS COPIED FROM SOMEWHERE IT IS ALREADY PUBLISHED ON THIS
+  // SITE — S70 R1. Nothing here is new information about the company.
+  //   logo         /logo-header.png, the file <Navigation> already renders, at the
+  //                absolute URL components/ProviderJsonLd.tsx:18 already uses.
+  //                width/height are the file's real pixel dimensions, measured.
+  //   address      the postal address published on /privacy under "Who we are":
+  //                "61 Bridge Street, Kington, United Kingdom, HR5 3DJ".
+  //                addressCountry is the ISO 3166-1 code for the published
+  //                "United Kingdom"; it is an encoding of that string, not a
+  //                new fact.
+  //   contactPoint the only email address on the site, published on both
+  //                /contact and /privacy. contactType is a schema.org
+  //                enumeration label, not a claim the site makes about itself.
+  //
+  // sameAs IS DELIBERATELY ABSENT AND MUST NOT BE GUESSED. A host-anchored sweep
+  // of app/, components/, lib/ and data/ for twitter, x, facebook, instagram,
+  // linkedin, youtube, tiktok, trustpilot and Companies House URLs returns ZERO
+  // — the site publishes no external profile of itself anywhere, so there is no
+  // established value to copy. Constructing one from the company number would be
+  // inventing it. Referred to the PM rather than filled in.
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     'name': 'PestPro Index',
     'url': 'https://pestproindex.com',
     'description': 'The UK\'s neutral pest control and pest removal directory. Compare providers with transparent information. No lead fees or commissions.',
+    'logo': {
+      '@type': 'ImageObject',
+      'url': 'https://pestproindex.com/logo-header.png',
+      'width': 530,
+      'height': 174,
+    },
+    'address': {
+      '@type': 'PostalAddress',
+      'streetAddress': '61 Bridge Street',
+      'addressLocality': 'Kington',
+      'postalCode': 'HR5 3DJ',
+      'addressCountry': 'GB',
+    },
+    'contactPoint': {
+      '@type': 'ContactPoint',
+      'contactType': 'customer support',
+      'email': 'pestproindex@zohomail.eu',
+      'url': 'https://pestproindex.com/contact',
+    },
     'areaServed': [
       { '@type': 'City', 'name': 'London' },
       { '@type': 'City', 'name': 'Birmingham' },

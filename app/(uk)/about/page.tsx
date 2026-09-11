@@ -89,8 +89,17 @@ export default async function AboutPage() {
         <p className="text-gray-700 leading-relaxed mb-4">
           The directory is free to use and free to be listed in, so it isn&apos;t funded by providers. Instead, the site
           is partly supported by affiliate commissions on some of the pest control <em>products</em> we link to — for
-          example, products available through Amazon. When we recommend a product, our selection is based on its review
-          score and the volume of ratings it has received, not on whether it earns us a commission.
+          example, products available through Amazon. Which products we feature is decided before any of that, and on
+          different grounds: each product page sets out the situation you are actually dealing with, the legal position
+          that applies to it in the UK, what decides the choice between one product and another, and a comparison table
+          in which every column is what the product&apos;s own listing states — with the cell saying so where a listing
+          states nothing. It is never decided by whether a product earns us a commission.
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-4">
+          We do not test products, and we do not rank them by review score or star rating. The guidance around each
+          product is quoted from and linked to named public bodies — the Health and Safety Executive, GOV.UK, the NHS,
+          local authorities and university extension services — so you can open the source and check it yourself. Where
+          a claim cannot be traced to one of those or to the product&apos;s own listing, the page does not make it.
         </p>
         <p className="text-gray-700 leading-relaxed mb-4">
           Crucially, this product revenue is kept entirely separate from the directory. Affiliate relationships never
@@ -107,8 +116,10 @@ export default async function AboutPage() {
             Some of the product links on PestPro Index are affiliate links, including links to Amazon. If you buy a
             product through one of these links, we may earn a small commission — at <strong>no extra cost to you</strong>.
             Affiliate commissions help fund our independent research and keep the directory free to use. They do not
-            affect our recommendations: we feature products on the basis of their review score and rating volume, and
-            affiliate links never influence our provider listings or rankings.
+            affect our recommendations: products are chosen against sourced criteria — the legal position and the
+            guidance published by bodies such as the HSE, GOV.UK and the NHS, together with the specifications each
+            manufacturer states in its own listing — and affiliate links never influence our provider listings or
+            rankings.
           </p>
         </div>
 

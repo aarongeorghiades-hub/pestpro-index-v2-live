@@ -19,10 +19,30 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* S70 R1 — THIS RULE IS LAYERED, AND THAT IS THE FIX, NOT A TIDY-UP.
+   UNLAYERED CSS BEATS EVERY @layer REGARDLESS OF SPECIFICITY. While this block
+   sat outside @layer base it won over Tailwind v4's preflight unconditionally,
+   so `font-family: Arial, Helvetica, sans-serif` was the computed value on
+   <body> and on everything inheriting from it — measured on the live site, the
+   h1 painted at 613.58px, identical to a forced-Arial span and 44.26px narrower
+   than a forced-Geist one. THIS IS THE SAME FAULT ALREADY ON RECORD FOR
+   @tailwindcss/typography: an unlayered rule silently winning over the layered
+   one it was meant to cooperate with.
+
+   GEIST IS NAMED EXPLICITLY RATHER THAN LEFT TO THE PREFLIGHT. The preflight
+   only reaches <html>; naming the family here means the estate does not depend
+   on the whole theme chain resolving to get its own typeface.
+
+   THE var() CARRIES ITS OWN FALLBACK ON PURPOSE. An undefined custom property
+   in an unguarded var() makes the WHOLE declaration invalid at computed-value
+   time — the trailing Arial, Helvetica would not rescue it. `var(--font-geist-sans,
+   Arial)` degrades to exactly the previous behaviour instead of to nothing. */
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-geist-sans, Arial), Arial, Helvetica, sans-serif;
+  }
 }
 
 /* ── Guide & review article typography ── */

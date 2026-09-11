@@ -51,12 +51,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // THE FONT VARIABLES LIVE ON <html>, NOT <body> — S70 R1, AND THIS IS LOAD
+  // BEARING RATHER THAN TIDYING. Tailwind v4's preflight sets, inside
+  // @layer base, `:host, html { font-family: var(--default-font-family, ...) }`
+  // and globals.css maps `--default-font-family` to `var(--font-geist-sans)`
+  // through its @theme block. next/font defines --font-geist-sans on whatever
+  // element carries geistSans.variable. While that was <body>, the variable was
+  // OUT OF SCOPE at <html>, so --default-font-family resolved to nothing and the
+  // preflight fell through to its own ui-sans-serif/system-ui default.
+  //
+  // MEASURED ON THE LIVE SITE BEFORE THE FIX, not inferred from reading:
+  // --font-geist-sans was EMPTY at html and "Geist","Geist Fallback" at body,
+  // and html computed to ui-sans-serif. Geist could never have reached the page
+  // through the theme chain. That is a SECOND fault, independent of the
+  // unlayered Arial rule in globals.css, and fixing only the Arial rule would
+  // have landed the estate on system-ui while still never loading Geist.
   return (
-    <html lang="en">
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head></head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased">
         {children}
         <ConsentManager />
       </body>
