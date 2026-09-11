@@ -317,8 +317,8 @@ export default function BestCommercialFlyKillersPage() {
       breadcrumbSchema={breadcrumbSchema}
     >
       {/* Affiliate disclosure */}
-      <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        <p className="text-sm text-amber-800">
+      <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
+        <p className="text-sm text-[var(--color-ochre-deep)]">
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
@@ -329,10 +329,10 @@ export default function BestCommercialFlyKillersPage() {
 
       {/* Back to Commercial Hub */}
       <div className="not-prose my-8 p-6 bg-purple-50 border border-purple-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">
+        <p className="font-bold text-[var(--color-ink)] mb-2">
           Part of our Commercial Pest Control series
         </p>
-        <p className="text-gray-700 mb-3">
+        <p className="text-[var(--color-ink-soft)] mb-3">
           This is one of our commercial pest control equipment guides. Visit the
           hub for all commercial guides, sector-specific compliance resources,
           and more product guides.
@@ -341,7 +341,7 @@ export default function BestCommercialFlyKillersPage() {
           href="/guides/commercial-pest-control"
           className="inline-block px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm"
         >
-          Commercial Pest Control Hub &rarr;
+          Commercial Pest Control Hub
         </a>
       </div>
 
@@ -402,7 +402,7 @@ export default function BestCommercialFlyKillersPage() {
         guide:{" "}
         <Link
           href="/guides/restaurant-pest-control"
-          className="text-blue-600 hover:text-blue-800 underline"
+          className="text-[var(--color-teal-deep)] hover:text-[var(--color-teal-deep)] underline"
         >
           Restaurant Pest Control: Complete UK Guide
         </Link>
@@ -1188,7 +1188,7 @@ export default function BestCommercialFlyKillersPage() {
         restaurants and food businesses, read our guide:{" "}
         <Link
           href="/guides/restaurant-pest-control"
-          className="text-blue-600 hover:text-blue-800 underline"
+          className="text-[var(--color-teal-deep)] hover:text-[var(--color-teal-deep)] underline"
         >
           Restaurant Pest Control: Complete UK Guide
         </Link>
@@ -1213,7 +1213,7 @@ export default function BestCommercialFlyKillersPage() {
           href="/guides/commercial-pest-control"
           className="inline-block px-8 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg transition-colors"
         >
-          Find Commercial Pest Controllers &rarr;
+          Find Commercial Pest Controllers
         </a>
       </div>
 
@@ -1224,16 +1224,16 @@ export default function BestCommercialFlyKillersPage() {
         />
       </div>
 
-      <div className="not-prose mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl text-center">
-        <p className="text-gray-700 mb-3">
+      <div className="not-prose mt-8 p-6 bg-[var(--color-paper-sunk)] border border-[var(--color-rule)] rounded-xl text-center">
+        <p className="text-[var(--color-ink-soft)] mb-3">
           Running a restaurant or food business? Read our full pest compliance
           guide.
         </p>
         <a
           href="/guides/restaurant-pest-control"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+          className="inline-block px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
         >
-          Restaurant Pest Control: Complete UK Guide &rarr;
+          Restaurant Pest Control: Complete UK Guide
         </a>
       </div>
     </GuideLayout>

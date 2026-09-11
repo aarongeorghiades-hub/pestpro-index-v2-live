@@ -3,6 +3,7 @@ import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
+import DecisionBox from '@/components/DecisionBox';
 
 // S69 R3 — ROLLOUT REBUILD to the R69R1/R69R2 pattern, on sources. GROUP B.
 // THE LAST UNREBUILT ROUTE IN THE /best BACKLOG apart from /best/commercial-fly-killers,
@@ -311,8 +312,8 @@ export default function BestProfessionalBirdNettingKitsPage() {
       />
 
       {/* Affiliate disclosure */}
-      <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        <p className="text-sm text-amber-800">
+      <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
+        <p className="text-sm text-[var(--color-ochre-deep)]">
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
@@ -331,11 +332,7 @@ export default function BestProfessionalBirdNettingKitsPage() {
       {/* DECISION BLOCK — situation first, product second. The legal line and the
           does-not-work line sit ABOVE every product line. NOT a card: no Amazon link,
           no price, no image, no award. */}
-      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
-        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
-          Start with your situation
-        </p>
-        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+      <DecisionBox>
           <li>
             <strong>There may be a nest.</strong>{" "}
             <a href="#legal" className="underline">
@@ -373,8 +370,7 @@ export default function BestProfessionalBirdNettingKitsPage() {
             </a>{" "}
             are for that specific job and no other.
           </li>
-        </ul>
-      </div>
+        </DecisionBox>
 
       <div className="not-prose">
         <Callout type="warning">
@@ -644,7 +640,7 @@ export default function BestProfessionalBirdNettingKitsPage() {
       <div className="not-prose overflow-x-auto my-6">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-gray-50">
+            <tr className="bg-[var(--color-paper-sunk)]">
               <th className="text-left p-2 border-b font-semibold">Product</th>
               <th className="text-left p-2 border-b font-semibold">Type</th>
               <th className="text-left p-2 border-b font-semibold">Size and specification, as listed</th>

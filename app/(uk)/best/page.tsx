@@ -393,7 +393,7 @@ export default function BestProductsHubPage() {
       {/* Intro */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4">
-          <p className="text-lg text-gray-700 leading-relaxed">
+          <p className="text-lg text-[var(--color-ink-soft)] leading-relaxed">
             PestPro Index covers the pest control products available to UK
             homeowners, landlords and professionals. Each guide covers
             what&apos;s available, what works, safety considerations, and our
@@ -406,21 +406,21 @@ export default function BestProductsHubPage() {
 
       {/* Category Sections */}
       {categories.map((cat) => (
-        <section key={cat.heading} className="py-12 bg-gray-50 even:bg-white">
+        <section key={cat.heading} className="py-12 bg-[var(--color-paper-sunk)] even:bg-[var(--color-surface)]">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-8">
+            <h2 className="text-2xl md:text-3xl font-black text-[var(--color-ink)] mb-8">
               {cat.heading}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {cat.items.map((item) => (
                 <Link key={item.slug} href={`/best/${item.slug}`}>
-                  <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 h-full hover:-translate-y-1 cursor-pointer border border-gray-200">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 h-full hover:-translate-y-1 cursor-pointer border border-[var(--color-rule)]">
+                    <h3 className="text-lg font-bold text-[var(--color-ink)] mb-2">
                       {item.name}
                     </h3>
-                    <p className="text-gray-600 text-sm">{item.description}</p>
-                    <div className="mt-4 flex items-center text-blue-600 font-semibold text-sm">
-                      Read Guide →
+                    <p className="text-[var(--color-ink-soft)] text-sm">{item.description}</p>
+                    <div className="mt-4 flex items-center text-[var(--color-teal-deep)] font-semibold text-sm">
+                      Read guide
                     </div>
                   </div>
                 </Link>
@@ -436,22 +436,22 @@ export default function BestProductsHubPage() {
           <h2 className="text-3xl md:text-4xl font-black mb-6">
             Need a professional instead?
           </h2>
-          <p className="text-lg mb-10 text-blue-100">
+          <p className="text-lg mb-10 text-[var(--color-ink-soft)]">
             For serious infestations, our directory lists UK pest control
             providers — no lead fees, no commissions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/residential"
-              className="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all"
+              className="px-8 py-4 bg-white text-[var(--color-teal-deep)] font-bold rounded-xl hover:bg-[var(--color-teal-wash)] transition-all"
             >
-              Browse Residential Providers →
+              Browse residential providers
             </Link>
             <Link
               href="/commercial"
-              className="px-8 py-4 bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-600 transition-all border-2 border-white"
+              className="px-8 py-4 bg-[var(--color-teal)] text-white font-bold rounded-xl hover:bg-[var(--color-teal-deep)] transition-all border-2 border-white"
             >
-              Browse Commercial Providers →
+              Browse commercial providers
             </Link>
           </div>
         </div>

@@ -25,20 +25,20 @@ export default function AnnouncementBar({ routes }: { routes: string[] }) {
   if (dismissed) return null;
 
   return (
-    <div className="bg-green-700 text-white text-sm py-2 px-4 flex items-center justify-between gap-4">
+    <div className="flex items-center justify-between gap-4 bg-[var(--color-ink)] px-4 py-2 text-sm text-[var(--color-paper)]">
       <div className="flex items-center gap-2 flex-1 justify-center text-center">
         <span className="font-medium">🏠 Awaab&apos;s Law 2026:</span>
         <span className="hidden sm:inline">Landlords — act now on damp and mould.</span>
         <Link
           href="/best/awaabs-law-damp-mould-equipment"
-          className="underline font-semibold hover:text-green-100 whitespace-nowrap"
+          className="whitespace-nowrap font-semibold underline hover:text-[var(--color-ochre-edge)]"
         >
-          See the compliance equipment guide →
+          See the compliance equipment guide
         </Link>
       </div>
       <button
         onClick={() => setDismissed(true)}
-        className="flex-shrink-0 text-green-200 hover:text-white text-lg leading-none"
+        className="flex-shrink-0 text-lg leading-none text-[var(--color-paper)]/60 hover:text-[var(--color-paper)]"
         aria-label="Dismiss"
       >
         ×

@@ -61,7 +61,7 @@ export default function Navigation() {
           }
         }
       `}</style>
-      <nav ref={navRef} className="sticky top-0 z-50 nav-header bg-gradient-to-r from-[#050812] via-[#1e3a8a] to-[#050812] shadow-lg">
+      <nav ref={navRef} className="nav-header sticky top-0 z-50 bg-[var(--color-ink)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 logo-container bg-white rounded-lg p-2">
@@ -78,7 +78,7 @@ export default function Navigation() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="/"
-            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isHomeActive ? 'text-white' : 'text-white/70 hover:text-white'}`}
+            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isHomeActive ? 'text-[var(--color-paper)]' : 'text-[var(--color-paper)]/75 hover:text-[var(--color-paper)]'}`}
           >
             Home
           </Link>
@@ -87,15 +87,15 @@ export default function Navigation() {
           <div className="relative">
             <button
               onClick={() => { setIsFindProviderOpen(!isFindProviderOpen); setIsResourcesOpen(false); }}
-              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isFindProviderActive ? 'text-white' : 'text-white/70 hover:text-white'}`}
+              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isFindProviderActive ? 'text-[var(--color-paper)]' : 'text-[var(--color-paper)]/75 hover:text-[var(--color-paper)]'}`}
             >
               Find a Provider ▾
             </button>
 
             {isFindProviderOpen && (
-              <div className="absolute top-full mt-2 left-0 bg-gradient-to-b from-[#1e3a8a] to-[#050812] border border-white/20 rounded-xl shadow-lg min-w-[300px] max-h-[500px] overflow-y-auto z-50">
+              <div className="absolute top-full mt-2 left-0 bg-[var(--color-ink)] border border-[var(--color-paper)]/15 rounded-xl shadow-lg min-w-[300px] max-h-[500px] overflow-y-auto z-50">
                 {/* Browse by Region Section */}
-                <div className="px-4 py-3 text-white/60 text-xs font-semibold uppercase tracking-wider border-b border-white/10">
+                <div className="px-4 py-3 text-[var(--color-paper)]/60 text-xs font-semibold uppercase tracking-wider border-b border-[var(--color-paper)]/15">
                   Browse by Region
                 </div>
                 {regions.map((region) => (
@@ -103,21 +103,21 @@ export default function Navigation() {
                     <Link
                       key={region.href}
                       href={region.href}
-                      className="block px-6 py-3 text-white hover:bg-white/10 transition-colors border-b border-white/5"
+                      className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors border-b border-[var(--color-paper)]/15"
                       onClick={() => setIsFindProviderOpen(false)}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="text-white">{region.name}</span>
+                        <span className="text-[var(--color-paper)]">{region.name}</span>
                       </div>
                     </Link>
                   ) : (
                     <span
                       key={region.href}
-                      className="block px-6 py-3 text-white/40 cursor-default border-b border-white/5"
+                      className="block px-6 py-3 text-[var(--color-paper)]/60 cursor-default border-b border-[var(--color-paper)]/15"
                     >
                       <div className="flex items-center justify-between gap-3">
                         <span>{region.name}</span>
-                        <span className="text-xs px-2 py-0.5 bg-white/10 text-white/40 rounded font-semibold">
+                        <span className="text-xs px-2 py-0.5 bg-[var(--color-paper)]/10 text-[var(--color-paper)]/60 rounded font-semibold">
                           Soon
                         </span>
                       </div>
@@ -126,19 +126,19 @@ export default function Navigation() {
                 ))}
 
                 {/* Divider */}
-                <div className="border-t-2 border-white/20 my-2"></div>
+                <div className="border-t-2 border-[var(--color-paper)]/15 my-2"></div>
 
                 {/* Directory Links */}
                 <Link
                   href="/residential"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsFindProviderOpen(false)}
                 >
                   Residential Directory
                 </Link>
                 <Link
                   href="/commercial"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsFindProviderOpen(false)}
                 >
                   Commercial Directory
@@ -155,7 +155,7 @@ export default function Navigation() {
             <Link
               key={product.href}
               href={product.href}
-              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${pathname === product.href ? 'text-white' : 'text-white/70 hover:text-white'}`}
+              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${pathname === product.href ? 'text-[var(--color-paper)]' : 'text-[var(--color-paper)]/75 hover:text-[var(--color-paper)]'}`}
             >
               {product.label}
             </Link>
@@ -163,7 +163,7 @@ export default function Navigation() {
 
           <Link
             href="/professionals"
-            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isProfessionalsActive ? 'text-white' : 'text-white/70 hover:text-white'}`}
+            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isProfessionalsActive ? 'text-[var(--color-paper)]' : 'text-[var(--color-paper)]/75 hover:text-[var(--color-paper)]'}`}
           >
             For Professionals
           </Link>
@@ -172,7 +172,7 @@ export default function Navigation() {
           <div className="relative">
             <button
               onClick={() => { setIsResourcesOpen(!isResourcesOpen); setIsFindProviderOpen(false); }}
-              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isResourcesActive ? 'text-white' : 'text-white/70 hover:text-white'}`}
+              className={`px-4 py-2 font-semibold text-base transition-colors duration-200 flex items-center gap-1 ${isResourcesActive ? 'text-[var(--color-paper)]' : 'text-[var(--color-paper)]/75 hover:text-[var(--color-paper)]'}`}
             >
               Resources ▾
             </button>
@@ -187,340 +187,340 @@ export default function Navigation() {
               // edge clear of the fold at any viewport height. Desktop only:
               // the mobile menu is a separate block and already scrolls with
               // the page.
-              <div className="absolute top-full mt-2 left-0 bg-gradient-to-b from-[#1e3a8a] to-[#050812] border border-white/20 rounded-xl shadow-lg min-w-max z-50 max-h-[calc(100vh-11rem)] overflow-y-auto">
+              <div className="absolute top-full mt-2 left-0 bg-[var(--color-ink)] border border-[var(--color-paper)]/15 rounded-xl shadow-lg min-w-max z-50 max-h-[calc(100vh-11rem)] overflow-y-auto">
                 <Link
                   href="/pest-library"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Pest Guides
                 </Link>
                 <Link
                   href="/guides/pest-control-costs"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Pest Control Costs
                 </Link>
                 <Link
                   href="/blog"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Blog
                 </Link>
                 <Link
                   href="/frequently-asked-questions"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Pest Control FAQ
                 </Link>
                 <Link
                   href="/useful-links"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Useful Links
                 </Link>
-                <div className="border-t border-white/10 my-1"></div>
+                <div className="border-t border-[var(--color-paper)]/15 my-1"></div>
                 <Link
                   href="/guides"
-                  className="block px-6 py-3 text-white font-semibold hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] font-semibold hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   All Guides
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-rats"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Rat Control Guide
                 </Link>
                 <Link
                   href="/best/rat-traps"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Rat Traps
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-mice"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Mouse Control Guide
                 </Link>
                 <Link
                   href="/best/mouse-traps"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Mouse Traps
                 </Link>
                 <Link
                   href="/best/rodent-proofing"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Rodent Proofing
                 </Link>
                 <Link
                   href="/guides/wasp-nest-removal"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Wasp Nest Removal Guide
                 </Link>
                 <Link
                   href="/best/wasp-killers"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Wasp Killers
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-bed-bugs"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Bed Bug Guide
                 </Link>
                 <Link
                   href="/best/bed-bug-treatments"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Bed Bug Treatments
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-cockroaches"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Cockroach Guide
                 </Link>
                 <Link
                   href="/best/cockroach-killers"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Cockroach Killers
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-fleas"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Flea Control Guide
                 </Link>
                 <Link
                   href="/best/flea-treatments"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Flea Treatments
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-ants"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Ant Control Guide
                 </Link>
                 <Link
                   href="/best/ant-killers"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Ant Killers
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-squirrels"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Squirrel Control Guide
                 </Link>
                 <Link
                   href="/best/squirrel-deterrents"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Squirrel Deterrents
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-foxes"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Fox Control Guide
                 </Link>
                 <Link
                   href="/best/fox-deterrents"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Fox Deterrents
                 </Link>
                 <Link
                   href="/best/cat-deterrents"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Cat Deterrents
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-silverfish"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Silverfish Control Guide
                 </Link>
                 <Link
                   href="/best/silverfish-treatments"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Silverfish Treatments
                 </Link>
                 <Link
                   href="/guides/woodworm-treatment"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Woodworm Treatment Guide
                 </Link>
                 <Link
                   href="/best/woodworm-treatments"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Woodworm Treatments
                 </Link>
                 <Link
                   href="/guides/carpet-beetle-control"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Carpet Beetle Control Guide
                 </Link>
                 <Link
                   href="/best/carpet-beetle-treatments"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Carpet Beetle Treatments
                 </Link>
                 <Link
                   href="/best/spider-repellent"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Spider Repellent
                 </Link>
                 <Link
                   href="/guides/pigeon-control"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Pigeon Control Guide
                 </Link>
                 <Link
                   href="/best/bird-deterrents"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Bird Deterrents
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-moths"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Moth Control Guide
                 </Link>
                 <Link
                   href="/best/moth-killers"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Moth Killers
                 </Link>
                 <Link
                   href="/guides/commercial-pest-control"
-                  className="block px-6 py-3 text-white font-semibold hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] font-semibold hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Commercial Pest Control
                 </Link>
                 <Link
                   href="/guides/restaurant-pest-control"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Restaurant Pest Control
                 </Link>
                 <Link
                   href="/guides/warehouse-pest-management"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Warehouse Pest Management
                 </Link>
                 <Link
                   href="/best/commercial-fly-killers"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Commercial Fly Killers
                 </Link>
                 <Link
                   href="/best/commercial-rodent-bait-stations"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Commercial Bait Stations
                 </Link>
                 <Link
                   href="/guides/hotel-pest-control"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Hotel Pest Control
                 </Link>
                 <Link
                   href="/guides/office-pest-control"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Office Pest Control
                 </Link>
                 <Link
                   href="/guides/landlord-pest-control"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Landlord Pest Control
                 </Link>
                 <Link
                   href="/best/commercial-insect-monitors"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Commercial Insect Monitors
                 </Link>
                 <Link
                   href="/best/commercial-bird-proofing"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Best Commercial Bird Proofing
                 </Link>
                 <Link
                   href="/guides/pest-control-costs"
-                  className="block px-6 py-3 text-white hover:bg-white/10 transition-colors"
+                  className="block px-6 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 transition-colors"
                   onClick={() => setIsResourcesOpen(false)}
                 >
                   Pest Control Costs
@@ -531,7 +531,7 @@ export default function Navigation() {
 
           <Link
             href="/contact"
-            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isContactActive ? 'text-white' : 'text-white/70 hover:text-white'}`}
+            className={`px-4 py-2 font-semibold text-base transition-colors duration-200 ${isContactActive ? 'text-[var(--color-paper)]' : 'text-[var(--color-paper)]/75 hover:text-[var(--color-paper)]'}`}
           >
             Contact
           </Link>
@@ -540,7 +540,7 @@ export default function Navigation() {
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+          className="md:hidden p-2 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
           aria-label="Toggle menu"
         >
           {isOpen ? (
@@ -553,24 +553,24 @@ export default function Navigation() {
 
       {/* Mobile Navigation Menu */}
       {isOpen && (
-        <div className="md:hidden bg-gradient-to-b from-[#1e3a8a] to-[#050812] border-t border-white/10">
+        <div className="md:hidden bg-[var(--color-ink)] border-t border-[var(--color-paper)]/15">
           <div className="px-4 py-4 space-y-2">
             <Link
               href="/"
-              className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+              className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
 
             {/* Mobile Find a Provider Section */}
-            <div className="border-t border-white/10 mt-2 pt-2">
-              <div className="px-4 py-2 text-white/60 text-xs font-semibold uppercase tracking-wider">
+            <div className="border-t border-[var(--color-paper)]/15 mt-2 pt-2">
+              <div className="px-4 py-2 text-[var(--color-paper)]/60 text-xs font-semibold uppercase tracking-wider">
                 Find a Provider
               </div>
 
               {/* Browse by Region */}
-              <div className="px-4 py-2 text-white/50 text-xs font-light">
+              <div className="px-4 py-2 text-[var(--color-paper)]/60 text-xs font-light">
                 Browse by Region
               </div>
               {regions.map((region) => (
@@ -578,21 +578,21 @@ export default function Navigation() {
                   <Link
                     key={region.href}
                     href={region.href}
-                    className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                    className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     <div className="flex items-center">
-                      <span className="text-white">{region.name}</span>
+                      <span className="text-[var(--color-paper)]">{region.name}</span>
                     </div>
                   </Link>
                 ) : (
                   <span
                     key={region.href}
-                    className="block px-4 py-3 text-white/40 cursor-default rounded-lg"
+                    className="block px-4 py-3 text-[var(--color-paper)]/60 cursor-default rounded-lg"
                   >
                     <div className="flex items-center justify-between">
                       <span>{region.name}</span>
-                      <span className="text-xs px-2 py-0.5 bg-white/10 text-white/40 rounded font-semibold">
+                      <span className="text-xs px-2 py-0.5 bg-[var(--color-paper)]/10 text-[var(--color-paper)]/60 rounded font-semibold">
                         Soon
                       </span>
                     </div>
@@ -601,17 +601,17 @@ export default function Navigation() {
               ))}
 
               {/* Directory Links */}
-              <div className="border-t border-white/10 mt-2 pt-2">
+              <div className="border-t border-[var(--color-paper)]/15 mt-2 pt-2">
                 <Link
                   href="/residential"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Residential Directory
                 </Link>
                 <Link
                   href="/commercial"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Commercial Directory
@@ -620,15 +620,15 @@ export default function Navigation() {
             </div>
 
             {/* Mobile Pest Products Section */}
-            <div className="border-t border-white/10 mt-2 pt-2">
-              <div className="px-4 py-2 text-white/60 text-xs font-semibold uppercase tracking-wider">
+            <div className="border-t border-[var(--color-paper)]/15 mt-2 pt-2">
+              <div className="px-4 py-2 text-[var(--color-paper)]/60 text-xs font-semibold uppercase tracking-wider">
                 Pest Products
               </div>
               {pestProducts.map((product) => (
                 <Link
                   key={product.href}
                   href={product.href}
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {product.label}
@@ -638,350 +638,350 @@ export default function Navigation() {
 
             <Link
               href="/professionals"
-              className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+              className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
               onClick={() => setIsOpen(false)}
             >
               For Professionals
             </Link>
 
             {/* Mobile Resources Section */}
-            <div className="border-t border-white/10 mt-2 pt-2">
-              <div className="px-4 py-2 text-white/60 text-xs font-semibold uppercase tracking-wider">
+            <div className="border-t border-[var(--color-paper)]/15 mt-2 pt-2">
+              <div className="px-4 py-2 text-[var(--color-paper)]/60 text-xs font-semibold uppercase tracking-wider">
                 Resources
               </div>
               <Link
                 href="/pest-library"
-                className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Pest Guides
               </Link>
               <Link
                 href="/guides/pest-control-costs"
-                className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Pest Control Costs
               </Link>
               <Link
                 href="/blog"
-                className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Blog
               </Link>
               <Link
                 href="/frequently-asked-questions"
-                className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Pest Control FAQ
               </Link>
               <Link
                 href="/useful-links"
-                className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Useful Links
               </Link>
-              <div className="border-t border-white/10 mt-2 pt-2">
+              <div className="border-t border-[var(--color-paper)]/15 mt-2 pt-2">
                 <Link
                   href="/guides"
-                  className="block px-4 py-3 text-white font-semibold hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] font-semibold hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   All Guides
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-rats"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Rat Control Guide
                 </Link>
                 <Link
                   href="/best/rat-traps"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Rat Traps
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-mice"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Mouse Control Guide
                 </Link>
                 <Link
                   href="/best/mouse-traps"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Mouse Traps
                 </Link>
                 <Link
                   href="/best/rodent-proofing"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Rodent Proofing
                 </Link>
                 <Link
                   href="/guides/wasp-nest-removal"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Wasp Nest Removal Guide
                 </Link>
                 <Link
                   href="/best/wasp-killers"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Wasp Killers
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-bed-bugs"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Bed Bug Guide
                 </Link>
                 <Link
                   href="/best/bed-bug-treatments"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Bed Bug Treatments
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-cockroaches"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Cockroach Guide
                 </Link>
                 <Link
                   href="/best/cockroach-killers"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Cockroach Killers
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-fleas"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Flea Control Guide
                 </Link>
                 <Link
                   href="/best/flea-treatments"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Flea Treatments
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-ants"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Ant Control Guide
                 </Link>
                 <Link
                   href="/best/ant-killers"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Ant Killers
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-squirrels"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Squirrel Control Guide
                 </Link>
                 <Link
                   href="/best/squirrel-deterrents"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Squirrel Deterrents
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-foxes"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Fox Control Guide
                 </Link>
                 <Link
                   href="/best/fox-deterrents"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Fox Deterrents
                 </Link>
                 <Link
                   href="/best/cat-deterrents"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Cat Deterrents
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-silverfish"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Silverfish Control Guide
                 </Link>
                 <Link
                   href="/best/silverfish-treatments"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Silverfish Treatments
                 </Link>
                 <Link
                   href="/guides/woodworm-treatment"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Woodworm Treatment Guide
                 </Link>
                 <Link
                   href="/best/woodworm-treatments"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Woodworm Treatments
                 </Link>
                 <Link
                   href="/guides/carpet-beetle-control"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Carpet Beetle Control Guide
                 </Link>
                 <Link
                   href="/best/carpet-beetle-treatments"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Carpet Beetle Treatments
                 </Link>
                 <Link
                   href="/best/spider-repellent"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Spider Repellent
                 </Link>
                 <Link
                   href="/guides/pigeon-control"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Pigeon Control Guide
                 </Link>
                 <Link
                   href="/best/bird-deterrents"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Bird Deterrents
                 </Link>
                 <Link
                   href="/guides/how-to-get-rid-of-moths"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Moth Control Guide
                 </Link>
                 <Link
                   href="/best/moth-killers"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Moth Killers
                 </Link>
                 <Link
                   href="/guides/commercial-pest-control"
-                  className="block px-4 py-3 text-white font-semibold hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] font-semibold hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Commercial Pest Control
                 </Link>
                 <Link
                   href="/guides/restaurant-pest-control"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Restaurant Pest Control
                 </Link>
                 <Link
                   href="/guides/warehouse-pest-management"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Warehouse Pest Management
                 </Link>
                 <Link
                   href="/best/commercial-fly-killers"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Commercial Fly Killers
                 </Link>
                 <Link
                   href="/best/commercial-rodent-bait-stations"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Commercial Bait Stations
                 </Link>
                 <Link
                   href="/guides/hotel-pest-control"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Hotel Pest Control
                 </Link>
                 <Link
                   href="/guides/office-pest-control"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Office Pest Control
                 </Link>
                 <Link
                   href="/guides/landlord-pest-control"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Landlord Pest Control
                 </Link>
                 <Link
                   href="/best/commercial-insect-monitors"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Commercial Insect Monitors
                 </Link>
                 <Link
                   href="/best/commercial-bird-proofing"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Best Commercial Bird Proofing
                 </Link>
                 <Link
                   href="/guides/pest-control-costs"
-                  className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Pest Control Costs
@@ -991,7 +991,7 @@ export default function Navigation() {
 
             <Link
               href="/contact"
-              className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+              className="block px-4 py-3 text-[var(--color-paper)] hover:bg-[var(--color-paper)]/10 rounded-lg transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Contact

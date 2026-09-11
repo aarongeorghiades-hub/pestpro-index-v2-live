@@ -1,22 +1,107 @@
 @import "tailwindcss";
 
+/* ══════════════════════════════════════════════════════════════════════════
+   DESIGN TOKENS — S72 PILOT.  THE SINGLE SOURCE OF COLOUR ON THIS SITE.
+
+   Before this block there was no token system at all: `@theme` declared four
+   entries (two colours, two fonts) and every brand colour in the estate was an
+   inline hex literal or a Tailwind palette utility written per element, so the
+   same navy existed as #1e3a8a, #0f172a and #050812 in different files with
+   nothing tying them together.
+
+   These live in @theme (NOT @theme inline) so Tailwind emits BOTH a real CSS
+   custom property AND a matching utility class for each one — `bg-paper`,
+   `text-ink`, `border-rule`, `text-ochre` and so on. That is what makes this a
+   system rather than a second pile of literals: a consumer never needs the hex.
+
+   EACH VALUE IS CHOSEN AGAINST A NAMED ANTI-TARGET, because the brief rules out
+   specific well-worn combinations rather than just asking for nice colours.
+   ══════════════════════════════════════════════════════════════════════════ */
+@theme {
+  /* GROUND — cool paper-white.
+     ANTI-TARGET: #F4F1EA, the warm cream tell (R244 G241 B234 — red highest,
+     blue lowest, i.e. warm). Ours inverts that relationship: BLUE IS THE
+     HIGHEST CHANNEL on every ground tone below, so the paper reads cool-neutral
+     and never sepia. */
+  --color-paper: #f5f7f8; /* 245 247 248 — B > G > R */
+  --color-paper-sunk: #eceff2; /* recessed bands, still cool */
+  --color-surface: #ffffff; /* cards and panels sit ABOVE the paper */
+
+  /* INK — deep navy, not black and not a tinted near-black.
+     ANTI-TARGET: #0B0B0B / #111111, the near-black tell. Ours is unmistakably
+     a hue: blue is 25 points above red, and it is nowhere near 0. */
+  --color-ink: #1a2433; /* 26 36 51 */
+  --color-ink-soft: #47566b; /* body copy at length */
+  --color-ink-mute: #6d7c90; /* captions, meta, disabled */
+
+  /* PRIMARY ACCENT — muted ochre. Verdicts, CTAs, rank-1 emphasis.
+     ANTI-TARGET: #D97757, Anthropic terracotta (217 119 87). Ours is
+     B8863B (184 134 59): 33 points darker in red, and the red-to-blue spread
+     widens from 130 to 125 while the GREEN-to-BLUE spread moves from 32 to 75 —
+     that is the difference between an orange-red and a true yellow-brown. It is
+     not a neighbour of the tell; it is a different hue family. */
+  --color-ochre: #b8863b;
+  --color-ochre-deep: #8f6528; /* text on light, for contrast */
+  --color-ochre-wash: #f6efe1; /* fills */
+  --color-ochre-edge: #e3d0ab; /* hairlines */
+
+  /* SECONDARY ACCENT — muted teal-slate. Citations and sourcing ONLY, so the
+     reader learns that teal always means "this came from somewhere". */
+  --color-teal: #3e6b73;
+  --color-teal-deep: #2b4d53;
+  --color-teal-wash: #e8f0f1;
+  --color-teal-edge: #bcd3d6;
+
+  /* STRUCTURE */
+  --color-rule: #dde3e8; /* hairlines and table rules */
+  --color-rule-strong: #c3ccd6;
+
+  /* SEMANTIC — STATUS, NOT BRAND.
+     A warning must read as a warning; flattening it into the brand ochre would
+     make a safety notice indistinguishable from a verdict. These are the only
+     hues outside the brand pair, they are used ONLY by Callout, and each is
+     tuned to sit on paper at the same weight as the ochre and teal families so
+     a callout never shouts louder than the page. */
+  --color-warn: #b4442e; /* warning — a desaturated brick, not a signal red */
+  --color-warn-wash: #fbeeea;
+  --color-warn-edge: #e3b6aa;
+  --color-ok: #3f6b4a; /* tip — a muted moss */
+  --color-ok-wash: #ecf3ee;
+  --color-ok-edge: #bcd2c2;
+
+  /* TYPEFACE. Geist Sans is the ONLY typeface. Geist Mono is reserved for
+     genuine spec and measurement figures and is never used decoratively —
+     see .spec-figure below, which is its only consumer. */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* THE prefers-color-scheme: dark OVERRIDE IS DELIBERATELY GONE — S72 PILOT.
+   It set --background to #0a0a0a and --foreground to #ededed. It was INERT
+   before this round, and measurably so: at S69 R1, 1,709 text-bearing elements
+   across five templates were compared under emulated light and dark and ZERO
+   changed colour, because every section painted its own white ground over the
+   body and every text node carried an explicit colour.
+
+   IT WOULD NOT BE INERT NOW. The token system makes the body ground VISIBLE —
+   paper is the page, not something hidden behind full-bleed white sections — so
+   that override would turn the visible ground near-black under a dark OS
+   setting while every panel, card and text colour stayed light. The site
+   implements no dark theme, and declaring half of one is worse than declaring
+   none. `color-scheme: light` states the intent to the browser so form controls
+   and scrollbars match. */
+:root {
+  color-scheme: light;
 }
 
 /* S70 R1 — THIS RULE IS LAYERED, AND THAT IS THE FIX, NOT A TIDY-UP.
@@ -49,19 +134,19 @@
 @layer base {
   .guide-content {
     max-width: 48rem;
-    color: #1f2937;
+    color: var(--color-ink-soft);
   }
 
   .guide-content h2 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1e3a8a;
-    border-left: 4px solid #f59e0b;
+    color: var(--color-ink);
+    border-left: 3px solid var(--color-ochre);
     padding-left: 1rem;
     margin-top: 3.5rem;
     margin-bottom: 1.5rem;
     scroll-margin-top: 6rem;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--color-rule);
     padding-top: 2.5rem;
   }
 
@@ -79,28 +164,28 @@
   .guide-content h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #1e40af;
+    color: var(--color-ink);
     margin-top: 2.5rem;
     margin-bottom: 1rem;
     scroll-margin-top: 6rem;
   }
 
   .guide-content p {
-    color: #1f2937;
+    color: var(--color-ink-soft);
     font-size: 1rem;
     line-height: 1.75;
     margin-bottom: 1.25rem;
   }
 
   .guide-content ul {
-    color: #1f2937;
+    color: var(--color-ink-soft);
     margin-bottom: 1.25rem;
     margin-left: 1.5rem;
     list-style-type: disc;
   }
 
   .guide-content ol {
-    color: #1f2937;
+    color: var(--color-ink-soft);
     margin-bottom: 1.25rem;
     margin-left: 1.5rem;
     list-style-type: decimal;
@@ -108,16 +193,16 @@
 
   .guide-content li {
     margin-bottom: 0.5rem;
-    color: #1f2937;
+    color: var(--color-ink-soft);
     line-height: 1.625;
   }
 
   .guide-content li::marker {
-    color: #f59e0b;
+    color: var(--color-ochre);
   }
 
   .guide-content a {
-    color: #2563eb;
+    color: var(--color-teal-deep);
     text-decoration: none;
   }
 
@@ -126,15 +211,15 @@
   }
 
   .guide-content strong {
-    color: #030712;
+    color: var(--color-ink);
     font-weight: 700;
   }
 
   .guide-content blockquote {
-    border-left: 4px solid #3b82f6;
+    border-left: 3px solid var(--color-teal);
     padding-left: 1rem;
     font-style: italic;
-    color: #4b5563;
+    color: var(--color-ink-soft);
   }
 
   .guide-content table {
@@ -144,23 +229,26 @@
   }
 
   .guide-content th {
-    background: #f9fafb;
-    border: 1px solid #e5e7eb;
+    background: var(--color-paper-sunk);
+    border: 1px solid var(--color-rule);
     padding: 0.5rem 1rem;
     text-align: left;
     font-weight: 600;
-    color: #111827;
+    color: var(--color-ink);
   }
 
   .guide-content td {
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-rule);
     padding: 0.5rem 1rem;
-    color: #1f2937;
+    color: var(--color-ink-soft);
+    /* Lining, equal-width digits so a spec column aligns down the page. This is
+       a NUMERIC setting, not a typeface change — the table stays in Geist Sans. */
+    font-variant-numeric: tabular-nums lining-nums;
   }
 
   .guide-content hr {
     border: 0;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--color-rule);
     margin: 2.5rem 0;
   }
   /* S66 R7 — THE COLLAPSIBLE CONTENTS NAV.
@@ -247,5 +335,100 @@
     .footer-group > summary::after {
       content: none;
     }
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   S72 PILOT — CITATIONS AS VISIBLE EVIDENCE
+
+   The estate already carries 203 sourced citations across the 50 /best routes —
+   HSE 33, UC IPM 28, GOV.UK 18, NHS 12 and 22 further publishers — each written
+   as `(<a href={SRC.x} rel="nofollow">HSE</a>)`. They rendered as ordinary blue
+   links, indistinguishable from an internal nav link, so the site's real
+   sourcing was invisible to a reader.
+
+   THIS IS DONE IN THE SHARED STYLESHEET AND EDITS NO ROUTE FILE. The selector
+   is the shape the markup already has: an external anchor inside the article.
+   All 95 GuideLayout consumers inherit it at once, so it propagates on approval
+   rather than needing 50 hand edits.
+
+   THE INTERNAL-LINK EXCLUSION IS LOAD-BEARING. `[href^="http"]` alone would also
+   tag in-body links to our own pages, which are not citations. The rule requires
+   an external href AND rel~=nofollow, which is exactly how the sourced anchors
+   are written and how internal <Link>s are not.
+
+   :not([rel~="sponsored"]) IS ALSO LOAD-BEARING, AND IT WAS FOUND BY MEASURING
+   RATHER THAN BY READING THE SELECTOR. ProductCard's "Check price on Amazon"
+   button carries rel="sponsored nofollow noopener noreferrer" and renders INSIDE
+   .guide-content, so without this clause the buy button would have been styled
+   as a citation chip. Measured across /best source and ProductCard: 204 anchors
+   carry exactly rel="nofollow" and are all citations; exactly 1 carries
+   "sponsored" and it is the only Amazon link. The discriminator is exact in both
+   directions.
+   ══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  .guide-content a[rel~="nofollow"][href^="http"]:not([rel~="sponsored"]) {
+    display: inline;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding: 0.1em 0.42em 0.14em;
+    border: 1px solid var(--color-teal-edge);
+    border-radius: 0.25rem;
+    background: var(--color-teal-wash);
+    color: var(--color-teal-deep);
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      background-color 0.15s ease,
+      border-color 0.15s ease;
+  }
+
+  .guide-content a[rel~="nofollow"][href^="http"]:not([rel~="sponsored"]):hover {
+    background: var(--color-teal-edge);
+    border-color: var(--color-teal);
+    text-decoration: none;
+  }
+
+  /* THE PARENTHESES PROBLEM, SOLVED WITHOUT EDITING PROSE.
+     192 of the 203 citations sit inside literal "(" ")" characters written into
+     the sentence, so a bordered chip would render as "( HSE )" — the brackets
+     fighting the tag. Those characters are TEXT NODES in the paragraph and no
+     selector can reach them.
+
+     So the chip does the hiding itself: a negative margin pulls it over the
+     bracket on each side, and an opaque background paints it out. The brackets
+     remain in the DOM, in the accessibility tree and in the copied text — the
+     sentence is unchanged, and NO CONTENT WAS EDITED TO SUIT A VISUAL. Only the
+     rendering absorbs them.
+
+     0.34em is derived, not guessed: it is the advance width of "(" in Geist at
+     the 0.8em chip size, measured in the browser rather than estimated. */
+  .guide-content a[rel~="nofollow"][href^="http"]:not([rel~="sponsored"]) {
+    margin-left: -0.34em;
+    margin-right: -0.34em;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   S72 PILOT — SPEC FIGURES.  THE ONLY CONSUMER OF GEIST MONO ON THE SITE.
+
+   Geist Mono is reserved for genuine measured quantities — a weight, a
+   concentration, a dimension, a count taken from a product listing. It is never
+   a decorative label font, never an eyebrow, never a category tag. If a string
+   is not a number with a unit, it does not get this class.
+   ══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+  .spec-figure {
+    font-family: var(--font-geist-mono, ui-monospace), ui-monospace, monospace;
+    font-variant-numeric: tabular-nums lining-nums;
+    font-size: 0.92em;
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
   }
 }

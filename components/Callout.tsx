@@ -6,35 +6,35 @@ interface CalloutProps {
 const config = {
   warning: {
     icon: '⚠️',
-    bg: 'bg-red-50',
-    border: 'border-l-4 border-red-500',
+    bg: 'bg-[var(--color-warn-wash)]',
+    border: 'border-l-4 border-[var(--color-warn)]',
     title: 'Warning',
-    titleColor: 'text-red-800',
-    textColor: 'text-red-700',
+    titleColor: 'text-[var(--color-warn)]',
+    textColor: 'text-[var(--color-ink-soft)]',
   },
   tip: {
     icon: '💡',
-    bg: 'bg-emerald-50',
-    border: 'border-l-4 border-emerald-500',
+    bg: 'bg-[var(--color-ok-wash)]',
+    border: 'border-l-4 border-[var(--color-ok)]',
     title: 'Pro Tip',
-    titleColor: 'text-emerald-800',
-    textColor: 'text-emerald-700',
+    titleColor: 'text-[var(--color-ok)]',
+    textColor: 'text-[var(--color-ink-soft)]',
   },
   info: {
     icon: '📊',
-    bg: 'bg-blue-50',
-    border: 'border-l-4 border-blue-500',
+    bg: 'bg-[var(--color-teal-wash)]',
+    border: 'border-l-4 border-[var(--color-teal)]',
     title: 'Did You Know?',
-    titleColor: 'text-blue-800',
-    textColor: 'text-blue-700',
+    titleColor: 'text-[var(--color-teal-deep)]',
+    textColor: 'text-[var(--color-ink-soft)]',
   },
   cost: {
     icon: '💰',
-    bg: 'bg-amber-50',
-    border: 'border-l-4 border-amber-500',
+    bg: 'bg-[var(--color-ochre-wash)]',
+    border: 'border-l-4 border-[var(--color-ochre)]',
     title: 'Cost Guide',
-    titleColor: 'text-amber-800',
-    textColor: 'text-amber-700',
+    titleColor: 'text-[var(--color-ochre-deep)]',
+    textColor: 'text-[var(--color-ink-soft)]',
   },
 };
 
@@ -60,9 +60,9 @@ interface StatCalloutProps {
 
 export function StatCallout({ value, label }: StatCalloutProps) {
   return (
-    <div className="my-8 py-6 px-8 bg-gradient-to-r from-blue-50 to-amber-50 rounded-2xl border border-blue-100 text-center">
-      <div className="text-4xl md:text-5xl font-black text-amber-600 mb-2">{value}</div>
-      <div className="text-gray-700 font-medium">{label}</div>
+    <div className="my-8 rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] px-8 py-6 text-center">
+      <div className="spec-figure mb-2 text-4xl font-black text-[var(--color-ink)] md:text-5xl">{value}</div>
+      <div className="font-medium text-[var(--color-ink-soft)]">{label}</div>
     </div>
   );
 }

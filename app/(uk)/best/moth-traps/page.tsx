@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
+import DecisionBox from '@/components/DecisionBox';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -335,8 +336,8 @@ export default function BestMothTrapsPage() {
       breadcrumbSchema={breadcrumbSchema}
     >
       {/* Affiliate disclosure */}
-      <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        <p className="text-sm text-amber-800">
+      <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
+        <p className="text-sm text-[var(--color-ochre-deep)]">
           <strong>Affiliate disclosure:</strong> PestPro Index is
           reader-supported. When you buy through links on this page, we may earn
           a small commission at no extra cost to you. This helps us keep the
@@ -354,11 +355,7 @@ export default function BestMothTrapsPage() {
       {/* DECISION BLOCK — situation first, product second, every line.
           NOT a card: no Amazon link, no price, no image, no award. It sits above
           the first h2 so a reader meets their own situation before a product. */}
-      <div className="not-prose my-6 rounded-xl border border-slate-300 bg-slate-50 p-4">
-        <p className="m-0 mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600">
-          Start with your situation
-        </p>
-        <ul className="m-0 list-none space-y-2 p-0 text-sm text-slate-800">
+      <DecisionBox>
           <li>
             <strong>You still have old-style mothballs in a cupboard.</strong>{" "}
             Naphthalene mothballs are banned from sale here —{" "}
@@ -416,8 +413,7 @@ export default function BestMothTrapsPage() {
             </a>
             .
           </li>
-        </ul>
-      </div>
+        </DecisionBox>
 
       {/* [0] Situation */}
       <h2 id="which-moth">Which Moth Have You Got?</h2>
@@ -701,7 +697,7 @@ export default function BestMothTrapsPage() {
       <div className="not-prose overflow-x-auto my-6">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-gray-50">
+            <tr className="bg-[var(--color-paper-sunk)]">
               <th className="text-left p-2 border-b font-semibold">Product</th>
               <th className="text-left p-2 border-b font-semibold">Award</th>
               <th className="text-left p-2 border-b font-semibold">
