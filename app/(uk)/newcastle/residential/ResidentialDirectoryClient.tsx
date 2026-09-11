@@ -261,7 +261,7 @@ export default function ResidentialDirectoryClient({ initialProviders }: { initi
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-blue-600 text-xl mt-1">✓</span>
-                  <p className="text-gray-700">We have curated the most popular products by average review score and number of ratings</p>
+                  <p className="text-gray-700">We choose products against sourced criteria — the legal position and the specifications each manufacturer states in its own listing</p>
                 </div>
               </div>
 
