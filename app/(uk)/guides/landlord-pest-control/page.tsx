@@ -230,14 +230,14 @@ export default function LandlordPestControlPage() {
       />
 
       {/* Back to Commercial Hub */}
-      <div className="not-prose my-8 p-6 bg-purple-50 border border-purple-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Part of our Commercial Pest Control series</p>
-        <p className="text-gray-700 mb-3">This guide is one of our sector-specific commercial pest control resources. Visit the hub for all commercial guides, equipment recommendations, and compliance information.</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-ochre-wash)] border border-[var(--color-ochre-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Part of our Commercial Pest Control series</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">This guide is one of our sector-specific commercial pest control resources. Visit the hub for all commercial guides, equipment recommendations, and compliance information.</p>
         <a
           href="/guides/commercial-pest-control"
-          className="inline-block px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm"
+          className="inline-block px-6 py-2.5 bg-[var(--color-ochre)] hover:bg-[var(--color-ochre-deep)] text-white font-bold rounded-lg transition-colors text-sm"
         >
-          Commercial Pest Control Hub &rarr;
+          Commercial Pest Control Hub
         </a>
       </div>
 
@@ -391,13 +391,13 @@ export default function LandlordPestControlPage() {
         Rodent complaints are the <strong>most common pest issue reported to local authorities</strong> by tenants of rented properties. The <strong>house mouse</strong> (<em>Mus domesticus</em>) can enter through a gap as small as 6 millimetres, and the <strong>brown rat</strong> (<em>Rattus norvegicus</em>) through a gap of 25 millimetres. In rental properties, the most common entry routes are gaps around pipe runs (particularly under kitchen and bathroom sinks), damaged or missing airbricks, gaps beneath external doors, and defective drains. For persistent rat problems that recur after treatment, a <strong>CCTV drain survey</strong> is often the key to identifying the root cause &mdash; broken drains or missing interceptor traps allow rats direct access from the sewer system into the building. Drain repairs are the landlord&apos;s responsibility.
       </p>
 
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Dealing with rodents in a rental property?</p>
-        <p className="text-gray-700 mb-3">Our comprehensive guides cover identification, treatment, proofing, and when to call a professional.</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Dealing with rodents in a rental property?</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">Our comprehensive guides cover identification, treatment, proofing, and when to call a professional.</p>
         <div className="flex flex-wrap gap-3">
-          <a href="/guides/how-to-get-rid-of-rats" className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm">Rat Control Guide &rarr;</a>
-          <a href="/guides/how-to-get-rid-of-mice" className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm">Mouse Control Guide &rarr;</a>
-          <a href="/best/commercial-rodent-bait-stations" className="inline-block px-5 py-2 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-lg transition-colors text-sm">Best Bait Stations &rarr;</a>
+          <a href="/guides/how-to-get-rid-of-rats" className="inline-block px-5 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm">Rat Control Guide</a>
+          <a href="/guides/how-to-get-rid-of-mice" className="inline-block px-5 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm">Mouse Control Guide</a>
+          <a href="/best/commercial-rodent-bait-stations" className="inline-block px-5 py-2 bg-[var(--color-ochre)] hover:bg-[var(--color-ochre-deep)] text-white font-bold rounded-lg transition-colors text-sm">Best Bait Stations</a>
         </div>
       </div>
 
@@ -406,25 +406,25 @@ export default function LandlordPestControlPage() {
         Bed bugs (<em>Cimex lectularius</em>) are an <strong>increasingly common problem</strong> in UK rental properties, particularly in HMOs, furnished lets, and properties in urban areas with high population turnover. Bed bugs are usually introduced by tenants &mdash; brought home from travel, from infested second-hand furniture, or from a previous infested property. While the initial introduction is typically the tenant&apos;s responsibility, the situation is more complex in practice. Between tenancies, the landlord should always inspect and treat for bed bugs in furnished properties &mdash; failing to do so and allowing a new tenant to move into an infested property creates immediate liability. In HMOs, bed bugs can spread between rooms, making it impossible to attribute responsibility to a single tenant. Professional <strong>heat treatment</strong> is often the most effective approach, typically costing &pound;300 to &pound;800 per room.
       </p>
 
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Need help with bed bugs in a rental property?</p>
-        <p className="text-gray-700 mb-3">Our bed bug guide covers signs, treatment options (including professional heat treatment), and prevention for landlords.</p>
-        <a href="/guides/how-to-get-rid-of-bed-bugs" className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm">Bed Bug Guide &rarr;</a>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Need help with bed bugs in a rental property?</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">Our bed bug guide covers signs, treatment options (including professional heat treatment), and prevention for landlords.</p>
+        <a href="/guides/how-to-get-rid-of-bed-bugs" className="inline-block px-5 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm">Bed Bug Guide</a>
       </div>
 
       <h3>Cockroaches</h3>
       <p>
-        The <strong>German cockroach</strong> (<em>Blattella germanica</em>) is the most common cockroach species in UK rental properties, particularly in HMOs with shared kitchens. German cockroaches thrive in warm, humid environments near food and water sources. In multi-unit buildings, they spread rapidly between units via shared service risers, pipework, and ductwork. Individual unit treatment is often futile &mdash; a <strong>coordinated block-wide treatment</strong> covering all affected units simultaneously is the only effective approach. This coordination is the landlord&apos;s responsibility. The <strong>Oriental cockroach</strong> (<em>Blatta orientalis</em>) is also found in rental properties, typically in basements, ground-floor flats, and properties with damp problems. See our <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">cockroach control guide</Link> for detailed treatment information.
+        The <strong>German cockroach</strong> (<em>Blattella germanica</em>) is the most common cockroach species in UK rental properties, particularly in HMOs with shared kitchens. German cockroaches thrive in warm, humid environments near food and water sources. In multi-unit buildings, they spread rapidly between units via shared service risers, pipework, and ductwork. Individual unit treatment is often futile &mdash; a <strong>coordinated block-wide treatment</strong> covering all affected units simultaneously is the only effective approach. This coordination is the landlord&apos;s responsibility. The <strong>Oriental cockroach</strong> (<em>Blatta orientalis</em>) is also found in rental properties, typically in basements, ground-floor flats, and properties with damp problems. See our <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-[var(--color-teal-deep)] hover:underline font-medium">cockroach control guide</Link> for detailed treatment information.
       </p>
 
       <h3>Fleas</h3>
       <p>
-        Flea infestations in rental properties are almost always caused by <strong>tenants&apos; pets</strong>, making it primarily a tenant responsibility during the tenancy. However, between tenancies, the landlord is responsible for treating flea infestations in furnished or carpeted properties before the next tenant moves in. Cat fleas (<em>Ctenocephalides felis</em>) can survive in pupal form for months in empty properties, emerging when triggered by vibration and warmth from a new occupant. A professional flea treatment during the void period is essential for any property where the previous tenant had pets. See our <Link href="/guides/how-to-get-rid-of-fleas" className="text-blue-600 hover:underline font-medium">flea control guide</Link> for treatment details.
+        Flea infestations in rental properties are almost always caused by <strong>tenants&apos; pets</strong>, making it primarily a tenant responsibility during the tenancy. However, between tenancies, the landlord is responsible for treating flea infestations in furnished or carpeted properties before the next tenant moves in. Cat fleas (<em>Ctenocephalides felis</em>) can survive in pupal form for months in empty properties, emerging when triggered by vibration and warmth from a new occupant. A professional flea treatment during the void period is essential for any property where the previous tenant had pets. See our <Link href="/guides/how-to-get-rid-of-fleas" className="text-[var(--color-teal-deep)] hover:underline font-medium">flea control guide</Link> for treatment details.
       </p>
 
       <h3>Birds and Pigeons</h3>
       <p>
-        <strong>Feral pigeons</strong> nesting on roofs, ledges, windowsills, and balconies are the landlord&apos;s responsibility because the roosting and nesting sites are structural. Pigeon guano is acidic and causes damage to building fabric, blocks gutters, and poses a health risk (carrying <em>Salmonella</em>, psittacosis, and <em>Cryptococcus</em>). Bird proofing measures &mdash; netting, spike strips, wire systems &mdash; are a capital expense that falls on the landlord. Our <Link href="/guides/pigeon-control" className="text-blue-600 hover:underline font-medium">pigeon control guide</Link> covers the available proofing options.
+        <strong>Feral pigeons</strong> nesting on roofs, ledges, windowsills, and balconies are the landlord&apos;s responsibility because the roosting and nesting sites are structural. Pigeon guano is acidic and causes damage to building fabric, blocks gutters, and poses a health risk (carrying <em>Salmonella</em>, psittacosis, and <em>Cryptococcus</em>). Bird proofing measures &mdash; netting, spike strips, wire systems &mdash; are a capital expense that falls on the landlord. Our <Link href="/guides/pigeon-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">pigeon control guide</Link> covers the available proofing options.
       </p>
 
       <h3>Wasps</h3>
@@ -434,7 +434,7 @@ export default function LandlordPestControlPage() {
 
       <h3>Moths</h3>
       <p>
-        <strong>Carpet moths</strong> (<em>Tineola bisselliella</em>) are an increasing problem in furnished rental properties. The larvae feed on natural fibres &mdash; wool carpets, curtains, upholstered furniture, and clothing. In furnished lets where the landlord owns the carpets and furnishings, moth damage can cost <strong>thousands of pounds</strong> to remediate, with full carpet replacement sometimes required. Regular inspection and early treatment are essential. Professional moth treatment using residual insecticides typically costs &pound;150 to &pound;400 per room. See our <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline font-medium">moth control guide</Link> for detailed advice.
+        <strong>Carpet moths</strong> (<em>Tineola bisselliella</em>) are an increasing problem in furnished rental properties. The larvae feed on natural fibres &mdash; wool carpets, curtains, upholstered furniture, and clothing. In furnished lets where the landlord owns the carpets and furnishings, moth damage can cost <strong>thousands of pounds</strong> to remediate, with full carpet replacement sometimes required. Regular inspection and early treatment are essential. Professional moth treatment using residual insecticides typically costs &pound;150 to &pound;400 per room. See our <Link href="/guides/how-to-get-rid-of-moths" className="text-[var(--color-teal-deep)] hover:underline font-medium">moth control guide</Link> for detailed advice.
       </p>
 
       <div className="not-prose">
@@ -654,9 +654,9 @@ export default function LandlordPestControlPage() {
         <li><strong>Booklice (psocids)</strong> are the <strong>number one indicator</strong> of a damp problem. These tiny (1 to 2mm) insects feed on mould spores and are almost always present where humidity is too high. Finding booklice means humidity is above 60&ndash;70% and conditions are ripe for mould growth.</li>
         <li><strong>Mould mites</strong> feed directly on mould and can be present in enormous numbers wherever mould is established. They are too small to see individually but appear as a fine, moving dust on affected surfaces.</li>
         <li><strong>Silverfish</strong> thrive in damp bathrooms, kitchens, and behind wallpaper where condensation forms. They feed on starch, including wallpaper paste, book bindings, and damp cardboard.</li>
-        <li><strong>German cockroaches</strong> (<em>Blattella germanica</em>) are attracted to warm, humid environments and are commonly found in damp kitchens. Condensation behind kitchen units creates ideal harbourage conditions. See our <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">cockroach control guide</Link>.</li>
+        <li><strong>German cockroaches</strong> (<em>Blattella germanica</em>) are attracted to warm, humid environments and are commonly found in damp kitchens. Condensation behind kitchen units creates ideal harbourage conditions. See our <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-[var(--color-teal-deep)] hover:underline font-medium">cockroach control guide</Link>.</li>
         <li><strong>Woodworm</strong> (furniture beetle larvae) are attracted to damp timber. In rental properties with rising damp or penetrating damp, the moisture content of structural timbers can reach levels that attract woodworm, causing <strong>serious structural damage</strong>.</li>
-        <li><strong>Carpet beetles</strong> and <strong>carpet moths</strong> thrive in humid conditions. Damp carpets in furnished lets are particularly vulnerable. See our <Link href="/guides/carpet-beetle-control" className="text-blue-600 hover:underline font-medium">carpet beetle control guide</Link> and <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline font-medium">moth control guide</Link>.</li>
+        <li><strong>Carpet beetles</strong> and <strong>carpet moths</strong> thrive in humid conditions. Damp carpets in furnished lets are particularly vulnerable. See our <Link href="/guides/carpet-beetle-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">carpet beetle control guide</Link> and <Link href="/guides/how-to-get-rid-of-moths" className="text-[var(--color-teal-deep)] hover:underline font-medium">moth control guide</Link>.</li>
       </ul>
 
       <p>
@@ -697,7 +697,7 @@ export default function LandlordPestControlPage() {
       </Callout>
 
       <Callout type="tip">
-        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-blue-600 hover:underline font-medium">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
+        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-[var(--color-teal-deep)] hover:underline font-medium">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
       </Callout>
 
             <h3>Recommended Products for Landlords</h3>
@@ -763,7 +763,7 @@ export default function LandlordPestControlPage() {
         />
       </div>
 
-      <p className="text-xs text-gray-400 italic">
+      <p className="text-xs text-[var(--color-ink-mute)] italic">
         As an Amazon Associate, PestPro Index earns from qualifying purchases. Product prices are approximate and may vary.
       </p>
 
@@ -783,14 +783,14 @@ export default function LandlordPestControlPage() {
       </p>
 
       {/* Directory CTA */}
-      <div className="not-prose my-8 p-8 bg-gradient-to-br from-teal-50 to-emerald-50 border-2 border-teal-300 rounded-2xl">
-        <h3 className="text-2xl font-bold text-teal-900 mb-3">Need a Professional Pest Management Contract?</h3>
-        <p className="text-teal-800 mb-6 leading-relaxed">Whether you manage a single buy-to-let or a portfolio of HMOs, a professional pest management contract with a BPCA or NPTA accredited provider protects your properties, your tenants, and your legal position. Compare providers in your area.</p>
+      <div className="not-prose my-8 p-8 bg-gradient-to-br from-[var(--color-teal-wash)] to-[var(--color-ok-wash)] border-2 border-[var(--color-teal-edge)] rounded-2xl">
+        <h3 className="text-2xl font-bold text-[var(--color-ink)] mb-3">Need a Professional Pest Management Contract?</h3>
+        <p className="text-[var(--color-teal-deep)] mb-6 leading-relaxed">Whether you manage a single buy-to-let or a portfolio of HMOs, a professional pest management contract with a BPCA or NPTA accredited provider protects your properties, your tenants, and your legal position. Compare providers in your area.</p>
         <a
           href="/guides/commercial-pest-control"
-          className="inline-block px-8 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg transition-colors"
+          className="inline-block px-8 py-3 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors"
         >
-          Find Commercial Pest Controllers &rarr;
+          Find Commercial Pest Controllers
         </a>
       </div>
 
@@ -802,80 +802,80 @@ export default function LandlordPestControlPage() {
       </div>
 
       <div className="not-prose my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Link href="/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">London</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">London</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/birmingham/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Birmingham</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/birmingham/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Birmingham</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/manchester/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Manchester</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/manchester/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Manchester</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/liverpool/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Liverpool</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/liverpool/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Liverpool</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/leeds/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Leeds</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/leeds/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Leeds</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/nottingham/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Nottingham</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/nottingham/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Nottingham</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/brighton/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Brighton</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/brighton/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Brighton</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/sheffield/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Sheffield</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/sheffield/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Sheffield</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/bristol/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Bristol</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/bristol/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Bristol</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/glasgow/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Glasgow</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/glasgow/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Glasgow</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/bradford/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Bradford</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/bradford/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Bradford</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/newcastle/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Newcastle</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/newcastle/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Newcastle</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/cardiff/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Cardiff</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/cardiff/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Cardiff</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/edinburgh/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Edinburgh</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/edinburgh/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Edinburgh</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/leicester/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Leicester</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/leicester/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Leicester</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/hampshire/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Hampshire</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/hampshire/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Hampshire</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/coventry/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Coventry</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/coventry/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Coventry</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/belfast/residential" className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group">
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Belfast</span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+        <Link href="/belfast/residential" className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">Belfast</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
-        <Link href="/pest-control/regions" className="block p-5 bg-blue-50 border border-blue-200 rounded-xl hover:shadow-md hover:border-blue-400 transition-all group sm:col-span-2 lg:col-span-3">
-          <span className="font-bold text-blue-700 group-hover:text-blue-800 transition-colors">Browse all 18 locations &rarr;</span>
+        <Link href="/pest-control/regions" className="block p-5 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group sm:col-span-2 lg:col-span-3">
+          <span className="font-bold text-[var(--color-teal-deep)] group-hover:text-[var(--color-teal-deep)] transition-colors">Browse all 18 locations</span>
         </Link>
       </div>
 
@@ -935,7 +935,7 @@ export default function LandlordPestControlPage() {
       </p>
 
       <p>
-        For further reading, see our guides on <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline font-medium">how to get rid of bed bugs</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">how to get rid of cockroaches</Link>, <Link href="/guides/how-to-get-rid-of-fleas" className="text-blue-600 hover:underline font-medium">how to get rid of fleas</Link>, <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline font-medium">how to get rid of moths</Link>, <Link href="/guides/pigeon-control" className="text-blue-600 hover:underline font-medium">pigeon control</Link>, and <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">pest control costs UK 2026</Link>. For commercial guides, see <Link href="/guides/restaurant-pest-control" className="text-blue-600 hover:underline font-medium">restaurant pest control</Link>, <Link href="/guides/warehouse-pest-management" className="text-blue-600 hover:underline font-medium">warehouse pest management</Link>, <Link href="/guides/hotel-pest-control" className="text-blue-600 hover:underline font-medium">hotel pest control</Link>, and <Link href="/guides/office-pest-control" className="text-blue-600 hover:underline font-medium">office pest control</Link>.
+        For further reading, see our guides on <Link href="/guides/how-to-get-rid-of-rats" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of bed bugs</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of cockroaches</Link>, <Link href="/guides/how-to-get-rid-of-fleas" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of fleas</Link>, <Link href="/guides/how-to-get-rid-of-moths" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of moths</Link>, <Link href="/guides/pigeon-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">pigeon control</Link>, and <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">pest control costs UK 2026</Link>. For commercial guides, see <Link href="/guides/restaurant-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">restaurant pest control</Link>, <Link href="/guides/warehouse-pest-management" className="text-[var(--color-teal-deep)] hover:underline font-medium">warehouse pest management</Link>, <Link href="/guides/hotel-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">hotel pest control</Link>, and <Link href="/guides/office-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">office pest control</Link>.
       </p>
     </GuideLayout>
   );

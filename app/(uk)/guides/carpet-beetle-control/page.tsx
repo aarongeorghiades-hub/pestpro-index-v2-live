@@ -273,7 +273,7 @@ export default function CarpetBeetleControlPage() {
         <li><strong>Fur and feathers</strong> &mdash; fur coats, feather pillows, down duvets, and stuffed toys with feather or wool filling are prime targets.</li>
         <li><strong>Leather</strong> &mdash; leather goods, shoes, belts, and bookbindings can be damaged, particularly in humid or undisturbed storage.</li>
         <li><strong>Felt</strong> &mdash; piano felts, baize on card tables, and felt insulation are vulnerable.</li>
-        <li><strong>Animal-based museum items</strong> &mdash; taxidermy, natural-history specimens, insect collections, dried flowers, and historical textile collections are severely at risk. Museums and heritage properties consider carpet beetles one of their most serious pest threats. See our <Link href="/guides/commercial-pest-control" className="text-blue-600 hover:underline font-medium">commercial pest control guide</Link> for information on integrated pest management in commercial and heritage settings.</li>
+        <li><strong>Animal-based museum items</strong> &mdash; taxidermy, natural-history specimens, insect collections, dried flowers, and historical textile collections are severely at risk. Museums and heritage properties consider carpet beetles one of their most serious pest threats. See our <Link href="/guides/commercial-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">commercial pest control guide</Link> for information on integrated pest management in commercial and heritage settings.</li>
       </ul>
 
       <h3>What Carpet Beetles Do NOT Eat</h3>
@@ -288,7 +288,7 @@ export default function CarpetBeetleControlPage() {
 
       <div className="not-prose">
         <Callout type="warning">
-          <p><strong>Carpet beetles vs moths: check the evidence.</strong> If you find fabric damage with tiny <strong>hairy shed skins</strong> and sand-like frass nearby, it is carpet beetles. If you find <strong>silk webbing or tubes</strong> attached to the fabric, it is clothes moths. The treatment approach is similar, but correct identification helps you target monitoring and prevention more effectively. See the <a href="#beetles-vs-moths" className="text-blue-600 hover:underline font-medium">comparison section</a> below for a detailed breakdown.</p>
+          <p><strong>Carpet beetles vs moths: check the evidence.</strong> If you find fabric damage with tiny <strong>hairy shed skins</strong> and sand-like frass nearby, it is carpet beetles. If you find <strong>silk webbing or tubes</strong> attached to the fabric, it is clothes moths. The treatment approach is similar, but correct identification helps you target monitoring and prevention more effectively. See the <a href="#beetles-vs-moths" className="text-[var(--color-teal-deep)] hover:underline font-medium">comparison section</a> below for a detailed breakdown.</p>
         </Callout>
       </div>
 
@@ -401,10 +401,10 @@ export default function CarpetBeetleControlPage() {
       </p>
 
       {/* Link to product review */}
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="text-blue-900 font-bold text-lg mb-2">Carpet Beetle Treatment Products</p>
-        <p className="text-blue-800 text-sm mb-3">See our guide to the best carpet beetle sprays, traps, powders, and prevention products available in the UK.</p>
-        <Link href="/best/carpet-beetle-treatments" className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm">View Best Carpet Beetle Treatments &rarr;</Link>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="text-[var(--color-ink)] font-bold text-lg mb-2">Carpet Beetle Treatment Products</p>
+        <p className="text-[var(--color-teal-deep)] text-sm mb-3">See our guide to the best carpet beetle sprays, traps, powders, and prevention products available in the UK.</p>
+        <Link href="/best/carpet-beetle-treatments" className="inline-block px-5 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm">View Best Carpet Beetle Treatments</Link>
       </div>
 
       <div className="not-prose">
@@ -444,7 +444,7 @@ export default function CarpetBeetleControlPage() {
       </p>
 
       <p>
-        For detailed information on clothes moth identification, treatment, and prevention, see our comprehensive <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline font-medium">how to get rid of moths guide</Link>.
+        For detailed information on clothes moth identification, treatment, and prevention, see our comprehensive <Link href="/guides/how-to-get-rid-of-moths" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of moths guide</Link>.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -464,13 +464,13 @@ export default function CarpetBeetleControlPage() {
         <li><strong>Multiple rooms are affected.</strong> An infestation confined to a single room is manageable with DIY treatment, but if carpet beetles or their larvae are found in multiple rooms, the source is likely in a hard-to-access area (such as the loft or subfloor) and professional investigation is warranted.</li>
         <li><strong>The source is in a structural area.</strong> If the infestation is originating from a bird nest in the roof space, a subfloor void, or a wall cavity, professional access and treatment are necessary.</li>
         <li><strong>Repeated infestations.</strong> If you have treated for carpet beetles before and the problem has returned within 6 to 12 months, the original source was not eliminated. A professional can identify and treat the root cause.</li>
-        <li><strong>Landlord and tenant situations.</strong> If you are a tenant, report the infestation to your landlord in writing. Landlords are responsible for ensuring rental properties are fit for habitation, and a persistent carpet beetle infestation that damages the tenant&apos;s property may fall under the landlord&apos;s repair obligations. See our <Link href="/guides/landlord-pest-control" className="text-blue-600 hover:underline font-medium">landlord pest control guide</Link> for detailed information.</li>
-        <li><strong>Listed buildings and heritage properties.</strong> Carpet beetles in museums, historic houses, and listed buildings require specialist integrated pest management (IPM). Standard spray treatments may be inappropriate for sensitive environments. See our <Link href="/guides/commercial-pest-control" className="text-blue-600 hover:underline font-medium">commercial pest control guide</Link> for more on IPM in heritage settings.</li>
+        <li><strong>Landlord and tenant situations.</strong> If you are a tenant, report the infestation to your landlord in writing. Landlords are responsible for ensuring rental properties are fit for habitation, and a persistent carpet beetle infestation that damages the tenant&apos;s property may fall under the landlord&apos;s repair obligations. See our <Link href="/guides/landlord-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">landlord pest control guide</Link> for detailed information.</li>
+        <li><strong>Listed buildings and heritage properties.</strong> Carpet beetles in museums, historic houses, and listed buildings require specialist integrated pest management (IPM). Standard spray treatments may be inappropriate for sensitive environments. See our <Link href="/guides/commercial-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">commercial pest control guide</Link> for more on IPM in heritage settings.</li>
       </ul>
 
       <div className="not-prose">
         <Callout type="cost">
-          <p>Professional carpet beetle treatment typically costs <strong>&pound;150&ndash;&pound;350</strong> for a one-off spray treatment. For persistent or widespread infestations requiring multiple visits, expect <strong>&pound;300&ndash;&pound;600</strong>. Bird nest removal and proofing costs <strong>&pound;80&ndash;&pound;200</strong>. A comprehensive total solution (inspection, bird nest removal, spray treatment, monitoring, and follow-up) typically costs <strong>&pound;300&ndash;&pound;800</strong>. See our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide for a full breakdown of pest control pricing.</p>
+          <p>Professional carpet beetle treatment typically costs <strong>&pound;150&ndash;&pound;350</strong> for a one-off spray treatment. For persistent or widespread infestations requiring multiple visits, expect <strong>&pound;300&ndash;&pound;600</strong>. Bird nest removal and proofing costs <strong>&pound;80&ndash;&pound;200</strong>. A comprehensive total solution (inspection, bird nest removal, spray treatment, monitoring, and follow-up) typically costs <strong>&pound;300&ndash;&pound;800</strong>. See our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide for a full breakdown of pest control pricing.</p>
         </Callout>
       </div>
 
@@ -520,7 +520,7 @@ export default function CarpetBeetleControlPage() {
 
       <h3>Integrated Pest Management in Museums</h3>
       <p>
-        Museums, archives, and heritage properties use <strong>Integrated Pest Management (IPM)</strong> &mdash; a systematic approach that combines environmental monitoring, housekeeping, physical barriers, and targeted treatment to manage carpet beetles without reliance on chemical treatments that could damage sensitive collections. If you manage a collection of natural-history specimens, textiles, or other susceptible items, adopting IPM principles is the most effective long-term strategy. The <Link href="/guides/commercial-pest-control" className="text-blue-600 hover:underline font-medium">commercial pest control guide</Link> covers IPM in more detail.
+        Museums, archives, and heritage properties use <strong>Integrated Pest Management (IPM)</strong> &mdash; a systematic approach that combines environmental monitoring, housekeeping, physical barriers, and targeted treatment to manage carpet beetles without reliance on chemical treatments that could damage sensitive collections. If you manage a collection of natural-history specimens, textiles, or other susceptible items, adopting IPM principles is the most effective long-term strategy. The <Link href="/guides/commercial-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">commercial pest control guide</Link> covers IPM in more detail.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -534,7 +534,7 @@ export default function CarpetBeetleControlPage() {
 
       <h3>Carpet Beetle Dermatitis</h3>
       <p>
-        Carpet beetle larvae are covered in tiny, barbed hairs (known as <strong>hastisetae</strong>) that they shed as they grow and moult. When these microscopic hairs come into contact with human skin, they can cause an allergic reaction known as <strong>carpet beetle dermatitis</strong>. The symptoms are <strong>itchy red bumps or welts on exposed skin</strong>, particularly on the arms, legs, neck, and face. The rash can look very similar to <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline font-medium">bed bug bites</Link>, and it is frequently misdiagnosed as such by both patients and GPs.
+        Carpet beetle larvae are covered in tiny, barbed hairs (known as <strong>hastisetae</strong>) that they shed as they grow and moult. When these microscopic hairs come into contact with human skin, they can cause an allergic reaction known as <strong>carpet beetle dermatitis</strong>. The symptoms are <strong>itchy red bumps or welts on exposed skin</strong>, particularly on the arms, legs, neck, and face. The rash can look very similar to <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-[var(--color-teal-deep)] hover:underline font-medium">bed bug bites</Link>, and it is frequently misdiagnosed as such by both patients and GPs.
       </p>
 
       <p>
@@ -543,11 +543,11 @@ export default function CarpetBeetleControlPage() {
 
       <h3>Treatment of Dermatitis</h3>
       <p>
-        The skin reaction itself can be treated with <strong>over-the-counter antihistamine cream or tablets</strong> and will resolve once exposure to the larval hairs stops. The long-term solution is to <strong>eliminate the carpet beetle infestation</strong> using the methods described in the <a href="#diy-treatment" className="text-blue-600 hover:underline font-medium">DIY treatment section</a> above. Thorough vacuuming of the bedroom &mdash; including the carpet beneath and around the bed, the mattress surface, and the bed frame &mdash; should provide immediate relief by removing the shed hairs from the sleeping environment.
+        The skin reaction itself can be treated with <strong>over-the-counter antihistamine cream or tablets</strong> and will resolve once exposure to the larval hairs stops. The long-term solution is to <strong>eliminate the carpet beetle infestation</strong> using the methods described in the <a href="#diy-treatment" className="text-[var(--color-teal-deep)] hover:underline font-medium">DIY treatment section</a> above. Thorough vacuuming of the bedroom &mdash; including the carpet beneath and around the bed, the mattress surface, and the bed frame &mdash; should provide immediate relief by removing the shed hairs from the sleeping environment.
       </p>
 
       <p>
-        If you are experiencing a skin rash and are unsure whether it is caused by carpet beetles or <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline font-medium">bed bugs</Link>, the evidence left behind is the key diagnostic clue. Bed bugs leave <strong>blood spots on sheets, dark faecal stains in mattress seams, and cast skins in bed frame crevices</strong>. Carpet beetles leave <strong>hairy shed skins and sand-like frass along carpet edges and under furniture</strong>. If neither type of evidence is found, the rash may have a different cause and medical advice should be sought.
+        If you are experiencing a skin rash and are unsure whether it is caused by carpet beetles or <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-[var(--color-teal-deep)] hover:underline font-medium">bed bugs</Link>, the evidence left behind is the key diagnostic clue. Bed bugs leave <strong>blood spots on sheets, dark faecal stains in mattress seams, and cast skins in bed frame crevices</strong>. Carpet beetles leave <strong>hairy shed skins and sand-like frass along carpet edges and under furniture</strong>. If neither type of evidence is found, the rash may have a different cause and medical advice should be sought.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -556,7 +556,7 @@ export default function CarpetBeetleControlPage() {
       <h2 id="products">Recommended Carpet Beetle Treatment Products</h2>
 
       <p>
-        Below is one of the most effective products for carpet beetle control in UK homes. For a comprehensive comparison of all the best carpet beetle treatments &mdash; including sprays, traps, powders, and prevention products &mdash; see our dedicated <Link href="/best/carpet-beetle-treatments" className="text-blue-600 hover:underline font-medium">Best Carpet Beetle Treatments UK 2026</Link> guide.
+        Below is one of the most effective products for carpet beetle control in UK homes. For a comprehensive comparison of all the best carpet beetle treatments &mdash; including sprays, traps, powders, and prevention products &mdash; see our dedicated <Link href="/best/carpet-beetle-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Carpet Beetle Treatments UK 2026</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -593,178 +593,178 @@ export default function CarpetBeetleControlPage() {
       <div className="not-prose my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <Link
           href="/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             London
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/birmingham/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Birmingham
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/manchester/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Manchester
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/leeds/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Leeds
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/glasgow/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Glasgow
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/edinburgh/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Edinburgh
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/liverpool/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Liverpool
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/bristol/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Bristol
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/sheffield/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Sheffield
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/newcastle/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Newcastle
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/nottingham/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Nottingham
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/cardiff/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Cardiff
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/leicester/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Leicester
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/southampton/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Southampton
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/brighton/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Brighton
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/cambridge/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Cambridge
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/oxford/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Oxford
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/york/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             York
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find carpet beetle treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find carpet beetle treatment specialists</span>
         </Link>
         <Link
           href="/pest-control/regions"
-          className="block p-5 bg-blue-50 border border-blue-200 rounded-xl hover:shadow-md hover:border-blue-400 transition-all group sm:col-span-2 lg:col-span-3"
+          className="block p-5 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group sm:col-span-2 lg:col-span-3"
         >
-          <span className="font-bold text-blue-700 group-hover:text-blue-800 transition-colors">
-            Browse all locations &rarr;
+          <span className="font-bold text-[var(--color-teal-deep)] group-hover:text-[var(--color-teal-deep)] transition-colors">
+            Browse all locations
           </span>
         </Link>
       </div>
 
       <p>
-        For a detailed breakdown of pest control costs across all common UK pests, including carpet beetle treatment and bird nest removal, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
+        For a detailed breakdown of pest control costs across all common UK pests, including carpet beetle treatment and bird nest removal, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -774,7 +774,7 @@ export default function CarpetBeetleControlPage() {
 
       <h3>Are carpet beetles harmful to humans?</h3>
       <p>
-        Carpet beetles <strong>do not bite or sting</strong>, and they do not transmit disease. However, their larvae shed tiny barbed hairs (hastisetae) that can cause a skin condition known as <strong>carpet beetle dermatitis</strong> &mdash; itchy red bumps on exposed skin that are frequently misdiagnosed as <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline font-medium">bed bug bites</Link>. The reaction is a contact allergy to the larval hairs, not a bite. Over-the-counter <strong>antihistamine cream or tablets</strong> will resolve the skin symptoms. The permanent solution is to eliminate the carpet beetle infestation by following the treatment steps in the <a href="#diy-treatment" className="text-blue-600 hover:underline font-medium">DIY treatment section</a> above, which removes the source of the irritant hairs.
+        Carpet beetles <strong>do not bite or sting</strong>, and they do not transmit disease. However, their larvae shed tiny barbed hairs (hastisetae) that can cause a skin condition known as <strong>carpet beetle dermatitis</strong> &mdash; itchy red bumps on exposed skin that are frequently misdiagnosed as <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-[var(--color-teal-deep)] hover:underline font-medium">bed bug bites</Link>. The reaction is a contact allergy to the larval hairs, not a bite. Over-the-counter <strong>antihistamine cream or tablets</strong> will resolve the skin symptoms. The permanent solution is to eliminate the carpet beetle infestation by following the treatment steps in the <a href="#diy-treatment" className="text-[var(--color-teal-deep)] hover:underline font-medium">DIY treatment section</a> above, which removes the source of the irritant hairs.
       </p>
 
       <h3>What do carpet beetle larvae look like?</h3>
@@ -789,7 +789,7 @@ export default function CarpetBeetleControlPage() {
 
       <h3>How do I know if I have carpet beetles or moths?</h3>
       <p>
-        Both carpet beetles and <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline font-medium">clothes moths</Link> damage wool, silk, and natural fibres, but they leave <strong>different evidence</strong>. Carpet beetle larvae leave tiny <strong>hairy shed skins</strong> (that look like miniature bristly caterpillar husks) and <strong>sand-like frass</strong> near the damage. Clothes moth larvae leave <strong>silk webbing and tubes</strong> (cases) attached to the fabric. If you find small, bristly shed skins near damaged textiles, it is carpet beetles. If you find fine silk webbing woven into the fabric, it is clothes moths. The core treatment methods (vacuuming, spraying, hot washing, freezing) work for both pests. See the <a href="#beetles-vs-moths" className="text-blue-600 hover:underline font-medium">comparison section</a> for a detailed side-by-side breakdown.
+        Both carpet beetles and <Link href="/guides/how-to-get-rid-of-moths" className="text-[var(--color-teal-deep)] hover:underline font-medium">clothes moths</Link> damage wool, silk, and natural fibres, but they leave <strong>different evidence</strong>. Carpet beetle larvae leave tiny <strong>hairy shed skins</strong> (that look like miniature bristly caterpillar husks) and <strong>sand-like frass</strong> near the damage. Clothes moth larvae leave <strong>silk webbing and tubes</strong> (cases) attached to the fabric. If you find small, bristly shed skins near damaged textiles, it is carpet beetles. If you find fine silk webbing woven into the fabric, it is clothes moths. The core treatment methods (vacuuming, spraying, hot washing, freezing) work for both pests. See the <a href="#beetles-vs-moths" className="text-[var(--color-teal-deep)] hover:underline font-medium">comparison section</a> for a detailed side-by-side breakdown.
       </p>
 
       <h3>Can carpet beetles damage synthetic carpets?</h3>
@@ -810,42 +810,42 @@ export default function CarpetBeetleControlPage() {
       {/* ------------------------------------------------------------------ */}
       {/* BOTTOM CROSS-LINKS */}
       {/* ------------------------------------------------------------------ */}
-      <div className="not-prose mt-12 pt-8 border-t border-gray-200">
-        <h3 className="text-lg font-bold text-gray-900 mb-4">More Pest Control Guides</h3>
+      <div className="not-prose mt-12 pt-8 border-t border-[var(--color-rule)]">
+        <h3 className="text-lg font-bold text-[var(--color-ink)] mb-4">More Pest Control Guides</h3>
         <div className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
-          <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline">How to Get Rid of Rats: Complete UK Guide</Link>
-          <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline">How to Get Rid of Mice: Complete UK Guide</Link>
-          <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline">How to Get Rid of Cockroaches: Complete UK Guide</Link>
-          <Link href="/guides/how-to-get-rid-of-fleas" className="text-blue-600 hover:underline">How to Get Rid of Fleas: Complete UK Guide</Link>
-          <Link href="/guides/how-to-get-rid-of-ants" className="text-blue-600 hover:underline">How to Get Rid of Ants: Complete UK Guide</Link>
-          <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline">How to Get Rid of Moths: Complete UK Guide</Link>
-          <Link href="/guides/how-to-get-rid-of-foxes" className="text-blue-600 hover:underline">How to Get Rid of Foxes: Complete UK Guide</Link>
-          <Link href="/guides/how-to-get-rid-of-squirrels" className="text-blue-600 hover:underline">How to Get Rid of Squirrels: Complete UK Guide</Link>
-          <Link href="/guides/how-to-get-rid-of-silverfish" className="text-blue-600 hover:underline">How to Get Rid of Silverfish: Complete UK Guide</Link>
-          <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline">How to Get Rid of Bed Bugs: Complete UK Guide</Link>
-          <Link href="/guides/woodworm-treatment" className="text-blue-600 hover:underline">Woodworm Treatment: Complete UK Guide</Link>
-          <Link href="/guides/wasp-nest-removal" className="text-blue-600 hover:underline">Wasp Nest Removal: Complete UK Guide</Link>
-          <Link href="/guides/pigeon-control" className="text-blue-600 hover:underline">Pigeon Control: Complete UK Guide</Link>
-          <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline">Pest Control Costs UK 2026</Link>
-          <Link href="/guides/landlord-pest-control" className="text-blue-600 hover:underline">Landlord Pest Control: Complete UK Guide</Link>
-          <Link href="/guides/commercial-pest-control" className="text-blue-600 hover:underline">Commercial Pest Control: Complete UK Guide</Link>
-          <Link href="/guides/restaurant-pest-control" className="text-blue-600 hover:underline">Restaurant Pest Control: Complete UK Guide</Link>
-          <Link href="/guides/warehouse-pest-management" className="text-blue-600 hover:underline">Warehouse Pest Management: Complete UK Guide</Link>
-          <Link href="/guides/hotel-pest-control" className="text-blue-600 hover:underline">Hotel Pest Control: Complete UK Guide</Link>
-          <Link href="/guides/office-pest-control" className="text-blue-600 hover:underline">Office Pest Control: Complete UK Guide</Link>
-          <Link href="/best/carpet-beetle-treatments" className="text-blue-600 hover:underline">Best Carpet Beetle Treatments UK 2026</Link>
-          <Link href="/best/rat-traps" className="text-blue-600 hover:underline">Best Rat Traps UK 2026</Link>
-          <Link href="/best/mouse-traps" className="text-blue-600 hover:underline">Best Mouse Traps UK 2026</Link>
-          <Link href="/best/wasp-killers" className="text-blue-600 hover:underline">Best Wasp Killers UK 2026</Link>
-          <Link href="/best/cockroach-killers" className="text-blue-600 hover:underline">Best Cockroach Killers UK 2026</Link>
-          <Link href="/best/flea-treatments" className="text-blue-600 hover:underline">Best Flea Treatments UK 2026</Link>
-          <Link href="/best/ant-killers" className="text-blue-600 hover:underline">Best Ant Killers UK 2026</Link>
-          <Link href="/best/moth-killers" className="text-blue-600 hover:underline">Best Moth Killers UK 2026</Link>
-          <Link href="/best/bed-bug-treatments" className="text-blue-600 hover:underline">Best Bed Bug Treatments UK 2026</Link>
-          <Link href="/best/silverfish-treatments" className="text-blue-600 hover:underline">Best Silverfish Treatments UK 2026</Link>
-          <Link href="/best/woodworm-treatments" className="text-blue-600 hover:underline">Best Woodworm Treatments UK 2026</Link>
-          <Link href="/best/fox-deterrents" className="text-blue-600 hover:underline">Best Fox Deterrents UK 2026</Link>
-          <Link href="/best/squirrel-deterrents" className="text-blue-600 hover:underline">Best Squirrel Deterrents UK 2026</Link>
+          <Link href="/guides/how-to-get-rid-of-rats" className="text-[var(--color-teal-deep)] hover:underline">How to Get Rid of Rats: Complete UK Guide</Link>
+          <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline">How to Get Rid of Mice: Complete UK Guide</Link>
+          <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-[var(--color-teal-deep)] hover:underline">How to Get Rid of Cockroaches: Complete UK Guide</Link>
+          <Link href="/guides/how-to-get-rid-of-fleas" className="text-[var(--color-teal-deep)] hover:underline">How to Get Rid of Fleas: Complete UK Guide</Link>
+          <Link href="/guides/how-to-get-rid-of-ants" className="text-[var(--color-teal-deep)] hover:underline">How to Get Rid of Ants: Complete UK Guide</Link>
+          <Link href="/guides/how-to-get-rid-of-moths" className="text-[var(--color-teal-deep)] hover:underline">How to Get Rid of Moths: Complete UK Guide</Link>
+          <Link href="/guides/how-to-get-rid-of-foxes" className="text-[var(--color-teal-deep)] hover:underline">How to Get Rid of Foxes: Complete UK Guide</Link>
+          <Link href="/guides/how-to-get-rid-of-squirrels" className="text-[var(--color-teal-deep)] hover:underline">How to Get Rid of Squirrels: Complete UK Guide</Link>
+          <Link href="/guides/how-to-get-rid-of-silverfish" className="text-[var(--color-teal-deep)] hover:underline">How to Get Rid of Silverfish: Complete UK Guide</Link>
+          <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-[var(--color-teal-deep)] hover:underline">How to Get Rid of Bed Bugs: Complete UK Guide</Link>
+          <Link href="/guides/woodworm-treatment" className="text-[var(--color-teal-deep)] hover:underline">Woodworm Treatment: Complete UK Guide</Link>
+          <Link href="/guides/wasp-nest-removal" className="text-[var(--color-teal-deep)] hover:underline">Wasp Nest Removal: Complete UK Guide</Link>
+          <Link href="/guides/pigeon-control" className="text-[var(--color-teal-deep)] hover:underline">Pigeon Control: Complete UK Guide</Link>
+          <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline">Pest Control Costs UK 2026</Link>
+          <Link href="/guides/landlord-pest-control" className="text-[var(--color-teal-deep)] hover:underline">Landlord Pest Control: Complete UK Guide</Link>
+          <Link href="/guides/commercial-pest-control" className="text-[var(--color-teal-deep)] hover:underline">Commercial Pest Control: Complete UK Guide</Link>
+          <Link href="/guides/restaurant-pest-control" className="text-[var(--color-teal-deep)] hover:underline">Restaurant Pest Control: Complete UK Guide</Link>
+          <Link href="/guides/warehouse-pest-management" className="text-[var(--color-teal-deep)] hover:underline">Warehouse Pest Management: Complete UK Guide</Link>
+          <Link href="/guides/hotel-pest-control" className="text-[var(--color-teal-deep)] hover:underline">Hotel Pest Control: Complete UK Guide</Link>
+          <Link href="/guides/office-pest-control" className="text-[var(--color-teal-deep)] hover:underline">Office Pest Control: Complete UK Guide</Link>
+          <Link href="/best/carpet-beetle-treatments" className="text-[var(--color-teal-deep)] hover:underline">Best Carpet Beetle Treatments UK 2026</Link>
+          <Link href="/best/rat-traps" className="text-[var(--color-teal-deep)] hover:underline">Best Rat Traps UK 2026</Link>
+          <Link href="/best/mouse-traps" className="text-[var(--color-teal-deep)] hover:underline">Best Mouse Traps UK 2026</Link>
+          <Link href="/best/wasp-killers" className="text-[var(--color-teal-deep)] hover:underline">Best Wasp Killers UK 2026</Link>
+          <Link href="/best/cockroach-killers" className="text-[var(--color-teal-deep)] hover:underline">Best Cockroach Killers UK 2026</Link>
+          <Link href="/best/flea-treatments" className="text-[var(--color-teal-deep)] hover:underline">Best Flea Treatments UK 2026</Link>
+          <Link href="/best/ant-killers" className="text-[var(--color-teal-deep)] hover:underline">Best Ant Killers UK 2026</Link>
+          <Link href="/best/moth-killers" className="text-[var(--color-teal-deep)] hover:underline">Best Moth Killers UK 2026</Link>
+          <Link href="/best/bed-bug-treatments" className="text-[var(--color-teal-deep)] hover:underline">Best Bed Bug Treatments UK 2026</Link>
+          <Link href="/best/silverfish-treatments" className="text-[var(--color-teal-deep)] hover:underline">Best Silverfish Treatments UK 2026</Link>
+          <Link href="/best/woodworm-treatments" className="text-[var(--color-teal-deep)] hover:underline">Best Woodworm Treatments UK 2026</Link>
+          <Link href="/best/fox-deterrents" className="text-[var(--color-teal-deep)] hover:underline">Best Fox Deterrents UK 2026</Link>
+          <Link href="/best/squirrel-deterrents" className="text-[var(--color-teal-deep)] hover:underline">Best Squirrel Deterrents UK 2026</Link>
         </div>
       </div>
     </GuideLayout>

@@ -320,14 +320,14 @@ export default function WaspNestRemovalPage() {
         <li><strong>Sealing the entrance:</strong> Blocking the entry point to a nest (with expanding foam, tape, or similar) does not trap the wasps inside. They will find or create an alternative exit, potentially chewing through plasterboard or emerging inside the building. Sealing the entrance after treatment is equally inadvisable &mdash; dead wasps, larvae, and nest material will decompose and can attract other pests such as carpet beetles and moth larvae.</li>
       </ul>
 
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Looking for wasp control products?</p>
-        <p className="text-gray-700 mb-3">Our guide covers the best sprays, powders, and traps available in the UK.</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Looking for wasp control products?</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">Our guide covers the best sprays, powders, and traps available in the UK.</p>
         <a
           href="/best/wasp-killers"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+          className="inline-block px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
         >
-          Best Wasp Killer Products UK 2026 &rarr;
+          Best Wasp Killer Products UK 2026
         </a>
       </div>
 
@@ -474,64 +474,64 @@ export default function WaspNestRemovalPage() {
       <div className="not-prose my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <Link
           href="/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             London
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find wasp control experts &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find wasp control experts</span>
         </Link>
         <Link
           href="/birmingham/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Birmingham
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find wasp control experts &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find wasp control experts</span>
         </Link>
         <Link
           href="/manchester/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Manchester
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find wasp control experts &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find wasp control experts</span>
         </Link>
         <Link
           href="/belfast/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Belfast
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find wasp control experts &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find wasp control experts</span>
         </Link>
         <Link
           href="/glasgow/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Glasgow
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find wasp control experts &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find wasp control experts</span>
         </Link>
         <Link
           href="/edinburgh/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Edinburgh
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find wasp control experts &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find wasp control experts</span>
         </Link>
         <Link
           href="/pest-control/regions"
-          className="block p-5 bg-blue-50 border border-blue-200 rounded-xl hover:shadow-md hover:border-blue-400 transition-all group sm:col-span-2 lg:col-span-3"
+          className="block p-5 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group sm:col-span-2 lg:col-span-3"
         >
-          <span className="font-bold text-blue-700 group-hover:text-blue-800 transition-colors">
-            Browse all 18 locations &rarr;
+          <span className="font-bold text-[var(--color-teal-deep)] group-hover:text-[var(--color-teal-deep)] transition-colors">
+            Browse all 18 locations
           </span>
         </Link>
       </div>

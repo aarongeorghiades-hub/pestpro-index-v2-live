@@ -169,8 +169,8 @@ export default function SpringPestPreventionPage() {
       />
 
       {/* Affiliate disclosure */}
-      <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        <p className="text-sm text-amber-800">
+      <div className="not-prose bg-[var(--color-ochre-wash)] border border-[var(--color-ochre-edge)] rounded-xl p-4 mb-8">
+        <p className="text-sm text-[var(--color-ochre-deep)]">
           <strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small commission at no extra cost to you. This helps us keep the site running and free for everyone. As an Amazon Associate, PestPro Index earns from qualifying purchases.
         </p>
       </div>
@@ -277,7 +277,7 @@ export default function SpringPestPreventionPage() {
       </p>
 
       <p>
-        For a detailed comparison of the best moth traps available in the UK, see our <Link href="/best/moth-traps" className="text-blue-600 hover:underline font-medium">Best Moth Traps UK 2026</Link> guide.
+        For a detailed comparison of the best moth traps available in the UK, see our <Link href="/best/moth-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Moth Traps UK 2026</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -306,11 +306,11 @@ export default function SpringPestPreventionPage() {
       </p>
 
       <p>
-        For colonies that are already showing early foraging activity, <Link href="/best/ant-gel-bait" className="text-green-600 hover:underline">ant killer gel</Link> is the most effective DIY treatment. Gel baits contain a slow-acting insecticide mixed with an attractive sugar-based bait. Worker ants carry the bait back to the colony and feed it to the queen and other workers, killing the entire nest from within. This is far more effective than spray insecticides, which only kill the ants you can see without affecting the colony. Apply gel bait in small dots along ant trails and near entry points.
+        For colonies that are already showing early foraging activity, <Link href="/best/ant-gel-bait" className="text-[var(--color-ok)] hover:underline">ant killer gel</Link> is the most effective DIY treatment. Gel baits contain a slow-acting insecticide mixed with an attractive sugar-based bait. Worker ants carry the bait back to the colony and feed it to the queen and other workers, killing the entire nest from within. This is far more effective than spray insecticides, which only kill the ants you can see without affecting the colony. Apply gel bait in small dots along ant trails and near entry points.
       </p>
 
       <p>
-        For a detailed comparison of the best ant gel baits available in the UK, see our <Link href="/best/ant-gel-bait" className="text-blue-600 hover:underline font-medium">Best Ant Gel Bait UK 2026</Link> guide.
+        For a detailed comparison of the best ant gel baits available in the UK, see our <Link href="/best/ant-gel-bait" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Ant Gel Bait UK 2026</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -331,7 +331,7 @@ export default function SpringPestPreventionPage() {
       <h3>Wasps: Inspect, Seal, and Act Early</h3>
 
       <p>
-        Wasp prevention in spring is all about <strong>intercepting queens before they establish colonies</strong>. In April, each queen wasp is working alone &mdash; she has no workers to defend her, and her nest is tiny. Removing a golf-ball-sized queen nest in April is a simple five-minute job &mdash; a can of <Link href="/best/wasp-nest-foam" className="text-green-600 hover:underline">wasp nest foam</Link> applied at dusk is all you need. Removing a football-sized nest full of thousands of aggressive workers in August requires professional pest control, protective equipment, and costs &pound;50 to &pound;100 or more.
+        Wasp prevention in spring is all about <strong>intercepting queens before they establish colonies</strong>. In April, each queen wasp is working alone &mdash; she has no workers to defend her, and her nest is tiny. Removing a golf-ball-sized queen nest in April is a simple five-minute job &mdash; a can of <Link href="/best/wasp-nest-foam" className="text-[var(--color-ok)] hover:underline">wasp nest foam</Link> applied at dusk is all you need. Removing a football-sized nest full of thousands of aggressive workers in August requires professional pest control, protective equipment, and costs &pound;50 to &pound;100 or more.
       </p>
 
       <p>
@@ -343,7 +343,7 @@ export default function SpringPestPreventionPage() {
       </p>
 
       <p>
-        For wasp killer sprays and prevention products, see our <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-medium">Best Wasp Killers UK 2026</Link> guide. For a comprehensive guide to preparing for wasp season, see our <Link href="/guides/wasp-season-preparation" className="text-blue-600 hover:underline font-medium">Wasp Season Preparation Guide</Link>.
+        For wasp killer sprays and prevention products, see our <Link href="/best/wasp-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Wasp Killers UK 2026</Link> guide. For a comprehensive guide to preparing for wasp season, see our <Link href="/guides/wasp-season-preparation" className="text-[var(--color-teal-deep)] hover:underline font-medium">Wasp Season Preparation Guide</Link>.
       </p>
 
       <h3>Fleas: Treat Pets, Vacuum, and Spray</h3>
@@ -361,7 +361,7 @@ export default function SpringPestPreventionPage() {
       </p>
 
       <p>
-        For a detailed comparison of the best home flea sprays available in the UK, see our <Link href="/best/flea-spray-for-home" className="text-blue-600 hover:underline font-medium">Best Flea Spray for Home UK 2026</Link> guide.
+        For a detailed comparison of the best home flea sprays available in the UK, see our <Link href="/best/flea-spray-for-home" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Flea Spray for Home UK 2026</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -431,39 +431,39 @@ export default function SpringPestPreventionPage() {
       <div className="not-prose my-8 overflow-x-auto">
         <table className="w-full border-collapse text-sm">
           <thead>
-            <tr className="bg-gray-100">
-              <th className="text-left p-3 font-bold text-gray-900 border-b border-gray-200">Product</th>
-              <th className="text-left p-3 font-bold text-gray-900 border-b border-gray-200">Target Pest</th>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-3 font-bold text-[var(--color-ink)] border-b border-[var(--color-rule)]">Product</th>
+              <th className="text-left p-3 font-bold text-[var(--color-ink)] border-b border-[var(--color-rule)]">Target Pest</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-100">
-              <td className="p-3 text-gray-700">Pheromone moth traps (pack of 6)</td>
-              <td className="p-3 text-gray-700">Moths</td>
+            <tr className="border-b border-[var(--color-rule)]">
+              <td className="p-3 text-[var(--color-ink-soft)]">Pheromone moth traps (pack of 6)</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Moths</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50">
-              <td className="p-3 text-gray-700">Ant gel bait syringe</td>
-              <td className="p-3 text-gray-700">Ants</td>
+            <tr className="border-b border-[var(--color-rule)] bg-[var(--color-paper-sunk)]">
+              <td className="p-3 text-[var(--color-ink-soft)]">Ant gel bait syringe</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Ants</td>
             </tr>
-            <tr className="border-b border-gray-100">
-              <td className="p-3 text-gray-700">Ant killer powder/spray</td>
-              <td className="p-3 text-gray-700">Ants</td>
+            <tr className="border-b border-[var(--color-rule)]">
+              <td className="p-3 text-[var(--color-ink-soft)]">Ant killer powder/spray</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Ants</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50">
-              <td className="p-3 text-gray-700">Wasp killer spray (for early nests)</td>
-              <td className="p-3 text-gray-700">Wasps</td>
+            <tr className="border-b border-[var(--color-rule)] bg-[var(--color-paper-sunk)]">
+              <td className="p-3 text-[var(--color-ink-soft)]">Wasp killer spray (for early nests)</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Wasps</td>
             </tr>
-            <tr className="border-b border-gray-100">
-              <td className="p-3 text-gray-700">Home flea spray with IGR</td>
-              <td className="p-3 text-gray-700">Fleas</td>
+            <tr className="border-b border-[var(--color-rule)]">
+              <td className="p-3 text-[var(--color-ink-soft)]">Home flea spray with IGR</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Fleas</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50">
-              <td className="p-3 text-gray-700">Silicone sealant / expanding foam</td>
-              <td className="p-3 text-gray-700">Ants, wasps</td>
+            <tr className="border-b border-[var(--color-rule)] bg-[var(--color-paper-sunk)]">
+              <td className="p-3 text-[var(--color-ink-soft)]">Silicone sealant / expanding foam</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Ants, wasps</td>
             </tr>
-            <tr className="border-b border-gray-100">
-              <td className="p-3 text-gray-700">Sealed garment bags / vacuum bags</td>
-              <td className="p-3 text-gray-700">Moths</td>
+            <tr className="border-b border-[var(--color-rule)]">
+              <td className="p-3 text-[var(--color-ink-soft)]">Sealed garment bags / vacuum bags</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Moths</td>
             </tr>
           </tbody>
         </table>
@@ -506,7 +506,7 @@ export default function SpringPestPreventionPage() {
 
       <h3>How do I stop ants in my kitchen in spring?</h3>
       <p>
-        To stop ants in your kitchen in spring, start by <strong>eliminating their food sources</strong>: wipe down all surfaces to remove crumbs and sticky residues, store food in sealed containers, empty bins regularly, and clean behind appliances where food debris accumulates. Next, find and <strong>seal their entry points</strong> &mdash; ants typically enter through gaps around pipes, cracks in walls, and spaces under doors. Apply <strong>ant gel bait</strong> along their trails and near entry points; the workers carry the bait back to the colony and it kills the queen, eliminating the entire nest. Avoid using spray insecticide directly on ant trails, as this only kills the visible workers without affecting the colony. For persistent infestations, a professional ant treatment targeting the nest is the most effective solution. See our <Link href="/best/ant-gel-bait" className="text-blue-600 hover:underline font-medium">Best Ant Gel Bait UK 2026</Link> guide for product recommendations.
+        To stop ants in your kitchen in spring, start by <strong>eliminating their food sources</strong>: wipe down all surfaces to remove crumbs and sticky residues, store food in sealed containers, empty bins regularly, and clean behind appliances where food debris accumulates. Next, find and <strong>seal their entry points</strong> &mdash; ants typically enter through gaps around pipes, cracks in walls, and spaces under doors. Apply <strong>ant gel bait</strong> along their trails and near entry points; the workers carry the bait back to the colony and it kills the queen, eliminating the entire nest. Avoid using spray insecticide directly on ant trails, as this only kills the visible workers without affecting the colony. For persistent infestations, a professional ant treatment targeting the nest is the most effective solution. See our <Link href="/best/ant-gel-bait" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Ant Gel Bait UK 2026</Link> guide for product recommendations.
       </p>
 
       <h3>Do I need to worry about wasps in April?</h3>
@@ -516,43 +516,43 @@ export default function SpringPestPreventionPage() {
 
       <h3>Why am I seeing moths in March?</h3>
       <p>
-        If you are seeing moths in March, it is most likely <strong>clothes moths</strong> (<em>Tineola bisselliella</em>) or <strong>carpet moths</strong> (<em>Tinea pellionella</em>). In centrally heated UK homes, clothes moths can breed continuously throughout the year because the indoor temperature remains warm enough for their lifecycle. However, breeding activity accelerates in spring as temperatures and humidity rise. The adult moths you see in March have likely developed from eggs laid during the winter months. March is also when many homeowners first notice moth damage after retrieving stored winter clothing. If you are seeing small golden-buff moths that avoid light and scuttle rather than fly, these are almost certainly clothes moths, and there will be larvae and eggs already present in your wardrobes or carpets. Act immediately with pheromone traps, thorough cleaning, and treatment. See our <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline font-medium">How to Get Rid of Moths guide</Link> for full treatment instructions.
+        If you are seeing moths in March, it is most likely <strong>clothes moths</strong> (<em>Tineola bisselliella</em>) or <strong>carpet moths</strong> (<em>Tinea pellionella</em>). In centrally heated UK homes, clothes moths can breed continuously throughout the year because the indoor temperature remains warm enough for their lifecycle. However, breeding activity accelerates in spring as temperatures and humidity rise. The adult moths you see in March have likely developed from eggs laid during the winter months. March is also when many homeowners first notice moth damage after retrieving stored winter clothing. If you are seeing small golden-buff moths that avoid light and scuttle rather than fly, these are almost certainly clothes moths, and there will be larvae and eggs already present in your wardrobes or carpets. Act immediately with pheromone traps, thorough cleaning, and treatment. See our <Link href="/guides/how-to-get-rid-of-moths" className="text-[var(--color-teal-deep)] hover:underline font-medium">How to Get Rid of Moths guide</Link> for full treatment instructions.
       </p>
 
       <h3>Should I treat my home for fleas before summer?</h3>
       <p>
-        Yes, treating your home for fleas before summer is <strong>strongly recommended</strong> if you have pets &mdash; particularly cats and dogs that go outdoors. Flea populations build rapidly from spring onwards as warmer temperatures accelerate their lifecycle. A single female flea can lay up to <strong>50 eggs per day</strong>, and in warm conditions the lifecycle from egg to adult takes just two to three weeks. By the time you notice fleas biting in July or August, you may already have thousands of eggs and pupae embedded in your carpets, rugs, and soft furnishings. Start flea prevention in April or May by ensuring all pets are treated with a veterinary-approved flea treatment, vacuuming carpets and soft furnishings thoroughly and regularly, and washing pet bedding at 60&deg;C weekly. If you had a flea problem the previous year, a preventive <Link href="/best/flea-spray-for-home" className="text-blue-600 hover:underline font-medium">home flea spray</Link> applied in spring can kill any dormant pupae before they emerge as adults.
+        Yes, treating your home for fleas before summer is <strong>strongly recommended</strong> if you have pets &mdash; particularly cats and dogs that go outdoors. Flea populations build rapidly from spring onwards as warmer temperatures accelerate their lifecycle. A single female flea can lay up to <strong>50 eggs per day</strong>, and in warm conditions the lifecycle from egg to adult takes just two to three weeks. By the time you notice fleas biting in July or August, you may already have thousands of eggs and pupae embedded in your carpets, rugs, and soft furnishings. Start flea prevention in April or May by ensuring all pets are treated with a veterinary-approved flea treatment, vacuuming carpets and soft furnishings thoroughly and regularly, and washing pet bedding at 60&deg;C weekly. If you had a flea problem the previous year, a preventive <Link href="/best/flea-spray-for-home" className="text-[var(--color-teal-deep)] hover:underline font-medium">home flea spray</Link> applied in spring can kill any dormant pupae before they emerge as adults.
       </p>
 
       {/* ------------------------------------------------------------------ */}
       {/* Cross-Link Box */}
       {/* ------------------------------------------------------------------ */}
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-3">Related Guides &amp; Product Picks</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-3">Related Guides &amp; Product Picks</p>
         <div className="grid sm:grid-cols-2 gap-2">
-          <Link href="/best/moth-traps" className="text-sm text-blue-600 hover:underline font-medium block py-1">
-            Best Moth Traps UK 2026 &rarr;
+          <Link href="/best/moth-traps" className="text-sm text-[var(--color-teal-deep)] hover:underline font-medium block py-1">
+            Best Moth Traps UK 2026
           </Link>
-          <Link href="/best/ant-gel-bait" className="text-sm text-blue-600 hover:underline font-medium block py-1">
-            Best Ant Gel Bait UK 2026 &rarr;
+          <Link href="/best/ant-gel-bait" className="text-sm text-[var(--color-teal-deep)] hover:underline font-medium block py-1">
+            Best Ant Gel Bait UK 2026
           </Link>
-          <Link href="/best/wasp-killers" className="text-sm text-blue-600 hover:underline font-medium block py-1">
-            Best Wasp Killers UK 2026 &rarr;
+          <Link href="/best/wasp-killers" className="text-sm text-[var(--color-teal-deep)] hover:underline font-medium block py-1">
+            Best Wasp Killers UK 2026
           </Link>
-          <Link href="/best/flea-spray-for-home" className="text-sm text-blue-600 hover:underline font-medium block py-1">
-            Best Flea Spray for Home UK 2026 &rarr;
+          <Link href="/best/flea-spray-for-home" className="text-sm text-[var(--color-teal-deep)] hover:underline font-medium block py-1">
+            Best Flea Spray for Home UK 2026
           </Link>
-          <Link href="/guides/wasp-season-preparation" className="text-sm text-blue-600 hover:underline font-medium block py-1">
-            Wasp Season Preparation Guide &rarr;
+          <Link href="/guides/wasp-season-preparation" className="text-sm text-[var(--color-teal-deep)] hover:underline font-medium block py-1">
+            Wasp Season Preparation Guide
           </Link>
-          <Link href="/guides/how-to-get-rid-of-ants" className="text-sm text-blue-600 hover:underline font-medium block py-1">
-            How to Get Rid of Ants &rarr;
+          <Link href="/guides/how-to-get-rid-of-ants" className="text-sm text-[var(--color-teal-deep)] hover:underline font-medium block py-1">
+            How to Get Rid of Ants
           </Link>
-          <Link href="/guides/how-to-get-rid-of-moths" className="text-sm text-blue-600 hover:underline font-medium block py-1">
-            How to Get Rid of Moths &rarr;
+          <Link href="/guides/how-to-get-rid-of-moths" className="text-sm text-[var(--color-teal-deep)] hover:underline font-medium block py-1">
+            How to Get Rid of Moths
           </Link>
-          <Link href="/guides/how-to-get-rid-of-fleas" className="text-sm text-blue-600 hover:underline font-medium block py-1">
-            How to Get Rid of Fleas &rarr;
+          <Link href="/guides/how-to-get-rid-of-fleas" className="text-sm text-[var(--color-teal-deep)] hover:underline font-medium block py-1">
+            How to Get Rid of Fleas
           </Link>
         </div>
       </div>

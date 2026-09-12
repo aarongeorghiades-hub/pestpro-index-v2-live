@@ -292,7 +292,7 @@ export default function NaturalMouseDeterrentsPage() {
       {/* SECTION: Deterrent Products */}
       {/* ------------------------------------------------------------------ */}
 <Callout type="tip">
-        <p>Sealing the entry points matters more than anything you put down. Our guide to the <Link href="/best/rodent-proofing" className="text-green-600 hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips that keep them out for good.</p>
+        <p>Sealing the entry points matters more than anything you put down. Our guide to the <Link href="/best/rodent-proofing" className="text-[var(--color-ok)] hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips that keep them out for good.</p>
       </Callout>
 
             <h2 id="deterrent-products">Best Natural Deterrent Products</h2>
@@ -409,24 +409,24 @@ export default function NaturalMouseDeterrentsPage() {
       </ul>
 
       <p>
-        For an established mouse problem, <strong>humane live-catch traps</strong> are the next step that stays aligned with a non-lethal approach. These traps capture mice alive so you can release them at a distance from your home. If live-catch traps prove insufficient, snap traps provide a quick, humane kill and are the method recommended by most pest control professionals as the standard for DIY mouse control. For persistent infestations, combine <Link href="/best/mouse-repellent" className="text-green-600 hover:underline">mouse repellent sprays</Link> with <Link href="/best/mouse-bait-stations" className="text-green-600 hover:underline">mouse bait stations</Link> for a complete approach.
+        For an established mouse problem, <strong>humane live-catch traps</strong> are the next step that stays aligned with a non-lethal approach. These traps capture mice alive so you can release them at a distance from your home. If live-catch traps prove insufficient, snap traps provide a quick, humane kill and are the method recommended by most pest control professionals as the standard for DIY mouse control. For persistent infestations, combine <Link href="/best/mouse-repellent" className="text-[var(--color-ok)] hover:underline">mouse repellent sprays</Link> with <Link href="/best/mouse-bait-stations" className="text-[var(--color-ok)] hover:underline">mouse bait stations</Link> for a complete approach.
       </p>
 
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Need to escalate?</p>
-        <p className="text-gray-700 mb-3">Our in-depth guides cover both humane and standard mouse traps for every situation.</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Need to escalate?</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">Our in-depth guides cover both humane and standard mouse traps for every situation.</p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/best/mouse-traps"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+            className="inline-block px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
           >
-            Best Mouse Traps UK 2026 &rarr;
+            Best Mouse Traps UK 2026
           </Link>
           <Link
             href="/best/mouse-repellent"
-            className="inline-block px-6 py-2.5 bg-white border border-blue-300 hover:bg-blue-50 text-blue-700 font-bold rounded-lg transition-colors text-sm"
+            className="inline-block px-6 py-2.5 bg-white border border-[var(--color-teal-edge)] hover:bg-[var(--color-teal-wash)] text-[var(--color-teal-deep)] font-bold rounded-lg transition-colors text-sm"
           >
-            Best Mouse Repellent &rarr;
+            Best Mouse Repellent
           </Link>
         </div>
       </div>

@@ -287,61 +287,61 @@ export default function NaturalAntRepellentsPage() {
       <div className="not-prose my-8 overflow-x-auto">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-gray-50">
-              <th className="text-left p-3 border-b border-gray-200 font-bold text-gray-900">Method</th>
-              <th className="text-left p-3 border-b border-gray-200 font-bold text-gray-900">Effectiveness</th>
-              <th className="text-left p-3 border-b border-gray-200 font-bold text-gray-900">How It Works</th>
-              <th className="text-left p-3 border-b border-gray-200 font-bold text-gray-900">Reapply</th>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-3 border-b border-[var(--color-rule)] font-bold text-[var(--color-ink)]">Method</th>
+              <th className="text-left p-3 border-b border-[var(--color-rule)] font-bold text-[var(--color-ink)]">Effectiveness</th>
+              <th className="text-left p-3 border-b border-[var(--color-rule)] font-bold text-[var(--color-ink)]">How It Works</th>
+              <th className="text-left p-3 border-b border-[var(--color-rule)] font-bold text-[var(--color-ink)]">Reapply</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-100">
-              <td className="p-3 font-medium text-gray-900">White vinegar spray</td>
-              <td className="p-3 text-green-700 font-semibold">Strong</td>
-              <td className="p-3 text-gray-700">Destroys pheromone trails</td>
-              <td className="p-3 text-gray-700">Daily</td>
+            <tr className="border-b border-[var(--color-rule)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">White vinegar spray</td>
+              <td className="p-3 text-[var(--color-ok)] font-semibold">Strong</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Destroys pheromone trails</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Daily</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50">
-              <td className="p-3 font-medium text-gray-900">Diatomaceous earth</td>
-              <td className="p-3 text-green-700 font-semibold">Strong</td>
-              <td className="p-3 text-gray-700">Kills via dehydration (natural)</td>
-              <td className="p-3 text-gray-700">Weekly (if undisturbed)</td>
+            <tr className="border-b border-[var(--color-rule)] bg-[var(--color-paper-sunk)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Diatomaceous earth</td>
+              <td className="p-3 text-[var(--color-ok)] font-semibold">Strong</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Kills via dehydration (natural)</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Weekly (if undisturbed)</td>
             </tr>
-            <tr className="border-b border-gray-100">
-              <td className="p-3 font-medium text-gray-900">Peppermint oil</td>
-              <td className="p-3 text-amber-700 font-semibold">Moderate</td>
-              <td className="p-3 text-gray-700">Overwhelms scent receptors</td>
-              <td className="p-3 text-gray-700">Every 3&ndash;5 days</td>
+            <tr className="border-b border-[var(--color-rule)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Peppermint oil</td>
+              <td className="p-3 text-[var(--color-ochre-deep)] font-semibold">Moderate</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Overwhelms scent receptors</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Every 3&ndash;5 days</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50">
-              <td className="p-3 font-medium text-gray-900">Cinnamon</td>
-              <td className="p-3 text-amber-700 font-semibold">Moderate</td>
-              <td className="p-3 text-gray-700">Disrupts pheromone trails</td>
-              <td className="p-3 text-gray-700">Every 2&ndash;3 days</td>
+            <tr className="border-b border-[var(--color-rule)] bg-[var(--color-paper-sunk)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Cinnamon</td>
+              <td className="p-3 text-[var(--color-ochre-deep)] font-semibold">Moderate</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Disrupts pheromone trails</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Every 2&ndash;3 days</td>
             </tr>
-            <tr className="border-b border-gray-100">
-              <td className="p-3 font-medium text-gray-900">Lemon juice / citrus</td>
-              <td className="p-3 text-amber-700 font-semibold">Moderate</td>
-              <td className="p-3 text-gray-700">Acidic scent + d-limonene</td>
-              <td className="p-3 text-gray-700">Daily</td>
+            <tr className="border-b border-[var(--color-rule)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Lemon juice / citrus</td>
+              <td className="p-3 text-[var(--color-ochre-deep)] font-semibold">Moderate</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Acidic scent + d-limonene</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Daily</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50">
-              <td className="p-3 font-medium text-gray-900">Dish soap spray</td>
-              <td className="p-3 text-amber-700 font-semibold">Moderate</td>
-              <td className="p-3 text-gray-700">Breaks down exoskeleton</td>
-              <td className="p-3 text-gray-700">As needed (contact kill)</td>
+            <tr className="border-b border-[var(--color-rule)] bg-[var(--color-paper-sunk)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Dish soap spray</td>
+              <td className="p-3 text-[var(--color-ochre-deep)] font-semibold">Moderate</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Breaks down exoskeleton</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">As needed (contact kill)</td>
             </tr>
-            <tr className="border-b border-gray-100">
-              <td className="p-3 font-medium text-gray-900">Chalk / baby powder</td>
-              <td className="p-3 text-orange-700 font-semibold">Low&ndash;Moderate</td>
-              <td className="p-3 text-gray-700">Disrupts trail (anecdotal)</td>
-              <td className="p-3 text-gray-700">After cleaning/rain</td>
+            <tr className="border-b border-[var(--color-rule)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Chalk / baby powder</td>
+              <td className="p-3 text-[var(--color-ochre-deep)] font-semibold">Low&ndash;Moderate</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Disrupts trail (anecdotal)</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">After cleaning/rain</td>
             </tr>
             <tr>
-              <td className="p-3 font-medium text-gray-900">Coffee grounds</td>
-              <td className="p-3 text-red-700 font-semibold">Low</td>
-              <td className="p-3 text-gray-700">Scent masking</td>
-              <td className="p-3 text-gray-700">Every few days</td>
+              <td className="p-3 font-medium text-[var(--color-ink)]">Coffee grounds</td>
+              <td className="p-3 text-[var(--color-warn)] font-semibold">Low</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Scent masking</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Every few days</td>
             </tr>
           </tbody>
         </table>
@@ -468,24 +468,24 @@ export default function NaturalAntRepellentsPage() {
       </ul>
 
       <p>
-        In these cases, you may need to consider a targeted ant bait product. Unlike repellents, baits work <em>with</em> the ants&apos; foraging behaviour &mdash; worker ants carry the bait back to the nest, where it kills the queen and collapses the colony. This is more effective than killing individual ants on contact. If natural deterrents aren&apos;t providing sufficient control, see our guide to <Link href="/best/ant-gel-bait" className="text-green-600 hover:underline">ant killer gel</Link> for stronger colony-eliminating treatments.
+        In these cases, you may need to consider a targeted ant bait product. Unlike repellents, baits work <em>with</em> the ants&apos; foraging behaviour &mdash; worker ants carry the bait back to the nest, where it kills the queen and collapses the colony. This is more effective than killing individual ants on contact. If natural deterrents aren&apos;t providing sufficient control, see our guide to <Link href="/best/ant-gel-bait" className="text-[var(--color-ok)] hover:underline">ant killer gel</Link> for stronger colony-eliminating treatments.
       </p>
 
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Need stronger solutions?</p>
-        <p className="text-gray-700 mb-3">Our in-depth guides cover the most effective ant control products available in the UK, including gel baits that destroy the entire colony.</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Need stronger solutions?</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">Our in-depth guides cover the most effective ant control products available in the UK, including gel baits that destroy the entire colony.</p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/best/ant-killers"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+            className="inline-block px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
           >
-            Best Ant Killers UK 2026 &rarr;
+            Best Ant Killers UK 2026
           </Link>
           <Link
             href="/best/ant-gel-bait"
-            className="inline-block px-6 py-2.5 bg-white border border-blue-300 hover:bg-blue-50 text-blue-700 font-bold rounded-lg transition-colors text-sm"
+            className="inline-block px-6 py-2.5 bg-white border border-[var(--color-teal-edge)] hover:bg-[var(--color-teal-wash)] text-[var(--color-teal-deep)] font-bold rounded-lg transition-colors text-sm"
           >
-            Best Ant Gel Bait &rarr;
+            Best Ant Gel Bait
           </Link>
         </div>
       </div>

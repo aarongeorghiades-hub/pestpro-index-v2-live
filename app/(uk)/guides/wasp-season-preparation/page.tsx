@@ -167,8 +167,8 @@ export default function WaspSeasonPreparationPage() {
       />
 
       {/* Affiliate disclosure */}
-      <div className="not-prose bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
-        <p className="text-sm text-amber-800">
+      <div className="not-prose bg-[var(--color-ochre-wash)] border border-[var(--color-ochre-edge)] rounded-xl p-4 mb-8">
+        <p className="text-sm text-[var(--color-ochre-deep)]">
           <strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small commission at no extra cost to you. This helps us keep the site running and free for everyone. As an Amazon Associate, PestPro Index earns from qualifying purchases.
         </p>
       </div>
@@ -317,7 +317,7 @@ export default function WaspSeasonPreparationPage() {
       </p>
 
       <p>
-        For a comprehensive comparison of all the best products available in the UK, see our dedicated guides: <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-medium">Best Wasp Killer Products UK 2026</Link> and <Link href="/best/wasp-nest-foam" className="text-blue-600 hover:underline font-medium">Best Wasp Nest Killer Foam UK 2026</Link>.
+        For a comprehensive comparison of all the best products available in the UK, see our dedicated guides: <Link href="/best/wasp-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Wasp Killer Products UK 2026</Link> and <Link href="/best/wasp-nest-foam" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Wasp Nest Killer Foam UK 2026</Link>.
       </p>
 
       <div className="not-prose">
@@ -359,21 +359,21 @@ export default function WaspSeasonPreparationPage() {
         />
       </div>
 
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Looking for more wasp control products?</p>
-        <p className="text-gray-700 mb-3">We&apos;ve compared the best sprays, foams, powders, and traps available in the UK.</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Looking for more wasp control products?</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">We&apos;ve compared the best sprays, foams, powders, and traps available in the UK.</p>
         <div className="flex flex-wrap gap-3">
           <a
             href="/best/wasp-killers"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+            className="inline-block px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
           >
-            Best Wasp Killers UK 2026 &rarr;
+            Best Wasp Killers UK 2026
           </a>
           <a
             href="/best/wasp-nest-foam"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+            className="inline-block px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
           >
-            Best Wasp Nest Foam UK 2026 &rarr;
+            Best Wasp Nest Foam UK 2026
           </a>
         </div>
       </div>
@@ -454,7 +454,7 @@ export default function WaspSeasonPreparationPage() {
 
       <ul>
         <li><strong>Golf ball size (March&ndash;April):</strong> This is a brand-new nest, founded by a single queen with no workers yet. It is <strong>safe to treat yourself</strong>. You can carefully knock the nest down with a long stick while wearing gloves and long sleeves (the queen will fly away), or apply a shop-bought wasp killer spray. This is the ideal stage at which to deal with a nest &mdash; minimal risk and minimal cost.</li>
-        <li><strong>Tennis ball size (May&ndash;June):</strong> The nest has a small number of workers. <strong>DIY treatment is still possible</strong> if the nest is clearly visible and accessible. Use a <Link href="/best/wasp-nest-foam" className="text-green-600 hover:underline">wasp nest foam</Link> or powder, applied at dusk when the wasps are least active. Wear protective clothing, including a hat and gloves, and have a clear retreat route planned in case the wasps become agitated.</li>
+        <li><strong>Tennis ball size (May&ndash;June):</strong> The nest has a small number of workers. <strong>DIY treatment is still possible</strong> if the nest is clearly visible and accessible. Use a <Link href="/best/wasp-nest-foam" className="text-[var(--color-ok)] hover:underline">wasp nest foam</Link> or powder, applied at dusk when the wasps are least active. Wear protective clothing, including a hat and gloves, and have a clear retreat route planned in case the wasps become agitated.</li>
         <li><strong>Football size or larger (July onwards):</strong> The colony is well-established, with hundreds or thousands of workers. <strong>Call a professional.</strong> A nest of this size is too large and too well-defended for safe DIY treatment, particularly if it is in a confined space such as a loft, wall cavity, or underground. Professional pest controllers wear full protective equipment and use professional-grade insecticidal dust that is not available to the general public.</li>
       </ul>
 
@@ -485,7 +485,7 @@ export default function WaspSeasonPreparationPage() {
       </p>
 
       <p>
-        When choosing a pest controller, look for membership of the <strong>British Pest Control Association (BPCA)</strong> or the <strong>National Pest Technicians Association (NPTA)</strong>. These accreditations confirm that the technician has formal training, carries appropriate insurance, and follows an industry code of practice. For a fuller breakdown of costs across different pest types, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
+        When choosing a pest controller, look for membership of the <strong>British Pest Control Association (BPCA)</strong> or the <strong>National Pest Technicians Association (NPTA)</strong>. These accreditations confirm that the technician has formal training, carries appropriate insurance, and follows an industry code of practice. For a fuller breakdown of costs across different pest types, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -518,12 +518,12 @@ export default function WaspSeasonPreparationPage() {
 
       <h3>Can I remove a wasp nest myself?</h3>
       <p>
-        You can safely treat a small, accessible wasp nest yourself using shop-bought products, but <strong>only under the right conditions</strong>. The nest should be no larger than a tennis ball, clearly visible, and in an accessible location &mdash; not in a wall cavity, loft, or underground. Apply a wasp nest killer foam or spray at dusk, when the colony is least active, wearing gloves, long sleeves, and a hat. Have a clear retreat route planned. If the nest is larger than a tennis ball, in a confined or hard-to-reach space, or if anyone in your household has a wasp sting allergy, <strong>always call a professional</strong>. For more detailed guidance, see our <Link href="/guides/wasp-nest-removal" className="text-blue-600 hover:underline font-medium">Wasp Nest Removal Guide</Link>.
+        You can safely treat a small, accessible wasp nest yourself using shop-bought products, but <strong>only under the right conditions</strong>. The nest should be no larger than a tennis ball, clearly visible, and in an accessible location &mdash; not in a wall cavity, loft, or underground. Apply a wasp nest killer foam or spray at dusk, when the colony is least active, wearing gloves, long sleeves, and a hat. Have a clear retreat route planned. If the nest is larger than a tennis ball, in a confined or hard-to-reach space, or if anyone in your household has a wasp sting allergy, <strong>always call a professional</strong>. For more detailed guidance, see our <Link href="/guides/wasp-nest-removal" className="text-[var(--color-teal-deep)] hover:underline font-medium">Wasp Nest Removal Guide</Link>.
       </p>
 
       <h3>How much does professional wasp nest removal cost?</h3>
       <p>
-        Professional wasp nest removal in the UK typically costs between <strong>&pound;50 and &pound;80</strong>, with prices at the higher end in London and the South East. Most pest controllers charge a fixed fee regardless of the size of the nest. Some companies charge a reduced additional fee (typically &pound;20&ndash;&pound;30) to treat a second nest on the same visit. The treatment takes around 10 to 15 minutes, and the colony is dead within 24 to 48 hours. For a comprehensive breakdown of costs across all pest types, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
+        Professional wasp nest removal in the UK typically costs between <strong>&pound;50 and &pound;80</strong>, with prices at the higher end in London and the South East. Most pest controllers charge a fixed fee regardless of the size of the nest. Some companies charge a reduced additional fee (typically &pound;20&ndash;&pound;30) to treat a second nest on the same visit. The treatment takes around 10 to 15 minutes, and the colony is dead within 24 to 48 hours. For a comprehensive breakdown of costs across all pest types, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
       </p>
 
       <h3>Do wasp nests get reused the following year?</h3>
@@ -539,26 +539,26 @@ export default function WaspSeasonPreparationPage() {
       {/* ------------------------------------------------------------------ */}
       {/* CROSS-LINK BOX */}
       {/* ------------------------------------------------------------------ */}
-      <div className="not-prose my-8 p-6 bg-gray-50 border border-gray-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-3">Related guides and product picks</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-paper-sunk)] border border-[var(--color-rule)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-3">Related guides and product picks</p>
         <ul className="space-y-2">
           <li>
-            <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-medium">
+            <Link href="/best/wasp-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">
               Best Wasp Killer Products UK 2026
             </Link>
-            <span className="text-gray-500"> &mdash; Sprays, powders, and traps compared</span>
+            <span className="text-[var(--color-ink-mute)]"> &mdash; Sprays, powders, and traps compared</span>
           </li>
           <li>
-            <Link href="/best/wasp-nest-foam" className="text-blue-600 hover:underline font-medium">
+            <Link href="/best/wasp-nest-foam" className="text-[var(--color-teal-deep)] hover:underline font-medium">
               Best Wasp Nest Killer Foam UK 2026
             </Link>
-            <span className="text-gray-500"> &mdash; Long-range foams and aerosols reviewed</span>
+            <span className="text-[var(--color-ink-mute)]"> &mdash; Long-range foams and aerosols reviewed</span>
           </li>
           <li>
-            <Link href="/guides/wasp-nest-removal" className="text-blue-600 hover:underline font-medium">
+            <Link href="/guides/wasp-nest-removal" className="text-[var(--color-teal-deep)] hover:underline font-medium">
               Wasp Nest Removal: Complete UK Guide
             </Link>
-            <span className="text-gray-500"> &mdash; Identification, treatment, and prevention</span>
+            <span className="text-[var(--color-ink-mute)]"> &mdash; Identification, treatment, and prevention</span>
           </li>
         </ul>
       </div>

@@ -284,7 +284,7 @@ export default function HumaneMouseTrapsVsKillTrapsPage() {
         <li><strong>Break-back traps:</strong> Similar to snap traps but with a different mechanism. The traditional wooden break-back trap is the cheapest option but less reliable than modern plastic snap traps.</li>
       </ul>
       <p>
-        If you have children or pets, see our guide to <Link href="/best/mouse-bait-stations" className="text-green-600 hover:underline">mouse bait stations</Link> for tamper-resistant options that house traps or bait safely.
+        If you have children or pets, see our guide to <Link href="/best/mouse-bait-stations" className="text-[var(--color-ok)] hover:underline">mouse bait stations</Link> for tamper-resistant options that house traps or bait safely.
       </p>
 
       <h3>Why Kill Traps Are Often the More Humane Choice</h3>

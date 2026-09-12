@@ -157,7 +157,7 @@ export default function LandlordPestControlResponsibilitiesPage() {
         A <strong>Category 1 hazard</strong> under HHSRS requires the local authority to take action. This can include improvement notices, prohibition orders, and <strong>civil penalties of up to &pound;30,000</strong> for failure to comply. In the most serious cases, landlords can face prosecution. Private landlords should treat HHSRS standards as the baseline minimum &mdash; not a ceiling.
       </p>
       <p>
-        For landlords managing properties with rodent issues, <Link href="/best/professional-bait-station-kits" className="text-green-600 hover:underline">professional bait station kits</Link> provide tamper-resistant, documented rodent control that demonstrates proactive management to housing officers and environmental health inspectors.
+        For landlords managing properties with rodent issues, <Link href="/best/professional-bait-station-kits" className="text-[var(--color-ok)] hover:underline">professional bait station kits</Link> provide tamper-resistant, documented rodent control that demonstrates proactive management to housing officers and environmental health inspectors.
       </p>
 
       {/* Section 3: Awaab's Law */}
@@ -166,7 +166,7 @@ export default function LandlordPestControlResponsibilitiesPage() {
         <strong>Awaab&apos;s Law</strong> (Section 42, Social Housing Regulation Act 2023) currently applies to registered social housing providers. It requires investigation of damp and mould hazards within <strong>14 days</strong> of a report, written remediation plans within <strong>7 days</strong> of completing the investigation, and emergency repairs within <strong>7 days</strong> where there is an imminent risk to health.
       </p>
       <p>
-        Private landlords are not yet subject to Awaab&apos;s Law directly &mdash; but HHSRS enforcement against private landlords for damp and mould is <strong>increasing sharply</strong>. Councils are using HHSRS powers more aggressively since Awaab Ishak&apos;s case, and tenants are increasingly aware of their rights. Acting now is both the right thing to do and a practical risk management strategy. For a full breakdown of the equipment needed, see our <Link href="/best/awaabs-law-damp-mould-equipment" className="text-green-600 hover:underline">damp and mould equipment guide for landlords</Link>.
+        Private landlords are not yet subject to Awaab&apos;s Law directly &mdash; but HHSRS enforcement against private landlords for damp and mould is <strong>increasing sharply</strong>. Councils are using HHSRS powers more aggressively since Awaab Ishak&apos;s case, and tenants are increasingly aware of their rights. Acting now is both the right thing to do and a practical risk management strategy. For a full breakdown of the equipment needed, see our <Link href="/best/awaabs-law-damp-mould-equipment" className="text-[var(--color-ok)] hover:underline">damp and mould equipment guide for landlords</Link>.
       </p>
 
       <div className="not-prose">
@@ -239,7 +239,7 @@ export default function LandlordPestControlResponsibilitiesPage() {
         In <strong>Houses in Multiple Occupation (HMOs)</strong>, landlords are almost always responsible for pest control. The common parts &mdash; hallways, kitchens, bathrooms, stairwells, bin stores and the building perimeter &mdash; are entirely under the landlord&apos;s control and maintenance obligation. Infestations in shared buildings typically spread through the building fabric (wall voids, pipe runs, ceiling cavities) rather than through individual tenant behaviour, making it a structural issue by default.
       </p>
       <p>
-        HMO landlords should implement proactive pest monitoring as standard practice. <Link href="/best/professional-insect-light-traps" className="text-green-600 hover:underline">Commercial insect light traps</Link> in communal kitchens and bin stores provide early warning of cockroach, fly and stored-product moth activity before a full infestation develops. Combined with regular perimeter checks and tamper-resistant bait stations at entry points, this monitoring approach demonstrates the proactive management that local authorities expect from licensed HMO operators.
+        HMO landlords should implement proactive pest monitoring as standard practice. <Link href="/best/professional-insect-light-traps" className="text-[var(--color-ok)] hover:underline">Commercial insect light traps</Link> in communal kitchens and bin stores provide early warning of cockroach, fly and stored-product moth activity before a full infestation develops. Combined with regular perimeter checks and tamper-resistant bait stations at entry points, this monitoring approach demonstrates the proactive management that local authorities expect from licensed HMO operators.
       </p>
 
       {/* Section 5: What Landlords Should Do */}
@@ -247,7 +247,7 @@ export default function LandlordPestControlResponsibilitiesPage() {
       <ol>
         <li><strong>Inspect the property at the start of each tenancy</strong> &mdash; document the condition with dated photographs and a written inventory that notes any pest history or structural vulnerabilities</li>
         <li><strong>Act promptly when a pest problem is reported</strong> &mdash; do not delay, do not argue about liability. Acknowledge the report, investigate within days, and begin treatment as soon as the pest is identified</li>
-        <li><strong>Use professional-grade treatment for serious infestations</strong> &mdash; rats, cockroaches and bed bugs rarely respond adequately to consumer products. Invest in <Link href="/best/professional-bait-station-kits" className="text-green-600 hover:underline">tamper-resistant bait station kits</Link> for rodent control and <Link href="/best/professional-bed-bug-steamers" className="text-green-600 hover:underline">professional bed bug steamers</Link> for heat treatment of furnished lets</li>
+        <li><strong>Use professional-grade treatment for serious infestations</strong> &mdash; rats, cockroaches and bed bugs rarely respond adequately to consumer products. Invest in <Link href="/best/professional-bait-station-kits" className="text-[var(--color-ok)] hover:underline">tamper-resistant bait station kits</Link> for rodent control and <Link href="/best/professional-bed-bug-steamers" className="text-[var(--color-ok)] hover:underline">professional bed bug steamers</Link> for heat treatment of furnished lets</li>
         <li><strong>Keep records</strong> &mdash; date reported, date investigated, date treated, treatment method used, products applied, follow-up inspection date and findings. This documentation is your evidence of compliance</li>
         <li><strong>For damp-related pests, address the underlying humidity problem</strong> &mdash; not just the pest. Silverfish, booklice and mould mites will return within weeks if the damp is not fixed</li>
       </ol>
@@ -270,9 +270,9 @@ export default function LandlordPestControlResponsibilitiesPage() {
         For landlords who want to treat infestations themselves or provide equipment to managing agents:
       </p>
       <ul>
-        <li><Link href="/best/professional-bait-station-kits" className="text-green-600 hover:underline">Professional bait station kits</Link> &mdash; tamper-resistant rodent control for rental properties</li>
-        <li><Link href="/best/professional-bed-bug-steamers" className="text-green-600 hover:underline">Professional bed bug steamers</Link> &mdash; effective heat treatment for furnished lets</li>
-        <li><Link href="/best/awaabs-law-damp-mould-equipment" className="text-green-600 hover:underline">Awaab&apos;s Law damp and mould equipment</Link> &mdash; PIV units, dehumidifiers and compliance documentation tools</li>
+        <li><Link href="/best/professional-bait-station-kits" className="text-[var(--color-ok)] hover:underline">Professional bait station kits</Link> &mdash; tamper-resistant rodent control for rental properties</li>
+        <li><Link href="/best/professional-bed-bug-steamers" className="text-[var(--color-ok)] hover:underline">Professional bed bug steamers</Link> &mdash; effective heat treatment for furnished lets</li>
+        <li><Link href="/best/awaabs-law-damp-mould-equipment" className="text-[var(--color-ok)] hover:underline">Awaab&apos;s Law damp and mould equipment</Link> &mdash; PIV units, dehumidifiers and compliance documentation tools</li>
       </ul>
 
       <div className="not-prose">
@@ -285,15 +285,15 @@ export default function LandlordPestControlResponsibilitiesPage() {
       <div className="not-prose mt-8 flex flex-col sm:flex-row gap-4">
         <Link
           href="/best/professional-bait-station-kits"
-          className="inline-block text-center px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+          className="inline-block text-center px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
         >
-          Professional Bait Station Kits &rarr;
+          Professional Bait Station Kits
         </Link>
         <Link
           href="/best/awaabs-law-damp-mould-equipment"
-          className="inline-block text-center px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+          className="inline-block text-center px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
         >
-          Awaab&apos;s Law Equipment Guide &rarr;
+          Awaab&apos;s Law Equipment Guide
         </Link>
       </div>
     </GuideLayout>

@@ -303,17 +303,17 @@ export default function NaturalSpiderRepellentsPage() {
         For most people in the UK, natural spider repellents combined with good household practices are more than sufficient. UK house spiders are harmless, and reducing their numbers &mdash; rather than eliminating them entirely &mdash; is a realistic and sensible goal. Complete elimination is neither necessary nor practically achievable in most homes.
       </p>
       <p>
-        However, if you have a severe spider phobia that affects your daily life, or if you are dealing with an unusually large number of spiders in a specific area (perhaps a basement or outbuilding), chemical spider repellent sprays can provide a stronger barrier. These typically contain synthetic pyrethroids that create a residual barrier lasting several weeks. For longer-lasting protection, see our guide to <Link href="/best/spider-repellent" className="text-green-600 hover:underline">spider repellent sprays</Link> including peppermint oil and chemical options.
+        However, if you have a severe spider phobia that affects your daily life, or if you are dealing with an unusually large number of spiders in a specific area (perhaps a basement or outbuilding), chemical spider repellent sprays can provide a stronger barrier. These typically contain synthetic pyrethroids that create a residual barrier lasting several weeks. For longer-lasting protection, see our guide to <Link href="/best/spider-repellent" className="text-[var(--color-ok)] hover:underline">spider repellent sprays</Link> including peppermint oil and chemical options.
       </p>
 
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Want a stronger barrier?</p>
-        <p className="text-gray-700 mb-3">Our guides cover chemical spider repellent sprays that create a longer-lasting barrier for people who need extra protection.</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Want a stronger barrier?</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">Our guides cover chemical spider repellent sprays that create a longer-lasting barrier for people who need extra protection.</p>
         <Link
           href="/best/spider-repellent"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+          className="inline-block px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
         >
-          Best Spider Repellent UK 2026 &rarr;
+          Best Spider Repellent UK 2026
         </Link>
       </div>
 

@@ -210,7 +210,7 @@ export default function HowToGetRidOfSquirrelsPage() {
       </p>
 
 <Callout type="tip">
-        <p>Sealing the entry points matters more than anything you put down. Our guide to the <Link href="/best/rodent-proofing" className="text-blue-600 hover:underline font-medium">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips that keep them out for good.</p>
+        <p>Sealing the entry points matters more than anything you put down. Our guide to the <Link href="/best/rodent-proofing" className="text-[var(--color-teal-deep)] hover:underline font-medium">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips that keep them out for good.</p>
       </Callout>
 
             <p>
@@ -337,7 +337,7 @@ export default function HowToGetRidOfSquirrelsPage() {
 
       <h3>Squirrel-Proof Bird Feeders</h3>
       <p>
-        If bird feeders are attracting squirrels to your garden, switching to <strong>squirrel-proof feeders</strong> is one of the most effective steps you can take. These feeders use weight-activated mechanisms that close the feeding ports when a squirrel (heavier than a bird) climbs onto them, or enclose the feeder in a cage with gaps large enough for small birds but too narrow for a squirrel. Pole-mounted feeders with baffles (cone-shaped guards) beneath them are also effective. Position feeders at least <strong>2.5 metres from any branch, fence, or structure</strong> that a squirrel could jump from &mdash; grey squirrels can leap horizontally up to 3 metres and vertically up to 1.5 metres. For a detailed comparison of the most effective products, see our <Link href="/best/squirrel-deterrents" className="text-blue-600 hover:underline font-medium">Best Squirrel Deterrents UK 2026</Link> guide.
+        If bird feeders are attracting squirrels to your garden, switching to <strong>squirrel-proof feeders</strong> is one of the most effective steps you can take. These feeders use weight-activated mechanisms that close the feeding ports when a squirrel (heavier than a bird) climbs onto them, or enclose the feeder in a cage with gaps large enough for small birds but too narrow for a squirrel. Pole-mounted feeders with baffles (cone-shaped guards) beneath them are also effective. Position feeders at least <strong>2.5 metres from any branch, fence, or structure</strong> that a squirrel could jump from &mdash; grey squirrels can leap horizontally up to 3 metres and vertically up to 1.5 metres. For a detailed comparison of the most effective products, see our <Link href="/best/squirrel-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Squirrel Deterrents UK 2026</Link> guide.
       </p>
 
       <h3>Capsaicin (Chilli) Repellent Sprays</h3>
@@ -373,14 +373,14 @@ export default function HowToGetRidOfSquirrelsPage() {
       </div>
 
       {/* Link to product review */}
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Looking for squirrel deterrent products?</p>
-        <p className="text-gray-700 mb-3">Our guide covers the best squirrel deterrents, repellents, and squirrel-proof bird feeders available in the UK.</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Looking for squirrel deterrent products?</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">Our guide covers the best squirrel deterrents, repellents, and squirrel-proof bird feeders available in the UK.</p>
         <a
           href="/best/squirrel-deterrents"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+          className="inline-block px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
         >
-          Best Squirrel Deterrents UK 2026 &rarr;
+          Best Squirrel Deterrents UK 2026
         </a>
       </div>
 
@@ -505,7 +505,7 @@ export default function HowToGetRidOfSquirrelsPage() {
       </p>
 
       <p>
-        For a detailed breakdown of pest control costs across all common UK pests, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
+        For a detailed breakdown of pest control costs across all common UK pests, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -563,178 +563,178 @@ export default function HowToGetRidOfSquirrelsPage() {
       <div className="not-prose my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <Link
           href="/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             London
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/birmingham/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Birmingham
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/manchester/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Manchester
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/liverpool/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Liverpool
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/leeds/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Leeds
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/nottingham/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Nottingham
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/brighton/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Brighton
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/sheffield/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Sheffield
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/bristol/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Bristol
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/glasgow/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Glasgow
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/bradford/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Bradford
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/newcastle/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Newcastle
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/cardiff/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Cardiff
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/edinburgh/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Edinburgh
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/leicester/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Leicester
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/hampshire/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Hampshire
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/coventry/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Coventry
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/belfast/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Belfast
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find squirrel specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find squirrel specialists</span>
         </Link>
         <Link
           href="/pest-control/regions"
-          className="block p-5 bg-blue-50 border border-blue-200 rounded-xl hover:shadow-md hover:border-blue-400 transition-all group sm:col-span-2 lg:col-span-3"
+          className="block p-5 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group sm:col-span-2 lg:col-span-3"
         >
-          <span className="font-bold text-blue-700 group-hover:text-blue-800 transition-colors">
-            Browse all 18 locations &rarr;
+          <span className="font-bold text-[var(--color-teal-deep)] group-hover:text-[var(--color-teal-deep)] transition-colors">
+            Browse all 18 locations
           </span>
         </Link>
       </div>
 
       <p>
-        For a detailed breakdown of pest control costs across all common UK pests, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide. You might also find our other guides helpful: <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/wasp-nest-removal" className="text-blue-600 hover:underline font-medium">wasp nest removal</Link>, <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline font-medium">how to get rid of bed bugs</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">how to get rid of cockroaches</Link>, <Link href="/guides/how-to-get-rid-of-fleas" className="text-blue-600 hover:underline font-medium">how to get rid of fleas</Link>, and <Link href="/guides/how-to-get-rid-of-ants" className="text-blue-600 hover:underline font-medium">how to get rid of ants</Link>. For product recommendations, browse our <Link href="/best/squirrel-deterrents" className="text-blue-600 hover:underline font-medium">best squirrel deterrents</Link>, <Link href="/best/rat-traps" className="text-blue-600 hover:underline font-medium">best rat traps</Link>, <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">best mouse traps</Link>, <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-medium">best wasp killers</Link>, <Link href="/best/cockroach-killers" className="text-blue-600 hover:underline font-medium">best cockroach killers</Link>, <Link href="/best/flea-treatments" className="text-blue-600 hover:underline font-medium">best flea treatments</Link>, and <Link href="/best/ant-killers" className="text-blue-600 hover:underline font-medium">best ant killers</Link> guides.
+        For a detailed breakdown of pest control costs across all common UK pests, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide. You might also find our other guides helpful: <Link href="/guides/how-to-get-rid-of-rats" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/wasp-nest-removal" className="text-[var(--color-teal-deep)] hover:underline font-medium">wasp nest removal</Link>, <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of bed bugs</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of cockroaches</Link>, <Link href="/guides/how-to-get-rid-of-fleas" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of fleas</Link>, and <Link href="/guides/how-to-get-rid-of-ants" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of ants</Link>. For product recommendations, browse our <Link href="/best/squirrel-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">best squirrel deterrents</Link>, <Link href="/best/rat-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">best rat traps</Link>, <Link href="/best/mouse-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">best mouse traps</Link>, <Link href="/best/wasp-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">best wasp killers</Link>, <Link href="/best/cockroach-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">best cockroach killers</Link>, <Link href="/best/flea-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">best flea treatments</Link>, and <Link href="/best/ant-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">best ant killers</Link> guides.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -764,7 +764,7 @@ export default function HowToGetRidOfSquirrelsPage() {
 
       <h3>How much does professional squirrel removal cost?</h3>
       <p>
-        Professional squirrel removal in the UK typically costs between <strong>&pound;150 and &pound;350</strong> for a standard loft treatment. This usually includes an initial survey, setting traps, humane dispatch, proofing entry points with galvanised wire mesh, and two to three follow-up visits to check traps and ensure the problem is resolved. More complex jobs &mdash; such as properties with multiple entry points, extensive proofing work, or large loft spaces in detached properties &mdash; can cost <strong>&pound;250 to &pound;500 or more</strong>. Prices vary by region, with London and the South East typically at the higher end of the range. For a full cost breakdown, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
+        Professional squirrel removal in the UK typically costs between <strong>&pound;150 and &pound;350</strong> for a standard loft treatment. This usually includes an initial survey, setting traps, humane dispatch, proofing entry points with galvanised wire mesh, and two to three follow-up visits to check traps and ensure the problem is resolved. More complex jobs &mdash; such as properties with multiple entry points, extensive proofing work, or large loft spaces in detached properties &mdash; can cost <strong>&pound;250 to &pound;500 or more</strong>. Prices vary by region, with London and the South East typically at the higher end of the range. For a full cost breakdown, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
       </p>
 
       <h3>Is it legal to trap squirrels in the UK?</h3>
@@ -774,7 +774,7 @@ export default function HowToGetRidOfSquirrelsPage() {
 
       <h3>How do I stop squirrels digging up my garden?</h3>
       <p>
-        Squirrels dig in gardens mainly to bury and retrieve food caches, particularly nuts and seeds. To deter them, <strong>cover newly planted bulbs with chicken wire or wire mesh</strong> pegged into the soil. Use squirrel-proof bird feeders that close under the squirrel&apos;s weight. Remove fallen fruit and nuts from the ground promptly. Apply <strong>capsaicin-based (chilli) repellent sprays</strong> to areas where squirrels are digging &mdash; squirrels dislike the taste and smell, while birds are unaffected. Motion-activated sprinklers and ultrasonic deterrent devices can also discourage squirrels from spending time in your garden, though results with ultrasonic devices are inconsistent. For recommended products, see our <Link href="/best/squirrel-deterrents" className="text-blue-600 hover:underline font-medium">Best Squirrel Deterrents UK 2026</Link> guide.
+        Squirrels dig in gardens mainly to bury and retrieve food caches, particularly nuts and seeds. To deter them, <strong>cover newly planted bulbs with chicken wire or wire mesh</strong> pegged into the soil. Use squirrel-proof bird feeders that close under the squirrel&apos;s weight. Remove fallen fruit and nuts from the ground promptly. Apply <strong>capsaicin-based (chilli) repellent sprays</strong> to areas where squirrels are digging &mdash; squirrels dislike the taste and smell, while birds are unaffected. Motion-activated sprinklers and ultrasonic deterrent devices can also discourage squirrels from spending time in your garden, though results with ultrasonic devices are inconsistent. For recommended products, see our <Link href="/best/squirrel-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Squirrel Deterrents UK 2026</Link> guide.
       </p>
 
       <h3>What&apos;s the difference between squirrel and rat noises in a loft?</h3>

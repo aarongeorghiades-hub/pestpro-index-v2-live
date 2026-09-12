@@ -181,9 +181,9 @@ export default function CommercialPestControlHubPage() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-[var(--color-ink)] via-[var(--color-ink)] to-[var(--color-ink)] text-white py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4">
-          <nav className="flex items-center gap-2 text-sm text-blue-200 mb-6">
+          <nav className="flex items-center gap-2 text-sm text-[var(--color-paper)]/75 mb-6">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
             <Link href="/guides" className="hover:text-white transition-colors">Guides</Link>
@@ -191,17 +191,17 @@ export default function CommercialPestControlHubPage() {
             <span className="text-white">Commercial Pest Control</span>
           </nav>
 
-          <div className="inline-block px-3 py-1 bg-purple-500/20 border border-purple-400/30 rounded-full text-purple-200 text-sm font-semibold mb-4">
+          <div className="inline-block px-3 py-1 bg-[var(--color-ochre)]/20 border border-[var(--color-ochre-edge)]/30 rounded-full text-[var(--color-paper)]/75 text-sm font-semibold mb-4">
             Commercial
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 leading-tight">
             Commercial Pest Control Guides
           </h1>
-          <p className="text-lg md:text-xl text-blue-100 max-w-3xl mb-6">
+          <p className="text-lg md:text-xl text-[var(--color-paper)]/75 max-w-3xl mb-6">
             Essential pest control compliance, equipment, and management guides for UK businesses
           </p>
-          <p className="text-blue-200 max-w-3xl leading-relaxed">
+          <p className="text-[var(--color-paper)]/75 max-w-3xl leading-relaxed">
             Pest control is a legal requirement for food businesses and a critical operational need for all commercial premises. These guides help business owners, facilities managers, and kitchen managers understand their obligations and make informed decisions about pest management programmes, equipment, and compliance.
           </p>
         </div>
@@ -209,10 +209,10 @@ export default function CommercialPestControlHubPage() {
 
       {/* Why Pest Control Matters for Businesses */}
       <section className="max-w-4xl mx-auto px-4 py-16">
-        <h2 className="text-2xl md:text-3xl font-bold text-blue-900 border-l-4 border-amber-500 pl-4 mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-ink)] border-l-4 border-[var(--color-ochre)] pl-4 mb-8">
           Why Pest Control Matters for Businesses
         </h2>
-        <div className="space-y-4 text-gray-700 leading-relaxed">
+        <div className="space-y-4 text-[var(--color-ink-soft)] leading-relaxed">
           <p>
             For any business operating in the UK, pest control is not a &ldquo;nice to have&rdquo; &mdash; it is a <strong>legal and operational necessity</strong>. Under the <strong>Food Safety Act 1990</strong> and EC Regulation 852/2004 (retained in UK law), all food business operators must maintain adequate procedures to control pests. Environmental Health Officers (EHOs) carry out <strong>unannounced inspections</strong> and have the power to issue improvement notices, close premises immediately, and prosecute operators who fail to comply.
           </p>
@@ -232,9 +232,9 @@ export default function CommercialPestControlHubPage() {
       </section>
 
       {/* Sector Guides */}
-      <section className="bg-gray-50 border-t border-gray-200">
+      <section className="bg-[var(--color-paper-sunk)] border-t border-[var(--color-rule)]">
         <div className="max-w-7xl mx-auto px-4 py-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-blue-900 border-l-4 border-amber-500 pl-4 mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-ink)] border-l-4 border-[var(--color-ochre)] pl-4 mb-8">
             Guides by Business Type
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -243,17 +243,17 @@ export default function CommercialPestControlHubPage() {
                 <Link
                   key={guide.title}
                   href={guide.href}
-                  className="group block p-6 bg-white rounded-xl border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all"
+                  className="group block p-6 bg-white rounded-xl border border-[var(--color-rule)] hover:shadow-lg hover:border-[var(--color-teal-edge)] transition-all"
                 >
                   <div className="flex items-start gap-4">
                     <span className="text-3xl flex-shrink-0">{guide.emoji}</span>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-1">
+                      <h3 className="text-lg font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors mb-1">
                         {guide.title}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-3">{guide.description}</p>
-                      <span className="text-sm text-blue-600 font-medium group-hover:translate-x-1 inline-block transition-transform">
-                        Read guide &rarr;
+                      <p className="text-[var(--color-ink-soft)] text-sm mb-3">{guide.description}</p>
+                      <span className="text-sm text-[var(--color-teal-deep)] font-medium group-hover:translate-x-1 inline-block transition-transform">
+                        Read guide
                       </span>
                     </div>
                   </div>
@@ -261,20 +261,20 @@ export default function CommercialPestControlHubPage() {
               ) : (
                 <div
                   key={guide.title}
-                  className="block p-6 bg-gray-50 rounded-xl border border-gray-200 opacity-75"
+                  className="block p-6 bg-[var(--color-paper-sunk)] rounded-xl border border-[var(--color-rule)] opacity-75"
                 >
                   <div className="flex items-start gap-4">
                     <span className="text-3xl flex-shrink-0 grayscale">{guide.emoji}</span>
                     <div>
                       <div className="flex items-center gap-2 mb-1">
-                        <h3 className="text-lg font-bold text-gray-500">
+                        <h3 className="text-lg font-bold text-[var(--color-ink-mute)]">
                           {guide.title}
                         </h3>
-                        <span className="text-xs font-semibold px-2 py-0.5 bg-gray-200 text-gray-500 rounded-full">
+                        <span className="text-xs font-semibold px-2 py-0.5 bg-[var(--color-rule)] text-[var(--color-ink-mute)] rounded-full">
                           Coming Soon
                         </span>
                       </div>
-                      <p className="text-gray-400 text-sm">{guide.description}</p>
+                      <p className="text-[var(--color-ink-mute)] text-sm">{guide.description}</p>
                     </div>
                   </div>
                 </div>
@@ -286,7 +286,7 @@ export default function CommercialPestControlHubPage() {
 
       {/* Commercial Equipment Guides */}
       <section className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-2xl md:text-3xl font-bold text-blue-900 border-l-4 border-amber-500 pl-4 mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-ink)] border-l-4 border-[var(--color-ochre)] pl-4 mb-8">
           Commercial Equipment Guides
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
@@ -295,17 +295,17 @@ export default function CommercialPestControlHubPage() {
               <Link
                 key={review.title}
                 href={review.href}
-                className="group block p-6 bg-white rounded-xl border border-gray-200 hover:shadow-lg hover:border-amber-300 transition-all"
+                className="group block p-6 bg-white rounded-xl border border-[var(--color-rule)] hover:shadow-lg hover:border-[var(--color-ochre-edge)] transition-all"
               >
                 <div className="flex items-start gap-4">
                   <span className="text-3xl flex-shrink-0">{review.emoji}</span>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-amber-600 transition-colors mb-1">
+                    <h3 className="text-lg font-bold text-[var(--color-ink)] group-hover:text-[var(--color-ochre-deep)] transition-colors mb-1">
                       {review.title}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-3">{review.description}</p>
-                    <span className="text-sm text-amber-600 font-medium group-hover:translate-x-1 inline-block transition-transform">
-                      Read guide &rarr;
+                    <p className="text-[var(--color-ink-soft)] text-sm mb-3">{review.description}</p>
+                    <span className="text-sm text-[var(--color-ochre-deep)] font-medium group-hover:translate-x-1 inline-block transition-transform">
+                      Read guide
                     </span>
                   </div>
                 </div>
@@ -313,20 +313,20 @@ export default function CommercialPestControlHubPage() {
             ) : (
               <div
                 key={review.title}
-                className="block p-6 bg-gray-50 rounded-xl border border-gray-200 opacity-75"
+                className="block p-6 bg-[var(--color-paper-sunk)] rounded-xl border border-[var(--color-rule)] opacity-75"
               >
                 <div className="flex items-start gap-4">
                   <span className="text-3xl flex-shrink-0 grayscale">{review.emoji}</span>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="text-lg font-bold text-gray-500">
+                      <h3 className="text-lg font-bold text-[var(--color-ink-mute)]">
                         {review.title}
                       </h3>
-                      <span className="text-xs font-semibold px-2 py-0.5 bg-gray-200 text-gray-500 rounded-full">
+                      <span className="text-xs font-semibold px-2 py-0.5 bg-[var(--color-rule)] text-[var(--color-ink-mute)] rounded-full">
                         Coming Soon
                       </span>
                     </div>
-                    <p className="text-gray-400 text-sm">{review.description}</p>
+                    <p className="text-[var(--color-ink-mute)] text-sm">{review.description}</p>
                   </div>
                 </div>
               </div>
@@ -344,9 +344,9 @@ export default function CommercialPestControlHubPage() {
       </section>
 
       {/* Compare Commercial Pest Control Providers */}
-      <section className="bg-gray-50 border-t border-gray-200">
+      <section className="bg-[var(--color-paper-sunk)] border-t border-[var(--color-rule)]">
         <div className="max-w-7xl mx-auto px-4 py-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-blue-900 border-l-4 border-amber-500 pl-4 mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-ink)] border-l-4 border-[var(--color-ochre)] pl-4 mb-8">
             Compare Commercial Pest Control Providers
           </h2>
           <div className="flex flex-wrap gap-3">
@@ -354,7 +354,7 @@ export default function CommercialPestControlHubPage() {
               <Link
                 key={city.href}
                 href={city.href}
-                className="text-sm text-blue-700 hover:text-white bg-blue-50 hover:bg-blue-600 border border-blue-200 hover:border-blue-600 px-4 py-2 rounded-full transition-colors font-medium"
+                className="text-sm text-[var(--color-teal-deep)] hover:text-white bg-[var(--color-teal-wash)] hover:bg-[var(--color-teal-deep)] border border-[var(--color-teal-edge)] hover:border-[var(--color-teal)] px-4 py-2 rounded-full transition-colors font-medium"
               >
                 {city.name} Commercial
               </Link>

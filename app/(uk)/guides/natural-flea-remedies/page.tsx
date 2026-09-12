@@ -311,24 +311,24 @@ export default function NaturalFleaRemediesPage() {
       </ul>
 
       <p>
-        For serious infestations, a combination of <strong>household flea spray</strong> (which contains an insecticide and an insect growth regulator to break the lifecycle) and a <strong>vet-prescribed pet flea treatment</strong> is the fastest and most reliable solution. In severe cases, a flea fogger (smoke bomb) can treat an entire room in one application. For a serious infestation, a professional-grade <Link href="/best/flea-spray-for-home" className="text-green-600 hover:underline">household flea spray</Link> will be more effective than natural remedies alone.
+        For serious infestations, a combination of <strong>household flea spray</strong> (which contains an insecticide and an insect growth regulator to break the lifecycle) and a <strong>vet-prescribed pet flea treatment</strong> is the fastest and most reliable solution. In severe cases, a flea fogger (smoke bomb) can treat an entire room in one application. For a serious infestation, a professional-grade <Link href="/best/flea-spray-for-home" className="text-[var(--color-ok)] hover:underline">household flea spray</Link> will be more effective than natural remedies alone.
       </p>
 
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Need stronger treatment?</p>
-        <p className="text-gray-700 mb-3">Our guides cover the most effective chemical flea treatments for homes and pets when natural methods are not sufficient.</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Need stronger treatment?</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">Our guides cover the most effective chemical flea treatments for homes and pets when natural methods are not sufficient.</p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/best/flea-spray-for-home"
-            className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+            className="inline-block px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
           >
-            Best Flea Spray for Home &rarr;
+            Best Flea Spray for Home
           </Link>
           <Link
             href="/best/flea-fogger"
-            className="inline-block px-6 py-2.5 bg-white border border-blue-300 hover:bg-blue-50 text-blue-700 font-bold rounded-lg transition-colors text-sm"
+            className="inline-block px-6 py-2.5 bg-white border border-[var(--color-teal-edge)] hover:bg-[var(--color-teal-wash)] text-[var(--color-teal-deep)] font-bold rounded-lg transition-colors text-sm"
           >
-            Best Flea Fogger UK 2026 &rarr;
+            Best Flea Fogger UK 2026
           </Link>
         </div>
       </div>

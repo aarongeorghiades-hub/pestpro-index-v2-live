@@ -349,14 +349,14 @@ export default function HowToGetRidOfFoxesPage() {
       </p>
 
       {/* Link to product review */}
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Looking for fox deterrent products?</p>
-        <p className="text-gray-700 mb-3">Our guide covers the best fox deterrents, repellents, and motion-activated sprinklers available in the UK.</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Looking for fox deterrent products?</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">Our guide covers the best fox deterrents, repellents, and motion-activated sprinklers available in the UK.</p>
         <a
           href="/best/fox-deterrents"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+          className="inline-block px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
         >
-          Best Fox Deterrents UK 2026 &rarr;
+          Best Fox Deterrents UK 2026
         </a>
       </div>
 
@@ -432,7 +432,7 @@ export default function HowToGetRidOfFoxesPage() {
       <h2 id="products">Recommended Fox Deterrent Products</h2>
 
       <p>
-        Below are two of the most effective and popular fox deterrent products available in the UK. For a comprehensive comparison of all the best fox deterrents &mdash; including scent repellents, ultrasonic devices, and motion-activated sprinklers &mdash; see our dedicated <Link href="/best/fox-deterrents" className="text-blue-600 hover:underline font-medium">Best Fox Deterrents UK 2026</Link> guide.
+        Below are two of the most effective and popular fox deterrent products available in the UK. For a comprehensive comparison of all the best fox deterrents &mdash; including scent repellents, ultrasonic devices, and motion-activated sprinklers &mdash; see our dedicated <Link href="/best/fox-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Fox Deterrents UK 2026</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -469,178 +469,178 @@ export default function HowToGetRidOfFoxesPage() {
       <div className="not-prose my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <Link
           href="/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             London
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/birmingham/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Birmingham
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/manchester/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Manchester
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/liverpool/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Liverpool
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/leeds/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Leeds
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/nottingham/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Nottingham
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/brighton/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Brighton
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/sheffield/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Sheffield
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/bristol/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Bristol
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/glasgow/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Glasgow
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/bradford/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Bradford
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/newcastle/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Newcastle
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/cardiff/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Cardiff
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/edinburgh/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Edinburgh
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/leicester/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Leicester
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/hampshire/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Hampshire
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/coventry/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Coventry
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/belfast/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Belfast
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find fox control specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find fox control specialists</span>
         </Link>
         <Link
           href="/pest-control/regions"
-          className="block p-5 bg-blue-50 border border-blue-200 rounded-xl hover:shadow-md hover:border-blue-400 transition-all group sm:col-span-2 lg:col-span-3"
+          className="block p-5 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group sm:col-span-2 lg:col-span-3"
         >
-          <span className="font-bold text-blue-700 group-hover:text-blue-800 transition-colors">
-            Browse all 18 locations &rarr;
+          <span className="font-bold text-[var(--color-teal-deep)] group-hover:text-[var(--color-teal-deep)] transition-colors">
+            Browse all 18 locations
           </span>
         </Link>
       </div>
 
       <p>
-        For a detailed breakdown of pest control costs across all common UK pests, including fox deterrent installation and garden proofing, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide. If foxes are not the only pest you are dealing with, you may also find our other guides helpful: <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/how-to-get-rid-of-squirrels" className="text-blue-600 hover:underline font-medium">how to get rid of squirrels</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">how to get rid of cockroaches</Link>, <Link href="/guides/how-to-get-rid-of-fleas" className="text-blue-600 hover:underline font-medium">how to get rid of fleas</Link>, and <Link href="/guides/pigeon-control" className="text-blue-600 hover:underline font-medium">pigeon control</Link>. Landlords dealing with fox issues in rental properties should consult our <Link href="/guides/landlord-pest-control" className="text-blue-600 hover:underline font-medium">landlord pest control</Link> guide, and businesses may benefit from our <Link href="/guides/commercial-pest-control" className="text-blue-600 hover:underline font-medium">commercial pest control</Link> guide. For product recommendations, browse our <Link href="/best/fox-deterrents" className="text-blue-600 hover:underline font-medium">best fox deterrents</Link>, <Link href="/best/rat-traps" className="text-blue-600 hover:underline font-medium">best rat traps</Link>, <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">best mouse traps</Link>, <Link href="/best/squirrel-deterrents" className="text-blue-600 hover:underline font-medium">best squirrel deterrents</Link>, <Link href="/best/bird-deterrents" className="text-blue-600 hover:underline font-medium">best bird deterrents</Link>, and <Link href="/best/ant-killers" className="text-blue-600 hover:underline font-medium">best ant killers</Link> guides.
+        For a detailed breakdown of pest control costs across all common UK pests, including fox deterrent installation and garden proofing, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide. If foxes are not the only pest you are dealing with, you may also find our other guides helpful: <Link href="/guides/how-to-get-rid-of-rats" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/how-to-get-rid-of-squirrels" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of squirrels</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of cockroaches</Link>, <Link href="/guides/how-to-get-rid-of-fleas" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of fleas</Link>, and <Link href="/guides/pigeon-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">pigeon control</Link>. Landlords dealing with fox issues in rental properties should consult our <Link href="/guides/landlord-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">landlord pest control</Link> guide, and businesses may benefit from our <Link href="/guides/commercial-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">commercial pest control</Link> guide. For product recommendations, browse our <Link href="/best/fox-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">best fox deterrents</Link>, <Link href="/best/rat-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">best rat traps</Link>, <Link href="/best/mouse-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">best mouse traps</Link>, <Link href="/best/squirrel-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">best squirrel deterrents</Link>, <Link href="/best/bird-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">best bird deterrents</Link>, and <Link href="/best/ant-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">best ant killers</Link> guides.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -650,7 +650,7 @@ export default function HowToGetRidOfFoxesPage() {
 
       <h3>Are foxes classed as vermin in the UK?</h3>
       <p>
-        No. Foxes are <strong>wild animals, not classified as vermin</strong> under UK law. They are not listed under the Wildlife and Countryside Act 1981 as a pest species. However, they are <strong>not protected either</strong> (unlike badgers, which are protected under the Protection of Badgers Act 1992), which means landowners can take legal action to deter or control them using humane methods. Local councils do not classify foxes as pests and will not remove them from your property. If you need help managing foxes, you will need to use <Link href="/best/fox-deterrents" className="text-blue-600 hover:underline font-medium">DIY deterrent methods</Link> or hire a private pest controller.
+        No. Foxes are <strong>wild animals, not classified as vermin</strong> under UK law. They are not listed under the Wildlife and Countryside Act 1981 as a pest species. However, they are <strong>not protected either</strong> (unlike badgers, which are protected under the Protection of Badgers Act 1992), which means landowners can take legal action to deter or control them using humane methods. Local councils do not classify foxes as pests and will not remove them from your property. If you need help managing foxes, you will need to use <Link href="/best/fox-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">DIY deterrent methods</Link> or hire a private pest controller.
       </p>
 
       <h3>Will the council remove a fox from my garden?</h3>
@@ -660,7 +660,7 @@ export default function HowToGetRidOfFoxesPage() {
 
       <h3>Can I poison a fox in my garden?</h3>
       <p>
-        <strong>No. It is illegal to poison foxes in the UK.</strong> Using poison against foxes is an offence under the <strong>Wildlife and Countryside Act 1981</strong> and the <strong>Animal Welfare Act 2006</strong>. Poison also poses serious risks to pets, children, and non-target wildlife such as hedgehogs, birds of prey, and domestic cats. There are <strong>no legally approved poisons</strong> for fox control in the UK. If you need to control foxes, use humane deterrent methods or hire a professional pest controller who uses legal methods. For a guide to effective legal deterrents, see our <Link href="/best/fox-deterrents" className="text-blue-600 hover:underline font-medium">Best Fox Deterrents UK 2026</Link> guide.
+        <strong>No. It is illegal to poison foxes in the UK.</strong> Using poison against foxes is an offence under the <strong>Wildlife and Countryside Act 1981</strong> and the <strong>Animal Welfare Act 2006</strong>. Poison also poses serious risks to pets, children, and non-target wildlife such as hedgehogs, birds of prey, and domestic cats. There are <strong>no legally approved poisons</strong> for fox control in the UK. If you need to control foxes, use humane deterrent methods or hire a professional pest controller who uses legal methods. For a guide to effective legal deterrents, see our <Link href="/best/fox-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Fox Deterrents UK 2026</Link> guide.
       </p>
 
       <h3>How do I stop foxes digging up my lawn?</h3>
@@ -670,12 +670,12 @@ export default function HowToGetRidOfFoxesPage() {
 
       <h3>What is the most effective fox deterrent?</h3>
       <p>
-        The most effective <strong>single</strong> fox deterrent is a <strong>motion-activated sprinkler</strong>, which startles foxes with an unexpected jet of water. Foxes strongly dislike being sprayed with water, and the deterrent effect tends to be more durable than scent or ultrasonic methods because the physical sensation is harder to habituate to. However, professional pest controllers recommend <strong>combining multiple methods</strong> for best results: a motion-activated sprinkler on the fox&apos;s main entry path, <strong>scent repellent</strong> (such as Scoot) applied to the lawn and flower beds, and an <strong>ultrasonic device</strong> near bin areas. <strong>Physical exclusion</strong> &mdash; blocking gaps under fences with welded mesh and securing bins &mdash; is the most reliable long-term solution. See our <Link href="/best/fox-deterrents" className="text-blue-600 hover:underline font-medium">Best Fox Deterrents UK 2026</Link> guide for detailed product recommendations.
+        The most effective <strong>single</strong> fox deterrent is a <strong>motion-activated sprinkler</strong>, which startles foxes with an unexpected jet of water. Foxes strongly dislike being sprayed with water, and the deterrent effect tends to be more durable than scent or ultrasonic methods because the physical sensation is harder to habituate to. However, professional pest controllers recommend <strong>combining multiple methods</strong> for best results: a motion-activated sprinkler on the fox&apos;s main entry path, <strong>scent repellent</strong> (such as Scoot) applied to the lawn and flower beds, and an <strong>ultrasonic device</strong> near bin areas. <strong>Physical exclusion</strong> &mdash; blocking gaps under fences with welded mesh and securing bins &mdash; is the most reliable long-term solution. See our <Link href="/best/fox-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Fox Deterrents UK 2026</Link> guide for detailed product recommendations.
       </p>
 
       <h3>Can foxes give diseases to my dog?</h3>
       <p>
-        Yes. The main risk is <strong>sarcoptic mange</strong>, caused by the <em>Sarcoptes scabiei</em> mite, which can transfer from foxes to dogs through direct contact or contact with contaminated ground where a mangy fox has been lying. Symptoms in dogs include <strong>intense itching, hair loss, and crusty skin</strong>, particularly on the ears, elbows, and belly. Mange in dogs is treatable with veterinary medication, but early treatment is important for the best outcome. Fox droppings can also contain <strong><em>Toxocara canis</em> roundworm</strong>, which can infect dogs (and humans) if ingested. Keep your dog away from fox droppings and see your vet promptly if your dog shows signs of mange. For more information on how foxes interact with pets, see our main guide sections on <a href="#fox-mange" className="text-blue-600 hover:underline font-medium">fox mange</a> and <a href="#understanding-behaviour" className="text-blue-600 hover:underline font-medium">understanding fox behaviour</a>.
+        Yes. The main risk is <strong>sarcoptic mange</strong>, caused by the <em>Sarcoptes scabiei</em> mite, which can transfer from foxes to dogs through direct contact or contact with contaminated ground where a mangy fox has been lying. Symptoms in dogs include <strong>intense itching, hair loss, and crusty skin</strong>, particularly on the ears, elbows, and belly. Mange in dogs is treatable with veterinary medication, but early treatment is important for the best outcome. Fox droppings can also contain <strong><em>Toxocara canis</em> roundworm</strong>, which can infect dogs (and humans) if ingested. Keep your dog away from fox droppings and see your vet promptly if your dog shows signs of mange. For more information on how foxes interact with pets, see our main guide sections on <a href="#fox-mange" className="text-[var(--color-teal-deep)] hover:underline font-medium">fox mange</a> and <a href="#understanding-behaviour" className="text-[var(--color-teal-deep)] hover:underline font-medium">understanding fox behaviour</a>.
       </p>
     </GuideLayout>
   );

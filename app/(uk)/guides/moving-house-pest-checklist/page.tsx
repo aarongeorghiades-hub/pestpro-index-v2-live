@@ -171,8 +171,8 @@ export default function MovingHousePestChecklistPage() {
 
       {/* Affiliate Disclosure */}
       <div className="not-prose">
-        <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-8 text-sm text-gray-600">
-          <p><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small affiliate commission from Amazon at no extra cost to you. This helps fund our independent research. We only recommend products we believe in. <Link href="/about" className="text-blue-600 hover:underline">Learn more</Link>.</p>
+        <div className="bg-[var(--color-paper-sunk)] border border-[var(--color-rule)] rounded-xl p-4 mb-8 text-sm text-[var(--color-ink-soft)]">
+          <p><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small affiliate commission from Amazon at no extra cost to you. This helps fund our independent research. We only recommend products we believe in. <Link href="/about" className="text-[var(--color-teal-deep)] hover:underline">Learn more</Link>.</p>
         </div>
       </div>
 
@@ -324,7 +324,7 @@ export default function MovingHousePestChecklistPage() {
       </p>
 
 <Callout type="tip">
-        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-blue-600 hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
+        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-[var(--color-teal-deep)] hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
       </Callout>
 
             <h3>Flea Treatment (If Previous Owners Had Pets)</h3>
@@ -332,7 +332,7 @@ export default function MovingHousePestChecklistPage() {
         If the previous occupants had cats or dogs, treat the entire property for fleas before moving any soft furnishings or carpets in. Flea pupae can remain dormant in carpets, between floorboards, and in floor crevices for <strong>up to six months</strong>. They hatch when they detect vibration, pressure, and warmth &mdash; exactly what happens when new occupants start walking through the house. This can produce a sudden, explosive flea infestation that seems to come from nowhere, with hundreds of freshly hatched fleas biting within hours of moving in.
       </p>
       <p>
-        Use a household <Link href="/best/flea-spray-for-home" className="text-green-600 hover:underline">flea spray</Link> that contains both a knockdown insecticide (such as permethrin) and an <strong>insect growth regulator (IGR)</strong>. The IGR is critical because it prevents any flea eggs and larvae in the carpet from developing into biting adults. Spray all carpeted areas, paying particular attention to the edges where the carpet meets the skirting board, under radiators, and in doorways &mdash; these are the areas where flea pupae accumulate most densely. If the property has hard floors, spray along the edges and into any gaps between boards. Ventilate the property thoroughly after treatment and allow it to dry completely before moving furniture in. Plan to repeat the treatment two weeks later to catch any pupae that hatch after the first application.
+        Use a household <Link href="/best/flea-spray-for-home" className="text-[var(--color-ok)] hover:underline">flea spray</Link> that contains both a knockdown insecticide (such as permethrin) and an <strong>insect growth regulator (IGR)</strong>. The IGR is critical because it prevents any flea eggs and larvae in the carpet from developing into biting adults. Spray all carpeted areas, paying particular attention to the edges where the carpet meets the skirting board, under radiators, and in doorways &mdash; these are the areas where flea pupae accumulate most densely. If the property has hard floors, spray along the edges and into any gaps between boards. Ventilate the property thoroughly after treatment and allow it to dry completely before moving furniture in. Plan to repeat the treatment two weeks later to catch any pupae that hatch after the first application.
       </p>
 
       <div className="not-prose space-y-4">
@@ -355,7 +355,7 @@ export default function MovingHousePestChecklistPage() {
         If your pre-move inspection found any evidence of bed bugs &mdash; or if the property is a rental, a house of multiple occupation (HMO), or if you are bringing in second-hand furniture &mdash; take bed bug precautions seriously. Bed bugs are one of the most difficult pests to eradicate once they are established in a furnished home, and prevention is vastly easier than cure. Even if you did not find visible evidence, it is worth treating the bedroom areas as a precaution if you have any reason to suspect the property may have had a history of bed bug problems.
       </p>
       <p>
-        Spray a residual bed bug insecticide along all skirting boards, into cracks around architraves and door frames, around plug sockets (with the electricity off), and along the edges of carpet gripper rods in every bedroom. If you are bringing in a second-hand bed frame or mattress, inspect it meticulously before it enters the property and consider encasing the mattress in a <strong><Link href="/best/bed-bug-mattress-encasement" className="text-green-600 hover:underline">mattress encasement</Link></strong> as an ongoing precaution. If your inspection found definitive bed bug evidence, consider professional heat treatment before moving in &mdash; this is the most effective single-treatment solution for bed bugs in an empty room.
+        Spray a residual bed bug insecticide along all skirting boards, into cracks around architraves and door frames, around plug sockets (with the electricity off), and along the edges of carpet gripper rods in every bedroom. If you are bringing in a second-hand bed frame or mattress, inspect it meticulously before it enters the property and consider encasing the mattress in a <strong><Link href="/best/bed-bug-mattress-encasement" className="text-[var(--color-ok)] hover:underline">mattress encasement</Link></strong> as an ongoing precaution. If your inspection found definitive bed bug evidence, consider professional heat treatment before moving in &mdash; this is the most effective single-treatment solution for bed bugs in an empty room.
       </p>
 
       <div className="not-prose space-y-4">
@@ -435,51 +435,51 @@ export default function MovingHousePestChecklistPage() {
       <div className="not-prose overflow-x-auto my-6">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-gray-50 border-b-2 border-gray-200">
-              <th className="text-left py-3 px-4 font-bold text-gray-900">Product</th>
-              <th className="text-left py-3 px-4 font-bold text-gray-900">Purpose</th>
+            <tr className="bg-[var(--color-paper-sunk)] border-b-2 border-[var(--color-rule)]">
+              <th className="text-left py-3 px-4 font-bold text-[var(--color-ink)]">Product</th>
+              <th className="text-left py-3 px-4 font-bold text-[var(--color-ink)]">Purpose</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-100">
+          <tbody className="divide-y divide-[var(--color-rule)]">
             <tr>
-              <td className="py-3 px-4 text-gray-800">Household flea spray (with IGR)</td>
-              <td className="py-3 px-4 text-gray-600">Treat carpets if previous owners had pets</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Household flea spray (with IGR)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Treat carpets if previous owners had pets</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Bed bug spray (residual)</td>
-              <td className="py-3 px-4 text-gray-600">Treat skirting boards and cracks in bedrooms</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Bed bug spray (residual)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Treat skirting boards and cracks in bedrooms</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">General insect killer spray</td>
-              <td className="py-3 px-4 text-gray-600">Baseline treatment for skirting boards and dark corners</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">General insect killer spray</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Baseline treatment for skirting boards and dark corners</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Steel wool (coarse grade)</td>
-              <td className="py-3 px-4 text-gray-600">Packing into gaps before foam &mdash; rodent-proof</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Steel wool (coarse grade)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Packing into gaps before foam &mdash; rodent-proof</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Expanding foam (exterior grade)</td>
-              <td className="py-3 px-4 text-gray-600">Sealing gaps around pipes and cables</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Expanding foam (exterior grade)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Sealing gaps around pipes and cables</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Air brick mesh covers (galvanised)</td>
-              <td className="py-3 px-4 text-gray-600">Covering air bricks to prevent rodent entry</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Air brick mesh covers (galvanised)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Covering air bricks to prevent rodent entry</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Door brush strips / draught excluders</td>
-              <td className="py-3 px-4 text-gray-600">Sealing gaps beneath external doors</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Door brush strips / draught excluders</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Sealing gaps beneath external doors</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Exterior-grade silicone sealant</td>
-              <td className="py-3 px-4 text-gray-600">Sealing small cracks around windows and mortar joints</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Exterior-grade silicone sealant</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Sealing small cracks around windows and mortar joints</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Mouse snap traps (pack of 6)</td>
-              <td className="py-3 px-4 text-gray-600">Set traps in loft and kitchen void if droppings found</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Mouse snap traps (pack of 6)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Set traps in loft and kitchen void if droppings found</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Rat snap traps (pack of 2&ndash;4)</td>
-              <td className="py-3 px-4 text-gray-600">Set in garage or loft if rat droppings found</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Rat snap traps (pack of 2&ndash;4)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Set in garage or loft if rat droppings found</td>
             </tr>
           </tbody>
         </table>
@@ -517,7 +517,7 @@ export default function MovingHousePestChecklistPage() {
           <strong>Mice and rats:</strong> Older homes typically have more gaps, deteriorated mortar, damaged air bricks, poorly sealed pipe runs, and worn door seals than newer properties. Subfloor voids in older homes (particularly suspended timber ground floors) provide ideal harbourage for rodents, and the gap between the floorboards and the void beneath is often the primary internal entry route.
         </li>
         <li>
-          <strong>Woodworm:</strong> Check exposed timbers in the loft, subfloor, and any period features (such as exposed beams) for the characteristic small, round exit holes produced by woodworm beetles (<em>Anobium punctatum</em>). Fresh woodworm holes have clean, light-coloured edges and may have fine wood dust (frass) beneath them. Old, inactive holes are dark and dusty. Woodworm surveys should be included in any pre-purchase building survey for older properties. See our <Link href="/guides/woodworm-treatment" className="text-blue-600 hover:underline font-medium">woodworm treatment guide</Link> for more detail.
+          <strong>Woodworm:</strong> Check exposed timbers in the loft, subfloor, and any period features (such as exposed beams) for the characteristic small, round exit holes produced by woodworm beetles (<em>Anobium punctatum</em>). Fresh woodworm holes have clean, light-coloured edges and may have fine wood dust (frass) beneath them. Old, inactive holes are dark and dusty. Woodworm surveys should be included in any pre-purchase building survey for older properties. See our <Link href="/guides/woodworm-treatment" className="text-[var(--color-teal-deep)] hover:underline font-medium">woodworm treatment guide</Link> for more detail.
         </li>
         <li>
           <strong>Damp-related pests:</strong> Older properties are more prone to rising damp, penetrating damp, and condensation due to their original construction methods and materials. Persistent damp encourages silverfish, booklice, plaster beetles, woodlice, and mould mites. Addressing the underlying damp problem is essential &mdash; pest treatments will provide only temporary relief if the damp conditions that attract these species are not resolved.
@@ -537,7 +537,7 @@ export default function MovingHousePestChecklistPage() {
       {/* Cross-link to StampDutyBack */}
       {/* ------------------------------------------------------------------ */}
       <p>
-        If you are buying a property (rather than renting), it is worth checking whether you are eligible for a <strong>stamp duty refund</strong>. Many homebuyers overpay stamp duty land tax and are entitled to a partial refund &mdash; particularly if the property has unusual features, annexes, or mixed-use elements. Visit <a href="https://stampdutyback.co.uk" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">StampDutyBack.co.uk</a> to find out if you could claim money back on your purchase.
+        If you are buying a property (rather than renting), it is worth checking whether you are eligible for a <strong>stamp duty refund</strong>. Many homebuyers overpay stamp duty land tax and are entitled to a partial refund &mdash; particularly if the property has unusual features, annexes, or mixed-use elements. Visit <a href="https://stampdutyback.co.uk" target="_blank" rel="noopener noreferrer" className="text-[var(--color-teal-deep)] hover:underline font-medium">StampDutyBack.co.uk</a> to find out if you could claim money back on your purchase.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -573,7 +573,7 @@ export default function MovingHousePestChecklistPage() {
 
       <h3>Should I get a pest survey before buying a house?</h3>
       <p>
-        Yes, a pre-purchase pest survey is strongly recommended, particularly for older properties. A standard homebuyer survey or mortgage valuation does <strong>not</strong> include a pest inspection, so any existing infestations or structural pest damage &mdash; such as woodworm, dry rot, or rodent activity &mdash; will not be flagged unless you commission a separate survey. A professional pest survey typically costs between <strong>&pound;80 and &pound;150</strong> for a standard domestic property and can identify problems that could cost thousands to rectify after purchase. It also gives you valuable negotiating leverage: if issues are found, you can request the seller funds treatment before completion, or negotiate a price reduction to cover the cost. For full pricing information, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
+        Yes, a pre-purchase pest survey is strongly recommended, particularly for older properties. A standard homebuyer survey or mortgage valuation does <strong>not</strong> include a pest inspection, so any existing infestations or structural pest damage &mdash; such as woodworm, dry rot, or rodent activity &mdash; will not be flagged unless you commission a separate survey. A professional pest survey typically costs between <strong>&pound;80 and &pound;150</strong> for a standard domestic property and can identify problems that could cost thousands to rectify after purchase. It also gives you valuable negotiating leverage: if issues are found, you can request the seller funds treatment before completion, or negotiate a price reduction to cover the cost. For full pricing information, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
       </p>
 
       <h3>What pest signs should I look for when viewing a property?</h3>
@@ -583,48 +583,48 @@ export default function MovingHousePestChecklistPage() {
 
       <h3>Do I need to treat for fleas when moving into a property with previous pets?</h3>
       <p>
-        <strong>Yes, always.</strong> Flea pupae can lie dormant in carpets, floorboard gaps, and soft furnishings for up to six months without a host. When new occupants move in and the vibrations and warmth of foot traffic stimulate the pupae, they hatch simultaneously &mdash; often producing a sudden and severe infestation within hours of moving in. The best approach is to treat all carpeted areas and soft flooring with a household flea spray containing an <strong>insect growth regulator (IGR)</strong> before you move any furniture in. Treat at least twice, with a two-week gap between applications, to catch any pupae that hatch after the first treatment. If you are unsure whether the previous occupants had pets, treat the property anyway &mdash; the cost of a can of flea spray is negligible compared to the misery of a flea infestation. For product recommendations, see our <Link href="/best/flea-spray-for-home" className="text-blue-600 hover:underline font-medium">Best Flea Sprays for Home UK 2026</Link> guide.
+        <strong>Yes, always.</strong> Flea pupae can lie dormant in carpets, floorboard gaps, and soft furnishings for up to six months without a host. When new occupants move in and the vibrations and warmth of foot traffic stimulate the pupae, they hatch simultaneously &mdash; often producing a sudden and severe infestation within hours of moving in. The best approach is to treat all carpeted areas and soft flooring with a household flea spray containing an <strong>insect growth regulator (IGR)</strong> before you move any furniture in. Treat at least twice, with a two-week gap between applications, to catch any pupae that hatch after the first treatment. If you are unsure whether the previous occupants had pets, treat the property anyway &mdash; the cost of a can of flea spray is negligible compared to the misery of a flea infestation. For product recommendations, see our <Link href="/best/flea-spray-for-home" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Flea Sprays for Home UK 2026</Link> guide.
       </p>
 
       <h3>Can bed bugs be in an empty property?</h3>
       <p>
-        Yes. Adult bed bugs can survive without feeding for <strong>up to 12 months</strong> under cool conditions. They harbour in cracks in walls, behind skirting boards, inside electrical sockets, in gaps in floorboards, and behind loose wallpaper &mdash; not just in mattresses and bed frames. If the previous occupants had a bed bug problem, the bugs may still be present even if the property has been vacant for some time. Before moving in, inspect all bedrooms carefully using a torch, checking behind loose wallpaper, around plug sockets, along the edges of carpet grippers, and in any cracks in the plaster. Small dark spots (faecal staining) and translucent shed skins are the most common signs. If you find evidence, arrange <strong>professional heat treatment</strong> before moving furniture in &mdash; this is the most effective single-treatment solution for bed bugs. See our <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline font-medium">complete bed bug guide</Link> for detailed advice.
+        Yes. Adult bed bugs can survive without feeding for <strong>up to 12 months</strong> under cool conditions. They harbour in cracks in walls, behind skirting boards, inside electrical sockets, in gaps in floorboards, and behind loose wallpaper &mdash; not just in mattresses and bed frames. If the previous occupants had a bed bug problem, the bugs may still be present even if the property has been vacant for some time. Before moving in, inspect all bedrooms carefully using a torch, checking behind loose wallpaper, around plug sockets, along the edges of carpet grippers, and in any cracks in the plaster. Small dark spots (faecal staining) and translucent shed skins are the most common signs. If you find evidence, arrange <strong>professional heat treatment</strong> before moving furniture in &mdash; this is the most effective single-treatment solution for bed bugs. See our <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-[var(--color-teal-deep)] hover:underline font-medium">complete bed bug guide</Link> for detailed advice.
       </p>
 
       <h3>Should I pest-proof a new-build home?</h3>
       <p>
-        Yes. New-build homes are not immune to pest problems. Construction sites attract rats and mice, and ants are particularly common on new-build estates due to the extensive soil disturbance involved in development. New builds may also have gaps around pipe entry points, poorly sealed service ducts, and gaps at the base of external walls where the render or cladding meets the damp-proof course. The <strong>snagging period</strong> is the ideal time to identify and report these issues &mdash; any gaps that could admit pests are construction defects that should be fixed under warranty. Even if the developer has sealed all penetrations, it is worth applying a general insect spray to skirting boards and kitchen voids as a precaution, and checking air bricks and door seals are properly fitted. See our <Link href="/guides/how-to-get-rid-of-ants" className="text-blue-600 hover:underline font-medium">guide to getting rid of ants</Link> if ants are already a problem.
+        Yes. New-build homes are not immune to pest problems. Construction sites attract rats and mice, and ants are particularly common on new-build estates due to the extensive soil disturbance involved in development. New builds may also have gaps around pipe entry points, poorly sealed service ducts, and gaps at the base of external walls where the render or cladding meets the damp-proof course. The <strong>snagging period</strong> is the ideal time to identify and report these issues &mdash; any gaps that could admit pests are construction defects that should be fixed under warranty. Even if the developer has sealed all penetrations, it is worth applying a general insect spray to skirting boards and kitchen voids as a precaution, and checking air bricks and door seals are properly fitted. See our <Link href="/guides/how-to-get-rid-of-ants" className="text-[var(--color-teal-deep)] hover:underline font-medium">guide to getting rid of ants</Link> if ants are already a problem.
       </p>
 
       <h3>How much does a pre-move pest survey cost?</h3>
       <p>
-        A pre-move pest survey from a BPCA or NPTA-registered pest controller typically costs between <strong>&pound;80 and &pound;150</strong> for a standard three-bedroom house. The survey covers the full interior (all rooms, cupboards, and voids), loft space, exterior perimeter, and any outbuildings or garages. If treatment is needed, it is quoted separately: flea spraying a whole house typically costs &pound;100&ndash;&pound;180, mouse proofing costs &pound;150&ndash;&pound;400 depending on the number of entry points, and bed bug heat treatment can cost &pound;300&ndash;&pound;600 per room. Some companies offer combined inspection-and-treatment packages at a reduced rate, which is particularly good value if you know the property needs work. The cost of a survey is small compared to the expense and disruption of discovering an infestation after you have moved all your belongings in. For a full breakdown, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
+        A pre-move pest survey from a BPCA or NPTA-registered pest controller typically costs between <strong>&pound;80 and &pound;150</strong> for a standard three-bedroom house. The survey covers the full interior (all rooms, cupboards, and voids), loft space, exterior perimeter, and any outbuildings or garages. If treatment is needed, it is quoted separately: flea spraying a whole house typically costs &pound;100&ndash;&pound;180, mouse proofing costs &pound;150&ndash;&pound;400 depending on the number of entry points, and bed bug heat treatment can cost &pound;300&ndash;&pound;600 per room. Some companies offer combined inspection-and-treatment packages at a reduced rate, which is particularly good value if you know the property needs work. The cost of a survey is small compared to the expense and disruption of discovering an infestation after you have moved all your belongings in. For a full breakdown, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
       </p>
 
       {/* ------------------------------------------------------------------ */}
       {/* Cross-link box */}
       {/* ------------------------------------------------------------------ */}
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-3">Related Product Guides</p>
-        <p className="text-gray-700 mb-4">Explore our product guides for the items mentioned in this guide:</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-3">Related Product Guides</p>
+        <p className="text-[var(--color-ink-soft)] mb-4">Explore our product guides for the items mentioned in this guide:</p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/best/flea-spray-for-home"
-            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-block px-4 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-semibold rounded-lg transition-colors text-sm"
           >
-            Best Flea Sprays &rarr;
+            Best Flea Sprays
           </Link>
           <Link
             href="/best/bed-bug-spray"
-            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-block px-4 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-semibold rounded-lg transition-colors text-sm"
           >
-            Best Bed Bug Sprays &rarr;
+            Best Bed Bug Sprays
           </Link>
           <Link
             href="/best/mouse-repellent"
-            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-block px-4 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-semibold rounded-lg transition-colors text-sm"
           >
-            Best Mouse Repellents &rarr;
+            Best Mouse Repellents
           </Link>
         </div>
       </div>

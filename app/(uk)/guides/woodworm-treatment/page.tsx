@@ -330,7 +330,7 @@ export default function WoodwormTreatmentPage() {
       </p>
 
       <p>
-        If you are dealing with damp timber and the associated pests it attracts, you may find our <Link href="/guides/how-to-get-rid-of-silverfish" className="text-blue-600 hover:underline font-medium">silverfish guide</Link> helpful &mdash; silverfish, like woodworm, are a strong indicator of excess moisture in the home. Landlords should also review our <Link href="/guides/landlord-pest-control" className="text-blue-600 hover:underline font-medium">landlord pest control guide</Link> for information on responsibilities for timber and damp issues in rental properties.
+        If you are dealing with damp timber and the associated pests it attracts, you may find our <Link href="/guides/how-to-get-rid-of-silverfish" className="text-[var(--color-teal-deep)] hover:underline font-medium">silverfish guide</Link> helpful &mdash; silverfish, like woodworm, are a strong indicator of excess moisture in the home. Landlords should also review our <Link href="/guides/landlord-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">landlord pest control guide</Link> for information on responsibilities for timber and damp issues in rental properties.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -359,7 +359,7 @@ export default function WoodwormTreatmentPage() {
 
       <h3>The Mortgage and Survey Factor</h3>
       <p>
-        Woodworm is flagged on <strong>virtually every survey of properties built before 1960</strong>. Standard Level 2 (HomeBuyer Report) and Level 3 (Building Survey) surveys will note the presence of exit holes and typically recommend a &ldquo;specialist timber and damp report.&rdquo; This recommendation can cause significant anxiety for buyers, particularly first-time buyers, and may lead to mortgage lenders imposing conditions on the loan. However, it is important to understand that many of these survey flags relate to <strong>historic, inactive infestations that require no treatment</strong>. The presence of old exit holes does not, by itself, mean there is a current woodworm problem. See the <a href="#property-sales" className="text-blue-600 hover:underline font-medium">Woodworm and Property Sales</a> section below for detailed guidance on navigating this situation.
+        Woodworm is flagged on <strong>virtually every survey of properties built before 1960</strong>. Standard Level 2 (HomeBuyer Report) and Level 3 (Building Survey) surveys will note the presence of exit holes and typically recommend a &ldquo;specialist timber and damp report.&rdquo; This recommendation can cause significant anxiety for buyers, particularly first-time buyers, and may lead to mortgage lenders imposing conditions on the loan. However, it is important to understand that many of these survey flags relate to <strong>historic, inactive infestations that require no treatment</strong>. The presence of old exit holes does not, by itself, mean there is a current woodworm problem. See the <a href="#property-sales" className="text-[var(--color-teal-deep)] hover:underline font-medium">Woodworm and Property Sales</a> section below for detailed guidance on navigating this situation.
       </p>
 
       <div className="not-prose">
@@ -409,14 +409,14 @@ export default function WoodwormTreatmentPage() {
       </p>
 
       {/* Link to product review */}
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Looking for woodworm treatment products?</p>
-        <p className="text-gray-700 mb-3">Our guide covers the best woodworm treatments, moisture meters, and diagnostic tools available in the UK.</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Looking for woodworm treatment products?</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">Our guide covers the best woodworm treatments, moisture meters, and diagnostic tools available in the UK.</p>
         <a
           href="/best/woodworm-treatments"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+          className="inline-block px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
         >
-          Best Woodworm Treatments UK 2026 &rarr;
+          Best Woodworm Treatments UK 2026
         </a>
       </div>
 
@@ -524,7 +524,7 @@ export default function WoodwormTreatmentPage() {
       <h2 id="products">Recommended Woodworm Treatment Products</h2>
 
       <p>
-        Below are two of the most useful products for woodworm treatment and diagnosis in UK homes. For a comprehensive comparison of all the best woodworm treatment products &mdash; including treatment fluids, sprayers, and moisture meters &mdash; see our dedicated <Link href="/best/woodworm-treatments" className="text-blue-600 hover:underline font-medium">Best Woodworm Treatments UK 2026</Link> guide.
+        Below are two of the most useful products for woodworm treatment and diagnosis in UK homes. For a comprehensive comparison of all the best woodworm treatment products &mdash; including treatment fluids, sprayers, and moisture meters &mdash; see our dedicated <Link href="/best/woodworm-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Woodworm Treatments UK 2026</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -573,178 +573,178 @@ export default function WoodwormTreatmentPage() {
       <div className="not-prose my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <Link
           href="/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             London
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/birmingham/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Birmingham
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/manchester/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Manchester
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/liverpool/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Liverpool
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/leeds/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Leeds
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/nottingham/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Nottingham
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/brighton/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Brighton
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/sheffield/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Sheffield
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/bristol/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Bristol
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/glasgow/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Glasgow
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/bradford/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Bradford
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/newcastle/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Newcastle
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/cardiff/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Cardiff
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/edinburgh/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Edinburgh
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/leicester/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Leicester
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/hampshire/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Hampshire
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/coventry/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Coventry
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/belfast/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Belfast
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find woodworm treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find woodworm treatment specialists</span>
         </Link>
         <Link
           href="/pest-control/regions"
-          className="block p-5 bg-blue-50 border border-blue-200 rounded-xl hover:shadow-md hover:border-blue-400 transition-all group sm:col-span-2 lg:col-span-3"
+          className="block p-5 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group sm:col-span-2 lg:col-span-3"
         >
-          <span className="font-bold text-blue-700 group-hover:text-blue-800 transition-colors">
-            Browse all 18 locations &rarr;
+          <span className="font-bold text-[var(--color-teal-deep)] group-hover:text-[var(--color-teal-deep)] transition-colors">
+            Browse all 18 locations
           </span>
         </Link>
       </div>
 
       <p>
-        For a detailed breakdown of pest control costs across all common UK pests, including woodworm treatment and timber surveys, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide. If woodworm is not the only pest you are dealing with, you may also find our other guides helpful: <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">how to get rid of cockroaches</Link>, <Link href="/guides/how-to-get-rid-of-fleas" className="text-blue-600 hover:underline font-medium">how to get rid of fleas</Link>, <Link href="/guides/how-to-get-rid-of-ants" className="text-blue-600 hover:underline font-medium">how to get rid of ants</Link>, <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline font-medium">how to get rid of moths</Link>, <Link href="/guides/how-to-get-rid-of-silverfish" className="text-blue-600 hover:underline font-medium">how to get rid of silverfish</Link>, <Link href="/guides/how-to-get-rid-of-foxes" className="text-blue-600 hover:underline font-medium">how to get rid of foxes</Link>, <Link href="/guides/how-to-get-rid-of-squirrels" className="text-blue-600 hover:underline font-medium">how to get rid of squirrels</Link>, and <Link href="/guides/pigeon-control" className="text-blue-600 hover:underline font-medium">pigeon control</Link>. Landlords dealing with woodworm issues in rental properties should consult our <Link href="/guides/landlord-pest-control" className="text-blue-600 hover:underline font-medium">landlord pest control</Link> guide, and businesses may benefit from our <Link href="/guides/commercial-pest-control" className="text-blue-600 hover:underline font-medium">commercial pest control</Link> guide. For product recommendations, browse our <Link href="/best/woodworm-treatments" className="text-blue-600 hover:underline font-medium">best woodworm treatments</Link>, <Link href="/best/silverfish-treatments" className="text-blue-600 hover:underline font-medium">best silverfish treatments</Link>, <Link href="/best/rat-traps" className="text-blue-600 hover:underline font-medium">best rat traps</Link>, <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">best mouse traps</Link>, <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-medium">best wasp killers</Link>, <Link href="/best/cockroach-killers" className="text-blue-600 hover:underline font-medium">best cockroach killers</Link>, <Link href="/best/flea-treatments" className="text-blue-600 hover:underline font-medium">best flea treatments</Link>, <Link href="/best/ant-killers" className="text-blue-600 hover:underline font-medium">best ant killers</Link>, <Link href="/best/moth-killers" className="text-blue-600 hover:underline font-medium">best moth killers</Link>, <Link href="/best/bed-bug-treatments" className="text-blue-600 hover:underline font-medium">best bed bug treatments</Link>, <Link href="/best/fox-deterrents" className="text-blue-600 hover:underline font-medium">best fox deterrents</Link>, and <Link href="/best/squirrel-deterrents" className="text-blue-600 hover:underline font-medium">best squirrel deterrents</Link> guides.
+        For a detailed breakdown of pest control costs across all common UK pests, including woodworm treatment and timber surveys, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide. If woodworm is not the only pest you are dealing with, you may also find our other guides helpful: <Link href="/guides/how-to-get-rid-of-rats" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of cockroaches</Link>, <Link href="/guides/how-to-get-rid-of-fleas" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of fleas</Link>, <Link href="/guides/how-to-get-rid-of-ants" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of ants</Link>, <Link href="/guides/how-to-get-rid-of-moths" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of moths</Link>, <Link href="/guides/how-to-get-rid-of-silverfish" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of silverfish</Link>, <Link href="/guides/how-to-get-rid-of-foxes" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of foxes</Link>, <Link href="/guides/how-to-get-rid-of-squirrels" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of squirrels</Link>, and <Link href="/guides/pigeon-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">pigeon control</Link>. Landlords dealing with woodworm issues in rental properties should consult our <Link href="/guides/landlord-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">landlord pest control</Link> guide, and businesses may benefit from our <Link href="/guides/commercial-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">commercial pest control</Link> guide. For product recommendations, browse our <Link href="/best/woodworm-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">best woodworm treatments</Link>, <Link href="/best/silverfish-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">best silverfish treatments</Link>, <Link href="/best/rat-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">best rat traps</Link>, <Link href="/best/mouse-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">best mouse traps</Link>, <Link href="/best/wasp-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">best wasp killers</Link>, <Link href="/best/cockroach-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">best cockroach killers</Link>, <Link href="/best/flea-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">best flea treatments</Link>, <Link href="/best/ant-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">best ant killers</Link>, <Link href="/best/moth-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">best moth killers</Link>, <Link href="/best/bed-bug-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">best bed bug treatments</Link>, <Link href="/best/fox-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">best fox deterrents</Link>, and <Link href="/best/squirrel-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">best squirrel deterrents</Link> guides.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -754,27 +754,27 @@ export default function WoodwormTreatmentPage() {
 
       <h3>How do I know if woodworm is active?</h3>
       <p>
-        Fresh exit holes with <strong>sharp, clean edges</strong> and <strong>fine powdery dust (frass)</strong> beneath them indicate active woodworm. Old holes with darkened edges and no dust are likely historic and inactive. The most reliable test is to <strong>clean away all existing dust in autumn</strong> and check again in June&ndash;August the following year. Fresh dust appearing during the beetle emergence season means the infestation is active. No dust means it is historic and likely inactive. See the <a href="#active-vs-inactive" className="text-blue-600 hover:underline font-medium">active vs inactive section</a> above for a detailed breakdown of the signs to look for.
+        Fresh exit holes with <strong>sharp, clean edges</strong> and <strong>fine powdery dust (frass)</strong> beneath them indicate active woodworm. Old holes with darkened edges and no dust are likely historic and inactive. The most reliable test is to <strong>clean away all existing dust in autumn</strong> and check again in June&ndash;August the following year. Fresh dust appearing during the beetle emergence season means the infestation is active. No dust means it is historic and likely inactive. See the <a href="#active-vs-inactive" className="text-[var(--color-teal-deep)] hover:underline font-medium">active vs inactive section</a> above for a detailed breakdown of the signs to look for.
       </p>
 
       <h3>Can I treat woodworm myself?</h3>
       <p>
-        Yes, <strong>small-scale Common Furniture Beetle infestations in accessible timber</strong> can be treated DIY with permethrin-based woodworm treatment fluid. Apply by sprayer or brush, <strong>two coats 24 hours apart</strong>, wearing a respirator with organic vapour cartridges, goggles, and chemical-resistant gloves. Do not attempt DIY treatment of <strong>structural timbers</strong>, <strong>Deathwatch Beetle</strong>, or <strong>House Longhorn Beetle</strong> &mdash; these require professional assessment and treatment. See our <a href="#diy-treatment" className="text-blue-600 hover:underline font-medium">DIY treatment section</a> for full application guidance and safety precautions, and our <Link href="/best/woodworm-treatments" className="text-blue-600 hover:underline font-medium">best woodworm treatments</Link> guide for product recommendations.
+        Yes, <strong>small-scale Common Furniture Beetle infestations in accessible timber</strong> can be treated DIY with permethrin-based woodworm treatment fluid. Apply by sprayer or brush, <strong>two coats 24 hours apart</strong>, wearing a respirator with organic vapour cartridges, goggles, and chemical-resistant gloves. Do not attempt DIY treatment of <strong>structural timbers</strong>, <strong>Deathwatch Beetle</strong>, or <strong>House Longhorn Beetle</strong> &mdash; these require professional assessment and treatment. See our <a href="#diy-treatment" className="text-[var(--color-teal-deep)] hover:underline font-medium">DIY treatment section</a> for full application guidance and safety precautions, and our <Link href="/best/woodworm-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">best woodworm treatments</Link> guide for product recommendations.
       </p>
 
       <h3>How much does professional woodworm treatment cost?</h3>
       <p>
-        Professional spray treatment for a typical 3-bed house costs <strong>&pound;500&ndash;&pound;1,500</strong>. Timber replacement costs <strong>&pound;1,000&ndash;&pound;5,000+</strong>. Specialist Deathwatch Beetle treatment in listed buildings can cost <strong>&pound;5,000&ndash;&pound;20,000+</strong>. Always get at least <strong>two quotes from BPCA-accredited companies</strong>. For a comprehensive breakdown of pest control costs across all common UK pests, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
+        Professional spray treatment for a typical 3-bed house costs <strong>&pound;500&ndash;&pound;1,500</strong>. Timber replacement costs <strong>&pound;1,000&ndash;&pound;5,000+</strong>. Specialist Deathwatch Beetle treatment in listed buildings can cost <strong>&pound;5,000&ndash;&pound;20,000+</strong>. Always get at least <strong>two quotes from BPCA-accredited companies</strong>. For a comprehensive breakdown of pest control costs across all common UK pests, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
       </p>
 
       <h3>Does woodworm spread from house to house?</h3>
       <p>
-        Woodworm <strong>does not spread between houses</strong> in the way that rat or mouse infestations do. Adult beetles can fly and may enter a property through open windows, but they only lay eggs in timber with suitable moisture content &mdash; <strong>above 18 per cent</strong>. If your timber is dry, beetles that enter the property will not be able to establish an infestation. Keeping your timber dry by maintaining good ventilation and fixing damp problems is the most effective prevention. For guidance on other pests that can move between neighbouring properties, see our guides on <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-medium">rats</Link> and <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">mice</Link>.
+        Woodworm <strong>does not spread between houses</strong> in the way that rat or mouse infestations do. Adult beetles can fly and may enter a property through open windows, but they only lay eggs in timber with suitable moisture content &mdash; <strong>above 18 per cent</strong>. If your timber is dry, beetles that enter the property will not be able to establish an infestation. Keeping your timber dry by maintaining good ventilation and fixing damp problems is the most effective prevention. For guidance on other pests that can move between neighbouring properties, see our guides on <Link href="/guides/how-to-get-rid-of-rats" className="text-[var(--color-teal-deep)] hover:underline font-medium">rats</Link> and <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline font-medium">mice</Link>.
       </p>
 
       <h3>Will woodworm affect my mortgage application?</h3>
       <p>
-        Woodworm flagged on a homebuyer survey <strong>may cause a mortgage lender to require a specialist timber report</strong> and treatment guarantee before releasing funds. However, many flagged infestations are <strong>historic and inactive</strong>. An independent specialist report can confirm this and satisfy the lender. If active woodworm is confirmed, the lender will typically require treatment and an <strong>insurance-backed guarantee</strong> before completing the mortgage. See the <a href="#property-sales" className="text-blue-600 hover:underline font-medium">property sales section</a> above for detailed advice for both buyers and sellers.
+        Woodworm flagged on a homebuyer survey <strong>may cause a mortgage lender to require a specialist timber report</strong> and treatment guarantee before releasing funds. However, many flagged infestations are <strong>historic and inactive</strong>. An independent specialist report can confirm this and satisfy the lender. If active woodworm is confirmed, the lender will typically require treatment and an <strong>insurance-backed guarantee</strong> before completing the mortgage. See the <a href="#property-sales" className="text-[var(--color-teal-deep)] hover:underline font-medium">property sales section</a> above for detailed advice for both buyers and sellers.
       </p>
 
       <h3>How long does woodworm treatment last?</h3>

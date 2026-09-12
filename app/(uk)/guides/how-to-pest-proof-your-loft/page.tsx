@@ -172,8 +172,8 @@ export default function HowToPestProofYourLoftPage() {
 
       {/* Affiliate Disclosure */}
       <div className="not-prose">
-        <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-8 text-sm text-gray-600">
-          <p><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small affiliate commission from Amazon at no extra cost to you. This helps fund our independent research. We only recommend products we believe in. <Link href="/about" className="text-blue-600 hover:underline">Learn more</Link>.</p>
+        <div className="bg-[var(--color-paper-sunk)] border border-[var(--color-rule)] rounded-xl p-4 mb-8 text-sm text-[var(--color-ink-soft)]">
+          <p><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small affiliate commission from Amazon at no extra cost to you. This helps fund our independent research. We only recommend products we believe in. <Link href="/about" className="text-[var(--color-teal-deep)] hover:underline">Learn more</Link>.</p>
         </div>
       </div>
 
@@ -211,17 +211,17 @@ export default function HowToPestProofYourLoftPage() {
 
       <h3>Mice</h3>
       <p>
-        The house mouse (<em>Mus musculus</em>) is the single most common loft pest in UK homes. Mice are extraordinary climbers &mdash; they can scale rough brick, pebbledash, and rendered walls with ease, and they frequently reach the roofline by climbing cavity walls from the inside. Once at roof level, they enter the loft through gaps at the eaves, around pipe penetrations, and where cables pass through the roof structure. A mouse needs a gap of only <strong>6 millimetres</strong> &mdash; roughly the diameter of a pencil &mdash; to gain access. Inside the loft, mice nest in loft insulation, which they shred and rearrange to create warm, concealed nesting sites. They gnaw through electrical cables, water pipes, and stored belongings. In lofts where access is limited, a <Link href="/best/mouse-repellent" className="text-green-600 hover:underline">mouse repellent</Link> can help deter activity between proofing sessions. A female mouse can produce <strong>five to ten litters per year</strong>, with each litter containing four to twelve pups, so a small initial incursion can become a significant infestation within weeks. Mouse droppings are dark, roughly rice-sized (4&ndash;7mm long), and are the most obvious early indicator of activity. For detailed mouse control advice, see our <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">complete guide to getting rid of mice</Link>.
+        The house mouse (<em>Mus musculus</em>) is the single most common loft pest in UK homes. Mice are extraordinary climbers &mdash; they can scale rough brick, pebbledash, and rendered walls with ease, and they frequently reach the roofline by climbing cavity walls from the inside. Once at roof level, they enter the loft through gaps at the eaves, around pipe penetrations, and where cables pass through the roof structure. A mouse needs a gap of only <strong>6 millimetres</strong> &mdash; roughly the diameter of a pencil &mdash; to gain access. Inside the loft, mice nest in loft insulation, which they shred and rearrange to create warm, concealed nesting sites. They gnaw through electrical cables, water pipes, and stored belongings. In lofts where access is limited, a <Link href="/best/mouse-repellent" className="text-[var(--color-ok)] hover:underline">mouse repellent</Link> can help deter activity between proofing sessions. A female mouse can produce <strong>five to ten litters per year</strong>, with each litter containing four to twelve pups, so a small initial incursion can become a significant infestation within weeks. Mouse droppings are dark, roughly rice-sized (4&ndash;7mm long), and are the most obvious early indicator of activity. For detailed mouse control advice, see our <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline font-medium">complete guide to getting rid of mice</Link>.
       </p>
 
       <h3>Grey Squirrels</h3>
       <p>
-        Grey squirrels (<em>Sciurus carolinensis</em>) are powerful, agile animals that cause some of the most extensive damage of any UK loft pest. They typically enter lofts through gaps in soffits and fascia boards, through damaged roofing felt, or by gnawing through timber and even lead flashing to create their own entry points. Overhanging tree branches, drainpipes, and climbing plants provide access routes to the roofline. Once inside, squirrels build large nests (dreys) from shredded insulation, cardboard, and other available materials. They gnaw relentlessly &mdash; on roof timbers, water tanks, stored items, and most dangerously, on electrical wiring. Grey squirrels are <strong>classed as an invasive non-native species</strong> in the UK under the Wildlife and Countryside Act 1981, and it is an offence to release a trapped grey squirrel back into the wild. This means that live-trapping requires careful consideration of the legal requirements. If you trap a grey squirrel, it must be humanely dispatched &mdash; it cannot legally be relocated. Squirrel activity is typically loudest in the early morning and late afternoon, and the sounds they make are heavier and more deliberate than mouse noises. For full control advice, see our <Link href="/guides/how-to-get-rid-of-squirrels" className="text-blue-600 hover:underline font-medium">squirrel removal guide</Link>.
+        Grey squirrels (<em>Sciurus carolinensis</em>) are powerful, agile animals that cause some of the most extensive damage of any UK loft pest. They typically enter lofts through gaps in soffits and fascia boards, through damaged roofing felt, or by gnawing through timber and even lead flashing to create their own entry points. Overhanging tree branches, drainpipes, and climbing plants provide access routes to the roofline. Once inside, squirrels build large nests (dreys) from shredded insulation, cardboard, and other available materials. They gnaw relentlessly &mdash; on roof timbers, water tanks, stored items, and most dangerously, on electrical wiring. Grey squirrels are <strong>classed as an invasive non-native species</strong> in the UK under the Wildlife and Countryside Act 1981, and it is an offence to release a trapped grey squirrel back into the wild. This means that live-trapping requires careful consideration of the legal requirements. If you trap a grey squirrel, it must be humanely dispatched &mdash; it cannot legally be relocated. Squirrel activity is typically loudest in the early morning and late afternoon, and the sounds they make are heavier and more deliberate than mouse noises. For full control advice, see our <Link href="/guides/how-to-get-rid-of-squirrels" className="text-[var(--color-teal-deep)] hover:underline font-medium">squirrel removal guide</Link>.
       </p>
 
       <h3>Wasps</h3>
       <p>
-        Wasps frequently build nests in loft spaces, and the nest often goes unnoticed until mid-summer when the colony has grown to thousands of individuals and wasp activity around the roofline becomes impossible to ignore. A queen wasp emerges from hibernation in spring, searches for a sheltered void to build her nest, and the loft is an ideal location &mdash; warm, dry, undisturbed, and easy to access through eaves gaps and holes in soffit boards. The nest starts small, roughly the size of a golf ball, and grows throughout the summer to the size of a football or even larger. By August, a mature nest can contain <strong>5,000 to 10,000 wasps</strong>. If you discover an active wasp nest in your loft during summer, <strong>do not attempt to remove or treat it yourself</strong> &mdash; disturbing a large nest can provoke a mass stinging response. Contact a professional pest controller who will treat the nest with insecticidal powder or foam. Once the colony dies, the nest can be removed. Old wasp nests are not reused the following year, but the same loft void may attract new queens if the entry points are not sealed. For wasp nest treatment options, see our <Link href="/guides/wasp-nest-removal" className="text-blue-600 hover:underline font-medium">wasp nest removal guide</Link>.
+        Wasps frequently build nests in loft spaces, and the nest often goes unnoticed until mid-summer when the colony has grown to thousands of individuals and wasp activity around the roofline becomes impossible to ignore. A queen wasp emerges from hibernation in spring, searches for a sheltered void to build her nest, and the loft is an ideal location &mdash; warm, dry, undisturbed, and easy to access through eaves gaps and holes in soffit boards. The nest starts small, roughly the size of a golf ball, and grows throughout the summer to the size of a football or even larger. By August, a mature nest can contain <strong>5,000 to 10,000 wasps</strong>. If you discover an active wasp nest in your loft during summer, <strong>do not attempt to remove or treat it yourself</strong> &mdash; disturbing a large nest can provoke a mass stinging response. Contact a professional pest controller who will treat the nest with insecticidal powder or foam. Once the colony dies, the nest can be removed. Old wasp nests are not reused the following year, but the same loft void may attract new queens if the entry points are not sealed. For wasp nest treatment options, see our <Link href="/guides/wasp-nest-removal" className="text-[var(--color-teal-deep)] hover:underline font-medium">wasp nest removal guide</Link>.
       </p>
 
       <h3>Cluster Flies</h3>
@@ -231,7 +231,7 @@ export default function HowToPestProofYourLoftPage() {
 
       <h3>Birds (Pigeons and Starlings)</h3>
       <p>
-        Pigeons and starlings are the two bird species most commonly found nesting in UK loft spaces. They enter through displaced or broken roof tiles, gaps in soffit boards, holes in roofing felt, and open eaves. Once established, birds create large, messy nests from twigs, leaves, and debris. Bird droppings accumulate rapidly and pose a genuine health hazard &mdash; dried pigeon droppings can harbour <em>Chlamydia psittaci</em> (which causes psittacosis), <em>Cryptococcus neoformans</em> (a fungal infection), and various other pathogens. Bird droppings are also acidic and can damage timber and insulation over time. The noise from nesting birds, particularly starlings, can be considerable. All wild birds, their nests, and their eggs are protected under the <strong>Wildlife and Countryside Act 1981</strong>, which means you cannot disturb an active nest. Proofing work &mdash; fitting mesh, repairing tiles, and blocking entry points &mdash; must be carried out <strong>outside the nesting season</strong> (March to August), or after confirming that the nest is no longer in active use. For pigeon-specific advice, see our <Link href="/guides/pigeon-control" className="text-blue-600 hover:underline font-medium">pigeon control guide</Link>.
+        Pigeons and starlings are the two bird species most commonly found nesting in UK loft spaces. They enter through displaced or broken roof tiles, gaps in soffit boards, holes in roofing felt, and open eaves. Once established, birds create large, messy nests from twigs, leaves, and debris. Bird droppings accumulate rapidly and pose a genuine health hazard &mdash; dried pigeon droppings can harbour <em>Chlamydia psittaci</em> (which causes psittacosis), <em>Cryptococcus neoformans</em> (a fungal infection), and various other pathogens. Bird droppings are also acidic and can damage timber and insulation over time. The noise from nesting birds, particularly starlings, can be considerable. All wild birds, their nests, and their eggs are protected under the <strong>Wildlife and Countryside Act 1981</strong>, which means you cannot disturb an active nest. Proofing work &mdash; fitting mesh, repairing tiles, and blocking entry points &mdash; must be carried out <strong>outside the nesting season</strong> (March to August), or after confirming that the nest is no longer in active use. For pigeon-specific advice, see our <Link href="/guides/pigeon-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">pigeon control guide</Link>.
       </p>
 
       <div className="not-prose">
@@ -249,7 +249,7 @@ export default function HowToPestProofYourLoftPage() {
 
       <h3>Droppings</h3>
       <p>
-        Droppings are the most reliable indicator of pest activity, and their size tells you which pest is responsible. <strong>Mouse droppings</strong> are dark, rice-sized pellets approximately 4 to 7 millimetres long, often scattered widely across insulation and along joists. <strong>Rat droppings</strong> are larger &mdash; olive-sized, approximately 12 to 18 millimetres long &mdash; and tend to be found in clusters near feeding or nesting sites. If you find rat droppings, place <Link href="/best/rat-bait-stations" className="text-green-600 hover:underline">rat bait stations</Link> along the suspected access routes outside the building. <strong>Squirrel droppings</strong> are similar in size to rat droppings but often slightly rounder and lighter in colour, and are typically concentrated near the nest site. Fresh droppings are dark and slightly glossy; old droppings are dry, grey, and crumbly. The quantity of droppings gives you an indication of how long the pest has been present and the scale of the problem &mdash; a single mouse produces <strong>40 to 100 droppings per day</strong>.
+        Droppings are the most reliable indicator of pest activity, and their size tells you which pest is responsible. <strong>Mouse droppings</strong> are dark, rice-sized pellets approximately 4 to 7 millimetres long, often scattered widely across insulation and along joists. <strong>Rat droppings</strong> are larger &mdash; olive-sized, approximately 12 to 18 millimetres long &mdash; and tend to be found in clusters near feeding or nesting sites. If you find rat droppings, place <Link href="/best/rat-bait-stations" className="text-[var(--color-ok)] hover:underline">rat bait stations</Link> along the suspected access routes outside the building. <strong>Squirrel droppings</strong> are similar in size to rat droppings but often slightly rounder and lighter in colour, and are typically concentrated near the nest site. Fresh droppings are dark and slightly glossy; old droppings are dry, grey, and crumbly. The quantity of droppings gives you an indication of how long the pest has been present and the scale of the problem &mdash; a single mouse produces <strong>40 to 100 droppings per day</strong>.
       </p>
 
       <h3>Chewed Wiring and Insulation</h3>
@@ -328,12 +328,12 @@ export default function HowToPestProofYourLoftPage() {
       </p>
 
 <Callout type="tip">
-        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-blue-600 hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
+        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-[var(--color-teal-deep)] hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
       </Callout>
 
             <h3>Mice in the Loft</h3>
       <p>
-        For mice in the loft, <strong>snap traps</strong> are the most effective and humane DIY treatment. Place traps along joists and against walls, perpendicular to the wall with the trigger end touching the skirting or timber. Mice travel along edges rather than across open spaces, so traps placed in the middle of the loft floor will catch very little. Bait with a small amount of peanut butter, chocolate spread, or hazelnut spread smeared onto the trigger plate &mdash; do not use large pieces of food that mice can steal without triggering the trap. Set <strong>at least six traps</strong> for a standard loft &mdash; more is better, because the first night of trapping is typically the most productive before surviving mice become trap-shy. Check traps daily and reset or reposition any that have been triggered without a catch. Continue trapping for at least two weeks after the last catch to ensure the infestation is fully cleared. For our top recommendations, see the <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps UK 2026</Link> guide.
+        For mice in the loft, <strong>snap traps</strong> are the most effective and humane DIY treatment. Place traps along joists and against walls, perpendicular to the wall with the trigger end touching the skirting or timber. Mice travel along edges rather than across open spaces, so traps placed in the middle of the loft floor will catch very little. Bait with a small amount of peanut butter, chocolate spread, or hazelnut spread smeared onto the trigger plate &mdash; do not use large pieces of food that mice can steal without triggering the trap. Set <strong>at least six traps</strong> for a standard loft &mdash; more is better, because the first night of trapping is typically the most productive before surviving mice become trap-shy. Check traps daily and reset or reposition any that have been triggered without a catch. Continue trapping for at least two weeks after the last catch to ensure the infestation is fully cleared. For our top recommendations, see the <Link href="/best/mouse-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Mouse Traps UK 2026</Link> guide.
       </p>
 
       <div className="not-prose space-y-4">
@@ -353,12 +353,12 @@ export default function HowToPestProofYourLoftPage() {
 
       <h3>Squirrels in the Loft</h3>
       <p>
-        Squirrels are more challenging than mice because of their size, strength, and legal status. Grey squirrels in the loft should be removed using <strong>cage traps</strong> (also called live-capture traps) baited with peanuts, apple, or peanut butter. Place the trap near the entry point or along a route the squirrel is known to use. Check the trap at least twice a day &mdash; it is both a legal requirement and essential for animal welfare not to leave a trapped animal in distress. <strong>Important legal note:</strong> under the Invasive Alien Species (Enforcement and Permitting) Order 2019 and the Wildlife and Countryside Act 1981, it is illegal to release a trapped grey squirrel back into the wild. A trapped grey squirrel must be <strong>humanely dispatched</strong>. If you are not comfortable with this, hire a professional pest controller to carry out the trapping and dispatch. Once all squirrels have been removed, seal the entry point immediately to prevent re-entry. For product recommendations, see our <Link href="/best/squirrel-deterrents" className="text-blue-600 hover:underline font-medium">Best Squirrel Deterrents UK 2026</Link> guide.
+        Squirrels are more challenging than mice because of their size, strength, and legal status. Grey squirrels in the loft should be removed using <strong>cage traps</strong> (also called live-capture traps) baited with peanuts, apple, or peanut butter. Place the trap near the entry point or along a route the squirrel is known to use. Check the trap at least twice a day &mdash; it is both a legal requirement and essential for animal welfare not to leave a trapped animal in distress. <strong>Important legal note:</strong> under the Invasive Alien Species (Enforcement and Permitting) Order 2019 and the Wildlife and Countryside Act 1981, it is illegal to release a trapped grey squirrel back into the wild. A trapped grey squirrel must be <strong>humanely dispatched</strong>. If you are not comfortable with this, hire a professional pest controller to carry out the trapping and dispatch. Once all squirrels have been removed, seal the entry point immediately to prevent re-entry. For product recommendations, see our <Link href="/best/squirrel-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Squirrel Deterrents UK 2026</Link> guide.
       </p>
 
       <h3>Wasps in the Loft</h3>
       <p>
-        If you discover an active wasp nest in your loft during summer, <strong>do not attempt to remove or treat it yourself</strong> unless the nest is very small (golf-ball sized, indicating an early-stage colony with only a queen and a few workers). For established nests, contact a professional pest controller who will treat the nest with insecticidal powder or foam. Professional treatment typically costs <strong>&pound;50 to &pound;100</strong> and is extremely effective &mdash; the colony usually dies within 24 to 48 hours. After the colony has died, the nest can be removed (though this is not strictly necessary, as old nests are not reused). If you identify a very small, early-stage nest in spring, you can treat it yourself with a <strong>wasp nest foam</strong> designed for the purpose. These are aerosol products that deliver insecticidal foam from a safe distance of 2 to 3 metres. For our recommended products, see the <Link href="/best/wasp-nest-foam" className="text-blue-600 hover:underline font-medium">Best Wasp Nest Foam UK 2026</Link> guide.
+        If you discover an active wasp nest in your loft during summer, <strong>do not attempt to remove or treat it yourself</strong> unless the nest is very small (golf-ball sized, indicating an early-stage colony with only a queen and a few workers). For established nests, contact a professional pest controller who will treat the nest with insecticidal powder or foam. Professional treatment typically costs <strong>&pound;50 to &pound;100</strong> and is extremely effective &mdash; the colony usually dies within 24 to 48 hours. After the colony has died, the nest can be removed (though this is not strictly necessary, as old nests are not reused). If you identify a very small, early-stage nest in spring, you can treat it yourself with a <strong>wasp nest foam</strong> designed for the purpose. These are aerosol products that deliver insecticidal foam from a safe distance of 2 to 3 metres. For our recommended products, see the <Link href="/best/wasp-nest-foam" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Wasp Nest Foam UK 2026</Link> guide.
       </p>
 
       <h3>Cluster Flies in the Loft</h3>
@@ -401,51 +401,51 @@ export default function HowToPestProofYourLoftPage() {
       <div className="not-prose overflow-x-auto my-6">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-gray-50 border-b-2 border-gray-200">
-              <th className="text-left py-3 px-4 font-bold text-gray-900">Product</th>
-              <th className="text-left py-3 px-4 font-bold text-gray-900">Purpose</th>
+            <tr className="bg-[var(--color-paper-sunk)] border-b-2 border-[var(--color-rule)]">
+              <th className="text-left py-3 px-4 font-bold text-[var(--color-ink)]">Product</th>
+              <th className="text-left py-3 px-4 font-bold text-[var(--color-ink)]">Purpose</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-100">
+          <tbody className="divide-y divide-[var(--color-rule)]">
             <tr>
-              <td className="py-3 px-4 text-gray-800">Stainless steel wire mesh (6mm aperture)</td>
-              <td className="py-3 px-4 text-gray-600">Covering eaves gaps, soffit vents, and larger openings</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Stainless steel wire mesh (6mm aperture)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Covering eaves gaps, soffit vents, and larger openings</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Coarse-grade steel wool</td>
-              <td className="py-3 px-4 text-gray-600">Packing into gaps around pipes and cables (rodent-proof)</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Coarse-grade steel wool</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Packing into gaps around pipes and cables (rodent-proof)</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Exterior-grade expanding foam</td>
-              <td className="py-3 px-4 text-gray-600">Sealing around steel wool to create a permanent, weathertight seal</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Exterior-grade expanding foam</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Sealing around steel wool to create a permanent, weathertight seal</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Tin snips</td>
-              <td className="py-3 px-4 text-gray-600">Cutting wire mesh to size for eaves gaps and vents</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Tin snips</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Cutting wire mesh to size for eaves gaps and vents</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Stainless steel staples or screws</td>
-              <td className="py-3 px-4 text-gray-600">Fixing mesh over eaves gaps and vent openings</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Stainless steel staples or screws</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Fixing mesh over eaves gaps and vent openings</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Self-adhesive draught strip (foam/rubber)</td>
-              <td className="py-3 px-4 text-gray-600">Sealing the loft hatch to prevent mice entering living spaces</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Self-adhesive draught strip (foam/rubber)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Sealing the loft hatch to prevent mice entering living spaces</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Wire mesh chimney cap</td>
-              <td className="py-3 px-4 text-gray-600">Blocking pest access via unused chimney pots</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Wire mesh chimney cap</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Blocking pest access via unused chimney pots</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Mouse snap traps (pack of 6)</td>
-              <td className="py-3 px-4 text-gray-600">Trapping mice already present in the loft space</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Mouse snap traps (pack of 6)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Trapping mice already present in the loft space</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Cluster fly smoke bomb / fumigator</td>
-              <td className="py-3 px-4 text-gray-600">Treating large cluster fly infestations in the loft</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Cluster fly smoke bomb / fumigator</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Treating large cluster fly infestations in the loft</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Torch (high-brightness LED)</td>
-              <td className="py-3 px-4 text-gray-600">Essential for loft inspections &mdash; standard loft lighting is rarely adequate</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Torch (high-brightness LED)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Essential for loft inspections &mdash; standard loft lighting is rarely adequate</td>
             </tr>
           </tbody>
         </table>
@@ -479,7 +479,7 @@ export default function HowToPestProofYourLoftPage() {
 
       <div className="not-prose">
         <Callout type="cost">
-          <p>Professional loft proofing costs <strong>&pound;150&ndash;&pound;400</strong> for a standard property. Treatment for existing infestations is quoted separately: mouse treatment <strong>&pound;80&ndash;&pound;150</strong>, wasp nest removal <strong>&pound;50&ndash;&pound;100</strong>, squirrel removal <strong>&pound;150&ndash;&pound;300</strong>. For a full breakdown, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.</p>
+          <p>Professional loft proofing costs <strong>&pound;150&ndash;&pound;400</strong> for a standard property. Treatment for existing infestations is quoted separately: mouse treatment <strong>&pound;80&ndash;&pound;150</strong>, wasp nest removal <strong>&pound;50&ndash;&pound;100</strong>, squirrel removal <strong>&pound;150&ndash;&pound;300</strong>. For a full breakdown, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.</p>
         </Callout>
       </div>
 
@@ -515,39 +515,39 @@ export default function HowToPestProofYourLoftPage() {
 
       <h3>How much does professional loft pest proofing cost?</h3>
       <p>
-        Professional loft pest proofing typically costs between <strong>&pound;150 and &pound;400</strong> for a standard domestic property, depending on the size of the loft, the number of entry points that need sealing, and the complexity of the work. An initial survey and quote visit is usually &pound;50 to &pound;80, though many companies include this in the overall proofing price. If an active infestation needs treating first, treatment is quoted separately &mdash; mouse treatment typically costs &pound;80 to &pound;150, wasp nest removal &pound;50 to &pound;100, and squirrel removal &pound;150 to &pound;300. The proofing work itself involves meshing eaves gaps, sealing around pipes and cables, repairing damaged soffit boards, and fitting chimney caps. For a comprehensive pricing breakdown, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
+        Professional loft pest proofing typically costs between <strong>&pound;150 and &pound;400</strong> for a standard domestic property, depending on the size of the loft, the number of entry points that need sealing, and the complexity of the work. An initial survey and quote visit is usually &pound;50 to &pound;80, though many companies include this in the overall proofing price. If an active infestation needs treating first, treatment is quoted separately &mdash; mouse treatment typically costs &pound;80 to &pound;150, wasp nest removal &pound;50 to &pound;100, and squirrel removal &pound;150 to &pound;300. The proofing work itself involves meshing eaves gaps, sealing around pipes and cables, repairing damaged soffit boards, and fitting chimney caps. For a comprehensive pricing breakdown, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
       </p>
 
       {/* ------------------------------------------------------------------ */}
       {/* Cross-link box */}
       {/* ------------------------------------------------------------------ */}
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-3">Related Product Guides</p>
-        <p className="text-gray-700 mb-4">Explore our product guides for the items mentioned in this guide:</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-3">Related Product Guides</p>
+        <p className="text-[var(--color-ink-soft)] mb-4">Explore our product guides for the items mentioned in this guide:</p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/best/mouse-traps"
-            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-block px-4 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-semibold rounded-lg transition-colors text-sm"
           >
-            Best Mouse Traps &rarr;
+            Best Mouse Traps
           </Link>
           <Link
             href="/best/mouse-repellent"
-            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-block px-4 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-semibold rounded-lg transition-colors text-sm"
           >
-            Best Mouse Repellents &rarr;
+            Best Mouse Repellents
           </Link>
           <Link
             href="/best/squirrel-deterrents"
-            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-block px-4 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-semibold rounded-lg transition-colors text-sm"
           >
-            Best Squirrel Deterrents &rarr;
+            Best Squirrel Deterrents
           </Link>
           <Link
             href="/best/wasp-nest-foam"
-            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-block px-4 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-semibold rounded-lg transition-colors text-sm"
           >
-            Best Wasp Nest Foam &rarr;
+            Best Wasp Nest Foam
           </Link>
         </div>
       </div>

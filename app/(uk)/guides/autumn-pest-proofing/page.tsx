@@ -171,8 +171,8 @@ export default function AutumnPestProofingPage() {
 
       {/* Affiliate Disclosure */}
       <div className="not-prose">
-        <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-8 text-sm text-gray-600">
-          <p><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small affiliate commission from Amazon at no extra cost to you. This helps fund our independent research. We only recommend products we believe in. <Link href="/about" className="text-blue-600 hover:underline">Learn more</Link>.</p>
+        <div className="bg-[var(--color-paper-sunk)] border border-[var(--color-rule)] rounded-xl p-4 mb-8 text-sm text-[var(--color-ink-soft)]">
+          <p><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small affiliate commission from Amazon at no extra cost to you. This helps fund our independent research. We only recommend products we believe in. <Link href="/about" className="text-[var(--color-teal-deep)] hover:underline">Learn more</Link>.</p>
         </div>
       </div>
 
@@ -210,12 +210,12 @@ export default function AutumnPestProofingPage() {
 
       <h3>1. Mice</h3>
       <p>
-        The house mouse (<em>Mus musculus</em>) is the single most common pest to enter UK homes during autumn. Mice are commensal animals &mdash; they have evolved to live alongside humans and are specifically adapted to exploit the warmth, shelter, and food that our homes provide. As outdoor temperatures drop, mice that have been living in hedgerows, fields, outbuildings, and garden sheds during the summer begin actively seeking access to heated buildings. A mouse can squeeze through any gap as small as <strong>6 millimetres</strong> &mdash; roughly the width of a pencil &mdash; which means that even minor cracks, unsealed pipe entry points, and gaps beneath doors can serve as entry routes. For areas where trapping is impractical, <Link href="/best/mouse-bait-stations" className="text-green-600 hover:underline">mouse bait stations</Link> offer a safe, enclosed alternative. Once inside, mice breed rapidly. A single pair can produce <strong>over 60 offspring per year</strong> under ideal conditions, which means a small autumn incursion can become a full-blown infestation by Christmas. For detailed control advice, see our <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">complete guide to getting rid of mice</Link>.
+        The house mouse (<em>Mus musculus</em>) is the single most common pest to enter UK homes during autumn. Mice are commensal animals &mdash; they have evolved to live alongside humans and are specifically adapted to exploit the warmth, shelter, and food that our homes provide. As outdoor temperatures drop, mice that have been living in hedgerows, fields, outbuildings, and garden sheds during the summer begin actively seeking access to heated buildings. A mouse can squeeze through any gap as small as <strong>6 millimetres</strong> &mdash; roughly the width of a pencil &mdash; which means that even minor cracks, unsealed pipe entry points, and gaps beneath doors can serve as entry routes. For areas where trapping is impractical, <Link href="/best/mouse-bait-stations" className="text-[var(--color-ok)] hover:underline">mouse bait stations</Link> offer a safe, enclosed alternative. Once inside, mice breed rapidly. A single pair can produce <strong>over 60 offspring per year</strong> under ideal conditions, which means a small autumn incursion can become a full-blown infestation by Christmas. For detailed control advice, see our <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline font-medium">complete guide to getting rid of mice</Link>.
       </p>
 
       <h3>2. Rats</h3>
       <p>
-        The brown rat (<em>Rattus norvegicus</em>) also becomes more active around homes and outbuildings during autumn. While rats are less likely than mice to enter the main living areas of a well-maintained house, they readily move into garages, basements, sheds, compost areas, and subfloor voids when the weather turns cold. Rats need a larger gap than mice &mdash; approximately <strong>25 millimetres</strong> &mdash; but they are powerful gnawers and can enlarge smaller holes if they detect warmth or food on the other side. Autumn is also when rat populations are at their annual peak following summer breeding, so there are simply more of them looking for winter shelter. If you suspect rats around outbuildings or garden perimeters, <Link href="/best/rat-bait-stations" className="text-green-600 hover:underline">rat bait stations</Link> placed along known runs are the safest and most effective deterrent. Damaged drains and sewer systems are a particularly common entry route into UK homes. See our <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-medium">guide to getting rid of rats</Link> for full control advice.
+        The brown rat (<em>Rattus norvegicus</em>) also becomes more active around homes and outbuildings during autumn. While rats are less likely than mice to enter the main living areas of a well-maintained house, they readily move into garages, basements, sheds, compost areas, and subfloor voids when the weather turns cold. Rats need a larger gap than mice &mdash; approximately <strong>25 millimetres</strong> &mdash; but they are powerful gnawers and can enlarge smaller holes if they detect warmth or food on the other side. Autumn is also when rat populations are at their annual peak following summer breeding, so there are simply more of them looking for winter shelter. If you suspect rats around outbuildings or garden perimeters, <Link href="/best/rat-bait-stations" className="text-[var(--color-ok)] hover:underline">rat bait stations</Link> placed along known runs are the safest and most effective deterrent. Damaged drains and sewer systems are a particularly common entry route into UK homes. See our <Link href="/guides/how-to-get-rid-of-rats" className="text-[var(--color-teal-deep)] hover:underline font-medium">guide to getting rid of rats</Link> for full control advice.
       </p>
 
       <h3>3. Spiders</h3>
@@ -230,7 +230,7 @@ export default function AutumnPestProofingPage() {
 
       <h3>5. Grey Squirrels</h3>
       <p>
-        Grey squirrels (<em>Sciurus carolinensis</em>) frequently enter UK loft spaces during autumn to build nests (dreys) for the winter. They are agile climbers and can access roofs via overhanging branches, drainpipes, and climbing plants. Once inside a loft, squirrels cause significant damage &mdash; they gnaw through timber, electrical cables, water pipes, and stored belongings. Squirrel-damaged wiring is a serious fire risk. They also create noise disturbance, particularly in the early morning. The key proofing measures are trimming overhanging branches (maintaining a gap of at least 2 metres between branches and the roofline), securing soffit boards, and fitting mesh over any gaps in the eaves. For detailed advice, see our <Link href="/guides/how-to-get-rid-of-squirrels" className="text-blue-600 hover:underline font-medium">guide to getting rid of squirrels</Link>.
+        Grey squirrels (<em>Sciurus carolinensis</em>) frequently enter UK loft spaces during autumn to build nests (dreys) for the winter. They are agile climbers and can access roofs via overhanging branches, drainpipes, and climbing plants. Once inside a loft, squirrels cause significant damage &mdash; they gnaw through timber, electrical cables, water pipes, and stored belongings. Squirrel-damaged wiring is a serious fire risk. They also create noise disturbance, particularly in the early morning. The key proofing measures are trimming overhanging branches (maintaining a gap of at least 2 metres between branches and the roofline), securing soffit boards, and fitting mesh over any gaps in the eaves. For detailed advice, see our <Link href="/guides/how-to-get-rid-of-squirrels" className="text-[var(--color-teal-deep)] hover:underline font-medium">guide to getting rid of squirrels</Link>.
       </p>
 
       <div className="not-prose">
@@ -354,13 +354,13 @@ export default function AutumnPestProofingPage() {
       {/* SECTION: Products */}
       {/* ------------------------------------------------------------------ */}
 <Callout type="tip">
-        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-blue-600 hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
+        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-[var(--color-teal-deep)] hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
       </Callout>
 
             <h2 id="products">Products for Autumn Pest Proofing</h2>
 
       <p>
-        The right products make pest proofing faster and more effective. Below are our recommended picks for the most common autumn pest threats. For full details and comparisons, see our dedicated product pages: <Link href="/best/mouse-repellent" className="text-blue-600 hover:underline font-medium">Best Mouse Repellents</Link>, <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps</Link>, and <Link href="/best/spider-repellent" className="text-blue-600 hover:underline font-medium">Best Spider Repellents</Link>.
+        The right products make pest proofing faster and more effective. Below are our recommended picks for the most common autumn pest threats. For full details and comparisons, see our dedicated product pages: <Link href="/best/mouse-repellent" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Mouse Repellents</Link>, <Link href="/best/mouse-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Mouse Traps</Link>, and <Link href="/best/spider-repellent" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Spider Repellents</Link>.
       </p>
 
       <div className="not-prose space-y-4">
@@ -403,7 +403,7 @@ export default function AutumnPestProofingPage() {
       </div>
 
       <p>
-        For a full comparison of mouse control products, see our <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps UK 2026</Link> and <Link href="/best/mouse-repellent" className="text-blue-600 hover:underline font-medium">Best Mouse Repellents UK 2026</Link> guides. If rats are your primary concern, our <Link href="/best/rat-poison" className="text-blue-600 hover:underline font-medium">Best Rat Poison UK 2026</Link> guide covers the most effective options.
+        For a full comparison of mouse control products, see our <Link href="/best/mouse-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Mouse Traps UK 2026</Link> and <Link href="/best/mouse-repellent" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Mouse Repellents UK 2026</Link> guides. If rats are your primary concern, our <Link href="/best/rat-poison" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Rat Poison UK 2026</Link> guide covers the most effective options.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -447,47 +447,47 @@ export default function AutumnPestProofingPage() {
       <div className="not-prose overflow-x-auto my-6">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-gray-50 border-b-2 border-gray-200">
-              <th className="text-left py-3 px-4 font-bold text-gray-900">Product</th>
-              <th className="text-left py-3 px-4 font-bold text-gray-900">Purpose</th>
+            <tr className="bg-[var(--color-paper-sunk)] border-b-2 border-[var(--color-rule)]">
+              <th className="text-left py-3 px-4 font-bold text-[var(--color-ink)]">Product</th>
+              <th className="text-left py-3 px-4 font-bold text-[var(--color-ink)]">Purpose</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-100">
+          <tbody className="divide-y divide-[var(--color-rule)]">
             <tr>
-              <td className="py-3 px-4 text-gray-800">Steel wool (coarse grade)</td>
-              <td className="py-3 px-4 text-gray-600">Packing into gaps before foam &mdash; mice cannot chew through</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Steel wool (coarse grade)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Packing into gaps before foam &mdash; mice cannot chew through</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Expanding foam (exterior grade)</td>
-              <td className="py-3 px-4 text-gray-600">Sealing gaps around pipes, cables, and wall penetrations</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Expanding foam (exterior grade)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Sealing gaps around pipes, cables, and wall penetrations</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Galvanised wire mesh (6mm aperture)</td>
-              <td className="py-3 px-4 text-gray-600">Covering air bricks, eaves gaps, and larger openings</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Galvanised wire mesh (6mm aperture)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Covering air bricks, eaves gaps, and larger openings</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Door brush strips / draught excluders</td>
-              <td className="py-3 px-4 text-gray-600">Sealing gaps beneath external doors and garage doors</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Door brush strips / draught excluders</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Sealing gaps beneath external doors and garage doors</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Mouse snap traps (pack of 6&ndash;12)</td>
-              <td className="py-3 px-4 text-gray-600">Catching any mice that are already inside</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Mouse snap traps (pack of 6&ndash;12)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Catching any mice that are already inside</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Spider repellent spray</td>
-              <td className="py-3 px-4 text-gray-600">Barrier spray for window frames, door thresholds, and vents</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Spider repellent spray</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Barrier spray for window frames, door thresholds, and vents</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Exterior-grade silicone sealant</td>
-              <td className="py-3 px-4 text-gray-600">Sealing small cracks in mortar and around window frames</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Exterior-grade silicone sealant</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Sealing small cracks in mortar and around window frames</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Air brick covers (galvanised mesh)</td>
-              <td className="py-3 px-4 text-gray-600">Preventing mice, rats, and cluster flies entering via air bricks</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Air brick covers (galvanised mesh)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Preventing mice, rats, and cluster flies entering via air bricks</td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Pest-proof vent covers</td>
-              <td className="py-3 px-4 text-gray-600">Replacing damaged or missing extractor fan and tumble dryer vent flaps</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Pest-proof vent covers</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Replacing damaged or missing extractor fan and tumble dryer vent flaps</td>
             </tr>
           </tbody>
         </table>
@@ -542,7 +542,7 @@ export default function AutumnPestProofingPage() {
 
       <h3>How do I stop mice getting in during autumn?</h3>
       <p>
-        The most effective method is <strong>physical proofing</strong> &mdash; sealing every external gap larger than 6 millimetres. Use a combination of steel wool and expanding foam for small gaps around pipes and cables, galvanised wire mesh (6mm aperture) for air bricks and larger openings, and brush strips or door sweeps beneath external doors. Pay particular attention to pipe entry points under sinks, air bricks at ground level, garage door seals, and gaps where different building materials meet. Inside, store all food in sealed containers and keep kitchen areas clean. Remove outdoor attractants such as fallen fruit, open compost, and accessible bird feeders. For active infestations, snap traps baited with peanut butter are the most effective and humane DIY control method. See our <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">complete mouse guide</Link> for detailed advice.
+        The most effective method is <strong>physical proofing</strong> &mdash; sealing every external gap larger than 6 millimetres. Use a combination of steel wool and expanding foam for small gaps around pipes and cables, galvanised wire mesh (6mm aperture) for air bricks and larger openings, and brush strips or door sweeps beneath external doors. Pay particular attention to pipe entry points under sinks, air bricks at ground level, garage door seals, and gaps where different building materials meet. Inside, store all food in sealed containers and keep kitchen areas clean. Remove outdoor attractants such as fallen fruit, open compost, and accessible bird feeders. For active infestations, snap traps baited with peanut butter are the most effective and humane DIY control method. See our <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline font-medium">complete mouse guide</Link> for detailed advice.
       </p>
 
       <h3>Do I need to pest-proof my loft?</h3>
@@ -552,38 +552,38 @@ export default function AutumnPestProofingPage() {
 
       <h3>Should I use poison or traps for autumn mice?</h3>
       <p>
-        For most domestic situations, <strong>traps are the recommended first choice</strong>. Snap traps are inexpensive (typically under &pound;2 each), highly effective when placed correctly, and deliver an instant kill &mdash; making them the most humane lethal option. They also allow you to confirm catches, monitor your progress, and dispose of each carcass properly. Poison (rodenticide) carries the risk of mice dying in inaccessible locations such as wall cavities and beneath floorboards, creating a <strong>persistent and extremely unpleasant smell</strong> that can last for several weeks. There is also a real risk of secondary poisoning to pets &mdash; particularly cats &mdash; and to wildlife such as owls and birds of prey. If the infestation is too large for traps alone, call a professional pest controller who can use restricted-access second-generation rodenticides safely and in accordance with <strong>CRRU guidelines</strong>. For a detailed comparison, see our <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps UK 2026</Link> guide.
+        For most domestic situations, <strong>traps are the recommended first choice</strong>. Snap traps are inexpensive (typically under &pound;2 each), highly effective when placed correctly, and deliver an instant kill &mdash; making them the most humane lethal option. They also allow you to confirm catches, monitor your progress, and dispose of each carcass properly. Poison (rodenticide) carries the risk of mice dying in inaccessible locations such as wall cavities and beneath floorboards, creating a <strong>persistent and extremely unpleasant smell</strong> that can last for several weeks. There is also a real risk of secondary poisoning to pets &mdash; particularly cats &mdash; and to wildlife such as owls and birds of prey. If the infestation is too large for traps alone, call a professional pest controller who can use restricted-access second-generation rodenticides safely and in accordance with <strong>CRRU guidelines</strong>. For a detailed comparison, see our <Link href="/best/mouse-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Mouse Traps UK 2026</Link> guide.
       </p>
 
       <h3>How much does a professional pest survey cost?</h3>
       <p>
-        A professional autumn pest survey typically costs between <strong>&pound;50 and &pound;100</strong> for a standard domestic property. Some pest control companies include a free initial inspection as part of a treatment package. The survey will cover the full exterior perimeter, loft space, garage, and all internal rooms, identifying both existing pest activity and potential entry points that need proofing. If proofing work is needed, this is usually quoted separately and can range from <strong>&pound;100 to &pound;400</strong> depending on the number of gaps and the complexity of the work. While this represents an upfront cost, it is often significantly cheaper than dealing with an established infestation later in the winter &mdash; a standard mouse treatment alone typically costs &pound;80 to &pound;150, plus proofing on top. For full pricing details, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
+        A professional autumn pest survey typically costs between <strong>&pound;50 and &pound;100</strong> for a standard domestic property. Some pest control companies include a free initial inspection as part of a treatment package. The survey will cover the full exterior perimeter, loft space, garage, and all internal rooms, identifying both existing pest activity and potential entry points that need proofing. If proofing work is needed, this is usually quoted separately and can range from <strong>&pound;100 to &pound;400</strong> depending on the number of gaps and the complexity of the work. While this represents an upfront cost, it is often significantly cheaper than dealing with an established infestation later in the winter &mdash; a standard mouse treatment alone typically costs &pound;80 to &pound;150, plus proofing on top. For full pricing details, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
       </p>
 
       {/* ------------------------------------------------------------------ */}
       {/* Cross-link box */}
       {/* ------------------------------------------------------------------ */}
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-3">Related Product Guides</p>
-        <p className="text-gray-700 mb-4">Explore our product guides for the items mentioned in this guide:</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-3">Related Product Guides</p>
+        <p className="text-[var(--color-ink-soft)] mb-4">Explore our product guides for the items mentioned in this guide:</p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/best/mouse-repellent"
-            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-block px-4 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-semibold rounded-lg transition-colors text-sm"
           >
-            Best Mouse Repellents &rarr;
+            Best Mouse Repellents
           </Link>
           <Link
             href="/best/mouse-traps"
-            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-block px-4 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-semibold rounded-lg transition-colors text-sm"
           >
-            Best Mouse Traps &rarr;
+            Best Mouse Traps
           </Link>
           <Link
             href="/best/spider-repellent"
-            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-block px-4 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-semibold rounded-lg transition-colors text-sm"
           >
-            Best Spider Repellents &rarr;
+            Best Spider Repellents
           </Link>
         </div>
       </div>

@@ -205,14 +205,14 @@ export default function RestaurantPestControlPage() {
       />
 
       {/* Back to Commercial Hub */}
-      <div className="not-prose my-8 p-6 bg-purple-50 border border-purple-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Part of our Commercial Pest Control series</p>
-        <p className="text-gray-700 mb-3">This guide is one of our sector-specific commercial pest control resources. Visit the hub for all commercial guides, equipment recommendations, and compliance information.</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-ochre-wash)] border border-[var(--color-ochre-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Part of our Commercial Pest Control series</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">This guide is one of our sector-specific commercial pest control resources. Visit the hub for all commercial guides, equipment recommendations, and compliance information.</p>
         <a
           href="/guides/commercial-pest-control"
-          className="inline-block px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm"
+          className="inline-block px-6 py-2.5 bg-[var(--color-ochre)] hover:bg-[var(--color-ochre-deep)] text-white font-bold rounded-lg transition-colors text-sm"
         >
-          Commercial Pest Control Hub &rarr;
+          Commercial Pest Control Hub
         </a>
       </div>
 
@@ -320,14 +320,14 @@ export default function RestaurantPestControlPage() {
       </p>
 
       {/* Link to fly killer product review */}
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Need electric fly killers for your kitchen?</p>
-        <p className="text-gray-700 mb-3">Our guide covers the best commercial fly killers suitable for restaurants and food preparation areas, including glue board units that comply with food safety requirements.</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Need electric fly killers for your kitchen?</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">Our guide covers the best commercial fly killers suitable for restaurants and food preparation areas, including glue board units that comply with food safety requirements.</p>
         <a
           href="/best/commercial-fly-killers"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+          className="inline-block px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
         >
-          Best Commercial Fly Killers UK 2026 &rarr;
+          Best Commercial Fly Killers UK 2026
         </a>
       </div>
 
@@ -537,7 +537,7 @@ export default function RestaurantPestControlPage() {
       </p>
 
       <p>
-        For a comprehensive breakdown of pest control costs across all common pests and premises types, including residential and commercial, see our detailed <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
+        For a comprehensive breakdown of pest control costs across all common pests and premises types, including residential and commercial, see our detailed <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -610,172 +610,172 @@ export default function RestaurantPestControlPage() {
       <div className="not-prose my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <Link
           href="/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             London
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/birmingham/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Birmingham
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/manchester/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Manchester
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/liverpool/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Liverpool
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/leeds/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Leeds
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/nottingham/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Nottingham
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/brighton/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Brighton
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/sheffield/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Sheffield
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/bristol/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Bristol
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/glasgow/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Glasgow
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/bradford/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Bradford
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/newcastle/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Newcastle
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/cardiff/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Cardiff
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/edinburgh/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Edinburgh
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/leicester/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Leicester
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/hampshire/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Hampshire
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/coventry/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Coventry
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/belfast/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Belfast
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find commercial providers &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find commercial providers</span>
         </Link>
         <Link
           href="/pest-control/regions"
-          className="block p-5 bg-blue-50 border border-blue-200 rounded-xl hover:shadow-md hover:border-blue-400 transition-all group sm:col-span-2 lg:col-span-3"
+          className="block p-5 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group sm:col-span-2 lg:col-span-3"
         >
-          <span className="font-bold text-blue-700 group-hover:text-blue-800 transition-colors">
-            Browse all 18 locations &rarr;
+          <span className="font-bold text-[var(--color-teal-deep)] group-hover:text-[var(--color-teal-deep)] transition-colors">
+            Browse all 18 locations
           </span>
         </Link>
       </div>
@@ -826,7 +826,7 @@ export default function RestaurantPestControlPage() {
       </p>
 
       <p>
-        For further reading, see our guides on <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">how to get rid of cockroaches</Link>, and <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">pest control costs UK 2026</Link>. For product recommendations, browse our <Link href="/best/commercial-fly-killers" className="text-blue-600 hover:underline font-medium">best commercial fly killers</Link>, <Link href="/best/rat-traps" className="text-blue-600 hover:underline font-medium">best rat traps</Link>, and <Link href="/best/cockroach-killers" className="text-blue-600 hover:underline font-medium">best cockroach killers</Link> guides.
+        For further reading, see our guides on <Link href="/guides/how-to-get-rid-of-rats" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of cockroaches</Link>, and <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">pest control costs UK 2026</Link>. For product recommendations, browse our <Link href="/best/commercial-fly-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">best commercial fly killers</Link>, <Link href="/best/rat-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">best rat traps</Link>, and <Link href="/best/cockroach-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">best cockroach killers</Link> guides.
       </p>
     </GuideLayout>
   );

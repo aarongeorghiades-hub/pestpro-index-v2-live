@@ -212,7 +212,7 @@ export default function StudentHousePestGuidePage() {
       </p>
 
       <p>
-        In the vast majority of student houses, mice are entering through <strong>structural gaps</strong> &mdash; which makes it the landlord&apos;s responsibility. Simply putting down traps without sealing the entry points is futile: new mice will keep coming in. The landlord must arrange for the entry points to be proofed (sealed with wire wool and expanding foam, or metal plates), and for any existing infestation to be treated. See our full <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">mouse control guide</Link> for detailed information.
+        In the vast majority of student houses, mice are entering through <strong>structural gaps</strong> &mdash; which makes it the landlord&apos;s responsibility. Simply putting down traps without sealing the entry points is futile: new mice will keep coming in. The landlord must arrange for the entry points to be proofed (sealed with wire wool and expanding foam, or metal plates), and for any existing infestation to be treated. See our full <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline font-medium">mouse control guide</Link> for detailed information.
       </p>
 
       <h3>Bed Bugs</h3>
@@ -226,7 +226,7 @@ export default function StudentHousePestGuidePage() {
       </p>
 
       <p>
-        Check for bed bugs by inspecting <strong>mattress seams, headboard joints, bed frame crevices, and the edges of carpet near the bed</strong>. Look for live bugs, dark brown/black faecal spots, tiny white eggs, and shed skins. If the infestation was present before you moved in or has spread from another room in the HMO, it is the landlord&apos;s responsibility. Our <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline font-medium">bed bug guide</Link> covers treatment options in full.
+        Check for bed bugs by inspecting <strong>mattress seams, headboard joints, bed frame crevices, and the edges of carpet near the bed</strong>. Look for live bugs, dark brown/black faecal spots, tiny white eggs, and shed skins. If the infestation was present before you moved in or has spread from another room in the HMO, it is the landlord&apos;s responsibility. Our <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-[var(--color-teal-deep)] hover:underline font-medium">bed bug guide</Link> covers treatment options in full.
       </p>
 
       <h3>Fleas</h3>
@@ -236,7 +236,7 @@ export default function StudentHousePestGuidePage() {
       </p>
 
       <p>
-        Flea bites are typically concentrated around the <strong>ankles and lower legs</strong>, appearing as small, red, intensely itchy bumps, often in clusters. A household <Link href="/best/flea-spray-for-home" className="text-green-600 hover:underline">flea spray</Link> containing an insect growth regulator (IGR) is the most effective immediate treatment. If the previous tenants had pets and the property was not professionally treated during the void period, this is a <strong>landlord responsibility</strong>. The landlord should have arranged a flea treatment before you moved in. See our <Link href="/guides/how-to-get-rid-of-fleas" className="text-blue-600 hover:underline font-medium">flea control guide</Link> for comprehensive treatment advice.
+        Flea bites are typically concentrated around the <strong>ankles and lower legs</strong>, appearing as small, red, intensely itchy bumps, often in clusters. A household <Link href="/best/flea-spray-for-home" className="text-[var(--color-ok)] hover:underline">flea spray</Link> containing an insect growth regulator (IGR) is the most effective immediate treatment. If the previous tenants had pets and the property was not professionally treated during the void period, this is a <strong>landlord responsibility</strong>. The landlord should have arranged a flea treatment before you moved in. See our <Link href="/guides/how-to-get-rid-of-fleas" className="text-[var(--color-teal-deep)] hover:underline font-medium">flea control guide</Link> for comprehensive treatment advice.
       </p>
 
       <h3>Cockroaches</h3>
@@ -246,7 +246,7 @@ export default function StudentHousePestGuidePage() {
       </p>
 
       <p>
-        German cockroaches spread between rooms and between properties via <strong>shared service risers, pipework, cable routes, and gaps around party walls</strong>. This is why individual treatment in a single room or kitchen often fails &mdash; the cockroaches simply move to an untreated area and return once the treatment wears off. In an HMO, a coordinated treatment covering the entire property is required, and this is <strong>always the landlord&apos;s responsibility</strong>. Signs include live cockroaches (usually seen at night when you switch on the kitchen light), a distinctive <strong>musty, oily smell</strong>, dark smear marks on surfaces near harbourage points, and egg cases (oothecae) in warm, hidden spots. See our <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">cockroach control guide</Link> for detailed information.
+        German cockroaches spread between rooms and between properties via <strong>shared service risers, pipework, cable routes, and gaps around party walls</strong>. This is why individual treatment in a single room or kitchen often fails &mdash; the cockroaches simply move to an untreated area and return once the treatment wears off. In an HMO, a coordinated treatment covering the entire property is required, and this is <strong>always the landlord&apos;s responsibility</strong>. Signs include live cockroaches (usually seen at night when you switch on the kitchen light), a distinctive <strong>musty, oily smell</strong>, dark smear marks on surfaces near harbourage points, and egg cases (oothecae) in warm, hidden spots. See our <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-[var(--color-teal-deep)] hover:underline font-medium">cockroach control guide</Link> for detailed information.
       </p>
 
       <h3>Ants</h3>
@@ -256,7 +256,7 @@ export default function StudentHousePestGuidePage() {
       </p>
 
       <p>
-        While ants are more of a nuisance than a health hazard, a persistent ant problem usually indicates <strong>structural entry points that need sealing</strong> &mdash; again, the landlord&apos;s responsibility. In the short term, ant gel bait is cheap, effective, and easy to use. It works by attracting worker ants who carry the bait back to the colony, killing the queen and collapsing the nest. Our <Link href="/guides/how-to-get-rid-of-ants" className="text-blue-600 hover:underline font-medium">ant control guide</Link> covers all the options.
+        While ants are more of a nuisance than a health hazard, a persistent ant problem usually indicates <strong>structural entry points that need sealing</strong> &mdash; again, the landlord&apos;s responsibility. In the short term, ant gel bait is cheap, effective, and easy to use. It works by attracting worker ants who carry the bait back to the colony, killing the queen and collapsing the nest. Our <Link href="/guides/how-to-get-rid-of-ants" className="text-[var(--color-teal-deep)] hover:underline font-medium">ant control guide</Link> covers all the options.
       </p>
 
       <div className="not-prose">
@@ -289,7 +289,7 @@ export default function StudentHousePestGuidePage() {
       <h3>What About Awaab&apos;s Law?</h3>
 
       <p>
-        <strong>Awaab&apos;s Law</strong>, introduced through the Social Housing (Regulation) Act 2023, sets strict timeframes for landlords to investigate and resolve hazards including damp, mould, and associated pest problems. While it currently applies to social housing providers, the <strong>Renters&apos; Rights Act</strong> is expected to extend similar obligations to private landlords. The connection matters for students because <strong>damp and mould &mdash; extremely common in older student houses with poor ventilation &mdash; directly attract pests</strong> including silverfish, booklice, mould mites, and cockroaches. If your student house has both damp/mould and pest problems, they are likely connected, and the landlord must address both the underlying moisture issue and the pest infestation. Our <Link href="/guides/landlord-pest-control" className="text-blue-600 hover:underline font-medium">landlord pest control guide</Link> covers the full legal framework.
+        <strong>Awaab&apos;s Law</strong>, introduced through the Social Housing (Regulation) Act 2023, sets strict timeframes for landlords to investigate and resolve hazards including damp, mould, and associated pest problems. While it currently applies to social housing providers, the <strong>Renters&apos; Rights Act</strong> is expected to extend similar obligations to private landlords. The connection matters for students because <strong>damp and mould &mdash; extremely common in older student houses with poor ventilation &mdash; directly attract pests</strong> including silverfish, booklice, mould mites, and cockroaches. If your student house has both damp/mould and pest problems, they are likely connected, and the landlord must address both the underlying moisture issue and the pest infestation. Our <Link href="/guides/landlord-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">landlord pest control guide</Link> covers the full legal framework.
       </p>
 
       <h3>When Are Tenants Responsible?</h3>
@@ -341,7 +341,7 @@ export default function StudentHousePestGuidePage() {
       </p>
 
 <Callout type="info">
-        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-blue-600 hover:underline font-medium">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
+        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-[var(--color-teal-deep)] hover:underline font-medium">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
       </Callout>
 
             <h3>Mouse Traps</h3>
@@ -367,13 +367,13 @@ export default function StudentHousePestGuidePage() {
       </div>
 
       <p>
-        For more mouse trap options, including humane live-catch traps and professional-grade alternatives, see our <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">best mouse traps UK</Link> guide.
+        For more mouse trap options, including humane live-catch traps and professional-grade alternatives, see our <Link href="/best/mouse-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">best mouse traps UK</Link> guide.
       </p>
 
       <h3>Bed Bug Spray</h3>
 
       <p>
-        If you suspect bed bugs, a <strong>residual <Link href="/best/bed-bug-spray" className="text-green-600 hover:underline">bed bug spray</Link></strong> is the most accessible DIY option. Look for sprays containing <strong>cypermethrin</strong> or <strong>permethrin</strong> as the active ingredient. Spray the mattress seams, bed frame joints, headboard, and the edges of the carpet near the bed. Allow the spray to dry before using the bed (follow the product instructions). Bed bug sprays provide a residual barrier that kills bugs on contact for several weeks. However, for a serious bed bug infestation, DIY sprays are unlikely to be enough &mdash; professional heat treatment is the most effective solution, and this is a cost your landlord should bear if the infestation pre-dates your tenancy or has spread from another room.
+        If you suspect bed bugs, a <strong>residual <Link href="/best/bed-bug-spray" className="text-[var(--color-ok)] hover:underline">bed bug spray</Link></strong> is the most accessible DIY option. Look for sprays containing <strong>cypermethrin</strong> or <strong>permethrin</strong> as the active ingredient. Spray the mattress seams, bed frame joints, headboard, and the edges of the carpet near the bed. Allow the spray to dry before using the bed (follow the product instructions). Bed bug sprays provide a residual barrier that kills bugs on contact for several weeks. However, for a serious bed bug infestation, DIY sprays are unlikely to be enough &mdash; professional heat treatment is the most effective solution, and this is a cost your landlord should bear if the infestation pre-dates your tenancy or has spread from another room.
       </p>
 
       <div className="not-prose space-y-6 my-8">
@@ -393,7 +393,7 @@ export default function StudentHousePestGuidePage() {
       </div>
 
       <p>
-        See our <Link href="/best/bed-bug-spray" className="text-blue-600 hover:underline font-medium">best bed bug spray UK</Link> guide for full product comparisons.
+        See our <Link href="/best/bed-bug-spray" className="text-[var(--color-teal-deep)] hover:underline font-medium">best bed bug spray UK</Link> guide for full product comparisons.
       </p>
 
       <h3>Ant Gel Bait</h3>
@@ -419,7 +419,7 @@ export default function StudentHousePestGuidePage() {
       </div>
 
       <p>
-        For more ant control products, see our <Link href="/best/ant-gel-bait" className="text-blue-600 hover:underline font-medium">best ant gel bait UK</Link> guide.
+        For more ant control products, see our <Link href="/best/ant-gel-bait" className="text-[var(--color-teal-deep)] hover:underline font-medium">best ant gel bait UK</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -428,7 +428,7 @@ export default function StudentHousePestGuidePage() {
         </Callout>
       </div>
 
-      <p className="text-xs text-gray-400 italic">
+      <p className="text-xs text-[var(--color-ink-mute)] italic">
         As an Amazon Associate, PestPro Index earns from qualifying purchases. Product prices are approximate and may vary.
       </p>
 
@@ -447,9 +447,9 @@ export default function StudentHousePestGuidePage() {
         Send the following by email (so you have a dated record) to your landlord or letting agent. Attach photographs as evidence.
       </p>
 
-      <div className="not-prose my-8 p-6 bg-gray-50 border border-gray-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-4">Template: Pest Report Email to Landlord</p>
-        <div className="text-sm text-gray-700 space-y-3 font-mono">
+      <div className="not-prose my-8 p-6 bg-[var(--color-paper-sunk)] border border-[var(--color-rule)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-4">Template: Pest Report Email to Landlord</p>
+        <div className="text-sm text-[var(--color-ink-soft)] space-y-3 font-mono">
           <p><strong>Subject:</strong> Pest Problem Report &mdash; [Your Address] &mdash; Urgent Action Required</p>
           <p>Dear [Landlord/Agent Name],</p>
           <p>I am writing to formally report a pest problem at [full property address].</p>
@@ -626,19 +626,19 @@ export default function StudentHousePestGuidePage() {
       {/* ------------------------------------------------------------------ */}
       {/* Cross-Link Box */}
       {/* ------------------------------------------------------------------ */}
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-3">Related Guides &amp; Product Picks</p>
-        <p className="text-gray-700 mb-4">For more detailed information on specific pests and the best budget-friendly products, see our dedicated guides and product picks:</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-3">Related Guides &amp; Product Picks</p>
+        <p className="text-[var(--color-ink-soft)] mb-4">For more detailed information on specific pests and the best budget-friendly products, see our dedicated guides and product picks:</p>
         <div className="flex flex-wrap gap-3">
-          <a href="/best/mouse-traps" className="inline-block px-5 py-2 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-lg transition-colors text-sm">Best Mouse Traps &rarr;</a>
-          <a href="/best/bed-bug-spray" className="inline-block px-5 py-2 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-lg transition-colors text-sm">Best Bed Bug Spray &rarr;</a>
-          <a href="/best/ant-gel-bait" className="inline-block px-5 py-2 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-lg transition-colors text-sm">Best Ant Gel Bait &rarr;</a>
-          <a href="/guides/landlord-pest-control" className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm">Landlord Pest Control Guide &rarr;</a>
+          <a href="/best/mouse-traps" className="inline-block px-5 py-2 bg-[var(--color-ochre)] hover:bg-[var(--color-ochre-deep)] text-white font-bold rounded-lg transition-colors text-sm">Best Mouse Traps</a>
+          <a href="/best/bed-bug-spray" className="inline-block px-5 py-2 bg-[var(--color-ochre)] hover:bg-[var(--color-ochre-deep)] text-white font-bold rounded-lg transition-colors text-sm">Best Bed Bug Spray</a>
+          <a href="/best/ant-gel-bait" className="inline-block px-5 py-2 bg-[var(--color-ochre)] hover:bg-[var(--color-ochre-deep)] text-white font-bold rounded-lg transition-colors text-sm">Best Ant Gel Bait</a>
+          <a href="/guides/landlord-pest-control" className="inline-block px-5 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm">Landlord Pest Control Guide</a>
         </div>
       </div>
 
       <p>
-        For further reading, see our guides on <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-blue-600 hover:underline font-medium">how to get rid of bed bugs</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">how to get rid of cockroaches</Link>, <Link href="/guides/how-to-get-rid-of-fleas" className="text-blue-600 hover:underline font-medium">how to get rid of fleas</Link>, <Link href="/guides/how-to-get-rid-of-ants" className="text-blue-600 hover:underline font-medium">how to get rid of ants</Link>, <Link href="/guides/landlord-pest-control" className="text-blue-600 hover:underline font-medium">landlord pest control responsibilities</Link>, and <Link href="/guides/professional-pest-control-vs-diy" className="text-blue-600 hover:underline font-medium">professional pest control vs DIY</Link>.
+        For further reading, see our guides on <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/how-to-get-rid-of-bed-bugs" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of bed bugs</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of cockroaches</Link>, <Link href="/guides/how-to-get-rid-of-fleas" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of fleas</Link>, <Link href="/guides/how-to-get-rid-of-ants" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of ants</Link>, <Link href="/guides/landlord-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">landlord pest control responsibilities</Link>, and <Link href="/guides/professional-pest-control-vs-diy" className="text-[var(--color-teal-deep)] hover:underline font-medium">professional pest control vs DIY</Link>.
       </p>
     </GuideLayout>
   );

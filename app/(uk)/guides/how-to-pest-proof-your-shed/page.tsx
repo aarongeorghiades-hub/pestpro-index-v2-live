@@ -173,8 +173,8 @@ export default function HowToPestProofYourShedPage() {
 
       {/* Affiliate Disclosure */}
       <div className="not-prose">
-        <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-8 text-sm text-gray-600">
-          <p><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small affiliate commission from Amazon at no extra cost to you. This helps fund our independent research. We only recommend products we believe in. <Link href="/about" className="text-blue-600 hover:underline">Learn more</Link>.</p>
+        <div className="bg-[var(--color-paper-sunk)] border border-[var(--color-rule)] rounded-xl p-4 mb-8 text-sm text-[var(--color-ink-soft)]">
+          <p><strong>Affiliate disclosure:</strong> PestPro Index is reader-supported. When you buy through links on this page, we may earn a small affiliate commission from Amazon at no extra cost to you. This helps fund our independent research. We only recommend products we believe in. <Link href="/about" className="text-[var(--color-teal-deep)] hover:underline">Learn more</Link>.</p>
         </div>
       </div>
 
@@ -212,12 +212,12 @@ export default function HowToPestProofYourShedPage() {
 
       <h3>Rats</h3>
       <p>
-        The brown rat (<em>Rattus norvegicus</em>) is the most destructive pest you are likely to encounter in a garden shed. Rats are powerful gnawers that can chew through timber, plastic, and even soft metals to gain entry. Once inside, they cause extensive damage &mdash; gnawing through stored items, cables, hose pipes, and the shed structure itself. They contaminate surfaces with urine and droppings, which carry diseases including leptospirosis (Weil&apos;s disease), salmonella, and hantavirus. Placing <Link href="/best/rat-bait-stations" className="text-green-600 hover:underline">rat bait stations</Link> along the shed perimeter is the safest control method for gardens. Rats need a gap of approximately <strong>25 millimetres</strong> to enter, but they will readily enlarge smaller holes if they detect food or shelter on the other side. Garden sheds that store birdseed, pet food, grass seed, or compost are particularly attractive to rats. Sheds with rotting timber at the base or poor-fitting doors are easy targets. For full control advice, see our <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-medium">complete guide to getting rid of rats</Link>.
+        The brown rat (<em>Rattus norvegicus</em>) is the most destructive pest you are likely to encounter in a garden shed. Rats are powerful gnawers that can chew through timber, plastic, and even soft metals to gain entry. Once inside, they cause extensive damage &mdash; gnawing through stored items, cables, hose pipes, and the shed structure itself. They contaminate surfaces with urine and droppings, which carry diseases including leptospirosis (Weil&apos;s disease), salmonella, and hantavirus. Placing <Link href="/best/rat-bait-stations" className="text-[var(--color-ok)] hover:underline">rat bait stations</Link> along the shed perimeter is the safest control method for gardens. Rats need a gap of approximately <strong>25 millimetres</strong> to enter, but they will readily enlarge smaller holes if they detect food or shelter on the other side. Garden sheds that store birdseed, pet food, grass seed, or compost are particularly attractive to rats. Sheds with rotting timber at the base or poor-fitting doors are easy targets. For full control advice, see our <Link href="/guides/how-to-get-rid-of-rats" className="text-[var(--color-teal-deep)] hover:underline font-medium">complete guide to getting rid of rats</Link>.
       </p>
 
       <h3>Mice</h3>
       <p>
-        The house mouse (<em>Mus musculus</em>) and the wood mouse (<em>Apodemus sylvaticus</em>) both frequently take up residence in garden sheds. Mice are smaller than rats and can squeeze through any gap as small as <strong>6 millimetres</strong> &mdash; roughly the width of a pencil. They are attracted to sheds because they provide excellent nesting opportunities: stored boxes, old newspapers, folded tarpaulins, and gardening gloves all provide warm, sheltered nesting material. Mice breed rapidly &mdash; a single pair can produce over 60 offspring per year under favourable conditions &mdash; so a small problem can escalate quickly. They create nests from shredded material, leave droppings scattered across shelves and the floor, and gnaw through packaging, fabric, and soft plastic. Where traps are not practical, <Link href="/best/mouse-bait-stations" className="text-green-600 hover:underline">mouse bait stations</Link> provide a safe enclosed option for sheds. They are particularly active in autumn and winter when they seek shelter from the cold. See our <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">guide to getting rid of mice</Link> for detailed advice.
+        The house mouse (<em>Mus musculus</em>) and the wood mouse (<em>Apodemus sylvaticus</em>) both frequently take up residence in garden sheds. Mice are smaller than rats and can squeeze through any gap as small as <strong>6 millimetres</strong> &mdash; roughly the width of a pencil. They are attracted to sheds because they provide excellent nesting opportunities: stored boxes, old newspapers, folded tarpaulins, and gardening gloves all provide warm, sheltered nesting material. Mice breed rapidly &mdash; a single pair can produce over 60 offspring per year under favourable conditions &mdash; so a small problem can escalate quickly. They create nests from shredded material, leave droppings scattered across shelves and the floor, and gnaw through packaging, fabric, and soft plastic. Where traps are not practical, <Link href="/best/mouse-bait-stations" className="text-[var(--color-ok)] hover:underline">mouse bait stations</Link> provide a safe enclosed option for sheds. They are particularly active in autumn and winter when they seek shelter from the cold. See our <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline font-medium">guide to getting rid of mice</Link> for detailed advice.
       </p>
 
       <h3>Wasps</h3>
@@ -232,7 +232,7 @@ export default function HowToPestProofYourShedPage() {
 
       <h3>Woodworm</h3>
       <p>
-        Woodworm is not a worm at all &mdash; it is the larval stage of several species of wood-boring beetle, with the common furniture beetle (<em>Anobium punctatum</em>) being the most prevalent in UK sheds. Adult beetles lay their eggs in cracks and crevices in timber, and the larvae bore into the wood, feeding on it for <strong>two to five years</strong> before emerging as adults, leaving characteristic small round exit holes (1&ndash;2mm diameter) in the surface. Older softwood sheds are particularly vulnerable, especially those with untreated timber that has become damp. Woodworm weakens the structural integrity of the shed over time &mdash; floor panels, wall studs, and roof timbers can all be affected. The key indicators are small round holes with fine powdery dust (frass) beneath them. Fresh, light-coloured frass indicates an active infestation that needs treatment. For comprehensive advice, see our <Link href="/guides/woodworm-treatment" className="text-blue-600 hover:underline font-medium">woodworm treatment guide</Link>.
+        Woodworm is not a worm at all &mdash; it is the larval stage of several species of wood-boring beetle, with the common furniture beetle (<em>Anobium punctatum</em>) being the most prevalent in UK sheds. Adult beetles lay their eggs in cracks and crevices in timber, and the larvae bore into the wood, feeding on it for <strong>two to five years</strong> before emerging as adults, leaving characteristic small round exit holes (1&ndash;2mm diameter) in the surface. Older softwood sheds are particularly vulnerable, especially those with untreated timber that has become damp. Woodworm weakens the structural integrity of the shed over time &mdash; floor panels, wall studs, and roof timbers can all be affected. The key indicators are small round holes with fine powdery dust (frass) beneath them. Fresh, light-coloured frass indicates an active infestation that needs treatment. For comprehensive advice, see our <Link href="/guides/woodworm-treatment" className="text-[var(--color-teal-deep)] hover:underline font-medium">woodworm treatment guide</Link>.
       </p>
 
       <h3>Cluster Flies</h3>
@@ -308,12 +308,12 @@ export default function HowToPestProofYourShedPage() {
       </p>
 
 <Callout type="tip">
-        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-blue-600 hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
+        <p>Proofing only works if you have the right materials to hand. Our guide to the <Link href="/best/rodent-proofing" className="text-[var(--color-teal-deep)] hover:underline">best rodent proofing products</Link> covers the mesh, steel wool, drain guards and door strips this job needs.</p>
       </Callout>
 
             <h3>Rats: Bait Stations Outside the Shed</h3>
       <p>
-        If you have evidence of rat activity in or around your shed (droppings, gnaw marks, burrow holes nearby), the most effective DIY approach is to place <strong>tamper-resistant bait stations outside the shed</strong> along known or suspected rat runs. Bait stations should be positioned against walls, fences, or along the edges of paths where rats travel &mdash; rats are thigmotactic, meaning they prefer to run along edges rather than across open ground. Do not place loose poison inside the shed, as this creates a risk to pets, children, and non-target wildlife. A lockable bait station with a secured poison block inside is the safe and responsible method. Check and replenish bait stations weekly until all feeding activity has stopped, then seal the entry points the rats were using. For severe or persistent infestations, call a professional pest controller &mdash; they have access to more potent restricted-use rodenticides and the expertise to resolve the problem quickly. For detailed bait station advice, see our <Link href="/best/rat-bait-stations" className="text-blue-600 hover:underline font-medium">Best Rat Bait Stations UK 2026</Link> guide.
+        If you have evidence of rat activity in or around your shed (droppings, gnaw marks, burrow holes nearby), the most effective DIY approach is to place <strong>tamper-resistant bait stations outside the shed</strong> along known or suspected rat runs. Bait stations should be positioned against walls, fences, or along the edges of paths where rats travel &mdash; rats are thigmotactic, meaning they prefer to run along edges rather than across open ground. Do not place loose poison inside the shed, as this creates a risk to pets, children, and non-target wildlife. A lockable bait station with a secured poison block inside is the safe and responsible method. Check and replenish bait stations weekly until all feeding activity has stopped, then seal the entry points the rats were using. For severe or persistent infestations, call a professional pest controller &mdash; they have access to more potent restricted-use rodenticides and the expertise to resolve the problem quickly. For detailed bait station advice, see our <Link href="/best/rat-bait-stations" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Rat Bait Stations UK 2026</Link> guide.
       </p>
 
       <div className="not-prose space-y-4">
@@ -328,7 +328,7 @@ export default function HowToPestProofYourShedPage() {
 
       <h3>Mice: Traps Inside the Shed</h3>
       <p>
-        For mice already inside your shed, <strong>snap traps are the most effective and humane DIY control method</strong>. Place traps perpendicular to the walls (with the trigger end against the wall) in locations where you have found droppings, gnaw marks, or nesting material. Bait traps with peanut butter, chocolate spread, or a small piece of nut &mdash; all of which are highly attractive to mice and stick firmly to the trap trigger. Set at least four to six traps at once &mdash; mice are curious explorers and multiple traps dramatically increase your catch rate compared to a single trap. Check traps daily and reset as needed. Once catches stop for a week, the resident population has likely been eliminated and you can focus on sealing entry points to prevent recolonisation. For a full comparison of trap types, see our <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">Best Mouse Traps UK 2026</Link> guide.
+        For mice already inside your shed, <strong>snap traps are the most effective and humane DIY control method</strong>. Place traps perpendicular to the walls (with the trigger end against the wall) in locations where you have found droppings, gnaw marks, or nesting material. Bait traps with peanut butter, chocolate spread, or a small piece of nut &mdash; all of which are highly attractive to mice and stick firmly to the trap trigger. Set at least four to six traps at once &mdash; mice are curious explorers and multiple traps dramatically increase your catch rate compared to a single trap. Check traps daily and reset as needed. Once catches stop for a week, the resident population has likely been eliminated and you can focus on sealing entry points to prevent recolonisation. For a full comparison of trap types, see our <Link href="/best/mouse-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Mouse Traps UK 2026</Link> guide.
       </p>
 
       <div className="not-prose space-y-4">
@@ -348,12 +348,12 @@ export default function HowToPestProofYourShedPage() {
 
       <h3>Wasps: Nest Foam for Active Nests</h3>
       <p>
-        If wasps have built a nest in your shed, do not attempt to remove it while the colony is still active. The safest DIY approach is to use a <strong>wasp nest foam spray</strong> that can be applied from a safe distance (most products have a reach of 3 to 5 metres). Apply the foam directly into the nest entrance <strong>at dusk</strong>, when wasps are least active and the majority of the colony is inside the nest. Coat the entrance thoroughly and retreat immediately. Leave the treated nest undisturbed for at least <strong>48 hours</strong> before checking for activity. If the nest is still active (wasps flying in and out), reapply. Once you are confident the colony is dead, remove the nest and seal the gap the wasps were using to access the roof space or wall cavity. If the nest is very large (bigger than a football), in a difficult-to-reach location, or if you have a wasp sting allergy, do not attempt DIY treatment &mdash; call a professional. For product recommendations, see our <Link href="/best/wasp-nest-foam" className="text-blue-600 hover:underline font-medium">Best Wasp Nest Foam UK 2026</Link> guide.
+        If wasps have built a nest in your shed, do not attempt to remove it while the colony is still active. The safest DIY approach is to use a <strong>wasp nest foam spray</strong> that can be applied from a safe distance (most products have a reach of 3 to 5 metres). Apply the foam directly into the nest entrance <strong>at dusk</strong>, when wasps are least active and the majority of the colony is inside the nest. Coat the entrance thoroughly and retreat immediately. Leave the treated nest undisturbed for at least <strong>48 hours</strong> before checking for activity. If the nest is still active (wasps flying in and out), reapply. Once you are confident the colony is dead, remove the nest and seal the gap the wasps were using to access the roof space or wall cavity. If the nest is very large (bigger than a football), in a difficult-to-reach location, or if you have a wasp sting allergy, do not attempt DIY treatment &mdash; call a professional. For product recommendations, see our <Link href="/best/wasp-nest-foam" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Wasp Nest Foam UK 2026</Link> guide.
       </p>
 
       <h3>Woodworm: Treatment Spray for Affected Timber</h3>
       <p>
-        If you have identified active woodworm in your shed (fresh exit holes with light-coloured frass beneath), treat all affected timber with a <strong>permethrin-based woodworm treatment spray</strong>. Brush or spray the treatment liberally onto all timber surfaces, ensuring it penetrates into exit holes and cracks. Pay particular attention to joints, end grain, and areas of softer or damper wood where larvae are most likely to be feeding. For heavily infested sections, inject treatment directly into the larger exit holes using the nozzle supplied with most products. Allow the treatment to dry fully (typically 24 to 48 hours) and keep the shed well ventilated during this period. For a detailed treatment guide and product comparisons, see our <Link href="/best/woodworm-treatments" className="text-blue-600 hover:underline font-medium">Best Woodworm Treatments UK 2026</Link> guide and our <Link href="/guides/woodworm-treatment" className="text-blue-600 hover:underline font-medium">woodworm treatment guide</Link>.
+        If you have identified active woodworm in your shed (fresh exit holes with light-coloured frass beneath), treat all affected timber with a <strong>permethrin-based woodworm treatment spray</strong>. Brush or spray the treatment liberally onto all timber surfaces, ensuring it penetrates into exit holes and cracks. Pay particular attention to joints, end grain, and areas of softer or damper wood where larvae are most likely to be feeding. For heavily infested sections, inject treatment directly into the larger exit holes using the nozzle supplied with most products. Allow the treatment to dry fully (typically 24 to 48 hours) and keep the shed well ventilated during this period. For a detailed treatment guide and product comparisons, see our <Link href="/best/woodworm-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Woodworm Treatments UK 2026</Link> guide and our <Link href="/guides/woodworm-treatment" className="text-[var(--color-teal-deep)] hover:underline font-medium">woodworm treatment guide</Link>.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -421,74 +421,74 @@ export default function HowToPestProofYourShedPage() {
       <div className="not-prose overflow-x-auto my-6">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-gray-50 border-b-2 border-gray-200">
-              <th className="text-left py-3 px-4 font-bold text-gray-900">Product</th>
-              <th className="text-left py-3 px-4 font-bold text-gray-900">Purpose</th>
-              <th className="text-left py-3 px-4 font-bold text-gray-900">Link</th>
+            <tr className="bg-[var(--color-paper-sunk)] border-b-2 border-[var(--color-rule)]">
+              <th className="text-left py-3 px-4 font-bold text-[var(--color-ink)]">Product</th>
+              <th className="text-left py-3 px-4 font-bold text-[var(--color-ink)]">Purpose</th>
+              <th className="text-left py-3 px-4 font-bold text-[var(--color-ink)]">Link</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-100">
+          <tbody className="divide-y divide-[var(--color-rule)]">
             <tr>
-              <td className="py-3 px-4 text-gray-800">Steel wool (coarse grade)</td>
-              <td className="py-3 px-4 text-gray-600">Packing into gaps before foam &mdash; rodents cannot chew through</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Steel wool (coarse grade)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Packing into gaps before foam &mdash; rodents cannot chew through</td>
               <td className="py-3 px-4">
-                <a href={`https://www.amazon.co.uk/dp/B006GQQVDW?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href={`https://www.amazon.co.uk/dp/B006GQQVDW?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-[var(--color-teal-deep)] hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Expanding foam (exterior grade)</td>
-              <td className="py-3 px-4 text-gray-600">Sealing gaps around door frame, walls, and windows</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Expanding foam (exterior grade)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Sealing gaps around door frame, walls, and windows</td>
               <td className="py-3 px-4">
-                <a href={`https://www.amazon.co.uk/dp/B07YM5BY58?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href={`https://www.amazon.co.uk/dp/B07YM5BY58?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-[var(--color-teal-deep)] hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Stainless steel insect mesh (fine aperture)</td>
-              <td className="py-3 px-4 text-gray-600">Covering air vents to exclude mice, wasps, and flies</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Stainless steel insect mesh (fine aperture)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Covering air vents to exclude mice, wasps, and flies</td>
               <td className="py-3 px-4">
-                <a href={`https://www.amazon.co.uk/dp/B077XX6NKB?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href={`https://www.amazon.co.uk/dp/B077XX6NKB?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-[var(--color-teal-deep)] hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Brush strip draught excluder</td>
-              <td className="py-3 px-4 text-gray-600">Sealing the gap under the shed door</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Brush strip draught excluder</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Sealing the gap under the shed door</td>
               <td className="py-3 px-4">
-                <a href={`https://www.amazon.co.uk/dp/B002Q0ZB9M?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href={`https://www.amazon.co.uk/dp/B002Q0ZB9M?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-[var(--color-teal-deep)] hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Mouse snap traps (pack of 6)</td>
-              <td className="py-3 px-4 text-gray-600">Catching mice already inside the shed</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Mouse snap traps (pack of 6)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Catching mice already inside the shed</td>
               <td className="py-3 px-4">
-                <Link href="/best/mouse-traps" className="text-blue-600 hover:underline text-sm">See our guide</Link>
+                <Link href="/best/mouse-traps" className="text-[var(--color-teal-deep)] hover:underline text-sm">See our guide</Link>
               </td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Rat bait station (lockable)</td>
-              <td className="py-3 px-4 text-gray-600">Safe rodenticide placement outside the shed</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Rat bait station (lockable)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Safe rodenticide placement outside the shed</td>
               <td className="py-3 px-4">
-                <Link href="/best/rat-bait-stations" className="text-blue-600 hover:underline text-sm">See our guide</Link>
+                <Link href="/best/rat-bait-stations" className="text-[var(--color-teal-deep)] hover:underline text-sm">See our guide</Link>
               </td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Wasp nest foam spray</td>
-              <td className="py-3 px-4 text-gray-600">Treating active wasp nests in the shed roof</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Wasp nest foam spray</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Treating active wasp nests in the shed roof</td>
               <td className="py-3 px-4">
-                <Link href="/best/wasp-nest-foam" className="text-blue-600 hover:underline text-sm">See our guide</Link>
+                <Link href="/best/wasp-nest-foam" className="text-[var(--color-teal-deep)] hover:underline text-sm">See our guide</Link>
               </td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Woodworm treatment spray (permethrin)</td>
-              <td className="py-3 px-4 text-gray-600">Treating active woodworm in shed timber</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Woodworm treatment spray (permethrin)</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Treating active woodworm in shed timber</td>
               <td className="py-3 px-4">
-                <Link href="/best/woodworm-treatments" className="text-blue-600 hover:underline text-sm">See our guide</Link>
+                <Link href="/best/woodworm-treatments" className="text-[var(--color-teal-deep)] hover:underline text-sm">See our guide</Link>
               </td>
             </tr>
             <tr>
-              <td className="py-3 px-4 text-gray-800">Exterior wood preservative</td>
-              <td className="py-3 px-4 text-gray-600">Annual timber protection to prevent rot and decay</td>
+              <td className="py-3 px-4 text-[var(--color-ink)]">Exterior wood preservative</td>
+              <td className="py-3 px-4 text-[var(--color-ink-soft)]">Annual timber protection to prevent rot and decay</td>
               <td className="py-3 px-4">
-                <a href={`https://www.amazon.co.uk/dp/B0024LNI8E?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-blue-600 hover:underline text-sm">View on Amazon</a>
+                <a href={`https://www.amazon.co.uk/dp/B0024LNI8E?tag=${UK_AMAZON_TAG}`} target="_blank" rel="sponsored nofollow noopener noreferrer" className="text-[var(--color-teal-deep)] hover:underline text-sm">View on Amazon</a>
               </td>
             </tr>
           </tbody>
@@ -524,27 +524,27 @@ export default function HowToPestProofYourShedPage() {
 
       <h3>How do I stop rats getting into my shed?</h3>
       <p>
-        The most effective way to stop rats entering your shed is to <strong>seal every gap larger than 25 millimetres</strong> on the exterior, paying particular attention to the door frame, where the floor meets the walls, and around any windows or vents. Use a combination of steel wool and expanding foam for smaller gaps, and galvanised wire mesh or metal kick plates for larger openings. Fit a brush strip draught excluder along the bottom of the door. Remove all food sources from inside the shed &mdash; birdseed, pet food, grass seed, and fertiliser should be stored in metal containers with secure lids, or moved out of the shed entirely. If you suspect active rat activity in the garden, place a <Link href="/best/rat-bait-stations" className="text-blue-600 hover:underline font-medium">tamper-resistant bait station</Link> outside the shed along known rat runs. Keep vegetation trimmed back from the shed walls and remove any clutter from the surrounding area. For persistent problems, see our <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-medium">complete rat control guide</Link>.
+        The most effective way to stop rats entering your shed is to <strong>seal every gap larger than 25 millimetres</strong> on the exterior, paying particular attention to the door frame, where the floor meets the walls, and around any windows or vents. Use a combination of steel wool and expanding foam for smaller gaps, and galvanised wire mesh or metal kick plates for larger openings. Fit a brush strip draught excluder along the bottom of the door. Remove all food sources from inside the shed &mdash; birdseed, pet food, grass seed, and fertiliser should be stored in metal containers with secure lids, or moved out of the shed entirely. If you suspect active rat activity in the garden, place a <Link href="/best/rat-bait-stations" className="text-[var(--color-teal-deep)] hover:underline font-medium">tamper-resistant bait station</Link> outside the shed along known rat runs. Keep vegetation trimmed back from the shed walls and remove any clutter from the surrounding area. For persistent problems, see our <Link href="/guides/how-to-get-rid-of-rats" className="text-[var(--color-teal-deep)] hover:underline font-medium">complete rat control guide</Link>.
       </p>
 
       <h3>What attracts mice to garden sheds?</h3>
       <p>
-        Mice are attracted to garden sheds because they offer <strong>shelter, warmth, undisturbed nesting sites, and often a food source</strong>. Sheds containing stored birdseed, grass seed, pet food, fertiliser, or other organic materials are especially attractive. Cluttered sheds with cardboard boxes, old newspapers, fabric, and equipment piled on the floor provide ideal nesting material and hiding places. Mice only need a gap of <strong>6 millimetres</strong> to enter, so sheds with poor-fitting doors, rotting timber at the base, or gaps between panels are easy targets. The most effective prevention is to remove food sources, clear clutter, store items on shelves rather than the floor, and seal all gaps. For detailed control advice, see our <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">complete guide to getting rid of mice</Link>.
+        Mice are attracted to garden sheds because they offer <strong>shelter, warmth, undisturbed nesting sites, and often a food source</strong>. Sheds containing stored birdseed, grass seed, pet food, fertiliser, or other organic materials are especially attractive. Cluttered sheds with cardboard boxes, old newspapers, fabric, and equipment piled on the floor provide ideal nesting material and hiding places. Mice only need a gap of <strong>6 millimetres</strong> to enter, so sheds with poor-fitting doors, rotting timber at the base, or gaps between panels are easy targets. The most effective prevention is to remove food sources, clear clutter, store items on shelves rather than the floor, and seal all gaps. For detailed control advice, see our <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline font-medium">complete guide to getting rid of mice</Link>.
       </p>
 
       <h3>Should I put rat poison inside my shed?</h3>
       <p>
-        <strong>No.</strong> Placing loose rat poison inside your shed is not recommended. Poison that is not enclosed in a tamper-resistant bait station poses a serious risk to children, pets, and non-target wildlife that may access the shed. There is also the risk of rats dying inside the shed or in nearby cavities, creating a persistent and extremely unpleasant smell that can last for several weeks. If you need to use rodenticide, always use a <strong>lockable bait station</strong> placed outside the shed along a known rat run. Inside the shed, snap traps or electronic traps are the safer and more effective option. For severe infestations, call a professional pest controller who can use restricted-access rodenticides safely and in accordance with <strong>CRRU guidelines</strong>. See our <Link href="/best/rat-bait-stations" className="text-blue-600 hover:underline font-medium">Best Rat Bait Stations UK 2026</Link> guide for recommended products.
+        <strong>No.</strong> Placing loose rat poison inside your shed is not recommended. Poison that is not enclosed in a tamper-resistant bait station poses a serious risk to children, pets, and non-target wildlife that may access the shed. There is also the risk of rats dying inside the shed or in nearby cavities, creating a persistent and extremely unpleasant smell that can last for several weeks. If you need to use rodenticide, always use a <strong>lockable bait station</strong> placed outside the shed along a known rat run. Inside the shed, snap traps or electronic traps are the safer and more effective option. For severe infestations, call a professional pest controller who can use restricted-access rodenticides safely and in accordance with <strong>CRRU guidelines</strong>. See our <Link href="/best/rat-bait-stations" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Rat Bait Stations UK 2026</Link> guide for recommended products.
       </p>
 
       <h3>How do I get rid of wasps in my shed?</h3>
       <p>
-        If wasps have built a nest inside your shed, the safest DIY approach is to use a <strong>wasp nest foam spray</strong> applied from a distance of several metres. Apply the foam directly into the nest entrance <strong>at dusk</strong>, when the colony is least active and most workers are inside. Leave the treated nest undisturbed for at least 48 hours, then check for remaining activity. If the nest is still active, reapply. Once you are confident the colony is dead, remove the nest and seal the gap the wasps used to access the roof space. Do not attempt to remove an active nest without treatment first, and do not attempt DIY treatment on nests that are very large, in difficult-to-reach locations, or if you have a wasp sting allergy &mdash; in these cases, call a professional. To prevent future nests, seal all gaps in the shed roof and eaves before spring, when queen wasps begin searching for nesting sites. See our <Link href="/best/wasp-nest-foam" className="text-blue-600 hover:underline font-medium">Best Wasp Nest Foam UK 2026</Link> guide for product recommendations.
+        If wasps have built a nest inside your shed, the safest DIY approach is to use a <strong>wasp nest foam spray</strong> applied from a distance of several metres. Apply the foam directly into the nest entrance <strong>at dusk</strong>, when the colony is least active and most workers are inside. Leave the treated nest undisturbed for at least 48 hours, then check for remaining activity. If the nest is still active, reapply. Once you are confident the colony is dead, remove the nest and seal the gap the wasps used to access the roof space. Do not attempt to remove an active nest without treatment first, and do not attempt DIY treatment on nests that are very large, in difficult-to-reach locations, or if you have a wasp sting allergy &mdash; in these cases, call a professional. To prevent future nests, seal all gaps in the shed roof and eaves before spring, when queen wasps begin searching for nesting sites. See our <Link href="/best/wasp-nest-foam" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Wasp Nest Foam UK 2026</Link> guide for product recommendations.
       </p>
 
       <h3>Does my shed have woodworm?</h3>
       <p>
-        The telltale sign of woodworm is <strong>small round exit holes</strong> in the timber, typically 1 to 2 millimetres in diameter for common furniture beetle, which is the most prevalent species in UK sheds. You may also notice <strong>fine powdery dust (frass)</strong> beneath the holes &mdash; this is bore dust pushed out by the larvae as they tunnel through the wood. Fresh, light-coloured frass indicates an active infestation that needs treatment. Dark frass or holes without frass may indicate an old, inactive infestation. Check all structural timbers, shelving, door frames, and the shed floor. Older softwood sheds are particularly vulnerable, especially those with untreated timber that has become damp over the years. Active woodworm should be treated with a <strong>permethrin-based woodworm treatment spray</strong> applied liberally to all affected timber. For a comprehensive guide, see our <Link href="/guides/woodworm-treatment" className="text-blue-600 hover:underline font-medium">woodworm treatment guide</Link> and <Link href="/best/woodworm-treatments" className="text-blue-600 hover:underline font-medium">Best Woodworm Treatments UK 2026</Link> guide.
+        The telltale sign of woodworm is <strong>small round exit holes</strong> in the timber, typically 1 to 2 millimetres in diameter for common furniture beetle, which is the most prevalent species in UK sheds. You may also notice <strong>fine powdery dust (frass)</strong> beneath the holes &mdash; this is bore dust pushed out by the larvae as they tunnel through the wood. Fresh, light-coloured frass indicates an active infestation that needs treatment. Dark frass or holes without frass may indicate an old, inactive infestation. Check all structural timbers, shelving, door frames, and the shed floor. Older softwood sheds are particularly vulnerable, especially those with untreated timber that has become damp over the years. Active woodworm should be treated with a <strong>permethrin-based woodworm treatment spray</strong> applied liberally to all affected timber. For a comprehensive guide, see our <Link href="/guides/woodworm-treatment" className="text-[var(--color-teal-deep)] hover:underline font-medium">woodworm treatment guide</Link> and <Link href="/best/woodworm-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Woodworm Treatments UK 2026</Link> guide.
       </p>
 
       <h3>How often should I check my shed for pests?</h3>
@@ -555,33 +555,33 @@ export default function HowToPestProofYourShedPage() {
       {/* ------------------------------------------------------------------ */}
       {/* Cross-link box */}
       {/* ------------------------------------------------------------------ */}
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-3">Related Product Guides</p>
-        <p className="text-gray-700 mb-4">Explore our product guides for the items mentioned in this guide:</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-3">Related Product Guides</p>
+        <p className="text-[var(--color-ink-soft)] mb-4">Explore our product guides for the items mentioned in this guide:</p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/best/rat-poison-for-gardens"
-            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-block px-4 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-semibold rounded-lg transition-colors text-sm"
           >
-            Best Rat Poison for Gardens &rarr;
+            Best Rat Poison for Gardens
           </Link>
           <Link
             href="/best/rat-bait-stations"
-            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-block px-4 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-semibold rounded-lg transition-colors text-sm"
           >
-            Best Rat Bait Stations &rarr;
+            Best Rat Bait Stations
           </Link>
           <Link
             href="/best/mouse-traps"
-            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-block px-4 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-semibold rounded-lg transition-colors text-sm"
           >
-            Best Mouse Traps &rarr;
+            Best Mouse Traps
           </Link>
           <Link
             href="/best/wasp-nest-foam"
-            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-block px-4 py-2 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-semibold rounded-lg transition-colors text-sm"
           >
-            Best Wasp Nest Foam &rarr;
+            Best Wasp Nest Foam
           </Link>
         </div>
       </div>

@@ -282,7 +282,7 @@ export default function HowToGetRidOfSilverfishPage() {
       </div>
 
       <p>
-        For landlords, silverfish infestations in rented properties can be a sign of inadequate ventilation or unaddressed damp &mdash; issues that fall under the landlord&apos;s repair obligations. With the introduction of <strong>Awaab&apos;s Law</strong>, which imposes strict timescales on landlords to investigate and fix reported damp and mould hazards, silverfish infestations reported by tenants should be taken seriously as an early indicator of conditions that may also support mould growth. See our <Link href="/guides/landlord-pest-control" className="text-blue-600 hover:underline font-medium">Landlord Pest Control guide</Link> for detailed information on responsibilities and legal requirements.
+        For landlords, silverfish infestations in rented properties can be a sign of inadequate ventilation or unaddressed damp &mdash; issues that fall under the landlord&apos;s repair obligations. With the introduction of <strong>Awaab&apos;s Law</strong>, which imposes strict timescales on landlords to investigate and fix reported damp and mould hazards, silverfish infestations reported by tenants should be taken seriously as an early indicator of conditions that may also support mould growth. See our <Link href="/guides/landlord-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">Landlord Pest Control guide</Link> for detailed information on responsibilities and legal requirements.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -418,14 +418,14 @@ export default function HowToGetRidOfSilverfishPage() {
       </div>
 
       {/* Link to product review */}
-      <div className="not-prose my-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
-        <p className="font-bold text-gray-900 mb-2">Looking for silverfish treatment products?</p>
-        <p className="text-gray-700 mb-3">Our guide covers the best silverfish treatments, traps, and dehumidifiers available in the UK.</p>
+      <div className="not-prose my-8 p-6 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl">
+        <p className="font-bold text-[var(--color-ink)] mb-2">Looking for silverfish treatment products?</p>
+        <p className="text-[var(--color-ink-soft)] mb-3">Our guide covers the best silverfish treatments, traps, and dehumidifiers available in the UK.</p>
         <a
           href="/best/silverfish-treatments"
-          className="inline-block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
+          className="inline-block px-6 py-2.5 bg-[var(--color-teal-deep)] hover:bg-[var(--color-teal-deep)] text-white font-bold rounded-lg transition-colors text-sm"
         >
-          Best Silverfish Treatments UK 2026 &rarr;
+          Best Silverfish Treatments UK 2026
         </a>
       </div>
 
@@ -481,7 +481,7 @@ export default function HowToGetRidOfSilverfishPage() {
 
       <h3>Silverfish vs Carpet Beetles</h3>
       <p>
-        Carpet beetles (<em>Anthrenus</em> and <em>Attagenus</em> species) are <strong>small (2&ndash;4 mm), round or oval</strong>, and often have a <strong>mottled brown, black, and white pattern</strong>. Adult carpet beetles are relatively harmless, but their <strong>larvae</strong> &mdash; small, hairy, caterpillar-like creatures known as &ldquo;woolly bears&rdquo; &mdash; cause significant damage to carpets, clothing, and fabrics made from natural fibres (wool, silk, cotton). Unlike silverfish, carpet beetles are not linked to humidity &mdash; they are attracted to natural fibres and can infest even dry homes. If you are finding fabric damage but no silverfish, carpet beetles may be the culprit. See our dedicated <Link href="/guides/carpet-beetle-control" className="text-blue-600 hover:underline font-medium">carpet beetle control guide</Link> for full identification, treatment, and prevention advice.
+        Carpet beetles (<em>Anthrenus</em> and <em>Attagenus</em> species) are <strong>small (2&ndash;4 mm), round or oval</strong>, and often have a <strong>mottled brown, black, and white pattern</strong>. Adult carpet beetles are relatively harmless, but their <strong>larvae</strong> &mdash; small, hairy, caterpillar-like creatures known as &ldquo;woolly bears&rdquo; &mdash; cause significant damage to carpets, clothing, and fabrics made from natural fibres (wool, silk, cotton). Unlike silverfish, carpet beetles are not linked to humidity &mdash; they are attracted to natural fibres and can infest even dry homes. If you are finding fabric damage but no silverfish, carpet beetles may be the culprit. See our dedicated <Link href="/guides/carpet-beetle-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">carpet beetle control guide</Link> for full identification, treatment, and prevention advice.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -494,7 +494,7 @@ export default function HowToGetRidOfSilverfishPage() {
             <h2 id="products">Recommended Silverfish Treatment Products</h2>
 
       <p>
-        Below are two of the most effective products for silverfish control in UK homes. For a comprehensive comparison of all the best silverfish treatments &mdash; including insecticidal powders, traps, sprays, and dehumidifiers &mdash; see our dedicated <Link href="/best/silverfish-treatments" className="text-blue-600 hover:underline font-medium">Best Silverfish Treatments UK 2026</Link> guide.
+        Below are two of the most effective products for silverfish control in UK homes. For a comprehensive comparison of all the best silverfish treatments &mdash; including insecticidal powders, traps, sprays, and dehumidifiers &mdash; see our dedicated <Link href="/best/silverfish-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">Best Silverfish Treatments UK 2026</Link> guide.
       </p>
 
       <div className="not-prose">
@@ -531,178 +531,178 @@ export default function HowToGetRidOfSilverfishPage() {
       <div className="not-prose my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <Link
           href="/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             London
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/birmingham/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Birmingham
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/manchester/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Manchester
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/liverpool/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Liverpool
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/leeds/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Leeds
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/nottingham/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Nottingham
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/brighton/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Brighton
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/sheffield/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Sheffield
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/bristol/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Bristol
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/glasgow/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Glasgow
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/bradford/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Bradford
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/newcastle/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Newcastle
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/cardiff/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Cardiff
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/edinburgh/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Edinburgh
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/leicester/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Leicester
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/hampshire/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Hampshire
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/coventry/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Coventry
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/belfast/residential"
-          className="block p-5 bg-white border border-gray-200 rounded-xl hover:shadow-md hover:border-blue-300 transition-all group"
+          className="block p-5 bg-white border border-[var(--color-rule)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group"
         >
-          <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <span className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
             Belfast
           </span>
-          <span className="block text-sm text-gray-500 mt-1">Find silverfish treatment specialists &rarr;</span>
+          <span className="block text-sm text-[var(--color-ink-mute)] mt-1">Find silverfish treatment specialists</span>
         </Link>
         <Link
           href="/pest-control/regions"
-          className="block p-5 bg-blue-50 border border-blue-200 rounded-xl hover:shadow-md hover:border-blue-400 transition-all group sm:col-span-2 lg:col-span-3"
+          className="block p-5 bg-[var(--color-teal-wash)] border border-[var(--color-teal-edge)] rounded-xl hover:shadow-md hover:border-[var(--color-teal-edge)] transition-all group sm:col-span-2 lg:col-span-3"
         >
-          <span className="font-bold text-blue-700 group-hover:text-blue-800 transition-colors">
-            Browse all 18 locations &rarr;
+          <span className="font-bold text-[var(--color-teal-deep)] group-hover:text-[var(--color-teal-deep)] transition-colors">
+            Browse all 18 locations
           </span>
         </Link>
       </div>
 
       <p>
-        For a detailed breakdown of pest control costs across all common UK pests, including silverfish treatment and damp surveys, see our <Link href="/guides/pest-control-costs" className="text-blue-600 hover:underline font-medium">Pest Control Costs UK 2026</Link> guide. If silverfish are not the only pest you are dealing with, you may also find our other guides helpful: <Link href="/guides/how-to-get-rid-of-rats" className="text-blue-600 hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-blue-600 hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-blue-600 hover:underline font-medium">how to get rid of cockroaches</Link>, <Link href="/guides/how-to-get-rid-of-fleas" className="text-blue-600 hover:underline font-medium">how to get rid of fleas</Link>, <Link href="/guides/how-to-get-rid-of-ants" className="text-blue-600 hover:underline font-medium">how to get rid of ants</Link>, <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline font-medium">how to get rid of moths</Link>, <Link href="/guides/how-to-get-rid-of-foxes" className="text-blue-600 hover:underline font-medium">how to get rid of foxes</Link>, <Link href="/guides/how-to-get-rid-of-squirrels" className="text-blue-600 hover:underline font-medium">how to get rid of squirrels</Link>, and <Link href="/guides/pigeon-control" className="text-blue-600 hover:underline font-medium">pigeon control</Link>. Landlords dealing with silverfish issues in rental properties should consult our <Link href="/guides/landlord-pest-control" className="text-blue-600 hover:underline font-medium">landlord pest control</Link> guide, and businesses may benefit from our <Link href="/guides/commercial-pest-control" className="text-blue-600 hover:underline font-medium">commercial pest control</Link> guide. For product recommendations, browse our <Link href="/best/silverfish-treatments" className="text-blue-600 hover:underline font-medium">best silverfish treatments</Link>, <Link href="/best/rat-traps" className="text-blue-600 hover:underline font-medium">best rat traps</Link>, <Link href="/best/mouse-traps" className="text-blue-600 hover:underline font-medium">best mouse traps</Link>, <Link href="/best/wasp-killers" className="text-blue-600 hover:underline font-medium">best wasp killers</Link>, <Link href="/best/cockroach-killers" className="text-blue-600 hover:underline font-medium">best cockroach killers</Link>, <Link href="/best/flea-treatments" className="text-blue-600 hover:underline font-medium">best flea treatments</Link>, <Link href="/best/ant-killers" className="text-blue-600 hover:underline font-medium">best ant killers</Link>, <Link href="/best/moth-killers" className="text-blue-600 hover:underline font-medium">best moth killers</Link>, <Link href="/best/bed-bug-treatments" className="text-blue-600 hover:underline font-medium">best bed bug treatments</Link>, <Link href="/best/fox-deterrents" className="text-blue-600 hover:underline font-medium">best fox deterrents</Link>, and <Link href="/best/squirrel-deterrents" className="text-blue-600 hover:underline font-medium">best squirrel deterrents</Link> guides.
+        For a detailed breakdown of pest control costs across all common UK pests, including silverfish treatment and damp surveys, see our <Link href="/guides/pest-control-costs" className="text-[var(--color-teal-deep)] hover:underline font-medium">Pest Control Costs UK 2026</Link> guide. If silverfish are not the only pest you are dealing with, you may also find our other guides helpful: <Link href="/guides/how-to-get-rid-of-rats" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of rats</Link>, <Link href="/guides/how-to-get-rid-of-mice" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of mice</Link>, <Link href="/guides/how-to-get-rid-of-cockroaches" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of cockroaches</Link>, <Link href="/guides/how-to-get-rid-of-fleas" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of fleas</Link>, <Link href="/guides/how-to-get-rid-of-ants" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of ants</Link>, <Link href="/guides/how-to-get-rid-of-moths" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of moths</Link>, <Link href="/guides/how-to-get-rid-of-foxes" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of foxes</Link>, <Link href="/guides/how-to-get-rid-of-squirrels" className="text-[var(--color-teal-deep)] hover:underline font-medium">how to get rid of squirrels</Link>, and <Link href="/guides/pigeon-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">pigeon control</Link>. Landlords dealing with silverfish issues in rental properties should consult our <Link href="/guides/landlord-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">landlord pest control</Link> guide, and businesses may benefit from our <Link href="/guides/commercial-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">commercial pest control</Link> guide. For product recommendations, browse our <Link href="/best/silverfish-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">best silverfish treatments</Link>, <Link href="/best/rat-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">best rat traps</Link>, <Link href="/best/mouse-traps" className="text-[var(--color-teal-deep)] hover:underline font-medium">best mouse traps</Link>, <Link href="/best/wasp-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">best wasp killers</Link>, <Link href="/best/cockroach-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">best cockroach killers</Link>, <Link href="/best/flea-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">best flea treatments</Link>, <Link href="/best/ant-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">best ant killers</Link>, <Link href="/best/moth-killers" className="text-[var(--color-teal-deep)] hover:underline font-medium">best moth killers</Link>, <Link href="/best/bed-bug-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">best bed bug treatments</Link>, <Link href="/best/fox-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">best fox deterrents</Link>, and <Link href="/best/squirrel-deterrents" className="text-[var(--color-teal-deep)] hover:underline font-medium">best squirrel deterrents</Link> guides.
       </p>
 
       {/* ------------------------------------------------------------------ */}
@@ -712,7 +712,7 @@ export default function HowToGetRidOfSilverfishPage() {
 
       <h3>Are silverfish harmful to humans?</h3>
       <p>
-        No. Silverfish <strong>do not bite, sting, or carry disease</strong>, so they pose no direct health risk to humans. However, they are a nuisance pest and one of the strongest indicators of a damp or humidity problem in your home. They can cause damage to <strong>books, paper, photographs, wallpaper, clothing, and stored food</strong> items. If you are finding silverfish regularly, it is worth investigating the moisture levels in your home and taking steps to reduce humidity. See our section on <a href="#diy-treatment" className="text-blue-600 hover:underline font-medium">DIY treatment methods</a> for practical advice on reducing humidity and eliminating silverfish.
+        No. Silverfish <strong>do not bite, sting, or carry disease</strong>, so they pose no direct health risk to humans. However, they are a nuisance pest and one of the strongest indicators of a damp or humidity problem in your home. They can cause damage to <strong>books, paper, photographs, wallpaper, clothing, and stored food</strong> items. If you are finding silverfish regularly, it is worth investigating the moisture levels in your home and taking steps to reduce humidity. See our section on <a href="#diy-treatment" className="text-[var(--color-teal-deep)] hover:underline font-medium">DIY treatment methods</a> for practical advice on reducing humidity and eliminating silverfish.
       </p>
 
       <h3>Why do I keep finding silverfish in my bathroom?</h3>
@@ -722,17 +722,17 @@ export default function HowToGetRidOfSilverfishPage() {
 
       <h3>Do silverfish mean my house is damp?</h3>
       <p>
-        Yes. Silverfish are <strong>one of the strongest indicators of excess moisture</strong> in a home. They require relative humidity of <strong>75 to 90 per cent</strong> to thrive and will not survive in dry environments. Finding silverfish consistently &mdash; particularly in rooms other than the bathroom &mdash; means your home&apos;s humidity levels need attention. This could indicate condensation damp, inadequate ventilation, rising damp, or leaking pipes. Addressing the moisture problem will not only eliminate silverfish but also prevent <strong>mould growth</strong> and protect your property from damp-related deterioration. For landlords, tenant reports of silverfish should be treated as an early warning of conditions that may also breach the <Link href="/guides/landlord-pest-control" className="text-blue-600 hover:underline font-medium">Homes (Fitness for Human Habitation) Act 2018</Link>.
+        Yes. Silverfish are <strong>one of the strongest indicators of excess moisture</strong> in a home. They require relative humidity of <strong>75 to 90 per cent</strong> to thrive and will not survive in dry environments. Finding silverfish consistently &mdash; particularly in rooms other than the bathroom &mdash; means your home&apos;s humidity levels need attention. This could indicate condensation damp, inadequate ventilation, rising damp, or leaking pipes. Addressing the moisture problem will not only eliminate silverfish but also prevent <strong>mould growth</strong> and protect your property from damp-related deterioration. For landlords, tenant reports of silverfish should be treated as an early warning of conditions that may also breach the <Link href="/guides/landlord-pest-control" className="text-[var(--color-teal-deep)] hover:underline font-medium">Homes (Fitness for Human Habitation) Act 2018</Link>.
       </p>
 
       <h3>How do I get rid of silverfish permanently?</h3>
       <p>
-        The key to permanent silverfish control is <strong>fixing the humidity problem first</strong>. Use a <strong>dehumidifier</strong> to bring indoor humidity below 50 per cent relative humidity, install <strong>extractor fans</strong> in bathrooms and kitchens, improve ventilation throughout the home, and fix any leaks or damp issues. Once humidity is under control, use <strong>diatomaceous earth</strong> in crevices and harbourage areas to kill remaining silverfish, and deploy <strong>sticky traps</strong> to monitor for activity. Without fixing the underlying moisture problem, any treatment &mdash; whether DIY or professional &mdash; will only provide temporary relief. See our <Link href="/best/silverfish-treatments" className="text-blue-600 hover:underline font-medium">best silverfish treatments</Link> guide for detailed product recommendations.
+        The key to permanent silverfish control is <strong>fixing the humidity problem first</strong>. Use a <strong>dehumidifier</strong> to bring indoor humidity below 50 per cent relative humidity, install <strong>extractor fans</strong> in bathrooms and kitchens, improve ventilation throughout the home, and fix any leaks or damp issues. Once humidity is under control, use <strong>diatomaceous earth</strong> in crevices and harbourage areas to kill remaining silverfish, and deploy <strong>sticky traps</strong> to monitor for activity. Without fixing the underlying moisture problem, any treatment &mdash; whether DIY or professional &mdash; will only provide temporary relief. See our <Link href="/best/silverfish-treatments" className="text-[var(--color-teal-deep)] hover:underline font-medium">best silverfish treatments</Link> guide for detailed product recommendations.
       </p>
 
       <h3>Can silverfish damage clothes?</h3>
       <p>
-        Yes. Silverfish eat <strong>cotton, linen, silk, and starched or soiled synthetic fabrics</strong>. Damage typically appears as <strong>irregular holes and yellow staining</strong> on affected garments. They are particularly attracted to items that have been stored in damp conditions for extended periods &mdash; clothing in rarely opened drawers, wardrobes against external walls, and garments stored in cardboard boxes in lofts and basements. To protect valuable clothing, store items in <strong>sealed plastic containers or vacuum-sealed bags</strong> rather than cardboard boxes, and ensure wardrobes and storage areas are well ventilated and dry. For more on insects that damage textiles, see our <Link href="/guides/how-to-get-rid-of-moths" className="text-blue-600 hover:underline font-medium">moth control guide</Link>.
+        Yes. Silverfish eat <strong>cotton, linen, silk, and starched or soiled synthetic fabrics</strong>. Damage typically appears as <strong>irregular holes and yellow staining</strong> on affected garments. They are particularly attracted to items that have been stored in damp conditions for extended periods &mdash; clothing in rarely opened drawers, wardrobes against external walls, and garments stored in cardboard boxes in lofts and basements. To protect valuable clothing, store items in <strong>sealed plastic containers or vacuum-sealed bags</strong> rather than cardboard boxes, and ensure wardrobes and storage areas are well ventilated and dry. For more on insects that damage textiles, see our <Link href="/guides/how-to-get-rid-of-moths" className="text-[var(--color-teal-deep)] hover:underline font-medium">moth control guide</Link>.
       </p>
 
       <h3>Do silverfish come up through drains?</h3>

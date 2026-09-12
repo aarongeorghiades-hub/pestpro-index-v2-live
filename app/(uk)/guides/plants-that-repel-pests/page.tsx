@@ -157,11 +157,11 @@ export default function PlantsThatRepelPestsPage() {
       <p>
         <strong>Mint</strong> (all varieties), <strong>tansy</strong> (<em>Tanacetum vulgare</em>), <strong>lavender</strong>, and <strong>chrysanthemums</strong>. Mint is the most effective plant-based ant deterrent &mdash; the strong menthol disrupts pheromone trails that ants use to navigate. Plant mint in pots near doorways (mint is invasive and will take over beds if planted directly in the ground). Chrysanthemums contain natural <strong>pyrethrins</strong>, which are used commercially as insecticides.
       </p>
-      <p className="text-sm text-gray-600">
-        <em>For more: <Link href="/guides/natural-ant-repellents" className="text-blue-600 hover:text-blue-800 underline">Natural Ant Repellents Guide</Link></em>
+      <p className="text-sm text-[var(--color-ink-soft)]">
+        <em>For more: <Link href="/guides/natural-ant-repellents" className="text-[var(--color-teal-deep)] hover:text-[var(--color-teal-deep)] underline">Natural Ant Repellents Guide</Link></em>
       </p>
       <p>
-        If ants persist despite planting mint and other deterrent herbs, our guide to <Link href="/best/ant-gel-bait" className="text-green-600 hover:underline">ant killer gel</Link> covers stronger colony-eliminating options.
+        If ants persist despite planting mint and other deterrent herbs, our guide to <Link href="/best/ant-gel-bait" className="text-[var(--color-ok)] hover:underline">ant killer gel</Link> covers stronger colony-eliminating options.
       </p>
 
       <h3>Plants That Deter Mosquitoes and Flies</h3>
@@ -173,48 +173,48 @@ export default function PlantsThatRepelPestsPage() {
       <p>
         <strong>Mint</strong>, <strong>thyme</strong>, <strong>eucalyptus</strong> (grown as a pot plant in the UK), <strong>wormwood</strong> (<em>Artemisia absinthium</em>), and <strong>citronella grass</strong>. Wormwood is a particularly interesting choice &mdash; it has been used for centuries as an insect repellent and contains <strong>thujone</strong>, a compound that many flying insects actively avoid. It is fully hardy in the UK and grows into an attractive, silvery-foliaged perennial.
       </p>
-      <p className="text-sm text-gray-600">
-        <em>For more: <Link href="/guides/natural-wasp-deterrents" className="text-blue-600 hover:text-blue-800 underline">Natural Wasp Deterrents Guide</Link></em>
+      <p className="text-sm text-[var(--color-ink-soft)]">
+        <em>For more: <Link href="/guides/natural-wasp-deterrents" className="text-[var(--color-teal-deep)] hover:text-[var(--color-teal-deep)] underline">Natural Wasp Deterrents Guide</Link></em>
       </p>
 
       <h3>Plants That Deter Mice and Rats</h3>
       <p>
         <strong>Mint</strong> (strong peppermint varieties such as <em>Mentha &times; piperita</em>), <strong>daffodils</strong> (the bulbs contain lycorine, which is toxic to rodents), and <strong>lavender</strong>. Mint is the most commonly cited plant-based rodent deterrent. While growing plants alone will not mouse-proof your home, dense plantings of mint near doorways and around the base of buildings can contribute to a less appealing environment for rodents. <strong>Always combine with physical proofing</strong> for genuine results.
       </p>
-      <p className="text-sm text-gray-600">
-        <em>For more: <Link href="/guides/natural-mouse-deterrents" className="text-blue-600 hover:text-blue-800 underline">Natural Mouse Deterrents</Link> | <Link href="/guides/natural-rat-deterrents" className="text-blue-600 hover:text-blue-800 underline">Natural Rat Deterrents</Link></em>
+      <p className="text-sm text-[var(--color-ink-soft)]">
+        <em>For more: <Link href="/guides/natural-mouse-deterrents" className="text-[var(--color-teal-deep)] hover:text-[var(--color-teal-deep)] underline">Natural Mouse Deterrents</Link> | <Link href="/guides/natural-rat-deterrents" className="text-[var(--color-teal-deep)] hover:text-[var(--color-teal-deep)] underline">Natural Rat Deterrents</Link></em>
       </p>
 
       <h3>Plants That Deter Moths</h3>
       <p>
         <strong>Lavender</strong>, <strong>rosemary</strong>, <strong>thyme</strong>, and <strong>southernwood</strong> (<em>Artemisia abrotanum</em>). Lavender is the classic moth-repellent plant &mdash; dried lavender sachets in wardrobes are a centuries-old tradition precisely because the scent deters clothes moths. Southernwood is an underused but effective choice with a strong, camphor-like scent that moths find repellent.
       </p>
-      <p className="text-sm text-gray-600">
-        <em>For more: <Link href="/guides/natural-moth-repellents" className="text-blue-600 hover:text-blue-800 underline">Natural Moth Repellents Guide</Link></em>
+      <p className="text-sm text-[var(--color-ink-soft)]">
+        <em>For more: <Link href="/guides/natural-moth-repellents" className="text-[var(--color-teal-deep)] hover:text-[var(--color-teal-deep)] underline">Natural Moth Repellents Guide</Link></em>
       </p>
 
       <h3>Plants That Deter Spiders</h3>
       <p>
         <strong>Mint</strong>, <strong>eucalyptus</strong>, <strong>lavender</strong>, and <strong>lemon balm</strong>. These plants release scents that spiders detect through their leg-mounted chemoreceptors and generally avoid. Planting them in pots on windowsills and near doorways can reduce the number of spiders entering your home, particularly during the autumn mating season.
       </p>
-      <p className="text-sm text-gray-600">
-        <em>For more: <Link href="/guides/natural-spider-repellents" className="text-blue-600 hover:text-blue-800 underline">Natural Spider Repellents Guide</Link></em>
+      <p className="text-sm text-[var(--color-ink-soft)]">
+        <em>For more: <Link href="/guides/natural-spider-repellents" className="text-[var(--color-teal-deep)] hover:text-[var(--color-teal-deep)] underline">Natural Spider Repellents Guide</Link></em>
       </p>
 
       <h3>Plants That Deter Fleas</h3>
       <p>
         <strong>Chrysanthemums</strong> (contain natural pyrethrins &mdash; the basis for many commercial insecticides), <strong>lavender</strong>, and <strong>rosemary</strong>. Chrysanthemums are the standout choice for flea deterrence because pyrethrins are genuinely toxic to fleas on contact. Planting chrysanthemums near doorways and around areas where pets play can help reduce flea populations in the garden.
       </p>
-      <p className="text-sm text-gray-600">
-        <em>For more: <Link href="/guides/natural-flea-remedies" className="text-blue-600 hover:text-blue-800 underline">Natural Flea Remedies Guide</Link></em>
+      <p className="text-sm text-[var(--color-ink-soft)]">
+        <em>For more: <Link href="/guides/natural-flea-remedies" className="text-[var(--color-teal-deep)] hover:text-[var(--color-teal-deep)] underline">Natural Flea Remedies Guide</Link></em>
       </p>
 
       <h3>Plants That Deter Foxes</h3>
       <p>
         Thorny shrubs such as <strong>holly</strong>, <strong>berberis</strong>, and <strong>pyracantha</strong> create physical barriers along fence lines that foxes are reluctant to push through. Strong-scented herbs such as <strong>mint</strong> and <strong>rosemary</strong> may provide a mild additional deterrent. For foxes, physical barriers (thorny plants and mesh fencing) are far more effective than scent-based plant repellents.
       </p>
-      <p className="text-sm text-gray-600">
-        <em>For more: <Link href="/guides/natural-fox-deterrents" className="text-blue-600 hover:text-blue-800 underline">Natural Fox Deterrents Guide</Link></em>
+      <p className="text-sm text-[var(--color-ink-soft)]">
+        <em>For more: <Link href="/guides/natural-fox-deterrents" className="text-[var(--color-teal-deep)] hover:text-[var(--color-teal-deep)] underline">Natural Fox Deterrents Guide</Link></em>
       </p>
 
       <h3>Bonus: Plants That Deter Slugs and Snails</h3>
@@ -232,73 +232,73 @@ export default function PlantsThatRepelPestsPage() {
       <div className="not-prose my-8 overflow-x-auto">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-gray-50">
-              <th className="text-left p-3 border-b border-gray-200 font-bold text-gray-900">Plant</th>
-              <th className="text-left p-3 border-b border-gray-200 font-bold text-gray-900">Pests Deterred</th>
-              <th className="text-left p-3 border-b border-gray-200 font-bold text-gray-900">UK Hardiness</th>
-              <th className="text-left p-3 border-b border-gray-200 font-bold text-gray-900">Growing Tips</th>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-3 border-b border-[var(--color-rule)] font-bold text-[var(--color-ink)]">Plant</th>
+              <th className="text-left p-3 border-b border-[var(--color-rule)] font-bold text-[var(--color-ink)]">Pests Deterred</th>
+              <th className="text-left p-3 border-b border-[var(--color-rule)] font-bold text-[var(--color-ink)]">UK Hardiness</th>
+              <th className="text-left p-3 border-b border-[var(--color-rule)] font-bold text-[var(--color-ink)]">Growing Tips</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-100">
-              <td className="p-3 font-medium text-gray-900">Lavender</td>
-              <td className="p-3 text-gray-700">Moths, fleas, flies, mosquitoes, mice</td>
-              <td className="p-3 text-green-700 font-semibold">Fully hardy</td>
-              <td className="p-3 text-gray-700">Full sun, well-drained soil. Drought-tolerant.</td>
+            <tr className="border-b border-[var(--color-rule)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Lavender</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Moths, fleas, flies, mosquitoes, mice</td>
+              <td className="p-3 text-[var(--color-ok)] font-semibold">Fully hardy</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Full sun, well-drained soil. Drought-tolerant.</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50">
-              <td className="p-3 font-medium text-gray-900">Mint</td>
-              <td className="p-3 text-gray-700">Ants, mice, rats, spiders, wasps</td>
-              <td className="p-3 text-green-700 font-semibold">Fully hardy</td>
-              <td className="p-3 text-gray-700">Grow in pots — invasive in beds. Sun or part shade.</td>
+            <tr className="border-b border-[var(--color-rule)] bg-[var(--color-paper-sunk)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Mint</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Ants, mice, rats, spiders, wasps</td>
+              <td className="p-3 text-[var(--color-ok)] font-semibold">Fully hardy</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Grow in pots — invasive in beds. Sun or part shade.</td>
             </tr>
-            <tr className="border-b border-gray-100">
-              <td className="p-3 font-medium text-gray-900">Rosemary</td>
-              <td className="p-3 text-gray-700">Moths, mosquitoes, flies, slugs</td>
-              <td className="p-3 text-green-700 font-semibold">Fully hardy</td>
-              <td className="p-3 text-gray-700">Full sun, well-drained soil. Excellent in pots.</td>
+            <tr className="border-b border-[var(--color-rule)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Rosemary</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Moths, mosquitoes, flies, slugs</td>
+              <td className="p-3 text-[var(--color-ok)] font-semibold">Fully hardy</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Full sun, well-drained soil. Excellent in pots.</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50">
-              <td className="p-3 font-medium text-gray-900">Chrysanthemum</td>
-              <td className="p-3 text-gray-700">Fleas, ants, beetles, roaches</td>
-              <td className="p-3 text-green-700 font-semibold">Mostly hardy</td>
-              <td className="p-3 text-gray-700">Contains natural pyrethrins. Sun, fertile soil.</td>
+            <tr className="border-b border-[var(--color-rule)] bg-[var(--color-paper-sunk)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Chrysanthemum</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Fleas, ants, beetles, roaches</td>
+              <td className="p-3 text-[var(--color-ok)] font-semibold">Mostly hardy</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Contains natural pyrethrins. Sun, fertile soil.</td>
             </tr>
-            <tr className="border-b border-gray-100">
-              <td className="p-3 font-medium text-gray-900">Thyme</td>
-              <td className="p-3 text-gray-700">Wasps, moths, mosquitoes</td>
-              <td className="p-3 text-green-700 font-semibold">Fully hardy</td>
-              <td className="p-3 text-gray-700">Full sun, well-drained/rocky soil. Low-growing.</td>
+            <tr className="border-b border-[var(--color-rule)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Thyme</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Wasps, moths, mosquitoes</td>
+              <td className="p-3 text-[var(--color-ok)] font-semibold">Fully hardy</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Full sun, well-drained/rocky soil. Low-growing.</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50">
-              <td className="p-3 font-medium text-gray-900">Basil</td>
-              <td className="p-3 text-gray-700">Flies, mosquitoes</td>
-              <td className="p-3 text-amber-700 font-semibold">Annual/tender</td>
-              <td className="p-3 text-gray-700">Grow outdoors in summer. Warm, sheltered spot.</td>
+            <tr className="border-b border-[var(--color-rule)] bg-[var(--color-paper-sunk)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Basil</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Flies, mosquitoes</td>
+              <td className="p-3 text-[var(--color-ochre-deep)] font-semibold">Annual/tender</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Grow outdoors in summer. Warm, sheltered spot.</td>
             </tr>
-            <tr className="border-b border-gray-100">
-              <td className="p-3 font-medium text-gray-900">Marigold (Tagetes)</td>
-              <td className="p-3 text-gray-700">Flies, mosquitoes, aphids, whitefly</td>
-              <td className="p-3 text-amber-700 font-semibold">Annual</td>
-              <td className="p-3 text-gray-700">Full sun. Excellent companion plant for veg.</td>
+            <tr className="border-b border-[var(--color-rule)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Marigold (Tagetes)</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Flies, mosquitoes, aphids, whitefly</td>
+              <td className="p-3 text-[var(--color-ochre-deep)] font-semibold">Annual</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Full sun. Excellent companion plant for veg.</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50">
-              <td className="p-3 font-medium text-gray-900">Lemon balm</td>
-              <td className="p-3 text-gray-700">Mosquitoes, flies, spiders</td>
-              <td className="p-3 text-green-700 font-semibold">Fully hardy</td>
-              <td className="p-3 text-gray-700">Hardy citronella alternative. Sun or part shade.</td>
+            <tr className="border-b border-[var(--color-rule)] bg-[var(--color-paper-sunk)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Lemon balm</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Mosquitoes, flies, spiders</td>
+              <td className="p-3 text-[var(--color-ok)] font-semibold">Fully hardy</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Hardy citronella alternative. Sun or part shade.</td>
             </tr>
-            <tr className="border-b border-gray-100">
-              <td className="p-3 font-medium text-gray-900">Wormwood</td>
-              <td className="p-3 text-gray-700">Wasps, flies, moths, fleas</td>
-              <td className="p-3 text-green-700 font-semibold">Fully hardy</td>
-              <td className="p-3 text-gray-700">Full sun. Attractive silvery foliage. Drought-tolerant.</td>
+            <tr className="border-b border-[var(--color-rule)]">
+              <td className="p-3 font-medium text-[var(--color-ink)]">Wormwood</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Wasps, flies, moths, fleas</td>
+              <td className="p-3 text-[var(--color-ok)] font-semibold">Fully hardy</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Full sun. Attractive silvery foliage. Drought-tolerant.</td>
             </tr>
             <tr>
-              <td className="p-3 font-medium text-gray-900">Citronella grass</td>
-              <td className="p-3 text-gray-700">Mosquitoes, flies, wasps</td>
-              <td className="p-3 text-red-700 font-semibold">Tender (pot/indoor)</td>
-              <td className="p-3 text-gray-700">Grow in pots, bring indoors over winter.</td>
+              <td className="p-3 font-medium text-[var(--color-ink)]">Citronella grass</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Mosquitoes, flies, wasps</td>
+              <td className="p-3 text-[var(--color-warn)] font-semibold">Tender (pot/indoor)</td>
+              <td className="p-3 text-[var(--color-ink-soft)]">Grow in pots, bring indoors over winter.</td>
             </tr>
           </tbody>
         </table>
@@ -393,7 +393,7 @@ export default function PlantsThatRepelPestsPage() {
 
       <h3>Does mint really repel mice and rats?</h3>
       <p>
-        Mint (particularly strong peppermint varieties) has moderate evidence as a rodent deterrent. The intense menthol scent overwhelms the sensitive noses of mice and rats. Growing mint near doorways, under windows, and around outbuildings can provide a mild deterrent. However, growing plants alone is unlikely to deter determined rodents &mdash; it works best as one layer of a broader prevention strategy that includes <Link href="/guides/natural-mouse-deterrents" className="text-blue-600 hover:text-blue-800 underline">physical proofing</Link>.
+        Mint (particularly strong peppermint varieties) has moderate evidence as a rodent deterrent. The intense menthol scent overwhelms the sensitive noses of mice and rats. Growing mint near doorways, under windows, and around outbuildings can provide a mild deterrent. However, growing plants alone is unlikely to deter determined rodents &mdash; it works best as one layer of a broader prevention strategy that includes <Link href="/guides/natural-mouse-deterrents" className="text-[var(--color-teal-deep)] hover:text-[var(--color-teal-deep)] underline">physical proofing</Link>.
       </p>
 
       <h3>Can I grow citronella in the UK?</h3>
@@ -408,7 +408,7 @@ export default function PlantsThatRepelPestsPage() {
 
       <h3>What plants repel wasps in the UK?</h3>
       <p>
-        Mint, thyme, eucalyptus (grown as a pot plant), citronella grass or lemon balm, and wormwood (<em>Artemisia absinthium</em>) are all reported to deter wasps. Planting these near outdoor seating areas can reduce wasp interest, particularly when combined with other measures. For serious wasp deterrence during peak season, combine these plants with <Link href="/guides/natural-wasp-deterrents" className="text-blue-600 hover:text-blue-800 underline">essential oil sprays and wasp traps</Link>.
+        Mint, thyme, eucalyptus (grown as a pot plant), citronella grass or lemon balm, and wormwood (<em>Artemisia absinthium</em>) are all reported to deter wasps. Planting these near outdoor seating areas can reduce wasp interest, particularly when combined with other measures. For serious wasp deterrence during peak season, combine these plants with <Link href="/guides/natural-wasp-deterrents" className="text-[var(--color-teal-deep)] hover:text-[var(--color-teal-deep)] underline">essential oil sprays and wasp traps</Link>.
       </p>
     </GuideLayout>
   );

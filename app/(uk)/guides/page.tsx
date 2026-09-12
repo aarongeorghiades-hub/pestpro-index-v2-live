@@ -411,9 +411,9 @@ export default function GuidesIndexPage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-[var(--color-ink)] via-[var(--color-ink)] to-[var(--color-ink)] text-white py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4">
-          <nav className="flex items-center gap-2 text-sm text-blue-200 mb-6">
+          <nav className="flex items-center gap-2 text-sm text-[var(--color-paper)]/75 mb-6">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
             <span className="text-white">Guides</span>
@@ -422,7 +422,7 @@ export default function GuidesIndexPage() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 leading-tight">
             Pest Control Guides &amp; Expert Advice
           </h1>
-          <p className="text-lg md:text-xl text-blue-100 max-w-3xl">
+          <p className="text-lg md:text-xl text-[var(--color-paper)]/75 max-w-3xl">
             Our in-depth guides cover everything from identifying pests to choosing the right treatment. Written by pest control experts, updated for 2026.
           </p>
         </div>
@@ -430,7 +430,7 @@ export default function GuidesIndexPage() {
 
       {/* Pest Control Guides */}
       <section className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-2xl md:text-3xl font-bold text-blue-900 border-l-4 border-amber-500 pl-4 mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-ink)] border-l-4 border-[var(--color-ochre)] pl-4 mb-8">
           Pest Control Guides
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
@@ -438,22 +438,22 @@ export default function GuidesIndexPage() {
             <Link
               key={guide.href}
               href={guide.href}
-              className={`group block p-6 bg-white rounded-xl border hover:shadow-lg transition-all ${'badge' in guide && guide.badge ? 'border-purple-300 hover:border-purple-400 ring-1 ring-purple-100' : 'border-gray-200 hover:border-blue-300'}`}
+              className={`group block p-6 bg-white rounded-xl border hover:shadow-lg transition-all ${'badge' in guide && guide.badge ? 'border-[var(--color-ochre-edge)] hover:border-[var(--color-ochre-edge)] ring-1 ring-[var(--color-ochre-edge)]' : 'border-[var(--color-rule)] hover:border-[var(--color-teal-edge)]'}`}
             >
               <div className="flex items-start gap-4">
                 <span className="text-3xl flex-shrink-0">{guide.emoji}</span>
                 <div>
                   {'badge' in guide && guide.badge && (
-                    <span className="inline-block text-xs font-semibold px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full mb-2">
+                    <span className="inline-block text-xs font-semibold px-2 py-0.5 bg-[var(--color-ochre-wash)] text-[var(--color-ochre-deep)] rounded-full mb-2">
                       {guide.badge}
                     </span>
                   )}
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-1">
+                  <h3 className="text-lg font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors mb-1">
                     {guide.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-3">{guide.description}</p>
-                  <span className="text-sm text-blue-600 font-medium group-hover:translate-x-1 inline-block transition-transform">
-                    Read guide &rarr;
+                  <p className="text-[var(--color-ink-soft)] text-sm mb-3">{guide.description}</p>
+                  <span className="text-sm text-[var(--color-teal-deep)] font-medium group-hover:translate-x-1 inline-block transition-transform">
+                    Read guide
                   </span>
                 </div>
               </div>
@@ -463,9 +463,9 @@ export default function GuidesIndexPage() {
       </section>
 
       {/* Product Guides */}
-      <section className="bg-gray-50 border-t border-gray-200">
+      <section className="bg-[var(--color-paper-sunk)] border-t border-[var(--color-rule)]">
         <div className="max-w-7xl mx-auto px-4 py-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-blue-900 border-l-4 border-amber-500 pl-4 mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-ink)] border-l-4 border-[var(--color-ochre)] pl-4 mb-8">
             Product Guides
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -473,17 +473,17 @@ export default function GuidesIndexPage() {
               <Link
                 key={review.href}
                 href={review.href}
-                className="group block p-6 bg-white rounded-xl border border-gray-200 hover:shadow-lg hover:border-amber-300 transition-all"
+                className="group block p-6 bg-white rounded-xl border border-[var(--color-rule)] hover:shadow-lg hover:border-[var(--color-ochre-edge)] transition-all"
               >
                 <div className="flex items-start gap-4">
                   <span className="text-3xl flex-shrink-0">{review.emoji}</span>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-amber-600 transition-colors mb-1">
+                    <h3 className="text-lg font-bold text-[var(--color-ink)] group-hover:text-[var(--color-ochre-deep)] transition-colors mb-1">
                       {review.title}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-3">{review.description}</p>
-                    <span className="text-sm text-amber-600 font-medium group-hover:translate-x-1 inline-block transition-transform">
-                      Read guide &rarr;
+                    <p className="text-[var(--color-ink-soft)] text-sm mb-3">{review.description}</p>
+                    <span className="text-sm text-[var(--color-ochre-deep)] font-medium group-hover:translate-x-1 inline-block transition-transform">
+                      Read guide
                     </span>
                   </div>
                 </div>
