@@ -207,12 +207,12 @@ export default function FliesPage() {
       </p>
 
       <h2 id="health">What the Sources Say They Carry</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           All four sources describe the same thing, and the mechanism is the part that is usually
           got wrong: the fly carries contamination, it does not inject it.
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>UC IPM, in a page its own site dates to 05/2015:</strong>{' '}
           <em>
             &ldquo;House flies can carry a number of disease agents which they pick up while feeding
@@ -220,14 +220,14 @@ export default function FliesPage() {
             human foods following contact with or feeding on these human foods.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>UC IPM, on what those agents cause:</strong>{' '}
           <em>
             &ldquo;House flies are known to carry bacteria and viruses that cause conditions such as
             diarrhea, cholera, food poisoning, yaws, dysentery, and eye infections.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>
             Colorado State University Extension, in a fact sheet first published in November 1999 and
             reviewed in August 2025, uses the word that settles the mechanism:
@@ -237,7 +237,7 @@ export default function FliesPage() {
             transmitting disease organisms.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>Purdue Extension:</strong>{' '}
           <em>
             &ldquo;These flies are important household pests, not only because of the nuisance of
@@ -247,7 +247,7 @@ export default function FliesPage() {
           <strong>Utah State University Extension</strong> states that house flies can spread disease
           from one food source to food preparation areas.
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-red-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           Mechanical carriage is what every one of these describes. Not one of these publications
           says the house fly is an infected carrier that transmits an illness biologically, and this
           page does not say it either. It reports what those four state and grades none of it. No
@@ -263,12 +263,12 @@ export default function FliesPage() {
           play an important role in disease transmission to humans and animals.&rdquo;
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The document that sentence comes from covers five different flies. Read the species name
           on every claim, including ours.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>UC IPM, on a different fly in the same document:</strong>{' '}
           <em>
             &ldquo;Both sexes of stable flies feed about once per day on the blood of animals (and
@@ -281,7 +281,7 @@ export default function FliesPage() {
             States.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           A biting fly in the house is not a house fly. If a claim on this page is not attached to a
           species name, that is a defect.
         </p>
@@ -362,12 +362,12 @@ export default function FliesPage() {
       </p>
 
       <h2 id="traps">Sticky Paper and Ribbons</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The source that describes this product also limits it, in the same sentence. Read the
           limitation before buying one.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>UC IPM:</strong>{' '}
           <em>
             &ldquo;Sticky fly paper or ribbons are effective at eliminating a few flies in relatively
@@ -375,7 +375,7 @@ export default function FliesPage() {
             control in an outdoor setting.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           A few flies, in a confined space. On the source&rsquo;s own account this is not a way of
           clearing a heavy infestation and not an outdoor solution, and nothing below is presented as
           one.
@@ -395,12 +395,12 @@ export default function FliesPage() {
       ))}
 
       <h2 id="uncarded">Three Things the Sources Support That We Name No Product For</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           These are supported by the sources and simply have no product named here. That is a gap in
           our sourcing, not a verdict on the products.
         </p>
-        <ul className="mt-3 mb-0 space-y-2 text-base text-slate-800">
+        <ul className="mt-3 mb-0 space-y-2 text-base text-[var(--color-ink-soft)]">
           <li>
             <strong>Inverted cone traps with a fly food attractant.</strong> UC IPM:{' '}
             <em>

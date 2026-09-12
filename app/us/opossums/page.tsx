@@ -381,11 +381,11 @@ export default function OpossumsPage() {
         asin="B0H75HHMDX"
       />
 
-      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-lg border-l-4 border-[var(--color-rule-strong)] bg-[var(--color-paper-sunk)] px-6 py-5">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           Two things this page does not sell, and why
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>
             Repellents. UC IPM states: &ldquo;An array of chemical products is marketed for
             repelling various wildlife species but, unfortunately, none offer significant results
@@ -395,7 +395,7 @@ export default function OpossumsPage() {
           ammonia has been used as a home remedy repellent, which is a report of what people do
           rather than a finding that it works.
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>Motion-activated devices.</strong> UC IPM states that &ldquo;A motion-activated
           sprinkler device sometimes induces a fright response in opossums, skunks, and raccoons. If
           the animal has established the habit of visiting the yard or garden, such frightening

@@ -309,12 +309,12 @@ export default function SilverfishPage() {
       </p>
 
       <h2 id="two-species">Two Species, and Every Figure Below Is Labeled</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Silverfish and firebrats are not interchangeable, and almost every number differs between
           them.
         </p>
-        <p className="mt-3 mb-0 text-base text-blue-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           UC IPM states most of these figures as labeled pairs inside a single sentence, so they are
           quoted whole below rather than split apart.{' '}
           <strong>
@@ -363,12 +363,12 @@ export default function SilverfishPage() {
       ))}
 
       <h2 id="warm-cool">Warm or Cool? Three Sources, Two Answers</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Three publications, two incompatible answers about the same insect. This page does not pick
           one.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>UC IPM, in a document its own page dates to 12/2009:</strong>{' '}
           <em>
             &ldquo;Silverfish live and develop in damp, warm places, preferring areas such as laundry
@@ -383,7 +383,7 @@ export default function SilverfishPage() {
             &ldquo;Silverfish desire cooler temperatures and are usually found in basements.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           Two sources say cool and one says warm, and the one on its own is also the oldest by
           roughly sixteen years. That is not a reason to discard it and this page does not.{' '}
           <strong>
@@ -429,11 +429,11 @@ export default function SilverfishPage() {
         And above 75&deg;F the same source gives firebrats as few as 40 days and silverfish as little
         as 60 days.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           On silverfish alone, three publishers give three different answers twice over.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Egg hatching.</strong> UC IPM: silverfish eggs in about{' '}
           <strong>19 to 32 days</strong>. UF/IFAS, of silverfish eggs:{' '}
           <em>&ldquo;They hatch in two to eight weeks.&rdquo;</em> Penn State gives{' '}
@@ -447,7 +447,7 @@ export default function SilverfishPage() {
           </em>{' '}
           Penn State: silverfish can live for <strong>at least two to three years</strong>.
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           Three ranges that overlap without agreeing, from three extension services. None is adjusted
           here to fit another and none is averaged.
         </p>
@@ -473,11 +473,11 @@ export default function SilverfishPage() {
         </em>{' '}
         Penn State: <em>&ldquo;Use dehumidifiers in damp basements.&rdquo;</em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           No dehumidifier is named on this page, and the reason is that nobody published a number.
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           Three sources tell you to use one. <strong>None of them states a target relative
           humidity, a capacity, or a room size.</strong> Closed spaces is a description, not a
           specification, and a product cannot be measured against it.{' '}
@@ -489,21 +489,21 @@ export default function SilverfishPage() {
           rather than for silverfish. Presenting it as a silverfish target would attribute one
           insect&rsquo;s instruction to another.
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>The same question arises on another page and gets the same answer.</strong> Our{' '}
           <Link href="/us/camel-crickets">camel crickets page</Link> covers a different insect that
           turns up in the same damp basements, and Rutgers Cooperative Extension tells that
           page&rsquo;s reader to dehumidify too &mdash; also without a number. Two insects, two
           source sets, one identical gap, and neither page fills it by guessing.
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>And something may already be eating them.</strong> Penn State Extension names
           silverfish and firebrats first in the house centipede&rsquo;s prey list, so a fast
           many-legged arthropod in the same rooms is often a sign this page&rsquo;s subject is
           present in numbers. Our <Link href="/us/house-centipedes">house centipedes page</Link>{' '}
           covers that animal, including the bite question its own eight sources disagree about.
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>A third insect shares the root cause and not the habitat.</strong> Our{' '}
           <Link href="/us/earwigs">earwigs page</Link> covers the one that comes in from the mulch
           outside rather than from the damp inside &mdash; flattened, red-brown, with forceps at the
@@ -543,12 +543,12 @@ export default function SilverfishPage() {
       ))}
 
       <h2 id="bait">Boric Acid Bait, and the Disagreement About It</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           One extension service offers this class of product. Another says it does not work well.
           Both are quoted; neither is adjusted.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>UF/IFAS:</strong>{' '}
           <em>
             &ldquo;The use of fine granular baits such as Niban&reg; - FG or Dekko Silverfish Paks
@@ -561,7 +561,7 @@ export default function SilverfishPage() {
             because they tend not to feed on them.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           This page has no basis for preferring one publisher over the other and does not pretend to.
           That one source names a product does not make it a recommendation by this site, and the
           card below is not placed there because a source named a brand.

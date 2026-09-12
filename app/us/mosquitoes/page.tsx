@@ -327,12 +327,12 @@ export default function MosquitoesPage() {
         a single candle at the edge of a large area provides little more than
         atmosphere.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           This page states what a repellent is for and does not give dosing or
           application instructions
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           Sources differ on percentage, duration and re-application, and on guidance
           specific to children — that variation is exactly why label directions, not
           this page, govern how a repellent is actually used. Every repellent carries

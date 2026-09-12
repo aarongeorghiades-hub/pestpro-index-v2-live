@@ -324,11 +324,11 @@ export default function MothsPage() {
       </p>
 
       <h2 id="dividing-line">The Dividing Line: a Trap for One Will Not Catch the Other</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           This is the reason the page is split, and it is the most useful sentence on it.
         </p>
-        <p className="mt-3 mb-0 text-base text-red-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>UC IPM:</strong>{' '}
           <em>
             &ldquo;Because the pheromone specifically attracts clothes moths, it won?t attract other
@@ -341,7 +341,7 @@ export default function MothsPage() {
             published rather than silently corrected)
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-red-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           A trap bought for the wrong group is not a weaker option. It is the wrong tool. Two of the
           sellers named on this page state the same exclusion themselves.
         </p>
@@ -428,12 +428,12 @@ export default function MothsPage() {
       ))}
 
       <h2 id="fabric-heat">Heat and Cold for Fabrics</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Read this before the figures below: 120&deg;F appears twice in this source and means two
           different operations.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           One is <strong>washing water</strong> at least 120&deg;F for <strong>20 to 30 minutes</strong>,
           quoted in the laundering section above. The other is an <strong>oven</strong> above
           120&deg;F for <strong>at least 30 minutes</strong>, quoted below. The temperatures match and
@@ -484,12 +484,12 @@ export default function MothsPage() {
           any larvae already on clothes continue to feed.&rdquo;
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Three other pages on this site say not to use mothballs. Both things are true, because they
           are about different uses.
         </p>
-        <p className="mt-3 mb-0 text-base text-blue-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           Our pages on snakes, chipmunks and opossums quote extension services saying mothballs are
           not effective against those animals, that using them outdoors violates the product label,
           and that they are not labeled for use on mammals.{' '}
@@ -531,12 +531,12 @@ export default function MothsPage() {
       ))}
 
       <h2 id="food">Division B &mdash; Moths in Stored Food</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           This division is thinner than the one above, and it is thinner on the page because it is
           thinner in the sources.
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           Four of the stored-food sources we went to could not be read: three redirected away from
           the document that was asked for, and one refused an automated request outright.{' '}
           <strong>
@@ -578,12 +578,12 @@ export default function MothsPage() {
           should also be kept in sealed containers.&rdquo;
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           On freezing, the stored-food sources give a duration and no temperature. That gap is real
           and is not filled here.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>UF/IFAS:</strong>{' '}
           <em>
             &ldquo;Freezing the product for several days has proven to be an effective control
@@ -633,11 +633,11 @@ export default function MothsPage() {
       ))}
 
       <h2 id="food-insecticide">Insecticides: Two Sources, Two Positions</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Two extension services, two different positions, rendered as two.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>UC IPM:</strong>{' '}
           <em>&ldquo;Insecticides are not recommended for controlling pantry pests.&rdquo;</em>
           <br />
@@ -647,7 +647,7 @@ export default function MothsPage() {
             effectiveness is limited.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           One says not recommended; the other says used, with limited effect. This page has no basis
           for preferring one publisher over the other and does not pretend to. Neither is adjusted to
           fit the other, and no insecticide product is named on this page.

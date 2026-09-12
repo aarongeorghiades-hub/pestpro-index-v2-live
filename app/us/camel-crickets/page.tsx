@@ -189,12 +189,12 @@ export default function CamelCricketsPage() {
       </p>
 
       <h2 id="no-products">What This Page Does Not Carry</h2>
-      <div className="not-prose my-6 rounded-lg border border-amber-300 bg-amber-50 p-5">
-        <p className="m-0 text-base text-amber-900">
+      <div className="not-prose my-6 rounded-lg border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-5">
+        <p className="m-0 text-base text-[var(--color-ink-soft)]">
           <strong>No product is named on this page, for two separate reasons.</strong> Neither is
           that the sources recommend nothing — they recommend two things a reader can buy.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>The listings could not be read.</strong> The sources name sticky boards and door
           weather-stripping specifically, and eight candidate listings were checked on 3 September
           2026. Every one returned an anti-bot interstitial instead of a product page, so not a
@@ -202,7 +202,7 @@ export default function CamelCricketsPage() {
           page, never from a search result, so nothing is carded. The eight are recorded and
           carried forward.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>The dehumidifier has no published number.</strong> Rutgers says to reduce
           moisture by dehumidifying basements. It gives no target humidity, no capacity and no room
           size, and no other source read here gives one either. Without a figure there is nothing
@@ -311,8 +311,8 @@ export default function CamelCricketsPage() {
         that keeps walking in through a gap is answered by closing the gap, not by treating the
         room it walks into.
       </p>
-      <div className="not-prose my-6 rounded-lg border border-blue-300 bg-blue-50 p-5">
-        <p className="m-0 text-base text-blue-900">
+      <div className="not-prose my-6 rounded-lg border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-5">
+        <p className="m-0 text-base text-[var(--color-ink-soft)]">
           <strong>They generally will not breed in the house.</strong> Iowa State states that{' '}
           <em>
             &ldquo;They generally do not reproduce indoors, except in situations that provide
@@ -440,24 +440,24 @@ export default function CamelCricketsPage() {
         as the consensus it is not.
       </p>
       <div className="overflow-x-auto not-prose my-6">
-        <table className="min-w-full border border-gray-300 text-sm">
-          <thead className="bg-gray-100">
+        <table className="min-w-full border border-[var(--color-rule)] text-sm">
+          <thead className="bg-[var(--color-paper-sunk)]">
             <tr>
-              <th className="border border-gray-300 px-3 py-2 text-left">Source</th>
-              <th className="border border-gray-300 px-3 py-2 text-left">Position on indoor treatment</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">Source</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">Position on indoor treatment</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-gray-300 px-3 py-2 font-semibold">Rutgers, 2010</td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2 font-semibold">Rutgers, 2010</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 Recommends it directly — spray around baseboards, cracks and crevices and around
                 window and door frames with a product labeled for controlling crickets indoors
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2 font-semibold">NC State</td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2 font-semibold">NC State</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 Permits it, but subordinates it —{' '}
                 <em>&ldquo;Any chemical control should focus first on outdoor barrier treatments.&rdquo;</em>{' '}
                 Household insecticides may go on baseboards and behind appliances, but if the
@@ -465,16 +465,16 @@ export default function CamelCricketsPage() {
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2 font-semibold">Clemson</td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2 font-semibold">Clemson</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 Restricts it by severity — use chemicals for indoor{' '}
                 <em>&ldquo;control only when a large infestation is present.&rdquo;</em> In those
                 cases, cracks and crevices only
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2 font-semibold">Iowa State, 2016</td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2 font-semibold">Iowa State, 2016</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 Nearly rules it out —{' '}
                 <em>
                   &ldquo;Treating indoor floor areas where camel crickets hide during the day is a

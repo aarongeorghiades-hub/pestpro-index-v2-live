@@ -23,6 +23,8 @@
 // the type of the input lives. A route may still override with `affiliateTag=""`
 // or a different value if a future card is ever genuinely unpaid; none is today.
 
+import { pictogramFor, withSpecFigures } from '@/components/cardVocabulary';
+
 interface UsToolCardProps {
   name: string;
   // What the tool physically does. Mechanical description only.
@@ -50,48 +52,101 @@ export default function UsToolCard({
 
   const isAffiliate = Boolean(affiliateTag);
 
+  const pic = pictogramFor(name);
+
+  // ── WHY THERE IS NO TIER HERE, AND THAT IS A FINDING NOT AN OMISSION ───────
+  //
+  // The UK ProductCard renders three structurally different cards keyed on
+  // `rank`: a raised lead card for rank 1, a boxed card for 2-3, and a flat
+  // stripped card for 4 and below. MEASURED BEFORE PORTING ANY OF IT:
+  // UsToolCardProps HAS NO rank, and none of the 43 /us routes that render this
+  // card passes one. The US estate presents tools as interchangeable examples of
+  // a type — "a specific, identifiable example of the type of tool described
+  // above", in this file's own words — and deliberately ranks nothing.
+  //
+  // Adding a rank to tier the cards would have MANUFACTURED AN EDITORIAL CLAIM
+  // this estate does not make, which is a content change wearing a design
+  // change's clothes. Tiering on `isAffiliate` instead would have been worse
+  // still: it would render paid links more prominently than unpaid ones.
+  //
+  // So the card takes the UK's visual VOCABULARY — the pictogram tile in place
+  // of a blank box, the spec-sheet list in place of ticked bullets, Geist Mono
+  // on measured figures, the token palette — and none of its ranking apparatus.
   return (
-    <div className="not-prose border-2 border-gray-200 rounded-xl p-6 bg-white my-8">
-      <h3 className="text-lg font-bold text-gray-900 mt-0">{name}</h3>
+    <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-5 sm:p-6">
+      <div className="flex gap-4 sm:gap-5">
+        <div className="flex-shrink-0">
+          <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] text-[var(--color-ink-mute)] sm:h-16 sm:w-16">
+            <svg
+              className="h-7 w-7 sm:h-8 sm:w-8"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={1.5}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              {pic.path}
+            </svg>
+          </div>
+          <p className="mt-1.5 text-center text-[10px] font-medium text-[var(--color-ink-mute)]">
+            {pic.label}
+          </p>
+        </div>
 
-      <ul className="mt-3 mb-0 space-y-1">
-        {whatItDoes.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
-            <span aria-hidden="true" className="text-blue-600 font-bold">&bull;</span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
+        <div className="min-w-0 flex-1">
+          <h3 className="mt-0 text-lg font-bold text-[var(--color-ink)]">{name}</h3>
 
-      {/* Disclosure. Immediately above the link, bordered, full contrast. */}
-      <div className="mt-5 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3">
-        <p className="m-0 text-sm font-bold text-amber-900">Disclosure</p>
-        <p className="m-0 mt-1 text-sm text-amber-900">
-          {isAffiliate ? (
-            <>As an Amazon Associate, PestPro Index earns from qualifying purchases.</>
-          ) : (
-            <>
-              The link below is <strong>not</strong> a paid affiliate link. PestPro Index
-              earns nothing if you buy this tool, and we have no commercial relationship
-              with its manufacturer or seller. It is named because it is a specific,
-              identifiable example of the type of tool described above.
-            </>
-          )}
-        </p>
+          {/* A record of what the tool does, not a list of endorsements. The
+              previous card led each line with a blue bullet; a hairline and a
+              hanging indent says "stated" where a coloured mark said "approved". */}
+          <dl className="mb-0 mt-3 space-y-1.5 border-t border-[var(--color-rule)] pt-3">
+            {whatItDoes.map((item) => (
+              <div key={item} className="flex gap-2.5 text-[13px] leading-relaxed">
+                <span
+                  aria-hidden="true"
+                  className="mt-[0.55em] h-[3px] w-[3px] flex-shrink-0 rounded-full bg-[var(--color-ink-mute)]"
+                />
+                <dd className="text-[var(--color-ink-soft)]">{withSpecFigures(item)}</dd>
+              </div>
+            ))}
+          </dl>
+
+          {/* DISCLOSURE — MECHANISM UNTOUCHED. Still derived from affiliateTag,
+              still immediately above the link, still bordered and full contrast.
+              Only its colours moved onto the token palette; the branch, the
+              wording and the position are exactly as they were. */}
+          <div className="mt-5 rounded-lg border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] px-4 py-3">
+            <p className="m-0 text-sm font-bold text-[var(--color-ochre-deep)]">Disclosure</p>
+            <p className="m-0 mt-1 text-sm text-[var(--color-ink-soft)]">
+              {isAffiliate ? (
+                <>As an Amazon Associate, PestPro Index earns from qualifying purchases.</>
+              ) : (
+                <>
+                  The link below is <strong>not</strong> a paid affiliate link. PestPro Index
+                  earns nothing if you buy this tool, and we have no commercial relationship
+                  with its manufacturer or seller. It is named because it is a specific,
+                  identifiable example of the type of tool described above.
+                </>
+              )}
+            </p>
+          </div>
+
+          <a
+            href={url}
+            target="_blank"
+            rel={
+              isAffiliate
+                ? 'sponsored nofollow noopener noreferrer'
+                : 'nofollow noopener noreferrer'
+            }
+            className="mt-4 inline-block rounded-lg bg-[var(--color-ochre)] px-6 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-[var(--color-ochre-deep)]"
+          >
+            View this tool on Amazon
+          </a>
+        </div>
       </div>
-
-      <a
-        href={url}
-        target="_blank"
-        rel={
-          isAffiliate
-            ? 'sponsored nofollow noopener noreferrer'
-            : 'nofollow noopener noreferrer'
-        }
-        className="mt-4 inline-block text-center px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors text-sm"
-      >
-        View this tool on Amazon
-      </a>
     </div>
   );
 }

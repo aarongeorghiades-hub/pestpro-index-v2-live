@@ -285,24 +285,24 @@ export default function BoxelderBugsPage() {
         asin="B0B8QPH3RW"
       />
 
-      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-lg border-l-4 border-[var(--color-rule-strong)] bg-[var(--color-paper-sunk)] px-6 py-5">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           What is not listed here, and why
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>Indoor insecticides.</strong> Wisconsin Horticulture states that insecticide
           sprays are generally not recommended for boxelder bugs that have already made their way
           indoors. Its answer for the ones inside is a vacuum cleaner, which most households already
           own.
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>Sprays for the clusters outside.</strong> Wisconsin Horticulture does allow for
           these, as set out above &mdash; registered insecticides, insecticidal soap or hot soapy
           water, with repeat applications as more bugs arrive. No product is listed for it because
           the source names categories rather than a specification a listing could be checked
           against, and because this page makes no claim about how any of them performs.
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>Screening.</strong> No source read for this page gives a mesh size for boxelder
           bugs, or names attics, chimneys or vents as entry points for them. The screening figure
           used elsewhere on this site belongs to a different insect, so it is not applied here.

@@ -226,19 +226,19 @@ export default function FleasPage() {
       </p>
 
       <h2 id="health">What the Sources Say About Disease</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Four of four publications name a human disease. Each one attaches its own qualifier, and
           every qualifier is kept with its claim below.
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>UF/IFAS Extension:</strong>{' '}
           <em>
             &ldquo;Cat fleas are capable of transmitting plague and murine typhus to humans, though
             such reports are rare.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>Penn State Extension, in a page it dates to June 2026:</strong>{' '}
           <em>
             &ldquo;Fleas can transmit a number of diseases to humans, the most important of which is
@@ -251,7 +251,7 @@ export default function FleasPage() {
             generally, a few cases of plague in humans occur each year from this source.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>Penn State Extension, on a second illness:</strong>{' '}
           <em>
             &ldquo;Murine typhus, a disease primarily affecting rats and mice, can be transmitted to
@@ -267,7 +267,7 @@ export default function FleasPage() {
             presents are from 1980, and it puts no date on the murine typhus figure at all.
           </strong>
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>UC IPM, in a page its own site dates to 09/2010, describes a third illness:</strong>{' '}
           <em>
             &ldquo;Recent advances in molecular research indicate cat fleas are capable of
@@ -282,14 +282,14 @@ export default function FleasPage() {
             The word recent in that sentence describes research as it stood in 2010.
           </strong>
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>University of Maine Cooperative Extension:</strong>{' '}
           <em>
             &ldquo;Although fleas are capable of transmitting diseases, this is rare in
             Maine.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>If the bites are in rows on skin that was covered in bed, consider another
           insect.</strong>{' '}
           <Link href="/us/bed-bugs">Our bed bugs page</Link> carries what its own sources say about
@@ -297,7 +297,7 @@ export default function FleasPage() {
           with. A flea problem almost always has a pet or a wildlife host attached to it; a bed bug
           problem does not.
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>Two effects that are not infections.</strong> UC IPM:{' '}
           <em>
             &ldquo;Some people and pets suffer from fleabite allergic dermatitis, characterized by
@@ -307,7 +307,7 @@ export default function FleasPage() {
           <em>&ldquo;Cat fleas serve as intermediary hosts of dog and cat tapeworms.&rdquo;</em> The
           same source adds that children occasionally can acquire these tapeworms too.
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-red-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           This page reports what those four publications state and grades none of it. It carries no
           clinical guidance, because none of these sources provides any. Anything about your own
           health or your animal&rsquo;s belongs with a doctor or a veterinarian, not with us.
@@ -330,11 +330,11 @@ export default function FleasPage() {
         . It also names the sticktight flea, Echidnophaga gallinacea, on ground squirrels and
         poultry.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Two publishers assign the plague claim to two different insects. Neither is adjusted here.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>UC IPM, 09/2010, names a species and it is not the one on the pet:</strong>{' '}
           <em>
             &ldquo;The ground squirrel flea, Oropsylla montana , is found on ground squirrels and is
@@ -348,7 +348,7 @@ export default function FleasPage() {
             such reports are rare.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           One says the plague vector is a flea most pet owners will never see. The other says the
           capability belongs to the flea on the dog. This page has no basis for preferring one
           publisher over the other and does not pretend to, and it does not treat Penn State&rsquo;s
@@ -381,12 +381,12 @@ export default function FleasPage() {
         The same source says combing at regular intervals is also a good way to monitor the flea
         population and help you decide when other control measures might be necessary.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           Only one comb is named here, and the reason is a gap in what the listings say rather than a
           judgment about the products.
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           The source asks for two things at once: a metal comb, and one that removes fleas from a
           pet. <strong>We checked four combs. One listing is gone entirely.</strong> Two more state
           the metal and then describe removing dandruff flakes, small items and dander &mdash;{' '}
@@ -421,12 +421,12 @@ export default function FleasPage() {
         </em>{' '}
         <em>&ldquo;An adult cat flea generally lives about 30 to 40 days on the host.&rdquo;</em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Twelve months and eighteen days are both true, of the same insect, and they count
           completely different things.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>UC IPM, on waiting in the cocoon:</strong>{' '}
           <em>
             &ldquo;At cool temperatures, fully formed fleas can remain in their cocoons for up to 12
@@ -436,7 +436,7 @@ export default function FleasPage() {
           <strong>UC IPM, on completing a generation:</strong>{' '}
           <em>&ldquo;At normal room temperatures, the entire life cycle can occur in about 18 days.&rdquo;</em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           One is how long a formed flea can sit in its cocoon in the cold. The other is how fast a
           generation completes in a warm room. Put side by side without that distinction they read
           as a contradiction, and they are not one.
@@ -535,12 +535,12 @@ export default function FleasPage() {
       </p>
 
       <h2 id="traps">Light Traps, and What One Source Says They Will Not Do</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The source that describes this product also limits it, in the very next sentence. Read both
           before buying one.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>UF/IFAS:</strong>{' '}
           <em>
             &ldquo;Light traps placed around the home, especially where the pet frequents, may collect
@@ -548,7 +548,7 @@ export default function FleasPage() {
             attract fleas off the pet.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           A trap of this kind is for fleas emerging into the room. On the source&rsquo;s own account
           it is not a way of clearing the animal, and nothing on this page presents it as one.
         </p>

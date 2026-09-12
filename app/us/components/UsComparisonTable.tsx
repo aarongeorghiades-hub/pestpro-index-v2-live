@@ -26,40 +26,40 @@ export default function UsComparisonTable({
 }) {
   return (
     <div className="not-prose my-8">
-      <div className="overflow-x-auto rounded-xl border border-gray-200">
+      <div className="overflow-x-auto rounded-xl border border-[var(--color-rule)]">
         <table className="w-full text-sm border-collapse">
           <caption className="sr-only">{caption}</caption>
           <thead>
-            <tr className="bg-gray-50 text-left">
-              <th scope="col" className="px-4 py-3 font-bold text-gray-900 border-b border-gray-200">
+            <tr className="bg-[var(--color-paper-sunk)] text-left">
+              <th scope="col" className="px-4 py-3 font-bold text-[var(--color-ink)] border-b border-[var(--color-rule)]">
                 Trap type
               </th>
-              <th scope="col" className="px-4 py-3 font-bold text-gray-900 border-b border-gray-200">
+              <th scope="col" className="px-4 py-3 font-bold text-[var(--color-ink)] border-b border-[var(--color-rule)]">
                 How it works
               </th>
-              <th scope="col" className="px-4 py-3 font-bold text-gray-900 border-b border-gray-200">
+              <th scope="col" className="px-4 py-3 font-bold text-[var(--color-ink)] border-b border-[var(--color-rule)]">
                 Where
               </th>
-              <th scope="col" className="px-4 py-3 font-bold text-gray-900 border-b border-gray-200">
+              <th scope="col" className="px-4 py-3 font-bold text-[var(--color-ink)] border-b border-[var(--color-rule)]">
                 What the evidence says
               </th>
             </tr>
           </thead>
           <tbody>
             {rows.map((row) => (
-              <tr key={row.mechanism} className="align-top border-b border-gray-100 last:border-0">
-                <th scope="row" className="px-4 py-3 font-semibold text-gray-900 text-left">
+              <tr key={row.mechanism} className="align-top border-b border-[var(--color-rule)] last:border-0">
+                <th scope="row" className="px-4 py-3 font-semibold text-[var(--color-ink)] text-left">
                   {row.mechanism}
                 </th>
-                <td className="px-4 py-3 text-gray-700">{row.howItWorks}</td>
-                <td className="px-4 py-3 text-gray-700">{row.indoorOutdoor}</td>
-                <td className="px-4 py-3 text-gray-700">{row.evidence}</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">{row.howItWorks}</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">{row.indoorOutdoor}</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">{row.evidence}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <p className="mt-2 text-xs text-gray-500">{caption}</p>
+      <p className="mt-2 text-xs text-[var(--color-ink-mute)]">{caption}</p>
     </div>
   );
 }

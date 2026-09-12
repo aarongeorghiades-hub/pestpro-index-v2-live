@@ -200,15 +200,15 @@ export default function FungusGnatsPage() {
       </p>
 
       <h2 id="scope">What This Page Carries</h2>
-      <div className="not-prose my-6 rounded-lg border border-amber-300 bg-amber-50 p-5">
-        <p className="m-0 text-base text-amber-900">
+      <div className="not-prose my-6 rounded-lg border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-5">
+        <p className="m-0 text-base text-[var(--color-ink-soft)]">
           <strong>Two products are named and one class is deliberately empty.</strong>{' '}
           <strong>Bti:</strong> one named, because two sources name the same product by name for
           this insect and the listing&rsquo;s own text carries the fungus gnat labeling.{' '}
           <strong>Yellow sticky traps:</strong> one named, because four sources specify both the
           color and the placement, which is a criterion rather than a vocabulary.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Soil covers: none named.</strong> Wisconsin publishes a real specification for
           this &mdash; a half to one inch layer of coarse sand or fine gravel &mdash; but it
           specifies a <em>layer</em>, not a product. Any coarse sand satisfies it, so there is
@@ -385,8 +385,8 @@ export default function FungusGnatsPage() {
           reach the larvae.&rdquo;
         </em>
       </p>
-      <div className="not-prose my-6 rounded-lg border border-amber-300 bg-amber-50 p-5">
-        <p className="m-0 text-base text-amber-900">
+      <div className="not-prose my-6 rounded-lg border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-5">
+        <p className="m-0 text-base text-[var(--color-ink-soft)]">
           <strong>TWO SOURCES DISAGREE FLATLY ABOUT WHETHER YOU CAN BUY IT</strong>, and this page
           reports both rather than choosing.{' '}
           <strong>UC IPM:</strong>{' '}

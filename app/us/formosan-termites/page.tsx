@@ -242,22 +242,22 @@ export default function FormosanTermitesPage() {
         greater threat, describing above-ground carton nests.
       </p>
 
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Two extension services, two soldier proportions
         </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           <strong>University of Georgia Extension</strong> puts Formosan soldiers at{' '}
           <strong>15 to 20 percent</strong> of the colony, and native subterranean soldiers at{' '}
           <strong>1 to 3 percent</strong>.
         </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           <strong>University of Florida IFAS Extension</strong> puts Formosan soldiers at{' '}
           <strong>10% to 15%</strong> of the colony, and states that in native{' '}
           <em>Reticulitermes</em> colonies{' '}
           <em>&ldquo;soldiers typically make up 1%&ndash;2% of the colony population&rdquo;</em>.
         </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           The two Formosan ranges overlap at 15 percent and nowhere else. Neither is corrected
           here and neither is averaged. What both agree on is the shape of the difference: this
           species keeps several times as many soldiers as the native one, which is part of why

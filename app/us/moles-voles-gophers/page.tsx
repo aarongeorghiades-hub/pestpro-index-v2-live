@@ -571,42 +571,42 @@ export default function MolesVolesGophersPage() {
         the page.
       </p>
       <div className="not-prose my-8">
-        <div className="overflow-x-auto rounded-xl border border-gray-200">
+        <div className="overflow-x-auto rounded-xl border border-[var(--color-rule)]">
           <table className="w-full text-sm border-collapse">
             <caption className="sr-only">
               Mole, vole and pocket gopher compared sign by sign, with the source for each cell.
             </caption>
             <thead>
-              <tr className="bg-gray-50 text-left">
-                <th scope="col" className="px-4 py-3 font-bold text-gray-900 border-b border-gray-200">
+              <tr className="bg-[var(--color-paper-sunk)] text-left">
+                <th scope="col" className="px-4 py-3 font-bold text-[var(--color-ink)] border-b border-[var(--color-rule)]">
                   Sign
                 </th>
-                <th scope="col" className="px-4 py-3 font-bold text-gray-900 border-b border-gray-200">
+                <th scope="col" className="px-4 py-3 font-bold text-[var(--color-ink)] border-b border-[var(--color-rule)]">
                   Mole
                 </th>
-                <th scope="col" className="px-4 py-3 font-bold text-gray-900 border-b border-gray-200">
+                <th scope="col" className="px-4 py-3 font-bold text-[var(--color-ink)] border-b border-[var(--color-rule)]">
                   Vole
                 </th>
-                <th scope="col" className="px-4 py-3 font-bold text-gray-900 border-b border-gray-200">
+                <th scope="col" className="px-4 py-3 font-bold text-[var(--color-ink)] border-b border-[var(--color-rule)]">
                   Pocket gopher
                 </th>
               </tr>
             </thead>
             <tbody>
               {signRows.map((row) => (
-                <tr key={row.sign} className="align-top border-b border-gray-100 last:border-0">
-                  <th scope="row" className="px-4 py-3 font-semibold text-gray-900 text-left">
+                <tr key={row.sign} className="align-top border-b border-[var(--color-rule)] last:border-0">
+                  <th scope="row" className="px-4 py-3 font-semibold text-[var(--color-ink)] text-left">
                     {row.sign}
                   </th>
-                  <td className="px-4 py-3 text-gray-700">{row.mole}</td>
-                  <td className="px-4 py-3 text-gray-700">{row.vole}</td>
-                  <td className="px-4 py-3 text-gray-700">{row.gopher}</td>
+                  <td className="px-4 py-3 text-[var(--color-ink-soft)]">{row.mole}</td>
+                  <td className="px-4 py-3 text-[var(--color-ink-soft)]">{row.vole}</td>
+                  <td className="px-4 py-3 text-[var(--color-ink-soft)]">{row.gopher}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p className="mt-2 text-xs text-gray-500">
+        <p className="mt-2 text-xs text-[var(--color-ink-mute)]">
           Mole, vole and pocket gopher compared sign by sign, with the source for each cell.
         </p>
       </div>

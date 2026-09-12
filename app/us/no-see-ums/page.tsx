@@ -394,16 +394,16 @@ export default function NoSeeUmsPage() {
         And one source publishes the actual figures. University of Arizona Cooperative
         Extension states:
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-300 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">The mesh specification</p>
-        <p className="m-0 mt-3 text-base text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">The mesh specification</p>
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>
             &ldquo;No-see-ums can pass through standard 16 x 16 or 18 x16 mesh screens, so
             replace these with smaller mesh (30 x 30) wherever possible. Inspect screens
             periodically and repair any rips or gaps.&rdquo;
           </strong>
         </p>
-        <p className="m-0 mt-3 text-sm text-blue-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           Quoted exactly as published, including the source&rsquo;s own spacing in
           &ldquo;18 x16&rdquo;.
         </p>
@@ -424,24 +424,24 @@ export default function NoSeeUmsPage() {
 
       <h2 id="screen-products">Screening: What Is Actually Available</h2>
 
-      <div className="not-prose my-8 rounded-lg border-l-4 border-amber-500 bg-amber-50 px-6 py-5">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-lg border-l-4 border-[var(--color-ochre)] bg-[var(--color-ochre-wash)] px-6 py-5">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Read this before the three cards below
         </p>
-        <p className="m-0 mt-3 text-base text-amber-900">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           The University of Arizona figure is <strong>30 x 30</strong> mesh.{' '}
           <strong>
             No 30 x 30 product could be confirmed for sale when the products on this page
             were checked on 24 August 2026.
           </strong>
         </p>
-        <p className="m-0 mt-3 text-base text-amber-900">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           Every screening product below is <strong>20 x 20</strong>. That is finer than the
           16 x 16 and 18 x16 the source says they pass through, and it satisfies
           Purdue&rsquo;s description of a mesh size smaller than normal window screening.{' '}
           <strong>It is not the 30 x 30 the Arizona source names.</strong>
         </p>
-        <p className="m-0 mt-3 text-base text-amber-900">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           That gap is stated here rather than left for a reader to discover. If the
           distinction matters for your situation, the number to look for on any product is
           the mesh count, and it is worth checking that a figure quoted in inches is a roll
@@ -655,22 +655,22 @@ export default function NoSeeUmsPage() {
       </p>
 
       <h2 id="bites">Treating the Bites</h2>
-      <div className="not-prose my-8 rounded-lg border-l-4 border-red-500 bg-red-50 px-6 py-5">
-        <p className="m-0 text-base font-bold text-red-900">Where this page stops</p>
-        <p className="m-0 mt-3 text-base text-red-900">
+      <div className="not-prose my-8 rounded-lg border-l-4 border-[var(--color-warn)] bg-[var(--color-warn-wash)] px-6 py-5">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">Where this page stops</p>
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           University of Arizona Cooperative Extension states that &ldquo;Bite treatments
           recommended by some dermatologists include topical cortisone creams and
           non-steroidal anti-inflammatory drugs such as aspirin or ibuprofen. Persons
           having severe reactions should consult a physician or dermatologist.&rdquo;
         </p>
-        <p className="m-0 mt-3 text-base text-red-900">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           Its second publication states that &ldquo;Over-the-counter topical cortisone
           creams usually provide relief from itching. Over-the-counter anti-inflammatory
           medication may be required if there is pain or swelling. For more severe
           reactions, medical help should be sought from a dermatologist or
           physician.&rdquo;
         </p>
-        <p className="m-0 mt-3 text-base text-red-900">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>
             Both sources refer severe reactions onward to a doctor. Nothing on this page is
             medical advice, and no bite-treatment product is sold here.

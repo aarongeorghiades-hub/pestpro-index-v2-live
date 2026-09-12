@@ -441,11 +441,11 @@ export default function BrownRecluseSpidersPage() {
         </em>
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           These four positions are not averaged here, and there is no house answer
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           Saying the violin is &ldquo;somewhat reliable&rdquo; would be a sentence no source
           published. What can be said without inventing anything is this:{' '}
           <strong>
@@ -541,11 +541,11 @@ export default function BrownRecluseSpidersPage() {
         </strong>{' '}
         Neither figure is corrected against the other here.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Three sources showing the same map is one map, not three confirmations
         </p>
-        <p className="m-0 mt-2 text-sm text-amber-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           Kentucky, Penn State and Iowa State all publish a range map and{' '}
           <strong>all three credit the same author, R. Vetter of UC Riverside.</strong> That is a
           single source rendered three times. It is worth saying, because three extension services
@@ -716,11 +716,11 @@ export default function BrownRecluseSpidersPage() {
           intervention.&rdquo;
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Two sources publish ten percent. They are counting different things.
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           Penn State&rsquo;s ten percent is <strong>dermonecrotic lesions</strong>. UC IPM&rsquo;s
           ten percent is <strong>moderate or greater tissue damage and scarring</strong>. Those are
           different definitions and they were measured by different people, so{' '}
@@ -738,16 +738,16 @@ export default function BrownRecluseSpidersPage() {
       </div>
 
       <h2 id="medical">If You Think You Have Been Bitten</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           This is the one thing every source on this page agrees about: involve a clinician.
         </p>
-        <p className="m-0 mt-3 text-sm text-red-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           Two of them say so <strong>immediately</strong>. Beyond that the published first-aid
           instructions differ, and they are given below <strong>as each source publishes them</strong>{' '}
           rather than merged into a single house version. Nothing has been added to any of them.
         </p>
-        <ul className="mt-4 mb-0 space-y-3 text-sm text-red-900">
+        <ul className="mt-4 mb-0 space-y-3 text-sm text-[var(--color-ink-soft)]">
           <li>
             <strong>University of Kentucky Extension:</strong>{' '}
             <em>
@@ -781,7 +781,7 @@ export default function BrownRecluseSpidersPage() {
             here.
           </li>
         </ul>
-        <p className="m-0 mt-4 text-sm text-red-900">
+        <p className="m-0 mt-4 text-sm text-[var(--color-ink-soft)]">
           <strong>Bring the spider if you safely can.</strong> Kentucky:{' '}
           <em>
             &ldquo;anyone bitten by what is thought to be a brown recluse should try to collect the
@@ -981,11 +981,11 @@ export default function BrownRecluseSpidersPage() {
         It also gives a monitoring schedule &mdash; weekly, from March through October &mdash; for
         detecting reinfestation.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The two sources disagree about which traps to buy, and both are given
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           <strong>Kentucky Extension is specific about the form:</strong> the traps it recommends for
           this spider are flat, like thin pieces of sticky cardboard, with no raised perimeter edge.{' '}
           <strong>K-State Extension is permissive:</strong>{' '}

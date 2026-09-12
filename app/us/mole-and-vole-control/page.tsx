@@ -418,11 +418,11 @@ export default function MoleAndVoleControlPage() {
         Neither is corrected against the other and neither is averaged, because both are published
         instructions from extension services and this page has no basis for preferring one.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Read this before the two cards below
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           <strong>Neither listing mentions voles anywhere in its own description.</strong> Both are
           sold as mouse traps. They are named here because UC IPM and Penn State Extension both
           identify the mouse-sized snap trap as the vole tool &mdash; the qualification comes from
@@ -549,11 +549,11 @@ export default function MoleAndVoleControlPage() {
         was a granular one.
       </p>
 
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           This product is named for moles and voles. Only the mole half is supported.
         </p>
-        <p className="m-0 mt-2 text-sm text-amber-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           Castor products in this category are almost all branded and sold as &ldquo;mole and
           vole&rdquo; repellents, and the one below is no exception.{' '}
           <strong>
@@ -605,12 +605,12 @@ export default function MoleAndVoleControlPage() {
         <em>&ldquo;Bromethalin (CAS #63333-35-7): 0.025%&rdquo;</em>, under EPA REG. NO. 12455-101.
       </p>
 
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           This is a poison. These are the label&rsquo;s own words, and they come before the product,
           not after it.
         </p>
-        <ul className="mt-3 mb-0 space-y-2 text-sm text-red-900">
+        <ul className="mt-3 mb-0 space-y-2 text-sm text-[var(--color-ink-soft)]">
           <li>
             <strong>Signal word:</strong>{' '}
             <em>

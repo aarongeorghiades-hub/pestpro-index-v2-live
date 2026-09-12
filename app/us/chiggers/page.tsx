@@ -182,14 +182,14 @@ export default function ChiggersPage() {
         </strong>
       </p>
 
-      <div className="not-prose my-8 rounded-xl border-2 border-emerald-300 bg-emerald-50 p-6">
-        <p className="m-0 text-base font-bold text-emerald-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ok-edge)] bg-[var(--color-ok-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The two things three extension services go out of their way to correct
         </p>
-        <p className="m-0 mt-4 text-base text-emerald-900">
+        <p className="m-0 mt-4 text-base text-[var(--color-ink-soft)]">
           <strong>They do not burrow.</strong>
         </p>
-        <ul className="mt-2 mb-0 space-y-2 text-base text-emerald-900">
+        <ul className="mt-2 mb-0 space-y-2 text-base text-[var(--color-ink-soft)]">
           <li>
             Ohio State University Extension: &ldquo;Chiggers do not burrow into skin.
             This is a myth.&rdquo;
@@ -203,10 +203,10 @@ export default function ChiggersPage() {
             do not burrow into a host&rsquo;s skin or suck blood.&rdquo;
           </li>
         </ul>
-        <p className="m-0 mt-4 text-base text-emerald-900">
+        <p className="m-0 mt-4 text-base text-[var(--color-ink-soft)]">
           <strong>They do not drink blood.</strong>
         </p>
-        <ul className="mt-2 mb-0 space-y-2 text-base text-emerald-900">
+        <ul className="mt-2 mb-0 space-y-2 text-base text-[var(--color-ink-soft)]">
           <li>
             Ohio State University Extension: &ldquo;Chiggers do not suck blood. They feed
             on dissolved skin cells.&rdquo;
@@ -331,11 +331,11 @@ export default function ChiggersPage() {
 
       <h3>After a bite</h3>
 
-      <div className="not-prose my-8 rounded-lg border-l-4 border-red-500 bg-red-50 px-6 py-5">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-lg border-l-4 border-[var(--color-warn)] bg-[var(--color-warn-wash)] px-6 py-5">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Read this before the four cards below
         </p>
-        <p className="m-0 mt-3 text-base text-red-900">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>
             Ohio State University Extension: &ldquo;Extension Staff are not medical
             professionals and cannot diagnose bites or other skin ailments.&rdquo;
@@ -343,13 +343,13 @@ export default function ChiggersPage() {
           The same source advises to &ldquo;speak with a pharmacist or medical professional
           for recommendations on reducing itchy symptoms&rdquo;.
         </p>
-        <p className="m-0 mt-3 text-base text-red-900">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>
             University of Maryland Extension: &ldquo;Topical creams or ointments help to
             relieve itching. Ask your physician for a recommendation.&rdquo;
           </strong>
         </p>
-        <p className="m-0 mt-3 text-base text-red-900">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           One source of the three names ingredients. Texas A&amp;M AgriLife Extension names
           oral antihistamines, anti-itch creams containing camphor and menthol, calamine or
           pramoxine, and hydrocortisone ointments, and advises applying an antiseptic
@@ -556,18 +556,18 @@ export default function ChiggersPage() {
 
       <h2 id="yard">The Yard, and What Not to Buy</h2>
 
-      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-lg border-l-4 border-[var(--color-rule-strong)] bg-[var(--color-paper-sunk)] px-6 py-5">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           On yard treatments, the extension services do not agree &mdash; and this page
           does not pick a side
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>
             University of Maryland Extension: &ldquo;The use of pesticides to control
             chiggers is not recommended or effective.&rdquo;
           </strong>
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           Ohio State University Extension states that &ldquo;Bifenthrin or permethrin are
           two active ingredients in over-the-counter products&rdquo;. Texas A&amp;M
           AgriLife Extension states that &ldquo;Residual insecticide sprays, such as those
@@ -575,7 +575,7 @@ export default function ChiggersPage() {
           <strong>can help suppress chigger numbers</strong>&rdquo; &mdash; a claim about
           suppressing numbers, not about eliminating them.
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>
             This page sells no yard treatment for chiggers, and that is a deliberate
             outcome rather than an oversight.

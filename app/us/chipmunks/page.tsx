@@ -304,11 +304,11 @@ export default function ChipmunksPage() {
         UGA Extension says the same:{' '}
         <em>&ldquo;Burrow system entrances and exits are kept free of excavated dirt.&rdquo;</em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           A chipmunk can be mistaken for a vole on exactly the test we publish elsewhere
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           Our{' '}
           <a href="https://pestproindex.com/us/moles-voles-gophers">
             mole, vole or pocket gopher identification page
@@ -390,11 +390,11 @@ export default function ChipmunksPage() {
         when they become numerous around homes, undermining foundations, patios, steps, retaining
         walls and sidewalks.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           What that adds up to, and why this page is shaped the way it is
         </p>
-        <p className="m-0 mt-2 text-sm text-amber-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           <strong>
             The case these sources say warrants control is burrowing against a structure. The garden
             and bird-feeder nuisance is the case they treat as usually not warranting it.
@@ -509,11 +509,11 @@ export default function ChipmunksPage() {
           (&frac14;-inch).&rdquo;
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           That is two requirements, and we could not find a listing that evidences both
         </p>
-        <p className="m-0 mt-2 text-sm text-amber-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           <strong>We checked three small cage traps against it.</strong> All three state dimensions
           that comfortably exceed the size requirement.{' '}
           <strong>
@@ -524,7 +524,7 @@ export default function ChipmunksPage() {
           no cage trap is named on this page, and the criterion above is left where it is, as
           ICWDM&rsquo;s, for anyone who wants to measure a trap themselves.
         </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           UGA takes a different route and names two trap models rather than a specification.{' '}
           <strong>
             This page does not treat those model names as equivalent to any product it has looked
@@ -641,11 +641,11 @@ export default function ChipmunksPage() {
         <em>&ldquo;Use gutter guards and cover downspouts to prevent chipmunks from entering a house.&rdquo;</em>{' '}
         and <em>&ldquo;Secure exhaust vents with professionally manufactured screens.&rdquo;</em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Read this before the card below
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           <strong>
             The listing below does not mention chipmunks anywhere in its own description.
           </strong>{' '}
@@ -656,7 +656,7 @@ export default function ChipmunksPage() {
           </strong>{' '}
           &mdash; the qualification comes from the sources, not from the product.
         </p>
-        <p className="m-0 mt-3 text-sm text-blue-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           <strong>One further limit, and it is a limit in what the sources say rather than in the
           product.</strong> UGA asks for &ldquo;wire mesh coverings&rdquo; and ICWDM for
           &ldquo;professionally manufactured screens&rdquo;.{' '}
@@ -675,11 +675,11 @@ export default function ChipmunksPage() {
         <strong>No repellent is named on this page, and the reason is that the sources do not
         support one.</strong>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           UGA Extension disagrees with itself inside a single paragraph, and both halves are given
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           It opens:{' '}
           <em>&ldquo;There are no registered repellents for chipmunks.&rdquo;</em> Two sentences
           later it names taste repellents containing Bitrex, Thiram or ammonium soaps with high
@@ -800,11 +800,11 @@ export default function ChipmunksPage() {
         <em>&ldquo;No toxic baits are registered for controlling chipmunks.&rdquo;</em> and{' '}
         <em>&ldquo;No fumigants are registered for controlling chipmunks.&rdquo;</em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           UGA Extension states both positions in one section, and ICWDM disagrees with all of them
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           UGA opens its poison section by directing readers to Georgia&rsquo;s pesticide product
           database for{' '}
           <em>&ldquo;Poisons and toxicants registered for use in Georgia against chipmunks&rdquo;</em>{' '}
@@ -814,7 +814,7 @@ export default function ChipmunksPage() {
           </em>{' '}
           <strong>Both sentences are the source&rsquo;s own and both are given here.</strong>
         </p>
-        <p className="m-0 mt-3 text-sm text-blue-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           <strong>And ICWDM takes the opposite view from Penn State outright:</strong>{' '}
           <em>&ldquo;Burrow fumigants are effective for chipmunks in small areas.&rdquo;</em>{' '}
           <strong>

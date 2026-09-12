@@ -241,10 +241,10 @@ export default function SquirrelsInAtticPage() {
         under nonlethal.
       </p>
       <h3>Before anything is closed up</h3>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">Timing matters, and two sources give a
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">Timing matters, and two sources give a
         reason rather than just a rule</p>
-        <p className="m-0 mt-2 text-sm text-amber-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           Alabama Cooperative Extension states that squirrels breed in February/March and July/August,
           and that young squirrels will not leave the nest for 10 to 12 weeks &mdash; excluding the
           parents during this time could result in mortality for the juveniles left inside the

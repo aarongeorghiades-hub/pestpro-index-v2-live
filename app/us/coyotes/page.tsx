@@ -257,12 +257,12 @@ export default function CoyotesPage() {
       </p>
 
       <h2 id="no-products">What Was Checked, and What Is Named Here</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The exclusion specification below gives four things a product could be measured against.
           On 2026-08-27 we read eight listings to see which of them a seller actually states.
         </p>
-        <p className="mt-3 mb-0 text-base text-blue-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Two of the four produced something to name.</strong> Three roller listings state
           the mechanism UC IPM describes, in their own words, and three fence-mesh listings state an
           aperture inside its limit. Those six are named further down.{' '}
@@ -379,11 +379,11 @@ export default function CoyotesPage() {
           observations and retreated immediately from 22 (96%) of the hazing events.&rdquo;
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Those two percentages measure different things and are not one statistic.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           The 71 percent is retreat <em>before an approach closed to 40 meters</em>, across 175
           observations. The 96 percent is immediate retreat <em>from an actual hazing event</em>,
           and it rests on <strong>23 events</strong>. Different denominators, different behaviors,
@@ -447,12 +447,12 @@ export default function CoyotesPage() {
           inches.&rdquo;
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           The burial depth is an instruction to whoever installs the fence, not a property of
           anything sold.
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink)]">
           &ldquo;4 to 6 inches below the soil&rdquo; describes how deep to dig. No roll of mesh can
           state it, and no product should ever be judged on whether it does. The figures that
           describe a <em>product</em> are the mesh aperture, the height, and the apron&rsquo;s
@@ -465,11 +465,11 @@ export default function CoyotesPage() {
         plainly.</strong> All three rolls below give it in their own text, and all three are inside
         UC IPM&rsquo;s limit of no larger than 6 inches.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Two 6-figures appear near these products and they are not the same measurement.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           UC IPM&rsquo;s <strong>5 1/2 feet</strong> is the height of an erected fence, measured
           from the ground up. The <strong>6 ft</strong> in a listing like &ldquo;6 ft x 50 ft&rdquo;
           is <strong>the width of a roll of wire as it is sold</strong>. One is a specification for
@@ -668,12 +668,12 @@ export default function CoyotesPage() {
         own threshold: the stage at which pets are attacked is where UC IPM says area-wide action is
         recommended.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           A separate statement about rarity exists, and it is deliberately not placed beside the
           figures above.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           The 2025 Edmonton study states that{' '}
           <em>&ldquo;Although coyote attacks on people remain rare&rdquo;</em>, and its abstract
           emphasizes the rarity of close encounters and the high frequency with which coyotes
@@ -726,11 +726,11 @@ export default function CoyotesPage() {
       </p>
 
       <h2 id="legal">The Legal Frame, and a Dating Problem</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Read this before any legal statement below it.
         </p>
-        <p className="mt-3 mb-0 text-base text-red-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           Every California legal statement on this page comes from one source whose text carries an
           update stamp of <strong>March 2007</strong> and which refers throughout to the{' '}
           <strong>California Department of Fish and Game</strong>, an agency renamed in 2013.{' '}

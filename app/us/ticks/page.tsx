@@ -235,9 +235,9 @@ export default function TicksPage() {
         &ldquo;Permethrin has low mammalian toxicity, is poorly absorbed through the skin, and is
         rapidly neutralized by the body. Skin reactions are uncommon.&rdquo;
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">Permethrin and cats</p>
-        <p className="m-0 mt-3 text-base text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">Permethrin and cats</p>
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           The National Pesticide Information Center states:{' '}
           <strong>
             &ldquo;Cats are more sensitive to permethrin than dogs or people because it takes their
@@ -247,7 +247,7 @@ export default function TicksPage() {
           levels of permethrin may seem anxious and can&rsquo;t walk normally. They may also have
           muscle tremors and seizures and they may die from the exposure.&rdquo;
         </p>
-        <p className="m-0 mt-3 text-base text-amber-900">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           The 45&ndash;65% figure in that sentence is not the 0.5% of a clothing spray, and this
           page does not present the two as the same thing. It is here because permethrin appears in
           three separate places further down and the caution belongs with the ingredient.
@@ -485,11 +485,11 @@ export default function TicksPage() {
           </em>
         </li>
       </ol>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Two further instructions, from a different publisher
         </p>
-        <p className="m-0 mt-3 text-base text-red-900">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>
             These are not steps of the Maine procedure above and are not presented as part of it.
             They are separate safety instructions with their own source.
@@ -505,7 +505,7 @@ export default function TicksPage() {
             bag/container, wrapping it tightly in tape, or flushing it down the toilet.&rdquo;
           </em>
         </p>
-        <p className="m-0 mt-3 text-base text-red-900">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>
             The University of Illinois College of Veterinary Medicine gives the reason for the
             first:
@@ -516,9 +516,9 @@ export default function TicksPage() {
           </em>
         </p>
       </div>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">What not to do</p>
-        <p className="m-0 mt-3 text-base text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">What not to do</p>
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>University of Maine Cooperative Extension:</strong>{' '}
           <strong>
             <em>
@@ -594,77 +594,77 @@ export default function TicksPage() {
         </em>
       </p>
       <div className="not-prose my-8">
-        <div className="overflow-x-auto rounded-xl border border-gray-200">
+        <div className="overflow-x-auto rounded-xl border border-[var(--color-rule)]">
           <table className="w-full text-sm">
-            <thead className="bg-gray-50">
+            <thead className="bg-[var(--color-paper-sunk)]">
               <tr>
-                <th className="px-4 py-3 text-left font-bold text-gray-900">Species</th>
-                <th className="px-4 py-3 text-left font-bold text-gray-900">Where found</th>
-                <th className="px-4 py-3 text-left font-bold text-gray-900">Transmits</th>
+                <th className="px-4 py-3 text-left font-bold text-[var(--color-ink)]">Species</th>
+                <th className="px-4 py-3 text-left font-bold text-[var(--color-ink)]">Where found</th>
+                <th className="px-4 py-3 text-left font-bold text-[var(--color-ink)]">Transmits</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
               <tr>
-                <td className="px-4 py-3 font-semibold text-gray-900">Blacklegged tick</td>
-                <td className="px-4 py-3 text-gray-700">
+                <td className="px-4 py-3 font-semibold text-[var(--color-ink)]">Blacklegged tick</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">
                   Widely distributed across the eastern United States
                 </td>
-                <td className="px-4 py-3 text-gray-700">
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">
                   Anaplasmosis, babesiosis, Lyme disease, hard tick relapsing fever, ehrlichiosis,
                   Powassan virus disease
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-semibold text-gray-900">Western blacklegged tick</td>
-                <td className="px-4 py-3 text-gray-700">
+                <td className="px-4 py-3 font-semibold text-[var(--color-ink)]">Western blacklegged tick</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">
                   Along the Pacific coast, particularly northern California
                 </td>
-                <td className="px-4 py-3 text-gray-700">
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">
                   Anaplasmosis, Lyme disease, hard tick relapsing fever
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-semibold text-gray-900">Lone star tick</td>
-                <td className="px-4 py-3 text-gray-700">
+                <td className="px-4 py-3 font-semibold text-[var(--color-ink)]">Lone star tick</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">
                   Widely distributed in the Northeast, South, and Midwest
                 </td>
-                <td className="px-4 py-3 text-gray-700">
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">
                   Bourbon virus, human ehrlichiosis, Heartland virus, tularemia; STARI rash; alpha-gal
                   syndrome evidence growing
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-semibold text-gray-900">American dog tick</td>
-                <td className="px-4 py-3 text-gray-700">
+                <td className="px-4 py-3 font-semibold text-[var(--color-ink)]">American dog tick</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">
                   Widely distributed east of the Rocky Mountains
                 </td>
-                <td className="px-4 py-3 text-gray-700">
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">
                   Tularemia and Rocky Mountain spotted fever
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-semibold text-gray-900">Gulf Coast tick</td>
-                <td className="px-4 py-3 text-gray-700">
+                <td className="px-4 py-3 font-semibold text-[var(--color-ink)]">Gulf Coast tick</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">
                   Primarily the southeastern United States, with focal populations elsewhere
                 </td>
-                <td className="px-4 py-3 text-gray-700">
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">
                   Rickettsia parkeri rickettsiosis, a form of spotted fever
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-semibold text-gray-900">Brown dog tick</td>
-                <td className="px-4 py-3 text-gray-700">Worldwide</td>
-                <td className="px-4 py-3 text-gray-700">
+                <td className="px-4 py-3 font-semibold text-[var(--color-ink)]">Brown dog tick</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">Worldwide</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">
                   Rocky Mountain spotted fever, in the southwestern U.S. and along the U.S.-Mexico
                   border
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-semibold text-gray-900">Rocky Mountain wood tick</td>
-                <td className="px-4 py-3 text-gray-700">
+                <td className="px-4 py-3 font-semibold text-[var(--color-ink)]">Rocky Mountain wood tick</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">
                   Rocky Mountain states and southwestern Canada, 4,000 to 10,500 feet
                 </td>
-                <td className="px-4 py-3 text-gray-700">
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">
                   Rocky Mountain spotted fever, Colorado tick fever, tularemia
                 </td>
               </tr>
@@ -849,15 +849,15 @@ export default function TicksPage() {
 
       <h2 id="yard-treatment">Treating the Yard</h2>
 
-      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
-        <p className="m-0 text-base font-bold text-slate-900">Two things to know before buying anything for the yard</p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+      <div className="not-prose my-8 rounded-lg border-l-4 border-[var(--color-rule-strong)] bg-[var(--color-paper-sunk)] px-6 py-5">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">Two things to know before buying anything for the yard</p>
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>
             CDC states that using pesticides can reduce the number of ticks in a treated area of a
             yard, and that a reader should not rely on spraying to reduce their risk of infection.
           </strong>
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           The Connecticut Agricultural Experiment Station:{' '}
           <strong>
             &ldquo;Many pesticide products are restricted to licensed commercial pesticide
@@ -867,7 +867,7 @@ export default function TicksPage() {
           licensed applicators only&rdquo;, and, of carbaryl, &ldquo;Some products are for
           commercial use only.&rdquo;
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>
             CDC also states that a reader should always follow label instructions and check with
             local health or agricultural officials before spraying, naming application timing,
@@ -1015,16 +1015,16 @@ export default function TicksPage() {
       />
 
       <h3>Tick tubes, with what the evidence actually says</h3>
-      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-lg border-l-4 border-[var(--color-rule-strong)] bg-[var(--color-paper-sunk)] px-6 py-5">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           Read this before the card below, not after it
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           Tick tubes work by getting mice to carry permethrin-treated cotton into their nests. On the
           published trials, the Connecticut Agricultural Experiment Station states:{' '}
           <strong>&ldquo;The results from studies with the tubes have been mixed.&rdquo;</strong>
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           Specifically:{' '}
           <strong>
             &ldquo;No reduction in the number of infected, host-seeking nymphal blacklegged ticks in
@@ -1034,7 +1034,7 @@ export default function TicksPage() {
           A reduction &ldquo;was reported in a Massachusetts study with the treatment of an 18-acre
           site and at some sites in another NY study on Fire Island.&rdquo;
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           Most suburban properties are well under four acres. The same source adds two further
           limits: &ldquo;Product effectiveness is dependent upon the collection of the cotton by the
           mice as nesting material from distributed tubes,&rdquo; and &ldquo;Chipmunks, another

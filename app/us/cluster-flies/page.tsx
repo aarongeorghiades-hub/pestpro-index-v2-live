@@ -385,11 +385,11 @@ export default function ClusterFliesPage() {
         asin="B0B8QPH3RW"
       />
 
-      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-lg border-l-4 border-[var(--color-rule-strong)] bg-[var(--color-paper-sunk)] px-6 py-5">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           What is not listed here, and why
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>Anything for the lawn.</strong> This is the one that matters most, and it follows
           from the life cycle set out further up this page. University of Kentucky Extension states
           that the larvae develop as parasites in the bodies of earthworms, and Penn State Extension
@@ -399,12 +399,12 @@ export default function ClusterFliesPage() {
           </strong>{' '}
           No lawn or larval product is listed here because the animal is not reachable by one.
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>Insecticidal dust indoors.</strong> Penn State Extension advises avoiding
           insecticidal dust inside structures, to prevent carpet beetle problems, and that caution is
           set out above.
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>Screening.</strong> Neither source read for this page gives a mesh size for cluster
           flies. The screening figure used elsewhere on this site belongs to a different insect, so
           it is not applied here.

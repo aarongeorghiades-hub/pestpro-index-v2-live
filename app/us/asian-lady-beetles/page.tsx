@@ -294,22 +294,22 @@ export default function AsianLadyBeetlesPage() {
         asin="B01N3BAPJO"
       />
 
-      <div className="not-prose my-8 rounded-lg border-l-4 border-slate-500 bg-slate-50 px-6 py-5">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-lg border-l-4 border-[var(--color-rule-strong)] bg-[var(--color-paper-sunk)] px-6 py-5">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           Three things this page does not sell, and why
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>Indoor insecticides.</strong> Both sources above point away from them: Ohio State
           University Extension advises against indoor aerosol foggers, and Penn State Extension warns
           that insecticidal treatment of wall voids may kill thousands of beetles but that carpet
           beetles will then feed on the dead ones.
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>Exterior perimeter treatment.</strong> Penn State Extension says exterior treatment
           should be applied by a licensed pest control operator in late September or early October.
           That is work assigned to a licensed operator, so no perimeter product is listed here.
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           <strong>Light traps.</strong> Ohio State University Integrated Pest Management reports of a
           commercial black light trap that it was &ldquo;very effective, catching 90% of the beetles
           in our tests&rdquo;, operated in a dark room or at night. That figure belongs to one

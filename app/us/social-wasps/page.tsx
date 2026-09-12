@@ -440,11 +440,11 @@ export default function SocialWaspsPage() {
           of a dust or an aerosol wasp spray may be needed.&rdquo;
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           The criterion these three products are measured against
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           Each listing below states, in its own feature text rather than only in its product name, a
           jet distance of at least the twenty feet University of Kentucky names, and each names a
           wasp, hornet or yellowjacket in that same feature text. Eleven products were checked

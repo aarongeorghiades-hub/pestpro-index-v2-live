@@ -200,11 +200,11 @@ export default function GroundSquirrelsPage() {
       </p>
 
       <h2 id="no-products">Why This Page Names No Product</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Nothing on this page is for sale, and that is a finding rather than an omission
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           <strong>
             The sources support classes of product that retail listings do not evidence.
           </strong>{' '}
@@ -234,11 +234,11 @@ export default function GroundSquirrelsPage() {
         Utah State gives bodies up to 11 inches and tails 2 to 9 inches, and adds the figure that
         settles the commonest confusion: <em>&ldquo;burrow openings about 4 inches in diameter&rdquo;</em>.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The clean line between this animal and the one on our chipmunk page
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           Utah State gives a ground squirrel burrow opening at <strong>about 4 inches</strong>. Penn
           State Extension, quoted on our{' '}
           <a href="https://pestproindex.com/us/chipmunks">chipmunk page</a>, gives a chipmunk burrow
@@ -250,11 +250,11 @@ export default function GroundSquirrelsPage() {
           <em>&ldquo;lacks stripes on its face&rdquo;</em>.
         </p>
       </div>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Two ground squirrel species are federally protected, and their ranges can overlap
         </p>
-        <p className="m-0 mt-2 text-sm text-amber-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           <strong>UC IPM:</strong>{' '}
           <em>
             &ldquo;The U. S. Fish and Wildlife Service classifies the Mohave ground squirrel, S.
@@ -271,11 +271,11 @@ export default function GroundSquirrelsPage() {
       </div>
 
       <h2 id="health">A Public Health Instruction</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           UC IPM gives an instruction about dead squirrels, and it is reported here in its own words
         </p>
-        <p className="m-0 mt-3 text-sm text-red-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           <em>
             &ldquo;Ground squirrels can harbor diseases harmful to humans, particularly when squirrel
             populations are high. A major concern is bubonic plague, caused by the bacterium Yersinia
@@ -283,7 +283,7 @@ export default function GroundSquirrelsPage() {
             squirrels.&rdquo;
           </em>
         </p>
-        <p className="m-0 mt-3 text-sm text-red-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           <em>
             &ldquo;Ground squirrels are susceptible to plague, which has wiped out entire colonies.
             If you find unusual numbers of squirrels or other rodents dead for no apparent reason,
@@ -291,7 +291,7 @@ export default function GroundSquirrelsPage() {
             circumstances.&rdquo;
           </em>
         </p>
-        <p className="m-0 mt-3 text-sm text-red-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           Separately, on removing a trapped animal, UC IPM says{' '}
           <em>&ldquo;Don&rsquo;t handle the carcasses without protective gear&rdquo;</em> and
           describes using a plastic bag inverted over the hand.{' '}
@@ -349,28 +349,28 @@ export default function GroundSquirrelsPage() {
 
       <h3>⚠ Whether a license is needed: two sources, two answers, unresolved</h3>
       <div className="overflow-x-auto not-prose my-6">
-        <table className="min-w-full border border-gray-300 text-sm">
-          <thead className="bg-gray-100">
+        <table className="min-w-full border border-[var(--color-rule)] text-sm">
+          <thead className="bg-[var(--color-paper-sunk)]">
             <tr>
-              <th className="border border-gray-300 px-3 py-2 text-left">Source</th>
-              <th className="border border-gray-300 px-3 py-2 text-left">Date</th>
-              <th className="border border-gray-300 px-3 py-2 text-left">Position</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">Source</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">Date</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">Position</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-gray-300 px-3 py-2">UC IPM</td>
-              <td className="border border-gray-300 px-3 py-2">updated June 2025</td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2">UC IPM</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">updated June 2025</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 &ldquo;No license is required for the management of California ground squirrels if
                 it is the owner or tenant who is taking damaging ground squirrels.&rdquo; A license
                 is required for those trapping for hire or profit
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2">CDFA handbook</td>
-              <td className="border border-gray-300 px-3 py-2">document stamped 2009</td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2">CDFA handbook</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">document stamped 2009</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 &ldquo;Trapping ground squirrels requires a trapping license issued by the
                 Department of Fish and Game.&rdquo;
               </td>
@@ -405,11 +405,11 @@ export default function GroundSquirrelsPage() {
           without a permit.&rdquo;
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           This completes something our trapping rules page deliberately left open
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           That page records that Title 14 &sect; 465.5{' '}
           <em>&ldquo;contains no provision on relocation or transport&rdquo;</em>, and it warns in
           its own words that this{' '}
@@ -474,18 +474,18 @@ export default function GroundSquirrelsPage() {
       </p>
 
       <h3>What the product check found</h3>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           No 110-size trap is named here, and the reason is about what a search surfaced
         </p>
-        <p className="m-0 mt-2 text-sm text-amber-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           <strong>Three separate product searches were run for a 110-size body-grip trap.</strong>{' '}
           Between them they returned <strong>one</strong> product page, and that page no longer
           resolves. Everything else returned was an accessory rather than a trap &mdash; setting
           tools, trap stabilizers, a safety tool, a wire kit &mdash; and an accessory is not a trap,
           so none was pursued.
         </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           <strong>
             That is a statement about what a product search surfaced. It is not a statement about
             what is sold.
@@ -498,7 +498,7 @@ export default function GroundSquirrelsPage() {
             inches.
           </strong>
         </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           <strong>The covered box is a separate gap.</strong> UC IPM asks for a 3-inch-diameter
           entrance. The trap-cover listings checked publish{' '}
           <strong>overall dimensions rather than entrance apertures</strong>, and the smallest
@@ -606,12 +606,12 @@ export default function GroundSquirrelsPage() {
           areas.&rdquo;
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           No gas cartridge product is named here, and the reason is about listings rather than about
           the method
         </p>
-        <p className="m-0 mt-2 text-sm text-amber-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           <strong>
             To be exact about what this page is and is not saying: UC IPM describes the gas cartridge
             as the fumigant most readily available to residential users, and nothing on this page
@@ -619,7 +619,7 @@ export default function GroundSquirrelsPage() {
           </strong>{' '}
           What we could not do is name a product against it.
         </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           Of the gas cartridge listings checked on 26 August 2026,{' '}
           <strong>
             one stated nothing at all about its regulatory character &mdash; no registration
@@ -629,7 +629,7 @@ export default function GroundSquirrelsPage() {
           </strong>{' '}
           A third no longer resolves.
         </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           <strong>
             Those are observations about what two product descriptions said. They are not a
             statement about whether any fumigant may lawfully be used in California, and this page
@@ -689,17 +689,17 @@ export default function GroundSquirrelsPage() {
         </em>
         .
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Three actives available to residents, and none of them for this animal
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           <strong>Two of the three are labeled for rats and mice</strong>, and UC IPM says
           explicitly that rat and mouse products should not be used on ground squirrels unless the
           label lists them. <strong>The third, zinc phosphide, is professional-only for this
           species.</strong> That is the whole arithmetic, and it is why no bait is named here.
         </p>
-        <p className="m-0 mt-3 text-sm text-blue-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           <strong>
             This is a different closure from the one on our chipmunk page, and the difference
             matters.
@@ -778,39 +778,39 @@ export default function GroundSquirrelsPage() {
         in any source used here. Summarized from that table, with its own words for the ratings:
       </p>
       <div className="overflow-x-auto not-prose my-6">
-        <table className="min-w-full border border-gray-300 text-sm">
-          <thead className="bg-gray-100">
+        <table className="min-w-full border border-[var(--color-rule)] text-sm">
+          <thead className="bg-[var(--color-paper-sunk)]">
             <tr>
-              <th className="border border-gray-300 px-3 py-2 text-left">Method</th>
-              <th className="border border-gray-300 px-3 py-2 text-left">When UC IPM rates it highest</th>
-              <th className="border border-gray-300 px-3 py-2 text-left">Rating elsewhere in the year</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">Method</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">When UC IPM rates it highest</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">Rating elsewhere in the year</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-gray-300 px-3 py-2">Fumigation</td>
-              <td className="border border-gray-300 px-3 py-2">February to May — <strong>High</strong></td>
-              <td className="border border-gray-300 px-3 py-2">No efficacy for the rest of the year</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">Fumigation</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">February to May — <strong>High</strong></td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">No efficacy for the rest of the year</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2">Toxic baits</td>
-              <td className="border border-gray-300 px-3 py-2">June to November — <strong>High</strong></td>
-              <td className="border border-gray-300 px-3 py-2">No efficacy December to May</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">Toxic baits</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">June to November — <strong>High</strong></td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">No efficacy December to May</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2">Trapping</td>
-              <td className="border border-gray-300 px-3 py-2">late January to October — <strong>Moderate</strong></td>
-              <td className="border border-gray-300 px-3 py-2">No efficacy November to mid-January</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">Trapping</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">late January to October — <strong>Moderate</strong></td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">No efficacy November to mid-January</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2">Burrow modification</td>
-              <td className="border border-gray-300 px-3 py-2">Moderate, all year</td>
-              <td className="border border-gray-300 px-3 py-2">—</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">Burrow modification</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">Moderate, all year</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">—</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2">Exclusion, repellents, habitat modification, biological control</td>
-              <td className="border border-gray-300 px-3 py-2">—</td>
-              <td className="border border-gray-300 px-3 py-2"><strong>Low</strong> wherever rated</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">Exclusion, repellents, habitat modification, biological control</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">—</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2"><strong>Low</strong> wherever rated</td>
             </tr>
           </tbody>
         </table>

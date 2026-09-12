@@ -348,12 +348,12 @@ export default function SnakesPage() {
       </p>
 
       <h2 id="bites">Bites: What the Sources Say, Including Where They Disagree</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           One number every source consulted for this page agrees on: Poison Control,
           1-800-222-1222.
         </p>
-        <p className="mt-3 mb-0 text-base text-red-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           It appears in UC IPM, in Colorado State, and in both UF/IFAS documents. Colorado State
           additionally gives the Rocky Mountain Poison &amp; Drug Safety numbers.{' '}
           <strong>
@@ -425,12 +425,12 @@ export default function SnakesPage() {
           victim arrives.&rdquo;
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Two of these sources give opposite instructions about cold, and this page does not pick
           between them.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>UC IPM instructs</strong> <em>&ldquo;Apply a cold, wet cloth over the bite&rdquo;</em>.{' '}
           <strong>Utah State instructs</strong>{' '}
           <em>&ldquo;do not apply a cold compress to the bite area&rdquo;</em>. Both are extension
@@ -453,12 +453,12 @@ export default function SnakesPage() {
         for envenomation. <strong>What treatment is appropriate, and when, is a matter for a
         clinician and not for this page.</strong>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           One document a live extension page sends readers to for snakebite planning is no longer
           there.
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink)]">
           A UF/IFAS page still in service directs readers to a fourth document in its series for
           building a plan to deal with snakebite.{' '}
           <strong>
@@ -541,12 +541,12 @@ export default function SnakesPage() {
           threatened species and are protected.&rdquo;
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           California and Pennsylvania point in opposite directions, and both are quoted above
           unchanged.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           In California, on the 2014 text, a resident may take most rattlesnakes on private land
           without a license or permit, subject to a bag limit. In Pennsylvania,{' '}
           <strong>all</strong> snakes are protected by regulation and some may not be taken at all.
@@ -611,11 +611,11 @@ export default function SnakesPage() {
           certain areas of your yard (Figure 7).&rdquo;
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           One figure is common to all four. The other three are not.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Mesh:</strong> all four say 1/4 inch. <strong>Height:</strong> three say 36
           inches, UF/IFAS says 2 to 3 feet. <strong>Burial:</strong> three say 6 inches, ICWDM says
           4 to 6. <strong>Slant:</strong> three say 30 degrees outward, UF/IFAS states no angle at
@@ -663,12 +663,12 @@ export default function SnakesPage() {
           used as a last resort. Both are extension-grade sources and this page renders both.
         </strong>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           The 36 inches is an instruction to whoever builds the fence, not a property of anything
           sold.
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink)]">
           A roll of wire has a width. A fence has a height. They are not the same measurement, and
           how much of the roll ends up above ground depends on how deep the buried edge goes and how
           the slant is set.{' '}
@@ -721,12 +721,12 @@ export default function SnakesPage() {
       </p>
 
       <h2 id="sealing">Sealing Openings: a Different Mesh Entirely</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Three quarter-and-eighth-inch figures appear on this page and they mean two different
           things. Getting them the wrong way round produces a hole a snake can use.
         </p>
-        <ul className="mt-3 mb-0 space-y-2 text-base text-red-900">
+        <ul className="mt-3 mb-0 space-y-2 text-base text-[var(--color-ink-soft)]">
           <li>
             <strong>1/4 inch is the size of GAP that needs sealing.</strong> Colorado State:{' '}
             <em>&ldquo;seal all openings 1/4 inch or larger&rdquo;</em>.
@@ -741,7 +741,7 @@ export default function SnakesPage() {
             different job, on a different structure.
           </li>
         </ul>
-        <p className="mt-3 mb-0 text-base font-bold text-red-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           A quarter-inch cloth over a quarter-inch gap is not a seal. That is why the two classes
           are carded separately on this page and never described together.
         </p>

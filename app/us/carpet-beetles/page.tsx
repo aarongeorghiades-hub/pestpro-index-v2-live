@@ -366,11 +366,11 @@ export default function CarpetBeetlesPage() {
         ))}
 
       <h2 id="first">Cleaning and Exclusion Come First</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The flagship source says in terms that products may not be needed at all.
         </p>
-        <p className="mt-3 mb-0 text-base text-blue-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>UC IPM:</strong>{' '}
           <em>
             &ldquo;Successful control depends on a combination of sanitation and exclusion. If
@@ -493,18 +493,18 @@ export default function CarpetBeetlesPage() {
         </em>
         , citing Koehler and others.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The last two are the same institution, disagreeing with itself.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           Both UF/IFAS documents give the same temperature, <strong>minus 20 Fahrenheit</strong>.
           One says <strong>three days</strong>; the other says <strong>three hours</strong>. That is
           a twenty-four-fold difference in the time, from one institution, and{' '}
           <strong>neither is adjusted here to fit the other.</strong> This page has no basis for
           preferring one document over the other and does not pretend to.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Colorado State is a third position, and it does not settle the question.</strong>{' '}
           Three of these sources state a sub-zero temperature together with a time: Colorado State
           gives three days or more below 0&deg;F, UF/IFAS IG089 gives three days at minus 20, and
@@ -549,11 +549,11 @@ export default function CarpetBeetlesPage() {
         <strong>UF/IFAS IN145, on that same furniture carpet beetle:</strong>{' '}
         <em>&ldquo;The complete life cycle requires four to 12 months depending upon the temperature.&rdquo;</em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The same institution again, on the same species, with two different ranges.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           UF/IFAS document IG089 gives the furniture carpet beetle{' '}
           <strong>149 to 422 days</strong>. UF/IFAS document IN145 gives it{' '}
           <strong>four to 12 months</strong>. The ranges overlap but are not the same range, and{' '}
@@ -578,12 +578,12 @@ export default function CarpetBeetlesPage() {
         Those are five accounts of how long a carpet beetle takes, from four institutions, and this
         page reports them separately rather than producing an average none of them published.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           One published figure counts a different population entirely, and it is kept out of the
           list above on purpose.
         </p>
-        <p className="mt-3 mb-0 text-base text-red-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           The University of Arizona states:{' '}
           <em>
             &ldquo;Under optimum conditions, such as warm temperatures and high humidity, most
@@ -603,11 +603,11 @@ export default function CarpetBeetlesPage() {
       </div>
 
       <h2 id="traps">Traps, and the Three Different Things the Sources Say</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           UC IPM makes three separate statements about traps. None of them licenses the others.
         </p>
-        <ul className="mt-3 mb-0 space-y-2 text-base text-amber-900">
+        <ul className="mt-3 mb-0 space-y-2 text-base text-[var(--color-ink-soft)]">
           <li>
             <strong>Commercial storage, and the only one it calls recommended:</strong>{' '}
             <em>
@@ -629,7 +629,7 @@ export default function CarpetBeetlesPage() {
             </em>
           </li>
         </ul>
-        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           A warehouse recommendation is not a household recommendation, and neither is advice to put
           a plain sticky trap on a windowsill.
         </p>

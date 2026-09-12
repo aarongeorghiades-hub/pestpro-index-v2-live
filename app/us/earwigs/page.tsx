@@ -181,14 +181,14 @@ export default function EarwigsPage() {
       </p>
 
       <h2 id="scope">What This Page Carries</h2>
-      <div className="not-prose my-6 rounded-lg border border-amber-300 bg-amber-50 p-5">
-        <p className="m-0 text-base text-amber-900">
+      <div className="not-prose my-6 rounded-lg border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-5">
+        <p className="m-0 text-base text-[var(--color-ink-soft)]">
           <strong>No product is named on this page, and that is a measured result.</strong> Six
           publications were read. Four of them describe trapping, and{' '}
           <strong>every trap they describe is one you make</strong> — rolled damp newspaper, a
           shallow can of oil, two grooved boards. There is nothing to buy.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Diatomaceous earth is not mentioned by any of the six.</strong> Not weakly
           supported — absent. And while the sources name the entry points a reader should close,
           none publishes a material or dimension for closing them, so there is nothing here to rank

@@ -210,13 +210,13 @@ export default function GroundhogsPage() {
       </p>
 
       <h2 id="scope">What This Page Carries</h2>
-      <div className="not-prose my-6 rounded-lg border border-amber-300 bg-amber-50 p-5">
-        <p className="m-0 text-base text-amber-900">
+      <div className="not-prose my-6 rounded-lg border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-5">
+        <p className="m-0 text-base text-[var(--color-ink-soft)]">
           <strong>One product is named, and four classes are deliberately empty.</strong> The
           reasons are not the same reason, and the page says which is which rather than leaving a
           reader to assume the sources recommend nothing.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Repellents and toxicants:</strong> not named because Penn State Extension states
           none are registered &mdash; a registration fact, not a verdict on whether they work.{' '}
           <strong>Fumigants:</strong> not named because UNH states a gas cartridge must never be
@@ -225,7 +225,7 @@ export default function GroundhogsPage() {
           describes. <strong>Live traps:</strong> one named, because Penn State publishes a minimum
           size and one listing&rsquo;s own page could be read against it.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Seven further listings were attempted on 3 September 2026 and every one returned
           an anti-bot interstitial instead of a product page.</strong> A second attempt later that
           day read six of the seven; the other no longer resolves to a product page at all, and one
@@ -290,19 +290,19 @@ export default function GroundhogsPage() {
         </strong>
       </p>
       <div className="overflow-x-auto not-prose my-6">
-        <table className="min-w-full border border-gray-300 text-sm">
-          <thead className="bg-gray-100">
+        <table className="min-w-full border border-[var(--color-rule)] text-sm">
+          <thead className="bg-[var(--color-paper-sunk)]">
             <tr>
-              <th className="border border-gray-300 px-3 py-2 text-left">State, and source</th>
-              <th className="border border-gray-300 px-3 py-2 text-left">What the source states</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">State, and source</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">What the source states</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-gray-300 px-3 py-2 font-semibold">
+              <td className="border border-[var(--color-rule)] px-3 py-2 font-semibold">
                 Pennsylvania — Penn State Extension
               </td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 <em>
                   &ldquo;In Pennsylvania, woodchucks are classified as game animals. Game protection
                   is removed when woodchucks damage personal property.&rdquo;
@@ -312,10 +312,10 @@ export default function GroundhogsPage() {
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2 font-semibold">
+              <td className="border border-[var(--color-rule)] px-3 py-2 font-semibold">
                 Missouri — Department of Conservation
               </td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 <em>
                   &ldquo;The Wildlife Code of Missouri classifies the groundhog as a game mammal
                   that may be taken during the prescribed hunting season&rdquo;
@@ -332,10 +332,10 @@ export default function GroundhogsPage() {
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2 font-semibold">
+              <td className="border border-[var(--color-rule)] px-3 py-2 font-semibold">
                 Connecticut — UConn Home &amp; Garden
               </td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 States that woodchucks can be hunted most of the year with no daily or seasonal
                 limits, on a statement its own text dates to 2015.
               </td>
@@ -352,12 +352,12 @@ export default function GroundhogsPage() {
       </p>
 
       <h2 id="relocation">Relocation: The Sharpest Disagreement</h2>
-      <div className="not-prose my-6 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-6 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           One of the three states this page reads PROHIBITS relocating a trapped groundhog. Another
           recommends it. Do not carry a trapped animal anywhere before checking your own state.
         </p>
-        <p className="mt-3 mb-0 text-base text-red-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Pennsylvania &mdash; prohibited.</strong> Penn State Extension:{' '}
           <em>
             &ldquo;Since woodchucks are considered a potential rabies vector, the Game Commission
@@ -366,7 +366,7 @@ export default function GroundhogsPage() {
           The same source states that a trapped animal should instead be humanely euthanized or
           released elsewhere on the landowner&rsquo;s own property.
         </p>
-        <p className="mt-3 mb-0 text-base text-red-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Indiana &mdash; recommended.</strong> Purdue Extension states that captured
           woodchucks should be relocated at least five miles from the trap site and released
           somewhere they will not become someone else&rsquo;s problem.{' '}
@@ -375,14 +375,14 @@ export default function GroundhogsPage() {
             PDF.)
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base text-red-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Connecticut &mdash; permitted, conditionally.</strong> UConn:{' '}
           <em>
             &ldquo;Live trapping and relocating is legal in the state of Connecticut for species
             that do not carry rabies.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base text-red-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>And wherever it is permitted, the destination is not yours to choose.</strong> UNH
           Cooperative Extension states that{' '}
           <em>
@@ -418,8 +418,8 @@ export default function GroundhogsPage() {
         <em>&ldquo;front of the main burrow entrance&rdquo;</em> &mdash; its own sentence, broken
         where the source PDF breaks it.
       </p>
-      <div className="not-prose my-6 rounded-lg border border-blue-300 bg-blue-50 p-5">
-        <p className="m-0 text-base text-blue-900">
+      <div className="not-prose my-6 rounded-lg border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-5">
+        <p className="m-0 text-base text-[var(--color-ink-soft)]">
           <strong>The size criterion, and the two figures that state it.</strong> Penn State:{' '}
           <em>&ldquo;Live traps should be at least 10 x 10 x 24 inches in size.&rdquo;</em> ICWDM
           gives a larger cage or box trap at{' '}
@@ -461,24 +461,24 @@ export default function GroundhogsPage() {
         That much is common ground. Below it is not.
       </p>
       <div className="overflow-x-auto not-prose my-6">
-        <table className="min-w-full border border-gray-300 text-sm">
-          <thead className="bg-gray-100">
+        <table className="min-w-full border border-[var(--color-rule)] text-sm">
+          <thead className="bg-[var(--color-paper-sunk)]">
             <tr>
-              <th className="border border-gray-300 px-3 py-2 text-left">Source</th>
-              <th className="border border-gray-300 px-3 py-2 text-left">Below ground</th>
-              <th className="border border-gray-300 px-3 py-2 text-left">Top of the fence</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">Source</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">Below ground</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">Top of the fence</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-gray-300 px-3 py-2 font-semibold">Penn State</td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2 font-semibold">Penn State</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 <em>
                   &ldquo;bury the lower edge 12 inches in the ground with the lower 6 inches bent at
                   an L-shaped angle leading outward&rdquo;
                 </em>
               </td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 <em>
                   &ldquo;Bending the top 15 inches of wire fence outward at a 45-degree angle will
                   also prevent woodchucks from climbing over the fence&rdquo;
@@ -486,9 +486,9 @@ export default function GroundhogsPage() {
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2 font-semibold">Missouri DoC</td>
-              <td className="border border-gray-300 px-3 py-2">Not specified in the passage read</td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2 font-semibold">Missouri DoC</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">Not specified in the passage read</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 <em>
                   &ldquo;Bending the top 15 inches of the wire fence outward at a 45-degree angle
                   will prevent groundhogs from climbing over the fence&rdquo;
@@ -496,12 +496,12 @@ export default function GroundhogsPage() {
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2 font-semibold">UNH</td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2 font-semibold">UNH</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 An 18-inch strip laid flat on the ground below the fence, as an alternative to
                 burial
               </td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 <em>
                   &ldquo;Bending the top 12 to 15 inches outward at about a 45 degree angle will
                   help deter them from climbing a non-electrified fence.&rdquo;
@@ -509,14 +509,14 @@ export default function GroundhogsPage() {
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2 font-semibold">UConn</td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2 font-semibold">UConn</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 <em>
                   &ldquo;Bury the lower edge 10 to 12 inches deep in the soil to prevent burrowing
                   under the fence.&rdquo;
                 </em>
               </td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 <em>
                   &ldquo;the fence should be three to four feet high with the top 12&rdquo; left
                   loose and bent outward at a 90&deg; angle&rdquo;
@@ -524,11 +524,11 @@ export default function GroundhogsPage() {
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2 font-semibold">ICWDM</td>
-              <td className="border border-gray-300 px-3 py-2">
+              <td className="border border-[var(--color-rule)] px-3 py-2 font-semibold">ICWDM</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">
                 An 18-inch skirt buried at least 2 inches
               </td>
-              <td className="border border-gray-300 px-3 py-2">A 9 to 12 inch overhang</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">A 9 to 12 inch overhang</td>
             </tr>
           </tbody>
         </table>

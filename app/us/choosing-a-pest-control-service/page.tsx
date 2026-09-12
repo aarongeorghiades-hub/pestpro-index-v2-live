@@ -173,18 +173,18 @@ export default function ChoosingAPestControlServicePage() {
         </em>
       </p>
 
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The warning that makes this a consumer-protection subject
         </p>
-        <p className="m-0 mt-3 text-sm text-red-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           University of Florida IFAS Extension states:{' '}
           <em>
             &ldquo;Illegal pest control operators are increasingly common throughout Florida
             and other states, posing a threat to people and the environment.&rdquo;
           </em>
         </p>
-        <p className="m-0 mt-3 text-sm text-red-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           That is the source&rsquo;s own wording, including its reach beyond Florida. It is the
           reason the check below exists and the reason it is worth doing before money changes
           hands rather than after.

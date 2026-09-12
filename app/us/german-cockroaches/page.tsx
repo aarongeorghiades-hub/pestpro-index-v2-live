@@ -287,19 +287,19 @@ export default function GermanCockroachesPage() {
       </p>
 
       <h2 id="identify">Half an Inch, and Two Stripes</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-300 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Every source here asks a reader to settle the species before doing anything, and the test
           is length.
         </p>
-        <p className="mt-3 mb-0 text-sm text-blue-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>Mississippi State University Extension:</strong>{' '}
           <em>
             &ldquo;The first step in preventing or controlling cockroaches is to know which species
             you are trying to control.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-blue-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>The same source gives the measurement, and it names both animals:</strong>{' '}
           <em>
             &ldquo;Adult German cockroaches are only about &frac12; inch long and have two dark
@@ -307,32 +307,32 @@ export default function GermanCockroachesPage() {
             long.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-blue-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>UF/IFAS Entomology and Nematology gives its own figure:</strong>{' '}
           <em>
             &ldquo;The adult is 10&ndash;15 mm (~3/8-9/16 in) long, brown to dark brown in color with
             two distinct parallel bands running the length of the pronotum.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-blue-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           Half an inch, two stripes, and it does not fly. Longer than an inch is a different page.
         </p>
       </div>
 
       <h2 id="stations">Small Bait Stations</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           One sentence in one publication is the whole criterion for the two products below. It is a
           fitness test, not a ranking.
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>UF/IFAS Extension:</strong>{' '}
           <em>
             &ldquo;Get small stations for German cockroaches and large stations for the larger outdoor
             cockroaches.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>And the form, from Mississippi State University Extension:</strong>{' '}
           <em>
             &ldquo;Baits are the most effective treatments for controlling German cockroaches.&rdquo;
@@ -347,7 +347,7 @@ export default function GermanCockroachesPage() {
             more useful for control of large roaches.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-slate-800">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           A station sized for a palmetto bug is the wrong tool here, and a granular bait is the wrong
           formulation. Neither is a judgment about quality.
         </p>
@@ -366,16 +366,16 @@ export default function GermanCockroachesPage() {
       ))}
 
       <h2 id="health">What the Sources Say About Health</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The sources make three different claims here. They are not the same claim and this page
           never merges them. Read the label on each.
         </p>
 
-        <p className="mt-5 mb-0 text-sm font-bold uppercase tracking-wide text-red-900">
+        <p className="mt-5 mb-0 text-sm font-bold text-[var(--color-ink-soft)]">
           One. Allergen and asthma
         </p>
-        <p className="mt-2 mb-0 text-sm text-red-900">
+        <p className="mt-2 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>Mississippi State University Extension:</strong>{' '}
           <em>
             &ldquo;Dried particles resulting from German cockroach feces, shed skins, and bodies of
@@ -387,7 +387,7 @@ export default function GermanCockroachesPage() {
             &ldquo;the most economically and medically important cockroach in the world.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>NC State Extension Publications names the proteins and gives a rate:</strong> it
           identifies the two largest culprits as <em>BlaG 1</em> and <em>BlaG 2</em>, and states that{' '}
           <em>
@@ -402,10 +402,10 @@ export default function GermanCockroachesPage() {
           </em>
         </p>
 
-        <p className="mt-5 mb-0 text-sm font-bold uppercase tracking-wide text-red-900">
+        <p className="mt-5 mb-0 text-sm font-bold text-[var(--color-ink-soft)]">
           Two. Organisms carried on the insect
         </p>
-        <p className="mt-2 mb-0 text-sm text-red-900">
+        <p className="mt-2 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>This is a different claim from the one above and it is not the same as an
           infection.</strong>{' '}
           <strong>UF/IFAS Entomology and Nematology</strong> states that German cockroaches{' '}
@@ -415,7 +415,7 @@ export default function GermanCockroachesPage() {
           </em>
           .
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>
             NC State Extension goes further than any other source here, and its sentence is given
             whole with its date attached:
@@ -433,10 +433,10 @@ export default function GermanCockroachesPage() {
           </strong>
         </p>
 
-        <p className="mt-5 mb-0 text-sm font-bold uppercase tracking-wide text-red-900">
+        <p className="mt-5 mb-0 text-sm font-bold text-[var(--color-ink-soft)]">
           Three. Biting, in one hedged sentence
         </p>
-        <p className="mt-2 mb-0 text-sm text-red-900">
+        <p className="mt-2 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>
             One source in this set records a bite, and both of its qualifiers are its own and stay
             attached.
@@ -452,7 +452,7 @@ export default function GermanCockroachesPage() {
           </strong>
         </p>
 
-        <p className="mt-5 mb-0 text-base font-bold text-red-900">
+        <p className="mt-5 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           Three claims, three labels, and no sentence on this page joins two of them. Every one is
           reported with the publication that made it and none is graded. No clinical guidance appears
           here, because not one of these five publications provides any.
@@ -475,15 +475,15 @@ export default function GermanCockroachesPage() {
       </p>
 
       <h2 id="numbers">Four Sources, Four Numbers</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Two basic figures about this insect come out differently in four publications, and in two
           cases the same publisher gives two answers. Both spreads are printed rather than averaged.
         </p>
-        <p className="mt-4 mb-0 text-sm font-bold uppercase tracking-wide text-amber-900">
+        <p className="mt-4 mb-0 text-sm font-bold text-[var(--color-ink-soft)]">
           Eggs in one case &mdash; four figures
         </p>
-        <ul className="mt-2 mb-0 space-y-1 text-sm text-amber-900">
+        <ul className="mt-2 mb-0 space-y-1 text-sm text-[var(--color-ink-soft)]">
           <li>
             <strong>Mississippi State University Extension:</strong> an egg case{' '}
             <em>&ldquo;which contains approximately three dozen eggs&rdquo;</em>
@@ -504,15 +504,15 @@ export default function GermanCockroachesPage() {
             <em>&ldquo;The mean number of eggs per case is 40&rdquo;</em>
           </li>
         </ul>
-        <p className="mt-3 mb-0 text-sm text-amber-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>
             The second and third of those are both UF/IFAS, and they publish different ranges.
           </strong>
         </p>
-        <p className="mt-5 mb-0 text-sm font-bold uppercase tracking-wide text-amber-900">
+        <p className="mt-5 mb-0 text-sm font-bold text-[var(--color-ink-soft)]">
           How long to adulthood &mdash; and one source gives two answers
         </p>
-        <ul className="mt-2 mb-0 space-y-1 text-sm text-amber-900">
+        <ul className="mt-2 mb-0 space-y-1 text-sm text-[var(--color-ink-soft)]">
           <li>
             <strong>Mississippi State University Extension:</strong>{' '}
             <em>
@@ -538,7 +538,7 @@ export default function GermanCockroachesPage() {
             </em>
           </li>
         </ul>
-        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           Those last two sentences are in one publication and it does not say how they fit together.
           We report both rather than picking the one that reads more neatly.
         </p>
@@ -571,18 +571,18 @@ export default function GermanCockroachesPage() {
         <strong>UF/IFAS Extension gives the reason water matters most:</strong>{' '}
         <em>&ldquo;German cockroaches can survive only 12 days with food but no water.&rdquo;</em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           One sealing figure, and it belongs to this species by name.
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Mississippi State University Extension, in its German cockroach section:</strong>{' '}
           <em>
             &ldquo;Because of their size and shape, adult German cockroaches can crawl through cracks
             less than 1/8 inch wide, and nymphs can get through much smaller cracks.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-slate-800">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           That figure is for this insect. A different figure for cockroaches in general appears on our
           palmetto bugs page, from a different publisher, and the two are not interchangeable. Read the
           species on any number before acting on it.
@@ -590,18 +590,18 @@ export default function GermanCockroachesPage() {
       </div>
 
       <h2 id="diy">Four Positions on Whether You Should Do This Yourself</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           This is the sharpest disagreement in the pack, and one publisher is on both sides of it.
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>NC State Extension Publications, in an undated document:</strong>{' '}
           <em>
             &ldquo;it is essential to involve and rely upon professional pest management services for
             German cockroach control as soon as this pest is identified&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>NC State Extension, in a page it dates to May 2013:</strong>{' '}
           <em>
             &ldquo;an IPM, or integrated pest management approach can be used effectively for German
@@ -609,13 +609,13 @@ export default function GermanCockroachesPage() {
           </em>{' '}
           &mdash; and that page then sets out a homemade trap a householder can build from a jar.
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>UF/IFAS Extension</strong> states that homeowners may undertake their own integrated
           pest management plan for cockroach control with good success, or may elect to contract a
           professional. <strong>Mississippi State University Extension</strong> frames the professional
           route as a matter of not having the time or inclination to do it yourself.
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-red-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           Four positions from three publishers, and two of the four are the same publisher
           contradicting itself. We do not adjust one to fit another, and we do not treat two sources
           leaning the same way as confirmation &mdash; particularly when they are the same
@@ -635,12 +635,12 @@ export default function GermanCockroachesPage() {
       </p>
 
       <h2 id="growth">Gel Bait and Growth Regulators</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           This is the class our palmetto bugs page deliberately left out, and it left it out because
           the source attaches it to this insect and not to that one.
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Mississippi State University Extension, on growth regulators:</strong>{' '}
           <em>&ldquo;These products are especially useful in control of German cockroaches.&rdquo;</em>{' '}
           <strong>On what they do:</strong>{' '}
@@ -654,7 +654,7 @@ export default function GermanCockroachesPage() {
             commercially available IGR treatments.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>And on using them alongside a bait rather than instead of one:</strong>{' '}
           <em>
             &ldquo;IGRs are also useful when applied in combination with baits because exposure to
@@ -666,7 +666,7 @@ export default function GermanCockroachesPage() {
           </em>{' '}
           and gives that as a reason to use one in combination with an insecticide spray.
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-slate-800">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           Slow by design. The same source states they do not kill adult roaches, so nothing below is a
           way of clearing a room this week.
         </p>
@@ -715,12 +715,12 @@ export default function GermanCockroachesPage() {
       </p>
 
       <h2 id="uncarded">Sourced, With No Product Named</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           These are supported by the sources and simply have no product named here. That is a gap in
           our sourcing, not a verdict on the products.
         </p>
-        <ul className="mt-3 mb-0 space-y-2 text-base text-slate-800">
+        <ul className="mt-3 mb-0 space-y-2 text-base text-[var(--color-ink-soft)]">
           <li>
             <strong>A glue trap, for finding them rather than killing them.</strong> Mississippi State
             University Extension:{' '}
@@ -760,11 +760,11 @@ export default function GermanCockroachesPage() {
           None of that identification material is repeated here, so the two pages cannot drift apart.
         </strong>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           What we read in these sources and deliberately did not use here
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           Mississippi State&rsquo;s publication devotes a whole second section to the large roaches,
           with its own exclusion, sanitation and bait material and its own statement about station
           sizes. UF/IFAS&rsquo;s multi-species publication carries material on the Asian cockroach,

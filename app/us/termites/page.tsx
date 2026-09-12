@@ -179,18 +179,18 @@ export default function TermitesPage() {
 
       <h2 id="the-boundary">What Consumer Products Cannot Do</h2>
 
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The point every source consulted agrees on
         </p>
-        <p className="m-0 mt-3 text-base text-amber-900">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           The Alabama Cooperative Extension System states:{' '}
           <strong>
             &ldquo;Do-it-yourself products sold to homeowners at retail stores or bought over the
             Internet will seldom eradicate an existing termite problem.&rdquo;
           </strong>
         </p>
-        <p className="m-0 mt-3 text-base text-amber-900">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           An active infestation in a structure is a job for a professional. Nothing further down
           this page changes that, and nothing sold on this page is offered as a way around it.
         </p>
@@ -380,45 +380,45 @@ export default function TermitesPage() {
         native subterranean termites, and gives three differences a person can actually observe.
       </p>
       <div className="not-prose my-8">
-        <div className="overflow-x-auto rounded-xl border border-gray-200">
+        <div className="overflow-x-auto rounded-xl border border-[var(--color-rule)]">
           <table className="w-full text-sm">
-            <thead className="bg-gray-50">
+            <thead className="bg-[var(--color-paper-sunk)]">
               <tr>
-                <th className="px-4 py-3 text-left font-bold text-gray-900">Feature</th>
-                <th className="px-4 py-3 text-left font-bold text-gray-900">Formosan</th>
-                <th className="px-4 py-3 text-left font-bold text-gray-900">Native subterranean</th>
+                <th className="px-4 py-3 text-left font-bold text-[var(--color-ink)]">Feature</th>
+                <th className="px-4 py-3 text-left font-bold text-[var(--color-ink)]">Formosan</th>
+                <th className="px-4 py-3 text-left font-bold text-[var(--color-ink)]">Native subterranean</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
               <tr>
-                <td className="px-4 py-3 font-semibold text-gray-900">Swarmer length</td>
-                <td className="px-4 py-3 text-gray-700">One-half of an inch</td>
-                <td className="px-4 py-3 text-gray-700">Three-eighths of an inch</td>
+                <td className="px-4 py-3 font-semibold text-[var(--color-ink)]">Swarmer length</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">One-half of an inch</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">Three-eighths of an inch</td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-semibold text-gray-900">Swarmer color</td>
-                <td className="px-4 py-3 text-gray-700">Caramel- to brownish-yellow colored</td>
-                <td className="px-4 py-3 text-gray-700">Black</td>
+                <td className="px-4 py-3 font-semibold text-[var(--color-ink)]">Swarmer color</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">Caramel- to brownish-yellow colored</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">Black</td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-semibold text-gray-900">
+                <td className="px-4 py-3 font-semibold text-[var(--color-ink)]">
                   Soldiers, share of colony
-                  <span className="block font-normal text-gray-600">
+                  <span className="block font-normal text-[var(--color-ink-soft)]">
                     University of Georgia Extension
                   </span>
                 </td>
-                <td className="px-4 py-3 text-gray-700">15 to 20 percent</td>
-                <td className="px-4 py-3 text-gray-700">1 to 3 percent</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">15 to 20 percent</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">1 to 3 percent</td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-semibold text-gray-900">
+                <td className="px-4 py-3 font-semibold text-[var(--color-ink)]">
                   Soldiers, share of colony
-                  <span className="block font-normal text-gray-600">
+                  <span className="block font-normal text-[var(--color-ink-soft)]">
                     University of Florida IFAS Extension
                   </span>
                 </td>
-                <td className="px-4 py-3 text-gray-700">10% to 15%</td>
-                <td className="px-4 py-3 text-gray-700">1%&ndash;2%</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">10% to 15%</td>
+                <td className="px-4 py-3 text-[var(--color-ink-soft)]">1%&ndash;2%</td>
               </tr>
             </tbody>
           </table>

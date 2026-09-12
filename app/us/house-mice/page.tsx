@@ -422,11 +422,11 @@ export default function HouseMicePage() {
         <strong>No ultrasonic or vibrational device is named on this page.</strong>
       </p>
 
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           The criteria the three tools below are measured against
         </p>
-        <p className="m-0 mt-3 text-base text-slate-800">
+        <p className="m-0 mt-3 text-base text-[var(--color-ink-soft)]">
           Each listing below states, in its own text rather than only in a product title, the
           property the sources above ask for: a mouse-sized snap trap, a glue board that names
           mice as a target pest, and hardware cloth at the quarter-inch mesh five sources

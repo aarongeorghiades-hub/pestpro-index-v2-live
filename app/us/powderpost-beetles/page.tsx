@@ -208,12 +208,12 @@ export default function PowderpostBeetlesPage() {
       </p>
 
       <h2 id="scope">What This Page Carries</h2>
-      <div className="not-prose my-6 rounded-lg border border-amber-300 bg-amber-50 p-5">
-        <p className="m-0 text-base text-amber-900">
+      <div className="not-prose my-6 rounded-lg border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-5">
+        <p className="m-0 text-base text-[var(--color-ink-soft)]">
           <strong>Three products are named and two classes are deliberately empty.</strong> The
           reasons are not the same reason, and the page says which is which.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Borates:</strong> two named, because University of Kentucky names both
           formulations by name for this pest. The same source&rsquo;s limits on them are printed
           beside the products, not further down the page.{' '}
@@ -484,8 +484,8 @@ export default function PowderpostBeetlesPage() {
         <em>&ldquo;Insecticides known as borates are most widely used for this purpose.&rdquo;</em>{' '}
         It names the two formulations directly, and both are carded below.
       </p>
-      <div className="not-prose my-6 rounded-lg border border-amber-300 bg-amber-50 p-5">
-        <p className="m-0 text-base text-amber-900">
+      <div className="not-prose my-6 rounded-lg border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-5">
+        <p className="m-0 text-base text-[var(--color-ink-soft)]">
           <strong>Read this before either product below.</strong> The same source that names them
           also bounds them:{' '}
           <em>

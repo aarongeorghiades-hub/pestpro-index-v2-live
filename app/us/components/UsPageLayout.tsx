@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ProgressRail from '@/components/ProgressRail';
 
 // Layout for the US estate.
 //
@@ -69,7 +70,22 @@ export default function UsPageLayout({
   clusterNav,
 }: UsPageLayoutProps) {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[var(--color-paper)]">
+      {/* THE RAIL TAKES EVERY tocItem, AND THAT IS NOT WHAT GuideLayout DOES.
+          The UK layout filters product-card anchors out of its contents, because
+          a /best route interleaves its cards into tocItems. MEASURED HERE BEFORE
+          REUSING ANY OF THAT: zero /us pages spread products into tocItems,
+          UsToolCard emits no anchor id at all, and every toc id resolves to a
+          real section — 10/10 on cluster-flies, 12/12 on imported-fire-ants,
+          13/13 on moths. So there is nothing to filter.
+
+          COPYING THE UK FILTER WOULD HAVE BEEN ACTIVELY WRONG. It drops any
+          title containing an em-dash, and /us/moths names two genuine sections
+          "Division A — Moths That Damage Fabric" and "Division B — Moths in
+          Stored Food". The UK rule would have deleted two real stages from that
+          route's rail. Same component, different derivation, because the two
+          estates structure their contents differently. */}
+      <ProgressRail stages={tocItems} />
       {schemas.map((schema, i) => (
         <script
           key={i}
@@ -80,40 +96,40 @@ export default function UsPageLayout({
 
       {/* US header. Deliberately self-contained: the wordmark links to the US
           cluster hub, never to the UK home page. */}
-      <header className="bg-white border-b border-gray-200">
+      <header className="bg-[var(--color-ink)]">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
-          <Link href={homeHref} className="font-black text-lg text-gray-900 tracking-tight">
-            PestPro Index <span className="text-blue-600">US</span>
+          <Link href={homeHref} className="text-lg font-black tracking-tight text-[var(--color-paper)]">
+            PestPro Index <span className="text-[var(--color-ochre)]">US</span>
           </Link>
-          <nav className="hidden sm:flex items-center gap-5 text-sm font-semibold text-gray-600">
+          <nav className="hidden items-center gap-5 text-sm font-semibold text-[var(--color-paper)]/75 sm:flex">
             {clusterNav.map((item) => (
-              <Link key={item.href} href={item.href} className="hover:text-blue-600 transition-colors">{item.title}</Link>
+              <Link key={item.href} href={item.href} className="transition-colors hover:text-[var(--color-paper)]">{item.title}</Link>
             ))}
           </nav>
         </div>
       </header>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-white py-16 md:py-24">
+      <section className="border-b border-[var(--color-rule)] bg-[var(--color-surface)] py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <nav className="flex items-center gap-2 text-sm text-blue-200 mb-6">
+          <nav className="mb-6 flex items-center gap-2 text-sm text-[var(--color-ink-mute)]">
             {breadcrumbParent ? (
               <>
-                <Link href={breadcrumbParent.href} className="hover:text-white transition-colors">
+                <Link href={breadcrumbParent.href} className="transition-colors hover:text-[var(--color-teal-deep)]">
                   {breadcrumbParent.label}
                 </Link>
                 <span>/</span>
-                <span className="text-white">{title}</span>
+                <span className="text-[var(--color-ink)]">{title}</span>
               </>
             ) : (
-              <span className="text-white">{title}</span>
+              <span className="text-[var(--color-ink)]">{title}</span>
             )}
           </nav>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 leading-tight">{title}</h1>
-          <p className="text-lg md:text-xl text-blue-100 mb-6 max-w-3xl">{subtitle}</p>
+          <h1 className="mb-4 text-3xl font-black leading-tight text-[var(--color-ink)] sm:text-4xl md:text-5xl">{title}</h1>
+          <p className="mb-6 max-w-3xl text-lg text-[var(--color-ink-soft)] md:text-xl">{subtitle}</p>
 
-          <div className="flex flex-wrap items-center gap-4 text-sm text-blue-200">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[var(--color-ink-mute)]">
             <span>By the PestPro Index Team</span>
             <span className="hidden sm:inline">|</span>
             <span>Updated {lastUpdated}</span>
@@ -127,13 +143,13 @@ export default function UsPageLayout({
         <div className="flex flex-col lg:flex-row gap-12">
           <aside className="lg:w-64 flex-shrink-0">
             <div className="lg:sticky lg:top-24">
-              <h2 className="font-bold text-gray-900 mb-3 text-sm uppercase tracking-wider">Contents</h2>
+              <h2 className="mb-3 text-sm font-bold text-[var(--color-ink)]">Contents</h2>
               <nav className="space-y-1">
                 {tocItems.map((item) => (
                   <a
                     key={item.id}
                     href={`#${item.id}`}
-                    className="block text-sm text-gray-600 hover:text-blue-600 py-1 border-l-2 border-transparent hover:border-blue-600 pl-3 transition-colors"
+                    className="block border-l-2 border-transparent py-1 pl-3 text-sm text-[var(--color-ink-soft)] transition-colors hover:border-[var(--color-ochre)] hover:text-[var(--color-ink)]"
                   >
                     {item.title}
                   </a>
@@ -142,11 +158,11 @@ export default function UsPageLayout({
 
               {relatedPages.length > 0 && (
                 <div className="mt-8">
-                  <h2 className="font-bold text-gray-900 mb-2 text-sm">Related Pages</h2>
+                  <h2 className="mb-2 text-sm font-bold text-[var(--color-ink)]">Related Pages</h2>
                   <ul className="space-y-1">
                     {relatedPages.map((page) => (
                       <li key={page.href}>
-                        <Link href={page.href} className="text-sm text-blue-600 hover:underline">
+                        <Link href={page.href} className="text-sm text-[var(--color-teal-deep)] hover:underline">
                           {page.title}
                         </Link>
                       </li>
@@ -164,21 +180,21 @@ export default function UsPageLayout({
       </div>
 
       {relatedPages.length > 0 && (
-        <section className="bg-gray-50 border-t border-gray-200 py-16">
+        <section className="border-t border-[var(--color-rule)] bg-[var(--color-paper-sunk)] py-16">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Keep Reading</h2>
+            <h2 className="text-2xl font-bold text-[var(--color-ink)] mb-6">Keep Reading</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedPages.map((page) => (
                 <Link
                   key={page.href}
                   href={page.href}
-                  className="group block p-6 bg-white rounded-xl border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all"
+                  className="group block rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6 transition-colors hover:border-[var(--color-ochre-edge)]"
                 >
-                  <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-teal-deep)] transition-colors">
                     {page.title}
                   </h3>
-                  <span className="inline-block mt-3 text-sm text-blue-600 font-medium group-hover:translate-x-1 transition-transform">
-                    Read more &rarr;
+                  <span className="inline-block mt-3 text-sm text-[var(--color-teal-deep)] font-medium group-hover:translate-x-1 transition-transform">
+                    Read more
                   </span>
                 </Link>
               ))}
@@ -188,7 +204,7 @@ export default function UsPageLayout({
       )}
 
       {/* US footer. No UK links. */}
-      <footer className="bg-[#0f172a] text-blue-200 py-10">
+      <footer className="bg-[var(--color-ink)] py-10 text-[var(--color-paper)]/60">
         <div className="max-w-7xl mx-auto px-4 text-sm">
           <p className="font-bold text-white mb-2">PestPro Index US</p>
           <p className="max-w-3xl">

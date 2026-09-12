@@ -294,11 +294,11 @@ export default function ArizonaBarkScorpionsPage() {
         </em>
       </p>
 
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The threshold the University of Arizona publishes for children
         </p>
-        <p className="m-0 mt-3 text-sm text-red-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           University of Arizona Cooperative Extension states:{' '}
           <em>
             &ldquo;If children 9 years or under, or weighing less than 70lb (32 Kg) are
@@ -306,7 +306,7 @@ export default function ArizonaBarkScorpionsPage() {
             nearest hospital for treatment immediately.&rdquo;
           </em>
         </p>
-        <p className="m-0 mt-3 text-sm text-red-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           The same publication states separately that envenomation of children under 9 years
           of age or people with hypertension should be considered serious and that
           caregivers should call 911 for immediate medical help, and that a very small
@@ -493,11 +493,11 @@ export default function ArizonaBarkScorpionsPage() {
         </em>
       </p>
 
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           One thing the sources tell you not to do
         </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           University of Arizona Cooperative Extension states:{' '}
           <em>
             &ldquo;Screen weep holes in brick veneer or weep screed with coarse steel mesh
@@ -705,9 +705,9 @@ export default function ArizonaBarkScorpionsPage() {
         </em>
       </p>
 
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">Eye safety</p>
-        <p className="m-0 mt-3 text-sm text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">Eye safety</p>
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           A University of Arizona Backyard Gardener publication carries this warning with its
           advice to buy a UV light:{' '}
           <em>

@@ -192,15 +192,15 @@ export default function HouseCentipedesPage() {
       </p>
 
       <h2 id="scope">What This Page Carries</h2>
-      <div className="not-prose my-6 rounded-lg border border-amber-300 bg-amber-50 p-5">
-        <p className="m-0 text-base text-amber-900">
+      <div className="not-prose my-6 rounded-lg border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-5">
+        <p className="m-0 text-base text-[var(--color-ink-soft)]">
           <strong>No product is named on this page, and the criterion failed before any listing was
           looked at.</strong> One source names a product class &mdash; sticky monitors &mdash; and
           names it as a way of finding out what the centipede is eating rather than as a way of
           controlling the centipede. It publishes no size, no adhesive, no count and no placement
           figure, so there is nothing here to measure a listing against.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>One source advises against the other obvious class.</strong> Colorado State
           Extension states that interior applications of insecticides are not recommended. That is
           not a gap in the sourcing; it is the sourcing.

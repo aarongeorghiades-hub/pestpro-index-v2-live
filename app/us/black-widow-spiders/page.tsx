@@ -389,11 +389,11 @@ export default function BlackWidowSpidersPage() {
         </em>
         .
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           These are not reconciled here, and there is no house answer
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           K-State is describing typical mature females and the other three are describing the
           variation, so both can be true at once &mdash; but{' '}
           <strong>
@@ -597,34 +597,34 @@ export default function BlackWidowSpidersPage() {
 
       <h3>⚠ Onset and duration: four sources, four timelines</h3>
       <div className="overflow-x-auto not-prose my-6">
-        <table className="min-w-full border border-gray-300 text-sm">
-          <thead className="bg-gray-100">
+        <table className="min-w-full border border-[var(--color-rule)] text-sm">
+          <thead className="bg-[var(--color-paper-sunk)]">
             <tr>
-              <th className="border border-gray-300 px-3 py-2 text-left">Source</th>
-              <th className="border border-gray-300 px-3 py-2 text-left">Onset</th>
-              <th className="border border-gray-300 px-3 py-2 text-left">Duration</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">Source</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">Onset</th>
+              <th className="border border-[var(--color-rule)] px-3 py-2 text-left">Duration</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-gray-300 px-3 py-2">UC IPM</td>
-              <td className="border border-gray-300 px-3 py-2">within an hour, symptoms may start to appear</td>
-              <td className="border border-gray-300 px-3 py-2">usually dissipate in a few days</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">UC IPM</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">within an hour, symptoms may start to appear</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">usually dissipate in a few days</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2">Penn State</td>
-              <td className="border border-gray-300 px-3 py-2">pain at one to two hours; body symptoms within one to three hours</td>
-              <td className="border border-gray-300 px-3 py-2">generally within four days, may last as long as a week</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">Penn State</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">pain at one to two hours; body symptoms within one to three hours</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">generally within four days, may last as long as a week</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2">Colorado State</td>
-              <td className="border border-gray-300 px-3 py-2">discomfort shortly after; acute symptoms increase during the first day</td>
-              <td className="border border-gray-300 px-3 py-2">decline after two to three days; some continue several weeks up to a month</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">Colorado State</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">discomfort shortly after; acute symptoms increase during the first day</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">decline after two to three days; some continue several weeks up to a month</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-3 py-2">UF/IFAS</td>
-              <td className="border border-gray-300 px-3 py-2">not stated</td>
-              <td className="border border-gray-300 px-3 py-2">recovery within 24 hours following treatment, or 3 to 5 days without supportive care</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">UF/IFAS</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">not stated</td>
+              <td className="border border-[var(--color-rule)] px-3 py-2">recovery within 24 hours following treatment, or 3 to 5 days without supportive care</td>
             </tr>
           </tbody>
         </table>
@@ -742,11 +742,11 @@ export default function BlackWidowSpidersPage() {
         </em>
         . In that survey there were no deaths.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           This is not the same number as the one further up this page, and the two are not added
         </p>
-        <p className="m-0 mt-2 text-sm text-blue-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           Penn State&rsquo;s figure, in the section on deaths above, is{' '}
           <strong>an annual estimate of people bitten</strong>. This one is{' '}
           <strong>
@@ -763,17 +763,17 @@ export default function BlackWidowSpidersPage() {
       </div>
 
       <h2 id="medical">If You Think You Have Been Bitten</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Every source here that publishes first-aid guidance says to involve a clinician, and two
           say immediately. That is the only point they all agree on.
         </p>
-        <p className="m-0 mt-3 text-sm text-red-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           Past that, the published instructions differ from each other, so each is set out{' '}
           <strong>complete and separately, exactly as its own source states it</strong>. Nothing has
           been added to any of them and nothing has been merged into a house version.
         </p>
-        <ul className="mt-4 mb-0 space-y-3 text-sm text-red-900">
+        <ul className="mt-4 mb-0 space-y-3 text-sm text-[var(--color-ink-soft)]">
           <li>
             <strong>UC IPM:</strong>{' '}
             <em>
@@ -800,7 +800,7 @@ export default function BlackWidowSpidersPage() {
             recorded here as an absence rather than filled in from a neighbor.
           </li>
         </ul>
-        <p className="m-0 mt-4 text-sm text-red-900">
+        <p className="m-0 mt-4 text-sm text-[var(--color-ink-soft)]">
           <strong>Two of those differ on the reason for the cold</strong> &mdash; K-State says to
           reduce swelling, UC IPM says to relieve pain &mdash; and UC IPM states elsewhere that
           these bites do not cause conspicuous swelling. <strong>K-State alone recommends
@@ -957,11 +957,11 @@ export default function BlackWidowSpidersPage() {
         </em>{' '}
         UF/IFAS asks more loosely for gardening gloves.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Why this is a different glove from the one on our other spider page
         </p>
-        <p className="m-0 mt-2 text-sm text-amber-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           Our <a href="https://pestproindex.com/us/brown-recluse-spiders">brown recluse page</a>{' '}
           names three nitrile gloves, because the source there asks for gloves without specifying a
           material. <strong>Two of the widow sources specify leather, and one of those also asks
@@ -1087,11 +1087,11 @@ export default function BlackWidowSpidersPage() {
           contents.&rdquo;
         </em>
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Why this page names no insecticide
         </p>
-        <p className="m-0 mt-2 text-sm text-amber-900">
+        <p className="m-0 mt-2 text-sm text-[var(--color-ink-soft)]">
           That 2016 finding is the one criterion in the widow literature a product could actually be
           measured against: <strong>petroleum-based rather than water-based</strong>.{' '}
           <strong>

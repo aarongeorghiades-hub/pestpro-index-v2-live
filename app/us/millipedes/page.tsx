@@ -180,8 +180,8 @@ export default function MillipedesPage() {
       </p>
 
       <h2 id="scope">What This Page Carries</h2>
-      <div className="not-prose my-6 rounded-lg border border-amber-300 bg-amber-50 p-5">
-        <p className="m-0 text-base text-amber-900">
+      <div className="not-prose my-6 rounded-lg border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-5">
+        <p className="m-0 text-base text-[var(--color-ink-soft)]">
           <strong>No product is named here.</strong> Colorado State does name four pyrethroid active
           ingredients for a perimeter treatment, and says in the same passage that they are sold
           under various trade names &mdash; a chemistry rather than a product, which is not
@@ -190,7 +190,7 @@ export default function MillipedesPage() {
           the same publisher and reached the same conclusion; these two pages are not going to
           disagree about it.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Sealing is named by five sources and specified by none</strong> &mdash; no gap
           width, no material, no door-sweep dimension &mdash; so there is nothing to rank a product
           against there either. And the same source that names the spray opens by saying control is

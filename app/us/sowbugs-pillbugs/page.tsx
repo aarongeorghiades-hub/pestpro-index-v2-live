@@ -196,14 +196,14 @@ export default function SowbugsPillbugsPage() {
       </p>
 
       <h2 id="scope">What This Page Carries</h2>
-      <div className="not-prose my-6 rounded-lg border border-amber-300 bg-amber-50 p-5">
-        <p className="m-0 text-base text-amber-900">
+      <div className="not-prose my-6 rounded-lg border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-5">
+        <p className="m-0 text-base text-[var(--color-ink-soft)]">
           <strong>No product is named here, and on this page the sources say so themselves.</strong>{' '}
           Kansas State states that pest control materials are generally not required indoors, and
           Colorado State that control generally is unnecessary. That is not an absence for want of a
           specification &mdash; it is two published sources arguing against the purchase.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Sealing and moisture work are named by three sources and specified by none</strong>
           &mdash; no gap width, no material, no humidity figure &mdash; so there is nothing to rank a
           product against there either. That is the same position{' '}

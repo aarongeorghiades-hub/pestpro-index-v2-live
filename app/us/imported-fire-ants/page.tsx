@@ -351,8 +351,8 @@ export default function ImportedFireAntsPage() {
         worth reading in full:
       </p>
 
-      <div className="not-prose my-8 rounded-xl border-2 border-gray-300 bg-gray-50 p-6">
-        <p className="m-0 text-sm text-gray-800">
+      <div className="not-prose my-8 rounded-xl border-2 border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-sm text-[var(--color-ink)]">
           <em>
             &ldquo;DISCLAIMER: This fact sheet provides a review of information gathered
             regarding medical aspects of the red imported fire ant. As such, this fact sheet is
@@ -362,7 +362,7 @@ export default function ImportedFireAntsPage() {
             other appropriate specialists.&rdquo;
           </em>
         </p>
-        <p className="m-0 mt-3 text-sm font-bold text-gray-900">
+        <p className="m-0 mt-3 text-sm font-bold text-[var(--color-ink)]">
           Texas A&amp;M, Fire Ant Plan Fact Sheet #023
         </p>
       </div>
@@ -399,18 +399,18 @@ export default function ImportedFireAntsPage() {
         </em>
       </p>
 
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           The emergency instruction, as Texas A&amp;M gives it
         </p>
-        <p className="m-0 mt-3 text-sm text-red-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           <em>
             &ldquo;If a sting causes severe chest pain, nausea, severe sweating, loss of breath,
             serious swelling or slurred speech, the person should be taken to an emergency
             medical facility immediately.&rdquo;
           </em>
         </p>
-        <p className="m-0 mt-3 text-sm text-red-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           On the symptoms themselves, the same publication states:{' '}
           <em>
             &ldquo;The symptoms of anaphylaxis can include dizziness, nausea, sweating, low
@@ -529,11 +529,11 @@ export default function ImportedFireAntsPage() {
         </em>
       </p>
 
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           Before you broadcast anything: two sources say it can be the wrong move
         </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           UF/IFAS Extension states that{' '}
           <em>
             &ldquo;broadcast baiting may be counterproductive because it can also decrease
@@ -545,7 +545,7 @@ export default function ImportedFireAntsPage() {
             mound treatments to prevent affecting non-target ant populations.&rdquo;
           </em>
         </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           Texas A&amp;M puts a number on where the whole program stops being the right tool.
           It is{' '}
           <em>
@@ -559,7 +559,7 @@ export default function ImportedFireAntsPage() {
           </em>
           .
         </p>
-        <p className="m-0 mt-3 text-sm text-amber-900">
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           <strong>
             Texas A&amp;M, AgriLife Extension and Clemson Extension all put a broadcast bait
             first. UF/IFAS qualifies it and Texas A&amp;M names a density below which it is not
@@ -888,9 +888,9 @@ export default function ImportedFireAntsPage() {
         all three warn about burns.
       </p>
 
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">Never gasoline</p>
-        <p className="m-0 mt-3 text-sm text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">Never gasoline</p>
+        <p className="m-0 mt-3 text-sm text-[var(--color-ink-soft)]">
           Texas A&amp;M:{' '}
           <em>
             &ldquo;Never use gasoline or other petroleum products for fire ant control! Although

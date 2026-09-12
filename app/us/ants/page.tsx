@@ -245,13 +245,13 @@ export default function AntsPage() {
       </p>
 
       <h2 id="nest">The Ants You See Are Not the Colony</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-blue-300 bg-blue-50 p-6">
-        <p className="m-0 text-base font-bold text-blue-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-teal-edge)] bg-[var(--color-teal-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           This is the one idea the whole page rests on, and all five sources state a version of it.
           What crosses your floor is a forager. The colony it feeds is somewhere else, and on three
           of these four ants that somewhere is outdoors.
         </p>
-        <p className="mt-3 mb-0 text-sm text-blue-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>
             Colorado State University Extension, in a fact sheet published November 1996 and reviewed
             August 2025:
@@ -261,14 +261,14 @@ export default function AntsPage() {
             a home but returning to colonies they have established outdoors.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-blue-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>The same source, on the exception, and it names all three of the ants involved:</strong>{' '}
           <em>
             &ldquo;This ability to nest indoors is most often associated with pharaoh ants, but some
             colonies of pavement ants and carpenter ants may also establish within a building.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-blue-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>UC IPM, on how little of a colony you are looking at:</strong>{' '}
           <em>
             &ldquo;Spraying around the foundation won&rsquo;t provide permanent control, because it
@@ -276,7 +276,7 @@ export default function AntsPage() {
             represent only a small proportion of the colony.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-blue-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>Utah State University Extension, on how far that can reach, for pavement ants:</strong>{' '}
           <em>
             &ldquo;They have been found foraging up to 30 feet away from their colony, so the source
@@ -287,7 +287,7 @@ export default function AntsPage() {
             &ldquo;Foraging trails can vary in length, but often range between 33 and 157 feet.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-blue-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           Two figures, two species, two documents. They are not interchangeable and neither is a
           figure for ants in general.
         </p>
@@ -306,12 +306,12 @@ export default function AntsPage() {
       </p>
 
       <h2 id="four">The Four Ants on This Page</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-base font-bold text-slate-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink)]">
           They are not equally documented, and that is worth knowing before you read the sections
           below.
         </p>
-        <p className="mt-3 mb-0 text-base text-slate-800">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           Odorous house ants and pavement ants each have a dedicated Utah State University fact
           sheet running to tens of thousands of words. Carpenter ants and pharaoh ants have labeled
           blocks inside multi-species documents and no dedicated source in this pack.{' '}
@@ -458,12 +458,12 @@ export default function AntsPage() {
       </p>
 
       <h2 id="carpenter">Carpenter Ants Need Different Tactics</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           One source states a product limit that is not about strength. It is about whether the ant
           goes to the product at all.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>
             Colorado State University Extension, published November 1996 and reviewed August 2025:
           </strong>{' '}
@@ -472,7 +472,7 @@ export default function AntsPage() {
             will feed at some liquid or gel sugar-based baits.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           Read as written, a solid bait is not a weaker choice against a carpenter ant. It is one the
           ant does not visit. Every product named further down this page is a liquid, so none of them
           is caught by that sentence &mdash; but not one of those listings names carpenter ants
@@ -513,8 +513,8 @@ export default function AntsPage() {
         <strong>One source names the two forms a household buyer will actually find</strong>, and
         that sentence is the only criterion the four products below are measured against.
       </p>
-      <div className="not-prose my-8 rounded-xl border-2 border-slate-300 bg-slate-50 p-6">
-        <p className="m-0 text-sm text-slate-800">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-rule)] bg-[var(--color-paper-sunk)] p-6">
+        <p className="m-0 text-sm text-[var(--color-ink-soft)]">
           <strong>UC IPM, on what is available:</strong>{' '}
           <em>
             &ldquo;For residential users, the most readily available forms are solids or liquids that
@@ -526,7 +526,7 @@ export default function AntsPage() {
             use.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-slate-800">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>On where they go, which is not where most people put them:</strong>{' '}
           <em>
             &ldquo;Use baits primarily outdoors. Use indoors only if there is a serious infestation
@@ -537,7 +537,7 @@ export default function AntsPage() {
           be placed where ants can easily find them while avoiding areas accessible to pets and small
           children.
         </p>
-        <p className="mt-3 mb-0 text-sm text-slate-800">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>On what is in them:</strong>{' '}
           <em>
             &ldquo;Ant baits contain carbohydrates (e.g., sugars), proteins, oils, or a combination of
@@ -551,7 +551,7 @@ export default function AntsPage() {
           choose baits containing hydramethylnon, boric acid, fipronil, sulfluramid or abamectin, and
           to use enclosed, tamper-resistant bait traps that have a premixed food with the pesticide.
         </p>
-        <p className="mt-3 mb-0 text-sm text-slate-800">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>And Utah State on placement, which no product can do for you:</strong>{' '}
           <em>
             &ldquo;If baits are used to manage ants, locate as many foraging trails as possible and
@@ -623,13 +623,13 @@ export default function AntsPage() {
       </p>
 
       <h2 id="spread">Four Sources, Four Positions on Spraying</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-red-300 bg-red-50 p-6">
-        <p className="m-0 text-base font-bold text-red-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-warn-edge)] bg-[var(--color-warn-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           This is the sharpest disagreement in the pack. All four documents are extension
           publications, all four are current on their own sites, and they do not say the same thing.
           This page reports all four and picks none.
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>UC IPM, 10/2012, is the most restrictive:</strong>{' '}
           <em>
             &ldquo;Baits are a key tool for managing ants and the only type of insecticide recommended
@@ -646,7 +646,7 @@ export default function AntsPage() {
           And on the comparison itself:{' '}
           <em>&ldquo;When properly used, baits are more effective and safer than sprays.&rdquo;</em>
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>Penn State, updated 5 August 2024, gives instructions in the same direction but on
           different grounds:</strong>{' '}
           <em>&ldquo;Avoid sprays, bombs/foggers, and liquid concentrates.&rdquo;</em> indoors, because
@@ -656,7 +656,7 @@ export default function AntsPage() {
           Its stated reason is not efficacy: sprays leave residues and may kill many other small
           creatures besides ants, and birds may eat pesticide granules and can be killed.
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>
             Colorado State, published November 1996 and reviewed August 2025, treats perimeter
             treatment as an ordinary option:
@@ -667,7 +667,7 @@ export default function AntsPage() {
           that far more effective than indoor surface sprays are insecticides used as baits, and that
           contact sprays should not be used in the vicinity where baits are applied.
         </p>
-        <p className="mt-3 mb-0 text-sm text-red-900">
+        <p className="mt-3 mb-0 text-sm text-[var(--color-ink-soft)]">
           <strong>
             Utah State University Extension states a mechanism rather than a verdict, and it is the
             one to read before treating anything:
@@ -688,7 +688,7 @@ export default function AntsPage() {
             indoors.&rdquo;
           </em>
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-red-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           Three of these four lean away from spraying and one treats it as routine. That is not a
           three-to-one verdict and this page does not present it as one. A source sitting nearer
           another does not confirm it, and no reader is served by us averaging four extension services
@@ -744,16 +744,16 @@ export default function AntsPage() {
       </p>
 
       <h2 id="name">Two Sources, Two Scientific Names for One Ant</h2>
-      <div className="not-prose my-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
-        <p className="m-0 text-base font-bold text-amber-900">
+      <div className="not-prose my-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-6">
+        <p className="m-0 text-base font-bold text-[var(--color-ink-soft)]">
           If you look up the pavement ant you will find two Latin names, and both of these sources are
           live. This is a real disagreement in the literature, not an error on one of the pages.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>UC IPM, on a page dated 10/2012</strong>, gives the pavement ant as{' '}
           <em>Tetramorium caespitum</em>.
         </p>
-        <p className="mt-3 mb-0 text-base text-amber-900">
+        <p className="mt-3 mb-0 text-base text-[var(--color-ink-soft)]">
           <strong>Utah State University Extension, June 2020</strong>, states that until recently the
           pavement ant&rsquo;s scientific name was <em>Tetramorium caespitum</em>, but that recent
           genetic work has clarified that the common pest <em>Tetramorium</em> species in the United
@@ -763,7 +763,7 @@ export default function AntsPage() {
           few closely related colonies introduced into the northeastern United States about 200 years
           ago.
         </p>
-        <p className="mt-3 mb-0 text-base font-bold text-amber-900">
+        <p className="mt-3 mb-0 text-base font-bold text-[var(--color-ink-soft)]">
           The USU statement is the later one and cites the work. The UC IPM page has not been revised
           since 2012. We report both with their dates rather than quietly adopting one, because
           nothing on this page turns on which name is correct.
