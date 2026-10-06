@@ -127,6 +127,7 @@ const products: ProductRecord[] = [
       "Pre-baited enclosed station",
       "Spinosad, named by the maker",
       "Two stations; indoor and outdoor, as listed",
+      "Best Overall",
     ],
     h2Label: "Best Overall",
     h2Name: "Nippon Ant Bait Station Twin Pack",
@@ -154,6 +155,7 @@ const products: ProductRecord[] = [
       "Gel-baited enclosed station",
       "not stated",
       "Six stations, 5g each; indoor and outdoor, as listed",
+      "Best Multi-Pack",
     ],
     h2Label: "Best Multi-Pack",
     h2Name: "NOPE! Ant Killer Bait Station (6 x 5g)",
@@ -301,6 +303,7 @@ export default function BestAntKillersPage() {
               <th className="text-left p-2 border-b font-semibold">Form</th>
               <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
               <th className="text-left p-2 border-b font-semibold">Quantity and use, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
           </thead>
           <tbody>
