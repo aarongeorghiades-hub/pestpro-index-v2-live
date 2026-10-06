@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -105,6 +106,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Records are addressed BY IDENTITY, never by position (Law 107).
@@ -142,6 +148,9 @@ const products: ProductRecord[] = [
     h2Name: "Ready Steady Defend Silverfish Killer Spray 1L",
     tocLabel: "Best Spray",
     tocName: "Ready Steady Defend Silverfish Killer Spray",
+    pick: "A litre of ready-to-use cypermethrin spray, residual for 12 weeks per the maker.",
+    blurb: "Our spray pick for the skirting boards and corners where you have seen them. It is a litre of ready-to-use spray with the active named as cypermethrin at 0.1% w/w, and the maker states up to 12 weeks of residual action per application. The maker also describes it as water-based, low-odour and non-staining, and suitable for walls, floors, carpets and furnishings.",
+    pros: ["1 litre, ready to use", "Cypermethrin 0.1% w/w, named by the maker", "Up to 12 weeks residual per application, per the maker", "Water-based, low-odour and non-staining, per the maker"],
   },
   {
     anchorId: "best-trap",
@@ -166,6 +175,9 @@ const products: ProductRecord[] = [
     h2Name: "Super Ninja Silverfish Trap (3-Pack)",
     tocLabel: "Best Trap",
     tocName: "Super Ninja Silverfish Trap",
+    pick: "Three glue traps that show you where silverfish are walking.",
+    blurb: "Start here if you are not yet sure where they are coming from. You get three glue traps with a food-based attractant in the glue, with up to 90 days of coverage each according to the maker. There is no insecticide in them. The listing gives their use as trapping and monitoring an infestation, which tells you where any spray or powder should go.",
+    pros: ["Three glue traps per pack", "No insecticide", "Up to 90 days per trap, per the maker", "Food-based attractant in the glue, per the maker"],
   },
   {
     anchorId: "best-dehumidifier",
@@ -190,6 +202,9 @@ const products: ProductRecord[] = [
     h2Name: "Pro Breeze 12L/Day Dehumidifier",
     tocLabel: "Best Long-Term Solution",
     tocName: "Pro Breeze Dehumidifier",
+    pick: "A 12 litre a day dehumidifier for the damp that silverfish depend on.",
+    blurb: "The pick for the longer job, because the source this page reads names moisture as the condition silverfish depend on. It extracts 12 litres a day into a 1.8 litre tank, with a hose option for continuous drainage. An automatic humidity sensor lets you set a target, and there is a 24-hour timer with auto shut-off. The maker states sound levels under 38dB.",
+    pros: ["12 litres a day extraction", "Humidity sensor with a settable target", "24-hour timer and auto shut-off", "Under 38dB, per the maker"],
   },
   {
     anchorId: "best-powder",
@@ -214,6 +229,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula 'P' Silverfish Killer Powder 300g",
     tocLabel: "Best Powder",
     tocName: "Pest Expert Killer Powder",
+    pick: "300g of permethrin dust in a puffer pack, for gaps and power points.",
+    blurb: "A dust for hard-to-reach places. It is 300 grams in a puffer pack with permethrin named as the active, listed for use indoors or outside, including around power points. Its target species row reads Insects rather than Silverfish.",
+    pros: ["300g puffer pack", "Permethrin, named by the maker", "Listed for use around power points", "Indoor or external application"],
   },
 ];
 
@@ -254,15 +272,29 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    The spray and the powder are insecticides, and each label sets where it may
+    be applied, at what rate, and what must be kept away from it.{" "}
+    <a href="#legal" className="underline">
+      What the label governs
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Four Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "The Damp Is the Infestation" },
   { id: "legal", title: "What the Label Governs" },
   { id: "limits", title: "Where a Treatment Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Product Is Not the Answer" },
   { id: "using", title: "Using Them" },
-  { id: "compared", title: "The Four Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -288,6 +320,18 @@ export default function BestSilverfishTreatmentsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -310,6 +354,56 @@ export default function BestSilverfishTreatmentsPage() {
         glue trap that tells you where the insects are and a dehumidifier that
         removes the thing they need. That split is the argument of this page.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Four Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        claim attributed to the maker who makes it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Quantity or duration, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -471,32 +565,6 @@ export default function BestSilverfishTreatmentsPage() {
         because neither contains one.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A litre of ready-to-use residual spray with the active named on the listing as cypermethrin at 0.1% w/w, and a maker's claim of up to twelve weeks of residual action per application. Its maker describes it as water-based, low-odour and suitable for walls, floors, carpets and furnishings. Its target species row carries a sentence rather than a species name, and the card reports the row as it stands.",
-                "Three glue traps with a food-based attractant in the glue, listed for indoor use with a target species of Silverfish and up to ninety days of coverage each. Its maker describes the traps as odourless and free from chemicals and smells; that is the maker's description of its own product and this page adds nothing to it. The listing gives the recommended use as trapping and monitoring an infestation, which is what a trap is for.",
-                "Not an insecticide at all: a compressor dehumidifier listed at twelve litres a day into a 1.8 litre tank, with a humidity sensor, a 24-hour timer and a hose option for continuous drainage. Its maker states sound levels below 38dB, and its listing title carries a Which? Best Buy award for dehumidifiers dated 2025. It is on this page because the source names moisture as the condition the insect depends on.",
-                "Three hundred grams of permethrin dust in a puffer pack, listed for indoor and external application and specifically for the area around power points and other hard-to-reach places. Its own listing title describes it as HSE approved and tested, which is the maker's wording. Its target species row reads Insects rather than Silverfish, and the card says so.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Product Is Not the Answer</h2>
@@ -551,36 +619,6 @@ export default function BestSilverfishTreatmentsPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">The Four Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        claim attributed to the maker who makes it. Where a listing does not
-        state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Type</th>
-              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Quantity or duration, as listed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

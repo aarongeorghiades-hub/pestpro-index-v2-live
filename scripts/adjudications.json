@@ -4,302 +4,303 @@
   "routes": {
     "best/ant-gel-bait": {
       "judgement": "correct-as-built",
-      "date": "2026-09-06",
-      "fingerprint": "5f92eff5ea29",
-      "note": "S67 R8 rollout rebuild, six routes, card sequences unchanged"
+      "date": "2026-10-06",
+      "fingerprint": "0eac0aebb822",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/ant-killers": {
       "judgement": "correct-as-built",
-      "date": "2026-09-09",
-      "fingerprint": "751b83cfbf33",
-      "note": "S69 R1 rebuild to the R8 pattern: the situation, health, legal and limits sections now precede every card, and on best/carpet-beetle-treatments one mismatched card was removed under the S67 R10 ruling. Re-adjudicated correct-as-built by the PM for this round."
+      "date": "2026-10-06",
+      "fingerprint": "ab163b0429d2",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/awaabs-law-damp-mould-equipment": {
       "judgement": "correct-as-built",
-      "date": "2026-09-09",
-      "fingerprint": "f19b4175e3de",
-      "note": "S68 R8 — Group B first four rebuilt to the R8 pattern on named health sources (UC IPM, NHS, GOV.UK); sections added and renamed, awaabs converted from JSX-prop cards to one array; bed-bug-treatments also loses B00B2KP7U0, a clothes-moth spray whose listing names no bed bug, under the S67 R10 mismatch ruling; remaining card order, labels and numerals unmoved"
+      "date": "2026-10-06",
+      "fingerprint": "3054298ff1ad",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/bed-bug-mattress-encasement": {
       "judgement": "correct-as-built",
-      "date": "2026-09-09",
-      "fingerprint": "dbea3400a214",
-      "note": "S69 R1 rebuild to the R8 pattern: the situation, health, legal and limits sections now precede every card, and on best/carpet-beetle-treatments one mismatched card was removed under the S67 R10 ruling. Re-adjudicated correct-as-built by the PM for this round."
+      "date": "2026-10-06",
+      "fingerprint": "afdb8efdfbf8",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/bed-bug-spray": {
       "judgement": "correct-as-built",
-      "date": "2026-09-09",
-      "fingerprint": "1de493458134",
-      "note": "S68 R8 — Group B first four rebuilt to the R8 pattern on named health sources (UC IPM, NHS, GOV.UK); sections added and renamed, awaabs converted from JSX-prop cards to one array; bed-bug-treatments also loses B00B2KP7U0, a clothes-moth spray whose listing names no bed bug, under the S67 R10 mismatch ruling; remaining card order, labels and numerals unmoved"
+      "date": "2026-10-06",
+      "fingerprint": "7cd6fbcb7384",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/bed-bug-treatments": {
       "judgement": "correct-as-built",
-      "date": "2026-09-09",
-      "fingerprint": "cf5d5f028a18",
-      "note": "S68 R8 — Group B first four rebuilt to the R8 pattern on named health sources (UC IPM, NHS, GOV.UK); sections added and renamed, awaabs converted from JSX-prop cards to one array; bed-bug-treatments also loses B00B2KP7U0, a clothes-moth spray whose listing names no bed bug, under the S67 R10 mismatch ruling; remaining card order, labels and numerals unmoved"
+      "date": "2026-10-06",
+      "fingerprint": "b5471323092e",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/bird-deterrents": {
       "judgement": "correct-as-built",
-      "date": "2026-09-08",
-      "fingerprint": "b779bd3aaa5f",
-      "note": "S68 R7 — fox-deterrents, squirrel-deterrents and bird-deterrents rebuilt to the R8 pattern under Law 191 (sections added and renamed); fox-deterrents also loses B0BMNP26FP, a coyote product whose listing names no fox, under the S67 R10 mismatch ruling; remaining card order and ASINs unmoved"
+      "date": "2026-10-06",
+      "fingerprint": "838451244d56",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/carpet-beetle-treatments": {
       "judgement": "correct-as-built",
-      "date": "2026-09-09",
-      "fingerprint": "855c56eada03",
-      "note": "S69 R1 rebuild to the R8 pattern: the situation, health, legal and limits sections now precede every card, and on best/carpet-beetle-treatments one mismatched card was removed under the S67 R10 ruling. Re-adjudicated correct-as-built by the PM for this round."
+      "date": "2026-10-06",
+      "fingerprint": "73e3b476d611",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/cat-deterrents": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "e527485cd20b",
-      "note": "S68 R6 — spider-repellent, cat-deterrents and ultrasonic-pest-repellers rebuilt to the R8 pattern under Law 191 (sections added and renamed, h2s carry the listing descriptor and the product name); card order and ASINs unmoved on all three"
+      "date": "2026-10-06",
+      "fingerprint": "143bb9fb3d09",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/cockroach-gel-bait": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "771282b6557e",
-      "note": "S68 R5 — one card appended at the end of flea-treatments (one-shot aerosol), wasp-killers (nest powder) and cockroach-gel-bait (gel bait), the product type each title promised; existing cards, order and numerals unmoved"
+      "date": "2026-10-06",
+      "fingerprint": "f8d1b15c7a14",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/cockroach-killers": {
       "judgement": "correct-as-built",
-      "date": "2026-09-09",
-      "fingerprint": "2de4c1c3fe96",
-      "note": "S68 R8 — Group B first four rebuilt to the R8 pattern on named health sources (UC IPM, NHS, GOV.UK); sections added and renamed, awaabs converted from JSX-prop cards to one array; bed-bug-treatments also loses B00B2KP7U0, a clothes-moth spray whose listing names no bed bug, under the S67 R10 mismatch ruling; remaining card order, labels and numerals unmoved"
+      "date": "2026-10-06",
+      "fingerprint": "e9232af8165e",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/commercial-bird-proofing": {
       "judgement": "correct-as-built",
-      "date": "2026-09-09",
-      "fingerprint": "764bda273b16",
-      "note": "S69 R3: best/professional-bird-netting-kits rebuilt to the R69R1/R69R2 pattern so the legal and limits sections precede every card; on best/professional-mattress-encasements and best/commercial-bird-proofing two PM rulings changed award labels, which are part of the h2 sequence the fingerprint reads. Re-adjudicated correct-as-built by the PM for this round."
+      "date": "2026-10-06",
+      "fingerprint": "b82d7feb770c",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/commercial-dehumidifiers": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "772d199f0810",
-      "note": "S68 R4 — commercial-dehumidifiers rebuilt to the R8 pattern (sections added/renamed, two descriptor h2s take the card award under Law 189, cards unmoved); professional-insect-light-traps h2 label corrected to listing facts (16W Aluminium Grid Unit), cards unmoved"
+      "date": "2026-10-06",
+      "fingerprint": "4d7906a4df10",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/commercial-fly-killers": {
       "judgement": "correct-as-built",
-      "date": "2026-09-05",
-      "fingerprint": "b285b9b7bb2a"
+      "date": "2026-10-06",
+      "fingerprint": "6cdccc1ae4fa",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/commercial-insect-monitors": {
       "judgement": "correct-as-built",
-      "date": "2026-09-09",
-      "fingerprint": "63119eb16322",
-      "note": "S69 R2 rebuild to the R8/R69R1 pattern: the situation, health where sourced, legal and limits sections now precede every card, and on best/professional-bed-bug-steamers one US-only 120V card was removed under the mismatch ruling. Re-adjudicated correct-as-built by the PM for this round."
+      "date": "2026-10-06",
+      "fingerprint": "74cdf203c0fc",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/commercial-rodent-bait-stations": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "c59a303442fd",
-      "note": "S68 R3 — six professional routes rebuilt to the R8 pattern (sections added/renamed, h2s carry awards under Laws 188/189, cards unmoved) and three ride-along routes whose card h2 labels were corrected to their listings (rat-poison, wasp-nest-foam, fly-killer-indoor); cards unmoved on all nine"
+      "date": "2026-10-06",
+      "fingerprint": "a6c02833516d",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/damp-proof-paint-mould-treatment": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "8f8e71574678",
-      "note": "S68 R3 — six professional routes rebuilt to the R8 pattern (sections added/renamed, h2s carry awards under Laws 188/189, cards unmoved) and three ride-along routes whose card h2 labels were corrected to their listings (rat-poison, wasp-nest-foam, fly-killer-indoor); cards unmoved on all nine"
+      "date": "2026-10-06",
+      "fingerprint": "b5e5b0d1a2d5",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/drain-fly-killer": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "3c89ad2ca2bf",
-      "note": "S67 R9 product-fit corrections; drain-fly-killer card removed, other sequences unchanged"
+      "date": "2026-10-06",
+      "fingerprint": "47b0ab285d96",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/flea-fogger": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "5529f08e979a",
-      "note": "S68 R2 rollout rebuild, six consumer routes, card sequences unchanged; flea-fogger label and title corrected on ruling"
+      "date": "2026-10-06",
+      "fingerprint": "604c83d786cb",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/flea-spray-for-home": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "3307b1d8ce84",
-      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
+      "date": "2026-10-06",
+      "fingerprint": "d49d64c7afe4",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/flea-treatments": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "34bfeeaa3c94",
-      "note": "S68 R5 — one card appended at the end of flea-treatments (one-shot aerosol), wasp-killers (nest powder) and cockroach-gel-bait (gel bait), the product type each title promised; existing cards, order and numerals unmoved"
+      "date": "2026-10-06",
+      "fingerprint": "584fe5057fa7",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/fly-killer-indoor": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "321b72548e74",
-      "note": "S68 R3 — six professional routes rebuilt to the R8 pattern (sections added/renamed, h2s carry awards under Laws 188/189, cards unmoved) and three ride-along routes whose card h2 labels were corrected to their listings (rat-poison, wasp-nest-foam, fly-killer-indoor); cards unmoved on all nine"
+      "date": "2026-10-06",
+      "fingerprint": "28440363164e",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/fox-deterrents": {
       "judgement": "correct-as-built",
-      "date": "2026-09-08",
-      "fingerprint": "e80563240833",
-      "note": "S68 R7 — fox-deterrents, squirrel-deterrents and bird-deterrents rebuilt to the R8 pattern under Law 191 (sections added and renamed); fox-deterrents also loses B0BMNP26FP, a coyote product whose listing names no fox, under the S67 R10 mismatch ruling; remaining card order and ASINs unmoved"
+      "date": "2026-10-06",
+      "fingerprint": "08798afae050",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/mole-traps": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "a5493ac6c873",
-      "note": "S67 R9 product-fit corrections; drain-fly-killer card removed, other sequences unchanged"
+      "date": "2026-10-06",
+      "fingerprint": "c34a4c4fb8b1",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/moth-killers": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "808be92925bb",
-      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
+      "date": "2026-10-06",
+      "fingerprint": "b7834b74af80",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/moth-traps": {
       "judgement": "correct-as-built",
-      "date": "2026-09-06",
-      "fingerprint": "7f3b1b17b865",
-      "note": "S66 R8 rollout rebuild, PM re-adjudicated, card sequence unchanged"
+      "date": "2026-10-06",
+      "fingerprint": "08b8014d8cb2",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/mouse-bait-stations": {
       "judgement": "correct-as-built",
-      "date": "2026-09-06",
-      "fingerprint": "05d1511790bc",
-      "note": "S66 R8 rollout rebuild, PM re-adjudicated, card sequence unchanged"
+      "date": "2026-10-06",
+      "fingerprint": "3b0e0e7ee61b",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/mouse-poison": {
       "judgement": "correct-as-built",
-      "date": "2026-09-06",
-      "fingerprint": "b031a777cd5e",
-      "note": "S67 R2 rollout rebuild, card sequence unchanged"
+      "date": "2026-10-06",
+      "fingerprint": "fe9ad778494e",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/mouse-repellent": {
       "judgement": "correct-as-built",
-      "date": "2026-09-06",
-      "fingerprint": "1379ec677754",
-      "note": "S67 R3 — one card removed (product does not claim target species), award labels replaced with neutral descriptors, PM-ruled"
+      "date": "2026-10-06",
+      "fingerprint": "2e8af0bf619d",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/mouse-traps": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "871ecbbe66da",
-      "note": "S68 R2 rollout rebuild, six consumer routes, card sequences unchanged; flea-fogger label and title corrected on ruling"
+      "date": "2026-10-06",
+      "fingerprint": "59b0d7b9014b",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/pigeon-spikes": {
       "judgement": "correct-as-built",
-      "date": "2026-09-06",
-      "fingerprint": "42e0b517693e",
-      "note": "S66 R6 FAQ removal, PM re-adjudicated, card sequence unchanged"
+      "date": "2026-10-06",
+      "fingerprint": "b1bce9e95880",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/professional-bait-station-kits": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "8c5cbabfc720",
-      "note": "S68 R3 — six professional routes rebuilt to the R8 pattern (sections added/renamed, h2s carry awards under Laws 188/189, cards unmoved) and three ride-along routes whose card h2 labels were corrected to their listings (rat-poison, wasp-nest-foam, fly-killer-indoor); cards unmoved on all nine"
+      "date": "2026-10-06",
+      "fingerprint": "21983b3182a3",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/professional-bed-bug-steamers": {
       "judgement": "correct-as-built",
-      "date": "2026-09-09",
-      "fingerprint": "93a96bf2ac98",
-      "note": "S69 R2 rebuild to the R8/R69R1 pattern: the situation, health where sourced, legal and limits sections now precede every card, and on best/professional-bed-bug-steamers one US-only 120V card was removed under the mismatch ruling. Re-adjudicated correct-as-built by the PM for this round."
+      "date": "2026-10-06",
+      "fingerprint": "d07cc3de8538",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/professional-bird-netting-kits": {
       "judgement": "correct-as-built",
-      "date": "2026-09-09",
-      "fingerprint": "97bd72bcdd22",
-      "note": "S69 R3: best/professional-bird-netting-kits rebuilt to the R69R1/R69R2 pattern so the legal and limits sections precede every card; on best/professional-mattress-encasements and best/commercial-bird-proofing two PM rulings changed award labels, which are part of the h2 sequence the fingerprint reads. Re-adjudicated correct-as-built by the PM for this round."
+      "date": "2026-10-06",
+      "fingerprint": "46ba8b54ead1",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/professional-insect-light-traps": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "a35c64ec633b",
-      "note": "S68 R4 — commercial-dehumidifiers rebuilt to the R8 pattern (sections added/renamed, two descriptor h2s take the card award under Law 189, cards unmoved); professional-insect-light-traps h2 label corrected to listing facts (16W Aluminium Grid Unit), cards unmoved"
+      "date": "2026-10-06",
+      "fingerprint": "919989f299cc",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/professional-mattress-encasements": {
       "judgement": "correct-as-built",
-      "date": "2026-09-09",
-      "fingerprint": "95efeb65d266",
-      "note": "S69 R3: best/professional-bird-netting-kits rebuilt to the R69R1/R69R2 pattern so the legal and limits sections precede every card; on best/professional-mattress-encasements and best/commercial-bird-proofing two PM rulings changed award labels, which are part of the h2 sequence the fingerprint reads. Re-adjudicated correct-as-built by the PM for this round."
+      "date": "2026-10-06",
+      "fingerprint": "991d51321e1b",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/professional-pressure-sprayers": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "8b6c91a915e6",
-      "note": "S68 R3 — six professional routes rebuilt to the R8 pattern (sections added/renamed, h2s carry awards under Laws 188/189, cards unmoved) and three ride-along routes whose card h2 labels were corrected to their listings (rat-poison, wasp-nest-foam, fly-killer-indoor); cards unmoved on all nine"
+      "date": "2026-10-06",
+      "fingerprint": "30eed4ad54cc",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/professional-ulv-foggers": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "ce0ecfdf23ee",
-      "note": "S68 R3 — six professional routes rebuilt to the R8 pattern (sections added/renamed, h2s carry awards under Laws 188/189, cards unmoved) and three ride-along routes whose card h2 labels were corrected to their listings (rat-poison, wasp-nest-foam, fly-killer-indoor); cards unmoved on all nine"
+      "date": "2026-10-06",
+      "fingerprint": "ae30c4cd273e",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/rat-bait-stations": {
       "judgement": "correct-as-built",
-      "date": "2026-09-06",
-      "fingerprint": "d740eaebdadb",
-      "note": "S67 R8 rollout rebuild, six routes, card sequences unchanged"
+      "date": "2026-10-06",
+      "fingerprint": "6b85b9f8fca7",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/rat-poison-for-gardens": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "2bfa744f7d3c",
-      "note": "S68 R2 rollout rebuild, six consumer routes, card sequences unchanged; flea-fogger label and title corrected on ruling"
+      "date": "2026-10-06",
+      "fingerprint": "323879acf7ce",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/rat-poison": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "524a379737db",
-      "note": "S68 R3 — six professional routes rebuilt to the R8 pattern (sections added/renamed, h2s carry awards under Laws 188/189, cards unmoved) and three ride-along routes whose card h2 labels were corrected to their listings (rat-poison, wasp-nest-foam, fly-killer-indoor); cards unmoved on all nine"
+      "date": "2026-10-06",
+      "fingerprint": "af2de6f0bd84",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/rat-traps": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "724bad4ce5d0",
-      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
+      "date": "2026-10-06",
+      "fingerprint": "58071db3a0a7",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/rodent-proofing": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "84de1a10279c",
-      "note": "S68 R2 rollout rebuild, six consumer routes, card sequences unchanged; flea-fogger label and title corrected on ruling"
+      "date": "2026-10-06",
+      "fingerprint": "d9b16ba0c40f",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/silverfish-treatments": {
       "judgement": "correct-as-built",
-      "date": "2026-09-09",
-      "fingerprint": "36a9ba505b9e",
-      "note": "S69 R1 rebuild to the R8 pattern: the situation, health, legal and limits sections now precede every card, and on best/carpet-beetle-treatments one mismatched card was removed under the S67 R10 ruling. Re-adjudicated correct-as-built by the PM for this round."
+      "date": "2026-10-06",
+      "fingerprint": "1e4cca371d7d",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/spider-repellent": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "58e6639bdb40",
-      "note": "S68 R6 — spider-repellent, cat-deterrents and ultrasonic-pest-repellers rebuilt to the R8 pattern under Law 191 (sections added and renamed, h2s carry the listing descriptor and the product name); card order and ASINs unmoved on all three"
+      "date": "2026-10-06",
+      "fingerprint": "29d6227e2c9a",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/squirrel-deterrents": {
       "judgement": "correct-as-built",
-      "date": "2026-09-08",
-      "fingerprint": "cdc39458404d",
-      "note": "S68 R7 — fox-deterrents, squirrel-deterrents and bird-deterrents rebuilt to the R8 pattern under Law 191 (sections added and renamed); fox-deterrents also loses B0BMNP26FP, a coyote product whose listing names no fox, under the S67 R10 mismatch ruling; remaining card order and ASINs unmoved"
+      "date": "2026-10-06",
+      "fingerprint": "aadd98489bbd",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/ultrasonic-pest-repellers": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "c08605d6f382",
-      "note": "S68 R6 — spider-repellent, cat-deterrents and ultrasonic-pest-repellers rebuilt to the R8 pattern under Law 191 (sections added and renamed, h2s carry the listing descriptor and the product name); card order and ASINs unmoved on all three"
+      "date": "2026-10-06",
+      "fingerprint": "787530523810",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/wasp-killers": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "f46e07381a5e",
-      "note": "S68 R5 — one card appended at the end of flea-treatments (one-shot aerosol), wasp-killers (nest powder) and cockroach-gel-bait (gel bait), the product type each title promised; existing cards, order and numerals unmoved"
+      "date": "2026-10-06",
+      "fingerprint": "04e4084e27c4",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/wasp-nest-foam": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "020568a751b8",
-      "note": "S68 R3 — six professional routes rebuilt to the R8 pattern (sections added/renamed, h2s carry awards under Laws 188/189, cards unmoved) and three ride-along routes whose card h2 labels were corrected to their listings (rat-poison, wasp-nest-foam, fly-killer-indoor); cards unmoved on all nine"
+      "date": "2026-10-06",
+      "fingerprint": "783092ef740f",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "best/woodworm-treatments": {
       "judgement": "correct-as-built",
-      "date": "2026-09-07",
-      "fingerprint": "0eb8633c68fa",
-      "note": "S68 R1 rollout rebuild, six routes, card sequences unchanged; ride-along name and prose corrections"
+      "date": "2026-10-06",
+      "fingerprint": "9ecf62720e8b",
+      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
     },
     "guides/autumn-pest-proofing": {
       "judgement": "correct-as-built",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -91,11 +92,24 @@ type ProductRecord = {
   tableCells: string[];
   h2Label: string;
   h2Name: string;
-  tocTitle: string;
+  tocLabel: string;
+  tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // NOTE THE FIELD SEMANTICS ON THIS ROUTE: h2Label holds the NUMBERED PRODUCT NAME and
 // h2Name holds the AWARD — the inverse of the pilot. Read before editing, not assumed.
+//
+// S70 R1 — NORMALISED to the rat-poison field names: h2Label/tocLabel now hold the AWARD
+// and h2Name/tocName the product name, so the h2 reads "award — name". The "N." heading
+// prefix is dropped; the rank numeral stays on every card via rank={p.rank}. Cards 2 to 4
+// take back their 2efd1f5 awards, except card 4's "Best for Prevention": a surface spray
+// that never reaches the drain prevents nothing here, so it reads "Best for Hard Surfaces",
+// the listing's own application site. Card 1's label is unchanged.
 //
 // THE FINDING THAT SHAPES THIS PAGE: only ONE of the four products treats a drain. The
 // other three are room and surface sprays on their own listings, and the page says so
@@ -119,16 +133,20 @@ const products: ProductRecord[] = [
       "Poured into the drain; 3,785ml",
       "Best Overall: Gel, Poured Into the Drain",
     ],
-    h2Label: "1. Fruit Fly & Drain Fly Gel Treatment 1 Gallon",
-    h2Name: "Best Overall: Gel, Poured Into the Drain",
-    tocTitle: "1. Fruit Fly & Drain Fly Gel Treatment",
+    h2Label: "1. Best Overall: Gel, Poured Into the Drain",
+    h2Name: "Fruit Fly & Drain Fly Gel Treatment 1 Gallon",
+    tocLabel: "1. Best Overall: Gel, Poured Into the Drain",
+    tocName: "Fruit Fly & Drain Fly Gel Treatment",
+    pick: "The only product here you pour into the drain, where drain fly larvae feed.",
+    blurb: "Our overall pick, because it is the one product on this page that goes where the problem is. You pour the gel into the drain rather than spraying the room, and it comes as a full gallon, 3,785ml. The maker describes it as an all-natural, non-toxic gel that breaks up and digests drain scum, and it is listed as safe for use in any plumbing. Brush the drain and flush it with boiling water first, as the guidance above sets out.",
+    pros: ["Poured into the drain itself", "1 gallon, 3,785ml", "Listed as safe for use in any plumbing", "Described by its maker as all-natural and non-toxic"],
   },
   {
     anchorId: "zero-in-drain-gel",
     asin: "B00EE3C1IS",
     rank: 2,
     cardName: "Zero In Total Insect Killer 300ml",
-    cardLabel: "300ml Aerosol, Sprayed Into the Room",
+    cardLabel: "Best UK Brand",
     features: [
       "A 300ml room aerosol, not a drain treatment",
       "Active substances stated on the listing: permethrin and tetramethrin",
@@ -136,17 +154,21 @@ const products: ProductRecord[] = [
       "The maker's directions: a 5-second burst, room sealed 10 minutes, then ventilate",
       "Listed for indoor use",
     ],
-    tableCells: ["Zero In Total Insect Killer 300ml", "Room aerosol; permethrin + tetramethrin", "300ml Aerosol, Sprayed Into the Room"],
-    h2Label: "2. Zero In Total Insect Killer 300ml",
-    h2Name: "300ml Aerosol, Sprayed Into the Room",
-    tocTitle: "2. Zero In Total Insect Killer 300ml",
+    tableCells: ["Zero In Total Insect Killer 300ml", "Room aerosol; permethrin + tetramethrin", "Best UK Brand"],
+    h2Label: "2. Best UK Brand",
+    h2Name: "Zero In Total Insect Killer 300ml",
+    tocLabel: "2. Best UK Brand",
+    tocName: "Zero In Total Insect Killer 300ml",
+    pick: "A 300ml room aerosol with permethrin and tetramethrin, for adult flies in the room.",
+    blurb: "Pick this for the adult flies already in the room while you clear the drain. It is a 300ml aerosol naming permethrin and tetramethrin, with ants, mosquitoes, flies and bugs listed as targets. The maker's directions are a five-second burst with the room sealed for ten minutes, then ventilate. It treats the room, and it does not reach the pipe.",
+    pros: ["Actives named: permethrin and tetramethrin", "Flies listed among its target species", "Short burst, then ventilate, per the maker", "300ml, for indoor use"],
   },
   {
     anchorId: "green-gobbler",
     asin: "B000TARC7A",
     rank: 3,
     cardName: "Rentokil Insectrol Insect Killer Spray 250ml",
-    cardLabel: "250ml Aerosol, Sprayed Into the Room",
+    cardLabel: "Best Professional-Strength",
     features: [
       "A 250ml aerosol, not a drain treatment",
       "Active substances stated on the listing: permethrin and D-allethrin",
@@ -154,17 +176,21 @@ const products: ProductRecord[] = [
       "Listed for fleas, ants, cockroaches, earwigs and bed bugs",
       "Target species listed as Insects",
     ],
-    tableCells: ["Rentokil Insectrol 250ml", "Room aerosol; permethrin + D-allethrin", "250ml Aerosol, Sprayed Into the Room"],
-    h2Label: "3. Rentokil Insectrol Insect Killer Spray 250ml",
-    h2Name: "250ml Aerosol, Sprayed Into the Room",
-    tocTitle: "3. Rentokil Insectrol Insect Killer Spray 250ml",
+    tableCells: ["Rentokil Insectrol 250ml", "Room aerosol; permethrin + D-allethrin", "Best Professional-Strength"],
+    h2Label: "3. Best Professional-Strength",
+    h2Name: "Rentokil Insectrol Insect Killer Spray 250ml",
+    tocLabel: "3. Best Professional-Strength",
+    tocName: "Rentokil Insectrol Insect Killer Spray 250ml",
+    pick: "A 250ml Rentokil aerosol naming permethrin and D-allethrin, for indoor use.",
+    blurb: "A compact aerosol from Rentokil for indoor use, naming permethrin and D-allethrin as its actives. The listing names fleas, ants, cockroaches, earwigs and bed bugs, so it is a general insect spray you can keep under the sink for more than one pest. Like the Zero In, it is a room product and does not reach the film inside the pipe.",
+    pros: ["Actives named: permethrin and D-allethrin", "250ml aerosol for indoor use", "Listed for fleas, ants, cockroaches, earwigs and bed bugs"],
   },
   {
     anchorId: "biopipe",
     asin: "B007XD60C4",
     rank: 4,
     cardName: "Doff Ant & Crawling Insect Killer Spray 1L",
-    cardLabel: "1L Pump Spray, Hard Surfaces",
+    cardLabel: "Best for Hard Surfaces",
     features: [
       "A 1-litre surface pump spray, not a drain treatment",
       "Target species listed as Insect, Ant",
@@ -172,22 +198,37 @@ const products: ProductRecord[] = [
       "Active substance not stated on the listing",
       "Ready to use; no mixing",
     ],
-    tableCells: ["Doff Ant & Crawling Insect Killer 1L", "Surface spray; active not stated", "1L Pump Spray, Hard Surfaces"],
-    h2Label: "4. Doff Ant & Crawling Insect Killer Spray 1L",
-    h2Name: "1L Pump Spray, Hard Surfaces",
-    tocTitle: "4. Doff Ant & Crawling Insect Killer Spray 1L",
+    tableCells: ["Doff Ant & Crawling Insect Killer 1L", "Surface spray; active not stated", "Best for Hard Surfaces"],
+    h2Label: "4. Best for Hard Surfaces",
+    h2Name: "Doff Ant & Crawling Insect Killer Spray 1L",
+    tocLabel: "4. Best for Hard Surfaces",
+    tocName: "Doff Ant & Crawling Insect Killer Spray 1L",
+    pick: "A litre of ready-to-use pump spray for indoor and outdoor hard surfaces.",
+    blurb: "The largest bottle here, a litre of ready-to-use spray with nothing to mix. It is listed for indoor and outdoor hard surfaces, with ant and insect as its target species. The listing does not state an active substance, and as a surface spray it does not treat the drain itself.",
+    pros: ["1 litre, ready to use", "For indoor and outdoor hard surfaces", "No mixing needed"],
   },
 ];
 
+const SAFETY_NOTE = (
+  <>
+    Drain flies breed in the film inside the drain. Three of these four are room or
+    surface sprays and none of them reaches it; UF/IFAS puts clearing the drain first.{" "}
+    <a href="#limits" className="underline">
+      Where a spray does not help
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Four Products Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Where Drain Flies Actually Come From" },
   { id: "legal", title: "Finding the Drain They Are Using" },
   { id: "limits", title: "Where a Spray Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: p.tocTitle })),
   { id: "alternatives", title: "If a Product Is Not the Answer" },
   { id: "using", title: "Clearing the Drain" },
-  { id: "compared", title: "The Four Products Compared" },
 ];
 
 export default function BestDrainFlyKillerPage() {
@@ -213,6 +254,18 @@ export default function BestDrainFlyKillerPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -230,6 +283,56 @@ export default function BestDrainFlyKillerPage() {
         emerging from a film of organic matter inside a pipe a few feet away,
         and until that film is gone the flies keep arriving.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Four Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                What it treats, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Label</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The find-the-drain line and the
           does-not-help line sit ABOVE the product lines. No Amazon link, no price,
@@ -377,32 +480,6 @@ export default function BestDrainFlyKillerPage() {
         flies to ants to insects in general. Read it before buying.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "The one product on this page that is poured into the drain rather than sprayed into the room, which is where the published guidance puts the problem. Its maker describes it as an all-natural gel that breaks up and digests drain scum; no active substance is named on the listing.",
-                "A 300ml room aerosol naming permethrin and tetramethrin, with its target species listed as ants, mosquitoes, flies and bugs. It treats the air and the surfaces, not the pipe.",
-                "A 250ml aerosol naming permethrin and D-allethrin, listed as intended for indoor use and for a range of crawling insects. Again a room product rather than a drain one.",
-                "A one-litre surface pump spray for indoor and outdoor hard surfaces, with ant and insect as its listed target species and no active substance stated.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If a Product Is Not the Answer</h2>
@@ -447,36 +524,6 @@ export default function BestDrainFlyKillerPage() {
         </li>
       </ol>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Four Products Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                What it treats, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Label</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Flies still coming after the drain is clean?"

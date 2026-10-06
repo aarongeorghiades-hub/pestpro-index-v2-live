@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -89,6 +90,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells rebuilt from the banked listings, fetched 2026-09-01
@@ -117,6 +123,9 @@ const products: ProductRecord[] = [
     h2Name: "Victor Push Mole Trap",
     tocLabel: "Best Overall",
     tocName: "Victor Push Mole Trap",
+    pick: "A heavy iron push trap you set into the run from above.",
+    blurb: "Our overall pick. It is an iron push trap, and at 816 grams it is the heaviest on the page. You set it down into the run from the surface, so you do not have to open up the tunnel first.",
+    pros: ["Iron construction, as listed", "Sets into the run from above", "816 grams, the heaviest trap here"],
   },
   {
     anchorId: "best-traditional",
@@ -135,6 +144,9 @@ const products: ProductRecord[] = [
     h2Name: "The Big Cheese Mole Tunnel Trap",
     tocLabel: "Best Traditional",
     tocName: "The Big Cheese Mole Tunnel Trap",
+    pick: "The classic two-way tunnel trap in galvanised metal, listed as weather-proof.",
+    blurb: "If you want the familiar tunnel trap, this is it. The two-way design sits in the run, and the listing gives galvanised metal and wire that is rust-free and weather-proof. At 330 grams it is the lightest trap here.",
+    pros: ["Two-way tunnel design", "Galvanised metal and wire", "Listed as rust-free and weather-proof", "Lightest here at 330 grams"],
   },
   {
     anchorId: "best-professional",
@@ -153,6 +165,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest-Stop Tunnel Mole Trap",
     tocLabel: "Best Professional",
     tocName: "Pest-Stop Tunnel Mole Trap",
+    pick: "A dual-entry barrel trap in rust-resistant alloy steel.",
+    blurb: "A barrel trap with an entry at each end, so it faces both ways along the run. It is listed in alloy steel, rust-resistant and reusable. The maker claims it is 30% stronger and does not say what that is compared with.",
+    pros: ["Dual entry, as listed", "Alloy steel, rust-resistant", "Reusable"],
   },
   {
     anchorId: "best-discreet",
@@ -171,6 +186,9 @@ const products: ProductRecord[] = [
     h2Name: "SWISSINNO SuperCat Mole Trap",
     tocLabel: "Best Discreet",
     tocName: "SWISSINNO SuperCat Mole Trap",
+    pick: "A reusable claw trap that needs no poison and no bait.",
+    blurb: "Worth choosing if you want to keep poison and bait out of the garden altogether. It is a claw trap in high-impact polystyrene and stainless steel, listed as reusable and weighing 630 grams.",
+    pros: ["No poison and no bait, as listed", "Reusable", "High-impact polystyrene and stainless steel"],
   },
   {
     anchorId: "best-beginner",
@@ -189,18 +207,32 @@ const products: ProductRecord[] = [
     h2Name: "REPELEM Claw Mole Trap (Pack of 3)",
     tocLabel: "Best for Beginners",
     tocName: "REPELEM Claw Mole Trap (Pack of 3)",
+    pick: "Three claw traps in one pack, so you can cover more than one run.",
+    blurb: "The only multi-pack on the page, with three claw traps listed as metal and rust-free. Having three lets you set more than one run at once, which helps while you are still working out which tunnels are in use. The pack weighs 740 grams in total.",
+    pros: ["Three traps in the pack", "Claw design, metal and rust-free", "Lets you cover more than one run at once"],
   },
 ];
 
+const SAFETY_NOTE = (
+  <>
+    Mole traps are exempt from the trap approval order, and the exemption says
+    nothing about safety. Set them where pets and children cannot reach.{" "}
+    <a href="#legal" className="underline">
+      The legal position
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "Best Mole Traps Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Whether to Trap at All" },
   { id: "legal", title: "The Legal Position on Mole Traps" },
   { id: "limits", title: "Where a Mole Trap Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If Trapping Is Not the Answer" },
   { id: "using", title: "Finding the Run and Setting the Trap" },
-  { id: "compared", title: "Best Mole Traps Compared" },
 ];
 
 export default function BestMoleTrapsPage() {
@@ -228,6 +260,18 @@ export default function BestMoleTrapsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -246,6 +290,56 @@ export default function BestMoleTrapsPage() {
         things: finding an active run, and knowing what the law lets you put in
         it.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">Best Mole Traps Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Type, material and pack, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The legal line and the does-not-help line
           sit ABOVE the product lines. No Amazon link, no price, no image, no award. */}
@@ -363,33 +457,6 @@ export default function BestMoleTrapsPage() {
         listed facts, and all bear on how a trap survives a wet winter in soil.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A push trap in iron and the heaviest item on the page at 816 grams, set down into the run from the surface rather than into an opened tunnel.",
-                "The traditional two-way tunnel trap, listed as galvanised metal and wire and as rust-free and weather-proof. At 330 grams it is the lightest here.",
-                "A barrel trap with entries at both ends, listed in alloy steel. Its maker claims it is 30% stronger without stating what the comparison is against, so that figure is reported as theirs rather than repeated as ours.",
-                "A claw trap in high-impact polystyrene and stainless steel, listed as reusable and as using no poison and no bait — which is the whole argument for a trap over a bait product in a garden with pets.",
-                "The only multi-pack on the page: three claw traps, listed as metal and rust-free, at 740 grams for the set. Three traps is what covers more than one run at once.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If Trapping Is Not the Answer</h2>
@@ -434,36 +501,6 @@ export default function BestMoleTrapsPage() {
         </li>
       </ol>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">Best Mole Traps Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Type, material and pack, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <div className="not-prose">
         <Callout type="info">

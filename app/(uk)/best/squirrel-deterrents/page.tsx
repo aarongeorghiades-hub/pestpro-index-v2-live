@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -82,6 +83,7 @@ const SRC = {
 type ProductRecord = {
   anchorId: string;
   asin: string;
+  rank: number;
   cardName: string;
   cardLabel: string;
   features: string[];
@@ -90,6 +92,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -100,8 +107,9 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
     asin: "B00BXLF3WU",
+    rank: 1,
     cardName: "Jacobi Jayne Squirrel Buster Bird Feeder",
-    cardLabel: "Metal hanging feeder, 0.75 litre",
+    cardLabel: "Best Overall",
     features: [
       "Seed capacity listed as 0.75 litre; metal and resin construction",
       "The maker describes patented spring-loaded ports that close under the weight of a squirrel",
@@ -110,16 +118,20 @@ const products: ProductRecord[] = [
       "Target species listed as bird; country of origin listed as China",
     ],
     tableCells: ["Jacobi Jayne Squirrel Buster", "Feeder", "0.75 litre, as listed", "Weight-closing ports, per the maker"],
-    h2Label: "Metal hanging feeder, 0.75 litre",
+    h2Label: "Best Overall",
     h2Name: "Jacobi Jayne Squirrel Buster Bird Feeder",
-    tocLabel: "Metal hanging feeder",
+    tocLabel: "Best Overall",
     tocName: "Jacobi Jayne Squirrel Buster",
+    pick: "A metal feeder whose ports, the maker says, close under a squirrel's weight.",
+    blurb: "Our overall pick if squirrels are emptying your bird feeder. It holds 0.75 litres of seed in a metal and resin body, and the maker describes spring-loaded ports that close under the weight of a squirrel. It comes with perches and mounting hardware and is listed for seed blends and mixes. The \"100% Squirrel Proof\" line in its detail table is the maker's own claim.",
+    pros: ["0.75 litre seed capacity, metal and resin", "Maker describes ports that close under a squirrel's weight", "Perches and mounting hardware supplied", "Maker says it adjusts to bar bigger birds"],
   },
   {
     anchorId: "best-spray",
     asin: "B08DDCJJ1N",
+    rank: 2,
     cardName: "RepellShield Squirrel Repellent Spray 250ml",
-    cardLabel: "Essential oil spray, 250ml",
+    cardLabel: "Best Repellent Spray",
     features: [
       "250ml; the listing names peppermint and geraniol among its essential oils",
       "Listing directions: shake, spray generously, and reapply every 3 to 5 days or as needed",
@@ -128,16 +140,20 @@ const products: ProductRecord[] = [
       "Manufactured in Germany, as listed",
     ],
     tableCells: ["RepellShield Squirrel Spray 250ml", "Scent spray", "Peppermint and geraniol, as listed", "Every 3–5 days, per the maker"],
-    h2Label: "Essential oil spray, 250ml",
+    h2Label: "Best Repellent Spray",
     h2Name: "RepellShield Squirrel Repellent Spray",
-    tocLabel: "Essential oil spray, 250ml",
+    tocLabel: "Best Repellent Spray",
     tocName: "RepellShield Squirrel Spray",
+    pick: "A 250ml plant-based spray for gardens, lofts, patios and around feeders.",
+    blurb: "A small spray for the places a feeder cannot cover. The listing names peppermint and geraniol among its essential oils and lists it for gardens, lofts, patios and around bird feeders. The maker's direction is to reapply every 3 to 5 days, so expect it to be a regular job. It is made in Germany, and the maker describes it as plant-based.",
+    pros: ["Peppermint and geraniol named on the listing", "Listed for gardens, lofts, patios and around feeders", "Maker describes it as plant-based", "250ml, made in Germany"],
   },
   {
     anchorId: "best-baffle",
     asin: "B07KQJM334",
+    rank: 3,
     cardName: "Selections Squirrel Proof Bird Feeder Baffle (Pack of 2)",
-    cardLabel: "Clear plastic baffle, 2 pack",
+    cardLabel: "Best Baffle",
     features: [
       "Two baffles, as listed; each 40cm wide and 22cm high",
       "Supplied with a hanging hook and a pole attachment, as listed",
@@ -146,16 +162,20 @@ const products: ProductRecord[] = [
       "Target species listed as Bird",
     ],
     tableCells: ["Selections Baffle, 2 pack", "Physical barrier", "40cm wide x 22cm high, as listed", "Blocks the route to a feeder"],
-    h2Label: "Clear plastic baffle, 2 pack",
+    h2Label: "Best Baffle",
     h2Name: "Selections Squirrel Proof Bird Feeder Baffle",
-    tocLabel: "Clear plastic baffle, 2 pack",
+    tocLabel: "Best Baffle",
     tocName: "Selections Baffle",
+    pick: "Two clear 40cm baffles, supplied with a hook and a pole attachment.",
+    blurb: "If you are happy with the feeders you already have, add a baffle. You get two, each 40cm wide and 22cm high, with a hanging hook and a pole attachment. The maker describes a slippery surface that denies a squirrel grip, and the listing adds that at 40cm wide it keeps the food beneath it dry.",
+    pros: ["Pack of two, 40cm wide x 22cm high", "Hook and pole attachment supplied", "Listing says it keeps the food beneath it dry", "Purely physical, with nothing to spray"],
   },
   {
     anchorId: "best-food-treatment",
     asin: "B007EAH6K6",
+    rank: 4,
     cardName: "The Big Cheese Hot Nuts Grey Squirrel Deterrent Spray 1L",
-    cardLabel: "Capsicum spray, 1 litre",
+    cardLabel: "Best Bird Food Treatment",
     features: [
       "1 litre, ready to use; ingredients listed as natural orange oil and capsicum chilli extract",
       "Listing directions: apply directly to bird food and feeders, repeating on each refill or at least every 48 hours",
@@ -164,16 +184,20 @@ const products: ProductRecord[] = [
       "Listed at 6 x 10 x 29 cm and 1 kg",
     ],
     tableCells: ["The Big Cheese Hot Nuts 1L", "Taste treatment for food", "Capsicum chilli extract, orange oil", "Every 48 hours or on refill, per the maker"],
-    h2Label: "Capsicum spray, 1 litre",
+    h2Label: "Best Bird Food Treatment",
     h2Name: "The Big Cheese Hot Nuts Deterrent Spray",
-    tocLabel: "Capsicum spray, 1 litre",
+    tocLabel: "Best Bird Food Treatment",
     tocName: "Hot Nuts Deterrent Spray",
+    pick: "A litre of capsicum treatment that goes on the bird food itself.",
+    blurb: "This one goes on the food. It is a 1 litre ready-to-use treatment with natural orange oil and capsicum chilli extract named as the ingredients, and the listing says to apply it to bird food and feeders on each refill or at least every 48 hours. It is listed as poison-free, and the maker describes the capsicum as harmless and palatable to wild birds.",
+    pros: ["1 litre, ready to use", "Orange oil and capsicum chilli extract, as listed", "Listed as poison-free", "Maker says it is palatable to wild birds"],
   },
   {
     anchorId: "best-trap",
     asin: "B082J2YLDY",
+    rank: 5,
     cardName: "Kabalo Metal Live-Catch Cage Trap",
-    cardLabel: "Metal cage trap, single",
+    cardLabel: "Best Live-Catch Trap",
     features: [
       "650mm x 190mm x 190mm metal cage; target species listed as Rat, Squirrel",
       "Metal finger guard on the carrying handle, as listed; no poison required",
@@ -182,10 +206,13 @@ const products: ProductRecord[] = [
       "The RSPCA says a live-catch trap must be checked several times a day",
     ],
     tableCells: ["Kabalo live-catch cage trap", "Live-catch trap", "650 x 190 x 190 mm, as listed", "Release is unlawful for grey squirrels"],
-    h2Label: "Metal cage trap, single",
+    h2Label: "Best Live-Catch Trap",
     h2Name: "Kabalo Metal Live-Catch Cage Trap",
-    tocLabel: "Metal cage trap, single",
+    tocLabel: "Best Live-Catch Trap",
     tocName: "Kabalo Cage Trap",
+    pick: "A 650mm metal cage trap, if you accept what the law requires after a catch.",
+    blurb: "For a squirrel you need to catch. It is a 650mm metal cage with a finger guard on the carrying handle, listed for rats and squirrels, with no poison required. Read the legal section before you buy: the listing describes it as designed for live release, and GOV.UK states it is an offence to release a grey squirrel, which must be killed humanely if caught alive. The RSPCA says to check a live-catch trap several times a day.",
+    pros: ["650 x 190 x 190 mm metal cage", "Finger guard on the carrying handle", "No poison required", "Listed for rats and squirrels"],
   },
 ];
 
@@ -219,15 +246,29 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full
+// sections it points to sit on the page.
+const SAFETY_NOTE = (
+  <>
+    It is an offence to release a grey squirrel you catch alive, and the RSPCA says
+    to check a live-catch trap several times a day.{" "}
+    <a href="#legal" className="underline">
+      The legal position
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Five Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What Is Bringing Them In" },
   { id: "legal", title: "The Legal Position: Trapping and Release" },
   { id: "limits", title: "Where a Deterrent Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Product Is Not the Answer" },
   { id: "using", title: "Placing Them" },
-  { id: "compared", title: "The Five Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -255,6 +296,18 @@ export default function BestSquirrelDeterrentsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -279,6 +332,56 @@ export default function BestSquirrelDeterrentsPage() {
         cage trap, and it comes with a legal obligation its own listing gets
         wrong.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Five Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        interval attributed to the maker who claims it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Ingredients or size, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">What it turns on</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -468,32 +571,6 @@ export default function BestSquirrelDeterrentsPage() {
         comparison table carries them without adding anything.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A metal and resin hanging feeder holding 0.75 litres of seed, whose maker describes patented spring-loaded ports closing under a squirrel's weight and whose detail table carries its own \"100% Squirrel Proof\" claim. Supplied with perches and mounting hardware; the target species on the listing is bird.",
-                "A 250ml spray naming peppermint and geraniol, made in Germany, with the maker's instruction to reapply every three to five days. The maker describes it as plant-based and safe around children, pets and other wildlife; those are its words, and the listing is where they come from.",
-                "Two clear baffles, each 40cm wide and 22cm high, with a hook and a pole attachment. The maker describes a slippery surface that denies grip, and notes that at 40cm across it also keeps the food below it dry. The one item here that is purely physical.",
-                "A one-litre ready-to-use treatment applied to the bird food itself, with natural orange oil and capsicum chilli extract named as the ingredients and a listing instruction to repeat on every refill or at least every 48 hours. Listed as poison-free; the maker describes the capsicum as harmless and palatable to wild birds.",
-                "A 650mm metal cage trap listed for rats and squirrels, with a finger guard on the handle and no poison required. Its listing describes it as designed for live release; for a grey squirrel that is not lawful in the UK, and the legal section above sets out what is required of anyone who catches one alive.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Product Is Not the Answer</h2>
@@ -542,36 +619,6 @@ export default function BestSquirrelDeterrentsPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">The Five Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        interval attributed to the maker who claims it. Where a listing does not
-        state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Type</th>
-              <th className="text-left p-2 border-b font-semibold">Ingredients or size, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">What it turns on</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

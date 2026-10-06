@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -84,6 +85,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells from the banked listings' OWN bullets and detail
@@ -106,6 +112,9 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Rodent Proofing Wire Mesh (6m × 900mm)",
     tocLabel: "Best Overall",
     tocName: "Roshield Rodent Proofing Wire Mesh",
+    pick: "6mm galvanised mesh on a 6m roll, for air bricks, pipework and soffits.",
+    blurb: "Our overall pick, because one roll is listed for air bricks, pipework, gaps and voids in walls, and soffits. It is hot-dipped galvanised welded steel with a 6mm aperture, 900mm wide and 6m long. You cut it with strong scissors or tin snips. No fixings come with it, so buy those separately.",
+    pros: ["6mm x 6mm aperture, as listed", "Hot-dipped galvanised welded steel", "6m x 900mm roll", "Cuts with strong scissors or tin snips"],
   },
   {
     anchorId: "best-fill",
@@ -124,6 +133,9 @@ const products: ProductRecord[] = [
     h2Name: "Xcluder Rodent Control Steel Wool Fill Fabric",
     tocLabel: "Best for Gaps & Holes",
     tocName: "Xcluder Steel Wool Fill Fabric",
+    pick: "Steel wool fill fabric that the maker says expands to fit a hole.",
+    blurb: "For the awkward holes around pipes, air conditioning units, windows and vents. It is a 4 inch by 10 foot roll of stainless steel wool blended with poly fibres. The maker says you push it into a hole, it expands to fit, and it will not rust. Mouse is the target species listed.",
+    pros: ["Stainless steel wool with poly fibres", "4 inch x 10 foot roll", "Maker says it expands to fit and will not rust", "Listed for holes around pipes and vents"],
   },
   {
     anchorId: "best-drain",
@@ -142,6 +154,9 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Rat Drain Guard",
     tocLabel: "Best for Drains",
     tocName: "Roshield Rat Drain Guard",
+    pick: "A one-way stainless flap for a 110mm drain, made in the UK.",
+    blurb: "If rats are coming up through the drains, this is the product on the page for it. It is a one-way flap in 316 marine-grade stainless steel that fits inside the inspection chamber on a 4 inch / 110mm pipe. The maker says liquids and solids pass down while rats cannot come up or chew through the flap. You can fit it at the pipe entrance or exit by switching the bolt to match the flow.",
+    pros: ["316 marine-grade stainless steel", "Fits 4 inch / 110mm drains; 150mm variant listed separately", "Fits at the pipe entrance or exit", "Made in the UK, as listed"],
   },
   {
     anchorId: "best-door",
@@ -160,6 +175,9 @@ const products: ProductRecord[] = [
     h2Name: "Stormguard Door Brush Strip Draught Excluder (914mm)",
     tocLabel: "Best for Door Gaps",
     tocName: "Stormguard Door Brush Strip",
+    pick: "A brush strip for gaps up to 25mm under a door.",
+    blurb: "Defra notes that rats and mice can create gaps below house doors, and this strip is made for that gap. It is listed as sealing gaps up to 25mm, at 91.4cm long on a wood carrier. You cut it to length through the 3mm rod with a hacksaw, then crimp the housing ends so the brush cannot slide out.",
+    pros: ["Seals gaps up to 25mm under a door, as listed", "91.4cm long, cut to size with a hacksaw", "Wood carrier"],
   },
   {
     anchorId: "best-paste",
@@ -178,18 +196,35 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Rodent Proofing Control Paste",
     tocLabel: "Best Finishing Seal",
     tocName: "Roshield Rodent Proofing Paste",
+    pick: "Non-setting proofing paste for cracks and holes up to 10cm.",
+    blurb: "For the last cracks and holes once everything else is done. The paste is listed for gaps up to 10cm across, and the maker describes a firm outer layer over a non-setting underlayer. It is listed as non-toxic, made of natural fibres and oils. You need a caulking gun, which is not included, and the listing says to clear the infestation before you apply it.",
+    pros: ["Fills holes and cracks up to 10cm", "Firm outer layer over a non-setting underlayer, per the maker", "Non-toxic natural fibres and oils, as listed"],
   },
 ];
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Deal with any rodents already inside before you seal up, and use materials
+    they cannot gnaw.{" "}
+    <a href="#limits" className="underline">
+      Where proofing does not help
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Five Products Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "The 6mm Gap" },
   { id: "legal", title: "Where Proofing Sits in the Guidance" },
   { id: "limits", title: "Where Proofing Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If Proofing Is Not the Answer" },
   { id: "using", title: "Doing the Job" },
-  { id: "compared", title: "The Five Products Compared" },
 ];
 
 export default function BestRodentProofingPage() {
@@ -209,6 +244,18 @@ export default function BestRodentProofingPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -234,6 +281,56 @@ export default function BestRodentProofingPage() {
         ). Every product on this page is a way of closing a gap; one of them is
         listed at exactly that aperture.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Five Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Material and size, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The gap line, the guidance line and the
           does-not-help line sit ABOVE the product lines. No Amazon link, no price, no
@@ -365,33 +462,6 @@ export default function BestRodentProofingPage() {
         a hole up to 10cm. Measure the gap before buying for it.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A 6m by 900mm roll of hot-dipped galvanised welded mesh with a 6mm aperture, listed for air bricks, pipework and wall voids, cut with tin snips, with no fixings supplied. The 6mm figure is the listing's; that it matches the council's gap is the reason it leads the page, not a claim about how well it works.",
-                "A 4 inch by 10 foot roll of stainless steel wool woven with poly fibres, which the maker says is pushed into a hole and expands to fill it, and will not rust. Listed for holes around pipes, vents and windows, with Mouse as its target species.",
-                "A one-way flap in 316 stainless steel for a 110mm drain, fitted inside the inspection chamber with the bolt switched to match the flow, which the maker says lets waste down and stops rats coming up. The drain is the entry Defra names in terms, and this is the one product here that addresses it.",
-                "A 91.4cm brush strip listed as sealing gaps up to 25mm under a door, with a wood carrier — the listing's material row and its title both say wood, and this page once said aluminium. Cut to length through a 3mm rod with a hacksaw and crimped so the brush stays put, per the listing's own steps.",
-                "A non-toxic proofing paste of natural fibres and oils for cracks and holes up to 10cm, applied with a caulking gun that is not included, which the maker describes as setting firm on the outside over a layer that never sets. The listing's disclaimer is the honest one: clear the infestation first.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If Proofing Is Not the Answer</h2>
@@ -438,36 +508,6 @@ export default function BestRodentProofingPage() {
         </Callout>
       </div>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Five Products Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Material and size, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Activity that continues after every visible gap is closed?"

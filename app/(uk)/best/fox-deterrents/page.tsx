@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -82,6 +83,7 @@ const SRC = {
 type ProductRecord = {
   anchorId: string;
   asin: string;
+  rank: number;
   cardName: string;
   cardLabel: string;
   features: string[];
@@ -90,6 +92,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -104,8 +111,9 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-scent",
     asin: "B00FAMLXAE",
+    rank: 1,
     cardName: "Scoot Fox Repellent Concentrate 100g",
-    cardLabel: "Scent concentrate, 100g",
+    cardLabel: "Best Scent Repellent",
     features: [
       "100g of concentrate, listed as two sachets treating up to 34 sqm",
       "Active listed as aluminium ammonium sulphate",
@@ -114,16 +122,20 @@ const products: ProductRecord[] = [
       "The listing also names badgers, cats, deer, mink and rabbits",
     ],
     tableCells: ["Scoot Fox Repellent 100g", "Scent, applied to ground", "Aluminium ammonium sulphate", "Up to 34 sqm, per the maker"],
-    h2Label: "Scent concentrate, 100g",
+    h2Label: "Best Scent Repellent",
     h2Name: "Scoot Fox Repellent Concentrate",
-    tocLabel: "Scent concentrate, 100g",
+    tocLabel: "Best Scent Repellent",
     tocName: "Scoot Fox Repellent",
+    pick: "A 100g scent concentrate the listing puts at up to 34 sqm of garden.",
+    blurb: "For the patch of ground the fox visits most. The 100g pack comes as two sachets, listed as treating up to 34 sqm of lawn, beds or hard surfaces, and it names aluminium ammonium sulphate as the active. The maker describes it as creating an artificial scentmark in the problem fox's territory. Because the active is named, you can check it against the legal point on this page.",
+    pros: ["Two sachets in 100g, listed for up to 34 sqm", "Active named on the listing: aluminium ammonium sulphate", "Listed for lawns, trees, shrubs, seeds, bulbs and hard surfaces"],
   },
   {
     anchorId: "best-sprinkler",
     asin: "B0153BJ7NQ",
+    rank: 2,
     cardName: "PestBye Jet Spray Repeller — Motion Activated, Hose-Fed",
-    cardLabel: "Motion sprinkler, hose-fed",
+    cardLabel: "Best Motion Sprinkler",
     features: [
       "Connects to a garden hose; battery powered, as listed",
       "The maker states a range of up to 10m across a 120-degree arc, covering at least 100 sqm",
@@ -132,16 +144,20 @@ const products: ProductRecord[] = [
       "Listed at 20 x 7 x 71 cm and 0.7 kg",
     ],
     tableCells: ["PestBye Jet Spray Repeller", "Water, motion-triggered", "None — water only", "At least 100 sqm, per the maker"],
-    h2Label: "Motion sprinkler, hose-fed",
+    h2Label: "Best Motion Sprinkler",
     h2Name: "PestBye Jet Spray Motion-Activated Repeller",
-    tocLabel: "Motion sprinkler",
+    tocLabel: "Best Sprinkler",
     tocName: "PestBye Jet Spray",
+    pick: "A hose-fed sprinkler that fires a 5-second burst of water when its sensor triggers.",
+    blurb: "Pick this if you want nothing on the ground but water. It connects to your garden hose, runs on batteries and fires a 5-second burst each time its sensor triggers, then resets itself. The maker states a range of up to 10m across a 120-degree arc, covering at least 100 sqm. You can adjust the sensitivity.",
+    pros: ["Water only, from your garden hose", "Maker states up to 10m across a 120-degree arc", "Adjustable sensitivity, and it resets itself", "2 year warranty, as listed"],
   },
   {
     anchorId: "best-mesh",
     asin: "B08MWB89CB",
+    rank: 3,
     cardName: "Galvanised Welded Wire Mesh 0.6m x 5m, 25mm Holes",
-    cardLabel: "Galvanised mesh, 0.6 x 5m",
+    cardLabel: "Best Mesh",
     features: [
       "0.6m high by 5m long, as listed; 25mm x 25mm holes",
       "Galvanised steel, wire diameter listed as 0.7mm",
@@ -150,10 +166,13 @@ const products: ProductRecord[] = [
       "The detail table carries a different ASIN, B0C8NLCKJK — a variant listing",
     ],
     tableCells: ["Galvanised welded mesh 0.6 x 5m", "Physical barrier", "None", "0.6m x 5m, 25mm holes, as listed"],
-    h2Label: "Galvanised mesh, 0.6 x 5m",
+    h2Label: "Best Mesh",
     h2Name: "Galvanised Welded Wire Mesh, 25mm Holes",
-    tocLabel: "Galvanised mesh",
+    tocLabel: "Best Mesh",
     tocName: "Galvanised Welded Mesh",
+    pick: "A 5m roll of galvanised mesh with 25mm holes that you cut to fit.",
+    blurb: "The physical option, if you would rather block a gap than treat it. It is a 0.6m by 5m roll of galvanised steel with 25mm holes and 0.7mm wire, and the listing says you can cut and bend it with wire cutters. The listing calls it welded in one place and hexagonal in another, so look closely at which you are getting. The RSPCA suggestion quoted on this page is for holes of at least 4cm.",
+    pros: ["0.6m x 5m roll with 25mm x 25mm holes", "Galvanised steel, 0.7mm wire", "Cuts and bends with wire cutters, per the listing", "Listed for indoor or outdoor use"],
   },
 ];
 
@@ -187,15 +206,26 @@ const faqSchema = {
   })),
 };
 
+const SAFETY_NOTE = (
+  <>
+    Foxes are protected. Harming one is illegal, and so is using any substance as a
+    deterrent that has not been approved for that use.{" "}
+    <a href="#legal" className="underline">
+      The legal position
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Three Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Start With the Food" },
   { id: "legal", title: "The Legal Position" },
   { id: "limits", title: "Where a Deterrent Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Product Is Not the Answer" },
   { id: "using", title: "Placing Them" },
-  { id: "compared", title: "The Three Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -224,6 +254,18 @@ export default function BestFoxDeterrentsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -248,6 +290,56 @@ export default function BestFoxDeterrentsPage() {
         them, there is a legal line and a piece of RSPCA advice that costs
         nothing.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Three Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        coverage figure attributed to the maker who claims it. Where a listing
+        does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Area or size, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -413,30 +505,6 @@ export default function BestFoxDeterrentsPage() {
         comparison table keeps them apart rather than adding them up.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A 100g concentrate in two sachets, listed as treating up to 34 sqm of lawn, trees, shrubs, seeds, bulbs or hard surfaces, with aluminium ammonium sulphate named as the active. Its maker describes the mechanism as an artificial scentmark placed in the problem fox's territory; the listing also names badgers, cats, deer, mink and rabbits.",
-                "A battery-powered sprinkler that connects to a garden hose and fires a five-second burst when its sensor triggers, which the maker rates at up to 10m across a 120-degree arc and at least 100 sqm. Sensitivity is adjustable and the unit resets itself, per the listing; it is 71cm tall and carries a two-year warranty.",
-                "A 0.6m by 5m roll of galvanised steel mesh with 25mm holes and 0.7mm wire, listed as cuttable to size for indoor or outdoor use. The listing calls it welded in its title and hexagonal in its description, and its detail table carries a different ASIN; both are stated on the card rather than resolved here.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Product Is Not the Answer</h2>
@@ -484,36 +552,6 @@ export default function BestFoxDeterrentsPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">The Three Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        coverage figure attributed to the maker who claims it. Where a listing
-        does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Type</th>
-              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Area or size, as listed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

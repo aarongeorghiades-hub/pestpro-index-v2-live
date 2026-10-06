@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -87,6 +88,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells from the banked listings' OWN bullets and detail
@@ -109,6 +115,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula B+ + Outdoor Bait Box Combo 900g",
     tocLabel: "Best Overall",
     tocName: "Pest Expert Formula B+ Combo",
+    pick: "900g of brodifacoum grain bait with a bait box in the same order.",
+    blurb: "Our overall pick for a garden, because the bait and the box arrive together. You get 900g of wholewheat grain in fifteen 60g sachets, with brodifacoum stated at 0.0029%, plus one rat bait box. The maker names sheds, lofts and kitchens as places to use it.",
+    pros: ["Rat bait box included", "900g as 15 x 60g sachets", "Brodifacoum 0.0029% stated on the listing", "Wholewheat grain"],
   },
   {
     anchorId: "best-bulk",
@@ -127,6 +136,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula B+ Rat Poison 1.5kg (15x100g)",
     tocLabel: "Best Bulk Pack",
     tocName: "Pest Expert Formula B+ 1.5kg",
+    pick: "1.5kg of the same grain bait, for stations you already own.",
+    blurb: "The same grain at the same stated strength, in a bigger pack: 1.5kg in fifteen 100g sachets, wax-free. There is no station in the box, so buy this one if you already have tamper-resistant stations to fill.",
+    pros: ["1.5kg as 15 x 100g sachets", "Brodifacoum 0.0029%, as listed", "Wax-free wholewheat grain"],
   },
   {
     anchorId: "best-starter",
@@ -145,6 +157,9 @@ const products: ProductRecord[] = [
     h2Name: "Roshield External Bait Box + 300g Block Kit",
     tocLabel: "Best Starter Kit",
     tocName: "Roshield External Bait Box Kit",
+    pick: "One tamper-resistant station and 300g of bromadiolone wax blocks.",
+    blurb: "A sensible first kit if you have never baited before. It comes with one tamper-resistant station, 300g of wax blocks, a metal rod and a bait divider. The blocks are stated as bromadiolone 0.0025% with an HSE registration number on the listing, and the maker reminds you that amateur rodenticide must go in a tamper-resistant box.",
+    pros: ["Station, metal rod and bait divider included", "300g wax blocks, bromadiolone 0.0025%", "HSE registration UK-2016-0986-0007 stated", "Mouse and rat named as targets"],
   },
   {
     anchorId: "best-multi-station",
@@ -163,6 +178,9 @@ const products: ProductRecord[] = [
     h2Name: "Roshield 2x External Tamper-Proof Bait Box + Wax Blocks Kit",
     tocLabel: "Best Multi-Station",
     tocName: "Roshield 2x Bait Box Kit",
+    pick: "Two tamper-resistant stations with 300g of blocks between them.",
+    blurb: "The same blocks and rod as the single kit, with two stations so you can cover two spots. The maker describes it as suited to a small to medium infestation. The blocks are bromadiolone 0.0025%, under the same HSE registration number.",
+    pros: ["Two tamper-resistant stations", "300g of bromadiolone 0.0025% blocks", "Maker sizes it for a small to medium infestation"],
   },
   {
     anchorId: "best-value",
@@ -181,18 +199,35 @@ const products: ProductRecord[] = [
     h2Name: "Elixir Gardens Rat Poison 1kg Outdoor Sachets",
     tocLabel: "Best Value",
     tocName: "Elixir Gardens Outdoor Sachets",
+    pick: "1kg of ready-to-use sachets, with a dye that marks droppings.",
+    blurb: "A kilogram of bait in ten ready-to-use 100g sachets, enough to keep your stations stocked through a treatment. The listing names bromadiolone as the active but gives no percentage. The maker says a red dye colours droppings, so you can see the bait is being taken. There is no station, so you need your own.",
+    pros: ["10 x 100g ready-to-use sachets", "Red dye marks droppings, per the maker", "Active named on the listing: bromadiolone", "Clear anticoagulant warning on the listing"],
   },
 ];
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Outdoor bait goes in a lockable, tamper-resistant station, and only for as
+    long as it takes to get control.{" "}
+    <a href="#legal" className="underline">
+      The legal position outdoors
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Five Products Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "A Garden Is Outdoors Around a Building" },
   { id: "legal", title: "The Legal Position on Rat Poison Outdoors" },
   { id: "limits", title: "Where Poison Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If Poison Is Not the Answer" },
   { id: "using", title: "Using It" },
-  { id: "compared", title: "The Five Products Compared" },
 ];
 
 export default function BestRatPoisonForGardensPage() {
@@ -212,6 +247,18 @@ export default function BestRatPoisonForGardensPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -240,6 +287,56 @@ export default function BestRatPoisonForGardensPage() {
         ). Everything below is about putting bait outside without putting it
         in front of them.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Five Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Form, station and active, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The legal line and the does-not-help line
           sit ABOVE the product lines. No Amazon link, no price, no image, no award. */}
@@ -410,33 +507,6 @@ export default function BestRatPoisonForGardensPage() {
         station, and both Roshield listings state the rod.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "Fifteen 60g sachets of wholewheat grain with brodifacoum stated at 0.0029%, and one bait box in the same listing. The maker names sheds, lofts and kitchens; the listing's claims about being stronger than every other brand are the maker's and stop here.",
-                "The same grain at the same stated strength, 1.5kg in fifteen 100g sachets, with no station included. Target species listed as Rodents. Bait alone is for a box you already have, and that is the only difference between this and the card above.",
-                "One tamper-resistant station with 300g of wax blocks stated as bromadiolone 0.0025% under an HSE registration number, a metal rod and a divider. The listing itself states that amateur-approved rodenticide must be used within a tamper-resistant box, which is what CRRU and HSE say above.",
-                "The same blocks and the same rod, with two stations instead of one and 300g of bait between them. The maker describes it as suited to a small to medium infestation; that is the listing's sizing, not ours.",
-                "Ten 100g ready-to-use sachets whose listing names bromadiolone and no percentage, with a red dye the maker says marks droppings. No station. The listing's own warning — an anticoagulant; if ingested call 111 — is the one health line on this page.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If Poison Is Not the Answer</h2>
@@ -494,36 +564,6 @@ export default function BestRatPoisonForGardensPage() {
         </Callout>
       </div>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Five Products Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Form, station and active, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Burrows you cannot find, or a garden next to a watercourse?"

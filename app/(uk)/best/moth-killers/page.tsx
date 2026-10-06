@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -84,6 +85,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells from the banked listings' OWN bullets and detail
@@ -106,6 +112,9 @@ const products: ProductRecord[] = [
     h2Name: "Acana Hanging Moth Killer",
     tocLabel: "Best Overall",
     tocName: "Acana Hanging Moth Killer",
+    pick: "Four lavender hanging units, each with a date wheel and listed for up to 3 months.",
+    blurb: "Our overall pick for the wardrobe. You get four hanging units with lavender natural oils, each listed as lasting up to 3 months, and a date wheel on the front lets you see when you opened it. The maker claims it kills moths, eggs and larvae in wardrobes. The listing warns that lavender is a common allergen, so keep it off your skin and away from children and pets.",
+    pros: ["Four hanging units in the pack", "Up to 3 months each, as listed", "Date wheel shows when each was opened", "Lavender fragrance"],
   },
   {
     anchorId: "best-pheromone-trap",
@@ -125,6 +134,9 @@ const products: ProductRecord[] = [
     h2Name: "London Moth Killer Pheromone Traps",
     tocLabel: "Best Pheromone Trap",
     tocName: "London Moth Killer Pheromone Traps",
+    pick: "Ten pheromone sticky traps to show whether clothes moths are about.",
+    blurb: "Pick these if you want to know whether you have clothes moths, and where. The pack holds ten sticky traps with a pheromone for the common clothes moth, each listed as lasting 4 months once opened. They are listed for monitoring, attracting and holding adult moths, so pair them with something that treats the larvae.",
+    pros: ["Ten traps in the pack", "4 months per trap once opened, as listed", "Pheromone for the common clothes moth"],
   },
   {
     anchorId: "best-carpet-spray",
@@ -143,6 +155,9 @@ const products: ProductRecord[] = [
     h2Name: "Acana Carpet & Fabric Moth Killer Spray",
     tocLabel: "Best Carpet Moth Spray",
     tocName: "Acana Carpet & Fabric Moth Killer Spray",
+    pick: "A 500ml spray for carpets, curtains and upholstery, listed for 25 sq metres.",
+    blurb: "The one to pick if the damage is in the carpet rather than the wardrobe. The 500ml bottle is listed for carpet, curtains and upholstery, at 25 sq metres per bottle. The maker claims it kills moths, eggs and larvae. No active substance is named on the listing, so read the label before you spray.",
+    pros: ["Listed for carpet, curtains and upholstery", "25 sq metres per 500ml bottle, as listed", "Maker claims it kills moths, eggs and larvae"],
   },
   {
     anchorId: "best-drawers-storage",
@@ -162,6 +177,9 @@ const products: ProductRecord[] = [
     h2Name: "Acana Sachet Moth Killer 16 Pack",
     tocLabel: "Best for Drawers & Storage",
     tocName: "Acana Sachet Moth Killer 16 Pack",
+    pick: "Lavender sachets for drawers, with an indicator that shows when each is spent.",
+    blurb: "Made for drawers and storage, where a hanging unit will not go. The listing says to use two per drawer, and each sachet is listed as lasting up to 3 months, with an indicator that displays \"end\". The maker claims it kills moths, eggs and larvae. The title says 16 sachets and the detail rows say 20, so plan on the lower figure.",
+    pros: ["Two per drawer, as the listing directs", "Up to 3 months per sachet, as listed", "Indicator displays \"end\"", "Lavender scent"],
   },
   {
     anchorId: "best-budget",
@@ -180,18 +198,32 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil Moth Killer Hanging Unit Twin Pack",
     tocLabel: "Best Budget Option",
     tocName: "Rentokil Moth Killer Hanging Unit Twin Pack",
+    pick: "A Rentokil hanging moth killer, titled as a twin pack.",
+    blurb: "A hanging moth killer from Rentokil, titled as a twin pack. The listing carries no feature bullets and names no active substance. Its number of pieces reads 1 despite the title, so check the pack for what you are getting before you rely on it.",
+    pros: ["Hanging unit format", "Titled as a twin pack", "Target species listed as moth"],
   },
 ];
 
+const SAFETY_NOTE = (
+  <>
+    Four of these are insecticides, so follow the label. Two Acana listings add
+    their own warnings on lavender allergy and on use around pets and children.{" "}
+    <a href="#legal" className="underline">
+      The legal position
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Five Products Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "It Is the Larvae" },
   { id: "legal", title: "The Legal Position on Moth Products" },
   { id: "limits", title: "Where a Hanger or a Trap Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Product Is Not the Answer" },
   { id: "using", title: "Using Them" },
-  { id: "compared", title: "The Five Products Compared" },
 ];
 
 export default function BestMothKillersPage() {
@@ -211,6 +243,18 @@ export default function BestMothKillersPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -237,6 +281,56 @@ export default function BestMothKillersPage() {
         </a>
         ).
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Five Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Form, contents and duration, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The larvae line, the legal line and the
           does-not-help line sit ABOVE the product lines. No Amazon link, no price, no
@@ -400,33 +494,6 @@ export default function BestMothKillersPage() {
         not stated.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "Four lavender-scented hanging units listed with natural oils, each with a date wheel set at opening and listed as lasting up to 3 months. The maker claims it kills moths, eggs and larvae; no active substance is named. The listing's own safety text names lavender as a common allergen.",
-                "Ten sticky traps baited with a pheromone for the common clothes moth, each listed as lasting 4 months once opened. The listing describes them as monitoring, attracting and holding adult moths, which is what the museum says a trap is for. It does not treat larvae or fabric.",
-                "A 500ml spray listed for carpet, curtains and upholstery at 25 sq metres per bottle. The maker claims it kills moths, eggs and larvae; no active substance is named on the listing. The one product on the page aimed at a floor rather than a wardrobe.",
-                "Lavender sachets for drawers and storage, listed as two per drawer and up to 3 months each, with an indicator that displays the word end. The fetched title says 16 sachets; the listing's detail rows say 20. Both are stated here because the listing states both. The maker claims it kills moths, eggs and larvae.",
-                "A twin pack of Rentokil hanging units whose listing carries no feature bullets, names no active substance and states no duration. Its target species field reads Moth and its number of pieces reads 1. What is in it is on the pack.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If a Product Is Not the Answer</h2>
@@ -487,36 +554,6 @@ export default function BestMothKillersPage() {
         </Callout>
       </div>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Five Products Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Form, contents and duration, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Carpet still going bare after the clear-out?"

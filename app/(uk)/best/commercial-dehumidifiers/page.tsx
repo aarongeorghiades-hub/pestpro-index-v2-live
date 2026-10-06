@@ -4,6 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
+import TopPicks, { ProsList } from "@/components/TopPicks";
 
 // S68 R4 — ROLLOUT REBUILD to the R8 pattern, the last Group A route. Title and H1
 // carry no claim clause and are unchanged. Award labels, rank numerals, anchor ids and
@@ -99,6 +100,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, fetched
@@ -125,6 +131,9 @@ const products: ProductRecord[] = [
     h2Name: "electriQ ECD30 Industrial 30L Dehumidifier",
     tocLabel: "Best Overall",
     tocName: "electriQ ECD30",
+    pick: "A metal-bodied unit on wheels, listed at 30 litres a day, with a drainage option.",
+    blurb: "Our overall pick for a landlord who needs one unit to move between properties. It has a metal body on wheels and is listed at up to 30 litres a day, with a humidistat, a 24-hour timer and a permanent drainage option, so it can run for long spells without anyone emptying a tank. The listing names warehouses, garages, basements and offices. It weighs 26 kilograms, so plan on wheeling it rather than carrying it.",
+    pros: ["Up to 30 litres a day, as listed", "Permanent drainage option for long runs", "Metal body on wheels", "Humidistat, 24-hour timer and automatic defrost"],
   },
   {
     anchorId: "best-professional",
@@ -144,6 +153,9 @@ const products: ProductRecord[] = [
     h2Name: "MeacoDry Arete One 25L Dehumidifier & HEPA Air Purifier",
     tocLabel: "Best Professional-Grade",
     tocName: "MeacoDry Arete One",
+    pick: "A dehumidifier with an H13 HEPA filter, listed for 86 square metres at 40 dB.",
+    blurb: "The pick for a property where you want the air filtered as well as dried. It carries an H13 HEPA filter alongside the dehumidifier, and the listing gives laundry, night and smart humidity modes. It is listed for a floor area of 86 square metres at 40 dB, with a 4.8 litre front-loading tank. The 25L in its name is the model: the listing rates it at up to 14 litres a day.",
+    pros: ["H13 HEPA filter built in", "Smart humidity, laundry and night modes", "Listed for 86 square metres at 40 dB", "4.8 litre front-loading tank"],
   },
   {
     anchorId: "arete-two",
@@ -163,6 +175,9 @@ const products: ProductRecord[] = [
     h2Name: "Best 20L Unit",
     tocLabel: "Meaco Arete Two 20L",
     tocName: "Best 20L Unit",
+    pick: "App control with Alexa and Google, and a lowest fan speed listed at 38 dB.",
+    blurb: "Pick this if you want to check a rental's humidity from your phone. The Meaco app works with Alexa and Google, as listed, and the quietest of its three fan speeds is listed at 38 dB, which helps in a room someone sleeps in. It has an H13 HEPA filter and laundry mode, and the listing suits it to 3 to 4 bedroom houses, or 80 square metres. Extraction is stated as 20 litres a day in the text and 25 in the detail table.",
+    pros: ["Meaco app with Alexa and Google control", "Three fan speeds from 38 dB", "H13 HEPA filter and laundry mode", "Listed for 3 to 4 bedroom houses"],
   },
   {
     anchorId: "best-budget",
@@ -182,6 +197,9 @@ const products: ProductRecord[] = [
     h2Name: "Meaco 25L Ultra Low Energy Dehumidifier",
     tocLabel: "Best Budget",
     tocName: "Meaco 25L Ultra Low Energy",
+    pick: "25 litres a day on 330 watts, dropping to fan-only once the room hits its target.",
+    blurb: "A plain, capable unit for a landlord who wants good controls and nothing extra. It is listed at 25 litres a day on 330 watts, with a variable humidistat, a 24-hour timer and a child lock. The listing says it switches to fan-only once the target humidity is reached and re-tests after 30 minutes, so it stops drying once the room is at your setting. The listing does not state tank size or floor area.",
+    pros: ["25 litres a day on 330 watts, as listed", "Variable humidistat with fan-only at target", "Laundry, quiet and auto modes", "Child lock and 24-hour timer"],
   },
   {
     anchorId: "vonhaus-30l",
@@ -201,6 +219,9 @@ const products: ProductRecord[] = [
     h2Name: "Best Smart Control",
     tocLabel: "VonHaus 30L Smart",
     tocName: "Best Smart Control",
+    pick: "30 litres a day with app control and a drain hose for continuous drainage.",
+    blurb: "For a landlord who wants high extraction and a phone app in the same unit. It is listed at 30 litres a day on 430 watts, with the TUYA Smart app working through Alexa and Google Home. The 5.3 litre tank fills quickly at that rate, and the drain hose lets you run it on continuous drainage instead. The listing gives a room size of 30 to 40 square metres and a noise level of 44 dB.",
+    pros: ["30 litres a day, as listed", "TUYA Smart app with Alexa and Google Home", "Drain hose for continuous drainage", "Auto defrost, child lock and 24-hour timer"],
   },
 ];
 
@@ -230,15 +251,26 @@ const faqSchema = {
   })),
 };
 
+const SAFETY_NOTE = (
+  <>
+    Government guidance asks landlords to tackle the underlying cause of damp
+    first. A dehumidifier only dries the air in its own room.{" "}
+    <a href="#legal" className="underline">
+      What the guidance asks of a landlord
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "Dehumidifiers Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Is the Air the Problem?" },
   { id: "legal", title: "What the Guidance Asks of a Landlord" },
   { id: "limits", title: "Where a Dehumidifier Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Dehumidifier Is Not the Answer" },
   { id: "using", title: "Siting and Running One" },
-  { id: "compared", title: "Dehumidifiers Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -270,6 +302,18 @@ export default function BestCommercialDehumidifiersPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -294,6 +338,57 @@ export default function BestCommercialDehumidifiersPage() {
         is find out where the water is coming from — and the government&rsquo;s
         guidance to landlords starts there.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">Dehumidifiers Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing gives two figures, both are shown; where it gives none, the
+        cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Extraction and power, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Tank, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Floor area, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -479,33 +574,6 @@ export default function BestCommercialDehumidifiersPage() {
         a room size.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A 650 watt metal-bodied unit on wheels, listed at up to 30 litres a day with a humidistat, a 24-hour timer and a permanent drainage option. Its listing says a 7 litre tank in one place and 30 in another; the card carries both. Listed for warehouses, garages, basements and offices, and at 26 kilograms.",
-                "A 267 watt unit with a 4.8 litre front-loading tank and an H13 HEPA filter, listed for a floor area of 86 square metres at 40 dB. Its listing rates it at up to 14 litres a day; the 25L in its name is the model, not the figure, and the card says so.",
-                "A 204 watt unit listed at up to 20 litres a day in its text and 25 in its detail table, with the Meaco app, three fan speeds from 38 dB and an 80 square metre floor area. The h2 above now carries the card's award under Law 189.",
-                "A 330 watt unit listed at 25 litres a day, with a variable humidistat, laundry, quiet and auto modes, a 24-hour timer and a child lock. Its listing says it drops to fan-only at the target humidity and re-tests after 30 minutes. Tank size and floor area are not stated.",
-                "A 430 watt unit listed at 30 litres a day, a 5.3 litre tank with a drain hose, the TUYA Smart app, a 24-hour timer, auto defrost and a child lock, for a room of 30 to 40 square metres at 44 dB. The h2 above now carries the card's award under Law 189.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Dehumidifier Is Not the Answer</h2>
@@ -555,37 +623,6 @@ export default function BestCommercialDehumidifiersPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">Dehumidifiers Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing gives two figures, both are shown; where it gives none, the
-        cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Extraction and power, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Tank, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Floor area, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

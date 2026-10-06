@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -91,6 +92,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -124,6 +130,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula B+ 3kg + Bait Stations",
     tocLabel: "Best Large Infestation Kit",
     tocName: "Pest Expert Formula B+ 3kg",
+    pick: "3kg of brodifacoum grain bait and two lockable bait boxes, in one order.",
+    blurb: "Our top pick for premises where the survey found a large problem. You get two lockable bait boxes and 3kg of grain bait, with the active listed as brodifacoum at 0.0029%, so the stations and plenty of refills arrive together. The listing names mouse and rat, indoors and out. It states the sachet count two ways, 30 x 100g and 20 x 60g, so check the pack when it arrives.",
+    pros: ["3kg of grain bait with two lockable boxes", "Brodifacoum 0.0029%, as listed", "Listed for indoor and outdoor use", "Target species: mouse and rat"],
   },
   {
     anchorId: "best-medium-kit",
@@ -142,6 +151,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula B+ 2kg + 2 Bait Station Boxes",
     tocLabel: "Best Medium Premises Kit",
     tocName: "Pest Expert Formula B+ 2kg",
+    pick: "Two lockable stations with 2kg of grain bait in 20 x 100g sachets.",
+    blurb: "A step down in size for a medium premises. Two lockable bait stations come with 2kg of grain bait in 20 x 100g sachets, active brodifacoum at 0.0029%. The listing names residential and commercial use, indoors and outdoors.",
+    pros: ["2kg of grain bait in 20 x 100g sachets", "Two lockable bait stations", "Brodifacoum 0.0029%, as listed", "Listed for residential or commercial use"],
   },
   {
     anchorId: "best-starter-kit",
@@ -160,6 +172,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula B+ Block Kit 1.5kg (75 Blocks + 2 Stations)",
     tocLabel: "Best Starter Kit",
     tocName: "Pest Expert Formula B+ 1.5kg",
+    pick: "75 bait blocks and two lockable boxes, for a minor to moderate rat problem, as listed.",
+    blurb: "A starter kit for a smaller job. It has two lockable bait boxes and 75 blocks of 20g, listed as 1.5kg in 5 x 300g packs, with brodifacoum at 0.0025%. The listing itself scopes it to a minor or moderate rat infestation, which is a fair guide to whether it is enough for your site.",
+    pros: ["75 x 20g blocks and two lockable boxes", "Brodifacoum 0.0025%, as listed", "Scoped to a minor or moderate infestation"],
   },
   {
     anchorId: "best-overall",
@@ -179,6 +194,9 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Pro Quality Tamper-Resistant Bait Box",
     tocLabel: "Best Professional Grade",
     tocName: "Roshield Pro Quality",
+    pick: "Two empty boxes with an inspection window and key-only access, made in the UK.",
+    blurb: "The pick if you already hold bait and want boxes you can look into without unlocking. These two Roshield boxes have an inspection window and key-only access, and the listing says they take wax blocks, wheat bait, pasta sachets and traps. No bait is included. The listing states they are made in the UK from recycled plastics.",
+    pros: ["Inspection window, as listed", "Key-only access", "Takes blocks, wheat bait, pasta sachets and traps", "Made in the UK from recycled plastics, as listed"],
   },
   {
     anchorId: "best-seller",
@@ -197,6 +215,9 @@ const products: ProductRecord[] = [
     h2Name: "The Big Cheese Rat & Mouse Bait Station",
     tocLabel: "Best Value Multi-Pack",
     tocName: "The Big Cheese",
+    pick: "Three stations with 900g of difenacoum bait, ready to put down.",
+    blurb: "Three stations and 900g of bait in one pack, so you can cover several runs straight away. The active is listed as difenacoum, and the stations are listed as moisture resistant for indoor and outdoor use. The listing also notes that a station must be used by law when baiting for rats and mice.",
+    pros: ["Three stations with 900g of bait", "Difenacoum, as listed", "Moisture resistant, for indoor and outdoor use"],
   },
   {
     anchorId: "best-multi-pack",
@@ -215,6 +236,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Heavy Duty Bait Boxes (x4)",
     tocLabel: "Best Multi-Pack",
     tocName: "Pest Expert Heavy Duty (x4)",
+    pick: "Four lockable, weather-resistant boxes for the bait you already have.",
+    blurb: "Four boxes in one pack, for a site with more runs to cover. They are listed as fully lockable and weather resistant, for indoor and outdoor use, and as taking grain, blocks and paste. They arrive empty, so pair them with the bait you already use.",
+    pros: ["Four boxes in one pack", "Fully lockable and weather resistant, as listed", "Takes grain, blocks and paste", "For indoor and outdoor use"],
   },
   {
     anchorId: "best-budget",
@@ -234,6 +258,9 @@ const products: ProductRecord[] = [
     h2Name: "Mice&Co 2x Large Professional Bait Boxes",
     tocLabel: "Best Budget Professional",
     tocName: "Mice&Co 2x Large",
+    pick: "Two large polypropylene boxes with keys, a metal bait rod and a two-entrance tunnel.",
+    blurb: "Two large boxes with two keys, for a reader who wants a simple pair of stations. The listing says they take blocks, grain or paste on an internal metal rod, and each has a two-entrance tunnel. They are listed as polypropylene and weather-resistant, for indoor and outdoor use. Bait is not included.",
+    pros: ["Two boxes with two keys", "Internal metal rod for blocks, grain or paste", "Two-entrance tunnel", "Weather-resistant polypropylene, as listed"],
   },
   {
     anchorId: "best-monitoring",
@@ -253,6 +280,9 @@ const products: ProductRecord[] = [
     h2Name: "Roshield PRO BOX 2x Extra Large with Solid Lid",
     tocLabel: "Best for Monitoring",
     tocName: "Roshield PRO BOX Solid Lid",
+    pick: "Two extra-large stations with a solid lid the listing calls secure for inspection.",
+    blurb: "Two extra-large stations with a solid lid, which the listing describes as secure and made for inspection. Each measures 26 x 19 x 12 cm, and the listing names mice and rats, indoors and outdoors. Bait is not included, so fill them with what your survey calls for.",
+    pros: ["Two extra-large stations", "Secure solid lid for inspection, as listed", "26 x 19 x 12 cm, as listed", "For indoor and outdoor use"],
   },
   {
     anchorId: "best-kit",
@@ -272,18 +302,32 @@ const products: ProductRecord[] = [
     h2Name: "Roshield External Bait Box + 300g Wax Blocks",
     tocLabel: "Best Station + Bait Kit",
     tocName: "Roshield External Bait Box + 300g Wax Blocks",
+    pick: "One station with 300g of bromadiolone wax blocks and an HSE number on the listing.",
+    blurb: "The smallest kit here, for a small or emerging infestation, which is how the listing scopes it. You get one station and 300g of wax blocks, with bromadiolone at 0.0025% and HSE number UK-2016-0986-0007 on the listing. It lets you start on a single run before you know whether you need more.",
+    pros: ["One station with 300g of wax blocks", "Bromadiolone 0.0025%, as listed", "HSE number shown on the listing", "Scoped to a small or emerging infestation"],
   },
 ];
 
+const SAFETY_NOTE = (
+  <>
+    Four kits contain anticoagulant rodenticide. HSE says professional users must
+    follow a UK stewardship regime, and every bait goes in a lockable station.{" "}
+    <a href="#legal" className="underline">
+      The legal position for a business
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "Best Commercial Rodent Bait Stations Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Is Baiting the Right Job?" },
   { id: "legal", title: "The Legal Position for a Business" },
   { id: "limits", title: "Where a Bait Station Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If Bait Is Not the Answer" },
   { id: "using", title: "Placing and Servicing Them" },
-  { id: "compared", title: "Best Commercial Rodent Bait Stations Compared" },
 ];
 
 export default function BestCommercialRodentBaitStationsPage() {
@@ -315,6 +359,18 @@ export default function BestCommercialRodentBaitStationsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -333,6 +389,55 @@ export default function BestCommercialRodentBaitStationsPage() {
         are empty boxes; four arrive with bait, and for a business the bait is
         where the rules bite.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">Best Commercial Rodent Bait Stations Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Pack and bait, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -562,37 +667,6 @@ export default function BestCommercialRodentBaitStationsPage() {
         code is describing.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "Two lockable boxes with 3kg of grain bait, active listed as brodifacoum at 0.0029%. The listing states the sachet count two ways — 30 x 100g in one line, 20 x 60g in another — and the detail table says 30 units; this page reports the disagreement rather than picking one.",
-                "Two lockable bait stations with 2kg of grain bait listed as 20 x 100g, active brodifacoum at 0.0029%. The listing names residential and commercial premises, indoors and out.",
-                "Two lockable boxes with 75 blocks of 20g, listed as 1.5kg supplied as 5 x 300g, active brodifacoum at 0.0025%. The listing itself scopes it to a minor or moderate infestation.",
-                "Two Roshield boxes with an inspection window and key-only access, listed as holding wax blocks, wheat bait, pasta sachets and traps. No bait is included; the name on this card now says two, because the listing does.",
-                "Three stations supplied with 900g of bait, so this arrives ready to deploy. The listing names difenacoum, and says the station must be used by law when baiting for rats and mice.",
-                "Four lockable boxes listed as weather resistant and as taking grain, blocks and paste, supplied empty. Target species listed as mouse and rat.",
-                "Two polypropylene boxes with two keys and a two-entrance tunnel, listed as weather-resistant for indoor and outdoor use. The listing says in capitals that bait is not included.",
-                "Two extra-large stations with what the listing calls a secure solid lid for easy inspection, supplied empty. The card previously said transparent lid; the listing does not, and it now says solid.",
-                "One station with 300g of wax blocks, active listed as bromadiolone at 0.0025% under HSE number UK-2016-0986-0007. The listing scopes it to a small or emerging infestation.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If Bait Is Not the Answer</h2>
@@ -642,35 +716,6 @@ export default function BestCommercialRodentBaitStationsPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">Best Commercial Rodent Bait Stations Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Pack and bait, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Premises you would rather have under contract?"

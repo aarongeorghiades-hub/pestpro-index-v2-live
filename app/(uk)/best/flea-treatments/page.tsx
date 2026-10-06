@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -84,6 +85,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells from the banked listings' OWN bullets and detail
@@ -108,6 +114,9 @@ const products: ProductRecord[] = [
     h2Name: "Indorex Household Flea Spray 500ml",
     tocLabel: "Best Overall",
     tocName: "Indorex Household Flea Spray",
+    pick: "A growth-regulator spray listed for a 3-4 bedroom house per can.",
+    blurb: "Our overall pick, because it carries a growth regulator for flea eggs and larvae. The listing names permethrin alongside pyriproxyfen, and the maker claims up to 12 months prevention of egg and larvae development. One 500ml can is listed for approximately a 3-4 bedroom house. Clear the room of pets, birds and fish aquaria before you spray.",
+    pros: ["Growth regulator pyriproxyfen listed with permethrin", "Maker claims up to 12 months prevention of egg and larvae development", "One 500ml can listed for a 3-4 bedroom house", "Pet and ventilation directions set out on the listing"],
   },
   {
     anchorId: "best-powder",
@@ -127,6 +136,9 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Home Flea Powder 300g",
     tocLabel: "Best Powder",
     tocName: "Zero In Home Flea Powder",
+    pick: "A permethrin puffer powder for carpets, rugs and pet bedding.",
+    blurb: "A good fit if you want to treat a smaller patch, such as the pet's bed or one rug. The 300g puffer pack contains permethrin and is listed as treating up to 10 sq m of carpet, pet bedding, rugs and soft furnishings. You shake it on and vacuum it off. The listing says it kills cat and dog fleas and their larvae.",
+    pros: ["Puffer pack that shakes straight onto fabric", "Permethrin, per the listing", "Listed for carpets, pet bedding, rugs and soft furnishings", "Listed as killing cat and dog fleas and their larvae"],
   },
   {
     anchorId: "best-pet-brand",
@@ -146,6 +158,9 @@ const products: ProductRecord[] = [
     h2Name: "Beaphar Household Flea Powder 300g",
     tocLabel: "Best Pet Brand",
     tocName: "Beaphar Household Flea Powder",
+    pick: "A 300g powder listed for up to 30 m² in an active infestation.",
+    blurb: "Pick this when the problem has spread across a room or more. The 300g pack is listed as covering up to 30 m² when treating an active infestation, three times the stated reach of the Zero In powder. You sprinkle it, leave it at least 30 minutes, then vacuum. The listing names no active substance and says it is not for use on animals, clothing or human bedding.",
+    pros: ["Listed for up to 30 m² in an active infestation", "Listed as killing adult fleas and flea larvae", "Sprinkle, wait at least 30 minutes, then vacuum", "Safety warning set out on the listing"],
   },
   // S68 R5 — the fogger the title promises. Banked body (S45-C), fetched 2026-09-01;
   // neutral factual label; the listing's "cleaner, safer alternative" is the maker's
@@ -155,7 +170,7 @@ const products: ProductRecord[] = [
     asin: "B077M5TTHL",
     rank: 4,
     cardName: "Zero In Natural Flea Bomb 150ml — One-Shot Aerosol",
-    cardLabel: "One-Shot Aerosol, 150ml",
+    cardLabel: "Best Room Fogger",
     features: [
       "150ml one-shot aerosol; the listing says it treats a room of up to 40 m³",
       "Active listed as pyrethrins",
@@ -163,23 +178,37 @@ const products: ProductRecord[] = [
       "Listed for carpets, rugs and bedding; target species listed as fleas",
       "Country of origin listed as United Kingdom",
     ],
-    tableCells: ["Zero In Natural Flea Bomb 150ml", "One-shot aerosol; pyrethrins; up to 40 m³, as listed", "One-Shot Aerosol, 150ml"],
-    h2Label: "One-Shot Aerosol, 150ml",
+    tableCells: ["Zero In Natural Flea Bomb 150ml", "One-shot aerosol; pyrethrins; up to 40 m³, as listed", "Best Room Fogger"],
+    h2Label: "Best Room Fogger",
     h2Name: "Zero In Natural Flea Bomb 150ml",
-    tocLabel: "One-Shot Aerosol",
+    tocLabel: "Best Room Fogger",
     tocName: "Zero In Natural Flea Bomb",
+    pick: "A one-shot pyrethrins fogger listed for a room of up to 40 m³.",
+    blurb: "The fogger for when you want to treat a whole room in one go. It is a 150ml one-shot aerosol with pyrethrins listed as the active, for a room of up to 40 m³. You press the trigger to lock it, leave the room and let the can discharge. It is listed for carpets, rugs and bedding; the listing does not say whether the fog reaches under furniture.",
+    pros: ["One-shot 150ml can, listed for a room of up to 40 m³", "Pyrethrins listed as the active", "Listed for carpets, rugs and bedding", "Country of origin listed as United Kingdom"],
   },
 ];
 
+const SAFETY_NOTE = (
+  <>
+    None of these goes on an animal. Treat the pet with your vet&rsquo;s advice and
+    use these on the home.{" "}
+    <a href="#situation" className="underline">
+      The pet comes first
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Three Products Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "The Pet Comes First" },
   { id: "legal", title: "The Legal Position on Home Insecticides" },
   { id: "limits", title: "Where a Spray or Powder Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Spray Is Not the Answer" },
   { id: "using", title: "Using Them" },
-  { id: "compared", title: "The Three Products Compared" },
 ];
 
 export default function BestFleaTreatmentsPage() {
@@ -200,6 +229,18 @@ export default function BestFleaTreatmentsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -226,6 +267,56 @@ export default function BestFleaTreatmentsPage() {
         </a>
         ).
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Three Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Form, active and coverage, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The treat-the-pet line, the legal line and
           the does-not-help line sit ABOVE the product lines. No Amazon link, no price,
@@ -381,32 +472,6 @@ export default function BestFleaTreatmentsPage() {
         </em>
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A 500ml Virbac spray whose listing states four ingredients, one of them the growth regulator pyriproxyfen, and which the maker says treats approximately a 3-4 bedroom house. The listing also claims a magazine readers' award over 10+ years; that is the maker's claim, carried as such. Its directions are specific: remove pets, birds and fish aquaria, spray from about 50cm, and ventilate afterwards.",
-                "A 300g puffer-pack powder whose listing states permethrin and no growth regulator, listed as treating up to 10 sq m of carpet, rugs, pet bedding and soft furnishings. Shake on and vacuum off. The smallest stated coverage on the page.",
-                "A 300g powder listed as covering up to 30 m² in an active infestation, with a stated 30-minute minimum before vacuuming. The listing says it contains an insecticide and names none. Its target species field reads Cat, and its safety warning is that it is not for use on animals, clothing or human bedding.",
-                "A 150ml one-shot aerosol, the fogger the title promises, whose listing names pyrethrins and a room of up to 40 cubic metres, with the maker's instruction to lock the trigger and leave the room while it discharges. Whether it reaches under furniture is not stated; a fog settles where the air carries it.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If a Spray Is Not the Answer</h2>
@@ -474,36 +539,6 @@ export default function BestFleaTreatmentsPage() {
         </Callout>
       </div>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Three Products Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Form, active and coverage, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Fleas still emerging after the house and the pet are treated?"

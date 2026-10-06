@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -79,6 +80,7 @@ const SRC = {
 type ProductRecord = {
   anchorId: string;
   asin: string;
+  rank: number;
   cardName: string;
   cardLabel: string;
   features: string[];
@@ -87,6 +89,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -107,8 +114,9 @@ const products: ProductRecord[] = [
   {
     anchorId: "zero-in",
     asin: "B00IIOR7NS",
+    rank: 1,
     cardName: "Zero In Spider Repellent Peppermint Oil Spray 500ml",
-    cardLabel: "Peppermint spray, 500ml",
+    cardLabel: "Best Overall",
     features: [
       "500ml, listed as ready to use; mint scent",
       "The maker describes it as a non-toxic peppermint oil barrier that repels spiders without harming them",
@@ -117,16 +125,20 @@ const products: ProductRecord[] = [
       "Listing directions: shake, twist the nozzle open, spray around entry points and skirting",
     ],
     tableCells: ["Zero In Spider Repellent 500ml", "Peppermint oil, as listed", "Up to 3 weeks, per the maker", "Peppermint spray, 500ml"],
-    h2Label: "Peppermint spray, 500ml",
+    h2Label: "Best Overall",
     h2Name: "Zero In Spider Repellent Peppermint Oil Spray 500ml",
-    tocLabel: "Peppermint spray, 500ml",
+    tocLabel: "Best Overall",
     tocName: "Zero In Spider Repellent",
+    pick: "A ready-to-use peppermint spray with an on/off nozzle, for entry points and skirting.",
+    blurb: "Our overall pick if you want a peppermint spray you can use this evening. It comes ready to use in a 500ml bottle: shake it, twist the nozzle open and spray around entry points and skirting, as the listing directs. The maker describes it as a non-toxic peppermint oil barrier and gives a figure of up to 3 weeks, so plan to reapply.",
+    pros: ["500ml, ready to use, mint scent", "Short listing directions: shake, open the nozzle, spray", "The maker gives up to 3 weeks per application"],
   },
   {
     anchorId: "zero-in-twin",
     asin: "B0DBZXWGLG",
+    rank: 2,
     cardName: "Zero In Spider Repellent 500ml Twin Pack",
-    cardLabel: "Peppermint spray, 2 x 500ml",
+    cardLabel: "Best Value",
     features: [
       "Two 500ml bottles, as listed; mint scent",
       "The maker describes it as a non-hazardous mint oil spray that repels spiders without harming them",
@@ -135,16 +147,20 @@ const products: ProductRecord[] = [
       "Item form listed as Liquid; the same maker's single pack lists Aerosol",
     ],
     tableCells: ["Zero In Spider Repellent twin pack", "Peppermint oil, as listed", "2–3 weeks, per the maker", "Peppermint spray, 2 x 500ml"],
-    h2Label: "Peppermint spray, 2 x 500ml",
+    h2Label: "Best Value",
     h2Name: "Zero In Spider Repellent 500ml Twin Pack",
-    tocLabel: "Peppermint spray, 2 x 500ml",
+    tocLabel: "Best Value",
     tocName: "Zero In Twin Pack",
+    pick: "Two 500ml bottles of mint spray, listed as stain-free and low-odour for living areas.",
+    blurb: "The same Zero In mint spray in two 500ml bottles, which suits you if you have a lot of skirting and window frames to get round. The listing describes it as stain-free and low-odour, for living areas. The maker states the barrier lasts 2 to 3 weeks.",
+    pros: ["Two 500ml bottles, as listed", "Listed as stain-free and low-odour", "Mint scent, listed for living areas"],
   },
   {
     anchorId: "acana",
     asin: "B0DFMLDNPT",
+    rank: 3,
     cardName: "Acana Natural Spider Stopper 500ml",
-    cardLabel: "Peppermint and clove spray, 500ml",
+    cardLabel: "Best Long-Lasting",
     features: [
       "500ml, listed as a water-based spray with peppermint and clove oils",
       "The maker states protection lasting up to 12 weeks",
@@ -153,16 +169,20 @@ const products: ProductRecord[] = [
       "Country of origin listed as United Kingdom",
     ],
     tableCells: ["Acana Natural Spider Stopper 500ml", "Peppermint and clove oils, as listed", "Up to 12 weeks, per the maker", "Peppermint and clove spray, 500ml"],
-    h2Label: "Peppermint and clove spray, 500ml",
+    h2Label: "Best Long-Lasting",
     h2Name: "Acana Natural Spider Stopper 500ml",
-    tocLabel: "Peppermint and clove spray, 500ml",
+    tocLabel: "Best Long-Lasting",
     tocName: "Acana Spider Stopper",
+    pick: "Peppermint and clove spray with the longest interval any maker here states: up to 12 weeks.",
+    blurb: "Pick this if you would rather spray less often. It is a water-based 500ml spray with peppermint and clove oils, and the maker states it lasts up to 12 weeks, the longest figure any maker on this page gives. It is listed for any surface and as not staining, for homes, garages and sheds, and it is made in the United Kingdom.",
+    pros: ["Maker states up to 12 weeks per application", "Peppermint and clove oils, water-based", "Listed for any surface, without staining", "Listed for homes, garages and sheds"],
   },
   {
     anchorId: "pestbye",
     asin: "B00FJ4LWWW",
+    rank: 4,
     cardName: "Pestbye Get Rid of Spiders Spray Repellent & Deterrent 500ml",
-    cardLabel: "Unscented spray, 500ml",
+    cardLabel: "Best Barrier Spray",
     features: [
       "500ml single bottle; scent listed as unscented",
       "The maker describes it as creating a barrier and says it will not directly harm spiders",
@@ -171,16 +191,20 @@ const products: ProductRecord[] = [
       "Active substance not stated on the listing",
     ],
     tableCells: ["Pestbye Spider Repellent 500ml", "not stated", "Up to 4 weeks, per the maker", "Unscented spray, 500ml"],
-    h2Label: "Unscented spray, 500ml",
+    h2Label: "Best Barrier Spray",
     h2Name: "Pestbye Get Rid of Spiders Spray Repellent & Deterrent 500ml",
-    tocLabel: "Unscented spray, 500ml",
+    tocLabel: "Best Barrier Spray",
     tocName: "Pestbye Spider Spray",
+    pick: "An unscented spray, if you want no mint smell in a bedroom or living room.",
+    blurb: "The one spray here listed as unscented, so it suits a room where you would notice a mint smell. The maker's claim is about webs: it states the spray stops cobwebs forming on treated areas for up to 4 weeks, and says it will not directly harm spiders. The listing does not name an active substance.",
+    pros: ["Listed as unscented", "Maker states up to 4 weeks against cobwebs on treated areas", "500ml single bottle", "Listed as cruelty free"],
   },
   {
     anchorId: "nope",
     asin: "B09FB4QX9H",
+    rank: 5,
     cardName: "NOPE! Spider Killer Spray 500ml",
-    cardLabel: "Pyrethroid contact spray, 500ml",
+    cardLabel: "Best Kill & Repel",
     features: [
       "500ml; the one insecticide here — the listing calls it a contact killer with synthetic pyrethroid technology",
       "Target species listed as Spider",
@@ -189,10 +213,13 @@ const products: ProductRecord[] = [
       "Manufacturer listed as Safeguard Europe; country of origin United Kingdom",
     ],
     tableCells: ["NOPE! Spider Killer Spray 500ml", "Synthetic pyrethroid, as listed", "Up to 6 weeks, per the maker", "Pyrethroid contact spray, 500ml"],
-    h2Label: "Pyrethroid contact spray, 500ml",
+    h2Label: "Best Kill & Repel",
     h2Name: "NOPE! Spider Killer Spray 500ml",
-    tocLabel: "Pyrethroid contact spray, 500ml",
+    tocLabel: "Best Kill & Repel",
     tocName: "NOPE! Spider Killer Spray",
+    pick: "The one insecticide here, listed as water-based, odourless and for indoors or out.",
+    blurb: "If you want an insecticide, this is the only one on the page. The listing calls it a contact killer using synthetic pyrethroid technology, with spider as the target species. It is listed as water-based, odourless and non-staining for indoor and outdoor use, and the maker states a residual barrier of up to 6 weeks.",
+    pros: ["Synthetic pyrethroid named on the listing", "Water-based, odourless and non-staining, as listed", "Listed for indoor and outdoor use", "Maker states a residual barrier of up to 6 weeks"],
   },
 ];
 
@@ -226,15 +253,29 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full
+// sections it points to sit on the page.
+const SAFETY_NOTE = (
+  <>
+    Four of these five are repellents, and the ASA has not accepted an efficacy
+    claim for any pest repellent, so every claim on the cards is the maker's.{" "}
+    <a href="#regulator" className="underline">
+      What the regulator has accepted
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Five Sprays Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What Is Actually in the House" },
   { id: "regulator", title: "What the Regulator Has Accepted" },
   { id: "limits", title: "Where a Spray Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Spray Is Not the Answer" },
   { id: "using", title: "Using One" },
-  { id: "compared", title: "The Five Sprays Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -262,6 +303,18 @@ export default function BestSpiderRepellentPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -286,6 +339,56 @@ export default function BestSpiderRepellentPage() {
         whole of this page, and the regulator&rsquo;s position on the first
         group is set out below before any of them.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Five Sprays Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with a
+        duration figure attributed to the maker who claims it. Where a listing
+        does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Active or base, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Duration claimed by the maker</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -477,32 +580,6 @@ export default function BestSpiderRepellentPage() {
         the listings do state.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A 500ml peppermint oil spray for use around entry points and skirting, with the maker claiming a barrier lasting up to three weeks. Its own listing describes the form two ways — an aerosol in the detail table, a trigger bottle with an on/off nozzle in the text — and the card carries both.",
-                "The same product in two bottles, listed as mint scent, stain-free and low-odour, with the maker claiming two to three weeks per application. Its detail table lists the item form as Liquid where the single pack says Aerosol.",
-                "A water-based peppermint and clove spray listed for any surface and for homes, garages and sheds, made in the United Kingdom. Its maker claims the longest duration here, up to twelve weeks; that figure is the maker's and is not tested by this page.",
-                "An unscented 500ml spray whose maker says it will not directly harm spiders and claims cobwebs are stopped on treated areas for up to four weeks. Its detail table belongs to a different product — mains power, ultrasonic technology, a £30.98 price — so nothing in that table is stated here.",
-                "The one insecticide on the page: a 500ml contact spray whose listing names synthetic pyrethroid technology and gives spider as the target species, water-based, odourless and for indoor or outdoor use. The maker claims a residual barrier of up to six weeks.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Spray Is Not the Answer</h2>
@@ -551,36 +628,6 @@ export default function BestSpiderRepellentPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">The Five Sprays Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with a
-        duration figure attributed to the maker who claims it. Where a listing
-        does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Active or base, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Duration claimed by the maker</th>
-              <th className="text-left p-2 border-b font-semibold">Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

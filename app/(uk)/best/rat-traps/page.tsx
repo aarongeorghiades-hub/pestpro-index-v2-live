@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -99,6 +100,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells rebuilt from the banked listings, fetched 2026-09-01,
@@ -128,6 +134,9 @@ const products: ProductRecord[] = [
     h2Name: "Rat Reaper by Froboo",
     tocLabel: "Best Overall",
     tocName: "Rat Reaper XXL Snap Trap",
+    pick: "Two extra-large metal snap traps for rats, listed for indoors or out.",
+    blurb: "Our overall pick, and you get two traps rather than one: the listing is explicit that two are supplied, even though the name reads as a single trap. They are extra-large metal snap traps listed for indoor and outdoor use, with Rat as the target species. No bait is supplied. The listing states one bait pod and calls the trap simple to bait with peanut butter, which is one of the baits Nebraska Extension names above.",
+    pros: ["Two traps in the pack", "Extra-large metal snap design", "Listed for indoor and outdoor use", "Simple to bait with peanut butter, per the listing"],
   },
   {
     anchorId: "best-safety",
@@ -146,6 +155,9 @@ const products: ProductRecord[] = [
     h2Name: "Mastertrap Rat Bait Station Box",
     tocLabel: "Best for Pet & Child Safety",
     tocName: "Mastertrap Rat Bait Station Box",
+    pick: "A snap trap inside a lidded box, for a house with a dog or small children.",
+    blurb: "Choose this one if you have a dog or small children in the house. Despite the name it is a snap trap inside a box, not a station for poison, sold as a single unit with a black lid. The lid is the reason to buy it: the mechanism is not in the open where a dog or a child can reach it.",
+    pros: ["Snap mechanism sits behind a lid", "Single unit with a black lid", "Target species listed as Rat"],
   },
   {
     anchorId: "best-professional",
@@ -164,18 +176,35 @@ const products: ProductRecord[] = [
     h2Name: "ROSHIELD 4-Pack Rat Trap",
     tocLabel: "Best Professional-Grade",
     tocName: "ROSHIELD 4-Pack Rat Trap",
+    pick: "Four reusable snap traps, the most placement points on this page.",
+    blurb: "Too few traps is the commonest reason trapping fails, and this pack answers it with four. They are metal and plastic, listed as reusable and easy to set, with Mouse and Rat as the stated target species. That gives you more placement points than anything else on this page.",
+    pros: ["Four traps in the pack", "Listed as reusable and easy to set", "Metal and plastic build", "Target species listed as Mouse and Rat"],
   },
 ];
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    A spring trap on an outdoor run or in the open is illegal unless it is set
+    in a tunnel.{" "}
+    <a href="#legal" className="underline">
+      The legal position on rat traps
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Three Traps Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Trap or Bait" },
   { id: "legal", title: "The Legal Position on Rat Traps" },
   { id: "limits", title: "Where a Trap Catches Nothing" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If Trapping Is Not the Answer" },
   { id: "using", title: "Setting and Placing Them" },
-  { id: "compared", title: "The Three Traps Compared" },
 ];
 
 export default function BestRatTrapsPage() {
@@ -217,6 +246,18 @@ export default function BestRatTrapsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -234,6 +275,57 @@ export default function BestRatTrapsPage() {
         advantage over bait: there is no toxin in the house, nothing for a dog to
         find, and you know immediately whether it worked.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Three Traps Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing —
+        none of the three states a trigger weight or a trap size.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Type, material and pack, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The legal line and the catches-nothing line
           sit ABOVE the product lines. No Amazon link, no price, no image, no award. */}
@@ -397,68 +489,6 @@ export default function BestRatTrapsPage() {
         </Callout>
       </div>
 
-      {/* Product 1 */}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />
-      </div>
-      <p>
-        Listed as a two-pack of extra-large metal snap traps for indoor and
-        outdoor use, with Rat as the stated target species. The card name reads
-        as a single trap; the listing is explicit that two are supplied. No bait
-        is supplied with it: the listing states one bait pod and describes the
-        trap as simple to bait with peanut butter, which is one of the baits
-        Nebraska Extension names above rather than a best one.
-      </p>
-
-      {/* Product 2 */}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />
-      </div>
-      <p>
-        Despite the name, this is a snap trap inside a box rather than a station
-        for poison — the listing describes it as a bait station box with a heavy
-        duty snap trap, supplied as a single unit with a black lid. The lid is
-        the reason to choose it: the mechanism is not in the open where a dog or
-        a child can reach it.
-      </p>
-
-      {/* Product 3 */}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />
-      </div>
-      <p>
-        Four traps in metal and plastic at 150 grams, listed as reusable and easy
-        to set, with Mouse and Rat as stated target species. Four placement
-        points is the most on this page, which is the practical answer to the
-        too-few-traps problem above.
-      </p>
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If Trapping Is Not the Answer</h2>
@@ -502,37 +532,6 @@ export default function BestRatTrapsPage() {
         </li>
       </ol>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Three Traps Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing —
-        none of the three states a trigger weight or a trap size.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Type, material and pack, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Still catching rats after a month?"

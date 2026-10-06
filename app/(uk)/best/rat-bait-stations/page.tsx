@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -86,6 +87,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // AWARD LABELS, RANK NUMERALS, ANCHOR IDS, CARD ORDER AND EVERY NAME ARE UNCHANGED.
@@ -123,6 +129,9 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil Advanced Rat Bait Station",
     tocLabel: "Best Overall",
     tocName: "Rentokil Advanced Bait Station",
+    pick: "A single lockable, reusable station with rat named as its target.",
+    blurb: "Our overall pick if you need one station for a rat problem. The listing calls it lockable, tamper-resistant and reusable, and rat is the only target species it names. It is clear plastic, 26.6 x 17 x 11.3 cm and 340 grams. No bait comes with it, so you choose the rodenticide and read its label.",
+    pros: ["Lockable, tamper-resistant and reusable, as listed", "Rat named as the target species", "Clear plastic", "340 grams"],
   },
   {
     anchorId: "best-professional",
@@ -142,6 +151,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Rat Bait Station",
     tocLabel: "Best Professional",
     tocName: "Pest Expert Rat Bait Station",
+    pick: "Two boxes and a key, taking blocks, grain or pasta bait.",
+    blurb: "Two boxes and a key, for covering more than one run. The listing says they take blocks, grain and pasta bait, so whichever format you buy will go in. At 28.4 x 21.8 x 21.6 cm they are the largest here, and they are listed for outdoor use. No bait is included.",
+    pros: ["Two boxes and a key", "Takes blocks, grain and pasta bait", "Listed for outdoor use", "Mouse and rat named as targets"],
   },
   {
     anchorId: "best-value",
@@ -161,6 +173,9 @@ const products: ProductRecord[] = [
     h2Name: "Roshield External Bait Box",
     tocLabel: "Best Value",
     tocName: "Roshield External Bait Box",
+    pick: "Two extra-large stations with a solid lid for inspection.",
+    blurb: "Two extra-large stations in one pack, with a secure solid lid the listing says is there for inspection. They are listed for indoor and outdoor use, so one can go inside and one outside. Each is 26 x 19 x 12 cm and 500 grams, and no bait is included.",
+    pros: ["Two extra-large stations", "Secure solid lid for inspection", "Indoor and outdoor use, as listed", "Mouse and rat named as targets"],
   },
   {
     anchorId: "best-multi",
@@ -179,6 +194,9 @@ const products: ProductRecord[] = [
     h2Name: "The Big Cheese Rat Bait Station",
     tocLabel: "Best Multi-Pack",
     tocName: "The Big Cheese Rat Bait Station",
+    pick: "Three boxes with 900g of difenacoum bait, ready to put out.",
+    blurb: "If you want to start straight away, this pack has three bait boxes and 900g of bait blocks, so it arrives ready to deploy. The listing names difenacoum as the active substance. Read the pack's label conditions before you put it down.",
+    pros: ["Three bait boxes", "900g of bait blocks included", "Active stated on the listing: difenacoum"],
   },
   {
     anchorId: "best-kit",
@@ -197,20 +215,37 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Station + Poison Kit",
     tocLabel: "Best Complete Kit",
     tocName: "Pest Expert Station + Poison Kit",
+    pick: "Two lockable boxes and 1.5kg of brodifacoum blocks in one purchase.",
+    blurb: "Everything to deploy in one purchase: two lockable bait boxes and 1.5kg of blocks, listed as five 300g packs of single-feed bait. The active substance is stated as brodifacoum. It suits you if you have no station yet and want boxes and bait together.",
+    pros: ["Two lockable bait boxes", "1.5kg of blocks as 5 x 300g packs", "Single-feed brodifacoum bait, as listed"],
   },
 ];
 
 // The contents entry is DERIVED from the same fields the h2 renders, so an entry cannot
 // say something the heading does not (the S66 R4 pattern).
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Bait labels require a station strong enough to stop dogs and lockable
+    against children, and making sure yours complies is your job.{" "}
+    <a href="#legal" className="underline">
+      What the label requires of you
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "Best Rat Bait Stations Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Do You Need a Station at All?" },
   { id: "legal", title: "What the Label Requires of You" },
   { id: "limits", title: "Where a Bait Station Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If Bait Is Not the Answer" },
   { id: "using", title: "Placing and Checking Them" },
-  { id: "compared", title: "Best Rat Bait Stations Compared" },
 ];
 
 export default function BestRatBaitStationsPage() {
@@ -251,6 +286,18 @@ export default function BestRatBaitStationsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -269,6 +316,56 @@ export default function BestRatBaitStationsPage() {
         — three of the five here are sold empty, and two arrive with bait in
         them.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">Best Rat Bait Stations Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Pack and bait, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. The legal line and the
           does-not-help line sit ABOVE the product lines. NOT a card: no Amazon link,
@@ -450,33 +547,6 @@ export default function BestRatBaitStationsPage() {
         description, which is where to read it.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A single clear station, listed as lockable, tamper-resistant and reusable, with rat as its only stated target species. No bait is included, so the label conditions of whatever you put in it are yours to read.",
-                "Two black boxes with a key, listed as taking blocks, grain and pasta bait — which is the detail that tells you what bait format to buy. The largest footprint here at 28.4 x 21.8 x 21.6 cm.",
-                "Two extra-large stations with a solid lid the listing describes as being for easy inspection. Supplied empty, and listed for indoor and outdoor use.",
-                "Three boxes supplied with 900g of bait, so this arrives ready to deploy. Its description states the bait contains difenacoum — read the pack before you use it.",
-                "Two lockable boxes with 1.5kg of blocks, listed as five 300g single-feed packs containing brodifacoum. One of the two products here whose listing names its active substance.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If Bait Is Not the Answer</h2>
@@ -523,36 +593,6 @@ export default function BestRatBaitStationsPage() {
         </li>
       </ol>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">Best Rat Bait Stations Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Pack and bait, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Rats you cannot get on top of?"

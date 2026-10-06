@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -111,12 +112,21 @@ const SRC = {
 type ProductRecord = {
   anchorId: string;
   asin: string;
+  rank: number;
   cardName: string;
   cardLabel: string;
   features: string[];
   tableCells: string[];
   h2Label: string;
   h2Name: string;
+  tocLabel: string;
+  tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  // Law 191 still governs the wording: nothing here says a product works.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // D-1 — B0072H60MG IS REMOVED, CARD AND h2 TOGETHER. It was carded at rank 4 as "Best
@@ -145,12 +155,19 @@ type ProductRecord = {
 //
 // D-5 — A MANUFACTURER'S EFFICACY CLAIM APPEARS ONLY AS THE MAKER'S OWN CLAIM, marked as
 // such in the feature text. Nothing here is asserted in this site's voice.
+//
+// S70 R1 — PM RULING (Law 195): on /best/* award labels and rank numerals are restored.
+// D-2 is reversed for the LABELS ONLY: the four 2efd1f5 award labels return on card, h2,
+// contents and a new Award table column; the neutral descriptors stay in the "What it is"
+// column. Ranks close up 1-2-3-4 (2efd1f5 had 1-2-3-5 with B0072H60MG at 4, now removed).
+// Law 191 still binds every word of efficacy.
 const products: ProductRecord[] = [
   {
     anchorId: "best-ultrasonic",
     asin: "B0B8VQ6C76",
+    rank: 1,
     cardName: "EcoMyLife Ultrasonic Pest Repeller 2 Pack",
-    cardLabel: "Ultrasonic, mains powered",
+    cardLabel: "Best Overall",
     features: [
       "Electric plug-in unit; power source listed as AC/DC",
       "Sold as a 2 pack; listed at 6 x 7 x 14 cm",
@@ -160,20 +177,27 @@ const products: ProductRecord[] = [
     ],
     tableCells: [
       "EcoMyLife Ultrasonic Repeller",
+      "Best Overall",
       "Ultrasonic, mains powered",
       "Electric plug-in",
       "2 units",
       "Ant, Bed Bug, Cockroach, Flea, Fly, Mosquito, Moth, Mouse, Rat, Spider, Wasp",
       "Indoor",
     ],
-    h2Label: "Ultrasonic, mains powered",
+    h2Label: "Best Overall",
     h2Name: "EcoMyLife Ultrasonic Pest Repeller 2 Pack",
+    tocLabel: "Best Overall",
+    tocName: "EcoMyLife Ultrasonic Repeller",
+    pick: "A plug-in pair for two rooms, with mouse and rat among the listed target species.",
+    blurb: "A mains plug-in unit sold in twos, so you can put one in each of two rooms. The detail table lists eleven target species, from ants and bed bugs through to mice, rats and wasps, and that is the maker's claim rather than ours. The maker claims coverage of 1200 sq ft per unit, while the same listing's detail table gives a maximum range of 93 centimetres, so we report both.",
+    pros: ["Sold as a 2 pack, one unit per room", "Electric plug-in, listed for indoor use", "Mouse and rat among the listed target species"],
   },
   {
     anchorId: "best-spray",
     asin: "B08DKSX32W",
+    rank: 2,
     cardName: "RepellShield Rat & Mouse Repellent Spray 250ml",
-    cardLabel: "Peppermint oil spray, 250ml",
+    cardLabel: "Best Spray",
     features: [
       "Item form listed as Oil; scent listed as Peppermint",
       "250 ml, listed as a pack of one",
@@ -183,20 +207,27 @@ const products: ProductRecord[] = [
     ],
     tableCells: [
       "RepellShield Spray",
+      "Best Spray",
       "Peppermint oil spray, 250ml",
       "Oil",
       "250 ml",
       "Mouse, Rat",
       "Indoor",
     ],
-    h2Label: "Peppermint oil spray, 250ml",
+    h2Label: "Best Spray",
     h2Name: "RepellShield Rat & Mouse Repellent Spray",
+    tocLabel: "Best Spray",
+    tocName: "RepellShield Made in Germany",
+    pick: "A 250ml peppermint oil spray whose listing names mice and rats as its targets.",
+    blurb: "A 250ml peppermint oil spray for indoor use, made by Vivere GmbH in Germany. It is the only one of the four whose detail table names mice and rats and nothing else. The maker directs reapplication every two to three days, with persistent use over two to three weeks, so plan it as a routine.",
+    pros: ["Target species listed as Mouse, Rat", "250 ml peppermint oil, listed for indoor use", "Reapplication interval set out by the maker"],
   },
   {
     anchorId: "best-premium-spray",
     asin: "B0CRRSTHNG",
+    rank: 3,
     cardName: "REPELEM Rat & Mouse Repellent Spray 250ml — Peppermint Oil",
-    cardLabel: "Peppermint and geraniol spray, 250ml",
+    cardLabel: "Best Premium Spray",
     features: [
       "The maker describes the formula as peppermint oil and geraniol",
       "Item form listed as Oil; scent listed as Peppermint",
@@ -206,20 +237,27 @@ const products: ProductRecord[] = [
     ],
     tableCells: [
       "REPELEM Spray",
+      "Best Premium Spray",
       "Peppermint and geraniol spray, 250ml",
       "Oil",
       "250 ml",
       "not stated",
       "not stated",
     ],
-    h2Label: "Peppermint and geraniol spray, 250ml",
+    h2Label: "Best Premium Spray",
     h2Name: "REPELEM Rat & Mouse Repellent Spray",
+    tocLabel: "Best Premium Spray",
+    tocName: "REPELEM Peppermint Oil Spray",
+    pick: "A 250ml spray the maker describes as peppermint oil with geraniol.",
+    blurb: "Also 250ml, and the maker describes the formula as peppermint oil with geraniol rather than peppermint alone. The directions are the most demanding of the four: daily application to entry points for the first week, then once or twice weekly. Its detail table states no target species.",
+    pros: ["Peppermint oil and geraniol, per the maker", "250 ml, a pack of one", "Step-down routine set out by the maker"],
   },
   {
     anchorId: "best-natural",
     asin: "B0CNV2CWQS",
+    rank: 4,
     cardName: "REPELEM Rat & Mouse Repellent Peppermint Oil Sachets — 6 Pack",
-    cardLabel: "Paper and corn cob sachets, 6 pack",
+    cardLabel: "Best Natural",
     features: [
       "The maker describes each sachet as paper, corn cobs and peppermint oil",
       "Size listed as 6 sachets; scent listed as Peppermint",
@@ -229,31 +267,46 @@ const products: ProductRecord[] = [
     ],
     tableCells: [
       "REPELEM Sachets",
+      "Best Natural",
       "Paper and corn cob sachets, 6 pack",
       "Sachet",
       "6 sachets",
       "not stated",
       "not stated",
     ],
-    h2Label: "Paper and corn cob sachets, 6 pack",
+    h2Label: "Best Natural",
     h2Name: "REPELEM Rat & Mouse Repellent Peppermint Oil Sachets",
+    tocLabel: "Best Natural",
+    tocName: "REPELEM Peppermint Oil Sachets",
+    pick: "Six place-and-leave sachets the maker says hold their scent for up to 90 days.",
+    blurb: "Six sachets, described by the maker as paper, corn cobs and peppermint oil, with a claimed scent life of up to 90 days each. You place them rather than spray them, and the maker suggests confined spaces such as cars, caravans, lofts and sheds. Its detail table states no target species.",
+    pros: ["6 sachets in the pack", "Maker claims scent for up to 90 days per sachet", "Maker suggests cars, caravans, lofts and sheds"],
   },
 ];
 
-// The contents entry is DERIVED from the same fields the h2 renders, so an entry cannot
-// say something the heading does not (the S66 R4 pattern).
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full
+// regulator section sits below the picks.
+const SAFETY_NOTE = (
+  <>
+    The UK advertising regulator has yet to accept an efficacy claim for pest
+    repellents, and sealing gaps is the step a source supports.{" "}
+    <a href="#asa" className="underline">
+      What the regulator says
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Four Products Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What You Are Actually Dealing With" },
   { id: "asa", title: "What the Advertising Regulator Says" },
   { id: "limits", title: "Where These Products Do Not Help" },
   { id: "proofing", title: "What Actually Reduces Mouse Entry" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.h2Label} — ${p.h2Name}`,
-  })),
   { id: "alternatives", title: "If This Is Not the Answer" },
   { id: "using", title: "Using Them, If You Use Them" },
-  { id: "compared", title: "The Four Products Compared" },
 ];
 
 export default function BestMouseRepellentPage() {
@@ -303,6 +356,18 @@ export default function BestMouseRepellentPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -316,11 +381,73 @@ export default function BestMouseRepellentPage() {
       </div>
 
       <p>
-        This page used to rank five mouse repellents and tell you which worked
-        best. It no longer does, and the reason is worth reading before the
-        products: the UK advertising regulator has looked at the evidence behind
+        This page ranks four mouse repellents on what their own listings state,
+        and it does not tell you which one works. The reason is worth reading
+        before the products: the UK advertising regulator has looked at the evidence behind
         claims for this class of product and has not accepted one.
       </p>
+
+      {/* [6] Comparison table */}
+      <h2 id="compared">The Four Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+              <th className="text-left p-2 border-b font-semibold">
+                What it is
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Form as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Size as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Target species as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Where listed for use
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — the evidence position and the proofing answer sit ABOVE any
           product line. NOT a card: no Amazon link, no price, no image, no award. */}
@@ -548,86 +675,6 @@ export default function BestMouseRepellentPage() {
         been corrected rather than the gap quietly left open.
       </p>
 
-      {/* Product 1 */}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-        />
-      </div>
-      <p>
-        A mains plug-in unit sold in twos. Its detail table lists eleven target
-        species, from ants and bed bugs through to mice, rats and wasps — which
-        is a wide claim for one device, and it is the manufacturer&rsquo;s, not
-        ours. The coverage figure and the maximum range figure on the same
-        listing do not agree with each other.
-      </p>
-
-      {/* Product 2 */}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-        />
-      </div>
-      <p>
-        A 250ml peppermint oil spray for indoor use, and the only one of the
-        four whose detail table names mice and rats and nothing else. The
-        ultrasonic unit above also lists them, but inside a roster of eleven
-        species; the other two spray and sachet listings state no target species
-        at all. The maker directs reapplication every two to three days and
-        persistent use over two to three weeks.
-      </p>
-
-      {/* Product 3 */}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-        />
-      </div>
-      <p>
-        Also 250ml, and the maker describes the formula as peppermint oil with
-        geraniol rather than peppermint alone. Its detail table states no target
-        species. The directions are the most demanding of the four: daily
-        application to entry points for the first week, reducing to once or
-        twice weekly.
-      </p>
-
-      {/* Product 4 */}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-        />
-      </div>
-      <p>
-        Six sachets, described by the maker as paper, corn cobs and peppermint
-        oil, with a claimed scent life of up to 90 days per sachet. Its detail
-        table states no target species. The maker suggests confined spaces —
-        cars, caravans, lofts, sheds — which is the one setting where a scent
-        has least room to disperse.
-      </p>
 
       {/* [4] Alternatives */}
       <h2 id="alternatives">If This Is Not the Answer</h2>
@@ -694,49 +741,6 @@ export default function BestMouseRepellentPage() {
         </li>
       </ol>
 
-      {/* [6] Comparison table */}
-      <h2 id="compared">The Four Products Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-        There is no ranking column, because nothing on this page establishes an
-        order.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                What it is
-              </th>
-              <th className="text-left p-2 border-b font-semibold">
-                Form as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">
-                Size as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">
-                Target species as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">
-                Where listed for use
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Mice getting in faster than you can seal gaps?"

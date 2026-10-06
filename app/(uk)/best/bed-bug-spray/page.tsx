@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -81,6 +82,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -111,6 +117,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula C+ Spray 1L + Powder 300g",
     tocLabel: "Best Overall",
     tocName: "Formula C+ Spray + Powder",
+    pick: "A litre of ready-to-use spray and a 300g powder, together in one kit.",
+    blurb: "Our overall pick, because it puts a spray and a powder in one box, which is how most makers here approach the job. You get a litre of ready-to-use spray and a 300g XL powder, 1,300 grams in all. The maker states three actives including an insect growth regulator, and 50 square metres of coverage per application. It is listed as water-based, non-staining and low-odour.",
+    pros: ["1L spray and 300g XL powder together", "Three actives including an IGR, per the maker", "50 m² per application, per the maker", "Water-based, non-staining and low-odour, as listed"],
   },
   {
     anchorId: "best-multi-room",
@@ -130,6 +139,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula C+ Spray 2 x 1L + Powder 2 x 300g",
     tocLabel: "Best Multi-Room",
     tocName: "Formula C+ Twin Kit",
+    pick: "Twice the kit: two litres of spray and two 300g powders.",
+    blurb: "The same pairing, doubled, for when you have more ground to cover. Two litres of spray and two 300g powders come to 2,600 grams, the largest kit here by weight, and it is listed for any surface, furniture and carpets. The maker states three actives including an insect growth regulator. Its detail row gives the item form as Powder while the text describes a spray, so read the labels.",
+    pros: ["2 x 1L spray and 2 x 300g powder", "2,600 g in total, the largest kit here", "Listed for any surface, furniture and carpets", "Three actives including an IGR, per the maker"],
   },
   {
     anchorId: "best-kit",
@@ -149,6 +161,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Bed Bug Killer Treatment Kit",
     tocLabel: "Best Treatment Kit",
     tocName: "Pest Expert Treatment Kit",
+    pick: "Spray, powder and a fogger, with the maker stating it treats one room.",
+    blurb: "Everything for one room in one box, by the maker's own count: a litre of spray, 300g of powder and a fogger bomb, with a step-by-step advice sheet included. It is listed as low-odour and non-staining. No active is named in its detail rows, and the fogger carries its own instructions about leaving and re-entering the room, so read them first.",
+    pros: ["Spray, powder and fogger in one kit", "Maker states it treats one room", "Step-by-step advice sheet included", "Low-odour and non-staining, as listed"],
   },
   {
     anchorId: "best-combo",
@@ -168,6 +183,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula C Spray 1L + Smoke Bomb",
     tocLabel: "Best Combo",
     tocName: "Formula C + Smoke Bomb",
+    pick: "A litre of permethrin spray with an 11g smoke bomb.",
+    blurb: "A spray and a fumigator in one order, and the only listing here that names its active in the detail rows: permethrin. The spray is ready to use, water-based and listed for bed frames and mattresses. The maker describes the 11g smoke bomb as a fumigation device for rapid knockdown. Follow the smoke bomb's own instructions on leaving the room.",
+    pros: ["Active named on the listing: permethrin", "Spray listed for bed frames and mattresses", "11g smoke bomb included", "Ready to use and water-based"],
   },
   {
     anchorId: "best-trade",
@@ -187,6 +205,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula C+ Bed Bug Killer Spray 5L",
     tocLabel: "Best Trade-Size",
     tocName: "Formula C+ 5 Litre",
+    pick: "Five litres of Formula C+, the largest single container here.",
+    blurb: "If you are treating at trade scale, this is the big container: five litres of ready-to-use spray. The maker states the same three actives, including an insect growth regulator, and 50 square metres per application. Its detail row lists the item form as Aerosol, which a five-litre container is not, so go by the label.",
+    pros: ["5 litres, the largest single container here", "50 m² per application, per the maker", "Three actives including an IGR, per the maker", "Country of origin listed as United Kingdom"],
   },
 ];
 
@@ -220,15 +241,29 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full sections
+// sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    For bedbugs the NHS points you to your council or a pest control service
+    first, and each of these insecticides is used only as its label says.{" "}
+    <a href="#situation" className="underline">
+      What the NHS says to do first
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Five Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What the NHS Says to Do First" },
   { id: "legal", title: "What the Label Governs" },
   { id: "limits", title: "Where a Spray Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Spray Is Not the Answer" },
   { id: "using", title: "Using Them" },
-  { id: "compared", title: "The Five Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -254,6 +289,18 @@ export default function BestBedBugSprayPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -277,6 +324,56 @@ export default function BestBedBugSprayPage() {
         kits is itself the answer to the question most readers arrive with —
         whether a spray on its own is enough.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Five Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        coverage figure attributed to the maker who claims it. Where a listing
+        does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">What is in the box</th>
+              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Coverage or size, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -432,33 +529,6 @@ export default function BestBedBugSprayPage() {
         cards say exactly that.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A kit rather than a bottle: one litre of ready-to-use spray with a 300g XL powder, listed at 1,300 grams in total. Its maker states three actives including a growth regulator and 50 square metres per application, and describes it as water-based, non-staining and low-odour.",
-                "The same pairing doubled — two litres of spray and two 300g powders, 2,600 grams in total, the largest kit here by weight and listed for any surface, furniture and carpets. Its detail row calls the item form Powder while its text describes a spray; the card carries both.",
-                "The one product whose maker states a room count: a litre of spray, 300g of powder and a fogger bomb, described as providing an effective treatment in one room, with a step-by-step advice sheet included. Its item form is listed as Aerosol and no active is named in its detail rows.",
-                "A litre of spray with an 11g smoke bomb, and the only listing here that names an active substance in its detail rows: permethrin. Its maker describes the smoke bomb as a fumigation device for rapid knockdown; the spray is listed for bed frames and mattresses.",
-                "The largest single container on the page at five litres, with the maker's 50 square metre coverage claim and the same three-actives description as the kits. Its detail row lists the item form as Aerosol, which a five-litre container is not; both readings are on the card.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Spray Is Not the Answer</h2>
@@ -505,36 +575,6 @@ export default function BestBedBugSprayPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">The Five Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        coverage figure attributed to the maker who claims it. Where a listing
-        does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">What is in the box</th>
-              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Coverage or size, as listed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -85,6 +86,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells from the banked listings' OWN bullets and detail
@@ -110,6 +116,9 @@ const products: ProductRecord[] = [
     h2Name: "Barrettine Premier Woodworm Killer 1L",
     tocLabel: "Best Treatment Fluid",
     tocName: "Barrettine Woodworm Killer",
+    pick: "A litre of solvent woodworm fluid; the maker names four wood-boring insects.",
+    blurb: "Our top pick, a 1 litre solvent preserver from Barrettine. The maker claims it kills woodworm larvae and eggs on direct contact, and names common furniture beetle, house longhorn, powder post beetle and wood-boring weevils. No active substance is named on the listing, so check the label for it.",
+    pros: ["1 litre solvent fluid", "Maker names four wood-boring insects it covers", "Maker claims it kills larvae and eggs on contact"],
   },
   {
     anchorId: "best-water-based",
@@ -128,6 +137,9 @@ const products: ProductRecord[] = [
     h2Name: "Rempro Woodwyse Internal Wood Treatment",
     tocLabel: "Best Water-Based Treatment",
     tocName: "Rempro Woodwyse",
+    pick: "A concentrate that makes 25 litres, for woodworm and dry rot.",
+    blurb: "Pick this if you have a lot of timber to treat. The title states it makes 25 litres, from a concentrate listed at 1,000 millilitres, for woodworm and dry rot control, under the Rempro brand. The listing has no feature bullets and names no active, so the label is where you will find the rest.",
+    pros: ["Makes 25 litres, per the title", "For woodworm and dry rot, per the title", "1,000ml concentrate"],
   },
   {
     anchorId: "best-spray",
@@ -146,6 +158,9 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil PSW85 Woodworm Treatment Spray 300ml",
     tocLabel: "Best Spray Can",
     tocName: "Rentokil Woodworm Spray",
+    pick: "A 300ml permethrin aerosol, fast drying and low odour per the maker.",
+    blurb: "The smallest volume on the page and the only one with a spray head. It is a 300ml aerosol with permethrin named on the listing, and the maker describes it as a dual-purpose spray that kills eggs, larvae and adult wood-boring insects. The maker also calls it fast drying and low odour, which helps indoors.",
+    pros: ["Permethrin, per the listing", "300ml aerosol", "Fast drying and low odour, per the maker", "Maker names eggs, larvae and adult insects"],
   },
   {
     anchorId: "best-injector",
@@ -164,6 +179,9 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil PSW92 Woodworm Treatment 250ml",
     tocLabel: "Best Injection Applicator",
     tocName: "Rentokil PSW92",
+    pick: "A 250ml permethrin injector bottle, listed for wood indoors and outdoors.",
+    blurb: "The one for outdoor timber as well as indoor. It is a 250ml bottle with permethrin named on the listing, and the maker claims it kills eggs, grubs and beetles and prevents re-infestation.",
+    pros: ["Permethrin, per the listing", "Listed for wood indoors and outdoors", "250ml injector bottle"],
   },
   {
     anchorId: "best-meter",
@@ -182,18 +200,35 @@ const products: ProductRecord[] = [
     h2Name: "Stanley 0-77-030",
     tocLabel: "Best Moisture Meter",
     tocName: "Stanley 0-77-030",
+    pick: "A two-pin meter to check timber moisture before you treat anything.",
+    blurb: "Buy this first if you are unsure whether the timber is damp. It is a two-pin meter giving a percentage reading, listed for wood from 6-44% and other building materials from 0.2-2%, with an LCD screen and 4 AAA batteries included. Treat a reading as a guide, as the section on where a treatment does not help explains.",
+    pros: ["Wood readings from 6-44%, as listed", "Also reads building materials, 0.2-2%", "LCD screen; 4 AAA batteries included"],
   },
 ];
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full
+// sections it points to sit on the page.
+const SAFETY_NOTE = (
+  <>
+    A woodworm treatment is a biocide: use only products intended for the general
+    public, and follow the label.{" "}
+    <a href="#legal" className="underline">
+      The legal position
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Five Products Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Old Holes or an Active Outbreak" },
   { id: "legal", title: "The Legal Position on Wood Preservatives" },
   { id: "limits", title: "Where a Treatment Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Treatment Is Not the Answer" },
   { id: "using", title: "Using Them" },
-  { id: "compared", title: "The Five Products Compared" },
 ];
 
 export default function BestWoodwormTreatmentsPage() {
@@ -215,6 +250,18 @@ export default function BestWoodwormTreatmentsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -240,6 +287,56 @@ export default function BestWoodwormTreatmentsPage() {
         </a>
         ). The hole you can see is where an adult left.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Five Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Form and active, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The active-or-not line, the legal line and
           the damp line sit ABOVE the product lines. No Amazon link, no price, no image,
@@ -396,33 +493,6 @@ export default function BestWoodwormTreatmentsPage() {
         for wood from 6-44%.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A 1-litre solvent fluid whose fetched title is 1 L Solvent Preserver Woodworm Killer, with Barrettine in the manufacturer row. The maker claims it kills larvae and eggs on direct contact and names common furniture beetle, house longhorn, powder post beetle and weevils; no active substance is stated. The brand row reads Nourish & Protect.",
-                "A concentrate whose title states it makes 25 litres, for woodworm and dry rot, listed under the Rempro brand. The listing carries no feature bullets and names no active substance, so nothing beyond the title and the volume is stated.",
-                "A 300ml aerosol whose listing states permethrin and which the maker describes as killing eggs, larvae and adult wood-boring insects, fast drying and low odour. The smallest volume on the page and the only one with a spray head.",
-                "A 250ml injector bottle whose listing states permethrin, for wood indoors and outdoors, which the maker claims kills eggs, grubs and beetles and prevents re-infestation. The one product listed for outdoor timber.",
-                "Not a treatment. A two-pin electrical-resistance meter listed as reading wood from 6-44% and other building materials from 0.2-2%, with an LCD screen and four AAA batteries included. SPAB's caution about over-relying on surface readings applies to it directly.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If a Treatment Is Not the Answer</h2>
@@ -479,36 +549,6 @@ export default function BestWoodwormTreatmentsPage() {
         </Callout>
       </div>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Five Products Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Form and active, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Fresh frass in structural timber?"

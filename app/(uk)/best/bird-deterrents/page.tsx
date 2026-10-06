@@ -4,6 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
+import TopPicks, { ProsList } from "@/components/TopPicks";
 
 // S68 R7 — ROLLOUT REBUILD to the R8 pattern, on sources. LAW 191 GOVERNS THIS ROUTE:
 // no efficacy claim in our own voice, no superlative or ranking label, no rank numeral.
@@ -78,6 +79,7 @@ const SRC = {
 type ProductRecord = {
   anchorId: string;
   asin: string;
+  rank: number;
   cardName: string;
   cardLabel: string;
   features: string[];
@@ -86,6 +88,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -100,8 +107,9 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
     asin: "B006Y9L57S",
+    rank: 1,
     cardName: "Defender Wide Plastic Bird Spikes — 5 Metre Pack",
-    cardLabel: "Wide plastic spikes, 5m",
+    cardLabel: "Best Overall",
     features: [
       "15 strips of 33.4 cm, as listed, covering a 5 metre run",
       "Ledge depth stated two ways on the listing: up to 20 cm in the feature text, 100 mm in the detail row",
@@ -109,17 +117,21 @@ const products: ProductRecord[] = [
       "The detail rows state suitable for pigeons and not suitable for seagulls",
       "Listed as snappable into smaller sections; fixings are not included",
     ],
-    tableCells: ["Defender Wide Plastic Spikes", "Plastic spikes", "5 m; 15 x 33.4 cm strips", "20 cm (text) / 100 mm (row)"],
-    h2Label: "Wide plastic spikes, 5m",
+    tableCells: ["Defender Wide Plastic Spikes", "Plastic spikes", "5 m; 15 x 33.4 cm strips", "20 cm (text) / 100 mm (row)", "Best Overall"],
+    h2Label: "Best Overall",
     h2Name: "Defender Wide Plastic Bird Spikes",
-    tocLabel: "Wide plastic spikes, 5m",
+    tocLabel: "Best Overall",
     tocName: "Defender Wide Plastic Spikes",
+    pick: "Wide polycarbonate spikes covering 5 metres, listed as suitable for pigeons.",
+    blurb: "Our overall pick if pigeons keep landing on a ledge. You get fifteen polycarbonate strips of 33.4 cm, which run to five metres, with a pin height of 112 mm. It is the only listing here that states a ledge depth, though it gives two figures: up to 20 cm in the text and 100 mm in the detail row. The strips snap into smaller sections, and you buy the fixings separately.",
+    pros: ["5 metres of coverage in 15 strips of 33.4 cm", "Polycarbonate, with a 112 mm pin height", "Listed as suitable for pigeons", "Snaps into smaller sections, as listed"],
   },
   {
     anchorId: "best-discreet",
     asin: "B01MQSRJQ6",
+    rank: 2,
     cardName: "Bird Barrier Optical Gel (24 Pack)",
-    cardLabel: "Gel dishes, 24 pack",
+    cardLabel: "Best Discreet",
     features: [
       "Pack size stated two ways on the listing: 24 pack in the title, number of pieces 1 in the detail row",
       "Each dish listed at 6.4 x 6.4 x 0.6 cm",
@@ -127,17 +139,21 @@ const products: ProductRecord[] = [
       "The maker describes it as a humane alternative to bird spikes, installed without tools",
       "Target species listed as Birds; the maker names roofs, balconies and railings among the surfaces",
     ],
-    tableCells: ["Bird Barrier Optical Gel", "Gel dishes", "24 (title) / 1 piece (row)", "6.4 x 6.4 x 0.6 cm per dish"],
-    h2Label: "Gel dishes, 24 pack",
+    tableCells: ["Bird Barrier Optical Gel", "Gel dishes", "24 (title) / 1 piece (row)", "6.4 x 6.4 x 0.6 cm per dish", "Best Discreet"],
+    h2Label: "Best Discreet",
     h2Name: "Bird Barrier Optical Gel",
-    tocLabel: "Gel dishes, 24 pack",
+    tocLabel: "Best Discreet",
     tocName: "Bird Barrier Optical Gel",
+    pick: "The one non-spike option: low gel dishes the maker says fit without tools.",
+    blurb: "Choose this if you don't want spikes on show. Each dish is listed at 6.4 x 6.4 x 0.6 cm, and the maker describes the gel as a humane alternative to bird spikes that goes on without tools. The listed ingredients are citronella, mint oil, agar and beeswax, and the maker names roofs, balconies and railings among the surfaces. The title says 24 pack while the detail row says one piece, so check the count before you order.",
+    pros: ["Low dishes, each 6.4 x 6.4 x 0.6 cm", "The maker says it fits without tools", "Ingredients listed as citronella, mint oil, agar and beeswax", "The maker names roofs, balconies and railings"],
   },
   {
     anchorId: "best-budget",
     asin: "B07L19T8L4",
+    rank: 3,
     cardName: "Stainless Steel Bird Spikes — 3 Metre Pack",
-    cardLabel: "Stainless steel spikes, 12 pieces",
+    cardLabel: "Best Budget",
     features: [
       "12 sections of 25 cm, as listed, covering 3 metres",
       "Stainless steel; listed at 660 grams",
@@ -145,17 +161,21 @@ const products: ProductRecord[] = [
       "Listed as made in Europe; the maker states installation in 2 to 3 minutes",
       "The colour row reads \"20 Ft\", which does not match the 3 metre unit count",
     ],
-    tableCells: ["Stainless Steel Bird Spikes", "Stainless steel spikes", "3 m; 12 x 25 cm sections", "Not stated"],
-    h2Label: "Stainless steel spikes, 12 pieces",
+    tableCells: ["Stainless Steel Bird Spikes", "Stainless steel spikes", "3 m; 12 x 25 cm sections", "Not stated", "Best Budget"],
+    h2Label: "Best Budget",
     h2Name: "Stainless Steel Bird Spikes, 3 Metre",
-    tocLabel: "Stainless steel spikes",
+    tocLabel: "Best Budget",
     tocName: "Stainless Steel Bird Spikes",
+    pick: "Stainless steel spikes in twelve 25 cm sections, if you'd rather have metal.",
+    blurb: "If you'd rather have metal than plastic, this set gives you twelve stainless steel sections of 25 cm, three metres in all, at 660 grams. The maker describes it as corrosion and weather resistant and says it goes up in 2 to 3 minutes. It is listed as made in Europe. One oddity: the colour row reads \"20 Ft\", which doesn't match the three-metre count.",
+    pros: ["Stainless steel, listed at 660 grams", "3 metres in twelve 25 cm sections", "The maker describes it as corrosion and weather resistant", "The maker states fitting takes 2 to 3 minutes"],
   },
   {
     anchorId: "best-coverage",
     asin: "B0C4Y7LSL6",
+    rank: 4,
     cardName: "Fly-Bye Anti Bird Spikes — 6 Metre Coverage",
-    cardLabel: "Plastic spikes, 6m coverage",
+    cardLabel: "Best Coverage",
     features: [
       "6 metres of coverage, as listed",
       "Pack size stated two ways on the listing: a 15-pack in the feature text, 16 pieces in the detail row",
@@ -163,11 +183,14 @@ const products: ProductRecord[] = [
       "Listed as fixable with screws, cable ties, glue or double-sided tape",
       "The listing also names cats, foxes and squirrels among what it is sold against",
     ],
-    tableCells: ["Fly-Bye Anti Bird Spikes", "Plastic spikes", "6 m; 15 (text) / 16 (row) pieces", "Not stated"],
-    h2Label: "Plastic spikes, 6m coverage",
+    tableCells: ["Fly-Bye Anti Bird Spikes", "Plastic spikes", "6 m; 15 (text) / 16 (row) pieces", "Not stated", "Best Coverage"],
+    h2Label: "Best Coverage",
     h2Name: "Fly-Bye Anti Bird Spikes",
-    tocLabel: "Plastic spikes, 6m",
+    tocLabel: "Best Coverage",
     tocName: "Fly-Bye Anti Bird Spikes",
+    pick: "The longest run on this page: 6 metres of coverage from one pack.",
+    blurb: "The most coverage on this page, at six metres per pack. The maker states 2,500 spikes set in an irregular pattern, and you can fix them with screws, cable ties, glue or double-sided tape, whichever suits your surface. The pack count is given as 15 in the text and 16 in the detail row.",
+    pros: ["6 metres of coverage, as listed", "2,500 spikes in an irregular pattern, per the maker", "Fixes with screws, cable ties, glue or double-sided tape"],
   },
 ];
 
@@ -201,15 +224,29 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Every wild bird, its nest and its eggs are protected by law. Never fit
+    anything to a ledge where a nest is in use or being built.{" "}
+    <a href="#legal" className="underline">
+      The legal position
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Four Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What You Are Trying to Stop" },
   { id: "legal", title: "The Legal Position: Every Wild Bird Is Protected" },
   { id: "limits", title: "Where a Deterrent Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Product Is Not the Answer" },
   { id: "using", title: "Fitting Them" },
-  { id: "compared", title: "The Four Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -235,6 +272,18 @@ export default function BestBirdDeterrentsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -258,6 +307,57 @@ export default function BestBirdDeterrentsPage() {
         roosting on a surface, not to do anything to the bird. In this country
         that distinction is the law, and it comes before the specifications.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Four Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing states two different figures, both are shown; where it states
+        nothing, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Coverage and pack, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Ledge depth, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -415,31 +515,6 @@ export default function BestBirdDeterrentsPage() {
         its maker&rsquo;s.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-            />
-          </div>
-          <p>
-            {
-              [
-                "Fifteen polycarbonate strips of 33.4 cm covering five metres, with a pin height of 112 mm and a listing that marks it suitable for pigeons and not for seagulls. It is the only product here that states a ledge depth, and it states two: up to 20 cm in the text and 100 mm in the rows. Fixings are not included.",
-                "The one product here that is not a spike: dishes of gel listed at 6.4 x 6.4 x 0.6 cm, with citronella, mint oil, agar and beeswax as the ingredients, which the maker describes as a humane alternative to spikes needing no tools to fit. Its title says 24 pack while its detail row says one piece, and the card carries both.",
-                "Twelve stainless steel sections of 25 cm covering three metres at 660 grams, listed as made in Europe with a corrosion and weather resistance claim from its maker. Its colour row reads \"20 Ft\", which does not match the three-metre unit count on the same listing.",
-                "Six metres of coverage from what the text calls a 15-pack and the rows call 16 pieces, with 2,500 spikes in an irregular pattern and a choice of screws, cable ties, glue or tape for fixing. Its listing also names cats, foxes and squirrels among what it is sold against.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Product Is Not the Answer</h2>
@@ -486,36 +561,6 @@ export default function BestBirdDeterrentsPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">The Four Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing states two different figures, both are shown; where it states
-        nothing, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Type</th>
-              <th className="text-left p-2 border-b font-semibold">Coverage and pack, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Ledge depth, as listed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -83,6 +84,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells from the banked listings' OWN bullets and detail
@@ -107,6 +113,9 @@ const products: ProductRecord[] = [
     h2Name: "Indorex Defence Flea Spray 500ml",
     tocLabel: "Best Overall",
     tocName: "Indorex Defence 500ml",
+    pick: "One can listed for a 3-4 bedroom house, with a growth regulator for eggs and larvae.",
+    blurb: "Our overall pick if you want to treat a whole house with one can. The listing pairs permethrin with the growth regulator pyriproxyfen, and the maker claims up to 12 months prevention of egg and larvae development. One 500ml can is listed for approximately a 3-4 bedroom house. Take pets, birds and fish aquaria out first, and ventilate when you are done.",
+    pros: ["Permethrin with the growth regulator pyriproxyfen, as listed", "Maker claims up to 12 months prevention of egg and larvae development", "One 500ml can listed for a 3-4 bedroom house", "Clear directions on the listing for pets and ventilation"],
   },
   {
     anchorId: "best-twin",
@@ -125,6 +134,9 @@ const products: ProductRecord[] = [
     h2Name: "Indorex Defence Flea Spray 2x500ml",
     tocLabel: "Best Twin Pack",
     tocName: "Indorex Defence 2x500ml",
+    pick: "Two cans of the same Indorex spray, so the second is already on the shelf.",
+    blurb: "The same Indorex Defence spray as our overall pick, listed as two 500ml cans. Each can is listed for approximately a 3-4 bedroom house, so this suits a bigger home or one where a single can may not stretch. You have a spare to hand and do not need to reorder part-way through.",
+    pros: ["Two 500ml cans in one pack", "Same listed ingredients as the single can", "Each can listed for approximately a 3-4 bedroom house", "No need to reorder part-way through"],
   },
   {
     anchorId: "best-professional",
@@ -144,6 +156,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula C+ Flea Killer Spray 1L",
     tocLabel: "Best Professional",
     tocName: "Pest Expert Formula C+ 1L",
+    pick: "A water-based litre with a growth regulator, listed for 50 square metres.",
+    blurb: "Pick this if you would rather avoid an aerosol. It is a 1-litre water-based spray the listing calls virtually odourless, with three actives including the growth regulator pyriproxyfen. Coverage is listed at 50 square metres per application, and the maker claims a residue that continues to protect for up to 12 weeks. Keep children and pets out until it dries, about 2-3 hours by the listing.",
+    pros: ["Water-based and listed as virtually odourless", "Three actives including the growth regulator pyriproxyfen", "50 square metres per application, as listed", "Maker claims residual protection for up to 12 weeks"],
   },
   {
     anchorId: "best-fast",
@@ -162,6 +177,9 @@ const products: ProductRecord[] = [
     h2Name: "RIP Fleas Extra Household Flea Spray",
     tocLabel: "Best Fast-Acting",
     tocName: "RIP Fleas Extra Household Flea Spray",
+    pick: "A 600ml household spray; the maker claims 12 months against flea larvae and dust mites.",
+    blurb: "A 600ml household spray whose target species field covers fleas and mites, so it suits you if dust mites are on your list too. The maker claims 12 months of efficacy against flea larvae and house dust mites. The listing names no active substance, so check the can if that matters to you.",
+    pros: ["600ml can, as listed", "Target species listed as fleas and mites", "Maker claims 12 months efficacy against flea larvae and house dust mites"],
   },
   {
     anchorId: "best-value",
@@ -181,18 +199,32 @@ const products: ProductRecord[] = [
     h2Name: "Bob Martin Clear Plus Flea Spray 500ml Twin Pack",
     tocLabel: "Best Value",
     tocName: "Bob Martin Clear Plus Flea Spray 500ml Twin Pack",
+    pick: "Two 500ml cans with permethrin and the growth regulator S-methoprene, for carpets and bedding.",
+    blurb: "Two 500ml cans from Bob Martin, listed with permethrin, tetramethrin and the growth regulator S-methoprene at stated percentages. It is listed for carpets, rugs and pet bedding, sprayed from 30cm. The maker claims up to 3 months against adult fleas and up to 12 months against eggs and larvae, which suits you if the pet's bed needs doing as well as the floors.",
+    pros: ["Two 500ml cans in the pack", "Three listed actives with percentages stated", "Listed for carpets, rugs and pet bedding", "Maker claims up to 12 months against eggs and larvae"],
   },
 ];
 
+const SAFETY_NOTE = (
+  <>
+    No spray here is for use on an animal, so treat the pet first. Follow each
+    label&rsquo;s directions on pets, children and drying time.{" "}
+    <a href="#situation" className="underline">
+      The pet comes first
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Five Sprays Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "The Pet Comes First" },
   { id: "legal", title: "The Legal Position on Home Insecticides" },
   { id: "limits", title: "Where a Spray Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Spray Is Not the Answer" },
   { id: "using", title: "Using Them" },
-  { id: "compared", title: "The Five Sprays Compared" },
 ];
 
 export default function BestFleaSprayForHomePage() {
@@ -212,6 +244,18 @@ export default function BestFleaSprayForHomePage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -237,6 +281,56 @@ export default function BestFleaSprayForHomePage() {
         </a>
         ). What the spray is for is everything else.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Five Sprays Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Actives and coverage, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The legal line and the does-not-help line
           sit ABOVE the product lines. No Amazon link, no price, no image, no award. */}
@@ -383,33 +477,6 @@ export default function BestFleaSprayForHomePage() {
         These are conditions of use, and they differ.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A 500ml Virbac spray whose listing states four ingredients including the growth regulator pyriproxyfen, and which the maker says treats approximately a 3-4 bedroom house. The listing also claims a magazine readers' award over 10+ years; that is the maker's claim and is carried as such. Directions on the listing: remove pets, birds and fish aquaria, spray from about 50cm, ventilate afterwards.",
-                "The same product, listed as two 500ml cans with a unit count of 2. Every stated ingredient, coverage figure and direction is the same as the single can; what differs is having a second can for a second pass, which the listing does not itself recommend.",
-                "A 1-litre water-based spray whose title states amateur approval and whose listing names three actives including pyriproxyfen, with a stated coverage of 50 square metres and a maker's claim of up to 12 weeks of residue. The listing says keep children and pets out of the treated area until dry, approximately 2-3 hours. Its comparative claims about the market are not repeated here.",
-                "Listed as R.I.P Fleas Household Flea Spray at 600 millilitres, with a target species field reading Insect, Flea, Fleas, Mites. The maker claims 12 months of efficacy against larvae and house dust mites. No active substance is named anywhere on the listing, so what is in it is on the can and not on the page you buy from.",
-                "Two 500ml cans listed with permethrin, tetramethrin and the growth regulator S-methoprene at stated percentages, for carpets, rugs and pet bedding, sprayed from 30cm. The maker claims up to 3 months against adults and up to 12 months against eggs and larvae. The listing's own statistic about where infestations live is the maker's and is not repeated here.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If a Spray Is Not the Answer</h2>
@@ -471,36 +538,6 @@ export default function BestFleaSprayForHomePage() {
         </Callout>
       </div>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Five Sprays Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Actives and coverage, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Still seeing fleas after the pet and the house are treated?"

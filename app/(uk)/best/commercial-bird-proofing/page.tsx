@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -132,6 +133,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Records are addressed BY IDENTITY, never by position (Law 107).
@@ -159,11 +165,15 @@ const products: ProductRecord[] = [
       "Netting",
       "10m × 20m, 50mm mesh",
       "Physical exclusion",
+      "Best for Large Areas",
     ],
     h2Label: "Best for Large Areas",
     h2Name: "Heavy Duty Anti-Pigeon Bird Netting 10m × 20m",
     tocLabel: "Best for Large Areas",
     tocName: "Anti-Pigeon Bird Netting",
+    pick: "200 square metres of 50mm pigeon netting in UV-stabilised polyethylene.",
+    blurb: "Our pick when a whole area needs closing off rather than a single ledge. The net is 10m by 20m at a 50mm mesh, which makes it a pigeon mesh by ICWDM's specifications, in six-strand knotted polyethylene the maker describes as UV stabilised. The maker states it will not rot, fade or stretch, and that it is made in Cornwall. Fixings are not listed as included, so order those separately.",
+    pros: ["10m x 20m at a 50mm mesh", "Six-strand knotted polyethylene, UV stabilised, per the maker", "Will not rot, fade or stretch, the maker states", "Made in Cornwall, the maker states"],
   },
   {
     anchorId: "best-ledges",
@@ -183,11 +193,15 @@ const products: ProductRecord[] = [
       "Ledge spikes",
       "78cm coverage; 100mm spikes, 76mm wide",
       "Physical exclusion",
+      "Best for Ledges",
     ],
     h2Label: "Best for Ledges",
     h2Name: "OFFO Stainless Steel Bird Spikes",
     tocLabel: "Best for Ledges",
     tocName: "OFFO Bird Spikes",
+    pick: "304 stainless steel spikes for sills, balustrades and roof edges, 78cm per set.",
+    blurb: "For the ledges pigeons sit on. Each set covers 78cm in 304 grade stainless steel, with spikes the maker gives as 100mm long in groups 76mm wide. It is listed for window sills, balustrades, roof edges, cornices and air conditioning units, with pigeon as the target species. If sparrows are your problem, read the Penn State caveat above first.",
+    pros: ["78cm of coverage per set", "304 grade stainless steel, per the maker", "100mm spikes in 76mm wide groups", "Listed for sills, balustrades, roof edges and cornices"],
   },
   {
     anchorId: "best-wire",
@@ -207,18 +221,22 @@ const products: ProductRecord[] = [
       "Bird wire support posts",
       "10 posts at 90mm; wire, fixings not included",
       "Physical exclusion, light perching only per the maker",
+      "Best Wire System",
     ],
     h2Label: "Best Wire System",
     h2Name: "10 x 90mm Pigeon Post & Pad Kit",
     tocLabel: "Best Wire System",
     tocName: "Pigeon Post & Pad Kit",
+    pick: "Ten 90mm posts with pads, for bird wire where you cannot drill.",
+    blurb: "Choose this when drilling into the surface is not an option. The kit gives you ten 90mm posts with pads to carry bird wire, and the maker suggests 90mm at the front leading edge and 130mm for the rows behind. Read the maker's own limits before ordering: fixings are not included, it is designed for light perching of pigeons only, and it should not go where pigeons are active overnight.",
+    pros: ["Ten 90mm posts with pads", "For bird wire where drilling is not possible", "Spacing guidance from the maker for front and rear rows"],
   },
   {
     anchorId: "best-discreet",
     asin: "B01MQSRJQ6",
     rank: 4,
     cardName: "Bird Barrier Optical Gel (24 Pack)",
-    cardLabel: "Optical gel discs",
+    cardLabel: "Best Discreet Deterrent",
     features: [
       "24 gel discs, mounted with an adhesive dab, no tools per the maker",
       "The maker gives the ingredients as citronella, mint oil, agar and beeswax",
@@ -231,11 +249,15 @@ const products: ProductRecord[] = [
       "Deterrent gel discs",
       "24 discs; citronella, mint oil, agar, beeswax",
       "Deterrent — see the ASA position below",
+      "Best Discreet Deterrent",
     ],
-    h2Label: "Optical gel discs",
+    h2Label: "Best Discreet Deterrent",
     h2Name: "Bird Barrier Optical Gel (24 Pack)",
-    tocLabel: "Optical gel discs",
+    tocLabel: "Best Discreet Deterrent",
     tocName: "Bird Barrier Optical Gel",
+    pick: "24 gel discs that fix with an adhesive dab and no tools, per the maker.",
+    blurb: "The option for a frontage where you would rather not fit spikes or wire. You get 24 gel discs that mount with an adhesive dab and, the maker says, need no tools. The maker gives the ingredients as citronella, mint oil, agar and beeswax, and the listing names roofs, balconies, railings and HVAC units. It is a deterrent rather than a barrier, so read the ASA position above before you choose it.",
+    pros: ["24 gel discs per pack", "Fix with an adhesive dab, no tools, per the maker", "Listed for roofs, balconies, railings and HVAC units", "Ingredients given as citronella, mint oil, agar and beeswax"],
   },
   {
     anchorId: "best-solar",
@@ -255,11 +277,15 @@ const products: ProductRecord[] = [
       "Solar panel perimeter mesh",
       "0.2m × 30m mesh, 60 clips",
       "Physical exclusion",
+      "Best for Solar Panels",
     ],
     h2Label: "Best for Solar Panels",
     h2Name: "Bird Proofing Mesh & 60 Fixing Clip Kit",
     tocLabel: "Best for Solar Panels",
     tocName: "Solar Panel Bird Mesh Kit",
+    pick: "30m of coated mesh and 60 clips to close the gap under solar panels.",
+    blurb: "Made for the gap under a roof solar array, which is hard to close any other way. The roll is 30m of PVC-coated galvanised mesh, 0.2m high, and 60 nylon clips come with it. The maker describes fitting it around the perimeter of the panel system, on domestic or commercial roofs.",
+    pros: ["0.2m x 30m PVC-coated galvanised mesh", "60 nylon solar clips included", "Fits around the panel perimeter, per the maker", "Listed for domestic and commercial roofs"],
   },
   {
     anchorId: "best-repair",
@@ -279,18 +305,22 @@ const products: ProductRecord[] = [
       "Netting access and repair fitting",
       "100 hooks; 19mm, 28mm and 50mm nets, per the maker",
       "Physical exclusion accessory",
+      "Best Netting Repair Kit",
     ],
     h2Label: "Best Netting Repair Kit",
     h2Name: "100 Nylon Net Hooks",
     tocLabel: "Best Netting Repair Kit",
     tocName: "Nylon Net Hooks",
+    pick: "100 nylon hooks to open up or repair netting you already have.",
+    blurb: "Worth adding if you already have netting up. The pack has 100 UV-stabilised nylon hooks, listed as suitable for external installation, for making an access point into the net or a temporary repair. The maker states they suit 19mm, 28mm and 50mm nets. A net you can open is a net nobody has to cut.",
+    pros: ["100 hooks per pack", "UV-stabilised nylon, listed for external installation", "Suits 19mm, 28mm and 50mm nets, per the maker"],
   },
   {
     anchorId: "best-electronic",
     asin: "B0157D7CXW",
     rank: 7,
     cardName: "BCT Ultrasonic Bird Repeller — 4 Speaker, Multi Frequency",
-    cardLabel: "Ultrasonic unit, 4 speakers",
+    cardLabel: "Best Electronic Deterrent",
     features: [
       "Four speakers, frequency listed as adjustable from 8kHz to 40kHz",
       "Waterproof, listed for indoor and outdoor use, with a 12VDC adaptor and 10m lead",
@@ -303,11 +333,15 @@ const products: ProductRecord[] = [
       "Ultrasonic deterrent",
       "4 speakers, 8kHz–40kHz, 12VDC",
       "Deterrent — see the ASA position below",
+      "Best Electronic Deterrent",
     ],
-    h2Label: "Ultrasonic unit, 4 speakers",
+    h2Label: "Best Electronic Deterrent",
     h2Name: "BCT Ultrasonic Bird Repeller",
-    tocLabel: "Ultrasonic unit, 4 speakers",
+    tocLabel: "Best Electronic Deterrent",
     tocName: "BCT Ultrasonic Bird Repeller",
+    pick: "A four-speaker ultrasonic unit with a frequency adjustable from 8kHz to 40kHz.",
+    blurb: "The electronic option, for a site where you can run power to a unit. It has four speakers, a frequency the maker gives as adjustable from 8kHz to 40kHz, and a waterproof casing listed for indoor and outdoor use, with a 12VDC adaptor and a 10m lead. The title names birds and dogs while the target species row reads Mouse, Rat. Read the ASA position above before you buy.",
+    pros: ["Four speakers", "Frequency adjustable from 8kHz to 40kHz, per the maker", "Waterproof, listed for indoor and outdoor use", "12VDC adaptor and 10m lead supplied"],
   },
 ];
 
@@ -348,15 +382,29 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    All wild birds, their eggs and nests are protected by law. Survey before
+    you install, and never net over a nest that is in use.{" "}
+    <a href="#legal" className="underline">
+      The legal position on wild birds
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Seven Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Exclusion Is the Method" },
   { id: "legal", title: "The Legal Position on Wild Birds" },
   { id: "limits", title: "Where Bird Proofing Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Product Is Not the Answer" },
   { id: "using", title: "Use and Placement" },
-  { id: "compared", title: "The Seven Compared" },
 ];
 
 export default function BestCommercialBirdProofingPage() {
@@ -381,6 +429,18 @@ export default function BestCommercialBirdProofingPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -404,6 +464,57 @@ export default function BestCommercialBirdProofingPage() {
         deterrents that ask a bird to go somewhere else. The law that governs
         all of this is the same either way, and it comes first.
       </p>
+
+      {/* Comparison table — LISTING facts only, "not stated" where absent */}
+      <h2 id="compared">The Seven Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        claim attributed to the maker who makes it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Size and specification, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Barrier or deterrent</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. The legal line and the
           does-not-work line sit ABOVE every product line. NOT a card: no Amazon link,
@@ -621,35 +732,6 @@ export default function BestCommercialBirdProofingPage() {
         installations, and the cards say which.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "Two hundred square metres of six-strand knotted polyethylene at a 50mm mesh, UV stabilised, with the maker stating it will not rot, fade or stretch and that it is made in Cornwall. Held against ICWDM's specifications this is a pigeon mesh: it is roughly twice the 1-inch netting that source gives for screening architecture, and eight times the quarter-inch mesh it gives for closing an opening. No fixings are listed as included.",
-                "A 78cm run per set in 304 grade stainless steel, with each spike listed at 100mm long and each group at 76mm wide, and a target species row of Pigeon. Its maker lists window sills, balustrades, roof edges, cornices and air conditioning units. Penn State Extension's caveat about smaller birds applies to this class of product and is quoted in full above.",
-                "Ten 90mm posts with pads for installing bird wire where drilling is not an option. Read the maker's own three limits before ordering: fixings are not included, the system is designed for light perching of pigeons only, and it should not be used in areas where pigeons are active overnight. The maker recommends 90mm at the front leading edge with 130mm for intermediary rows.",
-                "Twenty-four gel discs mounted with an adhesive dab, with the ingredients given by the maker as citronella, mint oil, agar and beeswax and a target species row of Birds. It is a deterrent, not a barrier: nothing about it physically prevents a bird landing. The ASA and CAP position on efficacy claims for pest repellent devices is set out in the limits section above and this page makes no claim about this product's effect.",
-                "A 30 metre roll of PVC-coated galvanised mesh, 0.2m high, with 60 nylon clips, made for the one gap that is hard to close any other way: the perimeter under a roof solar array. The maker describes fitting it around the panel edge with the supplied clips, on domestic and commercial roofs. It is a barrier and its specification is a stated height and length rather than a claim.",
-                "Not a product on its own: 100 UV-stabilised nylon hooks used to create access into netting already installed, or to attach netting to a wireframe, with the maker stating they suit 19mm, 28mm and 50mm nets. It is on this page because a netting installation that cannot be opened is a netting installation that gets cut, and the card says plainly what it is.",
-                "Four speakers with a frequency the maker gives as adjustable from 8kHz to 40kHz, waterproof, supplied with a 12VDC adaptor and a 10 metre lead. Its listing cannot agree with itself on the target: the title names birds and dogs while the target species row reads Mouse, Rat. It is a deterrent rather than a barrier, and the ASA and CAP position quoted above bears on it directly; this page makes no claim that it works.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Product Is Not the Answer</h2>
@@ -715,36 +797,6 @@ export default function BestCommercialBirdProofingPage() {
         </li>
       </ol>
 
-      {/* Comparison table — LISTING facts only, "not stated" where absent */}
-      <h2 id="compared">The Seven Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        claim attributed to the maker who makes it. Where a listing does not
-        state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Type</th>
-              <th className="text-left p-2 border-b font-semibold">Size and specification, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Barrier or deterrent</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

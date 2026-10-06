@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import DecisionBox from '@/components/DecisionBox';
 
@@ -99,6 +100,13 @@ type ProductRecord = {
   tableCells: string[];
   h2Label: string;
   h2Name: string;
+  tocLabel: string;
+  tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // S66 R8. AWARD LABELS, RANK NUMERALS AND CARD ORDER ARE UNCHANGED on every surface.
@@ -137,6 +145,11 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Overall",
     h2Name: "Roshield 5x Pre-Baited Mouse Bait Box Kit",
+    tocLabel: "Best Overall",
+    tocName: "Roshield 5x Pre-Baited Mouse Bait Box Kit",
+    pick: "Five lockable stations that arrive pre-baited, with a key for re-baiting.",
+    blurb: "Our overall pick, and the only one here that arrives ready to use. You get five lockable tamper-resistant stations supplied pre-baited, with blocks the listing states contain brodifacoum, and an access key so you can re-bait them. If you would rather not choose a rodenticide yourself, this kit makes that choice for you. The listing says the stations take a range of rodenticide formats when you come to refill.",
+    pros: ["5 lockable, tamper-resistant stations", "Supplied pre-baited", "Access key included for re-baiting", "Listed as made in the UK"],
   },
   {
     anchorId: "best-bulk",
@@ -161,6 +174,11 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Bulk",
     h2Name: "Roshield 10x Mouse Bait Boxes (Empty, No Bait)",
+    tocLabel: "Best Bulk",
+    tocName: "Roshield 10x Mouse Bait Boxes (Empty, No Bait)",
+    pick: "Ten empty boxes and two keys, for a whole property or several lets.",
+    blurb: "Ten boxes and two keys, with no bait, for covering a whole property or several lets. The listing is specific about capacity: each rear chamber is stated to hold two 20g blocks or two to three 10g pasta sachets, so you know which bait format to buy. It is listed as used within the professional pest control industry.",
+    pros: ["10 boxes and 2 keys", "Rear chamber holds 2 x 20g blocks or 2-3 x 10g sachets", "Listed as used in the professional pest control industry", "Listed as made in the UK"],
   },
   {
     anchorId: "best-compact",
@@ -185,6 +203,11 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Compact",
     h2Name: "Roshield 5x Black Tamper-Resistant Mouse Bait Boxes",
+    tocLabel: "Best Compact",
+    tocName: "Roshield 5x Black Tamper-Resistant Mouse Bait Boxes",
+    pick: "Five tamper-resistant boxes for a single house, where ten would be waste.",
+    blurb: "The same style of Roshield box in a pack of five with one key, for a single house where ten would be waste. The rear chambers are stated to hold two 20g blocks or two to three 10g pasta sachets, and the detail table lists them at 150 grams. Bait is bought separately.",
+    pros: ["5 boxes and 1 key", "Rear chamber holds 2 x 20g blocks or 2-3 x 10g sachets", "Listed as used in the professional pest control industry"],
   },
   {
     anchorId: "best-brand",
@@ -209,6 +232,11 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Brand",
     h2Name: "The Big Cheese Rat & Mouse Bait Station Compact",
+    tocLabel: "Best Brand",
+    tocName: "The Big Cheese Rat & Mouse Bait Station Compact",
+    pick: "One lockable-lid station listed as damp-proof and all-weather, for outdoors.",
+    blurb: "Buy one of these for one place outside. It is a single station with a lockable lid, listed as damp-proof and all-weather, and stated to take blocks, pasta or sachets, so you are not tied to one bait format. It is listed for indoor or outdoor use, and the bait is sold separately.",
+    pros: ["Lockable lid", "Listed as damp-proof and all-weather", "Takes blocks, pasta and sachets", "For indoor or outdoor use"],
   },
   {
     anchorId: "best-budget",
@@ -233,23 +261,39 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Budget",
     h2Name: "Pest-Stop Lockable Mouse Bait Station",
+    tocLabel: "Best Budget",
+    tocName: "Pest-Stop Lockable Mouse Bait Station",
+    pick: "A single lockable station with bait bars that stop the bait being shaken out.",
+    blurb: "Another single lockable station, listed as weather-proof plastic in frost or high heat. The detail that sets it apart is the bait bars, which the listing says hold the bait so it cannot be shaken out. That matters if the box sits somewhere it can be knocked. It is listed for indoor and outdoor use.",
+    pros: ["Single lockable station", "Bait bars hold the bait in place", "Listed as weather-proof in frost or high heat", "For indoor and outdoor use"],
   },
 ];
+
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    HSE warns that rodenticides put children, pets and other animals at risk, so
+    a station has to lock and be strong enough to stop a dog.{" "}
+    <a href="#standard" className="underline">
+      The standard a station has to meet
+    </a>
+    .
+  </>
+);
 
 // The contents entry is DERIVED from the same fields the h2 renders, so an entry
 // cannot say something the heading does not (the S66 R4 pattern).
 const tocItems = [
+  { id: "compared", title: "Best Mouse Bait Stations Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "do-you-need-one", title: "Do You Need a Station at All?" },
   { id: "legal", title: "What a Householder May Use" },
   { id: "standard", title: "The Standard a Station Has to Meet" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.h2Label} — ${p.h2Name}`,
-  })),
   { id: "alternatives", title: "If Bait Is Not the Answer" },
   { id: "using", title: "Placing Them" },
-  { id: "compared", title: "Best Mouse Bait Stations Compared" },
 ];
 
 export default function BestMouseBaitStationsPage() {
@@ -320,6 +364,18 @@ export default function BestMouseBaitStationsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -337,6 +393,65 @@ export default function BestMouseBaitStationsPage() {
         reach it and a child or a dog cannot. It is a container, not a treatment
         — four of the five here are sold empty.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">Best Mouse Bait Stations Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Pack as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Bait included
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Security as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Entry hole size
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second, every line.
           NOT a card: no Amazon link, no price, no image, no award. */}
@@ -499,104 +614,6 @@ export default function BestMouseBaitStationsPage() {
         in a kitchen, it does not matter.
       </p>
 
-      {/* Product 1 */}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />
-      </div>
-      <p>
-        The only one here that arrives ready to use. Five lockable
-        tamper-resistant stations supplied pre-baited, with blocks the listing
-        states contain brodifacoum, and an access key so they can be re-baited.
-        If you would rather not choose a rodenticide separately, this is the one
-        that removes that decision — which also means the choice has been made
-        for you.
-      </p>
-
-      {/* Product 2 */}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />
-      </div>
-      <p>
-        Ten boxes and two keys, no bait. This is the pack for a whole property or
-        several lets, and the listing is specific about capacity: the rear
-        chambers are stated to hold two 20g blocks or two to three 10g pasta
-        sachets, which tells you what bait format to buy.
-      </p>
-
-      {/* Product 3 */}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />
-      </div>
-      <p>
-        The same box as above in a pack of five with one key, listed at 150 grams
-        each. For a single house where ten would be waste.
-      </p>
-
-      {/* Product 4 */}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />
-      </div>
-      <p>
-        A single station with a lockable lid, listed as damp-proof and
-        all-weather, and stated to take blocks, pasta or sachets. Bait is sold
-        separately. This is the one to buy one of, for one place outside.
-      </p>
-
-      {/* Product 5 */}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />
-      </div>
-      <p>
-        Another single lockable station, listed as weather-proof in frost or high
-        heat, with bait bars that the listing says hold the bait so it cannot be
-        shaken out. That last detail is the one that matters if the box is
-        somewhere it can be knocked.
-      </p>
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If Bait Is Not the Answer</h2>
@@ -644,45 +661,6 @@ export default function BestMouseBaitStationsPage() {
         </li>
       </ol>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">Best Mouse Bait Stations Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Pack as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">
-                Bait included
-              </th>
-              <th className="text-left p-2 border-b font-semibold">
-                Security as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">
-                Entry hole size
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Mice you cannot get on top of?"

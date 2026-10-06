@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -115,6 +116,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Records are addressed BY IDENTITY, never by position (Law 107). This is what made the
@@ -154,6 +160,9 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Carpet Beetle & Moth Killer",
     tocLabel: "Best Spray",
     tocName: "Zero In Carpet Beetle & Moth Killer",
+    pick: "A 300ml spray for carpets and upholstery, up to three months per use, per the maker.",
+    blurb: "Start here if you have found larvae in a carpet or a sofa. It is a 300ml aerosol listed for carpets, upholstery and household items, and the maker states up to three months of protection per application. The maker also describes it as odour-free on treated fabrics. No active substance is named on the listing, so read the can if that matters to you.",
+    pros: ["300ml aerosol", "Listed for carpets, upholstery and household items", "Up to three months per application, per the maker", "Odour-free on treated fabrics, the maker says"],
   },
   {
     anchorId: "best-trap",
@@ -178,6 +187,9 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil Carpet Beetle & Cloth Moth Trap",
     tocLabel: "Best Trap",
     tocName: "Rentokil Carpet Beetle & Moth Trap",
+    pick: "Two poison-free traps, for seeing where beetles are before you treat.",
+    blurb: "Use these to watch the problem rather than treat it. UC IPM, quoted above, recommends traps to show where beetles are coming from and whether control is working, and this pack gives you two, described in the title as poison free. The listing itself is thin. It has no bullets or description, and its detail rows read Mouse, Moth Killer Kit and electric, which the title contradicts.",
+    pros: ["Two traps per pack", "Poison free, per the title", "Suits the monitoring job UC IPM describes"],
   },
   {
     anchorId: "best-powder",
@@ -202,6 +214,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula 'P' Carpet Beetle Killer Powder",
     tocLabel: "Best Powder",
     tocName: "Pest Expert Formula 'P'",
+    pick: "600g of permethrin powder in two puffer packs, for cracks and awkward spots.",
+    blurb: "The pick for awkward spots under skirtings and around sockets. Two 300 gram puffer packs give you 600 grams in total, with permethrin named by the maker as the active. It is listed for any surface, furniture and carpets, and for use around power points and other hard-to-reach areas. The maker's own title calls it HSE approved and tested. Its target species row reads Insects rather than Carpet Beetle.",
+    pros: ["600g in two 300g puffer packs", "Permethrin named as the active by the maker", "Listed for carpets, furniture and around power points", "The maker's title says HSE approved and tested"],
   },
 ];
 
@@ -242,16 +257,30 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    The spray and the powder are insecticides, and the label on each sets where
+    it may be applied and what to keep away from it.{" "}
+    <a href="#legal" className="underline">
+      What the label governs
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Three Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What the Larvae Are Eating" },
   { id: "health", title: "What Penn State Extension Reports About the Hairs" },
   { id: "legal", title: "What the Label Governs" },
   { id: "limits", title: "Where a Treatment Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Product Is Not the Answer" },
   { id: "using", title: "Using Them" },
-  { id: "compared", title: "The Three Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -277,6 +306,18 @@ export default function BestCarpetBeetleTreatmentsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -299,6 +340,56 @@ export default function BestCarpetBeetleTreatmentsPage() {
         fourth used to sit here and has been removed, because its own listing
         was for clothes moths and never mentioned a beetle at all.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Three Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        claim attributed to the maker who makes it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Quantity or duration, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -504,31 +595,6 @@ export default function BestCarpetBeetleTreatmentsPage() {
         killing anything, and it is the job the two-trap pack is for.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A 300ml aerosol listed for carpets, upholstery and household items, with the maker claiming up to three months of protection per application and describing the finish as odour-free on treated fabrics. Its listing names no active substance anywhere — not in its bullets, not in its detail rows — and the comparison cell says \"not stated\" rather than guessing at one.",
-                "The thinnest listing on this page, and the card reports that rather than dressing it up: two traps, described in the title as poison free, with no feature bullets and no product description at all. Its detail rows then disagree with its own title three times over, giving the target species as Mouse, the style as Moth Killer Kit and Is electric as Yes. All four readings are on the card because none of them can be resolved from the listing itself.",
-                "Two 300 gram puffer packs, 600 grams in total, with permethrin named as the active and the maker's own title describing the product as HSE approved and tested. It is listed for any surface, furniture and carpets, and specifically for application around power points and other hard-to-reach areas. Its target species row reads Insects rather than Carpet Beetle.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Product Is Not the Answer</h2>
@@ -603,36 +669,6 @@ export default function BestCarpetBeetleTreatmentsPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">The Three Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        claim attributed to the maker who makes it. Where a listing does not
-        state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Type</th>
-              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Quantity or duration, as listed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -78,6 +79,7 @@ const SRC = {
 type ProductRecord = {
   anchorId: string;
   asin: string;
+  rank: number;
   cardName: string;
   cardLabel: string;
   features: string[];
@@ -86,6 +88,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -103,8 +110,9 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-ultrasonic",
     asin: "B075XN4NNB",
+    rank: 1,
     cardName: "Pestbye Pack of 2 Solar Waterproof Cat Repellent — Ultrasonic, Ground Stake",
-    cardLabel: "Ultrasonic, solar, 2 pack",
+    cardLabel: "Best Ultrasonic",
     features: [
       "Two units, as listed, each with a ground stake",
       "Motion sensor with an adjustable frequency setting, as listed",
@@ -112,17 +120,21 @@ const products: ProductRecord[] = [
       "Target species listed as Cat; listed for outdoor use; 1 year warranty",
       "Listed at 10.5 x 4.7 x 25 cm; no detection distance is stated on the listing",
     ],
-    tableCells: ["Pestbye Solar Cat Repeller, 2 pack", "Ultrasonic, solar", "Detection range not stated", "Ultrasonic, solar, 2 pack"],
-    h2Label: "Ultrasonic, solar, 2 pack",
+    tableCells: ["Pestbye Solar Cat Repeller, 2 pack", "Ultrasonic, solar", "Detection range not stated", "Best Ultrasonic"],
+    h2Label: "Best Ultrasonic",
     h2Name: "Pestbye Pack of 2 Solar Waterproof Cat Repellent",
-    tocLabel: "Ultrasonic, solar, 2 pack",
+    tocLabel: "Best Ultrasonic",
     tocName: "Pestbye Solar Cat Repeller",
+    pick: "Two solar units on ground stakes, each with a motion sensor and adjustable frequency.",
+    blurb: "If you want a solar option, this pack gives you two units on ground stakes. Each has a motion sensor with an adjustable frequency setting and a monocrystalline panel that recharges in daylight, and the listing names cat as the target species. It comes with a one-year warranty. No detection distance is stated, so place each unit where the cat actually comes in.",
+    pros: ["Two units, each on a ground stake", "Solar panel that recharges in daylight, as listed", "Motion sensor with an adjustable frequency", "1 year warranty, as listed"],
   },
   {
     anchorId: "best-scent",
     asin: "B00THGEB5S",
+    rank: 2,
     cardName: "Get Off cat & Dog Repellent 240g, Clear",
-    cardLabel: "Scent crystals, 240g",
+    cardLabel: "Best Scent Crystals",
     features: [
       "Weight stated two ways on the listing: 240g in the title, 200g in the detail row",
       "The description calls them jelly-like crystals and says they work in all weather conditions",
@@ -130,17 +142,21 @@ const products: ProductRecord[] = [
       "Listed for lawns and borders and for protecting newly-bedded plants",
       "Active substance not stated on the listing",
     ],
-    tableCells: ["Get Off cat & Dog Repellent", "Scent crystals", "240g (title) / 200g (row)", "Scent crystals, 240g"],
-    h2Label: "Scent crystals, 240g",
+    tableCells: ["Get Off cat & Dog Repellent", "Scent crystals", "240g (title) / 200g (row)", "Best Scent Crystals"],
+    h2Label: "Best Scent Crystals",
     h2Name: "Get Off cat & Dog Repellent 240g",
-    tocLabel: "Scent crystals, 240g",
+    tocLabel: "Best Scent Crystals",
     tocName: "Get Off Repellent",
+    pick: "Jelly-like scent crystals for lawns, borders and newly bedded plants.",
+    blurb: "A scent option for beds and borders. The maker describes jelly-like crystals and says that over a period of weeks they condition a cat or dog to stay away from treated areas. They are listed for lawns and borders and for newly bedded plants. The title says 240g while the detail row says 200g, and no active substance is named.",
+    pros: ["Jelly-like crystals, per the description", "Listed for lawns, borders and newly bedded plants", "The maker describes an effect built up over weeks"],
   },
   {
     anchorId: "best-physical",
     asin: "B01I3E0PKY",
+    rank: 3,
     cardName: "Defenders STV628M Prickle Strip Dig Stopper, Cat & Dog Repellent 28 cm x 2 m, Black 3-Pack",
-    cardLabel: "Prickle strips, 3 x 2m",
+    cardLabel: "Best Physical Deterrent",
     features: [
       "Three strips of 28 cm x 2 m, as listed; the listing says they can be cut to size and hooked together",
       "Listed as weather-resistant plastic that plants grow through",
@@ -148,17 +164,21 @@ const products: ProductRecord[] = [
       "Listed for gardens and flowerbeds",
       "The only product here that is a physical barrier rather than a scent or a sound",
     ],
-    tableCells: ["Defenders Prickle Strip Dig Stopper", "Physical strips", "3 x 28 cm x 2 m, as listed", "Prickle strips, 3 x 2m"],
-    h2Label: "Prickle strips, 3 x 2m",
+    tableCells: ["Defenders Prickle Strip Dig Stopper", "Physical strips", "3 x 28 cm x 2 m, as listed", "Best Physical Deterrent"],
+    h2Label: "Best Physical Deterrent",
     h2Name: "Defenders Prickle Strip Dig Stopper, 3-Pack",
-    tocLabel: "Prickle strips, 3 x 2m",
+    tocLabel: "Best Physical",
     tocName: "Defenders Prickle Strips",
+    pick: "Three prickle strips you can cut to size, with no chemicals, per the maker.",
+    blurb: "The one physical barrier on this page, for a bed or a border you want to cover. You get three strips of 28 cm by 2 m that can be cut to size and hooked together, in weather-resistant plastic that plants grow through. The maker describes them as safe for pets and wildlife and says they need no chemicals. They are listed for gardens and flowerbeds.",
+    pros: ["Three 28 cm x 2 m strips, as listed", "Cut to size and hook together", "Weather-resistant plastic that plants grow through", "No chemicals, the maker says"],
   },
   {
     anchorId: "best-natural",
     asin: "B0002B7OT2",
+    rank: 4,
     cardName: "Silent Roar Lion Manure Cat Repellent Pellets",
-    cardLabel: "Scented pellets, 0.5kg box",
+    cardLabel: "Best Natural Scent",
     features: [
       "Pack size stated two ways on the listing: a 0.5kg box in the description, 0.5 grams in the detail row",
       "Pellets the maker says are soaked in real essence of lion dung",
@@ -166,11 +186,14 @@ const products: ProductRecord[] = [
       "Listing directions: sprinkle a few more pellets after heavy rain; keep out of reach of children",
       "Target species listed as Cat; the maker says it contains no artificial chemicals",
     ],
-    tableCells: ["Silent Roar Lion Manure Pellets", "Scented pellets", "0.5kg box (description) / 0.5 g (row)", "Scented pellets, 0.5kg box"],
-    h2Label: "Scented pellets, 0.5kg box",
+    tableCells: ["Silent Roar Lion Manure Pellets", "Scented pellets", "0.5kg box (description) / 0.5 g (row)", "Best Natural Scent"],
+    h2Label: "Best Natural Scent",
     h2Name: "Silent Roar Lion Manure Cat Repellent Pellets",
-    tocLabel: "Scented pellets, 0.5kg box",
+    tocLabel: "Best Natural Scent",
     tocName: "Silent Roar Pellets",
+    pick: "Lion manure scent pellets, up to three months per application, per the maker.",
+    blurb: "Choose this if you would rather use a scent with no artificial chemicals, which is what the maker says. The pellets are soaked, it says, in real essence of lion dung, and one application can last up to three months in normal weather, with a few more sprinkled after heavy rain. Target species is listed as cat. The description says a 0.5kg box while the detail row says 0.5 grams.",
+    pros: ["Up to three months per application, per the maker", "Top up with a few pellets after heavy rain", "No artificial chemicals, the maker says", "Target species listed as cat"],
   },
 ];
 
@@ -204,15 +227,30 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Cats are protected by law. The RSPCA says causing a cat unnecessary
+    suffering is an offence, as is putting down poison or an unlicensed
+    deterrent.{" "}
+    <a href="#legal" className="underline">
+      The legal position
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Four Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What You Are Actually Trying to Stop" },
   { id: "legal", title: "The Legal Position" },
   { id: "limits", title: "Where a Deterrent Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Product Is Not the Answer" },
   { id: "using", title: "Placing Them" },
-  { id: "compared", title: "The Four Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -240,6 +278,18 @@ export default function BestCatDeterrentsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -263,6 +313,56 @@ export default function BestCatDeterrentsPage() {
         and one physically stops it digging. Before any of them, there is a
         legal position that is more restrictive than most people expect.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Four Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing states two different figures, both are shown; where it states
+        nothing, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Size or coverage, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -453,31 +553,6 @@ export default function BestCatDeterrentsPage() {
         than tidying them away.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-            />
-          </div>
-          <p>
-            {
-              [
-                "Two solar units on ground stakes, with a motion sensor and an adjustable frequency setting, listed for outdoor use with cat as the target species. The listing gives dimensions and a one-year warranty but no detection distance, so this page states none; the card previously claimed about seven metres, which appears nowhere on the listing.",
-                "A pack the title gives as 240g and the detail row as 200g, described by the maker as jelly-like crystals for lawns and borders that condition a cat or dog to stay away over a period of weeks. No active substance is named anywhere on the listing.",
-                "The one physical product here: three strips of 28 cm by 2 m that can be cut and hooked together, listed as weather-resistant and as letting plants grow through. Its detail table belongs to other products in the range, so the size on this card comes from the title.",
-                "Pellets the maker says are soaked in real essence of lion dung, with up to three months claimed in normal weather and more sprinkled after rain. Its description says a 0.5kg box while its detail row says 0.5 grams; the card carries both.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Product Is Not the Answer</h2>
@@ -526,36 +601,6 @@ export default function BestCatDeterrentsPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">The Four Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing states two different figures, both are shown; where it states
-        nothing, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Type</th>
-              <th className="text-left p-2 border-b font-semibold">Size or coverage, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Descriptor</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

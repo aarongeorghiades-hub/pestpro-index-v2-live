@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -114,6 +115,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Records are addressed BY IDENTITY, never by position (Law 107). That is what made the
@@ -155,6 +161,9 @@ const products: ProductRecord[] = [
     h2Name: "Polti Cimex Eradicator",
     tocLabel: "Best Overall",
     tocName: "Polti Cimex Eradicator",
+    pick: "The one steamer here sold for bed bugs, with dry steam up to 180°C stated.",
+    blurb: "Our overall pick, and the only machine on this page whose title is about bed bugs. The maker states superheated dry steam up to 180°C from a 2 litre boiler at 1500 watts. It runs with an HPMed detergent and no insecticide, the maker says. Its surface recommendation row reads Mattress, which is where most of your work will be.",
+    pros: ["Bed bugs named in the title", "Dry steam up to 180°C, per the maker", "2 litre boiler, 1500 W, 240 V", "Surface recommendation row reads Mattress"],
   },
   {
     anchorId: "dupray-neat",
@@ -179,6 +188,9 @@ const products: ProductRecord[] = [
     h2Name: "Dupray Neat Steam Cleaner",
     tocLabel: "Best Value",
     tocName: "Dupray Neat Steam Cleaner",
+    pick: "A 17-piece steam cleaner with up to 50 minutes of steam per fill, per the maker.",
+    blurb: "A general steam cleaner with 17 accessories, listed for floors, tiles, grout, upholstery and car interiors. Its detail row gives a maximum of 135°C. The maker states up to 50 minutes of continuous steam from one fill of the 1.6 litre tank. Its listing does not mention bed bugs.",
+    pros: ["17 accessories", "135°C maximum in the detail row", "1.6 litre tank, up to 50 minutes per fill per the maker", "UK plug, 1500 W at 230 V"],
   },
   {
     anchorId: "dupray-plus",
@@ -203,6 +215,9 @@ const products: ProductRecord[] = [
     h2Name: "Dupray Neat Plus Steam Cleaner",
     tocLabel: "Best Large Kit",
     tocName: "Dupray Neat Plus",
+    pick: "The biggest kit here: 40 accessories and a 90 second heat-up, per the maker.",
+    blurb: "Pick this if you want the most attachments. It has 40 accessories, the largest kit on the page, and the maker states steam up to 135°C after a 90 second heat-up. You can refill it without waiting for it to cool, the maker says. Its listing does not mention bed bugs, and its voltage row reads 120 V against a UK-plug title, so check the plate.",
+    pros: ["40 accessories, the largest kit here", "Up to 135°C, per the maker", "90 second heat-up, per the maker", "Refill without waiting for it to cool, per the maker"],
   },
   {
     anchorId: "aeolus",
@@ -227,6 +242,9 @@ const products: ProductRecord[] = [
     h2Name: "AEOLUS LP01SB Steam System",
     tocLabel: "Best Professional-Grade",
     tocName: "AEOLUS LP01SB",
+    pick: "A 2400 W copper-boiler system with dry steam at 200°C, per the maker.",
+    blurb: "The highest wattage listed on this page, for a landlord or a large property. It is listed at 2400 watts with a copper boiler and continuous loading, and the maker states dry steam at 200°C. Bed bugs and their eggs are named in the title, and the supplied accessories include a mattress-capable set. Its power source row reads Battery Powered, which does not fit a 2400 watt boiler, so read the plate.",
+    pros: ["2400 W with a copper boiler, as listed", "Dry steam at 200°C, per the maker", "Continuous loading, as listed", "Mattress-capable accessory set listed"],
   },
 ];
 
@@ -267,16 +285,30 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Each unit is a mains appliance: read the plate before use, and steam only helps
+    where it reaches the bugs.{" "}
+    <a href="#legal" className="underline">
+      The legal and duty position
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Four Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What Steam Does, According to UC IPM" },
   { id: "health", title: "What the NHS and UC IPM Say About the Bites" },
   { id: "legal", title: "The Legal and Duty Position" },
   { id: "limits", title: "Where a Steamer Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Steamer Is Not the Answer" },
   { id: "using", title: "Use and Placement" },
-  { id: "compared", title: "The Four Compared" },
 ];
 
 export default function BestProfessionalBedBugSteamersPage() {
@@ -301,6 +333,18 @@ export default function BestProfessionalBedBugSteamersPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -324,6 +368,56 @@ export default function BestProfessionalBedBugSteamersPage() {
         pest. That difference matters more than the accessory count, and the
         cards below lead with it.
       </p>
+
+      {/* Comparison table — LISTING facts only, "not stated" where absent */}
+      <h2 id="compared">The Four Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        figure attributed to the maker who states it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Steam temperature, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Tank, power, voltage, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Does the listing name bed bugs?</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. The legal line and the
           does-not-work line sit ABOVE every product line. NOT a card: no Amazon link,
@@ -550,32 +644,6 @@ export default function BestProfessionalBedBugSteamersPage() {
         job takes.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "The only unit on this page whose title is about the pest rather than about cleaning. Its maker states superheated dry steam up to 180°C used together with an HPMed detergent, a 2 litre boiler at 1500 watts on 240 volts, and its surface recommendation row reads Mattress. Its maker also makes a broad claim about viruses, bacteria and spores which is the maker's own and is not restated here.",
-                "A general steam cleaner with 17 accessories, listed for floors, tiles, grout, upholstery and car interiors. Its detail row gives a maximum temperature of 135 degrees Celsius, its tank is 1.6 litres and its maker states up to 50 minutes of continuous steam per fill. Its listing does not mention bed bugs anywhere, and the card leads with that rather than leaving it to be assumed.",
-                "The same maker's larger kit: 40 accessories, superheated steam stated up to 135°C, a stated 90 second heat-up, and refilling without waiting for the unit to cool. It is titled and sold as a UK-plug unit while its voltage row reads 120 V; both readings are on the card because the listing cannot settle it. Like the 17-piece, its listing never mentions bed bugs.",
-                "A professional boiler rather than a domestic steamer: 2400 watts, copper boiler, continuous loading, and the maker states dry steam at 200°C. Bed bugs and their eggs are named in its title and in its first bullet. Its power source row reads Battery Powered beside that 2400 watt boiler, which is a contradiction inside the listing and is reported rather than resolved.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Steamer Is Not the Answer</h2>
@@ -634,36 +702,6 @@ export default function BestProfessionalBedBugSteamersPage() {
         </li>
       </ol>
 
-      {/* Comparison table — LISTING facts only, "not stated" where absent */}
-      <h2 id="compared">The Four Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        figure attributed to the maker who states it. Where a listing does not
-        state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Steam temperature, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Tank, power, voltage, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Does the listing name bed bugs?</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

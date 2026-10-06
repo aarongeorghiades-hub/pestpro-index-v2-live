@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -84,6 +85,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells from the banked listings' OWN bullets and detail
@@ -108,24 +114,30 @@ const products: ProductRecord[] = [
     h2Name: "Insect-O-Cutor PlusZap 30W",
     tocLabel: "Best Overall",
     tocName: "Insect-O-Cutor PlusZap 30W",
+    pick: "A 30W unit with a removable deep catch tray for easy emptying.",
+    blurb: "Our overall pick. It is a 30W unit with two UV bulbs already fitted and an aluminium grid, so it is ready to use out of the box. The removable deep catch tray makes emptying it a quick job. It is listed for indoor use against flies and mosquitoes and runs off a hardwired cable, so plan where it goes.",
+    pros: ["30W with 2 UV bulbs pre-installed", "Removable deep catch tray", "Aluminium killing grid, as listed", "Listed for indoor use against flies and mosquitoes"],
   },
   {
     anchorId: "best-seller",
     asin: "B017TETOE2",
     rank: 2,
     cardName: "Aspectek Professional 30W Electronic Insect Killer",
-    cardLabel: "30W Grid Zapper, Mesh Screen",
+    cardLabel: "Best Value",
     features: [
       "Listed as 30W with two UV bulbs and a high-voltage metal grid behind a mesh screen",
       "Target species listed as Fly, Mosquito, Wasp; metal body; 28 x 10 x 39.5 cm",
       "Listed as hung by chain or stood on a surface",
       "The maker's own caveat: not every mosquito will be caught",
     ],
-    tableCells: ["Aspectek Professional 30W", "Grid zapper; 30W; 2 UV bulbs; mesh screen, as listed", "30W Grid Zapper, Mesh Screen"],
-    h2Label: "30W Grid Zapper, Mesh Screen",
+    tableCells: ["Aspectek Professional 30W", "Grid zapper; 30W; 2 UV bulbs; mesh screen, as listed", "Best Value"],
+    h2Label: "Best Value",
     h2Name: "Aspectek Professional 30W",
-    tocLabel: "30W Grid Zapper, Mesh Screen",
+    tocLabel: "Best Value",
     tocName: "Aspectek Professional 30W",
+    pick: "A 30W metal unit you can hang by its chain or stand on a surface.",
+    blurb: "The same 30W rating and two UV bulbs as our overall pick, in a metal body with the grid behind a mesh screen. You can hang it by its chain or stand it on a surface, which gives you more say over where it goes. It is listed for flies, mosquitoes and wasps, and the maker says plainly that not every mosquito will be caught.",
+    pros: ["30W with two UV bulbs, as listed", "Grid sits behind a mesh screen", "Hangs by chain or stands on a surface", "Metal body"],
   },
   {
     anchorId: "best-quiet",
@@ -144,36 +156,53 @@ const products: ProductRecord[] = [
     h2Name: "Quiet Hybrid Spectrum Fly Zapper",
     tocLabel: "Quietest Option",
     tocName: "Quiet Hybrid Spectrum Fly Zapper",
+    pick: "Two spare bulb packs in the box, and the maker claims reduced noise.",
+    blurb: "Worth a look if the unit will sit in a room you spend time in, since the maker makes a noise-reduction claim for it. It has dual UV bulbs and comes with two spare bulb packs, which helps because bulbs need replacing as their UV output fades. The listing gives a 4200V grid and an ABS and metal body. The wattage is not stated.",
+    pros: ["Two spare bulb packs included", "Dual UV bulbs", "Maker claims reduced noise", "Listed for flies, mosquitoes, moths and wasps"],
   },
   {
     anchorId: "best-value",
     asin: "B086DK71VX",
     rank: 4,
     cardName: "Aspectek Upgraded 20W Bug Zapper",
-    cardLabel: "20W Grid Zapper, Indoor and Covered Outdoor",
+    cardLabel: "Best for Garages and Patios",
     features: [
       "Listed as 20W, dual-sided, with 2 bonus UV bulbs",
       "Listed for indoor and covered outdoor use — garages, basements, patios",
       "Target species listed as Fly, Mosquito, Moth, Wasp; plastic; 1.82kg",
       "Same listed dimensions as the 30W Aspectek: 28 x 10 x 39.5 cm",
     ],
-    tableCells: ["Aspectek Upgraded 20W", "Grid zapper; 20W; dual-sided; indoor and covered outdoor, as listed", "20W Grid Zapper, Indoor and Covered Outdoor"],
-    h2Label: "20W Grid Zapper, Indoor and Covered Outdoor",
+    tableCells: ["Aspectek Upgraded 20W", "Grid zapper; 20W; dual-sided; indoor and covered outdoor, as listed", "Best for Garages and Patios"],
+    h2Label: "Best for Garages and Patios",
     h2Name: "Aspectek Upgraded 20W Bug Zapper",
-    tocLabel: "20W Grid Zapper, Indoor and Covered Outdoor",
+    tocLabel: "Best for Garages and Patios",
     tocName: "Aspectek Upgraded 20W Bug Zapper",
+    pick: "A 20W dual-sided unit listed for indoor and covered outdoor use.",
+    blurb: "The one to choose if the flies are in a garage, basement or covered patio as well as the house. It is the only unit on this page listed for covered outdoor use as well as indoors. You get a 20W dual-sided plastic unit with two bonus UV bulbs, at the same listed size as the 30W Aspectek.",
+    pros: ["Listed for indoor and covered outdoor use", "Dual-sided 20W unit", "Two bonus UV bulbs included", "Listed for flies, mosquitoes, moths and wasps"],
   },
 ];
 
+const SAFETY_NOTE = (
+  <>
+    Texas A&amp;M advises against using high-voltage zappers indoors, because they
+    scatter insect fragments. All four here are grid units.{" "}
+    <a href="#legal" className="underline">
+      What the guidance says
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Four Units Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Find the Source First" },
   { id: "legal", title: "What the Guidance Says About Zappers Indoors" },
   { id: "limits", title: "Where a Zapper Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Zapper Is Not the Answer" },
   { id: "using", title: "Placing and Maintaining Them" },
-  { id: "compared", title: "The Four Units Compared" },
 ];
 
 export default function BestFlyKillerIndoorPage() {
@@ -192,6 +221,18 @@ export default function BestFlyKillerIndoorPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -218,6 +259,56 @@ export default function BestFlyKillerIndoorPage() {
         </a>
         ).
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Four Units Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Type, power and bulbs, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The source line, the guidance line and the
           does-not-help line sit ABOVE the product lines. No Amazon link, no price, no
@@ -362,32 +453,6 @@ export default function BestFlyKillerIndoorPage() {
         PlusZap is hardwired.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A 30W unit with two pre-installed UV bulbs, an aluminium grid and a removable deep catch tray, listed for indoor use with Fly and Mosquito as target species and a hardwired cable. The maker's energy-cost comparison and its self-praise are the maker's and are not repeated.",
-                "A 30W metal unit with two UV bulbs and a high-voltage grid behind a mesh screen, listed for Fly, Mosquito and Wasp, hung by its chain or stood on a surface. The listing's own caveat that fast mosquitoes may miss the grid is carried because it is the maker's.",
-                "A unit whose fetched title reads GeckoMan Hybrid Spectrum, with dual UV bulbs, two spare bulb packs, an ABS shell and a 4200V grid claim, listed for Fly, Mosquito, Moth and Wasp. The wattage is not stated. Its comparisons on noise and kill rate are the maker's.",
-                "A 20W dual-sided plastic unit with two bonus UV bulbs, listed for Fly, Mosquito, Moth and Wasp — and, alone on this page, for indoor and covered outdoor use. The same listed dimensions as the 30W Aspectek.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If a Zapper Is Not the Answer</h2>
@@ -434,36 +499,6 @@ export default function BestFlyKillerIndoorPage() {
         </Callout>
       </div>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Four Units Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Type, power and bulbs, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Flies you cannot trace to a bin or a drain?"

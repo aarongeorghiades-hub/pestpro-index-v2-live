@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -10,6 +11,8 @@ import DecisionBox from '@/components/DecisionBox';
 // under the S68 R3 ride-along ruling: "Best for Full Rooms" on the Johnstone's 750ml tin
 // misstated its own listing, which rates the paint at 3 m² per litre — about 2.25 m² per
 // tin — so the label is now the neutral descriptor "Paint to Cover Damp, 750ml".
+// S70 R1: the award is restored with the false word swapped for the listing-true one:
+// "Best for Damp Patches", on card, h2, contents and table. 2.25 m² a tin is a patch.
 //
 // THE DESCRIPTION IS REWRITTEN. It said "remediating condensation damp and mould"; no
 // product here diagnoses the cause, and the listings themselves say the cause must be
@@ -89,6 +92,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -115,6 +123,9 @@ const products: ProductRecord[] = [
     h2Name: "HG Mould Spray 500ml",
     tocLabel: "Best Overall",
     tocName: "HG Mould Spray 500ml",
+    pick: "A 500ml mould spray for walls, tiles, seals, grout and windows, indoors or out.",
+    blurb: "Our overall pick for clearing mould off the surface before anything else goes on. The 500ml trigger spray is listed for plastered walls, tiles, bathroom seals, grout and windows, indoors or outdoors. It has a bleaching effect, so the listing tells you to test it somewhere out of sight first. The listing does not name the active substance.",
+    pros: ["500ml trigger spray", "Listed for walls, tiles, seals, grout and windows", "For indoor or outdoor use"],
   },
   {
     anchorId: "hg-remover",
@@ -138,6 +149,9 @@ const products: ProductRecord[] = [
     h2Name: "HG Mould Remover Foam Spray 500ml",
     tocLabel: "Best for Porous Surfaces",
     tocName: "HG Mould Remover Foam Spray",
+    pick: "A foam the listing says stays on the surface longer than a liquid spray.",
+    blurb: "Pick the foam if you want the product to stay where you spray it. The listing says the foam stays on the surface longer than a liquid and reduces splashing, which is the reason for its label. It is the one product here that names its active, sodium hypochlorite, and it is listed as low odour. It has a bleaching effect, so test it somewhere out of sight first.",
+    pros: ["Foam stays on the surface longer than a liquid, per the listing", "Active named: sodium hypochlorite", "Low odour, as listed", "Listed for walls, tiles, seals, grout and windows"],
   },
   {
     anchorId: "hg-mould-killer",
@@ -156,6 +170,9 @@ const products: ProductRecord[] = [
     h2Name: "HG Mould Spray 500ml, Pack of 2",
     tocLabel: "Best Pre-Paint Preparation",
     tocName: "HG Mould Spray, Pack of 2",
+    pick: "Two 500ml mould sprays, a litre in total, for clearing walls before you paint.",
+    blurb: "Two of the HG sprays in one pack, a litre in total, for when there is more than one patch to clear before the primer and paint go on. The listing gives it a bleaching effect and says to test first. It also tells you to check the label for surfaces it is not recommended on, and names wood and plastic. The active substance is not named.",
+    pros: ["Two 500ml sprays, 1,000ml in total", "The same HG Mould Spray as our overall pick, in a pair", "Label guidance on surfaces to avoid, naming wood and plastic"],
   },
   {
     anchorId: "zinsser-bin",
@@ -174,6 +191,9 @@ const products: ProductRecord[] = [
     h2Name: "Zinsser B-I-N Primer-Sealer & Stain Killer 1L",
     tocLabel: "Best Stain Blocker",
     tocName: "Zinsser B-I-N 1L",
+    pick: "A shellac primer listed as blocking water, smoke and tannin stains, at 12.5 m² a litre.",
+    blurb: "Use this once the mould is off and the wall is dry, when a mark keeps showing through new paint. It is a 1 litre shellac-based primer, listed at 12.5 m² per litre, for interior ceilings, walls and doors, and for spot priming outside. The listing describes it as blocking water, smoke and tannin stains and odours. It says nothing about mould, and neither does this page.",
+    pros: ["Shellac-based stain-blocking primer", "12.5 m² per litre, as listed", "Blocks water, smoke and tannin stains, per the listing", "For interior walls, ceilings and doors"],
   },
   {
     anchorId: "ronseal-damp-seal",
@@ -192,6 +212,9 @@ const products: ProductRecord[] = [
     h2Name: "Ronseal One Coat Damp Seal 500ml",
     tocLabel: "Best Damp Sealer",
     tocName: "Ronseal One Coat Damp Seal",
+    pick: "A one-coat seal the listing says can go onto damp walls, then be painted or papered.",
+    blurb: "The pick for a wall that is still damp after the cause has been dealt with. The listing says this 500ml white seal can be applied to damp walls and then painted or papered over when dry. Its own instruction is to make sure the cause of damp has been fixed first, and that is the right order. Coverage is not stated.",
+    pros: ["One coat, as listed", "Can be applied to damp walls, per the listing", "Paint or paper over it once dry", "500ml, white"],
   },
   {
     anchorId: "ronseal",
@@ -210,6 +233,9 @@ const products: ProductRecord[] = [
     h2Name: "Ronseal Anti Mould Paint 750ml",
     tocLabel: "Best All-Rounder",
     tocName: "Ronseal Anti Mould Paint 750ml",
+    pick: "750ml of washable white matt paint at 13 m² per litre, with a brush included.",
+    blurb: "A finishing coat for the room once the wall is clean and sealed. It is 750ml of white matt paint, listed at 13 m² per litre and as washable, and a brush comes with it. The listing is a detail table with no feature text, so it does not say how the paint acts on mould.",
+    pros: ["13 m² per litre, as listed", "Washable white matt finish", "Brush included, as listed"],
   },
   {
     anchorId: "rapide",
@@ -228,36 +254,53 @@ const products: ProductRecord[] = [
     h2Name: "Rapide Anti Mould Spray Paint 400ml",
     tocLabel: "Best for Small Areas",
     tocName: "Rapide Anti Mould Spray Paint",
+    pick: "A 400ml white aerosol paint for walls and ceilings.",
+    blurb: "An aerosol suits a small area where getting out a tin and a brush is more work than the job. This one is 400ml and white, and its listing carries one feature line, that it protects walls and ceilings from mould growth. That is the maker's line. No coverage figure and no active substance are stated.",
+    pros: ["400ml aerosol, white", "For walls and ceilings, per the listing", "No brush or tin to clean"],
   },
   {
     anchorId: "johnstones",
     asin: "B00OUULC4Y",
     rank: 8,
     cardName: "Johnstone's Paint to Cover Damp 750ml — White",
-    cardLabel: "Paint to Cover Damp, 750ml",
+    cardLabel: "Best for Damp Patches",
     features: [
       "750ml white paint for plaster, brickwork, cement and stone, as listed",
       "Coverage listed as 3 m² per litre — about 2.25 m² from one tin",
       "The listing says it can be over-coated with the maker's emulsion",
       "The listing's own note: ensure the reason for the damp is fixed",
     ],
-    tableCells: ["Johnstone's Cover Damp", "750ml paint, 3 m²/litre", "not stated", "Paint to Cover Damp, 750ml"],
-    h2Label: "Paint to Cover Damp, 750ml",
+    tableCells: ["Johnstone's Cover Damp", "750ml paint, 3 m²/litre", "not stated", "Best for Damp Patches"],
+    h2Label: "Best for Damp Patches",
     h2Name: "Johnstone's Paint to Cover Damp 750ml",
-    tocLabel: "Paint to Cover Damp, 750ml",
+    tocLabel: "Best for Damp Patches",
     tocName: "Johnstone's Paint to Cover Damp",
+    pick: "A 750ml damp paint for plaster, brick, cement and stone, about 2.25 m² a tin.",
+    blurb: "The pick for a patch of damp staining once the reason for the damp is fixed, which the listing itself insists on. It is 750ml of white paint for plaster, brickwork, cement and stone, listed at 3 m² per litre, so a tin covers about 2.25 m². The listing says you can over-coat it with the maker's emulsion.",
+    pros: ["For plaster, brickwork, cement and stone", "3 m² per litre, about 2.25 m² a tin", "Over-coat with the maker's emulsion, per the listing"],
   },
 ];
 
+const SAFETY_NOTE = (
+  <>
+    Fix the cause of the damp before using anything here; two of these listings
+    say so themselves. The HG sprays have a bleaching effect, so test them first.{" "}
+    <a href="#situation" className="underline">
+      Start with the cause
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "Products Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Start With the Cause, Not the Tin" },
   { id: "legal", title: "What Awaab's Law Guidance Requires" },
   { id: "limits", title: "Where These Products Do Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If Paint Is Not the Answer" },
   { id: "using", title: "Order of Work" },
-  { id: "compared", title: "Products Compared" },
 ];
 
 export default function BestDampProofPaintMouldTreatmentPage() {
@@ -291,6 +334,18 @@ export default function BestDampProofPaintMouldTreatmentPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -309,6 +364,55 @@ export default function BestDampProofPaintMouldTreatmentPage() {
         sold as resisting mould. None of them finds out why the wall was wet. Two
         of the listings say so themselves.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Size and coverage, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Active or base, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Label</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -457,7 +561,7 @@ export default function BestDampProofPaintMouldTreatmentPage() {
         <strong>As a full-room paint, from a 750ml tin.</strong> Johnstone&rsquo;s
         listing rates its damp paint at 3 m² per litre, which is about 2.25 m²
         from the tin on this page. That covers a patch, not a room, and the
-        label on its card now says only what it is.
+        label on its card says so.
       </p>
 
       {/* [3] Criteria */}
@@ -483,36 +587,6 @@ export default function BestDampProofPaintMouldTreatmentPage() {
         you can name on a job sheet and one you cannot.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A 500ml trigger spray listed for plastered walls, tiles, bathroom seals, grout and windows, indoors or out. The listing gives it a bleaching effect and says to test first; it does not name the active substance.",
-                "The same maker's foam, and the one product here whose listing names its active substance: sodium hypochlorite. The listing says the foam stays on the surface longer than a liquid and reduces splashing, which is the reason for its label.",
-                "Two of the 500ml sprays, listed at 1,000 millilitres together. The listing adds one line the single spray's does not: check the label for surfaces it is not recommended on, naming wood and plastic.",
-                "A 1 litre shellac primer listed at 12.5 m² per litre and for interior ceilings, walls and doors. The listing describes it as blocking water, smoke and tannin stains and odours; it says nothing about mould, and neither does this page.",
-                "A 500ml sealer the listing says can go onto damp walls and be painted or papered over when dry. Its own instruction — fix the cause of damp first — is the instruction this whole page turns on. Coverage is not stated.",
-                "A 750ml white matt paint listed at 13 m² per litre and as washable, with a brush included. The listing is a detail table with no feature text, so how it acts on mould is not stated and this page does not say.",
-                "A 400ml aerosol whose listing carries one feature line, that it protects walls and ceilings from mould growth. No coverage figure and no active substance are stated.",
-                "A 750ml paint listed for plaster, brickwork, cement and stone at 3 m² per litre — about 2.25 m² a tin — and over-coatable with the maker's emulsion. The listing says to ensure the reason for the damp is fixed.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If Paint Is Not the Answer</h2>
@@ -560,35 +634,6 @@ export default function BestDampProofPaintMouldTreatmentPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">Products Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Size and coverage, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Active or base, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Label</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Damp or mould you cannot trace?"

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -98,6 +99,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -124,6 +130,9 @@ const products: ProductRecord[] = [
     h2Name: "Best Overall",
     tocLabel: "#1 VectorFog C150+",
     tocName: "Best Overall",
+    pick: "Listed for insecticides as well as disinfectants, with 5 to 50 micron droplets.",
+    blurb: "Our overall pick, because it is the one listing here that names insecticides alongside disinfectants and biocides. It runs a 1250W Samsung motor with droplets adjustable from 5 to 50 microns, and the listing says indoor or outdoor use. It weighs 4.7 kg net. The tank is listed as 6 liter in one line and 5-liter in another, so plan around the smaller figure.",
+    pros: ["Listed for insecticides, disinfectants and biocides", "Droplets adjustable from 5 to 50 microns", "1250W Samsung motor", "Indoor and outdoor use, as listed"],
   },
   {
     anchorId: "vectorfog-c100-plus",
@@ -143,6 +152,9 @@ const products: ProductRecord[] = [
     h2Name: "Best for Flats & HMOs",
     tocLabel: "#2 VectorFog C100 Plus",
     tocName: "Best for Flats & HMOs",
+    pick: "A 4 litre unit whose listing tells you to use the 5 micron setting indoors.",
+    blurb: "A 4 litre unit with the same 1250W Samsung motor and a listed flow rate of 60 litres per hour. Its listing is the only one here with a use instruction: indoors, use only the 5 micron setting to prevent a wet mist. If you are treating rooms rather than open ground, that instruction is useful. It throws up to 8 metres on a 10 metre cable.",
+    pros: ["4 litre tank, 1250W Samsung motor", "Indoor instruction on the listing: 5 micron setting only", "Throws up to 8 metres on a 10 metre cable", "60 litres per hour flow rate"],
   },
   {
     anchorId: "vectorfog-c150",
@@ -162,6 +174,9 @@ const products: ProductRecord[] = [
     h2Name: "Best 5L Fogger",
     tocLabel: "#3 VectorFog C150",
     tocName: "Best 5L Fogger",
+    pick: "A 5 litre tank with a finer 5 to 30 micron droplet range.",
+    blurb: "A 5 litre tank on a 1250W Samsung motor, with a droplet range listed as 5 to 30 microns. That top figure is lower than any other fogger here. It weighs 5.35 kg. The listing carries three feature lines and no use instructions, so the product label has to do that job.",
+    pros: ["5 litre tank, as listed", "Droplet range 5 to 30 microns", "Samsung 1250W motor, 220V"],
   },
   {
     anchorId: "vectorfog-dc20-plus",
@@ -181,6 +196,9 @@ const products: ProductRecord[] = [
     h2Name: "Best Cordless Fogger",
     tocLabel: "#4 VectorFog DC20+ Cordless",
     tocName: "Best Cordless Fogger",
+    pick: "Battery powered, for a space with no socket nearby.",
+    blurb: "The one cordless fogger here, for a space with no socket. A 3 hour charge gives up to 40 minutes of continuous fogging, per the listing, through a 2 litre tank and a 170W 12V motor. Droplets adjust from 5 to 50 microns and it weighs 3.1 kg net.",
+    pros: ["Cordless, 12V motor", "Up to 40 minutes of fogging from a 3 hour charge", "Droplets adjustable from 5 to 50 microns", "3.1 kg net"],
   },
   {
     anchorId: "ewbank-ew5000",
@@ -200,18 +218,36 @@ const products: ProductRecord[] = [
     h2Name: "Best Backpack Fogger",
     tocLabel: "#5 Ewbank EW5000 Backpack",
     tocName: "Best Backpack Fogger",
+    pick: "A 10 litre backpack fogger for greenhouse and garden work.",
+    blurb: "The largest tank here at 10 litres, worn on your back, with a 1400W motor. Mist is adjustable from 20 to 60 microns, and the listing gives a horizontal reach of 5 to 7 metres from a 1 metre flexible hose. It is sold for disinfecting surfaces and for greenhouse and garden pest control. The listing does not mention indoor insecticide use.",
+    pros: ["10 litre maximum capacity", "1400W motor", "Horizontal reach of 5 to 7 metres, as listed", "Listed for greenhouse and garden pest control"],
   },
 ];
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Fog droplets hang in the air, and HSE says a respirator is normally
+    needed. The public must not use professional-use insecticides in any
+    fogger.{" "}
+    <a href="#legal" className="underline">
+      Who may fog, and with what
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "Foggers Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Is Fogging the Right Job?" },
   { id: "legal", title: "Who May Fog, and With What" },
   { id: "limits", title: "Where a Fogger Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If Fogging Is Not the Answer" },
   { id: "using", title: "Before, During and After" },
-  { id: "compared", title: "Foggers Compared" },
 ];
 
 export default function BestProfessionalUlvFoggersPage() {
@@ -240,6 +276,18 @@ export default function BestProfessionalUlvFoggersPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -258,6 +306,56 @@ export default function BestProfessionalUlvFoggersPage() {
         one names insecticides as well. The machine is sold freely. The
         droplets are the part HSE has something to say about.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">Foggers Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing gives two figures, both are shown; where it gives none, the
+        cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Tank, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Motor and droplet, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -454,33 +552,6 @@ export default function BestProfessionalUlvFoggersPage() {
         socket is.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "The one listing here that names insecticides alongside disinfectants and biocides, with a 1250W Samsung motor, 5 to 50 micron droplets and indoor or outdoor use. Its tank is listed as 6 liter in one line and 5-liter in another; the card carries both and this page picks neither.",
-                "A 4 litre, 1250W unit listed with a 60 litre per hour flow rate and an 8 metre throw. Its listing is the only one here with a use instruction: indoors, only the 5 micron setting. The card label follows the h2 under Law 188.",
-                "A 5 litre, 1250W unit with a 5 to 30 micron droplet range and no use instructions on the listing. The card previously said 6L; the listing states 5 litres, and the label and name now say so.",
-                "A cordless 2 litre unit with a 170W 12V motor, listed at up to 40 minutes of continuous fogging from a 3 hour charge and 3.1 kg net. The one fogger here for a space with no socket.",
-                "A 10 litre backpack with a 1400W motor and a 20 to 60 micron mist, listed at 5 to 7 metres horizontal reach. Its listing sells it for disinfecting surfaces and for greenhouse and garden pest control; it does not mention indoor insecticide use.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If Fogging Is Not the Answer</h2>
@@ -532,36 +603,6 @@ export default function BestProfessionalUlvFoggersPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">Foggers Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing gives two figures, both are shown; where it gives none, the
-        cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Tank, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Motor and droplet, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="A space you would rather have treated under contract?"

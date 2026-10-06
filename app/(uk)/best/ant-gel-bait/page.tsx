@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -84,6 +85,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells rebuilt from the banked listings' own titles, detail
@@ -107,6 +113,9 @@ const products: ProductRecord[] = [
     h2Name: "Nippon Ant Killer Gel 25g",
     tocLabel: "Best Overall",
     tocName: "Nippon Ant Killer Gel",
+    pick: "A spinosad liquid bait that worker ants carry back to the nest.",
+    blurb: "Our overall pick, because it is the bait on this page that goes where the problem is. The listing states that worker ants carry it back to the nest, and that it is useful when you cannot find the nest site. It names its active, spinosad, and comes as 25g of liquid you can use in a bait station or on its own. You will still see ants for a while after it goes down, and that is the bait being taken home.",
+    pros: ["Carried back to the nest by worker ants, per the listing", "Active named on the listing: spinosad", "Use it in a bait station or on its own", "Listed as useful where the nest site is unknown"],
   },
   {
     anchorId: "best-powder",
@@ -126,6 +135,9 @@ const products: ProductRecord[] = [
     h2Name: "Nippon Ant Killer Powder 500g",
     tocLabel: "Best Powder",
     tocName: "Nippon Ant Killer Powder",
+    pick: "A 500g contact powder for ants and several other crawling insects.",
+    blurb: "A large 500g tub for the ants you can see and the places they cross. It is listed as killing on contact, so it deals with the ants it touches and leaves the colony to a bait. The listing covers indoor and outdoor use, and names cockroaches, beetles, earwigs, silverfish and woodlice as well as ants. The maker claims up to six months of control. No active substance is named, so check the pack.",
+    pros: ["500g of powder", "Listed for indoor and outdoor use", "Also listed for cockroaches, beetles, earwigs, silverfish and woodlice", "Maker claims up to six months of control"],
   },
   {
     anchorId: "best-spray",
@@ -145,6 +157,9 @@ const products: ProductRecord[] = [
     h2Name: "Nippon Ant & Crawling Insect Killer Spray 750ml",
     tocLabel: "Best Spray",
     tocName: "Nippon Ant & Crawling Insect Spray",
+    pick: "A ready-to-use 750ml contact spray, listed as suitable for soft furnishings.",
+    blurb: "A 750ml spray that is ready to use from the bottle, for ants you can see. It is the only product here listed as suitable for soft furnishings, and its directions text names cypermethrin. Its target species field reads Flea, so read the label for ant use before you buy.",
+    pros: ["Ready to use, 750ml", "The only product here listed for soft furnishings", "Active named in the directions: cypermethrin"],
   },
   {
     anchorId: "best-indoor",
@@ -168,6 +183,9 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Ant & Cockroach Killer 1.5L",
     tocLabel: "Best Indoor",
     tocName: "Zero In Ant & Cockroach Killer",
+    pick: "The largest container here: a 1.5L pump spray with a crack-and-crevice setting.",
+    blurb: "At 1.5 litres this is the largest container on the page, in a pressurised pump sprayer you can set to a fan spray or a crack-and-crevice jet. The listing names cypermethrin with benzalkonium chloride and covers indoor and outdoor use. It is a contact treatment, so use it on what you can reach and keep it away from any bait you have down.",
+    pros: ["1.5L pressurised pump sprayer", "Fan spray or crack-and-crevice application", "Actives named: cypermethrin and benzalkonium chloride", "Listed for indoor and outdoor use"],
   },
   {
     anchorId: "best-stations",
@@ -187,18 +205,35 @@ const products: ProductRecord[] = [
     h2Name: "Doff 2-in-1 Ant & Nest Bait Killer Stations",
     tocLabel: "Best Bait Stations",
     tocName: "Doff 2-in-1 Ant & Nest Killer",
+    pick: "Pre-baited stations you can place indoors or out.",
+    blurb: "If you would rather not handle bait at all, these come pre-baited and work the way a bait should, by being carried home. They are listed for indoor and outdoor use, and the listing calls them safe around children and pets when used as instructed. The active substance is not named on the listing, so read the pack.",
+    pros: ["Pre-baited, so there is no bait to handle", "Listed for indoor and outdoor use", "Listed as safe around children and pets when used as instructed"],
   },
 ];
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full sections
+// sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Three of these kill on contact and never reach the nest, and two name no
+    active substance on the listing.{" "}
+    <a href="#legal" className="underline">
+      What the listings tell you
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Five Products Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Bait or Spray — the Whole Decision" },
   { id: "legal", title: "What the Listings Tell You" },
   { id: "limits", title: "Where a Bait Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Bait Is Not the Answer" },
   { id: "using", title: "Baiting Properly" },
-  { id: "compared", title: "The Five Products Compared" },
 ];
 
 export default function BestAntGelBaitPage() {
@@ -233,6 +268,18 @@ export default function BestAntGelBaitPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -250,6 +297,56 @@ export default function BestAntGelBaitPage() {
         that does not matter. Everything on this page comes down to whether a
         product goes back to the nest or kills what it touches.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Five Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Bait or contact, and active substance
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The what-the-listings-say line and the
           does-not-help line sit ABOVE the product lines. No Amazon link, no price,
@@ -383,33 +480,6 @@ export default function BestAntGelBaitPage() {
         ranking would.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "The clearest bait on the page and the only product here naming spinosad. Its listing states that worker ants carry it back to the nest and that it is useful where the nest site is unknown, which is the case a bait exists for.",
-                "A 500g contact powder rather than a bait, listed as killing on contact and as covering cockroaches, beetles, earwigs, silverfish and woodlice as well as ants. The maker claims up to six months of control; no active substance is named.",
-                "A 750ml ready-to-use contact spray listed as suitable for soft furnishings. Its target species field reads Flea, and its directions text states it contains cypermethrin.",
-                "The largest container here at 1.5 litres, naming cypermethrin with a benzalkonium chloride antibacterial agent. Fan spray or crack-and-crevice.",
-                "Pre-baited stations, so the second product on the page that works by being carried home rather than by contact. Listed for indoor and outdoor use and as safe around children and pets when used as instructed; the active substance is not named.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If a Bait Is Not the Answer</h2>
@@ -451,36 +521,6 @@ export default function BestAntGelBaitPage() {
         </li>
       </ol>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Five Products Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Bait or contact, and active substance
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Ants coming back every summer?"

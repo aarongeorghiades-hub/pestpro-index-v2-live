@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -92,6 +93,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -121,13 +127,16 @@ const products: ProductRecord[] = [
     h2Name: "Best Overall",
     tocLabel: "#1 Insect-O-Cutor PlusZap 30W",
     tocName: "Best Overall",
+    pick: "A 30W aluminium-grid unit with a deep removable catch tray, for homes or workplaces.",
+    blurb: "Our overall pick for a kitchen, warehouse or shop floor. It is a 30W unit with two UV bulbs pre-installed and an aluminium grid, and the listing names homes, commercial workplaces, kitchens, warehouses and retail. The catch tray is deep and removable. It is hardwired, so plan where the cable will run.",
+    pros: ["30W with two UV bulbs pre-installed", "Aluminium grid, as listed", "Deep removable catch tray", "Listed for homes, kitchens, warehouses and retail"],
   },
   {
     anchorId: "pluszap-16w",
     asin: "B0B41C7JHV",
     rank: 2,
     cardName: "Insect-O-Cutor PlusZap 16W Indoor Fly Killer — Aluminium Grid",
-    cardLabel: "16W Aluminium Grid Unit",
+    cardLabel: "Best Low-Wattage Unit",
     features: [
       "16W, two UV bulbs pre-installed, aluminium grid, as listed",
       "Listed for indoor use: homes, commercial workplaces, kitchens, warehouses and retail",
@@ -135,11 +144,14 @@ const products: ProductRecord[] = [
       "Target species listed as Fly, Mosquito",
       "Listed at 18 x 12 x 8 cm and 1.6 kilograms — the same dimensions the 30W lists",
     ],
-    tableCells: ["PlusZap 16W", "16W; fly, mosquito", "18 x 12 x 8 cm, 1.6 kg", "16W Aluminium Grid Unit"],
+    tableCells: ["PlusZap 16W", "16W; fly, mosquito", "18 x 12 x 8 cm, 1.6 kg", "Best Low-Wattage Unit"],
     h2Label: "#2 Insect-O-Cutor PlusZap 16W",
-    h2Name: "16W Aluminium Grid Unit",
+    h2Name: "Best Low-Wattage Unit",
     tocLabel: "#2 Insect-O-Cutor PlusZap 16W",
-    tocName: "16W Aluminium Grid Unit",
+    tocName: "Best Low-Wattage Unit",
+    pick: "The 16W PlusZap: same grid and tray, lighter at 1.6 kg as listed.",
+    blurb: "The 16W version of the same unit, if you do not need 30W. It has the same aluminium grid, two pre-installed UV bulbs and deep removable catch tray, and the same listed settings from homes to retail. The listing gives the same 18 x 12 x 8 cm as the 30W, at 1.6 kilograms.",
+    pros: ["16W, the lowest wattage on this page", "Two UV bulbs pre-installed", "Deep removable catch tray", "1.6 kg as listed"],
   },
   {
     anchorId: "aspectek-30w",
@@ -159,6 +171,9 @@ const products: ProductRecord[] = [
     h2Name: "Best Budget",
     tocLabel: "#3 Aspectek 30W Electronic Insect Killer",
     tocName: "Best Budget",
+    pick: "A 30W metal-cased unit you can hang on its chain or stand on a surface.",
+    blurb: "A 30W unit in a metal casing, with two UV bulbs and a mesh screen over the grid. The listing names home and commercial use indoors, and you can hang it by its chain or stand it on a surface. Its own listing notes that not every mosquito reaches the grid.",
+    pros: ["30W with two UV bulbs", "Metal casing with a mesh screen over the grid", "Hangs by chain or stands", "Listed for home and commercial use"],
   },
   {
     anchorId: "aspectek-20w",
@@ -178,6 +193,9 @@ const products: ProductRecord[] = [
     h2Name: "Best Dual-Use Unit",
     tocLabel: "#4 Aspectek 20W Bug Zapper",
     tocName: "Best Dual-Use Unit",
+    pick: "A 20W dual-sided unit for garages and covered outdoor spaces, with spare bulbs included.",
+    blurb: "Our pick for a garage, a basement or a covered patio. It is a 20W plastic-cased unit with an open dual-sided design, and two spare UV bulbs come with it. The listing names fly, mosquito, moth and wasp, and names no commercial setting.",
+    pros: ["Two spare UV bulbs included", "Open dual-sided design", "Listed for covered outdoor spaces, garages and basements", "Names fly, mosquito, moth and wasp"],
   },
 ];
 
@@ -223,15 +241,29 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Every unit here is an electric grid trap. Find the source of the flies first, and
+    think before siting one near open food.{" "}
+    <a href="#legal" className="underline">
+      What this page can and cannot say
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "Light Traps Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Is a Light Trap the Right Job?" },
   { id: "legal", title: "What This Page Can and Cannot Say" },
   { id: "limits", title: "Where a Light Trap Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Light Trap Is Not the Answer" },
   { id: "using", title: "Siting and Servicing" },
-  { id: "compared", title: "Light Traps Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -260,6 +292,18 @@ export default function BestProfessionalInsectLightTrapsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -283,6 +327,55 @@ export default function BestProfessionalInsectLightTrapsPage() {
         grid kind. Two are listed for commercial workplaces; one for home and
         commercial use; one for garages, patios and covered outdoor spaces.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">Light Traps Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Wattage and target species, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Size and weight, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -447,32 +540,6 @@ export default function BestProfessionalInsectLightTrapsPage() {
         does not invent one.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A 30W aluminium-grid unit with two pre-installed UV bulbs and a deep removable catch tray, listed for indoor use in homes, commercial workplaces, kitchens, warehouses and retail. Target species fly and mosquito; 2.1 kilograms.",
-                "The 16W version of the same unit, with the same listed dimensions — 18 x 12 x 8 cm — and 1.6 kilograms. Same listed settings, same two target species. What the listing states as different is the wattage and the weight.",
-                "A 30W metal-cased unit with two UV bulbs and a mesh screen over the grid, listed for home and commercial use and hung by chain or stood on a surface. Its own listing notes that not every mosquito reaches the grid; it names fly, mosquito and wasp.",
-                "A 20W plastic-cased unit with an open dual-sided design and two spare bulbs, listed for garages, basements, patios, BBQ areas and covered outdoor spaces. It names fly, mosquito, moth and wasp, and no commercial setting; the name now follows the fetched title.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Light Trap Is Not the Answer</h2>
@@ -517,35 +584,6 @@ export default function BestProfessionalInsectLightTrapsPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">Light Traps Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Wattage and target species, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Size and weight, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

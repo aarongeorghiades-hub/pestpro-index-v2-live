@@ -24,6 +24,11 @@ interface GuideLayoutProps {
   children: React.ReactNode;
   articleSchema: object;
   breadcrumbSchema: object;
+  // S70 R1 (Law 195): a /best route's top-picks box. When present it renders in
+  // the hero, directly under the intro, and the hero tightens on mobile so the
+  // box lands inside the first 390px screen. Absent on every other consumer, so
+  // /guides/* and the rest render exactly as before.
+  topPicks?: React.ReactNode;
 }
 
 export default function GuideLayout({
@@ -38,6 +43,7 @@ export default function GuideLayout({
   children,
   articleSchema,
   breadcrumbSchema,
+  topPicks,
 }: GuideLayoutProps) {
   // RAIL STAGES ARE DERIVED FROM THIS ROUTE'S OWN CONTENTS — S72 PILOT.
   //
@@ -89,19 +95,19 @@ export default function GuideLayout({
       <Navigation />
 
       {/* Hero */}
-      <section className="border-b border-[var(--color-rule)] bg-[var(--color-surface)] py-12 md:py-16">
+      <section className={`border-b border-[var(--color-rule)] bg-[var(--color-surface)] ${topPicks ? 'py-5 md:py-12' : 'py-12 md:py-16'}`}>
         <div className="max-w-4xl mx-auto px-4">
           {/* Breadcrumb */}
-          <nav className="mb-6 flex items-center gap-2 text-sm text-[var(--color-ink-mute)]">
+          <nav className={`${topPicks ? 'mb-3 md:mb-6' : 'mb-6'} flex items-center gap-2 text-sm text-[var(--color-ink-mute)]`}>
             <Link href="/" className="transition-colors hover:text-[var(--color-teal-deep)]">Home</Link>
             <span>/</span>
             <Link href={breadcrumbParent.href} className="transition-colors hover:text-[var(--color-teal-deep)]">{breadcrumbParent.label}</Link>
             <span>/</span>
-            <span className="text-[var(--color-ink)]">{title}</span>
+            <span className={topPicks ? 'hidden text-[var(--color-ink)] sm:inline' : 'text-[var(--color-ink)]'}>{title}</span>
           </nav>
 
-          <h1 className="mb-4 text-3xl font-black leading-tight text-[var(--color-ink)] sm:text-4xl md:text-5xl">{title}</h1>
-          <p className="mb-6 max-w-3xl text-lg text-[var(--color-ink-soft)] md:text-xl">{subtitle}</p>
+          <h1 className={`${topPicks ? 'mb-2 text-2xl md:mb-4' : 'mb-4 text-3xl'} font-black leading-tight text-[var(--color-ink)] sm:text-4xl md:text-5xl`}>{title}</h1>
+          <p className={topPicks ? 'mb-2 max-w-3xl text-[15px] leading-snug text-[var(--color-ink-soft)] md:mb-6 md:text-xl' : 'mb-6 max-w-3xl text-lg text-[var(--color-ink-soft)] md:text-xl'}>{subtitle}</p>
 
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[var(--color-ink-mute)]">
             <span>By the PestPro Index Team</span>
@@ -110,6 +116,8 @@ export default function GuideLayout({
             <span className="hidden sm:inline">|</span>
             <span>{readingTime} read</span>
           </div>
+
+          {topPicks}
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -124,6 +125,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Records are addressed BY IDENTITY, never by position (Law 107).
@@ -160,6 +166,9 @@ const products: ProductRecord[] = [
     h2Name: "Silentnight Complete Encasement",
     tocLabel: "Best Overall",
     tocName: "Silentnight Complete Encasement",
+    pick: "A six-sided, zipped, waterproof cover from a mattress maker, machine washable.",
+    blurb: "Our overall pick for a double bed. It is a six-sided cover with a secure zip, listed for mattresses up to 30cm deep, with a waterproof top and sides over a polypropylene backing. The maker states protection against bed bugs and dust mites, and the whole cover goes in the washing machine.",
+    pros: ["Six-sided encasement with a secure zip", "Fits mattress depths up to 30cm, size Double", "Waterproof top and sides, as listed", "Fully machine washable"],
   },
   {
     anchorId: "sureguard",
@@ -184,6 +193,9 @@ const products: ProductRecord[] = [
     h2Name: "SureGuard Mattress Encasement",
     tocLabel: "Best Cotton Encasement",
     tocName: "SureGuard Encasement",
+    pick: "A 100% cotton terry top, free from vinyl and PVC, per the maker.",
+    blurb: "Pick this if you want cotton next to the sleeper. The top is 100% cotton terry, which the maker describes as noiseless and moisture-wicking, and the maker states it is free from vinyl, PVC, phthalates and fire retardants. Its bed bug seal claim applies only with the maker's own box spring encasement. It is listed in US sizing, Queen 60 by 80 inches for a 13 to 16 inch mattress, so measure first.",
+    pros: ["100% cotton terry top", "Free from vinyl, PVC, phthalates and fire retardants, per the maker", "GREENGUARD Gold certification, per the maker", "Fits mattresses 13 to 16 inches deep"],
   },
   {
     anchorId: "utopia",
@@ -208,6 +220,9 @@ const products: ProductRecord[] = [
     h2Name: "Utopia Bedding Premium Encasement",
     tocLabel: "Best Budget",
     tocName: "Utopia Bedding Encasement",
+    pick: "Sized for a UK double at 135 x 190 x 30 cm, with a TPU backing on all six sides.",
+    blurb: "The one cover here sized for a UK bed, so you can order without converting inches. It is listed at Double, 135 x 190 x 30 cm, with a mini-zipper the maker describes as securing all 360 degrees and a TPU backing on all six sides. It is listed as machine washable and tumble dryable, which helps if you are buying several for a rental.",
+    pros: ["UK sizing: Double, 135 x 190 x 30 cm", "Mini-zipper all the way round, per the maker", "TPU backing on all six sides", "Machine washable and tumble dryable"],
   },
   {
     anchorId: "wrappybag",
@@ -232,6 +247,9 @@ const products: ProductRecord[] = [
     h2Name: "Wrappybag Bed Bug Mattress Protector",
     tocLabel: "Best Lab-Certified Cover",
     tocName: "Wrappybag Mattress Protector",
+    pick: "The one cover that names its testing house: Laboratoire T.E.C., per the maker.",
+    blurb: "Pick this if you want to see who tested it. The maker states laboratory testing and certification by Laboratoire T.E.C., plus OEKO-TEX 100 certification and dermatological testing by Dermatest. It is a full encasement that the maker describes as airtight, with an 80% cotton top. It is listed at 135 x 190 x 20 cm, and other sizes are stated as available.",
+    pros: ["Lab tested and certified by Laboratoire T.E.C., per the maker", "OEKO-TEX 100 certification, per the maker", "Full encasement the maker describes as airtight", "Other sizes stated as available"],
   },
   {
     anchorId: "interceptors",
@@ -256,6 +274,9 @@ const products: ProductRecord[] = [
     h2Name: "Bed Bug Blocker (Pro) Interceptor Traps",
     tocLabel: "Best Interceptor Traps",
     tocName: "Bed Bug Blocker Interceptors",
+    pick: "Eight under-leg cups with no pesticide, for checking whether bed bugs are there.",
+    blurb: "Buy these to find out whether you have bed bugs before you spend on anything else. You get eight cups that sit under bed and furniture legs, and the maker states eight traps cover two beds. The listing states no chemicals or pesticides. The maker describes bed bugs climbing the textured outside and being unable to escape the inner reservoir.",
+    pros: ["Eight traps, stated as covering two beds", "No chemicals or pesticides, per the listing", "Sit under bed and furniture legs", "Listed for homes, hotels and hostels"],
   },
 ];
 
@@ -296,16 +317,30 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    A cover deals with the mattress only, and buying one does not discharge a
+    landlord&rsquo;s duty to the tenant.{" "}
+    <a href="#legal" className="underline">
+      The landlord position
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Five Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What an Encasement Does, According to UC IPM" },
   { id: "health", title: "What the NHS and UC IPM Say About the Bites" },
   { id: "legal", title: "The Landlord Position, According to GOV.UK" },
   { id: "limits", title: "Where an Encasement Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Cover Is Not the Answer" },
   { id: "using", title: "Use and Placement" },
-  { id: "compared", title: "The Five Compared" },
 ];
 
 export default function BestProfessionalMattressEncasementsPage() {
@@ -330,6 +365,18 @@ export default function BestProfessionalMattressEncasementsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -352,6 +399,56 @@ export default function BestProfessionalMattressEncasementsPage() {
         cups that go under the bed legs, and it is here because it answers a
         question no cover can: whether there is anything in the room at all.
       </p>
+
+      {/* Comparison table — LISTING facts only, "not stated" where absent */}
+      <h2 id="compared">The Five Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        claim attributed to the maker who makes it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">What it is</th>
+              <th className="text-left p-2 border-b font-semibold">Bed bug claim, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Size and depth, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. The legal line and the
           does-not-work line sit ABOVE every product line. NOT a card: no Amazon link,
@@ -571,33 +668,6 @@ export default function BestProfessionalMattressEncasementsPage() {
         bugs, the interceptors answer that and a cover does not.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A six-sided zipped cover from a mattress maker rather than a pest brand, listed as fitting depths up to 30cm with a size row of Double. Its maker states protection against bed bugs and dust mites, a waterproof top and sides over a polypropylene backing, and full machine washability. It names no test and no certification, which is a difference from two of the others rather than a fault.",
-                "The only cover here whose listing states a 100% cotton terry top, which is what the award on it now names — the one other card that mentioned cotton gives 80% on the top panel and 100% polyester on every other side. It is also the only listing that makes its bed bug claim conditional: its maker states the mattress is sealed from bed bugs when used together with its own box spring encasement. It states independent lab testing and GREENGUARD Gold certification, and lists what the fabric is free from. Listed in US sizing at Queen, 60 by 80 inches, for a 13 to 16 inch mattress.",
-                "The one card on this page sized for a UK bed: Double, 135 x 190 x 30 cm, with a mini-zipper the maker describes as securing all 360 degrees and a TPU backing on all six sides. Its maker states it repels dust mites and bacteria and describes the fabric as thick knitted polyester. For a landlord buying several, this is the listing whose dimensions need no conversion.",
-                "The listing that names its testing house, which is what the award on it names: its maker states laboratory testing and certification by Laboratoire T.E.C., plus OEKO-TEX 100 certification and dermatological testing by Dermatest. Its fabric row reads 80% cotton and 20% polyester on top with 100% polyester on the other sides, and its material type row reads Polycotton — so it is a part-cotton cover rather than a cotton one, and its label no longer says otherwise. Listed at 135 x 190 x 20 cm with other sizes stated as available.",
-                "Not an encasement, and the card says so first. Eight cups that sit under bed and furniture legs, with a target species row of Bed Bug and a listing that states no chemicals or pesticides. Its maker describes bed bugs climbing the textured exterior and being unable to escape the inner reservoir, and states that eight traps cover two beds. UC IPM describes this class as a detection tool and as a temporary exclusion measure.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Cover Is Not the Answer</h2>
@@ -662,36 +732,6 @@ export default function BestProfessionalMattressEncasementsPage() {
         </li>
       </ol>
 
-      {/* Comparison table — LISTING facts only, "not stated" where absent */}
-      <h2 id="compared">The Five Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        claim attributed to the maker who makes it. Where a listing does not
-        state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">What it is</th>
-              <th className="text-left p-2 border-b font-semibold">Bed bug claim, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Size and depth, as listed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

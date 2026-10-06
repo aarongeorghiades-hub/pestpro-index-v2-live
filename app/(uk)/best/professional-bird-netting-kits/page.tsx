@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -126,6 +127,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Records are addressed BY IDENTITY, never by position (Law 107).
@@ -160,6 +166,9 @@ const products: ProductRecord[] = [
     h2Name: "Birdgo White 50mm Anti-Pigeon Netting 5m x 10m",
     tocLabel: "Best Value Net",
     tocName: "Birdgo Anti-Pigeon Netting",
+    pick: "Fifty square metres of knotted, UV-stabilised 50mm net, sized for pigeons.",
+    blurb: "Our pick if pigeons are the problem and you have a large opening to close. You get 50 square metres, listed as 5m x 10m, of knotted polyethylene at a 50mm mesh, and the title describes it as UV-stabilised. It is white, where most pigeon netting is sold black. Fixings are not listed as included, so order them separately.",
+    pros: ["50 square metres, listed as 5m x 10m", "50mm mesh, sized for pigeons", "Knotted, UV-stabilised polyethylene, per the title"],
   },
   {
     anchorId: "product-3",
@@ -184,6 +193,9 @@ const products: ProductRecord[] = [
     h2Name: "Defender Wide Plastic Bird Spikes",
     tocLabel: "Best for Ledges",
     tocName: "Defender Wide Plastic Bird Spikes",
+    pick: "A 5 metre pack of plastic spikes for ledges up to 20cm deep, per the maker.",
+    blurb: "Our pick for ledges, and the better documented of the two spike products. The 5 metre pack is 15 strips of 33.4cm, and the maker states they suit ledges up to 20cm deep and snap into smaller sections. Glue, screws and cable ties are not included, so order those too. The maker states a 15 year warranty and adds a 40-page pigeon guide.",
+    pros: ["15 strips of 33.4cm, a 5 metre pack", "For ledges up to 20cm deep, per the maker", "Strips snap into smaller sections", "15 year warranty, per the maker"],
   },
   {
     anchorId: "product-4",
@@ -208,6 +220,9 @@ const products: ProductRecord[] = [
     h2Name: "Solar Panel Roof Mesh Fixing Clips (60-Pack)",
     tocLabel: "Best No-Drill Fixings",
     tocName: "Solar Panel Mesh Fixing Clips",
+    pick: "60 nylon clips that fix mesh to solar panel edges with no drilling.",
+    blurb: "If you are meshing round solar panels, these hold the mesh on. You get 60 nylon clips made to attach mesh to the panel edges, and the maker states no drilling and no adhesive are needed. The maker warns that drilling into solar panels risks damage to the panel system, and recommends a clip every 450mm.",
+    pros: ["60 nylon clips", "No drilling and no adhesive, per the maker", "Made for solar panel edges", "450mm spacing recommended by the maker"],
   },
   {
     anchorId: "product-5",
@@ -232,6 +247,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest-Stop Professional Bird Spikes",
     tocLabel: "Best Spikes Option",
     tocName: "Pest-Stop Bird Spikes",
+    pick: "Stainless steel, UV-resistant spikes, as the title describes them.",
+    blurb: "The second spike option, if you want metal. The title describes the spikes as stainless steel and UV-resistant, and the material row reads Metal, Plastic, at 680g. The listing states no length, coverage or strip count, so measure your ledge and check the pack before you order more than one.",
+    pros: ["Stainless steel and UV-resistant, per the title", "Metal and plastic, as listed", "680g as listed"],
   },
 ];
 
@@ -272,15 +290,29 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Wild birds, their eggs and nests are protected by law. Fit netting or spikes outside
+    the nesting season, and never over an active nest.{" "}
+    <a href="#legal" className="underline">
+      The legal position on wild birds
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Four Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Exclusion Is the Method" },
   { id: "legal", title: "The Legal Position on Wild Birds" },
   { id: "limits", title: "Where These Products Do Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Product Is Not the Answer" },
   { id: "using", title: "Use and Placement" },
-  { id: "compared", title: "The Four Compared" },
 ];
 
 export default function BestProfessionalBirdNettingKitsPage() {
@@ -305,6 +337,18 @@ export default function BestProfessionalBirdNettingKitsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -328,6 +372,57 @@ export default function BestProfessionalBirdNettingKitsPage() {
         page is the components of a proofing job rather than four competing
         nets, and the cards say which is which.
       </p>
+
+      {/* Comparison table — LISTING facts only, "not stated" where absent */}
+      <h2 id="compared">The Four Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        claim attributed to the maker who makes it. Where a listing does not
+        state something, the cell says so rather than guessing — and on this
+        page four cells do.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Size and specification, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Warranty or life, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. The legal line and the
           does-not-work line sit ABOVE every product line. NOT a card: no Amazon link,
@@ -540,32 +635,6 @@ export default function BestProfessionalBirdNettingKitsPage() {
         assumes otherwise arrives incomplete.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "Fifty square metres of knotted, UV-stabilised polyethylene at a 50mm mesh, and the only netting on this page. Held against ICWDM's specification it is about twice the 1-inch mesh that source gives for screening architecture, so it is sized for pigeons and not for anything smaller. It is listed as white, where most pigeon netting is sold black, and ICWDM notes that black is often the best choice on a building. The listing carries no feature bullets at all, so its title is very nearly the whole of what its maker says about it.",
-                "The better documented of the two spike products: 15 strips of 33.4cm making a 5 metre pack, with the maker stating they suit ledges up to 20cm deep and that each strip can be snapped into smaller sections. Its own bullet says glue, screws and cable ties are not included, which is the kind of thing worth knowing before the scaffold goes up. The maker states a 15 year warranty and includes a 40-page pigeon guide.",
-                "Not a general netting fixing, and the card leads with that: 60 nylon clips made specifically to attach bird-proofing mesh to the edges of a solar panel array without drilling. Its maker states that drilling into solar panels risks damage to the panel system, and recommends clip spacing of 450mm. Every bullet on the listing is about solar installations, and it was previously carded here under a brand and a description that were not its own.",
-                "The thinnest listing on this page, and the card reports that rather than dressing it up. Its title says stainless steel and UV-resistant; its material row says Metal, Plastic; its colour row says Yellow; its weight is 680g. Its single feature bullet is the word Professional. Its target species row reads Fly, which its own title contradicts. No length, coverage or strip count is stated anywhere, so three of its four comparison cells read not stated.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Product Is Not the Answer</h2>
@@ -629,37 +698,6 @@ export default function BestProfessionalBirdNettingKitsPage() {
         </li>
       </ol>
 
-      {/* Comparison table — LISTING facts only, "not stated" where absent */}
-      <h2 id="compared">The Four Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        claim attributed to the maker who makes it. Where a listing does not
-        state something, the cell says so rather than guessing — and on this
-        page four cells do.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Type</th>
-              <th className="text-left p-2 border-b font-semibold">Size and specification, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Warranty or life, as listed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -21,6 +22,10 @@ import DecisionBox from '@/components/DecisionBox';
 // S68 R2 — THE STRIKEBACK LABEL WAS "Best Twin Pack" ON A SINGLE 1-LITRE LISTING. Held
 // and referred at S68 R1; corrected on the PM's ruling at S68 R2 to the listing's own
 // facts, the same string on card, h2, contents and table. Anchor id unchanged.
+//
+// S70 R1 — THE STRIKEBACK AWARD IS RESTORED with the false words swapped: "Best Twin
+// Pack" becomes "Best Triple Action Spray", the same string on card, h2, contents and
+// table. The listing is one bottle; its title states triple action.
 //
 // FAQ block and FAQPage schema removed together (Law 190).
 export async function generateMetadata(): Promise<Metadata> {
@@ -91,6 +96,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 const products: ProductRecord[] = [
@@ -112,6 +122,9 @@ const products: ProductRecord[] = [
     h2Name: "Indorex Defence Household Flea Spray 500ml",
     tocLabel: "Best Overall",
     tocName: "Indorex Defence Flea Spray",
+    pick: "A 500ml hand spray with the growth regulator pyriproxyfen, for about a 3-4 bedroom house.",
+    blurb: "Our overall pick, and a hand spray rather than a fogger, so you can aim it where fleas develop. You spray it from about 50cm onto and under carpets, rugs, tiles and skirting, and the maker says one 500ml can treats approximately a 3-4 bedroom house. Its four listed ingredients include permethrin and the growth regulator pyriproxyfen. Remove pets, birds and fish aquaria first, and ventilate afterwards.",
+    pros: ["Sprayed onto and under carpets, rugs and skirting", "Pyriproxyfen growth regulator listed", "About a 3-4 bedroom house per can, per the maker", "Four ingredients listed, including permethrin"],
   },
   {
     anchorId: "best-natural",
@@ -131,6 +144,9 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Natural Flea Bomb 150ml",
     tocLabel: "Best Natural",
     tocName: "Zero In Natural Flea Bomb",
+    pick: "The one true flea bomb here: a 150ml one-shot can with pyrethrins, for up to 40 m³.",
+    blurb: "The pick if you want an actual flea bomb. It is a 150ml one-shot aerosol containing pyrethrins: you press the trigger to lock it and leave the room while the can empties, and the listing gives a whole-room treatment of up to 40 m³. Turn off pilot lights and keep it away from flames first, as the fire warning above sets out. Follow up with a hand spray under beds and furniture, where a fogger reaches least.",
+    pros: ["One-shot aerosol you lock and leave", "Contains pyrethrins, per the listing", "Whole-room treatment up to 40 m³, as listed"],
   },
   {
     anchorId: "best-large",
@@ -150,13 +166,16 @@ const products: ProductRecord[] = [
     h2Name: "NOPE! CP Flea Spray 500ml for the Home",
     tocLabel: "Best Large Room",
     tocName: "NOPE! CP Flea Spray 500ml",
+    pick: "A 500ml cypermethrin spot spray for indoors and out, with up to 3 months claimed.",
+    blurb: "A water-based spot spray naming cypermethrin, for indoor and outdoor use. It is solvent-free and non-staining, as listed, and the maker claims ongoing protection for up to three months after application. It is not for use directly on pets, so treat the animal with a vet's flea product alongside it, as the listing says.",
+    pros: ["Cypermethrin named on the listing", "For indoor and outdoor use", "Water-based, solvent-free and non-staining", "Up to 3 months protection, per the maker"],
   },
   {
     anchorId: "best-twin",
     asin: "B0D7WFDYD2",
     rank: 4,
     cardName: "Strikeback Super Strength Triple Action Flea Spray 1L",
-    cardLabel: "Triple Action 1L Bottle",
+    cardLabel: "Best Triple Action Spray",
     features: [
       "Listed as a single 1-litre bottle; unit count 1,000 millilitres",
       "A hand spray applied from about 30cm, not a fogger, per the listing",
@@ -164,11 +183,14 @@ const products: ProductRecord[] = [
       "Target species listed as Insects",
       "Listing safety text: avoid naked flames; let it dry before pets or children return",
     ],
-    tableCells: ["Strikeback Triple Action 1L", "Hand spray; actives not named; single 1L bottle, as listed", "Triple Action 1L Bottle"],
-    h2Label: "Triple Action 1L Bottle",
+    tableCells: ["Strikeback Triple Action 1L", "Hand spray; actives not named; single 1L bottle, as listed", "Best Triple Action Spray"],
+    h2Label: "Best Triple Action Spray",
     h2Name: "Strikeback Super Strength Triple Action Flea Spray 1L",
-    tocLabel: "Triple Action 1L Bottle",
+    tocLabel: "Best Triple Action Spray",
     tocName: "Strikeback Triple Action Flea Spray",
+    pick: "A full litre of hand spray in a single bottle, applied from about 30cm.",
+    blurb: "A litre of hand spray in one bottle, applied from about 30cm onto the surfaces you want to treat. Its title states triple insecticides and a growth regulator, though the listing names none of them, so read the label for the actives. The listing's own safety text says to avoid naked flames and to let surfaces dry before pets or children come back.",
+    pros: ["Single 1-litre bottle", "Hand spray, applied from about 30cm", "Plain safety text on flames and drying, per the listing"],
   },
   {
     anchorId: "best-professional",
@@ -188,18 +210,33 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula C+ Flea Killer Spray 1L",
     tocLabel: "Best Professional",
     tocName: "Pest Expert Formula C+",
+    pick: "A 1L water-based spray with pyriproxyfen, covering 50 square metres per application.",
+    blurb: "The pick for a bigger job where you want a growth regulator in the bottle. The maker states three actives, one of them pyriproxyfen, and the listing gives coverage of 50 square metres per application. The title states it is approved for amateur use. The maker claims a residue lasting up to 12 weeks, and you keep children and pets out until it dries, about 2 to 3 hours.",
+    pros: ["Three actives including pyriproxyfen, per the maker", "50 square metres per application, as listed", "Approved for amateur use, per the title", "Water-based, dry in about 2 to 3 hours"],
   },
 ];
 
+const SAFETY_NOTE = (
+  <>
+    Only one of these is a fogger: turn off pilot lights and keep it away from
+    flames, as NPIC warns. HSE says the public should use only products intended
+    for the general public.{" "}
+    <a href="#legal" className="underline">
+      The legal position and the fire warning
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Five Products Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What a Fogger Is, and Which of These Is One" },
   { id: "legal", title: "The Legal Position and the Fire Warning" },
   { id: "limits", title: "Where a Fogger Does Not Reach" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Fogger Is Not the Answer" },
   { id: "using", title: "Using Them" },
-  { id: "compared", title: "The Five Products Compared" },
 ];
 
 export default function BestFleaFoggerPage() {
@@ -217,6 +254,18 @@ export default function BestFleaFoggerPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -243,6 +292,56 @@ export default function BestFleaFoggerPage() {
         </a>
         ). Four of the five products here are not foggers at all.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Five Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Form, actives and coverage, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The legal/fire line and the does-not-reach
           line sit ABOVE the product lines. No Amazon link, no price, no image, no award. */}
@@ -394,33 +493,6 @@ export default function BestFleaFoggerPage() {
         a volume and no area.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "Not a fogger. A 500ml Virbac hand spray whose listing states four ingredients including the growth regulator pyriproxyfen, sprayed from about 50cm onto and under carpets, rugs, tiles and skirting, and which the maker says treats approximately a 3-4 bedroom house. The listing's readers' award claim over 10+ years is the maker's and is carried as such.",
-                "The one fogger on the page. A 150ml one-shot aerosol containing pyrethrins, listed as a whole-room treatment for up to 40 m³: press the trigger to lock it and leave the room while it empties. The listing describes it as an alternative to smoke bombs; what NPIC and Kentucky say about what any fogger reaches applies to it.",
-                "Not a fogger. A 500ml spot-treatment spray naming cypermethrin, listed for indoor and outdoor use, water-based and non-staining, with a maker's claim of up to 3 months of protection. The listing says it is not to be used directly on pets and is to be used alongside a vet's flea product for the animal.",
-                "Not a fogger, and not a twin pack: the listing is one 1-litre bottle, applied from about 30cm. Its title states triple insecticides and a growth regulator, and the listing names none of them. The safety text warns against naked flames and says to let surfaces dry before pets or children return. The label above now states what the listing states.",
-                "Not a fogger. A 1-litre water-based hand spray whose title states amateur approval, naming three actives including pyriproxyfen, with a stated coverage of 50 square metres and a maker's claim of up to 12 weeks of residue. Children and pets out until dry, which the listing puts at 2-3 hours.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If a Fogger Is Not the Answer</h2>
@@ -486,36 +558,6 @@ export default function BestFleaFoggerPage() {
         </Callout>
       </div>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Five Products Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Form, actives and coverage, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Fleas still emerging after the house and the pet are treated?"

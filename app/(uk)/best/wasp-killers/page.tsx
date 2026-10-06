@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -82,6 +83,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells from the banked listings' OWN bullets and detail
@@ -104,6 +110,9 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil Wasp Foam 300ml",
     tocLabel: "Best Overall",
     tocName: "Rentokil Foam",
+    pick: "A Rentokil nest foam with its two actives stated on the listing.",
+    blurb: "Our overall pick for a nest you can reach. It is a 300ml Rentokil aerosol foam, the listing names d-phenothrin and tetramethrin, and the maker says it kills wasps in the nest. The listing gives no reach and no number of treatments, so read the can before you start.",
+    pros: ["d-phenothrin and tetramethrin, per the listing", "Foam aerosol for treating the nest", "300ml can from Rentokil"],
   },
   {
     anchorId: "best-trap",
@@ -123,6 +132,9 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Ultra Power XL Wasp Trap",
     tocLabel: "Best Trap",
     tocName: "Zero In XL",
+    pick: "A reusable, poison-free trap for wasps around the garden.",
+    blurb: "Pick the trap if your trouble is wasps around the garden. It is listed as poison-free and reusable, comes with two sachets of attractant bait, and has a twist-off base with a refill available. The listing is for outdoor use: gardens, smallholdings, refuse areas, stables and barns. Before emptying, the listing says to bag it and freeze it for 2 hours.",
+    pros: ["Poison-free, as listed", "2 bait sachets supplied; refill available", "Reusable, with a twist-off base", "Listed for gardens, refuse areas, stables and barns"],
   },
   {
     anchorId: "best-spray",
@@ -142,6 +154,9 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Wasp Killer 300ml",
     tocLabel: "Best Spray",
     tocName: "Zero In Killer",
+    pick: "A foam that reaches a nest from up to 2 metres, with 2-3 treatments per can.",
+    blurb: "Choose this if you want to keep some distance from the nest. The listing states a reach of up to 2 metres and 2-3 treatments per 300ml can, with permethrin and tetramethrin named, for nests indoors and out. Apply it in the late evening or early morning when wasps are less active, as the listing directs.",
+    pros: ["Reach up to 2 metres, as listed", "2-3 treatments per 300ml can", "Permethrin and tetramethrin, per the listing", "Listed for indoor and outdoor nests"],
   },
   // S68 R5 — the powder the title promises. Banked body (S45-C), fetched 2026-09-01;
   // neutral factual label.
@@ -150,7 +165,7 @@ const products: ProductRecord[] = [
     asin: "B00AC1IM6Q",
     rank: 4,
     cardName: "Rentokil PSW99P Wasp Killer Powder 300g",
-    cardLabel: "Nest Powder, 300g",
+    cardLabel: "Best Powder",
     features: [
       "300g powder; active listed as permethrin",
       "Listed for use on inaccessible nests",
@@ -158,23 +173,40 @@ const products: ProductRecord[] = [
       "Target species listed as Insects",
       "No application rate or nest count is stated on the listing",
     ],
-    tableCells: ["Rentokil PSW99P Powder 300g", "Powder; permethrin; for inaccessible nests, as listed", "Nest Powder, 300g"],
-    h2Label: "Nest Powder, 300g",
+    tableCells: ["Rentokil PSW99P Powder 300g", "Powder; permethrin; for inaccessible nests, as listed", "Best Powder"],
+    h2Label: "Best Powder",
     h2Name: "Rentokil PSW99P Wasp Killer Powder 300g",
-    tocLabel: "Nest Powder",
+    tocLabel: "Best Powder",
     tocName: "Rentokil PSW99P",
+    pick: "A 300g permethrin powder listed for inaccessible nests.",
+    blurb: "For a nest you cannot get at directly. The listing names permethrin and states use on inaccessible nests, in the home and garden, in a 300g pack. It gives no application rate or nest count, so follow the pack.",
+    pros: ["300g permethrin powder", "Listed for inaccessible nests", "Listed for home and garden"],
   },
 ];
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full
+// sections it points to sit on the page.
+const SAFETY_NOTE = (
+  <>
+    Two of these are insecticides: buy only biocides intended for the general public,
+    and follow the label on the can.{" "}
+    <a href="#legal" className="underline">
+      The legal position
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Three Products Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Where the Nest Is, and When It Ends" },
   { id: "legal", title: "The Legal Position on Wasp Products" },
   { id: "limits", title: "Where a Foam Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Product Is Not the Answer" },
   { id: "using", title: "Using Them" },
-  { id: "compared", title: "The Three Products Compared" },
 ];
 
 export default function BestWaspKillersPage() {
@@ -194,6 +226,18 @@ export default function BestWaspKillersPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -220,6 +264,56 @@ export default function BestWaspKillersPage() {
         ). Whether to treat one at all is the first question, and it is not
         always yes.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Three Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Form and actives, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The professional line, the legal line and
           the does-not-help line sit ABOVE the product lines. No Amazon link, no price,
@@ -349,32 +443,6 @@ export default function BestWaspKillersPage() {
         tetramethrin. The trap: none, by design.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A 300ml Rentokil aerosol foam whose listing states d-phenothrin and tetramethrin and which the maker says kills wasps in the nest. The listing states no reach and no number of treatments per can, so those cells read not stated.",
-                "A reusable outdoor trap listed as poison-free and supplied with two sachets of attractant, with a refill available and a twist-off base. The listing's own emptying direction is to bag the trap and freeze it for two hours first. Its target species field reads Wasp. The maker's claim about how far the bait draws wasps from is the maker's and is not repeated here.",
-                "A 300ml foam whose fetched title reads Zero In Wasp Nest Killer, listed with permethrin and tetramethrin, for indoor and outdoor nests, reaching from up to 2 metres, with 2-3 treatments per can. The listing directs application in late evening or early morning when wasps are less active.",
-                "A 300g powder, the form the title promises, whose listing names permethrin and states use on inaccessible nests in the home and garden. The listing gives no application rate and no nest count; the puffer format is what its form-factor row says, and the rest is on the pack.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If a Product Is Not the Answer</h2>
@@ -427,36 +495,6 @@ export default function BestWaspKillersPage() {
         </Callout>
       </div>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Three Products Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Form and actives, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Nest in a wall, a roof or somewhere you cannot reach?"

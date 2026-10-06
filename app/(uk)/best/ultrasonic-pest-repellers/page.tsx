@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -89,6 +90,7 @@ const SRC = {
 type ProductRecord = {
   anchorId: string;
   asin: string;
+  rank: number;
   cardName: string;
   cardLabel: string;
   features: string[];
@@ -97,6 +99,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -117,8 +124,9 @@ const products: ProductRecord[] = [
   {
     anchorId: "best-overall",
     asin: "B000LP64K4",
+    rank: 1,
     cardName: "The Big Cheese Sonic Mouse & Rat Repeller Plug-In",
-    cardLabel: "Mains plug-in, 140g",
+    cardLabel: "Best Overall",
     features: [
       "Mains plug-in; target species listed as Mouse, Rat",
       "The maker states it protects areas of up to 37m²",
@@ -127,16 +135,20 @@ const products: ProductRecord[] = [
       "The maker describes it as suitable to use around children and pets such as cats and dogs",
     ],
     tableCells: ["The Big Cheese Sonic Repeller", "Mains plug-in", "Mouse, Rat", "Up to 37m², per the maker"],
-    h2Label: "Mains plug-in, 140g",
+    h2Label: "Best Overall",
     h2Name: "The Big Cheese Sonic Mouse & Rat Repeller Plug-In",
-    tocLabel: "Mains plug-in, 140g",
+    tocLabel: "Best Overall",
     tocName: "The Big Cheese Sonic",
+    pick: "A mains plug-in for mice and rats, with a TEST button to check it is running.",
+    blurb: "Our overall pick, mainly because its listing is plain about scope: the maker recommends it for use once an infestation in the home is under control. It plugs into the mains, is listed for mice and rats, and has a halo-red LED and a TEST button so you can check it in place. The maker states an area of up to 37m².",
+    pros: ["Mains plug-in, listed for mice and rats", "LED and TEST button for an in-place check", "Maker states an area of up to 37m²", "Listing scopes it to after an infestation is under control"],
   },
   {
     anchorId: "vneed-plug-in",
     asin: "B08CGW5M9X",
+    rank: 2,
     cardName: "VNEED Ultrasonic Pest Repeller Plug-In",
-    cardLabel: "Mains plug-in, 180g",
+    cardLabel: "Best Plug-In",
     features: [
       "Mains plug-in; the listing describes combined electromagnetic and ultrasonic operation",
       "Target species listed as Ant, Cockroach, Flea, Fly, Mosquito, Moth, Mouse, Rat, Spider",
@@ -145,16 +157,20 @@ const products: ProductRecord[] = [
       "Listed at 0.18 kg; country of origin listed as China",
     ],
     tableCells: ["VNEED Ultrasonic Pest Repeller", "Mains plug-in", "Nine species listed", "Up to 1,200 sq ft, per the maker"],
-    h2Label: "Mains plug-in, 180g",
+    h2Label: "Best Plug-In",
     h2Name: "VNEED Ultrasonic Pest Repeller Plug-In",
-    tocLabel: "Mains plug-in, 180g",
+    tocLabel: "Best Plug-In",
     tocName: "VNEED Plug-In",
+    pick: "A mains plug-in whose listing names nine target species, from ants to rats.",
+    blurb: "A mains plug-in whose listing describes combined electromagnetic and ultrasonic operation and names nine target species, from ant and cockroach to mouse and rat. The maker states an area of up to 1,200 sq ft. One detail row says \"Is electric: No\", which does not match a unit you plug into a socket.",
+    pros: ["Mains plug-in", "Nine target species named on the listing", "Electromagnetic and ultrasonic operation, per the listing", "Maker states up to 1,200 sq ft"],
   },
   {
     anchorId: "best-multiple-rooms",
     asin: "B0B8VQ6C76",
+    rank: 3,
     cardName: "EcoMyLife Ultrasonic Pest Repeller (2 Pack)",
-    cardLabel: "Mains plug-in, 2 pack",
+    cardLabel: "Best for Multiple Rooms",
     features: [
       "Pack size stated two ways on the listing: unit count 2, number of pieces 4",
       "The maker states 1,200 sq ft per repeller",
@@ -163,16 +179,20 @@ const products: ProductRecord[] = [
       "Mains plug-in; listed at 0.13 kg; country of origin listed as China",
     ],
     tableCells: ["EcoMyLife Ultrasonic Pest Repeller", "Mains plug-in, 2 units", "Eleven species listed", "1,200 sq ft each, per the maker"],
-    h2Label: "Mains plug-in, 2 pack",
+    h2Label: "Best for Multiple Rooms",
     h2Name: "EcoMyLife Ultrasonic Pest Repeller (2 Pack)",
-    tocLabel: "Mains plug-in, 2 pack",
+    tocLabel: "Best for Multiple Rooms",
     tocName: "EcoMyLife 2 Pack",
+    pick: "Two plug-in units, and a listing that recommends one per room.",
+    blurb: "Pick this if you have more than one room in mind. The pack holds two mains units, though the listing also says 4 pieces, and the maker states 1,200 sq ft per unit. Its own listing says ultrasound cannot pass through walls and solid objects and recommends one unit per room. Eleven target species are listed.",
+    pros: ["Two units in the pack", "Listing recommends one unit per room", "Maker states 1,200 sq ft per unit", "Eleven target species listed"],
   },
   {
     anchorId: "best-cordless",
     asin: "B0D984JR8Z",
+    rank: 4,
     cardName: "Pestbye 360 Ultrasonic Rechargeable Rodent Repeller",
-    cardLabel: "Rechargeable, USB-C",
+    cardLabel: "Best Cordless",
     features: [
       "USB-C rechargeable; the maker states up to 170 hours on a charge",
       "Fixed and variable frequency settings listed as 20–80 kHz",
@@ -181,16 +201,20 @@ const products: ProductRecord[] = [
       "Power source listed as Battery Powered; target species not stated in the detail table",
     ],
     tableCells: ["Pestbye 360 Rechargeable", "Rechargeable, cordless", "Rodents, per the title", "Up to 170 hours a charge, per the maker"],
-    h2Label: "Rechargeable, USB-C",
+    h2Label: "Best Cordless",
     h2Name: "Pestbye 360 Ultrasonic Rechargeable Rodent Repeller",
-    tocLabel: "Rechargeable, USB-C",
+    tocLabel: "Best Cordless",
     tocName: "Pestbye 360",
+    pick: "USB-C rechargeable, for a loft, barn or caravan with no socket.",
+    blurb: "The one to choose where there is no socket. It charges by USB-C, and the maker states up to 170 hours on a charge. It has fixed and variable frequency settings across 20 to 80 kHz, and the maker says the variable setting is there so rodents do not become accustomed to the sound. It is listed for lofts, barns, caravans and homes.",
+    pros: ["USB-C rechargeable; maker states up to 170 hours a charge", "Fixed and variable settings, 20 to 80 kHz", "Listed for lofts, barns and caravans"],
   },
   {
     anchorId: "best-for-spiders",
     asin: "B0072H60MG",
+    rank: 5,
     cardName: "Pestbye Battery Operated Spider Repellent & Deterrent — Ultrasonic Spider & Crawling Insect Repeller",
-    cardLabel: "Battery unit, 2 x PP3",
+    cardLabel: "Best for Spiders",
     features: [
       "Target species listed as Spider — the listing does not name mice",
       "Takes two 9V PP3 batteries, not supplied; the maker states up to 12 months of continuous use",
@@ -199,16 +223,20 @@ const products: ProductRecord[] = [
       "The maker describes it as safe for pets, wildlife (except rodents) and humans",
     ],
     tableCells: ["Pestbye Spider & Crawling Insect Repeller", "Battery, 2 x PP3", "Spider", "Up to 2,500 sq ft unobstructed, per the maker"],
-    h2Label: "Battery unit, 2 x PP3",
+    h2Label: "Best for Spiders",
     h2Name: "Pestbye Battery Operated Spider & Crawling Insect Repeller",
-    tocLabel: "Battery unit, 2 x PP3",
+    tocLabel: "Best for Spiders",
     tocName: "Pestbye Spider Repeller",
+    pick: "A battery unit whose listed target species is spider, for sheds and outbuildings.",
+    blurb: "If spiders in a garage, shed or loft are what you are dealing with, this is the unit whose listing names spider as its target. It takes two 9V PP3 batteries, which are not supplied, and the maker states up to 12 months of continuous use. The maker also states a signal every 8 seconds over an unobstructed area of up to 2,500 sq ft. The listing does not name mice.",
+    pros: ["Listed target species: spider", "Takes two 9V PP3 batteries, not supplied", "Maker states up to 12 months of use", "Listed for garages, lofts, sheds and greenhouses"],
   },
   {
     anchorId: "pestbye-long-life",
     asin: "B003ZIV9Y0",
+    rank: 6,
     cardName: "Pestbye Long Life Battery Operated Sonic Rat and Mouse Repellent",
-    cardLabel: "Battery unit, long-life",
+    cardLabel: "Best for Rodents",
     features: [
       "Target species listed as Mouse, Rat",
       "Takes two 9V PP3 batteries, not supplied; the maker states 8 to 12 months of continuous use",
@@ -217,10 +245,13 @@ const products: ProductRecord[] = [
       "Listed at 9.7 x 9.7 x 2.5 cm with a 2 year warranty",
     ],
     tableCells: ["Pestbye Long Life Sonic Repellent", "Battery, 2 x PP3", "Mouse, Rat", "Up to 2,500 sq ft unobstructed, per the maker"],
-    h2Label: "Battery unit, long-life",
+    h2Label: "Best for Rodents",
     h2Name: "Pestbye Long Life Battery Operated Sonic Rat and Mouse Repellent",
-    tocLabel: "Battery unit, long-life",
+    tocLabel: "Best for Rodents",
     tocName: "Pestbye Long Life",
+    pick: "The mouse and rat version of the battery unit, with a two-year warranty.",
+    blurb: "The mouse and rat counterpart of the unit above, for places with no power. It takes two 9V PP3 batteries, not supplied, and the maker states 8 to 12 months of continuous use, with a signal every 8 seconds over an unobstructed 2,500 sq ft. It is listed for homes, garages, lofts, sheds and greenhouses, and carries a 2 year warranty.",
+    pros: ["Listed for mice and rats", "Takes two 9V PP3 batteries, not supplied", "Maker states 8 to 12 months of use", "2 year warranty, as listed"],
   },
 ];
 
@@ -263,15 +294,29 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full
+// sections it points to sit on the page.
+const SAFETY_NOTE = (
+  <>
+    The ASA has not accepted an efficacy claim for any pest repeller, ultrasonic
+    included, so every figure on these cards is the maker's.{" "}
+    <a href="#evidence" className="underline">
+      What the regulator and the literature say
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Six Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What These Devices Are" },
   { id: "evidence", title: "What the Regulator and the Literature Say" },
   { id: "limits", title: "Where They Do Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If This Is Not the Answer" },
   { id: "using", title: "Placing One" },
-  { id: "compared", title: "The Six Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -305,6 +350,18 @@ export default function BestUltrasonicPestRepellersPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -329,6 +386,56 @@ export default function BestUltrasonicPestRepellersPage() {
         and then what each listing states — in that order, because the first two
         are what a reader needs before the third.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Six Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        coverage figure attributed to the maker who claims it. Where a listing
+        does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Power</th>
+              <th className="text-left p-2 border-b font-semibold">Target species, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Coverage claimed by the maker</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -522,33 +629,6 @@ export default function BestUltrasonicPestRepellersPage() {
         about walls.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A mains plug-in listed for mice and rats with a TEST button and an indicator LED, which the maker rates at up to 37m². Its listing is the one here that scopes itself, recommending use once an infestation in the home is under control; its detail table also carries an unrelated bait-block product's rows, which are not read here.",
-                "A mains plug-in whose listing describes combined electromagnetic and ultrasonic operation and names nine target species, with up to 1,200 sq ft claimed. Its detail table says \"Is electric: No\" of a device that plugs into a socket.",
-                "Two mains units, listed as unit count 2 and number of pieces 4, each rated by the maker at 1,200 sq ft. This is the listing that states its own limitation plainly: ultrasound does not pass through walls and solid objects, so it recommends one per room.",
-                "A USB-C rechargeable unit for places without a socket — lofts, barns, caravans — with up to 170 hours a charge claimed and fixed or variable frequency between 20 and 80 kHz, which the maker says is there to stop rodents becoming accustomed to the sound.",
-                "A battery unit taking two 9V PP3 cells, not supplied, which the maker rates at up to 12 months and an unobstructed 2,500 sq ft with a pulse every 8 seconds. Its listed target species is Spider; the card previously said it was marketed for mice, and the listing does not say that.",
-                "The rodent counterpart of the unit above: two 9V PP3 cells, not supplied, 8 to 12 months claimed, the same 8-second pulse and unobstructed 2,500 sq ft, with mouse and rat as the listed target species and a two-year warranty.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If This Is Not the Answer</h2>
@@ -599,36 +679,6 @@ export default function BestUltrasonicPestRepellersPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">The Six Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        coverage figure attributed to the maker who claims it. Where a listing
-        does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Power</th>
-              <th className="text-left p-2 border-b font-semibold">Target species, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Coverage claimed by the maker</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

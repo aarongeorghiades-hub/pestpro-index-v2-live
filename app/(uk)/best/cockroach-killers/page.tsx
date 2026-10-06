@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -96,6 +97,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, both
@@ -127,6 +133,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula IC Cockroach Killer Gel",
     tocLabel: "Best Overall",
     tocName: "Pest Expert Formula IC Gel",
+    pick: "Imidacloprid gel in six 10g syringes, the bait format UC IPM prefers to sprays.",
+    blurb: "Our overall pick, because gel bait is the category this page and its source put first. You get six 10g syringes with a ready-to-use applicator. Imidacloprid is named as the active and cockroach is the listed target species. The listing's detail table carries a variant ASIN, which the card notes.",
+    pros: ["Six 10g syringes of gel", "Ready-to-use syringe applicator, as listed", "Imidacloprid named as the active", "Target species listed as cockroach"],
   },
   {
     anchorId: "best-monitoring",
@@ -146,6 +155,9 @@ const products: ProductRecord[] = [
     h2Name: "Cockroach Sticky Traps, 12 Pack",
     tocLabel: "Best for Monitoring",
     tocName: "Cockroach Sticky Traps",
+    pick: "Twelve sticky traps with bait pellets, to show where the activity is.",
+    blurb: "Use these alongside the gel to find out where cockroaches are running and whether numbers are falling. The pack has twelve fold-together sticky traps with bait pellets included, listed for kitchen corners, cupboards, cabinets and behind furniture. The maker describes the trap material as non-toxic. The brand row reads Rentokil and the manufacturer row reads Trapro, and the card gives both.",
+    pros: ["12 fold-together traps per pack", "Bait pellets included, as listed", "Listed for kitchen corners, cupboards and behind furniture", "Trap material described as non-toxic by the maker"],
   },
 ];
 
@@ -179,15 +191,29 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    The gel is an insecticide, and its own label sets where it may go and how
+    much to use. Read it before the first application.{" "}
+    <a href="#legal" className="underline">
+      What the label governs
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Two Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What You Are Dealing With" },
   { id: "legal", title: "What the Label Governs" },
   { id: "limits", title: "Where a Product Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Product Is Not the Answer" },
   { id: "using", title: "Placing Them" },
-  { id: "compared", title: "The Two Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -214,6 +240,18 @@ export default function BestCockroachKillersPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -238,6 +276,55 @@ export default function BestCockroachKillersPage() {
         specifically. What the traps are for is finding out whether the bait is
         working.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Two Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Pack, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -411,30 +498,6 @@ export default function BestCockroachKillersPage() {
         conditions and one without.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "Six 10g syringes of gel with imidacloprid named as the active and cockroach as the listed target species, supplied with a ready-to-use applicator. Its maker's claims about strength and eradication are its own and are not restated here; its detail table carries a different ASIN from the page fetched, which the card says.",
-                "Twelve fold-together sticky traps supplied with bait pellets, listed for ants, cockroaches and spiders and for placing in kitchen corners, cupboards and behind furniture. Its brand row reads Rentokil and its manufacturer row reads Trapro; both are on the listing and both are on the card.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Product Is Not the Answer</h2>
@@ -490,35 +553,6 @@ export default function BestCockroachKillersPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">The Two Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Type</th>
-              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Pack, as listed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

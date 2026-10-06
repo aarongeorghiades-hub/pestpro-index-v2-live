@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -93,6 +94,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // RANK NUMERALS, ANCHOR IDS AND CARD ORDER UNCHANGED; the award labels are replaced by
@@ -115,7 +121,7 @@ const products: ProductRecord[] = [
     asin: "B071K8X44X",
     rank: 1,
     cardName: "Pest Expert Cockroach Killer Kit (Advanced)",
-    cardLabel: "Spray Kit",
+    cardLabel: "Best Overall",
     features: [
       "Item form listed as Spray; target species listed as Cockroach",
       "Listed as covering 3-4 rooms",
@@ -123,18 +129,21 @@ const products: ProductRecord[] = [
       "Listed as low-odour and non-staining",
       "Supplied with a step-by-step advice sheet",
     ],
-    tableCells: ["Pest Expert Cockroach Killer Kit (Advanced)", "Spray; cypermethrin with pyriproxyfen", "Spray Kit"],
-    h2Label: "Spray Kit",
+    tableCells: ["Pest Expert Cockroach Killer Kit (Advanced)", "Spray; cypermethrin with pyriproxyfen", "Best Overall"],
+    h2Label: "Best Overall",
     h2Name: "Pest Expert Cockroach Killer Kit (Advanced)",
-    tocLabel: "Spray Kit",
+    tocLabel: "Best Overall",
     tocName: "Pest Expert Cockroach Killer Kit",
+    pick: "A spray kit listed to cover 3 to 4 rooms, with a step-by-step advice sheet.",
+    blurb: "Our overall pick if the problem has spread beyond one room. The kit is listed as covering 3 to 4 rooms and comes with a step-by-step advice sheet, and its description names cypermethrin and pyriproxyfen. The maker claims a residue that goes on protecting for up to 12 weeks. The listing describes it as low-odour and non-staining.",
+    pros: ["Listed as covering 3 to 4 rooms", "Step-by-step advice sheet included", "Up to 12 weeks of residue, the maker claims", "Low-odour and non-staining, as listed"],
   },
   {
     anchorId: "best-alternative",
     asin: "B0B1QNQ7Y1",
     rank: 2,
     cardName: "NOPE! CP Cockroach Killer Spray 5L (Pack of 2)",
-    cardLabel: "Trigger Spray, 5L x 2",
+    cardLabel: "Best Alternative",
     features: [
       "Listed as 5 litres, pack of two — 10 litres in total",
       "Active substance stated on the listing: cypermethrin",
@@ -142,18 +151,21 @@ const products: ProductRecord[] = [
       "Listed as having disinfectant properties",
       "Target species listed as Cockroach",
     ],
-    tableCells: ["NOPE! CP Cockroach Killer Spray", "Cypermethrin; 5L x 2 as listed", "Trigger Spray, 5L x 2"],
-    h2Label: "Trigger Spray, 5L x 2",
+    tableCells: ["NOPE! CP Cockroach Killer Spray", "Cypermethrin; 5L x 2 as listed", "Best Alternative"],
+    h2Label: "Best Alternative",
     h2Name: "NOPE! CP Cockroach Killer Spray 5L (Pack of 2)",
-    tocLabel: "Trigger Spray, 5L x 2",
+    tocLabel: "Best Alternative",
     tocName: "NOPE! CP Cockroach Killer Spray",
+    pick: "Ten litres of cypermethrin trigger spray for spot treatments.",
+    blurb: "Choose this if you have a lot of ground to cover. You get two 5 litre packs, ten litres in all, of an odourless trigger spray for spot treatments, with cypermethrin named on the listing. The maker also claims disinfectant properties.",
+    pros: ["10 litres in two 5 litre packs", "Cypermethrin named on the listing", "Odourless trigger spray for spot treatments", "Disinfectant properties, the maker claims"],
   },
   {
     anchorId: "best-spray",
     asin: "B000TARC7A",
     rank: 3,
     cardName: "Rentokil Insectrol Insect Killer Spray 250ml",
-    cardLabel: "Aerosol, 250ml",
+    cardLabel: "Best Spray",
     features: [
       "Active substances stated on the listing: permethrin and D-allethrin",
       "250ml aerosol, listed at 3.53 ounces",
@@ -161,18 +173,21 @@ const products: ProductRecord[] = [
       "Listed for fleas, ants, cockroaches, earwigs and bed bugs",
       "Target species listed as Insects",
     ],
-    tableCells: ["Rentokil Insectrol 250ml", "Permethrin + D-allethrin", "Aerosol, 250ml"],
-    h2Label: "Aerosol, 250ml",
+    tableCells: ["Rentokil Insectrol 250ml", "Permethrin + D-allethrin", "Best Spray"],
+    h2Label: "Best Spray",
     h2Name: "Rentokil Insectrol Insect Killer Spray 250ml",
-    tocLabel: "Aerosol, 250ml",
+    tocLabel: "Best Spray",
     tocName: "Rentokil Insectrol Insect Killer Spray",
+    pick: "A 250ml indoor aerosol naming permethrin and D-allethrin.",
+    blurb: "A small can for an indoor job. The listing names permethrin and D-allethrin and says it is intended for indoor use. It lists fleas, ants, cockroaches, earwigs and bed bugs among its targets, so one can covers more than one pest.",
+    pros: ["250ml aerosol", "Permethrin and D-allethrin named on the listing", "Listed for cockroaches, ants, fleas, earwigs and bed bugs", "Intended for indoor use, as listed"],
   },
   {
     anchorId: "best-budget",
     asin: "B0B71D3QS1",
     rank: 4,
     cardName: "Zero In Ant & Cockroach Killer 1.5L Ready-to-Use",
-    cardLabel: "Pump Spray, 1.5L",
+    cardLabel: "Best Budget",
     features: [
       "Active substances stated on the listing: cypermethrin and benzalkonium chloride",
       "1.5L pressurised pump spray with an adjustable nozzle",
@@ -183,12 +198,15 @@ const products: ProductRecord[] = [
     tableCells: [
       "Zero In Ant & Cockroach Killer 1.5L",
       "Cypermethrin + benzalkonium chloride",
-      "Pump Spray, 1.5L",
+      "Best Budget",
     ],
-    h2Label: "Pump Spray, 1.5L",
+    h2Label: "Best Budget",
     h2Name: "Zero In Ant & Cockroach Killer 1.5L Ready-to-Use",
-    tocLabel: "Pump Spray, 1.5L",
+    tocLabel: "Best Budget",
     tocName: "Zero In Ant & Cockroach Killer",
+    pick: "A 1.5L pump spray that switches between fan spray and cracks, indoors and out.",
+    blurb: "The largest single container here at 1.5 litres, and the one to choose if you need to treat outside as well as in. It is a pressurised pump spray with an adjustable nozzle for either a fan spray or crack-and-crevice treatment. The listing names cypermethrin and benzalkonium chloride.",
+    pros: ["1.5L pressurised pump spray", "Adjustable nozzle for fan spray or crack and crevice", "Listed for indoor and outdoor use", "Cypermethrin and benzalkonium chloride named"],
   },
   // S68 R5 — the gel the title promises. Banked body (S45-C), fetched 2026-09-01. Its
   // detail table carries ASIN B07ZZCZRXG while the page fetched, and its canonical link,
@@ -199,7 +217,7 @@ const products: ProductRecord[] = [
     asin: "B07ZZGKQ55",
     rank: 5,
     cardName: "Pest Expert Formula IC Cockroach Killer Gel 6 x 10g",
-    cardLabel: "Gel Bait, 6 x 10g",
+    cardLabel: "Best Gel Bait",
     features: [
       "Six 10g syringes of gel, as listed",
       "Active listed as imidacloprid",
@@ -207,23 +225,40 @@ const products: ProductRecord[] = [
       "Target species listed as Cockroach",
       "The listing's detail table shows a different ASIN (B07ZZCZRXG) from the page fetched — a variant listing",
     ],
-    tableCells: ["Pest Expert Formula IC Gel 6 x 10g", "Imidacloprid; 6 x 10g", "Gel Bait, 6 x 10g"],
-    h2Label: "Gel Bait, 6 x 10g",
+    tableCells: ["Pest Expert Formula IC Gel 6 x 10g", "Imidacloprid; 6 x 10g", "Best Gel Bait"],
+    h2Label: "Best Gel Bait",
     h2Name: "Pest Expert Formula IC Cockroach Killer Gel 6 x 10g",
-    tocLabel: "Gel Bait, 6 x 10g",
+    tocLabel: "Best Gel Bait",
     tocName: "Pest Expert Formula IC Gel",
+    pick: "Six 10g syringes of imidacloprid gel, with a ready-to-use applicator.",
+    blurb: "The one gel on this page, and baiting is the first treatment option UF/IFAS names. You get six 10g syringes with a ready-to-use applicator, imidacloprid is named as the active, and the target species is listed as cockroach. The detail table on the listing shows a variant ASIN, which the card notes.",
+    pros: ["Six 10g syringes of gel", "Imidacloprid named as the active", "Ready-to-use syringe applicator, as listed", "Target species listed as cockroach"],
   },
 ];
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    These are amateur-authorised insecticides. Read the label on the one you buy and
+    use it only as the label says.{" "}
+    <a href="#legal" className="underline">
+      What a householder can buy
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Four Products Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What This Page Actually Cards" },
   { id: "legal", title: "What a Householder Can Buy" },
   { id: "limits", title: "Where a Spray Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Spray Is Not the Answer" },
   { id: "using", title: "Using Them" },
-  { id: "compared", title: "The Four Products Compared" },
 ];
 
 export default function BestCockroachGelBaitPage() {
@@ -262,6 +297,18 @@ export default function BestCockroachGelBaitPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -280,6 +327,56 @@ export default function BestCockroachGelBaitPage() {
         That matters, because a spray and a bait do different things to a
         cockroach infestation.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Four Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Active substance and size, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The what-you-can-buy line and the
           does-not-help line sit ABOVE the product lines. No Amazon link, no price,
@@ -423,33 +520,6 @@ export default function BestCockroachGelBaitPage() {
         a size its own listing contradicts, which the table records.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A kit rather than a single product, with cockroach as its stated target species and an item form of Spray. Its description names cypermethrin and pyriproxyfen, an insect growth regulator; the manufacturer's comparative claims about the market are not repeated here.",
-                "Carded as 500ml; the listing reads 5 litres, pack of two, with a unit count of 10,000 millilitres. Cypermethrin is named on the listing, and disinfectant properties are claimed by the maker.",
-                "A 250ml aerosol whose listing names permethrin and D-allethrin, lists a range of crawling insects including cockroaches, and states it is intended for indoor use.",
-                "The largest single container here at 1.5 litres, with cypermethrin and benzalkonium chloride named on the listing and both a fan spray and a crack-and-crevice setting.",
-                "The one gel on the page, added at S68 R5: six 10g syringes whose listing names imidacloprid and cockroach as the target species. The listing's own claims about strength and eradication are the maker's and are not restated; the detail table's ASIN differs from the page fetched, which the card says.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If a Spray Is Not the Answer</h2>
@@ -495,36 +565,6 @@ export default function BestCockroachGelBaitPage() {
         </li>
       </ol>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Four Products Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Active substance and size, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Cockroaches in more than one room?"

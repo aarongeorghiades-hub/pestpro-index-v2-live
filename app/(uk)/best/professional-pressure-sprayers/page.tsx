@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -91,6 +92,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -124,6 +130,9 @@ const products: ProductRecord[] = [
     h2Name: "Best Overall",
     tocLabel: "#1 Solo 473D Classic",
     tocName: "Best Overall",
+    pick: "Diaphragm-pump knapsack with a pressure gauge, listed at 4 bar.",
+    blurb: "Our overall pick if you want one knapsack for grounds and gardens. It has a diaphragm pump listed at 4 bar, a pressure gauge so you can see what the tank is doing, and a 50 cm spray tube. It weighs 3.9 kg empty. The listing gives the capacity as 10 litre in its title and 12 litre in its feature text, so plan around the smaller figure.",
+    pros: ["Diaphragm pump, as listed", "Pressure gauge, maximum listed at 4 bar", "3.9 kg empty", "50 cm spray tube"],
   },
   {
     anchorId: "solo-90psi",
@@ -143,6 +152,9 @@ const products: ProductRecord[] = [
     h2Name: "Best Professional-Grade",
     tocLabel: "#2 Solo 10L 90psi",
     tocName: "Best Professional-Grade",
+    pick: "A 10 litre diaphragm sprayer whose capacity, pump and pressure all agree.",
+    blurb: "Pick this one if you want a listing that agrees with itself on capacity, pump and pressure. It is a 10 litre diaphragm-pump sprayer with a maximum working pressure listed as 4 bar, or 90 psi, and a 50 cm lance. The container is listed as UV-resistant plastic, and the whole unit weighs 4.2 kilograms.",
+    pros: ["10 litre with a diaphragm pump", "Maximum working pressure 4 bar / 90 psi, as listed", "UV-resistant plastic container", "50 cm lance"],
   },
   {
     anchorId: "solo-425",
@@ -162,6 +174,9 @@ const products: ProductRecord[] = [
     h2Name: "Best 15L Backpack",
     tocLabel: "#3 Solo 425 Professional",
     tocName: "Best 15L Backpack",
+    pick: "A 4-gallon piston sprayer with four nozzles and a 48-inch hose.",
+    blurb: "The larger Solo, for when you have more ground to cover between refills. It holds 4 gallons and has a piston pump rated up to 90 psi. Four nozzles come with it: adjustable, fan, hollow cone and jet stream. A 20-inch wand on a 48-inch hose gives you reach, and the seals are Viton. The listing gives no litre figure.",
+    pros: ["4-gallon tank", "Piston pump up to 90 psi", "Four nozzles: adjustable, fan, hollow cone, jet stream", "Viton seals; 20-inch wand, 48-inch hose"],
   },
   {
     anchorId: "matabi",
@@ -181,6 +196,9 @@ const products: ProductRecord[] = [
     h2Name: "Best Budget",
     tocLabel: "#4 Matabi Super Green 12",
     tocName: "Best Budget",
+    pick: "Fibreglass lance, four nozzles and a three-position pressure regulator.",
+    blurb: "A lighter sprayer at 3.2 kilograms, with a fibreglass lance, four nozzles and a three-position pressure regulator. It has padded, adjustable straps and a lateral liquid indicator, so you can see the level from the side. The listing scopes it to gardens of up to 400 square metres. Its title says 12L and its detail table says 16 L, and the pump type is not stated.",
+    pros: ["3.2 kilograms, as listed", "Three-position pressure regulator", "Fibreglass lance and four nozzles", "Padded, adjustable straps"],
   },
   {
     anchorId: "oregon",
@@ -200,18 +218,36 @@ const products: ProductRecord[] = [
     h2Name: "Best 20L Backpack",
     tocLabel: "#5 Oregon 20L",
     tocName: "Best 20L Backpack",
+    pick: "The largest tank here at 20 litres, with a spare seal kit included.",
+    blurb: "The biggest tank on this page, for large grounds where refilling eats into your time. It holds 20 litres and has a lance and hose of about two metres with four nozzles, and a spare seal kit is included. The listing names pesticide, lawn feed, weed and moss killer as uses. It states no pump type and no pressure, so check those before you buy.",
+    pros: ["20 litre tank", "Spare seal kit included", "About 2 metres of lance and hose, four nozzles", "Listed at 3.93 kilograms"],
   },
 ];
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    If you were born after 1964 or spray as a service, HSE requires a
+    certificate, and the public may not use professional-use products in any
+    sprayer.{" "}
+    <a href="#legal" className="underline">
+      Who may spray
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "Sprayers Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Is a Knapsack the Right Tool?" },
   { id: "legal", title: "Who May Spray" },
   { id: "limits", title: "Where a Sprayer Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Sprayer Is Not the Answer" },
   { id: "using", title: "Using One" },
-  { id: "compared", title: "Sprayers Compared" },
 ];
 
 export default function BestProfessionalPressureSprayersPage() {
@@ -240,6 +276,18 @@ export default function BestProfessionalPressureSprayersPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -258,6 +306,56 @@ export default function BestProfessionalPressureSprayersPage() {
         of the five listings here cannot agree with themselves on how much it
         holds.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">Sprayers Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing gives two figures, both are shown; where it gives none, the
+        cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Capacity, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Pump and pressure, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -433,33 +531,6 @@ export default function BestProfessionalPressureSprayersPage() {
         pressure the product should be applied at.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A diaphragm-pump knapsack listed at 4 bar with a pressure gauge, a 50 cm tube and 3.9 kg empty. The listing's title says 10 litre and its feature text says 12 litre; both are on the card because both are on the listing.",
-                "A 10 litre diaphragm-pump sprayer listed at 4 bar / 90 psi with a 50 cm lance and a UV-resistant plastic container, at 4.2 kilograms. The one listing here whose capacity, pump and pressure all agree with each other.",
-                "A piston-pump sprayer listed at 4 gallons, up to 90 psi, with four nozzles, a 20-inch wand and a 48-inch hose, made in the USA. The listing gives no litre figure; the award label is the site's and is unchanged.",
-                "A 12 litre sprayer, by its title and text, with a fibreglass lance, four nozzles and a three-position regulator; its detail table says 16 L. Pump type is not stated. The listing scopes it to gardens of up to 400 square metres.",
-                "A 20 litre sprayer with a lance and hose of about two metres, four nozzles and a spare seal kit, listed for pesticide, lawn feed, weed and moss killer. The listing states no pump type and no pressure.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Sprayer Is Not the Answer</h2>
@@ -508,36 +579,6 @@ export default function BestProfessionalPressureSprayersPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">Sprayers Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing gives two figures, both are shown; where it gives none, the
-        cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Capacity, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Pump and pressure, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="A job that needs a certificate holder?"

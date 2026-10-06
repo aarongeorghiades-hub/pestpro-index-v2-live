@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -101,7 +102,15 @@ type ProductRecord = {
   cardLabel: string;
   features: string[];
   tableCells: string[];
-  h2Text: string;
+  h2Label: string;
+  h2Name: string;
+  tocLabel: string;
+  tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // S66 R3. Card ORDER, RANK NUMERALS and AWARD LABELS are unchanged from the
@@ -111,6 +120,10 @@ type ProductRecord = {
 // a PM ruling; that includes record 3's tableCells[2], which is why it still reads
 // "A plain unbranded steel strip" while the feature text and prose beside it have
 // been corrected to name the brand. The collision is reported, not resolved here.
+//
+// S70 R1: records normalised to the rat-poison ProductRecord shape (h2Label/h2Name/
+// tocLabel/tocName). Records 3 and 5 take the card's own award on h2, contents and
+// table under Law 189; their card labels are unchanged. This moves the M28 fingerprint.
 //
 // FEATURE TEXT is rewritten from the banked Amazon bodies fetched 2026-09-01 and
 // re-read this round. A property is asserted only where the listing's own feature
@@ -140,7 +153,13 @@ const products: ProductRecord[] = [
       "304 stainless steel spikes, plastic base",
       "Zip ties, screws or nails; pre-drilled base",
     ],
-    h2Text: "Best Overall — S4U Stainless Steel Bird Spikes",
+    h2Label: "Best Overall",
+    h2Name: "S4U Stainless Steel Bird Spikes",
+    tocLabel: "Best Overall",
+    tocName: "S4U Stainless Steel Spikes",
+    pick: "Twelve 304 stainless steel strips covering ten feet, with 60 screws.",
+    blurb: "Our overall pick for a couple of sills and a length of coping. Twelve separate strips make up ten feet, so you cut nothing and place strips only where birds actually stand. The spikes are 304 stainless steel on a plastic base, and the base is pre-drilled for zip ties, screws or nails, with 60 screws in the pack.",
+    pros: ["12 separate strips, listed as 10 feet", "304 stainless steel spikes", "Pre-drilled base, 60 screws supplied", "Listed for ledges, fences, rooftops and patios"],
   },
   {
     anchorId: "best-wide-ledges",
@@ -164,7 +183,13 @@ const products: ProductRecord[] = [
       "Plastic",
       "Glue, screw or cable tie; not included",
     ],
-    h2Text: "Best for Wide Ledges — Defender Wide Plastic Bird Spikes",
+    h2Label: "Best for Wide Ledges",
+    h2Name: "Defender Wide Plastic Bird Spikes",
+    tocLabel: "Best for Wide Ledges",
+    tocName: "Defender Wide Plastic",
+    pick: "Wide plastic strips for ledges up to 20 cm deep, with a 15 year warranty.",
+    blurb: "For deep sills, parapets and copings. This is the only listing here that states a ledge depth, up to 20 cm. It is plastic, so it cannot rust into a stain down the brickwork, and you get fifteen 33.4 cm strips that snap into shorter sections. Fixings are not included, and the listing states a 15 year warranty.",
+    pros: ["Listed for ledges up to 20 cm deep", "15 strips, sold as a 5 metre pack", "Snaps into shorter sections", "15 year warranty stated on the listing"],
   },
   {
     anchorId: "steel-3m-strip",
@@ -182,13 +207,19 @@ const products: ProductRecord[] = [
     ],
     tableCells: [
       "Stainless Steel Spikes (3m)",
-      "A plain steel strip",
+      "Best 3m Coverage",
       "3 m, 12 sections of 25 cm",
       "not stated",
       "Stainless steel",
       "not stated",
     ],
-    h2Text: "Stainless Steel Bird Spikes (3m)",
+    h2Label: "Best 3m Coverage",
+    h2Name: "Stainless Steel Bird Spikes (3m)",
+    tocLabel: "Best 3m Coverage",
+    tocName: "Stainless Steel Spikes (3m)",
+    pick: "Three metres of stainless steel in twelve 25 cm sections.",
+    blurb: "Steel at the standard length and nothing else. It comes as twelve 25 cm sections making three metres, sold under the Anytime Garden brand, and the sections can be divided for tight spaces. The listing names rooftops, ledges and fences, and says it is made in Europe.",
+    pros: ["Stainless steel", "12 sections of 25 cm, 3 metres in all", "Divides for tight spaces", "Listed as made in Europe"],
   },
   {
     anchorId: "best-for-gutters",
@@ -210,7 +241,13 @@ const products: ProductRecord[] = [
       "Stainless steel",
       "not stated",
     ],
-    h2Text: "Best for Gutters — Stainless Steel Half Round Gutter Kit",
+    h2Label: "Best for Gutters",
+    h2Name: "Stainless Steel Half Round Gutter Kit",
+    tocLabel: "Best for Gutters",
+    tocName: "Half Round Gutter Kit",
+    pick: "A half round kit shaped for guttering, where a flat strip will not sit.",
+    blurb: "Guttering is the one place a flat strip will not sit, because the surface is curved. This half round kit is made for that shape, listed at 150mm x 112mm x 1m in stainless steel. If birds are using the gutter and the sills, you need this and a flat strip. The listing carries no feature text beyond its title, so the card shows everything it states.",
+    pros: ["Half round profile for gutters", "Stainless steel, per the detail table", "Listed at 150mm x 112mm x 1m"],
   },
   {
     anchorId: "offo-steel-spikes",
@@ -228,40 +265,45 @@ const products: ProductRecord[] = [
     ],
     tableCells: [
       "OFFO Stainless Steel Spikes",
-      "A named-brand steel alternative",
+      "Best Stainless Steel Strips",
       "78 cm, three pieces",
       "not stated",
       "304 stainless steel, steel base",
       "not stated",
     ],
-    h2Text: "OFFO Stainless Steel Bird Spikes",
+    h2Label: "Best Stainless Steel Strips",
+    h2Name: "OFFO Stainless Steel Bird Spikes",
+    tocLabel: "Best Stainless Steel Strips",
+    tocName: "OFFO Stainless Steel Spikes",
+    pick: "A short 78 cm steel set for a single windowsill or balustrade.",
+    blurb: "The short one, for a single windowsill or a short balustrade rather than a long run. Three pieces cover 78 cm, with 304 grade stainless steel spikes on a steel base. It is the only listing here that gives a pin layout: six pins per group across both directions, each spike 100mm long by 76mm wide.",
+    pros: ["304 stainless steel on a steel base", "Three pieces covering 78 cm", "Six pins per group, both directions", "Listed for sills, balustrades and roof edges"],
   },
 ];
 
-// Records are addressed BY IDENTITY, never by position. A positional lookup
-// silently rebinds every later product when a record is added, removed or
-// reordered; this cannot. A missing anchorId throws, so the build fails loudly
-// rather than rendering undefined.
-function product(anchorId: string): ProductRecord {
-  const found = products.find((p) => p.anchorId === anchorId);
-  if (!found) {
-    throw new Error(`No product record with anchorId "${anchorId}"`);
-  }
-  return found;
-}
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Fixing spikes over a nest that is in use can be an offence, and a listed
+    building may need consent first.{" "}
+    <a href="#legal" className="underline">
+      The legal position on nests
+    </a>
+    .
+  </>
+);
 
 const tocItems = [
+  { id: "compared", title: "Best Pigeon Spikes Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "roosting-or-nesting", title: "Are They Roosting, or Nesting?" },
   { id: "legal", title: "The Legal Position on Nests" },
   { id: "where-spikes-fail", title: "Where Spikes Do Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  // Derived from h2Text so a contents entry cannot say something the heading does
-  // not (Task 3e). Award-label text is carried through untouched; it is the same
-  // string the h2 renders.
-  ...products.map((p) => ({ id: p.anchorId, title: p.h2Text })),
   { id: "alternatives", title: "If Spikes Are Not the Answer" },
   { id: "installation", title: "Installation" },
-  { id: "compared", title: "Best Pigeon Spikes Compared" },
 ];
 
 // S66 R6 — THE FAQ IS REMOVED, AND ITS STRUCTURED DATA WITH IT.
@@ -319,6 +361,18 @@ export default function BestPigeonSpikesPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -336,6 +390,57 @@ export default function BestPigeonSpikesPage() {
         is below it. Spikes are the usual answer, and on the right surface they
         work — but they only fix one of the two situations people buy them for.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">Best Pigeon Spikes Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+              <th className="text-left p-2 border-b font-semibold">Length as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Ledge depth as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Material</th>
+              <th className="text-left p-2 border-b font-semibold">Fixing as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second, every line.
           NOT a card: no Amazon link, no price, no image, no award. It sits above
@@ -496,107 +601,6 @@ export default function BestPigeonSpikesPage() {
         wood.
       </p>
 
-      {/* Product 1 */}
-      <h2 id={product("best-overall").anchorId}>
-        {product("best-overall").h2Text}
-      </h2>
-      <div className="not-prose">
-        <ProductCard
-          name={product("best-overall").cardName}
-          features={product("best-overall").features}
-          asin={product("best-overall").asin}
-          bestFor={product("best-overall").cardLabel}
-          rank={product("best-overall").rank}
-        />
-      </div>
-      <p>
-        For a couple of sills and a length of coping. Twelve separate strips
-        making up ten feet is the useful part: you cut nothing and you place
-        strips only where birds actually stand. The spikes are 304 stainless
-        steel and the base is plastic, not steel throughout.
-      </p>
-
-      {/* Product 2 */}
-      <h2 id={product("best-wide-ledges").anchorId}>
-        {product("best-wide-ledges").h2Text}
-      </h2>
-      <div className="not-prose">
-        <ProductCard
-          name={product("best-wide-ledges").cardName}
-          features={product("best-wide-ledges").features}
-          asin={product("best-wide-ledges").asin}
-          bestFor={product("best-wide-ledges").cardLabel}
-          rank={product("best-wide-ledges").rank}
-        />
-      </div>
-      <p>
-        For deep sills, parapets and copings, which is what criterion 2 is about.
-        This is the only listing here that states a ledge depth: up to 20 cm. It
-        is plastic, so it cannot rust into a stain down the brickwork, and it is
-        fifteen strips of 33.4 cm that snap into shorter sections. The listing
-        states a fifteen year warranty.
-      </p>
-
-      {/* Product 3 */}
-      <h2 id={product("steel-3m-strip").anchorId}>
-        {product("steel-3m-strip").h2Text}
-      </h2>
-      <div className="not-prose">
-        <ProductCard
-          name={product("steel-3m-strip").cardName}
-          features={product("steel-3m-strip").features}
-          asin={product("steel-3m-strip").asin}
-          bestFor={product("steel-3m-strip").cardLabel}
-          rank={product("steel-3m-strip").rank}
-        />
-      </div>
-      <p>
-        A plain three metre steel strip, sold under the Anytime Garden brand:
-        twelve 25 cm sections that can be divided for tight spaces. If you want
-        steel at the standard length and nothing else, this is that.
-      </p>
-
-      {/* Product 4 */}
-      <h2 id={product("best-for-gutters").anchorId}>
-        {product("best-for-gutters").h2Text}
-      </h2>
-      <div className="not-prose">
-        <ProductCard
-          name={product("best-for-gutters").cardName}
-          features={product("best-for-gutters").features}
-          asin={product("best-for-gutters").asin}
-          bestFor={product("best-for-gutters").cardLabel}
-          rank={product("best-for-gutters").rank}
-        />
-      </div>
-      <p>
-        Guttering is the one place a flat strip will not sit, because the surface
-        is curved. This is a half round kit for that shape, listed at 150mm x
-        112mm x 1m. The listing carries no feature text beyond its title, so the
-        card above is everything it states. If birds are using the gutter and the
-        sills, you need this and a flat strip.
-      </p>
-
-      {/* Product 5 */}
-      <h2 id={product("offo-steel-spikes").anchorId}>
-        {product("offo-steel-spikes").h2Text}
-      </h2>
-      <div className="not-prose">
-        <ProductCard
-          name={product("offo-steel-spikes").cardName}
-          features={product("offo-steel-spikes").features}
-          asin={product("offo-steel-spikes").asin}
-          bestFor={product("offo-steel-spikes").cardLabel}
-          rank={product("offo-steel-spikes").rank}
-        />
-      </div>
-      <p>
-        The short one, and the only listing here that gives a pin layout: six
-        pins per group across both directions, each spike 100mm long by 76mm
-        wide, three pieces covering 78 cm. That suits a single windowsill or a
-        short balustrade rather than a run. Spikes and base are both stainless
-        steel.
-      </p>
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If Spikes Are Not the Answer</h2>
@@ -710,37 +714,6 @@ export default function BestPigeonSpikesPage() {
         </Callout>
       </div>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">Best Pigeon Spikes Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-              <th className="text-left p-2 border-b font-semibold">Length as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Ledge depth as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Material</th>
-              <th className="text-left p-2 border-b font-semibold">Fixing as listed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Need professional pigeon proofing?"

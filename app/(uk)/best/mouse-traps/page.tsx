@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -83,6 +84,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells from the banked listings' OWN bullets and detail
@@ -105,6 +111,9 @@ const products: ProductRecord[] = [
     h2Name: "ROSHIELD 6-Pack Mouse Trap",
     tocLabel: "Best Overall",
     tocName: "ROSHIELD 6-Pack",
+    pick: "Six snap traps with a welded kill bar that fit Roshield's own bait stations.",
+    blurb: "Our overall pick if you want several traps down at once. You get six snap traps, which the maker describes as having a high-strength spring, a sensitive trigger and a welded kill bar. The trigger plate is larger than on smaller traps, the maker says. The listing also states they can sit inside Roshield bait stations, indoors or out.",
+    pros: ["Six traps in the pack", "High-strength spring and welded kill bar, per the maker", "Larger trigger plate than smaller alternatives, the maker says", "Fits inside Roshield rodent bait stations"],
   },
   {
     anchorId: "best-heavy-duty",
@@ -123,6 +132,9 @@ const products: ProductRecord[] = [
     h2Name: "Trisiki 4-Pack Heavy Duty Mouse Trap",
     tocLabel: "Best Heavy Duty",
     tocName: "Trisiki 4-Pack",
+    pick: "Four larger ABS traps for when you cannot tell if it is a mouse or a rat.",
+    blurb: "Pick these if the droppings could be a rat's as well as a mouse's. The listing names both as target species, and the maker describes a larger trap made for a range of rodent sizes. You get four, in ABS plastic.",
+    pros: ["Four traps in the pack", "Listed for mice and rats", "ABS plastic, 318g as listed", "Larger trap for a range of rodent sizes, per the maker"],
   },
   {
     anchorId: "best-budget",
@@ -141,6 +153,9 @@ const products: ProductRecord[] = [
     h2Name: "ASPECTEK 6-Pack Mouse Trap",
     tocLabel: "Best Budget",
     tocName: "ASPECTEK 6-Pack",
+    pick: "Six compact plastic snap traps made for mice, indoors or out.",
+    blurb: "Six small plastic snap traps with Mouse as the only listed target species. The maker says the plastic resists the stains and odours that build up on a wooden trap. They are listed for indoor and outdoor placement, so one pack can cover several spots around the house.",
+    pros: ["Six traps in the pack", "Plastic the maker says resists stains and odours", "Listed for indoor and outdoor placement", "Compact: 9.8 x 4.5 x 5.5 cm as listed"],
   },
   {
     anchorId: "best-humane",
@@ -159,6 +174,9 @@ const products: ProductRecord[] = [
     h2Name: "AKCHY Humane Mouse Trap 2-Pack",
     tocLabel: "Best Humane",
     tocName: "AKCHY Humane 2-Pack",
+    pick: "A live-catch trap with no poison and no glue, for mice or rats.",
+    blurb: "Our humane pick, for when you would rather release the mouse than kill it. You get two live-catch traps in ABS plastic, listed for mice and rats. The maker says they use no poison and no glue.",
+    pros: ["Two live-catch traps", "No poison and no glue, per the maker", "Listed for mice and rats", "ABS plastic"],
   },
   {
     anchorId: "best-easy-clean",
@@ -177,18 +195,35 @@ const products: ProductRecord[] = [
     h2Name: "UNIQU 2-Pack Humane Mouse Trap",
     tocLabel: "Best Easy-Clean",
     tocName: "UNIQU 2-Pack",
+    pick: "Two wooden live-catch cages with a wire-mesh body, for indoor or outdoor use.",
+    blurb: "The second humane option here is a cage. Each of the two traps has a wooden base and a wire-mesh body, per the maker, and the listing states indoor and outdoor use. Mouse and Rat are both listed as target species.",
+    pros: ["Two live-catch cages", "Wood with a wire-mesh cage, per the maker", "Listed for indoor and outdoor use", "Light at 210g as listed"],
   },
 ];
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Break-back traps are exempt from spring trap approval. Set a snap trap inside a
+    station if pets or children are about.{" "}
+    <a href="#legal" className="underline">
+      The legal position
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Five Traps Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "The Gap Matters More Than the Trap" },
   { id: "legal", title: "The Legal Position on Mouse Traps" },
   { id: "limits", title: "Where a Trap Catches Nothing" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If Trapping Is Not the Answer" },
   { id: "using", title: "Setting and Placing Them" },
-  { id: "compared", title: "The Five Traps Compared" },
 ];
 
 export default function BestMouseTrapsPage() {
@@ -208,6 +243,18 @@ export default function BestMouseTrapsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -233,6 +280,56 @@ export default function BestMouseTrapsPage() {
         </a>
         ).
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Five Traps Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Type and count, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The gap line, the legal line and the
           catches-nothing line sit ABOVE the product lines. No Amazon link, no price, no
@@ -366,33 +463,6 @@ export default function BestMouseTrapsPage() {
         welded kill bar and a high-strength spring rather than a material.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "Six snap traps listed with Mouse and Rat as target species, which the maker describes as having a high-strength spring, a sensitive trigger, a welded kill bar and a trigger plate larger than smaller traps. The listing says they can be set inside Roshield bait stations. The maker's claim about industry use is the maker's.",
-                "Four snap traps whose fetched title reads 4 Pack Upgraded Rat Traps, listed for mouse and rat, in ABS plastic at 318g. Carded as a six-pack until S67 R10; the listing's number of pieces reads 4.",
-                "Six plastic snap traps listed with Mouse as the only target species, for indoor and outdoor placement, at 9.8 x 4.5 x 5.5 cm. The maker's claim that rodents avoid wooden traps after a kill is the maker's and is not repeated.",
-                "Two live-catch traps in ABS plastic listed for mouse and rat, 17 x 6.1 x 6.6 cm, which the maker describes as using no poison and no glue. The brand row reads AKCHY; the card carried another brand's name until S68 R1.",
-                "Two live-catch cages in wood with a wire-mesh body, listed for indoor and outdoor use at 210g, target species Mouse, Rat. The brand row reads UNIQU; the card carried another name until S68 R1.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If Trapping Is Not the Answer</h2>
@@ -455,36 +525,6 @@ export default function BestMouseTrapsPage() {
         </Callout>
       </div>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Five Traps Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Type and count, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Still catching mice every week?"

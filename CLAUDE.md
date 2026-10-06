@@ -2769,3 +2769,30 @@ round's fetch-log.tsv and (b) every earlier round's fetch-log.tsv whose sources/
 still holds a body for it. A URL found in neither is not cited. The fix is the fetched
 host, verbatim from the log, or deletion of the sentence — never a URL constructed by
 analogy (Law 137), and never a second host that happens to publish the same text.
+
+## S70 R1 — LAW 195: THE SELLING LAYER ON /best IS RESTORED
+
+LAW 195 — PM RULING, S70 R1, dated 2026-10-06. BINDING, AND IT OVERRIDES ANY CONFLICTING LAW
+ON THE ROUTES IT NAMES. Since the S66–S69 rebuild, Amazon clicks and commission collapsed: the
+rebuild overshot Amazon's actual limits. On UK `/best/*` pages:
+
+  - Award labels, rank numbers, a top-picks box, benefit-led card blurbs, pros, and strong
+    "Check price on Amazon" buttons are PERMITTED AND WANTED.
+  - Law 180 on `/best/*` is satisfied by a ONE-LINE safety/legal note inside the decision block.
+    The decision block is the top-picks box (`components/TopPicks.tsx`, its `note`). Full legal
+    and safety sections may sit BELOW the picks.
+  - Laws 191, 192 and 193 do not block restoring labels or blurbs. They govern only how efficacy
+    is worded.
+  - `/guides/*` and `/us/*` are untouched by this law.
+
+HARD LINES, NEVER CROSSED (Amazon terms and UK advertising law): no prices, price bands,
+"cheapest" or "% off"; no star ratings, review counts, "bestseller", "Amazon's Choice" or "#1 on
+Amazon"; no product images; every product fact matches that ASIN's own listing; no dead or
+mislabelled ASIN comes back; repellents and ultrasonic devices carry no "works", "kills" or
+"guaranteed" claim and phrase benefits as the listing does ("designed to...", "listing states
+coverage of..."), while their labels stay; the per-card disclosure and the site disclosure stay.
+B000BQT5IG's standing bar is untouched by this law.
+
+THE BEFORE STATE restored against is commit 2efd1f5, the last commit before the S66 pilot
+(83d2002, 2026-09-06). M28 fingerprints on the UK `/best` routes moved by design and were
+re-adjudicated per route under this ruling.

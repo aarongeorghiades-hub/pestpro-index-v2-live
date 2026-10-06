@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -94,6 +95,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Records are addressed BY IDENTITY, never by position (Law 107).
@@ -127,6 +133,9 @@ const products: ProductRecord[] = [
     h2Name: "Nippon Ant Bait Station Twin Pack",
     tocLabel: "Best Overall",
     tocName: "Nippon Ant Bait Station",
+    pick: "Two enclosed stations, pre-baited with spinosad, for indoors or out.",
+    blurb: "Our overall pick for most homes. You get two fully enclosed stations that come pre-baited, so there is nothing to mix or measure, and the maker names the active as spinosad. They are listed for indoor and outdoor use, and the maker states they act on the nest as well as the ants you can see. The listing gives no replacement interval, so check them now and then.",
+    pros: ["Two pre-baited, fully enclosed stations", "Active named by the maker: spinosad", "Listed for indoor and outdoor use", "Maker states it acts on the nest"],
   },
   {
     anchorId: "best-multi-pack",
@@ -151,6 +160,9 @@ const products: ProductRecord[] = [
     h2Name: "NOPE! Ant Killer Bait Station (6 x 5g)",
     tocLabel: "Best Multi-Pack",
     tocName: "NOPE! Ant Killer Bait Station",
+    pick: "Six 5g stations in one pack, for when there are more entry points to cover.",
+    blurb: "Six stations in one pack, so you can cover more entry points than a twin pack allows. Each holds 5g, and they are listed for indoor and outdoor use. The maker describes a systemic insecticide with an insect growth regulator, spread through the colony by trophallaxis. No active substance is named in the detail rows, so read the pack.",
+    pros: ["Six stations of 5g each", "Listed for indoor and outdoor use", "Maker describes a systemic insecticide with an insect growth regulator"],
   },
   {
     anchorId: "best-gel",
@@ -175,6 +187,9 @@ const products: ProductRecord[] = [
     h2Name: "Combat Ant Killing Gel 27g",
     tocLabel: "Gel Bait",
     tocName: "Combat Ant Killing Gel",
+    pick: "A 27g gel syringe for the cracks and crevices ants come in by.",
+    blurb: "A gel in a 27 gram syringe, listed for placing into the cracks and crevices ants use to get in. The listing names fipronil as the active. It is a US-market product and its own text gives the size as 0.95 ounce, so read its label before you use it. This record carries a neutral descriptor rather than an award, by a standing ruling of this site.",
+    pros: ["27g syringe for cracks and crevices", "Active named on the listing: fipronil", "Item form listed as Gel"],
   },
 ];
 
@@ -215,15 +230,29 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full sections
+// sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Each label states where the product may go and what must be kept away
+    from it, and one of the three is a US-market product.{" "}
+    <a href="#legal" className="underline">
+      What the label governs
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Three Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Why the Nest Is the Target" },
   { id: "legal", title: "What the Label Governs" },
   { id: "limits", title: "Where a Bait Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Bait Is Not the Answer" },
   { id: "using", title: "Using Them" },
-  { id: "compared", title: "The Three Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -249,6 +278,18 @@ export default function BestAntKillersPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -271,6 +312,56 @@ export default function BestAntKillersPage() {
         a syringe. That there is no spray here is deliberate, and it is the
         reason this page&rsquo;s title changed.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Three Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        claim attributed to the maker who makes it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Form</th>
+              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Quantity and use, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -430,31 +521,6 @@ export default function BestAntKillersPage() {
         answer is a number of placements rather than a quantity of product.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "Two enclosed stations, pre-baited, with the active named on the listing as spinosad and the item form given as Liquid. Its maker describes it as ready to use indoors and outdoors and states that it acts on the nest rather than only the ants in front of you. Nothing on the listing states how long a station stays attractive.",
-                "The same enclosed idea at six placements, listed as six stations of five grams. Its maker describes a systemic insecticide paired with an insect growth regulator and delayed action, and describes the gel spreading through the colony by trophallaxis — but no active substance appears in the listing's detail rows, so the table cell reads \"not stated\".",
-                "A gel rather than a station: a 27 gram syringe listed for placement into the cracks and crevices ants enter by, with fipronil named as the active ingredient. It is a US-market product and its own text gives the size as 0.95 ounce alongside the grams. This record carries a neutral descriptor rather than an award, by a standing ruling of this site that predates the page.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Bait Is Not the Answer</h2>
@@ -508,36 +574,6 @@ export default function BestAntKillersPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">The Three Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        claim attributed to the maker who makes it. Where a listing does not
-        state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Form</th>
-              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Quantity and use, as listed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

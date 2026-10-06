@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -95,6 +96,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -124,6 +130,9 @@ const products: ProductRecord[] = [
     h2Name: "Nuaire Drimaster Eco Heat — Heated PIV",
     tocLabel: "Best Overall",
     tocName: "Nuaire Drimaster Eco Heat",
+    pick: "Heated loft PIV, with a 400W heater sited behind the diffuser.",
+    blurb: "Our overall pick where poor ventilation is part of the damp problem. It is a loft-mounted positive input ventilation unit with the heater sited behind the diffuser, listed at 400 watts of heat output. The maker says it goes into standby in warmer months when there is no sign of condensation. It needs hardwiring, and the listing warns that the 4-way heater and boost control switch does not work with this model, so check your controls before you order.",
+    pros: ["Heated PIV, 400W heat output as listed", "Mounted out of the way in the loft", "Maker says it goes into standby in warmer months"],
   },
   {
     anchorId: "dryzone-piv",
@@ -143,6 +152,9 @@ const products: ProductRecord[] = [
     h2Name: "Dryzone PIV Unit with Heater",
     tocLabel: "Best Budget",
     tocName: "Dryzone PIV with Heater",
+    pick: "A complete PIV kit, with the only airflow figure on this page: up to 49 L/s.",
+    blurb: "A PIV kit that arrives with the parts to fit it: 1m of 200mm flexible duct, a ceiling diffuser and fixings, as listed. It is listed for one to five bedroom properties, with four fan speeds and up to 49 litres per second of airflow. The maker states the heater tempers loft air when it drops below 10 °C, and quotes 25 dB(A) at a metre, which counts for a lot in a tenanted home.",
+    pros: ["Listed for 1 to 5 bedroom properties", "Up to 49 L/s airflow, four fan speeds", "25 dB(A) at 1 metre, as listed", "Duct, diffuser and fixings included; three-year warranty per the listing"],
   },
   {
     anchorId: "kair-kalahari",
@@ -162,6 +174,9 @@ const products: ProductRecord[] = [
     h2Name: "Kair Kalahari ECO PIV Unit",
     tocLabel: "Best Budget PIV",
     tocName: "Kair Kalahari ECO PIV",
+    pick: "An unheated loft PIV that the maker describes as very quiet.",
+    blurb: "The plainer choice if you want PIV without a heater. It sits in the loft and supplies filtered air through a ceiling diffuser, and the maker describes it as very quiet because the unit is up in the loft cavity. It is listed at 33 x 33 x 34 cm and 6.84 kg. The listing gives no airflow, coverage or wattage figure, so ask the seller before you size it to a property.",
+    pros: ["Supplies filtered air through a ceiling diffuser", "Maker describes very low noise", "Listed at 33 x 33 x 34 cm and 6.84 kg"],
   },
   {
     anchorId: "vent-axia",
@@ -181,6 +196,9 @@ const products: ProductRecord[] = [
     h2Name: "Vent-Axia PureAir PIV with 500W Heater",
     tocLabel: "Premium PIV",
     tocName: "Vent-Axia PureAir PIV",
+    pick: "A heated PIV sold with a digital hygrometer, so you can check the result.",
+    blurb: "A bundle for a landlord who wants to show the work changed something. You get the Vent-Axia PureAir Home unit, which the maker says has a 500W heater to take the chill off incoming air, plus an i-sells digital hygrometer accurate to 0.1 °C. The listing gives a five-year warranty and five years of spare part availability. The brand row reads i-sells, because the seller puts the pair together.",
+    pros: ["500W heater, per the maker", "Digital hygrometer included, accurate to 0.1 °C", "5-year warranty and 5 years of spare parts, as listed"],
   },
   {
     anchorId: "electriq-30l",
@@ -200,6 +218,9 @@ const products: ProductRecord[] = [
     h2Name: "electriQ ECD30 Industrial 30L Dehumidifier",
     tocLabel: "Best Professional-Grade",
     tocName: "electriQ ECD30",
+    pick: "A metal-bodied dehumidifier on wheels, listed at up to 30 litres a day.",
+    blurb: "The heavy-duty choice for a large space. It is listed at up to 30 litres a day and 650 watts, in a metal body on wheels, with a humidistat, a 24-hour timer and a permanent drainage option so you are not emptying a tank. The listing names warehouses, garages, basements and offices, and it weighs 26 kg. Its tank is given as 7 litres in one place and 30 in another, so check before you rely on either.",
+    pros: ["Up to 30 litres a day, as listed", "Permanent drainage option, humidistat and 24-hour timer", "Metal body on wheels", "Automatic defrost"],
   },
   {
     anchorId: "meaco-25l",
@@ -219,6 +240,9 @@ const products: ProductRecord[] = [
     h2Name: "MeacoDry Arete One 25L Dehumidifier",
     tocLabel: "Best for Occupied Properties",
     tocName: "MeacoDry Arete One",
+    pick: "A quieter dehumidifier with a HEPA filter, for rooms people are living in.",
+    blurb: "The one to leave running in a home someone lives in. It draws 267 watts, is listed at 40 dB for up to 86 square metres, and adds an H13 HEPA filter with laundry, night and smart humidity modes. Its listing rates it at up to 14 litres a day; the 25L in the name is the model, not the figure. The warranty is given as five years in the title and two in the detail row, so confirm which applies.",
+    pros: ["H13 HEPA filter, as listed", "40 dB, the quieter of the two dehumidifiers here", "Laundry, night and smart humidity modes", "4.8 litre front-loading tank"],
   },
   {
     anchorId: "dryzone-meter",
@@ -238,6 +262,9 @@ const products: ProductRecord[] = [
     h2Name: "Dryzone Moisture Meter",
     tocLabel: "Best Damp Meter",
     tocName: "Dryzone Moisture Meter",
+    pick: "A damp meter for wood and building materials, for the reading you take first.",
+    blurb: "Take a reading before you buy anything else. This meter covers wood and building materials, with a backlit display and eight calibration scales for different timbers. The maker says it sounds an alert above 20% moisture in building materials. It weighs 130 g, and batteries are needed but not included.",
+    pros: ["Reads wood and building materials", "Eight timber calibration scales", "Audio alert above 20% in building materials, per the maker", "Backlit LCD"],
   },
   {
     anchorId: "hygrometer",
@@ -257,6 +284,9 @@ const products: ProductRecord[] = [
     h2Name: "Govee WiFi Thermometer Hygrometer",
     tocLabel: "Best Hygrometer",
     tocName: "Govee WiFi Hygrometer",
+    pick: "A WiFi hygrometer that logs humidity and alerts you through an app.",
+    blurb: "Where a damp meter gives you a spot reading, this keeps watching. It connects over WiFi and Bluetooth, and the app alerts you when readings leave a range you set. It stores 20 days of data online with export, which gives you a record to show. The maker states a Swiss-made sensor accurate to ±0.3 °C.",
+    pros: ["WiFi and Bluetooth, 50 m and 30 m range as listed", "App alerts outside a preset range", "20 days of data storage with export", "Battery powered"],
   },
 ];
 
@@ -290,15 +320,29 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full sections
+// sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    For social landlords in England the guidance fixes the timeframes, and no
+    equipment here replaces investigating the cause.{" "}
+    <a href="#legal" className="underline">
+      What the guidance requires
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Eight Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Measure Before You Buy" },
   { id: "legal", title: "What Awaab's Law Guidance Requires" },
   { id: "limits", title: "Where Equipment Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If Equipment Is Not the Answer" },
   { id: "using", title: "Order of Work" },
-  { id: "compared", title: "The Eight Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -330,6 +374,18 @@ export default function BestAwaabsLawDampMouldEquipmentPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -353,6 +409,56 @@ export default function BestAwaabsLawDampMouldEquipmentPage() {
         measure it — and the measuring is where the government&rsquo;s own
         guidance starts, which is why the meters are not an afterthought here.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Eight Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        figure attributed to the maker where it is a claim. Where a listing does
+        not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Power, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Rated output, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -551,36 +657,6 @@ export default function BestAwaabsLawDampMouldEquipmentPage() {
         often what decides whether equipment stays switched on.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "A loft-mounted PIV unit with the heater sited behind the diffuser, listed at 400 watts of heat output and requiring hardwiring. Its maker says it drops into standby in warmer months when there is no evidence of condensation. Its own listing carries a compatibility warning: the 4-way heater and boost control switch does not work with this model.",
-                "A PIV kit listed for one to five bedroom properties with four fan speeds and up to 49 litres per second of airflow — the only airflow figure on this page. Its maker states the heater tempers loft air below 10 °C and quotes 25 dB(A) at a metre, and the kit is listed with duct, diffuser and fixings included.",
-                "The one PIV here without a heater: a loft-mounted unit supplying filtered air through a ceiling diffuser, listed at 33 x 33 x 34 cm and 6.84 kg. Its listing states no airflow, coverage or wattage figure at all, which the comparison table records rather than fills in.",
-                "A bundle rather than a single product: the Vent-Axia PureAir Home unit with a 500W heater, sold with an i-sells digital hygrometer accurate to 0.1 °C, under a five-year warranty. The brand row reads i-sells rather than Vent-Axia, because the seller assembles the pairing.",
-                "A 650 watt metal-bodied dehumidifier on wheels, listed at up to 30 litres a day with a humidistat, a 24-hour timer and a permanent drainage option, for warehouses, garages, basements and offices. Its listing says a 7 litre tank in one place and 30 in another; the card carries both.",
-                "A 267 watt unit with a 4.8 litre tank and an H13 HEPA filter, listed for 86 square metres at 40 dB — the quieter of the two dehumidifiers and the one aimed at occupied rooms. Its listing rates it at up to 14 litres a day; the 25L in its name is the model, not the figure.",
-                "A dual-purpose damp meter for wood and building materials with a backlit display and eight timber calibration scales, which its maker says gives an audio alert above 20% moisture in building materials. At 130 grams it is the instrument the guidance's moisture-meter check describes.",
-                "A WiFi and Bluetooth hygrometer with a Swiss-made sensor, ±0.3 °C accuracy per its maker, app alerts when a preset range is exceeded, and 20 days of online data storage with export. Where a meter gives a spot reading, this is the environmental monitor the guidance names alongside it.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If Equipment Is Not the Answer</h2>
@@ -628,36 +704,6 @@ export default function BestAwaabsLawDampMouldEquipmentPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">The Eight Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        figure attributed to the maker where it is a claim. Where a listing does
-        not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Type</th>
-              <th className="text-left p-2 border-b font-semibold">Power, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Rated output, as listed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

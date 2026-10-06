@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import DecisionBox from '@/components/DecisionBox';
 
@@ -97,6 +98,13 @@ type ProductRecord = {
   tableCells: string[];
   h2Label: string;
   h2Name: string;
+  tocLabel: string;
+  tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // S66 R8. AWARD LABELS, RANK NUMERALS AND CARD ORDER ARE UNCHANGED on every surface
@@ -137,6 +145,11 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Clothes Moth Trap",
     h2Name: "MothPrevention Clothes Moth Traps",
+    tocLabel: "Best Clothes Moth Trap",
+    tocName: "MothPrevention Clothes Moth Traps",
+    pick: "A refillable three-pack for the wardrobe or drawers where you have seen holes.",
+    blurb: "Our pick for clothes moths in a wardrobe or chest of drawers. You get three traps, and the listing describes them as refillable, so the holders stay and only the pads change. It is listed as odour-free, which matters in a cupboard full of clothes. The listing gives no lure life, so this page does not give one for it.",
+    pros: ["Three traps in the pack", "Refillable, so the holders are kept", "Listed as odour-free", "Made for wardrobes and stored clothing"],
   },
   {
     anchorId: "best-pantry",
@@ -159,6 +172,11 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Pantry Moth Trap",
     h2Name: "Demi Diamond Food Moth Pheromone Traps",
+    tocLabel: "Best Pantry Moth Trap",
+    tocName: "Demi Diamond Food Moth Pheromone Traps",
+    pick: "Food moth traps for the kitchen cupboard, with 20 pads in the pack.",
+    blurb: "For moths in the kitchen rather than the wardrobe. The pack has three traps and twenty pads, so you have fresh pads to hand when the first ones are spent. This listing carries no feature text beyond its title, so the card shows everything it states, with no lure life and no named moth species.",
+    pros: ["Pheromone traps made for food moths", "3 traps and 20 pads in one pack", "Spare pads for refreshing the traps"],
   },
   {
     anchorId: "best-value",
@@ -182,6 +200,11 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Value",
     h2Name: "Zero In Clothes Moth Trap",
+    tocLabel: "Best Value",
+    tocName: "Zero In Clothes Moth Trap",
+    pick: "Two poison-free traps that hang on a rail or stand in a drawer.",
+    blurb: "A simple two-trap pack, and the only listing here that says outright what it is for: monitoring infestations. Each trap hangs on its built-in hook or stands free in a drawer. It is listed as poison-free, which is the point to weigh if it is going where children or pets can reach. You throw it away once it is full.",
+    pros: ["Two traps per pack", "Hangs on a built-in hook or stands free", "Listed as poison-free", "Listing states it is for monitoring"],
   },
   {
     anchorId: "best-professional",
@@ -205,6 +228,11 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Professional",
     h2Name: "Pest Expert Demi-Diamond Traps",
+    tocLabel: "Best Professional",
+    tocName: "Pest Expert Demi-Diamond Traps",
+    pick: "Six traps, and the one listing here that states a lure life: up to 12 weeks.",
+    blurb: "If you want to cover several rooms and check them over a season, this is the set that states enough to plan around. You get six holders and six pheromone pads, and the listing gives the pheromone up to 12 weeks. Its own text calls it a professional monitoring tool that catches the male moth to halt reproduction. It is listed as odourless and pesticide-free.",
+    pros: ["6 holders and 6 pheromone pads", "Lure life stated: up to 12 weeks", "Called a professional monitoring tool on its listing", "Odourless and pesticide-free"],
   },
   {
     anchorId: "best-refill",
@@ -228,6 +256,11 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Refills",
     h2Name: "Biocare Moth Trap Refill Pads",
+    tocLabel: "Best Refills",
+    tocName: "Biocare Moth Trap Refill Pads",
+    pick: "Twenty refill pads for clothes and carpet moth holders you already own.",
+    blurb: "Twenty pheromone pads for when your holders are fine and the pads are spent. Check the size before you buy: each pad is listed at approximately 13.4 x 5.8 cm and fits compatible holders, which may not be the ones you have. The listing is explicit that these are for monitoring use only.",
+    pros: ["20 pheromone refill pads", "Pad size listed at about 13.4 x 5.8 cm", "Odourless and pesticide-free"],
   },
   {
     anchorId: "best-repellent",
@@ -251,23 +284,39 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Repellent",
     h2Name: "Zero In Cedarwood Moth Balls",
+    tocLabel: "Best Repellent",
+    tocName: "Zero In Cedarwood Moth Balls",
+    pick: "Twenty cedarwood balls for storage, sold as an alternative to old mothballs.",
+    blurb: "A storage product rather than a trap. You get twenty balls of Eastern aromatic red cedar, listed as poison and chemical-free, and the listing offers them as an alternative to traditional mothballs, which are banned from sale here. The listing states they last up to 12 months and are refreshed by rubbing with fine sandpaper. They belong in a box of clean, stored knitwear rather than a room with a live infestation.",
+    pros: ["20 balls of 100% natural red cedar", "Listed as poison and chemical-free", "Listing states up to 12 months", "Refreshed with fine sandpaper"],
   },
 ];
+
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Old naphthalene mothballs are banned from consumer sale in the UK, so do not
+    use an inherited box.{" "}
+    <a href="#mothballs" className="underline">
+      Why old-style mothballs are gone
+    </a>
+    .
+  </>
+);
 
 // The contents entry is DERIVED from the same fields the h2 renders, so an entry
 // cannot say something the heading does not (the S66 R4 pattern).
 const tocItems = [
+  { id: "compared", title: "Best Moth Traps Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "which-moth", title: "Which Moth Have You Got?" },
   { id: "mothballs", title: "Why Old-Style Mothballs Are Gone" },
   { id: "limits", title: "What a Pheromone Trap Will Not Do" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.h2Label} — ${p.h2Name}`,
-  })),
   { id: "alternatives", title: "If a Trap Is Not the Answer" },
   { id: "using", title: "Using Them" },
-  { id: "compared", title: "Best Moth Traps Compared" },
 ];
 
 export default function BestMothTrapsPage() {
@@ -334,6 +383,18 @@ export default function BestMothTrapsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -351,6 +412,62 @@ export default function BestMothTrapsPage() {
         you what you have and how bad it is. It is not, on its own, how the
         problem ends — and the trap you need depends on which moth you have.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">Best Moth Traps Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Target moth
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Pack as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Lure life as listed
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second, every line.
           NOT a card: no Amazon link, no price, no image, no award. It sits above
@@ -514,127 +631,6 @@ export default function BestMothTrapsPage() {
         have.
       </p>
 
-      {/* Product 1 */}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />
-      </div>
-      <p>
-        For a wardrobe or a chest of drawers where you have seen holes. It is
-        sold as a three-pack and the listing describes it as refillable, so the
-        holders stay and the pads are replaced. The listing does not state a lure
-        life, so this page does not give one for it.
-      </p>
-
-      {/* Product 2 */}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />
-      </div>
-      <p>
-        For the kitchen rather than the wardrobe. Three traps and twenty pads per
-        pack. This listing carries no feature text beyond its title, so the card
-        above is everything it states — including no lure life and no named moth
-        species.
-      </p>
-
-      {/* Product 3 */}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />
-      </div>
-      <p>
-        Two traps, and the only listing here that says outright what it is for:
-        monitoring infestations. It folds to hang on a rail or stands in a
-        drawer, and it is listed as poison-free, which is the relevant point if
-        it is going where children or pets can reach.
-      </p>
-
-      {/* Product 4 */}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />
-      </div>
-      <p>
-        Six holders and six pads, and the only listing here that commits to a
-        lure life: up to 12 weeks. Its own text calls it a professional
-        monitoring tool and describes the mechanism plainly — it catches the
-        male, so no new eggs. If you want to cover several rooms and check them
-        over a season, this is the set that states enough to plan around.
-      </p>
-
-      {/* Product 5 */}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />
-      </div>
-      <p>
-        Twenty pads for holders you already own. Check the size before you buy:
-        the pads are listed at approximately 13.4 x 5.8 cm and fit compatible
-        holders, which is not the same as fitting whatever you have. The listing
-        is explicit that these are for monitoring.
-      </p>
-
-      {/* Product 6 */}
-      <h2 id={products[5].anchorId}>
-        {products[5].h2Label} &mdash; {products[5].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[5].cardName}
-          features={products[5].features}
-          asin={products[5].asin}
-          bestFor={products[5].cardLabel}
-          rank={products[5].rank}
-        />
-      </div>
-      <p>
-        Not a trap at all — a repellent for storage. Twenty balls of Eastern
-        aromatic red cedar, listed as poison and chemical-free and as lasting up
-        to 12 months, refreshed by rubbing with fine sandpaper. This is the
-        modern stand-in for the banned mothballs above, and it belongs in a box
-        of stored knitwear rather than in a room with a live infestation.
-      </p>
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If a Trap Is Not the Answer</h2>
@@ -688,42 +684,6 @@ export default function BestMothTrapsPage() {
         </li>
       </ol>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">Best Moth Traps Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Target moth
-              </th>
-              <th className="text-left p-2 border-b font-semibold">
-                Pack as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">
-                Lure life as listed
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Moths beyond a wardrobe?"

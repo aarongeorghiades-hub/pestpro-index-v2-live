@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -103,6 +104,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Records are addressed BY IDENTITY, never by position (Law 107).
@@ -145,6 +151,9 @@ const products: ProductRecord[] = [
     h2Name: "SafeRest Premium Mattress Encasement",
     tocLabel: "Best Overall",
     tocName: "SafeRest Premium Encasement",
+    pick: "The maker says it is lab tested and certified bed bug entry, escape and bite proof.",
+    blurb: "Our overall pick, because it carries the strongest bed bug claim of the four, and the maker makes it plainly: independently lab tested and certified bed bug entry, escape and bite proof. The micro-zipper is covered by a velcro flap at the end, which the maker says stops it opening by accident. You sleep on cotton terry over a membrane backing. It is listed in US sizing as Full, for a mattress 6 to 9 inches deep, so measure yours first.",
+    pros: ["Lab tested and certified bed bug proof, per the maker", "Six-sided cover with a micro-zipper", "Velcro flap over the zipper end", "Cotton terry surface"],
   },
   {
     anchorId: "best-value",
@@ -169,6 +178,9 @@ const products: ProductRecord[] = [
     h2Name: "Utopia Bedding Mattress Encasement",
     tocLabel: "Best Value",
     tocName: "Utopia Bedding Encasement",
+    pick: "A washable six-sided cover the maker states is bed bug and dust mite proof.",
+    blurb: "A plain, practical cover you can put through the wash and the tumble dryer. It is six-sided, with a wrap-around zipper, knitted polyester on top and a waterproof backing, and the maker states it is bed bug and dust mite proof. Check the size with care: the title says US King, the size row says Double, and a bullet describes a 78 by 80 inch mattress up to 15 inches deep.",
+    pros: ["Six-sided with a wrap-around zipper", "Bed bug and dust mite proof, per the maker", "Machine washable and tumble dryable", "Waterproof backing"],
   },
   {
     anchorId: "best-comfort",
@@ -193,6 +205,9 @@ const products: ProductRecord[] = [
     h2Name: "SureGuard Mattress Encasement",
     tocLabel: "Best for Comfort",
     tocName: "SureGuard Encasement",
+    pick: "A cotton terry cover the maker calls noiseless, free of vinyl and PVC.",
+    blurb: "The one to look at if comfort is what you are buying for. The surface is cotton terry, which the maker describes as noiseless and moisture-wicking, and the maker states it is free from vinyl, PVC, phthalates and flame retardants. Its bed bug seal, the maker says, needs the matching box spring cover as well, so plan on both if you want that claim to apply. Listed as Full, 54 by 75 inches, for a mattress 9 to 12 inches deep.",
+    pros: ["Cotton terry surface, noiseless per the maker", "Free from vinyl, PVC, phthalates and flame retardants, per the maker", "Superfine zipper with a sealing system, per the maker", "Fits mattresses 9 to 12 inches deep, as listed"],
   },
   {
     anchorId: "best-heavy",
@@ -217,6 +232,9 @@ const products: ProductRecord[] = [
     h2Name: "Protect-A-Bed AllerZip",
     tocLabel: "Best Heavy-Duty",
     tocName: "Protect-A-Bed AllerZip",
+    pick: "A smooth jersey knit cover over the maker's membrane, machine washable.",
+    blurb: "A smooth jersey knit polyester cover over the maker's membrane, and you can machine wash it. Its product description calls it a six-sided encasement with a three-sided zipper, though its feature bullets call it fitted sheet style. It is the only one of the four that makes no bed bug claim in its own text, so choose another if that claim matters to you. Listed as Twin, for a mattress 4 to 8 inches deep.",
+    pros: ["Jersey knit polyester over a membrane", "Machine washable", "Six-sided with a three-sided zipper, per its description"],
   },
 ];
 
@@ -257,15 +275,29 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full sections
+// sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    A cover protects the mattress and nothing else, and for an infestation the
+    NHS points you to your council or a pest control service.{" "}
+    <a href="#limits" className="underline">
+      Where an encasement does not work
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Four Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What an Encasement Is For" },
   { id: "health", title: "What the NHS and UC IPM Say About the Bites" },
   { id: "limits", title: "Where an Encasement Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Cover Is Not the Answer" },
   { id: "using", title: "Using Them" },
-  { id: "compared", title: "The Four Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -291,6 +323,18 @@ export default function BestBedBugMattressEncasementPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -314,6 +358,56 @@ export default function BestBedBugMattressEncasementPage() {
         What they are for is narrower than that, and it is worth being precise
         about before spending anything.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Four Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        claim attributed to the maker who makes it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Construction</th>
+              <th className="text-left p-2 border-b font-semibold">Bed bug claim, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Size and depth, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -503,32 +597,6 @@ export default function BestBedBugMattressEncasementPage() {
         own claim about its own materials.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "The strongest claim of the four, and it is the maker's claim rather than ours: independently lab tested and certified bed bug entry, escape and bite proof, with a micro-zipper the maker says no stage of bed bug can pass and a velcro flap sealing the zipper end. Cotton terry over a membrane backing. Listed as Full Size for a mattress 6 to 9 inches deep.",
-                "The plainest of the four: a six-sided knitted polyester cover with a wrap-around zipper and a waterproof backing, machine washable and tumble dryable, with the maker stating it is bed bug and dust mite proof. Its own listing cannot agree with itself on size — the title says US King, the size row says Double, and a bullet describes a 78 by 80 inch mattress up to 15 inches deep. All three readings are on the card.",
-                "The one whose bed bug claim comes with a condition attached: its maker states the mattress is completely sealed from bed bugs when used in combination with its matching box spring cover, which is a different claim from the other two and is reported as such. Cotton terry surface, described by the maker as noiseless, and a stated materials exclusion list. Listed as Full, 54 by 75 inches, for a mattress 9 to 12 inches deep.",
-                "The only one of the four that makes no bed bug claim anywhere in its own text, and the card leads with that. Its listing also disagrees with itself about what it is: the feature bullets call it fitted sheet style, while its own product description calls it a six-sided encasement with a three-sided zipper. Jersey knit polyester over the maker's membrane. Listed as Twin, for a mattress 4 to 8 inches deep.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Cover Is Not the Answer</h2>
@@ -585,36 +653,6 @@ export default function BestBedBugMattressEncasementPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">The Four Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        claim attributed to the maker who makes it. Where a listing does not
-        state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Construction</th>
-              <th className="text-left p-2 border-b font-semibold">Bed bug claim, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Size and depth, as listed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

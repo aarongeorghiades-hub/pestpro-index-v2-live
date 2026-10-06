@@ -4,6 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
+import TopPicks, { ProsList } from "@/components/TopPicks";
 
 // S68 R2 — ROLLOUT REBUILD to the R8 pattern. Title and H1 byte-unchanged. Award labels,
 // rank numerals, anchor ids and card order UNCHANGED as ruled.
@@ -94,6 +95,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells from the banked listings' OWN bullets and detail
@@ -119,6 +125,9 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Brodifacoum Blocks",
     tocLabel: "Best Overall",
     tocName: "Roshield Brodifacoum Blocks",
+    pick: "Brodifacoum wax blocks with the strength and HSE number printed on the listing.",
+    blurb: "Our overall pick, because this listing tells you exactly what you are buying: brodifacoum at 0.0025% and an HSE registration number, in fifteen 20g wax blocks ready for a tamper-resistant bait station. The maker describes the blocks as tolerant to humidity, which suits a damp shed or outbuilding. The maker also advises keeping brodifacoum for known resistance or where other baits have had little effect, and that is worth reading before you buy.",
+    pros: ["Active and strength stated on the listing: brodifacoum 0.0025%", "HSE registration number shown on the listing", "Wax blocks the maker describes as tolerant to humidity", "15 x 20g blocks, ready to use in a bait station"],
   },
   {
     anchorId: "best-professional",
@@ -137,6 +146,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula B+ Grain Bait",
     tocLabel: "Best Professional-Strength",
     tocName: "Pest Expert Formula B+",
+    pick: "A kilogram of wholewheat grain bait in ten sachets, strength stated.",
+    blurb: "A full kilogram of wholewheat grain split into ten 100g sachets, so each station gets a clean, measured fill. Brodifacoum is stated at 0.0029%, and the maker says it can go indoors or outdoors. Pick this if you have several stations to stock and want grain over wax.",
+    pros: ["1kg in 10 x 100g sachets", "Brodifacoum 0.0029% stated on the listing", "Wholewheat grain with no wax", "Maker states indoor and outdoor use"],
   },
   {
     anchorId: "best-value",
@@ -155,24 +167,30 @@ const products: ProductRecord[] = [
     h2Name: "Elixir Gardens Rodex Whole Wheat",
     tocLabel: "Best Value",
     tocName: "Elixir Gardens Rodex Sachets",
+    pick: "1kg of ready-to-use sachets, with a dye that shows the bait is being taken.",
+    blurb: "A kilogram of whole-wheat bait in ten ready-to-use 100g sachets, enough to keep several stations topped up. The maker says a red dye colours droppings, so you can tell the bait is being eaten without opening the box. The listing names no active substance, so check the pack for it.",
+    pros: ["10 x 100g ready-to-use sachets", "Red dye marks droppings so uptake is visible, per the maker", "Listing carries a clear first-aid warning"],
   },
   {
     anchorId: "best-difenacoum",
     asin: "B07BFQ1V5L",
     rank: 4,
     cardName: "Rentokil Rodine Mouse & Rat Killer Grain Bait",
-    cardLabel: "Brodifacoum Grain Bait, 200g",
+    cardLabel: "Best Grain Bait Sachets",
     features: [
       "Active listed as brodifacoum, 0.0025% w/w",
       "Listed as 200g of grain bait in sachets designed for lockable, tamper-resistant bait stations",
       "The maker claims a lethal dose in one feed",
       "Listing dimensions 4 x 10.5 x 18.5 cm",
     ],
-    tableCells: ["Rentokil Rodine 200g", "Grain sachets; brodifacoum 0.0025%, as listed", "Brodifacoum Grain Bait, 200g"],
-    h2Label: "Brodifacoum Grain Bait, 200g",
+    tableCells: ["Rentokil Rodine 200g", "Grain sachets; brodifacoum 0.0025%, as listed", "Best Grain Bait Sachets"],
+    h2Label: "Best Grain Bait Sachets",
     h2Name: "Rentokil Rodine Grain Bait",
-    tocLabel: "Brodifacoum Grain Bait, 200g",
+    tocLabel: "Best Grain Bait Sachets",
     tocName: "Rentokil Rodine Grain Bait",
+    pick: "A compact 200g pack of grain sachets made for lockable stations.",
+    blurb: "A smaller 200g pack from Rentokil for a contained job. The sachets are designed, the listing says, for lockable tamper-resistant stations, and the active is stated as brodifacoum at 0.0025% w/w. The maker claims a lethal dose in one feed.",
+    pros: ["Sachets designed for lockable, tamper-resistant stations", "Brodifacoum 0.0025% w/w stated on the listing", "Compact 200g pack for a small job"],
   },
   {
     anchorId: "best-paste",
@@ -191,6 +209,9 @@ const products: ProductRecord[] = [
     h2Name: "Racan Force Paste",
     tocLabel: "Best Paste Bait",
     tocName: "Racan Force Paste",
+    pick: "Six 10g paste sachets for the maker's tamper-proof stations.",
+    blurb: "Six 10g paste sachets in a small pack, meant to go in the maker's own tamper-proof bait stations. The description talks about mice throughout and the listing names no active substance, so read the pack before you use it against rats.",
+    pros: ["6 x 10g paste sachets", "Maker says to use them in its tamper-proof stations", "Small pack for a small job"],
   },
   {
     anchorId: "best-kit",
@@ -209,18 +230,35 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Bait Block Kit",
     tocLabel: "Best Combo Kit",
     tocName: "Pest Expert Bait Block Kit",
+    pick: "Bait and two lockable stations in one box.",
+    blurb: "If you do not own a bait station yet, start here. The kit has 75 x 20g blocks at brodifacoum 0.0025% and two lockable, tamper-resistant boxes, and the blocks are pre-formed to sit on the metal rod inside each box. The boxes are listed for indoor and exterior use.",
+    pros: ["Two lockable, tamper-resistant boxes included", "75 blocks pre-formed to fit the rod in each box", "Brodifacoum 0.0025% stated on the listing", "Boxes listed for indoor and exterior use"],
   },
 ];
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Anticoagulant poison. HSE asks you to consider other methods first, and every
+    bait goes in a lockable, tamper-resistant station.{" "}
+    <a href="#legal" className="underline">
+      The legal position
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Six Products Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Poison Is Not the Default" },
   { id: "legal", title: "The Legal Position on Rat Poison" },
   { id: "limits", title: "Where Poison Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If Poison Is Not the Answer" },
   { id: "using", title: "Using It" },
-  { id: "compared", title: "The Six Products Compared" },
 ];
 
 export default function BestRatPoisonPage() {
@@ -241,6 +279,18 @@ export default function BestRatPoisonPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -268,6 +318,56 @@ export default function BestRatPoisonPage() {
         </a>
         ). They are sold anyway, under conditions. The conditions are the page.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">The Six Products Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Form and active, as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first. The other-methods line, the legal line and
           the does-not-help line sit ABOVE the product lines. No Amazon link, no price,
@@ -472,34 +572,6 @@ export default function BestRatPoisonPage() {
         placement facts, and the table carries them.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "Fifteen 20g wax blocks with brodifacoum at 0.0025% and an HSE registration number stated on the listing, described as ready to use in tamper-resistant bait stations in and around buildings. The maker's own advice is not to start with brodifacoum unless resistance is known or other baits have failed — carried here because it is the listing's, and it is unusual to see.",
-                "A kilogram of wholewheat grain in ten sachets, with brodifacoum stated at 0.0029%, for use indoors and outdoors per the maker. The listing's comparisons with other brands are the maker's and are not repeated. Its item form field reads Capsules; the title and bullets say grain.",
-                "A kilogram of whole-wheat sachets whose listing names no active substance, so what is in it is on the pack and not on the page you buy from. The maker says a red dye marks droppings so uptake can be seen without opening the box. The listing's own warning — an anticoagulant; if ingested call 111 — is the one health line on this page.",
-                "Two hundred grams of grain bait in sachets the listing says are designed for lockable, tamper-resistant stations, with brodifacoum at 0.0025% w/w. The label carried difenacoum until S68 R3; the listing names brodifacoum, and the label now says so.",
-                "Six 10g paste sachets whose listing names no active substance and whose description refers to mice throughout, with the maker's instruction that they go in its tamper-proof stations. The claim that it was previously professional-only is the maker's history of its own product.",
-                "The one product here that arrives with somewhere to put it: 75 blocks of 20g at brodifacoum 0.0025%, listed with two lockable, tamper-resistant boxes that carry a metal rod the blocks are pre-formed to sit on, for indoor and exterior use.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* [14] Alternatives */}
       <h2 id="alternatives">If Poison Is Not the Answer</h2>
@@ -558,36 +630,6 @@ export default function BestRatPoisonPage() {
         </Callout>
       </div>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">The Six Products Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Form and active, as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Rats in a cavity, a void or under a floor you cannot open?"

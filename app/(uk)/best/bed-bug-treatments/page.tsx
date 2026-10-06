@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -85,6 +86,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -111,6 +117,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula C+ Bed Bug Killer Spray 2 x 1L",
     tocLabel: "Best Overall",
     tocName: "Pest Expert Formula C+ Spray",
+    pick: "Two litres of ready-to-use spray, listed for bed frames and mattresses.",
+    blurb: "Our overall pick, and the one to start with if you are treating a bedroom yourself. You get two 1 litre bottles of ready-to-use, water-based spray, listed for bed frames and mattresses and as non-staining and low-odour. The maker states three actives including an insect growth regulator, and 50 square metres per application.",
+    pros: ["2 x 1L, ready to use and water-based", "Listed for bed frames and mattresses", "Non-staining and low-odour, as listed", "50 m² per application, per the maker"],
   },
   {
     anchorId: "best-powder",
@@ -130,6 +139,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula P Bed Bug Killer Powder 300g",
     tocLabel: "Best Powder",
     tocName: "Pest Expert Formula P Powder",
+    pick: "A 300g permethrin powder, listed for use around power points.",
+    blurb: "A powder for the places a spray should not go, such as around power points, which the listing names as a use. It names its active, permethrin, and comes as 300g for direct application to bed frames, carpets, mattresses and bedding. The listing gives no coverage figure.",
+    pros: ["Active named on the listing: permethrin", "Listed for bed frames, carpets, mattresses and bedding", "Listed for use around power points"],
   },
   {
     anchorId: "best-prevention",
@@ -149,6 +161,9 @@ const products: ProductRecord[] = [
     h2Name: "Utopia Bedding Waterproof Mattress Encasement",
     tocLabel: "Best Prevention",
     tocName: "Utopia Bedding Encasement",
+    pick: "A washable single encasement that zips shut on all six sides.",
+    blurb: "A barrier for the mattress, and it carries no insecticide. This single cover measures 90 x 190 x 30 cm, zips closed on all six sides, and is polyester with a TPU backing. The maker describes the zip as protecting from even the tiniest of the bed bugs. You can machine wash it and tumble dry it.",
+    pros: ["Zip closes all six sides", "Single, 90 x 190 x 30 cm, as listed", "Machine washable and tumble dryable", "Polyester with a TPU backing"],
   },
 ];
 
@@ -182,15 +197,29 @@ const faqSchema = {
   })),
 };
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full sections
+// sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    For bedbugs the NHS points you to your council or a pest control service
+    first, and each insecticide here is used only as its label says.{" "}
+    <a href="#situation" className="underline">
+      What the NHS says to do first
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Three Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What the NHS Says to Do First" },
   { id: "legal", title: "What the Label Governs" },
   { id: "limits", title: "Where a Product Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Product Is Not the Answer" },
   { id: "using", title: "Using Them" },
-  { id: "compared", title: "The Three Compared" },
   { id: "faq", title: "Frequently Asked Questions" },
 ];
 
@@ -216,6 +245,18 @@ export default function BestBedBugTreatmentsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -240,6 +281,56 @@ export default function BestBedBugTreatmentsPage() {
         is more discouraging about self-treatment than most product pages will
         tell you.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">The Three Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        coverage figure attributed to the maker who claims it. Where a listing
+        does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Coverage or size, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -391,31 +482,6 @@ export default function BestBedBugTreatmentsPage() {
         table says so.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "Two litres of ready-to-use, water-based spray, listed as non-staining and low-odour and for application to bed frames and mattresses. Its maker states three actives including an insect growth regulator and a coverage of 50 square metres per application; both are its claims, and its stronger marketing language is not repeated here.",
-                "A 300g powder naming permethrin, listed for direct application to bed frames, carpets, mattresses and bedding, and specifically for areas around power points where a liquid would not be appropriate. The listing states no coverage figure.",
-                "A zipped single encasement at 90 x 190 x 30 cm in polyester with a TPU backing, machine washable, whose maker describes the zip as protecting from even the tiniest of the bed bugs. It carries no insecticide and makes no claim to kill anything.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Product Is Not the Answer</h2>
@@ -466,36 +532,6 @@ export default function BestBedBugTreatmentsPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">The Three Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        coverage figure attributed to the maker who claims it. Where a listing
-        does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Type</th>
-              <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Coverage or size, as listed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>

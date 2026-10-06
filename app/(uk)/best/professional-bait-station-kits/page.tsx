@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -94,6 +95,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Feature text and comparison cells are rebuilt from the banked Amazon bodies, all inside
@@ -123,6 +129,9 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Tamper Proof Rat Poison Box, 4 Pack",
     tocLabel: "Best Overall",
     tocName: "Roshield 4-Pack",
+    pick: "Four empty boxes in one pack, each with a metal rod for blocks or grain.",
+    blurb: "Our overall pick for a landlord stocking a whole property in one order. You get four boxes, each listed as holding blocks or grain bait on a metal rod. The listing says they are designed and made in the UK from recycled materials. They arrive empty, so the bait and its label conditions are your choice.",
+    pros: ["Four boxes in the pack", "Metal rod holds blocks or grain bait", "Designed and made in the UK from recycled materials, as listed", "Listed for mice and rats"],
   },
   {
     anchorId: "runner-up",
@@ -142,6 +151,9 @@ const products: ProductRecord[] = [
     h2Name: "Roshield PRO BOX 2 Extra Large Bait Stations",
     tocLabel: "Runner-Up",
     tocName: "Roshield PRO BOX 2-Pack",
+    pick: "Two extra-large stations that take rodenticide or traps, indoors or out.",
+    blurb: "A smaller pack of bigger boxes. Each of the two stations is listed at 26 x 19 x 12 cm, with what the listing calls a secure solid lid for easy inspection. You can load them with rodenticide or with traps, and they are listed for indoor and outdoor use.",
+    pros: ["Two extra-large stations, 26 x 19 x 12 cm", "Solid lid the listing says is for easy inspection", "Takes rodenticide or traps", "Listed for indoor and outdoor use"],
   },
   {
     anchorId: "best-budget",
@@ -161,6 +173,9 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Pro Quality Tamper-Resistant Bait Box, 2 Pack",
     tocLabel: "Best Budget",
     tocName: "Roshield Tamper-Resistant 2 Pack",
+    pick: "Two key-locked boxes, and the only listing here that states an inspection window.",
+    blurb: "Buy this pair if you want to look in without unlocking every box. The listing states an inspection window and key-only access. Each box is listed as holding wax blocks, wheat bait, pasta sachets or traps, and both are listed for indoor and outdoor use.",
+    pros: ["Inspection window, as listed", "Key-only access", "Takes wax blocks, wheat bait, pasta sachets and traps", "Listed for indoor and outdoor use"],
   },
   {
     anchorId: "best-professional",
@@ -180,6 +195,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Heavy Duty Outdoor Bait Boxes",
     tocLabel: "Best Professional-Grade",
     tocName: "Pest Expert 4-Pack",
+    pick: "Four heavy-duty boxes listed as fully lockable and weather resistant.",
+    blurb: "For a property with several runs outside, this pack gives you four heavy-duty boxes listed as fully lockable and weather resistant. They take grain, blocks or paste. The listing names mice and rats and states indoor and outdoor use.",
+    pros: ["Four boxes in the pack", "Fully lockable and weather resistant, as listed", "Takes grain, blocks and paste", "Listed for indoor and outdoor use"],
   },
   {
     anchorId: "best-ready-to-deploy",
@@ -199,18 +217,35 @@ const products: ProductRecord[] = [
     h2Name: "Roshield 2x Pre-Baited Rat Kit",
     tocLabel: "Best Ready to Deploy",
     tocName: "Roshield Pre-Baited Kit",
+    pick: "Two lockable stations that arrive pre-baited, with an access key.",
+    blurb: "If you need something down the day it arrives, this kit comes pre-baited. You get two lockable stations with an access key, listed as refillable, reusable and made in the UK. The listing names rat as the target and does not name the active substance, so read the pack before you use it.",
+    pros: ["Arrives pre-baited", "Two lockable stations with an access key", "Refillable and reusable, as listed", "Made in the UK, as listed"],
   },
 ];
 
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Professional-use bait is not for the general public, and the station must lock so
+    children and dogs cannot reach the bait.{" "}
+    <a href="#legal" className="underline">
+      Who may use the bait
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "Best Professional Bait Station Kits Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Do You Need Bait at All?" },
   { id: "legal", title: "Who May Use the Bait, and What the Box Must Be" },
   { id: "limits", title: "Where a Bait Station Kit Does Not Help" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If Bait Is Not the Answer" },
   { id: "using", title: "Placing and Checking Them" },
-  { id: "compared", title: "Best Professional Bait Station Kits Compared" },
 ];
 
 export default function BestProfessionalBaitStationKitsPage() {
@@ -243,6 +278,18 @@ export default function BestProfessionalBaitStationKitsPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -261,6 +308,55 @@ export default function BestProfessionalBaitStationKitsPage() {
         but whether the bait that goes in it is one you are allowed to use
         yourself.
       </p>
+
+      {/* Comparison table */}
+      <h2 id="compared">Best Professional Bait Station Kits Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Pack and bait, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Size or active, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. NOT a card: no Amazon link,
           no price, no image, no award. */}
@@ -436,33 +532,6 @@ export default function BestProfessionalBaitStationKitsPage() {
         active; the comparison table says so.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "Four black boxes listed at 3 kilograms for the pack, each with a metal rod for blocks or grain, supplied empty. The card previously called this a PRO BOX Extra Large pack; the listing does not, and the name now follows the listing.",
-                "Two extra-large stations at 26 x 19 x 12 cm with what the listing calls a secure solid lid for easy inspection, supplied empty. The card previously said inspection window; the listing does not, and it now says solid lid.",
-                "Two Roshield boxes with an inspection window and key-only access, listed as holding wax blocks, wheat bait, pasta sachets and traps. The card previously said single; the listing states two pieces, and the name now says so.",
-                "Four heavy-duty boxes listed as fully lockable and weather resistant, taking grain, blocks and paste, supplied empty. Target species listed as mouse and rat.",
-                "Two pre-baited lockable stations with an access key, listed as refillable and reusable and made in the UK. The listing names rat as the target species and does not name the active substance; the card previously said brodifacoum, and no longer does.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If Bait Is Not the Answer</h2>
@@ -509,35 +578,6 @@ export default function BestProfessionalBaitStationKitsPage() {
         </li>
       </ol>
 
-      {/* Comparison table */}
-      <h2 id="compared">Best Professional Bait Station Kits Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Pack and bait, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Size or active, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="A property you would rather not bait yourself?"

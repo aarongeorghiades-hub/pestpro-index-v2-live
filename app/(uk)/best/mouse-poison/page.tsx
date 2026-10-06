@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -122,6 +123,13 @@ type ProductRecord = {
   tableCells: string[];
   h2Label: string;
   h2Name: string;
+  tocLabel: string;
+  tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // AWARD LABELS, RANK NUMERALS, CARD ORDER, ANCHOR IDS, h2 LABELS AND h2 NAMES ARE ALL
@@ -166,6 +174,11 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Overall",
     h2Name: "Pest Expert Formula B+ Rat & Mouse Killer Poison 900g",
+    tocLabel: "Best Overall",
+    tocName: "Pest Expert Formula B+ 900g",
+    pick: "Brodifacoum, the substance the guidance names for house mice, in 15 grain sachets.",
+    blurb: "Our top pick, because the listing states the substance that both RRAG and Defra name for house mice: brodifacoum at 0.0029%. You get fifteen 60g sachets of wholewheat grain with no wax, which is enough to bait a whole house with some to spare. The listing says it kills in a single feed. If you only need a few bait points, the 360g pack below is the same bait in a smaller box.",
+    pros: ["Brodifacoum 0.0029% stated on the listing", "15 x 60g sachets for plenty of bait points", "Wholewheat grain with no wax, as listed", "Target species listed as Mouse"],
   },
   {
     anchorId: "best-starter",
@@ -190,6 +203,11 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Starter Pack",
     h2Name: "Pest Expert Formula B+ Mouse & Rat Poison 360g",
+    tocLabel: "Best Starter Pack",
+    tocName: "Pest Expert Formula B+ 360g",
+    pick: "The same brodifacoum grain bait in six sachets, sized for one house.",
+    blurb: "The same stated formulation as the 900g pack, brodifacoum at 0.0029%, in six 60g sachets instead of fifteen. The listing describes the pack as covering six bait points. For one house, six points placed where you have actually seen activity is a realistic treatment, and you are not left with a cupboard of spare poison.",
+    pros: ["Same brodifacoum 0.0029% as the larger pack", "6 x 60g sachets, listed as covering 6 bait points", "Wholewheat grain with no wax, as listed"],
   },
   {
     anchorId: "best-blocks",
@@ -214,6 +232,11 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Blocks",
     h2Name: "The Big Cheese All-Weather Bait Block 15x10g",
+    tocLabel: "Best Blocks",
+    tocName: "The Big Cheese All-Weather 15x10g",
+    pick: "Ready-to-use blocks listed as moisture-resistant, with clear placement guidance.",
+    blurb: "Fifteen ready-to-use 10g blocks, listed as moisture-resistant for indoor and outdoor use, so they suit a damp garage or shed. The listing is unusually specific about placement, two to three blocks every two to five metres for mice, and gloves are listed as included. It is also the one listing here that says a tamper-resistant bait station is required by law. It does not state the active substance anywhere, so read the pack before you use it.",
+    pros: ["15 x 10g ready-to-use blocks", "Listed as moisture-resistant, indoor and outdoor", "Placement stated: 2-3 blocks every 2-5 metres", "Gloves listed as included"],
   },
   {
     anchorId: "best-bulk",
@@ -238,6 +261,11 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Bulk",
     h2Name: "The Big Cheese All-Weather Rodent Block 30x10g",
+    tocLabel: "Best Bulk",
+    tocName: "The Big Cheese All-Weather 30x10g",
+    pick: "Thirty moisture-resistant wax blocks for a bigger property or several stations.",
+    blurb: "Thirty 10g blue wax blocks, listed as moisture-resistant for indoor and outdoor use and infused with a bitter taste to deter accidental ingestion. That is enough to stock several stations across a larger property. Like the 15-block pack, the listing states no active substance, so check the pack before you use it.",
+    pros: ["30 x 10g wax blocks", "Bitter taste to deter accidental ingestion, as listed", "Listed as moisture-resistant, indoor and outdoor"],
   },
   {
     anchorId: "best-professional",
@@ -262,23 +290,37 @@ const products: ProductRecord[] = [
     ],
     h2Label: "Best Professional",
     h2Name: "Roshield Wax Block Bait 600g",
+    tocLabel: "Best Professional",
+    tocName: "Roshield Wax Block Bait 600g",
+    pick: "Bromadiolone wax blocks with an authorisation number printed on the listing.",
+    blurb: "The only one of the five whose listing gives a product authorisation number, UK-2016-0986-0007, alongside its active substance, bromadiolone 0.0025%. It comes as two 300g packs of wax block and names denatonium benzoate as the bitter agent. The listing gives mice and rats as targets, but RRAG advises against bromadiolone for house mice, so for mice alone the two brodifacoum packs above are what the sources point to.",
+    pros: ["Authorisation number UK-2016-0986-0007 on the listing", "Bromadiolone 0.0025% stated", "2 x 300g packs, 600g in total", "Denatonium benzoate, a bitter substance, as listed"],
   },
 ];
 
-// The contents entry is DERIVED from the same fields the h2 renders, so an entry
-// cannot say something the heading does not (the S66 R4 pattern).
+// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
+// block (the top-picks box). It satisfies Law 180 on this route; the full legal
+// and safety sections sit below the picks.
+const SAFETY_NOTE = (
+  <>
+    Anticoagulant poison. Every bait goes in a tamper-resistant station, and
+    that is a condition of the label rather than advice.{" "}
+    <a href="#legal" className="underline">
+      What the label requires
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "Best Mouse Poison Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "When Poison Is the Right Answer" },
   { id: "legal", title: "What You May Buy, and What the Label Requires" },
   { id: "resistance", title: "Where Mouse Poison Does Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({
-    id: p.anchorId,
-    title: `${p.h2Label} — ${p.h2Name}`,
-  })),
   { id: "alternatives", title: "If Poison Is Not the Answer" },
   { id: "using", title: "Placing and Checking Bait" },
-  { id: "compared", title: "Best Mouse Poison Compared" },
 ];
 
 export default function BestMousePoisonPage() {
@@ -373,6 +415,18 @@ export default function BestMousePoisonPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       {/* Affiliate disclosure */}
       <div className="not-prose mb-8 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-ochre-wash)] p-4">
@@ -391,6 +445,67 @@ export default function BestMousePoisonPage() {
         and on three of the five products below, the Amazon listing does not tell
         you what that substance is.
       </p>
+
+      {/* [16] Comparison table */}
+      <h2 id="compared">Best Mouse Poison Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states. Where a
+        listing does not state something, the cell says so rather than guessing —
+        and on this page the &ldquo;not stated&rdquo; cells in the active
+        substance column are the most important thing in the table.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
+              <th className="text-left p-2 border-b font-semibold">
+                Active substance as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Pack as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Format as listed
+              </th>
+              <th className="text-left p-2 border-b font-semibold">
+                Target species as listed
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second, every line. The legal
           line and the does-not-work line sit ABOVE the product lines.
@@ -666,24 +781,14 @@ export default function BestMousePoisonPage() {
         page&rsquo;s title.
       </p>
 
-      {/* Product 1 */}
-      <h2 id={products[0].anchorId}>
-        {products[0].h2Label} &mdash; {products[0].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[0].cardName}
-          features={products[0].features}
-          asin={products[0].asin}
-          bestFor={products[0].cardLabel}
-          rank={products[0].rank}
-        />
-      </div>
+
+      {/* S70 R1: per-product prose that could not live in a plain-string blurb
+          (a quotation, and two listing corrections) moved here from between the
+          spreads, wording otherwise kept. */}
       <p>
-        The listing states brodifacoum at 0.0029%, which is the substance both
-        RRAG and Defra name for house mice, and it states that the bait kills in
-        a single feed. Defra supports that property for this group of
-        substances, with a condition worth keeping:{" "}
+        Both Pest Expert listings state that the bait kills in a single feed.
+        Defra supports that property for this group of substances, with a
+        condition worth keeping:{" "}
         <em>
           &ldquo;The increased toxicity of difethialone, brodifacoum and
           flocoumafen means that they can kill both rats and mice following only
@@ -694,105 +799,18 @@ export default function BestMousePoisonPage() {
           Defra code of practice
         </a>
         ). Single-feed does not mean one visit is enough if the mouse only
-        nibbles. Fifteen 60g sachets is a lot of bait points for one house, which
-        is the argument for the smaller pack below rather than against this one.
-        The manufacturer&rsquo;s own comparative strength claims are not repeated
-        here.
+        nibbles. The manufacturer&rsquo;s own comparative strength claims are
+        not repeated here.
       </p>
-
-      {/* Product 2 */}
-      <h2 id={products[1].anchorId}>
-        {products[1].h2Label} &mdash; {products[1].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[1].cardName}
-          features={products[1].features}
-          asin={products[1].asin}
-          bestFor={products[1].cardLabel}
-          rank={products[1].rank}
-        />
-      </div>
       <p>
-        The same stated formulation — brodifacoum 0.0029% — in six 60g sachets
-        instead of fifteen, and the listing describes the pack in terms of the
-        six bait points it covers. For one house, six baited points placed where
-        you have actually seen activity is a realistic treatment rather than a
-        reduced one. If the substance is the thing that matters, this pack and
-        the one above are identical on it.
-      </p>
-
-      {/* Product 3 */}
-      <h2 id={products[2].anchorId}>
-        {products[2].h2Label} &mdash; {products[2].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[2].cardName}
-          features={products[2].features}
-          asin={products[2].asin}
-          bestFor={products[2].cardLabel}
-          rank={products[2].rank}
-        />
-      </div>
-      <p>
-        Fifteen ready-to-use 10g blocks, listed as moisture-resistant for indoor
-        and outdoor use, and the listing is unusually specific about placement:
-        two to three blocks every two to five metres for mice. It is also the one
-        listing here that states the bait station requirement is a legal one.
-        What it does not state, anywhere, is the active substance. This page
-        previously told you it was difenacoum. That was not on the listing and we
-        should not have said it — and if it is difenacoum, it is one of the two
-        substances the guidance above advises against for house mice. Read the
-        pack before you use it.
-      </p>
-
-      {/* Product 4 */}
-      <h2 id={products[3].anchorId}>
-        {products[3].h2Label} &mdash; {products[3].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[3].cardName}
-          features={products[3].features}
-          asin={products[3].asin}
-          bestFor={products[3].cardLabel}
-          rank={products[3].rank}
-        />
-      </div>
-      <p>
-        Thirty 10g wax blocks, blue, listed as carrying a bitter taste to deter
-        accidental ingestion. The same gap applies: no active substance is stated
-        on the listing. One inconsistency is worth flagging because it is on the
-        listing itself — the title, the detail table and the pack description all
-        say thirty blocks, while one feature bullet says the pack contains
-        fifteen. We have taken the figure the detail table gives.
-      </p>
-
-      {/* Product 5 */}
-      <h2 id={products[4].anchorId}>
-        {products[4].h2Label} &mdash; {products[4].h2Name}
-      </h2>
-      <div className="not-prose my-6">
-        <ProductCard
-          name={products[4].cardName}
-          features={products[4].features}
-          asin={products[4].asin}
-          bestFor={products[4].cardLabel}
-          rank={products[4].rank}
-        />
-      </div>
-      <p>
-        This is the only one of the five whose listing gives a product
-        authorisation number — UK-2016-0986-0007 — alongside its active
-        substance, bromadiolone 0.0025%, and it names denatonium benzoate as the
-        bitter agent. It is also the product
-        whose stated substance the guidance above specifically advises against
-        for house mice — RRAG says bromadiolone may not achieve adequate control
-        of them and will worsen resistance. Against rats that reasoning does not
-        apply in the same way, and the listing gives both as target species. For
-        mice specifically, the two brodifacoum packs are what the sources point
-        to.
+        This page previously told you the Big Cheese blocks were difenacoum.
+        That was not on either listing and we should not have said it —
+        and if it is difenacoum, it is one of the two substances the guidance
+        above advises against for house mice. One inconsistency on the 30-block
+        listing is worth flagging because it is on the listing itself —
+        the title, the detail table and the pack description all say thirty
+        blocks, while one feature bullet says the pack contains fifteen. We have
+        taken the figure the detail table gives.
       </p>
 
       {/* [14] Alternatives */}
@@ -873,47 +891,6 @@ export default function BestMousePoisonPage() {
         </li>
       </ol>
 
-      {/* [16] Comparison table */}
-      <h2 id="compared">Best Mouse Poison Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states. Where a
-        listing does not state something, the cell says so rather than guessing —
-        and on this page the &ldquo;not stated&rdquo; cells in the active
-        substance column are the most important thing in the table.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">Award</th>
-              <th className="text-left p-2 border-b font-semibold">
-                Active substance as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">
-                Pack as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">
-                Format as listed
-              </th>
-              <th className="text-left p-2 border-b font-semibold">
-                Target species as listed
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       <FindProviderCTA
         heading="Baited already, and the mice are still there?"

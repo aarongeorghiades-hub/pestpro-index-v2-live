@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout from "@/components/Callout";
 import DecisionBox from '@/components/DecisionBox';
@@ -105,6 +106,11 @@ type ProductRecord = {
   h2Name: string;
   tocLabel: string;
   tocName: string;
+  // S70 R1 (Law 195) selling layer: top-picks reason, benefit-led blurb, pros.
+  // Every fact in them is one the features above already carry from the listing.
+  pick: string;
+  blurb: string;
+  pros: string[];
 };
 
 // Records are addressed BY IDENTITY, never by position (Law 107).
@@ -144,6 +150,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Ultimate Concentrate + 5L Sprayer",
     tocLabel: "Best Professional Treatment Kit",
     tocName: "Pest Expert Ultimate Concentrate",
+    pick: "A concentrate the maker says makes 10 litres, with a 5 litre pressure sprayer included.",
+    blurb: "Our top pick for a hotel, hostel or landlord with several rooms to treat. The maker states the concentrate makes ten litres of spray, and a 5 litre pressure sprayer comes in the box, so one order sets you up for more than one room. Three actives are stated, with tetramethrin given at 0.9%, and the maker says the formulation was recently approved for amateur use. Follow the label's dilution to the letter, because with a concentrate that is where mistakes happen.",
+    pros: ["Makes 10 litres, per the maker", "5 litre pressure sprayer included", "Tetramethrin 0.9% named among three actives", "Approved for amateur use, per the maker"],
   },
   {
     anchorId: "best-professional-spray",
@@ -168,6 +177,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula 'C+' 2 x 1L",
     tocLabel: "Best Professional Spray",
     tocName: "Pest Expert Formula C+ 2 x 1L",
+    pick: "Two litres ready to use, with an insect growth regulator among its three actives.",
+    blurb: "The pick when you want to start straight away, with nothing to dilute and no sprayer to set up. You get two 1 litre bottles, and the maker states three actives including an insect growth regulator, with coverage of 50 square metres in a single application. It is listed as water-based, non-staining and low-odour, for bed frames and mattresses. The listing's detail rows name no active, so check the label for them.",
+    pros: ["Ready to use: two 1 litre bottles", "Three actives including an insect growth regulator, per the maker", "50 square metres per application, per the maker", "Water-based, non-staining and low-odour, as listed"],
   },
   {
     anchorId: "best-bulk",
@@ -192,6 +204,9 @@ const products: ProductRecord[] = [
     h2Name: "NOPE! CP Bed Bug Killer 5L + Sprayer",
     tocLabel: "Best Bulk Treatment",
     tocName: "NOPE! CP 5L + Sprayer",
+    pick: "Five litres with a pressure sprayer, and the actives named in the listing.",
+    blurb: "For a premises that needs volume. Five litres of ready-to-use spray arrive with a pressure sprayer, and this is the one listing here whose detail rows name the actives: cypermethrin and tetramethrin, with cypermethrin given at 0.1% w/w. The maker states residual action for up to three months. It is listed as solvent-free, water-based, odourless and non-staining.",
+    pros: ["5 litres ready to use, with a pressure sprayer", "Cypermethrin and tetramethrin named in the listing", "Up to 3 months residual action, per the maker", "Water-based, odourless and non-staining, as listed"],
   },
   {
     anchorId: "best-room-kit",
@@ -216,6 +231,9 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Bed Bug Treatment Kit (Standard)",
     tocLabel: "Best Complete Room Kit",
     tocName: "Pest Expert Treatment Kit (Standard)",
+    pick: "Spray, powder and a fogger in one box, for one room, per the maker.",
+    blurb: "The pick if you want everything for one room in a single order. The box holds a litre of Formula 'C+' spray, 300g of powder and a fogger bomb, and the maker states a residue that continues for up to twelve weeks. Read the limits section before you use the fogger: UC IPM does not recommend over-the-counter total-release foggers for bed bugs.",
+    pros: ["Spray, powder and fogger in one box", "1 litre of Formula 'C+' and 300g of powder", "Up to 12 weeks residue, per the maker"],
   },
   {
     anchorId: "best-monitoring",
@@ -240,6 +258,9 @@ const products: ProductRecord[] = [
     h2Name: "Bed Bug Blocker (Pro) Interceptor Traps",
     tocLabel: "Best Monitoring Add-On",
     tocName: "Bed Bug Blocker Interceptors",
+    pick: "Eight insecticide-free traps for under bed legs, so you can see whether bed bugs remain.",
+    blurb: "Add these to any treatment above, because they are how you find out whether it worked. The eight cups sit under bed and furniture legs, and the maker describes bed bugs climbing the textured outside and being unable to escape. The listing states no chemicals or pesticides, and says eight traps cover two beds or other pieces of furniture. It is listed for hotels, hostels, dormitories, hospitals and nursing homes.",
+    pros: ["No chemicals or pesticides, per the listing", "8 traps, stated as covering two beds", "Sit under bed and furniture legs", "Listed for hotels, hostels and dormitories"],
   },
 ];
 
@@ -280,16 +301,27 @@ const faqSchema = {
   })),
 };
 
+const SAFETY_NOTE = (
+  <>
+    Four of these are insecticides, used only as each label directs. UC IPM does
+    not recommend total-release foggers for bed bugs.{" "}
+    <a href="#limits" className="underline">
+      Where these products do not work
+    </a>
+    .
+  </>
+);
+
 const tocItems = [
+  { id: "compared", title: "The Five Compared" },
+  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What UC IPM Says a Treatment Has to Include" },
   { id: "health", title: "What the NHS and UC IPM Say About the Bites" },
   { id: "legal", title: "What the Label Governs" },
   { id: "limits", title: "Where These Products Do Not Work" },
   { id: "what-decides", title: "What Decides the Choice" },
-  ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "alternatives", title: "If a Spray Is Not the Answer" },
   { id: "using", title: "Use and Placement" },
-  { id: "compared", title: "The Five Compared" },
 ];
 
 export default function CommercialBedBugTreatmentPage() {
@@ -314,6 +346,18 @@ export default function CommercialBedBugTreatmentPage() {
       ]}
       articleSchema={articleSchema}
       breadcrumbSchema={breadcrumbSchema}
+      topPicks={
+        <TopPicks
+          note={SAFETY_NOTE}
+          picks={products.slice(0, 3).map((p) => ({
+            label: p.cardLabel,
+            name: p.cardName,
+            reason: p.pick,
+            asin: p.asin,
+            anchorId: p.anchorId,
+          }))}
+        />
+      }
     >
       <script
         type="application/ld+json"
@@ -337,6 +381,56 @@ export default function CommercialBedBugTreatmentPage() {
         traps. One of the five contains an item the source this page reads
         advises against, and that is on its card rather than buried.
       </p>
+
+      {/* Comparison table — LISTING facts only, "not stated" where absent */}
+      <h2 id="compared">The Five Compared</h2>
+      <p>
+        Every column below is what the Amazon listing itself states, with each
+        claim attributed to the maker who makes it. Where a listing does not
+        state something, the cell says so rather than guessing.
+      </p>
+      <div className="not-prose overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-[var(--color-paper-sunk)]">
+              <th className="text-left p-2 border-b font-semibold">Product</th>
+              <th className="text-left p-2 border-b font-semibold">What is in the box</th>
+              <th className="text-left p-2 border-b font-semibold">Actives, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Quantity or coverage, as listed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.asin} className="align-top">
+                {p.tableCells.map((c, i) => (
+                  <td key={i} className="p-2 border-b">
+                    {c}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {products.map((p, i) => (
+        <div key={p.asin}>
+          <h2 id={p.anchorId}>
+            {p.h2Label} &mdash; {p.h2Name}
+          </h2>
+          <div className="not-prose my-6">
+            <ProductCard
+              name={p.cardName}
+              features={p.features}
+              asin={p.asin}
+              bestFor={p.cardLabel}
+              rank={p.rank}
+            />
+          </div>
+          <p>{p.blurb}</p>
+          <ProsList pros={p.pros} />
+        </div>
+      ))}
 
       {/* DECISION BLOCK — situation first, product second. The legal line and the
           does-not-work line sit ABOVE every product line. NOT a card: no Amazon link,
@@ -546,33 +640,6 @@ export default function CommercialBedBugTreatmentPage() {
         blind.
       </p>
 
-      {products.map((p, i) => (
-        <div key={p.asin}>
-          <h2 id={p.anchorId}>
-            {p.h2Label} &mdash; {p.h2Name}
-          </h2>
-          <div className="not-prose my-6">
-            <ProductCard
-              name={p.cardName}
-              features={p.features}
-              asin={p.asin}
-              bestFor={p.cardLabel}
-              rank={p.rank}
-            />
-          </div>
-          <p>
-            {
-              [
-                "The only concentrate on the page, supplied with a 5 litre pressure sprayer. Its maker states three active ingredients with tetramethrin given at 0.9%, states the formulation was recently approved for amateur use, and states that the bottle makes ten litres of diluted spray. Its own detail rows then read Aerosol for item form and 100 millilitres for unit count, neither of which describes a concentrate; both readings are on the card.",
-                "Two litres of ready-to-use spray in two bottles, with the maker stating three actives including an insect growth regulator and coverage of 50 square metres in a single application. Listed as water-based, non-staining and low-odour, and for application directly to bed frames and mattresses. No active substance appears in its detail rows, so the comparison cell records the maker's description rather than a name.",
-                "The bulk option: five litres ready to use with a pressure sprayer, and the only listing here whose detail rows actually name the actives — cypermethrin and tetramethrin, with the maker giving cypermethrin at 0.1% w/w. Its maker states residual action continuing up to three months and describes the product as HSE registered for household environments.",
-                "Three items in one box: a litre of spray, 300g of powder and a fogger bomb, with the maker stating a treatment for one room and a residue lasting up to twelve weeks. UC IPM does not recommend over-the-counter total-release aerosol foggers for bed bugs and calls them potentially harmful to residents; that is the source's position on one of the three items, it is quoted in full above, and it is on this card because a reader deciding here needs it here.",
-                "The only item on the page with no insecticide in it. Eight cups that sit under bed and furniture legs, with a target species row of Bed Bug and a listing stating no chemicals or pesticides. Its maker describes bed bugs climbing the textured exterior and being unable to escape the inner reservoir, and states that eight traps cover two beds. Listed for hotels, hostels, dormitories, hospitals and nursing homes.",
-              ][i]
-            }
-          </p>
-        </div>
-      ))}
 
       {/* Alternatives */}
       <h2 id="alternatives">If a Spray Is Not the Answer</h2>
@@ -637,36 +704,6 @@ export default function CommercialBedBugTreatmentPage() {
         </li>
       </ol>
 
-      {/* Comparison table — LISTING facts only, "not stated" where absent */}
-      <h2 id="compared">The Five Compared</h2>
-      <p>
-        Every column below is what the Amazon listing itself states, with each
-        claim attributed to the maker who makes it. Where a listing does not
-        state something, the cell says so rather than guessing.
-      </p>
-      <div className="not-prose overflow-x-auto my-6">
-        <table className="w-full text-sm border-collapse">
-          <thead>
-            <tr className="bg-[var(--color-paper-sunk)]">
-              <th className="text-left p-2 border-b font-semibold">Product</th>
-              <th className="text-left p-2 border-b font-semibold">What is in the box</th>
-              <th className="text-left p-2 border-b font-semibold">Actives, as listed</th>
-              <th className="text-left p-2 border-b font-semibold">Quantity or coverage, as listed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.asin} className="align-top">
-                {p.tableCells.map((c, i) => (
-                  <td key={i} className="p-2 border-b">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
 
       {/* FAQ — rendered from the same array the schema above is derived from */}
       <h2 id="faq">Frequently Asked Questions</h2>
