@@ -51,14 +51,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Commercial Bird Proofing UK 2026 | Netting & Spikes",
     description:
-      "Seven bird proofing products compared on their own listings, with the law on wild birds and the exclusion specs two extensions publish.",
+      "Commercial bird proofing for UK businesses: heavy-duty netting, stainless steel spikes, bird wire systems, optical gel and solar panel mesh.",
     alternates: {
       canonical: "https://pestproindex.com/best/commercial-bird-proofing",
     },
     openGraph: {
       title: "Best Commercial Bird Proofing UK 2026 | Netting & Spikes",
       description:
-        "Seven bird proofing products compared on their own listings, with the law on wild birds and the exclusion specs two extensions publish.",
+        "Commercial bird proofing for UK businesses: heavy-duty netting, stainless steel spikes, bird wire systems, optical gel and solar panel mesh.",
       url: "https://pestproindex.com/best/commercial-bird-proofing",
       type: "article",
       siteName: "PestPro Index",
@@ -71,7 +71,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Commercial Bird Proofing UK 2026 | Netting & Spikes",
   description:
-    "Seven bird proofing products compared on their own listings, with the law on wild birds and the exclusion specs two extensions publish.",
+    "Commercial bird proofing for UK businesses: heavy-duty netting, stainless steel spikes, bird wire systems, optical gel and solar panel mesh.",
   datePublished: "2026-03-18",
   dateModified: "2026-09-09",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

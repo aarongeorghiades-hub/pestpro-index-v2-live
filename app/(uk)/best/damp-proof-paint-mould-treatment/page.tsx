@@ -25,14 +25,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Damp-Proof Paint & Mould Treatment UK 2026",
     description:
-      "Mould killer sprays, stain-blocking primers and anti-mould paints for landlords, with what the Awaab's Law guidance requires and what the listings state.",
+      "Anti-mould paint, damp sealers and mould killers for landlords remediating condensation damp and mould in rental properties.",
     alternates: {
       canonical: "https://pestproindex.com/best/damp-proof-paint-mould-treatment",
     },
     openGraph: {
       title: "Best Damp-Proof Paint & Mould Treatment UK 2026",
       description:
-        "Mould killer sprays, stain-blocking primers and anti-mould paints for landlords, with what the Awaab's Law guidance requires and what the listings state.",
+        "Anti-mould paint, damp sealers and mould killers for landlords remediating condensation damp and mould in rental properties.",
       url: "https://pestproindex.com/best/damp-proof-paint-mould-treatment",
       type: "article",
       siteName: "PestPro Index",
@@ -43,9 +43,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Damp-Proof Paint & Mould Treatment UK 2026",
+  headline: "Best Damp-Proof Paint & Mould Treatment Products for Landlords (2026)",
   description:
-    "Mould killer sprays, stain-blocking primers and anti-mould paints for landlords, with what the Awaab's Law guidance requires and what the listings state.",
+    "Anti-mould paint, damp sealers and mould killers for landlords remediating condensation damp and mould in rental properties.",
   datePublished: "2026-04-07",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

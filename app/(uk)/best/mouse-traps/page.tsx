@@ -19,12 +19,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Mouse Traps UK 2026",
     description:
-      "Mouse traps for UK homes: what the spring trap rules say, why a 6mm gap matters more than the trap, and five products compared on their own listings.",
+      "The best mouse traps you can buy in the UK for 2026. Snap traps, electronic traps, humane live-catch options and bait stations.",
     alternates: { canonical: "https://pestproindex.com/best/mouse-traps" },
     openGraph: {
       title: "Best Mouse Traps UK 2026",
       description:
-        "Mouse traps for UK homes: what the spring trap rules say, why a 6mm gap matters more than the trap, and five products compared on their own listings.",
+        "The best mouse traps you can buy in the UK for 2026. Snap traps, electronic traps, humane live-catch options and bait stations.",
       url: "https://pestproindex.com/best/mouse-traps",
       type: "article",
       siteName: "PestPro Index",
@@ -37,7 +37,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Mouse Traps UK 2026",
   description:
-    "Mouse traps for UK homes: what the spring trap rules say, why a 6mm gap matters more than the trap, and five products compared on their own listings.",
+    "The best mouse traps you can buy in the UK for 2026. Snap traps, electronic traps, humane live-catch options and bait stations.",
   datePublished: "2026-03-14",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

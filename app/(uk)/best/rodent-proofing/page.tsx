@@ -22,12 +22,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Rodent Proofing Products UK 2026 | Mesh, Wool & Drain Guards",
     description:
-      "Rodent proofing for UK homes: the 6mm gap, what rats and mice gnaw through, why the guidance puts proofing first, and five products on their own listings.",
+      "Rodent proofing materials for UK homes: galvanised wire mesh, stainless steel wool fill fabric, drain guards, door brush strips and proofing paste compared.",
     alternates: { canonical: "https://pestproindex.com/best/rodent-proofing" },
     openGraph: {
       title: "Best Rodent Proofing Products UK 2026 | Mesh, Wool & Drain Guards",
       description:
-        "Rodent proofing for UK homes: the 6mm gap, what rats and mice gnaw through, why the guidance puts proofing first, and five products on their own listings.",
+        "Rodent proofing materials for UK homes: galvanised wire mesh, stainless steel wool fill fabric, drain guards, door brush strips and proofing paste compared.",
       url: "https://pestproindex.com/best/rodent-proofing",
       type: "article",
       siteName: "PestPro Index",
@@ -40,7 +40,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Rodent Proofing Products UK 2026 | Mesh, Wool & Drain Guards",
   description:
-    "Rodent proofing for UK homes: the 6mm gap, what rats and mice gnaw through, why the guidance puts proofing first, and five products on their own listings.",
+    "Rodent proofing materials for UK homes: galvanised wire mesh, stainless steel wool fill fabric, drain guards, door brush strips and proofing paste compared.",
   datePublished: "2026-08-12",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

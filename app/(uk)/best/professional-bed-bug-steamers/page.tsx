@@ -42,14 +42,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Professional Bed Bug Steamers UK (2026)",
     description:
-      "Four steam cleaners compared on their own listings, beside what UC IPM says about steam, heat and the temperature that kills bed bugs.",
+      "Top bed bug steamers for landlords, facilities managers & property investors. Commercial-grade heat treatment that kills on contact.",
     alternates: {
       canonical: "https://pestproindex.com/best/professional-bed-bug-steamers",
     },
     openGraph: {
       title: "Best Professional Bed Bug Steamers UK (2026)",
       description:
-        "Four steam cleaners compared on their own listings, beside what UC IPM says about steam, heat and the temperature that kills bed bugs.",
+        "Top bed bug steamers for landlords, facilities managers & property investors. Commercial-grade heat treatment that kills on contact.",
       url: "https://pestproindex.com/best/professional-bed-bug-steamers",
       type: "article",
       siteName: "PestPro Index",
@@ -62,7 +62,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Professional Bed Bug Steamers UK (2026)",
   description:
-    "Four steam cleaners compared on their own listings, beside what UC IPM says about steam, heat and the temperature that kills bed bugs.",
+    "Top bed bug steamers for landlords, facilities managers & property investors. Commercial-grade heat treatment that kills on contact.",
   datePublished: "2026-04-06",
   dateModified: "2026-09-09",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

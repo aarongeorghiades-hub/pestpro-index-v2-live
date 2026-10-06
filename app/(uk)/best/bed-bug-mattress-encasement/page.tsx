@@ -36,14 +36,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Bed Bug Mattress Encasement UK 2026",
     description:
-      "Four zipped mattress encasements compared on their own listings, with what UC IPM and the NHS say about bed bugs and encasements.",
+      "Our pick of the best bed bug mattress encasements available in the UK for 2026. Zippered protectors for bed bug protection, comfort, and durability.",
     alternates: {
       canonical: "https://pestproindex.com/best/bed-bug-mattress-encasement",
     },
     openGraph: {
       title: "Best Bed Bug Mattress Encasement UK 2026",
       description:
-        "Four zipped mattress encasements compared on their own listings, with what UC IPM and the NHS say about bed bugs and encasements.",
+        "Our pick of the best bed bug mattress encasements available in the UK for 2026. Zippered protectors for bed bug protection, comfort, and durability.",
       url: "https://pestproindex.com/best/bed-bug-mattress-encasement",
       type: "article",
       siteName: "PestPro Index",
@@ -56,7 +56,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Bed Bug Mattress Encasement UK 2026",
   description:
-    "Four zipped mattress encasements compared on their own listings, with what UC IPM and the NHS say about bed bugs and encasements.",
+    "Our pick of the best bed bug mattress encasements available in the UK for 2026. Zippered protectors for bed bug protection, comfort, and durability.",
   datePublished: "2026-03-30",
   dateModified: "2026-09-09",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

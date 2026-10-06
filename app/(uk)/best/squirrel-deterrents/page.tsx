@@ -23,14 +23,14 @@ import DecisionBox from '@/components/DecisionBox';
 // before they use it, not after.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Squirrel Deterrents UK 2026: Feeders, Baffles, Sprays & Traps",
+    title: "Best Squirrel Deterrents UK 2026: Top 5",
     description:
-      "Squirrel deterrents for UK gardens: what the law says about trapping and release, and five products described by what their own listings state.",
+      "Our pick of the best squirrel deterrents for UK homes and gardens. From repellent sprays to squirrel-proof bird feeders and humane traps.",
     alternates: { canonical: "https://pestproindex.com/best/squirrel-deterrents" },
     openGraph: {
-      title: "Best Squirrel Deterrents UK 2026: Feeders, Baffles, Sprays & Traps",
+      title: "Best Squirrel Deterrents UK 2026: Top 5",
       description:
-        "Squirrel deterrents for UK gardens: what the law says about trapping and release, and five products described by what their own listings state.",
+        "Our pick of the best squirrel deterrents for UK homes and gardens. From repellent sprays to squirrel-proof bird feeders and humane traps.",
       url: "https://pestproindex.com/best/squirrel-deterrents",
       type: "article",
       siteName: "PestPro Index",
@@ -41,9 +41,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Squirrel Deterrents UK 2026: Feeders, Baffles, Sprays & Traps",
+  headline: "Best Squirrel Deterrents UK 2026: Top 5",
   description:
-    "Squirrel deterrents for UK gardens: what the law says about trapping and release, and five products described by what their own listings state.",
+    "Our pick of the best squirrel deterrents for UK homes and gardens. From repellent sprays to squirrel-proof bird feeders and humane traps.",
   datePublished: "2026-03-17",
   dateModified: "2026-09-08",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

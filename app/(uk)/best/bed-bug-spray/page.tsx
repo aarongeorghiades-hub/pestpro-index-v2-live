@@ -19,14 +19,14 @@ import DecisionBox from '@/components/DecisionBox';
 // the five products are kits rather than sprays and the old names did not always say so.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Bed Bug Spray UK 2026: Sprays and Kits Compared",
+    title: "Best Bed Bug Spray UK 2026: Kill Bed Bugs Fast",
     description:
-      "Bed bug sprays and kits for UK homes: what the NHS says about treating an infestation yourself, and five compared on what the listings state.",
+      "Our pick of the best bed bug sprays available in the UK for 2026. Sprays and spray-and-powder kits, with buying advice.",
     alternates: { canonical: "https://pestproindex.com/best/bed-bug-spray" },
     openGraph: {
-      title: "Best Bed Bug Spray UK 2026: Sprays and Kits Compared",
+      title: "Best Bed Bug Spray UK 2026: Kill Bed Bugs Fast",
       description:
-        "Bed bug sprays and kits for UK homes: what the NHS says about treating an infestation yourself, and five compared on what the listings state.",
+        "Our pick of the best bed bug sprays available in the UK for 2026. Sprays and spray-and-powder kits, with buying advice.",
       url: "https://pestproindex.com/best/bed-bug-spray",
       type: "article",
       siteName: "PestPro Index",
@@ -37,9 +37,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Bed Bug Spray UK 2026: Sprays and Kits Compared",
+  headline: "Best Bed Bug Spray UK 2026: Kill Bed Bugs Fast",
   description:
-    "Bed bug sprays and kits for UK homes: what the NHS says about treating an infestation yourself, and five compared on what the listings state.",
+    "Our pick of the best bed bug sprays available in the UK for 2026. Sprays and spray-and-powder kits, with buying advice.",
   datePublished: "2026-03-30",
   dateModified: "2026-09-09",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

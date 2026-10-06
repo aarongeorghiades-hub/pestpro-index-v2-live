@@ -33,12 +33,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Ultrasonic Pest Repellers UK 2026 | Do They Work?",
     description:
-      "Ultrasonic pest repellers in the UK: the ASA has accepted no efficacy claim, what the wildlife-damage literature reports, and six units as their listings state.",
+      "Our pick of the ultrasonic pest repellers sold in the UK, with the evidence on effectiveness and a buyer's guide.",
     alternates: { canonical: "https://pestproindex.com/best/ultrasonic-pest-repellers" },
     openGraph: {
       title: "Best Ultrasonic Pest Repellers UK 2026 | Do They Work?",
       description:
-        "Ultrasonic pest repellers in the UK: the ASA has accepted no efficacy claim, what the wildlife-damage literature reports, and six units as their listings state.",
+        "Our pick of the ultrasonic pest repellers sold in the UK, with the evidence on effectiveness and a buyer's guide.",
       url: "https://pestproindex.com/best/ultrasonic-pest-repellers",
       type: "article",
       siteName: "PestPro Index",
@@ -51,7 +51,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Ultrasonic Pest Repellers UK 2026 | Do They Work?",
   description:
-    "Ultrasonic pest repellers in the UK: the ASA has accepted no efficacy claim, what the wildlife-damage literature reports, and six units as their listings state.",
+    "Our pick of the ultrasonic pest repellers sold in the UK, with the evidence on effectiveness and a buyer's guide.",
   datePublished: "2026-03-31",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

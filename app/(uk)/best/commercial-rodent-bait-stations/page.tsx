@@ -18,14 +18,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Commercial Rodent Bait Stations UK 2026",
     description:
-      "Tamper-resistant rodent bait stations and bait kits for UK premises: the stewardship rules on professional use, and nine compared on what the listings state.",
+      "Our pick of tamper-resistant rodent bait stations for UK businesses and warehouses. Lockable bait boxes for professional pest control.",
     alternates: {
       canonical: "https://pestproindex.com/best/commercial-rodent-bait-stations",
     },
     openGraph: {
       title: "Best Commercial Rodent Bait Stations UK 2026",
       description:
-        "Tamper-resistant rodent bait stations and bait kits for UK premises: the stewardship rules on professional use, and nine compared on what the listings state.",
+        "Our pick of tamper-resistant rodent bait stations for UK businesses and warehouses. Lockable bait boxes for professional pest control.",
       url: "https://pestproindex.com/best/commercial-rodent-bait-stations",
       type: "article",
       siteName: "PestPro Index",
@@ -38,7 +38,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Commercial Rodent Bait Stations UK 2026",
   description:
-    "Tamper-resistant rodent bait stations and bait kits for UK premises: the stewardship rules on professional use, and nine compared on what the listings state.",
+    "Our pick of tamper-resistant rodent bait stations for UK businesses and warehouses. Lockable bait boxes for professional pest control.",
   datePublished: "2026-03-17",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

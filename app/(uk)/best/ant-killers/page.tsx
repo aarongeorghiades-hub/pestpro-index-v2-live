@@ -26,14 +26,14 @@ import DecisionBox from '@/components/DecisionBox';
 // pets", an own-voice safety claim (standing safety ruling, S68 R5).
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Ant Killer Products UK 2026: Bait Stations and Gel",
+    title: "Best Ant Killer Products UK 2026: Bait Stations",
     description:
-      "Two ant bait stations and a gel bait compared on their own listings, beside what UC IPM says about baits against foundation sprays.",
+      "The best ant killer products for UK homes in 2026. Bait stations compared, with pros and buying advice.",
     alternates: { canonical: "https://pestproindex.com/best/ant-killers" },
     openGraph: {
-      title: "Best Ant Killer Products UK 2026: Bait Stations and Gel",
+      title: "Best Ant Killer Products UK 2026: Bait Stations",
       description:
-        "Two ant bait stations and a gel bait compared on their own listings, beside what UC IPM says about baits against foundation sprays.",
+        "The best ant killer products for UK homes in 2026. Bait stations compared, with pros and buying advice.",
       url: "https://pestproindex.com/best/ant-killers",
       type: "article",
       siteName: "PestPro Index",
@@ -44,9 +44,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Ant Killer Products UK 2026: Bait Stations and Gel",
+  headline: "Best Ant Killer Products UK 2026: Bait Stations",
   description:
-    "Two ant bait stations and a gel bait compared on their own listings, beside what UC IPM says about baits against foundation sprays.",
+    "The best ant killer products for UK homes in 2026. Bait stations compared, with pros and buying advice.",
   datePublished: "2026-03-17",
   dateModified: "2026-09-09",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

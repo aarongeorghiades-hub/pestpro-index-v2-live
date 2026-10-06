@@ -23,14 +23,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Professional Bait Station Kits UK (2026)",
     description:
-      "Bait station kits for landlords: the station standard the label requires, who may use the bait inside, and five compared on what the listings state.",
+      "Trade-grade rat & mouse bait station kits for landlords, facilities managers & HMO operators. Tamper-resistant.",
     alternates: {
       canonical: "https://pestproindex.com/best/professional-bait-station-kits",
     },
     openGraph: {
       title: "Best Professional Bait Station Kits UK (2026)",
       description:
-        "Bait station kits for landlords: the station standard the label requires, who may use the bait inside, and five compared on what the listings state.",
+        "Trade-grade rat & mouse bait station kits for landlords, facilities managers & HMO operators. Tamper-resistant.",
       url: "https://pestproindex.com/best/professional-bait-station-kits",
       type: "article",
       siteName: "PestPro Index",
@@ -41,9 +41,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Professional Bait Station Kits UK (2026)",
+  headline: "Best Professional Rat & Mouse Bait Station Kits for Landlords (2026)",
   description:
-    "Bait station kits for landlords: the station standard the label requires, who may use the bait inside, and five compared on what the listings state.",
+    "Trade-grade rat & mouse bait station kits for landlords, facilities managers & HMO operators. Tamper-resistant.",
   datePublished: "2026-04-06",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

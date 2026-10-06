@@ -38,14 +38,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Commercial Bed Bug Treatment UK 2026 | Sprays & Monitors",
     description:
-      "Commercial bed bug products compared on their own listings: three sprays, a room kit and interceptor traps, with UC IPM and the NHS.",
+      "Professional-grade bed bug treatment for UK hotels, B&Bs and commercial premises. Concentrate kits, sprays, bulk treatments and monitoring traps.",
     alternates: {
       canonical: "https://pestproindex.com/best/commercial-insect-monitors",
     },
     openGraph: {
       title: "Commercial Bed Bug Treatment UK 2026 | Sprays & Monitors",
       description:
-        "Commercial bed bug products compared on their own listings: three sprays, a room kit and interceptor traps, with UC IPM and the NHS.",
+        "Professional-grade bed bug treatment for UK hotels, B&Bs and commercial premises. Concentrate kits, sprays, bulk treatments and monitoring traps.",
       url: "https://pestproindex.com/best/commercial-insect-monitors",
       type: "article",
       siteName: "PestPro Index",
@@ -58,7 +58,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Commercial Bed Bug Treatment UK 2026 | Sprays & Monitors",
   description:
-    "Commercial bed bug products compared on their own listings: three sprays, a room kit and interceptor traps, with UC IPM and the NHS.",
+    "Professional-grade bed bug treatment for UK hotels, B&Bs and commercial premises. Concentrate kits, sprays, bulk treatments and monitoring traps.",
   datePublished: "2026-03-18",
   dateModified: "2026-09-09",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

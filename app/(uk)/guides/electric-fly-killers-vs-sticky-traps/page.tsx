@@ -7,16 +7,16 @@ import Callout, { StatCallout } from '@/components/Callout';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Electric Fly Killers vs Sticky Traps',
+    title: 'Electric Fly Killers vs Sticky Traps: Which Is Better? (UK 2026)',
     description:
-      'The two catch flies by different means and suit different rooms. Compared on coverage, running cost, hygiene in a food area and the mess each leaves.',
+      'A side-by-side comparison of UV electric fly killers and sticky fly traps for UK homes and businesses. Effectiveness, hygiene, cost, and our top product picks.',
     alternates: {
       canonical: 'https://pestproindex.com/guides/electric-fly-killers-vs-sticky-traps',
     },
     openGraph: {
-      title: 'Electric Fly Killers vs Sticky Traps',
+      title: 'Electric Fly Killers vs Sticky Traps: Which Is Better? (UK 2026)',
       description:
-        'The two catch flies by different means and suit different rooms. Compared on coverage, running cost, hygiene in a food area and the mess each leaves.',
+        'A side-by-side comparison of UV electric fly killers and sticky fly traps for UK homes and businesses. Effectiveness, hygiene, cost, and our top product picks.',
       url: 'https://pestproindex.com/guides/electric-fly-killers-vs-sticky-traps',
       type: 'article',
       siteName: 'PestPro Index',
@@ -27,9 +27,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Electric Fly Killers vs Sticky Traps',
+  headline: 'Electric Fly Killers vs Sticky Traps: Which Is Better? (UK 2026)',
   description:
-    'The two catch flies by different means and suit different rooms. Compared on coverage, running cost, hygiene in a food area and the mess each leaves.',
+    'A side-by-side comparison of UV electric fly killers and sticky fly traps for UK homes and businesses. Effectiveness, hygiene, cost, and our top product picks.',
   datePublished: '2026-03-31',
   dateModified: '2026-03-31',
   author: {

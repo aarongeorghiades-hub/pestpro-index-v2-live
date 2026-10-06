@@ -30,14 +30,14 @@ import DecisionBox from '@/components/DecisionBox';
 // FAQ block and FAQPage schema removed together (Law 190).
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Flea Fogger UK 2026: Flea Bombs and Sprays Compared",
+    title: "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
     description:
-      "Only one of the five is a fogger. What a total-release fogger cannot reach, the fire risk the guidance warns about, and five flea products on their own listings.",
+      "Our pick of the best flea foggers (flea bombs) in the UK for 2026. An aerosol flea bomb and household flea sprays, with application advice.",
     alternates: { canonical: "https://pestproindex.com/best/flea-fogger" },
     openGraph: {
-      title: "Best Flea Fogger UK 2026: Flea Bombs and Sprays Compared",
+      title: "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
       description:
-        "Only one of the five is a fogger. What a total-release fogger cannot reach, the fire risk the guidance warns about, and five flea products on their own listings.",
+        "Our pick of the best flea foggers (flea bombs) in the UK for 2026. An aerosol flea bomb and household flea sprays, with application advice.",
       url: "https://pestproindex.com/best/flea-fogger",
       type: "article",
       siteName: "PestPro Index",
@@ -48,9 +48,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Flea Fogger UK 2026: Flea Bombs and Sprays Compared",
+  headline: "Best Flea Fogger UK 2026: Flea Bombs That Actually Work",
   description:
-    "Only one of the five is a fogger. What a total-release fogger cannot reach, the fire risk the guidance warns about, and five flea products on their own listings.",
+    "Our pick of the best flea foggers (flea bombs) in the UK for 2026. An aerosol flea bomb and household flea sprays, with application advice.",
   datePublished: "2026-03-30",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

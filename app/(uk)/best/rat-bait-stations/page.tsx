@@ -17,12 +17,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Rat Bait Stations UK 2026: Tamper-Resistant & Lockable",
     description:
-      "Lockable rat bait stations for UK homes: the standard a station has to meet, what the label requires of you, and five compared on what the listings state.",
+      "Our pick of the best rat bait stations in the UK for 2026. Lockable, tamper-resistant stations for poison, with placement advice.",
     alternates: { canonical: "https://pestproindex.com/best/rat-bait-stations" },
     openGraph: {
       title: "Best Rat Bait Stations UK 2026: Tamper-Resistant & Lockable",
       description:
-        "Lockable rat bait stations for UK homes: the standard a station has to meet, what the label requires of you, and five compared on what the listings state.",
+        "Our pick of the best rat bait stations in the UK for 2026. Lockable, tamper-resistant stations for poison, with placement advice.",
       url: "https://pestproindex.com/best/rat-bait-stations",
       type: "article",
       siteName: "PestPro Index",
@@ -35,7 +35,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Rat Bait Stations UK 2026: Tamper-Resistant & Lockable",
   description:
-    "Lockable rat bait stations for UK homes: the standard a station has to meet, what the label requires of you, and five compared on what the listings state.",
+    "Our pick of the best rat bait stations in the UK for 2026. Lockable, tamper-resistant stations for poison, with placement advice.",
   datePublished: "2026-03-30",
   dateModified: "2026-09-06",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

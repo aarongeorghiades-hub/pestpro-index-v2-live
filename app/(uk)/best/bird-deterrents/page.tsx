@@ -24,14 +24,14 @@ import TopPicks, { ProsList } from "@/components/TopPicks";
 // HISTORIC ENGLAND IS TWICE-BLOCKED AND TERMINAL under Law 137; no attempt was made.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Bird Deterrents UK 2026 | Spikes & Optical Gel",
+    title: "Best Bird Deterrents UK 2026 | Top 4",
     description:
-      "Bird deterrents for UK homes: every wild bird is protected by law, what that means for spikes, and four products described by their own listings.",
+      "Our pick of the best bird and pigeon deterrents for UK homes and businesses. Spikes and optical gel — with honest pros.",
     alternates: { canonical: "https://pestproindex.com/best/bird-deterrents" },
     openGraph: {
-      title: "Best Bird Deterrents UK 2026 | Spikes & Optical Gel",
+      title: "Best Bird Deterrents UK 2026 | Top 4",
       description:
-        "Bird deterrents for UK homes: every wild bird is protected by law, what that means for spikes, and four products described by their own listings.",
+        "Our pick of the best bird and pigeon deterrents for UK homes and businesses. Spikes and optical gel — with honest pros.",
       url: "https://pestproindex.com/best/bird-deterrents",
       type: "article",
       siteName: "PestPro Index",
@@ -42,9 +42,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Bird Deterrents UK 2026: Spikes & Optical Gel",
+  headline: "Best Bird Deterrents UK 2026: Top 4",
   description:
-    "Bird deterrents for UK homes: every wild bird is protected by law, what that means for spikes, and four products described by their own listings.",
+    "Our pick of the best bird and pigeon deterrents for UK homes and businesses. Spikes and optical gel — with honest pros.",
   datePublished: "2026-03-17",
   dateModified: "2026-09-08",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

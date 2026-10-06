@@ -38,16 +38,16 @@ import DecisionBox from '@/components/DecisionBox';
 // none of. Replaced with what it does card. Head keyword kept byte-identical.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Silverfish Treatments UK 2026 — Sprays, Traps & Powder",
+    title: "Best Silverfish Treatments UK 2026 — Sprays & Traps",
     description:
-      "Silverfish treatments for UK homes compared on their own listings: a spray, sticky traps, a dehumidifier and an insecticidal powder.",
+      "Our pick of the best silverfish treatments available in the UK. Compare insecticidal sprays, powder, sticky traps, and prevention products.",
     alternates: {
       canonical: "https://pestproindex.com/best/silverfish-treatments",
     },
     openGraph: {
-      title: "Best Silverfish Treatments UK 2026 — Sprays, Traps & Powder",
+      title: "Best Silverfish Treatments UK 2026 — Sprays & Traps",
       description:
-        "Silverfish treatments for UK homes compared on their own listings: a spray, sticky traps, a dehumidifier and an insecticidal powder.",
+        "Our pick of the best silverfish treatments available in the UK. Compare insecticidal sprays, powder, sticky traps, and prevention products.",
       url: "https://pestproindex.com/best/silverfish-treatments",
       type: "article",
       siteName: "PestPro Index",
@@ -58,9 +58,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Silverfish Treatments UK 2026 — Sprays, Traps & Powder",
+  headline: "Best Silverfish Treatments UK 2026 — Sprays & Traps",
   description:
-    "Silverfish treatments for UK homes compared on their own listings: a spray, sticky traps, a dehumidifier and an insecticidal powder.",
+    "Our pick of the best silverfish treatments available in the UK. Compare insecticidal sprays, powder, sticky traps, and prevention products.",
   datePublished: "2026-03-18",
   dateModified: "2026-09-09",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

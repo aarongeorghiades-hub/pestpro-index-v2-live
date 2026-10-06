@@ -21,14 +21,14 @@ import DecisionBox from '@/components/DecisionBox';
 // products are the ones that are not stated brodifacoum.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Mouse Poison UK 2026: What You Can Legally Buy",
+    title: "Best Mouse Poison UK 2026: Strongest & Most Effective",
     description:
-      "Mouse poison for UK homes: which active substance official guidance names for house mice, what the label requires, and five compared on what the listings state.",
+      "Our pick of the best mouse poison available in the UK for 2026. Brodifacoum grain bait and bait blocks, with safety advice.",
     alternates: { canonical: "https://pestproindex.com/best/mouse-poison" },
     openGraph: {
-      title: "Best Mouse Poison UK 2026: What You Can Legally Buy",
+      title: "Best Mouse Poison UK 2026: Strongest & Most Effective",
       description:
-        "Mouse poison for UK homes: which active substance official guidance names for house mice, what the label requires, and five compared on what the listings state.",
+        "Our pick of the best mouse poison available in the UK for 2026. Brodifacoum grain bait and bait blocks, with safety advice.",
       url: "https://pestproindex.com/best/mouse-poison",
       type: "article",
       siteName: "PestPro Index",
@@ -39,9 +39,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Mouse Poison UK 2026: What You Can Legally Buy",
+  headline: "Best Mouse Poison UK 2026: Strongest & Most Effective",
   description:
-    "Mouse poison for UK homes: which active substance official guidance names for house mice, what the label requires, and five compared on what the listings state.",
+    "Our pick of the best mouse poison available in the UK for 2026. Brodifacoum grain bait and bait blocks, with safety advice.",
   datePublished: "2026-03-30",
   dateModified: "2026-09-06",
   author: {

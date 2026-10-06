@@ -29,14 +29,14 @@ import DecisionBox from '@/components/DecisionBox';
 // ruling and the mismatch is referred.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Cockroach Gel Bait UK 2026: Sprays and Kits Compared",
+    title: "Best Cockroach Gel Bait UK 2026: Kill the Nest",
     description:
-      "What is sold for cockroaches in the UK: four contact sprays and one gel bait compared on their own listings, and why baiting and sanitation do the real work.",
+      "Our pick of the best cockroach gel baits in the UK for 2026. Professional-grade gels, sprays and IGR products, with application advice.",
     alternates: { canonical: "https://pestproindex.com/best/cockroach-gel-bait" },
     openGraph: {
-      title: "Best Cockroach Gel Bait UK 2026: Sprays and Kits Compared",
+      title: "Best Cockroach Gel Bait UK 2026: Kill the Nest",
       description:
-        "What is sold for cockroaches in the UK: four contact sprays and one gel bait compared on their own listings, and why baiting and sanitation do the real work.",
+        "Our pick of the best cockroach gel baits in the UK for 2026. Professional-grade gels, sprays and IGR products, with application advice.",
       url: "https://pestproindex.com/best/cockroach-gel-bait",
       type: "article",
       siteName: "PestPro Index",
@@ -47,9 +47,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Cockroach Gel Bait UK 2026: Sprays and Kits Compared",
+  headline: "Best Cockroach Gel Bait UK 2026: Kill the Nest",
   description:
-    "What is sold for cockroaches in the UK: four contact sprays and one gel bait compared on their own listings, and why baiting and sanitation do the real work.",
+    "Our pick of the best cockroach gel baits in the UK for 2026. Professional-grade gels, sprays and IGR products, with application advice.",
   datePublished: "2026-03-30",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

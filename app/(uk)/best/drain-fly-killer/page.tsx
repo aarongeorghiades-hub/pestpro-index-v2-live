@@ -19,25 +19,16 @@ import DecisionBox from '@/components/DecisionBox';
 // and a label reading "Best for Prevention" hid that fact behind an award. The award
 // survives only on card 1, where the listing supports it: it is the one product poured
 // into the drain. The same string is carried on the card, the h2 and the table.
-//
-// A NEVER TOUCH COLLISION, HANDLED IN PLACE RATHER THAN BY STOPPING THE ROUTE.
-// CLAUDE.md protects the string "The most effective drain fly killers" BY NAME. It sits
-// in this page's subtitle, and it is a superlative in our own voice — exactly what a
-// rebuild would otherwise delete. Law 192 does not reach it: that law covers a protected
-// LABEL introducing claim content, and here the protected string IS the claim. So THE
-// PROTECTED PHRASE SURVIVES BYTE-FOR-BYTE at the head of the subtitle, and only the
-// unprotected remainder is corrected — it promised "enzyme treatments", which this page
-// does not card. A protection given by name is not overridden by a broad authorisation.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Drain Fly Killer UK 2026 | Gel, Aerosols and Sprays Compared",
+    title: "Best Drain Fly Killer UK 2026 | Get Rid of Drain Flies Fast",
     description:
-      "Drain flies breed in the film of organic matter inside the pipe. One product here treats the drain; three treat the room. Compared on their own listings.",
+      "Eliminate drain flies from your kitchen and bathroom. The best drain fly killers, gels and treatments for UK homes in 2026.",
     alternates: { canonical: "https://pestproindex.com/best/drain-fly-killer" },
     openGraph: {
-      title: "Best Drain Fly Killer UK 2026 | Gel, Aerosols and Sprays Compared",
+      title: "Best Drain Fly Killer UK 2026 | Get Rid of Drain Flies Fast",
       description:
-        "Drain flies breed in the film of organic matter inside the pipe. One product here treats the drain; three treat the room. Compared on their own listings.",
+        "Eliminate drain flies from your kitchen and bathroom. The best drain fly killers, gels and treatments for UK homes in 2026.",
       url: "https://pestproindex.com/best/drain-fly-killer",
       type: "article",
       siteName: "PestPro Index",
@@ -48,9 +39,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Drain Fly Killer UK 2026: Gel, Aerosols and Sprays Compared",
+  headline: "Best Drain Fly Killer UK 2026: Get Rid of Drain Flies Fast",
   description:
-    "Drain flies breed in the film of organic matter inside the pipe. One product here treats the drain; three treat the room. Compared on their own listings.",
+    "Eliminate drain flies from your kitchen and bathroom. The best drain fly killers, gels and treatments for UK homes in 2026.",
   datePublished: "2026-03-30",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

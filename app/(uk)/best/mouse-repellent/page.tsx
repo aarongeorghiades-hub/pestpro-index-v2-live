@@ -19,14 +19,14 @@ import DecisionBox from '@/components/DecisionBox';
 // a claim to card "proofing products" when NONE is carded, and "for good".
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Mouse Repellent UK 2026 | Sprays, Sachets and Ultrasonic Compared",
+    title: "Best Mouse Repellent UK 2026 | Prevention Products",
     description:
-      "What the UK advertising regulator says about mouse repellent devices, the 6mm gap that lets mice in, and four products as their own listings describe them.",
+      "The best mouse repellents for your home. Peppermint sprays, peppermint sachets and ultrasonic repellers.",
     alternates: { canonical: "https://pestproindex.com/best/mouse-repellent" },
     openGraph: {
-      title: "Best Mouse Repellent UK 2026 | Sprays, Sachets and Ultrasonic Compared",
+      title: "Best Mouse Repellent UK 2026 | Prevention Products",
       description:
-        "What the UK advertising regulator says about mouse repellent devices, the 6mm gap that lets mice in, and four products as their own listings describe them.",
+        "The best mouse repellents for your home. Peppermint sprays, peppermint sachets and ultrasonic repellers.",
       url: "https://pestproindex.com/best/mouse-repellent",
       type: "article",
       siteName: "PestPro Index",
@@ -37,9 +37,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Mouse Repellent UK 2026 | Sprays, Sachets and Ultrasonic Compared",
+  headline: "Best Mouse Repellent UK 2026 | Prevention Products",
   description:
-    "What the UK advertising regulator says about mouse repellent devices, the 6mm gap that lets mice in, and four products as their own listings describe them.",
+    "The best mouse repellents for your home. Peppermint sprays, peppermint sachets and ultrasonic repellers.",
   datePublished: "2026-03-31",
   dateModified: "2026-09-06",
   author: {

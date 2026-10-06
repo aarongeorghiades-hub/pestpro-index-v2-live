@@ -31,14 +31,14 @@ import DecisionBox from '@/components/DecisionBox';
 // /best/cockroach-killers, and the correction of record is in CLAUDE.md's S67 R6 section.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Rat Traps UK 2026",
+    title: "Best Rat Traps UK 2026: Snap Traps & Bait Stations",
     description:
-      "Rat traps for UK homes: what the law says about spring traps, why a trap catches nothing in week one, and three compared on what their listings state.",
+      "Our pick of the best rat traps available in the UK for 2026. Snap traps and bait stations compared, with pros and buying advice.",
     alternates: { canonical: "https://pestproindex.com/best/rat-traps" },
     openGraph: {
-      title: "Best Rat Traps UK 2026",
+      title: "Best Rat Traps UK 2026: Snap Traps & Bait Stations",
       description:
-        "Rat traps for UK homes: what the law says about spring traps, why a trap catches nothing in week one, and three compared on what their listings state.",
+        "Our pick of the best rat traps available in the UK for 2026. Snap traps and bait stations compared, with pros and buying advice.",
       url: "https://pestproindex.com/best/rat-traps",
       type: "article",
       siteName: "PestPro Index",
@@ -49,9 +49,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Rat Traps UK 2026",
+  headline: "Best Rat Traps UK 2026: Snap Traps & Bait Stations",
   description:
-    "Rat traps for UK homes: what the law says about spring traps, why a trap catches nothing in week one, and three compared on what their listings state.",
+    "Our pick of the best rat traps available in the UK for 2026. Snap traps and bait stations compared, with pros and buying advice.",
   datePublished: "2026-03-30",
   dateModified: "2026-09-06",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

@@ -25,14 +25,14 @@ import TopPicks, { ProsList } from "@/components/TopPicks";
 // maker's, naming no illness.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Rat Poison UK: What You Can Legally Buy",
+    title: "Best Rat Poison UK 2026: Strongest & Most Effective",
     description:
-      "Which rat poisons a UK householder may lawfully buy, why HSE says to consider other methods first, and six products compared on their own listings.",
+      "Our pick of the best rat poison available in the UK for 2026. Brodifacoum blocks, grain bait and pastes, with safety advice.",
     alternates: { canonical: "https://pestproindex.com/best/rat-poison" },
     openGraph: {
-      title: "Best Rat Poison UK: What You Can Legally Buy",
+      title: "Best Rat Poison UK 2026: Strongest & Most Effective",
       description:
-        "Which rat poisons a UK householder may lawfully buy, why HSE says to consider other methods first, and six products compared on their own listings.",
+        "Our pick of the best rat poison available in the UK for 2026. Brodifacoum blocks, grain bait and pastes, with safety advice.",
       url: "https://pestproindex.com/best/rat-poison",
       type: "article",
       siteName: "PestPro Index",
@@ -43,9 +43,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Rat Poison UK: What You Can Legally Buy",
+  headline: "Best Rat Poison UK 2026: Strongest & Most Effective",
   description:
-    "Which rat poisons a UK householder may lawfully buy, why HSE says to consider other methods first, and six products compared on their own listings.",
+    "Our pick of the best rat poison available in the UK for 2026. Brodifacoum blocks, grain bait and pastes, with safety advice.",
   datePublished: "2026-03-30",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

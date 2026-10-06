@@ -26,14 +26,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Commercial Insect Light Traps UK (2026)",
     description:
-      "Electric grid insect light traps for commercial premises: what extension guidance says about placement and fragments, and four compared as listed.",
+      "Professional UV insect light traps for restaurants, warehouses and offices. Institutional-grade fly killers from Insect-O-Cutor & Aspectek.",
     alternates: {
       canonical: "https://pestproindex.com/best/professional-insect-light-traps",
     },
     openGraph: {
       title: "Best Commercial Insect Light Traps UK (2026)",
       description:
-        "Electric grid insect light traps for commercial premises: what extension guidance says about placement and fragments, and four compared as listed.",
+        "Professional UV insect light traps for restaurants, warehouses and offices. Institutional-grade fly killers from Insect-O-Cutor & Aspectek.",
       url: "https://pestproindex.com/best/professional-insect-light-traps",
       type: "article",
       siteName: "PestPro Index",
@@ -46,7 +46,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Commercial Insect Light Traps UK (2026)",
   description:
-    "Electric grid insect light traps for commercial premises: what extension guidance says about placement and fragments, and four compared as listed.",
+    "Professional UV insect light traps for restaurants, warehouses and offices. Institutional-grade fly killers from Insect-O-Cutor & Aspectek.",
   datePublished: "2026-04-06",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
@@ -123,10 +123,10 @@ const products: ProductRecord[] = [
       "Listed at 18 x 12 x 8 cm and 2.1 kilograms",
     ],
     tableCells: ["PlusZap 30W", "30W; fly, mosquito", "18 x 12 x 8 cm, 2.1 kg", "Best Overall"],
-    h2Label: "#1 Insect-O-Cutor PlusZap 30W Indoor Fly Killer",
-    h2Name: "Best Overall",
-    tocLabel: "#1 Insect-O-Cutor PlusZap 30W",
-    tocName: "Best Overall",
+    h2Label: "Best Overall",
+    h2Name: "#1 Insect-O-Cutor PlusZap 30W Indoor Fly Killer",
+    tocLabel: "Best Overall",
+    tocName: "#1 Insect-O-Cutor PlusZap 30W",
     pick: "Best for kitchens, warehouses and shops: 30W, aluminium grid, deep removable catch tray.",
     blurb: "Our overall pick for a kitchen, warehouse or shop floor. It is a 30W unit with two UV bulbs pre-installed, an aluminium grid and a deep removable catch tray, and the listing names homes, commercial workplaces, kitchens, warehouses and retail. It is hardwired, so plan where the cable will run.",
     pros: ["30W with two UV bulbs pre-installed", "Aluminium grid, as listed", "Deep removable catch tray", "Listed for homes, kitchens, warehouses and retail"],
@@ -145,10 +145,10 @@ const products: ProductRecord[] = [
       "Listed at 18 x 12 x 8 cm and 1.6 kilograms — the same dimensions the 30W lists",
     ],
     tableCells: ["PlusZap 16W", "16W; fly, mosquito", "18 x 12 x 8 cm, 1.6 kg", "Best Low-Wattage Unit"],
-    h2Label: "#2 Insect-O-Cutor PlusZap 16W",
-    h2Name: "Best Low-Wattage Unit",
-    tocLabel: "#2 Insect-O-Cutor PlusZap 16W",
-    tocName: "Best Low-Wattage Unit",
+    h2Label: "Best Low-Wattage Unit",
+    h2Name: "#2 Insect-O-Cutor PlusZap 16W",
+    tocLabel: "Best Low-Wattage Unit",
+    tocName: "#2 Insect-O-Cutor PlusZap 16W",
     pick: "Best if you don't need 30W: the same PlusZap grid and catch tray at 16W.",
     blurb: "The 16W version of the same unit, if you do not need 30W. It has the same aluminium grid, two pre-installed UV bulbs and deep removable catch tray, and the same listed settings from homes to retail. The listing gives the same 18 x 12 x 8 cm as the 30W, at 1.6 kilograms.",
     pros: ["16W, the lowest wattage on this page", "Two UV bulbs pre-installed", "Deep removable catch tray", "1.6 kg as listed"],
@@ -167,10 +167,10 @@ const products: ProductRecord[] = [
       "Listed at 28 x 10 x 39.5 cm; the listing itself notes that not every mosquito reaches the grid",
     ],
     tableCells: ["Aspectek 30W", "30W; fly, mosquito, wasp", "28 x 10 x 39.5 cm", "Best Budget"],
-    h2Label: "#3 Aspectek Professional Electronic Insect Killer",
-    h2Name: "Best Budget",
-    tocLabel: "#3 Aspectek 30W Electronic Insect Killer",
-    tocName: "Best Budget",
+    h2Label: "Best Budget",
+    h2Name: "#3 Aspectek Professional Electronic Insect Killer",
+    tocLabel: "Best Budget",
+    tocName: "#3 Aspectek 30W Electronic Insect Killer",
     pick: "Best if you want to hang it or stand it: a 30W unit in a metal casing.",
     blurb: "Suits a home or business that wants the choice of hanging the unit on its chain or standing it on a surface. It is a 30W unit in a metal casing, with two UV bulbs and a mesh screen over the grid, listed for home and commercial use indoors. Its own listing notes that not every mosquito reaches the grid.",
     pros: ["30W with two UV bulbs", "Metal casing with a mesh screen over the grid", "Hangs by chain or stands", "Listed for home and commercial use"],
@@ -189,10 +189,10 @@ const products: ProductRecord[] = [
       "Listed at 28 x 10 x 39.5 cm and 1.82 kilograms",
     ],
     tableCells: ["Aspectek 20W", "20W; fly, mosquito, moth, wasp", "28 x 10 x 39.5 cm, 1.82 kg", "Best Dual-Use Unit"],
-    h2Label: "#4 Aspectek 20W Heavy Duty Bug Zapper",
-    h2Name: "Best Dual-Use Unit",
-    tocLabel: "#4 Aspectek 20W Bug Zapper",
-    tocName: "Best Dual-Use Unit",
+    h2Label: "Best Dual-Use Unit",
+    h2Name: "#4 Aspectek 20W Heavy Duty Bug Zapper",
+    tocLabel: "Best Dual-Use Unit",
+    tocName: "#4 Aspectek 20W Bug Zapper",
     pick: "Best for garages and covered patios: 20W, dual-sided, two spare bulbs included.",
     blurb: "Our pick for a garage, a basement or a covered patio. It is a 20W plastic-cased unit with an open dual-sided design, and two spare UV bulbs come with it. The listing names fly, mosquito, moth and wasp, and names no commercial setting.",
     pros: ["Two spare UV bulbs included", "Open dual-sided design", "Listed for covered outdoor spaces, garages and basements", "Names fly, mosquito, moth and wasp"],
@@ -341,7 +341,11 @@ export default function BestProfessionalInsectLightTrapsPage() {
         </table>
       </div>
       <p>
-        Placement tip: site a grid unit away from food preparation areas. Texas A&amp;M advises that high-voltage outdoor bug zappers should not be used indoors, because they tend to scatter insect fragments (
+        Placement tip: site a grid unit away from food preparation areas.
+      </p>
+      <p>
+        Texas A&amp;M advises that high-voltage outdoor bug zappers should not
+        be used indoors, because they tend to scatter insect fragments (
         <a href={SRC.tamu} rel="nofollow">
           Texas A&amp;M AgriLife Extension
         </a>

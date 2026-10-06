@@ -27,14 +27,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Damp & Mould Equipment for Landlords — Awaab's Law 2026",
     description:
-      "Damp and mould equipment for landlords: the Awaab's Law timeframes, what the guidance puts before any appliance, and eight products as listed.",
+      "PIV units, dehumidifiers and damp meters for landlords complying with Awaab's Law. Equipment for mould and condensation in rental properties.",
     alternates: {
       canonical: "https://pestproindex.com/best/awaabs-law-damp-mould-equipment",
     },
     openGraph: {
       title: "Best Damp & Mould Equipment for Landlords — Awaab's Law 2026",
       description:
-        "Damp and mould equipment for landlords: the Awaab's Law timeframes, what the guidance puts before any appliance, and eight products as listed.",
+        "PIV units, dehumidifiers and damp meters for landlords complying with Awaab's Law. Equipment for mould and condensation in rental properties.",
       url: "https://pestproindex.com/best/awaabs-law-damp-mould-equipment",
       type: "article",
       siteName: "PestPro Index",
@@ -47,7 +47,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Damp & Mould Control Equipment for Landlords (Awaab's Law 2026)",
   description:
-    "Damp and mould equipment for landlords: the Awaab's Law timeframes, what the guidance puts before any appliance, and eight products as listed.",
+    "PIV units, dehumidifiers and damp meters for landlords complying with Awaab's Law. Equipment for mould and condensation in rental properties.",
   datePublished: "2026-04-07",
   dateModified: "2026-09-09",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

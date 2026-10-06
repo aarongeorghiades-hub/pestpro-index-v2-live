@@ -21,14 +21,14 @@ import DecisionBox from '@/components/DecisionBox';
 // the classifier found on the served page are all deleted, not softened.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Flea Treatments UK 2026: Sprays, Powders & Foggers",
+    title: "Best Flea Treatments UK 2026: Sprays & Powders",
     description:
-      "Flea treatments for UK homes: why the pet is treated first, what a spray, powder or aerosol can reach, and four products compared on their own listings.",
+      "The best flea treatment products for UK homes in 2026. Household sprays and powders, with buying advice to help you clear fleas fast.",
     alternates: { canonical: "https://pestproindex.com/best/flea-treatments" },
     openGraph: {
-      title: "Best Flea Treatments UK 2026: Sprays, Powders & Foggers",
+      title: "Best Flea Treatments UK 2026: Sprays & Powders",
       description:
-        "Flea treatments for UK homes: why the pet is treated first, what a spray, powder or aerosol can reach, and four products compared on their own listings.",
+        "The best flea treatment products for UK homes in 2026. Household sprays and powders, with buying advice to help you clear fleas fast.",
       url: "https://pestproindex.com/best/flea-treatments",
       type: "article",
       siteName: "PestPro Index",
@@ -39,9 +39,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Flea Treatments UK 2026: Sprays, Powders & Foggers",
+  headline: "Best Flea Treatments UK 2026: Sprays & Powders",
   description:
-    "Flea treatments for UK homes: why the pet is treated first, what a spray, powder or aerosol can reach, and four products compared on their own listings.",
+    "The best flea treatment products for UK homes in 2026. Household sprays and powders, with buying advice to help you clear fleas fast.",
   datePublished: "2026-03-16",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

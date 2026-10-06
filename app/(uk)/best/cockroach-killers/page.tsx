@@ -32,14 +32,14 @@ import DecisionBox from '@/components/DecisionBox';
 // and E. coli. None was traceable to any body this page has read.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Cockroach Killer Products UK 2026: Gel Bait & Monitoring Traps",
+    title: "Best Cockroach Killer Products UK 2026: Gels & Traps",
     description:
-      "Cockroach control in UK homes: what the extension guidance rates above spraying, the allergen risk it names, and two products described by their listings.",
+      "The best cockroach killer products in the UK for 2026. Gel baits and monitoring traps, with buying advice.",
     alternates: { canonical: "https://pestproindex.com/best/cockroach-killers" },
     openGraph: {
-      title: "Best Cockroach Killer Products UK 2026: Gel Bait & Monitoring Traps",
+      title: "Best Cockroach Killer Products UK 2026: Gels & Traps",
       description:
-        "Cockroach control in UK homes: what the extension guidance rates above spraying, the allergen risk it names, and two products described by their listings.",
+        "The best cockroach killer products in the UK for 2026. Gel baits and monitoring traps, with buying advice.",
       url: "https://pestproindex.com/best/cockroach-killers",
       type: "article",
       siteName: "PestPro Index",
@@ -50,9 +50,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Cockroach Killer Products UK 2026: Gel Bait & Monitoring Traps",
+  headline: "Best Cockroach Killer Products UK 2026: Gels & Traps",
   description:
-    "Cockroach control in UK homes: what the extension guidance rates above spraying, the allergen risk it names, and two products described by their listings.",
+    "The best cockroach killer products in the UK for 2026. Gel baits and monitoring traps, with buying advice.",
   datePublished: "2026-03-16",
   dateModified: "2026-09-09",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

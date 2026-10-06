@@ -26,12 +26,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Mole Traps UK 2026",
     description:
-      "Mole traps for UK gardens: the one legal fact that decides what you may use, where a trap has to go, and five compared on what their listings state.",
+      "Our pick of the best mole traps available in the UK for 2026. Push, tunnel and claw options compared, with buying advice and placement tips.",
     alternates: { canonical: "https://pestproindex.com/best/mole-traps" },
     openGraph: {
       title: "Best Mole Traps UK 2026",
       description:
-        "Mole traps for UK gardens: the one legal fact that decides what you may use, where a trap has to go, and five compared on what their listings state.",
+        "Our pick of the best mole traps available in the UK for 2026. Push, tunnel and claw options compared, with buying advice and placement tips.",
       url: "https://pestproindex.com/best/mole-traps",
       type: "article",
       siteName: "PestPro Index",
@@ -44,7 +44,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Mole Traps UK 2026",
   description:
-    "Mole traps for UK gardens: the one legal fact that decides what you may use, where a trap has to go, and five compared on what their listings state.",
+    "Our pick of the best mole traps available in the UK for 2026. Push, tunnel and claw options compared, with buying advice and placement tips.",
   datePublished: "2026-03-30",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

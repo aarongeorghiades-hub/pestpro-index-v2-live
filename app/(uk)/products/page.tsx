@@ -246,7 +246,7 @@ export default function ProductsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: 'Nippon Bait Station', asin: 'B001CJ11ZQ', note: 'UK #1', desc: 'UK\'s #1 ant bait station. Eliminates entire colonies.' },
+              { name: 'Nippon Bait Station', asin: 'B001CJ11ZQ', note: 'Bait station', desc: 'Ant bait station. Eliminates entire colonies.' },
                 { name: 'NOPE! Ant Killer Bait Station 6-Pack', asin: 'B08YFJWGX2', desc: 'Indoor/outdoor use. Effective colony elimination.' },
               { name: 'Nippon Ant Killer Powder 500g', asin: 'B000TAW39M' }
             ].map((product, idx) => (

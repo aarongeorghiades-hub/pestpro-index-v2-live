@@ -24,12 +24,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Woodworm Treatments UK 2026 — Sprays & Fluids",
     description:
-      "Woodworm treatment for UK homes: telling an active outbreak from old holes, why dampness is dealt with first, and five products compared on their own listings.",
+      "Our pick of the best woodworm treatment products in the UK: permethrin sprays, injection applicators and timber preservers.",
     alternates: { canonical: "https://pestproindex.com/best/woodworm-treatments" },
     openGraph: {
       title: "Best Woodworm Treatments UK 2026 — Sprays & Fluids",
       description:
-        "Woodworm treatment for UK homes: telling an active outbreak from old holes, why dampness is dealt with first, and five products compared on their own listings.",
+        "Our pick of the best woodworm treatment products in the UK: permethrin sprays, injection applicators and timber preservers.",
       url: "https://pestproindex.com/best/woodworm-treatments",
       type: "article",
       siteName: "PestPro Index",
@@ -42,7 +42,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Woodworm Treatments UK 2026 — Sprays & Fluids",
   description:
-    "Woodworm treatment for UK homes: telling an active outbreak from old holes, why dampness is dealt with first, and five products compared on their own listings.",
+    "Our pick of the best woodworm treatment products in the UK: permethrin sprays, injection applicators and timber preservers.",
   datePublished: "2026-03-18",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

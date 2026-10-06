@@ -9,12 +9,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Moth Traps UK 2026 | Clothes Moth & Pantry Moth Traps",
     description:
-      "Pheromone moth traps for UK wardrobes, drawers and kitchens. Which moth you have, what a trap can and cannot do, and six products compared.",
+      "Stop moths ruining your clothes and food with the best moth traps in the UK. Pheromone traps for wardrobes, drawers and kitchens.",
     alternates: { canonical: "https://pestproindex.com/best/moth-traps" },
     openGraph: {
       title: "Best Moth Traps UK 2026 | Clothes Moth & Pantry Moth Traps",
       description:
-        "Pheromone moth traps for UK wardrobes, drawers and kitchens. Which moth you have, what a trap can and cannot do, and six products compared.",
+        "Stop moths ruining your clothes and food with the best moth traps in the UK. Pheromone traps for wardrobes, drawers and kitchens.",
       url: "https://pestproindex.com/best/moth-traps",
       type: "article",
       siteName: "PestPro Index",
@@ -27,7 +27,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Moth Traps UK 2026: Clothes Moth & Pantry Moth Traps",
   description:
-    "Pheromone moth traps for UK wardrobes, drawers and kitchens. Which moth you have, what a trap can and cannot do, and six products compared.",
+    "Stop moths ruining your clothes and food with the best moth traps in the UK. Pheromone traps for wardrobes, drawers and kitchens.",
   datePublished: "2026-03-31",
   dateModified: "2026-09-06",
   author: {

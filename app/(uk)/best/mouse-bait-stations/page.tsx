@@ -9,14 +9,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Mouse Bait Stations UK 2026 | Tamper-Proof & Lockable",
     description:
-      "Mouse bait stations for UK homes. When a station is the right answer, the standard one has to meet, and five compared on what the listings state.",
+      "Compare the best mouse bait stations for UK homes. Tamper-proof, lockable bait boxes for 2026.",
     alternates: {
       canonical: "https://pestproindex.com/best/mouse-bait-stations",
     },
     openGraph: {
       title: "Best Mouse Bait Stations UK 2026 | Tamper-Proof & Lockable",
       description:
-        "Mouse bait stations for UK homes. When a station is the right answer, the standard one has to meet, and five compared on what the listings state.",
+        "Compare the best mouse bait stations for UK homes. Tamper-proof, lockable bait boxes for 2026.",
       url: "https://pestproindex.com/best/mouse-bait-stations",
       type: "article",
       siteName: "PestPro Index",
@@ -29,7 +29,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Mouse Bait Stations UK 2026: Tamper-Proof & Lockable",
   description:
-    "Mouse bait stations for UK homes. When a station is the right answer, the standard one has to meet, and five compared on what the listings state.",
+    "Compare the best mouse bait stations for UK homes. Tamper-proof, lockable bait boxes for 2026.",
   datePublished: "2026-03-31",
   dateModified: "2026-09-06",
   author: {

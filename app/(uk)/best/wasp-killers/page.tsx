@@ -22,12 +22,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Wasp Killer Products UK 2026: Sprays, Powders & Traps",
     description:
-      "Wasp nest treatment for UK homes: when a council says leave it to a professional, why a nest dies off in winter anyway, and four products on their own listings.",
+      "The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders and wasp traps, with buying advice.",
     alternates: { canonical: "https://pestproindex.com/best/wasp-killers" },
     openGraph: {
       title: "Best Wasp Killer Products UK 2026: Sprays, Powders & Traps",
       description:
-        "Wasp nest treatment for UK homes: when a council says leave it to a professional, why a nest dies off in winter anyway, and four products on their own listings.",
+        "The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders and wasp traps, with buying advice.",
       url: "https://pestproindex.com/best/wasp-killers",
       type: "article",
       siteName: "PestPro Index",
@@ -40,7 +40,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Wasp Killer Products UK 2026: Sprays, Powders & Traps",
   description:
-    "Wasp nest treatment for UK homes: when a council says leave it to a professional, why a nest dies off in winter anyway, and four products on their own listings.",
+    "The best wasp killer products available in the UK for 2026. Nest killer sprays, insecticidal powders and wasp traps, with buying advice.",
   datePublished: "2026-03-16",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

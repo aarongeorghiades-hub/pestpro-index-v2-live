@@ -22,12 +22,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Wasp Nest Killer Foam UK 2026",
     description:
-      "Wasp nest foams and powders for UK homes: where nests are, which the council says to leave to a professional, and five products on their own listings.",
+      "Our pick of the best wasp nest killer foams and sprays in the UK for 2026. Long-range foams, powders and aerosols, with safety advice.",
     alternates: { canonical: "https://pestproindex.com/best/wasp-nest-foam" },
     openGraph: {
       title: "Best Wasp Nest Killer Foam UK 2026",
       description:
-        "Wasp nest foams and powders for UK homes: where nests are, which the council says to leave to a professional, and five products on their own listings.",
+        "Our pick of the best wasp nest killer foams and sprays in the UK for 2026. Long-range foams, powders and aerosols, with safety advice.",
       url: "https://pestproindex.com/best/wasp-nest-foam",
       type: "article",
       siteName: "PestPro Index",
@@ -40,7 +40,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Wasp Nest Killer Foam UK 2026",
   description:
-    "Wasp nest foams and powders for UK homes: where nests are, which the council says to leave to a professional, and five products on their own listings.",
+    "Our pick of the best wasp nest killer foams and sprays in the UK for 2026. Long-range foams, powders and aerosols, with safety advice.",
   datePublished: "2026-03-30",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

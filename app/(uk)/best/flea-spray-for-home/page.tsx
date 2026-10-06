@@ -20,14 +20,14 @@ import DecisionBox from '@/components/DecisionBox';
 // them divergent; the body now answers what they answered, from a source.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Flea Spray for Home UK 2026: Five Sprays Compared",
+    title: "Best Flea Spray for Home UK 2026: Kill Fleas Fast",
     description:
-      "Five household flea sprays compared on their own listings — which name an insect growth regulator, what each says it covers, and why the pet is treated first.",
+      "Our pick of the best flea sprays for the home in the UK for 2026. IGR sprays and aerosols, with application tips.",
     alternates: { canonical: "https://pestproindex.com/best/flea-spray-for-home" },
     openGraph: {
-      title: "Best Flea Spray for Home UK 2026: Five Sprays Compared",
+      title: "Best Flea Spray for Home UK 2026: Kill Fleas Fast",
       description:
-        "Five household flea sprays compared on their own listings — which name an insect growth regulator, what each says it covers, and why the pet is treated first.",
+        "Our pick of the best flea sprays for the home in the UK for 2026. IGR sprays and aerosols, with application tips.",
       url: "https://pestproindex.com/best/flea-spray-for-home",
       type: "article",
       siteName: "PestPro Index",
@@ -38,9 +38,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Flea Spray for Home UK 2026: Five Sprays Compared",
+  headline: "Best Flea Spray for Home UK 2026: Kill Fleas Fast",
   description:
-    "Five household flea sprays compared on their own listings — which name an insect growth regulator, what each says it covers, and why the pet is treated first.",
+    "Our pick of the best flea sprays for the home in the UK for 2026. IGR sprays and aerosols, with application tips.",
   datePublished: "2026-03-30",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

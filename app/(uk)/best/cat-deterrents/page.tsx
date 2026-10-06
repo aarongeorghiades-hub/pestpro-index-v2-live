@@ -24,12 +24,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Cat Deterrents UK 2026 — Ultrasonic & Scent",
     description:
-      "Cat deterrents for UK gardens: what the law says you may and may not do, the ASA position on repellent claims, and four products described by their listings.",
+      "Our pick of the best cat deterrents for UK gardens: ultrasonic repellers, scent deterrents and prickle strips.",
     alternates: { canonical: "https://pestproindex.com/best/cat-deterrents" },
     openGraph: {
       title: "Best Cat Deterrents UK 2026 — Ultrasonic & Scent",
       description:
-        "Cat deterrents for UK gardens: what the law says you may and may not do, the ASA position on repellent claims, and four products described by their listings.",
+        "Our pick of the best cat deterrents for UK gardens. Compare ultrasonic repellers, scent deterrents and prickle strips.",
       url: "https://pestproindex.com/best/cat-deterrents",
       type: "article",
       siteName: "PestPro Index",
@@ -42,7 +42,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Cat Deterrents UK 2026 — Ultrasonic & Scent",
   description:
-    "Cat deterrents for UK gardens: what the law says you may and may not do, the ASA position on repellent claims, and four products described by their listings.",
+    "Our pick of the best cat deterrents for UK gardens: ultrasonic repellers, scent deterrents and prickle strips.",
   datePublished: "2026-06-23",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

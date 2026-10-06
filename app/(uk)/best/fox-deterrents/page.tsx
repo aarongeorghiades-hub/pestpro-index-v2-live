@@ -27,14 +27,14 @@ import DecisionBox from '@/components/DecisionBox';
 // The H1 and the meta description named the roller and no longer do.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Fox Deterrents UK 2026 — Scent, Sprinkler & Mesh",
+    title: "Best Fox Deterrents UK 2026 — Scent & Sprinkler",
     description:
-      "Fox deterrents for UK gardens: what the law allows, what the RSPCA advises before any product, and three items described by what their own listings state.",
+      "Our pick of the best fox deterrents in the UK: scent repellents, motion-activated sprinklers and garden fox-proofing.",
     alternates: { canonical: "https://pestproindex.com/best/fox-deterrents" },
     openGraph: {
-      title: "Best Fox Deterrents UK 2026 — Scent, Sprinkler & Mesh",
+      title: "Best Fox Deterrents UK 2026 — Scent & Sprinkler",
       description:
-        "Fox deterrents for UK gardens: what the law allows, what the RSPCA advises before any product, and three items described by what their own listings state.",
+        "Our pick of the best fox deterrents in the UK: scent repellents, motion-activated sprinklers and garden fox-proofing.",
       url: "https://pestproindex.com/best/fox-deterrents",
       type: "article",
       siteName: "PestPro Index",
@@ -45,9 +45,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Fox Deterrents UK 2026 — Scent, Sprinkler & Mesh",
+  headline: "Best Fox Deterrents UK 2026 — Scent & Sprinkler",
   description:
-    "Fox deterrents for UK gardens: what the law allows, what the RSPCA advises before any product, and three items described by what their own listings state.",
+    "Our pick of the best fox deterrents in the UK: scent repellents, motion-activated sprinklers and garden fox-proofing.",
   datePublished: "2026-03-18",
   dateModified: "2026-09-08",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

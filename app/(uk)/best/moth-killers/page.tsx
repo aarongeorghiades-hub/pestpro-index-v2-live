@@ -22,12 +22,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Moth Killers UK 2026 — Top 5",
     description:
-      "Clothes moth control for UK homes: why the larvae do the damage, what freezing and vacuuming do that a hanger cannot, and five products on their own listings.",
+      "The best moth killers for UK homes in 2026. Hanging killers, pheromone traps, carpet sprays and sachets compared, with pros and buying advice.",
     alternates: { canonical: "https://pestproindex.com/best/moth-killers" },
     openGraph: {
       title: "Best Moth Killers UK 2026 — Top 5",
       description:
-        "Clothes moth control for UK homes: why the larvae do the damage, what freezing and vacuuming do that a hanger cannot, and five products on their own listings.",
+        "The best moth killers for UK homes in 2026. Hanging killers, pheromone traps, carpet sprays and sachets compared, with pros and buying advice.",
       url: "https://pestproindex.com/best/moth-killers",
       type: "article",
       siteName: "PestPro Index",
@@ -40,7 +40,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Moth Killers UK 2026 — Top 5",
   description:
-    "Clothes moth control for UK homes: why the larvae do the damage, what freezing and vacuuming do that a hanger cannot, and five products on their own listings.",
+    "The best moth killers for UK homes in 2026. Hanging killers, pheromone traps, carpet sprays and sachets compared, with pros and buying advice.",
   datePublished: "2026-03-17",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

@@ -18,14 +18,14 @@ import DecisionBox from '@/components/DecisionBox';
 // THE FAQ IS ONE ARRAY (Law 190), schema derived from it.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Spider Repellent UK: Five Sprays Compared",
+    title: "Best Spider Repellent UK 2026 | Sprays & Natural Options",
     description:
-      "Spider sprays for UK homes: what extension guidance says actually reduces spiders indoors, the ASA position on repellent claims, and five sprays as listed.",
+      "The best spider repellents in the UK for 2026. Sprays and natural deterrents.",
     alternates: { canonical: "https://pestproindex.com/best/spider-repellent" },
     openGraph: {
-      title: "Best Spider Repellent UK: Five Sprays Compared",
+      title: "Best Spider Repellent UK 2026 | Sprays & Natural Options",
       description:
-        "Spider sprays for UK homes: what extension guidance says actually reduces spiders indoors, the ASA position on repellent claims, and five sprays as listed.",
+        "The best spider repellents in the UK for 2026. Sprays and natural deterrents.",
       url: "https://pestproindex.com/best/spider-repellent",
       type: "article",
       siteName: "PestPro Index",
@@ -36,9 +36,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Spider Repellent UK 2026: Five Sprays Compared",
+  headline: "Best Spider Repellent UK 2026: Sprays & Natural Options",
   description:
-    "Spider sprays for UK homes: what extension guidance says actually reduces spiders indoors, the ASA position on repellent claims, and five sprays as listed.",
+    "The best spider repellents in the UK for 2026. Sprays and natural deterrents.",
   datePublished: "2026-03-31",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

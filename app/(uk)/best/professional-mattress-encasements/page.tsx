@@ -55,14 +55,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Best Professional Mattress Encasements UK (2026)",
     description:
-      "Five products for landlords and HMO operators: four zipped encasements and a set of interceptors, compared on their own listings.",
+      "Bed bug proof mattress encasements for landlords & HMO operators. Six-sided zip protection for professional property management.",
     alternates: {
       canonical: "https://pestproindex.com/best/professional-mattress-encasements",
     },
     openGraph: {
       title: "Best Professional Mattress Encasements UK (2026)",
       description:
-        "Five products for landlords and HMO operators: four zipped encasements and a set of interceptors, compared on their own listings.",
+        "Bed bug proof mattress encasements for landlords & HMO operators. Six-sided zip protection for professional property management.",
       url: "https://pestproindex.com/best/professional-mattress-encasements",
       type: "article",
       siteName: "PestPro Index",
@@ -75,7 +75,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "Best Professional Mattress Encasements UK (2026)",
   description:
-    "Five products for landlords and HMO operators: four zipped encasements and a set of interceptors, compared on their own listings.",
+    "Bed bug proof mattress encasements for landlords & HMO operators. Six-sided zip protection for professional property management.",
   datePublished: "2026-04-06",
   dateModified: "2026-09-09",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

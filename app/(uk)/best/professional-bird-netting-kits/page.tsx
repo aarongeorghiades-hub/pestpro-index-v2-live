@@ -47,16 +47,16 @@ import DecisionBox from '@/components/DecisionBox';
 // "Best Professional Bird Netting" is kept byte-identical at the front of each.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Professional Bird Netting, Spikes & Fixings UK (2026)",
+    title: "Best Professional Bird Netting UK (2026)",
     description:
-      "One net, two spike strips and a pack of no-drill clips, compared on their own listings, with the law on wild birds and two extension specs.",
+      "Professional bird netting for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.",
     alternates: {
       canonical: "https://pestproindex.com/best/professional-bird-netting-kits",
     },
     openGraph: {
-      title: "Best Professional Bird Netting, Spikes & Fixings UK (2026)",
+      title: "Best Professional Bird Netting UK (2026)",
       description:
-        "One net, two spike strips and a pack of no-drill clips, compared on their own listings, with the law on wild birds and two extension specs.",
+        "Professional bird netting for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.",
       url: "https://pestproindex.com/best/professional-bird-netting-kits",
       type: "article",
       siteName: "PestPro Index",
@@ -67,9 +67,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Professional Bird Netting, Spikes & Fixings UK (2026)",
+  headline: "Best Professional Bird Netting UK (2026)",
   description:
-    "One net, two spike strips and a pack of no-drill clips, compared on their own listings, with the law on wild birds and two extension specs.",
+    "Professional bird netting for commercial properties, landlords & facilities managers. Large-scale pigeon & bird exclusion systems.",
   datePublished: "2026-04-06",
   dateModified: "2026-09-09",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

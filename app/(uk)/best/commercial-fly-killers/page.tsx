@@ -2,22 +2,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
 import ProductCard from "@/components/ProductCard";
-import TopPicks from "@/components/TopPicks";
+import TopPicks, { ProsList } from "@/components/TopPicks";
 import FindProviderCTA from "@/components/FindProviderCTA";
 import Callout, { StatCallout } from "@/components/Callout";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Commercial Fly Killers for Kitchens UK",
+    title: "Best Commercial Fly Killers UK 2026 | Kitchen Units",
     description:
-      "Electric fly killers for food premises, compared on coverage, glue board against electrocution, and what an EHO inspection looks for.",
+      "Our pick of commercial electric fly killers for UK restaurants, kitchens, and food businesses. UV zappers, glue board units, and LED models compared.",
     alternates: {
       canonical: "https://pestproindex.com/best/commercial-fly-killers",
     },
     openGraph: {
-      title: "Best Commercial Fly Killers for Kitchens UK",
+      title: "Best Commercial Fly Killers UK 2026 | Kitchen Units",
       description:
-        "Electric fly killers for food premises, compared on coverage, glue board against electrocution, and what an EHO inspection looks for.",
+        "Our pick of commercial electric fly killers for UK restaurants, kitchens, and food businesses. UV zappers, glue board units, and LED models compared.",
       url: "https://pestproindex.com/best/commercial-fly-killers",
       type: "article",
       siteName: "PestPro Index",
@@ -28,9 +28,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Commercial Fly Killers for Kitchens UK",
+  headline: "Best Commercial Fly Killers UK 2026 | Kitchen Units",
   description:
-    "Electric fly killers for food premises, compared on coverage, glue board against electrocution, and what an EHO inspection looks for.",
+    "Our pick of commercial electric fly killers for UK restaurants, kitchens, and food businesses. UV zappers, glue board units, and LED models compared.",
   datePublished: "2026-03-17",
   dateModified: "2026-03-17",
   author: {
@@ -415,9 +415,7 @@ export default function BestCommercialFlyKillersPage() {
         facilities, and other business premises. Each product is described by
         its UV output and coverage area, build quality, energy efficiency, ease
         of maintenance, and suitability for different commercial environments.
-        We also consulted guidance from the British Pest Control Association
-        (BPCA), the Chartered Institute of Environmental Health (CIEH), and
-        experienced commercial pest control technicians. For a broader overview
+        For a broader overview
         of pest management obligations for food businesses, see our companion
         guide:{" "}
         <Link
@@ -471,10 +469,14 @@ export default function BestCommercialFlyKillersPage() {
         </tbody>
       </table>
       <p>
-        Site a zapper away from food preparation and food storage areas, and
-        use a glue board unit where food is handled (
-        <a href="#buying-guide" className="underline">
-          Zapper or glue board
+        Placement tip: site a zapper away from food preparation and food
+        storage areas, and use a glue board unit where food is handled.
+      </p>
+      <p>
+        Texas A&amp;M advises that high-voltage outdoor bug zappers should not
+        be used indoors, because they tend to scatter insect fragments (
+        <a href="https://agrilifeextension.tamu.edu/library/insects/indoor-flies-and-their-control/" rel="nofollow">
+          Texas A&amp;M AgriLife Extension
         </a>
         ).
       </p>
@@ -492,6 +494,8 @@ export default function BestCommercialFlyKillersPage() {
           rank={products[0].rank}
         />
       </div>
+      <p>{products[0].blurb}</p>
+      <ProsList pros={products[0].pros} />
       <p>
         The Xterminate UV LED Wall Mounted Fly Killer is our top recommendation
         for restaurants, caf&eacute;s, and any food business that needs a fly
@@ -537,25 +541,6 @@ export default function BestCommercialFlyKillersPage() {
         dining rooms.
       </p>
       <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          Capture-style mechanism &mdash; no insect fragmentation, safer near
-          food areas
-        </li>
-        <li>
-          Energy-efficient 20W LED operation, drawing less power than
-          fluorescent models
-        </li>
-        <li>
-          Heavy steel and ABS construction with a professional, discreet
-          appearance
-        </li>
-        <li>Dual UV LED strips with long operational lifespan</li>
-        <li>Simple wall-mounted installation with included bracket</li>
-      </ul>
-      <p>
         <strong>Cons:</strong>
       </p>
       <ul>
@@ -593,6 +578,8 @@ export default function BestCommercialFlyKillersPage() {
           rank={products[1].rank}
         />
       </div>
+      <p>{products[1].blurb}</p>
+      <ProsList pros={products[1].pros} />
 
       <div className="not-prose">
         <Callout type="warning">
@@ -643,22 +630,6 @@ export default function BestCommercialFlyKillersPage() {
         their fly killers year-round as a precaution).
       </p>
       <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          Proven 30W UV output with effective coverage up to 60 square metres
-        </li>
-        <li>Versatile wall, ceiling, or freestanding mounting options</li>
-        <li>
-          Instant kill on the high-voltage grid &mdash; highly effective at
-          reducing fly numbers quickly
-        </li>
-        <li>
-          Removable collection tray simplifies cleaning and catch monitoring
-        </li>
-      </ul>
-      <p>
         <strong>Cons:</strong>
       </p>
       <ul>
@@ -697,6 +668,8 @@ export default function BestCommercialFlyKillersPage() {
           rank={products[2].rank}
         />
       </div>
+      <p>{products[2].blurb}</p>
+      <ProsList pros={products[2].pros} />
       <p>
         When standard 30W units simply do not have the coverage to protect a
         large commercial space, the Xterminate 40W UV Commercial Fly Killer
@@ -739,25 +712,6 @@ export default function BestCommercialFlyKillersPage() {
         commercial premises during peak fly season.
       </p>
       <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          40W UV output provides the highest coverage area of any unit on this
-          page &mdash; up to 100 square metres
-        </li>
-        <li>Remote control allows convenient operation from ground level</li>
-        <li>
-          Open-top design maximises UV light dispersion for wider room coverage
-        </li>
-        <li>
-          Fireproof ABS construction meets commercial fire safety requirements
-        </li>
-        <li>
-          Large removable collection tray for high-volume catch environments
-        </li>
-      </ul>
-      <p>
         <strong>Cons:</strong>
       </p>
       <ul>
@@ -795,6 +749,8 @@ export default function BestCommercialFlyKillersPage() {
           rank={products[3].rank}
         />
       </div>
+      <p>{products[3].blurb}</p>
+      <ProsList pros={products[3].pros} />
       <p>
         For businesses that need to equip multiple rooms or satellite locations,
         the 30W Industrial Electric Fly Insect Killer offers genuine
@@ -830,20 +786,6 @@ export default function BestCommercialFlyKillersPage() {
         that job.
       </p>
       <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>Two 15W fluorescent tubes driving a high-voltage grid</li>
-        <li>Chain included for straightforward ceiling suspension</li>
-        <li>
-          30W UV output provides effective coverage for medium-sized rooms
-        </li>
-        <li>
-          Low power consumption for continuous operation
-        </li>
-        <li>Simple, functional design with removable collection tray</li>
-      </ul>
-      <p>
         <strong>Cons:</strong>
       </p>
       <ul>
@@ -878,6 +820,8 @@ export default function BestCommercialFlyKillersPage() {
           rank={products[4].rank}
         />
       </div>
+      <p>{products[4].blurb}</p>
+      <ProsList pros={products[4].pros} />
 
       <div className="not-prose">
         <Callout type="info">
@@ -943,24 +887,6 @@ export default function BestCommercialFlyKillersPage() {
         a step up. For any food business that needs a fly killer in or near
         the kitchen, it is the minimum compliance standard that EHOs expect.
       </p>
-      <p>
-        <strong>Pros:</strong>
-      </p>
-      <ul>
-        <li>
-          Glue board mechanism &mdash; the only type approved for food
-          preparation areas
-        </li>
-        <li>
-          Zero fragmentation, zero bacterial dispersal &mdash; fully
-          EHO-compliant
-        </li>
-        <li>50 sqm coverage suits most commercial kitchens and dining areas</li>
-        <li>Infrared lighting is discreet in customer-facing environments</li>
-        <li>
-          Professional black metal construction with wall or shelf mounting
-        </li>
-      </ul>
       <p>
         <strong>Cons:</strong>
       </p>

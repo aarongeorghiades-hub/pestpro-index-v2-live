@@ -19,14 +19,14 @@ import DecisionBox from '@/components/DecisionBox';
 // HEALTH: one sentence, the Elixir listing's own warning, carried as the maker's.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Rat Poison for Gardens UK",
+    title: "Best Rat Poison for Gardens UK 2026 | Outdoor Rodenticides",
     description:
-      "Rat poison for gardens: what amateur rodenticide may go outdoors, what CRRU says about protecting bait from wildlife, and five products on their own listings.",
+      "Tackle garden rats with the best outdoor rat poisons for UK gardens. Weather-proof bait stations and rodenticides.",
     alternates: { canonical: "https://pestproindex.com/best/rat-poison-for-gardens" },
     openGraph: {
-      title: "Best Rat Poison for Gardens UK",
+      title: "Best Rat Poison for Gardens UK 2026 | Outdoor Rodenticides",
       description:
-        "Rat poison for gardens: what amateur rodenticide may go outdoors, what CRRU says about protecting bait from wildlife, and five products on their own listings.",
+        "Tackle garden rats with the best outdoor rat poisons for UK gardens. Weather-proof bait stations and rodenticides.",
       url: "https://pestproindex.com/best/rat-poison-for-gardens",
       type: "article",
       siteName: "PestPro Index",
@@ -37,9 +37,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Rat Poison for Gardens UK",
+  headline: "Best Rat Poison for Gardens UK 2026 | Outdoor Rodenticides",
   description:
-    "Rat poison for gardens: what amateur rodenticide may go outdoors, what CRRU says about protecting bait from wildlife, and five products on their own listings.",
+    "Tackle garden rats with the best outdoor rat poisons for UK gardens. Weather-proof bait stations and rodenticides.",
   datePublished: "2026-03-31",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

@@ -23,14 +23,14 @@ import DecisionBox from '@/components/DecisionBox';
 // description promised monitoring traps it does not card. Both now say what is here.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Bed Bug Treatments UK 2026: Sprays, Powders & Encasements",
+    title: "Best Bed Bug Treatments UK 2026: Sprays & Powders",
     description:
-      "Bed bug treatment for UK homes: what the NHS says about getting rid of them, and three products described by what their own listings state.",
+      "The best bed bug treatment products in the UK for 2026. Sprays, powders and mattress encasements, with buying advice.",
     alternates: { canonical: "https://pestproindex.com/best/bed-bug-treatments" },
     openGraph: {
-      title: "Best Bed Bug Treatments UK 2026: Sprays, Powders & Encasements",
+      title: "Best Bed Bug Treatments UK 2026: Sprays & Powders",
       description:
-        "Bed bug treatment for UK homes: what the NHS says about getting rid of them, and three products described by what their own listings state.",
+        "The best bed bug treatment products in the UK for 2026. Sprays, powders and mattress encasements, with buying advice.",
       url: "https://pestproindex.com/best/bed-bug-treatments",
       type: "article",
       siteName: "PestPro Index",
@@ -41,9 +41,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Bed Bug Treatments UK 2026: Sprays, Powders & Encasements",
+  headline: "Best Bed Bug Treatments UK 2026: Sprays & Powders",
   description:
-    "Bed bug treatment for UK homes: what the NHS says about getting rid of them, and three products described by what their own listings state.",
+    "The best bed bug treatment products in the UK for 2026. Sprays, powders and mattress encasements, with buying advice.",
   datePublished: "2026-03-16",
   dateModified: "2026-09-09",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },

@@ -22,14 +22,14 @@ import DecisionBox from '@/components/DecisionBox';
 // deleted; one G3 hit ("Trusted brand with 60+ years of heritage") cleared.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Indoor Fly Zapper & Killer UK",
+    title: "Best Indoor Fly Killer UK 2026 | Electric Zappers",
     description:
-      "Indoor fly zappers compared on their own listings — grid, bulbs, tray and target species — and what the guidance says about zappers indoors and sanitation.",
+      "Keep your home fly-free with the best indoor fly killers for 2026. Electric zappers and UV traps compared.",
     alternates: { canonical: "https://pestproindex.com/best/fly-killer-indoor" },
     openGraph: {
-      title: "Best Indoor Fly Zapper & Killer UK",
+      title: "Best Indoor Fly Killer UK 2026 | Electric Zappers",
       description:
-        "Indoor fly zappers compared on their own listings — grid, bulbs, tray and target species — and what the guidance says about zappers indoors and sanitation.",
+        "Keep your home fly-free with the best indoor fly killers for 2026. Electric zappers and UV traps compared.",
       url: "https://pestproindex.com/best/fly-killer-indoor",
       type: "article",
       siteName: "PestPro Index",
@@ -40,9 +40,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Indoor Fly Zapper & Killer UK",
+  headline: "Best Indoor Fly Killer UK 2026: Electric Zappers for Home",
   description:
-    "Indoor fly zappers compared on their own listings — grid, bulbs, tray and target species — and what the guidance says about zappers indoors and sanitation.",
+    "Keep your home fly-free with the best indoor fly killers for 2026. Electric zappers and UV traps compared.",
   datePublished: "2026-03-31",
   dateModified: "2026-09-07",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
@@ -275,9 +275,11 @@ export default function BestFlyKillerIndoorPage() {
 
       <p>
         Placement tip: site any of these units away from food preparation
-        areas. Texas A&amp;M advises that high-voltage outdoor bug zappers
-        should not be used indoors, because they tend to scatter insect
-        fragments (
+        areas.
+      </p>
+      <p>
+        Texas A&amp;M advises that high-voltage outdoor bug zappers should not
+        be used indoors, because they tend to scatter insect fragments (
         <a href={SRC.tamu} rel="nofollow">
           Texas A&amp;M AgriLife Extension
         </a>

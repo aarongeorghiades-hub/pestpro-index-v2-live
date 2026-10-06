@@ -20,14 +20,14 @@ import DecisionBox from '@/components/DecisionBox';
 // is named on any listing here. Description and subtitle corrected; title and H1 held.
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Ant Killer Gel UK 2026: Gel, Powder, Spray and Baits Compared",
+    title: "Best Ant Killer Gel UK 2026: Kill the Whole Colony",
     description:
-      "Only a bait reaches the nest. Five ant products compared on their own listings — which are baits, which kill on contact, and why the difference decides it.",
+      "Our pick of the best ant killer gels available in the UK for 2026. Gel, bait stations, powder and sprays, with application advice.",
     alternates: { canonical: "https://pestproindex.com/best/ant-gel-bait" },
     openGraph: {
-      title: "Best Ant Killer Gel UK 2026: Gel, Powder, Spray and Baits Compared",
+      title: "Best Ant Killer Gel UK 2026: Kill the Whole Colony",
       description:
-        "Only a bait reaches the nest. Five ant products compared on their own listings — which are baits, which kill on contact, and why the difference decides it.",
+        "Our pick of the best ant killer gels available in the UK for 2026. Gel, bait stations, powder and sprays, with application advice.",
       url: "https://pestproindex.com/best/ant-gel-bait",
       type: "article",
       siteName: "PestPro Index",
@@ -38,9 +38,9 @@ export async function generateMetadata(): Promise<Metadata> {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Ant Killer Gel UK 2026: Gel, Powder, Spray and Baits Compared",
+  headline: "Best Ant Killer Gel UK 2026: Kill the Whole Colony",
   description:
-    "Only a bait reaches the nest. Five ant products compared on their own listings — which are baits, which kill on contact, and why the difference decides it.",
+    "Our pick of the best ant killer gels available in the UK for 2026. Gel, bait stations, powder and sprays, with application advice.",
   datePublished: "2026-03-30",
   dateModified: "2026-09-06",
   author: { "@type": "Organization", name: "PestPro Index", url: "https://pestproindex.com" },
