@@ -161,12 +161,13 @@ const products: ProductRecord[] = [
       "Six-sided, zipped",
       "Bed bugs and dust mites, per the maker",
       "Double; up to 30cm depth, as listed",
+      "Best Overall",
     ],
     h2Label: "Best Overall",
     h2Name: "Silentnight Complete Encasement",
     tocLabel: "Best Overall",
     tocName: "Silentnight Complete Encasement",
-    pick: "A six-sided, zipped, waterproof cover from a mattress maker, machine washable.",
+    pick: "Best for a double up to 30cm deep: six-sided, zipped, waterproof, machine washable.",
     blurb: "Our overall pick for a double bed. It is a six-sided cover with a secure zip, listed for mattresses up to 30cm deep, with a waterproof top and sides over a polypropylene backing. The maker states protection against bed bugs and dust mites, and the whole cover goes in the washing machine.",
     pros: ["Six-sided encasement with a secure zip", "Fits mattress depths up to 30cm, size Double", "Waterproof top and sides, as listed", "Fully machine washable"],
   },
@@ -188,13 +189,14 @@ const products: ProductRecord[] = [
       "Six-sided, zipped",
       "Bed bug proof with the matching box spring cover, per the maker",
       "Queen 60\" x 80\"; fits 13–16 in. deep, as listed",
+      "Best Cotton Encasement",
     ],
     h2Label: "Best Cotton Encasement",
     h2Name: "SureGuard Mattress Encasement",
     tocLabel: "Best Cotton Encasement",
     tocName: "SureGuard Encasement",
-    pick: "A 100% cotton terry top, free from vinyl and PVC, per the maker.",
-    blurb: "Pick this if you want cotton next to the sleeper. The top is 100% cotton terry, which the maker describes as noiseless and moisture-wicking, and the maker states it is free from vinyl, PVC, phthalates and fire retardants. Its bed bug seal claim applies only with the maker's own box spring encasement. It is listed in US sizing, Queen 60 by 80 inches for a 13 to 16 inch mattress, so measure first.",
+    pick: "Best if you want cotton next to the sleeper: a 100% cotton terry top, per the maker.",
+    blurb: "Pick this if you want cotton next to the sleeper. The top is 100% cotton terry, which the maker describes as noiseless and moisture-wicking, and the maker states it is free from vinyl, PVC, phthalates and fire retardants. It is sized in US inches, Queen 60 by 80 for a 13 to 16 inch mattress, and the maker's bed bug seal needs its matching box spring encasement as well.",
     pros: ["100% cotton terry top", "Free from vinyl, PVC, phthalates and fire retardants, per the maker", "GREENGUARD Gold certification, per the maker", "Fits mattresses 13 to 16 inches deep"],
   },
   {
@@ -215,13 +217,14 @@ const products: ProductRecord[] = [
       "Six-sided, zipped",
       "Bed bugs and dust mites, per the maker",
       "Double 135 x 190 x 30 cm, as listed",
+      "Best Budget",
     ],
     h2Label: "Best Budget",
     h2Name: "Utopia Bedding Premium Encasement",
     tocLabel: "Best Budget",
     tocName: "Utopia Bedding Encasement",
-    pick: "Sized for a UK double at 135 x 190 x 30 cm, with a TPU backing on all six sides.",
-    blurb: "The one cover here sized for a UK bed, so you can order without converting inches. It is listed at Double, 135 x 190 x 30 cm, with a mini-zipper the maker describes as securing all 360 degrees and a TPU backing on all six sides. It is listed as machine washable and tumble dryable, which helps if you are buying several for a rental.",
+    pick: "Best for a UK double: 135 x 190 x 30 cm, with a TPU backing on all six sides.",
+    blurb: "Suits you if you have a UK double and want to order without converting inches: it is listed at 135 x 190 x 30 cm. The maker describes a mini-zipper securing all 360 degrees, and there is a TPU backing on all six sides. It is listed as machine washable and tumble dryable, which helps if you are buying several for a rental.",
     pros: ["UK sizing: Double, 135 x 190 x 30 cm", "Mini-zipper all the way round, per the maker", "TPU backing on all six sides", "Machine washable and tumble dryable"],
   },
   {
@@ -242,13 +245,14 @@ const products: ProductRecord[] = [
       "Six-sided, zipped",
       "Lab tested and certified against bed bugs and mites, per the maker",
       "135 x 190 x 20 cm, as listed",
+      "Best Lab-Certified Cover",
     ],
     h2Label: "Best Lab-Certified Cover",
     h2Name: "Wrappybag Bed Bug Mattress Protector",
     tocLabel: "Best Lab-Certified Cover",
     tocName: "Wrappybag Mattress Protector",
-    pick: "The one cover that names its testing house: Laboratoire T.E.C., per the maker.",
-    blurb: "Pick this if you want to see who tested it. The maker states laboratory testing and certification by Laboratoire T.E.C., plus OEKO-TEX 100 certification and dermatological testing by Dermatest. It is a full encasement that the maker describes as airtight, with an 80% cotton top. It is listed at 135 x 190 x 20 cm, and other sizes are stated as available.",
+    pick: "Best if you want to know who tested it: Laboratoire T.E.C., per the maker.",
+    blurb: "Pick this if you want to see who tested it. The maker states laboratory testing and certification by Laboratoire T.E.C., plus OEKO-TEX 100 certification and dermatological testing by Dermatest. It is a full encasement the maker describes as airtight, with an 80% cotton top, listed at 135 x 190 x 20 cm with other sizes available.",
     pros: ["Lab tested and certified by Laboratoire T.E.C., per the maker", "OEKO-TEX 100 certification, per the maker", "Full encasement the maker describes as airtight", "Other sizes stated as available"],
   },
   {
@@ -269,13 +273,14 @@ const products: ProductRecord[] = [
       "Under-leg traps, not an encasement",
       "Detection and trapping, per the maker; no pesticide",
       "8 traps, stated as covering two beds",
+      "Best Interceptor Traps",
     ],
     h2Label: "Best Interceptor Traps",
     h2Name: "Bed Bug Blocker (Pro) Interceptor Traps",
     tocLabel: "Best Interceptor Traps",
     tocName: "Bed Bug Blocker Interceptors",
-    pick: "Eight under-leg cups with no pesticide, for checking whether bed bugs are there.",
-    blurb: "Buy these to find out whether you have bed bugs before you spend on anything else. You get eight cups that sit under bed and furniture legs, and the maker states eight traps cover two beds. The listing states no chemicals or pesticides. The maker describes bed bugs climbing the textured outside and being unable to escape the inner reservoir.",
+    pick: "Best for checking whether bed bugs are there: eight under-leg cups, no pesticide.",
+    blurb: "Buy these to find out whether you have bed bugs before you spend on anything else. You get eight cups that sit under bed and furniture legs, which the maker states cover two beds, and the listing states no chemicals or pesticides. The maker describes bed bugs climbing the textured outside and being unable to escape the inner reservoir.",
     pros: ["Eight traps, stated as covering two beds", "No chemicals or pesticides, per the listing", "Sit under bed and furniture legs", "Listed for homes, hotels and hostels"],
   },
 ];
@@ -322,8 +327,7 @@ const faqSchema = {
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    A cover deals with the mattress only, and buying one does not discharge a
-    landlord&rsquo;s duty to the tenant.{" "}
+    Buying a cover does not discharge a landlord&rsquo;s duty to the tenant.{" "}
     <a href="#legal" className="underline">
       The landlord position
     </a>
@@ -347,7 +351,7 @@ export default function BestProfessionalMattressEncasementsPage() {
   return (
     <GuideLayout
       title="Best Professional Mattress Encasements for Landlords &amp; HMO Operators (2026)"
-      subtitle="Four six-sided zipped covers and one set of under-leg interceptor traps, described by what their own listings state — beside the University of California on what an encasement does and GOV.UK on where a tenant goes next"
+      subtitle="Four six-sided zipped mattress covers and a set of under-leg interceptor traps, for landlords and households dealing with bed bugs"
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -395,9 +399,7 @@ export default function BestProfessionalMattressEncasementsPage() {
       </div>
 
       <p>
-        Five items, and only four of them are encasements. The fifth is a set of
-        cups that go under the bed legs, and it is here because it answers a
-        question no cover can: whether there is anything in the room at all.
+        Four of these are six-sided zipped mattress covers, and the fifth is a set of under-leg cups designed to show whether bed bugs are there at all. The Silentnight encasement suits a double up to 30cm deep and goes in the washing machine. Choose the SureGuard for a cotton terry top, or the Utopia if you want a cover sized for a UK double at 135 x 190 x 30 cm.
       </p>
 
       {/* Comparison table — LISTING facts only, "not stated" where absent */}
@@ -415,6 +417,7 @@ export default function BestProfessionalMattressEncasementsPage() {
               <th className="text-left p-2 border-b font-semibold">What it is</th>
               <th className="text-left p-2 border-b font-semibold">Bed bug claim, as listed</th>
               <th className="text-left p-2 border-b font-semibold">Size and depth, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
           </thead>
           <tbody>
@@ -430,6 +433,13 @@ export default function BestProfessionalMattressEncasementsPage() {
           </tbody>
         </table>
       </div>
+      <p>
+        A cover deals with the mattress only: the NHS lists bed frames, clothing, furniture and loose wallpaper among the places bed bugs hide (
+        <a href={SRC.nhs} rel="nofollow">
+          NHS
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

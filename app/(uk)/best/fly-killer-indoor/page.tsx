@@ -114,8 +114,8 @@ const products: ProductRecord[] = [
     h2Name: "Insect-O-Cutor PlusZap 30W",
     tocLabel: "Best Overall",
     tocName: "Insect-O-Cutor PlusZap 30W",
-    pick: "A 30W unit with a removable deep catch tray for easy emptying.",
-    blurb: "Our overall pick. It is a 30W unit with two UV bulbs already fitted and an aluminium grid, so it is ready to use out of the box. The removable deep catch tray makes emptying it a quick job. It is listed for indoor use against flies and mosquitoes and runs off a hardwired cable, so plan where it goes.",
+    pick: "Best if you want it ready out of the box: 30W, two UV bulbs fitted, deep catch tray.",
+    blurb: "Pick this if you want a unit that is ready out of the box and quick to empty. It is 30W with two UV bulbs already fitted, an aluminium grid and a removable deep catch tray, listed for indoor use against flies and mosquitoes. It runs off a hardwired cable, so plan where it goes.",
     pros: ["30W with 2 UV bulbs pre-installed", "Removable deep catch tray", "Aluminium killing grid, as listed", "Listed for indoor use against flies and mosquitoes"],
   },
   {
@@ -135,8 +135,8 @@ const products: ProductRecord[] = [
     h2Name: "Aspectek Professional 30W",
     tocLabel: "Best Value",
     tocName: "Aspectek Professional 30W",
-    pick: "A 30W metal unit you can hang by its chain or stand on a surface.",
-    blurb: "The same 30W rating and two UV bulbs as our overall pick, in a metal body with the grid behind a mesh screen. You can hang it by its chain or stand it on a surface, which gives you more say over where it goes. It is listed for flies, mosquitoes and wasps, and the maker says plainly that not every mosquito will be caught.",
+    pick: "For flexible placement: a 30W metal unit you can hang by its chain or stand on a surface.",
+    blurb: "Suits you if you want the choice of hanging the unit or standing it on a shelf, since it hangs by a chain or stands on a surface. It is 30W with two UV bulbs in a metal body, with the grid behind a mesh screen, and is listed for flies, mosquitoes and wasps. The maker says plainly that not every mosquito will be caught.",
     pros: ["30W with two UV bulbs, as listed", "Grid sits behind a mesh screen", "Hangs by chain or stands on a surface", "Metal body"],
   },
   {
@@ -156,8 +156,8 @@ const products: ProductRecord[] = [
     h2Name: "Quiet Hybrid Spectrum Fly Zapper",
     tocLabel: "Quietest Option",
     tocName: "Quiet Hybrid Spectrum Fly Zapper",
-    pick: "Two spare bulb packs in the box, and the maker claims reduced noise.",
-    blurb: "Worth a look if the unit will sit in a room you spend time in, since the maker makes a noise-reduction claim for it. It has dual UV bulbs and comes with two spare bulb packs, which helps because bulbs need replacing as their UV output fades. The listing gives a 4200V grid and an ABS and metal body. The wattage is not stated.",
+    pick: "For a room you sit in: the maker claims reduced noise; two spare bulb packs included.",
+    blurb: "Worth a look if the unit will sit in a room you spend time in, since the maker makes a noise-reduction claim for it. It has dual UV bulbs, two spare bulb packs, a 4200V grid per the maker and an ABS and metal body. The listing does not state the wattage.",
     pros: ["Two spare bulb packs included", "Dual UV bulbs", "Maker claims reduced noise", "Listed for flies, mosquitoes, moths and wasps"],
   },
   {
@@ -177,22 +177,11 @@ const products: ProductRecord[] = [
     h2Name: "Aspectek Upgraded 20W Bug Zapper",
     tocLabel: "Best for Garages and Patios",
     tocName: "Aspectek Upgraded 20W Bug Zapper",
-    pick: "A 20W dual-sided unit listed for indoor and covered outdoor use.",
-    blurb: "The one to choose if the flies are in a garage, basement or covered patio as well as the house. It is the only unit on this page listed for covered outdoor use as well as indoors. You get a 20W dual-sided plastic unit with two bonus UV bulbs, at the same listed size as the 30W Aspectek.",
+    pick: "For garages, basements and covered patios: a 20W dual-sided unit with two bonus bulbs.",
+    blurb: "The one to choose if the flies are in a garage, basement or covered patio as well as the house, since it is the only unit here listed for covered outdoor use. You get a 20W dual-sided plastic unit with two bonus UV bulbs, at the same listed size as the 30W Aspectek.",
     pros: ["Listed for indoor and covered outdoor use", "Dual-sided 20W unit", "Two bonus UV bulbs included", "Listed for flies, mosquitoes, moths and wasps"],
   },
 ];
-
-const SAFETY_NOTE = (
-  <>
-    Texas A&amp;M advises against using high-voltage zappers indoors, because they
-    scatter insect fragments. All four here are grid units.{" "}
-    <a href="#legal" className="underline">
-      What the guidance says
-    </a>
-    .
-  </>
-);
 
 const tocItems = [
   { id: "compared", title: "The Four Units Compared" },
@@ -209,7 +198,7 @@ export default function BestFlyKillerIndoorPage() {
   return (
     <GuideLayout
       title="Best Indoor Fly Killer UK 2026: Electric & Sticky Traps for Home"
-      subtitle="Indoor fly killers — electric UV zappers, sticky traps, and window catchers compared"
+      subtitle="Four electric fly killers for the home, from a 30W unit with a deep catch tray to a 20W zapper for garages and patios."
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -223,7 +212,6 @@ export default function BestFlyKillerIndoorPage() {
       breadcrumbSchema={breadcrumbSchema}
       topPicks={
         <TopPicks
-          note={SAFETY_NOTE}
           picks={products.slice(0, 3).map((p) => ({
             label: p.cardLabel,
             name: p.cardName,
@@ -246,18 +234,12 @@ export default function BestFlyKillerIndoorPage() {
       </div>
 
       <p>
-        A zapper kills the flies that come to it. Texas A&amp;M&rsquo;s
-        extension service is clear that this is the second job, not the first:{" "}
-        <em>
-          &ldquo;The key any indoor fly problem is to find and eliminate the
-          source, that is, anywhere excess moisture and organic debris may have
-          accumulated.&rdquo;
-        </em>{" "}
-        (
-        <a href={SRC.tamu} rel="nofollow">
-          Texas A&amp;M AgriLife Extension
-        </a>
-        ).
+        Here are four electric fly zappers for the home. The Insect-O-Cutor
+        PlusZap is our overall pick if you want a 30W unit with a removable
+        catch tray. The Aspectek 30W suits you if you want to hang it by a
+        chain, the GeckoMan comes with spare bulbs and a maker&rsquo;s noise
+        claim, and the 20W Aspectek is the one listed for garages and covered
+        patios.
       </p>
 
       {/* [16] Comparison table */}
@@ -290,6 +272,32 @@ export default function BestFlyKillerIndoorPage() {
           </tbody>
         </table>
       </div>
+
+      <p>
+        Placement tip: site any of these units away from food preparation
+        areas. Texas A&amp;M advises that high-voltage outdoor bug zappers
+        should not be used indoors, because they tend to scatter insect
+        fragments (
+        <a href={SRC.tamu} rel="nofollow">
+          Texas A&amp;M AgriLife Extension
+        </a>
+        ).
+      </p>
+
+      <p>
+        A zapper kills the flies that come to it. Texas A&amp;M&rsquo;s
+        extension service is clear that this is the second job, not the first:{" "}
+        <em>
+          &ldquo;The key any indoor fly problem is to find and eliminate the
+          source, that is, anywhere excess moisture and organic debris may have
+          accumulated.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.tamu} rel="nofollow">
+          Texas A&amp;M AgriLife Extension
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

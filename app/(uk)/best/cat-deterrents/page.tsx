@@ -125,7 +125,7 @@ const products: ProductRecord[] = [
     h2Name: "Pestbye Pack of 2 Solar Waterproof Cat Repellent",
     tocLabel: "Best Ultrasonic",
     tocName: "Pestbye Solar Cat Repeller",
-    pick: "Two solar units on ground stakes, each with a motion sensor and adjustable frequency.",
+    pick: "If you want a solar option: two units on ground stakes, each with a motion sensor.",
     blurb: "If you want a solar option, this pack gives you two units on ground stakes. Each has a motion sensor with an adjustable frequency setting and a monocrystalline panel that recharges in daylight, and the listing names cat as the target species. It comes with a one-year warranty. No detection distance is stated, so place each unit where the cat actually comes in.",
     pros: ["Two units, each on a ground stake", "Solar panel that recharges in daylight, as listed", "Motion sensor with an adjustable frequency", "1 year warranty, as listed"],
   },
@@ -147,8 +147,8 @@ const products: ProductRecord[] = [
     h2Name: "Get Off cat & Dog Repellent 240g",
     tocLabel: "Best Scent Crystals",
     tocName: "Get Off Repellent",
-    pick: "Jelly-like scent crystals for lawns, borders and newly bedded plants.",
-    blurb: "A scent option for beds and borders. The maker describes jelly-like crystals and says that over a period of weeks they condition a cat or dog to stay away from treated areas. They are listed for lawns and borders and for newly bedded plants. The title says 240g while the detail row says 200g, and no active substance is named.",
+    pick: "For lawns and borders: jelly-like scent crystals, also listed for newly bedded plants.",
+    blurb: "For lawns and borders, including newly bedded plants. The maker describes jelly-like crystals and says that over a period of weeks they condition a cat or dog to stay away from treated areas. No active substance is named, and the title says 240g while the detail row says 200g.",
     pros: ["Jelly-like crystals, per the description", "Listed for lawns, borders and newly bedded plants", "The maker describes an effect built up over weeks"],
   },
   {
@@ -169,8 +169,8 @@ const products: ProductRecord[] = [
     h2Name: "Defenders Prickle Strip Dig Stopper, 3-Pack",
     tocLabel: "Best Physical",
     tocName: "Defenders Prickle Strips",
-    pick: "Three prickle strips you can cut to size, with no chemicals, per the maker.",
-    blurb: "The one physical barrier on this page, for a bed or a border you want to cover. You get three strips of 28 cm by 2 m that can be cut to size and hooked together, in weather-resistant plastic that plants grow through. The maker describes them as safe for pets and wildlife and says they need no chemicals. They are listed for gardens and flowerbeds.",
+    pick: "To cover a bed or border: three prickle strips you cut to size, with no chemicals.",
+    blurb: "For a bed or a border you want to cover, this is the one physical barrier on the page. You get three strips of 28 cm by 2 m that can be cut to size and hooked together, in weather-resistant plastic that plants grow through. The maker describes them as safe for pets and wildlife and says they need no chemicals. They are listed for gardens and flowerbeds.",
     pros: ["Three 28 cm x 2 m strips, as listed", "Cut to size and hook together", "Weather-resistant plastic that plants grow through", "No chemicals, the maker says"],
   },
   {
@@ -191,8 +191,8 @@ const products: ProductRecord[] = [
     h2Name: "Silent Roar Lion Manure Cat Repellent Pellets",
     tocLabel: "Best Natural Scent",
     tocName: "Silent Roar Pellets",
-    pick: "Lion manure scent pellets, up to three months per application, per the maker.",
-    blurb: "Choose this if you would rather use a scent with no artificial chemicals, which is what the maker says. The pellets are soaked, it says, in real essence of lion dung, and one application can last up to three months in normal weather, with a few more sprinkled after heavy rain. Target species is listed as cat. The description says a 0.5kg box while the detail row says 0.5 grams.",
+    pick: "For a scent with no artificial chemicals, per the maker: lion manure pellets.",
+    blurb: "Choose this if you want a scent with no artificial chemicals, which is what the maker says these are. The pellets are soaked, it says, in real essence of lion dung, and one application can last up to three months in normal weather, with a few more sprinkled after heavy rain. The description says a 0.5kg box while the detail row says 0.5 grams, so check the size.",
     pros: ["Up to three months per application, per the maker", "Top up with a few pellets after heavy rain", "No artificial chemicals, the maker says", "Target species listed as cat"],
   },
 ];
@@ -232,9 +232,8 @@ const faqSchema = {
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    Cats are protected by law. The RSPCA says causing a cat unnecessary
-    suffering is an offence, as is putting down poison or an unlicensed
-    deterrent.{" "}
+    Cats are protected by law, and putting down poison or an unlicensed
+    deterrent is an offence.{" "}
     <a href="#legal" className="underline">
       The legal position
     </a>
@@ -258,7 +257,7 @@ export default function BestCatDeterrentsPage() {
   return (
     <GuideLayout
       title="Best Cat Deterrents UK 2026 &mdash; Ultrasonic, Scent & Physical"
-      subtitle="Four cat deterrents for UK gardens — ultrasonic, scent and physical — described by what their own listings state, beside what the law allows and what the ASA has accepted"
+      subtitle="Four cat deterrents for UK gardens: a solar ultrasonic pair, two scent products and prickle strips you can cut to fit a border"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -308,10 +307,11 @@ export default function BestCatDeterrentsPage() {
       </div>
 
       <p>
-        Four products: a solar ultrasonic pair, two scent deterrents and a set
-        of plastic prickle strips. Three of them ask a cat to change its mind
-        and one physically stops it digging. Before any of them, there is a
-        legal position that is more restrictive than most people expect.
+        This page compares four cat deterrents for the garden. The Pestbye pack
+        gives you two solar ultrasonic units on ground stakes, and the Get Off
+        crystals are a scent option for lawns and borders. If you want a
+        physical barrier for a bed, the Defenders prickle strips cut to size,
+        and the Silent Roar pellets are the maker&rsquo;s lion-scent option.
       </p>
 
       {/* Comparison table */}

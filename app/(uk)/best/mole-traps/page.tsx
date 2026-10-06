@@ -123,8 +123,8 @@ const products: ProductRecord[] = [
     h2Name: "Victor Push Mole Trap",
     tocLabel: "Best Overall",
     tocName: "Victor Push Mole Trap",
-    pick: "A heavy iron push trap you set into the run from above.",
-    blurb: "Our overall pick. It is an iron push trap, and at 816 grams it is the heaviest on the page. You set it down into the run from the surface, so you do not have to open up the tunnel first.",
+    pick: "Best for setting from the surface: a heavy 816g iron push trap that goes in from above.",
+    blurb: "Pick this if you want to set a trap from the surface without opening up the tunnel first. It is an iron push trap you set down into the run, and at 816 grams it is the heaviest on the page.",
     pros: ["Iron construction, as listed", "Sets into the run from above", "816 grams, the heaviest trap here"],
   },
   {
@@ -144,7 +144,7 @@ const products: ProductRecord[] = [
     h2Name: "The Big Cheese Mole Tunnel Trap",
     tocLabel: "Best Traditional",
     tocName: "The Big Cheese Mole Tunnel Trap",
-    pick: "The classic two-way tunnel trap in galvanised metal, listed as weather-proof.",
+    pick: "For a traditional set: a two-way galvanised tunnel trap, listed as weather-proof.",
     blurb: "If you want the familiar tunnel trap, this is it. The two-way design sits in the run, and the listing gives galvanised metal and wire that is rust-free and weather-proof. At 330 grams it is the lightest trap here.",
     pros: ["Two-way tunnel design", "Galvanised metal and wire", "Listed as rust-free and weather-proof", "Lightest here at 330 grams"],
   },
@@ -165,8 +165,8 @@ const products: ProductRecord[] = [
     h2Name: "Pest-Stop Tunnel Mole Trap",
     tocLabel: "Best Professional",
     tocName: "Pest-Stop Tunnel Mole Trap",
-    pick: "A dual-entry barrel trap in rust-resistant alloy steel.",
-    blurb: "A barrel trap with an entry at each end, so it faces both ways along the run. It is listed in alloy steel, rust-resistant and reusable. The maker claims it is 30% stronger and does not say what that is compared with.",
+    pick: "For covering both directions of a run: a dual-entry barrel trap in alloy steel.",
+    blurb: "Suits a run where you want the trap facing both ways, since it is a barrel trap with an entry at each end. It is listed in alloy steel, rust-resistant and reusable. The maker claims it is 30% stronger, without naming a comparison.",
     pros: ["Dual entry, as listed", "Alloy steel, rust-resistant", "Reusable"],
   },
   {
@@ -186,7 +186,7 @@ const products: ProductRecord[] = [
     h2Name: "SWISSINNO SuperCat Mole Trap",
     tocLabel: "Best Discreet",
     tocName: "SWISSINNO SuperCat Mole Trap",
-    pick: "A reusable claw trap that needs no poison and no bait.",
+    pick: "If you want no poison or bait in the garden: a reusable claw trap, 630 grams.",
     blurb: "Worth choosing if you want to keep poison and bait out of the garden altogether. It is a claw trap in high-impact polystyrene and stainless steel, listed as reusable and weighing 630 grams.",
     pros: ["No poison and no bait, as listed", "Reusable", "High-impact polystyrene and stainless steel"],
   },
@@ -207,16 +207,16 @@ const products: ProductRecord[] = [
     h2Name: "REPELEM Claw Mole Trap (Pack of 3)",
     tocLabel: "Best for Beginners",
     tocName: "REPELEM Claw Mole Trap (Pack of 3)",
-    pick: "Three claw traps in one pack, so you can cover more than one run.",
-    blurb: "The only multi-pack on the page, with three claw traps listed as metal and rust-free. Having three lets you set more than one run at once, which helps while you are still working out which tunnels are in use. The pack weighs 740 grams in total.",
-    pros: ["Three traps in the pack", "Claw design, metal and rust-free", "Lets you cover more than one run at once"],
+    pick: "For several runs at once: three rust-free metal claw traps in one pack.",
+    blurb: "Pick this while you are still working out which tunnels are in use, since three claw traps let you set more than one run at once. It is the only multi-pack on the page, listed as metal and rust-free, and the pack weighs 740 grams in total.",
+    pros: ["Three traps in the pack", "Claw design, metal and rust-free", "740 grams for the pack, as listed"],
   },
 ];
 
 const SAFETY_NOTE = (
   <>
-    Mole traps are exempt from the trap approval order, and the exemption says
-    nothing about safety. Set them where pets and children cannot reach.{" "}
+    Mole traps are exempt from trap approval. Set them where pets and children
+    cannot reach.{" "}
     <a href="#legal" className="underline">
       The legal position
     </a>
@@ -239,7 +239,7 @@ export default function BestMoleTrapsPage() {
   return (
     <GuideLayout
       title="Best Mole Traps UK 2026"
-      subtitle="Push, tunnel and claw traps for UK gardens, described by what their own listings state — and the legal position that decides which you may use"
+      subtitle="Push, tunnel and claw mole traps for UK lawns and beds, from a heavy iron push trap to a three-trap pack for several runs."
       lastUpdated="September 2026"
       readingTime="6 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -285,10 +285,12 @@ export default function BestMoleTrapsPage() {
       </div>
 
       <p>
-        A mole trap is set blind, in a tunnel you cannot see into, against an
-        animal you will probably never meet. Everything below turns on two
-        things: finding an active run, and knowing what the law lets you put in
-        it.
+        Here are five mole traps for lawns and beds. The Victor push trap is our
+        overall pick if you want a heavy iron trap you set from above without
+        opening the tunnel. The Big Cheese is the classic two-way tunnel trap,
+        the Pest-Stop barrel faces both ways along a run, and the SWISSINNO claw
+        trap needs no bait. If you are still finding the active runs, the
+        REPELEM pack gives you three traps.
       </p>
 
       {/* [16] Comparison table */}

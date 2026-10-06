@@ -112,13 +112,13 @@ const products: ProductRecord[] = [
       "Listed as ready-to-use, water-based, non-staining and low-odour",
       "Unit count listed as 1,300 grams; target species Bed Bugs",
     ],
-    tableCells: ["Formula C+ 1L + powder 300g", "Spray + powder kit", "Three actives incl. an IGR, per the maker", "50 m² per application, per the maker"],
+    tableCells: ["Formula C+ 1L + powder 300g", "Spray + powder kit", "Three actives incl. an IGR, per the maker", "50 m² per application, per the maker", "Best Overall"],
     h2Label: "Best Overall",
     h2Name: "Pest Expert Formula C+ Spray 1L + Powder 300g",
     tocLabel: "Best Overall",
     tocName: "Formula C+ Spray + Powder",
-    pick: "A litre of ready-to-use spray and a 300g powder, together in one kit.",
-    blurb: "Our overall pick, because it puts a spray and a powder in one box, which is how most makers here approach the job. You get a litre of ready-to-use spray and a 300g XL powder, 1,300 grams in all. The maker states three actives including an insect growth regulator, and 50 square metres of coverage per application. It is listed as water-based, non-staining and low-odour.",
+    pick: "For a home treatment in one box: 1L ready-to-use spray plus a 300g powder.",
+    blurb: "For treating your home with a spray and a powder from one box. You get a litre of ready-to-use spray and a 300g XL powder, 1,300 grams in all, and the maker states three actives including an insect growth regulator and 50 square metres of coverage per application. It is listed as water-based, non-staining and low-odour.",
     pros: ["1L spray and 300g XL powder together", "Three actives including an IGR, per the maker", "50 m² per application, per the maker", "Water-based, non-staining and low-odour, as listed"],
   },
   {
@@ -134,13 +134,13 @@ const products: ProductRecord[] = [
       "Unit count listed as 2,600 grams — the largest kit here by weight",
       "Listed for application to any surface, furniture and carpets",
     ],
-    tableCells: ["Formula C+ 2 x 1L + 2 x 300g", "Spray + powder kit", "Three actives incl. an IGR, per the maker", "2,600 g total, as listed"],
+    tableCells: ["Formula C+ 2 x 1L + 2 x 300g", "Spray + powder kit", "Three actives incl. an IGR, per the maker", "2,600 g total, as listed", "Best Multi-Room"],
     h2Label: "Best Multi-Room",
     h2Name: "Pest Expert Formula C+ Spray 2 x 1L + Powder 2 x 300g",
     tocLabel: "Best Multi-Room",
     tocName: "Formula C+ Twin Kit",
-    pick: "Twice the kit: two litres of spray and two 300g powders.",
-    blurb: "The same pairing, doubled, for when you have more ground to cover. Two litres of spray and two 300g powders come to 2,600 grams, the largest kit here by weight, and it is listed for any surface, furniture and carpets. The maker states three actives including an insect growth regulator. Its detail row gives the item form as Powder while the text describes a spray, so read the labels.",
+    pick: "For more rooms to cover: two litres of spray and two 300g powders, 2,600g in all.",
+    blurb: "For when you have more ground to cover, since this is the same pairing doubled. Two litres of spray and two 300g powders come to 2,600 grams, the largest kit here by weight, and it is listed for any surface, furniture and carpets. The maker states three actives including an insect growth regulator. Its detail row gives the item form as Powder while the text describes a spray, so read the labels.",
     pros: ["2 x 1L spray and 2 x 300g powder", "2,600 g in total, the largest kit here", "Listed for any surface, furniture and carpets", "Three actives including an IGR, per the maker"],
   },
   {
@@ -156,13 +156,13 @@ const products: ProductRecord[] = [
       "Listed as low-odour and non-staining",
       "Unit count listed as 2,000 grams; target species Bed Bug",
     ],
-    tableCells: ["Treatment kit: spray, powder, fogger", "Three-part kit", "Not named in the detail rows", "One room, per the maker"],
+    tableCells: ["Treatment kit: spray, powder, fogger", "Three-part kit", "Not named in the detail rows", "One room, per the maker", "Best Treatment Kit"],
     h2Label: "Best Treatment Kit",
     h2Name: "Pest Expert Bed Bug Killer Treatment Kit",
     tocLabel: "Best Treatment Kit",
     tocName: "Pest Expert Treatment Kit",
-    pick: "Spray, powder and a fogger, with the maker stating it treats one room.",
-    blurb: "Everything for one room in one box, by the maker's own count: a litre of spray, 300g of powder and a fogger bomb, with a step-by-step advice sheet included. It is listed as low-odour and non-staining. No active is named in its detail rows, and the fogger carries its own instructions about leaving and re-entering the room, so read them first.",
+    pick: "For one room in one box: spray, powder and a fogger, with an advice sheet included.",
+    blurb: "For treating one room with everything in one box, by the maker's own count: a litre of spray, 300g of powder and a fogger bomb, with a step-by-step advice sheet included. It is listed as low-odour and non-staining. No active is named in its detail rows, and the fogger carries its own instructions about leaving and re-entering the room, so read them first.",
     pros: ["Spray, powder and fogger in one kit", "Maker states it treats one room", "Step-by-step advice sheet included", "Low-odour and non-staining, as listed"],
   },
   {
@@ -178,13 +178,13 @@ const products: ProductRecord[] = [
       "Listed as ready-to-use and water-based, for bed frames and mattresses",
       "Target species listed as Bed Bugs; country of origin United Kingdom",
     ],
-    tableCells: ["Formula C 1L + smoke bomb 11g", "Spray + fumigator", "Permethrin, as listed", "Not stated"],
+    tableCells: ["Formula C 1L + smoke bomb 11g", "Spray + fumigator", "Permethrin, as listed", "Not stated", "Best Spray + Fumigator Combo"],
     h2Label: "Best Spray + Fumigator Combo",
     h2Name: "Pest Expert Formula C Spray 1L + Smoke Bomb",
     tocLabel: "Best Combo",
     tocName: "Formula C + Smoke Bomb",
-    pick: "A litre of permethrin spray with an 11g smoke bomb.",
-    blurb: "A spray and a fumigator in one order, and the only listing here that names its active in the detail rows: permethrin. The spray is ready to use, water-based and listed for bed frames and mattresses. The maker describes the 11g smoke bomb as a fumigation device for rapid knockdown. Follow the smoke bomb's own instructions on leaving the room.",
+    pick: "If you want to know the active: permethrin spray, 1L, with an 11g smoke bomb.",
+    blurb: "If you want the active named, this is the only listing here that gives it in the detail rows: permethrin. The spray is ready to use, water-based and listed for bed frames and mattresses, and the maker describes the 11g smoke bomb as a fumigation device for rapid knockdown. Follow the smoke bomb's own instructions on leaving the room.",
     pros: ["Active named on the listing: permethrin", "Spray listed for bed frames and mattresses", "11g smoke bomb included", "Ready to use and water-based"],
   },
   {
@@ -200,13 +200,13 @@ const products: ProductRecord[] = [
       "The maker states coverage of 50 square metres in a single application",
       "Target species listed as Bed Bugs; country of origin United Kingdom",
     ],
-    tableCells: ["Formula C+ 5 litre", "Spray", "Three actives incl. an IGR, per the maker", "50 m² per application, per the maker"],
+    tableCells: ["Formula C+ 5 litre", "Spray", "Three actives incl. an IGR, per the maker", "50 m² per application, per the maker", "Best Trade-Size"],
     h2Label: "Best Trade-Size",
     h2Name: "Pest Expert Formula C+ Bed Bug Killer Spray 5L",
     tocLabel: "Best Trade-Size",
     tocName: "Formula C+ 5 Litre",
-    pick: "Five litres of Formula C+, the largest single container here.",
-    blurb: "If you are treating at trade scale, this is the big container: five litres of ready-to-use spray. The maker states the same three actives, including an insect growth regulator, and 50 square metres per application. Its detail row lists the item form as Aerosol, which a five-litre container is not, so go by the label.",
+    pick: "For trade-scale jobs: five litres of Formula C+, the largest single container here.",
+    blurb: "For treating at trade scale, this is the big container: five litres of ready-to-use spray. The maker states the same three actives, including an insect growth regulator, and 50 square metres per application. Its detail row lists the item form as Aerosol, which a five-litre container is not, so go by the label.",
     pros: ["5 litres, the largest single container here", "50 m² per application, per the maker", "Three actives including an IGR, per the maker", "Country of origin listed as United Kingdom"],
   },
 ];
@@ -246,10 +246,9 @@ const faqSchema = {
 // sit below the picks.
 const SAFETY_NOTE = (
   <>
-    For bedbugs the NHS points you to your council or a pest control service
-    first, and each of these insecticides is used only as its label says.{" "}
-    <a href="#situation" className="underline">
-      What the NHS says to do first
+    All five are insecticides. Use each one only as its label says.{" "}
+    <a href="#legal" className="underline">
+      What the label governs
     </a>
     .
   </>
@@ -271,7 +270,7 @@ export default function BestBedBugSprayPage() {
   return (
     <GuideLayout
       title="Best Bed Bug Spray UK 2026: Sprays and Kits Compared"
-      subtitle="One spray on its own and four kits that pair it with a powder, a fogger or a smoke bomb, described by what their own listings state — beside the NHS position on treating bedbugs yourself"
+      subtitle="Five Pest Expert bed bug sprays and kits, from a spray and powder kit to a five-litre container for trade-scale jobs"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -319,10 +318,12 @@ export default function BestBedBugSprayPage() {
       </div>
 
       <p>
-        Five products from one maker: a single 5 litre spray and four kits that
-        pair a spray with a powder, a fogger or a smoke bomb. That so many are
-        kits is itself the answer to the question most readers arrive with —
-        whether a spray on its own is enough.
+        This page compares five Pest Expert bed bug products: one 5 litre spray
+        and four kits that pair a spray with a powder, a fogger or a smoke bomb.
+        The Formula C+ spray and powder kit is the overall pick, and the twin
+        kit doubles it when you have more ground to cover. If you want
+        everything for one room in one box, the treatment kit adds a fogger, and
+        the 5 litre spray is for trade-scale work.
       </p>
 
       {/* Comparison table */}
@@ -340,6 +341,7 @@ export default function BestBedBugSprayPage() {
               <th className="text-left p-2 border-b font-semibold">What is in the box</th>
               <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
               <th className="text-left p-2 border-b font-semibold">Coverage or size, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
           </thead>
           <tbody>
@@ -355,6 +357,14 @@ export default function BestBedBugSprayPage() {
           </tbody>
         </table>
       </div>
+      <p>
+        For bedbugs, the NHS advises contacting your local council or a pest
+        control service first (
+        <a href={SRC.nhs} rel="nofollow">
+          NHS
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

@@ -145,13 +145,14 @@ const products: ProductRecord[] = [
       "Concentrate + sprayer",
       "Three actives, tetramethrin 0.9% named",
       "Makes 10 L, per the maker",
+      "Best Professional Treatment Kit",
     ],
     h2Label: "Best Professional Treatment Kit",
     h2Name: "Pest Expert Ultimate Concentrate + 5L Sprayer",
     tocLabel: "Best Professional Treatment Kit",
     tocName: "Pest Expert Ultimate Concentrate",
-    pick: "A concentrate the maker says makes 10 litres, with a 5 litre pressure sprayer included.",
-    blurb: "Our top pick for a hotel, hostel or landlord with several rooms to treat. The maker states the concentrate makes ten litres of spray, and a 5 litre pressure sprayer comes in the box, so one order sets you up for more than one room. Three actives are stated, with tetramethrin given at 0.9%, and the maker says the formulation was recently approved for amateur use. Follow the label's dilution to the letter, because with a concentrate that is where mistakes happen.",
+    pick: "Best for several rooms: a concentrate the maker says makes 10 litres, with a 5L sprayer.",
+    blurb: "This suits a hotel, hostel or landlord with several rooms to treat. The maker states the concentrate makes ten litres of spray, and a 5 litre pressure sprayer comes in the box. Three actives are stated, with tetramethrin given at 0.9%, so follow the label's dilution exactly.",
     pros: ["Makes 10 litres, per the maker", "5 litre pressure sprayer included", "Tetramethrin 0.9% named among three actives", "Approved for amateur use, per the maker"],
   },
   {
@@ -172,13 +173,14 @@ const products: ProductRecord[] = [
       "Ready-to-use spray",
       "Three actives incl. an IGR, per the maker; none named in the rows",
       "2 L; 50 m² per application, per the maker",
+      "Best Professional Spray",
     ],
     h2Label: "Best Professional Spray",
     h2Name: "Pest Expert Formula 'C+' 2 x 1L",
     tocLabel: "Best Professional Spray",
     tocName: "Pest Expert Formula C+ 2 x 1L",
-    pick: "Two litres ready to use, with an insect growth regulator among its three actives.",
-    blurb: "The pick when you want to start straight away, with nothing to dilute and no sprayer to set up. You get two 1 litre bottles, and the maker states three actives including an insect growth regulator, with coverage of 50 square metres in a single application. It is listed as water-based, non-staining and low-odour, for bed frames and mattresses. The listing's detail rows name no active, so check the label for them.",
+    pick: "Best if you want to start today: two 1 litre bottles, ready to use with nothing to dilute.",
+    blurb: "Pick this when you want to start straight away, with nothing to dilute and no sprayer to set up. You get two 1 litre bottles, and the maker states three actives including an insect growth regulator, with 50 square metres covered in a single application. The listing's detail rows name no active, so check the label for them.",
     pros: ["Ready to use: two 1 litre bottles", "Three actives including an insect growth regulator, per the maker", "50 square metres per application, per the maker", "Water-based, non-staining and low-odour, as listed"],
   },
   {
@@ -199,13 +201,14 @@ const products: ProductRecord[] = [
       "Ready-to-use spray in bulk",
       "Cypermethrin and tetramethrin, named in the rows",
       "5 L; up to 3 months residual, per the maker",
+      "Best Bulk Treatment",
     ],
     h2Label: "Best Bulk Treatment",
     h2Name: "NOPE! CP Bed Bug Killer 5L + Sprayer",
     tocLabel: "Best Bulk Treatment",
     tocName: "NOPE! CP 5L + Sprayer",
-    pick: "Five litres with a pressure sprayer, and the actives named in the listing.",
-    blurb: "For a premises that needs volume. Five litres of ready-to-use spray arrive with a pressure sprayer, and this is the one listing here whose detail rows name the actives: cypermethrin and tetramethrin, with cypermethrin given at 0.1% w/w. The maker states residual action for up to three months. It is listed as solvent-free, water-based, odourless and non-staining.",
+    pick: "Best for volume: five litres with a pressure sprayer, cypermethrin and tetramethrin named.",
+    blurb: "This is for a premises that needs volume. Five litres of ready-to-use spray arrive with a pressure sprayer, and the detail rows name cypermethrin and tetramethrin, with cypermethrin given at 0.1% w/w. The maker states residual action for up to three months, and it is listed as solvent-free, water-based, odourless and non-staining.",
     pros: ["5 litres ready to use, with a pressure sprayer", "Cypermethrin and tetramethrin named in the listing", "Up to 3 months residual action, per the maker", "Water-based, odourless and non-staining, as listed"],
   },
   {
@@ -226,13 +229,14 @@ const products: ProductRecord[] = [
       "Spray + powder + fogger bomb",
       "not stated",
       "One room, per the maker; up to 12 weeks residue",
+      "Best Complete Room Kit",
     ],
     h2Label: "Best Complete Room Kit",
     h2Name: "Pest Expert Bed Bug Treatment Kit (Standard)",
     tocLabel: "Best Complete Room Kit",
     tocName: "Pest Expert Treatment Kit (Standard)",
-    pick: "Spray, powder and a fogger in one box, for one room, per the maker.",
-    blurb: "The pick if you want everything for one room in a single order. The box holds a litre of Formula 'C+' spray, 300g of powder and a fogger bomb, and the maker states a residue that continues for up to twelve weeks. Read the limits section before you use the fogger: UC IPM does not recommend over-the-counter total-release foggers for bed bugs.",
+    pick: "Best for one room in one order: spray, powder and a fogger bomb in a single box.",
+    blurb: "This suits you if you want everything for one room in a single order. The box holds a litre of Formula 'C+' spray, 300g of powder and a fogger bomb, and the maker states a residue that continues for up to twelve weeks. UC IPM does not recommend over-the-counter total-release foggers for bed bugs, so read the limits section before you use that part.",
     pros: ["Spray, powder and fogger in one box", "1 litre of Formula 'C+' and 300g of powder", "Up to 12 weeks residue, per the maker"],
   },
   {
@@ -253,13 +257,14 @@ const products: ProductRecord[] = [
       "Under-leg detection traps",
       "None — no chemicals or pesticides, per the listing",
       "8 traps, stated as covering two beds",
+      "Best Monitoring Add-On",
     ],
     h2Label: "Best Monitoring Add-On",
     h2Name: "Bed Bug Blocker (Pro) Interceptor Traps",
     tocLabel: "Best Monitoring Add-On",
     tocName: "Bed Bug Blocker Interceptors",
-    pick: "Eight insecticide-free traps for under bed legs, so you can see whether bed bugs remain.",
-    blurb: "Add these to any treatment above, because they are how you find out whether it worked. The eight cups sit under bed and furniture legs, and the maker describes bed bugs climbing the textured outside and being unable to escape. The listing states no chemicals or pesticides, and says eight traps cover two beds or other pieces of furniture. It is listed for hotels, hostels, dormitories, hospitals and nursing homes.",
+    pick: "Best for checking results: eight insecticide-free cups for under bed and furniture legs.",
+    blurb: "Add these to any treatment above to find out whether bed bugs remain. The eight cups sit under bed and furniture legs, and the maker describes bed bugs climbing the textured outside and being unable to escape. The listing states no chemicals or pesticides and says eight traps cover two beds or other pieces of furniture.",
     pros: ["No chemicals or pesticides, per the listing", "8 traps, stated as covering two beds", "Sit under bed and furniture legs", "Listed for hotels, hostels and dormitories"],
   },
 ];
@@ -303,10 +308,9 @@ const faqSchema = {
 
 const SAFETY_NOTE = (
   <>
-    Four of these are insecticides, used only as each label directs. UC IPM does
-    not recommend total-release foggers for bed bugs.{" "}
-    <a href="#limits" className="underline">
-      Where these products do not work
+    Four of these are insecticides: use each one only as its label directs.{" "}
+    <a href="#legal" className="underline">
+      What the label governs
     </a>
     .
   </>
@@ -328,7 +332,7 @@ export default function CommercialBedBugTreatmentPage() {
   return (
     <GuideLayout
       title="Best Commercial Bed Bug Treatment UK 2026: Professional Sprays, Kits &amp; Monitors"
-      subtitle="Three sprays, a three-part room kit and a set of interceptor traps, described by what their own listings state — beside the University of California on what a bed bug treatment has to include and what it must not rely on"
+      subtitle="Bed bug sprays, a room kit and interceptor traps for hotels, hostels and landlords with several rooms to treat."
       lastUpdated="September 2026"
       readingTime="9 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -376,10 +380,12 @@ export default function CommercialBedBugTreatmentPage() {
       </div>
 
       <p>
-        Five products for premises with more than one bed: a concentrate, two
-        ready-to-use sprays, a three-part room kit and a set of interceptor
-        traps. One of the five contains an item the source this page reads
-        advises against, and that is on its card rather than buried.
+        These picks suit hotels, hostels and landlords dealing with bed bugs in
+        more than one room. The Pest Expert concentrate comes with a 5 litre
+        pressure sprayer and, the maker says, makes 10 litres. Formula
+        &lsquo;C+&rsquo; is ready to use straight away, and the NOPE! CP 5L is
+        the bulk option. Put the interceptor traps under bed legs to check
+        whether bed bugs remain.
       </p>
 
       {/* Comparison table — LISTING facts only, "not stated" where absent */}
@@ -397,6 +403,7 @@ export default function CommercialBedBugTreatmentPage() {
               <th className="text-left p-2 border-b font-semibold">What is in the box</th>
               <th className="text-left p-2 border-b font-semibold">Actives, as listed</th>
               <th className="text-left p-2 border-b font-semibold">Quantity or coverage, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
           </thead>
           <tbody>
@@ -412,6 +419,14 @@ export default function CommercialBedBugTreatmentPage() {
           </tbody>
         </table>
       </div>
+      <p>
+        UC IPM does not recommend over-the-counter total-release foggers for bed
+        bugs, and the room kit at rank 4 includes one (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

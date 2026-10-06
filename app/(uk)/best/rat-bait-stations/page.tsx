@@ -129,8 +129,8 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil Advanced Rat Bait Station",
     tocLabel: "Best Overall",
     tocName: "Rentokil Advanced Bait Station",
-    pick: "A single lockable, reusable station with rat named as its target.",
-    blurb: "Our overall pick if you need one station for a rat problem. The listing calls it lockable, tamper-resistant and reusable, and rat is the only target species it names. It is clear plastic, 26.6 x 17 x 11.3 cm and 340 grams. No bait comes with it, so you choose the rodenticide and read its label.",
+    pick: "Best if you need one station for rats: lockable, tamper-resistant and reusable.",
+    blurb: "Our overall pick if you need one station for a rat problem. The listing calls it lockable, tamper-resistant and reusable, in clear plastic at 26.6 x 17 x 11.3 cm and 340 grams, and rat is the only target species it names. No bait comes with it, so you choose the rodenticide and read its label.",
     pros: ["Lockable, tamper-resistant and reusable, as listed", "Rat named as the target species", "Clear plastic", "340 grams"],
   },
   {
@@ -138,7 +138,7 @@ const products: ProductRecord[] = [
     asin: "B010E2GRGO",
     rank: 2,
     cardName: "Pest Expert Professional Rat Bait Station",
-    cardLabel: "Best Professional-Grade",
+    cardLabel: "Best Professional",
     features: [
       "Two boxes with a key included",
       "Listed as taking blocks, grain and pasta bait",
@@ -151,8 +151,8 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Rat Bait Station",
     tocLabel: "Best Professional",
     tocName: "Pest Expert Rat Bait Station",
-    pick: "Two boxes and a key, taking blocks, grain or pasta bait.",
-    blurb: "Two boxes and a key, for covering more than one run. The listing says they take blocks, grain and pasta bait, so whichever format you buy will go in. At 28.4 x 21.8 x 21.6 cm they are the largest here, and they are listed for outdoor use. No bait is included.",
+    pick: "Best for several runs outdoors: two boxes and a key, taking blocks, grain or pasta.",
+    blurb: "Two boxes and a key, for covering more than one run outdoors. The listing says they take blocks, grain and pasta bait, and at 28.4 x 21.8 x 21.6 cm they are the largest here. No bait is included.",
     pros: ["Two boxes and a key", "Takes blocks, grain and pasta bait", "Listed for outdoor use", "Mouse and rat named as targets"],
   },
   {
@@ -173,8 +173,8 @@ const products: ProductRecord[] = [
     h2Name: "Roshield External Bait Box",
     tocLabel: "Best Value",
     tocName: "Roshield External Bait Box",
-    pick: "Two extra-large stations with a solid lid for inspection.",
-    blurb: "Two extra-large stations in one pack, with a secure solid lid the listing says is there for inspection. They are listed for indoor and outdoor use, so one can go inside and one outside. Each is 26 x 19 x 12 cm and 500 grams, and no bait is included.",
+    pick: "Best for one box inside and one out: two extra-large stations with a solid lid.",
+    blurb: "Suits you if you want one station inside and one outside, since both are listed for indoor and outdoor use. You get two extra-large stations, each 26 x 19 x 12 cm and 500 grams, with a secure solid lid the listing says is there for inspection. No bait is included.",
     pros: ["Two extra-large stations", "Secure solid lid for inspection", "Indoor and outdoor use, as listed", "Mouse and rat named as targets"],
   },
   {
@@ -194,7 +194,7 @@ const products: ProductRecord[] = [
     h2Name: "The Big Cheese Rat Bait Station",
     tocLabel: "Best Multi-Pack",
     tocName: "The Big Cheese Rat Bait Station",
-    pick: "Three boxes with 900g of difenacoum bait, ready to put out.",
+    pick: "Best if you want to start straight away: three boxes and 900g of difenacoum bait.",
     blurb: "If you want to start straight away, this pack has three bait boxes and 900g of bait blocks, so it arrives ready to deploy. The listing names difenacoum as the active substance. Read the pack's label conditions before you put it down.",
     pros: ["Three bait boxes", "900g of bait blocks included", "Active stated on the listing: difenacoum"],
   },
@@ -210,13 +210,13 @@ const products: ProductRecord[] = [
       "Listed as 5 x 300g single-feed blocks",
       "Everything to deploy in one purchase",
     ],
-    tableCells: ["Pest Expert Kit", "2 stations, 1.5kg brodifacoum", "Best Kit"],
+    tableCells: ["Pest Expert Kit", "2 stations, 1.5kg brodifacoum", "Best Complete Kit"],
     h2Label: "Best Complete Kit",
     h2Name: "Pest Expert Station + Poison Kit",
     tocLabel: "Best Complete Kit",
     tocName: "Pest Expert Station + Poison Kit",
-    pick: "Two lockable boxes and 1.5kg of brodifacoum blocks in one purchase.",
-    blurb: "Everything to deploy in one purchase: two lockable bait boxes and 1.5kg of blocks, listed as five 300g packs of single-feed bait. The active substance is stated as brodifacoum. It suits you if you have no station yet and want boxes and bait together.",
+    pick: "Best if you own no station yet: two lockable boxes and 1.5kg of brodifacoum blocks.",
+    blurb: "Suits you if you have no station yet and want boxes and bait together. You get two lockable bait boxes and 1.5kg of blocks, listed as five 300g packs of single-feed bait. The active substance is stated as brodifacoum.",
     pros: ["Two lockable bait boxes", "1.5kg of blocks as 5 x 300g packs", "Single-feed brodifacoum bait, as listed"],
   },
 ];
@@ -228,10 +228,9 @@ const products: ProductRecord[] = [
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    Bait labels require a station strong enough to stop dogs and lockable
-    against children, and making sure yours complies is your job.{" "}
+    Bait labels require a station strong enough to stop dogs and lockable against children.{" "}
     <a href="#legal" className="underline">
-      What the label requires of you
+      What the label requires
     </a>
     .
   </>
@@ -252,7 +251,7 @@ export default function BestRatBaitStationsPage() {
   return (
     <GuideLayout
       title="Best Rat Bait Stations UK 2026: Tamper-Resistant & Lockable"
-      subtitle="Lockable boxes that hold rodenticide where a rat can reach it and a child or a dog cannot — five compared on what their listings state"
+      subtitle="Five lockable rat bait stations, from a single reusable box to multi-box packs that arrive with bait inside"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -311,10 +310,7 @@ export default function BestRatBaitStationsPage() {
       </div>
 
       <p>
-        A bait station is a lockable box that holds rodenticide where a rat can
-        reach it and a child or a dog cannot. It is a container, not a treatment
-        — three of the five here are sold empty, and two arrive with bait in
-        them.
+        Three of these stations arrive empty and two come with bait. The Rentokil Advanced suits you if you need one lockable box for a rat problem. The Pest Expert pair takes blocks, grain or pasta bait, and the Roshield PRO BOX pair can go one inside and one out. If you have no bait yet, the Big Cheese and Pest Expert kits put boxes and bait in one order.
       </p>
 
       {/* [16] Comparison table */}

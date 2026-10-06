@@ -143,13 +143,14 @@ const products: ProductRecord[] = [
       "Residual spray",
       "Cypermethrin 0.1% w/w, named by the maker",
       "1 litre; up to 12 weeks residual, per the maker",
+      "Best Spray",
     ],
     h2Label: "Best Spray",
     h2Name: "Ready Steady Defend Silverfish Killer Spray 1L",
     tocLabel: "Best Spray",
     tocName: "Ready Steady Defend Silverfish Killer Spray",
-    pick: "A litre of ready-to-use cypermethrin spray, residual for 12 weeks per the maker.",
-    blurb: "Our spray pick for the skirting boards and corners where you have seen them. It is a litre of ready-to-use spray with the active named as cypermethrin at 0.1% w/w, and the maker states up to 12 weeks of residual action per application. The maker also describes it as water-based, low-odour and non-staining, and suitable for walls, floors, carpets and furnishings.",
+    pick: "For skirting boards and corners: 1L of ready-to-use cypermethrin spray.",
+    blurb: "Suits the skirting boards and corners where you have seen them. It is a litre of ready-to-use spray with cypermethrin at 0.1% w/w, and the maker states up to 12 weeks of residual action per application. The maker also describes it as water-based, low-odour and non-staining.",
     pros: ["1 litre, ready to use", "Cypermethrin 0.1% w/w, named by the maker", "Up to 12 weeks residual per application, per the maker", "Water-based, low-odour and non-staining, per the maker"],
   },
   {
@@ -170,13 +171,14 @@ const products: ProductRecord[] = [
       "Glue trap, no insecticide",
       "None — a glue trap, per the listing",
       "Three traps; up to 90 days each, per the maker",
+      "Best Trap",
     ],
     h2Label: "Best Trap",
     h2Name: "Super Ninja Silverfish Trap (3-Pack)",
     tocLabel: "Best Trap",
     tocName: "Super Ninja Silverfish Trap",
-    pick: "Three glue traps that show you where silverfish are walking.",
-    blurb: "Start here if you are not yet sure where they are coming from. You get three glue traps with a food-based attractant in the glue, with up to 90 days of coverage each according to the maker. There is no insecticide in them. The listing gives their use as trapping and monitoring an infestation, which tells you where any spray or powder should go.",
+    pick: "If you're not sure where they come from: three glue traps with no insecticide.",
+    blurb: "Start here if you are not yet sure where they are coming from. You get three glue traps with no insecticide and a food-based attractant in the glue, each lasting up to 90 days according to the maker. The listing gives their use as trapping and monitoring, so they show you where any spray or powder should go.",
     pros: ["Three glue traps per pack", "No insecticide", "Up to 90 days per trap, per the maker", "Food-based attractant in the glue, per the maker"],
   },
   {
@@ -197,13 +199,14 @@ const products: ProductRecord[] = [
       "Compressor dehumidifier",
       "None — it removes moisture, not insects",
       "12 L/day; 1.8 L tank, as listed",
+      "Best Long-Term Solution",
     ],
     h2Label: "Best Long-Term Solution",
     h2Name: "Pro Breeze 12L/Day Dehumidifier",
     tocLabel: "Best Long-Term Solution",
     tocName: "Pro Breeze Dehumidifier",
-    pick: "A 12 litre a day dehumidifier for the damp that silverfish depend on.",
-    blurb: "The pick for the longer job, because the source this page reads names moisture as the condition silverfish depend on. It extracts 12 litres a day into a 1.8 litre tank, with a hose option for continuous drainage. An automatic humidity sensor lets you set a target, and there is a 24-hour timer with auto shut-off. The maker states sound levels under 38dB.",
+    pick: "For a damp room: a dehumidifier listed at 12 litres a day.",
+    blurb: "The pick for a damp room, since moisture is the condition silverfish depend on. It extracts 12 litres a day into a 1.8 litre tank, with a hose option, and an automatic humidity sensor lets you set a target. There is a 24-hour timer with auto shut-off, and the maker states sound levels under 38dB.",
     pros: ["12 litres a day extraction", "Humidity sensor with a settable target", "24-hour timer and auto shut-off", "Under 38dB, per the maker"],
   },
   {
@@ -224,13 +227,14 @@ const products: ProductRecord[] = [
       "Insecticidal dust",
       "Permethrin, named by the maker",
       "300 g; puffer pack, as listed",
+      "Best Powder",
     ],
     h2Label: "Best Powder",
     h2Name: "Pest Expert Formula 'P' Silverfish Killer Powder 300g",
     tocLabel: "Best Powder",
     tocName: "Pest Expert Killer Powder",
-    pick: "300g of permethrin dust in a puffer pack, for gaps and power points.",
-    blurb: "A dust for hard-to-reach places. It is 300 grams in a puffer pack with permethrin named as the active, listed for use indoors or outside, including around power points. Its target species row reads Insects rather than Silverfish.",
+    pick: "For gaps and power points: 300g of permethrin dust in a puffer pack.",
+    blurb: "Suits gaps and hard-to-reach spots, including around power points. It is 300 grams of dust in a puffer pack with permethrin named as the active, listed for use indoors or outside.",
     pros: ["300g puffer pack", "Permethrin, named by the maker", "Listed for use around power points", "Indoor or external application"],
   },
 ];
@@ -277,8 +281,8 @@ const faqSchema = {
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    The spray and the powder are insecticides, and each label sets where it may
-    be applied, at what rate, and what must be kept away from it.{" "}
+    The spray and powder are insecticides: use each only as its label
+    directs.{" "}
     <a href="#legal" className="underline">
       What the label governs
     </a>
@@ -302,7 +306,7 @@ export default function BestSilverfishTreatmentsPage() {
   return (
     <GuideLayout
       title="Best Silverfish Treatments UK 2026 &mdash; Sprays, Traps, Powder &amp; Dehumidifiers"
-      subtitle="A residual spray, glue traps, a dehumidifier and an insecticidal powder, described by what their own listings state — beside the University of California's account of why the damp matters more than the insecticide"
+      subtitle="Four ways to tackle silverfish: a residual spray, glue traps to find them, a dehumidifier for the damp and a permethrin powder"
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -350,9 +354,11 @@ export default function BestSilverfishTreatmentsPage() {
       </div>
 
       <p>
-        Four products, and only two of them are insecticides. The other two are a
-        glue trap that tells you where the insects are and a dehumidifier that
-        removes the thing they need. That split is the argument of this page.
+        Four products for silverfish, two of them insecticides. Ready Steady
+        Defend&rsquo;s spray suits the skirting boards and corners where you have
+        seen them, and if you are not sure where they are coming from, the Super
+        Ninja glue traps show you where they walk. For the damp they depend on,
+        the Pro Breeze dehumidifier is listed at 12 litres a day.
       </p>
 
       {/* Comparison table */}
@@ -370,6 +376,7 @@ export default function BestSilverfishTreatmentsPage() {
               <th className="text-left p-2 border-b font-semibold">Type</th>
               <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
               <th className="text-left p-2 border-b font-semibold">Quantity or duration, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
           </thead>
           <tbody>

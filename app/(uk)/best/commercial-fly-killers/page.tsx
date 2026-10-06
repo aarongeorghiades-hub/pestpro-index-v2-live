@@ -101,7 +101,7 @@ const products: ProductRecord[] = [
     asin: "B07CKP6XL5",
     rank: 1,
     cardName: "Xterminate UV LED Wall Mounted Fly Killer (Large)",
-    cardLabel: "Best Overall",
+    cardLabel: "Best for Restaurants",
     features: [
       "LED capture unit — safe to use near food service areas",
       "Dual UV LED strips attract a wide range of flying insects",
@@ -112,14 +112,14 @@ const products: ProductRecord[] = [
     tableCells: [
       "Xterminate UV LED Wall Mounted Fly Killer (Large)",
       "LED capture unit",
-      "Best Overall",
+      "Best for Restaurants",
     ],
     h2Label: "Best for Restaurants",
     h2Name: "Xterminate UV LED Wall Mounted Fly Killer (Large)",
     tocLabel: "Best for Restaurants",
     tocName: "Xterminate UV LED Wall Mounted Fly Killer (Large)",
-    pick: "A wall-mounted LED capture unit for use near food service areas.",
-    blurb: "Our top pick for restaurants, cafés and any food business that needs a fly unit near customer-facing and food service areas. It uses a capture mechanism rather than an electrocution grid, so it does not scatter insect fragments when a fly is caught. Dual UV LED strips draw flies in, the unit runs at 20W, and the steel and ABS housing mounts on the wall, out of your staff's way.",
+    pick: "For restaurants and cafés: a 20W wall-mounted LED capture unit for food service areas.",
+    blurb: "Pick this for restaurants, cafés and food businesses that need a fly unit near customer-facing and food service areas. It catches flies with a capture mechanism, so there are no insect fragments, and dual UV LED strips draw them in at 20W. The steel and ABS housing mounts on the wall, out of your staff's way.",
     pros: ["Capture-style mechanism, so no insect fragmentation near food areas", "Energy-efficient 20W LED operation", "Steel and ABS construction with a discreet wall-mounted look", "Dual UV LED strips"],
   },
   {
@@ -144,8 +144,8 @@ const products: ProductRecord[] = [
     h2Name: "Xterminate 30W UV Electronic Commercial Fly Killer",
     tocLabel: "Best Classic Zapper",
     tocName: "Xterminate 30W UV Electronic Commercial Fly Killer",
-    pick: "A 30W UV zapper with flexible mounting for back-of-house areas.",
-    blurb: "A classic zapper for corridors, store rooms and goods-in areas. Its 30W of UV draws flies to a high-voltage grid, and the dead insects drop into a removable tray that slides out for cleaning. You can mount it on a wall, hang it from the ceiling or stand it on a shelf, but never in a food preparation or food storage area.",
+    pick: "Best for back-of-house corridors and stores: a 30W UV zapper you can mount three ways.",
+    blurb: "This suits back-of-house corridors and storage areas away from food. Its 30W of UV draws flies to a high-voltage grid, and the dead insects drop into a removable tray that slides out for cleaning. You can fix it to a wall, hang it from the ceiling or stand it freestanding, but never in a food preparation or food storage area.",
     pros: ["30W UV output", "Wall, ceiling or freestanding mounting", "Removable collection tray for cleaning and catch checks"],
   },
   {
@@ -170,8 +170,8 @@ const products: ProductRecord[] = [
     h2Name: "Xterminate 40W UV Commercial Fly Killer with Remote Control",
     tocLabel: "Best Large Coverage",
     tocName: "Xterminate 40W UV Commercial Fly Killer with Remote Control",
-    pick: "40W of UV with a remote control, for large kitchens and warehouses.",
-    blurb: "When a 30W unit will not cover the space, this one steps up to 40W from two 20W UV-A tubes, with an open top that spreads the light wider. The remote control lets staff switch it on and off from the floor when it is mounted high. Like every zapper here, it belongs in back-of-house space and never over food.",
+    pick: "Best for warehouses and large back-of-house spaces: 40W of UV, with a remote control.",
+    blurb: "Choose this when a 30W unit will not cover the space. It steps up to 40W from two 20W UV-A tubes, with an open top that spreads the light wider and a remote control so staff can switch it from the floor when it is mounted high. Like every zapper here, it belongs in back-of-house space and never over food.",
     pros: ["40W UV output from 2 x 20W UV-A tubes", "Remote control for on/off from ground level", "Open-top design for wider light spread", "Fireproof ABS construction, as listed"],
   },
   {
@@ -179,7 +179,7 @@ const products: ProductRecord[] = [
     asin: "B07RPT58C3",
     rank: 4,
     cardName: "30W Industrial Electric Fly Insect Killer",
-    cardLabel: "Best Budget Option",
+    cardLabel: "Best Budget Commercial",
     features: [
       "30W output (2 x 15W UV tubes)",
       "Chain included for ceiling suspension mounting",
@@ -190,14 +190,14 @@ const products: ProductRecord[] = [
     tableCells: [
       "30W Industrial Electric Fly Insect Killer",
       "UV zapper",
-      "Best Budget Option",
+      "Best Budget Commercial",
     ],
     h2Label: "Best Budget Commercial",
     h2Name: "30W Industrial Electric Fly Insect Killer",
     tocLabel: "Best Budget Commercial",
     tocName: "30W Industrial Electric Fly Insect Killer",
-    pick: "A plain 30W zapper with a ceiling chain, for corridors and stores.",
-    blurb: "A no-frills unit for non-food areas such as corridors, staff changing rooms, bin stores and loading bays. Two 15W UV tubes give 30W of output to a high-voltage grid, a chain is included for ceiling suspension, and the collection tray slides out for emptying. Power consumption is listed as low, so it can run around the clock in the fly season.",
+    pick: "Best for plain non-food areas: a 30W zapper with a chain for hanging from the ceiling.",
+    blurb: "A no-frills unit for non-food areas such as corridors, staff changing rooms, bin stores and loading bays. Two 15W UV tubes give 30W to a high-voltage grid, a chain is included for ceiling suspension, and the collection tray slides out for emptying. Power consumption is listed as low.",
     pros: ["30W from 2 x 15W UV tubes", "Chain included for ceiling suspension", "Removable collection tray", "Low power consumption, as listed"],
   },
   {
@@ -205,7 +205,7 @@ const products: ProductRecord[] = [
     asin: "B08P5X6T1P",
     rank: 5,
     cardName: "Eazyzap 13W Glue Board Fly Killer Unit — Wall or Shelf Mounted",
-    cardLabel: "Best for Food Prep Areas",
+    cardLabel: "Best Glue Board Unit",
     features: [
       "A mains-powered wall or shelf mounted unit, not a pack of sticky cards",
       "13W infrared lighting attracts flies without UV fragmentation risk",
@@ -216,31 +216,17 @@ const products: ProductRecord[] = [
     tableCells: [
       "Eazyzap 13W Glue Board Fly Killer Unit — Wall or Shelf Mounted",
       "Glue board unit (13W)",
-      "Best for Food Prep Areas",
+      "Best Glue Board Unit",
     ],
     h2Label: "Best Glue Board Unit",
     h2Name: "Eazyzap 13W Fly Killer",
     tocLabel: "Best Glue Board Unit",
     tocName: "Eazyzap 13W Fly Killer",
-    pick: "A glue board unit for the food prep areas where zappers are not allowed.",
-    blurb: "The one unit on this page built for food preparation and food service areas, where zappers are not allowed. It uses 13W of infrared lighting and captures flies intact on adhesive boards, which are bought separately as a refill. The black metal housing mounts on a wall or sits on a shelf, and the listing gives 50 square metres of coverage.",
+    pick: "Best for food preparation areas: a 13W glue board unit that holds flies on a board.",
+    blurb: "This is the unit for food preparation and food service areas. It uses 13W of infrared lighting and catches flies intact on adhesive boards, and the black metal housing mounts on a wall or sits on a shelf, with 50 square metres of coverage as listed. The boards are bought separately as refills, so order a supply with it.",
     pros: ["Glue board capture, so no fragmentation", "13W infrared lighting", "50 square metre coverage, as listed", "Wall or shelf mounted metal housing"],
   },
 ];
-
-// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
-// block (the top-picks box). It satisfies Law 180 on this route; the full
-// zapper-against-glue-board guidance sits in the buying guide below the picks.
-const SAFETY_NOTE = (
-  <>
-    Zapper units must never go in food preparation or food storage areas; only a
-    glue board unit belongs there.{" "}
-    <a href="#buying-guide" className="underline">
-      Zapper or glue board
-    </a>
-    .
-  </>
-);
 
 const tocItems = [
   { id: "at-a-glance", title: "Best Commercial Fly Killers at a Glance" },
@@ -256,7 +242,7 @@ export default function BestCommercialFlyKillersPage() {
   return (
     <GuideLayout
       title="Best Commercial Fly Killers UK 2026: Restaurant & Kitchen Units"
-      subtitle="Our pick of commercial electric fly killers for UK restaurants, kitchens, and food businesses — UV zappers, glue board units, and LED models compared."
+      subtitle="Commercial fly killers for UK restaurants, kitchens and food businesses, with LED, zapper and glue board units for front and back of house."
       lastUpdated="March 2026"
       readingTime="12 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -354,7 +340,6 @@ export default function BestCommercialFlyKillersPage() {
       breadcrumbSchema={breadcrumbSchema}
       topPicks={
         <TopPicks
-          note={SAFETY_NOTE}
           picks={products.slice(0, 3).map((p) => ({
             label: p.cardLabel,
             name: p.cardName,
@@ -396,25 +381,11 @@ export default function BestCommercialFlyKillersPage() {
 
       {/* Intro paragraphs */}
       <p>
-        If you run a restaurant, commercial kitchen, caf&eacute;, pub, bakery,
-        or any food business in the United Kingdom, you already know that flying
-        insects are more than a nuisance &mdash; they are a direct threat to
-        your food hygiene rating, your reputation, and your compliance with UK
-        food safety law. The Food Safety Act 1990 and the Food Hygiene (England)
-        Regulations 2006 (with equivalent legislation in Scotland, Wales, and
-        Northern Ireland) place a legal obligation on food business operators to
-        control pests, and Environmental Health Officers (EHOs) can and do issue
-        improvement notices, hygiene emergency prohibition notices, and
-        prosecutions for premises where fly contamination is evident. A single
-        housefly (<em>Musca domestica</em>) carries an average of 1.9 million
-        bacteria on its body, including <em>E. coli</em>, <em>Salmonella</em>,
-        and <em>Campylobacter</em> &mdash; the three pathogens responsible for
-        the vast majority of foodborne illness in Britain. When a fly lands on a
-        food preparation surface, it does not simply sit there: it regurgitates
-        digestive enzymes onto the surface, feeds, and then deposits faecal
-        matter before taking off again. In a commercial food environment, this
-        cycle of contamination can occur hundreds of times per day during peak
-        summer months.
+        This page is for restaurants, caf&eacute;s, pubs and other food
+        businesses choosing a fly unit. The Xterminate LED wall unit suits
+        customer-facing and food service areas, and the Eazyzap glue board unit
+        is the one for food preparation areas. The 30W and 40W Xterminate
+        zappers are for corridors, store rooms and larger back-of-house spaces.
       </p>
       <p>
         The solution that has been standard practice in the UK food industry for
@@ -499,6 +470,14 @@ export default function BestCommercialFlyKillersPage() {
           ))}
         </tbody>
       </table>
+      <p>
+        Site a zapper away from food preparation and food storage areas, and
+        use a glue board unit where food is handled (
+        <a href="#buying-guide" className="underline">
+          Zapper or glue board
+        </a>
+        ).
+      </p>
 
       {/* Best Overall */}
       <h2 id={products[0].anchorId}>

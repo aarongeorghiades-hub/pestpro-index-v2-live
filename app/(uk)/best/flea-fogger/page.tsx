@@ -122,8 +122,8 @@ const products: ProductRecord[] = [
     h2Name: "Indorex Defence Household Flea Spray 500ml",
     tocLabel: "Best Overall",
     tocName: "Indorex Defence Flea Spray",
-    pick: "A 500ml hand spray with the growth regulator pyriproxyfen, for about a 3-4 bedroom house.",
-    blurb: "Our overall pick, and a hand spray rather than a fogger, so you can aim it where fleas develop. You spray it from about 50cm onto and under carpets, rugs, tiles and skirting, and the maker says one 500ml can treats approximately a 3-4 bedroom house. Its four listed ingredients include permethrin and the growth regulator pyriproxyfen. Remove pets, birds and fish aquaria first, and ventilate afterwards.",
+    pick: "Best for a whole house: a 500ml hand spray with pyriproxyfen, about 3-4 bedrooms a can.",
+    blurb: "This suits a whole-house treatment where you want to aim the spray where fleas develop. You spray it from about 50cm onto and under carpets, rugs, tiles and skirting, and the maker says one 500ml can treats approximately a 3-4 bedroom house, with permethrin and the growth regulator pyriproxyfen among its four listed ingredients. Remove pets, birds and fish aquaria first, and ventilate afterwards.",
     pros: ["Sprayed onto and under carpets, rugs and skirting", "Pyriproxyfen growth regulator listed", "About a 3-4 bedroom house per can, per the maker", "Four ingredients listed, including permethrin"],
   },
   {
@@ -144,8 +144,8 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Natural Flea Bomb 150ml",
     tocLabel: "Best Natural",
     tocName: "Zero In Natural Flea Bomb",
-    pick: "The one true flea bomb here: a 150ml one-shot can with pyrethrins, for up to 40 m³.",
-    blurb: "The pick if you want an actual flea bomb. It is a 150ml one-shot aerosol containing pyrethrins: you press the trigger to lock it and leave the room while the can empties, and the listing gives a whole-room treatment of up to 40 m³. Turn off pilot lights and keep it away from flames first, as the fire warning above sets out. Follow up with a hand spray under beds and furniture, where a fogger reaches least.",
+    pick: "Best if you want an actual flea bomb: a 150ml one-shot can with pyrethrins, up to 40 m³.",
+    blurb: "Pick this if you want a true flea bomb. It is a 150ml one-shot aerosol containing pyrethrins that you lock on and leave to empty while you are out of the room, and the listing gives a whole-room treatment of up to 40 m³. Turn off pilot lights and keep it away from flames first, as the fire warning below sets out.",
     pros: ["One-shot aerosol you lock and leave", "Contains pyrethrins, per the listing", "Whole-room treatment up to 40 m³, as listed"],
   },
   {
@@ -166,8 +166,8 @@ const products: ProductRecord[] = [
     h2Name: "NOPE! CP Flea Spray 500ml for the Home",
     tocLabel: "Best Large Room",
     tocName: "NOPE! CP Flea Spray 500ml",
-    pick: "A 500ml cypermethrin spot spray for indoors and out, with up to 3 months claimed.",
-    blurb: "A water-based spot spray naming cypermethrin, for indoor and outdoor use. It is solvent-free and non-staining, as listed, and the maker claims ongoing protection for up to three months after application. It is not for use directly on pets, so treat the animal with a vet's flea product alongside it, as the listing says.",
+    pick: "Best for indoors and out: a 500ml cypermethrin spot spray, up to 3 months claimed.",
+    blurb: "This suits spot treatment indoors and outdoors. It is a water-based, solvent-free, non-staining spray naming cypermethrin, and the maker claims ongoing protection for up to three months after application. It is not for use directly on pets, so treat your pet separately with a vet's flea product.",
     pros: ["Cypermethrin named on the listing", "For indoor and outdoor use", "Water-based, solvent-free and non-staining", "Up to 3 months protection, per the maker"],
   },
   {
@@ -188,8 +188,8 @@ const products: ProductRecord[] = [
     h2Name: "Strikeback Super Strength Triple Action Flea Spray 1L",
     tocLabel: "Best Triple Action Spray",
     tocName: "Strikeback Triple Action Flea Spray",
-    pick: "A full litre of hand spray in a single bottle, applied from about 30cm.",
-    blurb: "A litre of hand spray in one bottle, applied from about 30cm onto the surfaces you want to treat. Its title states triple insecticides and a growth regulator, though the listing names none of them, so read the label for the actives. The listing's own safety text says to avoid naked flames and to let surfaces dry before pets or children come back.",
+    pick: "Best for a full litre in one bottle: a hand spray applied from about 30cm.",
+    blurb: "A litre of hand spray in one bottle, for when you have a lot of surface to cover, applied from about 30cm. The listing's safety text says to avoid naked flames and to let surfaces dry before pets or children come back. Its title states triple insecticides and a growth regulator but the listing names none, so read the label for the actives.",
     pros: ["Single 1-litre bottle", "Hand spray, applied from about 30cm", "Plain safety text on flames and drying, per the listing"],
   },
   {
@@ -210,19 +210,18 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula C+ Flea Killer Spray 1L",
     tocLabel: "Best Professional",
     tocName: "Pest Expert Formula C+",
-    pick: "A 1L water-based spray with pyriproxyfen, covering 50 square metres per application.",
-    blurb: "The pick for a bigger job where you want a growth regulator in the bottle. The maker states three actives, one of them pyriproxyfen, and the listing gives coverage of 50 square metres per application. The title states it is approved for amateur use. The maker claims a residue lasting up to 12 weeks, and you keep children and pets out until it dries, about 2 to 3 hours.",
+    pick: "Best for a bigger job: 1L of water-based spray with pyriproxyfen, 50 m² per application.",
+    blurb: "The pick for a bigger job where you want a growth regulator in the bottle. The maker states three actives, one of them pyriproxyfen, the listing gives 50 square metres per application, and the title states it is approved for amateur use. Keep children and pets out until it dries, about 2 to 3 hours.",
     pros: ["Three actives including pyriproxyfen, per the maker", "50 square metres per application, as listed", "Approved for amateur use, per the title", "Water-based, dry in about 2 to 3 hours"],
   },
 ];
 
 const SAFETY_NOTE = (
   <>
-    Only one of these is a fogger: turn off pilot lights and keep it away from
-    flames, as NPIC warns. HSE says the public should use only products intended
-    for the general public.{" "}
+    Fogger: turn off pilot lights and keep it from flames. Use only products
+    meant for the public.{" "}
     <a href="#legal" className="underline">
-      The legal position and the fire warning
+      The legal position
     </a>
     .
   </>
@@ -243,7 +242,7 @@ export default function BestFleaFoggerPage() {
   return (
     <GuideLayout
       title="Best Flea Fogger UK 2026: Flea Bombs and Sprays Compared"
-      subtitle="One fogger and four sprays for UK homes, described by what their own listings state — and what two universities say a total-release fogger cannot reach"
+      subtitle="One flea bomb and four sprays for UK homes, from a whole-room fogger to sprays you aim under carpets and along skirting."
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -279,18 +278,12 @@ export default function BestFleaFoggerPage() {
       </div>
 
       <p>
-        A fogger empties itself into the air of a room and settles. The
-        National Pesticide Information Center describes the limit of that in
-        one sentence:{" "}
-        <em>
-          &ldquo;They do not spray out gas and do not reach into unexposed
-          voids, cracks and crevices, where pests may hide.&rdquo;
-        </em>{" "}
-        (
-        <a href={SRC.npic} rel="nofollow">
-          NPIC
-        </a>
-        ). Four of the five products here are not foggers at all.
+        This page suits you if fleas have got into your home and you are
+        choosing between a flea bomb and a spray. The Indorex Defence hand spray
+        is the overall pick, with one 500ml can listed for about a 3-4 bedroom
+        house. If you want an actual fogger, the Zero In Natural Flea Bomb is
+        the only one here. The Pest Expert Formula C+ litre covers bigger jobs,
+        at 50 square metres per application.
       </p>
 
       {/* [16] Comparison table */}
@@ -323,6 +316,20 @@ export default function BestFleaFoggerPage() {
           </tbody>
         </table>
       </div>
+      <p>
+        A fogger empties itself into the air of a room and settles. The
+        National Pesticide Information Center describes the limit of that in
+        one sentence:{" "}
+        <em>
+          &ldquo;They do not spray out gas and do not reach into unexposed
+          voids, cracks and crevices, where pests may hide.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.npic} rel="nofollow">
+          NPIC
+        </a>
+        ). Four of the five products here are not foggers at all.
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

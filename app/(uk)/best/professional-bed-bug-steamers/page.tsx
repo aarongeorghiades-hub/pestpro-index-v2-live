@@ -156,13 +156,14 @@ const products: ProductRecord[] = [
       "Up to 180°C, per the maker",
       "2 L / 1500 W / 240 V",
       "Bed bugs named in the title",
+      "Best Overall",
     ],
     h2Label: "Best Overall",
     h2Name: "Polti Cimex Eradicator",
     tocLabel: "Best Overall",
     tocName: "Polti Cimex Eradicator",
-    pick: "The one steamer here sold for bed bugs, with dry steam up to 180°C stated.",
-    blurb: "Our overall pick, and the only machine on this page whose title is about bed bugs. The maker states superheated dry steam up to 180°C from a 2 litre boiler at 1500 watts. It runs with an HPMed detergent and no insecticide, the maker says. Its surface recommendation row reads Mattress, which is where most of your work will be.",
+    pick: "Best for mattresses: a steamer sold for bed bugs, dry steam up to 180°C per the maker.",
+    blurb: "Our overall pick if the mattress is your main job: its title is about bed bugs and its surface recommendation row reads Mattress. The maker states superheated dry steam up to 180°C from a 2 litre, 1500 watt boiler. It runs with an HPMed detergent and no insecticide, the maker says.",
     pros: ["Bed bugs named in the title", "Dry steam up to 180°C, per the maker", "2 litre boiler, 1500 W, 240 V", "Surface recommendation row reads Mattress"],
   },
   {
@@ -183,13 +184,14 @@ const products: ProductRecord[] = [
       "135°C maximum, per the detail row",
       "1.6 L / 1500 W / 230 V",
       "Bed bugs not named in the listing",
+      "Best Value",
     ],
     h2Label: "Best Value",
     h2Name: "Dupray Neat Steam Cleaner",
     tocLabel: "Best Value",
     tocName: "Dupray Neat Steam Cleaner",
-    pick: "A 17-piece steam cleaner with up to 50 minutes of steam per fill, per the maker.",
-    blurb: "A general steam cleaner with 17 accessories, listed for floors, tiles, grout, upholstery and car interiors. Its detail row gives a maximum of 135°C. The maker states up to 50 minutes of continuous steam from one fill of the 1.6 litre tank. Its listing does not mention bed bugs.",
+    pick: "Best for a general steamer: 17 accessories and up to 50 minutes per fill, per the maker.",
+    blurb: "Suits you if you want one steamer for floors, tiles, grout and upholstery as well as the bed. It has 17 accessories, a 135°C maximum in its detail row, and up to 50 minutes of steam per 1.6 litre fill, per the maker. Its listing does not mention bed bugs.",
     pros: ["17 accessories", "135°C maximum in the detail row", "1.6 litre tank, up to 50 minutes per fill per the maker", "UK plug, 1500 W at 230 V"],
   },
   {
@@ -210,13 +212,14 @@ const products: ProductRecord[] = [
       "Up to 135°C, per the maker",
       "not stated / 120 V in the row, UK plug in the title",
       "Bed bugs not named in the listing",
+      "Best Large Kit",
     ],
     h2Label: "Best Large Kit",
     h2Name: "Dupray Neat Plus Steam Cleaner",
     tocLabel: "Best Large Kit",
     tocName: "Dupray Neat Plus",
-    pick: "The biggest kit here: 40 accessories and a 90 second heat-up, per the maker.",
-    blurb: "Pick this if you want the most attachments. It has 40 accessories, the largest kit on the page, and the maker states steam up to 135°C after a 90 second heat-up. You can refill it without waiting for it to cool, the maker says. Its listing does not mention bed bugs, and its voltage row reads 120 V against a UK-plug title, so check the plate.",
+    pick: "Best if you want the most attachments: 40 accessories and a 90 second heat-up.",
+    blurb: "Pick this if you want the most attachments: 40 accessories, the largest kit here. The maker states steam up to 135°C after a 90 second heat-up, and you can refill without waiting for it to cool. Its listing does not mention bed bugs and its voltage row reads 120 V, so check the plate before you plug it in.",
     pros: ["40 accessories, the largest kit here", "Up to 135°C, per the maker", "90 second heat-up, per the maker", "Refill without waiting for it to cool, per the maker"],
   },
   {
@@ -237,13 +240,14 @@ const products: ProductRecord[] = [
       "200°C, per the maker",
       "2400 W; power source row reads Battery Powered",
       "Bed bugs named in the title",
+      "Best Professional-Grade",
     ],
     h2Label: "Best Professional-Grade",
     h2Name: "AEOLUS LP01SB Steam System",
     tocLabel: "Best Professional-Grade",
     tocName: "AEOLUS LP01SB",
-    pick: "A 2400 W copper-boiler system with dry steam at 200°C, per the maker.",
-    blurb: "The highest wattage listed on this page, for a landlord or a large property. It is listed at 2400 watts with a copper boiler and continuous loading, and the maker states dry steam at 200°C. Bed bugs and their eggs are named in the title, and the supplied accessories include a mattress-capable set. Its power source row reads Battery Powered, which does not fit a 2400 watt boiler, so read the plate.",
+    pick: "Best for large properties: 2400 W copper boiler, dry steam at 200°C per the maker.",
+    blurb: "Suits a landlord or a large property, with the highest wattage listed on this page at 2400 watts, a copper boiler and continuous loading. The maker states dry steam at 200°C, and bed bugs and their eggs are named in the title. The supplied accessories include a mattress-capable set.",
     pros: ["2400 W with a copper boiler, as listed", "Dry steam at 200°C, per the maker", "Continuous loading, as listed", "Mattress-capable accessory set listed"],
   },
 ];
@@ -290,8 +294,7 @@ const faqSchema = {
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    Each unit is a mains appliance: read the plate before use, and steam only helps
-    where it reaches the bugs.{" "}
+    Each unit is a mains appliance, so read the plate on it before use.{" "}
     <a href="#legal" className="underline">
       The legal and duty position
     </a>
@@ -315,7 +318,7 @@ export default function BestProfessionalBedBugSteamersPage() {
   return (
     <GuideLayout
       title="Best Professional Bed Bug Steamers for Landlords &amp; Facilities Managers (2026)"
-      subtitle="Four steam cleaners described by what their own listings state — beside the University of California's account of what steam does to bed bugs and the condition it attaches to that"
+      subtitle="Four steam cleaners for bed bug work, from two machines sold for the pest to two general kits with more attachments"
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -363,10 +366,7 @@ export default function BestProfessionalBedBugSteamersPage() {
       </div>
 
       <p>
-        Four steam cleaners. Two are sold as bed bug machines and say so in their
-        own titles; two are general cleaning machines that never mention the
-        pest. That difference matters more than the accessory count, and the
-        cards below lead with it.
+        Two of these steamers are sold for bed bugs and name them in their titles: the Polti Cimex Eradicator and the 2400 W AEOLUS. The two Dupray machines are general cleaners with 17 or 40 accessories, and their listings do not mention bed bugs. Pick the Polti if the mattress is your main job, or the Dupray Neat if you also want a steamer for floors and upholstery.
       </p>
 
       {/* Comparison table — LISTING facts only, "not stated" where absent */}
@@ -384,6 +384,7 @@ export default function BestProfessionalBedBugSteamersPage() {
               <th className="text-left p-2 border-b font-semibold">Steam temperature, as listed</th>
               <th className="text-left p-2 border-b font-semibold">Tank, power, voltage, as listed</th>
               <th className="text-left p-2 border-b font-semibold">Does the listing name bed bugs?</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
           </thead>
           <tbody>
@@ -399,6 +400,13 @@ export default function BestProfessionalBedBugSteamersPage() {
           </tbody>
         </table>
       </div>
+      <p>
+        Steam only helps where it reaches: UC IPM says it has to penetrate into the places bed bugs and their eggs are sheltering (
+        <a href={SRC.ucipm} rel="nofollow">
+          UC IPM
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

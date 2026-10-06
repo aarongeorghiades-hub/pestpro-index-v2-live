@@ -138,7 +138,7 @@ const products: ProductRecord[] = [
     ],
     tableCells: [
       "MothPrevention Clothes Moth Traps",
-      "Best Clothes Moth",
+      "Best Clothes Moth Trap",
       "Clothes moths",
       "3 traps",
       "not stated",
@@ -147,8 +147,8 @@ const products: ProductRecord[] = [
     h2Name: "MothPrevention Clothes Moth Traps",
     tocLabel: "Best Clothes Moth Trap",
     tocName: "MothPrevention Clothes Moth Traps",
-    pick: "A refillable three-pack for the wardrobe or drawers where you have seen holes.",
-    blurb: "Our pick for clothes moths in a wardrobe or chest of drawers. You get three traps, and the listing describes them as refillable, so the holders stay and only the pads change. It is listed as odour-free, which matters in a cupboard full of clothes. The listing gives no lure life, so this page does not give one for it.",
+    pick: "For clothes moths in a wardrobe or drawers: a refillable three-pack, listed as odour-free.",
+    blurb: "Our pick for clothes moths in a wardrobe or chest of drawers. You get three traps listed as refillable and odour-free, so the holders stay and only the pads change. The listing does not state a lure life.",
     pros: ["Three traps in the pack", "Refillable, so the holders are kept", "Listed as odour-free", "Made for wardrobes and stored clothing"],
   },
   {
@@ -156,7 +156,7 @@ const products: ProductRecord[] = [
     asin: "B0189FU8KO",
     rank: 2,
     cardName: "Demi Diamond Food Moth Pheromone Traps",
-    cardLabel: "Best Pantry Moth",
+    cardLabel: "Best Pantry Moth Trap",
     features: [
       "Listed as food moth pheromone traps",
       "3 traps and 20 pads per pack",
@@ -165,7 +165,7 @@ const products: ProductRecord[] = [
     ],
     tableCells: [
       "Demi Diamond Food Moth Traps",
-      "Best Pantry Moth",
+      "Best Pantry Moth Trap",
       "Food moths",
       "3 traps, 20 pads",
       "not stated",
@@ -174,8 +174,8 @@ const products: ProductRecord[] = [
     h2Name: "Demi Diamond Food Moth Pheromone Traps",
     tocLabel: "Best Pantry Moth Trap",
     tocName: "Demi Diamond Food Moth Pheromone Traps",
-    pick: "Food moth traps for the kitchen cupboard, with 20 pads in the pack.",
-    blurb: "For moths in the kitchen rather than the wardrobe. The pack has three traps and twenty pads, so you have fresh pads to hand when the first ones are spent. This listing carries no feature text beyond its title, so the card shows everything it states, with no lure life and no named moth species.",
+    pick: "For moths in the kitchen cupboard: three food moth traps and 20 pads in the pack.",
+    blurb: "For moths in the kitchen cupboard. The pack has three traps and twenty pads, so you have fresh pads to hand when the first ones are spent. The listing states no lure life and names no moth species beyond food moths.",
     pros: ["Pheromone traps made for food moths", "3 traps and 20 pads in one pack", "Spare pads for refreshing the traps"],
   },
   {
@@ -202,8 +202,8 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Clothes Moth Trap",
     tocLabel: "Best Value",
     tocName: "Zero In Clothes Moth Trap",
-    pick: "Two poison-free traps that hang on a rail or stand in a drawer.",
-    blurb: "A simple two-trap pack, and the only listing here that says outright what it is for: monitoring infestations. Each trap hangs on its built-in hook or stands free in a drawer. It is listed as poison-free, which is the point to weigh if it is going where children or pets can reach. You throw it away once it is full.",
+    pick: "For checking whether you have clothes moths: two poison-free traps that hang or stand.",
+    blurb: "Pick this if you want to check for clothes moths without poison, since the listing states it is for monitoring infestations and is poison-free. Each trap hangs on its built-in hook or stands free in a drawer, and you throw it away once it is full.",
     pros: ["Two traps per pack", "Hangs on a built-in hook or stands free", "Listed as poison-free", "Listing states it is for monitoring"],
   },
   {
@@ -211,7 +211,7 @@ const products: ProductRecord[] = [
     asin: "B01NCZJ2P4",
     rank: 4,
     cardName: "Pest Expert Demi-Diamond Clothes Moth Pheromone Traps",
-    cardLabel: "Best Professional-Grade",
+    cardLabel: "Best Professional",
     features: [
       "6 holders and 6 pheromone pads",
       "Pheromone listed as effective for up to 12 weeks",
@@ -230,8 +230,8 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Demi-Diamond Traps",
     tocLabel: "Best Professional",
     tocName: "Pest Expert Demi-Diamond Traps",
-    pick: "Six traps, and the one listing here that states a lure life: up to 12 weeks.",
-    blurb: "If you want to cover several rooms and check them over a season, this is the set that states enough to plan around. You get six holders and six pheromone pads, and the listing gives the pheromone up to 12 weeks. Its own text calls it a professional monitoring tool that catches the male moth to halt reproduction. It is listed as odourless and pesticide-free.",
+    pick: "For several rooms over a season: six traps, with a lure life of up to 12 weeks.",
+    blurb: "If you want to cover several rooms and check them over a season, this set gives you six holders and six pheromone pads, with the pheromone listed for up to 12 weeks. Its listing calls it a professional monitoring tool that catches the male moth to halt reproduction. It is listed as odourless and pesticide-free.",
     pros: ["6 holders and 6 pheromone pads", "Lure life stated: up to 12 weeks", "Called a professional monitoring tool on its listing", "Odourless and pesticide-free"],
   },
   {
@@ -258,8 +258,8 @@ const products: ProductRecord[] = [
     h2Name: "Biocare Moth Trap Refill Pads",
     tocLabel: "Best Refills",
     tocName: "Biocare Moth Trap Refill Pads",
-    pick: "Twenty refill pads for clothes and carpet moth holders you already own.",
-    blurb: "Twenty pheromone pads for when your holders are fine and the pads are spent. Check the size before you buy: each pad is listed at approximately 13.4 x 5.8 cm and fits compatible holders, which may not be the ones you have. The listing is explicit that these are for monitoring use only.",
+    pick: "If your holders are fine and the pads are spent: twenty clothes and carpet moth refills.",
+    blurb: "Twenty pheromone pads for when your holders are fine and the pads are spent. Each pad is listed at approximately 13.4 x 5.8 cm for compatible holders, so check the size against yours before you buy. The listing states they are for monitoring use only.",
     pros: ["20 pheromone refill pads", "Pad size listed at about 13.4 x 5.8 cm", "Odourless and pesticide-free"],
   },
   {
@@ -286,8 +286,8 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Cedarwood Moth Balls",
     tocLabel: "Best Repellent",
     tocName: "Zero In Cedarwood Moth Balls",
-    pick: "Twenty cedarwood balls for storage, sold as an alternative to old mothballs.",
-    blurb: "A storage product rather than a trap. You get twenty balls of Eastern aromatic red cedar, listed as poison and chemical-free, and the listing offers them as an alternative to traditional mothballs, which are banned from sale here. The listing states they last up to 12 months and are refreshed by rubbing with fine sandpaper. They belong in a box of clean, stored knitwear rather than a room with a live infestation.",
+    pick: "For boxes of stored knitwear: twenty cedarwood balls, listed as poison and chemical-free.",
+    blurb: "For a box of clean, stored knitwear. You get twenty balls of Eastern aromatic red cedar, listed as poison and chemical-free and offered by the listing as an alternative to traditional mothballs, which are banned from sale here. The listing states they last up to 12 months and are refreshed by rubbing with fine sandpaper.",
     pros: ["20 balls of 100% natural red cedar", "Listed as poison and chemical-free", "Listing states up to 12 months", "Refreshed with fine sandpaper"],
   },
 ];
@@ -297,10 +297,10 @@ const products: ProductRecord[] = [
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    Old naphthalene mothballs are banned from consumer sale in the UK, so do not
-    use an inherited box.{" "}
+    Naphthalene mothballs are banned from UK consumer sale, so do not use an
+    inherited box.{" "}
     <a href="#mothballs" className="underline">
-      Why old-style mothballs are gone
+      Why mothballs are gone
     </a>
     .
   </>
@@ -323,7 +323,7 @@ export default function BestMothTrapsPage() {
   return (
     <GuideLayout
       title="Best Moth Traps UK 2026"
-      subtitle="Pheromone traps for wardrobes, drawers and kitchens, and cedar for storage"
+      subtitle="Pheromone traps for wardrobes, drawers and kitchen cupboards, refill pads, and cedarwood balls for stored clothes, matched to the moth you have."
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -408,9 +408,13 @@ export default function BestMothTrapsPage() {
       </div>
 
       <p>
-        A pheromone trap catches adult male moths on a sticky board. That tells
-        you what you have and how bad it is. It is not, on its own, how the
-        problem ends — and the trap you need depends on which moth you have.
+        Here are six moth products, matched to the moth you have and where it
+        is. The MothPrevention three-pack is our pick for clothes moths in a
+        wardrobe or drawers, and the Demi Diamond traps suit food moths in a
+        kitchen cupboard. If you want to check several rooms over a season, the
+        Pest Expert set gives a lure life of up to 12 weeks; Biocare pads refill
+        holders you already own, and Zero In cedarwood balls are for stored
+        knitwear.
       </p>
 
       {/* [16] Comparison table */}

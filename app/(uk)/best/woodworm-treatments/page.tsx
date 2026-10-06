@@ -116,8 +116,8 @@ const products: ProductRecord[] = [
     h2Name: "Barrettine Premier Woodworm Killer 1L",
     tocLabel: "Best Treatment Fluid",
     tocName: "Barrettine Woodworm Killer",
-    pick: "A litre of solvent woodworm fluid; the maker names four wood-boring insects.",
-    blurb: "Our top pick, a 1 litre solvent preserver from Barrettine. The maker claims it kills woodworm larvae and eggs on direct contact, and names common furniture beetle, house longhorn, powder post beetle and wood-boring weevils. No active substance is named on the listing, so check the label for it.",
+    pick: "For furniture beetle, house longhorn and more: a litre of solvent fluid, per the maker.",
+    blurb: "Suits a general woodworm job, with the maker naming common furniture beetle, house longhorn, powder post beetle and wood-boring weevils. It is a 1 litre solvent preserver from Barrettine, and the maker claims it kills woodworm larvae and eggs on direct contact. No active substance is named on the listing, so check the label for it.",
     pros: ["1 litre solvent fluid", "Maker names four wood-boring insects it covers", "Maker claims it kills larvae and eggs on contact"],
   },
   {
@@ -125,20 +125,20 @@ const products: ProductRecord[] = [
     asin: "B01MZ7ZB2V",
     rank: 2,
     cardName: "Rempro Woodwyse Internal Wood Treatment",
-    cardLabel: "Best Water-Based Treatment",
+    cardLabel: "Best 25-Litre Concentrate",
     features: [
       "Fetched title: Woodwyse Internal Wood Treatment for Woodworm & Dry Rot Control — Makes 25 Litres",
       "A concentrate; unit count listed as 1,000 millilitres",
       "Brand listed as Rempro",
       "The listing carries no feature bullets and names no active substance",
     ],
-    tableCells: ["Rempro Woodwyse concentrate", "Concentrate making 25L; active not stated, as listed", "Best Water-Based Treatment"],
-    h2Label: "Best Water-Based Treatment",
+    tableCells: ["Rempro Woodwyse concentrate", "Concentrate making 25L; active not stated, as listed", "Best 25-Litre Concentrate"],
+    h2Label: "Best 25-Litre Concentrate",
     h2Name: "Rempro Woodwyse Internal Wood Treatment",
-    tocLabel: "Best Water-Based Treatment",
+    tocLabel: "Best 25-Litre Concentrate",
     tocName: "Rempro Woodwyse",
-    pick: "A concentrate that makes 25 litres, for woodworm and dry rot.",
-    blurb: "Pick this if you have a lot of timber to treat. The title states it makes 25 litres, from a concentrate listed at 1,000 millilitres, for woodworm and dry rot control, under the Rempro brand. The listing has no feature bullets and names no active, so the label is where you will find the rest.",
+    pick: "For a lot of timber: a concentrate that makes 25 litres, for woodworm and dry rot.",
+    blurb: "Pick this if you have a lot of timber to treat. The title states it makes 25 litres from a 1,000 millilitre concentrate, for woodworm and dry rot control, under the Rempro brand. The listing names no active, so check the label for it.",
     pros: ["Makes 25 litres, per the title", "For woodworm and dry rot, per the title", "1,000ml concentrate"],
   },
   {
@@ -158,8 +158,8 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil PSW85 Woodworm Treatment Spray 300ml",
     tocLabel: "Best Spray Can",
     tocName: "Rentokil Woodworm Spray",
-    pick: "A 300ml permethrin aerosol, fast drying and low odour per the maker.",
-    blurb: "The smallest volume on the page and the only one with a spray head. It is a 300ml aerosol with permethrin named on the listing, and the maker describes it as a dual-purpose spray that kills eggs, larvae and adult wood-boring insects. The maker also calls it fast drying and low odour, which helps indoors.",
+    pick: "For a small indoor job: a 300ml permethrin aerosol, low odour per the maker.",
+    blurb: "Suits a small indoor job. It is a 300ml aerosol with permethrin named on the listing, and the maker describes it as a dual-purpose spray that kills eggs, larvae and adult wood-boring insects. The maker also calls it fast drying and low odour.",
     pros: ["Permethrin, per the listing", "300ml aerosol", "Fast drying and low odour, per the maker", "Maker names eggs, larvae and adult insects"],
   },
   {
@@ -179,8 +179,8 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil PSW92 Woodworm Treatment 250ml",
     tocLabel: "Best Injection Applicator",
     tocName: "Rentokil PSW92",
-    pick: "A 250ml permethrin injector bottle, listed for wood indoors and outdoors.",
-    blurb: "The one for outdoor timber as well as indoor. It is a 250ml bottle with permethrin named on the listing, and the maker claims it kills eggs, grubs and beetles and prevents re-infestation.",
+    pick: "For timber outdoors as well as in: a 250ml permethrin injector bottle.",
+    blurb: "The one for outdoor timber as well as indoor. It is a 250ml injector bottle with permethrin named on the listing, and the maker claims it kills eggs, grubs and beetles and prevents re-infestation.",
     pros: ["Permethrin, per the listing", "Listed for wood indoors and outdoors", "250ml injector bottle"],
   },
   {
@@ -200,7 +200,7 @@ const products: ProductRecord[] = [
     h2Name: "Stanley 0-77-030",
     tocLabel: "Best Moisture Meter",
     tocName: "Stanley 0-77-030",
-    pick: "A two-pin meter to check timber moisture before you treat anything.",
+    pick: "If you're unsure the timber is damp: a two-pin meter reading wood from 6-44%.",
     blurb: "Buy this first if you are unsure whether the timber is damp. It is a two-pin meter giving a percentage reading, listed for wood from 6-44% and other building materials from 0.2-2%, with an LCD screen and 4 AAA batteries included. Treat a reading as a guide, as the section on where a treatment does not help explains.",
     pros: ["Wood readings from 6-44%, as listed", "Also reads building materials, 0.2-2%", "LCD screen; 4 AAA batteries included"],
   },
@@ -211,7 +211,7 @@ const products: ProductRecord[] = [
 // sections it points to sit on the page.
 const SAFETY_NOTE = (
   <>
-    A woodworm treatment is a biocide: use only products intended for the general
+    Woodworm treatments are biocides: use only products made for the general
     public, and follow the label.{" "}
     <a href="#legal" className="underline">
       The legal position
@@ -235,7 +235,7 @@ export default function BestWoodwormTreatmentsPage() {
   return (
     <GuideLayout
       title="Best Woodworm Treatments UK 2026 &mdash; Sprays, Fluids &amp; Injectors"
-      subtitle="Four treatments and one moisture meter for UK homes, described by what their own listings state — and what SPAB says has to be established before any of them is used"
+      subtitle="Four woodworm treatments and a moisture meter for UK homes, from a litre of solvent fluid to an injector bottle and a 25 litre concentrate"
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -275,17 +275,11 @@ export default function BestWoodwormTreatmentsPage() {
       </div>
 
       <p>
-        Holes in timber are the end of the story, not the start of it. The
-        Natural History Museum on the common furniture beetle:{" "}
-        <em>
-          &ldquo;The larvae bore straight into the wood making a hole
-          indiscernible to the naked eye.&rdquo;
-        </em>{" "}
-        (
-        <a href={SRC.nhm} rel="nofollow">
-          Natural History Museum
-        </a>
-        ). The hole you can see is where an adult left.
+        Four woodworm treatments and one moisture meter. Barrettine&rsquo;s 1
+        litre solvent fluid is the main pick, the Woodwyse concentrate makes 25
+        litres if you have a lot of timber, and Rentokil&rsquo;s 300ml spray is
+        the small, low-odour option. If you are unsure whether the timber is
+        damp, start with the Stanley meter.
       </p>
 
       {/* [16] Comparison table */}
@@ -318,6 +312,20 @@ export default function BestWoodwormTreatmentsPage() {
           </tbody>
         </table>
       </div>
+
+      <p>
+        Holes in timber are the end of the story, not the start of it. The
+        Natural History Museum on the common furniture beetle:{" "}
+        <em>
+          &ldquo;The larvae bore straight into the wood making a hole
+          indiscernible to the naked eye.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.nhm} rel="nofollow">
+          Natural History Museum
+        </a>
+        ). The hole you can see is where an adult left.
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

@@ -112,8 +112,8 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Rodent Proofing Wire Mesh (6m × 900mm)",
     tocLabel: "Best Overall",
     tocName: "Roshield Rodent Proofing Wire Mesh",
-    pick: "6mm galvanised mesh on a 6m roll, for air bricks, pipework and soffits.",
-    blurb: "Our overall pick, because one roll is listed for air bricks, pipework, gaps and voids in walls, and soffits. It is hot-dipped galvanised welded steel with a 6mm aperture, 900mm wide and 6m long. You cut it with strong scissors or tin snips. No fixings come with it, so buy those separately.",
+    pick: "For air bricks, pipework and soffits: 6mm galvanised mesh on a 6m roll.",
+    blurb: "The one to buy if you have air bricks, pipework, gaps in walls or soffits to cover. It is hot-dipped galvanised welded steel with a 6mm aperture, 900mm wide and 6m long, and you cut it with strong scissors or tin snips. No fixings come with it, so buy those separately.",
     pros: ["6mm x 6mm aperture, as listed", "Hot-dipped galvanised welded steel", "6m x 900mm roll", "Cuts with strong scissors or tin snips"],
   },
   {
@@ -133,8 +133,8 @@ const products: ProductRecord[] = [
     h2Name: "Xcluder Rodent Control Steel Wool Fill Fabric",
     tocLabel: "Best for Gaps & Holes",
     tocName: "Xcluder Steel Wool Fill Fabric",
-    pick: "Steel wool fill fabric that the maker says expands to fit a hole.",
-    blurb: "For the awkward holes around pipes, air conditioning units, windows and vents. It is a 4 inch by 10 foot roll of stainless steel wool blended with poly fibres. The maker says you push it into a hole, it expands to fit, and it will not rust. Mouse is the target species listed.",
+    pick: "For awkward holes around pipes and vents: steel wool the maker says expands to fit.",
+    blurb: "Suits the awkward holes around pipes, air conditioning units, windows and vents. It is a 4 inch by 10 foot roll of stainless steel wool blended with poly fibres, and the maker says it expands to fit a hole and will not rust. Mouse is the target species listed.",
     pros: ["Stainless steel wool with poly fibres", "4 inch x 10 foot roll", "Maker says it expands to fit and will not rust", "Listed for holes around pipes and vents"],
   },
   {
@@ -154,8 +154,8 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Rat Drain Guard",
     tocLabel: "Best for Drains",
     tocName: "Roshield Rat Drain Guard",
-    pick: "A one-way stainless flap for a 110mm drain, made in the UK.",
-    blurb: "If rats are coming up through the drains, this is the product on the page for it. It is a one-way flap in 316 marine-grade stainless steel that fits inside the inspection chamber on a 4 inch / 110mm pipe. The maker says liquids and solids pass down while rats cannot come up or chew through the flap. You can fit it at the pipe entrance or exit by switching the bolt to match the flow.",
+    pick: "If rats come up through the drains: a one-way stainless flap for a 110mm pipe.",
+    blurb: "If rats are coming up through the drains, this is the product for it. It is a one-way flap in 316 marine-grade stainless steel that fits inside the inspection chamber on a 4 inch / 110mm pipe, at the entrance or the exit, with the bolt switched to match the flow. The maker says liquids and solids pass down while rats cannot come up or chew through the flap.",
     pros: ["316 marine-grade stainless steel", "Fits 4 inch / 110mm drains; 150mm variant listed separately", "Fits at the pipe entrance or exit", "Made in the UK, as listed"],
   },
   {
@@ -175,8 +175,8 @@ const products: ProductRecord[] = [
     h2Name: "Stormguard Door Brush Strip Draught Excluder (914mm)",
     tocLabel: "Best for Door Gaps",
     tocName: "Stormguard Door Brush Strip",
-    pick: "A brush strip for gaps up to 25mm under a door.",
-    blurb: "Defra notes that rats and mice can create gaps below house doors, and this strip is made for that gap. It is listed as sealing gaps up to 25mm, at 91.4cm long on a wood carrier. You cut it to length through the 3mm rod with a hacksaw, then crimp the housing ends so the brush cannot slide out.",
+    pick: "For a gap under a door: a brush strip listed for gaps up to 25mm.",
+    blurb: "Suits a door with a gap underneath of up to 25mm, the size this strip is listed to seal. It is 91.4cm long on a wood carrier. You cut it to length through the 3mm rod with a hacksaw, then crimp the housing ends so the brush cannot slide out.",
     pros: ["Seals gaps up to 25mm under a door, as listed", "91.4cm long, cut to size with a hacksaw", "Wood carrier"],
   },
   {
@@ -196,25 +196,11 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Rodent Proofing Control Paste",
     tocLabel: "Best Finishing Seal",
     tocName: "Roshield Rodent Proofing Paste",
-    pick: "Non-setting proofing paste for cracks and holes up to 10cm.",
-    blurb: "For the last cracks and holes once everything else is done. The paste is listed for gaps up to 10cm across, and the maker describes a firm outer layer over a non-setting underlayer. It is listed as non-toxic, made of natural fibres and oils. You need a caulking gun, which is not included, and the listing says to clear the infestation before you apply it.",
+    pick: "For the last cracks and holes: non-setting proofing paste for gaps up to 10cm.",
+    blurb: "Use this for the last cracks and holes once everything else is done. The paste is listed for gaps up to 10cm across, and the maker describes a firm outer layer over a non-setting underlayer, made of natural fibres and oils. You need a caulking gun, which is not included, and the listing says to clear the infestation before you apply it.",
     pros: ["Fills holes and cracks up to 10cm", "Firm outer layer over a non-setting underlayer, per the maker", "Non-toxic natural fibres and oils, as listed"],
   },
 ];
-
-// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
-// block (the top-picks box). It satisfies Law 180 on this route; the full legal
-// and safety sections sit below the picks.
-const SAFETY_NOTE = (
-  <>
-    Deal with any rodents already inside before you seal up, and use materials
-    they cannot gnaw.{" "}
-    <a href="#limits" className="underline">
-      Where proofing does not help
-    </a>
-    .
-  </>
-);
 
 const tocItems = [
   { id: "compared", title: "The Five Products Compared" },
@@ -231,7 +217,7 @@ export default function BestRodentProofingPage() {
   return (
     <GuideLayout
       title="Best Rodent Proofing Products UK 2026: Mesh, Steel Wool &amp; Drain Guards"
-      subtitle="Physical rodent proofing materials for UK homes — galvanised wire mesh, stainless steel wool fill fabric, drain guards, door brush strips and proofing paste compared."
+      subtitle="Five ways to close the gaps rats and mice use, from 6mm galvanised mesh and steel wool to a drain flap, door brush and paste"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -246,7 +232,6 @@ export default function BestRodentProofingPage() {
       breadcrumbSchema={breadcrumbSchema}
       topPicks={
         <TopPicks
-          note={SAFETY_NOTE}
           picks={products.slice(0, 3).map((p) => ({
             label: p.cardLabel,
             name: p.cardName,
@@ -269,17 +254,11 @@ export default function BestRodentProofingPage() {
       </div>
 
       <p>
-        Oxford City Council&rsquo;s figure is the one that matters:{" "}
-        <em>
-          &ldquo;Even gaps as small as 6mm, like those around pipes, can allow
-          entry, so sealing these is crucial.&rdquo;
-        </em>{" "}
-        (
-        <a href={SRC.oxford} rel="nofollow">
-          Oxford City Council
-        </a>
-        ). Every product on this page is a way of closing a gap; one of them is
-        listed at exactly that aperture.
+        Five proofing products for closing the gaps rats and mice get through.
+        The Roshield mesh covers air bricks, pipework and soffits, and the Xcluder
+        steel wool fills awkward holes around pipes and vents. If rats are coming
+        up a 110mm drain, the Roshield drain guard is a one-way flap for it, and
+        there is a door brush strip and a finishing paste for the last gaps.
       </p>
 
       {/* [16] Comparison table */}
@@ -312,6 +291,30 @@ export default function BestRodentProofingPage() {
           </tbody>
         </table>
       </div>
+
+      <p>
+        Seal up only after the rodents already inside have been dealt with, and
+        use materials they cannot gnaw: Defra lists concrete, wood, soft metals
+        and plastics among those they can (
+        <a href={SRC.defra} rel="nofollow">
+          Defra
+        </a>
+        ).
+      </p>
+
+      <p>
+        Oxford City Council&rsquo;s figure is the one that matters:{" "}
+        <em>
+          &ldquo;Even gaps as small as 6mm, like those around pipes, can allow
+          entry, so sealing these is crucial.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.oxford} rel="nofollow">
+          Oxford City Council
+        </a>
+        ). Every product on this page is a way of closing a gap; one of them is
+        listed at exactly that aperture.
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

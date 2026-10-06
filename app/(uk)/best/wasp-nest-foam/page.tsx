@@ -110,8 +110,8 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil Wasp Nest Destroyer Foam",
     tocLabel: "Best Overall",
     tocName: "Rentokil Wasp Nest Destroyer Foam",
-    pick: "A Rentokil nest foam with d-phenothrin and tetramethrin stated.",
-    blurb: "Our overall pick. It is a 300ml Rentokil aerosol foam with d-phenothrin and tetramethrin stated on the listing. That is most of what the listing tells you: reach and treatments per can are not stated, so check the can itself before you plan the job.",
+    pick: "For a nest within reach: Rentokil foam with d-phenothrin and tetramethrin stated.",
+    blurb: "Suits a nest within easy reach. It is a 300ml Rentokil aerosol foam with d-phenothrin and tetramethrin stated on the listing. Reach and treatments per can are not stated, so check the can itself before you plan the job.",
     pros: ["d-phenothrin and tetramethrin, per the listing", "300ml foam aerosol", "Target species listed as insects"],
   },
   {
@@ -131,8 +131,8 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Ultra Power 600ml",
     tocLabel: "Best Long-Range",
     tocName: "Zero In Ultra Power 600ml",
-    pick: "A 600ml foam listed as reaching up to 4 metres, for 4 to 7 nests per the maker.",
-    blurb: "Pick this if the nest is further off than you can comfortably stand. The listing states a reach of up to 4 metres, and the maker says one 600ml can treats 4 to 7 nests. It has a thumb-lock trigger and is listed for nests indoors and out. The listing directs late-evening use, protective clothing and care with the wind outdoors. No active substance is named.",
+    pick: "For a nest further off: a 600ml foam listed as reaching up to 4 metres.",
+    blurb: "Pick this if the nest is further off than you can comfortably stand. The listing states a reach of up to 4 metres, and the maker says one 600ml can treats 4 to 7 nests, indoors or out, with a thumb-lock trigger. No active substance is named, so check the can, and the listing directs late-evening use with protective clothing.",
     pros: ["Reach up to 4 metres, as listed", "600ml; maker says 4 to 7 nests a can", "Thumb-lock trigger", "Listed for indoor and outdoor nests"],
   },
   {
@@ -152,8 +152,8 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Wasp Nest Killer Foam",
     tocLabel: "Best Value",
     tocName: "Zero In Wasp Nest Killer Foam",
-    pick: "A 300ml foam with 2-3 treatments per can and a 2 metre reach.",
-    blurb: "A smaller foam with the actives stated: permethrin and tetramethrin. The listing gives a reach of up to 2 metres and 2-3 treatments per 300ml can, for nests indoors and out. Apply it late evening or early morning, when the listing says wasps are less active.",
+    pick: "For a nearby nest: a 300ml foam with a 2 metre reach and 2-3 treatments per can.",
+    blurb: "Suits a nearby nest, indoors or out. The listing gives a reach of up to 2 metres and 2-3 treatments per 300ml can, with permethrin and tetramethrin named. Apply it late evening or early morning, when the listing says wasps are less active.",
     pros: ["Permethrin and tetramethrin, per the listing", "Reach up to 2 metres", "2-3 treatments per can", "Listed for indoor and outdoor nests"],
   },
   {
@@ -173,8 +173,8 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil Wasp Killer Powder",
     tocLabel: "Best Powder",
     tocName: "Rentokil Wasp Killer Powder",
-    pick: "A 150g permethrin powder for use in and around the home.",
-    blurb: "If you would rather use a powder than a foam, this is a 150g pack with permethrin named as the active, listed for use in and around the home. The brand row on the listing names a reseller; the title carries the Rentokil name.",
+    pick: "If you'd rather use powder: 150g of permethrin for use in and around the home.",
+    blurb: "If you would rather use a powder than a foam, this is a 150g pack with permethrin named as the active, listed for use in and around the home. The listing's brand row names a reseller, so check the pack carries the Rentokil name.",
     pros: ["Permethrin, per the listing", "150g powder", "Listed for in and around the home"],
   },
   {
@@ -194,8 +194,8 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Powder 300g",
     tocLabel: "Best Powder Puffer",
     tocName: "Zero In Powder 300g",
-    pick: "A 300g puffer with a dip tube and nozzle for nest entrances and cracks.",
-    blurb: "Made for the nest you cannot see. It is a single 300g permethrin puffer with a dip tube and applicator nozzle for nest entrances, cracks and crevices, listed for roof spaces, wall cavities, sheds, garages and garden areas. It has a child-resistant cap, and the maker says it is best applied early morning or late evening.",
+    pick: "For roof spaces and wall cavities: a 300g puffer with a dip tube and nozzle.",
+    blurb: "Suits a nest you cannot see, in a roof space, wall cavity, shed or garage. It is a single 300g permethrin puffer with a dip tube and applicator nozzle for nest entrances, cracks and crevices, and a child-resistant cap. The maker says it is best applied early morning or late evening.",
     pros: ["Dip tube and applicator nozzle", "Listed for roof spaces and wall cavities", "Permethrin, with a child-resistant cap", "Single 300g puffer"],
   },
 ];
@@ -205,8 +205,8 @@ const products: ProductRecord[] = [
 // sections it points to sit on the page.
 const SAFETY_NOTE = (
   <>
-    All five are insecticides: buy only products intended for the general public,
-    and follow the label on the can.{" "}
+    All five are insecticides: buy ones made for the general public, and
+    follow the label.{" "}
     <a href="#legal" className="underline">
       The legal position
     </a>
@@ -229,7 +229,7 @@ export default function BestWaspNestFoamPage() {
   return (
     <GuideLayout
       title="Best Wasp Nest Killer Foam UK 2026"
-      subtitle="Wasp nest killer foams and sprays available in the UK, with safety advice and application tips"
+      subtitle="Five wasp nest foams and powders compared, from a 4 metre reach for a distant nest to a puffer for roof spaces and wall cavities"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -267,18 +267,11 @@ export default function BestWaspNestFoamPage() {
       </div>
 
       <p>
-        A nest foam is pointed at a nest. Oxford City Council lists where a nest
-        is likely to be:{" "}
-        <em>
-          &ldquo;Wasps build colonies inside nests made from wood pulp, commonly
-          found in buildings&rsquo; roof spaces, airbricks, wall cavities,
-          garden sheds, tree holes, and soil banks.&rdquo;
-        </em>{" "}
-        (
-        <a href={SRC.oxford} rel="nofollow">
-          Oxford City Council
-        </a>
-        ). Half of those are places a can cannot see into.
+        Five wasp nest treatments: three foams and two powders. Rentokil&rsquo;s
+        foam suits a nest you can reach, and the Zero In 600ml foam is listed as
+        reaching up to 4 metres if the nest is further off. For a nest in a roof
+        space or wall cavity, the Zero In puffer has a dip tube and nozzle for
+        the entrance.
       </p>
 
       {/* [16] Comparison table */}
@@ -311,6 +304,21 @@ export default function BestWaspNestFoamPage() {
           </tbody>
         </table>
       </div>
+
+      <p>
+        A nest foam is pointed at a nest. Oxford City Council lists where a nest
+        is likely to be:{" "}
+        <em>
+          &ldquo;Wasps build colonies inside nests made from wood pulp, commonly
+          found in buildings&rsquo; roof spaces, airbricks, wall cavities,
+          garden sheds, tree holes, and soil banks.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.oxford} rel="nofollow">
+          Oxford City Council
+        </a>
+        ). Half of those are places a can cannot see into.
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

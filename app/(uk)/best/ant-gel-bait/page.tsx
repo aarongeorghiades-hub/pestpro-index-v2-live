@@ -113,8 +113,8 @@ const products: ProductRecord[] = [
     h2Name: "Nippon Ant Killer Gel 25g",
     tocLabel: "Best Overall",
     tocName: "Nippon Ant Killer Gel",
-    pick: "A spinosad liquid bait that worker ants carry back to the nest.",
-    blurb: "Our overall pick, because it is the bait on this page that goes where the problem is. The listing states that worker ants carry it back to the nest, and that it is useful when you cannot find the nest site. It names its active, spinosad, and comes as 25g of liquid you can use in a bait station or on its own. You will still see ants for a while after it goes down, and that is the bait being taken home.",
+    pick: "Best if you can't find the nest: a spinosad liquid bait that worker ants carry home.",
+    blurb: "Start here if ants keep coming in from a nest you cannot find. The listing states that worker ants carry this bait back to the nest, and it names its active, spinosad. It is 25g of liquid you can use in a bait station or on its own.",
     pros: ["Carried back to the nest by worker ants, per the listing", "Active named on the listing: spinosad", "Use it in a bait station or on its own", "Listed as useful where the nest site is unknown"],
   },
   {
@@ -135,8 +135,8 @@ const products: ProductRecord[] = [
     h2Name: "Nippon Ant Killer Powder 500g",
     tocLabel: "Best Powder",
     tocName: "Nippon Ant Killer Powder",
-    pick: "A 500g contact powder for ants and several other crawling insects.",
-    blurb: "A large 500g tub for the ants you can see and the places they cross. It is listed as killing on contact, so it deals with the ants it touches and leaves the colony to a bait. The listing covers indoor and outdoor use, and names cockroaches, beetles, earwigs, silverfish and woodlice as well as ants. The maker claims up to six months of control. No active substance is named, so check the pack.",
+    pick: "Suits ants you can see, indoors or out: a 500g powder listed as killing on contact.",
+    blurb: "For the ants you can see and the places they cross, indoors or out. It is a 500g powder listed as killing on contact, and the listing names cockroaches, beetles, earwigs, silverfish and woodlice as well as ants. The maker claims up to six months of control. No active substance is named, so check the pack.",
     pros: ["500g of powder", "Listed for indoor and outdoor use", "Also listed for cockroaches, beetles, earwigs, silverfish and woodlice", "Maker claims up to six months of control"],
   },
   {
@@ -157,8 +157,8 @@ const products: ProductRecord[] = [
     h2Name: "Nippon Ant & Crawling Insect Killer Spray 750ml",
     tocLabel: "Best Spray",
     tocName: "Nippon Ant & Crawling Insect Spray",
-    pick: "A ready-to-use 750ml contact spray, listed as suitable for soft furnishings.",
-    blurb: "A 750ml spray that is ready to use from the bottle, for ants you can see. It is the only product here listed as suitable for soft furnishings, and its directions text names cypermethrin. Its target species field reads Flea, so read the label for ant use before you buy.",
+    pick: "For ants on soft furnishings: a 750ml ready-to-use spray listed as suitable there.",
+    blurb: "Pick this if the ants are on soft furnishings, since it is the only product here listed as suitable for them. It is 750ml and ready to use from the bottle, and the directions text names cypermethrin. Its target species field reads Flea, so read the label for ant use before you buy.",
     pros: ["Ready to use, 750ml", "The only product here listed for soft furnishings", "Active named in the directions: cypermethrin"],
   },
   {
@@ -183,8 +183,8 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Ant & Cockroach Killer 1.5L",
     tocLabel: "Best Indoor",
     tocName: "Zero In Ant & Cockroach Killer",
-    pick: "The largest container here: a 1.5L pump spray with a crack-and-crevice setting.",
-    blurb: "At 1.5 litres this is the largest container on the page, in a pressurised pump sprayer you can set to a fan spray or a crack-and-crevice jet. The listing names cypermethrin with benzalkonium chloride and covers indoor and outdoor use. It is a contact treatment, so use it on what you can reach and keep it away from any bait you have down.",
+    pick: "For a bigger job: a 1.5L pump spray with a fan and a crack-and-crevice setting.",
+    blurb: "For a bigger job, since at 1.5 litres this is the largest container on the page. The pressurised pump sprayer sets to a fan spray or a crack-and-crevice jet, and the listing names cypermethrin with benzalkonium chloride for indoor and outdoor use. It is a contact treatment, so keep it away from any bait you have down.",
     pros: ["1.5L pressurised pump sprayer", "Fan spray or crack-and-crevice application", "Actives named: cypermethrin and benzalkonium chloride", "Listed for indoor and outdoor use"],
   },
   {
@@ -205,8 +205,8 @@ const products: ProductRecord[] = [
     h2Name: "Doff 2-in-1 Ant & Nest Bait Killer Stations",
     tocLabel: "Best Bait Stations",
     tocName: "Doff 2-in-1 Ant & Nest Killer",
-    pick: "Pre-baited stations you can place indoors or out.",
-    blurb: "If you would rather not handle bait at all, these come pre-baited and work the way a bait should, by being carried home. They are listed for indoor and outdoor use, and the listing calls them safe around children and pets when used as instructed. The active substance is not named on the listing, so read the pack.",
+    pick: "For anyone who'd rather not handle bait: pre-baited stations for indoors or out.",
+    blurb: "For anyone who would rather not handle bait at all, since these stations come pre-baited. They are listed for indoor and outdoor use, and the listing calls them safe around children and pets when used as instructed. The active substance is not named on the listing, so read the pack.",
     pros: ["Pre-baited, so there is no bait to handle", "Listed for indoor and outdoor use", "Listed as safe around children and pets when used as instructed"],
   },
 ];
@@ -216,8 +216,8 @@ const products: ProductRecord[] = [
 // sit below the picks.
 const SAFETY_NOTE = (
   <>
-    Three of these kill on contact and never reach the nest, and two name no
-    active substance on the listing.{" "}
+    These are insecticides: read the pack and use each one as its label
+    directs.{" "}
     <a href="#legal" className="underline">
       What the listings tell you
     </a>
@@ -240,7 +240,7 @@ export default function BestAntGelBaitPage() {
   return (
     <GuideLayout
       title="Best Ant Killer Gel UK 2026: Gel, Powder, Spray and Baits Compared"
-      subtitle="Two baits and three contact treatments, described by what their own listings state — and why only one of those two kinds reaches the nest"
+      subtitle="Five ant killers, from a liquid bait ants carry back to the nest to a powder and sprays for the ants you can see"
       lastUpdated="September 2026"
       readingTime="6 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -293,9 +293,12 @@ export default function BestAntGelBaitPage() {
       </div>
 
       <p>
-        The ants you can see are a fraction of the colony, and they are the part
-        that does not matter. Everything on this page comes down to whether a
-        product goes back to the nest or kills what it touches.
+        This page compares five ant products: two baits that ants carry home,
+        and a powder and two sprays that kill on contact. If you want the colony
+        gone, start with the Nippon liquid bait, or the Doff stations if you
+        would rather not handle bait. For ants you can see indoors or out, the
+        Nippon powder comes in a 500g tub, and the Nippon 750ml spray is the one
+        listed for soft furnishings.
       </p>
 
       {/* [16] Comparison table */}
@@ -328,6 +331,14 @@ export default function BestAntGelBaitPage() {
           </tbody>
         </table>
       </div>
+      <p>
+        Three of these five kill the ants they touch, and only the two baits are
+        carried back to the nest (
+        <a href="#situation" className="underline">
+          bait or spray
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

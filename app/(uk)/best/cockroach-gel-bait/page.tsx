@@ -134,8 +134,8 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Cockroach Killer Kit (Advanced)",
     tocLabel: "Best Overall",
     tocName: "Pest Expert Cockroach Killer Kit",
-    pick: "A spray kit listed to cover 3 to 4 rooms, with a step-by-step advice sheet.",
-    blurb: "Our overall pick if the problem has spread beyond one room. The kit is listed as covering 3 to 4 rooms and comes with a step-by-step advice sheet, and its description names cypermethrin and pyriproxyfen. The maker claims a residue that goes on protecting for up to 12 weeks. The listing describes it as low-odour and non-staining.",
+    pick: "If cockroaches have spread beyond one room: a spray kit listed to cover 3 to 4 rooms.",
+    blurb: "For when the problem has spread beyond one room. The kit is listed as covering 3 to 4 rooms and comes with a step-by-step advice sheet, and its description names cypermethrin and pyriproxyfen. The maker claims a residue that goes on protecting for up to 12 weeks, and the listing describes it as low-odour and non-staining.",
     pros: ["Listed as covering 3 to 4 rooms", "Step-by-step advice sheet included", "Up to 12 weeks of residue, the maker claims", "Low-odour and non-staining, as listed"],
   },
   {
@@ -156,7 +156,7 @@ const products: ProductRecord[] = [
     h2Name: "NOPE! CP Cockroach Killer Spray 5L (Pack of 2)",
     tocLabel: "Best Alternative",
     tocName: "NOPE! CP Cockroach Killer Spray",
-    pick: "Ten litres of cypermethrin trigger spray for spot treatments.",
+    pick: "For a lot of ground to cover: ten litres of cypermethrin trigger spray.",
     blurb: "Choose this if you have a lot of ground to cover. You get two 5 litre packs, ten litres in all, of an odourless trigger spray for spot treatments, with cypermethrin named on the listing. The maker also claims disinfectant properties.",
     pros: ["10 litres in two 5 litre packs", "Cypermethrin named on the listing", "Odourless trigger spray for spot treatments", "Disinfectant properties, the maker claims"],
   },
@@ -178,8 +178,8 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil Insectrol Insect Killer Spray 250ml",
     tocLabel: "Best Spray",
     tocName: "Rentokil Insectrol Insect Killer Spray",
-    pick: "A 250ml indoor aerosol naming permethrin and D-allethrin.",
-    blurb: "A small can for an indoor job. The listing names permethrin and D-allethrin and says it is intended for indoor use. It lists fleas, ants, cockroaches, earwigs and bed bugs among its targets, so one can covers more than one pest.",
+    pick: "For a small indoor job: a 250ml aerosol naming permethrin and D-allethrin.",
+    blurb: "For a small indoor job, this is a 250ml can. The listing names permethrin and D-allethrin and says it is intended for indoor use. It lists fleas, ants, cockroaches, earwigs and bed bugs among its targets, so one can covers more than one pest.",
     pros: ["250ml aerosol", "Permethrin and D-allethrin named on the listing", "Listed for cockroaches, ants, fleas, earwigs and bed bugs", "Intended for indoor use, as listed"],
   },
   {
@@ -204,8 +204,8 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Ant & Cockroach Killer 1.5L Ready-to-Use",
     tocLabel: "Best Budget",
     tocName: "Zero In Ant & Cockroach Killer",
-    pick: "A 1.5L pump spray that switches between fan spray and cracks, indoors and out.",
-    blurb: "The largest single container here at 1.5 litres, and the one to choose if you need to treat outside as well as in. It is a pressurised pump spray with an adjustable nozzle for either a fan spray or crack-and-crevice treatment. The listing names cypermethrin and benzalkonium chloride.",
+    pick: "To treat outside as well as in: a 1.5L pump spray with fan and crack settings.",
+    blurb: "Choose this if you need to treat outside as well as in. It is a 1.5 litre pressurised pump spray with an adjustable nozzle for either a fan spray or crack-and-crevice treatment, and the listing names cypermethrin and benzalkonium chloride.",
     pros: ["1.5L pressurised pump spray", "Adjustable nozzle for fan spray or crack and crevice", "Listed for indoor and outdoor use", "Cypermethrin and benzalkonium chloride named"],
   },
   // S68 R5 — the gel the title promises. Banked body (S45-C), fetched 2026-09-01. Its
@@ -230,8 +230,8 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula IC Cockroach Killer Gel 6 x 10g",
     tocLabel: "Best Gel Bait",
     tocName: "Pest Expert Formula IC Gel",
-    pick: "Six 10g syringes of imidacloprid gel, with a ready-to-use applicator.",
-    blurb: "The one gel on this page, and baiting is the first treatment option UF/IFAS names. You get six 10g syringes with a ready-to-use applicator, imidacloprid is named as the active, and the target species is listed as cockroach. The detail table on the listing shows a variant ASIN, which the card notes.",
+    pick: "If you want a bait: six 10g syringes of imidacloprid gel, with an applicator.",
+    blurb: "If you want a bait, this is the one gel on the page, and baiting is the first treatment option UF/IFAS names. You get six 10g syringes with a ready-to-use applicator, imidacloprid is named as the active, and the target species is listed as cockroach.",
     pros: ["Six 10g syringes of gel", "Imidacloprid named as the active", "Ready-to-use syringe applicator, as listed", "Target species listed as cockroach"],
   },
 ];
@@ -241,8 +241,8 @@ const products: ProductRecord[] = [
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    These are amateur-authorised insecticides. Read the label on the one you buy and
-    use it only as the label says.{" "}
+    These are amateur-authorised insecticides. Use the one you buy only as its
+    label says.{" "}
     <a href="#legal" className="underline">
       What a householder can buy
     </a>
@@ -251,7 +251,7 @@ const SAFETY_NOTE = (
 );
 
 const tocItems = [
-  { id: "compared", title: "The Four Products Compared" },
+  { id: "compared", title: "The Five Products Compared" },
   ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "What This Page Actually Cards" },
   { id: "legal", title: "What a Householder Can Buy" },
@@ -265,7 +265,7 @@ export default function BestCockroachGelBaitPage() {
   return (
     <GuideLayout
       title="Best Cockroach Gel Bait UK 2026: Sprays and Kits Compared"
-      subtitle="Four cockroach sprays described by what their own listings state, and what the published guidance says actually suppresses an infestation"
+      subtitle="Four cockroach sprays and a gel bait, from a spray kit for several rooms to six syringes of imidacloprid gel"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -322,14 +322,15 @@ export default function BestCockroachGelBaitPage() {
       </div>
 
       <p>
-        This page is titled for gel bait and, since S68 R5, cards one. The
-        other four products below are contact sprays, on their own listings.
-        That matters, because a spray and a bait do different things to a
-        cockroach infestation.
+        This page compares four cockroach sprays and one gel bait. The Pest
+        Expert kit is the overall pick if the problem has spread beyond one
+        room, and the NOPE! pack gives you ten litres when there is a lot of
+        ground to cover. If you want a bait, the Pest Expert Formula IC gel
+        comes in six syringes with an applicator.
       </p>
 
       {/* [16] Comparison table */}
-      <h2 id="compared">The Four Products Compared</h2>
+      <h2 id="compared">The Five Products Compared</h2>
       <p>
         Every column below is what the Amazon listing itself states. Where a
         listing does not state something, the cell says so rather than guessing.
@@ -435,8 +436,9 @@ export default function BestCockroachGelBaitPage() {
         Four contact sprays and one gel. Read from their own listings: a
         treatment kit whose item form is Spray, a five-litre trigger spray sold
         in a pack of two, a 250ml aerosol, a 1.5-litre pump spray, and six 10g
-        syringes of imidacloprid gel. No bait station, no insect growth
-        regulator.
+        syringes of imidacloprid gel. No bait station. The Pest Expert kit&rsquo;s
+        description names pyriproxyfen, which its own listing calls an insect
+        growth regulator.
       </p>
       <p>
         The University of Florida&rsquo;s extension guidance on assessment-based
@@ -464,7 +466,7 @@ export default function BestCockroachGelBaitPage() {
         the same principle that governs rodenticides.
       </p>
       <p>
-        All four listings name their active substance: cypermethrin on one,
+        All four spray listings name their active substance: cypermethrin on one,
         permethrin with D-allethrin on another, cypermethrin with benzalkonium
         chloride on the third, and cypermethrin with pyriproxyfen on the Pest
         Expert kit. Only the Rentokil aerosol carries it as a detail field; the

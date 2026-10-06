@@ -11,8 +11,8 @@
     "best/ant-killers": {
       "judgement": "correct-as-built",
       "date": "2026-10-06",
-      "fingerprint": "ab163b0429d2",
-      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
+      "fingerprint": "ded745d547e6",
+      "note": "S70 R2 PM ruling 2026-10-06: B000BQT5IG removed from the route (card, picks, table, h2, toc); compared heading Three->Two. No section moved relative to the remaining cards."
     },
     "best/awaabs-law-damp-mould-equipment": {
       "judgement": "correct-as-built",
@@ -23,8 +23,8 @@
     "best/bed-bug-mattress-encasement": {
       "judgement": "correct-as-built",
       "date": "2026-10-06",
-      "fingerprint": "afdb8efdfbf8",
-      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
+      "fingerprint": "e13d5a9d9582",
+      "note": "S70 R2 PM ruling 2026-10-06: unsupported label Best Heavy-Duty renamed to the listing's Machine Washable on card/h2/toc/table. No section moved."
     },
     "best/bed-bug-spray": {
       "judgement": "correct-as-built",
@@ -59,8 +59,8 @@
     "best/cockroach-gel-bait": {
       "judgement": "correct-as-built",
       "date": "2026-10-06",
-      "fingerprint": "f8d1b15c7a14",
-      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
+      "fingerprint": "60e3d16e2bb8",
+      "note": "S70 R2 PM ruling 2026-10-06: compared-heading product count corrected to the products actually carded since R1. No section moved."
     },
     "best/cockroach-killers": {
       "judgement": "correct-as-built",
@@ -125,8 +125,8 @@
     "best/flea-treatments": {
       "judgement": "correct-as-built",
       "date": "2026-10-06",
-      "fingerprint": "584fe5057fa7",
-      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
+      "fingerprint": "71c781962c19",
+      "note": "S70 R2 PM ruling 2026-10-06: compared-heading product count corrected to the products actually carded since R1. No section moved."
     },
     "best/fly-killer-indoor": {
       "judgement": "correct-as-built",
@@ -179,8 +179,8 @@
     "best/mouse-traps": {
       "judgement": "correct-as-built",
       "date": "2026-10-06",
-      "fingerprint": "59b0d7b9014b",
-      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
+      "fingerprint": "fa4a5d02150d",
+      "note": "S70 R2 PM ruling 2026-10-06: unsupported label Best Easy-Clean renamed Best Reusable Humane (listing: durable and reusable). No section moved."
     },
     "best/pigeon-spikes": {
       "judgement": "correct-as-built",
@@ -287,8 +287,8 @@
     "best/wasp-killers": {
       "judgement": "correct-as-built",
       "date": "2026-10-06",
-      "fingerprint": "04e4084e27c4",
-      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
+      "fingerprint": "6518e78817e7",
+      "note": "S70 R2 PM ruling 2026-10-06: compared-heading product count corrected to the products actually carded since R1. No section moved."
     },
     "best/wasp-nest-foam": {
       "judgement": "correct-as-built",
@@ -299,8 +299,8 @@
     "best/woodworm-treatments": {
       "judgement": "correct-as-built",
       "date": "2026-10-06",
-      "fingerprint": "9ecf62720e8b",
-      "note": "S70 R1 Law 195 PM ruling 2026-10-06: selling layer restored on /best; top-picks box in hero, comparison table and product spreads moved above the sourced legal/safety sections"
+      "fingerprint": "8b029708868f",
+      "note": "S70 R2 PM ruling 2026-10-06: unsupported label Best Water-Based Treatment renamed Best 25-Litre Concentrate (title: makes 25 litres). No section moved."
     },
     "guides/autumn-pest-proofing": {
       "judgement": "correct-as-built",
@@ -436,9 +436,9 @@
     },
     "products": {
       "judgement": "correct-as-built",
-      "date": "2026-09-09",
-      "fingerprint": "3c7f1e4c1a07",
-      "note": "S68 R8 — /products loses B00B2KP7U0 under the S67 R10 mismatch ruling (a clothes-moth spray listed under bed bugs) and the Utopia encasement name is corrected to its listed size; no other card moved"
+      "date": "2026-10-06",
+      "fingerprint": "da49ea498d67",
+      "note": "S70 R2 PM ruling 2026-10-06: B000BQT5IG removed from the ant products grid. No section moved."
     },
     "us/ants": {
       "judgement": "correct-as-built",

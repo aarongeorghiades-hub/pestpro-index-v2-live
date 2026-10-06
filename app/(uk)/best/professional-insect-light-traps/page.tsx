@@ -127,8 +127,8 @@ const products: ProductRecord[] = [
     h2Name: "Best Overall",
     tocLabel: "#1 Insect-O-Cutor PlusZap 30W",
     tocName: "Best Overall",
-    pick: "A 30W aluminium-grid unit with a deep removable catch tray, for homes or workplaces.",
-    blurb: "Our overall pick for a kitchen, warehouse or shop floor. It is a 30W unit with two UV bulbs pre-installed and an aluminium grid, and the listing names homes, commercial workplaces, kitchens, warehouses and retail. The catch tray is deep and removable. It is hardwired, so plan where the cable will run.",
+    pick: "Best for kitchens, warehouses and shops: 30W, aluminium grid, deep removable catch tray.",
+    blurb: "Our overall pick for a kitchen, warehouse or shop floor. It is a 30W unit with two UV bulbs pre-installed, an aluminium grid and a deep removable catch tray, and the listing names homes, commercial workplaces, kitchens, warehouses and retail. It is hardwired, so plan where the cable will run.",
     pros: ["30W with two UV bulbs pre-installed", "Aluminium grid, as listed", "Deep removable catch tray", "Listed for homes, kitchens, warehouses and retail"],
   },
   {
@@ -149,7 +149,7 @@ const products: ProductRecord[] = [
     h2Name: "Best Low-Wattage Unit",
     tocLabel: "#2 Insect-O-Cutor PlusZap 16W",
     tocName: "Best Low-Wattage Unit",
-    pick: "The 16W PlusZap: same grid and tray, lighter at 1.6 kg as listed.",
+    pick: "Best if you don't need 30W: the same PlusZap grid and catch tray at 16W.",
     blurb: "The 16W version of the same unit, if you do not need 30W. It has the same aluminium grid, two pre-installed UV bulbs and deep removable catch tray, and the same listed settings from homes to retail. The listing gives the same 18 x 12 x 8 cm as the 30W, at 1.6 kilograms.",
     pros: ["16W, the lowest wattage on this page", "Two UV bulbs pre-installed", "Deep removable catch tray", "1.6 kg as listed"],
   },
@@ -171,8 +171,8 @@ const products: ProductRecord[] = [
     h2Name: "Best Budget",
     tocLabel: "#3 Aspectek 30W Electronic Insect Killer",
     tocName: "Best Budget",
-    pick: "A 30W metal-cased unit you can hang on its chain or stand on a surface.",
-    blurb: "A 30W unit in a metal casing, with two UV bulbs and a mesh screen over the grid. The listing names home and commercial use indoors, and you can hang it by its chain or stand it on a surface. Its own listing notes that not every mosquito reaches the grid.",
+    pick: "Best if you want to hang it or stand it: a 30W unit in a metal casing.",
+    blurb: "Suits a home or business that wants the choice of hanging the unit on its chain or standing it on a surface. It is a 30W unit in a metal casing, with two UV bulbs and a mesh screen over the grid, listed for home and commercial use indoors. Its own listing notes that not every mosquito reaches the grid.",
     pros: ["30W with two UV bulbs", "Metal casing with a mesh screen over the grid", "Hangs by chain or stands", "Listed for home and commercial use"],
   },
   {
@@ -193,7 +193,7 @@ const products: ProductRecord[] = [
     h2Name: "Best Dual-Use Unit",
     tocLabel: "#4 Aspectek 20W Bug Zapper",
     tocName: "Best Dual-Use Unit",
-    pick: "A 20W dual-sided unit for garages and covered outdoor spaces, with spare bulbs included.",
+    pick: "Best for garages and covered patios: 20W, dual-sided, two spare bulbs included.",
     blurb: "Our pick for a garage, a basement or a covered patio. It is a 20W plastic-cased unit with an open dual-sided design, and two spare UV bulbs come with it. The listing names fly, mosquito, moth and wasp, and names no commercial setting.",
     pros: ["Two spare UV bulbs included", "Open dual-sided design", "Listed for covered outdoor spaces, garages and basements", "Names fly, mosquito, moth and wasp"],
   },
@@ -241,19 +241,6 @@ const faqSchema = {
   })),
 };
 
-// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
-// block (the top-picks box). It satisfies Law 180 on this route; the full legal
-// and safety sections sit below the picks.
-const SAFETY_NOTE = (
-  <>
-    Every unit here is an electric grid trap. Find the source of the flies first, and
-    think before siting one near open food.{" "}
-    <a href="#legal" className="underline">
-      What this page can and cannot say
-    </a>
-    .
-  </>
-);
 
 const tocItems = [
   { id: "compared", title: "Light Traps Compared" },
@@ -271,7 +258,7 @@ export default function BestProfessionalInsectLightTrapsPage() {
   return (
     <GuideLayout
       title="Best Commercial Insect Light Traps for Businesses & Facilities Managers (2026)"
-      subtitle="Electric grid insect light traps for commercial premises — four compared on wattage, target species and size as their listings state them, with what extension guidance says about where a trap goes"
+      subtitle="Four electric grid light traps for kitchens, shops, warehouses and garages, from a 30W commercial unit to a 20W model for covered patios"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -294,7 +281,6 @@ export default function BestProfessionalInsectLightTrapsPage() {
       breadcrumbSchema={breadcrumbSchema}
       topPicks={
         <TopPicks
-          note={SAFETY_NOTE}
           picks={products.slice(0, 3).map((p) => ({
             label: p.cardLabel,
             name: p.cardName,
@@ -322,10 +308,7 @@ export default function BestProfessionalInsectLightTrapsPage() {
       </div>
 
       <p>
-        An insect light trap draws a flying insect to ultraviolet light and
-        kills or holds it there. All four units on this page are the electric
-        grid kind. Two are listed for commercial workplaces; one for home and
-        commercial use; one for garages, patios and covered outdoor spaces.
+        All four units here are electric grid light traps. The PlusZap 30W suits a kitchen, warehouse or shop floor, and the PlusZap 16W is the same unit at a lower wattage. The Aspectek 30W hangs on a chain or stands on a surface, for home or commercial use. For a garage or covered patio, the Aspectek 20W is the one.
       </p>
 
       {/* Comparison table */}
@@ -357,6 +340,13 @@ export default function BestProfessionalInsectLightTrapsPage() {
           </tbody>
         </table>
       </div>
+      <p>
+        Placement tip: site a grid unit away from food preparation areas. Texas A&amp;M advises that high-voltage outdoor bug zappers should not be used indoors, because they tend to scatter insect fragments (
+        <a href={SRC.tamu} rel="nofollow">
+          Texas A&amp;M AgriLife Extension
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

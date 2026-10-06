@@ -110,8 +110,8 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil Wasp Foam 300ml",
     tocLabel: "Best Overall",
     tocName: "Rentokil Foam",
-    pick: "A Rentokil nest foam with its two actives stated on the listing.",
-    blurb: "Our overall pick for a nest you can reach. It is a 300ml Rentokil aerosol foam, the listing names d-phenothrin and tetramethrin, and the maker says it kills wasps in the nest. The listing gives no reach and no number of treatments, so read the can before you start.",
+    pick: "For a nest you can reach: Rentokil foam with its two actives named on the listing.",
+    blurb: "Suits a nest you can reach. It is a 300ml Rentokil aerosol foam, the listing names d-phenothrin and tetramethrin, and the maker says it kills wasps in the nest. The listing gives no reach and no number of treatments, so read the can before you start.",
     pros: ["d-phenothrin and tetramethrin, per the listing", "Foam aerosol for treating the nest", "300ml can from Rentokil"],
   },
   {
@@ -132,8 +132,8 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Ultra Power XL Wasp Trap",
     tocLabel: "Best Trap",
     tocName: "Zero In XL",
-    pick: "A reusable, poison-free trap for wasps around the garden.",
-    blurb: "Pick the trap if your trouble is wasps around the garden. It is listed as poison-free and reusable, comes with two sachets of attractant bait, and has a twist-off base with a refill available. The listing is for outdoor use: gardens, smallholdings, refuse areas, stables and barns. Before emptying, the listing says to bag it and freeze it for 2 hours.",
+    pick: "For wasps around the garden: a reusable, poison-free trap with two bait sachets.",
+    blurb: "Pick the trap if wasps are bothering you around the garden and there is no nest to treat. It is listed as poison-free and reusable, comes with two sachets of attractant bait, and has a twist-off base with a refill available. The listing covers outdoor use in gardens, smallholdings, refuse areas, stables and barns.",
     pros: ["Poison-free, as listed", "2 bait sachets supplied; refill available", "Reusable, with a twist-off base", "Listed for gardens, refuse areas, stables and barns"],
   },
   {
@@ -154,7 +154,7 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Wasp Killer 300ml",
     tocLabel: "Best Spray",
     tocName: "Zero In Killer",
-    pick: "A foam that reaches a nest from up to 2 metres, with 2-3 treatments per can.",
+    pick: "To keep your distance: a foam listed as reaching a nest from up to 2 metres.",
     blurb: "Choose this if you want to keep some distance from the nest. The listing states a reach of up to 2 metres and 2-3 treatments per 300ml can, with permethrin and tetramethrin named, for nests indoors and out. Apply it in the late evening or early morning when wasps are less active, as the listing directs.",
     pros: ["Reach up to 2 metres, as listed", "2-3 treatments per 300ml can", "Permethrin and tetramethrin, per the listing", "Listed for indoor and outdoor nests"],
   },
@@ -178,8 +178,8 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil PSW99P Wasp Killer Powder 300g",
     tocLabel: "Best Powder",
     tocName: "Rentokil PSW99P",
-    pick: "A 300g permethrin powder listed for inaccessible nests.",
-    blurb: "For a nest you cannot get at directly. The listing names permethrin and states use on inaccessible nests, in the home and garden, in a 300g pack. It gives no application rate or nest count, so follow the pack.",
+    pick: "For a nest you can't get at: 300g of permethrin powder for inaccessible nests.",
+    blurb: "Suits a nest you cannot get at directly. The listing names permethrin and states use on inaccessible nests, in the home and garden, in a 300g pack. It gives no application rate or nest count, so follow the pack.",
     pros: ["300g permethrin powder", "Listed for inaccessible nests", "Listed for home and garden"],
   },
 ];
@@ -189,8 +189,8 @@ const products: ProductRecord[] = [
 // sections it points to sit on the page.
 const SAFETY_NOTE = (
   <>
-    Two of these are insecticides: buy only biocides intended for the general public,
-    and follow the label on the can.{" "}
+    Use only wasp products made for the general public, and follow the label
+    on the can.{" "}
     <a href="#legal" className="underline">
       The legal position
     </a>
@@ -199,7 +199,7 @@ const SAFETY_NOTE = (
 );
 
 const tocItems = [
-  { id: "compared", title: "The Three Products Compared" },
+  { id: "compared", title: "The Four Products Compared" },
   ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Where the Nest Is, and When It Ends" },
   { id: "legal", title: "The Legal Position on Wasp Products" },
@@ -213,7 +213,7 @@ export default function BestWaspKillersPage() {
   return (
     <GuideLayout
       title="Best Wasp Killer Products UK 2026: Sprays, Powders & Traps"
-      subtitle="Two nest foams and one baited trap for UK homes, described by what their own listings state — and what a council's pest advice says about which nests to leave to a professional"
+      subtitle="Two nest foams, a nest powder and a baited trap for UK homes, matched to where the nest is and how close you can get"
       lastUpdated="September 2026"
       readingTime="6 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -251,22 +251,15 @@ export default function BestWaspKillersPage() {
       </div>
 
       <p>
-        A wasp nest is a summer structure. Oxford City Council&rsquo;s pest
-        advice:{" "}
-        <em>
-          &ldquo;Fertilized queens leave to hibernate, while the rest of the
-          colony dies off with the onset of cold weather.&rdquo;
-        </em>{" "}
-        (
-        <a href={SRC.oxford} rel="nofollow">
-          Oxford City Council
-        </a>
-        ). Whether to treat one at all is the first question, and it is not
-        always yes.
+        Four wasp products, each matched to a job. Rentokil&rsquo;s foam suits a
+        nest you can reach, and the Zero In foam is listed as reaching up to 2
+        metres if you want to keep your distance. If there is no nest and the
+        wasps are around the garden, the Zero In trap is poison-free, and for a
+        nest you cannot get at there is Rentokil&rsquo;s powder.
       </p>
 
       {/* [16] Comparison table */}
-      <h2 id="compared">The Three Products Compared</h2>
+      <h2 id="compared">The Four Products Compared</h2>
       <p>
         Every column below is what the Amazon listing itself states. Where a
         listing does not state something, the cell says so rather than guessing.
@@ -295,6 +288,21 @@ export default function BestWaspKillersPage() {
           </tbody>
         </table>
       </div>
+
+      <p>
+        A wasp nest is a summer structure. Oxford City Council&rsquo;s pest
+        advice:{" "}
+        <em>
+          &ldquo;Fertilized queens leave to hibernate, while the rest of the
+          colony dies off with the onset of cold weather.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.oxford} rel="nofollow">
+          Oxford City Council
+        </a>
+        ). Whether to treat one at all is the first question, and it is not
+        always yes.
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>
@@ -346,7 +354,7 @@ export default function BestWaspKillersPage() {
           </li>
           <li>
             <strong>You want wasps away from a table, not a nest treated.</strong>{" "}
-            One of the three is a baited outdoor trap with no insecticide &mdash;{" "}
+            One of the four is a baited outdoor trap with no insecticide &mdash;{" "}
             <a href="#best-trap" className="underline">
               the trap
             </a>
@@ -380,7 +388,7 @@ export default function BestWaspKillersPage() {
       {/* [1] Legal */}
       <h2 id="legal">The Legal Position on Wasp Products</h2>
       <p>
-        Two of the three products are insecticides; the trap is poison-free by
+        Three of the four products are insecticides; the trap is poison-free by
         its listing. HSE&rsquo;s guidance on using biocides:{" "}
         <em>
           &ldquo;If you are a member of the public, you should only use
@@ -428,7 +436,7 @@ export default function BestWaspKillersPage() {
       <h2 id="what-decides">What Decides the Choice</h2>
       <h3>1. Nest or no nest</h3>
       <p>
-        Two products are nest foams and one is a baited trap. If you have not
+        Two products are nest foams, one is a nest powder and one is a baited trap. If you have not
         found a nest, the foams have nothing to be pointed at.
       </p>
       <h3>2. Reach and how many goes, as listed</h3>

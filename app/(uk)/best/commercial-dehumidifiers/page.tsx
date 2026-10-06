@@ -131,8 +131,8 @@ const products: ProductRecord[] = [
     h2Name: "electriQ ECD30 Industrial 30L Dehumidifier",
     tocLabel: "Best Overall",
     tocName: "electriQ ECD30",
-    pick: "A metal-bodied unit on wheels, listed at 30 litres a day, with a drainage option.",
-    blurb: "Our overall pick for a landlord who needs one unit to move between properties. It has a metal body on wheels and is listed at up to 30 litres a day, with a humidistat, a 24-hour timer and a permanent drainage option, so it can run for long spells without anyone emptying a tank. The listing names warehouses, garages, basements and offices. It weighs 26 kilograms, so plan on wheeling it rather than carrying it.",
+    pick: "Best for moving between properties: metal body on wheels, 30 litres a day, drain option.",
+    blurb: "Buy this if you need one unit to move between properties. It has a metal body on wheels and is listed at up to 30 litres a day, with a humidistat, a 24-hour timer and a permanent drainage option for long runs without emptying a tank. It weighs 26 kilograms, so plan on wheeling it.",
     pros: ["Up to 30 litres a day, as listed", "Permanent drainage option for long runs", "Metal body on wheels", "Humidistat, 24-hour timer and automatic defrost"],
   },
   {
@@ -153,8 +153,8 @@ const products: ProductRecord[] = [
     h2Name: "MeacoDry Arete One 25L Dehumidifier & HEPA Air Purifier",
     tocLabel: "Best Professional-Grade",
     tocName: "MeacoDry Arete One",
-    pick: "A dehumidifier with an H13 HEPA filter, listed for 86 square metres at 40 dB.",
-    blurb: "The pick for a property where you want the air filtered as well as dried. It carries an H13 HEPA filter alongside the dehumidifier, and the listing gives laundry, night and smart humidity modes. It is listed for a floor area of 86 square metres at 40 dB, with a 4.8 litre front-loading tank. The 25L in its name is the model: the listing rates it at up to 14 litres a day.",
+    pick: "Best if you want filtered air too: H13 HEPA filter, listed for 86 square metres at 40 dB.",
+    blurb: "This suits a property where you want the air filtered as well as dried. It has an H13 HEPA filter with laundry, night and smart humidity modes, and is listed for 86 square metres at 40 dB with a 4.8 litre front-loading tank. The 25L in its name is the model, and the listing rates it at up to 14 litres a day.",
     pros: ["H13 HEPA filter built in", "Smart humidity, laundry and night modes", "Listed for 86 square metres at 40 dB", "4.8 litre front-loading tank"],
   },
   {
@@ -175,8 +175,8 @@ const products: ProductRecord[] = [
     h2Name: "Best 20L Unit",
     tocLabel: "Meaco Arete Two 20L",
     tocName: "Best 20L Unit",
-    pick: "App control with Alexa and Google, and a lowest fan speed listed at 38 dB.",
-    blurb: "Pick this if you want to check a rental's humidity from your phone. The Meaco app works with Alexa and Google, as listed, and the quietest of its three fan speeds is listed at 38 dB, which helps in a room someone sleeps in. It has an H13 HEPA filter and laundry mode, and the listing suits it to 3 to 4 bedroom houses, or 80 square metres. Extraction is stated as 20 litres a day in the text and 25 in the detail table.",
+    pick: "Best for phone control: Meaco app with Alexa and Google, quietest speed listed at 38 dB.",
+    blurb: "Pick this if you want to control a rental's dehumidifier from your phone. The Meaco app gives you Alexa and Google control, the quietest of its three fan speeds is listed at 38 dB, and it has an H13 HEPA filter and laundry mode. The listing suits it to 3 to 4 bedroom houses, or 80 square metres, and gives extraction as 20 litres a day in the text and 25 in the table.",
     pros: ["Meaco app with Alexa and Google control", "Three fan speeds from 38 dB", "H13 HEPA filter and laundry mode", "Listed for 3 to 4 bedroom houses"],
   },
   {
@@ -197,8 +197,8 @@ const products: ProductRecord[] = [
     h2Name: "Meaco 25L Ultra Low Energy Dehumidifier",
     tocLabel: "Best Budget",
     tocName: "Meaco 25L Ultra Low Energy",
-    pick: "25 litres a day on 330 watts, dropping to fan-only once the room hits its target.",
-    blurb: "A plain, capable unit for a landlord who wants good controls and nothing extra. It is listed at 25 litres a day on 330 watts, with a variable humidistat, a 24-hour timer and a child lock. The listing says it switches to fan-only once the target humidity is reached and re-tests after 30 minutes, so it stops drying once the room is at your setting. The listing does not state tank size or floor area.",
+    pick: "Best for simple controls: 25 litres a day on 330 watts, fan-only once at your target.",
+    blurb: "A plain unit for a landlord who wants good controls and nothing extra. It is listed at 25 litres a day on 330 watts, with a variable humidistat, a 24-hour timer and a child lock, and it switches to fan-only once the room reaches your target humidity. The listing does not state tank size or floor area.",
     pros: ["25 litres a day on 330 watts, as listed", "Variable humidistat with fan-only at target", "Laundry, quiet and auto modes", "Child lock and 24-hour timer"],
   },
   {
@@ -219,8 +219,8 @@ const products: ProductRecord[] = [
     h2Name: "Best Smart Control",
     tocLabel: "VonHaus 30L Smart",
     tocName: "Best Smart Control",
-    pick: "30 litres a day with app control and a drain hose for continuous drainage.",
-    blurb: "For a landlord who wants high extraction and a phone app in the same unit. It is listed at 30 litres a day on 430 watts, with the TUYA Smart app working through Alexa and Google Home. The 5.3 litre tank fills quickly at that rate, and the drain hose lets you run it on continuous drainage instead. The listing gives a room size of 30 to 40 square metres and a noise level of 44 dB.",
+    pick: "Best for high extraction with an app: 30 litres a day, plus a drain hose.",
+    blurb: "For a landlord who wants high extraction and a phone app in one unit. It is listed at 30 litres a day on 430 watts, with the TUYA Smart app working through Alexa and Google Home, and a drain hose lets you run it on continuous drainage past the 5.3 litre tank. The listing gives a room size of 30 to 40 square metres at 44 dB.",
     pros: ["30 litres a day, as listed", "TUYA Smart app with Alexa and Google Home", "Drain hose for continuous drainage", "Auto defrost, child lock and 24-hour timer"],
   },
 ];
@@ -251,17 +251,6 @@ const faqSchema = {
   })),
 };
 
-const SAFETY_NOTE = (
-  <>
-    Government guidance asks landlords to tackle the underlying cause of damp
-    first. A dehumidifier only dries the air in its own room.{" "}
-    <a href="#legal" className="underline">
-      What the guidance asks of a landlord
-    </a>
-    .
-  </>
-);
-
 const tocItems = [
   { id: "compared", title: "Dehumidifiers Compared" },
   ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
@@ -278,7 +267,7 @@ export default function BestCommercialDehumidifiersPage() {
   return (
     <GuideLayout
       title="Best Commercial Dehumidifiers for Landlords &amp; Property Managers (2026)"
-      subtitle="Compressor dehumidifiers for rented and commercial property — five compared on extraction, tank and floor area as their listings state them, beside what the government's damp and mould guidance asks of a landlord first"
+      subtitle="Five compressor dehumidifiers for landlords and property managers, from a 30-litre metal unit on wheels to models you control from an app."
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -304,7 +293,6 @@ export default function BestCommercialDehumidifiersPage() {
       breadcrumbSchema={breadcrumbSchema}
       topPicks={
         <TopPicks
-          note={SAFETY_NOTE}
           picks={products.slice(0, 3).map((p) => ({
             label: p.cardLabel,
             name: p.cardName,
@@ -332,11 +320,12 @@ export default function BestCommercialDehumidifiersPage() {
       </div>
 
       <p>
-        A dehumidifier takes water out of the air in the room it stands in. All
-        five here are compressor units with a tank or a drain, and their
-        listings rate them from 14 to 30 litres a day. What none of them does
-        is find out where the water is coming from — and the government&rsquo;s
-        guidance to landlords starts there.
+        These five dehumidifiers suit landlords and property managers drying out
+        rented or commercial rooms. The electriQ ECD30 is the one to move
+        between properties, with a metal body, wheels and a drainage option.
+        The MeacoDry Arete One adds an H13 HEPA filter, and the Arete Two lets
+        you control it from the Meaco app. Listed extraction runs from 14 to 30
+        litres a day.
       </p>
 
       {/* Comparison table */}
@@ -370,6 +359,15 @@ export default function BestCommercialDehumidifiersPage() {
           </tbody>
         </table>
       </div>
+      <p>
+        Government guidance asks landlords to tackle the underlying cause of
+        damp and mould first, and a dehumidifier dries only the air in the room
+        it stands in (
+        <a href={SRC.govDamp} rel="nofollow">
+          GOV.UK
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

@@ -155,12 +155,13 @@ const products: ProductRecord[] = [
       "Aerosol surface spray",
       "not stated",
       "300 ml; up to 3 months, per the maker",
+      "Best Spray",
     ],
     h2Label: "Best Spray",
     h2Name: "Zero In Carpet Beetle & Moth Killer",
     tocLabel: "Best Spray",
     tocName: "Zero In Carpet Beetle & Moth Killer",
-    pick: "A 300ml spray for carpets and upholstery, up to three months per use, per the maker.",
+    pick: "Found larvae in a carpet or sofa? A 300ml spray for carpets and upholstery.",
     blurb: "Start here if you have found larvae in a carpet or a sofa. It is a 300ml aerosol listed for carpets, upholstery and household items, and the maker states up to three months of protection per application. The maker also describes it as odour-free on treated fabrics. No active substance is named on the listing, so read the can if that matters to you.",
     pros: ["300ml aerosol", "Listed for carpets, upholstery and household items", "Up to three months per application, per the maker", "Odour-free on treated fabrics, the maker says"],
   },
@@ -182,14 +183,15 @@ const products: ProductRecord[] = [
       "Trap, poison free per the title",
       "None — poison free, per the listing",
       "Two traps; no duration stated",
+      "Best Trap",
     ],
     h2Label: "Best Trap",
     h2Name: "Rentokil Carpet Beetle & Cloth Moth Trap",
     tocLabel: "Best Trap",
     tocName: "Rentokil Carpet Beetle & Moth Trap",
-    pick: "Two poison-free traps, for seeing where beetles are before you treat.",
-    blurb: "Use these to watch the problem rather than treat it. UC IPM, quoted above, recommends traps to show where beetles are coming from and whether control is working, and this pack gives you two, described in the title as poison free. The listing itself is thin. It has no bullets or description, and its detail rows read Mouse, Moth Killer Kit and electric, which the title contradicts.",
-    pros: ["Two traps per pack", "Poison free, per the title", "Suits the monitoring job UC IPM describes"],
+    pick: "For finding where beetles are before you treat: two traps, poison free per the title.",
+    blurb: "For finding where the beetles are coming from before you treat, and for checking afterwards whether treatment is working. UC IPM recommends traps for both jobs, and this pack gives you two, described in the title as poison free. The listing has no bullets or description, so check the pack for what the traps attract.",
+    pros: ["Two traps per pack", "Poison free, per the title", "Titled for carpet beetles and cloth moths"],
   },
   {
     anchorId: "best-powder",
@@ -209,13 +211,14 @@ const products: ProductRecord[] = [
       "Insecticidal dust",
       "Permethrin, named by the maker",
       "600 g in two puffer packs, as listed",
+      "Best Powder",
     ],
     h2Label: "Best Powder",
     h2Name: "Pest Expert Formula 'P' Carpet Beetle Killer Powder",
     tocLabel: "Best Powder",
     tocName: "Pest Expert Formula 'P'",
-    pick: "600g of permethrin powder in two puffer packs, for cracks and awkward spots.",
-    blurb: "The pick for awkward spots under skirtings and around sockets. Two 300 gram puffer packs give you 600 grams in total, with permethrin named by the maker as the active. It is listed for any surface, furniture and carpets, and for use around power points and other hard-to-reach areas. The maker's own title calls it HSE approved and tested. Its target species row reads Insects rather than Carpet Beetle.",
+    pick: "For cracks and awkward spots: 600g of permethrin powder in two puffer packs.",
+    blurb: "For awkward spots under skirtings and around sockets. Two 300 gram puffer packs give you 600 grams in total, with permethrin named by the maker as the active, and it is listed for any surface, furniture and carpets, and for use around power points and other hard-to-reach areas. The maker's own title calls it HSE approved and tested.",
     pros: ["600g in two 300g puffer packs", "Permethrin named as the active by the maker", "Listed for carpets, furniture and around power points", "The maker's title says HSE approved and tested"],
   },
 ];
@@ -262,8 +265,8 @@ const faqSchema = {
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    The spray and the powder are insecticides, and the label on each sets where
-    it may be applied and what to keep away from it.{" "}
+    The spray and powder are insecticides: use each only as its label
+    directs.{" "}
     <a href="#legal" className="underline">
       What the label governs
     </a>
@@ -288,7 +291,7 @@ export default function BestCarpetBeetleTreatmentsPage() {
   return (
     <GuideLayout
       title="Best Carpet Beetle Treatments UK 2026 &mdash; Sprays, Traps &amp; Powder"
-      subtitle="An aerosol spray, a two-trap pack and a permethrin powder, described by what their own listings state — beside what the University of California and Penn State Extension say about the pest and about its larval hairs"
+      subtitle="A carpet beetle spray, a powder for awkward spots and a pair of traps for finding where the beetles are"
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -336,9 +339,11 @@ export default function BestCarpetBeetleTreatmentsPage() {
       </div>
 
       <p>
-        Three products: an aerosol, a two-trap pack and a permethrin dust. A
-        fourth used to sit here and has been removed, because its own listing
-        was for clothes moths and never mentioned a beetle at all.
+        This page compares three carpet beetle products. If you have found
+        larvae in a carpet or sofa, start with the Zero In spray, listed for
+        carpets and upholstery. The Pest Expert powder goes into awkward spots
+        such as around power points, and the Rentokil traps help you see where
+        beetles are before you treat.
       </p>
 
       {/* Comparison table */}
@@ -356,6 +361,7 @@ export default function BestCarpetBeetleTreatmentsPage() {
               <th className="text-left p-2 border-b font-semibold">Type</th>
               <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
               <th className="text-left p-2 border-b font-semibold">Quantity or duration, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
           </thead>
           <tbody>

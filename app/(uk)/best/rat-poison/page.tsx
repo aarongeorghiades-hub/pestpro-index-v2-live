@@ -125,8 +125,8 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Brodifacoum Blocks",
     tocLabel: "Best Overall",
     tocName: "Roshield Brodifacoum Blocks",
-    pick: "Brodifacoum wax blocks with the strength and HSE number printed on the listing.",
-    blurb: "Our overall pick, because this listing tells you exactly what you are buying: brodifacoum at 0.0025% and an HSE registration number, in fifteen 20g wax blocks ready for a tamper-resistant bait station. The maker describes the blocks as tolerant to humidity, which suits a damp shed or outbuilding. The maker also advises keeping brodifacoum for known resistance or where other baits have had little effect, and that is worth reading before you buy.",
+    pick: "For a damp shed or outbuilding: brodifacoum wax blocks the maker calls humidity tolerant.",
+    blurb: "A good fit for a damp shed or outbuilding, because the maker describes these wax blocks as tolerant to humidity. You get fifteen 20g blocks of brodifacoum at 0.0025%, ready for a tamper-resistant bait station, with the HSE registration number on the listing. The maker advises keeping brodifacoum for known resistance or where other baits have had little effect, so read that before you buy.",
     pros: ["Active and strength stated on the listing: brodifacoum 0.0025%", "HSE registration number shown on the listing", "Wax blocks the maker describes as tolerant to humidity", "15 x 20g blocks, ready to use in a bait station"],
   },
   {
@@ -134,20 +134,20 @@ const products: ProductRecord[] = [
     asin: "B010E2GCIM",
     rank: 2,
     cardName: "Pest Expert Formula B+ Grain Bait",
-    cardLabel: "Best Professional-Grade",
+    cardLabel: "Best Professional-Strength",
     features: [
       "Active concentration listed as brodifacoum 0.0029%",
       "Listed as 1kg in 10 x 100g sachets; wholewheat grain, no wax",
       "The maker states it can be used indoors and outdoors",
       "Item form field on the listing reads Capsules",
     ],
-    tableCells: ["Pest Expert Formula B+ 1kg", "Grain sachets; brodifacoum 0.0029%, as listed", "Best Professional-Grade"],
+    tableCells: ["Pest Expert Formula B+ 1kg", "Grain sachets; brodifacoum 0.0029%, as listed", "Best Professional-Strength"],
     h2Label: "Best Professional-Strength",
     h2Name: "Pest Expert Formula B+ Grain Bait",
     tocLabel: "Best Professional-Strength",
     tocName: "Pest Expert Formula B+",
-    pick: "A kilogram of wholewheat grain bait in ten sachets, strength stated.",
-    blurb: "A full kilogram of wholewheat grain split into ten 100g sachets, so each station gets a clean, measured fill. Brodifacoum is stated at 0.0029%, and the maker says it can go indoors or outdoors. Pick this if you have several stations to stock and want grain over wax.",
+    pick: "For several stations to stock: 1kg of wholewheat grain in ten 100g sachets.",
+    blurb: "Pick this if you have several stations to stock and prefer grain to wax. A full kilogram of wholewheat grain comes split into ten 100g sachets, so each station gets a measured fill. Brodifacoum is stated at 0.0029%, and the maker says it can go indoors or outdoors.",
     pros: ["1kg in 10 x 100g sachets", "Brodifacoum 0.0029% stated on the listing", "Wholewheat grain with no wax", "Maker states indoor and outdoor use"],
   },
   {
@@ -155,20 +155,20 @@ const products: ProductRecord[] = [
     asin: "B071K8WQZB",
     rank: 3,
     cardName: "Elixir Gardens Rodex Whole Wheat Sachets",
-    cardLabel: "Best Budget",
+    cardLabel: "Best Value",
     features: [
       "Listed as 1kg in 10 x 100g ready-to-use sachets, whole wheat",
       "No active substance is named on this listing",
       "The maker says a red dye colours droppings so you can tell the bait is being taken",
       "Listing warning: contains an anticoagulant; if ingested call a poison centre, UK 111",
     ],
-    tableCells: ["Elixir Gardens Rodex 1kg", "Grain sachets; active not stated, as listed", "Best Budget"],
+    tableCells: ["Elixir Gardens Rodex 1kg", "Grain sachets; active not stated, as listed", "Best Value"],
     h2Label: "Best Value",
     h2Name: "Elixir Gardens Rodex Whole Wheat",
     tocLabel: "Best Value",
     tocName: "Elixir Gardens Rodex Sachets",
-    pick: "1kg of ready-to-use sachets, with a dye that shows the bait is being taken.",
-    blurb: "A kilogram of whole-wheat bait in ten ready-to-use 100g sachets, enough to keep several stations topped up. The maker says a red dye colours droppings, so you can tell the bait is being eaten without opening the box. The listing names no active substance, so check the pack for it.",
+    pick: "If you want to see uptake: the maker says a red dye colours droppings.",
+    blurb: "Suits you if you are keeping several stations topped up and want to see whether the bait is being eaten. A kilogram of whole wheat comes in ten ready-to-use 100g sachets, and the maker says a red dye colours droppings. The listing names no active substance, so check the pack for it.",
     pros: ["10 x 100g ready-to-use sachets", "Red dye marks droppings so uptake is visible, per the maker", "Listing carries a clear first-aid warning"],
   },
   {
@@ -188,8 +188,8 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil Rodine Grain Bait",
     tocLabel: "Best Grain Bait Sachets",
     tocName: "Rentokil Rodine Grain Bait",
-    pick: "A compact 200g pack of grain sachets made for lockable stations.",
-    blurb: "A smaller 200g pack from Rentokil for a contained job. The sachets are designed, the listing says, for lockable tamper-resistant stations, and the active is stated as brodifacoum at 0.0025% w/w. The maker claims a lethal dose in one feed.",
+    pick: "For a small, contained job: 200g of grain sachets made for lockable stations.",
+    blurb: "For a small, contained job, this 200g pack from Rentokil is enough. The listing says the sachets are designed for lockable, tamper-resistant stations, and states the active as brodifacoum at 0.0025% w/w. The maker claims a lethal dose in one feed.",
     pros: ["Sachets designed for lockable, tamper-resistant stations", "Brodifacoum 0.0025% w/w stated on the listing", "Compact 200g pack for a small job"],
   },
   {
@@ -209,9 +209,9 @@ const products: ProductRecord[] = [
     h2Name: "Racan Force Paste",
     tocLabel: "Best Paste Bait",
     tocName: "Racan Force Paste",
-    pick: "Six 10g paste sachets for the maker's tamper-proof stations.",
-    blurb: "Six 10g paste sachets in a small pack, meant to go in the maker's own tamper-proof bait stations. The description talks about mice throughout and the listing names no active substance, so read the pack before you use it against rats.",
-    pros: ["6 x 10g paste sachets", "Maker says to use them in its tamper-proof stations", "Small pack for a small job"],
+    pick: "If you already use the maker's stations: six 10g paste sachets.",
+    blurb: "Worth a look if you already have the maker's tamper-proof bait stations and a small job to do. You get six 10g paste sachets. The description talks about mice throughout and names no active substance, so read the pack before you use it against rats.",
+    pros: ["6 x 10g paste sachets", "Maker says to use them in its tamper-proof stations", "Item form listed as paste"],
   },
   {
     anchorId: "best-kit",
@@ -230,8 +230,8 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Bait Block Kit",
     tocLabel: "Best Combo Kit",
     tocName: "Pest Expert Bait Block Kit",
-    pick: "Bait and two lockable stations in one box.",
-    blurb: "If you do not own a bait station yet, start here. The kit has 75 x 20g blocks at brodifacoum 0.0025% and two lockable, tamper-resistant boxes, and the blocks are pre-formed to sit on the metal rod inside each box. The boxes are listed for indoor and exterior use.",
+    pick: "If you have no bait station yet: two lockable boxes come with 75 blocks.",
+    blurb: "Start here if you do not own a bait station yet. The kit has 75 x 20g blocks at brodifacoum 0.0025% and two lockable, tamper-resistant boxes, and the blocks are pre-formed to sit on the metal rod inside each box. The boxes are listed for indoor and exterior use.",
     pros: ["Two lockable, tamper-resistant boxes included", "75 blocks pre-formed to fit the rod in each box", "Brodifacoum 0.0025% stated on the listing", "Boxes listed for indoor and exterior use"],
   },
 ];
@@ -241,8 +241,8 @@ const products: ProductRecord[] = [
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    Anticoagulant poison. HSE asks you to consider other methods first, and every
-    bait goes in a lockable, tamper-resistant station.{" "}
+    Anticoagulant poison: consider other methods first, and keep every bait in
+    a lockable station.{" "}
     <a href="#legal" className="underline">
       The legal position
     </a>
@@ -265,7 +265,7 @@ export default function BestRatPoisonPage() {
   return (
     <GuideLayout
       title="Best Rat Poison UK 2026: What You Can Legally Buy"
-      subtitle="Rat poisons available in the UK, from brodifacoum blocks to grain bait and paste formulations"
+      subtitle="Six UK rat poisons compared, from brodifacoum wax blocks to grain sachets and paste, for householders baiting in lockable stations"
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -304,19 +304,12 @@ export default function BestRatPoisonPage() {
       </div>
 
       <p>
-        Every product on this page is an anticoagulant, and the regulator&rsquo;s
-        own view of that class is on record:{" "}
-        <em>
-          &ldquo;Risk assessments carried out by regulators, including HSE, have
-          shown that anticoagulants present a higher risk to people and
-          non-target animals than is normally acceptable for authorisation in
-          Great Britain and Northern Ireland.&rdquo;
-        </em>{" "}
-        (
-        <a href={SRC.hse} rel="nofollow">
-          HSE
-        </a>
-        ). They are sold anyway, under conditions. The conditions are the page.
+        Six rat poisons you can buy in the UK, compared on the form, active and
+        strength each listing states. Roshield&rsquo;s brodifacoum wax blocks
+        suit a damp shed or outbuilding. If you have several stations to fill,
+        Pest Expert&rsquo;s grain and Elixir&rsquo;s Rodex both come as 1kg in ten
+        sachets, and the Rodex bait carries a dye that marks droppings. If you
+        have no station yet, the Pest Expert kit comes with two lockable boxes.
       </p>
 
       {/* [16] Comparison table */}
@@ -349,6 +342,22 @@ export default function BestRatPoisonPage() {
           </tbody>
         </table>
       </div>
+
+      <p>
+        Every product on this page is an anticoagulant, and the regulator&rsquo;s
+        own view of that class is on record:{" "}
+        <em>
+          &ldquo;Risk assessments carried out by regulators, including HSE, have
+          shown that anticoagulants present a higher risk to people and
+          non-target animals than is normally acceptable for authorisation in
+          Great Britain and Northern Ireland.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hse} rel="nofollow">
+          HSE
+        </a>
+        ). They are sold anyway, under conditions. The conditions are the page.
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

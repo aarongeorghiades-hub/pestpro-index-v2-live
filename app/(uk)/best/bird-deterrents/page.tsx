@@ -122,8 +122,8 @@ const products: ProductRecord[] = [
     h2Name: "Defender Wide Plastic Bird Spikes",
     tocLabel: "Best Overall",
     tocName: "Defender Wide Plastic Spikes",
-    pick: "Wide polycarbonate spikes covering 5 metres, listed as suitable for pigeons.",
-    blurb: "Our overall pick if pigeons keep landing on a ledge. You get fifteen polycarbonate strips of 33.4 cm, which run to five metres, with a pin height of 112 mm. It is the only listing here that states a ledge depth, though it gives two figures: up to 20 cm in the text and 100 mm in the detail row. The strips snap into smaller sections, and you buy the fixings separately.",
+    pick: "For pigeons on a ledge: 5 metres of wide polycarbonate spikes, listed for pigeons.",
+    blurb: "For a ledge where pigeons keep landing. You get fifteen polycarbonate strips of 33.4 cm, which run to five metres, with a pin height of 112 mm, and the detail rows state suitable for pigeons. The strips snap into smaller sections, and you buy the fixings separately. The listing gives the ledge depth as up to 20 cm in the text and 100 mm in the detail row, so measure yours.",
     pros: ["5 metres of coverage in 15 strips of 33.4 cm", "Polycarbonate, with a 112 mm pin height", "Listed as suitable for pigeons", "Snaps into smaller sections, as listed"],
   },
   {
@@ -144,7 +144,7 @@ const products: ProductRecord[] = [
     h2Name: "Bird Barrier Optical Gel",
     tocLabel: "Best Discreet",
     tocName: "Bird Barrier Optical Gel",
-    pick: "The one non-spike option: low gel dishes the maker says fit without tools.",
+    pick: "If you don't want spikes on show: low gel dishes the maker says fit without tools.",
     blurb: "Choose this if you don't want spikes on show. Each dish is listed at 6.4 x 6.4 x 0.6 cm, and the maker describes the gel as a humane alternative to bird spikes that goes on without tools. The listed ingredients are citronella, mint oil, agar and beeswax, and the maker names roofs, balconies and railings among the surfaces. The title says 24 pack while the detail row says one piece, so check the count before you order.",
     pros: ["Low dishes, each 6.4 x 6.4 x 0.6 cm", "The maker says it fits without tools", "Ingredients listed as citronella, mint oil, agar and beeswax", "The maker names roofs, balconies and railings"],
   },
@@ -166,8 +166,8 @@ const products: ProductRecord[] = [
     h2Name: "Stainless Steel Bird Spikes, 3 Metre",
     tocLabel: "Best Budget",
     tocName: "Stainless Steel Bird Spikes",
-    pick: "Stainless steel spikes in twelve 25 cm sections, if you'd rather have metal.",
-    blurb: "If you'd rather have metal than plastic, this set gives you twelve stainless steel sections of 25 cm, three metres in all, at 660 grams. The maker describes it as corrosion and weather resistant and says it goes up in 2 to 3 minutes. It is listed as made in Europe. One oddity: the colour row reads \"20 Ft\", which doesn't match the three-metre count.",
+    pick: "If you want metal spikes: stainless steel, in twelve 25 cm sections making 3 metres.",
+    blurb: "If you want metal spikes, this set gives you twelve stainless steel sections of 25 cm, three metres in all, at 660 grams. The maker describes it as corrosion and weather resistant and says it goes up in 2 to 3 minutes. It is listed as made in Europe.",
     pros: ["Stainless steel, listed at 660 grams", "3 metres in twelve 25 cm sections", "The maker describes it as corrosion and weather resistant", "The maker states fitting takes 2 to 3 minutes"],
   },
   {
@@ -188,8 +188,8 @@ const products: ProductRecord[] = [
     h2Name: "Fly-Bye Anti Bird Spikes",
     tocLabel: "Best Coverage",
     tocName: "Fly-Bye Anti Bird Spikes",
-    pick: "The longest run on this page: 6 metres of coverage from one pack.",
-    blurb: "The most coverage on this page, at six metres per pack. The maker states 2,500 spikes set in an irregular pattern, and you can fix them with screws, cable ties, glue or double-sided tape, whichever suits your surface. The pack count is given as 15 in the text and 16 in the detail row.",
+    pick: "For a long run: 6 metres of spikes from one pack, fixed with screws, ties, glue or tape.",
+    blurb: "For a long run, since this gives the most coverage on the page at six metres per pack. The maker states 2,500 spikes set in an irregular pattern, and you can fix them with screws, cable ties, glue or double-sided tape, whichever suits your surface. The pack count is given as 15 in the text and 16 in the detail row.",
     pros: ["6 metres of coverage, as listed", "2,500 spikes in an irregular pattern, per the maker", "Fixes with screws, cable ties, glue or double-sided tape"],
   },
 ];
@@ -229,8 +229,8 @@ const faqSchema = {
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    Every wild bird, its nest and its eggs are protected by law. Never fit
-    anything to a ledge where a nest is in use or being built.{" "}
+    Wild birds, their nests and eggs are protected by law. Never fit anything
+    over an active nest.{" "}
     <a href="#legal" className="underline">
       The legal position
     </a>
@@ -254,7 +254,7 @@ export default function BestBirdDeterrentsPage() {
   return (
     <GuideLayout
       title="Best Bird Deterrents UK 2026: Spikes & Optical Gel"
-      subtitle="Three spike systems and one optical gel, described by what their own listings state — beside the protection every wild bird has in law and what the government's guidance asks you to try first"
+      subtitle="Three sets of bird spikes and a tray of gel dishes for ledges and railings, with picks for pigeon ledges and long runs"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -302,10 +302,12 @@ export default function BestBirdDeterrentsPage() {
       </div>
 
       <p>
-        Four products: three sets of spikes and one tray of gel dishes. All four
-        are exclusion products — they are sold to stop a bird landing or
-        roosting on a surface, not to do anything to the bird. In this country
-        that distinction is the law, and it comes before the specifications.
+        This page compares three sets of spikes and one tray of gel dishes, all
+        designed to stop birds landing or roosting on a surface. The Defender
+        wide spikes are the overall pick for a pigeon ledge, and their listing
+        states they suit pigeons. If you don&rsquo;t want spikes on show, the
+        Bird Barrier gel dishes sit low on the surface. The Fly-Bye pack is the
+        longest run here at six metres.
       </p>
 
       {/* Comparison table */}

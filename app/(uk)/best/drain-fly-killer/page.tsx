@@ -137,8 +137,8 @@ const products: ProductRecord[] = [
     h2Name: "Fruit Fly & Drain Fly Gel Treatment 1 Gallon",
     tocLabel: "1. Best Overall: Gel, Poured Into the Drain",
     tocName: "Fruit Fly & Drain Fly Gel Treatment",
-    pick: "The only product here you pour into the drain, where drain fly larvae feed.",
-    blurb: "Our overall pick, because it is the one product on this page that goes where the problem is. You pour the gel into the drain rather than spraying the room, and it comes as a full gallon, 3,785ml. The maker describes it as an all-natural, non-toxic gel that breaks up and digests drain scum, and it is listed as safe for use in any plumbing. Brush the drain and flush it with boiling water first, as the guidance above sets out.",
+    pick: "Best if flies come from a drain: the one gel here you pour into the pipe, a full gallon.",
+    blurb: "Start here if the flies are coming from a drain. You pour the gel into the drain, and it comes as a full gallon, 3,785ml, which the maker describes as an all-natural, non-toxic gel that breaks up and digests drain scum. It is listed as safe for use in any plumbing, and the guidance below says to brush and flush the drain with boiling water first.",
     pros: ["Poured into the drain itself", "1 gallon, 3,785ml", "Listed as safe for use in any plumbing", "Described by its maker as all-natural and non-toxic"],
   },
   {
@@ -159,8 +159,8 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Total Insect Killer 300ml",
     tocLabel: "2. Best UK Brand",
     tocName: "Zero In Total Insect Killer 300ml",
-    pick: "A 300ml room aerosol with permethrin and tetramethrin, for adult flies in the room.",
-    blurb: "Pick this for the adult flies already in the room while you clear the drain. It is a 300ml aerosol naming permethrin and tetramethrin, with ants, mosquitoes, flies and bugs listed as targets. The maker's directions are a five-second burst with the room sealed for ten minutes, then ventilate. It treats the room, and it does not reach the pipe.",
+    pick: "Best for adult flies already in the room: a 300ml permethrin and tetramethrin aerosol.",
+    blurb: "Pick this for the adult flies already in the room while you clear the drain. It is a 300ml aerosol naming permethrin and tetramethrin, with ants, mosquitoes, flies and bugs listed as targets. The maker's directions are a five-second burst with the room sealed for ten minutes, then ventilate.",
     pros: ["Actives named: permethrin and tetramethrin", "Flies listed among its target species", "Short burst, then ventilate, per the maker", "300ml, for indoor use"],
   },
   {
@@ -181,8 +181,8 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil Insectrol Insect Killer Spray 250ml",
     tocLabel: "3. Best Professional-Strength",
     tocName: "Rentokil Insectrol Insect Killer Spray 250ml",
-    pick: "A 250ml Rentokil aerosol naming permethrin and D-allethrin, for indoor use.",
-    blurb: "A compact aerosol from Rentokil for indoor use, naming permethrin and D-allethrin as its actives. The listing names fleas, ants, cockroaches, earwigs and bed bugs, so it is a general insect spray you can keep under the sink for more than one pest. Like the Zero In, it is a room product and does not reach the film inside the pipe.",
+    pick: "Best if you have more than one pest: a 250ml Rentokil aerosol for indoor use.",
+    blurb: "A general insect spray to keep under the sink if you have more than one pest. The 250ml Rentokil aerosol names permethrin and D-allethrin and is listed for indoor use against fleas, ants, cockroaches, earwigs and bed bugs. It is a room product, so it does not reach the film inside the pipe.",
     pros: ["Actives named: permethrin and D-allethrin", "250ml aerosol for indoor use", "Listed for fleas, ants, cockroaches, earwigs and bed bugs"],
   },
   {
@@ -203,22 +203,11 @@ const products: ProductRecord[] = [
     h2Name: "Doff Ant & Crawling Insect Killer Spray 1L",
     tocLabel: "4. Best for Hard Surfaces",
     tocName: "Doff Ant & Crawling Insect Killer Spray 1L",
-    pick: "A litre of ready-to-use pump spray for indoor and outdoor hard surfaces.",
-    blurb: "The largest bottle here, a litre of ready-to-use spray with nothing to mix. It is listed for indoor and outdoor hard surfaces, with ant and insect as its target species. The listing does not state an active substance, and as a surface spray it does not treat the drain itself.",
+    pick: "Best for hard surfaces indoors and out: a litre of ready-to-use pump spray.",
+    blurb: "The largest bottle here, a litre of ready-to-use spray with nothing to mix, for indoor and outdoor hard surfaces. Ant and insect are its listed target species. The listing does not state an active substance, so check the label.",
     pros: ["1 litre, ready to use", "For indoor and outdoor hard surfaces", "No mixing needed"],
   },
 ];
-
-const SAFETY_NOTE = (
-  <>
-    Drain flies breed in the film inside the drain. Three of these four are room or
-    surface sprays and none of them reaches it; UF/IFAS puts clearing the drain first.{" "}
-    <a href="#limits" className="underline">
-      Where a spray does not help
-    </a>
-    .
-  </>
-);
 
 const tocItems = [
   { id: "compared", title: "The Four Products Compared" },
@@ -235,7 +224,7 @@ export default function BestDrainFlyKillerPage() {
   return (
     <GuideLayout
       title="Best Drain Fly Killer UK 2026: Gel, Aerosols and Sprays Compared"
-      subtitle="Drain fly killers, gels and sprays for UK kitchens and bathrooms — and which of them reaches the drain the flies are breeding in"
+      subtitle="A drain gel for the pipe the flies breed in and three sprays for the adults in the room, for UK kitchens and bathrooms."
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -256,7 +245,6 @@ export default function BestDrainFlyKillerPage() {
       breadcrumbSchema={breadcrumbSchema}
       topPicks={
         <TopPicks
-          note={SAFETY_NOTE}
           picks={products.slice(0, 3).map((p) => ({
             label: p.cardLabel,
             name: p.cardName,
@@ -279,9 +267,10 @@ export default function BestDrainFlyKillerPage() {
       </div>
 
       <p>
-        Drain flies are not really a room problem. The adults you swat are
-        emerging from a film of organic matter inside a pipe a few feet away,
-        and until that film is gone the flies keep arriving.
+        If drain flies keep turning up in your kitchen or bathroom, start with
+        the drain gel: it is the one pick you pour down the pipe. The Zero In
+        and Rentokil aerosols are for the adult flies already in the room, and
+        the Doff pump spray covers hard surfaces indoors and out.
       </p>
 
       {/* [16] Comparison table */}
@@ -314,6 +303,15 @@ export default function BestDrainFlyKillerPage() {
           </tbody>
         </table>
       </div>
+      <p>
+        UF/IFAS advises removing the organic film inside the drain by hand
+        first, because that is where the larvae feed, and the three sprays here
+        are applied to the room or a surface, so they do not reach it (
+        <a href={SRC.ufl} rel="nofollow">
+          UF/IFAS
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

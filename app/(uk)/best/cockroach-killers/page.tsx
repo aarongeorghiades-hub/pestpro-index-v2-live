@@ -128,13 +128,13 @@ const products: ProductRecord[] = [
       "Target species listed as Cockroach",
       "The listing's detail table shows a different ASIN (B07ZZCZRXG) from the page fetched — a variant listing",
     ],
-    tableCells: ["Pest Expert Formula IC Gel", "Gel bait", "Imidacloprid, as listed", "6 x 10g syringes"],
+    tableCells: ["Pest Expert Formula IC Gel", "Gel bait", "Imidacloprid, as listed", "6 x 10g syringes", "Best Overall"],
     h2Label: "Best Overall",
     h2Name: "Pest Expert Formula IC Cockroach Killer Gel",
     tocLabel: "Best Overall",
     tocName: "Pest Expert Formula IC Gel",
-    pick: "Imidacloprid gel in six 10g syringes, the bait format UC IPM prefers to sprays.",
-    blurb: "Our overall pick, because gel bait is the category this page and its source put first. You get six 10g syringes with a ready-to-use applicator. Imidacloprid is named as the active and cockroach is the listed target species. The listing's detail table carries a variant ASIN, which the card notes.",
+    pick: "Best for treating an infestation: six 10g syringes of imidacloprid gel with an applicator.",
+    blurb: "Buy this one if cockroaches are already in your home and you want to treat them. You get six 10g syringes of gel with a ready-to-use applicator. Imidacloprid is named as the active, and cockroach is the listed target species.",
     pros: ["Six 10g syringes of gel", "Ready-to-use syringe applicator, as listed", "Imidacloprid named as the active", "Target species listed as cockroach"],
   },
   {
@@ -150,13 +150,13 @@ const products: ProductRecord[] = [
       "Listed for corners of kitchens, cupboards, cabinets and behind furniture",
       "Brand row reads Rentokil while the manufacturer row reads Trapro — the listing gives both",
     ],
-    tableCells: ["Cockroach sticky traps, 12 pack", "Monitoring trap", "None — glue and bait pellet", "12 traps"],
+    tableCells: ["Cockroach sticky traps, 12 pack", "Monitoring trap", "None — glue and bait pellet", "12 traps", "Best for Monitoring"],
     h2Label: "Best for Monitoring",
     h2Name: "Cockroach Sticky Traps, 12 Pack",
     tocLabel: "Best for Monitoring",
     tocName: "Cockroach Sticky Traps",
-    pick: "Twelve sticky traps with bait pellets, to show where the activity is.",
-    blurb: "Use these alongside the gel to find out where cockroaches are running and whether numbers are falling. The pack has twelve fold-together sticky traps with bait pellets included, listed for kitchen corners, cupboards, cabinets and behind furniture. The maker describes the trap material as non-toxic. The brand row reads Rentokil and the manufacturer row reads Trapro, and the card gives both.",
+    pick: "Best for tracking activity: 12 sticky traps with bait pellets, for corners and cupboards.",
+    blurb: "These suit you if you want to see where cockroaches are running and whether numbers fall after baiting. The pack has twelve fold-together sticky traps with bait pellets included, listed for kitchen corners, cupboards, cabinets and behind furniture. The maker describes the trap material as non-toxic.",
     pros: ["12 fold-together traps per pack", "Bait pellets included, as listed", "Listed for kitchen corners, cupboards and behind furniture", "Trap material described as non-toxic by the maker"],
   },
 ];
@@ -196,8 +196,7 @@ const faqSchema = {
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    The gel is an insecticide, and its own label sets where it may go and how
-    much to use. Read it before the first application.{" "}
+    Insecticide gel: its label sets where it goes and how much to use.{" "}
     <a href="#legal" className="underline">
       What the label governs
     </a>
@@ -221,7 +220,7 @@ export default function BestCockroachKillersPage() {
   return (
     <GuideLayout
       title="Best Cockroach Killer Products UK 2026: Gel Bait &amp; Monitoring Traps"
-      subtitle="One gel bait and one set of monitoring traps, described by what their own listings state — beside what UC IPM's published guidance says about baits, sprays and sanitation"
+      subtitle="A gel bait to treat cockroaches and a pack of sticky traps to see where they run, for kitchens and cupboards at home."
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -270,11 +269,12 @@ export default function BestCockroachKillersPage() {
       </div>
 
       <p>
-        Two products: a gel bait and a set of monitoring traps. There is no
-        spray here, and that is deliberate — the published guidance this page
-        reads rates baits above sprays and advises against aerosols
-        specifically. What the traps are for is finding out whether the bait is
-        working.
+        This page has two picks that do different jobs. The Pest Expert Formula
+        IC gel is the treatment: six 10g syringes of imidacloprid bait with a
+        ready-to-use applicator. The 12-pack of sticky traps suits you if you
+        want to see where cockroaches are running and whether the numbers drop.
+        There is no spray here, because the guidance this page follows rates
+        bait above sprays.
       </p>
 
       {/* Comparison table */}
@@ -291,6 +291,7 @@ export default function BestCockroachKillersPage() {
               <th className="text-left p-2 border-b font-semibold">Type</th>
               <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
               <th className="text-left p-2 border-b font-semibold">Pack, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
           </thead>
           <tbody>

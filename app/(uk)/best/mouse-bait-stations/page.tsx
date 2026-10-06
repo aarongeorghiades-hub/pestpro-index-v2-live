@@ -147,8 +147,8 @@ const products: ProductRecord[] = [
     h2Name: "Roshield 5x Pre-Baited Mouse Bait Box Kit",
     tocLabel: "Best Overall",
     tocName: "Roshield 5x Pre-Baited Mouse Bait Box Kit",
-    pick: "Five lockable stations that arrive pre-baited, with a key for re-baiting.",
-    blurb: "Our overall pick, and the only one here that arrives ready to use. You get five lockable tamper-resistant stations supplied pre-baited, with blocks the listing states contain brodifacoum, and an access key so you can re-bait them. If you would rather not choose a rodenticide yourself, this kit makes that choice for you. The listing says the stations take a range of rodenticide formats when you come to refill.",
+    pick: "Best if you want to start straight away: five lockable stations that arrive pre-baited.",
+    blurb: "Pick this if you want to start straight away, since it is the only kit here that arrives pre-baited. You get five lockable tamper-resistant stations with blocks the listing states contain brodifacoum, and an access key so you can re-bait them. The listing says the stations take a range of rodenticide formats when you come to refill.",
     pros: ["5 lockable, tamper-resistant stations", "Supplied pre-baited", "Access key included for re-baiting", "Listed as made in the UK"],
   },
   {
@@ -176,8 +176,8 @@ const products: ProductRecord[] = [
     h2Name: "Roshield 10x Mouse Bait Boxes (Empty, No Bait)",
     tocLabel: "Best Bulk",
     tocName: "Roshield 10x Mouse Bait Boxes (Empty, No Bait)",
-    pick: "Ten empty boxes and two keys, for a whole property or several lets.",
-    blurb: "Ten boxes and two keys, with no bait, for covering a whole property or several lets. The listing is specific about capacity: each rear chamber is stated to hold two 20g blocks or two to three 10g pasta sachets, so you know which bait format to buy. It is listed as used within the professional pest control industry.",
+    pick: "For a whole property or several lets: ten empty boxes and two keys.",
+    blurb: "For covering a whole property or several lets: ten boxes and two keys, with no bait. Each rear chamber is stated to hold two 20g blocks or two to three 10g pasta sachets, so you know which bait format to buy. It is listed as used within the professional pest control industry.",
     pros: ["10 boxes and 2 keys", "Rear chamber holds 2 x 20g blocks or 2-3 x 10g sachets", "Listed as used in the professional pest control industry", "Listed as made in the UK"],
   },
   {
@@ -205,8 +205,8 @@ const products: ProductRecord[] = [
     h2Name: "Roshield 5x Black Tamper-Resistant Mouse Bait Boxes",
     tocLabel: "Best Compact",
     tocName: "Roshield 5x Black Tamper-Resistant Mouse Bait Boxes",
-    pick: "Five tamper-resistant boxes for a single house, where ten would be waste.",
-    blurb: "The same style of Roshield box in a pack of five with one key, for a single house where ten would be waste. The rear chambers are stated to hold two 20g blocks or two to three 10g pasta sachets, and the detail table lists them at 150 grams. Bait is bought separately.",
+    pick: "For a single house: five tamper-resistant boxes and one key, bait bought separately.",
+    blurb: "The same style of Roshield box in a pack of five with one key, sized for a single house. The rear chambers are stated to hold two 20g blocks or two to three 10g pasta sachets, and the detail table lists them at 150 grams. Bait is bought separately.",
     pros: ["5 boxes and 1 key", "Rear chamber holds 2 x 20g blocks or 2-3 x 10g sachets", "Listed as used in the professional pest control industry"],
   },
   {
@@ -234,7 +234,7 @@ const products: ProductRecord[] = [
     h2Name: "The Big Cheese Rat & Mouse Bait Station Compact",
     tocLabel: "Best Brand",
     tocName: "The Big Cheese Rat & Mouse Bait Station Compact",
-    pick: "One lockable-lid station listed as damp-proof and all-weather, for outdoors.",
+    pick: "For one spot outside: a single lockable-lid station, listed as damp-proof and all-weather.",
     blurb: "Buy one of these for one place outside. It is a single station with a lockable lid, listed as damp-proof and all-weather, and stated to take blocks, pasta or sachets, so you are not tied to one bait format. It is listed for indoor or outdoor use, and the bait is sold separately.",
     pros: ["Lockable lid", "Listed as damp-proof and all-weather", "Takes blocks, pasta and sachets", "For indoor or outdoor use"],
   },
@@ -263,8 +263,8 @@ const products: ProductRecord[] = [
     h2Name: "Pest-Stop Lockable Mouse Bait Station",
     tocLabel: "Best Budget",
     tocName: "Pest-Stop Lockable Mouse Bait Station",
-    pick: "A single lockable station with bait bars that stop the bait being shaken out.",
-    blurb: "Another single lockable station, listed as weather-proof plastic in frost or high heat. The detail that sets it apart is the bait bars, which the listing says hold the bait so it cannot be shaken out. That matters if the box sits somewhere it can be knocked. It is listed for indoor and outdoor use.",
+    pick: "For a spot where the box may get knocked: bait bars stop the bait being shaken out.",
+    blurb: "Suits a spot where the box may get knocked, since the listing says its bait bars hold the bait so it cannot be shaken out. It is a single lockable station in weather-proof plastic, listed for frost or high heat and for indoor and outdoor use.",
     pros: ["Single lockable station", "Bait bars hold the bait in place", "Listed as weather-proof in frost or high heat", "For indoor and outdoor use"],
   },
 ];
@@ -274,8 +274,8 @@ const products: ProductRecord[] = [
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    HSE warns that rodenticides put children, pets and other animals at risk, so
-    a station has to lock and be strong enough to stop a dog.{" "}
+    Rodenticides endanger children and pets; a station must lock and stop a
+    dog.{" "}
     <a href="#standard" className="underline">
       The standard a station has to meet
     </a>
@@ -300,7 +300,7 @@ export default function BestMouseBaitStationsPage() {
   return (
     <GuideLayout
       title="Best Mouse Bait Stations UK 2026: Tamper-Proof & Lockable"
-      subtitle="Lockable, tamper-resistant boxes that hold rodenticide bait away from children and pets"
+      subtitle="Lockable mouse bait stations, from a pre-baited five-pack ready to use to empty boxes in tens, fives and singles for indoors or out."
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -389,9 +389,12 @@ export default function BestMouseBaitStationsPage() {
       </div>
 
       <p>
-        A bait station is a lockable box that holds rodenticide where a mouse can
-        reach it and a child or a dog cannot. It is a container, not a treatment
-        — four of the five here are sold empty.
+        Here are five lockable mouse bait stations. The Roshield pre-baited kit
+        is our overall pick if you want to start straight away, since it arrives
+        with brodifacoum blocks and a key. The other four are sold empty:
+        Roshield boxes in tens for a whole property or fives for a single house,
+        and single stations from The Big Cheese and Pest-Stop for one spot
+        indoors or out.
       </p>
 
       {/* [16] Comparison table */}

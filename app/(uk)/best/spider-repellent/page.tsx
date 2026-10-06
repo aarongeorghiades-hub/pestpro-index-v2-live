@@ -124,13 +124,13 @@ const products: ProductRecord[] = [
       "Item form stated two ways on the listing: Aerosol in the detail table, a trigger bottle with an on/off nozzle in the feature text",
       "Listing directions: shake, twist the nozzle open, spray around entry points and skirting",
     ],
-    tableCells: ["Zero In Spider Repellent 500ml", "Peppermint oil, as listed", "Up to 3 weeks, per the maker", "Peppermint spray, 500ml"],
+    tableCells: ["Zero In Spider Repellent 500ml", "Peppermint oil, as listed", "Up to 3 weeks, per the maker", "Peppermint spray, 500ml", "Best Overall"],
     h2Label: "Best Overall",
     h2Name: "Zero In Spider Repellent Peppermint Oil Spray 500ml",
     tocLabel: "Best Overall",
     tocName: "Zero In Spider Repellent",
-    pick: "A ready-to-use peppermint spray with an on/off nozzle, for entry points and skirting.",
-    blurb: "Our overall pick if you want a peppermint spray you can use this evening. It comes ready to use in a 500ml bottle: shake it, twist the nozzle open and spray around entry points and skirting, as the listing directs. The maker describes it as a non-toxic peppermint oil barrier and gives a figure of up to 3 weeks, so plan to reapply.",
+    pick: "For entry points and skirting: a ready-to-use 500ml peppermint spray.",
+    blurb: "Suits you if you want a peppermint spray you can put down this evening. It comes ready to use in a 500ml bottle: shake it, twist the nozzle open and spray around entry points and skirting, as the listing directs. The maker describes it as a non-toxic peppermint oil barrier and gives a figure of up to 3 weeks, so plan to reapply.",
     pros: ["500ml, ready to use, mint scent", "Short listing directions: shake, open the nozzle, spray", "The maker gives up to 3 weeks per application"],
   },
   {
@@ -146,13 +146,13 @@ const products: ProductRecord[] = [
       "Listed as stain-free and low-odour, for living areas",
       "Item form listed as Liquid; the same maker's single pack lists Aerosol",
     ],
-    tableCells: ["Zero In Spider Repellent twin pack", "Peppermint oil, as listed", "2–3 weeks, per the maker", "Peppermint spray, 2 x 500ml"],
+    tableCells: ["Zero In Spider Repellent twin pack", "Peppermint oil, as listed", "2–3 weeks, per the maker", "Peppermint spray, 2 x 500ml", "Best Value"],
     h2Label: "Best Value",
     h2Name: "Zero In Spider Repellent 500ml Twin Pack",
     tocLabel: "Best Value",
     tocName: "Zero In Twin Pack",
-    pick: "Two 500ml bottles of mint spray, listed as stain-free and low-odour for living areas.",
-    blurb: "The same Zero In mint spray in two 500ml bottles, which suits you if you have a lot of skirting and window frames to get round. The listing describes it as stain-free and low-odour, for living areas. The maker states the barrier lasts 2 to 3 weeks.",
+    pick: "For a lot of skirting and window frames: two 500ml bottles of mint spray.",
+    blurb: "Suits you if you have a lot of skirting and window frames to get round, since you get the same Zero In mint spray in two 500ml bottles. The listing describes it as stain-free and low-odour, for living areas, and the maker states the barrier lasts 2 to 3 weeks.",
     pros: ["Two 500ml bottles, as listed", "Listed as stain-free and low-odour", "Mint scent, listed for living areas"],
   },
   {
@@ -168,13 +168,13 @@ const products: ProductRecord[] = [
       "Listed for homes, garages and sheds",
       "Country of origin listed as United Kingdom",
     ],
-    tableCells: ["Acana Natural Spider Stopper 500ml", "Peppermint and clove oils, as listed", "Up to 12 weeks, per the maker", "Peppermint and clove spray, 500ml"],
+    tableCells: ["Acana Natural Spider Stopper 500ml", "Peppermint and clove oils, as listed", "Up to 12 weeks, per the maker", "Peppermint and clove spray, 500ml", "Best Long-Lasting"],
     h2Label: "Best Long-Lasting",
     h2Name: "Acana Natural Spider Stopper 500ml",
     tocLabel: "Best Long-Lasting",
     tocName: "Acana Spider Stopper",
-    pick: "Peppermint and clove spray with the longest interval any maker here states: up to 12 weeks.",
-    blurb: "Pick this if you would rather spray less often. It is a water-based 500ml spray with peppermint and clove oils, and the maker states it lasts up to 12 weeks, the longest figure any maker on this page gives. It is listed for any surface and as not staining, for homes, garages and sheds, and it is made in the United Kingdom.",
+    pick: "If you'd rather spray less often: the maker states up to 12 weeks per application.",
+    blurb: "Pick this if you would rather spray less often. It is a water-based 500ml spray with peppermint and clove oils, and its maker states it lasts up to 12 weeks, the longest figure on this page. It is listed for any surface without staining, for homes, garages and sheds, and it is made in the United Kingdom.",
     pros: ["Maker states up to 12 weeks per application", "Peppermint and clove oils, water-based", "Listed for any surface, without staining", "Listed for homes, garages and sheds"],
   },
   {
@@ -190,12 +190,12 @@ const products: ProductRecord[] = [
       "Listed as cruelty free; country of origin listed as China",
       "Active substance not stated on the listing",
     ],
-    tableCells: ["Pestbye Spider Repellent 500ml", "not stated", "Up to 4 weeks, per the maker", "Unscented spray, 500ml"],
+    tableCells: ["Pestbye Spider Repellent 500ml", "not stated", "Up to 4 weeks, per the maker", "Unscented spray, 500ml", "Best Barrier Spray"],
     h2Label: "Best Barrier Spray",
     h2Name: "Pestbye Get Rid of Spiders Spray Repellent & Deterrent 500ml",
     tocLabel: "Best Barrier Spray",
     tocName: "Pestbye Spider Spray",
-    pick: "An unscented spray, if you want no mint smell in a bedroom or living room.",
+    pick: "For a bedroom or living room with no mint smell: the one unscented spray here.",
     blurb: "The one spray here listed as unscented, so it suits a room where you would notice a mint smell. The maker's claim is about webs: it states the spray stops cobwebs forming on treated areas for up to 4 weeks, and says it will not directly harm spiders. The listing does not name an active substance.",
     pros: ["Listed as unscented", "Maker states up to 4 weeks against cobwebs on treated areas", "500ml single bottle", "Listed as cruelty free"],
   },
@@ -212,12 +212,12 @@ const products: ProductRecord[] = [
       "The maker states a residual barrier giving up to 6 weeks of protection",
       "Manufacturer listed as Safeguard Europe; country of origin United Kingdom",
     ],
-    tableCells: ["NOPE! Spider Killer Spray 500ml", "Synthetic pyrethroid, as listed", "Up to 6 weeks, per the maker", "Pyrethroid contact spray, 500ml"],
+    tableCells: ["NOPE! Spider Killer Spray 500ml", "Synthetic pyrethroid, as listed", "Up to 6 weeks, per the maker", "Pyrethroid contact spray, 500ml", "Best Kill & Repel"],
     h2Label: "Best Kill & Repel",
     h2Name: "NOPE! Spider Killer Spray 500ml",
     tocLabel: "Best Kill & Repel",
     tocName: "NOPE! Spider Killer Spray",
-    pick: "The one insecticide here, listed as water-based, odourless and for indoors or out.",
+    pick: "If you want an insecticide: a synthetic pyrethroid spray for indoors or out.",
     blurb: "If you want an insecticide, this is the only one on the page. The listing calls it a contact killer using synthetic pyrethroid technology, with spider as the target species. It is listed as water-based, odourless and non-staining for indoor and outdoor use, and the maker states a residual barrier of up to 6 weeks.",
     pros: ["Synthetic pyrethroid named on the listing", "Water-based, odourless and non-staining, as listed", "Listed for indoor and outdoor use", "Maker states a residual barrier of up to 6 weeks"],
   },
@@ -253,20 +253,6 @@ const faqSchema = {
   })),
 };
 
-// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
-// block (the top-picks box). It satisfies Law 180 on this route; the full
-// sections it points to sit on the page.
-const SAFETY_NOTE = (
-  <>
-    Four of these five are repellents, and the ASA has not accepted an efficacy
-    claim for any pest repellent, so every claim on the cards is the maker's.{" "}
-    <a href="#regulator" className="underline">
-      What the regulator has accepted
-    </a>
-    .
-  </>
-);
-
 const tocItems = [
   { id: "compared", title: "The Five Sprays Compared" },
   ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
@@ -283,7 +269,7 @@ export default function BestSpiderRepellentPage() {
   return (
     <GuideLayout
       title="Best Spider Repellent UK 2026: Five Sprays Compared"
-      subtitle="Four repellent sprays and one insecticide, described by what their own listings state — beside the ASA position on repellent claims and what extension guidance says reduces spiders indoors"
+      subtitle="Five 500ml spider sprays compared: four peppermint-based repellents with the makers' stated intervals, and one pyrethroid insecticide for indoors or out"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -305,7 +291,6 @@ export default function BestSpiderRepellentPage() {
       breadcrumbSchema={breadcrumbSchema}
       topPicks={
         <TopPicks
-          note={SAFETY_NOTE}
           picks={products.slice(0, 3).map((p) => ({
             label: p.cardLabel,
             name: p.cardName,
@@ -333,11 +318,12 @@ export default function BestSpiderRepellentPage() {
       </div>
 
       <p>
-        Five 500ml sprays. Four are sold as repellents — peppermint, or
-        peppermint and clove — and one is an insecticide whose listing names a
-        synthetic pyrethroid. The difference between those two things is the
-        whole of this page, and the regulator&rsquo;s position on the first
-        group is set out below before any of them.
+        Five spider sprays, compared on what each listing states. Zero
+        In&rsquo;s peppermint spray is ready to use around entry points and
+        skirting, and its twin pack suits a house with a lot of window frames to
+        get round. If you would rather spray less often, Acana&rsquo;s maker
+        states up to 12 weeks for its peppermint and clove spray, and NOPE! is
+        the one insecticide here.
       </p>
 
       {/* Comparison table */}
@@ -355,6 +341,7 @@ export default function BestSpiderRepellentPage() {
               <th className="text-left p-2 border-b font-semibold">Active or base, as listed</th>
               <th className="text-left p-2 border-b font-semibold">Duration claimed by the maker</th>
               <th className="text-left p-2 border-b font-semibold">Type</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
           </thead>
           <tbody>
@@ -370,6 +357,16 @@ export default function BestSpiderRepellentPage() {
           </tbody>
         </table>
       </div>
+
+      <p>
+        Four of these five sprays are repellents, and the ASA has yet to accept
+        an efficacy claim for any pest repellent, so the claims on their cards
+        are the makers&rsquo; own (
+        <a href={SRC.asa} rel="nofollow">
+          ASA
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

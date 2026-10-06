@@ -161,13 +161,14 @@ const products: ProductRecord[] = [
       "Netting",
       "5m × 10m, 50mm mesh, polyethylene",
       "not stated",
+      "Best Value Net",
     ],
     h2Label: "Best Value Net",
     h2Name: "Birdgo White 50mm Anti-Pigeon Netting 5m x 10m",
     tocLabel: "Best Value Net",
     tocName: "Birdgo Anti-Pigeon Netting",
-    pick: "Fifty square metres of knotted, UV-stabilised 50mm net, sized for pigeons.",
-    blurb: "Our pick if pigeons are the problem and you have a large opening to close. You get 50 square metres, listed as 5m x 10m, of knotted polyethylene at a 50mm mesh, and the title describes it as UV-stabilised. It is white, where most pigeon netting is sold black. Fixings are not listed as included, so order them separately.",
+    pick: "Best for closing a large opening to pigeons: 50 square metres of 50mm knotted net.",
+    blurb: "Our pick if pigeons are the problem and you have a large opening to close. You get 50 square metres, listed as 5m x 10m, of knotted, UV-stabilised polyethylene at a 50mm mesh, in white where most pigeon netting is sold black. Fixings are not listed as included, so order them separately.",
     pros: ["50 square metres, listed as 5m x 10m", "50mm mesh, sized for pigeons", "Knotted, UV-stabilised polyethylene, per the title"],
   },
   {
@@ -188,13 +189,14 @@ const products: ProductRecord[] = [
       "Ledge spikes, plastic",
       "5m pack; 15 strips of 33.4cm; ledges to 20cm",
       "15 years, per the maker",
+      "Best for Ledges",
     ],
     h2Label: "Best for Ledges",
     h2Name: "Defender Wide Plastic Bird Spikes",
     tocLabel: "Best for Ledges",
     tocName: "Defender Wide Plastic Bird Spikes",
-    pick: "A 5 metre pack of plastic spikes for ledges up to 20cm deep, per the maker.",
-    blurb: "Our pick for ledges, and the better documented of the two spike products. The 5 metre pack is 15 strips of 33.4cm, and the maker states they suit ledges up to 20cm deep and snap into smaller sections. Glue, screws and cable ties are not included, so order those too. The maker states a 15 year warranty and adds a 40-page pigeon guide.",
+    pick: "Best for pigeons on ledges: 5 metres of plastic spikes for ledges up to 20cm deep.",
+    blurb: "Our pick if pigeons are sitting on ledges up to 20cm deep, the depth the maker gives. The 5 metre pack is 15 strips of 33.4cm that snap into smaller sections, with a 15 year warranty and a 40-page pigeon guide, per the maker. Glue, screws and cable ties are not included, so order those too.",
     pros: ["15 strips of 33.4cm, a 5 metre pack", "For ledges up to 20cm deep, per the maker", "Strips snap into smaller sections", "15 year warranty, per the maker"],
   },
   {
@@ -215,12 +217,13 @@ const products: ProductRecord[] = [
       "Fixing clips, nylon",
       "Pack of 60; 450mm spacing recommended by the maker",
       "not stated",
+      "Best No-Drill Fixings",
     ],
     h2Label: "Best No-Drill Fixings",
     h2Name: "Solar Panel Roof Mesh Fixing Clips (60-Pack)",
     tocLabel: "Best No-Drill Fixings",
     tocName: "Solar Panel Mesh Fixing Clips",
-    pick: "60 nylon clips that fix mesh to solar panel edges with no drilling.",
+    pick: "Best if you are meshing round solar panels: 60 nylon clips, no drilling needed.",
     blurb: "If you are meshing round solar panels, these hold the mesh on. You get 60 nylon clips made to attach mesh to the panel edges, and the maker states no drilling and no adhesive are needed. The maker warns that drilling into solar panels risks damage to the panel system, and recommends a clip every 450mm.",
     pros: ["60 nylon clips", "No drilling and no adhesive, per the maker", "Made for solar panel edges", "450mm spacing recommended by the maker"],
   },
@@ -242,12 +245,13 @@ const products: ProductRecord[] = [
       "Ledge spikes, steel and plastic",
       "not stated",
       "not stated",
+      "Best Spikes Option",
     ],
     h2Label: "Best Spikes Option",
     h2Name: "Pest-Stop Professional Bird Spikes",
     tocLabel: "Best Spikes Option",
     tocName: "Pest-Stop Bird Spikes",
-    pick: "Stainless steel, UV-resistant spikes, as the title describes them.",
+    pick: "Best if you want metal spikes: stainless steel and UV-resistant, per the title.",
     blurb: "The second spike option, if you want metal. The title describes the spikes as stainless steel and UV-resistant, and the material row reads Metal, Plastic, at 680g. The listing states no length, coverage or strip count, so measure your ledge and check the pack before you order more than one.",
     pros: ["Stainless steel and UV-resistant, per the title", "Metal and plastic, as listed", "680g as listed"],
   },
@@ -295,10 +299,9 @@ const faqSchema = {
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    Wild birds, their eggs and nests are protected by law. Fit netting or spikes outside
-    the nesting season, and never over an active nest.{" "}
+    Wild birds and their nests are protected by law, so fit nothing over a nest in use.{" "}
     <a href="#legal" className="underline">
-      The legal position on wild birds
+      The legal position
     </a>
     .
   </>
@@ -319,7 +322,7 @@ export default function BestProfessionalBirdNettingKitsPage() {
   return (
     <GuideLayout
       title="Best Professional Bird Netting, Spikes &amp; Fixings for Commercial Properties (2026)"
-      subtitle="One net, two spike strips and a pack of no-drill clips, described by what their own listings state — beside GOV.UK and the RSPB on what the law protects and two extension services on how exclusion is specified"
+      subtitle="A pigeon net, two sets of ledge spikes and no-drill solar panel clips, so you can buy the parts of a bird-proofing job together"
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -367,10 +370,7 @@ export default function BestProfessionalBirdNettingKitsPage() {
       </div>
 
       <p>
-        Four products, and only one of them is a net. The others are two sets of
-        ledge spikes and a pack of clips for fixing mesh to solar panels. This
-        page is the components of a proofing job rather than four competing
-        nets, and the cards say which is which.
+        This page has one net, two sets of ledge spikes and a pack of clips for fixing mesh round solar panels. The Birdgo net suits pigeons and a large opening, at 5m x 10m with a 50mm mesh. For ledges up to 20cm deep, the Defender plastic spikes are the pick, and the solar panel clips hold mesh on without drilling.
       </p>
 
       {/* Comparison table — LISTING facts only, "not stated" where absent */}
@@ -389,6 +389,7 @@ export default function BestProfessionalBirdNettingKitsPage() {
               <th className="text-left p-2 border-b font-semibold">Type</th>
               <th className="text-left p-2 border-b font-semibold">Size and specification, as listed</th>
               <th className="text-left p-2 border-b font-semibold">Warranty or life, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
           </thead>
           <tbody>

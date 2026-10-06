@@ -123,8 +123,8 @@ const products: ProductRecord[] = [
     h2Name: "HG Mould Spray 500ml",
     tocLabel: "Best Overall",
     tocName: "HG Mould Spray 500ml",
-    pick: "A 500ml mould spray for walls, tiles, seals, grout and windows, indoors or out.",
-    blurb: "Our overall pick for clearing mould off the surface before anything else goes on. The 500ml trigger spray is listed for plastered walls, tiles, bathroom seals, grout and windows, indoors or outdoors. It has a bleaching effect, so the listing tells you to test it somewhere out of sight first. The listing does not name the active substance.",
+    pick: "Best for clearing mould first: a 500ml spray for walls, tiles, seals, grout and windows.",
+    blurb: "Start here to clear mould off the surface before anything else goes on. The 500ml trigger spray is listed for plastered walls, tiles, bathroom seals, grout and windows, indoors or outdoors. It has a bleaching effect, so the listing tells you to test it somewhere out of sight first.",
     pros: ["500ml trigger spray", "Listed for walls, tiles, seals, grout and windows", "For indoor or outdoor use"],
   },
   {
@@ -149,8 +149,8 @@ const products: ProductRecord[] = [
     h2Name: "HG Mould Remover Foam Spray 500ml",
     tocLabel: "Best for Porous Surfaces",
     tocName: "HG Mould Remover Foam Spray",
-    pick: "A foam the listing says stays on the surface longer than a liquid spray.",
-    blurb: "Pick the foam if you want the product to stay where you spray it. The listing says the foam stays on the surface longer than a liquid and reduces splashing, which is the reason for its label. It is the one product here that names its active, sodium hypochlorite, and it is listed as low odour. It has a bleaching effect, so test it somewhere out of sight first.",
+    pick: "Best if you want it to stay put: a foam that stays on longer than a liquid, as listed.",
+    blurb: "Pick the foam if you want the product to stay where you spray it. The listing says it stays on the surface longer than a liquid and reduces splashing, names its active as sodium hypochlorite, and calls it low odour. It has a bleaching effect, so test it somewhere out of sight first.",
     pros: ["Foam stays on the surface longer than a liquid, per the listing", "Active named: sodium hypochlorite", "Low odour, as listed", "Listed for walls, tiles, seals, grout and windows"],
   },
   {
@@ -165,13 +165,13 @@ const products: ProductRecord[] = [
       "The listing says to check the label for surfaces it is not recommended on, naming wood and plastic",
       "Listing does not name the active substance",
     ],
-    tableCells: ["HG Mould Spray x2", "2 x 500ml spray", "not stated", "Best Pre-Paint"],
+    tableCells: ["HG Mould Spray x2", "2 x 500ml spray", "not stated", "Best Pre-Paint Preparation"],
     h2Label: "Best Pre-Paint Preparation",
     h2Name: "HG Mould Spray 500ml, Pack of 2",
     tocLabel: "Best Pre-Paint Preparation",
     tocName: "HG Mould Spray, Pack of 2",
-    pick: "Two 500ml mould sprays, a litre in total, for clearing walls before you paint.",
-    blurb: "Two of the HG sprays in one pack, a litre in total, for when there is more than one patch to clear before the primer and paint go on. The listing gives it a bleaching effect and says to test first. It also tells you to check the label for surfaces it is not recommended on, and names wood and plastic. The active substance is not named.",
+    pick: "Best for several patches before painting: two 500ml HG mould sprays, a litre in total.",
+    blurb: "Two of the HG sprays in one pack, a litre in total, for when there is more than one patch to clear before the primer and paint go on. It has a bleaching effect, and the listing says to test first and to check the label for surfaces it is not recommended on, naming wood and plastic.",
     pros: ["Two 500ml sprays, 1,000ml in total", "The same HG Mould Spray as our overall pick, in a pair", "Label guidance on surfaces to avoid, naming wood and plastic"],
   },
   {
@@ -191,8 +191,8 @@ const products: ProductRecord[] = [
     h2Name: "Zinsser B-I-N Primer-Sealer & Stain Killer 1L",
     tocLabel: "Best Stain Blocker",
     tocName: "Zinsser B-I-N 1L",
-    pick: "A shellac primer listed as blocking water, smoke and tannin stains, at 12.5 m² a litre.",
-    blurb: "Use this once the mould is off and the wall is dry, when a mark keeps showing through new paint. It is a 1 litre shellac-based primer, listed at 12.5 m² per litre, for interior ceilings, walls and doors, and for spot priming outside. The listing describes it as blocking water, smoke and tannin stains and odours. It says nothing about mould, and neither does this page.",
+    pick: "Best when a mark shows through new paint: a shellac primer at 12.5 m² a litre.",
+    blurb: "Use this once the mould is off and the wall is dry, when a mark keeps showing through new paint. It is a 1 litre shellac-based primer, listed at 12.5 m² per litre for interior ceilings, walls and doors and for spot priming outside. The listing describes it as blocking water, smoke and tannin stains and odours, and it makes no mould claim.",
     pros: ["Shellac-based stain-blocking primer", "12.5 m² per litre, as listed", "Blocks water, smoke and tannin stains, per the listing", "For interior walls, ceilings and doors"],
   },
   {
@@ -212,8 +212,8 @@ const products: ProductRecord[] = [
     h2Name: "Ronseal One Coat Damp Seal 500ml",
     tocLabel: "Best Damp Sealer",
     tocName: "Ronseal One Coat Damp Seal",
-    pick: "A one-coat seal the listing says can go onto damp walls, then be painted or papered.",
-    blurb: "The pick for a wall that is still damp after the cause has been dealt with. The listing says this 500ml white seal can be applied to damp walls and then painted or papered over when dry. Its own instruction is to make sure the cause of damp has been fixed first, and that is the right order. Coverage is not stated.",
+    pick: "Best for a wall still damp once the cause is fixed: a one-coat seal you can paint over.",
+    blurb: "This suits a wall that is still damp after the cause has been dealt with. The listing says the 500ml white seal can go onto damp walls and be painted or papered over when dry. Its own instruction is to make sure the cause of damp has been fixed first, and coverage is not stated.",
     pros: ["One coat, as listed", "Can be applied to damp walls, per the listing", "Paint or paper over it once dry", "500ml, white"],
   },
   {
@@ -233,8 +233,8 @@ const products: ProductRecord[] = [
     h2Name: "Ronseal Anti Mould Paint 750ml",
     tocLabel: "Best All-Rounder",
     tocName: "Ronseal Anti Mould Paint 750ml",
-    pick: "750ml of washable white matt paint at 13 m² per litre, with a brush included.",
-    blurb: "A finishing coat for the room once the wall is clean and sealed. It is 750ml of white matt paint, listed at 13 m² per litre and as washable, and a brush comes with it. The listing is a detail table with no feature text, so it does not say how the paint acts on mould.",
+    pick: "Best finishing coat: 750ml of washable white matt paint at 13 m² a litre, brush included.",
+    blurb: "A finishing coat for the room once the wall is clean and sealed. It is 750ml of white matt paint, listed at 13 m² per litre and as washable, and a brush comes with it. The listing does not say how the paint acts on mould.",
     pros: ["13 m² per litre, as listed", "Washable white matt finish", "Brush included, as listed"],
   },
   {
@@ -254,8 +254,8 @@ const products: ProductRecord[] = [
     h2Name: "Rapide Anti Mould Spray Paint 400ml",
     tocLabel: "Best for Small Areas",
     tocName: "Rapide Anti Mould Spray Paint",
-    pick: "A 400ml white aerosol paint for walls and ceilings.",
-    blurb: "An aerosol suits a small area where getting out a tin and a brush is more work than the job. This one is 400ml and white, and its listing carries one feature line, that it protects walls and ceilings from mould growth. That is the maker's line. No coverage figure and no active substance are stated.",
+    pick: "Best for a small patch: a 400ml white aerosol paint for walls and ceilings.",
+    blurb: "An aerosol suits a small area where a tin and a brush are more work than the job. This one is 400ml and white, and the maker's one feature line says it protects walls and ceilings from mould growth. No coverage figure and no active substance are stated.",
     pros: ["400ml aerosol, white", "For walls and ceilings, per the listing", "No brush or tin to clean"],
   },
   {
@@ -275,18 +275,18 @@ const products: ProductRecord[] = [
     h2Name: "Johnstone's Paint to Cover Damp 750ml",
     tocLabel: "Best for Damp Patches",
     tocName: "Johnstone's Paint to Cover Damp",
-    pick: "A 750ml damp paint for plaster, brick, cement and stone, about 2.25 m² a tin.",
-    blurb: "The pick for a patch of damp staining once the reason for the damp is fixed, which the listing itself insists on. It is 750ml of white paint for plaster, brickwork, cement and stone, listed at 3 m² per litre, so a tin covers about 2.25 m². The listing says you can over-coat it with the maker's emulsion.",
+    pick: "Best for a damp stain on plaster or brick: 750ml of paint, about 2.25 m² a tin.",
+    blurb: "This is for a patch of damp staining once the reason for the damp is fixed, which the listing itself insists on. It is 750ml of white paint for plaster, brickwork, cement and stone, listed at 3 m² per litre, so a tin covers about 2.25 m². The listing says you can over-coat it with the maker's emulsion.",
     pros: ["For plaster, brickwork, cement and stone", "3 m² per litre, about 2.25 m² a tin", "Over-coat with the maker's emulsion, per the listing"],
   },
 ];
 
 const SAFETY_NOTE = (
   <>
-    Fix the cause of the damp before using anything here; two of these listings
-    say so themselves. The HG sprays have a bleaching effect, so test them first.{" "}
-    <a href="#situation" className="underline">
-      Start with the cause
+    The HG sprays have a bleaching effect, so test them on a hidden spot
+    first.{" "}
+    <a href="#using" className="underline">
+      Order of work
     </a>
     .
   </>
@@ -307,7 +307,7 @@ export default function BestDampProofPaintMouldTreatmentPage() {
   return (
     <GuideLayout
       title="Best Damp-Proof Paint &amp; Mould Treatment Products for Landlords (2026)"
-      subtitle="Mould killer sprays, stain-blocking primers and anti-mould paints for landlords — eight compared on what their listings state, beside what the Awaab's Law guidance asks of a landlord"
+      subtitle="Mould sprays, stain-blocking primers and damp and anti-mould paints for landlords and homeowners clearing mould and redecorating a damp wall."
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -359,10 +359,11 @@ export default function BestDampProofPaintMouldTreatmentPage() {
       </div>
 
       <p>
-        Three kinds of product are on this page: sprays that clean mould off a
-        surface, primers that stop a stain coming back through paint, and paints
-        sold as resisting mould. None of them finds out why the wall was wet. Two
-        of the listings say so themselves.
+        The products here run in the order you use them. The HG Mould Spray is
+        for clearing mould off walls, tiles and grout, and the HG foam suits you
+        if you want it to stay where you spray. Zinsser B-I-N covers a stain
+        that keeps showing through new paint, and the Ronseal and
+        Johnstone&rsquo;s paints are the finishing coats.
       </p>
 
       {/* Comparison table */}
@@ -394,6 +395,14 @@ export default function BestDampProofPaintMouldTreatmentPage() {
           </tbody>
         </table>
       </div>
+      <p>
+        Two of these listings, the Ronseal damp seal and Johnstone&rsquo;s damp
+        paint, say to fix the cause of the damp before you use them (
+        <a href="#situation" className="underline">
+          Start with the cause
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

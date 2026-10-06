@@ -115,7 +115,7 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula B+ + Outdoor Bait Box Combo 900g",
     tocLabel: "Best Overall",
     tocName: "Pest Expert Formula B+ Combo",
-    pick: "900g of brodifacoum grain bait with a bait box in the same order.",
+    pick: "Best for most gardens: 900g of brodifacoum grain bait and a bait box in one order.",
     blurb: "Our overall pick for a garden, because the bait and the box arrive together. You get 900g of wholewheat grain in fifteen 60g sachets, with brodifacoum stated at 0.0029%, plus one rat bait box. The maker names sheds, lofts and kitchens as places to use it.",
     pros: ["Rat bait box included", "900g as 15 x 60g sachets", "Brodifacoum 0.0029% stated on the listing", "Wholewheat grain"],
   },
@@ -136,8 +136,8 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula B+ Rat Poison 1.5kg (15x100g)",
     tocLabel: "Best Bulk Pack",
     tocName: "Pest Expert Formula B+ 1.5kg",
-    pick: "1.5kg of the same grain bait, for stations you already own.",
-    blurb: "The same grain at the same stated strength, in a bigger pack: 1.5kg in fifteen 100g sachets, wax-free. There is no station in the box, so buy this one if you already have tamper-resistant stations to fill.",
+    pick: "Best if you already own stations: 1.5kg of the same grain bait, wax-free.",
+    blurb: "Buy this one if you already have tamper-resistant stations to fill. It is the same grain at the same stated strength in a bigger pack: 1.5kg in fifteen 100g sachets, wax-free. There is no station in the box.",
     pros: ["1.5kg as 15 x 100g sachets", "Brodifacoum 0.0029%, as listed", "Wax-free wholewheat grain"],
   },
   {
@@ -157,7 +157,7 @@ const products: ProductRecord[] = [
     h2Name: "Roshield External Bait Box + 300g Block Kit",
     tocLabel: "Best Starter Kit",
     tocName: "Roshield External Bait Box Kit",
-    pick: "One tamper-resistant station and 300g of bromadiolone wax blocks.",
+    pick: "Best if you have never baited before: one station and 300g of bromadiolone blocks.",
     blurb: "A sensible first kit if you have never baited before. It comes with one tamper-resistant station, 300g of wax blocks, a metal rod and a bait divider. The blocks are stated as bromadiolone 0.0025% with an HSE registration number on the listing, and the maker reminds you that amateur rodenticide must go in a tamper-resistant box.",
     pros: ["Station, metal rod and bait divider included", "300g wax blocks, bromadiolone 0.0025%", "HSE registration UK-2016-0986-0007 stated", "Mouse and rat named as targets"],
   },
@@ -178,8 +178,8 @@ const products: ProductRecord[] = [
     h2Name: "Roshield 2x External Tamper-Proof Bait Box + Wax Blocks Kit",
     tocLabel: "Best Multi-Station",
     tocName: "Roshield 2x Bait Box Kit",
-    pick: "Two tamper-resistant stations with 300g of blocks between them.",
-    blurb: "The same blocks and rod as the single kit, with two stations so you can cover two spots. The maker describes it as suited to a small to medium infestation. The blocks are bromadiolone 0.0025%, under the same HSE registration number.",
+    pick: "Best for covering two spots: two tamper-resistant stations and 300g of blocks.",
+    blurb: "Suits you if you need to cover two spots. You get the same blocks and rod as the single kit with two stations, and the maker describes it as suited to a small to medium infestation. The blocks are bromadiolone 0.0025%, under the same HSE registration number.",
     pros: ["Two tamper-resistant stations", "300g of bromadiolone 0.0025% blocks", "Maker sizes it for a small to medium infestation"],
   },
   {
@@ -199,8 +199,8 @@ const products: ProductRecord[] = [
     h2Name: "Elixir Gardens Rat Poison 1kg Outdoor Sachets",
     tocLabel: "Best Value",
     tocName: "Elixir Gardens Outdoor Sachets",
-    pick: "1kg of ready-to-use sachets, with a dye that marks droppings.",
-    blurb: "A kilogram of bait in ten ready-to-use 100g sachets, enough to keep your stations stocked through a treatment. The listing names bromadiolone as the active but gives no percentage. The maker says a red dye colours droppings, so you can see the bait is being taken. There is no station, so you need your own.",
+    pick: "Best if you want to see uptake: 1kg of sachets with a dye the maker says marks droppings.",
+    blurb: "Suits you if you already have stations and want to see the bait being taken. You get a kilogram of bait in ten ready-to-use 100g sachets, and the maker says a red dye colours droppings. The listing names bromadiolone as the active but gives no percentage, so check the pack.",
     pros: ["10 x 100g ready-to-use sachets", "Red dye marks droppings, per the maker", "Active named on the listing: bromadiolone", "Clear anticoagulant warning on the listing"],
   },
 ];
@@ -210,8 +210,7 @@ const products: ProductRecord[] = [
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    Outdoor bait goes in a lockable, tamper-resistant station, and only for as
-    long as it takes to get control.{" "}
+    Outdoor bait goes in a lockable station, and only until you have control.{" "}
     <a href="#legal" className="underline">
       The legal position outdoors
     </a>
@@ -234,7 +233,7 @@ export default function BestRatPoisonForGardensPage() {
   return (
     <GuideLayout
       title="Best Rat Poison for Gardens UK 2026"
-      subtitle="Outdoor rodenticides and weather-proof bait stations for garden rat control"
+      subtitle="Five outdoor rat baits and bait-box kits for gardens, from a grain-and-box combo to bulk sachets for stations you already own"
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -272,20 +271,7 @@ export default function BestRatPoisonForGardensPage() {
       </div>
 
       <p>
-        A garden is where the animals HSE is worried about actually are. Its
-        own sentence:{" "}
-        <em>
-          &ldquo;Rodenticides can often carry a higher risk than some other
-          biocidal products because the way that they are used and how they
-          look and smell, might mean that children, pets and other non-target
-          animals are more likely to be harmed by them.&rdquo;
-        </em>{" "}
-        (
-        <a href={SRC.hse} rel="nofollow">
-          HSE
-        </a>
-        ). Everything below is about putting bait outside without putting it
-        in front of them.
+        These five products put rat bait out in a garden, and three of them come with a tamper-resistant station. The Pest Expert combo suits most gardens, with 900g of brodifacoum grain and a bait box in one order. Choose the 1.5kg bulk pack if you already own stations, or the Roshield starter kit if you have never baited before.
       </p>
 
       {/* [16] Comparison table */}
@@ -318,6 +304,22 @@ export default function BestRatPoisonForGardensPage() {
           </tbody>
         </table>
       </div>
+      <p>
+        A garden is where the animals HSE is worried about actually are. Its
+        own sentence:{" "}
+        <em>
+          &ldquo;Rodenticides can often carry a higher risk than some other
+          biocidal products because the way that they are used and how they
+          look and smell, might mean that children, pets and other non-target
+          animals are more likely to be harmed by them.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.hse} rel="nofollow">
+          HSE
+        </a>
+        ). Everything below is about putting bait outside without putting it
+        in front of them.
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

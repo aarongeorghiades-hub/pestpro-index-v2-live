@@ -113,8 +113,8 @@ const products: ProductRecord[] = [
     h2Name: "Indorex Defence Flea Spray 500ml",
     tocLabel: "Best Overall",
     tocName: "Indorex Defence 500ml",
-    pick: "One can listed for a 3-4 bedroom house, with a growth regulator for eggs and larvae.",
-    blurb: "Our overall pick if you want to treat a whole house with one can. The listing pairs permethrin with the growth regulator pyriproxyfen, and the maker claims up to 12 months prevention of egg and larvae development. One 500ml can is listed for approximately a 3-4 bedroom house. Take pets, birds and fish aquaria out first, and ventilate when you are done.",
+    pick: "Best for a whole house: one 500ml can for about 3-4 bedrooms, with a growth regulator.",
+    blurb: "Pick this if you want to treat a whole house with one can. The listing pairs permethrin with the growth regulator pyriproxyfen, the maker claims up to 12 months prevention of egg and larvae development, and one 500ml can is listed for approximately a 3-4 bedroom house. Take pets, birds and fish aquaria out first, and ventilate when you are done.",
     pros: ["Permethrin with the growth regulator pyriproxyfen, as listed", "Maker claims up to 12 months prevention of egg and larvae development", "One 500ml can listed for a 3-4 bedroom house", "Clear directions on the listing for pets and ventilation"],
   },
   {
@@ -134,16 +134,16 @@ const products: ProductRecord[] = [
     h2Name: "Indorex Defence Flea Spray 2x500ml",
     tocLabel: "Best Twin Pack",
     tocName: "Indorex Defence 2x500ml",
-    pick: "Two cans of the same Indorex spray, so the second is already on the shelf.",
-    blurb: "The same Indorex Defence spray as our overall pick, listed as two 500ml cans. Each can is listed for approximately a 3-4 bedroom house, so this suits a bigger home or one where a single can may not stretch. You have a spare to hand and do not need to reorder part-way through.",
-    pros: ["Two 500ml cans in one pack", "Same listed ingredients as the single can", "Each can listed for approximately a 3-4 bedroom house", "No need to reorder part-way through"],
+    pick: "Best for a bigger home: two cans of the Indorex spray, so the second is on the shelf.",
+    blurb: "This is the same Indorex Defence spray as the overall pick, listed as two 500ml cans. Each can is listed for approximately a 3-4 bedroom house, so it suits a bigger home or one where a single can may not stretch, and you have a spare to hand.",
+    pros: ["Two 500ml cans in one pack", "Same listed ingredients as the single can", "Each can listed for approximately a 3-4 bedroom house"],
   },
   {
     anchorId: "best-professional",
     asin: "B09GYGC5FL",
     rank: 3,
     cardName: "Pest Expert Formula C+ Flea Killer Spray 1L",
-    cardLabel: "Best Professional-Grade",
+    cardLabel: "Best Professional",
     features: [
       "Title states \"Approved for Amateur Use\"",
       "The maker states three active ingredients, one of them the growth regulator pyriproxyfen",
@@ -151,13 +151,13 @@ const products: ProductRecord[] = [
       "The maker claims a residue that continues to protect for up to 12 weeks",
       "Listed as water-based and virtually odourless; keep children and pets out until dry, approx. 2-3 hours",
     ],
-    tableCells: ["Pest Expert Formula C+ 1L", "Three actives incl. pyriproxyfen; 50 m², as listed", "Best Professional-Grade"],
+    tableCells: ["Pest Expert Formula C+ 1L", "Three actives incl. pyriproxyfen; 50 m², as listed", "Best Professional"],
     h2Label: "Best Professional",
     h2Name: "Pest Expert Formula C+ Flea Killer Spray 1L",
     tocLabel: "Best Professional",
     tocName: "Pest Expert Formula C+ 1L",
-    pick: "A water-based litre with a growth regulator, listed for 50 square metres.",
-    blurb: "Pick this if you would rather avoid an aerosol. It is a 1-litre water-based spray the listing calls virtually odourless, with three actives including the growth regulator pyriproxyfen. Coverage is listed at 50 square metres per application, and the maker claims a residue that continues to protect for up to 12 weeks. Keep children and pets out until it dries, about 2-3 hours by the listing.",
+    pick: "Best if you'd prefer no aerosol: a water-based litre with pyriproxyfen, listed for 50 m².",
+    blurb: "Pick this if you would prefer to avoid an aerosol. It is a 1-litre water-based spray the listing calls virtually odourless, with three actives including the growth regulator pyriproxyfen and coverage of 50 square metres per application. Keep children and pets out until it dries, about 2 to 3 hours by the listing.",
     pros: ["Water-based and listed as virtually odourless", "Three actives including the growth regulator pyriproxyfen", "50 square metres per application, as listed", "Maker claims residual protection for up to 12 weeks"],
   },
   {
@@ -177,8 +177,8 @@ const products: ProductRecord[] = [
     h2Name: "RIP Fleas Extra Household Flea Spray",
     tocLabel: "Best Fast-Acting",
     tocName: "RIP Fleas Extra Household Flea Spray",
-    pick: "A 600ml household spray; the maker claims 12 months against flea larvae and dust mites.",
-    blurb: "A 600ml household spray whose target species field covers fleas and mites, so it suits you if dust mites are on your list too. The maker claims 12 months of efficacy against flea larvae and house dust mites. The listing names no active substance, so check the can if that matters to you.",
+    pick: "Best if dust mites are a worry too: a 600ml spray listed for fleas and mites.",
+    blurb: "This suits you if dust mites are on your list as well as fleas, since its target species field covers both. It is a 600ml household spray, and the maker claims 12 months of efficacy against flea larvae and house dust mites. The listing names no active substance, so check the can.",
     pros: ["600ml can, as listed", "Target species listed as fleas and mites", "Maker claims 12 months efficacy against flea larvae and house dust mites"],
   },
   {
@@ -199,16 +199,16 @@ const products: ProductRecord[] = [
     h2Name: "Bob Martin Clear Plus Flea Spray 500ml Twin Pack",
     tocLabel: "Best Value",
     tocName: "Bob Martin Clear Plus Flea Spray 500ml Twin Pack",
-    pick: "Two 500ml cans with permethrin and the growth regulator S-methoprene, for carpets and bedding.",
-    blurb: "Two 500ml cans from Bob Martin, listed with permethrin, tetramethrin and the growth regulator S-methoprene at stated percentages. It is listed for carpets, rugs and pet bedding, sprayed from 30cm. The maker claims up to 3 months against adult fleas and up to 12 months against eggs and larvae, which suits you if the pet's bed needs doing as well as the floors.",
+    pick: "Best for pet beds and floors: two 500ml cans with the growth regulator S-methoprene.",
+    blurb: "This suits you if the pet's bed needs doing as well as the floors, since it is listed for carpets, rugs and pet bedding, sprayed from 30cm. The two 500ml cans list permethrin, tetramethrin and the growth regulator S-methoprene at stated percentages. The maker claims up to 3 months against adult fleas and up to 12 months against eggs and larvae.",
     pros: ["Two 500ml cans in the pack", "Three listed actives with percentages stated", "Listed for carpets, rugs and pet bedding", "Maker claims up to 12 months against eggs and larvae"],
   },
 ];
 
 const SAFETY_NOTE = (
   <>
-    No spray here is for use on an animal, so treat the pet first. Follow each
-    label&rsquo;s directions on pets, children and drying time.{" "}
+    None is for use on a pet. Follow each label on pets, children and drying
+    time.{" "}
     <a href="#situation" className="underline">
       The pet comes first
     </a>
@@ -231,7 +231,7 @@ export default function BestFleaSprayForHomePage() {
   return (
     <GuideLayout
       title="Best Flea Spray for Home UK 2026: Five Sprays Compared"
-      subtitle="Five household flea sprays for UK homes, described by what their own listings state — which name a growth regulator, what each says it covers, and what the guidance says a spray cannot do"
+      subtitle="Five household flea sprays for carpets, bedding and furniture, from one can for a 3-4 bedroom house to twin packs for bigger homes."
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -269,17 +269,12 @@ export default function BestFleaSprayForHomePage() {
       </div>
 
       <p>
-        A household flea spray treats carpets, bedding and furniture. The
-        University of Kentucky is specific about where the biting stage is:{" "}
-        <em>
-          &ldquo;Adult fleas spend most of their time on the dog or cat, not in
-          the carpet.&rdquo;
-        </em>{" "}
-        (
-        <a href={SRC.uky} rel="nofollow">
-          University of Kentucky Entomology
-        </a>
-        ). What the spray is for is everything else.
+        These sprays treat your home, alongside the flea treatment your pet
+        gets. The Indorex Defence can is the overall pick, listed for about a
+        3-4 bedroom house, and the twin pack gives you a second can for a bigger
+        home. If you would prefer no aerosol, the Pest Expert Formula C+ litre
+        is water-based. The Bob Martin twin pack is listed for pet bedding as
+        well as carpets and rugs.
       </p>
 
       {/* [16] Comparison table */}
@@ -312,6 +307,19 @@ export default function BestFleaSprayForHomePage() {
           </tbody>
         </table>
       </div>
+      <p>
+        A household flea spray treats carpets, bedding and furniture. The
+        University of Kentucky is specific about where the biting stage is:{" "}
+        <em>
+          &ldquo;Adult fleas spend most of their time on the dog or cat, not in
+          the carpet.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.uky} rel="nofollow">
+          University of Kentucky Entomology
+        </a>
+        ). What the spray is for is everything else.
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

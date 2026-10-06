@@ -111,8 +111,8 @@ const products: ProductRecord[] = [
     h2Name: "ROSHIELD 6-Pack Mouse Trap",
     tocLabel: "Best Overall",
     tocName: "ROSHIELD 6-Pack",
-    pick: "Six snap traps with a welded kill bar that fit Roshield's own bait stations.",
-    blurb: "Our overall pick if you want several traps down at once. You get six snap traps, which the maker describes as having a high-strength spring, a sensitive trigger and a welded kill bar. The trigger plate is larger than on smaller traps, the maker says. The listing also states they can sit inside Roshield bait stations, indoors or out.",
+    pick: "For several traps down at once: six snap traps that also fit Roshield bait stations.",
+    blurb: "Our overall pick if you want several traps down at once. You get six snap traps, which the maker describes as having a high-strength spring, a sensitive trigger, a welded kill bar and a larger trigger plate than smaller alternatives. The listing also states they can sit inside Roshield bait stations, indoors or out.",
     pros: ["Six traps in the pack", "High-strength spring and welded kill bar, per the maker", "Larger trigger plate than smaller alternatives, the maker says", "Fits inside Roshield rodent bait stations"],
   },
   {
@@ -132,7 +132,7 @@ const products: ProductRecord[] = [
     h2Name: "Trisiki 4-Pack Heavy Duty Mouse Trap",
     tocLabel: "Best Heavy Duty",
     tocName: "Trisiki 4-Pack",
-    pick: "Four larger ABS traps for when you cannot tell if it is a mouse or a rat.",
+    pick: "If it could be a mouse or a rat: four larger ABS traps listed for both.",
     blurb: "Pick these if the droppings could be a rat's as well as a mouse's. The listing names both as target species, and the maker describes a larger trap made for a range of rodent sizes. You get four, in ABS plastic.",
     pros: ["Four traps in the pack", "Listed for mice and rats", "ABS plastic, 318g as listed", "Larger trap for a range of rodent sizes, per the maker"],
   },
@@ -141,7 +141,7 @@ const products: ProductRecord[] = [
     asin: "B00HDVUTZA",
     rank: 3,
     cardName: "ASPECTEK 6-Pack Mouse Trap",
-    cardLabel: "Best Budget Option",
+    cardLabel: "Best Budget",
     features: [
       "Listed as 6 traps; number of pieces 6; target species Mouse",
       "Material listed as plastic; the maker says it resists stains and odours",
@@ -153,8 +153,8 @@ const products: ProductRecord[] = [
     h2Name: "ASPECTEK 6-Pack Mouse Trap",
     tocLabel: "Best Budget",
     tocName: "ASPECTEK 6-Pack",
-    pick: "Six compact plastic snap traps made for mice, indoors or out.",
-    blurb: "Six small plastic snap traps with Mouse as the only listed target species. The maker says the plastic resists the stains and odours that build up on a wooden trap. They are listed for indoor and outdoor placement, so one pack can cover several spots around the house.",
+    pick: "For several spots around the house: six compact plastic snap traps, indoors or out.",
+    blurb: "Suits you if you want traps in several spots around the house, indoors or out: six small plastic snap traps with Mouse as the only listed target species. The maker says the plastic resists stains and odours.",
     pros: ["Six traps in the pack", "Plastic the maker says resists stains and odours", "Listed for indoor and outdoor placement", "Compact: 9.8 x 4.5 x 5.5 cm as listed"],
   },
   {
@@ -162,7 +162,7 @@ const products: ProductRecord[] = [
     asin: "B07L8JNPF2",
     rank: 4,
     cardName: "AKCHY Humane Mouse Trap 2-Pack",
-    cardLabel: "Best Humane Option",
+    cardLabel: "Best Humane",
     features: [
       "Listed as live catch and release; number of pieces 2",
       "Target species listed as Mouse, Rat; material ABS plastic",
@@ -174,8 +174,8 @@ const products: ProductRecord[] = [
     h2Name: "AKCHY Humane Mouse Trap 2-Pack",
     tocLabel: "Best Humane",
     tocName: "AKCHY Humane 2-Pack",
-    pick: "A live-catch trap with no poison and no glue, for mice or rats.",
-    blurb: "Our humane pick, for when you would rather release the mouse than kill it. You get two live-catch traps in ABS plastic, listed for mice and rats. The maker says they use no poison and no glue.",
+    pick: "For catch and release: two live-catch traps with no poison and no glue, per the maker.",
+    blurb: "Our humane pick, for when you want to release the mouse. You get two live-catch traps in ABS plastic, listed for mice and rats, and the maker says they use no poison and no glue.",
     pros: ["Two live-catch traps", "No poison and no glue, per the maker", "Listed for mice and rats", "ABS plastic"],
   },
   {
@@ -183,20 +183,20 @@ const products: ProductRecord[] = [
     asin: "B09PKWXRGK",
     rank: 5,
     cardName: "UNIQU 2-Pack Humane Mouse Trap",
-    cardLabel: "Best Easy-Clean Humane",
+    cardLabel: "Best Reusable Humane",
     features: [
       "Listed as live catch and release; number of pieces 2",
       "Material listed as wood, with a wire-mesh cage per the maker",
       "Listed for indoor and outdoor use; 210g",
       "Target species listed as Mouse, Rat",
     ],
-    tableCells: ["UNIQU 2-Pack", "Live-catch cage; 2, as listed", "Best Easy-Clean"],
-    h2Label: "Best Easy-Clean",
+    tableCells: ["UNIQU 2-Pack", "Live-catch cage; 2, as listed", "Best Reusable Humane"],
+    h2Label: "Best Reusable Humane",
     h2Name: "UNIQU 2-Pack Humane Mouse Trap",
-    tocLabel: "Best Easy-Clean",
+    tocLabel: "Best Reusable Humane",
     tocName: "UNIQU 2-Pack",
-    pick: "Two wooden live-catch cages with a wire-mesh body, for indoor or outdoor use.",
-    blurb: "The second humane option here is a cage. Each of the two traps has a wooden base and a wire-mesh body, per the maker, and the listing states indoor and outdoor use. Mouse and Rat are both listed as target species.",
+    pick: "For catch and release indoors or out: two wooden live-catch cages with wire mesh.",
+    blurb: "A humane cage trap for indoor or outdoor use, as the listing states. Each of the two traps has a wooden base and a wire-mesh body, per the maker, and Mouse and Rat are both listed as target species.",
     pros: ["Two live-catch cages", "Wood with a wire-mesh cage, per the maker", "Listed for indoor and outdoor use", "Light at 210g as listed"],
   },
 ];
@@ -206,8 +206,8 @@ const products: ProductRecord[] = [
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    Break-back traps are exempt from spring trap approval. Set a snap trap inside a
-    station if pets or children are about.{" "}
+    Break-back traps are exempt from approval. Near pets or children, set them
+    inside a station.{" "}
     <a href="#legal" className="underline">
       The legal position
     </a>
@@ -230,7 +230,7 @@ export default function BestMouseTrapsPage() {
   return (
     <GuideLayout
       title="Best Mouse Traps UK 2026"
-      subtitle="Mouse traps available in the UK, from snap traps to humane live-catch options"
+      subtitle="Snap traps and humane live-catch traps for mice, from a six-pack that fits bait stations to wooden cages for indoors or out."
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -268,17 +268,11 @@ export default function BestMouseTrapsPage() {
       </div>
 
       <p>
-        A mouse trap catches the mouse that is in. Oxford City Council&rsquo;s
-        advice is about the ones that are not yet:{" "}
-        <em>
-          &ldquo;Even gaps as small as 6mm, like those around pipes, can allow
-          entry, so sealing these is crucial.&rdquo;
-        </em>{" "}
-        (
-        <a href={SRC.oxford} rel="nofollow">
-          Oxford City Council
-        </a>
-        ).
+        Here are five mouse traps: three snap traps and two humane live-catch
+        traps. The ROSHIELD six-pack is our overall pick if you want several
+        traps down at once, and the Trisiki suits you if the droppings could be
+        a rat&rsquo;s. For catch and release, the AKCHY pair is ABS plastic and
+        the UNIQU pair is wooden cages.
       </p>
 
       {/* [16] Comparison table */}
@@ -311,6 +305,20 @@ export default function BestMouseTrapsPage() {
           </tbody>
         </table>
       </div>
+
+      <p>
+        A mouse trap catches the mouse that is in. Oxford City Council&rsquo;s
+        advice is about the ones that are not yet:{" "}
+        <em>
+          &ldquo;Even gaps as small as 6mm, like those around pipes, can allow
+          entry, so sealing these is crucial.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.oxford} rel="nofollow">
+          Oxford City Council
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

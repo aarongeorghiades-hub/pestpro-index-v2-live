@@ -129,8 +129,8 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Tamper Proof Rat Poison Box, 4 Pack",
     tocLabel: "Best Overall",
     tocName: "Roshield 4-Pack",
-    pick: "Four empty boxes in one pack, each with a metal rod for blocks or grain.",
-    blurb: "Our overall pick for a landlord stocking a whole property in one order. You get four boxes, each listed as holding blocks or grain bait on a metal rod. The listing says they are designed and made in the UK from recycled materials. They arrive empty, so the bait and its label conditions are your choice.",
+    pick: "Best for stocking a whole property: four empty boxes, each with a metal rod for bait.",
+    blurb: "Our overall pick for a landlord stocking a whole property in one order. You get four empty boxes, each listed as holding blocks or grain bait on a metal rod, and the listing says they are designed and made in the UK from recycled materials. The bait and its label conditions are your choice.",
     pros: ["Four boxes in the pack", "Metal rod holds blocks or grain bait", "Designed and made in the UK from recycled materials, as listed", "Listed for mice and rats"],
   },
   {
@@ -151,8 +151,8 @@ const products: ProductRecord[] = [
     h2Name: "Roshield PRO BOX 2 Extra Large Bait Stations",
     tocLabel: "Runner-Up",
     tocName: "Roshield PRO BOX 2-Pack",
-    pick: "Two extra-large stations that take rodenticide or traps, indoors or out.",
-    blurb: "A smaller pack of bigger boxes. Each of the two stations is listed at 26 x 19 x 12 cm, with what the listing calls a secure solid lid for easy inspection. You can load them with rodenticide or with traps, and they are listed for indoor and outdoor use.",
+    pick: "Best if you want bigger boxes: two 26 x 19 x 12 cm stations for bait or traps.",
+    blurb: "Suits you if you want fewer, larger boxes. Each of the two stations is listed at 26 x 19 x 12 cm, with what the listing calls a secure solid lid for easy inspection. You can load them with rodenticide or traps, indoors or out.",
     pros: ["Two extra-large stations, 26 x 19 x 12 cm", "Solid lid the listing says is for easy inspection", "Takes rodenticide or traps", "Listed for indoor and outdoor use"],
   },
   {
@@ -173,7 +173,7 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Pro Quality Tamper-Resistant Bait Box, 2 Pack",
     tocLabel: "Best Budget",
     tocName: "Roshield Tamper-Resistant 2 Pack",
-    pick: "Two key-locked boxes, and the only listing here that states an inspection window.",
+    pick: "Best if you want to check without unlocking: an inspection window and key-only access.",
     blurb: "Buy this pair if you want to look in without unlocking every box. The listing states an inspection window and key-only access. Each box is listed as holding wax blocks, wheat bait, pasta sachets or traps, and both are listed for indoor and outdoor use.",
     pros: ["Inspection window, as listed", "Key-only access", "Takes wax blocks, wheat bait, pasta sachets and traps", "Listed for indoor and outdoor use"],
   },
@@ -195,8 +195,8 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Heavy Duty Outdoor Bait Boxes",
     tocLabel: "Best Professional-Grade",
     tocName: "Pest Expert 4-Pack",
-    pick: "Four heavy-duty boxes listed as fully lockable and weather resistant.",
-    blurb: "For a property with several runs outside, this pack gives you four heavy-duty boxes listed as fully lockable and weather resistant. They take grain, blocks or paste. The listing names mice and rats and states indoor and outdoor use.",
+    pick: "Best for several runs outside: four heavy-duty boxes, lockable and weather resistant.",
+    blurb: "Suits a property with several runs outside. You get four heavy-duty boxes listed as fully lockable and weather resistant, and they take grain, blocks or paste. The listing names mice and rats and states indoor and outdoor use.",
     pros: ["Four boxes in the pack", "Fully lockable and weather resistant, as listed", "Takes grain, blocks and paste", "Listed for indoor and outdoor use"],
   },
   {
@@ -217,7 +217,7 @@ const products: ProductRecord[] = [
     h2Name: "Roshield 2x Pre-Baited Rat Kit",
     tocLabel: "Best Ready to Deploy",
     tocName: "Roshield Pre-Baited Kit",
-    pick: "Two lockable stations that arrive pre-baited, with an access key.",
+    pick: "Best if you need bait down on day one: two lockable stations that arrive pre-baited.",
     blurb: "If you need something down the day it arrives, this kit comes pre-baited. You get two lockable stations with an access key, listed as refillable, reusable and made in the UK. The listing names rat as the target and does not name the active substance, so read the pack before you use it.",
     pros: ["Arrives pre-baited", "Two lockable stations with an access key", "Refillable and reusable, as listed", "Made in the UK, as listed"],
   },
@@ -228,10 +228,9 @@ const products: ProductRecord[] = [
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    Professional-use bait is not for the general public, and the station must lock so
-    children and dogs cannot reach the bait.{" "}
+    Professional-use bait is not for the public, and stations must lock against children and dogs.{" "}
     <a href="#legal" className="underline">
-      Who may use the bait
+      Who may use it
     </a>
     .
   </>
@@ -252,7 +251,7 @@ export default function BestProfessionalBaitStationKitsPage() {
   return (
     <GuideLayout
       title="Best Professional Rat & Mouse Bait Station Kits for Landlords (2026)"
-      subtitle="Tamper-resistant bait station kits for landlords — five compared on what their listings state, with the label standard the box must meet and HSE's line on who may use professional products"
+      subtitle="Five tamper-resistant bait station kits for landlords, from empty four-box packs to a pre-baited pair you can put down the day it arrives"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -303,10 +302,7 @@ export default function BestProfessionalBaitStationKitsPage() {
       </div>
 
       <p>
-        Four of the five kits here are empty boxes sold in packs of two or four.
-        One arrives pre-baited. For a landlord the question is not which box,
-        but whether the bait that goes in it is one you are allowed to use
-        yourself.
+        Four of these kits are empty boxes in packs of two or four, and one arrives pre-baited. The Roshield 4-pack suits a landlord stocking a whole property in one order. Choose the Roshield PRO BOX pair for bigger boxes that take bait or traps, or the Roshield 2-pack if you want an inspection window. Before you buy, check that you are allowed to use the bait that goes inside.
       </p>
 
       {/* Comparison table */}

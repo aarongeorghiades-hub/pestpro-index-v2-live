@@ -171,8 +171,8 @@ const products: ProductRecord[] = [
     h2Name: "Heavy Duty Anti-Pigeon Bird Netting 10m × 20m",
     tocLabel: "Best for Large Areas",
     tocName: "Anti-Pigeon Bird Netting",
-    pick: "200 square metres of 50mm pigeon netting in UV-stabilised polyethylene.",
-    blurb: "Our pick when a whole area needs closing off rather than a single ledge. The net is 10m by 20m at a 50mm mesh, which makes it a pigeon mesh by ICWDM's specifications, in six-strand knotted polyethylene the maker describes as UV stabilised. The maker states it will not rot, fade or stretch, and that it is made in Cornwall. Fixings are not listed as included, so order those separately.",
+    pick: "Best if a whole area needs closing off: 10m by 20m of 50mm UV-stabilised netting.",
+    blurb: "Pick this when a whole area needs closing off. The net is 10m by 20m at a 50mm mesh, in six-strand knotted polyethylene the maker describes as UV stabilised, and the maker states it will not rot, fade or stretch. Fixings are not listed as included, so order those separately.",
     pros: ["10m x 20m at a 50mm mesh", "Six-strand knotted polyethylene, UV stabilised, per the maker", "Will not rot, fade or stretch, the maker states", "Made in Cornwall, the maker states"],
   },
   {
@@ -199,8 +199,8 @@ const products: ProductRecord[] = [
     h2Name: "OFFO Stainless Steel Bird Spikes",
     tocLabel: "Best for Ledges",
     tocName: "OFFO Bird Spikes",
-    pick: "304 stainless steel spikes for sills, balustrades and roof edges, 78cm per set.",
-    blurb: "For the ledges pigeons sit on. Each set covers 78cm in 304 grade stainless steel, with spikes the maker gives as 100mm long in groups 76mm wide. It is listed for window sills, balustrades, roof edges, cornices and air conditioning units, with pigeon as the target species. If sparrows are your problem, read the Penn State caveat above first.",
+    pick: "Best for ledges and sills: 304 stainless steel spikes, 78cm of coverage per set.",
+    blurb: "This is for the ledges pigeons sit on. Each set covers 78cm in 304 grade stainless steel, with spikes the maker gives as 100mm long in groups 76mm wide, and it is listed for window sills, balustrades, roof edges, cornices and air conditioning units. If your birds are sparrows, read the Penn State point in the FAQ first.",
     pros: ["78cm of coverage per set", "304 grade stainless steel, per the maker", "100mm spikes in 76mm wide groups", "Listed for sills, balustrades, roof edges and cornices"],
   },
   {
@@ -227,8 +227,8 @@ const products: ProductRecord[] = [
     h2Name: "10 x 90mm Pigeon Post & Pad Kit",
     tocLabel: "Best Wire System",
     tocName: "Pigeon Post & Pad Kit",
-    pick: "Ten 90mm posts with pads, for bird wire where you cannot drill.",
-    blurb: "Choose this when drilling into the surface is not an option. The kit gives you ten 90mm posts with pads to carry bird wire, and the maker suggests 90mm at the front leading edge and 130mm for the rows behind. Read the maker's own limits before ordering: fixings are not included, it is designed for light perching of pigeons only, and it should not go where pigeons are active overnight.",
+    pick: "Best if you cannot drill: ten 90mm posts with pads to carry bird wire.",
+    blurb: "Choose this when drilling into the surface is not an option. The kit gives you ten 90mm posts with pads to carry bird wire, and the maker suggests 90mm at the front leading edge and 130mm for the rows behind. Fixings are not included, and the maker says it is for light perching of pigeons only, not where they are active overnight.",
     pros: ["Ten 90mm posts with pads", "For bird wire where drilling is not possible", "Spacing guidance from the maker for front and rear rows"],
   },
   {
@@ -255,8 +255,8 @@ const products: ProductRecord[] = [
     h2Name: "Bird Barrier Optical Gel (24 Pack)",
     tocLabel: "Best Discreet Deterrent",
     tocName: "Bird Barrier Optical Gel",
-    pick: "24 gel discs that fix with an adhesive dab and no tools, per the maker.",
-    blurb: "The option for a frontage where you would rather not fit spikes or wire. You get 24 gel discs that mount with an adhesive dab and, the maker says, need no tools. The maker gives the ingredients as citronella, mint oil, agar and beeswax, and the listing names roofs, balconies, railings and HVAC units. It is a deterrent rather than a barrier, so read the ASA position above before you choose it.",
+    pick: "For a frontage where you'd prefer no spikes: 24 gel discs fixed with an adhesive dab.",
+    blurb: "This suits a frontage where you would prefer not to fit spikes or wire, and it is listed for roofs, balconies, railings and HVAC units. You get 24 gel discs that the maker says mount with an adhesive dab and need no tools, with ingredients given as citronella, mint oil, agar and beeswax. It is a deterrent with no physical barrier, so see the ASA position below before you choose it.",
     pros: ["24 gel discs per pack", "Fix with an adhesive dab, no tools, per the maker", "Listed for roofs, balconies, railings and HVAC units", "Ingredients given as citronella, mint oil, agar and beeswax"],
   },
   {
@@ -283,8 +283,8 @@ const products: ProductRecord[] = [
     h2Name: "Bird Proofing Mesh & 60 Fixing Clip Kit",
     tocLabel: "Best for Solar Panels",
     tocName: "Solar Panel Bird Mesh Kit",
-    pick: "30m of coated mesh and 60 clips to close the gap under solar panels.",
-    blurb: "Made for the gap under a roof solar array, which is hard to close any other way. The roll is 30m of PVC-coated galvanised mesh, 0.2m high, and 60 nylon clips come with it. The maker describes fitting it around the perimeter of the panel system, on domestic or commercial roofs.",
+    pick: "Best for the gap under solar panels: 30m of coated mesh with 60 nylon clips.",
+    blurb: "Made for the gap under a roof solar array. The roll is 30m of PVC-coated galvanised mesh, 0.2m high, with 60 nylon clips included. The maker describes fitting it around the perimeter of the panel system, on domestic or commercial roofs.",
     pros: ["0.2m x 30m PVC-coated galvanised mesh", "60 nylon solar clips included", "Fits around the panel perimeter, per the maker", "Listed for domestic and commercial roofs"],
   },
   {
@@ -311,8 +311,8 @@ const products: ProductRecord[] = [
     h2Name: "100 Nylon Net Hooks",
     tocLabel: "Best Netting Repair Kit",
     tocName: "Nylon Net Hooks",
-    pick: "100 nylon hooks to open up or repair netting you already have.",
-    blurb: "Worth adding if you already have netting up. The pack has 100 UV-stabilised nylon hooks, listed as suitable for external installation, for making an access point into the net or a temporary repair. The maker states they suit 19mm, 28mm and 50mm nets. A net you can open is a net nobody has to cut.",
+    pick: "If you already have netting up: 100 nylon hooks to make an access point or a repair.",
+    blurb: "Add this if you already have netting up. The pack has 100 UV-stabilised nylon hooks, listed as suitable for external installation, for making an access point into the net or a temporary repair. The maker states they suit 19mm, 28mm and 50mm nets.",
     pros: ["100 hooks per pack", "UV-stabilised nylon, listed for external installation", "Suits 19mm, 28mm and 50mm nets, per the maker"],
   },
   {
@@ -339,8 +339,8 @@ const products: ProductRecord[] = [
     h2Name: "BCT Ultrasonic Bird Repeller",
     tocLabel: "Best Electronic Deterrent",
     tocName: "BCT Ultrasonic Bird Repeller",
-    pick: "A four-speaker ultrasonic unit with a frequency adjustable from 8kHz to 40kHz.",
-    blurb: "The electronic option, for a site where you can run power to a unit. It has four speakers, a frequency the maker gives as adjustable from 8kHz to 40kHz, and a waterproof casing listed for indoor and outdoor use, with a 12VDC adaptor and a 10m lead. The title names birds and dogs while the target species row reads Mouse, Rat. Read the ASA position above before you buy.",
+    pick: "For a site with power to hand: a four-speaker ultrasonic unit, adjustable 8kHz to 40kHz.",
+    blurb: "This is the electronic option, for a site where you can run power to a unit. It has four speakers, a frequency the maker gives as adjustable from 8kHz to 40kHz, and a waterproof casing listed for indoor and outdoor use, with a 12VDC adaptor and a 10m lead. The title names birds and dogs while the target species row reads mouse and rat, so check it fits your pest.",
     pros: ["Four speakers", "Frequency adjustable from 8kHz to 40kHz, per the maker", "Waterproof, listed for indoor and outdoor use", "12VDC adaptor and 10m lead supplied"],
   },
 ];
@@ -387,10 +387,10 @@ const faqSchema = {
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    All wild birds, their eggs and nests are protected by law. Survey before
-    you install, and never net over a nest that is in use.{" "}
+    Wild birds, their eggs and nests are protected by law. Survey before you
+    fit anything.{" "}
     <a href="#legal" className="underline">
-      The legal position on wild birds
+      The legal position
     </a>
     .
   </>
@@ -411,7 +411,7 @@ export default function BestCommercialBirdProofingPage() {
   return (
     <GuideLayout
       title="Best Commercial Bird Proofing UK 2026: Netting, Spikes &amp; Wire Systems"
-      subtitle="Five physical exclusion products and two deterrents, described by what their own listings state — beside GOV.UK and the RSPB on what the law protects and two extension services on how exclusion is specified"
+      subtitle="Netting, spikes, wire and mesh for pigeons on ledges, roofs and solar panels, plus two deterrents, for building owners and managers."
       lastUpdated="September 2026"
       readingTime="9 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -459,10 +459,12 @@ export default function BestCommercialBirdProofingPage() {
       </div>
 
       <p>
-        Seven products, and the important division is not price. Five are
-        physical barriers that stop a bird landing or entering. Two are
-        deterrents that ask a bird to go somewhere else. The law that governs
-        all of this is the same either way, and it comes first.
+        Five of the seven picks are physical barriers that stop a bird landing
+        or getting in. The 10m by 20m netting suits you if a whole area needs
+        closing off. The OFFO stainless spikes are for sills, balustrades and
+        roof edges, and the post and pad kit carries bird wire where you cannot
+        drill. There are also two deterrents, a gel and an ultrasonic unit, for
+        sites where you would prefer not to fit a barrier.
       </p>
 
       {/* Comparison table — LISTING facts only, "not stated" where absent */}

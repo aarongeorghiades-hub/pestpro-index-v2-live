@@ -188,9 +188,9 @@ const products: ProductRecord[] = [
     h2Name: "EcoMyLife Ultrasonic Pest Repeller 2 Pack",
     tocLabel: "Best Overall",
     tocName: "EcoMyLife Ultrasonic Repeller",
-    pick: "A plug-in pair for two rooms, with mouse and rat among the listed target species.",
-    blurb: "A mains plug-in unit sold in twos, so you can put one in each of two rooms. The detail table lists eleven target species, from ants and bed bugs through to mice, rats and wasps, and that is the maker's claim rather than ours. The maker claims coverage of 1200 sq ft per unit, while the same listing's detail table gives a maximum range of 93 centimetres, so we report both.",
-    pros: ["Sold as a 2 pack, one unit per room", "Electric plug-in, listed for indoor use", "Mouse and rat among the listed target species"],
+    pick: "For two rooms indoors: a plug-in ultrasonic pair, with mice and rats among listed targets.",
+    blurb: "Suits you if you want a unit in each of two rooms, since this mains plug-in comes as a pair, listed for indoor use. The detail table lists eleven target species, from ants and bed bugs to mice, rats and wasps, as the maker's claim. The maker claims 1200 sq ft per unit and the detail table gives a maximum range of 93 centimetres, so check both before you choose a spot.",
+    pros: ["Sold as a 2 pack", "Electric plug-in, listed for indoor use", "Mouse and rat among the listed target species"],
   },
   {
     anchorId: "best-spray",
@@ -218,8 +218,8 @@ const products: ProductRecord[] = [
     h2Name: "RepellShield Rat & Mouse Repellent Spray",
     tocLabel: "Best Spray",
     tocName: "RepellShield Made in Germany",
-    pick: "A 250ml peppermint oil spray whose listing names mice and rats as its targets.",
-    blurb: "A 250ml peppermint oil spray for indoor use, made by Vivere GmbH in Germany. It is the only one of the four whose detail table names mice and rats and nothing else. The maker directs reapplication every two to three days, with persistent use over two to three weeks, so plan it as a routine.",
+    pick: "For indoor use with a set routine: a 250ml peppermint oil spray listing mice and rats.",
+    blurb: "Suits you if you are happy to follow a spray routine indoors: the maker directs reapplication every two to three days, with persistent use over two to three weeks. It is 250ml of peppermint oil made by Vivere GmbH in Germany, and the only one of the four whose detail table names mice and rats and nothing else.",
     pros: ["Target species listed as Mouse, Rat", "250 ml peppermint oil, listed for indoor use", "Reapplication interval set out by the maker"],
   },
   {
@@ -248,8 +248,8 @@ const products: ProductRecord[] = [
     h2Name: "REPELEM Rat & Mouse Repellent Spray",
     tocLabel: "Best Premium Spray",
     tocName: "REPELEM Peppermint Oil Spray",
-    pick: "A 250ml spray the maker describes as peppermint oil with geraniol.",
-    blurb: "Also 250ml, and the maker describes the formula as peppermint oil with geraniol rather than peppermint alone. The directions are the most demanding of the four: daily application to entry points for the first week, then once or twice weekly. Its detail table states no target species.",
+    pick: "For spraying entry points: 250ml the maker describes as peppermint oil with geraniol.",
+    blurb: "Made for entry points, where the maker directs daily application for the first week, then once or twice weekly. It is 250ml, and the maker describes the formula as peppermint oil with geraniol. Its detail table states no target species.",
     pros: ["Peppermint oil and geraniol, per the maker", "250 ml, a pack of one", "Step-down routine set out by the maker"],
   },
   {
@@ -278,25 +278,11 @@ const products: ProductRecord[] = [
     h2Name: "REPELEM Rat & Mouse Repellent Peppermint Oil Sachets",
     tocLabel: "Best Natural",
     tocName: "REPELEM Peppermint Oil Sachets",
-    pick: "Six place-and-leave sachets the maker says hold their scent for up to 90 days.",
-    blurb: "Six sachets, described by the maker as paper, corn cobs and peppermint oil, with a claimed scent life of up to 90 days each. You place them rather than spray them, and the maker suggests confined spaces such as cars, caravans, lofts and sheds. Its detail table states no target species.",
+    pick: "For cars, lofts and sheds: six peppermint sachets, scent up to 90 days per the maker.",
+    blurb: "For confined spaces such as cars, caravans, lofts and sheds, which is where the maker suggests placing them. You get six sachets of paper, corn cobs and peppermint oil, with a scent life the maker claims at up to 90 days each, and nothing to spray. Its detail table states no target species.",
     pros: ["6 sachets in the pack", "Maker claims scent for up to 90 days per sachet", "Maker suggests cars, caravans, lofts and sheds"],
   },
 ];
-
-// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
-// block (the top-picks box). It satisfies Law 180 on this route; the full
-// regulator section sits below the picks.
-const SAFETY_NOTE = (
-  <>
-    The UK advertising regulator has yet to accept an efficacy claim for pest
-    repellents, and sealing gaps is the step a source supports.{" "}
-    <a href="#asa" className="underline">
-      What the regulator says
-    </a>
-    .
-  </>
-);
 
 const tocItems = [
   { id: "compared", title: "The Four Products Compared" },
@@ -313,7 +299,7 @@ export default function BestMouseRepellentPage() {
   return (
     <GuideLayout
       title="Best Mouse Repellent UK 2026 | Sprays, Sachets and Ultrasonic Compared"
-      subtitle="What the UK advertising regulator has said about repellent devices, the gap size that actually lets mice in, and four products described as their own listings describe them"
+      subtitle="Four mouse repellent products, a plug-in ultrasonic pair, two peppermint sprays and peppermint sachets, with the room or space each is designed for."
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -358,7 +344,6 @@ export default function BestMouseRepellentPage() {
       breadcrumbSchema={breadcrumbSchema}
       topPicks={
         <TopPicks
-          note={SAFETY_NOTE}
           picks={products.slice(0, 3).map((p) => ({
             label: p.cardLabel,
             name: p.cardName,
@@ -381,10 +366,11 @@ export default function BestMouseRepellentPage() {
       </div>
 
       <p>
-        This page ranks four mouse repellents on what their own listings state,
-        and it does not tell you which one works. The reason is worth reading
-        before the products: the UK advertising regulator has looked at the evidence behind
-        claims for this class of product and has not accepted one.
+        Here are four mouse repellent products and the spaces their makers say
+        they are designed for. The EcoMyLife plug-in pair is our overall pick if
+        you want a unit in each of two rooms. The RepellShield and REPELEM
+        sprays are both peppermint oil, and the REPELEM sachets are
+        for confined spaces such as cars, lofts and sheds, the maker says.
       </p>
 
       {/* [6] Comparison table */}
@@ -429,6 +415,16 @@ export default function BestMouseRepellentPage() {
           </tbody>
         </table>
       </div>
+
+      <p>
+        The UK advertising regulator has yet to accept an efficacy claim for
+        pest repellents, so every claim on the cards below is the
+        maker&rsquo;s own (
+        <a href={SRC.asa} rel="nofollow">
+          ASA/CAP
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

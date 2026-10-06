@@ -146,13 +146,14 @@ const products: ProductRecord[] = [
       "Six-sided, zipped",
       "Lab tested and certified bed bug proof, per the maker",
       "Full Size; fits 6–9 in. deep, as listed",
+      "Best Overall",
     ],
     h2Label: "Best Overall",
     h2Name: "SafeRest Premium Mattress Encasement",
     tocLabel: "Best Overall",
     tocName: "SafeRest Premium Encasement",
-    pick: "The maker says it is lab tested and certified bed bug entry, escape and bite proof.",
-    blurb: "Our overall pick, because it carries the strongest bed bug claim of the four, and the maker makes it plainly: independently lab tested and certified bed bug entry, escape and bite proof. The micro-zipper is covered by a velcro flap at the end, which the maker says stops it opening by accident. You sleep on cotton terry over a membrane backing. It is listed in US sizing as Full, for a mattress 6 to 9 inches deep, so measure yours first.",
+    pick: "For the strongest bed bug claim: lab tested and certified bite proof, per the maker.",
+    blurb: "If the bed bug claim is what you are buying for, this carries the strongest of the four: the maker says it is independently lab tested and certified bed bug entry, escape and bite proof. The micro-zipper is covered by a velcro flap at the end, which the maker says stops it opening by accident, and you sleep on cotton terry over a membrane backing. It is listed in US sizing as Full, for a mattress 6 to 9 inches deep, so measure yours first.",
     pros: ["Lab tested and certified bed bug proof, per the maker", "Six-sided cover with a micro-zipper", "Velcro flap over the zipper end", "Cotton terry surface"],
   },
   {
@@ -173,13 +174,14 @@ const products: ProductRecord[] = [
       "Six-sided, zipped",
       "Bed bug and dust mite proof, per the maker",
       "US King in the title, Double in the size row",
+      "Best Value",
     ],
     h2Label: "Best Value",
     h2Name: "Utopia Bedding Mattress Encasement",
     tocLabel: "Best Value",
     tocName: "Utopia Bedding Encasement",
-    pick: "A washable six-sided cover the maker states is bed bug and dust mite proof.",
-    blurb: "A plain, practical cover you can put through the wash and the tumble dryer. It is six-sided, with a wrap-around zipper, knitted polyester on top and a waterproof backing, and the maker states it is bed bug and dust mite proof. Check the size with care: the title says US King, the size row says Double, and a bullet describes a 78 by 80 inch mattress up to 15 inches deep.",
+    pick: "For a cover you can wash often: six-sided, machine washable and tumble dryable.",
+    blurb: "For a cover you want to wash often, since it goes in the washing machine and the tumble dryer. It is six-sided, with a wrap-around zipper, knitted polyester on top and a waterproof backing, and the maker states it is bed bug and dust mite proof. Check the size with care: the title says US King, the size row says Double, and a bullet describes a 78 by 80 inch mattress up to 15 inches deep.",
     pros: ["Six-sided with a wrap-around zipper", "Bed bug and dust mite proof, per the maker", "Machine washable and tumble dryable", "Waterproof backing"],
   },
   {
@@ -200,13 +202,14 @@ const products: ProductRecord[] = [
       "Six-sided, zipped",
       "Bed bug proof with the matching box spring cover, per the maker",
       "Full, 54\" x 75\"; fits 9–12 in. deep, as listed",
+      "Best for Comfort",
     ],
     h2Label: "Best for Comfort",
     h2Name: "SureGuard Mattress Encasement",
     tocLabel: "Best for Comfort",
     tocName: "SureGuard Encasement",
-    pick: "A cotton terry cover the maker calls noiseless, free of vinyl and PVC.",
-    blurb: "The one to look at if comfort is what you are buying for. The surface is cotton terry, which the maker describes as noiseless and moisture-wicking, and the maker states it is free from vinyl, PVC, phthalates and flame retardants. Its bed bug seal, the maker says, needs the matching box spring cover as well, so plan on both if you want that claim to apply. Listed as Full, 54 by 75 inches, for a mattress 9 to 12 inches deep.",
+    pick: "For comfort: a cotton terry surface the maker calls noiseless, free of vinyl and PVC.",
+    blurb: "The one to look at if comfort is what you are buying for. The surface is cotton terry, which the maker describes as noiseless and moisture-wicking, and the maker states it is free from vinyl, PVC, phthalates and flame retardants. It is listed as Full, 54 by 75 inches, for a mattress 9 to 12 inches deep. The maker says its bed bug seal needs the matching box spring cover as well, so plan on both.",
     pros: ["Cotton terry surface, noiseless per the maker", "Free from vinyl, PVC, phthalates and flame retardants, per the maker", "Superfine zipper with a sealing system, per the maker", "Fits mattresses 9 to 12 inches deep, as listed"],
   },
   {
@@ -214,7 +217,7 @@ const products: ProductRecord[] = [
     asin: "B004P1I4US",
     rank: 4,
     cardName: "Protect-A-Bed AllerZip Smooth Encasement",
-    cardLabel: "Best Heavy-Duty",
+    cardLabel: "Best Machine-Washable",
     features: [
       "Its product description calls it a six-sided encasement with a three-sided zipper",
       "Its feature bullets call it fitted sheet style — the listing disagrees with itself",
@@ -227,13 +230,14 @@ const products: ProductRecord[] = [
       "Six-sided per its description, fitted sheet per its bullets",
       "not stated",
       "Twin; 4–8 in. deep, as listed",
+      "Best Machine-Washable",
     ],
-    h2Label: "Best Heavy-Duty",
+    h2Label: "Best Machine-Washable",
     h2Name: "Protect-A-Bed AllerZip",
-    tocLabel: "Best Heavy-Duty",
+    tocLabel: "Best Machine-Washable",
     tocName: "Protect-A-Bed AllerZip",
-    pick: "A smooth jersey knit cover over the maker's membrane, machine washable.",
-    blurb: "A smooth jersey knit polyester cover over the maker's membrane, and you can machine wash it. Its product description calls it a six-sided encasement with a three-sided zipper, though its feature bullets call it fitted sheet style. It is the only one of the four that makes no bed bug claim in its own text, so choose another if that claim matters to you. Listed as Twin, for a mattress 4 to 8 inches deep.",
+    pick: "For a smooth surface you can machine wash: jersey knit over the maker's membrane.",
+    blurb: "For a smooth jersey knit surface you can machine wash. The polyester sits over the maker's membrane, and its product description calls it a six-sided encasement with a three-sided zipper. It is listed as Twin, for a mattress 4 to 8 inches deep. It makes no bed bug claim in its own text, so choose another if that claim matters to you.",
     pros: ["Jersey knit polyester over a membrane", "Machine washable", "Six-sided with a three-sided zipper, per its description"],
   },
 ];
@@ -275,20 +279,6 @@ const faqSchema = {
   })),
 };
 
-// S70 R1 (Law 195): the one-line safety/legal note carried inside the decision
-// block (the top-picks box). It satisfies Law 180 on this route; the full sections
-// sit below the picks.
-const SAFETY_NOTE = (
-  <>
-    A cover protects the mattress and nothing else, and for an infestation the
-    NHS points you to your council or a pest control service.{" "}
-    <a href="#limits" className="underline">
-      Where an encasement does not work
-    </a>
-    .
-  </>
-);
-
 const tocItems = [
   { id: "compared", title: "The Four Compared" },
   ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
@@ -305,7 +295,7 @@ export default function BestBedBugMattressEncasementPage() {
   return (
     <GuideLayout
       title="Best Bed Bug Mattress Encasement UK 2026"
-      subtitle="Four zipped six-sided mattress covers, described by what their own listings state — beside the University of California's account of what an encasement does and the NHS position on getting rid of bedbugs"
+      subtitle="Four zipped mattress encasements, with picks for the strongest bed bug claim on a listing and for a soft cotton terry surface"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -325,7 +315,6 @@ export default function BestBedBugMattressEncasementPage() {
       breadcrumbSchema={breadcrumbSchema}
       topPicks={
         <TopPicks
-          note={SAFETY_NOTE}
           picks={products.slice(0, 3).map((p) => ({
             label: p.cardLabel,
             name: p.cardName,
@@ -353,10 +342,12 @@ export default function BestBedBugMattressEncasementPage() {
       </div>
 
       <p>
-        Four zipped covers that go over the whole mattress. None of them
-        contains an insecticide, and none of them is a treatment for a room.
-        What they are for is narrower than that, and it is worth being precise
-        about before spending anything.
+        This page compares four zipped encasements that cover the whole
+        mattress. The SafeRest carries the strongest bed bug claim, which the
+        maker says is lab tested and certified. The Utopia goes in the washing
+        machine and tumble dryer, and the SureGuard has a cotton terry surface
+        the maker calls noiseless. All four give US sizes, so measure your
+        mattress before you order.
       </p>
 
       {/* Comparison table */}
@@ -374,6 +365,7 @@ export default function BestBedBugMattressEncasementPage() {
               <th className="text-left p-2 border-b font-semibold">Construction</th>
               <th className="text-left p-2 border-b font-semibold">Bed bug claim, as listed</th>
               <th className="text-left p-2 border-b font-semibold">Size and depth, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
           </thead>
           <tbody>
@@ -389,6 +381,14 @@ export default function BestBedBugMattressEncasementPage() {
           </tbody>
         </table>
       </div>
+      <p>
+        A cover protects the mattress only, and for an infestation the NHS
+        advises contacting your local council or a pest control service (
+        <a href={SRC.nhs} rel="nofollow">
+          NHS
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

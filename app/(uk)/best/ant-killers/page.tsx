@@ -17,9 +17,8 @@ import DecisionBox from '@/components/DecisionBox';
 // "Best Ant Killer Products UK 2026" kept byte-identical (standing title ruling).
 //
 // STANDING BAR — B000BQT5IG. Permanently barred from carrying any award anywhere on the
-// estate. Its compliant neutral descriptor "Gel Bait" is preserved byte-identical on
-// cardLabel, h2Label, tocLabel and its comparison cell. No string beginning "Best" is
-// applied to it on any surface.
+// estate. S70 R2: on the PM's ruling it is REMOVED from this route altogether (card, top
+// picks, table, h2, toc, decision line and every sentence naming it). The bar stands.
 //
 // AWARD LABELS, RANK NUMERALS AND CARD ORDER ARE UNCHANGED. Two own-voice claims were
 // cleared from the rank-1 feature list: "UK's #1 ant bait station", a superlative this
@@ -133,8 +132,8 @@ const products: ProductRecord[] = [
     h2Name: "Nippon Ant Bait Station Twin Pack",
     tocLabel: "Best Overall",
     tocName: "Nippon Ant Bait Station",
-    pick: "Two enclosed stations, pre-baited with spinosad, for indoors or out.",
-    blurb: "Our overall pick for most homes. You get two fully enclosed stations that come pre-baited, so there is nothing to mix or measure, and the maker names the active as spinosad. They are listed for indoor and outdoor use, and the maker states they act on the nest as well as the ants you can see. The listing gives no replacement interval, so check them now and then.",
+    pick: "Suits most homes: two enclosed stations, pre-baited with spinosad, for indoors or out.",
+    blurb: "For most homes, start here. You get two fully enclosed stations that come pre-baited, so there is nothing to mix or measure, and the maker names the active as spinosad. They are listed for indoor and outdoor use, and the maker states they act on the nest as well as the ants you can see. The listing gives no replacement interval, so check them now and then.",
     pros: ["Two pre-baited, fully enclosed stations", "Active named by the maker: spinosad", "Listed for indoor and outdoor use", "Maker states it acts on the nest"],
   },
   {
@@ -160,36 +159,9 @@ const products: ProductRecord[] = [
     h2Name: "NOPE! Ant Killer Bait Station (6 x 5g)",
     tocLabel: "Best Multi-Pack",
     tocName: "NOPE! Ant Killer Bait Station",
-    pick: "Six 5g stations in one pack, for when there are more entry points to cover.",
-    blurb: "Six stations in one pack, so you can cover more entry points than a twin pack allows. Each holds 5g, and they are listed for indoor and outdoor use. The maker describes a systemic insecticide with an insect growth regulator, spread through the colony by trophallaxis. No active substance is named in the detail rows, so read the pack.",
+    pick: "For ants getting in at several points: six 5g stations in one pack.",
+    blurb: "For ants getting in at several points, since six stations cover more of them than a twin pack. Each holds 5g, and they are listed for indoor and outdoor use. The maker describes a systemic insecticide with an insect growth regulator, spread through the colony by trophallaxis. No active substance is named in the detail rows, so read the pack.",
     pros: ["Six stations of 5g each", "Listed for indoor and outdoor use", "Maker describes a systemic insecticide with an insect growth regulator"],
-  },
-  {
-    anchorId: "best-gel",
-    asin: "B000BQT5IG",
-    rank: 3,
-    cardName: "Combat Ant Killing Gel 27g",
-    cardLabel: "Gel Bait",
-    features: [
-      "A 27 gram syringe, listed for placement in cracks and crevices",
-      "Active ingredient listed as fipronil",
-      "Item form listed as Gel; target species Ant",
-      "A US-market product: the maker's own text gives the size as 0.95 ounce",
-      "The maker states it eliminates the colony rather than the foragers alone",
-    ],
-    tableCells: [
-      "Combat Ant Killing Gel 27g",
-      "Gel bait in a syringe",
-      "Fipronil, named in the listing",
-      "27 grams; cracks and crevices, as listed",
-    ],
-    h2Label: "Gel Bait",
-    h2Name: "Combat Ant Killing Gel 27g",
-    tocLabel: "Gel Bait",
-    tocName: "Combat Ant Killing Gel",
-    pick: "A 27g gel syringe for the cracks and crevices ants come in by.",
-    blurb: "A gel in a 27 gram syringe, listed for placing into the cracks and crevices ants use to get in. The listing names fipronil as the active. It is a US-market product and its own text gives the size as 0.95 ounce, so read its label before you use it. This record carries a neutral descriptor rather than an award, by a standing ruling of this site.",
-    pros: ["27g syringe for cracks and crevices", "Active named on the listing: fipronil", "Item form listed as Gel"],
   },
 ];
 
@@ -200,7 +172,7 @@ const faqs = [
   },
   {
     q: "How long should a bait take?",
-    a: "UC IPM says control with baits is not immediate and may take several weeks or more to be complete. None of the three listings here states a UK-tested timescale, and the fastest claim any of them makes is the gel maker's three to five days, which is the maker's own figure and not a finding of this page.",
+    a: "UC IPM says control with baits is not immediate and may take several weeks or more to be complete. Neither listing here states a UK-tested timescale.",
   },
   {
     q: "Is a gel or a station better?",
@@ -235,8 +207,8 @@ const faqSchema = {
 // sit below the picks.
 const SAFETY_NOTE = (
   <>
-    Each label states where the product may go and what must be kept away
-    from it, and one of the three is a US-market product.{" "}
+    Both are insecticides. The label sets where each goes and what to keep
+    away from it.{" "}
     <a href="#legal" className="underline">
       What the label governs
     </a>
@@ -245,7 +217,7 @@ const SAFETY_NOTE = (
 );
 
 const tocItems = [
-  { id: "compared", title: "The Three Compared" },
+  { id: "compared", title: "The Two Compared" },
   ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "Why the Nest Is the Target" },
   { id: "legal", title: "What the Label Governs" },
@@ -260,7 +232,7 @@ export default function BestAntKillersPage() {
   return (
     <GuideLayout
       title="Best Ant Killer Products UK 2026: Bait Stations and Gel"
-      subtitle="Two enclosed bait stations and one gel, described by what their own listings state — beside the University of California's account of why a bait reaches a nest and a perimeter spray does not"
+      subtitle="Two enclosed ant bait stations for indoors or out: a pre-baited twin pack for most homes, and a six-pack for more entry points"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -308,13 +280,14 @@ export default function BestAntKillersPage() {
       </div>
 
       <p>
-        Three products, all of them baits: two enclosed stations and one gel in
-        a syringe. That there is no spray here is deliberate, and it is the
-        reason this page&rsquo;s title changed.
+        This page compares two enclosed ant bait stations, both listed for
+        indoor and outdoor use. The Nippon twin pack suits most homes: two
+        pre-baited stations, with spinosad named by the maker. If ants are
+        getting in at several points, the NOPE! pack gives you six 5g stations.
       </p>
 
       {/* Comparison table */}
-      <h2 id="compared">The Three Compared</h2>
+      <h2 id="compared">The Two Compared</h2>
       <p>
         Every column below is what the Amazon listing itself states, with each
         claim attributed to the maker who makes it. Where a listing does not
@@ -382,10 +355,10 @@ export default function BestAntKillersPage() {
           </li>
           <li>
             <strong>The ants enter through a crack a station cannot sit at.</strong>{" "}
-            <a href="#best-gel" className="underline">
-              The gel
+            <a href="/best/ant-gel-bait" className="underline">
+              Our ant gel bait page
             </a>{" "}
-            is applied into the crack itself.
+            covers gels applied into the crack itself.
           </li>
           <li>
             <strong>You were about to buy a spray.</strong>{" "}
@@ -406,7 +379,7 @@ export default function BestAntKillersPage() {
       <div className="not-prose">
         <Callout type="warning">
           <p>
-            All three products are insecticides. Where each may be placed, at
+            Both products are insecticides. Where each may be placed, at
             what rate and with what precautions is set by its own label, and the
             label on the bottle governs over anything written here.
           </p>
@@ -444,15 +417,9 @@ export default function BestAntKillersPage() {
       {/* [1] Legal */}
       <h2 id="legal">What the Label Governs</h2>
       <p>
-        Each of the three is sold with a label that states where it may be
+        Each is sold with a label that states where it may be
         placed, at what rate, and what has to be kept away from it. That
         document governs; nothing on this page changes it.
-      </p>
-      <p>
-        One of the three is a US-market product. The Combat gel&rsquo;s own text
-        gives its size in ounces as well as grams, and its instructions are
-        written for a different market&rsquo;s conventions. Read its label
-        rather than assuming a UK equivalent.
       </p>
 
       {/* [2] Limits */}
@@ -488,16 +455,15 @@ export default function BestAntKillersPage() {
       <p>
         <strong>When the bait no longer attracts.</strong> It notes that baits
         can dry up or become rancid and unattractive over time, and that
-        stations should be checked and refreshed regularly. None of the three
-        listings here states a replacement interval in its detail rows.
+        stations should be checked and refreshed regularly. Neither listing
+        here states a replacement interval in its detail rows.
       </p>
 
       {/* [3] Criteria */}
       <h2 id="what-decides">What Decides the Choice</h2>
       <h3>1. Whether the listing names an active substance</h3>
       <p>
-        Two of the three do. Nippon names spinosad and Combat names fipronil.
-        The NOPE! six-pack describes a systemic insecticide with an insect
+        One of the two does: Nippon names spinosad. The NOPE! six-pack describes a systemic insecticide with an insect
         growth regulator in its text but names neither in its detail rows, and
         the comparison table below says so rather than guessing.
       </p>
@@ -515,7 +481,7 @@ export default function BestAntKillersPage() {
       </p>
       <h3>3. How many placements you actually need</h3>
       <p>
-        Two, six, or one syringe. UC IPM&rsquo;s outdoor spacing guidance is
+        Two or six. UC IPM&rsquo;s outdoor spacing guidance is
         every ten to twenty feet around a foundation, which is a Californian
         figure for a Californian garden and is quoted here only to show that the
         answer is a number of placements rather than a quantity of product.

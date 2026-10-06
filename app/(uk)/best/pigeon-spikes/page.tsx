@@ -157,7 +157,7 @@ const products: ProductRecord[] = [
     h2Name: "S4U Stainless Steel Bird Spikes",
     tocLabel: "Best Overall",
     tocName: "S4U Stainless Steel Spikes",
-    pick: "Twelve 304 stainless steel strips covering ten feet, with 60 screws.",
+    pick: "Best for a couple of sills and some coping: twelve 304 stainless steel strips.",
     blurb: "Our overall pick for a couple of sills and a length of coping. Twelve separate strips make up ten feet, so you cut nothing and place strips only where birds actually stand. The spikes are 304 stainless steel on a plastic base, and the base is pre-drilled for zip ties, screws or nails, with 60 screws in the pack.",
     pros: ["12 separate strips, listed as 10 feet", "304 stainless steel spikes", "Pre-drilled base, 60 screws supplied", "Listed for ledges, fences, rooftops and patios"],
   },
@@ -187,8 +187,8 @@ const products: ProductRecord[] = [
     h2Name: "Defender Wide Plastic Bird Spikes",
     tocLabel: "Best for Wide Ledges",
     tocName: "Defender Wide Plastic",
-    pick: "Wide plastic strips for ledges up to 20 cm deep, with a 15 year warranty.",
-    blurb: "For deep sills, parapets and copings. This is the only listing here that states a ledge depth, up to 20 cm. It is plastic, so it cannot rust into a stain down the brickwork, and you get fifteen 33.4 cm strips that snap into shorter sections. Fixings are not included, and the listing states a 15 year warranty.",
+    pick: "Best for deep sills and parapets: plastic strips for ledges up to 20 cm deep.",
+    blurb: "For deep sills, parapets and copings: this is the only listing here that states a ledge depth, up to 20 cm. It is plastic, so it cannot rust into a stain down the brickwork, and you get fifteen 33.4 cm strips that snap into shorter sections. Fixings are not included, and the listing states a 15 year warranty.",
     pros: ["Listed for ledges up to 20 cm deep", "15 strips, sold as a 5 metre pack", "Snaps into shorter sections", "15 year warranty stated on the listing"],
   },
   {
@@ -217,8 +217,8 @@ const products: ProductRecord[] = [
     h2Name: "Stainless Steel Bird Spikes (3m)",
     tocLabel: "Best 3m Coverage",
     tocName: "Stainless Steel Spikes (3m)",
-    pick: "Three metres of stainless steel in twelve 25 cm sections.",
-    blurb: "Steel at the standard length and nothing else. It comes as twelve 25 cm sections making three metres, sold under the Anytime Garden brand, and the sections can be divided for tight spaces. The listing names rooftops, ledges and fences, and says it is made in Europe.",
+    pick: "Best for a standard run in steel: three metres in twelve 25 cm sections.",
+    blurb: "Suits you if you want steel at the standard length. It comes as twelve 25 cm sections making three metres, sold under the Anytime Garden brand, and the sections can be divided for tight spaces. The listing names rooftops, ledges and fences, and says it is made in Europe.",
     pros: ["Stainless steel", "12 sections of 25 cm, 3 metres in all", "Divides for tight spaces", "Listed as made in Europe"],
   },
   {
@@ -245,8 +245,8 @@ const products: ProductRecord[] = [
     h2Name: "Stainless Steel Half Round Gutter Kit",
     tocLabel: "Best for Gutters",
     tocName: "Half Round Gutter Kit",
-    pick: "A half round kit shaped for guttering, where a flat strip will not sit.",
-    blurb: "Guttering is the one place a flat strip will not sit, because the surface is curved. This half round kit is made for that shape, listed at 150mm x 112mm x 1m in stainless steel. If birds are using the gutter and the sills, you need this and a flat strip. The listing carries no feature text beyond its title, so the card shows everything it states.",
+    pick: "Best for guttering: a half round stainless kit shaped for the curve.",
+    blurb: "Guttering is the one place a flat strip will not sit, because the surface is curved. This half round kit is made for that shape, listed at 150mm x 112mm x 1m in stainless steel. If birds are using the gutter and the sills, you need this and a flat strip.",
     pros: ["Half round profile for gutters", "Stainless steel, per the detail table", "Listed at 150mm x 112mm x 1m"],
   },
   {
@@ -275,7 +275,7 @@ const products: ProductRecord[] = [
     h2Name: "OFFO Stainless Steel Bird Spikes",
     tocLabel: "Best Stainless Steel Strips",
     tocName: "OFFO Stainless Steel Spikes",
-    pick: "A short 78 cm steel set for a single windowsill or balustrade.",
+    pick: "Best for a single windowsill: three steel pieces covering 78 cm.",
     blurb: "The short one, for a single windowsill or a short balustrade rather than a long run. Three pieces cover 78 cm, with 304 grade stainless steel spikes on a steel base. It is the only listing here that gives a pin layout: six pins per group across both directions, each spike 100mm long by 76mm wide.",
     pros: ["304 stainless steel on a steel base", "Three pieces covering 78 cm", "Six pins per group, both directions", "Listed for sills, balustrades and roof edges"],
   },
@@ -286,10 +286,9 @@ const products: ProductRecord[] = [
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    Fixing spikes over a nest that is in use can be an offence, and a listed
-    building may need consent first.{" "}
+    Spiking over a nest in use can be an offence, and listed buildings may need consent.{" "}
     <a href="#legal" className="underline">
-      The legal position on nests
+      The legal position
     </a>
     .
   </>
@@ -324,7 +323,7 @@ export default function BestPigeonSpikesPage() {
   return (
     <GuideLayout
       title="Best Pigeon Spikes UK 2026"
-      subtitle="Stainless steel and plastic spike strips for UK ledges, sills and gutters"
+      subtitle="Steel and plastic spike strips for pigeons that roost on sills, deep ledges and gutters, from a twelve-strip kit to a single-sill set"
       lastUpdated="September 2026"
       readingTime="6 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -386,9 +385,7 @@ export default function BestPigeonSpikesPage() {
       </div>
 
       <p>
-        Pigeons that settle on a ledge foul the surface they sit on and whatever
-        is below it. Spikes are the usual answer, and on the right surface they
-        work — but they only fix one of the two situations people buy them for.
+        Spikes are for pigeons that roost on a ledge, and the five sets here cover sills, deep ledges, gutters and short runs. The S4U steel kit suits a couple of sills and a length of coping. Choose the Defender plastic strips for ledges up to 20 cm deep, or the half round kit if birds are using the gutter. If birds are already nesting, read the legal position before you fit anything.
       </p>
 
       {/* [16] Comparison table */}

@@ -112,8 +112,8 @@ const products: ProductRecord[] = [
     h2Name: "Acana Hanging Moth Killer",
     tocLabel: "Best Overall",
     tocName: "Acana Hanging Moth Killer",
-    pick: "Four lavender hanging units, each with a date wheel and listed for up to 3 months.",
-    blurb: "Our overall pick for the wardrobe. You get four hanging units with lavender natural oils, each listed as lasting up to 3 months, and a date wheel on the front lets you see when you opened it. The maker claims it kills moths, eggs and larvae in wardrobes. The listing warns that lavender is a common allergen, so keep it off your skin and away from children and pets.",
+    pick: "For wardrobes: four lavender hanging units, each listed for up to 3 months.",
+    blurb: "Pick this for the wardrobe. You get four hanging units with lavender natural oils, each listed as lasting up to 3 months with a date wheel on the front to show when you opened it, and the maker claims it kills moths, eggs and larvae in wardrobes. The listing warns that lavender is a common allergen, so keep it off your skin and away from children and pets.",
     pros: ["Four hanging units in the pack", "Up to 3 months each, as listed", "Date wheel shows when each was opened", "Lavender fragrance"],
   },
   {
@@ -134,7 +134,7 @@ const products: ProductRecord[] = [
     h2Name: "London Moth Killer Pheromone Traps",
     tocLabel: "Best Pheromone Trap",
     tocName: "London Moth Killer Pheromone Traps",
-    pick: "Ten pheromone sticky traps to show whether clothes moths are about.",
+    pick: "If you're not sure you have clothes moths: ten pheromone sticky traps, 4 months each.",
     blurb: "Pick these if you want to know whether you have clothes moths, and where. The pack holds ten sticky traps with a pheromone for the common clothes moth, each listed as lasting 4 months once opened. They are listed for monitoring, attracting and holding adult moths, so pair them with something that treats the larvae.",
     pros: ["Ten traps in the pack", "4 months per trap once opened, as listed", "Pheromone for the common clothes moth"],
   },
@@ -155,8 +155,8 @@ const products: ProductRecord[] = [
     h2Name: "Acana Carpet & Fabric Moth Killer Spray",
     tocLabel: "Best Carpet Moth Spray",
     tocName: "Acana Carpet & Fabric Moth Killer Spray",
-    pick: "A 500ml spray for carpets, curtains and upholstery, listed for 25 sq metres.",
-    blurb: "The one to pick if the damage is in the carpet rather than the wardrobe. The 500ml bottle is listed for carpet, curtains and upholstery, at 25 sq metres per bottle. The maker claims it kills moths, eggs and larvae. No active substance is named on the listing, so read the label before you spray.",
+    pick: "For damage in carpets and curtains: a 500ml spray listed for 25 sq metres.",
+    blurb: "The one to pick if the damage is in your carpets, curtains or upholstery. The 500ml bottle is listed for those surfaces at 25 sq metres, and the maker claims it kills moths, eggs and larvae. No active substance is named on the listing, so read the label before you spray.",
     pros: ["Listed for carpet, curtains and upholstery", "25 sq metres per 500ml bottle, as listed", "Maker claims it kills moths, eggs and larvae"],
   },
   {
@@ -177,8 +177,8 @@ const products: ProductRecord[] = [
     h2Name: "Acana Sachet Moth Killer 16 Pack",
     tocLabel: "Best for Drawers & Storage",
     tocName: "Acana Sachet Moth Killer 16 Pack",
-    pick: "Lavender sachets for drawers, with an indicator that shows when each is spent.",
-    blurb: "Made for drawers and storage, where a hanging unit will not go. The listing says to use two per drawer, and each sachet is listed as lasting up to 3 months, with an indicator that displays \"end\". The maker claims it kills moths, eggs and larvae. The title says 16 sachets and the detail rows say 20, so plan on the lower figure.",
+    pick: "For drawers and storage: lavender sachets, two per drawer, with an \"end\" indicator.",
+    blurb: "Made for drawers and storage, where a hanging unit will not go. The listing says to use two per drawer, and each sachet is listed as lasting up to 3 months with an indicator that displays \"end\"; the maker claims it kills moths, eggs and larvae. The title says 16 sachets and the detail rows say 20, so plan on the lower figure.",
     pros: ["Two per drawer, as the listing directs", "Up to 3 months per sachet, as listed", "Indicator displays \"end\"", "Lavender scent"],
   },
   {
@@ -198,16 +198,16 @@ const products: ProductRecord[] = [
     h2Name: "Rentokil Moth Killer Hanging Unit Twin Pack",
     tocLabel: "Best Budget Option",
     tocName: "Rentokil Moth Killer Hanging Unit Twin Pack",
-    pick: "A Rentokil hanging moth killer, titled as a twin pack.",
-    blurb: "A hanging moth killer from Rentokil, titled as a twin pack. The listing carries no feature bullets and names no active substance. Its number of pieces reads 1 despite the title, so check the pack for what you are getting before you rely on it.",
+    pick: "For a wardrobe: a Rentokil hanging moth killer, titled as a twin pack.",
+    blurb: "A hanging moth killer from Rentokil for the wardrobe, titled as a twin pack. The listing carries no feature bullets and names no active substance, and its number of pieces reads 1, so check the pack before you buy.",
     pros: ["Hanging unit format", "Titled as a twin pack", "Target species listed as moth"],
   },
 ];
 
 const SAFETY_NOTE = (
   <>
-    Four of these are insecticides, so follow the label. Two Acana listings add
-    their own warnings on lavender allergy and on use around pets and children.{" "}
+    Four of these are insecticides: follow the label, and heed Acana&rsquo;s
+    warnings on lavender, pets and children.{" "}
     <a href="#legal" className="underline">
       The legal position
     </a>
@@ -230,7 +230,7 @@ export default function BestMothKillersPage() {
   return (
     <GuideLayout
       title="Best Moth Killers UK 2026 — Top 5"
-      subtitle="Hanging units, sachets, a spray and pheromone traps for UK homes, described by what their own listings state — and what the Natural History Museum says actually kills every stage"
+      subtitle="Moth killers for wardrobes, drawers and carpets, plus pheromone traps that show whether clothes moths are about, matched to where the damage is."
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -268,18 +268,11 @@ export default function BestMothKillersPage() {
       </div>
 
       <p>
-        The moth you see flying is not the one eating the jumper. The Natural
-        History Museum:{" "}
-        <em>
-          &ldquo;It is the immature larvae, rather than the adult moths, that
-          cause the damage to natural fibres such as woollen clothing,
-          upholstery, carpets and furs.&rdquo;
-        </em>{" "}
-        (
-        <a href={SRC.nhm} rel="nofollow">
-          Natural History Museum
-        </a>
-        ).
+        Here are five moth products for wardrobes, drawers and carpets. The
+        Acana hanging units are our overall pick for a wardrobe, with four in
+        the pack. If you are not sure you have clothes moths, the London Moth
+        Killer pheromone traps will show you, and the Acana spray and sachets
+        cover carpets and drawers.
       </p>
 
       {/* [16] Comparison table */}
@@ -312,6 +305,21 @@ export default function BestMothKillersPage() {
           </tbody>
         </table>
       </div>
+
+      <p>
+        The moth you see flying is not the one eating the jumper. The Natural
+        History Museum:{" "}
+        <em>
+          &ldquo;It is the immature larvae, rather than the adult moths, that
+          cause the damage to natural fibres such as woollen clothing,
+          upholstery, carpets and furs.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.nhm} rel="nofollow">
+          Natural History Museum
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

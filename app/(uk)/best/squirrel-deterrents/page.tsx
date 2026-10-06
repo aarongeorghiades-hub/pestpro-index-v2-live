@@ -117,13 +117,13 @@ const products: ProductRecord[] = [
       "Listed for seed blends and mixes; supplied with perches and mounting hardware",
       "Target species listed as bird; country of origin listed as China",
     ],
-    tableCells: ["Jacobi Jayne Squirrel Buster", "Feeder", "0.75 litre, as listed", "Weight-closing ports, per the maker"],
+    tableCells: ["Jacobi Jayne Squirrel Buster", "Feeder", "0.75 litre, as listed", "Weight-closing ports, per the maker", "Best Overall"],
     h2Label: "Best Overall",
     h2Name: "Jacobi Jayne Squirrel Buster Bird Feeder",
     tocLabel: "Best Overall",
     tocName: "Jacobi Jayne Squirrel Buster",
-    pick: "A metal feeder whose ports, the maker says, close under a squirrel's weight.",
-    blurb: "Our overall pick if squirrels are emptying your bird feeder. It holds 0.75 litres of seed in a metal and resin body, and the maker describes spring-loaded ports that close under the weight of a squirrel. It comes with perches and mounting hardware and is listed for seed blends and mixes. The \"100% Squirrel Proof\" line in its detail table is the maker's own claim.",
+    pick: "If squirrels empty your feeder: ports the maker says close under a squirrel's weight.",
+    blurb: "Suits you if squirrels are emptying your bird feeder. It holds 0.75 litres of seed in a metal and resin body, and the maker describes spring-loaded ports that close under the weight of a squirrel. Perches and mounting hardware come with it, and the \"100% Squirrel Proof\" line in its detail table is the maker's own claim.",
     pros: ["0.75 litre seed capacity, metal and resin", "Maker describes ports that close under a squirrel's weight", "Perches and mounting hardware supplied", "Maker says it adjusts to bar bigger birds"],
   },
   {
@@ -139,13 +139,13 @@ const products: ProductRecord[] = [
       "The maker describes it as plant-based and safe to use around children, pets and other wildlife",
       "Manufactured in Germany, as listed",
     ],
-    tableCells: ["RepellShield Squirrel Spray 250ml", "Scent spray", "Peppermint and geraniol, as listed", "Every 3–5 days, per the maker"],
+    tableCells: ["RepellShield Squirrel Spray 250ml", "Scent spray", "Peppermint and geraniol, as listed", "Every 3–5 days, per the maker", "Best Repellent Spray"],
     h2Label: "Best Repellent Spray",
     h2Name: "RepellShield Squirrel Repellent Spray",
     tocLabel: "Best Repellent Spray",
     tocName: "RepellShield Squirrel Spray",
-    pick: "A 250ml plant-based spray for gardens, lofts, patios and around feeders.",
-    blurb: "A small spray for the places a feeder cannot cover. The listing names peppermint and geraniol among its essential oils and lists it for gardens, lofts, patios and around bird feeders. The maker's direction is to reapply every 3 to 5 days, so expect it to be a regular job. It is made in Germany, and the maker describes it as plant-based.",
+    pick: "For lofts, patios and spots a feeder can't cover: a 250ml plant-based spray.",
+    blurb: "For the places a feeder cannot cover, the listing names gardens, lofts, patios and around bird feeders. It is a 250ml spray with peppermint and geraniol among its essential oils, made in Germany and described by the maker as plant-based. The maker says to reapply every 3 to 5 days, so expect a regular job.",
     pros: ["Peppermint and geraniol named on the listing", "Listed for gardens, lofts, patios and around feeders", "Maker describes it as plant-based", "250ml, made in Germany"],
   },
   {
@@ -161,14 +161,14 @@ const products: ProductRecord[] = [
       "The listing also states that at 40cm wide it keeps the food beneath it dry",
       "Target species listed as Bird",
     ],
-    tableCells: ["Selections Baffle, 2 pack", "Physical barrier", "40cm wide x 22cm high, as listed", "Blocks the route to a feeder"],
+    tableCells: ["Selections Baffle, 2 pack", "Physical barrier", "40cm wide x 22cm high, as listed", "Blocks the route to a feeder", "Best Baffle"],
     h2Label: "Best Baffle",
     h2Name: "Selections Squirrel Proof Bird Feeder Baffle",
     tocLabel: "Best Baffle",
     tocName: "Selections Baffle",
-    pick: "Two clear 40cm baffles, supplied with a hook and a pole attachment.",
-    blurb: "If you are happy with the feeders you already have, add a baffle. You get two, each 40cm wide and 22cm high, with a hanging hook and a pole attachment. The maker describes a slippery surface that denies a squirrel grip, and the listing adds that at 40cm wide it keeps the food beneath it dry.",
-    pros: ["Pack of two, 40cm wide x 22cm high", "Hook and pole attachment supplied", "Listing says it keeps the food beneath it dry", "Purely physical, with nothing to spray"],
+    pick: "To keep the feeders you have: two 40cm baffles with a hook and pole attachment.",
+    blurb: "Suits you if you are happy with the feeders you already have. You get two baffles, each 40cm wide and 22cm high, with a hanging hook and a pole attachment, and the maker describes a slippery surface that denies a squirrel grip. The listing adds that at 40cm wide it keeps the food beneath it dry.",
+    pros: ["Pack of two, 40cm wide x 22cm high", "Hook and pole attachment supplied", "Listing says it keeps the food beneath it dry"],
   },
   {
     anchorId: "best-food-treatment",
@@ -183,13 +183,13 @@ const products: ProductRecord[] = [
       "The maker describes the capsicum as harmless and palatable to wild birds while deterring squirrels",
       "Listed at 6 x 10 x 29 cm and 1 kg",
     ],
-    tableCells: ["The Big Cheese Hot Nuts 1L", "Taste treatment for food", "Capsicum chilli extract, orange oil", "Every 48 hours or on refill, per the maker"],
+    tableCells: ["The Big Cheese Hot Nuts 1L", "Taste treatment for food", "Capsicum chilli extract, orange oil", "Every 48 hours or on refill, per the maker", "Best Bird Food Treatment"],
     h2Label: "Best Bird Food Treatment",
     h2Name: "The Big Cheese Hot Nuts Deterrent Spray",
     tocLabel: "Best Bird Food Treatment",
     tocName: "Hot Nuts Deterrent Spray",
-    pick: "A litre of capsicum treatment that goes on the bird food itself.",
-    blurb: "This one goes on the food. It is a 1 litre ready-to-use treatment with natural orange oil and capsicum chilli extract named as the ingredients, and the listing says to apply it to bird food and feeders on each refill or at least every 48 hours. It is listed as poison-free, and the maker describes the capsicum as harmless and palatable to wild birds.",
+    pick: "To treat the bird food itself: a litre of capsicum and orange oil treatment.",
+    blurb: "Suits you if you would rather treat the bird food itself. It is a 1 litre ready-to-use treatment with natural orange oil and capsicum chilli extract, applied to food and feeders on each refill or at least every 48 hours. It is listed as poison-free, and the maker describes the capsicum as harmless and palatable to wild birds.",
     pros: ["1 litre, ready to use", "Orange oil and capsicum chilli extract, as listed", "Listed as poison-free", "Maker says it is palatable to wild birds"],
   },
   {
@@ -205,13 +205,13 @@ const products: ProductRecord[] = [
       "GOV.UK: it is an offence to release a grey squirrel, and one caught alive must be killed humanely",
       "The RSPCA says a live-catch trap must be checked several times a day",
     ],
-    tableCells: ["Kabalo live-catch cage trap", "Live-catch trap", "650 x 190 x 190 mm, as listed", "Release is unlawful for grey squirrels"],
+    tableCells: ["Kabalo live-catch cage trap", "Live-catch trap", "650 x 190 x 190 mm, as listed", "Release is unlawful for grey squirrels", "Best Live-Catch Trap"],
     h2Label: "Best Live-Catch Trap",
     h2Name: "Kabalo Metal Live-Catch Cage Trap",
     tocLabel: "Best Live-Catch Trap",
     tocName: "Kabalo Cage Trap",
-    pick: "A 650mm metal cage trap, if you accept what the law requires after a catch.",
-    blurb: "For a squirrel you need to catch. It is a 650mm metal cage with a finger guard on the carrying handle, listed for rats and squirrels, with no poison required. Read the legal section before you buy: the listing describes it as designed for live release, and GOV.UK states it is an offence to release a grey squirrel, which must be killed humanely if caught alive. The RSPCA says to check a live-catch trap several times a day.",
+    pick: "If you need to catch a squirrel and accept the legal duty: a 650mm metal cage.",
+    blurb: "For when you need to catch a squirrel. It is a 650mm metal cage with a finger guard on the carrying handle, listed for rats and squirrels, with no poison required. Read the legal section first: GOV.UK states it is an offence to release a grey squirrel, so one caught alive must be killed humanely, and the RSPCA says to check the trap several times a day.",
     pros: ["650 x 190 x 190 mm metal cage", "Finger guard on the carrying handle", "No poison required", "Listed for rats and squirrels"],
   },
 ];
@@ -251,8 +251,8 @@ const faqSchema = {
 // sections it points to sit on the page.
 const SAFETY_NOTE = (
   <>
-    It is an offence to release a grey squirrel you catch alive, and the RSPCA says
-    to check a live-catch trap several times a day.{" "}
+    Releasing a caught grey squirrel is an offence; check a live-catch trap
+    several times a day.{" "}
     <a href="#legal" className="underline">
       The legal position
     </a>
@@ -276,7 +276,7 @@ export default function BestSquirrelDeterrentsPage() {
   return (
     <GuideLayout
       title="Best Squirrel Deterrents UK 2026: Feeders, Baffles, Sprays & Traps"
-      subtitle="A weight-closing feeder, a baffle, two sprays and a cage trap, described by what their own listings state — beside what the law actually requires of anyone who traps a grey squirrel"
+      subtitle="Five options for squirrels at your bird feeders, from a feeder with weight-closing ports and a pole baffle to two sprays and a cage trap"
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -326,11 +326,12 @@ export default function BestSquirrelDeterrentsPage() {
       </div>
 
       <p>
-        Four of these five products are about food and access: a feeder that
-        closes under weight, a baffle that blocks the pole, and two sprays —
-        one for surfaces, one applied to the bird food itself. The fifth is a
-        cage trap, and it comes with a legal obligation its own listing gets
-        wrong.
+        Five products for squirrels at a bird feeder. If they are emptying
+        yours, the Squirrel Buster is a metal feeder whose ports the maker says
+        close under a squirrel&rsquo;s weight, and the Selections baffles fit
+        the feeders you already have. The RepellShield spray is listed for
+        gardens, lofts and patios, and the cage trap comes with legal duties
+        you should read first.
       </p>
 
       {/* Comparison table */}
@@ -348,6 +349,7 @@ export default function BestSquirrelDeterrentsPage() {
               <th className="text-left p-2 border-b font-semibold">Type</th>
               <th className="text-left p-2 border-b font-semibold">Ingredients or size, as listed</th>
               <th className="text-left p-2 border-b font-semibold">What it turns on</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
           </thead>
           <tbody>

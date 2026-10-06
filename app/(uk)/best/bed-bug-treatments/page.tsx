@@ -112,13 +112,13 @@ const products: ProductRecord[] = [
       "Listed as non-staining and low-odour, for application to bed frames and mattresses",
       "Target species listed as Bed Bugs; country of origin United Kingdom",
     ],
-    tableCells: ["Pest Expert Formula C+ 2 x 1L", "Spray", "Three actives incl. an IGR, per the maker", "50 m² per application, per the maker"],
+    tableCells: ["Pest Expert Formula C+ 2 x 1L", "Spray", "Three actives incl. an IGR, per the maker", "50 m² per application, per the maker", "Best Overall"],
     h2Label: "Best Overall",
     h2Name: "Pest Expert Formula C+ Bed Bug Killer Spray 2 x 1L",
     tocLabel: "Best Overall",
     tocName: "Pest Expert Formula C+ Spray",
-    pick: "Two litres of ready-to-use spray, listed for bed frames and mattresses.",
-    blurb: "Our overall pick, and the one to start with if you are treating a bedroom yourself. You get two 1 litre bottles of ready-to-use, water-based spray, listed for bed frames and mattresses and as non-staining and low-odour. The maker states three actives including an insect growth regulator, and 50 square metres per application.",
+    pick: "For treating a bedroom yourself: 2 x 1L ready-to-use spray for frames and mattresses.",
+    blurb: "Start here if you are treating a bedroom yourself. You get two 1 litre bottles of ready-to-use, water-based spray, listed for bed frames and mattresses and as non-staining and low-odour. The maker states three actives including an insect growth regulator, and 50 square metres per application.",
     pros: ["2 x 1L, ready to use and water-based", "Listed for bed frames and mattresses", "Non-staining and low-odour, as listed", "50 m² per application, per the maker"],
   },
   {
@@ -134,12 +134,12 @@ const products: ProductRecord[] = [
       "The listing names areas around power points as a use case",
       "Target species listed as Bed Bug; country of origin United Kingdom",
     ],
-    tableCells: ["Pest Expert Formula P 300g", "Powder", "Permethrin, as listed", "Coverage not stated"],
+    tableCells: ["Pest Expert Formula P 300g", "Powder", "Permethrin, as listed", "Coverage not stated", "Best Powder"],
     h2Label: "Best Powder",
     h2Name: "Pest Expert Formula P Bed Bug Killer Powder 300g",
     tocLabel: "Best Powder",
     tocName: "Pest Expert Formula P Powder",
-    pick: "A 300g permethrin powder, listed for use around power points.",
+    pick: "For places a spray should not go, like power points: a 300g permethrin powder.",
     blurb: "A powder for the places a spray should not go, such as around power points, which the listing names as a use. It names its active, permethrin, and comes as 300g for direct application to bed frames, carpets, mattresses and bedding. The listing gives no coverage figure.",
     pros: ["Active named on the listing: permethrin", "Listed for bed frames, carpets, mattresses and bedding", "Listed for use around power points"],
   },
@@ -156,13 +156,13 @@ const products: ProductRecord[] = [
       "Listed as machine washable and tumble dryable",
       "No insecticide: this is a barrier, not a treatment",
     ],
-    tableCells: ["Utopia Bedding encasement, single", "Encasement", "None — barrier only", "90 x 190 x 30 cm, as listed"],
+    tableCells: ["Utopia Bedding encasement, single", "Encasement", "None — barrier only", "90 x 190 x 30 cm, as listed", "Best Prevention"],
     h2Label: "Best Prevention",
     h2Name: "Utopia Bedding Waterproof Mattress Encasement",
     tocLabel: "Best Prevention",
     tocName: "Utopia Bedding Encasement",
-    pick: "A washable single encasement that zips shut on all six sides.",
-    blurb: "A barrier for the mattress, and it carries no insecticide. This single cover measures 90 x 190 x 30 cm, zips closed on all six sides, and is polyester with a TPU backing. The maker describes the zip as protecting from even the tiniest of the bed bugs. You can machine wash it and tumble dry it.",
+    pick: "To seal a single mattress: a washable encasement that zips shut on all six sides.",
+    blurb: "For sealing a single mattress inside a zipped barrier. This cover measures 90 x 190 x 30 cm, zips closed on all six sides, and is polyester with a TPU backing, and the maker describes the zip as protecting from even the tiniest of the bed bugs. You can machine wash it and tumble dry it. It carries no insecticide.",
     pros: ["Zip closes all six sides", "Single, 90 x 190 x 30 cm, as listed", "Machine washable and tumble dryable", "Polyester with a TPU backing"],
   },
 ];
@@ -202,10 +202,9 @@ const faqSchema = {
 // sit below the picks.
 const SAFETY_NOTE = (
   <>
-    For bedbugs the NHS points you to your council or a pest control service
-    first, and each insecticide here is used only as its label says.{" "}
-    <a href="#situation" className="underline">
-      What the NHS says to do first
+    The spray and powder are insecticides. Use each only as its label says.{" "}
+    <a href="#legal" className="underline">
+      What the label governs
     </a>
     .
   </>
@@ -227,7 +226,7 @@ export default function BestBedBugTreatmentsPage() {
   return (
     <GuideLayout
       title="Best Bed Bug Treatments UK 2026: Sprays, Powders &amp; Encasements"
-      subtitle="A spray, a powder and a mattress encasement, described by what their own listings state — beside the NHS position that getting rid of bedbugs yourself is very difficult"
+      subtitle="A bed bug spray, a permethrin powder and a zipped single mattress encasement, for treating a bedroom and sealing the mattress"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -275,11 +274,11 @@ export default function BestBedBugTreatmentsPage() {
       </div>
 
       <p>
-        Three products: a spray, a powder and a zipped mattress encasement. Two
-        are insecticides and one is a barrier. Before any of them there is an
-        NHS position on this particular pest that is worth reading, because it
-        is more discouraging about self-treatment than most product pages will
-        tell you.
+        This page compares three bed bug products. The Formula C+ spray is the
+        overall pick if you are treating a bedroom yourself, with two litres
+        listed for bed frames and mattresses. The Formula P powder goes where a
+        spray should not, such as around power points. The Utopia encasement
+        zips a single mattress shut on all six sides and carries no insecticide.
       </p>
 
       {/* Comparison table */}
@@ -297,6 +296,7 @@ export default function BestBedBugTreatmentsPage() {
               <th className="text-left p-2 border-b font-semibold">Type</th>
               <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
               <th className="text-left p-2 border-b font-semibold">Coverage or size, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
           </thead>
           <tbody>
@@ -312,6 +312,14 @@ export default function BestBedBugTreatmentsPage() {
           </tbody>
         </table>
       </div>
+      <p>
+        For bedbugs, the NHS advises contacting your local council or a pest
+        control service first (
+        <a href={SRC.nhs} rel="nofollow">
+          NHS
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>

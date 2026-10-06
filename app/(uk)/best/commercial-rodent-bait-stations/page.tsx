@@ -130,8 +130,8 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula B+ 3kg + Bait Stations",
     tocLabel: "Best Large Infestation Kit",
     tocName: "Pest Expert Formula B+ 3kg",
-    pick: "3kg of brodifacoum grain bait and two lockable bait boxes, in one order.",
-    blurb: "Our top pick for premises where the survey found a large problem. You get two lockable bait boxes and 3kg of grain bait, with the active listed as brodifacoum at 0.0029%, so the stations and plenty of refills arrive together. The listing names mouse and rat, indoors and out. It states the sachet count two ways, 30 x 100g and 20 x 60g, so check the pack when it arrives.",
+    pick: "Best for a large infestation: 3kg of brodifacoum grain bait with two lockable boxes.",
+    blurb: "This suits premises where the survey found a large problem. You get two lockable bait boxes and 3kg of grain bait, brodifacoum at 0.0029%, listed for mouse and rat, indoors and out. The listing gives the sachet count two ways, 30 x 100g and 20 x 60g, so check the pack when it arrives.",
     pros: ["3kg of grain bait with two lockable boxes", "Brodifacoum 0.0029%, as listed", "Listed for indoor and outdoor use", "Target species: mouse and rat"],
   },
   {
@@ -151,8 +151,8 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula B+ 2kg + 2 Bait Station Boxes",
     tocLabel: "Best Medium Premises Kit",
     tocName: "Pest Expert Formula B+ 2kg",
-    pick: "Two lockable stations with 2kg of grain bait in 20 x 100g sachets.",
-    blurb: "A step down in size for a medium premises. Two lockable bait stations come with 2kg of grain bait in 20 x 100g sachets, active brodifacoum at 0.0029%. The listing names residential and commercial use, indoors and outdoors.",
+    pick: "Best for a medium premises: two lockable stations and 2kg of grain bait in 100g sachets.",
+    blurb: "A step down in size for a medium premises. Two lockable bait stations come with 2kg of grain bait in 20 x 100g sachets, brodifacoum at 0.0029%, listed for residential or commercial use indoors and outdoors.",
     pros: ["2kg of grain bait in 20 x 100g sachets", "Two lockable bait stations", "Brodifacoum 0.0029%, as listed", "Listed for residential or commercial use"],
   },
   {
@@ -172,8 +172,8 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula B+ Block Kit 1.5kg (75 Blocks + 2 Stations)",
     tocLabel: "Best Starter Kit",
     tocName: "Pest Expert Formula B+ 1.5kg",
-    pick: "75 bait blocks and two lockable boxes, for a minor to moderate rat problem, as listed.",
-    blurb: "A starter kit for a smaller job. It has two lockable bait boxes and 75 blocks of 20g, listed as 1.5kg in 5 x 300g packs, with brodifacoum at 0.0025%. The listing itself scopes it to a minor or moderate rat infestation, which is a fair guide to whether it is enough for your site.",
+    pick: "Best for a smaller rat job: 75 bait blocks and two lockable boxes.",
+    blurb: "A starter kit for a smaller job. It has two lockable bait boxes and 75 blocks of 20g, listed as 1.5kg in 5 x 300g packs, with brodifacoum at 0.0025%. The listing scopes it to a minor or moderate rat infestation, so use that as your guide to whether it is enough.",
     pros: ["75 x 20g blocks and two lockable boxes", "Brodifacoum 0.0025%, as listed", "Scoped to a minor or moderate infestation"],
   },
   {
@@ -194,8 +194,8 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Pro Quality Tamper-Resistant Bait Box",
     tocLabel: "Best Professional Grade",
     tocName: "Roshield Pro Quality",
-    pick: "Two empty boxes with an inspection window and key-only access, made in the UK.",
-    blurb: "The pick if you already hold bait and want boxes you can look into without unlocking. These two Roshield boxes have an inspection window and key-only access, and the listing says they take wax blocks, wheat bait, pasta sachets and traps. No bait is included. The listing states they are made in the UK from recycled plastics.",
+    pick: "Best if you already hold bait: two boxes with an inspection window and key-only access.",
+    blurb: "Pick these if you already hold bait and want boxes you can check without unlocking. The two Roshield boxes have an inspection window and key-only access, and the listing says they take wax blocks, wheat bait, pasta sachets and traps. They are listed as made in the UK from recycled plastics, and no bait is included.",
     pros: ["Inspection window, as listed", "Key-only access", "Takes blocks, wheat bait, pasta sachets and traps", "Made in the UK from recycled plastics, as listed"],
   },
   {
@@ -215,8 +215,8 @@ const products: ProductRecord[] = [
     h2Name: "The Big Cheese Rat & Mouse Bait Station",
     tocLabel: "Best Value Multi-Pack",
     tocName: "The Big Cheese",
-    pick: "Three stations with 900g of difenacoum bait, ready to put down.",
-    blurb: "Three stations and 900g of bait in one pack, so you can cover several runs straight away. The active is listed as difenacoum, and the stations are listed as moisture resistant for indoor and outdoor use. The listing also notes that a station must be used by law when baiting for rats and mice.",
+    pick: "Best for covering several runs at once: three stations with 900g of difenacoum bait.",
+    blurb: "Three stations and 900g of bait in one pack, so you can cover several runs straight away. The active is listed as difenacoum, and the stations are listed as moisture resistant for indoor and outdoor use. The listing notes that a station must be used by law when baiting for rats and mice.",
     pros: ["Three stations with 900g of bait", "Difenacoum, as listed", "Moisture resistant, for indoor and outdoor use"],
   },
   {
@@ -236,7 +236,7 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Heavy Duty Bait Boxes (x4)",
     tocLabel: "Best Multi-Pack",
     tocName: "Pest Expert Heavy Duty (x4)",
-    pick: "Four lockable, weather-resistant boxes for the bait you already have.",
+    pick: "Best for a site with many runs: four lockable, weather-resistant boxes, bait not included.",
     blurb: "Four boxes in one pack, for a site with more runs to cover. They are listed as fully lockable and weather resistant, for indoor and outdoor use, and as taking grain, blocks and paste. They arrive empty, so pair them with the bait you already use.",
     pros: ["Four boxes in one pack", "Fully lockable and weather resistant, as listed", "Takes grain, blocks and paste", "For indoor and outdoor use"],
   },
@@ -258,8 +258,8 @@ const products: ProductRecord[] = [
     h2Name: "Mice&Co 2x Large Professional Bait Boxes",
     tocLabel: "Best Budget Professional",
     tocName: "Mice&Co 2x Large",
-    pick: "Two large polypropylene boxes with keys, a metal bait rod and a two-entrance tunnel.",
-    blurb: "Two large boxes with two keys, for a reader who wants a simple pair of stations. The listing says they take blocks, grain or paste on an internal metal rod, and each has a two-entrance tunnel. They are listed as polypropylene and weather-resistant, for indoor and outdoor use. Bait is not included.",
+    pick: "Best for a simple pair of stations: two large boxes with keys and an internal bait rod.",
+    blurb: "Two large boxes with two keys, if you want a simple pair of stations. The listing says they take blocks, grain or paste on an internal metal rod, each has a two-entrance tunnel, and they are polypropylene and weather-resistant for indoor and outdoor use. Bait is not included.",
     pros: ["Two boxes with two keys", "Internal metal rod for blocks, grain or paste", "Two-entrance tunnel", "Weather-resistant polypropylene, as listed"],
   },
   {
@@ -280,8 +280,8 @@ const products: ProductRecord[] = [
     h2Name: "Roshield PRO BOX 2x Extra Large with Solid Lid",
     tocLabel: "Best for Monitoring",
     tocName: "Roshield PRO BOX Solid Lid",
-    pick: "Two extra-large stations with a solid lid the listing calls secure for inspection.",
-    blurb: "Two extra-large stations with a solid lid, which the listing describes as secure and made for inspection. Each measures 26 x 19 x 12 cm, and the listing names mice and rats, indoors and outdoors. Bait is not included, so fill them with what your survey calls for.",
+    pick: "Best for regular inspection: two extra-large stations with a secure solid lid.",
+    blurb: "These suit you if you plan to inspect your stations often. The two extra-large boxes have a solid lid the listing describes as secure and made for inspection, measure 26 x 19 x 12 cm, and are listed for mice and rats, indoors and outdoors. Bait is not included, so fill them with what your survey calls for.",
     pros: ["Two extra-large stations", "Secure solid lid for inspection, as listed", "26 x 19 x 12 cm, as listed", "For indoor and outdoor use"],
   },
   {
@@ -302,18 +302,18 @@ const products: ProductRecord[] = [
     h2Name: "Roshield External Bait Box + 300g Wax Blocks",
     tocLabel: "Best Station + Bait Kit",
     tocName: "Roshield External Bait Box + 300g Wax Blocks",
-    pick: "One station with 300g of bromadiolone wax blocks and an HSE number on the listing.",
-    blurb: "The smallest kit here, for a small or emerging infestation, which is how the listing scopes it. You get one station and 300g of wax blocks, with bromadiolone at 0.0025% and HSE number UK-2016-0986-0007 on the listing. It lets you start on a single run before you know whether you need more.",
+    pick: "Best for a small or emerging problem: one station with 300g of bromadiolone wax blocks.",
+    blurb: "This is the smallest kit here, scoped by the listing to a small or emerging infestation. You get one station and 300g of wax blocks, bromadiolone at 0.0025%, with HSE number UK-2016-0986-0007 on the listing. It lets you start on a single run before you know whether you need more.",
     pros: ["One station with 300g of wax blocks", "Bromadiolone 0.0025%, as listed", "HSE number shown on the listing", "Scoped to a small or emerging infestation"],
   },
 ];
 
 const SAFETY_NOTE = (
   <>
-    Four kits contain anticoagulant rodenticide. HSE says professional users must
-    follow a UK stewardship regime, and every bait goes in a lockable station.{" "}
+    Anticoagulant bait goes in lockable stations, and staff baiting at work
+    must follow a stewardship regime.{" "}
     <a href="#legal" className="underline">
-      The legal position for a business
+      The legal position
     </a>
     .
   </>
@@ -334,7 +334,7 @@ export default function BestCommercialRodentBaitStationsPage() {
   return (
     <GuideLayout
       title="Best Commercial Rodent Bait Stations UK 2026: Tamper-Proof Stations"
-      subtitle="Lockable rodent bait stations and station-plus-bait kits for UK premises — nine compared on what their listings state, with the stewardship rules that bind a business using them"
+      subtitle="Lockable bait stations and station-and-bait kits for UK businesses, from a 3kg kit for a large infestation to a single station for a small one."
       lastUpdated="September 2026"
       readingTime="9 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -384,10 +384,11 @@ export default function BestCommercialRodentBaitStationsPage() {
       </div>
 
       <p>
-        A bait station is a lockable box that holds rodenticide where a rat or
-        mouse can reach it and nothing else can. Five of the nine products here
-        are empty boxes; four arrive with bait, and for a business the bait is
-        where the rules bite.
+        These nine picks are for businesses baiting for rats and mice. If you
+        need bait and boxes together, the Pest Expert 3kg kit suits a large
+        infestation and the 2kg kit a medium premises. If you already hold
+        bait, the Roshield and Pest Expert boxes come empty, in packs of two or
+        four.
       </p>
 
       {/* Comparison table */}

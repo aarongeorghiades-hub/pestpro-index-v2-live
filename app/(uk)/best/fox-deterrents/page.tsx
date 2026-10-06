@@ -121,13 +121,13 @@ const products: ProductRecord[] = [
       "Listed for lawns, trees, shrubs, seeds, bulbs and hard surfaces; outdoor use",
       "The listing also names badgers, cats, deer, mink and rabbits",
     ],
-    tableCells: ["Scoot Fox Repellent 100g", "Scent, applied to ground", "Aluminium ammonium sulphate", "Up to 34 sqm, per the maker"],
+    tableCells: ["Scoot Fox Repellent 100g", "Scent, applied to ground", "Aluminium ammonium sulphate", "Up to 34 sqm, per the maker", "Best Scent Repellent"],
     h2Label: "Best Scent Repellent",
     h2Name: "Scoot Fox Repellent Concentrate",
     tocLabel: "Best Scent Repellent",
     tocName: "Scoot Fox Repellent",
-    pick: "A 100g scent concentrate the listing puts at up to 34 sqm of garden.",
-    blurb: "For the patch of ground the fox visits most. The 100g pack comes as two sachets, listed as treating up to 34 sqm of lawn, beds or hard surfaces, and it names aluminium ammonium sulphate as the active. The maker describes it as creating an artificial scentmark in the problem fox's territory. Because the active is named, you can check it against the legal point on this page.",
+    pick: "For the patch a fox visits most: a 100g scent concentrate listed for up to 34 sqm.",
+    blurb: "Suits the patch of ground the fox visits most, whether lawn, beds or hard surfaces. The 100g pack comes as two sachets listed as treating up to 34 sqm, with aluminium ammonium sulphate named as the active, and the maker describes it as creating an artificial scentmark in the problem fox's territory. Because the active is named, you can check it against the legal point on this page.",
     pros: ["Two sachets in 100g, listed for up to 34 sqm", "Active named on the listing: aluminium ammonium sulphate", "Listed for lawns, trees, shrubs, seeds, bulbs and hard surfaces"],
   },
   {
@@ -143,13 +143,13 @@ const products: ProductRecord[] = [
       "Adjustable sensitivity, as listed; 2 year warranty",
       "Listed at 20 x 7 x 71 cm and 0.7 kg",
     ],
-    tableCells: ["PestBye Jet Spray Repeller", "Water, motion-triggered", "None — water only", "At least 100 sqm, per the maker"],
+    tableCells: ["PestBye Jet Spray Repeller", "Water, motion-triggered", "None — water only", "At least 100 sqm, per the maker", "Best Motion Sprinkler"],
     h2Label: "Best Motion Sprinkler",
     h2Name: "PestBye Jet Spray Motion-Activated Repeller",
     tocLabel: "Best Sprinkler",
     tocName: "PestBye Jet Spray",
-    pick: "A hose-fed sprinkler that fires a 5-second burst of water when its sensor triggers.",
-    blurb: "Pick this if you want nothing on the ground but water. It connects to your garden hose, runs on batteries and fires a 5-second burst each time its sensor triggers, then resets itself. The maker states a range of up to 10m across a 120-degree arc, covering at least 100 sqm. You can adjust the sensitivity.",
+    pick: "If you want only water on the ground: a hose-fed sprinkler with a 5-second burst.",
+    blurb: "Pick this if you want nothing on the ground but water. It connects to your garden hose, runs on batteries and fires a 5-second burst each time its sensor triggers, then resets itself; the maker states a range of up to 10m across a 120-degree arc, covering at least 100 sqm. You can adjust the sensitivity.",
     pros: ["Water only, from your garden hose", "Maker states up to 10m across a 120-degree arc", "Adjustable sensitivity, and it resets itself", "2 year warranty, as listed"],
   },
   {
@@ -165,13 +165,13 @@ const products: ProductRecord[] = [
       "The listing calls it both welded and hexagonal — its title says welded, its description says Hexagonal Welded Wire Mesh Roll",
       "The detail table carries a different ASIN, B0C8NLCKJK — a variant listing",
     ],
-    tableCells: ["Galvanised welded mesh 0.6 x 5m", "Physical barrier", "None", "0.6m x 5m, 25mm holes, as listed"],
+    tableCells: ["Galvanised welded mesh 0.6 x 5m", "Physical barrier", "None", "0.6m x 5m, 25mm holes, as listed", "Best Mesh"],
     h2Label: "Best Mesh",
     h2Name: "Galvanised Welded Wire Mesh, 25mm Holes",
     tocLabel: "Best Mesh",
     tocName: "Galvanised Welded Mesh",
-    pick: "A 5m roll of galvanised mesh with 25mm holes that you cut to fit.",
-    blurb: "The physical option, if you would rather block a gap than treat it. It is a 0.6m by 5m roll of galvanised steel with 25mm holes and 0.7mm wire, and the listing says you can cut and bend it with wire cutters. The listing calls it welded in one place and hexagonal in another, so look closely at which you are getting. The RSPCA suggestion quoted on this page is for holes of at least 4cm.",
+    pick: "For blocking a gap: a 5m roll of galvanised mesh with 25mm holes that you cut to fit.",
+    blurb: "The physical option, for when you want to block a gap. It is a 0.6m by 5m roll of galvanised steel with 25mm holes and 0.7mm wire, which the listing says you can cut and bend with wire cutters. The RSPCA suggestion quoted on this page is for holes of at least 4cm.",
     pros: ["0.6m x 5m roll with 25mm x 25mm holes", "Galvanised steel, 0.7mm wire", "Cuts and bends with wire cutters, per the listing", "Listed for indoor or outdoor use"],
   },
 ];
@@ -208,8 +208,8 @@ const faqSchema = {
 
 const SAFETY_NOTE = (
   <>
-    Foxes are protected. Harming one is illegal, and so is using any substance as a
-    deterrent that has not been approved for that use.{" "}
+    Foxes are protected: never harm one, and use only substances approved as
+    deterrents.{" "}
     <a href="#legal" className="underline">
       The legal position
     </a>
@@ -233,7 +233,7 @@ export default function BestFoxDeterrentsPage() {
   return (
     <GuideLayout
       title="Best Fox Deterrents UK 2026 &mdash; Scent, Sprinkler & Mesh"
-      subtitle="A scent concentrate, a motion-activated sprinkler and a roll of galvanised mesh, described by what their own listings state — beside what the law allows and what the RSPCA suggests doing first"
+      subtitle="A scent concentrate, a hose-fed motion sprinkler and a roll of galvanised mesh for foxes in the garden, and the spot each one suits."
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -284,11 +284,11 @@ export default function BestFoxDeterrentsPage() {
       </div>
 
       <p>
-        Three things: a scent concentrate applied to the ground, a sprinkler
-        that fires when something moves, and a roll of galvanised mesh. Two ask
-        a fox to go elsewhere and one is a physical barrier. Before any of
-        them, there is a legal line and a piece of RSPCA advice that costs
-        nothing.
+        Here are three products for a garden that foxes visit. Scoot is a scent
+        concentrate the maker says creates an artificial scentmark, listed for
+        up to 34 sqm; pick it for a lawn or a bed. The PestBye sprinkler suits
+        you if you want only water from your hose, fired by a motion sensor.
+        The galvanised mesh is the physical option for blocking a gap.
       </p>
 
       {/* Comparison table */}
@@ -306,6 +306,7 @@ export default function BestFoxDeterrentsPage() {
               <th className="text-left p-2 border-b font-semibold">Type</th>
               <th className="text-left p-2 border-b font-semibold">Active, as listed</th>
               <th className="text-left p-2 border-b font-semibold">Area or size, as listed</th>
+              <th className="text-left p-2 border-b font-semibold">Award</th>
             </tr>
           </thead>
           <tbody>

@@ -114,8 +114,8 @@ const products: ProductRecord[] = [
     h2Name: "Indorex Household Flea Spray 500ml",
     tocLabel: "Best Overall",
     tocName: "Indorex Household Flea Spray",
-    pick: "A growth-regulator spray listed for a 3-4 bedroom house per can.",
-    blurb: "Our overall pick, because it carries a growth regulator for flea eggs and larvae. The listing names permethrin alongside pyriproxyfen, and the maker claims up to 12 months prevention of egg and larvae development. One 500ml can is listed for approximately a 3-4 bedroom house. Clear the room of pets, birds and fish aquaria before you spray.",
+    pick: "For fleas through the whole house: a growth-regulator spray, one can per 3-4 bedrooms.",
+    blurb: "Pick this if fleas have spread through the house: the listing pairs the growth regulator pyriproxyfen with permethrin, and the maker claims up to 12 months prevention of egg and larvae development. One 500ml can is listed for approximately a 3-4 bedroom house. Clear the room of pets, birds and fish aquaria before you spray.",
     pros: ["Growth regulator pyriproxyfen listed with permethrin", "Maker claims up to 12 months prevention of egg and larvae development", "One 500ml can listed for a 3-4 bedroom house", "Pet and ventilation directions set out on the listing"],
   },
   {
@@ -136,8 +136,8 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Home Flea Powder 300g",
     tocLabel: "Best Powder",
     tocName: "Zero In Home Flea Powder",
-    pick: "A permethrin puffer powder for carpets, rugs and pet bedding.",
-    blurb: "A good fit if you want to treat a smaller patch, such as the pet's bed or one rug. The 300g puffer pack contains permethrin and is listed as treating up to 10 sq m of carpet, pet bedding, rugs and soft furnishings. You shake it on and vacuum it off. The listing says it kills cat and dog fleas and their larvae.",
+    pick: "For a pet bed or a single rug: a permethrin puffer powder listed for up to 10 sq m.",
+    blurb: "A good fit if you want to treat a smaller patch, such as the pet's bed or one rug. The 300g puffer pack contains permethrin and is listed for up to 10 sq m of carpet, pet bedding, rugs and soft furnishings; you shake it on and vacuum it off. The listing says it kills cat and dog fleas and their larvae.",
     pros: ["Puffer pack that shakes straight onto fabric", "Permethrin, per the listing", "Listed for carpets, pet bedding, rugs and soft furnishings", "Listed as killing cat and dog fleas and their larvae"],
   },
   {
@@ -158,8 +158,8 @@ const products: ProductRecord[] = [
     h2Name: "Beaphar Household Flea Powder 300g",
     tocLabel: "Best Pet Brand",
     tocName: "Beaphar Household Flea Powder",
-    pick: "A 300g powder listed for up to 30 m² in an active infestation.",
-    blurb: "Pick this when the problem has spread across a room or more. The 300g pack is listed as covering up to 30 m² when treating an active infestation, three times the stated reach of the Zero In powder. You sprinkle it, leave it at least 30 minutes, then vacuum. The listing names no active substance and says it is not for use on animals, clothing or human bedding.",
+    pick: "For fleas across a room or more: a 300g powder listed for up to 30 m².",
+    blurb: "Pick this when fleas have spread across a room or more: the 300g pack is listed as covering up to 30 m² in an active infestation. You sprinkle it, leave it at least 30 minutes, then vacuum. The listing names no active substance and says it is not for use on animals, clothing or human bedding.",
     pros: ["Listed for up to 30 m² in an active infestation", "Listed as killing adult fleas and flea larvae", "Sprinkle, wait at least 30 minutes, then vacuum", "Safety warning set out on the listing"],
   },
   // S68 R5 — the fogger the title promises. Banked body (S45-C), fetched 2026-09-01;
@@ -183,16 +183,16 @@ const products: ProductRecord[] = [
     h2Name: "Zero In Natural Flea Bomb 150ml",
     tocLabel: "Best Room Fogger",
     tocName: "Zero In Natural Flea Bomb",
-    pick: "A one-shot pyrethrins fogger listed for a room of up to 40 m³.",
-    blurb: "The fogger for when you want to treat a whole room in one go. It is a 150ml one-shot aerosol with pyrethrins listed as the active, for a room of up to 40 m³. You press the trigger to lock it, leave the room and let the can discharge. It is listed for carpets, rugs and bedding; the listing does not say whether the fog reaches under furniture.",
+    pick: "For treating one room in one go: a pyrethrins one-shot fogger listed for up to 40 m³.",
+    blurb: "The fogger for when you want to treat a whole room in one go. It is a 150ml one-shot aerosol with pyrethrins listed as the active, for a room of up to 40 m³, and you lock the trigger and leave while the can discharges. It is listed for carpets, rugs and bedding; the listing does not say whether the fog reaches under furniture.",
     pros: ["One-shot 150ml can, listed for a room of up to 40 m³", "Pyrethrins listed as the active", "Listed for carpets, rugs and bedding", "Country of origin listed as United Kingdom"],
   },
 ];
 
 const SAFETY_NOTE = (
   <>
-    None of these goes on an animal. Treat the pet with your vet&rsquo;s advice and
-    use these on the home.{" "}
+    These products are for the home, never the animal. Treat your pet on a
+    vet&rsquo;s advice.{" "}
     <a href="#situation" className="underline">
       The pet comes first
     </a>
@@ -201,7 +201,7 @@ const SAFETY_NOTE = (
 );
 
 const tocItems = [
-  { id: "compared", title: "The Three Products Compared" },
+  { id: "compared", title: "The Four Products Compared" },
   ...products.map((p) => ({ id: p.anchorId, title: `${p.tocLabel} — ${p.tocName}` })),
   { id: "situation", title: "The Pet Comes First" },
   { id: "legal", title: "The Legal Position on Home Insecticides" },
@@ -215,7 +215,7 @@ export default function BestFleaTreatmentsPage() {
   return (
     <GuideLayout
       title="Best Flea Treatments UK 2026: Sprays, Powders & Foggers"
-      subtitle="One household spray and two powders for UK homes, described by what their own listings state, and what the published guidance says has to happen before any of them is used"
+      subtitle="Four flea products for carpets, bedding and furnishings, from a whole-house spray to a one-room fogger, matched to the size of your problem."
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -254,22 +254,16 @@ export default function BestFleaTreatmentsPage() {
       </div>
 
       <p>
-        A household flea product treats the house. It does not treat the animal
-        the fleas are living on, and the University of Kentucky is plain about
-        where they live:{" "}
-        <em>
-          &ldquo;Adult fleas spend most of their time on the dog or cat, not in
-          the carpet.&rdquo;
-        </em>{" "}
-        (
-        <a href={SRC.uky} rel="nofollow">
-          University of Kentucky Entomology
-        </a>
-        ).
+        Here are four flea products for carpets, bedding and soft furnishings
+        around the house. Indorex Household Flea Spray is our overall pick: it
+        carries a growth regulator, and one can is listed for a 3-4 bedroom
+        house. Zero In powder suits a pet bed or a single rug, and Beaphar
+        powder is listed for up to 30 m². For one room in one go, there is the
+        Zero In fogger.
       </p>
 
       {/* [16] Comparison table */}
-      <h2 id="compared">The Three Products Compared</h2>
+      <h2 id="compared">The Four Products Compared</h2>
       <p>
         Every column below is what the Amazon listing itself states. Where a
         listing does not state something, the cell says so rather than guessing.
@@ -298,6 +292,21 @@ export default function BestFleaTreatmentsPage() {
           </tbody>
         </table>
       </div>
+
+      <p>
+        A household flea product treats the house. It does not treat the animal
+        the fleas are living on, and the University of Kentucky is plain about
+        where they live:{" "}
+        <em>
+          &ldquo;Adult fleas spend most of their time on the dog or cat, not in
+          the carpet.&rdquo;
+        </em>{" "}
+        (
+        <a href={SRC.uky} rel="nofollow">
+          University of Kentucky Entomology
+        </a>
+        ).
+      </p>
 
       {products.map((p, i) => (
         <div key={p.asin}>
@@ -353,8 +362,8 @@ export default function BestFleaTreatmentsPage() {
           </li>
           <li>
             <strong>You are choosing between a spray and a powder.</strong> One
-            of the three names a growth regulator; two name only permethrin, or
-            nothing &mdash;{" "}
+            of the four names a growth regulator; the others name permethrin,
+            pyrethrins or nothing &mdash;{" "}
             <a href="#what-decides" className="underline">
               what decides the choice
             </a>
@@ -365,7 +374,7 @@ export default function BestFleaTreatmentsPage() {
       {/* [0] Situation */}
       <h2 id="situation">The Pet Comes First</h2>
       <p>
-        None of the three products on this page goes on an animal, and one
+        None of the four products on this page goes on an animal, and one
         listing says so in its safety warning. The University of Kentucky
         states the order of work:{" "}
         <em>
@@ -394,7 +403,7 @@ export default function BestFleaTreatmentsPage() {
       {/* [1] Legal */}
       <h2 id="legal">The Legal Position on Home Insecticides</h2>
       <p>
-        All three products are sold to householders. HSE&rsquo;s guidance on
+        All four products are sold to householders. HSE&rsquo;s guidance on
         using biocides draws the line that matters:{" "}
         <em>
           &ldquo;If you are a member of the public, you should only use
@@ -452,13 +461,14 @@ export default function BestFleaTreatmentsPage() {
         UC IPM names methoprene and pyriproxyfen as the IGRs aimed at eggs and
         immatures. The Indorex listing states pyriproxyfen. The Zero In listing
         states permethrin only. The Beaphar listing states no active substance
-        at all. That is the one difference you can read before buying.
+        at all. The Zero In fogger lists pyrethrins. That is the one difference you can read before buying.
       </p>
       <h3>2. What the listing says it covers</h3>
       <p>
         Indorex is listed as treating approximately a 3-4 bedroom house per
         can. Zero In is listed as treating up to 10 sq m. Beaphar is listed as
-        covering up to 30 m². The comparison table carries each figure as
+        covering up to 30 m². The Zero In fogger is listed for a room of up to
+        40 m³. The comparison table carries each figure as
         stated.
       </p>
       <h3>3. What happens after it goes down</h3>

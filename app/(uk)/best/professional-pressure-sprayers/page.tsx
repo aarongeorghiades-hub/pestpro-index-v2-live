@@ -130,8 +130,8 @@ const products: ProductRecord[] = [
     h2Name: "Best Overall",
     tocLabel: "#1 Solo 473D Classic",
     tocName: "Best Overall",
-    pick: "Diaphragm-pump knapsack with a pressure gauge, listed at 4 bar.",
-    blurb: "Our overall pick if you want one knapsack for grounds and gardens. It has a diaphragm pump listed at 4 bar, a pressure gauge so you can see what the tank is doing, and a 50 cm spray tube. It weighs 3.9 kg empty. The listing gives the capacity as 10 litre in its title and 12 litre in its feature text, so plan around the smaller figure.",
+    pick: "Best for grounds and gardens: diaphragm pump and pressure gauge, listed at 4 bar.",
+    blurb: "Our overall pick if you want one knapsack for grounds and gardens. It has a diaphragm pump listed at 4 bar, a pressure gauge so you can see what the tank is doing and a 50 cm spray tube, and it weighs 3.9 kg empty. The listing gives 10 litre in its title and 12 litre in its feature text, so plan around the smaller figure.",
     pros: ["Diaphragm pump, as listed", "Pressure gauge, maximum listed at 4 bar", "3.9 kg empty", "50 cm spray tube"],
   },
   {
@@ -152,8 +152,8 @@ const products: ProductRecord[] = [
     h2Name: "Best Professional-Grade",
     tocLabel: "#2 Solo 10L 90psi",
     tocName: "Best Professional-Grade",
-    pick: "A 10 litre diaphragm sprayer whose capacity, pump and pressure all agree.",
-    blurb: "Pick this one if you want a listing that agrees with itself on capacity, pump and pressure. It is a 10 litre diaphragm-pump sprayer with a maximum working pressure listed as 4 bar, or 90 psi, and a 50 cm lance. The container is listed as UV-resistant plastic, and the whole unit weighs 4.2 kilograms.",
+    pick: "Best for a 10 litre diaphragm sprayer: 4 bar / 90 psi, UV-resistant tank.",
+    blurb: "Pick this one if you want a 10 litre diaphragm sprayer with its pressure given in both units: 4 bar, or 90 psi, maximum working pressure. It has a 50 cm lance and a container listed as UV-resistant plastic. The whole unit weighs 4.2 kilograms.",
     pros: ["10 litre with a diaphragm pump", "Maximum working pressure 4 bar / 90 psi, as listed", "UV-resistant plastic container", "50 cm lance"],
   },
   {
@@ -174,8 +174,8 @@ const products: ProductRecord[] = [
     h2Name: "Best 15L Backpack",
     tocLabel: "#3 Solo 425 Professional",
     tocName: "Best 15L Backpack",
-    pick: "A 4-gallon piston sprayer with four nozzles and a 48-inch hose.",
-    blurb: "The larger Solo, for when you have more ground to cover between refills. It holds 4 gallons and has a piston pump rated up to 90 psi. Four nozzles come with it: adjustable, fan, hollow cone and jet stream. A 20-inch wand on a 48-inch hose gives you reach, and the seals are Viton. The listing gives no litre figure.",
+    pick: "Best if you have a lot of ground to cover: 4 gallons, piston pump, four nozzles.",
+    blurb: "The larger Solo, for when you have more ground to cover between refills. It holds 4 gallons, has a piston pump rated up to 90 psi and comes with four nozzles: adjustable, fan, hollow cone and jet stream. A 20-inch wand on a 48-inch hose gives you reach, the seals are Viton, and the listing gives no litre figure.",
     pros: ["4-gallon tank", "Piston pump up to 90 psi", "Four nozzles: adjustable, fan, hollow cone, jet stream", "Viton seals; 20-inch wand, 48-inch hose"],
   },
   {
@@ -196,8 +196,8 @@ const products: ProductRecord[] = [
     h2Name: "Best Budget",
     tocLabel: "#4 Matabi Super Green 12",
     tocName: "Best Budget",
-    pick: "Fibreglass lance, four nozzles and a three-position pressure regulator.",
-    blurb: "A lighter sprayer at 3.2 kilograms, with a fibreglass lance, four nozzles and a three-position pressure regulator. It has padded, adjustable straps and a lateral liquid indicator, so you can see the level from the side. The listing scopes it to gardens of up to 400 square metres. Its title says 12L and its detail table says 16 L, and the pump type is not stated.",
+    pick: "Best for gardens up to 400 square metres: 3.2 kg, four nozzles, pressure regulator.",
+    blurb: "Suits a garden of up to 400 square metres, the size the listing gives. It weighs 3.2 kilograms and has a fibreglass lance, four nozzles, a three-position pressure regulator, padded adjustable straps and a lateral liquid indicator so you can see the level from the side. The listing gives 12L in one place and 16 L in another, and does not state the pump type.",
     pros: ["3.2 kilograms, as listed", "Three-position pressure regulator", "Fibreglass lance and four nozzles", "Padded, adjustable straps"],
   },
   {
@@ -218,8 +218,8 @@ const products: ProductRecord[] = [
     h2Name: "Best 20L Backpack",
     tocLabel: "#5 Oregon 20L",
     tocName: "Best 20L Backpack",
-    pick: "The largest tank here at 20 litres, with a spare seal kit included.",
-    blurb: "The biggest tank on this page, for large grounds where refilling eats into your time. It holds 20 litres and has a lance and hose of about two metres with four nozzles, and a spare seal kit is included. The listing names pesticide, lawn feed, weed and moss killer as uses. It states no pump type and no pressure, so check those before you buy.",
+    pick: "Best for large grounds: the biggest tank here at 20 litres, spare seal kit included.",
+    blurb: "The biggest tank on this page, for large grounds where refilling eats into your time. It holds 20 litres, with about two metres of lance and hose, four nozzles and a spare seal kit, and the listing names pesticide, lawn feed, weed and moss killer as uses. It states no pump type and no pressure, so check those before you buy.",
     pros: ["20 litre tank", "Spare seal kit included", "About 2 metres of lance and hose, four nozzles", "Listed at 3.93 kilograms"],
   },
 ];
@@ -229,9 +229,7 @@ const products: ProductRecord[] = [
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    If you were born after 1964 or spray as a service, HSE requires a
-    certificate, and the public may not use professional-use products in any
-    sprayer.{" "}
+    HSE requires a certificate if you were born after 1964 or spray as a service.{" "}
     <a href="#legal" className="underline">
       Who may spray
     </a>
@@ -254,7 +252,7 @@ export default function BestProfessionalPressureSprayersPage() {
   return (
     <GuideLayout
       title="Best Professional Pressure Sprayers for Pest Control Applications (2026)"
-      subtitle="Knapsack and backpack sprayers for applying pesticide — five compared on tank, pump and pressure as their listings state them, with HSE's rule on who may do the spraying"
+      subtitle="Five knapsack and backpack sprayers from 10 to 20 litres, for gardens and larger grounds"
       lastUpdated="September 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -301,10 +299,7 @@ export default function BestProfessionalPressureSprayersPage() {
       </div>
 
       <p>
-        A knapsack sprayer is a tank, a pump and a lance. It is sold freely and
-        does nothing on its own. What goes in it is where the law sits, and two
-        of the five listings here cannot agree with themselves on how much it
-        holds.
+        These are five knapsack sprayers, from 10 to 20 litres. The Solo 473D suits most grounds and gardens, with a diaphragm pump and a pressure gauge. Choose the Solo 10L 90psi for a 4 bar diaphragm pump in a UV-resistant tank, or the Solo 425 if you have more ground to cover between refills.
       </p>
 
       {/* Comparison table */}

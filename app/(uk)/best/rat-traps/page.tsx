@@ -134,8 +134,8 @@ const products: ProductRecord[] = [
     h2Name: "Rat Reaper by Froboo",
     tocLabel: "Best Overall",
     tocName: "Rat Reaper XXL Snap Trap",
-    pick: "Two extra-large metal snap traps for rats, listed for indoors or out.",
-    blurb: "Our overall pick, and you get two traps rather than one: the listing is explicit that two are supplied, even though the name reads as a single trap. They are extra-large metal snap traps listed for indoor and outdoor use, with Rat as the target species. No bait is supplied. The listing states one bait pod and calls the trap simple to bait with peanut butter, which is one of the baits Nebraska Extension names above.",
+    pick: "For most homes, indoors or out: two extra-large metal snap traps in one pack.",
+    blurb: "A strong fit for most homes, indoors or out: you get two extra-large metal snap traps in the pack, with Rat as the target species. The listing states one bait pod and calls the trap simple to bait with peanut butter, one of the baits Nebraska Extension names further down this page. No bait is supplied, so have your own ready.",
     pros: ["Two traps in the pack", "Extra-large metal snap design", "Listed for indoor and outdoor use", "Simple to bait with peanut butter, per the listing"],
   },
   {
@@ -150,13 +150,13 @@ const products: ProductRecord[] = [
       "Target species listed as Rat",
       "Puts the mechanism behind a lid rather than in the open",
     ],
-    tableCells: ["Mastertrap Rat Bait Station Box", "Boxed snap trap, 1 unit", "Best for Safety"],
+    tableCells: ["Mastertrap Rat Bait Station Box", "Boxed snap trap, 1 unit", "Best for Pet & Child Safety"],
     h2Label: "Best for Pet & Child Safety",
     h2Name: "Mastertrap Rat Bait Station Box",
     tocLabel: "Best for Pet & Child Safety",
     tocName: "Mastertrap Rat Bait Station Box",
-    pick: "A snap trap inside a lidded box, for a house with a dog or small children.",
-    blurb: "Choose this one if you have a dog or small children in the house. Despite the name it is a snap trap inside a box, not a station for poison, sold as a single unit with a black lid. The lid is the reason to buy it: the mechanism is not in the open where a dog or a child can reach it.",
+    pick: "For a house with a dog or small children: a snap trap behind a lid.",
+    blurb: "Choose this one if you have a dog or small children in the house. It is a snap trap inside a box, sold as a single unit with a black lid, so the mechanism is not in the open where a dog or a child can reach it. Despite the name, it holds a trap and is not a station for poison.",
     pros: ["Snap mechanism sits behind a lid", "Single unit with a black lid", "Target species listed as Rat"],
   },
   {
@@ -176,8 +176,8 @@ const products: ProductRecord[] = [
     h2Name: "ROSHIELD 4-Pack Rat Trap",
     tocLabel: "Best Professional-Grade",
     tocName: "ROSHIELD 4-Pack Rat Trap",
-    pick: "Four reusable snap traps, the most placement points on this page.",
-    blurb: "Too few traps is the commonest reason trapping fails, and this pack answers it with four. They are metal and plastic, listed as reusable and easy to set, with Mouse and Rat as the stated target species. That gives you more placement points than anything else on this page.",
+    pick: "For covering several runs at once: four reusable snap traps in one pack.",
+    blurb: "If you need to cover several runs at once, this pack gives you four traps, more placement points than anything else here. They are metal and plastic, listed as reusable and easy to set, with Mouse and Rat as the stated target species.",
     pros: ["Four traps in the pack", "Listed as reusable and easy to set", "Metal and plastic build", "Target species listed as Mouse and Rat"],
   },
 ];
@@ -187,10 +187,10 @@ const products: ProductRecord[] = [
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    A spring trap on an outdoor run or in the open is illegal unless it is set
-    in a tunnel.{" "}
+    In the open or on an outdoor run, a spring trap must be set in a
+    tunnel.{" "}
     <a href="#legal" className="underline">
-      The legal position on rat traps
+      The legal position
     </a>
     .
   </>
@@ -211,7 +211,7 @@ export default function BestRatTrapsPage() {
   return (
     <GuideLayout
       title="Best Rat Traps UK 2026"
-      subtitle="Snap traps and boxed traps for UK homes, described by what their own listings state, with the legal position and the placement the guidance turns on"
+      subtitle="Three rat traps for UK homes: a two-pack of extra-large snap traps, a lidded box trap for homes with pets, and a four-pack"
       lastUpdated="September 2026"
       readingTime="6 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -271,9 +271,11 @@ export default function BestRatTrapsPage() {
       </div>
 
       <p>
-        A trap kills the rat it catches and nothing else. That is its whole
-        advantage over bait: there is no toxin in the house, nothing for a dog to
-        find, and you know immediately whether it worked.
+        Three rat traps, compared on what each listing states, with the law on
+        where you may set them. The Rat Reaper XXL gives you two extra-large
+        metal snap traps for indoors or out. If you have a dog or small children,
+        the Mastertrap box keeps the snap mechanism behind a lid, and the Roshield
+        four-pack gives you the most traps to place.
       </p>
 
       {/* [16] Comparison table */}

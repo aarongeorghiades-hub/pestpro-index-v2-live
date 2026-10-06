@@ -176,8 +176,8 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula B+ Rat & Mouse Killer Poison 900g",
     tocLabel: "Best Overall",
     tocName: "Pest Expert Formula B+ 900g",
-    pick: "Brodifacoum, the substance the guidance names for house mice, in 15 grain sachets.",
-    blurb: "Our top pick, because the listing states the substance that both RRAG and Defra name for house mice: brodifacoum at 0.0029%. You get fifteen 60g sachets of wholewheat grain with no wax, which is enough to bait a whole house with some to spare. The listing says it kills in a single feed. If you only need a few bait points, the 360g pack below is the same bait in a smaller box.",
+    pick: "For a whole house of mice: brodifacoum grain bait in fifteen 60g sachets.",
+    blurb: "Pick this for mice through a whole house, with bait points to spare: fifteen 60g sachets of wholewheat grain with no wax. The listing states brodifacoum at 0.0029%, the substance both RRAG and Defra name for house mice, and says it kills in a single feed. If you only need a few bait points, the 360g pack below is the same bait in a smaller box.",
     pros: ["Brodifacoum 0.0029% stated on the listing", "15 x 60g sachets for plenty of bait points", "Wholewheat grain with no wax, as listed", "Target species listed as Mouse"],
   },
   {
@@ -205,8 +205,8 @@ const products: ProductRecord[] = [
     h2Name: "Pest Expert Formula B+ Mouse & Rat Poison 360g",
     tocLabel: "Best Starter Pack",
     tocName: "Pest Expert Formula B+ 360g",
-    pick: "The same brodifacoum grain bait in six sachets, sized for one house.",
-    blurb: "The same stated formulation as the 900g pack, brodifacoum at 0.0029%, in six 60g sachets instead of fifteen. The listing describes the pack as covering six bait points. For one house, six points placed where you have actually seen activity is a realistic treatment, and you are not left with a cupboard of spare poison.",
+    pick: "For one house: the same brodifacoum grain bait in six sachets, listed for six bait points.",
+    blurb: "Suits one house where you only need a handful of bait points. It is the same stated formulation as the 900g pack, brodifacoum at 0.0029%, in six 60g sachets the listing describes as covering six bait points, so you are not left with spare poison.",
     pros: ["Same brodifacoum 0.0029% as the larger pack", "6 x 60g sachets, listed as covering 6 bait points", "Wholewheat grain with no wax, as listed"],
   },
   {
@@ -234,8 +234,8 @@ const products: ProductRecord[] = [
     h2Name: "The Big Cheese All-Weather Bait Block 15x10g",
     tocLabel: "Best Blocks",
     tocName: "The Big Cheese All-Weather 15x10g",
-    pick: "Ready-to-use blocks listed as moisture-resistant, with clear placement guidance.",
-    blurb: "Fifteen ready-to-use 10g blocks, listed as moisture-resistant for indoor and outdoor use, so they suit a damp garage or shed. The listing is unusually specific about placement, two to three blocks every two to five metres for mice, and gloves are listed as included. It is also the one listing here that says a tamper-resistant bait station is required by law. It does not state the active substance anywhere, so read the pack before you use it.",
+    pick: "For a damp garage or shed: moisture-resistant blocks with placement stated on the listing.",
+    blurb: "Suits a damp garage or shed, since the fifteen ready-to-use 10g blocks are listed as moisture-resistant for indoor and outdoor use. The listing states placement of two to three blocks every two to five metres for mice, lists gloves as included, and says a tamper-resistant bait station is required by law. It does not state the active substance, so read the pack before you use it.",
     pros: ["15 x 10g ready-to-use blocks", "Listed as moisture-resistant, indoor and outdoor", "Placement stated: 2-3 blocks every 2-5 metres", "Gloves listed as included"],
   },
   {
@@ -243,7 +243,7 @@ const products: ProductRecord[] = [
     asin: "B077MBL7MS",
     rank: 4,
     cardName: "The Big Cheese All-Weather Rodent Block 30x10g",
-    cardLabel: "Best Bulk Pack",
+    cardLabel: "Best Bulk",
     features: [
       "No active substance stated anywhere on the listing",
       "30 x 10g blocks, listed as wax block, blue",
@@ -263,8 +263,8 @@ const products: ProductRecord[] = [
     h2Name: "The Big Cheese All-Weather Rodent Block 30x10g",
     tocLabel: "Best Bulk",
     tocName: "The Big Cheese All-Weather 30x10g",
-    pick: "Thirty moisture-resistant wax blocks for a bigger property or several stations.",
-    blurb: "Thirty 10g blue wax blocks, listed as moisture-resistant for indoor and outdoor use and infused with a bitter taste to deter accidental ingestion. That is enough to stock several stations across a larger property. Like the 15-block pack, the listing states no active substance, so check the pack before you use it.",
+    pick: "For a bigger property or several stations: thirty moisture-resistant blue wax blocks.",
+    blurb: "Enough to stock several stations across a larger property: thirty 10g blue wax blocks, listed as moisture-resistant for indoor and outdoor use. The listing says they are infused with a bitter taste to deter accidental ingestion. It states no active substance, so check the pack before you use it.",
     pros: ["30 x 10g wax blocks", "Bitter taste to deter accidental ingestion, as listed", "Listed as moisture-resistant, indoor and outdoor"],
   },
   {
@@ -292,8 +292,8 @@ const products: ProductRecord[] = [
     h2Name: "Roshield Wax Block Bait 600g",
     tocLabel: "Best Professional",
     tocName: "Roshield Wax Block Bait 600g",
-    pick: "Bromadiolone wax blocks with an authorisation number printed on the listing.",
-    blurb: "The only one of the five whose listing gives a product authorisation number, UK-2016-0986-0007, alongside its active substance, bromadiolone 0.0025%. It comes as two 300g packs of wax block and names denatonium benzoate as the bitter agent. The listing gives mice and rats as targets, but RRAG advises against bromadiolone for house mice, so for mice alone the two brodifacoum packs above are what the sources point to.",
+    pick: "If you want an authorisation number on the listing: bromadiolone wax blocks, 600g.",
+    blurb: "Pick this if you want the authorisation number in front of you before you buy: the listing gives UK-2016-0986-0007 alongside bromadiolone at 0.0025%. It comes as two 300g packs of wax block with denatonium benzoate as the bitter agent. The listing gives mice and rats as targets, but RRAG advises against bromadiolone for house mice, so for mice alone the two brodifacoum packs above are what the sources point to.",
     pros: ["Authorisation number UK-2016-0986-0007 on the listing", "Bromadiolone 0.0025% stated", "2 x 300g packs, 600g in total", "Denatonium benzoate, a bitter substance, as listed"],
   },
 ];
@@ -303,8 +303,8 @@ const products: ProductRecord[] = [
 // and safety sections sit below the picks.
 const SAFETY_NOTE = (
   <>
-    Anticoagulant poison. Every bait goes in a tamper-resistant station, and
-    that is a condition of the label rather than advice.{" "}
+    Anticoagulant poison. Every bait goes in a tamper-resistant station; it is
+    a label condition.{" "}
     <a href="#legal" className="underline">
       What the label requires
     </a>
@@ -327,7 +327,7 @@ export default function BestMousePoisonPage() {
   return (
     <GuideLayout
       title="Best Mouse Poison UK 2026: What You Can Legally Buy"
-      subtitle="Which active substance official guidance names for house mice, what the label legally requires of you, and five products compared on what their listings actually state"
+      subtitle="Five mouse poisons, from brodifacoum grain sachets for a whole house to all-weather blocks for a garage or shed, and which suits your job."
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: "Best", href: "/best" }}
@@ -440,10 +440,12 @@ export default function BestMousePoisonPage() {
       </div>
 
       <p>
-        Mouse poison is one decision, not two. Almost everything that determines
-        whether it works is settled by which active substance is in the pack —
-        and on three of the five products below, the Amazon listing does not tell
-        you what that substance is.
+        Here are five mouse poisons, and the active substance is the thing to
+        check first. Pest Expert Formula B+ is our top pick: the listing states
+        brodifacoum, the substance the guidance names for house mice, in fifteen
+        sachets, and the 360g pack is the same bait for six bait points. The Big
+        Cheese blocks suit a damp garage or shed, and the Roshield bromadiolone
+        blocks carry an authorisation number on the listing.
       </p>
 
       {/* [16] Comparison table */}

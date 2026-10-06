@@ -22,15 +22,20 @@ export default function TopPicks({
   note,
 }: {
   picks: TopPick[];
-  note: React.ReactNode;
+  // S70 R2: optional. Carried only where the route's point is real safety or law
+  // (poison, trap, protected species, chemical, electrical). An efficacy-evidence
+  // point is never carried here; it sits in the body below the comparison table.
+  note?: React.ReactNode;
 }) {
   return (
     <div className="not-prose mt-5 rounded-xl border border-[var(--color-ochre-edge)] bg-[var(--color-surface)] p-3 text-[var(--color-ink)] shadow-[0_8px_24px_-12px_rgba(26,36,51,.25)] sm:p-4">
       <p className="m-0 text-base font-bold">Our top picks</p>
-      <p className="m-0 mt-1 text-[12px] leading-snug text-[var(--color-ink-soft)]">
-        <span aria-hidden="true">&#9888;&#xFE0E; </span>
-        {note}
-      </p>
+      {note ? (
+        <p className="m-0 mt-1 text-[12px] leading-snug text-[var(--color-ink-soft)]">
+          <span aria-hidden="true">&#9888;&#xFE0E; </span>
+          {note}
+        </p>
+      ) : null}
       <ol className="m-0 mt-3 list-none space-y-2.5 p-0">
         {picks.map((p) => (
           <li
