@@ -274,7 +274,7 @@ export default function CarpetBeetlesPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="carpet-beetles" />}
       title="Carpet Beetles"
-      subtitle="Fourteen extension publications agree on what carpet beetles eat and disagree on almost every number attached to killing them. This page carries the disagreements as disagreements, puts cleaning and exclusion where the sources put them, and names four products against the two criteria the sources actually state."
+      subtitle="Gasket storage bins and pheromone traps, for anyone storing wool and clothes or tracking where carpet beetles are active."
       lastUpdated="August 2026"
       readingTime="16 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -284,8 +284,7 @@ export default function CarpetBeetlesPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        This page is about the beetles whose larvae eat wool, fur, feathers and other animal-based
-        fibers, and about what fourteen university extension publications say to do about them.
+        IRIS and Sterilite gasket bins suit stored wool, fur and clothing, with the Sterilite 4-pack for bigger loads. To find where adults are active, pheromone sticky traps come as a 6-pack or as boards that split into 48 small traps for a whole house.
       </p>
 
       <h2 id="what">What They Are, and What They Damage</h2>

@@ -146,7 +146,7 @@ export default function AsianLadyBeetlesPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="asian-lady-beetles" />}
       title="Asian Lady Beetles, Not Ladybugs"
-      subtitle="The beetles massing on your siding in October are almost certainly not the native ladybug of childhood. One mark behind the head settles it, and the difference is not academic."
+      subtitle="Caulk and fine mesh screen for homes where lady beetles gather each fall, picked for windows, doors and attic vents."
       lastUpdated="August 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: 'Stink Bugs in the House', href: '/us/stink-bugs-in-house' }}
@@ -157,10 +157,7 @@ export default function AsianLadyBeetlesPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Native lady beetles do not gather by the thousand on the sunny side of a house in
-        October. The insect doing that is the multicolored Asian lady beetle,{' '}
-        <em>Harmonia axyridis</em>, and telling the two apart takes about three seconds once
-        you know where to look.
+        These picks are for closing gaps before the beetles arrive in fall. GE&rsquo;s window-and-door silicones suit cracks around frames, and the all-purpose one covers pipes and siding. For an attic vent or chimney, the 20 x 20 mesh comes in a 25-foot roll for one opening or 100 feet for several.
       </p>
 
       <h2 id="the-distinction">Why the Distinction Matters</h2>

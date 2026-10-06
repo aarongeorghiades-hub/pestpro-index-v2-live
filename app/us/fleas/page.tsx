@@ -212,7 +212,7 @@ export default function FleasPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="fleas" />}
       title="Fleas"
-      subtitle="Four extension publications, spanning 2010 to 2026, that disagree about which flea species carries plague and agree that the most effective treatments need a veterinarian. Every figure below carries the name of the flea it counts and the name of the source that published it."
+      subtitle="A metal flea comb and plug-in light traps, for checking a dog or cat and for rooms where fleas are hatching."
       lastUpdated="August 2026"
       readingTime="15 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -222,9 +222,7 @@ export default function FleasPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Fleas are the first pest on this site where the sources name human illness in their own body
-        text, so this page begins with that rather than with products. Quotation marks on this page
-        mark a source&rsquo;s own words and nothing else.
+        A fine-tooth metal comb is the pick for checking a dog or cat, and it catches fleas and eggs. For a room where fleas are hatching, Enoz&rsquo;s plug-in trap pairs a bulb with a sticky pad, and two-packs suit two rooms. The hanging LED trap runs on USB-C for spots with no free outlet.
       </p>
 
       <h2 id="health">What the Sources Say About Disease</h2>

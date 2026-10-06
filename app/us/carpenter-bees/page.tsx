@@ -136,7 +136,7 @@ export default function CarpenterBeesPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="carpenter-bees" />}
       title="Carpenter Bees"
-      subtitle="A perfectly round half-inch hole drilled into a fascia board or deck rail, coarse sawdust beneath it, and a large black-and-yellow bee hovering nearby. Here is what university extension services publish about identifying the animal, the damage it does, and why several of them ask homeowners to think twice before reaching for an insecticide."
+      subtitle="A hole repair plug kit, an oil-based deterrent spray and a catch-and-release trap, for decks, fences and fascia boards with carpenter bee holes."
       lastUpdated="September 2026"
       readingTime="9 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -147,17 +147,7 @@ export default function CarpenterBeesPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        This page is about the large carpenter bee, genus <em>Xylocopa</em> &mdash; the
-        solitary bee that bores its own tunnel into sound timber to nest, and is
-        routinely mistaken for a bumblebee or a honeybee. It is not a wasp, and it is not
-        the honeybee whose sting-first-aid advice is covered on{' '}
-        <Link href="/us/social-wasps">our social wasps page</Link>.
-      </p>
-      <p>
-        <strong>Every source read for this page describes carpenter bees as
-        pollinators, and more than one asks for restraint before killing
-        them &mdash; see the Pollinator Status section below before treating
-        this as an ordinary structural pest.</strong>
+        Three picks, depending on where you are with the bees. The plug kit has tapered wood plugs in three sizes for holes the bees have left. The citrus and almond oil spray is meant to discourage boring in decks and fences, the listing says. The catch-and-release trap has a latch so a bee can be let go.
       </p>
 
       <h2 id="what-it-is">What It Is</h2>

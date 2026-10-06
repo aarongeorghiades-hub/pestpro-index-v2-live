@@ -140,7 +140,7 @@ export default function BoxelderBugsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="boxelder-bugs" />}
       title="Boxelder Bugs"
-      subtitle="Black with thin red lines, massed on the south wall of the house on a warm October afternoon. Almost everything about them follows from one tree."
+      subtitle="Three clear silicone caulks for sealing the window, door and siding gaps around a house before boxelder bugs arrive in fall."
       lastUpdated="August 2026"
       readingTime="6 min"
       breadcrumbParent={{ label: 'Stink Bugs in the House', href: '/us/stink-bugs-in-house' }}
@@ -151,15 +151,7 @@ export default function BoxelderBugsPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        The boxelder bug, <em>Boisea trivittata</em>, is one of four insects that come to the
-        walls of American houses every fall for the same reason and get confused with each
-        other constantly. It is the narrow black one with the red lines.
-      </p>
-      <p>
-        You will also see the species written as <em>Boisea trivittatus</em>; University of
-        Kentucky Extension uses <em>trivittata</em> and Wisconsin Horticulture uses{' '}
-        <em>trivittatus</em>. It is the same insect, and the variation is in the literature
-        rather than in the animal.
+        The picks are three GE clear silicones for sealing gaps before fall. The two window-and-door formulas suit frames, and the all-purpose one suits gaps in siding or foundations.
       </p>
 
       <h2 id="identification">Identification</h2>
@@ -310,6 +302,13 @@ export default function BoxelderBugsPage() {
           used elsewhere on this site belongs to a different insect, so it is not applied here.
         </p>
       </div>
+
+      <p>
+        You will also see the species written as <em>Boisea trivittatus</em>; University of
+        Kentucky Extension uses <em>trivittata</em> and Wisconsin Horticulture uses{' '}
+        <em>trivittatus</em>. It is the same insect, and the variation is in the literature
+        rather than in the animal.
+      </p>
 
       <h2 id="the-tree">The Tree Connection</h2>
       <p>

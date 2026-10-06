@@ -273,7 +273,7 @@ export default function RatsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="rats" />}
       title="Rats"
-      subtitle="Identification, where they nest, how they enter, and the exclusion and trapping methods eight university extension and federal publications describe. Two figures answer two different questions about the same gap — what a rat can squeeze through, and what the sources recommend sealing to — and this page keeps them apart. Rodent-borne disease is out of scope here on purpose, named once and not built out further."
+      subtitle="Rat snap traps, a locking bait station and half-inch hardware cloth, for homes with a heavy infestation or gaps to close."
       lastUpdated="August 2026"
       readingTime="15 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -283,14 +283,7 @@ export default function RatsPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        This page is about the two commensal rat species present across the United States —
-        the Norway rat, <em>Rattus norvegicus</em>, and the roof rat, <em>Rattus rattus</em> —
-        as eight university extension and federal publications describe them. It covers
-        identification and telling a rat from a mouse, signs of an infestation, where rats
-        nest and how they get in, exclusion, trapping and control, sanitation, and when the
-        sources say to call a professional. It does not cover rodent-borne disease as a
-        sourced subject; the section below explains why that is a scope decision rather than
-        an oversight.
+        JT Eaton&rsquo;s 12-pack of wooden traps, with an expanded trigger, suits a heavy infestation. Victor&rsquo;s three easy-set plastic traps are for anyone who finds old traps hard to set. The locking outdoor station ships with a key and no bait, and the half-inch galvanized hardware cloth is for closing vents and gaps.
       </p>
 
       <h2 id="which-rat">Which Rat? Norway, Roof, and Telling a Rat From a Mouse</h2>

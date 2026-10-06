@@ -218,7 +218,7 @@ export default function AntsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="ants" />}
       title="Household Ants"
-      subtitle="Four ants that come indoors for food and water while the colony sits somewhere you cannot see it. Every figure here carries the species it belongs to and the document it came from, because the five publications behind this page cover a dozen ants between them."
+      subtitle="Liquid ant bait stations for kitchens, counters and outdoor trails, with picks for one small trail or several."
       lastUpdated="August 2026"
       readingTime="15 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -228,22 +228,7 @@ export default function AntsPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Quotation marks on this page mark a source&rsquo;s own words and nothing else. A term being
-        defined is set in <em>italics</em> instead, so the marks keep one meaning throughout.
-      </p>
-      <p>
-        <strong>This page does not treat every ant as a target.</strong> UC IPM, on a page its own
-        site dates to 10/2012, opens with the other side of it:{' '}
-        <em>
-          &ldquo;Although ants are annoying when they come indoors, they can be beneficial by feeding
-          on fleas, termites, and other pests in the garden.&rdquo;
-        </em>{' '}
-        The same source, in its management section:{' '}
-        <em>
-          &ldquo;It is unrealistic and impractical to attempt to totally eliminate ants from an
-          outdoor area.&rdquo;
-        </em>{' '}
-        It asks a reader to focus instead on excluding them from buildings.
+        TERRO&rsquo;s 12-pack of liquid stations suits several indoor trails, and the wall-mount 8-pack sticks up off counters and cabinets. For a single small trail the 4-pack is enough, and if the trail starts outside, the outdoor stakes push into the ground.
       </p>
 
       <h2 id="nest">The Ants You See Are Not the Colony</h2>
@@ -583,6 +568,21 @@ export default function AntsPage() {
         quantity. Neither listing stated that the difference was only cosmetic, and a different number
         of baits in the box is not a cosmetic difference, so they are treated as separate products and
         one of each pair is named rather than the pair being merged into a single card.
+      </p>
+
+      <p>
+        <strong>This page does not treat every ant as a target.</strong> UC IPM, on a page its own
+        site dates to 10/2012, opens with the other side of it:{' '}
+        <em>
+          &ldquo;Although ants are annoying when they come indoors, they can be beneficial by feeding
+          on fleas, termites, and other pests in the garden.&rdquo;
+        </em>{' '}
+        The same source, in its management section:{' '}
+        <em>
+          &ldquo;It is unrealistic and impractical to attempt to totally eliminate ants from an
+          outdoor area.&rdquo;
+        </em>{' '}
+        It asks a reader to focus instead on excluding them from buildings.
       </p>
 
       <h2 id="first">What Every Source Puts First</h2>

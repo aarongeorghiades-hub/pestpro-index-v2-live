@@ -373,7 +373,7 @@ export default function BestGopherTrapsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="best-gopher-traps" />}
       title="Gopher Traps"
-      subtitle="Every extension source we read makes the trap conditional on the placement, and the tool that decides the outcome is a blunt stick most sheds already hold. One trial compared three models; we give its figures and its limits rather than a ranking."
+      subtitle="Pincer and cinch gopher traps, from a single Macabee to four-packs, for yards with one main tunnel or several."
       lastUpdated="August 2026"
       readingTime="9 min"
       tocItems={tocItems}
@@ -381,6 +381,10 @@ export default function BestGopherTrapsPage() {
       clusterNav={GOPHER_NAV}
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
+      <p>
+        The Macabee is the classic pincer trap and the model used in the Utah State University trial. Gophinator&rsquo;s 2-pack and 4-pack suit one or two active tunnels, and the Cinch kit is the cinch style from the same trial.
+      </p>
+
       <h2 id="headline">The Short Answer</h2>
       <p>
         A blunt broom handle, and the patience to find the main tunnel with it before you set

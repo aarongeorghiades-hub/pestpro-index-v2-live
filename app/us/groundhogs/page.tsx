@@ -195,7 +195,7 @@ export default function GroundhogsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="groundhogs" />}
       title="Groundhogs"
-      subtitle="The woodchuck, Marmota monax. The burrow that undermines a foundation, the fence four sources cannot agree on, and the legal question that has a different answer in every state this page could read."
+      subtitle="One 32-inch steel cage trap whose listing names groundhogs, for homeowners in a state that allows trapping."
       lastUpdated="September 2026"
       readingTime="10 min read"
       homeHref={GROUNDHOG_HOME}
@@ -204,11 +204,7 @@ export default function GroundhogsPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        This page is about the largest burrowing animal on this estate, and the one whose damage
-        claim is structural rather than horticultural. Two sources say its burrowing reaches
-        building foundations. Six publications were read for it, and on the two questions that
-        decide what a reader may actually do &mdash; whether they may take the animal, and what
-        they may do with it afterwards &mdash; the sources do not agree, because the law does not.
+        The one product here is HomGarden&rsquo;s 32 x 12 x 12.5 inch steel cage trap, and its own listing names groundhogs. Rules on trapping and relocation differ by state, so read the legal section before you set it.
       </p>
 
       <h2 id="scope">What This Page Carries</h2>

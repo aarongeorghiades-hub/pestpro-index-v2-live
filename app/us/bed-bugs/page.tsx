@@ -248,7 +248,7 @@ export default function BedBugsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="bed-bugs" />}
       title="Bed Bugs"
-      subtitle="Identification, where they hide, how they spread, and the inspection methods and temperatures nine EPA, Penn State and Purdue publications describe. Bed bugs are not known to transmit disease to humans — every source that addresses the question agrees, and this page says so once and does not build the subject out further."
+      subtitle="Bed bug monitors, a mattress encasement and a steamer, for anyone checking a bed, sealing a mattress or steaming furniture."
       lastUpdated="August 2026"
       readingTime="15 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -258,12 +258,7 @@ export default function BedBugsPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        This page is about <em>Cimex lectularius</em>, the common bed bug, as nine university
-        extension and federal publications describe it: how to identify one and tell it from the
-        insects it gets confused with, where it hides and how an infestation spreads, how to
-        confirm you have one, what treats a mattress and the furniture around it, the temperatures
-        that actually kill it, and what a pest management professional adds that DIY methods do
-        not.
+        Climbup interceptors go under each bed leg to check for activity, with no pesticide. The Guardmax encasement fits a Twin XL mattress up to 39 by 80 inches and zips shut on all six sides. The Polti steamer is listed at up to 356&deg;F, for mattresses and furniture.
       </p>
 
       <h2 id="which-bed-bug">What a Bed Bug Looks Like, and What Gets Mistaken For One</h2>

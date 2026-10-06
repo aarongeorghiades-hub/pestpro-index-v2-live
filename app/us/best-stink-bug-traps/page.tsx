@@ -186,7 +186,7 @@ export default function BestStinkBugTrapsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="best-stink-bug-traps" />}
       title="Stink Bug Traps"
-      subtitle="We went looking for a ranking of commercial traps and found something more useful: one controlled study, in real houses, whose winner costs nothing and is made from a roasting pan."
+      subtitle="One ready-made trap for brown marmorated and green stink bugs, and a homemade light trap built from a roasting pan."
       lastUpdated="August 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: 'Stink Bugs in the House', href: '/us/stink-bugs-in-house' }}
@@ -196,6 +196,10 @@ export default function BestStinkBugTrapsPage() {
       clusterNav={OVERWINTERING_NAV}
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
+      <p>
+        The one product here is Bonide&rsquo;s Bug Beater, a pheromone-lure trap listed for brown marmorated and green stink bugs, indoors or out. It suits anyone who wants a trap ready to use. The page also covers a homemade light trap you can build from a foil roasting pan.
+      </p>
+
       <h2 id="headline">The Short Answer</h2>
       <p>
         A foil roasting pan, water, dish soap, and a light over it in a dark room.

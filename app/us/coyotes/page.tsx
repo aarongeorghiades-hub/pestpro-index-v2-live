@@ -242,7 +242,7 @@ export default function CoyotesPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="coyotes" />}
       title="Coyotes"
-      subtitle="The extension sources specify a coyote-resistant fence to the inch, disagree openly about whether hazing achieves anything lasting, and hand the removal half to agencies rather than to a householder. This page carries all three, with the dates the sources themselves carry, and it names the products whose own text carries the parts of that specification a seller actually states."
+      subtitle="Welded wire fencing and fence roller kits, for anyone building a new fence line or adding a top to an existing one."
       lastUpdated="August 2026"
       readingTime="18 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -252,10 +252,7 @@ export default function CoyotesPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        This page is about the coyote as university extension services describe it: an animal that
-        was elusive, has adapted to residential neighborhoods in some places, and is now the
-        subject of a body of published advice that is unusually precise in one half and unusually
-        cautious in the other.
+        For a new fence line there is 2 by 4 inch welded wire, standard or hot-dip galvanized after welding, and a heavier 100-foot roll with 4 by 4 inch mesh. For a wood dog-ear fence, the Coyote Roller 8-foot kit mounts spinning rollers on top, and a shorter 4-foot kit also fits chain-link.
       </p>
 
       <h2 id="no-products">What Was Checked, and What Is Named Here</h2>

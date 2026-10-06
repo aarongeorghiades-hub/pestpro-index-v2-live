@@ -135,7 +135,7 @@ export default function FruitFliesPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="fruit-flies" />}
       title="Fruit Flies"
-      subtitle="A tiny red-eyed fly circling the fruit bowl or hovering at the kitchen sink, with no obvious source in sight. Here is what university extension services publish about telling a fruit fly from the other small flies it gets confused with, where it actually breeds, and what stops it."
+      subtitle="An enzyme drain gel and TERRO lure traps, for kitchens where fruit flies breed in the drain or gather around fruit and trash."
       lastUpdated="September 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -146,18 +146,7 @@ export default function FruitFliesPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        This page is about the fruit fly, family Drosophilidae &mdash; the fly commonly called the
-        vinegar fly or pomace fly in the scientific literature, and the one behind almost every
-        &ldquo;tiny flies in my kitchen&rdquo; problem. Two other small flies get mistaken for it
-        often enough that extension services write about the distinction directly, and this page
-        covers that too, in its own section below.
-      </p>
-      <p>
-        Source elimination comes before anything else on this page, because every source consulted
-        agrees on the order: University of Kentucky Extension states that once a structure is
-        infested, all potential breeding areas must be located and eliminated, and that unless the
-        breeding sites are removed, the problem will continue no matter how often insecticides are
-        applied to the adults.
+        If the flies are breeding in a kitchen drain, the enzyme gel pours straight down it and is listed as safe around food. For counters, fruit bowls and trash cans, TERRO&rsquo;s six apple-shaped traps come with a ready-to-use lure.
       </p>
 
       <h2 id="what-it-is">What It Is</h2>
@@ -361,6 +350,14 @@ export default function FruitFliesPage() {
         ]}
         asin="B0BX4GQF68"
       />
+
+      <p>
+        Source elimination comes before anything else on this page, because every source consulted
+        agrees on the order: University of Kentucky Extension states that once a structure is
+        infested, all potential breeding areas must be located and eliminated, and that unless the
+        breeding sites are removed, the problem will continue no matter how often insecticides are
+        applied to the adults.
+      </p>
 
       <h2 id="faq">Questions</h2>
       <UsFaq faqs={faqs} />

@@ -179,7 +179,7 @@ export default function ArizonaBarkScorpionsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="arizona-bark-scorpions" />}
       title="Arizona Bark Scorpions"
-      subtitle="One scorpion in the United States is of medical concern, and it lives alongside several that are not. This page sets out how the extension services tell them apart, what they say about a sting, and what they say actually keeps one out of a building."
+      subtitle="Sealants, UV flashlights and long tongs for desert homes with bark scorpions: seal the gaps, find them at night, move them without touching."
       lastUpdated="August 2026"
       readingTime="12 min"
       tocItems={tocItems}
@@ -188,21 +188,7 @@ export default function ArizonaBarkScorpionsPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        <em>Centruroides sculpturatus</em> is the name the current publications use.
-        University of Arizona Cooperative Extension states plainly what separates it from
-        every other scorpion a reader in the desert southwest is likely to meet:{' '}
-        <em>
-          &ldquo;The Arizona bark scorpion is the only scorpion of medical concern in the
-          U.S. (Curry et al. 1983), and while all native scorpions can sting, only Arizona
-          bark scorpion stings are hazardous to human health.&rdquo;
-        </em>
-      </p>
-      <p>
-        Because that is the whole difference, the identification section comes first and
-        the sting section comes second, before anything else on this page. Everything
-        below is drawn from university extension services, one FDA register entry and one
-        peer-reviewed paper, each named in the sentence that uses it and listed at the
-        foot of the page.
+        GE&rsquo;s clear silicones seal eaves, pipes and wall gaps. A 395 nm UV flashlight helps on night checks, and the 108-LED model gives a wider beam. For picking a scorpion up, the tongs run 10.6 to 12 inches, inside the length range UC IPM gives for forceps.
       </p>
 
       <h2 id="identification">Which Scorpion Is It</h2>
@@ -829,6 +815,17 @@ export default function ArizonaBarkScorpionsPage() {
         Texas A&amp;M AgriLife Extension gives the same advice and one alternative:{' '}
         <em>&ldquo;Alternatively, they can be frozen.&rdquo;</em> It also notes that a bucket
         works as a holding container because the animal cannot climb the slippery sides.
+      </p>
+
+      <p>
+        <em>Centruroides sculpturatus</em> is the name the current publications use.
+        University of Arizona Cooperative Extension states plainly what separates it from
+        every other scorpion a reader in the desert southwest is likely to meet:{' '}
+        <em>
+          &ldquo;The Arizona bark scorpion is the only scorpion of medical concern in the
+          U.S. (Curry et al. 1983), and while all native scorpions can sting, only Arizona
+          bark scorpion stings are hazardous to human health.&rdquo;
+        </em>
       </p>
 
       <h2 id="not-carried">What This Page Does Not Carry</h2>

@@ -215,7 +215,7 @@ export default function ImportedFireAntsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="imported-fire-ants" />}
       title="Imported Fire Ants"
-      subtitle="A federal regulation says which ants the name covers, and Texas A&amp;M publishes a control method with real numbers in it. This page sets out both, tells you how to separate an imported fire ant from a native ant you should leave alone, and reports what the sources say about a sting."
+      subtitle="Fire ant baits, hand spreaders and nitrile gloves, for yards treated by broadcast and for anyone mixing a liquid mound treatment."
       lastUpdated="August 2026"
       readingTime="14 min"
       tocItems={tocItems}
@@ -224,11 +224,7 @@ export default function ImportedFireAntsPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Everything on this page comes from university extension services and, for the
-        quarantine, from the Code of Federal Regulations. Each claim names the source it rests
-        on in the sentence that makes it. Where two sources give different figures, both are
-        given with the source that holds each, because picking one would misrepresent the
-        evidence.
+        Amdro&rsquo;s granular hydramethylnon bait is for broadcasting over a yard, and Fertilome&rsquo;s spinosad bait carries an OMRI listing for vegetable beds. Extinguish Plus adds the growth regulator methoprene. A Scotts Whirl or EarthWay hand spreader puts bait down thinly, and unlined nitrile gloves from 15 to 22 mil suit mixing liquid concentrates.
       </p>
 
       <h2 id="which-ants">Which Ants the Name Covers</h2>

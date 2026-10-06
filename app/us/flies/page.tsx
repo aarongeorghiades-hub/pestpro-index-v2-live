@@ -194,7 +194,7 @@ export default function FliesPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="flies" />}
       title="House Flies"
-      subtitle="They cannot bite. What the sources say they do instead is move contamination from waste onto food, by carrying it rather than by injecting it. Every claim on this page carries the name of the fly it belongs to, because the documents behind it cover five different flies at once."
+      subtitle="Sticky fly ribbons, sticks and bait-cup traps, for garages, barns and porches or a few flies near the trash."
       lastUpdated="August 2026"
       readingTime="13 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -204,8 +204,7 @@ export default function FliesPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Quotation marks on this page mark a source&rsquo;s own words and nothing else. A term being
-        defined is set in <em>italics</em> instead, so the marks keep one meaning throughout.
+        The 24-pack of ribbons with pins suits a garage, barn or porch, and the 32-pack is the largest, coated on both sides. For a few flies in a small space, sticky sticks stand or hang, and Trappify&rsquo;s hanging trap has a cup you can add honey to for house flies near trash cans.
       </p>
 
       <h2 id="health">What the Sources Say They Carry</h2>

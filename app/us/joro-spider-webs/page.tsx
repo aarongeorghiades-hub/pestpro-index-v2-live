@@ -171,7 +171,7 @@ export default function JoroSpiderWebsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="joro-spider-webs" />}
       title="Joro Spider Webs"
-      subtitle="Why they end up strung across your front door, how far the structure really extends, and how to take one down without a ladder, a spray can, or a fight."
+      subtitle="One extendable cobweb pole for taking Joro webs down from eaves and doorways without a ladder."
       lastUpdated="August 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: 'Joro Spider', href: '/us/joro-spider' }}
@@ -182,9 +182,7 @@ export default function JoroSpiderWebsPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Most people meet a Joro spider by walking into its web, which is a poor introduction.
-        The web is the practical problem: it is large, it is strong, and it gets rebuilt across
-        the same doorway night after night through the fall.
+        The pick is the EVERSPROUT duster and pole, which extends from 5 to 12 feet and has a head that winds up silk. It suits webs strung high on eaves or across a doorway.
       </p>
 
       <h2 id="how-big">How Big They Get</h2>

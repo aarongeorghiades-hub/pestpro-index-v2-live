@@ -178,7 +178,7 @@ export default function FungusGnatsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="fungus-gnats" />}
       title="Fungus Gnats"
-      subtitle="The little dark flies drifting up from a houseplant are the symptom. The cause is in the pot, and it is wet. Six extension sources on how dry to let it get, what Bti does, what a yellow trap is actually for, and one thing two of them flatly disagree about."
+      subtitle="Bti granules and yellow sticky traps, for houseplant owners with gnat larvae in the soil and adults drifting around the pots."
       lastUpdated="September 2026"
       readingTime="10 min read"
       homeHref={FUNGUS_GNATS_HOME}
@@ -187,18 +187,7 @@ export default function FungusGnatsPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        <strong>
-          The insect you can see is the one that matters least. Everything that decides whether this
-          stops is happening in the top inch of soil.
-        </strong>{' '}
-        The University of Wisconsin-Madison Division of Extension puts the association in its first
-        sentence:{' '}
-        <em>
-          &ldquo;Fungus gnats (Family Sciaridae) are insects commonly associated with overwatered
-          houseplants.&rdquo;
-        </em>{' '}
-        Every source read for this page arrives at the same place from a different direction, and
-        none of them leads with a product.
+        Mosquito Bits are Bti-coated granules for the larvae, sprinkled on the soil or mixed into potting mix. The 60 two-sided yellow sticky traps push into the pot to show you the adults.
       </p>
 
       <h2 id="scope">What This Page Carries</h2>
@@ -462,6 +451,21 @@ export default function FungusGnatsPage() {
         ]}
         asin="B0BM51MQF3"
       />
+
+      <p>
+        <strong>
+          The insect you can see is the one that matters least. Everything that decides whether this
+          stops is happening in the top inch of soil.
+        </strong>{' '}
+        The University of Wisconsin-Madison Division of Extension puts the association in its first
+        sentence:{' '}
+        <em>
+          &ldquo;Fungus gnats (Family Sciaridae) are insects commonly associated with overwatered
+          houseplants.&rdquo;
+        </em>{' '}
+        Every source read for this page arrives at the same place from a different direction, and
+        none of them leads with a product.
+      </p>
 
       <h2 id="structural">When It Is the Building, Not the Plants</h2>
       <p>

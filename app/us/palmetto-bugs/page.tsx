@@ -157,7 +157,7 @@ export default function PalmettoBugsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="palmetto-bugs" />}
       title="Palmetto Bugs"
-      subtitle="One name, several different insects, and one of them is flightless and does not breed indoors at all. Which one is on your wall changes what you should do about it, so this page starts there."
+      subtitle="Bait stations, gel and granular baits, a perimeter spray and glue boards, for homes with large roaches indoors and around the outside."
       lastUpdated="August 2026"
       readingTime="12 min"
       tocItems={tocItems}
@@ -166,14 +166,7 @@ export default function PalmettoBugsPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Almost every page about palmetto bugs treats the name as a polite synonym for one insect.
-        The extension services do not. They treat it as a label that several different animals
-        answer to, and at least one of those animals behaves so differently from the others that
-        the usual advice does not apply to it.
-      </p>
-      <p>
-        That is where this page starts, because it is the part that changes what a reader should
-        actually do.
+        Combat Max&rsquo;s eight stations are sized for large roaches in living areas, and Advion gel goes into cracks in pea-size drops. Niban granular bait is for the outside perimeter, mulch beds and attics. Ortho&rsquo;s spray is for an outdoor perimeter treatment, kept well away from any bait, and Catchmaster glue boards show you where roaches travel.
       </p>
 
       <h2 id="what-it-is">What the Name Covers</h2>

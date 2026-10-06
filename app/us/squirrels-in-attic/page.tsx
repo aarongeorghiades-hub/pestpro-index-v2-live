@@ -138,7 +138,7 @@ export default function SquirrelsInAtticPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="squirrels-in-attic" />}
       title="Squirrels in the Attic"
-      subtitle="A noise overhead in daylight, gnaw marks on wiring, or nutshells in the insulation. Here is what university extension services and one state wildlife program publish about how tree squirrels get into a roof space, the specifications they give for keeping them out, and when the sources point toward a professional instead of a further DIY step."
+      subtitle="A one-way exclusion door, half-inch hardware cloth and a live trap, for getting tree squirrels out of an attic and closing the hole."
       lastUpdated="September 2026"
       readingTime="9 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -149,17 +149,7 @@ export default function SquirrelsInAtticPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        This page is about the tree squirrel &mdash; the animal that climbs rather than burrows, and
-        that gets into a roof space through a gap under the eaves or a torn vent screen rather than a
-        hole in the lawn. The ground-dwelling animal that digs under a patio and disappears into a
-        burrow is a different animal with a different page on this estate; see{' '}
-        <a href="/us/ground-squirrels">our ground squirrels page</a> for that one, and the FAQ below for
-        how the two are told apart.
-      </p>
-      <p>
-        Exclusion comes before trapping on this page, because that is the order Penn State Extension
-        puts it in: exclusion techniques, such as blocking entrances into buildings, are stated as the
-        most effective way to control damage, with trapping the tool for an animal already inside.
+        Start with the one-way steel door, which lets a squirrel out before you seal up. Then close the hole with 19-gauge half-inch hardware cloth in a 2 by 5 foot roll. The FPS live trap, 5 by 5 by 16 inches, is sized for squirrels. If the animal digs under a patio rather than climbing, see <a href="/us/ground-squirrels">our ground squirrels page</a>.
       </p>
 
       <h2 id="what-it-is">What It Is</h2>
@@ -348,6 +338,12 @@ export default function SquirrelsInAtticPage() {
         ]}
         asin="B07DT4Z9FY"
       />
+
+      <p>
+        Exclusion comes before trapping on this page, because that is the order Penn State Extension
+        puts it in: exclusion techniques, such as blocking entrances into buildings, are stated as the
+        most effective way to control damage, with trapping the tool for an animal already inside.
+      </p>
 
       <h2 id="repair">Repair and Cleanup</h2>
       <p>

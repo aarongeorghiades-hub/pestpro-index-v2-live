@@ -282,7 +282,7 @@ export default function SnakesPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="snakes" />}
       title="Snakes"
-      subtitle="Four extension services specify a snake-proof fence and none of them specifies quite the same fence. Five say repellents do not work. The law changes at the state line, and three published first-aid instructions disagree on one step. This page carries all of that, and names the products whose own text meets the one figure every source shares."
+      subtitle="Quarter-inch mesh for a snake fence, eighth-inch mesh for vents and silicone for narrow cracks, for homeowners sealing a house and yard."
       lastUpdated="August 2026"
       readingTime="19 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -292,10 +292,7 @@ export default function SnakesPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        This page is about snakes around a house and yard as university extension services describe
-        them. Most of it is what those services publish about keeping snakes out; a good deal of it
-        is about what they disagree on, and one section is about the law, which is different in
-        every state we read.
+        For a fence, there are three 36-inch by 50-foot rolls of quarter-inch mesh: hot-dip galvanized, galvanized after welding, or a heavier 23 gauge. Eighth-inch mesh in 36- or 24-inch rolls covers vents and small openings. GE silicone fills cracks too narrow to mesh over.
       </p>
 
       <h2 id="which-snake">Which Snake, and the Lookalike Problem</h2>

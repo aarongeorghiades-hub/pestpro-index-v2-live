@@ -182,7 +182,7 @@ export default function PowderpostBeetlesPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="powderpost-beetles" />}
       title="Powderpost Beetles"
-      subtitle="Small round holes in wood, and a little pile of powder underneath. Two questions decide what you do next: whether the infestation is still live, and whether what you are looking at is a beetle at all. This page answers those two first."
+      subtitle="Borate wood treatments and a pin moisture meter, for homeowners with bare, unfinished wood showing small round holes and powder."
       lastUpdated="September 2026"
       readingTime="11 min read"
       homeHref={POWDERPOST_HOME}
@@ -191,22 +191,7 @@ export default function PowderpostBeetlesPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        University of Kentucky opens its publication on this insect by saying that{' '}
-        <em>
-          &ldquo;Powderpost beetles are second only to termites in their ability to damage dry,
-          seasoned wood.&rdquo;
-        </em>{' '}
-        The same source says something less expected immediately afterwards: that customers often
-        receive conflicting opinions about whether what they are seeing is due to powderpost beetles
-        at all, and that mistakes are also made in determining whether the infestation is active.
-      </p>
-      <p>
-        <strong>
-          That is why this page leads with the two diagnostic questions rather than with treatment.
-        </strong>{' '}
-        Almost everything a reader might do next &mdash; replace a board, sand and treat a floor,
-        call a company, or do nothing at all &mdash; depends on the answers, and both answers are
-        reachable by looking carefully at the wood.
+        Bora-Care is a borate concentrate the listing says penetrates wood fibers, for bare, unfinished wood. Tim-BOR is a borate that goes on as dust, liquid or foam. Extech&rsquo;s pin meter reads wood moisture from 5 to 50 percent, so you can check wood against published thresholds.
       </p>
 
       <h2 id="scope">What This Page Carries</h2>
@@ -576,6 +561,17 @@ export default function PowderpostBeetlesPage() {
         ]}
         asin="B011BLHBBM"
       />
+
+      <p>
+        University of Kentucky opens its publication on this insect by saying that{' '}
+        <em>
+          &ldquo;Powderpost beetles are second only to termites in their ability to damage dry,
+          seasoned wood.&rdquo;
+        </em>{' '}
+        The same source says something less expected immediately afterwards: that customers often
+        receive conflicting opinions about whether what they are seeing is due to powderpost beetles
+        at all, and that mistakes are also made in determining whether the infestation is active.
+      </p>
 
       <h2 id="not-named">What Is Not Named Here, and Why</h2>
       <p>

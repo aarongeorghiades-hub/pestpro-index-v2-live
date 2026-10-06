@@ -159,7 +159,7 @@ export default function TermitesPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="termites" />}
       title="Termites"
-      subtitle="Mud tubes against a foundation, or a small pile of six-sided pellets under a beam. Here is what university extension services say about the signs, the two main types, and the one thing all of them agree a homeowner cannot buy their way out of."
+      subtitle="Termite detection stakes, a borate wood concentrate and a spot-treatment foam, for homeowners keeping watch or treating one located spot."
       lastUpdated="August 2026"
       readingTime="11 min"
       tocItems={tocItems}
@@ -168,15 +168,7 @@ export default function TermitesPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Most termite pages open with products. This one opens with a limit, because that is what
-        the sources put first and because putting it anywhere else would be putting it after the
-        point at which a reader has already decided what to buy.
-      </p>
-      <p>
-        Five university extension services, writing separately, say the same thing about
-        consumer termite products. There is no source consulted for this page that says the
-        opposite. That agreement is unusual enough to belong at the top rather than in a
-        footnote.
+        Spectracide&rsquo;s 15 detection stakes go in the ground around the house and get checked yearly, with an 8-pack of replacements for upkeep. Bora-Care is for bare interior wood, usually at the new-construction stage. Termidor foam goes into one located crack, void or gallery.
       </p>
 
       <h2 id="the-boundary">What Consumer Products Cannot Do</h2>

@@ -193,7 +193,7 @@ export default function TicksPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="ticks" />}
       title="Ticks"
-      subtitle="Prevention first, because that is where the sources put the weight: a named concentration for clothing, a named list of repellent ingredients, and nine feet of lawn edge where most of the ticks actually are."
+      subtitle="Permethrin for clothing, picaridin for skin, fine tweezers and tick tubes, for hikers, gardeners and yards bordering woods."
       lastUpdated="August 2026"
       readingTime="14 min"
       tocItems={tocItems}
@@ -202,17 +202,7 @@ export default function TicksPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Most of what the public health and extension sources say about ticks is about not being
-        bitten in the first place, and about a small number of specific, checkable things &mdash; a
-        concentration on a label, a distance from the lawn edge, a way of holding a pair of
-        tweezers. This page leads with those, because that is the order the sources put them in.
-      </p>
-      <p>
-        <strong>CDC notes that many people get ticks in their own yard or neighborhood.</strong>{' '}
-        <em>
-          (CDC&rsquo;s pages could not be retrieved when this page was last checked, so what it says
-          is reported here in our own words rather than quoted)
-        </em>
+        Sawyer&rsquo;s permethrin goes on clothing, boots and gear, never skin. For skin, there is 20% picaridin as a Sawyer pump or an OFF! aerosol. Two pairs of fine-point tweezers grip an attached tick close to the skin, and Thermacell&rsquo;s tick tubes and Ortho&rsquo;s granular lawn product are for yards beside woods.
       </p>
 
       <h2 id="prevention">Preventing Bites</h2>
@@ -1079,6 +1069,14 @@ export default function TicksPage() {
         rather than substitute something else into that slot, the slot is left empty. And no pet
         product is listed: the sources consulted describe veterinary tick products for animals, and
         this page has no basis for recommending a consumer one.
+      </p>
+
+      <p>
+        <strong>CDC notes that many people get ticks in their own yard or neighborhood.</strong>{' '}
+        <em>
+          (CDC&rsquo;s pages could not be retrieved when this page was last checked, so what it says
+          is reported here in our own words rather than quoted)
+        </em>
       </p>
 
       <h2 id="where">Where This Applies</h2>

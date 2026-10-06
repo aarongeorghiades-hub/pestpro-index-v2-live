@@ -143,7 +143,7 @@ export default function ChiggersPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="chiggers" />}
       title="Chiggers"
-      subtitle="They do not burrow into your skin and they do not drink your blood. Three university extension services say so in three different sets of words, and what is actually happening is stranger and more useful to know."
+      subtitle="Clothing and skin repellents plus anti-itch creams, for hikers and yard workers heading into chigger country and anyone already itching."
       lastUpdated="August 2026"
       readingTime="11 min"
       tocItems={tocItems}
@@ -152,10 +152,7 @@ export default function ChiggersPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Almost everything widely believed about chiggers is wrong, and unusually for
-        this subject the corrections are not a matter of opinion. Three university
-        extension services, in three different states, take the trouble to say the same
-        two things in their own words.
+        Sawyer&rsquo;s permethrin goes on clothing, gear and tents, never skin. For skin, Sawyer and OFF! both sell 20% picaridin, as a pump or an aerosol. If the bites already itch, there is calamine lotion, pink or clear, and 1% hydrocortisone as a cream or a water-resistant ointment.
       </p>
 
       <h2 id="what-they-are">What They Actually Are</h2>

@@ -113,7 +113,7 @@ export default function RaccoonCageTrapsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="best-raccoon-traps" />}
       title="Raccoon Cage Traps"
-      subtitle="One extension service publishes a minimum cage size for raccoons. This page measures six listed cages against that figure, records what each listing publishes, and does nothing else with them."
+      subtitle="Six 32-inch cage traps for raccoons, compared on size, door and build, including a collapsible cage that stores flat."
       lastUpdated="August 2026"
       readingTime="6 min"
       breadcrumbParent={{ label: 'Raccoons', href: '/us/raccoons' }}
@@ -122,6 +122,10 @@ export default function RaccoonCageTrapsPage() {
       clusterNav={RACCOON_NAV}
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
+      <p>
+        All six are 32-inch cages. The Havahart 1-door cage and the steel 1-door cage both measure over the Iowa State minimum. There is a stainless steel build if you want one, and the Faicuk cage collapses flat between uses.
+      </p>
+
       <h2 id="exclusion-first">Exclusion Comes First</h2>
       <p>
         The sources this page draws on do not lead with a cage. UC IPM states that exclusion is the

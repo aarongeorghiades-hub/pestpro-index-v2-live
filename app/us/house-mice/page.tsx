@@ -228,7 +228,7 @@ export default function HouseMicePage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="house-mice" />}
       title="House Mice"
-      subtitle="Identification, exclusion and trapping, as nine university extension and federal publications describe them. Five sources independently name the same quarter-inch gap a house mouse can enter through. The sources disagree, in three distinct positions, about whether to use a glue board. Rodent-borne disease is out of scope here on purpose, and is named once rather than sourced and carried."
+      subtitle="Snap traps, glue boards and quarter-inch hardware cloth, for homes setting several traps at once or sealing gaps along a foundation."
       lastUpdated="August 2026"
       readingTime="13 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -238,12 +238,7 @@ export default function HouseMicePage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        This page is about one species: the house mouse, <em>Mus musculus</em>, as nine
-        university extension and federal publications describe it. It covers identification,
-        signs of an infestation, exclusion, trapping and control methods, sanitation, and when
-        the sources say to call a professional. It does not cover rodent-borne disease as a
-        sourced subject, and the section below explains why that is a scope decision rather than
-        an oversight.
+        Victor&rsquo;s 12-pack of metal-pedal wooden traps is sized for mice and suits setting several at once. Trapper&rsquo;s case of 72 glue boards lines baseboards and corners. For gaps along a foundation, the quarter-inch galvanized hardware cloth comes in a 36-inch by 50-foot roll.
       </p>
 
       <h2 id="which-mouse">Which Mouse? Telling It From a Deer Mouse</h2>

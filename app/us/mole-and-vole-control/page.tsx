@@ -285,7 +285,7 @@ export default function MoleAndVoleControlPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="mole-and-vole-control" />}
       title="Mole and Vole Control"
-      subtitle="Five products are named on this page and every one of them is here because an extension service published a criterion it meets. Two more things are named because no product exists for them at all, and the page says so plainly rather than filling the space."
+      subtitle="Mole traps, mouse snap traps for voles, a castor oil lawn spray and a worm bait, for lawns with moles or vole runways."
       lastUpdated="August 2026"
       readingTime="14 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -295,10 +295,7 @@ export default function MoleAndVoleControlPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        This page covers what a householder can actually do about moles and voles, using only what
-        university extension services and one EPA-registered product label publish. Where those
-        sources disagree with each other, the disagreement is set out rather than settled. Where
-        the law puts a method out of a homeowner&rsquo;s reach, the page says so and names nothing.
+        For moles, Victor&rsquo;s Out O&rsquo; Sight 4-pack lets you run three traps at once, and Tomcat&rsquo;s worm baits go below ground in an active runway. For voles, Victor mouse snap traps come in a 12-pack for several runways or a 4-pack for one. Baar&rsquo;s castor oil spray goes on through a hose, and the listing states it covers 5,000 square feet.
       </p>
       <p>
         Five products are named.{' '}

@@ -175,7 +175,7 @@ export default function NoSeeUmsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="no-see-ums" />}
       title="No-See-Ums"
-      subtitle="A biting fly small enough to walk through an ordinary window screen. Three extension services say so, one of them publishes the mesh numbers, and the screening you can actually buy does not quite reach the figure they name."
+      subtitle="20 x 20 mesh screen plus picaridin and permethrin repellents, for re-screening windows and porches and for time spent outdoors."
       lastUpdated="August 2026"
       readingTime="12 min"
       tocItems={tocItems}
@@ -184,10 +184,7 @@ export default function NoSeeUmsPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Most biting-insect problems are solved outdoors. This one has an indoor half,
-        because the insect is small enough to come through the screen you already have.
-        That is not a marketing line; it is what three separate extension services say,
-        and one of them publishes the numbers.
+        The 20 x 20 mesh screen comes in a 25-foot roll for a few windows, a 100-foot roll for a porch, and a heavy-duty roll from a second maker. For skin, Sawyer and OFF! both sell 20% picaridin. Sawyer&rsquo;s permethrin is for clothing and gear, not skin.
       </p>
 
       <h2 id="what-they-are">The Insect That Walks Through Screens</h2>

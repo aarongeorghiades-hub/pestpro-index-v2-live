@@ -135,7 +135,7 @@ export default function ClusterFliesPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="cluster-flies" />}
       title="Cluster Flies"
-      subtitle="Big, slow, dull flies bumping down an upstairs window in October, and again on the first warm day in February. They are not house flies, they are not dirty, and they did not come from anything in your kitchen."
+      subtitle="Three clear silicone caulks for sealing windows, doors and siding in summer, before cluster flies come in for the winter."
       lastUpdated="August 2026"
       readingTime="7 min"
       breadcrumbParent={{ label: 'Stink Bugs in the House', href: '/us/stink-bugs-in-house' }}
@@ -146,10 +146,7 @@ export default function ClusterFliesPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Most people meet cluster flies without ever learning what they are. The flies turn up
-        at an upstairs window, move too slowly to be house flies, die on the sill, and get
-        swept up. Then more arrive. The usual conclusion is that something is rotting
-        somewhere, and that conclusion is almost always wrong.
+        The picks are three GE clear silicones for summer sealing. Two are window-and-door formulas in 10 and 10.1 oz cartridges, and the all-purpose one suits gaps around utility pipes.
       </p>
 
       <h2 id="what-they-are">What They Are</h2>

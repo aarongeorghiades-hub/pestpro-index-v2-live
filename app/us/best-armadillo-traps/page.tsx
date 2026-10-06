@@ -149,7 +149,7 @@ export default function BestArmadilloTrapsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="best-armadillo-traps" />}
       title="Armadillo Traps"
-      subtitle="One field study tested eleven baits and a commercial lure against an empty trap and found no difference. What did make a difference was the boards either side of the door. Here is the method, the size specification, and the traps that meet it."
+      subtitle="Three one-door cage traps sized for armadillos, for first-time trappers and anyone who wants to release the animal from behind."
       lastUpdated="August 2026"
       readingTime="8 min"
       breadcrumbParent={{ label: 'Armadillos', href: '/us/armadillos' }}
@@ -159,6 +159,10 @@ export default function BestArmadilloTrapsPage() {
       clusterNav={ARMADILLO_NAV}
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
+      <p>
+        Three cage traps that meet the size this page sets out. The Havahart 1085 suits a first-time trapper, with a set lever so you never reach inside. The Tomahawk 608SS has a rear sliding door for release from behind, and the Havahart 1079SR has a galvanized, steel-reinforced frame.
+      </p>
+
       <h2 id="what-matters">What Changes the Outcome</h2>
       <p>
         Most advice about armadillo trapping is advice about bait. There is a field study that tested

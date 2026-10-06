@@ -175,7 +175,7 @@ export default function OpossumsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="opossums" />}
       title="Opossums"
-      subtitle="Something has moved in under the deck, and something has been through the trash. Here is what university extension services and state agencies say about the animal, and the one fact about it that changes which remedies can possibly work."
+      subtitle="Quarter-inch hardware cloth in five roll sizes, for closing off the space under a deck, shed or vent."
       lastUpdated="August 2026"
       readingTime="10 min"
       tocItems={tocItems}
@@ -184,15 +184,7 @@ export default function OpossumsPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        One fact about this animal decides most of what follows, so it goes first. UF/IFAS Extension
-        states that <strong>opossums do not dig burrows</strong>. They take shelter in what is
-        already there, which means an opossum under a deck got in through an opening that already
-        existed, and closing that opening is the whole job.
-      </p>
-      <p>
-        It also means that if your lawn has been dug up, the sources read for this page will not let
-        us blame an opossum. Nebraska Extension gives a digging signature for two other animals and
-        none for this one. That comparison is below.
+        Every pick is quarter-inch hardware cloth, so the choice is size and finish. A 48-inch by 50-foot roll suits the space under a deck or shed, and 100-foot rolls cover longer runs, one of them PVC-coated in black. The 24-inch, 19-gauge roll is for a buried trench and skirt, and an 8-inch by 10-foot roll patches one vent.
       </p>
 
       <h2 id="what-it-is">What It Is</h2>
@@ -408,6 +400,19 @@ export default function OpossumsPage() {
           short-lived, so none is listed here.
         </p>
       </div>
+
+      <p>
+        One fact about this animal decides most of what follows, so it goes first. UF/IFAS Extension
+        states that <strong>opossums do not dig burrows</strong>. They take shelter in what is
+        already there, which means an opossum under a deck got in through an opening that already
+        existed, and closing that opening is the whole job.
+      </p>
+
+      <p>
+        It also means that if your lawn has been dug up, the sources read for this page will not let
+        us blame an opossum. Nebraska Extension gives a digging signature for two other animals and
+        none for this one. That comparison is below.
+      </p>
 
       <h2 id="range">Range</h2>
       <p>

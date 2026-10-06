@@ -226,7 +226,7 @@ export default function GermanCockroachesPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="german-cockroaches" />}
       title="German Cockroaches"
-      subtitle="One species, Blattella germanica, and the sources treat it as a different problem from every other cockroach in a house. It is the small one, it does not live outdoors, and the product that works on the big ones is the wrong size for it."
+      subtitle="Bait stations, gel bait and growth-regulator discs for small German cockroaches, for kitchens and the cracks around them."
       lastUpdated="August 2026"
       readingTime="16 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -236,15 +236,7 @@ export default function GermanCockroachesPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Quotation marks on this page mark a source&rsquo;s own words and nothing else. A term being
-        defined is set in <em>italics</em> instead, so the marks keep one meaning throughout.
-      </p>
-      <p>
-        <strong>This page covers one species and hands the rest off.</strong> Every claim below
-        belongs to <em>Blattella germanica</em>. The large outdoor cockroaches that the name{' '}
-        <em>palmetto bug</em> is applied to are covered on{' '}
-        <Link href="/us/palmetto-bugs">our palmetto bugs page</Link>, and none of their material is
-        repeated here.
+        Combat Max&rsquo;s 18 fipronil stations are listed for up to 12 months, and Combat&rsquo;s 12 hydramethylnon stations give you a different active. Advion Trio gel goes into cracks and crevices, and Gentrol&rsquo;s 20 growth-regulator discs each cover 75 square feet where sprays don&rsquo;t suit. The large outdoor roaches called palmetto bugs have <Link href="/us/palmetto-bugs">their own page</Link>.
       </p>
 
       <h2 id="indoors">It Lives Indoors and Cannot Live Outside</h2>

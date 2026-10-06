@@ -265,7 +265,7 @@ export default function ChipmunksPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="chipmunks" />}
       title="Chipmunks"
-      subtitle="Four of the five sources on this page make control conditional — on numbers, or on the animal burrowing against a structure. So this page separates the case they say warrants control from the case they say usually does not, and puts the tools with the first one."
+      subtitle="Rat-size snap traps, quarter-inch hardware cloth, caulk and a downspout strainer, for yards with several chipmunks or burrows against the house."
       lastUpdated="August 2026"
       readingTime="15 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -275,13 +275,7 @@ export default function ChipmunksPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        <strong>
-          Most of what people want to do about chipmunks, the extension services do not recommend
-          doing.
-        </strong>{' '}
-        There is no registered poison. There is no effective frightening device. The repellents are
-        labeled for a different animal. And four of the five sources here make control conditional
-        on numbers or on structural damage rather than on the animal being present.
+        Victor&rsquo;s M201 rat trap comes as a 12-pack for a yard with several chipmunks, or singly for one burrow. FORIMO&rsquo;s quarter-inch hardware cloth covers bulb beds and building gaps, GE silicone seals where cables and lines enter, and a stainless strainer fits downspouts and vents of 3.0 to 4.9 inches.
       </p>
       <p>
         Five products are named further down, all of them for the one case the sources agree
@@ -671,6 +665,16 @@ export default function ChipmunksPage() {
       {guards.map((p) => (
         <UsToolCard key={p.asin} name={p.cardName} whatItDoes={p.whatItDoes} asin={p.asin} />
       ))}
+
+      <p>
+        <strong>
+          Most of what people want to do about chipmunks, the extension services do not recommend
+          doing.
+        </strong>{' '}
+        There is no registered poison. There is no effective frightening device. The repellents are
+        labeled for a different animal. And four of the five sources here make control conditional
+        on numbers or on structural damage rather than on the animal being present.
+      </p>
 
       <h2 id="repellents">Repellents</h2>
       <p>

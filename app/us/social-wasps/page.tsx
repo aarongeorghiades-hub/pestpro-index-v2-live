@@ -222,7 +222,7 @@ export default function SocialWaspsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="social-wasps" />}
       title="Social Wasps"
-      subtitle="Yellowjackets, paper wasps and hornets, as nine university extension services describe them. Most of what Americans call a hornet is a yellowjacket. A wasp leaves no stinger to remove, so the first-aid advice everyone repeats belongs to a different insect. And on what to put on the sting, the sources give four answers, which this page reports rather than settles."
+      subtitle="Three wasp and hornet jet sprays with a 20- to 27-foot reach, for nests under eaves, high on siding, or more than one."
       lastUpdated="August 2026"
       readingTime="14 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -232,10 +232,7 @@ export default function SocialWaspsPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        This page is about the wasps that live in colonies and defend a nest, as university
-        extension services describe them. It is one subject rather than two, because that is how
-        the sources treat it, and the section below sets out why the word hornet causes more
-        trouble here than any other word on the page.
+        SpectracidePRO&rsquo;s 18 oz can states a 20-foot reach, for nests under eaves. Hot Shot&rsquo;s water-based spray is listed to reach 27 feet, for higher nests near siding. Spectracide&rsquo;s twin pack of 20 oz cans suits more than one nest.
       </p>
 
       <h2 id="which-wasp">Which Wasp, and the Hornet Problem</h2>

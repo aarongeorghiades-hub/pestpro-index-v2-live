@@ -258,7 +258,7 @@ export default function SilverfishPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="silverfish" />}
       title="Silverfish and Firebrats"
-      subtitle="They scrape paper rather than biting it, and they are two species, not one. The numbers attached to them differ by species and by publisher, so every figure on this page carries the name of the insect it counts and the name of the source that published it."
+      subtitle="Glue traps, boric acid paks and airtight food containers, for silverfish in books, closets, crawl spaces and the pantry."
       lastUpdated="August 2026"
       readingTime="14 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -268,9 +268,7 @@ export default function SilverfishPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Silverfish are the classic paper pest, and firebrats are the look-alike that wants the
-        opposite conditions. Quotation marks on this page mark a source&rsquo;s own words and
-        nothing else.
+        For catching and checking, EcoPest&rsquo;s 12 scented glue traps cover silverfish and firebrats, box traps with no lure suit plain monitoring, and angled traps fit damp crawl spaces. Dekko&rsquo;s 48 boric acid paks suit books, papers and closets. Airtight containers from Vtopmart, CHEFSTORY or PRAKI keep cereal, flour and pet food sealed.
       </p>
 
       <h2 id="what">What They Are, and What They Do to Paper</h2>

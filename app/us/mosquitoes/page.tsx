@@ -135,7 +135,7 @@ export default function MosquitoesPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="mosquitoes" />}
       title="Mosquitoes"
-      subtitle="A teaspoon of standing water is enough to breed them, and the biting adult is the last stage of a life cycle that starts and ends in water around the property. Here is what university extension services and one state agricultural extension publish about breeding sites, larval and adult control, personal protection, and which widely sold devices the same sources say do not work."
+      subtitle="Bti dunks for standing water, a 20% picaridin spray and a hose-end yard spray, for homes with ponds, troughs or shady yard edges."
       lastUpdated="September 2026"
       readingTime="10 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -146,17 +146,7 @@ export default function MosquitoesPage() {
       schemas={[articleSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Controlling mosquitoes matters because, beyond the bite itself, they can spread
-        disease between people and animals — that is the one sentence this page spends
-        on the subject. Everything below is about the insect and the control methods the
-        sources publish; a doctor or local health service is the right place for any
-        question about illness, and this page does not attempt to answer one.
-      </p>
-      <p>
-        Source reduction comes before every other method on this page, because that is
-        the order the sources put it in. NC State Extension states it as a general rule:{' '}
-        <em>Modifying or eliminating breeding sites is the long-term solution to severe
-        mosquito problems.</em>
+        Bti dunks suit a pond or trough you can&rsquo;t drain, and the listing says each one releases for 30 days or more. The 20% picaridin spray is fragrance-free, for skin and clothing. For shrubs, paths and wooded edges, the hose-end barrier spray is a quart that attaches to a garden hose.
       </p>
 
       <h2 id="what-it-is">What It Is</h2>
@@ -424,6 +414,13 @@ export default function MosquitoesPage() {
         ]}
         asin="B00LI6ACUI"
       />
+
+      <p>
+        Source reduction comes before every other method on this page, because that is
+        the order the sources put it in. NC State Extension states it as a general rule:{' '}
+        <em>Modifying or eliminating breeding sites is the long-term solution to severe
+        mosquito problems.</em>
+      </p>
 
       <h2 id="professional">When to Call a Professional</h2>
       <p>

@@ -281,7 +281,7 @@ export default function MothsPage() {
     <UsPageLayout
       topPicks={<UsTopPicks slug="moths" />}
       title="Household Moths"
-      subtitle="Two different insects share the name. One eats wool, fur and feathers; the other lives in flour, cereal and pet food. They need different products, and the flagship source states that a pheromone trap for one will not attract the other. This page keeps them apart."
+      subtitle="Pheromone traps and gasket-seal storage for clothes moths and pantry moths, with separate picks for closets and kitchen cupboards."
       lastUpdated="August 2026"
       readingTime="15 min"
       breadcrumbParent={{ label: 'US Pest Guides', href: '/us' }}
@@ -291,9 +291,7 @@ export default function MothsPage() {
       schemas={[webPageSchema, breadcrumbSchema, faqPageSchema(faqs)]}
     >
       <p>
-        Moths in the house is two problems, not one. This page follows the sources in splitting
-        them, because the products that work on one do not work on the other. Quotation marks on
-        this page mark a source&rsquo;s own words and nothing else.
+        Clothes moths and pantry moths take different traps, so the picks are split. For closets, there are six Dr. Killigan&rsquo;s or fourteen MaxGuard clothes moth traps, with IRIS or Sterilite gasket bins for clean woolens. For the kitchen, there are pantry moth traps from Dr. Killigan&rsquo;s, MaxGuard and BugMD, and airtight containers from Vtopmart, CHEFSTORY or PRAKI.
       </p>
 
       <h2 id="two-kinds">Two Kinds of Household Moth</h2>
