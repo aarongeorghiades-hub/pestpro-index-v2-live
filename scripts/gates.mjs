@@ -642,6 +642,19 @@ const all = (re, s) => [...s.matchAll(new RegExp(re.source, re.flags))];
 const hitStrings = (re, s) => all(re, s).map((m) => m[0]);
 
 // Hits of `re` falling within `win` characters of any occurrence of `markRe`.
+// M12's money finder with RSC chunk references removed (S70 R5). A reference is
+// "$" + hex digits as the WHOLE of a JSON string: a quote, escaped or not, on both
+// sides. Anything else stays money.
+const RSC_REF_RE = /(?:\\?")\$[0-9a-f]+(?=\\?")/gi;
+function nearMoneyNotRsc(text) {
+  const refs = new Set(all(RSC_REF_RE, text).map((m) => m.index + m[0].indexOf('$')));
+  const marks = all(EITHER_CARD_RE, text).map((m) => m.index);
+  return all(MONEY_RE, text)
+    .filter((m) => !refs.has(m.index))
+    .filter((m) => marks.some((i) => Math.abs(i - m.index) <= 800))
+    .map((m) => m[0]);
+}
+
 function near(text, markRe, re, win) {
   const marks = all(markRe, text).map((m) => m.index);
   if (!marks.length) return [];
@@ -1036,11 +1049,23 @@ const MATCHERS = [
     // price rendered into an attribute or into the RSC flight payload that the
     // prose surface strips and no reader ever sees. Window and surface are both
     // stated, because the count is meaningless without them (Law 62).
-    test: (t) => near(t, EITHER_CARD_RE, MONEY_RE, 800),
+    // S70 R5 — AN RSC REFERENCE IS NOT A DOLLAR AMOUNT (Law 151). The flight
+    // payload addresses its own chunks as "$1", "$52", "$1a" — a dollar sign, hex
+    // digits, and a JSON string quote on BOTH sides. MONEY_RE read those as money.
+    // When the US top-picks box put tagged links into the payload, 14 routes
+    // failed on nothing but those tokens (42 hits, all of this shape, read one by
+    // one). The rule is exact: a whole JSON string that is only "$" + hex. A real
+    // price inside a payload string carries other text, and a JSX child that is
+    // only "$200" also renders as >$200< in the HTML, which this still catches.
+    test: (t) => near(t, EITHER_CARD_RE, MONEY_RE, 800).length
+      ? nearMoneyNotRsc(t)
+      : [],
     probePos: '<p>Only $19.99</p>' + 'x'.repeat(700) + `<a href="${CARD_LINK}">buy</a>`,
     probeNeg: [
       '<p>a snap trap</p>' + `<a href="${CARD_LINK}">buy</a>`,
       '<p>$19.99</p>' + 'x'.repeat(900) + `<a href="${CARD_LINK}">buy</a>`,
+      // S70 R5: production-shaped RSC references, escaped and unescaped, beside a card.
+      `self.__next_f.push([1,"f:[\\"$\\",\\"$L51\\",null,{\\"children\\":[\\"$\\",\\"$52\\",null]}]"]) "$1a" ${CARD_LINK}`,
     ],
   },
   {

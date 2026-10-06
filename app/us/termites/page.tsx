@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -156,6 +157,7 @@ const tocItems = [
 export default function TermitesPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="termites" />}
       title="Termites"
       subtitle="Mud tubes against a foundation, or a small pile of six-sided pellets under a beam. Here is what university extension services say about the signs, the two main types, and the one thing all of them agree a homeowner cannot buy their way out of."
       lastUpdated="August 2026"

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import { SourceList, type Source } from '../components/UsSources';
 import UsToolCard from '../components/UsToolCard';
@@ -135,6 +136,7 @@ const tocItems = [
 export default function SquirrelsInAtticPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="squirrels-in-attic" />}
       title="Squirrels in the Attic"
       subtitle="A noise overhead in daylight, gnaw marks on wiring, or nutshells in the insulation. Here is what university extension services and one state wildlife program publish about how tree squirrels get into a roof space, the specifications they give for keeping them out, and when the sources point toward a professional instead of a further DIY step."
       lastUpdated="September 2026"

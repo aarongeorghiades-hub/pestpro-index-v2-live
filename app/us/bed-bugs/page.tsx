@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -245,6 +246,7 @@ const sources: Source[] = [
 export default function BedBugsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="bed-bugs" />}
       title="Bed Bugs"
       subtitle="Identification, where they hide, how they spread, and the inspection methods and temperatures nine EPA, Penn State and Purdue publications describe. Bed bugs are not known to transmit disease to humans — every source that addresses the question agrees, and this page says so once and does not build the subject out further."
       lastUpdated="August 2026"

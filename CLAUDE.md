@@ -2796,3 +2796,60 @@ B000BQT5IG's standing bar is untouched by this law.
 THE BEFORE STATE restored against is commit 2efd1f5, the last commit before the S66 pilot
 (83d2002, 2026-09-06). M28 fingerprints on the UK `/best` routes moved by design and were
 re-adjudicated per route under this ruling.
+
+## S70 R5 — LAW 195 EXTENDED TO /us: THE US TOP-PICKS BOX
+
+PM RULING, S70 R5, dated 2026-10-06. Law 195's selling layer is extended to every
+CARDING `/us` route, in one form only: the top-picks box. Law 195's text above is
+not edited; this section governs `/us` alongside it.
+
+WHAT IS PERMITTED ON /us. A box built from `components/TopPicks.tsx` with
+`market="us"`, rendered by `app/us/components/UsTopPicks.tsx` through the
+`topPicks` prop of `UsPageLayout`, inside the hero directly after the byline so it
+sits in the first 390px mobile screen. One row per carded product: a label, the
+card's own name, a one-line who-it-suits reason drawn from that card's listing
+facts, and a "Check price on Amazon" button to `amazon.com/dp/<ASIN>?tag=pestproindex2-20`.
+The box carries a one-line safety/law note ONLY where the page already carries that
+safety or legal content (poisons, traps, protected species, venomous pests,
+pesticide labels). No efficacy-doubt line goes in the box.
+
+LAW 180 ON /us IS SATISFIED BY THAT NOTE, exactly as on UK `/best/*`. The existing
+UsToolCards and every guide section stay where they were; the box is added, nothing
+is moved. M28 fingerprints moved on all 40 box routes BY DESIGN and were
+re-adjudicated per route with this ruling as the recorded cause. /us/chipmunks'
+Law 181 exception stands unaltered; M12 is 0 on it with the box present.
+
+US LABELS ARE NEUTRAL DESCRIPTORS, NEVER AWARDS. This is the one place the US box
+differs from the UK one, and it is not a preference: US routes state in our own
+voice that their products are not ranked (e.g. /us/arizona-bark-scorpions, "not
+ranked, and no order is implied"). A "Best ..." label above that sentence would
+contradict the page (Law 132). Labels name the format or use ("Liquid bait
+stations, 12-pack"). No rank numerals.
+
+THE BOX IS DERIVED, NOT LISTED (Law 183's principle). Names and ASINs come from the
+route's own cards through `extractRoute()`; `app/us/lib/topPicksData.ts` holds only
+the words. A card with no box entry, or a box entry with no card, HALTS THE BUILD.
+`/us/products` carries no box: it is the derived index of all 188 cards, and a
+"top picks" box listing every card is not a pick.
+
+HARD LINES, UNCHANGED FROM LAW 195: no prices or price words, no ratings or review
+counts, no bestseller/Amazon's Choice/#1, no images, no dead or mislabelled ASIN,
+no "works/kills/guaranteed" on a repellent. US spelling (Law 169). `/us` titles and
+meta are untouched by this extension.
+
+## S70 R5 — M12 READ RSC CHUNK REFERENCES AS DOLLARS, AND WAS REPAIRED
+
+The box put tagged links into the RSC flight payload, and M12 (Law 120, served
+bytes) failed 14 routes with 42 hits. EVERY ONE was a flight-payload chunk
+reference, a JSON string that is only "$" plus hex digits, such as "$52" or "$1".
+None was a price. Read one by one before the repair,
+per Law 151.
+
+THE RULE IS EXACT, NOT A LOOSENING. `nearMoneyNotRsc()` drops a money match only
+where the "$" plus hex digits is the WHOLE of a JSON string, with a quote, escaped
+or not, on both sides. Any other text in the string keeps it money, and a JSX child
+that is only "$200" still renders as >$200< in the HTML, which M12 still reads.
+BOTH LIMBS FIRED (S49-L): the production-shaped reference is a new negative probe,
+and a real "$19.99" injected beside a box link inside the flight payload of a
+SHADOW copy of the built /us/ants still failed M12 (1 hit). The repository build
+was never altered to prove it.

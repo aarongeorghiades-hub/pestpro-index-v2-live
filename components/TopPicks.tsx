@@ -1,4 +1,4 @@
-import { UK_AMAZON_TAG, SPONSORED_LINK_REL } from "@/lib/externalUrl";
+import { UK_AMAZON_TAG, US_AMAZON_TAG, SPONSORED_LINK_REL } from "@/lib/externalUrl";
 
 // S70 R1 — THE TOP-PICKS BOX. PM ruling (Law 195): on /best/* the selling layer
 // is restored, and the decision block carries a one-line safety/legal note that
@@ -14,14 +14,20 @@ export type TopPick = {
   name: string;
   reason: string;
   asin: string;
-  anchorId: string;
+  // S70 R5: optional. UsToolCard emits no anchor id, so a US pick names its
+  // product as plain text rather than linking to an anchor that does not exist.
+  anchorId?: string;
 };
 
 export default function TopPicks({
   picks,
   note,
+  market = "uk",
 }: {
   picks: TopPick[];
+  // S70 R5: the US estate reuses this box. "us" switches host and tag only; the
+  // UK render is unchanged because "uk" is the default.
+  market?: "uk" | "us";
   // S70 R2: optional. Carried only where the route's point is real safety or law
   // (poison, trap, protected species, chemical, electrical). An efficacy-evidence
   // point is never carried here; it sits in the body below the comparison table.
@@ -46,18 +52,28 @@ export default function TopPicks({
               <p className="m-0 text-[12px] font-semibold text-[var(--color-ochre-deep)]">
                 {p.label}
               </p>
-              <a
-                href={`#${p.anchorId}`}
-                className="block text-[15px] font-bold leading-snug text-[var(--color-ink)] hover:underline"
-              >
-                {p.name}
-              </a>
+              {p.anchorId ? (
+                <a
+                  href={`#${p.anchorId}`}
+                  className="block text-[15px] font-bold leading-snug text-[var(--color-ink)] hover:underline"
+                >
+                  {p.name}
+                </a>
+              ) : (
+                <p className="m-0 text-[15px] font-bold leading-snug text-[var(--color-ink)]">
+                  {p.name}
+                </p>
+              )}
               <p className="m-0 text-[13px] leading-snug text-[var(--color-ink-soft)]">
                 {p.reason}
               </p>
             </div>
             <a
-              href={`https://www.amazon.co.uk/dp/${p.asin}?tag=${UK_AMAZON_TAG}`}
+              href={
+                market === "us"
+                  ? `https://www.amazon.com/dp/${p.asin}?tag=${US_AMAZON_TAG}`
+                  : `https://www.amazon.co.uk/dp/${p.asin}?tag=${UK_AMAZON_TAG}`
+              }
               target="_blank"
               rel={SPONSORED_LINK_REL}
               className="inline-block flex-shrink-0 rounded-lg bg-[var(--color-ochre)] px-4 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-[var(--color-ochre-deep)]"

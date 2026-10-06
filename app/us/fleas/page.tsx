@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -209,6 +210,7 @@ export default function FleasPage() {
   const FC2 = products.filter((p) => p.group === 'FC2');
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="fleas" />}
       title="Fleas"
       subtitle="Four extension publications, spanning 2010 to 2026, that disagree about which flea species carries plague and agree that the most effective treatments need a veterinarian. Every figure below carries the name of the flea it counts and the name of the source that published it."
       lastUpdated="August 2026"

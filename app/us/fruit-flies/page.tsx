@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import { SourceList, type Source } from '../components/UsSources';
 import UsToolCard from '../components/UsToolCard';
@@ -132,6 +133,7 @@ const tocItems = [
 export default function FruitFliesPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="fruit-flies" />}
       title="Fruit Flies"
       subtitle="A tiny red-eyed fly circling the fruit bowl or hovering at the kitchen sink, with no obvious source in sight. Here is what university extension services publish about telling a fruit fly from the other small flies it gets confused with, where it actually breeds, and what stops it."
       lastUpdated="September 2026"

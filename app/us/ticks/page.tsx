@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -190,6 +191,7 @@ const tocItems = [
 export default function TicksPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="ticks" />}
       title="Ticks"
       subtitle="Prevention first, because that is where the sources put the weight: a named concentration for clothing, a named list of repellent ingredients, and nine feet of lawn edge where most of the ticks actually are."
       lastUpdated="August 2026"

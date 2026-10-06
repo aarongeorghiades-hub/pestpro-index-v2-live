@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -271,6 +272,7 @@ const sources: Source[] = [
 export default function CarpetBeetlesPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="carpet-beetles" />}
       title="Carpet Beetles"
       subtitle="Fourteen extension publications agree on what carpet beetles eat and disagree on almost every number attached to killing them. This page carries the disagreements as disagreements, puts cleaning and exclusion where the sources put them, and names four products against the two criteria the sources actually state."
       lastUpdated="August 2026"

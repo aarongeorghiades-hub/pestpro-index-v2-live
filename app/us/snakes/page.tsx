@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -279,6 +280,7 @@ const sources: Source[] = [
 export default function SnakesPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="snakes" />}
       title="Snakes"
       subtitle="Four extension services specify a snake-proof fence and none of them specifies quite the same fence. Five say repellents do not work. The law changes at the state line, and three published first-aid instructions disagree on one step. This page carries all of that, and names the products whose own text meets the one figure every source shares."
       lastUpdated="August 2026"

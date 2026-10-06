@@ -24,6 +24,7 @@
 // or a different value if a future card is ever genuinely unpaid; none is today.
 
 import { pictogramFor, withSpecFigures } from '@/components/cardVocabulary';
+import { US_AMAZON_TAG } from '@/lib/externalUrl';
 
 interface UsToolCardProps {
   name: string;
@@ -41,7 +42,7 @@ export default function UsToolCard({
   name,
   whatItDoes,
   asin,
-  affiliateTag = 'pestproindex2-20',
+  affiliateTag = US_AMAZON_TAG,
 }: UsToolCardProps) {
   const url =
     asin && asin.startsWith('B0')

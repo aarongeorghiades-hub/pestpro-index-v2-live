@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -175,6 +176,7 @@ const tocItems = [
 export default function FungusGnatsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="fungus-gnats" />}
       title="Fungus Gnats"
       subtitle="The little dark flies drifting up from a houseplant are the symptom. The cause is in the pot, and it is wet. Six extension sources on how dry to let it get, what Bti does, what a yellow trap is actually for, and one thing two of them flatly disagree about."
       lastUpdated="September 2026"

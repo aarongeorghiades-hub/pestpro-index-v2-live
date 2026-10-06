@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -143,6 +144,7 @@ const relatedPages = [
 export default function AsianLadyBeetlesPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="asian-lady-beetles" />}
       title="Asian Lady Beetles, Not Ladybugs"
       subtitle="The beetles massing on your siding in October are almost certainly not the native ladybug of childhood. One mark behind the head settles it, and the difference is not academic."
       lastUpdated="August 2026"

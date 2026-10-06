@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import UsComparisonTable, { type ComparisonRow } from '../components/UsComparisonTable';
@@ -370,6 +371,7 @@ const tocItems = [
 export default function BestGopherTrapsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="best-gopher-traps" />}
       title="Gopher Traps"
       subtitle="Every extension source we read makes the trap conditional on the placement, and the tool that decides the outcome is a blunt stick most sheds already hold. One trial compared three models; we give its figures and its limits rather than a ranking."
       lastUpdated="August 2026"

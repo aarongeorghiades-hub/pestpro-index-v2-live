@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import { SourceList, type Source } from '../components/UsSources';
 import UsToolCard from '../components/UsToolCard';
@@ -132,6 +133,7 @@ const tocItems = [
 export default function MosquitoesPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="mosquitoes" />}
       title="Mosquitoes"
       subtitle="A teaspoon of standing water is enough to breed them, and the biting adult is the last stage of a life cycle that starts and ends in water around the property. Here is what university extension services and one state agricultural extension publish about breeding sites, larval and adult control, personal protection, and which widely sold devices the same sources say do not work."
       lastUpdated="September 2026"

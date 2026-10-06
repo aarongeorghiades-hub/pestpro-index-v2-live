@@ -31,6 +31,10 @@ export const SPONSORED_LINK_REL = 'sponsored nofollow noopener noreferrer';
 // is — the value is unchanged, still 'pestproindex2-21'.
 export const UK_AMAZON_TAG = 'pestproindex2-21';
 
+// S70 R5: the amazon.com tag, exported so the US top-picks box and UsToolCard read
+// one constant. The value is the tag UsToolCard has defaulted to since S60 R1.
+export const US_AMAZON_TAG = 'pestproindex2-20';
+
 // True when a URL is one of our affiliate links — used where a single link
 // element renders a mix of editorial and affiliate destinations.
 export function isAffiliateUrl(url: string | null | undefined): boolean {

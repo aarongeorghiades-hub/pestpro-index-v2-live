@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -179,6 +180,7 @@ const tocItems = [
 export default function PowderpostBeetlesPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="powderpost-beetles" />}
       title="Powderpost Beetles"
       subtitle="Small round holes in wood, and a little pile of powder underneath. Two questions decide what you do next: whether the infestation is still live, and whether what you are looking at is a beetle at all. This page answers those two first."
       lastUpdated="September 2026"

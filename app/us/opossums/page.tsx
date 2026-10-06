@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, AsOf, type Source } from '../components/UsSources';
@@ -172,6 +173,7 @@ const tocItems = [
 export default function OpossumsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="opossums" />}
       title="Opossums"
       subtitle="Something has moved in under the deck, and something has been through the trash. Here is what university extension services and state agencies say about the animal, and the one fact about it that changes which remedies can possibly work."
       lastUpdated="August 2026"

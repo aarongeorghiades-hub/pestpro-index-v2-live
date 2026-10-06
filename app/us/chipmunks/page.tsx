@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -262,6 +263,7 @@ const tocItems = [
 export default function ChipmunksPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="chipmunks" />}
       title="Chipmunks"
       subtitle="Four of the five sources on this page make control conditional — on numbers, or on the animal burrowing against a structure. So this page separates the case they say warrants control from the case they say usually does not, and puts the tools with the first one."
       lastUpdated="August 2026"

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import UsComparisonTable, { type ComparisonRow } from '../components/UsComparisonTable';
@@ -183,6 +184,7 @@ const relatedPages = [
 export default function BestStinkBugTrapsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="best-stink-bug-traps" />}
       title="Stink Bug Traps"
       subtitle="We went looking for a ranking of commercial traps and found something more useful: one controlled study, in real houses, whose winner costs nothing and is made from a roasting pan."
       lastUpdated="August 2026"

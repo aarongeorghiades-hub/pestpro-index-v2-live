@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -223,6 +224,7 @@ const sources: Source[] = [
 export default function GermanCockroachesPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="german-cockroaches" />}
       title="German Cockroaches"
       subtitle="One species, Blattella germanica, and the sources treat it as a different problem from every other cockroach in a house. It is the small one, it does not live outdoors, and the product that works on the big ones is the wrong size for it."
       lastUpdated="August 2026"

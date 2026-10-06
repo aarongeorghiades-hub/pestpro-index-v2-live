@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -225,6 +226,7 @@ const sources: Source[] = [
 export default function HouseMicePage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="house-mice" />}
       title="House Mice"
       subtitle="Identification, exclusion and trapping, as nine university extension and federal publications describe them. Five sources independently name the same quarter-inch gap a house mouse can enter through. The sources disagree, in three distinct positions, about whether to use a glue board. Rodent-borne disease is out of scope here on purpose, and is named once rather than sourced and carried."
       lastUpdated="August 2026"

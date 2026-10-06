@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -282,6 +283,7 @@ const tocItems = [
 export default function MoleAndVoleControlPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="mole-and-vole-control" />}
       title="Mole and Vole Control"
       subtitle="Five products are named on this page and every one of them is here because an extension service published a criterion it meets. Two more things are named because no product exists for them at all, and the page says so plainly rather than filling the space."
       lastUpdated="August 2026"

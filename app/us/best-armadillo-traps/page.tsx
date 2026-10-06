@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -146,6 +147,7 @@ const SOURCED_MINIMUM =
 export default function BestArmadilloTrapsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="best-armadillo-traps" />}
       title="Armadillo Traps"
       subtitle="One field study tested eleven baits and a commercial lure against an empty trap and found no difference. What did make a difference was the boards either side of the door. Here is the method, the size specification, and the traps that meet it."
       lastUpdated="August 2026"

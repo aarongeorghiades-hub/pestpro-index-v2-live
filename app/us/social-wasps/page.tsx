@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -219,6 +220,7 @@ const sources: Source[] = [
 export default function SocialWaspsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="social-wasps" />}
       title="Social Wasps"
       subtitle="Yellowjackets, paper wasps and hornets, as nine university extension services describe them. Most of what Americans call a hornet is a yellowjacket. A wasp leaves no stinger to remove, so the first-aid advice everyone repeats belongs to a different insect. And on what to put on the sting, the sources give four answers, which this page reports rather than settles."
       lastUpdated="August 2026"

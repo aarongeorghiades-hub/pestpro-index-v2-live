@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -212,6 +213,7 @@ const tocItems = [
 export default function ImportedFireAntsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="imported-fire-ants" />}
       title="Imported Fire Ants"
       subtitle="A federal regulation says which ants the name covers, and Texas A&amp;M publishes a control method with real numbers in it. This page sets out both, tells you how to separate an imported fire ant from a native ant you should leave alone, and reports what the sources say about a sting."
       lastUpdated="August 2026"

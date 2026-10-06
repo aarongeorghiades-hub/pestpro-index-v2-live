@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -328,6 +329,7 @@ const tocItems = [
 export default function BlackWidowSpidersPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="black-widow-spiders" />}
       title="Black Widow Spiders"
       subtitle="The extension services disagree about whether the hourglass is reliable, about how long a bite lasts, about whether the female eats the male, and about whether insecticides do anything. Every position here is given with the service that published it, and none of them is resolved into a house answer."
       lastUpdated="August 2026"

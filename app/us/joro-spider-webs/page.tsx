@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -168,6 +169,7 @@ const relatedPages = [
 export default function JoroSpiderWebsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="joro-spider-webs" />}
       title="Joro Spider Webs"
       subtitle="Why they end up strung across your front door, how far the structure really extends, and how to take one down without a ladder, a spray can, or a fight."
       lastUpdated="August 2026"

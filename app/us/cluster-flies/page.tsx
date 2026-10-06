@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -132,6 +133,7 @@ const relatedPages = [
 export default function ClusterFliesPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="cluster-flies" />}
       title="Cluster Flies"
       subtitle="Big, slow, dull flies bumping down an upstairs window in October, and again on the first warm day in February. They are not house flies, they are not dirty, and they did not come from anything in your kitchen."
       lastUpdated="August 2026"

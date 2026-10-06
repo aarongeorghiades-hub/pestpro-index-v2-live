@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import { SourceList, type Source } from '../components/UsSources';
 import UsToolCard from '../components/UsToolCard';
@@ -133,6 +134,7 @@ const tocItems = [
 export default function CarpenterBeesPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="carpenter-bees" />}
       title="Carpenter Bees"
       subtitle="A perfectly round half-inch hole drilled into a fascia board or deck rail, coarse sawdust beneath it, and a large black-and-yellow bee hovering nearby. Here is what university extension services publish about identifying the animal, the damage it does, and why several of them ask homeowners to think twice before reaching for an insecticide."
       lastUpdated="September 2026"

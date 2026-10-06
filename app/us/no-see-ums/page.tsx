@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -172,6 +173,7 @@ const tocItems = [
 export default function NoSeeUmsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="no-see-ums" />}
       title="No-See-Ums"
       subtitle="A biting fly small enough to walk through an ordinary window screen. Three extension services say so, one of them publishes the mesh numbers, and the screening you can actually buy does not quite reach the figure they name."
       lastUpdated="August 2026"

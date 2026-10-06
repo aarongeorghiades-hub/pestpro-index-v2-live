@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -215,6 +216,7 @@ const sources: Source[] = [
 export default function AntsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="ants" />}
       title="Household Ants"
       subtitle="Four ants that come indoors for food and water while the colony sits somewhere you cannot see it. Every figure here carries the species it belongs to and the document it came from, because the five publications behind this page cover a dozen ants between them."
       lastUpdated="August 2026"

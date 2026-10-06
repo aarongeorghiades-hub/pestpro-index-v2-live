@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -270,6 +271,7 @@ const sources: Source[] = [
 export default function RatsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="rats" />}
       title="Rats"
       subtitle="Identification, where they nest, how they enter, and the exclusion and trapping methods eight university extension and federal publications describe. Two figures answer two different questions about the same gap — what a rat can squeeze through, and what the sources recommend sealing to — and this page keeps them apart. Rodent-borne disease is out of scope here on purpose, named once and not built out further."
       lastUpdated="August 2026"

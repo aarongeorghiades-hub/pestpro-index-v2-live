@@ -54,6 +54,10 @@ interface UsPageLayoutProps {
   // The header nav for this cluster. Never links out of its own cluster. REQUIRED
   // for the same reason.
   clusterNav: RelatedLink[];
+  // S70 R5 (Law 195 as extended): the top-picks box, rendered inside the hero
+  // directly after the byline so it sits in the first mobile screen. The cards and
+  // every guide section below stay exactly where they were.
+  topPicks?: React.ReactNode;
 }
 
 export default function UsPageLayout({
@@ -68,6 +72,7 @@ export default function UsPageLayout({
   schemas,
   homeHref,
   clusterNav,
+  topPicks,
 }: UsPageLayoutProps) {
   return (
     <div className="min-h-screen bg-[var(--color-paper)]">
@@ -110,24 +115,24 @@ export default function UsPageLayout({
       </header>
 
       {/* Hero */}
-      <section className="border-b border-[var(--color-rule)] bg-[var(--color-surface)] py-12 md:py-16">
+      <section className={`border-b border-[var(--color-rule)] bg-[var(--color-surface)] ${topPicks ? 'py-5 md:py-12' : 'py-12 md:py-16'}`}>
         <div className="max-w-4xl mx-auto px-4">
-          <nav className="mb-6 flex items-center gap-2 text-sm text-[var(--color-ink-mute)]">
+          <nav className={`${topPicks ? 'mb-3 md:mb-6' : 'mb-6'} flex items-center gap-2 text-sm text-[var(--color-ink-mute)]`}>
             {breadcrumbParent ? (
               <>
                 <Link href={breadcrumbParent.href} className="transition-colors hover:text-[var(--color-teal-deep)]">
                   {breadcrumbParent.label}
                 </Link>
                 <span>/</span>
-                <span className="text-[var(--color-ink)]">{title}</span>
+                <span className={topPicks ? 'hidden text-[var(--color-ink)] sm:inline' : 'text-[var(--color-ink)]'}>{title}</span>
               </>
             ) : (
               <span className="text-[var(--color-ink)]">{title}</span>
             )}
           </nav>
 
-          <h1 className="mb-4 text-3xl font-black leading-tight text-[var(--color-ink)] sm:text-4xl md:text-5xl">{title}</h1>
-          <p className="mb-6 max-w-3xl text-lg text-[var(--color-ink-soft)] md:text-xl">{subtitle}</p>
+          <h1 className={`${topPicks ? 'mb-2 text-2xl md:mb-4' : 'mb-4 text-3xl'} font-black leading-tight text-[var(--color-ink)] sm:text-4xl md:text-5xl`}>{title}</h1>
+          <p className={topPicks ? 'mb-2 max-w-3xl text-[15px] leading-snug text-[var(--color-ink-soft)] md:mb-6 md:text-xl' : 'mb-6 max-w-3xl text-lg text-[var(--color-ink-soft)] md:text-xl'}>{subtitle}</p>
 
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[var(--color-ink-mute)]">
             <span>By the PestPro Index Team</span>
@@ -136,6 +141,8 @@ export default function UsPageLayout({
             <span className="hidden sm:inline">|</span>
             <span>{readingTime} read</span>
           </div>
+
+          {topPicks}
         </div>
       </section>
 

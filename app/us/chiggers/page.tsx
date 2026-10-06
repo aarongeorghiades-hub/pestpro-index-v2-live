@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -140,6 +141,7 @@ const tocItems = [
 export default function ChiggersPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="chiggers" />}
       title="Chiggers"
       subtitle="They do not burrow into your skin and they do not drink your blood. Three university extension services say so in three different sets of words, and what is actually happening is stranger and more useful to know."
       lastUpdated="August 2026"

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -176,6 +177,7 @@ const tocItems = [
 export default function ArizonaBarkScorpionsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="arizona-bark-scorpions" />}
       title="Arizona Bark Scorpions"
       subtitle="One scorpion in the United States is of medical concern, and it lives alongside several that are not. This page sets out how the extension services tell them apart, what they say about a sting, and what they say actually keeps one out of a building."
       lastUpdated="August 2026"

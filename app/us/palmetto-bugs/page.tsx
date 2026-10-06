@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -154,6 +155,7 @@ const tocItems = [
 export default function PalmettoBugsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="palmetto-bugs" />}
       title="Palmetto Bugs"
       subtitle="One name, several different insects, and one of them is flightless and does not breed indoors at all. Which one is on your wall changes what you should do about it, so this page starts there."
       lastUpdated="August 2026"

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -110,6 +111,7 @@ const tocItems = [
 export default function RaccoonCageTrapsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="best-raccoon-traps" />}
       title="Raccoon Cage Traps"
       subtitle="One extension service publishes a minimum cage size for raccoons. This page measures six listed cages against that figure, records what each listing publishes, and does nothing else with them."
       lastUpdated="August 2026"

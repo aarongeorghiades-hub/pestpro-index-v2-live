@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -239,6 +240,7 @@ const sources: Source[] = [
 export default function CoyotesPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="coyotes" />}
       title="Coyotes"
       subtitle="The extension sources specify a coyote-resistant fence to the inch, disagree openly about whether hazing achieves anything lasting, and hand the removal half to agencies rather than to a householder. This page carries all three, with the dates the sources themselves carry, and it names the products whose own text carries the parts of that specification a seller actually states."
       lastUpdated="August 2026"

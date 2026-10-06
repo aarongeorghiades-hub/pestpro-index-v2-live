@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -137,6 +138,7 @@ const relatedPages = [
 export default function BoxelderBugsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="boxelder-bugs" />}
       title="Boxelder Bugs"
       subtitle="Black with thin red lines, massed on the south wall of the house on a warm October afternoon. Almost everything about them follows from one tree."
       lastUpdated="August 2026"

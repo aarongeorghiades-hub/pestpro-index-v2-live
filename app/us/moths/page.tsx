@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -278,6 +279,7 @@ export default function MothsPage() {
   const B2 = products.filter((p) => p.group === 'B2');
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="moths" />}
       title="Household Moths"
       subtitle="Two different insects share the name. One eats wool, fur and feathers; the other lives in flour, cereal and pet food. They need different products, and the flagship source states that a pheromone trap for one will not attract the other. This page keeps them apart."
       lastUpdated="August 2026"

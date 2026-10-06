@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -349,6 +350,7 @@ const tocItems = [
 export default function BrownRecluseSpidersPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="brown-recluse-spiders" />}
       title="Brown Recluse Spiders"
       subtitle="Extension services disagree about the violin marking, about how far the range runs, and about whether insecticides do anything at all. This page sets out every position with the service that published it, and it does not pretend the disagreements are settled."
       lastUpdated="August 2026"

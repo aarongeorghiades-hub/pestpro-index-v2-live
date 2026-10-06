@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -255,6 +256,7 @@ export default function SilverfishPage() {
   const SF3 = products.filter((p) => p.group === 'SF3');
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="silverfish" />}
       title="Silverfish and Firebrats"
       subtitle="They scrape paper rather than biting it, and they are two species, not one. The numbers attached to them differ by species and by publisher, so every figure on this page carries the name of the insect it counts and the name of the source that published it."
       lastUpdated="August 2026"

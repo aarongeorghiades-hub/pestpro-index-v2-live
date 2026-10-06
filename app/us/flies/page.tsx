@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -191,6 +192,7 @@ const sources: Source[] = [
 export default function FliesPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="flies" />}
       title="House Flies"
       subtitle="They cannot bite. What the sources say they do instead is move contamination from waste onto food, by carrying it rather than by injecting it. Every claim on this page carries the name of the fly it belongs to, because the documents behind it cover five different flies at once."
       lastUpdated="August 2026"

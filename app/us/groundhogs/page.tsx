@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import UsPageLayout from '../components/UsPageLayout';
+import UsTopPicks from '../components/UsTopPicks';
 import UsFaq, { faqPageSchema, type Faq } from '../components/UsFaq';
 import UsToolCard from '../components/UsToolCard';
 import { SourceList, type Source } from '../components/UsSources';
@@ -192,6 +193,7 @@ const tocItems = [
 export default function GroundhogsPage() {
   return (
     <UsPageLayout
+      topPicks={<UsTopPicks slug="groundhogs" />}
       title="Groundhogs"
       subtitle="The woodchuck, Marmota monax. The burrow that undermines a foundation, the fence four sources cannot agree on, and the legal question that has a different answer in every state this page could read."
       lastUpdated="September 2026"
